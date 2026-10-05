@@ -34,6 +34,8 @@ function handlers.PLAYER_LOGIN()
     WayfarersJournalChar = char
   end
   if ns.onLogin then ns.onLogin(char) end
+  if ns.createMinimapButton then ns.createMinimapButton() end
+  if ns.createSettingsPanel then ns.createSettingsPanel() end
 end
 
 frame:SetScript("OnEvent", function(_, event, ...)
@@ -58,5 +60,18 @@ SLASH_WAYFARERSJOURNAL1 = "/wayfarer"
 SLASH_WAYFARERSJOURNAL2 = "/wj"
 SlashCmdList.WAYFARERSJOURNAL = function(msg)
   msg = strtrim((msg or ""):lower())
-  if ns.toggle then ns.toggle() else print(PREFIX .. "the journal is being written.") end
+  if msg == "minimap" then
+    ns.setOption("minimapHidden", not ns.option("minimapHidden"))
+    return
+  end
+  if msg == "settings" or msg == "options" then
+    if not ns.openSettings() then print(PREFIX .. "no settings page in this client.") end
+    return
+  end
+  if msg == "hall" then return ns.openHall() end
+  if msg ~= "" then
+    print(PREFIX .. "/wj opens the journal; /wj hall the Hall of the Fallen; /wj settings; /wj minimap shows or hides the button.")
+    return
+  end
+  ns.toggle()
 end

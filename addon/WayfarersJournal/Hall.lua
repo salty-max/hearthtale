@@ -80,14 +80,14 @@ local function toast(guid)
 end
 
 -- ── a Hardcore death ─────────────────────────────────────────────────────────
-local function link(guid, text) return ("|cffc9a227|Hwayfarer:hall:%s|h[%s]|h|r"):format(guid, text) end
+local function link(guid, text) return ns.link("hall:" .. guid, text) end
 
 ns.onDeath = function()
   local c = ns.journal()
   if not (c and c.hardcore and c.guid) then return end
   enshrine(c)
   print(ns.PREFIX .. ("The journal of %s is closed. It rests in the %s."):format(c.name or "?", link(c.guid, "Hall of the Fallen")))
-  toast(c.guid)
+  if ns.option("toast") then toast(c.guid) end
   if ns.onHall then ns.onHall() end
 end
 
@@ -95,20 +95,4 @@ end
 -- death came with the addon off): it joins it at login.
 ns.onLogin = function(c)
   if c.closed and c.guid and not hall()[c.guid] then enshrine(c) end
-end
-
--- Links in chat (|Hwayfarer:hall:<guid>|h[...]|h): the game hands links of an
--- unknown type to the handler registered for it.
-local function followLink(link)
-  local guid = link:match("^wayfarer:hall:(.+)$")
-  if guid then ns.openHall(guid) end
-end
-if LinkUtil and LinkUtil.RegisterLinkHandler then
-  LinkUtil.RegisterLinkHandler("wayfarer", function(link)
-    followLink(link)
-    return LinkProcessorResponse and LinkProcessorResponse.Handled
-  end)
-elseif hooksecurefunc and SetItemRef then
-  -- Clients without the link registry still pass every click to SetItemRef.
-  hooksecurefunc("SetItemRef", function(link) followLink(link) end)
 end

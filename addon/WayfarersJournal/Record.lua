@@ -99,7 +99,7 @@ end
 ns.on("PLAYER_LOGIN", function()
   local c = char()
   c.visited, c.kinds = c.visited or {}, c.kinds or {}
-  c.hardcore = hardcore() or nil
+  if not c.closed then c.hardcore = hardcore() or c.hardcoreChosen or nil end -- chosen: in the settings, where the game can't tell
   c.race, c.class = select(2, UnitRace("player")), select(2, UnitClass("player"))
   c.name, c.sex = UnitName("player"), UnitSex("player")
   -- A character met mid-life: what the game can say of the life so far.
@@ -131,6 +131,7 @@ ns.on("PLAYER_LEVEL_UP", function(newLevel)
   if old then old.ended = now() end
   level(newLevel)
   changed()
+  if old and ns.onChapter then ns.onChapter(newLevel - 1) end
 end)
 
 -- ── where ────────────────────────────────────────────────────────────────────

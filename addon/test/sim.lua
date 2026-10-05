@@ -26,7 +26,9 @@ function GetSubZoneText() return state.sub end
 function GetBindLocation() return state.bind end
 function GetMoney() return state.money end
 function GetQuestsCompleted() return state.questsDone or {} end
-C_GameRules = { IsHardcoreActive = function() return state.hardcore end }
+-- Forever's client here doesn't say whether a character is Hardcore: the
+-- player says so in the settings (tested below).
+if not FOREVER then C_GameRules = { IsHardcoreActive = function() return state.hardcore end } end
 C_QuestLog = { GetTitleForQuestID = function(id) return state.titles and state.titles[id] end }
 C_Timer = { After = function(_, fn) fn() end }
 SlashCmdList = {}
@@ -115,12 +117,31 @@ local function ui()
       if k == "GetHeight" then return function(self) return rawget(self, "height") or 100 end end
       if k == "SetVerticalScroll" then return function(self, v) self.vscroll = v end end
       if k == "GetVerticalScroll" then return function(self) return rawget(self, "vscroll") or 0 end end
+      if k == "GetWidth" then return function() return 140 end end
+      if k == "GetCenter" then return function() return 0, 0 end end
+      if k == "GetEffectiveScale" then return function() return 1 end end
       if k == "CreateFontString" or k == "CreateTexture" then return function() return ui() end end
       return function() return t end
     end,
   })
 end
 UIParent, UISpecialFrames = ui(), {}
+Minimap, GameTooltip = ui(), ui()
+function GetCursorPosition() return 0, 0 end
+-- The game's settings panel: keep what the addon registers.
+local panel = { settings = {} }
+Settings = {
+  VarType = { Boolean = "boolean", Number = "number" },
+  RegisterVerticalLayoutCategory = function(name) panel.name = name; return { GetID = function() return 42 end } end,
+  RegisterProxySetting = function(_, variable, _, name, default, get, set)
+    local s = { variable = variable, name = name, default = default, get = get, set = set }
+    panel.settings[variable] = s
+    return s
+  end,
+  CreateCheckbox = function() end,
+  RegisterAddOnCategory = function() panel.registered = true end,
+  OpenToCategory = function(id) panel.opened = id end,
+}
 local portraitOf
 function SetPortraitTexture(_, unit) portraitOf = unit end
 
@@ -167,7 +188,7 @@ LinkProcessorResponse = { Handled = 2 }
 -- ── load the addon ───────────────────────────────────────────────────────────
 local ns = {}
 assert(loadfile(DIR .. (FOREVER and "Data_Forever.lua" or "Data_Classic.lua")))("WayfarersJournal", ns)
-for _, f in ipairs({ "Core.lua", "Record.lua", "Writer.lua", "Book.lua", "Hall.lua" }) do assert(loadfile(DIR .. f))("WayfarersJournal", ns) end
+for _, f in ipairs({ "Core.lua", "Record.lua", "Writer.lua", "Book.lua", "Hall.lua", "Settings.lua", "Minimap.lua" }) do assert(loadfile(DIR .. f))("WayfarersJournal", ns) end
 local D = ns.data
 local function check(cond, msg) assert(cond, msg); io.write("✓ " .. msg .. "\n") end
 local function lvl(n) return WayfarersJournalChar.levels[n] end
@@ -178,6 +199,26 @@ check(ns.forever == FOREVER, FOREVER and "Forever is recognised" or "Classic is 
 WayfarersJournalChar = { guid = "Player-6113-0DEAD000", levels = { [1] = {} } }
 fire("PLAYER_LOGIN")
 local J = WayfarersJournalChar
+check(panel.registered and panel.name == "Wayfarer's Journal" and panel.settings.WAYFARERSJOURNAL_CHAT
+  and panel.settings.WAYFARERSJOURNAL_TOAST and panel.settings.WAYFARERSJOURNAL_MINIMAPHIDDEN.get() == true,
+  "the settings page: chat lines, the alert, the minimap button (shown)")
+local hcSetting = panel.settings.WAYFARERSJOURNAL_HARDCORE
+if FOREVER then
+  check(hcSetting and not J.hardcore, "Forever: the game can't tell Hardcore; the settings ask")
+  hcSetting.set(true)
+  fire("PLAYER_LOGIN")
+  check(J.hardcore and J.hardcoreChosen and hcSetting.get() == true, "Forever: declared Hardcore, and it holds at the next login")
+else
+  check(not hcSetting, "Classic: the game tells Hardcore; no setting for it")
+end
+local mm = WayfarersJournalMinimapButton
+check(mm and mm:IsShown(), "the minimap button")
+SlashCmdList.WAYFARERSJOURNAL("minimap")
+check(not mm:IsShown() and panel.settings.WAYFARERSJOURNAL_MINIMAPHIDDEN.get() == false, "/wj minimap hides it")
+SlashCmdList.WAYFARERSJOURNAL("minimap")
+check(mm:IsShown(), "and shows it again")
+SlashCmdList.WAYFARERSJOURNAL("settings")
+check(panel.opened == 42, "/wj settings opens the page")
 check(J.guid == state.guid and J.began.level == 1 and not J.prologue, "a new character named like a deleted one starts a fresh journal, from level 1: no prologue")
 check(J.hardcore and J.race == "Dwarf" and J.class == "PALADIN" and J.name == "Sealinedion", "it knows who it is: a Hardcore dwarf paladin")
 check(lvl(1).start.zone == "Dun Morogh" and lvl(1).start.sub == "Coldridge Valley" and not lvl(1).start.night, "level 1 begins at Coldridge Valley, by day")
@@ -254,7 +295,10 @@ check(#close == 1 and close[1].hp == 7 and close[1].foe == "Frostmane Novice" an
 -- Level up: time played goes to the level it was played at.
 uptime = uptime + 1300
 state.level = 2
+local before = #printed
 fire("PLAYER_LEVEL_UP", 2)
+check(#printed == before + 1 and printed[#printed]:find("level 1 is written", 1, true) and printed[#printed]:find("|Hwayfarer:chapter:1|h", 1, true),
+  "a level ends: a line in chat, with a link to its chapter")
 check(lvl(1).played == 1300 and lvl(1).ended and lvl(2) and lvl(2).start.night, "a level up closes the level, with the time played at it; the next begins")
 
 -- An inn, a flight, a profession, a rare.
@@ -316,6 +360,14 @@ fire("ZONE_CHANGED")
 check(page.body:GetText():find("Kharanos", 1, true) and page.title:GetText() == "Level 2", "a new moment while the book is open: rewritten at once, the same chapter open")
 SlashCmdList.WAYFARERSJOURNAL("")
 check(not B:IsShown(), "/wj again closes it")
+linkHandlers.wayfarer("wayfarer:chapter:1")
+check(B:IsShown() and page.title:GetText() == "Level 1", "the chapter's link opens the book at it")
+SlashCmdList.WAYFARERSJOURNAL("")
+panel.settings.WAYFARERSJOURNAL_CHAT.set(false)
+local lines = #printed
+ns.onChapter(1)
+check(#printed == lines, "chat lines can be turned off")
+panel.settings.WAYFARERSJOURNAL_CHAT.set(true)
 
 -- Death.
 if not FOREVER then

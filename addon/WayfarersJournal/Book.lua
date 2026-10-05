@@ -137,6 +137,7 @@ local build -- made on first opening (below)
 local written -- this character's book as last written: { prologue, chapters, epitaph }
 local current -- its open chapter: a level, or "prologue"
 local hallLife, hallKey -- in the Hall: the open life (its guid) and its page ("epitaph", "prologue", a level)
+local asked -- opened at a page (a link): don't go to the last chapter
 local WIDTH = 440
 local HEADER_H = 76
 local ROW_WIDTH = 204
@@ -463,7 +464,8 @@ function build()
 
   book:SetScript("OnShow", function()
     portrait()
-    ns.refresh(true)
+    ns.refresh(not asked)
+    asked = false
   end)
   buildTabs()
 end
@@ -474,7 +476,19 @@ function ns.toggle()
   book:SetShown(not book:IsShown())
 end
 
--- Open the Hall at a fallen life (a click on the chat line or the toast).
+-- Open the journal at a chapter (a click on its line in chat).
+function ns.openChapter(level)
+  if not ns.journal() then return end
+  if not book then build() end
+  current, asked = level, true
+  book.selectedTab = 1
+  if PanelTemplates_SetTab then PanelTemplates_SetTab(book, 1) end
+  if book:IsShown() then ns.refresh() else book:Show() end
+  asked = false
+end
+
+-- Open the Hall at a fallen life (a click on the chat line or the toast); with
+-- none, at the most recent.
 function ns.openHall(guid)
   if not ns.journal() then return end
   if not book then build() end
@@ -484,6 +498,31 @@ function ns.openHall(guid)
   if book:IsShown() then ns.refresh(true) else book:Show() end
 end
 ns.onHall = function() if book and book:IsShown() then ns.refresh() end end
+
+-- A level ends: a line in chat with a link to its chapter (a setting).
+function ns.link(target, text) return ("|cffc9a227|Hwayfarer:%s|h[%s]|h|r"):format(target, text) end
+ns.onChapter = function(level)
+  if not ns.option("chat") then return end
+  print(ns.PREFIX .. ("level %d is written. %s"):format(level, ns.link("chapter:" .. level, "Read the chapter")))
+end
+
+-- Links in chat (|Hwayfarer:chapter:<level>|h, |Hwayfarer:hall:<guid>|h): the
+-- game hands links of an unknown type to the handler registered for it.
+local function followLink(link)
+  local level = tonumber(link:match("^wayfarer:chapter:(%d+)$") or "")
+  if level then return ns.openChapter(level) end
+  local guid = link:match("^wayfarer:hall:(.+)$")
+  if guid then ns.openHall(guid) end
+end
+if LinkUtil and LinkUtil.RegisterLinkHandler then
+  LinkUtil.RegisterLinkHandler("wayfarer", function(link)
+    followLink(link)
+    return LinkProcessorResponse and LinkProcessorResponse.Handled
+  end)
+elseif hooksecurefunc and SetItemRef then
+  -- Clients without the link registry still pass every click to SetItemRef.
+  hooksecurefunc("SetItemRef", function(link) followLink(link) end)
+end
 
 -- A new moment while the book is open: rewritten a moment later, once (a fight
 -- records many at once).
