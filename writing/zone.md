@@ -1,0 +1,21 @@
+---
+kind: zone
+---
+- I crossed into {zone}.
+- {zone}, at last.
+- I left the familiar behind and came to {zone}.
+- I set foot in {zone} for the first time.
+- The road climbed, then fell, and I was in {zone}.
+- {zone}. New land, new dangers.
+- I had heard stories of {zone}. Now I have my own.
+- I reached {zone}, and I'm not sorry.
+- My road led into {zone}, and I followed it.
+- I came to {zone} with my eyes open and my hand near my weapon.
+- [hc] I came to {zone} knowing the graves there are no shallower than anywhere else.
+- [hc high] {zone}: the kind of place where careful heroes become careless corpses. I mean to stay careful.
+- [race:Dwarf] {zone}. Different stone underfoot. A dwarf notices.
+- [race:NightElf] {zone}. The trees here are strangers to me.
+- [race:Scourge] {zone}. The living there gave me a wide berth.
+- [race:Tauren] I came to {zone}, and greeted the land as my elders taught me.
+- [class:MAGE] {zone}. I noted the ley lines, out of habit.
+- [class:HUNTER] {zone}, and new beasts to learn.

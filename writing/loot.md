@@ -1,0 +1,17 @@
+---
+kind: loot
+---
+- The best thing I took: {item}.
+- I came away with {item}, and a smile.
+- {item}, and I didn't even have to pay for it.
+- I found {item}. A fine thing.
+- My best prize: {item}.
+- Fortune gave me {item}.
+- {item} came my way, and I won't let it go.
+- I earned {item}.
+- A good find: {item}.
+- The spoils were kind: {item}.
+- [race:Dwarf] {item}. Good craftsmanship; I checked.
+- [race:Gnome] {item}. I took it apart and put it back together. It works better now.
+- [hc] {item}. Better gear, longer life.
+- [class:ROGUE] {item}. Found, not stolen. Mostly.

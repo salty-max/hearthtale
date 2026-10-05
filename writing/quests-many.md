@@ -1,0 +1,18 @@
+---
+kind: quests-many
+---
+- A busy stretch: {n} errands for the people there, {quest} among them.
+- {n} tasks done, {quest} the one I'll remember.
+- I worked: {n} jobs in all, the best of them {quest}.
+- I lost count, then counted again: {n} tasks, {quest} the hardest.
+- {n} quests. If anyone asks, I'll tell them about {quest}.
+- I ran from one notice board to the next: {n} tasks, {quest} the last of them.
+- {n} tasks done. {giver} was the most grateful, for {quest}.
+- Busy hands: {n} errands, and {quest} the one that cost me.
+- I did {n} good turns, {quest} the best of them.
+- Work and more work: {n} tasks done, among them {quest}.
+- {n} jobs finished, and I can still feel {quest} in my shoulders.
+- [hc] {n} tasks, and every one of them a chance to die. I took none of those chances.
+- [class:PALADIN] {n} tasks, for the people and for {faith}. {quest} was the one that mattered.
+- [class:HUNTER] {n} tasks, most of them hunts. {quest} was the one worth telling.
+- [class:WARLOCK] {n} tasks. People will ask a warlock for anything, so long as nobody sees them do it. {quest} was the last.

@@ -38,6 +38,7 @@ local CREATURES = {
   [3] = { name = "Timber", type = "Beast", family = "Wolf", rank = "rare" },
   [4] = { name = "Frostmane Novice", type = "Humanoid", rank = "normal" },
   [5] = { name = "Gibblewilt", type = "Humanoid", rank = "elite" },
+  [6] = { name = "Defias Overseer", type = "Humanoid", rank = "elite" },
 }
 local function creatureGuid(i, n) return ("Creature-0-4170-0-12-%d-%08X"):format(i, n or 1) end
 local deadTarget, inCombat = false, false
@@ -119,7 +120,7 @@ end
 -- ── load the addon ───────────────────────────────────────────────────────────
 local ns = {}
 assert(loadfile(DIR .. (FOREVER and "Data_Forever.lua" or "Data_Classic.lua")))("WayfarersJournal", ns)
-for _, f in ipairs({ "Core.lua", "Record.lua" }) do assert(loadfile(DIR .. f))("WayfarersJournal", ns) end
+for _, f in ipairs({ "Core.lua", "Record.lua", "Writer.lua" }) do assert(loadfile(DIR .. f))("WayfarersJournal", ns) end
 local D = ns.data
 local function check(cond, msg) assert(cond, msg); io.write("✓ " .. msg .. "\n") end
 local function lvl(n) return WayfarersJournalChar.levels[n] end
@@ -166,7 +167,8 @@ local function kill(id, n)
 end
 kill(1, 1); kill(1, 2); kill(2, 3)
 local wolves = lvl(1).kills["Ragged Young Wolf"]
-check(wolves.n == 2 and wolves.kind == "Wolf" and wolves.first and lvl(1).kills["Rockjaw Trogg"].first, "kills by creature, with their kind and the first of each kind")
+check(wolves.n == 2 and wolves.kind == "Wolf" and wolves.first and wolves.where == "Anvilmar" and lvl(1).kills["Rockjaw Trogg"].first,
+  "kills by creature, with their kind, where, and the first of each kind")
 if FOREVER then
   state.target = { id = 2, n = 99 }; deadTarget = true
   fire("PLAYER_TARGET_CHANGED")
@@ -229,6 +231,8 @@ fire("PLAYER_ENTERING_WORLD")
 fire("PLAYER_ENTERING_WORLD")
 fire("ENCOUNTER_END", 1, "Edwin VanCleef", 1, 5, 1)
 fire("ENCOUNTER_END", 2, "Cookie", 1, 5, 0)
+kill(6, 14)
+check(not lvl(2).kills["Defias Overseer"].elite, "an elite inside a dungeon is not an open-world feat")
 local run = lvl(2).dungeons
 check(lvl(2).company.Brannor == "WARRIOR" and #run == 1 and run[1].name == "The Deadmines" and #run[1].bosses == 1 and run[1].bosses[1] == "Edwin VanCleef",
   "who I grouped with, the dungeon (once) and the bosses beaten")
@@ -246,6 +250,15 @@ check(J.death and J.death.level == 2 and J.death.zone == "Dun Morogh" and J.deat
   FOREVER and "a death: where, at what level, the time played counted" or "a death: where, at what level, how (a fall), the time played counted")
 state.health = 100
 
+-- The book of that life, written from the records.
+local book = ns.writeBook(J)
+local one, two = book.chapters[1], book.chapters[2]
+check(not book.prologue and one.level == 1 and (one.text:find("Anvilmar", 1, true) or one.text:find("Coldridge Valley", 1, true)),
+  "the book of that life: chapter one begins where the life began")
+check(one.text:find('"Dwarven Outfitters"', 1, true) and one.close and two.level == 2 and two.rare and not one.text:find("{", 1, true),
+  "its chapters tell the quests, mark the close calls and rares")
+io.write("    " .. one.text .. "\n")
+
 -- A character met mid-life: a prologue from what the game knows.
 WayfarersJournalChar = nil
 state.guid, state.level, state.questsDone = "Player-6113-0FFFFFF0", 23, { [1] = true, [2] = true, [3] = true }
@@ -255,4 +268,8 @@ fire("TIME_PLAYED_MSG", 86400, 3600)
 fire("TIME_PLAYED_MSG", 90000, 7200)
 check(P and P.level == 23 and P.quests == 3 and P.inn == "Thunderbrew Distillery" and P.played == 86400 and WayfarersJournalChar.levels[23],
   "a character met mid-life gets a prologue: its level, quests done, inn, time played when first heard")
+local later = ns.writeBook(WayfarersJournalChar)
+check(later.prologue and later.prologue:find("^%u") and later.chapters[1].level == 23 and not later.chapters[1].text:find("begin", 1, true),
+  "its book opens with the prologue; its first chapter is no beginning")
+io.write("    " .. later.prologue .. "\n")
 io.write(FOREVER and "all good (Forever)\n" or "all good\n")

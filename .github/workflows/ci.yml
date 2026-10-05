@@ -1,6 +1,6 @@
 # Every push and pull request: the writing builds and both data files are up
-# to date with it, the addon passes its simulation on both games, and both
-# packages assemble.
+# to date with it, the addon passes its simulation on both games, the writer
+# its test (hundreds of books), and both packages assemble.
 name: CI
 
 on:
@@ -24,5 +24,7 @@ jobs:
         run: luajit addon/test/sim.lua
       - name: Simulation (Forever)
         run: FOREVER=1 luajit addon/test/sim.lua
+      - name: Writer
+        run: luajit addon/test/writer.lua
       - name: Packages
         run: bun scripts/package.ts

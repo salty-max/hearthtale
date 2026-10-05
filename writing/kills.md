@@ -1,0 +1,25 @@
+---
+kind: kills
+---
+- I put down {n} {foes} {at}.
+- {n} {foes} fell to {weapon} {at}.
+- I thinned the {foes} {at}: {n} of them.
+- {n} {foes} {in}. They won't be missed.
+- I fought my way through {n} {foes} {at}.
+- {at} I killed {n} {foes}.
+- {n} {foes}, {in}, and not one got the better of me.
+- I spent my days {at} fighting {foes}: {n} of them, by the end.
+- {n} {foes} {in}. Someone had to.
+- I cleared {n} {foes} from the paths {at}.
+- [lots] {n} {foes} {in}. My arms ache just writing it.
+- [lots] I lost count of the {foes} {at}; my tally says {n}.
+- [lots] {n} {foes} {in}. By the end I was doing it in my sleep.
+- [hc] {n} {foes} {in}, one at a time, never two. That's how you live.
+- [class:HUNTER] My pet and I took {n} {foes} {at}.
+- [class:WARLOCK] {n} {foes} {in}. My demon enjoyed it more than I did.
+- [class:MAGE] {n} {foes} {in}, frozen or burned. Mostly burned.
+- [class:ROGUE] {n} {foes} {in}. Most never saw me.
+- [class:PRIEST] {n} {foes} {in}. I prayed for them afterwards. Mostly.
+- [class:DRUID] {n} {foes} {in}, by claw and thorn.
+- [class:SHAMAN] {n} {foes} {in}. The spirits were not gentle with them.
+- [class:WARRIOR] {n} {foes} {in}, and I enjoyed every one.

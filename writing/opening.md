@@ -1,6 +1,43 @@
 ---
 kind: opening
 ---
-- Morning at {where}.
-- I woke at {where} to a clear sky.
-- [night] Night at {where}, and a long one.
+- [!night] Morning {at}.
+- [!night] I woke {at} to a clear sky.
+- [!night] The day found me {at}.
+- I set out from {where}.
+- [night] Night {at}, and a long one.
+- [night] I started this one {at}, after dark.
+- [night] {where}, by lamplight.
+- [!night] {where}, early, with the sun not yet over the hills.
+- I was {at} when this stretch began.
+- Another start, {at}.
+- [!night] I broke my fast {at} and went looking for work.
+- [night] The stars were out over {where} when I took up the road again.
+- [night] I could not sleep {at}, so I walked.
+- I packed what I had {at} and moved on.
+- I shouldered my pack {at} and didn't look back.
+- {where} again, and the road out of it.
+- I left {where} with a full flask and an empty purse.
+- [hc] {where}. Still breathing, which is more than some can say.
+- [hc] I counted my blessings {at}: all my fingers, all my toes, one life.
+- [hc high] Every morning now I wake {at} surprised to be alive.
+- [hc high] I have outlived better than me. I thought of them {at}, then went on.
+- [race:Dwarf] I oiled my beard and my armour {at}, in that order.
+- [race:Gnome] I checked every gear and spring of my kit {at}, twice.
+- [race:NightElf night] Elune's light was on the leaves {at} when I left.
+- [race:Scourge] {where}. The living stared at me less than usual.
+- [race:Orc] I woke {at} with the old war songs in my head.
+- [race:Tauren] I gave thanks to the Earth Mother {at} before I set out.
+- [race:Troll] I woke {at} and asked the loa for a good hunt.
+- [race:Human] I wrote a letter home to {home} {at}, and did not send it.
+- [race:BloodElf] I woke {at} missing the spires of {home}.
+- [race:Draenei !night] I said the morning prayers {at}, as we did aboard the Exodar.
+- [class:MAGE] I read for an hour {at} before I could face the day.
+- [class:HUNTER] I checked my traps and snares {at}.
+- [class:ROGUE] I left {where} before anyone could ask my name.
+- [class:WARLOCK] My imp complained {at} from the moment I woke.
+- [class:PRIEST] I prayed {at} and felt {faith} answer, a little.
+- [class:DRUID !night] I slept in the trees above {where} and came down at first light.
+- [class:SHAMAN] I listened to the wind {at}. It had nothing to say, which is its own answer.
+- [class:WARRIOR] I woke {at} sore in every joint, and got up anyway.
+- [class:PALADIN] I knelt {at} and asked {faith} for a steady hand.

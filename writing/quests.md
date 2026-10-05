@@ -1,0 +1,17 @@
+---
+kind: quests
+---
+- I did what {giver} asked of me, and more: {quests}.
+- A few errands: {quests}.
+- I saw to {quests}.
+- {giver} kept me busy: {quests}.
+- Work found me: {quests}.
+- I took care of {quests}, and my purse was grateful.
+- I finished {quests}, one after the other.
+- My list of tasks grew shorter: {quests}.
+- I earned my keep: {quests}.
+- I helped where I could: {quests}.
+- {quests}. Small tasks, but the folk there were glad of them.
+- [hc] I finished {quests}, and each time I came back alive.
+- [class:WARRIOR] {quests}. Mostly hitting things, which suits me.
+- [class:MAGE] {quests}. Errands, mostly, but they paid for my books.

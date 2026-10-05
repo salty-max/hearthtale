@@ -6,9 +6,11 @@
 --     gold = copper,                        money gained (gains only)
 --     places = { { zone, sub, at } },       places seen for the first time
 --     quests = { { id, title, giver, at } },
---     kills = { [name] = { n, kind, first, elite } },   by creature (kind:
---                                           type or beast family; first: the
---                                           first of its kind for this character)
+--     kills = { [name] = { n, kind, first, elite, where } },   by creature
+--                                           (kind: type or beast family; first:
+--                                           the first of its kind for this
+--                                           character; elite: outside dungeons;
+--                                           where: the first one's place)
 --     rares = { { name, sub, zone, at, elite } },  rares and world bosses slain
 --     closeCalls = { { foe, hp, zone, sub, at, night } },
 --     company = { [name] = class },         who grouped with me
@@ -200,9 +202,11 @@ local function slain(guid, name)
   local u = units[guid] or { name = name }
   if not u.name then return end
   local c, l = char(), level()
+  local zone, sub = where()
   local k = l.kills[u.name]
   if not k then
-    k = { n = 0, kind = u.kind, elite = u.rank == "elite" or nil }
+    local inside = IsInInstance and IsInInstance()
+    k = { n = 0, kind = u.kind, elite = (u.rank == "elite" and not inside) or nil, where = sub or zone }
     l.kills[u.name] = k
     if u.kind and not c.kinds[u.kind] then
       c.kinds[u.kind] = true
@@ -211,7 +215,6 @@ local function slain(guid, name)
   end
   k.n = k.n + 1
   if u.rank == "rare" or u.rank == "rareelite" or u.rank == "worldboss" then
-    local zone, sub = where()
     table.insert(l.rares, { name = u.name, zone = zone, sub = sub, at = now(), elite = u.rank ~= "rare" or nil })
   end
   changed()

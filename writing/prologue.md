@@ -1,0 +1,19 @@
+---
+kind: prologue
+---
+- I should have started this journal long ago. I have done {quests} good turns already, and I'm writing this {at}.
+- I am no novice. I've done {quests} tasks for strangers, and I call {inn} home. This journal starts late, {at}.
+- I've been on the road for {played} of my life. I start writing now, {at}, because someone should remember.
+- I've lost count of the roads behind me. {quests} tasks, the people say. I start this journal {at}.
+- I meant to write all of this down from the beginning. I didn't. So this begins {at}, in the middle.
+- The story so far, in short: I left {home}, I took work, I lived. {quests} tasks done. The rest begins {at}.
+- {played} on the road, {quests} tasks done, and a room at {inn}. That's what I was, before this journal.
+- I start this journal {at}, with a lot behind me already: {quests} tasks, {played} of travel.
+- [hc] I've survived this long on a realm that forgives nothing. {quests} tasks, one life. I start writing {at}, in case it ends.
+- [hc] Every day I live here is borrowed. I start this journal {at}, so the days aren't lost when the debt comes due.
+- [race:Dwarf] My kin in {home} would want an account. Here it is, starting late, {at}.
+- [race:Scourge] I was dead once. I've decided to keep better records this time. This begins {at}.
+- [race:NightElf] My kind live long, and forget much. I begin this journal {at}.
+- [race:Gnome] I keep notes on everything else. Now, on myself. {at}, page one.
+- [race:Orc] I fought for the Horde long before I wrote about it. This begins {at}.
+- [race:Tauren] The elders say a story is only lost if no one tells it. I begin mine {at}.

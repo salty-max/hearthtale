@@ -1,0 +1,21 @@
+---
+kind: beginning
+---
+- This is where it begins: {where}, with nothing to my name but what I'm wearing.
+- I am new to the world, and the world is large. I start {at}.
+- They gave me a few coins and a pointed finger {at}. This journal is the rest.
+- I mean to write everything down, so that someone will know I was here. It begins {at}.
+- First page, first day, {at}. I have a lot to learn.
+- I begin {at}, with clean boots and no idea what I'm doing.
+- [hc] On this realm we live once. I begin {at}, and I mean to be careful.
+- [hc] One life, one book. This is the first page, written {at}.
+- [race:Dwarf] Ironforge is close, and my kin are closer. I begin {at}.
+- [race:Scourge] I woke in a grave and climbed out of it. I remember little of before. This is after, and it begins {at}.
+- [race:NightElf] I begin {at}, beneath the great tree, younger than most of my kin and eager to prove it.
+- [race:Orc] I was born in a camp, not a homeland. I begin {at}, for the Horde.
+- [race:Tauren] The plains are wide and the sky is wider. I begin {at}, and the Earth Mother walks with me.
+- [race:Troll] The Darkspear survive. So will I. I begin {at}.
+- [race:Human] Northshire is quiet, the kind of quiet that doesn't last. I begin {at}.
+- [race:Gnome] Gnomeregan is lost, but I am not. I begin {at}.
+- [race:BloodElf] Quel'Thalas still mourns. I begin {at}, hungry for something I cannot name.
+- [race:Draenei] We fell from the sky in a broken ship. I begin {at}, far from any home we had.

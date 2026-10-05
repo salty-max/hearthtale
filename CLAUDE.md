@@ -13,10 +13,31 @@ The plan and its decisions: PLAN.md.
   needs). Built by `scripts/build.ts` into `addon/WayfarersJournal/Data_Classic.lua`
   and `Data_Forever.lua` (one per game; `client:` tags keep a sentence to one).
 - `addon/WayfarersJournal/`: `Core.lua` (the character's record, events,
-  `/wayfarer`). The source TOC has an `@INTERFACE@` placeholder: not installable
-  as is; `scripts/package.ts` builds `dist/classic` and `dist/forever`.
+  `/wayfarer`), `Record.lua` (what each level holds, as it happens),
+  `Writer.lua` (the prose, written from the records when read: never stored).
+  The source TOC has an `@INTERFACE@` placeholder: not installable as is;
+  `scripts/package.ts` builds `dist/classic` and `dist/forever`.
 - `addon/test/sim.lua`: fake WoW API, a life replayed, every recording
-  asserted. `FOREVER=1` runs it as Forever.
+  asserted, its book written. `FOREVER=1` runs it as Forever.
+- `addon/test/writer.lua`: hundreds of imaginary lives (every race and class,
+  Hardcore or not, met mid-life), every chapter checked; every sentence must be
+  reachable, and none used twice within 8 chapters. `--sample` writes
+  `docs/sample.md` (a dwarf paladin's first twelve levels).
+
+## Writing the sentences
+
+- One kind per file; the slots of each kind are listed in `scripts/build.ts`
+  (KINDS), plus the voice: {home}, {kin}, {faith} (missing for some, so the
+  sentence is skipped), {weapon} (an object only: "fell to {weapon}", never
+  "{weapon} was").
+- A place is named, then "there" once, then left out: a sentence with {at} must
+  read well without it ("I put down {n} {foes} {at}."). Without a verb, use
+  {in}, which always names the place ("{foe} {in}.").
+- Tags are conditions: night, hc, high (level 40+), first, elite, lots, many,
+  slow, quick, race:X, class:X, faction:x, client:x; "!night" = not at night.
+  A tagged sentence is preferred while fresh, so voice lines come early.
+- After changing the writing: `bun run build`, then `bun run check` and read
+  `docs/sample.md` again.
 
 ## Commands
 

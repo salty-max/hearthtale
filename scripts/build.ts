@@ -10,10 +10,11 @@
  *   - [night hc] Night had fallen over {sub} when ...
  *   - [client:forever] ...
  *
- * A sentence's [tags] are the conditions it needs (all of them): the writer
- * gives each moment its tags (night, first, hc, race:Dwarf, class:PALADIN...).
- * Plain ASCII, like the siblings' content; {slots} are checked against the
- * kind's known slots once the writer exists.
+ * A sentence's [tags] are the conditions it needs (all of them; "!night" =
+ * not at night): the writer gives each moment its tags (night, first, hc,
+ * race:Dwarf, class:PALADIN...). Plain ASCII, like the siblings' content;
+ * {slots} must be the kind's (KINDS) or the voice's, every kind must exist.
+ * A sentence ends with . ! or ? (or a closing quote after one).
  *
  *   bun scripts/build.ts          write the data files
  *   bun scripts/build.ts --check  fail if one isn't up to date
@@ -28,6 +29,44 @@ const GAMES = CLIENTS.map((client) => ({ client, out: join(ROOT, `addon/Wayfarer
 const errors: string[] = [];
 const fail = (file: string, msg: string) => errors.push(`${file}: ${msg}`);
 const q = (s: string) => JSON.stringify(s);
+
+// Each kind and the slots the writer (Writer.lua) fills for it.
+const KINDS: Record<string, string[]> = {
+  beginning: ["where", "at", "in"],
+  opening: ["where", "at", "in"],
+  zone: ["zone"],
+  place: ["place", "zone"],
+  places: ["places", "zone"],
+  inn: ["inn"],
+  flight: ["from", "to"],
+  quest: ["quest", "giver"],
+  quests: ["quests", "giver"],
+  "quests-many": ["n", "quest", "giver"],
+  "first-kind": ["kind", "at", "in"],
+  kills: ["n", "foes", "at", "in"],
+  "kills-two": ["n1", "foes1", "n2", "foes2", "at", "in"],
+  elite: ["foe", "at", "in"],
+  rare: ["foe", "at", "in"],
+  "close-light": ["foe", "hp", "at", "in"],
+  "close-deep": ["foe", "hp", "at", "in"],
+  group: ["mates"],
+  dungeon: ["dungeon", "boss", "mates"],
+  trainer: ["spells"],
+  skill: ["skill", "rank"],
+  loot: ["item"],
+  closing: ["time", "gold"],
+  prologue: ["at", "in", "zone", "quests", "inn", "played"],
+};
+const VOICE = ["home", "kin", "faith", "weapon"];
+const TAGS = ["night", "hc", "high", "first", "elite", "lots", "many", "slow", "quick"];
+const RACES = ["Human", "Dwarf", "NightElf", "Gnome", "Draenei", "Orc", "Troll", "Tauren", "Scourge", "BloodElf"];
+const CLASSES = ["WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK", "DRUID"];
+const tagOk = (t: string) => {
+  const [k, v] = t.replace(/^!/, "").split(":");
+  if (v === undefined) return TAGS.includes(k);
+  return (k === "race" && RACES.includes(v)) || (k === "class" && CLASSES.includes(v)) ||
+    (k === "faction" && ["alliance", "horde"].includes(v)) || (k === "client" && CLIENTS.includes(v));
+};
 
 type Sentence = { text: string; tags: string[] };
 const kinds = new Map<string, Sentence[]>();
@@ -46,11 +85,19 @@ for (const f of existsSync(WRITING) ? readdirSync(WRITING).sort() : []) {
   for (const line of m[2].split("\n")) {
     const s = line.match(/^- (?:\[([^\]]*)\]\s*)?(.+)$/);
     if (!s) continue;
-    sentences.push({ text: s[2].trim(), tags: (s[1] ?? "").split(/\s+/).filter(Boolean) });
+    const sentence = { text: s[2].trim(), tags: (s[1] ?? "").split(/\s+/).filter(Boolean) };
+    for (const t of sentence.tags) if (!tagOk(t)) fail(file, `unknown tag [${t}]: ${sentence.text}`);
+    for (const [, slot] of sentence.text.matchAll(/\{([^}]*)\}/g))
+      if (!(KINDS[kind] ?? []).includes(slot) && !VOICE.includes(slot)) fail(file, `{${slot}} is not a slot of ${kind}: ${sentence.text}`);
+    if (!/[.!?]"?$/.test(sentence.text)) fail(file, `no full stop: ${sentence.text}`);
+    if (sentences.some((o) => o.text === sentence.text)) fail(file, `twice: ${sentence.text}`);
+    sentences.push(sentence);
   }
   if (!sentences.length) fail(file, "no sentence");
+  if (!KINDS[kind]) fail(file, `unknown kind ${kind}`);
   kinds.set(kind, sentences);
 }
+for (const kind of Object.keys(KINDS)) if (!kinds.has(kind)) errors.push(`writing/${kind}.md: missing`);
 if (errors.length) {
   console.error(errors.join("\n"));
   process.exit(1);

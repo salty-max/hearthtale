@@ -1,0 +1,17 @@
+---
+kind: group
+---
+- I travelled with {mates} for a while.
+- {mates} and I made a good team.
+- I fell in with {mates}.
+- I wasn't alone this time: {mates} walked with me.
+- {mates} shared the road and the work with me.
+- I fought beside {mates}. Good company.
+- I found company: {mates}.
+- For a while I had friends on the road: {mates}.
+- I joined up with {mates} and we made short work of it.
+- {mates} and I split the work and the loot fairly.
+- [hc] I grouped with {mates}. More eyes, fewer graves.
+- [class:PRIEST] I kept {mates} on their feet.
+- [class:WARRIOR] I took the blows so {mates} didn't have to.
+- [class:PALADIN] I watched over {mates}, as a paladin should.

@@ -1,0 +1,18 @@
+---
+kind: rare
+---
+- {foe} fell to me {at}. I kept a trophy, and I keep thinking about it.
+- I brought down {foe} {at}. The hunters will want to hear it.
+- {foe}. I won't pretend it was easy; I'll only say it was me who walked away.
+- {at} I found {foe}, or {foe} found me. Only one of us left.
+- I'd heard the name {foe} at every campfire. {at} I ended it.
+- {foe}, {in}. A rare foe, and a rarer chance.
+- Luck put {foe} in my path {at}. I did the rest with {weapon}.
+- I killed {foe} {at}. Not many can say that.
+- {foe} {in}: the talk of the road, until we met.
+- I tracked {foe} {at} for an afternoon, and it was worth it.
+- [elite] {foe} {in}. It should have killed me. It didn't.
+- [elite] I fought {foe} {at}, the hardest fight of my life so far.
+- [hc] {foe} {in}. On this realm, glory is a poor reason to die. I took the fight anyway, and I'm here to write it.
+- [class:HUNTER] I'd tracked {foe} for days. It ended {at}.
+- [class:ROGUE] {foe} {in}. I went through what it left behind, carefully.

@@ -1,0 +1,20 @@
+---
+kind: close-deep
+---
+- It came down to a breath {at}. {foe} had me at {hp}%, and I don't know how I stood up after.
+- {foe} nearly ended me {at}: {hp}% of my life left, and my hands shaking after.
+- {hp}% {in}. I have never been closer.
+- I saw the end {at}. {foe} had me at {hp}%, and then it didn't.
+- I don't remember the last of the fight {at}. I remember {hp}%, and the sky.
+- One more blow {at} and this journal would have ended. {hp}%.
+- {at} I lay in the dirt with {hp}% of my life left, and listened to my heart.
+- {foe} {in}. {hp}%. I'm writing this with a shaking hand.
+- [night] It was dark {at}. {foe} came out of it, and left me with {hp}%. I didn't sleep.
+- [hc] It came down to a breath {at}. {foe} had me at {hp}%, and on this realm there are no second chances. I didn't need one, this time.
+- [hc] {foe} nearly ended me {at}: {hp}% of my life left. I sat down and stayed there a long time.
+- [hc] {hp}% {in}. Somewhere a grave was dug for me, and I walked past it.
+- [hc high] {hp}% {in}. All those years on the road, nearly gone in one fight. I'll be more careful. I say that every time.
+- [class:PALADIN] {hp}% {in}, and I hid behind {faith} like a coward. I'd do it again.
+- [class:PRIEST] {hp}% {in}. {faith} heard me, just in time.
+- [class:SHAMAN] {hp}% {in}. The spirits held me up when my legs would not.
+- [class:WARRIOR] {hp}% {in}. I fought on because there was nothing else to do.

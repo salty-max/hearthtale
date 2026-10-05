@@ -1,0 +1,21 @@
+---
+kind: close-light
+---
+- {foe} took me down to {hp}% {at}. Too close.
+- I let {foe} get the better of me {at}, down to {hp}%. Careless. I won't be again.
+- {at} I misjudged {foe} and paid for it: {hp}% of my life left.
+- I came out of a fight with {foe} {at} with {hp}% left and a lesson learned.
+- A bad moment {at}: {hp}% and falling. I got up again.
+- I ran from {foe} {at} with {hp}% of my blood still in me. No shame in it.
+- {at} things went wrong, and I was down to {hp}% before I knew it.
+- Too close {in}. {hp}%.
+- I bandaged myself {at} for a long time after that one: {hp}%.
+- [night] It was dark {at}, and {foe} saw me before I saw it. {hp}% left.
+- [night] A night fight {at}, {hp}% left at the end, and no sleep after.
+- [hc] {foe} had me at {hp}% {at}. On this realm that is one bad roll from the end.
+- [class:PRIEST] I healed myself up from {hp}% {at}, with {foe} still swinging.
+- [class:PALADIN] Down to {hp}% {at}. I called on {faith} and it answered.
+- [class:MAGE] {foe} got through my frost {at}. {hp}% left when I got away.
+- [class:ROGUE] {hp}% {in}. I slipped away and caught my breath in a ditch.
+- [class:HUNTER] {foe} got past my pet {at}. {hp}% left, and I owe the beast a meal.
+- [class:WARLOCK] {hp}% {in}. I drained what I needed out of {foe} and lived.

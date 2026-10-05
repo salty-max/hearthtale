@@ -1,0 +1,18 @@
+---
+kind: quest
+---
+- I did what {giver} asked of me: {quest}.
+- {giver} had work for me: {quest}. Done.
+- I saw to {quest}, for {giver}.
+- One task this time: {quest}.
+- I finished {quest} and took my reward.
+- {quest}: done, and paid for.
+- I put my name to {quest}, and kept my word.
+- {giver} set me on {quest}. I saw it through.
+- The only work I took was {quest}.
+- I gave {giver} what they asked for: {quest}.
+- I spent my effort on {quest}, and it was worth it.
+- {quest}, for {giver}, and a thank-you I'll remember.
+- [hc] I saw {quest} through. Nobody died, least of all me.
+- [class:PALADIN] {giver} asked for help with {quest}. A paladin doesn't say no.
+- [class:ROGUE] {quest}, for {giver}. I didn't ask questions; neither did they.
