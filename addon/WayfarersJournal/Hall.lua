@@ -1,0 +1,114 @@
+-- The Hall of the Fallen (account-wide, WayfarersJournalHall.lives[guid]):
+-- the closed books of Hardcore characters, kept whole. What is kept is their
+-- records (the text is written when read, as any journal's), with their realm
+-- and the game's names of their race and class. A Hardcore death closes the
+-- book: a chat line with a link to it, and the game's toast (the one of "New
+-- Recipe Learned"), the character's portrait in it; a click opens the Hall.
+local _, ns = ...
+
+local function hall()
+  if type(WayfarersJournalHall) ~= "table" then WayfarersJournalHall = {} end
+  WayfarersJournalHall.lives = WayfarersJournalHall.lives or {}
+  return WayfarersJournalHall.lives
+end
+
+local function copy(t)
+  if type(t) ~= "table" then return t end
+  local out = {}
+  for k, v in pairs(t) do out[k] = copy(v) end
+  return out
+end
+
+-- The fallen, the most recent first.
+function ns.fallen()
+  local list = {}
+  for _, life in pairs(hall()) do table.insert(list, life) end
+  table.sort(list, function(a, b)
+    local x, y = a.death and a.death.at or 0, b.death and b.death.at or 0
+    if x ~= y then return x > y end
+    return (a.name or "") < (b.name or "")
+  end)
+  return list
+end
+function ns.fallenLife(guid) return hall()[guid] end
+
+-- The book joins the Hall: a copy of the records as they were at the end.
+local function enshrine(c)
+  local life = copy(c)
+  life.pending = nil
+  life.realm = GetRealmName and GetRealmName() or nil
+  life.raceName, life.className = UnitRace("player"), UnitClass("player")
+  hall()[c.guid] = life
+  return life
+end
+
+-- ── the toast ────────────────────────────────────────────────────────────────
+local TOAST = "NewRecipeLearnedAlertFrameTemplate"
+local toasts
+
+local function onToastClick(self, button, down)
+  if AlertFrame_OnClick and AlertFrame_OnClick(self, button, down) then return end -- right-click: dismissed
+  if self.wayfarerLife then ns.openHall(self.wayfarerLife) end
+end
+
+local function setUp(frame, guid)
+  local life = hall()[guid]
+  if not life then return end
+  frame.wayfarerLife = guid
+  -- Round, as the window's portrait: a mask texture (Texture:SetMask, the
+  -- recipe toast's own way, forbids changing the crop afterwards on Forever).
+  if not frame.wayfarerMask and frame.CreateMaskTexture then
+    frame.wayfarerMask = frame:CreateMaskTexture()
+    frame.wayfarerMask:SetTexture("Interface\\CharacterFrame\\TempPortraitAlphaMask", "CLAMPTOBLACKADDITIVE", "CLAMPTOBLACKADDITIVE")
+    frame.wayfarerMask:SetAllPoints(frame.Icon)
+    frame.Icon:AddMaskTexture(frame.wayfarerMask)
+  end
+  if SetPortraitTexture then SetPortraitTexture(frame.Icon, "player") end
+  frame.Title:SetText("The book is closed")
+  frame.Name:SetText(life.name or "")
+  if AlertFrame_SetDuration then AlertFrame_SetDuration(frame, 20) end
+  frame:SetScript("OnClick", onToastClick)
+end
+
+local function toast(guid)
+  if not toasts then
+    if not (AlertFrame and AlertFrame.AddQueuedAlertFrameSubSystem and C_XMLUtil and C_XMLUtil.GetTemplateInfo) then return end
+    if not C_XMLUtil.GetTemplateInfo(TOAST) then return end
+    toasts = AlertFrame:AddQueuedAlertFrameSubSystem(TOAST, setUp, 2, 6)
+  end
+  toasts:AddAlert(guid)
+end
+
+-- ── a Hardcore death ─────────────────────────────────────────────────────────
+local function link(guid, text) return ("|cffc9a227|Hwayfarer:hall:%s|h[%s]|h|r"):format(guid, text) end
+
+ns.onDeath = function()
+  local c = ns.journal()
+  if not (c and c.hardcore and c.guid) then return end
+  enshrine(c)
+  print(ns.PREFIX .. ("The journal of %s is closed. It rests in the %s."):format(c.name or "?", link(c.guid, "Hall of the Fallen")))
+  toast(c.guid)
+  if ns.onHall then ns.onHall() end
+end
+
+-- A closed book missing from the Hall (the account's saved data lost, or the
+-- death came with the addon off): it joins it at login.
+ns.onLogin = function(c)
+  if c.closed and c.guid and not hall()[c.guid] then enshrine(c) end
+end
+
+-- Links in chat (|Hwayfarer:hall:<guid>|h[...]|h): the game hands links of an
+-- unknown type to the handler registered for it.
+local function followLink(link)
+  local guid = link:match("^wayfarer:hall:(.+)$")
+  if guid then ns.openHall(guid) end
+end
+if LinkUtil and LinkUtil.RegisterLinkHandler then
+  LinkUtil.RegisterLinkHandler("wayfarer", function(link)
+    followLink(link)
+    return LinkProcessorResponse and LinkProcessorResponse.Handled
+  end)
+elseif hooksecurefunc and SetItemRef then
+  -- Clients without the link registry still pass every click to SetItemRef.
+  hooksecurefunc("SetItemRef", function(link) followLink(link) end)
+end

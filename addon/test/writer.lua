@@ -77,10 +77,24 @@ local COMBOS = {
   Scourge = { "WARRIOR", "ROGUE", "PRIEST", "MAGE", "WARLOCK" }, BloodElf = { "PALADIN", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK" },
 }
 
+local CAUSES = { "foe", "foe", "foe", "foe", "fall", "drowning", "lava", "nature" }
+local KINDS = { "Wolf", "Humanoid", "Undead", "Beast", "Boar", "Elemental", nil }
+local RANKS = { "normal", "normal", "elite", "rare", "worldboss" }
+local function death(n, zone, sub)
+  local cause = one(CAUSES)
+  local d = { level = n, zone = zone, sub = chance(0.8) and sub or nil, cause = cause }
+  if cause == "foe" then
+    if chance(0.15) then d.player, d.foe = true, one(MATES)
+    else d.foe, d.kind, d.rank = chance(0.7) and one(CREATURES)[1] or nil, one(KINDS), one(RANKS) end
+    d.inside = chance(0.15) or nil
+  end
+  return d
+end
+
 local guid = 0
 local function life(race, class, hc, from, to)
   guid = guid + 1
-  local c = { guid = ("Player-1-%08X"):format(guid), race = race, class = class, hardcore = hc or nil, began = { level = from }, levels = {} }
+  local c = { guid = ("Player-1-%08X"):format(guid), name = one({ "Sealinedion", "Brannor", "Kelsa", "Thrudd", "Ylena", "Morgrim" }), race = race, class = class, hardcore = hc or nil, began = { level = from }, levels = {} }
   if from > 1 then
     c.prologue = { level = from, quests = chance(0.9) and rand(5, 200) or 0, inn = one({ "Goldshire", "Kharanos", "Brill", nil }),
       zone = one(ZONES)[1], played = chance(0.6) and rand(3000, 400000) or nil }
@@ -137,11 +151,20 @@ local function life(race, class, hc, from, to)
     if chance(0.2) then table.insert(l.skills, { name = one(SKILLS), rank = one({ 50, 75, 100, 150, 200, 225, 250, 300 }) }) end
     if chance(0.35) then l.loot = { link = "|cff1eff00|Hitem:1|h[" .. one(ITEMS) .. "]|h|r", quality = 2 } end
     if chance(0.1) then l.inn = { place = one(zone[2]) } end
+    if not hc and chance(0.1) then l.deaths = { death(n, zone[1], sub) } end
     if chance(0.15) then
       local a = rand(#NODES)
       table.insert(l.flights, { from = NODES[a], to = NODES[a % #NODES + 1] })
     end
     c.levels[n] = l
+  end
+  c.visited = {}
+  for _, z in ipairs(ZONES) do if chance(0.3) then c.visited[z[1] .. "|"] = true end end
+  -- Most Hardcore lives here end: the last level's death closes the book.
+  if hc and chance(0.7) then
+    c.death = death(to, zone[1], sub)
+    c.levels[to].deaths = { c.death }
+    c.closed = true
   end
   return c
 end
@@ -237,24 +260,44 @@ local function inspect(where, text)
     { ",%.", "a comma before a full stop" }, { "there there", "there there" }, 
     { "%f[%a]in in%f[%A]", "in in" }, { "%f[%a]in there%f[%A]", "in there" }, { "%f[%a]a a%f[%A]", "a a" }, { "%f[%a]the the%f[%A]", "the the" },
     { "%f[%a]there%f[%A][^%.!%?]*%f[%a]there%f[%A]", "there twice in a sentence" }, { " ;", "a space before a semicolon" },
-    { "[;:] *[%.!%?]", "nothing after a colon" }, { "^%l", "a lowercase start" },
+    { "[;:] *[%.!%?]", "nothing after a colon" },
+    { "^%l", "a lowercase start" },
     { "[%.!%?]\"? +%l", "a sentence starting in lowercase" }, { "[^%.!%?\"]$", "no full stop at the end" },
     { "\n%l", "a paragraph starting in lowercase" }, { "\n\n\n", "an empty paragraph" }, { "[^%.!%?\"\n]\n", "a paragraph without a full stop" },
   }
   for _, c in ipairs(checks) do
     if text:find(c[1]) then problem(where, c[2], text) end
   end
+  -- A count of one before a plural ("one tasks"), but not "twenty-one tasks"
+  -- or "a hundred and one tasks".
+  for at, noun in text:gmatch("()[Oo]ne (%a+)") do
+    local before = text:sub(math.max(1, at - 4), at - 1)
+    local plural = ({ tasks = 1, foes = 1, lands = 1, good = 1, errands = 1, jobs = 1, quests = 1 })[noun]
+    if plural and not before:find("%a$") and not before:find("%-$") and not before:find("and $") then
+      problem(where, "one, then a plural", text)
+    end
+  end
 end
 
 local runs = 0
-for _, round in ipairs({ { 1, 12 }, { 1, 60 }, { 18, 41 }, { 38, 60 }, { 1, 30 } }) do
+for _, round in ipairs({ { 1, 12 }, { 1, 60 }, { 18, 41 }, { 38, 60 }, { 1, 30 }, { 1, 7 } }) do
   for race, classes in pairs(COMBOS) do
     for _, class in ipairs(classes) do
       for _, hc in ipairs({ true, false }) do
         runs = runs + 1
-        local book = ns.writeBook(life(race, class, hc, round[1], round[2]))
+        local c = life(race, class, hc, round[1], round[2])
+        local book = ns.writeBook(c)
+        if (c.death ~= nil) ~= (book.epitaph ~= nil) then problem(race .. " " .. class, "a Hardcore death without an epitaph, or the reverse", "") end
+        for _, l in pairs(c.levels) do
+          if hc and l.deaths and #l.deaths > 0 then
+            for _, ch in ipairs(book.chapters) do
+              if ch.text and ch.text:find("I died", 1, true) then problem(race .. " " .. class, "a Hardcore death told in the first person", ch.text) end
+            end
+          end
+        end
         books = books + 1
         inspect(race .. " " .. class .. " prologue", book.prologue)
+        inspect(race .. " " .. class .. " epitaph", book.epitaph)
         if round[1] > 1 and not book.prologue then problem(race .. " " .. class, "no prologue", "") end
         for _, ch in ipairs(book.chapters) do
           chapters = chapters + 1
@@ -263,6 +306,24 @@ for _, round in ipairs({ { 1, 12 }, { 1, 60 }, { 18, 41 }, { 38, 60 }, { 1, 30 }
         end
         repeats = repeats + book.repeats
         if book.minGap and (not gaps[book.minGapKind] or book.minGap < gaps[book.minGapKind]) then gaps[book.minGapKind] = book.minGap end
+      end
+    end
+  end
+end
+
+-- Deaths of every sort: closed Hardcore lives at levels low, middling and high,
+-- the foe known or not, the place known or not.
+for race, classes in pairs(COMBOS) do
+  for _, class in ipairs(classes) do
+    for _, level in ipairs({ 5, 20, 45 }) do
+      for _ = 1, 4 do
+        local c = life(race, class, true, level, level)
+        c.death = death(level, "Loch Modan", chance(0.5) and "Thelsamar" or nil)
+        if chance(0.2) then c.death.zone, c.death.sub = nil, nil end
+        c.levels[level].deaths, c.closed = { c.death }, true
+        local book = ns.writeBook(c)
+        if not book.epitaph then problem(race .. " " .. class, "a Hardcore death without an epitaph", "") end
+        inspect(race .. " " .. class .. " epitaph", book.epitaph)
       end
     end
   end

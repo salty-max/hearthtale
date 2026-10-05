@@ -91,6 +91,28 @@ local KINDS = {
   Giant = "giants", Mechanical = "constructs",
 }
 local SKIP = { Critter = true, ["Non-combat Pet"] = true, Totem = true, ["Not specified"] = true, ["Gas Cloud"] = true }
+-- Creature types that are not beasts (a beast's kind is "Beast" or its family).
+local NOT_BEAST = { Humanoid = true, Undead = true, Elemental = true, Demon = true, Dragonkin = true, Giant = true,
+  Mechanical = true, Critter = true, Aberration = true }
+
+-- What killed me, as tags and the {foe} slot: a player by name, a rare or a
+-- boss by name, any other creature with an article.
+local function deathTags(d)
+  local t = { [d.cause or "foe"] = true }
+  if d.cause == "foe" then
+    if d.player then t.player = true
+    elseif d.kind == "Humanoid" then t.people = true
+    elseif d.kind and not NOT_BEAST[d.kind] then t.beast = true end
+    if d.rank == "elite" or d.rank == "rareelite" or d.rank == "worldboss" then t.elite = true end
+  end
+  if d.inside then t.inside = true end
+  return t
+end
+local function deathFoe(d, article)
+  if not d.foe then return nil end
+  if d.player or d.inside or d.rank == "rare" or d.rank == "rareelite" or d.rank == "worldboss" then return d.foe end
+  return article(d.foe)
+end
 
 local function playedWords(s)
   if not s or s < 60 then return nil end
@@ -193,8 +215,9 @@ end
 
 -- One sentence of a kind for a moment: key makes the choice stable, values
 -- fill the slots (_place: the place {at}, {in} or {where} names), tags add to
--- the character's.
-function Book:say(kind, key, values, tags)
+-- the character's. prefer: tags to favour (a fresh sentence with one of them
+-- wins over the rest).
+function Book:say(kind, key, values, tags, prefer)
   local list = ns.data.writing[kind]
   if not list then return end
   local ctx = setmetatable(tags or {}, { __index = self.base })
@@ -219,6 +242,15 @@ function Book:say(kind, key, values, tags)
     values["in"] = named
   end
   if #all == 0 then return end
+  if prefer then
+    local favoured = {}
+    for _, i in ipairs(fresh) do
+      for _, t in ipairs(list[i].tags or {}) do
+        if prefer[t] then table.insert(favoured, i) break end
+      end
+    end
+    if #favoured > 0 then fresh, voiced = favoured, {} end
+  end
   -- the lowest bit chooses between the voiced and the rest, the others which
   local h = hash(self.seed .. "|" .. kind .. "|" .. key)
   local pick = floor(h / 2)
@@ -388,6 +420,14 @@ function Book:chapter(n, l)
       self:here({ foe = article(cc.foe), hp = tostring(cc.hp) }, place), tags({ night = cc.night or false }))
   end
 
+  -- Deaths (not on Hardcore: the epitaph tells that one).
+  if not c.hardcore then
+    for i, d in ipairs(l.deaths or {}) do
+      if i > 2 then break end
+      say("died", "died" .. i, self:here({ foe = deathFoe(d, article) }, d.sub or d.zone), deathTags(d))
+    end
+  end
+
   -- Company.
   part = 3
   local mates = {}
@@ -444,12 +484,55 @@ end
 function Book:prologue(p)
   local zone = p.zone
   return self:say("prologue", "prologue", self:here({
-    zone = mid(zone), quests = (p.quests or 0) > 0 and words(p.quests) or nil,
+    zone = mid(zone), quests = (p.quests or 0) > 1 and words(p.quests) or nil,
     inn = mid(p.inn), played = playedWords(p.played),
   }, zone), {})
 end
 
--- The whole book: { prologue = text, chapters = { { level, text, place, rare, close } },
+-- The epitaph of a Hardcore life, in the third person: how it ended (a line
+-- telling the cause wins), what it was (its totals, a rare, a dungeon), and a
+-- farewell (often in the voice of its race or class).
+local RACE = { Human = "human", Dwarf = "dwarf", NightElf = "night elf", Gnome = "gnome", Draenei = "draenei",
+  Orc = "orc", Troll = "troll", Tauren = "tauren", Scourge = "Forsaken", BloodElf = "blood elf" }
+function Book:epitaph(c)
+  local d = c.death or {}
+  local race, class = RACE[c.race] or "", (c.class or ""):lower()
+  local who = (race .. " " .. class):gsub("^ +", ""):gsub(" +$", "")
+  who = who ~= "" and ((who:match("^[aeiou]") and "an " or "a ") .. who) or nil
+  self.last = nil
+  local tags = deathTags(d)
+  tags.low = (d.level or 0) <= 10 or nil
+  tags.high = (d.level or 0) >= 40 or nil
+  local place = d.sub or d.zone
+  -- the line that tells how it ended wins (a copy: say() gives its tags the
+  -- character's, race and class, which are not a cause)
+  local cause = deathTags(d)
+  cause.low, cause.high = tags.low, tags.high -- a short life or a long one says how it ended too
+  local first = self:say("epitaph", "epitaph", self:here({ name = c.name, who = who, level = words(d.level or 0),
+    zone = mid(d.zone), foe = deathFoe(d, article) }, place), tags, cause)
+
+  local quests, kills, played, rare, dungeon, zones = 0, 0, 0, nil, nil, 0
+  for _, l in pairs(c.levels or {}) do
+    quests = quests + #(l.quests or {})
+    played = played + (l.played or 0)
+    for _, k in pairs(l.kills or {}) do if not SKIP[k.kind or ""] then kills = kills + k.n end end
+    for _, r in ipairs(l.rares or {}) do rare = rare or r.name end
+    for _, dg in ipairs(l.dungeons or {}) do dungeon = dungeon or dg.name end
+  end
+  for key in pairs(c.visited or {}) do if key:sub(-1) == "|" then zones = zones + 1 end end
+  local second = self:say("remembrance", "remembrance", {
+    name = c.name, played = playedWords(played), quests = quests > 1 and words(quests) or nil, -- "one tasks": no
+    kills = kills > 1 and words(kills) or nil, rare = rare, dungeon = mid(dungeon), zones = zones > 1 and words(zones) or nil,
+  }, { low = tags.low, high = tags.high, inside = tags.inside })
+  local third = self:say("farewell", "farewell", { name = c.name }, {})
+  if not first then return nil end
+  local parts = { first }
+  if second then table.insert(parts, second) end
+  if third then table.insert(parts, third) end
+  return table.concat(parts, " ")
+end
+
+-- The whole book: { prologue = text, chapters = { { level, text, place, rare, close } }, epitaph,
 -- repeats, minGap } (minGap: the fewest chapters between two uses of a sentence)
 function ns.writeBook(c)
   local b = newBook(c)
@@ -467,6 +550,7 @@ function ns.writeBook(c)
       rare = (l.rares and #l.rares > 0) or nil, close = (l.closeCalls and #l.closeCalls > 0) or nil,
     })
   end
+  if c.hardcore and c.death then book.epitaph = b:epitaph(c) end
   book.repeats, book.minGap, book.minGapKind = b.repeats, b.minGap, b.minGapKind
   return book
 end

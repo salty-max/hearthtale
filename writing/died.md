@@ -1,0 +1,23 @@
+---
+kind: died
+---
+- [foe] {foe} killed me {at}. I walked back from the graveyard as a ghost, which is a humbling way to travel.
+- [foe] I died {at}, at the hands of {foe}. The spirit healer didn't ask how.
+- [foe] {foe} put me in the ground {at}. I didn't stay there.
+- [foe] I lost a fight with {foe} {at}, and my life with it. For a while.
+- [foe] I was killed by {foe}. My pride took longer to come back than I did.
+- [player] {foe} killed me {at}. Another adventurer, and no friend of mine.
+- [fall] I fell to my death {at}. I'd like to say I was pushed.
+- [fall] I misjudged a ledge {at}. The ground did not.
+- [drowning] I drowned {at}. I am not built for water, as it turns out.
+- [lava] I walked into fire {at}. Don't ask.
+- [nature] I died {at}, and no foe did it. The world itself did.
+- I died {at}. I came back. Not everyone gets to say that.
+- I died {at}, and woke among the ghosts. The walk back was long and cold.
+- [race:Scourge] I died {at}. Again. It gets less interesting each time.
+- I died {at}. The graveyard was colder than the fight.
+- I came to my senses as a ghost {at}, and started the long walk back to my body.
+- {at} I died, and learned what the far side of the world looks like. Grey, mostly.
+- [foe] {foe} had the better of me {at}. I'll not forget the face.
+- [foe] I fell to {foe} {at}, and rose again, poorer and wiser.
+- I died {at}. The armourer was the only one glad of it.

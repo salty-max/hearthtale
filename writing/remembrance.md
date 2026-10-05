@@ -1,0 +1,17 @@
+---
+kind: remembrance
+---
+- A life of {quests} good turns, and {kills} foes fought along the way.
+- In {played} of life, {quests} tasks done for strangers.
+- Among the deeds: {rare}, brought down. Few can claim as much.
+- Once, a walk out of {dungeon}, alive. Remember that.
+- {zones} lands seen, and {quests} tasks done in them.
+- Remember {rare}, and {quests} good turns.
+- {played} on the road. {quests} tasks done. {kills} foes fallen. Then this.
+- {played} lived on this realm, and lived well.
+- The campfires will tell of {rare} yet.
+- [!inside] {dungeon} was survived. Something smaller was not.
+- Careful for {played}. One moment was enough.
+- {kills} foes fell, before one finally didn't.
+- [low] Only the beginning: {quests} tasks, {kills} foes.
+- [high] {zones} lands seen, {quests} tasks done. Few get so far.

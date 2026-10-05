@@ -20,10 +20,18 @@
 --     loot = { link, quality, level },      the best item of the level
 --     inn = { place, at },                  a new hearthstone bind
 --     flights = { { from, to, at } },
+--     deaths = { death },                   (as below) every death at the level
 --   }
 --   visited[zone|sub], kinds[kind] = true   the character's firsts, life-long
---   death = { at, level, zone, sub, foe, cause }   the last one (Hardcore: the end)
+--   death = { at, level, zone, sub, foe, cause, player, kind, rank, inside }
+--                                           the last one (cause: foe, fall,
+--                                           drowning, lava, nature; player: a
+--                                           player's hand; kind, rank: the
+--                                           creature's, when it was met; inside:
+--                                           in a dungeon)
 --   hardcore = true                         a Hardcore character
+--   closed = true                           a Hardcore death: the book is closed,
+--                                           nothing more is recorded (Core.lua)
 --   race, class, name, sex                  who I am (voice tokens)
 --   prologue = { level, quests, inn, zone, gold, played }   a character met
 --                                           mid-life: what the game knew then
@@ -56,7 +64,7 @@ local function level(n)
     local zone, sub = where()
     l = { start = { at = now(), zone = zone, sub = sub, night = night() }, played = 0, gold = 0,
       places = {}, quests = {}, kills = {}, rares = {}, closeCalls = {}, company = {}, dungeons = {},
-      learned = {}, skills = {}, flights = {} }
+      learned = {}, skills = {}, flights = {}, deaths = {} }
     c.levels[n] = l
   end
   return l
@@ -233,7 +241,7 @@ if not ns.forever then
       local kind = select(12, CombatLogGetCurrentEventInfo())
       lastHit = { env = kind, at = now() }
     elseif dest == me and sourceName and sub:find("_DAMAGE$") then
-      lastHit = { name = sourceName, at = now() }
+      lastHit = { name = sourceName, guid = source, at = now() }
     end
   end)
 else
@@ -253,10 +261,13 @@ end
 
 -- ── close calls ──────────────────────────────────────────────────────────────
 -- Under a tenth of my health, and alive five seconds later; one a minute.
-local function foe()
-  if lastHit and now() - lastHit.at <= 10 and lastHit.name then return lastHit.name end
-  local name = UnitExists("target") and not UnitIsPlayer("target") and UnitName("target")
-  if name and not secret(name) then return name end
+-- The foe: the last to hit me (Classic), else my target. players: a player
+-- counts (a death; a close call is a creature's).
+local function foe(players)
+  if lastHit and now() - lastHit.at <= 10 and lastHit.name then return lastHit.name, lastHit.guid end
+  if not UnitExists("target") or (UnitIsPlayer("target") and not players) then return end
+  local name, guid = UnitName("target"), UnitGUID("target")
+  if name and not secret(name) then return name, not secret(guid) and guid or nil end
 end
 local pending, lastClose = false, 0
 ns.on("UNIT_HEALTH", function(unit)
@@ -380,7 +391,17 @@ ns.on("PLAYER_DEAD", function()
   if lastHit and now() - lastHit.at <= 10 and lastHit.env then
     cause = (lastHit.env == "FALLING" and "fall") or (lastHit.env == "DROWNING" and "drowning") or (lastHit.env == "LAVA" and "lava") or "nature"
   end
-  c.death = { at = now(), level = UnitLevel("player"), zone = zone, sub = sub, foe = cause == "foe" and foe() or nil, cause = cause }
-  if ns.onDeath then ns.onDeath(c.death) end
+  local name, guid
+  if cause == "foe" then name, guid = foe(true) end
+  local u = guid and units[guid]
+  local d = { at = now(), level = UnitLevel("player"), zone = zone, sub = sub, foe = name, cause = cause,
+    player = (guid and guid:find("^Player")) and true or nil, kind = u and u.kind, rank = u and u.rank,
+    inside = (IsInInstance and IsInInstance()) or nil }
+  local l = level()
+  l.deaths = l.deaths or {}
+  table.insert(l.deaths, d)
+  c.death = d
+  if c.hardcore then c.closed = true end
+  if ns.onDeath then ns.onDeath(d) end
   changed()
 end)

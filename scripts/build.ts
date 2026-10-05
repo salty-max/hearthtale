@@ -56,9 +56,14 @@ const KINDS: Record<string, string[]> = {
   loot: ["item"],
   closing: ["time", "gold"],
   prologue: ["at", "in", "zone", "quests", "inn", "played"],
+  died: ["foe", "at", "in"],
+  epitaph: ["name", "who", "level", "in", "at", "zone", "foe"],
+  remembrance: ["name", "played", "quests", "kills", "rare", "dungeon", "zones"],
+  farewell: ["name"],
 };
 const VOICE = ["home", "kin", "faith", "weapon"];
-const TAGS = ["night", "hc", "high", "first", "elite", "lots", "many", "slow", "quick"];
+const TAGS = ["night", "hc", "high", "low", "first", "elite", "lots", "many", "slow", "quick",
+  "foe", "fall", "drowning", "lava", "nature", "beast", "people", "player", "inside"];
 const RACES = ["Human", "Dwarf", "NightElf", "Gnome", "Draenei", "Orc", "Troll", "Tauren", "Scourge", "BloodElf"];
 const CLASSES = ["WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK", "DRUID"];
 const tagOk = (t: string) => {

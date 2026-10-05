@@ -15,7 +15,9 @@ The plan and its decisions: PLAN.md.
 - `addon/WayfarersJournal/`: `Core.lua` (the character's record, events,
   `/wayfarer`), `Record.lua` (what each level holds, as it happens),
   `Writer.lua` (the prose, written from the records when read: never stored),
-  `Book.lua` (the window: chapters on the left, the open one on the right).
+  `Book.lua` (the window: chapters on the left, the open one on the right; a
+  second tab for the Hall of the Fallen), `Hall.lua` (a Hardcore death: the
+  book closed and copied to the account-wide Hall, a chat line, the toast).
   The source TOC has an `@INTERFACE@` placeholder: not installable as is;
   `scripts/package.ts` builds `dist/classic` and `dist/forever`.
 - `addon/test/sim.lua`: fake WoW API, a life replayed, every recording
@@ -34,9 +36,14 @@ The plan and its decisions: PLAN.md.
 - A place is named, then "there" once, then left out: a sentence with {at} must
   read well without it ("I put down {n} {foes} {at}."). Without a verb, use
   {in}, which always names the place ("{foe} {in}.").
-- Tags are conditions: night, hc, high (level 40+), first, elite, lots, many,
-  slow, quick, race:X, class:X, faction:x, client:x; "!night" = not at night.
-  A tagged sentence is preferred while fresh, so voice lines come early.
+- Tags are conditions: night, hc, high (level 40+), low (10 and under), first,
+  elite, lots, many, slow, quick; for a death: foe, fall, drowning, lava, nature,
+  beast, people, player, inside; race:X, class:X, faction:x, client:x;
+  "!night" = not at night. A tagged sentence is preferred while fresh, so voice
+  lines come early; an epitaph's line that tells the cause always wins.
+- The epitaph (epitaph, remembrance, farewell) is in the third person, by the
+  name; the rest of the book in the first. A count of one never meets a
+  plural ("one tasks"): such slots are left empty for one.
 - After changing the writing: `bun run build`, then `bun run check` and read
   `docs/sample.md` again.
 

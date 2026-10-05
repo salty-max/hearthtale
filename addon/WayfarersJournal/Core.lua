@@ -6,6 +6,8 @@
 --   began = { at, level }    when the journal began (a character met
 --                            mid-life gets a prologue)
 --   levels[n] = { ... }      what level n held (Record.lua)
+--   closed = true            a Hardcore death closed the book: nothing more
+--                            is recorded (only the login, to find it)
 local _, ns = ...
 local PREFIX = "|cffc9a227Wayfarer's Journal:|r "
 ns.PREFIX = PREFIX
@@ -31,11 +33,13 @@ function handlers.PLAYER_LOGIN()
     char = { guid = guid, began = { at = time(), level = UnitLevel("player") }, levels = {} }
     WayfarersJournalChar = char
   end
+  if ns.onLogin then ns.onLogin(char) end
 end
 
 frame:SetScript("OnEvent", function(_, event, ...)
   if event ~= "PLAYER_LOGIN" and not char then return end
   if handlers[event] then handlers[event](...) end
+  if char.closed then return end
   for _, fn in ipairs(listeners[event] or {}) do fn(...) end
 end)
 for event in pairs(handlers) do frame:RegisterEvent(event) end

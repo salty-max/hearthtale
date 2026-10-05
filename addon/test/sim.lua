@@ -148,10 +148,26 @@ local function fire(e, ...)
   assert(heard, "nobody listens to " .. e)
 end
 
+-- The game's toasts, links and realm: keep what the addon hands them.
+local toasted = {}
+function GetRealmName() return "Nightslayer" end
+C_XMLUtil = { GetTemplateInfo = function(name) return name ~= "PanelTabButtonTemplate" or nil end }
+AlertFrame = { AddQueuedAlertFrameSubSystem = function(_, _, setUp)
+  return { AddAlert = function(_, guid)
+    local frame = ui()
+    frame.Icon, frame.Title, frame.Name = ui(), ui(), ui()
+    setUp(frame, guid)
+    table.insert(toasted, frame)
+  end }
+end }
+local linkHandlers = {}
+LinkUtil = { RegisterLinkHandler = function(kind, fn) linkHandlers[kind] = fn end }
+LinkProcessorResponse = { Handled = 2 }
+
 -- ── load the addon ───────────────────────────────────────────────────────────
 local ns = {}
 assert(loadfile(DIR .. (FOREVER and "Data_Forever.lua" or "Data_Classic.lua")))("WayfarersJournal", ns)
-for _, f in ipairs({ "Core.lua", "Record.lua", "Writer.lua", "Book.lua" }) do assert(loadfile(DIR .. f))("WayfarersJournal", ns) end
+for _, f in ipairs({ "Core.lua", "Record.lua", "Writer.lua", "Book.lua", "Hall.lua" }) do assert(loadfile(DIR .. f))("WayfarersJournal", ns) end
 local D = ns.data
 local function check(cond, msg) assert(cond, msg); io.write("✓ " .. msg .. "\n") end
 local function lvl(n) return WayfarersJournalChar.levels[n] end
@@ -269,18 +285,6 @@ check(lvl(2).company.Brannor == "WARRIOR" and #run == 1 and run[1].name == "The 
   "who I grouped with, the dungeon (once) and the bosses beaten")
 state.instance = nil
 
--- Death.
-if not FOREVER then
-  combatLog = { clock, "ENVIRONMENTAL_DAMAGE", false, nil, nil, 0, 0, state.guid, "Sealinedion", 0, 0, "FALLING", 120 }
-  fire("COMBAT_LOG_EVENT_UNFILTERED")
-end
-state.health = 0
-uptime = uptime + 200
-fire("PLAYER_DEAD")
-check(J.death and J.death.level == 2 and J.death.zone == "Dun Morogh" and J.death.cause == (FOREVER and "foe" or "fall") and lvl(2).played == 200,
-  FOREVER and "a death: where, at what level, the time played counted" or "a death: where, at what level, how (a fall), the time played counted")
-state.health = 100
-
 -- The book of that life, written from the records.
 local book = ns.writeBook(J)
 local one, two = book.chapters[1], book.chapters[2]
@@ -313,9 +317,53 @@ check(page.body:GetText():find("Kharanos", 1, true) and page.title:GetText() == 
 SlashCmdList.WAYFARERSJOURNAL("")
 check(not B:IsShown(), "/wj again closes it")
 
+-- Death.
+if not FOREVER then
+  combatLog = { clock, "ENVIRONMENTAL_DAMAGE", false, nil, nil, 0, 0, state.guid, "Sealinedion", 0, 0, "FALLING", 120 }
+  fire("COMBAT_LOG_EVENT_UNFILTERED")
+end
+state.health = 0
+uptime = uptime + 200
+fire("PLAYER_DEAD")
+check(J.death and J.death.level == 2 and J.death.zone == "Dun Morogh" and J.death.cause == (FOREVER and "foe" or "fall") and lvl(2).played == 200,
+  FOREVER and "a death: where, at what level, the time played counted" or "a death: where, at what level, how (a fall), the time played counted")
+state.health = 100
+
+-- A Hardcore death closes the book: nothing more is recorded; it joins the Hall
+-- of the Fallen (a copy of its records), with a chat line and the game's toast.
+local fallen = WayfarersJournalHall and WayfarersJournalHall.lives[state.guid]
+check(J.closed and fallen and fallen.name == "Sealinedion" and fallen.raceName == "Dwarf" and fallen.realm == "Nightslayer"
+  and fallen.levels[2] and fallen ~= J, "a Hardcore death closes the book; a copy joins the Hall of the Fallen")
+check(printed[#printed]:find("closed", 1, true) and printed[#printed]:find("|Hwayfarer:hall:" .. state.guid, 1, true),
+  "a chat line says so, with a link to the Hall")
+check(#toasted == 1 and toasted[1].Title:GetText() == "The book is closed" and toasted[1].Name:GetText() == "Sealinedion",
+  "the game's toast: the book is closed")
+local placesBefore = #lvl(2).places
+state.sub = "Brewnall Village"
+fire("ZONE_CHANGED")
+fire("PLAYER_LOGIN")
+check(#lvl(2).places == placesBefore and not lvl(3), "a closed book records nothing more, even at the next login")
+local closedBook = ns.writeBook(J)
+check(closedBook.epitaph and closedBook.epitaph:find("Sealinedion", 1, true) and closedBook.epitaph:find("level two", 1, true)
+  and not closedBook.epitaph:find("{", 1, true), "its epitaph: who, where, at what level")
+io.write("    " .. closedBook.epitaph .. "\n")
+
+-- The link opens the Hall at that life: its epitaph, then its chapters.
+linkHandlers.wayfarer("wayfarer:hall:" .. state.guid)
+check(B:IsShown() and B.selectedTab == 2 and rows[1].title:GetText() == "Sealinedion" and rows[2].title:GetText() == "Epitaph"
+  and rows[3].title:GetText() == "Level 1" and page.title:GetText() == "Sealinedion" and page.body:GetText():find(closedBook.epitaph, 1, true)
+  and page.sub:GetText():find("Level 2 Dwarf Paladin", 1, true), "the link opens the Hall: the life, its epitaph, its chapters")
+rows[4].scripts.OnClick(rows[4])
+check(page.title:GetText() == "Level 2" and page.sub:GetText():find("the end", 1, true) and page.body:GetText():find(closedBook.epitaph, 1, true),
+  "its last chapter ends with the epitaph")
+ns.showTab(1)
+check(B.who:GetText():find("Fallen", 1, true) and page.title:GetText() == "Level 2" and page.body:GetText():find(closedBook.epitaph, 1, true),
+  "the Journal tab: my own closed book, the same end")
+SlashCmdList.WAYFARERSJOURNAL("")
+
 -- A character met mid-life: a prologue from what the game knows.
 WayfarersJournalChar = nil
-state.guid, state.level, state.questsDone = "Player-6113-0FFFFFF0", 23, { [1] = true, [2] = true, [3] = true }
+state.guid, state.level, state.questsDone, state.hardcore = "Player-6113-0FFFFFF0", 23, { [1] = true, [2] = true, [3] = true }, false
 fire("PLAYER_LOGIN")
 local P = WayfarersJournalChar.prologue
 fire("TIME_PLAYED_MSG", 86400, 3600)
@@ -332,4 +380,20 @@ check(rows[1].title:GetText() == "Prologue" and rows[2].title:GetText() == "Leve
 rows[1].scripts.OnClick(rows[1])
 check(page.title:GetText() == "Prologue" and page.sub:GetText():find("level 23", 1, true) and page.body:GetText() == later.prologue,
   "the prologue reads")
+SlashCmdList.WAYFARERSJOURNAL("")
+
+-- A death on a normal realm: told in its chapter; the book goes on.
+state.health, state.target = 0, nil
+fire("PLAYER_DEAD")
+state.health = 100
+local K = WayfarersJournalChar
+state.sub = "Gol'Bolar Quarry"
+fire("ZONE_CHANGED")
+ns.writerUsed = {}
+ns.writeBook(K)
+local told = false
+for key in pairs(ns.writerUsed) do if key:find("^died#") then told = true end end
+ns.writerUsed = nil
+check(not K.closed and #K.levels[23].deaths == 1 and K.levels[23].places[#K.levels[23].places].sub == "Gol'Bolar Quarry"
+  and told and not WayfarersJournalHall.lives[state.guid], "a death on a normal realm: told in its chapter, no Hall, the book goes on")
 io.write(FOREVER and "all good (Forever)\n" or "all good\n")

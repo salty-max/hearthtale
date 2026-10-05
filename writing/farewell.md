@@ -1,0 +1,26 @@
+---
+kind: farewell
+---
+- Rest now, {name}.
+- May the road be kind, wherever {name} walks now.
+- The journal is closed. Let it be read.
+- Let this book stand for {name}, now that {name} cannot.
+- [race:Dwarf] The clans of {home} will remember {name}.
+- [race:Orc] {name} died weapon in hand, as an orc should.
+- [race:Scourge] {name} had died once before. This time it was for good.
+- [race:NightElf] Elune light the way of {name}.
+- [race:Tauren] {name} has returned to the Earth Mother.
+- [race:Human] A candle will burn for {name} in the cathedral of {home}.
+- [race:Gnome] Gnomeregan has lost another of its children.
+- [race:Troll] The loa have called {name} home.
+- [race:BloodElf] The sun sets on another child of Quel'Thalas.
+- [race:Draenei] {name} fell far from Draenor, and farther still from Argus.
+- [class:PALADIN] {name} served {faith} to the end.
+- [class:WARRIOR] {name} never took a step back, and took none at the end.
+- [class:MAGE] {name}'s books are left open at the page where the reading stopped.
+- [class:HUNTER] Somewhere, a pet waits for {name}.
+- [class:ROGUE] {name} was never caught, until the end caught up.
+- [class:PRIEST] {name} healed many, and could not heal this.
+- [class:SHAMAN] The spirits carry {name} now.
+- [class:WARLOCK] Whatever {name} bargained with has come to collect.
+- [class:DRUID] {name} has gone back to the wild.

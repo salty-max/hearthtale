@@ -18,3 +18,6 @@ kind: close-deep
 - [class:PRIEST] {hp}% {in}. {faith} heard me, just in time.
 - [class:SHAMAN] {hp}% {in}. The spirits held me up when my legs would not.
 - [class:WARRIOR] {hp}% {in}. I fought on because there was nothing else to do.
+- I was a breath from the end {at}. {hp}%. I still don't know how I lived.
+- {foe} left me with {hp}% {at}. I lay still until my heart slowed.
+- {at} I came closer to dying than I ever have: {hp}%.

@@ -1,8 +1,11 @@
 -- The journal as a book, in a standard game window, as its siblings
 -- (Lorekeeper's Codex, Explorer's Field Journal): the character's portrait in
--- the corner, who they are beside it. On the left, the prologue (a character
--- met mid-life) and a chapter per level, its place under it, a skull for a
--- close call, a star for a rare; on the right, the open chapter. Light text and
+-- the corner, who they are beside it. Two tabs. The Journal: on the left, the
+-- prologue (a character met mid-life) and a chapter per level, its place under
+-- it, a skull for a close call, a star for a rare; on the right, the open
+-- chapter (a closed book's last one ends with its epitaph, in gold). The Hall
+-- of the Fallen (Hall.lua): the closed books of the account's Hardcore
+-- characters, the open one's epitaph and chapters under its name. Light text and
 -- gold titles on dark panels: Forever's Professions cards; on Classic, the
 -- game's insets and the quest log's dark book behind the list. The text is
 -- written from the records each time it is shown (Writer.lua). /wayfarer
@@ -131,49 +134,66 @@ end
 -- ── the book ─────────────────────────────────────────────────────────────────
 local book, list, page
 local build -- made on first opening (below)
-local written -- the book as last written: { prologue, chapters }
-local current -- the open chapter: a level, or "prologue"
+local written -- this character's book as last written: { prologue, chapters, epitaph }
+local current -- its open chapter: a level, or "prologue"
+local hallLife, hallKey -- in the Hall: the open life (its guid) and its page ("epitaph", "prologue", a level)
 local WIDTH = 440
 local HEADER_H = 76
 local ROW_WIDTH = 204
+local EPITAPH = "|cffd9b36b%s|r" -- the epitaph, in gold
 
 local function day(at) return at and date("%d %b %Y", at) end
 
 -- When a chapter was lived: "5 Oct 2026", "5 Oct 2026 to 7 Oct 2026".
-local function when(ch)
-  local l = ns.journal().levels[ch.level] or {}
+local function when(life, level)
+  local l = life.levels[level] or {}
   local from, to = day(l.start and l.start.at), day(l.ended)
   if not from then return nil end
   if not to or to == from then return from end
   return from .. " to " .. to
 end
 
-local function showChapter(key)
-  current = key
-  local title, sub, text
-  if key == "prologue" then
-    local p = ns.journal().prologue or {}
-    title, sub = "Prologue", ("Before this journal, at level %d"):format(p.level or 0)
-    text = written.prologue
-  else
-    local ch
-    for _, c in ipairs(written.chapters) do if c.level == key then ch = c end end
-    if not ch then return end
-    local l = ns.journal().levels[ch.level] or {}
-    title = ("Level %d"):format(ch.level)
-    local parts = {}
-    if ch.place then table.insert(parts, ch.place) end
-    table.insert(parts, when(ch))
-    if not l.ended then table.insert(parts, "still being written") end
-    sub = table.concat(parts, "  -  ")
-    text = ch.text
-  end
+local function chapterOf(w, level)
+  for _, ch in ipairs(w.chapters) do if ch.level == level then return ch end end
+end
+
+local function show(title, sub, text)
   page.title:SetText(title)
-  page.sub:SetText(sub)
+  page.sub:SetText(sub or "")
   page.body:SetTextColor(unpack(text and T.text or T.soft))
   page.body:SetText(text or "Nothing written yet.")
   page.child:SetHeight(HEADER_H + page.body:GetStringHeight() + 24)
   page:ScrollTo(0)
+end
+
+-- A page of a book (mine or a fallen one's): the prologue, a chapter (the last
+-- one of a closed book ends with its epitaph), or the epitaph alone.
+local function showPage(life, w, key)
+  if key == "prologue" then
+    local p = life.prologue or {}
+    return show("Prologue", ("Before this journal, at level %d"):format(p.level or 0), w.prologue)
+  end
+  if key == "epitaph" then
+    local d = life.death or {}
+    local sub = { ("Level %d %s %s"):format(d.level or 0, life.raceName or "", life.className or "") }
+    if life.realm then table.insert(sub, life.realm) end
+    table.insert(sub, day(d.at))
+    return show(life.name or "", table.concat(sub, "  -  "), w.epitaph and EPITAPH:format(w.epitaph))
+  end
+  local ch = chapterOf(w, key)
+  if not ch then return end
+  local l = life.levels[key] or {}
+  local parts = {}
+  if ch.place then table.insert(parts, ch.place) end
+  table.insert(parts, when(life, key))
+  local last = life.death and life.death.level == key
+  if life.closed and last then table.insert(parts, "the end")
+  elseif not l.ended then table.insert(parts, "still being written") end
+  local text = ch.text
+  if life.closed and last and w.epitaph then
+    text = (text and text .. "\n\n" or "") .. EPITAPH:format(w.epitaph)
+  end
+  show(("Level %d"):format(key), table.concat(parts, "  -  "), text)
 end
 
 local rows = {}
@@ -184,7 +204,6 @@ local function row(i)
   r = CreateFrame("Button", nil, list.child)
   r:SetSize(ROW_WIDTH, 34)
   r.title = label(r, TITLE_FONT, 14, T.gold)
-  r.title:SetPoint("TOPLEFT", 8, -3)
   r.place = label(r, BODY_FONT, 11, T.soft)
   r.place:SetPoint("TOPLEFT", r.title, "BOTTOMLEFT", 0, -2)
   r.place:SetPoint("RIGHT", -8, 0)
@@ -207,34 +226,20 @@ local function row(i)
   return r
 end
 
--- Rewrite the book from the records and show it. latest: open the last chapter
--- (opening the book), else keep the open one.
-function ns.refresh(latest)
-  if not book then return end
-  local c = ns.journal()
-  if not c then return end
-  written = ns.writeBook(c)
-  -- Who I am, beside the portrait.
-  local race, class = UnitRace("player"), UnitClass("player")
-  book.who:SetText(("%s, level %d %s %s%s"):format(UnitName("player") or "", UnitLevel("player") or 0, race or "", class or "",
-    c.hardcore and "  -  Hardcore" or ""))
-
-  local entries = {}
-  if written.prologue then table.insert(entries, { key = "prologue", title = "Prologue", place = "Before this journal" }) end
-  for _, ch in ipairs(written.chapters) do
-    table.insert(entries, { key = ch.level, title = ("Level %d"):format(ch.level), place = ch.place, close = ch.close, rare = ch.rare })
-  end
-  local known = false
-  for _, e in ipairs(entries) do if e.key == current then known = true end end
-  if latest or not known then current = entries[#entries] and entries[#entries].key end
-
+-- The list: { title, place, close, rare, indent, selected, click } per row.
+-- scroll: bring the selected row into view.
+local function render(entries, scroll)
   for _, r in ipairs(rows) do r:Hide() end
-  local y, currentY = 0, 0
+  local y, selectedY = 0, nil
   for i, e in ipairs(entries) do
     local r = row(i)
     r:ClearAllPoints()
     r:SetPoint("TOPLEFT", 0, -y)
     r.key = e.key
+    r.title:ClearAllPoints()
+    r.title:SetPoint("TOPLEFT", 8 + (e.indent or 0), -3)
+    r.title:SetFont(TITLE_FONT, e.indent and 13 or 14, "")
+    r.title:SetTextColor(unpack(e.click and T.gold or T.soft))
     r.title:SetText(e.title)
     r.place:SetText(e.place or "")
     local x = -8
@@ -248,17 +253,124 @@ function ns.refresh(latest)
       end
       t:SetShown(on and true or false)
     end
-    r.selected:SetShown(e.key == current)
-    if e.key == current then currentY = y end
-    r:SetScript("OnClick", function() showChapter(e.key); ns.refresh() end)
+    r.selected:SetShown(e.selected and true or false)
+    if e.selected then selectedY = y end
+    r:SetScript("OnClick", e.click)
+    if e.click then r:Enable() else r:Disable() end
     r:Show()
     y = y + 36
   end
   list.child:SetHeight(y + 8)
   list:UpdateThumb()
-  -- Opening the book: the last chapter in view.
-  if latest then list:ScrollTo(currentY) end
-  if current then showChapter(current) end
+  if scroll and selectedY then list:ScrollTo(selectedY) end
+end
+
+-- A book's chapters as rows (indent: under a fallen life's name).
+local function chapterRows(entries, w, selectedKey, open, indent)
+  if w.epitaph and indent then
+    table.insert(entries, { key = "epitaph", title = "Epitaph", indent = indent, selected = selectedKey == "epitaph",
+      click = function() open("epitaph") end })
+  end
+  if w.prologue then
+    table.insert(entries, { key = "prologue", title = "Prologue", place = "Before this journal", indent = indent,
+      selected = selectedKey == "prologue", click = function() open("prologue") end })
+  end
+  for _, ch in ipairs(w.chapters) do
+    table.insert(entries, { key = ch.level, title = ("Level %d"):format(ch.level), place = ch.place, close = ch.close,
+      rare = ch.rare, indent = indent, selected = selectedKey == ch.level, click = function() open(ch.level) end })
+  end
+end
+
+-- The Journal tab: this character's book, rewritten from the records. latest:
+-- open the last chapter (opening the book), else keep the open one.
+local function refreshJournal(latest)
+  local c = ns.journal()
+  written = ns.writeBook(c)
+  local known = current == "prologue" and written.prologue or chapterOf(written, current)
+  if latest or not known then
+    local last = written.chapters[#written.chapters]
+    current = last and last.level or (written.prologue and "prologue") or nil
+  end
+  local entries = {}
+  chapterRows(entries, written, current, function(key) current = key; ns.refresh() end)
+  render(entries, latest)
+  if current then showPage(c, written, current) else show("", "", nil) end
+end
+
+-- The Hall tab: the fallen, the most recent first; the open one's pages under
+-- its name.
+local function refreshHall(scroll)
+  local fallen = ns.fallen()
+  local known = false
+  for _, life in ipairs(fallen) do if life.guid == hallLife then known = true end end
+  if not known then hallLife, hallKey = fallen[1] and fallen[1].guid, "epitaph" end
+  local entries = {}
+  if #fallen == 0 then
+    table.insert(entries, { title = "No one has fallen", place = "May it stay so." })
+    render(entries)
+    return show("The Hall of the Fallen", "", "The closed books of Hardcore characters rest here, to be read again.")
+  end
+  local open, w
+  for _, life in ipairs(fallen) do
+    local d = life.death or {}
+    table.insert(entries, { key = life.guid, title = life.name or "?",
+      place = ("Level %d %s %s"):format(d.level or 0, life.raceName or "", life.className or ""),
+      selected = life.guid == hallLife and hallKey == "epitaph",
+      click = function() hallLife, hallKey = life.guid, "epitaph"; ns.refresh() end })
+    if life.guid == hallLife then
+      open, w = life, ns.writeBook(life)
+      chapterRows(entries, w, hallKey, function(key) hallKey = key; ns.refresh() end, 14)
+    end
+  end
+  render(entries, scroll)
+  showPage(open, w, hallKey)
+end
+
+-- Rewrite what the open tab shows.
+function ns.refresh(latest)
+  if not book or not ns.journal() then return end
+  local c = ns.journal()
+  -- Who I am, beside the portrait.
+  local race, class = UnitRace("player"), UnitClass("player")
+  book.who:SetText(("%s, level %d %s %s%s"):format(UnitName("player") or "", UnitLevel("player") or 0, race or "", class or "",
+    c.closed and "  -  Fallen" or c.hardcore and "  -  Hardcore" or ""))
+  if book.selectedTab == 2 then refreshHall(latest) else refreshJournal(latest) end
+end
+
+-- The tabs, under the window's bottom edge: the character sheet's on Classic,
+-- the shared panel tabs where that template doesn't exist (Forever).
+function ns.showTab(n)
+  if not book then return end
+  book.selectedTab = n
+  if PanelTemplates_SetTab then PanelTemplates_SetTab(book, n) end
+  ns.refresh(true)
+end
+
+local function hasTemplate(name)
+  if not (C_XMLUtil and C_XMLUtil.GetTemplateInfo) then return name == "CharacterFrameTabButtonTemplate" end
+  return C_XMLUtil.GetTemplateInfo(name) ~= nil
+end
+
+local function buildTabs()
+  local template = hasTemplate("CharacterFrameTabButtonTemplate") and "CharacterFrameTabButtonTemplate" or "PanelTabButtonTemplate"
+  for n, text in ipairs({ "Journal", "Hall of the Fallen" }) do
+    local tab = CreateFrame("Button", "WayfarersJournalFrameTab" .. n, book, template)
+    tab:SetID(n)
+    tab:SetText(text)
+    if n == 1 then tab:SetPoint("TOPLEFT", book, "BOTTOMLEFT", 14, 2)
+    else tab:SetPoint("LEFT", "WayfarersJournalFrameTab" .. (n - 1), "RIGHT", -14, 0) end
+    tab:SetScript("OnClick", function(self)
+      ns.showTab(self:GetID())
+      if PlaySound and SOUNDKIT and SOUNDKIT.IG_CHARACTER_INFO_TAB then PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB) end
+    end)
+    tab:SetScript("OnShow", function(self)
+      if PanelTemplates_TabResize then PanelTemplates_TabResize(self, 0) end
+    end)
+    if PanelTemplates_TabResize then PanelTemplates_TabResize(tab, 0) end
+  end
+  if PanelTemplates_SetNumTabs then PanelTemplates_SetNumTabs(book, 2) end
+  book.selectedTab = 1
+  if PanelTemplates_SetTab then PanelTemplates_SetTab(book, 1) end
 end
 
 -- The standard game window (portrait, title bar), its inset removed; the
@@ -353,6 +465,7 @@ function build()
     portrait()
     ns.refresh(true)
   end)
+  buildTabs()
 end
 
 function ns.toggle()
@@ -360,6 +473,17 @@ function ns.toggle()
   if not book then build() end
   book:SetShown(not book:IsShown())
 end
+
+-- Open the Hall at a fallen life (a click on the chat line or the toast).
+function ns.openHall(guid)
+  if not ns.journal() then return end
+  if not book then build() end
+  hallLife, hallKey = guid, "epitaph"
+  book.selectedTab = 2
+  if PanelTemplates_SetTab then PanelTemplates_SetTab(book, 2) end
+  if book:IsShown() then ns.refresh(true) else book:Show() end
+end
+ns.onHall = function() if book and book:IsShown() then ns.refresh() end end
 
 -- A new moment while the book is open: rewritten a moment later, once (a fight
 -- records many at once).
