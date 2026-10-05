@@ -105,6 +105,9 @@ Forever's Professions cards). Two tabs:
 
 ## Steps
 
+Status (6 October 2026): 1 to 6 done; 7 reviewed (516 sentences read, fixes
+in), release 0.1.0 next.
+
 1. The repository, from the Field Journal's skeleton.
 2. The recording, with the simulation.
 3. The writer: the engine, then the sentences, kind by kind, with the writer

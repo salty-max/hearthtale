@@ -18,7 +18,7 @@ kind: farewell
 - [class:PALADIN] {name} served {faith} to the end.
 - [class:WARRIOR] {name} never took a step back, and took none at the end.
 - [class:MAGE] {name}'s books are left open at the page where the reading stopped.
-- [class:HUNTER] Somewhere, a pet waits for {name}.
+- [class:HUNTER !low] Somewhere, a pet waits for {name}.
 - [class:ROGUE] {name} was never caught, until the end caught up.
 - [class:PRIEST] {name} healed many, and could not heal this.
 - [class:SHAMAN] The spirits carry {name} now.

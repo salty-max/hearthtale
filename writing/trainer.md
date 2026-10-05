@@ -4,7 +4,7 @@ kind: trainer
 - At the trainer I learned {spells}.
 - The trainer taught me {spells}.
 - New lessons: {spells}.
-- I paid for {spells}, and practised until my hands knew them.
+- I paid for {spells}, and practised until I had it right.
 - I learned {spells}, for a price.
 - My trainer was pleased with me: {spells}.
 - I came away from training with {spells}.

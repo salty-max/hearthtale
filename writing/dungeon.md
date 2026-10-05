@@ -6,7 +6,7 @@ kind: dungeon
 - I went down into {dungeon}.
 - {dungeon}. Dark, close, and full of things that wanted me dead.
 - I saw the inside of {dungeon}, and the end of {boss}.
-- {mates} and I cleared {dungeon} as far as {boss}.
+- With {mates}, I cleared {dungeon} as far as {boss}.
 - We went into {dungeon}. {boss} never saw us coming.
 - {dungeon}: I went in with {mates} and came out with stories.
 - I fought through {dungeon}. {boss} was the last of it.

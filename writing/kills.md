@@ -15,7 +15,7 @@ kind: kills
 - [lots] I lost count of the {foes} {at}; my tally says {n}.
 - [lots] {n} {foes} {in}. By the end I was doing it in my sleep.
 - [hc] {n} {foes} {in}, one at a time, never two. That's how you live.
-- [class:HUNTER] My pet and I took {n} {foes} {at}.
+- [class:HUNTER !low] My pet and I took {n} {foes} {at}.
 - [class:WARLOCK] {n} {foes} {in}. My demon enjoyed it more than I did.
 - [class:MAGE] {n} {foes} {in}, frozen or burned. Mostly burned.
 - [class:ROGUE] {n} {foes} {in}. Most never saw me.

@@ -17,5 +17,5 @@ kind: close-light
 - [class:PALADIN] Down to {hp}% {at}. I called on {faith} and it answered.
 - [class:MAGE] {foe} got through my frost {at}. {hp}% left when I got away.
 - [class:ROGUE] {hp}% {in}. I slipped away and caught my breath in a ditch.
-- [class:HUNTER] {foe} got past my pet {at}. {hp}% left, and I owe the beast a meal.
+- [class:HUNTER !low] {foe} got past my pet {at}. {hp}% left, and I owe the beast a meal.
 - [class:WARLOCK] {hp}% {in}. I drained what I needed out of {foe} and lived.

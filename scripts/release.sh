@@ -44,6 +44,7 @@ perl -pi -e "s/^## Version: .*/## Version: $VERSION/" "$TOC"
 bun scripts/build.ts --check
 luajit addon/test/sim.lua >/dev/null
 FOREVER=1 luajit addon/test/sim.lua >/dev/null
+luajit addon/test/writer.lua >/dev/null
 bun scripts/package.ts --no-zip >/dev/null
 
 git add -A

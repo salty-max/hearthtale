@@ -302,6 +302,9 @@ for _, round in ipairs({ { 1, 12 }, { 1, 60 }, { 18, 41 }, { 38, 60 }, { 1, 30 }
         for _, ch in ipairs(book.chapters) do
           chapters = chapters + 1
           inspect(("%s %s level %d"):format(race, class, ch.level), ch.text)
+          if class == "HUNTER" and ch.level <= 10 and ch.text and ch.text:find("%f[%a]pet%f[%A]") then
+            problem(("%s HUNTER level %d"):format(race, ch.level), "a hunter's pet before level 10", ch.text)
+          end
           if ch.text and #ch.text > longest then longest = #ch.text end
         end
         repeats = repeats + book.repeats

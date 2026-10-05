@@ -40,7 +40,8 @@ The plan and its decisions: PLAN.md.
 - A place is named, then "there" once, then left out: a sentence with {at} must
   read well without it ("I put down {n} {foes} {at}."). Without a verb, use
   {in}, which always names the place ("{foe} {in}.").
-- Tags are conditions: night, hc, high (level 40+), low (10 and under), first,
+- Tags are conditions: night, hc, high (level 40+), low (10 and under: no
+  hunter's pet yet, so its lines are [class:HUNTER !low]), first,
   elite, lots, many, slow, quick; for a death: foe, fall, drowning, lava, nature,
   beast, people, player, inside; race:X, class:X, faction:x, client:x;
   "!night" = not at night. A tagged sentence is preferred while fresh, so voice

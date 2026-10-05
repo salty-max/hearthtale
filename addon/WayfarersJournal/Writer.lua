@@ -321,7 +321,7 @@ function Book:chapter(n, l)
     return s
   end
   local start = l.start or {}
-  local level = { night = start.night or nil, high = n >= 40 or nil }
+  local level = { night = start.night or nil, high = n >= 40 or nil, low = n <= 10 or nil }
   local function tags(t)
     t = t or {}
     for k, v in pairs(level) do if t[k] == nil then t[k] = v end end
@@ -524,7 +524,7 @@ function Book:epitaph(c)
     name = c.name, played = playedWords(played), quests = quests > 1 and words(quests) or nil, -- "one tasks": no
     kills = kills > 1 and words(kills) or nil, rare = rare, dungeon = mid(dungeon), zones = zones > 1 and words(zones) or nil,
   }, { low = tags.low, high = tags.high, inside = tags.inside })
-  local third = self:say("farewell", "farewell", { name = c.name }, {})
+  local third = self:say("farewell", "farewell", { name = c.name }, { low = tags.low })
   if not first then return nil end
   local parts = { first }
   if second then table.insert(parts, second) end

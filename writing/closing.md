@@ -29,7 +29,7 @@ kind: closing
 - {gold} richer after {time}.
 - I closed this stretch {gold} the richer, after {time}.
 - That was {time}.
-- {time}, and every one of them earned.
+- {time}, and all of it earned.
 - It took me {time}.
 - {time} of hard road.
 - {time} on the road, more or less.
