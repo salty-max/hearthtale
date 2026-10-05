@@ -14,7 +14,8 @@ The plan and its decisions: PLAN.md.
   and `Data_Forever.lua` (one per game; `client:` tags keep a sentence to one).
 - `addon/WayfarersJournal/`: `Core.lua` (the character's record, events,
   `/wayfarer`), `Record.lua` (what each level holds, as it happens),
-  `Writer.lua` (the prose, written from the records when read: never stored).
+  `Writer.lua` (the prose, written from the records when read: never stored),
+  `Book.lua` (the window: chapters on the left, the open one on the right).
   The source TOC has an `@INTERFACE@` placeholder: not installable as is;
   `scripts/package.ts` builds `dist/classic` and `dist/forever`.
 - `addon/test/sim.lua`: fake WoW API, a life replayed, every recording

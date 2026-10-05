@@ -17,23 +17,41 @@ I counted my blessings in Coldridge Valley: all my fingers, all my toes, one lif
 
 ## Level 4
 
-I left Coldridge Valley with a full flask and an empty purse. I spent an hour learning the paths of Coldridge Pass. Mountaineer Thalos asked for help with "Senir's Observations". A paladin doesn't say no. I cleared eight Frostmane Novices from the paths there. I spent good coin on Blessing of Might and Judgement. Worth every copper. I counted the hours: forty minutes.
+I left Coldridge Valley with a full flask and an empty purse. I spent an hour learning the paths of Coldridge Pass.
+
+Mountaineer Thalos asked for help with "Senir's Observations". A paladin doesn't say no. I cleared eight Frostmane Novices from the paths there.
+
+I spent good coin on Blessing of Might and Judgement. Worth every copper. I counted the hours: forty minutes.
 
 ## Level 5
 
-Coldridge Pass. Still breathing, which is more than some can say. The road showed me Kharanos. I set my stone at Thunderbrew Distillery. A safe place to run to is worth more than gold here. Four tasks, and every one of them a chance to die. I took none of those chances. I had my first taste of fighting boars there. I spent the days on Small Crag Boars (ten) and Ragged Timber Wolves (seven). Fifty minutes, and five silver for the purse. A dwarf counts both.
+Coldridge Pass. Still breathing, which is more than some can say. The road showed me Kharanos. I set my stone at Thunderbrew Distillery. A safe place to run to is worth more than gold here.
+
+Four tasks, and every one of them a chance to die. I took none of those chances. I had my first taste of fighting boars there. I spent the days on Small Crag Boars (ten) and Ragged Timber Wolves (seven). Fifty minutes, and five silver for the purse. A dwarf counts both.
 
 ## Level 6
 
-I woke in Kharanos to a clear sky. I learned Brewnall Village and Steelgrill's Depot the careful way, one hill at a time. "Bitter Rivals" and "Ammo for Rumbleshot". Small tasks, but the folk there were glad of them. In Brewnall Village I killed eleven Leper Gnomes. My trainer was pleased with me: Divine Protection and Seal of the Crusader. Mining: fifty. Not bad. Seven silver richer after an hour and five minutes.
+I woke in Kharanos to a clear sky. I learned Brewnall Village and Steelgrill's Depot the careful way, one hill at a time.
+
+"Bitter Rivals" and "Ammo for Rumbleshot". Small tasks, but the folk there were glad of them. In Brewnall Village I killed eleven Leper Gnomes.
+
+My trainer was pleased with me: Divine Protection and Seal of the Crusader. Mining: fifty. Not bad. Seven silver richer after an hour and five minutes.
 
 ## Level 7
 
-I started this one in Kharanos, after dark. I wandered into Shimmer Ridge without meaning to. I saw to "Frostmane Hold", for Senir Whitebeard. I put down thirteen Frostmane Snowstriders there. Cuirboulle Gloves. Better gear, longer life. I'm nine silver richer for an hour and ten minutes of work.
+I started this one in Kharanos, after dark. I wandered into Shimmer Ridge without meaning to.
+
+I saw to "Frostmane Hold", for Senir Whitebeard. I put down thirteen Frostmane Snowstriders there.
+
+Cuirboulle Gloves. Better gear, longer life. I'm nine silver richer for an hour and ten minutes of work.
 
 ## Level 8
 
-I was in Shimmer Ridge when this stretch began. My boots learned Frostmane Hold and the Grizzled Den. I did what Pilot Stonegear asked of me, and more: "The Grizzled Den" and "Stocking Jetsteam". Nine Wendigos and six Frostmane Seers in the Grizzled Den, and never more than one at a time if I could help it. New prayers from the trainer: Hammer of Justice and Purify. So went an hour and twenty minutes of my life.
+I was in Shimmer Ridge when this stretch began. My boots learned Frostmane Hold and the Grizzled Den.
+
+I did what Pilot Stonegear asked of me, and more: "The Grizzled Den" and "Stocking Jetsteam". Nine Wendigos and six Frostmane Seers in the Grizzled Den, and never more than one at a time if I could help it.
+
+New prayers from the trainer: Hammer of Justice and Purify. So went an hour and twenty minutes of my life.
 
 ## Level 9
 
@@ -41,11 +59,17 @@ I could not sleep in Kharanos, so I walked. Rejold Barleybrew kept me busy: "The
 
 ## Level 10
 
-I broke my fast in Gol'Bolar Quarry and went looking for work. The only work I took was "Distracting Jarven". I spent my days there fighting Rockjaw Bonesnappers: twelve of them, by the end. It came down to a breath. A Rockjaw Ambusher had me at 4%, and on this realm there are no second chances. I didn't need one, this time. I went back to my trainer for Lay on Hands and Devotion Aura. All of it took an hour and a half.
+I broke my fast in Gol'Bolar Quarry and went looking for work. The only work I took was "Distracting Jarven". I spent my days there fighting Rockjaw Bonesnappers: twelve of them, by the end. It came down to a breath. A Rockjaw Ambusher had me at 4%, and on this realm there are no second chances. I didn't need one, this time.
+
+I went back to my trainer for Lay on Hands and Devotion Aura. All of it took an hour and a half.
 
 ## Level 11
 
-I oiled my beard and my armour in Gol'Bolar Quarry, in that order. Loch Modan. Different stone underfoot. A dwarf notices. New names for my map: North Gate Pass and Thelsamar. Home is Thelsamar now. A few errands: "Rat Catching" and "Thelsamar Blood Sausages". Fourteen Tunnel Rat Vermin and nine Mountain Boars fell to my hammer in Silver Stream Mine. For a while I had friends on the road: Brannor and Kelsa. An hour and forty minutes at it, all told, and twenty-one silver richer.
+I oiled my beard and my armour in Gol'Bolar Quarry, in that order. Loch Modan. Different stone underfoot. A dwarf notices. New names for my map: North Gate Pass and Thelsamar. Home is Thelsamar now.
+
+A few errands: "Rat Catching" and "Thelsamar Blood Sausages". Fourteen Tunnel Rat Vermin and nine Mountain Boars fell to my hammer in Silver Stream Mine.
+
+For a while I had friends on the road: Brannor and Kelsa. An hour and forty minutes at it, all told, and twenty-one silver richer.
 
 ## Level 12
 

@@ -249,7 +249,7 @@ function Book:say(kind, key, values, tags)
   end
   text = text:gsub("{(%w+)}", values)
   -- a place left out: no space before the punctuation, none doubled
-  return (text:gsub(" +([%.,;:!%?])", "%1"):gsub("  +", " "):gsub("^ +", ""))
+  return capitalise((text:gsub(" +([%.,;:!%?])", "%1"):gsub("  +", " "):gsub("^ +", "")))
 end
 
 -- The place slots of a moment: {at} ("in Coldridge Valley", "there" if it was
@@ -277,13 +277,15 @@ end
 
 local function town(node) return node and (node:match("^([^,]+)") or node) end
 
+-- A chapter in three paragraphs: the road; the work and the fights; company,
+-- learning, spoils and the end of the level.
 function Book:chapter(n, l)
-  local c, out = self.c, {}
+  local c, out, part = self.c, { {}, {}, {} }, 1
   self.last = nil
   self.chapterNo = self.chapterNo + 1
   local function say(kind, key, values, tags)
     local s = self:say(kind, n .. "|" .. key, values, tags)
-    if s then table.insert(out, s) end
+    if s then table.insert(out[part], s) end
     return s
   end
   local start = l.start or {}
@@ -334,6 +336,7 @@ function Book:chapter(n, l)
   end
 
   -- Work.
+  part = 2
   local quests = {}
   for _, q in ipairs(l.quests or {}) do if q.title then table.insert(quests, q) end end
   local function quoted(q) return '"' .. q.title .. '"' end
@@ -386,6 +389,7 @@ function Book:chapter(n, l)
   end
 
   -- Company.
+  part = 3
   local mates = {}
   for name in pairs(l.company or {}) do table.insert(mates, name) end
   table.sort(mates)
@@ -418,8 +422,23 @@ function Book:chapter(n, l)
     say("closing", "end", { time = playedWords(played), gold = goldWords(l.gold) },
       tags({ slow = played > 7200 or nil, quick = (played > 0 and played < 1800) or nil }))
   end
-  if #out == 0 then return nil end
-  return capitalise(table.concat(out, " "))
+  -- A paragraph of one sentence joins its neighbour (the one before, else after).
+  local parts = {}
+  for _, p in ipairs(out) do if #p > 0 then table.insert(parts, p) end end
+  local i = 1
+  while #parts > 1 and i <= #parts do
+    if #parts[i] == 1 then
+      local into = parts[i - 1] or parts[i + 1]
+      if i > 1 then table.insert(into, parts[i][1]) else table.insert(into, 1, parts[i][1]) end
+      table.remove(parts, i)
+    else
+      i = i + 1
+    end
+  end
+  local paragraphs = {}
+  for _, p in ipairs(parts) do table.insert(paragraphs, table.concat(p, " ")) end
+  if #paragraphs == 0 then return nil end
+  return table.concat(paragraphs, "\n\n")
 end
 
 function Book:prologue(p)
@@ -436,8 +455,7 @@ function ns.writeBook(c)
   local b = newBook(c)
   local book = { chapters = {} }
   if c.prologue then
-    local text = b:prologue(c.prologue)
-    book.prologue = text and capitalise(text)
+    book.prologue = b:prologue(c.prologue)
   end
   local levels = {}
   for n in pairs(c.levels or {}) do table.insert(levels, n) end

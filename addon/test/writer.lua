@@ -239,6 +239,7 @@ local function inspect(where, text)
     { "%f[%a]there%f[%A][^%.!%?]*%f[%a]there%f[%A]", "there twice in a sentence" }, { " ;", "a space before a semicolon" },
     { "[;:] *[%.!%?]", "nothing after a colon" }, { "^%l", "a lowercase start" },
     { "[%.!%?]\"? +%l", "a sentence starting in lowercase" }, { "[^%.!%?\"]$", "no full stop at the end" },
+    { "\n%l", "a paragraph starting in lowercase" }, { "\n\n\n", "an empty paragraph" }, { "[^%.!%?\"\n]\n", "a paragraph without a full stop" },
   }
   for _, c in ipairs(checks) do
     if text:find(c[1]) then problem(where, c[2], text) end

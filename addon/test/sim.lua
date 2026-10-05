@@ -98,15 +98,46 @@ end
 local combatLog
 function CombatLogGetCurrentEventInfo() return unpack(combatLog) end
 
+-- UI: any method works and returns something sensible, scripts are kept.
+local function ui()
+  local o = { shown = false, scripts = {} }
+  return setmetatable(o, {
+    __index = function(t, k)
+      if k == "SetScript" then return function(self, name, fn) self.scripts[name] = fn end end
+      if k == "Show" then return function(self) self.shown = true; if self.scripts.OnShow then self.scripts.OnShow(self) end end end
+      if k == "Hide" then return function(self) self.shown = false end end
+      if k == "SetShown" then return function(self, v) if v then self:Show() else self:Hide() end end end
+      if k == "IsShown" then return function(self) return self.shown end end
+      if k == "SetText" then return function(self, v) self.text = v end end
+      if k == "GetText" then return function(self) return rawget(self, "text") or "" end end
+      if k == "GetStringHeight" then return function() return 14 end end
+      if k == "SetHeight" then return function(self, v) self.height = v end end
+      if k == "GetHeight" then return function(self) return rawget(self, "height") or 100 end end
+      if k == "SetVerticalScroll" then return function(self, v) self.vscroll = v end end
+      if k == "GetVerticalScroll" then return function(self) return rawget(self, "vscroll") or 0 end end
+      if k == "CreateFontString" or k == "CreateTexture" then return function() return ui() end end
+      return function() return t end
+    end,
+  })
+end
+UIParent, UISpecialFrames = ui(), {}
+local portraitOf
+function SetPortraitTexture(_, unit) portraitOf = unit end
+
 local frames = {}
-function CreateFrame()
-  local f = { registered = {}, scripts = {} }
+function CreateFrame(_, name, _, template)
+  local f = ui()
+  f.registered = {}
+  if template == "ButtonFrameTemplate" then -- the game's window has its portrait
+    local p = ui()
+    f.GetPortrait = function() return p end
+  end
   function f:RegisterEvent(e)
     if FOREVER and e == "COMBAT_LOG_EVENT_UNFILTERED" then error("COMBAT_LOG_EVENT_UNFILTERED: forbidden") end
     self.registered[e] = true
   end
-  function f:SetScript(name, fn) self.scripts[name] = fn end
   table.insert(frames, f)
+  if name then _G[name] = f end
   return f
 end
 local function fire(e, ...)
@@ -120,7 +151,7 @@ end
 -- ── load the addon ───────────────────────────────────────────────────────────
 local ns = {}
 assert(loadfile(DIR .. (FOREVER and "Data_Forever.lua" or "Data_Classic.lua")))("WayfarersJournal", ns)
-for _, f in ipairs({ "Core.lua", "Record.lua", "Writer.lua" }) do assert(loadfile(DIR .. f))("WayfarersJournal", ns) end
+for _, f in ipairs({ "Core.lua", "Record.lua", "Writer.lua", "Book.lua" }) do assert(loadfile(DIR .. f))("WayfarersJournal", ns) end
 local D = ns.data
 local function check(cond, msg) assert(cond, msg); io.write("✓ " .. msg .. "\n") end
 local function lvl(n) return WayfarersJournalChar.levels[n] end
@@ -257,7 +288,30 @@ check(not book.prologue and one.level == 1 and (one.text:find("Anvilmar", 1, tru
   "the book of that life: chapter one begins where the life began")
 check(one.text:find('"Dwarven Outfitters"', 1, true) and one.close and two.level == 2 and two.rare and not one.text:find("{", 1, true),
   "its chapters tell the quests, mark the close calls and rares")
-io.write("    " .. one.text .. "\n")
+io.write("    " .. one.text:gsub("\n\n", "\n    ") .. "\n")
+
+-- The book, open: a chapter per level, the last one open.
+SlashCmdList.WAYFARERSJOURNAL("")
+local B, page, rows = WayfarersJournalFrame, WayfarersJournalPage, ns.bookRows
+check(B:IsShown() and portraitOf == "player" and B.who:GetText():find("Sealinedion, level 2", 1, true) and B.who:GetText():find("Hardcore", 1, true),
+  "/wj opens the book: my portrait, who I am, Hardcore")
+check(rows[1]:IsShown() and rows[2]:IsShown() and not (rows[3] and rows[3]:IsShown()) and rows[1].title:GetText() == "Level 1",
+  "a row per level")
+check(page.title:GetText() == "Level 2" and page.body:GetText() == ns.writeBook(J).chapters[2].text,
+  "the last chapter opens first, as the writer wrote it")
+check(rows[1].marks[1]:IsShown() and not rows[1].marks[2]:IsShown() and rows[2].marks[2]:IsShown(),
+  "marks: a skull for a close call (level 1), a star for a rare (level 2)")
+rows[1].scripts.OnClick(rows[1])
+check(page.title:GetText() == "Level 1" and page.body:GetText():find('"Dwarven Outfitters"', 1, true)
+  and page.sub:GetText():find("Dun Morogh", 1, true) and not page.sub:GetText():find("still being written", 1, true),
+  "a click opens a chapter: the place, the dates")
+rows[2].scripts.OnClick(rows[2])
+check(page.sub:GetText():find("still being written", 1, true), "the level in progress is still being written")
+state.sub = "Kharanos"
+fire("ZONE_CHANGED")
+check(page.body:GetText():find("Kharanos", 1, true) and page.title:GetText() == "Level 2", "a new moment while the book is open: rewritten at once, the same chapter open")
+SlashCmdList.WAYFARERSJOURNAL("")
+check(not B:IsShown(), "/wj again closes it")
 
 -- A character met mid-life: a prologue from what the game knows.
 WayfarersJournalChar = nil
@@ -272,4 +326,10 @@ local later = ns.writeBook(WayfarersJournalChar)
 check(later.prologue and later.prologue:find("^%u") and later.chapters[1].level == 23 and not later.chapters[1].text:find("begin", 1, true),
   "its book opens with the prologue; its first chapter is no beginning")
 io.write("    " .. later.prologue .. "\n")
+SlashCmdList.WAYFARERSJOURNAL("")
+check(rows[1].title:GetText() == "Prologue" and rows[2].title:GetText() == "Level 23" and not (rows[3] and rows[3]:IsShown())
+  and page.title:GetText() == "Level 23", "its book lists the prologue, then its first chapter")
+rows[1].scripts.OnClick(rows[1])
+check(page.title:GetText() == "Prologue" and page.sub:GetText():find("level 23", 1, true) and page.body:GetText() == later.prologue,
+  "the prologue reads")
 io.write(FOREVER and "all good (Forever)\n" or "all good\n")
