@@ -1,0 +1,43 @@
+# Pushing a tag vX.Y.Z (scripts/release.sh does it): checks, zips one package
+# per game (Classic, Forever), publishes the GitHub release with the tag's
+# message as its notes and both zips, and uploads them to CurseForge once the project exists (repository variable
+# CURSEFORGE_PROJECT_ID, secret CURSEFORGE_TOKEN).
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      TAG: ${{ github.ref_name }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      # checkout leaves the tag lightweight: fetch it again for its message.
+      - run: git fetch --force --tags
+      - uses: oven-sh/setup-bun@v2
+      - run: sudo apt-get install -y -qq luajit
+      - run: bun scripts/build.ts --check && luajit addon/test/sim.lua && FOREVER=1 luajit addon/test/sim.lua
+      - name: Packages (one zip per game)
+        run: bun scripts/package.ts
+      - name: Publish the release
+        run: |
+          git tag -l --format='%(contents)' "$TAG" | sed '/^-----BEGIN PGP SIGNATURE-----/,$d' > notes.md
+          [ -s notes.md ] || { echo "::error::tag $TAG has no message (release notes)"; exit 1; }
+          gh release create "$TAG" --title "$TAG" --notes-file notes.md dist/WayfarersJournal-classic.zip dist/WayfarersJournal-forever.zip
+
+  # Then CurseForge, once the project exists (see curseforge.yml).
+  curseforge:
+    needs: release
+    uses: ./.github/workflows/curseforge.yml
+    with:
+      tag: ${{ github.ref_name }}
+    secrets: inherit

@@ -1,0 +1,46 @@
+# Uploads a release's two packages to CurseForge: WayfarersJournal-classic.zip
+# (Classic Era, TBC Anniversary) and WayfarersJournal-forever.zip (Forever),
+# each filed under its game versions (from its TOC). Called by release.yml;
+# run it by hand to upload an existing release (Actions → CurseForge → Run
+# workflow, with its tag).
+#
+# Needs: repository variable CURSEFORGE_PROJECT_ID, secret CURSEFORGE_TOKEN.
+name: CurseForge
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag to upload (e.g. v0.5.1)
+        required: true
+  workflow_call:
+    inputs:
+      tag:
+        type: string
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    if: ${{ vars.CURSEFORGE_PROJECT_ID != '' }}
+    env:
+      TAG: ${{ inputs.tag }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      # The default branch, for the upload script (older tags may not have it).
+      - uses: actions/checkout@v7
+      - name: Fetch the release's packages and notes
+        run: |
+          gh release download "$TAG" --pattern 'WayfarersJournal-*.zip' --dir out
+          gh release view "$TAG" --json body --jq .body > out/changelog.md
+          ls out
+      - name: Upload to CurseForge
+        env:
+          CF_API_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
+          CF_PROJECT_ID: ${{ vars.CURSEFORGE_PROJECT_ID }}
+        run: |
+          scripts/curseforge-upload.sh out/WayfarersJournal-classic.zip out/changelog.md
+          scripts/curseforge-upload.sh out/WayfarersJournal-forever.zip out/changelog.md

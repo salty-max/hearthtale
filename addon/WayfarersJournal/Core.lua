@@ -1,0 +1,58 @@
+-- Wayfarer's Journal: the character's own journal, written as it plays. This
+-- file holds the character's record (per character, WayfarersJournalChar):
+--   guid                     the character it belongs to (a deleted
+--                            character's journal is never inherited by a new
+--                            one of the same name)
+--   began = { at, level }    when the journal began (a character met
+--                            mid-life gets a prologue)
+--   levels[n] = { ... }      what level n held (Record.lua)
+local _, ns = ...
+local PREFIX = "|cffc9a227Wayfarer's Journal:|r "
+ns.PREFIX = PREFIX
+
+-- Forever: a modern client (interface 16xxx), with secret values.
+local interface = select(4, GetBuildInfo())
+ns.forever = interface >= 16000 and interface < 20000
+local function secret(v) return issecretvalue ~= nil and issecretvalue(v) end
+ns.secret = secret
+
+local char
+function ns.journal() return char end
+
+local frame = CreateFrame("Frame")
+local handlers, listeners = {}, {}
+
+function handlers.PLAYER_LOGIN()
+  local guid = UnitGUID("player")
+  local saved = WayfarersJournalChar
+  if type(saved) == "table" and saved.guid == guid then
+    char = saved
+  else
+    char = { guid = guid, began = { at = time(), level = UnitLevel("player") }, levels = {} }
+    WayfarersJournalChar = char
+  end
+end
+
+frame:SetScript("OnEvent", function(_, event, ...)
+  if event ~= "PLAYER_LOGIN" and not char then return end
+  if handlers[event] then handlers[event](...) end
+  for _, fn in ipairs(listeners[event] or {}) do fn(...) end
+end)
+for event in pairs(handlers) do frame:RegisterEvent(event) end
+
+-- Other files listen through this frame (ns.on). An event a client doesn't
+-- know is simply never heard.
+function ns.on(event, fn)
+  if not listeners[event] then
+    listeners[event] = {}
+    if not handlers[event] then pcall(frame.RegisterEvent, frame, event) end
+  end
+  table.insert(listeners[event], fn)
+end
+
+SLASH_WAYFARERSJOURNAL1 = "/wayfarer"
+SLASH_WAYFARERSJOURNAL2 = "/wj"
+SlashCmdList.WAYFARERSJOURNAL = function(msg)
+  msg = strtrim((msg or ""):lower())
+  if ns.toggle then ns.toggle() else print(PREFIX .. "the journal is being written.") end
+end
