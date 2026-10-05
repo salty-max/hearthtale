@@ -1,5 +1,5 @@
-# Every push and pull request: the content builds and both content files are
-# up to date with it, the addon passes its simulation on both games, and both
+# Every push and pull request: the writing builds and both data files are up
+# to date with it, the addon passes its simulation on both games, and both
 # packages assemble.
 name: CI
 
@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v7
       - uses: oven-sh/setup-bun@v2
       - run: sudo apt-get install -y -qq luajit
-      - name: Content builds, content files are up to date
+      - name: Writing builds, data files are up to date
         run: bun scripts/build.ts --check
       - name: Simulation
         run: luajit addon/test/sim.lua
