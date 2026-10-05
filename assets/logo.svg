@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Wayfarer's Journal: a travel journal open under a gilded compass rose,
+       in the frame of its siblings (Lorekeeper's Codex, Explorer's Field
+       Journal). The left page sketches the road; the right page is the day's
+       writing. -->
+  <defs>
+    <radialGradient id="leather" cx="50%" cy="42%" r="70%">
+      <stop offset="0" stop-color="#3b3420"/>
+      <stop offset="0.6" stop-color="#231d10"/>
+      <stop offset="1" stop-color="#110d06"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6dd8a"/>
+      <stop offset="0.5" stop-color="#d4a637"/>
+      <stop offset="1" stop-color="#8a6116"/>
+    </linearGradient>
+    <linearGradient id="pageL" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d9c08a"/>
+      <stop offset="0.8" stop-color="#f1e2bb"/>
+      <stop offset="1" stop-color="#b99a5e"/>
+    </linearGradient>
+    <linearGradient id="pageR" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#d9c08a"/>
+      <stop offset="0.8" stop-color="#f1e2bb"/>
+      <stop offset="1" stop-color="#b99a5e"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#f6dd8a" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#f6dd8a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="feather" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4ecd6"/>
+      <stop offset="1" stop-color="#b8a984"/>
+    </linearGradient>
+  </defs>
+
+  <!-- leather ground and gilded frame -->
+  <rect width="512" height="512" fill="url(#leather)"/>
+  <rect x="18" y="18" width="476" height="476" rx="10" fill="none" stroke="url(#gold)" stroke-width="6"/>
+  <rect x="32" y="32" width="448" height="448" rx="6" fill="none" stroke="#d4a637" stroke-opacity="0.55" stroke-width="2"/>
+  <g fill="#d4a637" opacity="0.8">
+    <path d="M32 52 L52 32 L58 38 L38 58 Z"/>
+    <path d="M480 52 L460 32 L454 38 L474 58 Z"/>
+    <path d="M32 460 L52 480 L58 474 L38 454 Z"/>
+    <path d="M480 460 L460 480 L454 474 L474 454 Z"/>
+  </g>
+
+  <!-- a gilded compass rose, in a ring, above the journal -->
+  <circle cx="256" cy="186" r="150" fill="url(#glow)"/>
+  <g transform="translate(256 186)">
+    <circle r="118" fill="none" stroke="#d4a637" stroke-opacity="0.6" stroke-width="3"/>
+    <circle r="106" fill="none" stroke="#d4a637" stroke-opacity="0.35" stroke-width="1.5" stroke-dasharray="3 7"/>
+    <!-- the four lesser points, between -->
+    <g fill="#b98a2a" stroke="#6b4a10" stroke-width="1.5" opacity="0.9">
+      <path d="M0 0 L46 -46 L14 0 Z" transform="rotate(0)"/>
+      <path d="M0 0 L46 -46 L14 0 Z" transform="rotate(90)"/>
+      <path d="M0 0 L46 -46 L14 0 Z" transform="rotate(180)"/>
+      <path d="M0 0 L46 -46 L14 0 Z" transform="rotate(270)"/>
+    </g>
+    <!-- the four great points, each half lit, half shaded -->
+    <g stroke="#6b4a10" stroke-width="2" stroke-linejoin="round">
+      <g><path d="M0 -96 L16 -16 L0 0 Z" fill="url(#gold)"/><path d="M0 -96 L-16 -16 L0 0 Z" fill="#8a6116"/></g>
+      <g transform="rotate(90)"><path d="M0 -96 L16 -16 L0 0 Z" fill="url(#gold)"/><path d="M0 -96 L-16 -16 L0 0 Z" fill="#8a6116"/></g>
+      <g transform="rotate(180)"><path d="M0 -96 L16 -16 L0 0 Z" fill="url(#gold)"/><path d="M0 -96 L-16 -16 L0 0 Z" fill="#8a6116"/></g>
+      <g transform="rotate(270)"><path d="M0 -96 L16 -16 L0 0 Z" fill="url(#gold)"/><path d="M0 -96 L-16 -16 L0 0 Z" fill="#8a6116"/></g>
+    </g>
+    <circle r="10" fill="url(#gold)" stroke="#6b4a10" stroke-width="2"/>
+    <circle r="3.5" fill="#6b4a10"/>
+  </g>
+
+  <!-- the open travel journal -->
+  <g transform="translate(256 336)">
+    <!-- cover: oxblood leather, worn -->
+    <path d="M-182 -64 Q-90 -84 0 -58 Q90 -84 182 -64 L190 92 Q96 70 0 96 Q-96 70 -190 92 Z" fill="#5a2418" stroke="#24100a" stroke-width="3"/>
+    <!-- page stacks -->
+    <path d="M-170 -70 Q-86 -92 -4 -62 L-4 84 Q-86 58 -176 78 Z" fill="#a8895a"/>
+    <path d="M170 -70 Q86 -92 4 -62 L4 84 Q86 58 176 78 Z" fill="#a8895a"/>
+    <!-- pages -->
+    <path d="M-164 -78 Q-84 -100 -4 -70 L-4 76 Q-84 50 -168 68 Z" fill="url(#pageL)" stroke="#7d5c2c" stroke-width="1.5"/>
+    <path d="M164 -78 Q84 -100 4 -70 L4 76 Q84 50 168 68 Z" fill="url(#pageR)" stroke="#7d5c2c" stroke-width="1.5"/>
+    <!-- spine shadow -->
+    <path d="M-12 -68 Q0 -62 12 -68 L12 78 Q0 84 -12 78 Z" fill="#6b4a22" opacity="0.45"/>
+    <!-- left page: the road, winding to the mountains, in ink -->
+    <g fill="none" stroke="#4a3216" stroke-linecap="round" stroke-linejoin="round" opacity="0.85">
+      <path d="M-150 -26 L-128 -56 L-112 -38 L-92 -66 L-70 -36 L-56 -50 L-36 -24" stroke-width="3"/>
+      <path d="M-120 -46 L-112 -38 M-92 -66 L-86 -54" stroke-width="2"/>
+      <path d="M-96 -28 Q-80 -14 -104 -2 Q-132 12 -100 26 Q-66 40 -110 60" stroke-width="5"/>
+      <path d="M-88 -28 Q-70 -14 -92 -2 Q-118 12 -86 26 Q-50 40 -88 62" stroke-width="2" opacity="0.6"/>
+      <path d="M-56 28 L-56 -2" stroke-width="2.5"/>
+      <path d="M-56 -2 L-38 4 L-56 10 Z" fill="#8a2a1c" stroke-width="1.5"/>
+      <path d="M-150 66 Q-112 54 -34 64" stroke-width="2" opacity="0.6"/>
+    </g>
+    <!-- right page: the day's writing -->
+    <g stroke="#6b4a22" stroke-width="3" stroke-linecap="round" opacity="0.75" fill="none">
+      <path d="M140 -60 Q80 -74 28 -54"/>
+      <path d="M142 -38 Q82 -52 28 -32"/>
+      <path d="M144 -16 Q84 -30 28 -10"/>
+      <path d="M146 6 Q86 -8 28 12"/>
+      <path d="M148 28 Q90 14 60 22"/>
+    </g>
+    <!-- a ribbon marker -->
+    <path d="M60 80 L60 118 L70 108 L80 118 L80 78" fill="#d4a637" stroke="#6b4a10" stroke-width="2"/>
+  </g>
+
+  <!-- the quill, across the right page -->
+  <g transform="translate(372 300) rotate(38)">
+    <path d="M0 -112 C22 -82 22 -20 4 44 L-4 44 C-22 -20 -22 -82 0 -112 Z" fill="url(#feather)" stroke="#6f6248" stroke-width="2"/>
+    <path d="M0 -104 L0 70" stroke="#6f6248" stroke-width="2"/>
+    <g stroke="#9a8c6c" stroke-width="1.2" opacity="0.8">
+      <path d="M0 -80 L12 -92"/><path d="M0 -60 L15 -72"/><path d="M0 -40 L16 -52"/><path d="M0 -20 L15 -32"/>
+      <path d="M0 -80 L-12 -92"/><path d="M0 -60 L-15 -72"/><path d="M0 -40 L-16 -52"/><path d="M0 -20 L-15 -32"/>
+    </g>
+    <path d="M-3 70 L0 90 L3 70 Z" fill="#2b2014"/>
+  </g>
+</svg>
