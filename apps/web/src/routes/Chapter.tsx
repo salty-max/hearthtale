@@ -1,15 +1,21 @@
 import { Link, useParams } from "@tanstack/react-router";
 import { ChevronLeft, ChevronRight, List } from "lucide-react";
+import { useState } from "react";
+import { ContentsDrawer } from "@/components/ContentsDrawer";
 import { LoadError, Loading } from "@/components/PageState";
 import { NotFound, useCharacterBook } from "@/lib/api";
 import { paragraphs, parts } from "@/lib/book";
 import { useT } from "@/lib/i18n";
 import { CLASS_COLOURS } from "@/lib/wow";
 
-/** One part of a book on its page: the prologue, a chapter or the epitaph, then the way on. */
+/**
+ * The reader: one part of a book on its page (the prologue, a chapter or the
+ * epitaph), the contents in a drawer, the previous and next parts below.
+ */
 export function Chapter() {
   const t = useT();
   const { id, part } = useParams({ from: "/book/$id/$part" });
+  const [contents, setContents] = useState(false);
   const { data, isPending, error, refetch } = useCharacterBook(Number(id));
   if (isPending) return <Loading />;
   if (error) return <LoadError message={error instanceof NotFound ? t.book.notFound : undefined} retry={error instanceof NotFound ? undefined : () => void refetch()} />;
@@ -37,11 +43,16 @@ export function Chapter() {
     p.kind === "prologue" ? t.book.prologue : p.kind === "epitaph" ? t.book.epitaph : t.book.chapter(p.number);
   return (
     <section className="mx-auto mt-2 max-w-2xl">
-      <p className="text-center">
-        <Link to="/book/$id" params={{ id }} className="font-[family-name:var(--font-display)] text-lg hover:underline" style={{ color: CLASS_COLOURS[character.class] }}>
+      <div className="flex items-center justify-between gap-3">
+        <button onClick={() => setContents(true)} className="btn" aria-haspopup="dialog" aria-expanded={contents}>
+          <List className="size-4" aria-hidden />
+          {t.book.contents}
+        </button>
+        <span className="truncate font-[family-name:var(--font-display)] text-lg" style={{ color: CLASS_COLOURS[character.class] }}>
           {character.name}
-        </Link>
-      </p>
+        </span>
+      </div>
+      <ContentsDrawer open={contents} onClose={() => setContents(false)} id={id} character={character} book={book} current={part} />
       <article className="page mt-3 rounded-md px-6 py-8 sm:px-12 sm:py-10">
         <header className="text-center">
           <h1 className={here.kind === "epitaph" ? "title text-3xl text-fallen" : "title text-3xl text-[#7a5410]"}>{title}</h1>
@@ -65,10 +76,10 @@ export function Chapter() {
         ) : (
           <span />
         )}
-        <Link to="/book/$id" params={{ id }} className="flex items-center gap-1 hover:underline">
+        <button onClick={() => setContents(true)} className="flex items-center gap-1 hover:underline" aria-haspopup="dialog">
           <List className="size-4" aria-hidden />
-          {t.book.toContents}
-        </Link>
+          {t.book.contents}
+        </button>
         {next ? (
           <Link to="/book/$id/$part" params={{ id, part: next.key }} className="flex items-center gap-1 hover:underline">
             {label(next)}

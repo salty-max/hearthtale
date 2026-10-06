@@ -87,8 +87,8 @@ Plan and steps: PLAN.md, "The site".
   shape (mirrors Save.lua). Source of truth.
 - Local: `bun run db` (Postgres on :5435), `bun run db:migrate`,
   `bun run db:seed` (the test characters), `bun run dev` (api :3002, web :5175).
-  The library, a book's contents and its chapters: `/library`, `/book/:id`,
-  `/book/:id/:part`. `/api/characters` lists every character, unguarded: test
+  The library (`/library`) and the reader (`/book/:id/:part`: one part per
+  page, the contents in a drawer; `/book/:id` opens the part to read). `/api/characters` lists every character, unguarded: test
   data only, refused on a production deployment until accounts land (step 4).
 
 ## Commands
