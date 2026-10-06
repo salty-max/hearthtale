@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+/* Hearthtale's look: the in-game book. A dark leather night around parchment
+   pages, brown ink, the addon's gold (|cffc9a227) for titles and links, and the
+   red of a fallen life. */
+@theme {
+  --color-night: #120d09;
+  --color-leather: #2a1d12;
+  --color-leather-edge: #4a3320;
+  --color-parchment: #f1e2bf;
+  --color-parchment-shade: #e2cc9c;
+  --color-ink: #3a2816;
+  --color-ink-faded: #6e5638;
+  --color-gold: #c9a227;
+  --color-gold-bright: #e8c75a;
+  --color-ember: #d9772b;
+  --color-fallen: #9b2a20;
+
+  --font-display: "Cinzel", Georgia, serif;
+  --font-book: "EB Garamond Variable", Georgia, serif;
+}
+
+html,
+body {
+  background: var(--color-night);
+  color: var(--color-parchment);
+  font-family: var(--font-book);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Components sit in their layer, so utilities (text-…) can still override them. */
+@layer components {
+  /* A page of the book. */
+  .page {
+    background:
+      radial-gradient(ellipse at 50% 0%, rgb(255 250 235 / 0.55), transparent 60%),
+      linear-gradient(180deg, var(--color-parchment), var(--color-parchment-shade));
+    color: var(--color-ink);
+    border: 1px solid var(--color-leather-edge);
+    box-shadow:
+      0 0 0 3px var(--color-leather),
+      0 0 0 4px var(--color-gold),
+      0 12px 32px rgb(0 0 0 / 0.55);
+  }
+
+  .title {
+    font-family: var(--font-display);
+    color: var(--color-gold);
+    letter-spacing: 0.02em;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-gold);
+    border-radius: 0.375rem;
+    background: linear-gradient(180deg, var(--color-leather-edge), var(--color-leather));
+    color: var(--color-gold-bright);
+    font-family: var(--font-display);
+    font-weight: 600;
+  }
+  .btn:hover {
+    border-color: var(--color-gold-bright);
+  }
+  .btn:focus-visible,
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--color-gold-bright);
+    outline-offset: 2px;
+  }
+}

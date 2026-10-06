@@ -1,11 +1,43 @@
 {
   "name": "hearthtale",
   "private": true,
-  "description": "A World of Warcraft addon: your character's own journal, written as you play, a chapter per level; on Hardcore, an epitaph and the Hall of the Fallen",
+  "description": "Hearthtale: your WoW character's own journal, written as you play (the addon), and hearthtale.gg to read it anywhere",
   "license": "MIT",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "packageManager": "bun@1.3.14",
   "scripts": {
-    "build": "bun scripts/build.ts",
-    "check": "bun scripts/build.ts --check && luajit addon/test/sim.lua && FOREVER=1 luajit addon/test/sim.lua && luajit addon/test/writer.lua && luajit addon/test/sample.lua > /dev/null",
-    "package": "bun scripts/package.ts"
+    "dev": "bash scripts/dev.sh",
+    "build": "turbo run build",
+    "typecheck": "turbo run typecheck",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "turbo run test",
+    "check": "bun run addon:check && bun run typecheck && bun run lint && bun run test",
+    "prepare": "husky",
+    "db": "bash scripts/db.sh",
+    "db:generate": "bun run --filter @hearthtale/api db:generate",
+    "db:migrate": "bun run --filter @hearthtale/api db:migrate",
+    "addon:build": "bun scripts/build.ts",
+    "addon:check": "bun scripts/build.ts --check && luajit addon/test/sim.lua && FOREVER=1 luajit addon/test/sim.lua && luajit addon/test/writer.lua && luajit addon/test/sample.lua > /dev/null",
+    "addon:package": "bun scripts/package.ts"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": "eslint --fix"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.2.1",
+    "@commitlint/config-conventional": "^21.2.0",
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.7.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.3",
+    "globals": "^17.7.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.8",
+    "turbo": "^2",
+    "typescript-eslint": "^8.64.0"
   }
 }

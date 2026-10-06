@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Hearthtale</title>
+    <meta name="description" content="Your WoW character's own journal, written as you play: read it in the game, or here." />
+    <meta name="theme-color" content="#120d09" />
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Hearthtale" />
+    <style>
+      html { background: #120d09; }
+      #splash {
+        position: fixed; inset: 0; z-index: 2147483647;
+        display: flex; align-items: center; justify-content: center;
+        background: radial-gradient(ellipse at 50% 40%, #2a1d12, #120d09 70%);
+        transition: opacity 0.35s ease;
+      }
+      #splash.splash-hide { opacity: 0; pointer-events: none; }
+      #splash img { width: 96px; height: 96px; border-radius: 22px; animation: pulse 1.6s ease-in-out infinite; }
+      @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+      @media (prefers-reduced-motion: reduce) { #splash img { animation: none; } }
+    </style>
+  </head>
+  <body>
+    <div id="splash" aria-hidden="true"><img src="/pwa-192.png" alt="" /></div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

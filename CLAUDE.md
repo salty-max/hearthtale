@@ -62,14 +62,35 @@ The plan and its decisions: PLAN.md.
 - The epitaph (epitaph, remembrance, farewell) is in the third person, by the
   name; the rest of the book in the first. A count of one never meets a
   plural ("one tasks"): such slots are left empty for one.
-- After changing the writing: `bun run build`, then `bun run check`,
+- After changing the writing: `bun run addon:build`, then `bun run addon:check`,
   regenerate `docs/sample.md` and read it again.
+
+## The site (hearthtale.gg)
+
+A monorepo around the addon (Turborepo + Bun workspaces, as WoWLocker): the
+site shows the book the addon saves at logout (Save.lua), never writing its own.
+Plan and steps: PLAN.md, "The site".
+
+- `apps/api`: Hono on Bun (`src/app.ts`), Postgres through drizzle
+  (`src/db/schema.ts`, migrations in `drizzle/`), `src/vercel.ts` the Vercel
+  function (bundled by `scripts/vercel-build.sh`).
+- `apps/web`: React 19 + Vite + Tailwind v4 + TanStack Router/Query, an
+  installable PWA. Routes in `src/router.tsx`; every visible string in
+  `src/lib/i18n.ts` (`fr` typed on `en`); the look (the in-game book: leather,
+  parchment, the addon's gold) in `src/index.css`.
+- `packages/shared` (`@hearthtale/shared`): the wire contract, the saved book's
+  shape (mirrors Save.lua). Source of truth.
+- Local: `bun run db` (Postgres on :5435), `bun run db:migrate`, `bun run dev`
+  (api :3002, web :5175).
 
 ## Commands
 
 ```bash
-bun run build | check | package
-scripts/release.sh [--version X.Y.Z] NOTES.md   # tag, push; Actions publish
+bun run addon:build | addon:check | addon:package   # the addon
+bun run dev | typecheck | lint | test | build       # the site
+bun run check                                       # everything
+bun run db | db:generate | db:migrate
+scripts/release.sh [--version X.Y.Z] NOTES.md       # the addon: tag, push; Actions publish
 ```
 
 ## Conventions

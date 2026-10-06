@@ -34,8 +34,9 @@ site).
 
 ### Steps
 
-1. **Scaffold**: the monorepo around the addon (Turborepo + Bun, from WoWLocker:
-   lint, typecheck, commitlint, CI), the addon's checks kept as they are.
+1. **Scaffold** (done, 6 October 2026): the monorepo around the addon
+   (Turborepo + Bun, from WoWLocker: lint, typecheck, commitlint, CI), the
+   addon's checks kept as they are; a first page in English and French.
 2. **The book in the saved file** (done, 6 October 2026): HearthtaleChar.book
    and each fallen life's book in the Hall, written at logout.
 3. **Records in**: an upload endpoint for a character's journal (HearthtaleChar)

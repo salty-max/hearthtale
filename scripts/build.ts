@@ -99,6 +99,7 @@ for (const f of existsSync(WRITING) ? readdirSync(WRITING).sort() : []) {
   if (!f.endsWith(".md")) continue;
   const file = join(WRITING, f);
   const src = readFileSync(file, "utf8");
+  // eslint-disable-next-line no-control-regex -- any character outside ASCII, on purpose
   const odd = src.match(/[^\x00-\x7f]/);
   if (odd) fail(file, `non-ASCII character "${odd[0]}": use ' and plain quotes`);
   const m = src.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);

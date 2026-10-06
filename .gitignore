@@ -1,4 +1,25 @@
+# dependencies
+node_modules
+
+# build output (the addon's packages, the web app)
 dist/
-node_modules/
+dev-dist
+
+# turborepo
+.turbo
+
+# env
+.env
+.env*.local
+
+# local dev Postgres data (scripts/db.sh)
+.pgdata/
+
+# vercel build output
+.vercel
+
+# misc
 .DS_Store
 .cache/
+*.log
+*.tsbuildinfo

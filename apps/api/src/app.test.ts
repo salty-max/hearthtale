@@ -1,0 +1,13 @@
+import { describe, expect, test } from "bun:test";
+import { app } from "@/app";
+
+describe("api", () => {
+  test("health answers", async () => {
+    const res = await app.request("/api/health");
+    expect(res.status).toBe(200);
+    expect(await res.json()).toEqual({ ok: true, version: "dev" });
+  });
+  test("an unknown api route is a 404", async () => {
+    expect((await app.request("/api/nope")).status).toBe(404);
+  });
+});

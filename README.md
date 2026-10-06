@@ -22,10 +22,20 @@ The project page: addon/CURSEFORGE.md. The plan and its decisions: PLAN.md.
 
 ## Development
 
+The addon (`addon/`, `writing/`):
+
 ```bash
-bun run build      # writing → Data_Classic.lua, Data_Forever.lua
-bun run check      # both up to date, simulation on both games, writer test
-bun run package    # dist/classic, dist/forever, zipped
+bun run addon:build     # writing → Data_Classic.lua, Data_Forever.lua
+bun run addon:check     # both up to date, simulation on both games, writer test
+bun run addon:package   # dist/classic, dist/forever, zipped
+```
+
+The site, hearthtale.gg (`apps/`, `packages/`; needs `bun install` once):
+
+```bash
+bun run db && bun run db:migrate   # local Postgres on :5435
+bun run dev                        # api :3002, web :5175
+bun run check                      # the addon's checks, then typecheck, lint, tests
 ```
 
 ## License

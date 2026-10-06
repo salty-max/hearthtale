@@ -1,6 +1,7 @@
-# Every push and pull request: the writing builds and both data files are up
-# to date with it, the addon passes its simulation on both games, the writer
-# its test (hundreds of books), and both packages assemble.
+# Every push and pull request: the addon (the writing builds and both data files
+# are up to date with it, its simulation on both games, the writer's test with
+# hundreds of books, the sample, both packages) and the site (typecheck, lint,
+# tests, build).
 name: CI
 
 on:
@@ -26,5 +27,16 @@ jobs:
         run: FOREVER=1 luajit addon/test/sim.lua
       - name: Writer
         run: luajit addon/test/writer.lua
+      - name: Sample
+        run: luajit addon/test/sample.lua > /dev/null
       - name: Packages
         run: bun scripts/package.ts
+      - run: bun install --frozen-lockfile
+      - name: Site typecheck
+        run: bun run typecheck
+      - name: Site lint
+        run: bun run lint
+      - name: Site tests
+        run: bun run test
+      - name: Site build
+        run: bun run build
