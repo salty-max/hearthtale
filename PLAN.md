@@ -20,6 +20,9 @@ These replace the chapter per level below.
 | Writing | A sentence for each thing as it happens (each quest, the chapter's first of each creature, each place, a campfire stop, a level reached), never rewritten; a new paragraph at a new zone; once closed, a recap (the quests, the most fought), the time and gold, and the rest that closed it. |
 | Numbering | Chapters count from 1; a character met mid-life has its prologue first. |
 | Old data | The 0.1.0 test build's journals (chapters per level) start over. |
+| Quests | Told by what was done, from the objectives the quest log gives at acceptance (kill so many, bring so many, a task) and who it was returned to (a message carried); the title only when there is nothing else to tell. |
+| Levels | Recorded (a chapter's levels), not told; the trainer's new spells are. |
+| Prose | Linking words between moments by what happened in between (then, later that day, that night, at first light); a quip (an [aside] in writing/) at most once a paragraph, but for the moments that matter; race and class lines in about one chapter in three, twice at most (a first, once in a life, always may). |
 
 ## Decisions (5 October 2026)
 

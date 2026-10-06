@@ -11,21 +11,21 @@ kind: quest
 - I gave {giver} what they asked for: {quest}.
 - I spent my effort on {quest}, and it was worth it.
 - {quest}, for {giver}, and a thank-you I'll remember.
-- [hc] I saw {quest} through. Nobody died, least of all me.
-- [class:PALADIN] {giver} asked for help with {quest}. A paladin doesn't say no.
-- [class:ROGUE] {quest}, for {giver}. I didn't ask questions; neither did they.
+- [hc aside] I saw {quest} through. Nobody died, least of all me.
+- [class:PALADIN aside] {giver} asked for help with {quest}. A paladin doesn't say no.
+- [class:ROGUE aside] {quest}, for {giver}. I didn't ask questions; neither did they.
 - {giver} asked; I answered: {quest}.
 - I took {quest} off {giver}'s hands.
 - {quest}, done before supper.
-- I finished {quest}. Another small good in the world.
+- [aside] I finished {quest}. Another small good in the world.
 - {giver} paid me for {quest}, and paid fairly.
 - I came back with what {quest} wanted, and {giver} was glad of it.
 - {quest}: one more name crossed off my list.
 - I saw {quest} done, start to finish.
-- {quest}. Not the hardest thing I've done, nor the easiest.
+- [aside] {quest}. Not the hardest thing I've done, nor the easiest.
 - I turned in {quest} and had a moment's rest.
-- {quest}, for {giver}. They didn't ask how; I didn't tell.
+- [aside] {quest}, for {giver}. They didn't ask how; I didn't tell.
 - I wrapped up {quest}.
 - [night] I finished {quest} by lamplight.
 - [race:Dwarf] {quest}, done, and a pint owed to me for it.
-- [class:MAGE] {quest}. I could have done it faster with a spell, but where's the story in that?
+- [class:MAGE aside] {quest}. I could have done it faster with a spell, but where's the story in that?

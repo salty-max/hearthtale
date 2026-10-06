@@ -10,6 +10,6 @@ kind: inn
 - A warm hearth at {inn}, and I tied my stone to it.
 - I paid for a room at {inn} and slept like a stone.
 - The innkeeper at {inn} took my coin and my hearthstone's promise.
-- [race:Dwarf] {inn}: the ale is honest. I'll stay.
-- [hc] I set my stone at {inn}. A safe place to run to is worth more than gold here.
+- [race:Dwarf aside] {inn}: the ale is honest. I'll stay.
+- [hc aside] I set my stone at {inn}. A safe place to run to is worth more than gold here.
 - [class:MAGE] I bound my hearthstone at {inn}, though I'd rather have a portal.

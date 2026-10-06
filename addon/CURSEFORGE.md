@@ -15,18 +15,18 @@ For Classic Era (Hardcore, Season of Discovery), TBC Anniversary and World of Wa
 A chapter runs from one rest to the next. Logging out in the wild is a night outdoors, and the chapter goes on; after four hours of play, the next logout closes it wherever you are.
 
 - **The road**: where the chapter began, the lands and places seen for the first time, the inn you made your home, your flights, the campfires you sat by, the nights outdoors.
-- **The work**: the quests you turned in, by name, and who gave them.
+- **The work**: what each quest had you do (the wolves you hunted, the meat you brought, the message you carried), for whom, and who you returned to.
 - **The fights**: each new creature fought, the first of each kind, elites, rares, and the close calls (under a tenth of your health, and alive to tell it), by night or day; when the chapter closes, what you fought most.
 - **The company**: who you grouped with, the dungeons you went into and the bosses who stayed there.
-- **The rest**: each level reached, what the trainer taught you, your professions' milestones, the best things you found, and at the end the time it took and the gold it brought.
+- **The rest**: what the trainer taught you, your professions' milestones, the best things you found, and at the end the time it took and the gold it brought.
 
 A character you already play gets a prologue from what the game knows of its life so far, and chapters from there.
 
 ## How it is written
 
-- In the first person, with the turns of phrase of your race and class: a dwarf's beard and ale, a Forsaken's second life, a paladin's Light, a hunter's pet.
+- In the first person, plainly told, the moments linked as they follow one another (then, later that day, that night). Now and then, the turns of phrase of your race and class: a dwarf's beard and ale, a Forsaken's second life, a paladin's Light, a hunter's pet.
 - Graver on Hardcore, and graver still as the levels climb.
-- Nearly 700 sentences, chosen to fit the moment: the hour, the first time or the tenth, how close the call, alone or in a group. A place just named becomes "there"; a sentence doesn't come back soon after it was used.
+- Some 750 sentences, chosen to fit the moment: the hour, the first time or the tenth, how close the call, alone or in a group. A place just named becomes "there"; a sentence doesn't come back soon after it was used.
 - Each sentence is written when its moment happens and stays as it is: the chapter grows as you play.
 - Written from what the addon records each time you open the book: nothing but the records is saved, and better sentences in later versions reach your old chapters too.
 

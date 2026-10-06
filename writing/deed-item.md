@@ -1,0 +1,32 @@
+---
+kind: deed-item
+---
+- [!one] I gathered {n} {thing} for {giver}.
+- [!one] {giver} needed {thing}. I brought back {n}.
+- [!one] I collected {thing} for {giver}, {n} in all.
+- [!one] I went looking for {thing} and came back with {n}, as {giver} had asked.
+- [!one] {n} {thing}, for {giver}.
+- [!one] I brought {giver} the {thing} they needed: {n} of them.
+- [!one] I gathered {n} {thing} and took them to {ender}.
+- [!one] I found the {thing} {giver} wanted and carried them to {ender}.
+- [!one] I gathered {n} {thing}.
+- [!one] I collected {n} {thing}.
+- [one] I found {thing} for {giver}.
+- [one] {giver} needed {thing}. I found it.
+- [one] I recovered {thing} and brought it back to {giver}.
+- [one] I found {thing} and took it to {ender}.
+- [one] I tracked down {thing}.
+- [one] I brought back {thing}.
+- [!one race:Dwarf] I gathered {n} {thing} for {giver}, and asked for a pint for the trouble.
+- [!one class:ROGUE aside] I came by {n} {thing} for {giver}. Best not to ask how.
+- [!one] I came back with {n} {thing}.
+- [!one] {n} {thing}, gathered one by one.
+- [one] I came back with {thing}.
+- [one] I found {thing} at last.
+- [one] {thing}: found, and handed over.
+- [one] I went looking for {thing} and came back with it.
+- [one] I recovered {thing}.
+- [!one] I gathered what was needed: {n} {thing}.
+- [!one] {n} {thing}, collected and carried back.
+- [!one] I filled my bags with {thing}, {n} in all.
+- [!one] I searched until I had {n} {thing}.

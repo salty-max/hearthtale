@@ -29,7 +29,12 @@ function GetQuestsCompleted() return state.questsDone or {} end
 -- Forever's client here doesn't say whether a character is Hardcore: the
 -- player says so in the settings (tested below).
 if not FOREVER then C_GameRules = { IsHardcoreActive = function() return state.hardcore end } end
-C_QuestLog = { GetTitleForQuestID = function(id) return state.titles and state.titles[id] end }
+C_QuestLog = {
+  GetTitleForQuestID = function(id) return state.titles and state.titles[id] end,
+  GetQuestObjectives = function(id) return state.objectives and state.objectives[id] or {} end,
+}
+QUEST_MONSTERS_KILLED = "%s slain: %d/%d"
+QUEST_OBJECTS_FOUND = "%s: %d/%d"
 C_Timer = { After = function(_, fn) fn() end }
 SlashCmdList = {}
 
@@ -241,14 +246,28 @@ fire("ZONE_CHANGED")
 fire("ZONE_CHANGED")
 check(#moments("place") == 1 and moments("place")[1].sub == "Anvilmar" and not moments("place")[1].new, "a new place, once, as it happens")
 
--- A quest: accepted from someone, turned in later.
+-- A quest: accepted from someone (its objectives in the log a moment later),
+-- turned in to someone else.
 state.npc, state.titles = "Sten Stoutarm", { [179] = "Dwarven Outfitters" }
 if FOREVER then fire("QUEST_ACCEPTED", 179) else fire("QUEST_ACCEPTED", 1, 179) end
-state.npc, state.titles = nil, {}
+state.objectives = { [179] = { { text = "Tough Wolf Meat: 0/8", type = "item", numRequired = 8 } } }
+fire("QUEST_LOG_UPDATE")
+state.npc, state.titles = "Balir Frosthammer", {}
+fire("QUEST_COMPLETE")
 fire("QUEST_TURNED_IN", 179, 80, 0)
+state.npc = nil
 local quest = moments("quest")[1]
-check(quest and quest.title == "Dwarven Outfitters" and quest.giver == "Sten Stoutarm" and ch().quests == 1,
-  "a quest turned in, a moment with its title and who gave it (even with the title out of the cache)")
+local o = quest and quest.objectives and quest.objectives[1]
+check(quest and quest.title == "Dwarven Outfitters" and quest.giver == "Sten Stoutarm" and quest.ender == "Balir Frosthammer" and ch().quests == 1
+  and o and o.type == "item" and o.name == "Tough Wolf Meat" and o.n == 8,
+  "a quest turned in: what it asked (eight Tough Wolf Meat), who gave it, who I returned to")
+state.npc, state.objectives = "Balir Frosthammer", { [180] = { { text = "Rockjaw Trogg slain: 0/6", type = "monster", numRequired = 6 } } }
+if FOREVER then fire("QUEST_ACCEPTED", 180) else fire("QUEST_ACCEPTED", 2, 180) end
+fire("QUEST_COMPLETE")
+fire("QUEST_TURNED_IN", 180, 80, 0)
+state.npc = nil
+local q2 = moments("quest")[2].objectives[1]
+check(q2.type == "monster" and q2.name == "Rockjaw Trogg" and q2.n == 6, "… a kill quest read through the game's own format (\"%s slain\")")
 
 -- Kills.
 local function kill(id, n)
@@ -358,7 +377,9 @@ fire("UNIT_AURA", "player")
 local book = ns.writeBook(J)
 local one = book.chapters[1]
 check(not book.prologue and one.number == 1 and one.open and one.from == 1 and one.to == 2 and one.close and one.rare
-  and one.text:find('"Dwarven Outfitters"', 1, true) and not one.text:find("{", 1, true), "chapter 1, still being written: its moments, in order")
+  and one.text:find("Tough Wolf Meat", 1, true) and one.text:find("Rockjaw Troggs", 1, true) and not one.text:find('"Dwarven Outfitters"', 1, true)
+  and not one.text:find("{", 1, true), "chapter 1, still being written: its moments in order, the quests told by what was done")
+check(not one.text:find("level", 1, true), "a level reached isn't told (the chapter's levels say it)")
 local textBefore = one.text
 state.sub = "Kharanos"
 fire("ZONE_CHANGED")

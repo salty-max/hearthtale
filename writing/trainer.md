@@ -8,7 +8,7 @@ kind: trainer
 - I learned {spells}, for a price.
 - My trainer was pleased with me: {spells}.
 - I came away from training with {spells}.
-- I spent good coin on {spells}. Worth every copper.
+- [aside] I spent good coin on {spells}. Worth every copper.
 - I learned {spells}, and I'll need every bit of it.
 - I went back to my trainer for {spells}.
 - [many] I learned a great deal: {spells}, and more besides.

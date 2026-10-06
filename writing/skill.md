@@ -3,12 +3,15 @@ kind: skill
 ---
 - My {skill} reached {rank}.
 - I worked at my {skill} until I reached {rank}.
-- {rank} in {skill}. Slowly, I'm getting good at something.
+- [aside] {rank} in {skill}. Slowly, I'm getting good at something.
 - My hands are learning {skill}: {rank} now.
 - I spent my evenings on {skill}, and reached {rank}.
-- {skill}: {rank}. Not bad.
+- [aside] {skill}: {rank}. Not bad.
 - I reached {rank} in {skill}.
 - My {skill} is coming along: {rank}.
-- [race:Dwarf] My {skill} reached {rank}. A dwarf's hands are made for it.
-- [race:Gnome] {skill} at {rank}. I've already thought of three improvements.
-- [hc] {skill} at {rank}. A trade is a life too, and safer than the other kind.
+- [race:Dwarf aside] My {skill} reached {rank}. A dwarf's hands are made for it.
+- [race:Gnome aside] {skill} at {rank}. I've already thought of three improvements.
+- [hc aside] {skill} at {rank}. A trade is a life too, and safer than the other kind.
+- My {skill} came up to {rank}.
+- I practised my {skill} until I reached {rank}.
+- {rank}, now, in {skill}.

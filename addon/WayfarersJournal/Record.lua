@@ -14,14 +14,19 @@
 --   }
 --   moments: { k = kind, at, night, zone, sub, ... }:
 --     place { new = "zone" or nil }         a place seen for the first time
---     inn { place }  flight { from, to }  quest { title, giver }
+--     inn { place }  flight { from, to }
+--     quest { title, giver, ender, objectives = { { type, name, n, text } } }
+--                                           what it asked (monster: kill n of name;
+--                                           item: bring n of name; others: text),
+--                                           and who I returned to
 --     kill { name, kind, first, elite }     the chapter's first of a creature
 --     rare { name, elite }  close { foe, hp }  died { death }
 --     group { name, class }                 someone joined me
 --     dungeon { name }  boss { name }
 --     learned { spells }                    a trainer's visit (merged)
 --     skill { name, rank }  loot { link, quality }   (the chapter's best yet)
---     level { level }  campfire  rested { place, fire }   (too short to close)
+--     level { level }                       (recorded, not told)
+--     campfire  rested { place, fire }      (a rest too short to close)
 --     night { }                             slept outdoors (a logout in the wild)
 --     wake { after }                        the next session in the same chapter
 --   visited[zone|sub], kinds[kind] = true   the character's firsts, life-long
@@ -273,19 +278,65 @@ local function titleOf(id)
   return (C_QuestLog and C_QuestLog.GetTitleForQuestID and C_QuestLog.GetTitleForQuestID(id))
     or (GetTitleForQuestID and GetTitleForQuestID(id)) or nil
 end
+
+-- What a quest asks, from the quest log: its objectives' lines ("Kobold
+-- Vermin slain: 0/10", "Tough Wolf Meat: 0/8"), read through the game's own
+-- formats; the rest ("Find the missing diplomat") kept as it is.
+local function objectivesOf(id)
+  local raw = {}
+  if C_QuestLog and C_QuestLog.GetQuestObjectives then
+    local ok, list = pcall(C_QuestLog.GetQuestObjectives, id)
+    for _, o in ipairs(ok and list or {}) do table.insert(raw, { text = o.text, type = o.type, n = o.numRequired }) end
+  elseif GetQuestLogIndexByID and GetNumQuestLeaderBoards and GetQuestLogLeaderBoard then
+    local index = GetQuestLogIndexByID(id)
+    if index and index > 0 then
+      for i = 1, GetNumQuestLeaderBoards(index) or 0 do
+        local text, type = GetQuestLogLeaderBoard(i, index)
+        table.insert(raw, { text = text, type = type })
+      end
+    end
+  end
+  local out = {}
+  for _, o in ipairs(raw) do
+    if o.text and not secret(o.text) then
+      local name, n
+      for _, g in ipairs({ "QUEST_MONSTERS_KILLED", "QUEST_OBJECTS_FOUND" }) do
+        local p = ns.pattern(g)
+        local a, _, c = o.text:match(p or "^$")
+        if a then name, n = a, tonumber(c) break end
+      end
+      table.insert(out, { type = o.type, name = name, n = n or o.n, text = not name and o.text or nil })
+    end
+  end
+  return #out > 0 and out or nil
+end
+
 ns.on("QUEST_ACCEPTED", function(a, b)
   local id, c = b or a, char()
   if not id then return end
   c.pending = c.pending or {}
   local giver = UnitName("npc") or UnitName("target")
-  c.pending[id] = { giver = (giver and not secret(giver)) and giver or nil, title = titleOf(id) }
+  c.pending[id] = { giver = (giver and not secret(giver)) and giver or nil, title = titleOf(id), objectives = objectivesOf(id) }
+end)
+-- The quest log fills in after the acceptance: the objectives, once known.
+ns.on("QUEST_LOG_UPDATE", function()
+  for id, p in pairs(char().pending or {}) do
+    if not p.objectives then p.objectives = objectivesOf(id) end
+  end
+end)
+-- Who I returned to: the one I talk to when the quest is completed.
+local ender
+ns.on("QUEST_COMPLETE", function()
+  local name = UnitName("npc")
+  ender = (name and not secret(name)) and name or nil
 end)
 ns.on("QUEST_TURNED_IN", function(id)
   local c = char()
   local p = c.pending and c.pending[id] or {}
   local ch = chapter()
   ch.quests = ch.quests + 1
-  moment("quest", { title = titleOf(id) or p.title, giver = p.giver })
+  moment("quest", { title = titleOf(id) or p.title, giver = p.giver, ender = ender, objectives = p.objectives })
+  ender = nil
   if c.pending then c.pending[id] = nil end
 end)
 

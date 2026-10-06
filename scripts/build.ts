@@ -39,6 +39,10 @@ const KINDS: Record<string, string[]> = {
   inn: ["inn"],
   flight: ["from", "to"],
   quest: ["quest", "giver"],
+  "deed-kill": ["n", "foes", "giver", "ender"],
+  "deed-item": ["n", "thing", "giver", "ender"],
+  "deed-task": ["task", "giver", "ender"],
+  "deed-word": ["giver", "ender"],
   "quests-many": ["n", "quest", "giver"],
   "first-kind": ["kind", "at", "in"],
   kills: ["n", "foes", "at", "in"],
@@ -58,7 +62,6 @@ const KINDS: Record<string, string[]> = {
   epitaph: ["name", "who", "level", "in", "at", "zone", "foe"],
   kill: ["foe", "at", "in"],
   boss: ["boss", "dungeon"],
-  levelup: ["level", "at", "in"],
   campfire: ["at", "in"],
   night: ["at", "in"],
   wake: ["at", "in"],
@@ -68,7 +71,7 @@ const KINDS: Record<string, string[]> = {
 };
 const VOICE = ["home", "kin", "faith", "weapon"];
 const TAGS = ["night", "hc", "high", "low", "first", "elite", "lots", "many", "slow", "quick",
-  "foe", "fall", "drowning", "lava", "nature", "beast", "people", "player", "inside", "rest", "fire", "last"];
+  "foe", "fall", "drowning", "lava", "nature", "beast", "people", "player", "inside", "rest", "fire", "last", "one", "aside"];
 const RACES = ["Human", "Dwarf", "NightElf", "Gnome", "Draenei", "Orc", "Troll", "Tauren", "Scourge", "BloodElf"];
 const CLASSES = ["WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK", "DRUID"];
 const tagOk = (t: string) => {

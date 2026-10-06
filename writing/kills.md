@@ -4,24 +4,24 @@ kind: kills
 - I put down {n} {foes} {at}.
 - {n} {foes} fell to {weapon} {at}.
 - I thinned the {foes} {at}: {n} of them.
-- {n} {foes}. They won't be missed.
+- [aside] {n} {foes}. They won't be missed.
 - I fought my way through {n} {foes} {at}.
 - {at} I killed {n} {foes}.
 - {n} {foes}, and not one got the better of me.
 - I spent my days {at} fighting {foes}: {n} of them, by the end.
-- {n} {foes}. Someone had to.
+- [aside] {n} {foes}. Someone had to.
 - I cleared {n} {foes} from the paths {at}.
-- [lots] {n} {foes}. My arms ache just writing it.
+- [lots aside] {n} {foes}. My arms ache just writing it.
 - [lots] I lost count of the {foes} {at}; my tally says {n}.
-- [lots] {n} {foes}. By the end I was doing it in my sleep.
-- [hc] {n} {foes}, one at a time, never two. That's how you live.
+- [lots aside] {n} {foes}. By the end I was doing it in my sleep.
+- [hc aside] {n} {foes}, one at a time, never two. That's how you live.
 - [class:HUNTER !low] My pet and I took {n} {foes} {at}.
-- [class:WARLOCK] {n} {foes}. My demon enjoyed it more than I did.
-- [class:MAGE] {n} {foes}, frozen or burned. Mostly burned.
-- [class:ROGUE] {n} {foes}. Most never saw me.
-- [class:PRIEST] {n} {foes}. I prayed for them afterwards. Mostly.
+- [class:WARLOCK aside] {n} {foes}. My demon enjoyed it more than I did.
+- [class:MAGE aside] {n} {foes}, frozen or burned. Mostly burned.
+- [class:ROGUE aside] {n} {foes}. Most never saw me.
+- [class:PRIEST aside] {n} {foes}. I prayed for them afterwards. Mostly.
 - [class:DRUID] {n} {foes}, by claw and thorn.
-- [class:SHAMAN] {n} {foes}. The spirits were not gentle with them.
+- [class:SHAMAN aside] {n} {foes}. The spirits were not gentle with them.
 - [class:WARRIOR] {n} {foes}, and I enjoyed every one.
 - {n} {foes} in all {at}.
 - By the end I had put down {n} {foes} {at}.

@@ -58,6 +58,10 @@ local RARES = { "Timber", "Mangeclaw", "Hogger", "Rak'shiri", "Mother Fang", "Sq
 local DUNGEONS = { { "The Deadmines", { "Rhahk'Zor", "Sneed", "Gilnid", "Mr. Smite", "Edwin VanCleef" } },
   { "Ragefire Chasm", { "Taragaman the Hungerer", "Bazzalan" } }, { "Wailing Caverns", { "Lady Anacondra", "Mutanus the Devourer" } },
   { "Shadowfang Keep", { "Rethilgore", "Baron Silverlaine", "Archmage Arugal" } }, { "The Stockade", { "Bazil Thredd" } } }
+local THINGS = { "Tough Wolf Meat", "Crag Boar Rib", "Shimmerweed", "Gnoll Paw", "Grelin Whitebeard's Journal", "Scalding Mornbrew",
+  "Kobold Candle", "Murloc Fin", "Red Bandana", "Linen Cloth" }
+local TASKS = { "Explore the Frostmane Hold", "Find the missing diplomat", "Light the signal fire", "Destroy the Defias plans",
+  "Escort the caravan to the Crossroads" }
 local SPELLS = { "Blessing of Might", "Judgement", "Hammer of Justice", "Frostbolt", "Fireball", "Sinister Strike", "Shadow Word: Pain",
   "Lightning Bolt", "Corruption", "Serpent Sting", "Rejuvenation", "Battle Shout", "Rend", "Arcane Intellect" }
 local SKILLS = { "Mining", "Herbalism", "Skinning", "First Aid", "Blacksmithing", "Tailoring", "Cooking" }
@@ -103,9 +107,12 @@ local function life(race, class, hc, from, to)
   local zone = from == 1 and zoneNamed(START[race]) or one(ZONES)
   local sub = zone[2][1]
   local seen, kinds, level = {}, {}, from
+  local clock, isNight = 1790000000, false
   local function m(k, fields)
     fields = fields or {}
-    fields.k, fields.zone, fields.sub, fields.night = k, fields.zone or zone[1], fields.sub or sub, chance(0.35) or nil
+    clock = clock + (chance(0.15) and rand(3600, 10000) or rand(60, 900))
+    if chance(0.15) then isNight = not isNight end
+    fields.k, fields.zone, fields.sub, fields.night, fields.at = k, fields.zone or zone[1], fields.sub or sub, isNight or nil, clock
     return fields
   end
   while level <= to do
@@ -124,7 +131,12 @@ local function life(race, class, hc, from, to)
         end
       elseif r <= 32 then
         ch.quests = ch.quests + 1
-        add(m("quest", { title = chance(0.95) and one(QUESTS) or nil, giver = chance(0.7) and one(GIVERS) or nil }))
+        local o, roll = nil, rand(100)
+        if roll <= 35 then o = { { type = "monster", name = one(CREATURES)[1], n = one({ 1, 6, 8, 10, 12, 15 }) } }
+        elseif roll <= 65 then o = { { type = "item", name = one(THINGS), n = one({ 1, 1, 5, 6, 8, 10 }) } }
+        elseif roll <= 75 then o = { { type = "event", text = one(TASKS) } } end
+        add(m("quest", { title = chance(0.95) and one(QUESTS) or nil, giver = chance(0.8) and one(GIVERS) or nil,
+          ender = chance(0.4) and one(GIVERS) or nil, objectives = o }))
       elseif r <= 52 then
         local cr = one(CREATURES)
         local n = rand(1, 12)
@@ -198,23 +210,32 @@ end
 -- ── the sample: a life as the game would record it ───────────────────────────
 if SAMPLE then
   local DM, LM = "Dun Morogh", "Loch Modan"
-  local function q(title, giver) return { k = "quest", title = title, giver = giver } end
-  local function at(t, zone, sub) t.zone, t.sub = zone, sub; return t end
+  local function q(title, giver, objective, ender)
+    return { k = "quest", title = title, giver = giver, ender = ender, objectives = objective and { objective } or nil }
+  end
+  local function kills(name, n) return { type = "monster", name = name, n = n } end
+  local function items(name, n) return { type = "item", name = name, n = n } end
+  local clock, hour = 1790000000, 9
+  local function at(t, zone, sub)
+    clock, hour = clock + 1500, (hour + 0.5) % 24
+    t.zone, t.sub, t.at, t.night = zone, sub, clock, (hour >= 18 or hour < 6) or nil
+    return t
+  end
   local c = { guid = "Player-1-SAMPLE", race = "Dwarf", class = "PALADIN", hardcore = true, began = { level = 1 }, chapters = {
     { start = { level = 1, zone = DM, sub = "Anvilmar" }, played = 4700, gold = 380, quests = 5,
       kills = { ["Ragged Young Wolf"] = 6, ["Rockjaw Trogg"] = 9, ["Burly Rockjaw Trogg"] = 12, ["Frostmane Troll Whelp"] = 14 },
       log = {
-        at(q("Dwarven Outfitters", "Sten Stoutarm"), DM, "Anvilmar"),
+        at(q("Dwarven Outfitters", "Sten Stoutarm", items("Tough Wolf Meat", 8)), DM, "Anvilmar"),
         at({ k = "kill", name = "Ragged Young Wolf", kind = "Wolf", first = true }, DM, "Coldridge Valley"),
         at({ k = "kill", name = "Rockjaw Trogg", kind = "Humanoid" }, DM, "Coldridge Valley"),
-        at(q("A New Threat", "Balir Frosthammer"), DM, "Coldridge Valley"),
+        at(q("A New Threat", "Balir Frosthammer", kills("Rockjaw Trogg", 6)), DM, "Coldridge Valley"),
         at({ k = "level", level = 2 }, DM, "Coldridge Valley"),
-        at(q("Coldridge Valley Mail Delivery", "Balir Frosthammer"), DM, "Coldridge Valley"),
+        at(q("Coldridge Valley Mail Delivery", "Talin Keeneye", nil, "Grelin Whitebeard"), DM, "Coldridge Valley"),
         at({ k = "level", level = 3 }, DM, "Coldridge Valley"),
         at({ k = "kill", name = "Frostmane Troll Whelp", kind = "Humanoid" }, DM, "Coldridge Valley"),
         at({ k = "close", foe = "Frostmane Troll Whelp", hp = 9 }, DM, "Coldridge Valley"),
-        at(q("The Troll Cave", "Felix Whindlebolt"), DM, "Coldridge Valley"),
-        at(q("The Stolen Journal", "Felix Whindlebolt"), DM, "Coldridge Valley"),
+        at(q("The Troll Cave", "Grelin Whitebeard", kills("Frostmane Troll Whelp", 14)), DM, "Coldridge Valley"),
+        at(q("The Stolen Journal", "Grelin Whitebeard", items("Grelin Whitebeard's Journal", 1)), DM, "Coldridge Valley"),
         at({ k = "level", level = 4 }, DM, "Coldridge Valley"),
         at({ k = "learned", spells = { "Blessing of Might", "Judgement" } }, DM, "Anvilmar"),
       }, ended = { level = 4, zone = DM, sub = "Anvilmar", place = "Anvilmar", how = "rest" } },
@@ -224,22 +245,22 @@ if SAMPLE then
         at({ k = "place" }, DM, "Coldridge Pass"),
         at({ k = "place" }, DM, "Kharanos"),
         at({ k = "inn", place = "Thunderbrew Distillery" }, DM, "Kharanos"),
-        at(q("Beer Basted Boar Ribs", "Ragnar Thunderbrew"), DM, "Kharanos"),
+        at(q("Beer Basted Boar Ribs", "Ragnar Thunderbrew", items("Crag Boar Rib", 6)), DM, "Kharanos"),
         at({ k = "kill", name = "Small Crag Boar", kind = "Boar", first = true }, DM, "Kharanos"),
         at({ k = "level", level = 5 }, DM, "Kharanos"),
-        at(q("The Boar Hunter", "Talin Keeneye"), DM, "Kharanos"),
+        at(q("The Boar Hunter", "Talin Keeneye", kills("Small Crag Boar", 12)), DM, "Kharanos"),
         at({ k = "place" }, DM, "Brewnall Village"),
         at({ k = "kill", name = "Leper Gnome", kind = "Humanoid" }, DM, "Brewnall Village"),
-        at(q("Bitter Rivals", "Rejold Barleybrew"), DM, "Kharanos"),
+        at(q("Bitter Rivals", "Rejold Barleybrew", nil, "Marleth Barleybrew"), DM, "Kharanos"),
         at({ k = "night" }, DM, "Shimmer Ridge"),
         at({ k = "wake", after = "night" }, DM, "Shimmer Ridge"),
         at({ k = "kill", name = "Frostmane Snowstrider", kind = "Humanoid" }, DM, "Shimmer Ridge"),
         at({ k = "rare", name = "Timber" }, DM, "Shimmer Ridge"),
         at({ k = "level", level = 6 }, DM, "Shimmer Ridge"),
         at({ k = "loot", link = "|cff1eff00|Hitem:1|h[Cuirboulle Gloves]|h|r", quality = 2 }, DM, "Shimmer Ridge"),
-        at(q("Frostmane Hold", "Senir Whitebeard"), DM, "Kharanos"),
-        at(q("The Perfect Stout", "Rejold Barleybrew"), DM, "Kharanos"),
-        at(q("Protecting the Herd", "Rudra Amberstill"), DM, "Kharanos"),
+        at(q("Frostmane Hold", "Senir Whitebeard", { type = "event", text = "Explore the Frostmane Hold" }), DM, "Kharanos"),
+        at(q("The Perfect Stout", "Rejold Barleybrew", items("Shimmerweed", 6)), DM, "Kharanos"),
+        at(q("Protecting the Herd", "Rudra Amberstill", kills("Vagash", 1)), DM, "Kharanos"),
         at({ k = "skill", name = "Mining", rank = 50 }, DM, "Kharanos"),
       }, ended = { level = 6, zone = DM, sub = "Kharanos", place = "Thunderbrew Distillery", how = "rest" } },
     { start = { level = 6, zone = DM, sub = "Kharanos" }, played = 3100, gold = 900, quests = 1,
@@ -250,7 +271,7 @@ if SAMPLE then
         at({ k = "group", name = "Brannor", class = "WARRIOR" }, LM, "Thelsamar"),
         at({ k = "kill", name = "Mountain Boar", kind = "Boar" }, LM, "Thelsamar"),
         at({ k = "campfire" }, LM, "Thelsamar"),
-        at(q("Thelsamar Blood Sausages", "Vidra Hearthstove"), LM, "Thelsamar"),
+        at(q("Thelsamar Blood Sausages", "Vidra Hearthstove", items("Bear Meat", 3)), LM, "Thelsamar"),
         at({ k = "level", level = 7 }, LM, "Thelsamar"),
       } },
   } }
@@ -299,7 +320,7 @@ local function inspect(where, text)
 end
 
 local runs = 0
-for _, round in ipairs({ { 1, 12 }, { 1, 60 }, { 18, 41 }, { 38, 60 }, { 1, 30 }, { 1, 7 } }) do
+for _, round in ipairs({ { 1, 12 }, { 1, 60 }, { 18, 41 }, { 38, 60 }, { 1, 30 }, { 1, 7 }, { 20, 50 } }) do
   for race, classes in pairs(COMBOS) do
     for _, class in ipairs(classes) do
       for _, hc in ipairs({ true, false }) do
@@ -336,7 +357,7 @@ end
 for race, classes in pairs(COMBOS) do
   for _, class in ipairs(classes) do
     for _, level in ipairs({ 5, 20, 45 }) do
-      for _ = 1, 4 do
+      for _ = 1, 6 do
         local c = life(race, class, true, level, level)
         c.death = death(level, "Loch Modan", chance(0.5) and "Thelsamar" or nil)
         if chance(0.2) then c.death.zone, c.death.sub = nil, nil end
@@ -366,7 +387,9 @@ eq(ns.words(1), "one", "1"); eq(ns.words(21), "twenty-one", "21"); eq(ns.words(1
 eq(ns.plural("Ragged Young Wolf"), "Ragged Young Wolves", "wolf"); eq(ns.plural("Bloodfeather Harpy"), "Bloodfeather Harpies", "harpy")
 eq(ns.plural("Servant of Arugal"), "Servants of Arugal", "of"); eq(ns.plural("Watchman"), "Watchmen", "man")
 eq(ns.plural("Frostmane Shaman"), "Frostmane Shamans", "shaman"); eq(ns.plural("Mud Thresh"), "Mud Threshes", "thresh")
-eq(ns.plural("Rotting Dead"), "Rotting Dead", "dead"); eq(ns.plural("Kobold Vermin"), "Kobold Vermin", "vermin")
+eq(ns.plural("Rotting Dead"), "Rotting Dead", "dead")
+eq(ns.things("Crag Boar Rib"), "Crag Boar Ribs", "ribs"); eq(ns.things("Tough Wolf Meat"), "Tough Wolf Meat", "meat")
+eq(ns.things("Shimmerweed"), "Shimmerweed", "weed"); eq(ns.things("Linen Cloth"), "Linen Cloth", "cloth"); eq(ns.plural("Kobold Vermin"), "Kobold Vermin", "vermin")
 eq(ns.itemName("Wolf Fang Necklace"), "a Wolf Fang Necklace", "a"); eq(ns.itemName("Cuirboulle Gloves"), "Cuirboulle Gloves", "plural")
 eq(ns.itemName("Smite's Mighty Hammer"), "Smite's Mighty Hammer", "possessive"); eq(ns.itemName("Blackened Defias Armor"), "Blackened Defias Armor", "mass")
 eq(ns.playedWords(7170), "two hours", "1h59 is two hours"); eq(ns.playedWords(3600 + 58 * 60), "two hours", "1h58")

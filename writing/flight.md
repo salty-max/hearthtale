@@ -1,19 +1,22 @@
 ---
 kind: flight
 ---
-- [first] I flew for the first time, from {from} to {to}. My stomach stayed in {from}.
-- [first] My first flight: {from} to {to}. I held on with both hands and my eyes shut.
-- [first race:Dwarf] I flew for the first time, from {from} to {to}. A dwarf is not built for the sky, and I said so all the way.
-- [first race:Tauren] I flew from {from} to {to}, my first time. The wind rider complained about my weight; I complained about the height.
-- [first race:Gnome] My first flight, {from} to {to}. I spent it working out how the thing stays up.
+- [first aside] I flew for the first time, from {from} to {to}. My stomach stayed in {from}.
+- [first aside] My first flight: {from} to {to}. I held on with both hands and my eyes shut.
+- [first race:Dwarf aside] I flew for the first time, from {from} to {to}. A dwarf is not built for the sky, and I said so all the way.
+- [first race:Tauren aside] I flew from {from} to {to}, my first time. The wind rider complained about my weight; I complained about the height.
+- [first race:Gnome aside] My first flight, {from} to {to}. I spent it working out how the thing stays up.
 - [!first] I flew from {from} to {to}.
 - A flight from {from} to {to}, and the world small beneath me.
 - I took the flight from {from} to {to} and watched the land go by.
-- {from} to {to}, by air. Faster than walking, if less dignified.
-- I flew to {to}. From up there, {from} looked like a toy.
+- [aside] {from} to {to}, by air. Faster than walking, if less dignified.
+- [aside] I flew to {to}. From up there, {from} looked like a toy.
 - [!first] I paid the flight master in {from} and was in {to} before I'd finished complaining.
-- [hc] I flew to {to}. Nothing can kill you in the sky, which makes it the best part of any day.
-- [class:DRUID] I flew from {from} to {to} on borrowed wings. One day, my own.
+- [hc aside] I flew to {to}. Nothing can kill you in the sky, which makes it the best part of any day.
+- [class:DRUID aside] I flew from {from} to {to} on borrowed wings. One day, my own.
 - [!first] I hired a ride from {from} to {to}.
 - [!first] From {from} to {to}, on the wind.
-- Up from {from}, down at {to}. Easier on the boots.
+- [aside] Up from {from}, down at {to}. Easier on the boots.
+- [!first] I flew on to {to}.
+- [!first] A flight took me from {from} to {to}.
+- I caught a flight from {from} to {to}.

@@ -72,6 +72,18 @@ local function itemName(name)
 end
 ns.itemName = itemName
 
+-- Things in numbers: "six Crag Boar Ribs", but "eight Tough Wolf Meat" (a
+-- name that can't be counted stays as it is).
+local UNCOUNTED = { Meat = true, Cloth = true, Leather = true, Silk = true, Wool = true, Ore = true, Water = true, Oil = true,
+  Blood = true, Moss = true, Sand = true, Ash = true, Powder = true, Venom = true, Ichor = true, Dust = true, Silver = true,
+  Gold = true, Iron = true, Copper = true, Bark = true, Root = false, Mail = true, Grain = true, Barley = true, Rye = true, Corn = true }
+local function things(name)
+  local last = name:match("(%S+)$")
+  if name:find("'s ") or UNCOUNTED[last] or last:find("weed$") or last:find("moss$") or last:find("dust$") then return name end
+  return plural(name)
+end
+ns.things = things
+
 -- A creature named in passing: "a Frostmane Novice". The game can't tell a
 -- named creature from a common one, so only rares go without (by their name).
 local function article(name)
@@ -186,7 +198,8 @@ end
 
 local function satisfied(tags, ctx)
   for _, t in ipairs(tags or {}) do
-    if t:sub(1, 1) == "!" then
+    if t == "aside" then -- a mark, not a condition
+    elseif t:sub(1, 1) == "!" then
       if ctx[t:sub(2)] then return false end
     elseif not ctx[t] then return false end
   end
@@ -200,13 +213,34 @@ local function fillable(text, values)
   return true
 end
 
+local function hasTag(s, tag)
+  for _, t in ipairs(s.tags or {}) do if t == tag then return true end end
+  return false
+end
+-- A race's or a class's line.
+local function isVoice(s)
+  for _, t in ipairs(s.tags or {}) do
+    if t:find("^race:") or t:find("^class:") then return true end
+  end
+  return false
+end
+-- A sentence with a quip, marked [aside] in writing/ ("I saw it through.
+-- Nobody died, least of all me.").
+local function isQuip(s)
+  for _, t in ipairs(s.tags or {}) do if t == "aside" then return true end end
+  return false
+end
+-- The moments that may always have one.
+local MATTERS = { ["close-light"] = true, ["close-deep"] = true, rare = true, ["first-kind"] = true, died = true,
+  elite = true, boss = true, rest = true, night = true, beginning = true }
+
 local Book = {}
 Book.__index = Book
 
 local function newBook(c)
   local race, class = c.race or "Human", c.class or "WARRIOR"
   local b = setmetatable({ c = c, used = {}, usedIn = {}, uses = 0, seed = c.guid or "", zones = {}, flown = false,
-    repeats = 0, chapterNo = 0, kindUses = {} }, Book)
+    repeats = 0, chapterNo = 0, kindUses = {}, voiceUsed = 0 }, Book)
   b.voice = { home = HOME[race], kin = KIN[race], faith = faith(race, class), weapon = weapon(race, class) }
   b.base = { hc = c.hardcore or nil, ["race:" .. race] = true, ["class:" .. class] = true }
   if FACTION[race] then b.base["faction:" .. FACTION[race]] = true end
@@ -226,11 +260,20 @@ function Book:say(kind, key, values, tags, prefer)
   -- unless no other sentence fits.
   local named = values["in"]
   if named and values._place == self.last then values["in"] = nil end
+  -- In a chapter: a race's or a class's line only in some chapters, twice at
+  -- most; a sentence with a quip (a second, wry sentence) once a paragraph,
+  -- but for the moments that matter.
+  local function allowed(s)
+    if not self.inChapter then return true end
+    if isVoice(s) and not (self.voiceChapter and self.voiceUsed < 2) and not hasTag(s, "first") then return false end -- a first, once in a life, may
+    if self.quipped and not MATTERS[kind] and isQuip(s) then return false end
+    return true
+  end
   local fresh, voiced, all
-  for _ = 1, 2 do
+  for pass = 1, 3 do
     fresh, voiced, all = {}, {}, {}
     for i, s in ipairs(list) do
-      if satisfied(s.tags, ctx) and fillable(s[1], values) then
+      if satisfied(s.tags, ctx) and fillable(s[1], values) and (pass == 3 or allowed(s)) then
         table.insert(all, i)
         if not self.used[kind .. i] then
           table.insert(fresh, i)
@@ -238,8 +281,9 @@ function Book:say(kind, key, values, tags, prefer)
         end
       end
     end
-    if #all > 0 or values["in"] == named then break end
-    values["in"] = named
+    if #all > 0 then break end
+    -- nothing allowed: first the place may be named again, then the limits go
+    if pass == 1 and values["in"] ~= named then values["in"] = named end
   end
   if #all == 0 then return end
   if prefer then
@@ -273,6 +317,10 @@ function Book:say(kind, key, values, tags, prefer)
   self.usedIn[kind .. i] = self.kindUses[kind]
   if ns.writerUsed then ns.writerUsed[kind .. "#" .. i] = true end
   local text = list[i][1]
+  if self.inChapter then
+    if isVoice(list[i]) then self.voiceUsed = self.voiceUsed + 1 end
+    if isQuip(list[i]) and not MATTERS[kind] then self.quipped = true end
+  end
   if text:find("{in}") or text:find("{where}") or text:find("{place}") or (text:find("{at}") and values._named) then
     self.last, self.there = values._place, false
   elseif text:find("{at}") and values.at == "there" then
@@ -300,17 +348,6 @@ function Book:here(values, place)
   return values
 end
 
--- "first", "twelfth", "twenty-first": a level, in words.
-local ORDINAL = { one = "first", two = "second", three = "third", five = "fifth", eight = "eighth", nine = "ninth", twelve = "twelfth" }
-local function ordinal(n)
-  local w = words(n)
-  local head, last = w:match("^(.-)(%a+)$")
-  if ORDINAL[last] then return head .. ORDINAL[last] end
-  if last:match("y$") then return head .. last:sub(1, -2) .. "ieth" end
-  return w .. "th"
-end
-ns.ordinal = ordinal
-
 local function town(node) return node and (node:match("^([^,]+)") or node) end
 
 -- The chapter's kills, the most first (for the closing recap).
@@ -321,6 +358,63 @@ local function topKills(kills)
   return list
 end
 
+-- A quest, told by what it asked: so many of a creature slain, so many of a
+-- thing brought, a task, a message carried to another; its title only when
+-- there is nothing else to tell.
+local function lowerFirst(text) return (text:gsub("^%u", string.lower)) end
+function Book:deed(m, key, say, tags, quoted)
+  local o = m.objectives and m.objectives[1]
+  local ender = m.ender ~= m.giver and m.ender or nil
+  local values = { giver = m.giver, ender = ender }
+  local done
+  if o and o.type == "monster" and o.name then
+    local count = o.n or 1
+    -- one asked for is a named one, mostly ("Vagash"): no article
+    values.n, values.foes = words(count), count > 1 and plural(o.name) or o.name
+    tags.one = count == 1 or nil
+    done = say("deed-kill", key, values, tags)
+  elseif o and o.type == "item" and o.name then
+    local count = o.n or 1
+    values.n, values.thing = words(count), count > 1 and things(o.name) or itemName(o.name)
+    tags.one = count == 1 or nil
+    done = say("deed-item", key, values, tags)
+  elseif o and o.text then
+    values.task = lowerFirst((o.text:gsub("[%.:]%s*$", "")))
+    done = say("deed-task", key, values, tags)
+  elseif ender and m.giver then
+    done = say("deed-word", key, values, tags)
+  end
+  if not done and m.title then say("quest", key, { quest = quoted(m.title), giver = m.giver }, tags) end
+end
+
+-- Linking words between moments, by what happened in between: night falling,
+-- morning, hours gone by, or simply the next thing. Not on a paragraph's
+-- first sentence, nor twice in a row; on a sentence that begins with "I", "My"
+-- or an article only. Returns { text, linked }.
+local LINKS = {
+  night = { "That night,", "By nightfall,", "When night came," },
+  day = { "At first light,", "In the morning,", "With the dawn," },
+  later = { "Later,", "Some hours later,", "Later that day," },
+  next = { "Then", "After that,", "Soon after,", "Next," },
+}
+-- (a night, a rest or a fire takes no plain "then")
+local NO_NEXT = { night = true, rest = true, campfire = true, wake = true }
+function Book:linked(text, m, prev, first, key, wasLinked, kind)
+  if first or wasLinked or not (m and prev and m.at and prev.at) then return { text = text } end
+  local head, rest = text:match("^(%a+)( .*)$")
+  if not head or not (head == "I" or head == "My" or head == "A" or head == "An" or head == "The") then return { text = text } end
+  local which
+  if m.night and not prev.night then which = "night"
+  elseif prev.night and not m.night then which = "day"
+  elseif m.at - prev.at > 3600 then which = "later"
+  elseif not NO_NEXT[kind] and hash(self.seed .. "|link|" .. key) % 3 == 0 then which = "next" end
+  if not which then return { text = text } end
+  local list = LINKS[which]
+  local word = list[hash(self.seed .. "|word|" .. key) % #list + 1]
+  if head ~= "I" then head = head:lower() end
+  return { text = word .. " " .. head .. rest, linked = true }
+end
+
 -- A chapter: its moments in order, one sentence each, a new paragraph at each
 -- new zone; once closed, a recap (quests, the most fought), the time and gold,
 -- and the last line (the rest that closed it, or the night outdoors).
@@ -329,13 +423,21 @@ function Book:chapter(n, ch)
   local paragraphs, current = {}, {}
   self.last = nil
   self.chapterNo = self.chapterNo + 1
+  self.inChapter, self.voiceUsed, self.quipped = true, 0, false
+  self.voiceChapter = hash(self.seed .. "|voice|" .. n) % 3 == 0
+  local prev, linked -- the moment before, and whether its sentence was linked
+  local link -- the moment being told (for its linking words)
   local function say(kind, key, values, tags)
     local s = self:say(kind, n .. "|" .. key, values, tags)
-    if s then table.insert(current, s) end
-    return s
+    if not s then return s end
+    local l = self:linked(s, link, prev, #current == 0, n .. "|" .. key, linked, kind)
+    linked = l.linked
+    table.insert(current, l.text)
+    return l.text
   end
   local function newParagraph()
     if #current > 0 then table.insert(paragraphs, current); current = {} end
+    self.quipped = false
   end
   local start = ch.start or {}
   local lvl = start.level or 1
@@ -360,9 +462,9 @@ function Book:chapter(n, ch)
   for i, m in ipairs(ch.log or {}) do
     local key = tostring(i)
     local place = m.sub or m.zone
+    link = m
     if m.k == "level" then
-      lvl = m.level or lvl
-      say("levelup", key, self:here({ level = ordinal(lvl) }, place), tags(nil, m))
+      lvl = m.level or lvl -- a level reached: recorded, not told
     elseif m.k == "place" then
       if m.new == "zone" then
         newParagraph()
@@ -378,7 +480,7 @@ function Book:chapter(n, ch)
       say("flight", key, { from = mid(town(m.from)), to = mid(town(m.to)) }, tags({ first = not self.flown or nil }, m))
       self.flown = true
     elseif m.k == "quest" then
-      if m.title then say("quest", key, { quest = quoted(m.title), giver = m.giver }, tags(nil, m)) end
+      self:deed(m, key, say, tags(nil, m), quoted)
     elseif m.k == "kill" then
       if m.first and KINDS[m.kind] then
         say("first-kind", key, self:here({ kind = KINDS[m.kind] }, place), tags(nil, m))
@@ -418,11 +520,14 @@ function Book:chapter(n, ch)
     elseif m.k == "night" and not m.last then
       say("night", key, self:here({}, place), tags({ last = false }, m))
     elseif m.k == "wake" then
+      prev = nil
       newParagraph()
       self.last = nil
       say("wake", key, self:here({}, place), tags({ rest = m.after == "rest" or nil }, m))
     end
+    if m.k ~= "level" then prev = m end
   end
+  link, prev = nil, nil
 
   -- The end of the chapter (not while it is still being written; a death on
   -- Hardcore ends it with the epitaph instead).
@@ -435,7 +540,7 @@ function Book:chapter(n, ch)
       for i = #ch.log, 1, -1 do
         if ch.log[i].k == "quest" and ch.log[i].title then title, giver = ch.log[i].title, ch.log[i].giver break end
       end
-      say("quests-many", "recap-q", { n = words(ch.quests), quest = title and quoted(title), giver = giver }, tags())
+      say("quests-many", "recap-q", { n = words(ch.quests), giver = giver }, tags())
     end
     local top = topKills(ch.kills)
     local a, b = top[1], top[2]
@@ -457,6 +562,7 @@ function Book:chapter(n, ch)
     end
   end
   newParagraph()
+  self.inChapter = false
   if #paragraphs == 0 then return nil end
   -- A paragraph of one sentence joins the one before it (the first, the one after).
   local merged = {}

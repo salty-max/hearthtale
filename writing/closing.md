@@ -5,7 +5,7 @@ kind: closing
 - {time} for this one.
 - [quick] Not long: {time}.
 - {time} at it, all told, and {gold} richer.
-- [slow] A long stretch: {time}. I came out of it {gold} richer and a little wiser.
+- [slow aside] A long stretch: {time}. I came out of it {gold} richer and a little wiser.
 - {time}, {gold} in my purse, and I'm still here.
 - All of it took {time}.
 - {time} of my life, and {gold} to show for it.
@@ -14,18 +14,18 @@ kind: closing
 - I counted the hours: {time}.
 - {time} of walking, fighting and sleeping rough.
 - I'm {gold} richer for {time} of work.
-- [slow] It took {time}. Some days the road is long.
-- [slow] {time}. I took my time, and I'm not sorry.
+- [slow aside] It took {time}. Some days the road is long.
+- [slow aside] {time}. I took my time, and I'm not sorry.
 - [quick] {time}, and it felt like less.
-- [hc] {time}, and alive at the end of it. That's what counts.
-- [hc high] {time}. Every hour now, I know what I could lose.
-- [race:Dwarf] {time}, and {gold} for the purse. A dwarf counts both.
-- [race:Gnome] {time}, give or take. I measured.
+- [hc aside] {time}, and alive at the end of it. That's what counts.
+- [hc high aside] {time}. Every hour now, I know what I could lose.
+- [race:Dwarf aside] {time}, and {gold} for the purse. A dwarf counts both.
+- [race:Gnome aside] {time}, give or take. I measured.
 - [class:ROGUE] {time}, and {gold}, most of it honestly earned.
-- [class:MAGE] {time}. Too little of it spent reading.
+- [class:MAGE aside] {time}. Too little of it spent reading.
 - [class:PALADIN] {time} in the service of {faith}.
-- [class:WARRIOR] {time}. My armour has the dents to prove it.
-- [race:Scourge] {time}. Time means less to the dead, but I counted anyway.
+- [class:WARRIOR aside] {time}. My armour has the dents to prove it.
+- [race:Scourge aside] {time}. Time means less to the dead, but I counted anyway.
 - {gold} richer after {time}.
 - I closed this stretch {gold} the richer, after {time}.
 - That was {time}.
@@ -36,4 +36,4 @@ kind: closing
 - So went {time} of my life.
 - All told: {time}.
 - [quick] Quick work: {time}.
-- [slow] {time}. Not my fastest, but I'm here.
+- [slow aside] {time}. Not my fastest, but I'm here.

@@ -2,22 +2,25 @@
 kind: dungeon
 ---
 - I went down into {dungeon}.
-- {dungeon}. Dark, close, and full of things that wanted me dead.
+- [aside] {dungeon}. Dark, close, and full of things that wanted me dead.
 - {dungeon}: I went in with {mates} and came out with stories.
-- {dungeon} with {mates}. We lost our way twice and our nerve once, but not our lives.
-- [hc] {dungeon}. On this realm, a dungeon is where careless parties go to die. We were careful.
-- [class:PRIEST] I kept {mates} alive through {dungeon}. Nobody thanked the healer. Nobody ever does.
+- [aside] {dungeon} with {mates}. We lost our way twice and our nerve once, but not our lives.
+- [hc aside] {dungeon}. On this realm, a dungeon is where careless parties go to die. We were careful.
+- [class:PRIEST aside] I kept {mates} alive through {dungeon}. Nobody thanked the healer. Nobody ever does.
 - [class:WARRIOR] I led {mates} through {dungeon}, shield first.
-- [class:ROGUE] {dungeon}. I opened every locked box in the place.
+- [class:ROGUE aside] {dungeon}. I opened every locked box in the place.
 - I spent a long day underground in {dungeon}.
-- {dungeon}. I won't go back in a hurry.
+- [aside] {dungeon}. I won't go back in a hurry.
 - I went into {dungeon} and came out again, which is the whole of the story worth telling.
 - {dungeon}: torches, traps and too many stairs.
 - I braved {dungeon}, and it nearly had me.
 - I came out of {dungeon} blinking at the daylight.
 - {dungeon}. We went in, did what we came for, and got out.
-- I saw {dungeon} with my own eyes. Most of it was trying to kill me.
+- [aside] I saw {dungeon} with my own eyes. Most of it was trying to kill me.
 - [hc] I went into {dungeon} with my heart in my mouth, and came out with it still beating.
 - I went into {dungeon} with {mates}.
 - {dungeon}, with {mates} at my side.
-- [class:MAGE] {dungeon}. I froze, I burned, I conjured water for everyone.
+- [class:MAGE aside] {dungeon}. I froze, I burned, I conjured water for everyone.
+- I went into {dungeon}.
+- I entered {dungeon}.
+- We made our way into {dungeon}.

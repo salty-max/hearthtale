@@ -1,0 +1,34 @@
+---
+kind: deed-kill
+---
+- [!one] I killed {n} {foes} for {giver}.
+- [!one] {giver} wanted {n} {foes} dead. I saw to it.
+- [!one] I thinned out the {foes} for {giver}: {n} of them.
+- [!one] {giver} asked me to deal with the {foes}. I put down {n}.
+- [!one] I hunted {n} {foes}, as {giver} had asked.
+- [!one] I went after the {foes} for {giver}, and came back with {n} fewer in the world.
+- [!one] {n} {foes}, for {giver}.
+- [!one] I cleared {n} {foes} out of {giver}'s way.
+- [!one] I killed {n} {foes} and reported back to {ender}.
+- [!one] {giver} sent me after the {foes}; I killed {n} and told {ender} so.
+- [!one] I put down {n} {foes}.
+- [!one] I hunted down {n} {foes}.
+- [one] I killed {foes} for {giver}.
+- [one] {giver} wanted {foes} dead, and now it is.
+- [one] I tracked down {foes} and finished it, as {giver} had asked.
+- [one] I dealt with {foes}.
+- [one] I killed {foes} and brought word to {ender}.
+- [!one class:PALADIN] {giver} asked me to protect the people from the {foes}. I put down {n} of them.
+- [!one class:HUNTER !low] My pet and I hunted {n} {foes} for {giver}.
+- [!one class:MAGE] I burned {n} {foes} for {giver}.
+- [!one] I killed {n} {foes} that were troubling the road.
+- [!one] I went after {n} {foes} and found them all.
+- [!one] {n} {foes} fewer, by my hand.
+- [one] I went after {foes} and finished it.
+- [one] I put an end to {foes}.
+- [one] I hunted down {foes} and ended it.
+- [one] {foes} is dead, and I saw to it myself.
+- [one] I found {foes} and made an end of it.
+- [!one] I put down {n} {foes}, as I had promised.
+- [!one] {n} {foes} needed killing. I killed them.
+- [!one] I made the road safer by {n} {foes}.
