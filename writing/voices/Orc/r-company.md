@@ -1,0 +1,11 @@
+---
+kind: r-company
+---
+- stronger together, as the Horde was meant to be
+- trusting each other more with every fight
+- shoulder to shoulder, as our elders taught
+- little talk, all of it useful
+- sharing the work and the credit equally
+- the road easier with someone to answer to
+- [night] the dark less of a threat to two
+- [hc] watching each other as closely as the foe

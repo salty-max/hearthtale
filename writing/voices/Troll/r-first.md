@@ -1,0 +1,11 @@
+---
+kind: r-first
+---
+- trouble with a new face
+- worth remembering, the way the jungle teaches
+- not so different from the beasts back home
+- faster than they looked, as such things go
+- the loa keeping their own counsel on it
+- [teeth] their teeth a lesson in respect
+- [night] their eyes shining in the dark
+- [low] another thing this land had to teach me

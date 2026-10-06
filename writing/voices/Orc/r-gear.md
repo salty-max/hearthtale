@@ -1,0 +1,11 @@
+---
+kind: r-gear
+---
+- [!made] strong enough for the work ahead
+- [!made] sound kit, which is all a fight respects
+- [!made] one weakness fewer for an enemy to find
+- [!made] eager to see how the new kit would serve
+- [!made hc] protection I meant to rely on
+- [made] made by my own hands, and answerable to them
+- [made] work I could answer for
+- [made] rough, but mine

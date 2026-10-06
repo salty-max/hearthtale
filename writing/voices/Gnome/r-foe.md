@@ -1,0 +1,16 @@
+---
+kind: r-foe
+---
+- a problem solved, if inelegantly
+- my estimate of the difficulty revised upward
+- with a note to approach the next one differently
+- faster than my calculations had predicted
+- the outcome correct, the method open to improvement
+- [one] an interesting specimen, in hindsight
+- [!one] each one teaching me something about the last
+- [teeth] my fingers all present and accounted for
+- [mechanical] a shame about the workmanship, really
+- [night] the poor light skewing every estimate
+- [hc] the margin for error rather thinner than I like
+- [low] still refining my technique, so to speak
+- [high] with an efficiency I was frankly proud of

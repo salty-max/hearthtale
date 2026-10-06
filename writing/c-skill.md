@@ -8,6 +8,3 @@ kind: c-skill
 - practised my {skill} up to {rank}
 - improved my {skill} to {rank}
 - pushed my {skill} up to {rank}
-- [remark] brought my {skill} up to {rank}, pleased to see the practice in the number
-- [remark] worked at my {skill} until I reached {rank}, glad my practice was getting somewhere
-- [remark] reached {rank} in {skill}, with more confidence in that trade

@@ -17,3 +17,13 @@ kind: kills-two
 - [class:HUNTER !low] I had hunted {n1} {foes1} and {n2} {foes2}, learning to notice the country through its creatures.
 - [class:MAGE] I had brought down {n1} {foes1} and {n2} {foes2}, with much of the day's learning done far from a trainer.
 - [class:WARRIOR] I had fought {n1} {foes1} and {n2} {foes2}, enough to know the value of putting my strength to rest.
+- [plain] I had fought {n1} {foes1} and {n2} {foes2}.
+- [plain] The fighting came to {n1} {foes1} and {n2} {foes2} {at}.
+- [plain] I had faced {n1} {foes1} and {n2} {foes2} {at}.
+- [plain] I counted {n1} {foes1} and {n2} {foes2} among the fighting.
+- [plain] Most of it had been against {n1} {foes1} and {n2} {foes2}.
+- [plain] I had brought down {n1} {foes1} and {n2} {foes2} over the stretch.
+- [plain] My tally came to {n1} {foes1} and {n2} {foes2}.
+- [plain] I had killed {n1} {foes1} and {n2} {foes2} in all.
+- [plain] The fighting {at} had been mostly {n1} {foes1} and {n2} {foes2}.
+- [plain] Of the fighting, {n1} {foes1} and {n2} {foes2} made up the most.

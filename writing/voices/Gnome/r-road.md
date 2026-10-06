@@ -1,0 +1,13 @@
+---
+kind: r-road
+---
+- the distance slightly longer than estimated
+- making a note of the shortcuts
+- [!back] curious how the place had been built
+- [!back] a whole new set of things to look at
+- [!back] the people taller than me, as usual
+- [!back night] its lights far more welcome than its paths
+- [back] the route already filed away
+- [back] finding it improved in two small ways and worse in one
+- [back] the same squeaky gate as before
+- [high] one more entry in a long, long list

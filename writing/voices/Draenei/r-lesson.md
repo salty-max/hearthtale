@@ -1,0 +1,13 @@
+---
+kind: r-lesson
+---
+- with gratitude for the teaching
+- the lesson patient, as I tried to be
+- practised until it felt like mine
+- the knowledge a gift to carry carefully
+- keen to use it for others' sake
+- humbler for what I did not yet know
+- [new] a new path, and I was willing
+- [new] the first step of a long study
+- [low] a beginner still, but a hopeful one
+- [high] old wisdom welcoming the new

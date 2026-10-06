@@ -1,0 +1,16 @@
+---
+kind: r-foe
+---
+- with regret that it had come to that
+- steadier afterwards than I expected
+- a necessary thing, done with care
+- the Light giving me patience, if not ease
+- glad no one else had been hurt
+- [one] a life I would have spared, if I could
+- [!one] each faced in turn, without hatred
+- [teeth] grateful to keep all my fingers
+- [mechanical] a thing without a will of its own
+- [night] the dark making it harder than it needed to be
+- [hc] remembering how much my people had already lost
+- [low] still learning to trust my own strength
+- [high] with the calm of one who has done this before

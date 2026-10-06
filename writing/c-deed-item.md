@@ -9,9 +9,6 @@ kind: c-deed-item
 - [!one] came back with {n} {thing}
 - [!one] tracked down {n} {thing}
 - [!one] fetched {n} {thing}
-- [!one remark] gathered {n} {thing}, glad to hand over that lot
-- [!one remark] collected {n} {thing}, more than I cared to collect again
-- [!one remark] found {n} {thing}, pleased to have the last of the collection
 - [one] gathered {thing}
 - [one] collected {thing}
 - [one] found {thing}
@@ -20,8 +17,3 @@ kind: c-deed-item
 - [one] came back with {thing}
 - [one] tracked down {thing}
 - [one] fetched {thing}
-- [one remark] gathered {thing}, glad to hand over that lot
-- [one remark] collected {thing}, more than I cared to collect again
-- [one remark] found {thing}, pleased to have the last of the collection
-- [!one cloth remark] collected {n} {thing}, quite enough cloth to think about for one day
-- [!one meat remark] gathered {n} {thing}, more interested in supper than another meat collection

@@ -1,0 +1,11 @@
+---
+kind: r-company
+---
+- the road better for being shared
+- our strengths complementing each other
+- trusting them as one trusts the earth
+- the silences comfortable between us
+- sharing the work and the meal alike
+- learning their ways as they learned mine
+- [night] the dark lighter for the company
+- [hc] each keeping watch for the other

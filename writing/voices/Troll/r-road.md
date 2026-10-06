@@ -1,0 +1,13 @@
+---
+kind: r-road
+---
+- the road easy under my feet
+- [!back] keen to see who held the place
+- [!back] watching the edges before the middle
+- [!back] a new place, so new dangers
+- [!back] the smell of it telling me plenty
+- [!back night] its fires a good sign, mostly
+- [back] the place still standing, good
+- [back] old ground, easy ground
+- [back] the faces remembering mine
+- [high] one more place that knew a Darkspear when it saw one

@@ -1,0 +1,13 @@
+---
+kind: r-road
+---
+- the dust of the road still on me
+- a good stride for most of the way
+- [!back] another piece of the land to learn
+- [!back] measuring the place by its walls and its water
+- [!back] wary until I knew who held it
+- [!back night] its fires the first thing I saw
+- [back] the road under my feet already known
+- [back] the place unchanged, though I was not
+- [back] returning with something to show for the absence
+- [high] my feet knowing the way better than my thoughts

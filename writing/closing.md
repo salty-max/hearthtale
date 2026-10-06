@@ -9,7 +9,7 @@ kind: closing
 - I had earned {gold} in {time}, with enough still ahead to make me glad of it.
 - All of it had taken {time}, long enough to be ready for a pause.
 - I had given {time} to this stretch of the road, with {gold} to show for it.
-- I had spent {time} at work and come away {gold} richer.
+- [plain] I had spent {time} at work and come away {gold} richer.
 - The journey had occupied {time}, and I was glad to have kept some record of it.
 - I had been at it for {time}, with more to remember than I had expected at the start.
 - I had spent {time} travelling and working, enough to appreciate a little quiet.
@@ -19,13 +19,12 @@ kind: closing
 - [quick] The work was over in {time}, before I had quite grown used to it.
 - [hc] I had survived {time} on the road, glad to be the one putting it into words.
 - [hc high] Another {time} lay behind me, added to a journey I was still unwilling to lose.
-- [race:Gnome] I had accounted for {time} of work, and wished the rest of the day were as easy to put in order.
 - [class:ROGUE] I had earned {gold} in {time}, enough to make the next stretch less uncertain.
 - [class:MAGE] I had been at work for {time}, and was ready to turn my attention to something quiet.
 - [class:PALADIN] I had spent {time} in work I hoped was worthy of {faith}.
 - [class:WARRIOR] I had been busy for {time}, and found a welcome in the chance to set my kit aside.
 - I had earned {gold} over {time}, a useful measure of what the journey had brought.
-- I ended this stretch {gold} richer after {time} of work.
+- [plain] I ended this stretch {gold} richer after {time} of work.
 - The account covered {time}, though writing it brought some moments nearer than others.
 - I had been at it for {time}, and was ready to consider the work rather than do more of it.
 - This part of the road had taken {time}, with things I wanted to remember.
@@ -35,3 +34,14 @@ kind: closing
 - I had been busy for {time}, and this was where I could finally pause.
 - [quick] I had only needed {time} for the work, but welcomed the rest that followed.
 - [slow] I had been occupied for {time}, long enough to know I should stop before weariness chose for me.
+- [plain] It had taken {time}.
+- [plain] All told, it had taken {time}.
+- [plain] I had been at it for {time}.
+- [plain] I had earned {gold} in {time}.
+- [plain] The stretch had taken {time}.
+- [plain] I had spent {time} on it.
+- [plain] I had been on the road {time}.
+- [plain quick] It had taken only {time}.
+- [plain slow] The stretch had run to {time}.
+- [plain] I came away {gold} richer after {time}.
+- [plain] I had worked {time} and earned {gold}.

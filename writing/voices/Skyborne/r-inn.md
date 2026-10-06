@@ -1,0 +1,11 @@
+---
+kind: r-inn
+---
+- [client:forever] a fixed point in a changing world
+- [client:forever] somewhere to come back to, which mattered more than I expected
+- [client:forever] the stone steady in my hand
+- [client:forever] a roof, for once, instead of sky
+- [client:forever] the innkeeper curious, but polite
+- [client:forever] one long journey fewer in my future
+- [client:forever night] the fire a small star to come home to
+- [client:forever hc] a safe landing worth knowing

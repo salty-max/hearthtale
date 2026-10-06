@@ -1,0 +1,13 @@
+---
+kind: r-lesson
+---
+- strength given a better shape
+- worth more than any boast
+- practised until it felt like mine
+- the old teachers' patience still in it
+- eager to test it where it counted
+- humbler for the teaching
+- [new] a useful trade for a people still building
+- [new] starting small, as everything we have was started
+- [low] one more thing to earn before I could claim it
+- [high] the lesson sharper for all the fights behind it

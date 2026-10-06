@@ -1,0 +1,15 @@
+---
+kind: r-inn
+---
+- somewhere to come back to, at least
+- the common room promising more than it delivered
+- a small comfort to carry in my pack
+- trusting the stone more than I understood it
+- the innkeeper already treating me as a regular
+- which made the road ahead feel shorter
+- a place to mend when the road had done its worst
+- the stone warm in my hand for a moment
+- one long walk fewer in my future
+- for whatever a bed and a door are worth on the road
+- [night] the fire still lit for late arrivals
+- [hc] a safe place worth knowing the way to

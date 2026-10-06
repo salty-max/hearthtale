@@ -1,0 +1,13 @@
+---
+kind: r-road
+---
+- [client:forever] the air different from where I started
+- [client:forever !back] curious how the place would look from above
+- [client:forever !back] the shape of it new to me
+- [client:forever !back] noting where the wind came from
+- [client:forever !back] a stranger, and visibly so
+- [client:forever !back night] its lights scattered below me like stars
+- [client:forever back] the place shifted a little since I left
+- [client:forever back] the way already traced in my memory
+- [client:forever back] finding it much as I had pictured it
+- [client:forever high] one more view added to a long collection

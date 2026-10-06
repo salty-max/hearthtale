@@ -1,0 +1,13 @@
+---
+kind: r-lesson
+---
+- with patience enough to learn it properly
+- the teaching passed down from many hands
+- strength guided by understanding
+- practised until it felt natural
+- the lesson settling slowly, like rain into soil
+- keen to use it for the good of others
+- [new] the first step on a new path
+- [new] a trade to serve the tribe
+- [low] young in this, and willing to learn
+- [high] the old and new finding their balance

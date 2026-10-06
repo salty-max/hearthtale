@@ -1,0 +1,13 @@
+---
+kind: r-lesson
+---
+- my choice to learn it, which made it mine
+- the teaching dry, which suited me
+- practised with a patience the living rarely have
+- my mind quicker than my old hands remembered
+- worth the coin, which I do not often say
+- a skill no one could order me to forget
+- [new] a trade for a second life
+- [new] beginning again, as I had grown used to
+- [low] still discovering what this body would allow
+- [high] the old knowledge making room, grudgingly

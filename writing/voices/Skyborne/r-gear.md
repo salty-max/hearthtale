@@ -1,0 +1,11 @@
+---
+kind: r-gear
+---
+- [client:forever !made] light enough not to weigh me down
+- [client:forever !made] a better fit than I expected
+- [client:forever !made] the new balance taking some getting used to
+- [client:forever !made] curious how the wind would treat the new kit
+- [client:forever !made hc] one more care against a bad fall
+- [client:forever made] made with my own hands, and trusted for it
+- [client:forever made] each piece set where I wanted it
+- [client:forever made] the result of more patience than I usually have

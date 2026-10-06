@@ -1,0 +1,13 @@
+---
+kind: r-task
+---
+- a job done properly, the only sort worth doing
+- not much to tell, which is how I like an errand to go
+- with a nod and no fuss, the way it ought to be
+- the kind of work my grandfather would have called honest
+- learning who in these parts kept their word
+- with a thirst coming on by the end
+- [explore] watching my footing as much as the view
+- [explore] reading the rock as I went
+- [escort] keeping my pace short and my eyes open
+- [night] by a lamp that had seen better years

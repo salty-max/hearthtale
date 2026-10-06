@@ -1,0 +1,11 @@
+---
+kind: r-first
+---
+- strange to me, and I to them
+- worth understanding, not only fearing
+- unlike anything I had known before this world
+- a reminder of how much here was still new to me
+- fierce, though perhaps only frightened
+- [teeth] their teeth a lesson I would remember
+- [night] their shapes uncertain in the dark
+- [low] one more thing this world had not prepared me for

@@ -1,0 +1,13 @@
+---
+kind: r-task
+---
+- for whatever use they had in mind
+- without asking why, since I rarely got a straight answer
+- a favour remembered being a useful thing
+- precisely as asked, no more
+- the living around me pretending not to watch
+- my own choice, which still mattered to me
+- [explore] noting the exits, from habit
+- [explore] mapping it for my own purposes as well
+- [escort] keeping pace with someone so obviously alive
+- [night] the dark a convenience

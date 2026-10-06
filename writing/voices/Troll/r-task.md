@@ -1,0 +1,13 @@
+---
+kind: r-task
+---
+- a favour done being a favour owed
+- small work, but the tribe runs on small work
+- learning who here would stand by their word
+- done my own way, which worked
+- without much fuss and without much thanks
+- a good turn to remember
+- [explore] the land showing me its tricks one by one
+- [explore] learning the paths the way the hunters do
+- [escort] my eyes on the road for both of us
+- [night] the dark no stranger to me

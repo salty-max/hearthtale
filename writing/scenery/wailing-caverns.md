@@ -3,4 +3,4 @@ place: Wailing Caverns
 type: dungeon
 faction: neutral
 ---
-- In the Wailing Caverns, wind moaned over green water beneath the roots. Knowing what became of the druids, I listened for something human.
+- In the Wailing Caverns, the wind moaned over green water among the roots. Knowing what had become of the druids, I listened for a voice I could still reason with.

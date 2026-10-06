@@ -1,0 +1,21 @@
+---
+kind: r-foe
+---
+- the fight quicker than I had feared
+- my hands not quite steady afterwards
+- with less grace than I would have liked
+- short of breath for a while after
+- a closer thing than it looked from a distance
+- the quiet afterwards almost as loud as the fight
+- taking a moment to steady myself afterwards
+- without ever feeling I had the measure of it
+- which settled one question about the road ahead
+- [one] its last swing closer than I liked
+- [!one] the last of them harder than the first
+- [!one] one at a time, as sensibly as I could manage
+- [night] the dark making every movement larger
+- [teeth] counting my fingers afterwards, just in case
+- [mechanical] the smell of hot oil hanging about the place afterwards
+- [hc] aware how little room a mistake would have left me
+- [low] still learning how a fight ought to go
+- [high] with the ease of long practice, which I did not entirely trust

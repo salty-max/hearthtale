@@ -1,16 +1,4 @@
 ---
 kind: c-kill
 ---
-- saw off {foe}
-- dealt with {foe}
-- brought down {foe}
-- killed {foe}
-- put down {foe}
-- overcame {foe}
-- finished off {foe}
 - did for {foe}
-- [remark] saw off {foe}, not a foe I cared to give a second chance
-- [remark] dealt with {foe}, glad to have that fight behind me
-- [remark] brought down {foe}, a poor choice of company for a lone dwarf
-- [teeth remark] brought down {foe}, glad to have those teeth out of the reckoning
-- [mechanical remark] overcame {foe}, a poor piece of work for all the bother it made

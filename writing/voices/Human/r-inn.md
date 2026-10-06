@@ -1,0 +1,11 @@
+---
+kind: r-inn
+---
+- a bed I could count on
+- the kind of place where nobody asks too many questions
+- the innkeeper friendly enough to remember my name
+- somewhere to come back to, which mattered more than I said
+- the stone warm in my pocket
+- a hearth and a hot meal in reach
+- [night] the common room still loud at that hour
+- [hc] a safe door worth knowing

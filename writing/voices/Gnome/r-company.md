@@ -1,0 +1,11 @@
+---
+kind: r-company
+---
+- two heads being better than one, generally
+- with someone to explain my ideas to
+- the work divided sensibly
+- their stride a good deal longer than mine
+- conversation flowing faster than the road
+- trusting their judgement, mostly
+- [night] two lamps throwing a much better light
+- [hc] safety in numbers, statistically speaking

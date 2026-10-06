@@ -94,12 +94,17 @@ const KINDS: Record<string, string[]> = {
   "c-inn": ["inn"],
   "c-boss": ["boss", "dungeon"],
   "c-tame": ["pet", "family"],
+  // remarks a routine clause may end with (Writer.lua's ROUTINE)
+  "r-foe": [], "r-first": [], "r-item": [], "r-task": [], "r-gear": [], "r-lesson": [], "r-road": [], "r-inn": [],
+  "r-company": [],
 };
 const VOICE = ["home", "kin", "faith", "weapon"];
 const TAGS = ["home", "ally", "foe", "neutral", "night", "hc", "high", "low", "first", "elite", "lots", "many", "slow", "quick",
-  "foe", "fall", "drowning", "lava", "nature", "beast", "people", "player", "inside", "rest", "fire", "last", "one", "aside", "remark", "teeth", "mechanical", "cloth", "meat", "explore", "escort", "new", "made", "form", "demon", "steed"];
+  "foe", "fall", "drowning", "lava", "nature", "beast", "people", "player", "inside", "rest", "fire", "last", "one", "aside", "plain", "back", "teeth", "mechanical", "cloth", "meat", "explore", "escort", "new", "made", "form", "demon", "steed"];
 const RACES = ["Human", "Dwarf", "NightElf", "Gnome", "Draenei", "Orc", "Troll", "Tauren", "Scourge", "BloodElf", "Skyborne"];
 const ROUTINE = new Set("deed-kill deed-item deed-task deed-word kill first gear trainer inn travel return place group skill prof".split(" ").map((kind) => `c-${kind}`));
+// The recap's kinds: one sentence of the recap holds a thought, the others are plain.
+const RECAP = new Set(["quests-many", "kills", "kills-two", "closing"]);
 const CLASSES = ["WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK", "DRUID"];
 const tagOk = (t: string) => {
   const [k, v] = t.replace(/^!/, "").split(":");
@@ -132,20 +137,22 @@ function parseFile(file: string, kind: string | null): Parsed | null {
     const slots = own === "scenery" ? [] : (KINDS[own ?? ""] ?? []);
     for (const [, slot] of sentence.text.matchAll(/\{([^}]*)\}/g))
       if (!slots.includes(slot) && !VOICE.includes(slot)) fail(file, `{${slot}} is not a slot of ${own}: ${sentence.text}`);
-    if (own?.startsWith("c-")) {
+    if (own?.startsWith("c-") || own?.startsWith("r-")) {
       if (!/^[a-z]/.test(sentence.text) || /[.!?;:]$/.test(sentence.text)) fail(file, `a clause starts in lower case, with no stop: ${sentence.text}`);
     } else if (!/[.!?]"?$/.test(sentence.text)) fail(file, `no full stop: ${sentence.text}`);
     if (sentences.some((o) => o.text === sentence.text)) fail(file, `twice: ${sentence.text}`);
     sentences.push(sentence);
   }
   if (!sentences.length) fail(file, "no sentence");
-  if (own && ROUTINE.has(own)) {
-    const plain = sentences.filter((s) => !s.tags.includes("remark"));
-    const remarks = sentences.filter((s) => s.tags.includes("remark"));
-    if (plain.length < 7 || remarks.length < 3) fail(file, "a routine kind needs at least seven plain alternatives and three remarks");
-  } else if (sentences.some((s) => s.tags.includes("remark"))) {
-    fail(file, "[remark] belongs to routine clauses; important moments retain their own reflections");
+  if (own && ROUTINE.has(own) && kind === null && sentences.length < 7) fail(file, "a routine kind needs at least seven ways to say it");
+  if (own?.startsWith("r-")) {
+    const least = kind === null ? 12 : 8; // shared, a race's own
+    if (sentences.length < least) fail(file, `a pool of remarks needs at least ${least}`);
+    for (const s of sentences) if (/^(and|but|then)\b/.test(s.text)) fail(file, `a remark follows a comma, not a conjunction: ${s.text}`);
   }
+  if (sentences.some((s) => s.tags.includes("plain")) && !(own && RECAP.has(own))) fail(file, "[plain] marks a recap's plain sentence");
+  if (own && RECAP.has(own) && kind === null && sentences.filter((s) => s.tags.includes("plain")).length < 5)
+    fail(file, "a recap kind needs at least five [plain] sentences");
   return { meta: m[1], sentences };
 }
 

@@ -4,5 +4,5 @@ type: town
 home: Scourge
 faction: horde
 ---
-- [home] Brill's crooked roofs looked companionable after the tombs. Around the Gallows' End Tavern, I felt part of a town carried on by stubbornness.
-- [!home] In Brill, the dead had shops to tend and errands to run beneath crooked roofs. I was less prepared for that than for the graves.
+- [home] After the tombs, the crooked roofs of Brill looked almost companionable. Around the Gallows' End Tavern my people went about their business, and the town kept going on stubbornness alone.
+- [!home] In Brill, the dead kept shops and ran errands beneath crooked roofs. I had come ready for graves, and was less ready for that.

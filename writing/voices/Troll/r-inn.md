@@ -1,0 +1,11 @@
+---
+kind: r-inn
+---
+- somewhere to come back to, which a wanderer learns to value
+- the stone a good friend to have
+- a roof and a fire, simple and fine
+- the innkeeper friendly enough
+- a place to rest my legs between hunts
+- one less long walk ahead
+- [night] the fire low and welcoming
+- [hc] a safe place worth remembering

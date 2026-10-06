@@ -4,6 +4,6 @@ type: zone
 home: Orc Troll
 faction: horde
 ---
-- [home] Orgrimmar's drums echoed beneath the spiked walls. At Grommash Hold, I felt the weight of a city our people had built for themselves.
-- [ally] Smoke drifted above Orgrimmar's red stone and iron spikes. The drums made the city's pride seem almost something I could feel underfoot.
-- [foe] Under Orgrimmar's walls, drums echoed from the red stone. I felt how far I was from anyone who would call me a friend.
+- [home] The drums of Orgrimmar echoed off the spiked walls as I came in. At Grommash Hold I felt the weight of it: a city our people had built for themselves, with no one's chains on it.
+- [ally] Smoke drifted over the red stone and iron spikes of Orgrimmar. The drums made the pride of the place something I could almost feel underfoot.
+- [foe] Under the walls of Orgrimmar, the drums rolled off the red stone. I had never felt so far from anyone who might call me a friend.

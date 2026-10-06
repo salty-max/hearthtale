@@ -1,0 +1,15 @@
+---
+kind: r-foe
+---
+- a fair fight, and I took no more from it than that
+- my blood up longer than the fight deserved
+- with nothing to boast of and nothing to regret
+- a clean end, which is as much as any fight should ask
+- [one] a worthy enough foe in its way
+- [!one] each one met head on
+- [teeth] fast, but not fast enough
+- [mechanical] no honour in the thing, and no fear either
+- [night] fighting by sound as much as by sight
+- [hc] remembering that pride had buried better orcs than me
+- [low] my strength still running ahead of my judgement
+- [high] with the calm that comes of many such fights

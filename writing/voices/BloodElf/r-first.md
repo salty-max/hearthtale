@@ -1,0 +1,11 @@
+---
+kind: r-first
+---
+- less charming than they looked from a distance
+- worth a note, though not a fond one
+- rather more dangerous than anyone had troubled to mention
+- unlike anything in Eversong
+- a lesson I would rather have learned from a book
+- [teeth] their teeth considerably less decorative than they appeared
+- [night] which the dark did nothing to improve
+- [low] one more thing my tutors had overlooked

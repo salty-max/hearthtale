@@ -9,8 +9,7 @@ kind: c-kill
 - overcame {foe}
 - finished off {foe}
 - cut down {foe}
-- [remark] killed {foe}, glad that encounter was over
-- [remark] hunted down {foe}, not a foe I wished to meet again
-- [remark] put down {foe}, glad to be past that fight
-- [teeth remark] brought down {foe}, glad to be beyond those teeth
-- [mechanical remark] overcame {foe}, glad the moving metal had stopped
+- saw off {foe}
+- put an end to {foe}
+- defeated {foe}
+- got the better of {foe}

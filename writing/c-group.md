@@ -8,6 +8,3 @@ kind: c-group
 - shared the road with {mates}
 - had {mates} for company
 - teamed up with {mates}
-- [remark] joined {mates}, glad of another pair of eyes
-- [remark] travelled with {mates}, pleased to have company for the road
-- [remark] fell in with {mates}, glad to have someone besides myself to talk to

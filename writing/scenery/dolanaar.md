@@ -4,5 +4,5 @@ type: town
 home: NightElf
 faction: alliance
 ---
-- [home] In Dolanaar, rain scented the houses around the moonwell. The sentinels' patient watch let me lower my guard a little.
-- [!home] Dolanaar's blue moonwell drew my eye before the houses did. Under the trailing vines, I caught myself speaking softly.
+- [home] Rain scented the houses around the moonwell in Dolanaar. The sentinels kept their patient watch on the road, and I let my guard down a little.
+- [!home] The blue moonwell at Dolanaar caught my eye before the houses did. Under the trailing vines I found myself speaking softly, as if someone had asked me to.

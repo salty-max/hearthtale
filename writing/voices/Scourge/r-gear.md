@@ -1,0 +1,11 @@
+---
+kind: r-gear
+---
+- [!made] a better fit than my old shroud
+- [!made] concealing what needed concealing
+- [!made] secondhand, I assumed, like most things in my life
+- [!made] sturdier than me, which is not difficult
+- [!made hc] one more barrier between me and a final death
+- [made] stitched by hands that do not tremble
+- [made] my own work, exacting as ever
+- [made] the seams straighter than anything I made alive

@@ -8,6 +8,3 @@ kind: c-place
 - made it as far as {place}
 - arrived in {place}
 - set foot in {place}
-- [remark] came to {place}, curious what lay beyond the name
-- [remark] found my way to {place}, glad to have arrived
-- [remark] reached {place}, with the name finally belonging to somewhere I had been

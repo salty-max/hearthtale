@@ -1,0 +1,11 @@
+---
+kind: r-company
+---
+- the road better with a friend
+- two hunters better than one
+- trading stories as we went
+- trusting them more by the end
+- easy company, the best kind
+- the work halved, the laughter doubled
+- [night] the dark easier to share
+- [hc] watching each other's backs, as survivors do

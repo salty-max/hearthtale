@@ -1,0 +1,16 @@
+---
+kind: r-foe
+---
+- with rather more effort than I would admit
+- efficiently, if without much elegance
+- a matter settled, and not before time
+- my composure intact, if not my patience
+- the sort of thing one does not mention at court
+- [one] a tiresome obstacle, removed
+- [!one] each more irritating than the last
+- [teeth] my dignity, at least, unbitten
+- [mechanical] crude workmanship, to the last
+- [night] the dark doing my aim no favours
+- [hc] reminded how little stood between me and ruin
+- [low] still learning that grace and survival are not the same
+- [high] with a precision I had worked hard to earn

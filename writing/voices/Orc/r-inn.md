@@ -1,0 +1,11 @@
+---
+kind: r-inn
+---
+- somewhere to return to with my strength spent
+- rest earned being rest well used
+- the stone a promise of the road home
+- with the smell of the cookfire for a welcome
+- the innkeeper wary of me only as long as was polite
+- a hearth worth defending, if it came to that
+- [night] the fire low and the talk lower
+- [hc] a safe camp being worth more than a bold one

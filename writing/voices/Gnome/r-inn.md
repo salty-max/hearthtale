@@ -1,0 +1,11 @@
+---
+kind: r-inn
+---
+- a reliable fixed point, at least
+- an elegant solution to the problem of walking
+- the mechanism of the stone still a puzzle to me
+- somewhere to return and think
+- the innkeeper unbothered by gnomes, which helped
+- the chairs too big, as always
+- [night] the fire still going, efficiently
+- [hc] a safe retreat being simply good planning

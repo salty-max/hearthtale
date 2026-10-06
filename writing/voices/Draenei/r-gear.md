@@ -1,0 +1,11 @@
+---
+kind: r-gear
+---
+- [!made] a kind gift from unknown hands
+- [!made] a good fit for strange shoulders
+- [!made] sturdier than appearances suggested
+- [!made] welcome protection on an unfamiliar road
+- [!made hc] one more care against a careless end
+- [made] made with patience and some hope
+- [made] my own work, carefully done
+- [made] proof that my hands could still make something good

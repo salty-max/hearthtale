@@ -214,7 +214,7 @@ end
 
 local function satisfied(tags, ctx)
   for _, t in ipairs(tags or {}) do
-    if t == "aside" or t == "remark" then -- marks, not conditions
+    if t == "aside" or t == "plain" then -- marks, not conditions
     elseif t:sub(1, 1) == "!" then
       if ctx[t:sub(2)] then return false end
     elseif not ctx[t] then return false end
@@ -277,9 +277,20 @@ local STYLE = {
 
 -- How many uses of a kind before one of the race's own sentences may come back.
 local OWN_GAP = 8
-local ROUTINE = {}
-for _, kind in ipairs({ "deed-kill", "deed-item", "deed-task", "deed-word", "kill", "first", "gear", "trainer",
-  "inn", "travel", "return", "place", "group", "skill", "prof" }) do ROUTINE["c-" .. kind] = true end
+-- The routine clauses, and the pool of remarks each may end with: the
+-- narrator's own reaction ("…, with rather more appetite for supper"), told
+-- for about one routine clause in three, never the same one soon again.
+local ROUTINE = {
+  ["c-kill"] = "r-foe", ["c-deed-kill"] = "r-foe", ["c-first"] = "r-first", ["c-deed-item"] = "r-item",
+  ["c-deed-task"] = "r-task", ["c-deed-word"] = "r-task", ["c-gear"] = "r-gear", ["c-trainer"] = "r-lesson",
+  ["c-skill"] = "r-lesson", ["c-prof"] = "r-lesson", ["c-travel"] = "r-road", ["c-return"] = "r-road",
+  ["c-place"] = "r-road", ["c-inn"] = "r-inn", ["c-group"] = "r-company",
+}
+-- Chapters before a remark may come back (none fresh left): sooner than
+-- that, the clause goes without.
+local REMARK_GAP = 10
+-- Tags that name what a remark is about: such a remark, when it fits, comes first.
+local SUBJECTS = { teeth = true, mechanical = true, cloth = true, meat = true, explore = true, escort = true, made = true }
 
 local Book = {}
 Book.__index = Book
@@ -293,6 +304,7 @@ local function newBook(c)
   b.style = STYLE[race] or STYLE.default
   b.faction = (c.faction == "alliance" or c.faction == "horde") and c.faction or FACTION[race]
   b.sceneSeen = {} -- places already described in this book
+  b.remarkChapter = {} -- the chapter each remark was last told in
   b.creatureKinds = {} -- classifications actually recorded, not guessed from a quest's name
   b.placeNames = {} -- only places encountered so far; later events cannot rewrite an objective
   b.base = { hc = c.hardcore or nil, ["race:" .. race] = true, ["class:" .. class] = true }
@@ -310,6 +322,7 @@ function Book:say(kind, key, values, tags, prefer, raw)
   -- The race's own voice for this kind (writing/voices/<Race>/), if it has one.
   local own = self.own and self.own[kind]
   local ctx = setmetatable(tags or {}, { __index = self.base })
+  if kind == "c-return" then ctx.back = true end -- for its remark: a place known
   local routine, wantRemark = ROUTINE[kind], false
   self.selectedRoutine, self.selectedRemark = routine, false
   if routine then
@@ -337,16 +350,11 @@ function Book:say(kind, key, values, tags, prefer, raw)
   -- the reachability test: the race's own ("Dwarf/kill#3") and the shared ("kill#3").
   local race = self.c.race or "Human"
   local ownFresh, fresh, voiced, all
-  for pass = 1, 6 do
-    -- The budget never forces a remark when no eligible wording is left.
-    -- Nor may relaxing a voice/place preference bypass the budget.
-    if pass == 4 then wantRemark = false end
+  for pass = 1, 3 do
     ownFresh, fresh, voiced, all = {}, {}, {}, {}
     local function add(from, mine)
       for i, s in ipairs(from or {}) do
-        local spaced = not (routine and wantRemark) or not self.used[(mine and "v:" or "") .. kind .. i]
-          or (self.kindUses[kind] or 0) - self.usedIn[(mine and "v:" or "") .. kind .. i] >= 6
-        if (not routine or hasTag(s, "remark") == wantRemark) and spaced
+        if not (self.onlyPlain and pass < 3 and not hasTag(s, "plain"))
           and satisfied(s.tags, ctx) and fillable(s[1], values) and (pass % 3 == 0 or allowed(s)) then
           local e = mine and { s = s, id = "v:" .. kind .. i, reach = race .. "/" .. kind .. "#" .. i }
             or { s = s, id = kind .. i, reach = kind .. "#" .. i }
@@ -368,20 +376,18 @@ function Book:say(kind, key, values, tags, prefer, raw)
     if pass == 1 and values["in"] ~= named then values["in"] = named end
   end
   if #all == 0 then return end
-  if routine and wantRemark then
-    -- When the record offers a concrete subject, let a fresh reaction to it
-    -- precede the more general alternatives. Used lines keep their spacing.
-    local subjects = { teeth = true, mechanical = true, cloth = true, meat = true, explore = true, escort = true }
-    local function specific(group)
-      local found = {}
-      for _, e in ipairs(group) do
-        for _, t in ipairs(e.s.tags or {}) do
-          if subjects[t] then table.insert(found, e); break end
-        end
-      end
-      return #found > 0 and found or group
+  -- a routine clause doesn't begin with the verb of the one before, if a
+  -- fresh one can help it
+  local function sameVerb(e) return routine and e and e.s[1]:match("^(%a+)") == self.lastVerb end
+  if routine and self.lastVerb then
+    local function other(group)
+      local kept = {}
+      for _, e in ipairs(group) do if not sameVerb(e) then table.insert(kept, e) end end
+      return kept
     end
-    ownFresh, fresh, voiced = specific(ownFresh), specific(fresh), specific(voiced)
+    local o, f, v = other(ownFresh), other(fresh), other(voiced)
+    if #o > 0 then ownFresh = o elseif #f > 0 then ownFresh = {} end
+    if #f > 0 then fresh, voiced = f, v end
   end
   if prefer then
     local favoured = {}
@@ -404,9 +410,11 @@ function Book:say(kind, key, values, tags, prefer, raw)
   local ownOldest
   if #ownFresh == 0 then
     for _, x in ipairs(all) do
-      if x.id:sub(1, 2) == "v:" and (not ownOldest or self.used[x.id] < self.used[ownOldest.id]) then ownOldest = x end
+      if x.id:sub(1, 2) == "v:" and self.used[x.id] and (not ownOldest or self.used[x.id] < self.used[ownOldest.id]) then ownOldest = x end
     end
-    if ownOldest and (self.kindUses[kind] or 0) - self.usedIn[ownOldest.id] < OWN_GAP then ownOldest = nil end
+    -- (a routine clause's own verbs come back less often: they are short)
+    local gap = ROUTINE[kind] and 2 * OWN_GAP or OWN_GAP
+    if ownOldest and ((self.kindUses[kind] or 0) - self.usedIn[ownOldest.id] < gap or sameVerb(ownOldest)) then ownOldest = nil end
   end
   if #ownFresh > 0 then
     e = ownFresh[pick % #ownFresh + 1]
@@ -431,11 +439,17 @@ function Book:say(kind, key, values, tags, prefer, raw)
   self.usedIn[e.id] = self.kindUses[kind]
   if ns.writerUsed then ns.writerUsed[e.reach] = true end
   local chosen = e.s
-  self.selectedRoutine, self.selectedRemark = routine, routine and hasTag(chosen, "remark") or false
-  if self.selectedRemark then
-    self.nextRemark = self.routineCount + 2 + hash(self.seed .. "|remark-gap|" .. key) % 2
-  end
   local text = chosen[1]
+  if routine then self.lastVerb = text:match("^(%a+)") end
+  -- a remark ends a clause that has no comma of its own
+  if wantRemark and not text:find(",") then
+    local remark = self:remark(routine, key, values, ctx)
+    if remark then
+      text = text .. ", " .. remark
+      self.selectedRemark = true
+      self.nextRemark = self.routineCount + 2 + hash(self.seed .. "|remark-gap|" .. key) % 2
+    end
+  end
   if self.inChapter then
     if isVoice(chosen) then self.voiceUsed = self.voiceUsed + 1 end
     if isQuip(chosen) and not MATTERS[kind] then self.quipped = true end
@@ -454,6 +468,69 @@ function Book:say(kind, key, values, tags, prefer, raw)
   -- (and none left at the start: "{at}, my tenth level" with no place)
   text = text:gsub(" +([%.,;:!%?])", "%1"):gsub("  +", " "):gsub("^[ ,;:]+", "")
   return raw and text or capitalise(text)
+end
+
+-- A remark from a pool (writing/r-*.md, and the race's own): a fresh one,
+-- the race's first, one about the moment's subject (its teeth, the meat)
+-- before the general; once all were used, the one used longest ago, if
+-- REMARK_GAP chapters have passed; else none.
+function Book:remark(pool, key, values, ctx)
+  local race = self.c.race or "Human"
+  local own, list = self.own and self.own[pool], ns.data.writing[pool]
+  local ownFresh, fresh, all = {}, {}, {}
+  local function add(from, mine)
+    for i, s in ipairs(from or {}) do
+      if satisfied(s.tags, ctx) and fillable(s[1], values) then
+        local e = mine and { s = s, id = "v:" .. pool .. i, reach = race .. "/" .. pool .. "#" .. i }
+          or { s = s, id = pool .. i, reach = pool .. "#" .. i }
+        table.insert(all, e)
+        if not self.used[e.id] then table.insert(mine and ownFresh or fresh, e) end
+      end
+    end
+  end
+  add(own, true)
+  add(list, false)
+  local function specific(group)
+    local found = {}
+    for _, e in ipairs(group) do
+      for _, t in ipairs(e.s.tags or {}) do
+        if SUBJECTS[t] then table.insert(found, e); break end
+      end
+    end
+    return #found > 0 and found or group
+  end
+  local pick = hash(self.seed .. "|" .. pool .. "|" .. key)
+  local function oldest(mine)
+    local o
+    for _, x in ipairs(all) do
+      if (mine == nil or (x.id:sub(1, 2) == "v:") == mine) and (not o or self.used[x.id] < self.used[o.id]) then o = x end
+    end
+    return o and self.chapterNo - self.remarkChapter[o.id] >= REMARK_GAP and o or nil
+  end
+  -- the race's own while fresh, then back when spaced enough: the shared
+  -- ones fill the gaps, so the voice holds over a whole life
+  local e
+  if #ownFresh > 0 then
+    local group = specific(ownFresh)
+    e = group[pick % #group + 1]
+  else
+    e = oldest(true)
+    -- (where the race has its own, the shared fill every other gap)
+    if not e and #fresh > 0 and (not own or pick % 2 == 0) then
+      local group = specific(fresh)
+      e = group[pick % #group + 1]
+    end
+    e = e or (not own and oldest(nil)) or nil
+    if not e then return nil end
+  end
+  self.uses = self.uses + 1
+  self.kindUses[pool] = (self.kindUses[pool] or 0) + 1
+  self.used[e.id] = self.uses
+  self.usedIn[e.id] = self.kindUses[pool]
+  if ns.writerUsed then ns.writerUsed[e.reach] = true end
+  self.remarkChapter[e.id] = self.chapterNo
+  if ns.writerRemark then ns.writerRemark(e.id, self.chapterNo, self) end
+  return (e.s[1]:gsub("{(%w+)}", values))
 end
 
 -- The place slots of a moment: {at} ("in Coldridge Valley", "there" if it was
@@ -510,7 +587,7 @@ function Book:deed(m, key, tags)
     values.n, values.thing = words(count), count > 1 and things(o.name) or itemName(o.name)
     tags.one = count == 1 or nil
     tags.cloth = o.name:match("Cloth$") or o.name:match("Silk$") or o.name:match("Wool$") or nil
-    tags.meat = o.name:match("Meat$") or o.name:match("Rib$") or nil
+    tags.meat = o.name:match("Meat$") or nil -- uncounted: "it"
     done = self:say("c-deed-item", key, values, tags, nil, true)
   elseif o and o.text and not doneText(o.text) then
     values.task = lowerFirst((o.text:gsub("[%.:]%s*$", "")))
@@ -833,7 +910,7 @@ function Book:chapter(n, ch)
       clause(self:deed(m, key, t), m, key)
     elseif m.k == "kill" then
       self.creatureKinds[m.name] = m.kind
-      local t = { teeth = ({ Wolf = true, Cat = true, Bear = true, Boar = true, Crocolisk = true, Raptor = true })[m.kind or ""],
+      local t = { one = true, teeth = ({ Wolf = true, Cat = true, Bear = true, Boar = true, Crocolisk = true, Raptor = true })[m.kind or ""],
         mechanical = m.kind == "Mechanical" or nil }
       if m.quarry or SKIP[m.kind or ""] then -- told by its quest, or not a fight
       elseif m.first and KINDS[m.kind] then
@@ -929,25 +1006,37 @@ function Book:chapter(n, ch)
       local s = self:say(kind, n .. "|" .. key, values, t)
       if s then append(s) end
     end
+    -- The recap (tasks, fighting, time) holds one thought, the rest told
+    -- plainly: the chapter's last sentence (the rest) has its own.
+    local recap = {}
+    local top = (function()
+      local covered, remaining = {}, {}
+      for _, m in ipairs(ch.log or {}) do
+        local o = m.k == "quest" and m.objectives and m.objectives[1]
+        if o and o.type == "monster" and o.name then covered[o.name] = true end
+      end
+      for name, count in pairs(ch.kills or {}) do
+        if not covered[name] then remaining[name] = count end
+      end
+      return topKills(remaining)
+    end)()
+    if (ch.quests or 0) >= 2 then table.insert(recap, "quests") end
+    if top[1] and top[1].n >= 3 then table.insert(recap, "kills") end
+    table.insert(recap, "closing")
+    local thought = recap[hash(self.seed .. "|thought|" .. n) % #recap + 1]
+    local function plainUnless(which) self.onlyPlain = thought ~= which end
     if (ch.quests or 0) >= 2 then
+      plainUnless("quests")
       local giver
       for i = #ch.log, 1, -1 do
         if ch.log[i].k == "quest" and ch.log[i].giver then giver = ch.log[i].giver break end
       end
       say("quests-many", "recap-q", { n = words(ch.quests), giver = giver }, tags())
     end
-    -- Quest objectives already told the significant fighting. Repeating the
-    -- same victims as a closing scoreboard obscures the end of the scene.
-    local covered, remaining = {}, {}
-    for _, m in ipairs(ch.log or {}) do
-      local o = m.k == "quest" and m.objectives and m.objectives[1]
-      if o and o.type == "monster" and o.name then covered[o.name] = true end
-    end
-    for name, count in pairs(ch.kills or {}) do
-      if not covered[name] then remaining[name] = count end
-    end
-    local top = topKills(remaining)
+    -- (Quest objectives already told the significant fighting: the tally
+    -- leaves their foes out.)
     local a, b = top[1], top[2]
+    plainUnless("kills")
     if a and a.n >= 3 then
       if b and b.n >= 3 then
         say("kills-two", "recap-k", self:here({ n1 = words(a.n), foes1 = plural(a.name), n2 = words(b.n), foes2 = plural(b.name) }, nil),
@@ -957,8 +1046,10 @@ function Book:chapter(n, ch)
       end
     end
     local played = ch.played or 0
+    plainUnless("closing")
     say("closing", "end", { time = playedWords(played), gold = goldWords(ch.gold) },
       tags({ slow = played > 7200 or nil, quick = (played > 0 and played < 1800) or nil }))
+    self.onlyPlain = nil
     if e.how == "long" then
       say("night", "last", self:here({}, e.place), tags({ last = true, night = true }))
     else

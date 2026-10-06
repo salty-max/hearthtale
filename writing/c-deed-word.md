@@ -5,10 +5,7 @@ kind: c-deed-word
 - completed {giver}'s errand with {ender}
 - carried out {giver}'s request with {ender}
 - went from {giver} to {ender}
-- finished {giver}'s errand at {ender}'s end
+- brought {giver}'s word to {ender}
 - concluded the errand between {giver} and {ender}
 - saw {giver}'s business through with {ender}
 - completed the errand from {giver} to {ender}
-- [remark] settled {giver}'s business with {ender}, glad not to be caught between the two again
-- [remark] completed {giver}'s errand with {ender}, with both names rather firmly in my head
-- [remark] carried out {giver}'s request with {ender}, glad to have reached the right person

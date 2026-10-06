@@ -9,6 +9,3 @@ kind: c-trainer
 - trained in {spells}
 - added {spells} to what I knew
 - came away from training with {spells}
-- [remark] learned {spells}, with plenty from the lesson to remember
-- [remark] was taught {spells}, eager to try the lesson for myself
-- [remark] studied {spells}, with the lesson still fresh in my head
