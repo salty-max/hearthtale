@@ -3,8 +3,7 @@ import { X } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { CharacterHeader } from "@/components/CharacterHeader";
 import { Contents } from "@/components/Contents";
-import { useT } from "@/lib/i18n";
-import { useSettings } from "@/lib/settings";
+import { useLocale, useT } from "@/lib/i18n";
 
 /**
  * The table of contents, in a drawer from the left. A modal <dialog>: Escape
@@ -27,7 +26,7 @@ export function ContentsDrawer({
   current?: string;
 }) {
   const t = useT();
-  const { lang } = useSettings();
+  const locale = useLocale();
   const ref = useRef<HTMLDialogElement>(null);
   useEffect(() => {
     const d = ref.current;
@@ -35,7 +34,7 @@ export function ContentsDrawer({
     if (open && !d.open) d.showModal();
     if (!open && d.open) d.close();
   }, [open]);
-  const written = new Intl.DateTimeFormat(lang, { dateStyle: "long" }).format(new Date(book.at * 1000));
+  const written = new Intl.DateTimeFormat(locale, { dateStyle: "long" }).format(new Date(book.at * 1000));
   return (
     <dialog
       ref={ref}

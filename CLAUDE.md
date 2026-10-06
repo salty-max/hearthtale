@@ -83,9 +83,11 @@ Plan and steps: PLAN.md, "The site".
   installable PWA laid out as a native app: the window never scrolls (only
   `main`, and in the reader only the book's text), a top bar that never wraps,
   a bottom tab bar on phones (Library, Get started, Settings). Reading options
-  (size, typeface, paper, line spacing) and the language in `lib/settings.ts`
+  (size, typeface, paper, line spacing) and the language code in `lib/settings.ts`
   (per device), set on `/settings`. Routes in `src/router.tsx`; every visible string in
-  `src/lib/i18n.ts` (`fr` typed on `en`); the look (the in-game book: leather,
+  `src/lib/i18n.ts` (English only for now, the books being English: another
+  language is one more catalog typed on `en` in CATALOGS, with its locale for
+  dates; the language setting shows once there are two); the look (the in-game book: leather,
   parchment, the addon's gold) in `src/index.css`.
 - `packages/shared` (`@hearthtale/shared`): the wire contract, the saved book's
   shape (mirrors Save.lua). Source of truth.

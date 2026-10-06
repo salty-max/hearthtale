@@ -3,9 +3,10 @@ import { parseSettings, readerClasses } from "@/lib/settings";
 
 describe("settings", () => {
   test("defaults, and saved values checked one by one", () => {
-    expect(parseSettings(null, "fr")).toEqual({ lang: "fr", size: "m", font: "serif", theme: "parchment", spacing: "normal" });
-    expect(parseSettings({ lang: "en", size: "xl", theme: "night", font: "comic", spacing: 3 }, "fr")).toEqual({
-      lang: "en",
+    expect(parseSettings(null)).toEqual({ lang: "en", size: "m", font: "serif", theme: "parchment", spacing: "normal" });
+    // a language code is kept as saved (lib/i18n.ts falls back to English if it has no catalog)
+    expect(parseSettings({ lang: "fr", size: "xl", theme: "night", font: "comic", spacing: 3 })).toEqual({
+      lang: "fr",
       size: "xl",
       font: "serif",
       theme: "night",

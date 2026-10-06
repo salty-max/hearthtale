@@ -1,17 +1,16 @@
 import { Check, Copy, Link2 } from "lucide-react";
 import { useState } from "react";
 import { useLinkCode } from "@/lib/api";
-import { useT } from "@/lib/i18n";
-import { useSettings } from "@/lib/settings";
+import { useLocale, useT } from "@/lib/i18n";
 
 /** A code to type in the game, for a character Battle.net can't list (Forever). */
 export function LinkCharacter() {
   const t = useT();
-  const { lang } = useSettings();
+  const locale = useLocale();
   const link = useLinkCode();
   const [copied, setCopied] = useState(false);
   const command = link.data ? `/ht link ${link.data.code}` : "";
-  const until = link.data ? new Date(link.data.expiresAt).toLocaleTimeString(lang, { hour: "2-digit", minute: "2-digit" }) : "";
+  const until = link.data ? new Date(link.data.expiresAt).toLocaleTimeString(locale, { hour: "2-digit", minute: "2-digit" }) : "";
   return (
     <section className="mt-8 rounded-md border border-leather-edge bg-leather/60 p-4">
       <h2 className="title text-xl">{t.link.title}</h2>

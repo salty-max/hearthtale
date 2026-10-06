@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { LogIn, LogOut } from "lucide-react";
 import type { ReactNode } from "react";
 import { useMe, useSignOut } from "@/lib/api";
-import { useT } from "@/lib/i18n";
+import { CATALOGS, LANGS, useLang, useT } from "@/lib/i18n";
 import { FONTS, readerClasses, setSettings, SIZES, SPACINGS, THEMES, useSettings, type Settings as S } from "@/lib/settings";
 
 /** A row of choices, one selected (radio buttons that look like a segmented control). */
@@ -42,6 +42,7 @@ function Section({ title, children }: { title: string; children: ReactNode }) {
 export function Settings() {
   const t = useT();
   const s = useSettings();
+  const lang = useLang();
   const me = useMe();
   const signOut = useSignOut();
   const cls = readerClasses(s);
@@ -59,9 +60,11 @@ export function Settings() {
         <Choice label={t.settings.spacing} name="spacing" value={s.spacing} options={SPACINGS} render={(k) => t.settings.spacings[k]} />
       </Section>
 
-      <Section title={t.settings.language}>
-        <Choice label={t.settings.languageHint} name="lang" value={s.lang} options={["en", "fr"]} render={(k) => (k === "en" ? "English" : "Français")} />
-      </Section>
+      {LANGS.length > 1 && (
+        <Section title={t.settings.language}>
+          <Choice label={t.settings.languageHint} name="lang" value={lang} options={LANGS} render={(k) => CATALOGS[k].name} />
+        </Section>
+      )}
 
       <Section title={t.settings.account}>
         {me.data ? (

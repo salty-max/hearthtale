@@ -1,12 +1,12 @@
 import { useSyncExternalStore } from "react";
 
-/** Per-device settings, kept in localStorage: the language and how books read. */
-export type Lang = "en" | "fr";
+/** Per-device settings, kept in localStorage: the language (lib/i18n.ts) and how books read. */
 export type ReaderSize = "s" | "m" | "l" | "xl";
 export type ReaderFont = "serif" | "sans";
 export type ReaderTheme = "parchment" | "sepia" | "night";
 export type ReaderSpacing = "tight" | "normal" | "airy";
-export type Settings = { lang: Lang; size: ReaderSize; font: ReaderFont; theme: ReaderTheme; spacing: ReaderSpacing };
+/** lang: a language code, checked against the catalogs where it is used (lib/i18n.ts: no import cycle). */
+export type Settings = { lang: string; size: ReaderSize; font: ReaderFont; theme: ReaderTheme; spacing: ReaderSpacing };
 
 export const SIZES: ReaderSize[] = ["s", "m", "l", "xl"];
 export const FONTS: ReaderFont[] = ["serif", "sans"];
@@ -19,10 +19,10 @@ const listeners = new Set<() => void>();
 const pick = <T extends string>(v: unknown, allowed: T[], fallback: T): T => (allowed.includes(v as T) ? (v as T) : fallback);
 
 /** The saved settings, each one checked (an unknown value falls back to its default). */
-export function parseSettings(saved: unknown, lang: Lang): Settings {
+export function parseSettings(saved: unknown): Settings {
   const s = (saved && typeof saved === "object" ? saved : {}) as Record<string, unknown>;
   return {
-    lang: pick(s.lang, ["en", "fr"], lang),
+    lang: typeof s.lang === "string" ? s.lang : "en",
     size: pick(s.size, SIZES, "m"),
     font: pick(s.font, FONTS, "serif"),
     theme: pick(s.theme, THEMES, "parchment"),
@@ -31,11 +31,10 @@ export function parseSettings(saved: unknown, lang: Lang): Settings {
 }
 
 function initial(): Settings {
-  const lang: Lang = typeof navigator !== "undefined" && navigator.language?.toLowerCase().startsWith("fr") ? "fr" : "en";
   try {
-    return parseSettings(JSON.parse(localStorage.getItem(KEY) ?? "null"), lang);
+    return parseSettings(JSON.parse(localStorage.getItem(KEY) ?? "null"));
   } catch {
-    return parseSettings(null, lang); // no storage (private window): the defaults
+    return parseSettings(null); // no storage (private window): the defaults
   }
 }
 

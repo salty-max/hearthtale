@@ -1,6 +1,11 @@
-import { useSettings, type Lang } from "@/lib/settings";
+import { useSettings } from "@/lib/settings";
 
-/** Every visible string. `fr` is typed on the exact shape of `en`. */
+/**
+ * Every visible string, per language. English only for now (the books are
+ * written in English); another language is one more catalog of the same shape
+ * (`typeof en`, so a missing or extra key fails to compile) in CATALOGS, and
+ * the language setting appears on its own once there are two.
+ */
 const en = {
   nav: { home: "Hearthtale", start: "Get started", library: "Library", settings: "Settings", menu: "Menu", skip: "Skip to content", language: "Language" },
   home: {
@@ -130,141 +135,34 @@ const en = {
   footer: { source: "Source code", notAffiliated: "Not affiliated with Blizzard Entertainment." },
 };
 
-const fr: typeof en = {
-  nav: { home: "Hearthtale", start: "Commencer", library: "Bibliothèque", settings: "Réglages", menu: "Menu", skip: "Aller au contenu", language: "Langue" },
-  home: {
-    tagline: "Le journal de votre personnage, écrit pendant que vous jouez.",
-    intro:
-      "Hearthtale est un addon pour World of Warcraft. Chaque quête, chaque nouvel ennemi, chaque lieu, chaque mort évitée de justesse est écrit au moment où il arrive, avec la voix de votre personnage, et un chapitre se clôt quand vous vous reposez dans une auberge ou au coin d'un feu de camp. En Hardcore, la mort referme le livre sur une épitaphe.",
-    soon: "Votre journal, à lire en jeu ou ici, sur votre téléphone : installez l'addon et Ravenpost, puis connectez-vous.",
-    start: "Commencer",
-    games: "Classic Era, Hardcore, Season of Discovery, TBC Anniversary et World of Warcraft: Forever.",
-  },
-  notFound: { title: "Perdu dans la brume", body: "Il n'y a pas de page ici.", back: "Retour au coin du feu" },
-  common: { loading: "On tourne les pages…", loadError: "Cette page n'a pas pu être chargée. Vérifiez votre connexion, puis réessayez.", retry: "Réessayer" },
-  account: {
-    signIn: "Se connecter avec Battle.net",
-    signInShort: "Connexion",
-    signInTitle: "Vos livres",
-    signInWhy: "Connectez-vous avec Battle.net : vos personnages de Classic Era et de TBC Anniversary sont retrouvés tout seuls, et leurs livres ne sont qu'à vous.",
-    region: "Région",
-    regions: { us: "Amériques", eu: "Europe", kr: "Corée", tw: "Taïwan" },
-    forever: "Les personnages de World of Warcraft: Forever se lient depuis la bibliothèque, avec un code tapé en jeu.",
-    failed: "Battle.net ne nous a pas laissés entrer. Réessayez dans un instant.",
-    cancelled: "Connexion annulée.",
-    signOut: "Se déconnecter",
-    you: "Vous",
-    testAccount: "Utiliser le compte de test (développement uniquement)",
-  },
-  link: {
-    title: "Lier un personnage",
-    why: "Pour un personnage que Battle.net ne trouve pas (World of Warcraft: Forever) : obtenez un code, tapez-le en jeu, et son livre rejoint votre bibliothèque à son prochain envoi.",
-    get: "Obtenir un code",
-    type: "En jeu, tapez :",
-    copy: "Copier",
-    then: (until: string) => `Puis déconnectez-vous ou faites /reload. Le code est valable jusqu'à ${until}, une fois.`,
-  },
-  start: {
-    title: "Commencer",
-    intro: "L'addon écrit le journal de votre personnage pendant que vous jouez ; lisez-le en jeu avec /ht. Pour le lire ici aussi, Ravenpost, une petite application sur votre ordinateur, envoie chaque livre dans votre bibliothèque après la déconnexion.",
-    addonTitle: "1. L'addon",
-    addon: "Décompressez-le dans le dossier Interface/AddOns du jeu (un paquet par jeu).",
-    classic: "Classic",
-    classicDetail: "Classic Era, Hardcore, Season of Discovery, TBC Anniversary",
-    forever: "Forever",
-    foreverDetail: "World of Warcraft: Forever",
-    ravenpostTitle: "2. Ravenpost",
-    ravenpost: "L'application compagnon qui apporte vos livres ici (et les données de WoWLocker, si vous l'utilisez). Elle vit dans la zone de notification ou la barre des menus.",
-    windows: "Windows",
-    windowsDetail: "Windows 10 ou 11",
-    macos: "macOS",
-    macosDetail: "macOS 11 ou plus récent : placez-la dans Applications",
-    windowsArm: "Windows sur ARM",
-    unsigned: "Pas encore signée : Windows et macOS préviennent à la première ouverture.",
-    stepsTitle: "3. La lier",
-    steps: [
-      "Ouvrez Ravenpost : sa page de réglages s'ouvre dans votre navigateur.",
-      "Sous Hearthtale, cliquez sur Lier Hearthtale : ce site s'ouvre, connectez-vous avec Battle.net et confirmez le code.",
-      "Jouez, puis déconnectez-vous ou tapez /reload : quelques secondes plus tard, votre livre est dans votre bibliothèque.",
-    ],
-    foreverLink: "Personnages de World of Warcraft: Forever (et tout ce que Battle.net ne trouve pas) : dans la bibliothèque, obtenez un code et tapez /ht link CODE en jeu avant de vous déconnecter.",
-    addonSource: "Les versions de l'addon",
-    ravenpostSource: "Les versions de Ravenpost",
-  },
-  pair: {
-    title: "Lier cet ordinateur",
-    ask: (who: string) => `Ravenpost, sur cet ordinateur, demande à envoyer les livres de vos personnages dans la bibliothèque de ${who}. Le code qu'il affiche :`,
-    check: "Vérifiez qu'il est le même que dans Ravenpost.",
-    confirm: "Lier cet ordinateur",
-    done: "C'est lié. Ravenpost envoie vos livres après chaque déconnexion ou /reload.",
-    expired: "Ce code a expiré ou a déjà servi : recommencez depuis Ravenpost.",
-  },
-  library: {
-    title: "Bibliothèque",
-    testIntro: "Le compte de test : trois vies jouées par l'addon dans son jeu de test, chaque livre tel que l'addon l'a enregistré à la déconnexion. Les livres sont écrits en anglais.",
-    empty: "Aucun livre sur cette étagère pour l'instant. Avec l'addon installé, les livres de vos personnages arrivent après une déconnexion ou un /reload.",
-    level: (n: number) => `Niveau ${n}`,
-    chapters: (n: number) => (n === 1 ? "1 chapitre" : `${n} chapitres`),
-    hardcore: "Hardcore",
-    fallen: "Livre refermé",
-  },
-  book: {
-    contents: "Sommaire",
-    prologue: "Prologue",
-    chapter: (n: number) => `Chapitre ${n}`,
-    epitaph: "Épitaphe",
-    stillWriting: "en cours d'écriture",
-    theEnd: "fin",
-    levels: (a: number, b: number) => (a === b ? `niveau ${a}` : `niveaux ${a} à ${b}`),
-    closeCall: "une mort évitée de justesse",
-    rare: "un ennemi rare vaincu",
-    nothingYet: "Rien d'écrit pour l'instant.",
-    previous: "Précédent",
-    next: "Suivant",
-    close: "Fermer",
-    written: (date: string, version?: string) => `Écrit le ${date}${version ? ` par Hearthtale ${version}` : ""}`,
-    notFound: "Ce livre n'est pas ici.",
-  },
-  races: {
-    Human: "Humain", Dwarf: "Nain", NightElf: "Elfe de la nuit", Gnome: "Gnome", Draenei: "Draeneï", Orc: "Orc", Troll: "Troll",
-    Tauren: "Tauren", Scourge: "Mort-vivant", BloodElf: "Elfe de sang", Skyborne: "Skyborne",
-  },
-  classes: {
-    WARRIOR: "Guerrier", PALADIN: "Paladin", HUNTER: "Chasseur", ROGUE: "Voleur", PRIEST: "Prêtre", SHAMAN: "Chaman",
-    MAGE: "Mage", WARLOCK: "Démoniste", DRUID: "Druide",
-  },
-  regions: { 1: "US", 2: "KR", 3: "EU", 4: "TW", 5: "CN" },
-  raceClass: (race: string, cls: string) => `${cls} ${race.toLowerCase()}`,
-  settings: {
-    title: "Réglages",
-    reading: "Lecture",
-    preview:
-      "I reached Kharanos, took a room at Thunderbrew Distillery, then took up skinning. Later that day, I walked into Shimmer Ridge and dealt with a Frostmane Snowstrider.",
-    size: "Taille du texte",
-    font: "Police",
-    fonts: { serif: "Livre", sans: "Simple" },
-    paper: "Papier",
-    themes: { parchment: "Parchemin", sepia: "Sépia", night: "Nuit" },
-    spacing: "Interligne",
-    spacings: { tight: "Serré", normal: "Normal", airy: "Aéré" },
-    language: "Langue",
-    languageHint: "La langue du site (les livres sont écrits en anglais).",
-    account: "Compte",
-    signedInAs: (who: string) => `Connecté en tant que ${who}.`,
-    about: "À propos",
-    version: (v: string, date: string) => `Hearthtale ${v}, ${date}.`,
-  },
-  update: { available: "Une nouvelle version de Hearthtale est prête.", reload: "Recharger", close: "Fermer" },
-  footer: { source: "Code source", notAffiliated: "Sans lien avec Blizzard Entertainment." },
-};
-
-const STRINGS: Record<Lang, typeof en> = { en, fr };
 export type Strings = typeof en;
 
-export function strings(lang: Lang): Strings {
-  return STRINGS[lang];
+/** The languages, with the locale their dates and times are written in. */
+export const CATALOGS = { en: { strings: en, locale: "en-GB", name: "English" } } satisfies Record<string, { strings: Strings; locale: string; name: string }>;
+export type Lang = keyof typeof CATALOGS;
+export const LANGS = Object.keys(CATALOGS) as Lang[];
+export const DEFAULT_LANG: Lang = "en";
+
+export function isLang(v: unknown): v is Lang {
+  return typeof v === "string" && v in CATALOGS;
 }
 
+export function strings(lang: Lang): Strings {
+  return CATALOGS[lang].strings;
+}
+
+/** The chosen language, if it has a catalog (else English). */
+export function useLang(): Lang {
+  const lang = useSettings().lang;
+  return isLang(lang) ? lang : DEFAULT_LANG;
+}
+
+/** The page's strings, in the chosen language. */
 export function useT(): Strings {
-  return STRINGS[useSettings().lang];
+  return strings(useLang());
+}
+
+/** The chosen language's locale, for dates and times. */
+export function useLocale(): string {
+  return CATALOGS[useLang()].locale;
 }
