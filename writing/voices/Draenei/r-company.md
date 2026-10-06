@@ -5,7 +5,7 @@ kind: r-company
 - grateful for the company
 - learning their stories as they learned mine
 - trusting them a little more with each mile
-- the work lighter for two
-- kindness on both sides
+- [one] the work lighter for two
+- [one] kindness on both sides
 - [night] the dark less lonely together
 - [hc] each of us looking out for the other

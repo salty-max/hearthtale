@@ -5,7 +5,7 @@ kind: r-road
 - the sky wide and the road long
 - [!back] listening to the land before entering it
 - [!back] curious what its people held dear
-- [!back] a stranger, though not unwelcome
+- [!back !home] a stranger, though not unwelcome
 - [!back night] its fires a gentle welcome
 - [back] the land already familiar to me
 - [back] the faces greeting me kindly

@@ -2,7 +2,7 @@
 kind: r-company
 ---
 - the road better for being shared
-- our strengths complementing each other
+- [one] our strengths complementing each other
 - trusting them as one trusts the earth
 - the silences comfortable between us
 - sharing the work and the meal alike

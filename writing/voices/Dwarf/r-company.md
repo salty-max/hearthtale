@@ -2,10 +2,10 @@
 kind: r-company
 ---
 - with less cause to mutter to myself
-- a sturdy pair of hands to have at my back
+- [one] a sturdy pair of hands to have at my back
 - swapping tall tales and short rations
 - the walk better for the talk
 - decent company, whatever their clan
-- easier work for two pairs of hands
-- [night] two lanterns being better than one
-- [hc] watching each other's backs as we went
+- [one] easier work for two pairs of hands
+- [night one] two lanterns being better than one
+- [hc one] watching each other's backs as we went

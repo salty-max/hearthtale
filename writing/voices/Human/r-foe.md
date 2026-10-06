@@ -5,7 +5,7 @@ kind: r-foe
 - my heart going for some time after
 - the kind of fight you never tell your mother about
 - no worse for it than a bruise or two
-- glad nobody had been watching
+- glad to have kept my nerve
 - [one] one more thing that would not trouble the farms
 - [!one] the last of them the most stubborn
 - [teeth] keeping all my fingers, which I counted

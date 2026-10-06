@@ -14,3 +14,7 @@ kind: c-gear
 - [made] wore {item} for the first time, fresh from my own work
 - [made] tried {item} on, my own handiwork
 - [!made] put on {item}
+- [!made] took to wearing {item}
+- [!made] strapped on {item}
+- [made] buckled on {item}, fresh from my own work
+- [made] dressed myself in {item} of my own making

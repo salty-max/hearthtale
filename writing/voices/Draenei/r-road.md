@@ -3,7 +3,7 @@ kind: r-road
 ---
 - the road long but not unkind
 - [!back] curious about the people who lived in it
-- [!back] a stranger, as everywhere
+- [!back !home] a stranger, as everywhere
 - [!back] hoping for a welcome, if not expecting one
 - [!back] its shapes unlike anything on our world
 - [!back night] its lights a quiet comfort

@@ -48,10 +48,12 @@ ns.listing = listing
 local COMMON = { Valley = true, Temple = true, Hall = true, Halls = true, Ring = true, Cleft = true, Vale = true,
   Den = true, Field = true, Fields = true, Isle = true, Ruins = true, Tower = true, Gate = true, Gates = true,
   Shrine = true, Sanctum = true, Caverns = true, Court = true, Terrace = true, Pools = true, Circle = true }
+local TRAILING = { District = true, Quarter = true } -- "the Dwarven District", "the Mage Quarter"
 local function mid(name)
   if not name then return nil end
   local first = name:match("^(%a+) of ")
   if first and COMMON[first] then return "the " .. name end
+  if TRAILING[name:match("(%a+)$") or ""] and not name:find("^The ") then return "the " .. name end
   return (name:gsub("^The ", "the "))
 end
 
@@ -74,9 +76,17 @@ ns.plural = plural
 
 -- An item: "a Wolf Fang Necklace", but "Cuirboulle Gloves", "Blackened Defias
 -- Armor", "Smite's Mighty Hammer".
+local TROPHY = { Head = true, Skull = true, Heart = true, Scalp = true }
 local MASS = { Armor = true, Mail = true, Garb = true, Attire = true, Regalia = true, Raiment = true, Plate = true, Leather = true }
 local function itemName(name)
-  local last = name:match("(%S+)$")
+  -- its own article: "An Unsent Letter" reads "an Unsent Letter"
+  local own = name:match("^(An?) ") or name:match("^(The) ")
+  if own then return own:lower() .. name:sub(#own + 1) end
+  -- a trophy: "Head of VanCleef" is VanCleef's head
+  local part, whose = name:match("^(%a+) of (.+)$")
+  if part and TROPHY[part] then return whose .. "'s " .. part:lower() end
+  -- the thing itself, before an "of": "Chausses of Westfall" are many
+  local last = (name:match("^(.-) of ") or name):match("(%S+)$")
   if name:find("'s ") or last:match("s$") or MASS[last] then return name end
   return (name:match("^[AEIOUaeiou]") and "an " or "a ") .. name
 end
@@ -96,8 +106,14 @@ ns.things = things
 
 -- A creature named in passing: "a Frostmane Novice". The game can't tell a
 -- named creature from a common one, so only rares go without (by their name).
+-- (a title is a name of its own: "Mr. Smite", "Captain Greenskin")
+local TITLES = { Mr = true, Mrs = true, Captain = true, Lord = true, Lady = true, King = true, Queen = true,
+  Prince = true, Princess = true, Baron = true, Baroness = true, General = true, Commander = true, Chief = true,
+  Overlord = true, Archmage = true, Foreman = true, Sergeant = true, Lieutenant = true, Marshal = true,
+  Master = true, Emperor = true, Warlord = true, Highlord = true, Count = true, Duke = true, Magistrate = true }
 local function article(name)
   if not name then return nil end
+  if TITLES[name:match("^(%a+)") or ""] then return name end
   return (name:match("^[AEIOUaeiou]") and "an " or "a ") .. name
 end
 
@@ -282,10 +298,19 @@ local OWN_GAP = 8
 -- for about one routine clause in three, never the same one soon again.
 local ROUTINE = {
   ["c-kill"] = "r-foe", ["c-deed-kill"] = "r-foe", ["c-first"] = "r-first", ["c-deed-item"] = "r-item",
-  ["c-deed-task"] = "r-task", ["c-deed-word"] = "r-task", ["c-gear"] = "r-gear", ["c-trainer"] = "r-lesson",
+  ["c-deed-task"] = "r-task", ["c-deed-word"] = "r-task", ["c-deliver"] = "r-task", ["c-gear"] = "r-gear", ["c-trainer"] = "r-lesson",
   ["c-skill"] = "r-lesson", ["c-prof"] = "r-lesson", ["c-travel"] = "r-road", ["c-return"] = "r-road",
   ["c-place"] = "r-road", ["c-inn"] = "r-inn", ["c-group"] = "r-company",
 }
+-- The last masters of the dungeons: their fall is a sentence of its own.
+local FINAL = {}
+for _, name in ipairs({ "Taragaman the Hungerer", "Mutanus the Devourer", "Edwin VanCleef", "Archmage Arugal",
+  "Aku'mai", "Bazil Thredd", "Mekgineer Thermaplugg", "Charlga Razorflank", "Herod", "Arcanist Doan",
+  "Bloodmage Thalnos", "High Inquisitor Whitemane", "Amnennar the Coldbringer", "Archaedas",
+  "Chief Ukorz Sandscalp", "Princess Theradras", "Shade of Eranikus", "Emperor Dagran Thaurissan",
+  "Overlord Wyrmthalak", "General Drakkisath", "King Gordok", "Immol'thar", "Prince Tortheldrin",
+  "Darkmaster Gandling", "Baron Rivendare", "Balnazzar" }) do FINAL[name] = true end
+
 -- Chapters before a remark may come back (none fresh left): sooner than
 -- that, the clause goes without.
 local REMARK_GAP = 10
@@ -442,7 +467,7 @@ function Book:say(kind, key, values, tags, prefer, raw)
   local text = chosen[1]
   if routine then self.lastVerb = text:match("^(%a+)") end
   -- a remark ends a clause that has no comma of its own
-  if wantRemark and not text:find(",") then
+  if wantRemark and not text:find(",") and not ctx.trophy then -- (a trophy speaks for itself)
     local remark = self:remark(routine, key, values, ctx)
     if remark then
       text = text .. ", " .. remark
@@ -582,15 +607,24 @@ function Book:deed(m, key, tags)
     tags.one = count == 1 or nil
     tags.teeth = ({ Wolf = true, Cat = true, Bear = true, Boar = true, Crocolisk = true, Raptor = true })[self.creatureKinds[o.name] or ""]
     done = self:say("c-deed-kill", key, values, tags, nil, true)
+  elseif o and o.type == "item" and o.held and o.name and m.ender then
+    -- a thing in hand when the quest was taken (a note, a letter found on a
+    -- foe), carried to another: a delivery
+    values.ender, values.thing = m.ender, itemName(o.name)
+    done = self:say("c-deliver", key, values, tags, nil, true)
   elseif o and o.type == "item" and o.name then
     local count = o.n or 1
     values.n, values.thing = words(count), count > 1 and things(o.name) or itemName(o.name)
     tags.one = count == 1 or nil
+    tags.trophy = TROPHY[o.name:match("^(%a+) of ") or ""] or nil
     tags.cloth = o.name:match("Cloth$") or o.name:match("Silk$") or o.name:match("Wool$") or nil
     tags.meat = o.name:match("Meat$") or nil -- uncounted: "it"
-    done = self:say("c-deed-item", key, values, tags, nil, true)
+    done = self:say("c-deed-item", key, values, tags, tags.trophy and { trophy = true } or nil, true)
   elseif o and o.text and not doneText(o.text) then
+    -- told after the fact: "escort the Defias Traitor to discover where
+    -- VanCleef was hiding" (the log's "The Defias Traitor", "is hiding")
     values.task = lowerFirst((o.text:gsub("[%.:]%s*$", "")))
+      :gsub(" The ", " the "):gsub(" is ", " was "):gsub(" are ", " were ")
     -- Taming objectives describe the same event as UNIT_PET. Leave that
     -- telling to the pet record, even before it arrives: no lookahead and
     -- no rewriting a finished quest sentence when the pet is later named.
@@ -701,6 +735,9 @@ function Book:chapter(n, ch)
   local lvl = start.level or 1
   local function tags(t, m)
     t = t or {}
+    -- in the race's own lands (a place's scenery says whose home it is)
+    local land = m and m.zone and ns.data.scenery and ns.data.scenery[m.zone]
+    if t.home == nil then t.home = (land and land.home and land.home[c.race or ""]) or nil end
     local level = (m and m.level) or lvl
     if t.night == nil then t.night = (m and m.night) or nil end
     if t.high == nil then t.high = level >= 40 or nil end
@@ -839,6 +876,7 @@ function Book:chapter(n, ch)
   end
 
   local mates, dungeon = {}, nil -- who joined me so far in the chapter; the dungeon I'm in
+  local merged, found = {}, nil -- group moments told with the one before; the find just told
   for i, m in ipairs(ch.log or {}) do
     if m.sub then self.placeNames[m.sub] = true end
     if m.zone then self.placeNames[m.zone] = true end
@@ -923,8 +961,20 @@ function Book:chapter(n, ch)
         killed = true
       end
     elseif m.k == "group" then
-      if #mates < 4 then table.insert(mates, m.name) end
-      inScene(c_("c-group", { mates = m.name }))
+      -- a group formed: those who joined together, in one clause
+      if not merged[i] then
+        local names, j = { m.name }, i + 1
+        while ch.log[j] and ch.log[j].k == "group" and (ch.log[j].at or 0) - (m.at or 0) <= 120 do
+          table.insert(names, ch.log[j].name)
+          merged[j] = true
+          j = j + 1
+        end
+        for _, name in ipairs(names) do if #mates < 4 then table.insert(mates, name) end end
+        inScene(c_("c-group", { mates = listing(names) }, { one = #names == 1 or nil }))
+      end
+    elseif m.k == "boss" and FINAL[m.name] then
+      -- a dungeon's last master: a sentence of its own
+      alone("boss-final", key, { boss = m.name, dungeon = mid(dungeon) }, tags(nil, m), m)
     elseif m.k == "boss" then
       inScene(c_("c-boss", { boss = m.name, dungeon = mid(dungeon) }))
     elseif m.k == "learned" then
@@ -943,9 +993,13 @@ function Book:chapter(n, ch)
       inScene(c_("c-skill", { skill = m.name:lower(), rank = words(m.rank) }))
     elseif m.k == "prof" then
       inScene(c_("c-prof", { prof = m.name:lower(), rank = rankName(m.rank) }, { new = m.learned or nil }))
+    elseif m.k == "gear" and found == (m.link and m.link:match("%[(.-)%]")) then
+      inScene(c_("c-wear-found", {})) -- the find just told, put to use
+      found = nil
     elseif m.k == "gear" or m.k == "loot" then
       local item = m.link and m.link:match("%[(.-)%]")
       if item then inScene(c_("c-" .. m.k, { item = itemName(item) }, { made = m.made or nil })) end
+      found = m.k == "loot" and item or nil
     elseif m.k == "tame" then
       inScene(c_("c-tame", { pet = m.name, family = m.family and article(m.family:lower()) }))
     else

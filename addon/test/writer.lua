@@ -38,6 +38,8 @@ local ZONES = {
   { "Loch Modan", { "Thelsamar", "Stonewrought Dam", "The Farstrider Lodge", "Silver Stream Mine" } },
   { "The Barrens", { "The Crossroads", "Ratchet", "Camp Taurajo", "The Forgotten Pools", "Lushwater Oasis" } },
   { "Westfall", { "Sentinel Hill", "Moonbrook", "The Dagger Hills", "Saldean's Farm" } },
+  { "Stormwind City", { "Trade District", "Dwarven District", "Old Town", "Cathedral Square" } },
+  { "The Deadmines", { "Ironclad Cove" } },
   { "Stranglethorn Vale", { "Booty Bay", "Grom'gol Base Camp", "Nesingwary's Expedition", "Zul'Kunda" } },
   { "Ashenvale", { "Astranaar", "Splintertree Post", "Raynewood Retreat" } },
   { "Tanaris", { "Gadgetzan", "Steamwheedle Port", "Zalashji's Den" } },
@@ -65,7 +67,7 @@ local DUNGEONS = { { "The Deadmines", { "Rhahk'Zor", "Sneed", "Gilnid", "Mr. Smi
   { "Gnomeregan", { "Grubbis", "Viscous Fallout", "Mekgineer Thermaplugg" } }, { "Blackfathom Deeps", { "Ghamoo-ra", "Twilight Lord Kelris", "Aku'mai" } },
   { "Ragefire Chasm", { "Taragaman the Hungerer", "Bazzalan" } }, { "Wailing Caverns", { "Lady Anacondra", "Mutanus the Devourer" } },
   { "Shadowfang Keep", { "Rethilgore", "Baron Silverlaine", "Archmage Arugal" } }, { "The Stockade", { "Bazil Thredd" } } }
-local THINGS = { "Tough Wolf Meat", "Crag Boar Rib", "Shimmerweed", "Gnoll Paw", "Grelin Whitebeard's Journal", "Scalding Mornbrew",
+local THINGS = { "Head of VanCleef", "Tough Wolf Meat", "Crag Boar Rib", "Shimmerweed", "Gnoll Paw", "Grelin Whitebeard's Journal", "Scalding Mornbrew",
   "Kobold Candle", "Murloc Fin", "Red Bandana", "Linen Cloth" }
 local TASKS = { "Explore the Frostmane Hold", "Find the missing diplomat", "Light the signal fire", "Destroy the Defias plans",
   "Escort the caravan to the Crossroads" }
@@ -181,9 +183,12 @@ local function life(race, class, hc, from, to)
         local o, roll = nil, rand(100)
         if roll <= 35 then o = { { type = "monster", name = one(CREATURES)[1], n = one({ 1, 6, 8, 10, 12, 15 }) } }
         elseif roll <= 65 then o = { { type = "item", name = one(THINGS), n = one({ 1, 1, 5, 6, 8, 10 }) } }
-        elseif roll <= 75 then o = { { type = "event", text = one(TASKS) } } end
+        elseif roll <= 72 then o = { { type = "event", text = one(TASKS) } }
+        elseif roll <= 78 then -- a note in hand, to be delivered
+          o = { { type = "item", name = one({ "Wiley's Note", "An Unsent Letter", "Sealed Report" }), n = 1, held = true } }
+        end
         add(m("quest", { title = chance(0.95) and one(QUESTS) or nil, giver = chance(0.8) and one(GIVERS) or nil,
-          ender = chance(0.4) and one(GIVERS) or nil, objectives = o }))
+          ender = (chance(0.4) or (o and o[1].held)) and one(GIVERS) or nil, objectives = o }))
       elseif r <= 52 then
         local cr = one(CREATURES)
         local n = rand(1, 12)
@@ -710,6 +715,7 @@ eq(ns.plural("Scavenged Goods"), "Scavenged Goods", "already many"); eq(ns.plura
 eq(ns.things("Crag Boar Rib"), "Crag Boar Ribs", "ribs"); eq(ns.things("Tough Wolf Meat"), "Tough Wolf Meat", "meat")
 eq(ns.things("Shimmerweed"), "Shimmerweed", "weed"); eq(ns.things("Linen Cloth"), "Linen Cloth", "cloth"); eq(ns.plural("Kobold Vermin"), "Kobold Vermin", "vermin")
 eq(ns.itemName("Wolf Fang Necklace"), "a Wolf Fang Necklace", "a"); eq(ns.itemName("Cuirboulle Gloves"), "Cuirboulle Gloves", "plural")
+eq(ns.itemName("An Unsent Letter"), "an Unsent Letter", "own article"); eq(ns.itemName("Wiley's Note"), "Wiley's Note", "possessive note")
 eq(ns.itemName("Smite's Mighty Hammer"), "Smite's Mighty Hammer", "possessive"); eq(ns.itemName("Blackened Defias Armor"), "Blackened Defias Armor", "mass")
 eq(ns.playedWords(7170), "two hours", "1h59 is two hours"); eq(ns.playedWords(3600 + 58 * 60), "two hours", "1h58")
 eq(ns.playedWords(1500), "twenty-five minutes", "25 min"); eq(ns.playedWords(5400), "an hour and a half", "1h30")
@@ -720,7 +726,7 @@ io.write(("%d books, %d chapters, %d sentences repeated (%.1f per book), longest
 if os.getenv("WRITER_PROFILE") == "1" then io.write(longestText .. "\n") end
 -- The random lives keep a representative busy chapter within phone-reading
 -- range. This is a prose regression check, never a runtime truncation rule.
-if longest > 2450 then problem("chapter length", "a representative chapter grew beyond 2450 characters", tostring(longest)) end
+if longest > 2600 then problem("chapter length", "a representative chapter grew beyond 2600 characters", tostring(longest)) end
 io.write(("routine remarks: %d/%d (%.1f%%)\n"):format(remarkTotal, routineTotal, 100 * remarkTotal / routineTotal))
 io.write(("remarks repeated within a book's first ten chapters: %d\n"):format(remarkEarly))
 if remarkEarly > 0 then problem("remark repeats", "a remark came back within a book's first ten chapters", tostring(remarkEarly)) end

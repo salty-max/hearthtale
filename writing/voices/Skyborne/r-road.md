@@ -5,7 +5,7 @@ kind: r-road
 - [client:forever !back] curious how the place would look from above
 - [client:forever !back] the shape of it new to me
 - [client:forever !back] noting where the wind came from
-- [client:forever !back] a stranger, and visibly so
+- [client:forever !back !home] a stranger, and visibly so
 - [client:forever !back night] its lights scattered below me like stars
 - [client:forever back] the place shifted a little since I left
 - [client:forever back] the way already traced in my memory

@@ -57,9 +57,12 @@ The plan and its decisions: PLAN.md.
   - `addon/test/lives.lua`: lives played through the addon, as the game would
     send them (Brannok, a Hardcore dwarf hunter; Pippa, a Hardcore gnome mage
     who falls; Aldric, a human paladin met mid-life; Grashnak, an orc warrior;
-    Aelyndra, a night elf druid; Mortis, a Forsaken priest), shared by:
-  - `addon/test/sample.lua`: Brannok's book, `luajit addon/test/sample.lua > docs/sample.md`;
-  - `addon/test/seed.lua`: the six lives, logged out so the addon saves their
+    Aelyndra, a night elf druid; Mortis, a Forsaken priest; Edric, a human
+    warrior's evening in the Deadmines, its quests, mobs, bosses and loot as in
+    Classic), shared by:
+  - `addon/test/sample.lua`: the first chapters, `luajit addon/test/sample.lua > docs/sample.md`;
+    the evening, `luajit addon/test/sample.lua deadmines > docs/sample-deadmines.md`;
+  - `addon/test/seed.lua`: the seven lives, logged out so the addon saves their
     books, as the site's test data (`bun run addon:seed` writes
     `apps/api/src/db/seed/characters.json`; `bun run db:seed` loads it).
 - `addon/test/writer.lua`: hundreds of imaginary lives (every race and class,
