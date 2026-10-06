@@ -8,6 +8,20 @@ Games: Classic Era (Hardcore, Season of Discovery), TBC Anniversary, World of
 Warcraft: Forever. One source, one package per game, as Lorekeeper's Codex and
 Explorer's Field Journal (same release, CI and CurseForge tooling).
 
+## A web reader (6 October 2026, planned after the CurseForge launch)
+
+The journal readable outside the game too, as Talekeeper does on Forever (whose
+book is written by its site, needs an account and a Windows tray app, Forever
+only). The in-game book stays complete and needs nothing.
+
+| Question | Decision |
+|---|---|
+| Home | A site of its own (not inside WoWLocker): its own domain, sign-in, companion and hosting. WoWLocker's code (monorepo, companion, pairing) is the model to copy from. |
+| Ownership | Not through the Battle.net API (no Forever namespace): a code typed in the game links a character to the account, as Talekeeper does. |
+| Prose | The site runs the addon's own Writer.lua and writing data on the uploaded records: the web and the game read the same, and better writing reaches old chapters on both. |
+| Sharing | Private by default; a share link per book or per epitaph, with a preview card for Discord and Reddit. Fallen Hardcore books may be offered to a public Hall. |
+| Timing | After the CurseForge launch: first CurseForge and Wago, a share-as-text button in game, a project page that shows the prose. |
+
 ## Chapters from rest to rest (6 October 2026, after testing 0.1.0)
 
 These replace the chapter per level below.
