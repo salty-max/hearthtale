@@ -1,18 +1,19 @@
 ---
 kind: c-deed-kill
 ---
-- [!one] put down {n} {foes} for {giver}
-- [!one] dealt with {n} {foes}, as {giver} had asked
-- [!one] killed {n} {foes}, as {giver} asked
-- [!one] did for {n} {foes} and told {ender}
-- [!one] thinned out the {foes}, {n} of them
-- [!one] killed {n} {foes}, a fair day's work
-- [!one] broke {n} {foes}, one after another
-- [!one] counted {n} {foes} dead
-- [!one] made {n} fewer {foes} in the world
-- [one] put an end to {foes} for {giver}
-- [one] dealt with {foes} and finished {giver}'s work
-- [one] tracked down {foes} and finished it
-- [one] did for {foes}
-- [one] settled {foes}, once and for all
-- [one] went after {foes} and came back alone
+- [!one] dealt with {n} {foes}
+- [one] dealt with {foes}
+- [!one] brought down {n} {foes}, work that did not need making grander
+- [one] brought down {foes}, work that did not need making grander
+- [!one] killed {n} {foes}
+- [one] killed {foes}
+- [!one] accounted for {n} {foes}
+- [one] accounted for {foes}
+- [!one] finished the business with {n} {foes}
+- [one] finished the business with {foes}
+- [!one] dealt with {n} {foes} for {giver}
+- [one] put an end to {foes}, as {giver} requested
+- [!one] saw off {n} {foes}
+- [one] saw off {foes}
+- [!one] put down {n} {foes}, as {giver} asked
+- [one] put down {foes}, as {giver} asked

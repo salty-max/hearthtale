@@ -1,13 +1,12 @@
 ---
 kind: rest
 ---
-- [last !fire] I stopped {at} and let the road go on without me for a while. There was more to tell than I had expected when I set out.
-- [last !fire] I made myself comfortable {at}, with my pack out of the way and these pages open before me.
-- [last !fire] I set my pen down {at}, glad that the next thing asked of me would be rest.
-- [last !fire] I rested {at} with the day's work behind me, leaving the next stretch for when I was ready.
-- [last fire] I settled beside the fire {at}, letting the embers hold my attention after a day of watching everything else.
-- [last fire] I finished this page beside the fire {at}, then put the book away within reach.
-- [!last !fire] I stopped {at} long enough to rest before taking up the road again.
-- [!last !fire] I rested a little {at}, glad to put my pack down while I could.
-- [!last fire] I warmed my hands beside the fire {at} before going on.
-- [!last fire] I stopped by the fire {at}, where the pause did me more good than I would have admitted.
+- I rested {at}, glad to put my pack down before it became a permanent part of me.
+- I settled {at}, with the work done well enough that it could wait without worrying me.
+- I stopped {at}, where being still made a welcome change from making headway.
+- I rested {at}, letting my shoulders have their say now that the road was finished asking.
+- I made myself comfortable {at}. There was no virtue in being uncomfortable when the choice was mine.
+- I paused {at}, content to let the road manage without me for a while.
+- I rested {at}, with enough behind me to have earned the pleasure of doing very little.
+- I stopped {at} and let the stiffness ease before asking anything more of myself.
+- I put the journey aside {at}, glad to have reached somewhere I could think with my pack off.

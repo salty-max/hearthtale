@@ -1,0 +1,11 @@
+---
+kind: c-trainer
+---
+- learned {spells}, with time still needed to make the lesson part of me
+- was taught {spells}
+- gave my attention to instruction in {spells}
+- made time to learn {spells}
+- added {spells} to what I knew, with care still owed to its use
+- came away knowing {spells}
+- took lessons in {spells}, content not to hurry the learning
+- was instructed in {spells}

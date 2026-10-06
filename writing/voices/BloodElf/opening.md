@@ -1,0 +1,12 @@
+---
+kind: opening
+---
+- I began again {at}, with my purpose in order even if the circumstances were less obliging.
+- I took up the road {at}. Necessity could dictate the work without being allowed to dictate its quality.
+- I set out {at}, determined to distinguish endurance from merely becoming accustomed to indignity.
+- I opened a fresh page {at}, with enough unfinished business to leave nostalgia its own company.
+- I made ready {at}, unwilling to confuse confidence with the luxury of having no doubts.
+- I went on {at}, where a little care would serve me better than expecting the world to be civilised.
+- I began this stretch {at}. What we had lost deserved more from me than a polished complaint.
+- I returned to my account {at}, keeping the facts more carefully than the appearance I might prefer them to make.
+- I set out {at}, with pride enough to do the work well and sense enough to know that pride would not do it for me.

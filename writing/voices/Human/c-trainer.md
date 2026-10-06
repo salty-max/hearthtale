@@ -1,0 +1,11 @@
+---
+kind: c-trainer
+---
+- learned {spells}, something useful to bring to the next difficulty
+- was taught {spells}
+- made time for lessons in {spells}
+- added {spells} to what I knew
+- took instruction in {spells}, with practice still to do
+- came away knowing {spells}
+- learned {spells}, glad not to have to learn everything by making a mistake
+- was instructed in {spells}

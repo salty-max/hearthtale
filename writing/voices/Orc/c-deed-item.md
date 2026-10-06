@@ -1,16 +1,19 @@
 ---
 kind: c-deed-item
 ---
-- [!one] brought {giver} {n} {thing}
-- [!one] took {n} {thing}
-- [!one] gathered {n} {thing}
-- [!one] carried {n} {thing} to {ender}
-- [!one] found {n} {thing}
-- [!one] hauled back {n} {thing}
-- [!one] collected {n} {thing} for {giver}
-- [!one] brought back {n} {thing}
-- [one] brought {giver} {thing}
-- [one] took back {thing}
-- [one] found {thing}
-- [one] carried {thing} to {ender}
+- [!one] secured {n} {thing}
+- [one] secured {thing}
+- [!one] collected {n} {thing}, as {giver} asked
+- [one] collected {thing}, as {giver} asked
+- [!one] recovered {n} {thing}
 - [one] recovered {thing}
+- [!one] found {n} {thing}, giving the request an answer in deeds
+- [one] found {thing}, giving the request an answer in deeds
+- [!one] brought back {n} {thing}
+- [one] brought back {thing}
+- [!one] returned with {n} {thing}
+- [one] returned with {thing}
+- [!one] gathered {n} {thing}
+- [one] gathered {thing}
+- [!one] brought {giver} {n} {thing}
+- [one] brought {thing} to {ender}

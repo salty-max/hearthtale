@@ -9,9 +9,3 @@ kind: beginning
 - I made my first entry {at}, with the world still larger than any plans I had made for it.
 - [hc] I began {at}, knowing that I had only one life to spend and wanting to give it a story worth keeping.
 - [hc] I opened my journal {at}, aware that every page would belong to the same, irreplaceable life.
-- [race:Tauren] I began {at}, with the Earth Mother in my thoughts and a wish to understand my place in the world.
-- [race:Troll] I set out {at}, carrying the Darkspear's survival with me as something to live up to.
-- [race:Human] I began {at}, hoping that helping the people I met would teach me what I had come here to do.
-- [race:Gnome] I began {at}, with Gnomeregan in my thoughts and a curiosity that its loss had not taken from me.
-- [race:BloodElf] I began {at}, conscious of all that Quel'Thalas had lost and uncertain what I could yet give it.
-- [race:Draenei] I began {at}, trying to make a place for myself in a world far from the homes we had known.

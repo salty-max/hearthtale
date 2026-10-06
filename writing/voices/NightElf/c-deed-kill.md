@@ -1,17 +1,19 @@
 ---
 kind: c-deed-kill
 ---
-- [!one] hunted {n} {foes} for {giver}
-- [!one] culled {n} {foes}, as {giver} asked, and took no joy in it
-- [!one] saw through the task of dealing with {n} {foes}
-- [!one] brought down {n} {foes} and told {ender} it was done
-- [!one] accounted for {n} {foes} before returning
-- [!one] brought down the {n} {foes} the task required
 - [!one] ended {n} {foes}
-- [!one] hunted {n} {foes} and completed the work
-- [!one] thinned the {foes}, {n} of them
-- [one] ended {foes}, as {giver} asked
-- [one] hunted down {foes}
-- [one] found {foes} and put an end to the encounter
-- [one] brought {foes} down
+- [one] ended {foes}
+- [!one] hunted {n} {foes}, without mistaking the number for all the encounter meant
+- [one] hunted {foes}, without mistaking the number for all the encounter meant
+- [!one] put an end to {n} {foes}
+- [one] put an end to {foes}
+- [!one] overcame {n} {foes}
+- [one] overcame {foes}
+- [!one] completed the task of dealing with {n} {foes}
 - [one] completed the task of dealing with {foes}
+- [!one] dealt with {n} {foes} for {giver}
+- [one] put an end to {foes}, as {giver} requested
+- [!one] brought down {n} {foes}
+- [one] brought down {foes}
+- [!one] dealt with {n} {foes}, as {giver} asked
+- [one] dealt with {foes}, as {giver} asked

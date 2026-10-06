@@ -1,12 +1,12 @@
 ---
 kind: opening
 ---
-- [!night] I took up the journal again {at}, with the day's work still ahead of me.
-- [!night] I was ready to go on {at}, though my shoulders remembered the weight of my pack.
-- [night] I started out {at} after dark, letting my eyes grow used to it before I hurried.
-- [night] I turned to a fresh page {at}, with the night already around me.
-- I began another stretch of the road {at}, where I had left the last one.
-- I checked my pack {at} before going on, unwilling to discover a loose strap halfway there.
-- I put my belongings in order {at} and looked toward the road ahead.
-- [!night] I found myself {at} with work to do and rather less inclination to stand about.
-- I took up the road again {at}, glad to have somewhere to begin.
+- I took up the road {at}, with my pack settled and no use in standing about.
+- I began again {at}, ready to find whether the next stretch was as hard as it looked.
+- I opened a fresh page {at}. Best get the work straight before making a tale of it.
+- I set out {at}, with a mind to do the job properly and see something besides the job.
+- I made ready {at}, giving my gear the sort of look that saves trouble later.
+- I went on {at}, where a little patience would serve me better than a great deal of grumbling.
+- I began this stretch {at}, curious about the ground beneath the road as well as where it led.
+- I was ready to move {at}. The road was not going to shorten itself out of consideration.
+- I took up my account {at}, hoping the next page would have something worth bringing back to my kin.

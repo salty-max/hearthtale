@@ -1,12 +1,12 @@
 ---
 kind: opening
 ---
-- [!night] I took up the path again {at}, noticing what I had been too tired to look at before.
-- [!night] I began another day's travelling {at}, listening a moment before I moved.
-- [night] I started out {at} beneath Elune's light, with the dark familiar around me.
-- [night] I opened a new page {at}, content to make my way through the quiet hours.
-- I went on from {where}, carrying the last stretch of the journey in my thoughts.
-- I began again {at}, with time to look about me before the work began.
-- I turned back to the road {at}, aware of how much I still had to learn.
-- [!night] I made ready {at}, then let my attention settle on the path ahead.
-- [night] I took up my journey {at}, where the night left room to hear myself think.
+- I took up the path {at}, looking first for what had changed while my attention was elsewhere.
+- I began again {at}, with no wish to mistake a familiar name for familiar ground.
+- I set out {at}, letting the world reach my attention before my purpose narrowed it.
+- I opened a fresh page {at}. Even a brief passage through a place could leave something that endured.
+- I went on {at}, conscious that haste had made older mistakes than mine.
+- I began this stretch {at}, with no intention of letting reserve be mistaken for uncertainty.
+- I made ready {at}, keeping the last part of the road in mind without allowing it to hide the next.
+- I returned to my account {at}, with the quiet between deeds still part of what I wished to remember.
+- I set out {at}, wary of how quickly strangers could make certainty out of so little.

@@ -6,7 +6,8 @@
 -- (a sample book, from a life played through the addon: addon/test/sample.lua)
 local DIR = "addon/Hearthtale/"
 local ns = {}
-assert(loadfile(DIR .. "Data_Classic.lua"))("Hearthtale", ns)
+local forever = os.getenv("FOREVER") == "1"
+assert(loadfile(DIR .. (forever and "Data_Forever.lua" or "Data_Classic.lua")))("Hearthtale", ns)
 assert(loadfile(DIR .. "Writer.lua"))("Hearthtale", ns)
 
 -- A small random generator of our own, for the same lives on every machine.
@@ -109,6 +110,10 @@ end
 -- The races in a fixed order: pairs() would walk them differently on each run
 -- (LuaJIT hashes strings with a random seed), and the lives with them.
 local RACES = {}
+if forever then
+  COMBOS.Skyborne = { "WARRIOR", "HUNTER", "ROGUE", "SHAMAN", "MAGE", "DRUID" }
+  START.Skyborne = "The Barrens"
+end
 for race in pairs(COMBOS) do table.insert(RACES, race) end
 table.sort(RACES)
 
@@ -117,11 +122,12 @@ local function life(race, class, hc, from, to)
   guid = guid + 1
   local c = { guid = ("Player-1-%08X"):format(guid), name = one({ "Sealinedion", "Brannor", "Kelsa", "Thrudd", "Ylena", "Morgrim" }),
     race = race, class = class, hardcore = hc or nil, began = { level = from }, chapters = {} }
+  if race == "Skyborne" then c.faction = class == "SHAMAN" and "horde" or (class == "MAGE" and "alliance" or (guid % 2 == 0 and "alliance" or "horde")) end
   if from > 1 then
     c.prologue = { level = from, quests = chance(0.9) and rand(5, 200) or 0, inn = one({ "Goldshire", "Kharanos", "Brill", nil }),
       zone = one(ZONES)[1], played = chance(0.6) and rand(3000, 400000) or nil }
   end
-  local zone = from == 1 and zoneNamed(START[race]) or one(ZONES)
+  local zone = from == 1 and zoneNamed(START[race] or "Elwynn Forest") or one(ZONES)
   local sub = zone[2][1]
   local seen, kinds, level, once = {}, {}, from, {}
   local clock, isNight = 1790000000, false
@@ -330,6 +336,26 @@ end
 if sceneText ~= ns.writeBook(recorded).chapters[1].text then
   problem("scene joins", "the same record produced different prose", sceneText)
 end
+-- A compound action must survive both the arrival frame and an ordinary
+-- join, without three competing uses of "and" in the same thought.
+fixtureWriting["c-kill"] = { { "stood against {foe} and prevailed" } }
+fixtureWriting["c-deed-kill"] = { { "dealt with {n} {foes} and finished the work" } }
+local compoundText = ns.writeBook(recorded).chapters[1].text
+if compoundText:find("I reached Farm and stood against", 1, true)
+  or compoundText:find("prevailed and dealt with", 1, true) then
+  problem("scene joins", "a compound thought gained a competing conjunction", compoundText)
+end
+inspect("compound scene joins", compoundText)
+local ordinaryCompound = ns.writeBook({ guid = "ordinary-compound", race = "Human", class = "MAGE",
+  chapters = { { start = { level = 1, zone = "Country", sub = "Home" }, log = {
+    { k = "kill", name = "Wolf", kind = "Beast", zone = "Country", sub = "Home", at = 10 },
+    { k = "quest", giver = "Farmer", objectives = { { type = "monster", name = "Wolf", n = 2 } },
+      zone = "Country", sub = "Home", at = 20 },
+  } } },
+}).chapters[1].text
+if not ordinaryCompound:find("prevailed; I dealt with", 1, true) then
+  problem("scene joins", "ordinary compound actions lost their grammatical join", ordinaryCompound)
+end
 ns.data, ns.writerUsed = originalData, originalUsed
 
 -- A busy fighting day can also include quests. Recap fighting the objectives
@@ -353,6 +379,95 @@ for _, race in ipairs(RACES) do
 end
 
 local runs = 0
+-- Future or otherwise unwritten races still get a complete generic beginning.
+-- Racial beginnings now belong to their own catalogs rather than redundant
+-- shared lines that a complete racial catalog would hide permanently.
+for i = 1, 80 do
+  local c = { guid = "unwritten-" .. i, race = "Unwritten", class = "WARRIOR", hardcore = i % 2 == 0 or nil,
+    chapters = { { start = { level = 1, zone = "Country", sub = "Home" }, log = {} } } }
+  inspect("unwritten race", ns.writeBook(c).chapters[1].text)
+end
+
+-- A race added by another client still needs the shared narrator throughout
+-- a life, including both singular and plural objectives and crafted gear.
+for _, class in ipairs({ "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK", "SHAMAN", "DRUID" }) do
+  for _, hc in ipairs({ true, false }) do
+    for _ = 1, 3 do
+      local book = ns.writeBook(life("Unwritten", class, hc, 1, 60))
+      inspect("shared narrator prologue", book.prologue)
+      inspect("shared narrator epitaph", book.epitaph)
+      for _, ch in ipairs(book.chapters) do inspect("shared narrator " .. class, ch.text) end
+    end
+  end
+end
+
+-- A long run of ordinary errands must not exhaust the racial narrator and
+-- leave the rest of the book to the shared voice. Observe real selections
+-- without modifying any candidate pool or the writer's own history.
+for _, race in ipairs(RACES) do
+  local selected, own = 0, 0
+  local coverage = ns.writerUsed
+  ns.writerUsed = setmetatable({}, { __newindex = function(_, reach)
+    coverage[reach] = true
+    if reach:find("c-deed-task#", 1, true) then
+      selected = selected + 1
+      if reach:sub(1, #race + 1) == race .. "/" then own = own + 1 end
+    end
+  end })
+  local log = {}
+  for i = 1, 100 do
+    log[i] = { k = "quest", giver = "Gazlowe", at = i * 300,
+      objectives = { { type = "event", text = "Recover the missing cargo" } } }
+  end
+  local c = { guid = "long-errands", race = race, class = COMBOS[race][1],
+    chapters = { { start = { level = 20, zone = "The Barrens", sub = "Ratchet" }, log = log } } }
+  inspect(race .. " long errands", ns.writeBook(c).chapters[1].text)
+  ns.writerUsed = coverage
+  if selected ~= 100 or own < 80 then
+    problem(race .. " long errands", "the racial voice faded during repeated work", own .. "/" .. selected)
+  end
+end
+
+-- Skyborne traditions follow a recorded faction. A missing faction must
+-- not be inferred even from a class currently restricted to one faction.
+if forever then
+  for _, faction in ipairs({ "alliance", "horde", "unknown" }) do
+    local seen = false
+    local coverage = ns.writerUsed
+    ns.writerUsed = setmetatable({}, { __newindex = function(_, reach)
+      coverage[reach] = true
+      local i = reach:match("^Skyborne/beginning#(%d+)$")
+      local tags = i and ns.data.voices.Skyborne.beginning[tonumber(i)].tags
+      local required
+      for _, tag in ipairs(tags or {}) do required = required or tag:match("faction:(%a+)") end
+      if required then
+        seen = true
+        if required ~= faction then problem("Skyborne faction", "a tradition was assigned without its faction", reach) end
+      end
+    end })
+    for i = 1, 80 do
+      local c = { guid = "skyborne-faction-" .. i, race = "Skyborne", class = "SHAMAN",
+        faction = faction ~= "unknown" and faction or nil,
+        chapters = { { start = { level = 1, zone = "Country", sub = "Home" }, log = {} } } }
+      inspect("Skyborne " .. faction, ns.writeBook(c).chapters[1].text)
+    end
+    ns.writerUsed = coverage
+    if faction ~= "unknown" and not seen then problem("Skyborne faction", "its own tradition was never heard", faction) end
+  end
+end
+
+local comparison = dofile("addon/test/voices.lua")
+for _, race in ipairs(comparison.races) do
+  local c = comparison.day(race)
+  local text = ns.writeBook(c).chapters[1].text
+  inspect(race .. " voice comparison", text)
+  if not (text:find("eight Linen Cloth", 1, true) and text:find("six Southsea Brigands", 1, true)
+    and text:find("Brown Linen Robe", 1, true) and text:find("Kelsa", 1, true)) then
+    problem(race .. " voice comparison", "the voice lost a recorded fact", text)
+  end
+  if text ~= ns.writeBook(c).chapters[1].text then problem(race .. " voice comparison", "the voice was not deterministic", text) end
+end
+
 for _, round in ipairs({ { 1, 12 }, { 1, 60 }, { 18, 41 }, { 38, 60 }, { 1, 30 }, { 1, 7 }, { 20, 50 } }) do
   for _, race in ipairs(RACES) do
   local classes = COMBOS[race]

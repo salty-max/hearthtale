@@ -1,12 +1,12 @@
 ---
 kind: opening
 ---
-- [!night] Daylight found me {at}, with work waiting whether I welcomed it or not.
-- [!night] I took up my account again {at}, as the living began another day around me.
-- [night] I started out {at} in the dark, glad to be less conspicuous for a while.
-- [night] I turned to a new page {at}, where the night suited me well enough.
-- I went on from {where}, with more of my own story ahead than behind.
-- I began this stretch {at}, checking that the things I meant to carry were still with me.
-- I took up the road {at}, where there was still a use for someone like me.
-- I returned to these pages {at} before going on with the business of remaining here.
-- I was ready to move on {at}, though readiness no longer felt quite the way I remembered it.
+- I began again {at}, with work waiting and the welcome, if any, safely optional.
+- I took up the road {at}. It had not learned to like me, but it had not managed to keep me out either.
+- I opened a fresh page {at}, pleased that the choice of what followed was still mine.
+- I set out {at}, where usefulness remained a more reliable introduction than appearance.
+- I went on {at}, with no particular desire to be forgiven for continuing to exist.
+- I began this stretch {at}. I had unfinished business, which was as good a reason as most people ever found.
+- I returned to my account {at}, where a few plain facts were preferable to someone else's explanation of me.
+- I made ready {at}, unwilling to let neglect do what an enemy had not.
+- I took up the road {at}, carrying my own intentions for a change.

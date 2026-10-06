@@ -1,9 +1,9 @@
 ---
 kind: c-first
 ---
-- met {kind} for the first time, and found them softer than stone
-- learned what {kind} are made of
-- had my first scrap with {kind}
-- took the measure of {kind}
-- found out how {kind} fight, the hard way
-- crossed paths with {kind} and came out the better
+- got my first proper look at {kind} in a fight
+- learned what {kind} could do, the practical way
+- came through my first encounter with {kind}
+- met {kind} and found them worth minding
+- found out a little about {kind} that no telling would have taught me
+- had my first taste of fighting {kind}

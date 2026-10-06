@@ -1,16 +1,19 @@
 ---
 kind: c-deed-item
 ---
-- [!one] gathered {n} {thing} for {giver}
-- [!one] searched until I had {n} {thing}
-- [!one] brought {giver} {n} {thing}
-- [!one] collected {n} {thing}, taking care over the work
-- [!one] returned to {ender} with {n} {thing}
-- [!one] looked for the {n} {thing} the task required
 - [!one] gathered {n} {thing}
-- [!one] came back with {n} {thing}
-- [one] found {thing} for {giver}
+- [one] gathered {thing}
+- [!one] collected {n} {thing}, as {giver} asked
+- [one] collected {thing}, as {giver} asked
+- [!one] recovered {n} {thing}
 - [one] recovered {thing}
-- [one] brought {thing} back to {ender}
-- [one] searched until I had found {thing}
+- [!one] found {n} {thing}, with care that the work deserved
+- [one] found {thing}, with care that the work deserved
+- [!one] brought back {n} {thing}
+- [one] brought back {thing}
+- [!one] returned with {n} {thing}
 - [one] returned with {thing}
+- [!one] searched until I had {n} {thing}
+- [one] searched until I had {thing}
+- [!one] brought {giver} {n} {thing}
+- [one] brought {thing} to {ender}

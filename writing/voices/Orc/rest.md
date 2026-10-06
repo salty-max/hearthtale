@@ -1,12 +1,12 @@
 ---
 kind: rest
 ---
-- [last !fire] I rested {at}, with the work behind me for now. I wanted to carry its lessons into what came next.
-- [last !fire] I stopped {at} and put my account in order before setting the book aside.
-- [last !fire] I rested {at}, glad to have something accomplished rather than merely promised.
-- [last fire] I settled beside the fire {at}, where I could consider the day's work without another demand interrupting it.
-- [last fire] I finished these pages by the fire {at}, leaving the next stretch for another day.
-- [!last !fire] I rested a little {at}, then returned to the work still ahead.
-- [!last !fire] I stopped {at} long enough to recover my strength before going on.
-- [!last fire] I paused beside the fire {at}, grateful for a little warmth before the road called again.
-- [!last fire] I rested by the fire {at}, without needing to pretend I had no use for it.
+- I rested {at}, where I could put down the burden without putting aside the purpose.
+- I settled {at}, glad to have work behind me that needed no excuse.
+- I stopped {at}. Strength needed care if it was to be of use again.
+- I rested {at}, letting the day's demands leave me before I judged the work.
+- I paused {at}, with no honour lost in admitting that I was ready to stop.
+- I rested {at}, where the next deed could wait until I could give it my full strength.
+- I stopped {at}, content to have done what I could rather than promised what I could not.
+- I rested {at}, with the work finished for now and its lessons still mine to keep.
+- I put the road aside {at}, grateful for a pause I did not have to win by force.

@@ -1,7 +1,7 @@
 ---
 kind: zone
 ---
-- {zone}. The trees here are strangers to me.
-- I came to {zone}, and listened before I spoke.
-- {zone}. The land remembers things I do not.
-- I crossed into {zone} with care.
+- I crossed into {zone}, attentive to what was unfamiliar without assuming it was harmless.
+- I entered {zone}, where old knowledge would need the company of fresh attention.
+- I came to {zone}, unwilling to let haste make my first judgement of it.
+- I reached {zone}, with more to observe than the path before me.

@@ -1,0 +1,18 @@
+---
+kind: c-gear
+---
+- [client:forever !made] equipped {item}
+- [client:forever !made] added {item} to my equipment
+- [client:forever !made] made {item} part of my kit
+- [client:forever !made] began using {item}, another point of reliance in the road ahead
+- [client:forever !made] fitted myself with {item}
+- [client:forever !made] took {item} into use
+- [client:forever !made] went on equipped with {item}
+- [client:forever !made] put {item} among the equipment I relied on
+- [client:forever made] equipped {item}, which I had made myself
+- [client:forever made] equipped {item}, finding use for what my own hands had learned
+- [client:forever made] made {item} part of my kit, with one more thing to rely on that I could make for myself
+- [client:forever made] fitted myself with {item}, made with my own hands
+- [client:forever made] began using {item}, which I had crafted
+- [client:forever made] went on equipped with {item}, the result of my own work
+- [client:forever made] put {item} among my equipment, pleased to have made it myself

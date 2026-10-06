@@ -1,0 +1,19 @@
+---
+kind: c-deed-kill
+---
+- [!one] dealt with {n} {foes}
+- [one] dealt with {foes}
+- [!one] brought down {n} {foes}, without making an exhibition of the work
+- [one] brought down {foes}, without making an exhibition of the work
+- [!one] killed {n} {foes}
+- [one] killed {foes}
+- [!one] put an end to {n} {foes}
+- [one] put an end to {foes}
+- [!one] concluded the business with {n} {foes}
+- [one] concluded the business with {foes}
+- [!one] dealt with {n} {foes} for {giver}
+- [one] put an end to {foes}, as {giver} requested
+- [!one] disposed of {n} {foes}
+- [one] disposed of {foes}
+- [!one] overcame {n} {foes}, as {giver} asked
+- [one] overcame {foes}, as {giver} asked

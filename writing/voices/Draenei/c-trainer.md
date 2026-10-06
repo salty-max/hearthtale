@@ -1,0 +1,11 @@
+---
+kind: c-trainer
+---
+- learned {spells}, grateful for knowledge I could carry into the work ahead
+- was instructed in {spells}
+- made time to learn {spells}
+- added {spells} to what I knew, with care still needed in its use
+- took lessons in {spells}
+- came away knowing {spells}
+- was taught {spells}, content to give practice the time it required
+- gave my attention to instruction in {spells}

@@ -1,9 +1,9 @@
 ---
 kind: closing
 ---
-- The journey had occupied {time}, yet what I remembered most was how much there had been to notice.
-- I had spent {time} on the road and earned {gold}, though neither measure quite described the day.
-- After {time} of travelling, I was glad to let my attention rest on these pages for a while.
-- I had been busy for {time}, and wanted a quiet moment to think before going on.
-- [slow] I had travelled and worked for {time}, long enough to welcome the chance to be still.
-- [quick] Only {time} had passed, but I already had things I did not want to forget.
+- The work had occupied {time}, brief beside my people's memory but no less mine to account for.
+- I had spent {time} on the road and earned {gold}, though the clearer gain lay in what I had attended to.
+- After {time}, I was glad to let the day's impressions settle without reaching at once for another.
+- I had been busy for {time}, and wanted a pause in which the quieter parts of the day could return.
+- The stretch had taken {time}. I did not wish to hurry from its ending into a beginning I had barely noticed.
+- I had earned {gold} in {time}, with more of the country known than its value could measure.

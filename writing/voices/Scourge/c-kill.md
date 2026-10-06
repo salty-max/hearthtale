@@ -1,11 +1,11 @@
 ---
 kind: c-kill
 ---
-- killed {foe}
-- ended {foe} without ceremony
+- disposed of {foe}
 - put an end to {foe}
-- fought {foe} and remained standing
-- dispatched {foe}
-- brought down {foe}
-- came through an encounter with {foe}
-- defeated {foe}
+- survived the encounter with {foe}, to its disadvantage
+- dealt with {foe}
+- brought down {foe} and remained to describe it
+- finished off {foe}
+- came through a fight with {foe}, still inconveniently present
+- put {foe} out of the way

@@ -16,7 +16,7 @@ Explorer's Field Journal (same release, CI and CurseForge tooling).
 | Dialect | Flavour, no caricature: turns of phrase and outlook, a few words of their own used sparingly; no phonetic accents. |
 | Scenery | The first time in a life that the character enters a zone, a town or a dungeon: 2-3 hand-written sentences experienced through the narrator: what I notice and how it meets me, with landmarks true to the original game. |
 | Viewpoint | Each place reads differently for who arrives: home (a dwarf in Dun Morogh), an ally's land, enemy ground (an orc in Elwynn), neutral; by night or day. |
-| Order | A sample first: the dwarf, orc, night elf and Forsaken voices, and the scenery of their starting lands, capitals, first towns and nearby dungeons; then the other races (and Forever's Skyborne) and the rest of the world. |
+| Order | The first scenery pass covers starting lands, capitals, first towns and nearby dungeons. Core racial voices now cover all ten familiar races and Forever's Skyborne; extend scenery across the rest of the world next. |
 
 ## The name (6 October 2026)
 

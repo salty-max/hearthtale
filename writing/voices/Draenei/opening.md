@@ -1,0 +1,12 @@
+---
+kind: opening
+---
+- I took up the road {at}, with hope enough to be useful and patience enough to listen.
+- I began again {at}. A world did not become a home merely because one had reached it.
+- I set out {at}, attentive to the small ways a stranger might become a neighbour.
+- I opened a fresh page {at}, glad that there was still more to understand than to mourn.
+- I made ready {at}, with no wish to let unfamiliarity become an excuse for indifference.
+- I went on {at}, carrying my people's endurance without asking others to bear its weight.
+- I began this stretch {at}, willing to meet the day's needs before deciding what the day should give me.
+- I returned to my account {at}, where even an ordinary act of care deserved to be remembered.
+- I set out {at}, with the Light in my thoughts and the work of living here before me.

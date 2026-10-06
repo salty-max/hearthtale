@@ -1,8 +1,11 @@
 ---
 kind: c-trainer
 ---
-- learned {spells} from my mentor
+- learned {spells}, with practice still needed before knowledge became understanding
 - was taught {spells}
-- studied {spells} until it came easily
-- learned {spells}, as the old ways teach
-- [many] learned {spells}, and more besides
+- gave my attention to lessons in {spells}
+- added {spells} to what I knew, without calling the learning finished
+- made time to learn {spells}
+- came away from instruction knowing {spells}
+- studied {spells}, willing to be patient with what was new
+- was instructed in {spells}

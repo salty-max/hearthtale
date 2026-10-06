@@ -1,0 +1,12 @@
+---
+kind: opening
+---
+- [client:forever faction:horde] I took up the road {at}, listening for what the day might reveal about the world our mentors had left unexplained.
+- [client:forever faction:alliance] I began again {at}, determined to turn what I learned into something my people could rely on.
+- [client:forever] I set out {at}, willing to change my view before declaring the ground at fault.
+- [client:forever] I opened a fresh page {at}, with the next answer perhaps depending on a better question.
+- [client:forever] I made ready {at}, attentive to the small changes that a fixed purpose could hide.
+- [client:forever] I went on {at}, with more to understand than the direction I was taking.
+- [client:forever] I began this stretch {at}. A different vantage could change the meaning of familiar things.
+- [client:forever] I returned to my account {at}, keeping what I had seen apart from what I had expected.
+- [client:forever] I set out {at}, prepared to learn what carried weight when old certainties no longer did.

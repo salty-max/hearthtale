@@ -1,12 +1,12 @@
 ---
 kind: rest
 ---
-- [last !fire] I rested {at}, where I could put my account in order without anything asking more of me.
-- [last !fire] I closed the book {at}, glad to have a day worth distinguishing from the one that came before.
-- [last !fire] I stopped {at} and set these pages aside, with the business of remaining here attended to for now.
-- [last fire] I watched the fire {at} after finishing this page, finding more use in its light than I had expected.
-- [last fire] I rested beside the fire {at} and let the account end where the road had paused.
-- [!last !fire] I stopped a little {at}, with no need to make an occasion of it.
-- [!last !fire] I rested {at} before going on with what was left to do.
-- [!last fire] I sat beside the fire {at} for a while, then took up the road again.
-- [!last fire] I paused by the fire {at}, finding its company easy enough.
+- I rested {at}, pleasantly free of anyone needing me for the moment.
+- I settled {at}, where being still was a choice rather than a condition imposed on me.
+- I paused {at}, with no intention of mistaking solitude for abandonment.
+- I rested {at}. The world could carry on its objections without my immediate attendance.
+- I stopped {at}, and found the quiet easier company than I had expected.
+- I rested {at}, allowing myself the undignified pleasure of having nothing urgent to do.
+- I paused {at}, with my business finished for now and my continued presence apparently tolerated.
+- I rested {at}, glad to let my own thoughts occupy the space where orders once belonged.
+- I put the road aside {at}, content that I could take it up again by choice.

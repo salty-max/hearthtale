@@ -186,7 +186,7 @@ local FACTION = { Human = "alliance", Dwarf = "alliance", NightElf = "alliance",
 local HOME = { Human = "Stormwind", Dwarf = "Ironforge", Gnome = "Ironforge", NightElf = "Darnassus", Draenei = "the Exodar",
   Orc = "Orgrimmar", Troll = "Sen'jin Village", Tauren = "Thunder Bluff", Scourge = "the Undercity", BloodElf = "Silvermoon" }
 local KIN = { Human = "my people", Dwarf = "my kin", Gnome = "my fellow gnomes", NightElf = "my kin", Draenei = "my people",
-  Orc = "my clan", Troll = "the Darkspear", Tauren = "my tribe", Scourge = "the Forsaken", BloodElf = "my people" }
+  Orc = "my clan", Troll = "the Darkspear", Tauren = "my tribe", Scourge = "the Forsaken", BloodElf = "my people", Skyborne = "the shen'dorei" }
 local FAITH_RACE = { Human = "the Light", Dwarf = "the Light", Draenei = "the Light", NightElf = "Elune",
   Tauren = "the Earth Mother", Troll = "the loa", Orc = "the ancestors" }
 local function faith(race, class)
@@ -270,7 +270,7 @@ local STYLE = {
   } },
   Scourge = { clauses = 3, links = {
     night = { "After dark,", "In the dark hours,", "That night," },
-    day = { "When the sun rose,", "At dawn, unwelcome,", "Morning came, and" },
+    day = { "When the sun rose,", "By morning,", "Morning came, and" },
     later = { "Later,", "In due course,", "Some hours on," },
   } },
 }
@@ -288,10 +288,10 @@ local function newBook(c)
   b.voice = { home = HOME[race], kin = KIN[race], faith = faith(race, class), weapon = weapon(race, class) }
   b.own = ns.data.voices and ns.data.voices[race] -- the race's own journal voice (writing/voices/<Race>/)
   b.style = STYLE[race] or STYLE.default
-  b.faction = FACTION[race]
+  b.faction = (c.faction == "alliance" or c.faction == "horde") and c.faction or FACTION[race]
   b.sceneSeen = {} -- places already described in this book
   b.base = { hc = c.hardcore or nil, ["race:" .. race] = true, ["class:" .. class] = true }
-  if FACTION[race] then b.base["faction:" .. FACTION[race]] = true end
+  if b.faction then b.base["faction:" .. b.faction] = true end
   return b
 end
 
@@ -591,14 +591,16 @@ function Book:chapter(n, ch)
         -- Both are recorded, in this order. The journey is the setting for
         -- the deed; it does not invent a motive or a causal link between jobs.
         local actions = table.concat(pending, " and ", 2)
-        if arrivalMode == 0 then text = "When I " .. pending[1] .. ", I " .. actions
+        -- An action may already coordinate its own verbs. Give that thought
+        -- a setting rather than introducing yet another "and" before it.
+        if arrivalMode == 0 or (arrivalMode == 2 and actions:find(" and ")) then text = "When I " .. pending[1] .. ", I " .. actions
         elseif arrivalMode == 1 then text = "I " .. pending[1] .. ", where I " .. actions
         else text = "I " .. pending[1] .. " and " .. actions end
       else
         local join = " and "
         -- A fight followed by a completed errand is an observed sequence,
         -- not an inferred cause. Other unrelated acts need no forced link.
-        if pending[1]:find("[,;:]") or pending[1]:find(" and ") then join = "; I "
+        if pending[1]:find("[,;:]") or pending[1]:find(" and ") or last:find("[,;:]") or last:find(" and ") then join = "; I "
         elseif #pending == 2 and pendingKinds[1] == "kill" and pendingKinds[2] == "quest" then join = " before I " end
         text = "I " .. table.concat(pending, ", ", 1, #pending - 1) .. join .. last
       end

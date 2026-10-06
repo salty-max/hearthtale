@@ -1,0 +1,11 @@
+---
+kind: c-deed-task
+---
+- [client:forever] found a way to {task}, as {giver} asked
+- [client:forever] saw through the work required to {task}
+- [client:forever] managed to {task}, with the difficulty clearer for meeting it
+- [client:forever] was asked to {task} and brought the matter to an end
+- [client:forever] completed the task of going to {task}
+- [client:forever] did what was needed to {task}
+- [client:forever] set out to {task} and found the means to finish it
+- [client:forever] carried out the request to {task}, keeping the result rather than the expectation

@@ -1,13 +1,18 @@
 ---
 kind: c-gear
 ---
-- [!made] put on {item}
-- [!made] took to wearing {item}
+- [!made] equipped {item}
+- [!made] added {item} to my equipment
+- [!made] made {item} part of my kit
+- [!made] began using {item}, a useful addition to my kit
 - [!made] fitted myself with {item}
-- [!made] wore {item} for the first time
-- [!made] replaced some of my kit with {item}
-- [!made] began wearing {item}
-- [made] wore {item}, which I had made myself
-- [made] put on {item}, pleased to be carrying my own work
-- [made] made {item} and put it to use
-- [made] finished {item} and wore it
+- [!made] took {item} into use
+- [!made] went on equipped with {item}
+- [!made] put {item} among the equipment I relied on
+- [made] equipped {item}, which I had made myself
+- [made] fitted myself with {item}, pleased to know the workmanship firsthand
+- [made] made {item} part of my kit, pleased to trust the finish to my own hands
+- [made] fitted myself with {item}, made with my own hands
+- [made] began using {item}, which I had crafted
+- [made] went on equipped with {item}, the result of my own work
+- [made] put {item} among my equipment, pleased to have made it myself

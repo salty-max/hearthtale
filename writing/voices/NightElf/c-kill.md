@@ -1,11 +1,11 @@
 ---
 kind: c-kill
 ---
-- ended {foe}, swiftly
-- laid {foe} to rest
-- brought down {foe}, without anger
-- silenced {foe}
-- gave {foe} back to the earth
-- struck {foe} down and went on with its death still in my thoughts
-- felled {foe}
-- answered {foe} with {weapon}
+- brought down {foe}
+- ended the encounter with {foe}
+- put an end to {foe}, with no wish to apologise for having done so
+- overcame {foe}
+- faced {foe} and survived the encounter
+- dealt with {foe}, keeping the fight clear in my thoughts
+- struck {foe} down
+- came through the fight with {foe}

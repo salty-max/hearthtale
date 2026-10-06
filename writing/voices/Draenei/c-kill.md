@@ -1,0 +1,11 @@
+---
+kind: c-kill
+---
+- overcame {foe}
+- put an end to the encounter with {foe}
+- prevailed against {foe}
+- brought down {foe}, glad that the danger had passed
+- came through the fight with {foe}
+- dealt with {foe}
+- faced {foe} and survived the encounter
+- put an end to {foe}, without wishing to prolong the struggle

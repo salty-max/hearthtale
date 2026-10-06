@@ -7,3 +7,5 @@ kind: c-return
 - headed back to {place}
 - found myself back in {place}
 - turned back for {place}
+- took the road back to {place}
+- came back to {place}

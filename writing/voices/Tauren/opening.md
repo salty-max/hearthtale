@@ -1,0 +1,12 @@
+---
+kind: opening
+---
+- I took up the road {at}, listening to the place before deciding what I would ask of it.
+- I began again {at}, with enough strength to be useful and no need to spend it in haste.
+- I set out {at}, hoping to meet the day's needs without creating more of my own.
+- I opened a fresh page {at}. The road was shared with lives that did not know its name.
+- I made ready {at}, keeping my own purpose from becoming the whole of my attention.
+- I went on {at}, with my people's patience in mind when my own ran short.
+- I began this stretch {at}, aware that reaching somewhere and knowing it were different things.
+- I returned to my account {at}, willing to let small duties have their proper weight.
+- I set out {at}, with the Earth Mother in my thoughts and work before my hands.

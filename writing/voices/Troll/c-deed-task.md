@@ -1,0 +1,11 @@
+---
+kind: c-deed-task
+---
+- found a way to {task}, as {giver} wanted
+- managed to {task}, with the difficulty finally behind me
+- saw through the business of having to {task}
+- was asked to {task} and did not leave the asking unanswered
+- did what was needed to {task}
+- completed the work required to {task}
+- set out to {task} and came away with it done
+- found a workable way to {task}, which was better than a fine reason not to

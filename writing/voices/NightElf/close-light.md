@@ -1,8 +1,8 @@
 ---
 kind: close-light
 ---
-- {foe} wounded me badly {at}, and the familiar world seemed strangely distant for a moment. I was grateful when I could attend to it again.
-- [!foe] I came close to falling {at}, and the quiet after the danger held none of its usual comfort.
-- The encounter with {foe} {at} left me shaken. I had mistaken familiarity for understanding, and nearly paid more than I could afford.
-- [!foe] I survived a hard moment {at}, but the memory followed me into what came next. I could not hurry it away.
-- {foe} nearly ended my journey {at}. I carried on more carefully, with a sharper sense of how much I still wanted to see.
+- {foe} nearly ended my journey {at}. A people with a long memory could still lose a life in a careless instant.
+- I barely came through the encounter with {foe} {at}, and afterwards the ordinary world held my attention more closely.
+- {foe} wounded me badly {at}. I had allowed familiarity to do the work of vigilance, and it had failed me.
+- [!foe] I nearly fell {at}, where the time I had imagined before me suddenly seemed less certain.
+- [!foe] I survived a close call {at}, with no wish to hurry past what it had shown me.

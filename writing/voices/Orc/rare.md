@@ -1,7 +1,7 @@
 ---
 kind: rare
 ---
-- I brought down {foe} {at}, and the memory of that encounter stood apart from the rest of the work.
-- {foe} fell to me {at}. It gave me something firmer than a boast to carry in my thoughts.
-- I killed {foe} {at}, knowing this was one name I would remember when the ordinary fights had blurred.
-- I faced {foe} {at} and survived to set it down here, where the deed can speak for itself.
+- I brought down {foe} {at}. That deed would stand without being made larger in the telling.
+- {foe} fell to me {at}, a test I was glad to have met rather than merely imagined.
+- I killed {foe} {at}, knowing that a name worth remembering was not a reason to forget the care the fight had needed.
+- I faced {foe} {at} and prevailed. I meant to carry the lesson as faithfully as the victory.

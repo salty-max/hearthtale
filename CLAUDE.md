@@ -19,7 +19,9 @@ The plan and its decisions: PLAN.md.
   them, lets a used one back after `OWN_GAP` uses of the kind, and falls back
   on the shared ones; `STYLE` in `Writer.lua` sets the race's clauses per
   sentence and time words. Flavour comes from outlook and phrasing, never
-  from broken grammar or a racial caricature.
+  from broken grammar or a racial caricature. `docs/race-voices.md` records
+  the lore sources, cultural outlooks and limits on expression for all races.
+  Skyborne traditions require the recorded faction and the Forever catalog.
 - `writing/scenery/<slug>.md`: a place described the first time a book meets
   it (front matter `place:`, `type:` zone | town | dungeon, `faction:`
   alliance | horde | neutral, optional `home:` races). Lines tagged by
@@ -57,6 +59,9 @@ The plan and its decisions: PLAN.md.
   Hardcore or not, met mid-life), every chapter checked; every sentence must be
   reachable, none used again within 6 uses of its kind, and a chapter told one
   moment more keeps what it had (but its last sentence).
+- `addon/test/voices.lua`: the same synthetic day for each narrator, to compare
+  diction and rhythm without changing events. Regenerate the comparison with
+  `FOREVER=1 luajit addon/test/voices.lua compare > docs/race-comparison.md`.
 
 ## Writing the sentences
 
@@ -100,7 +105,9 @@ The plan and its decisions: PLAN.md.
   regenerate `docs/sample.md` and the site seed (`bun run addon:seed`), and
   read the generated books again. Check flow across sentences, not just the
   quality of each template alone. `docs/narrative-review.md` records the
-  direction and an example of the resulting prose.
+  direction and an example of the resulting prose. Regenerate and read
+  `docs/race-comparison.md` when changing racial expression; use the restraint
+  and era boundaries in `docs/race-voices.md`.
 
 ## The site (hearthtale.app)
 

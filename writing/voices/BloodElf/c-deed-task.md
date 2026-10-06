@@ -1,0 +1,11 @@
+---
+kind: c-deed-task
+---
+- carried out {giver}'s request to {task}, with due attention
+- managed to {task}, settling an inconvenient necessity
+- found a satisfactory way to {task}
+- completed the work required to {task}, without making a spectacle of it
+- was asked to {task} and saw the matter concluded
+- set out to {task} and brought the attempt to a proper finish
+- did what was needed to {task}
+- saw through the business of having to {task}, which was preferable to leaving it untidy

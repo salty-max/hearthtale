@@ -1,0 +1,11 @@
+---
+kind: c-kill
+---
+- got the better of {foe}
+- outlasted {foe} in the fight
+- put an end to {foe}
+- dealt with {foe}, leaving that trouble behind me
+- brought down {foe}
+- came through the fight with {foe}, with something left to smile about
+- finished off {foe}
+- met {foe} and learned how to end the meeting
