@@ -1,52 +1,51 @@
--- What each level holds, recorded as it happens, for the writer to tell:
---   levels[n] = {
---     start = { at, zone, sub, night },     where and when the level began
---     ended = at,                           when it ended (a level up)
---     played = seconds,                     time played at it (sessions)
---     gold = copper,                        money gained (gains only)
---     places = { { zone, sub, at } },       places seen for the first time
---     quests = { { id, title, giver, at } },
---     kills = { [name] = { n, kind, first, elite, where } },   by creature
---                                           (kind: type or beast family; first:
---                                           the first of its kind for this
---                                           character; elite: outside dungeons;
---                                           where: the first one's place)
---     rares = { { name, sub, zone, at, elite } },  rares and world bosses slain
---     closeCalls = { { foe, hp, zone, sub, at, night } },
---     company = { [name] = class },         who grouped with me
---     dungeons = { { name, at, bosses = {} } },
---     learned = { spell names },            from a trainer (the game's message)
---     skills = { { name, rank } },          professions crossing a milestone
---     loot = { link, quality, level },      the best item of the level
---     inn = { place, at },                  a new hearthstone bind
---     flights = { { from, to, at } },
---     deaths = { death },                   (as below) every death at the level
+-- The journal's chapters, recorded as they happen, for the writer to tell. A
+-- chapter is a stretch of the road between two rests: it closes when the
+-- character logs out resting (an inn, a city, a campfire) with a few moments
+-- written, or at any logout once it holds four hours of play; a logout
+-- elsewhere is a night outdoors, and the chapter goes on.
+--   chapters[i] = {
+--     start = { at, level, zone, sub, night }
+--     log = { moment, ... }                 in order (below)
+--     kills = { [name] = n }                every kill, for the closing recap
+--     quests = n                            quests turned in
+--     played = seconds, gold = copper       time played in it, money gained
+--     ended = { at, level, zone, sub, place, how }   how: rest, campfire,
+--                                           long (the cap), death
 --   }
+--   moments: { k = kind, at, night, zone, sub, ... }:
+--     place { new = "zone" or nil }         a place seen for the first time
+--     inn { place }  flight { from, to }  quest { title, giver }
+--     kill { name, kind, first, elite }     the chapter's first of a creature
+--     rare { name, elite }  close { foe, hp }  died { death }
+--     group { name, class }                 someone joined me
+--     dungeon { name }  boss { name }
+--     learned { spells }                    a trainer's visit (merged)
+--     skill { name, rank }  loot { link, quality }   (the chapter's best yet)
+--     level { level }  campfire  rested { place, fire }   (too short to close)
+--     night { }                             slept outdoors (a logout in the wild)
+--     wake { after }                        the next session in the same chapter
 --   visited[zone|sub], kinds[kind] = true   the character's firsts, life-long
---   death = { at, level, zone, sub, foe, cause, player, kind, rank, inside }
---                                           the last one (cause: foe, fall,
---                                           drowning, lava, nature; player: a
---                                           player's hand; kind, rank: the
---                                           creature's, when it was met; inside:
---                                           in a dungeon)
---   hardcore = true                         a Hardcore character
---   closed = true                           a Hardcore death: the book is closed,
---                                           nothing more is recorded (Core.lua)
---   race, class, name, sex                  who I am (voice tokens)
---   prologue = { level, quests, inn, zone, gold, played }   a character met
---                                           mid-life: what the game knew then
+--   death, hardcore, closed, race, class, name, sex, prologue: as before
+--   logout = { at, rest, fire, place, zone, sub, level }   the last logout,
+--                                           settled at the next login (a /reload
+--                                           fires the same event: it is dropped)
 -- Kills: Classic from the combat log (mine or my pet's); Forever, which
 -- closes the combat log to addons, from corpses targeted dead after a fight
 -- with me.
 local _, ns = ...
 local secret = ns.secret
 
-local function char() return ns.journal() end
+local CAP = 4 * 3600      -- a chapter's play time after which any logout closes it
+local MIN_MOMENTS = 3     -- what a chapter needs before a rest can close it
+-- The auras of a campfire: Cozy Fire (the cooking fires, both games), and
+-- Forever's camps (Welcoming Campfire, Well Rested).
+local FIRES = { 7353, 7358, 1232234, 1229739, 1289723, 1225478 }
 
+local function char() return ns.journal() end
 local function now() return time() end
 local function night()
   local h = GetGameTime and GetGameTime()
-  return h ~= nil and (h < 6 or h >= 20)
+  return h ~= nil and not secret(h) and (h < 6 or h >= 18)
 end
 local function where()
   local zone, sub = GetRealZoneText and GetRealZoneText(), GetSubZoneText and GetSubZoneText()
@@ -54,35 +53,57 @@ local function where()
   if secret(sub) or sub == "" or sub == zone then sub = nil end
   return zone, sub
 end
-
--- ── the level in progress ────────────────────────────────────────────────────
-local function level(n)
-  local c = char()
-  n = n or UnitLevel("player")
-  local l = c.levels[n]
-  if not l then
-    local zone, sub = where()
-    l = { start = { at = now(), zone = zone, sub = sub, night = night() }, played = 0, gold = 0,
-      places = {}, quests = {}, kills = {}, rares = {}, closeCalls = {}, company = {}, dungeons = {},
-      learned = {}, skills = {}, flights = {}, deaths = {} }
-    c.levels[n] = l
-  end
-  return l
-end
-ns.recordLevel = level
-
 local function changed() if ns.onRecord then ns.onRecord() end end
 
--- Time played, counted by session (the game's /played would print in chat),
--- charged to the level in progress: at a level up the game may already report
--- the new one.
-local sessionFrom, current
-local function tally()
+-- ── the chapter in progress ──────────────────────────────────────────────────
+local function chapter()
   local c = char()
-  if not (c and sessionFrom and current) then return end
+  c.chapters = c.chapters or {}
+  local ch = c.chapters[#c.chapters]
+  if not ch or ch.ended then
+    local zone, sub = where()
+    -- where it starts is named by its opening: not a discovery too
+    c.visited = c.visited or {}
+    if zone then
+      c.visited[zone .. "|"] = true
+      c.visited[zone .. "|" .. (sub or "")] = true
+    end
+    ch = { start = { at = now(), level = UnitLevel("player"), zone = zone, sub = sub, night = night() },
+      log = {}, kills = {}, quests = 0, played = 0, gold = 0 }
+    table.insert(c.chapters, ch)
+  end
+  return ch
+end
+ns.chapter = chapter
+
+-- A moment, in order.
+local function moment(k, fields)
+  local ch = chapter()
+  local zone, sub = where()
+  local m = fields or {}
+  m.k, m.at, m.night = k, now(), night() or nil
+  m.zone, m.sub = m.zone or zone, m.sub or sub
+  table.insert(ch.log, m)
+  changed()
+  return m
+end
+ns.moment = moment
+
+local function moments(ch)
+  local n = 0
+  for _, m in ipairs(ch.log) do
+    if m.k ~= "wake" and m.k ~= "night" and m.k ~= "rested" then n = n + 1 end
+  end
+  return n
+end
+
+-- Time played, counted by session, charged to the chapter in progress.
+local sessionFrom
+local function tally()
+  if not (char() and sessionFrom) then return end
   local t = GetTime()
-  local l = level(current)
-  l.played = l.played + (t - sessionFrom)
+  local ch = chapter()
+  ch.played = ch.played + (t - sessionFrom)
   sessionFrom = t
 end
 
@@ -110,11 +131,9 @@ ns.on("PLAYER_LOGIN", function()
     local zone = where()
     c.prologue = { level = c.began.level, quests = n, inn = GetBindLocation and GetBindLocation(), zone = zone, gold = GetMoney() }
   end
-  sessionFrom, current = GetTime(), UnitLevel("player")
+  sessionFrom = GetTime()
   c.money = GetMoney()
-  level()
 end)
-ns.on("PLAYER_LOGOUT", tally)
 -- The prologue's time played, heard whenever something asks the game (asking
 -- ourselves would print it in chat).
 ns.on("TIME_PLAYED_MSG", function(total)
@@ -122,16 +141,93 @@ ns.on("TIME_PLAYED_MSG", function(total)
   if p and not p.played and not secret(total) then p.played = total end
 end)
 
--- ── a level ends ─────────────────────────────────────────────────────────────
-ns.on("PLAYER_LEVEL_UP", function(newLevel)
+-- ── resting, and the end of a chapter ────────────────────────────────────────
+local function hasAura(id)
+  local ok, aura = pcall(C_UnitAuras.GetPlayerAuraBySpellID, id)
+  return ok and aura ~= nil
+end
+local isFire = {}
+for _, id in ipairs(FIRES) do isFire[id] = true end
+local function byFire()
+  if C_UnitAuras and C_UnitAuras.GetPlayerAuraBySpellID then
+    for _, id in ipairs(FIRES) do
+      if hasAura(id) then return true end
+    end
+    return false
+  end
+  -- without it: the buffs once over
+  for i = 1, 40 do
+    local name, _, _, _, _, _, _, _, _, spellId = UnitBuff("player", i)
+    if not name then return false end
+    if spellId and not secret(spellId) and isFire[spellId] then return true end
+  end
+  return false
+end
+ns.byFire = byFire
+
+-- A campfire's warmth: a moment per stop (a fire found again within the hour,
+-- in the same place, is the same stop).
+local warm = false
+ns.on("UNIT_AURA", function(unit)
+  if unit ~= "player" then return end
+  local fire = byFire()
+  if fire and not warm then
+    local ch, zone, sub = chapter(), where()
+    local last
+    for i = #ch.log, 1, -1 do if ch.log[i].k == "campfire" then last = ch.log[i] break end end
+    if not (last and now() - last.at < 3600 and last.zone == zone and last.sub == sub) then moment("campfire") end
+  end
+  warm = fire
+end)
+
+-- At logout: where, and whether resting. The next login decides.
+ns.on("PLAYER_LOGOUT", function()
   tally()
-  current = newLevel
+  local zone, sub = where()
+  local rest = IsResting and IsResting()
+  char().logout = { at = now(), rest = (rest and not secret(rest)) or nil, fire = byFire() or nil,
+    zone = zone, sub = sub, place = sub or zone, level = UnitLevel("player"), night = night() or nil }
+end)
+
+local function close(ch, how, l)
+  ch.ended = { at = l.at, level = l.level, zone = l.zone, sub = l.sub, place = l.place, how = how }
+  if ns.onChapter then ns.onChapter(#char().chapters) end
+end
+
+-- The first login after a logout (not a /reload) settles it: a rest closes
+-- the chapter (if it holds enough), so does any logout past the cap;
+-- otherwise the chapter goes on, with the night between.
+local function settle(l)
   local c = char()
-  local old = c.levels[newLevel - 1]
-  if old then old.ended = now() end
-  level(newLevel)
-  changed()
-  if old and ns.onChapter then ns.onChapter(newLevel - 1) end
+  local ch = c.chapters and c.chapters[#c.chapters]
+  if not ch or ch.ended or c.closed then return end
+  local rested = l.rest or l.fire
+  local function note(k, fields)
+    fields.at, fields.night, fields.zone, fields.sub = l.at, l.night, l.zone, l.sub
+    fields.k = k
+    table.insert(ch.log, fields)
+  end
+  if rested and moments(ch) >= MIN_MOMENTS then
+    close(ch, l.fire and "campfire" or "rest", l)
+  elseif ch.played >= CAP then
+    note("night", { last = true })
+    close(ch, "long", l)
+  else
+    if rested then note("rested", { place = l.place, fire = l.fire }) else note("night", {}) end
+    table.insert(ch.log, { k = "wake", at = now(), night = night() or nil, after = rested and "rest" or "night" })
+  end
+end
+
+ns.on("PLAYER_ENTERING_WORLD", function(initial, reloading)
+  local c = char()
+  if reloading then
+    c.logout = nil -- a /reload, not a night's rest
+  elseif initial and c.logout then
+    local l = c.logout
+    c.logout = nil
+    settle(l)
+  end
+  if not c.closed then chapter() end
 end)
 
 -- ── where ────────────────────────────────────────────────────────────────────
@@ -142,16 +238,16 @@ local function moved()
   local key = zone .. "|" .. (sub or "")
   if c.visited[key] then return end
   c.visited[key] = true
-  if not c.visited[zone .. "|"] and sub then c.visited[zone .. "|"] = true end
-  table.insert(level().places, { zone = zone, sub = sub, at = now() })
-  changed()
+  local newZone = not c.visited[zone .. "|"]
+  c.visited[zone .. "|"] = true
+  moment("place", { new = newZone and "zone" or nil })
 end
 for _, e in ipairs({ "ZONE_CHANGED_NEW_AREA", "ZONE_CHANGED", "ZONE_CHANGED_INDOORS" }) do ns.on(e, moved) end
 ns.on("PLAYER_ENTERING_WORLD", moved)
 
 ns.on("HEARTHSTONE_BOUND", function()
   local place = GetBindLocation and GetBindLocation()
-  if place then level().inn = { place = place, at = now() }; changed() end
+  if place and not secret(place) then moment("inn", { place = place }) end
 end)
 
 if hooksecurefunc and TakeTaxiNode then
@@ -160,9 +256,14 @@ if hooksecurefunc and TakeTaxiNode then
     for i = 1, NumTaxiNodes() do
       if TaxiNodeGetType(i) == "CURRENT" then from = TaxiNodeName(i) end
     end
-    if to and from then table.insert(level().flights, { from = from, to = to, at = now() }); changed() end
+    if to and from then moment("flight", { from = from, to = to }) end
   end)
 end
+
+-- ── levels ───────────────────────────────────────────────────────────────────
+ns.on("PLAYER_LEVEL_UP", function(newLevel)
+  moment("level", { level = newLevel })
+end)
 
 -- ── quests ───────────────────────────────────────────────────────────────────
 -- Who gave a quest (the one I was talking to when I accepted it) and its
@@ -182,9 +283,10 @@ end)
 ns.on("QUEST_TURNED_IN", function(id)
   local c = char()
   local p = c.pending and c.pending[id] or {}
-  table.insert(level().quests, { id = id, title = titleOf(id) or p.title, giver = p.giver, at = now() })
+  local ch = chapter()
+  ch.quests = ch.quests + 1
+  moment("quest", { title = titleOf(id) or p.title, giver = p.giver })
   if c.pending then c.pending[id] = nil end
-  changed()
 end)
 
 -- ── the creatures met (for their kind and rank when they die) ───────────────
@@ -207,26 +309,23 @@ end
 ns.on("PLAYER_TARGET_CHANGED", function() seen("target") end)
 ns.on("UPDATE_MOUSEOVER_UNIT", function() seen("mouseover") end)
 
+-- A kill: counted for the recap; the chapter's first of a creature is a
+-- moment (the first of its kind for the character, an elite outside
+-- dungeons); a rare or a world boss always is.
 local function slain(guid, name)
   local u = units[guid] or { name = name }
   if not u.name then return end
-  local c, l = char(), level()
-  local zone, sub = where()
-  local k = l.kills[u.name]
-  if not k then
-    local inside = IsInInstance and IsInInstance()
-    k = { n = 0, kind = u.kind, elite = (u.rank == "elite" and not inside) or nil, where = sub or zone }
-    l.kills[u.name] = k
-    if u.kind and not c.kinds[u.kind] then
-      c.kinds[u.kind] = true
-      k.first = true
-    end
-  end
-  k.n = k.n + 1
+  local c, ch = char(), chapter()
+  local firstHere = ch.kills[u.name] == nil
+  ch.kills[u.name] = (ch.kills[u.name] or 0) + 1
   if u.rank == "rare" or u.rank == "rareelite" or u.rank == "worldboss" then
-    table.insert(l.rares, { name = u.name, zone = zone, sub = sub, at = now(), elite = u.rank ~= "rare" or nil })
+    moment("rare", { name = u.name, elite = u.rank ~= "rare" or nil })
+  elseif firstHere then
+    local first = u.kind and not c.kinds[u.kind] or nil
+    local inside = IsInInstance and IsInInstance()
+    moment("kill", { name = u.name, kind = u.kind, first = first, elite = (u.rank == "elite" and not inside) or nil })
   end
-  changed()
+  if u.kind then c.kinds[u.kind] = true end
 end
 ns.slain = slain
 
@@ -282,43 +381,37 @@ ns.on("UNIT_HEALTH", function(unit)
     pending = false
     if UnitIsDeadOrGhost("player") then return end
     lastClose = now()
-    local zone, sub = where()
-    table.insert(level().closeCalls, { foe = who, hp = hp, zone = zone, sub = sub, at = now(), night = night() })
-    changed()
+    moment("close", { foe = who, hp = hp })
   end
   if C_Timer then C_Timer.After(5, check) else check() end
 end)
 
 -- ── company and dungeons ─────────────────────────────────────────────────────
 ns.on("GROUP_ROSTER_UPDATE", function()
-  local l = level()
+  local ch = chapter()
+  ch.company = ch.company or {}
   local n = GetNumGroupMembers and GetNumGroupMembers() or 0
   for i = 1, n do
     local unit = IsInRaid and IsInRaid() and ("raid" .. i) or ("party" .. i)
     local name = UnitName(unit)
-    if name and not secret(name) and name ~= UnitName("player") and not l.company[name] then
-      l.company[name] = select(2, UnitClass(unit)) or true
+    if name and not secret(name) and name ~= UnitName("player") and not ch.company[name] then
+      ch.company[name] = true
+      moment("group", { name = name, class = select(2, UnitClass(unit)) })
     end
   end
 end)
+local lastDungeon
 ns.on("PLAYER_ENTERING_WORLD", function()
   local inside, kind = IsInInstance()
   if not inside or (kind ~= "party" and kind ~= "raid") then return end
   local name = GetInstanceInfo()
   if not name or secret(name) then return end
-  local l = level()
-  local last = l.dungeons[#l.dungeons]
-  if last and last.name == name and now() - last.at < 3600 then return end
-  table.insert(l.dungeons, { name = name, at = now(), bosses = {} })
-  changed()
+  if lastDungeon and lastDungeon.name == name and now() - lastDungeon.at < 3600 then return end
+  lastDungeon = { name = name, at = now() }
+  moment("dungeon", { name = name })
 end)
 ns.on("ENCOUNTER_END", function(_, encounterName, _, _, success)
-  local l = level()
-  local run = l.dungeons[#l.dungeons]
-  if success == 1 and run and encounterName and not secret(encounterName) then
-    table.insert(run.bosses, encounterName)
-    changed()
-  end
+  if success == 1 and encounterName and not secret(encounterName) then moment("boss", { name = encounterName }) end
 end)
 
 -- ── learning and spoils ──────────────────────────────────────────────────────
@@ -342,8 +435,15 @@ ns.on("CHAT_MSG_SYSTEM", function(msg)
     local spell = p and msg:match(p)
     if spell then
       spell = spell:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", ""):gsub("|H.-|h%[?(.-)%]?|h", "%1")
-      table.insert(level().learned, spell)
-      changed()
+      -- a trainer's visit is one moment: spells learned together merge
+      local ch = chapter()
+      local last = ch.log[#ch.log]
+      if last and last.k == "learned" and now() - last.at < 120 then
+        table.insert(last.spells, spell)
+        changed()
+      else
+        moment("learned", { spells = { spell } })
+      end
       return
     end
   end
@@ -354,11 +454,9 @@ ns.on("CHAT_MSG_SKILL", function(msg)
   if not p or secret(msg) then return end
   local skill, rank = msg:match(p)
   rank = tonumber(rank)
-  if skill and rank and MILESTONES[rank] then
-    table.insert(level().skills, { name = skill, rank = rank })
-    changed()
-  end
+  if skill and rank and MILESTONES[rank] then moment("skill", { name = skill, rank = rank }) end
 end)
+-- Loot: the chapter's best yet (green and above, by quality, then level).
 ns.on("CHAT_MSG_LOOT", function(msg)
   if secret(msg) then return end
   local mine = false
@@ -370,16 +468,16 @@ ns.on("CHAT_MSG_LOOT", function(msg)
   if not link then return end
   local _, _, quality, ilvl = GetItemInfo(link)
   if not quality or quality < 2 then return end
-  local l = level()
-  local best = l.loot
+  local ch = chapter()
+  local best = ch.best
   if not best or quality > best.quality or (quality == best.quality and (ilvl or 0) > (best.level or 0)) then
-    l.loot = { link = link, quality = quality, level = ilvl }
-    changed()
+    ch.best = { quality = quality, level = ilvl }
+    moment("loot", { link = link, quality = quality })
   end
 end)
 ns.on("PLAYER_MONEY", function()
   local c, money = char(), GetMoney()
-  if c.money and money > c.money then level().gold = level().gold + (money - c.money) end
+  if c.money and money > c.money then local ch = chapter(); ch.gold = ch.gold + (money - c.money) end
   c.money = money
 end)
 
@@ -398,11 +496,16 @@ ns.on("PLAYER_DEAD", function()
   local d = { at = now(), level = UnitLevel("player"), zone = zone, sub = sub, foe = name, cause = cause,
     player = (guid and guid:find("^Player")) and true or nil, kind = u and u.kind, rank = u and u.rank,
     inside = (IsInInstance and IsInInstance()) or nil }
-  local l = level()
-  l.deaths = l.deaths or {}
-  table.insert(l.deaths, d)
   c.death = d
-  if c.hardcore then c.closed = true end
+  c.deaths = (c.deaths or 0) + 1
+  if c.hardcore then
+    -- the end: the chapter closes with the epitaph
+    local ch = chapter()
+    ch.ended = { at = d.at, level = d.level, zone = zone, sub = sub, place = sub or zone, how = "death" }
+    c.closed = true
+  else
+    moment("died", { death = d })
+  end
   if ns.onDeath then ns.onDeath(d) end
   changed()
 end)

@@ -1,6 +1,6 @@
 ## Interface: @INTERFACE@
 ## Title: Wayfarer's Journal
-## Notes: Your character's own journal, written as you play: a chapter per level. On Hardcore, an epitaph and the Hall of the Fallen. /wayfarer to read it.
+## Notes: Your character's own journal, written as you play, a chapter from rest to rest. On Hardcore, an epitaph and the Hall of the Fallen. /wayfarer to read it.
 ## Author: salty-max
 ## Version: 0.1.0
 ## SavedVariablesPerCharacter: WayfarersJournalChar

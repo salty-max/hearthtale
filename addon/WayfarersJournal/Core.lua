@@ -5,7 +5,7 @@
 --                            one of the same name)
 --   began = { at, level }    when the journal began (a character met
 --                            mid-life gets a prologue)
---   levels[n] = { ... }      what level n held (Record.lua)
+--   chapters[i] = { ... }    the chapters, from rest to rest (Record.lua)
 --   closed = true            a Hardcore death closed the book: nothing more
 --                            is recorded (only the login, to find it)
 local _, ns = ...
@@ -27,10 +27,11 @@ local handlers, listeners = {}, {}
 function handlers.PLAYER_LOGIN()
   local guid = UnitGUID("player")
   local saved = WayfarersJournalChar
-  if type(saved) == "table" and saved.guid == guid then
+  -- A journal of chapters per level (0.1.0, a test build) starts over too.
+  if type(saved) == "table" and saved.guid == guid and not (saved.levels and not saved.chapters) then
     char = saved
   else
-    char = { guid = guid, began = { at = time(), level = UnitLevel("player") }, levels = {} }
+    char = { guid = guid, began = { at = time(), level = UnitLevel("player") }, chapters = {} }
     WayfarersJournalChar = char
   end
   if ns.onLogin then ns.onLogin(char) end

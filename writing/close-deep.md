@@ -21,3 +21,7 @@ kind: close-deep
 - I was a breath from the end {at}. {hp}%. I still don't know how I lived.
 - {foe} left me with {hp}% {at}. I lay still until my heart slowed.
 - {at} I came closer to dying than I ever have: {hp}%.
+- {at} I was nearly done for: {hp}%.
+- {hp}% left {at}, and I still don't know how.
+- I crawled away {at} with {hp}% of my life, and didn't stop shaking for an hour.
+- [night] In the dark {at}, {foe} brought me to {hp}%. Dawn never looked so good.

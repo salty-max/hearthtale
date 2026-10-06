@@ -8,6 +8,19 @@ Games: Classic Era (Hardcore, Season of Discovery), TBC Anniversary, World of
 Warcraft: Forever. One source, one package per game, as Lorekeeper's Codex and
 Explorer's Field Journal (same release, CI and CurseForge tooling).
 
+## Chapters from rest to rest (6 October 2026, after testing 0.1.0)
+
+These replace the chapter per level below.
+
+| Question | Decision |
+|---|---|
+| A chapter | From rest to rest: it closes when the character logs out resting, at an inn, in a city (the game's resting state) or by a campfire (its warmth on you: Cozy Fire on both games, Forever's camps), once it holds a few moments (3). Titled "Chapter N", with where it closed and the levels it covers. |
+| In the wild | A logout elsewhere is a night outdoors: a line, and the chapter goes on (the next session wakes in it). A /reload is no night (the logout is settled at the next login, which says whether it was one). |
+| The cap | After four hours of play in one chapter, any logout closes it (a night outdoors that ends it). |
+| Writing | A sentence for each thing as it happens (each quest, the chapter's first of each creature, each place, a campfire stop, a level reached), never rewritten; a new paragraph at a new zone; once closed, a recap (the quests, the most fought), the time and gold, and the rest that closed it. |
+| Numbering | Chapters count from 1; a character met mid-life has its prologue first. |
+| Old data | The 0.1.0 test build's journals (chapters per level) start over. |
+
 ## Decisions (5 October 2026)
 
 | Question | Decision |

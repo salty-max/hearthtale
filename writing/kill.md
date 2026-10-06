@@ -1,0 +1,26 @@
+---
+kind: kill
+---
+- I killed {foe} {at}.
+- {foe} crossed my path {at}, and didn't cross another.
+- I put down {foe} {at}.
+- {foe} {in}. One less trouble on the road.
+- I fought {foe} {at}, and won.
+- {at} I met {foe} and ended it.
+- {foe} came at me {at}. It shouldn't have.
+- I dealt with {foe} {at}.
+- {foe} made the mistake of standing between me and the road {at}.
+- I brought down {foe} {at}.
+- I had to kill {foe} {at}.
+- {foe} {in}, and then not.
+- [night] {foe} came out of the dark {at}. It didn't go back into it.
+- [hc] {foe} {in}. I fought it carefully, the only way there is.
+- [class:HUNTER !low] My pet and I took {foe} {at}.
+- [class:MAGE] {foe} {in}. Frost first, then fire.
+- [class:ROGUE] {foe} never saw me {at}.
+- [class:WARLOCK] {foe} {in}. My demon did the worst of it.
+- [class:PRIEST] {foe} {in}. I'll pray for it later.
+- [class:WARRIOR] {foe} {in}. A good fight.
+- [class:PALADIN] {foe} fell to {weapon} {at}.
+- [class:DRUID] {foe} {in}, claw against claw.
+- [class:SHAMAN] {foe} {in}. The spirits saw to it.

@@ -94,76 +94,102 @@ end
 local guid = 0
 local function life(race, class, hc, from, to)
   guid = guid + 1
-  local c = { guid = ("Player-1-%08X"):format(guid), name = one({ "Sealinedion", "Brannor", "Kelsa", "Thrudd", "Ylena", "Morgrim" }), race = race, class = class, hardcore = hc or nil, began = { level = from }, levels = {} }
+  local c = { guid = ("Player-1-%08X"):format(guid), name = one({ "Sealinedion", "Brannor", "Kelsa", "Thrudd", "Ylena", "Morgrim" }),
+    race = race, class = class, hardcore = hc or nil, began = { level = from }, chapters = {} }
   if from > 1 then
     c.prologue = { level = from, quests = chance(0.9) and rand(5, 200) or 0, inn = one({ "Goldshire", "Kharanos", "Brill", nil }),
       zone = one(ZONES)[1], played = chance(0.6) and rand(3000, 400000) or nil }
   end
   local zone = from == 1 and zoneNamed(START[race]) or one(ZONES)
   local sub = zone[2][1]
-  local seen = {}
-  local kinds = {}
-  for n = from, to do
-    local l = { start = { zone = zone[1], sub = chance(0.85) and sub or nil, night = chance(0.35) },
-      played = rand(300, 9000), gold = rand(0, 3) == 0 and 0 or rand(5, 40000),
-      places = {}, quests = {}, kills = {}, rares = {}, closeCalls = {}, company = {}, dungeons = {}, learned = {}, skills = {}, flights = {} }
-    if n < to or chance(0.5) then l.ended = true end
-    if chance(0.3) then zone = one(ZONES) end
-    for _ = 1, rand(0, 4) do
-      sub = one(zone[2])
-      if not seen[sub] then
-        seen[sub] = true
-        table.insert(l.places, { zone = zone[1], sub = sub })
+  local seen, kinds, level = {}, {}, from
+  local function m(k, fields)
+    fields = fields or {}
+    fields.k, fields.zone, fields.sub, fields.night = k, fields.zone or zone[1], fields.sub or sub, chance(0.35) or nil
+    return fields
+  end
+  while level <= to do
+    local ch = { start = { level = level, zone = zone[1], sub = chance(0.85) and sub or nil, night = chance(0.35) or nil },
+      log = {}, kills = {}, quests = 0, played = rand(600, 18000), gold = rand(0, 3) == 0 and 0 or rand(5, 40000) }
+    local function add(x) table.insert(ch.log, x) end
+    for _ = 1, rand(3, 22) do
+      local r = rand(100)
+      if r <= 12 then
+        if chance(0.25) then zone = one(ZONES) end
+        sub = one(zone[2])
+        if not seen[sub] then
+          local newZone = not seen[zone[1]] or nil
+          seen[sub], seen[zone[1]] = true, true
+          add(m("place", { new = newZone and "zone" or nil }))
+        end
+      elseif r <= 32 then
+        ch.quests = ch.quests + 1
+        add(m("quest", { title = chance(0.95) and one(QUESTS) or nil, giver = chance(0.7) and one(GIVERS) or nil }))
+      elseif r <= 52 then
+        local cr = one(CREATURES)
+        local n = rand(1, 12)
+        if not ch.kills[cr[1]] then
+          local first = not kinds[cr[2]] or nil
+          kinds[cr[2]] = true
+          add(m("kill", { name = cr[1], kind = cr[2], first = first, elite = chance(0.08) or nil }))
+        end
+        ch.kills[cr[1]] = (ch.kills[cr[1]] or 0) + n
+      elseif r <= 55 then
+        add(m("rare", { name = one(RARES), elite = chance(0.3) or nil }))
+      elseif r <= 60 then
+        add(m("close", { foe = chance(0.8) and one(CREATURES)[1] or nil, hp = rand(1, 9) }))
+      elseif r <= 63 then
+        add(m("group", { name = one(MATES), class = "WARRIOR" }))
+      elseif r <= 66 then
+        local d = one(DUNGEONS)
+        add(m("dungeon", { name = d[1] }))
+        for i = 1, rand(0, #d[2]) do add(m("boss", { name = d[2][i] })) end
+      elseif r <= 70 then
+        local spells, list = {}, {}
+        for _ = 1, rand(1, 5) do
+          local sp = one(SPELLS)
+          if not spells[sp] then spells[sp] = true; table.insert(list, sp) end
+        end
+        add(m("learned", { spells = list }))
+      elseif r <= 72 then
+        add(m("skill", { name = one(SKILLS), rank = one({ 50, 75, 100, 150, 200, 225, 250, 300 }) }))
+      elseif r <= 76 then
+        add(m("loot", { link = "|cff1eff00|Hitem:1|h[" .. one(ITEMS) .. "]|h|r", quality = 2 }))
+      elseif r <= 82 then
+        if level < to then level = level + 1; add(m("level", { level = level })) end
+      elseif r <= 86 then
+        add(m("campfire"))
+      elseif r <= 90 then
+        if chance(0.7) then add(m("night")) else add(m("rested", { place = one(zone[2]), fire = chance(0.3) or nil })) end
+        add(m("wake", { after = ch.log[#ch.log].k == "rested" and "rest" or "night" }))
+      elseif r <= 92 then
+        add(m("inn", { place = one(zone[2]) }))
+      elseif r <= 95 then
+        local a = rand(#NODES)
+        add(m("flight", { from = NODES[a], to = NODES[a % #NODES + 1] }))
+      elseif not hc and r <= 97 then
+        add(m("died", { death = death(level, zone[1], sub) }))
       end
     end
-    local titles = {}
-    for _ = 1, rand(0, 9) do
-      local title = one(QUESTS)
-      if not titles[title] then
-        titles[title] = true
-        table.insert(l.quests, { title = chance(0.95) and title or nil, giver = chance(0.7) and one(GIVERS) or nil })
-      end
+    local lastOne = level >= to
+    if not lastOne or chance(0.5) then
+      local how = one({ "rest", "rest", "campfire", "long" })
+      ch.ended = { level = level, zone = zone[1], sub = sub, place = one(zone[2]), how = how }
+      if how == "long" then table.insert(ch.log, m("night", { last = true })) end
     end
-    for _ = 1, rand(0, 4) do
-      local cr = one(CREATURES)
-      local first = not kinds[cr[2]] or nil
-      kinds[cr[2]] = true
-      l.kills[cr[1]] = { n = rand(1, 30), kind = cr[2], first = first, elite = chance(0.08) or nil, where = chance(0.9) and sub or nil }
-    end
-    if chance(0.12) then table.insert(l.rares, { name = one(RARES), sub = sub, zone = zone[1], elite = chance(0.3) or nil }) end
-    if chance(0.25) then
-      table.insert(l.closeCalls, { foe = chance(0.8) and one(CREATURES)[1] or nil, hp = rand(1, 9), sub = sub, zone = zone[1], night = chance(0.4) })
-    end
-    if chance(0.25) then for _ = 1, rand(1, 4) do l.company[one(MATES)] = "WARRIOR" end end
-    if chance(0.12) then
-      local d = one(DUNGEONS)
-      local bosses = {}
-      for i = 1, rand(0, #d[2]) do bosses[i] = d[2][i] end
-      table.insert(l.dungeons, { name = d[1], bosses = bosses })
-    end
-    if n % 2 == 0 then
-      local spells = {}
-      for _ = 1, rand(0, 5) do
-        local s = one(SPELLS)
-        if not spells[s] then spells[s] = true; table.insert(l.learned, s) end
-      end
-    end
-    if chance(0.2) then table.insert(l.skills, { name = one(SKILLS), rank = one({ 50, 75, 100, 150, 200, 225, 250, 300 }) }) end
-    if chance(0.35) then l.loot = { link = "|cff1eff00|Hitem:1|h[" .. one(ITEMS) .. "]|h|r", quality = 2 } end
-    if chance(0.1) then l.inn = { place = one(zone[2]) } end
-    if not hc and chance(0.1) then l.deaths = { death(n, zone[1], sub) } end
-    if chance(0.15) then
-      local a = rand(#NODES)
-      table.insert(l.flights, { from = NODES[a], to = NODES[a % #NODES + 1] })
-    end
-    c.levels[n] = l
+    table.insert(c.chapters, ch)
+    if lastOne then break end
+    if not ch.ended then break end
+    level = level + (chance(0.5) and 1 or 0)
+    if level > to then break end
   end
   c.visited = {}
   for _, z in ipairs(ZONES) do if chance(0.3) then c.visited[z[1] .. "|"] = true end end
-  -- Most Hardcore lives here end: the last level's death closes the book.
+  -- Most Hardcore lives here end: a death closes the last chapter and the book.
   if hc and chance(0.7) then
-    c.death = death(to, zone[1], sub)
-    c.levels[to].deaths = { c.death }
+    local last = c.chapters[#c.chapters]
+    c.death = death(level, zone[1], sub)
+    last.ended = { level = level, zone = zone[1], sub = sub, place = sub, how = "death" }
     c.closed = true
   end
   return c
@@ -172,75 +198,68 @@ end
 -- ── the sample: a life as the game would record it ───────────────────────────
 if SAMPLE then
   local DM, LM = "Dun Morogh", "Loch Modan"
-  local function lv(t)
-    t.played, t.gold, t.ended = t.played or 1800, t.gold or 0, true
-    for _, k in ipairs({ "places", "quests", "rares", "closeCalls", "dungeons", "learned", "skills", "flights" }) do t[k] = t[k] or {} end
-    t.kills, t.company = t.kills or {}, t.company or {}
-    return t
-  end
-  local function q(title, giver) return { title = title, giver = giver } end
-  local c = { guid = "Player-1-SAMPLE", race = "Dwarf", class = "PALADIN", hardcore = true, began = { level = 1 }, levels = {
-    [1] = lv({ start = { zone = DM, sub = "Anvilmar" }, played = 1320, gold = 45,
-      quests = { q("Dwarven Outfitters", "Sten Stoutarm"), q("A New Threat", "Balir Frosthammer") },
-      kills = { ["Ragged Young Wolf"] = { n = 6, kind = "Wolf", first = true, where = "Coldridge Valley" },
-        ["Rockjaw Trogg"] = { n = 9, kind = "Humanoid", where = "Coldridge Valley" } } }),
-    [2] = lv({ start = { zone = DM, sub = "Coldridge Valley" }, played = 1500, gold = 120,
-      quests = { q("Coldridge Valley Mail Delivery", "Balir Frosthammer") },
-      kills = { ["Burly Rockjaw Trogg"] = { n = 12, kind = "Humanoid", where = "Coldridge Valley" } } }),
-    [3] = lv({ start = { zone = DM, sub = "Coldridge Valley" }, played = 2280, gold = 210,
-      quests = { q("The Troll Cave", "Felix Whindlebolt"), q("The Stolen Journal", "Felix Whindlebolt") },
-      kills = { ["Frostmane Troll Whelp"] = { n = 14, kind = "Humanoid", where = "Coldridge Valley" } },
-      closeCalls = { { foe = "Frostmane Troll Whelp", hp = 9, zone = DM, sub = "Coldridge Valley" } } }),
-    [4] = lv({ start = { zone = DM, sub = "Coldridge Valley", night = true }, played = 2460, gold = 300,
-      places = { { zone = DM, sub = "Coldridge Pass" } }, learned = { "Blessing of Might", "Judgement" },
-      quests = { q("Senir's Observations", "Mountaineer Thalos") },
-      kills = { ["Frostmane Novice"] = { n = 8, kind = "Humanoid", where = "Coldridge Pass" } } }),
-    [5] = lv({ start = { zone = DM, sub = "Coldridge Pass" }, played = 3120, gold = 520,
-      places = { { zone = DM, sub = "Kharanos" } }, inn = { place = "Thunderbrew Distillery" },
-      quests = { q("Scalding Mornbrew Delivery", "Nori Pridedrift"), q("Beer Basted Boar Ribs", "Ragnar Thunderbrew"),
-        q("The Boar Hunter", "Talin Keeneye"), q("Tools for Steelgrill", "Beldin Steelgrill") },
-      kills = { ["Small Crag Boar"] = { n = 10, kind = "Boar", first = true, where = "Kharanos" },
-        ["Ragged Timber Wolf"] = { n = 7, kind = "Wolf", where = "Kharanos" } } }),
-    [6] = lv({ start = { zone = DM, sub = "Kharanos" }, played = 3900, gold = 700,
-      places = { { zone = DM, sub = "Brewnall Village" }, { zone = DM, sub = "Steelgrill's Depot" } },
-      quests = { q("Bitter Rivals", "Rejold Barleybrew"), q("Ammo for Rumbleshot", "Loslor Rudge") },
-      kills = { ["Leper Gnome"] = { n = 11, kind = "Humanoid", where = "Brewnall Village" } },
-      learned = { "Divine Protection", "Seal of the Crusader" }, skills = { { name = "Mining", rank = 50 } } }),
-    [7] = lv({ start = { zone = DM, sub = "Kharanos", night = true }, played = 4200, gold = 900,
-      places = { { zone = DM, sub = "Shimmer Ridge" } }, quests = { q("Frostmane Hold", "Senir Whitebeard") },
-      kills = { ["Frostmane Snowstrider"] = { n = 13, kind = "Humanoid", where = "Shimmer Ridge" } },
-      loot = { link = "|cff1eff00|Hitem:1|h[Cuirboulle Gloves]|h|r", quality = 2 } }),
-    [8] = lv({ start = { zone = DM, sub = "Shimmer Ridge" }, played = 4800, gold = 1100,
-      places = { { zone = DM, sub = "Frostmane Hold" }, { zone = DM, sub = "The Grizzled Den" } },
-      quests = { q("The Grizzled Den", "Pilot Stonegear"), q("Stocking Jetsteam", "Pilot Stonegear") },
-      kills = { ["Wendigo"] = { n = 9, kind = "Humanoid", where = "The Grizzled Den" },
-        ["Frostmane Seer"] = { n = 6, kind = "Humanoid", where = "Frostmane Hold" } },
-      learned = { "Hammer of Justice", "Purify" } }),
-    [9] = lv({ start = { zone = DM, sub = "Kharanos", night = true }, played = 5100, gold = 1400,
-      quests = { q("The Perfect Stout", "Rejold Barleybrew"), q("Protecting the Herd", "Rudra Amberstill") },
-      kills = { ["Winter Wolf"] = { n = 15, kind = "Wolf", where = "Iceflow Lake" } },
-      rares = { { name = "Timber", zone = DM, sub = "Iceflow Lake" } } }),
-    [10] = lv({ start = { zone = DM, sub = "Gol'Bolar Quarry" }, played = 5400, gold = 1800,
-      quests = { q("Distracting Jarven", "Rejold Barleybrew") },
-      kills = { ["Rockjaw Bonesnapper"] = { n = 12, kind = "Humanoid", where = "Gol'Bolar Quarry" } },
-      closeCalls = { { foe = "Rockjaw Ambusher", hp = 4, zone = DM, sub = "Gol'Bolar Quarry" } },
-      learned = { "Lay on Hands", "Devotion Aura" } }),
-    [11] = lv({ start = { zone = DM, sub = "Gol'Bolar Quarry" }, played = 6000, gold = 2100,
-      places = { { zone = LM, sub = "North Gate Pass" }, { zone = LM, sub = "Thelsamar" } }, inn = { place = "Thelsamar" },
-      quests = { q("Rat Catching", "Mountaineer Kadrell"), q("Thelsamar Blood Sausages", "Vidra Hearthstove") },
-      kills = { ["Tunnel Rat Vermin"] = { n = 14, kind = "Humanoid", where = "Silver Stream Mine" },
-        ["Mountain Boar"] = { n = 9, kind = "Boar", where = "Thelsamar" } },
-      company = { Brannor = "WARRIOR", Kelsa = "PRIEST" } }),
-    [12] = { start = { zone = LM, sub = "Thelsamar" }, played = 2000, gold = 600, places = {}, quests = { q("The Tome of Divinity") },
-      kills = {}, rares = {}, closeCalls = {}, company = {}, dungeons = {}, learned = {}, skills = { { name = "Mining", rank = 75 } },
-      flights = { { from = "Thelsamar, Loch Modan", to = "Ironforge, Dun Morogh" } } },
+  local function q(title, giver) return { k = "quest", title = title, giver = giver } end
+  local function at(t, zone, sub) t.zone, t.sub = zone, sub; return t end
+  local c = { guid = "Player-1-SAMPLE", race = "Dwarf", class = "PALADIN", hardcore = true, began = { level = 1 }, chapters = {
+    { start = { level = 1, zone = DM, sub = "Anvilmar" }, played = 4700, gold = 380, quests = 5,
+      kills = { ["Ragged Young Wolf"] = 6, ["Rockjaw Trogg"] = 9, ["Burly Rockjaw Trogg"] = 12, ["Frostmane Troll Whelp"] = 14 },
+      log = {
+        at(q("Dwarven Outfitters", "Sten Stoutarm"), DM, "Anvilmar"),
+        at({ k = "kill", name = "Ragged Young Wolf", kind = "Wolf", first = true }, DM, "Coldridge Valley"),
+        at({ k = "kill", name = "Rockjaw Trogg", kind = "Humanoid" }, DM, "Coldridge Valley"),
+        at(q("A New Threat", "Balir Frosthammer"), DM, "Coldridge Valley"),
+        at({ k = "level", level = 2 }, DM, "Coldridge Valley"),
+        at(q("Coldridge Valley Mail Delivery", "Balir Frosthammer"), DM, "Coldridge Valley"),
+        at({ k = "level", level = 3 }, DM, "Coldridge Valley"),
+        at({ k = "kill", name = "Frostmane Troll Whelp", kind = "Humanoid" }, DM, "Coldridge Valley"),
+        at({ k = "close", foe = "Frostmane Troll Whelp", hp = 9 }, DM, "Coldridge Valley"),
+        at(q("The Troll Cave", "Felix Whindlebolt"), DM, "Coldridge Valley"),
+        at(q("The Stolen Journal", "Felix Whindlebolt"), DM, "Coldridge Valley"),
+        at({ k = "level", level = 4 }, DM, "Coldridge Valley"),
+        at({ k = "learned", spells = { "Blessing of Might", "Judgement" } }, DM, "Anvilmar"),
+      }, ended = { level = 4, zone = DM, sub = "Anvilmar", place = "Anvilmar", how = "rest" } },
+    { start = { level = 4, zone = DM, sub = "Anvilmar", night = true }, played = 9400, gold = 1500, quests = 6,
+      kills = { ["Small Crag Boar"] = 10, ["Leper Gnome"] = 11, ["Frostmane Snowstrider"] = 13 },
+      log = {
+        at({ k = "place" }, DM, "Coldridge Pass"),
+        at({ k = "place" }, DM, "Kharanos"),
+        at({ k = "inn", place = "Thunderbrew Distillery" }, DM, "Kharanos"),
+        at(q("Beer Basted Boar Ribs", "Ragnar Thunderbrew"), DM, "Kharanos"),
+        at({ k = "kill", name = "Small Crag Boar", kind = "Boar", first = true }, DM, "Kharanos"),
+        at({ k = "level", level = 5 }, DM, "Kharanos"),
+        at(q("The Boar Hunter", "Talin Keeneye"), DM, "Kharanos"),
+        at({ k = "place" }, DM, "Brewnall Village"),
+        at({ k = "kill", name = "Leper Gnome", kind = "Humanoid" }, DM, "Brewnall Village"),
+        at(q("Bitter Rivals", "Rejold Barleybrew"), DM, "Kharanos"),
+        at({ k = "night" }, DM, "Shimmer Ridge"),
+        at({ k = "wake", after = "night" }, DM, "Shimmer Ridge"),
+        at({ k = "kill", name = "Frostmane Snowstrider", kind = "Humanoid" }, DM, "Shimmer Ridge"),
+        at({ k = "rare", name = "Timber" }, DM, "Shimmer Ridge"),
+        at({ k = "level", level = 6 }, DM, "Shimmer Ridge"),
+        at({ k = "loot", link = "|cff1eff00|Hitem:1|h[Cuirboulle Gloves]|h|r", quality = 2 }, DM, "Shimmer Ridge"),
+        at(q("Frostmane Hold", "Senir Whitebeard"), DM, "Kharanos"),
+        at(q("The Perfect Stout", "Rejold Barleybrew"), DM, "Kharanos"),
+        at(q("Protecting the Herd", "Rudra Amberstill"), DM, "Kharanos"),
+        at({ k = "skill", name = "Mining", rank = 50 }, DM, "Kharanos"),
+      }, ended = { level = 6, zone = DM, sub = "Kharanos", place = "Thunderbrew Distillery", how = "rest" } },
+    { start = { level = 6, zone = DM, sub = "Kharanos" }, played = 3100, gold = 900, quests = 1,
+      kills = { ["Mountain Boar"] = 9 },
+      log = {
+        at({ k = "place", new = "zone" }, LM, "North Gate Pass"),
+        at({ k = "place" }, LM, "Thelsamar"),
+        at({ k = "group", name = "Brannor", class = "WARRIOR" }, LM, "Thelsamar"),
+        at({ k = "kill", name = "Mountain Boar", kind = "Boar" }, LM, "Thelsamar"),
+        at({ k = "campfire" }, LM, "Thelsamar"),
+        at(q("Thelsamar Blood Sausages", "Vidra Hearthstove"), LM, "Thelsamar"),
+        at({ k = "level", level = 7 }, LM, "Thelsamar"),
+      } },
   } }
   local book = ns.writeBook(c)
-  io.write("# Sample: a Hardcore dwarf paladin, levels 1 to 12\n\n")
-  io.write("Generated by `luajit addon/test/writer.lua --sample` from a life as the game would record it\n")
-  io.write("(level 12 is still being lived: no closing yet).\n\n")
+  io.write("# Sample: a Hardcore dwarf paladin, the first chapters\n\n")
+  io.write("Generated by `luajit addon/test/writer.lua --sample` from a life as the game would record it: a chapter\n")
+  io.write("from rest to rest, a sentence per moment (the third is still being written).\n\n")
   for _, ch in ipairs(book.chapters) do
-    io.write(("## Level %d\n\n%s\n\n"):format(ch.level, ch.text or "(nothing to tell)"))
+    io.write(("## Chapter %d (%s)\n\n%s\n\n"):format(ch.number, ch.from == ch.to and ("level " .. ch.from) or ("levels %d to %d"):format(ch.from, ch.to), ch.text or "(nothing to tell)"))
   end
   return
 end
@@ -248,7 +267,7 @@ end
 -- ── the checks ───────────────────────────────────────────────────────────────
 ns.writerUsed = {}
 local problems, books, chapters, repeats, longest = {}, 0, 0, 0, 0
-local gaps = {} -- kind = the fewest chapters between two uses of one of its sentences
+local gaps = {} -- kind = the fewest uses of the kind between two uses of one of its sentences
 local function problem(where, msg, text)
   if #problems < 20 then table.insert(problems, ("%s: %s\n    %s"):format(where, msg, text)) end
 end
@@ -288,11 +307,9 @@ for _, round in ipairs({ { 1, 12 }, { 1, 60 }, { 18, 41 }, { 38, 60 }, { 1, 30 }
         local c = life(race, class, hc, round[1], round[2])
         local book = ns.writeBook(c)
         if (c.death ~= nil) ~= (book.epitaph ~= nil) then problem(race .. " " .. class, "a Hardcore death without an epitaph, or the reverse", "") end
-        for _, l in pairs(c.levels) do
-          if hc and l.deaths and #l.deaths > 0 then
-            for _, ch in ipairs(book.chapters) do
-              if ch.text and ch.text:find("I died", 1, true) then problem(race .. " " .. class, "a Hardcore death told in the first person", ch.text) end
-            end
+        if hc then
+          for _, ch in ipairs(book.chapters) do
+            if ch.text and ch.text:find("I died", 1, true) then problem(race .. " " .. class, "a Hardcore death told in the first person", ch.text) end
           end
         end
         books = books + 1
@@ -301,9 +318,9 @@ for _, round in ipairs({ { 1, 12 }, { 1, 60 }, { 18, 41 }, { 38, 60 }, { 1, 30 }
         if round[1] > 1 and not book.prologue then problem(race .. " " .. class, "no prologue", "") end
         for _, ch in ipairs(book.chapters) do
           chapters = chapters + 1
-          inspect(("%s %s level %d"):format(race, class, ch.level), ch.text)
-          if class == "HUNTER" and ch.level <= 10 and ch.text and ch.text:find("%f[%a]pet%f[%A]") then
-            problem(("%s HUNTER level %d"):format(race, ch.level), "a hunter's pet before level 10", ch.text)
+          inspect(("%s %s chapter %d"):format(race, class, ch.number), ch.text)
+          if class == "HUNTER" and ch.to <= 10 and ch.text and ch.text:find("%f[%a]pet%f[%A]") then
+            problem(("%s HUNTER chapter %d"):format(race, ch.number), "a hunter's pet before level 10", ch.text)
           end
           if ch.text and #ch.text > longest then longest = #ch.text end
         end
@@ -323,7 +340,8 @@ for race, classes in pairs(COMBOS) do
         local c = life(race, class, true, level, level)
         c.death = death(level, "Loch Modan", chance(0.5) and "Thelsamar" or nil)
         if chance(0.2) then c.death.zone, c.death.sub = nil, nil end
-        c.levels[level].deaths, c.closed = { c.death }, true
+        local last = c.chapters[#c.chapters]
+        last.ended, c.closed = { level = level, place = "Thelsamar", how = "death" }, true
         local book = ns.writeBook(c)
         if not book.epitaph then problem(race .. " " .. class, "a Hardcore death without an epitaph", "") end
         inspect(race .. " " .. class .. " epitaph", book.epitaph)
@@ -360,9 +378,9 @@ io.write(("%d books, %d chapters, %d sentences repeated (%.1f per book), longest
 local kinds = {}
 for kind, gap in pairs(gaps) do table.insert(kinds, ("%s %d"):format(kind, gap)) end
 table.sort(kinds)
-io.write("fewest chapters between two uses of a sentence: " .. table.concat(kinds, ", ") .. "\n")
+io.write("fewest uses of a kind between two uses of one of its sentences: " .. table.concat(kinds, ", ") .. "\n")
 for kind, gap in pairs(gaps) do
-  if gap < 8 then problem("repeats", "a sentence of " .. kind .. " used twice within " .. gap .. " chapters", "") end
+  if gap < 6 then problem("repeats", "a sentence of " .. kind .. " used again after " .. gap .. " uses of its kind", "") end
 end
 if #problems > 0 then
   io.write(table.concat(problems, "\n") .. "\n")

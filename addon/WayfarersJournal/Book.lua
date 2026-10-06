@@ -1,8 +1,9 @@
 -- The journal as a book, in a standard game window, as its siblings
 -- (Lorekeeper's Codex, Explorer's Field Journal): the character's portrait in
 -- the corner, who they are beside it. Two tabs. The Journal: on the left, the
--- prologue (a character met mid-life) and a chapter per level, its place under
--- it, a skull for a close call, a star for a rare; on the right, the open
+-- prologue (a character met mid-life) and the chapters (one from rest to rest),
+-- where each closed and the levels it covers under it, a skull for a close
+-- call, a star for a rare; on the right, the open
 -- chapter (a closed book's last one ends with its epitaph, in gold). The Hall
 -- of the Fallen (Hall.lua): the closed books of the account's Hardcore
 -- characters, the open one's epitaph and chapters under its name. Light text and
@@ -135,8 +136,8 @@ end
 local book, list, page
 local build -- made on first opening (below)
 local written -- this character's book as last written: { prologue, chapters, epitaph }
-local current -- its open chapter: a level, or "prologue"
-local hallLife, hallKey -- in the Hall: the open life (its guid) and its page ("epitaph", "prologue", a level)
+local current -- its open chapter: a number, or "prologue"
+local hallLife, hallKey -- in the Hall: the open life (its guid) and its page ("epitaph", "prologue", a chapter's number)
 local asked -- opened at a page (a link): don't go to the last chapter
 local WIDTH = 440
 local HEADER_H = 76
@@ -146,16 +147,22 @@ local EPITAPH = "|cffd9b36b%s|r" -- the epitaph, in gold
 local function day(at) return at and date("%d %b %Y", at) end
 
 -- When a chapter was lived: "5 Oct 2026", "5 Oct 2026 to 7 Oct 2026".
-local function when(life, level)
-  local l = life.levels[level] or {}
-  local from, to = day(l.start and l.start.at), day(l.ended)
+local function when(ch)
+  local c = ch.chapter
+  local from, to = day(c.start and c.start.at), day(c.ended and c.ended.at)
   if not from then return nil end
   if not to or to == from then return from end
   return from .. " to " .. to
 end
 
-local function chapterOf(w, level)
-  for _, ch in ipairs(w.chapters) do if ch.level == level then return ch end end
+-- The levels a chapter covers: "level 12", "levels 11 to 13".
+local function levels(ch)
+  if ch.from == ch.to then return ("level %d"):format(ch.from) end
+  return ("levels %d to %d"):format(ch.from, ch.to)
+end
+
+local function chapterOf(w, number)
+  return w.chapters[number]
 end
 
 local function show(title, sub, text)
@@ -183,18 +190,18 @@ local function showPage(life, w, key)
   end
   local ch = chapterOf(w, key)
   if not ch then return end
-  local l = life.levels[key] or {}
   local parts = {}
   if ch.place then table.insert(parts, ch.place) end
-  table.insert(parts, when(life, key))
-  local last = life.death and life.death.level == key
+  table.insert(parts, levels(ch))
+  table.insert(parts, when(ch))
+  local last = key == #w.chapters
   if life.closed and last then table.insert(parts, "the end")
-  elseif not l.ended then table.insert(parts, "still being written") end
+  elseif ch.open then table.insert(parts, "still being written") end
   local text = ch.text
   if life.closed and last and w.epitaph then
     text = (text and text .. "\n\n" or "") .. EPITAPH:format(w.epitaph)
   end
-  show(("Level %d"):format(key), table.concat(parts, "  -  "), text)
+  show(("Chapter %d"):format(key), table.concat(parts, "  -  "), text)
 end
 
 local rows = {}
@@ -277,8 +284,9 @@ local function chapterRows(entries, w, selectedKey, open, indent)
       selected = selectedKey == "prologue", click = function() open("prologue") end })
   end
   for _, ch in ipairs(w.chapters) do
-    table.insert(entries, { key = ch.level, title = ("Level %d"):format(ch.level), place = ch.place, close = ch.close,
-      rare = ch.rare, indent = indent, selected = selectedKey == ch.level, click = function() open(ch.level) end })
+    local under = ch.place and (ch.place .. ", " .. levels(ch)) or levels(ch)
+    table.insert(entries, { key = ch.number, title = ("Chapter %d"):format(ch.number), place = ch.open and "still being written" or under,
+      close = ch.close, rare = ch.rare, indent = indent, selected = selectedKey == ch.number, click = function() open(ch.number) end })
   end
 end
 
@@ -290,7 +298,7 @@ local function refreshJournal(latest)
   local known = current == "prologue" and written.prologue or chapterOf(written, current)
   if latest or not known then
     local last = written.chapters[#written.chapters]
-    current = last and last.level or (written.prologue and "prologue") or nil
+    current = last and last.number or (written.prologue and "prologue") or nil
   end
   local entries = {}
   chapterRows(entries, written, current, function(key) current = key; ns.refresh() end)
@@ -477,10 +485,10 @@ function ns.toggle()
 end
 
 -- Open the journal at a chapter (a click on its line in chat).
-function ns.openChapter(level)
+function ns.openChapter(number)
   if not ns.journal() then return end
   if not book then build() end
-  current, asked = level, true
+  current, asked = number, true
   book.selectedTab = 1
   if PanelTemplates_SetTab then PanelTemplates_SetTab(book, 1) end
   if book:IsShown() then ns.refresh() else book:Show() end
@@ -499,18 +507,18 @@ function ns.openHall(guid)
 end
 ns.onHall = function() if book and book:IsShown() then ns.refresh() end end
 
--- A level ends: a line in chat with a link to its chapter (a setting).
+-- A chapter closes: a line in chat with a link to it (a setting).
 function ns.link(target, text) return ("|cffc9a227|Hwayfarer:%s|h[%s]|h|r"):format(target, text) end
-ns.onChapter = function(level)
+ns.onChapter = function(number)
   if not ns.option("chat") then return end
-  print(ns.PREFIX .. ("level %d is written. %s"):format(level, ns.link("chapter:" .. level, "Read the chapter")))
+  print(ns.PREFIX .. ("chapter %d is written. %s"):format(number, ns.link("chapter:" .. number, "Read it")))
 end
 
--- Links in chat (|Hwayfarer:chapter:<level>|h, |Hwayfarer:hall:<guid>|h): the
+-- Links in chat (|Hwayfarer:chapter:<number>|h, |Hwayfarer:hall:<guid>|h): the
 -- game hands links of an unknown type to the handler registered for it.
 local function followLink(link)
-  local level = tonumber(link:match("^wayfarer:chapter:(%d+)$") or "")
-  if level then return ns.openChapter(level) end
+  local number = tonumber(link:match("^wayfarer:chapter:(%d+)$") or "")
+  if number then return ns.openChapter(number) end
   local guid = link:match("^wayfarer:hall:(.+)$")
   if guid then ns.openHall(guid) end
 end

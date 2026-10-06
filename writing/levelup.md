@@ -1,0 +1,25 @@
+---
+kind: levelup
+---
+- I felt it {at}: stronger, surer. My {level} level.
+- Something settled in me {at}. My {level} level.
+- {at} I reached my {level} level.
+- My {level} level, {in}.
+- I grew {at}, the way you only notice afterwards: my {level} level.
+- The road has made me more than I was. My {level} level, {in}.
+- My {level} level. I celebrated with a meal and a long sleep.
+- I've reached my {level} level. The world feels a size smaller.
+- My {level} level {at}. I've come a long way from where I started.
+- [hc] My {level} level, {in}, and alive to feel it.
+- [hc high] My {level} level. Every level now is more to lose.
+- [race:Dwarf] My {level} level. I'd drink to it if there were an ale in reach.
+- [class:PALADIN] My {level} level. I felt {faith} draw nearer.
+- [class:MAGE] My {level} level. New spells are within reach now.
+- [class:WARRIOR] My {level} level. My arm is surer than it was.
+- [class:ROGUE] My {level} level, and quieter on my feet than ever.
+- Another level {at}: my {level}. I can feel the difference.
+- My {level} level. The fights come easier.
+- I reached my {level} level {at}, and hardly noticed until afterwards.
+- My {level} level, and a little more sure of myself.
+- [hc] My {level} level. I'll take it, and I'll take care.
+- [class:PRIEST] My {level} level. {faith} has been good to me.

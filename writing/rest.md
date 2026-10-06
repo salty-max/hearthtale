@@ -1,0 +1,41 @@
+---
+kind: rest
+---
+- [last !fire] I took a room {at} and set my pen down for the night.
+- [last !fire] {at}, a bed with sheets. This chapter ends here.
+- [last !fire] I rested {at}, warm and fed, and closed the book for now.
+- [last !fire] The day ended {at}, by a hearth and a full plate.
+- [last !fire] I slept well {at}, for once. Enough for one chapter.
+- [last !fire] A soft bed {at}, and the road can wait until morning.
+- [last !fire] I wrote this {at}, by the light of the inn's fire, and turned in.
+- [last !fire race:Dwarf] An ale {at}, then another, then bed. A good end to a long road.
+- [last !fire hc] I rested {at}, alive, with a door I could bar. That's the whole of happiness out here.
+- [last fire] I slept by the fire {at}, and the warmth carried me through the night. So ends this chapter.
+- [last fire] The fire {at} burned low as I wrote this, and I let it put me to sleep.
+- [last fire] A campfire {at}, a full stomach, and the stars. I set this chapter down beside the embers.
+- [last fire] I rested by the fire {at} until the last of it was ash.
+- [!last !fire] I stopped {at} for a rest, though I had little yet to write.
+- [!last !fire] A short rest {at}, and not much to show for the day yet.
+- [!last fire] I sat a while by the fire {at}, then went on.
+- [!last !fire] I rested a while {at} and wrote a little.
+- [!last !fire] A short rest {at} and a hot meal.
+- [!last !fire] I sat down {at} long enough to catch my breath and write this.
+- [!last !fire] A night's sleep {at}, though the chapter isn't done.
+- [!last !fire] I slept {at} and woke before I meant to.
+- [!last !fire] I took a room {at} for a few hours, no more.
+- [!last fire] I sat by the fire {at} for a while, and the road waited.
+- [!last fire] A short rest by the fire {at}.
+- [!last fire] I warmed myself at the fire {at} and moved on.
+- [!last fire] I dozed by the fire {at}, then took up the road.
+- [last !fire] A warm room {at} and a quiet night. I set the pen down.
+- [last !fire] I made it {at} before dark and slept like a stone. So ends this chapter.
+- [last !fire] Supper and a bed {at}. That's enough for now.
+- [last !fire] I closed my door {at}, and the day with it.
+- [last fire] I lay down by the fire {at} and let the chapter end with the day.
+- [last fire] The embers {at} were still warm when I finished writing. I slept beside them.
+- [!last fire] I stopped at a fire {at}, ate, and went on.
+- [!last fire] The fire {at} was warm and the rest was short.
+- [!last !fire] I stopped {at}, ate something hot, and slept a few hours.
+- [last fire] By the fire {at}, I wrote the last of this chapter and let the flames have the rest of the night.
+- [last fire] A campfire {at}, my boots off at last. That will do for this chapter.
+- [last fire] I banked the fire {at} and slept beside it. Here the chapter ends.

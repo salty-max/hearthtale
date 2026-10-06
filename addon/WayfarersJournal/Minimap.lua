@@ -33,8 +33,7 @@ end
 -- What the tooltip says of the journal: its chapters, the Hall.
 local function summary()
   local c = ns.journal()
-  local chapters = 0
-  for _ in pairs(c and c.levels or {}) do chapters = chapters + 1 end
+  local chapters = #(c and c.chapters or {})
   local fallen = #ns.fallen()
   return chapters, fallen
 end

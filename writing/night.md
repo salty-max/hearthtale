@@ -1,0 +1,28 @@
+---
+kind: night
+---
+- [!last] I slept rough {at}, one hand on {weapon}.
+- [!last] No inn tonight. I made what bed I could {at}.
+- [!last] I slept under the open sky {at}.
+- [!last] I wrapped myself in my cloak {at} and slept badly.
+- [!last] I found a hollow {at} and slept in it.
+- [!last] A cold night {at}, and a short one.
+- [!last] I slept {at} with my boots on.
+- [!last] No roof, no fire: just the ground {at} and whatever sleep I could take.
+- [!last hc] I slept {at} in snatches, waking at every sound. Out here, that's how you live.
+- [!last race:NightElf] I slept beneath the stars {at}, as my people have always done.
+- [!last race:Scourge] I don't sleep, not truly. I sat out the night {at}.
+- [last] Another night outdoors {at}, and so ends this part of the road: too long without a proper rest.
+- [last] I bedded down {at} under the sky again. It has been a long stretch, and it ends here.
+- [last] Too many days without an inn. I slept {at} and set this chapter down.
+- [last] I closed my eyes {at} without a roof above me, and closed this chapter with them.
+- [!last] I spent the night {at} listening to the dark.
+- [!last] I curled up {at} with my back to a rock.
+- [!last] The ground for a bed {at}, and the sky for a roof.
+- [!last] I kept watch {at} more than I slept.
+- [!last] I made a cold camp {at} and waited for morning.
+- [!last] I slept {at} where I stopped, too tired to look for better.
+- [last] One more night outdoors {at}. This stretch has gone on long enough: I end the chapter here.
+- [last] I slept rough {at} again, and decided that was the end of this part of the tale.
+- [last] No inn for days now. Under the sky {at}, I set down this chapter.
+- [last] I lay down {at} on the hard ground and called it the end of a chapter.

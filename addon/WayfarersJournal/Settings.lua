@@ -39,7 +39,7 @@ function ns.createSettingsPanel()
       function(value) ns.setOption(key, value ~= invert) end)
     Settings.CreateCheckbox(category, setting, tooltip)
   end
-  checkbox("chat", "A line in chat for each chapter", "When a level ends, a line in chat with a link to its chapter.")
+  checkbox("chat", "A line in chat for each chapter", "When a chapter closes (you rested at an inn, in a city or by a campfire), a line in chat with a link to it.")
   checkbox("toast", "Alert when a book closes", "The game's alert when a Hardcore character falls and its book joins the Hall of the Fallen (the chat line stays).")
   checkbox("minimapHidden", "Minimap button", "The journal by the minimap: click to open it, drag to move it.", true)
 

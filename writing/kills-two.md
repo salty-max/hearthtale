@@ -1,7 +1,7 @@
 ---
 kind: kills-two
 ---
-- {n1} {foes1} and {n2} {foes2} {in}; I kept {weapon} busy.
+- {n1} {foes1} and {n2} {foes2}; I kept {weapon} busy.
 - I fought {foes1} and {foes2} {at}: {n1} and {n2}, if anyone is counting. I am.
 - {at} it was {foes1} and {foes2}: {n1} of the first, {n2} of the second.
 - {n1} {foes1} and {n2} {foes2} {at}, one after the other.
@@ -11,9 +11,9 @@ kind: kills-two
 - I cleared the road {at}: {n1} {foes1}, {n2} {foes2}.
 - I spent the days {at} on {foes1} ({n1}) and {foes2} ({n2}).
 - Hard work {at}: {n1} {foes1}, then {n2} {foes2}.
-- [lots] {n1} {foes1} and {n2} {foes2} {in}. I've stopped wiping {weapon} clean; there's no point.
+- [lots] {n1} {foes1} and {n2} {foes2}. I've stopped wiping {weapon} clean; there's no point.
 - [lots] I fought {at} until the {foes1} and the {foes2} ran short: {n1} and {n2}.
-- [hc] {n1} {foes1} and {n2} {foes2} {in}, and never more than one at a time if I could help it.
-- [class:HUNTER !low] My pet took the {foes1}, I took the {foes2}, or so we tell it: {n1} and {n2} {in}.
-- [class:MAGE] {n1} {foes1} and {n2} {foes2} {in}. I drank a lot of water.
-- [class:WARRIOR] {n1} {foes1}, {n2} {foes2} {in}. A good stretch.
+- [hc] {n1} {foes1} and {n2} {foes2}, and never more than one at a time if I could help it.
+- [class:HUNTER !low] My pet took the {foes1}, I took the {foes2}, or so we tell it: {n1} and {n2}.
+- [class:MAGE] {n1} {foes1} and {n2} {foes2}. I drank a lot of water.
+- [class:WARRIOR] {n1} {foes1}, {n2} {foes2}. A good stretch.

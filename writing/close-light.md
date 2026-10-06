@@ -19,3 +19,8 @@ kind: close-light
 - [class:ROGUE] {hp}% {in}. I slipped away and caught my breath in a ditch.
 - [class:HUNTER !low] {foe} got past my pet {at}. {hp}% left, and I owe the beast a meal.
 - [class:WARLOCK] {hp}% {in}. I drained what I needed out of {foe} and lived.
+- I took a beating {at}: {hp}% left.
+- Down to {hp}% {at}. I won't forget it.
+- {hp}% {in}. Too close for comfort.
+- I limped away {at} with {hp}% of my health.
+- {at} I learned a lesson the hard way: {hp}%.

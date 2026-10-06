@@ -16,3 +16,6 @@ kind: rare
 - [hc] {foe} {in}. On this realm, glory is a poor reason to die. I took the fight anyway, and I'm here to write it.
 - [class:HUNTER] I'd tracked {foe} for days. It ended {at}.
 - [class:ROGUE] {foe} {in}. I went through what it left behind, carefully.
+- {foe} {in}, and I lived to tell it.
+- I came across {foe} {at} and didn't run.
+- {foe} fell to me {at}. A story for the next inn.

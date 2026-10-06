@@ -1,0 +1,22 @@
+---
+kind: campfire
+---
+- I sat by a campfire {at} and let the warmth do its work.
+- A fire {at}, and an hour beside it.
+- I warmed my hands at a campfire {at}.
+- I rested by a fire {at}, and felt the road go out of my legs.
+- A campfire {in}: warmth, a meal, and quiet.
+- I shared a fire {at} with whoever else was cold.
+- I stopped by a fire {at} and mended my gear while it burned.
+- {at} I found a fire and sat by it as long as I dared.
+- [night] I kept a fire burning {at} through the dark hours.
+- [night] The fire {at} was the only light for miles.
+- [hc] A fire {in}. I sat with my back to it and my eyes on the dark.
+- [race:Dwarf] A fire {in}. A dwarf can't think straight without one.
+- [race:Tauren] I sat by a fire {at} and gave thanks to the Earth Mother for it.
+- [class:MAGE] I lit a fire {at} with a flick of my fingers and sat beside it.
+- A fire {at}, and the smell of something cooking.
+- I sat by the embers {at} until my hands stopped aching.
+- Someone had a fire going {at}. I was glad of it.
+- I rested by a campfire {at} and listened to it crackle.
+- [night] A fire {at} kept the night at a distance.

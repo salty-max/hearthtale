@@ -14,3 +14,6 @@ kind: flight
 - [!first] I paid the flight master in {from} and was in {to} before I'd finished complaining.
 - [hc] I flew to {to}. Nothing can kill you in the sky, which makes it the best part of any day.
 - [class:DRUID] I flew from {from} to {to} on borrowed wings. One day, my own.
+- [!first] I hired a ride from {from} to {to}.
+- [!first] From {from} to {to}, on the wind.
+- Up from {from}, down at {to}. Easier on the boots.

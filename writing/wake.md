@@ -1,0 +1,21 @@
+---
+kind: wake
+---
+- [!rest] I woke stiff {at} and went on.
+- [!rest] Morning came {at}, cold and grey. I shook off the dew and walked.
+- [!rest] I woke {at} with the sun in my eyes and the road waiting.
+- [!rest] I broke my rough camp {at} and moved on.
+- [!rest] The night passed. I was up {at} before the birds.
+- [!rest] I woke {at}, aching, but alive.
+- [!rest hc] I woke {at}, and counted it a victory.
+- [rest] Rested, but not for long: back on the road {at}.
+- [rest] A short rest, and on again {at}.
+- [rest] I took up the road again {at}.
+- [rest] Up early {at}, and off.
+- [rest] After a little rest, I went back out {at}.
+- [!rest] Dawn {at}, and every bone complaining. Onward.
+- [!rest] I woke {at} to birdsong and a stiff neck.
+- [!rest] Up {at} at first light, and glad of it.
+- [rest] Rested enough. Back to it {at}.
+- [rest] I set out again {at}, a little lighter.
+- [rest] On my feet again {at}.

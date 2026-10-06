@@ -1,21 +1,13 @@
 ---
 kind: dungeon
 ---
-- I went with {mates} into {dungeon}, and we all came out again, which is the important part. {boss} didn't.
-- {dungeon}, with {mates}. {boss} stayed behind, for good.
 - I went down into {dungeon}.
 - {dungeon}. Dark, close, and full of things that wanted me dead.
-- I saw the inside of {dungeon}, and the end of {boss}.
-- With {mates}, I cleared {dungeon} as far as {boss}.
-- We went into {dungeon}. {boss} never saw us coming.
 - {dungeon}: I went in with {mates} and came out with stories.
-- I fought through {dungeon}. {boss} was the last of it.
 - {dungeon} with {mates}. We lost our way twice and our nerve once, but not our lives.
-- [hc] {dungeon}, with {mates}: everyone who went in came out, and {boss} stayed. Not every party on this realm can say as much.
 - [hc] {dungeon}. On this realm, a dungeon is where careless parties go to die. We were careful.
 - [class:PRIEST] I kept {mates} alive through {dungeon}. Nobody thanked the healer. Nobody ever does.
 - [class:WARRIOR] I led {mates} through {dungeon}, shield first.
-- [class:MAGE] {dungeon}. I froze, I burned, I conjured water for everyone. {boss} fell.
 - [class:ROGUE] {dungeon}. I opened every locked box in the place.
 - I spent a long day underground in {dungeon}.
 - {dungeon}. I won't go back in a hurry.
@@ -25,6 +17,7 @@ kind: dungeon
 - I came out of {dungeon} blinking at the daylight.
 - {dungeon}. We went in, did what we came for, and got out.
 - I saw {dungeon} with my own eyes. Most of it was trying to kill me.
-- {boss} fell in {dungeon}, and I was there to see it.
-- In the depths of {dungeon} we put an end to {boss}.
 - [hc] I went into {dungeon} with my heart in my mouth, and came out with it still beating.
+- I went into {dungeon} with {mates}.
+- {dungeon}, with {mates} at my side.
+- [class:MAGE] {dungeon}. I froze, I burned, I conjured water for everyone.

@@ -13,3 +13,6 @@ kind: elite
 - [class:WARRIOR] I fought {foe} {at}. A proper fight, finally.
 - [class:ROGUE] I took {foe} down {at}. I didn't fight fair. I'm alive.
 - [class:PALADIN] I stood against {foe} {at}, and {faith} stood with me.
+- I beat {foe} {at}, though it was a near thing.
+- {foe} {in}: big, dangerous, and now behind me.
+- I fought {foe} {at} and came out of it standing.

@@ -1,0 +1,27 @@
+---
+kind: boss
+---
+- {boss} fell.
+- We brought down {boss}.
+- {boss} is dead. It took all of us.
+- {boss} lay still at last.
+- The end of {boss}, and a cheer from the others.
+- {boss}: beaten.
+- We fought {boss} and won.
+- {boss} fell, and the hall went quiet.
+- [hc] {boss} fell, and none of us did.
+- [class:WARRIOR] I held {boss} while the others did their work. It fell.
+- [class:PRIEST] I kept everyone standing until {boss} fell.
+- [class:MAGE] {boss} burned, in the end.
+- {boss} went down hard.
+- We stood over {boss} at last.
+- {boss} is finished.
+- We all came out of {dungeon} again, which is the important part. {boss} didn't.
+- {boss} stayed behind in {dungeon}, for good.
+- I saw the end of {boss}, deep in {dungeon}.
+- We cleared {dungeon} as far as {boss}.
+- {boss} never saw us coming.
+- I fought through {dungeon}. {boss} was the last of it.
+- {boss} fell in {dungeon}, and I was there to see it.
+- In the depths of {dungeon} we put an end to {boss}.
+- [hc] Everyone who went into {dungeon} came out, and {boss} stayed. Not every party on this realm can say as much.

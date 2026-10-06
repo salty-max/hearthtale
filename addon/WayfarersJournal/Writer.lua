@@ -206,7 +206,7 @@ Book.__index = Book
 local function newBook(c)
   local race, class = c.race or "Human", c.class or "WARRIOR"
   local b = setmetatable({ c = c, used = {}, usedIn = {}, uses = 0, seed = c.guid or "", zones = {}, flown = false,
-    repeats = 0, chapterNo = 0 }, Book)
+    repeats = 0, chapterNo = 0, kindUses = {} }, Book)
   b.voice = { home = HOME[race], kin = KIN[race], faith = faith(race, class), weapon = weapon(race, class) }
   b.base = { hc = c.hardcore or nil, ["race:" .. race] = true, ["class:" .. class] = true }
   if FACTION[race] then b.base["faction:" .. FACTION[race]] = true end
@@ -264,12 +264,13 @@ function Book:say(kind, key, values, tags, prefer)
     i = all[1]
     for _, j in ipairs(all) do if self.used[kind .. j] < self.used[kind .. i] then i = j end end
     self.repeats = self.repeats + 1
-    local gap = self.chapterNo - self.usedIn[kind .. i]
+    local gap = (self.kindUses[kind] or 0) - self.usedIn[kind .. i]
     if not self.minGap or gap < self.minGap then self.minGap, self.minGapKind = gap, kind end
   end
   self.uses = self.uses + 1
+  self.kindUses[kind] = (self.kindUses[kind] or 0) + 1
   self.used[kind .. i] = self.uses
-  self.usedIn[kind .. i] = self.chapterNo
+  self.usedIn[kind .. i] = self.kindUses[kind]
   if ns.writerUsed then ns.writerUsed[kind .. "#" .. i] = true end
   local text = list[i][1]
   if text:find("{in}") or text:find("{where}") or text:find("{place}") or (text:find("{at}") and values._named) then
@@ -281,7 +282,8 @@ function Book:say(kind, key, values, tags, prefer)
   end
   text = text:gsub("{(%w+)}", values)
   -- a place left out: no space before the punctuation, none doubled
-  return capitalise((text:gsub(" +([%.,;:!%?])", "%1"):gsub("  +", " "):gsub("^ +", "")))
+  -- (and none left at the start: "{at}, my tenth level" with no place)
+  return capitalise((text:gsub(" +([%.,;:!%?])", "%1"):gsub("  +", " "):gsub("^[ ,;:]+", "")))
 end
 
 -- The place slots of a moment: {at} ("in Coldridge Valley", "there" if it was
@@ -298,187 +300,176 @@ function Book:here(values, place)
   return values
 end
 
-local function sortedKills(l)
-  local list = {}
-  for name, k in pairs(l.kills or {}) do
-    if not SKIP[k.kind or ""] then table.insert(list, { name = name, k = k }) end
-  end
-  table.sort(list, function(a, b) if a.k.n ~= b.k.n then return a.k.n > b.k.n end return a.name < b.name end)
-  return list
+-- "first", "twelfth", "twenty-first": a level, in words.
+local ORDINAL = { one = "first", two = "second", three = "third", five = "fifth", eight = "eighth", nine = "ninth", twelve = "twelfth" }
+local function ordinal(n)
+  local w = words(n)
+  local head, last = w:match("^(.-)(%a+)$")
+  if ORDINAL[last] then return head .. ORDINAL[last] end
+  if last:match("y$") then return head .. last:sub(1, -2) .. "ieth" end
+  return w .. "th"
 end
+ns.ordinal = ordinal
 
 local function town(node) return node and (node:match("^([^,]+)") or node) end
 
--- A chapter in three paragraphs: the road; the work and the fights; company,
--- learning, spoils and the end of the level.
-function Book:chapter(n, l)
-  local c, out, part = self.c, { {}, {}, {} }, 1
+-- The chapter's kills, the most first (for the closing recap).
+local function topKills(kills)
+  local list = {}
+  for name, n in pairs(kills or {}) do table.insert(list, { name = name, n = n }) end
+  table.sort(list, function(a, b) if a.n ~= b.n then return a.n > b.n end return a.name < b.name end)
+  return list
+end
+
+-- A chapter: its moments in order, one sentence each, a new paragraph at each
+-- new zone; once closed, a recap (quests, the most fought), the time and gold,
+-- and the last line (the rest that closed it, or the night outdoors).
+function Book:chapter(n, ch)
+  local c = self.c
+  local paragraphs, current = {}, {}
   self.last = nil
   self.chapterNo = self.chapterNo + 1
   local function say(kind, key, values, tags)
     local s = self:say(kind, n .. "|" .. key, values, tags)
-    if s then table.insert(out[part], s) end
+    if s then table.insert(current, s) end
     return s
   end
-  local start = l.start or {}
-  local level = { night = start.night or nil, high = n >= 40 or nil, low = n <= 10 or nil }
-  local function tags(t)
+  local function newParagraph()
+    if #current > 0 then table.insert(paragraphs, current); current = {} end
+  end
+  local start = ch.start or {}
+  local lvl = start.level or 1
+  local function tags(t, m)
     t = t or {}
-    for k, v in pairs(level) do if t[k] == nil then t[k] = v end end
+    local level = (m and m.level) or lvl
+    if t.night == nil then t.night = (m and m.night) or nil end
+    if t.high == nil then t.high = level >= 40 or nil end
+    if t.low == nil then t.low = level <= 10 or nil end
     return t
   end
 
-  -- Where the level began.
+  -- Where the chapter began.
   local where = start.sub or start.zone
-  local first = n == 1 and (c.began and c.began.level or 1) == 1
+  local first = n == 1 and (c.began and c.began.level or 1) == 1 and lvl == 1
   if where then
-    say(first and "beginning" or "opening", "open", self:here({ where = mid(where) }, where), tags())
+    say(first and "beginning" or "opening", "open", self:here({ where = mid(where) }, where), tags({ night = start.night or nil }))
   end
-  if start.zone then self.zones[start.zone] = true end
 
-  -- New ground: a new zone, then its new places.
-  local groups, order = {}, {}
-  for _, p in ipairs(l.places or {}) do
-    if p.zone and p.sub ~= where and not (p.sub == nil and p.zone == where) then
-      if not groups[p.zone] then groups[p.zone] = {}; table.insert(order, p.zone) end
-      if p.sub then table.insert(groups[p.zone], p.sub) end
-    end
-  end
-  for _, zone in ipairs(order) do
-    if not self.zones[zone] then
-      self.zones[zone] = true
-      say("zone", zone, { zone = mid(zone) }, tags())
-    end
-    local subs = groups[zone]
-    if #subs == 1 then
-      say("place", subs[1], { place = mid(subs[1]), zone = mid(zone), _place = subs[1] }, tags())
-    elseif #subs > 1 then
+  local function quoted(title) return '"' .. title .. '"' end
+  local mates, dungeon = {}, nil -- who joined me so far in the chapter; the dungeon I'm in
+  for i, m in ipairs(ch.log or {}) do
+    local key = tostring(i)
+    local place = m.sub or m.zone
+    if m.k == "level" then
+      lvl = m.level or lvl
+      say("levelup", key, self:here({ level = ordinal(lvl) }, place), tags(nil, m))
+    elseif m.k == "place" then
+      if m.new == "zone" then
+        newParagraph()
+        self.last = nil
+        say("zone", key, { zone = mid(m.zone) }, tags(nil, m))
+        if m.sub then self.last = m.sub end
+      elseif m.sub or m.zone then
+        say("place", key, { place = mid(m.sub or m.zone), zone = mid(m.zone), _place = m.sub or m.zone }, tags(nil, m))
+      end
+    elseif m.k == "inn" then
+      say("inn", key, { inn = mid(m.place), _place = m.place }, tags(nil, m))
+    elseif m.k == "flight" then
+      say("flight", key, { from = mid(town(m.from)), to = mid(town(m.to)) }, tags({ first = not self.flown or nil }, m))
+      self.flown = true
+    elseif m.k == "quest" then
+      if m.title then say("quest", key, { quest = quoted(m.title), giver = m.giver }, tags(nil, m)) end
+    elseif m.k == "kill" then
+      if m.first and KINDS[m.kind] then
+        say("first-kind", key, self:here({ kind = KINDS[m.kind] }, place), tags(nil, m))
+      elseif m.elite then
+        say("elite", key, self:here({ foe = article(m.name) }, place), tags(nil, m))
+      elseif not SKIP[m.kind or ""] then
+        say("kill", key, self:here({ foe = article(m.name) }, place), tags(nil, m))
+      end
+    elseif m.k == "rare" then
+      say("rare", key, self:here({ foe = m.name }, place), tags({ elite = m.elite or nil }, m))
+    elseif m.k == "close" then
+      say(m.hp <= 5 and "close-deep" or "close-light", key,
+        self:here({ foe = article(m.foe), hp = tostring(m.hp) }, place), tags({ night = m.night or false }, m))
+    elseif m.k == "died" and m.death then
+      say("died", key, self:here({ foe = deathFoe(m.death, article) }, place), deathTags(m.death))
+    elseif m.k == "group" then
+      if #mates < 4 then table.insert(mates, m.name) end
+      say("group", key, { mates = m.name }, tags(nil, m))
+    elseif m.k == "dungeon" then
+      dungeon = m.name
+      say("dungeon", key, { dungeon = mid(m.name), mates = listing(mates) }, tags(nil, m))
+    elseif m.k == "boss" then
+      say("boss", key, { boss = m.name, dungeon = mid(dungeon) }, tags(nil, m))
+    elseif m.k == "learned" then
       local named = {}
-      for i = 1, math.min(#subs, 3) do named[i] = mid(subs[i]) end
-      say("places", zone, { places = listing(named), zone = mid(zone) }, tags())
-    end
-  end
-  if l.inn and l.inn.place then
-    say("inn", "inn", { inn = mid(l.inn.place), _place = l.inn.place }, tags())
-  end
-  for i, f in ipairs(l.flights or {}) do
-    if i > 1 then break end
-    say("flight", "flight", { from = mid(town(f.from)), to = mid(town(f.to)) }, tags({ first = not self.flown or nil }))
-    self.flown = true
-  end
-
-  -- Work.
-  part = 2
-  local quests = {}
-  for _, q in ipairs(l.quests or {}) do if q.title then table.insert(quests, q) end end
-  local function quoted(q) return '"' .. q.title .. '"' end
-  if #quests == 1 then
-    say("quest", "q", { quest = quoted(quests[1]), giver = quests[1].giver }, tags())
-  elseif #quests <= 3 and #quests > 1 then
-    local titles, giver = {}, nil
-    for _, q in ipairs(quests) do table.insert(titles, quoted(q)); giver = giver or q.giver end
-    say("quests", "q", { quests = listing(titles), giver = giver }, tags())
-  elseif #quests > 3 then
-    local q = quests[#quests]
-    say("quests-many", "q", { n = words(#l.quests), quest = quoted(q), giver = q.giver }, tags())
-  end
-
-  -- Fights: the first of a kind, the most fought, elites, rares.
-  local kills = sortedKills(l)
-  for _, e in ipairs(kills) do
-    if e.k.first and KINDS[e.k.kind] then
-      say("first-kind", "first", self:here({ kind = KINDS[e.k.kind] }, e.k.where), tags())
-      break
-    end
-  end
-  local a, b = kills[1], kills[2]
-  if a and a.k.n >= 3 then
-    local place = a.k.where
-    local lots = a.k.n >= 15 or nil
-    if b and b.k.n >= 3 then
-      say("kills-two", "kills", self:here({ n1 = words(a.k.n), foes1 = plural(a.name), n2 = words(b.k.n), foes2 = plural(b.name) },
-        place), tags({ lots = lots }))
-    else
-      say("kills", "kills", self:here({ n = words(a.k.n), foes = plural(a.name) }, place), tags({ lots = lots }))
-    end
-  end
-  for _, e in ipairs(kills) do
-    if e.k.elite then
-      say("elite", e.name, self:here({ foe = article(e.name) }, e.k.where), tags())
-      break
-    end
-  end
-  for i, r in ipairs(l.rares or {}) do
-    if i > 2 then break end
-    local place = r.sub or r.zone
-    say("rare", r.name, self:here({ foe = r.name }, place), tags({ elite = r.elite or nil }))
-  end
-  for i, cc in ipairs(l.closeCalls or {}) do
-    if i > 2 then break end
-    local place = cc.sub or cc.zone
-    say(cc.hp <= 5 and "close-deep" or "close-light", "close" .. i,
-      self:here({ foe = article(cc.foe), hp = tostring(cc.hp) }, place), tags({ night = cc.night or false }))
-  end
-
-  -- Deaths (not on Hardcore: the epitaph tells that one).
-  if not c.hardcore then
-    for i, d in ipairs(l.deaths or {}) do
-      if i > 2 then break end
-      say("died", "died" .. i, self:here({ foe = deathFoe(d, article) }, d.sub or d.zone), deathTags(d))
+      for j = 1, math.min(#m.spells, 3) do named[j] = m.spells[j] end
+      say("trainer", key, { spells = listing(named) }, tags({ many = #m.spells > 3 or nil }, m))
+    elseif m.k == "skill" then
+      say("skill", key, { skill = m.name:lower(), rank = words(m.rank) }, tags(nil, m))
+    elseif m.k == "loot" then
+      local item = m.link and m.link:match("%[(.-)%]")
+      if item then say("loot", key, { item = itemName(item) }, tags(nil, m)) end
+    elseif m.k == "campfire" then
+      say("campfire", key, self:here({}, place), tags(nil, m))
+    elseif m.k == "rested" then
+      say("rest", key, self:here({ place = mid(m.place) }, m.place), tags({ fire = m.fire or nil, last = false }, m))
+    elseif m.k == "night" and not m.last then
+      say("night", key, self:here({}, place), tags({ last = false }, m))
+    elseif m.k == "wake" then
+      newParagraph()
+      self.last = nil
+      say("wake", key, self:here({}, place), tags({ rest = m.after == "rest" or nil }, m))
     end
   end
 
-  -- Company.
-  part = 3
-  local mates = {}
-  for name in pairs(l.company or {}) do table.insert(mates, name) end
-  table.sort(mates)
-  while #mates > 4 do table.remove(mates) end
-  local dungeons = l.dungeons or {}
-  for i, d in ipairs(dungeons) do
-    if i > 2 then break end
-    say("dungeon", d.name, { dungeon = mid(d.name), boss = d.bosses and d.bosses[#d.bosses], mates = listing(mates) }, tags())
-  end
-  if #dungeons == 0 and #mates > 0 then say("group", "group", { mates = listing(mates) }, tags()) end
-
-  -- Learning and spoils.
-  local learned = l.learned or {}
-  if #learned > 0 then
-    local named = {}
-    for i = 1, math.min(#learned, 3) do named[i] = learned[i] end
-    say("trainer", "trainer", { spells = listing(named) }, tags({ many = #learned > 3 or nil }))
-  end
-  local skills = l.skills or {}
-  for i = #skills, math.max(1, #skills - 1), -1 do
-    local s = skills[i]
-    say("skill", s.name .. s.rank, { skill = s.name:lower(), rank = words(s.rank) }, tags())
-  end
-  local item = l.loot and l.loot.link and l.loot.link:match("%[(.-)%]")
-  if item then say("loot", "loot", { item = itemName(item) }, tags()) end
-
-  -- The end of the level (not while it is still being lived).
-  if l.ended then
-    local played = l.played or 0
-    say("closing", "end", { time = playedWords(played), gold = goldWords(l.gold) },
+  -- The end of the chapter (not while it is still being written; a death on
+  -- Hardcore ends it with the epitaph instead).
+  local e = ch.ended
+  if e and e.how ~= "death" then
+    newParagraph()
+    self.last = nil
+    if (ch.quests or 0) >= 2 then
+      local title, giver
+      for i = #ch.log, 1, -1 do
+        if ch.log[i].k == "quest" and ch.log[i].title then title, giver = ch.log[i].title, ch.log[i].giver break end
+      end
+      say("quests-many", "recap-q", { n = words(ch.quests), quest = title and quoted(title), giver = giver }, tags())
+    end
+    local top = topKills(ch.kills)
+    local a, b = top[1], top[2]
+    if a and a.n >= 3 then
+      if b and b.n >= 3 then
+        say("kills-two", "recap-k", self:here({ n1 = words(a.n), foes1 = plural(a.name), n2 = words(b.n), foes2 = plural(b.name) }, nil),
+          tags({ lots = a.n >= 15 or nil }))
+      else
+        say("kills", "recap-k", self:here({ n = words(a.n), foes = plural(a.name) }, nil), tags({ lots = a.n >= 15 or nil }))
+      end
+    end
+    local played = ch.played or 0
+    say("closing", "end", { time = playedWords(played), gold = goldWords(ch.gold) },
       tags({ slow = played > 7200 or nil, quick = (played > 0 and played < 1800) or nil }))
-  end
-  -- A paragraph of one sentence joins its neighbour (the one before, else after).
-  local parts = {}
-  for _, p in ipairs(out) do if #p > 0 then table.insert(parts, p) end end
-  local i = 1
-  while #parts > 1 and i <= #parts do
-    if #parts[i] == 1 then
-      local into = parts[i - 1] or parts[i + 1]
-      if i > 1 then table.insert(into, parts[i][1]) else table.insert(into, 1, parts[i][1]) end
-      table.remove(parts, i)
+    if e.how == "long" then
+      say("night", "last", self:here({}, e.place), tags({ last = true, night = true }))
     else
-      i = i + 1
+      say("rest", "last", self:here({ place = mid(e.place) }, e.place), tags({ fire = e.how == "campfire" or nil, last = true }))
     end
   end
-  local paragraphs = {}
-  for _, p in ipairs(parts) do table.insert(paragraphs, table.concat(p, " ")) end
+  newParagraph()
   if #paragraphs == 0 then return nil end
-  return table.concat(paragraphs, "\n\n")
+  -- A paragraph of one sentence joins the one before it (the first, the one after).
+  local merged = {}
+  for _, p in ipairs(paragraphs) do
+    if #p == 1 and #merged > 0 then table.insert(merged[#merged], p[1]) else table.insert(merged, p) end
+  end
+  if #merged > 1 and #merged[1] == 1 then
+    table.insert(merged[2], 1, merged[1][1])
+    table.remove(merged, 1)
+  end
+  local out = {}
+  for _, p in ipairs(merged) do table.insert(out, table.concat(p, " ")) end
+  return table.concat(out, "\n\n")
 end
 
 function Book:prologue(p)
@@ -512,12 +503,14 @@ function Book:epitaph(c)
     zone = mid(d.zone), foe = deathFoe(d, article) }, place), tags, cause)
 
   local quests, kills, played, rare, dungeon, zones = 0, 0, 0, nil, nil, 0
-  for _, l in pairs(c.levels or {}) do
-    quests = quests + #(l.quests or {})
-    played = played + (l.played or 0)
-    for _, k in pairs(l.kills or {}) do if not SKIP[k.kind or ""] then kills = kills + k.n end end
-    for _, r in ipairs(l.rares or {}) do rare = rare or r.name end
-    for _, dg in ipairs(l.dungeons or {}) do dungeon = dungeon or dg.name end
+  for _, ch in ipairs(c.chapters or {}) do
+    quests = quests + (ch.quests or 0)
+    played = played + (ch.played or 0)
+    for _, n in pairs(ch.kills or {}) do kills = kills + n end
+    for _, m in ipairs(ch.log or {}) do
+      if m.k == "rare" then rare = rare or m.name end
+      if m.k == "dungeon" then dungeon = dungeon or m.name end
+    end
   end
   for key in pairs(c.visited or {}) do if key:sub(-1) == "|" then zones = zones + 1 end end
   local second = self:say("remembrance", "remembrance", {
@@ -532,22 +525,28 @@ function Book:epitaph(c)
   return table.concat(parts, " ")
 end
 
--- The whole book: { prologue = text, chapters = { { level, text, place, rare, close } }, epitaph,
--- repeats, minGap } (minGap: the fewest chapters between two uses of a sentence)
+-- The whole book: { prologue = text, chapters = { { number, text, place, from,
+-- to (levels), rare, close, open, chapter } }, epitaph, repeats, minGap }
+-- (minGap: the fewest uses of a kind between two uses of one of its sentences)
 function ns.writeBook(c)
   local b = newBook(c)
   local book = { chapters = {} }
   if c.prologue then
     book.prologue = b:prologue(c.prologue)
   end
-  local levels = {}
-  for n in pairs(c.levels or {}) do table.insert(levels, n) end
-  table.sort(levels)
-  for _, n in ipairs(levels) do
-    local l = c.levels[n]
+  for i, ch in ipairs(c.chapters or {}) do
+    local rare, close, to = nil, nil, (ch.start and ch.start.level) or 1
+    for _, m in ipairs(ch.log or {}) do
+      if m.k == "rare" then rare = true end
+      if m.k == "close" then close = true end
+      if m.k == "level" then to = m.level end
+    end
+    if ch.ended and ch.ended.level then to = math.max(to, ch.ended.level) end
+    local e = ch.ended
     table.insert(book.chapters, {
-      level = n, text = b:chapter(n, l), place = l.start and l.start.zone,
-      rare = (l.rares and #l.rares > 0) or nil, close = (l.closeCalls and #l.closeCalls > 0) or nil,
+      number = i, text = b:chapter(i, ch), chapter = ch, open = not e or nil,
+      place = e and e.place or (ch.start and (ch.start.sub or ch.start.zone)),
+      from = ch.start and ch.start.level or 1, to = to, rare = rare, close = close,
     })
   end
   if c.hardcore and c.death then book.epitaph = b:epitaph(c) end

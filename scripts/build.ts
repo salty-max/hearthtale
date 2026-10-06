@@ -36,11 +36,9 @@ const KINDS: Record<string, string[]> = {
   opening: ["where", "at", "in"],
   zone: ["zone"],
   place: ["place", "zone"],
-  places: ["places", "zone"],
   inn: ["inn"],
   flight: ["from", "to"],
   quest: ["quest", "giver"],
-  quests: ["quests", "giver"],
   "quests-many": ["n", "quest", "giver"],
   "first-kind": ["kind", "at", "in"],
   kills: ["n", "foes", "at", "in"],
@@ -58,12 +56,19 @@ const KINDS: Record<string, string[]> = {
   prologue: ["at", "in", "zone", "quests", "inn", "played"],
   died: ["foe", "at", "in"],
   epitaph: ["name", "who", "level", "in", "at", "zone", "foe"],
+  kill: ["foe", "at", "in"],
+  boss: ["boss", "dungeon"],
+  levelup: ["level", "at", "in"],
+  campfire: ["at", "in"],
+  night: ["at", "in"],
+  wake: ["at", "in"],
+  rest: ["place", "at", "in"],
   remembrance: ["name", "played", "quests", "kills", "rare", "dungeon", "zones"],
   farewell: ["name"],
 };
 const VOICE = ["home", "kin", "faith", "weapon"];
 const TAGS = ["night", "hc", "high", "low", "first", "elite", "lots", "many", "slow", "quick",
-  "foe", "fall", "drowning", "lava", "nature", "beast", "people", "player", "inside"];
+  "foe", "fall", "drowning", "lava", "nature", "beast", "people", "player", "inside", "rest", "fire", "last"];
 const RACES = ["Human", "Dwarf", "NightElf", "Gnome", "Draenei", "Orc", "Troll", "Tauren", "Scourge", "BloodElf"];
 const CLASSES = ["WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK", "DRUID"];
 const tagOk = (t: string) => {
