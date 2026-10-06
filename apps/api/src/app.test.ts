@@ -33,6 +33,13 @@ describe("api", () => {
       delete process.env.VERCEL;
     }
   });
+  test("a companion: pairing codes are checked, an unknown token uploads nothing", async () => {
+    expect(await (await app.request("/api/companion/pair/not-a-code")).json()).toEqual({ pending: false });
+    const poll = await app.request("/api/companion/pair/poll", { method: "POST", body: JSON.stringify({ code: "nope" }) });
+    expect(await poll.json()).toEqual({ status: "expired" });
+    expect((await app.request("/api/companion/pair/confirm", { method: "POST", body: "{}" })).status).toBe(401);
+    expect((await app.request("/api/companion/upload", { method: "POST", body: "{}" })).status).toBe(401);
+  });
   test("a write from another site is refused", async () => {
     const res = await app.request("/api/auth/logout", { method: "POST", headers: { origin: "https://evil.example" } });
     expect(res.status).toBe(403);

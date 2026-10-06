@@ -1,6 +1,3 @@
-import { eq } from "drizzle-orm";
-import { db } from "@/db";
-import { characters } from "@/db/schema";
 import { putTemp, takeTemp } from "@/lib/ephemeral";
 import { log } from "@/lib/log";
 
@@ -30,12 +27,10 @@ export async function createLinkCode(accountId: number): Promise<{ code: string;
   return { code, expiresAt: new Date(Date.now() + LINK_TTL_MS).toISOString() };
 }
 
-/** An upload carrying a code: the character becomes the code's account's. False: no such code (or used). */
-export async function claimLinkCode(code: string, characterId: number): Promise<boolean> {
-  if (!isCode(code)) return false;
+/** An upload carrying a code: the account that asked for it (null: no such code, or used). One use. */
+export async function takeLinkCode(code: unknown): Promise<number | null> {
+  if (!isCode(code)) return null;
   const found = await takeTemp<{ accountId: number }>("link", code.toUpperCase());
-  if (!found) return false;
-  await db.update(characters).set({ ownerId: found.accountId }).where(eq(characters.id, characterId));
-  log.info("link.claimed", { account: found.accountId, character: characterId });
-  return true;
+  if (found) log.info("link.claimed", { account: found.accountId });
+  return found?.accountId ?? null;
 }

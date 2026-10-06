@@ -16,3 +16,13 @@ describe("link codes", () => {
     expect(isCode("k7q2mx")).toBe(true); // typed in lower case: fine
   });
 });
+
+import { safeNext } from "@/lib/login";
+describe("after signing in", () => {
+  test("only a page of this site to return to", () => {
+    expect(safeNext("/pair?code=ABCD-EFGH")).toBe("/pair?code=ABCD-EFGH");
+    expect(safeNext("https://evil.example")).toBeUndefined();
+    expect(safeNext("//evil.example")).toBeUndefined();
+    expect(safeNext(undefined)).toBeUndefined();
+  });
+});

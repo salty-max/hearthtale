@@ -42,6 +42,17 @@ export function useTestSignIn() {
   return useMutation({ mutationFn: () => call<{ ok: true }>("/api/auth/test", { method: "POST" }), onSuccess: changed });
 }
 
+/** Is this pairing code waiting for a confirmation? */
+export function usePairing(code: string) {
+  return useQuery({ queryKey: ["pair", code], queryFn: () => call<{ pending: boolean }>(`/api/companion/pair/${encodeURIComponent(code)}`) });
+}
+
+export function useConfirmPairing() {
+  return useMutation({
+    mutationFn: (code: string) => call<{ ok: true }>("/api/companion/pair/confirm", { method: "POST", body: JSON.stringify({ code }), headers: { "content-type": "application/json" } }),
+  });
+}
+
 export function useLinkCode() {
   return useMutation({ mutationFn: () => call<LinkCode>("/api/link-codes", { method: "POST" }) });
 }

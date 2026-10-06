@@ -35,6 +35,14 @@ const en = {
     copy: "Copy",
     then: (until: string) => `Then log out or /reload. The code works until ${until}, once.`,
   },
+  pair: {
+    title: "Link this computer",
+    ask: (who: string) => `Ravenpost, on this computer, asks to send your characters' books to ${who}'s library. The code it shows:`,
+    check: "Check it matches the one in Ravenpost.",
+    confirm: "Link this computer",
+    done: "Linked. Ravenpost sends your books after each logout or /reload.",
+    expired: "This code has expired or was already used: start again from Ravenpost.",
+  },
   library: {
     title: "Library",
     testIntro: "The test account: three lives played through the addon in its test game, each book exactly as the addon saved it at logout.",
@@ -109,6 +117,14 @@ const fr: typeof en = {
     type: "En jeu, tapez :",
     copy: "Copier",
     then: (until: string) => `Puis déconnectez-vous ou faites /reload. Le code est valable jusqu'à ${until}, une fois.`,
+  },
+  pair: {
+    title: "Lier cet ordinateur",
+    ask: (who: string) => `Ravenpost, sur cet ordinateur, demande à envoyer les livres de vos personnages dans la bibliothèque de ${who}. Le code qu'il affiche :`,
+    check: "Vérifiez qu'il est le même que dans Ravenpost.",
+    confirm: "Lier cet ordinateur",
+    done: "C'est lié. Ravenpost envoie vos livres après chaque déconnexion ou /reload.",
+    expired: "Ce code a expiré ou a déjà servi : recommencez depuis Ravenpost.",
   },
   library: {
     title: "Bibliothèque",

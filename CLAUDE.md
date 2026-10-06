@@ -104,6 +104,13 @@ Plan and steps: PLAN.md, "The site".
   `/ht link CODE` in the game, kept in the saved file, claimed by the upload).
   Locally, "Use the test account" (`/api/auth/test`, never on Vercel) owns the
   test characters.
+- The companion, Ravenpost (`lib/companion.ts`, `lib/upload.ts`): pairing
+  device-code style (`/api/companion/pair/start` → the user confirms on
+  `/pair?code=…` → `/pair/poll` hands the token over once; only its hash is
+  kept), then `POST /api/companion/upload` (Bearer token) with
+  `{ characters: [HearthtaleChar] }`, one character per request (Vercel takes
+  4.5 MB). A book is kept only for a proven owner (Battle.net, already the
+  account's, or a link code in the record); otherwise "unlinked", unstored.
 
 ## Commands
 

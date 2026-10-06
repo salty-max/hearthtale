@@ -72,3 +72,16 @@ export type CharacterSummary = {
 
 /** A character and its book. */
 export type CharacterBook = { character: CharacterSummary; book: Book };
+
+// ── the companion (Ravenpost) ───────────────────────────────────────────────
+
+/** POST /api/companion/pair/start: the companion opens `url` and polls with `pollToken`. */
+export type PairStart = { code: string; pollToken: string; url: string; expiresIn: number };
+/** POST /api/companion/pair/poll. */
+export type PairPoll = { status: "pending" } | { status: "expired" } | { status: "paired"; token: string; battletag: string | null };
+
+/** POST /api/companion/upload: each character's saved record (HearthtaleChar), as the companion parsed it. */
+export type UploadRequest = { characters: unknown[] };
+/** What became of each character: kept, or waiting to be linked (`/ht link CODE`), or unreadable. */
+export type UploadStatus = "saved" | "unlinked" | "invalid";
+export type UploadResult = { characters: { guid: string; name: string; status: UploadStatus; chapters?: number; characterId?: number }[] };

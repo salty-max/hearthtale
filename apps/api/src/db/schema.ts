@@ -31,6 +31,21 @@ export const sessions = pgTable(
   (t) => [index("sessions_account").on(t.accountId), index("sessions_expiry").on(t.expiresAt)],
 );
 
+/** A computer's companion (Ravenpost), linked to an account: it uploads that account's books. Only its token's hash is kept. */
+export const companionLinks = pgTable(
+  "companion_links",
+  {
+    id: serial("id").primaryKey(),
+    tokenHash: text("token_hash").notNull().unique(),
+    accountId: integer("account_id")
+      .notNull()
+      .references(() => accounts.id, { onDelete: "cascade" }),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    lastUploadAt: timestamp("last_upload_at", { withTimezone: true }),
+  },
+  (t) => [index("companion_links_account").on(t.accountId)],
+);
+
 /** Short-lived state shared by every server instance (a login under way, a link code). */
 export const ephemeral = pgTable(
   "ephemeral",
@@ -84,3 +99,4 @@ export const state = pgTable("state", {
 
 export type CharacterRow = typeof characters.$inferSelect;
 export type AccountRow = typeof accounts.$inferSelect;
+export type CompanionLinkRow = typeof companionLinks.$inferSelect;

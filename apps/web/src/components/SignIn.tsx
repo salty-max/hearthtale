@@ -5,7 +5,7 @@ import { useTestSignIn } from "@/lib/api";
 import { useT } from "@/lib/i18n";
 
 /** "Sign in with Battle.net", in a region (Battle.net lists the characters of one region at a time). */
-export function SignIn({ problem }: { problem?: "failed" | "cancelled" }) {
+export function SignIn({ problem, next }: { problem?: "failed" | "cancelled"; next?: string }) {
   const t = useT();
   const [region, setRegion] = useState<Region>("eu");
   const test = useTestSignIn();
@@ -28,7 +28,7 @@ export function SignIn({ problem }: { problem?: "failed" | "cancelled" }) {
           ))}
         </select>
       </label>
-      <a href={`/api/auth/login?region=${region}`} className="btn mt-5">
+      <a href={`/api/auth/login?region=${region}${next ? `&next=${encodeURIComponent(next)}` : ""}`} className="btn mt-5">
         <LogIn className="size-4" aria-hidden />
         {t.account.signIn}
       </a>

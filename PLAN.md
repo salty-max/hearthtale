@@ -40,9 +40,11 @@ site).
    addon's checks kept as they are; a first page in English and French.
 2. **The book in the saved file** (done, 6 October 2026): HearthtaleChar.book
    and each fallen life's book in the Hall, written at logout.
-3. **Records in**: an upload endpoint for a character's journal (HearthtaleChar)
-   and the account's Hall (HearthtaleHall); characters, journals and accounts
-   in Postgres.
+3. **Records in** (done, 6 October 2026): pairing a companion with an
+   account, and the upload of each character's saved record (its book as
+   written at logout), kept only for a proven owner; link codes claimed there.
+   The Hall's copies (HearthtaleHall) aren't uploaded: each fallen character's
+   own file carries its closed book.
 4. **Accounts** (done, 6 October 2026): Battle.net sign-in (WoWLocker's code),
    the characters found through the API; link codes for the rest (the addon
    keeps the code in its saved file until it is uploaded); books private to

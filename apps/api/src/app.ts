@@ -1,11 +1,14 @@
 import type { Health, Me } from "@hearthtale/shared";
 import { Hono, type Context, type MiddlewareHandler } from "hono";
+import { bodyLimit } from "hono/body-limit";
 import { deleteCookie, getCookie, setCookie } from "hono/cookie";
 import { eq } from "drizzle-orm";
 import { db } from "@/db";
 import { accounts, type AccountRow } from "@/db/schema";
 import { createSession, endSession, SESSION_COOKIE, SESSION_TTL_MS, sessionAccount, TEST_BNET_ID } from "@/lib/accounts";
 import { getCharacterBook, libraryOf } from "@/lib/characters";
+import { confirmPairing, isPairCode, linkFor, pairingPending, pollPairing, startPairing } from "@/lib/companion";
+import { handleUpload } from "@/lib/upload";
 import { createLinkCode } from "@/lib/link";
 import { appOrigin, finishLogin, isRegion, startLogin } from "@/lib/login";
 import { log } from "@/lib/log";
@@ -51,7 +54,7 @@ const sessionCookie = (c: Context<Env>, token: string) =>
 app.get("/api/auth/login", async (c) => {
   const region = c.req.query("region");
   if (!isRegion(region)) return c.json({ error: "bad region" }, 400);
-  return c.redirect(await startLogin(region));
+  return c.redirect(await startLogin(region, c.req.query("next")));
 });
 
 app.get("/api/auth/callback", async (c) => {
@@ -59,10 +62,10 @@ app.get("/api/auth/callback", async (c) => {
   const state = c.req.query("state");
   if (!code || !state) return c.redirect("/library?signin=cancelled");
   try {
-    const token = await finishLogin(code, state);
-    if (!token) return c.redirect("/library?signin=failed");
-    sessionCookie(c, token);
-    return c.redirect("/library");
+    const { session, next } = await finishLogin(code, state);
+    if (!session) return c.redirect("/library?signin=failed");
+    sessionCookie(c, session);
+    return c.redirect(next ?? "/library");
   } catch (err) {
     log.warn("login.failed", { err: String(err) });
     return c.redirect("/library?signin=failed");
@@ -100,5 +103,39 @@ app.get("/api/characters/:id", signedIn, async (c) => {
 });
 
 app.post("/api/link-codes", signedIn, sameOrigin, async (c) => c.json(await createLinkCode(c.get("account")!.id)));
+
+// ── the companion (Ravenpost) ────────────────────────────────────────────────
+app.post("/api/companion/pair/start", async (c) => c.json(await startPairing(appOrigin())));
+
+app.get("/api/companion/pair/:code", async (c) => {
+  const code = c.req.param("code");
+  return c.json({ pending: isPairCode(code) && (await pairingPending(code)) });
+});
+
+app.post("/api/companion/pair/confirm", signedIn, sameOrigin, async (c) => {
+  const { code } = await c.req.json<{ code?: string }>().catch(() => ({ code: undefined }));
+  if (!isPairCode(code)) return c.json({ error: "not found" }, 404);
+  const a = c.get("account")!;
+  return (await confirmPairing(code, { id: a.id, battletag: a.battletag })) ? c.json({ ok: true }) : c.json({ error: "expired" }, 404);
+});
+
+app.post("/api/companion/pair/poll", async (c) => {
+  const { code, pollToken } = await c.req.json<{ code?: string; pollToken?: string }>().catch(() => ({ code: undefined, pollToken: undefined }));
+  if (!isPairCode(code) || typeof pollToken !== "string") return c.json({ status: "expired" });
+  return c.json(await pollPairing(code, pollToken));
+});
+
+app.post(
+  "/api/companion/upload",
+  // Vercel takes 4.5 MB at most: the companion sends one character per request.
+  bodyLimit({ maxSize: 4 * 1024 * 1024, onError: (c) => c.json({ error: "too large" }, 413) }),
+  async (c) => {
+    const token = (c.req.header("authorization") ?? "").replace(/^Bearer\s+/i, "");
+    const link = await linkFor(token);
+    if (!link) return c.json({ error: "unknown or revoked companion" }, 401);
+    const body = await c.req.json().catch(() => null);
+    return c.json(await handleUpload(link, body));
+  },
+);
 
 app.all("/api/*", (c) => c.json({ error: "not found" }, 404));
