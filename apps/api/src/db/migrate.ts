@@ -4,9 +4,10 @@ import postgres from "postgres";
 import { databaseUrl } from "@/db/local";
 
 // Apply generated migrations (drizzle/) to the Postgres at MIGRATE_URL, or
-// DATABASE_URL. On Supabase, MIGRATE_URL is the session pooler (port 5432):
-// migrations need a real session, which the transaction pooler isn't.
-const url = process.env.MIGRATE_URL || databaseUrl();
+// Neon's direct connection (DATABASE_URL_UNPOOLED, set by the Vercel
+// integration), or DATABASE_URL: migrations need a real session, which a
+// transaction pooler isn't.
+const url = process.env.MIGRATE_URL || process.env.DATABASE_URL_UNPOOLED || databaseUrl();
 const sql = postgres(url, { max: 1, onnotice: () => {} });
 await migrate(drizzle(sql), { migrationsFolder: "drizzle" });
 
