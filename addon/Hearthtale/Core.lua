@@ -9,6 +9,8 @@
 --   closed = true            a Hardcore death closed the book: nothing more
 --                            is recorded (only the login, to find it)
 --   book = { ... }           the book as written at the last logout (Save.lua)
+--   link = { code, at }      a code from hearthtale.app (/ht link CODE), for the
+--                            next upload to add this book to that account
 local _, ns = ...
 local PREFIX = "|cffc9a227Hearthtale:|r "
 ns.PREFIX = PREFIX
@@ -74,8 +76,20 @@ SlashCmdList.HEARTHTALE = function(msg)
     return
   end
   if msg == "hall" then return ns.openHall() end
+  -- A code from hearthtale.app, kept in the saved file: the next upload (after a
+  -- logout or a /reload) carries it, and the site adds this book to that account.
+  local code = msg:match("^link%s+(%w+)$")
+  if code then
+    if #code ~= 6 then
+      print(PREFIX .. "that isn't a link code: it has six letters and digits, from hearthtale.app.")
+    elseif char then
+      char.link = { code = code:upper(), at = time() }
+      print(PREFIX .. "code " .. code:upper() .. " kept. Log out or /reload with Ravenpost running, and this book joins your library on hearthtale.app.")
+    end
+    return
+  end
   if msg ~= "" then
-    print(PREFIX .. "/ht opens the journal; /ht hall the Hall of the Fallen; /ht settings; /ht minimap shows or hides the button.")
+    print(PREFIX .. "/ht opens the journal; /ht hall the Hall of the Fallen; /ht link CODE links this character to hearthtale.app; /ht settings; /ht minimap shows or hides the button.")
     return
   end
   ns.toggle()

@@ -39,6 +39,11 @@ SlashCmdList.HEARTHTALE("minimap")
 check(mm:IsShown(), "and shows it again")
 SlashCmdList.HEARTHTALE("settings")
 check(panel.opened == 42, "/ht settings opens the page")
+SlashCmdList.HEARTHTALE("link k7q2mx")
+check(J.link and J.link.code == "K7Q2MX" and J.link.at and printed[#printed]:find("K7Q2MX", 1, true),
+  "/ht link CODE keeps the code in the saved file, for the next upload")
+SlashCmdList.HEARTHTALE("link K7Q2")
+check(J.link.code == "K7Q2MX" and printed[#printed]:find("six letters", 1, true), "… and refuses what isn't a code")
 check(J.guid == state.guid and J.began.level == 1 and not J.prologue, "a new character named like a deleted one starts a fresh journal, from level 1: no prologue")
 check(J.hardcore and J.race == "Dwarf" and J.class == "PALADIN" and J.name == "Sealinedion", "it knows who it is: a Hardcore dwarf paladin")
 check(#J.chapters == 1 and ch().start.zone == "Dun Morogh" and ch().start.sub == "Coldridge Valley" and ch().start.level == 1 and not ch().start.night,
