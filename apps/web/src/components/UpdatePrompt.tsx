@@ -31,7 +31,7 @@ export function UpdatePrompt() {
   if (!needRefresh) return null;
 
   return (
-    <div className="page fixed inset-x-3 bottom-6 z-50 mx-auto flex max-w-md items-center gap-2 rounded-md px-3 py-2">
+    <div className="page fixed inset-x-3 bottom-20 z-50 md:bottom-6 mx-auto flex max-w-md items-center gap-2 rounded-md px-3 py-2">
       <span className="flex-1 text-base">{t.update.available}</span>
       <button onClick={() => applyUpdate(registrationRef.current, { reload: () => window.location.reload() })} className="btn">
         <RefreshCw className="size-4" />

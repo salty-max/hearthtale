@@ -80,7 +80,11 @@ Plan and steps: PLAN.md, "The site".
   (`src/db/schema.ts`, migrations in `drizzle/`), `src/vercel.ts` the Vercel
   function (bundled by `scripts/vercel-build.sh`).
 - `apps/web`: React 19 + Vite + Tailwind v4 + TanStack Router/Query, an
-  installable PWA. Routes in `src/router.tsx`; every visible string in
+  installable PWA laid out as a native app: the window never scrolls (only
+  `main`, and in the reader only the book's text), a top bar that never wraps,
+  a bottom tab bar on phones (Library, Get started, Settings). Reading options
+  (size, typeface, paper, line spacing) and the language in `lib/settings.ts`
+  (per device), set on `/settings`. Routes in `src/router.tsx`; every visible string in
   `src/lib/i18n.ts` (`fr` typed on `en`); the look (the in-game book: leather,
   parchment, the addon's gold) in `src/index.css`.
 - `packages/shared` (`@hearthtale/shared`): the wire contract, the saved book's

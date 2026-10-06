@@ -2,7 +2,7 @@ import { useSettings, type Lang } from "@/lib/settings";
 
 /** Every visible string. `fr` is typed on the exact shape of `en`. */
 const en = {
-  nav: { home: "Hearthtale", start: "Get started", library: "Library", skip: "Skip to content", language: "Language" },
+  nav: { home: "Hearthtale", start: "Get started", library: "Library", settings: "Settings", menu: "Menu", skip: "Skip to content", language: "Language" },
   home: {
     tagline: "Your character's own journal, written as you play.",
     intro:
@@ -107,12 +107,31 @@ const en = {
   regions: { 1: "US", 2: "KR", 3: "EU", 4: "TW", 5: "CN" } as Record<number, string>,
   /** "Dwarf Hunter" (French: "Chasseur nain"). */
   raceClass: (race: string, cls: string) => `${race} ${cls}`,
+  settings: {
+    title: "Settings",
+    reading: "Reading",
+    preview:
+      "I reached Kharanos, took a room at Thunderbrew Distillery, then took up skinning. Later that day, I walked into Shimmer Ridge and dealt with a Frostmane Snowstrider.",
+    size: "Text size",
+    font: "Typeface",
+    fonts: { serif: "Book", sans: "Plain" } as Record<string, string>,
+    paper: "Paper",
+    themes: { parchment: "Parchment", sepia: "Sepia", night: "Night" } as Record<string, string>,
+    spacing: "Line spacing",
+    spacings: { tight: "Tight", normal: "Normal", airy: "Airy" } as Record<string, string>,
+    language: "Language",
+    languageHint: "The site's language (the books are written in English).",
+    account: "Account",
+    signedInAs: (who: string) => `Signed in as ${who}.`,
+    about: "About",
+    version: (v: string, date: string) => `Hearthtale ${v}, ${date}.`,
+  },
   update: { available: "A new version of Hearthtale is ready.", reload: "Reload", close: "Close" },
   footer: { source: "Source code", notAffiliated: "Not affiliated with Blizzard Entertainment." },
 };
 
 const fr: typeof en = {
-  nav: { home: "Hearthtale", start: "Commencer", library: "Bibliothèque", skip: "Aller au contenu", language: "Langue" },
+  nav: { home: "Hearthtale", start: "Commencer", library: "Bibliothèque", settings: "Réglages", menu: "Menu", skip: "Aller au contenu", language: "Langue" },
   home: {
     tagline: "Le journal de votre personnage, écrit pendant que vous jouez.",
     intro:
@@ -216,6 +235,25 @@ const fr: typeof en = {
   },
   regions: { 1: "US", 2: "KR", 3: "EU", 4: "TW", 5: "CN" },
   raceClass: (race: string, cls: string) => `${cls} ${race.toLowerCase()}`,
+  settings: {
+    title: "Réglages",
+    reading: "Lecture",
+    preview:
+      "I reached Kharanos, took a room at Thunderbrew Distillery, then took up skinning. Later that day, I walked into Shimmer Ridge and dealt with a Frostmane Snowstrider.",
+    size: "Taille du texte",
+    font: "Police",
+    fonts: { serif: "Livre", sans: "Simple" },
+    paper: "Papier",
+    themes: { parchment: "Parchemin", sepia: "Sépia", night: "Nuit" },
+    spacing: "Interligne",
+    spacings: { tight: "Serré", normal: "Normal", airy: "Aéré" },
+    language: "Langue",
+    languageHint: "La langue du site (les livres sont écrits en anglais).",
+    account: "Compte",
+    signedInAs: (who: string) => `Connecté en tant que ${who}.`,
+    about: "À propos",
+    version: (v: string, date: string) => `Hearthtale ${v}, ${date}.`,
+  },
   update: { available: "Une nouvelle version de Hearthtale est prête.", reload: "Recharger", close: "Fermer" },
   footer: { source: "Code source", notAffiliated: "Sans lien avec Blizzard Entertainment." },
 };

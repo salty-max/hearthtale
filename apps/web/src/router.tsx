@@ -6,10 +6,12 @@ import { Home } from "@/routes/Home";
 import { Library } from "@/routes/Library";
 import { NotFound } from "@/routes/NotFound";
 import { Pair } from "@/routes/Pair";
+import { Settings } from "@/routes/Settings";
 import { Start } from "@/routes/Start";
 
 const rootRoute = createRootRoute({ component: Layout, notFoundComponent: NotFound });
 const homeRoute = createRoute({ getParentRoute: () => rootRoute, path: "/", component: Home });
+const settingsRoute = createRoute({ getParentRoute: () => rootRoute, path: "/settings", component: Settings });
 const startRoute = createRoute({ getParentRoute: () => rootRoute, path: "/start", component: Start });
 const libraryRoute = createRoute({
   getParentRoute: () => rootRoute,
@@ -29,7 +31,7 @@ const bookRoute = createRoute({ getParentRoute: () => rootRoute, path: "/book/$i
 const chapterRoute = createRoute({ getParentRoute: () => rootRoute, path: "/book/$id/$part", component: Chapter });
 
 export const router = createRouter({
-  routeTree: rootRoute.addChildren([homeRoute, startRoute, libraryRoute, pairRoute, bookRoute, chapterRoute]),
+  routeTree: rootRoute.addChildren([homeRoute, startRoute, settingsRoute, libraryRoute, pairRoute, bookRoute, chapterRoute]),
   scrollRestoration: true,
 });
 

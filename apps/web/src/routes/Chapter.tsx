@@ -7,6 +7,7 @@ import { NotFound, NotSignedIn, useCharacterBook } from "@/lib/api";
 import { SignIn } from "@/components/SignIn";
 import { paragraphs, parts } from "@/lib/book";
 import { useT } from "@/lib/i18n";
+import { readerClasses, useSettings } from "@/lib/settings";
 import { CLASS_COLOURS } from "@/lib/wow";
 
 /**
@@ -17,6 +18,7 @@ export function Chapter() {
   const t = useT();
   const { id, part } = useParams({ from: "/book/$id/$part" });
   const [contents, setContents] = useState(false);
+  const settings = useSettings();
   const { data, error, refetch } = useCharacterBook(Number(id));
   if (error) {
     if (error instanceof NotSignedIn) return <SignIn />;
@@ -45,9 +47,11 @@ export function Chapter() {
     : undefined;
   const label = (p: (typeof all)[number]) =>
     p.kind === "prologue" ? t.book.prologue : p.kind === "epitaph" ? t.book.epitaph : t.book.chapter(p.number);
+  const cls = readerClasses(settings);
+  const fallenColour = settings.theme === "night" ? "text-[#e0705f]" : "text-fallen";
   return (
-    <section className="mx-auto mt-2 max-w-2xl">
-      <div className="flex items-center justify-between gap-3">
+    <section className="mx-auto flex h-full max-w-2xl flex-col">
+      <div className="flex shrink-0 items-center justify-between gap-3">
         <button onClick={() => setContents(true)} className="btn" aria-haspopup="dialog" aria-expanded={contents}>
           <List className="size-4" aria-hidden />
           {t.book.contents}
@@ -57,21 +61,31 @@ export function Chapter() {
         </span>
       </div>
       <ContentsDrawer open={contents} onClose={() => setContents(false)} id={id} character={character} book={book} current={part} />
-      <article className="page mt-3 rounded-md px-6 py-8 sm:px-12 sm:py-10">
-        <header className="text-center">
-          <h1 className={here.kind === "epitaph" ? "title text-3xl text-fallen" : "title text-3xl text-[#7a5410]"}>{title}</h1>
-          {sub && <p className="mt-1 italic text-ink-faded">{sub}</p>}
-        </header>
-        <div className={here.kind === "epitaph" ? "mt-6 space-y-4 text-center text-xl italic leading-relaxed" : "mt-6 space-y-4 text-xl leading-relaxed"}>
-          {paragraphs(text).length === 0 && <p className="italic text-ink-faded">{t.book.nothingYet}</p>}
-          {paragraphs(text).map((p, i) => (
-            <p key={i} className={i === 0 && here.kind === "chapter" ? "first-letter:float-left first-letter:mr-1 first-letter:font-[family-name:var(--font-display)] first-letter:text-5xl first-letter:leading-none first-letter:text-[#7a5410]" : undefined}>
-              {p}
-            </p>
-          ))}
+      {/* The page stays still; only its text scrolls (a new part starts at its top). */}
+      <article className={`${cls.page} mt-3 flex min-h-0 flex-1 flex-col overflow-hidden rounded-md`}>
+        <div key={part} className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-6 py-8 sm:px-12 sm:py-10">
+          <header className="text-center">
+            <h1 className={here.kind === "epitaph" ? `title text-3xl ${fallenColour}` : "title page-title text-3xl"}>{title}</h1>
+            {sub && <p className="page-faded mt-1 italic">{sub}</p>}
+          </header>
+          <div className={`mt-6 space-y-4 ${cls.text} ${here.kind === "epitaph" ? "text-center italic" : ""}`}>
+            {paragraphs(text).length === 0 && <p className="page-faded italic">{t.book.nothingYet}</p>}
+            {paragraphs(text).map((p, i) => (
+              <p
+                key={i}
+                className={
+                  i === 0 && here.kind === "chapter"
+                    ? "first-letter:float-left first-letter:mr-1 first-letter:font-[family-name:var(--font-display)] first-letter:text-[3.2em] first-letter:leading-none first-letter:text-[var(--page-title)]"
+                    : undefined
+                }
+              >
+                {p}
+              </p>
+            ))}
+          </div>
         </div>
       </article>
-      <nav className="mt-4 flex items-center justify-between gap-2 text-gold-bright">
+      <nav className="flex shrink-0 items-center justify-between gap-2 pt-3 text-gold-bright">
         {prev ? (
           <Link to="/book/$id/$part" params={{ id, part: prev.key }} className="flex items-center gap-1 hover:underline">
             <ChevronLeft className="size-4" aria-hidden />
