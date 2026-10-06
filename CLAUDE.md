@@ -22,9 +22,10 @@ The plan and its decisions: PLAN.md.
   second tab for the Hall of the Fallen), `Hall.lua` (a Hardcore death: the
   book closed and copied to the account-wide Hall, a chat line, the toast),
   `Settings.lua` (account settings, the Options page), `Minimap.lua`.
-- `addon/CURSEFORGE.md`: the project page. `assets/logo.svg` and its PNGs (512,
-  1024): render with headless Chrome (an `<img>` of the SVG, `--screenshot`;
-  ImageMagick's own SVG renderer drops the gradients), then scale with magick.
+- `addon/CURSEFORGE.md`: the project page. `assets/logo-master.png` is the
+  painted logo master; `assets/logo.png` and `assets/logo-1024.png` are its
+  512px and 1024px exports (resize the master with magick). The previous SVG
+  and exports are kept in `assets/previous/`; prompts are in `assets/logo-prompts.json`.
   The source TOC has an `@INTERFACE@` placeholder: not installable as is;
   `scripts/package.ts` builds `dist/classic` and `dist/forever`.
 - `addon/test/game.lua`: the fake game (WoW API, events, a character to play,
