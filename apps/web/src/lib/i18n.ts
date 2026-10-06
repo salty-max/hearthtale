@@ -77,7 +77,7 @@ const en = {
   },
   library: {
     title: "Library",
-    testIntro: "The test account: three lives played through the addon in its test game, each book exactly as the addon saved it at logout.",
+    testIntro: "The test account: lives played through the addon in its test game, each book exactly as the addon saved it at logout.",
     empty: "No book on this shelf yet. With the addon installed, your characters' books arrive after you log out or /reload.",
     level: (n: number) => `Level ${n}`,
     chapters: (n: number) => (n === 1 ? "1 chapter" : `${n} chapters`),
