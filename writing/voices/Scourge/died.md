@@ -1,13 +1,13 @@
 ---
 kind: died
 ---
-- [foe] {foe} killed me {at}. Again. It gets less interesting each time.
-- [foe] I died to {foe} {at}. The spirit healer barely looked up.
-- [fall] I fell to my death {at}. I've had practice.
-- [drowning] I drowned {at}. I don't breathe, so this was mostly a misunderstanding.
-- I died {at}. I came back. I always do.
-- I died {at}. Again. It gets less interesting each time.
-- [lava] I walked into fire {at}. The dead burn well, as it turns out.
-- [nature] I died {at}. The world itself did it, which seems unfair, given I was already dead.
-- [foe] {foe} killed me {at}. I'll be back for it. I always come back.
-- I died {at}. Death and I are old acquaintances; neither of us was impressed.
+- [foe] {foe} killed me {at}, and I discovered that having died before did little to make the next time welcome.
+- [foe] I fell to {foe} {at}, with more unfinished business than I had expected to care about.
+- [fall] I fell to my death {at}, reminded that this body was no less vulnerable for having already been lost once.
+- [drowning] I drowned {at}, finding another way for the world to refuse me a place in it.
+- I died {at} and came back, glad of the return despite all the clever things I had told myself about death.
+- I died {at}, and found I wanted to go on more than familiarity with the grave had led me to suppose.
+- [lava] Fire killed me {at}, without much regard for whether I ought to have been dead already.
+- [nature] I died {at}, taken by the world itself rather than anyone who might have had a reason.
+- [foe] {foe} killed me {at}, and left me an encounter I meant to understand before meeting it again.
+- I died {at}, with enough of this second life left unfinished to make coming back matter.

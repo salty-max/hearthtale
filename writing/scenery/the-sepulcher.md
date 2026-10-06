@@ -4,5 +4,5 @@ type: town
 home: Scourge
 faction: horde
 ---
-- [home] The Sepulcher: a Forsaken outpost dug into a hill of tombs. Bats overhead, dead guards at the gate. Cosy.
-- [!home] The Sepulcher, a Forsaken outpost built among tombs. The guards did not blink. I don't think they could.
+- [home] I reached the Sepulcher among the tombs, with bats overhead and our guards at the gate. We had made an outpost out of a burial place, which struck me as a fair use of what the world had left us.
+- [!home] I came to the Sepulcher through a hillside of tombs. The guards stood so still that I watched for a blink before remembering who lived here.

@@ -1,12 +1,12 @@
 ---
 kind: c-kill
 ---
-- killed {foe}, and that was that
-- put {foe} down, clean
-- dealt with {foe}; it didn't take long
-- broke {foe} like bad ore
+- brought down {foe}
+- put an end to {foe}
+- fought {foe} and came through it
+- dealt with {foe} before going on
 - saw off {foe}
-- gave {foe} the hammer
-- put {foe} in the ground
-- settled {foe}'s account
-- cracked {foe} open
+- defeated {foe} with {weapon}
+- killed {foe}
+- came through an encounter with {foe}
+- put {foe} down

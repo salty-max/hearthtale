@@ -259,6 +259,7 @@ local function inspect(where, text)
   if not text then return end
   local checks = {
     { "{", "a slot left unfilled" }, { "nil", "nil in the text" }, { "  ", "a double space" },
+    { "%%", "a health percentage in the narrative" },
     { " %.", "a space before a full stop" }, { " ,", "a space before a comma" }, { "%.%.", "two full stops" },
     { ",%.", "a comma before a full stop" }, { "there there", "there there" }, 
     { "%f[%a]in in%f[%A]", "in in" }, { "%f[%a]in there%f[%A]", "in there" }, { "%f[%a]a a%f[%A]", "a a" }, { "%f[%a]the the%f[%A]", "the the" },
@@ -278,6 +279,75 @@ local function inspect(where, text)
     local plural = ({ tasks = 1, foes = 1, lands = 1, good = 1, errands = 1, jobs = 1, quests = 1 })[noun]
     if plural and not before:find("%a$") and not before:find("%-$") and not before:find("and $") then
       problem(where, "one, then a plural", text)
+    end
+  end
+end
+
+-- The joins serve a scene: related practice stays together, an arrival
+-- frames one action, and a close call has an aftermath. Use one candidate
+-- per kind here so these checks concern assembly rather than word choice.
+local originalData, originalUsed = ns.data, ns.writerUsed
+local fixtureWriting = {}
+for kind, list in pairs(ns.data.writing) do fixtureWriting[kind] = list end
+local lines = {
+  beginning = "I began {at}.", ["c-prof"] = "took up {prof}",
+  ["c-place"] = "reached {place}", ["c-kill"] = "brought down {foe}",
+  ["c-deed-kill"] = "killed {n} {foes} for {giver}",
+  ["close-deep"] = "{foe} nearly ended me {at}. I was glad to survive.",
+  ["c-deed-item"] = "found {n} {thing}",
+}
+for kind, line in pairs(lines) do fixtureWriting[kind] = { { line } } end
+ns.data, ns.writerUsed = { writing = fixtureWriting }, nil
+local recorded = {
+  guid = "scene-joins", race = "Human", class = "MAGE",
+  chapters = { { start = { level = 1, zone = "Country", sub = "Home" }, log = {
+    { k = "prof", name = "Skinning", learned = true, zone = "Country", sub = "Home", at = 10 },
+    { k = "prof", name = "Leatherworking", learned = true, zone = "Country", sub = "Home", at = 20 },
+    { k = "place", zone = "Country", sub = "Farm", at = 30 },
+    { k = "kill", name = "Wolf", kind = "Beast", zone = "Country", sub = "Farm", at = 40 },
+    { k = "quest", giver = "Farmer", objectives = { { type = "monster", name = "Wolf", n = 2 } },
+      zone = "Country", sub = "Farm", at = 50 },
+    { k = "close", foe = "Wolf", hp = 2, zone = "Country", sub = "Farm", at = 60 },
+    { k = "quest", objectives = { { type = "item", name = "Apple", n = 3 } },
+      zone = "Country", sub = "Farm", at = 70 },
+  } } },
+}
+local sceneText = ns.writeBook(recorded).chapters[1].text
+if not sceneText:find("I took up skinning and took up leatherworking.", 1, true) then
+  problem("scene joins", "related trades were split", sceneText)
+end
+if sceneText:find("leatherworking and brought down", 1, true) then
+  problem("scene joins", "a trade and a fight were forced together", sceneText)
+end
+local framed = sceneText:find("When I reached Farm, I brought down a Wolf.", 1, true)
+  or sceneText:find("I reached Farm, where I brought down a Wolf.", 1, true)
+  or sceneText:find("I reached Farm and brought down a Wolf.", 1, true)
+if not framed then problem("scene joins", "the arrival did not frame its action", sceneText) end
+if not (sceneText:find("Afterwards, I found three Apples.", 1, true)
+  or sceneText:find("After that encounter, I found three Apples.", 1, true)) then
+  problem("scene joins", "the next action lost the close call's aftermath", sceneText)
+end
+if sceneText ~= ns.writeBook(recorded).chapters[1].text then
+  problem("scene joins", "the same record produced different prose", sceneText)
+end
+ns.data, ns.writerUsed = originalData, originalUsed
+
+-- A busy fighting day can also include quests. Recap fighting the objectives
+-- have not already told, and exercise the long-work variants of that ending.
+for _, race in ipairs(RACES) do
+  for seed = 1, 80 do
+    local c = {
+      guid = "uncovered-fights-" .. seed, race = race, class = COMBOS[race][1],
+      chapters = { { start = { level = 20, zone = "Country", sub = "Home" }, quests = 2,
+        played = 7200, kills = { Wolf = 20, Scorpid = 18 }, log = {
+          { k = "quest", giver = "Farmer", objectives = { { type = "monster", name = "Wolf", n = 2 } } },
+        }, ended = { level = 20, place = "Home", how = "rest" },
+      } },
+    }
+    local text = ns.writeBook(c).chapters[1].text
+    inspect(race .. " uncovered fights", text)
+    if not text:find("eighteen Scorpids", 1, true) or text:find("twenty Wolves", 1, true) then
+      problem(race .. " uncovered fights", "the recap repeated an objective or lost other fighting", text)
     end
   end
 end

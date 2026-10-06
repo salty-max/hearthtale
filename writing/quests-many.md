@@ -1,16 +1,16 @@
 ---
 kind: quests-many
 ---
-- {n} tasks done, all told.
-- I had done {n} tasks for the people along the way.
-- All in all, {n} errands seen through.
-- {n} jobs finished, and a little more known in these parts.
-- I'd turned in {n} tasks by the end of it.
-- {n} people helped, one way or another.
-- {n} tasks, start to finish.
-- {n} errands done. {giver} was the last to thank me.
-- By the end, {n} tasks behind me.
-- {n} small jobs done, and paid for.
-- [hc aside] {n} tasks, and every one of them a chance to die. I took none of those chances.
-- [class:PALADIN] {n} tasks, for the people and for {faith}.
-- [class:HUNTER] {n} tasks, most of them hunts.
+- I had seen {n} tasks through by the end, and each had made the road a little less anonymous.
+- The {n} tasks behind me had given this stretch its shape, through people whose concerns had become my own for a while.
+- I thought back over {n} completed errands, remembering the people as readily as the work.
+- I had finished {n} jobs along the way, enough to feel that I had begun to find my place here.
+- By the end I had seen {n} tasks through, with more to remember than their names alone.
+- I had completed {n} tasks, and could begin to see how a journey took shape through other people's needs.
+- I looked back over {n} tasks, glad to have an account of what had occupied me.
+- I had brought {n} errands to an end, with {giver}'s the last still fresh in my thoughts.
+- The {n} tasks behind me made this feel like a stretch of my own life rather than simply a distance travelled.
+- I had finished {n} small jobs, and found myself thinking about how much of the journey lay in such ordinary work.
+- [hc] I looked back over {n} tasks, grateful that I still had the chance to consider them.
+- [class:PALADIN] I had seen {n} tasks through, trying to give my convictions a place in ordinary work.
+- [class:HUNTER] The {n} tasks behind me had taught me to attend to the people along the road as well as the creatures beyond it.

@@ -1,8 +1,8 @@
 ---
 kind: campfire
 ---
-- A fire {at}. I sat and ate.
-- I rested by a fire {at}.
-- A fire {at}. Warmth, and the old songs.
-- I sharpened my blade by the fire {at}.
-- [night] I kept the fire burning {at}. The night did not come close.
+- I stopped by a fire {at}, with time to consider the work behind me.
+- I rested beside a fire {at}, glad to have the warmth while I could.
+- I sat by the fire {at} and found the quiet easier to welcome than I had expected.
+- I held my hands toward the fire {at}, letting the road wait for a while.
+- [night] I rested beside a fire {at}, where the darkness made its warmth more welcome.

@@ -2,10 +2,10 @@
 kind: c-gear
 ---
 - [!made] put on {item}
-- [!made] took {item} off a previous owner
-- [!made] wore {item}, which fit better than my skin
-- [!made] strapped on {item}
+- [!made] began wearing {item}
+- [!made] wore {item} for the first time
 - [!made] fitted myself with {item}
+- [!made] took to wearing {item}
 - [made] made {item} myself and wore it
-- [made] wore {item}, my own work, every stitch
-- [made] finished {item} and put it on over what's left of me
+- [made] wore {item}, reassured to see my hands still knew their work
+- [made] finished {item} and put it on

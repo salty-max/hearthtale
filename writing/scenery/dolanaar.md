@@ -4,5 +4,5 @@ type: town
 home: NightElf
 faction: alliance
 ---
-- [home] Dolanaar: a few elegant houses of wood and vine around a moonwell, sentinels at the road, and the smell of rain. A small place, and a peaceful one.
-- [!home] Dolanaar, a night elf village of graceful houses and a moonwell that glowed faintly blue. Everyone spoke quietly.
+- [home] I came to Dolanaar with the smell of rain in the air. The houses gathered around the moonwell, and the sentinels watched the road with a patience that let me lower my guard a little.
+- [!home] The blue glow of Dolanaar's moonwell drew my eye before the houses did. Beneath the wood and trailing vines, even the voices were quiet, and I caught myself speaking softly too.

@@ -1,12 +1,12 @@
 ---
 kind: rest
 ---
-- [last !fire] A bed {at}. A meal. Sleep. This chapter is done.
-- [last !fire] I ate, I slept {at}. Enough for now.
-- [last !fire] I rested {at} behind a door. Good.
-- [last fire] I slept by the fire {at}. The chapter ends with it.
-- [last fire] A fire {at}, food, sleep. Enough.
-- [!last !fire] A short rest {at}. Then back out.
-- [!last !fire] I ate {at} and moved on.
-- [!last fire] A fire {at}, briefly. Then the road.
-- [!last fire] I warmed myself {at}. Not long.
+- [last !fire] I rested {at}, with the work behind me for now. I wanted to carry its lessons into what came next.
+- [last !fire] I stopped {at} and put my account in order before setting the book aside.
+- [last !fire] I rested {at}, glad to have something accomplished rather than merely promised.
+- [last fire] I settled beside the fire {at}, where I could consider the day's work without another demand interrupting it.
+- [last fire] I finished these pages by the fire {at}, leaving the next stretch for another day.
+- [!last !fire] I rested a little {at}, then returned to the work still ahead.
+- [!last !fire] I stopped {at} long enough to recover my strength before going on.
+- [!last fire] I paused beside the fire {at}, grateful for a little warmth before the road called again.
+- [!last fire] I rested by the fire {at}, without needing to pretend I had no use for it.

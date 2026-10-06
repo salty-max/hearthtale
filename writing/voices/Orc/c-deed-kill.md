@@ -1,18 +1,18 @@
 ---
 kind: c-deed-kill
 ---
-- [!one] killed {n} {foes} for {giver}
-- [!one] cut down {n} {foes}
-- [!one] killed {n} {foes}. {giver} asked; I did it
+- [!one] hunted {n} {foes} for {giver}
+- [!one] brought down {n} {foes} before the work was done
+- [!one] killed the {n} {foes} {giver} had asked me to deal with
 - [!one] slew {n} {foes} and reported to {ender}
-- [!one] hunted {n} {foes}
-- [!one] broke {n} {foes} for the Horde
-- [!one] ended {n} {foes}
-- [!one] killed {n} {foes}, one after another
-- [!one] cleared out {n} {foes}
+- [!one] completed the hunt for {n} {foes}
+- [!one] brought {giver} word that {n} {foes} had fallen
+- [!one] put an end to {n} {foes}
+- [!one] hunted the {foes} until I had accounted for {n} of them
+- [!one] dealt with the {n} {foes} named in {giver}'s request
 - [one] killed {foes} for {giver}
 - [one] hunted down {foes}
-- [one] ended {foes}
-- [one] took {foes}'s head, as {giver} wanted
+- [one] put an end to {foes}
+- [one] brought {giver} word of {foes}'s defeat
 - [one] faced {foes} and won
-- [one] killed {foes}. It fought well
+- [one] completed the hunt for {foes}

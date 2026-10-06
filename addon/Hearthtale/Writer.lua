@@ -251,31 +251,27 @@ local MATTERS = { ["close-light"] = true, ["close-deep"] = true, rare = true, di
   beginning = true, power = true, petdied = true }
 
 -- How each race's journal runs (with its own sentences, writing/voices/): how
--- many clauses a sentence holds, and its own linking words over the shared ones.
+-- many clauses a sentence holds, and its own time words over the shared ones.
 local STYLE = {
   default = { clauses = 3, links = {} },
   Dwarf = { clauses = 3, links = {
     night = { "Come nightfall,", "When the light went,", "That night," },
     day = { "At first light,", "Come morning,", "With the dawn," },
-    next = { "Then", "After that,", "Next," },
   } },
-  Orc = { clauses = 2, links = {
+  Orc = { clauses = 3, links = {
     night = { "At nightfall,", "In the dark,", "That night," },
     day = { "At sunrise,", "With the sun,", "At dawn," },
     later = { "Later,", "Hours later," },
-    next = { "Then", "Next,", "That done," },
   } },
   NightElf = { clauses = 3, links = {
     night = { "Beneath the moon,", "When Elune rose,", "As night fell," },
     day = { "At dawn,", "With the first light,", "As the stars faded," },
     later = { "In time,", "Some hours later,", "Later that day," },
-    next = { "Then", "After a while,", "Soon," },
   } },
   Scourge = { clauses = 3, links = {
     night = { "After dark,", "In the dark hours,", "That night," },
     day = { "When the sun rose,", "At dawn, unwelcome,", "Morning came, and" },
     later = { "Later,", "In due course,", "Some hours on," },
-    next = { "Then", "After that,", "Next," },
   } },
 }
 
@@ -483,19 +479,20 @@ function Book:deed(m, key, tags)
 end
 
 -- Linking words, by what happened since the moment before: night falling,
--- morning, hours gone by. Within a scene, the next thing.
+-- morning, hours gone by. A connector needs a recorded change in time.
 local LINKS = {
   night = { "That night,", "By nightfall,", "When night came," },
   day = { "At first light,", "In the morning,", "With the dawn," },
   later = { "Later,", "Some hours later,", "Later that day," },
-  next = { "Then", "After that,", "Next,", "Before long," },
+  aftermath = { "Afterwards,", "After that encounter," },
 }
 function Book:link(m, prev, key)
   if not (m and prev and m.at and prev.at) then return nil end
   local which
   if m.night and not prev.night then which = "night"
   elseif prev.night and not m.night then which = "day"
-  elseif m.at - prev.at > 3600 then which = "later" end
+  elseif m.at - prev.at > 3600 then which = "later"
+  elseif prev.k == "close" then which = "aftermath" end
   return which and self:linkWord(which, key)
 end
 function Book:linkWord(which, key)
@@ -579,7 +576,10 @@ function Book:chapter(n, ch)
   -- sentences it has, a plain kill told.
   local scene, sceneZone, seenHere, killed = nil, nil, {}, false
   local pending, lead, sentences, named = {}, nil, 0, false -- named: the sentence names its place
+  local arrival, arrivalMode, sentenceLimit, pendingKinds = false, nil, nil, {}
   local prev -- the moment before the one being told
+  local families = { quest = "work", kill = "work", boss = "work", loot = "work", gear = "work",
+    learned = "practice", skill = "practice", prof = "practice" }
 
   -- The clauses so far, as one sentence: "I a.", "I a and b.", "I a, b and c."
   local function flush()
@@ -587,43 +587,68 @@ function Book:chapter(n, ch)
     local text = pending[1]
     if #pending > 1 then
       local last = pending[#pending]
-      local thenFirst = table.concat(pending, "|"):find(" and ") or hash(self.seed .. "|join|" .. n .. "|" .. pending[1]) % 3 == 0
-      text = table.concat(pending, ", ", 1, #pending - 1) .. (thenFirst and ", then " or " and ") .. last
+      if arrival and not lead and not pending[1]:find("[;%.!%?]") then
+        -- Both are recorded, in this order. The journey is the setting for
+        -- the deed; it does not invent a motive or a causal link between jobs.
+        local actions = table.concat(pending, " and ", 2)
+        if arrivalMode == 0 then text = "When I " .. pending[1] .. ", I " .. actions
+        elseif arrivalMode == 1 then text = "I " .. pending[1] .. ", where I " .. actions
+        else text = "I " .. pending[1] .. " and " .. actions end
+      else
+        local join = " and "
+        -- A fight followed by a completed errand is an observed sequence,
+        -- not an inferred cause. Other unrelated acts need no forced link.
+        if pending[1]:find("[,;:]") or pending[1]:find(" and ") then join = "; I "
+        elseif #pending == 2 and pendingKinds[1] == "kill" and pendingKinds[2] == "quest" then join = " before I " end
+        text = "I " .. table.concat(pending, ", ", 1, #pending - 1) .. join .. last
+      end
+    else
+      text = "I " .. text
     end
-    table.insert(current, linked(lead, capitalise("I " .. text .. ".")))
+    table.insert(current, linked(lead, capitalise(text .. ".")))
     -- "there" only right after the place is named
     if not named then self.there = true end
-    pending, lead, named = {}, nil, false
+    pending, lead, named, arrival, arrivalMode, sentenceLimit, pendingKinds = {}, nil, false, false, nil, nil, {}
     sentences = sentences + 1
   end
   -- A clause for a moment: a new sentence takes a link (the time gone by, or
   -- the next thing in the scene); a sentence holds as many clauses as the
-  -- race's style allows (STYLE), and ends with a clause that has its own
-  -- punctuation (a comma, a colon, a full stop: "killed six wolves. Good work").
-  local function clause(text, m, key)
+  -- race's style allows (STYLE), varying the length between two and three.
+  -- A comma within a clause is not a reason to cut the thought short.
+  local function clause(text, m, key, isArrival)
     if not text then return end
+    local complex = text:find("[,;:%.!%?]") or text:find(" and ")
+    -- Keep related work together. Learning two trades is one thought; a
+    -- trade followed by a fight is a new one. An arrival may frame either.
+    local kind = m and m.k or ""
+    if #pending > 0 and not arrival and
+      (not families[kind] or families[kind] ~= families[pendingKinds[1]]) then flush() end
     if #pending == 0 then
       lead = self:link(m, prev, key)
-      if not lead and #current > 0 and sentences > 0 then
-        lead = hash(self.seed .. "|next|" .. key) % 2 == 0 and self:linkWord("next", key) or nil
-      end
+      sentenceLimit = isArrival and 2 or math.min(self.style.clauses, 2 + hash(self.seed .. "|length|" .. key) % 2)
+      arrival = isArrival
+      arrivalMode = hash(self.seed .. "|arrival|" .. key) % 3
+      if arrivalMode == self.lastArrivalMode then arrivalMode = (arrivalMode + 1) % 3 end
+      if isArrival then self.lastArrivalMode = arrivalMode end
     end
     table.insert(pending, text)
-    if #pending >= self.style.clauses or text:find("[,:;%.]") then flush() end
+    table.insert(pendingKinds, kind)
+    if #pending >= sentenceLimit or text:find("[;%.!%?]")
+      or (#pending >= 2 and (complex or pending[1]:find("[,;:]") or pending[1]:find(" and "))) then flush() end
   end
   -- A new scene at a place: told as the journey there (a place just named
   -- needs none).
   local function arrive(place, zone, m, key, opener)
     flush()
-    if #current >= 5 then newParagraph() end
+    if #current >= 3 then newParagraph() end
     local back = seenHere[place]
     scene, sceneZone, killed, sentences = place, zone, false, 0
     seenHere[place] = true
     if opener then
-      clause(opener, m, key)
+      clause(opener, m, key, true)
       named = true
     elseif place ~= self.last then
-      clause(self:say(back and "c-return" or "c-travel", key .. "|go", { place = mid(place), _place = place }, tags(nil, m), nil, true), m, key)
+      clause(self:say(back and "c-return" or "c-travel", key .. "|go", { place = mid(place), _place = place }, tags(nil, m), nil, true), m, key, true)
       named = true
     end
   end
@@ -687,7 +712,7 @@ function Book:chapter(n, ch)
           seenHere[m.sub] = true
           self.last, self.there = m.sub, false
         elseif m.sub then
-          arrive(m.sub, m.zone, m, key, c_("c-place", { place = mid(m.sub), _place = m.sub }))
+          arrive(m.sub, m.zone, m, key, c_(seenHere[m.sub] and "c-return" or "c-place", { place = mid(m.sub), _place = m.sub }))
         end
       elseif m.sub or m.zone then
         local here = m.sub or m.zone
@@ -695,13 +720,13 @@ function Book:chapter(n, ch)
         if town then
           -- a town seen for the first time: described, in its own sentences
           flush()
-          if #current >= 5 then newParagraph() end
+          if #current >= 3 then newParagraph() end
           table.insert(current, #current > 0 and linked(self:link(m, prev, key), town) or town)
           scene, sceneZone, killed, sentences = here, m.zone, false, 1
           seenHere[here] = true
           self.last, self.there = here, false
         else
-          arrive(here, m.zone, m, key, c_("c-place", { place = mid(here), _place = here }))
+          arrive(here, m.zone, m, key, c_(seenHere[here] and "c-return" or "c-place", { place = mid(here), _place = here }))
         end
       end
     elseif m.k == "inn" then
@@ -764,8 +789,9 @@ function Book:chapter(n, ch)
       if m.k == "rare" then
         alone("rare", key, self:here({ foe = m.name }, place), tags({ elite = m.elite or nil }, m), m)
       elseif m.k == "close" then
+        if #current >= 3 then newParagraph() end
         alone(m.hp <= 5 and "close-deep" or "close-light", key,
-          self:here({ foe = article(m.foe), hp = tostring(m.hp) }, place), tags({ night = m.night or false }, m), m)
+          self:here({ foe = article(m.foe) }, place), tags({ night = m.night or false, foe = m.foe ~= nil }, m), m)
       elseif m.k == "died" and m.death then
         alone("died", key, self:here({ foe = deathFoe(m.death, article) }, place), deathTags(m.death), m)
       elseif m.k == "dungeon" then
@@ -819,7 +845,17 @@ function Book:chapter(n, ch)
       end
       say("quests-many", "recap-q", { n = words(ch.quests), giver = giver }, tags())
     end
-    local top = topKills(ch.kills)
+    -- Quest objectives already told the significant fighting. Repeating the
+    -- same victims as a closing scoreboard obscures the end of the scene.
+    local covered, remaining = {}, {}
+    for _, m in ipairs(ch.log or {}) do
+      local o = m.k == "quest" and m.objectives and m.objectives[1]
+      if o and o.type == "monster" and o.name then covered[o.name] = true end
+    end
+    for name, count in pairs(ch.kills or {}) do
+      if not covered[name] then remaining[name] = count end
+    end
+    local top = topKills(remaining)
     local a, b = top[1], top[2]
     if a and a.n >= 3 then
       if b and b.n >= 3 then

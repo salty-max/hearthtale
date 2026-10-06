@@ -1,9 +1,9 @@
 ---
 kind: closing
 ---
-- {time} on the road.
-- {time} passed, and {gold} more than I had.
-- {time}. Not long, as my people count time.
-- {time}, and the world a little better known.
-- [slow] {time}. Long, but patience is our oldest gift.
-- [quick] {time}. A short stretch of a long road.
+- The journey had occupied {time}, yet what I remembered most was how much there had been to notice.
+- I had spent {time} on the road and earned {gold}, though neither measure quite described the day.
+- After {time} of travelling, I was glad to let my attention rest on these pages for a while.
+- I had been busy for {time}, and wanted a quiet moment to think before going on.
+- [slow] I had travelled and worked for {time}, long enough to welcome the chance to be still.
+- [quick] Only {time} had passed, but I already had things I did not want to forget.

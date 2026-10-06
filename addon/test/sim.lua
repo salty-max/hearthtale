@@ -387,8 +387,13 @@ fire("TIME_PLAYED_MSG", 86400, 3600)
 fire("TIME_PLAYED_MSG", 90000, 7200)
 check(P and P.level == 23 and P.quests == 3 and P.inn == "Thunderbrew Distillery" and P.played == 86400 and HearthtaleChar.chapters[1],
   "a character met mid-life gets a prologue: its level, quests done, inn, time played when first heard")
+ns.writerUsed = {}
 local later = ns.writeBook(HearthtaleChar)
-check(later.prologue and later.prologue:find("^%u") and later.chapters[1].from == 23 and not (later.chapters[1].text or ""):find("begin", 1, true),
+local usedBeginning = false
+for kind in pairs(ns.writerUsed) do
+  if kind:find("^beginning#") or kind:find("/beginning#", 1, true) then usedBeginning = true end
+end
+check(later.prologue and later.prologue:find("^%u") and later.chapters[1].from == 23 and not usedBeginning,
   "its book opens with the prologue; its first chapter is no beginning")
 io.write("    " .. later.prologue .. "\n")
 SlashCmdList.HEARTHTALE("")

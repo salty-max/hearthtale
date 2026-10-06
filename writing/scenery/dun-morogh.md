@@ -4,7 +4,7 @@ type: zone
 home: Dwarf Gnome
 faction: alliance
 ---
-- [home !night] Dun Morogh: snow to the knee, pines bent under it, and the mountain that holds Ironforge standing over everything like a grandfather. The air bites, and I breathed it in like ale. Home.
-- [home night] Dun Morogh by night, the snow blue under the stars and the lamps of the villages small and warm. I knew every shape of the mountains against the sky.
-- [ally] Dun Morogh, the dwarves' country: deep snow, hard rock, and the gate of Ironforge cut into the mountain itself. Everyone I met had a pipe, an opinion, or both.
-- [foe] Dun Morogh, deep in the dwarves' land. Snow, cold, and a mountain full of their warriors. I kept off the roads.
+- [home !night] The cold of Dun Morogh caught in my throat while snow weighed down the pines around me. Above them stood the mountain that held Ironforge, and its familiar shape made the country feel less empty.
+- [home night] Under the stars, the snow of Dun Morogh had turned blue and the village lamps looked warmer for it. I could still pick out the mountains against the sky; they were familiar company in the dark.
+- [ally] I felt Dun Morogh in my fingers before I had much chance to look at it. Deep snow lay against the rock, and the gate of Ironforge disappeared into the mountain as though the dwarves had persuaded the stone to make room.
+- [foe] I came into Dun Morogh with snow underfoot and the dwarves' mountain ahead of me. Every glimpse of Ironforge reminded me how many of them could be hidden behind that stone.

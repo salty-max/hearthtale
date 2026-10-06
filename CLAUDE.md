@@ -18,7 +18,8 @@ The plan and its decisions: PLAN.md.
   `<Race>` as the game names it: `Scourge`, `NightElf`). The writer prefers
   them, lets a used one back after `OWN_GAP` uses of the kind, and falls back
   on the shared ones; `STYLE` in `Writer.lua` sets the race's clauses per
-  sentence and linking words. Flavour, no caricature.
+  sentence and time words. Flavour comes from outlook and phrasing, never
+  from broken grammar or a racial caricature.
 - `writing/scenery/<slug>.md`: a place described the first time a book meets
   it (front matter `place:`, `type:` zone | town | dungeon, `faction:`
   alliance | horde | neutral, optional `home:` races). Lines tagged by
@@ -46,9 +47,10 @@ The plan and its decisions: PLAN.md.
     written. `FOREVER=1` runs it as Forever.
   - `addon/test/lives.lua`: lives played through the addon, as the game would
     send them (Brannok, a Hardcore dwarf hunter; Pippa, a Hardcore gnome mage
-    who falls; Aldric, a human paladin met mid-life), shared by:
+    who falls; Aldric, a human paladin met mid-life; Grashnak, an orc warrior;
+    Aelyndra, a night elf druid; Mortis, a Forsaken priest), shared by:
   - `addon/test/sample.lua`: Brannok's book, `luajit addon/test/sample.lua > docs/sample.md`;
-  - `addon/test/seed.lua`: the three, logged out so the addon saves their
+  - `addon/test/seed.lua`: the six lives, logged out so the addon saves their
     books, as the site's test data (`bun run addon:seed` writes
     `apps/api/src/db/seed/characters.json`; `bun run db:seed` loads it).
 - `addon/test/writer.lua`: hundreds of imaginary lives (every race and class,
@@ -58,9 +60,26 @@ The plan and its decisions: PLAN.md.
 
 ## Writing the sentences
 
-- Clauses (kinds `c-*`) make the scenes: lower case, no stop, read after "I"
-  and joined with others ("took a room at {inn}"); a clause with its own
-  punctuation ends its sentence.
+- Write a recollection through the protagonist's eyes. Let an observation
+  lead to a reaction, and give danger, loss and a new power room to matter.
+  Prefer connected thoughts to short fragments, a checklist or "Place: text".
+  Concrete details should carry the feeling; avoid repeating abstract remarks
+  about the account, the journey or remembering in every line.
+- Scenery is experienced, not announced: what I notice, how it meets me,
+  what that makes me think. Keep its landmarks true to the original game and
+  its viewpoint appropriate to race, faction and time of day.
+- Clauses (kinds `c-*`) make the scenes: lower case, no final stop, read after
+  "I" ("bound my hearthstone at {inn}"). Related work may share a sentence;
+  an arrival frames one action. Internal commas are allowed; a semicolon or
+  full sentence closes the thought. Test joins in the generated sample.
+- Connectors need evidence: time passing, nightfall, an arrival, or the
+  aftermath of a close call. Do not scatter "then" between unrelated jobs.
+  A return is a return. Emotional interpretation is welcome; an unrecorded
+  action, spell cast, trophy, payment or another person's reaction is not a
+  fact to invent. A dwarf hunter does not automatically wield a hammer.
+- Tell a close call as an experience, with its consequences for the narrator;
+  keep the health percentage in the record. Closing recaps should not repeat
+  kills already described by quest objectives.
 - One kind per file; the slots of each kind are listed in `scripts/build.ts`
   (KINDS), plus the voice: {home}, {kin}, {faith} (missing for some, so the
   sentence is skipped), {weapon} (an object only: "fell to {weapon}", never
@@ -78,7 +97,10 @@ The plan and its decisions: PLAN.md.
   name; the rest of the book in the first. A count of one never meets a
   plural ("one tasks"): such slots are left empty for one.
 - After changing the writing: `bun run addon:build`, then `bun run addon:check`,
-  regenerate `docs/sample.md` and read it again.
+  regenerate `docs/sample.md` and the site seed (`bun run addon:seed`), and
+  read the generated books again. Check flow across sentences, not just the
+  quality of each template alone. `docs/narrative-review.md` records the
+  direction and an example of the resulting prose.
 
 ## The site (hearthtale.app)
 

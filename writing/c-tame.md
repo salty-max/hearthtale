@@ -1,12 +1,12 @@
 ---
 kind: c-tame
 ---
-- tamed {family} and named it {pet}
-- won the trust of {family}, and called it {pet}
-- tamed {pet}, {family} of the wilds
-- made a friend of {family}: {pet}
-- tamed {family}; {pet}, I call it
-- tamed {pet}
+- tamed {family} and called it {pet}
+- won the trust of {family} and called it {pet}
+- tamed {pet}, {family} that would share the road with me
+- found a companion in {pet}, {family}
+- tamed {family}, giving it the name {pet}
+- tamed {pet} and wondered what we would learn of each other
 - found a new companion in {pet}
 - made {pet} my companion
 - earned the trust of {pet}

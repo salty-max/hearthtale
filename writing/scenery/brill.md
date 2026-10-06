@@ -4,5 +4,5 @@ type: town
 home: Scourge
 faction: horde
 ---
-- [home] Brill: crooked houses, the Gallows' End Tavern, apothecaries brewing things best not smelled. A town of the dead, and as lively as we get.
-- [!home] Brill, a village of the Forsaken: crooked roofs, a tavern called the Gallows' End, and townsfolk who were all, technically, dead.
+- [home] The crooked roofs of Brill looked almost companionable after the tombs. Around the Gallows' End Tavern, my people went about their business as though a town could carry on by stubbornness alone, and for a while I felt part of it.
+- [!home] I reached Brill beneath crooked roofs and the sign of the Gallows' End Tavern. The townsfolk were dead, yet they had shops to tend and errands to run; I was less prepared for that than for the graves.

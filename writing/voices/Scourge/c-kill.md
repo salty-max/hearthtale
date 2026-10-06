@@ -1,11 +1,11 @@
 ---
 kind: c-kill
 ---
-- killed {foe}; it seemed surprised
-- ended {foe}, without ceremony
-- put {foe} out of its misery, and mine
-- made a corpse of {foe}
+- killed {foe}
+- ended {foe} without ceremony
+- put an end to {foe}
+- fought {foe} and remained standing
 - dispatched {foe}
-- introduced {foe} to the grave
-- let {foe} find out what dying is like
-- finished {foe}, efficiently
+- brought down {foe}
+- came through an encounter with {foe}
+- defeated {foe}

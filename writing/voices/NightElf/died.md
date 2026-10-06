@@ -1,12 +1,12 @@
 ---
 kind: died
 ---
-- [foe] {foe} killed me {at}. I walked as a wisp until I found my body again.
-- [foe] I fell to {foe} {at}. The spirit healer sent me back.
-- [fall] I fell to my death {at}. Even my people misjudge a height.
-- [drowning] I drowned {at}. The water took me, then gave me back.
-- I died {at}. I returned. Not all of us are given that.
-- [lava] I walked into fire {at}. The forest would have warned me; I did not listen.
-- [nature] I died {at}. The wild is not always kind, even to us.
-- [foe] {foe} ended me {at}, for a time. I returned, and I remember.
-- I died {at}, and walked a while among the wisps before I came back.
+- [foe] {foe} killed me {at}, and the world seemed farther away while I found my way back through it.
+- [foe] I fell to {foe} {at}, with a memory that return would not simply put right.
+- [fall] I fell to my death {at}, reminded too late that even familiar heights required care.
+- [drowning] I drowned {at}, where the water I had trusted became the whole of the world for a moment.
+- I died {at} and returned, conscious that being given another chance did not make the first loss small.
+- [lava] Fire killed me {at}, and I came back less willing to mistake confidence for understanding.
+- [nature] I died {at}, reminded that the world could be indifferent even to those who wished to know it.
+- [foe] {foe} ended me {at} for a time, and I carried the encounter with me when I returned.
+- I died {at}, with a strange interval in my journey that I could not make ordinary by putting it into words.

@@ -1,27 +1,27 @@
 ---
 kind: close-deep
 ---
-- It came down to a breath {at}. {foe} had me at {hp}%, and I don't know how I stood up after.
-- {foe} nearly ended me {at}: {hp}% of my life left, and my hands shaking after.
-- {hp}% {in}. I have never been closer.
-- I saw the end {at}. {foe} had me at {hp}%, and then it didn't.
-- I don't remember the last of the fight {at}. I remember {hp}%, and the sky.
-- One more blow {at} and this journal would have ended. {hp}%.
-- {at} I lay in the dirt with {hp}% of my life left, and listened to my heart.
-- {foe} {in}. {hp}%. I'm writing this with a shaking hand.
-- [night] It was dark {at}. {foe} came out of it, and left me with {hp}%. I didn't sleep.
-- [hc] It came down to a breath {at}. {foe} had me at {hp}%, and on this realm there are no second chances. I didn't need one, this time.
-- [hc] {foe} nearly ended me {at}: {hp}% of my life left. I sat down and stayed there a long time.
-- [hc] {hp}% {in}. Somewhere a grave was dug for me, and I walked past it.
-- [hc high] {hp}% {in}. All that road behind me, nearly gone in one fight. I'll be more careful. I say that every time.
-- [class:PALADIN] {hp}% {in}, and I hid behind {faith} like a coward. I'd do it again.
-- [class:PRIEST] {hp}% {in}. {faith} heard me, just in time.
-- [class:SHAMAN] {hp}% {in}. The spirits held me up when my legs would not.
-- [class:WARRIOR] {hp}% {in}. I fought on because there was nothing else to do.
-- I was a breath from the end {at}. {hp}%. I still don't know how I lived.
-- {foe} left me with {hp}% {at}. I lay still until my heart slowed.
-- {at} I came closer to dying than I ever have: {hp}%.
-- {at} I was nearly done for: {hp}%.
-- {hp}% left {at}, and I still don't know how.
-- I crawled away {at} with {hp}% of my life, and didn't stop shaking for an hour.
-- [night] In the dark {at}, {foe} brought me to {hp}%. Dawn never looked so good.
+- I came within a breath of the end {at}. {foe} had left so little room for another mistake that I could scarcely believe I was still here.
+- {foe} nearly ended me {at}, and my thoughts would not settle after the danger passed.
+- I barely survived {at}. For a moment, all the road I had imagined ahead of me had disappeared.
+- The encounter with {foe} {at} almost closed this book before I was ready. I still had things I wanted to put in it.
+- I was almost lost {at}, and afterwards the familiar things around me seemed worth looking at again.
+- One more bad moment {at} might have been the end. I kept returning to that thought while trying to go on.
+- I survived {at} with so little left to spare that relief and disbelief were difficult to tell apart.
+- {foe} brought me closer to the end than I wished to understand {at}. I understood it anyway.
+- [night] I barely survived {at} after dark, and the night seemed larger than it had before the encounter.
+- [hc] {foe} nearly ended me {at}. Every page already written, and every one I had yet to write, had almost become a story without me.
+- [hc] I came within a breath of the end {at}, where surviving gave me a chance I could not count on twice.
+- [hc] I barely survived {at}. I wanted to remember the fear clearly enough that comfort would not turn it into a boast.
+- [hc high] I came close to losing all that road behind me {at}. The length of it offered no protection against one mistake.
+- [class:PALADIN] I barely survived {at}, and could find no shame in being grateful that I had.
+- [class:PRIEST] I came within a breath of the end {at}. There was so much I still wanted to learn to mend.
+- [class:SHAMAN] I nearly fell {at}, and afterwards listened for the world around me as though hearing it were something newly given.
+- [class:WARRIOR] I barely survived {at}. I had trusted my strength, but what remained of it was almost too little.
+- I was a breath from the end {at}, and for a while could think of nothing but the fact that I was still here.
+- {foe} left me barely alive {at}. The memory made the next ordinary moment feel like something I had been allowed to keep.
+- I came close to dying {at}, and the thought followed me long after the danger had gone.
+- I nearly lost myself {at}, where the road might have ended without any regard for what I meant to do next.
+- I survived {at} by a margin I could not bring myself to call enough.
+- I came through the danger {at}, but it would be some time before I stopped carrying it in my thoughts.
+- [night] {foe} nearly ended my journey {at} in the dark. For a while, even looking toward another day felt uncertain.

@@ -3,4 +3,4 @@ place: Blackfathom Deeps
 type: dungeon
 faction: neutral
 ---
-- Blackfathom Deeps: an old night elf temple sunk into the sea, its halls full of black water, naga and cultists. Something ancient waits at the bottom. It isn't sleeping.
+- I entered Blackfathom Deeps with the sea still reaching into the old temple's halls. Black water hid the lower steps, and every sound travelled farther than I wanted it to; I found myself listening before I moved.

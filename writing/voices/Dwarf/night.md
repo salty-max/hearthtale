@@ -1,12 +1,12 @@
 ---
 kind: night
 ---
-- [!last] No inn tonight. I slept {at} with my back to a rock.
-- [!last] I made camp {at} and kept my hammer close.
-- [!last] A cold night {at}. I've slept in worse places, mostly mines.
-- [!last] I bedded down {at} on stone, as my ancestors did.
-- [!last] I slept {at} with one eye open.
-- [!last] The ground {at} was hard, and so am I.
-- [last] Too long on the road. I slept {at} under the sky and called this chapter done.
-- [last] One more night {at} without a roof, and that's enough for one stretch.
-- [last] I lay down {at} on the cold ground and set this chapter aside.
+- [!last] I slept rough {at}, with my back to the ground and little comfort to recommend it.
+- [!last] I made camp {at} and kept {weapon} close, unwilling to trust the night entirely.
+- [!last] I spent a rough night {at}, where the thought of a proper rest grew more attractive by the hour.
+- [!last] I bedded down {at}, making what comfort I could from the place I had reached.
+- [!last] I slept lightly {at}, ready to wake at the sounds around me.
+- [!last] I made a bed for myself {at} and tried to put the road out of my thoughts.
+- [last] I had spent long enough on the road when I stopped {at}, where another night outdoors brought this account to a close.
+- [last] I settled down {at} beneath the sky, with enough of the journey behind me to end these pages here.
+- [last] I lay down {at} on the ground and put the book aside, ready to let this stretch end.

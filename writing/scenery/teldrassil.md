@@ -4,7 +4,7 @@ type: zone
 home: NightElf
 faction: alliance
 ---
-- [home !night] Teldrassil, the World Tree: a whole land grown on its branches, soft light through leaves taller than towers, wisps drifting over the moss. Home, and still new to us.
-- [home night] Teldrassil by night: the moonlight silver on every leaf, the owls calling, the whole tree breathing slowly in its sleep.
-- [ally] Teldrassil, the night elves' tree, so vast a forest grows on its boughs. Soft violet light, quiet paths, and sentinels watching from the shadows.
-- [foe] Teldrassil, the night elves' tree. Beautiful, silent, and full of eyes I could not see.
+- [home !night] I looked up through Teldrassil's leaves and tried to hold in mind that this whole country rested on branches. Wisps drifted over the moss as though nothing were unusual; I was still learning to feel that sure of our new home.
+- [home night] Moonlight silvered the leaves around me in Teldrassil, and the owls called somewhere overhead. I listened to them between my own footfalls, unwilling to hurry through so much quiet.
+- [ally] I walked into Teldrassil's violet light knowing that the forest beneath my feet was growing on a tree. The thought returned whenever I looked between the great leaves, and for a while I paid more attention to the ground than the sentinels.
+- [foe] I entered Teldrassil beneath leaves that softened every sound. I could admire the beauty of the night elves' home while feeling certain that someone had noticed me already.

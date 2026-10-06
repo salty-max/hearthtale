@@ -1,39 +1,36 @@
 ---
 kind: opening
 ---
-- [!night] Morning {at}.
-- [!night] I woke {at} to a clear sky.
-- [!night] The day found me {at}.
-- I set out from {where}.
-- [night] Night {at}, and a long one.
-- [night] I started this one {at}, after dark.
-- [night] {where}, by lamplight.
-- [!night] {where}, early, with the sun not yet over the hills.
-- I was {at} when this stretch began.
-- Another start, {at}.
-- [!night] I broke my fast {at} and went looking for work.
-- [night] The stars were out over {where} when I took up the road again.
-- [night] I could not sleep {at}, so I walked.
-- I packed what I had {at} and moved on.
-- I shouldered my pack {at} and didn't look back.
-- {where} again, and the road out of it.
-- I left {where} with a full flask and an empty purse.
-- [hc aside] {where}. Still breathing, which is more than some can say.
-- [hc] I counted my blessings {at}: all my fingers, all my toes, one life.
-- [hc high] Every morning now I wake {at} surprised to be alive.
-- [hc high aside] I have outlived better than me. I thought of them {at}, then went on.
-- [race:Gnome] I checked every gear and spring of my kit {at}, twice.
-- [race:Tauren] I gave thanks to the Earth Mother {at} before I set out.
-- [race:Troll] I woke {at} and asked the loa for a good hunt.
-- [race:Human] I wrote a letter home to {home} {at}, and did not send it.
-- [race:BloodElf] I woke {at} missing the spires of {home}.
-- [race:Draenei !night] I said the morning prayers {at}, as we did aboard the Exodar.
-- [class:MAGE] I read for an hour {at} before I could face the day.
-- [class:HUNTER] I checked my traps and snares {at}.
-- [class:ROGUE] I left {where} before anyone could ask my name.
-- [class:WARLOCK] My imp complained {at} from the moment I woke.
-- [class:PRIEST] I prayed {at} and felt {faith} answer, a little.
-- [class:DRUID !night] I slept in the trees above {where} and came down at first light.
-- [class:SHAMAN aside] I listened to the wind {at}. It had nothing to say, which is its own answer.
-- [class:WARRIOR] I woke {at} sore in every joint, and got up anyway.
-- [class:PALADIN] I knelt {at} and asked {faith} for a steady hand.
+- [!night] Daylight found me {at}, ready to take up the journey and see where it would lead.
+- [!night] I began this part of my account {at}, with the day still before me.
+- [!night] I took up my journey {at}, glad to have another day in which to make something of it.
+- I opened a fresh page {at}, with the last stretch behind me and more still to discover.
+- [night] I went on {at} after dark, more conscious of the quiet between one footfall and the next.
+- [night] I began this stretch {at}, letting my thoughts find their way into the night ahead.
+- [night] I turned back to my account {at}, with the night already around me.
+- [!night] I began again {at}, wondering what I would have to remember by the time the day was done.
+- I took up the road {at}, where this part of my story would begin.
+- I returned to my journal {at}, ready to carry its account a little farther.
+- I looked about me {at} before going on, wanting to notice more than the work that lay ahead.
+- I began this stretch {at}, with enough of the journey behind me to wonder how the next part would differ.
+- I set out {at}, still turning over what the road had already taught me.
+- I took up my account {at}, where there was still plenty left for me to learn.
+- I went on {at}, with my thoughts reaching ahead of me along the road.
+- I began my next page {at}, knowing that even familiar ground could give me something new to remember.
+- [hc] I began again {at}, grateful to have another part of my life left to write.
+- [hc high] I took up the journey {at}, conscious of how much I now stood to lose.
+- [race:Gnome] I began this stretch {at}, with more questions than I had managed to answer on the last.
+- [race:Tauren] I took up the road {at}, hoping to meet what lay ahead with patience as well as strength.
+- [race:Troll] I began again {at}, with my people's persistence in mind when my own seemed uncertain.
+- [race:Human] I set out {at}, wondering whose concerns would become part of my own before the day was done.
+- [race:BloodElf] I began this stretch {at}, with the spires of {home} still clear in my thoughts.
+- [race:Draenei] I went on {at}, conscious that each familiar place here had once been as strange as the next.
+- [class:MAGE] I began again {at}, curious to see how much use I could make of what I had learned.
+- [class:HUNTER] I took up the journey {at}, looking beyond the road for what moved around it.
+- [class:ROGUE] I began this stretch {at}, keeping as much attention on my surroundings as on my destination.
+- [class:WARLOCK] I went on {at}, aware that the power I sought would ask for judgement as well as nerve.
+- [class:PRIEST] I began again {at}, hoping to find a place for my faith in the work before me.
+- [class:DRUID] I took up the road {at}, attentive to the life carrying on beside my own.
+- [class:SHAMAN] I began this stretch {at}, listening as well as looking while I found my way.
+- [class:WARRIOR] I went on {at}, determined to make what strength I had useful.
+- [class:PALADIN] I began again {at}, wanting to make my convictions useful to someone besides myself.

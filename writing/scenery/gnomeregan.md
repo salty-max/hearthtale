@@ -4,5 +4,5 @@ type: dungeon
 home: Gnome
 faction: alliance
 ---
-- [home] Gnomeregan. The city of my people, now full of troggs, poison and the friends we left behind, gone mad from the radiation. I had imagined coming back many times. Never like this.
-- [!home] Gnomeregan, the gnomes' lost city: endless metal halls, clanking machines still running with no one to run them, and a green glow I did not trust. Something here had gone very wrong.
+- [home] I had imagined returning to Gnomeregan so often that the sight of it should have been familiar. Instead there were troggs in our halls and that poisonous glow on everything, and I could not stop looking for faces I might still know.
+- [!home] I entered Gnomeregan to the sound of machines still working in halls their makers had lost. The green light lay over the metal like a sickness, and I wondered how long those wheels would turn with no one left to stop them.

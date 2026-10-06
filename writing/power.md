@@ -1,15 +1,15 @@
 ---
 kind: power
 ---
-- [form] I learned to take a new shape: {spell}.
-- [form] The wild taught me {spell}, and I wore it for the first time that day.
-- [form] {spell}: a new shape, and a new way to see the world.
-- [form] I took on {spell} for the first time, and it felt like coming home.
-- [demon] I bound a new servant: {spell}.
-- [demon] {spell}. Another voice in the dark that answers to me.
-- [demon] I learned {spell}, and the thing came when I called.
-- [demon] I mastered {spell}. It obeys, for now.
-- [steed] I won a steed of my own: {spell}.
-- [steed] {spell}. I'll never walk the long roads again.
-- [steed] I learned {spell}, and rode out proud.
-- [steed] My own steed at last: {spell}.
+- [form] I learned {spell}, and began to understand how much a different shape could change my sense of the world.
+- [form] Learning {spell} gave me a new way to meet the wild, one I still had to grow accustomed to.
+- [form] I learned {spell}, aware that knowing its name was only the beginning of understanding it.
+- [form] I had learned {spell}, and felt there was a great deal of the world I would need to learn again.
+- [demon] I learned {spell}, adding another dangerous possibility to the work I had chosen.
+- [demon] With {spell} learned, I had a new servant to call and new reasons to consider what obedience meant.
+- [demon] I learned the summoning of {spell}, aware that another answer in the dark was not necessarily a friend.
+- [demon] I mastered {spell}, one more lesson whose usefulness would depend on my judgement.
+- [steed] I learned {spell}, and the thought of the long roads ahead seemed less burdensome.
+- [steed] Learning {spell} gave me a new way to travel, one I was eager to put to use.
+- [steed] I had learned {spell}, with the promise of a different pace to the journey.
+- [steed] I gained the ability of {spell}, and found myself looking ahead to the next stretch of road.

@@ -1,15 +1,15 @@
 ---
 kind: c-deed-task
 ---
-- did as {giver} asked: {task}
-- set out to {task}, for {giver}
+- carried out {giver}'s request to {task}
+- set out to {task} and saw the work through
 - managed to {task}, as {giver} had asked
-- went to {task}, and came back to tell {ender}
-- did the work: {task}
-- set out to {task}
-- managed to {task}
-- had to {task}, and did
-- went off to {task}
-- took it on myself to {task}
+- went to {task} before returning to {ender}
+- completed the work needed to {task}
 - found a way to {task}
-- was sent to {task}, and did it
+- managed to {task}
+- had been asked to {task} and could finally call it done
+- went out to {task} and saw it through
+- undertook to {task}
+- found the means to {task}
+- was sent to {task} and finished the errand

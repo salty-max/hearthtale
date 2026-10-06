@@ -1,8 +1,8 @@
 ---
 kind: close-light
 ---
-- {foe} had me at {hp}% {at}. I've been dead before; I'd rather not repeat it.
-- {hp}% {in}. A few more pieces came loose.
-- I was down to {hp}% {at}. I stitched what I could.
-- {foe} nearly sent me back {at}: {hp}%.
-- Down to {hp}% {at}. Embarrassing, for someone already dead.
+- {foe} nearly finished me {at}, which made the distinction between dead and gone feel unpleasantly small. I discovered I cared about it.
+- [!foe] I came close to the end {at}, and found that my familiarity with death offered less comfort than I had expected.
+- The encounter with {foe} {at} left me badly damaged. I had more to lose than I liked to admit.
+- [!foe] I barely survived a rough encounter {at}. Whatever I had become, I was not ready to stop being it.
+- {foe} nearly sent me back to the grave {at}. I could make light of it later; in the moment, I wanted very much to stay.

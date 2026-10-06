@@ -7,8 +7,8 @@ kind: c-group
 - found company in {mates}
 - teamed up with {mates}
 - went on with {mates} at my side
-- [class:PRIEST] kept {mates} on their feet
-- [class:WARRIOR] took the blows so {mates} didn't have to
-- [class:PALADIN] watched over {mates}
+- [class:PRIEST] joined {mates}, glad to have company for the road
+- [class:WARRIOR] took up the journey with {mates}
+- [class:PALADIN] travelled alongside {mates}
 - shared the road with {mates}
 - had {mates} for company

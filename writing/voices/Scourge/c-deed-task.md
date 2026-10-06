@@ -1,9 +1,9 @@
 ---
 kind: c-deed-task
 ---
-- did as {giver} asked: {task}
-- was sent to {task}, and went, as the dead are good at going
-- saw to it: {task}
-- went to {task}, and returned to tell {ender}
-- managed to {task}, without complaint
-- took care of it: {task}
+- carried out {giver}'s request to {task}
+- set out to {task} and saw the work through
+- found a way to {task}, as {giver} had asked
+- went to {task} before returning to {ender}
+- managed to {task}
+- had been asked to {task} and could at last call it done

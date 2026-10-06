@@ -5,4 +5,4 @@ kind: c-place
 - found my way to {place}
 - reached {place}
 - wandered into {place}
-- walked into {place} beneath the trees
+- walked into {place}, looking about as I went

@@ -3,5 +3,5 @@ place: Thelsamar
 type: town
 faction: alliance
 ---
-- [!foe] Thelsamar sits by the loch, a handful of houses and the Stoutlager Inn, where the blood sausages are the pride of the town and the ale is the pride of everyone else.
-- [foe] Thelsamar, a lakeside village of the Alliance. I kept to the edges of it.
+- [!foe] I came into Thelsamar with the loch nearby and the Stoutlager Inn among the houses. After the open hills, I found myself thinking rather more about its ale and blood sausages than about how far I had travelled.
+- [foe] The houses of Thelsamar gathered beside the loch, with an inn that looked comfortable enough. I was on the Alliance's shore, though, and its windows offered more opportunity to be seen than to rest.

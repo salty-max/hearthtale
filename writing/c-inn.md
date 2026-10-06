@@ -1,11 +1,11 @@
 ---
 kind: c-inn
 ---
-- took a room at {inn}
 - bound my hearthstone at {inn}
+- chose {inn} as the place my stone would return me to
 - made {inn} my home for a while
 - set my hearthstone at {inn}
-- paid for a bed at {inn}
-- tied my stone to {inn}
-- found a bed at {inn}
-- settled in at {inn}
+- gave myself a place to return to at {inn}
+- bound my stone to {inn}
+- made {inn} the place I would come back to
+- chose to make my home at {inn} for now

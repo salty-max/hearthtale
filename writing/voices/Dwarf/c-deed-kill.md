@@ -2,7 +2,7 @@
 kind: c-deed-kill
 ---
 - [!one] put down {n} {foes} for {giver}
-- [!one] cleared {n} {foes} off {giver}'s doorstep
+- [!one] dealt with {n} {foes}, as {giver} had asked
 - [!one] killed {n} {foes}, as {giver} asked
 - [!one] did for {n} {foes} and told {ender}
 - [!one] thinned out the {foes}, {n} of them
@@ -11,7 +11,7 @@ kind: c-deed-kill
 - [!one] counted {n} {foes} dead
 - [!one] made {n} fewer {foes} in the world
 - [one] put an end to {foes} for {giver}
-- [one] dealt with {foes}, and {giver} slept easier
+- [one] dealt with {foes} and finished {giver}'s work
 - [one] tracked down {foes} and finished it
 - [one] did for {foes}
 - [one] settled {foes}, once and for all

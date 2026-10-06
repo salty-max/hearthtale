@@ -1,7 +1,7 @@
 # Hearthtale
 
 A World of Warcraft addon: the character's own journal, written as it plays,
-in the first person, one chapter per level. On Hardcore, a death closes the
+in the first person, one chapter from rest to rest. On Hardcore, a death closes the
 book with an epitaph, and the life joins the Hall of the Fallen.
 
 Games: Classic Era (Hardcore, Season of Discovery), TBC Anniversary, World of
@@ -12,9 +12,9 @@ Explorer's Field Journal (same release, CI and CurseForge tooling).
 
 | Question | Decision |
 |---|---|
-| Voice | Each race writes its own journal: its own clauses and sentences for the everyday moments, its own rhythm (how many clauses a sentence holds, its linking words), its own way of opening and closing a day. The shared writing stays as the fallback where a race has nothing of its own. (Example: six wolves for Sten Stoutarm, then the inn. Dwarf: "Six wolves for Sten Stoutarm, and not one of them worth the leather. Back to Anvilmar, an ale, bed." Orc: "Six wolves. Sten Stoutarm asked; I did it. Then the inn, and sleep.") |
+| Voice | Each race writes a fluent first-person recollection, with its own outlook, phrasing, and way of opening and closing a day. Connected thoughts and concrete observations carry the character; broken sentences and racial caricatures do not. Shared writing remains the fallback. |
 | Dialect | Flavour, no caricature: turns of phrase and outlook, a few words of their own used sparingly; no phonetic accents. |
-| Scenery | The first time in a life that the character enters a zone, a town or a dungeon: 2-3 hand-written sentences describing it, true to the original game. |
+| Scenery | The first time in a life that the character enters a zone, a town or a dungeon: 2-3 hand-written sentences experienced through the narrator: what I notice and how it meets me, with landmarks true to the original game. |
 | Viewpoint | Each place reads differently for who arrives: home (a dwarf in Dun Morogh), an ally's land, enemy ground (an orc in Elwynn), neutral; by night or day. |
 | Order | A sample first: the dwarf, orc, night elf and Forsaken voices, and the scenery of their starting lands, capitals, first towns and nearby dungeons; then the other races (and Forever's Skyborne) and the rest of the world. |
 
@@ -40,7 +40,7 @@ site).
 | Home | A site of its own at hearthtale.app, in this repo (a monorepo, as WoWLocker: addon/, apps/api, apps/web, packages/shared). Vercel Pro (team jellycat, project hearthtale, functions in fra1) + **Neon** through the Vercel integration (free plan, Frankfurt; chosen over Supabase by the user: with no poller, its scale-to-zero suits a site that only wakes for uploads and readers). |
 | Accounts | Battle.net sign-in: the characters the Battle.net API knows (Classic Era, Hardcore, SoD, TBC Anniversary) are found and attached on their own. A code typed in the game (`/ht link CODE`) attaches any other (Forever has no Battle.net namespace). |
 | Upload | **Ravenpost**, one companion for WoWLocker and Hearthtale: its own repo (salty-max/ravenpost), moved out of wow-locker and renamed; each site linked separately from its settings page (its own sign-in, its own upload key). |
-| Prose | The addon writes the book into its saved file at each logout (Save.lua), and the site shows that text as is: never two writers, never two versions of the writing. (Chosen over running Writer.lua on the site, which risked a different text: Lua 5.1 in the game, 5.4 in WebAssembly, and players on older versions.) A rest that closes a chapter is told at once (the logout settled in advance); a /reload is put right by the next logout. |
+| Prose | Links follow recorded changes: arrival, time passing, nightfall, the aftermath of a close call. No arbitrary "then" between errands, no "Place: text" headings, and no health percentages in the narrative. Emotion and interpretation belong to the protagonist; specific actions and outcomes come from the record. A quip (an [aside]) is at most once a paragraph, except for moments that matter. |
 | Sharing | Private by default; a share link per book, chapter or epitaph, with a preview card for Discord and Reddit. Fallen Hardcore books may be offered to a public Hall. |
 
 ### Steps
@@ -93,7 +93,7 @@ These replace the chapter per level below.
 | A chapter | From rest to rest: it closes when the character logs out resting, at an inn, in a city (the game's resting state) or by a campfire (its warmth on you: Cozy Fire on both games, Forever's camps), once it holds a few moments (3). Titled "Chapter N", with where it closed and the levels it covers. |
 | In the wild | A logout elsewhere is a night outdoors: a line, and the chapter goes on (the next session wakes in it). A /reload is no night (the logout is settled at the next login, which says whether it was one). |
 | The cap | After four hours of play in one chapter, any logout closes it (a night outdoors that ends it). |
-| Writing | In scenes: the moments in one place make one or two sentences of clauses ("I reached Kharanos, took a room at Thunderbrew Distillery and found the Crag Boar Ribs Ragnar Thunderbrew wanted, six in all."), the journey or the time between scenes as their link ("I went back to Anvilmar", "Later that day,"); a sentence of its own for what matters more (a close call, a rare, a new zone, a night, a death, a new power, a pet fallen). Only the scene being played grows; what is before it never changes. A new paragraph at a new zone or a morning; once closed, a recap (the quests, the most fought), the time and gold, and the rest that closed it. |
+| Writing | In scenes: an arrival frames one action ("When I reached Kharanos, I bound my hearthstone at Thunderbrew Distillery."). Related work shares a thought; unrelated work can start another. Close calls, rares, losses and powers have room of their own. Earlier sentences remain stable as the current scene grows. A new paragraph marks a change of scene, morning or danger. The close considers the work, time and rest; its kill recap omits creatures already told through quest objectives. |
 | Numbering | Chapters count from 1; a character met mid-life has its prologue first. |
 | Old data | The 0.1.0 test build's journals (chapters per level) start over. |
 | Quests | Told by what was done, from the objectives the quest log gives at acceptance (kill so many, bring so many, a task) and who it was returned to (a message carried); the title only when there is nothing else to tell. |
@@ -162,7 +162,7 @@ The heart of the addon, and most of the work.
   (the Light, the Earth Mother, the spirits, nothing), {home} (Ironforge,
   Orgrimmar...), {kin}; some sentences only for some races or classes.
 - **Prose, not a log**: moments ordered by when they happened, joined by
-  linking words (then, later, by evening, and when); related moments merged
+  linking words grounded in arrival, time or aftermath; related moments merged
   into one sentence (a quest and the kills it needed); a place just named
   becomes "there"; a sentence never used twice in a book; counts in words;
   every sentence capitalised.

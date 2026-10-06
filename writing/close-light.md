@@ -1,26 +1,26 @@
 ---
 kind: close-light
 ---
-- {foe} took me down to {hp}% {at}. Too close.
-- I let {foe} get the better of me {at}, down to {hp}%. Careless. I won't be again.
-- {at} I misjudged {foe} and paid for it: {hp}% of my life left.
-- I came out of a fight with {foe} {at} with {hp}% left and a lesson learned.
-- A bad moment {at}: {hp}% and falling. I got up again.
-- I ran from {foe} {at} with {hp}% of my blood still in me. No shame in it.
-- {at} things went wrong, and I was down to {hp}% before I knew it.
-- Too close {in}. {hp}%.
-- I bandaged myself {at} for a long time after that one: {hp}%.
-- [night] It was dark {at}, and {foe} saw me before I saw it. {hp}% left.
-- [night] A night fight {at}, {hp}% left at the end, and no sleep after.
-- [hc] {foe} had me at {hp}% {at}. On this realm that is one bad roll from the end.
-- [class:PRIEST] I healed myself up from {hp}% {at}, with {foe} still swinging.
-- [class:PALADIN] Down to {hp}% {at}. I called on {faith} and it answered.
-- [class:MAGE] {foe} got through my frost {at}. {hp}% left when I got away.
-- [class:ROGUE] {hp}% {in}. I slipped away and caught my breath in a ditch.
-- [class:HUNTER !low] {foe} got past my pet {at}. {hp}% left, and I owe the beast a meal.
-- [class:WARLOCK] {hp}% {in}. I drained what I needed out of {foe} and lived.
-- I took a beating {at}: {hp}% left.
-- Down to {hp}% {at}. I won't forget it.
-- {hp}% {in}. Too close for comfort.
-- I limped away {at} with {hp}% of my health.
-- {at} I learned a lesson the hard way: {hp}%.
+- {foe} nearly got the better of me {at}. The danger passed, but I carried the memory into what came next.
+- I came out of an encounter with {foe} {at} badly hurt, with a new respect for how little room a mistake could leave.
+- I survived a close encounter {at}, and was more grateful than proud of it.
+- {foe} brought me close to the end {at}. Afterwards, the next ordinary thing I had to do felt unexpectedly welcome.
+- I was badly shaken {at}, where a moment's danger had made the rest of the road uncertain.
+- The encounter with {foe} {at} left little room for confidence. I had survived, which gave me a chance to learn from it.
+- I came close to falling {at}, close enough that I had trouble thinking of anything else afterwards.
+- I misjudged the danger {at} and barely came through it. It was a lesson I wished I had learned more gently.
+- I was badly hurt {at}, and discovered how much of the world I still wanted to see.
+- [night] The danger {at} felt nearer in the dark, and I was slow to put it out of my mind after surviving it.
+- [night] I came close to falling {at} after dark. The night felt less familiar when I was ready to go on.
+- [hc] {foe} nearly ended my journey {at}. Out here, survival offered a lesson only once.
+- [class:PRIEST] I was badly hurt {at}, and the thought of how much healing I still had to learn stayed with me.
+- [class:PALADIN] {foe} almost ended me {at}. Afterwards I was grateful for the chance to live up to what I believed.
+- [class:MAGE] I survived the encounter with {foe} {at}, but no amount of studying had prepared me for the fear of it.
+- [class:ROGUE] I came close to falling {at}, where confidence had proved a poor substitute for caution.
+- [class:HUNTER !low] {foe} nearly had me {at}, and I thought of how readily I could leave my companion behind.
+- [class:WARLOCK] I was badly hurt {at}, reminded that power did not make my life any harder to spend.
+- I took a beating {at}, and found the relief of surviving it slower to arrive than I expected.
+- The danger {at} was over before I stopped feeling it. I had come too close to take that lightly.
+- I barely survived {at}, where the road ahead had briefly seemed beyond my reach.
+- {foe} came close to ending this account {at}. I was glad to have more to put on the page.
+- I came through a hard encounter {at}, carrying a lesson that would be difficult to forget.

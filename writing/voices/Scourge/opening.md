@@ -1,12 +1,12 @@
 ---
 kind: opening
 ---
-- [!night] Morning {at}. The sun was as rude as ever.
-- [!night] Daylight {at}. I set out regardless.
-- [night] Night {at}. My kind of hour.
-- [night] {where}, in the dark, where I'm most at home.
-- I left {where}. No one waved.
-- {where}, and the road out of it.
-- I set out from {where}, as one does.
-- I took up the road {at}. The dead keep no hours.
-- [aside] {where}. The living stared at me less than usual.
+- [!night] Daylight found me {at}, with work waiting whether I welcomed it or not.
+- [!night] I took up my account again {at}, as the living began another day around me.
+- [night] I started out {at} in the dark, glad to be less conspicuous for a while.
+- [night] I turned to a new page {at}, where the night suited me well enough.
+- I went on from {where}, with more of my own story ahead than behind.
+- I began this stretch {at}, checking that the things I meant to carry were still with me.
+- I took up the road {at}, where there was still a use for someone like me.
+- I returned to these pages {at} before going on with the business of remaining here.
+- I was ready to move on {at}, though readiness no longer felt quite the way I remembered it.

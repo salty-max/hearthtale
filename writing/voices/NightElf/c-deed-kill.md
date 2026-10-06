@@ -3,15 +3,15 @@ kind: c-deed-kill
 ---
 - [!one] hunted {n} {foes} for {giver}
 - [!one] culled {n} {foes}, as {giver} asked, and took no joy in it
-- [!one] cleared {n} {foes} from the paths
+- [!one] saw through the task of dealing with {n} {foes}
 - [!one] brought down {n} {foes} and told {ender} it was done
-- [!one] tracked {n} {foes} through the trees
-- [!one] restored a little balance: {n} {foes}
+- [!one] accounted for {n} {foes} before returning
+- [!one] brought down the {n} {foes} the task required
 - [!one] ended {n} {foes}
-- [!one] hunted {n} {foes} beneath the boughs
+- [!one] hunted {n} {foes} and completed the work
 - [!one] thinned the {foes}, {n} of them
 - [one] ended {foes}, as {giver} asked
 - [one] hunted down {foes}
-- [one] found {foes} and put an end to its wrongs
+- [one] found {foes} and put an end to the encounter
 - [one] brought {foes} down
-- [one] set things right with {foes}
+- [one] completed the task of dealing with {foes}

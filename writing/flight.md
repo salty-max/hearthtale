@@ -1,21 +1,21 @@
 ---
 kind: flight
 ---
-- [first aside] I flew for the first time, from {from} to {to}. My stomach stayed in {from}.
-- [first aside] My first flight: {from} to {to}. I held on with both hands and my eyes shut.
-- [first race:Tauren aside] I flew from {from} to {to}, my first time. The wind rider complained about my weight; I complained about the height.
-- [first race:Gnome aside] My first flight, {from} to {to}. I spent it working out how the thing stays up.
-- [!first] I flew from {from} to {to}.
-- A flight from {from} to {to}, and the world small beneath me.
-- I took the flight from {from} to {to} and watched the land go by.
-- [aside] {from} to {to}, by air. Faster than walking, if less dignified.
-- [aside] I flew to {to}. From up there, {from} looked like a toy.
-- [!first] I paid the flight master in {from} and was in {to} before I'd finished complaining.
-- [hc aside] I flew to {to}. Nothing can kill you in the sky, which makes it the best part of any day.
-- [class:DRUID aside] I flew from {from} to {to} on borrowed wings. One day, my own.
-- [!first] I hired a ride from {from} to {to}.
-- [!first] From {from} to {to}, on the wind.
-- [aside] Up from {from}, down at {to}. Easier on the boots.
-- [!first] I flew on to {to}.
-- [!first] A flight took me from {from} to {to}.
-- I caught a flight from {from} to {to}.
+- [first] I flew for the first time, from {from} to {to}, and watched the familiar business of the ground grow small beneath me.
+- [first] My first flight carried me from {from} to {to}, with far more of the world in view than I had ever seen from the road.
+- [first race:Tauren] I flew from {from} to {to} for the first time, surprised by how strange the wide earth looked from above.
+- [first race:Gnome] My first flight took me from {from} to {to}, and I spent as much time wondering about the ride as looking at the view.
+- [!first] I flew from {from} to {to}, glad to leave some of the distance to a different pair of wings.
+- I took a flight from {from} to {to}, with the world spread out beneath me for a while.
+- I flew from {from} to {to} and watched the land go by, looking for the places I already knew.
+- I travelled from {from} to {to} by air, finding the distance easier to admire when I did not have to walk it.
+- I flew to {to}, looking back toward {from} until the journey carried it out of sight.
+- [!first] I took a flight from {from} to {to}, giving my thoughts time to catch up with the road.
+- [hc] I flew to {to}, grateful for a stretch in which I could look at the world without being occupied by the next fight.
+- [class:DRUID] I flew from {from} to {to} on borrowed wings, wondering how it would feel to make the journey on my own.
+- [!first] I caught a ride from {from} to {to}, letting the long road pass beneath me.
+- [!first] I flew from {from} to {to}, watching the places below change as the distance opened between them.
+- I left {from} by air and came down in {to}, with the road briefly reduced to something I could trace with my eyes.
+- [!first] I flew on to {to}, ready to take up the journey from the ground again.
+- [!first] A flight carried me from {from} to {to}, with a welcome pause between the work at either end.
+- I caught a flight from {from} to {to}, glad of the chance to see beyond the next bend.

@@ -1,9 +1,9 @@
 ---
 kind: wake
 ---
-- [!rest] I woke {at} beneath the open sky, as my people have for ten thousand years.
-- [!rest] Dawn {at}. The dew had found me in the night.
-- [!rest] I rose {at} and shook off the cold.
-- [!rest] Morning {at}. I listened, and the land was quiet.
-- [rest] Rested, I set out again {at}.
-- [rest] I rose {at} and went on.
+- [!rest] I woke {at} beneath the open sky and took a moment to look about before moving.
+- [!rest] I rose {at} after the rough night's rest, with the path still waiting.
+- [!rest] I roused myself {at} and made ready to go on.
+- [!rest] After resting in the open {at}, I listened a while before taking up the road.
+- [rest] I set out again {at}, glad to have made a little room for rest.
+- [rest] I rose {at} and returned to the journey with my thoughts less crowded.
