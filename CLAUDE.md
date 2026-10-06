@@ -85,6 +85,12 @@ Plan and steps: PLAN.md, "The site".
   parchment, the addon's gold) in `src/index.css`.
 - `packages/shared` (`@hearthtale/shared`): the wire contract, the saved book's
   shape (mirrors Save.lua). Source of truth.
+- Hosting: Vercel (team jellycat, project `hearthtale`, linked: `.vercel/`),
+  Neon through the Vercel integration (DATABASE_URL pooled, DATABASE_URL_UNPOOLED
+  for migrations, applied on production deploys). Battle.net keys in
+  `apps/api/.env.local` (gitignored) and Vercel. `vercel link` and the Neon
+  integration append `.env*` to .gitignore and drop vendor skills
+  (`.agents/`, `.claude/skills`, `skills-lock.json`): keep them out.
 - Local: `bun run db` (Postgres on :5435), `bun run db:migrate`,
   `bun run db:seed` (the test characters), `bun run dev` (api :3002, web :5175).
   The library (`/library`) and the reader (`/book/:id/:part`: one part per

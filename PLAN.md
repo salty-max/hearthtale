@@ -26,7 +26,7 @@ site).
 
 | Question | Decision |
 |---|---|
-| Home | A site of its own at hearthtale.gg, in this repo (a monorepo, as WoWLocker: addon/, apps/api, apps/web, packages/shared). Vercel Pro (team jellycat) + a new Supabase project. |
+| Home | A site of its own at hearthtale.gg, in this repo (a monorepo, as WoWLocker: addon/, apps/api, apps/web, packages/shared). Vercel Pro (team jellycat, project hearthtale, functions in fra1) + **Neon** through the Vercel integration (free plan, Frankfurt; chosen over Supabase by the user: with no poller, its scale-to-zero suits a site that only wakes for uploads and readers). |
 | Accounts | Battle.net sign-in: the characters the Battle.net API knows (Classic Era, Hardcore, SoD, TBC Anniversary) are found and attached on their own. A code typed in the game (`/ht link CODE`) attaches any other (Forever has no Battle.net namespace). |
 | Upload | **Ravenpost**, one companion for WoWLocker and Hearthtale: its own repo (salty-max/ravenpost), moved out of wow-locker and renamed; each site linked separately from its settings page (its own sign-in, its own upload key). |
 | Prose | The addon writes the book into its saved file at each logout (Save.lua), and the site shows that text as is: never two writers, never two versions of the writing. (Chosen over running Writer.lua on the site, which risked a different text: Lua 5.1 in the game, 5.4 in WebAssembly, and players on older versions.) A rest that closes a chapter is told at once (the logout settled in advance); a /reload is put right by the next logout. |
@@ -60,9 +60,10 @@ site).
 
 - Register **hearthtale.gg** (free on 6 October 2026).
 - A **Battle.net API client** for Hearthtale (develop.battle.net), with the
-  site's sign-in redirect; its id and secret go in the site's settings.
-- The **Supabase** project (or I create it if the CLI is logged in), and the
-  Vercel project's secrets.
+  site's sign-in redirect: done 6 October 2026 (its keys in
+  apps/api/.env.local and Vercel's production settings); the redirect URL
+  is to add once the address is known.
+- The database: Neon through Vercel, done 6 October 2026.
 
 ## Chapters from rest to rest (6 October 2026, after testing 0.1.0)
 
