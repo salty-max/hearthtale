@@ -3,6 +3,16 @@
  * Source of truth for the shapes; the addon side is addon/Hearthtale/Save.lua.
  */
 
+/** Battle.net regions. */
+export type Region = "us" | "eu" | "kr" | "tw";
+export const REGIONS: Region[] = ["us", "eu", "kr", "tw"];
+
+/** The signed-in account. */
+export type Me = { battletag: string | null; regions: Region[]; test?: boolean };
+
+/** A code to type in the game: `/ht link CODE`. */
+export type LinkCode = { code: string; expiresAt: string };
+
 /** The game a book was written on (the addon's two packages). */
 export type Client = "classic" | "forever";
 

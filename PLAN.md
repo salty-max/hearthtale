@@ -43,9 +43,10 @@ site).
 3. **Records in**: an upload endpoint for a character's journal (HearthtaleChar)
    and the account's Hall (HearthtaleHall); characters, journals and accounts
    in Postgres.
-4. **Accounts**: Battle.net sign-in (WoWLocker's code), the characters found
-   through the API; link codes for the rest (the addon keeps the code in its
-   saved file until it is uploaded).
+4. **Accounts** (done, 6 October 2026): Battle.net sign-in (WoWLocker's code),
+   the characters found through the API; link codes for the rest (the addon
+   keeps the code in its saved file until it is uploaded); books private to
+   their owner. The code is claimed by the upload (step 3/6).
 5. **The reader**: your characters, each book (prologue, chapters, the Hall),
    the page in the in-game book's look; phone first. Started 6 October 2026:
    the library, a book's contents, its chapters and epitaph, on test characters

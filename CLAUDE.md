@@ -94,8 +94,16 @@ Plan and steps: PLAN.md, "The site".
 - Local: `bun run db` (Postgres on :5435), `bun run db:migrate`,
   `bun run db:seed` (the test characters), `bun run dev` (api :3002, web :5175).
   The library (`/library`) and the reader (`/book/:id/:part`: one part per
-  page, the contents in a drawer; `/book/:id` opens the part to read). `/api/characters` lists every character, unguarded: test
-  data only, refused on a production deployment until accounts land (step 4).
+  page, the contents in a drawer; `/book/:id` opens the part to read).
+- Accounts (`lib/accounts.ts`, `lib/login.ts`): "Sign in with Battle.net" in a
+  region (`/api/auth/login?region=eu`, back on `/api/auth/callback`: both
+  APP_ORIGIN's, registered on develop.battle.net); the session is a cookie
+  (`ht_session`, only its SHA-256 kept). Books are private: a character is its
+  owner's (`characters.owner_id`), proved by the login (its Battle.net character
+  ids: the GUID's hex part, `lib/guid.ts`) or by a link code (`lib/link.ts`:
+  `/ht link CODE` in the game, kept in the saved file, claimed by the upload).
+  Locally, "Use the test account" (`/api/auth/test`, never on Vercel) owns the
+  test characters.
 
 ## Commands
 

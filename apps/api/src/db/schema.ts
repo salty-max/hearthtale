@@ -1,6 +1,47 @@
-import type { Book, Client } from "@hearthtale/shared";
+import type { Book, Client, Region } from "@hearthtale/shared";
 import { sql } from "drizzle-orm";
-import { boolean, integer, jsonb, pgTable, serial, text, timestamp } from "drizzle-orm/pg-core";
+import { bigint, boolean, index, integer, jsonb, pgTable, primaryKey, serial, text, timestamp } from "drizzle-orm/pg-core";
+
+/**
+ * An account: a Battle.net login creates it (or finds it) and opens a session.
+ * Logging in also proves which characters are the account's (their Battle.net
+ * ids, per region): their books become its own.
+ */
+export const accounts = pgTable("accounts", {
+  id: serial("id").primaryKey(),
+  bnetId: bigint("bnet_id", { mode: "number" }).notNull().unique(),
+  battletag: text("battletag"),
+  /** Battle.net character ids the account owned at its last login, per region. */
+  owned: jsonb("owned").$type<{ region: Region; ids: number[] }[]>().notNull().default(sql`'[]'::jsonb`),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  lastSeenAt: timestamp("last_seen_at", { withTimezone: true }).notNull().defaultNow(),
+});
+
+/** A signed-in browser: the cookie holds a random token, only its SHA-256 is kept. */
+export const sessions = pgTable(
+  "sessions",
+  {
+    tokenHash: text("token_hash").primaryKey(),
+    accountId: integer("account_id")
+      .notNull()
+      .references(() => accounts.id, { onDelete: "cascade" }),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
+  },
+  (t) => [index("sessions_account").on(t.accountId), index("sessions_expiry").on(t.expiresAt)],
+);
+
+/** Short-lived state shared by every server instance (a login under way, a link code). */
+export const ephemeral = pgTable(
+  "ephemeral",
+  {
+    kind: text("kind").notNull(),
+    key: text("key").notNull(),
+    data: jsonb("data").notNull(),
+    expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
+  },
+  (t) => [primaryKey({ columns: [t.kind, t.key] }), index("ephemeral_expiry").on(t.expiresAt)],
+);
 
 /**
  * A character and its book, as the addon saved them at its last logout
@@ -22,6 +63,10 @@ export const characters = pgTable("characters", {
   hardcore: boolean("hardcore").notNull().default(false),
   /** A Hardcore death closed the book. */
   fallen: boolean("fallen").notNull().default(false),
+  /** The Battle.net character id (from the GUID: "Player-6113-03D658B8" is 64379064). */
+  bnetCharId: bigint("bnet_char_id", { mode: "number" }),
+  /** Whose book it is: proved by a Battle.net login, a link code or the account's companion. Private to them. */
+  ownerId: integer("owner_id").references(() => accounts.id, { onDelete: "set null" }),
   book: jsonb("book").$type<Book>().notNull(),
   updatedAt: timestamp("updated_at", { withTimezone: true })
     .notNull()
@@ -38,3 +83,4 @@ export const state = pgTable("state", {
 });
 
 export type CharacterRow = typeof characters.$inferSelect;
+export type AccountRow = typeof accounts.$inferSelect;

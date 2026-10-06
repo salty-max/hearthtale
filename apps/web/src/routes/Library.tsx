@@ -1,20 +1,33 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useSearch } from "@tanstack/react-router";
 import { BookOpen, Flame, Skull } from "lucide-react";
+import { LinkCharacter } from "@/components/LinkCharacter";
 import { LoadError, Loading } from "@/components/PageState";
-import { useCharacters } from "@/lib/api";
+import { SignIn } from "@/components/SignIn";
+import { useLibrary, useMe } from "@/lib/api";
 import { useT } from "@/lib/i18n";
 import { CLASS_COLOURS, raceClass, realmName } from "@/lib/wow";
 
+/** The signed-in account's characters, and a way to link more; signing in first. */
 export function Library() {
   const t = useT();
-  const { data, isPending, isError, refetch } = useCharacters();
+  const { signin } = useSearch({ from: "/library" });
+  const me = useMe();
+  const { data, isPending, isError, refetch } = useLibrary(!!me.data);
+  if (me.isPending) return <Loading />;
+  if (!me.data)
+    return (
+      <section className="mx-auto mt-4 max-w-3xl">
+        <h1 className="title text-3xl">{t.library.title}</h1>
+        <SignIn problem={signin} />
+      </section>
+    );
   return (
     <section className="mx-auto mt-4 max-w-3xl">
       <h1 className="title text-3xl">{t.library.title}</h1>
-      <p className="mt-2 text-lg text-parchment/75">{t.library.intro}</p>
+      {me.data.test && <p className="mt-2 text-lg text-parchment/75">{t.library.testIntro}</p>}
       {isPending && <Loading />}
       {isError && <LoadError retry={() => void refetch()} />}
-      {data && data.length === 0 && <p className="mt-8 text-lg italic text-parchment/70">{t.library.empty}</p>}
+      {data && data.length === 0 && <p className="mt-6 text-lg text-parchment/75">{t.library.empty}</p>}
       <ul className="mt-6 grid gap-4 sm:grid-cols-2">
         {data?.map((c) => (
           <li key={c.id}>
@@ -53,6 +66,7 @@ export function Library() {
           </li>
         ))}
       </ul>
+      <LinkCharacter />
     </section>
   );
 }

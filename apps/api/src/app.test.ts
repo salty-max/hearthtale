@@ -1,6 +1,7 @@
 import { describe, expect, test } from "bun:test";
 import { app } from "@/app";
 
+// Routes that answer before touching the database (no session cookie).
 describe("api", () => {
   test("health answers", async () => {
     const res = await app.request("/api/health");
@@ -10,13 +11,30 @@ describe("api", () => {
   test("an unknown api route is a 404", async () => {
     expect((await app.request("/api/nope")).status).toBe(404);
   });
-  test("the unguarded characters are never served in production", async () => {
-    process.env.VERCEL_ENV = "production";
+  test("nobody signed in: no account, no library, no book, no link code", async () => {
+    expect(await (await app.request("/api/me")).json()).toBeNull();
+    expect((await app.request("/api/library")).status).toBe(401);
+    expect((await app.request("/api/characters/1")).status).toBe(401);
+    expect((await app.request("/api/link-codes", { method: "POST" })).status).toBe(401);
+  });
+  test("signing in needs a region", async () => {
+    expect((await app.request("/api/auth/login?region=mars")).status).toBe(400);
+  });
+  test("a cancelled sign-in goes back to the library", async () => {
+    const res = await app.request("/api/auth/callback?error=access_denied");
+    expect(res.status).toBe(302);
+    expect(res.headers.get("location")).toBe("/library?signin=cancelled");
+  });
+  test("the test account is local only", async () => {
+    process.env.VERCEL = "1";
     try {
-      expect((await app.request("/api/characters")).status).toBe(404);
-      expect((await app.request("/api/characters/1")).status).toBe(404);
+      expect((await app.request("/api/auth/test", { method: "POST" })).status).toBe(404);
     } finally {
-      delete process.env.VERCEL_ENV;
+      delete process.env.VERCEL;
     }
+  });
+  test("a write from another site is refused", async () => {
+    const res = await app.request("/api/auth/logout", { method: "POST", headers: { origin: "https://evil.example" } });
+    expect(res.status).toBe(403);
   });
 });

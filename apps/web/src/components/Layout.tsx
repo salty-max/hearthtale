@@ -1,4 +1,5 @@
 import { Link, Outlet } from "@tanstack/react-router";
+import { AccountMenu } from "@/components/AccountMenu";
 import { UpdatePrompt } from "@/components/UpdatePrompt";
 import { useT } from "@/lib/i18n";
 import { setSettings, useSettings, type Lang } from "@/lib/settings";
@@ -21,10 +22,11 @@ export function Layout() {
           <img src="/favicon-32.png" alt="" className="size-7 rounded" />
           {t.nav.home}
         </Link>
-        <nav className="ml-auto">
+        <nav className="ml-auto flex items-center gap-4">
           <Link to="/library" className="text-gold-bright hover:underline" activeProps={{ className: "underline" }}>
             {t.nav.library}
           </Link>
+          <AccountMenu />
         </nav>
         <div role="group" aria-label={t.nav.language} className="flex gap-1 text-sm">
           {LANGS.map((l) => (

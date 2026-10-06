@@ -3,7 +3,8 @@ import { ChevronLeft, ChevronRight, List } from "lucide-react";
 import { useState } from "react";
 import { ContentsDrawer } from "@/components/ContentsDrawer";
 import { LoadError, Loading } from "@/components/PageState";
-import { NotFound, useCharacterBook } from "@/lib/api";
+import { NotFound, NotSignedIn, useCharacterBook } from "@/lib/api";
+import { SignIn } from "@/components/SignIn";
 import { paragraphs, parts } from "@/lib/book";
 import { useT } from "@/lib/i18n";
 import { CLASS_COLOURS } from "@/lib/wow";
@@ -16,9 +17,12 @@ export function Chapter() {
   const t = useT();
   const { id, part } = useParams({ from: "/book/$id/$part" });
   const [contents, setContents] = useState(false);
-  const { data, isPending, error, refetch } = useCharacterBook(Number(id));
-  if (isPending) return <Loading />;
-  if (error) return <LoadError message={error instanceof NotFound ? t.book.notFound : undefined} retry={error instanceof NotFound ? undefined : () => void refetch()} />;
+  const { data, error, refetch } = useCharacterBook(Number(id));
+  if (error) {
+    if (error instanceof NotSignedIn) return <SignIn />;
+    return <LoadError message={error instanceof NotFound ? t.book.notFound : undefined} retry={error instanceof NotFound ? undefined : () => void refetch()} />;
+  }
+  if (!data) return <Loading />;
   const { character, book } = data;
   const all = parts(book);
   const at = all.findIndex((p) => p.key === part);
