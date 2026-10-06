@@ -24,7 +24,7 @@ Five tasks, start to finish. Eleven Leper Gnomes and ten Frostmane Snowstriders,
 
 I woke in Kharanos to a clear sky. I took the road to the Grizzled Den, had to kill a Young Wendigo and searched until I had eight Wendigo Manes. I went on with Thorgrim at my side. I followed the road to Gol'Bolar Quarry, then hunted down ten Rockjaw Bonesnappers. I headed back to Kharanos, then spent good coin on Concussive Shot and Mend Pet.
 
-I walked on to Amberstill Ranch, then did the work: tame a Large Crag Boar. I tamed Bristle, a bear of the wilds. A fire in Amberstill Ranch. I sat with my back to it and my eyes on the dark. I finished off a Frostmane Seer. Bristle fell. Out here, it could as easily have been me.
+I walked on to Amberstill Ranch, then did the work: tame a Large Crag Boar. I tamed Bristle, a boar of the wilds. A fire in Amberstill Ranch. I sat with my back to it and my eyes on the dark. I finished off a Frostmane Seer. Bristle fell. Out here, it could as easily have been me.
 
 I came to Loch Modan knowing the graves there are no shallower than anywhere else. I wandered into North Gate Pass. I reached Thelsamar, then put down a Mountain Boar.
 

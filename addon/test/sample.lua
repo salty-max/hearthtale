@@ -186,7 +186,7 @@ task("Taming the Beast", "Grif Wildheart", { text = "Tame a Large Crag Boar", ty
   go("Amberstill Ranch")
   G.wait(10 * MINUTE)
 end)
-state.pet = { name = "Bristle", family = "Bear" }
+state.pet = { name = "Bristle", family = "Boar" }
 fire("UNIT_PET", "player")
 G.wait(10 * MINUTE)
 state.auras[7353] = true
