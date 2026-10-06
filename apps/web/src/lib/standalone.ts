@@ -1,9 +1,9 @@
 /**
  * The installed app on iOS (home screen, black-translucent status bar) can get
- * a window that stops short of the screen's bottom: a strip under the tab bar
- * that no fixed element reaches. Measure it (the screen's height against the
- * window's, installed app only) into --standalone-gap; the frame stretches
- * over it (components/Layout.tsx).
+ * a window that stops short of the screen's bottom. Nothing paints in that strip
+ * but the page's background (the tab bar's colour, index.css), so it reads as
+ * the bar: the bar then needs no room of its own for the home indicator. When
+ * the strip is there, <html> gets the class `standalone-gap` (Layout.tsx).
  */
 export function standaloneGap(screenH: number, screenW: number, innerH: number, innerW: number): number {
   const portrait = innerH >= innerW;
@@ -18,7 +18,7 @@ export function fitStandalone(): void {
   if (!standalone) return;
   const update = () => {
     const gap = standaloneGap(screen.height, screen.width, innerHeight, innerWidth);
-    document.documentElement.style.setProperty("--standalone-gap", `${gap}px`);
+    document.documentElement.classList.toggle("standalone-gap", gap > 0);
   };
   update();
   addEventListener("resize", update);

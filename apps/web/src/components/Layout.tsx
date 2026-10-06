@@ -16,8 +16,10 @@ export function Layout() {
     { to: "/settings", label: t.nav.settings, icon: SettingsIcon },
   ] as const;
   return (
-    // Pinned to the whole screen (behind the home indicator too, in the installed app).
-    <div className="fixed inset-x-0 top-0 bottom-[calc(-1*var(--standalone-gap,0px))] flex flex-col bg-night">
+    // Pinned to the window. In the installed app on iOS the window can stop short
+    // of the screen: nothing paints there but the page's background, the tab
+    // bar's colour (index.css), so the strip reads as the bar (lib/standalone.ts).
+    <div className="fixed inset-0 flex flex-col bg-night">
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-50 btn">
         {t.nav.skip}
       </a>
@@ -39,7 +41,7 @@ export function Layout() {
       </main>
       <nav
         aria-label={t.nav.menu}
-        className="grid shrink-0 grid-cols-3 border-t border-leather-edge/60 bg-leather pb-[max(0.25rem,calc(env(safe-area-inset-bottom)-0.9rem),calc(var(--standalone-gap,0px)*0.45))] md:hidden"
+        className="grid shrink-0 grid-cols-3 border-t border-leather-edge/60 bg-leather pb-[max(0.25rem,calc(env(safe-area-inset-bottom)-0.9rem))] [.standalone-gap_&]:pb-1 md:hidden"
       >
         {tabs.map((tab) => (
           <Link
