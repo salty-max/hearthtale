@@ -120,5 +120,114 @@
     "race": "Human",
     "realm": "Firemaw",
     "region": 3
+  },
+  {
+    "book": {
+      "at": 1790939810,
+      "chapters": [
+        {
+          "began": 1790900000,
+          "close": true,
+          "ended": 1790906150,
+          "from": 1,
+          "number": 1,
+          "place": "Razor Hill",
+          "text": "This is where it begins: the Valley of Trials. For the Horde. Durotar: red rock, red dust, a sun that hammers the ground. A hard land, named for Thrall's father. We made it ours anyway. I ended ten Mottled Boars, then killed Sarkoth for Hana'zua. Next, I cleared out twelve Vile Familiars and brought back ten Cactus Apples. Then I served Foreman Thazz'ril.\n\nRazor Hill: a barracks, a forge and orcs drilling in the dust, the sea close by and Kul Tiras ships watching from it. A soldiers' town. That done, I ran Gornek's message to Master Gadrin, then was taught Rend and Battle Shout. Next, I earned a Rough Leather Vest and put a Scorpid Worker in the dirt. I hauled back eight Scorpid Worker Tails. A Kul Tiras Marine nearly had me: 9%. Strong one. I killed ten Kul Tiras Sailors, one after another.\n\nEight tasks. All done. I killed twelve Vile Familiars and ten Kul Tiras Sailors. An hour and forty-five minutes. Good work. I rested in Razor Hill behind a door. Good.",
+          "to": 5
+        },
+        {
+          "began": 1790938550,
+          "from": 5,
+          "number": 2,
+          "open": true,
+          "place": "Razor Hill",
+          "text": "Razor Hill again. Onward. Orgrimmar: walls of red stone and iron spikes, the drums never quite silent, Grommash Hold where the Warchief sits. Built by Thrall, named for Orgrim Doomhammer. The city of the Horde, and of me. I found the Valley of Strength, then learned Charge and Thunder Clap. I brought Gor the Enforcer Thrall's word. A cold night. An orc can take it.",
+          "to": 6
+        }
+      ],
+      "client": "classic",
+      "level": 6,
+      "version": "0.2.0"
+    },
+    "class": "WARRIOR",
+    "fallen": false,
+    "guid": "Player-6113-0D21E5A0",
+    "hardcore": false,
+    "name": "Grashnak",
+    "race": "Orc",
+    "realm": "Firemaw",
+    "region": 3
+  },
+  {
+    "book": {
+      "at": 1790967770,
+      "chapters": [
+        {
+          "began": 1790900000,
+          "ended": 1790933810,
+          "from": 1,
+          "number": 1,
+          "place": "Dolanaar",
+          "text": "This is where it begins: Shadowglen, beneath the great tree. Teldrassil by night: the moonlight silver on every leaf, the owls calling, the whole tree breathing slowly in its sleep. I learned how boars hunt, and how they fall. Soon, I culled seven Young Nightsabers, as Conservator Ilthalaine asked, and took no joy in it. I bore a message from Conservator Ilthalaine to Mardant Strongoak, cleared eight Grells from the paths, then crossed paths with spiders, as my elders warned I would. Then I brought Gilshalan Windwalker ten Webwood Venom Sacs, then was taught Moonfire and Rejuvenation.\n\nDolanaar: a few elegant houses of wood and vine around a moonwell, sentinels at the road, and the smell of rain. A small place, and a peaceful one. I went from Dirania Silvershine to Iverron, bearing news. I slept beneath the stars, as my people have always done.\n\nDawn in Dolanaar. The dew had found me in the night. I gave a Nightsaber back to the earth, searched the wild for three Nightsaber Pelts and found an Emerald Dreamcatcher, where the forest had hidden it. I fitted myself with Sentinel Trousers.\n\nSeven errands, and the land a little better for them. Eleven Webwood Spiders, eight Grells. I counted each one. An hour and twenty-five minutes, and the world a little better known. I rested in Dolanaar, and set my pen down for the night.",
+          "to": 5
+        },
+        {
+          "began": 1790966210,
+          "from": 5,
+          "number": 2,
+          "open": true,
+          "place": "Dolanaar",
+          "text": "Morning in Dolanaar. I listened to the wind before I moved. Darnassus, high in the branches of Teldrassil: white stone, still water, and the Temple of the Moon where Tyrande keeps Elune's light. I walked slowly, as one should. I found my way to the Temple of the Moon, then did what Mathrengyl Bearwalker asked of me. Bear Form: a new shape, and a new way to see the world. I rested there in the roots of an old tree.",
+          "to": 6
+        }
+      ],
+      "client": "classic",
+      "level": 6,
+      "version": "0.2.0"
+    },
+    "class": "DRUID",
+    "fallen": false,
+    "guid": "Player-6113-0E33B7C1",
+    "hardcore": true,
+    "name": "Aelyndra",
+    "race": "NightElf",
+    "realm": "Soulseeker",
+    "region": 3
+  },
+  {
+    "book": {
+      "at": 1790940275,
+      "chapters": [
+        {
+          "began": 1790900000,
+          "ended": 1790906615,
+          "from": 1,
+          "number": 1,
+          "place": "Brill",
+          "text": "First page, in Deathknell. I remember little of before. This is after. Tirisfal at night, which is to say much like Tirisfal by day, only honest about it. The crypts, the crows, the ruins of Lordaeron on the horizon. I carried Undertaker Mordo's letter to Shadow Priest Sarvis, introduced a Wretched Zombie to the grave and sent eight Mindless Zombies where I have already been. I killed ten Young Night Web Spiders, tidily. After that, I came back with six Scavenged Goods, then found twelve Scarlet Armbands, as instructed. I paid for Shadow Word: Pain and Power Word: Shield.\n\nBrill: crooked houses, the Gallows' End Tavern, apothecaries brewing things best not smelled. A town of the dead, and as lively as we get. Then I gathered ten Tirisfal Pumpkins, which is less glamorous than it sounds. Next, I dealt with Maggot Eye, permanently. I took a Lightweight Chain Robe off a previous owner.\n\nSeven errands, all done, none thanked. I put down twelve Scarlet Converts and ten Young Night Web Spiders. The Dark Lady would approve. An hour and fifty minutes, and nothing broke that wasn't already broken. I rested in Brill, as much as the dead do, and closed the book for now.",
+          "to": 5
+        },
+        {
+          "began": 1790939015,
+          "from": 5,
+          "number": 2,
+          "open": true,
+          "place": "Brill",
+          "text": "Daylight in Brill. I set out regardless. The Undercity, beneath the ruins of Lordaeron: green slime in the canals, the Apothecarium bubbling, and the Dark Lady in her Royal Quarter. The living built it as a crypt. We made it a city. I reached the Trade Quarter, was taught Renew and Mind Blast, then scavenged five Vile Fin Scales. No inn there. I didn't miss it.",
+          "to": 6
+        }
+      ],
+      "client": "classic",
+      "level": 6,
+      "version": "0.2.0"
+    },
+    "class": "PRIEST",
+    "fallen": false,
+    "guid": "Player-6113-0F44C8D2",
+    "hardcore": false,
+    "name": "Mortis",
+    "race": "Scourge",
+    "realm": "Firemaw",
+    "region": 3
   }
 ]
