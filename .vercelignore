@@ -1,0 +1,6 @@
+# Never uploaded by a deploy from this computer (git deploys only see what is committed).
+.env
+.env*.local
+.pgdata/
+node_modules
+dist/
