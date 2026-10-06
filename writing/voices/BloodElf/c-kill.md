@@ -2,10 +2,15 @@
 kind: c-kill
 ---
 - disposed of {foe}
-- overcame {foe}
-- put an end to {foe}, without more ceremony than the matter deserved
-- brought down {foe}
-- concluded the encounter with {foe}
-- defeated {foe}, glad to put the interruption behind me
 - dealt with {foe}
-- prevailed against {foe}
+- overcame {foe}
+- put an end to {foe}
+- killed {foe}
+- defeated {foe}
+- finished off {foe}
+- brought down {foe}
+- [remark] disposed of {foe}, a distinctly unwelcome acquaintance
+- [remark] dealt with {foe}, glad to conclude that encounter
+- [remark] overcame {foe}, not a foe I wished to meet again
+- [teeth remark] brought down {foe}, glad to leave those teeth out of further discussion
+- [mechanical remark] overcame {foe}, rather more curious about its workmanship than its company

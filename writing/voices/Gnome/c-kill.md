@@ -1,11 +1,16 @@
 ---
 kind: c-kill
 ---
-- found a way past {foe}, decisively
 - overcame {foe}
-- dealt with {foe}, a practical problem with an unambiguous end
+- dealt with {foe}
 - brought down {foe}
-- came through the encounter with {foe}, rather pleased with the result
 - put an end to {foe}
-- got the better of {foe}, which settled the immediate difficulty
+- killed {foe}
+- got the better of {foe}
 - finished off {foe}
+- defeated {foe}
+- [remark] overcame {foe}, an encounter I had no wish to repeat for comparison
+- [remark] dealt with {foe}, glad the encounter had only one conclusion
+- [remark] brought down {foe}, not a useful subject for a second attempt
+- [teeth remark] brought down {foe}, with no wish to study those teeth any closer
+- [mechanical remark] overcame {foe}, rather more interested in its making than its company

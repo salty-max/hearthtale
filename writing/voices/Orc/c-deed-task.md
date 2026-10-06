@@ -1,11 +1,16 @@
 ---
 kind: c-deed-task
 ---
-- carried out the charge to {task}, as {giver} asked
-- set out to {task} and did not leave the work unfinished
-- found a way to {task}, where determination needed judgement
-- saw through the task of going to {task}
-- did what was required to {task}
-- managed to {task} and could answer for the result
-- was asked to {task} and gave the request its due
-- completed the work needed to {task}
+- carried out {giver}'s request to {task}
+- managed to {task}
+- found a way to {task}
+- was able to {task}
+- went to {task}
+- set out to {task} and did so
+- did what was needed to {task}
+- undertook to {task}
+- [remark] carried out {giver}'s request to {task}, with no wish to be sent on that errand twice
+- [remark] managed to {task}, glad to be finished with {giver}'s request
+- [remark] found a way to {task}, not a task I would choose for its pleasure
+- [explore remark] managed to {task}, with a better knowledge of the ground beneath the route
+- [escort remark] was able to {task}, glad to have finished watching over the escort

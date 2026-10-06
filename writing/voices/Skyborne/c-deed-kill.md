@@ -1,19 +1,26 @@
 ---
 kind: c-deed-kill
 ---
-- [client:forever !one] dealt with {n} {foes}
-- [client:forever one] dealt with {foes}
-- [client:forever !one] put an end to {n} {foes}, with the result clearer than what I had expected
-- [client:forever one] put an end to {foes}, with the result clearer than what I had expected
-- [client:forever !one] killed {n} {foes}
-- [client:forever one] killed {foes}
-- [client:forever !one] prevailed against {n} {foes}
-- [client:forever one] prevailed against {foes}
-- [client:forever !one] completed the task of dealing with {n} {foes}
-- [client:forever one] completed the task of dealing with {foes}
-- [client:forever !one] dealt with {n} {foes} for {giver}
-- [client:forever one] put an end to {foes}, as {giver} requested
 - [client:forever !one] overcame {n} {foes}
+- [client:forever !one] dealt with {n} {foes}
+- [client:forever !one] brought down {n} {foes}
+- [client:forever !one] put an end to {n} {foes}
+- [client:forever !one] killed {n} {foes}
+- [client:forever !one] defeated {n} {foes}
+- [client:forever !one] finished off {n} {foes}
+- [client:forever !one] faced and defeated {n} {foes}
+- [client:forever !one remark] overcame {n} {foes}, glad to be past that encounter
+- [client:forever !one remark] dealt with {n} {foes}, not foes I wished to meet twice
+- [client:forever !one remark] brought down {n} {foes}, with little wish to repeat that struggle
 - [client:forever one] overcame {foes}
-- [client:forever !one] brought down {n} {foes}, as {giver} asked
-- [client:forever one] brought down {foes}, as {giver} asked
+- [client:forever one] dealt with {foes}
+- [client:forever one] brought down {foes}
+- [client:forever one] put an end to {foes}
+- [client:forever one] killed {foes}
+- [client:forever one] defeated {foes}
+- [client:forever one] finished off {foes}
+- [client:forever one] faced and defeated {foes}
+- [client:forever one remark] overcame {foes}, glad to be past that encounter
+- [client:forever one remark] dealt with {foes}, not a foe I wished to meet twice
+- [client:forever one remark] brought down {foes}, with little wish to repeat that struggle
+- [client:forever !one teeth remark] brought down {n} {foes}, glad to be clear of those teeth

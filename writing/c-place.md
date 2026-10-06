@@ -1,11 +1,13 @@
 ---
 kind: c-place
 ---
-- came to {place} for the first time
+- came to {place}
 - found my way to {place}
 - reached {place}
 - walked into {place}
 - made it as far as {place}
-- wandered into {place}
-- saw {place} with my own eyes
-- followed the road to {place}
+- arrived in {place}
+- set foot in {place}
+- [remark] came to {place}, curious what lay beyond the name
+- [remark] found my way to {place}, glad to have arrived
+- [remark] reached {place}, with the name finally belonging to somewhere I had been

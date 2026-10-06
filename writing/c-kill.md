@@ -2,14 +2,15 @@
 kind: c-kill
 ---
 - killed {foe}
+- hunted down {foe}
 - put down {foe}
 - dealt with {foe}
-- fought off {foe}
 - brought down {foe}
-- cut down {foe}
+- overcame {foe}
 - finished off {foe}
-- had to kill {foe}
-- [class:MAGE] burned {foe} to ash
-- [class:HUNTER !low] set my pet on {foe}
-- [class:WARLOCK] let my demon have {foe}
-- [class:ROGUE] caught {foe} unawares
+- cut down {foe}
+- [remark] killed {foe}, glad that encounter was over
+- [remark] hunted down {foe}, not a foe I wished to meet again
+- [remark] put down {foe}, glad to be past that fight
+- [teeth remark] brought down {foe}, glad to be beyond those teeth
+- [mechanical remark] overcame {foe}, glad the moving metal had stopped

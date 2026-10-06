@@ -4,5 +4,5 @@ type: town
 home: Orc Troll
 faction: horde
 ---
-- [home] At Razor Hill I heard the forge and saw the drilling before I had finished taking in the town. Beyond the barracks lay the coast and the Kul Tiras ships, and I understood why no one here seemed quite at rest.
-- [!home] I reached Razor Hill among barracks and watchtowers, with the coast somewhere beyond them. There were weapons everywhere I looked, and I could not mistake this for a town that had forgotten its enemies.
+- [home] At Razor Hill, I heard the forge and saw the drilling. Beyond the barracks lay Kul Tiras ships; I understood the town's restless watch.
+- [!home] Razor Hill's barracks and watchtowers stood above the coast. Among so many weapons, I could not mistake this for a town at peace.

@@ -1,11 +1,13 @@
 ---
 kind: c-inn
 ---
-- bound my hearthstone at {inn}
-- chose {inn} as the place my stone would return me to
-- made {inn} my home for a while
-- set my hearthstone at {inn}
-- gave myself a place to return to at {inn}
-- bound my stone to {inn}
-- made {inn} the place I would come back to
-- chose to make my home at {inn} for now
+- bound my hearthstone {inn}
+- set my hearthstone {inn}
+- bound my stone {inn}
+- chose to bind my hearthstone {inn}
+- settled my hearthstone's destination {inn}
+- gave my hearthstone a place of return {inn}
+- set a destination for my stone {inn}
+- [remark] bound my hearthstone {inn}, glad not to face the whole walk back
+- [remark] set my hearthstone {inn}, thankful for a shorter way back
+- [remark] bound my stone {inn}, with the return journey off my mind

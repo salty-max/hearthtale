@@ -1,19 +1,26 @@
 ---
 kind: c-deed-kill
 ---
-- [!one] dealt with {n} {foes}
-- [one] dealt with {foes}
-- [!one] brought down {n} {foes}, work that did not need making grander
-- [one] brought down {foes}, work that did not need making grander
-- [!one] killed {n} {foes}
-- [one] killed {foes}
-- [!one] accounted for {n} {foes}
-- [one] accounted for {foes}
-- [!one] finished the business with {n} {foes}
-- [one] finished the business with {foes}
-- [!one] dealt with {n} {foes} for {giver}
-- [one] put an end to {foes}, as {giver} requested
 - [!one] saw off {n} {foes}
+- [!one] dealt with {n} {foes}
+- [!one] brought down {n} {foes}
+- [!one] killed {n} {foes}
+- [!one] put down {n} {foes}
+- [!one] overcame {n} {foes}
+- [!one] finished off {n} {foes}
+- [!one] did for {n} {foes}
+- [!one remark] saw off {n} {foes}, not foes I cared to give a second chance
+- [!one remark] dealt with {n} {foes}, glad to have that fight behind me
+- [!one remark] brought down {n} {foes}, poor company even before I counted them
 - [one] saw off {foes}
-- [!one] put down {n} {foes}, as {giver} asked
-- [one] put down {foes}, as {giver} asked
+- [one] dealt with {foes}
+- [one] brought down {foes}
+- [one] killed {foes}
+- [one] put down {foes}
+- [one] overcame {foes}
+- [one] finished off {foes}
+- [one] did for {foes}
+- [one remark] saw off {foes}, not a foe I cared to give a second chance
+- [one remark] dealt with {foes}, glad to have that fight behind me
+- [one remark] brought down {foes}, a poor choice of company for a lone dwarf
+- [!one teeth remark] brought down {n} {foes}, glad to have those teeth out of the reckoning

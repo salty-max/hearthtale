@@ -1,7 +1,7 @@
 ---
 kind: rest
 ---
-- I rested {at}, glad to let the road spend its trouble somewhere else for a while.
+- I rested {at}, leaving the road to spend its trouble elsewhere.
 - I settled {at}, with no wish to make a trial of sitting still.
 - I paused {at}. Strength kept longer when it was not spent merely to show it.
 - I rested {at}, leaving room for a little good humour after the work.

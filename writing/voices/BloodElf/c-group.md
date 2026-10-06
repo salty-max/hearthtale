@@ -1,9 +1,13 @@
 ---
 kind: c-group
 ---
-- travelled with {mates}, an arrangement with its own advantages
+- joined {mates}
+- travelled with {mates}
+- fell in with {mates}
+- went on beside {mates}
 - shared the road with {mates}
-- went on beside {mates}, willing to let cooperation prove its worth
 - had {mates} for company
-- found company in {mates}, and reason to prefer it to solitude
-- joined {mates}, glad of another perspective even where it differed from mine
+- teamed up with {mates}
+- [remark] joined {mates}, curious how well our company would suit the road
+- [remark] travelled with {mates}, glad to have another view of the country
+- [remark] fell in with {mates}, pleased not to make this passage alone

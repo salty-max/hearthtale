@@ -1,9 +1,14 @@
 ---
 kind: c-first
 ---
-- [client:forever] met {kind} for the first time and adjusted what I expected
-- [client:forever] came through my first encounter with {kind}
-- [client:forever] learned something of {kind} beyond the view from a distance
-- [client:forever] encountered {kind} at close quarters for the first time
-- [client:forever] found how {kind} answered a stranger in a fight
-- [client:forever] had my first practical meeting with {kind}
+- [client:forever] fought {kind} for the first time
+- [client:forever] met my first {kind}
+- [client:forever] came through my first fight with {kind}
+- [client:forever] encountered {kind} at close quarters
+- [client:forever] had my first encounter with {kind}
+- [client:forever] faced {kind} for the first time
+- [client:forever] had my first taste of fighting {kind}
+- [client:forever remark] fought {kind} for the first time, with more caution about a second meeting
+- [client:forever remark] met my first {kind}, a thorough introduction to that kind
+- [client:forever remark] came through my first fight with {kind}, glad the first encounter was behind me
+- [client:forever teeth remark] met my first {kind}, with a better idea of the reach of those teeth

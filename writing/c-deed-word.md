@@ -1,11 +1,14 @@
 ---
 kind: c-deed-word
 ---
-- carried {giver}'s word to {ender}
-- took {giver}'s message to {ender}
-- ran an errand that brought me from {giver} to {ender}
-- brought {ender} what {giver} had sent
-- delivered a message from {giver} to {ender}
-- went from {giver} to {ender} with news to carry
-- passed on what {giver} had sent me to tell {ender}
-- made sure {giver}'s word reached {ender}
+- settled {giver}'s business with {ender}
+- completed {giver}'s errand with {ender}
+- carried out {giver}'s request with {ender}
+- went from {giver} to {ender}
+- finished {giver}'s errand at {ender}'s end
+- concluded the errand between {giver} and {ender}
+- saw {giver}'s business through with {ender}
+- completed the errand from {giver} to {ender}
+- [remark] settled {giver}'s business with {ender}, glad not to be caught between the two again
+- [remark] completed {giver}'s errand with {ender}, with both names rather firmly in my head
+- [remark] carried out {giver}'s request with {ender}, glad to have reached the right person

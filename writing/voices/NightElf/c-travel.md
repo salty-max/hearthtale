@@ -1,8 +1,13 @@
 ---
 kind: c-travel
 ---
-- walked on to {place}
 - followed the path to {place}
 - made my way to {place}
-- went on to {place}
-- travelled to {place}
+- walked on to {place}
+- headed for {place}
+- took the road to {place}
+- pushed on to {place}
+- made for {place}
+- [remark] followed the path to {place}, curious what the name had left undescribed
+- [remark] made my way to {place}, with more attention for the destination than the distance
+- [remark] walked on to {place}, glad to put the last stretch behind me

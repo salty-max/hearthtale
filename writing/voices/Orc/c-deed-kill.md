@@ -1,19 +1,26 @@
 ---
 kind: c-deed-kill
 ---
-- [!one] killed {n} {foes}
-- [one] killed {foes}
-- [!one] dealt with {n} {foes}, with no need for a boast to make the deed stand
-- [one] dealt with {foes}, with no need for a boast to make the deed stand
-- [!one] put an end to {n} {foes}
-- [one] put an end to {foes}
-- [!one] stood against and defeated {n} {foes}
-- [one] stood against and defeated {foes}
-- [!one] completed the task of dealing with {n} {foes}
-- [one] completed the task of dealing with {foes}
-- [!one] dealt with {n} {foes} for {giver}
-- [one] put an end to {foes}, as {giver} requested
 - [!one] overcame {n} {foes}
+- [!one] killed {n} {foes}
+- [!one] brought down {n} {foes}
+- [!one] put an end to {n} {foes}
+- [!one] faced and defeated {n} {foes}
+- [!one] dealt with {n} {foes}
+- [!one] finished off {n} {foes}
+- [!one] cut down {n} {foes}
+- [!one remark] overcame {n} {foes}, glad to be done with those opponents
+- [!one remark] killed {n} {foes}, foes I would not underestimate twice
+- [!one remark] brought down {n} {foes}, with no wish to fight that battle again
 - [one] overcame {foes}
-- [!one] brought down {n} {foes}, as {giver} asked
-- [one] brought down {foes}, as {giver} asked
+- [one] killed {foes}
+- [one] brought down {foes}
+- [one] put an end to {foes}
+- [one] faced and defeated {foes}
+- [one] dealt with {foes}
+- [one] finished off {foes}
+- [one] cut down {foes}
+- [one remark] overcame {foes}, glad to be done with that opponent
+- [one remark] killed {foes}, a foe I would not underestimate twice
+- [one remark] brought down {foes}, with no wish to fight that battle again
+- [!one teeth remark] brought down {n} {foes}, glad to be clear of those teeth

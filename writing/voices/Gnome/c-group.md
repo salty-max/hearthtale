@@ -1,9 +1,13 @@
 ---
 kind: c-group
 ---
-- travelled with {mates}, glad of another way of looking at things
-- shared the road with {mates}
-- had {mates} for company, an improvement on discussing everything with myself
+- joined {mates}
+- travelled with {mates}
+- fell in with {mates}
 - went on beside {mates}
-- found company in {mates}, and a perspective I could not supply alone
-- joined {mates}, with more eyes on the problem of the road
+- shared the road with {mates}
+- had {mates} for company
+- teamed up with {mates}
+- [remark] joined {mates}, an improvement on discussing everything with myself
+- [remark] travelled with {mates}, glad to have a second view of the country
+- [remark] fell in with {mates}, curious what my companion might make of the route

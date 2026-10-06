@@ -1,19 +1,26 @@
 ---
 kind: c-deed-kill
 ---
-- [!one] brought down {n} {foes}
-- [one] brought down {foes}
-- [!one] killed {n} {foes}, glad to leave that trouble behind
-- [one] killed {foes}, glad to leave that trouble behind
-- [!one] overcame {n} {foes}
-- [one] overcame {foes}
-- [!one] hunted down {n} {foes}
-- [one] hunted down {foes}
-- [!one] finished the work of dealing with {n} {foes}
-- [one] finished the work of dealing with {foes}
-- [!one] dealt with {n} {foes} for {giver}
-- [one] put an end to {foes}, as {giver} requested
 - [!one] dealt with {n} {foes}
+- [!one] put down {n} {foes}
+- [!one] brought down {n} {foes}
+- [!one] killed {n} {foes}
+- [!one] overcame {n} {foes}
+- [!one] hunted down {n} {foes}
+- [!one] finished off {n} {foes}
+- [!one] cut down {n} {foes}
+- [!one remark] dealt with {n} {foes}, glad not to meet that foe on the way home
+- [!one remark] put down {n} {foes}, not the sort of acquaintance I had hoped to make
+- [!one remark] brought down {n} {foes}, glad the fight had ended in my favour
 - [one] dealt with {foes}
-- [!one] put down {n} {foes}, as {giver} asked
-- [one] put down {foes}, as {giver} asked
+- [one] put down {foes}
+- [one] brought down {foes}
+- [one] killed {foes}
+- [one] overcame {foes}
+- [one] hunted down {foes}
+- [one] finished off {foes}
+- [one] cut down {foes}
+- [one remark] dealt with {foes}, glad not to meet that foe on the way home
+- [one remark] put down {foes}, not the sort of acquaintance I had hoped to make
+- [one remark] brought down {foes}, glad the fight had ended in my favour
+- [!one teeth remark] brought down {n} {foes}, glad those teeth would not find someone else on this road

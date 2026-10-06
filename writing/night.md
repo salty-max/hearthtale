@@ -1,20 +1,20 @@
 ---
 kind: night
 ---
-- [!last] I spent the night in the open {at}, with more time to hear the world around me than I had given it during the day.
-- [!last] I settled beneath the open sky {at}, glad to stop even without an inn to mark the end of the road.
-- [!last] I rested outside {at}, letting the night's quiet gather around the work still on my mind.
-- [!last] I passed the night {at}, with the ground beneath me and the journey put aside for a while.
-- [!last] I spent the night outdoors {at}, where the pause seemed smaller than it would have beneath a roof.
-- [!last] I stopped {at} for the night, leaving the next part of the road to wait in the dark.
-- [!last hc] I passed the night in the open {at}, conscious that being still did not make me any less part of the world around me.
-- [last] I ended this stretch beneath the open sky {at}, with enough of the road behind me to give the chapter its close.
-- [last] I settled outside {at}, putting down the last words of this part of my journey before turning to rest.
-- [last] I spent another night outdoors {at}, and brought this account to an end where the road had brought me.
-- [last] I closed this chapter {at}, with the open sky above me and more of the journey waiting beyond the night.
-- [!last] I paused for the night {at}, where quiet gave the day's events room to return to me.
-- [!last] I spent the night {at}, content to let the world carry on without keeping pace with it.
-- [last] I rested outdoors {at} and set the book aside, leaving the road ahead for another chapter.
-- [last] I set down the last of this chapter {at}, where the open sky would be my shelter for the night.
-- [last] I rested outside {at}, with the road behind me for now and its account finished beside me.
-- [last] I brought this chapter to a close {at}, glad that the night's quiet asked less of me than the day.
+- [!last] I spent the night in the open {at}, listening longer than I had by day.
+- [!last] I settled beneath the sky {at}, glad to stop even without an inn.
+- [!last] I rested outside {at}, with the night quiet around my thoughts.
+- [!last] I passed the night {at}, with the ground beneath me and the road put aside.
+- [!last] I spent the night outdoors {at}, missing the shelter of a roof.
+- [!last] I stopped {at} for the night, leaving the road to the dark.
+- [!last hc] I passed the night outside {at}, conscious of every sound beyond my resting place.
+- [last] I ended this stretch under the sky {at}, glad of a pause.
+- [last] I settled outside {at}, putting down my last words before resting.
+- [last] I spent another night outdoors {at}, ending the account where the road had left me.
+- [last] I closed this chapter {at}, with more road waiting beyond the night.
+- [!last] I paused for the night {at}, with time to think back over the day.
+- [!last] I spent the night {at}, content to let the world go on without me.
+- [last] I rested outdoors {at} and put the book aside for another day.
+- [last] I set down my last words {at}, with the open sky for shelter.
+- [last] I rested outside {at}, with the road and its account behind me.
+- [last] I closed the chapter {at}, glad that the quiet asked less than the day.

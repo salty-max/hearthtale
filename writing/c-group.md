@@ -1,14 +1,13 @@
 ---
 kind: c-group
 ---
+- joined {mates}
+- travelled with {mates}
 - fell in with {mates}
-- travelled with {mates} for a while
-- joined up with {mates}
-- found company in {mates}
-- teamed up with {mates}
-- went on with {mates} at my side
-- [class:PRIEST] joined {mates}, glad to have company for the road
-- [class:WARRIOR] took up the journey with {mates}
-- [class:PALADIN] travelled alongside {mates}
+- went on beside {mates}
 - shared the road with {mates}
 - had {mates} for company
+- teamed up with {mates}
+- [remark] joined {mates}, glad of another pair of eyes
+- [remark] travelled with {mates}, pleased to have company for the road
+- [remark] fell in with {mates}, glad to have someone besides myself to talk to

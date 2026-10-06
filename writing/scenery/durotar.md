@@ -4,7 +4,7 @@ type: zone
 home: Orc Troll
 faction: horde
 ---
-- [home !night] Red dust rose around my feet in Durotar, and the heat seemed to come from the ground as well as the sky. This was the land we had claimed for ourselves; I wanted to learn how to belong to it.
-- [home night] The red earth of Durotar had faded to grey by the time the heat began to leave the stones. Somewhere beyond the dark hills, Orgrimmar's drums carried on, a sound I could follow without seeing its walls.
-- [ally] I came into Durotar beneath a sun that left little room for comfort. Red hills folded around the road, and the great gate of Orgrimmar stood ahead in the canyon; I began to understand the people who had chosen to stay.
-- [foe] The hot wind drove Durotar's red dust against me as I looked toward the orcs' country. I had crossed into the heart of the Horde, and the ridges no longer looked empty.
+- [home !night] Durotar's heat rose through the red dust at my feet. This was the land we had claimed; I wanted to learn how to belong to it.
+- [home night] Durotar's red earth faded to grey as heat left the stones. Orgrimmar's drums carried beyond the hills, a sound I could follow in the dark.
+- [ally] In Durotar, the red hills closed around the road to Orgrimmar. Under that sun, I began to understand the people who had chosen to stay.
+- [foe] Durotar's hot wind drove red dust against me. In the Horde's own country, I no longer trusted the ridges to be empty.

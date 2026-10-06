@@ -1,19 +1,26 @@
 ---
 kind: c-deed-kill
 ---
-- [!one] brought down {n} {foes}
-- [one] brought down {foes}
-- [!one] put an end to {n} {foes}, relieved to have brought the difficulty to an end
-- [one] put an end to {foes}, relieved to have brought the difficulty to an end
-- [!one] killed {n} {foes}
-- [one] killed {foes}
-- [!one] hunted down {n} {foes}
-- [one] hunted down {foes}
-- [!one] completed the work of dealing with {n} {foes}
-- [one] completed the work of dealing with {foes}
-- [!one] dealt with {n} {foes} for {giver}
-- [one] put an end to {foes}, as {giver} requested
 - [!one] overcame {n} {foes}
+- [!one] dealt with {n} {foes}
+- [!one] brought down {n} {foes}
+- [!one] put an end to {n} {foes}
+- [!one] killed {n} {foes}
+- [!one] defeated {n} {foes}
+- [!one] finished off {n} {foes}
+- [!one] faced and defeated {n} {foes}
+- [!one remark] overcame {n} {foes}, thankful that encounter was over
+- [!one remark] dealt with {n} {foes}, with little wish to meet that foe again
+- [!one remark] brought down {n} {foes}, glad to have come through that struggle
 - [one] overcame {foes}
-- [!one] dealt with {n} {foes}, as {giver} asked
-- [one] dealt with {foes}, as {giver} asked
+- [one] dealt with {foes}
+- [one] brought down {foes}
+- [one] put an end to {foes}
+- [one] killed {foes}
+- [one] defeated {foes}
+- [one] finished off {foes}
+- [one] faced and defeated {foes}
+- [one remark] overcame {foes}, thankful that encounter was over
+- [one remark] dealt with {foes}, with little wish to meet that foe again
+- [one remark] brought down {foes}, glad to have come through that struggle
+- [!one teeth remark] brought down {n} {foes}, thankful to be clear of those teeth

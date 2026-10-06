@@ -44,6 +44,15 @@ and cadence; do not repeat a catchphrase, deity, historical tragedy or racial
 metaphor at every event. No accents spelled out, no automatic weapon, no
 assumed profession and no invented reaction from an NPC.
 
+Routine reactions use `[remark]`, with plain alternatives for the same facts.
+The writer rations these to roughly a third of routine clauses, separates
+remarked sentences and keeps their choices stable as events arrive. React
+to the actual teeth, cloth, lesson, equipment or company in the record;
+do not attach a reusable moral about freedom, craftsmanship or patience to
+every errand. Cultural vocabulary can colour a reaction without requiring
+a catchphrase. All races retain full sentences and the same allowance for
+three related clauses.
+
 Read `docs/race-comparison.md` with the names hidden: the same recorded
 events should produce recognisably different people while retaining their
 facts. Read the full journeys in `docs/sample.md` for the subtler effect of

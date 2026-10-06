@@ -1,11 +1,16 @@
 ---
 kind: c-deed-task
 ---
-- carried out the request to {task}, since it was at least my choice to accept
-- managed to {task}, making myself useful without becoming anyone's property
-- saw through {giver}'s business of asking me to {task}
-- was asked to {task} and found the request easier to finish than discuss
-- completed the work needed to {task}
-- found a way to {task}, which settled that particular demand
-- set out to {task} and could finally put the matter behind me
-- did what was required to {task}, with no need to dress it up
+- carried out {giver}'s request to {task}
+- managed to {task}
+- found a way to {task}
+- was able to {task}
+- went to {task}
+- set out to {task} and did so
+- did what was needed to {task}
+- undertook to {task}
+- [remark] carried out {giver}'s request to {task}, not an errand I wished to make a habit of
+- [remark] managed to {task}, glad to have {giver}'s instructions behind me
+- [remark] found a way to {task}, a task I was content to strike from the list
+- [explore remark] managed to {task}, with fewer parts of the route left to speculation
+- [escort remark] was able to {task}, glad to stop accounting for another traveller

@@ -1,19 +1,26 @@
 ---
 kind: c-deed-kill
 ---
-- [!one] ended {n} {foes}
-- [one] ended {foes}
-- [!one] hunted {n} {foes}, without mistaking the number for all the encounter meant
-- [one] hunted {foes}, without mistaking the number for all the encounter meant
-- [!one] put an end to {n} {foes}
-- [one] put an end to {foes}
-- [!one] overcame {n} {foes}
-- [one] overcame {foes}
-- [!one] completed the task of dealing with {n} {foes}
-- [one] completed the task of dealing with {foes}
-- [!one] dealt with {n} {foes} for {giver}
-- [one] put an end to {foes}, as {giver} requested
 - [!one] brought down {n} {foes}
+- [!one] hunted {n} {foes}
+- [!one] put an end to {n} {foes}
+- [!one] overcame {n} {foes}
+- [!one] faced and defeated {n} {foes}
+- [!one] killed {n} {foes}
+- [!one] finished off {n} {foes}
+- [!one] dealt with {n} {foes}
+- [!one remark] brought down {n} {foes}, with little wish for a second encounter
+- [!one remark] hunted {n} {foes}, glad that particular struggle was over
+- [!one remark] put an end to {n} {foes}, foes I would remember on this path
 - [one] brought down {foes}
-- [!one] dealt with {n} {foes}, as {giver} asked
-- [one] dealt with {foes}, as {giver} asked
+- [one] hunted {foes}
+- [one] put an end to {foes}
+- [one] overcame {foes}
+- [one] faced and defeated {foes}
+- [one] killed {foes}
+- [one] finished off {foes}
+- [one] dealt with {foes}
+- [one remark] brought down {foes}, with little wish for a second encounter
+- [one remark] hunted {foes}, glad that particular struggle was over
+- [one remark] put an end to {foes}, a foe I would remember on this path
+- [!one teeth remark] brought down {n} {foes}, glad to leave those teeth behind me

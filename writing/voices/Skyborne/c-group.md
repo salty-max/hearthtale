@@ -1,9 +1,13 @@
 ---
 kind: c-group
 ---
+- [client:forever] joined {mates}
+- [client:forever] travelled with {mates}
+- [client:forever] fell in with {mates}
+- [client:forever] went on beside {mates}
 - [client:forever] shared the road with {mates}
-- [client:forever] went on beside {mates}, glad of a different view
 - [client:forever] had {mates} for company
-- [client:forever] travelled with {mates}, where another perspective might reveal what mine missed
-- [client:forever] found company in {mates}
-- [client:forever] joined {mates}, willing to let the road become a shared undertaking
+- [client:forever] teamed up with {mates}
+- [client:forever remark] joined {mates}, curious what my companion would notice here
+- [client:forever remark] travelled with {mates}, glad of another view of the country
+- [client:forever remark] fell in with {mates}, pleased not to make this passage alone

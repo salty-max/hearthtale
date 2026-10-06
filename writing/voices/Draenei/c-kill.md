@@ -2,10 +2,15 @@
 kind: c-kill
 ---
 - overcame {foe}
-- put an end to the encounter with {foe}
-- prevailed against {foe}
-- brought down {foe}, glad that the danger had passed
-- came through the fight with {foe}
 - dealt with {foe}
-- faced {foe} and survived the encounter
-- put an end to {foe}, without wishing to prolong the struggle
+- brought down {foe}
+- put an end to {foe}
+- killed {foe}
+- defeated {foe}
+- finished off {foe}
+- faced and defeated {foe}
+- [remark] overcame {foe}, thankful that encounter was over
+- [remark] dealt with {foe}, with little wish to meet that foe again
+- [remark] brought down {foe}, glad to have come through that struggle
+- [teeth remark] brought down {foe}, thankful to be clear of those teeth
+- [mechanical remark] overcame {foe}, glad to be done with that restless machinery

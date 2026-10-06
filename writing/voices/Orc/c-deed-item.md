@@ -1,19 +1,27 @@
 ---
 kind: c-deed-item
 ---
-- [!one] secured {n} {thing}
-- [one] secured {thing}
-- [!one] collected {n} {thing}, as {giver} asked
-- [one] collected {thing}, as {giver} asked
-- [!one] recovered {n} {thing}
-- [one] recovered {thing}
-- [!one] found {n} {thing}, giving the request an answer in deeds
-- [one] found {thing}, giving the request an answer in deeds
-- [!one] brought back {n} {thing}
-- [one] brought back {thing}
-- [!one] returned with {n} {thing}
-- [one] returned with {thing}
 - [!one] gathered {n} {thing}
+- [!one] collected {n} {thing}
+- [!one] found {n} {thing}
+- [!one] brought back {n} {thing}
+- [!one] recovered {n} {thing}
+- [!one] came back with {n} {thing}
+- [!one] tracked down {n} {thing}
+- [!one] fetched {n} {thing}
+- [!one remark] gathered {n} {thing}, glad to be rid of the collecting
+- [!one remark] collected {n} {thing}, enough of that search for one errand
+- [!one remark] found {n} {thing}, with little wish to gather that lot again
 - [one] gathered {thing}
-- [!one] brought {giver} {n} {thing}
-- [one] brought {thing} to {ender}
+- [one] collected {thing}
+- [one] found {thing}
+- [one] brought back {thing}
+- [one] recovered {thing}
+- [one] came back with {thing}
+- [one] tracked down {thing}
+- [one] fetched {thing}
+- [one remark] gathered {thing}, glad to be rid of the collecting
+- [one remark] collected {thing}, enough of that search for one errand
+- [one remark] found {thing}, with little wish to gather that lot again
+- [!one cloth remark] collected {n} {thing}, quite enough cloth for someone else to deal with
+- [!one meat remark] gathered {n} {thing}, with more appetite for a meal than more gathering

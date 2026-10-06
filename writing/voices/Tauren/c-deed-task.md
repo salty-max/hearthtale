@@ -1,11 +1,16 @@
 ---
 kind: c-deed-task
 ---
-- gave my attention to {giver}'s request to {task}
-- managed to {task}, glad to answer a need
-- saw through the work required to {task}
-- found a way to {task}, with patience worth the time it took
-- was asked to {task} and brought the work to its end
+- carried out {giver}'s request to {task}
+- managed to {task}
+- found a way to {task}
+- was able to {task}
+- went to {task}
+- set out to {task} and did so
 - did what was needed to {task}
-- completed the task of going to {task}
-- set out to {task} and was glad to leave the matter settled
+- undertook to {task}
+- [remark] carried out {giver}'s request to {task}, glad to be done with that errand
+- [remark] managed to {task}, thankful to have finished {giver}'s request
+- [remark] found a way to {task}, with little desire to repeat the task
+- [explore remark] managed to {task}, with more of the country known than its name
+- [escort remark] was able to {task}, grateful to have the escort behind me

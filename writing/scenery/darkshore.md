@@ -3,5 +3,5 @@ place: Darkshore
 type: zone
 faction: alliance
 ---
-- [!night] I followed Darkshore's grey coast with the mist coming off the sea and old elven stones half buried in the sand. Even the trees seemed worn by the weather, and I found myself looking for lights along the shore.
-- [night] I could scarcely tell the sea from the sky when I came into Darkshore after dark. The moon was a pale blur behind the mist, and I listened to the surf to keep my bearings.
+- [!night] Mist rolled over Darkshore's grey coast and old stones lay half buried in sand. Even the trees looked worn, and I searched the shore for lights.
+- [night] In Darkshore's night mist, I could scarcely tell sea from sky. I listened to the surf to keep my bearings beneath the blurred moon.

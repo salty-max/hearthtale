@@ -2,10 +2,15 @@
 kind: c-kill
 ---
 - got the better of {foe}
-- outlasted {foe} in the fight
-- put an end to {foe}
-- dealt with {foe}, leaving that trouble behind me
+- dealt with {foe}
 - brought down {foe}
-- came through the fight with {foe}, with something left to smile about
+- put down {foe}
+- killed {foe}
+- hunted down {foe}
 - finished off {foe}
-- met {foe} and learned how to end the meeting
+- saw off {foe}
+- [remark] got the better of {foe}, not an acquaintance I wanted to renew
+- [remark] dealt with {foe}, glad to be done with that trouble
+- [remark] brought down {foe}, a foe I would be happy to leave in this tale
+- [teeth remark] brought down {foe}, glad to leave those teeth to the tale
+- [mechanical remark] overcame {foe}, glad that metal trouble had stopped moving

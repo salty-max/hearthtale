@@ -1,9 +1,13 @@
 ---
 kind: c-place
 ---
-- came to {place}
+- tramped into {place}
 - found my way to {place}
 - reached {place}
-- made it to {place}
-- tramped into {place}
+- walked into {place}
+- made it as far as {place}
+- arrived in {place}
 - set foot in {place}
+- [remark] tramped into {place}, keen to find out what the place was made of
+- [remark] found my way to {place}, keen to look beyond the path through it
+- [remark] reached {place}, with more to look into than the road through it

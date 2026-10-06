@@ -1,19 +1,27 @@
 ---
 kind: c-deed-item
 ---
+- [client:forever !one] gathered {n} {thing}
 - [client:forever !one] collected {n} {thing}
-- [client:forever one] collected {thing}
-- [client:forever !one] gathered {n} {thing}, as {giver} asked
-- [client:forever one] gathered {thing}, as {giver} asked
-- [client:forever !one] recovered {n} {thing}
-- [client:forever one] recovered {thing}
-- [client:forever !one] found {n} {thing}, with something firmer than expectation to bring back
-- [client:forever one] found {thing}, with something firmer than expectation to bring back
+- [client:forever !one] found {n} {thing}
 - [client:forever !one] brought back {n} {thing}
+- [client:forever !one] recovered {n} {thing}
+- [client:forever !one] came back with {n} {thing}
+- [client:forever !one] tracked down {n} {thing}
+- [client:forever !one] fetched {n} {thing}
+- [client:forever !one remark] gathered {n} {thing}, glad to hand over the collection
+- [client:forever !one remark] collected {n} {thing}, more than I wished to gather twice
+- [client:forever !one remark] found {n} {thing}, enough of that search for the present
+- [client:forever one] gathered {thing}
+- [client:forever one] collected {thing}
+- [client:forever one] found {thing}
 - [client:forever one] brought back {thing}
-- [client:forever !one] returned with {n} {thing}
-- [client:forever one] returned with {thing}
-- [client:forever !one] searched until I had {n} {thing}
-- [client:forever one] searched until I had {thing}
-- [client:forever !one] brought {giver} {n} {thing}
-- [client:forever one] brought {thing} to {ender}
+- [client:forever one] recovered {thing}
+- [client:forever one] came back with {thing}
+- [client:forever one] tracked down {thing}
+- [client:forever one] fetched {thing}
+- [client:forever one remark] gathered {thing}, glad to hand over the collection
+- [client:forever one remark] collected {thing}, more than I wished to gather twice
+- [client:forever one remark] found {thing}, enough of that search for the present
+- [client:forever !one cloth remark] collected {n} {thing}, glad to place the cloth in other hands
+- [client:forever !one meat remark] gathered {n} {thing}, with more interest in supper than another meat collection

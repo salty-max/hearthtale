@@ -4,7 +4,7 @@ type: zone
 home: NightElf
 faction: alliance
 ---
-- [home !night] I looked up through Teldrassil's leaves and tried to hold in mind that this whole country rested on branches. Wisps drifted over the moss as though nothing were unusual; I was still learning to feel that sure of our new home.
-- [home night] Moonlight silvered the leaves around me in Teldrassil, and the owls called somewhere overhead. I listened to them between my own footfalls, unwilling to hurry through so much quiet.
-- [ally] I walked into Teldrassil's violet light knowing that the forest beneath my feet was growing on a tree. The thought returned whenever I looked between the great leaves, and for a while I paid more attention to the ground than the sentinels.
-- [foe] I entered Teldrassil beneath leaves that softened every sound. I could admire the beauty of the night elves' home while feeling certain that someone had noticed me already.
+- [home !night] Teldrassil rested on branches beneath my feet. I envied the ease of the wisps drifting over our new home's moss.
+- [home night] Moonlight silvered Teldrassil's leaves while owls called overhead. I listened between my footfalls, unwilling to hurry through the quiet.
+- [ally] In Teldrassil's violet light, the whole forest rested on a tree. The thought kept drawing my attention from the sentinels to the ground beneath me.
+- [foe] Teldrassil's leaves softened every sound. I admired their beauty while feeling certain that someone had already noticed me.

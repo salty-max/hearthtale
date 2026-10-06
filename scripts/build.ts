@@ -97,8 +97,9 @@ const KINDS: Record<string, string[]> = {
 };
 const VOICE = ["home", "kin", "faith", "weapon"];
 const TAGS = ["home", "ally", "foe", "neutral", "night", "hc", "high", "low", "first", "elite", "lots", "many", "slow", "quick",
-  "foe", "fall", "drowning", "lava", "nature", "beast", "people", "player", "inside", "rest", "fire", "last", "one", "aside", "new", "made", "form", "demon", "steed"];
+  "foe", "fall", "drowning", "lava", "nature", "beast", "people", "player", "inside", "rest", "fire", "last", "one", "aside", "remark", "teeth", "mechanical", "cloth", "meat", "explore", "escort", "new", "made", "form", "demon", "steed"];
 const RACES = ["Human", "Dwarf", "NightElf", "Gnome", "Draenei", "Orc", "Troll", "Tauren", "Scourge", "BloodElf", "Skyborne"];
+const ROUTINE = new Set("deed-kill deed-item deed-task deed-word kill first gear trainer inn travel return place group skill prof".split(" ").map((kind) => `c-${kind}`));
 const CLASSES = ["WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK", "DRUID"];
 const tagOk = (t: string) => {
   const [k, v] = t.replace(/^!/, "").split(":");
@@ -138,6 +139,13 @@ function parseFile(file: string, kind: string | null): Parsed | null {
     sentences.push(sentence);
   }
   if (!sentences.length) fail(file, "no sentence");
+  if (own && ROUTINE.has(own)) {
+    const plain = sentences.filter((s) => !s.tags.includes("remark"));
+    const remarks = sentences.filter((s) => s.tags.includes("remark"));
+    if (plain.length < 7 || remarks.length < 3) fail(file, "a routine kind needs at least seven plain alternatives and three remarks");
+  } else if (sentences.some((s) => s.tags.includes("remark"))) {
+    fail(file, "[remark] belongs to routine clauses; important moments retain their own reflections");
+  }
   return { meta: m[1], sentences };
 }
 

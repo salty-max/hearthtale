@@ -5,7 +5,7 @@ kind: died
 - [foe] I fell to {foe} {at}, with a memory that return would not simply put right.
 - [fall] I fell to my death {at}, reminded too late that even familiar heights required care.
 - [drowning] I drowned {at}, where the water I had trusted became the whole of the world for a moment.
-- I died {at} and returned, conscious that being given another chance did not make the first loss small.
+- I died {at} and returned. A second chance did not make the first loss small.
 - [lava] Fire killed me {at}, and I came back less willing to mistake confidence for understanding.
 - [nature] I died {at}, reminded that the world could be indifferent even to those who wished to know it.
 - [foe] {foe} ended me {at} for a time, and I carried the encounter with me when I returned.

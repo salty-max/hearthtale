@@ -1,9 +1,14 @@
 ---
 kind: c-deed-word
 ---
-- saw {giver}'s request through with {ender}
-- completed {giver}'s errand with {ender}, grateful to have been useful
-- went from {giver} to {ender} and brought the work to its conclusion
-- finished the errand between {giver} and {ender}
-- attended to {giver}'s business with {ender}
-- brought {giver}'s work to its end with {ender}
+- settled {giver}'s business with {ender}
+- completed {giver}'s errand with {ender}
+- carried out {giver}'s request with {ender}
+- went from {giver} to {ender}
+- finished {giver}'s errand at {ender}'s end
+- concluded the errand between {giver} and {ender}
+- saw {giver}'s business through with {ender}
+- completed the errand from {giver} to {ender}
+- [remark] settled {giver}'s business with {ender}, glad to have reached the right person
+- [remark] completed {giver}'s errand with {ender}, with the two names clearer than when I began
+- [remark] carried out {giver}'s request with {ender}, glad not to carry business between the two any longer

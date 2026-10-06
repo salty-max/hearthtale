@@ -5,9 +5,9 @@ kind: c-skill
 - worked at my {skill} until I reached {rank}
 - reached {rank} in {skill}
 - got my {skill} to {rank}
-- spent an evening on my {skill} and reached {rank}
 - practised my {skill} up to {rank}
-- [race:Dwarf] brought my {skill} to {rank}, as a dwarf should
-- [race:Gnome] reached {rank} in {skill}, with three improvements already in mind
 - improved my {skill} to {rank}
 - pushed my {skill} up to {rank}
+- [remark] brought my {skill} up to {rank}, pleased to see the practice in the number
+- [remark] worked at my {skill} until I reached {rank}, glad my practice was getting somewhere
+- [remark] reached {rank} in {skill}, with more confidence in that trade

@@ -1,25 +1,27 @@
 ---
 kind: c-deed-item
 ---
-- [!one] gathered {n} {thing} for {giver}
-- [!one] brought {giver} {n} {thing}
-- [!one] collected {n} {thing} for {giver}
-- [!one] found the {thing} {giver} wanted, {n} in all
-- [!one] gathered {n} {thing} and took them to {ender}
 - [!one] gathered {n} {thing}
 - [!one] collected {n} {thing}
+- [!one] found {n} {thing}
+- [!one] brought back {n} {thing}
+- [!one] recovered {n} {thing}
 - [!one] came back with {n} {thing}
-- [!one] searched until I had {n} {thing}
-- [one] found {thing} for {giver}
-- [one] brought {giver} {thing}
-- [one] recovered {thing} and took it to {ender}
+- [!one] tracked down {n} {thing}
+- [!one] fetched {n} {thing}
+- [!one remark] gathered {n} {thing}, glad to hand over that lot
+- [!one remark] collected {n} {thing}, more than I cared to collect again
+- [!one remark] found {n} {thing}, pleased to have the last of the collection
+- [one] gathered {thing}
+- [one] collected {thing}
 - [one] found {thing}
+- [one] brought back {thing}
 - [one] recovered {thing}
 - [one] came back with {thing}
-- [!one class:ROGUE] came by {n} {thing} for {giver}, best not asked how
-- [!one] brought back {n} {thing}
-- [!one] picked up {n} {thing} along the way
-- [!one] scoured the area for {n} {thing}
 - [one] tracked down {thing}
-- [one] got my hands on {thing}
-- [one] turned up {thing} at last
+- [one] fetched {thing}
+- [one remark] gathered {thing}, glad to hand over that lot
+- [one remark] collected {thing}, more than I cared to collect again
+- [one remark] found {thing}, pleased to have the last of the collection
+- [!one cloth remark] collected {n} {thing}, quite enough cloth to think about for one day
+- [!one meat remark] gathered {n} {thing}, more interested in supper than another meat collection

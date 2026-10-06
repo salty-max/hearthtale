@@ -1,9 +1,13 @@
 ---
 kind: c-group
 ---
-- travelled with {mates}, an arrangement I found useful
-- had {mates} for company, and did not object
+- joined {mates}
+- travelled with {mates}
+- fell in with {mates}
+- went on beside {mates}
 - shared the road with {mates}
-- went on beside {mates}, where company proved less troublesome than solitude
-- joined {mates}, without needing to become alike
-- found company in {mates}, a better outcome than I had learned to expect
+- had {mates} for company
+- teamed up with {mates}
+- [remark] joined {mates}, an improvement on hearing only myself
+- [remark] travelled with {mates}, curious how long I would find the company agreeable
+- [remark] fell in with {mates}, glad to have another pair of eyes

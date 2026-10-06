@@ -1,11 +1,14 @@
 ---
 kind: c-trainer
 ---
-- learned {spells}, something worth keeping when luck ran thin
+- learned {spells}
 - was taught {spells}
-- made time to learn {spells}, with practice still to give it teeth
+- studied {spells}
+- came away knowing {spells}
+- took lessons in {spells}
+- trained in {spells}
 - added {spells} to what I knew
-- came away from lessons knowing {spells}
-- took instruction in {spells}, glad to have another way through trouble
-- learned {spells}, with the use of it left to my own judgement
-- was instructed in {spells}
+- came away from training with {spells}
+- [remark] learned {spells}, keen to try the lesson for myself
+- [remark] was taught {spells}, with a few parts of the lesson still turning in my head
+- [remark] studied {spells}, glad to have that much learning behind me

@@ -1,7 +1,7 @@
 ---
 kind: flight
 ---
-- [first] My first flight, from {from} to {to}, on a bat. The smell suited me.
+- [first] I first flew from {from} to {to}, pleased that the view required no introductions.
 - [!first] I flew from {from} to {to}.
-- From {from} to {to}, high above the living. Efficient.
-- [!first] Something with wings carried me to {to}. Neither of us enjoyed it.
+- I flew from {from} to {to}, with the road below needing none of my attention.
+- [!first] I flew on to {to}, grateful to leave the distance to someone else for once.
