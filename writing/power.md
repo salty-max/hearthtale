@@ -1,0 +1,15 @@
+---
+kind: power
+---
+- [form] I learned to take a new shape: {spell}.
+- [form] The wild taught me {spell}, and I wore it for the first time that day.
+- [form] {spell}: a new shape, and a new way to see the world.
+- [form] I took on {spell} for the first time, and it felt like coming home.
+- [demon] I bound a new servant: {spell}.
+- [demon] {spell}. Another voice in the dark that answers to me.
+- [demon] I learned {spell}, and the thing came when I called.
+- [demon] I mastered {spell}. It obeys, for now.
+- [steed] I won a steed of my own: {spell}.
+- [steed] {spell}. I'll never walk the long roads again.
+- [steed] I learned {spell}, and rode out proud.
+- [steed] My own steed at last: {spell}.

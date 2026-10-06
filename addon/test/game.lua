@@ -1,0 +1,254 @@
+-- A fake game for the tests: the WoW API the addon uses, its events, a
+-- character to play (state), and the addon loaded into it.
+--   local G = dofile("addon/test/game.lua")
+-- FOREVER=1 in the environment: Forever's client (no combat log).
+local DIR = "addon/WayfarersJournal/"
+local FOREVER = os.getenv("FOREVER") == "1"
+function GetBuildInfo() return "1.15.8", "60000", "Oct 1 2026", FOREVER and 16001 or 11509 end
+local secrets = {}
+if FOREVER then issecretvalue = function(v) return secrets[v] == true end end
+
+-- ── a fake game ──────────────────────────────────────────────────────────────
+local clock, uptime = 1790900000, 1000
+function time() return clock end
+function GetTime() return uptime end
+date = os.date
+local state = {
+  level = 1, guid = "Player-6113-0ABCDEF0", zone = "Dun Morogh", sub = "Coldridge Valley", hour = 10,
+  money = 0, health = 100, hardcore = true, bind = "Anvilmar", party = {}, race = "Dwarf", class = "PALADIN",
+  gear = {}, skills = {},
+}
+local printed = {}
+function print(msg) table.insert(printed, msg) end
+function strtrim(s) return (s:gsub("^%s+", ""):gsub("%s+$", "")) end
+function GetGameTime() return state.hour, 0 end
+function GetRealZoneText() return state.zone end
+function GetSubZoneText() return state.sub end
+function GetBindLocation() return state.bind end
+function GetMoney() return state.money end
+function GetQuestsCompleted() return state.questsDone or {} end
+-- Forever's client here doesn't say whether a character is Hardcore: the
+-- player says so in the settings (tested below).
+if not FOREVER then C_GameRules = { IsHardcoreActive = function() return state.hardcore end } end
+C_QuestLog = {
+  GetTitleForQuestID = function(id) return state.titles and state.titles[id] end,
+  GetQuestObjectives = function(id) return state.objectives and state.objectives[id] or {} end,
+}
+QUEST_MONSTERS_KILLED = "%s slain: %d/%d"
+QUEST_OBJECTS_FOUND = "%s: %d/%d"
+C_Timer = { After = function(_, fn) fn() end }
+SlashCmdList = {}
+
+-- Units: the player, a target, the quest giver, the party.
+local CREATURES = {
+  [1] = { name = "Ragged Young Wolf", type = "Beast", family = "Wolf", rank = "normal" },
+  [2] = { name = "Rockjaw Trogg", type = "Humanoid", rank = "normal" },
+  [3] = { name = "Timber", type = "Beast", family = "Wolf", rank = "rare" },
+  [4] = { name = "Frostmane Novice", type = "Humanoid", rank = "normal" },
+  [5] = { name = "Gibblewilt", type = "Humanoid", rank = "elite" },
+  [6] = { name = "Defias Overseer", type = "Humanoid", rank = "elite" },
+}
+local function creatureGuid(i, n) return ("Creature-0-4170-0-12-%d-%08X"):format(i, n or 1) end
+local deadTarget, inCombat = false, false
+local function unitOf(u)
+  if u == "target" and state.target then return CREATURES[state.target.id] end
+  if u == "pet" and state.pet then return state.pet end
+end
+function UnitExists(u) return u == "player" or unitOf(u) ~= nil or (u == "npc" and state.npc ~= nil) or state.party[u] ~= nil end
+function UnitIsPlayer(u) return u == "player" or state.party[u] ~= nil end
+function UnitGUID(u)
+  if u == "player" then return state.guid end
+  if u == "target" and state.target then return creatureGuid(state.target.id, state.target.n) end
+end
+function UnitName(u)
+  if u == "player" then return state.name or "Sealinedion" end
+  if u == "npc" then return state.npc end
+  if state.party[u] then return state.party[u].name end
+  local c = unitOf(u)
+  return c and c.name
+end
+function UnitLevel(u) return u == "player" and state.level or 1 end
+function UnitRace() return state.race, state.race end
+function UnitClass(u) if state.party[u] then return state.party[u].class, state.party[u].class end return state.class:sub(1, 1) .. state.class:sub(2):lower(), state.class end
+function UnitSex() return 3 end
+function UnitCreatureType(u) local c = unitOf(u); return c and c.type end
+function UnitCreatureFamily(u) local c = unitOf(u); return c and c.family end
+function UnitClassification(u) local c = unitOf(u); return c and c.rank end
+function UnitIsDead(u) if u == "pet" then return state.pet and state.pet.dead or false end return u == "target" and deadTarget end
+function UnitAffectingCombat(u) return inCombat and not (u == "target" and deadTarget) end
+function UnitHealth() return state.health end
+function UnitHealthMax() return 100 end
+function UnitIsDeadOrGhost() return state.health <= 0 end
+function GetNumGroupMembers() local n = 0 for _ in pairs(state.party) do n = n + 1 end return n > 0 and n + 1 or 0 end
+function IsInRaid() return false end
+function IsInInstance() return state.instance ~= nil, state.instance and "party" or "none" end
+function GetInstanceInfo() return state.instance end
+-- Items: { quality, item level, id }.
+local ITEMS = { ["Ragged Leather Gloves"] = { 1, 3, 1 }, ["Frostmane Leather Vest"] = { 2, 8, 2 }, ["Wolf Fang Necklace"] = { 2, 10, 3 } }
+local itemCount = 3
+function GetItemInfo(link) local name = link:match("%[(.-)%]"); local i = ITEMS[name]; if i then return name, link, i[1], i[2] end end
+local function itemLink(name, quality)
+  if not ITEMS[name] then itemCount = itemCount + 1; ITEMS[name] = { quality or 2, 10, 100 + itemCount } end
+  return ("|cff1eff00|Hitem:%d::::::::1:::::|h[%s]|h|r"):format(ITEMS[name][3], name)
+end
+function GetInventoryItemLink(_, slot) return state.gear[slot] and itemLink(state.gear[slot]) end
+-- Skills: { name, header, max }, as the skills pane lists them.
+TRADE_SKILLS, SECONDARY_SKILLS = "Professions", "Secondary Skills"
+function GetNumSkillLines() return #state.skills end
+function GetSkillLineInfo(i) local s = state.skills[i]; return s[1], s[2], nil, nil, nil, nil, s[3] end
+function IsMounted() return state.mounted == true end
+-- The game's formats, as in its global strings.
+ERR_LEARN_SPELL_S = "You have learned a new spell: %s."
+ERR_LEARN_ABILITY_S = "You have learned a new ability: %s."
+SKILL_RANK_UP = "Your skill in %s has increased to %d."
+LOOT_ITEM_SELF = "You receive loot: %s."
+LOOT_ITEM_CREATED_SELF = "You create: %s."
+LOOT_ITEM_CREATED_SELF_MULTIPLE = "You create: %sx%d."
+LOOT_ITEM_SELF_MULTIPLE = "You receive loot: %sx%d."
+LOOT_ITEM_PUSHED_SELF = "You receive item: %s."
+LOOT_ITEM_PUSHED_SELF_MULTIPLE = "You receive item: %sx%d."
+-- Taxis.
+local TAXI = { "Ironforge, Dun Morogh", "Thelsamar, Loch Modan" }
+function NumTaxiNodes() return #TAXI end
+function TaxiNodeName(i) return TAXI[i] end
+function TaxiNodeGetType(i) return i == 1 and "CURRENT" or "REACHABLE" end
+function TakeTaxiNode() end
+function hooksecurefunc(name, fn)
+  local original = _G[name]
+  _G[name] = function(...) local r = original(...); fn(...); return r end
+end
+local combatLog
+function CombatLogGetCurrentEventInfo() return unpack(combatLog) end
+
+-- UI: any method works and returns something sensible, scripts are kept.
+local function ui()
+  local o = { shown = false, scripts = {} }
+  return setmetatable(o, {
+    __index = function(t, k)
+      if k == "SetScript" then return function(self, name, fn) self.scripts[name] = fn end end
+      if k == "Show" then return function(self) self.shown = true; if self.scripts.OnShow then self.scripts.OnShow(self) end end end
+      if k == "Hide" then return function(self) self.shown = false end end
+      if k == "SetShown" then return function(self, v) if v then self:Show() else self:Hide() end end end
+      if k == "IsShown" then return function(self) return self.shown end end
+      if k == "SetText" then return function(self, v) self.text = v end end
+      if k == "GetText" then return function(self) return rawget(self, "text") or "" end end
+      if k == "GetStringHeight" then return function() return 14 end end
+      if k == "SetHeight" then return function(self, v) self.height = v end end
+      if k == "GetHeight" then return function(self) return rawget(self, "height") or 100 end end
+      if k == "SetVerticalScroll" then return function(self, v) self.vscroll = v end end
+      if k == "GetVerticalScroll" then return function(self) return rawget(self, "vscroll") or 0 end end
+      if k == "GetWidth" then return function() return 140 end end
+      if k == "GetCenter" then return function() return 0, 0 end end
+      if k == "GetEffectiveScale" then return function() return 1 end end
+      if k == "CreateFontString" or k == "CreateTexture" then return function() return ui() end end
+      return function() return t end
+    end,
+  })
+end
+UIParent, UISpecialFrames = ui(), {}
+Minimap, GameTooltip = ui(), ui()
+function GetCursorPosition() return 0, 0 end
+-- The game's settings panel: keep what the addon registers.
+local panel = { settings = {} }
+Settings = {
+  VarType = { Boolean = "boolean", Number = "number" },
+  RegisterVerticalLayoutCategory = function(name) panel.name = name; return { GetID = function() return 42 end } end,
+  RegisterProxySetting = function(_, variable, _, name, default, get, set)
+    local s = { variable = variable, name = name, default = default, get = get, set = set }
+    panel.settings[variable] = s
+    return s
+  end,
+  CreateCheckbox = function() end,
+  RegisterAddOnCategory = function() panel.registered = true end,
+  OpenToCategory = function(id) panel.opened = id end,
+}
+local portraitOf
+function SetPortraitTexture(_, unit) portraitOf = unit end
+
+local frames = {}
+function CreateFrame(_, name, _, template)
+  local f = ui()
+  f.registered = {}
+  if template == "ButtonFrameTemplate" then -- the game's window has its portrait
+    local p = ui()
+    f.GetPortrait = function() return p end
+  end
+  function f:RegisterEvent(e)
+    if FOREVER and e == "COMBAT_LOG_EVENT_UNFILTERED" then error("COMBAT_LOG_EVENT_UNFILTERED: forbidden") end
+    self.registered[e] = true
+  end
+  table.insert(frames, f)
+  if name then _G[name] = f end
+  return f
+end
+local function fire(e, ...)
+  local heard = false
+  for _, f in ipairs(frames) do
+    if f.registered[e] and f.scripts.OnEvent then f.scripts.OnEvent(f, e, ...); heard = true end
+  end
+  assert(heard, "nobody listens to " .. e)
+end
+
+-- The game's toasts, links and realm: keep what the addon hands them.
+local toasted = {}
+function GetRealmName() return "Nightslayer" end
+C_XMLUtil = { GetTemplateInfo = function(name) return name ~= "PanelTabButtonTemplate" or nil end }
+AlertFrame = { AddQueuedAlertFrameSubSystem = function(_, _, setUp)
+  return { AddAlert = function(_, guid)
+    local frame = ui()
+    frame.Icon, frame.Title, frame.Name = ui(), ui(), ui()
+    setUp(frame, guid)
+    table.insert(toasted, frame)
+  end }
+end }
+local linkHandlers = {}
+LinkUtil = { RegisterLinkHandler = function(kind, fn) linkHandlers[kind] = fn end }
+LinkProcessorResponse = { Handled = 2 }
+
+-- ── load the addon ───────────────────────────────────────────────────────────
+local ns = {}
+assert(loadfile(DIR .. (FOREVER and "Data_Forever.lua" or "Data_Classic.lua")))("WayfarersJournal", ns)
+for _, f in ipairs({ "Core.lua", "Record.lua", "Writer.lua", "Book.lua", "Hall.lua", "Settings.lua", "Minimap.lua" }) do assert(loadfile(DIR .. f))("WayfarersJournal", ns) end
+local D = ns.data
+-- Resting and campfires: the game's resting state, the auras on me.
+state.auras = {}
+function IsResting() return state.resting == true end
+C_UnitAuras = { GetPlayerAuraBySpellID = function(id) return state.auras[id] and { spellId = id } or nil end }
+local function login() fire("PLAYER_LOGIN"); fire("PLAYER_ENTERING_WORLD", true, false) end
+local function logout() fire("PLAYER_LOGOUT") end
+local function reload() fire("PLAYER_LOGOUT"); fire("PLAYER_LOGIN"); fire("PLAYER_ENTERING_WORLD", false, true) end
+-- Kills.
+local function kill(id, n)
+  state.target = { id = id, n = n }
+  if FOREVER then
+    inCombat = true
+    fire("PLAYER_TARGET_CHANGED")
+    inCombat, deadTarget = false, true
+    fire("PLAYER_TARGET_CHANGED")
+    deadTarget = false
+    return
+  end
+  fire("PLAYER_TARGET_CHANGED")
+  combatLog = { clock, "PARTY_KILL", false, state.guid, "Sealinedion", 0, 0, creatureGuid(id, n), CREATURES[id].name, 0, 0 }
+  fire("COMBAT_LOG_EVENT_UNFILTERED")
+end
+-- A creature to meet: its id (for kill()).
+local function creature(name, type, family, rank)
+  for i, c in ipairs(CREATURES) do if c.name == name then return i end end
+  table.insert(CREATURES, { name = name, type = type, family = family, rank = rank or "normal" })
+  return #CREATURES
+end
+
+return {
+  ns = ns, D = D, state = state, fire = fire, printed = printed, panel = panel, toasted = toasted, linkHandlers = linkHandlers,
+  login = login, logout = logout, reload = reload, kill = kill, creature = creature, itemLink = itemLink, forever = FOREVER,
+  secrets = secrets,
+  -- time: the clock (and the hour of the day) or only the time played
+  wait = function(s) clock, uptime = clock + s, uptime + s; state.hour = (state.hour + s / 3600) % 24 end,
+  played = function(s) uptime = uptime + s end,
+  sleep = function(s) clock = clock + s; state.hour = (state.hour + s / 3600) % 24 end, -- logged out
+  clock = function() return clock end,
+  portrait = function() return portraitOf end,
+  corpse = function(id, n) state.target = { id = id, n = n }; deadTarget = true; fire("PLAYER_TARGET_CHANGED"); deadTarget = false end,
+  fall = function() combatLog = { clock, "ENVIRONMENTAL_DAMAGE", false, nil, nil, 0, 0, state.guid, "Sealinedion", 0, 0, "FALLING", 120 } end,
+}

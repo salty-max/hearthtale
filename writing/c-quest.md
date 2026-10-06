@@ -1,0 +1,13 @@
+---
+kind: c-quest
+---
+- did what {giver} asked of me
+- saw to {quest}, for {giver}
+- finished {quest}
+- saw {quest} through
+- took care of {quest}
+- did the work {giver} needed
+- saw {quest} done
+- put {quest} behind me
+- finished the business of {quest}
+- did my part in {quest}

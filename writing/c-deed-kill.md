@@ -1,0 +1,26 @@
+---
+kind: c-deed-kill
+---
+- [!one] killed {n} {foes} for {giver}
+- [!one] hunted {n} {foes}, as {giver} had asked
+- [!one] cleared {n} {foes} out of {giver}'s way
+- [!one] put down {n} {foes} for {giver}
+- [!one] thinned out the {foes} for {giver}
+- [!one] killed {n} {foes} and reported back to {ender}
+- [!one] went after {n} {foes} and told {ender} it was done
+- [!one] killed {n} {foes}
+- [!one] hunted down {n} {foes}
+- [!one] put down {n} {foes} that were troubling the road
+- [one] killed {foes} for {giver}
+- [one] tracked down {foes} and finished it, as {giver} had asked
+- [one] put an end to {foes}
+- [one] hunted down {foes}
+- [one] killed {foes} and brought word to {ender}
+- [!one class:MAGE] burned {n} {foes} for {giver}
+- [!one class:HUNTER !low] hunted {n} {foes} with my pet for {giver}
+- [one] finished {foes} for good
+- [one] went looking for {foes}, and found it
+- [one] put {foes} in the ground
+- [!one] cut down {n} {foes}
+- [!one] dealt with {n} {foes}
+- [!one] went out and killed {n} {foes}

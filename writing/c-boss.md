@@ -1,0 +1,13 @@
+---
+kind: c-boss
+---
+- brought down {boss}
+- saw the end of {boss}
+- helped put an end to {boss}
+- fought {boss} and won
+- stood over {boss} at last
+- was there when {boss} fell
+- [class:WARRIOR] held {boss} while the others did their work
+- [class:PRIEST] kept everyone standing until {boss} fell
+- lived to see {boss} fall
+- finished off {boss}

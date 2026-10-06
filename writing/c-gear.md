@@ -1,0 +1,17 @@
+---
+kind: c-gear
+---
+- [!made] put on {item}
+- [!made] pulled on {item}
+- [!made] traded my old gear for {item}
+- [!made] strapped on {item}
+- [!made] took to wearing {item}
+- [!made] wore {item} for the first time
+- [!made] fitted myself with {item}
+- [!made] claimed {item} for myself
+- [made] put on {item}, made with my own hands
+- [made] wore {item}, which I made myself
+- [made] finished {item} and put it on straight away
+- [made] made {item} with my own hands, and wore it
+- [made] fitted myself with {item}, my own work
+- [made] wore {item}, every stitch of it mine

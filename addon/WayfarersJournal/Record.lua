@@ -24,7 +24,15 @@
 --     group { name, class }                 someone joined me
 --     dungeon { name }  boss { name }
 --     learned { spells }                    a trainer's visit (merged)
---     skill { name, rank }  loot { link, quality }   (the chapter's best yet)
+--     skill { name, rank }                  a profession's milestone
+--     prof { name, learned or rank }        a trade taken up, a new rank
+--     riding { name }  mount                riding learned; the first ride
+--     gear { link, quality, made }          worn for the first time (green+;
+--                                           made: crafted by the character)
+--     loot { link, quality }                a find of note (blue and above)
+--     power { spell, kind }                 a druid's form, a warlock's demon,
+--                                           a class's steed
+--     tame { name, family }  petdied { name }   a hunter's pet
 --     level { level }                       (recorded, not told)
 --     campfire  rested { place, fire }      (a rest too short to close)
 --     night { }                             slept outdoors (a logout in the wild)
@@ -219,7 +227,9 @@ local function settle(l)
     close(ch, "long", l)
   else
     if rested then note("rested", { place = l.place, fire = l.fire }) else note("night", {}) end
-    table.insert(ch.log, { k = "wake", at = now(), night = night() or nil, after = rested and "rest" or "night" })
+    local zone, sub = where()
+    table.insert(ch.log, { k = "wake", at = now(), night = night() or nil, after = rested and "rest" or "night",
+      zone = zone or l.zone, sub = sub or l.sub })
   end
 end
 
@@ -374,7 +384,12 @@ local function slain(guid, name)
   elseif firstHere then
     local first = u.kind and not c.kinds[u.kind] or nil
     local inside = IsInInstance and IsInInstance()
-    moment("kill", { name = u.name, kind = u.kind, first = first, elite = (u.rank == "elite" and not inside) or nil })
+    -- a quest's quarry: the quest, turned in, tells it
+    local quarry
+    for _, p in pairs(c.pending or {}) do
+      for _, o in ipairs(p.objectives or {}) do if o.name == u.name then quarry = true end end
+    end
+    moment("kill", { name = u.name, kind = u.kind, first = first, elite = (u.rank == "elite" and not inside) or nil, quarry = quarry })
   end
   if u.kind then c.kinds[u.kind] = true end
 end
@@ -479,21 +494,42 @@ local function pattern(global)
   return "^" .. s .. "$"
 end
 ns.pattern = pattern
+-- Spells learned, read from the game's message (any language); the spell's
+-- id, from its link, says what it is: a druid's new form, a warlock's new
+-- demon, a class's own steed (a moment of their own); a profession's rank (told
+-- by the professions, below: left out here); anything else, a trainer's
+-- lesson (spells learned together are one moment).
+local POWERS = {
+  [5487] = "form", [768] = "form", [1066] = "form", [783] = "form", [9634] = "form", [24858] = "form", [33943] = "form",
+  [697] = "demon", [712] = "demon", [691] = "demon", [1122] = "demon", [18540] = "demon", [30146] = "demon",
+  [5784] = "steed", [23161] = "steed", [13819] = "steed", [23214] = "steed", [34769] = "steed", [34767] = "steed",
+}
+local RANKED = { Apprentice = true, Journeyman = true, Expert = true, Artisan = true, Master = true }
+local function professionSpell(name)
+  if (char().profs or {})[name] then return true end
+  local first = name:match("^(%a+) ")
+  return first and RANKED[first] or false
+end
 ns.on("CHAT_MSG_SYSTEM", function(msg)
   if secret(msg) then return end
   for _, g in ipairs({ "ERR_LEARN_SPELL_S", "ERR_LEARN_ABILITY_S" }) do
     local p = pattern(g)
-    local spell = p and msg:match(p)
-    if spell then
-      spell = spell:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", ""):gsub("|H.-|h%[?(.-)%]?|h", "%1")
-      -- a trainer's visit is one moment: spells learned together merge
-      local ch = chapter()
-      local last = ch.log[#ch.log]
-      if last and last.k == "learned" and now() - last.at < 120 then
-        table.insert(last.spells, spell)
-        changed()
-      else
-        moment("learned", { spells = { spell } })
+    local raw = p and msg:match(p)
+    if raw then
+      local id = tonumber(raw:match("|Hspell:(%d+)"))
+      local spell = raw:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", ""):gsub("|H.-|h%[?(.-)%]?|h", "%1")
+      if id and POWERS[id] then
+        moment("power", { spell = spell, kind = POWERS[id] })
+      elseif not professionSpell(spell) then
+        -- a trainer's visit is one moment: spells learned together merge
+        local ch = chapter()
+        local last = ch.log[#ch.log]
+        if last and last.k == "learned" and now() - last.at < 120 then
+          table.insert(last.spells, spell)
+          changed()
+        else
+          moment("learned", { spells = { spell } })
+        end
       end
       return
     end
@@ -507,9 +543,91 @@ ns.on("CHAT_MSG_SKILL", function(msg)
   rank = tonumber(rank)
   if skill and rank and MILESTONES[rank] then moment("skill", { name = skill, rank = rank }) end
 end)
--- Loot: the chapter's best yet (green and above, by quality, then level).
+
+-- ── professions ──────────────────────────────────────────────────────────────
+-- What the character knows of its trades: profs[name] = the rank's ceiling
+-- (75 apprentice, 150 journeyman, 225 expert, 300 artisan, 375 master). A new
+-- trade, or a new rank, is a moment; riding is one too. Those known when the
+-- journal first looks are noted quietly.
+local RANK_OF = { [75] = "apprentice", [150] = "journeyman", [225] = "expert", [300] = "artisan", [375] = "master" }
+local function trades()
+  local out = {}
+  if GetNumSkillLines and GetSkillLineInfo then
+    if GetNumSkillLines() == 0 then return nil end -- not loaded yet (there are always weapons, languages)
+    local section
+    for i = 1, GetNumSkillLines() do
+      local name, header, _, _, _, _, max = GetSkillLineInfo(i)
+      if header then
+        section = name
+      elseif name and not secret(name) and (section == TRADE_SKILLS or section == SECONDARY_SKILLS or name:find("Riding")) then
+        out[name] = max or 0
+      end
+    end
+  elseif GetProfessions and GetProfessionInfo then
+    for _, index in ipairs({ GetProfessions() }) do
+      local name, _, _, max = GetProfessionInfo(index)
+      if name and not secret(name) then out[name] = max or 0 end
+    end
+  end
+  return out
+end
+local function lookAtTrades(quiet)
+  local c = char()
+  local list = trades()
+  if not list then return end
+  local known = c.profs
+  c.profs = c.profs or {}
+  for name, max in pairs(list) do
+    local before = c.profs[name]
+    c.profs[name] = max
+    if known and not quiet then
+      if name:find("Riding") and not before then
+        moment("riding", { name = name })
+      elseif not before then
+        moment("prof", { name = name, learned = true })
+      elseif max > before and RANK_OF[max] then
+        moment("prof", { name = name, rank = RANK_OF[max] })
+      end
+    end
+  end
+end
+ns.on("SKILL_LINES_CHANGED", function() lookAtTrades(false) end)
+
+-- ── gear ─────────────────────────────────────────────────────────────────────
+-- Something worn for the first time (green and above; an item put on again,
+-- after another, is no news). worn[itemId] = true; made[itemId] = true for
+-- what the character crafted ("You create: ..."), told as such when put on.
+local function lookAtGear(quiet)
+  local c = char()
+  c.worn = c.worn or {}
+  for slot = 1, 19 do
+    local link = GetInventoryItemLink and GetInventoryItemLink("player", slot)
+    local id = link and not secret(link) and tonumber(link:match("item:(%d+)"))
+    if id and not c.worn[id] then
+      c.worn[id] = true
+      local _, _, quality = GetItemInfo(link)
+      if not quiet and quality and quality >= 2 then
+        moment("gear", { link = link, quality = quality, made = (c.made or {})[id] or nil })
+      end
+    end
+  end
+end
+ns.on("PLAYER_EQUIPMENT_CHANGED", function() lookAtGear(char().worn == nil) end) -- the first look is quiet
+
+-- Loot: a find of note (blue and above; the green ones are told when worn).
 ns.on("CHAT_MSG_LOOT", function(msg)
   if secret(msg) then return end
+  local c = char()
+  for _, g in ipairs({ "LOOT_ITEM_CREATED_SELF", "LOOT_ITEM_CREATED_SELF_MULTIPLE" }) do
+    local p = pattern(g)
+    local link = p and msg:match(p) and msg:match("|c%x+|Hitem:[^|]+|h%[.-%]|h|r")
+    local id = link and tonumber(link:match("item:(%d+)"))
+    if id then
+      c.made = c.made or {}
+      c.made[id] = true
+      return
+    end
+  end
   local mine = false
   for _, g in ipairs({ "LOOT_ITEM_SELF", "LOOT_ITEM_SELF_MULTIPLE", "LOOT_ITEM_PUSHED_SELF", "LOOT_ITEM_PUSHED_SELF_MULTIPLE" }) do
     local p = pattern(g)
@@ -517,15 +635,61 @@ ns.on("CHAT_MSG_LOOT", function(msg)
   end
   local link = mine and msg:match("|c%x+|Hitem:[^|]+|h%[.-%]|h|r")
   if not link then return end
-  local _, _, quality, ilvl = GetItemInfo(link)
-  if not quality or quality < 2 then return end
-  local ch = chapter()
-  local best = ch.best
-  if not best or quality > best.quality or (quality == best.quality and (ilvl or 0) > (best.level or 0)) then
-    ch.best = { quality = quality, level = ilvl }
-    moment("loot", { link = link, quality = quality })
+  local _, _, quality = GetItemInfo(link)
+  if quality and quality >= 3 then moment("loot", { link = link, quality = quality }) end
+end)
+
+-- ── a hunter's pet, a first ride ─────────────────────────────────────────────
+-- A hunter's new companion (a pet not met before, by name), and its deaths;
+-- the first time the character rides a mount of its own.
+local petDown = false
+local function lookAtPet(quiet)
+  local c = char()
+  if c.class ~= "HUNTER" then return end
+  if not UnitExists("pet") then
+    c.pets = c.pets or {} -- no pet yet: the first one tamed is news
+    return
+  end
+  local name, family = UnitName("pet"), UnitCreatureFamily("pet")
+  if not name or secret(name) then return end
+  c.pets = c.pets or {}
+  if not c.pets[name] then
+    c.pets[name] = (family and not secret(family)) and family or true
+    if not quiet then moment("tame", { name = name, family = c.pets[name] ~= true and c.pets[name] or nil }) end
+  end
+end
+ns.on("UNIT_PET", function(unit) if unit == "player" then lookAtPet(char().pets == nil) end end)
+ns.on("UNIT_HEALTH", function(unit)
+  if unit ~= "pet" or char().class ~= "HUNTER" then return end
+  local dead = UnitIsDead("pet")
+  if secret(dead) then return end
+  if dead and not petDown then
+    local name = UnitName("pet")
+    moment("petdied", { name = (name and not secret(name)) and name or nil })
+  end
+  petDown = dead and true or false
+end)
+ns.on("UNIT_AURA", function(unit)
+  local c = char()
+  if unit ~= "player" or c.rode or not IsMounted then return end
+  local mounted = IsMounted()
+  if mounted and not secret(mounted) then
+    c.rode = true
+    moment("mount")
   end
 end)
+
+-- At login: what the character already wears, knows and keeps, noted quietly
+-- (a journal begun mid-life doesn't announce a whole wardrobe).
+ns.on("PLAYER_ENTERING_WORLD", function(initial)
+  if not initial then return end
+  local c = char()
+  lookAtGear(c.worn == nil)
+  lookAtTrades(c.profs == nil)
+  lookAtPet(c.pets == nil)
+  if c.rode == nil and IsMounted and IsMounted() then c.rode = true end
+end)
+
 ns.on("PLAYER_MONEY", function()
   local c, money = char(), GetMoney()
   if c.money and money > c.money then local ch = chapter(); ch.gold = ch.gold + (money - c.money) end

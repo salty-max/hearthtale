@@ -1,0 +1,21 @@
+---
+kind: c-trainer
+---
+- learned {spells} from my trainer
+- went to my trainer for {spells}
+- paid my trainer for {spells}
+- learned {spells}
+- came away from training with {spells}
+- spent good coin on {spells}
+- [many] learned {spells}, and more besides
+- [class:PALADIN] took new prayers from the trainer: {spells}
+- [class:PRIEST] learned new prayers: {spells}
+- [class:MAGE] added {spells} to my book
+- [class:WARLOCK] paid for forbidden lessons: {spells}
+- [class:WARRIOR] learned new tricks: {spells}
+- [class:DRUID] learned {spells} from the ways of the wild
+- [class:SHAMAN] was granted {spells} by the spirits
+- [class:HUNTER] learned new tricks for the hunt: {spells}
+- [class:ROGUE] learned {spells} in a back room, no questions asked
+- picked up {spells} at my trainer's
+- trained in {spells}

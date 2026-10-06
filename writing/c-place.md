@@ -1,0 +1,11 @@
+---
+kind: c-place
+---
+- came to {place} for the first time
+- found my way to {place}
+- reached {place}
+- walked into {place}
+- made it as far as {place}
+- wandered into {place}
+- saw {place} with my own eyes
+- followed the road to {place}

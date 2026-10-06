@@ -1,0 +1,11 @@
+---
+kind: c-first
+---
+- met my first {kind}
+- fought {kind} for the first time
+- learned what {kind} are like
+- crossed blades with {kind} for the first time
+- had my first taste of fighting {kind}
+- came face to face with {kind}
+- found out what {kind} can do
+- [class:HUNTER] tracked {kind} for the first time

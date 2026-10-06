@@ -1,0 +1,14 @@
+---
+kind: c-group
+---
+- fell in with {mates}
+- travelled with {mates} for a while
+- joined up with {mates}
+- found company in {mates}
+- teamed up with {mates}
+- went on with {mates} at my side
+- [class:PRIEST] kept {mates} on their feet
+- [class:WARRIOR] took the blows so {mates} didn't have to
+- [class:PALADIN] watched over {mates}
+- shared the road with {mates}
+- had {mates} for company

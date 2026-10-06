@@ -3,9 +3,8 @@
 -- chapter: slots all filled, sentences capitalised and closed, no stray
 -- spaces or doubled words, every sentence of writing/ reachable, few repeats.
 --   luajit addon/test/writer.lua            the checks
---   luajit addon/test/writer.lua --sample   one book, as Markdown (docs/sample.md)
+-- (a sample book, from a life played through the addon: addon/test/sample.lua)
 local DIR = "addon/WayfarersJournal/"
-local SAMPLE = arg[1] == "--sample"
 local ns = {}
 assert(loadfile(DIR .. "Data_Classic.lua"))("WayfarersJournal", ns)
 assert(loadfile(DIR .. "Writer.lua"))("WayfarersJournal", ns)
@@ -66,6 +65,11 @@ local SPELLS = { "Blessing of Might", "Judgement", "Hammer of Justice", "Frostbo
   "Lightning Bolt", "Corruption", "Serpent Sting", "Rejuvenation", "Battle Shout", "Rend", "Arcane Intellect" }
 local SKILLS = { "Mining", "Herbalism", "Skinning", "First Aid", "Blacksmithing", "Tailoring", "Cooking" }
 local ITEMS = { "Wolf Fang Necklace", "Frostmane Leather Vest", "Cuirboulle Gloves", "Smite's Mighty Hammer", "Blackened Defias Armor", "Feline Mantle" }
+local POWERS = { form = { "Bear Form", "Cat Form", "Travel Form", "Aquatic Form" },
+  demon = { "Summon Voidwalker", "Summon Succubus", "Summon Felhunter", "Inferno" },
+  steed = { "Summon Warhorse", "Summon Charger" } }
+local PETS = { "Grrr", "Snapjaw", "Whisper", "Old Tom", "Bitey", "Fang", "Shadow", "Rusty", "Mossback", "Echo" }
+local FAMILIES = { "Bear", "Wolf", "Cat", "Owl", "Crocolisk", "Boar" }
 local MATES = { "Brannor", "Kelsa", "Thrudd", "Ylena", "Morgrim", "Aeris", "Zul'jin", "Brokk" }
 local NODES = { "Ironforge, Dun Morogh", "Thelsamar, Loch Modan", "Stormwind, Elwynn", "Sentinel Hill, Westfall",
   "Orgrimmar, Durotar", "The Crossroads, The Barrens", "Booty Bay, Stranglethorn", "Gadgetzan, Tanaris" }
@@ -112,7 +116,7 @@ local function life(race, class, hc, from, to)
   end
   local zone = from == 1 and zoneNamed(START[race]) or one(ZONES)
   local sub = zone[2][1]
-  local seen, kinds, level = {}, {}, from
+  local seen, kinds, level, once = {}, {}, from, {}
   local clock, isNight = 1790000000, false
   local function m(k, fields)
     fields = fields or {}
@@ -126,8 +130,32 @@ local function life(race, class, hc, from, to)
       log = {}, kills = {}, quests = 0, played = rand(600, 18000), gold = rand(0, 3) == 0 and 0 or rand(5, 40000) }
     local function add(x) table.insert(ch.log, x) end
     for _ = 1, rand(3, 22) do
-      local r = rand(100)
-      if r <= 12 then
+      local r = rand(112)
+      local hunter = class == "HUNTER" and level >= 10
+      if r > 100 then
+        if r <= 103 then
+          add(m("gear", { link = "|cff1eff00|Hitem:1|h[" .. one(ITEMS) .. "]|h|r", quality = 2, made = chance(0.3) or nil }))
+        elseif r <= 105 then
+          local learned = chance(0.4)
+          add(m("prof", { name = one(SKILLS), learned = learned or nil,
+            rank = not learned and one({ "apprentice", "journeyman", "expert", "artisan" }) or nil }))
+        elseif r == 106 then
+          -- once in a life each, as the game records them
+          local k = chance(0.5) and "riding" or "mount"
+          if not once[k] then once[k] = true; add(m(k, { name = "Apprentice Riding" })) end
+        elseif r == 107 then
+          local kind = ({ DRUID = "form", WARLOCK = "demon", PALADIN = "steed" })[class]
+          local spell = kind and one(POWERS[kind])
+          if spell and not once[spell] then once[spell] = true; add(m("power", { spell = spell, kind = kind })) end
+        elseif r <= 109 then
+          local pet = one(PETS)
+          if hunter and not once[pet] then once[pet] = true; add(m("tame", { name = pet, family = chance(0.8) and one(FAMILIES) or nil })) end
+        elseif r <= 111 then
+          if hunter then add(m("petdied", { name = chance(0.9) and one(PETS) or nil })) end
+        else
+          add(m("loot", { link = "|cff0070dd|Hitem:1|h[" .. one(ITEMS) .. "]|h|r", quality = 3 }))
+        end
+      elseif r <= 12 then
         if chance(0.25) then zone = one(ZONES) end
         sub = one(zone[2])
         if not seen[sub] then
@@ -149,7 +177,7 @@ local function life(race, class, hc, from, to)
         if not ch.kills[cr[1]] then
           local first = not kinds[cr[2]] or nil
           kinds[cr[2]] = true
-          add(m("kill", { name = cr[1], kind = cr[2], first = first, elite = chance(0.08) or nil }))
+          add(m("kill", { name = cr[1], kind = cr[2], first = first, elite = chance(0.08) or nil, quarry = chance(0.3) or nil }))
         end
         ch.kills[cr[1]] = (ch.kills[cr[1]] or 0) + n
       elseif r <= 55 then
@@ -172,7 +200,7 @@ local function life(race, class, hc, from, to)
       elseif r <= 72 then
         add(m("skill", { name = one(SKILLS), rank = one({ 50, 75, 100, 150, 200, 225, 250, 300 }) }))
       elseif r <= 76 then
-        add(m("loot", { link = "|cff1eff00|Hitem:1|h[" .. one(ITEMS) .. "]|h|r", quality = 2 }))
+        add(m("learned", { spells = { one(SPELLS) } }))
       elseif r <= 82 then
         if level < to then level = level + 1; add(m("level", { level = level })) end
       elseif r <= 86 then
@@ -211,84 +239,6 @@ local function life(race, class, hc, from, to)
     c.closed = true
   end
   return c
-end
-
--- ── the sample: a life as the game would record it ───────────────────────────
-if SAMPLE then
-  local DM, LM = "Dun Morogh", "Loch Modan"
-  local function q(title, giver, objective, ender)
-    return { k = "quest", title = title, giver = giver, ender = ender, objectives = objective and { objective } or nil }
-  end
-  local function kills(name, n) return { type = "monster", name = name, n = n } end
-  local function items(name, n) return { type = "item", name = name, n = n } end
-  local clock, hour = 1790000000, 9
-  local function at(t, zone, sub)
-    clock, hour = clock + 1500, (hour + 0.5) % 24
-    t.zone, t.sub, t.at, t.night = zone, sub, clock, (hour >= 18 or hour < 6) or nil
-    return t
-  end
-  local c = { guid = "Player-1-SAMPLE", race = "Dwarf", class = "PALADIN", hardcore = true, began = { level = 1 }, chapters = {
-    { start = { level = 1, zone = DM, sub = "Anvilmar" }, played = 4700, gold = 380, quests = 5,
-      kills = { ["Ragged Young Wolf"] = 6, ["Rockjaw Trogg"] = 9, ["Burly Rockjaw Trogg"] = 12, ["Frostmane Troll Whelp"] = 14 },
-      log = {
-        at(q("Dwarven Outfitters", "Sten Stoutarm", items("Tough Wolf Meat", 8)), DM, "Anvilmar"),
-        at({ k = "kill", name = "Ragged Young Wolf", kind = "Wolf", first = true }, DM, "Coldridge Valley"),
-        at({ k = "kill", name = "Rockjaw Trogg", kind = "Humanoid" }, DM, "Coldridge Valley"),
-        at(q("A New Threat", "Balir Frosthammer", kills("Rockjaw Trogg", 6)), DM, "Coldridge Valley"),
-        at({ k = "level", level = 2 }, DM, "Coldridge Valley"),
-        at(q("Coldridge Valley Mail Delivery", "Talin Keeneye", nil, "Grelin Whitebeard"), DM, "Coldridge Valley"),
-        at({ k = "level", level = 3 }, DM, "Coldridge Valley"),
-        at({ k = "kill", name = "Frostmane Troll Whelp", kind = "Humanoid" }, DM, "Coldridge Valley"),
-        at({ k = "close", foe = "Frostmane Troll Whelp", hp = 9 }, DM, "Coldridge Valley"),
-        at(q("The Troll Cave", "Grelin Whitebeard", kills("Frostmane Troll Whelp", 14)), DM, "Coldridge Valley"),
-        at(q("The Stolen Journal", "Grelin Whitebeard", items("Grelin Whitebeard's Journal", 1)), DM, "Coldridge Valley"),
-        at({ k = "level", level = 4 }, DM, "Coldridge Valley"),
-        at({ k = "learned", spells = { "Blessing of Might", "Judgement" } }, DM, "Anvilmar"),
-      }, ended = { level = 4, zone = DM, sub = "Anvilmar", place = "Anvilmar", how = "rest" } },
-    { start = { level = 4, zone = DM, sub = "Anvilmar", night = true }, played = 9400, gold = 1500, quests = 6,
-      kills = { ["Small Crag Boar"] = 10, ["Leper Gnome"] = 11, ["Frostmane Snowstrider"] = 13 },
-      log = {
-        at({ k = "place" }, DM, "Coldridge Pass"),
-        at({ k = "place" }, DM, "Kharanos"),
-        at({ k = "inn", place = "Thunderbrew Distillery" }, DM, "Kharanos"),
-        at(q("Beer Basted Boar Ribs", "Ragnar Thunderbrew", items("Crag Boar Rib", 6)), DM, "Kharanos"),
-        at({ k = "kill", name = "Small Crag Boar", kind = "Boar", first = true }, DM, "Kharanos"),
-        at({ k = "level", level = 5 }, DM, "Kharanos"),
-        at(q("The Boar Hunter", "Talin Keeneye", kills("Small Crag Boar", 12)), DM, "Kharanos"),
-        at({ k = "place" }, DM, "Brewnall Village"),
-        at({ k = "kill", name = "Leper Gnome", kind = "Humanoid" }, DM, "Brewnall Village"),
-        at(q("Bitter Rivals", "Rejold Barleybrew", nil, "Marleth Barleybrew"), DM, "Kharanos"),
-        at({ k = "night" }, DM, "Shimmer Ridge"),
-        at({ k = "wake", after = "night" }, DM, "Shimmer Ridge"),
-        at({ k = "kill", name = "Frostmane Snowstrider", kind = "Humanoid" }, DM, "Shimmer Ridge"),
-        at({ k = "rare", name = "Timber" }, DM, "Shimmer Ridge"),
-        at({ k = "level", level = 6 }, DM, "Shimmer Ridge"),
-        at({ k = "loot", link = "|cff1eff00|Hitem:1|h[Cuirboulle Gloves]|h|r", quality = 2 }, DM, "Shimmer Ridge"),
-        at(q("Frostmane Hold", "Senir Whitebeard", { type = "event", text = "Explore the Frostmane Hold" }), DM, "Kharanos"),
-        at(q("The Perfect Stout", "Rejold Barleybrew", items("Shimmerweed", 6)), DM, "Kharanos"),
-        at(q("Protecting the Herd", "Rudra Amberstill", kills("Vagash", 1)), DM, "Kharanos"),
-        at({ k = "skill", name = "Mining", rank = 50 }, DM, "Kharanos"),
-      }, ended = { level = 6, zone = DM, sub = "Kharanos", place = "Thunderbrew Distillery", how = "rest" } },
-    { start = { level = 6, zone = DM, sub = "Kharanos" }, played = 3100, gold = 900, quests = 1,
-      kills = { ["Mountain Boar"] = 9 },
-      log = {
-        at({ k = "place", new = "zone" }, LM, "North Gate Pass"),
-        at({ k = "place" }, LM, "Thelsamar"),
-        at({ k = "group", name = "Brannor", class = "WARRIOR" }, LM, "Thelsamar"),
-        at({ k = "kill", name = "Mountain Boar", kind = "Boar" }, LM, "Thelsamar"),
-        at({ k = "campfire" }, LM, "Thelsamar"),
-        at(q("Thelsamar Blood Sausages", "Vidra Hearthstove", items("Bear Meat", 3)), LM, "Thelsamar"),
-        at({ k = "level", level = 7 }, LM, "Thelsamar"),
-      } },
-  } }
-  local book = ns.writeBook(c)
-  io.write("# Sample: a Hardcore dwarf paladin, the first chapters\n\n")
-  io.write("Generated by `luajit addon/test/writer.lua --sample` from a life as the game would record it: a chapter\n")
-  io.write("from rest to rest, a sentence per moment (the third is still being written).\n\n")
-  for _, ch in ipairs(book.chapters) do
-    io.write(("## Chapter %d (%s)\n\n%s\n\n"):format(ch.number, ch.from == ch.to and ("level " .. ch.from) or ("levels %d to %d"):format(ch.from, ch.to), ch.text or "(nothing to tell)"))
-  end
-  return
 end
 
 -- ── the checks ───────────────────────────────────────────────────────────────
@@ -375,6 +325,33 @@ for _, race in ipairs(RACES) do
         if not book.epitaph then problem(race .. " " .. class, "a Hardcore death without an epitaph", "") end
         inspect(race .. " " .. class .. " epitaph", book.epitaph)
       end
+    end
+  end
+end
+
+-- A chapter being written only grows: told one moment more, what was written
+-- stays, but for its last sentence (the scene still being played).
+-- (the text with its abbreviations hidden: "Venture Co. Laborer" is one sentence)
+local function upTo(c, i, k)
+  local copy = {}
+  for key, v in pairs(c) do copy[key] = v end
+  copy.chapters, copy.death = {}, nil
+  for j = 1, i - 1 do copy.chapters[j] = c.chapters[j] end
+  local ch = c.chapters[i]
+  local open = { start = ch.start, kills = ch.kills, quests = ch.quests, played = ch.played, gold = ch.gold, log = {} }
+  for j = 1, k do open.log[j] = ch.log[j] end
+  copy.chapters[i] = open
+  return ((ns.writeBook(copy).chapters[i].text or ""):gsub("Co%. ", "Co_ "):gsub("Mr%. ", "Mr_ "))
+end
+for _, race in ipairs(RACES) do
+  local c = life(race, COMBOS[race][1], false, 1, 20)
+  for i = 1, math.min(#c.chapters, 3) do
+    local before = upTo(c, i, 0):gsub("\n\n", " ")
+    for k = 1, #c.chapters[i].log do
+      local now = upTo(c, i, k):gsub("\n\n", " ")
+      local kept = before:match("^(.*[%.!%?]\"?) [^%.!%?]*[%.!%?]\"?$") or ""
+      if now:sub(1, #kept) ~= kept then problem(race .. " chapter " .. i, "a finished sentence changed at moment " .. k, before .. "\n => " .. now) break end
+      before = now
     end
   end
 end

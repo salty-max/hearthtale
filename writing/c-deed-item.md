@@ -1,0 +1,25 @@
+---
+kind: c-deed-item
+---
+- [!one] gathered {n} {thing} for {giver}
+- [!one] brought {giver} {n} {thing}
+- [!one] collected {n} {thing} for {giver}
+- [!one] found the {thing} {giver} wanted, {n} in all
+- [!one] gathered {n} {thing} and took them to {ender}
+- [!one] gathered {n} {thing}
+- [!one] collected {n} {thing}
+- [!one] came back with {n} {thing}
+- [!one] searched until I had {n} {thing}
+- [one] found {thing} for {giver}
+- [one] brought {giver} {thing}
+- [one] recovered {thing} and took it to {ender}
+- [one] found {thing}
+- [one] recovered {thing}
+- [one] came back with {thing}
+- [!one class:ROGUE] came by {n} {thing} for {giver}, best not asked how
+- [!one] brought back {n} {thing}
+- [!one] picked up {n} {thing} along the way
+- [!one] scoured the area for {n} {thing}
+- [one] tracked down {thing}
+- [one] got my hands on {thing}
+- [one] turned up {thing} at last

@@ -1,0 +1,17 @@
+---
+kind: c-prof
+---
+- [new] took up {prof}
+- [new] began to learn {prof}
+- [new] found a trainer and started on {prof}
+- [new] learned the first of {prof}
+- [new] decided to learn {prof}
+- [!new] trained as {rank} in {prof}
+- [!new] earned my place as {rank} in {prof}
+- [!new] went to my trainer and became {rank} in {prof}
+- [!new] was taught enough {prof} to call myself {rank}
+- [!new] was made {rank} in {prof}
+- [new] made a start at {prof}
+- [!new] earned the title of {rank} in {prof}
+- [new] set my hand to {prof}
+- [!new] went on to become {rank} in {prof}

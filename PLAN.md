@@ -17,12 +17,14 @@ These replace the chapter per level below.
 | A chapter | From rest to rest: it closes when the character logs out resting, at an inn, in a city (the game's resting state) or by a campfire (its warmth on you: Cozy Fire on both games, Forever's camps), once it holds a few moments (3). Titled "Chapter N", with where it closed and the levels it covers. |
 | In the wild | A logout elsewhere is a night outdoors: a line, and the chapter goes on (the next session wakes in it). A /reload is no night (the logout is settled at the next login, which says whether it was one). |
 | The cap | After four hours of play in one chapter, any logout closes it (a night outdoors that ends it). |
-| Writing | A sentence for each thing as it happens (each quest, the chapter's first of each creature, each place, a campfire stop, a level reached), never rewritten; a new paragraph at a new zone; once closed, a recap (the quests, the most fought), the time and gold, and the rest that closed it. |
+| Writing | In scenes: the moments in one place make one or two sentences of clauses ("I reached Kharanos, took a room at Thunderbrew Distillery and found the Crag Boar Ribs Ragnar Thunderbrew wanted, six in all."), the journey or the time between scenes as their link ("I went back to Anvilmar", "Later that day,"); a sentence of its own for what matters more (a close call, a rare, a new zone, a night, a death, a new power, a pet fallen). Only the scene being played grows; what is before it never changes. A new paragraph at a new zone or a morning; once closed, a recap (the quests, the most fought), the time and gold, and the rest that closed it. |
 | Numbering | Chapters count from 1; a character met mid-life has its prologue first. |
 | Old data | The 0.1.0 test build's journals (chapters per level) start over. |
 | Quests | Told by what was done, from the objectives the quest log gives at acceptance (kill so many, bring so many, a task) and who it was returned to (a message carried); the title only when there is nothing else to tell. |
 | Levels | Recorded (a chapter's levels), not told; the trainer's new spells are. |
-| Prose | Linking words between moments by what happened in between (then, later that day, that night, at first light); a quip (an [aside] in writing/) at most once a paragraph, but for the moments that matter; race and class lines in about one chapter in three, twice at most (a first, once in a life, always may). |
+| Captured | Also (after testing): gear worn for the first time (green and better; an item put back on is no news), said to be my own work when crafted; professions taken up and their ranks, riding, the first ride; a druid's forms, a warlock's demons, a class steed (by spell id); a hunter's new pets and their deaths; blue finds only. Talents are not told. |
+| Sample | docs/sample.md is a life played through the addon in the test's fake game (addon/test/sample.lua), not written by hand. |
+| Prose | Linking words between scenes by what happened in between (later that day, that night, at first light), "then" within a scene; a quip (an [aside] in writing/) at most once a paragraph, but for the moments that matter; race and class lines in about one chapter in three, twice at most (a first, once in a life, always may). |
 
 ## Decisions (5 October 2026)
 

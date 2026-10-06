@@ -1,0 +1,11 @@
+---
+kind: c-inn
+---
+- took a room at {inn}
+- bound my hearthstone at {inn}
+- made {inn} my home for a while
+- set my hearthstone at {inn}
+- paid for a bed at {inn}
+- tied my stone to {inn}
+- found a bed at {inn}
+- settled in at {inn}

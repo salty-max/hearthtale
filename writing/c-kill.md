@@ -1,0 +1,15 @@
+---
+kind: c-kill
+---
+- killed {foe}
+- put down {foe}
+- dealt with {foe}
+- fought off {foe}
+- brought down {foe}
+- cut down {foe}
+- finished off {foe}
+- had to kill {foe}
+- [class:MAGE] burned {foe} to ash
+- [class:HUNTER !low] set my pet on {foe}
+- [class:WARLOCK] let my demon have {foe}
+- [class:ROGUE] caught {foe} unawares

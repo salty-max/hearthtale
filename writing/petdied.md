@@ -1,0 +1,12 @@
+---
+kind: petdied
+---
+- {pet} fell {at}. I nursed it back to its feet, and it forgave me.
+- I lost {pet} for a moment {at}. I brought it back, but it was close.
+- {pet} went down {at}. I won't let that happen again.
+- {pet} took the blow meant for me {at}, and paid for it. I revived it.
+- I had to bring {pet} back from the brink {at}.
+- {pet} was killed {at}. I called it back, ashamed.
+- [hc] {pet} fell {at}. Out here, it could as easily have been me.
+- {pet} fell {at}, and I felt it like a wound of my own. I brought it back.
+- I knelt by {pet} {at} and called it back to me.

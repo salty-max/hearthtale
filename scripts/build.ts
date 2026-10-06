@@ -14,7 +14,8 @@
  * not at night): the writer gives each moment its tags (night, first, hc,
  * race:Dwarf, class:PALADIN...). Plain ASCII, like the siblings' content;
  * {slots} must be the kind's (KINDS) or the voice's, every kind must exist.
- * A sentence ends with . ! or ? (or a closing quote after one).
+ * A sentence ends with . ! or ? (or a closing quote after one); a clause
+ * (kinds c-*: "took a room at {inn}") starts in lower case, with no stop.
  *
  *   bun scripts/build.ts          write the data files
  *   bun scripts/build.ts --check  fail if one isn't up to date
@@ -35,43 +36,54 @@ const KINDS: Record<string, string[]> = {
   beginning: ["where", "at", "in"],
   opening: ["where", "at", "in"],
   zone: ["zone"],
-  place: ["place", "zone"],
-  inn: ["inn"],
   flight: ["from", "to"],
-  quest: ["quest", "giver"],
-  "deed-kill": ["n", "foes", "giver", "ender"],
-  "deed-item": ["n", "thing", "giver", "ender"],
-  "deed-task": ["task", "giver", "ender"],
-  "deed-word": ["giver", "ender"],
   "quests-many": ["n", "quest", "giver"],
-  "first-kind": ["kind", "at", "in"],
   kills: ["n", "foes", "at", "in"],
   "kills-two": ["n1", "foes1", "n2", "foes2", "at", "in"],
-  elite: ["foe", "at", "in"],
   rare: ["foe", "at", "in"],
   "close-light": ["foe", "hp", "at", "in"],
   "close-deep": ["foe", "hp", "at", "in"],
-  group: ["mates"],
   dungeon: ["dungeon", "boss", "mates"],
-  trainer: ["spells"],
-  skill: ["skill", "rank"],
-  loot: ["item"],
   closing: ["time", "gold"],
   prologue: ["at", "in", "zone", "quests", "inn", "played"],
   died: ["foe", "at", "in"],
   epitaph: ["name", "who", "level", "in", "at", "zone", "foe"],
-  kill: ["foe", "at", "in"],
-  boss: ["boss", "dungeon"],
   campfire: ["at", "in"],
   night: ["at", "in"],
   wake: ["at", "in"],
   rest: ["place", "at", "in"],
+  power: ["spell"],
+  mount: [],
+  riding: [],
+  petdied: ["pet", "at", "in"],
   remembrance: ["name", "played", "quests", "kills", "rare", "dungeon", "zones"],
   farewell: ["name"],
+  // clauses: "I" and up to three of them make a sentence ("I reached
+  // Kharanos, took a room at Thunderbrew Distillery and killed a boar.")
+  "c-place": ["place"],
+  "c-travel": ["place"],
+  "c-return": ["place"],
+  "c-kill": ["foe"],
+  "c-first": ["kind"],
+  "c-elite": ["foe"],
+  "c-deed-kill": ["n", "foes", "giver", "ender"],
+  "c-deed-item": ["n", "thing", "giver", "ender"],
+  "c-deed-task": ["task", "giver", "ender"],
+  "c-deed-word": ["giver", "ender"],
+  "c-quest": ["quest", "giver"],
+  "c-trainer": ["spells"],
+  "c-skill": ["skill", "rank"],
+  "c-prof": ["prof", "rank"],
+  "c-gear": ["item"],
+  "c-loot": ["item"],
+  "c-group": ["mates"],
+  "c-inn": ["inn"],
+  "c-boss": ["boss", "dungeon"],
+  "c-tame": ["pet", "family"],
 };
 const VOICE = ["home", "kin", "faith", "weapon"];
 const TAGS = ["night", "hc", "high", "low", "first", "elite", "lots", "many", "slow", "quick",
-  "foe", "fall", "drowning", "lava", "nature", "beast", "people", "player", "inside", "rest", "fire", "last", "one", "aside"];
+  "foe", "fall", "drowning", "lava", "nature", "beast", "people", "player", "inside", "rest", "fire", "last", "one", "aside", "new", "made", "form", "demon", "steed"];
 const RACES = ["Human", "Dwarf", "NightElf", "Gnome", "Draenei", "Orc", "Troll", "Tauren", "Scourge", "BloodElf"];
 const CLASSES = ["WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK", "DRUID"];
 const tagOk = (t: string) => {
@@ -102,7 +114,9 @@ for (const f of existsSync(WRITING) ? readdirSync(WRITING).sort() : []) {
     for (const t of sentence.tags) if (!tagOk(t)) fail(file, `unknown tag [${t}]: ${sentence.text}`);
     for (const [, slot] of sentence.text.matchAll(/\{([^}]*)\}/g))
       if (!(KINDS[kind] ?? []).includes(slot) && !VOICE.includes(slot)) fail(file, `{${slot}} is not a slot of ${kind}: ${sentence.text}`);
-    if (!/[.!?]"?$/.test(sentence.text)) fail(file, `no full stop: ${sentence.text}`);
+    if (kind.startsWith("c-")) {
+      if (!/^[a-z]/.test(sentence.text) || /[.!?;:]$/.test(sentence.text)) fail(file, `a clause starts in lower case, with no stop: ${sentence.text}`);
+    } else if (!/[.!?]"?$/.test(sentence.text)) fail(file, `no full stop: ${sentence.text}`);
     if (sentences.some((o) => o.text === sentence.text)) fail(file, `twice: ${sentence.text}`);
     sentences.push(sentence);
   }

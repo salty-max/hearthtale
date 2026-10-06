@@ -1,7 +1,8 @@
 # Wayfarer's Journal
 
 A World of Warcraft addon: the character's own journal, written as it plays,
-in the first person, a sentence per moment, a chapter from rest to rest (a
+in the first person, in scenes (the moments in one place told together), a
+chapter from rest to rest (a
 logout at an inn, in a city, by a campfire); on Hardcore, an epitaph and the
 Hall of the Fallen. Sibling of Lorekeeper's Codex and Explorer's Field Journal
 (same games, look and tooling), but standalone: it reads none of their records.
@@ -26,15 +27,22 @@ The plan and its decisions: PLAN.md.
   ImageMagick's own SVG renderer drops the gradients), then scale with magick.
   The source TOC has an `@INTERFACE@` placeholder: not installable as is;
   `scripts/package.ts` builds `dist/classic` and `dist/forever`.
-- `addon/test/sim.lua`: fake WoW API, a life replayed, every recording
-  asserted, its book written. `FOREVER=1` runs it as Forever.
+- `addon/test/game.lua`: the fake game (WoW API, events, a character to play,
+  the addon loaded), shared by:
+  - `addon/test/sim.lua`: a life replayed, every recording asserted, its book
+    written. `FOREVER=1` runs it as Forever.
+  - `addon/test/sample.lua`: a Hardcore dwarf hunter's first evenings, played
+    through the addon; `luajit addon/test/sample.lua > docs/sample.md`.
 - `addon/test/writer.lua`: hundreds of imaginary lives (every race and class,
   Hardcore or not, met mid-life), every chapter checked; every sentence must be
-  reachable, and none used twice within 8 chapters. `--sample` writes
-  `docs/sample.md` (a dwarf paladin's first twelve levels).
+  reachable, none used again within 6 uses of its kind, and a chapter told one
+  moment more keeps what it had (but its last sentence).
 
 ## Writing the sentences
 
+- Clauses (kinds `c-*`) make the scenes: lower case, no stop, read after "I"
+  and joined with others ("took a room at {inn}"); a clause with its own
+  punctuation ends its sentence.
 - One kind per file; the slots of each kind are listed in `scripts/build.ts`
   (KINDS), plus the voice: {home}, {kin}, {faith} (missing for some, so the
   sentence is skipped), {weapon} (an object only: "fell to {weapon}", never
@@ -51,8 +59,8 @@ The plan and its decisions: PLAN.md.
 - The epitaph (epitaph, remembrance, farewell) is in the third person, by the
   name; the rest of the book in the first. A count of one never meets a
   plural ("one tasks"): such slots are left empty for one.
-- After changing the writing: `bun run build`, then `bun run check` and read
-  `docs/sample.md` again.
+- After changing the writing: `bun run build`, then `bun run check`,
+  regenerate `docs/sample.md` and read it again.
 
 ## Commands
 

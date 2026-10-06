@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "bun scripts/build.ts",
-    "check": "bun scripts/build.ts --check && luajit addon/test/sim.lua && FOREVER=1 luajit addon/test/sim.lua && luajit addon/test/writer.lua",
+    "check": "bun scripts/build.ts --check && luajit addon/test/sim.lua && FOREVER=1 luajit addon/test/sim.lua && luajit addon/test/writer.lua && luajit addon/test/sample.lua > /dev/null",
     "package": "bun scripts/package.ts"
   }
 }

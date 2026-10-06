@@ -1,0 +1,11 @@
+---
+kind: c-loot
+---
+- found {item}, a rare thing
+- came by {item}
+- took {item} from the spoils
+- found {item}, worth more than the rest put together
+- won {item}
+- was lucky enough to find {item}
+- turned up {item} among the spoils
+- pulled {item} from the spoils, a fine thing

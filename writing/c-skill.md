@@ -1,0 +1,13 @@
+---
+kind: c-skill
+---
+- brought my {skill} up to {rank}
+- worked at my {skill} until I reached {rank}
+- reached {rank} in {skill}
+- got my {skill} to {rank}
+- spent an evening on my {skill} and reached {rank}
+- practised my {skill} up to {rank}
+- [race:Dwarf] brought my {skill} to {rank}, as a dwarf should
+- [race:Gnome] reached {rank} in {skill}, with three improvements already in mind
+- improved my {skill} to {rank}
+- pushed my {skill} up to {rank}

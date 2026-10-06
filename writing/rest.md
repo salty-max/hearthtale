@@ -28,7 +28,7 @@ kind: rest
 - [!last fire] I warmed myself at the fire {at} and moved on.
 - [!last fire] I dozed by the fire {at}, then took up the road.
 - [last !fire] A warm room {at} and a quiet night. I set the pen down.
-- [last !fire] I made it {at} before dark and slept like a stone. So ends this chapter.
+- [last !fire] I found a bed {at} before dark and slept like a stone. So ends this chapter.
 - [last !fire] Supper and a bed {at}. That's enough for now.
 - [last !fire] I closed my door {at}, and the day with it.
 - [last fire] I lay down by the fire {at} and let the chapter end with the day.

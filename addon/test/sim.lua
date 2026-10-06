@@ -2,207 +2,10 @@
 --   luajit addon/test/sim.lua              (from the repo root): Classic
 --   FOREVER=1 luajit addon/test/sim.lua    the same on Forever's client (no
 --                                          combat log: kills from corpses fought)
-local DIR = "addon/WayfarersJournal/"
-local FOREVER = os.getenv("FOREVER") == "1"
-function GetBuildInfo() return "1.15.8", "60000", "Oct 1 2026", FOREVER and 16001 or 11509 end
-local secrets = {}
-if FOREVER then issecretvalue = function(v) return secrets[v] == true end end
-
--- ── a fake game ──────────────────────────────────────────────────────────────
-local clock, uptime = 1790900000, 1000
-function time() return clock end
-function GetTime() return uptime end
-date = os.date
-local state = {
-  level = 1, guid = "Player-6113-0ABCDEF0", zone = "Dun Morogh", sub = "Coldridge Valley", hour = 10,
-  money = 0, health = 100, hardcore = true, bind = "Anvilmar", party = {},
-}
-local printed = {}
-function print(msg) table.insert(printed, msg) end
-function strtrim(s) return (s:gsub("^%s+", ""):gsub("%s+$", "")) end
-function GetGameTime() return state.hour, 0 end
-function GetRealZoneText() return state.zone end
-function GetSubZoneText() return state.sub end
-function GetBindLocation() return state.bind end
-function GetMoney() return state.money end
-function GetQuestsCompleted() return state.questsDone or {} end
--- Forever's client here doesn't say whether a character is Hardcore: the
--- player says so in the settings (tested below).
-if not FOREVER then C_GameRules = { IsHardcoreActive = function() return state.hardcore end } end
-C_QuestLog = {
-  GetTitleForQuestID = function(id) return state.titles and state.titles[id] end,
-  GetQuestObjectives = function(id) return state.objectives and state.objectives[id] or {} end,
-}
-QUEST_MONSTERS_KILLED = "%s slain: %d/%d"
-QUEST_OBJECTS_FOUND = "%s: %d/%d"
-C_Timer = { After = function(_, fn) fn() end }
-SlashCmdList = {}
-
--- Units: the player, a target, the quest giver, the party.
-local CREATURES = {
-  [1] = { name = "Ragged Young Wolf", type = "Beast", family = "Wolf", rank = "normal" },
-  [2] = { name = "Rockjaw Trogg", type = "Humanoid", rank = "normal" },
-  [3] = { name = "Timber", type = "Beast", family = "Wolf", rank = "rare" },
-  [4] = { name = "Frostmane Novice", type = "Humanoid", rank = "normal" },
-  [5] = { name = "Gibblewilt", type = "Humanoid", rank = "elite" },
-  [6] = { name = "Defias Overseer", type = "Humanoid", rank = "elite" },
-}
-local function creatureGuid(i, n) return ("Creature-0-4170-0-12-%d-%08X"):format(i, n or 1) end
-local deadTarget, inCombat = false, false
-local function unitOf(u)
-  if u == "target" and state.target then return CREATURES[state.target.id] end
-end
-function UnitExists(u) return u == "player" or unitOf(u) ~= nil or (u == "npc" and state.npc ~= nil) or state.party[u] ~= nil end
-function UnitIsPlayer(u) return u == "player" or state.party[u] ~= nil end
-function UnitGUID(u)
-  if u == "player" then return state.guid end
-  if u == "target" and state.target then return creatureGuid(state.target.id, state.target.n) end
-end
-function UnitName(u)
-  if u == "player" then return "Sealinedion" end
-  if u == "npc" then return state.npc end
-  if state.party[u] then return state.party[u].name end
-  local c = unitOf(u)
-  return c and c.name
-end
-function UnitLevel(u) return u == "player" and state.level or 1 end
-function UnitRace() return "Dwarf", "Dwarf" end
-function UnitClass(u) if state.party[u] then return state.party[u].class, state.party[u].class end return "Paladin", "PALADIN" end
-function UnitSex() return 3 end
-function UnitCreatureType(u) local c = unitOf(u); return c and c.type end
-function UnitCreatureFamily(u) local c = unitOf(u); return c and c.family end
-function UnitClassification(u) local c = unitOf(u); return c and c.rank end
-function UnitIsDead(u) return u == "target" and deadTarget end
-function UnitAffectingCombat(u) return inCombat and not (u == "target" and deadTarget) end
-function UnitHealth() return state.health end
-function UnitHealthMax() return 100 end
-function UnitIsDeadOrGhost() return state.health <= 0 end
-function GetNumGroupMembers() local n = 0 for _ in pairs(state.party) do n = n + 1 end return n > 0 and n + 1 or 0 end
-function IsInRaid() return false end
-function IsInInstance() return state.instance ~= nil, state.instance and "party" or "none" end
-function GetInstanceInfo() return state.instance end
-local ITEMS = { ["Ragged Leather Gloves"] = { 1, 3 }, ["Frostmane Leather Vest"] = { 2, 8 }, ["Wolf Fang Necklace"] = { 2, 10 } }
-function GetItemInfo(link) local name = link:match("%[(.-)%]"); local i = ITEMS[name]; if i then return name, link, i[1], i[2] end end
-local function itemLink(name) return ("|cff1eff00|Hitem:%d::::::::1:::::|h[%s]|h|r"):format(#name, name) end
--- The game's formats, as in its global strings.
-ERR_LEARN_SPELL_S = "You have learned a new spell: %s."
-ERR_LEARN_ABILITY_S = "You have learned a new ability: %s."
-SKILL_RANK_UP = "Your skill in %s has increased to %d."
-LOOT_ITEM_SELF = "You receive loot: %s."
-LOOT_ITEM_SELF_MULTIPLE = "You receive loot: %sx%d."
-LOOT_ITEM_PUSHED_SELF = "You receive item: %s."
-LOOT_ITEM_PUSHED_SELF_MULTIPLE = "You receive item: %sx%d."
--- Taxis.
-local TAXI = { "Ironforge, Dun Morogh", "Thelsamar, Loch Modan" }
-function NumTaxiNodes() return #TAXI end
-function TaxiNodeName(i) return TAXI[i] end
-function TaxiNodeGetType(i) return i == 1 and "CURRENT" or "REACHABLE" end
-function TakeTaxiNode() end
-function hooksecurefunc(name, fn)
-  local original = _G[name]
-  _G[name] = function(...) local r = original(...); fn(...); return r end
-end
-local combatLog
-function CombatLogGetCurrentEventInfo() return unpack(combatLog) end
-
--- UI: any method works and returns something sensible, scripts are kept.
-local function ui()
-  local o = { shown = false, scripts = {} }
-  return setmetatable(o, {
-    __index = function(t, k)
-      if k == "SetScript" then return function(self, name, fn) self.scripts[name] = fn end end
-      if k == "Show" then return function(self) self.shown = true; if self.scripts.OnShow then self.scripts.OnShow(self) end end end
-      if k == "Hide" then return function(self) self.shown = false end end
-      if k == "SetShown" then return function(self, v) if v then self:Show() else self:Hide() end end end
-      if k == "IsShown" then return function(self) return self.shown end end
-      if k == "SetText" then return function(self, v) self.text = v end end
-      if k == "GetText" then return function(self) return rawget(self, "text") or "" end end
-      if k == "GetStringHeight" then return function() return 14 end end
-      if k == "SetHeight" then return function(self, v) self.height = v end end
-      if k == "GetHeight" then return function(self) return rawget(self, "height") or 100 end end
-      if k == "SetVerticalScroll" then return function(self, v) self.vscroll = v end end
-      if k == "GetVerticalScroll" then return function(self) return rawget(self, "vscroll") or 0 end end
-      if k == "GetWidth" then return function() return 140 end end
-      if k == "GetCenter" then return function() return 0, 0 end end
-      if k == "GetEffectiveScale" then return function() return 1 end end
-      if k == "CreateFontString" or k == "CreateTexture" then return function() return ui() end end
-      return function() return t end
-    end,
-  })
-end
-UIParent, UISpecialFrames = ui(), {}
-Minimap, GameTooltip = ui(), ui()
-function GetCursorPosition() return 0, 0 end
--- The game's settings panel: keep what the addon registers.
-local panel = { settings = {} }
-Settings = {
-  VarType = { Boolean = "boolean", Number = "number" },
-  RegisterVerticalLayoutCategory = function(name) panel.name = name; return { GetID = function() return 42 end } end,
-  RegisterProxySetting = function(_, variable, _, name, default, get, set)
-    local s = { variable = variable, name = name, default = default, get = get, set = set }
-    panel.settings[variable] = s
-    return s
-  end,
-  CreateCheckbox = function() end,
-  RegisterAddOnCategory = function() panel.registered = true end,
-  OpenToCategory = function(id) panel.opened = id end,
-}
-local portraitOf
-function SetPortraitTexture(_, unit) portraitOf = unit end
-
-local frames = {}
-function CreateFrame(_, name, _, template)
-  local f = ui()
-  f.registered = {}
-  if template == "ButtonFrameTemplate" then -- the game's window has its portrait
-    local p = ui()
-    f.GetPortrait = function() return p end
-  end
-  function f:RegisterEvent(e)
-    if FOREVER and e == "COMBAT_LOG_EVENT_UNFILTERED" then error("COMBAT_LOG_EVENT_UNFILTERED: forbidden") end
-    self.registered[e] = true
-  end
-  table.insert(frames, f)
-  if name then _G[name] = f end
-  return f
-end
-local function fire(e, ...)
-  local heard = false
-  for _, f in ipairs(frames) do
-    if f.registered[e] and f.scripts.OnEvent then f.scripts.OnEvent(f, e, ...); heard = true end
-  end
-  assert(heard, "nobody listens to " .. e)
-end
-
--- The game's toasts, links and realm: keep what the addon hands them.
-local toasted = {}
-function GetRealmName() return "Nightslayer" end
-C_XMLUtil = { GetTemplateInfo = function(name) return name ~= "PanelTabButtonTemplate" or nil end }
-AlertFrame = { AddQueuedAlertFrameSubSystem = function(_, _, setUp)
-  return { AddAlert = function(_, guid)
-    local frame = ui()
-    frame.Icon, frame.Title, frame.Name = ui(), ui(), ui()
-    setUp(frame, guid)
-    table.insert(toasted, frame)
-  end }
-end }
-local linkHandlers = {}
-LinkUtil = { RegisterLinkHandler = function(kind, fn) linkHandlers[kind] = fn end }
-LinkProcessorResponse = { Handled = 2 }
-
--- ── load the addon ───────────────────────────────────────────────────────────
-local ns = {}
-assert(loadfile(DIR .. (FOREVER and "Data_Forever.lua" or "Data_Classic.lua")))("WayfarersJournal", ns)
-for _, f in ipairs({ "Core.lua", "Record.lua", "Writer.lua", "Book.lua", "Hall.lua", "Settings.lua", "Minimap.lua" }) do assert(loadfile(DIR .. f))("WayfarersJournal", ns) end
-local D = ns.data
+local G = dofile("addon/test/game.lua")
+local FOREVER, ns, D, state, fire, printed, panel = G.forever, G.ns, G.D, G.state, G.fire, G.printed, G.panel
+local toasted, linkHandlers, login, logout, reload, kill, itemLink = G.toasted, G.linkHandlers, G.login, G.logout, G.reload, G.kill, G.itemLink
 local function check(cond, msg) assert(cond, msg); io.write("✓ " .. msg .. "\n") end
--- Resting and campfires: the game's resting state, the auras on me.
-state.auras = {}
-function IsResting() return state.resting == true end
-C_UnitAuras = { GetPlayerAuraBySpellID = function(id) return state.auras[id] and { spellId = id } or nil end }
-local function login() fire("PLAYER_LOGIN"); fire("PLAYER_ENTERING_WORLD", true, false) end
-local function logout() fire("PLAYER_LOGOUT") end
-local function reload() fire("PLAYER_LOGOUT"); fire("PLAYER_LOGIN"); fire("PLAYER_ENTERING_WORLD", false, true) end
 
 -- ── a life ───────────────────────────────────────────────────────────────────
 check(D.client == (FOREVER and "forever" or "classic") and D.writing.opening, "each game's data file is its own, with the writing")
@@ -270,28 +73,12 @@ local q2 = moments("quest")[2].objectives[1]
 check(q2.type == "monster" and q2.name == "Rockjaw Trogg" and q2.n == 6, "… a kill quest read through the game's own format (\"%s slain\")")
 
 -- Kills.
-local function kill(id, n)
-  state.target = { id = id, n = n }
-  if FOREVER then
-    inCombat = true
-    fire("PLAYER_TARGET_CHANGED")
-    inCombat, deadTarget = false, true
-    fire("PLAYER_TARGET_CHANGED")
-    deadTarget = false
-    return
-  end
-  fire("PLAYER_TARGET_CHANGED")
-  combatLog = { clock, "PARTY_KILL", false, state.guid, "Sealinedion", 0, 0, creatureGuid(id, n), CREATURES[id].name, 0, 0 }
-  fire("COMBAT_LOG_EVENT_UNFILTERED")
-end
 kill(1, 1); kill(1, 2); kill(2, 3)
 local kills = moments("kill")
 check(#kills == 2 and kills[1].name == "Ragged Young Wolf" and kills[1].kind == "Wolf" and kills[1].first and kills[2].first
   and ch().kills["Ragged Young Wolf"] == 2, "a moment for the chapter's first of each creature (the first of its kind marked), every kill counted")
 if FOREVER then
-  state.target = { id = 2, n = 99 }; deadTarget = true
-  fire("PLAYER_TARGET_CHANGED")
-  deadTarget = false
+  G.corpse(2, 99)
   check(ch().kills["Rockjaw Trogg"] == 1, "Forever: a corpse never fought doesn't count")
 end
 
@@ -300,14 +87,74 @@ fire("CHAT_MSG_SYSTEM", "You have learned a new spell: |cff71d5ff|Hspell:19740|h
 fire("CHAT_MSG_SYSTEM", "You have learned a new spell: |cff71d5ff|Hspell:20271|h[Judgement]|h|r.")
 local learned = moments("learned")
 check(#learned == 1 and learned[1].spells[1] == "Blessing of Might" and learned[1].spells[2] == "Judgement", "a trainer's visit: one moment, its spells")
-fire("CHAT_MSG_LOOT", "You receive loot: " .. itemLink("Ragged Leather Gloves") .. ".")
-check(#moments("loot") == 0, "common loot isn't worth a line")
+fire("CHAT_MSG_SYSTEM", "You have learned a new spell: |cff71d5ff|Hspell:13819|h[Summon Warhorse]|h|r.")
+local power = moments("power")[1]
+check(power and power.spell == "Summon Warhorse" and power.kind == "steed" and #moments("learned") == 1,
+  "a new power (a steed, a druid's form, a warlock's demon): a moment of its own, by its spell id")
 fire("CHAT_MSG_LOOT", "You receive loot: " .. itemLink("Frostmane Leather Vest") .. ".")
-fire("CHAT_MSG_LOOT", "You receive loot: " .. itemLink("Wolf Fang Necklace") .. "x1.")
-fire("CHAT_MSG_LOOT", "You receive loot: " .. itemLink("Frostmane Leather Vest") .. ".")
-fire("CHAT_MSG_LOOT", "Brannor receives loot: " .. itemLink("Wolf Fang Necklace") .. ".")
-local loot = moments("loot")
-check(#loot == 2 and loot[2].link:find("Wolf Fang Necklace", 1, true), "loot: a moment each time the chapter's best is bettered (mine only)")
+check(#moments("loot") == 0, "green loot isn't told (it is, once worn)")
+fire("CHAT_MSG_LOOT", "You receive loot: " .. itemLink("Pendant of Myzrael", 3) .. ".")
+fire("CHAT_MSG_LOOT", "Brannor receives loot: " .. itemLink("Pendant of Myzrael", 3) .. ".")
+check(#moments("loot") == 1 and moments("loot")[1].link:find("Pendant of Myzrael", 1, true), "a blue find is (mine only)")
+
+-- Gear: what is worn when the journal first looks is noted quietly; then each
+-- item worn for the first time (green or better), crafted ones marked.
+state.gear = { [5] = "Ragged Leather Gloves" }
+fire("PLAYER_EQUIPMENT_CHANGED", 5)
+check(#moments("gear") == 0 and J.worn, "the gear worn at first: noted, not told")
+state.gear[10] = "Ragged Leather Gloves"
+state.gear[5] = "Frostmane Leather Vest"
+fire("PLAYER_EQUIPMENT_CHANGED", 5)
+fire("CHAT_MSG_LOOT", "You create: " .. itemLink("Handstitched Leather Belt") .. ".")
+state.gear[6] = "Handstitched Leather Belt"
+fire("PLAYER_EQUIPMENT_CHANGED", 6)
+state.gear[5] = "Ragged Leather Gloves"
+fire("PLAYER_EQUIPMENT_CHANGED", 5)
+state.gear[5] = "Frostmane Leather Vest"
+fire("PLAYER_EQUIPMENT_CHANGED", 5)
+local gear = moments("gear")
+check(#gear == 2 and gear[1].link:find("Frostmane Leather Vest", 1, true) and not gear[1].made and gear[2].made,
+  "gear worn for the first time, once (put back on, no news); what I made, marked")
+
+-- Professions: known ones noted quietly; a new one, a new rank, riding.
+state.skills = { { "Professions", true }, { "Mining", false, 75 }, { "Secondary Skills", true }, { "Cooking", false, 75 } }
+fire("SKILL_LINES_CHANGED")
+check(#moments("prof") == 0 and J.profs.Mining == 75, "the trades known at first: noted, not told")
+fire("CHAT_MSG_SYSTEM", "You have learned a new spell: |cff71d5ff|Hspell:2575|h[Mining]|h|r.")
+state.skills[3] = { "Leatherworking", false, 75 }
+table.insert(state.skills, 4, { "Secondary Skills", true })
+state.skills[2][3] = 150
+table.insert(state.skills, { "Apprentice Riding", false, 75 })
+fire("SKILL_LINES_CHANGED")
+local profs = {}
+for _, m in ipairs(moments("prof")) do profs[m.name] = m end
+check(profs.Leatherworking and profs.Leatherworking.learned and profs.Mining and profs.Mining.rank == "journeyman"
+  and #moments("riding") == 1, "a trade taken up, a new rank, riding learned")
+check(#moments("learned") == 1 and #moments("learned")[1].spells == 2, "a trade's own spell isn't a trainer's lesson")
+
+-- The first ride.
+state.mounted = true
+fire("UNIT_AURA", "player")
+fire("UNIT_AURA", "player")
+state.mounted = false
+check(#moments("mount") == 1, "the first ride: once")
+
+-- A hunter's pet (the journal is a paladin's: a hunter for a moment).
+J.class = "HUNTER"
+state.pet = { name = "Grrr", family = "Bear" }
+fire("UNIT_PET", "player")
+check(J.pets and J.pets.Grrr and #moments("tame") == 0, "the pet at hand when the journal first looks: noted")
+state.pet = { name = "Snapjaw", family = "Crocolisk" }
+fire("UNIT_PET", "player")
+state.pet.dead = true
+fire("UNIT_HEALTH", "pet")
+fire("UNIT_HEALTH", "pet")
+state.pet.dead = false
+fire("UNIT_HEALTH", "pet")
+check(#moments("tame") == 1 and moments("tame")[1].family == "Crocolisk" and #moments("petdied") == 1 and moments("petdied")[1].name == "Snapjaw",
+  "a pet tamed, and its death, once")
+J.class, state.pet = "PALADIN", nil
+
 state.money = 150
 fire("PLAYER_MONEY")
 state.money = 100
@@ -390,7 +237,7 @@ io.write("    " .. grown:gsub("\n\n", "\n    ") .. "\n")
 -- The book, open.
 SlashCmdList.WAYFARERSJOURNAL("")
 local B, page, rows = WayfarersJournalFrame, WayfarersJournalPage, ns.bookRows
-check(B:IsShown() and portraitOf == "player" and B.who:GetText():find("Sealinedion, level 2", 1, true) and B.who:GetText():find("Hardcore", 1, true),
+check(B:IsShown() and G.portrait() == "player" and B.who:GetText():find("Sealinedion, level 2", 1, true) and B.who:GetText():find("Hardcore", 1, true),
   "/wj opens the book: my portrait, who I am, Hardcore")
 check(rows[1]:IsShown() and rows[1].title:GetText() == "Chapter 1" and rows[1].place:GetText() == "still being written"
   and page.title:GetText() == "Chapter 1" and page.sub:GetText():find("levels 1 to 2", 1, true) and page.sub:GetText():find("still being written", 1, true),
@@ -403,7 +250,7 @@ SlashCmdList.WAYFARERSJOURNAL("")
 check(not B:IsShown(), "/wj again closes it")
 
 -- A night in the wild: the chapter goes on; a /reload is no night.
-uptime = uptime + 1800
+G.played(1800)
 logout()
 login()
 check(#J.chapters == 1 and moments("night")[1] and moments("wake")[1] and moments("wake")[1].after == "night" and #printed == before,
@@ -445,7 +292,7 @@ check(#J.chapters == 3 and ch(2).ended.how == "campfire", "a logout by a campfir
 
 -- The cap: four hours in a chapter, and any logout closes it.
 for i = 1, 3 do state.titles = { [300 + i] = "Chore " .. i }; fire("QUEST_TURNED_IN", 300 + i, 80, 0) end
-uptime = uptime + 4 * 3600 + 60
+G.played(4 * 3600 + 60)
 logout()
 login()
 check(#J.chapters == 4 and ch(3).ended.how == "long" and moments("night", 3)[1].last, "past four hours, a night outdoors closes it")
@@ -463,7 +310,7 @@ panel.settings.WAYFARERSJOURNAL_CHAT.set(true)
 -- Death.
 state.sub = "Kharanos"
 if not FOREVER then
-  combatLog = { clock, "ENVIRONMENTAL_DAMAGE", false, nil, nil, 0, 0, state.guid, "Sealinedion", 0, 0, "FALLING", 120 }
+  G.fall()
   fire("COMBAT_LOG_EVENT_UNFILTERED")
 end
 state.health = 0

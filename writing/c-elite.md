@@ -1,0 +1,11 @@
+---
+kind: c-elite
+---
+- fought {foe}, a hard fight that I won
+- faced {foe} and walked away
+- brought down {foe}, which took everything I had
+- beat {foe}, though it was a near thing
+- took on {foe} and lived
+- [hc] fought {foe} with more care than courage
+- stood my ground against {foe}
+- outlasted {foe}

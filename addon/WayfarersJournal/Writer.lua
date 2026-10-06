@@ -1,6 +1,6 @@
 -- The writer: turns the records into the journal's prose, when it is read
--- (never stored). Each moment of a level picks one sentence of its kind
--- (writing/<kind>.md):
+-- (never stored), in scenes (Book:chapter). Each moment picks a sentence or a
+-- clause of its kind (writing/<kind>.md):
 --   - only sentences whose [tags] the moment has (night, hc, race:Dwarf...;
 --     "!night" = not at night) and whose {slots} it can fill;
 --   - a sentence never used twice in a book while a fresh one is left (then the
@@ -92,14 +92,15 @@ local function article(name)
 end
 
 -- Kinds worth a "first of its kind" (the game's English names; people are
--- not a kind, and critters are not a fight).
+-- not a kind, critters are not a fight, and a beast without a family is
+-- just a beast).
 local KINDS = {
   Wolf = "wolves", Cat = "great cats", Spider = "spiders", Bear = "bears", Boar = "boars", Crocolisk = "crocolisks",
   ["Carrion Bird"] = "carrion birds", Crab = "crabs", Gorilla = "gorillas", Raptor = "raptors",
   Tallstrider = "tallstriders", Scorpid = "scorpids", Turtle = "turtles", Bat = "bats", Hyena = "hyenas",
   Owl = "owls", ["Wind Serpent"] = "wind serpents", Serpent = "serpents", Dragonhawk = "dragonhawks",
   Ravager = "ravagers", ["Warp Stalker"] = "warp stalkers", Sporebat = "sporebats", ["Nether Ray"] = "nether rays",
-  Beast = "beasts", Undead = "undead", Elemental = "elementals", Demon = "demons", Dragonkin = "dragonkin",
+  Undead = "undead", Elemental = "elementals", Demon = "demons", Dragonkin = "dragonkin",
   Giant = "giants", Mechanical = "constructs",
 }
 local SKIP = { Critter = true, ["Non-combat Pet"] = true, Totem = true, ["Not specified"] = true, ["Gas Cloud"] = true }
@@ -231,8 +232,8 @@ local function isQuip(s)
   return false
 end
 -- The moments that may always have one.
-local MATTERS = { ["close-light"] = true, ["close-deep"] = true, rare = true, ["first-kind"] = true, died = true,
-  elite = true, boss = true, rest = true, night = true, beginning = true }
+local MATTERS = { ["close-light"] = true, ["close-deep"] = true, rare = true, died = true, rest = true, night = true,
+  beginning = true, power = true, petdied = true }
 
 local Book = {}
 Book.__index = Book
@@ -250,16 +251,16 @@ end
 -- One sentence of a kind for a moment: key makes the choice stable, values
 -- fill the slots (_place: the place {at}, {in} or {where} names), tags add to
 -- the character's. prefer: tags to favour (a fresh sentence with one of them
--- wins over the rest).
-function Book:say(kind, key, values, tags, prefer)
+-- wins over the rest). raw: a clause, left as it is (no capital).
+function Book:say(kind, key, values, tags, prefer, raw)
   local list = ns.data.writing[kind]
   if not list then return end
   local ctx = setmetatable(tags or {}, { __index = self.base })
   for k, v in pairs(self.voice) do if values[k] == nil then values[k] = v end end
-  -- A place already named is not named again by a sentence without a verb,
+  -- A place just named is not named again by a sentence without a verb,
   -- unless no other sentence fits.
   local named = values["in"]
-  if named and values._place == self.last then values["in"] = nil end
+  if named and values._place == self.last and not self.there then values["in"] = nil end
   -- In a chapter: a race's or a class's line only in some chapters, twice at
   -- most; a sentence with a quip (a second, wry sentence) once a paragraph,
   -- but for the moments that matter.
@@ -331,7 +332,8 @@ function Book:say(kind, key, values, tags, prefer)
   text = text:gsub("{(%w+)}", values)
   -- a place left out: no space before the punctuation, none doubled
   -- (and none left at the start: "{at}, my tenth level" with no place)
-  return capitalise((text:gsub(" +([%.,;:!%?])", "%1"):gsub("  +", " "):gsub("^[ ,;:]+", "")))
+  text = text:gsub(" +([%.,;:!%?])", "%1"):gsub("  +", " "):gsub("^[ ,;:]+", "")
+  return raw and text or capitalise(text)
 end
 
 -- The place slots of a moment: {at} ("in Coldridge Valley", "there" if it was
@@ -359,10 +361,10 @@ local function topKills(kills)
 end
 
 -- A quest, told by what it asked: so many of a creature slain, so many of a
--- thing brought, a task, a message carried to another; its title only when
--- there is nothing else to tell.
+-- thing brought, a task, a message carried to another (a clause); its title
+-- only when there is nothing else to tell.
 local function lowerFirst(text) return (text:gsub("^%u", string.lower)) end
-function Book:deed(m, key, say, tags, quoted)
+function Book:deed(m, key, tags)
   local o = m.objectives and m.objectives[1]
   local ender = m.ender ~= m.giver and m.ender or nil
   local values = { giver = m.giver, ender = ender }
@@ -372,69 +374,74 @@ function Book:deed(m, key, say, tags, quoted)
     -- one asked for is a named one, mostly ("Vagash"): no article
     values.n, values.foes = words(count), count > 1 and plural(o.name) or o.name
     tags.one = count == 1 or nil
-    done = say("deed-kill", key, values, tags)
+    done = self:say("c-deed-kill", key, values, tags, nil, true)
   elseif o and o.type == "item" and o.name then
     local count = o.n or 1
     values.n, values.thing = words(count), count > 1 and things(o.name) or itemName(o.name)
     tags.one = count == 1 or nil
-    done = say("deed-item", key, values, tags)
+    done = self:say("c-deed-item", key, values, tags, nil, true)
   elseif o and o.text then
     values.task = lowerFirst((o.text:gsub("[%.:]%s*$", "")))
-    done = say("deed-task", key, values, tags)
+    done = self:say("c-deed-task", key, values, tags, nil, true)
   elseif ender and m.giver then
-    done = say("deed-word", key, values, tags)
+    done = self:say("c-deed-word", key, values, tags, nil, true)
   end
-  if not done and m.title then say("quest", key, { quest = quoted(m.title), giver = m.giver }, tags) end
+  if not done and m.title then
+    done = self:say("c-quest", key, { quest = '"' .. m.title .. '"', giver = m.giver }, tags, nil, true)
+  end
+  return done
 end
 
--- Linking words between moments, by what happened in between: night falling,
--- morning, hours gone by, or simply the next thing. Not on a paragraph's
--- first sentence, nor twice in a row; on a sentence that begins with "I", "My"
--- or an article only. Returns { text, linked }.
+-- Linking words, by what happened since the moment before: night falling,
+-- morning, hours gone by. Within a scene, the next thing.
 local LINKS = {
   night = { "That night,", "By nightfall,", "When night came," },
   day = { "At first light,", "In the morning,", "With the dawn," },
   later = { "Later,", "Some hours later,", "Later that day," },
-  next = { "Then", "After that,", "Soon after,", "Next," },
+  next = { "Then", "After that,", "Next,", "Before long," },
 }
--- (a night, a rest or a fire takes no plain "then")
-local NO_NEXT = { night = true, rest = true, campfire = true, wake = true }
-function Book:linked(text, m, prev, first, key, wasLinked, kind)
-  if first or wasLinked or not (m and prev and m.at and prev.at) then return { text = text } end
-  local head, rest = text:match("^(%a+)( .*)$")
-  if not head or not (head == "I" or head == "My" or head == "A" or head == "An" or head == "The") then return { text = text } end
+function Book:link(m, prev, key)
+  if not (m and prev and m.at and prev.at) then return nil end
   local which
   if m.night and not prev.night then which = "night"
   elseif prev.night and not m.night then which = "day"
-  elseif m.at - prev.at > 3600 then which = "later"
-  elseif not NO_NEXT[kind] and hash(self.seed .. "|link|" .. key) % 3 == 0 then which = "next" end
-  if not which then return { text = text } end
+  elseif m.at - prev.at > 3600 then which = "later" end
+  return which and self:linkWord(which, key)
+end
+function Book:linkWord(which, key)
   local list = LINKS[which]
-  local word = list[hash(self.seed .. "|word|" .. key) % #list + 1]
+  return list[hash(self.seed .. "|word|" .. key) % #list + 1]
+end
+-- A sentence with its link before it ("That night, I..."), if it begins with
+-- "I", "My" or an article.
+local function linked(word, text)
+  if not word then return text end
+  local head, rest = text:match("^(%a+)( .*)$")
+  if not head or not (head == "I" or head == "My" or head == "A" or head == "An" or head == "The") then return text end
   if head ~= "I" then head = head:lower() end
-  return { text = word .. " " .. head .. rest, linked = true }
+  return word .. " " .. head .. rest
 end
 
--- A chapter: its moments in order, one sentence each, a new paragraph at each
--- new zone; once closed, a recap (quests, the most fought), the time and gold,
--- and the last line (the rest that closed it, or the night outdoors).
+-- The rank a profession's trainer gives: "an apprentice", "a journeyman".
+local function rankName(rank) return rank and ((rank:match("^[aeiou]") and "an " or "a ") .. rank) end
+
+-- A chapter, told in scenes: the moments in one place make one or two
+-- sentences of clauses ("In Coldridge Valley I brought Sten his meat, killed
+-- six troggs for Balir and carried Talin's word to Grelin."), a link and the
+-- place at each new scene ("Later that day, I went on to Kharanos and...").
+-- What matters more (a close call, a rare, a new zone, a night, a death, a new
+-- power) has a sentence of its own; a new zone or a morning, a new paragraph.
+-- The scene being played is the only one still growing: told in order, the
+-- finished ones never change. Once closed, a recap (quests, the most fought),
+-- the time and gold, and the last line (the rest that closed it, or the night
+-- outdoors).
 function Book:chapter(n, ch)
   local c = self.c
   local paragraphs, current = {}, {}
-  self.last = nil
+  self.last, self.there = nil, false
   self.chapterNo = self.chapterNo + 1
   self.inChapter, self.voiceUsed, self.quipped = true, 0, false
   self.voiceChapter = hash(self.seed .. "|voice|" .. n) % 3 == 0
-  local prev, linked -- the moment before, and whether its sentence was linked
-  local link -- the moment being told (for its linking words)
-  local function say(kind, key, values, tags)
-    local s = self:say(kind, n .. "|" .. key, values, tags)
-    if not s then return s end
-    local l = self:linked(s, link, prev, #current == 0, n .. "|" .. key, linked, kind)
-    linked = l.linked
-    table.insert(current, l.text)
-    return l.text
-  end
   local function newParagraph()
     if #current > 0 then table.insert(paragraphs, current); current = {} end
     self.quipped = false
@@ -450,84 +457,203 @@ function Book:chapter(n, ch)
     return t
   end
 
+  -- The scene: its place (and zone), the places of the chapter so far, its
+  -- clauses not yet in a sentence (with the link the sentence takes), the
+  -- sentences it has, a plain kill told.
+  local scene, sceneZone, seenHere, killed = nil, nil, {}, false
+  local pending, lead, sentences, named = {}, nil, 0, false -- named: the sentence names its place
+  local prev -- the moment before the one being told
+
+  -- The clauses so far, as one sentence: "I a.", "I a and b.", "I a, b and c."
+  local function flush()
+    if #pending == 0 then return end
+    local text = pending[1]
+    if #pending > 1 then
+      local last = pending[#pending]
+      local thenFirst = table.concat(pending, "|"):find(" and ") or hash(self.seed .. "|join|" .. n .. "|" .. pending[1]) % 3 == 0
+      text = table.concat(pending, ", ", 1, #pending - 1) .. (thenFirst and ", then " or " and ") .. last
+    end
+    table.insert(current, linked(lead, capitalise("I " .. text .. ".")))
+    -- "there" only right after the place is named
+    if not named then self.there = true end
+    pending, lead, named = {}, nil, false
+    sentences = sentences + 1
+  end
+  -- A clause for a moment: a new sentence takes a link (the time gone by, or
+  -- the next thing in the scene); a sentence holds three clauses at most, and
+  -- ends with a clause that has its own punctuation.
+  local function clause(text, m, key)
+    if not text then return end
+    if #pending == 0 then
+      lead = self:link(m, prev, key)
+      if not lead and #current > 0 and sentences > 0 then
+        lead = hash(self.seed .. "|next|" .. key) % 2 == 0 and self:linkWord("next", key) or nil
+      end
+    end
+    table.insert(pending, text)
+    if #pending >= 3 or text:find("[,:;]") then flush() end
+  end
+  -- A new scene at a place: told as the journey there (a place just named
+  -- needs none).
+  local function arrive(place, zone, m, key, opener)
+    flush()
+    if #current >= 5 then newParagraph() end
+    local back = seenHere[place]
+    scene, sceneZone, killed, sentences = place, zone, false, 0
+    seenHere[place] = true
+    if opener then
+      clause(opener, m, key)
+      named = true
+    elseif place ~= self.last then
+      clause(self:say(back and "c-return" or "c-travel", key .. "|go", { place = mid(place), _place = place }, tags(nil, m), nil, true), m, key)
+      named = true
+    end
+  end
+  -- Where a moment is: its subzone, or the scene's place if it is somewhere
+  -- unnamed in the same zone.
+  local function placeOf(m)
+    if m.sub then return m.sub end
+    if scene and sceneZone == m.zone then return scene end
+    return m.zone
+  end
+  -- A moment of its own: a sentence, after the clauses before it.
+  local function alone(kind, key, values, t, m)
+    flush()
+    local s = self:say(kind, key, values, t)
+    if s then
+      table.insert(current, (#current > 0 and m) and linked(self:link(m, prev, key), s) or s)
+      sentences = 1 -- what follows in the scene may be "then"
+    end
+    return s
+  end
+
   -- Where the chapter began.
   local where = start.sub or start.zone
   local first = n == 1 and (c.began and c.began.level or 1) == 1 and lvl == 1
   if where then
-    say(first and "beginning" or "opening", "open", self:here({ where = mid(where) }, where), tags({ night = start.night or nil }))
+    local s = self:say(first and "beginning" or "opening", n .. "|open", self:here({ where = mid(where) }, where), tags({ night = start.night or nil }))
+    if s then table.insert(current, s) end
+    scene, sceneZone = where, start.zone
+    seenHere[where] = true
   end
 
-  local function quoted(title) return '"' .. title .. '"' end
   local mates, dungeon = {}, nil -- who joined me so far in the chapter; the dungeon I'm in
   for i, m in ipairs(ch.log or {}) do
-    local key = tostring(i)
-    local place = m.sub or m.zone
-    link = m
+    local key = n .. "|" .. i
+    local place = placeOf(m)
+    -- a clause in the scene where it happened
+    local function inScene(text)
+      if place and place ~= scene then arrive(place, m.zone, m, key) end
+      clause(text, m, key)
+    end
+    local function c_(kind, values, t) return self:say(kind, key, values, tags(t, m), nil, true) end
     if m.k == "level" then
       lvl = m.level or lvl -- a level reached: recorded, not told
     elseif m.k == "place" then
       if m.new == "zone" then
+        flush()
         newParagraph()
         self.last = nil
-        say("zone", key, { zone = mid(m.zone) }, tags(nil, m))
-        if m.sub then self.last = m.sub end
+        alone("zone", key, { zone = mid(m.zone) }, tags(nil, m))
+        self.last = nil
+        scene, sceneZone = nil, nil
+        if m.sub then
+          arrive(m.sub, m.zone, m, key, c_("c-place", { place = mid(m.sub), _place = m.sub }))
+        end
       elseif m.sub or m.zone then
-        say("place", key, { place = mid(m.sub or m.zone), zone = mid(m.zone), _place = m.sub or m.zone }, tags(nil, m))
+        local here = m.sub or m.zone
+        arrive(here, m.zone, m, key, c_("c-place", { place = mid(here), _place = here }))
       end
     elseif m.k == "inn" then
-      say("inn", key, { inn = mid(m.place), _place = m.place }, tags(nil, m))
+      inScene(c_("c-inn", { inn = mid(m.place) }))
     elseif m.k == "flight" then
-      say("flight", key, { from = mid(town(m.from)), to = mid(town(m.to)) }, tags({ first = not self.flown or nil }, m))
+      alone("flight", key, { from = mid(town(m.from)), to = mid(town(m.to)) }, tags({ first = not self.flown or nil }, m), m)
       self.flown = true
-    elseif m.k == "quest" then
-      self:deed(m, key, say, tags(nil, m), quoted)
-    elseif m.k == "kill" then
-      if m.first and KINDS[m.kind] then
-        say("first-kind", key, self:here({ kind = KINDS[m.kind] }, place), tags(nil, m))
-      elseif m.elite then
-        say("elite", key, self:here({ foe = article(m.name) }, place), tags(nil, m))
-      elseif not SKIP[m.kind or ""] then
-        say("kill", key, self:here({ foe = article(m.name) }, place), tags(nil, m))
+      if place then
+        scene, sceneZone = place, m.zone
+        seenHere[place] = true
+        self.last, self.there = place, false
       end
-    elseif m.k == "rare" then
-      say("rare", key, self:here({ foe = m.name }, place), tags({ elite = m.elite or nil }, m))
-    elseif m.k == "close" then
-      say(m.hp <= 5 and "close-deep" or "close-light", key,
-        self:here({ foe = article(m.foe), hp = tostring(m.hp) }, place), tags({ night = m.night or false }, m))
-    elseif m.k == "died" and m.death then
-      say("died", key, self:here({ foe = deathFoe(m.death, article) }, place), deathTags(m.death))
+    elseif m.k == "quest" then
+      local t = tags(nil, m)
+      if place and place ~= scene then arrive(place, m.zone, m, key) end
+      clause(self:deed(m, key, t), m, key)
+    elseif m.k == "kill" then
+      if m.quarry or SKIP[m.kind or ""] then -- told by its quest, or not a fight
+      elseif m.first and KINDS[m.kind] then
+        inScene(c_("c-first", { kind = KINDS[m.kind] }))
+      elseif m.elite then
+        inScene(c_("c-elite", { foe = article(m.name) }))
+      elseif not (killed and place == scene) then
+        inScene(c_("c-kill", { foe = article(m.name) }))
+        killed = true
+      end
     elseif m.k == "group" then
       if #mates < 4 then table.insert(mates, m.name) end
-      say("group", key, { mates = m.name }, tags(nil, m))
-    elseif m.k == "dungeon" then
-      dungeon = m.name
-      say("dungeon", key, { dungeon = mid(m.name), mates = listing(mates) }, tags(nil, m))
+      inScene(c_("c-group", { mates = m.name }))
     elseif m.k == "boss" then
-      say("boss", key, { boss = m.name, dungeon = mid(dungeon) }, tags(nil, m))
+      inScene(c_("c-boss", { boss = m.name, dungeon = mid(dungeon) }))
     elseif m.k == "learned" then
-      local named = {}
-      for j = 1, math.min(#m.spells, 3) do named[j] = m.spells[j] end
-      say("trainer", key, { spells = listing(named) }, tags({ many = #m.spells > 3 or nil }, m))
+      -- a trade's own spell (learned before the game listed the trade) is told by the trade
+      local spells = {}
+      for _, sp in ipairs(m.spells) do
+        if not ((c.profs or {})[sp] or sp:find("^Apprentice ") or sp:find("^Journeyman ") or sp:find("^Expert ")
+          or sp:find("^Artisan ") or sp:find("^Master ")) then table.insert(spells, sp) end
+      end
+      if #spells > 0 then
+        local named = {}
+        for j = 1, math.min(#spells, 3) do named[j] = spells[j] end
+        inScene(c_("c-trainer", { spells = listing(named) }, { many = #spells > 3 or nil }))
+      end
     elseif m.k == "skill" then
-      say("skill", key, { skill = m.name:lower(), rank = words(m.rank) }, tags(nil, m))
-    elseif m.k == "loot" then
+      inScene(c_("c-skill", { skill = m.name:lower(), rank = words(m.rank) }))
+    elseif m.k == "prof" then
+      inScene(c_("c-prof", { prof = m.name:lower(), rank = rankName(m.rank) }, { new = m.learned or nil }))
+    elseif m.k == "gear" or m.k == "loot" then
       local item = m.link and m.link:match("%[(.-)%]")
-      if item then say("loot", key, { item = itemName(item) }, tags(nil, m)) end
-    elseif m.k == "campfire" then
-      say("campfire", key, self:here({}, place), tags(nil, m))
-    elseif m.k == "rested" then
-      say("rest", key, self:here({ place = mid(m.place) }, m.place), tags({ fire = m.fire or nil, last = false }, m))
-    elseif m.k == "night" and not m.last then
-      say("night", key, self:here({}, place), tags({ last = false }, m))
-    elseif m.k == "wake" then
-      prev = nil
-      newParagraph()
-      self.last = nil
-      say("wake", key, self:here({}, place), tags({ rest = m.after == "rest" or nil }, m))
+      if item then inScene(c_("c-" .. m.k, { item = itemName(item) }, { made = m.made or nil })) end
+    elseif m.k == "tame" then
+      inScene(c_("c-tame", { pet = m.name, family = m.family and article(m.family:lower()) }))
+    else
+      -- the moments of their own, where they happened
+      flush() -- before its place is worked out: "there" depends on the sentence before
+      if place and place ~= scene then
+        scene, sceneZone, killed, sentences = place, m.zone, false, 0
+        seenHere[place] = true
+      end
+      if m.k == "rare" then
+        alone("rare", key, self:here({ foe = m.name }, place), tags({ elite = m.elite or nil }, m), m)
+      elseif m.k == "close" then
+        alone(m.hp <= 5 and "close-deep" or "close-light", key,
+          self:here({ foe = article(m.foe), hp = tostring(m.hp) }, place), tags({ night = m.night or false }, m), m)
+      elseif m.k == "died" and m.death then
+        alone("died", key, self:here({ foe = deathFoe(m.death, article) }, place), deathTags(m.death), m)
+      elseif m.k == "dungeon" then
+        dungeon = m.name
+        alone("dungeon", key, { dungeon = mid(m.name), mates = listing(mates) }, tags(nil, m), m)
+        self.last, self.there = place, false
+      elseif m.k == "power" then
+        alone("power", key, { spell = m.spell }, tags({ [m.kind or "form"] = true }, m), m)
+      elseif m.k == "mount" or m.k == "riding" then
+        alone(m.k, key, {}, tags(nil, m), m)
+      elseif m.k == "petdied" then
+        alone("petdied", key, self:here({ pet = m.name }, place), tags(nil, m), m)
+      elseif m.k == "campfire" then
+        alone("campfire", key, self:here({}, place), tags(nil, m), m)
+      elseif m.k == "rested" then
+        alone("rest", key, self:here({ place = mid(m.place) }, m.place), tags({ fire = m.fire or nil, last = false }, m), m)
+      elseif m.k == "night" and not m.last then
+        alone("night", key, self:here({}, place), tags({ last = false }, m), m)
+      elseif m.k == "wake" then
+        flush()
+        newParagraph()
+        self.last = nil
+        alone("wake", key, self:here({}, place), tags({ rest = m.after == "rest" or nil }, m))
+      end
     end
     if m.k ~= "level" then prev = m end
   end
-  link, prev = nil, nil
+  flush()
 
   -- The end of the chapter (not while it is still being written; a death on
   -- Hardcore ends it with the epitaph instead).
@@ -535,10 +661,14 @@ function Book:chapter(n, ch)
   if e and e.how ~= "death" then
     newParagraph()
     self.last = nil
+    local function say(kind, key, values, t)
+      local s = self:say(kind, n .. "|" .. key, values, t)
+      if s then table.insert(current, s) end
+    end
     if (ch.quests or 0) >= 2 then
-      local title, giver
+      local giver
       for i = #ch.log, 1, -1 do
-        if ch.log[i].k == "quest" and ch.log[i].title then title, giver = ch.log[i].title, ch.log[i].giver break end
+        if ch.log[i].k == "quest" and ch.log[i].giver then giver = ch.log[i].giver break end
       end
       say("quests-many", "recap-q", { n = words(ch.quests), giver = giver }, tags())
     end
