@@ -46,7 +46,9 @@ site).
    through the API; link codes for the rest (the addon keeps the code in its
    saved file until it is uploaded).
 5. **The reader**: your characters, each book (prologue, chapters, the Hall),
-   the page in the in-game book's look; phone first.
+   the page in the in-game book's look; phone first. Started 6 October 2026:
+   the library, a book's contents, its chapters and epitaph, on test characters
+   played through the addon (addon/test/seed.lua).
 6. **Ravenpost**: the companion moved to its own repo and renamed; it uploads
    each addon's file to its site (WowLocker.lua to WoWLocker, Hearthtale.lua to
    Hearthtale), Forever's game folder too; its config carried over from the

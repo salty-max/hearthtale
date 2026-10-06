@@ -41,3 +41,24 @@ export type Book = {
 };
 
 export type Health = { ok: true; version: string };
+
+/** A character on the site, for the library. */
+export type CharacterSummary = {
+  id: number;
+  name: string;
+  realm?: string;
+  region?: number;
+  /** The game's tokens: "Dwarf", "HUNTER". */
+  race: string;
+  class: string;
+  client: Client;
+  level: number;
+  hardcore: boolean;
+  fallen: boolean;
+  chapters: number;
+  /** ISO time of the last upload. */
+  updatedAt: string;
+};
+
+/** A character and its book. */
+export type CharacterBook = { character: CharacterSummary; book: Book };

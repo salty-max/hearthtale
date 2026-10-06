@@ -16,11 +16,16 @@ export function Layout() {
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-50 btn">
         {t.nav.skip}
       </a>
-      <header className="flex items-center justify-between px-4 pt-[max(1rem,env(safe-area-inset-top))] pb-3">
-        <Link to="/" className="title flex items-center gap-2 text-xl">
+      <header className="flex flex-wrap items-center gap-x-4 gap-y-2 px-4 pt-[max(1rem,env(safe-area-inset-top))] pb-3">
+        <Link to="/" className="title flex shrink-0 items-center gap-2 whitespace-nowrap text-xl">
           <img src="/favicon-32.png" alt="" className="size-7 rounded" />
           {t.nav.home}
         </Link>
+        <nav className="ml-auto">
+          <Link to="/library" className="text-gold-bright hover:underline" activeProps={{ className: "underline" }}>
+            {t.nav.library}
+          </Link>
+        </nav>
         <div role="group" aria-label={t.nav.language} className="flex gap-1 text-sm">
           {LANGS.map((l) => (
             <button

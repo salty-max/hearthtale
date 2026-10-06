@@ -34,8 +34,13 @@ The plan and its decisions: PLAN.md.
   the addon loaded), shared by:
   - `addon/test/sim.lua`: a life replayed, every recording asserted, its book
     written. `FOREVER=1` runs it as Forever.
-  - `addon/test/sample.lua`: a Hardcore dwarf hunter's first evenings, played
-    through the addon; `luajit addon/test/sample.lua > docs/sample.md`.
+  - `addon/test/lives.lua`: lives played through the addon, as the game would
+    send them (Brannok, a Hardcore dwarf hunter; Pippa, a Hardcore gnome mage
+    who falls; Aldric, a human paladin met mid-life), shared by:
+  - `addon/test/sample.lua`: Brannok's book, `luajit addon/test/sample.lua > docs/sample.md`;
+  - `addon/test/seed.lua`: the three, logged out so the addon saves their
+    books, as the site's test data (`bun run addon:seed` writes
+    `apps/api/src/db/seed/characters.json`; `bun run db:seed` loads it).
 - `addon/test/writer.lua`: hundreds of imaginary lives (every race and class,
   Hardcore or not, met mid-life), every chapter checked; every sentence must be
   reachable, none used again within 6 uses of its kind, and a chapter told one
@@ -80,8 +85,11 @@ Plan and steps: PLAN.md, "The site".
   parchment, the addon's gold) in `src/index.css`.
 - `packages/shared` (`@hearthtale/shared`): the wire contract, the saved book's
   shape (mirrors Save.lua). Source of truth.
-- Local: `bun run db` (Postgres on :5435), `bun run db:migrate`, `bun run dev`
-  (api :3002, web :5175).
+- Local: `bun run db` (Postgres on :5435), `bun run db:migrate`,
+  `bun run db:seed` (the test characters), `bun run dev` (api :3002, web :5175).
+  The library, a book's contents and its chapters: `/library`, `/book/:id`,
+  `/book/:id/:part`. `/api/characters` lists every character, unguarded: test
+  data only, refused on a production deployment until accounts land (step 4).
 
 ## Commands
 
@@ -89,7 +97,8 @@ Plan and steps: PLAN.md, "The site".
 bun run addon:build | addon:check | addon:package   # the addon
 bun run dev | typecheck | lint | test | build       # the site
 bun run check                                       # everything
-bun run db | db:generate | db:migrate
+bun run db | db:generate | db:migrate | db:seed
+bun run addon:seed                                  # regenerate the test characters
 scripts/release.sh [--version X.Y.Z] NOTES.md       # the addon: tag, push; Actions publish
 ```
 

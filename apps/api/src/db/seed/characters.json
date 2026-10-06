@@ -1,0 +1,124 @@
+[
+  {
+    "book": {
+      "at": 1791018530,
+      "chapters": [
+        {
+          "began": 1790900000,
+          "close": true,
+          "ended": 1790905640,
+          "from": 1,
+          "number": 1,
+          "place": "Anvilmar",
+          "text": "I begin in Coldridge Valley, with clean boots and no idea what I'm doing. I followed the road to Anvilmar, fought wolves for the first time and collected eight Tough Wolf Meat. I turned back for Coldridge Valley, brought down a Burly Rockjaw Trogg and hunted six Rockjaw Troggs, as Balir Frosthammer had asked. I went from Talin Keeneye to Grelin Whitebeard, bearing news. A Frostmane Troll Whelp had me at 9%. On this realm that is one bad roll from the end. I killed fourteen Frostmane Troll Whelps for Grelin Whitebeard, tracked down Grelin Whitebeard's Journal, then fitted myself with a Frostmane Leather Belt. I went back to Anvilmar, paid my trainer for Serpent Sting and Track Beasts, then passed on Durnan Furcutter's word to Marryk Nurribit.\n\nSix tasks, and every one of them a chance to die. I took none of those chances. I fought until the Frostmane Troll Whelps and the Ragged Young Wolves ran short: seventeen and ten. All told: an hour and thirty-five minutes. I found a bed in Anvilmar before dark and slept like a stone. So ends this chapter.",
+          "to": 4
+        },
+        {
+          "began": 1790941640,
+          "ended": 1790979755,
+          "from": 4,
+          "number": 2,
+          "place": "Kharanos",
+          "rare": true,
+          "text": "Another start, in Anvilmar. I wandered into Coldridge Pass. I reached Kharanos, took a room at Thunderbrew Distillery, then took up skinning. I began to learn leatherworking, learned what boars are like and found the Crag Boar Ribs Ragnar Thunderbrew wanted, six in all. After that, I put on a Handstitched Leather Vest, made with my own hands.\n\nI saw the Grizzled Den with my own eyes and brought Hegnar Rumbleshot what Loslor Rudge had sent. I came to Brewnall Village for the first time, fought off a Leper Gnome and scoured the area for eight Gyromechanic Gears. Before long, I learned new tricks for the hunt: Arcane Shot. Later that day, I walked into Shimmer Ridge and dealt with a Frostmane Snowstrider. I kept watch there more than I slept.\n\nDawn in Shimmer Ridge, and every bone complaining. Onward. Timber fell to me there. I kept a trophy, and I keep thinking about it. I practised my skinning up to fifty and turned up a Frostmane Scepter among the spoils. I found my way to Frostmane Hold, cut down a Frostmane Headhunter, then did as Senir Whitebeard asked: explore the Frostmane Hold. I made it as far as Amberstill Ranch, then killed Vagash for Rudra Amberstill. I found myself back in Kharanos, then picked up Hunter's Mark and Raptor Strike at my trainer's.\n\nFive tasks, start to finish. Eleven Leper Gnomes and ten Frostmane Snowstriders, and never more than one at a time if I could help it. Two hours and a half for this one. In Kharanos, a bed with sheets. This chapter ends here.",
+          "to": 7
+        },
+        {
+          "began": 1791012155,
+          "from": 7,
+          "number": 3,
+          "open": true,
+          "place": "Kharanos",
+          "text": "I woke in Kharanos to a clear sky. I took the road to the Grizzled Den, had to kill a Young Wendigo and searched until I had eight Wendigo Manes. I went on with Thorgrim at my side. I followed the road to Gol'Bolar Quarry, then hunted down ten Rockjaw Bonesnappers. I headed back to Kharanos, then spent good coin on Concussive Shot and Mend Pet.\n\nI walked on to Amberstill Ranch, then did the work: tame a Large Crag Boar. I tamed Bristle, a boar of the wilds. A fire in Amberstill Ranch. I sat with my back to it and my eyes on the dark. I finished off a Frostmane Seer. Bristle fell. Out here, it could as easily have been me.\n\nI came to Loch Modan knowing the graves there are no shallower than anywhere else. I wandered into North Gate Pass. I reached Thelsamar, then put down a Mountain Boar. I found a hollow there and slept in it.",
+          "to": 9
+        }
+      ],
+      "client": "classic",
+      "level": 9,
+      "version": "0.2.0"
+    },
+    "class": "HUNTER",
+    "fallen": false,
+    "guid": "Player-6113-0B4A2201",
+    "hardcore": true,
+    "name": "Brannok",
+    "race": "Dwarf",
+    "realm": "Nightslayer",
+    "region": 1
+  },
+  {
+    "book": {
+      "at": 1790937695,
+      "chapters": [
+        {
+          "began": 1790900000,
+          "ended": 1790902535,
+          "from": 1,
+          "number": 1,
+          "place": "Anvilmar",
+          "text": "I am new to the world, and the world is large. I start in Coldridge Valley. I dealt with six Rockjaw Troggs, came face to face with wolves and came back with eight Tough Wolf Meat. I wandered into Anvilmar, picked up Frost Armor and Arcane Missiles at my trainer's, then took Talin Keeneye's message to Grelin Whitebeard.\n\nThree tasks, and every one of them a chance to die. I took none of those chances. I cleared the road: nine Ragged Young Wolves, six Rockjaw Troggs. All told: forty minutes. A soft bed in Anvilmar, and the road can wait until morning.",
+          "to": 3
+        },
+        {
+          "began": 1790934935,
+          "close": true,
+          "ended": 1790937695,
+          "from": 3,
+          "number": 2,
+          "place": "Frostmane Hold",
+          "text": "Night in Anvilmar, and a long one. I walked into Coldridge Pass. I saw Kharanos with my own eyes, brought Tharek Blackstone what Beldin Steelgrill had sent, then trained in Frostbolt and Conjure Water. Before long, I strapped on Apprentice's Robe. I made it as far as Brewnall Village, dealt with a Leper Gnome and collected eight Gyromechanic Gears for Razzle Sprysprocket.\n\nI came to Frostmane Hold for the first time, then put down a Frostmane Headhunter. A Frostmane Headhunter took me down to 8% there. Too close.",
+          "to": 6
+        }
+      ],
+      "client": "classic",
+      "epitaph": "Pippa died by the hand of a Frostmane Shadowcaster in Frostmane Hold, at level six. An hour and a half lived on this realm, and lived well. Let this book stand for Pippa, now that Pippa cannot.",
+      "level": 6,
+      "version": "0.2.0"
+    },
+    "class": "MAGE",
+    "fallen": true,
+    "guid": "Player-6113-0C77A9F3",
+    "hardcore": true,
+    "name": "Pippa",
+    "race": "Gnome",
+    "realm": "Soulseeker",
+    "region": 3
+  },
+  {
+    "book": {
+      "at": 1790941310,
+      "chapters": [
+        {
+          "began": 1790900000,
+          "ended": 1790904440,
+          "from": 23,
+          "number": 1,
+          "place": "Darkshire",
+          "text": "The stars were out over Darkshire when I took up the road again. I tied my stone to Darkshire. I wandered into Raven Hill Cemetery, dealt with a Skeletal Horror and hunted down fifteen Skeletal Fiends. I made it as far as Brightwood Grove, cut down six Nightbane Shadow Weavers and traded my old gear for a Night Watch Shortsword. I found myself back in Darkshire, then spent good coin on Seal of Command, Holy Light and Hammer of Justice.\n\nI came to the Hushed Bank for the first time and took Madame Eva's message to Abercrombie. I found my way to Raven Hill. Stitches killed me there. I walked back from the graveyard as a ghost, which is a humbling way to travel.\n\nThree tasks done, all told. Fifteen Skeletal Fiends and six Nightbane Shadow Weavers. I've stopped wiping my hammer clean; there's no point. That was an hour and fifteen minutes. A soft bed in Darkshire, and the road can wait until morning.",
+          "to": 24
+        },
+        {
+          "began": 1790940440,
+          "from": 24,
+          "number": 2,
+          "open": true,
+          "place": "Darkshire",
+          "text": "I woke in Darkshire to a clear sky. I walked into Tranquil Gardens Cemetery, brought down a Flesh Eating Worm and came back with seven Ghoul Ribs. I slept under the open sky there.",
+          "to": 25
+        }
+      ],
+      "client": "classic",
+      "level": 25,
+      "prologue": "I should have started this journal long ago. I have done eighty-seven good turns already, and I'm writing this in Duskwood.",
+      "version": "0.2.0"
+    },
+    "class": "PALADIN",
+    "fallen": false,
+    "guid": "Player-6113-0A13D2E8",
+    "hardcore": false,
+    "name": "Aldric",
+    "race": "Human",
+    "realm": "Firemaw",
+    "region": 3
+  }
+]
