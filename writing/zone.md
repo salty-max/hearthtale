@@ -13,9 +13,6 @@ kind: zone
 - I came to {zone} with my eyes open and my hand near my weapon.
 - [hc] I came to {zone} knowing the graves there are no shallower than anywhere else.
 - [hc high aside] {zone}: the kind of place where careful heroes become careless corpses. I mean to stay careful.
-- [race:Dwarf aside] {zone}. Different stone underfoot. A dwarf notices.
-- [race:NightElf aside] {zone}. The trees here are strangers to me.
-- [race:Scourge aside] {zone}. The living there gave me a wide berth.
 - [race:Tauren] I came to {zone}, and greeted the land as my elders taught me.
 - [class:MAGE aside] {zone}. I noted the ley lines, out of habit.
 - [class:HUNTER] {zone}, and new beasts to learn.

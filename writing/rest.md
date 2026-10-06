@@ -8,7 +8,6 @@ kind: rest
 - [last !fire] I slept well {at}, for once. Enough for one chapter.
 - [last !fire] A soft bed {at}, and the road can wait until morning.
 - [last !fire] I wrote this {at}, by the light of the inn's fire, and turned in.
-- [last !fire race:Dwarf] An ale {at}, then another, then bed. A good end to a long road.
 - [last !fire hc] I rested {at}, alive, with a door I could bar. That's the whole of happiness out here.
 - [last fire] I slept by the fire {at}, and the warmth carried me through the night. So ends this chapter.
 - [last fire] The fire {at} burned low as I wrote this, and I let it put me to sleep.

@@ -1,0 +1,11 @@
+---
+kind: c-gear
+---
+- [!made] put on {item}
+- [!made] took up {item}
+- [!made] wore {item} for the first time
+- [!made] fitted myself with {item}
+- [!made] chose {item} over my old gear
+- [made] wore {item}, shaped by my own hands
+- [made] made {item} myself, and wore it
+- [made] finished {item}, and it fit as if it had always been mine

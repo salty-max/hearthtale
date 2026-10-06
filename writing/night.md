@@ -10,8 +10,6 @@ kind: night
 - [!last] I slept {at} with my boots on.
 - [!last] No roof, no fire: just the ground {at} and whatever sleep I could take.
 - [!last hc] I slept {at} in snatches, waking at every sound. Out here, that's how you live.
-- [!last race:NightElf] I slept beneath the stars {at}, as my people have always done.
-- [!last race:Scourge] I don't sleep, not truly. I sat out the night {at}.
 - [last] Another night outdoors {at}, and so ends this part of the road: too long without a proper rest.
 - [last] I bedded down {at} under the sky again. It has been a long stretch, and it ends here.
 - [last] Too many days without an inn. I slept {at} and set this chapter down.

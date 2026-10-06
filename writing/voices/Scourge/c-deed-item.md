@@ -1,0 +1,16 @@
+---
+kind: c-deed-item
+---
+- [!one] collected {n} {thing} for {giver}
+- [!one] gathered {n} {thing}, which is less glamorous than it sounds
+- [!one] brought {giver} {n} {thing}
+- [!one] fetched {n} {thing} and handed them to {ender}
+- [!one] scavenged {n} {thing}
+- [!one] dug up {n} {thing}; digging is familiar work
+- [!one] came back with {n} {thing}
+- [!one] found {n} {thing}, as instructed
+- [one] fetched {thing} for {giver}
+- [one] recovered {thing}
+- [one] found {thing} and took it to {ender}
+- [one] retrieved {thing}, unharmed, unlike its last owner
+- [one] brought back {thing}

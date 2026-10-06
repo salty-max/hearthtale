@@ -14,10 +14,12 @@ kind: died
 - [nature] I died {at}, and no foe did it. The world itself did.
 - I died {at}. I came back. Not everyone gets to say that.
 - I died {at}, and woke among the ghosts. The walk back was long and cold.
-- [race:Scourge] I died {at}. Again. It gets less interesting each time.
 - I died {at}. The graveyard was colder than the fight.
 - I came to my senses as a ghost {at}, and started the long walk back to my body.
 - {at} I died, and learned what the far side of the world looks like. Grey, mostly.
 - [foe] {foe} had the better of me {at}. I'll not forget the face.
 - [foe] I fell to {foe} {at}, and rose again, poorer and wiser.
 - I died {at}. The armourer was the only one glad of it.
+- I died {at}, and came back lighter by a little pride.
+- [foe] {foe} put an end to me {at}, for a while.
+- I died {at}. The road back from the graveyard was long enough to think about it.

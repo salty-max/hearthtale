@@ -1,0 +1,11 @@
+---
+kind: c-kill
+---
+- ended {foe}, swiftly
+- laid {foe} to rest
+- brought down {foe}, without anger
+- silenced {foe}
+- gave {foe} back to the earth
+- struck {foe} down and let the forest have it
+- felled {foe}
+- answered {foe} with {weapon}

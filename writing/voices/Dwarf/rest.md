@@ -1,0 +1,13 @@
+---
+kind: rest
+---
+- [last !fire] An ale {at}, then another, then bed. A good end to a long road.
+- [last !fire] A room {at}, a hot meal, a fire in the grate. So ends this chapter.
+- [last !fire] I set my pen down {at}, warm and fed.
+- [last !fire] Supper and a bed {at}. That'll do for now.
+- [last fire] I slept by the fire {at} and the chapter went out with the embers.
+- [last fire] A campfire {at}, my boots off at last. That's the chapter.
+- [!last !fire] A short rest {at}, an ale, and back out.
+- [!last !fire] I stopped {at} long enough to oil my axe and eat.
+- [!last fire] I warmed my hands at the fire {at}, then got on.
+- [!last fire] A rest by the fire {at}. Short, but welcome.

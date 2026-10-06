@@ -43,8 +43,17 @@ local function listing(items)
 end
 ns.listing = listing
 
--- A name inside a sentence: "The Barrens" reads "the Barrens".
-local function mid(name) return name and (name:gsub("^The ", "the ")) end
+-- A name inside a sentence: "The Barrens" reads "the Barrens", and a place
+-- the game names without its article reads with it ("the Valley of Strength").
+local COMMON = { Valley = true, Temple = true, Hall = true, Halls = true, Ring = true, Cleft = true, Vale = true,
+  Den = true, Field = true, Fields = true, Isle = true, Ruins = true, Tower = true, Gate = true, Gates = true,
+  Shrine = true, Sanctum = true, Caverns = true, Court = true, Terrace = true, Pools = true, Circle = true }
+local function mid(name)
+  if not name then return nil end
+  local first = name:match("^(%a+) of ")
+  if first and COMMON[first] then return "the " .. name end
+  return (name:gsub("^The ", "the "))
+end
 
 local IRREGULAR = { Wolf = "Wolves", Thief = "Thieves", Elf = "Elves", Dwarf = "Dwarves", Man = "Men",
   Woman = "Women", Mouse = "Mice", Sheep = "Sheep", Deer = "Deer", Shaman = "Shamans", Undead = "Undead", Dead = "Dead",
@@ -56,7 +65,8 @@ local function plural(name)
   local before, last = name:match("^(.-)(%S+)$")
   if IRREGULAR[last] then return before .. IRREGULAR[last] end
   if last:match("[^aeiouAEIOU]y$") then return before .. last:sub(1, -2) .. "ies" end
-  if last:match("[sxz]$") or last:match("[cs]h$") then return name .. "es" end
+  if last:match("ss$") or last:match("[xz]$") or last:match("[cs]h$") then return name .. "es" end
+  if last:match("s$") then return name end -- already many: "Scavenged Goods"
   if last:match("[a-z]man$") then return before .. last:sub(1, -4) .. "men" end
   return name .. "s"
 end
@@ -240,6 +250,38 @@ end
 local MATTERS = { ["close-light"] = true, ["close-deep"] = true, rare = true, died = true, rest = true, night = true,
   beginning = true, power = true, petdied = true }
 
+-- How each race's journal runs (with its own sentences, writing/voices/): how
+-- many clauses a sentence holds, and its own linking words over the shared ones.
+local STYLE = {
+  default = { clauses = 3, links = {} },
+  Dwarf = { clauses = 3, links = {
+    night = { "Come nightfall,", "When the light went,", "That night," },
+    day = { "At first light,", "Come morning,", "With the dawn," },
+    next = { "Then", "After that,", "Next," },
+  } },
+  Orc = { clauses = 2, links = {
+    night = { "At nightfall,", "In the dark,", "That night," },
+    day = { "At sunrise,", "With the sun,", "At dawn," },
+    later = { "Later,", "Hours later," },
+    next = { "Then", "Next,", "That done," },
+  } },
+  NightElf = { clauses = 3, links = {
+    night = { "Beneath the moon,", "When Elune rose,", "As night fell," },
+    day = { "At dawn,", "With the first light,", "As the stars faded," },
+    later = { "In time,", "Some hours later,", "Later that day," },
+    next = { "Then", "After a while,", "Soon," },
+  } },
+  Scourge = { clauses = 3, links = {
+    night = { "After dark,", "In the dark hours,", "That night," },
+    day = { "When the sun rose,", "At dawn, unwelcome,", "Morning came, and" },
+    later = { "Later,", "In due course,", "Some hours on," },
+    next = { "Then", "After that,", "Next," },
+  } },
+}
+
+-- How many uses of a kind before one of the race's own sentences may come back.
+local OWN_GAP = 8
+
 local Book = {}
 Book.__index = Book
 
@@ -248,6 +290,10 @@ local function newBook(c)
   local b = setmetatable({ c = c, used = {}, usedIn = {}, uses = 0, seed = c.guid or "", zones = {}, flown = false,
     repeats = 0, chapterNo = 0, kindUses = {}, voiceUsed = 0 }, Book)
   b.voice = { home = HOME[race], kin = KIN[race], faith = faith(race, class), weapon = weapon(race, class) }
+  b.own = ns.data.voices and ns.data.voices[race] -- the race's own journal voice (writing/voices/<Race>/)
+  b.style = STYLE[race] or STYLE.default
+  b.faction = FACTION[race]
+  b.sceneSeen = {} -- places already described in this book
   b.base = { hc = c.hardcore or nil, ["race:" .. race] = true, ["class:" .. class] = true }
   if FACTION[race] then b.base["faction:" .. FACTION[race]] = true end
   return b
@@ -260,6 +306,8 @@ end
 function Book:say(kind, key, values, tags, prefer, raw)
   local list = ns.data.writing[kind]
   if not list then return end
+  -- The race's own voice for this kind (writing/voices/<Race>/), if it has one.
+  local own = self.own and self.own[kind]
   local ctx = setmetatable(tags or {}, { __index = self.base })
   for k, v in pairs(self.voice) do if values[k] == nil then values[k] = v end end
   -- A place just named is not named again by a sentence without a verb,
@@ -275,18 +323,30 @@ function Book:say(kind, key, values, tags, prefer, raw)
     if self.quipped and not MATTERS[kind] and isQuip(s) then return false end
     return true
   end
-  local fresh, voiced, all
+  -- The candidates, each with its id (what "used" remembers) and its name in
+  -- the reachability test: the race's own ("Dwarf/kill#3") and the shared ("kill#3").
+  local race = self.c.race or "Human"
+  local ownFresh, fresh, voiced, all
   for pass = 1, 3 do
-    fresh, voiced, all = {}, {}, {}
-    for i, s in ipairs(list) do
-      if satisfied(s.tags, ctx) and fillable(s[1], values) and (pass == 3 or allowed(s)) then
-        table.insert(all, i)
-        if not self.used[kind .. i] then
-          table.insert(fresh, i)
-          if s.tags then table.insert(voiced, i) end
+    ownFresh, fresh, voiced, all = {}, {}, {}, {}
+    local function add(from, mine)
+      for i, s in ipairs(from or {}) do
+        if satisfied(s.tags, ctx) and fillable(s[1], values) and (pass == 3 or allowed(s)) then
+          local e = mine and { s = s, id = "v:" .. kind .. i, reach = race .. "/" .. kind .. "#" .. i }
+            or { s = s, id = kind .. i, reach = kind .. "#" .. i }
+          table.insert(all, e)
+          if not self.used[e.id] then
+            if mine then table.insert(ownFresh, e)
+            else
+              table.insert(fresh, e)
+              if s.tags then table.insert(voiced, e) end
+            end
+          end
         end
       end
     end
+    add(own, true)
+    add(list, false)
     if #all > 0 then break end
     -- nothing allowed: first the place may be named again, then the limits go
     if pass == 1 and values["in"] ~= named then values["in"] = named end
@@ -294,38 +354,56 @@ function Book:say(kind, key, values, tags, prefer, raw)
   if #all == 0 then return end
   if prefer then
     local favoured = {}
-    for _, i in ipairs(fresh) do
-      for _, t in ipairs(list[i].tags or {}) do
-        if prefer[t] then table.insert(favoured, i) break end
+    for _, group in ipairs({ ownFresh, fresh }) do
+      for _, e in ipairs(group) do
+        for _, t in ipairs(e.s.tags or {}) do
+          if prefer[t] then table.insert(favoured, e) break end
+        end
       end
     end
-    if #favoured > 0 then fresh, voiced = favoured, {} end
+    if #favoured > 0 then ownFresh, fresh, voiced = {}, favoured, {} end
   end
-  -- the lowest bit chooses between the voiced and the rest, the others which
+  -- The race's own first while one is fresh; then the lowest bit chooses
+  -- between the shared tagged lines and the rest, the others which.
   local h = hash(self.seed .. "|" .. kind .. "|" .. key)
   local pick = floor(h / 2)
-  local i
-  if #voiced > 0 and h % 2 == 0 then
-    i = voiced[pick % #voiced + 1]
+  local e
+  -- once all of the race's own were used: its oldest comes back, if it has
+  -- been long enough (a voice that holds over a whole life, not shared prose)
+  local ownOldest
+  if #ownFresh == 0 then
+    for _, x in ipairs(all) do
+      if x.id:sub(1, 2) == "v:" and (not ownOldest or self.used[x.id] < self.used[ownOldest.id]) then ownOldest = x end
+    end
+    if ownOldest and (self.kindUses[kind] or 0) - self.usedIn[ownOldest.id] < OWN_GAP then ownOldest = nil end
+  end
+  if #ownFresh > 0 then
+    e = ownFresh[pick % #ownFresh + 1]
+  elseif ownOldest then
+    e = ownOldest
+    self.repeats = self.repeats + 1
+  elseif #voiced > 0 and h % 2 == 0 then
+    e = voiced[pick % #voiced + 1]
   elseif #fresh > 0 then
-    i = fresh[pick % #fresh + 1]
+    e = fresh[pick % #fresh + 1]
   else
     -- all used: the one used longest ago
-    i = all[1]
-    for _, j in ipairs(all) do if self.used[kind .. j] < self.used[kind .. i] then i = j end end
+    e = all[1]
+    for _, x in ipairs(all) do if self.used[x.id] < self.used[e.id] then e = x end end
     self.repeats = self.repeats + 1
-    local gap = (self.kindUses[kind] or 0) - self.usedIn[kind .. i]
+    local gap = (self.kindUses[kind] or 0) - self.usedIn[e.id]
     if not self.minGap or gap < self.minGap then self.minGap, self.minGapKind = gap, kind end
   end
   self.uses = self.uses + 1
   self.kindUses[kind] = (self.kindUses[kind] or 0) + 1
-  self.used[kind .. i] = self.uses
-  self.usedIn[kind .. i] = self.kindUses[kind]
-  if ns.writerUsed then ns.writerUsed[kind .. "#" .. i] = true end
-  local text = list[i][1]
+  self.used[e.id] = self.uses
+  self.usedIn[e.id] = self.kindUses[kind]
+  if ns.writerUsed then ns.writerUsed[e.reach] = true end
+  local chosen = e.s
+  local text = chosen[1]
   if self.inChapter then
-    if isVoice(list[i]) then self.voiceUsed = self.voiceUsed + 1 end
-    if isQuip(list[i]) and not MATTERS[kind] then self.quipped = true end
+    if isVoice(chosen) then self.voiceUsed = self.voiceUsed + 1 end
+    if isQuip(chosen) and not MATTERS[kind] then self.quipped = true end
   end
   if text:find("{in}") or text:find("{where}") or text:find("{place}") or (text:find("{at}") and values._named) then
     self.last, self.there = values._place, false
@@ -368,6 +446,13 @@ end
 -- A quest, told by what it asked: so many of a creature slain, so many of a
 -- thing brought, a task, a message carried to another (a clause); its title
 -- only when there is nothing else to tell.
+-- An objective that says what is done, not what to do ("Moonkin Stone found"):
+-- it can't follow "I managed to".
+local DONE = { found = true, slain = true, made = true, built = true, met = true, done = true, freed = true }
+local function doneText(text)
+  local last = text:gsub("[%.:].*$", ""):match("(%a+)%s*$")
+  return last and (DONE[last:lower()] or last:find("[^e]ed$") or last:find("[^e]en$")) and true or false
+end
 local function lowerFirst(text) return (text:gsub("^%u", string.lower)) end
 function Book:deed(m, key, tags)
   local o = m.objectives and m.objectives[1]
@@ -385,7 +470,7 @@ function Book:deed(m, key, tags)
     values.n, values.thing = words(count), count > 1 and things(o.name) or itemName(o.name)
     tags.one = count == 1 or nil
     done = self:say("c-deed-item", key, values, tags, nil, true)
-  elseif o and o.text then
+  elseif o and o.text and not doneText(o.text) then
     values.task = lowerFirst((o.text:gsub("[%.:]%s*$", "")))
     done = self:say("c-deed-task", key, values, tags, nil, true)
   elseif ender and m.giver then
@@ -414,8 +499,12 @@ function Book:link(m, prev, key)
   return which and self:linkWord(which, key)
 end
 function Book:linkWord(which, key)
-  local list = LINKS[which]
-  return list[hash(self.seed .. "|word|" .. key) % #list + 1]
+  local list = (self.style and self.style.links[which]) or LINKS[which]
+  local i = hash(self.seed .. "|word|" .. key) % #list + 1
+  -- never the same word twice running
+  if list[i] == self.lastLink then i = i % #list + 1 end
+  self.lastLink = list[i]
+  return list[i]
 end
 -- A sentence with its link before it ("That night, I..."), if it begins with
 -- "I", "My" or an article.
@@ -429,6 +518,29 @@ end
 
 -- The rank a profession's trainer gives: "an apprentice", "a journeyman".
 local function rankName(rank) return rank and ((rank:match("^[aeiou]") and "an " or "a ") .. rank) end
+
+-- A place described, the first time in the book the character comes to it
+-- (writing/scenery/): as home, an ally's land, enemy ground or neutral, by
+-- night or day. Nil if there is nothing written for it, or it was told.
+function Book:sceneryOf(name, night)
+  local p = name and ns.data.scenery and ns.data.scenery[name]
+  if not p or self.sceneSeen[name] then return nil end
+  self.sceneSeen[name] = true
+  local view = (p.home and p.home[self.c.race or ""]) and "home"
+    or (p.faction == "neutral" and "neutral")
+    or ((self.faction and p.faction == self.faction) and "ally")
+    or (self.faction and "foe")
+    or "neutral"
+  local ctx = setmetatable({ [view] = true, night = night or nil }, { __index = self.base })
+  local fits = {}
+  for i, s in ipairs(p) do
+    if satisfied(s.tags, ctx) then table.insert(fits, i) end
+  end
+  if #fits == 0 then return nil end
+  local i = fits[hash(self.seed .. "|scenery|" .. name) % #fits + 1]
+  if ns.writerUsed then ns.writerUsed["scenery:" .. name .. "#" .. i] = true end
+  return p[i][1]
+end
 
 -- A chapter, told in scenes: the moments in one place make one or two
 -- sentences of clauses ("In Coldridge Valley I brought Sten his meat, killed
@@ -485,8 +597,9 @@ function Book:chapter(n, ch)
     sentences = sentences + 1
   end
   -- A clause for a moment: a new sentence takes a link (the time gone by, or
-  -- the next thing in the scene); a sentence holds three clauses at most, and
-  -- ends with a clause that has its own punctuation.
+  -- the next thing in the scene); a sentence holds as many clauses as the
+  -- race's style allows (STYLE), and ends with a clause that has its own
+  -- punctuation (a comma, a colon, a full stop: "killed six wolves. Good work").
   local function clause(text, m, key)
     if not text then return end
     if #pending == 0 then
@@ -496,7 +609,7 @@ function Book:chapter(n, ch)
       end
     end
     table.insert(pending, text)
-    if #pending >= 3 or text:find("[,:;]") then flush() end
+    if #pending >= self.style.clauses or text:find("[,:;%.]") then flush() end
   end
   -- A new scene at a place: told as the journey there (a place just named
   -- needs none).
@@ -538,6 +651,9 @@ function Book:chapter(n, ch)
   if where then
     local s = self:say(first and "beginning" or "opening", n .. "|open", self:here({ where = mid(where) }, where), tags({ night = start.night or nil }))
     if s then table.insert(current, s) end
+    -- a life's first page: the land it begins in
+    local land = first and self:sceneryOf(start.zone, start.night)
+    if land then table.insert(current, land) end
     scene, sceneZone = where, start.zone
     seenHere[where] = true
   end
@@ -559,15 +675,34 @@ function Book:chapter(n, ch)
         flush()
         newParagraph()
         self.last = nil
-        alone("zone", key, { zone = mid(m.zone) }, tags(nil, m))
+        -- a land seen for the first time: described, else the plain line
+        local land = self:sceneryOf(m.zone, m.night)
+        if land then table.insert(current, land) else alone("zone", key, { zone = mid(m.zone) }, tags(nil, m)) end
         self.last = nil
         scene, sceneZone = nil, nil
-        if m.sub then
+        local town = m.sub and self:sceneryOf(m.sub, m.night)
+        if town then
+          table.insert(current, town)
+          scene, sceneZone, sentences = m.sub, m.zone, 1
+          seenHere[m.sub] = true
+          self.last, self.there = m.sub, false
+        elseif m.sub then
           arrive(m.sub, m.zone, m, key, c_("c-place", { place = mid(m.sub), _place = m.sub }))
         end
       elseif m.sub or m.zone then
         local here = m.sub or m.zone
-        arrive(here, m.zone, m, key, c_("c-place", { place = mid(here), _place = here }))
+        local town = self:sceneryOf(here, m.night)
+        if town then
+          -- a town seen for the first time: described, in its own sentences
+          flush()
+          if #current >= 5 then newParagraph() end
+          table.insert(current, #current > 0 and linked(self:link(m, prev, key), town) or town)
+          scene, sceneZone, killed, sentences = here, m.zone, false, 1
+          seenHere[here] = true
+          self.last, self.there = here, false
+        else
+          arrive(here, m.zone, m, key, c_("c-place", { place = mid(here), _place = here }))
+        end
       end
     elseif m.k == "inn" then
       inScene(c_("c-inn", { inn = mid(m.place) }))
@@ -635,7 +770,14 @@ function Book:chapter(n, ch)
         alone("died", key, self:here({ foe = deathFoe(m.death, article) }, place), deathTags(m.death), m)
       elseif m.k == "dungeon" then
         dungeon = m.name
-        alone("dungeon", key, { dungeon = mid(m.name), mates = listing(mates) }, tags(nil, m), m)
+        -- a dungeon's first time: described, else the plain line
+        local depths = self:sceneryOf(m.name, m.night)
+        if depths then
+          table.insert(current, #current > 0 and linked(self:link(m, prev, key), depths) or depths)
+          sentences = 1
+        else
+          alone("dungeon", key, { dungeon = mid(m.name), mates = listing(mates) }, tags(nil, m), m)
+        end
         self.last, self.there = place, false
       elseif m.k == "power" then
         alone("power", key, { spell = m.spell }, tags({ [m.kind or "form"] = true }, m), m)

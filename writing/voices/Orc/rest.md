@@ -1,0 +1,12 @@
+---
+kind: rest
+---
+- [last !fire] A bed {at}. A meal. Sleep. This chapter is done.
+- [last !fire] I ate, I slept {at}. Enough for now.
+- [last !fire] I rested {at} behind a door. Good.
+- [last fire] I slept by the fire {at}. The chapter ends with it.
+- [last fire] A fire {at}, food, sleep. Enough.
+- [!last !fire] A short rest {at}. Then back out.
+- [!last !fire] I ate {at} and moved on.
+- [!last fire] A fire {at}, briefly. Then the road.
+- [!last fire] I warmed myself {at}. Not long.

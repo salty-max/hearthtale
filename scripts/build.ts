@@ -17,6 +17,20 @@
  * A sentence ends with . ! or ? (or a closing quote after one); a clause
  * (kinds c-*: "took a room at {inn}") starts in lower case, with no stop.
  *
+ * writing/voices/<Race>/<kind>.md: a race's own sentences for a kind (its
+ * journal's voice), used before the shared ones; same format, same slots.
+ *
+ * writing/scenery/<place>.md: the first time in a life the character enters a
+ * place (a zone, a town, a dungeon), a few sentences describing it:
+ *
+ *   ---
+ *   place: Dun Morogh          the game's name for it
+ *   type: zone                 zone | town | dungeon
+ *   home: Dwarf Gnome          the races whose home it is (optional)
+ *   faction: alliance          whose land: alliance | horde | neutral
+ *   ---
+ *   - [home !night] ...        viewpoints: home, ally, foe, neutral; night
+ *
  *   bun scripts/build.ts          write the data files
  *   bun scripts/build.ts --check  fail if one isn't up to date
  */
@@ -82,7 +96,7 @@ const KINDS: Record<string, string[]> = {
   "c-tame": ["pet", "family"],
 };
 const VOICE = ["home", "kin", "faith", "weapon"];
-const TAGS = ["night", "hc", "high", "low", "first", "elite", "lots", "many", "slow", "quick",
+const TAGS = ["home", "ally", "foe", "neutral", "night", "hc", "high", "low", "first", "elite", "lots", "many", "slow", "quick",
   "foe", "fall", "drowning", "lava", "nature", "beast", "people", "player", "inside", "rest", "fire", "last", "one", "aside", "new", "made", "form", "demon", "steed"];
 const RACES = ["Human", "Dwarf", "NightElf", "Gnome", "Draenei", "Orc", "Troll", "Tauren", "Scourge", "BloodElf"];
 const CLASSES = ["WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK", "DRUID"];
@@ -94,54 +108,132 @@ const tagOk = (t: string) => {
 };
 
 type Sentence = { text: string; tags: string[] };
-const kinds = new Map<string, Sentence[]>();
-for (const f of existsSync(WRITING) ? readdirSync(WRITING).sort() : []) {
-  if (!f.endsWith(".md")) continue;
-  const file = join(WRITING, f);
+type Parsed = { meta: string; sentences: Sentence[] };
+
+/** One writing file: its front matter and its lines, checked. `kind`: the slots and rules to check against. */
+function parseFile(file: string, kind: string | null): Parsed | null {
   const src = readFileSync(file, "utf8");
   // eslint-disable-next-line no-control-regex -- any character outside ASCII, on purpose
   const odd = src.match(/[^\x00-\x7f]/);
   if (odd) fail(file, `non-ASCII character "${odd[0]}": use ' and plain quotes`);
   const m = src.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
-  if (!m) { fail(file, "no front matter"); continue; }
-  const kind = m[1].match(/^kind:\s*(\S+)/m)?.[1];
-  if (!kind) { fail(file, "kind: missing"); continue; }
-  if (kinds.has(kind)) fail(file, `kind ${kind} twice`);
+  if (!m) {
+    fail(file, "no front matter");
+    return null;
+  }
+  const own = kind ?? m[1].match(/^kind:\s*(\S+)/m)?.[1] ?? null;
   const sentences: Sentence[] = [];
   for (const line of m[2].split("\n")) {
-    const s = line.match(/^- (?:\[([^\]]*)\]\s*)?(.+)$/);
-    if (!s) continue;
-    const sentence = { text: s[2].trim(), tags: (s[1] ?? "").split(/\s+/).filter(Boolean) };
+    const l = line.match(/^- (?:\[([^\]]*)\]\s*)?(.+)$/);
+    if (!l) continue;
+    const sentence = { text: l[2].trim(), tags: (l[1] ?? "").split(/\s+/).filter(Boolean) };
     for (const t of sentence.tags) if (!tagOk(t)) fail(file, `unknown tag [${t}]: ${sentence.text}`);
+    const slots = own === "scenery" ? [] : (KINDS[own ?? ""] ?? []);
     for (const [, slot] of sentence.text.matchAll(/\{([^}]*)\}/g))
-      if (!(KINDS[kind] ?? []).includes(slot) && !VOICE.includes(slot)) fail(file, `{${slot}} is not a slot of ${kind}: ${sentence.text}`);
-    if (kind.startsWith("c-")) {
+      if (!slots.includes(slot) && !VOICE.includes(slot)) fail(file, `{${slot}} is not a slot of ${own}: ${sentence.text}`);
+    if (own?.startsWith("c-")) {
       if (!/^[a-z]/.test(sentence.text) || /[.!?;:]$/.test(sentence.text)) fail(file, `a clause starts in lower case, with no stop: ${sentence.text}`);
     } else if (!/[.!?]"?$/.test(sentence.text)) fail(file, `no full stop: ${sentence.text}`);
     if (sentences.some((o) => o.text === sentence.text)) fail(file, `twice: ${sentence.text}`);
     sentences.push(sentence);
   }
   if (!sentences.length) fail(file, "no sentence");
+  return { meta: m[1], sentences };
+}
+
+const mdFiles = (dir: string) => (existsSync(dir) ? readdirSync(dir).sort().filter((f) => f.endsWith(".md")) : []);
+
+// The shared writing.
+const kinds = new Map<string, Sentence[]>();
+for (const f of mdFiles(WRITING)) {
+  const file = join(WRITING, f);
+  const parsed = parseFile(file, null);
+  if (!parsed) continue;
+  const kind = parsed.meta.match(/^kind:\s*(\S+)/m)?.[1];
+  if (!kind) { fail(file, "kind: missing"); continue; }
+  if (kinds.has(kind)) fail(file, `kind ${kind} twice`);
   if (!KINDS[kind]) fail(file, `unknown kind ${kind}`);
-  kinds.set(kind, sentences);
+  kinds.set(kind, parsed.sentences);
 }
 for (const kind of Object.keys(KINDS)) if (!kinds.has(kind)) errors.push(`writing/${kind}.md: missing`);
+
+// Each race's own voice: writing/voices/<Race>/<kind>.md.
+const VOICES_DIR = join(WRITING, "voices");
+const voices = new Map<string, Map<string, Sentence[]>>();
+for (const race of existsSync(VOICES_DIR) ? readdirSync(VOICES_DIR).sort() : []) {
+  if (race.startsWith(".")) continue;
+  if (!RACES.includes(race)) { errors.push(`writing/voices/${race}: not a race (${RACES.join(", ")})`); continue; }
+  const own = new Map<string, Sentence[]>();
+  for (const f of mdFiles(join(VOICES_DIR, race))) {
+    const file = join(VOICES_DIR, race, f);
+    const kind = f.replace(/\.md$/, "");
+    if (!KINDS[kind]) { fail(file, `unknown kind ${kind}`); continue; }
+    const parsed = parseFile(file, kind);
+    if (parsed) own.set(kind, parsed.sentences);
+  }
+  voices.set(race, own);
+}
+
+// The places: writing/scenery/<place>.md.
+type Place = { place: string; type: string; home: string[]; faction: string; sentences: Sentence[] };
+const SCENERY_DIR = join(WRITING, "scenery");
+const scenery: Place[] = [];
+for (const f of mdFiles(SCENERY_DIR)) {
+  const file = join(SCENERY_DIR, f);
+  const parsed = parseFile(file, "scenery");
+  if (!parsed) continue;
+  const get = (k: string) => parsed.meta.match(new RegExp(`^${k}:\\s*(.+)$`, "m"))?.[1].trim();
+  const place = get("place");
+  const type = get("type");
+  const faction = get("faction");
+  const home = (get("home") ?? "").split(/\s+/).filter(Boolean);
+  if (!place) fail(file, "place: missing");
+  if (!type || !["zone", "town", "dungeon"].includes(type)) fail(file, "type: zone, town or dungeon");
+  if (!faction || !["alliance", "horde", "neutral"].includes(faction)) fail(file, "faction: alliance, horde or neutral");
+  for (const r of home) if (!RACES.includes(r)) fail(file, `home: ${r} is not a race`);
+  if (scenery.some((p) => p.place === place)) fail(file, `place ${place} twice`);
+  if (place && type && faction) scenery.push({ place, type, home, faction, sentences: parsed.sentences });
+}
+
 if (errors.length) {
   console.error(errors.join("\n"));
   process.exit(1);
 }
 
-function luaFor(client: string) {
+const lua = (list: Sentence[], client: string, indent: string) => {
   const mine = (s: Sentence) => !s.tags.some((t) => t.startsWith("client:") && t !== `client:${client}`);
-  const body = [...kinds.entries()]
-    .map(([kind, list]) => `    [${q(kind)}] = {\n${list.filter(mine).map((s) => `      { ${q(s.text)}${s.tags.filter((t) => !t.startsWith("client:")).length ? `, tags = { ${s.tags.filter((t) => !t.startsWith("client:")).map(q).join(", ")} }` : ""} },`).join("\n")}\n    },`)
+  return list
+    .filter(mine)
+    .map((s) => {
+      const tags = s.tags.filter((t) => !t.startsWith("client:"));
+      return `${indent}{ ${q(s.text)}${tags.length ? `, tags = { ${tags.map(q).join(", ")} }` : ""} },`;
+    })
+    .join("\n");
+};
+
+function luaFor(client: string) {
+  const writing = [...kinds.entries()].map(([kind, list]) => `    [${q(kind)}] = {\n${lua(list, client, "      ")}\n    },`).join("\n");
+  const voiceBody = [...voices.entries()]
+    .map(([race, own]) => `    [${q(race)}] = {\n${[...own.entries()].map(([kind, list]) => `      [${q(kind)}] = {\n${lua(list, client, "        ")}\n      },`).join("\n")}\n    },`)
+    .join("\n");
+  const placeBody = scenery
+    .map(
+      (p) =>
+        `    [${q(p.place)}] = { type = ${q(p.type)}, faction = ${q(p.faction)}, home = { ${p.home.map((r) => `[${q(r)}] = true`).join(", ")} },\n${lua(p.sentences, client, "      ")}\n    },`,
+    )
     .join("\n");
   return `-- Generated by scripts/build.ts from writing/: edit those, not this file.
 local _, ns = ...
 ns.data = {
   client = ${q(client)},
   writing = {
-${body}
+${writing}
+  },
+  voices = {
+${voiceBody}
+  },
+  scenery = {
+${placeBody}
   },
 }
 `;

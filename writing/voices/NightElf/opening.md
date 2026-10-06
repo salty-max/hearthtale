@@ -1,0 +1,12 @@
+---
+kind: opening
+---
+- [!night] Dawn {at}, and the birds already singing.
+- [!night] Morning {at}. I listened to the wind before I moved.
+- [night] Elune's light was on the leaves {at} when I set out.
+- [night] Night {at}. The stars were kind.
+- I set out from {where}, quietly.
+- {where}, and the long road beyond it.
+- I left {where} before the dew had dried.
+- [!night] I woke {at} among the roots and gave thanks.
+- [night] Elune's light was on the leaves {at} when I left.

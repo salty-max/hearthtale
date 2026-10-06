@@ -1,0 +1,18 @@
+---
+kind: c-deed-kill
+---
+- [!one] put down {n} {foes} for {giver}
+- [!one] cleared {n} {foes} off {giver}'s doorstep
+- [!one] killed {n} {foes}, as {giver} asked
+- [!one] did for {n} {foes} and told {ender}
+- [!one] thinned out the {foes}, {n} of them
+- [!one] killed {n} {foes}, a fair day's work
+- [!one] broke {n} {foes}, one after another
+- [!one] counted {n} {foes} dead
+- [!one] made {n} fewer {foes} in the world
+- [one] put an end to {foes} for {giver}
+- [one] dealt with {foes}, and {giver} slept easier
+- [one] tracked down {foes} and finished it
+- [one] did for {foes}
+- [one] settled {foes}, once and for all
+- [one] went after {foes} and came back alone

@@ -1,0 +1,16 @@
+---
+kind: c-deed-item
+---
+- [!one] gathered {n} {thing} for {giver}
+- [!one] found {n} {thing} among the roots and stones
+- [!one] brought {giver} {n} {thing}
+- [!one] collected {n} {thing}, patiently
+- [!one] returned to {ender} with {n} {thing}
+- [!one] searched the wild for {n} {thing}
+- [!one] gathered {n} {thing}
+- [!one] came back with {n} {thing}
+- [one] found {thing} for {giver}
+- [one] recovered {thing}
+- [one] brought {thing} back to {ender}
+- [one] found {thing}, where the forest had hidden it
+- [one] returned with {thing}

@@ -1,0 +1,12 @@
+---
+kind: died
+---
+- [foe] {foe} killed me {at}. I walked as a wisp until I found my body again.
+- [foe] I fell to {foe} {at}. The spirit healer sent me back.
+- [fall] I fell to my death {at}. Even my people misjudge a height.
+- [drowning] I drowned {at}. The water took me, then gave me back.
+- I died {at}. I returned. Not all of us are given that.
+- [lava] I walked into fire {at}. The forest would have warned me; I did not listen.
+- [nature] I died {at}. The wild is not always kind, even to us.
+- [foe] {foe} ended me {at}, for a time. I returned, and I remember.
+- I died {at}, and walked a while among the wisps before I came back.

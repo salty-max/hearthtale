@@ -1,0 +1,12 @@
+---
+kind: rest
+---
+- [last !fire] A room {at}. I didn't sleep; I wrote. This chapter ends here.
+- [last !fire] I rested {at}, as much as the dead do, and closed the book for now.
+- [last !fire] A bed {at}, unused. The chapter ends anyway.
+- [last fire] A fire {at}. I don't feel the cold, but I watched it till dawn. So ends this chapter.
+- [last fire] I sat by the fire {at} until it died, and the chapter with it.
+- [!last !fire] A short stop {at}.
+- [!last !fire] I stopped {at} long enough to be stared at.
+- [!last fire] I sat by the fire {at} for a while.
+- [!last fire] A fire {at}. I watched it, then left.

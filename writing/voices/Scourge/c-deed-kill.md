@@ -1,0 +1,17 @@
+---
+kind: c-deed-kill
+---
+- [!one] killed {n} {foes} for {giver}
+- [!one] disposed of {n} {foes}, at {giver}'s request
+- [!one] added {n} {foes} to the dead, a growing club
+- [!one] put down {n} {foes} and reported to {ender}
+- [!one] made corpses of {n} {foes}
+- [!one] killed {n} {foes}, tidily
+- [!one] sent {n} {foes} where I have already been
+- [!one] killed {n} {foes}. Nobody wept
+- [!one] reduced the {foes} by {n}
+- [one] killed {foes}, as {giver} wished
+- [one] dealt with {foes}, permanently
+- [one] ended {foes}; it won't be getting up, unlike some of us
+- [one] hunted down {foes}
+- [one] put {foes} in the ground, where it belongs

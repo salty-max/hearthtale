@@ -1,0 +1,12 @@
+---
+kind: night
+---
+- [!last] No inn. I slept {at} on the ground.
+- [!last] I made camp {at}.
+- [!last] I slept {at} with my weapon in my hand.
+- [!last] A cold night {at}. An orc can take it.
+- [!last] I kept watch {at} more than I slept.
+- [!last] The ground {at}, the sky. Enough.
+- [last] Too long without a roof. I slept {at}, and ended this stretch.
+- [last] Another night {at} in the open. This chapter ends here.
+- [last] I lay down {at}. Enough marching for one tale.

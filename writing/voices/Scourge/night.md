@@ -1,0 +1,13 @@
+---
+kind: night
+---
+- [!last] I sat out the night {at}. Sleep is for the living.
+- [!last] No inn {at}. I didn't miss it.
+- [!last] A night {at} under the sky. It reminded me of the grave, fondly.
+- [!last] I waited for morning {at}, as I do.
+- [!last] The night {at} was long and quiet. I prefer it that way.
+- [!last] I spent the night {at} counting stars and old grudges.
+- [last] Too long on the road, even for me. I stopped {at} and set this chapter down.
+- [last] Another night {at} in the open. This part of the tale ends here.
+- [last] I lay down {at} out of habit and called the chapter done.
+- [!last] I don't sleep, not truly. I sat out the night {at}.

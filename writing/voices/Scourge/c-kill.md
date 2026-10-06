@@ -1,0 +1,11 @@
+---
+kind: c-kill
+---
+- killed {foe}; it seemed surprised
+- ended {foe}, without ceremony
+- put {foe} out of its misery, and mine
+- made a corpse of {foe}
+- dispatched {foe}
+- introduced {foe} to the grave
+- let {foe} find out what dying is like
+- finished {foe}, efficiently

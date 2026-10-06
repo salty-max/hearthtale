@@ -1,0 +1,12 @@
+---
+kind: c-gear
+---
+- [!made] took {item}
+- [!made] put on {item}
+- [!made] armed myself with {item}
+- [!made] wore {item}. Good iron
+- [!made] traded my old kit for {item}
+- [!made] earned {item}
+- [made] made {item} myself and put it on
+- [made] wore {item}. My own work
+- [made] forged {item} and took it to war

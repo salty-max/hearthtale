@@ -1,0 +1,12 @@
+---
+kind: opening
+---
+- [!night] Morning {at}, and a day's work ahead.
+- [!night] Up {at} with the light and my beard in a tangle.
+- [night] Dark {at}. A dwarf doesn't mind the dark.
+- [night] {where}, by lamplight.
+- I set out from {where} with a full belly.
+- {where} again, and the road out of it.
+- I shouldered my pack {at} and got on with it.
+- [!night] I broke my fast {at}: bread, cheese, a little ale.
+- I oiled my beard and my armour {at}, in that order.

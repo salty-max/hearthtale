@@ -1,0 +1,12 @@
+---
+kind: died
+---
+- [foe] {foe} killed me {at}. I came back. I will settle it.
+- [foe] I fell to {foe} {at}. I rose. It will pay.
+- [fall] I fell to my death {at}. A shameful end. Not the last.
+- [drowning] I drowned {at}. Water is no enemy I can strike.
+- I died {at}. Death sent me back.
+- [lava] I walked into fire {at}. Foolish.
+- [nature] I died {at}. The land itself struck me down.
+- [foe] {foe} killed me {at}. I will remember its face.
+- I fell {at}. I rose. The fight goes on.

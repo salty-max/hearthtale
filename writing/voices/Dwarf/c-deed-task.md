@@ -1,0 +1,11 @@
+---
+kind: c-deed-task
+---
+- did as {giver} asked: {task}
+- took on {giver}'s errand: {task}
+- did the job: {task}
+- was sent to {task}, and did it
+- saw to it: {task}
+- managed to {task}, more or less on time
+- went to {task}, and came back to tell {ender}
+- set out to {task}, and got it done

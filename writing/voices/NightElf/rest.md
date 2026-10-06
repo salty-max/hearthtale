@@ -1,0 +1,12 @@
+---
+kind: rest
+---
+- [last !fire] A quiet room {at}, and sleep. So ends this chapter.
+- [last !fire] I rested {at}, and set my pen down for the night.
+- [last !fire] A bed {at}, and the day let go. Enough for now.
+- [last fire] I slept by the fire {at}; the chapter ended with the embers.
+- [last fire] A fire {at}, and the stars above it. I closed the book on this day.
+- [!last !fire] I rested a while {at} and went on.
+- [!last !fire] A short rest {at}, and a little writing.
+- [!last fire] I sat by the fire {at} for a time.
+- [!last fire] I warmed myself at the fire {at}, then took up the path.

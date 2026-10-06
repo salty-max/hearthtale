@@ -23,6 +23,12 @@ local function chance(p) return rand() < p end
 -- ── what a life can hold (the original game's names) ─────────────────────────
 local ZONES = {
   { "Dun Morogh", { "Coldridge Valley", "Anvilmar", "Kharanos", "Brewnall Village", "Shimmer Ridge", "Frostmane Hold", "Gol'Bolar Quarry" } },
+  { "Ironforge", { "The Commons", "The Great Forge" } },
+  { "Orgrimmar", { "Valley of Strength", "Valley of Honor" } },
+  { "Darnassus", { "Temple of the Moon", "Tradesmen's Terrace" } },
+  { "Undercity", { "The Trade Quarter", "The Apothecarium" } },
+  { "Darkshore", { "Auberdine", "Cliffspring River", "Ruins of Mathystra" } },
+  { "Silverpine Forest", { "The Sepulcher", "Pyrewood Village", "Ambermill" } },
   { "Elwynn Forest", { "Northshire Valley", "Goldshire", "Fargodeep Mine", "Jasperlode Mine", "Brackwell Pumpkin Patch", "Tower of Azora" } },
   { "Durotar", { "Valley of Trials", "Razor Hill", "Sen'jin Village", "Echo Isles", "Skull Rock" } },
   { "Mulgore", { "Camp Narache", "Bloodhoof Village", "Brambleblade Ravine", "The Venture Co. Mine" } },
@@ -55,6 +61,7 @@ local GIVERS = { "Sten Stoutarm", "Marshal McBride", "Gornek", "Grull Hawkwind",
   "Rejold Barleybrew", "Gryan Stoutmantle", "Thrall", "Hemet Nesingwary" }
 local RARES = { "Timber", "Mangeclaw", "Hogger", "Rak'shiri", "Mother Fang", "Squiddic", "Lady Moongazer", "Gruff Swiftbite" }
 local DUNGEONS = { { "The Deadmines", { "Rhahk'Zor", "Sneed", "Gilnid", "Mr. Smite", "Edwin VanCleef" } },
+  { "Gnomeregan", { "Grubbis", "Viscous Fallout", "Mekgineer Thermaplugg" } }, { "Blackfathom Deeps", { "Ghamoo-ra", "Twilight Lord Kelris", "Aku'mai" } },
   { "Ragefire Chasm", { "Taragaman the Hungerer", "Bazzalan" } }, { "Wailing Caverns", { "Lady Anacondra", "Mutanus the Devourer" } },
   { "Shadowfang Keep", { "Rethilgore", "Baron Silverlaine", "Archmage Arugal" } }, { "The Stockade", { "Bazil Thredd" } } }
 local THINGS = { "Tough Wolf Meat", "Crag Boar Rib", "Shimmerweed", "Gnoll Paw", "Grelin Whitebeard's Journal", "Scalding Mornbrew",
@@ -356,11 +363,24 @@ for _, race in ipairs(RACES) do
   end
 end
 
--- Every sentence must be reachable by some life.
+-- Every sentence must be reachable by some life: the shared ones, each
+-- race's own, and each place's scenery.
 local unused = {}
 for kind, list in pairs(ns.data.writing) do
   for i, s in ipairs(list) do
     if not ns.writerUsed[kind .. "#" .. i] then table.insert(unused, kind .. ": " .. s[1]) end
+  end
+end
+for race, own in pairs(ns.data.voices or {}) do
+  for kind, list in pairs(own) do
+    for i, s in ipairs(list) do
+      if not ns.writerUsed[race .. "/" .. kind .. "#" .. i] then table.insert(unused, race .. "/" .. kind .. ": " .. s[1]) end
+    end
+  end
+end
+for place, p in pairs(ns.data.scenery or {}) do
+  for i, s in ipairs(p) do
+    if not ns.writerUsed["scenery:" .. place .. "#" .. i] then table.insert(unused, "scenery " .. place .. ": " .. s[1]) end
   end
 end
 table.sort(unused)
@@ -373,6 +393,7 @@ eq(ns.plural("Ragged Young Wolf"), "Ragged Young Wolves", "wolf"); eq(ns.plural(
 eq(ns.plural("Servant of Arugal"), "Servants of Arugal", "of"); eq(ns.plural("Watchman"), "Watchmen", "man")
 eq(ns.plural("Frostmane Shaman"), "Frostmane Shamans", "shaman"); eq(ns.plural("Mud Thresh"), "Mud Threshes", "thresh")
 eq(ns.plural("Rotting Dead"), "Rotting Dead", "dead")
+eq(ns.plural("Scavenged Goods"), "Scavenged Goods", "already many"); eq(ns.plural("Rough Glass"), "Rough Glasses", "glass")
 eq(ns.things("Crag Boar Rib"), "Crag Boar Ribs", "ribs"); eq(ns.things("Tough Wolf Meat"), "Tough Wolf Meat", "meat")
 eq(ns.things("Shimmerweed"), "Shimmerweed", "weed"); eq(ns.things("Linen Cloth"), "Linen Cloth", "cloth"); eq(ns.plural("Kobold Vermin"), "Kobold Vermin", "vermin")
 eq(ns.itemName("Wolf Fang Necklace"), "a Wolf Fang Necklace", "a"); eq(ns.itemName("Cuirboulle Gloves"), "Cuirboulle Gloves", "plural")

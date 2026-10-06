@@ -1,0 +1,18 @@
+---
+kind: c-deed-kill
+---
+- [!one] killed {n} {foes} for {giver}
+- [!one] cut down {n} {foes}
+- [!one] killed {n} {foes}. {giver} asked; I did it
+- [!one] slew {n} {foes} and reported to {ender}
+- [!one] hunted {n} {foes}
+- [!one] broke {n} {foes} for the Horde
+- [!one] ended {n} {foes}
+- [!one] killed {n} {foes}, one after another
+- [!one] cleared out {n} {foes}
+- [one] killed {foes} for {giver}
+- [one] hunted down {foes}
+- [one] ended {foes}
+- [one] took {foes}'s head, as {giver} wanted
+- [one] faced {foes} and won
+- [one] killed {foes}. It fought well
