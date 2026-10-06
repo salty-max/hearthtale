@@ -16,19 +16,52 @@ where its chapters close) and the tale. Short enough for the site's domain
 anyone but the author had installed it: the folder, the saved variables (a
 journal of the old name starts over), the GitHub repo; `/hearthtale` and `/ht`.
 
-## A web reader (6 October 2026, planned after the CurseForge launch)
+## The site (6 October 2026)
 
 The journal readable outside the game too, as Talekeeper does on Forever (whose
 book is written by its site, needs an account and a Windows tray app, Forever
-only). The in-game book stays complete and needs nothing.
+only). The in-game book stays complete and needs nothing. Built before the
+CurseForge launch (the user tests the addon meanwhile; the launch comes with the
+site).
 
 | Question | Decision |
 |---|---|
-| Home | A site of its own (not inside WoWLocker): its own domain, sign-in, companion and hosting. WoWLocker's code (monorepo, companion, pairing) is the model to copy from. |
-| Ownership | Not through the Battle.net API (no Forever namespace): a code typed in the game links a character to the account, as Talekeeper does. |
-| Prose | The site runs the addon's own Writer.lua and writing data on the uploaded records: the web and the game read the same, and better writing reaches old chapters on both. |
-| Sharing | Private by default; a share link per book or per epitaph, with a preview card for Discord and Reddit. Fallen Hardcore books may be offered to a public Hall. |
-| Timing | After the CurseForge launch: first CurseForge and Wago, a share-as-text button in game, a project page that shows the prose. |
+| Home | A site of its own at hearthtale.gg, in this repo (a monorepo, as WoWLocker: addon/, apps/api, apps/web, packages/shared). Vercel Pro (team jellycat) + a new Supabase project. |
+| Accounts | Battle.net sign-in: the characters the Battle.net API knows (Classic Era, Hardcore, SoD, TBC Anniversary) are found and attached on their own. A code typed in the game (`/ht link CODE`) attaches any other (Forever has no Battle.net namespace). |
+| Upload | **Ravenpost**, one companion for WoWLocker and Hearthtale: its own repo (salty-max/ravenpost), moved out of wow-locker and renamed; each site linked separately from its settings page (its own sign-in, its own upload key). |
+| Prose | The site runs the addon's own Writer.lua and writing data (Lua in WebAssembly) on the uploaded records: the web and the game read the same. A test checks the web writes exactly what the game does. |
+| Sharing | Private by default; a share link per book, chapter or epitaph, with a preview card for Discord and Reddit. Fallen Hardcore books may be offered to a public Hall. |
+
+### Steps
+
+1. **Scaffold**: the monorepo around the addon (Turborepo + Bun, from WoWLocker:
+   lint, typecheck, commitlint, CI), the addon's checks kept as they are.
+2. **The writer on the web**: Writer.lua and the data files under Lua 5.4 in
+   WebAssembly (wasmoon), on the server and in the browser; the sample life
+   written by both and compared word for word (LuaJIT is Lua 5.1: watch number
+   formatting and integer division).
+3. **Records in**: an upload endpoint for a character's journal (HearthtaleChar)
+   and the account's Hall (HearthtaleHall); characters, journals and accounts
+   in Postgres.
+4. **Accounts**: Battle.net sign-in (WoWLocker's code), the characters found
+   through the API; link codes for the rest (the addon keeps the code in its
+   saved file until it is uploaded).
+5. **The reader**: your characters, each book (prologue, chapters, the Hall),
+   the page in the in-game book's look; phone first.
+6. **Ravenpost**: the companion moved to its own repo and renamed; it uploads
+   each addon's file to its site (WowLocker.lua to WoWLocker, Hearthtale.lua to
+   Hearthtale), Forever's game folder too; its config carried over from the
+   WoWLocker companion; WoWLocker's download page points to it.
+7. **Sharing**: share links, preview cards, the public Hall.
+8. **Launch**: hearthtale.gg live, then CurseForge and Wago, the project page.
+
+### What the user does
+
+- Register **hearthtale.gg** (free on 6 October 2026).
+- A **Battle.net API client** for Hearthtale (develop.battle.net), with the
+  site's sign-in redirect; its id and secret go in the site's settings.
+- The **Supabase** project (or I create it if the CLI is logged in), and the
+  Vercel project's secrets.
 
 ## Chapters from rest to rest (6 October 2026, after testing 0.1.0)
 
