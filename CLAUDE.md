@@ -14,6 +14,16 @@ The plan and its decisions: PLAN.md.
   `kind:`; one `- sentence` per line, optional `[tags]` = the conditions it
   needs). Built by `scripts/build.ts` into `addon/Hearthtale/Data_Classic.lua`
   and `Data_Forever.lua` (one per game; `client:` tags keep a sentence to one).
+- `writing/voices/<Race>/<kind>.md`: a race's own sentences (same format,
+  `<Race>` as the game names it: `Scourge`, `NightElf`). The writer prefers
+  them, lets a used one back after `OWN_GAP` uses of the kind, and falls back
+  on the shared ones; `STYLE` in `Writer.lua` sets the race's clauses per
+  sentence and linking words. Flavour, no caricature.
+- `writing/scenery/<slug>.md`: a place described the first time a book meets
+  it (front matter `place:`, `type:` zone | town | dungeon, `faction:`
+  alliance | horde | neutral, optional `home:` races). Lines tagged by
+  viewpoint: `[home]`, `[ally]`, `[foe]`, `[neutral]`, plus `[night]`; 2-3
+  sentences each.
 - `addon/Hearthtale/`: `Core.lua` (the character's record, events,
   `/hearthtale`), `Record.lua` (the chapters and their moments, as they happen;
   a logout settled at the next login),
