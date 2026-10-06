@@ -2,14 +2,14 @@ import { useSettings, type Lang } from "@/lib/settings";
 
 /** Every visible string. `fr` is typed on the exact shape of `en`. */
 const en = {
-  nav: { home: "Hearthtale", library: "Library", skip: "Skip to content", language: "Language" },
+  nav: { home: "Hearthtale", start: "Get started", library: "Library", skip: "Skip to content", language: "Language" },
   home: {
     tagline: "Your character's own journal, written as you play.",
     intro:
       "Hearthtale is a World of Warcraft addon. Every quest, every new foe, every place, every close call is written down as it happens, in your character's own voice, and a chapter closes when you rest at an inn or by a campfire. On Hardcore, a death closes the book with an epitaph.",
-    soon: "Soon on this site: your journal, to read on your phone and to share.",
+    soon: "Your journal, read in the game or here, on your phone: install the addon and Ravenpost, then sign in.",
+    start: "Get started",
     games: "Classic Era, Hardcore, Season of Discovery, TBC Anniversary and World of Warcraft: Forever.",
-    download: "Download the addon",
   },
   notFound: { title: "Lost in the mist", body: "There is no page here.", back: "Back to the hearth" },
   common: { loading: "Turning the pages…", loadError: "This page couldn't be loaded. Check your connection, then try again.", retry: "Try again" },
@@ -34,6 +34,33 @@ const en = {
     type: "In the game, type:",
     copy: "Copy",
     then: (until: string) => `Then log out or /reload. The code works until ${until}, once.`,
+  },
+  start: {
+    title: "Get started",
+    intro: "The addon writes your character's journal as you play; read it in the game with /ht. To read it here too, Ravenpost, a small app on your computer, sends each book to your library after you log out.",
+    addonTitle: "1. The addon",
+    addon: "Unzip it into the game's Interface/AddOns folder (one package per game).",
+    classic: "Classic",
+    classicDetail: "Classic Era, Hardcore, Season of Discovery, TBC Anniversary",
+    forever: "Forever",
+    foreverDetail: "World of Warcraft: Forever",
+    ravenpostTitle: "2. Ravenpost",
+    ravenpost: "The companion app that carries your books here (and WoWLocker's data, if you use it). It lives in the tray or the menu bar.",
+    windows: "Windows",
+    windowsDetail: "Windows 10 or 11",
+    macos: "macOS",
+    macosDetail: "macOS 11 or later: move it to Applications",
+    windowsArm: "Windows on ARM",
+    unsigned: "Not code-signed yet: Windows and macOS warn the first time you open it.",
+    stepsTitle: "3. Link it",
+    steps: [
+      "Open Ravenpost: its settings page opens in your browser.",
+      "Under Hearthtale, click Link Hearthtale: this site opens, sign in with Battle.net and confirm the code.",
+      "Play, then log out or type /reload: a few seconds later, your book is in your library.",
+    ],
+    foreverLink: "World of Warcraft: Forever characters (and any Battle.net can't find): in the library, get a link code and type /ht link CODE in the game before you log out.",
+    addonSource: "The addon's releases",
+    ravenpostSource: "Ravenpost's releases",
   },
   pair: {
     title: "Link this computer",
@@ -85,14 +112,14 @@ const en = {
 };
 
 const fr: typeof en = {
-  nav: { home: "Hearthtale", library: "Bibliothèque", skip: "Aller au contenu", language: "Langue" },
+  nav: { home: "Hearthtale", start: "Commencer", library: "Bibliothèque", skip: "Aller au contenu", language: "Langue" },
   home: {
     tagline: "Le journal de votre personnage, écrit pendant que vous jouez.",
     intro:
       "Hearthtale est un addon pour World of Warcraft. Chaque quête, chaque nouvel ennemi, chaque lieu, chaque mort évitée de justesse est écrit au moment où il arrive, avec la voix de votre personnage, et un chapitre se clôt quand vous vous reposez dans une auberge ou au coin d'un feu de camp. En Hardcore, la mort referme le livre sur une épitaphe.",
-    soon: "Bientôt sur ce site : votre journal, à lire sur votre téléphone et à partager.",
+    soon: "Votre journal, à lire en jeu ou ici, sur votre téléphone : installez l'addon et Ravenpost, puis connectez-vous.",
+    start: "Commencer",
     games: "Classic Era, Hardcore, Season of Discovery, TBC Anniversary et World of Warcraft: Forever.",
-    download: "Télécharger l'addon",
   },
   notFound: { title: "Perdu dans la brume", body: "Il n'y a pas de page ici.", back: "Retour au coin du feu" },
   common: { loading: "On tourne les pages…", loadError: "Cette page n'a pas pu être chargée. Vérifiez votre connexion, puis réessayez.", retry: "Réessayer" },
@@ -117,6 +144,33 @@ const fr: typeof en = {
     type: "En jeu, tapez :",
     copy: "Copier",
     then: (until: string) => `Puis déconnectez-vous ou faites /reload. Le code est valable jusqu'à ${until}, une fois.`,
+  },
+  start: {
+    title: "Commencer",
+    intro: "L'addon écrit le journal de votre personnage pendant que vous jouez ; lisez-le en jeu avec /ht. Pour le lire ici aussi, Ravenpost, une petite application sur votre ordinateur, envoie chaque livre dans votre bibliothèque après la déconnexion.",
+    addonTitle: "1. L'addon",
+    addon: "Décompressez-le dans le dossier Interface/AddOns du jeu (un paquet par jeu).",
+    classic: "Classic",
+    classicDetail: "Classic Era, Hardcore, Season of Discovery, TBC Anniversary",
+    forever: "Forever",
+    foreverDetail: "World of Warcraft: Forever",
+    ravenpostTitle: "2. Ravenpost",
+    ravenpost: "L'application compagnon qui apporte vos livres ici (et les données de WoWLocker, si vous l'utilisez). Elle vit dans la zone de notification ou la barre des menus.",
+    windows: "Windows",
+    windowsDetail: "Windows 10 ou 11",
+    macos: "macOS",
+    macosDetail: "macOS 11 ou plus récent : placez-la dans Applications",
+    windowsArm: "Windows sur ARM",
+    unsigned: "Pas encore signée : Windows et macOS préviennent à la première ouverture.",
+    stepsTitle: "3. La lier",
+    steps: [
+      "Ouvrez Ravenpost : sa page de réglages s'ouvre dans votre navigateur.",
+      "Sous Hearthtale, cliquez sur Lier Hearthtale : ce site s'ouvre, connectez-vous avec Battle.net et confirmez le code.",
+      "Jouez, puis déconnectez-vous ou tapez /reload : quelques secondes plus tard, votre livre est dans votre bibliothèque.",
+    ],
+    foreverLink: "Personnages de World of Warcraft: Forever (et tout ce que Battle.net ne trouve pas) : dans la bibliothèque, obtenez un code et tapez /ht link CODE en jeu avant de vous déconnecter.",
+    addonSource: "Les versions de l'addon",
+    ravenpostSource: "Les versions de Ravenpost",
   },
   pair: {
     title: "Lier cet ordinateur",

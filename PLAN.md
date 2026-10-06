@@ -53,10 +53,13 @@ site).
    the page in the in-game book's look; phone first. Started 6 October 2026:
    the library, a book's contents, its chapters and epitaph, on test characters
    played through the addon (addon/test/seed.lua).
-6. **Ravenpost**: the companion moved to its own repo and renamed; it uploads
+6. **Ravenpost** (done, 6 October 2026, not released yet): the companion moved
+   to its own repo (salty-max/ravenpost, history kept) and renamed; it uploads
    each addon's file to its site (WowLocker.lua to WoWLocker, Hearthtale.lua to
-   Hearthtale), Forever's game folder too; its config carried over from the
-   WoWLocker companion; WoWLocker's download page points to it.
+   Hearthtale, one character per request, only the fields the site reads),
+   Forever's game folder too; its config carried over from the WoWLocker
+   companion; WoWLocker's download page points to it. The site's "Get started"
+   page (/start) has the downloads.
 7. **Sharing**: share links, preview cards, the public Hall.
 8. **Launch**: hearthtale.app live, then CurseForge and Wago, the project page.
 

@@ -23,6 +23,9 @@ export function Layout() {
           {t.nav.home}
         </Link>
         <nav className="ml-auto flex items-center gap-4">
+          <Link to="/start" className="text-gold-bright hover:underline" activeProps={{ className: "underline" }}>
+            {t.nav.start}
+          </Link>
           <Link to="/library" className="text-gold-bright hover:underline" activeProps={{ className: "underline" }}>
             {t.nav.library}
           </Link>

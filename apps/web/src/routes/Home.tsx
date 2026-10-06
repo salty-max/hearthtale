@@ -1,7 +1,5 @@
-import { Download } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { useT } from "@/lib/i18n";
-
-const RELEASES = "https://github.com/salty-max/hearthtale/releases/latest";
 
 export function Home() {
   const t = useT();
@@ -13,10 +11,9 @@ export function Home() {
       <p className="mt-6 text-left text-lg leading-relaxed">{t.home.intro}</p>
       <p className="mt-4 text-left text-lg leading-relaxed">{t.home.soon}</p>
       <p className="mt-4 text-sm text-ink-faded">{t.home.games}</p>
-      <a href={RELEASES} className="btn mt-8">
-        <Download className="size-4" />
-        {t.home.download}
-      </a>
+      <Link to="/start" className="btn mt-8">
+        {t.home.start}
+      </Link>
     </article>
   );
 }
