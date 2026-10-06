@@ -1,4 +1,4 @@
-# Wayfarer's Journal
+# Hearthtale
 
 A World of Warcraft addon: the character's own journal, written as it plays,
 in the first person, one chapter per level. On Hardcore, a death closes the
@@ -7,6 +7,14 @@ book with an epitaph, and the life joins the Hall of the Fallen.
 Games: Classic Era (Hardcore, Season of Discovery), TBC Anniversary, World of
 Warcraft: Forever. One source, one package per game, as Lorekeeper's Codex and
 Explorer's Field Journal (same release, CI and CurseForge tooling).
+
+## The name (6 October 2026)
+
+Wayfarer's Journal becomes **Hearthtale**: the hearth (the inn, the hearthstone,
+where its chapters close) and the tale. Short enough for the site's domain
+(hearthtale.gg was free) and not taken on CurseForge. Renamed everywhere before
+anyone but the author had installed it: the folder, the saved variables (a
+journal of the old name starts over), the GitHub repo; `/hearthtale` and `/ht`.
 
 ## A web reader (6 October 2026, planned after the CurseForge launch)
 

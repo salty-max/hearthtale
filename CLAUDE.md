@@ -1,4 +1,4 @@
-# Wayfarer's Journal
+# Hearthtale
 
 A World of Warcraft addon: the character's own journal, written as it plays,
 in the first person, in scenes (the moments in one place told together), a
@@ -12,10 +12,10 @@ The plan and its decisions: PLAN.md.
 
 - `writing/<kind>.md`: the sentences of one kind of moment (front matter
   `kind:`; one `- sentence` per line, optional `[tags]` = the conditions it
-  needs). Built by `scripts/build.ts` into `addon/WayfarersJournal/Data_Classic.lua`
+  needs). Built by `scripts/build.ts` into `addon/Hearthtale/Data_Classic.lua`
   and `Data_Forever.lua` (one per game; `client:` tags keep a sentence to one).
-- `addon/WayfarersJournal/`: `Core.lua` (the character's record, events,
-  `/wayfarer`), `Record.lua` (the chapters and their moments, as they happen;
+- `addon/Hearthtale/`: `Core.lua` (the character's record, events,
+  `/hearthtale`), `Record.lua` (the chapters and their moments, as they happen;
   a logout settled at the next login),
   `Writer.lua` (the prose, written from the records when read: never stored),
   `Book.lua` (the window: chapters on the left, the open one on the right; a

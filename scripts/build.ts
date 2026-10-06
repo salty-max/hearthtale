@@ -1,5 +1,5 @@
 /**
- * writing/*.md → addon/WayfarersJournal/Data_Classic.lua, Data_Forever.lua
+ * writing/*.md → addon/Hearthtale/Data_Classic.lua, Data_Forever.lua
  *
  * Each file holds the sentences of one kind of moment:
  *
@@ -26,7 +26,7 @@ import { join } from "node:path";
 const ROOT = join(import.meta.dir, "..");
 const WRITING = join(ROOT, "writing");
 const CLIENTS = ["classic", "forever"];
-const GAMES = CLIENTS.map((client) => ({ client, out: join(ROOT, `addon/WayfarersJournal/Data_${client[0].toUpperCase()}${client.slice(1)}.lua`) }));
+const GAMES = CLIENTS.map((client) => ({ client, out: join(ROOT, `addon/Hearthtale/Data_${client[0].toUpperCase()}${client.slice(1)}.lua`) }));
 const errors: string[] = [];
 const fail = (file: string, msg: string) => errors.push(`${file}: ${msg}`);
 const q = (s: string) => JSON.stringify(s);

@@ -9,7 +9,7 @@
 -- characters, the open one's epitaph and chapters under its name. Light text and
 -- gold titles on dark panels: Forever's Professions cards; on Classic, the
 -- game's insets and the quest log's dark book behind the list. The text is
--- written from the records each time it is shown (Writer.lua). /wayfarer
+-- written from the records each time it is shown (Writer.lua). /hearthtale
 -- opens it.
 local _, ns = ...
 
@@ -363,11 +363,11 @@ end
 local function buildTabs()
   local template = hasTemplate("CharacterFrameTabButtonTemplate") and "CharacterFrameTabButtonTemplate" or "PanelTabButtonTemplate"
   for n, text in ipairs({ "Journal", "Hall of the Fallen" }) do
-    local tab = CreateFrame("Button", "WayfarersJournalFrameTab" .. n, book, template)
+    local tab = CreateFrame("Button", "HearthtaleFrameTab" .. n, book, template)
     tab:SetID(n)
     tab:SetText(text)
     if n == 1 then tab:SetPoint("TOPLEFT", book, "BOTTOMLEFT", 14, 2)
-    else tab:SetPoint("LEFT", "WayfarersJournalFrameTab" .. (n - 1), "RIGHT", -14, 0) end
+    else tab:SetPoint("LEFT", "HearthtaleFrameTab" .. (n - 1), "RIGHT", -14, 0) end
     tab:SetScript("OnClick", function(self)
       ns.showTab(self:GetID())
       if PlaySound and SOUNDKIT and SOUNDKIT.IG_CHARACTER_INFO_TAB then PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB) end
@@ -384,9 +384,9 @@ end
 
 -- The standard game window (portrait, title bar), its inset removed; the
 -- portrait is the character's own face.
-local TITLE = "Wayfarer's Journal"
+local TITLE = "Hearthtale"
 local function gameWindow()
-  local ok, frame = pcall(CreateFrame, "Frame", "WayfarersJournalFrame", UIParent, "ButtonFrameTemplate")
+  local ok, frame = pcall(CreateFrame, "Frame", "HearthtaleFrame", UIParent, "ButtonFrameTemplate")
   if not ok or not frame then return nil end
   if ButtonFrameTemplate_HideButtonBar then ButtonFrameTemplate_HideButtonBar(frame) end
   if type(frame.Inset) == "table" then frame.Inset:Hide() end
@@ -404,7 +404,7 @@ end
 
 function build()
   local window = gameWindow()
-  book = window or CreateFrame("Frame", "WayfarersJournalFrame", UIParent, "BackdropTemplate")
+  book = window or CreateFrame("Frame", "HearthtaleFrame", UIParent, "BackdropTemplate")
   book:SetSize(780, 560)
   book:SetPoint("CENTER")
   book:SetFrameStrata("HIGH")
@@ -415,7 +415,7 @@ function build()
   book:RegisterForDrag("LeftButton")
   book:SetScript("OnDragStart", book.StartMoving)
   book:SetScript("OnDragStop", book.StopMovingOrSizing)
-  table.insert(UISpecialFrames, "WayfarersJournalFrame") -- Escape closes it
+  table.insert(UISpecialFrames, "HearthtaleFrame") -- Escape closes it
   if not window then
     -- No standard window on this client: a plain dialog frame.
     book:SetBackdrop({
@@ -442,7 +442,7 @@ function build()
   left:SetPoint("TOPLEFT", edge, -58)
   left:SetPoint("BOTTOMLEFT", edge, edge)
   left:SetWidth(244)
-  list = scrollArea("WayfarersJournalList", left, ROW_WIDTH)
+  list = scrollArea("HearthtaleList", left, ROW_WIDTH)
   list:SetPoint("TOPLEFT", left, "TOPLEFT", 12, -12)
   list:SetPoint("BOTTOMRIGHT", left, "BOTTOMRIGHT", -18, 12)
 
@@ -451,7 +451,7 @@ function build()
   book.sheet = sheet
   sheet:SetPoint("TOPLEFT", left, "TOPRIGHT", 4, 32)
   sheet:SetPoint("BOTTOMRIGHT", -edge, edge)
-  page = scrollArea("WayfarersJournalPage", sheet, WIDTH)
+  page = scrollArea("HearthtalePage", sheet, WIDTH)
   page:SetPoint("TOPLEFT", sheet, "TOPLEFT", 26, -22)
   page:SetPoint("BOTTOMRIGHT", sheet, "BOTTOMRIGHT", -22, 14)
 
@@ -508,22 +508,22 @@ end
 ns.onHall = function() if book and book:IsShown() then ns.refresh() end end
 
 -- A chapter closes: a line in chat with a link to it (a setting).
-function ns.link(target, text) return ("|cffc9a227|Hwayfarer:%s|h[%s]|h|r"):format(target, text) end
+function ns.link(target, text) return ("|cffc9a227|Hhearthtale:%s|h[%s]|h|r"):format(target, text) end
 ns.onChapter = function(number)
   if not ns.option("chat") then return end
   print(ns.PREFIX .. ("chapter %d is written. %s"):format(number, ns.link("chapter:" .. number, "Read it")))
 end
 
--- Links in chat (|Hwayfarer:chapter:<number>|h, |Hwayfarer:hall:<guid>|h): the
+-- Links in chat (|Hhearthtale:chapter:<number>|h, |Hhearthtale:hall:<guid>|h): the
 -- game hands links of an unknown type to the handler registered for it.
 local function followLink(link)
-  local number = tonumber(link:match("^wayfarer:chapter:(%d+)$") or "")
+  local number = tonumber(link:match("^hearthtale:chapter:(%d+)$") or "")
   if number then return ns.openChapter(number) end
-  local guid = link:match("^wayfarer:hall:(.+)$")
+  local guid = link:match("^hearthtale:hall:(.+)$")
   if guid then ns.openHall(guid) end
 end
 if LinkUtil and LinkUtil.RegisterLinkHandler then
-  LinkUtil.RegisterLinkHandler("wayfarer", function(link)
+  LinkUtil.RegisterLinkHandler("hearthtale", function(link)
     followLink(link)
     return LinkProcessorResponse and LinkProcessorResponse.Handled
   end)

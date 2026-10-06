@@ -32,7 +32,7 @@ jobs:
         run: |
           git tag -l --format='%(contents)' "$TAG" | sed '/^-----BEGIN PGP SIGNATURE-----/,$d' > notes.md
           [ -s notes.md ] || { echo "::error::tag $TAG has no message (release notes)"; exit 1; }
-          gh release create "$TAG" --title "$TAG" --notes-file notes.md dist/WayfarersJournal-classic.zip dist/WayfarersJournal-forever.zip
+          gh release create "$TAG" --title "$TAG" --notes-file notes.md dist/Hearthtale-classic.zip dist/Hearthtale-forever.zip
 
   # Then CurseForge, once the project exists (see curseforge.yml).
   curseforge:

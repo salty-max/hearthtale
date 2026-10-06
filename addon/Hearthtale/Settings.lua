@@ -1,5 +1,5 @@
--- The addon's settings, kept for the whole account in WayfarersJournalSettings,
--- and their page in the game's Options (AddOns tab). /wj settings opens it;
+-- The addon's settings, kept for the whole account in HearthtaleSettings,
+-- and their page in the game's Options (AddOns tab). /ht settings opens it;
 -- so does a right-click on the minimap button. One setting is the
 -- character's own: "This character is Hardcore", offered only where the game
 -- can't tell (no C_GameRules), kept in its journal.
@@ -8,15 +8,15 @@ local _, ns = ...
 local DEFAULTS = { chat = true, toast = true, minimapHidden = false }
 
 function ns.option(key)
-  if type(WayfarersJournalSettings) ~= "table" then WayfarersJournalSettings = {} end
-  local v = WayfarersJournalSettings[key]
+  if type(HearthtaleSettings) ~= "table" then HearthtaleSettings = {} end
+  local v = HearthtaleSettings[key]
   if v == nil then return DEFAULTS[key] end
   return v
 end
 
 function ns.setOption(key, value)
-  if type(WayfarersJournalSettings) ~= "table" then WayfarersJournalSettings = {} end
-  WayfarersJournalSettings[key] = value
+  if type(HearthtaleSettings) ~= "table" then HearthtaleSettings = {} end
+  HearthtaleSettings[key] = value
   if key == "minimapHidden" and ns.updateMinimapButton then ns.updateMinimapButton() end
 end
 
@@ -29,11 +29,11 @@ local category
 
 function ns.createSettingsPanel()
   if category or not (Settings and Settings.RegisterVerticalLayoutCategory) then return end
-  category = Settings.RegisterVerticalLayoutCategory("Wayfarer's Journal")
+  category = Settings.RegisterVerticalLayoutCategory("Hearthtale")
 
   local function checkbox(key, name, tooltip, invert)
     invert = invert or false
-    local setting = Settings.RegisterProxySetting(category, "WAYFARERSJOURNAL_" .. key:upper(), Settings.VarType.Boolean, name,
+    local setting = Settings.RegisterProxySetting(category, "HEARTHTALE_" .. key:upper(), Settings.VarType.Boolean, name,
       not DEFAULTS[key] == invert,
       function() return ns.option(key) ~= invert end,
       function(value) ns.setOption(key, value ~= invert) end)
@@ -46,7 +46,7 @@ function ns.createSettingsPanel()
   -- Where the game can't tell, the player says whether this character is
   -- Hardcore (its death then closes the book).
   if not ns.gameKnowsHardcore() then
-    local setting = Settings.RegisterProxySetting(category, "WAYFARERSJOURNAL_HARDCORE", Settings.VarType.Boolean,
+    local setting = Settings.RegisterProxySetting(category, "HEARTHTALE_HARDCORE", Settings.VarType.Boolean,
       "This character is Hardcore", false,
       function() local c = ns.journal() return c and c.hardcore == true or false end,
       function(value)

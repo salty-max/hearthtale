@@ -4,10 +4,10 @@
 -- spaces or doubled words, every sentence of writing/ reachable, few repeats.
 --   luajit addon/test/writer.lua            the checks
 -- (a sample book, from a life played through the addon: addon/test/sample.lua)
-local DIR = "addon/WayfarersJournal/"
+local DIR = "addon/Hearthtale/"
 local ns = {}
-assert(loadfile(DIR .. "Data_Classic.lua"))("WayfarersJournal", ns)
-assert(loadfile(DIR .. "Writer.lua"))("WayfarersJournal", ns)
+assert(loadfile(DIR .. "Data_Classic.lua"))("Hearthtale", ns)
+assert(loadfile(DIR .. "Writer.lua"))("Hearthtale", ns)
 
 -- A small random generator of our own, for the same lives on every machine.
 local state = 12345

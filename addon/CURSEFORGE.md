@@ -1,4 +1,4 @@
-# Wayfarer's Journal
+# Hearthtale
 
 <!-- Project description for curseforge.com (paste as the project's description). -->
 
@@ -37,7 +37,7 @@ When a Hardcore character dies, its book closes: an epitaph telling how it ended
 
 ## The book
 
-`/wayfarer` (or `/wj`), or the book by the minimap, opens it: your portrait and who you are; the chapters on the left (a skull marks a close call, a star a rare); the chapter on the right. A second tab holds the Hall of the Fallen. When a chapter closes, a line in chat links to it.
+`/hearthtale` (or `/ht`), or the book by the minimap, opens it: your portrait and who you are; the chapters on the left (a skull marks a close call, a star a rare); the chapter on the right. A second tab holds the Hall of the Fallen. When a chapter closes, a line in chat links to it.
 
 ## Two packages
 
@@ -48,10 +48,10 @@ Each game has its own file: pick the one for yours (the CurseForge app does it f
 
 ## Settings
 
-Options → AddOns → Wayfarer's Journal (or `/wj settings`, or right-click the minimap button): a line in chat for each chapter, the alert when a book closes, the minimap button. Where the game can't tell whether a character is Hardcore, a setting lets you say so.
+Options → AddOns → Hearthtale (or `/ht settings`, or right-click the minimap button): a line in chat for each chapter, the alert when a book closes, the minimap button. Where the game can't tell whether a character is Hardcore, a setting lets you say so.
 
-Other commands: `/wj hall` opens the Hall of the Fallen; `/wj minimap` shows or hides the button.
+Other commands: `/ht hall` opens the Hall of the Fallen; `/ht minimap` shows or hides the button.
 
 ## Source
 
-MIT licensed: [github.com/salty-max/wayfarers-journal](https://github.com/salty-max/wayfarers-journal). Not affiliated with Blizzard Entertainment.
+MIT licensed: [github.com/salty-max/hearthtale](https://github.com/salty-max/hearthtale). Not affiliated with Blizzard Entertainment.

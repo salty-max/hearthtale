@@ -2,7 +2,7 @@
 -- character to play (state), and the addon loaded into it.
 --   local G = dofile("addon/test/game.lua")
 -- FOREVER=1 in the environment: Forever's client (no combat log).
-local DIR = "addon/WayfarersJournal/"
+local DIR = "addon/Hearthtale/"
 local FOREVER = os.getenv("FOREVER") == "1"
 function GetBuildInfo() return "1.15.8", "60000", "Oct 1 2026", FOREVER and 16001 or 11509 end
 local secrets = {}
@@ -207,8 +207,8 @@ LinkProcessorResponse = { Handled = 2 }
 
 -- ── load the addon ───────────────────────────────────────────────────────────
 local ns = {}
-assert(loadfile(DIR .. (FOREVER and "Data_Forever.lua" or "Data_Classic.lua")))("WayfarersJournal", ns)
-for _, f in ipairs({ "Core.lua", "Record.lua", "Writer.lua", "Book.lua", "Hall.lua", "Settings.lua", "Minimap.lua" }) do assert(loadfile(DIR .. f))("WayfarersJournal", ns) end
+assert(loadfile(DIR .. (FOREVER and "Data_Forever.lua" or "Data_Classic.lua")))("Hearthtale", ns)
+for _, f in ipairs({ "Core.lua", "Record.lua", "Writer.lua", "Book.lua", "Hall.lua", "Settings.lua", "Minimap.lua" }) do assert(loadfile(DIR .. f))("Hearthtale", ns) end
 local D = ns.data
 -- Resting and campfires: the game's resting state, the auras on me.
 state.auras = {}

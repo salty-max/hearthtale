@@ -1,4 +1,4 @@
--- The Hall of the Fallen (account-wide, WayfarersJournalHall.lives[guid]):
+-- The Hall of the Fallen (account-wide, HearthtaleHall.lives[guid]):
 -- the closed books of Hardcore characters, kept whole. What is kept is their
 -- records (the text is written when read, as any journal's), with their realm
 -- and the game's names of their race and class. A Hardcore death closes the
@@ -7,9 +7,9 @@
 local _, ns = ...
 
 local function hall()
-  if type(WayfarersJournalHall) ~= "table" then WayfarersJournalHall = {} end
-  WayfarersJournalHall.lives = WayfarersJournalHall.lives or {}
-  return WayfarersJournalHall.lives
+  if type(HearthtaleHall) ~= "table" then HearthtaleHall = {} end
+  HearthtaleHall.lives = HearthtaleHall.lives or {}
+  return HearthtaleHall.lives
 end
 
 local function copy(t)
@@ -48,20 +48,20 @@ local toasts
 
 local function onToastClick(self, button, down)
   if AlertFrame_OnClick and AlertFrame_OnClick(self, button, down) then return end -- right-click: dismissed
-  if self.wayfarerLife then ns.openHall(self.wayfarerLife) end
+  if self.hearthtaleLife then ns.openHall(self.hearthtaleLife) end
 end
 
 local function setUp(frame, guid)
   local life = hall()[guid]
   if not life then return end
-  frame.wayfarerLife = guid
+  frame.hearthtaleLife = guid
   -- Round, as the window's portrait: a mask texture (Texture:SetMask, the
   -- recipe toast's own way, forbids changing the crop afterwards on Forever).
-  if not frame.wayfarerMask and frame.CreateMaskTexture then
-    frame.wayfarerMask = frame:CreateMaskTexture()
-    frame.wayfarerMask:SetTexture("Interface\\CharacterFrame\\TempPortraitAlphaMask", "CLAMPTOBLACKADDITIVE", "CLAMPTOBLACKADDITIVE")
-    frame.wayfarerMask:SetAllPoints(frame.Icon)
-    frame.Icon:AddMaskTexture(frame.wayfarerMask)
+  if not frame.hearthtaleMask and frame.CreateMaskTexture then
+    frame.hearthtaleMask = frame:CreateMaskTexture()
+    frame.hearthtaleMask:SetTexture("Interface\\CharacterFrame\\TempPortraitAlphaMask", "CLAMPTOBLACKADDITIVE", "CLAMPTOBLACKADDITIVE")
+    frame.hearthtaleMask:SetAllPoints(frame.Icon)
+    frame.Icon:AddMaskTexture(frame.hearthtaleMask)
   end
   if SetPortraitTexture then SetPortraitTexture(frame.Icon, "player") end
   frame.Title:SetText("The book is closed")

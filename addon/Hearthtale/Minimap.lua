@@ -1,6 +1,6 @@
 -- The journal's button on the minimap: click to open the journal, right-click
 -- for the settings, drag to move it around the minimap. Its place (and whether
--- it shows) is kept for the whole account in WayfarersJournalSettings. Built
+-- it shows) is kept for the whole account in HearthtaleSettings. Built
 -- with the textures of the game's own minimap buttons (the tracking button's
 -- border, the zoom highlight), as its siblings'.
 local _, ns = ...
@@ -8,8 +8,8 @@ local _, ns = ...
 local button
 
 local function settings()
-  if type(WayfarersJournalSettings) ~= "table" then WayfarersJournalSettings = {} end
-  local s = WayfarersJournalSettings
+  if type(HearthtaleSettings) ~= "table" then HearthtaleSettings = {} end
+  local s = HearthtaleSettings
   if s.minimapAngle == nil then s.minimapAngle = 200 end -- left, clear of the game's buttons and the siblings'
   return s
 end
@@ -40,7 +40,7 @@ end
 
 function ns.createMinimapButton()
   if button then return end
-  button = CreateFrame("Button", "WayfarersJournalMinimapButton", Minimap)
+  button = CreateFrame("Button", "HearthtaleMinimapButton", Minimap)
   button:SetSize(31, 31)
   button:SetFrameStrata("MEDIUM")
   button:SetFrameLevel(8)
@@ -66,7 +66,7 @@ function ns.createMinimapButton()
   button:SetScript("OnDragStop", function(self) self:SetScript("OnUpdate", nil) end)
   button:SetScript("OnEnter", function(self)
     GameTooltip:SetOwner(self, "ANCHOR_LEFT")
-    GameTooltip:AddLine("Wayfarer's Journal")
+    GameTooltip:AddLine("Hearthtale")
     local chapters, fallen = summary()
     GameTooltip:AddLine(chapters == 1 and "1 chapter" or ("%d chapters"):format(chapters), 1, 1, 1)
     if fallen > 0 then

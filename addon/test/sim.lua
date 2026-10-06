@@ -10,19 +10,19 @@ local function check(cond, msg) assert(cond, msg); io.write("✓ " .. msg .. "\n
 -- ── a life ───────────────────────────────────────────────────────────────────
 check(D.client == (FOREVER and "forever" or "classic") and D.writing.opening, "each game's data file is its own, with the writing")
 check(ns.forever == FOREVER, FOREVER and "Forever is recognised" or "Classic is recognised")
-WayfarersJournalChar = { guid = "Player-6113-0DEAD000", chapters = {} }
+HearthtaleChar = { guid = "Player-6113-0DEAD000", chapters = {} }
 login()
-local J = WayfarersJournalChar
+local J = HearthtaleChar
 local function ch(i) return J.chapters[i or #J.chapters] end
 local function moments(k, i)
   local out = {}
   for _, m in ipairs(ch(i).log) do if m.k == k then table.insert(out, m) end end
   return out
 end
-check(panel.registered and panel.name == "Wayfarer's Journal" and panel.settings.WAYFARERSJOURNAL_CHAT
-  and panel.settings.WAYFARERSJOURNAL_TOAST and panel.settings.WAYFARERSJOURNAL_MINIMAPHIDDEN.get() == true,
+check(panel.registered and panel.name == "Hearthtale" and panel.settings.HEARTHTALE_CHAT
+  and panel.settings.HEARTHTALE_TOAST and panel.settings.HEARTHTALE_MINIMAPHIDDEN.get() == true,
   "the settings page: chat lines, the alert, the minimap button (shown)")
-local hcSetting = panel.settings.WAYFARERSJOURNAL_HARDCORE
+local hcSetting = panel.settings.HEARTHTALE_HARDCORE
 if FOREVER then
   check(hcSetting and not J.hardcore, "Forever: the game can't tell Hardcore; the settings ask")
   hcSetting.set(true)
@@ -31,14 +31,14 @@ if FOREVER then
 else
   check(not hcSetting, "Classic: the game tells Hardcore; no setting for it")
 end
-local mm = WayfarersJournalMinimapButton
+local mm = HearthtaleMinimapButton
 check(mm and mm:IsShown(), "the minimap button")
-SlashCmdList.WAYFARERSJOURNAL("minimap")
-check(not mm:IsShown() and panel.settings.WAYFARERSJOURNAL_MINIMAPHIDDEN.get() == false, "/wj minimap hides it")
-SlashCmdList.WAYFARERSJOURNAL("minimap")
+SlashCmdList.HEARTHTALE("minimap")
+check(not mm:IsShown() and panel.settings.HEARTHTALE_MINIMAPHIDDEN.get() == false, "/ht minimap hides it")
+SlashCmdList.HEARTHTALE("minimap")
 check(mm:IsShown(), "and shows it again")
-SlashCmdList.WAYFARERSJOURNAL("settings")
-check(panel.opened == 42, "/wj settings opens the page")
+SlashCmdList.HEARTHTALE("settings")
+check(panel.opened == 42, "/ht settings opens the page")
 check(J.guid == state.guid and J.began.level == 1 and not J.prologue, "a new character named like a deleted one starts a fresh journal, from level 1: no prologue")
 check(J.hardcore and J.race == "Dwarf" and J.class == "PALADIN" and J.name == "Sealinedion", "it knows who it is: a Hardcore dwarf paladin")
 check(#J.chapters == 1 and ch().start.zone == "Dun Morogh" and ch().start.sub == "Coldridge Valley" and ch().start.level == 1 and not ch().start.night,
@@ -235,10 +235,10 @@ check(grown:sub(1, #textBefore - 1) == textBefore:sub(1, #textBefore - 1) and #g
 io.write("    " .. grown:gsub("\n\n", "\n    ") .. "\n")
 
 -- The book, open.
-SlashCmdList.WAYFARERSJOURNAL("")
-local B, page, rows = WayfarersJournalFrame, WayfarersJournalPage, ns.bookRows
+SlashCmdList.HEARTHTALE("")
+local B, page, rows = HearthtaleFrame, HearthtalePage, ns.bookRows
 check(B:IsShown() and G.portrait() == "player" and B.who:GetText():find("Sealinedion, level 2", 1, true) and B.who:GetText():find("Hardcore", 1, true),
-  "/wj opens the book: my portrait, who I am, Hardcore")
+  "/ht opens the book: my portrait, who I am, Hardcore")
 check(rows[1]:IsShown() and rows[1].title:GetText() == "Chapter 1" and rows[1].place:GetText() == "still being written"
   and page.title:GetText() == "Chapter 1" and page.sub:GetText():find("levels 1 to 2", 1, true) and page.sub:GetText():find("still being written", 1, true),
   "a row per chapter: Chapter 1, still being written, levels 1 to 2")
@@ -246,8 +246,8 @@ check(rows[1].marks[1]:IsShown() and rows[1].marks[2]:IsShown(), "marks: a skull
 state.sub = "Brewnall Village"
 fire("ZONE_CHANGED")
 check(page.body:GetText():find("Brewnall Village", 1, true), "a new moment while the book is open: added at once")
-SlashCmdList.WAYFARERSJOURNAL("")
-check(not B:IsShown(), "/wj again closes it")
+SlashCmdList.HEARTHTALE("")
+check(not B:IsShown(), "/ht again closes it")
 
 -- A night in the wild: the chapter goes on; a /reload is no night.
 G.played(1800)
@@ -267,7 +267,7 @@ login()
 local first = ch(1)
 check(#J.chapters == 2 and first.ended and first.ended.how == "rest" and first.ended.place == "Thunderbrew Distillery" and first.ended.level == 2
   and first.played >= 1800 and not ch(2).ended and ch(2).start.level == 2, "a logout at an inn closes the chapter; the next begins")
-check(printed[#printed]:find("chapter 1 is written", 1, true) and printed[#printed]:find("|Hwayfarer:chapter:1|h", 1, true),
+check(printed[#printed]:find("chapter 1 is written", 1, true) and printed[#printed]:find("|Hhearthtale:chapter:1|h", 1, true),
   "a line in chat, with a link to it")
 local closed = ns.writeBook(J).chapters[1]
 check(not closed.open and closed.place == "Thunderbrew Distillery" and closed.text:find("Thunderbrew Distillery", 1, true), "its last line: the rest, where")
@@ -297,15 +297,15 @@ logout()
 login()
 check(#J.chapters == 4 and ch(3).ended.how == "long" and moments("night", 3)[1].last, "past four hours, a night outdoors closes it")
 
-linkHandlers.wayfarer("wayfarer:chapter:1")
+linkHandlers.hearthtale("hearthtale:chapter:1")
 check(B:IsShown() and page.title:GetText() == "Chapter 1", "the chapter's link opens the book at it")
 check(rows[1].place:GetText() == "Thunderbrew Distillery, levels 1 to 2", "… listed with where it closed and its levels")
-SlashCmdList.WAYFARERSJOURNAL("")
-panel.settings.WAYFARERSJOURNAL_CHAT.set(false)
+SlashCmdList.HEARTHTALE("")
+panel.settings.HEARTHTALE_CHAT.set(false)
 local lines = #printed
 ns.onChapter(1)
 check(#printed == lines, "chat lines can be turned off")
-panel.settings.WAYFARERSJOURNAL_CHAT.set(true)
+panel.settings.HEARTHTALE_CHAT.set(true)
 
 -- Death.
 state.sub = "Kharanos"
@@ -321,10 +321,10 @@ state.health = 100
 
 -- A Hardcore death closes the book: nothing more is recorded; it joins the Hall
 -- of the Fallen (a copy of its records), with a chat line and the game's toast.
-local fallen = WayfarersJournalHall and WayfarersJournalHall.lives[state.guid]
+local fallen = HearthtaleHall and HearthtaleHall.lives[state.guid]
 check(J.closed and fallen and fallen.name == "Sealinedion" and fallen.raceName == "Dwarf" and fallen.realm == "Nightslayer"
   and #fallen.chapters == 4 and fallen ~= J, "a Hardcore death closes the book; a copy joins the Hall of the Fallen")
-check(printed[#printed]:find("closed", 1, true) and printed[#printed]:find("|Hwayfarer:hall:" .. state.guid, 1, true),
+check(printed[#printed]:find("closed", 1, true) and printed[#printed]:find("|Hhearthtale:hall:" .. state.guid, 1, true),
   "a chat line says so, with a link to the Hall")
 check(#toasted == 1 and toasted[1].Title:GetText() == "The book is closed" and toasted[1].Name:GetText() == "Sealinedion",
   "the game's toast: the book is closed")
@@ -339,7 +339,7 @@ check(closedBook.epitaph and closedBook.epitaph:find("Sealinedion", 1, true) and
 io.write("    " .. closedBook.epitaph .. "\n")
 
 -- The link opens the Hall at that life: its epitaph, then its chapters.
-linkHandlers.wayfarer("wayfarer:hall:" .. state.guid)
+linkHandlers.hearthtale("hearthtale:hall:" .. state.guid)
 check(B:IsShown() and B.selectedTab == 2 and rows[1].title:GetText() == "Sealinedion" and rows[2].title:GetText() == "Epitaph"
   and rows[3].title:GetText() == "Chapter 1" and page.title:GetText() == "Sealinedion" and page.body:GetText():find(closedBook.epitaph, 1, true)
   and page.sub:GetText():find("Level 2 Dwarf Paladin", 1, true), "the link opens the Hall: the life, its epitaph, its chapters")
@@ -349,34 +349,34 @@ check(page.title:GetText() == "Chapter 4" and page.sub:GetText():find("the end",
 ns.showTab(1)
 check(B.who:GetText():find("Fallen", 1, true) and page.title:GetText() == "Chapter 4" and page.body:GetText():find(closedBook.epitaph, 1, true),
   "the Journal tab: my own closed book, the same end")
-SlashCmdList.WAYFARERSJOURNAL("")
+SlashCmdList.HEARTHTALE("")
 
 -- A character met mid-life: a prologue from what the game knows.
-WayfarersJournalChar = nil
+HearthtaleChar = nil
 state.guid, state.level, state.questsDone, state.hardcore = "Player-6113-0FFFFFF0", 23, { [1] = true, [2] = true, [3] = true }, false
 login()
-local P = WayfarersJournalChar.prologue
+local P = HearthtaleChar.prologue
 fire("TIME_PLAYED_MSG", 86400, 3600)
 fire("TIME_PLAYED_MSG", 90000, 7200)
-check(P and P.level == 23 and P.quests == 3 and P.inn == "Thunderbrew Distillery" and P.played == 86400 and WayfarersJournalChar.chapters[1],
+check(P and P.level == 23 and P.quests == 3 and P.inn == "Thunderbrew Distillery" and P.played == 86400 and HearthtaleChar.chapters[1],
   "a character met mid-life gets a prologue: its level, quests done, inn, time played when first heard")
-local later = ns.writeBook(WayfarersJournalChar)
+local later = ns.writeBook(HearthtaleChar)
 check(later.prologue and later.prologue:find("^%u") and later.chapters[1].from == 23 and not (later.chapters[1].text or ""):find("begin", 1, true),
   "its book opens with the prologue; its first chapter is no beginning")
 io.write("    " .. later.prologue .. "\n")
-SlashCmdList.WAYFARERSJOURNAL("")
+SlashCmdList.HEARTHTALE("")
 check(rows[1].title:GetText() == "Prologue" and rows[2].title:GetText() == "Chapter 1" and not (rows[3] and rows[3]:IsShown())
   and page.title:GetText() == "Chapter 1", "its book lists the prologue, then chapter 1")
 rows[1].scripts.OnClick(rows[1])
 check(page.title:GetText() == "Prologue" and page.sub:GetText():find("level 23", 1, true) and page.body:GetText() == later.prologue,
   "the prologue reads")
-SlashCmdList.WAYFARERSJOURNAL("")
+SlashCmdList.HEARTHTALE("")
 
 -- A death on a normal realm: told in its chapter; the book goes on.
 state.health, state.target = 0, nil
 fire("PLAYER_DEAD")
 state.health = 100
-local K = WayfarersJournalChar
+local K = HearthtaleChar
 state.sub = "Gol'Bolar Quarry"
 fire("ZONE_CHANGED")
 ns.writerUsed = {}
@@ -386,12 +386,7 @@ for key in pairs(ns.writerUsed) do if key:find("^died#") then told = true end en
 ns.writerUsed = nil
 local died, last = 0, K.chapters[#K.chapters].log
 for _, m in ipairs(last) do if m.k == "died" then died = died + 1 end end
-check(not K.closed and died == 1 and last[#last].sub == "Gol'Bolar Quarry" and told and not WayfarersJournalHall.lives[state.guid],
+check(not K.closed and died == 1 and last[#last].sub == "Gol'Bolar Quarry" and told and not HearthtaleHall.lives[state.guid],
   "a death on a normal realm: told in its chapter, no Hall, the book goes on")
 
--- A journal of chapters per level (the 0.1.0 test build) starts over.
-WayfarersJournalChar = { guid = state.guid, began = { level = 1 }, levels = { [1] = { start = {} } } }
-login()
-check(WayfarersJournalChar.chapters and not WayfarersJournalChar.levels and WayfarersJournalChar.began.level == 23,
-  "a journal of the 0.1.0 test build starts over, with a prologue")
 io.write(FOREVER and "all good (Forever)\n" or "all good\n")

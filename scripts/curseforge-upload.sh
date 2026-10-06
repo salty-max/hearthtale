@@ -3,7 +3,7 @@
 # once per game).
 #   CF_API_TOKEN   CurseForge API token (curseforge.com → account → API tokens)
 #   CF_PROJECT_ID  the CurseForge project id
-#   $1             WayfarersJournal-classic.zip or -forever.zip   $2  changelog (markdown)
+#   $1             Hearthtale-classic.zip or -forever.zip   $2  changelog (markdown)
 # Game versions come from the TOC's "## Interface:" list (11509 → 1.15.9,
 # 20506 → 2.5.6, 16001 → 1.60.1 for Forever). When CurseForge doesn't list that exact version yet, the
 # newest one of the same line (1.15.x, 2.5.x) is used.
@@ -13,7 +13,7 @@ CHANGELOG="$2"
 API="https://wow.curseforge.com/api"
 : "${CF_API_TOKEN:?missing}" "${CF_PROJECT_ID:?missing}"
 
-TOC=$(unzip -p "$ZIP" WayfarersJournal/WayfarersJournal.toc | tr -d '\r')
+TOC=$(unzip -p "$ZIP" Hearthtale/Hearthtale.toc | tr -d '\r')
 VERSION=$(sed -n 's/^## Version: *//p' <<<"$TOC")
 INTERFACES=$(sed -n 's/^## Interface: *//p' <<<"$TOC" | tr ',' ' ')
 
@@ -32,7 +32,7 @@ for i in $INTERFACES; do
 done
 
 METADATA=$(jq -n \
-  --arg name "Wayfarer's Journal $VERSION ($(grep -q 16001 <<<"$INTERFACES" && echo Forever || echo Classic))" \
+  --arg name "Hearthtale $VERSION ($(grep -q 16001 <<<"$INTERFACES" && echo Forever || echo Classic))" \
   --rawfile changelog "$CHANGELOG" \
   --argjson versions "$(printf '%s\n' "${IDS[@]}" | jq -s 'map(tonumber)')" \
   '{displayName: $name, changelog: $changelog, changelogType: "markdown", gameVersions: $versions, releaseType: "release"}')
@@ -44,4 +44,4 @@ curl -sS --fail-with-body -H "X-Api-Token: $CF_API_TOKEN" \
   -F "file=@$ZIP" \
   "$API/projects/$CF_PROJECT_ID/upload-file"
 echo
-echo "Uploaded Wayfarer's Journal $VERSION (game versions ${IDS[*]})"
+echo "Uploaded Hearthtale $VERSION (game versions ${IDS[*]})"

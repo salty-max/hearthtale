@@ -1,5 +1,5 @@
--- Wayfarer's Journal: the character's own journal, written as it plays. This
--- file holds the character's record (per character, WayfarersJournalChar):
+-- Hearthtale: the character's own journal, written as it plays. This
+-- file holds the character's record (per character, HearthtaleChar):
 --   guid                     the character it belongs to (a deleted
 --                            character's journal is never inherited by a new
 --                            one of the same name)
@@ -9,7 +9,7 @@
 --   closed = true            a Hardcore death closed the book: nothing more
 --                            is recorded (only the login, to find it)
 local _, ns = ...
-local PREFIX = "|cffc9a227Wayfarer's Journal:|r "
+local PREFIX = "|cffc9a227Hearthtale:|r "
 ns.PREFIX = PREFIX
 
 -- Forever: a modern client (interface 16xxx), with secret values.
@@ -26,13 +26,12 @@ local handlers, listeners = {}, {}
 
 function handlers.PLAYER_LOGIN()
   local guid = UnitGUID("player")
-  local saved = WayfarersJournalChar
-  -- A journal of chapters per level (0.1.0, a test build) starts over too.
-  if type(saved) == "table" and saved.guid == guid and not (saved.levels and not saved.chapters) then
+  local saved = HearthtaleChar
+  if type(saved) == "table" and saved.guid == guid then
     char = saved
   else
     char = { guid = guid, began = { at = time(), level = UnitLevel("player") }, chapters = {} }
-    WayfarersJournalChar = char
+    HearthtaleChar = char
   end
   if ns.onLogin then ns.onLogin(char) end
   if ns.createMinimapButton then ns.createMinimapButton() end
@@ -57,9 +56,9 @@ function ns.on(event, fn)
   table.insert(listeners[event], fn)
 end
 
-SLASH_WAYFARERSJOURNAL1 = "/wayfarer"
-SLASH_WAYFARERSJOURNAL2 = "/wj"
-SlashCmdList.WAYFARERSJOURNAL = function(msg)
+SLASH_HEARTHTALE1 = "/hearthtale"
+SLASH_HEARTHTALE2 = "/ht"
+SlashCmdList.HEARTHTALE = function(msg)
   msg = strtrim((msg or ""):lower())
   if msg == "minimap" then
     ns.setOption("minimapHidden", not ns.option("minimapHidden"))
@@ -71,7 +70,7 @@ SlashCmdList.WAYFARERSJOURNAL = function(msg)
   end
   if msg == "hall" then return ns.openHall() end
   if msg ~= "" then
-    print(PREFIX .. "/wj opens the journal; /wj hall the Hall of the Fallen; /wj settings; /wj minimap shows or hides the button.")
+    print(PREFIX .. "/ht opens the journal; /ht hall the Hall of the Fallen; /ht settings; /ht minimap shows or hides the button.")
     return
   end
   ns.toggle()

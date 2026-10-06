@@ -1,4 +1,4 @@
-# Wayfarer's Journal
+# Hearthtale
 
 A World of Warcraft addon: your character keeps a journal as you play, in the
 first person, as it happens, in scenes: where you went, what you did there,
@@ -11,10 +11,10 @@ Warcraft: Forever. A sibling of Lorekeeper's Codex and Explorer's Field Journal.
 
 ## Use
 
-- `/wayfarer` or `/wj` (or the book by the minimap) opens the journal: the
+- `/hearthtale` or `/ht` (or the book by the minimap) opens the journal: the
   chapters on the left, the chapter on the right; a second tab for the Hall of
   the Fallen.
-- `/wj hall`, `/wj settings` (or right-click the minimap button), `/wj minimap`.
+- `/ht hall`, `/ht settings` (or right-click the minimap button), `/ht minimap`.
 - Settings: a line in chat for each chapter, the alert when a book closes, the
   minimap button; where the game can't tell, whether this character is Hardcore.
 

@@ -27,7 +27,7 @@ git fetch -q origin --tags
 [ -z "$(git status --porcelain)" ] || die "the working tree isn't clean"
 [ "$(git rev-parse HEAD)" = "$(git rev-parse origin/main)" ] || die "main isn't in sync with origin/main"
 
-TOC=addon/WayfarersJournal/WayfarersJournal.toc
+TOC=addon/Hearthtale/Hearthtale.toc
 current=$(sed -n 's/^## Version: *//p' "$TOC" | tr -d '\r')
 if [ -z "$VERSION" ]; then
   IFS=. read -r ma mi pa <<<"$current"

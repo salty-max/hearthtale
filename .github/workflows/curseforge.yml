@@ -1,5 +1,5 @@
-# Uploads a release's two packages to CurseForge: WayfarersJournal-classic.zip
-# (Classic Era, TBC Anniversary) and WayfarersJournal-forever.zip (Forever),
+# Uploads a release's two packages to CurseForge: Hearthtale-classic.zip
+# (Classic Era, TBC Anniversary) and Hearthtale-forever.zip (Forever),
 # each filed under its game versions (from its TOC). Called by release.yml;
 # run it by hand to upload an existing release (Actions → CurseForge → Run
 # workflow, with its tag).
@@ -34,7 +34,7 @@ jobs:
       - uses: actions/checkout@v7
       - name: Fetch the release's packages and notes
         run: |
-          gh release download "$TAG" --pattern 'WayfarersJournal-*.zip' --dir out
+          gh release download "$TAG" --pattern 'Hearthtale-*.zip' --dir out
           gh release view "$TAG" --json body --jq .body > out/changelog.md
           ls out
       - name: Upload to CurseForge
@@ -42,5 +42,5 @@ jobs:
           CF_API_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
           CF_PROJECT_ID: ${{ vars.CURSEFORGE_PROJECT_ID }}
         run: |
-          scripts/curseforge-upload.sh out/WayfarersJournal-classic.zip out/changelog.md
-          scripts/curseforge-upload.sh out/WayfarersJournal-forever.zip out/changelog.md
+          scripts/curseforge-upload.sh out/Hearthtale-classic.zip out/changelog.md
+          scripts/curseforge-upload.sh out/Hearthtale-forever.zip out/changelog.md
