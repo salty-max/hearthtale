@@ -191,8 +191,8 @@ end
 
 -- The game's toasts, links and realm: keep what the addon hands them.
 local toasted = {}
-function GetRealmName() return "Nightslayer" end
-function GetCurrentRegion() return 3 end
+function GetRealmName() return state.realm or "Nightslayer" end
+function GetCurrentRegion() return state.region or 3 end
 C_AddOns = { GetAddOnMetadata = function(name, key) return name == "Hearthtale" and key == "Version" and "0.2.0" or nil end }
 C_XMLUtil = { GetTemplateInfo = function(name) return name ~= "PanelTabButtonTemplate" or nil end }
 AlertFrame = { AddQueuedAlertFrameSubSystem = function(_, _, setUp)

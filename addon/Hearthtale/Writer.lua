@@ -121,9 +121,14 @@ local function deathTags(d)
   if d.inside then t.inside = true end
   return t
 end
+-- A named elite goes without an article: the game can't tell one from a common
+-- elite, but a one-word name is a name (Stitches, Hogger), where "a Defias
+-- Overseer" keeps its article.
+local function namedElite(name) return name and not name:find(" ") and name:match("^%u") ~= nil end
 local function deathFoe(d, article)
   if not d.foe then return nil end
   if d.player or d.inside or d.rank == "rare" or d.rank == "rareelite" or d.rank == "worldboss" then return d.foe end
+  if d.rank == "elite" and namedElite(d.foe) then return d.foe end
   return article(d.foe)
 end
 
@@ -583,7 +588,7 @@ function Book:chapter(n, ch)
       elseif m.first and KINDS[m.kind] then
         inScene(c_("c-first", { kind = KINDS[m.kind] }))
       elseif m.elite then
-        inScene(c_("c-elite", { foe = article(m.name) }))
+        inScene(c_("c-elite", { foe = namedElite(m.name) and m.name or article(m.name) }))
       elseif not (killed and place == scene) then
         inScene(c_("c-kill", { foe = article(m.name) }))
         killed = true
