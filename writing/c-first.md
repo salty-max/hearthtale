@@ -1,11 +1,14 @@
 ---
 kind: c-first
 ---
-- met my first {kind}
 - fought {kind} for the first time
-- learned what {kind} are like
+- met my first {kind}
 - came through my first fight with {kind}
+- encountered {kind} at close quarters
+- had my first encounter with {kind}
+- faced {kind} for the first time
 - had my first taste of fighting {kind}
-- came face to face with {kind}
-- found out what {kind} can do
-- [class:HUNTER] tracked {kind} for the first time
+- [remark] fought {kind} for the first time, with rather less curiosity by the end
+- [remark] met my first {kind}, glad the introduction was over
+- [remark] came through my first fight with {kind}, with a new respect for that kind of trouble
+- [teeth remark] met my first {kind}, with new respect for those teeth

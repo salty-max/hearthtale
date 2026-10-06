@@ -14,7 +14,7 @@ kind: kills
 - [lots] I had fought {n} {foes}, enough that stopping felt like part of the work rather than a departure from it.
 - [lots] I had dealt with {n} {foes} {at}, and felt the length of that work when I finally stopped.
 - [lots] I had brought down {n} {foes}, with little room between one fight and its place in my memory.
-- [hc] I had survived fights with {n} {foes}, grateful for more than the chance to add them to my account.
+- [hc] I counted {n} {foes}, grateful to be the one counting.
 - [class:HUNTER !low] I had hunted {n} {foes} {at}, learning something of the country through what lived in it.
 - [class:WARLOCK] I had killed {n} {foes}, enough to make me consider the uses of the power I was learning.
 - [class:MAGE] I had brought down {n} {foes}, putting lessons to a test quite different from remembering them.

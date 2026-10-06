@@ -2,10 +2,15 @@
 kind: c-kill
 ---
 - dealt with {foe}
+- put down {foe}
 - brought down {foe}
-- came through a fight with {foe}
-- put an end to {foe}
-- fought {foe} and was glad to come through it
-- got the better of {foe}
+- killed {foe}
+- overcame {foe}
+- hunted down {foe}
 - finished off {foe}
-- overcame {foe}, without wishing to make a grand thing of it
+- cut down {foe}
+- [remark] dealt with {foe}, glad not to meet that foe on the way home
+- [remark] put down {foe}, not the sort of acquaintance I had hoped to make
+- [remark] brought down {foe}, glad the fight had ended in my favour
+- [teeth remark] brought down {foe}, glad those teeth would not find someone else on this road
+- [mechanical remark] overcame {foe}, glad that contraption had stopped moving

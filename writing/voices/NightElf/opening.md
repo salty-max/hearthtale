@@ -7,6 +7,6 @@ kind: opening
 - I opened a fresh page {at}. Even a brief passage through a place could leave something that endured.
 - I went on {at}, conscious that haste had made older mistakes than mine.
 - I began this stretch {at}, with no intention of letting reserve be mistaken for uncertainty.
-- I made ready {at}, keeping the last part of the road in mind without allowing it to hide the next.
+- I made ready {at}, with time to look about before choosing my path.
 - I returned to my account {at}, with the quiet between deeds still part of what I wished to remember.
 - I set out {at}, wary of how quickly strangers could make certainty out of so little.

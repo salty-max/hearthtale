@@ -3,15 +3,21 @@ kind: c-prof
 ---
 - [new] took up {prof}
 - [new] began to learn {prof}
-- [new] found a trainer and started on {prof}
-- [new] learned the first of {prof}
-- [new] decided to learn {prof}
-- [!new] trained as {rank} in {prof}
-- [!new] earned my place as {rank} in {prof}
-- [!new] went to my trainer and became {rank} in {prof}
-- [!new] was taught enough {prof} to call myself {rank}
-- [!new] was made {rank} in {prof}
+- [new] started learning {prof}
 - [new] made a start at {prof}
-- [!new] earned the title of {rank} in {prof}
+- [new] learned the first of {prof}
 - [new] set my hand to {prof}
+- [new] began my training in {prof}
+- [!new] trained as {rank} in {prof}
+- [!new] became {rank} in {prof}
+- [!new] qualified as {rank} in {prof}
 - [!new] went on to become {rank} in {prof}
+- [!new] reached the standing of {rank} in {prof}
+- [!new] was trained to {rank} level in {prof}
+- [!new] was taught {prof} at {rank} level
+- [new remark] took up {prof}, curious what the trade would involve
+- [new remark] began to learn {prof}, with plenty about the trade still unfamiliar
+- [new remark] started learning {prof}, eager to get beyond the first lesson
+- [!new remark] trained as {rank} in {prof}, curious what the trade would involve
+- [!new remark] became {rank} in {prof}, with plenty about the trade still unfamiliar
+- [!new remark] qualified as {rank} in {prof}, eager to get beyond the first lesson

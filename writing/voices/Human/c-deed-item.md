@@ -2,18 +2,26 @@
 kind: c-deed-item
 ---
 - [!one] gathered {n} {thing}
-- [one] gathered {thing}
-- [!one] collected {n} {thing}, as {giver} asked
-- [one] collected {thing}, as {giver} asked
+- [!one] collected {n} {thing}
+- [!one] found {n} {thing}
 - [!one] brought back {n} {thing}
-- [one] brought back {thing}
-- [!one] found {n} {thing}, glad to finish something someone was waiting on
-- [one] found {thing}, glad to finish something someone was waiting on
+- [!one] recovered {n} {thing}
 - [!one] came back with {n} {thing}
+- [!one] tracked down {n} {thing}
+- [!one] fetched {n} {thing}
+- [!one remark] gathered {n} {thing}, glad to hand the collection over
+- [!one remark] collected {n} {thing}, enough to put me off collecting for a while
+- [!one remark] found {n} {thing}, pleased to have the last of that lot
+- [one] gathered {thing}
+- [one] collected {thing}
+- [one] found {thing}
+- [one] brought back {thing}
+- [one] recovered {thing}
 - [one] came back with {thing}
-- [!one] picked up {n} {thing}
-- [one] picked up {thing}
-- [!one] searched until I had {n} {thing}
-- [one] searched until I had {thing}
-- [!one] brought {giver} {n} {thing}
-- [one] brought {thing} to {ender}
+- [one] tracked down {thing}
+- [one] fetched {thing}
+- [one remark] gathered {thing}, glad to hand the collection over
+- [one remark] collected {thing}, enough to put me off collecting for a while
+- [one remark] found {thing}, pleased to have the last of that lot
+- [!one cloth remark] collected {n} {thing}, glad I was not the one asked to sew all that cloth
+- [!one meat remark] gathered {n} {thing}, with more appetite for supper than gathering meat

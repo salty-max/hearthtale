@@ -4,15 +4,20 @@ kind: c-gear
 - [client:forever !made] equipped {item}
 - [client:forever !made] added {item} to my equipment
 - [client:forever !made] made {item} part of my kit
-- [client:forever !made] began using {item}, another point of reliance in the road ahead
+- [client:forever !made] began using {item}
 - [client:forever !made] fitted myself with {item}
-- [client:forever !made] took {item} into use
 - [client:forever !made] went on equipped with {item}
-- [client:forever !made] put {item} among the equipment I relied on
+- [client:forever !made] took {item} into use
 - [client:forever made] equipped {item}, which I had made myself
-- [client:forever made] equipped {item}, finding use for what my own hands had learned
-- [client:forever made] made {item} part of my kit, with one more thing to rely on that I could make for myself
-- [client:forever made] fitted myself with {item}, made with my own hands
-- [client:forever made] began using {item}, which I had crafted
-- [client:forever made] went on equipped with {item}, the result of my own work
-- [client:forever made] put {item} among my equipment, pleased to have made it myself
+- [client:forever made] added {item} to my equipment, which I had made myself
+- [client:forever made] made {item} part of my kit, which I had made myself
+- [client:forever made] began using {item}, which I had made myself
+- [client:forever made] fitted myself with {item}, which I had made myself
+- [client:forever made] went on equipped with {item}, which I had made myself
+- [client:forever made] took {item} into use, which I had made myself
+- [client:forever !made remark] equipped {item}, curious how it would serve on this ground
+- [client:forever !made remark] added {item} to my equipment, a piece I was glad to have with me
+- [client:forever !made remark] made {item} part of my kit, with some interest in its making
+- [client:forever made remark] equipped {item}, pleased to put my own handiwork to use
+- [client:forever made remark] added {item} to my equipment, glad to recognise my own work in my equipment
+- [client:forever made remark] made {item} part of my kit, rather pleased with the piece I had made

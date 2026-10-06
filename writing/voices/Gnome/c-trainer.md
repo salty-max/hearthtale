@@ -1,11 +1,14 @@
 ---
 kind: c-trainer
 ---
-- learned {spells}, which opened several interesting possibilities
-- was taught {spells}, with practice needed to separate theory from habit
-- added {spells} to my repertoire
-- made time to learn {spells}
-- took instruction in {spells}, a useful enlargement of what I could try
+- learned {spells}
+- was taught {spells}
+- studied {spells}
 - came away knowing {spells}
-- learned {spells}, with questions enough to keep the lesson alive
-- was shown {spells}, another method to understand properly
+- took lessons in {spells}
+- trained in {spells}
+- added {spells} to what I knew
+- came away from training with {spells}
+- [remark] learned {spells}, with a few questions still attached to the lesson
+- [remark] was taught {spells}, eager to try the lesson beyond instruction
+- [remark] studied {spells}, with more from the lesson to remember than expected

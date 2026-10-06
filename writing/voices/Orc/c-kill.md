@@ -1,11 +1,16 @@
 ---
 kind: c-kill
 ---
-- stood against {foe} and prevailed
-- brought down {foe}
-- met {foe} in a fight and came through it
-- put an end to {foe}
 - overcame {foe}
-- dealt with {foe}, leaving no need to boast of it
-- fought {foe} and remained standing
-- finished the encounter with {foe}
+- killed {foe}
+- brought down {foe}
+- put an end to {foe}
+- faced and defeated {foe}
+- dealt with {foe}
+- finished off {foe}
+- cut down {foe}
+- [remark] overcame {foe}, glad to be done with that opponent
+- [remark] killed {foe}, a foe I would not underestimate twice
+- [remark] brought down {foe}, with no wish to fight that battle again
+- [teeth remark] brought down {foe}, glad to be clear of those teeth
+- [mechanical remark] overcame {foe}, glad that contraption had ceased to be an opponent

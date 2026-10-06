@@ -1,11 +1,14 @@
 ---
 kind: c-trainer
 ---
-- learned {spells}, with practice still needed before knowledge became understanding
+- learned {spells}
 - was taught {spells}
-- gave my attention to lessons in {spells}
-- added {spells} to what I knew, without calling the learning finished
-- made time to learn {spells}
-- came away from instruction knowing {spells}
-- studied {spells}, willing to be patient with what was new
-- was instructed in {spells}
+- studied {spells}
+- came away knowing {spells}
+- took lessons in {spells}
+- trained in {spells}
+- added {spells} to what I knew
+- came away from training with {spells}
+- [remark] learned {spells}, letting the teaching settle
+- [remark] was taught {spells}, with the teaching still turning in my thoughts
+- [remark] studied {spells}, curious how the lesson would feel

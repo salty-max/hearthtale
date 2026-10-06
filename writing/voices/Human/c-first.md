@@ -1,9 +1,14 @@
 ---
 kind: c-first
 ---
-- met {kind} in a fight for the first time
-- found out what {kind} were like at closer quarters
-- came through my first encounter with {kind}
-- learned something about {kind} that I had only heard of before
+- fought {kind} for the first time
+- met my first {kind}
+- came through my first fight with {kind}
+- encountered {kind} at close quarters
+- had my first encounter with {kind}
+- faced {kind} for the first time
 - had my first taste of fighting {kind}
-- encountered {kind} and found them quite real enough
+- [remark] fought {kind} for the first time, rather less keen on a second meeting
+- [remark] met my first {kind}, glad my first encounter was behind me
+- [remark] came through my first fight with {kind}, with something new to worry about on the road
+- [teeth remark] met my first {kind}, more wary of teeth at that height

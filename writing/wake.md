@@ -1,20 +1,20 @@
 ---
 kind: wake
 ---
-- [!rest] I took up the road {at} after a night in the open, glad to give my thoughts something to follow again.
-- [!rest] I rose {at}, with the night's pause behind me and the journey still before me.
-- [!rest] I went on {at}, looking about before the road could occupy all my attention again.
-- [!rest] I returned to the journey {at}, with the rough rest already becoming part of its account.
-- [!rest] I was ready to go on {at}, where this next part of the road would begin.
-- [!rest] I set out again {at}, glad that the pause had left me something more to give the journey.
-- [!rest hc] I rose {at}, grateful that I still had a road to take and a life in which to take it.
-- [rest] I went on {at} after resting, ready to meet what the pause had allowed me to put aside.
-- [rest] I took up the road again {at}, carrying the quiet of the rest with me for a little while.
-- [rest] I returned to the journey {at}, with time behind me to consider where it had led.
-- [rest] I stood up {at} and turned back to the road, ready to give the next stretch my attention.
-- [rest] I went on {at}, where my account would have to continue if I wanted it to.
-- [rest] I turned back to the road {at}, ready to let the next part of the journey occupy me.
-- [rest] I set out {at} after the pause, glad to take up the work with a little distance from what had gone before.
-- [rest] I went on {at}, where the rest had given me time to consider how far I had come.
-- [!rest] I rose {at} after the night outside, glad to leave the ground to something with fewer aching joints.
-- [!rest] I set out again {at}, with the night's quiet still in my thoughts as the road took my attention.
+- [!rest] I took up the road {at} after a night outside, glad to move again.
+- [!rest] I rose {at}, with the night behind me and the road ahead.
+- [!rest] I went on {at}, looking about before the road took my attention.
+- [!rest] I returned to the road {at}, still feeling the rough rest.
+- [!rest] I was ready to go on {at}, with another stretch ahead.
+- [!rest] I set out again {at}, grateful for what rest I had managed.
+- [!rest hc] I rose {at}, grateful to have another day on the road.
+- [rest] I went on {at} after resting, with the unfinished work ahead.
+- [rest] I took up the road {at}, carrying a little of the rest's quiet.
+- [rest] I returned to the road {at}, with time to consider where it had led.
+- [rest] I stood up {at} and faced the road again, ready to go on.
+- [rest] I went on {at}, where the unfinished account was waiting.
+- [rest] I turned back to the road {at}, with another stretch ahead.
+- [rest] I set out {at} after the pause, with a little distance from the last trouble.
+- [rest] I went on {at}, with more thought given to the way behind me.
+- [!rest] I rose {at} after the night outside, glad to leave the ground to hardier joints.
+- [!rest] I set out {at}, with the night's quiet still in my thoughts.

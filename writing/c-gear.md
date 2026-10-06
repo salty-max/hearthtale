@@ -1,17 +1,23 @@
 ---
 kind: c-gear
 ---
-- [!made] put on {item}
-- [!made] pulled on {item}
-- [!made] traded my old gear for {item}
-- [!made] strapped on {item}
-- [!made] took to wearing {item}
-- [!made] wore {item} for the first time
+- [!made] equipped {item}
+- [!made] added {item} to my equipment
+- [!made] made {item} part of my kit
+- [!made] began using {item}
 - [!made] fitted myself with {item}
-- [!made] claimed {item} for myself
-- [made] put on {item}, made with my own hands
-- [made] wore {item}, which I made myself
-- [made] finished {item} and put it on straight away
-- [made] made {item} with my own hands, and wore it
-- [made] fitted myself with {item}, my own work
-- [made] wore {item}, every stitch of it mine
+- [!made] went on equipped with {item}
+- [!made] took {item} into use
+- [made] equipped {item}, which I had made myself
+- [made] added {item} to my equipment, which I had made myself
+- [made] made {item} part of my kit, which I had made myself
+- [made] began using {item}, which I had made myself
+- [made] fitted myself with {item}, which I had made myself
+- [made] went on equipped with {item}, which I had made myself
+- [made] took {item} into use, which I had made myself
+- [!made remark] equipped {item}, curious how the new equipment would serve me
+- [!made remark] added {item} to my equipment, glad to have that piece of equipment
+- [!made remark] made {item} part of my kit, eager to find out how it would wear
+- [made remark] equipped {item}, pleased to have made it myself
+- [made remark] added {item} to my equipment, rather proud to be using my own work
+- [made remark] made {item} part of my kit, glad the making had come to something useful

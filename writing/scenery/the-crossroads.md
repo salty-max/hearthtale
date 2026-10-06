@@ -3,5 +3,5 @@ place: The Crossroads
 type: town
 faction: horde
 ---
-- [!foe] The palisade of the Crossroads appeared where the roads met in the open grassland. After so much distance, the sight of people gathered in one place was a relief, even before I knew what work they might have for me.
-- [foe] I came upon the Crossroads where the roads of the Barrens met. The Horde's palisade promised shelter to its own travellers; to me it was another reason to look carefully before moving on.
+- [!foe] The Crossroads' palisade stood where the roads met the grassland. After so much distance, people gathered in one place were a relief.
+- [foe] At the Crossroads, the Horde's palisade offered shelter to its own. To me it was a reason to look carefully before moving on.

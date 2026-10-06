@@ -1,9 +1,13 @@
 ---
 kind: c-group
 ---
-- went on with {mates} for company
-- shared the road with {mates}
-- travelled beside {mates}, glad to have someone else looking out
+- joined {mates}
+- travelled with {mates}
 - fell in with {mates}
-- found company in {mates}, which made the road less lonely
-- had {mates} beside me, and was glad of it
+- went on beside {mates}
+- shared the road with {mates}
+- had {mates} for company
+- teamed up with {mates}
+- [remark] joined {mates}, glad to have someone else looking out
+- [remark] travelled with {mates}, pleased not to spend the road talking to myself
+- [remark] fell in with {mates}, glad to have company on this stretch

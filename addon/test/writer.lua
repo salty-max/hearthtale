@@ -257,9 +257,17 @@ end
 -- ── the checks ───────────────────────────────────────────────────────────────
 ns.writerUsed = {}
 local problems, books, chapters, repeats, longest = {}, 0, 0, 0, 0
+local longestText
 local gaps = {} -- kind = the fewest uses of the kind between two uses of one of its sentences
 local function problem(where, msg, text)
   if #problems < 20 then table.insert(problems, ("%s: %s\n    %s"):format(where, msg, text)) end
+end
+local routineTotal, remarkTotal, previousRemark = 0, 0, false
+ns.writerSentence = function(text, routine, remarks)
+  routineTotal, remarkTotal = routineTotal + routine, remarkTotal + remarks
+  if remarks > 1 then problem("remark budget", "two remarks shared a sentence", text) end
+  if previousRemark and remarks > 0 then problem("remark budget", "successive sentences carried routine remarks", text) end
+  previousRemark = remarks > 0
 end
 local function inspect(where, text)
   if not text then return end
@@ -357,6 +365,104 @@ if not ordinaryCompound:find("prevailed; I dealt with", 1, true) then
   problem("scene joins", "ordinary compound actions lost their grammatical join", ordinaryCompound)
 end
 ns.data, ns.writerUsed = originalData, originalUsed
+
+-- Exercise the reported joins independently of the prose lottery. The
+-- third clause has an internal comma, but the preceding pair still needs
+-- its own conjunction before the semicolon.
+ns.data, ns.writerUsed = { writing = fixtureWriting }, nil
+fixtureWriting["c-first"] = { { "had my first taste of fighting {kind}" } }
+fixtureWriting["c-deed-item"] = { { "brought {giver} {n} {thing}" } }
+fixtureWriting["c-gear"] = { { "began using {item}, which I had made myself" } }
+fixtureWriting["c-inn"] = { { "bound my hearthstone {inn}" } }
+local tripleSeen, orcTripleSeen = false, false
+for seed = 1, 40 do
+  local c = { guid = "joins-" .. seed, race = "Human", class = "HUNTER",
+    chapters = { { start = { level = 20, zone = "Country", sub = "Home" }, log = {
+      { k = "kill", first = true, kind = "Boar", name = "Boar", sub = "Home", zone = "Country" },
+      { k = "quest", giver = "Ragnar", sub = "Home", zone = "Country", objectives = { { type = "item", name = "Crag Boar Rib", n = 6 } } },
+      { k = "gear", made = true, link = "item:1:[Leather Vest]", sub = "Home", zone = "Country" },
+    } } } }
+  local text = ns.writeBook(c).chapters[1].text
+  if text:find("boars, brought Ragnar", 1, true) then problem("three clauses", "a final conjunction was lost before a semicolon", text) end
+  if text:find("boars and brought Ragnar six Crag Boar Ribs; I began using", 1, true) then tripleSeen = true end
+  c.race = "Orc"
+  text = ns.writeBook(c).chapters[1].text
+  if text:find("boars and brought Ragnar six Crag Boar Ribs; I began using", 1, true) then orcTripleSeen = true end
+  c.chapters[1].log = {
+    { k = "place", sub = "Ratchet", zone = "Country" },
+    { k = "inn", place = "Ratchet", sub = "Ratchet", zone = "Country" },
+  }
+  text = ns.writeBook(c).chapters[1].text
+  local _, townNames = text:gsub("Ratchet", "")
+  if townNames ~= 1 or text:find("where I bound my hearthstone there", 1, true) then
+    problem("hearthstone join", "the town was named twice or both where and there were used", text)
+  end
+  c.chapters[1].log[2].place = "Broken Keel Tavern"
+  text = ns.writeBook(c).chapters[1].text
+  if not text:find("Broken Keel Tavern", 1, true) then problem("hearthstone join", "a distinct inn name disappeared", text) end
+end
+if not tripleSeen then problem("three clauses", "the three-part join was not exercised", "") end
+if not orcTripleSeen then problem("orc flow", "the orc lost the ability to carry three related clauses", "") end
+local tame = { guid = "tame-once", race = "Human", class = "HUNTER",
+  chapters = { { start = { level = 10, zone = "Country", sub = "Farm" }, log = {
+    { k = "quest", objectives = { { text = "Tame a Large Crag Boar" } }, zone = "Country", sub = "Farm" },
+    { k = "tame", name = "Bristle", family = "Boar", zone = "Country", sub = "Farm" },
+  } } } }
+local tameText = ns.writeBook(tame).chapters[1].text
+if tameText:find("Large Crag Boar", 1, true) or not tameText:find("Bristle", 1, true) then
+  problem("taming", "the objective competed with the pet's introduction", tameText)
+end
+tame.chapters[1].log[1].title = "Taming the Beast"
+tame.chapters[1].log[1].objectives[1].text = "Large Crag Boar tamed"
+tameText = ns.writeBook(tame).chapters[1].text
+if tameText:find("Taming the Beast", 1, true) or not tameText:find("Bristle", 1, true) then
+  problem("taming", "a completed objective repeated the pet through its quest title", tameText)
+end
+for _, case in ipairs({ { "Frostmane Hold", "Explore the Frostmane Hold", "explore Frostmane Hold" },
+  { "The Barrens", "Explore the Barrens", "explore the Barrens" },
+  { "Farm", "Explore the tunnels", "explore the tunnels" } }) do
+  local c = { guid = "objective-article", race = "Human", class = "MAGE",
+    chapters = { { start = { level = 10, zone = "Country", sub = case[1] }, log = {
+      { k = "quest", objectives = { { text = case[2] } }, zone = "Country", sub = case[1] },
+    } } } }
+  fixtureWriting["c-deed-task"] = { { "managed to {task}" } }
+  local text = ns.writeBook(c).chapters[1].text
+  if not text:find(case[3], 1, true) then problem("objective article", "an article was lost or added to the recorded name", text) end
+  if case[1] == "Frostmane Hold" then
+    c.chapters[1].log = {
+      { k = "place", zone = "Country", sub = "Home" },
+      { k = "quest", zone = "Country", sub = "Home", objectives = { { text = case[2] } } },
+    }
+    text = ns.writeBook(c).chapters[1].text
+    if not text:find(case[3], 1, true) then problem("objective article", "turning in elsewhere lost the explored place's name", text) end
+  end
+end
+ns.data, ns.writerUsed = originalData, originalUsed
+
+-- Lessons must agree with a single spell or a list, throughout every voice.
+for _, race in ipairs(RACES) do
+  for seed = 1, 40 do
+    for _, spells in ipairs({ { "Mend Pet" }, { "Concussive Shot", "Mend Pet" } }) do
+      local c = { guid = "spell-agreement-" .. seed, race = race, class = "HUNTER",
+        chapters = { { start = { level = 20, zone = "Country", sub = "Home" }, log = {
+          { k = "prof", name = "Tailoring", learned = true, zone = "Country", sub = "Home" },
+          { k = "learned", spells = spells, zone = "Country", sub = "Home" },
+        } } } }
+      local text = ns.writeBook(c).chapters[1].text
+      if not text:find("Mend Pet", 1, true) or (#spells > 1 and not text:find("Concussive Shot and Mend Pet", 1, true))
+        or text:find("proper use of it", 1, true) then problem("spell agreement", "a lesson lost a spell or used a singular pronoun for a list", text) end
+    end
+  end
+end
+
+-- Repeated journeys exercise return wording as well as one-off arrivals.
+for _, race in ipairs(RACES) do
+  local log = {}
+  for i = 1, 100 do log[i] = { k = "place", sub = i % 2 == 0 and "Home" or "Farm", zone = "Country" } end
+  local c = { guid = "return-journeys", race = race, class = COMBOS[race][1],
+    chapters = { { start = { level = 20, zone = "Country", sub = "Home" }, log = log } } }
+  inspect(race .. " return journeys", ns.writeBook(c).chapters[1].text)
+end
 
 -- A busy fighting day can also include quests. Recap fighting the objectives
 -- have not already told, and exercise the long-work variants of that ending.
@@ -492,7 +598,7 @@ for _, round in ipairs({ { 1, 12 }, { 1, 60 }, { 18, 41 }, { 38, 60 }, { 1, 30 }
           if class == "HUNTER" and ch.to <= 10 and ch.text and ch.text:find("%f[%a]pet%f[%A]") then
             problem(("%s HUNTER chapter %d"):format(race, ch.number), "a hunter's pet before level 10", ch.text)
           end
-          if ch.text and #ch.text > longest then longest = #ch.text end
+          if ch.text and #ch.text > longest then longest, longestText = #ch.text, ch.text end
         end
         repeats = repeats + book.repeats
         if book.minGap and (not gaps[book.minGapKind] or book.minGap < gaps[book.minGapKind]) then gaps[book.minGapKind] = book.minGap end
@@ -589,6 +695,14 @@ eq(ns.playedWords(9000), "two hours and a half", "2h30"); eq(ns.goldWords(12345)
 
 io.write(("%d books, %d chapters, %d sentences repeated (%.1f per book), longest chapter %d characters\n")
   :format(books, chapters, repeats, repeats / books, longest))
+if os.getenv("WRITER_PROFILE") == "1" then io.write(longestText .. "\n") end
+-- The random lives keep a representative busy chapter within phone-reading
+-- range. This is a prose regression check, never a runtime truncation rule.
+if longest > 2400 then problem("chapter length", "a representative chapter grew beyond 2400 characters", tostring(longest)) end
+io.write(("routine remarks: %d/%d (%.1f%%)\n"):format(remarkTotal, routineTotal, 100 * remarkTotal / routineTotal))
+if remarkTotal / routineTotal < 0.30 or remarkTotal / routineTotal > 0.45 then
+  problem("remark budget", "routine remarks strayed outside the target frequency", remarkTotal .. "/" .. routineTotal)
+end
 local kinds = {}
 for kind, gap in pairs(gaps) do table.insert(kinds, ("%s %d"):format(kind, gap)) end
 table.sort(kinds)

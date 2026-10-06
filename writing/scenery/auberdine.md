@@ -3,5 +3,5 @@ place: Auberdine
 type: town
 faction: alliance
 ---
-- [!foe] I came into Auberdine through the grey sea mist, with the harbour piers stretching out before me. Boats came and went, but the people on shore wore the look of those who had been waiting too long.
-- [foe] The ships in Auberdine's harbour told me whose shore this was before I saw the guards. I could admire the shelter of those piers without expecting to be welcome beneath them.
+- [!foe] Grey sea mist lay over Auberdine's piers. Watching the boats come and go, I felt how long a wait on this shore might be.
+- [foe] Auberdine's ships told me whose shore this was. I admired the shelter of the piers without expecting a welcome beneath them.

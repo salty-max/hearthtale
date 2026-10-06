@@ -1,9 +1,13 @@
 ---
 kind: c-group
 ---
-- shared the path with {mates}
-- went on beside {mates}, attending to more than my own footsteps
+- joined {mates}
 - travelled with {mates}
-- found company in {mates}, and a different pair of eyes upon the road
-- had {mates} beside me
-- walked with {mates}, glad that not every part of the journey had to be solitary
+- fell in with {mates}
+- went on beside {mates}
+- shared the road with {mates}
+- had {mates} for company
+- teamed up with {mates}
+- [remark] joined {mates}, glad of another watchful presence
+- [remark] travelled with {mates}, curious what my companion would notice here
+- [remark] fell in with {mates}, glad not to make this passage alone

@@ -1,7 +1,13 @@
 ---
 kind: c-return
 ---
-- returned to {place}
 - went back to {place}
-- found my way back to {place}
-- came again to {place}
+- returned to {place}
+- made my way back to {place}
+- headed back to {place}
+- found myself back in {place}
+- took the road back to {place}
+- came back to {place}
+- [remark] went back to {place}, glad to take a familiar path again
+- [remark] returned to {place}, with fewer doubts about the route
+- [remark] made my way back to {place}, glad the destination was familiar

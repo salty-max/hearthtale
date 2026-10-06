@@ -1,26 +1,26 @@
 ---
 kind: c-deed-kill
 ---
-- [!one] killed {n} {foes} for {giver}
-- [!one] hunted {n} {foes}, as {giver} had asked
-- [!one] cleared {n} {foes} out of {giver}'s way
-- [!one] put down {n} {foes} for {giver}
-- [!one] thinned out the {foes} for {giver}
-- [!one] killed {n} {foes} and reported back to {ender}
-- [!one] went after {n} {foes} and told {ender} it was done
 - [!one] killed {n} {foes}
 - [!one] hunted down {n} {foes}
-- [!one] put down {n} {foes} that were troubling the road
-- [one] killed {foes} for {giver}
-- [one] tracked down {foes} and finished it, as {giver} had asked
-- [one] put an end to {foes}
-- [one] hunted down {foes}
-- [one] killed {foes} and brought word to {ender}
-- [!one class:MAGE] burned {n} {foes} for {giver}
-- [!one class:HUNTER !low] hunted {n} {foes} with my pet for {giver}
-- [one] finished {foes} for good
-- [one] went looking for {foes}, and found it
-- [one] put {foes} in the ground
-- [!one] cut down {n} {foes}
+- [!one] put down {n} {foes}
 - [!one] dealt with {n} {foes}
-- [!one] went out and killed {n} {foes}
+- [!one] brought down {n} {foes}
+- [!one] overcame {n} {foes}
+- [!one] finished off {n} {foes}
+- [!one] cut down {n} {foes}
+- [!one remark] killed {n} {foes}, glad that encounter was over
+- [!one remark] hunted down {n} {foes}, not foes I wished to meet again
+- [!one remark] put down {n} {foes}, glad to be past that fight
+- [one] killed {foes}
+- [one] hunted down {foes}
+- [one] put down {foes}
+- [one] dealt with {foes}
+- [one] brought down {foes}
+- [one] overcame {foes}
+- [one] finished off {foes}
+- [one] cut down {foes}
+- [one remark] killed {foes}, glad that encounter was over
+- [one remark] hunted down {foes}, not a foe I wished to meet again
+- [one remark] put down {foes}, glad to be past that fight
+- [!one teeth remark] brought down {n} {foes}, glad to be beyond those teeth

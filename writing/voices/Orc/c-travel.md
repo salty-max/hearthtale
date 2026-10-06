@@ -2,7 +2,12 @@
 kind: c-travel
 ---
 - marched to {place}
-- went on to {place}
-- took the road to {place}
+- made my way to {place}
+- walked on to {place}
 - headed for {place}
-- pressed on to {place}
+- took the road to {place}
+- pushed on to {place}
+- made for {place}
+- [remark] marched to {place}, glad to put the last stretch behind me
+- [remark] made my way to {place}, curious what the destination would ask of me
+- [remark] walked on to {place}, with more interest in the destination than the distance

@@ -114,3 +114,90 @@ The racial pass passed `bun run check`, including 728 Classic books across
 focused fallback and faction probes, both recording simulations, type
 checking, lint and the API and site tests. Both catalogs, the comparison,
 sample journeys and all six site seed books were regenerated and reviewed.
+
+## Remarks
+
+Routine clauses now have separate plain and `[remark]` alternatives. A seeded
+budget asks for a remark every two or three routine clauses, allowing at most
+one per sentence and none in successive sentences. Fresh reactions to recorded
+creature types, materials or objectives take precedence over general wording;
+otherwise a plain action can carry the story. Finished sentences remain stable
+as new events arrive. Openings, scenery, danger, loss and rest retain their
+richer reflections, and every race keeps three-clause sentences available.
+
+**Brannok, before:**
+
+> I bound my hearthstone at Thunderbrew Distillery, a sensible bit of planning.
+> I took up skinning and began to learn leatherworking.
+
+**After:**
+
+> I bound my hearthstone at Thunderbrew Distillery, with rather more hope of an
+> ale on my return. I took up skinning and began to learn leatherworking.
+
+**Grashnak, before:**
+
+> I added Rend and Battle Shout to what I could bring to the work. I added a
+> Rough Leather Vest to my equipment; I stood against a Scorpid Worker and
+> prevailed. I found eight Scorpid Worker Tails, giving the request an answer
+> in deeds.
+
+**After:**
+
+> I came away knowing Rend and Battle Shout. I made a Rough Leather Vest part
+> of my kit, eager to see how it would serve; I overcame a Scorpid Worker.
+> I brought back eight Scorpid Worker Tails.
+
+**Aelyndra, before:**
+
+> I encountered spiders for the first time and attended to their ways;
+> I returned with ten Webwood Venom Sacs. I came away from instruction knowing
+> Moonfire and Rejuvenation.
+
+**After:**
+
+> I came through my first fight with spiders. I gathered ten Webwood Venom Sacs,
+> glad to leave the collection with its owner. I trained in Moonfire and
+> Rejuvenation.
+
+**Mortis, before:**
+
+> I was taught Shadow Word: Pain and Power Word: Shield, without surrendering
+> the right to decide its use.
+
+**After:**
+
+> I was taught Shadow Word: Pain and Power Word: Shield.
+
+Read as paragraphs, the sample and seed chapters have these counts of remarked
+routine clauses over all routine clauses, in chapter order:
+
+| Narrator | Chapter 1 | Chapter 2 | Chapter 3 |
+| --- | --- | --- | --- |
+| Brannok | 4/13 | 9/23 | 4/12 (open) |
+| Grashnak | 4/10 | 1/3 (open) | |
+| Aelyndra | 4/12 | 0/1 (open) | |
+| Mortis | 3/10 | 1/3 (open) | |
+| Pippa (seed) | 2/6 | 3/9 | |
+| Aldric (seed) | 4/12 | 1/3 (open) | |
+
+Aelyndra's unfinished second chapter has only one routine clause, before the
+first remark is due; Bear Form has its own reflection. Every comparison voice
+has 4/10. The routine remarks concern the lesson, equipment, collection,
+company, arrival or opponent, rather than a general moral. Brannok's busiest
+sample chapter is 2,175 characters. The distillery arrival and Bristle's death
+keep their observations intact.
+
+Focused checks cover the final conjunction before a semicolon, three-clause
+orc flow, hearthstone bindings in a town just named, singular and plural
+lessons, exploration articles and taming told through the pet record. Taming
+objectives yield to that record from the outset, without looking ahead or
+removing prose when a pet later arrives. The length check guards representative
+chapters against growing beyond 2,400 characters; it never truncates a life.
+
+The remarks pass passed `bun run addon:check` and `bun run check`: 728 Classic
+books across 16,319 chapters and 812 Forever books across 18,098 chapters.
+Routine remarks account for 34.1% and 34.2% of clauses respectively; the longest
+representative chapters are 2,387 and 2,385 characters. All voice and scenery
+lines remain reachable, with the existing repetition and prefix-stability
+checks intact. Samples, comparisons and all six seed books were regenerated.

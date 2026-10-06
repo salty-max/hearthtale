@@ -1,7 +1,7 @@
 ---
 kind: flight
 ---
-- [first] My first flight, {from} to {to}. Wind riders. Proud beasts.
+- [first] I first flew from {from} to {to}, watching familiar ground shrink beneath me.
 - [!first] I flew from {from} to {to}.
-- From {from} to {to} on a wind rider.
-- [!first] A wind rider took me to {to}. Fast.
+- I flew from {from} to {to}, seeing how far the paths wandered below.
+- [!first] I flew on to {to}, with the long road passing beneath me.

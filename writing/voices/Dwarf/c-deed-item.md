@@ -1,19 +1,27 @@
 ---
 kind: c-deed-item
 ---
-- [!one] fetched {n} {thing}
-- [one] fetched {thing}
-- [!one] collected {n} {thing}, as {giver} asked
-- [one] collected {thing}, as {giver} asked
+- [!one] gathered {n} {thing}
+- [!one] collected {n} {thing}
+- [!one] found {n} {thing}
 - [!one] brought back {n} {thing}
-- [one] brought back {thing}
-- [!one] found {n} {thing}, a tidy result after the looking
-- [one] found {thing}, a tidy result after the looking
-- [!one] scraped together {n} {thing}
-- [one] scraped together {thing}
+- [!one] recovered {n} {thing}
 - [!one] came back with {n} {thing}
+- [!one] tracked down {n} {thing}
+- [!one] fetched {n} {thing}
+- [!one remark] gathered {n} {thing}, quite enough of that lot for one errand
+- [!one remark] collected {n} {thing}, glad the collecting was finished
+- [!one remark] found {n} {thing}, more than I cared to go looking for again
+- [one] gathered {thing}
+- [one] collected {thing}
+- [one] found {thing}
+- [one] brought back {thing}
+- [one] recovered {thing}
 - [one] came back with {thing}
-- [!one] looked until I had {n} {thing}
-- [one] looked until I had {thing}
-- [!one] brought {giver} {n} {thing}
-- [one] brought {thing} to {ender}
+- [one] tracked down {thing}
+- [one] fetched {thing}
+- [one remark] gathered {thing}, quite enough of that lot for one errand
+- [one remark] collected {thing}, glad the collecting was finished
+- [one remark] found {thing}, more than I cared to go looking for again
+- [!one cloth remark] collected {n} {thing}, enough cloth to make me grateful I was not sewing it all
+- [!one meat remark] gathered {n} {thing}, with rather more appetite for a cooked supper

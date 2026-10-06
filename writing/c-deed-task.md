@@ -2,14 +2,15 @@
 kind: c-deed-task
 ---
 - carried out {giver}'s request to {task}
-- set out to {task} and saw the work through
-- managed to {task}, as {giver} had asked
-- went to {task} before returning to {ender}
-- completed the work needed to {task}
-- found a way to {task}
 - managed to {task}
-- had been asked to {task} and could finally call it done
-- went out to {task} and saw it through
+- found a way to {task}
+- was able to {task}
+- went to {task}
+- set out to {task} and did so
+- did what was needed to {task}
 - undertook to {task}
-- found the means to {task}
-- was sent to {task} and finished the errand
+- [remark] carried out {giver}'s request to {task}, glad to be done with {giver}'s errand
+- [remark] managed to {task}, not an errand I wished to repeat
+- [remark] found a way to {task}, with little appetite for another errand of that sort
+- [explore remark] managed to {task}, glad to have more than a name for that ground
+- [escort remark] was able to {task}, glad to have the escort behind me

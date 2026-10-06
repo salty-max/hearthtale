@@ -1,19 +1,27 @@
 ---
 kind: c-deed-item
 ---
-- [!one] retrieved {n} {thing}
-- [one] retrieved {thing}
-- [!one] collected {n} {thing}, as {giver} asked
-- [one] collected {thing}, as {giver} asked
-- [!one] recovered {n} {thing}
-- [one] recovered {thing}
-- [!one] found {n} {thing}, a useful result, whatever anyone made of the hands that brought it
-- [one] found {thing}, a useful result, whatever anyone made of the hands that brought it
+- [!one] gathered {n} {thing}
+- [!one] collected {n} {thing}
+- [!one] found {n} {thing}
 - [!one] brought back {n} {thing}
+- [!one] recovered {n} {thing}
+- [!one] came back with {n} {thing}
+- [!one] tracked down {n} {thing}
+- [!one] fetched {n} {thing}
+- [!one remark] gathered {n} {thing}, quite enough of that collection for my tastes
+- [!one remark] collected {n} {thing}, glad to put that lot in someone else's hands
+- [!one remark] found {n} {thing}, not a collection I intended to keep
+- [one] gathered {thing}
+- [one] collected {thing}
+- [one] found {thing}
 - [one] brought back {thing}
-- [!one] returned with {n} {thing}
-- [one] returned with {thing}
-- [!one] got my hands on {n} {thing}
-- [one] got my hands on {thing}
-- [!one] brought {giver} {n} {thing}
-- [one] brought {thing} to {ender}
+- [one] recovered {thing}
+- [one] came back with {thing}
+- [one] tracked down {thing}
+- [one] fetched {thing}
+- [one remark] gathered {thing}, quite enough of that collection for my tastes
+- [one remark] collected {thing}, glad to put that lot in someone else's hands
+- [one remark] found {thing}, not a collection I intended to keep
+- [!one cloth remark] collected {n} {thing}, enough cloth to be someone else's problem
+- [!one meat remark] gathered {n} {thing}, with no wish to keep a collection of meat

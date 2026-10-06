@@ -4,5 +4,10 @@ kind: c-place
 - came to {place}
 - found my way to {place}
 - reached {place}
-- wandered into {place}
-- walked into {place}, looking about as I went
+- walked into {place}
+- made it as far as {place}
+- arrived in {place}
+- set foot in {place}
+- [remark] came to {place}, curious what a first visit would leave unseen
+- [remark] found my way to {place}, wary of judging the place by its name
+- [remark] reached {place}, with more to attend to than the road through it

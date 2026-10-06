@@ -1,19 +1,27 @@
 ---
 kind: c-deed-item
 ---
-- [!one] obtained {n} {thing}
-- [one] obtained {thing}
-- [!one] collected {n} {thing}, as {giver} asked
-- [one] collected {thing}, as {giver} asked
-- [!one] retrieved {n} {thing}
-- [one] retrieved {thing}
-- [!one] found {n} {thing}, with the matter satisfactorily concluded
-- [one] found {thing}, with the matter satisfactorily concluded
+- [!one] gathered {n} {thing}
+- [!one] collected {n} {thing}
+- [!one] found {n} {thing}
 - [!one] brought back {n} {thing}
+- [!one] recovered {n} {thing}
+- [!one] came back with {n} {thing}
+- [!one] tracked down {n} {thing}
+- [!one] fetched {n} {thing}
+- [!one remark] gathered {n} {thing}, quite enough of that collection for my liking
+- [!one remark] collected {n} {thing}, glad to hand over the collection
+- [!one remark] found {n} {thing}, more than I cared to gather twice
+- [one] gathered {thing}
+- [one] collected {thing}
+- [one] found {thing}
 - [one] brought back {thing}
-- [!one] returned with {n} {thing}
-- [one] returned with {thing}
-- [!one] procured {n} {thing}
-- [one] procured {thing}
-- [!one] brought {giver} {n} {thing}
-- [one] brought {thing} to {ender}
+- [one] recovered {thing}
+- [one] came back with {thing}
+- [one] tracked down {thing}
+- [one] fetched {thing}
+- [one remark] gathered {thing}, quite enough of that collection for my liking
+- [one remark] collected {thing}, glad to hand over the collection
+- [one remark] found {thing}, more than I cared to gather twice
+- [!one cloth remark] collected {n} {thing}, quite enough cloth for someone else to concern themselves with
+- [!one meat remark] gathered {n} {thing}, with more interest in a proper meal than more gathering

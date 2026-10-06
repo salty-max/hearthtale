@@ -2,10 +2,15 @@
 kind: c-kill
 ---
 - [client:forever] overcame {foe}
-- [client:forever] regained the advantage against {foe} and ended the fight
-- [client:forever] brought down {foe}
-- [client:forever] came through the encounter with {foe}
-- [client:forever] put an end to {foe}
-- [client:forever] prevailed against {foe}, with the danger behind me
 - [client:forever] dealt with {foe}
-- [client:forever] finished the encounter with {foe}
+- [client:forever] brought down {foe}
+- [client:forever] put an end to {foe}
+- [client:forever] killed {foe}
+- [client:forever] defeated {foe}
+- [client:forever] finished off {foe}
+- [client:forever] faced and defeated {foe}
+- [client:forever remark] overcame {foe}, glad to be past that encounter
+- [client:forever remark] dealt with {foe}, not a foe I wished to meet twice
+- [client:forever remark] brought down {foe}, with little wish to repeat that struggle
+- [client:forever teeth remark] brought down {foe}, glad to be clear of those teeth
+- [client:forever mechanical remark] overcame {foe}, curious about its making now it had stopped moving

@@ -1,19 +1,26 @@
 ---
 kind: c-deed-kill
 ---
-- [!one] dealt with {n} {foes}
-- [one] dealt with {foes}
-- [!one] brought down {n} {foes}, without making an exhibition of the work
-- [one] brought down {foes}, without making an exhibition of the work
-- [!one] killed {n} {foes}
-- [one] killed {foes}
-- [!one] put an end to {n} {foes}
-- [one] put an end to {foes}
-- [!one] concluded the business with {n} {foes}
-- [one] concluded the business with {foes}
-- [!one] dealt with {n} {foes} for {giver}
-- [one] put an end to {foes}, as {giver} requested
 - [!one] disposed of {n} {foes}
+- [!one] dealt with {n} {foes}
+- [!one] overcame {n} {foes}
+- [!one] put an end to {n} {foes}
+- [!one] killed {n} {foes}
+- [!one] defeated {n} {foes}
+- [!one] finished off {n} {foes}
+- [!one] brought down {n} {foes}
+- [!one remark] disposed of {n} {foes}, distinctly unwelcome company
+- [!one remark] dealt with {n} {foes}, glad to conclude that encounter
+- [!one remark] overcame {n} {foes}, not foes I wished to meet again
 - [one] disposed of {foes}
-- [!one] overcame {n} {foes}, as {giver} asked
-- [one] overcame {foes}, as {giver} asked
+- [one] dealt with {foes}
+- [one] overcame {foes}
+- [one] put an end to {foes}
+- [one] killed {foes}
+- [one] defeated {foes}
+- [one] finished off {foes}
+- [one] brought down {foes}
+- [one remark] disposed of {foes}, a distinctly unwelcome acquaintance
+- [one remark] dealt with {foes}, glad to conclude that encounter
+- [one remark] overcame {foes}, not a foe I wished to meet again
+- [!one teeth remark] brought down {n} {foes}, glad to leave those teeth out of further discussion

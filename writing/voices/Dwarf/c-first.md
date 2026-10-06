@@ -1,9 +1,14 @@
 ---
 kind: c-first
 ---
-- got my first proper look at {kind} in a fight
-- learned what {kind} could do, the practical way
-- came through my first encounter with {kind}
-- met {kind} and found them worth minding
-- found out a little about {kind} that no telling would have taught me
+- fought {kind} for the first time
+- met my first {kind}
+- came through my first fight with {kind}
+- encountered {kind} at close quarters
+- had my first encounter with {kind}
+- faced {kind} for the first time
 - had my first taste of fighting {kind}
+- [remark] fought {kind} for the first time, with rather less curiosity by the end
+- [remark] met my first {kind}, glad to be done with that introduction
+- [remark] came through my first fight with {kind}, a sharper introduction than any tavern story
+- [teeth remark] met my first {kind}, quite satisfied with my view of those teeth

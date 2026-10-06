@@ -2,7 +2,12 @@
 kind: c-place
 ---
 - came to {place}
-- made my way into {place}
-- found {place}
+- found my way to {place}
 - reached {place}
-- arrived in {place}, curious what use I might find for the place
+- walked into {place}
+- made it as far as {place}
+- arrived in {place}
+- set foot in {place}
+- [remark] came to {place}, curious whether the place deserved its reputation
+- [remark] found my way to {place}, glad to have arrived without an introduction
+- [remark] reached {place}, with some curiosity about what the name omitted

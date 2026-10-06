@@ -1,11 +1,14 @@
 ---
 kind: c-trainer
 ---
-- learned {spells}, useful knowledge that was now mine
-- was taught {spells}, without surrendering the right to decide its use
-- made time to learn {spells}
-- added {spells} to what I knew, since standing still was not my only option
+- learned {spells}
+- was taught {spells}
 - took instruction in {spells}
-- came away knowing {spells}, another reason not to be written off
-- learned {spells}, with practice left before I could call it reliable
-- was instructed in {spells}
+- came away knowing {spells}
+- took lessons in {spells}
+- trained in {spells}
+- added {spells} to what I knew
+- came away from training with {spells}
+- [remark] learned {spells}, with a lesson I intended to remember
+- [remark] was taught {spells}, curious how the lesson would work away from the trainer
+- [remark] took instruction in {spells}, with rather more from the lesson to remember than expected

@@ -1,7 +1,7 @@
 ---
 kind: flight
 ---
-- [first] My first flight, from {from} to {to}. The hippogryph knew the way better than I.
-- [!first] I flew from {from} to {to} on a hippogryph.
-- From {from} to {to}, on the wind, above the trees.
-- [!first] A hippogryph carried me to {to}.
+- [first] I first flew from {from} to {to}, seeing familiar paths in an unfamiliar pattern below.
+- [!first] I flew from {from} to {to}, with time to attend to the country beneath me.
+- I travelled from {from} to {to} by air, watching the ground open beyond the paths.
+- [!first] I flew on to {to}, glad to let the distance unfold beneath me.

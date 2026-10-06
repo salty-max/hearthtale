@@ -1,21 +1,14 @@
 ---
 kind: c-trainer
 ---
-- learned {spells} from my trainer
-- made time for lessons in {spells}
-- was taught {spells}
 - learned {spells}
-- came away from training with {spells}
-- added {spells} to what I knew
-- [many] learned {spells} among several new lessons
-- [class:PALADIN] studied {spells}, with more to learn of serving {faith}
-- [class:PRIEST] learned {spells} and thought of where those lessons might be needed
-- [class:MAGE] added {spells} to my studies
-- [class:WARLOCK] learned {spells}, another part of my chosen work
-- [class:WARRIOR] trained in {spells}, glad to have more to rely on
-- [class:DRUID] learned {spells} and considered what the teaching asked of me
-- [class:SHAMAN] studied {spells} with my trainer
-- [class:HUNTER] learned {spells} to carry into the hunt
-- [class:ROGUE] took lessons in {spells}, with much still to practise
-- picked up {spells} in training
+- was taught {spells}
+- studied {spells}
+- came away knowing {spells}
+- took lessons in {spells}
 - trained in {spells}
+- added {spells} to what I knew
+- came away from training with {spells}
+- [remark] learned {spells}, with plenty from the lesson to remember
+- [remark] was taught {spells}, eager to try the lesson for myself
+- [remark] studied {spells}, with the lesson still fresh in my head

@@ -1,11 +1,14 @@
 ---
 kind: c-trainer
 ---
-- learned {spells}, another discipline to make my own
-- was taught {spells}, with practice still owed to the lesson
-- took instruction in {spells}
-- added {spells} to what I could bring to the work
-- learned {spells} and meant to earn the knowledge through use
-- made time to learn {spells}
-- was taught {spells}, where willingness alone was not mastery
+- learned {spells}
+- was taught {spells}
+- studied {spells}
 - came away knowing {spells}
+- took lessons in {spells}
+- trained in {spells}
+- added {spells} to what I knew
+- came away from training with {spells}
+- [remark] learned {spells}, eager to test the lesson in practice
+- [remark] was taught {spells}, with more from the training to remember than expected
+- [remark] studied {spells}, glad to have that lesson behind me

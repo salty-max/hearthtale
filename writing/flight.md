@@ -1,21 +1,21 @@
 ---
 kind: flight
 ---
-- [first] I flew for the first time, from {from} to {to}, and watched the familiar business of the ground grow small beneath me.
-- [first] My first flight carried me from {from} to {to}, with far more of the world in view than I had ever seen from the road.
-- [first race:Tauren] I flew from {from} to {to} for the first time, surprised by how strange the wide earth looked from above.
-- [first race:Gnome] My first flight took me from {from} to {to}, and I spent as much time wondering about the ride as looking at the view.
-- [!first] I flew from {from} to {to}, glad to leave some of the distance to a different pair of wings.
-- I took a flight from {from} to {to}, with the world spread out beneath me for a while.
-- I flew from {from} to {to} and watched the land go by, looking for the places I already knew.
-- I travelled from {from} to {to} by air, finding the distance easier to admire when I did not have to walk it.
-- I flew to {to}, looking back toward {from} until the journey carried it out of sight.
-- [!first] I took a flight from {from} to {to}, giving my thoughts time to catch up with the road.
-- [hc] I flew to {to}, grateful for a stretch in which I could look at the world without being occupied by the next fight.
-- [class:DRUID] I flew from {from} to {to} on borrowed wings, wondering how it would feel to make the journey on my own.
-- [!first] I caught a ride from {from} to {to}, letting the long road pass beneath me.
-- [!first] I flew from {from} to {to}, watching the places below change as the distance opened between them.
-- I left {from} by air and came down in {to}, with the road briefly reduced to something I could trace with my eyes.
-- [!first] I flew on to {to}, ready to take up the journey from the ground again.
-- [!first] A flight carried me from {from} to {to}, with a welcome pause between the work at either end.
-- I caught a flight from {from} to {to}, glad of the chance to see beyond the next bend.
+- [first] I flew from {from} to {to} for the first time. Familiar ground looked small beneath me.
+- [first] My first flight, from {from} to {to}, showed how little of the world the road revealed.
+- [first race:Tauren] I first flew from {from} to {to}, surprised by the strangeness of the earth below.
+- [first race:Gnome] My first flight, from {from} to {to}, left me as curious about the ride as the view.
+- [!first] I flew from {from} to {to}, leaving the distance to another pair of wings.
+- I flew from {from} to {to}, with the world spread out beneath me.
+- I flew from {from} to {to}, looking for familiar places below.
+- I flew from {from} to {to}, glad to admire the distance instead of walking it.
+- I flew to {to}, looking back until {from} passed out of sight.
+- [!first] I flew from {from} to {to}, with a welcome pause for my thoughts.
+- [hc] I flew to {to}, grateful for a view beyond the next fight.
+- [class:DRUID] I flew from {from} to {to} on borrowed wings, wondering about flight on my own.
+- [!first] I caught a ride from {from} to {to}, with the long road passing beneath me.
+- [!first] I flew from {from} to {to}, watching the country change below.
+- I left {from} by air for {to}, tracing the road below with my eyes.
+- [!first] I flew on to {to}, ready to take up the road again.
+- [!first] I flew from {from} to {to}, glad of a pause between the work at either end.
+- I caught a flight from {from} to {to}, glad to see beyond the next bend.

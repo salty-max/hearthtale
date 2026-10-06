@@ -1,19 +1,26 @@
 ---
 kind: c-deed-kill
 ---
-- [!one] dealt with {n} {foes}
-- [one] dealt with {foes}
-- [!one] brought down {n} {foes}, and remained available to report it
-- [one] brought down {foes}, and remained available to report it
-- [!one] killed {n} {foes}
-- [one] killed {foes}
-- [!one] accounted for {n} {foes}
-- [one] accounted for {foes}
-- [!one] finished the matter of dealing with {n} {foes}
-- [one] finished the matter of dealing with {foes}
-- [!one] dealt with {n} {foes} for {giver}
-- [one] put an end to {foes}, as {giver} requested
 - [!one] disposed of {n} {foes}
+- [!one] dealt with {n} {foes}
+- [!one] put an end to {n} {foes}
+- [!one] killed {n} {foes}
+- [!one] accounted for {n} {foes}
+- [!one] overcame {n} {foes}
+- [!one] finished off {n} {foes}
+- [!one] defeated {n} {foes}
+- [!one remark] disposed of {n} {foes}, acquaintances I was content to terminate
+- [!one remark] dealt with {n} {foes}, not foes I wished to meet twice
+- [!one remark] put an end to {n} {foes}, glad to end that particular conversation
 - [one] disposed of {foes}
-- [!one] put an end to {n} {foes}, as {giver} asked
-- [one] put an end to {foes}, as {giver} asked
+- [one] dealt with {foes}
+- [one] put an end to {foes}
+- [one] killed {foes}
+- [one] accounted for {foes}
+- [one] overcame {foes}
+- [one] finished off {foes}
+- [one] defeated {foes}
+- [one remark] disposed of {foes}, an acquaintance I was content to terminate
+- [one remark] dealt with {foes}, not a foe I wished to meet twice
+- [one remark] put an end to {foes}, glad to end that particular conversation
+- [!one teeth remark] brought down {n} {foes}, preferring those teeth at a distance

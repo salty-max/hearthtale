@@ -17,8 +17,8 @@ The plan and its decisions: PLAN.md.
 - `writing/voices/<Race>/<kind>.md`: a race's own sentences (same format,
   `<Race>` as the game names it: `Scourge`, `NightElf`). The writer prefers
   them, lets a used one back after `OWN_GAP` uses of the kind, and falls back
-  on the shared ones; `STYLE` in `Writer.lua` sets the race's clauses per
-  sentence and time words. Flavour comes from outlook and phrasing, never
+  on the shared ones; `STYLE` in `Writer.lua` keeps three clauses available
+  for every race and varies time words. Flavour comes from outlook and phrasing, never
   from broken grammar or a racial caricature. `docs/race-voices.md` records
   the lore sources, cultural outlooks and limits on expression for all races.
   Skyborne traditions require the recorded faction and the Forever catalog.
@@ -74,9 +74,19 @@ The plan and its decisions: PLAN.md.
   what that makes me think. Keep its landmarks true to the original game and
   its viewpoint appropriate to race, faction and time of day.
 - Clauses (kinds `c-*`) make the scenes: lower case, no final stop, read after
-  "I" ("bound my hearthstone at {inn}"). Related work may share a sentence;
+  "I" ("bound my hearthstone {inn}"). Related work may share a sentence;
   an arrival frames one action. Internal commas are allowed; a semicolon or
   full sentence closes the thought. Test joins in the generated sample.
+- Routine kinds have plain alternatives and personal reactions marked
+  `[remark]`. The writer budgets roughly one remark per two or three routine
+  clauses, at most one per sentence and never in consecutive sentences.
+  Do not hide a reflective tail in an unmarked action. Factual qualifiers
+  such as "which I had made myself" are facts, not remarks. The stronger
+  reflections in openings, danger, rest and scenery keep their own space.
+  A routine remark reacts to the recorded subject, not to a general virtue.
+  Topic tags (teeth, mechanical, cloth, meat, explore, escort) require evidence
+  in the records. Taming objectives leave the telling to the pet record;
+  no later pet event may remove an already written quest sentence.
 - Connectors need evidence: time passing, nightfall, an arrival, or the
   aftermath of a close call. Do not scatter "then" between unrelated jobs.
   A return is a return. Emotional interpretation is welcome; an unrecorded
@@ -108,6 +118,8 @@ The plan and its decisions: PLAN.md.
   direction and an example of the resulting prose. Regenerate and read
   `docs/race-comparison.md` when changing racial expression; use the restraint
   and era boundaries in `docs/race-voices.md`.
+- In `c-inn`, `{inn}` includes its preposition ("at Ratchet") or is "there" when the
+  binding place has just been named. Do not add "at" or "to" before it.
 
 ## The site (hearthtale.app)
 

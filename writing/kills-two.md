@@ -1,7 +1,7 @@
 ---
 kind: kills-two
 ---
-- I had fought {n1} {foes1} and {n2} {foes2}, enough to give this stretch a character of its own.
+- I had fought {n1} {foes1} and {n2} {foes2}, enough for one halt.
 - I counted {n1} {foes1} and {n2} {foes2} among the fighting {at}, though the numbers left much of it untold.
 - I had dealt with {n1} {foes1} and {n2} {foes2} {at}, work I was glad to look back on from somewhere quiet.
 - I had brought down {n1} {foes1} and {n2} {foes2} {at}, with the encounters still clear as I wrote.

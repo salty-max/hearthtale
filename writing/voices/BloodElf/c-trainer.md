@@ -1,11 +1,14 @@
 ---
 kind: c-trainer
 ---
-- learned {spells}, with discipline still required to justify the knowledge
-- was instructed in {spells}
-- added {spells} to my repertoire
-- made time for lessons in {spells}
-- studied {spells}, unwilling to leave the learning half finished
+- learned {spells}
+- was taught {spells}
+- studied {spells}
 - came away knowing {spells}
-- was taught {spells}, a useful addition rather than an ornament
-- took instruction in {spells}
+- took lessons in {spells}
+- trained in {spells}
+- added {spells} to what I knew
+- came away from training with {spells}
+- [remark] learned {spells}, curious how the teaching would hold in practice
+- [remark] was taught {spells}, with more of the lesson still to consider
+- [remark] studied {spells}, eager to try the teaching beyond instruction

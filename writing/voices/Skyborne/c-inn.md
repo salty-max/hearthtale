@@ -1,9 +1,13 @@
 ---
 kind: c-inn
 ---
-- [client:forever] bound my hearthstone at {inn}, giving myself a fixed point of return
-- [client:forever] set my stone to {inn}
-- [client:forever] chose {inn} for my hearthstone
-- [client:forever] made {inn} my stone's destination
-- [client:forever] bound my stone at {inn}, an anchor to carry into changing country
-- [client:forever] set my hearthstone to {inn}, with a way back now certain
+- [client:forever] bound my hearthstone {inn}
+- [client:forever] set my hearthstone {inn}
+- [client:forever] bound my stone {inn}
+- [client:forever] chose to bind my hearthstone {inn}
+- [client:forever] settled my hearthstone's destination {inn}
+- [client:forever] gave my hearthstone a place of return {inn}
+- [client:forever] set a destination for my stone {inn}
+- [client:forever remark] bound my hearthstone {inn}, with a welcome shortcut for the return
+- [client:forever remark] set my hearthstone {inn}, glad to spare myself the whole walk back
+- [client:forever remark] bound my stone {inn}, with a shorter way back to familiar ground
