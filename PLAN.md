@@ -29,17 +29,15 @@ site).
 | Home | A site of its own at hearthtale.gg, in this repo (a monorepo, as WoWLocker: addon/, apps/api, apps/web, packages/shared). Vercel Pro (team jellycat) + a new Supabase project. |
 | Accounts | Battle.net sign-in: the characters the Battle.net API knows (Classic Era, Hardcore, SoD, TBC Anniversary) are found and attached on their own. A code typed in the game (`/ht link CODE`) attaches any other (Forever has no Battle.net namespace). |
 | Upload | **Ravenpost**, one companion for WoWLocker and Hearthtale: its own repo (salty-max/ravenpost), moved out of wow-locker and renamed; each site linked separately from its settings page (its own sign-in, its own upload key). |
-| Prose | The site runs the addon's own Writer.lua and writing data (Lua in WebAssembly) on the uploaded records: the web and the game read the same. A test checks the web writes exactly what the game does. |
+| Prose | The addon writes the book into its saved file at each logout (Save.lua), and the site shows that text as is: never two writers, never two versions of the writing. (Chosen over running Writer.lua on the site, which risked a different text: Lua 5.1 in the game, 5.4 in WebAssembly, and players on older versions.) A rest that closes a chapter is told at once (the logout settled in advance); a /reload is put right by the next logout. |
 | Sharing | Private by default; a share link per book, chapter or epitaph, with a preview card for Discord and Reddit. Fallen Hardcore books may be offered to a public Hall. |
 
 ### Steps
 
 1. **Scaffold**: the monorepo around the addon (Turborepo + Bun, from WoWLocker:
    lint, typecheck, commitlint, CI), the addon's checks kept as they are.
-2. **The writer on the web**: Writer.lua and the data files under Lua 5.4 in
-   WebAssembly (wasmoon), on the server and in the browser; the sample life
-   written by both and compared word for word (LuaJIT is Lua 5.1: watch number
-   formatting and integer division).
+2. **The book in the saved file** (done, 6 October 2026): HearthtaleChar.book
+   and each fallen life's book in the Hall, written at logout.
 3. **Records in**: an upload endpoint for a character's journal (HearthtaleChar)
    and the account's Hall (HearthtaleHall); characters, journals and accounts
    in Postgres.

@@ -15,5 +15,6 @@ Record.lua
 Writer.lua
 Book.lua
 Hall.lua
+Save.lua
 Settings.lua
 Minimap.lua

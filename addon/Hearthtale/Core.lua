@@ -8,6 +8,7 @@
 --   chapters[i] = { ... }    the chapters, from rest to rest (Record.lua)
 --   closed = true            a Hardcore death closed the book: nothing more
 --                            is recorded (only the login, to find it)
+--   book = { ... }           the book as written at the last logout (Save.lua)
 local _, ns = ...
 local PREFIX = "|cffc9a227Hearthtale:|r "
 ns.PREFIX = PREFIX
@@ -41,10 +42,14 @@ end
 frame:SetScript("OnEvent", function(_, event, ...)
   if event ~= "PLAYER_LOGIN" and not char then return end
   if handlers[event] then handlers[event](...) end
-  if char.closed then return end
-  for _, fn in ipairs(listeners[event] or {}) do fn(...) end
+  if not char.closed then
+    for _, fn in ipairs(listeners[event] or {}) do fn(...) end
+  end
+  -- Last of all at logout, closed book or not: the book into the saved file.
+  if event == "PLAYER_LOGOUT" and ns.writeDown then ns.writeDown(char) end
 end)
 for event in pairs(handlers) do frame:RegisterEvent(event) end
+frame:RegisterEvent("PLAYER_LOGOUT")
 
 -- Other files listen through this frame (ns.on). An event a client doesn't
 -- know is simply never heard.

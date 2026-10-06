@@ -39,6 +39,8 @@
 --     wake { after }                        the next session in the same chapter
 --   visited[zone|sub], kinds[kind] = true   the character's firsts, life-long
 --   death, hardcore, closed, race, class, name, sex, prologue: as before
+--   realm, region                           where the character lives (for the site)
+--   book = { ... }                          the book as written at the last logout (Save.lua)
 --   logout = { at, rest, fire, place, zone, sub, level }   the last logout,
 --                                           settled at the next login (a /reload
 --                                           fires the same event: it is dropped)
@@ -136,6 +138,9 @@ ns.on("PLAYER_LOGIN", function()
   if not c.closed then c.hardcore = hardcore() or c.hardcoreChosen or nil end -- chosen: in the settings, where the game can't tell
   c.race, c.class = select(2, UnitRace("player")), select(2, UnitClass("player"))
   c.name, c.sex = UnitName("player"), UnitSex("player")
+  -- where it lives, for the site (the Battle.net region: 1 US, 3 EU...)
+  c.realm = GetRealmName and GetRealmName() or nil
+  c.region = GetCurrentRegion and GetCurrentRegion() or nil
   -- A character met mid-life: what the game can say of the life so far.
   if not c.prologue and (c.began.level or 1) > 1 then
     local done = GetQuestsCompleted and GetQuestsCompleted()
@@ -202,16 +207,17 @@ ns.on("PLAYER_LOGOUT", function()
     zone = zone, sub = sub, place = sub or zone, level = UnitLevel("player"), night = night() or nil }
 end)
 
-local function close(ch, how, l)
+local function close(ch, how, l, ahead)
   ch.ended = { at = l.at, level = l.level, zone = l.zone, sub = l.sub, place = l.place, how = how }
-  if ns.onChapter then ns.onChapter(#char().chapters) end
+  if ns.onChapter and not ahead then ns.onChapter(#char().chapters) end
 end
 
 -- The first login after a logout (not a /reload) settles it: a rest closes
 -- the chapter (if it holds enough), so does any logout past the cap;
--- otherwise the chapter goes on, with the night between.
-local function settle(l)
-  local c = char()
+-- otherwise the chapter goes on, with the night between. ahead: the logout
+-- settled in advance, on a copy, for the book written at logout (Save.lua):
+-- no waking yet, no chat line.
+local function settle(l, c, ahead)
   local ch = c.chapters and c.chapters[#c.chapters]
   if not ch or ch.ended or c.closed then return end
   local rested = l.rest or l.fire
@@ -221,16 +227,33 @@ local function settle(l)
     table.insert(ch.log, fields)
   end
   if rested and moments(ch) >= MIN_MOMENTS then
-    close(ch, l.fire and "campfire" or "rest", l)
+    close(ch, l.fire and "campfire" or "rest", l, ahead)
   elseif ch.played >= CAP then
     note("night", { last = true })
-    close(ch, "long", l)
+    close(ch, "long", l, ahead)
   else
     if rested then note("rested", { place = l.place, fire = l.fire }) else note("night", {}) end
+    if ahead then return end
     local zone, sub = where()
     table.insert(ch.log, { k = "wake", at = now(), night = night() or nil, after = rested and "rest" or "night",
       zone = zone or l.zone, sub = sub or l.sub })
   end
+end
+
+-- The journal as the next login will find it, if this logout is a real one: a
+-- copy (the book written at logout tells the chapter a rest just closed).
+local function copy(t, skip)
+  if type(t) ~= "table" then return t end
+  local out = {}
+  for k, v in pairs(t) do if k ~= skip then out[k] = copy(v) end end
+  return out
+end
+function ns.settledView(c)
+  if not c.logout or c.closed then return c end
+  local view = copy(c, "book")
+  settle(view.logout, view, true)
+  view.logout = nil
+  return view
 end
 
 ns.on("PLAYER_ENTERING_WORLD", function(initial, reloading)
@@ -240,7 +263,7 @@ ns.on("PLAYER_ENTERING_WORLD", function(initial, reloading)
   elseif initial and c.logout then
     local l = c.logout
     c.logout = nil
-    settle(l)
+    settle(l, c)
   end
   if not c.closed then chapter() end
 end)

@@ -1,6 +1,7 @@
 -- The Hall of the Fallen (account-wide, HearthtaleHall.lives[guid]):
 -- the closed books of Hardcore characters, kept whole. What is kept is their
--- records (the text is written when read, as any journal's), with their realm
+-- records (the text is written when read, as any journal's, and saved at
+-- logout for the site: Save.lua), with their realm
 -- and the game's names of their race and class. A Hardcore death closes the
 -- book: a chat line with a link to it, and the game's toast (the one of "New
 -- Recipe Learned"), the character's portrait in it; a click opens the Hall.
@@ -35,7 +36,7 @@ function ns.fallenLife(guid) return hall()[guid] end
 -- The book joins the Hall: a copy of the records as they were at the end.
 local function enshrine(c)
   local life = copy(c)
-  life.pending = nil
+  life.pending, life.book = nil, nil -- its book is written at the next logout, with the death
   life.realm = GetRealmName and GetRealmName() or nil
   life.raceName, life.className = UnitRace("player"), UnitClass("player")
   hall()[c.guid] = life

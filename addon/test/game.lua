@@ -192,6 +192,8 @@ end
 -- The game's toasts, links and realm: keep what the addon hands them.
 local toasted = {}
 function GetRealmName() return "Nightslayer" end
+function GetCurrentRegion() return 3 end
+C_AddOns = { GetAddOnMetadata = function(name, key) return name == "Hearthtale" and key == "Version" and "0.2.0" or nil end }
 C_XMLUtil = { GetTemplateInfo = function(name) return name ~= "PanelTabButtonTemplate" or nil end }
 AlertFrame = { AddQueuedAlertFrameSubSystem = function(_, _, setUp)
   return { AddAlert = function(_, guid)
@@ -208,7 +210,7 @@ LinkProcessorResponse = { Handled = 2 }
 -- ── load the addon ───────────────────────────────────────────────────────────
 local ns = {}
 assert(loadfile(DIR .. (FOREVER and "Data_Forever.lua" or "Data_Classic.lua")))("Hearthtale", ns)
-for _, f in ipairs({ "Core.lua", "Record.lua", "Writer.lua", "Book.lua", "Hall.lua", "Settings.lua", "Minimap.lua" }) do assert(loadfile(DIR .. f))("Hearthtale", ns) end
+for _, f in ipairs({ "Core.lua", "Record.lua", "Writer.lua", "Book.lua", "Hall.lua", "Save.lua", "Settings.lua", "Minimap.lua" }) do assert(loadfile(DIR .. f))("Hearthtale", ns) end
 local D = ns.data
 -- Resting and campfires: the game's resting state, the auras on me.
 state.auras = {}

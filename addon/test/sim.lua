@@ -251,7 +251,17 @@ check(not B:IsShown(), "/ht again closes it")
 
 -- A night in the wild: the chapter goes on; a /reload is no night.
 G.played(1800)
+local logBeforeNight = #ch().log
 logout()
+-- The book, written into the saved file at logout (for the site).
+local B1 = J.book
+check(B1 and B1.version == "0.2.0" and B1.client == (FOREVER and "forever" or "classic") and B1.level == 2 and #B1.chapters == 1
+  and B1.chapters[1].open and B1.chapters[1].text and B1.chapters[1].began, "at logout, the book is written into the saved file")
+check(J.realm == "Nightslayer" and J.region == 3, "… and where the character lives")
+local view = ns.settledView(J)
+check(#ch().log == logBeforeNight and view.chapters[1].log[#view.chapters[1].log].k == "night" and view ~= J,
+  "a logout in the wild: the book tells the night outdoors (not the waking yet); the journal itself waits for the next login")
+check(B1.chapters[1].text == ns.writeBook(view).chapters[1].text, "the saved text is the game's, word for word")
 login()
 check(#J.chapters == 1 and moments("night")[1] and moments("wake")[1] and moments("wake")[1].after == "night" and #printed == before,
   "a logout in the wild: a night outdoors, then the road again, the same chapter")
@@ -261,7 +271,11 @@ check(#moments("night") == nights and #J.chapters == 1, "a /reload is no night")
 
 -- A rest at an inn closes the chapter.
 state.resting, state.sub = true, "Thunderbrew Distillery"
+local printedBefore = #printed
 logout()
+local B2 = J.book.chapters[1]
+check(not B2.open and B2.ended and B2.text:find("Thunderbrew Distillery", 1, true) and not ch(1).ended and #printed == printedBefore,
+  "a logout at an inn: the saved book tells the chapter closed at once (the journal settles it at the next login, with its chat line)")
 state.resting = false
 login()
 local first = ch(1)
@@ -333,6 +347,14 @@ state.sub = "Brewnall Village"
 fire("ZONE_CHANGED")
 login()
 check(#ch().log == logBefore and #J.chapters == 4, "a closed book records nothing more, even at the next login")
+logout()
+local fallenLife = HearthtaleHall.lives[state.guid]
+check(J.book and J.book.epitaph and #J.book.chapters == 4 and not J.book.chapters[4].open and fallenLife.book
+  and fallenLife.book.epitaph == J.book.epitaph and fallenLife.book.level == 2, "a closed book is still written at logout, and its life in the Hall too")
+local hallBook = fallenLife.book
+logout()
+check(fallenLife.book == hallBook, "… once per version of the addon")
+login()
 local closedBook = ns.writeBook(J)
 check(closedBook.epitaph and closedBook.epitaph:find("Sealinedion", 1, true) and closedBook.epitaph:find("level two", 1, true)
   and not closedBook.epitaph:find("{", 1, true), "its epitaph: who, where, at what level")

@@ -17,7 +17,9 @@ The plan and its decisions: PLAN.md.
 - `addon/Hearthtale/`: `Core.lua` (the character's record, events,
   `/hearthtale`), `Record.lua` (the chapters and their moments, as they happen;
   a logout settled at the next login),
-  `Writer.lua` (the prose, written from the records when read: never stored),
+  `Writer.lua` (the prose, written from the records when read),
+  `Save.lua` (the book written into the saved file at each logout, for the
+  site: it never writes its own),
   `Book.lua` (the window: chapters on the left, the open one on the right; a
   second tab for the Hall of the Fallen), `Hall.lua` (a Hardcore death: the
   book closed and copied to the account-wide Hall, a chat line, the toast),
