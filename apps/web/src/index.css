@@ -22,7 +22,9 @@
 
 html,
 body {
-  background: var(--color-night);
+  /* The tab bar's colour: anything the frame leaves uncovered at the bottom of
+     the installed app continues the bar (the frame itself is night). */
+  background: var(--color-leather);
   color: var(--color-parchment);
   font-family: var(--font-book);
   -webkit-font-smoothing: antialiased;

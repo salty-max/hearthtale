@@ -7,6 +7,9 @@ import { RouterProvider } from "@tanstack/react-router";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { router } from "@/router";
+import { fitStandalone } from "@/lib/standalone";
+
+fitStandalone();
 
 const queryClient = new QueryClient({
   defaultOptions: {
