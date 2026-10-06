@@ -1,0 +1,13 @@
+---
+kind: r-lesson
+---
+- the principles clear, the practice less so
+- with three questions for every answer
+- already thinking of ways to improve it
+- my hands not quite as quick as my head
+- the theory elegant, I thought
+- eager to test it under real conditions
+- [new] the beginnings of a new field of study
+- [new] a whole new set of tools to master
+- [low] a novice in this, if not in everything
+- [high] the new trick fitting neatly among the old

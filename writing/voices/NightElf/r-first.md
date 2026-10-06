@@ -1,0 +1,11 @@
+---
+kind: r-first
+---
+- watching them a long while before they noticed me
+- understanding them a little better in the end
+- not cruel, only hungry
+- something older in their manner than I expected
+- [teeth] fierce in the way of all things that must eat
+- [night] their eyes catching the moonlight
+- [mechanical] alien to everything that grows
+- [low] one more lesson in a long education

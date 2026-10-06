@@ -1,0 +1,11 @@
+---
+kind: r-first
+---
+- unimpressed, though careful
+- making a note of their weaknesses
+- less frightening than the living seemed to think
+- creatures with fewer complaints than most people I had met
+- [teeth] their teeth rather wasted on what is left of me
+- [night] in the dark, where I see better than they suppose
+- [mechanical] ingenious, in a pointless sort of way
+- [low] one more thing the grave had not prepared me for

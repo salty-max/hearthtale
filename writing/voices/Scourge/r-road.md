@@ -1,0 +1,13 @@
+---
+kind: r-road
+---
+- unhurried, since I do not tire as I used to
+- the crows following at a respectful distance
+- [!back] its people giving me the usual looks
+- [!back] noting where the guards stood
+- [!back] curious what welcome the place would manage
+- [!back night] its lights not meant for me
+- [back] its welcome no warmer than before
+- [back] familiar enough to be dull, which I had learned to value
+- [back] still standing, a low bar but a real one
+- [high] one more place that had decided to tolerate me

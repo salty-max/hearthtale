@@ -1,0 +1,13 @@
+---
+kind: r-task
+---
+- the kind of work nobody writes songs about
+- honest work, which is not nothing
+- learning which neighbours could be counted on
+- one more promise kept on someone's behalf
+- the sort of help a place remembers
+- with no reward but a nod, which was enough
+- [explore] the lie of the land plainer in my head
+- [explore] getting a sense of where trouble might come from
+- [escort] talking to keep both our spirits up
+- [night] lamps lit in the windows as I went

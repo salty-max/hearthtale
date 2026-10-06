@@ -1,0 +1,17 @@
+---
+kind: r-road
+---
+- my legs reminding me of the distance
+- the weather keeping me company most of the way
+- noting where the paths and the people went
+- [!back] the name finally matched to a place
+- [!back] curious what the place would make of me
+- [!back] the road longer than it had looked
+- [!back] taking in the place before anyone noticed me
+- [!back] among people who did not know my face
+- [!back night] its shapes uncertain in the dark
+- [back] the way familiar under my feet
+- [back] finding it much as I had left it
+- [back] quicker now that I knew the way
+- [back] a few faces I recognised
+- [high] one more place in a long list, though not a dull one

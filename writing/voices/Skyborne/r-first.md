@@ -1,0 +1,11 @@
+---
+kind: r-first
+---
+- [client:forever] moving in ways I had not expected
+- [client:forever] worth watching from more than one angle
+- [client:forever] a lesson in how much I had yet to see
+- [client:forever] nothing my mentors had described
+- [client:forever] curious, once it was over, what drove them
+- [client:forever teeth] their teeth a detail I would not forget
+- [client:forever night] their shapes uncertain without the sky's light
+- [client:forever low] one more thing the world had left me to discover

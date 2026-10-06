@@ -1,0 +1,16 @@
+---
+kind: r-foe
+---
+- taking no more than the land asked of me
+- with a moment's stillness afterwards
+- the balance kept, if not gladly
+- my strength used, not spent
+- slow to anger and quick to finish
+- [one] a life I did not take lightly
+- [!one] each in turn, without haste
+- [teeth] its hunger as honest as any
+- [mechanical] a thing that had never known the earth
+- [night] the stars watching, as they always do
+- [hc] reminded that even the strong return to the earth
+- [low] still learning to carry my strength wisely
+- [high] with the calm of long practice

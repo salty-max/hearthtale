@@ -1,0 +1,19 @@
+---
+kind: r-item
+---
+- heavier in my pack than I had bargained for
+- with dirt under my nails for the trouble
+- a small thing to someone, plainly
+- pleased with how little searching it took in the end
+- keeping half an eye on my surroundings the whole time
+- harder to spot than I had been told
+- [!one] each one harder to find than the last
+- [!one] the last of them where I had looked first
+- [!one] counting them twice to be sure
+- [!one] wondering what anyone needed with so many
+- [one] right where it should not have been
+- [one] smaller in my hand than the trouble of finding it
+- [one] wondering what anyone wanted with it
+- [cloth] with thoughts of what a tailor might make of it
+- [meat] with supper very much on my mind
+- [night] the dark making the search twice as long

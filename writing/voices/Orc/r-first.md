@@ -1,0 +1,11 @@
+---
+kind: r-first
+---
+- learning their measure the only way that counts
+- worth respecting, though not fearing
+- harder than the drill-masters had warned
+- a lesson I meant to learn once only
+- quicker to anger than I was, which was something
+- [teeth] the land breeding things with teeth to match it
+- [night] in the dark, where every lesson comes harder
+- [low] another thing the land would teach me the hard way

@@ -1,0 +1,15 @@
+---
+kind: r-foe
+---
+- without pleasure in it
+- the forest quieter for it, though not better
+- regretting that it had come to this
+- watchful long after it was over
+- [one] a life I would have spared, given the choice
+- [!one] one by one, with care
+- [teeth] hunger being no crime, though it nearly cost me
+- [mechanical] such contraptions having no place in a living wood
+- [night] the light of Elune enough to fight by
+- [hc] aware how short even a long life can be made
+- [low] still learning how little time a fight allows
+- [high] with an old patience in my hands

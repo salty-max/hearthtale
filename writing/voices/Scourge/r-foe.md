@@ -1,0 +1,15 @@
+---
+kind: r-foe
+---
+- efficiently, the only virtue I insist on
+- [one] one more thing that would not get up again, unlike some of us
+- with no more fuss than the matter required
+- my own pulse, had I one, unbothered
+- [one] a poor argument, ended
+- [!one] persistent, though not as persistent as I was
+- [teeth] my flesh, such as it is, intact
+- [mechanical] at least it did not pretend to be alive
+- [night] the dark being more my element than theirs
+- [hc] not inclined to waste a second life
+- [low] still relearning what this body could take
+- [high] with a practised economy of effort

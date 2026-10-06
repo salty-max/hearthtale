@@ -2,12 +2,3 @@
 kind: c-travel
 ---
 - tramped on to {place}
-- made my way to {place}
-- walked on to {place}
-- headed for {place}
-- took the road to {place}
-- pushed on to {place}
-- made for {place}
-- [remark] tramped on to {place}, with more curiosity about the place than the road
-- [remark] made my way to {place}, glad to be past the last stretch
-- [remark] walked on to {place}, keen to put a place to the name

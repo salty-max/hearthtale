@@ -15,9 +15,3 @@ kind: c-prof
 - [!new] reached the standing of {rank} in {prof}
 - [!new] was trained to {rank} level in {prof}
 - [!new] was taught {prof} at {rank} level
-- [new remark] took up {prof}, curious what the trade would involve
-- [new remark] began to learn {prof}, with plenty about the trade still unfamiliar
-- [new remark] started learning {prof}, eager to get beyond the first lesson
-- [!new remark] trained as {rank} in {prof}, curious what the trade would involve
-- [!new remark] became {rank} in {prof}, with plenty about the trade still unfamiliar
-- [!new remark] qualified as {rank} in {prof}, eager to get beyond the first lesson

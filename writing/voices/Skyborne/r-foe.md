@@ -1,0 +1,16 @@
+---
+kind: r-foe
+---
+- [client:forever] the shift of the fight worth remembering
+- [client:forever] a little wiser about how such things move
+- [client:forever] with the wind still tugging at me afterwards
+- [client:forever one] quicker than I had read it
+- [client:forever] my balance found again only after
+- [client:forever one] one more pattern I had misread at first
+- [client:forever !one] each one changing the shape of the next
+- [client:forever teeth] keeping well clear of the teeth
+- [client:forever mechanical] built without any feeling for the air
+- [client:forever night] the dark changing every angle
+- [client:forever hc] aware how little the sky forgives a fall
+- [client:forever faction:horde] done as our mentors would have wished, I hoped
+- [client:forever faction:alliance] one more problem solved without waiting for answers from above

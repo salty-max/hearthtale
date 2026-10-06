@@ -4,6 +4,6 @@ type: zone
 home: Dwarf
 faction: alliance
 ---
-- [home] Ironforge's hammering followed the Great Forge's heat against my face. Above the molten iron, I let my people's noise fill the space the road had left.
-- [ally] Ironforge's heat met me after the mountain cold. The hammers ringing through the halls were almost comforting after the open country.
-- [foe] Ironforge's mountain closed around me amid hammering from every hall. With so many guards, its warmth offered me little comfort.
+- [home] The heat of the Great Forge met me at the gate, and the hammering followed me in. I stood above the molten iron and let the noise of my people fill the space the road had left.
+- [ally] After the mountain cold, the warmth of Ironforge was almost too much. The hammers rang through every hall, and I found the sound oddly comforting after the open country.
+- [foe] The mountain closed around me in Ironforge, with hammering from every hall. There were guards everywhere, and the warmth did little to put me at ease.

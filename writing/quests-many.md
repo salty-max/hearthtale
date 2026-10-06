@@ -14,3 +14,13 @@ kind: quests-many
 - [hc] I looked back over {n} tasks, grateful that I still had the chance to consider them.
 - [class:PALADIN] I had seen {n} tasks through, trying to give my convictions a place in ordinary work.
 - [class:HUNTER] The {n} tasks behind me had taught me to attend to the people along the road as well as the creatures beyond it.
+- [plain] I had finished {n} tasks.
+- [plain] That made {n} tasks in all.
+- [plain] In all, I had seen {n} tasks through.
+- [plain] The tasks came to {n}, the last for {giver}.
+- [plain] I had completed {n} tasks along the way.
+- [plain] I had done {n} tasks by the end.
+- [plain] The tasks numbered {n} by the time I stopped.
+- [plain] I had seen {n} tasks to their end.
+- [plain] That came to {n} tasks, {giver}'s the last.
+- [plain] All told, I had done {n} tasks.

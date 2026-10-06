@@ -1,0 +1,13 @@
+---
+kind: r-road
+---
+- the road long but not unkind
+- [!back] curious about the people who lived in it
+- [!back] a stranger, as everywhere
+- [!back] hoping for a welcome, if not expecting one
+- [!back] its shapes unlike anything on our world
+- [!back night] its lights a quiet comfort
+- [back] the faces more familiar now
+- [back] the way known, which was a gift
+- [back] finding it a little more like home
+- [high] one more place that had taken me in

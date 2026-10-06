@@ -1,0 +1,15 @@
+---
+kind: r-company
+---
+- the road easier for two
+- the talk better than I had expected
+- a second pair of eyes on the shadows
+- sharing the work and, now and then, the credit
+- learning more from watching than either of us admitted
+- our pace finding itself after a while
+- glad of the company
+- not that either of us said much
+- trading stories as the road allowed
+- [night] the dark easier to bear in company
+- [hc] safer, and both of us knew it
+- [low] both of us still finding our feet

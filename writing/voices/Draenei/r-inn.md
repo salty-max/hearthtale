@@ -1,0 +1,11 @@
+---
+kind: r-inn
+---
+- a place to return to, in a world still strange
+- the welcome kinder than I had hoped
+- somewhere to rest and remember
+- the stone a small anchor
+- a hearth among strangers who might become friends
+- the innkeeper courteous, as I tried to be
+- [night] the fire still lit for travellers
+- [hc] a refuge worth knowing well

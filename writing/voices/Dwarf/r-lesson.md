@@ -1,0 +1,13 @@
+---
+kind: r-lesson
+---
+- my hands slower than my pride
+- the sort of skill that comes with calluses
+- with a fair bit of the lesson to keep straight
+- keen to try it somewhere with more at stake
+- practised until my arms complained
+- the trainer gruff enough to be worth listening to
+- [new] starting at the bottom, as every apprentice does
+- [new] hoping for a little of my kin's old knack
+- [low] still a long way from a master's bench
+- [high] old lessons making room for one more

@@ -1,0 +1,15 @@
+---
+kind: r-foe
+---
+- a tidy bit of work, if I say so myself
+- not the worst scrap I had been in, nor the best
+- the sort of fight that tells better than it fights
+- solid on my feet by the end of it
+- [one] built sturdier than appearances suggested
+- [!one] more of them than was strictly fair
+- [teeth] my beard none the worse, which was the main thing
+- [mechanical] rattling like a badly hung door to the last
+- [night] the dark doing my aim no favours
+- [hc] my heart going like a forge bellows after
+- [low] my arms learning the trade as fast as they could
+- [high] the old work of it coming back to my hands

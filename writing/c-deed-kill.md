@@ -9,9 +9,6 @@ kind: c-deed-kill
 - [!one] overcame {n} {foes}
 - [!one] finished off {n} {foes}
 - [!one] cut down {n} {foes}
-- [!one remark] killed {n} {foes}, glad that encounter was over
-- [!one remark] hunted down {n} {foes}, not foes I wished to meet again
-- [!one remark] put down {n} {foes}, glad to be past that fight
 - [one] killed {foes}
 - [one] hunted down {foes}
 - [one] put down {foes}
@@ -20,7 +17,11 @@ kind: c-deed-kill
 - [one] overcame {foes}
 - [one] finished off {foes}
 - [one] cut down {foes}
-- [one remark] killed {foes}, glad that encounter was over
-- [one remark] hunted down {foes}, not a foe I wished to meet again
-- [one remark] put down {foes}, glad to be past that fight
-- [!one teeth remark] brought down {n} {foes}, glad to be beyond those teeth
+- [!one] saw off {n} {foes}
+- [!one] put an end to {n} {foes}
+- [!one] defeated {n} {foes}
+- [!one] got the better of {n} {foes}
+- [one] saw off {foes}
+- [one] put an end to {foes}
+- [one] defeated {foes}
+- [one] got the better of {foes}

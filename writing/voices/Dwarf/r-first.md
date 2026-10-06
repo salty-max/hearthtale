@@ -1,0 +1,11 @@
+---
+kind: r-first
+---
+- tougher than the tales at the bar made out
+- a fact for the ledger, if a sore one
+- worth knowing, the way bad ice is worth knowing
+- slower to fall than I would have liked
+- the kind of thing you remember by the bruise
+- [teeth] with fresh respect for what was in their mouths
+- [night] in bad light, which never helps an introduction
+- [low] a lesson my elders had somehow left out

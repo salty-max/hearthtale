@@ -1,0 +1,11 @@
+---
+kind: r-inn
+---
+- not that I need the sleep
+- somewhere to return to that did not flinch at me
+- a room, a door and fewer questions
+- the stone indifferent to my condition
+- the innkeeper's eyes not lingering, which I appreciated
+- a place of my choosing, which still matters
+- [night] the common room emptier, which suited me
+- [hc] a refuge worth having, even for one already dead

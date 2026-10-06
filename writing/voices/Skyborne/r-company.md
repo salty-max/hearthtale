@@ -1,0 +1,11 @@
+---
+kind: r-company
+---
+- [client:forever] the world easier to see with two
+- [client:forever] trading views as the road allowed
+- [client:forever] trusting them more by the end
+- [client:forever] learning from how they saw things
+- [client:forever] the work lighter for the sharing
+- [client:forever faction:horde] giving and receiving help as it should be
+- [client:forever faction:alliance] glad of help I had not needed to ask for
+- [client:forever night] the dark smaller with company

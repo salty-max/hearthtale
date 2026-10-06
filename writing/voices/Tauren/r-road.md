@@ -1,0 +1,13 @@
+---
+kind: r-road
+---
+- the earth steady beneath my hooves
+- the sky wide and the road long
+- [!back] listening to the land before entering it
+- [!back] curious what its people held dear
+- [!back] a stranger, though not unwelcome
+- [!back night] its fires a gentle welcome
+- [back] the land already familiar to me
+- [back] the faces greeting me kindly
+- [back] finding it much as I left it
+- [high] one more place the earth had shown me

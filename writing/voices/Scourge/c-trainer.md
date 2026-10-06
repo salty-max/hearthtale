@@ -1,14 +1,4 @@
 ---
 kind: c-trainer
 ---
-- learned {spells}
-- was taught {spells}
 - took instruction in {spells}
-- came away knowing {spells}
-- took lessons in {spells}
-- trained in {spells}
-- added {spells} to what I knew
-- came away from training with {spells}
-- [remark] learned {spells}, with a lesson I intended to remember
-- [remark] was taught {spells}, curious how the lesson would work away from the trainer
-- [remark] took instruction in {spells}, with rather more from the lesson to remember than expected

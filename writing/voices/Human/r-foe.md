@@ -1,0 +1,16 @@
+---
+kind: r-foe
+---
+- harder work than it had any right to be
+- my heart going for some time after
+- the kind of fight you never tell your mother about
+- no worse for it than a bruise or two
+- glad nobody had been watching
+- [one] one more thing that would not trouble the farms
+- [!one] the last of them the most stubborn
+- [teeth] keeping all my fingers, which I counted
+- [mechanical] its gears still ticking when it fell
+- [night] the dark making it uglier than it needed to be
+- [hc] reminded that the road owes nobody a safe return
+- [low] still more luck than skill, if I am honest
+- [high] steadier than I would once have been

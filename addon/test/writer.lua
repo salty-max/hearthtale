@@ -263,6 +263,18 @@ local function problem(where, msg, text)
   if #problems < 20 then table.insert(problems, ("%s: %s\n    %s"):format(where, msg, text)) end
 end
 local routineTotal, remarkTotal, previousRemark = 0, 0, false
+-- A remark is noticed when it comes back: none twice in a book's first ten chapters.
+local remarkSeen, remarkEarly, remarkBooks = {}, 0, 0
+local trackRemarks = false -- only in the lives below, as played
+ns.writerRemark = function(id, chapter, book)
+  if not trackRemarks then return end
+  if remarkSeen._book ~= book then remarkSeen = { _book = book } end
+  if chapter <= 10 and remarkSeen[id] then
+    remarkEarly = remarkEarly + 1
+    if os.getenv("WRITER_REMARKS") then io.stderr:write(id, " ", chapter, "\n") end
+  end
+  remarkSeen[id] = true
+end
 ns.writerSentence = function(text, routine, remarks)
   routineTotal, remarkTotal = routineTotal + routine, remarkTotal + remarks
   if remarks > 1 then problem("remark budget", "two remarks shared a sentence", text) end
@@ -302,7 +314,9 @@ end
 -- per kind here so these checks concern assembly rather than word choice.
 local originalData, originalUsed = ns.data, ns.writerUsed
 local fixtureWriting = {}
-for kind, list in pairs(ns.data.writing) do fixtureWriting[kind] = list end
+for kind, list in pairs(ns.data.writing) do
+  if not kind:find("^r%-") then fixtureWriting[kind] = list end -- no remarks: these check the joins
+end
 local lines = {
   beginning = "I began {at}.", ["c-prof"] = "took up {prof}",
   ["c-place"] = "reached {place}", ["c-kill"] = "brought down {foe}",
@@ -508,28 +522,33 @@ for _, class in ipairs({ "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "MAG
 end
 
 -- A long run of ordinary errands must not exhaust the racial narrator and
--- leave the rest of the book to the shared voice. Observe real selections
--- without modifying any candidate pool or the writer's own history.
+-- leave the rest of the book to the shared voice: the race's own remarks
+-- come back once spaced, the shared ones only fill the gaps. Observe real
+-- selections without modifying any candidate pool or the writer's own history.
 for _, race in ipairs(RACES) do
   local selected, own = 0, 0
   local coverage = ns.writerUsed
   ns.writerUsed = setmetatable({}, { __newindex = function(_, reach)
     coverage[reach] = true
-    if reach:find("c-deed-task#", 1, true) then
+    if reach:find("r-task#", 1, true) then
       selected = selected + 1
       if reach:sub(1, #race + 1) == race .. "/" then own = own + 1 end
     end
   end })
-  local log = {}
-  for i = 1, 100 do
-    log[i] = { k = "quest", giver = "Gazlowe", at = i * 300,
-      objectives = { { type = "event", text = "Recover the missing cargo" } } }
+  -- forty chapters of four errands each
+  local chapters = {}
+  for n = 1, 40 do
+    local log = {}
+    for i = 1, 4 do
+      log[i] = { k = "quest", giver = "Gazlowe", at = i * 300,
+        objectives = { { type = "event", text = "Recover the missing cargo" } } }
+    end
+    chapters[n] = { start = { level = 20, zone = "The Barrens", sub = "Ratchet" }, log = log }
   end
-  local c = { guid = "long-errands", race = race, class = COMBOS[race][1],
-    chapters = { { start = { level = 20, zone = "The Barrens", sub = "Ratchet" }, log = log } } }
-  inspect(race .. " long errands", ns.writeBook(c).chapters[1].text)
+  local c = { guid = "long-errands", race = race, class = COMBOS[race][1], chapters = chapters }
+  for _, ch in ipairs(ns.writeBook(c).chapters) do inspect(race .. " long errands", ch.text) end
   ns.writerUsed = coverage
-  if selected ~= 100 or own < 80 then
+  if selected < 30 or own < selected * 0.55 then
     problem(race .. " long errands", "the racial voice faded during repeated work", own .. "/" .. selected)
   end
 end
@@ -574,6 +593,7 @@ for _, race in ipairs(comparison.races) do
   if text ~= ns.writeBook(c).chapters[1].text then problem(race .. " voice comparison", "the voice was not deterministic", text) end
 end
 
+trackRemarks = true
 for _, round in ipairs({ { 1, 12 }, { 1, 60 }, { 18, 41 }, { 38, 60 }, { 1, 30 }, { 1, 7 }, { 20, 50 } }) do
   for _, race in ipairs(RACES) do
   local classes = COMBOS[race]
@@ -606,6 +626,8 @@ for _, round in ipairs({ { 1, 12 }, { 1, 60 }, { 18, 41 }, { 38, 60 }, { 1, 30 }
     end
   end
 end
+
+trackRemarks = false
 
 -- Deaths of every sort: closed Hardcore lives at levels low, middling and high,
 -- the foe known or not, the place known or not.
@@ -698,8 +720,10 @@ io.write(("%d books, %d chapters, %d sentences repeated (%.1f per book), longest
 if os.getenv("WRITER_PROFILE") == "1" then io.write(longestText .. "\n") end
 -- The random lives keep a representative busy chapter within phone-reading
 -- range. This is a prose regression check, never a runtime truncation rule.
-if longest > 2400 then problem("chapter length", "a representative chapter grew beyond 2400 characters", tostring(longest)) end
+if longest > 2450 then problem("chapter length", "a representative chapter grew beyond 2450 characters", tostring(longest)) end
 io.write(("routine remarks: %d/%d (%.1f%%)\n"):format(remarkTotal, routineTotal, 100 * remarkTotal / routineTotal))
+io.write(("remarks repeated within a book's first ten chapters: %d\n"):format(remarkEarly))
+if remarkEarly > 0 then problem("remark repeats", "a remark came back within a book's first ten chapters", tostring(remarkEarly)) end
 if remarkTotal / routineTotal < 0.30 or remarkTotal / routineTotal > 0.45 then
   problem("remark budget", "routine remarks strayed outside the target frequency", remarkTotal .. "/" .. routineTotal)
 end

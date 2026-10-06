@@ -9,8 +9,3 @@ kind: c-deed-task
 - set out to {task} and did so
 - did what was needed to {task}
 - undertook to {task}
-- [remark] carried out {giver}'s request to {task}, glad to be done with {giver}'s errand
-- [remark] managed to {task}, not an errand I wished to repeat
-- [remark] found a way to {task}, with little appetite for another errand of that sort
-- [explore remark] managed to {task}, glad to have more than a name for that ground
-- [escort remark] was able to {task}, glad to have the escort behind me

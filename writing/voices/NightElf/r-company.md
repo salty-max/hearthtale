@@ -1,0 +1,11 @@
+---
+kind: r-company
+---
+- our silences companionable
+- two watchers being better than one
+- learning their ways as they learned mine
+- trusting them a little more by the end
+- the road gentler for the company
+- glad of a steady companion
+- [night] the moonlight shared between us
+- [hc] each of us guarding the other's back

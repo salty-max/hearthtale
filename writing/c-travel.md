@@ -8,6 +8,3 @@ kind: c-travel
 - took the road to {place}
 - pushed on to {place}
 - made for {place}
-- [remark] went on to {place}, glad to put the last stretch behind me
-- [remark] made my way to {place}, curious what I would find on arrival
-- [remark] walked on to {place}, with more interest in the destination than the walk

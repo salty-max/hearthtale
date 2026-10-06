@@ -1,0 +1,11 @@
+---
+kind: r-inn
+---
+- with rather more hope of an ale on my return
+- a good stone, and a better hearth
+- the barkeep's name already in my head
+- somewhere warm with a cellar under it
+- the beds short but sound
+- the kind of place you would walk home to in a blizzard
+- [night] the fire banked but not out
+- [hc] a door I could shut on the world

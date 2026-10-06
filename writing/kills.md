@@ -20,9 +20,18 @@ kind: kills
 - [class:MAGE] I had brought down {n} {foes}, putting lessons to a test quite different from remembering them.
 - [class:ROGUE] I had dealt with {n} {foes}, and had reason by the end to value care as much as quickness.
 - [class:PRIEST] I had fought {n} {foes}, with rather more to consider afterwards than the number.
-- [class:DRUID] I had brought down {n} {foes}, learning about the world in a way that left me much to think over.
 - [class:SHAMAN] I had killed {n} {foes}, and tried to find a place for what the fighting had taught me.
 - [class:WARRIOR] I had fought {n} {foes}, gaining a clearer sense of what I could ask of my strength.
 - I had killed {n} {foes} in all {at}, a part of the day I was ready to put behind me.
 - By the end I had put down {n} {foes} {at}, glad that the fighting was now something to remember.
 - I had come through encounters with {n} {foes} {at}, with more of the road still left to take.
+- [plain] I had fought {n} {foes} {at}.
+- [plain] The fighting came to {n} {foes}.
+- [plain] I had faced {n} {foes} {at}.
+- [plain] I counted {n} {foes} among the fighting.
+- [plain] Most of the fighting had been against {n} {foes}.
+- [plain] I had brought down {n} {foes} over the stretch.
+- [plain] The fighting {at} had mostly been against {n} {foes}.
+- [plain] I had killed {n} {foes} in all.
+- [plain] My tally came to {n} {foes}.
+- [plain] Of the fighting, {n} {foes} made up the most.

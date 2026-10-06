@@ -1,0 +1,17 @@
+---
+kind: r-task
+---
+- not quite sure what I had set in motion
+- curious what would come of it
+- the kind of work that keeps a place running
+- learning more of the place than the errand required
+- with a better sense of who answered to whom
+- a small thing, though someone had needed it done
+- without anyone explaining why, which no longer surprised me
+- my opinion of the errand improving as it went
+- a step further into how things were done here
+- [explore] with a new map forming in my head
+- [explore] the ground making more sense with every step
+- [escort] matching my pace to someone slower and more nervous
+- [escort] watching the road for both of us
+- [night] the dark adding nothing helpful

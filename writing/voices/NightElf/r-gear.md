@@ -1,0 +1,11 @@
+---
+kind: r-gear
+---
+- [!made] light enough not to trouble my step
+- [!made] fine work, though not our own
+- [!made] quiet enough for the forest
+- [!made] needing a few days to feel like mine
+- [!made hc] one more care taken against a careless end
+- [made] each seam laid with patience
+- [made] made slowly, and the better for it
+- [made] with the care of the making still in mind

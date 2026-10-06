@@ -1,0 +1,11 @@
+---
+kind: r-company
+---
+- better company than I had expected
+- the conversation surprisingly tolerable
+- sharing the burden with some grace
+- trusting them a little more by the end
+- the road less tedious for it
+- their manners passable, mine impeccable
+- [night] the dark rather less oppressive in company
+- [hc] each of us careful of the other

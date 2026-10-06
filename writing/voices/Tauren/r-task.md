@@ -1,0 +1,13 @@
+---
+kind: r-task
+---
+- a small kindness, freely given
+- the sort of help a tribe is built on
+- learning the needs of the people here
+- done patiently, which is to say done well
+- with no need of thanks
+- a debt of friendship honoured
+- [explore] the land speaking a little more plainly to me
+- [explore] walking it slowly, as the old ones taught
+- [escort] matching my pace to theirs
+- [night] the stars enough to walk by

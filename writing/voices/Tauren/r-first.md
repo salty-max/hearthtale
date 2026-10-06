@@ -1,0 +1,11 @@
+---
+kind: r-first
+---
+- creatures of this land as much as I was
+- watching how they moved before I judged them
+- worthy of respect, if not of trust
+- the Earth Mother's children, all the same
+- a lesson in patience as much as in danger
+- [teeth] fierce in the way of hungry things
+- [night] their shapes hard to read in the dark
+- [low] one more thing my elders had not had time to tell me

@@ -1,0 +1,11 @@
+---
+kind: r-gear
+---
+- [!made] good enough to keep
+- [!made] better than what I wore before
+- [!made] fitting well enough after a bit of work
+- [!made] light, which I like
+- [!made hc] one more thing standing between me and a bad end
+- [made] made with my own hands, the old way
+- [made] rough, but sure to hold
+- [made] my own work, and proud of it

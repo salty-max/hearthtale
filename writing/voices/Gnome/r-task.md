@@ -1,0 +1,13 @@
+---
+kind: r-task
+---
+- efficiently, if I say so myself
+- a small task neatly finished
+- the sort of thing that only looks simple
+- a few improvements to the process already in mind
+- learning who here actually knew what they were doing
+- with the satisfaction of a ticked box
+- [explore] sketching the layout in my head as I went
+- [explore] the place more interesting than its map
+- [escort] working out how to go faster without saying so
+- [night] my lamp doing more work than I was

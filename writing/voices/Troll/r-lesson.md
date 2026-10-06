@@ -1,0 +1,13 @@
+---
+kind: r-lesson
+---
+- one more trick for the pack
+- worth the time, every bit
+- the trainer's way a little different from mine
+- practised until it came easy
+- eager to try it where it counted
+- the kind of lesson that keeps you breathing
+- [new] something new for the tribe to use
+- [new] starting slow, as the wise do
+- [low] still green in this, but learning
+- [high] fitting neatly among the old tricks

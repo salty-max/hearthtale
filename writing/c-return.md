@@ -8,6 +8,3 @@ kind: c-return
 - found myself back in {place}
 - took the road back to {place}
 - came back to {place}
-- [remark] went back to {place}, glad to recognise the name again
-- [remark] returned to {place}, with rather less uncertainty about the route
-- [remark] made my way back to {place}, glad to be headed somewhere familiar

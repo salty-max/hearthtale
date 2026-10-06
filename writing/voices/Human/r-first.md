@@ -1,0 +1,11 @@
+---
+kind: r-first
+---
+- nothing like the stories they tell at harvest
+- worth knowing, in the way bad news is worth knowing
+- quicker than anyone had warned me
+- the sort of thing a guard would have shrugged at
+- a lesson in not trusting how things look
+- [teeth] with more teeth than any farm dog
+- [night] which I would rather have met by daylight
+- [low] one more thing the recruiters never mentioned

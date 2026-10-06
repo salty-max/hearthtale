@@ -1,0 +1,13 @@
+---
+kind: r-item
+---
+- with the patience of someone not short of time
+- for reasons nobody volunteered
+- the smell bothering everyone but me
+- [!one] not a collection I intended to keep
+- [!one] the count exact, which is more than the request was
+- [one] someone's treasure, apparently
+- [one] in better condition than its previous owner
+- [meat] food for those who still need it
+- [cloth] the living's appetite for cloth remaining a mystery
+- [night] the dark no obstacle to me

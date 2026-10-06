@@ -3,4 +3,4 @@ place: Blackfathom Deeps
 type: dungeon
 faction: neutral
 ---
-- In Blackfathom Deeps, seawater hid the temple's steps. Sounds carried through the halls, and I listened before moving.
+- Seawater had climbed the temple steps in Blackfathom Deeps and stayed there. Every sound carried through the drowned halls, so I listened before I moved.

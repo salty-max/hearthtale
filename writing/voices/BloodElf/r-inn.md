@@ -1,0 +1,11 @@
+---
+kind: r-inn
+---
+- somewhere to retreat to with dignity
+- the rooms adequate, the company less so
+- a small certainty in an uncertain world
+- the stone a quiet reassurance
+- a fire, a bed and some peace
+- the innkeeper attentive, which I appreciated
+- [night] the common room blessedly quiet
+- [hc] a sanctuary worth knowing

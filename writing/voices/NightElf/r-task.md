@@ -1,0 +1,13 @@
+---
+kind: r-task
+---
+- the need behind it older than the one who asked, I suspected
+- with time enough to do it properly
+- learning the shape of the place by its needs
+- an errand small enough to do well
+- with the patience such work deserves
+- the trees seeming to watch it done
+- [explore] slow enough to see what others pass by
+- [explore] the place keeping more secrets than it showed
+- [escort] matching my pace to someone with less time than I
+- [night] the stars enough to see by

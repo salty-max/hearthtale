@@ -1,0 +1,14 @@
+---
+kind: r-item
+---
+- weighing more in my pack than in the asking
+- with an eye to the workmanship
+- pleased to have the job done properly
+- [!one] counted and recounted, as a dwarf should
+- [!one] packed tight as a miner's cart
+- [one] small for all the bother, as these things go
+- [one] none the worse for where I found it
+- [meat] with rather more appetite for a cooked supper
+- [cloth] decent stuff, though I would sooner carry ore
+- [night] squinting by poor light the whole time
+- [hc] never lingering where the ground looked wrong

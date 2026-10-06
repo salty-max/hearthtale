@@ -1,0 +1,11 @@
+---
+kind: r-first
+---
+- a fascinating subject, at a safe distance
+- less predictable than my notes had suggested
+- worth a page of observations later
+- behaving in a way I had not accounted for
+- my hypothesis about them disproved within seconds
+- [teeth] with jaws that rewarded further study from afar
+- [mechanical] built worse than I would have built it
+- [low] one more variable nobody had mentioned

@@ -1,0 +1,13 @@
+---
+kind: r-lesson
+---
+- with a good deal still to practise
+- the trainer patient, or at least polite
+- pleased to have something new to rely on
+- keen to see if it would hold up outside the yard
+- the knack of it slow in coming
+- a little more ready for whatever came next
+- [new] a trade that might feed me one day
+- [new] the first rung of a long ladder
+- [low] green as spring grass in it, still
+- [high] the lesson easier for all the ones before it

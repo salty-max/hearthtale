@@ -1,0 +1,11 @@
+---
+kind: r-company
+---
+- the road kinder for being shared
+- grateful for the company
+- learning their stories as they learned mine
+- trusting them a little more with each mile
+- the work lighter for two
+- kindness on both sides
+- [night] the dark less lonely together
+- [hc] each of us looking out for the other

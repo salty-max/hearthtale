@@ -1,0 +1,13 @@
+---
+kind: r-road
+---
+- my boots having opinions about the distance
+- the hills on either side worth a second look
+- [!back] keen to put a place to the name
+- [!back] judging the stonework before the people
+- [!back] curious what the locals would make of a dwarf
+- [!back night] lamplight in a window the first thing I saw
+- [back] the road shorter the second time, as roads are
+- [back] glad to be heading somewhere I knew
+- [back] the same ruts in the road as before
+- [high] one more road I could walk in my sleep

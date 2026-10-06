@@ -22,6 +22,13 @@ The plan and its decisions: PLAN.md.
   from broken grammar or a racial caricature. `docs/race-voices.md` records
   the lore sources, cultural outlooks and limits on expression for all races.
   Skyborne traditions require the recorded faction and the Forever catalog.
+- `writing/r-<pool>.md` (and `voices/<Race>/r-<pool>.md`): remarks, the
+  narrator's reaction a routine clause may end with ("…, with rather more
+  appetite for a cooked supper"). Pools by subject: `r-foe`, `r-first`,
+  `r-item`, `r-task`, `r-gear`, `r-lesson`, `r-road`, `r-inn`, `r-company`
+  (`ROUTINE` in `Writer.lua` maps each clause kind to its pool). Each is a
+  phrase after a comma: lower case, no stop, no leading "and". At least 12
+  shared, 8 per race.
 - `writing/scenery/<slug>.md`: a place described the first time a book meets
   it (front matter `place:`, `type:` zone | town | dungeon, `faction:`
   alliance | horde | neutral, optional `home:` races). Lines tagged by
@@ -77,15 +84,22 @@ The plan and its decisions: PLAN.md.
   "I" ("bound my hearthstone {inn}"). Related work may share a sentence;
   an arrival frames one action. Internal commas are allowed; a semicolon or
   full sentence closes the thought. Test joins in the generated sample.
-- Routine kinds have plain alternatives and personal reactions marked
-  `[remark]`. The writer budgets roughly one remark per two or three routine
-  clauses, at most one per sentence and never in consecutive sentences.
-  Do not hide a reflective tail in an unmarked action. Factual qualifiers
-  such as "which I had made myself" are facts, not remarks. The stronger
-  reflections in openings, danger, rest and scenery keep their own space.
-  A routine remark reacts to the recorded subject, not to a general virtue.
-  Topic tags (teeth, mechanical, cloth, meat, explore, escort) require evidence
-  in the records. Taming objectives leave the telling to the pet record;
+- Routine clauses (`c-*`) are plain facts; the voice of a routine moment is
+  in its remark (`r-*`). The writer adds one to roughly one routine clause in
+  three, at most one per sentence, never in consecutive sentences, and none
+  to a clause that already has a comma. A remark reacts to the subject (the
+  foe, the find, the lesson, the place), with a range of feeling: curiosity,
+  pride, unease, humour, not only weariness. It must read after one foe or
+  several, one item or a plural one ("Sentinel Trousers"): `[one]`/`[!one]`
+  for number, no "it" for an item, no "there" (the writer's own). Returns
+  are `[back]`, first arrivals `[!back]`. A race's own remarks come first, and
+  come back after `REMARK_GAP` (10) chapters; shared ones fill every other
+  gap; otherwise the clause goes without. A routine clause avoids the verb of
+  the one before. Race files hold only routine lines unique to the race.
+- The chapter's recap (tasks, fighting, time) holds one thought: the others
+  are its `[plain]` sentences. The rest that ends the chapter has its own.
+- Topic tags (teeth, mechanical, cloth, meat, explore, escort, made) require
+  evidence in the records. Taming objectives leave the telling to the pet record;
   no later pet event may remove an already written quest sentence.
 - Connectors need evidence: time passing, nightfall, an arrival, or the
   aftermath of a close call. Do not scatter "then" between unrelated jobs.

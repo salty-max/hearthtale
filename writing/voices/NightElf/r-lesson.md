@@ -1,0 +1,13 @@
+---
+kind: r-lesson
+---
+- aware that knowing a thing and understanding it are not the same
+- the teaching older than the teacher
+- practised in quiet until it came without thought
+- a little more patient with myself than before
+- with time enough to master it, I hoped
+- the lesson settling slowly, as the best ones do
+- [new] the first step of a long path
+- [new] curious what the craft would ask of me
+- [low] young in this, if in little else
+- [high] the new and the old settling together
