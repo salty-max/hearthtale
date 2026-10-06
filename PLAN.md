@@ -8,6 +8,16 @@ Games: Classic Era (Hardcore, Season of Discovery), TBC Anniversary, World of
 Warcraft: Forever. One source, one package per game, as Lorekeeper's Codex and
 Explorer's Field Journal (same release, CI and CurseForge tooling).
 
+## Voices and scenery (6 October 2026)
+
+| Question | Decision |
+|---|---|
+| Voice | Each race writes its own journal: its own clauses and sentences for the everyday moments, its own rhythm (how many clauses a sentence holds, its linking words), its own way of opening and closing a day. The shared writing stays as the fallback where a race has nothing of its own. (Example: six wolves for Sten Stoutarm, then the inn. Dwarf: "Six wolves for Sten Stoutarm, and not one of them worth the leather. Back to Anvilmar, an ale, bed." Orc: "Six wolves. Sten Stoutarm asked; I did it. Then the inn, and sleep.") |
+| Dialect | Flavour, no caricature: turns of phrase and outlook, a few words of their own used sparingly; no phonetic accents. |
+| Scenery | The first time in a life that the character enters a zone, a town or a dungeon: 2-3 hand-written sentences describing it, true to the original game. |
+| Viewpoint | Each place reads differently for who arrives: home (a dwarf in Dun Morogh), an ally's land, enemy ground (an orc in Elwynn), neutral; by night or day. |
+| Order | A sample first: the dwarf, orc, night elf and Forsaken voices, and the scenery of their starting lands, capitals, first towns and nearby dungeons; then the other races (and Forever's Skyborne) and the rest of the world. |
+
 ## The name (6 October 2026)
 
 Wayfarer's Journal becomes **Hearthtale**: the hearth (the inn, the hearthstone,

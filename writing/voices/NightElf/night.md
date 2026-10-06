@@ -1,0 +1,13 @@
+---
+kind: night
+---
+- [!last] I slept beneath the stars {at}, as my people always have.
+- [!last] No roof {at}, only branches and the moon. It was enough.
+- [!last] I rested {at} in the roots of an old tree.
+- [!last] I slept lightly {at}, and listened to the dark.
+- [!last] A night {at} under the open sky. Elune watched over me.
+- [!last] I lay down {at} on the moss and let the night pass.
+- [last] Too many nights beneath the sky. I rested {at}, and let this chapter close.
+- [last] Under the stars {at} again, I set this part of the tale down.
+- [last] Another night {at} in the open. This stretch of the road ends here.
+- [!last] I slept beneath the stars {at}, as my people have always done.

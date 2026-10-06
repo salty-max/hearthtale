@@ -50,7 +50,7 @@ local function moves(G)
     state.level = state.level + 1
     fire("PLAYER_LEVEL_UP", state.level)
   end
-  local spellIds = { ["Serpent Sting"] = 1978, ["Track Beasts"] = 1494, ["Arcane Shot"] = 3044, ["Hunter's Mark"] = 1130,
+  local spellIds = { ["Bear Form"] = 5487, ["Serpent Sting"] = 1978, ["Track Beasts"] = 1494, ["Arcane Shot"] = 3044, ["Hunter's Mark"] = 1130,
     ["Raptor Strike"] = 14260, ["Concussive Shot"] = 5116, ["Mend Pet"] = 136, ["Leatherworking"] = 2108, ["Skinning"] = 8613 }
   local function learn(...)
     for _, spell in ipairs({ ... }) do
@@ -316,6 +316,103 @@ function lives.aldric()
     go("Tranquil Gardens Cemetery")
     slay("Flesh Eating Worm", 6, "Beast")
   end)
+  ding()
+  return G
+end
+
+-- An orc warrior's first days: the Valley of Trials, Razor Hill, then Orgrimmar.
+function lives.grashnak()
+  local G = dofile("addon/test/game.lua")
+  local m = moves(G)
+  local slay, go, task, slain, found, ding, learn, wear, closeCall, rest =
+    m.slay, m.go, m.task, m.slain, m.found, m.ding, m.learn, m.wear, m.closeCall, m.rest
+  begin(G, { name = "Grashnak", race = "Orc", class = "WARRIOR", hardcore = false, guid = "Player-6113-0D21E5A0", level = 1,
+    realm = "Firemaw", region = 3, hour = 8, zone = "Durotar", sub = "Valley of Trials", bind = "Razor Hill" })
+  task("Cutting Teeth", "Gornek", slain("Mottled Boar", 10), function() slay("Mottled Boar", 10, "Beast", "Boar") end)
+  task("Sarkoth", "Hana'zua", slain("Sarkoth", 1), function() slay("Sarkoth", 1, "Beast", "Scorpid") end)
+  ding()
+  task("Vile Familiars", "Zureetha Fargaze", slain("Vile Familiar", 12), function() slay("Vile Familiar", 12, "Demon") end)
+  task("Galgar's Cactus Apple Surprise", "Galgar", found("Cactus Apple", 10), function() G.wait(15 * 60) end)
+  ding()
+  task("Lazy Peons", "Foreman Thazz'ril", { text = "Peons Awoken: 0/5", type = "event" }, function() G.wait(10 * 60) end)
+  task("Report to Sen'jin Village", "Gornek", nil, function() go("Razor Hill") end, "Master Gadrin")
+  learn("Rend", "Battle Shout")
+  wear(5, "Rough Leather Vest")
+  ding()
+  task("Sting of the Scorpid", "Rezlak", found("Scorpid Worker Tail", 8), function() slay("Scorpid Worker", 9, "Beast", "Scorpid") end)
+  closeCall("Kul Tiras Marine", 9)
+  task("Vanquish the Betrayers", "Gar'Thok", slain("Kul Tiras Sailor", 10), function() slay("Kul Tiras Sailor", 10) end)
+  ding()
+  rest(9)
+  go("Valley of Strength", "Orgrimmar")
+  learn("Charge", "Thunder Clap")
+  task("Hidden Enemies", "Thrall", nil, function() G.wait(10 * 60) end, "Gor the Enforcer")
+  ding()
+  return G
+end
+
+-- A night elf druid's first days: Shadowglen, Dolanaar, Darnassus, and her first new shape.
+function lives.aelyndra()
+  local G = dofile("addon/test/game.lua")
+  local m = moves(G)
+  local slay, go, task, slain, found, ding, learn, wear, rest, camp =
+    m.slay, m.go, m.task, m.slain, m.found, m.ding, m.learn, m.wear, m.rest, m.camp
+  begin(G, { name = "Aelyndra", race = "NightElf", class = "DRUID", hardcore = true, guid = "Player-6113-0E33B7C1", level = 1,
+    realm = "Soulseeker", region = 3, hour = 20, zone = "Teldrassil", sub = "Shadowglen", bind = "Dolanaar" })
+  task("The Balance of Nature", "Conservator Ilthalaine", slain("Young Nightsaber", 7), function()
+    slay("Young Nightsaber", 7, "Beast", "Cat")
+    slay("Young Thistle Boar", 4, "Beast", "Boar")
+  end)
+  task("Etched Sigil", "Conservator Ilthalaine", nil, function() G.wait(5 * 60) end, "Mardant Strongoak")
+  ding()
+  task("The Woodland Protector", "Tarindrella", slain("Grell", 8), function() slay("Grell", 8, "Demon") end)
+  task("Webwood Venom", "Gilshalan Windwalker", found("Webwood Venom Sac", 10), function() slay("Webwood Spider", 11, "Beast", "Spider") end)
+  ding()
+  learn("Moonfire", "Rejuvenation")
+  task("A Good Friend", "Dirania Silvershine", nil, function() go("Dolanaar") end, "Iverron")
+  ding()
+  camp(8)
+  task("Zenn's Bidding", "Zenn Foulhoof", found("Nightsaber Pelt", 3), function() slay("Nightsaber", 4, "Beast", "Cat") end)
+  task("The Emerald Dreamcatcher", "Tallonkai Swiftroot", found("Emerald Dreamcatcher", 1), function() G.wait(12 * 60) end)
+  wear(7, "Sentinel Trousers")
+  ding()
+  rest(9)
+  go("Temple of the Moon", "Darnassus")
+  task("Body and Heart", "Mathrengyl Bearwalker", { text = "Moonkin Stone found", type = "event" }, function() G.wait(15 * 60) end)
+  learn("Bear Form")
+  ding()
+  return G
+end
+
+-- A Forsaken priest's first days: Deathknell, Brill, the Undercity.
+function lives.mortis()
+  local G = dofile("addon/test/game.lua")
+  local m = moves(G)
+  local slay, go, task, slain, found, ding, learn, wear, rest =
+    m.slay, m.go, m.task, m.slain, m.found, m.ding, m.learn, m.wear, m.rest
+  begin(G, { name = "Mortis", race = "Scourge", class = "PRIEST", hardcore = false, guid = "Player-6113-0F44C8D2", level = 1,
+    realm = "Firemaw", region = 3, hour = 22, zone = "Tirisfal Glades", sub = "Deathknell", bind = "Brill" })
+  task("Rude Awakening", "Undertaker Mordo", nil, function() G.wait(5 * 60) end, "Shadow Priest Sarvis")
+  task("The Mindless Ones", "Shadow Priest Sarvis", slain("Mindless Zombie", 8), function()
+    slay("Mindless Zombie", 8, "Undead")
+    slay("Wretched Zombie", 8, "Undead")
+  end)
+  ding()
+  task("Night Web's Hollow", "Executor Arren", slain("Young Night Web Spider", 10), function() slay("Young Night Web Spider", 10, "Beast", "Spider") end)
+  task("Scavenging Deathknell", "Deathguard Saltain", found("Scavenged Goods", 6), function() G.wait(15 * 60) end)
+  ding()
+  task("The Scarlet Crusade", "Executor Arren", found("Scarlet Armband", 12), function() slay("Scarlet Convert", 12) end)
+  learn("Shadow Word: Pain", "Power Word: Shield")
+  ding()
+  go("Brill")
+  task("Fields of Grief", "Apothecary Johaan", found("Tirisfal Pumpkin", 10), function() G.wait(20 * 60) end)
+  task("Wanted: Maggot Eye", "Executor Zygand", slain("Maggot Eye", 1), function() slay("Maggot Eye", 1, "Humanoid", nil, "elite") end)
+  wear(5, "Lightweight Chain Robe")
+  ding()
+  rest(9)
+  go("The Trade Quarter", "Undercity")
+  learn("Renew", "Mind Blast")
+  task("The Chill of Death", "Master Apothecary Faranell", found("Vile Fin Scale", 5), function() G.wait(10 * 60) end)
   ding()
   return G
 end

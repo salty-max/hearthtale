@@ -3,7 +3,6 @@ kind: flight
 ---
 - [first aside] I flew for the first time, from {from} to {to}. My stomach stayed in {from}.
 - [first aside] My first flight: {from} to {to}. I held on with both hands and my eyes shut.
-- [first race:Dwarf aside] I flew for the first time, from {from} to {to}. A dwarf is not built for the sky, and I said so all the way.
 - [first race:Tauren aside] I flew from {from} to {to}, my first time. The wind rider complained about my weight; I complained about the height.
 - [first race:Gnome aside] My first flight, {from} to {to}. I spent it working out how the thing stays up.
 - [!first] I flew from {from} to {to}.

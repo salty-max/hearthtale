@@ -409,7 +409,7 @@ fire("ZONE_CHANGED")
 ns.writerUsed = {}
 ns.writeBook(K)
 local told = false
-for key in pairs(ns.writerUsed) do if key:find("^died#") then told = true end end
+for key in pairs(ns.writerUsed) do if key:find("died#", 1, true) then told = true end end -- the shared line or the race's own
 ns.writerUsed = nil
 local died, last = 0, K.chapters[#K.chapters].log
 for _, m in ipairs(last) do if m.k == "died" then died = died + 1 end end

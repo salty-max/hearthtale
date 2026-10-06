@@ -1,0 +1,12 @@
+---
+kind: opening
+---
+- [!night] Morning {at}. I sharpened my blade.
+- [!night] Dawn {at}. Time to work.
+- [night] Night {at}. I do not fear it.
+- I set out from {where}.
+- {where}. On my feet, weapon ready.
+- I woke {at} and went to war.
+- [!night] Sunrise {at}. A good day for blood.
+- {where} again. Onward.
+- I woke {at} with the old war songs in my head.

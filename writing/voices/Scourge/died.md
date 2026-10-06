@@ -1,0 +1,13 @@
+---
+kind: died
+---
+- [foe] {foe} killed me {at}. Again. It gets less interesting each time.
+- [foe] I died to {foe} {at}. The spirit healer barely looked up.
+- [fall] I fell to my death {at}. I've had practice.
+- [drowning] I drowned {at}. I don't breathe, so this was mostly a misunderstanding.
+- I died {at}. I came back. I always do.
+- I died {at}. Again. It gets less interesting each time.
+- [lava] I walked into fire {at}. The dead burn well, as it turns out.
+- [nature] I died {at}. The world itself did it, which seems unfair, given I was already dead.
+- [foe] {foe} killed me {at}. I'll be back for it. I always come back.
+- I died {at}. Death and I are old acquaintances; neither of us was impressed.

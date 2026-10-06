@@ -1,0 +1,17 @@
+---
+kind: c-deed-kill
+---
+- [!one] hunted {n} {foes} for {giver}
+- [!one] culled {n} {foes}, as {giver} asked, and took no joy in it
+- [!one] cleared {n} {foes} from the paths
+- [!one] brought down {n} {foes} and told {ender} it was done
+- [!one] tracked {n} {foes} through the trees
+- [!one] restored a little balance: {n} {foes}
+- [!one] ended {n} {foes}
+- [!one] hunted {n} {foes} beneath the boughs
+- [!one] thinned the {foes}, {n} of them
+- [one] ended {foes}, as {giver} asked
+- [one] hunted down {foes}
+- [one] found {foes} and put an end to its wrongs
+- [one] brought {foes} down
+- [one] set things right with {foes}

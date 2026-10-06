@@ -1,0 +1,12 @@
+---
+kind: opening
+---
+- [!night] Morning {at}. The sun was as rude as ever.
+- [!night] Daylight {at}. I set out regardless.
+- [night] Night {at}. My kind of hour.
+- [night] {where}, in the dark, where I'm most at home.
+- I left {where}. No one waved.
+- {where}, and the road out of it.
+- I set out from {where}, as one does.
+- I took up the road {at}. The dead keep no hours.
+- [aside] {where}. The living stared at me less than usual.

@@ -1,0 +1,12 @@
+---
+kind: died
+---
+- [foe] {foe} killed me {at}. I walked back from the graveyard, cursing every step.
+- [foe] I fell to {foe} {at}. Back on my feet soon enough, with a lesson learned.
+- [fall] I fell to my death {at}. Dwarves are meant to go down into the earth, not off it.
+- [drowning] I drowned {at}. Dwarves sink; it's no secret.
+- I died {at}. The walk back was long, and I had words for all of it.
+- [lava] I walked into fire {at}. Even a dwarf has limits.
+- [nature] I died {at}, and nothing with a face did it. The mountain takes its due.
+- [foe] {foe} got the better of me {at}. I'll have that back, with interest.
+- I died {at}. My ancestors sent me back; they said I owed them a drink.
