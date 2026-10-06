@@ -58,6 +58,7 @@ const KINDS: Record<string, string[]> = {
   "close-light": ["foe", "at", "in"],
   "close-deep": ["foe", "at", "in"],
   dungeon: ["dungeon", "boss", "mates"],
+  "boss-final": ["boss", "dungeon"],
   closing: ["time", "gold"],
   prologue: ["at", "in", "zone", "quests", "inn", "played"],
   died: ["foe", "at", "in"],
@@ -84,6 +85,7 @@ const KINDS: Record<string, string[]> = {
   "c-deed-item": ["n", "thing", "giver", "ender"],
   "c-deed-task": ["task", "giver", "ender"],
   "c-deed-word": ["giver", "ender"],
+  "c-deliver": ["thing", "ender", "giver"],
   "c-quest": ["giver"],
   "c-trainer": ["spells"],
   "c-skill": ["skill", "rank"],
@@ -91,6 +93,7 @@ const KINDS: Record<string, string[]> = {
   "c-gear": ["item"],
   "c-loot": ["item"],
   "c-group": ["mates"],
+  "c-wear-found": [],
   "c-inn": ["inn"],
   "c-boss": ["boss", "dungeon"],
   "c-tame": ["pet", "family"],
@@ -100,9 +103,9 @@ const KINDS: Record<string, string[]> = {
 };
 const VOICE = ["home", "kin", "faith", "weapon"];
 const TAGS = ["home", "ally", "foe", "neutral", "night", "hc", "high", "low", "first", "elite", "lots", "many", "slow", "quick",
-  "foe", "fall", "drowning", "lava", "nature", "beast", "people", "player", "inside", "rest", "fire", "last", "one", "aside", "plain", "back", "teeth", "mechanical", "cloth", "meat", "explore", "escort", "new", "made", "form", "demon", "steed"];
+  "foe", "fall", "drowning", "lava", "nature", "beast", "people", "player", "inside", "rest", "fire", "last", "one", "aside", "plain", "back", "trophy", "teeth", "mechanical", "cloth", "meat", "explore", "escort", "new", "made", "form", "demon", "steed"];
 const RACES = ["Human", "Dwarf", "NightElf", "Gnome", "Draenei", "Orc", "Troll", "Tauren", "Scourge", "BloodElf", "Skyborne"];
-const ROUTINE = new Set("deed-kill deed-item deed-task deed-word kill first gear trainer inn travel return place group skill prof".split(" ").map((kind) => `c-${kind}`));
+const ROUTINE = new Set("deed-kill deed-item deed-task deed-word deliver kill first gear trainer inn travel return place group skill prof".split(" ").map((kind) => `c-${kind}`));
 // The recap's kinds: one sentence of the recap holds a thought, the others are plain.
 const RECAP = new Set(["quests-many", "kills", "kills-two", "closing"]);
 const CLASSES = ["WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK", "DRUID"];

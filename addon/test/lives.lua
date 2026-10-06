@@ -417,4 +417,161 @@ function lives.mortis()
   return G
 end
 
+-- An evening in Westfall: a human warrior, met at level 18 in Stormwind, takes
+-- the Deadmines' quests, finishes the Defias Brotherhood's trail, runs the
+-- dungeon with a group and turns everything in. Quests, objectives, givers,
+-- mobs, bosses and loot as in Classic (sample.lua deadmines).
+function lives.edric()
+  local G = dofile("addon/test/game.lua")
+  local m = moves(G)
+  local state, fire, itemLink = m.state, m.fire, m.itemLink
+  local slay, go, ding, learn, wear, closeCall, rest =
+    m.slay, m.go, m.ding, m.learn, m.wear, m.closeCall, m.rest
+  state.questsDone = {}
+  for i = 1, 64 do state.questsDone[i] = true end
+  state.gear = { [5] = "Defias Leather Vest", [16] = "Militia Warhammer" }
+  for _, name in pairs(state.gear) do itemLink(name, 2) end
+  begin(G, { name = "Edric", race = "Human", class = "WARRIOR", hardcore = false, guid = "Player-6113-0E51D9A4", level = 18,
+    realm = "Firemaw", region = 3, hour = 19, zone = "Stormwind City", sub = "Dwarven District", bind = "Sentinel Hill",
+    money = 4250, skills = { { "Weapon Skills", true }, { "Two-Handed Maces", false, 90 }, { "Languages", true }, { "Common", false, 300 } } })
+  G.fire("TIME_PLAYED_MSG", 151200, 3600)
+
+  -- The quest log: taken now, turned in later (not one task at a time).
+  state.titles, state.objectives = {}, {}
+  local serial = 500
+  local function accept(title, giver, objective)
+    serial = serial + 1
+    state.titles[serial], state.objectives[serial] = title, objective and { objective } or {}
+    state.npc = giver
+    fire("QUEST_ACCEPTED", 1, serial)
+    state.npc = nil
+    G.wait(MINUTE)
+    return serial
+  end
+  local function turnIn(id, ender, copper)
+    state.npc = ender
+    fire("QUEST_COMPLETE")
+    state.money = state.money + (copper or 0)
+    fire("QUEST_TURNED_IN", id, 1000, copper or 0)
+    state.npc = nil
+    G.wait(MINUTE)
+  end
+  local function found(name, n) return { text = name .. ": 0/" .. n, type = "item", numRequired = n } end
+  local function held(name) return { text = name .. ": 1/1", type = "item", numRequired = 1, finished = true } end
+  local function slain(name, n) return { text = name .. " slain: 0/" .. n, type = "monster", numRequired = n } end
+  local function loot(name, quality)
+    fire("CHAT_MSG_LOOT", "You receive loot: " .. itemLink(name, quality or 1) .. ".")
+  end
+  local function boss(name, type, id)
+    slay(name, 1, type or "Humanoid", nil, "elite")
+    fire("ENCOUNTER_END", id, name, 1, 5, 1)
+    G.wait(2 * MINUTE)
+  end
+  local function fly(from, to, zone, sub)
+    state.taxi = { from, to }
+    TakeTaxiNode(2)
+    G.wait(4 * MINUTE)
+    state.zone, state.sub = zone, sub
+    fire("ZONE_CHANGED_NEW_AREA")
+    G.wait(MINUTE)
+  end
+
+  -- ── Stormwind: the dwarves' and the gnome's requests ───────────────────────
+  local memories = accept("Collecting Memories", "Wilder Thistlenettle", found("Miners' Union Card", 4))
+  local brother = accept("Oh Brother. . .", "Wilder Thistlenettle", found("Thistlenettle's Badge", 1))
+  local assault = accept("Underground Assault", "Shoni the Shilent", found("Gnoam Sprecklesprocket", 1))
+  go("Trade District")
+  fly("Stormwind, Elwynn", "Sentinel Hill, Westfall", "Westfall", "Sentinel Hill")
+
+  -- ── Westfall: the end of the Defias Brotherhood's trail ─────────────────────
+  local message = accept("The Defias Brotherhood", "Gryan Stoutmantle", found("A Mysterious Message", 1))
+  go("The Dagger Hills")
+  slay("Defias Pathstalker", 3)
+  slay("Defias Messenger", 1)
+  loot("A Mysterious Message")
+  go("Sentinel Hill")
+  turnIn(message, "Gryan Stoutmantle", 600)
+  local escort = accept("The Defias Brotherhood", "The Defias Traitor",
+    { text = "Escort The Defias Traitor to discover where VanCleef is hiding", type = "event" })
+  go("Moonbrook")
+  slay("Defias Pillager", 2)
+  slay("Defias Highwayman", 1)
+  G.wait(5 * MINUTE)
+  go("Sentinel Hill")
+  turnIn(escort, "Gryan Stoutmantle", 700)
+  local head = accept("The Defias Brotherhood", "Gryan Stoutmantle", found("Head of VanCleef", 1))
+  local bandanas = accept("Red Silk Bandanas", "Scout Riell", found("Red Silk Bandana", 10))
+
+  -- ── a group, and the mine beneath Moonbrook ─────────────────────────────────
+  state.party = {
+    party1 = { name = "Thessaly", class = "PRIEST" }, party2 = { name = "Brannigan", class = "MAGE" },
+    party3 = { name = "Rowan", class = "ROGUE" }, party4 = { name = "Halvard", class = "PALADIN" },
+  }
+  fire("GROUP_ROSTER_UPDATE")
+  go("Moonbrook")
+  slay("Undead Excavator", 6, "Undead")
+  slay("Undead Dynamiter", 3, "Undead")
+  for _ = 1, 4 do loot("Miners' Union Card") end
+  slay("Foreman Thistlenettle", 1, "Undead")
+  loot("Thistlenettle's Badge")
+
+  -- ── the Deadmines ─────────────────────────────────────────────────────────────
+  state.instance, state.zone, state.sub = "The Deadmines", "The Deadmines", nil
+  fire("PLAYER_ENTERING_WORLD", false, false)
+  G.wait(2 * MINUTE)
+  slay("Defias Miner", 8)
+  slay("Defias Overseer", 4)
+  boss("Rhahk'Zor", "Humanoid", 1)
+  slay("Defias Taskmaster", 3)
+  slay("Defias Evoker", 2)
+  slay("Goblin Woodcarver", 5)
+  slay("Goblin Craftsman", 3)
+  slay("Sneed's Shredder", 1, "Mechanical", nil, "elite")
+  loot("Gnoam Sprecklesprocket")
+  boss("Sneed", "Humanoid", 2)
+  for _ = 1, 6 do loot("Red Silk Bandana") end
+  slay("Goblin Engineer", 4)
+  boss("Gilnid", "Humanoid", 3)
+  ding()
+  go("Ironclad Cove")
+  slay("Defias Pirate", 6)
+  slay("Defias Companion", 3, "Beast")
+  slay("Defias Squallshaper", 3)
+  for _ = 1, 4 do loot("Red Silk Bandana") end
+  closeCall("Mr. Smite", 8)
+  boss("Mr. Smite", "Humanoid", 4)
+  loot("Smite's Mighty Hammer", 3)
+  wear(16, "Smite's Mighty Hammer", 3)
+  slay("Defias Blackguard", 3)
+  boss("Captain Greenskin", "Humanoid", 5)
+  boss("Edwin VanCleef", "Humanoid", 6)
+  loot("Head of VanCleef")
+  loot("An Unsent Letter")
+  local letter = accept("The Unsent Letter", nil, held("An Unsent Letter"))
+  boss("Cookie", "Humanoid", 7)
+  state.instance, state.zone, state.sub = nil, "Westfall", "Moonbrook"
+  fire("PLAYER_ENTERING_WORLD", false, false)
+  state.party = {}
+  fire("GROUP_ROSTER_UPDATE")
+
+  -- ── back to Sentinel Hill, and Stormwind ──────────────────────────────────────
+  go("Sentinel Hill")
+  turnIn(head, "Gryan Stoutmantle", 1500)
+  wear(7, "Chausses of Westfall")
+  turnIn(bandanas, "Scout Riell", 650)
+  ding()
+  fly("Sentinel Hill, Westfall", "Stormwind, Elwynn", "Stormwind City", "Trade District")
+  go("Cathedral Square")
+  turnIn(letter, "Baros Alexston", 700)
+  go("Dwarven District")
+  turnIn(memories, "Wilder Thistlenettle", 800)
+  turnIn(brother, "Wilder Thistlenettle", 900)
+  turnIn(assault, "Shoni the Shilent", 900)
+  go("Old Town")
+  learn("Cleave", "Retaliation")
+  go("Trade District")
+  rest(10)
+  return G
+end
+
 return lives

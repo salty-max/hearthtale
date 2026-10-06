@@ -1,7 +1,7 @@
 ---
 kind: r-company
 ---
-- [client:forever] the world easier to see with two
+- [client:forever one] the world easier to see with two
 - [client:forever] trading views as the road allowed
 - [client:forever] trusting them more by the end
 - [client:forever] learning from how they saw things

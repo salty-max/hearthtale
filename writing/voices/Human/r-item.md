@@ -1,7 +1,7 @@
 ---
 kind: r-item
 ---
-- the sort of chore that keeps a village fed
+- the sort of chore that keeps a place running
 - with an ache in my back for my trouble
 - pleased someone had a use in mind
 - [!one] every one of them where someone had dropped it

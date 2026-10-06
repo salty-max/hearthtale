@@ -2,10 +2,10 @@
 kind: r-company
 ---
 - company I had chosen, still a novelty
-- the talk thin, which suited us both
+- [one] the talk thin, which suited us both
 - useful hands, whatever their pulse
 - not friendship exactly, though close to it
 - trusting them as far as I trust anyone
 - better company than I expected
-- [night] two shadows instead of one
+- [night one] two shadows instead of one
 - [hc] each keeping the other from a final end

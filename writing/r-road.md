@@ -8,7 +8,7 @@ kind: r-road
 - [!back] curious what the place would make of me
 - [!back] the road longer than it had looked
 - [!back] taking in the place before anyone noticed me
-- [!back] among people who did not know my face
+- [!back !home] among people who did not know my face
 - [!back night] its shapes uncertain in the dark
 - [back] the way familiar under my feet
 - [back] finding it much as I had left it

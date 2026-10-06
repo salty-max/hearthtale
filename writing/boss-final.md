@@ -1,0 +1,11 @@
+---
+kind: boss-final
+---
+- {boss} fell at last, and the place belonged to us.
+- {boss} fell, and with that the worst of {dungeon} was over.
+- It ended with {boss}. After so long in {dungeon}, the quiet felt strange.
+- We brought down {boss} at last. I stood a while before I trusted it was over.
+- {boss} was the last of them. I let my breath out slowly, for what felt like the first time in {dungeon}.
+- In the end {boss} fell, and the whole place seemed to breathe out.
+- When {boss} finally went down, nobody spoke for a moment. Then everyone spoke at once.
+- [hc] {boss} fell, and I was still standing, which I had not been sure of going in.

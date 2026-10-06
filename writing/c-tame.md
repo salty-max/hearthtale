@@ -12,3 +12,5 @@ kind: c-tame
 - earned the trust of {pet}
 - brought {pet} into my care
 - took {pet} on as my companion
+- befriended {pet}, {family}
+- gained {pet}, {family}, as a companion

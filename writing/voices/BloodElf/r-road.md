@@ -4,7 +4,7 @@ kind: r-road
 - the road dusty, which I tried not to mind
 - [!back] curious what the place would make of me
 - [!back] noting its architecture with a critical eye
-- [!back] a stranger, and impossible to miss
+- [!back !home] a stranger, and impossible to miss
 - [!back] wondering whether it had a decent inn
 - [!back night] its lamps rather dim, I thought
 - [back] the place unchanged, for better or worse

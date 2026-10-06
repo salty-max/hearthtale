@@ -2,10 +2,10 @@
 kind: r-company
 ---
 - the road shorter for the conversation
-- an extra pair of eyes on the hedgerows
+- [one] an extra pair of eyes on the hedgerows
 - swapping stories about where we came from
 - easy company, which is rarer than it sounds
 - trusting them more with every mile
-- the work halved and the jokes doubled
+- [one] the work halved and the jokes doubled
 - [night] glad not to be alone in the dark
-- [hc] both of us careful for the other
+- [hc one] both of us careful for the other

@@ -30,7 +30,7 @@ local function json(v, indent)
 end
 
 local characters = {}
-for _, name in ipairs({ "brannok", "pippa", "aldric", "grashnak", "aelyndra", "mortis" }) do
+for _, name in ipairs({ "brannok", "pippa", "aldric", "grashnak", "aelyndra", "mortis", "edric" }) do
   local G = lives[name]()
   G.logout()
   local c = HearthtaleChar

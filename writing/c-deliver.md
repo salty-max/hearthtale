@@ -1,0 +1,11 @@
+---
+kind: c-deliver
+---
+- carried {thing} to {ender}
+- delivered {thing} to {ender}
+- put {thing} into {ender}'s hands
+- brought {thing} to {ender}
+- took {thing} to {ender}
+- handed {thing} over to {ender}
+- saw {thing} safely to {ender}
+- made sure {thing} reached {ender}

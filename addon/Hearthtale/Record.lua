@@ -282,6 +282,10 @@ local function moved()
   c.visited[key] = true
   local newZone = not c.visited[zone .. "|"]
   c.visited[zone .. "|"] = true
+  -- a dungeon's own name: its entry tells it (PLAYER_ENTERING_WORLD below)
+  local inside, kind
+  if IsInInstance then inside, kind = IsInInstance() end
+  if inside and (kind == "party" or kind == "raid") and not sub then return end
   moment("place", { new = newZone and "zone" or nil })
 end
 for _, e in ipairs({ "ZONE_CHANGED_NEW_AREA", "ZONE_CHANGED", "ZONE_CHANGED_INDOORS" }) do ns.on(e, moved) end
@@ -323,26 +327,28 @@ local function objectivesOf(id)
   local raw = {}
   if C_QuestLog and C_QuestLog.GetQuestObjectives then
     local ok, list = pcall(C_QuestLog.GetQuestObjectives, id)
-    for _, o in ipairs(ok and list or {}) do table.insert(raw, { text = o.text, type = o.type, n = o.numRequired }) end
+    for _, o in ipairs(ok and list or {}) do table.insert(raw, { text = o.text, type = o.type, n = o.numRequired, finished = o.finished }) end
   elseif GetQuestLogIndexByID and GetNumQuestLeaderBoards and GetQuestLogLeaderBoard then
     local index = GetQuestLogIndexByID(id)
     if index and index > 0 then
       for i = 1, GetNumQuestLeaderBoards(index) or 0 do
-        local text, type = GetQuestLogLeaderBoard(i, index)
-        table.insert(raw, { text = text, type = type })
+        local text, type, finished = GetQuestLogLeaderBoard(i, index)
+        table.insert(raw, { text = text, type = type, finished = finished })
       end
     end
   end
   local out = {}
   for _, o in ipairs(raw) do
     if o.text and not secret(o.text) then
-      local name, n
+      local name, n, have
       for _, g in ipairs({ "QUEST_MONSTERS_KILLED", "QUEST_OBJECTS_FOUND" }) do
         local p = ns.pattern(g)
-        local a, _, c = o.text:match(p or "^$")
-        if a then name, n = a, tonumber(c) break end
+        local a, b, c = o.text:match(p or "^$")
+        if a then name, have, n = a, tonumber(b), tonumber(c) break end
       end
-      table.insert(out, { type = o.type, name = name, n = n or o.n, text = not name and o.text or nil })
+      -- an item already in hand when the quest is taken: a thing to deliver
+      local held = o.type == "item" and (o.finished or (have and n and have >= n)) or nil
+      table.insert(out, { type = o.type, name = name, n = n or o.n, text = not name and o.text or nil, held = held })
     end
   end
   return #out > 0 and out or nil
@@ -352,7 +358,11 @@ ns.on("QUEST_ACCEPTED", function(a, b)
   local id, c = b or a, char()
   if not id then return end
   c.pending = c.pending or {}
-  local giver = UnitName("npc") or UnitName("target")
+  -- (a quest from an item: no npc; the target then only if a living friend,
+  -- not the corpse the item came from)
+  local friendly = UnitExists and UnitExists("target") and not (UnitIsDead and UnitIsDead("target"))
+    and not (UnitCanAttack and UnitCanAttack("player", "target"))
+  local giver = UnitName("npc") or (friendly and UnitName("target")) or nil
   c.pending[id] = { giver = (giver and not secret(giver)) and giver or nil, title = titleOf(id), objectives = objectivesOf(id) }
 end)
 -- The quest log fills in after the acceptance: the objectives, once known.
@@ -409,7 +419,9 @@ local function slain(guid, name)
   if u.rank == "rare" or u.rank == "rareelite" or u.rank == "worldboss" then
     moment("rare", { name = u.name, elite = u.rank ~= "rare" or nil })
   elseif firstHere then
-    local first = u.kind and not c.kinds[u.kind] or nil
+    -- a first of its kind, for a life followed from its first levels (one
+    -- met later has surely met wolves before)
+    local first = u.kind and not c.kinds[u.kind] and (c.began and c.began.level or 1) <= 5 or nil
     local inside = IsInInstance and IsInInstance()
     -- a quest's quarry: the quest, turned in, tells it
     local quarry

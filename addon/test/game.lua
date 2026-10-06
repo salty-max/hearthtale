@@ -78,6 +78,7 @@ function UnitCreatureType(u) local c = unitOf(u); return c and c.type end
 function UnitCreatureFamily(u) local c = unitOf(u); return c and c.family end
 function UnitClassification(u) local c = unitOf(u); return c and c.rank end
 function UnitIsDead(u) if u == "pet" then return state.pet and state.pet.dead or false end return u == "target" and deadTarget end
+function UnitCanAttack(_, u) return u == "target" and state.target ~= nil end
 function UnitAffectingCombat(u) return inCombat and not (u == "target" and deadTarget) end
 function UnitHealth() return state.health end
 function UnitHealthMax() return 100 end
@@ -111,9 +112,9 @@ LOOT_ITEM_SELF_MULTIPLE = "You receive loot: %sx%d."
 LOOT_ITEM_PUSHED_SELF = "You receive item: %s."
 LOOT_ITEM_PUSHED_SELF_MULTIPLE = "You receive item: %sx%d."
 -- Taxis.
-local TAXI = { "Ironforge, Dun Morogh", "Thelsamar, Loch Modan" }
-function NumTaxiNodes() return #TAXI end
-function TaxiNodeName(i) return TAXI[i] end
+local TAXI = { "Ironforge, Dun Morogh", "Thelsamar, Loch Modan" } -- or state.taxi: the current one first
+function NumTaxiNodes() return #(state.taxi or TAXI) end
+function TaxiNodeName(i) return (state.taxi or TAXI)[i] end
 function TaxiNodeGetType(i) return i == 1 and "CURRENT" or "REACHABLE" end
 function TakeTaxiNode() end
 function hooksecurefunc(name, fn)

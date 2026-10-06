@@ -4,8 +4,8 @@ kind: r-road
 - the road dusty and the company scarce
 - [!back] curious what its people were like
 - [!back] its name on a signpost before I saw a roof
-- [!back] looking for an inn before anything else
-- [!back] a stranger, and plain to everyone
+- [!back] keen to see what work the place had for me
+- [!back !home] a stranger, and plain to everyone
 - [!back night] its lamps the first welcome I had
 - [back] a few faces nodding at me now
 - [back] the road worn into habit by now

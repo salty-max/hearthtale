@@ -17,3 +17,6 @@ kind: c-deed-item
 - [one] came back with {thing}
 - [one] tracked down {thing}
 - [one] fetched {thing}
+- [one trophy] brought {giver} {thing}
+- [one trophy] laid {thing} before {giver}
+- [one trophy] set {thing} down in front of {giver}

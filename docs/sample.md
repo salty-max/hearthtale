@@ -14,7 +14,7 @@ I began in Coldridge Valley, where there was work to be done and a fair bit beyo
 
 I came back to Coldridge Valley. I did for a Burly Rockjaw Trogg, the sort of fight that tells better than it fights; I killed six Rockjaw Troggs. I concluded the errand between Talin Keeneye and Grelin Whitebeard.
 
-A Frostmane Troll Whelp nearly finished me, and put a fair dent in my opinion of my own judgement. Afterwards, I hunted down fourteen Frostmane Troll Whelps, not the worst scrap I had been in, nor the best; I came back with Grelin Whitebeard's Journal. I equipped a Frostmane Leather Belt.
+A Frostmane Troll Whelp nearly finished me, and put a fair dent in my opinion of my own judgement. Afterwards, I hunted down fourteen Frostmane Troll Whelps, not the worst scrap I had been in, nor the best; I came back with Grelin Whitebeard's Journal. I began using a Frostmane Leather Belt.
 
 I headed back to Anvilmar, the road shorter the second time, as roads are. I studied Serpent Sting and Track Beasts. I completed the errand from Durnan Furcutter to Marryk Nurribit.
 
@@ -42,7 +42,7 @@ I began this stretch in Kharanos, curious about the ground beneath the road as w
 
 When I reached Gol'Bolar Quarry, I defeated ten Rockjaw Bonesnappers, my heart going like a forge bellows after. I found myself back in Kharanos. I trained in Concussive Shot and Mend Pet, my hands slower than my pride.
 
-I headed for Amberstill Ranch and tamed Bristle, a boar that would share the road with me. I stopped by a fire there, where the warmth made it easier to think about something besides the road. I cut down a Frostmane Seer, solid on my feet by the end of it. Bristle fell. Out here, it could as easily have been me.
+I headed for Amberstill Ranch and befriended Bristle, a boar. I stopped by a fire there, where the warmth made it easier to think about something besides the road. I cut down a Frostmane Seer, solid on my feet by the end of it. Bristle fell. Out here, it could as easily have been me.
 
 The blue water of Loch Modan lay still behind the Stonewrought Dam. I knew dwarves built on a grand scale, but the weight of all that water made me stop and look. I tramped into North Gate Pass. I found the Stoutlager Inn of Thelsamar beside the loch. After the open hills, its ale and blood sausages interested me more than the distance I had come. I saw off a Mountain Boar.
 
@@ -52,9 +52,9 @@ The blue water of Loch Modan lay still behind the Stonewrought Dam. I knew dwarv
 
 I began in the Valley of Trials, with no one's will in place of my own. What I did with that freedom would be my answer. Heat rose from the red dust of Durotar, as if the ground itself were breathing. This was the land we had claimed, and I meant to learn how to belong to it. I overcame ten Mottled Boars and dealt with Sarkoth. I killed twelve Vile Familiars, with nothing to boast of and nothing to regret; I found ten Cactus Apples. I was of use to Foreman Thazz'ril.
 
-At Razor Hill I heard the forge before I saw the drilling. Beyond the barracks, Kul Tiras ships sat off the coast, and I understood why no one in the town ever quite stood at rest. I saw Gornek's business through with Master Gadrin, no glory in it, only use. I came away knowing Rend and Battle Shout. I put on a Rough Leather Vest, sound kit, which is all a fight respects; I defeated a Scorpid Worker. I brought back eight Scorpid Worker Tails.
+At Razor Hill I heard the forge before I saw the drilling. Beyond the barracks, Kul Tiras ships sat off the coast, and I understood why no one in the town ever quite stood at rest. I saw Gornek's business through with Master Gadrin, no glory in it, only use. I came away knowing Rend and Battle Shout. I went on equipped with a Rough Leather Vest, sound kit, which is all a fight respects; I brought down a Scorpid Worker. I tracked down eight Scorpid Worker Tails.
 
-A Kul Tiras Marine nearly ended me. Pride had asked more of my strength than sense would have allowed. I got the better of ten Kul Tiras Sailors, a fair fight, and I took no more from it than that.
+A Kul Tiras Marine nearly ended me. Pride had asked more of my strength than sense would have allowed. I brought down ten Kul Tiras Sailors, a fair fight, and I took no more from it than that.
 
 The tasks came to eight, the last for Gar'Thok. My tally came to nine Scorpid Workers. This stretch had kept me busy for an hour and forty-five minutes. Rest would make the strength I had left useful again. I rested in Razor Hill, where the next deed could wait until I could give it my full strength.
 
@@ -70,13 +70,13 @@ I began in Shadowglen, meaning to watch before I called anything understood. Moo
 
 Rain scented the houses around the moonwell in Dolanaar. The sentinels kept their patient watch on the road, and I let my guard down a little. I completed the errand from Dirania Silvershine to Iverron, with the patience such work deserves. I slept rough, grateful for a little quiet even without shelter.
 
-I rose in Dolanaar after the rough night's rest, with the path still waiting. I saw off a Nightsaber before I tracked down three Nightsaber Pelts. I fetched an Emerald Dreamcatcher, with an eye to what the land could spare; I made Sentinel Trousers part of my kit.
+I rose in Dolanaar after the rough night's rest, with the path still waiting. I saw off a Nightsaber before I tracked down three Nightsaber Pelts. I fetched an Emerald Dreamcatcher, with an eye to what the land could spare; I began using Sentinel Trousers.
 
 I had completed seven errands, and found the country less distant for knowing what its people needed. I had faced eleven Webwood Spiders and four Nightsabers. I had been on the road an hour and twenty-five minutes. I rested in Dolanaar, listening while my thoughts grew less insistent.
 
 ## Chapter 2 (levels 5 to 6)
 
-I went on in Dolanaar, conscious that haste had made older mistakes than mine. The white stone and still pools of Darnassus slowed me without my meaning to. Near the Temple of the Moon the old hush settled around me, and I was home. I walked into the Temple of the Moon, where I was of use to Mathrengyl Bearwalker. I learned Bear Form, aware that knowing its name was only the beginning of understanding it.
+I went on in Dolanaar, conscious that haste had made older mistakes than mine. The white stone and still pools of Darnassus slowed me without my meaning to. Near the Temple of the Moon the old hush settled around me, and I was home. I found my way to the Temple of the Moon, where I was of use to Mathrengyl Bearwalker. I learned Bear Form, aware that knowing its name was only the beginning of understanding it.
 
 # Mortis, a Forsaken priest
 
@@ -84,7 +84,7 @@ I went on in Dolanaar, conscious that haste had made older mistakes than mine. T
 
 I put down my first words in Deathknell, an account chosen freely rather than another order carried out. Crows called over the crypts of Tirisfal, toward the broken walls of Lordaeron. Night changed little here, though it left me feeling less conspicuous. I went from Undertaker Mordo to Shadow Priest Sarvis; I disposed of a Wretched Zombie, with no more fuss than the matter required. I hunted down eight Mindless Zombies and killed ten Young Night Web Spiders. I gathered six Scavenged Goods, the dark no obstacle to me; I recovered twelve Scarlet Armbands. I took instruction in Shadow Word: Pain and Power Word: Shield.
 
-After the tombs, the crooked roofs of Brill looked almost companionable. Around the Gallows' End Tavern my people went about their business, and the town kept going on stubbornness alone. I found ten Tirisfal Pumpkins, with the patience of someone not short of time; I dealt with Maggot Eye. I put on a Lightweight Chain Robe.
+After the tombs, the crooked roofs of Brill looked almost companionable. Around the Gallows' End Tavern my people went about their business, and the town kept going on stubbornness alone. I found ten Tirisfal Pumpkins, with the patience of someone not short of time; I dealt with Maggot Eye. I fitted myself with a Lightweight Chain Robe.
 
 The seven tasks behind me had given people a use for me. That was not affection, but it had its advantages. I had faced twelve Scarlet Converts and eight Wretched Zombies. I had spent an hour and fifty minutes on it. I settled in Brill, where being still was a choice rather than a condition imposed on me.
 
