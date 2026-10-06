@@ -1,11 +1,11 @@
 import type { Book } from "@hearthtale/shared";
-import { Link } from "@tanstack/react-router";
 import { Skull, Star } from "lucide-react";
+import { PartLink } from "@/components/PartLink";
 import { parts } from "@/lib/book";
 import { useT } from "@/lib/i18n";
 
 /** A book's table of contents: the prologue, each chapter (where, its levels, its marks), the epitaph. */
-export function Contents({ id, book, current, onPick }: { id: string; book: Book; current?: string; onPick?: () => void }) {
+export function Contents({ hrefFor, book, current, onPick }: { hrefFor: (part: string) => string; book: Book; current?: string; onPick?: () => void }) {
   const t = useT();
   return (
     <ol className="divide-y divide-parchment/10">
@@ -15,9 +15,8 @@ export function Contents({ id, book, current, onPick }: { id: string; book: Book
         const here = p.key === current;
         return (
           <li key={p.key}>
-            <Link
-              to="/book/$id/$part"
-              params={{ id, part: p.key }}
+            <PartLink
+              href={hrefFor(p.key)}
               onClick={onPick}
               aria-current={here ? "page" : undefined}
               className={
@@ -48,7 +47,7 @@ export function Contents({ id, book, current, onPick }: { id: string; book: Book
                 {ch?.close && <Skull className="size-4" aria-label={t.book.closeCall} />}
                 {ch?.rare && <Star className="size-4" aria-label={t.book.rare} />}
               </span>
-            </Link>
+            </PartLink>
           </li>
         );
       })}

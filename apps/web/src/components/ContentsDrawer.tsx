@@ -1,4 +1,4 @@
-import type { CharacterSummary, Book } from "@hearthtale/shared";
+import type { Book, PublicCharacter } from "@hearthtale/shared";
 import { X } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { CharacterHeader } from "@/components/CharacterHeader";
@@ -13,15 +13,15 @@ import { useLocale, useT } from "@/lib/i18n";
 export function ContentsDrawer({
   open,
   onClose,
-  id,
+  hrefFor,
   character,
   book,
   current,
 }: {
   open: boolean;
   onClose: () => void;
-  id: string;
-  character: CharacterSummary;
+  hrefFor: (part: string) => string;
+  character: PublicCharacter;
   book: Book;
   current?: string;
 }) {
@@ -56,7 +56,7 @@ export function ContentsDrawer({
           <CharacterHeader character={character} />
         </div>
         <nav aria-label={t.book.contents} className="flex-1 overflow-y-auto">
-          <Contents id={id} book={book} current={current} onPick={onClose} />
+          <Contents hrefFor={hrefFor} book={book} current={current} onPick={onClose} />
         </nav>
         <p className="px-4 pt-3 pb-[max(1rem,env(safe-area-inset-bottom))] text-center text-sm text-parchment/45">
           {t.book.written(written, book.version)}

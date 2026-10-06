@@ -1,4 +1,4 @@
-import type { CharacterBook, CharacterSummary, LinkCode, Me } from "@hearthtale/shared";
+import type { CharacterBook, CharacterSummary, HallEntry, LinkCode, Me, Share, SharedBook } from "@hearthtale/shared";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 export class NotFound extends Error {}
@@ -55,4 +55,50 @@ export function useConfirmPairing() {
 
 export function useLinkCode() {
   return useMutation({ mutationFn: () => call<LinkCode>("/api/link-codes", { method: "POST" }) });
+}
+
+// ── sharing ─────────────────────────────────────────────────────────────────
+const json = (body: unknown): RequestInit => ({ body: JSON.stringify(body), headers: { "content-type": "application/json" } });
+
+export function useShares(id: number) {
+  return useQuery({ queryKey: ["shares", id], queryFn: () => call<Share[]>(`/api/characters/${id}/shares`), retry: noRetryOn });
+}
+
+export function useCreateShare(id: number) {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: (part?: string) => call<Share>(`/api/characters/${id}/shares`, { method: "POST", ...json({ part }) }),
+    onSuccess: () => qc.invalidateQueries({ queryKey: ["shares", id] }),
+  });
+}
+
+export function useRevokeShare(id: number) {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: (token: string) => call<{ ok: true }>(`/api/shares/${encodeURIComponent(token)}`, { method: "DELETE" }),
+    onSuccess: () => qc.invalidateQueries({ queryKey: ["shares", id] }),
+  });
+}
+
+export function useSetInHall(id: number) {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: (inHall: boolean) => call<{ ok: true }>(`/api/characters/${id}/hall`, { method: "PUT", ...json({ inHall }) }),
+    onSuccess: () => {
+      void qc.invalidateQueries({ queryKey: ["character", id] });
+      void qc.invalidateQueries({ queryKey: ["hall"] });
+    },
+  });
+}
+
+export function useShared(token: string) {
+  return useQuery({ queryKey: ["shared", token], queryFn: () => call<SharedBook>(`/api/shared/${encodeURIComponent(token)}`), retry: noRetryOn });
+}
+
+export function useHall() {
+  return useQuery({ queryKey: ["hall"], queryFn: () => call<HallEntry[]>("/api/hall") });
+}
+
+export function useHallBook(id: number) {
+  return useQuery({ queryKey: ["hall", id], queryFn: () => call<SharedBook>(`/api/hall/${id}`), retry: noRetryOn });
 }

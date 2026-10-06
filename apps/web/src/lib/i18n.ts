@@ -7,7 +7,7 @@ import { useSettings } from "@/lib/settings";
  * the language setting appears on its own once there are two.
  */
 const en = {
-  nav: { home: "Hearthtale", start: "Get started", library: "Library", settings: "Settings", menu: "Menu", skip: "Skip to content", language: "Language" },
+  nav: { home: "Hearthtale", start: "Get started", library: "Library", settings: "Settings", hall: "Hall", menu: "Menu", skip: "Skip to content", language: "Language" },
   home: {
     tagline: "Your character's own journal, written as you play.",
     intro:
@@ -112,6 +112,25 @@ const en = {
   regions: { 1: "US", 2: "KR", 3: "EU", 4: "TW", 5: "CN" } as Record<number, string>,
   /** "Dwarf Hunter" (French: "Chasseur nain"). */
   raceClass: (race: string, cls: string) => `${race} ${cls}`,
+  share: {
+    title: "Share",
+    why: "Anyone with the link reads what it covers, and nothing else of yours. You can revoke it at any time.",
+    thisPart: (part: string) => `Share ${part.toLowerCase()}`,
+    wholeBook: "The whole book",
+    copy: "Copy the link",
+    send: "Send",
+    made: "Your links",
+    revoke: "Revoke",
+    revokeHint: "A revoked link stops working at once.",
+    hall: "Show this book in the Hall of the Fallen",
+    hallWhy: "The public Hall, on hearthtale.app: anyone can read this fallen life's book there. You can take it back out.",
+    gone: "This link doesn't lead to a book any more: it was revoked, or the book is gone.",
+  },
+  hall: {
+    title: "Hall of the Fallen",
+    intro: "Hardcore lives, ended, whose players chose to show them here: each with its epitaph, and its book to read.",
+    empty: "No fallen book has been brought to the Hall yet.",
+  },
   settings: {
     title: "Settings",
     reading: "Reading",

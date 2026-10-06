@@ -82,11 +82,31 @@ export const characters = pgTable("characters", {
   bnetCharId: bigint("bnet_char_id", { mode: "number" }),
   /** Whose book it is: proved by a Battle.net login, a link code or the account's companion. Private to them. */
   ownerId: integer("owner_id").references(() => accounts.id, { onDelete: "set null" }),
+  /** A fallen book its owner shows in the public Hall of the Fallen. */
+  inHall: boolean("in_hall").notNull().default(false),
   book: jsonb("book").$type<Book>().notNull(),
   updatedAt: timestamp("updated_at", { withTimezone: true })
     .notNull()
     .default(sql`now()`),
 });
+
+/**
+ * A share link: anyone with its token reads what it covers, the whole book or
+ * one part (part: "prologue", a chapter's number, "epitaph"), nothing else.
+ * Deleted to revoke.
+ */
+export const shares = pgTable(
+  "shares",
+  {
+    token: text("token").primaryKey(),
+    characterId: integer("character_id")
+      .notNull()
+      .references(() => characters.id, { onDelete: "cascade" }),
+    part: text("part"),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("shares_character").on(t.characterId)],
+);
 
 /** Tiny key/value store for the site's own state. */
 export const state = pgTable("state", {
@@ -100,3 +120,4 @@ export const state = pgTable("state", {
 export type CharacterRow = typeof characters.$inferSelect;
 export type AccountRow = typeof accounts.$inferSelect;
 export type CompanionLinkRow = typeof companionLinks.$inferSelect;
+export type ShareRow = typeof shares.$inferSelect;

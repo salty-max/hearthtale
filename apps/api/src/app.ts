@@ -9,6 +9,8 @@ import { createSession, endSession, SESSION_COOKIE, SESSION_TTL_MS, sessionAccou
 import { getCharacterBook, libraryOf } from "@/lib/characters";
 import { confirmPairing, isPairCode, linkFor, pairingPending, pollPairing, startPairing } from "@/lib/companion";
 import { handleUpload } from "@/lib/upload";
+import { ogPage } from "@/lib/og";
+import { createShare, hall, hallBook, listShares, revokeShare, setInHall, sharedBook } from "@/lib/sharing";
 import { createLinkCode } from "@/lib/link";
 import { appOrigin, finishLogin, isRegion, startLogin } from "@/lib/login";
 import { log } from "@/lib/log";
@@ -103,6 +105,65 @@ app.get("/api/characters/:id", signedIn, async (c) => {
 });
 
 app.post("/api/link-codes", signedIn, sameOrigin, async (c) => c.json(await createLinkCode(c.get("account")!.id)));
+
+// ── sharing ──────────────────────────────────────────────────────────────────
+const idOf = (c: Context<Env>) => {
+  const id = Number(c.req.param("id"));
+  return Number.isInteger(id) && id > 0 ? id : null;
+};
+
+app.get("/api/characters/:id/shares", signedIn, async (c) => {
+  const id = idOf(c);
+  const list = id ? await listShares(id, c.get("account")!.id) : null;
+  return list ? c.json(list) : c.json({ error: "not found" }, 404);
+});
+
+app.post("/api/characters/:id/shares", signedIn, sameOrigin, async (c) => {
+  const id = idOf(c);
+  const { part } = await c.req.json<{ part?: unknown }>().catch(() => ({ part: undefined }));
+  if (part !== undefined && typeof part !== "string") return c.json({ error: "bad part" }, 400);
+  const share = id ? await createShare(id, c.get("account")!.id, part) : null;
+  return share ? c.json(share) : c.json({ error: "not found" }, 404);
+});
+
+app.delete("/api/shares/:token", signedIn, sameOrigin, async (c) =>
+  (await revokeShare(c.req.param("token"), c.get("account")!.id)) ? c.json({ ok: true }) : c.json({ error: "not found" }, 404),
+);
+
+app.put("/api/characters/:id/hall", signedIn, sameOrigin, async (c) => {
+  const id = idOf(c);
+  const { inHall } = await c.req.json<{ inHall?: unknown }>().catch(() => ({ inHall: undefined }));
+  if (typeof inHall !== "boolean") return c.json({ error: "bad request" }, 400);
+  return id && (await setInHall(id, c.get("account")!.id, inHall)) ? c.json({ ok: true }) : c.json({ error: "not found" }, 404);
+});
+
+// Public: a shared link, the Hall of the Fallen.
+app.get("/api/shared/:token", async (c) => {
+  const found = await sharedBook(c.req.param("token"));
+  return found ? c.json(found) : c.json({ error: "not found" }, 404);
+});
+app.get("/api/hall", async (c) => c.json(await hall()));
+app.get("/api/hall/:id", async (c) => {
+  const id = idOf(c);
+  const found = id ? await hallBook(id) : null;
+  return found ? c.json(found) : c.json({ error: "not found" }, 404);
+});
+
+// Link previews: Vercel sends crawlers here for /s/:token and /hall/:id
+// (scripts/vercel-build.sh); /api/og/… for trying one by hand.
+const preview = (find: (key: string) => Promise<Parameters<typeof ogPage>[0] | null>, path: (key: string) => string) => async (c: Context<Env>) => {
+  const key = c.req.param("key") ?? "";
+  const found = await find(key);
+  if (!found) return c.redirect("/");
+  c.header("Cache-Control", "public, max-age=300");
+  return c.html(ogPage(found, path(key), appOrigin()));
+};
+const sharePreview = preview(sharedBook, (t) => `/s/${t}`);
+const hallPreview = preview(async (k) => (/^\d+$/.test(k) ? hallBook(Number(k)) : null), (k) => `/hall/${k}`);
+app.get("/s/:key", sharePreview);
+app.get("/api/og/s/:key", sharePreview);
+app.get("/hall/:key", hallPreview);
+app.get("/api/og/hall/:key", hallPreview);
 
 // ── the companion (Ravenpost) ────────────────────────────────────────────────
 app.post("/api/companion/pair/start", async (c) => c.json(await startPairing(appOrigin())));

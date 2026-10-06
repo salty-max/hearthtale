@@ -110,6 +110,15 @@ Plan and steps: PLAN.md, "The site".
   `/ht link CODE` in the game, kept in the saved file, claimed by the upload).
   Locally, "Use the test account" (`/api/auth/test`, never on Vercel) owns the
   test characters.
+- Sharing (`lib/sharing.ts`, `lib/og.ts`): an owner's share links (`shares`:
+  a token, the whole book or one part, deleted to revoke) read on `/s/:token`
+  without an account, cut to what they cover (`cutBook`) with nothing private
+  of the character (`PublicCharacter`); a fallen book its owner shows in the
+  Hall (`characters.in_hall`) reads on `/hall` and `/hall/:id`. Link-preview
+  crawlers on those pages get an OpenGraph card from the function
+  (scripts/vercel-build.sh routes them by user agent; `/api/og/…` by hand).
+  The web reader is one component (`components/Reader.tsx`, parts by address)
+  for my books, share links and the Hall.
 - The companion, Ravenpost (`lib/companion.ts`, `lib/upload.ts`): pairing
   device-code style (`/api/companion/pair/start` → the user confirms on
   `/pair?code=…` → `/pair/poll` hands the token over once; only its hash is

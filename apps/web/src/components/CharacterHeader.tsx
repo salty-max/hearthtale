@@ -1,10 +1,10 @@
-import type { CharacterSummary } from "@hearthtale/shared";
+import type { PublicCharacter } from "@hearthtale/shared";
 import { Flame, Skull } from "lucide-react";
 import { useT } from "@/lib/i18n";
 import { CLASS_COLOURS, raceClass, realmName } from "@/lib/wow";
 
 /** Who the book belongs to (in the contents drawer): name in its class colour, level, race and class, realm. */
-export function CharacterHeader({ character: c }: { character: CharacterSummary }) {
+export function CharacterHeader({ character: c }: { character: PublicCharacter }) {
   const t = useT();
   return (
     <div className="text-center">

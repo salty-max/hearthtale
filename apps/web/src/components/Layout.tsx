@@ -1,5 +1,5 @@
 import { Link, Outlet } from "@tanstack/react-router";
-import { BookOpen, Compass, Settings as SettingsIcon } from "lucide-react";
+import { BookOpen, Compass, Settings as SettingsIcon, Skull } from "lucide-react";
 import { UpdatePrompt } from "@/components/UpdatePrompt";
 import { useT } from "@/lib/i18n";
 
@@ -12,6 +12,7 @@ export function Layout() {
   const t = useT();
   const tabs = [
     { to: "/library", label: t.nav.library, icon: BookOpen },
+    { to: "/hall", label: t.nav.hall, icon: Skull },
     { to: "/start", label: t.nav.start, icon: Compass },
     { to: "/settings", label: t.nav.settings, icon: SettingsIcon },
   ] as const;
@@ -41,7 +42,7 @@ export function Layout() {
       </main>
       <nav
         aria-label={t.nav.menu}
-        className="grid shrink-0 grid-cols-3 border-t border-leather-edge/60 bg-leather pb-[max(0.25rem,calc(env(safe-area-inset-bottom)-0.9rem))] [.standalone-gap_&]:pb-1 md:hidden"
+        className="grid shrink-0 grid-cols-4 border-t border-leather-edge/60 bg-leather pb-[max(0.25rem,calc(env(safe-area-inset-bottom)-0.9rem))] [.standalone-gap_&]:pb-1 md:hidden"
       >
         {tabs.map((tab) => (
           <Link

@@ -111,6 +111,11 @@ body,
   }
 }
 
+/* A centred modal <dialog> (sharing). */
+.drawer-centre::backdrop {
+  background: rgb(0 0 0 / 0.55);
+}
+
 /* The contents drawer (a modal <dialog>), sliding in from the left. */
 .drawer::backdrop {
   background: rgb(0 0 0 / 0.55);

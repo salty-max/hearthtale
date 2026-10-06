@@ -40,6 +40,13 @@ describe("api", () => {
     expect((await app.request("/api/companion/pair/confirm", { method: "POST", body: "{}" })).status).toBe(401);
     expect((await app.request("/api/companion/upload", { method: "POST", body: "{}" })).status).toBe(401);
   });
+  test("sharing: only an owner makes or revokes links, public pages check their keys", async () => {
+    expect((await app.request("/api/characters/1/shares", { method: "POST", body: "{}" })).status).toBe(401);
+    expect((await app.request("/api/shares/abc", { method: "DELETE" })).status).toBe(401);
+    expect((await app.request("/api/characters/1/hall", { method: "PUT", body: "{}" })).status).toBe(401);
+    expect((await app.request("/api/shared/not%20a%20token")).status).toBe(404);
+    expect((await app.request("/api/hall/abc")).status).toBe(404);
+  });
   test("a write from another site is refused", async () => {
     const res = await app.request("/api/auth/logout", { method: "POST", headers: { origin: "https://evil.example" } });
     expect(res.status).toBe(403);

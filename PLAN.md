@@ -60,7 +60,9 @@ site).
    Forever's game folder too; its config carried over from the WoWLocker
    companion; WoWLocker's download page points to it. The site's "Get started"
    page (/start) has the downloads.
-7. **Sharing**: share links, preview cards, the public Hall.
+7. **Sharing** (done, 6 October 2026): share links to a part or the whole
+   book (revocable), preview cards for Discord and Reddit, the public Hall of
+   the Fallen (opt-in per fallen book).
 8. **Launch**: hearthtale.app live, then CurseForge and Wago, the project page.
 
 ### What the user does

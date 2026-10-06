@@ -55,6 +55,8 @@ export type Health = { ok: true; version: string };
 /** A character on the site, for the library. */
 export type CharacterSummary = {
   id: number;
+  /** Shown in the public Hall of the Fallen (fallen books only). */
+  inHall?: boolean;
   name: string;
   realm?: string;
   region?: number;
@@ -85,3 +87,17 @@ export type UploadRequest = { characters: unknown[] };
 /** What became of each character: kept, or waiting to be linked (`/ht link CODE`), or unreadable. */
 export type UploadStatus = "saved" | "unlinked" | "invalid";
 export type UploadResult = { characters: { guid: string; name: string; status: UploadStatus; chapters?: number; characterId?: number }[] };
+
+// ── sharing ─────────────────────────────────────────────────────────────────
+
+/** Who a shared book belongs to: what the page shows, nothing private. */
+export type PublicCharacter = Pick<CharacterSummary, "name" | "realm" | "region" | "race" | "class" | "level" | "hardcore" | "fallen">;
+
+/** A share link of one of my books: the whole book (no part) or one part ("prologue", "3", "epitaph"). */
+export type Share = { token: string; part?: string; url: string; createdAt: string };
+
+/** What a share link (or the Hall) shows: the book, cut to what it covers. */
+export type SharedBook = { character: PublicCharacter; book: Book; part?: string };
+
+/** A life in the public Hall of the Fallen. */
+export type HallEntry = { id: number; character: PublicCharacter; epitaph?: string; chapters: number; diedAt?: number };

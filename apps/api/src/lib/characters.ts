@@ -8,6 +8,7 @@ import { characters, type CharacterRow } from "@/db/schema";
 export function summary(row: CharacterRow): CharacterSummary {
   return {
     id: row.id,
+    inHall: row.inHall || undefined,
     name: row.name,
     realm: row.realm ?? undefined,
     region: row.region ?? undefined,

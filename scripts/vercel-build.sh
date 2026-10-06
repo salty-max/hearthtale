@@ -36,6 +36,12 @@ const config = {
   routes: [
     { src: "^/(.*)$", headers, continue: true },
     { src: "^/api(/.*)?$", dest: "/api" },
+    // Link-preview crawlers on a shared page or a Hall book get its OpenGraph card (apps/api/src/lib/og.ts).
+    {
+      src: "^/(s/[\\w-]+|hall/\\d+)/?$",
+      has: [{ type: "header", key: "user-agent", value: { re: "Discordbot|Twitterbot|Slackbot|facebookexternalhit|Facebot|TelegramBot|WhatsApp|LinkedInBot|redditbot|SkypeUriPreview|Mastodon|Bluesky|Embedly|iframely|Pinterest" } }],
+      dest: "/api",
+    },
     { src: "^/assets/(.*)$", headers: { "cache-control": "public, max-age=31536000, immutable" }, continue: true },
     { src: "^/(sw\\.js|workbox-[^/]+\\.js|manifest\\.webmanifest|index\\.html)?$", headers: { "cache-control": "no-cache" }, continue: true },
     { handle: "filesystem" },
