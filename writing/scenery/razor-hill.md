@@ -4,5 +4,5 @@ type: town
 home: Orc Troll
 faction: horde
 ---
-- [home] Razor Hill: a barracks, a forge and orcs drilling in the dust, the sea close by and Kul Tiras ships watching from it. A soldiers' town.
-- [!home] Razor Hill, an orcish town of barracks and watchtowers on the road to the coast. Everyone there carried a weapon, and looked ready to use it.
+- [home] At Razor Hill I heard the forge and saw the drilling before I had finished taking in the town. Beyond the barracks lay the coast and the Kul Tiras ships, and I understood why no one here seemed quite at rest.
+- [!home] I reached Razor Hill among barracks and watchtowers, with the coast somewhere beyond them. There were weapons everywhere I looked, and I could not mistake this for a town that had forgotten its enemies.

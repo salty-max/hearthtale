@@ -1,12 +1,12 @@
 ---
 kind: rest
 ---
-- [last !fire] A quiet room {at}, and sleep. So ends this chapter.
-- [last !fire] I rested {at}, and set my pen down for the night.
-- [last !fire] A bed {at}, and the day let go. Enough for now.
-- [last fire] I slept by the fire {at}; the chapter ended with the embers.
-- [last fire] A fire {at}, and the stars above it. I closed the book on this day.
-- [!last !fire] I rested a while {at} and went on.
-- [!last !fire] A short rest {at}, and a little writing.
-- [!last fire] I sat by the fire {at} for a time.
-- [!last fire] I warmed myself at the fire {at}, then took up the path.
+- [last !fire] I rested {at}, with time at last to let the journey settle in my thoughts.
+- [last !fire] I set my pen down {at}, unwilling to hurry straight from this day into the next.
+- [last !fire] I stopped {at} and read back over what I had written, glad to have kept something of the road.
+- [last fire] I rested beside the fire {at}, watching the embers long after I had finished this page.
+- [last fire] I closed the book by the fire {at}, content for a while to be where I was.
+- [!last !fire] I rested a while {at} before taking up the path again.
+- [!last !fire] I paused {at} to rest and make a little room in my thoughts.
+- [!last fire] I sat beside the fire {at} until I felt ready to go on.
+- [!last fire] I warmed myself at the fire {at}, grateful for the pause in my travelling.

@@ -3,11 +3,11 @@ kind: c-gear
 ---
 - [!made] put on {item}
 - [!made] took to wearing {item}
-- [!made] traded up for {item}
-- [!made] strapped on {item}, solid work
-- [!made] buckled on {item}
 - [!made] fitted myself with {item}
-- [made] wore {item}, which I made myself
-- [made] put on {item}, forged by my own hands
-- [made] made {item} and wore it, as a dwarf should
-- [made] finished {item} and strapped it on
+- [!made] wore {item} for the first time
+- [!made] replaced some of my kit with {item}
+- [!made] began wearing {item}
+- [made] wore {item}, which I had made myself
+- [made] put on {item}, pleased to be carrying my own work
+- [made] made {item} and put it to use
+- [made] finished {item} and wore it

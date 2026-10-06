@@ -1,8 +1,8 @@
 ---
 kind: beginning
 ---
-- This is where it begins: {where}. I woke in a grave and climbed out of it.
-- I begin {at}. Dead, free, and with work to do.
-- First page, {at}. I remember little of before. This is after.
-- I begin {at}, for the Dark Lady, and for myself.
-- I woke in a grave and climbed out of it. I remember little of before. This is after, and it begins {at}.
+- I began this account {at}, where the life I remembered no longer explained the one before me.
+- I opened my journal {at}, free to choose what came next even if I could not make sense of what came before.
+- I put the first words down {at}, with little enough of my old life left to write about.
+- I began {at}, determined that whatever remained of me would have a story of its own.
+- I wanted a record I could trust when I began {at}, so I started with the small fact that I was here.

@@ -3,5 +3,5 @@ place: The Barrens
 type: zone
 faction: horde
 ---
-- [!night] The Barrens: yellow grass to the edge of the world, a few thorny trees, zhevra running in herds, and a heat that never lets go. Quilboar and centaur claim it; so does the Horde.
-- [night] The Barrens by night: the grass silver, the sky enormous, and somewhere out there the drums of the centaur.
+- [!night] I came into the Barrens with yellow grass stretching farther than I could see. Zhevra moved between the thorn trees, and the heat settled over everything; the distance ahead was harder to judge than it had looked on a map.
+- [night] The grass of the Barrens shone silver when I reached it after dark. Above me the sky seemed enormous, but the distant beat of centaur drums kept my thoughts on the country beneath it.

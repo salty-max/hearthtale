@@ -2,11 +2,11 @@
 kind: c-kill
 ---
 - killed {foe}
-- cut down {foe}
-- broke {foe}
-- ended {foe}
-- put {foe} in the dirt
-- gave {foe} a warrior's death, more than it deserved
-- crushed {foe}
+- fought {foe} and held my ground
+- brought down {foe}
+- defeated {foe}
+- put an end to {foe}
+- came through an encounter with {foe}
+- faced {foe} and prevailed
 - made short work of {foe}
 - struck down {foe}

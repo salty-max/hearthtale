@@ -1,12 +1,12 @@
 ---
 kind: opening
 ---
-- [!night] Morning {at}. I sharpened my blade.
-- [!night] Dawn {at}. Time to work.
-- [night] Night {at}. I do not fear it.
-- I set out from {where}.
-- {where}. On my feet, weapon ready.
-- I woke {at} and went to war.
-- [!night] Sunrise {at}. A good day for blood.
-- {where} again. Onward.
-- I woke {at} with the old war songs in my head.
+- [!night] I took up the road again {at}, with yesterday's work still clear in my mind.
+- [!night] I began another day's travelling {at}, ready to find what was needed of me.
+- [night] I set out {at} in the dark, keeping my attention on what lay ahead.
+- I started this stretch {at}, with my kit in order and work still waiting.
+- I looked ahead from {where} and tried to judge what the road would demand.
+- I began again {at}, carrying what I had learned rather than what I had hoped to prove.
+- [!night] I was on my feet {at} with daylight enough to make a start.
+- I picked up my journey {at}, where there was no shortage of things left to do.
+- I read the last page {at} before making room for what would follow.

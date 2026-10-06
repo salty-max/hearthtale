@@ -1,9 +1,9 @@
 ---
 kind: c-deed-task
 ---
-- did what {giver} asked: {task}
-- had orders to {task}. Done
-- went to {task}
-- was told to {task}, and did
-- did my duty: {task}
-- set out to {task}. It is done
+- carried out {giver}'s request to {task}
+- set out to {task} and saw the work through
+- found a way to {task}, as {giver} had asked
+- went to {task} before returning to {ender}
+- managed to {task}
+- had been asked to {task} and could at last call it done

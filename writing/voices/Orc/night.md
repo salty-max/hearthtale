@@ -1,12 +1,12 @@
 ---
 kind: night
 ---
-- [!last] No inn. I slept {at} on the ground.
-- [!last] I made camp {at}.
-- [!last] I slept {at} with my weapon in my hand.
-- [!last] A cold night {at}. An orc can take it.
-- [!last] I kept watch {at} more than I slept.
-- [!last] The ground {at}, the sky. Enough.
-- [last] Too long without a roof. I slept {at}, and ended this stretch.
-- [last] Another night {at} in the open. This chapter ends here.
-- [last] I lay down {at}. Enough marching for one tale.
+- [!last] I slept {at} on the ground, where the day's work gave me reason enough to rest.
+- [!last] I made camp {at} and let the road wait for a while.
+- [!last] I slept {at} with {weapon} close, aware of how far I was from a roof.
+- [!last] I bedded down {at}, making what rest I could of the place I had reached.
+- [!last] I spent the night {at} resting lightly, with my attention returning to every sound.
+- [!last] I slept beneath the open sky {at}, glad to have reached a place where I could stop.
+- [last] I stopped {at} after a long stretch without shelter, and let these pages end with the night's rest.
+- [last] I spent another night in the open {at}, where the journey had gone far enough for this account.
+- [last] I lay down {at} with the road behind me for now, and set this part of the story aside.

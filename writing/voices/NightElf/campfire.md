@@ -1,8 +1,8 @@
 ---
 kind: campfire
 ---
-- A fire {at}. I watched it a long while.
-- I rested by a fire {at} and listened to the night.
-- A small fire {at}, and the smell of pine.
-- I sat by a fire {at} and thought of home.
-- [night] A fire {at} beneath the stars. Elune's light was enough; the warmth was a gift.
+- I paused beside a fire {at}, letting its movement hold my attention for a while.
+- I rested by a fire {at} and listened to the world around it.
+- I held my hands toward a fire {at}, grateful for the small comfort it offered.
+- I sat by the fire {at}, with room at last to consider what had brought me here.
+- [night] I rested beside a fire {at}, with Elune's light beyond the little circle of warmth.

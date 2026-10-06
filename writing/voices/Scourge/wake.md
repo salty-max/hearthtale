@@ -1,9 +1,9 @@
 ---
 kind: wake
 ---
-- [!rest] I don't sleep, not truly. I stood up {at} and walked on.
-- [!rest] The night passed {at}. I watched most of it.
-- [!rest] Dawn {at}. I was already moving.
-- [!rest] Morning came {at}, and with it, more work.
-- [rest] Back to it {at}.
-- [rest] I left {at}, as rested as the dead get.
+- [!rest] I stood up {at} after a quiet stretch of waiting and turned back to the road.
+- [!rest] I was ready to go on {at}, having spent enough of the pause with my own thoughts.
+- [!rest] I made ready {at}, with the road still offering something to do.
+- [!rest] I rose {at}, where my account would have to continue if I wanted it to.
+- [rest] I returned to the work {at}, with the pause already behind me.
+- [rest] I went on {at}, as rested as I had any need to be.

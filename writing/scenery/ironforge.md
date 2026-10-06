@@ -4,6 +4,6 @@ type: zone
 home: Dwarf
 faction: alliance
 ---
-- [home] Ironforge. The heat of the Great Forge on my face, the ring of a thousand hammers, molten iron running in channels under the bridges. My father's city, and his father's. I stood still a moment, and let it fill me.
-- [ally] Ironforge, carved into the heart of the mountain: the Great Forge glowing at its centre, hammers ringing in every hall, and dwarves everywhere, loud, busy and proud of it.
-- [foe] Ironforge, the dwarves' fortress under the mountain. Every hall full of hammers and guards. I did not linger.
+- [home] The heat of the Great Forge reached my face as I entered Ironforge, followed by the ring of hammers. I stood a moment above the channels of molten iron and let the noise of my people's work fill the space the road had left.
+- [ally] I came into Ironforge out of the mountain cold and felt the Great Forge's heat before I reached it. Hammers rang through the halls, and after the open country the sheer business of the place was almost comforting.
+- [foe] The mountain closed around me when I entered Ironforge, and the hammering seemed to come from every hall. Its warmth offered no comfort; there were guards enough here to make me conscious of every turn.

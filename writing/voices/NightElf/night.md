@@ -1,13 +1,13 @@
 ---
 kind: night
 ---
-- [!last] I slept beneath the stars {at}, as my people always have.
-- [!last] No roof {at}, only branches and the moon. It was enough.
-- [!last] I rested {at} in the roots of an old tree.
-- [!last] I slept lightly {at}, and listened to the dark.
-- [!last] A night {at} under the open sky. Elune watched over me.
-- [!last] I lay down {at} on the moss and let the night pass.
-- [last] Too many nights beneath the sky. I rested {at}, and let this chapter close.
-- [last] Under the stars {at} again, I set this part of the tale down.
-- [last] Another night {at} in the open. This stretch of the road ends here.
-- [!last] I slept beneath the stars {at}, as my people have always done.
+- [!last] I slept beneath the open sky {at}, letting the quiet settle around me.
+- [!last] I bedded down {at}, glad of room enough to be still for a while.
+- [!last] I rested {at} with the sky above me, glad of the pause in my journey.
+- [!last] I slept lightly {at}, listening to the world between moments of rest.
+- [!last] I spent the night {at} under the open sky, with more to think about than I had room to write.
+- [!last] I made what bed I could {at} and let the night pass around me.
+- [last] I stopped {at} after a long stretch of travelling, ready to let this part of the tale rest too.
+- [last] I settled beneath the sky {at} again and put these pages aside for another day.
+- [last] I spent the night in the open {at}, where this stretch of the road had come far enough.
+- [!last] I slept rough {at}, grateful for a little quiet even without shelter.

@@ -1,18 +1,18 @@
 ---
 kind: zone
 ---
-- I crossed into {zone}.
-- {zone}, at last.
-- I left the familiar behind and came to {zone}.
-- I set foot in {zone} for the first time.
-- The road climbed, then fell, and I was in {zone}.
-- [aside] {zone}. New land, new dangers.
-- [aside] I had heard stories of {zone}. Now I have my own.
-- I reached {zone}, and I'm not sorry.
-- My road led into {zone}, and I followed it.
-- I came to {zone} with my eyes open and my hand near my weapon.
-- [hc] I came to {zone} knowing the graves there are no shallower than anywhere else.
-- [hc high aside] {zone}: the kind of place where careful heroes become careless corpses. I mean to stay careful.
-- [race:Tauren] I came to {zone}, and greeted the land as my elders taught me.
-- [class:MAGE aside] {zone}. I noted the ley lines, out of habit.
-- [class:HUNTER] {zone}, and new beasts to learn.
+- I crossed into {zone}, ready to find what the country would ask of me.
+- I reached {zone} and took a moment to look about before going on.
+- I came into {zone}, carrying what the road behind me had taught.
+- I set foot in {zone} and tried to judge how much of it was familiar.
+- I found myself in {zone}, with new ground to learn.
+- [aside] I came into {zone}, aware that knowing its name had told me very little.
+- [aside] I reached {zone}, where I would have to earn an understanding of my own.
+- I came to {zone} and let my attention settle on what lay ahead.
+- My journey brought me into {zone}, with more of the road still to discover.
+- I entered {zone} with my eyes open and my kit close to hand.
+- [hc] I came to {zone}, where care would matter as much as it had on the road behind.
+- [hc high] I reached {zone}, carrying a long journey that one mistake could still end.
+- [race:Tauren] I entered {zone} and considered what my elders might have noticed first.
+- [class:MAGE] I came into {zone}, conscious of how much there was here that my studies had not described.
+- [class:HUNTER] I reached {zone}, ready to learn the country as well as the things that lived in it.

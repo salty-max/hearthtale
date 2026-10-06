@@ -1,12 +1,12 @@
 ---
 kind: opening
 ---
-- [!night] Dawn {at}, and the birds already singing.
-- [!night] Morning {at}. I listened to the wind before I moved.
-- [night] Elune's light was on the leaves {at} when I set out.
-- [night] Night {at}. The stars were kind.
-- I set out from {where}, quietly.
-- {where}, and the long road beyond it.
-- I left {where} before the dew had dried.
-- [!night] I woke {at} among the roots and gave thanks.
-- [night] Elune's light was on the leaves {at} when I left.
+- [!night] I took up the path again {at}, noticing what I had been too tired to look at before.
+- [!night] I began another day's travelling {at}, listening a moment before I moved.
+- [night] I started out {at} beneath Elune's light, with the dark familiar around me.
+- [night] I opened a new page {at}, content to make my way through the quiet hours.
+- I went on from {where}, carrying the last stretch of the journey in my thoughts.
+- I began again {at}, with time to look about me before the work began.
+- I turned back to the road {at}, aware of how much I still had to learn.
+- [!night] I made ready {at}, then let my attention settle on the path ahead.
+- [night] I took up my journey {at}, where the night left room to hear myself think.

@@ -1,7 +1,7 @@
 ---
 kind: close-deep
 ---
-- {hp}% {in}. I've seen the other side. It wasn't worth going back.
-- {foe} almost finished what the Scourge started {at}: {hp}%.
-- {at} I was a breath from the end, if I still breathed: {hp}%.
-- {hp}% {in}. Not yet. The Dark Lady isn't done with me.
+- {foe} nearly finished what death had begun {at}. I had thought myself used to losing things, but I was not ready to lose the rest.
+- [!foe] I barely survived {at}, and found myself clinging to this damaged life with an eagerness I would once have found absurd.
+- [!foe] For a moment {at}, I thought I would lose even the right to choose what came next. That frightened me more than the grave.
+- {foe} almost ended me {at}. Afterwards I could not put aside the thought that even this second life could be spent only once.

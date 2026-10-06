@@ -1,8 +1,8 @@
 ---
 kind: beginning
 ---
-- This is where it begins: {where}, beneath the great tree.
-- I begin {at}, young as my people count years, and eager to prove it.
-- First page, {at}. The sentinels say the world has changed while we slept. I mean to see it.
-- I begin {at}, under Elune's light.
-- I begin {at}, beneath the great tree, younger than most of my kin and eager to prove it.
+- I began this journal {at}, wondering how much of the world I had mistaken for familiar.
+- I opened these pages {at}, where the path ahead still seemed full of things I ought to understand.
+- I set out {at} with my people's teachings close to mind, and hoped I would know how to use them.
+- I put the first words down {at}, wanting to remember what changed as I travelled.
+- I began {at}, with a place among my kin and much beyond it I had yet to see.

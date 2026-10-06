@@ -1,12 +1,12 @@
 ---
 kind: petdied
 ---
-- {pet} fell {at}. I nursed it back to its feet, and it forgave me.
-- I lost {pet} for a moment {at}. I brought it back, but it was close.
-- {pet} went down {at}. I won't let that happen again.
-- {pet} took the blow meant for me {at}, and paid for it. I revived it.
-- I had to bring {pet} back from the brink {at}.
-- {pet} was killed {at}. I called it back, ashamed.
+- {pet} fell {at}, and the road seemed suddenly emptier without it beside me.
+- I saw {pet} go down {at}, and felt the loss of its presence before I had words for it.
+- {pet} fell {at}, leaving me with a sharp sense of how much I had come to rely on it.
+- I lost {pet} {at}. I kept thinking of the space it had occupied beside me.
+- {pet} went down {at}, and the day's other concerns seemed smaller for a while.
+- I saw {pet} fall {at}, and could not put the sight aside as easily as the rest of the fighting.
 - [hc] {pet} fell {at}. Out here, it could as easily have been me.
-- {pet} fell {at}, and I felt it like a wound of my own. I brought it back.
-- I knelt by {pet} {at} and called it back to me.
+- {pet} fell {at}, and I felt it as more than another part of the day's fighting.
+- I was left without {pet} beside me {at}, where I had grown used to having company.

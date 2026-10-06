@@ -1,19 +1,19 @@
 ---
 kind: kills-two
 ---
-- {n1} {foes1} and {n2} {foes2}; I kept {weapon} busy.
-- [aside] I fought {foes1} and {foes2} {at}: {n1} and {n2}, if anyone is counting. I am.
-- {at} it was {foes1} and {foes2}: {n1} of the first, {n2} of the second.
-- {n1} {foes1} and {n2} {foes2} {at}, one after the other.
-- I put down {n1} {foes1} {at}, and {n2} {foes2} for good measure.
-- Between the {foes1} and the {foes2} {at}, I had no rest: {n1} and {n2}.
-- {n1} {foes1} and {n2} {foes2} fell to {weapon} {at}.
-- I cleared the road {at}: {n1} {foes1}, {n2} {foes2}.
-- I spent the days {at} on {foes1} ({n1}) and {foes2} ({n2}).
-- Hard work {at}: {n1} {foes1}, then {n2} {foes2}.
-- [lots aside] {n1} {foes1} and {n2} {foes2}. I've stopped wiping {weapon} clean; there's no point.
-- [lots] I fought {at} until the {foes1} and the {foes2} ran short: {n1} and {n2}.
-- [hc] {n1} {foes1} and {n2} {foes2}, and never more than one at a time if I could help it.
-- [class:HUNTER !low] My pet took the {foes1}, I took the {foes2}, or so we tell it: {n1} and {n2}.
-- [class:MAGE aside] {n1} {foes1} and {n2} {foes2}. I drank a lot of water.
-- [class:WARRIOR aside] {n1} {foes1}, {n2} {foes2}. A good stretch.
+- I had fought {n1} {foes1} and {n2} {foes2}, enough to give this stretch a character of its own.
+- I counted {n1} {foes1} and {n2} {foes2} among the fighting {at}, though the numbers left much of it untold.
+- I had dealt with {n1} {foes1} and {n2} {foes2} {at}, work I was glad to look back on from somewhere quiet.
+- I had brought down {n1} {foes1} and {n2} {foes2} {at}, with the encounters still clear as I wrote.
+- I put down {n1} {foes1} and {n2} {foes2} {at}, enough fighting to make the pause welcome.
+- Between the {n1} {foes1} and the {n2} {foes2} {at}, I had learned how much a road could ask of me.
+- I had killed {n1} {foes1} and {n2} {foes2} {at}, each encounter part of the distance behind me.
+- I remembered {n1} {foes1} and {n2} {foes2} among the day's work {at}, and was glad to have its account finished.
+- Much of my time {at} had gone into fighting {n1} {foes1} and {n2} {foes2}.
+- The fighting {at} had brought me through {n1} {foes1} and {n2} {foes2}, with more to remember than their number.
+- [lots] I had dealt with {n1} {foes1} and {n2} {foes2}, enough that I could still feel the work when I stopped.
+- [lots] I had fought {n1} {foes1} and {n2} {foes2} {at}, with the last encounters easier to remember than the first.
+- [hc] I had survived {n1} {foes1} and {n2} {foes2}, grateful that none had made these my final pages.
+- [class:HUNTER !low] I had hunted {n1} {foes1} and {n2} {foes2}, learning to notice the country through its creatures.
+- [class:MAGE] I had brought down {n1} {foes1} and {n2} {foes2}, with much of the day's learning done far from a trainer.
+- [class:WARRIOR] I had fought {n1} {foes1} and {n2} {foes2}, enough to know the value of putting my strength to rest.

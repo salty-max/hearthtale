@@ -1,13 +1,13 @@
 ---
 kind: rest
 ---
-- [last !fire] An ale {at}, then another, then bed. A good end to a long road.
-- [last !fire] A room {at}, a hot meal, a fire in the grate. So ends this chapter.
-- [last !fire] I set my pen down {at}, warm and fed.
-- [last !fire] Supper and a bed {at}. That'll do for now.
-- [last fire] I slept by the fire {at} and the chapter went out with the embers.
-- [last fire] A campfire {at}, my boots off at last. That's the chapter.
-- [!last !fire] A short rest {at}, an ale, and back out.
-- [!last !fire] I stopped {at} long enough to oil my axe and eat.
-- [!last fire] I warmed my hands at the fire {at}, then got on.
-- [!last fire] A rest by the fire {at}. Short, but welcome.
+- [last !fire] I stopped {at} and let the road go on without me for a while. There was more to tell than I had expected when I set out.
+- [last !fire] I made myself comfortable {at}, with my pack out of the way and these pages open before me.
+- [last !fire] I set my pen down {at}, glad that the next thing asked of me would be rest.
+- [last !fire] I rested {at} with the day's work behind me, leaving the next stretch for when I was ready.
+- [last fire] I settled beside the fire {at}, letting the embers hold my attention after a day of watching everything else.
+- [last fire] I finished this page beside the fire {at}, then put the book away within reach.
+- [!last !fire] I stopped {at} long enough to rest before taking up the road again.
+- [!last !fire] I rested a little {at}, glad to put my pack down while I could.
+- [!last fire] I warmed my hands beside the fire {at} before going on.
+- [!last fire] I stopped by the fire {at}, where the pause did me more good than I would have admitted.

@@ -1,12 +1,12 @@
 ---
 kind: rest
 ---
-- [last !fire] A room {at}. I didn't sleep; I wrote. This chapter ends here.
-- [last !fire] I rested {at}, as much as the dead do, and closed the book for now.
-- [last !fire] A bed {at}, unused. The chapter ends anyway.
-- [last fire] A fire {at}. I don't feel the cold, but I watched it till dawn. So ends this chapter.
-- [last fire] I sat by the fire {at} until it died, and the chapter with it.
-- [!last !fire] A short stop {at}.
-- [!last !fire] I stopped {at} long enough to be stared at.
-- [!last fire] I sat by the fire {at} for a while.
-- [!last fire] A fire {at}. I watched it, then left.
+- [last !fire] I rested {at}, where I could put my account in order without anything asking more of me.
+- [last !fire] I closed the book {at}, glad to have a day worth distinguishing from the one that came before.
+- [last !fire] I stopped {at} and set these pages aside, with the business of remaining here attended to for now.
+- [last fire] I watched the fire {at} after finishing this page, finding more use in its light than I had expected.
+- [last fire] I rested beside the fire {at} and let the account end where the road had paused.
+- [!last !fire] I stopped a little {at}, with no need to make an occasion of it.
+- [!last !fire] I rested {at} before going on with what was left to do.
+- [!last fire] I sat beside the fire {at} for a while, then took up the road again.
+- [!last fire] I paused by the fire {at}, finding its company easy enough.

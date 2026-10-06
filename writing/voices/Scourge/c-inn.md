@@ -1,7 +1,7 @@
 ---
 kind: c-inn
 ---
-- took a room at {inn}
-- bound my stone at {inn}
-- made {inn} home, insofar as anything is
-- paid for a bed at {inn}; I don't sleep, but appearances matter
+- bound my hearthstone at {inn}, glad to have a place to return to
+- chose {inn} as the place my hearthstone would bring me back to
+- made {inn} my home for the time being
+- set my hearthstone to return me to {inn}

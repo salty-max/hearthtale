@@ -1,12 +1,12 @@
 ---
 kind: c-gear
 ---
-- [!made] took {item}
-- [!made] put on {item}
-- [!made] armed myself with {item}
-- [!made] wore {item}. Good iron
-- [!made] traded my old kit for {item}
-- [!made] earned {item}
+- [!made] put on {item} before going on
+- [!made] fitted myself with {item}
+- [!made] began wearing {item}
+- [!made] wore {item} for the first time
+- [!made] replaced some of my kit with {item}
+- [!made] took to wearing {item}
 - [made] made {item} myself and put it on
-- [made] wore {item}. My own work
-- [made] forged {item} and took it to war
+- [made] wore {item}, glad to have my own work with me
+- [made] finished {item} and fitted it into my kit

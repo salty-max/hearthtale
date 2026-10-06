@@ -1,6 +1,6 @@
 ---
 kind: quests-many
 ---
-- {n} jobs done, and paid for most of them.
-- {n} tasks, each one finished properly.
-- {n} folk helped, and not one of them cheated me.
+- I had seen {n} jobs through by the time I stopped, and the names of those who needed them were beginning to feel familiar.
+- Looking back over {n} tasks, I could see how one person's need had kept sending me toward another.
+- I had finished {n} errands along the way, enough to feel that I had begun to earn my place here.

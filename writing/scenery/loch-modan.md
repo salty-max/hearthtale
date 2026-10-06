@@ -3,6 +3,6 @@ place: Loch Modan
 type: zone
 faction: alliance
 ---
-- [!night] Loch Modan opened below me: red hills, a long blue loch, and at its head the Stonewrought Dam, holding back more water than I could imagine. Troggs and Dark Irons in the hills, they said. They were right.
-- [night] Loch Modan at night: the loch black and still, the dam a dark wall at its head, and the lights of Thelsamar small on the shore.
-- [foe] Loch Modan, the dwarves' lake country, with their great dam at its head. Their guards watched the roads. I watched them.
+- [!night] The blue water of Loch Modan opened before me between red hills, with the Stonewrought Dam closing off its far end. I had known that dwarves built on a grand scale, but the weight of all that water made me pause.
+- [night] I came into Loch Modan with the lake black and still beneath the hills. The dam made a darker line against the sky, while the little lights of Thelsamar drew my eye back to the shore.
+- [foe] I looked across Loch Modan toward the dwarves' great dam. Their guards watched the roads beside the water, and I paid as much attention to them as to the view.

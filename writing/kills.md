@@ -1,28 +1,28 @@
 ---
 kind: kills
 ---
-- I put down {n} {foes} {at}.
-- {n} {foes} fell to {weapon} {at}.
-- I thinned the {foes} {at}: {n} of them.
-- [aside] {n} {foes}. They won't be missed.
-- I fought my way through {n} {foes} {at}.
-- {at} I killed {n} {foes}.
-- {n} {foes}, and not one got the better of me.
-- I spent my days {at} fighting {foes}: {n} of them, by the end.
-- [aside] {n} {foes}. Someone had to.
-- I cleared {n} {foes} from the paths {at}.
-- [lots aside] {n} {foes}. My arms ache just writing it.
-- [lots] I lost count of the {foes} {at}; my tally says {n}.
-- [lots aside] {n} {foes}. By the end I was doing it in my sleep.
-- [hc aside] {n} {foes}, one at a time, never two. That's how you live.
-- [class:HUNTER !low] My pet and I took {n} {foes} {at}.
-- [class:WARLOCK aside] {n} {foes}. My demon enjoyed it more than I did.
-- [class:MAGE aside] {n} {foes}, frozen or burned. Mostly burned.
-- [class:ROGUE aside] {n} {foes}. Most never saw me.
-- [class:PRIEST aside] {n} {foes}. I prayed for them afterwards. Mostly.
-- [class:DRUID] {n} {foes}, by claw and thorn.
-- [class:SHAMAN aside] {n} {foes}. The spirits were not gentle with them.
-- [class:WARRIOR] {n} {foes}, and I enjoyed every one.
-- {n} {foes} in all {at}.
-- By the end I had put down {n} {foes} {at}.
-- {n} {foes} fell to me {at}, one way or another.
+- I had brought down {n} {foes} {at}, more fighting than their number alone could tell.
+- I counted {n} {foes} among the fights {at}, remembering the encounters as well as their end.
+- I had dealt with {n} {foes} {at}, and was glad to consider the work from somewhere quiet.
+- I had killed {n} {foes}, though setting down the number made it look simpler than it had felt.
+- I fought my way through {n} {foes} {at}, with each encounter adding something to the account.
+- I remembered the {n} {foes} I had fought {at} as I put the day in order.
+- I had come through fights with {n} {foes}, and was grateful to be here to remember them.
+- The {n} {foes} I had killed {at} had occupied much of this stretch.
+- I had brought down {n} {foes}, enough to leave their names clear in my thoughts.
+- I counted {n} {foes} among the day's fighting {at}, with the road still waiting beyond them.
+- [lots] I had fought {n} {foes}, enough that stopping felt like part of the work rather than a departure from it.
+- [lots] I had dealt with {n} {foes} {at}, and felt the length of that work when I finally stopped.
+- [lots] I had brought down {n} {foes}, with little room between one fight and its place in my memory.
+- [hc] I had survived fights with {n} {foes}, grateful for more than the chance to add them to my account.
+- [class:HUNTER !low] I had hunted {n} {foes} {at}, learning something of the country through what lived in it.
+- [class:WARLOCK] I had killed {n} {foes}, enough to make me consider the uses of the power I was learning.
+- [class:MAGE] I had brought down {n} {foes}, putting lessons to a test quite different from remembering them.
+- [class:ROGUE] I had dealt with {n} {foes}, and had reason by the end to value care as much as quickness.
+- [class:PRIEST] I had fought {n} {foes}, with rather more to consider afterwards than the number.
+- [class:DRUID] I had brought down {n} {foes}, learning about the world in a way that left me much to think over.
+- [class:SHAMAN] I had killed {n} {foes}, and tried to find a place for what the fighting had taught me.
+- [class:WARRIOR] I had fought {n} {foes}, gaining a clearer sense of what I could ask of my strength.
+- I had killed {n} {foes} in all {at}, a part of the day I was ready to put behind me.
+- By the end I had put down {n} {foes} {at}, glad that the fighting was now something to remember.
+- I had come through encounters with {n} {foes} {at}, with more of the road still left to take.

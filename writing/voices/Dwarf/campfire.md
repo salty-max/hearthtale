@@ -1,10 +1,10 @@
 ---
 kind: campfire
 ---
-- A fire {at}. A dwarf can't think straight without one.
-- I warmed my hands at a fire {at} and mended a strap.
-- I sat by the fire {at} and had a pull from my flask.
-- A fire {at}, and a bit of stew. Grand.
-- [night] I kept a fire going {at} through the dark hours.
-- I sat by the embers {at} until my fingers worked again.
-- [aside] A fire {in}. A dwarf can't think straight without one.
+- I stopped by a fire {at}, where the warmth made it easier to think about something besides the road.
+- I held my hands toward the fire {at}, glad to let them do nothing useful for a moment.
+- I sat by the fire {at} and let the day's work settle in my thoughts.
+- I rested beside the fire {at}, with my pack close and no need to shoulder it yet.
+- [night] I found a little warmth at a fire {at}, with the dark around its light.
+- I sat beside the embers {at} and began to appreciate how much I had needed the pause.
+- [aside] I stopped at a fire {at}, grateful for warmth enough to make standing still a pleasure.

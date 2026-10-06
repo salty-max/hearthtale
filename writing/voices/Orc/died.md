@@ -1,12 +1,12 @@
 ---
 kind: died
 ---
-- [foe] {foe} killed me {at}. I came back. I will settle it.
-- [foe] I fell to {foe} {at}. I rose. It will pay.
-- [fall] I fell to my death {at}. A shameful end. Not the last.
-- [drowning] I drowned {at}. Water is no enemy I can strike.
-- I died {at}. Death sent me back.
-- [lava] I walked into fire {at}. Foolish.
-- [nature] I died {at}. The land itself struck me down.
-- [foe] {foe} killed me {at}. I will remember its face.
-- I fell {at}. I rose. The fight goes on.
+- [foe] {foe} killed me {at}, leaving me a defeat to understand before I could think of making it right.
+- [foe] I fell to {foe} {at}, and came back with less faith in what strength alone could promise.
+- [fall] I fell to my death {at}, with nothing honourable in the mistake and nothing to gain by pretending otherwise.
+- [drowning] I drowned {at}, where determination had been no substitute for air.
+- I died {at}, and returned with work still waiting that I was no longer willing to take lightly.
+- [lava] Fire killed me {at}, and pride offered no protection from what I had failed to heed.
+- [nature] I died {at}, struck down by the world itself rather than an enemy I could meet in a fight.
+- [foe] {foe} killed me {at}, and the memory would have to teach me something if I meant to go on.
+- I died {at} and came back, with another chance to make use of what the defeat had cost me.

@@ -1,10 +1,10 @@
 ---
 kind: closing
 ---
-- {time}, and nothing broke that wasn't already broken.
-- {time} of work, and {gold} for my trouble.
-- {time}. The dead are patient.
-- {time} on the road. I felt none of it.
-- [slow] {time}. Long. I have time.
-- [quick] {time}. Brief, like most lives.
-- [aside] {time}. Time means less to the dead, but I counted anyway.
+- The work had occupied {time}, which passed more readily when there was something to do.
+- I had earned {gold} in {time}, a reassuringly ordinary thing to be able to write.
+- After {time} on the road, I was ready to make some order of what had happened.
+- This stretch had kept me busy for {time}, and I found I preferred that to having nothing to account for.
+- [slow] I had been at it for {time}, long enough that even I welcomed a pause.
+- [quick] Only {time} had passed, but there was enough here to distinguish it from waiting.
+- [aside] I had counted {time} of work, though I was less certain than ever what time ought to mean to me.

@@ -1,12 +1,12 @@
 ---
 kind: opening
 ---
-- [!night] Morning {at}, and a day's work ahead.
-- [!night] Up {at} with the light and my beard in a tangle.
-- [night] Dark {at}. A dwarf doesn't mind the dark.
-- [night] {where}, by lamplight.
-- I set out from {where} with a full belly.
-- {where} again, and the road out of it.
-- I shouldered my pack {at} and got on with it.
-- [!night] I broke my fast {at}: bread, cheese, a little ale.
-- I oiled my beard and my armour {at}, in that order.
+- [!night] I took up the journal again {at}, with the day's work still ahead of me.
+- [!night] I was ready to go on {at}, though my shoulders remembered the weight of my pack.
+- [night] I started out {at} after dark, letting my eyes grow used to it before I hurried.
+- [night] I turned to a fresh page {at}, with the night already around me.
+- I began another stretch of the road {at}, where I had left the last one.
+- I checked my pack {at} before going on, unwilling to discover a loose strap halfway there.
+- I put my belongings in order {at} and looked toward the road ahead.
+- [!night] I found myself {at} with work to do and rather less inclination to stand about.
+- I took up the road again {at}, glad to have somewhere to begin.

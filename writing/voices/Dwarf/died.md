@@ -1,12 +1,12 @@
 ---
 kind: died
 ---
-- [foe] {foe} killed me {at}. I walked back from the graveyard, cursing every step.
-- [foe] I fell to {foe} {at}. Back on my feet soon enough, with a lesson learned.
-- [fall] I fell to my death {at}. Dwarves are meant to go down into the earth, not off it.
-- [drowning] I drowned {at}. Dwarves sink; it's no secret.
-- I died {at}. The walk back was long, and I had words for all of it.
-- [lava] I walked into fire {at}. Even a dwarf has limits.
-- [nature] I died {at}, and nothing with a face did it. The mountain takes its due.
-- [foe] {foe} got the better of me {at}. I'll have that back, with interest.
-- I died {at}. My ancestors sent me back; they said I owed them a drink.
+- [foe] {foe} killed me {at}, and I had time enough on the way back to think of what I ought to have done differently.
+- [foe] I fell to {foe} {at}, with rather less dignity than I would have liked to put in this account.
+- [fall] I fell to my death {at}, discovering too late that knowing mountains was no substitute for minding my footing.
+- [drowning] I drowned {at}, and found no comfort in remembering how often I had been warned about deep water.
+- I died {at}, with enough left unfinished to make the return feel more like a duty than a reprieve.
+- [lava] Fire killed me {at}, where I learned the hard way that familiarity with a forge did not make me proof against heat.
+- [nature] I died {at}, with no foe to blame and rather more to consider about the ground I had taken for granted.
+- [foe] {foe} got the better of me {at}, and I meant to remember the mistake before trying to settle the score.
+- I died {at}, and was glad enough to come back that I could afford to admit how badly I had wanted to.

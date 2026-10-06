@@ -3,4 +3,4 @@ place: Shadowfang Keep
 type: dungeon
 faction: neutral
 ---
-- Shadowfang Keep, high above Pyrewood: Arugal's keep, full of his worgen and the ghosts of its old masters. Cold stone, howling halls, and the madness that started all of it.
+- I climbed into Shadowfang Keep above Pyrewood with cold stone enclosing me and howls carrying through the halls. Arugal's name belonged to this place, but it was the sounds behind the walls that kept my attention.

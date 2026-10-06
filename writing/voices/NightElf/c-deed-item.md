@@ -2,15 +2,15 @@
 kind: c-deed-item
 ---
 - [!one] gathered {n} {thing} for {giver}
-- [!one] found {n} {thing} among the roots and stones
+- [!one] searched until I had {n} {thing}
 - [!one] brought {giver} {n} {thing}
-- [!one] collected {n} {thing}, patiently
+- [!one] collected {n} {thing}, taking care over the work
 - [!one] returned to {ender} with {n} {thing}
-- [!one] searched the wild for {n} {thing}
+- [!one] looked for the {n} {thing} the task required
 - [!one] gathered {n} {thing}
 - [!one] came back with {n} {thing}
 - [one] found {thing} for {giver}
 - [one] recovered {thing}
 - [one] brought {thing} back to {ender}
-- [one] found {thing}, where the forest had hidden it
+- [one] searched until I had found {thing}
 - [one] returned with {thing}

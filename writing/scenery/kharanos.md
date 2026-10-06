@@ -4,6 +4,6 @@ type: town
 home: Dwarf Gnome
 faction: alliance
 ---
-- [home] Kharanos: smoke from every chimney, the smell of the Thunderbrew Distillery on the wind, and gnome refugees from Gnomeregan huddled among the dwarven houses. Warm, loud, and ours.
-- [ally] Kharanos, a dwarven village in the snow: stout stone houses, a distillery you could smell from the road, and a good many gnomes, homeless since Gnomeregan fell.
-- [foe] Kharanos, a dwarven village. Smoke, ale, and too many of them for comfort.
+- [home] I smelled the Thunderbrew Distillery before I had properly reached Kharanos. Smoke rose above the houses, where dwarves and gnomes crowded together against the cold, and I felt my shoulders ease at the sight.
+- [ally] The smell of brewing reached me on the road into Kharanos. Among the sturdy houses I saw gnomes as well as dwarves, and thought of how far a lost home could follow its people.
+- [foe] Smoke hung over Kharanos, and the smell of ale carried well beyond the houses. It might have promised a welcome to someone else; I found myself counting the dwarves instead.

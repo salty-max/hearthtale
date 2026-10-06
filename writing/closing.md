@@ -1,37 +1,37 @@
 ---
 kind: closing
 ---
-- [quick] It went quickly: {time}.
-- {time} for this one.
-- [quick] Not long: {time}.
-- {time} at it, all told, and {gold} richer.
-- [slow aside] A long stretch: {time}. I came out of it {gold} richer and a little wiser.
-- {time}, {gold} in my purse, and I'm still here.
-- All of it took {time}.
-- {time} of my life, and {gold} to show for it.
-- I'd spent {time} on it, and earned {gold}.
-- {time}, start to end.
-- I counted the hours: {time}.
-- {time} of walking, fighting and sleeping rough.
-- I'm {gold} richer for {time} of work.
-- [slow aside] It took {time}. Some days the road is long.
-- [slow aside] {time}. I took my time, and I'm not sorry.
-- [quick] {time}, and it felt like less.
-- [hc aside] {time}, and alive at the end of it. That's what counts.
-- [hc high aside] {time}. Every hour now, I know what I could lose.
-- [race:Gnome aside] {time}, give or take. I measured.
-- [class:ROGUE] {time}, and {gold}, most of it honestly earned.
-- [class:MAGE aside] {time}. Too little of it spent reading.
-- [class:PALADIN] {time} in the service of {faith}.
-- [class:WARRIOR aside] {time}. My armour has the dents to prove it.
-- {gold} richer after {time}.
-- I closed this stretch {gold} the richer, after {time}.
-- That was {time}.
-- {time}, and all of it earned.
-- It took me {time}.
-- {time} of hard road.
-- {time} on the road, more or less.
-- So went {time} of my life.
-- All told: {time}.
-- [quick] Quick work: {time}.
-- [slow aside] {time}. Not my fastest, but I'm here.
+- [quick] The work had taken only {time}, but it had given me something worth setting down.
+- I had been busy for {time}, and welcomed the chance to put the account in order.
+- [quick] Only {time} had passed, though the road had already left its mark on my thoughts.
+- I had spent {time} at work and earned {gold}, which gave this stretch a useful end.
+- [slow] The work had occupied {time}, and I had earned {gold} along the way.
+- I had earned {gold} in {time}, with enough still ahead to make me glad of it.
+- All of it had taken {time}, long enough to be ready for a pause.
+- I had given {time} to this stretch of the road, with {gold} to show for it.
+- I had spent {time} at work and come away {gold} richer.
+- The journey had occupied {time}, and I was glad to have kept some record of it.
+- I had been at it for {time}, with more to remember than I had expected at the start.
+- I had spent {time} travelling and working, enough to appreciate a little quiet.
+- I was {gold} richer after {time} of work, which eased one concern at least.
+- [slow] It had taken {time}, and the chance to stop felt well earned.
+- [slow] I had spent {time} on this stretch, letting the account catch up with what had happened.
+- [quick] The work was over in {time}, before I had quite grown used to it.
+- [hc] I had survived {time} on the road, glad to be the one putting it into words.
+- [hc high] Another {time} lay behind me, added to a journey I was still unwilling to lose.
+- [race:Gnome] I had accounted for {time} of work, and wished the rest of the day were as easy to put in order.
+- [class:ROGUE] I had earned {gold} in {time}, enough to make the next stretch less uncertain.
+- [class:MAGE] I had been at work for {time}, and was ready to turn my attention to something quiet.
+- [class:PALADIN] I had spent {time} in work I hoped was worthy of {faith}.
+- [class:WARRIOR] I had been busy for {time}, and found a welcome in the chance to set my kit aside.
+- I had earned {gold} over {time}, a useful measure of what the journey had brought.
+- I ended this stretch {gold} richer after {time} of work.
+- The account covered {time}, though writing it brought some moments nearer than others.
+- I had been at it for {time}, and was ready to consider the work rather than do more of it.
+- This part of the road had taken {time}, with things I wanted to remember.
+- The work had occupied {time}, and I had done what I could with it.
+- I had spent {time} on the road, leaving enough here to distinguish it from the next stretch.
+- So much had happened in {time} that I was glad to set the account down while it was clear.
+- I had been busy for {time}, and this was where I could finally pause.
+- [quick] I had only needed {time} for the work, but welcomed the rest that followed.
+- [slow] I had been occupied for {time}, long enough to know I should stop before weariness chose for me.

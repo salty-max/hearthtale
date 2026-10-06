@@ -2,20 +2,20 @@
 kind: c-trainer
 ---
 - learned {spells} from my trainer
-- went to my trainer for {spells}
-- paid my trainer for {spells}
+- made time for lessons in {spells}
+- was taught {spells}
 - learned {spells}
 - came away from training with {spells}
-- spent good coin on {spells}
-- [many] learned {spells}, and more besides
-- [class:PALADIN] took new prayers from the trainer: {spells}
-- [class:PRIEST] learned new prayers: {spells}
-- [class:MAGE] added {spells} to my book
-- [class:WARLOCK] paid for forbidden lessons: {spells}
-- [class:WARRIOR] learned new tricks: {spells}
-- [class:DRUID] learned {spells} from the ways of the wild
-- [class:SHAMAN] was granted {spells} by the spirits
-- [class:HUNTER] learned new tricks for the hunt: {spells}
-- [class:ROGUE] learned {spells} in a back room, no questions asked
-- picked up {spells} at my trainer's
+- added {spells} to what I knew
+- [many] learned {spells} among several new lessons
+- [class:PALADIN] studied {spells}, with more to learn of serving {faith}
+- [class:PRIEST] learned {spells} and thought of where those lessons might be needed
+- [class:MAGE] added {spells} to my studies
+- [class:WARLOCK] learned {spells}, another part of my chosen work
+- [class:WARRIOR] trained in {spells}, glad to have more to rely on
+- [class:DRUID] learned {spells} and considered what the teaching asked of me
+- [class:SHAMAN] studied {spells} with my trainer
+- [class:HUNTER] learned {spells} to carry into the hunt
+- [class:ROGUE] took lessons in {spells}, with much still to practise
+- picked up {spells} in training
 - trained in {spells}

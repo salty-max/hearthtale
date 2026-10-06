@@ -1,11 +1,11 @@
 ---
 kind: c-deed-word
 ---
-- carried word from {giver} to {ender}
+- carried {giver}'s word to {ender}
 - took {giver}'s message to {ender}
-- ran an errand for {giver}, all the way to {ender}
+- ran an errand that brought me from {giver} to {ender}
 - brought {ender} what {giver} had sent
 - delivered a message from {giver} to {ender}
-- went from {giver} to {ender}, bearing news
-- took a letter from {giver} to {ender}
-- passed on {giver}'s word to {ender}
+- went from {giver} to {ender} with news to carry
+- passed on what {giver} had sent me to tell {ender}
+- made sure {giver}'s word reached {ender}
