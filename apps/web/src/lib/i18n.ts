@@ -129,7 +129,7 @@ const en = {
     account: "Account",
     signedInAs: (who: string) => `Signed in as ${who}.`,
     about: "About",
-    version: (v: string, date: string) => `Hearthtale ${v}, ${date}.`,
+    version: (v: string, commit: string, date: string) => `Hearthtale ${v} (site ${commit}, ${date}).`,
   },
   update: { available: "A new version of Hearthtale is ready.", reload: "Reload", close: "Close" },
   footer: { source: "Source code", notAffiliated: "Not affiliated with Blizzard Entertainment." },

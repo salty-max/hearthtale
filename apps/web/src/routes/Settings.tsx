@@ -86,7 +86,7 @@ export function Settings() {
       </Section>
 
       <Section title={t.settings.about}>
-        <p className="mt-2 text-parchment/75">{t.settings.version(__APP_VERSION__, __BUILD_DATE__)}</p>
+        <p className="mt-2 text-parchment/75">{t.settings.version(__APP_VERSION__, __APP_COMMIT__, __BUILD_DATE__)}</p>
         <p className="mt-1 text-parchment/75">
           <a href="https://github.com/salty-max/hearthtale" className="underline">
             {t.footer.source}
