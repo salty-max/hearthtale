@@ -16,7 +16,8 @@ export function Layout() {
     { to: "/settings", label: t.nav.settings, icon: SettingsIcon },
   ] as const;
   return (
-    <div className="flex h-full flex-col">
+    // Pinned to the whole screen (behind the home indicator too, in the installed app).
+    <div className="fixed inset-0 flex flex-col">
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-50 btn">
         {t.nav.skip}
       </a>
@@ -38,13 +39,13 @@ export function Layout() {
       </main>
       <nav
         aria-label={t.nav.menu}
-        className="grid shrink-0 grid-cols-3 border-t border-leather-edge/60 bg-leather/70 pb-[env(safe-area-inset-bottom)] md:hidden"
+        className="grid shrink-0 grid-cols-3 border-t border-leather-edge/60 bg-leather pb-[max(0.25rem,calc(env(safe-area-inset-bottom)-0.9rem))] md:hidden"
       >
         {tabs.map((tab) => (
           <Link
             key={tab.to}
             to={tab.to}
-            className="flex flex-col items-center gap-0.5 py-2 text-xs text-parchment/60"
+            className="flex flex-col items-center gap-0.5 pt-2 pb-1 text-xs text-parchment/60"
             activeProps={{ className: "text-gold-bright", "aria-current": "page" }}
           >
             <tab.icon className="size-5" aria-hidden />
