@@ -95,6 +95,12 @@ local function death(n, zone, sub)
   return d
 end
 
+-- The races in a fixed order: pairs() would walk them differently on each run
+-- (LuaJIT hashes strings with a random seed), and the lives with them.
+local RACES = {}
+for race in pairs(COMBOS) do table.insert(RACES, race) end
+table.sort(RACES)
+
 local guid = 0
 local function life(race, class, hc, from, to)
   guid = guid + 1
@@ -321,7 +327,8 @@ end
 
 local runs = 0
 for _, round in ipairs({ { 1, 12 }, { 1, 60 }, { 18, 41 }, { 38, 60 }, { 1, 30 }, { 1, 7 }, { 20, 50 } }) do
-  for race, classes in pairs(COMBOS) do
+  for _, race in ipairs(RACES) do
+  local classes = COMBOS[race]
     for _, class in ipairs(classes) do
       for _, hc in ipairs({ true, false }) do
         runs = runs + 1
@@ -354,7 +361,8 @@ end
 
 -- Deaths of every sort: closed Hardcore lives at levels low, middling and high,
 -- the foe known or not, the place known or not.
-for race, classes in pairs(COMBOS) do
+for _, race in ipairs(RACES) do
+  local classes = COMBOS[race]
   for _, class in ipairs(classes) do
     for _, level in ipairs({ 5, 20, 45 }) do
       for _ = 1, 6 do

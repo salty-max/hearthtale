@@ -237,6 +237,10 @@ ns.data = {
       { "I had to {task}, and I managed it." },
       { "I managed to {task} in the end." },
       { "There was work to do: {task}. I did it." },
+      { "I was sent to {task}, and I did." },
+      { "{giver} trusted me to {task}. I didn't let them down." },
+      { "Someone had to {task}. I did." },
+      { "I did the work: {task}." },
     },
     ["deed-word"] = {
       { "I carried word from {giver} to {ender}." },

@@ -13,7 +13,7 @@ Five tasks, and every one of them a chance to die. I took none of those chances.
 
 Anvilmar, by lamplight. I found Coldridge Pass. Next, I stopped at Kharanos to look around, and stayed longer than I meant to. Thunderbrew Distillery has a bed I could get used to. I gathered six Crag Boar Ribs. That night, I came face to face with boars there, and learned fast. I hunted twelve Small Crag Boars, as Talin Keeneye had asked. After that, my map grew by one name: Brewnall Village. A Leper Gnome came out of the dark there. It didn't go back into it. I went from Rejold Barleybrew to Marleth Barleybrew, bearing news. I slept rough in Shimmer Ridge, one hand on my hammer.
 
-I woke in Shimmer Ridge to birdsong and a stiff neck. I put down a Frostmane Snowstrider there. Timber. I won't pretend it was easy; I'll only say it was me who walked away. Cuirboulle Gloves. Good craftsmanship; I checked. There was work to do: explore the Frostmane Hold. I did it. I filled my bags with Shimmerweed, six in all. I found Vagash and made an end of it. I reached fifty in mining.
+I woke in Shimmer Ridge to birdsong and a stiff neck. I put down a Frostmane Snowstrider there. Timber. I won't pretend it was easy; I'll only say it was me who walked away. Cuirboulle Gloves. Good craftsmanship; I checked. After that, I did the work: explore the Frostmane Hold. I filled my bags with Shimmerweed, six in all. I found Vagash and made an end of it. I reached fifty in mining.
 
 Six people helped, one way or another. Thirteen Frostmane Snowstriders and eleven Leper Gnomes, and never more than one at a time if I could help it. Two hours and a half of hard road. I rested in Thunderbrew Distillery, alive, with a door I could bar. That's the whole of happiness out here.
 
