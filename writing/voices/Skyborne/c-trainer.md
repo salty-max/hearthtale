@@ -1,0 +1,11 @@
+---
+kind: c-trainer
+---
+- [client:forever] learned {spells}, another understanding to make dependable
+- [client:forever] was taught {spells}
+- [client:forever] took instruction in {spells}
+- [client:forever] added {spells} to what I knew, with its use still to discover
+- [client:forever] made time to learn {spells}
+- [client:forever] came away knowing {spells}
+- [client:forever] studied {spells}, keeping the lesson open to what practice might change
+- [client:forever] was instructed in {spells}

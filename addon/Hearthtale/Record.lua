@@ -137,6 +137,10 @@ ns.on("PLAYER_LOGIN", function()
   c.visited, c.kinds = c.visited or {}, c.kinds or {}
   if not c.closed then c.hardcore = hardcore() or c.hardcoreChosen or nil end -- chosen: in the settings, where the game can't tell
   c.race, c.class = select(2, UnitRace("player")), select(2, UnitClass("player"))
+  if UnitFactionGroup then
+    local faction = UnitFactionGroup("player")
+    if not secret(faction) and (faction == "Alliance" or faction == "Horde") then c.faction = faction:lower() end
+  end
   c.name, c.sex = UnitName("player"), UnitSex("player")
   -- where it lives, for the site (the Battle.net region: 1 US, 3 EU...)
   c.realm = GetRealmName and GetRealmName() or nil

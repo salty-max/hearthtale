@@ -1,12 +1,12 @@
 ---
 kind: rest
 ---
-- [last !fire] I rested {at}, with time at last to let the journey settle in my thoughts.
-- [last !fire] I set my pen down {at}, unwilling to hurry straight from this day into the next.
-- [last !fire] I stopped {at} and read back over what I had written, glad to have kept something of the road.
-- [last fire] I rested beside the fire {at}, watching the embers long after I had finished this page.
-- [last fire] I closed the book by the fire {at}, content for a while to be where I was.
-- [!last !fire] I rested a while {at} before taking up the path again.
-- [!last !fire] I paused {at} to rest and make a little room in my thoughts.
-- [!last fire] I sat beside the fire {at} until I felt ready to go on.
-- [!last fire] I warmed myself at the fire {at}, grateful for the pause in my travelling.
+- I rested {at}, letting my attention widen again beyond the next thing to be done.
+- I settled {at}, content for a while to watch without asking the world to become useful.
+- I paused {at}, where stillness brought back what haste had let me overlook.
+- I rested {at}, leaving room between the day's demands and my judgement of them.
+- I stopped {at}, with no wish to turn the quiet into another task.
+- I rested {at}, allowing the journey to settle without forcing it into a lesson.
+- I paused {at}, glad to belong to the place for a moment without having to pass through it.
+- I rested {at}, listening while my thoughts grew less insistent.
+- I put the road aside {at}, and let being here be enough for a while.

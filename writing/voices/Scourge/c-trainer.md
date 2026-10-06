@@ -1,8 +1,11 @@
 ---
 kind: c-trainer
 ---
-- learned {spells} from my trainer
+- learned {spells}, useful knowledge that was now mine
+- was taught {spells}, without surrendering the right to decide its use
 - made time to learn {spells}
-- was taught {spells}
-- studied {spells}, glad to have something new to practise
-- [many] learned {spells} among several new lessons
+- added {spells} to what I knew, since standing still was not my only option
+- took instruction in {spells}
+- came away knowing {spells}, another reason not to be written off
+- learned {spells}, with practice left before I could call it reliable
+- was instructed in {spells}

@@ -1,7 +1,7 @@
 ---
 kind: rare
 ---
-- I brought down {foe} {at}, and knew before I opened this book that the name would deserve a place in it.
-- {foe} fell to me {at}. It was a fight I wanted to tell properly, rather than bury among the rest of the day's work.
-- I brought down {foe} {at}. The name would come readily enough when I told my kin about this stretch of the road.
-- I killed {foe} {at}, and the memory was still clear when I sat down to write.
+- I brought down {foe} {at}, a name worth keeping when the ordinary fights had run together.
+- {foe} fell to me {at}. There was a tale in that, though I meant to get it straight before making it a fine one.
+- I dealt with {foe} {at}, and thought my kin would have questions when I got to that part.
+- I killed {foe} {at}, glad to have something to report that would stand up to a second telling.

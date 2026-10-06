@@ -1,12 +1,11 @@
 ---
 kind: c-kill
 ---
-- brought down {foe}
-- put an end to {foe}
-- fought {foe} and came through it
-- dealt with {foe} before going on
 - saw off {foe}
-- defeated {foe} with {weapon}
-- killed {foe}
-- came through an encounter with {foe}
 - put {foe} down
+- dealt with {foe}, without much ceremony
+- brought down {foe}
+- settled the business with {foe}
+- came through a fight with {foe}, glad of it
+- did for {foe}
+- finished off {foe} and was ready to put the matter behind me

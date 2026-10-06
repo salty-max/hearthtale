@@ -1,12 +1,11 @@
 ---
 kind: c-kill
 ---
-- killed {foe}
-- fought {foe} and held my ground
+- stood against {foe} and prevailed
 - brought down {foe}
-- defeated {foe}
+- met {foe} in a fight and came through it
 - put an end to {foe}
-- came through an encounter with {foe}
-- faced {foe} and prevailed
-- made short work of {foe}
-- struck down {foe}
+- overcame {foe}
+- dealt with {foe}, leaving no need to boast of it
+- fought {foe} and remained standing
+- finished the encounter with {foe}

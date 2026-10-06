@@ -1,0 +1,12 @@
+---
+kind: rest
+---
+- [client:forever] I rested {at}, allowing the day's changes to settle into a clearer view.
+- [client:forever] I settled {at}, glad to have a point of stillness in the journey.
+- [client:forever] I paused {at}, with time to consider what I had been too occupied to notice.
+- [client:forever] I rested {at}, leaving the next uncertainty beyond the edge of my attention for now.
+- [client:forever] I stopped {at}, content that being still need not mean losing my way.
+- [client:forever] I rested {at}, with no need to turn every impression immediately into a conclusion.
+- [client:forever] I paused {at}, giving the ground I had reached more attention than the distance ahead.
+- [client:forever] I rested {at}, where I could let my thoughts change direction without having to follow them.
+- [client:forever] I put the road aside {at}, grateful for something dependable to return to while I considered the next step.

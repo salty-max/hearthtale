@@ -1,7 +1,8 @@
 ---
 kind: close-deep
 ---
-- {foe} nearly finished what death had begun {at}. I had thought myself used to losing things, but I was not ready to lose the rest.
-- [!foe] I barely survived {at}, and found myself clinging to this damaged life with an eagerness I would once have found absurd.
-- [!foe] For a moment {at}, I thought I would lose even the right to choose what came next. That frightened me more than the grave.
-- {foe} almost ended me {at}. Afterwards I could not put aside the thought that even this second life could be spent only once.
+- {foe} nearly ended me {at}. I had escaped being another will's instrument; I was not ready to become nothing at all.
+- I barely survived {foe} {at}, with more fear than my acquaintances would have expected and less wit than I would have liked.
+- {foe} left me barely alive {at}. A second existence turned out to be quite enough to want to keep.
+- [!foe] I barely survived {at}. It was difficult to make a philosophical matter of the grave while it was trying to have me.
+- [!foe] I came within a breath of the end {at}, and found that my unfinished business included the simple wish to go on.

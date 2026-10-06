@@ -1,0 +1,12 @@
+---
+kind: rest
+---
+- I rested {at}, glad that nothing needed sorting out this very moment.
+- I settled {at}, with the comfortable feeling of having got somewhere I could stop.
+- I paused {at}, letting the day's worries grow a little less urgent.
+- I rested {at}, content to leave the next errand to the next bit of strength.
+- I stopped {at}. There was pleasure in reaching a place without immediately looking for the way out.
+- I rested {at}, where the road could become something to think about instead of something to keep up with.
+- I paused {at}, glad of a little time that nobody had yet found a use for.
+- I rested {at}, with enough accomplished to put the day aside without fretting.
+- I set the journey down {at}, grateful for the plain comfort of being allowed to stay a while.

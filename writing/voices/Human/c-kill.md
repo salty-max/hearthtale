@@ -1,0 +1,11 @@
+---
+kind: c-kill
+---
+- dealt with {foe}
+- brought down {foe}
+- came through a fight with {foe}
+- put an end to {foe}
+- fought {foe} and was glad to come through it
+- got the better of {foe}
+- finished off {foe}
+- overcame {foe}, without wishing to make a grand thing of it

@@ -1,0 +1,11 @@
+---
+kind: c-kill
+---
+- [client:forever] overcame {foe}
+- [client:forever] regained the advantage against {foe} and ended the fight
+- [client:forever] brought down {foe}
+- [client:forever] came through the encounter with {foe}
+- [client:forever] put an end to {foe}
+- [client:forever] prevailed against {foe}, with the danger behind me
+- [client:forever] dealt with {foe}
+- [client:forever] finished the encounter with {foe}

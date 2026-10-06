@@ -1,7 +1,7 @@
 ---
 kind: rare
 ---
-- I brought down {foe} {at}, and found I still cared about having something worth remembering.
-- {foe} fell to me {at}. Among the ordinary business of this new life, that encounter held its shape.
-- I killed {foe} {at}, one name I would not let disappear into the rest of my account.
-- I faced {foe} {at} and remained to write about it, which is still the ending I prefer.
+- I brought down {foe} {at}, and found myself pleased to have a name worth putting in the account.
+- {foe} fell to me {at}. I remained to write it down, an outcome I continued to prefer.
+- I killed {foe} {at}, a memorable interruption to the business of being left alive.
+- I faced {foe} {at} and prevailed. I had not lost the ability to take satisfaction in that, whatever else had gone.

@@ -1,18 +1,19 @@
 ---
 kind: c-deed-kill
 ---
-- [!one] hunted {n} {foes} for {giver}
-- [!one] brought down {n} {foes} before the work was done
-- [!one] killed the {n} {foes} {giver} had asked me to deal with
-- [!one] slew {n} {foes} and reported to {ender}
-- [!one] completed the hunt for {n} {foes}
-- [!one] brought {giver} word that {n} {foes} had fallen
+- [!one] killed {n} {foes}
+- [one] killed {foes}
+- [!one] dealt with {n} {foes}, with no need for a boast to make the deed stand
+- [one] dealt with {foes}, with no need for a boast to make the deed stand
 - [!one] put an end to {n} {foes}
-- [!one] hunted the {foes} until I had accounted for {n} of them
-- [!one] dealt with the {n} {foes} named in {giver}'s request
-- [one] killed {foes} for {giver}
-- [one] hunted down {foes}
 - [one] put an end to {foes}
-- [one] brought {giver} word of {foes}'s defeat
-- [one] faced {foes} and won
-- [one] completed the hunt for {foes}
+- [!one] stood against and defeated {n} {foes}
+- [one] stood against and defeated {foes}
+- [!one] completed the task of dealing with {n} {foes}
+- [one] completed the task of dealing with {foes}
+- [!one] dealt with {n} {foes} for {giver}
+- [one] put an end to {foes}, as {giver} requested
+- [!one] overcame {n} {foes}
+- [one] overcame {foes}
+- [!one] brought down {n} {foes}, as {giver} asked
+- [one] brought down {foes}, as {giver} asked

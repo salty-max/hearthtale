@@ -1,0 +1,19 @@
+---
+kind: c-deed-kill
+---
+- [!one] brought down {n} {foes}
+- [one] brought down {foes}
+- [!one] killed {n} {foes}, glad to leave that trouble behind
+- [one] killed {foes}, glad to leave that trouble behind
+- [!one] overcame {n} {foes}
+- [one] overcame {foes}
+- [!one] hunted down {n} {foes}
+- [one] hunted down {foes}
+- [!one] finished the work of dealing with {n} {foes}
+- [one] finished the work of dealing with {foes}
+- [!one] dealt with {n} {foes} for {giver}
+- [one] put an end to {foes}, as {giver} requested
+- [!one] dealt with {n} {foes}
+- [one] dealt with {foes}
+- [!one] put down {n} {foes}, as {giver} asked
+- [one] put down {foes}, as {giver} asked

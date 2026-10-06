@@ -1,18 +1,19 @@
 ---
 kind: c-deed-item
 ---
-- [!one] fetched {n} {thing} for {giver}
-- [!one] gathered {n} {thing}, as {giver} wanted
-- [!one] hauled {n} {thing} back to {ender}
-- [!one] dug up {n} {thing}
+- [!one] fetched {n} {thing}
+- [one] fetched {thing}
+- [!one] collected {n} {thing}, as {giver} asked
+- [one] collected {thing}, as {giver} asked
+- [!one] brought back {n} {thing}
+- [one] brought back {thing}
+- [!one] found {n} {thing}, a tidy result after the looking
+- [one] found {thing}, a tidy result after the looking
 - [!one] scraped together {n} {thing}
+- [one] scraped together {thing}
 - [!one] came back with {n} {thing}
-- [!one] filled my pack with {n} {thing}
-- [!one] collected {n} {thing}, no complaints
-- [!one] found {n} {thing}, which took some looking
-- [one] fetched {thing} for {giver}
-- [one] brought {giver} {thing}
-- [one] dug out {thing}
-- [one] found {thing}, right where it shouldn't be
-- [one] recovered {thing} and handed it over to {ender}
 - [one] came back with {thing}
+- [!one] looked until I had {n} {thing}
+- [one] looked until I had {thing}
+- [!one] brought {giver} {n} {thing}
+- [one] brought {thing} to {ender}

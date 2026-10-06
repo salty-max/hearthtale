@@ -1,8 +1,9 @@
 ---
 kind: c-deed-word
 ---
-- carried word from {giver} to {ender}
-- ran {giver}'s message to {ender}
-- took {giver}'s orders to {ender}
-- brought {ender} {giver}'s word
-- went from {giver} to {ender} with the news
+- saw {giver}'s request through with {ender}
+- completed {giver}'s errand with {ender}, leaving it no longer a promise
+- finished the work between {giver} and {ender}
+- went from {giver} to {ender} and concluded the charge
+- brought {giver}'s business to its end with {ender}
+- carried out {giver}'s errand through to {ender}

@@ -1,7 +1,8 @@
 ---
 kind: close-deep
 ---
-- {foe} almost ended me {at}. Afterwards I could think only of how small a distance lay between the life I was building and its disappearance.
-- [!foe] I was almost lost {at}, with nothing left to spare. There was no honour in the mistake, only a chance to learn because I had survived it.
-- [!foe] For a moment {at}, the thought of all I had yet to do became sharper than the danger itself. I was not ready for my story to end.
-- {foe} left me barely alive {at}. I had wanted to prove my strength, but what mattered then was having another day to use it.
+- {foe} left me barely alive {at}. I had wanted my deeds to matter; in that moment, the chance to do another was enough.
+- I nearly died to {foe} {at}, and found no honour in the nearness of it. I had survived, and owed that survival better judgement.
+- {foe} almost ended my life {at}. The future I meant to help build suddenly seemed very easy to leave unfinished.
+- [!foe] I barely survived {at}. Strength was a poor thing to waste on a mistake I refused to understand.
+- [!foe] I came within a breath of the end {at}, with no boast left in me and much I still wanted to do.

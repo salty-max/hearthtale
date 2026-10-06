@@ -1,0 +1,19 @@
+---
+kind: c-deed-kill
+---
+- [!one] put an end to {n} {foes}
+- [one] put an end to {foes}
+- [!one] brought down {n} {foes}, a result that needed no further checking
+- [one] brought down {foes}, a result that needed no further checking
+- [!one] killed {n} {foes}
+- [one] killed {foes}
+- [!one] got the better of {n} {foes}
+- [one] got the better of {foes}
+- [!one] solved the problem of dealing with {n} {foes}
+- [one] solved the problem of dealing with {foes}
+- [!one] dealt with {n} {foes} for {giver}
+- [one] put an end to {foes}, as {giver} requested
+- [!one] overcame {n} {foes}
+- [one] overcame {foes}
+- [!one] dealt with {n} {foes}, as {giver} asked
+- [one] dealt with {foes}, as {giver} asked

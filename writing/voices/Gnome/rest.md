@@ -1,0 +1,12 @@
+---
+kind: rest
+---
+- I rested {at}, allowing my ideas to catch up with the rest of me.
+- I settled {at}, content to stop improving things for a little while.
+- I paused {at}. Being still was occasionally the simplest way to make progress in one's thoughts.
+- I rested {at}, with several things to consider and no need to consider them standing.
+- I stopped {at}, glad to leave the next difficulty unsolved until I was better able to solve it.
+- I rested {at}, letting the day become clearer before making any further conclusions about it.
+- I paused {at}, where doing nothing seemed a perfectly workable arrangement.
+- I rested {at}, content that the world could operate briefly without my suggestions.
+- I set the journey aside {at}, with questions enough to keep me company without moving.

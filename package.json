@@ -23,7 +23,7 @@
     "db:seed": "bun run --filter @hearthtale/api db:seed",
     "addon:seed": "luajit addon/test/seed.lua > apps/api/src/db/seed/characters.json",
     "addon:build": "bun scripts/build.ts",
-    "addon:check": "bun scripts/build.ts --check && luajit addon/test/sim.lua && FOREVER=1 luajit addon/test/sim.lua && luajit addon/test/writer.lua && luajit addon/test/sample.lua > /dev/null && luajit addon/test/seed.lua > /dev/null",
+    "addon:check": "bun scripts/build.ts --check && luajit addon/test/sim.lua && FOREVER=1 luajit addon/test/sim.lua && luajit addon/test/writer.lua && FOREVER=1 luajit addon/test/writer.lua && luajit addon/test/sample.lua > /dev/null && luajit addon/test/seed.lua > /dev/null && FOREVER=1 luajit addon/test/voices.lua compare > /dev/null",
     "addon:package": "bun scripts/package.ts"
   },
   "lint-staged": {

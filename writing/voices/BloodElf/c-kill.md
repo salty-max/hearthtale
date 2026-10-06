@@ -1,0 +1,11 @@
+---
+kind: c-kill
+---
+- disposed of {foe}
+- overcame {foe}
+- put an end to {foe}, without more ceremony than the matter deserved
+- brought down {foe}
+- concluded the encounter with {foe}
+- defeated {foe}, glad to put the interruption behind me
+- dealt with {foe}
+- prevailed against {foe}

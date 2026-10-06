@@ -1,9 +1,11 @@
 ---
 kind: c-trainer
 ---
-- learned {spells} from my trainer
-- made time for lessons in {spells}
+- was taught {spells}, which ought to come in handy
+- learned {spells}, with some work ahead before I could call the lesson mine
+- added {spells} to what I knew
 - came away from training with {spells}
-- was taught {spells}
-- added {spells} to what I could rely on
-- [many] learned {spells} among several new lessons
+- made time for lessons in {spells}
+- learned {spells} and meant to make proper use of it
+- was shown {spells}, another thing worth learning well
+- took instruction in {spells}, glad to have something useful to practise

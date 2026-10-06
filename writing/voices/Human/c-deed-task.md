@@ -1,0 +1,11 @@
+---
+kind: c-deed-task
+---
+- saw to {giver}'s request to {task}
+- managed to {task}, glad to take one worry off someone's hands
+- found a way to {task}
+- was asked to {task} and did my best to see it through
+- did what was needed to {task}, as {giver} asked
+- completed the work required to {task}
+- set out to {task} and was relieved to call it done
+- saw through the business of having to {task}

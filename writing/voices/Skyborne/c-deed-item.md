@@ -1,0 +1,19 @@
+---
+kind: c-deed-item
+---
+- [client:forever !one] collected {n} {thing}
+- [client:forever one] collected {thing}
+- [client:forever !one] gathered {n} {thing}, as {giver} asked
+- [client:forever one] gathered {thing}, as {giver} asked
+- [client:forever !one] recovered {n} {thing}
+- [client:forever one] recovered {thing}
+- [client:forever !one] found {n} {thing}, with something firmer than expectation to bring back
+- [client:forever one] found {thing}, with something firmer than expectation to bring back
+- [client:forever !one] brought back {n} {thing}
+- [client:forever one] brought back {thing}
+- [client:forever !one] returned with {n} {thing}
+- [client:forever one] returned with {thing}
+- [client:forever !one] searched until I had {n} {thing}
+- [client:forever one] searched until I had {thing}
+- [client:forever !one] brought {giver} {n} {thing}
+- [client:forever one] brought {thing} to {ender}

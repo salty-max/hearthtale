@@ -1,0 +1,11 @@
+---
+kind: c-deed-task
+---
+- attended to {giver}'s request to {task}
+- found a way to {task}, glad to answer a need
+- completed the work required to {task}
+- was asked to {task} and gave the matter my care
+- set out to {task} and saw it through
+- managed to {task}, with one less difficulty left to others
+- did what was needed to {task}
+- saw through the task of going to {task}, grateful to have been useful

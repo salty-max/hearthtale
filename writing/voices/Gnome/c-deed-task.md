@@ -1,0 +1,11 @@
+---
+kind: c-deed-task
+---
+- worked out how to {task}, as {giver} had asked
+- managed to {task}, which improved matters considerably
+- found a workable way to {task}
+- solved the immediate problem of having to {task}
+- was asked to {task} and made the request practicable
+- saw through the work needed to {task}
+- set out to {task} and could finally call the attempt successful
+- completed the task of going to {task}, with a better idea of what it involved

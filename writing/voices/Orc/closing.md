@@ -1,9 +1,9 @@
 ---
 kind: closing
 ---
-- The work had taken {time}, and I had more to carry from it than the weight of my kit.
-- I had spent {time} travelling and earned {gold}, enough to make this account worth putting in order.
-- After {time} on the road, I was ready to consider what I had done before taking on more.
-- This stretch had kept me busy for {time}, with something learned as well as something accomplished.
-- [slow] I had worked for {time}, long enough to know the value of stopping before weariness became a mistake.
-- [quick] Only {time} had passed, but it had given me work worth remembering.
+- The work had taken {time}, and I was ready to consider it without another demand already before me.
+- I had spent {time} travelling and earned {gold}, resources to carry into the work still ahead.
+- After {time}, I could put the day's deeds in order and look plainly at what they had taught me.
+- This stretch had kept me busy for {time}. Rest would make the strength I had left useful again.
+- I had worked for {time}, enough to know that going on from pride alone would serve no one.
+- I had earned {gold} in {time}, with more accomplished than merely wished for.

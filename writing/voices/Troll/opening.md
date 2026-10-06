@@ -1,0 +1,12 @@
+---
+kind: opening
+---
+- I took up the road {at}, ready to see what trouble had dressed itself as opportunity.
+- I began again {at}. A long promise was no use to a short day's hunger.
+- I set out {at}, with a little caution for the road and a little laughter for myself.
+- I opened a fresh page {at}, where the next good chance might look much like the next bad one.
+- I made ready {at}, with no wish to spend strength where wit would do.
+- I went on {at}, keeping my people's persistence closer than my own complaints.
+- I began this stretch {at}, watching for what moved and what seemed too still.
+- I returned to my account {at}. The road taught plainly enough, once a person stopped telling it what to say.
+- I set out {at}, with respect for the loa and no intention of leaving all the work to them.

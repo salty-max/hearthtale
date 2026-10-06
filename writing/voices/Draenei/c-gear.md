@@ -1,0 +1,18 @@
+---
+kind: c-gear
+---
+- [!made] equipped {item}
+- [!made] added {item} to my equipment
+- [!made] made {item} part of my kit
+- [!made] began using {item}, grateful for something more to rely on
+- [!made] fitted myself with {item}
+- [!made] took {item} into use
+- [!made] went on equipped with {item}
+- [!made] put {item} among the equipment I relied on
+- [made] equipped {item}, which I had made myself
+- [made] equipped {item}, grateful to have made something useful
+- [made] made {item} part of my kit, grateful to have made something useful
+- [made] fitted myself with {item}, made with my own hands
+- [made] began using {item}, which I had crafted
+- [made] went on equipped with {item}, the result of my own work
+- [made] put {item} among my equipment, pleased to have made it myself

@@ -1,0 +1,19 @@
+---
+kind: c-deed-item
+---
+- [!one] gathered {n} {thing}
+- [one] gathered {thing}
+- [!one] collected {n} {thing}, as {giver} asked
+- [one] collected {thing}, as {giver} asked
+- [!one] found {n} {thing}
+- [one] found {thing}
+- [!one] brought back {n} {thing}, glad to have answered a need
+- [one] brought back {thing}, glad to have answered a need
+- [!one] returned with {n} {thing}
+- [one] returned with {thing}
+- [!one] searched until I had {n} {thing}
+- [one] searched until I had {thing}
+- [!one] recovered {n} {thing}
+- [one] recovered {thing}
+- [!one] brought {giver} {n} {thing}
+- [one] brought {thing} to {ender}

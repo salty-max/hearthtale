@@ -1,0 +1,11 @@
+---
+kind: c-kill
+---
+- found a way past {foe}, decisively
+- overcame {foe}
+- dealt with {foe}, a practical problem with an unambiguous end
+- brought down {foe}
+- came through the encounter with {foe}, rather pleased with the result
+- put an end to {foe}
+- got the better of {foe}, which settled the immediate difficulty
+- finished off {foe}

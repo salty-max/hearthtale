@@ -1,7 +1,7 @@
 ---
 kind: rare
 ---
-- I brought down {foe} {at}, and found myself returning to the memory as I travelled on.
-- {foe} fell to me {at}. I wanted to remember the encounter as more than one death among many.
-- I faced {foe} {at} and came through it, with the name still clear in my thoughts.
-- I killed {foe} {at}, and gave the encounter its own place on this page.
+- I brought down {foe} {at}, and kept the encounter apart in my thoughts from the ordinary fighting.
+- {foe} fell to me {at}. I gave the name its place here, without pretending a death meant the same thing as an understanding.
+- I faced {foe} {at} and prevailed, with the memory still returning in the quiet between other deeds.
+- I killed {foe} {at}, a brief encounter whose shape did not fade as quickly as the rest.

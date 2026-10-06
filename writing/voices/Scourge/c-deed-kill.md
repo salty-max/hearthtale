@@ -1,17 +1,19 @@
 ---
 kind: c-deed-kill
 ---
-- [!one] killed {n} {foes} for {giver}
-- [!one] dealt with {n} {foes} at {giver}'s request
-- [!one] brought down {n} {foes} before the task was done
-- [!one] put down {n} {foes} and reported to {ender}
-- [!one] completed the hunt for {n} {foes}
-- [!one] accounted for {n} {foes}, as {giver} had wanted
-- [!one] killed the {n} {foes} named in {giver}'s request
-- [!one] had brought down {n} {foes} by the time I reported back
-- [!one] finished the work of dealing with {n} {foes}
-- [one] killed {foes} as {giver} wished
+- [!one] dealt with {n} {foes}
 - [one] dealt with {foes}
-- [one] brought word of {foes}'s defeat to {giver}
-- [one] hunted down {foes}
-- [one] put an end to {foes}
+- [!one] brought down {n} {foes}, and remained available to report it
+- [one] brought down {foes}, and remained available to report it
+- [!one] killed {n} {foes}
+- [one] killed {foes}
+- [!one] accounted for {n} {foes}
+- [one] accounted for {foes}
+- [!one] finished the matter of dealing with {n} {foes}
+- [one] finished the matter of dealing with {foes}
+- [!one] dealt with {n} {foes} for {giver}
+- [one] put an end to {foes}, as {giver} requested
+- [!one] disposed of {n} {foes}
+- [one] disposed of {foes}
+- [!one] put an end to {n} {foes}, as {giver} asked
+- [one] put an end to {foes}, as {giver} asked

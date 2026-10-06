@@ -1,0 +1,11 @@
+---
+kind: c-trainer
+---
+- learned {spells}, with discipline still required to justify the knowledge
+- was instructed in {spells}
+- added {spells} to my repertoire
+- made time for lessons in {spells}
+- studied {spells}, unwilling to leave the learning half finished
+- came away knowing {spells}
+- was taught {spells}, a useful addition rather than an ornament
+- took instruction in {spells}

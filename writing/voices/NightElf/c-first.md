@@ -1,8 +1,9 @@
 ---
 kind: c-first
 ---
-- met {kind} for the first time and began to learn their ways
-- saw {kind} with my own eyes at last
-- learned something of {kind} through my first encounter with them
-- met {kind} in a fight and learned to give them more attention
-- came to know {kind} the hard way
+- encountered {kind} for the first time and attended to their ways
+- met {kind} in a fight, where an old name took on new meaning
+- learned something of {kind} that watching alone had not taught me
+- came through my first encounter with {kind}
+- saw {kind} at close quarters for the first time
+- found how much remained to learn about {kind}

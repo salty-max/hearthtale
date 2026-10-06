@@ -1,12 +1,12 @@
 ---
 kind: opening
 ---
-- [!night] I took up the road again {at}, with yesterday's work still clear in my mind.
-- [!night] I began another day's travelling {at}, ready to find what was needed of me.
-- [night] I set out {at} in the dark, keeping my attention on what lay ahead.
-- I started this stretch {at}, with my kit in order and work still waiting.
-- I looked ahead from {where} and tried to judge what the road would demand.
-- I began again {at}, carrying what I had learned rather than what I had hoped to prove.
-- [!night] I was on my feet {at} with daylight enough to make a start.
-- I picked up my journey {at}, where there was no shortage of things left to do.
-- I read the last page {at} before making room for what would follow.
+- I took up the road {at}, with work ahead and no reason to wait for someone else to begin it.
+- I began again {at}. What was asked of me deserved an answer in deeds.
+- I set out {at}, determined to leave the place stronger for whatever work I could do.
+- I made ready {at}, with yesterday's mistakes worth carrying only if I had learned from them.
+- I went on {at}, conscious that freedom meant little if I let pride choose in my place.
+- I opened a fresh page {at}, ready to put my strength to something that would last.
+- I began this stretch {at}, where there was more to be done than to be said.
+- I took up my account {at}. A deed should bear its own weight without a boast to hold it up.
+- I set out {at}, with my people's future nearer in my thoughts than any glory of my own.

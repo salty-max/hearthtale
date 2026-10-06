@@ -46,6 +46,7 @@ SlashCmdList.HEARTHTALE("link K7Q2")
 check(J.link.code == "K7Q2MX" and printed[#printed]:find("six letters", 1, true), "… and refuses what isn't a code")
 check(J.guid == state.guid and J.began.level == 1 and not J.prologue, "a new character named like a deleted one starts a fresh journal, from level 1: no prologue")
 check(J.hardcore and J.race == "Dwarf" and J.class == "PALADIN" and J.name == "Sealinedion", "it knows who it is: a Hardcore dwarf paladin")
+check(J.faction == "alliance", "it records the player's faction for cultures shared by both factions")
 check(#J.chapters == 1 and ch().start.zone == "Dun Morogh" and ch().start.sub == "Coldridge Valley" and ch().start.level == 1 and not ch().start.night,
   "chapter 1 begins at Coldridge Valley, by day")
 check(#moments("place") == 0, "where it starts is named by the opening, not a discovery")
@@ -420,5 +421,19 @@ local died, last = 0, K.chapters[#K.chapters].log
 for _, m in ipairs(last) do if m.k == "died" then died = died + 1 end end
 check(not K.closed and died == 1 and last[#last].sub == "Gol'Bolar Quarry" and told and not HearthtaleHall.lives[state.guid],
   "a death on a normal realm: told in its chapter, no Hall, the book goes on")
+
+if FOREVER then
+  for i, faction in ipairs({ "Horde", "Alliance" }) do
+    HearthtaleChar = nil
+    state.guid, state.level, state.race, state.faction = "Player-Skyborne-" .. i, 1, "Skyborne", faction
+    login()
+    check(HearthtaleChar.race == "Skyborne" and HearthtaleChar.faction == faction:lower(),
+      "a Skyborne player's " .. faction .. " tradition follows the faction reported by the game")
+    -- Existing saves acquire faction on their next login too.
+    HearthtaleChar.faction = nil
+    login()
+    check(HearthtaleChar.faction == faction:lower(), "an older Skyborne journal acquires its faction at login")
+  end
+end
 
 io.write(FOREVER and "all good (Forever)\n" or "all good\n")

@@ -1,8 +1,7 @@
 ---
 kind: beginning
 ---
-- I began this account {at}, with more to learn than I would have admitted to my kin.
-- I opened my journal {at}, determined to bring home something worth telling.
-- I put the first words on this page {at}, hoping I would recognise myself when I read them again.
-- I wanted to do my kin proud when I set out {at}, though I had little notion yet of what that would ask of me.
-- I began {at} with a pack to carry and a place among my people still to earn.
+- I opened my journal {at}, meaning to bring home a sound tale as well as sound boots.
+- I began {at}, where there was work to be done and a fair bit beyond it worth looking into.
+- I set out {at} with my kin in mind. A name was worth keeping only if the work behind it stood up.
+- I put my first words down {at}, curious to see what the world had buried besides trouble.

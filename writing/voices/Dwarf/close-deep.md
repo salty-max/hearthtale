@@ -1,7 +1,8 @@
 ---
 kind: close-deep
 ---
-- I came within a breath of the end {at}. {foe} had left so little of me standing that I could scarcely believe I was still here to write about it.
-- {foe} nearly put me in the ground {at}, and I could not steady my thoughts afterwards. There were still things I wanted to bring home.
-- [!foe] For a moment {at}, I thought this book would be all my kin had of me. The danger passed, but that thought did not.
-- [!foe] I barely survived {at}, and the relief took longer to arrive than the fear. I had never understood quite so plainly what a single mistake could cost.
+- {foe} nearly put me in the ground {at}. I had meant to learn what was under it, but not quite that way.
+- I barely survived {foe} {at}, with all my grand intentions reduced to the simple business of staying alive.
+- {foe} left me within a breath of the end {at}. The relief came slowly, and I was content to let it.
+- [!foe] I barely survived {at}, and found I still had a great deal I wanted to bring home.
+- [!foe] I came too near the end {at}. A mistake that large deserved more thought than an excuse.

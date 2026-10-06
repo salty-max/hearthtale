@@ -1,0 +1,19 @@
+---
+kind: c-deed-kill
+---
+- [client:forever !one] dealt with {n} {foes}
+- [client:forever one] dealt with {foes}
+- [client:forever !one] put an end to {n} {foes}, with the result clearer than what I had expected
+- [client:forever one] put an end to {foes}, with the result clearer than what I had expected
+- [client:forever !one] killed {n} {foes}
+- [client:forever one] killed {foes}
+- [client:forever !one] prevailed against {n} {foes}
+- [client:forever one] prevailed against {foes}
+- [client:forever !one] completed the task of dealing with {n} {foes}
+- [client:forever one] completed the task of dealing with {foes}
+- [client:forever !one] dealt with {n} {foes} for {giver}
+- [client:forever one] put an end to {foes}, as {giver} requested
+- [client:forever !one] overcame {n} {foes}
+- [client:forever one] overcame {foes}
+- [client:forever !one] brought down {n} {foes}, as {giver} asked
+- [client:forever one] brought down {foes}, as {giver} asked

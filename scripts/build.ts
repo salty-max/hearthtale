@@ -98,7 +98,7 @@ const KINDS: Record<string, string[]> = {
 const VOICE = ["home", "kin", "faith", "weapon"];
 const TAGS = ["home", "ally", "foe", "neutral", "night", "hc", "high", "low", "first", "elite", "lots", "many", "slow", "quick",
   "foe", "fall", "drowning", "lava", "nature", "beast", "people", "player", "inside", "rest", "fire", "last", "one", "aside", "new", "made", "form", "demon", "steed"];
-const RACES = ["Human", "Dwarf", "NightElf", "Gnome", "Draenei", "Orc", "Troll", "Tauren", "Scourge", "BloodElf"];
+const RACES = ["Human", "Dwarf", "NightElf", "Gnome", "Draenei", "Orc", "Troll", "Tauren", "Scourge", "BloodElf", "Skyborne"];
 const CLASSES = ["WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK", "DRUID"];
 const tagOk = (t: string) => {
   const [k, v] = t.replace(/^!/, "").split(":");

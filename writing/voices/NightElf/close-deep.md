@@ -1,7 +1,8 @@
 ---
 kind: close-deep
 ---
-- {foe} nearly ended my journey {at}, and for a moment all the time I had imagined ahead of me became uncertain. I had so little of it in my hands.
-- [!foe] I barely survived {at}. Afterwards I noticed ordinary things with an attention I had not given them before, simply because I was still there to notice.
-- [!foe] For a moment {at}, I thought I would see no more of the world. The fear stayed even when the danger had gone.
-- {foe} brought me within a breath of the end {at}. I could not think of any teaching that made the thought of leaving easier.
+- {foe} nearly ended me {at}, and all the days I had left unconsidered seemed precious at once.
+- I barely survived {foe} {at}. Patience would not buy back a life after I had spent it carelessly.
+- {foe} brought me within a breath of the end {at}. I could not find a teaching that made leaving the world less difficult.
+- [!foe] I barely survived {at}, and listened afterwards with an attention I had been too certain to give before.
+- [!foe] I came very near the end {at}. Long memory was no protection against the smallness of a single moment.

@@ -2,7 +2,7 @@
 kind: c-place
 ---
 - came to {place}
-- shambled into {place}
+- made my way into {place}
 - found {place}
 - reached {place}
-- arrived in {place}, to no welcome
+- arrived in {place}, curious what use I might find for the place

@@ -1,9 +1,11 @@
 ---
 kind: c-deed-task
 ---
-- carried out {giver}'s request to {task}
-- set out to {task} and saw the work through
-- found a way to {task}, as {giver} had asked
-- went to {task} before returning to {ender}
-- managed to {task}
-- had been asked to {task} and could at last call it done
+- saw through {giver}'s request to {task}
+- found a way to {task}, without mistaking haste for purpose
+- completed the work needed to {task}
+- went to {task} and gave the matter the attention it required
+- was asked to {task} and brought the work to its end
+- managed to {task}, with more understood than when I began
+- carried out the task of going to {task}
+- did what was needed to {task}, as {giver} asked
