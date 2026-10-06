@@ -50,7 +50,7 @@ The blue water of Loch Modan lay still behind the Stonewrought Dam. I knew dwarv
 
 ## Chapter 1 (levels 1 to 5)
 
-I began in the Valley of Trials, with no one's will in place of my own. What I did with that freedom would be my answer. Heat rose from the red dust of Durotar, as if the ground itself were breathing. This was the land we had claimed, and I meant to learn how to belong to it. I overcame ten Mottled Boars and dealt with Sarkoth. I killed twelve Vile Familiars, with nothing to boast of and nothing to regret; I found ten Cactus Apples. I saw Foreman Thazz'ril's work through to the end.
+I began in the Valley of Trials, with no one's will in place of my own. What I did with that freedom would be my answer. Heat rose from the red dust of Durotar, as if the ground itself were breathing. This was the land we had claimed, and I meant to learn how to belong to it. I overcame ten Mottled Boars and dealt with Sarkoth. I killed twelve Vile Familiars, with nothing to boast of and nothing to regret; I found ten Cactus Apples. I was of use to Foreman Thazz'ril.
 
 At Razor Hill I heard the forge before I saw the drilling. Beyond the barracks, Kul Tiras ships sat off the coast, and I understood why no one in the town ever quite stood at rest. I saw Gornek's business through with Master Gadrin, no glory in it, only use. I came away knowing Rend and Battle Shout. I put on a Rough Leather Vest, sound kit, which is all a fight respects; I defeated a Scorpid Worker. I brought back eight Scorpid Worker Tails.
 
@@ -76,7 +76,7 @@ I had completed seven errands, and found the country less distant for knowing wh
 
 ## Chapter 2 (levels 5 to 6)
 
-I went on in Dolanaar, conscious that haste had made older mistakes than mine. The white stone and still pools of Darnassus slowed me without my meaning to. Near the Temple of the Moon the old hush settled around me, and I was home. I walked into the Temple of the Moon, where I fulfilled "Body and Heart". I learned Bear Form, aware that knowing its name was only the beginning of understanding it.
+I went on in Dolanaar, conscious that haste had made older mistakes than mine. The white stone and still pools of Darnassus slowed me without my meaning to. Near the Temple of the Moon the old hush settled around me, and I was home. I walked into the Temple of the Moon, where I was of use to Mathrengyl Bearwalker. I learned Bear Form, aware that knowing its name was only the beginning of understanding it.
 
 # Mortis, a Forsaken priest
 

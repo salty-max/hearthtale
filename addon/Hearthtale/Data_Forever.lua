@@ -192,15 +192,17 @@ ns.data = {
     },
     ["c-quest"] = {
       { "did what {giver} asked of me" },
-      { "saw to {quest}, for {giver}" },
-      { "finished {quest}" },
-      { "saw {quest} through" },
-      { "took care of {quest}" },
-      { "did the work {giver} needed" },
-      { "saw {quest} done" },
-      { "put {quest} behind me" },
-      { "finished the business of {quest}" },
-      { "did my part in {quest}" },
+      { "answered {giver}'s need" },
+      { "lent {giver} a hand" },
+      { "kept my word to {giver}" },
+      { "helped {giver} as I had promised" },
+      { "saw {giver}'s work through to the end" },
+      { "carried out what {giver} needed" },
+      { "took care of what {giver} wanted" },
+      { "was of use to {giver}" },
+      { "gave {giver} the help they had asked for" },
+      { "settled what {giver} needed settled" },
+      { "obliged {giver}" },
     },
     ["c-return"] = {
       { "went back to {place}" },
@@ -1294,11 +1296,6 @@ ns.data = {
       ["c-place"] = {
         { "tramped into {place}" },
       },
-      ["c-quest"] = {
-        { "did right by {giver}" },
-        { "got {quest} done" },
-        { "put {quest} to bed" },
-      },
       ["c-travel"] = {
         { "tramped on to {place}" },
       },
@@ -1880,11 +1877,6 @@ ns.data = {
         { "brought down {foe}, slowly, carefully" },
         { "outlasted {foe}, as the old trees outlast storms" },
       },
-      ["c-quest"] = {
-        { "saw {quest} to its end" },
-        { "answered {giver}'s need" },
-        { "fulfilled {quest}" },
-      },
       ["c-travel"] = {
         { "followed the path to {place}" },
       },
@@ -2122,12 +2114,6 @@ ns.data = {
         { "faced {foe}, blade to blade, and stood" },
         { "brought down {foe}. My blood ran hot" },
         { "beat {foe}, though it cost me" },
-      },
-      ["c-quest"] = {
-        { "saw {giver}'s work through to the end" },
-        { "finished the work recorded as {quest}" },
-        { "brought {quest} to its conclusion" },
-        { "carried out what {giver} needed" },
       },
       ["c-travel"] = {
         { "marched to {place}" },
@@ -2369,11 +2355,6 @@ ns.data = {
       },
       ["c-kill"] = {
         { "disposed of {foe}" },
-      },
-      ["c-quest"] = {
-        { "did what {giver} asked" },
-        { "completed {quest}, for the Dark Lady" },
-        { "did {giver}'s work" },
       },
       ["c-trainer"] = {
         { "took instruction in {spells}" },

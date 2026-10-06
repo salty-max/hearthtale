@@ -2,12 +2,14 @@
 kind: c-quest
 ---
 - did what {giver} asked of me
-- saw to {quest}, for {giver}
-- finished {quest}
-- saw {quest} through
-- took care of {quest}
-- did the work {giver} needed
-- saw {quest} done
-- put {quest} behind me
-- finished the business of {quest}
-- did my part in {quest}
+- answered {giver}'s need
+- lent {giver} a hand
+- kept my word to {giver}
+- helped {giver} as I had promised
+- saw {giver}'s work through to the end
+- carried out what {giver} needed
+- took care of what {giver} wanted
+- was of use to {giver}
+- gave {giver} the help they had asked for
+- settled what {giver} needed settled
+- obliged {giver}

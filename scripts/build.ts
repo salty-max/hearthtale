@@ -84,7 +84,7 @@ const KINDS: Record<string, string[]> = {
   "c-deed-item": ["n", "thing", "giver", "ender"],
   "c-deed-task": ["task", "giver", "ender"],
   "c-deed-word": ["giver", "ender"],
-  "c-quest": ["quest", "giver"],
+  "c-quest": ["giver"],
   "c-trainer": ["spells"],
   "c-skill": ["skill", "rank"],
   "c-prof": ["prof", "rank"],
