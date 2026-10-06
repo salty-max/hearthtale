@@ -558,8 +558,8 @@ local function topKills(kills)
 end
 
 -- A quest, told by what it asked: so many of a creature slain, so many of a
--- thing brought, a task, a message carried to another (a clause); its title
--- only when there is nothing else to tell.
+-- thing brought, a task, a message carried to another (a clause); else only
+-- who asked; a quest with nothing but its title goes untold.
 -- An objective that says what is done, not what to do ("Moonkin Stone found"):
 -- it can't follow "I managed to".
 local DONE = { found = true, slain = true, made = true, built = true, met = true, done = true, freed = true }
@@ -601,8 +601,9 @@ function Book:deed(m, key, tags)
   elseif ender and m.giver then
     done = self:say("c-deed-word", key, values, tags, nil, true)
   end
-  if not done and m.title then
-    done = self:say("c-quest", key, { quest = '"' .. m.title .. '"', giver = m.giver }, tags, nil, true)
+  -- nothing to tell but who asked: that much; a title alone isn't told
+  if not done and m.giver then
+    done = self:say("c-quest", key, { giver = m.giver }, tags, nil, true)
   end
   return done
 end
