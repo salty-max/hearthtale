@@ -70,7 +70,7 @@ The plan and its decisions: PLAN.md.
 - After changing the writing: `bun run addon:build`, then `bun run addon:check`,
   regenerate `docs/sample.md` and read it again.
 
-## The site (hearthtale.gg)
+## The site (hearthtale.app)
 
 A monorepo around the addon (Turborepo + Bun workspaces, as WoWLocker): the
 site shows the book the addon saves at logout (Save.lua), never writing its own.

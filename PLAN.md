@@ -12,7 +12,8 @@ Explorer's Field Journal (same release, CI and CurseForge tooling).
 
 Wayfarer's Journal becomes **Hearthtale**: the hearth (the inn, the hearthstone,
 where its chapters close) and the tale. Short enough for the site's domain
-(hearthtale.gg was free) and not taken on CurseForge. Renamed everywhere before
+(hearthtale.app registered by the user on 6 October 2026: hearthtale.app cost
+$130 a year) and not taken on CurseForge. Renamed everywhere before
 anyone but the author had installed it: the folder, the saved variables (a
 journal of the old name starts over), the GitHub repo; `/hearthtale` and `/ht`.
 
@@ -26,7 +27,7 @@ site).
 
 | Question | Decision |
 |---|---|
-| Home | A site of its own at hearthtale.gg, in this repo (a monorepo, as WoWLocker: addon/, apps/api, apps/web, packages/shared). Vercel Pro (team jellycat, project hearthtale, functions in fra1) + **Neon** through the Vercel integration (free plan, Frankfurt; chosen over Supabase by the user: with no poller, its scale-to-zero suits a site that only wakes for uploads and readers). |
+| Home | A site of its own at hearthtale.app, in this repo (a monorepo, as WoWLocker: addon/, apps/api, apps/web, packages/shared). Vercel Pro (team jellycat, project hearthtale, functions in fra1) + **Neon** through the Vercel integration (free plan, Frankfurt; chosen over Supabase by the user: with no poller, its scale-to-zero suits a site that only wakes for uploads and readers). |
 | Accounts | Battle.net sign-in: the characters the Battle.net API knows (Classic Era, Hardcore, SoD, TBC Anniversary) are found and attached on their own. A code typed in the game (`/ht link CODE`) attaches any other (Forever has no Battle.net namespace). |
 | Upload | **Ravenpost**, one companion for WoWLocker and Hearthtale: its own repo (salty-max/ravenpost), moved out of wow-locker and renamed; each site linked separately from its settings page (its own sign-in, its own upload key). |
 | Prose | The addon writes the book into its saved file at each logout (Save.lua), and the site shows that text as is: never two writers, never two versions of the writing. (Chosen over running Writer.lua on the site, which risked a different text: Lua 5.1 in the game, 5.4 in WebAssembly, and players on older versions.) A rest that closes a chapter is told at once (the logout settled in advance); a /reload is put right by the next logout. |
@@ -54,11 +55,11 @@ site).
    Hearthtale), Forever's game folder too; its config carried over from the
    WoWLocker companion; WoWLocker's download page points to it.
 7. **Sharing**: share links, preview cards, the public Hall.
-8. **Launch**: hearthtale.gg live, then CurseForge and Wago, the project page.
+8. **Launch**: hearthtale.app live, then CurseForge and Wago, the project page.
 
 ### What the user does
 
-- Register **hearthtale.gg** (free on 6 October 2026).
+- Register the domain: **hearthtale.app**, done 6 October 2026.
 - A **Battle.net API client** for Hearthtale (develop.battle.net), with the
   site's sign-in redirect: done 6 October 2026 (its keys in
   apps/api/.env.local and Vercel's production settings); the redirect URL

@@ -1,7 +1,7 @@
 -- The book, written into the saved file at each logout, word for word what the
 -- game shows: HearthtaleChar.book, and each fallen life's in the Hall
 -- (HearthtaleHall.lives[guid].book). Ravenpost carries the saved files to
--- hearthtale.gg after a logout or a /reload, so the site shows the text as is
+-- hearthtale.app after a logout or a /reload, so the site shows the text as is
 -- and never writes its own. The chapter a rest has just closed is told closed
 -- (the logout settled in advance: ns.settledView); a /reload is put right by
 -- the next logout.

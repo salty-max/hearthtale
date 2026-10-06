@@ -30,7 +30,7 @@ bun run addon:check     # both up to date, simulation on both games, writer test
 bun run addon:package   # dist/classic, dist/forever, zipped
 ```
 
-The site, hearthtale.gg (`apps/`, `packages/`; needs `bun install` once):
+The site, hearthtale.app (`apps/`, `packages/`; needs `bun install` once):
 
 ```bash
 bun run db && bun run db:migrate   # local Postgres on :5435
