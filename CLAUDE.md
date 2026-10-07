@@ -34,8 +34,9 @@ The plan and its decisions: PLAN.md.
   with or without "the", creatures by name ("Hogger"), as one of a kind ("the
   Defias Messenger") or with "a", quest items' plurals ("8 Tough Wolf Meat"),
   role owners in item names ("a Champion's Helm" vs "Zanzil's Seal"). Where the
-  game is silent, `scripts/names.ts` decides from the name (macOS's
-  /usr/share/dict/words) and the writer's rules the rest. `bun run audit`
+  game is silent, `scripts/names.ts` decides from the name (English words
+  and given names from npm: an-array-of-english-words, human-names) and the
+  writer's rules the rest. `bun run audit`
   downloads the data (cmangos classic-db, pfQuest's places) into `.cache/`,
   regenerates Names.lua and runs `addon/test/audit.lua`: every place,
   creature, objective and item of the game through the writer, reviewed in
