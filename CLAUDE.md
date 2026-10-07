@@ -146,6 +146,11 @@ The plan and its decisions: PLAN.md.
   stretch at a craft is one clause (`c-made`); a raid is one moment (`c-raid`).
   A quest's work is told where it was done (`done`), its turn-in a short return
   (`c-report`); an abandoned quest's work is taken back.
+- Curation: in each place, the first two routine hand-ins (a delivery, a report
+  back, a message, a favour known only by who asked, green gear) are told; the
+  rest fold into one clause (`c-fold`: "saw to four more errands besides"),
+  written when the next thing happens so finished sentences never change.
+  Deeds, firsts, dangers and finds are always told.
 - The chapter's recap (tasks, fighting, time) holds one thought: the others
   are its `[plain]` sentences. The rest that ends the chapter has its own.
 - Topic tags (teeth, mechanical, cloth, meat, explore, escort, made) require

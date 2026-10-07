@@ -504,7 +504,7 @@ end
 -- nearly ended me."), never its name three times over.
 for _, race in ipairs(RACES) do
   for seed = 1, 12 do
-    local c = { guid = "named-once-" .. seed, race = race, class = COMBOS[race][1], began = { level = 20 },
+    local c = { guid = "named-once-" .. race .. seed, race = race, class = COMBOS[race][1], began = { level = 20 },
       chapters = { { start = { level = 20, zone = "The Barrens", sub = "Ratchet" }, kills = {}, quests = 0, played = 100, gold = 0, log = {
         { k = "place", zone = "The Barrens", sub = "The Merchant Coast", at = 100 },
         { k = "kill", name = "Southsea Brigand", kind = "Humanoid", zone = "The Barrens", sub = "The Merchant Coast", at = 200 },
@@ -518,18 +518,48 @@ for _, race in ipairs(RACES) do
   end
 end
 
+-- Routine hand-ins past a scene's first two fold into one clause, told
+-- when the next thing happens: every mix of errands and green gear, and
+-- nobody from the folded ones named.
+for _, race in ipairs(RACES) do
+  for seed = 1, 36 do
+    local errands, gear = ({ 0, 1, 3 })[seed % 3 + 1], ({ 0, 1, 2 })[math.floor(seed / 3) % 3 + 1]
+    local log, at = {}, 100
+    local function add(m) at = at + 100; m.zone, m.sub, m.at = "Silverpine Forest", "The Sepulcher", at; table.insert(log, m) end
+    local function deliver(ender, thing)
+      add({ k = "quest", ender = ender, objectives = { { type = "item", name = thing, n = 1, held = true } } })
+    end
+    deliver("High Executor Hadrec", "Sealed Report")
+    deliver("Magistrate Sevren", "Wiley's Note")
+    for i = 1, errands do deliver("Folded Person " .. i, "Folded Thing " .. i) end
+    for i = 1, gear do add({ k = "gear", quality = 2, link = "item:1:[Folded Gear " .. i .. "]" }) end
+    add({ k = "kill", name = "Rot Hide Gnoll", kind = "Humanoid" })
+    local c = { guid = "fold-" .. race .. seed, race = race, class = COMBOS[race][1], began = { level = 20 },
+      chapters = { { start = { level = 20, zone = "Silverpine Forest", sub = "The Sepulcher" }, kills = {}, quests = 0,
+        played = 100, gold = 0, log = log } } }
+    local text = ns.writeBook(c).chapters[1].text
+    inspect(race .. " fold", text)
+    if text:find("Folded") then problem(race .. " fold", "a folded hand-in named", text) end
+    if errands + gear > 0 and not text:find("gear") and not text:find("errand") and not text:find("job")
+      and not text:find("task") then
+      problem(race .. " fold", "folded hand-ins never told", text)
+    end
+  end
+end
+
 -- A thing carried from one to the next ("I carried Deliah's Ring to Hadrec,
 -- took it on to Sevren"), or handed over twice to the same person: named once.
 for _, race in ipairs(RACES) do
-  for seed = 1, 16 do
-    local function deliver(ender, at)
-      return { k = "quest", ender = ender, objectives = { { type = "item", name = "Deliah's Ring", n = 1, held = true } },
+  for seed = 1, 24 do
+    local function deliver(ender, at, thing)
+      return { k = "quest", ender = ender, objectives = { { type = "item", name = thing or "Deliah's Ring", n = 1, held = true } },
         zone = "Silverpine Forest", sub = "The Sepulcher", at = at }
     end
-    local c = { guid = "carried-on-" .. seed, race = race, class = COMBOS[race][1], began = { level = 20 },
+    local c = { guid = "carried-on-" .. race .. seed, race = race, class = COMBOS[race][1], began = { level = 20 },
       chapters = { { start = { level = 20, zone = "Silverpine Forest", sub = "The Sepulcher" }, kills = {}, quests = 0, played = 100, gold = 0,
-        log = seed % 2 == 0 and { deliver("High Executor Hadrec", 100), deliver("Magistrate Sevren", 200), deliver("Raleigh Andrean", 300) }
-          or { deliver("High Executor Hadrec", 100), deliver("High Executor Hadrec", 200), deliver("Magistrate Sevren", 300) } } } }
+        log = seed % 3 == 0 and { deliver("High Executor Hadrec", 100), deliver("Magistrate Sevren", 200), deliver("Raleigh Andrean", 300) }
+          or seed % 3 == 1 and { deliver("High Executor Hadrec", 100), deliver("High Executor Hadrec", 200), deliver("Magistrate Sevren", 300) }
+          or { deliver("High Executor Hadrec", 100), deliver("High Executor Hadrec", 200, "Wiley's Note"), deliver("Magistrate Sevren", 300, "Sealed Report") } } } }
     local text = ns.writeBook(c).chapters[1].text
     inspect(race .. " carried on", text)
     local _, rings = text:gsub("Deliah's Ring", "")
