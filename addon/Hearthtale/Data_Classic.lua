@@ -313,7 +313,6 @@ ns.data = {
       { "gave my hearthstone a place of return {inn}" },
       { "fixed my hearthstone {inn}" },
       { "my hearthstone was bound {inn} from then on", tags = { "turn" } },
-      { "{inn} was where I set my hearthstone", tags = { "turn" } },
     },
     ["c-kill"] = {
       { "killed {foe}" },

@@ -597,4 +597,51 @@ local repaired = A.chapters[1].log[#A.chapters[1].log]
 check(repaired and repaired.k == "done" and repaired.objectives[1].name == "Rockjaw Trogg"
   and repaired.objectives[2].name == "Burly Rockjaw Trogg", "a quest misread by 0.5.0, read again: its work told by name")
 
+-- An item the game hasn't loaded yet: its objective says "0/8 " with no
+-- name. Not kept so: read again until the name is there.
+A.pending = {}
+state.npc, state.titles = "Sten Stoutarm", { [179] = "Dwarven Outfitters" }
+state.objectives = { [179] = { { text = ": 0/8", type = "item", numRequired = 8 } } }
+if FOREVER then fire("QUEST_ACCEPTED", 179) else fire("QUEST_ACCEPTED", 1, 179) end
+fire("QUEST_LOG_UPDATE")
+check(A.pending[179] and A.pending[179].objectives == nil, "an objective without its name yet: not kept")
+state.objectives = { [179] = { { text = "Tough Wolf Meat: 0/8", type = "item", numRequired = 8 } } }
+fire("QUEST_LOG_UPDATE")
+check(A.pending[179].objectives and A.pending[179].objectives[1].name == "Tough Wolf Meat", "… read again once the game has it")
+-- one kept blank by 0.5.1: read again too
+A.pending[179].objectives[1].name = " "
+fire("QUEST_LOG_UPDATE")
+check(A.pending[179].objectives[1].name == "Tough Wolf Meat", "a name 0.5.1 kept blank, read again")
+
+-- A writer's error at logout: the last book is kept, the error reported.
+local before = A.book
+local reported
+geterrorhandler = function() return function(err) reported = err end end
+local realWrite = ns.writeBook
+ns.writeBook = function() error("writer broke") end
+logout()
+ns.writeBook = realWrite
+geterrorhandler = nil
+check(A.book == before and reported and tostring(reported):find("writer broke"), "a writer's error at logout: the last book kept, the error shown")
+
+-- Forever's names: a first name and a surname (UnitName's second value,
+-- a realm elsewhere). The character's full name kept; a companion's too,
+-- with the first name the journal calls them by.
+HearthtaleChar = nil
+state.guid, state.name, state.surname = "Player-4619-015E4047", "Hellefie", "Namzar"
+state.party = { party1 = { name = "Harrysaun", surname = "Brightwood", class = "PALADIN" } }
+login()
+
+fire("GROUP_ROSTER_UPDATE")
+local H = HearthtaleChar
+local joined = H.chapters[#H.chapters].log[#H.chapters[#H.chapters].log]
+if FOREVER then
+  check(H.name == "Hellefie Namzar" and joined and joined.k == "group" and joined.name == "Harrysaun Brightwood"
+    and joined.first == "Harrysaun", "Forever: full names kept, the first name for the journal")
+else
+  check(H.name == "Hellefie" and joined and joined.name == "Harrysaun" and not joined.first,
+    "elsewhere the second name is a realm: left out")
+end
+state.name, state.surname, state.party = nil, nil, {}
+
 io.write(FOREVER and "all good (Forever)\n" or "all good\n")

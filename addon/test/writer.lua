@@ -577,11 +577,25 @@ for _, race in ipairs(RACES) do
   end
 end
 
+-- Forever's surnames: the people met go by their first name in the journal.
+for _, race in ipairs(RACES) do
+  local c = { guid = "surnames-" .. race, race = race, class = COMBOS[race][1], name = "Hellefie Namzar", began = { level = 10 },
+    chapters = { { start = { level = 10, zone = "Dun Morogh", sub = "Kharanos" }, log = {
+      { k = "group", name = "Harrysaun Brightwood", first = "Harrysaun", class = "PALADIN", zone = "Dun Morogh", sub = "Kharanos", at = 100 },
+      { k = "pvp", name = "Grukk Ashmane", first = "Grukk", race = "Orc", class = "WARRIOR", zone = "Dun Morogh", sub = "Kharanos", at = 2000 },
+    } } } }
+  local text = ns.writeBook(c).chapters[1].text
+  inspect(race .. " surnames", text)
+  if text:find("Brightwood") or text:find("Ashmane") or not text:find("Harrysaun") or not text:find("Grukk") then
+    problem(race .. " surnames", "the people met not by their first name", text)
+  end
+end
+
 -- An objective recorded with a number for its name (0.5.0's recorder read
 -- "0/8 Tough Wolf Meat" the wrong way round): never written ("eight 0s").
 for _, race in ipairs(RACES) do
   for seed = 1, 6 do
-    local o = { { type = seed % 2 == 0 and "item" or "monster", name = "0", n = 8 } }
+    local o = { { type = seed % 2 == 0 and "item" or "monster", name = seed % 3 == 0 and " " or "0", n = 8 } }
     local c = { guid = "numbered-" .. race .. seed, race = race, class = COMBOS[race][1], chapters = { {
       start = { level = 2, zone = "Dun Morogh", sub = "Coldridge Valley" }, log = {
         { k = "done", id = 179, giver = "Sten Stoutarm", objectives = o, zone = "Dun Morogh", sub = "Coldridge Valley", at = 100 },
