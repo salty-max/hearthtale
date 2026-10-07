@@ -60,7 +60,11 @@ The plan and its decisions: PLAN.md.
   no creature can be told), else the combat log's line; the name from what
   was seen (target, mouse-over, nameplates) or `UnitTokenFromGUID`. Without
   either (an older Forever client): the target watched through the fight),
-  `Writer.lua` (the prose, written from the records when read),
+  `Writer.lua` (the prose, written from the records when read; a chapter's
+  moments go through `match(m, arms)`, Rust-like: one arm per kind of moment,
+  `{ kind, fn, when = guard }`, the first that fits runs; what each tells is
+  `tell.<kind>`, the moments of their own `own.<kind>`. A new kind of moment
+  is a new arm, in its place in the order),
   `Save.lua` (the book written into the saved file at each logout, for the
   site: it never writes its own),
   `Book.lua` (the window: chapters on the left, the open one on the right; a
