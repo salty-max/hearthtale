@@ -7,7 +7,7 @@
 ## SavedVariables: HearthtaleSettings, HearthtaleHall
 ## IconTexture: Interface\Icons\INV_Misc_Book_08
 ## X-Website: https://github.com/salty-max/hearthtale
-## X-License: MIT
+## X-License: GPL-3.0-or-later
 
 Data.lua
 Core.lua

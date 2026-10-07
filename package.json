@@ -2,7 +2,7 @@
   "name": "hearthtale",
   "private": true,
   "description": "Hearthtale: your WoW character's own journal, written as you play (the addon), and hearthtale.app to read it anywhere",
-  "license": "MIT",
+  "license": "GPL-3.0-or-later",
   "workspaces": [
     "apps/*",
     "packages/*"
