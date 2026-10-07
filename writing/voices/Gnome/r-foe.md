@@ -14,7 +14,7 @@ kind: r-foe
 - [hc] the margin for error rather thinner than I like
 - [low] still refining my technique, so to speak
 - [high] with an efficiency I was frankly proud of
-- rather more pleased with the outcome than my approach
+- [!more] rather more pleased with the outcome than my approach
 - with a new idea about how to meet the next encounter
 - my hands taking longer to settle than I expected
 - [one] less inclined to attempt another close examination
@@ -23,4 +23,4 @@ kind: r-foe
 - [mechanical] still curious about the workings despite the trouble
 - [night] finding movement harder to judge in the poor light
 - [hc] conscious of just how little room I had left myself
-- [low] with more to practise than I had expected
+- [low !more] with more to practise than I had expected

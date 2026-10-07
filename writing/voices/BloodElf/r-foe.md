@@ -1,19 +1,19 @@
 ---
 kind: r-foe
 ---
-- with rather more effort than I would admit
+- [!more] with rather more effort than I would admit
 - efficiently, if without much elegance
 - a matter settled, and not before time
 - my composure intact, if not my patience
 - [one] a tiresome obstacle, removed
-- [!one] each more irritating than the last
+- [!one !more] each more irritating than the last
 - [teeth] my dignity, at least, unbitten
 - [mechanical] crude workmanship, to the last
 - [night] the dark doing my aim no favours
 - [hc] reminded how little stood between me and ruin
 - [low] less graceful about it than I meant to be
 - [high] with a precision I had worked hard to earn
-- with more effort than I was eager to admit
+- [!more] with more effort than I was eager to admit
 - with my composure returning in its own time
 - rather relieved to put the encounter behind me
 - with less patience left than I had begun with

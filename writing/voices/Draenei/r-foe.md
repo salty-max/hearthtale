@@ -12,9 +12,9 @@ kind: r-foe
 - [hc] remembering how much my people had already lost
 - [low] still learning to trust my own strength
 - relieved to have room to think again
-- with more effort than I had hoped to need
+- [!more] with more effort than I had hoped to need
 - less confident that I had judged the danger correctly
 - with little wish to repeat the encounter just yet
 - still trying to understand what had made the fight difficult
-- more tired than I had wanted to admit
+- [!more] more tired than I had wanted to admit
 - thankful that I had come through

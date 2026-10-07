@@ -684,6 +684,8 @@ function Book:deed(m, key, tags)
     local count = o.n or 1
     -- one asked for is a named one, mostly ("Vagash"): no article
     values.n, values.foes = words(count), count > 1 and plural(o.name) or o.name
+    if tags.more then values.n = words(count - 1) end -- "five more", the first told already
+    self.lastFoe = { name = o.name, many = count > 1, told = self.told or 0 }
     tags.one = count == 1 or nil
     tags.teeth = ({ Wolf = true, Cat = true, Bear = true, Boar = true, Crocolisk = true, Raptor = true })[self.creatureKinds[o.name] or ""]
     done = self:say("c-deed-kill", key, values, tags, nil, true)
@@ -807,6 +809,7 @@ function Book:chapter(n, ch)
   self.pendingRemark, self.lastSentenceRemark = false, false
   local function append(text, routine, remarks)
     table.insert(current, text)
+    self.told = (self.told or 0) + 1
     self.lastSentenceRemark = (remarks or 0) > 0
     if ns.writerSentence then ns.writerSentence(text, routine or 0, remarks or 0, n) end
   end
@@ -835,6 +838,7 @@ function Book:chapter(n, ch)
   local scene, sceneZone, seenHere, killed = nil, nil, {}, false
   local pending, lead, sentences, named = {}, nil, 0, false -- named: the sentence names its place
   local arrival, arrivalMode, sentenceLimit, pendingKinds = false, nil, nil, {}
+  local pendingFoes = {} -- the creature a plain kill clause names (one told by its quest is dropped)
   local pendingRoutine, pendingRemarks = 0, 0
   local prev -- the moment before the one being told
   local families = { quest = "work", kill = "work", boss = "work", loot = "work", gear = "work",
@@ -876,10 +880,12 @@ function Book:chapter(n, ch)
     -- "there" only right after the place is named
     if not named then self.there = true end
     pending, lead, named, arrival, arrivalMode, sentenceLimit, pendingKinds = {}, nil, false, false, nil, nil, {}
+    pendingFoes = {}
     sentences = sentences + 1
   end
   self.prepareRemark = function()
-    if self.pendingRemark or (self.lastSentenceRemark and #pending > 0) then flush() end
+    -- (an arrival alone frames what follows: kept whole, the remark waits)
+    if self.pendingRemark or (self.lastSentenceRemark and #pending > 0 and not (arrival and #pending == 1)) then flush() end
   end
   -- A clause for a moment: a new sentence takes a link (the time gone by, or
   -- the next thing in the scene); a sentence holds as many clauses as the
@@ -903,6 +909,7 @@ function Book:chapter(n, ch)
     end
     table.insert(pending, text)
     table.insert(pendingKinds, kind)
+    table.insert(pendingFoes, m and m.k == "kill" and m.name or false)
     if self.selectedRoutine then pendingRoutine = pendingRoutine + 1 end
     if self.selectedRemark then pendingRemarks, self.pendingRemark = pendingRemarks + 1, true end
     if #pending >= sentenceLimit or text:find("[;%.!%?]")
@@ -924,6 +931,28 @@ function Book:chapter(n, ch)
       named = true
       clause(self:say(back and "c-return" or "c-travel", key .. "|go", { place = mid(place), _place = place }, tags(nil, m), nil, true), m, key, true)
     end
+  end
+  -- A quest that counts a creature just killed in the sentence being written
+  -- tells that kill itself: "I brought down a Brigand; I killed six Brigands"
+  -- is one telling too many.
+  local function dropKill(m, t)
+    local o = m.objectives and m.objectives[1]
+    if not (o and o.type == "monster" and o.name) then return end
+    local dropped = false
+    for j = #pending, 1, -1 do
+      if pendingFoes[j] == o.name then
+        -- (its remark, if it had one, goes with it: the budget counts again)
+        if pending[j]:find(", ") then pendingRemarks = math.max(0, pendingRemarks - 1) end
+        pendingRoutine = math.max(0, pendingRoutine - 1)
+        self.pendingRemark = pendingRemarks > 0
+        table.remove(pending, j); table.remove(pendingKinds, j); table.remove(pendingFoes, j)
+        dropped = true
+      end
+    end
+    -- already told, a sentence before: the quest's count is "more" of them
+    local last = self.lastFoe
+    if not dropped and (o.n or 1) > 1 and last and last.name == o.name and not last.many
+      and (self.told or 0) - last.told <= 1 then t.more = true end
   end
   -- Where a moment is: its subzone, or the scene's place if it is somewhere
   -- unnamed in the same zone.
@@ -1039,6 +1068,7 @@ function Book:chapter(n, ch)
       if m.id then doneAt[m.id] = i end
       local t = tags({ done = true }, m) -- (not the hand-in: "brought back" waits for it)
       prepare()
+      dropKill(m, t)
       clause(self:deed(m, key, t), m, key)
     elseif m.k == "quest" and m.told then
       -- its work told already: the turn-in is a return to who asked, none
@@ -1058,6 +1088,7 @@ function Book:chapter(n, ch)
     elseif m.k == "quest" then
       local t = tags(nil, m)
       prepare()
+      dropKill(m, t)
       clause(self:deed(m, key, t), m, key)
     elseif m.k == "kill" then
       self.creatureKinds[m.name] = m.kind
@@ -1071,6 +1102,7 @@ function Book:chapter(n, ch)
       elseif not (killed and place == scene) then
         inScene(c_("c-kill", { foe = article(m.name) }, t))
         killed = true
+        self.lastFoe = { name = m.name, many = false, told = self.told or 0 }
       end
     elseif m.k == "group" and m.raid then
       inScene(c_("c-raid", { n = words(m.raid) }))
@@ -1177,8 +1209,13 @@ function Book:chapter(n, ch)
         alone("rare", key, self:here({ foe = m.name }, place), tags({ elite = m.elite or nil }, m), m)
       elseif m.k == "close" then
         if #current >= 3 then newParagraph() end
+        -- the foe just named: "one of them", not its name again
+        local foe, last = article(m.foe), self.lastFoe
+        if m.foe and last and last.name == m.foe and (self.told or 0) - last.told <= 1 then
+          foe = last.many and "one of them" or (m.foe and "another " .. m.foe)
+        end
         alone(m.hp <= 5 and "close-deep" or "close-light", key,
-          self:here({ foe = article(m.foe) }, place), tags({ night = m.night or false, foe = m.foe ~= nil }, m), m)
+          self:here({ foe = foe }, place), tags({ night = m.night or false, foe = m.foe ~= nil }, m), m)
       elseif m.k == "died" and m.death then
         alone("died", key, self:here({ foe = deathFoe(m.death, article) }, place), deathTags(m.death), m)
       elseif m.k == "dungeon" then

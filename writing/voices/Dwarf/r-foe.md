@@ -6,7 +6,7 @@ kind: r-foe
 - the sort of fight that tells better than it fights
 - solid on my feet by the end of it
 - [one] built sturdier than appearances suggested
-- [!one] more of them than was strictly fair
+- [!one !more] more of them than was strictly fair
 - [teeth] my beard none the worse, which was the main thing
 - [mechanical] rattling like a badly hung door to the last
 - [night] the dark doing my aim no favours

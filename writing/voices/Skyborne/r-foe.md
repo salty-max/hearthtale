@@ -6,17 +6,17 @@ kind: r-foe
 - [client:forever] with the wind still tugging at me afterwards
 - [client:forever one] quicker than I had read it
 - [client:forever] my balance found again only after
-- [client:forever one] one more pattern I had misread at first
+- [client:forever one !more] one more pattern I had misread at first
 - [client:forever !one] each one changing the shape of the next
 - [client:forever teeth] keeping well clear of the teeth
 - [client:forever mechanical] built without any feeling for the air
 - [client:forever night] the dark changing every angle
 - [client:forever hc] aware how little the sky forgives a fall
 - [client:forever faction:horde] the way our mentors would have wished, I hoped
-- [client:forever faction:alliance] one more problem solved without waiting for answers from above
-- [client:forever faction:alliance] more aware of what I had misjudged in the encounter
+- [client:forever faction:alliance !more] one more problem solved without waiting for answers from above
+- [client:forever faction:alliance !more] more aware of what I had misjudged in the encounter
 - [client:forever] pleased that I had kept my nerve
 - [client:forever] still too occupied with the fight to think far beyond it
-- [client:forever] more tired than I had intended to become
+- [client:forever !more] more tired than I had intended to become
 - [client:forever] with a better sense of the danger at close quarters
 - [client:forever] thankful that I had come through
