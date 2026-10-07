@@ -24,3 +24,7 @@ kind: c-gear
 - [made held] took up {item}, my own work
 - [made held] armed myself with {item} of my own making
 - [made held] took {item} in hand, fresh from my own work
+- [made] began using {item}, my own work
+- [made] made {item} part of my kit, my own work
+- [made held] wielded {item}, made by my own hand
+- [made] went on equipped with {item} I had made

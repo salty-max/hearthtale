@@ -1,0 +1,19 @@
+---
+kind: pvp-one
+---
+- [known] I killed {name}, {who}, {in}.
+- [known] I fought {name}, {who}, {in}, and won.
+- [known] I met {name}, {who}, {in}, and only one of us walked on.
+- [known] {name}, {who}, fell to me {at}.
+- [known] {name} was {who}, and the fight between us was short.
+- [known] I crossed blades with {name}, {who}, and was the one left standing.
+- [known] {name}, {who}, did not survive meeting me.
+- [known] I killed {name}, {who}, and moved on before anyone came looking.
+- [known hc] I killed {name}, {who}, {in}, and felt how close the other ending had been.
+- [!known] I fought {name} {at}, and walked away from it.
+- [!known] I killed {name} of the other side {at}.
+- [!known] {name} of the other side fell to me {at}.
+- [!known] I met {name}, one of the other side, and only I walked on.
+- [!known] {name} came within reach, and did not leave it.
+- [!known] I killed {name}, one of the other side, and kept going.
+- [!known] The fight with {name} was short, and ended in my favour.
