@@ -2,7 +2,7 @@
 ## Title: Hearthtale
 ## Notes: Your character's own journal, written as you play, a chapter from rest to rest. On Hardcore, an epitaph and the Hall of the Fallen. /hearthtale to read it.
 ## Author: salty-max
-## Version: 0.3.0
+## Version: 0.4.0
 ## SavedVariablesPerCharacter: HearthtaleChar
 ## SavedVariables: HearthtaleSettings, HearthtaleHall
 ## IconTexture: Interface\Icons\INV_Misc_Book_08
