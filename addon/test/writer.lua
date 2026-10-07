@@ -522,6 +522,23 @@ for _, race in ipairs(RACES) do
   end
 end
 
+-- Every place described, entered by day and by night by each race (at home,
+-- among allies, among foes): each description reachable, and checked.
+for place, p in pairs(ns.data.scenery or {}) do
+  for _, race in ipairs(RACES) do
+    for seed = 1, 4 do
+      local night = seed % 2 == 0 or nil
+      local m = p.type == "dungeon" and { k = "dungeon", name = place, night = night, at = 100 }
+        or p.type == "town" and { k = "place", new = "zone", zone = "Somewhere", sub = place, night = night, at = 100 }
+        or { k = "place", new = "zone", zone = place, night = night, at = 100 }
+      local c = { guid = "scenery-" .. place .. race .. seed, race = race, class = COMBOS[race][1], began = { level = 30 },
+        chapters = { { start = { level = 30, zone = "Elsewhere", sub = "Elsewhere" }, kills = {}, quests = 0, played = 100, gold = 0,
+          log = { m } } } }
+      inspect(race .. " scenery " .. place, ns.writeBook(c).chapters[1].text)
+    end
+  end
+end
+
 -- The journey's end at the highest level, for every race's own lines.
 for _, race in ipairs(RACES) do
   for seed = 1, 12 do
