@@ -41,7 +41,7 @@
 --   death, hardcore, closed, race, class, name, sex, prologue: as before
 --   realm, region                           where the character lives (for the site)
 --   book = { ... }                          the book as written at the last logout (Save.lua)
---   logout = { at, rest, fire, place, zone, sub, level }   the last logout,
+--   logout = { at, rest, fire, place, zone, sub, level, inside }   the last logout,
 --                                           settled at the next login (a /reload
 --                                           fires the same event: it is dropped)
 -- Kills: Classic from the combat log (mine or my pet's); Forever, which
@@ -260,12 +260,14 @@ ns.on("PLAYER_LOGOUT", function()
   tally()
   local zone, sub = where()
   local rest = IsResting and IsResting()
+  local inside = IsIndoors and IsIndoors()
   char().logout = { at = now(), rest = (rest and not secret(rest)) or nil, fire = byFire() or nil,
-    zone = zone, sub = sub, place = sub or zone, level = UnitLevel("player"), night = night() or nil }
+    zone = zone, sub = sub, place = sub or zone, level = UnitLevel("player"), night = night() or nil,
+    inside = (inside and not secret(inside)) or nil }
 end)
 
 local function close(ch, how, l, ahead)
-  ch.ended = { at = l.at, level = l.level, zone = l.zone, sub = l.sub, place = l.place, how = how }
+  ch.ended = { at = l.at, level = l.level, zone = l.zone, sub = l.sub, place = l.place, how = how, inside = l.inside }
   if ns.onChapter and not ahead then ns.onChapter(#char().chapters) end
 end
 
@@ -274,12 +276,17 @@ end
 -- otherwise the chapter goes on, with the night between. ahead: the logout
 -- settled in advance, on a copy, for the book written at logout (Save.lua):
 -- no waking yet, no chat line.
+-- A logout shorter than this is no break (a relog, a quick errand away): no
+-- night, no rest, no chapter closed. (The book written at the logout itself
+-- can't know: it tells a break; the next login puts it right.)
+local SHORT = 30 * 60
 local function settle(l, c, ahead)
   local ch = c.chapters and c.chapters[#c.chapters]
   if not ch or ch.ended or c.closed then return end
+  if not ahead and l.at and now() - l.at < SHORT then return end
   local rested = l.rest or l.fire
   local function note(k, fields)
-    fields.at, fields.night, fields.zone, fields.sub = l.at, l.night, l.zone, l.sub
+    fields.at, fields.night, fields.zone, fields.sub, fields.inside = l.at, l.night, l.zone, l.sub, l.inside
     fields.k = k
     table.insert(ch.log, fields)
   end
@@ -293,7 +300,7 @@ local function settle(l, c, ahead)
     if ahead then return end
     local zone, sub = where()
     table.insert(ch.log, { k = "wake", at = now(), night = night() or nil, after = rested and "rest" or "night",
-      zone = zone or l.zone, sub = sub or l.sub })
+      zone = zone or l.zone, sub = sub or l.sub, inside = l.inside })
   end
 end
 
@@ -621,18 +628,29 @@ if not ns.forever then
     end
   end)
 else
+  -- My target, watched as the fight goes (its health, its flags), not only
+  -- when it's chosen: one I fought (both of us in combat, not another's to
+  -- claim) and then see dead is my kill. (A target is mostly chosen before
+  -- the fight starts, and dies still chosen.)
   local fought, counted = {}, {}
-  ns.on("PLAYER_TARGET_CHANGED", function()
+  local function look()
     if not UnitExists("target") then return end
     local guid = UnitGUID("target")
     if not guid or secret(guid) then return end
-    local mine, theirs = UnitAffectingCombat("player"), UnitAffectingCombat("target")
-    if not UnitIsDead("target") and not secret(mine) and not secret(theirs) and mine and theirs then fought[guid] = true end
-    if UnitIsDead("target") and fought[guid] and not counted[guid] then
+    if not UnitIsDead("target") then
+      local mine, theirs = UnitAffectingCombat("player"), UnitAffectingCombat("target")
+      local claimed = UnitIsTapDenied and UnitIsTapDenied("target")
+      if not secret(mine) and not secret(theirs) and not secret(claimed) and mine and theirs and not claimed then fought[guid] = true end
+    elseif fought[guid] and not counted[guid] then
       counted[guid] = true
       if UnitIsPlayer("target") then vanquished(guid, UnitName("target")) else slain(guid, UnitName("target")) end
     end
-  end)
+  end
+  ns.on("PLAYER_TARGET_CHANGED", look)
+  ns.on("PLAYER_REGEN_DISABLED", look)
+  for _, e in ipairs({ "UNIT_HEALTH", "UNIT_FLAGS" }) do
+    ns.on(e, function(unit) if unit == "target" then look() end end)
+  end
 end
 
 -- ── close calls ──────────────────────────────────────────────────────────────

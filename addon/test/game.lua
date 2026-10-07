@@ -261,18 +261,25 @@ local D = ns.data
 -- Resting and campfires: the game's resting state, the auras on me.
 state.auras = {}
 function IsResting() return state.resting == true end
+function IsIndoors() return state.indoors == true end
+-- (a creature someone else hit first: not mine to claim)
+function UnitIsTapDenied(u) return u == "target" and state.target ~= nil and state.target.tapped == true end
 C_UnitAuras = { GetPlayerAuraBySpellID = function(id) return state.auras[id] and { spellId = id } or nil end }
 local function login() fire("PLAYER_LOGIN"); fire("PLAYER_ENTERING_WORLD", true, false) end
 local function logout() fire("PLAYER_LOGOUT") end
 local function reload() fire("PLAYER_LOGOUT"); fire("PLAYER_LOGIN"); fire("PLAYER_ENTERING_WORLD", false, true) end
 -- Kills.
-local function kill(id, n)
-  state.target = { id = id, n = n }
+local function kill(id, n, tapped)
+  state.target = { id = id, n = n, tapped = tapped }
   if FOREVER then
+    -- as it's played: chosen first, then the fight (its health falling), and
+    -- it dies still targeted
+    fire("PLAYER_TARGET_CHANGED")
     inCombat = true
-    fire("PLAYER_TARGET_CHANGED")
+    fire("PLAYER_REGEN_DISABLED")
+    fire("UNIT_HEALTH", "target")
     inCombat, deadTarget = false, true
-    fire("PLAYER_TARGET_CHANGED")
+    fire("UNIT_HEALTH", "target")
     deadTarget = false
     return
   end

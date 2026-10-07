@@ -1,0 +1,11 @@
+---
+kind: wake-in
+---
+- I got up {at}, stiff from the floor but dry.
+- I rose from my corner {at}, with the building waking around me.
+- I stretched the bench out of my back {at} and went on.
+- I left my corner {at}, glad the night had been spent under a roof.
+- I was up again {at}, a little stiff and ready to go on.
+- I went on {at}, a night indoors behind me.
+- [hc] Glad to have woken at all, I got up from my corner {at}.
+- [night] I rose {at} while it was still dark outside.

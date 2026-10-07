@@ -1,0 +1,15 @@
+---
+kind: night-in
+---
+- [!last] I found a corner out of the draught {at} and slept there, glad of walls if not of a bed.
+- [!last] I made do with a bench {at} for the night, with a roof over me and nothing softer.
+- [!last] I slept against a wall {at}, out of the weather, which was most of what I asked.
+- [!last] I settled in a quiet corner {at} for the night, with the building's noises to keep me company.
+- [!last] I spent the night indoors {at} without an inn to speak of, and little for a blanket.
+- [!last] I bedded down on the floor {at}, warmer than the road and not much softer.
+- [!last hc] I slept {at} with my back to a wall, which felt like a sensible precaution.
+- [last] I ended this stretch indoors {at}, with a corner to myself and no bed in it.
+- [last] I settled in a corner {at} to put down my last words, glad of a roof.
+- [last] I stopped {at} for the night, indoors though nobody had offered me a bed.
+- [last] I closed this stretch {at}, sleeping where I could find a dry floor.
+- [last hc] I ended this stretch {at} with a wall at my back and the door in sight.

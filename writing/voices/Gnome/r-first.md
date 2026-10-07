@@ -6,7 +6,7 @@ kind: r-first
 - worth a page of observations later
 - behaving in a way I had not accounted for
 - my hypothesis about them disproved within seconds
-- [teeth] with jaws that rewarded further study from afar
+- [teeth] their jaws best studied from a distance
 - [mechanical] built worse than I would have built it
 - [low] one more variable nobody had mentioned
 - with my first impression in need of revision

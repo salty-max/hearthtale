@@ -53,7 +53,10 @@ The plan and its decisions: PLAN.md.
   sentences each.
 - `addon/Hearthtale/`: `Core.lua` (the character's record, events,
   `/hearthtale`), `Record.lua` (the chapters and their moments, as they happen;
-  a logout settled at the next login),
+  a logout settled at the next login: under 30 minutes away it's no break,
+  nothing told; indoors without an inn, a night `inside`. Kills on Forever,
+  without a combat log: the target watched through the fight, its health and
+  flags, one fought and seen dying is a kill, not one another claimed),
   `Writer.lua` (the prose, written from the records when read),
   `Save.lua` (the book written into the saved file at each logout, for the
   site: it never writes its own),
@@ -145,7 +148,11 @@ The plan and its decisions: PLAN.md.
   at the game's highest level (`summit`: the journal stops recording). A
   stretch at a craft is one clause (`c-made`); a raid is one moment (`c-raid`).
   A quest's work is told where it was done (`done`), its turn-in a short return
-  (`c-report`); an abandoned quest's work is taken back.
+  (`c-report`); handed in on the spot (the turn-in next, same place), told once
+  at the turn-in with whom it was for (`c-handed-item`, `c-handed-kill`:
+  "I brought Sten Stoutarm eight Tough Wolf Meat"); an abandoned quest's work
+  is taken back. A night and its waking under 30 minutes apart (older
+  journals) aren't told; indoors, `night-in`/`wake-in`.
 - Curation: in each place, the first two routine hand-ins (a delivery, a report
   back, a message, a favour known only by who asked, green gear) are told; the
   rest fold into one clause (`c-fold`: "saw to four more errands besides"),

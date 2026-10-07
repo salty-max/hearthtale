@@ -1,0 +1,23 @@
+---
+kind: c-handed-item
+---
+- [!one !more] brought {giver} {n} {thing}
+- [!one !more] handed {n} {thing} over to {giver}
+- [!one !more] took {n} {thing} straight to {giver}
+- [!one !more] collected {n} {thing} for {giver}
+- [!one !more] gathered {n} {thing} for {giver}
+- [!one !more] tracked down {n} {thing} for {giver}
+- [!one !more] fetched {n} {thing} for {giver}
+- [!one !more] found {n} {thing} for {giver}
+- [!one !more] recovered {n} {thing} for {giver}
+- [!one !more] delivered {n} {thing} to {giver}
+- [one !plural] brought {giver} {thing}
+- [one] handed {thing} over to {giver}
+- [one] found {thing} for {giver}
+- [one] took {thing} straight back to {giver}
+- [one] recovered {thing} for {giver}
+- [one] fetched {thing} for {giver}
+- [one] tracked down {thing} for {giver}
+- [one] put {thing} into {giver}'s hands
+- [one] gave {thing} to {giver}
+- [one] came back to {giver} with {thing}
