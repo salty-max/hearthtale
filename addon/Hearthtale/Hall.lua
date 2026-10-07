@@ -13,13 +13,6 @@ local function hall()
   return HearthtaleHall.lives
 end
 
-local function copy(t)
-  if type(t) ~= "table" then return t end
-  local out = {}
-  for k, v in pairs(t) do out[k] = copy(v) end
-  return out
-end
-
 -- The fallen, the most recent first.
 function ns.fallen()
   local list = {}
@@ -35,7 +28,7 @@ function ns.fallenLife(guid) return hall()[guid] end
 
 -- The book joins the Hall: a copy of the records as they were at the end.
 local function enshrine(c)
-  local life = copy(c)
+  local life = ns.copy(c)
   life.pending, life.book = nil, nil -- its book is written at the next logout, with the death
   life.realm = GetRealmName and GetRealmName() or nil
   life.raceName, life.className = UnitRace("player"), UnitClass("player")

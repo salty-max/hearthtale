@@ -269,9 +269,13 @@ LinkUtil = { RegisterLinkHandler = function(kind, fn) linkHandlers[kind] = fn en
 LinkProcessorResponse = { Handled = 2 }
 
 -- ── load the addon ───────────────────────────────────────────────────────────
+-- The files in the TOC's order; Data.lua is the game's own data file.
 local ns = {}
-assert(loadfile(DIR .. (FOREVER and "Data_Forever.lua" or "Data_Classic.lua")))("Hearthtale", ns)
-for _, f in ipairs({ "Names.lua", "Core.lua", "Record.lua", "Language.lua", "Lines.lua", "Scene.lua", "Writer.lua", "Book.lua", "Hall.lua", "Save.lua", "Settings.lua", "Minimap.lua" }) do assert(loadfile(DIR .. f))("Hearthtale", ns) end
+for line in io.lines(DIR .. "Hearthtale.toc") do
+  local f = line:match("^([%w_]+%.lua)%s*$")
+  if f == "Data.lua" then f = FOREVER and "Data_Forever.lua" or "Data_Classic.lua" end
+  if f then assert(loadfile(DIR .. f))("Hearthtale", ns) end
+end
 local D = ns.data
 -- Resting and campfires: the game's resting state, the auras on me.
 state.auras = {}
