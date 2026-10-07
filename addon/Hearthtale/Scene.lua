@@ -3,6 +3,9 @@
 -- they join, the scene it is in (a place, its zone), the moment being told,
 -- and what the telling remembers of the moments so far (those told with
 -- another, the find just told, the routine hand-ins folded into a tally...).
+-- While it is told, it is the book's scene (book.scene): Book:say reads and
+-- keeps there what a paragraph or a chapter remembers (who was named, the
+-- quips and voice lines used, the remark budget).
 local _, ns = ...
 local W = ns.writer
 local words, listing, mid, objectiveOf, capitalise = W.words, W.listing, W.mid, W.objectiveOf, W.capitalise
@@ -33,11 +36,19 @@ local function newScene(book, n, ch)
     scene = nil, sceneZone = nil, seenHere = {}, killed = false,
     -- the sentence being written: its clauses (their kinds, the creature a
     -- plain kill clause names: one told by its quest is dropped), the link it
-    -- takes, how many the scene has, whether it names its place, an arrival
-    -- framing it
-    pending = {}, pendingKinds = {}, pendingFoes = {}, lead = nil, sentences = 0, named = false,
-    arrival = false, arrivalMode = nil, sentenceLimit = nil,
+    -- takes, whether it names its place, an arrival framing it; its clauses
+    -- that may carry a remark, those that do, a highlight, a turned clause
+    pending = {}, pendingKinds = {}, pendingFoes = {}, lead = nil, named = false,
+    arrival = false, arrivalMode = nil, sentenceLimit = nil, openClauses = 0,
     pendingRoutine = 0, pendingRemarks = 0, pendingHighlight = false, pendingTurn = false,
+    -- the paragraph: who it named, the things carried in it (when), a quip told
+    peopleNamed = {}, thingsCarried = {}, quipped = false,
+    -- the chapter's voice: race and class lines in some chapters only (two
+    -- at most); a remark every two or three routine clauses, not after a
+    -- sentence that had one
+    voiceChapter = hash(book.seed .. "|voice|" .. n) % 3 == 0, voiceUsed = 0,
+    routineCount = 0, nextRemark = 2 + hash(book.seed .. "|remarks|" .. n) % 2, lastSentenceRemark = false,
+    onlyPlain = false, -- (the recap: plain lines only, but for its one thought)
     -- the moment being told (i its place in the log, key its seed, place
     -- where it happened), and the one before
     m = nil, i = nil, key = nil, place = nil, prev = nil, foldNow = false,
@@ -65,11 +76,17 @@ local function newScene(book, n, ch)
       s.relog[j], s.relog[j + 1] = true, true
     end
   end
-  book.prepareRemark = function()
-    -- (an arrival alone frames what follows: kept whole, the remark waits)
-    if book.pendingRemark or (book.lastSentenceRemark and #s.pending > 0 and not (s.arrival and #s.pending == 1)) then s:flush() end
-  end
+  book.scene = s
   return s
+end
+
+-- A remark is due: the sentence being written is closed first if it has one
+-- already, or the sentence before had one (an arrival alone frames what
+-- follows: kept whole, the remark waits).
+function Scene:prepareRemark()
+  if self.pendingRemarks > 0 or (self.lastSentenceRemark and #self.pending > 0 and not (self.arrival and #self.pending == 1)) then
+    self:flush()
+  end
 end
 
 -- ── the text ─────────────────────────────────────────────────────────────────
@@ -78,15 +95,14 @@ function Scene:append(text, routine, remarks, highlight)
   local b = self.book
   table.insert(self.current, text)
   b.told = (b.told or 0) + 1
-  b.lastSentenceRemark = (remarks or 0) > 0
+  self.lastSentenceRemark = (remarks or 0) > 0
   if ns.writerSentence then ns.writerSentence(text, routine or 0, remarks or 0, self.n, highlight) end
 end
 
 function Scene:newParagraph()
   if #self.current > 0 then table.insert(self.paragraphs, self.current); self.current = {} end
-  local b = self.book
-  b.quipped = false
-  b.peopleNamed, b.thingsCarried = {}, {}
+  self.quipped = false
+  self.peopleNamed, self.thingsCarried = {}, {}
 end
 
 -- The chapter's text: a paragraph of one sentence joins the one before it
@@ -156,14 +172,12 @@ function Scene:flush()
     text = "I " .. text
   end
   self:append(linked(self.lead, capitalise(text .. ".")), self.pendingRoutine, self.pendingRemarks, self.pendingHighlight)
-  b.lastSentenceRemark, b.pendingRemark = self.pendingRemarks > 0, false
   self.pendingRoutine, self.pendingRemarks, self.pendingHighlight, self.pendingTurn = 0, 0, false, false
-  b.openClauses = 0
+  self.openClauses = 0
   -- "there" only right after the place is named
   if not self.named then b.there = true end
   self.pending, self.pendingKinds, self.pendingFoes = {}, {}, {}
   self.lead, self.named, self.arrival, self.arrivalMode, self.sentenceLimit = nil, false, false, nil, nil
-  self.sentences = self.sentences + 1
 end
 
 -- Whether a clause of this kind starts a sentence of its own: the one being
@@ -173,18 +187,19 @@ function Scene:otherWork(kind)
     (not FAMILIES[kind] or FAMILIES[kind] ~= FAMILIES[self.pendingKinds[1]])
 end
 
--- A clause for a moment: a new sentence takes a link (the time gone by, or
--- the next thing in the scene); a sentence holds as many clauses as the
--- race's style allows (STYLE), varying the length between two and three.
--- A comma within a clause is not a reason to cut the thought short.
-function Scene:clause(text, m, key, isArrival)
+-- A clause for a moment m (the one being told, or the last one the fold
+-- counted), its text and what Book:say chose (said): a new sentence takes a
+-- link (the time gone by, or the next thing in the scene); a sentence holds as
+-- many clauses as the race's style allows (STYLE), varying the length between
+-- two and three. A comma within a clause is not a reason to cut the thought short.
+function Scene:clause(text, said, m, key, isArrival)
   if not text then return end
   local b = self.book
   local complex = text:find("[,;:%.!%?]") or text:find(" and ")
   local kind = m and m.k or ""
   -- a highlight has its sentence to itself (an arrival may frame it), and
   -- so has a clause turned round ("{foe} fell to me")
-  local highlight, turned = b.selectedWeight == 3, b.selectedTurn
+  local highlight, turned = said.weight == 3, said.turn
   if turned then self:flush() end
   if highlight and #self.pending > 0 and not (self.arrival and #self.pending == 1) then self:flush() end
   if self:otherWork(kind) then self:flush() end
@@ -202,27 +217,23 @@ function Scene:clause(text, m, key, isArrival)
   table.insert(self.pendingKinds, kind)
   table.insert(self.pendingFoes, m and m.k == "kill" and m.name or false)
   -- (the clauses that may carry a remark: not a hand-in)
-  if b.selectedRoutine and (b.selectedWeight or 1) > 0 then self.pendingRoutine = self.pendingRoutine + 1 end
-  if b.selectedRemark then self.pendingRemarks, b.pendingRemark = self.pendingRemarks + 1, true end
+  if said.routine and said.weight > 0 then self.pendingRoutine = self.pendingRoutine + 1 end
+  if said.remark then self.pendingRemarks = self.pendingRemarks + 1 end
   if highlight then self.pendingHighlight = true end
   if turned then self.pendingTurn = true end
-  b.openClauses = #pending
+  self.openClauses = #pending
   if turned or highlight or #pending >= self.sentenceLimit or text:find("[;%.!%?]")
-    or (isArrival and b.selectedRemark) or (b.pendingRemark and #pending >= 2)
+    or (isArrival and said.remark) or (self.pendingRemarks > 0 and #pending >= 2)
     or (#pending >= 2 and (complex or pending[1]:find("[,;:]") or pending[1]:find(" and "))) then self:flush() end
 end
 
--- A moment of its own: a sentence, after the clauses before it (linked to
--- the one before when m is given).
+-- A moment of its own: a sentence, after the clauses before it (m: the
+-- moment, to link it to the one before; nil: no link).
 function Scene:alone(kind, values, t, m)
   local b = self.book
   self:flush()
   local s = b:say(kind, self.key, values, t)
-  if s then
-    self:append((#self.current > 0 and m) and linked(b:link(m, self.prev, self.key), s) or s)
-    self.sentences = 1 -- what follows in the scene may be "then"
-    b.lastSentenceRemark = false
-  end
+  if s then self:append((#self.current > 0 and m) and linked(b:link(m, self.prev, self.key), s) or s) end
   return s
 end
 
@@ -244,31 +255,33 @@ function Scene:at(i, m)
   self.place = self:placeOf(m)
 end
 
--- A new scene at a place: told as the journey there (a place just named
--- needs none).
-function Scene:arrive(place, zone, m, key, opener)
-  local b = self.book
+-- A new scene at a place, for the moment being told: told as the journey
+-- there (opener: the kind of line that tells it; a place just named needs none).
+function Scene:arrive(place, zone, opener)
+  local b, m, key = self.book, self.m, self.key
   self:emitFold()
   self:flush()
   if #self.current >= 3 then self:newParagraph() end
   local back = self.seenHere[place]
-  self.scene, self.sceneZone, self.killed, self.sentences = place, zone, false, 0
+  self.scene, self.sceneZone, self.killed = place, zone, false
   self.seenHere[place] = true
+  if not opener and place == b.last then return end
+  self.named = true
+  local text, said
   if opener then
-    self.named = true
-    self:clause(b:say(opener, key, { place = mid(place), _place = place }, self:tags(nil, m), nil, true), m, key, true)
-  elseif place ~= b.last then
-    self.named = true
-    self:clause(b:say(back and "c-return" or "c-travel", key .. "|go", { place = mid(place), _place = place },
-      self:tags(nil, m), nil, true), m, key, true)
+    text, said = b:say(opener, key, { place = mid(place), _place = place }, self:tags(nil, m), nil, true)
+  else
+    text, said = b:say(back and "c-return" or "c-travel", key .. "|go", { place = mid(place), _place = place },
+      self:tags(nil, m), nil, true)
   end
+  self:clause(text, said, m, key, true)
 end
 
 -- The moment's clause goes in the scene where it happened: arrived there,
 -- and in a sentence of its kind of work.
 function Scene:prepare()
   local m = self.m
-  if self.place and self.place ~= self.scene then self:arrive(self.place, m.zone, m, self.key) end
+  if self.place and self.place ~= self.scene then self:arrive(self.place, m.zone) end
   if self:otherWork(m.k) then self:flush() end
 end
 
@@ -280,23 +293,25 @@ function Scene:tell(kind, values, t)
     values._place = m.place
     values.inn = m.place == b.last and "there" or "at " .. mid(m.place)
   end
-  self:clause(b:say(kind, self.key, values, self:tags(t, m), nil, true), m, self.key)
+  local text, said = b:say(kind, self.key, values, self:tags(t, m), nil, true)
+  self:clause(text, said, m, self.key)
 end
 
 -- A quest's deed told in a clause (Book:deed), in its scene, t its tags.
 function Scene:deed(t)
   local m = self.m
   self:prepare()
-  self:dropKill(m, t)
-  self:clause(self.book:deed(m, self.key, t), m, self.key)
+  self:dropKill(t)
+  local text, said = self.book:deed(m, self.key, t)
+  self:clause(text, said, m, self.key)
 end
 
 -- A quest that counts a creature just killed in the sentence being written
 -- tells that kill itself: "I brought down a Brigand; I killed six Brigands"
 -- is one telling too many.
-function Scene:dropKill(m, t)
+function Scene:dropKill(t)
   local b = self.book
-  local o = objectiveOf(m)
+  local o = objectiveOf(self.m)
   if not (o and o.type == "monster" and o.name) then return end
   local dropped = false
   for j = #self.pending, 1, -1 do
@@ -304,7 +319,6 @@ function Scene:dropKill(m, t)
       -- (its remark, if it had one, goes with it: the budget counts again)
       if self.pending[j]:find(", ") then self.pendingRemarks = math.max(0, self.pendingRemarks - 1) end
       self.pendingRoutine = math.max(0, self.pendingRoutine - 1)
-      b.pendingRemark = self.pendingRemarks > 0
       table.remove(self.pending, j); table.remove(self.pendingKinds, j); table.remove(self.pendingFoes, j)
       dropped = true
     end
@@ -394,7 +408,8 @@ function Scene:emitFold()
   local t = { one = folded.errands == 1 or nil, gear = folded.gear > 0 or nil, onlygear = folded.errands == 0 or nil }
   local n = folded.errands
   folded.errands, folded.gear = 0, 0
-  self:clause(self.book:say("c-fold", fk, { n = words(n) }, self:tags(t, fm), nil, true), fm, fk)
+  local text, said = self.book:say("c-fold", fk, { n = words(n) }, self:tags(t, fm), nil, true)
+  self:clause(text, said, fm, fk)
 end
 
 -- (for the next files of the writer)

@@ -5,7 +5,7 @@
 local _, ns = ...
 local W = ns.writer
 local words, listing, mid, plural, objectiveOf = W.words, W.listing, W.mid, W.plural, W.objectiveOf
-local itemName, things, article, KINDS, SKIP = W.itemName, W.things, W.article, W.KINDS, W.SKIP
+local itemName, things, article, KINDS, SKIP, TEETH = W.itemName, W.things, W.article, W.KINDS, W.SKIP, W.TEETH
 local deathTags, namedElite, deathFoe, playedWords = W.deathTags, W.namedElite, W.deathFoe, W.playedWords
 local goldWords, RACE_NAME, HORDE_RACE, CLASS_NAME = W.goldWords, W.RACE_NAME, W.HORDE_RACE, W.CLASS_NAME
 local FINAL, foeOf, town, topKills = W.FINAL, W.foeOf, W.town, W.topKills
@@ -72,14 +72,14 @@ function tell.place(s, m)
     local town = m.sub and b:sceneryOf(m.sub, m.night)
     if town then
       s:append(town)
-      s.scene, s.sceneZone, s.sentences = m.sub, m.zone, 1
+      s.scene, s.sceneZone = m.sub, m.zone
       s.seenHere[m.sub] = true
       b.last, b.there = m.sub, false
     elseif m.sub then
-      s:arrive(m.sub, m.zone, m, s.key, s.seenHere[m.sub] and "c-return" or "c-place")
+      s:arrive(m.sub, m.zone, s.seenHere[m.sub] and "c-return" or "c-place")
     else
       -- the land itself, just named: here, without arriving again
-      s.scene, s.sceneZone, s.sentences = m.zone, m.zone, 1
+      s.scene, s.sceneZone = m.zone, m.zone
       s.seenHere[m.zone] = true
     end
   elseif m.sub or m.zone then
@@ -90,11 +90,11 @@ function tell.place(s, m)
       s:flush()
       if #s.current >= 3 then s:newParagraph() end
       s:append(#s.current > 0 and linked(b:link(m, s.prev, s.key), town) or town)
-      s.scene, s.sceneZone, s.killed, s.sentences = here, m.zone, false, 1
+      s.scene, s.sceneZone, s.killed = here, m.zone, false
       s.seenHere[here] = true
       b.last, b.there = here, false
     else
-      s:arrive(here, m.zone, m, s.key, s.seenHere[here] and "c-return" or "c-place")
+      s:arrive(here, m.zone, s.seenHere[here] and "c-return" or "c-place")
     end
   end
 end
@@ -136,7 +136,6 @@ function tell.turnIn(s, m)
   end
 end
 function tell.quest(s, m) s:deed(s:tags(nil, m)) end
-local TEETH = { Wolf = true, Cat = true, Bear = true, Boar = true, Crocolisk = true, Raptor = true }
 function tell.kill(s, m)
   local b = s.book
   b.creatureKinds[m.name] = m.kind
@@ -276,7 +275,6 @@ function own.dungeon(s, m)
   local depths = b:sceneryOf(m.name, m.night)
   if depths then
     s:append(#s.current > 0 and linked(b:link(m, s.prev, s.key), depths) or depths)
-    s.sentences = 1
   else
     s:alone("dungeon", { dungeon = mid(m.name), mates = listing(s.mates) }, s:tags(nil, m), m)
   end
@@ -322,7 +320,7 @@ local OWN = {
 function tell.own(s, m)
   s:flush() -- before its place is worked out: "there" depends on the sentence before
   if s.place and s.place ~= s.scene then
-    s.scene, s.sceneZone, s.killed, s.sentences = s.place, m.zone, false, 0
+    s.scene, s.sceneZone, s.killed = s.place, m.zone, false
     s.seenHere[s.place] = true
   end
   match(m, OWN, s)
@@ -403,7 +401,7 @@ local function ending(s, e)
   if top[1] and top[1].n >= 3 then table.insert(recap, "kills") end
   table.insert(recap, "closing")
   local thought = recap[hash(b.seed .. "|thought|" .. n) % #recap + 1]
-  local function plainUnless(which) b.onlyPlain = thought ~= which end
+  local function plainUnless(which) s.onlyPlain = thought ~= which end
   if (ch.quests or 0) >= 2 then
     plainUnless("quests")
     local giver
@@ -428,7 +426,7 @@ local function ending(s, e)
   plainUnless("closing")
   say("closing", "end", { time = playedWords(played), gold = goldWords(ch.gold) },
     s:tags({ slow = played > 7200 or nil, quick = (played > 0 and played < 1800) or nil, rest = e.how == "rest" or nil }))
-  b.onlyPlain = nil
+  s.onlyPlain = false
   if e.how == "long" then
     say(e.inside and "night-in" or "night", "last", b:here({}, e.place), s:tags({ last = true, night = true }))
   elseif e.how == "summit" then
@@ -442,12 +440,7 @@ end
 function Book:chapter(n, ch)
   self.last, self.there = nil, false
   self.chapterNo = self.chapterNo + 1
-  self.peopleNamed, self.thingsCarried = {}, {}
-  self.inChapter, self.voiceUsed, self.quipped = true, 0, false
-  self.voiceChapter = hash(self.seed .. "|voice|" .. n) % 3 == 0
-  self.routineCount, self.nextRemark = 0, 2 + hash(self.seed .. "|remarks|" .. n) % 2
-  self.pendingRemark, self.lastSentenceRemark = false, false
-  local s = newScene(self, n, ch)
+  local s = newScene(self, n, ch) -- (the book's scene until the chapter is told)
   opening(s)
   for i, m in ipairs(ch.log or {}) do
     s:at(i, m)
@@ -461,7 +454,7 @@ function Book:chapter(n, ch)
   -- the epitaph instead)
   local e = ch.ended
   if e and e.how ~= "death" then ending(s, e) end
-  self.inChapter = false
+  self.scene = nil
   return s:text()
 end
 

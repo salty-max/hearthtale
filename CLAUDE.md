@@ -64,10 +64,13 @@ The plan and its decisions: PLAN.md.
   sharing `ns.writer` (each exports at its end what the next ones import):
   `Language.lua` (pure helpers: numbers and lists in words, places, plurals,
   articles, items, tasks, what a foe or a thing is), `Lines.lua` (the Book:
-  a book's choice of lines, `Book:say`, remarks, a quest's deed, links,
-  scenery), `Scene.lua` (a chapter being told: the clauses of the sentence
-  being written and how they join, the scene, the moment being told, the
-  fold) and `Writer.lua` (the chapters: each moment goes through
+  a book's choice of lines, `Book:say` (returns the text and what it chose:
+  weight, remark, turn), remarks, a quest's deed, links, scenery; what the
+  book remembers across chapters), `Scene.lua` (a chapter being told, the
+  book's `scene` meanwhile: the clauses of the sentence being written and
+  how they join, the scene, the moment being told, the fold, and what a
+  paragraph or a chapter remembers: who was named, quips, the remark
+  budget) and `Writer.lua` (the chapters: each moment goes through
   `match(m, ARMS, s)`, Rust-like: one arm per kind of moment,
   `{ kind, fn, when = guard }`, the first that fits runs `fn(s, m)` with the
   chapter's Scene; what each tells is `tell.<kind>`, the moments of their own
@@ -296,6 +299,8 @@ Plan and steps: PLAN.md, "The site".
 
 ```bash
 bun run addon:build | addon:check | addon:package   # the addon
+bun run addon:golden save [journal…]; bun run addon:golden check [journal…]
+                       # a writer refactor: every output before/after, byte for byte
 bun run dev | typecheck | lint | test | build       # the site
 bun run check                                       # everything
 bun run db | db:generate | db:migrate | db:seed
