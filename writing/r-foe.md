@@ -19,3 +19,60 @@ kind: r-foe
 - [hc] aware how little room a mistake would have left me
 - [low] still learning how a fight ought to go
 - [high] with the ease of long practice, which I did not entirely trust
+- [murloc] the gurgling still ringing in my ears
+- [murloc] smelling of the shore for the rest of the day
+- [murloc] with a new dislike for anything that croaked
+- [kobold] glad there were no more tunnels to follow anyone into
+- [kobold] the squeaking easier to bear once it had stopped
+- [kobold] candle wax spattered further than seemed possible
+- [gnoll] the snarling worse than the bites
+- [gnoll] the smell of wet fur clinging to me afterwards
+- [gnoll] with no sign that the hills would ever run out of gnolls
+- [harpy] the shrieking still in my ears
+- [harpy] feathers settling around me long after
+- [harpy] the screeching worse than any talon
+- [quilboar] the stink of the pens hanging over everything
+- [quilboar] with thorns caught in everything I wore
+- [quilboar] those tusks closer than I liked
+- [centaur] the hoofbeats still thudding in my chest
+- [centaur] the dust taking a long while to settle
+- [centaur] the war cries carrying further than any reach
+- [ogre] with a new respect for how far an ogre could reach
+- [ogre] every swing of the club something to get well out of the way of
+- [ogre] the ground still shaking in my memory
+- [troll] with an uncomfortable sense of how practised trolls were at this
+- [troll] painted faces and tusks staying with me longer than I wanted
+- [troll] the drums of the camps still beating somewhere
+- [naga] the hissing in my ears long after
+- [naga] seawater and scales everywhere
+- [naga] quicker than anything with that many scales had a right to be
+- [satyr] the reek of fel lingering afterwards
+- [satyr] the laughter worse than the claws
+- [satyr] with that corrupted laughter hard to shake off
+- [furbolg] more bear than I had bargained for
+- [furbolg] the woods quieter for it, though not happier
+- [furbolg] the totems still standing when it was over
+- [trogg] the stink of the caves following me out
+- [trogg] harder in the skull than anything had a right to be
+- [trogg] the grunting echoing long after
+- [outlaw] a life of crime ending exactly where such lives do
+- [outlaw] the kind of greed that ends exactly like that
+- [outlaw] with no pity to spare for anyone in that trade
+- [scarlet] the certainty more unsettling than the blade
+- [scarlet] the prayers turning to curses at the end
+- [scarlet] the red of those tabards staying in my eyes
+- [undead] glad that the dead stayed down this time
+- [undead] the smell of the grave clinging to everything
+- [undead] the cold lingering on my hands
+- [demon] the air tasting of brimstone long after
+- [demon] with the uneasy feeling that it had only gone elsewhere
+- [demon] the reek of the Nether hanging about the place
+- [elemental] with the strange sense of having fought the land itself
+- [elemental] the air still humming afterwards
+- [elemental] nothing left behind but a strange quiet
+- [dragonkin] the smell of scales and smoke in the air
+- [dragonkin] the heat of dragon breath still on my skin
+- [dragonkin] with a healthy respect for anything with wings and a temper
+- [spider] webbing in my hair for the rest of the day
+- [spider] checking my collar for anything with too many legs
+- [spider] the skittering still in my ears

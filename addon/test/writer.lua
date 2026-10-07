@@ -549,7 +549,7 @@ for _, race in ipairs(RACES) do
         local chapters = {}
         for n = 1, 8 do
           chapters[n] = { start = { level = 20, zone = "Country", sub = "Home" }, quests = 0,
-            played = 3600, gold = 0, kills = { Wolf = 12 }, log = {
+            played = 3600, gold = 0, kills = { Wolf = n % 2 == 0 and 24 or 12 }, log = { -- (a long fight, and a short)
               { k = "kill", name = "Wolf", kind = "Wolf", sub = "Home", zone = "Country", at = 50 },
               { k = "inn", place = "Home", sub = "Home", zone = "Country", at = 100 },
             }, ended = { level = 20, place = "Home", how = "rest" } }
@@ -559,6 +559,34 @@ for _, race in ipairs(RACES) do
         for _, ch in ipairs(ns.writeBook(c).chapters) do inspect(race .. " " .. class .. " pairing", ch.text) end
       end
     end
+  end
+end
+
+-- Each people and kind of foe, and each kind of find, fought and found over
+-- a few chapters by every race: the remarks about them all reachable.
+local SUBJECT_FOES = { { "Murloc Raider", "Humanoid" }, { "Kobold Vermin", "Humanoid" }, { "Riverpaw Gnoll", "Humanoid" },
+  { "Bloodfeather Harpy", "Humanoid" }, { "Razormane Quilboar", "Humanoid" }, { "Kolkar Drudge", "Humanoid" },
+  { "Boulderfist Ogre", "Humanoid" }, { "Witherbark Troll", "Humanoid" }, { "Slitherblade Naga", "Humanoid" },
+  { "Hatefury Satyr", "Humanoid" }, { "Timbermaw Warrior", "Humanoid" }, { "Rockjaw Trogg", "Humanoid" },
+  { "Defias Thug", "Humanoid" }, { "Scarlet Crusader", "Humanoid" }, { "Rotting Dead", "Undead" }, { "Felguard", "Demon" },
+  { "Rock Elemental", "Elemental" }, { "Black Whelp", "Dragonkin" }, { "Webwood Spider", "Spider" } }
+local SUBJECT_THINGS = { "Silithid Egg", "Harpy Feather", "Fine Moonstalker Pelt", "Worn Parchment", "Earthroot", "Blood Shard",
+  "Mathystra Relic", "Gnoll Paw" }
+for _, race in ipairs(RACES) do
+  for f, foe in ipairs(SUBJECT_FOES) do
+    local chapters = {}
+    for n = 1, 8 do
+      local thing = SUBJECT_THINGS[(f + n) % #SUBJECT_THINGS + 1]
+      -- (the find first: one remark a sentence, and the fight's would take it)
+      local log = { { k = "quest", giver = "Ragnar", sub = "Home", zone = "Country", at = 50,
+        objectives = { { type = "item", name = thing, n = n % 2 == 0 and 1 or 6 } } } }
+      for i = 1, 3 do log[i + 1] = { k = "kill", name = foe[1], kind = foe[2], sub = "Home", zone = "Country", at = i * 100 } end
+      log[5] = { k = "quest", giver = "Ragnar", sub = "Home", zone = "Country", at = 400,
+        objectives = { { type = "monster", name = foe[1], n = n % 3 == 0 and 1 or 6 } } }
+      chapters[n] = { start = { level = 30, zone = "Country", sub = "Home" }, log = log }
+    end
+    local c = { guid = "subjects-" .. race .. f, race = race, class = COMBOS[race][1], chapters = chapters }
+    for _, ch in ipairs(ns.writeBook(c).chapters) do inspect(race .. " subjects " .. foe[1], ch.text) end
   end
 end
 
@@ -741,8 +769,10 @@ for _, race in ipairs(comparison.races) do
   local c = comparison.day(race)
   local text = ns.writeBook(c).chapters[1].text
   inspect(race .. " voice comparison", text)
-  -- (the six Brigands: all six, or the first told and "five more")
-  if not (text:find("eight Linen Cloth", 1, true) and (text:find("six Southsea Brigands", 1, true) or text:find("five more", 1, true))
+  -- (the six Brigands: all six, or the first told and "five more"; a count
+  -- may open its sentence)
+  local low = text:lower()
+  if not (low:find("eight linen cloth", 1, true) and (low:find("six southsea brigands", 1, true) or low:find("five more", 1, true))
     and text:find("Brown Linen Robe", 1, true) and text:find("Kelsa", 1, true)) then
     problem(race .. " voice comparison", "the voice lost a recorded fact", text)
   end

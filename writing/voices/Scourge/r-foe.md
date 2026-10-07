@@ -9,7 +9,7 @@ kind: r-foe
 - [!one] persistent, though not as persistent as I was
 - [teeth] my flesh, such as it is, intact
 - [mechanical] at least it did not pretend to be alive
-- [night !more] the dark being more my element than theirs
+- [night !more] the dark being more my element than any foe's
 - [hc] not inclined to waste a second life
 - [low] still relearning what this body could take
 - [high] with a practised economy of effort
