@@ -306,15 +306,9 @@ end
 
 -- The journal as the next login will find it, if this logout is a real one: a
 -- copy (the book written at logout tells the chapter a rest just closed).
-local function copy(t, skip)
-  if type(t) ~= "table" then return t end
-  local out = {}
-  for k, v in pairs(t) do if k ~= skip then out[k] = copy(v) end end
-  return out
-end
 function ns.settledView(c)
   if not c.logout or c.closed then return c end
-  local view = copy(c, "book")
+  local view = ns.copy(c, "book")
   settle(view.logout, view, true)
   view.logout = nil
   return view
