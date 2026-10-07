@@ -531,16 +531,17 @@ ns.on("QUEST_TURNED_IN", function(id)
 end)
 
 -- A quest gone from the log without a turn-in (abandoned, failed): its work,
--- if it was told, is taken back. (A moment later: a turn-in may be on its way.)
+-- if it was told in the chapter still being written, is taken back. (A closed
+-- chapter never changes.) A moment later: a turn-in may be on its way.
 ns.on("QUEST_REMOVED", function(id)
   local function check()
     local c = char()
     if not (c.pending and c.pending[id]) then return end
     c.pending[id] = nil
-    for _, ch in ipairs(c.chapters or {}) do
-      for _, m in ipairs(ch.log or {}) do
-        if m.k == "done" and m.id == id then m.abandoned = true end
-      end
+    local ch = c.chapters and c.chapters[#c.chapters]
+    if not ch or ch.ended then return end
+    for _, m in ipairs(ch.log) do
+      if m.k == "done" and m.id == id then m.abandoned = true end
     end
     changed()
   end

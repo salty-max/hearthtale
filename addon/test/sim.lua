@@ -556,6 +556,20 @@ check(text:find("ghost", 1, true) and text:find("spirit healer", 1, true) and te
   and text:find("Leofric", 1, true) and text:find("Linen Bandages", 1, true) and not text:find("Mug", 1, true),
   "the chapter tells them: the ghost, the healer, the companion, the duel won, the bandages; not the abandoned quest")
 
+-- A quest given up after the chapter that told its work closed: that chapter
+-- stays as it was written.
+accept(192, "Lost Ledger", "Clerk", { text = "Old Ledger: 0/1", type = "item", numRequired = 1 })
+state.objectives[192][1].finished = true
+fire("QUEST_LOG_UPDATE")
+local closed = K.chapters[#K.chapters]
+closed.ended = { at = time(), level = 10, how = "rest" }
+ns.chapter()
+fire("QUEST_REMOVED", 192)
+local ledger
+for _, m in ipairs(closed.log) do if m.k == "done" and m.id == 192 then ledger = m end end
+check(ledger and not ledger.abandoned and HearthtaleChar.pending[192] == nil,
+  "a quest given up after its chapter closed: the closed chapter isn't rewritten")
+
 -- The highest level the game allows: the journey's end. The chapter closes
 -- there, and nothing more is told.
 state.maxLevel = state.level + 1
