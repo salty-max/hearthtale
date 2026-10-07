@@ -319,6 +319,13 @@ local function moved()
   local inside, kind
   if IsInInstance then inside, kind = IsInInstance() end
   if inside and (kind == "party" or kind == "raid") and not sub then return end
+  -- a chapter begun before the game said where (Forever, at login): this is
+  -- where it began, not an arrival
+  local ch = chapter()
+  if ch.start and not ch.start.zone and #(ch.log or {}) == 0 then
+    ch.start.zone, ch.start.sub = zone, sub
+    return
+  end
   moment("place", { new = newZone and "zone" or nil })
 end
 for _, e in ipairs({ "ZONE_CHANGED_NEW_AREA", "ZONE_CHANGED", "ZONE_CHANGED_INDOORS" }) do ns.on(e, moved) end
@@ -442,11 +449,21 @@ end)
 -- The quest log fills in after the acceptance (the objectives, once known),
 -- and tells when a quest's work is done: told then and there, where it
 -- happened; the turn-in, later, is the return to who asked.
+-- (0.5.0 read today's "0/8 Tough Wolf Meat" the wrong way round and kept "0"
+-- for a name: read again while the quest is still in the log)
+local function misread(objectives)
+  for _, o in ipairs(objectives or {}) do
+    if o.name and o.name:match("^%d+$") then return true end
+  end
+  return false
+end
 ns.on("QUEST_LOG_UPDATE", function()
   for id, p in pairs(char().pending or {}) do
     if not p.objectives then
       p.objectives = objectivesOf(id)
       if p.objectives and finishedAll(id) then p.held = true end
+    elseif misread(p.objectives) then
+      p.objectives = objectivesOf(id) or p.objectives -- (its work, if done, still told below)
     end
     if not p.done and not p.held and finishedAll(id) then
       p.done = true

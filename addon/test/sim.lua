@@ -575,4 +575,26 @@ if FOREVER then
   end
 end
 
+-- A first login before the game says where (Forever, at times): the place
+-- it tells a moment later is where the chapter began, not an arrival.
+HearthtaleChar = nil
+state.guid, state.level, state.race, state.faction, state.class = "Player-4619-015E0F3F", 1, "Dwarf", nil, "PRIEST"
+state.zone, state.sub = nil, nil
+login()
+state.zone, state.sub = "Dun Morogh", "Coldridge Valley"
+fire("ZONE_CHANGED")
+local A = HearthtaleChar
+check(A.chapters[1].start.zone == "Dun Morogh" and A.chapters[1].start.sub == "Coldridge Valley" and #A.chapters[1].log == 0,
+  "a place told after the login: where the chapter began")
+-- A quest kept from 0.5.0 with "0" for its objectives' names: read again
+-- from the log, its work told by name when done.
+A.pending = { [170] = { title = "A New Threat", giver = "Balir Frosthammer",
+  objectives = { { type = "monster", name = "0", n = 6 }, { type = "monster", name = "0", n = 6 } } } }
+state.objectives = { [170] = { { text = "Rockjaw Trogg slain: 6/6", type = "monster", numRequired = 6, finished = true },
+  { text = "Burly Rockjaw Trogg slain: 6/6", type = "monster", numRequired = 6, finished = true } } }
+fire("QUEST_LOG_UPDATE")
+local repaired = A.chapters[1].log[#A.chapters[1].log]
+check(repaired and repaired.k == "done" and repaired.objectives[1].name == "Rockjaw Trogg"
+  and repaired.objectives[2].name == "Burly Rockjaw Trogg", "a quest misread by 0.5.0, read again: its work told by name")
+
 io.write(FOREVER and "all good (Forever)\n" or "all good\n")

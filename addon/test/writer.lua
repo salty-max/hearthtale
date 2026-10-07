@@ -562,6 +562,21 @@ for _, race in ipairs(RACES) do
   end
 end
 
+-- A start the game had not placed yet (Forever, at login), the place told
+-- seconds later: the chapter opens there, with no arrival.
+for _, race in ipairs(RACES) do
+  local c = { guid = "late-start-" .. race, race = race, class = COMBOS[race][1], began = { level = 1 }, chapters = { {
+    start = { at = 100, level = 1 }, log = {
+      { k = "place", zone = "Dun Morogh", sub = "Coldridge Valley", new = "zone", at = 107 },
+      { k = "kill", name = "Ragged Young Wolf", kind = "Wolf", zone = "Dun Morogh", sub = "Coldridge Valley", at = 200 } } } } }
+  local text = ns.writeBook(c).chapters[1].text
+  inspect(race .. " late start", text)
+  local _, named = text:gsub("Coldridge Valley", "")
+  if named ~= 1 or not text:find("Coldridge Valley", 1, true) or text:find("into Coldridge") or text:find("to Coldridge") then
+    problem(race .. " late start", "the start told as an arrival", text)
+  end
+end
+
 -- An objective recorded with a number for its name (0.5.0's recorder read
 -- "0/8 Tough Wolf Meat" the wrong way round): never written ("eight 0s").
 for _, race in ipairs(RACES) do
@@ -914,6 +929,8 @@ eq(ns.things("Shimmerweed"), "Shimmerweeds", "as the game writes it: 6 Shimmerwe
 eq(ns.itemName("Wolf Fang Necklace"), "a Wolf Fang Necklace", "a"); eq(ns.itemName("Cuirboulle Gloves"), "Cuirboulle Gloves", "plural")
 eq(ns.itemName("An Unsent Letter"), "an Unsent Letter", "own article"); eq(ns.itemName("Wiley's Note"), "Wiley's Note", "possessive note")
 eq(ns.itemName("Smite's Mighty Hammer"), "Smite's Mighty Hammer", "possessive"); eq(ns.itemName("Blackened Defias Armor"), "Blackened Defias Armor", "mass")
+eq(ns.taskOf("Read the Hallowed Rune and speak to Branstock Khalder in Anvilmar."), "read the Hallowed Rune", "the hand-in left out")
+eq(ns.instruction("Speak to Branstock Khalder."), false, "only the return: no task")
 eq(ns.playedWords(7170), "two hours", "1h59 is two hours"); eq(ns.playedWords(3600 + 58 * 60), "two hours", "1h58")
 eq(ns.playedWords(1500), "twenty-five minutes", "25 min"); eq(ns.playedWords(5400), "an hour and a half", "1h30")
 eq(ns.playedWords(9000), "two hours and a half", "2h30"); eq(ns.goldWords(12345), "a gold piece", "1g")
