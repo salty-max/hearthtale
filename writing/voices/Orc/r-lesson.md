@@ -7,8 +7,8 @@ kind: r-lesson
 - [one] slow to come to my hands at first
 - [one] eager to test it where it counted
 - sweat on my brow by the end
-- [new] curious what my hands could make of it
+- [new one] curious what my hands could make of it
 - [new] starting from the very first step
-- [low] one more thing to earn before I could claim it
-- [high] the lesson sharper for all the fights behind it
-- [!one] eager to test them where it counted
+- [low one] one more thing to earn before I could claim it
+- [high] the lesson sharper for all the fights behind me
+- [!one] eager to test them in a real fight

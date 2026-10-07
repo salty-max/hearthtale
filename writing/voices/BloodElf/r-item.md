@@ -1,13 +1,21 @@
 ---
 kind: r-item
 ---
+- an undignified task, honestly done
+- with more care than the request deserved
+- pleased, despite myself, to have the task finished
+- [!one !plural] each one less presentable than the last
+- [!one !plural] the full count, naturally
+- [one !plural] hardly worth the trouble, though someone thought otherwise
+- [one !plural] in better condition than I expected
+- [meat] not the sort of thing I usually carry
+- [cloth] coarse stuff, though serviceable
+- [night] the dark making the search slower than it needed to be
+- [hc] keeping my wits about me all the while
 - with more satisfaction in finishing the search than I had expected
 - rather pleased to have the collection complete
-- curious what had made the request worth so much trouble
 - [!one !plural] making certain of the count before allowing myself to be satisfied
 - [!one !plural] with no appetite for finding another just then
-- [one !plural] rather more pleased to have the find than I had meant to be
-- [one !plural] curious about the result now the search was done
 - [meat] rather more interested in a meal than in further collecting
 - [cloth] with an interest in what could be made of all that cloth
 - [night] wishing the light were a little more obliging

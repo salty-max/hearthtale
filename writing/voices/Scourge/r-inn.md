@@ -2,7 +2,7 @@
 kind: r-inn
 ---
 - not that I need the sleep
-- somewhere to return to that did not flinch at me
+- a place that did not flinch at me
 - a room, a door and fewer questions
 - the stone indifferent to my condition
 - a door I could close

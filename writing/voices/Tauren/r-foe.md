@@ -1,6 +1,19 @@
 ---
 kind: r-foe
 ---
+- my breath slow again before long
+- with a moment's stillness afterwards
+- with no pleasure in it
+- my strength used, not spent
+- slow to anger and quick to finish
+- [one] a life I did not take lightly
+- [!one] each in turn, without haste
+- [teeth] its hunger as honest as any
+- [mechanical] a thing that had never known the earth
+- [night] the stars watching, as they always do
+- [hc] my heart slow to settle afterwards
+- [low] still learning to carry my strength wisely
+- [high] with the calm of long practice
 - with my breath taking time to slow again
 - relieved to let my strength rest afterwards
 - with more weariness than pleasure in the end
@@ -8,8 +21,6 @@ kind: r-foe
 - [one] with no wish to make another encounter of that sort
 - [!one] increasingly glad to have the fighting behind me
 - [teeth] keeping those jaws in mind after I was clear of them
-- [mechanical] glad to be beyond the reach of moving metal
 - [night] watching carefully where sight failed me
 - [hc] with my heart taking longer to settle than I expected
-- [low] surprised by how quickly my strength had been spent
 - [high] thankful for the steadiness practice had given me

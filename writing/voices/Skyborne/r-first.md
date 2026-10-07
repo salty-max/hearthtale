@@ -1,11 +1,13 @@
 ---
 kind: r-first
 ---
+- [client:forever] moving in ways I had not expected
+- [client:forever] worth watching from more than one angle
+- [client:forever] nothing my mentors had described
+- [client:forever] curious, once it was over, what drove them
+- [client:forever night] their shapes uncertain without the sky's light
 - [client:forever faction:horde] surprised by how quickly the encounter had turned dangerous
-- [client:forever faction:alliance] with rather more evidence of the danger than I had wanted
 - [client:forever] with the name much easier to remember afterwards
 - [client:forever] less ready to judge a threat from a distance
 - [client:forever teeth] more wary of coming within reach of the teeth
-- [client:forever mechanical] curious about what could keep such a thing moving
-- [client:forever] relieved to have come through the first encounter
 - [client:forever] with a better sense of how much room I needed

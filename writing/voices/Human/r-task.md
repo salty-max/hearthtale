@@ -1,12 +1,18 @@
 ---
 kind: r-task
 ---
+- the kind of work nobody writes songs about
+- my feet sore by the end
+- glad to cross it off
+- quicker than I feared
+- without much ceremony
+- [explore] the lie of the land plainer in my head
+- [explore] getting a sense of where trouble might come from
+- [escort] keeping an eye on them every step
+- [night] the dark coming on as I worked
 - glad to have something definite to report
 - with more questions about the request than when I began
-- pleased to have the errand behind me
 - with my feet asking for a pause by the end
-- curious what would come of the work
-- with a few more names fixed in my mind
 - [explore] picturing the turns I would need to find again
 - [explore] looking for the way back as well as the way on
 - [escort] keeping them in sight as I watched the road

@@ -113,7 +113,12 @@ The plan and its decisions: PLAN.md.
   companion's looks or talk. After my own action (road, lesson, company,
   errand) it can't start with a past participle (it reads as a second verb:
   "I took up tailoring, practised…"; the build refuses it). "it" only with
-  `[one]` (a lesson of several spells is "them").
+  `[one]` (a lesson of several spells is "them"; the build refuses "it"
+  without `[one]` in a lesson's remark).
+- The races must sound apart (the build checks it): a remark's first three
+  words open remarks of two races at most, and a pool holds two stock
+  feelings ("glad", "pleased", "relieved", "curious", "surprised") at most.
+  Reach for what the race notices and how it says so, not a feeling word.
 - Routine clauses (`c-*`) are plain facts; the voice of a routine moment is
   in its remark (`r-*`). The writer adds one to roughly one routine clause in
   three, at most one per sentence, never in consecutive sentences, and none

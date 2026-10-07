@@ -159,6 +159,10 @@ function parseFile(file: string, kind: string | null): Parsed | null {
     const least = kind === null ? 12 : 8; // shared, a race's own
     if (sentences.length < least) fail(file, `a pool of remarks needs at least ${least}`);
     for (const s of sentences) if (/^(and|but|then)\b/.test(s.text)) fail(file, `a remark follows a comma, not a conjunction: ${s.text}`);
+    // a lesson may be several spells: "it" only for one ("…, keen to try it")
+    if (own === "r-lesson")
+      for (const s of sentences)
+        if (/\b(it|its)\b/i.test(s.text) && !s.tags.includes("one")) fail(file, `"it" in a lesson's remark needs [one]: ${s.text}`);
     // after my own action ("I took up tailoring, …"), a past participle reads as
     // a second verb missing its "and": "…, practised until my arms complained"
     if (/^r-(road|lesson|company|task)$/.test(own))
@@ -206,6 +210,26 @@ for (const race of existsSync(VOICES_DIR) ? readdirSync(VOICES_DIR).sort() : [])
   }
   voices.set(race, own);
 }
+
+// The voices must stay apart: a remark's opening (its first three words) is
+// shared by two races at most, and a pool holds two stock feelings ("glad",
+// "pleased", "relieved", "curious", "surprised") at most. A race's remarks
+// are its own way of seeing, not one template with a different tail.
+const STOCK = /\b(glad|pleased|relieved|curious|surprised)\b/i;
+const openings = new Map<string, Set<string>>();
+for (const [race, own] of voices) {
+  for (const [kind, sentences] of own) {
+    if (!kind.startsWith("r-")) continue;
+    const stock = sentences.filter((s) => STOCK.test(s.text));
+    if (stock.length > 2) errors.push(`writing/voices/${race}/${kind}.md: ${stock.length} stock feelings (two at most): ${stock.map((s) => s.text).join(" | ")}`);
+    for (const s of sentences) {
+      const opening = s.text.toLowerCase().split(/\s+/).slice(0, 3).join(" ");
+      openings.set(opening, (openings.get(opening) ?? new Set()).add(race));
+    }
+  }
+}
+for (const [opening, races] of openings)
+  if (races.size > 2) errors.push(`writing/voices: "${opening}…" opens remarks of ${races.size} races (${[...races].join(", ")}): two at most`);
 
 // The places: writing/scenery/<place>.md.
 type Place = { place: string; type: string; home: string[]; faction: string; sentences: Sentence[] };

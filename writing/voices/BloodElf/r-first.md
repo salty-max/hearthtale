@@ -1,11 +1,17 @@
 ---
 kind: r-first
 ---
+- less charming than they looked from a distance
+- worth a note, though not a fond one
+- rather more dangerous than they looked
+- unlike anything in Eversong
+- a lesson I would rather have learned from a book
+- [teeth] their teeth considerably less decorative than they appeared
+- [night] which the dark did nothing to improve
 - with my first impression considerably revised
 - rather more attentive once they came close
 - curious about them once curiosity was safe again
 - with little desire for an immediate second meeting
 - less certain of my expectations than before
 - [teeth] satisfied with the distance I could keep from those teeth
-- [night] wishing I could make out their movements more clearly
 - [low] rather conscious of how much had surprised me

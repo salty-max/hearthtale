@@ -1,6 +1,13 @@
 ---
 kind: r-first
 ---
+- nothing like I had imagined
+- worth knowing, in the way bad news is worth knowing
+- quicker than I was ready for
+- the sort of thing a guard would have shrugged at
+- a lesson in not trusting how things look
+- [teeth] with more teeth than any farm dog
+- [night] which I would rather have met by daylight
 - rather less curious once they came close
 - not quite the introduction I had pictured
 - quick to lose my interest in a closer look

@@ -1,12 +1,17 @@
 ---
 kind: r-task
 ---
-- glad to have an answer ready at last
-- with my legs feeling the errand afterwards
+- my legs feeling it afterwards
+- small work, quickly done
+- my own way, which worked
+- without much fuss and without much thanks
+- a good turn to remember
+- [explore] the land showing me its tricks one by one
+- [explore] learning the paths the way the hunters do
+- [escort] my eyes on the road for both of us
+- [night] the dark no stranger to me
 - curious what might come of the request
-- with a little pleasure in having reached the end
 - less eager to volunteer for another just then
-- with more of the route in my memory than I had wanted
 - [explore] looking for the turns I might need again in a hurry
 - [explore] watching where the way narrowed as I went
 - [escort] keeping them in sight while I looked ahead

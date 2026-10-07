@@ -1,11 +1,15 @@
 ---
 kind: r-company
 ---
+- the road better with a friend
+- glad of the help
+- trusting them more by the end
+- easy company, the best kind
+- [one] the work halved
+- [night] the dark easier to share
+- [hc] watching my back and theirs
 - glad not to watch the whole road alone
 - with the company easing my attention a little
-- curious how we would take to each other
 - more willing to go on with help nearby
-- pleased to share this stretch of the way
-- [one] glad of another pair of eyes at my side
 - [night] with less unease about the dark around us
 - [hc] keeping an eye on them as well as the route
