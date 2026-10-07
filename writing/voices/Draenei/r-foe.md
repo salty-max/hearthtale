@@ -1,15 +1,20 @@
 ---
 kind: r-foe
 ---
+- with regret that it had come to that
+- steadier afterwards than I expected
+- with care, and without anger
+- the Light giving me patience, if not ease
+- [grouped] glad no one else had been hurt
+- [!one] each faced in turn, without hatred
+- [teeth] grateful to keep all my fingers
+- [mechanical] a thing without a will of its own
+- [hc] remembering how much my people had already lost
+- [low] still learning to trust my own strength
 - relieved to have room to think again
 - with more effort than I had hoped to need
 - less confident that I had judged the danger correctly
-- [teeth] glad to be out of reach of the teeth
-- surprised by how quickly my attention had narrowed
 - with little wish to repeat the encounter just yet
-- pleased that I had kept my nerve
 - still trying to understand what had made the fight difficult
-- [mechanical] curious about the workings once the danger was over
 - more tired than I had wanted to admit
-- with my thoughts already turning towards a safer place
 - thankful that I had come through

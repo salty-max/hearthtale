@@ -1,15 +1,23 @@
 ---
 kind: r-foe
 ---
+- harder work than it had any right to be
+- my heart going for some time after
+- the kind of fight you never tell your mother about
+- no worse for it than a bruise or two
+- glad to have kept my nerve
+- [!one] the last of them the most stubborn
+- [teeth] keeping all my fingers, which I counted
+- [mechanical] its gears still ticking when it fell
+- [night] the dark making it uglier than it needed to be
+- [hc] my hands shaking once it was over
+- [low] still more luck than skill, if I am honest
+- [high] steadier than I would once have been
 - my heart still going when the fight was over
 - glad to find my nerve had held
 - with less breath left than I cared to admit
-- relieved to have room to look about again
 - [one] with no wish to meet that foe on the way back
-- [!one] increasingly glad to reach the last of them
-- [teeth] glad to put those teeth behind me
 - [mechanical] much less interested in machinery at close quarters
 - [night] straining to make out each movement
 - [hc] slow to stop shaking afterwards
-- [low] surprised by how much the fight had asked of me
 - [high] steadier than I remembered being at the start

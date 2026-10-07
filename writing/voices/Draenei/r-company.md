@@ -1,9 +1,12 @@
 ---
 kind: r-company
 ---
+- the road kinder for being shared
+- grateful for the company
+- [one] the work lighter for two
+- [one] the danger easier to face with two
+- [night] the dark less lonely together
 - curious to see how we would find a pace together
-- with less need to keep watch in every direction myself
-- more at ease with someone beside me
 - hoping my unfamiliarity would not slow us too much
 - glad of the chance to be known by more than my appearance
 - with a little less weight upon my own decisions

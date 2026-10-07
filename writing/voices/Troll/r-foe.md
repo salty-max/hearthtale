@@ -1,15 +1,24 @@
 ---
 kind: r-foe
 ---
+- [one] not the first to try me, nor the last
+- quick and done, which is the best kind
+- the spirits watching, maybe, and nodding
+- a survivor's work, no more
+- with a grin I kept to myself
+- [one] a fair try on its part
+- [!one] one after another, like waves on the shore
+- [teeth] its teeth meeting nothing but air
+- [mechanical] metal and grease, no spirit in it
+- [night] the dark my friend more than its
+- [hc] remembering how many of my people the sea had already taken
+- [low] still learning when to strike and when to wait
+- [high] easy as breathing, almost
 - glad to reach the quiet after the fight
 - with my breath still catching up to me
 - rather less certain of my own cleverness
 - relieved enough to feel a smile returning
 - [one] with no hurry to make that acquaintance again
-- [!one] glad to have the last encounter behind me
 - [teeth] keeping a respectful distance in my thoughts as well
-- [mechanical] rather pleased to be done with moving metal
-- [night] watching each movement harder in the dark
 - [hc] very conscious of the life I had kept
 - [low] with more caution ready for the next attempt
-- [high] pleased to have my practice beside me when I needed it

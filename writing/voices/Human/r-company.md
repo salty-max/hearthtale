@@ -1,11 +1,15 @@
 ---
 kind: r-company
 ---
-- glad to have someone within reach
+- the road shorter in company
+- [one] an extra pair of eyes on the hedgerows
+- glad of help when it counted
+- easy company
+- trusting them more with every mile
+- [one] the work halved
+- [night] glad not to be alone in the dark
+- [hc] careful to keep them in sight
 - with less cause to glance behind me
 - more at ease than I had been alone
-- curious how we would get on
 - finding the road less lonely
-- [one] glad of another pair of eyes
-- [night] glad not to face the dark alone
 - [hc] reluctant to let them out of my sight

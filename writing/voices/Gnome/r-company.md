@@ -1,11 +1,17 @@
 ---
 kind: r-company
 ---
-- glad to have another way of looking at the route
+- [one] two heads being better than one, generally
+- with someone to explain my ideas to
+- the work divided sensibly
+- the work going twice as fast
+- a second opinion close at hand
+- trusting their judgement, mostly
+- [night one] two pairs of eyes in the dark
+- [hc] safety in numbers, statistically speaking
 - with someone beside me to be curious about
 - more at ease with help close at hand
 - wondering what they would make of my approach
 - rather pleased not to be the only one looking about
-- [one] glad of a second pair of eyes
 - [night] with rather less unease about the dark
 - [hc] careful to keep the company within reach

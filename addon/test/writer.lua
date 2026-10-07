@@ -623,7 +623,7 @@ for _, race in ipairs(comparison.races) do
 end
 
 trackRemarks = true
-for _, round in ipairs({ { 1, 12 }, { 1, 60 }, { 18, 41 }, { 38, 60 }, { 1, 30 }, { 1, 7 }, { 20, 50 }, { 15, 45 } }) do
+for _, round in ipairs({ { 1, 12 }, { 1, 60 }, { 18, 41 }, { 38, 60 }, { 1, 30 }, { 1, 7 }, { 20, 50 }, { 15, 45 }, { 1, 15 }, { 1, 10 } }) do
   for _, race in ipairs(RACES) do
   local classes = COMBOS[race]
     for _, class in ipairs(classes) do

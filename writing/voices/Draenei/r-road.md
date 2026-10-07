@@ -1,13 +1,19 @@
 ---
 kind: r-road
 ---
+- the road long but not unkind
+- [!back] curious about the people who lived in it
+- [!back !home] a stranger, as everywhere
+- [!back] hoping for a welcome, if not expecting one
+- [!back] its shapes unlike anything on our world
+- [!back night] arriving under strange stars
+- [back] the faces more familiar now
+- [back] the way known, which was a gift
+- [back] finding it a little more like home
 - interested in which names were beginning to feel familiar
-- with my attention divided between finding the way and learning it
 - [back] pleased to recognise where I was going
-- [!back] curious to see what would become familiar here
 - with more ease than I had felt on setting out
 - [night] careful of what I could not yet make out
 - with my feet ready for a pause
-- [back] glad to have a place I knew ahead of me
 - [!back] uncertain what I would find but willing to find out
 - with a little less room in my thoughts for the road behind

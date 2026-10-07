@@ -1,7 +1,19 @@
 ---
 kind: r-foe
 ---
-- with my estimate of the difficulty revised upward
+- a problem solved, if inelegantly
+- my estimate of the difficulty revised upward
+- with a note to approach the next one differently
+- faster than my calculations had predicted
+- the outcome correct, the method open to improvement
+- [one] an interesting specimen, in hindsight
+- [!one] each one teaching me something about the last
+- [teeth] my fingers all present and accounted for
+- [mechanical] a shame about the workmanship, really
+- [night] the poor light skewing every estimate
+- [hc] the margin for error rather thinner than I like
+- [low] still refining my technique, so to speak
+- [high] with an efficiency I was frankly proud of
 - rather more pleased with the outcome than my approach
 - with a new idea about how to meet the next encounter
 - my hands taking longer to settle than I expected
@@ -12,4 +24,3 @@ kind: r-foe
 - [night] finding movement harder to judge in the poor light
 - [hc] conscious of just how little room I had left myself
 - [low] with more to practise than I had expected
-- [high] pleased to feel some of the old awkwardness gone

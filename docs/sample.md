@@ -58,7 +58,7 @@ The tasks came to eight, the last for Gar'Thok. My tally came to nine Scorpid Wo
 
 ## Chapter 2 (levels 5 to 6)
 
-I began again in Razor Hill. What was asked of me deserved an answer in deeds. The drums of Orgrimmar echoed off the spiked walls as I came in. At Grommash Hold I felt the weight of it: a city our people had built for themselves, with no one's chains on it. I made it as far as the Valley of Strength, where I studied Charge and Thunder Clap, one more thing to earn before I could claim it. I concluded the errand between Thrall and Gor the Enforcer.
+I began again in Razor Hill. What was asked of me deserved an answer in deeds. The drums of Orgrimmar echoed off the spiked walls as I came in. At Grommash Hold I felt the weight of it: a city our people had built for themselves, with no one's chains on it. I made it as far as the Valley of Strength, where I studied Charge and Thunder Clap, strength given a better shape. I concluded the errand between Thrall and Gor the Enforcer.
 
 # Aelyndra, a Hardcore night elf druid
 

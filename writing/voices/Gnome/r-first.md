@@ -1,11 +1,17 @@
 ---
 kind: r-first
 ---
-- rather less predictable than I had assumed
+- a fascinating subject, at a safe distance
+- less predictable than I had assumed
+- worth a page of observations later
+- behaving in a way I had not accounted for
+- my hypothesis about them disproved within seconds
+- [teeth] with jaws that rewarded further study from afar
+- [mechanical] built worse than I would have built it
+- [low] one more variable nobody had mentioned
 - with my first impression in need of revision
 - curious how they moved once I was safely out of reach
 - much more convincing up close than I had hoped
 - with a good deal of my attention still on them afterwards
 - [teeth] satisfied with studying those jaws from a distance
 - [mechanical] curious about the making once the danger had passed
-- [low] surprised by how quickly my curiosity had become caution

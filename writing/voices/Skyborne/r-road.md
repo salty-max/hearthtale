@@ -1,13 +1,17 @@
 ---
 kind: r-road
 ---
+- [client:forever] the air different from where I started
+- [client:forever !back] curious how the place would look from above
+- [client:forever !back] the shape of it new to me
+- [client:forever !back] noting where the wind came from
+- [client:forever !back night] its shape dark below the stars
+- [client:forever back] the place shifted a little since I left
+- [client:forever back] the way already traced in my memory
+- [client:forever back] finding it much as I had pictured it
+- [client:forever high] one more view added to a long collection
 - [client:forever faction:horde !back] curious to find where I might fit into the place
 - [client:forever faction:alliance !back] interested in what would become clearer at close quarters
-- [client:forever back] pleased to recognise where I was going
-- [client:forever] with my feet ready for a pause
 - [client:forever] with more ease than I had felt on setting out
 - [client:forever night] careful of the distances I could no longer judge clearly
-- [client:forever !back] with more to take in than I could attend to at once
-- [client:forever back] curious what I would notice now that I knew the way
 - [client:forever] with less attention to spare for the road behind
-- [client:forever] ready to let the next stretch of walking wait a little

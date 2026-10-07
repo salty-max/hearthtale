@@ -1,13 +1,22 @@
 ---
 kind: r-lesson
 ---
+- the principles clear, the practice less so
 - with three questions for every answer
+- [one] already thinking of ways to improve it
+- my hands not quite as quick as my head
+- the theory elegant, I thought
+- [one] eager to test it under real conditions
+- [new] the beginnings of a new field of study
+- [new] a whole new set of tools to master
+- [low] a novice in this, if not in everything
+- [high] the new trick fitting neatly among the old
+- [!one] already thinking of ways to improve them
+- [!one] eager to test them under real conditions
 - clearer about the principle than the practice
 - with my hands still catching up to my intentions
 - already curious about the next attempt
-- pleased to have something new to work on
 - with several possibilities I wanted to compare
-- [new] glad of a whole new subject to get my teeth into
 - [new] with the pleasant difficulty of being a beginner again
 - [low] conscious of how much I had not yet tried
 - [high] interested in where the new learning met the old

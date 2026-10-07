@@ -1,11 +1,18 @@
 ---
 kind: r-task
 ---
-- pleased to have the particulars settled
+- competently, as one would expect
+- a small favour, graciously done
+- the details handled with some care
+- the request rather beneath me, though I did not say so
+- without complaint, outwardly at least
+- [explore] the place more interesting than its reputation
+- [explore] noting every detail, as a matter of habit
+- [escort] slowing my pace with what I hoped was grace
+- [night] the dark adding nothing to the experience
 - with some relief at reaching a definite result
 - curious what would follow from the request
 - with my patience rather thinner by the end
-- more interested in the work now I could think back over it
 - ready to let the next errand wait a little
 - [explore] taking time over the details beyond the first view
 - [explore] keeping the turns in mind for the return

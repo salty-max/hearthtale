@@ -1,11 +1,13 @@
 ---
 kind: r-inn
 ---
+- [client:forever] a fixed point in a changing world
+- [client:forever] the stone steady in my hand
+- [client:forever] a roof, for once, instead of sky
+- [client:forever] one long journey fewer in my future
+- [client:forever night] the night sky wide above it
+- [client:forever hc] a safe landing worth knowing
 - [client:forever faction:horde] beginning to feel a little more attached to the place
-- [client:forever faction:alliance] pleased to have settled where I could return
 - [client:forever] with one less uncertainty ahead of the next departure
 - [client:forever] glad that the name now meant somewhere to rest
-- [client:forever] more at ease with the prospect of setting out again
 - [client:forever] ready to become familiar with returning
-- [client:forever] with a quiet satisfaction in having a destination for my hearthstone
-- [client:forever] pleased to have somewhere within reach when the road grew tiring

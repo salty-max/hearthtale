@@ -1,11 +1,17 @@
 ---
 kind: r-gear
 ---
+- [!made !held] a decent fit, for once
+- [!made] better than anything I had started out with
+- [!made] the sort of thing a guard would envy
+- [!made] heavier than I expected, which seemed promising
+- [!made hc] one more chance between me and a bad end
+- [made] nothing fancy, but sound
+- [made !held] every crooked stitch my own
+- [made !held] pleased to wear what I had made
 - [!made] a welcome addition to what I had to rely on
-- [!made !held] curious how the new fit would feel after a day's wear
 - [!made] rather pleased to have the choice
 - [!made] keen to see how well the new piece would serve
 - [!made hc] reassuring to have between me and trouble
-- [made] pleased to put my own work to use
 - [made !held] with a little pride in wearing my own handiwork
 - [made] more attached to the result for having made it

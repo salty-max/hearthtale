@@ -1,13 +1,21 @@
 ---
 kind: r-road
 ---
+- the road easy under my feet
+- [!back] keen to see who held the place
+- [!back] watching the edges before the middle
+- [!back] a new place, so new dangers
+- [!back] the smell of it telling me plenty
+- [!back night] arriving after dark
+- [back] the place still standing, good
+- [back] old ground, easy ground
+- [back] the faces remembering mine
 - with my attention on the edges of the way
 - curious what I would find past the next turn
 - [!back] keen to know my way out as well as my way in
 - [!back] looking about before letting myself feel at ease
 - [!back] rather interested in who might be here
 - [!back night] making less of the first view than I would by daylight
-- [back] glad to have the route already under my feet
 - [back] remembering where I had hesitated before
 - [back] wondering what the place would offer this time
 - [high] with another familiar name to carry among the many

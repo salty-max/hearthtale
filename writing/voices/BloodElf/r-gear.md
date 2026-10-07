@@ -1,11 +1,16 @@
 ---
 kind: r-gear
 ---
-- [!made] interested in the details now the new piece was mine
+- [!made] serviceable, if not beautiful
+- [!made] better cut than I expected
+- [!made !held] adjusted until everything sat properly
+- [!made] a modest improvement, but an improvement
+- [!made hc] one more defence against an unworthy end
+- [made] finished to my own exacting standards
+- [made] rather well made, if I do say so
+- [made] neat work, I thought
 - [!made] a welcome addition, whatever my first impression
 - [!made !held] curious how well the fit would endure a day's wear
 - [!made] rather pleased with the change in my equipment
-- [!made hc] glad of another defence to rely on
 - [made] with a particular interest in how my own work would serve
-- [made] pleased with the result despite knowing where I might improve it
 - [made] with some quiet satisfaction in my own handiwork

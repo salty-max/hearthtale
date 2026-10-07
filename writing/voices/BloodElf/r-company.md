@@ -1,11 +1,16 @@
 ---
 kind: r-company
 ---
+- better company than I had expected
+- the help surprisingly welcome
+- sharing the burden with some grace
+- trusting them a little more by the end
+- the road less tedious for it
+- a useful ally, I conceded
+- [night] the dark rather less oppressive in company
+- [hc] each of us careful of the other
 - finding the company more welcome than I had expected
-- with a little less strain in my attention
 - pleased to share the distance
 - with less need to appear quite so certain of the way
 - less inclined to hurry through the journey
-- with some of my reserve already easing
-- [night] finding the dark rather less oppressive in company
 - [hc] relieved to have help within reach

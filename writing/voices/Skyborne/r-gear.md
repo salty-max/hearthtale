@@ -1,11 +1,16 @@
 ---
 kind: r-gear
 ---
+- [client:forever !made] light enough not to weigh me down
+- [client:forever !made !held] a better fit than I expected
+- [client:forever !made] the new balance taking some getting used to
+- [client:forever !made] curious how the wind would treat the new kit
+- [client:forever made] made with my own hands, and trusted for it
+- [client:forever made] each piece set where I wanted it
+- [client:forever made] the result of more patience than I usually have
 - [client:forever faction:horde] curious how the unfamiliar weight would settle into use
 - [client:forever faction:alliance] interested in testing the difference for myself
-- [client:forever !held] pleased to have a little more between myself and danger
 - [client:forever] with more pleasure in the change than I had expected
 - [client:forever held] taking a moment to get used to the balance
 - [client:forever !held] hoping the fit would still feel kind after a long walk
 - [client:forever made] with some satisfaction in using my own work
-- [client:forever] with a little more confidence in what I carried

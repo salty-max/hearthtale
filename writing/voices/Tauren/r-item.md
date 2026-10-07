@@ -1,13 +1,20 @@
 ---
 kind: r-item
 ---
-- glad to have the search behind me
-- with a little more care for the collection now I had found it
+- with care for what grew nearby
+- with a word of thanks to the land
+- carried gently
+- [!one !plural] each one gathered without hurry
+- [!one !plural] the weight of them settling easily on my back
+- [one !plural] small in my hand, though someone had need of it
+- [one !plural] where the earth had kept it
+- [meat] grateful to the creature that gave it
+- [cloth] good for the camp, whatever its use
+- [night] the moon showing me where to look
+- [hc] listening to the land around me as I worked
 - curious what use the find would be put to
 - [!one !plural] making sure of the count before I went on
 - [!one !plural] pleased not to need another of the collection
-- [one !plural] glad to have something in my hands after the search
-- [one !plural] hoping the find would be as welcome as I was relieved to have it
 - [meat] with thoughts of a meal and a rest afterwards
 - [cloth] wondering how many uses could be found for all that cloth
 - [night] giving my eyes more time to make things out
