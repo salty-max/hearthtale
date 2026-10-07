@@ -4,7 +4,9 @@
 // `bun scripts/audit-data.ts`), into addon/Hearthtale/Names.lua for the
 // writer. Where the game never writes a name, the writer's own rules decide.
 //   bun scripts/names.ts
-import { existsSync, readFileSync, writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
+import englishWords from "an-array-of-english-words";
+import humanNames from "human-names";
 import path from "node:path";
 
 const DIR = path.join(import.meta.dir, "..", ".cache", "audit");
@@ -17,21 +19,17 @@ const data = JSON.parse(readFileSync(path.join(DIR, "names.json"), "utf8")) as {
 };
 const corpus = readFileSync(path.join(DIR, "corpus.txt"), "utf8");
 
-// English words (macOS's list), to tell plain words from names.
-const DICT = "/usr/share/dict/words";
-const dictionary = existsSync(DICT)
-  ? new Set(readFileSync(DICT, "utf8").split("\n").filter((w) => /^[a-z]+$/.test(w)))
-  : null;
+// English words, to tell plain words from names (an-array-of-english-words,
+// MIT), and given names (human-names, MIT): the same on every machine.
+const dictionary: Set<string> | null = new Set(englishWords as string[]);
 const common = (word: string) => {
   const w = word.toLowerCase().replace(/'s$/, "");
   if (!dictionary || dictionary.has(w) || dictionary.has(w.replace(/s$/, ""))) return true;
   for (let i = 4; i <= w.length - 4; i++) if (dictionary.has(w.slice(0, i)) && dictionary.has(w.slice(i))) return true;
   return false;
 };
-// given names: in the word list only with a capital ("Patrick", "Johnson")
-const given = existsSync(DICT)
-  ? new Set(readFileSync(DICT, "utf8").split("\n").filter((w) => /^[A-Z][a-z]+$/.test(w) && !dictionary!.has(w.toLowerCase())).map((w) => w.toLowerCase()))
-  : new Set<string>();
+// given names that are no plain word ("Patrick", "Thurman"; not "Jack")
+const given = new Set((humanNames.allEn as string[]).map((n) => n.toLowerCase()).filter((n) => !dictionary.has(n)));
 
 // A name used as a name: followed by punctuation, the end, or a small word
 // ("in Moonbrook,", "the Dagger Hills to the south") - not as an adjective
@@ -161,7 +159,9 @@ for (const { name, most } of data.questItems) {
 // shares a word with one of the game's people ("Mr. Smite", "Thrall").
 const owners = new Map<string, number>();
 for (const name of data.items) for (const m of name.matchAll(/(?:^| )([A-Z][a-z]+)'s /g)) owners.set(m[1], (owners.get(m[1]) ?? 0) + 1);
-const people = new Set(creatureBare.flatMap((n) => n.split(" ")));
+// (the words of the game's one-of-a-kind creatures, a title before a name left out: "Mr. Smite")
+const people = new Set(creatureNames.filter((n) => spawnsOf.get(n) === 1)
+  .flatMap((n) => { const w = n.split(" "); return w.length > 1 ? w.slice(1) : w; }));
 const roles = new Set<string>();
 for (const [owner, n] of owners)
   if (dictionary?.has(owner.toLowerCase()) && !given.has(owner.toLowerCase()) && (n >= 5 || !people.has(owner))) roles.add(owner);
