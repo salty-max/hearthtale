@@ -49,6 +49,20 @@
 -- with me.
 local _, ns = ...
 local secret = ns.secret
+-- An item's name and quality: C_Item in today's clients (the global is gone
+-- from Classic Era since 1.15), the global in older ones.
+local function itemInfo(link)
+  local api = (C_Item and C_Item.GetItemInfo) or GetItemInfo
+  if not api then return end
+  local ok, name, _, quality = pcall(api, link)
+  if not ok then return end
+  if not quality and C_Item and C_Item.GetItemQualityByID then
+    local id = tonumber(link:match("item:(%d+)") or "")
+    local okQ, q = pcall(C_Item.GetItemQualityByID, id)
+    if okQ then quality = q end
+  end
+  return name, quality
+end
 
 local CAP = 4 * 3600      -- a chapter's play time after which any logout closes it
 local MIN_MOMENTS = 3     -- what a chapter needs before a rest can close it
@@ -394,8 +408,7 @@ local function objectivesOf(id)
     if o.text and not secret(o.text) then
       local name, n, have, own
       for _, g in ipairs({ "QUEST_MONSTERS_KILLED", "QUEST_OBJECTS_FOUND" }) do
-        local p = ns.pattern(g)
-        local a, b, c = o.text:match(p or "^$")
+        local a, b, c = ns.match(g, o.text)
         if a then name, have, n = a, tonumber(b), tonumber(c) own = g ~= "QUEST_MONSTERS_KILLED" break end
       end
       -- a kill told in the quest's own words ("Peons Awoken: 0/5"): its text,
@@ -403,7 +416,9 @@ local function objectivesOf(id)
       if o.type == "monster" and own then o.text, name = name, nil end
       -- an item already in hand when the quest is taken: a thing to deliver
       local held = o.type == "item" and (o.finished or (have and n and have >= n)) or nil
-      table.insert(out, { type = o.type, name = name, n = n or o.n, text = not name and (o.text:gsub(":%s*%d+/%d+$", "")) or nil,
+      -- (an event's count, before or after it: "0/1 Find the camp", "Find the camp: 0/1")
+      local event = not name and (o.text:gsub(":%s*%d+/%d+$", ""):gsub("^%d+/%d+%s+", "")) or nil
+      table.insert(out, { type = o.type, name = name, n = n or o.n, text = event,
         held = held })
     end
   end
@@ -635,16 +650,32 @@ end)
 -- The game's own messages, read through its own patterns (any language).
 -- A format like "Your skill in %s has increased to %d." becomes a pattern
 -- capturing its blanks (also the numbered "%1$s" of some languages).
+-- A numbered blank keeps its argument's place: the client's "%2$d/%3$d %1$s"
+-- ("0/8 Tough Wolf Meat") puts the name last, and match() gives it first.
 local function pattern(global)
   local s = _G[global]
   if type(s) ~= "string" then return end
   -- the blanks become markers, the rest is escaped, the markers captures
-  s = s:gsub("%%%d%$s", "\1"):gsub("%%s", "\1"):gsub("%%%d%$d", "\2"):gsub("%%d", "\2")
+  local order = {}
+  s = s:gsub("%%(%d*)%$?([sd])", function(at, kind)
+    order[#order + 1] = tonumber(at) or #order + 1
+    return kind == "s" and "\1" or "\2"
+  end)
   s = s:gsub("([%%%(%)%.%+%-%*%?%[%]%^%$])", "%%%1")
   s = s:gsub("\1", "(.+)"):gsub("\2", "(%%d+)")
-  return "^" .. s .. "$"
+  return "^" .. s .. "$", order
 end
-ns.pattern = pattern
+-- The blanks of a game message, in its format's argument order.
+local function match(global, text)
+  local p, order = pattern(global)
+  if not p or type(text) ~= "string" then return end
+  local got = { text:match(p) }
+  if #got == 0 then return end
+  local out = {}
+  for i, v in ipairs(got) do out[order[i] or i] = v end
+  return unpack(out, 1, #got)
+end
+ns.pattern, ns.match = pattern, match
 -- Spells learned, read from the game's message (any language); the spell's
 -- id, from its link, says what it is: a druid's new form, a warlock's new
 -- demon, a class's own steed (a moment of their own); a profession's rank (told
@@ -664,8 +695,7 @@ end
 ns.on("CHAT_MSG_SYSTEM", function(msg)
   if secret(msg) then return end
   for _, g in ipairs({ "ERR_LEARN_SPELL_S", "ERR_LEARN_ABILITY_S" }) do
-    local p = pattern(g)
-    local raw = p and msg:match(p)
+    local raw = match(g, msg)
     if raw then
       local id = tonumber(raw:match("|Hspell:(%d+)"))
       local spell = raw:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", ""):gsub("|H.-|h%[?(.-)%]?|h", "%1")
@@ -688,9 +718,8 @@ ns.on("CHAT_MSG_SYSTEM", function(msg)
 end)
 local MILESTONES = { [50] = true, [75] = true, [100] = true, [150] = true, [200] = true, [225] = true, [250] = true, [300] = true }
 ns.on("CHAT_MSG_SKILL", function(msg)
-  local p = pattern("SKILL_RANK_UP")
-  if not p or secret(msg) then return end
-  local skill, rank = msg:match(p)
+  if secret(msg) then return end
+  local skill, rank = match("SKILL_RANK_UP", msg)
   rank = tonumber(rank)
   if skill and rank and MILESTONES[rank] then moment("skill", { name = skill, rank = rank }) end
 end)
@@ -756,7 +785,7 @@ local function lookAtGear(quiet)
     local id = link and not secret(link) and tonumber(link:match("item:(%d+)"))
     if id and not c.worn[id] then
       c.worn[id] = true
-      local _, _, quality = GetItemInfo(link)
+      local _, quality = itemInfo(link)
       if not quiet and quality and quality >= 2 then
         -- (in hand: a weapon, a shield, a bow, taken up rather than put on)
         moment("gear", { link = link, quality = quality, made = (c.made or {})[id] or nil, held = slot >= 16 or nil })
@@ -773,9 +802,7 @@ ns.on("CHAT_MSG_LOOT", function(msg)
   if secret(msg) then return end
   local c = char()
   for _, g in ipairs({ "LOOT_ITEM_CREATED_SELF_MULTIPLE", "LOOT_ITEM_CREATED_SELF" }) do -- (the counted form first: the other matches it too)
-    local p = pattern(g)
-    local found, many = nil, nil
-    if p then found, many = msg:match(p) end
+    local found, many = match(g, msg)
     local link = found and msg:match("|c%x+|Hitem:[^|]+|h%[.-%]|h|r")
     local id = link and tonumber(link:match("item:(%d+)"))
     if id then
@@ -796,12 +823,11 @@ ns.on("CHAT_MSG_LOOT", function(msg)
   end
   local mine = false
   for _, g in ipairs({ "LOOT_ITEM_SELF", "LOOT_ITEM_SELF_MULTIPLE" }) do
-    local p = pattern(g)
-    if p and msg:match(p) then mine = true end
+    if match(g, msg) then mine = true end
   end
   local link = mine and msg:match("|c%x+|Hitem:[^|]+|h%[.-%]|h|r")
   if not link then return end
-  local _, _, quality = GetItemInfo(link)
+  local _, quality = itemInfo(link)
   if quality and quality >= 3 then moment("loot", { link = link, quality = quality }) end
 end)
 

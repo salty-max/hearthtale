@@ -562,6 +562,22 @@ for _, race in ipairs(RACES) do
   end
 end
 
+-- An objective recorded with a number for its name (0.5.0's recorder read
+-- "0/8 Tough Wolf Meat" the wrong way round): never written ("eight 0s").
+for _, race in ipairs(RACES) do
+  for seed = 1, 6 do
+    local o = { { type = seed % 2 == 0 and "item" or "monster", name = "0", n = 8 } }
+    local c = { guid = "numbered-" .. race .. seed, race = race, class = COMBOS[race][1], chapters = { {
+      start = { level = 2, zone = "Dun Morogh", sub = "Coldridge Valley" }, log = {
+        { k = "done", id = 179, giver = "Sten Stoutarm", objectives = o, zone = "Dun Morogh", sub = "Coldridge Valley", at = 100 },
+        { k = "quest", id = 179, told = true, giver = "Sten Stoutarm", ender = "Sten Stoutarm", objectives = o,
+          zone = "Dun Morogh", sub = "Coldridge Valley", at = 200 } } } } }
+    local text = ns.writeBook(c).chapters[1].text
+    inspect(race .. " numbered objective", text)
+    if text:find(" 0s") or text:find(" 0[ ,.;]") then problem(race .. " numbered objective", "a number told as a name", text) end
+  end
+end
+
 -- Each people and kind of foe, and each kind of find, fought and found over
 -- a few chapters by every race: the remarks about them all reachable.
 local SUBJECT_FOES = { { "Murloc Raider", "Humanoid" }, { "Kobold Vermin", "Humanoid" }, { "Riverpaw Gnoll", "Humanoid" },
