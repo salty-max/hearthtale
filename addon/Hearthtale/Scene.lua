@@ -39,7 +39,7 @@ local function newScene(book, n, ch)
     -- takes, whether it names its place, an arrival framing it; its clauses
     -- that may carry a remark, those that do, a highlight, a turned clause
     pending = {}, pendingKinds = {}, pendingFoes = {}, lead = nil, named = false,
-    arrival = false, arrivalMode = nil, sentenceLimit = nil, openClauses = 0,
+    arrival = false, arrivalMode = nil, sentenceLimit = nil,
     pendingRoutine = 0, pendingRemarks = 0, pendingHighlight = false, pendingTurn = false,
     -- the paragraph: who it named, the things carried in it (when), a quip told
     peopleNamed = {}, thingsCarried = {}, quipped = false,
@@ -173,7 +173,6 @@ function Scene:flush()
   end
   self:append(linked(self.lead, capitalise(text .. ".")), self.pendingRoutine, self.pendingRemarks, self.pendingHighlight)
   self.pendingRoutine, self.pendingRemarks, self.pendingHighlight, self.pendingTurn = 0, 0, false, false
-  self.openClauses = 0
   -- "there" only right after the place is named
   if not self.named then b.there = true end
   self.pending, self.pendingKinds, self.pendingFoes = {}, {}, {}
@@ -221,7 +220,6 @@ function Scene:clause(text, said, m, key, isArrival)
   if said.remark then self.pendingRemarks = self.pendingRemarks + 1 end
   if highlight then self.pendingHighlight = true end
   if turned then self.pendingTurn = true end
-  self.openClauses = #pending
   if turned or highlight or #pending >= self.sentenceLimit or text:find("[;%.!%?]")
     or (isArrival and said.remark) or (self.pendingRemarks > 0 and #pending >= 2)
     or (#pending >= 2 and (complex or pending[1]:find("[,;:]") or pending[1]:find(" and "))) then self:flush() end
@@ -246,6 +244,13 @@ function Scene:placeOf(m)
   return m.zone
 end
 
+-- A new scene at a place (nil: none yet, a land just entered), in a zone:
+-- no kill told there yet.
+function Scene:enter(place, zone)
+  self.scene, self.sceneZone, self.killed = place, zone, false
+  if place then self.seenHere[place] = true end
+end
+
 -- The moment i of the log, about to be told.
 function Scene:at(i, m)
   local names = self.book.placeNames
@@ -263,8 +268,7 @@ function Scene:arrive(place, zone, opener)
   self:flush()
   if #self.current >= 3 then self:newParagraph() end
   local back = self.seenHere[place]
-  self.scene, self.sceneZone, self.killed = place, zone, false
-  self.seenHere[place] = true
+  self:enter(place, zone)
   if not opener and place == b.last then return end
   self.named = true
   local text, said

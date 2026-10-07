@@ -256,7 +256,7 @@ function Book:candidates(kind, values, ctx, wantRemark)
     -- a clause turned round ("{foe} fell to me") opens a sentence of its own,
     -- and takes no remark (a remark's subject is "I": "the road led me back,
     -- glad to be heading home" would dangle)
-    if hasTag(line, "turn") and (s.openClauses > 0 or wantRemark) then return false end
+    if hasTag(line, "turn") and (#s.pending > 0 or wantRemark) then return false end
     return true
   end
   local race = self.c.race or "Human"
