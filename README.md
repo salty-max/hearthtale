@@ -40,4 +40,4 @@ bun run check                      # the addon's checks, then typecheck, lint, t
 
 ## License
 
-MIT. Not affiliated with Blizzard Entertainment.
+GPL-3.0-or-later (see LICENSE). Not affiliated with Blizzard Entertainment.

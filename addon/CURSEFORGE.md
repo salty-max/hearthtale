@@ -66,4 +66,4 @@ Other commands: `/ht hall` opens the Hall of the Fallen; `/ht link CODE` links t
 
 ## Source
 
-MIT licensed: [github.com/salty-max/hearthtale](https://github.com/salty-max/hearthtale). Not affiliated with Blizzard Entertainment.
+Open source under GPL-3.0-or-later: [github.com/salty-max/hearthtale](https://github.com/salty-max/hearthtale). Not affiliated with Blizzard Entertainment.
