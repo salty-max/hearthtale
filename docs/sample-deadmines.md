@@ -23,9 +23,9 @@ The tunnel opened onto a hidden cove, and in the water lay a full-sized ship, ar
 
 Mr. Smite nearly finished me. My hands went on shaking after there was any need for them to move. I lived to see Mr. Smite fall. I came by Smite's Mighty Hammer, had it in use before long and finished off Captain Greenskin. With Edwin VanCleef defeated, I could think about leaving the Deadmines instead of surviving the next encounter. I took VanCleef's head as proof. I brought down Cookie.
 
-That night, I made my way back to Sentinel Hill, with my legs beginning to feel the walk. By nightfall, I handed in my work to Gryan Stoutmantle and took to wearing Chausses of Westfall. I let Scout Riell know it was done, wishing I could see a little farther ahead. I flew from Sentinel Hill to Stormwind, glad to see how the places fitted together from above.
+That night, I made my way back to Sentinel Hill, with my legs beginning to feel the walk. By nightfall, I handed in my work to Gryan Stoutmantle; I dealt with one more errand, and with my gear. I flew from Sentinel Hill to Stormwind, glad to see how the places fitted together from above.
 
-I found my way to Cathedral Square, where I made sure an Unsent Letter reached Baros Alexston, glad to have something definite to report. When I found myself back in the Dwarven District, I reported back to Wilder Thistlenettle and Shoni the Shilent. I arrived in Old Town, hoping the place would be less confusing up close. I added Cleave and Retaliation to what I knew.
+I found my way to Cathedral Square, where I made sure an Unsent Letter reached Baros Alexston, quicker than I feared. When I found myself back in the Dwarven District, I checked in with Wilder Thistlenettle and Shoni the Shilent. I arrived in Old Town, hoping the place would be less confusing up close. I added Cleave and Retaliation to what I knew.
 
 I had completed eight jobs, and found myself remembering the people who had asked for them. I had brought down eight Defias Miners and six Defias Pirates over the stretch. I had spent two hours and a half on it. I settled in the Trade District, with the comfortable feeling of having got somewhere I could stop.
 

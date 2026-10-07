@@ -969,9 +969,25 @@ function Book:chapter(n, ch)
       or (isArrival and self.selectedRemark) or (self.pendingRemark and #pending >= 2)
       or (#pending >= 2 and (complex or pending[1]:find("[,;:]") or pending[1]:find(" and "))) then flush() end
   end
+  -- Curation: in a scene, the first LOW_TOLD routine hand-ins (a delivery, a
+  -- report back, a message carried, a favour known only by who asked, green
+  -- gear) are told; the rest fold into one clause when the next thing
+  -- happens ("…, and saw to four more errands besides"). The deeds
+  -- themselves, the firsts, the dangers, the finds are always told.
+  local LOW_TOLD = 2
+  local lowTold, lowScene, folded = 0, nil, { errands = 0, gear = 0 }
+  local function emitFold()
+    if folded.errands + folded.gear == 0 then return end
+    local fm, fk = folded.m, folded.key
+    local t = { one = folded.errands == 1 or nil, gear = folded.gear > 0 or nil, onlygear = folded.errands == 0 or nil }
+    local n = folded.errands
+    folded.errands, folded.gear = 0, 0
+    clause(self:say("c-fold", fk, { n = words(n) }, tags(t, fm), nil, true), fm, fk)
+  end
   -- A new scene at a place: told as the journey there (a place just named
   -- needs none).
   local function arrive(place, zone, m, key, opener)
+    emitFold()
     flush()
     if #current >= 3 then newParagraph() end
     local back = seenHere[place]
@@ -1044,6 +1060,24 @@ function Book:chapter(n, ch)
   local mates, dungeon = {}, nil -- who joined me so far in the chapter; the dungeon I'm in
   local merged, found = {}, nil -- moments told with the one before; the find just told
   local doneAt = {} -- quest = where its work was told in the log
+  -- what a moment is to the fold: "low" (a routine hand-in), "silent" (told
+  -- with another, or not at all: neither told nor tallied), else nothing
+  local function routine(m, i)
+    if merged[i] then return "silent" end
+    if m.k == "gear" then return (m.quality or 2) < 3 and not m.made and "low" or nil end
+    if m.k ~= "quest" and m.k ~= "done" then return nil end
+    if m.abandoned then return "silent" end
+    if m.k == "quest" and m.told then -- a report back, unless right after the work
+      local justDone = m.id and doneAt[m.id] == i - 1 and placeOf(ch.log[i - 1]) == placeOf(m)
+      return (m.ender and not justDone) and "low" or "silent"
+    end
+    local o = m.objectives and m.objectives[1]
+    if o and o.type == "item" and o.held and o.name and m.ender then return "low" end -- a delivery
+    if o and (o.type == "monster" or o.type == "item") and o.name then return nil end
+    if o and o.text and instruction(o.text) then return nil end
+    -- known only by who asked (a message, a request): else a title, not told
+    return m.giver and "low" or "silent"
+  end
   for i, m in ipairs(ch.log or {}) do
     if m.sub then self.placeNames[m.sub] = true end
     if m.zone then self.placeNames[m.zone] = true end
@@ -1064,7 +1098,27 @@ function Book:chapter(n, ch)
       end
       return self:say(kind, key, values, tags(t, m), nil, true)
     end
-    if m.k == "level" then
+    -- curation: a routine hand-in past the scene's few, folded into its tally;
+    -- anything else first lets the tally be told
+    local foldNow = false
+    local what
+    if m.k == "level" then what = "silent" else what = routine(m, i) end
+    if what == "low" then
+      local here = place or scene
+      if here ~= lowScene then emitFold(); lowTold, lowScene = 0, here end
+      if lowTold >= LOW_TOLD then
+        foldNow = true
+        if m.k == "gear" then folded.gear = folded.gear + 1 else folded.errands = folded.errands + 1 end
+        folded.m, folded.key = m, key
+      else
+        lowTold = lowTold + 1
+      end
+    elseif what ~= "silent" then
+      emitFold()
+    end
+    if foldNow then
+      -- told in the scene's tally
+    elseif m.k == "level" then
       lvl = m.level or lvl -- a level reached: recorded, not told
     elseif m.k == "place" then
       if m.new == "zone" then
@@ -1307,6 +1361,7 @@ function Book:chapter(n, ch)
     end
     if m.k ~= "level" then prev = m end
   end
+  emitFold()
   flush()
 
   -- The end of the chapter (not while it is still being written; a death on

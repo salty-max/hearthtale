@@ -1,0 +1,40 @@
+---
+kind: c-fold
+---
+- [!gear !one] saw to {n} more errands besides
+- [!gear !one] ran {n} more errands
+- [!gear !one] handled {n} smaller jobs as well
+- [!gear !one] worked through {n} more errands
+- [!gear !one] took care of {n} other small tasks
+- [!gear !one] dealt with {n} more errands along the way
+- [!gear !one] saw {n} more errands through
+- [!gear !one] cleared {n} smaller jobs off my hands
+- [!gear one] saw to one more errand besides
+- [!gear one] ran one more errand
+- [!gear one] handled one smaller job as well
+- [!gear one] took care of one other small task
+- [!gear one] saw one more errand through
+- [!gear one] dealt with one more errand along the way
+- [!gear one] cleared one more small job off my hands
+- [gear !onlygear !one] ran {n} more errands and changed some of my gear
+- [gear !onlygear !one] saw to {n} more errands, and to some new gear
+- [gear !onlygear !one] handled {n} smaller jobs and a change of gear
+- [gear !onlygear one] ran one more errand and changed some of my gear
+- [gear !onlygear one] saw to one more errand, and to some new gear
+- [gear !onlygear !one] worked through {n} more errands and a change of armour
+- [gear !onlygear !one] took care of {n} other small tasks and some new gear
+- [gear !onlygear !one] dealt with {n} more errands, and with my gear
+- [gear !onlygear !one] ran {n} more errands and put on some new gear
+- [gear !onlygear !one] cleared {n} smaller jobs and swapped a piece or two of my gear
+- [gear !onlygear one] handled one smaller job and a change of gear
+- [gear !onlygear one] took care of one other small task and some new gear
+- [gear !onlygear one] dealt with one more errand, and with my gear
+- [gear !onlygear one] ran one more errand and put on some new gear
+- [onlygear] changed some of my gear along the way
+- [onlygear] put on some new gear as well
+- [onlygear] swapped a piece or two of my gear
+- [onlygear] saw to some new gear
+- [onlygear] traded a piece or two of my gear for better
+- [onlygear] took the time to change some of my gear
+- [onlygear] fitted myself with some new gear
+- [onlygear] made a few changes to my gear
