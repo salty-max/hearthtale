@@ -82,8 +82,13 @@ local function unitOf(u)
 end
 function UnitExists(u) return (u == "target" and state.target ~= nil and state.target.player == true) or u == "player" or unitOf(u) ~= nil or (u == "npc" and state.npc ~= nil) or state.party[u] ~= nil end
 function UnitIsPlayer(u) return u == "player" or state.party[u] ~= nil or (u == "target" and state.target ~= nil and state.target.player == true) end
+-- the unit a GUID is, if it is one now (the target, here)
+function UnitTokenFromGUID(guid)
+  if state.target and UnitGUID("target") == guid then return "target" end
+end
 function UnitGUID(u)
   if u == "player" then return state.guid end
+  if u == "pet" then return state.pet and state.pet.guid end
   if u == "target" and state.target and state.target.player then return state.target.guid end
   if u == "target" and state.target then return creatureGuid(state.target.id, state.target.n) end
 end
@@ -221,8 +226,12 @@ function CreateFrame(_, name, _, template)
   end
   function f:RegisterEvent(e)
     if FOREVER and e == "COMBAT_LOG_EVENT_UNFILTERED" then error("COMBAT_LOG_EVENT_UNFILTERED: forbidden") end
+    -- (PARTY_KILL, an event of its own: on Forever; the Classic run plays an
+    -- older client without it, its kills from the combat log)
+    if not FOREVER and e == "PARTY_KILL" then error("Attempt to register unknown event \"PARTY_KILL\"") end
     self.registered[e] = true
   end
+  function f:UnregisterEvent(e) self.registered[e] = nil end
   table.insert(frames, f)
   if name then _G[name] = f end
   return f
@@ -233,6 +242,12 @@ local function fire(e, ...)
     if f.registered[e] and f.scripts.OnEvent then f.scripts.OnEvent(f, e, ...); heard = true end
   end
   assert(heard, "nobody listens to " .. e)
+end
+-- an event the game sends whether anyone listens or not (a fight's own)
+local function offer(e, ...)
+  for _, f in ipairs(frames) do
+    if f.registered[e] and f.scripts.OnEvent then f.scripts.OnEvent(f, e, ...) end
+  end
 end
 
 -- The game's toasts, links and realm: keep what the addon hands them.
@@ -276,10 +291,12 @@ local function kill(id, n, tapped)
     -- it dies still targeted
     fire("PLAYER_TARGET_CHANGED")
     inCombat = true
-    fire("PLAYER_REGEN_DISABLED")
-    fire("UNIT_HEALTH", "target")
+    offer("PLAYER_REGEN_DISABLED")
+    offer("UNIT_HEALTH", "target")
     inCombat, deadTarget = false, true
-    fire("UNIT_HEALTH", "target")
+    offer("UNIT_HEALTH", "target")
+    -- my killing blow (not when another struck first: their kill)
+    if not tapped then fire("PARTY_KILL", state.guid, creatureGuid(id, n)) end
     deadTarget = false
     return
   end
@@ -297,6 +314,7 @@ local function vanquish(guid, name, race, class)
     fire("PLAYER_TARGET_CHANGED")
     inCombat, deadTarget = false, true
     fire("PLAYER_TARGET_CHANGED")
+    fire("PARTY_KILL", state.guid, guid)
     deadTarget, state.target = false, nil
     return
   end

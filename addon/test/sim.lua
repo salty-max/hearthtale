@@ -666,6 +666,29 @@ do
   if FOREVER then
     check(wolves() == before + 1, "Forever: a creature fought and seen dying is a kill; one another claimed isn't")
   end
+  -- Forever's PARTY_KILL: my killing blow however dealt (a DoT on a creature
+  -- no longer targeted), my pet's, not a groupmate's.
+  if FOREVER then
+    local cur = C.chapters[#C.chapters]
+    local trogg = ("Creature-0-4170-0-12-%d-%08X"):format(2, 7001)
+    state.target = { id = 2, n = 7001 }
+    fire("PLAYER_TARGET_CHANGED") -- (seen once: its name known)
+    state.target = { id = 1, n = 7002 }
+    fire("PLAYER_TARGET_CHANGED") -- (another targeted now)
+    local troggs = cur.kills["Rockjaw Trogg"] or 0
+    fire("PARTY_KILL", state.guid, trogg)
+    check((cur.kills["Rockjaw Trogg"] or 0) == troggs + 1, "Forever: a DoT's kill, the creature no longer targeted, counts")
+    state.pet = { guid = "Pet-0-4170-0-12-416-0000ABCD", name = "Zalnok" }
+    local before = cur.kills["Ragged Young Wolf"] or 0
+    fire("PARTY_KILL", state.pet.guid, ("Creature-0-4170-0-12-%d-%08X"):format(1, 7002))
+    check((cur.kills["Ragged Young Wolf"] or 0) == before + 1, "… my pet's kill too")
+    local wolves = cur.kills["Ragged Young Wolf"]
+    state.target = { id = 1, n = 7004 }
+    fire("PLAYER_TARGET_CHANGED") -- (seen: only whose kill it is decides)
+    fire("PARTY_KILL", "Player-4619-0BADBEEF", ("Creature-0-4170-0-12-%d-%08X"):format(1, 7004))
+    check(cur.kills["Ragged Young Wolf"] == wolves, "… not a groupmate's")
+    state.pet, state.target = nil, nil
+  end
   -- A night indoors without an inn (a hall, a barracks): told as such.
   state.indoors = true
   logout()
