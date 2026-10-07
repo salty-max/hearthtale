@@ -1030,6 +1030,32 @@ function Book:sceneryOf(name, night)
   return p[i][1]
 end
 
+-- A moment told by the first arm that fits it, as Rust's match: an arm is
+-- { kind, fn, when = guard }, its kind a moment's kind, a set of them
+-- (kinds(...)), or "_" for any; the guard, if any, must hold too.
+local function kinds(...)
+  local set = {}
+  for _, k in ipairs({ ... }) do set[k] = true end
+  return set
+end
+local function match(m, arms)
+  -- (the arms a kind can meet, in order, worked out once per kind)
+  arms.byKind = arms.byKind or {}
+  local plan = arms.byKind[m.k or ""]
+  if not plan then
+    plan = {}
+    for _, arm in ipairs(arms) do
+      local k = arm[1]
+      if k == "_" or k == m.k or (type(k) == "table" and k[m.k or ""]) then table.insert(plan, arm) end
+    end
+    arms.byKind[m.k or ""] = plan
+  end
+  for j = 1, #plan do
+    local arm = plan[j]
+    if not arm.when or arm.when() then return arm[2]() end
+  end
+end
+
 -- A chapter, told in scenes: the moments in one place make one or two
 -- sentences of clauses ("In Coldridge Valley I brought Sten his meat, killed
 -- six troggs for Balir and carried Talin's word to Grelin."), a link and the
@@ -1319,29 +1345,339 @@ function Book:chapter(n, ch)
     -- known only by who asked (a message, a request): else a title, not told
     return m.giver and "low" or "silent"
   end
-  for i, m in ipairs(ch.log or {}) do
+  -- The moment being told, read by the arms below (set for each in turn).
+  local m, i, key, place, foldNow
+  -- a clause in the scene where it happened
+  local function prepare()
+    if place and place ~= scene then arrive(place, m.zone, m, key) end
+    if #pending > 0 and not arrival and
+      (not families[m.k] or families[m.k] ~= families[pendingKinds[1]]) then flush() end
+  end
+  local function inScene(text) clause(text, m, key) end
+  local function c_(kind, values, t)
+    prepare()
+    if kind == "c-inn" then
+      values._place = m.place
+      values.inn = m.place == self.last and "there" or "at " .. mid(m.place)
+    end
+    return self:say(kind, key, values, tags(t, m), nil, true)
+  end
+  local function nothing() end
+  local function linkName(x) return x.link and x.link:match("%[(.-)%]") end
+
+  -- What each kind of moment tells.
+  local tell = {}
+  function tell.level() lvl = m.level or lvl end -- a level reached: recorded, not told
+  function tell.place()
+    if m.new == "zone" then
+      flush()
+      newParagraph()
+      self.last = nil
+      -- a land seen for the first time: described, else the plain line
+      local land = self:sceneryOf(m.zone, m.night)
+      if land then append(land) else alone("zone", key, { zone = mid(m.zone) }, tags(nil, m)) end
+      self.last = nil
+      scene, sceneZone = nil, nil
+      local town = m.sub and self:sceneryOf(m.sub, m.night)
+      if town then
+        append(town)
+        scene, sceneZone, sentences = m.sub, m.zone, 1
+        seenHere[m.sub] = true
+        self.last, self.there = m.sub, false
+      elseif m.sub then
+        arrive(m.sub, m.zone, m, key, seenHere[m.sub] and "c-return" or "c-place")
+      else
+        -- the land itself, just named: here, without arriving again
+        scene, sceneZone, sentences = m.zone, m.zone, 1
+        seenHere[m.zone] = true
+      end
+    elseif m.sub or m.zone then
+      local here = m.sub or m.zone
+      local town = self:sceneryOf(here, m.night)
+      if town then
+        -- a town seen for the first time: described, in its own sentences
+        flush()
+        if #current >= 3 then newParagraph() end
+        append(#current > 0 and linked(self:link(m, prev, key), town) or town)
+        scene, sceneZone, killed, sentences = here, m.zone, false, 1
+        seenHere[here] = true
+        self.last, self.there = here, false
+      else
+        arrive(here, m.zone, m, key, seenHere[here] and "c-return" or "c-place")
+      end
+    end
+  end
+  function tell.inn() inScene(c_("c-inn", { inn = mid(m.place) })) end
+  function tell.flight()
+    alone("flight", key, { from = mid(town(m.from)), to = mid(town(m.to)) }, tags({ first = not self.flown or nil }, m), m)
+    self.flown = true
+    if place then
+      scene, sceneZone = place, m.zone
+      seenHere[place] = true
+      self.last, self.there = place, false
+    end
+  end
+  -- a quest's work done: told where it happened (or at its turn-in, if that
+  -- comes right after, in the same place)
+  function tell.done()
+    if m.id then doneAt[m.id] = i end
+    if not handedNext(m, i) then
+      local t = tags({ done = true }, m) -- (not the hand-in: "brought back" waits for it)
+      prepare()
+      dropKill(m, t)
+      clause(self:deed(m, key, t), m, key)
+    end
+  end
+  -- its work told already: the turn-in is a return to who asked, the returns
+  -- in a row as one; right after the work, in the same place, the work and
+  -- the hand-in in one ("I brought Sten eight …")
+  function tell.turnIn()
+    local j = prevAt(i)
+    local justDone = m.id and doneAt[m.id] == j and j > 0 and placeOf(ch.log[j]) == place
+    if justDone then
+      local t = tags({ handed = true }, m)
+      prepare()
+      dropKill(m, t)
+      clause(self:deed(m, key, t), m, key)
+    elseif not merged[i] and m.ender then
+      local enders, seenEnder, k = { m.ender }, { [m.ender] = true }, i + 1
+      while ch.log[k] and ch.log[k].k == "quest" and ch.log[k].told and ch.log[k].ender
+        and placeOf(ch.log[k]) == place do
+        if not seenEnder[ch.log[k].ender] then table.insert(enders, ch.log[k].ender) end
+        seenEnder[ch.log[k].ender] = true
+        merged[k] = true
+        k = k + 1
+      end
+      inScene(c_("c-report", { ender = listing(enders) }))
+    end
+  end
+  function tell.quest()
+    local t = tags(nil, m)
+    prepare()
+    dropKill(m, t)
+    clause(self:deed(m, key, t), m, key)
+  end
+  function tell.kill()
+    self.creatureKinds[m.name] = m.kind
+    local t = { one = true, teeth = ({ Wolf = true, Cat = true, Bear = true, Boar = true, Crocolisk = true, Raptor = true })[m.kind or ""],
+      mechanical = m.kind == "Mechanical" or nil }
+    local people = foeOf(m.name, m.kind)
+    if people then t[people] = true end
+    if m.quarry or SKIP[m.kind or ""] then -- told by its quest, or not a fight
+    elseif m.first and KINDS[m.kind] then
+      inScene(c_("c-first", { kind = KINDS[m.kind] }, t))
+    elseif m.elite then
+      inScene(c_("c-elite", { foe = namedElite(m.name) and m.name or article(m.name) }))
+    elseif not (killed and place == scene) then
+      inScene(c_("c-kill", { foe = article(m.name) }, t))
+      killed = true
+      self.lastFoe = { name = m.name, many = false, told = self.told or 0 }
+    end
+  end
+  function tell.raid() inScene(c_("c-raid", { n = words(m.raid) })) end
+  -- a stretch at a craft: what was made, in one clause (the most first)
+  function tell.made()
+    if merged[i] then return end
+    local made, order, j = {}, {}, i
+    while ch.log[j] and (ch.log[j].k == "made" or ch.log[j].k == "skill") and (j == i or (ch.log[j].at or 0) - (ch.log[j - 1].at or 0) <= 1800) do
+      local x = ch.log[j]
+      if x.k == "made" then
+        local name = linkName(x)
+        if name then
+          if not made[name] then table.insert(order, name) end
+          made[name] = (made[name] or 0) + (x.n or 1)
+        end
+        merged[j] = j ~= i or nil
+      end
+      j = j + 1
+    end
+    table.sort(order, function(a, b) return made[a] > made[b] end)
+    local list, total = {}, 0
+    for k, name in ipairs(order) do
+      total = total + made[name]
+      if k <= 3 then table.insert(list, made[name] > 1 and words(made[name]) .. " " .. things(name) or itemName(name)) end
+    end
+    if #order > 3 then table.insert(list, "more besides") end
+    inScene(c_("c-made", { things = listing(list) }, { lots = total >= 10 or nil }))
+  end
+  -- the other side, met in the open: one by name, race and class when alone;
+  -- several within a few minutes, together
+  function tell.pvp()
+    if merged[i] then return end
+    local fight, j = { m }, i + 1
+    while ch.log[j] do
+      if ch.log[j].k == "pvp" then
+        if (ch.log[j].at or 0) - (fight[#fight].at or 0) > 600 then break end
+        table.insert(fight, ch.log[j])
+        merged[j] = true
+      end
+      j = j + 1
+    end
+    if #fight == 1 and m.name then
+      local who = (RACE_NAME[m.race or ""] or "") .. (CLASS_NAME[m.class or ""] and " " .. CLASS_NAME[m.class] or "")
+      who = who:gsub("^ ", "")
+      alone("pvp-one", key, self:here({ name = m.first or m.name, who = who ~= "" and article(who) or nil }, place),
+        tags({ known = who ~= "" or nil }, m), m)
+    else
+      local horde = 0
+      for _, x in ipairs(fight) do if HORDE_RACE[x.race or ""] then horde = horde + 1 end end
+      alone("pvp-many", key, self:here({ n = words(#fight), side = horde * 2 >= #fight and "the Horde" or "the Alliance" }, place),
+        tags(nil, m), m)
+    end
+  end
+  -- a group formed: those who joined together, in one clause (by their first
+  -- name, on Forever: "Harrysaun", not "Harrysaun Brightwood")
+  function tell.group()
+    if merged[i] then return end
+    local names, j = { m.first or m.name }, i + 1
+    while ch.log[j] and ch.log[j].k == "group" and (ch.log[j].at or 0) - (m.at or 0) <= 120 do
+      table.insert(names, ch.log[j].first or ch.log[j].name)
+      merged[j] = true
+      j = j + 1
+    end
+    for _, name in ipairs(names) do if #mates < 4 then table.insert(mates, name) end end
+    inScene(c_("c-group", { mates = listing(names) }, { one = #names == 1 or nil }))
+  end
+  -- a dungeon's last master: a sentence of its own
+  function tell.bossFinal() alone("boss-final", key, { boss = m.name, dungeon = mid(dungeon) }, tags(nil, m), m) end
+  function tell.boss() inScene(c_("c-boss", { boss = m.name, dungeon = mid(dungeon) })) end
+  -- (a trade's own spell, learned before the game listed the trade, is told by the trade)
+  function tell.learned()
+    local spells = {}
+    for _, sp in ipairs(m.spells) do
+      if not ((c.profs or {})[sp] or sp:find("^Apprentice ") or sp:find("^Journeyman ") or sp:find("^Expert ")
+        or sp:find("^Artisan ") or sp:find("^Master ")) then table.insert(spells, sp) end
+    end
+    if #spells > 0 then
+      local named = {}
+      for j = 1, math.min(#spells, 3) do named[j] = spells[j] end
+      inScene(c_("c-trainer", { spells = listing(named) }, { many = #spells > 3 or nil, one = #spells == 1 or nil }))
+    end
+  end
+  function tell.skill() inScene(c_("c-skill", { skill = m.name:lower(), rank = words(m.rank) }, { one = true })) end
+  function tell.prof()
+    inScene(c_("c-prof", { prof = m.name:lower(), rank = rankName(m.rank) }, { new = m.learned or nil, one = true }))
+  end
+  function tell.wearFound() -- the find just told, put to use
+    inScene(c_("c-wear-found", {}))
+    found = nil
+  end
+  function tell.gearOrLoot()
+    local item = linkName(m)
+    if item then
+      inScene(c_("c-" .. m.k, { item = itemName(item) },
+        { made = m.made or nil, held = m.held or nil, fine = (m.quality or 2) >= 3 or nil }))
+    end
+    found = m.k == "loot" and item or nil
+  end
+  function tell.tame() inScene(c_("c-tame", { pet = m.name, family = m.family and article(m.family:lower()) })) end
+
+  -- The moments of their own, each its own sentence, where it happened.
+  local own = {}
+  function own.rare() alone("rare", key, self:here({ foe = m.name }, place), tags({ elite = m.elite or nil }, m), m) end
+  function own.close()
+    if #current >= 3 then newParagraph() end
+    -- the foe just named: "one of them", not its name again
+    local foe, last = article(m.foe), self.lastFoe
+    if m.foe and last and last.name == m.foe and (self.told or 0) - last.told <= 1 then
+      foe = last.many and "one of them" or (m.foe and "another " .. m.foe)
+    end
+    alone(m.hp <= 5 and "close-deep" or "close-light", key,
+      self:here({ foe = foe }, place), tags({ night = m.night or false, foe = m.foe ~= nil }, m), m)
+  end
+  function own.died() alone("died", key, self:here({ foe = deathFoe(m.death, article) }, place), deathTags(m.death), m) end
+  function own.dungeon()
+    dungeon = m.name
+    -- a dungeon's first time: described, else the plain line
+    local depths = self:sceneryOf(m.name, m.night)
+    if depths then
+      append(#current > 0 and linked(self:link(m, prev, key), depths) or depths)
+      sentences = 1
+    else
+      alone("dungeon", key, { dungeon = mid(m.name), mates = listing(mates) }, tags(nil, m), m)
+    end
+    self.last, self.there = place, false
+  end
+  function own.power() alone("power", key, { spell = m.spell }, tags({ [m.kind or "form"] = true }, m), m) end
+  function own.ride() alone(m.k, key, {}, tags(nil, m), m) end
+  -- back from death: how, where, how long it took
+  function own.revived()
+    alone("revived", key, self:here({ by = m.by, graveyard = m.graveyard and mid(m.graveyard), time = m.took and playedWords(m.took) },
+      place), tags({ [m.how or "corpse"] = true }, m), m)
+  end
+  function own.petdied() alone("petdied", key, self:here({ pet = m.name }, place), tags(nil, m), m) end
+  function own.campfire() alone("campfire", key, self:here({}, place), tags(nil, m), m) end
+  function own.rested() alone("rest", key, self:here({ place = mid(m.place) }, m.place), tags({ fire = m.fire or nil, last = false }, m), m) end
+  -- (indoors without an inn: a corner of a hall, not the open ground)
+  function own.night() alone(m.inside and "night-in" or "night", key, self:here({}, place), tags({ last = false }, m), m) end
+  function own.wake()
+    flush()
+    newParagraph()
+    self.last = nil
+    local indoors = m.inside and m.after ~= "rest"
+    alone(indoors and "wake-in" or "wake", key, self:here({}, place), tags({ rest = m.after == "rest" or nil }, m))
+  end
+  local ownArms = {
+    { "rare", own.rare },
+    { "close", own.close },
+    { "died", own.died, when = function() return m.death end },
+    { "dungeon", own.dungeon },
+    { "power", own.power },
+    { kinds("mount", "riding"), own.ride },
+    { "revived", own.revived },
+    { "petdied", own.petdied },
+    { "campfire", own.campfire },
+    { "rested", own.rested },
+    { "night", own.night, when = function() return not m.last end },
+    { "wake", own.wake },
+  }
+  function tell.own()
+    flush() -- before its place is worked out: "there" depends on the sentence before
+    if place and place ~= scene then
+      scene, sceneZone, killed, sentences = place, m.zone, false, 0
+      seenHere[place] = true
+    end
+    match(m, ownArms)
+  end
+
+  -- Each moment by the first arm that fits it, in this order.
+  local arms = {
+    { "_", nothing, when = function() return m == startPlace end }, -- told by the opening
+    { "_", nothing, when = function() return relog[i] end }, -- a relog: no night
+    { "_", nothing, when = function() return foldNow end }, -- told in the scene's tally
+    { "level", tell.level },
+    { "place", tell.place },
+    { "inn", tell.inn },
+    { "flight", tell.flight },
+    { "done", nothing, when = function() return m.abandoned end }, -- a quest given up: as if never done
+    { "done", tell.done },
+    { "quest", tell.turnIn, when = function() return m.told end },
+    { "quest", tell.quest },
+    { "kill", tell.kill },
+    { "group", tell.raid, when = function() return m.raid end },
+    { "made", tell.made },
+    { "pvp", tell.pvp },
+    { "group", tell.group },
+    { "boss", tell.bossFinal, when = function() return FINAL[m.name] end },
+    { "boss", tell.boss },
+    { "learned", tell.learned },
+    { "skill", tell.skill },
+    { "prof", tell.prof },
+    { "gear", tell.wearFound, when = function() return found == linkName(m) end },
+    { kinds("gear", "loot"), tell.gearOrLoot },
+    { "tame", tell.tame },
+    { "_", tell.own },
+  }
+
+  for index, moment in ipairs(ch.log or {}) do
+    m, i = moment, index
     if m.sub then self.placeNames[m.sub] = true end
     if m.zone then self.placeNames[m.zone] = true end
-    local key = n .. "|" .. i
-    local place = placeOf(m)
-    -- a clause in the scene where it happened
-    local function prepare()
-      if place and place ~= scene then arrive(place, m.zone, m, key) end
-      if #pending > 0 and not arrival and
-        (not families[m.k] or families[m.k] ~= families[pendingKinds[1]]) then flush() end
-    end
-    local function inScene(text) clause(text, m, key) end
-    local function c_(kind, values, t)
-      prepare()
-      if kind == "c-inn" then
-        values._place = m.place
-        values.inn = m.place == self.last and "there" or "at " .. mid(m.place)
-      end
-      return self:say(kind, key, values, tags(t, m), nil, true)
-    end
+    key = n .. "|" .. i
+    place = placeOf(m)
     -- curation: a routine hand-in past the scene's few, folded into its tally;
     -- anything else first lets the tally be told
-    local foldNow = false
+    foldNow = false
     local what
     if m.k == "level" then what = "silent" else what = routine(m, i) end
     if what == "low" then
@@ -1357,271 +1693,7 @@ function Book:chapter(n, ch)
     elseif what ~= "silent" and ((place and place ~= lowScene) or m.k == "place" or m.k == "dungeon" or m.k == "flight") then
       emitFold() -- the place left: its tally, once
     end
-    if m == startPlace then
-      -- told by the opening
-    elseif relog[i] then
-      -- a relog: no night
-    elseif foldNow then
-      -- told in the scene's tally
-    elseif m.k == "level" then
-      lvl = m.level or lvl -- a level reached: recorded, not told
-    elseif m.k == "place" then
-      if m.new == "zone" then
-        flush()
-        newParagraph()
-        self.last = nil
-        -- a land seen for the first time: described, else the plain line
-        local land = self:sceneryOf(m.zone, m.night)
-        if land then append(land) else alone("zone", key, { zone = mid(m.zone) }, tags(nil, m)) end
-        self.last = nil
-        scene, sceneZone = nil, nil
-        local town = m.sub and self:sceneryOf(m.sub, m.night)
-        if town then
-          append(town)
-          scene, sceneZone, sentences = m.sub, m.zone, 1
-          seenHere[m.sub] = true
-          self.last, self.there = m.sub, false
-        elseif m.sub then
-          arrive(m.sub, m.zone, m, key, seenHere[m.sub] and "c-return" or "c-place")
-        else
-          -- the land itself, just named: here, without arriving again
-          scene, sceneZone, sentences = m.zone, m.zone, 1
-          seenHere[m.zone] = true
-        end
-      elseif m.sub or m.zone then
-        local here = m.sub or m.zone
-        local town = self:sceneryOf(here, m.night)
-        if town then
-          -- a town seen for the first time: described, in its own sentences
-          flush()
-          if #current >= 3 then newParagraph() end
-          append(#current > 0 and linked(self:link(m, prev, key), town) or town)
-          scene, sceneZone, killed, sentences = here, m.zone, false, 1
-          seenHere[here] = true
-          self.last, self.there = here, false
-        else
-          arrive(here, m.zone, m, key, seenHere[here] and "c-return" or "c-place")
-        end
-      end
-    elseif m.k == "inn" then
-      inScene(c_("c-inn", { inn = mid(m.place) }))
-    elseif m.k == "flight" then
-      alone("flight", key, { from = mid(town(m.from)), to = mid(town(m.to)) }, tags({ first = not self.flown or nil }, m), m)
-      self.flown = true
-      if place then
-        scene, sceneZone = place, m.zone
-        seenHere[place] = true
-        self.last, self.there = place, false
-      end
-    elseif m.k == "done" and m.abandoned then
-      -- a quest given up: as if never done
-    elseif m.k == "done" then
-      -- a quest's work done: told where it happened (or at its turn-in, if
-      -- that comes right after, in the same place)
-      if m.id then doneAt[m.id] = i end
-      if not handedNext(m, i) then
-        local t = tags({ done = true }, m) -- (not the hand-in: "brought back" waits for it)
-        prepare()
-        dropKill(m, t)
-        clause(self:deed(m, key, t), m, key)
-      end
-    elseif m.k == "quest" and m.told then
-      -- its work told already: the turn-in is a return to who asked, the
-      -- returns in a row as one; right after the work, in the same place,
-      -- the work and the hand-in in one ("I brought Sten eight …")
-      local j = prevAt(i)
-      local justDone = m.id and doneAt[m.id] == j and j > 0 and placeOf(ch.log[j]) == place
-      if justDone then
-        local t = tags({ handed = true }, m)
-        prepare()
-        dropKill(m, t)
-        clause(self:deed(m, key, t), m, key)
-      elseif not merged[i] and m.ender then
-        local enders, seenEnder, j = { m.ender }, { [m.ender] = true }, i + 1
-        while ch.log[j] and ch.log[j].k == "quest" and ch.log[j].told and ch.log[j].ender
-          and placeOf(ch.log[j]) == place do
-          if not seenEnder[ch.log[j].ender] then table.insert(enders, ch.log[j].ender) end
-          seenEnder[ch.log[j].ender] = true
-          merged[j] = true
-          j = j + 1
-        end
-        inScene(c_("c-report", { ender = listing(enders) }))
-      end
-    elseif m.k == "quest" then
-      local t = tags(nil, m)
-      prepare()
-      dropKill(m, t)
-      clause(self:deed(m, key, t), m, key)
-    elseif m.k == "kill" then
-      self.creatureKinds[m.name] = m.kind
-      local t = { one = true, teeth = ({ Wolf = true, Cat = true, Bear = true, Boar = true, Crocolisk = true, Raptor = true })[m.kind or ""],
-        mechanical = m.kind == "Mechanical" or nil }
-      local people = foeOf(m.name, m.kind)
-      if people then t[people] = true end
-      if m.quarry or SKIP[m.kind or ""] then -- told by its quest, or not a fight
-      elseif m.first and KINDS[m.kind] then
-        inScene(c_("c-first", { kind = KINDS[m.kind] }, t))
-      elseif m.elite then
-        inScene(c_("c-elite", { foe = namedElite(m.name) and m.name or article(m.name) }))
-      elseif not (killed and place == scene) then
-        inScene(c_("c-kill", { foe = article(m.name) }, t))
-        killed = true
-        self.lastFoe = { name = m.name, many = false, told = self.told or 0 }
-      end
-    elseif m.k == "group" and m.raid then
-      inScene(c_("c-raid", { n = words(m.raid) }))
-    elseif m.k == "made" then
-      -- a stretch at a craft: what was made, in one clause (the most first)
-      if not merged[i] then
-        local made, order, j = {}, {}, i
-        while ch.log[j] and (ch.log[j].k == "made" or ch.log[j].k == "skill") and (j == i or (ch.log[j].at or 0) - (ch.log[j - 1].at or 0) <= 1800) do
-          local x = ch.log[j]
-          if x.k == "made" then
-            local name = x.link and x.link:match("%[(.-)%]")
-            if name then
-              if not made[name] then table.insert(order, name) end
-              made[name] = (made[name] or 0) + (x.n or 1)
-            end
-            merged[j] = j ~= i or nil
-          end
-          j = j + 1
-        end
-        table.sort(order, function(a, b) return made[a] > made[b] end)
-        local list, total = {}, 0
-        for k, name in ipairs(order) do
-          total = total + made[name]
-          if k <= 3 then table.insert(list, made[name] > 1 and words(made[name]) .. " " .. things(name) or itemName(name)) end
-        end
-        if #order > 3 then table.insert(list, "more besides") end
-        inScene(c_("c-made", { things = listing(list) }, { lots = total >= 10 or nil }))
-      end
-    elseif m.k == "pvp" then
-      -- the other side, met in the open: one by name, race and class when
-      -- alone; several within a few minutes, together
-      if not merged[i] then
-        local fight, j = { m }, i + 1
-        while ch.log[j] do
-          if ch.log[j].k == "pvp" then
-            if (ch.log[j].at or 0) - (fight[#fight].at or 0) > 600 then break end
-            table.insert(fight, ch.log[j])
-            merged[j] = true
-          end
-          j = j + 1
-        end
-        if #fight == 1 and m.name then
-          local who = (RACE_NAME[m.race or ""] or "") .. (CLASS_NAME[m.class or ""] and " " .. CLASS_NAME[m.class] or "")
-          who = who:gsub("^ ", "")
-          alone("pvp-one", key, self:here({ name = m.first or m.name, who = who ~= "" and article(who) or nil }, place),
-            tags({ known = who ~= "" or nil }, m), m)
-        else
-          local horde = 0
-          for _, x in ipairs(fight) do if HORDE_RACE[x.race or ""] then horde = horde + 1 end end
-          alone("pvp-many", key, self:here({ n = words(#fight), side = horde * 2 >= #fight and "the Horde" or "the Alliance" }, place),
-            tags(nil, m), m)
-        end
-      end
-    elseif m.k == "group" then
-      -- a group formed: those who joined together, in one clause
-      if not merged[i] then
-        -- (by their first name, on Forever: "Harrysaun", not "Harrysaun Brightwood")
-        local names, j = { m.first or m.name }, i + 1
-        while ch.log[j] and ch.log[j].k == "group" and (ch.log[j].at or 0) - (m.at or 0) <= 120 do
-          table.insert(names, ch.log[j].first or ch.log[j].name)
-          merged[j] = true
-          j = j + 1
-        end
-        for _, name in ipairs(names) do if #mates < 4 then table.insert(mates, name) end end
-        inScene(c_("c-group", { mates = listing(names) }, { one = #names == 1 or nil }))
-      end
-    elseif m.k == "boss" and FINAL[m.name] then
-      -- a dungeon's last master: a sentence of its own
-      alone("boss-final", key, { boss = m.name, dungeon = mid(dungeon) }, tags(nil, m), m)
-    elseif m.k == "boss" then
-      inScene(c_("c-boss", { boss = m.name, dungeon = mid(dungeon) }))
-    elseif m.k == "learned" then
-      -- a trade's own spell (learned before the game listed the trade) is told by the trade
-      local spells = {}
-      for _, sp in ipairs(m.spells) do
-        if not ((c.profs or {})[sp] or sp:find("^Apprentice ") or sp:find("^Journeyman ") or sp:find("^Expert ")
-          or sp:find("^Artisan ") or sp:find("^Master ")) then table.insert(spells, sp) end
-      end
-      if #spells > 0 then
-        local named = {}
-        for j = 1, math.min(#spells, 3) do named[j] = spells[j] end
-        inScene(c_("c-trainer", { spells = listing(named) }, { many = #spells > 3 or nil, one = #spells == 1 or nil }))
-      end
-    elseif m.k == "skill" then
-      inScene(c_("c-skill", { skill = m.name:lower(), rank = words(m.rank) }, { one = true }))
-    elseif m.k == "prof" then
-      inScene(c_("c-prof", { prof = m.name:lower(), rank = rankName(m.rank) }, { new = m.learned or nil, one = true }))
-    elseif m.k == "gear" and found == (m.link and m.link:match("%[(.-)%]")) then
-      inScene(c_("c-wear-found", {})) -- the find just told, put to use
-      found = nil
-    elseif m.k == "gear" or m.k == "loot" then
-      local item = m.link and m.link:match("%[(.-)%]")
-      if item then
-        inScene(c_("c-" .. m.k, { item = itemName(item) },
-          { made = m.made or nil, held = m.held or nil, fine = (m.quality or 2) >= 3 or nil }))
-      end
-      found = m.k == "loot" and item or nil
-    elseif m.k == "tame" then
-      inScene(c_("c-tame", { pet = m.name, family = m.family and article(m.family:lower()) }))
-    else
-      -- the moments of their own, where they happened
-      flush() -- before its place is worked out: "there" depends on the sentence before
-      if place and place ~= scene then
-        scene, sceneZone, killed, sentences = place, m.zone, false, 0
-        seenHere[place] = true
-      end
-      if m.k == "rare" then
-        alone("rare", key, self:here({ foe = m.name }, place), tags({ elite = m.elite or nil }, m), m)
-      elseif m.k == "close" then
-        if #current >= 3 then newParagraph() end
-        -- the foe just named: "one of them", not its name again
-        local foe, last = article(m.foe), self.lastFoe
-        if m.foe and last and last.name == m.foe and (self.told or 0) - last.told <= 1 then
-          foe = last.many and "one of them" or (m.foe and "another " .. m.foe)
-        end
-        alone(m.hp <= 5 and "close-deep" or "close-light", key,
-          self:here({ foe = foe }, place), tags({ night = m.night or false, foe = m.foe ~= nil }, m), m)
-      elseif m.k == "died" and m.death then
-        alone("died", key, self:here({ foe = deathFoe(m.death, article) }, place), deathTags(m.death), m)
-      elseif m.k == "dungeon" then
-        dungeon = m.name
-        -- a dungeon's first time: described, else the plain line
-        local depths = self:sceneryOf(m.name, m.night)
-        if depths then
-          append(#current > 0 and linked(self:link(m, prev, key), depths) or depths)
-          sentences = 1
-        else
-          alone("dungeon", key, { dungeon = mid(m.name), mates = listing(mates) }, tags(nil, m), m)
-        end
-        self.last, self.there = place, false
-      elseif m.k == "power" then
-        alone("power", key, { spell = m.spell }, tags({ [m.kind or "form"] = true }, m), m)
-      elseif m.k == "mount" or m.k == "riding" then
-        alone(m.k, key, {}, tags(nil, m), m)
-      elseif m.k == "revived" then
-        -- back from death: how, where, how long it took
-        alone("revived", key, self:here({ by = m.by, graveyard = m.graveyard and mid(m.graveyard), time = m.took and playedWords(m.took) },
-          place), tags({ [m.how or "corpse"] = true }, m), m)
-      elseif m.k == "petdied" then
-        alone("petdied", key, self:here({ pet = m.name }, place), tags(nil, m), m)
-      elseif m.k == "campfire" then
-        alone("campfire", key, self:here({}, place), tags(nil, m), m)
-      elseif m.k == "rested" then
-        alone("rest", key, self:here({ place = mid(m.place) }, m.place), tags({ fire = m.fire or nil, last = false }, m), m)
-      elseif m.k == "night" and not m.last then
-        -- (indoors without an inn: a corner of a hall, not the open ground)
-        alone(m.inside and "night-in" or "night", key, self:here({}, place), tags({ last = false }, m), m)
-      elseif m.k == "wake" then
-        flush()
-        newParagraph()
-        self.last = nil
-        local indoors = m.inside and m.after ~= "rest"
-        alone(indoors and "wake-in" or "wake", key, self:here({}, place), tags({ rest = m.after == "rest" or nil }, m))
-      end
-    end
+    match(m, arms)
     if m.k ~= "level" then prev = m end
   end
   emitFold()
