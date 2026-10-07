@@ -85,6 +85,11 @@ never("^I killed an? Mr%. ", named, "an article before a title")
 never("^I managed to %u", tasks, "a task starting in capitals")
 never("^I managed to .* The ", tasks, "a capitalised article inside a task")
 never("an? An? ", things, "two articles")
+for _, title in ipairs({ "Baron", "Lord", "Lady", "Captain", "King", "Queen", "General", "Commander", "Chief", "Prince",
+  "Overlord", "Archmage", "Foreman", "Sergeant", "Lieutenant", "Marshal" }) do
+  never("an? " .. title .. " %u%a*'s ", things, "an article before a titled owner")
+  never("an? " .. title .. " %u%a*'s ", finds, "an article before a titled owner")
+end
 for _, l in ipairs(results) do
   if l:find("^%l") then table.insert(problems, "a result told as a task: " .. l) break end
 end

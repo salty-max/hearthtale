@@ -10,83 +10,85 @@ Each race writes in its own voice, and a place seen for the first time is descri
 
 ## Chapter 1 (levels 1 to 4)
 
-I began in Coldridge Valley, where there was work to be done and a fair bit beyond it worth looking into. The cold of Dun Morogh caught in my throat, and the pines bowed under their snow. Over it all stood the mountain that holds Ironforge, and the country felt less empty for it. I tramped into Anvilmar and met my first wolves, with fresh respect for what was in their mouths. I had all eight Tough Wolf Meat.
+I set out in Coldridge Valley with my kin in mind. A name was worth keeping only if the work behind it stood up. The cold of Dun Morogh caught in my throat, and the pines bowed under their snow. Over it all stood the mountain that holds Ironforge, and the country felt less empty for it. When I tramped into Anvilmar, I fought wolves for the first time, with fresh respect for what was in their mouths. I collected eight Tough Wolf Meat.
 
-The road led me back to Coldridge Valley. I did for a Burly Rockjaw Trogg, solid on my feet by the end of it. I overcame six Rockjaw Troggs. I passed word along to Grelin Whitebeard.
+I headed back to Coldridge Valley, the same ruts in the road as before. I did for a Burly Rockjaw Trogg. I saw off six Rockjaw Troggs, the grunting echoing long after. I concluded the errand between Talin Keeneye and Grelin Whitebeard.
 
-The fight with a Frostmane Troll Whelp left me badly shaken. Stubbornness had carried me a long way, but it was no substitute for sense. Afterwards, I hunted down fourteen Frostmane Troll Whelps, more of them than was strictly fair. I had Grelin Whitebeard's Journal in my pack. A Frostmane Leather Belt went on in place of the old.
+A Frostmane Troll Whelp nearly finished me, and put a fair dent in my opinion of my own judgement. Afterwards, I finished off fourteen Frostmane Troll Whelps, the drums of the camps still beating somewhere. I recovered Grelin Whitebeard's Journal. I began using a Frostmane Leather Belt.
 
-When I came back to Anvilmar, I trained in Serpent Sting and Track Beasts, still a long way from a master's bench. I concluded the errand between Durnan Furcutter and Marryk Nurribit.
+The road led me back to Anvilmar. I came away from training with Serpent Sting and Track Beasts, my arms complaining by the end of the practice. I saw Durnan Furcutter's business through with Marryk Nurribit.
 
-Six tasks had been seen through along the way. Glad to be using a pen, I put ten Ragged Young Wolves and four Burly Rockjaw Troggs on the page. I had been on the road an hour and thirty-five minutes. Glad to have the weight of my pack off my shoulders, I rested in Anvilmar.
+I had done six tasks by the end. I counted ten Ragged Young Wolves and four Burly Rockjaw Troggs, glad to be using a pen. All told, it had taken an hour and thirty-five minutes. I rested in Anvilmar, glad to put my pack down before it became a permanent part of me.
 
 ## Chapter 2 (levels 4 to 7)
 
-I was ready to move in Anvilmar. The road was not going to shorten itself out of consideration. I walked into Coldridge Pass. I smelled the Thunderbrew Distillery before I had properly reached Kharanos. Smoke rose above the houses, where dwarves and gnomes crowded together against the cold, and I felt my shoulders ease at the sight. I fixed my hearthstone at the Thunderbrew Distillery, with rather more hope of an ale on my return. I took up skinning and began to learn leatherworking. I came through my first fight with boars, a lesson my elders had somehow left out. I found six Crag Boar Ribs. I made a Handstitched Leather Vest. I equipped a Handstitched Leather Vest, my own work.
+I was ready to move in Anvilmar. The road was not going to shorten itself out of consideration. The way went on into Coldridge Pass. I smelled the Thunderbrew Distillery before I had properly reached Kharanos. Smoke rose above the houses, where dwarves and gnomes crowded together against the cold, and I felt my shoulders ease at the sight. I made my home at the Thunderbrew Distillery, somewhere to come back to and get my boots off. I started learning skinning. I took up leatherworking, still a long way from a master's bench. I faced boars for the first time, with a healthy respect for their teeth. The count reached six Crag Boar Ribs in the end. I turned out a Handstitched Leather Vest. I began wearing a Handstitched Leather Vest, made with my own hands.
 
-I reached the Grizzled Den, judging the stonework before the people. I completed the errand from Loslor Rudge to Hegnar Rumbleshot. When I found my way to Brewnall Village, I hunted down a Leper Gnome. I tracked down eight Gyromechanic Gears, squinting by poor light the whole time. I was taught Arcane Shot.
+I arrived in the Grizzled Den, my boots having opinions about the distance. I brought Loslor Rudge's word to Hegnar Rumbleshot. The road brought me to Brewnall Village. I hunted down a Leper Gnome. I found eight Gyromechanic Gears, counted and recounted, as a dwarf should. The trainer taught me Arcane Shot.
 
-Later that day, the road brought me to Shimmer Ridge. I put down a Frostmane Snowstrider, a tidy bit of work, if I say so myself. I made camp, with my kit close and little trust in the night.
+Some hours later, my path led into Shimmer Ridge. I got the better of a Frostmane Snowstrider, with an uncomfortable sense of how practised trolls were at this. I slept rough, with my back to the ground and little comfort to recommend it.
 
-I woke in Shimmer Ridge and put my pack in order before going on. I brought down Timber there, a name worth keeping when the ordinary fights had run together. My skinning reached fifty. I was lucky enough to find a Frostmane Scepter.
+I woke in Shimmer Ridge and put my pack in order before going on. I killed Timber there, glad to have something to report that would stand up to a second telling. My skinning reached fifty. A Frostmane Scepter was among the spoils, a rare thing.
 
-I set foot in Frostmane Hold, curious what the locals would make of a dwarf. I dealt with a Frostmane Headhunter. I was able to explore Frostmane Hold, watching my footing as much as the view.
+I reached Frostmane Hold, where I finished off a Frostmane Headhunter, painted faces and tusks staying with me longer than I wanted. The task was to explore Frostmane Hold, and it was done. I made it as far as Amberstill Ranch and dealt with Vagash, my beard none the worse, which was the main thing.
 
-The way went on into Amberstill Ranch. I overcame Vagash, my beard none the worse, which was the main thing. My way took me back to Kharanos. I took lessons in Hunter's Mark and Raptor Strike, keen to try them somewhere with more at stake.
+My way took me back to Kharanos. I learned Hunter's Mark and Raptor Strike.
 
-I had seen five tasks to their end. Of the fighting, eleven Leper Gnomes and ten Frostmane Snowstriders made up the most. After two hours and a half, I was ready for a seat and an ale. I rested in Kharanos, with enough behind me to have earned the pleasure of doing very little.
+I counted five jobs done, glad that I could put a proper ending to what people had asked of me. Of the fighting, eleven Leper Gnomes and ten Frostmane Snowstriders made up the most. The stretch had taken two hours and a half. I settled in Kharanos, with the work done well enough that it could wait without worrying me.
 
 ## Chapter 3 (levels 7 to 9)
 
-Curious about the ground beneath the road as well as where it led, I began this stretch in Kharanos. When I tramped on to the Grizzled Den, I defeated a Young Wendigo. I collected eight Wendigo Manes, weighing more in my pack than in the asking. Thorgrim joined me.
+I made ready in Kharanos, giving my gear the sort of look that saves trouble later. I tramped on to the Grizzled Den, where I saw off a Young Wendigo. I tracked down eight Wendigo Manes, glad of a strong stomach. I went on beside Thorgrim.
 
-I arrived in Gol'Bolar Quarry, where I defeated ten Rockjaw Bonesnappers, my arms learning the trade as fast as they could. When I took the road back to Kharanos, I came away knowing Concussive Shot and Mend Pet. I walked on to Amberstill Ranch, keen to put a place to the name. I took Bristle on as my companion. I held my hands toward the fire, glad to let them do nothing useful for a moment. I put an end to a Frostmane Seer. I was left without Bristle beside me, where I had grown used to having company.
+I set foot in Gol'Bolar Quarry, curious what the locals would make of a dwarf. I cut down ten Rockjaw Bonesnappers. I returned to Kharanos, glad to be heading somewhere I knew. I added Concussive Shot and Mend Pet to what I knew.
 
-The blue water of Loch Modan lay still behind the Stonewrought Dam. I knew dwarves built on a grand scale, but the weight of all that water made me stop and look. I came to North Gate Pass, my boots having opinions about the distance. I found the Stoutlager Inn of Thelsamar beside the loch. After the open hills, its ale and blood sausages interested me more than the distance I had come. A Mountain Boar fell to me.
+I took the road to Amberstill Ranch, keen to put a place to the name. I won Bristle over. I rested beside the fire, with my pack close and no need to shoulder it yet. A Frostmane Seer was the next to fall. Bristle fell. Out here, it could as easily have been me.
+
+The blue water of Loch Modan lay still behind the Stonewrought Dam. I knew dwarves built on a grand scale, but the weight of all that water made me stop and look. I came to North Gate Pass. I found the Stoutlager Inn of Thelsamar beside the loch. After the open hills, its ale and blood sausages interested me more than the distance I had come. I dealt with a Mountain Boar, counting my fingers afterwards, just in case.
 
 # Grashnak, an orc warrior
 
 ## Chapter 1 (levels 1 to 5)
 
-I began in the Valley of Trials, with no one's will in place of my own. What I did with that freedom would be my answer. Heat rose from the red dust of Durotar, as if the ground itself were breathing. This was the land we had claimed, and I meant to learn how to belong to it. I cut down ten Mottled Boars. I brought down Sarkoth, my breath hard by the end. I saw off twelve Vile Familiars. I had ten Cactus Apples in my pack, every one of them accounted for. I settled what Foreman Thazz'ril needed settled.
+I began in the Valley of Trials, where strength would have to serve a purpose beyond proving that I had it. Heat rose from the red dust of Durotar, as if the ground itself were breathing. This was the land we had claimed, and I meant to learn how to belong to it. I hunted down ten Mottled Boars, fast, but not fast enough. I put an end to Sarkoth, my blood up longer than the fight deserved. Twelve Vile Familiars fell, as Zureetha Fargaze had asked. I gathered ten Cactus Apples, with dirt under my nails and a little more patience than before. I obliged Foreman Thazz'ril.
 
-At Razor Hill I heard the forge before I saw the drilling. Beyond the barracks, Kul Tiras ships sat off the coast, and I understood why no one in the town ever quite stood at rest. I went from Gornek to Master Gadrin. My training added Rend and Battle Shout. A Rough Leather Vest went on in place of the old. A Scorpid Worker was the next to fall. I gathered eight Scorpid Worker Tails, dull work, but done.
+At Razor Hill I heard the forge before I saw the drilling. Beyond the barracks, Kul Tiras ships sat off the coast, and I understood why no one in the town ever quite stood at rest. I concluded the errand between Gornek and Master Gadrin. My training added Rend and Battle Shout. A Rough Leather Vest went on in place of the old. I overcame a Scorpid Worker. I collected eight Scorpid Worker Tails, wrapped well, for everyone's sake.
 
-A Kul Tiras Marine brought me close to the end. I had work left to do, and no use for a glorious excuse for abandoning it. By the end, ten Kul Tiras Sailors lay behind me.
+A Kul Tiras Marine brought me close to the end. I had work left to do, and no use for a glorious excuse for abandoning it. I cut down ten Kul Tiras Sailors, my arms heavy afterwards.
 
-The tasks came to eight, the last for Gar'Thok. Nine Scorpid Workers had fallen by the end. This stretch had kept me busy for an hour and forty-five minutes. Rest would make the strength I had left useful again. I rested in Razor Hill, where the next deed could wait until I could give it my full strength.
+I had finished eight tasks. Nine Scorpid Workers had fallen to me over the stretch. After an hour and forty-five minutes, I could put the day's deeds in order and look plainly at what they had taught me. I settled in Razor Hill, glad to have work behind me that needed no excuse.
 
 ## Chapter 2 (levels 5 to 6)
 
-I began again in Razor Hill. What was asked of me deserved an answer in deeds. The drums of Orgrimmar echoed off the spiked walls as I came in. At Grommash Hold I felt the weight of it: a city our people had built for themselves, with no one's chains on it. My path led into the Valley of Strength. I came away knowing Charge and Thunder Clap, strength given a better shape. I concluded the errand between Thrall and Gor the Enforcer.
+I began again in Razor Hill. What was asked of me deserved an answer in deeds. The drums of Orgrimmar echoed off the spiked walls as I came in. At Grommash Hold I felt the weight of it: a city our people had built for themselves, with no one's chains on it. The road brought me to the Valley of Strength. I came away knowing Charge and Thunder Clap, strength given a better shape. I took the message to Gor the Enforcer.
 
 # Aelyndra, a Hardcore night elf druid
 
 ## Chapter 1 (levels 1 to 5)
 
-I began in Shadowglen, meaning to watch before I called anything understood. Moonlight silvered the leaves of Teldrassil while owls called overhead. I listened between my footfalls, unwilling to hurry through so much quiet. I encountered boars at close quarters, fierce in the way of all things that must eat. I killed seven Young Nightsabers. I completed the errand from Conservator Ilthalaine to Mardant Strongoak. I overcame eight Grells, the light of Elune enough to fight by. I faced spiders for the first time, not cruel, only hungry. I had ten Webwood Venom Sacs in my pack. I came away from training with Moonfire and Rejuvenation, the movements strange to my hands at first.
+I began in Shadowglen, where the world beyond familiar paths had become impossible to leave to others. Moonlight silvered the leaves of Teldrassil while owls called overhead. I listened between my footfalls, unwilling to hurry through so much quiet. I encountered boars at close quarters, fierce in the way of all things that must eat. I overcame seven Young Nightsabers. I completed Conservator Ilthalaine's errand with Mardant Strongoak. I put down eight Grells, the air tasting of brimstone long after. I had my first encounter with spiders, understanding them a little better in the end. Ten Webwood Venom Sacs went into my pack. The trainer taught me Moonfire and Rejuvenation.
 
-Rain scented the houses around the moonwell in Dolanaar. The sentinels kept their patient watch on the road, and I let my guard down a little. I completed Dirania Silvershine's errand with Iverron. I slept beneath the open sky, letting the quiet settle around me.
+Rain scented the houses around the moonwell in Dolanaar. The sentinels kept their patient watch on the road, and I let my guard down a little. I took the message to Iverron. I made what bed I could and let the night pass around me.
 
-I rose in Dolanaar after resting in the open, and listened before going on. A Nightsaber did not get up again. I tracked down three Nightsaber Pelts, each found where something living had left it. An Emerald Dreamcatcher turned up at last. I fitted myself with Sentinel Trousers.
+I rose in Dolanaar after the rough night's rest, with the path still waiting. I put down a Nightsaber, hunger being no crime, though it nearly cost me. I had all three Nightsaber Pelts. I gathered an Emerald Dreamcatcher, careful not to damage it. I made Sentinel Trousers part of my kit.
 
-I had completed seven errands, and found the country less distant for knowing what its people needed. Of the fighting, eleven Webwood Spiders and four Nightsabers made up the most. I had been on the road an hour and twenty-five minutes. Listening while my thoughts grew less insistent, I rested in Dolanaar.
+I had seen seven tasks through, and knew more of the people who had asked them of me. Most of it had been against eleven Webwood Spiders and four Nightsabers. All of it had taken an hour and twenty-five minutes. I paused in Dolanaar, where stillness brought back what haste had let me overlook.
 
 ## Chapter 2 (levels 5 to 6)
 
-Conscious that haste had made older mistakes than mine, I went on in Dolanaar. The white stone and still pools of Darnassus slowed me without my meaning to. Near the Temple of the Moon the old hush settled around me, and I was home. I found my way to the Temple of the Moon, where I was of use to Mathrengyl Bearwalker. I had learned Bear Form, and felt there was a great deal of the world I would need to learn again.
+I took up the path in Dolanaar, looking first for what had changed while my attention was elsewhere. The white stone and still pools of Darnassus slowed me without my meaning to. Near the Temple of the Moon the old hush settled around me, and I was home. My path led into the Temple of the Moon. I was of use to Mathrengyl Bearwalker. Learning Bear Form gave me a new way to meet the wild, one I still had to grow accustomed to.
 
 # Mortis, a Forsaken priest
 
 ## Chapter 1 (levels 1 to 5)
 
-I put down my first words in Deathknell, an account chosen freely rather than another order carried out. Crows called over the crypts of Tirisfal, toward the broken walls of Lordaeron. Night changed little here, though it left me feeling less conspicuous. I settled Undertaker Mordo's business with Shadow Priest Sarvis and disposed of a Wretched Zombie. I hunted down eight Mindless Zombies, the dark being more my element than theirs. Ten Young Night Web Spiders went down one after another. I recovered six Scavenged Goods, the count exact, which is more than the request was. Twelve Scarlet Armbands went into my pack. I took instruction in Shadow Word: Pain and Power Word: Shield.
+I began in Deathknell, with my own hand on the page and no master's will behind it. A modest distinction, until one has lived without it. Crows called over the crypts of Tirisfal, toward the broken walls of Lordaeron. Night changed little here, though it left me feeling less conspicuous. I carried a message on to Shadow Priest Sarvis and disposed of a Wretched Zombie. I overcame eight Mindless Zombies, glad that the dead stayed down this time. Ten Young Night Web Spiders fell, as Executor Arren had asked. I recovered six Scavenged Goods, the dark no obstacle to me. I found twelve Scarlet Armbands. I took instruction in Shadow Word: Pain and Power Word: Shield, still discovering what this body would allow.
 
-After the tombs, the crooked roofs of Brill looked almost companionable. Around the Gallows' End Tavern my people went about their business, and the town kept going on stubbornness alone. I tracked down ten Tirisfal Pumpkins, the dark no obstacle to me. I overcame Maggot Eye, efficiently, with nothing wasted. I fitted myself with a Lightweight Chain Robe.
+After the tombs, the crooked roofs of Brill looked almost companionable. Around the Gallows' End Tavern my people went about their business, and the town kept going on stubbornness alone. I tracked down ten Tirisfal Pumpkins, for reasons nobody volunteered. I hunted down Maggot Eye, the dark being more my element than any foe's. I put on a Lightweight Chain Robe.
 
-The seven tasks behind me had given people a use for me. That was not affection, but it had its advantages. I counted twelve Scarlet Converts and eight Wretched Zombies among the fighting. I had spent an hour and fifty minutes on it. I settled in Brill, where being still was a choice rather than a condition imposed on me.
+The tasks came to seven, the last for Executor Zygand. The fighting came to twelve Scarlet Converts and eight Wretched Zombies. I had spent an hour and fifty minutes on the road, choosing what to do with it. That part was worth recording. I settled in Brill, where being still was a choice rather than a condition imposed on me.
 
 ## Chapter 2 (levels 5 to 6)
 
-I took up the road in Brill. It had not learned to like me, but it had not managed to keep me out either. Green canals ran past the bubbling Apothecarium, deep beneath the ruins of Lordaeron. Out of so much that had survived badly, we had made a city, and it was ours. My path led into the Trade Quarter. I took lessons in Renew and Mind Blast. I had all five Vile Fin Scales, for reasons nobody volunteered.
+I set out in Brill, where usefulness remained a more reliable introduction than appearance. Green canals ran past the bubbling Apothecarium, deep beneath the ruins of Lordaeron. Out of so much that had survived badly, we had made a city, and it was ours. My path led into the Trade Quarter. I took lessons in Renew and Mind Blast. I had five Vile Fin Scales in my pack, stiff with blood and dirt.
 

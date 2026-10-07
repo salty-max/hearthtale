@@ -17,3 +17,29 @@ kind: r-item
 - [cloth] with thoughts of what a tailor might make of it
 - [meat] with supper very much on my mind
 - [night] the dark making the search twice as long
+- [egg !one] careful not to crack any of them
+- [egg one !plural] careful not to crack it
+- [egg] with an eye on the sky in case the parents came back
+- [egg] still warm, which I tried not to think about
+- [feather] light as nothing, for all the trouble
+- [feather] stray feathers drifting out of my pack for days
+- [feather] the softest part of the day's work
+- [hide] the smell reaching me before I had done
+- [hide] stiff with blood and dirt
+- [hide] rolled up tight against the smell
+- [paper] tempted to read more than I should have
+- [paper] the ink smudged but still legible
+- [paper one !plural] folded carefully, in case it mattered more than it seemed
+- [plant] with the green smell on my hands
+- [plant] careful not to bruise the leaves
+- [plant] with dirt under my nails and a little more patience than before
+- [stone one !plural] heavier than it looked
+- [stone !one] the weight of them pulling at my pack
+- [stone] glinting even in poor light
+- [relic one !plural] older than any hands that had held it since
+- [relic !one] older than any hands that had held them since
+- [relic] wondering who had made such things, and when
+- [relic] handled with more care than I usually manage
+- [remains] not the most pleasant thing to carry
+- [remains] wrapped well, for everyone's sake
+- [remains] glad of a strong stomach

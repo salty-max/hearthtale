@@ -111,7 +111,10 @@ const KINDS: Record<string, string[]> = {
 };
 const VOICE = ["home", "kin", "faith", "weapon"];
 const TAGS = ["home", "ally", "foe", "neutral", "night", "hc", "high", "low", "first", "elite", "lots", "many", "slow", "quick",
-  "foe", "fall", "drowning", "lava", "nature", "beast", "people", "player", "inside", "rest", "fire", "last", "one", "aside", "plain", "back", "done", "grouped", "held", "plural", "trophy", "corpse", "healer", "self", "known", "more", "again", "onward", "gear", "onlygear", "turn", "teeth", "mechanical", "cloth", "meat", "explore", "escort", "new", "made", "form", "demon", "steed"];
+  "foe", "fall", "drowning", "lava", "nature", "beast", "people", "player", "inside", "rest", "fire", "last", "one", "aside", "plain", "back", "done", "grouped", "held", "plural", "trophy", "corpse", "healer", "self", "known", "more", "again", "onward", "gear", "onlygear", "turn",
+  "murloc", "kobold", "gnoll", "harpy", "quilboar", "centaur", "ogre", "troll", "naga", "satyr", "furbolg", "trogg", "outlaw",
+  "scarlet", "undead", "demon", "elemental", "dragonkin", "spider",
+  "stone", "egg", "feather", "hide", "paper", "plant", "relic", "remains", "teeth", "mechanical", "cloth", "meat", "explore", "escort", "new", "made", "form", "demon", "steed"];
 const RACES = ["Human", "Dwarf", "NightElf", "Gnome", "Draenei", "Orc", "Troll", "Tauren", "Scourge", "BloodElf", "Skyborne"];
 const ROUTINE = new Set("deed-kill deed-item deed-task deed-word deliver report kill first gear trainer inn travel return place group skill prof".split(" ").map((kind) => `c-${kind}`));
 // The recap's kinds: one sentence of the recap holds a thought, the others are plain.
@@ -167,6 +170,11 @@ function parseFile(file: string, kind: string | null): Parsed | null {
     if (own === "r-lesson")
       for (const s of sentences)
         if (/\b(it|its)\b/i.test(s.text) && !s.tags.includes("one")) fail(file, `"it" in a lesson's remark needs [one]: ${s.text}`);
+    // a fight may be with one foe or several: "their" for several
+    if (own === "r-foe")
+      for (const s of sentences)
+        if (/\b(their|theirs)\b/i.test(s.text) && !s.tags.includes("!one"))
+          fail(file, `several foes in a fight's remark needs [!one]: ${s.text}`);
     // a find may be one thing or several: a count for several ("…, counting
     // them twice"); "it" for one, a mass ("[cloth]", "[meat]"), each of several
     // ("each one where the wind had left it"), or none ("it took", "it was")

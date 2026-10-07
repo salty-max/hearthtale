@@ -45,3 +45,11 @@ kind: closing
 - [plain slow] The stretch had run to {time}.
 - [plain] I came away {gold} richer after {time}.
 - [plain] I had worked {time} and earned {gold}.
+- The stretch had taken {time}, and most of it had been worth the effort.
+- All of it had taken {time}, longer than it felt and shorter than it looked written down.
+- [slow] The hours had added up to {time}, and my legs had counted every one of them.
+- [quick] It had all taken only {time}, which surprised me when I worked it out.
+- [plain] The road had taken {time} of my day.
+- [plain] All of it had taken {time}.
+- [plain] It came to {time} in all.
+- [plain] The work had filled {time}.

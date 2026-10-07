@@ -163,6 +163,13 @@ The plan and its decisions: PLAN.md.
   chosen when no remark is wanted (a remark's subject is "I"). Frame pools
   (opening, rest, wake, campfire, recaps) mix in lines that don't start with
   "I". A routine hand-in fold is told once per place.
+- Remarks about the moment: a foe's people or kind (`foeOf`: murloc, gnoll,
+  outlaw, undead, ... from the game's name, humanoids only) and a find's kind
+  (`thingOf`: egg, hide, paper, plant, stone, relic, remains, ...) tag the
+  clause. A fresh remark about that subject wins over a general one, even the
+  race's own; an ordinary fight (a stray kill) takes a specific remark or
+  none (`GATED`). Number agreement is checked by the build ("their" needs
+  [!one] in r-foe; "it"/counts in r-item).
 - The chapter's recap (tasks, fighting, time) holds one thought: the others
   are its `[plain]` sentences. The rest that ends the chapter has its own.
 - Topic tags (teeth, mechanical, cloth, meat, explore, escort, made) require

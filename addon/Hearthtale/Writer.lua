@@ -88,6 +88,17 @@ local UNCOUNTED = { Meat = true, Cloth = true, Leather = true, Silk = true, Wool
 -- Armor", "Smite's Mighty Hammer".
 local TROPHY = { Head = true, Skull = true, Heart = true, Scalp = true }
 local MASS = { Armor = true, Mail = true, Garb = true, Attire = true, Regalia = true, Raiment = true, Plate = true, Leather = true }
+local TITLES = { Mr = true, Mrs = true, Captain = true, Lord = true, Lady = true, King = true, Queen = true,
+  Prince = true, Princess = true, Baron = true, Baroness = true, General = true, Commander = true, Chief = true,
+  Overlord = true, Archmage = true, Foreman = true, Sergeant = true, Lieutenant = true, Marshal = true,
+  Master = true, Archivist = true, Magus = true, Khan = true, Emperor = true, Brother = true, Sister = true,
+  Father = true, Mother = true, Gatekeeper = true, Jailor = true, Taskmaster = true, Watcher = true, Acolyte = true,
+  Ambassador = true, Engineer = true, Boss = true, Apothecary = true, Deathguard = true, Guard = true, Huntsman = true,
+  Rifleman = true, Miner = true, Protector = true, Cannoneer = true, Grunt = true, Scout = true, Priestess = true,
+  Bloodlord = true, Battleguard = true, Warchief = true, Admiral = true, Inquisitor = true, Chieftain = true,
+  Colonel = true, Farmer = true, Geomancer = true, Lorekeeper = true, Private = true, Tinkerer = true, Advisor = true,
+  Old = true, Ol = true, Ranger = true, Broodlord = true, Pyroguard = true, Archbishop = true, Bishop = true,
+  Crier = true, Emissary = true, Emmisary = true, Matron = true, Herald = true, Courier = true, Warlord = true, Highlord = true, Count = true, Duke = true, Magistrate = true }
 local function itemName(name)
   -- one the game never counts ("8 Linen Cloth"): no article, but for a
   -- word that is its own plural ("an Explosive Sheep")
@@ -105,7 +116,9 @@ local function itemName(name)
   -- (an owner opening the name: "Book from Sven's Farm" is a book)
   local head = name:match("^(.-) %l") or name
   local owner = head:match("(%a+)'s ") or head:match("(%a+s)' ")
-  if owner and not (ns.names and ns.names.roles[owner]) then return name end
+  -- (a title before the owner makes a person of it: "Baron Longshore's Head")
+  local titled = owner and TITLES[head:match("(%a+)%.? " .. owner .. "'s ") or ""]
+  if owner and (titled or not (ns.names and ns.names.roles[owner])) then return name end
   if last:match("s$") or MASS[last] or UNCOUNTED[last] then return name end
   return (name:match("^[AEIOUaeiou]") and "an " or "a ") .. name
 end
@@ -126,17 +139,6 @@ ns.things = things
 -- A creature named in passing: "a Frostmane Novice". The game can't tell a
 -- named creature from a common one, so only rares go without (by their name).
 -- (a title is a name of its own: "Mr. Smite", "Captain Greenskin")
-local TITLES = { Mr = true, Mrs = true, Captain = true, Lord = true, Lady = true, King = true, Queen = true,
-  Prince = true, Princess = true, Baron = true, Baroness = true, General = true, Commander = true, Chief = true,
-  Overlord = true, Archmage = true, Foreman = true, Sergeant = true, Lieutenant = true, Marshal = true,
-  Master = true, Archivist = true, Magus = true, Khan = true, Emperor = true, Brother = true, Sister = true,
-  Father = true, Mother = true, Gatekeeper = true, Jailor = true, Taskmaster = true, Watcher = true, Acolyte = true,
-  Ambassador = true, Engineer = true, Boss = true, Apothecary = true, Deathguard = true, Guard = true, Huntsman = true,
-  Rifleman = true, Miner = true, Protector = true, Cannoneer = true, Grunt = true, Scout = true, Priestess = true,
-  Bloodlord = true, Battleguard = true, Warchief = true, Admiral = true, Inquisitor = true, Chieftain = true,
-  Colonel = true, Farmer = true, Geomancer = true, Lorekeeper = true, Private = true, Tinkerer = true, Advisor = true,
-  Old = true, Ol = true, Ranger = true, Broodlord = true, Pyroguard = true, Archbishop = true, Bishop = true,
-  Crier = true, Emissary = true, Emmisary = true, Matron = true, Herald = true, Courier = true, Warlord = true, Highlord = true, Count = true, Duke = true, Magistrate = true }
 local function article(name)
   if not name then return nil end
   -- a title before a name ("Brother Ravenoak"), not the name alone ("Guard")
@@ -260,7 +262,9 @@ end
 local function hash(s)
   local h = 5381
   for i = 1, #s do h = (h * 33 + s:byte(i)) % 2147483648 end
-  return h
+  -- its low bits are poor (the lowest is the parity of the bytes' sum, so
+  -- "% 2" between similar keys always agreed): the high ones brought down
+  return (h % 65536) * 32768 + math.floor(h / 65536)
 end
 
 local function satisfied(tags, ctx)
@@ -345,6 +349,7 @@ local function weigh(kind, ctx)
   if kind == "c-first" or kind == "c-elite" or kind == "c-tame" then return 3 end
   if kind == "c-deed-kill" then return ctx.one and 3 or 2 end -- one asked for: a named foe
   if kind == "c-deed-task" then return ctx.escort and 3 or 2 end
+  if kind == "c-deed-item" then return 2 end
   if kind == "c-gear" then return ctx.fine and 2 or ctx.made and 1 or 0 end
   if kind == "c-report" or kind == "c-deliver" or kind == "c-deed-word" or kind == "c-quest" or kind == "c-fold" then return 0 end
   if kind == "c-boss" or kind == "c-loot" then return 2 end
@@ -374,7 +379,68 @@ for _, name in ipairs({ "Taragaman the Hungerer", "Mutanus the Devourer", "Edwin
 -- that, the clause goes without.
 local REMARK_GAP = 10
 -- Tags that name what a remark is about: such a remark, when it fits, comes first.
+-- What a remark may be about. Ordered: the first match wins.
+-- A foe's people, from the name the game gives it (a humanoid only: a
+-- "Vilebranch Wolf Pup" is a wolf), else its kind.
+local FOE_PEOPLE = {
+  { "murloc", { "Murloc", "Vile Fin", "Greymist" } },
+  { "kobold", { "Kobold", "Tunnel Rat" } },
+  { "gnoll", { "Gnoll", "Riverpaw", "Redridge", "Mosshide", "Rot Hide", "Mudsnout", "Shadowhide", "Hogger", "Woodpaw", "Wildpaw" } },
+  { "harpy", { "Harpy", "Windfury", "Bloodfeather", "Witchwing", "Wind Witch", "Dustfeather" } },
+  { "quilboar", { "Quilboar", "Razormane", "Bristleback", "Razorfen", "Death's Head" } },
+  { "centaur", { "Kolkar", "Galak", "Magram", "Gelkis", "Maraudine", "Centaur" } },
+  { "ogre", { "Ogre", "Dustbelcher", "Boulderfist", "Mo'grosh", "Gordunni", "Gorsh", "Splinterfist", "Dunemaul", "Crushridge", "Mosh'Ogg" } },
+  { "troll", { "Frostmane", "Bloodscalp", "Skullsplitter", "Witherbark", "Vilebranch", "Mossflayer", "Smolderthorn", "Sandfury", "Hakkari", "Gurubashi" } },
+  { "naga", { "Naga", "Slitherblade", "Spitelash", "Daggerspine", "Strashaz", "Hatecrest" } },
+  { "satyr", { "Satyr", "Hatefury", "Bleakheart", "Xavian", "Haldarr", "Legashi" } },
+  { "furbolg", { "Furbolg", "Gnarlpine", "Timbermaw", "Foulweald", "Thistlefur", "Deadwood", "Blackwood", "Winterfall" } },
+  { "trogg", { "Trogg", "Rockjaw", "Stonesplinter", "Stonevault" } },
+  { "outlaw", { "Defias", "Syndicate", "Bandit", "Brigand", "Southsea", "Bloodsail", "Pirate", "Highwayman", "Venture Co", "Smuggler", "Cutthroat", "Wastewander" } },
+  { "scarlet", { "Scarlet" } },
+}
+local FOE_KIND = { Undead = "undead", Demon = "demon", Elemental = "elemental", Dragonkin = "dragonkin", Spider = "spider" }
+local function foeOf(name, kind)
+  if FOE_KIND[kind or ""] then return FOE_KIND[kind] end
+  if not name or (kind and kind ~= "Humanoid") then return nil end
+  for _, people in ipairs(FOE_PEOPLE) do
+    for _, word in ipairs(people[2]) do if name:find(word, 1, true) then return people[1] end end
+  end
+end
+-- What a thing found is, from its name: a word of it ("Silithid Egg").
+local THING_KIND = {
+  { "stone", { "Ore", "Stone", "Crystal", "Rock", "Gem", "Shard", "Pebble", "Geode", "Nugget" } },
+  { "egg", { "Egg" } },
+  { "feather", { "Feather", "Plume", "Quill" } },
+  { "hide", { "Hide", "Pelt", "Fur", "Skin", "Leather", "Scale" } },
+  { "paper", { "Letter", "Note", "Journal", "Book", "Tome", "Page", "Plans", "Orders", "Map", "Document", "Report",
+    "Manual", "Scroll", "Ledger", "Diary", "Missive", "Papers", "Writ", "Contract", "Manifest", "Parchment" } },
+  { "plant", { "Herb", "Flower", "Bloom", "Petal", "Root", "Leaf", "Moss", "Mushroom", "Fungus", "Shroom", "Weed", "Lotus",
+    "Thistle", "Briar", "Seed", "Bark", "Lily", "Blossom", "Sprout", "Cactus", "Vine", "Frond", "Bulb" } },
+  { "relic", { "Relic", "Idol", "Artifact", "Statue", "Statuette", "Fragment", "Tablet", "Carving", "Totem", "Figurine", "Rune" } },
+  { "remains", { "Bone", "Skull", "Claw", "Fang", "Tooth", "Teeth", "Tusk", "Horn", "Heart", "Eye", "Tail", "Ear", "Paw", "Talon",
+    "Gland", "Sac", "Blood", "Ichor", "Mane", "Brain", "Tongue", "Wing", "Head", "Scalp", "Hoof", "Spine", "Venom", "Snout",
+    "Beak", "Mandible", "Tentacle", "Liver", "Flesh", "Rib" } },
+}
+local function thingOf(name)
+  if not name then return nil end
+  for _, kind in ipairs(THING_KIND) do
+    for _, word in ipairs(kind[2]) do
+      if name:find("%f[%a]" .. word .. "e?s?%f[%A]") then return kind[1] end
+      -- (a plant's name is often one word: "Earthroot", "Peacebloom")
+      if kind[1] == "plant" and name:find("%l" .. word:lower() .. "s?%f[%A]") then return kind[1] end
+    end
+  end
+end
 local SUBJECTS = { teeth = true, mechanical = true, cloth = true, meat = true, explore = true, escort = true, made = true }
+for _, people in ipairs(FOE_PEOPLE) do SUBJECTS[people[1]] = true end
+for _, kind in pairs(FOE_KIND) do SUBJECTS[kind] = true end
+for _, kind in ipairs(THING_KIND) do SUBJECTS[kind[1]] = true end
+-- A remark about this moment, not any: its subject, the night, a return, a
+-- first lesson, a long fight, a weapon in hand. The others are general.
+-- The pools whose general lines would fit any moment of the kind (any fight
+-- at all): kept for the deeds; an ordinary one takes a specific line or none.
+local GATED = { ["r-foe"] = true }
+local SPECIFIC = setmetatable({ night = true, back = true, new = true, lots = true, held = true }, { __index = SUBJECTS })
 
 local PEOPLE = { "giver", "ender", "boss", "mates", "pet" } -- slots that name people
 -- Who asked, left out of a deed when already named; the kinds told without
@@ -585,7 +651,7 @@ function Book:say(kind, key, values, tags, prefer, raw)
   if routine then self.lastVerb = text:match("^(%a+)") end
   -- a remark ends a clause that has no comma of its own
   if wantRemark and not text:find(",") and not ctx.trophy then -- (a trophy speaks for itself)
-    local remark = self:remark(routine, key, values, ctx, (text:gsub("{%w+}", "")))
+    local remark = self:remark(routine, key, values, ctx, (text:gsub("{%w+}", "")), weight >= 2)
     if remark then
       text = text .. ", " .. remark
       self.selectedRemark = true
@@ -634,7 +700,7 @@ end
 -- the race's first, one about the moment's subject (its teeth, the meat)
 -- before the general; once all were used, the one used longest ago, if
 -- REMARK_GAP chapters have passed; else none.
-function Book:remark(pool, key, values, ctx, clauseText)
+function Book:remark(pool, key, values, ctx, clauseText, general)
   local race = self.c.race or "Human"
   local own, list = self.own and self.own[pool], ns.data.writing[pool]
   local ownFresh, fresh, all = {}, {}, {}
@@ -672,10 +738,33 @@ function Book:remark(pool, key, values, ctx, clauseText)
     end
     return o and self.chapterNo - self.remarkChapter[o.id] >= REMARK_GAP and o or nil
   end
+  local function only(group, set)
+    local found = {}
+    for _, x in ipairs(group) do
+      for _, t in ipairs(x.s.tags or {}) do
+        if set[t] then table.insert(found, x); break end
+      end
+    end
+    return found
+  end
+  -- about this moment first ("the gurgling still in my ears" after murlocs):
+  -- the race's own, else a shared one over a general line in any voice
+  local ownAbout, sharedAbout = only(ownFresh, SUBJECTS), only(fresh, SUBJECTS)
+  local e
+  if #ownAbout > 0 then
+    e = ownAbout[pick % #ownAbout + 1]
+  elseif #sharedAbout > 0 then
+    e = sharedAbout[pick % #sharedAbout + 1]
+  elseif not general and GATED[pool] then
+    -- an ordinary fight (a stray kill): a remark that answers to it (its
+    -- teeth, the night) or none, not one that would fit any fight
+    local near = only(ownFresh, SPECIFIC)
+    if #near == 0 then near = only(fresh, SPECIFIC) end
+    if #near == 0 then return nil end
+    e = near[pick % #near + 1]
   -- the race's own while fresh, then back when spaced enough: the shared
   -- ones fill the gaps, so the voice holds over a whole life
-  local e
-  if #ownFresh > 0 then
+  elseif #ownFresh > 0 then
     local group = specific(ownFresh)
     e = group[pick % #group + 1]
   else
@@ -768,6 +857,8 @@ function Book:deed(m, key, tags)
     self.lastFoe = { name = o.name, many = count > 1, told = self.told or 0 }
     tags.one = count == 1 or nil
     tags.teeth = ({ Wolf = true, Cat = true, Bear = true, Boar = true, Crocolisk = true, Raptor = true })[self.creatureKinds[o.name] or ""]
+    local people = foeOf(o.name, self.creatureKinds[o.name])
+    if people then tags[people] = true end
     done = self:say("c-deed-kill", key, values, tags, nil, true)
   elseif o and o.type == "item" and o.held and o.name and m.ender then
     -- a thing in hand when the quest was taken (a note, a letter found on a
@@ -801,6 +892,8 @@ function Book:deed(m, key, tags)
     tags.trophy = TROPHY[o.name:match("^(%a+) of ") or ""] or nil
     tags.cloth = o.name:match("Cloth$") or o.name:match("Silk$") or o.name:match("Wool$") or nil
     tags.meat = o.name:match("Meat$") or nil -- uncounted: "it"
+    local kind = not (tags.cloth or tags.meat) and thingOf(o.name)
+    if kind then tags[kind] = true end
     done = self:say("c-deed-item", key, values, tags, tags.trophy and { trophy = true } or nil, true)
   elseif o and o.text and instruction(o.text) then
     -- told after the fact: "escort the Defias Traitor to discover where
@@ -1268,6 +1361,8 @@ function Book:chapter(n, ch)
       self.creatureKinds[m.name] = m.kind
       local t = { one = true, teeth = ({ Wolf = true, Cat = true, Bear = true, Boar = true, Crocolisk = true, Raptor = true })[m.kind or ""],
         mechanical = m.kind == "Mechanical" or nil }
+      local people = foeOf(m.name, m.kind)
+      if people then t[people] = true end
       if m.quarry or SKIP[m.kind or ""] then -- told by its quest, or not a fight
       elseif m.first and KINDS[m.kind] then
         inScene(c_("c-first", { kind = KINDS[m.kind] }, t))
