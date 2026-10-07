@@ -1,27 +1,34 @@
 ---
 kind: c-deed-item
 ---
-- [!one] gathered {n} {thing}
-- [!one] collected {n} {thing}
-- [!one] found {n} {thing}
-- [!one !done] brought back {n} {thing}
-- [!one] recovered {n} {thing}
-- [!one !done] came back with {n} {thing}
-- [!one] tracked down {n} {thing}
-- [!one !done] fetched {n} {thing}
-- [one] gathered {thing}
-- [one] collected {thing}
-- [one] found {thing}
-- [one !done] brought back {thing}
-- [one] recovered {thing}
-- [one !done] came back with {thing}
-- [one] tracked down {thing}
-- [one !done] fetched {thing}
-- [one trophy !done] brought {giver} {thing}
-- [one trophy !done] laid {thing} before {giver}
-- [one trophy !done] set {thing} down in front of {giver}
-- [!one done] had all {n} {thing}
-- [!one done] had {n} {thing} in my pack
-- [one done] had {thing} in my pack
-- [one trophy done] took {thing} as proof
-- [one trophy done] claimed {thing} as proof of the deed
+- [!one !more] gathered {n} {thing}
+- [!one !more] collected {n} {thing}
+- [!one !more] found {n} {thing}
+- [!one !done !more] brought back {n} {thing}
+- [!one !more] recovered {n} {thing}
+- [!one !done !more] came back with {n} {thing}
+- [!one !more] tracked down {n} {thing}
+- [!one !done !more] fetched {n} {thing}
+- [one !more] gathered {thing}
+- [one !more] collected {thing}
+- [one !more] found {thing}
+- [one !done !more] brought back {thing}
+- [one !more] recovered {thing}
+- [one !done !more] came back with {thing}
+- [one !more] tracked down {thing}
+- [one !done !more] fetched {thing}
+- [one trophy !done !more] brought {giver} {thing}
+- [one trophy !done !more] laid {thing} before {giver}
+- [one trophy !done !more] set {thing} down in front of {giver}
+- [!one done !more] had all {n} {thing}
+- [!one done !more] had {n} {thing} in my pack
+- [one done !more] had {thing} in my pack
+- [one trophy done !more] took {thing} as proof
+- [one trophy done !more] claimed {thing} as proof of the deed
+- [!one more] found {n} more {thing}
+- [!one more] gathered {n} more {thing}
+- [!one more] collected another {n} {thing}
+- [!one more] came by {n} more {thing}
+- [!one more] tracked down {n} more {thing}
+- [!one more] had {n} more {thing} before long
+- [!one more] added {n} more {thing} to the pile

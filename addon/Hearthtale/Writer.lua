@@ -102,7 +102,9 @@ local function itemName(name)
   -- the thing itself, before an "of": "Chausses of Westfall" are many
   local last = (name:match("^(.-) of ") or name):match("(%S+)$")
   -- a person's ("Zanzil's Seal") is named; a role's ("Champion's Helm") is not
-  local owner = name:match("(%a+)'s ") or name:match("(%a+s)' ")
+  -- (an owner opening the name: "Book from Sven's Farm" is a book)
+  local head = name:match("^(.-) %l") or name
+  local owner = head:match("(%a+)'s ") or head:match("(%a+s)' ")
   if owner and not (ns.names and ns.names.roles[owner]) then return name end
   if last:match("s$") or MASS[last] or UNCOUNTED[last] then return name end
   return (name:match("^[AEIOUaeiou]") and "an " or "a ") .. name
@@ -362,6 +364,10 @@ local REMARK_GAP = 10
 local SUBJECTS = { teeth = true, mechanical = true, cloth = true, meat = true, explore = true, escort = true, made = true }
 
 local PEOPLE = { "giver", "ender", "boss", "mates", "pet" } -- slots that name people
+-- Who asked, left out of a deed when already named; the kinds told without
+-- the person when already named (their [again] sentences).
+local AGAIN_DROPS = { ["c-deed-kill"] = true, ["c-deed-item"] = true, ["c-deed-task"] = true, ["c-deed-word"] = true }
+local AGAIN = { ["c-report"] = true, ["c-deliver"] = true, ["c-deed-word"] = true, ["c-quest"] = true }
 local Book = {}
 Book.__index = Book
 
@@ -403,6 +409,30 @@ function Book:say(kind, key, values, tags, prefer, raw)
     end
   end
   for k, v in pairs(self.voice) do if values[k] == nil then values[k] = v end end
+  -- A person already named in this paragraph is not named again: who asked
+  -- is left out of a deed, and a return, a delivery, a message carried or a
+  -- giver's request is told without the name ("I reported back once more").
+  local asked = {} -- (the people as given, before "the" or a list is touched)
+  for _, k in ipairs(PEOPLE) do asked[k] = values[k] end
+  local seen = self.inChapter and self.peopleNamed
+  local function each(list, fn) -- "A, B and C": A, B, C
+    for part in (list:gsub(" and ", ", ")):gmatch("[^,]+") do fn((part:gsub("^%s+", ""):gsub("%s+$", ""))) end
+  end
+  if seen then
+    if type(values.giver) == "string" and seen[values.giver] and AGAIN_DROPS[kind] then values.giver = nil end
+    -- a list of those I returned to: the ones already named leave it
+    if kind == "c-report" and type(values.ender) == "string" then
+      local rest = {}
+      each(values.ender, function(name) if not seen[name] then table.insert(rest, name) end end)
+      if #rest > 0 then values.ender = listing(rest) end
+    end
+    local who = kind == "c-quest" and values.giver or values.ender
+    if AGAIN[kind] and type(who) == "string" then
+      local all = true
+      each(who, function(name) if not seen[name] then all = false end end)
+      if all then ctx.again = true end
+    end
+  end
   -- people named with their article ("The Defias Traitor") or by a role
   -- ("the Captured Mountaineer", Names.lua): "the" inside a sentence
   local roleNamed = ns.names and ns.names.npcThe or {}
@@ -525,6 +555,11 @@ function Book:say(kind, key, values, tags, prefer, raw)
   if ns.writerUsed then ns.writerUsed[e.reach] = true end
   local chosen = e.s
   local text = chosen[1]
+  if seen then -- who this sentence names, for the rest of the paragraph
+    for _, k in ipairs(PEOPLE) do
+      if type(asked[k]) == "string" and text:find("{" .. k .. "}", 1, true) then each(asked[k], function(name) seen[name] = true end) end
+    end
+  end
   if routine then self.lastVerb = text:match("^(%a+)") end
   -- a remark ends a clause that has no comma of its own
   if wantRemark and not text:find(",") and not ctx.trophy then -- (a trophy speaks for itself)
@@ -693,11 +728,27 @@ function Book:deed(m, key, tags)
     -- a thing in hand when the quest was taken (a note, a letter found on a
     -- foe), carried to another: a delivery
     values.ender, values.thing = m.ender, itemName(o.name)
+    -- the same thing, delivered just before: "took it on to …" ("it" only
+    -- right after it was named; further back in the paragraph, named again)
+    local carried = self.thingsCarried or {}
+    local last = carried[o.name]
+    if last and (self.told or 0) - last <= 1 then tags.onward = true
+    elseif last then
+      -- named before, further back: by what it is ("the ring", "the book")
+      local head = (o.name:match("^(.-) %l") or o.name):match("(%a+)$")
+      if head then values.thing = "the " .. head:lower() end
+    end
+    carried[o.name] = self.told or 0
+    self.thingsCarried = carried
     done = self:say("c-deliver", key, values, tags, nil, true)
   elseif o and o.type == "item" and o.name then
     local count = o.n or 1
     values.n, values.thing = words(count), count > 1 and things(o.name) or itemName(o.name)
     if tags.done then values.giver = nil end -- found, not yet handed over
+    -- the same thing again, told just before: "four more Blood Shards"
+    local last = self.lastThing
+    if count > 1 and last and last.name == o.name and (self.told or 0) - last.told <= 1 then tags.more = true end
+    self.lastThing = { name = o.name, told = self.told or 0 }
     tags.one = count == 1 or nil
     -- one thing with a plural name ("Sea Creature Bones"): not "it"
     local head = (o.name:match("^(.-) of ") or o.name):match("(%a+)$") or ""
@@ -803,6 +854,7 @@ function Book:chapter(n, ch)
   local paragraphs, current = {}, {}
   self.last, self.there = nil, false
   self.chapterNo = self.chapterNo + 1
+  self.peopleNamed, self.thingsCarried = {}, {}
   self.inChapter, self.voiceUsed, self.quipped = true, 0, false
   self.voiceChapter = hash(self.seed .. "|voice|" .. n) % 3 == 0
   self.routineCount, self.nextRemark = 0, 2 + hash(self.seed .. "|remarks|" .. n) % 2
@@ -816,6 +868,7 @@ function Book:chapter(n, ch)
   local function newParagraph()
     if #current > 0 then table.insert(paragraphs, current); current = {} end
     self.quipped = false
+    self.peopleNamed, self.thingsCarried = {}, {}
   end
   local start = ch.start or {}
   local lvl = start.level or 1

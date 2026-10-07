@@ -12,11 +12,11 @@ Each race writes in its own voice, and a place seen for the first time is descri
 
 I began in Coldridge Valley, where there was work to be done and a fair bit beyond it worth looking into. The cold of Dun Morogh caught in my throat, and the pines bowed under their snow. Over it all stood the mountain that holds Ironforge, and the country felt less empty for it. I tramped into Anvilmar and met my first wolves. I had all eight Tough Wolf Meat, with rather more appetite for a cooked supper.
 
-I came back to Coldridge Valley, where I did for a Burly Rockjaw Trogg. I hunted down six Rockjaw Troggs, more of them than was strictly fair. I carried out Talin Keeneye's request with Grelin Whitebeard.
+I came back to Coldridge Valley, where I did for a Burly Rockjaw Trogg. I hunted down six Rockjaw Troggs, more of them than was strictly fair. I passed word along to Grelin Whitebeard.
 
 The fight with a Frostmane Troll Whelp left me badly shaken. Stubbornness had carried me a long way, but it was no substitute for sense. Afterwards, I put down fourteen Frostmane Troll Whelps, solid on my feet by the end of it. I had Grelin Whitebeard's Journal in my pack. I fitted myself with a Frostmane Leather Belt.
 
-I found myself back in Anvilmar, the country on either side worth a second look. I learned Serpent Sting and Track Beasts. I saw Durnan Furcutter's business through with Marryk Nurribit, with a few more faces to nod to.
+I found myself back in Anvilmar, the country on either side worth a second look. I learned Serpent Sting and Track Beasts. I concluded the errand between Durnan Furcutter and Marryk Nurribit, with a few more faces to nod to.
 
 In all, I had seen six tasks through. I put ten Ragged Young Wolves and four Burly Rockjaw Troggs on the page, glad to be using a pen. I had been on the road an hour and thirty-five minutes. I rested in Anvilmar, glad to have the weight of my pack off my shoulders.
 
@@ -24,7 +24,7 @@ In all, I had seen six tasks through. I put ten Ragged Young Wolves and four Bur
 
 I was ready to move in Anvilmar. The road was not going to shorten itself out of consideration. I arrived in Coldridge Pass. I smelled the Thunderbrew Distillery before I had properly reached Kharanos. Smoke rose above the houses, where dwarves and gnomes crowded together against the cold, and I felt my shoulders ease at the sight. I fixed my hearthstone at the Thunderbrew Distillery, with rather more hope of an ale on my return. I took up skinning and began to learn leatherworking. I came through my first fight with boars, with fresh respect for what was in their mouths. I collected six Crag Boar Ribs. I made a Handstitched Leather Vest. I equipped a Handstitched Leather Vest, my own work.
 
-I reached the Grizzled Den, my boots having opinions about the distance. I concluded the errand between Loslor Rudge and Hegnar Rumbleshot. When I found my way to Brewnall Village, I hunted down a Leper Gnome, a tidy bit of work, if I say so myself. I tracked down eight Gyromechanic Gears. I took lessons in Arcane Shot, still a long way from a master's bench.
+I reached the Grizzled Den, my boots having opinions about the distance. I completed the errand from Loslor Rudge to Hegnar Rumbleshot. When I found my way to Brewnall Village, I hunted down a Leper Gnome, a tidy bit of work, if I say so myself. I tracked down eight Gyromechanic Gears. I took lessons in Arcane Shot, still a long way from a master's bench.
 
 Later that day, I came to Shimmer Ridge and put down a Frostmane Snowstrider. I made camp there, with my kit close and little trust in the night.
 
@@ -50,7 +50,7 @@ The blue water of Loch Modan lay still behind the Stonewrought Dam. I knew dwarv
 
 I began in the Valley of Trials, with no one's will in place of my own. What I did with that freedom would be my answer. Heat rose from the red dust of Durotar, as if the ground itself were breathing. This was the land we had claimed, and I meant to learn how to belong to it. I overcame ten Mottled Boars. I brought down Sarkoth. I hunted down twelve Vile Familiars, each one met head on. I had ten Cactus Apples in my pack. I settled what Foreman Thazz'ril needed settled.
 
-At Razor Hill I heard the forge before I saw the drilling. Beyond the barracks, Kul Tiras ships sat off the coast, and I understood why no one in the town ever quite stood at rest. I settled Gornek's business with Master Gadrin, quickly, without wasted effort. I added Rend and Battle Shout to what I knew. I went on equipped with a Rough Leather Vest; I finished off a Scorpid Worker, a worthy enough foe in its way. I gathered eight Scorpid Worker Tails.
+At Razor Hill I heard the forge before I saw the drilling. Beyond the barracks, Kul Tiras ships sat off the coast, and I understood why no one in the town ever quite stood at rest. I went from Gornek to Master Gadrin, quickly, without wasted effort. I added Rend and Battle Shout to what I knew. I went on equipped with a Rough Leather Vest; I finished off a Scorpid Worker, a worthy enough foe in its way. I gathered eight Scorpid Worker Tails.
 
 A Kul Tiras Marine brought me close to the end. I had work left to do, and no use for a glorious excuse for abandoning it. I saw off ten Kul Tiras Sailors, my blood up longer than the fight deserved.
 
@@ -64,7 +64,7 @@ I began again in Razor Hill. What was asked of me deserved an answer in deeds. T
 
 ## Chapter 1 (levels 1 to 5)
 
-I began in Shadowglen, meaning to watch before I called anything understood. Moonlight silvered the leaves of Teldrassil while owls called overhead. I listened between my footfalls, unwilling to hurry through so much quiet. I encountered boars at close quarters. I hunted down seven Young Nightsabers. I carried out Conservator Ilthalaine's request with Mardant Strongoak, finishing before the light changed. I overcame eight Grells. I faced spiders for the first time, not cruel, only hungry. I found ten Webwood Venom Sacs. I came away from training with Moonfire and Rejuvenation, repeating them in quiet until they came without thought.
+I began in Shadowglen, meaning to watch before I called anything understood. Moonlight silvered the leaves of Teldrassil while owls called overhead. I listened between my footfalls, unwilling to hurry through so much quiet. I encountered boars at close quarters. I hunted down seven Young Nightsabers. I completed the errand from Conservator Ilthalaine to Mardant Strongoak, finishing before the light changed. I overcame eight Grells. I faced spiders for the first time, not cruel, only hungry. I found ten Webwood Venom Sacs. I came away from training with Moonfire and Rejuvenation, repeating them in quiet until they came without thought.
 
 Rain scented the houses around the moonwell in Dolanaar. The sentinels kept their patient watch on the road, and I let my guard down a little. I completed Dirania Silvershine's errand with Iverron. I slept beneath the open sky, letting the quiet settle around me.
 
@@ -80,7 +80,7 @@ I went on in Dolanaar, conscious that haste had made older mistakes than mine. T
 
 ## Chapter 1 (levels 1 to 5)
 
-I put down my first words in Deathknell, an account chosen freely rather than another order carried out. Crows called over the crypts of Tirisfal, toward the broken walls of Lordaeron. Night changed little here, though it left me feeling less conspicuous. I went from Undertaker Mordo to Shadow Priest Sarvis; I disposed of a Wretched Zombie, with no more fuss than the matter required. I hunted down eight Mindless Zombies. I put down ten Young Night Web Spiders. I recovered six Scavenged Goods, the count exact, which is more than the request was. I collected twelve Scarlet Armbands. I took instruction in Shadow Word: Pain and Power Word: Shield.
+I put down my first words in Deathknell, an account chosen freely rather than another order carried out. Crows called over the crypts of Tirisfal, toward the broken walls of Lordaeron. Night changed little here, though it left me feeling less conspicuous. I settled Undertaker Mordo's business with Shadow Priest Sarvis; I disposed of a Wretched Zombie, with no more fuss than the matter required. I hunted down eight Mindless Zombies. I put down ten Young Night Web Spiders. I recovered six Scavenged Goods, the count exact, which is more than the request was. I collected twelve Scarlet Armbands. I took instruction in Shadow Word: Pain and Power Word: Shield.
 
 After the tombs, the crooked roofs of Brill looked almost companionable. Around the Gallows' End Tavern my people went about their business, and the town kept going on stubbornness alone. I had all ten Tirisfal Pumpkins, the dark no obstacle to me. I overcame Maggot Eye. I added a Lightweight Chain Robe to my equipment, sturdier than me, which is not difficult.
 

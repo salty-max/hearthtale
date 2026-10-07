@@ -109,6 +109,7 @@ for (const r of rows(sql, "quest_template")) {
   for (let k = 1; k <= 4; k++) if (r[`RewItemId${k}`]) rewards.push(r[`RewItemId${k}`]);
   quests[r.entry as number] = { title: r.Title, objectives: r.Objectives, texts, items, targets, src: r.SrcItemId || null,
     classes: r.RequiredClasses || null, rewards, money: (r.RewOrReqMoney as number) > 0 ? r.RewOrReqMoney : null,
+    repeatable: ((r.SpecialFlags as number) & 1) === 1 || null,
     zone: r.ZoneOrSort, min: r.MinLevel, level: r.QuestLevel, races: r.RequiredRaces, prev: r.PrevQuestId || null,
     next: r.NextQuestInChain || null, starters: starters.get(r.entry as number), enders: enders.get(r.entry as number) };
 }

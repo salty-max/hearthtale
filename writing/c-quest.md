@@ -1,15 +1,22 @@
 ---
 kind: c-quest
 ---
-- did what {giver} asked of me
-- answered {giver}'s need
-- lent {giver} a hand
-- kept my word to {giver}
-- helped {giver} as I had promised
-- saw {giver}'s work through to the end
-- carried out what {giver} needed
-- took care of what {giver} wanted
-- was of use to {giver}
-- gave {giver} the help they had asked for
-- settled what {giver} needed settled
-- obliged {giver}
+- [!again] did what {giver} asked of me
+- [!again] answered {giver}'s need
+- [!again] lent {giver} a hand
+- [!again] kept my word to {giver}
+- [!again] helped {giver} as I had promised
+- [!again] saw {giver}'s work through to the end
+- [!again] carried out what {giver} needed
+- [!again] took care of what {giver} wanted
+- [!again] was of use to {giver}
+- [!again] gave {giver} the help they had asked for
+- [!again] settled what {giver} needed settled
+- [!again] obliged {giver}
+- [again] did one more thing asked of me
+- [again] saw to another request while I was at it
+- [again] took care of one more errand
+- [again] obliged once more
+- [again] helped with one more task on the same visit
+- [again] turned to the next request
+- [again] saw one more piece of work through
