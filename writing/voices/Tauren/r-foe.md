@@ -16,7 +16,7 @@ kind: r-foe
 - [high] with the calm of long practice
 - with my breath taking time to slow again
 - relieved to let my strength rest afterwards
-- with more weariness than pleasure in the end
+- [!more] with more weariness than pleasure in the end
 - slow to feel steady again
 - [one] with no wish to make another encounter of that sort
 - [!one] increasingly glad to have the fighting behind me

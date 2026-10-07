@@ -393,7 +393,8 @@ end
 inspect("compound scene joins", compoundText)
 local ordinaryCompound = ns.writeBook({ guid = "ordinary-compound", race = "Human", class = "MAGE",
   chapters = { { start = { level = 1, zone = "Country", sub = "Home" }, log = {
-    { k = "kill", name = "Wolf", kind = "Beast", zone = "Country", sub = "Home", at = 10 },
+    -- (another creature than the quest's: a kill the quest counts is told by it)
+    { k = "kill", name = "Boar", kind = "Beast", zone = "Country", sub = "Home", at = 10 },
     { k = "quest", giver = "Farmer", objectives = { { type = "monster", name = "Wolf", n = 2 } },
       zone = "Country", sub = "Home", at = 20 },
   } } },
@@ -495,6 +496,25 @@ for _, race in ipairs(RACES) do
         if OBJECT[verb] then problem("spell agreement", "a remark said \"it\" after several spells", text) end
       end
     end
+  end
+end
+
+-- A creature named once: a kill, the quest that counts it, a close call
+-- against it ("I brought down a Brigand. I put down five more. One of them
+-- nearly ended me."), never its name three times over.
+for _, race in ipairs(RACES) do
+  for seed = 1, 12 do
+    local c = { guid = "named-once-" .. seed, race = race, class = COMBOS[race][1], began = { level = 20 },
+      chapters = { { start = { level = 20, zone = "The Barrens", sub = "Ratchet" }, kills = {}, quests = 0, played = 100, gold = 0, log = {
+        { k = "place", zone = "The Barrens", sub = "The Merchant Coast", at = 100 },
+        { k = "kill", name = "Southsea Brigand", kind = "Humanoid", zone = "The Barrens", sub = "The Merchant Coast", at = 200 },
+        { k = "quest", giver = "Wharfmaster Dizzywig", objectives = { { type = "monster", name = "Southsea Brigand", n = 6 } },
+          zone = "The Barrens", sub = "The Merchant Coast", at = 300 },
+        { k = "close", foe = "Southsea Brigand", hp = 4, zone = "The Barrens", sub = "The Merchant Coast", at = 400 },
+      } } } }
+    local text = ns.writeBook(c).chapters[1].text
+    local _, names = text:gsub("Southsea Brigand", "")
+    if names > 1 then problem(race .. " named once", "a creature named again and again", text) end
   end
 end
 
@@ -615,7 +635,8 @@ for _, race in ipairs(comparison.races) do
   local c = comparison.day(race)
   local text = ns.writeBook(c).chapters[1].text
   inspect(race .. " voice comparison", text)
-  if not (text:find("eight Linen Cloth", 1, true) and text:find("six Southsea Brigands", 1, true)
+  -- (the six Brigands: all six, or the first told and "five more")
+  if not (text:find("eight Linen Cloth", 1, true) and (text:find("six Southsea Brigands", 1, true) or text:find("five more", 1, true))
     and text:find("Brown Linen Robe", 1, true) and text:find("Kelsa", 1, true)) then
     problem(race .. " voice comparison", "the voice lost a recorded fact", text)
   end

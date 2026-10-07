@@ -12,9 +12,9 @@ Each race writes in its own voice, and a place seen for the first time is descri
 
 I began in Coldridge Valley, where there was work to be done and a fair bit beyond it worth looking into. The cold of Dun Morogh caught in my throat, and the pines bowed under their snow. Over it all stood the mountain that holds Ironforge, and the country felt less empty for it. I tramped into Anvilmar and met my first wolves. I had all eight Tough Wolf Meat, with rather more appetite for a cooked supper.
 
-I came back to Coldridge Valley. I did for a Burly Rockjaw Trogg, solid on my feet by the end of it. I hunted down six Rockjaw Troggs. I carried out Talin Keeneye's request with Grelin Whitebeard.
+I came back to Coldridge Valley, where I did for a Burly Rockjaw Trogg. I hunted down six Rockjaw Troggs, more of them than was strictly fair. I carried out Talin Keeneye's request with Grelin Whitebeard.
 
-The fight with a Frostmane Troll Whelp left me badly shaken. Stubbornness had carried me a long way, but it was no substitute for sense. Afterwards, I put down fourteen Frostmane Troll Whelps, more of them than was strictly fair. I had Grelin Whitebeard's Journal in my pack. I fitted myself with a Frostmane Leather Belt.
+The fight with a Frostmane Troll Whelp left me badly shaken. Stubbornness had carried me a long way, but it was no substitute for sense. Afterwards, I put down fourteen Frostmane Troll Whelps, solid on my feet by the end of it. I had Grelin Whitebeard's Journal in my pack. I fitted myself with a Frostmane Leather Belt.
 
 I found myself back in Anvilmar, the country on either side worth a second look. I learned Serpent Sting and Track Beasts. I saw Durnan Furcutter's business through with Marryk Nurribit, with a few more faces to nod to.
 

@@ -11,7 +11,7 @@ kind: r-foe
 - [mechanical] its gears still ticking when it fell
 - [night] the dark making it uglier than it needed to be
 - [hc] my hands shaking once it was over
-- [low] still more luck than skill, if I am honest
+- [low !more] still more luck than skill, if I am honest
 - [high] steadier than I would once have been
 - my heart still going when the fight was over
 - glad to find my nerve had held

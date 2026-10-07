@@ -1,27 +1,35 @@
 ---
 kind: c-deed-kill
 ---
-- [!one] killed {n} {foes}
-- [!one] hunted down {n} {foes}
-- [!one] put down {n} {foes}
-- [!one] dealt with {n} {foes}
-- [!one] brought down {n} {foes}
-- [!one] overcame {n} {foes}
-- [!one] finished off {n} {foes}
-- [!one] cut down {n} {foes}
-- [one] killed {foes}
-- [one] hunted down {foes}
-- [one] put down {foes}
-- [one] dealt with {foes}
-- [one] brought down {foes}
-- [one] overcame {foes}
-- [one] finished off {foes}
-- [one] cut down {foes}
-- [!one] saw off {n} {foes}
-- [!one] put an end to {n} {foes}
-- [!one] defeated {n} {foes}
-- [!one] got the better of {n} {foes}
-- [one] saw off {foes}
-- [one] put an end to {foes}
-- [one] defeated {foes}
-- [one] got the better of {foes}
+- [!one !more] killed {n} {foes}
+- [!one !more] hunted down {n} {foes}
+- [!one !more] put down {n} {foes}
+- [!one !more] dealt with {n} {foes}
+- [!one !more] brought down {n} {foes}
+- [!one !more] overcame {n} {foes}
+- [!one !more] finished off {n} {foes}
+- [!one !more] cut down {n} {foes}
+- [one !more] killed {foes}
+- [one !more] hunted down {foes}
+- [one !more] put down {foes}
+- [one !more] dealt with {foes}
+- [one !more] brought down {foes}
+- [one !more] overcame {foes}
+- [one !more] finished off {foes}
+- [one !more] cut down {foes}
+- [!one !more] saw off {n} {foes}
+- [!one !more] put an end to {n} {foes}
+- [!one !more] defeated {n} {foes}
+- [!one !more] got the better of {n} {foes}
+- [one !more] saw off {foes}
+- [one !more] put an end to {foes}
+- [one !more] defeated {foes}
+- [one !more] got the better of {foes}
+- [more] killed {n} more
+- [more] put down {n} more
+- [more] brought down {n} more of them
+- [more] saw off {n} more
+- [more] dealt with {n} more before it was done
+- [more] finished the job with {n} more
+- [more] accounted for {n} more
+- [more] got the better of {n} more
