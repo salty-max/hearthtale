@@ -4,10 +4,10 @@ kind: r-item
 - the count correct on the second attempt
 - with a mind to improving the method next time
 - a tidy little exercise in logistics
-- [!one] each one catalogued, at least in my head
-- [!one] more of them than my pockets were designed for
-- [one] smaller than expected, which was a pleasant surprise
-- [one] not where any sensible system would have put it
+- [!one !plural] each one catalogued, at least in my head
+- [!one !plural] more of them than my pockets were designed for
+- [one !plural] smaller than expected, which was a pleasant surprise
+- [one !plural] not where any sensible system would have put it
 - [meat] my thoughts drifting to supper, as they do
 - [cloth] with a few ideas for what to make of it
 - [night] working by the light of a very small lamp

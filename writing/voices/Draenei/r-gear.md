@@ -2,7 +2,7 @@
 kind: r-gear
 ---
 - [!made] a kind gift from unknown hands
-- [!made] a good fit for strange shoulders
+- [!made !held] a good fit for strange shoulders
 - [!made] sturdier than appearances suggested
 - [!made] welcome protection on an unfamiliar road
 - [!made hc] one more care against a careless end

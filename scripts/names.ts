@@ -16,6 +16,7 @@ const data = JSON.parse(readFileSync(path.join(DIR, "names.json"), "utf8")) as {
   creatures: { name: string; spawns: number; npc: number }[];
   questItems: { name: string; most: number }[];
   items: string[];
+  questNpcs: string[];
 };
 const corpus = readFileSync(path.join(DIR, "corpus.txt"), "utf8");
 
@@ -107,7 +108,8 @@ for (const name of placeNames) {
 // and no other creature's name has it: "Bazil Thredd", "Bloodlord Mandokir",
 // but not "Bloodscalp Speaker" (a tribe's word) nor "Black Kingsnake".
 const uses = new Map<string, number>();
-for (const name of creatureNames) for (const w of new Set(name.match(/[A-Za-z][A-Za-z']*/g) ?? [])) uses.set(w, (uses.get(w) ?? 0) + 1);
+for (const name of new Set(data.creatures.map((c) => c.name).filter(Boolean)))
+  for (const w of new Set(name.match(/[A-Za-z][A-Za-z']*/g) ?? [])) uses.set(w, (uses.get(w) ?? 0) + 1);
 const personal = (name: string) => {
   const words = name.match(/[A-Za-z][A-Za-z']*/g) ?? [];
   const last = words[words.length - 1] ?? "";
@@ -115,7 +117,7 @@ const personal = (name: string) => {
   // a word of its own, a given name, a last word that is no plain word, or a
   // family name no other creature shares ("Tara Coldgaze")
   return words.some((w) => (uses.get(w) === 1 && !common(w)) || given.has(w.toLowerCase())) || !common(last)
-    || (words.length > 1 && uses.get(last) === 1 && !dictionary!.has(last.toLowerCase()));
+    || (words.length > 1 && (uses.get(last) ?? 0) <= 2 && !dictionary!.has(last.toLowerCase()));
 };
 
 const creatureThe: string[] = [], creatureBare: string[] = [];
@@ -160,8 +162,25 @@ for (const { name, most } of data.questItems) {
 const owners = new Map<string, number>();
 for (const name of data.items) for (const m of name.matchAll(/(?:^| )([A-Z][a-z]+)'s /g)) owners.set(m[1], (owners.get(m[1]) ?? 0) + 1);
 // (the words of the game's one-of-a-kind creatures, a title before a name left out: "Mr. Smite")
+// (a first word many of them share is a title: "Guard Parker", "Captain Beld")
+const firsts = new Map<string, number>();
+for (const n of creatureNames) if (spawnsOf.get(n) === 1 && n.includes(" ")) firsts.set(n.split(" ")[0], (firsts.get(n.split(" ")[0]) ?? 0) + 1);
 const people = new Set(creatureNames.filter((n) => spawnsOf.get(n) === 1)
-  .flatMap((n) => { const w = n.split(" "); return w.length > 1 ? w.slice(1) : w; }));
+  .flatMap((n) => n.split(" ").filter((w, i, all) => !(i === 0 && all.length > 1 && (firsts.get(w) ?? 0) >= 3))));
+
+// Who gives or takes back a quest, named by a role ("Captured Mountaineer",
+// "Defias Traitor"): "the" before it, like a person met.
+// Most who give quests are people: one is unless the name is a role through
+// and through ("Bloodsail Traitor", "Ravenholdt Guard", "Fallen Hero of the Horde").
+const allNames = new Set((humanNames.allEn as string[]).map((n) => n.toLowerCase()));
+const personNpc = (n: string) => {
+  const words = n.split(" "), first = words[0], last = words[words.length - 1];
+  const plain = (w: string) => dictionary.has(w.toLowerCase().replace(/[^a-z]/g, ""));
+  return personal(n) || !plain(last) || / the /.test(n) || allNames.has(first.toLowerCase())
+    || (!plain(first) && (uses.get(first) ?? 0) <= 1) || (/^\S+ of /.test(n) && !plain(first))
+    || ((firsts.get(first) ?? 0) >= 3 && words.length > 1); // a title before a name
+};
+const npcThe = data.questNpcs.filter((n) => !/^(The |")/.test(n) && !creatureBare.includes(n) && !personNpc(n));
 const roles = new Set<string>();
 for (const [owner, n] of owners)
   if (dictionary?.has(owner.toLowerCase()) && !given.has(owner.toLowerCase()) && (n >= 5 || !people.has(owner))) roles.add(owner);
@@ -186,6 +205,9 @@ ${list(creatureThe)}
   },
   creatureBare = {
 ${list(creatureBare)}
+  },
+  npcThe = {
+${list(npcThe)}
   },
   roles = {
 ${list([...roles])}

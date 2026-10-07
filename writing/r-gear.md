@@ -1,15 +1,19 @@
 ---
 kind: r-gear
 ---
-- [!made] a better fit than what came before
+- [!made !held] a better fit than what came before
 - [!made] the new weight taking some getting used to
 - [!made] one weak spot fewer
-- [!made] curious how long the new fit would last
+- [!made !held] curious how long the new fit would last
 - [!made] a small change, but one I felt at once
 - [!made low] beginning to look like someone who meant it
 - [!made high] worth more to me than any price
 - [!made hc] one more thing between me and a bad end
-- [made] every stitch familiar
+- [made !held] every stitch familiar
 - [made] every flaw known only to me
 - [made] proud of the work in a quiet sort of way
 - [made] trusting the work because I knew who had done it
+- [!made held] the balance good in my hand
+- [!made held] lighter in the hand than it looked
+- [!made held] keen to see what it could do
+- [made held] the grip shaped to my own hand

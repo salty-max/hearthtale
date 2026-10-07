@@ -2,7 +2,7 @@
 kind: r-gear
 ---
 - [!made] a sensible improvement
-- [!made] adjusted twice before everything sat right
+- [!made !held] adjusted twice before everything sat right
 - [!made] better engineered than appearances suggested
 - [!made] already planning a modification or two
 - [!made hc] one more safeguard, which is always wise

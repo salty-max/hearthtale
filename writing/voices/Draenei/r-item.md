@@ -4,10 +4,10 @@ kind: r-item
 - carefully, so nothing went to waste
 - with the hope that the find would help
 - the search quiet and almost peaceful
-- [!one] each one counted with care
-- [!one] more than I expected to find
-- [one] small, but someone had need of it
-- [one] where it had been waiting for someone
+- [!one !plural] each one counted with care
+- [!one !plural] more than I expected to find
+- [one !plural] small, but someone had need of it
+- [one !plural] where it had been waiting for someone
 - [meat] grateful for food in a strange land
 - [cloth] with thoughts of who might wear it
 - [night] the stars helping me look

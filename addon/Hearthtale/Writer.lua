@@ -80,6 +80,10 @@ local function plural(name)
 end
 ns.plural = plural
 
+-- Words for what can't be counted ("Linen Cloth", "Tough Wolf Meat").
+local UNCOUNTED = { Meat = true, Cloth = true, Leather = true, Silk = true, Wool = true, Ore = true, Water = true, Oil = true,
+  Blood = true, Moss = true, Sand = true, Ash = true, Powder = true, Venom = true, Ichor = true, Dust = true, Silver = true,
+  Gold = true, Iron = true, Copper = true, Bark = true, Root = false, Mail = true, Grain = true, Barley = true, Rye = true, Corn = true }
 -- An item: "a Wolf Fang Necklace", but "Cuirboulle Gloves", "Blackened Defias
 -- Armor", "Smite's Mighty Hammer".
 local TROPHY = { Head = true, Skull = true, Heart = true, Scalp = true }
@@ -98,18 +102,15 @@ local function itemName(name)
   -- the thing itself, before an "of": "Chausses of Westfall" are many
   local last = (name:match("^(.-) of ") or name):match("(%S+)$")
   -- a person's ("Zanzil's Seal") is named; a role's ("Champion's Helm") is not
-  local owner = name:match("(%a+)'s ")
+  local owner = name:match("(%a+)'s ") or name:match("(%a+s)' ")
   if owner and not (ns.names and ns.names.roles[owner]) then return name end
-  if last:match("s$") or MASS[last] then return name end
+  if last:match("s$") or MASS[last] or UNCOUNTED[last] then return name end
   return (name:match("^[AEIOUaeiou]") and "an " or "a ") .. name
 end
 ns.itemName = itemName
 
 -- Things in numbers: "six Crag Boar Ribs", but "eight Tough Wolf Meat" (a
 -- name that can't be counted stays as it is).
-local UNCOUNTED = { Meat = true, Cloth = true, Leather = true, Silk = true, Wool = true, Ore = true, Water = true, Oil = true,
-  Blood = true, Moss = true, Sand = true, Ash = true, Powder = true, Venom = true, Ichor = true, Dust = true, Silver = true,
-  Gold = true, Iron = true, Copper = true, Bark = true, Root = false, Mail = true, Grain = true, Barley = true, Rye = true, Corn = true }
 local function things(name)
   -- as the game writes it after a number (Names.lua), else by the rules
   local known = ns.names and ns.names.plural[name]
@@ -132,7 +133,8 @@ local TITLES = { Mr = true, Mrs = true, Captain = true, Lord = true, Lady = true
   Rifleman = true, Miner = true, Protector = true, Cannoneer = true, Grunt = true, Scout = true, Priestess = true,
   Bloodlord = true, Battleguard = true, Warchief = true, Admiral = true, Inquisitor = true, Chieftain = true,
   Colonel = true, Farmer = true, Geomancer = true, Lorekeeper = true, Private = true, Tinkerer = true, Advisor = true,
-  Old = true, Ol = true, Ranger = true, Broodlord = true, Pyroguard = true, Warlord = true, Highlord = true, Count = true, Duke = true, Magistrate = true }
+  Old = true, Ol = true, Ranger = true, Broodlord = true, Pyroguard = true, Archbishop = true, Bishop = true,
+  Crier = true, Emissary = true, Emmisary = true, Matron = true, Herald = true, Courier = true, Warlord = true, Highlord = true, Count = true, Duke = true, Magistrate = true }
 local function article(name)
   if not name then return nil end
   -- a title before a name ("Brother Ravenoak"), not the name alone ("Guard")
@@ -390,9 +392,20 @@ function Book:say(kind, key, values, tags, prefer, raw)
     end
   end
   for k, v in pairs(self.voice) do if values[k] == nil then values[k] = v end end
-  -- people named with their article ("The Defias Traitor"): "the" inside a sentence
+  -- people named with their article ("The Defias Traitor") or by a role
+  -- ("the Captured Mountaineer", Names.lua): "the" inside a sentence
+  local roleNamed = ns.names and ns.names.npcThe or {}
   for _, k in ipairs(PEOPLE) do
-    if type(values[k]) == "string" then values[k] = values[k]:gsub("^The ", "the "):gsub(", The ", ", the "):gsub(" and The ", " and the ") end
+    if type(values[k]) == "string" then
+      values[k] = values[k]:gsub("[^,]+", function(part)
+        local lead, name, tail = part:match("^(%s*)(.-)(%s*)$")
+        local andWord, rest = name:match("^(and )(.+)$")
+        name = rest or name
+        if name:find("^The ") then name = "the " .. name:sub(5)
+        elseif roleNamed[name] and not TITLES[name:match("^(%a+)") or ""] then name = "the " .. name end
+        return lead .. (andWord or "") .. name .. tail
+      end)
+    end
   end
   -- A place just named is not named again by a sentence without a verb,
   -- unless no other sentence fits.
@@ -673,6 +686,9 @@ function Book:deed(m, key, tags)
     values.n, values.thing = words(count), count > 1 and things(o.name) or itemName(o.name)
     if tags.done then values.giver = nil end -- found, not yet handed over
     tags.one = count == 1 or nil
+    -- one thing with a plural name ("Sea Creature Bones"): not "it"
+    local head = (o.name:match("^(.-) of ") or o.name):match("(%a+)$") or ""
+    tags.plural = count == 1 and head:find("[^s']s$") and not o.name:find("'s ") or nil
     tags.trophy = TROPHY[o.name:match("^(%a+) of ") or ""] or nil
     tags.cloth = o.name:match("Cloth$") or o.name:match("Silk$") or o.name:match("Wool$") or nil
     tags.meat = o.name:match("Meat$") or nil -- uncounted: "it"
@@ -975,6 +991,10 @@ function Book:chapter(n, ch)
           self.last, self.there = m.sub, false
         elseif m.sub then
           arrive(m.sub, m.zone, m, key, seenHere[m.sub] and "c-return" or "c-place")
+        else
+          -- the land itself, just named: here, without arriving again
+          scene, sceneZone, sentences = m.zone, m.zone, 1
+          seenHere[m.zone] = true
         end
       elseif m.sub or m.zone then
         local here = m.sub or m.zone
@@ -1077,7 +1097,7 @@ function Book:chapter(n, ch)
       found = nil
     elseif m.k == "gear" or m.k == "loot" then
       local item = m.link and m.link:match("%[(.-)%]")
-      if item then inScene(c_("c-" .. m.k, { item = itemName(item) }, { made = m.made or nil })) end
+      if item then inScene(c_("c-" .. m.k, { item = itemName(item) }, { made = m.made or nil, held = m.held or nil })) end
       found = m.k == "loot" and item or nil
     elseif m.k == "tame" then
       inScene(c_("c-tame", { pet = m.name, family = m.family and article(m.family:lower()) }))

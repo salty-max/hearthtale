@@ -1,11 +1,11 @@
 ---
 kind: r-gear
 ---
-- [!made] a decent fit, for once
+- [!made !held] a decent fit, for once
 - [!made] better than anything I had started out with
 - [!made] the sort of thing a guard would envy
 - [!made] heavier than I expected, which seemed promising
 - [!made hc] one more chance between me and a bad end
 - [made] nothing fancy, but honest work
-- [made] every crooked stitch my own
-- [made] pleased to wear what I had made
+- [made !held] every crooked stitch my own
+- [made !held] pleased to wear what I had made

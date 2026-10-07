@@ -4,10 +4,10 @@ kind: r-item
 - [client:forever] spotted from above before I could reach the spot
 - [client:forever] with an eye to how things come to rest where they lie
 - [client:forever] lighter work than the search suggested
-- [client:forever !one] each one where the wind might have left it
-- [client:forever !one] the count right on the first try
-- [client:forever one] small, though someone had plainly missed it
-- [client:forever one] easier to see than to reach
+- [client:forever !one !plural] each one where the wind might have left it
+- [client:forever !one !plural] the count right on the first try
+- [client:forever one !plural] small, though someone had plainly missed it
+- [client:forever one !plural] easier to see than to reach
 - [client:forever meat] thinking of the meal it would make
 - [client:forever cloth] the weave interesting to look at closely
 - [client:forever night] the dark changing where things seemed to lie

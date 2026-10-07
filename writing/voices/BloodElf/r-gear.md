@@ -3,7 +3,7 @@ kind: r-gear
 ---
 - [!made] serviceable, if not beautiful
 - [!made] better cut than I expected
-- [!made] adjusted until everything sat properly
+- [!made !held] adjusted until everything sat properly
 - [!made] a modest improvement, but an improvement
 - [!made hc] one more defence against an unworthy end
 - [made] finished to my own exacting standards

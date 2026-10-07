@@ -7,13 +7,13 @@ kind: r-item
 - pleased with how little searching it took in the end
 - keeping half an eye on my surroundings the whole time
 - harder to spot than I had been told
-- [!one] each one harder to find than the last
-- [!one] the last of them where I had looked first
-- [!one] counting them twice to be sure
-- [!one] wondering what anyone needed with so many
-- [one] right where it should not have been
-- [one] smaller in my hand than the trouble of finding it
-- [one] wondering what anyone wanted with it
+- [!one !plural] each one harder to find than the last
+- [!one !plural] the last of them where I had looked first
+- [!one !plural] counting them twice to be sure
+- [!one !plural] wondering what anyone needed with so many
+- [one !plural] right where it should not have been
+- [one !plural] smaller in my hand than the trouble of finding it
+- [one !plural] wondering what anyone wanted with it
 - [cloth] with thoughts of what a tailor might make of it
 - [meat] with supper very much on my mind
 - [night] the dark making the search twice as long

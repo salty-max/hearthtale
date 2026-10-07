@@ -14,25 +14,25 @@ I began in Coldridge Valley, where there was work to be done and a fair bit beyo
 
 I came back to Coldridge Valley. I did for a Burly Rockjaw Trogg, solid on my feet by the end of it. I hunted down six Rockjaw Troggs. I carried out Talin Keeneye's request with Grelin Whitebeard.
 
-The fight with a Frostmane Troll Whelp left me badly shaken. Stubbornness had carried me a long way, but it was no substitute for sense. Afterwards, I put down fourteen Frostmane Troll Whelps, more of them than was strictly fair. I had Grelin Whitebeard's Journal in my pack. I went on equipped with a Frostmane Leather Belt.
+The fight with a Frostmane Troll Whelp left me badly shaken. Stubbornness had carried me a long way, but it was no substitute for sense. Afterwards, I put down fourteen Frostmane Troll Whelps, more of them than was strictly fair. I had Grelin Whitebeard's Journal in my pack. I fitted myself with a Frostmane Leather Belt.
 
-I took the road back to Anvilmar, the country on either side worth a second look. I came away knowing Serpent Sting and Track Beasts. I saw Durnan Furcutter's business through with Marryk Nurribit, learning who in these parts kept their word.
+I found myself back in Anvilmar, the country on either side worth a second look. I learned Serpent Sting and Track Beasts. I saw Durnan Furcutter's business through with Marryk Nurribit, learning who in these parts kept their word.
 
 In all, I had seen six tasks through. I put ten Ragged Young Wolves and four Burly Rockjaw Troggs on the page, glad to be using a pen. I had been on the road an hour and thirty-five minutes. I rested in Anvilmar, glad to have the weight of my pack off my shoulders.
 
 ## Chapter 2 (levels 4 to 7)
 
-I was ready to move in Anvilmar. The road was not going to shorten itself out of consideration. I arrived in Coldridge Pass. I smelled the Thunderbrew Distillery before I had properly reached Kharanos. Smoke rose above the houses, where dwarves and gnomes crowded together against the cold, and I felt my shoulders ease at the sight. I fixed my hearthstone at the Thunderbrew Distillery, with rather more hope of an ale on my return. I took up skinning and began to learn leatherworking. I came through my first fight with boars, with fresh respect for what was in their mouths. I collected six Crag Boar Ribs. I put on a Handstitched Leather Vest of my own making, pleased to know the workmanship firsthand.
+I was ready to move in Anvilmar. The road was not going to shorten itself out of consideration. I arrived in Coldridge Pass. I smelled the Thunderbrew Distillery before I had properly reached Kharanos. Smoke rose above the houses, where dwarves and gnomes crowded together against the cold, and I felt my shoulders ease at the sight. I fixed my hearthstone at the Thunderbrew Distillery, with rather more hope of an ale on my return. I took up skinning and began to learn leatherworking. I came through my first fight with boars, with fresh respect for what was in their mouths. I collected six Crag Boar Ribs. I equipped a Handstitched Leather Vest, my own work.
 
-When I reached the Grizzled Den, I brought Loslor Rudge's word to Hegnar Rumbleshot. I found my way to Brewnall Village, keen to put a place to the name. I hunted down a Leper Gnome. I recovered eight Gyromechanic Gears, weighing more in my pack than in the asking. I took lessons in Arcane Shot.
+I reached the Grizzled Den, lamplight in a window the first thing I saw. I brought Loslor Rudge's word to Hegnar Rumbleshot. I found my way to Brewnall Village, judging the stonework before the people. I hunted down a Leper Gnome. I recovered eight Gyromechanic Gears, weighing more in my pack than in the asking. I took lessons in Arcane Shot.
 
-Some hours later, I set foot in Shimmer Ridge, lamplight in a window the first thing I saw. I killed a Frostmane Snowstrider. I slept rough, with my back to the ground and little comfort to recommend it.
+Some hours later, I set foot in Shimmer Ridge, my boots having opinions about the distance. I killed a Frostmane Snowstrider. I slept rough, with my back to the ground and little comfort to recommend it.
 
 I woke in Shimmer Ridge and put my pack in order before going on. I killed Timber there, glad to have something to report that would stand up to a second telling. I improved my skinning to fifty. I pulled a Frostmane Scepter from the spoils, a fine thing.
 
-I came to Frostmane Hold, judging the stonework before the people. I overcame a Frostmane Headhunter. I found a way to explore Frostmane Hold, reading the rock as I went.
+I came to Frostmane Hold, keen to put a place to the name. I overcame a Frostmane Headhunter. I found a way to explore Frostmane Hold, reading the rock as I went.
 
-I walked into Amberstill Ranch. I brought down Vagash, my beard none the worse, which was the main thing. I found myself back in Kharanos, where I trained in Hunter's Mark and Raptor Strike.
+I walked into Amberstill Ranch. I brought down Vagash, my beard none the worse, which was the main thing. I took the road back to Kharanos, where I trained in Hunter's Mark and Raptor Strike.
 
 I had done five tasks by the end. I had brought down eleven Leper Gnomes and ten Frostmane Snowstriders over the stretch. After two hours and a half, I was ready for a seat and an ale. I rested in Kharanos, with enough behind me to have earned the pleasure of doing very little.
 
@@ -40,9 +40,9 @@ I had done five tasks by the end. I had brought down eleven Leper Gnomes and ten
 
 I began this stretch in Kharanos, curious about the ground beneath the road as well as where it led. I tramped on to the Grizzled Den and defeated a Young Wendigo. I found eight Wendigo Manes, with an eye to the workmanship. I had Thorgrim for company.
 
-I made it as far as Gol'Bolar Quarry, where I defeated ten Rockjaw Bonesnappers, a tidy bit of work, if I say so myself. When I headed back to Kharanos, I studied Concussive Shot and Mend Pet. I walked on to Amberstill Ranch, my boots having opinions about the distance. I took Bristle on as my companion. I held my hands toward the fire, glad to let them do nothing useful for a moment. I put an end to a Frostmane Seer. I was left without Bristle beside me, where I had grown used to having company.
+I made it as far as Gol'Bolar Quarry, where I defeated ten Rockjaw Bonesnappers, a tidy bit of work, if I say so myself. When I headed back to Kharanos, I came away knowing Concussive Shot and Mend Pet. I walked on to Amberstill Ranch, curious what the locals would make of a dwarf. I took Bristle on as my companion. I held my hands toward the fire, glad to let them do nothing useful for a moment. I put an end to a Frostmane Seer. I was left without Bristle beside me, where I had grown used to having company.
 
-The blue water of Loch Modan lay still behind the Stonewrought Dam. I knew dwarves built on a grand scale, but the weight of all that water made me stop and look. I tramped into North Gate Pass, curious what the locals would make of a dwarf. I found the Stoutlager Inn of Thelsamar beside the loch. After the open hills, its ale and blood sausages interested me more than the distance I had come. I cut down a Mountain Boar.
+The blue water of Loch Modan lay still behind the Stonewrought Dam. I knew dwarves built on a grand scale, but the weight of all that water made me stop and look. I tramped into North Gate Pass, my legs reminding me of the distance. I found the Stoutlager Inn of Thelsamar beside the loch. After the open hills, its ale and blood sausages interested me more than the distance I had come. I cut down a Mountain Boar.
 
 # Grashnak, an orc warrior
 
@@ -50,7 +50,7 @@ The blue water of Loch Modan lay still behind the Stonewrought Dam. I knew dwarv
 
 I began in the Valley of Trials, with no one's will in place of my own. What I did with that freedom would be my answer. Heat rose from the red dust of Durotar, as if the ground itself were breathing. This was the land we had claimed, and I meant to learn how to belong to it. I overcame ten Mottled Boars. I brought down Sarkoth. I hunted down twelve Vile Familiars, each one met head on. I had ten Cactus Apples in my pack. I settled what Foreman Thazz'ril needed settled.
 
-At Razor Hill I heard the forge before I saw the drilling. Beyond the barracks, Kul Tiras ships sat off the coast, and I understood why no one in the town ever quite stood at rest. I settled Gornek's business with Master Gadrin, asked plainly and done the same way. I added Rend and Battle Shout to what I knew. I fitted myself with a Rough Leather Vest; I finished off a Scorpid Worker, a worthy enough foe in its way. I gathered eight Scorpid Worker Tails.
+At Razor Hill I heard the forge before I saw the drilling. Beyond the barracks, Kul Tiras ships sat off the coast, and I understood why no one in the town ever quite stood at rest. I settled Gornek's business with Master Gadrin, asked plainly and done the same way. I added Rend and Battle Shout to what I knew. I went on equipped with a Rough Leather Vest; I finished off a Scorpid Worker, a worthy enough foe in its way. I gathered eight Scorpid Worker Tails.
 
 A Kul Tiras Marine brought me close to the end. I had work left to do, and no use for a glorious excuse for abandoning it. I saw off ten Kul Tiras Sailors, my blood up longer than the fight deserved.
 

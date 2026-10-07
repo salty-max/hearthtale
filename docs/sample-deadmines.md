@@ -13,7 +13,7 @@ I've lost count of the roads behind me. Sixty-four tasks, the people say. I star
 
 I took up the road in the Dwarven District, ready to see whether the day's promises would amount to anything. I made it as far as the Trade District. I flew from Stormwind to Sentinel Hill, glad to admire the distance instead of walking it.
 
-Westfall lay dark and quiet, its windmills turning over farms nobody tended any more. A light in a window was rare enough to make me wonder who still dared to keep one. A stone tower stood on Sentinel Hill, and around it the People's Militia had pitched their tents. Farmers who had lost everything queued for soup, and it made me angrier than I expected. I walked into the Dagger Hills, keen to see what work the place had for me. I put an end to a Defias Pathstalker. I recovered a Mysterious Message, the sort of chore that keeps a place running.
+Westfall lay dark and quiet, its windmills turning over farms nobody tended any more. A light in a window was rare enough to make me wonder who still dared to keep one. A stone tower stood on Sentinel Hill, and around it the People's Militia had pitched their tents. Farmers who had lost everything queued for soup, and it made me angrier than I expected. I walked into the Dagger Hills, keen to see what work the place had for me. I put an end to a Defias Pathstalker. I recovered a Mysterious Message, one more small thing set right.
 
 I headed back to Sentinel Hill and saw Gryan Stoutmantle again, the work behind me. Moonbrook was a ruin after dark, its broken walls black against the sky. Somewhere among the burned houses the Defias were talking, and I kept to the shadows. I dealt with a Defias Pillager, the dark making it uglier than it needed to be. I obliged the Defias Traitor.
 

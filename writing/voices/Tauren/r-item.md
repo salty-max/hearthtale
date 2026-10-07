@@ -4,10 +4,10 @@ kind: r-item
 - taking only what was needed
 - with a word of thanks to the land
 - carried gently, as such things should be
-- [!one] each one gathered without hurry
-- [!one] the weight of them settling easily on my back
-- [one] small in my hand, though someone had need of it
-- [one] where the earth had kept it
+- [!one !plural] each one gathered without hurry
+- [!one !plural] the weight of them settling easily on my back
+- [one !plural] small in my hand, though someone had need of it
+- [one !plural] where the earth had kept it
 - [meat] grateful to the creature that gave it
 - [cloth] good for the camp, whatever its use
 - [night] the moon showing me where to look

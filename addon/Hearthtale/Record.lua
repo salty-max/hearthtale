@@ -365,15 +365,19 @@ local function objectivesOf(id)
   local out = {}
   for _, o in ipairs(raw) do
     if o.text and not secret(o.text) then
-      local name, n, have
+      local name, n, have, own
       for _, g in ipairs({ "QUEST_MONSTERS_KILLED", "QUEST_OBJECTS_FOUND" }) do
         local p = ns.pattern(g)
         local a, b, c = o.text:match(p or "^$")
-        if a then name, have, n = a, tonumber(b), tonumber(c) break end
+        if a then name, have, n = a, tonumber(b), tonumber(c) own = g ~= "QUEST_MONSTERS_KILLED" break end
       end
+      -- a kill told in the quest's own words ("Peons Awoken: 0/5"): its text,
+      -- not a creature's name
+      if o.type == "monster" and own then o.text, name = name, nil end
       -- an item already in hand when the quest is taken: a thing to deliver
       local held = o.type == "item" and (o.finished or (have and n and have >= n)) or nil
-      table.insert(out, { type = o.type, name = name, n = n or o.n, text = not name and o.text or nil, held = held })
+      table.insert(out, { type = o.type, name = name, n = n or o.n, text = not name and (o.text:gsub(":%s*%d+/%d+$", "")) or nil,
+        held = held })
     end
   end
   return #out > 0 and out or nil
@@ -683,7 +687,8 @@ local function lookAtGear(quiet)
       c.worn[id] = true
       local _, _, quality = GetItemInfo(link)
       if not quiet and quality and quality >= 2 then
-        moment("gear", { link = link, quality = quality, made = (c.made or {})[id] or nil })
+        -- (in hand: a weapon, a shield, a bow, taken up rather than put on)
+        moment("gear", { link = link, quality = quality, made = (c.made or {})[id] or nil, held = slot >= 16 or nil })
       end
     end
   end

@@ -4,10 +4,10 @@ kind: r-item
 - an undignified task, honestly done
 - with more care than the request deserved
 - pleased, despite myself, to have the task finished
-- [!one] each one less presentable than the last
-- [!one] the full count, naturally
-- [one] hardly worth the trouble, though someone thought otherwise
-- [one] in better condition than I expected
+- [!one !plural] each one less presentable than the last
+- [!one !plural] the full count, naturally
+- [one !plural] hardly worth the trouble, though someone thought otherwise
+- [one !plural] in better condition than I expected
 - [meat] not the sort of thing I usually carry
 - [cloth] coarse stuff, though serviceable
 - [night] the dark making the search slower than it needed to be

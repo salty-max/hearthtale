@@ -5,10 +5,10 @@ kind: r-item
 - earned, if not glamorous
 - with no complaint worth making
 - work for the hands while the mind went elsewhere
-- [!one] every one of them accounted for
-- [!one] a heavy load for a small reward, but it was the work
-- [one] small, but someone had need of it
-- [one] easier to carry than to find
+- [!one !plural] every one of them accounted for
+- [!one !plural] a heavy load for a small reward, but it was the work
+- [one !plural] small, but someone had need of it
+- [one !plural] easier to carry than to find
 - [meat] the smell of it putting me in mind of a cookfire
 - [cloth] useful to whoever mended the tents
 - [night] the stars enough to search by
