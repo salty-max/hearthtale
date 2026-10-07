@@ -168,6 +168,8 @@ local KINDS = {
   Giant = "giants", Mechanical = "constructs",
 }
 local SKIP = { Critter = true, ["Non-combat Pet"] = true, Totem = true, ["Not specified"] = true, ["Gas Cloud"] = true }
+-- Creature families a remark may speak of the teeth of.
+local TEETH = { Wolf = true, Cat = true, Bear = true, Boar = true, Crocolisk = true, Raptor = true }
 -- Creature types that are not beasts (a beast's kind is "Beast" or its family).
 local NOT_BEAST = { Humanoid = true, Undead = true, Elemental = true, Demon = true, Dragonkin = true, Giant = true,
   Mechanical = true, Critter = true, Aberration = true }
@@ -425,6 +427,7 @@ do
   W.article = article
   W.KINDS = KINDS
   W.SKIP = SKIP
+  W.TEETH = TEETH
   W.deathTags = deathTags
   W.namedElite = namedElite
   W.deathFoe = deathFoe
