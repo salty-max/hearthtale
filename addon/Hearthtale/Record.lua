@@ -243,8 +243,7 @@ ns.byFire = byFire
 -- A campfire's warmth: a moment per stop (a fire found again within the hour,
 -- in the same place, is the same stop).
 local warm = false
-ns.on("UNIT_AURA", function(unit)
-  if unit ~= "player" then return end
+ns.onUnit("UNIT_AURA", "player", function()
   local fire = byFire()
   if fire and not warm then
     local ch, zone, sub = chapter(), where()
@@ -668,9 +667,8 @@ elseif not partyKill then
   end
   ns.on("PLAYER_TARGET_CHANGED", look)
   ns.on("PLAYER_REGEN_DISABLED", look)
-  for _, e in ipairs({ "UNIT_HEALTH", "UNIT_FLAGS" }) do
-    ns.on(e, function(unit) if unit == "target" then look() end end)
-  end
+  ns.onUnit("UNIT_HEALTH", "target", look)
+  ns.onUnit("UNIT_FLAGS", "target", look)
 end
 
 -- ── close calls ──────────────────────────────────────────────────────────────
@@ -684,8 +682,8 @@ local function foe(players)
   if name and not secret(name) then return name, not secret(guid) and guid or nil end
 end
 local pending, lastClose = false, 0
-ns.on("UNIT_HEALTH", function(unit)
-  if unit ~= "player" or pending or now() - lastClose < 60 then return end
+ns.onUnit("UNIT_HEALTH", "player", function()
+  if pending or now() - lastClose < 60 then return end
   local h, max = UnitHealth("player"), UnitHealthMax("player")
   if secret(h) or secret(max) or not max or max == 0 or h <= 0 or h / max >= 0.1 then return end
   local hp = math.max(1, math.floor(h / max * 100 + 0.5))
@@ -743,18 +741,23 @@ end)
 -- capturing its blanks (also the numbered "%1$s" of some languages).
 -- A numbered blank keeps its argument's place: the client's "%2$d/%3$d %1$s"
 -- ("0/8 Tough Wolf Meat") puts the name last, and match() gives it first.
+local patterns = {} -- the game's format = { pattern, order }, each made once
 local function pattern(global)
-  local s = _G[global]
-  if type(s) ~= "string" then return end
-  -- the blanks become markers, the rest is escaped, the markers captures
-  local order = {}
-  s = s:gsub("%%(%d*)%$?([sd])", function(at, kind)
-    order[#order + 1] = tonumber(at) or #order + 1
-    return kind == "s" and "\1" or "\2"
-  end)
-  s = s:gsub("([%%%(%)%.%+%-%*%?%[%]%^%$])", "%%%1")
-  s = s:gsub("\1", "(.+)"):gsub("\2", "(%%d+)")
-  return "^" .. s .. "$", order
+  local format = _G[global]
+  if type(format) ~= "string" then return end
+  local known = patterns[format]
+  if not known then
+    -- the blanks become markers, the rest is escaped, the markers captures
+    local order = {}
+    local p = format:gsub("%%(%d*)%$?([sd])", function(at, kind)
+      order[#order + 1] = tonumber(at) or #order + 1
+      return kind == "s" and "\1" or "\2"
+    end)
+    p = p:gsub("([%%%(%)%.%+%-%*%?%[%]%^%$])", "%%%1"):gsub("\1", "(.+)"):gsub("\2", "(%%d+)")
+    known = { "^" .. p .. "$", order }
+    patterns[format] = known
+  end
+  return known[1], known[2]
 end
 -- The blanks of a game message, in its format's argument order.
 local function match(global, text)
@@ -941,9 +944,9 @@ local function lookAtPet(quiet)
     if not quiet then moment("tame", { name = name, family = c.pets[name] ~= true and c.pets[name] or nil }) end
   end
 end
-ns.on("UNIT_PET", function(unit) if unit == "player" then lookAtPet(char().pets == nil) end end)
-ns.on("UNIT_HEALTH", function(unit)
-  if unit ~= "pet" or char().class ~= "HUNTER" then return end
+ns.onUnit("UNIT_PET", "player", function() lookAtPet(char().pets == nil) end)
+ns.onUnit("UNIT_HEALTH", "pet", function()
+  if char().class ~= "HUNTER" then return end
   local dead = UnitIsDead("pet")
   if secret(dead) then return end
   if dead and not petDown then
@@ -952,9 +955,9 @@ ns.on("UNIT_HEALTH", function(unit)
   end
   petDown = dead and true or false
 end)
-ns.on("UNIT_AURA", function(unit)
+ns.onUnit("UNIT_AURA", "player", function()
   local c = char()
-  if unit ~= "player" or c.rode or not IsMounted then return end
+  if c.rode or not IsMounted then return end
   local mounted = IsMounted()
   if mounted and not secret(mounted) then
     c.rode = true

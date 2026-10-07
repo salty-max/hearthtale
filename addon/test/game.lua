@@ -219,7 +219,7 @@ function SetPortraitTexture(_, unit) portraitOf = unit end
 local frames = {}
 function CreateFrame(_, name, _, template)
   local f = ui()
-  f.registered = {}
+  f.registered, f.unitsOf = {}, {}
   if template == "ButtonFrameTemplate" then -- the game's window has its portrait
     local p = ui()
     f.GetPortrait = function() return p end
@@ -232,21 +232,30 @@ function CreateFrame(_, name, _, template)
     self.registered[e] = true
   end
   function f:UnregisterEvent(e) self.registered[e] = nil end
+  -- a unit's event, heard for that unit only
+  function f:RegisterUnitEvent(e, ...)
+    self:RegisterEvent(e)
+    self.unitsOf[e] = {}
+    for _, unit in ipairs({ ... }) do self.unitsOf[e][unit] = true end
+  end
   table.insert(frames, f)
   if name then _G[name] = f end
   return f
 end
+local function hears(f, e, unit)
+  return f.registered[e] and f.scripts.OnEvent and not (f.unitsOf[e] and not f.unitsOf[e][unit])
+end
 local function fire(e, ...)
   local heard = false
   for _, f in ipairs(frames) do
-    if f.registered[e] and f.scripts.OnEvent then f.scripts.OnEvent(f, e, ...); heard = true end
+    if hears(f, e, ...) then f.scripts.OnEvent(f, e, ...); heard = true end
   end
   assert(heard, "nobody listens to " .. e)
 end
 -- an event the game sends whether anyone listens or not (a fight's own)
 local function offer(e, ...)
   for _, f in ipairs(frames) do
-    if f.registered[e] and f.scripts.OnEvent then f.scripts.OnEvent(f, e, ...) end
+    if hears(f, e, ...) then f.scripts.OnEvent(f, e, ...) end
   end
 end
 
