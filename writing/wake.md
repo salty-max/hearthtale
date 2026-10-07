@@ -4,10 +4,10 @@ kind: wake
 - [!rest] I took up the road {at} after a night outside, glad to move again.
 - [!rest] I rose {at}, with the night behind me and the road ahead.
 - [!rest] I went on {at}, looking about before the road took my attention.
-- [!rest] I returned to the road {at}, still feeling the rough rest.
+- [!rest] Still feeling the rough rest, I returned to the road {at}.
 - [!rest] I was ready to go on {at}, with another stretch ahead.
 - [!rest] I set out again {at}, grateful for what rest I had managed.
-- [!rest hc] I rose {at}, grateful to have another day on the road.
+- [!rest hc] Grateful to have another day on the road, I rose {at}.
 - [rest] I went on {at} after resting, with the unfinished work ahead.
 - [rest] I took up the road {at}, carrying a little of the rest's quiet.
 - [rest] I returned to the road {at}, with time to consider where it had led.
@@ -16,5 +16,5 @@ kind: wake
 - [rest] I turned back to the road {at}, with another stretch ahead.
 - [rest] I set out {at} after the pause, with a little distance from the last trouble.
 - [rest] I went on {at}, with more thought given to the way behind me.
-- [!rest] I rose {at} after the night outside, glad to leave the ground to hardier joints.
+- [!rest] Glad to leave the ground to hardier joints, I rose {at} after the night outside.
 - [!rest] I set out {at}, with the night's quiet still in my thoughts.

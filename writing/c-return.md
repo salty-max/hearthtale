@@ -8,3 +8,5 @@ kind: c-return
 - found myself back in {place}
 - took the road back to {place}
 - came back to {place}
+- [turn] the road led me back to {place}
+- [turn] my way took me back to {place}

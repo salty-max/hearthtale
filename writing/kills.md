@@ -1,7 +1,7 @@
 ---
 kind: kills
 ---
-- I had brought down {n} {foes} {at}, more fighting than their number alone could tell.
+- {n} {foes} had fallen to me {at}, more fighting than their number alone could tell.
 - I counted {n} {foes} among the fights {at}, remembering the encounters as well as their end.
 - I had dealt with {n} {foes} {at}, and was glad to consider the work from somewhere quiet.
 - I had killed {n} {foes}, though setting down the number made it look simpler than it had felt.
@@ -9,29 +9,32 @@ kind: kills
 - I remembered the {n} {foes} I had fought {at} as I put the day in order.
 - I had come through fights with {n} {foes}, and was grateful to be here to remember them.
 - The {n} {foes} I had killed {at} had occupied much of this stretch.
-- I had brought down {n} {foes}, enough to leave their names clear in my thoughts.
+- {n} {foes} had fallen to me, enough to leave their names clear in my thoughts.
 - I counted {n} {foes} among the day's fighting {at}, with the road still waiting beyond them.
 - [lots] I had fought {n} {foes}, enough that stopping felt like part of the work rather than a departure from it.
 - [lots] I had dealt with {n} {foes} {at}, and felt the length of that work when I finally stopped.
-- [lots] I had brought down {n} {foes}, with little room between one fight and its place in my memory.
+- [lots] {n} {foes} had fallen to me, with little room between one fight and its place in my memory.
 - [hc] I counted {n} {foes}, grateful to be the one counting.
 - [class:HUNTER !low] I had hunted {n} {foes} {at}, learning something of the country through what lived in it.
 - [class:WARLOCK] I had killed {n} {foes}, enough to make me consider the uses of the power I was learning.
 - [class:MAGE] I had brought down {n} {foes}, putting lessons to a test quite different from remembering them.
 - [class:ROGUE] I had dealt with {n} {foes}, and had reason by the end to value care as much as quickness.
-- [class:PRIEST] I had fought {n} {foes}, with rather more to consider afterwards than the number.
+- [class:PRIEST] {n} {foes} had fallen to me, with rather more to consider afterwards than the number.
 - [class:SHAMAN] I had killed {n} {foes}, and tried to find a place for what the fighting had taught me.
 - [class:WARRIOR] I had fought {n} {foes}, gaining a clearer sense of what I could ask of my strength.
 - I had killed {n} {foes} in all {at}, a part of the day I was ready to put behind me.
 - By the end I had put down {n} {foes} {at}, glad that the fighting was now something to remember.
 - I had come through encounters with {n} {foes} {at}, with more of the road still left to take.
-- [plain] I had fought {n} {foes} {at}.
+- [plain] {n} {foes} had fallen to me {at}.
 - [plain] The fighting came to {n} {foes}.
 - [plain] I had faced {n} {foes} {at}.
 - [plain] I counted {n} {foes} among the fighting.
 - [plain] Most of the fighting had been against {n} {foes}.
-- [plain] I had brought down {n} {foes} over the stretch.
+- [plain] {n} {foes} had fallen to me over the stretch.
 - [plain] The fighting {at} had mostly been against {n} {foes}.
 - [plain] I had killed {n} {foes} in all.
 - [plain] My tally came to {n} {foes}.
 - [plain] Of the fighting, {n} {foes} made up the most.
+- {n} {foes} had fallen {at} by the end, more fighting than the number could tell.
+- The fighting {at} had cost {n} {foes} their lives, and me a good deal of sweat.
+- [plain] {n} {foes} had fallen {at} by the end.

@@ -32,3 +32,14 @@ kind: c-deed-item
 - [!one more] tracked down {n} more {thing}
 - [!one more] had {n} more {thing} before long
 - [!one more] added {n} more {thing} to the pile
+- [turn !one !more] {n} {thing} went into my pack
+- [turn !one !more !cloth !meat] by the end, {n} {thing} were in my pack
+- [turn !one !done !more] {n} {thing} went back to {giver}
+- [turn one !plural !trophy !more] {thing} turned up at last
+- [turn one !plural !trophy !more] {thing} was in my hands before long
+- [turn !one !more] the search turned up {n} {thing}
+- [turn !one !more] it took some searching to find {n} {thing}
+- [turn !one !more] {giver} wanted {n} {thing}, and got them
+- [turn !one !more] the count reached {n} {thing} in the end
+- [turn one !plural !trophy !more] the search turned up {thing}
+- [turn one !plural !trophy !more] it took some searching to find {thing}

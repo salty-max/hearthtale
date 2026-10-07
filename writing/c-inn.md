@@ -8,3 +8,5 @@ kind: c-inn
 - made my home {inn}
 - gave my hearthstone a place of return {inn}
 - fixed my hearthstone {inn}
+- [turn] my hearthstone was bound {inn} from then on
+- [turn] {inn} was where I set my hearthstone

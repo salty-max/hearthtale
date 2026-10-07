@@ -33,3 +33,10 @@ kind: c-deed-kill
 - [more] finished the job with {n} more
 - [more] accounted for {n} more
 - [more] got the better of {n} more
+- [turn !one !more] {n} {foes} fell before the work was done
+- [turn !one !more] by the end, {n} {foes} lay behind me
+- [turn !one !more] {n} {foes} fell, as {giver} had asked
+- [turn !one !more] {n} {foes} would not be bothering anyone again
+- [turn !one !more] {n} {foes} went down one after another
+- [turn more] {n} more of them fell after that
+- [turn more] after that, {n} more went down

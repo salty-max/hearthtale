@@ -4,9 +4,9 @@ kind: opening
 - I set out {at}, wondering whose doorstep the day's work would bring me to.
 - I began again {at}. There was plenty to do, and I felt better once I was moving.
 - I took up the road {at}, with a little curiosity left over from my worrying.
-- I opened a fresh page {at}, glad to have somewhere to put the things I might otherwise forget.
+- Glad to have somewhere to put the things I might otherwise forget, I opened a fresh page {at}.
 - I made ready {at}, hoping for a day I could tell plainly when I got back.
 - I went on {at}, interested in who lived here as well as what needed doing.
 - I began this stretch {at}, with my plans still looking possible before I had begun testing them.
-- I returned to my account {at}, already wondering which names would turn up again.
+- Already wondering which names would turn up again, I returned to my account {at}.
 - I set out {at}, keen to get beyond thinking about the road and see some of it.

@@ -5,7 +5,7 @@ kind: opening
 - I began again {at}, with no wish to mistake a familiar name for familiar ground.
 - I set out {at}, letting the world reach my attention before my purpose narrowed it.
 - I opened a fresh page {at}. Even a brief passage through a place could leave something that endured.
-- I went on {at}, conscious that haste had made older mistakes than mine.
+- Conscious that haste had made older mistakes than mine, I went on {at}.
 - I began this stretch {at}, with no intention of letting reserve be mistaken for uncertainty.
 - I made ready {at}, with time to look about before choosing my path.
 - I returned to my account {at}, with the quiet between deeds still part of what I wished to remember.

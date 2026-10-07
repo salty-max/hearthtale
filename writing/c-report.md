@@ -16,3 +16,6 @@ kind: c-report
 - [again] reported the rest done as well
 - [again] came back with more done
 - [again] saw that business finished too
+- [turn !again] {ender} heard that the work was done
+- [turn !again] {ender} had my report soon after
+- [turn !again] word that it was done went back to {ender}

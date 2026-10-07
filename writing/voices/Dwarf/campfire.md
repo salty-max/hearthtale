@@ -7,4 +7,4 @@ kind: campfire
 - I rested beside the fire {at}, with my pack close and no need to shoulder it yet.
 - [night] I found a little warmth at a fire {at}, with the dark around its light.
 - I sat beside the embers {at} and began to appreciate how much I had needed the pause.
-- [aside] I stopped at a fire {at}, grateful for warmth enough to make standing still a pleasure.
+- [aside] Grateful for warmth enough to make standing still a pleasure, I stopped at a fire {at}.

@@ -1,7 +1,7 @@
 ---
 kind: quests-many
 ---
-- I had seen {n} jobs through, each one a little of the honest work that holds a place together.
+- {n} jobs had been seen through, each one a little of the honest work that holds a place together.
 - By the end, {n} tasks were behind me. Nothing grand about most of them, which did not make them worth doing badly.
 - I had finished {n} jobs for the folk along the road, and knew a few more names worth remembering.
 - The {n} tasks behind me had made a fair day's work; I was glad to be counting them seated.

@@ -8,3 +8,5 @@ kind: c-group
 - shared the road with {mates}
 - had {mates} for company
 - teamed up with {mates}
+- [turn] {mates} joined me
+- [turn] for a while there were {mates} beside me

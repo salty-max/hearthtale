@@ -6,7 +6,7 @@ kind: rest
 - I paused {at}, with my thoughts going farther than my legs wished to follow.
 - I rested {at}, and found a little room for good humour once the hurry was gone.
 - I stopped {at}, content that the next stretch could wait its turn.
-- I rested {at}, glad of some quiet after keeping so much of myself ready to move.
+- Glad of some quiet after keeping so much of myself ready to move, I rested {at}.
 - I paused {at}, letting the day come back without inviting more of it.
 - I rested {at}, with no desire to turn a sensible stop into a grand decision.
-- I left the road to itself {at}, pleased to choose when I would take it up again.
+- Pleased to choose when I would take it up again, I left the road to itself {at}.

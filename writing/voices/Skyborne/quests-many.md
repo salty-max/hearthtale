@@ -6,4 +6,4 @@ kind: quests-many
 - [client:forever] I counted {n} tasks done, some less straightforward at close quarters than they had sounded.
 - [client:forever] There were {n} completed tasks to enter before I stopped.
 - [client:forever] I had seen {n} tasks through, and wanted to let my attention come to rest.
-- [client:forever] I put down {n} tasks completed, ready to leave the next request until I could think clearly about it.
+- [client:forever] Ready to leave the next request until I could think clearly about it, I put down {n} tasks completed.

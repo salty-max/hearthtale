@@ -111,7 +111,7 @@ const KINDS: Record<string, string[]> = {
 };
 const VOICE = ["home", "kin", "faith", "weapon"];
 const TAGS = ["home", "ally", "foe", "neutral", "night", "hc", "high", "low", "first", "elite", "lots", "many", "slow", "quick",
-  "foe", "fall", "drowning", "lava", "nature", "beast", "people", "player", "inside", "rest", "fire", "last", "one", "aside", "plain", "back", "done", "grouped", "held", "plural", "trophy", "corpse", "healer", "self", "known", "more", "again", "onward", "gear", "onlygear", "teeth", "mechanical", "cloth", "meat", "explore", "escort", "new", "made", "form", "demon", "steed"];
+  "foe", "fall", "drowning", "lava", "nature", "beast", "people", "player", "inside", "rest", "fire", "last", "one", "aside", "plain", "back", "done", "grouped", "held", "plural", "trophy", "corpse", "healer", "self", "known", "more", "again", "onward", "gear", "onlygear", "turn", "teeth", "mechanical", "cloth", "meat", "explore", "escort", "new", "made", "form", "demon", "steed"];
 const RACES = ["Human", "Dwarf", "NightElf", "Gnome", "Draenei", "Orc", "Troll", "Tauren", "Scourge", "BloodElf", "Skyborne"];
 const ROUTINE = new Set("deed-kill deed-item deed-task deed-word deliver report kill first gear trainer inn travel return place group skill prof".split(" ").map((kind) => `c-${kind}`));
 // The recap's kinds: one sentence of the recap holds a thought, the others are plain.
@@ -149,7 +149,10 @@ function parseFile(file: string, kind: string | null): Parsed | null {
     for (const [, slot] of sentence.text.matchAll(/\{([^}]*)\}/g))
       if (!slots.includes(slot) && !VOICE.includes(slot)) fail(file, `{${slot}} is not a slot of ${own}: ${sentence.text}`);
     if (own?.startsWith("c-") || own?.startsWith("r-")) {
-      if (!/^[a-z]/.test(sentence.text) || /[.!?;:]$/.test(sentence.text)) fail(file, `a clause starts in lower case, with no stop: ${sentence.text}`);
+      if (!/^[a-z]/.test(sentence.text) && !(sentence.tags.includes("turn") && /^\{/.test(sentence.text)) || /[.!?;:]$/.test(sentence.text))
+        fail(file, `a clause starts in lower case, with no stop: ${sentence.text}`);
+      // a clause turned round has its own subject: not "I", and not after "I"
+      if (sentence.tags.includes("turn") && /^(i|I)\b/.test(sentence.text)) fail(file, `a turned clause has a subject of its own: ${sentence.text}`);
     } else if (!/[.!?]"?$/.test(sentence.text)) fail(file, `no full stop: ${sentence.text}`);
     if (sentences.some((o) => o.text === sentence.text)) fail(file, `twice: ${sentence.text}`);
     sentences.push(sentence);

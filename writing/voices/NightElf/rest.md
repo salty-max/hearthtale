@@ -2,11 +2,11 @@
 kind: rest
 ---
 - I rested {at}, letting my attention widen again beyond the next thing to be done.
-- I settled {at}, content for a while to watch without asking the world to become useful.
+- Content for a while to watch without asking the world to become useful, I settled {at}.
 - I paused {at}, where stillness brought back what haste had let me overlook.
 - I rested {at}, giving the day's impressions time to settle.
 - I stopped {at}, with no wish to turn the quiet into another task.
 - I rested {at}, with room to think beyond the next turn in the path.
 - I paused {at}, glad to belong to the place for a moment without having to pass through it.
-- I rested {at}, listening while my thoughts grew less insistent.
+- Listening while my thoughts grew less insistent, I rested {at}.
 - I put the road aside {at}, and let being here be enough for a while.

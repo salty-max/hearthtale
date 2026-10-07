@@ -8,3 +8,5 @@ kind: c-skill
 - practised my {skill} up to {rank}
 - improved my {skill} to {rank}
 - pushed my {skill} up to {rank}
+- [turn] my {skill} came up to {rank}
+- [turn] my {skill} reached {rank}

@@ -3,10 +3,10 @@ kind: rest
 ---
 - I rested {at}, glad that nothing needed sorting out this very moment.
 - I settled {at}, with the comfortable feeling of having got somewhere I could stop.
-- I paused {at}, letting the day's worries grow a little less urgent.
+- Letting the day's worries grow a little less urgent, I paused {at}.
 - I rested {at}, with no wish to be useful again until I had stopped aching.
 - I stopped {at}. For once I could look about without looking for the way out.
 - I rested {at}, glad to think back over the road instead of keeping pace with it.
-- I paused {at}, pleased to have a little time nobody had yet found a use for.
+- Pleased to have a little time nobody had yet found a use for, I paused {at}.
 - I rested {at}, with enough behind me to leave the unfinished things alone for a while.
 - I set the journey down {at}, hoping the next stretch would feel as manageable after some rest.

@@ -4,23 +4,27 @@ kind: quests-many
 - I had seen {n} tasks through by the end, and each had made the road a little less anonymous.
 - The {n} tasks behind me had given this stretch its shape, through people whose concerns had become my own for a while.
 - I thought back over {n} completed errands, remembering the people as readily as the work.
-- I had finished {n} jobs along the way, enough to feel that I had begun to find my place here.
+- {n} jobs had been seen through along the way, enough to feel that I had begun to find my place here.
 - By the end I had seen {n} tasks through, with more to remember than their names alone.
 - I had completed {n} tasks, and could begin to see how a journey took shape through other people's needs.
 - I looked back over {n} tasks, glad to have an account of what had occupied me.
 - I had brought {n} errands to an end, with {giver}'s the last still fresh in my thoughts.
 - The {n} tasks behind me made this feel like a stretch of my own life rather than simply a distance travelled.
 - I had finished {n} small jobs, and found myself thinking about how much of the journey lay in such ordinary work.
-- [hc] I looked back over {n} tasks, grateful that I still had the chance to consider them.
+- [hc] Grateful that I still had the chance to consider them, I looked back over {n} tasks.
 - [class:PALADIN] I had seen {n} tasks through, trying to give my convictions a place in ordinary work.
 - [class:HUNTER] The {n} tasks behind me had taught me to attend to the people along the road as well as the creatures beyond it.
 - [plain] I had finished {n} tasks.
 - [plain] That made {n} tasks in all.
 - [plain] In all, I had seen {n} tasks through.
 - [plain] The tasks came to {n}, the last for {giver}.
-- [plain] I had completed {n} tasks along the way.
+- [plain] {n} tasks had been seen through along the way.
 - [plain] I had done {n} tasks by the end.
 - [plain] The tasks numbered {n} by the time I stopped.
 - [plain] I had seen {n} tasks to their end.
 - [plain] That came to {n} tasks, {giver}'s the last.
 - [plain] All told, I had done {n} tasks.
+- {n} tasks were done by the end of it, and each had left a name behind.
+- By the end, {n} jobs were behind me, each with a face attached.
+- [plain] {n} tasks were done by the end of it.
+- [plain] The stretch saw {n} tasks through.

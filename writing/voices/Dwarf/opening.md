@@ -7,6 +7,6 @@ kind: opening
 - I set out {at}, with a mind to do the job properly and see something besides the job.
 - I made ready {at}, giving my gear the sort of look that saves trouble later.
 - I went on {at}, where a little patience would serve me better than a great deal of grumbling.
-- I began this stretch {at}, curious about the ground beneath the road as well as where it led.
+- Curious about the ground beneath the road as well as where it led, I began this stretch {at}.
 - I was ready to move {at}. The road was not going to shorten itself out of consideration.
 - I took up my account {at}, hoping the next page would have something worth bringing back to my kin.

@@ -5,7 +5,7 @@ kind: opening
 - I began again {at}. What was asked of me deserved an answer in deeds.
 - I set out {at}, determined to leave the place stronger for whatever work I could do.
 - I made ready {at}, with yesterday's mistakes worth carrying only if I had learned from them.
-- I went on {at}, conscious that freedom meant little if I let pride choose in my place.
+- Conscious that freedom meant little if I let pride choose in my place, I went on {at}.
 - I opened a fresh page {at}, ready to put my strength to something that would last.
 - I began this stretch {at}, where there was more to be done than to be said.
 - I took up my account {at}. A deed should bear its own weight without a boast to hold it up.

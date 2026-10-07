@@ -11,3 +11,7 @@ kind: c-boss
 - [class:PRIEST] lived to see {boss} fall, with much to consider about the fight
 - lived to see {boss} fall
 - finished off {boss}
+- [turn] {boss} fell at last
+- [turn] {boss} did not survive the fight
+- [turn] {boss} was the next to fall
+- [turn] it was {boss}'s turn to fall

@@ -2,11 +2,11 @@
 kind: rest
 ---
 - I rested {at}, letting my attention reach beyond the next thing to be done.
-- I settled {at}, grateful for a pause that asked nothing of my strength.
+- Grateful for a pause that asked nothing of my strength, I settled {at}.
 - I stopped {at}, and let my thoughts find a pace gentler than my feet had kept.
 - I rested {at}, content to be here without making anything more of the moment.
 - I paused {at}, with my shoulders easing as the day's hurry left them.
-- I rested {at}, thinking of the places I would like to see again without an errand before me.
+- Thinking of the places I would like to see again without an errand before me, I rested {at}.
 - I stopped {at}, glad to have time to feel the quiet after so much movement.
 - I rested {at}, with my tiredness plain to me now I no longer needed to go on.
 - I put the road aside {at}, and was pleased to find myself in no haste to take it up.
