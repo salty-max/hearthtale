@@ -1,0 +1,12 @@
+---
+kind: pvp-many
+---
+- I brought down {n} of {side} {at}, one after another.
+- By the time the fighting with {side} died down {at}, {n} of them had fallen to me.
+- Skirmishes with {side} {at} cost them {n} of their own.
+- I fought {side} {at}, and {n} of them did not get up.
+- {side} lost {n} of their own to me {at}.
+- I clashed with {side} again and again {at}; {n} of them fell.
+- The fighting with {side} went my way: {n} of them fell to me.
+- I held my ground against {side}, and {n} of them paid for it.
+- [hc] I fought {side} {at} and lived; {n} of them did not.

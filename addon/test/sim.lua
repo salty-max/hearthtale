@@ -465,6 +465,90 @@ for _, m in ipairs(last) do if m.k == "died" then died = died + 1 end end
 check(not K.closed and died == 1 and last[#last].sub == "Gol'Bolar Quarry" and told and not HearthtaleHall.lives[state.guid],
   "a death on a normal realm: told in its chapter, no Hall, the book goes on")
 
+-- How I came back from death: a ghost's run to my body, the spirit healer's
+-- bargain, a companion's resurrection; each a moment of its own.
+local function revived() local r = {} for _, m in ipairs(K.chapters[#K.chapters].log) do if m.k == "revived" then table.insert(r, m) end end return r end
+state.ghost, state.sub = true, "Kharanos"
+fire("PLAYER_ALIVE")
+G.wait(300)
+state.ghost, state.sub = false, "Gol'Bolar Quarry"
+fire("PLAYER_UNGHOST")
+local back = revived()[1]
+check(back and back.how == "corpse" and back.graveyard == "Kharanos" and back.took == 300, "a ghost's run back to my body: from which graveyard, how long")
+state.health = 0; fire("PLAYER_DEAD"); state.health = 100
+state.ghost = true; fire("PLAYER_ALIVE")
+state.ghost, state.auras[15007] = false, true
+fire("PLAYER_UNGHOST")
+state.auras[15007] = nil
+check(revived()[2] and revived()[2].how == "healer", "the spirit healer's bargain (its sickness tells it)")
+state.health = 0; fire("PLAYER_DEAD"); state.health = 100
+fire("RESURRECT_REQUEST", "Thessaly")
+fire("PLAYER_ALIVE")
+check(revived()[3] and revived()[3].how == "ally" and revived()[3].by == "Thessaly", "raised where I fell by a companion")
+
+-- The other side met in the open world: who, of what race and class; in a
+-- battleground, nothing at all.
+G.vanquish("Player-1-00AA", "Leofric", "Human", "PALADIN")
+local function told(k) local r = {} for _, m in ipairs(K.chapters[#K.chapters].log) do if m.k == k then table.insert(r, m) end end return r end
+local pvp = told("pvp")[1]
+check(pvp and pvp.name == "Leofric" and pvp.race == "Human" and pvp.class == "PALADIN", "a player of the other side killed: name, race and class")
+state.instance, state.instanceKind = "Warsong Gulch", "pvp"
+local before, killsBefore = #K.chapters[#K.chapters].log, K.chapters[#K.chapters].kills["Ragged Young Wolf"]
+G.vanquish("Player-1-00AB", "Aldwin", "Human", "WARRIOR")
+kill(1, 77)
+check(#K.chapters[#K.chapters].log == before and K.chapters[#K.chapters].kills["Ragged Young Wolf"] == killsBefore,
+  "a battleground is no part of the tale: no moment, no kill counted")
+state.instance, state.instanceKind = nil, nil
+
+-- A raid: one moment, its number, not every name.
+state.raid, state.party = true, { party1 = { name = "A", class = "MAGE" }, party2 = { name = "B", class = "PRIEST" }, party3 = { name = "C", class = "ROGUE" } }
+fire("GROUP_ROSTER_UPDATE"); fire("GROUP_ROSTER_UPDATE")
+local raids = told("group")
+check(#raids == 1 and raids[1].raid == 4, "a raid joined: one moment, how many")
+state.raid, state.party = nil, {}
+fire("GROUP_ROSTER_UPDATE")
+
+-- A stretch at a craft: one moment while the same thing keeps coming.
+for _ = 1, 3 do fire("CHAT_MSG_LOOT", "You create: " .. itemLink("Linen Bandage") .. ".") end
+fire("CHAT_MSG_LOOT", "You create: " .. itemLink("Heavy Linen Bandage") .. "x2.")
+local made = told("made")
+check(#made == 2 and made[1].n == 3 and made[2].n == 2, "what was made: one moment per thing, counted")
+
+-- A quest given up after its work was done: the work taken back.
+accept(190, "Bring Back the Mug", "Brewmaster", { text = "Lost Mug: 0/1", type = "item", numRequired = 1 })
+state.objectives[190][1].finished = true
+fire("QUEST_LOG_UPDATE")
+fire("QUEST_REMOVED", 190)
+local gone = told("done")
+check(gone[#gone] and gone[#gone].id == 190 and gone[#gone].abandoned, "a quest abandoned: its work is taken back")
+
+-- A quest shared by a companion: mine, its giver unknown (not the companion).
+state.target = { player = true, guid = "Player-1-00CC", name = "Thessaly" }
+accept(191, "Shared Errand", nil, { text = "Wolf Pelt: 0/3", type = "item", numRequired = 3 })
+state.target = nil
+check(HearthtaleChar.pending[191] and HearthtaleChar.pending[191].giver == nil, "a shared quest: mine, its giver not the companion who shared it")
+
+local text = ns.writeBook(K).chapters[#K.chapters].text
+check(text:find("ghost", 1, true) and text:find("spirit healer", 1, true) and text:find("Thessaly", 1, true)
+  and text:find("Leofric", 1, true) and text:find("Linen Bandages", 1, true) and not text:find("Mug", 1, true),
+  "the chapter tells them: the ghost, the healer, the companion, the duel won, the bandages; not the abandoned quest")
+
+-- The highest level the game allows: the journey's end. The chapter closes
+-- there, and nothing more is told.
+state.maxLevel = state.level + 1
+state.level = state.level + 1
+fire("PLAYER_LEVEL_UP", state.level)
+local endCh = K.chapters[#K.chapters]
+local count = #endCh.log
+kill(1, 78)
+fire("QUEST_ACCEPTED", 1, 192)
+check(K.finished and endCh.ended and endCh.ended.how == "summit" and #endCh.log == count,
+  "the highest level: the chapter closes, the journal ends, nothing more is told")
+local summit = ns.writeBook(K).chapters[#K.chapters].text
+io.write("    " .. summit:gsub("\n", " ") .. "\n")
+check(summit:find("level twenty%-four"), "its last words: the journey's end")
+state.maxLevel = nil
+
 if FOREVER then
   for i, faction in ipairs({ "Horde", "Alliance" }) do
     HearthtaleChar = nil

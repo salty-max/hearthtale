@@ -51,6 +51,10 @@ Books are private: only you see them. Ravenpost sends the book and who it belong
 
 `/hearthtale` (or `/ht`), or the book by the minimap, opens it: your portrait and who you are; the chapters on the left (a skull marks a close call, a star a rare); the chapter on the right. A second tab holds the Hall of the Fallen. When a chapter closes, a line in chat links to it.
 
+## In English
+
+The journal is written in English, and in English only for now. On a game client in another language, the names it uses (places, creatures, quests, items) come from your game, so they will appear in that language inside English sentences.
+
 ## Two packages
 
 Each game has its own file: pick the one for yours (the CurseForge app does it for you).

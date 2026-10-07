@@ -59,16 +59,18 @@ local function unitOf(u)
   if u == "target" and state.target then return CREATURES[state.target.id] end
   if u == "pet" and state.pet then return state.pet end
 end
-function UnitExists(u) return u == "player" or unitOf(u) ~= nil or (u == "npc" and state.npc ~= nil) or state.party[u] ~= nil end
-function UnitIsPlayer(u) return u == "player" or state.party[u] ~= nil end
+function UnitExists(u) return (u == "target" and state.target ~= nil and state.target.player == true) or u == "player" or unitOf(u) ~= nil or (u == "npc" and state.npc ~= nil) or state.party[u] ~= nil end
+function UnitIsPlayer(u) return u == "player" or state.party[u] ~= nil or (u == "target" and state.target ~= nil and state.target.player == true) end
 function UnitGUID(u)
   if u == "player" then return state.guid end
+  if u == "target" and state.target and state.target.player then return state.target.guid end
   if u == "target" and state.target then return creatureGuid(state.target.id, state.target.n) end
 end
 function UnitName(u)
   if u == "player" then return state.name or "Sealinedion" end
   if u == "npc" then return state.npc end
   if state.party[u] then return state.party[u].name end
+  if u == "target" and state.target and state.target.player then return state.target.name end
   local c = unitOf(u)
   return c and c.name
 end
@@ -89,8 +91,15 @@ function UnitHealth() return state.health end
 function UnitHealthMax() return 100 end
 function UnitIsDeadOrGhost() return state.health <= 0 end
 function GetNumGroupMembers() local n = 0 for _ in pairs(state.party) do n = n + 1 end return n > 0 and n + 1 or 0 end
-function IsInRaid() return false end
-function IsInInstance() return state.instance ~= nil, state.instance and "party" or "none" end
+function IsInRaid() return state.raid == true end
+function IsInInstance() return state.instance ~= nil, state.instance and (state.instanceKind or "party") or "none" end
+function UnitIsGhost() return state.ghost == true end
+function GetMaxPlayerLevel() return state.maxLevel or 60 end
+-- The other side's players met: guid = { class, race }.
+function GetPlayerInfoByGUID(guid)
+  local p = state.players and state.players[guid]
+  if p then return p.class, p.class, p.race, p.race, 2, p.name, "" end
+end
 function GetInstanceInfo() return state.instance end
 -- Items: { quality, item level, id }.
 local ITEMS = { ["Ragged Leather Gloves"] = { 1, 3, 1 }, ["Frostmane Leather Vest"] = { 2, 8, 2 }, ["Wolf Fang Necklace"] = { 2, 10, 3 } }
@@ -243,6 +252,22 @@ local function kill(id, n)
   combatLog = { clock, "PARTY_KILL", false, state.guid, "Sealinedion", 0, 0, creatureGuid(id, n), CREATURES[id].name, 0, 0 }
   fire("COMBAT_LOG_EVENT_UNFILTERED")
 end
+-- A player of the other side killed: who (guid, name), of what race and class.
+local function vanquish(guid, name, race, class)
+  state.players = state.players or {}
+  state.players[guid] = { name = name, race = race, class = class }
+  if FOREVER then
+    state.target = { player = true, guid = guid, name = name }
+    inCombat = true
+    fire("PLAYER_TARGET_CHANGED")
+    inCombat, deadTarget = false, true
+    fire("PLAYER_TARGET_CHANGED")
+    deadTarget, state.target = false, nil
+    return
+  end
+  combatLog = { clock, "PARTY_KILL", false, state.guid, "Sealinedion", 0, 0, guid, name .. "-Firemaw", 0, 0 }
+  fire("COMBAT_LOG_EVENT_UNFILTERED")
+end
 -- A creature to meet: its id (for kill()).
 local function creature(name, type, family, rank)
   for i, c in ipairs(CREATURES) do if c.name == name then return i end end
@@ -252,7 +277,7 @@ end
 
 return {
   ns = ns, D = D, state = state, fire = fire, printed = printed, panel = panel, toasted = toasted, linkHandlers = linkHandlers,
-  login = login, logout = logout, reload = reload, kill = kill, creature = creature, itemLink = itemLink, forever = FOREVER,
+  login = login, logout = logout, reload = reload, kill = kill, vanquish = vanquish, creature = creature, itemLink = itemLink, forever = FOREVER,
   secrets = secrets,
   -- time: the clock (and the hour of the day) or only the time played
   wait = function(s) clock, uptime = clock + s, uptime + s; state.hour = (state.hour + s / 3600) % 24 end,

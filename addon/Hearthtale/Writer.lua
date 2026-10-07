@@ -335,14 +335,25 @@ local ROUTINE = {
   ["c-skill"] = "r-lesson", ["c-prof"] = "r-lesson", ["c-travel"] = "r-road", ["c-return"] = "r-road",
   ["c-place"] = "r-road", ["c-inn"] = "r-inn", ["c-group"] = "r-company", ["c-report"] = "r-task",
 }
--- The last masters of the dungeons: their fall is a sentence of its own.
+-- The other side's people, as a sentence names them ("a night elf hunter").
+local RACE_NAME = { Human = "human", Dwarf = "dwarf", NightElf = "night elf", Gnome = "gnome", Draenei = "draenei",
+  Orc = "orc", Troll = "troll", Tauren = "tauren", Scourge = "Forsaken", BloodElf = "blood elf" }
+local HORDE_RACE = { Orc = true, Troll = true, Tauren = true, Scourge = true, BloodElf = true }
+local CLASS_NAME = { WARRIOR = "warrior", PALADIN = "paladin", HUNTER = "hunter", ROGUE = "rogue", PRIEST = "priest",
+  SHAMAN = "shaman", MAGE = "mage", WARLOCK = "warlock", DRUID = "druid" }
+
+-- The last masters of the dungeons and raids: their fall is a sentence of its own.
 local FINAL = {}
 for _, name in ipairs({ "Taragaman the Hungerer", "Mutanus the Devourer", "Edwin VanCleef", "Archmage Arugal",
   "Aku'mai", "Bazil Thredd", "Mekgineer Thermaplugg", "Charlga Razorflank", "Herod", "Arcanist Doan",
   "Bloodmage Thalnos", "High Inquisitor Whitemane", "Amnennar the Coldbringer", "Archaedas",
   "Chief Ukorz Sandscalp", "Princess Theradras", "Shade of Eranikus", "Emperor Dagran Thaurissan",
   "Overlord Wyrmthalak", "General Drakkisath", "King Gordok", "Immol'thar", "Prince Tortheldrin",
-  "Darkmaster Gandling", "Baron Rivendare", "Balnazzar" }) do FINAL[name] = true end
+  "Darkmaster Gandling", "Baron Rivendare", "Balnazzar",
+  -- raids
+  "Onyxia", "Ragnaros", "Nefarian", "Hakkar", "Ossirian the Unscarred", "C'Thun", "Kel'Thuzad",
+  "Prince Malchezaar", "Gruul the Dragonkiller", "Magtheridon", "Lady Vashj", "Kael'thas Sunstrider",
+  "Archimonde", "Illidan Stormrage", "Zul'jin", "Kil'jaeden" }) do FINAL[name] = true end
 
 -- Chapters before a remark may come back (none fresh left): sooner than
 -- that, the clause goes without.
@@ -827,7 +838,7 @@ function Book:chapter(n, ch)
   local pendingRoutine, pendingRemarks = 0, 0
   local prev -- the moment before the one being told
   local families = { quest = "work", kill = "work", boss = "work", loot = "work", gear = "work",
-    learned = "practice", skill = "practice", prof = "practice" }
+    learned = "practice", skill = "practice", prof = "practice", made = "practice" }
 
   -- The clauses so far, as one sentence: "I a.", "I a and b.", "I a, b and c."
   local function flush()
@@ -1021,6 +1032,8 @@ function Book:chapter(n, ch)
         seenHere[place] = true
         self.last, self.there = place, false
       end
+    elseif m.k == "done" and m.abandoned then
+      -- a quest given up: as if never done
     elseif m.k == "done" then
       -- a quest's work done: told where it happened
       if m.id then doneAt[m.id] = i end
@@ -1058,6 +1071,58 @@ function Book:chapter(n, ch)
       elseif not (killed and place == scene) then
         inScene(c_("c-kill", { foe = article(m.name) }, t))
         killed = true
+      end
+    elseif m.k == "group" and m.raid then
+      inScene(c_("c-raid", { n = words(m.raid) }))
+    elseif m.k == "made" then
+      -- a stretch at a craft: what was made, in one clause (the most first)
+      if not merged[i] then
+        local made, order, j = {}, {}, i
+        while ch.log[j] and (ch.log[j].k == "made" or ch.log[j].k == "skill") and (j == i or (ch.log[j].at or 0) - (ch.log[j - 1].at or 0) <= 1800) do
+          local x = ch.log[j]
+          if x.k == "made" then
+            local name = x.link and x.link:match("%[(.-)%]")
+            if name then
+              if not made[name] then table.insert(order, name) end
+              made[name] = (made[name] or 0) + (x.n or 1)
+            end
+            merged[j] = j ~= i or nil
+          end
+          j = j + 1
+        end
+        table.sort(order, function(a, b) return made[a] > made[b] end)
+        local list, total = {}, 0
+        for k, name in ipairs(order) do
+          total = total + made[name]
+          if k <= 3 then table.insert(list, made[name] > 1 and words(made[name]) .. " " .. things(name) or itemName(name)) end
+        end
+        if #order > 3 then table.insert(list, "more besides") end
+        inScene(c_("c-made", { things = listing(list) }, { lots = total >= 10 or nil }))
+      end
+    elseif m.k == "pvp" then
+      -- the other side, met in the open: one by name, race and class when
+      -- alone; several within a few minutes, together
+      if not merged[i] then
+        local fight, j = { m }, i + 1
+        while ch.log[j] do
+          if ch.log[j].k == "pvp" then
+            if (ch.log[j].at or 0) - (fight[#fight].at or 0) > 600 then break end
+            table.insert(fight, ch.log[j])
+            merged[j] = true
+          end
+          j = j + 1
+        end
+        if #fight == 1 and m.name then
+          local who = (RACE_NAME[m.race or ""] or "") .. (CLASS_NAME[m.class or ""] and " " .. CLASS_NAME[m.class] or "")
+          who = who:gsub("^ ", "")
+          alone("pvp-one", key, self:here({ name = m.name, who = who ~= "" and article(who) or nil }, place),
+            tags({ known = who ~= "" or nil }, m), m)
+        else
+          local horde = 0
+          for _, x in ipairs(fight) do if HORDE_RACE[x.race or ""] then horde = horde + 1 end end
+          alone("pvp-many", key, self:here({ n = words(#fight), side = horde * 2 >= #fight and "the Horde" or "the Alliance" }, place),
+            tags(nil, m), m)
+        end
       end
     elseif m.k == "group" then
       -- a group formed: those who joined together, in one clause
@@ -1131,6 +1196,10 @@ function Book:chapter(n, ch)
         alone("power", key, { spell = m.spell }, tags({ [m.kind or "form"] = true }, m), m)
       elseif m.k == "mount" or m.k == "riding" then
         alone(m.k, key, {}, tags(nil, m), m)
+      elseif m.k == "revived" then
+        -- back from death: how, where, how long it took
+        alone("revived", key, self:here({ by = m.by, graveyard = m.graveyard and mid(m.graveyard), time = m.took and playedWords(m.took) },
+          place), tags({ [m.how or "corpse"] = true }, m), m)
       elseif m.k == "petdied" then
         alone("petdied", key, self:here({ pet = m.name }, place), tags(nil, m), m)
       elseif m.k == "campfire" then
@@ -1206,6 +1275,9 @@ function Book:chapter(n, ch)
     self.onlyPlain = nil
     if e.how == "long" then
       say("night", "last", self:here({}, e.place), tags({ last = true, night = true }))
+    elseif e.how == "summit" then
+      -- the highest level: the journey's end, the journal's last words
+      say("summit", "last", self:here({ level = words(e.level or 60) }, e.place), tags({ last = true }))
     else
       say("rest", "last", self:here({ place = mid(e.place) }, e.place), tags({ fire = e.how == "campfire" or nil, last = true }))
     end

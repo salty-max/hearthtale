@@ -1,0 +1,11 @@
+---
+kind: c-raid
+---
+- joined a raid of {n}
+- made one of a raid {n} strong
+- fell in with a war band of {n}
+- took my place in a raid of {n}
+- joined a company of {n} bound for the same fight
+- stood in a raid of {n}
+- became one of a raid of {n}
+- marched with a raid {n} strong

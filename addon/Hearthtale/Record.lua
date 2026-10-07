@@ -80,6 +80,8 @@ local function chapter()
   local c = char()
   c.chapters = c.chapters or {}
   local ch = c.chapters[#c.chapters]
+  -- the journey ended: nothing opens or changes a chapter any more
+  if c.finished then return { log = {}, kills = {}, quests = 0, played = 0, gold = 0, company = {} } end
   if not ch or ch.ended then
     local zone, sub = where()
     -- where it starts is named by its opening: not a discovery too
@@ -97,7 +99,16 @@ end
 ns.chapter = chapter
 
 -- A moment, in order.
+local function battleground()
+  if not IsInInstance then return false end
+  local inside, kind = IsInInstance()
+  return inside and kind == "pvp"
+end
 local function moment(k, fields)
+  -- a battleground is no part of the tale (but for a level gained there);
+  -- nor anything after the journey's end (the highest level reached)
+  if k ~= "level" and battleground() then return end
+  if char().finished then return end
   local ch = chapter()
   local zone, sub = where()
   local m = fields or {}
@@ -315,8 +326,24 @@ if hooksecurefunc and TakeTaxiNode then
 end
 
 -- ── levels ───────────────────────────────────────────────────────────────────
+-- The highest level the game allows: the journey's end. The chapter closes
+-- there, and the journal with it.
+local function maxLevel()
+  local max = GetMaxPlayerLevel and GetMaxPlayerLevel()
+  if (not max or secret(max)) and MAX_PLAYER_LEVEL_TABLE and GetExpansionLevel then max = MAX_PLAYER_LEVEL_TABLE[GetExpansionLevel()] end
+  return (type(max) == "number" and max > 0) and max or 60
+end
 ns.on("PLAYER_LEVEL_UP", function(newLevel)
+  local c = char()
+  if c.finished then return end
   moment("level", { level = newLevel })
+  if not secret(newLevel) and newLevel >= maxLevel() then
+    local zone, sub = where()
+    local ch = chapter()
+    ch.ended = { at = now(), level = newLevel, zone = zone, sub = sub, place = sub or zone, how = "summit" }
+    c.finished = true
+    changed()
+  end
 end)
 
 -- ── quests ───────────────────────────────────────────────────────────────────
@@ -389,8 +416,9 @@ ns.on("QUEST_ACCEPTED", function(a, b)
   c.pending = c.pending or {}
   -- (a quest from an item: no npc; the target then only if a living friend,
   -- not the corpse the item came from)
+  -- (nor a player: a quest shared by a companion is mine, its giver unknown)
   local friendly = UnitExists and UnitExists("target") and not (UnitIsDead and UnitIsDead("target"))
-    and not (UnitCanAttack and UnitCanAttack("player", "target"))
+    and not (UnitCanAttack and UnitCanAttack("player", "target")) and not (UnitIsPlayer and UnitIsPlayer("target"))
   local giver = UnitName("npc") or (friendly and UnitName("target")) or nil
   local objectives = objectivesOf(id)
   c.pending[id] = { giver = (giver and not secret(giver)) and giver or nil, title = titleOf(id), objectives = objectives,
@@ -428,6 +456,23 @@ ns.on("QUEST_TURNED_IN", function(id)
   if c.pending then c.pending[id] = nil end
 end)
 
+-- A quest gone from the log without a turn-in (abandoned, failed): its work,
+-- if it was told, is taken back. (A moment later: a turn-in may be on its way.)
+ns.on("QUEST_REMOVED", function(id)
+  local function check()
+    local c = char()
+    if not (c.pending and c.pending[id]) then return end
+    c.pending[id] = nil
+    for _, ch in ipairs(c.chapters or {}) do
+      for _, m in ipairs(ch.log or {}) do
+        if m.k == "done" and m.id == id then m.abandoned = true end
+      end
+    end
+    changed()
+  end
+  if C_Timer then C_Timer.After(1, check) else check() end
+end)
+
 -- ── the creatures met (for their kind and rank when they die) ───────────────
 local units = {} -- guid = { name, kind, rank }
 local order = {}
@@ -452,6 +497,7 @@ ns.on("UPDATE_MOUSEOVER_UNIT", function() seen("mouseover") end)
 -- moment (the first of its kind for the character, an elite outside
 -- dungeons); a rare or a world boss always is.
 local function slain(guid, name)
+  if battleground() then return end
   local u = units[guid] or { name = name }
   if not u.name then return end
   local c, ch = char(), chapter()
@@ -475,6 +521,20 @@ local function slain(guid, name)
 end
 ns.slain = slain
 
+-- A player of the other side killed in the open world: who, of what race and
+-- class (a battleground's are no part of the tale).
+local function vanquished(guid, name)
+  if battleground() or not guid or secret(guid) then return end
+  local race, class
+  if GetPlayerInfoByGUID then
+    local _, englishClass, _, englishRace = GetPlayerInfoByGUID(guid)
+    if not secret(englishClass) then class = englishClass end
+    if not secret(englishRace) then race = englishRace end
+  end
+  if name and not secret(name) then name = name:match("^([^-]+)") end -- without the realm
+  moment("pvp", { name = (name and not secret(name)) and name or nil, race = race, class = class })
+end
+
 -- Classic: the combat log names the killer. Forever: corpses I fought.
 local lastHit
 if not ns.forever then
@@ -483,6 +543,8 @@ if not ns.forever then
     local me, pet = UnitGUID("player"), UnitGUID("pet")
     if sub == "PARTY_KILL" and (source == me or source == pet) and dest and dest:find("^Creature") then
       slain(dest, destName)
+    elseif sub == "PARTY_KILL" and (source == me or source == pet) and dest and dest:find("^Player") then
+      vanquished(dest, destName)
     elseif dest == me and sub == "ENVIRONMENTAL_DAMAGE" then
       local kind = select(12, CombatLogGetCurrentEventInfo())
       lastHit = { env = kind, at = now() }
@@ -500,7 +562,7 @@ else
     if not UnitIsDead("target") and not secret(mine) and not secret(theirs) and mine and theirs then fought[guid] = true end
     if UnitIsDead("target") and fought[guid] and not counted[guid] then
       counted[guid] = true
-      slain(guid, UnitName("target"))
+      if UnitIsPlayer("target") then vanquished(guid, UnitName("target")) else slain(guid, UnitName("target")) end
     end
   end)
 end
@@ -533,10 +595,19 @@ ns.on("UNIT_HEALTH", function(unit)
 end)
 
 -- ── company and dungeons ─────────────────────────────────────────────────────
+local inRaid = false
 ns.on("GROUP_ROSTER_UPDATE", function()
   local ch = chapter()
   ch.company = ch.company or {}
   local n = GetNumGroupMembers and GetNumGroupMembers() or 0
+  -- a raid: one moment, its number, not forty names
+  local raid = IsInRaid and IsInRaid()
+  if raid and not secret(raid) then
+    if not inRaid and not secret(n) then moment("group", { raid = n }) end
+    inRaid = true
+    return
+  end
+  inRaid = false
   for i = 1, n do
     local unit = IsInRaid and IsInRaid() and ("raid" .. i) or ("party" .. i)
     local name = UnitName(unit)
@@ -701,13 +772,25 @@ ns.on("PLAYER_EQUIPMENT_CHANGED", function() lookAtGear(char().worn == nil) end)
 ns.on("CHAT_MSG_LOOT", function(msg)
   if secret(msg) then return end
   local c = char()
-  for _, g in ipairs({ "LOOT_ITEM_CREATED_SELF", "LOOT_ITEM_CREATED_SELF_MULTIPLE" }) do
+  for _, g in ipairs({ "LOOT_ITEM_CREATED_SELF_MULTIPLE", "LOOT_ITEM_CREATED_SELF" }) do -- (the counted form first: the other matches it too)
     local p = pattern(g)
-    local link = p and msg:match(p) and msg:match("|c%x+|Hitem:[^|]+|h%[.-%]|h|r")
+    local found, many = nil, nil
+    if p then found, many = msg:match(p) end
+    local link = found and msg:match("|c%x+|Hitem:[^|]+|h%[.-%]|h|r")
     local id = link and tonumber(link:match("item:(%d+)"))
     if id then
       c.made = c.made or {}
       c.made[id] = true
+      -- what was made: one moment while the same thing keeps coming
+      local count = tonumber(many) or 1
+      local log = chapter().log
+      local last = log[#log]
+      if last and last.k == "made" and last.id == id and now() - last.at < 600 then
+        last.n, last.at = last.n + count, now()
+        changed()
+      else
+        moment("made", { id = id, link = link, n = count })
+      end
       return
     end
   end
@@ -796,6 +879,7 @@ ns.on("PLAYER_DEAD", function()
     inside = (IsInInstance and IsInInstance()) or nil }
   c.death = d
   c.deaths = (c.deaths or 0) + 1
+  c.dying = not c.hardcore and { at = now(), zone = zone, sub = sub } or nil
   if c.hardcore then
     -- the end: the chapter closes with the epitaph
     local ch = chapter()
@@ -806,4 +890,37 @@ ns.on("PLAYER_DEAD", function()
   end
   if ns.onDeath then ns.onDeath(d) end
   changed()
+end)
+
+-- After a death (a normal realm): how I came back. Raised where I fell by a
+-- companion (or my own soulstone, my own spirit); or as a ghost from the
+-- graveyard, back to my body, or the spirit healer's bargain there.
+local SICKNESS = 15007
+ns.on("RESURRECT_REQUEST", function(name)
+  local d = char().dying
+  if d and name and not secret(name) then d.by = name end
+end)
+ns.on("PLAYER_ALIVE", function()
+  local c = char()
+  local d = c.dying
+  if not d then return end
+  local ghost = UnitIsGhost and UnitIsGhost("player")
+  if ghost and not secret(ghost) then
+    local zone, sub = where()
+    d.released, d.graveyard = now(), sub or zone
+  else
+    c.dying = nil
+    moment("revived", { how = d.by and "ally" or "self", by = d.by, took = now() - d.at })
+  end
+end)
+ns.on("PLAYER_UNGHOST", function()
+  local c = char()
+  local d = c.dying
+  if not d then return end
+  c.dying = nil
+  local function told()
+    local healer = C_UnitAuras and C_UnitAuras.GetPlayerAuraBySpellID and hasAura(SICKNESS)
+    moment("revived", { how = healer and "healer" or "corpse", graveyard = d.graveyard, took = now() - (d.released or d.at) })
+  end
+  if C_Timer then C_Timer.After(1, told) else told() end
 end)

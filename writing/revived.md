@@ -1,0 +1,32 @@
+---
+kind: revived
+---
+- [corpse] I woke as a ghost at the graveyard in {graveyard} and ran back to my body; {time} later, I was myself again.
+- [corpse] My spirit rose at the graveyard in {graveyard}, and I crossed the land as a ghost to where my body lay.
+- [corpse] Death left me at the graveyard in {graveyard}. I ran back as a ghost and stepped into my body again.
+- [corpse] I walked as a ghost back to my body and took it up again {time} later.
+- [corpse] My ghost made the long walk back to where I had fallen, and I rose again.
+- [corpse] I ran back as a ghost through a grey, quiet world, found my body, and woke in it.
+- [corpse] As a ghost I found the way back to my body, and stepped into it again.
+- [corpse] The walk back from the graveyard, as a ghost, was long and strange; then I was alive again.
+- [healer] At the graveyard in {graveyard}, I took the spirit healer's bargain rather than run back, and woke weak and worn.
+- [healer] I would not make the run back: the spirit healer raised me at the graveyard, and the weakness stayed with me for a while.
+- [healer] The spirit healer brought me back, at a price paid in strength and in the state of my gear.
+- [healer] I let the spirit healer raise me at the graveyard, and paid for it in weakness.
+- [healer] Rather than walk back as a ghost, I took the spirit healer's help, and felt the cost for a long while.
+- [healer] The spirit healer returned me to life, weakened, and my gear the worse for it.
+- [healer] I chose the spirit healer over the long walk back, and woke drained.
+- [ally] {by} raised me where I fell, before my spirit had gone far.
+- [ally] I came back to {by}'s voice, called up from death where I lay.
+- [ally] {by} would not leave me dead; I rose where I had fallen.
+- [ally] {by} brought me back to life on the spot.
+- [ally] I owed my life to {by}, who raised me where I lay.
+- [ally] {by} called me back before I had to make the long walk as a ghost.
+- [ally] Thanks to {by}, I rose where I had fallen.
+- [self] I rose again where I had fallen, by means I had prepared for exactly this.
+- [self] Death did not keep me: I rose where I fell, as I had made sure I could.
+- [self] I came back where I had fallen, by my own preparation.
+- [self] What I had readied for this brought me back where I lay.
+- [self] I rose from where I had fallen; I had seen to that beforehand.
+- [self] I was ready for death this time, and got up again where it had found me.
+- [self] My own preparations raised me where I had fallen.

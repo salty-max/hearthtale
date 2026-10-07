@@ -152,7 +152,7 @@ local function life(race, class, hc, from, to)
     for _ = 1, rand(3, 22) do
       -- the returns to who asked, now and then, one or several in a row
       while #returns > 0 and chance(0.25) do add(m("quest", table.remove(returns, 1))) end
-      local r = rand(112)
+      local r = rand(118)
       local hunter = class == "HUNTER" and level >= 10
       if r > 100 then
         if r <= 103 then
@@ -175,6 +175,28 @@ local function life(race, class, hc, from, to)
           if hunter and not once[pet] then once[pet] = true; add(m("tame", { name = pet, family = chance(0.8) and one(FAMILIES) or nil })) end
         elseif r <= 111 then
           if hunter then add(m("petdied", { name = chance(0.9) and one(PETS) or nil })) end
+        elseif r == 113 then
+          -- the other side met in the open: one, or several in a few minutes
+          local races = { "Human", "Orc", "NightElf", "Scourge", "Tauren", "Gnome", "Dwarf", "Troll" }
+          local classes = { "WARRIOR", "MAGE", "PRIEST", "ROGUE", "HUNTER", "WARLOCK" }
+          for k = 1, one({ 1, 1, 2, 4 }) do
+            local known = chance(0.75)
+            local fight = m("pvp", { name = one(MATES), race = known and one(races) or nil, class = known and one(classes) or nil })
+            if k > 1 then fight.at = ch.log[#ch.log].at + 60 end
+            add(fight)
+          end
+        elseif r == 114 then
+          -- a stretch at a craft
+          for k = 1, rand(1, 4) do add(m("made", { link = "|cffffffff|Hitem:1|h[" .. one(THINGS) .. "]|h|r", n = rand(1, 12) })) end
+        elseif r == 115 then
+          if not hc then
+            add(m("died", { death = death(level, zone[1], sub) }))
+            local how = one({ "corpse", "corpse", "healer", "ally", "self" })
+            add(m("revived", { how = how, by = how == "ally" and one(MATES) or nil,
+              graveyard = chance(0.8) and one(zone[2]) or nil, took = rand(60, 900) }))
+          end
+        elseif r == 116 then
+          add(m("group", { raid = one({ 10, 20, 40 }) }))
         else
           add(m("loot", { link = "|cff0070dd|Hitem:1|h[" .. one(ITEMS) .. "]|h|r", quality = 3 }))
         end
@@ -254,7 +276,11 @@ local function life(race, class, hc, from, to)
       end
     end
     local lastOne = level >= to
-    if not lastOne or chance(0.5) then
+    if lastOne and to >= 60 and chance(0.7) then
+      -- the highest level: the journey's end
+      ch.ended = { level = 60, zone = zone[1], sub = sub, place = one(zone[2]), how = "summit" }
+      c.finished = true
+    elseif not lastOne or chance(0.5) then
       local how = one({ "rest", "rest", "campfire", "long" })
       ch.ended = { level = level, zone = zone[1], sub = sub, place = one(zone[2]), how = how }
       if how == "long" then table.insert(ch.log, m("night", { last = true })) end
