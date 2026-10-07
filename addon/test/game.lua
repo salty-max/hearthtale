@@ -14,9 +14,20 @@ function time() return clock end
 function GetTime() return uptime end
 date = os.date
 local state = {
-  level = 1, guid = "Player-6113-0ABCDEF0", zone = "Dun Morogh", sub = "Coldridge Valley", hour = 10,
-  money = 0, health = 100, hardcore = true, bind = "Anvilmar", party = {}, race = "Dwarf", class = "PALADIN",
-  gear = {}, skills = {},
+  level = 1,
+  guid = "Player-6113-0ABCDEF0",
+  zone = "Dun Morogh",
+  sub = "Coldridge Valley",
+  hour = 10,
+  money = 0,
+  health = 100,
+  hardcore = true,
+  bind = "Anvilmar",
+  party = {},
+  race = "Dwarf",
+  class = "PALADIN",
+  gear = {},
+  skills = {},
 }
 -- Items the client has loaded: until then it gives no info for one (asking
 -- loads it), and a quest's objective for it comes without its name ("0/8 ").
@@ -42,7 +53,9 @@ C_QuestLog = {
     local out = {}
     for i, o in ipairs(list) do
       local copy = {}
-      for k, v in pairs(o) do copy[k] = v end
+      for k, v in pairs(o) do
+        copy[k] = v
+      end
       local name, have, need = (o.text or ""):match("^(.-): (%d+)/(%d+)$")
       if name and o.type == "item" and not loaded[name] then
         loaded[name] = true -- (the log asks for it: named the next time)
@@ -55,7 +68,12 @@ C_QuestLog = {
   end,
   IsComplete = function(id)
     local list = state.objectives and state.objectives[id]
-    if list and #list > 0 then for _, o in ipairs(list) do if not o.finished then return false end end return true end
+    if list and #list > 0 then
+      for _, o in ipairs(list) do
+        if not o.finished then return false end
+      end
+      return true
+    end
     return state.complete ~= nil and state.complete[id] == true
   end,
 }
@@ -80,8 +98,18 @@ local function unitOf(u)
   if u == "target" and state.target then return CREATURES[state.target.id] end
   if u == "pet" and state.pet then return state.pet end
 end
-function UnitExists(u) return (u == "target" and state.target ~= nil and state.target.player == true) or u == "player" or unitOf(u) ~= nil or (u == "npc" and state.npc ~= nil) or state.party[u] ~= nil end
-function UnitIsPlayer(u) return u == "player" or state.party[u] ~= nil or (u == "target" and state.target ~= nil and state.target.player == true) end
+function UnitExists(u)
+  return (u == "target" and state.target ~= nil and state.target.player == true)
+    or u == "player"
+    or unitOf(u) ~= nil
+    or (u == "npc" and state.npc ~= nil)
+    or state.party[u] ~= nil
+end
+function UnitIsPlayer(u)
+  return u == "player"
+    or state.party[u] ~= nil
+    or (u == "target" and state.target ~= nil and state.target.player == true)
+end
 -- the unit a GUID is, if it is one now (the target, here)
 function UnitTokenFromGUID(guid)
   if state.target and UnitGUID("target") == guid then return "target" end
@@ -104,20 +132,45 @@ end
 function UnitLevel(u) return u == "player" and state.level or 1 end
 function UnitRace() return state.race, state.race end
 function UnitFactionGroup()
-  return state.faction or (({ Orc = true, Troll = true, Tauren = true, Scourge = true, BloodElf = true })[state.race] and "Horde" or "Alliance")
+  return state.faction
+    or (
+      ({ Orc = true, Troll = true, Tauren = true, Scourge = true, BloodElf = true })[state.race] and "Horde"
+      or "Alliance"
+    )
 end
-function UnitClass(u) if state.party[u] then return state.party[u].class, state.party[u].class end return state.class:sub(1, 1) .. state.class:sub(2):lower(), state.class end
+function UnitClass(u)
+  if state.party[u] then return state.party[u].class, state.party[u].class end
+  return state.class:sub(1, 1) .. state.class:sub(2):lower(), state.class
+end
 function UnitSex() return 3 end
-function UnitCreatureType(u) local c = unitOf(u); return c and c.type end
-function UnitCreatureFamily(u) local c = unitOf(u); return c and c.family end
-function UnitClassification(u) local c = unitOf(u); return c and c.rank end
-function UnitIsDead(u) if u == "pet" then return state.pet and state.pet.dead or false end return u == "target" and deadTarget end
+function UnitCreatureType(u)
+  local c = unitOf(u)
+  return c and c.type
+end
+function UnitCreatureFamily(u)
+  local c = unitOf(u)
+  return c and c.family
+end
+function UnitClassification(u)
+  local c = unitOf(u)
+  return c and c.rank
+end
+function UnitIsDead(u)
+  if u == "pet" then return state.pet and state.pet.dead or false end
+  return u == "target" and deadTarget
+end
 function UnitCanAttack(_, u) return u == "target" and state.target ~= nil end
 function UnitAffectingCombat(u) return inCombat and not (u == "target" and deadTarget) end
 function UnitHealth() return state.health end
 function UnitHealthMax() return 100 end
 function UnitIsDeadOrGhost() return state.health <= 0 end
-function GetNumGroupMembers() local n = 0 for _ in pairs(state.party) do n = n + 1 end return n > 0 and n + 1 or 0 end
+function GetNumGroupMembers()
+  local n = 0
+  for _ in pairs(state.party) do
+    n = n + 1
+  end
+  return n > 0 and n + 1 or 0
+end
 function IsInRaid() return state.raid == true end
 function IsInInstance() return state.instance ~= nil, state.instance and (state.instanceKind or "party") or "none" end
 function UnitIsGhost() return state.ghost == true end
@@ -129,16 +182,29 @@ function GetPlayerInfoByGUID(guid)
 end
 function GetInstanceInfo() return state.instance end
 -- Items: { quality, item level, id }.
-local ITEMS = { ["Ragged Leather Gloves"] = { 1, 3, 1 }, ["Frostmane Leather Vest"] = { 2, 8, 2 }, ["Wolf Fang Necklace"] = { 2, 10, 3 } }
+local ITEMS = {
+  ["Ragged Leather Gloves"] = { 1, 3, 1 },
+  ["Frostmane Leather Vest"] = { 2, 8, 2 },
+  ["Wolf Fang Necklace"] = { 2, 10, 3 },
+}
 local itemCount = 3
 -- (today's clients, Classic Era and Forever alike, have only C_Item.GetItemInfo)
-C_Item = { GetItemInfo = function(link)
-  local name = link:match("%[(.-)%]"); local i = ITEMS[name]
-  if not loaded[name] then loaded[name] = true return nil end -- (asking loads it)
-  if i then return name, link, i[1], i[2] end
-end }
+C_Item = {
+  GetItemInfo = function(link)
+    local name = link:match("%[(.-)%]")
+    local i = ITEMS[name]
+    if not loaded[name] then
+      loaded[name] = true
+      return nil
+    end -- (asking loads it)
+    if i then return name, link, i[1], i[2] end
+  end,
+}
 local function itemLink(name, quality)
-  if not ITEMS[name] then itemCount = itemCount + 1; ITEMS[name] = { quality or 2, 10, 100 + itemCount } end
+  if not ITEMS[name] then
+    itemCount = itemCount + 1
+    ITEMS[name] = { quality or 2, 10, 100 + itemCount }
+  end
   local colour = ({ [0] = "9d9d9d", "ffffff", "1eff00", "0070dd", "a335ee", "ff8000" })[ITEMS[name][1]] or "1eff00"
   return ("|cff%s|Hitem:%d::::::::1:::::|h[%s]|h|r"):format(colour, ITEMS[name][3], name)
 end
@@ -146,7 +212,10 @@ function GetInventoryItemLink(_, slot) return state.gear[slot] and itemLink(stat
 -- Skills: { name, header, max }, as the skills pane lists them.
 TRADE_SKILLS, SECONDARY_SKILLS = "Professions", "Secondary Skills"
 function GetNumSkillLines() return #state.skills end
-function GetSkillLineInfo(i) local s = state.skills[i]; return s[1], s[2], nil, nil, nil, nil, s[3] end
+function GetSkillLineInfo(i)
+  local s = state.skills[i]
+  return s[1], s[2], nil, nil, nil, nil, s[3]
+end
 function IsMounted() return state.mounted == true end
 -- The game's formats, as in its global strings.
 ERR_LEARN_SPELL_S = "You have learned a new spell: %s."
@@ -166,7 +235,11 @@ function TaxiNodeGetType(i) return i == 1 and "CURRENT" or "REACHABLE" end
 function TakeTaxiNode() end
 function hooksecurefunc(name, fn)
   local original = _G[name]
-  _G[name] = function(...) local r = original(...); fn(...); return r end
+  _G[name] = function(...)
+    local r = original(...)
+    fn(...)
+    return r
+  end
 end
 local combatLog
 function CombatLogGetCurrentEventInfo() return unpack(combatLog) end
@@ -176,22 +249,63 @@ local function ui()
   local o = { shown = false, scripts = {} }
   return setmetatable(o, {
     __index = function(t, k)
-      if k == "SetScript" then return function(self, name, fn) self.scripts[name] = fn end end
-      if k == "Show" then return function(self) self.shown = true; if self.scripts.OnShow then self.scripts.OnShow(self) end end end
-      if k == "Hide" then return function(self) self.shown = false end end
-      if k == "SetShown" then return function(self, v) if v then self:Show() else self:Hide() end end end
-      if k == "IsShown" then return function(self) return self.shown end end
-      if k == "SetText" then return function(self, v) self.text = v end end
-      if k == "GetText" then return function(self) return rawget(self, "text") or "" end end
-      if k == "GetStringHeight" then return function() return 14 end end
-      if k == "SetHeight" then return function(self, v) self.height = v end end
-      if k == "GetHeight" then return function(self) return rawget(self, "height") or 100 end end
-      if k == "SetVerticalScroll" then return function(self, v) self.vscroll = v end end
-      if k == "GetVerticalScroll" then return function(self) return rawget(self, "vscroll") or 0 end end
-      if k == "GetWidth" then return function() return 140 end end
-      if k == "GetCenter" then return function() return 0, 0 end end
-      if k == "GetEffectiveScale" then return function() return 1 end end
-      if k == "CreateFontString" or k == "CreateTexture" then return function() return ui() end end
+      if k == "SetScript" then
+        return function(self, name, fn) self.scripts[name] = fn end
+      end
+      if k == "Show" then
+        return function(self)
+          self.shown = true
+          if self.scripts.OnShow then self.scripts.OnShow(self) end
+        end
+      end
+      if k == "Hide" then
+        return function(self) self.shown = false end
+      end
+      if k == "SetShown" then
+        return function(self, v)
+          if v then
+            self:Show()
+          else
+            self:Hide()
+          end
+        end
+      end
+      if k == "IsShown" then
+        return function(self) return self.shown end
+      end
+      if k == "SetText" then
+        return function(self, v) self.text = v end
+      end
+      if k == "GetText" then
+        return function(self) return rawget(self, "text") or "" end
+      end
+      if k == "GetStringHeight" then
+        return function() return 14 end
+      end
+      if k == "SetHeight" then
+        return function(self, v) self.height = v end
+      end
+      if k == "GetHeight" then
+        return function(self) return rawget(self, "height") or 100 end
+      end
+      if k == "SetVerticalScroll" then
+        return function(self, v) self.vscroll = v end
+      end
+      if k == "GetVerticalScroll" then
+        return function(self) return rawget(self, "vscroll") or 0 end
+      end
+      if k == "GetWidth" then
+        return function() return 140 end
+      end
+      if k == "GetCenter" then
+        return function() return 0, 0 end
+      end
+      if k == "GetEffectiveScale" then
+        return function() return 1 end
+      end
+      if k == "CreateFontString" or k == "CreateTexture" then
+        return function() return ui() end
+      end
       return function() return t end
     end,
   })
@@ -203,7 +317,10 @@ function GetCursorPosition() return 0, 0 end
 local panel = { settings = {} }
 Settings = {
   VarType = { Boolean = "boolean", Number = "number" },
-  RegisterVerticalLayoutCategory = function(name) panel.name = name; return { GetID = function() return 42 end } end,
+  RegisterVerticalLayoutCategory = function(name)
+    panel.name = name
+    return { GetID = function() return 42 end }
+  end,
   RegisterProxySetting = function(_, variable, _, name, default, get, set)
     local s = { variable = variable, name = name, default = default, get = get, set = set }
     panel.settings[variable] = s
@@ -228,7 +345,7 @@ function CreateFrame(_, name, _, template)
     if FOREVER and e == "COMBAT_LOG_EVENT_UNFILTERED" then error("COMBAT_LOG_EVENT_UNFILTERED: forbidden") end
     -- (PARTY_KILL, an event of its own: on Forever; the Classic run plays an
     -- older client without it, its kills from the combat log)
-    if not FOREVER and e == "PARTY_KILL" then error("Attempt to register unknown event \"PARTY_KILL\"") end
+    if not FOREVER and e == "PARTY_KILL" then error('Attempt to register unknown event "PARTY_KILL"') end
     self.registered[e] = true
   end
   function f:UnregisterEvent(e) self.registered[e] = nil end
@@ -236,7 +353,9 @@ function CreateFrame(_, name, _, template)
   function f:RegisterUnitEvent(e, ...)
     self:RegisterEvent(e)
     self.unitsOf[e] = {}
-    for _, unit in ipairs({ ... }) do self.unitsOf[e][unit] = true end
+    for _, unit in ipairs({ ... }) do
+      self.unitsOf[e][unit] = true
+    end
   end
   table.insert(frames, f)
   if name then _G[name] = f end
@@ -248,7 +367,10 @@ end
 local function fire(e, ...)
   local heard = false
   for _, f in ipairs(frames) do
-    if hears(f, e, ...) then f.scripts.OnEvent(f, e, ...); heard = true end
+    if hears(f, e, ...) then
+      f.scripts.OnEvent(f, e, ...)
+      heard = true
+    end
   end
   assert(heard, "nobody listens to " .. e)
 end
@@ -263,16 +385,21 @@ end
 local toasted = {}
 function GetRealmName() return state.realm or "Nightslayer" end
 function GetCurrentRegion() return state.region or 3 end
-C_AddOns = { GetAddOnMetadata = function(name, key) return name == "Hearthtale" and key == "Version" and "0.2.0" or nil end }
+C_AddOns =
+  { GetAddOnMetadata = function(name, key) return name == "Hearthtale" and key == "Version" and "0.2.0" or nil end }
 C_XMLUtil = { GetTemplateInfo = function(name) return name ~= "PanelTabButtonTemplate" or nil end }
-AlertFrame = { AddQueuedAlertFrameSubSystem = function(_, _, setUp)
-  return { AddAlert = function(_, guid)
-    local frame = ui()
-    frame.Icon, frame.Title, frame.Name = ui(), ui(), ui()
-    setUp(frame, guid)
-    table.insert(toasted, frame)
-  end }
-end }
+AlertFrame = {
+  AddQueuedAlertFrameSubSystem = function(_, _, setUp)
+    return {
+      AddAlert = function(_, guid)
+        local frame = ui()
+        frame.Icon, frame.Title, frame.Name = ui(), ui(), ui()
+        setUp(frame, guid)
+        table.insert(toasted, frame)
+      end,
+    }
+  end,
+}
 local linkHandlers = {}
 LinkUtil = { RegisterLinkHandler = function(kind, fn) linkHandlers[kind] = fn end }
 LinkProcessorResponse = { Handled = 2 }
@@ -293,9 +420,16 @@ function IsIndoors() return state.indoors == true end
 -- (a creature someone else hit first: not mine to claim)
 function UnitIsTapDenied(u) return u == "target" and state.target ~= nil and state.target.tapped == true end
 C_UnitAuras = { GetPlayerAuraBySpellID = function(id) return state.auras[id] and { spellId = id } or nil end }
-local function login() fire("PLAYER_LOGIN"); fire("PLAYER_ENTERING_WORLD", true, false) end
+local function login()
+  fire("PLAYER_LOGIN")
+  fire("PLAYER_ENTERING_WORLD", true, false)
+end
 local function logout() fire("PLAYER_LOGOUT") end
-local function reload() fire("PLAYER_LOGOUT"); fire("PLAYER_LOGIN"); fire("PLAYER_ENTERING_WORLD", false, true) end
+local function reload()
+  fire("PLAYER_LOGOUT")
+  fire("PLAYER_LOGIN")
+  fire("PLAYER_ENTERING_WORLD", false, true)
+end
 -- Kills.
 local function kill(id, n, tapped)
   state.target = { id = id, n = n, tapped = tapped }
@@ -314,7 +448,8 @@ local function kill(id, n, tapped)
     return
   end
   fire("PLAYER_TARGET_CHANGED")
-  combatLog = { clock, "PARTY_KILL", false, state.guid, "Sealinedion", 0, 0, creatureGuid(id, n), CREATURES[id].name, 0, 0 }
+  combatLog =
+    { clock, "PARTY_KILL", false, state.guid, "Sealinedion", 0, 0, creatureGuid(id, n), CREATURES[id].name, 0, 0 }
   fire("COMBAT_LOG_EVENT_UNFILTERED")
 end
 -- A player of the other side killed: who (guid, name), of what race and class.
@@ -336,21 +471,51 @@ local function vanquish(guid, name, race, class)
 end
 -- A creature to meet: its id (for kill()).
 local function creature(name, type, family, rank)
-  for i, c in ipairs(CREATURES) do if c.name == name then return i end end
+  for i, c in ipairs(CREATURES) do
+    if c.name == name then return i end
+  end
   table.insert(CREATURES, { name = name, type = type, family = family, rank = rank or "normal" })
   return #CREATURES
 end
 
 return {
-  ns = ns, D = D, state = state, fire = fire, printed = printed, panel = panel, toasted = toasted, linkHandlers = linkHandlers,
-  login = login, logout = logout, reload = reload, kill = kill, vanquish = vanquish, creature = creature, itemLink = itemLink, forever = FOREVER,
+  ns = ns,
+  D = D,
+  state = state,
+  fire = fire,
+  printed = printed,
+  panel = panel,
+  toasted = toasted,
+  linkHandlers = linkHandlers,
+  login = login,
+  logout = logout,
+  reload = reload,
+  kill = kill,
+  vanquish = vanquish,
+  creature = creature,
+  itemLink = itemLink,
+  forever = FOREVER,
   secrets = secrets,
   -- time: the clock (and the hour of the day) or only the time played
-  wait = function(s) clock, uptime = clock + s, uptime + s; state.hour = (state.hour + s / 3600) % 24 end,
+  wait = function(s)
+    clock, uptime = clock + s, uptime + s
+    state.hour = (state.hour + s / 3600) % 24
+  end,
   played = function(s) uptime = uptime + s end,
-  sleep = function(s) clock = clock + s; state.hour = (state.hour + s / 3600) % 24 end, -- logged out
+  sleep = function(s)
+    clock = clock + s
+    state.hour = (state.hour + s / 3600) % 24
+  end, -- logged out
   clock = function() return clock end,
   portrait = function() return portraitOf end,
-  corpse = function(id, n) state.target = { id = id, n = n }; deadTarget = true; fire("PLAYER_TARGET_CHANGED"); deadTarget = false end,
-  fall = function() combatLog = { clock, "ENVIRONMENTAL_DAMAGE", false, nil, nil, 0, 0, state.guid, "Sealinedion", 0, 0, "FALLING", 120 } end,
+  corpse = function(id, n)
+    state.target = { id = id, n = n }
+    deadTarget = true
+    fire("PLAYER_TARGET_CHANGED")
+    deadTarget = false
+  end,
+  fall = function()
+    combatLog =
+      { clock, "ENVIRONMENTAL_DAMAGE", false, nil, nil, 0, 0, state.guid, "Sealinedion", 0, 0, "FALLING", 120 }
+  end,
 }

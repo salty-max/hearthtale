@@ -19,7 +19,9 @@ local copy = ns.copy
 -- called with the chapter's Scene and the moment: fn(s, m).
 local function kinds(...)
   local set = {}
-  for _, k in ipairs({ ... }) do set[k] = true end
+  for _, k in ipairs({ ... }) do
+    set[k] = true
+  end
   return set
 end
 local function match(m, arms, s)
@@ -67,12 +69,16 @@ function tell.place(s, m)
     b.last = nil
     -- a land seen for the first time: described, else the plain line
     local land = b:sceneryOf(m.zone, m.night)
-    if land then s:append(land) else s:alone("zone", { zone = mid(m.zone) }, s:tags(nil, m)) end
+    if land then
+      s:append(land)
+    else
+      s:alone("zone", { zone = mid(m.zone) }, s:tags(nil, m))
+    end
     b.last = nil
     s:enter(nil, nil)
-    local town = m.sub and b:sceneryOf(m.sub, m.night)
-    if town then
-      s:append(town)
+    local described = m.sub and b:sceneryOf(m.sub, m.night)
+    if described then
+      s:append(described)
       s:enter(m.sub, m.zone)
       b.last, b.there = m.sub, false
     elseif m.sub then
@@ -83,12 +89,12 @@ function tell.place(s, m)
     end
   elseif m.sub or m.zone then
     local here = m.sub or m.zone
-    local town = b:sceneryOf(here, m.night)
-    if town then
+    local described = b:sceneryOf(here, m.night)
+    if described then
       -- a town seen for the first time: described, in its own sentences
       s:flush()
       if #s.current >= 3 then s:newParagraph() end
-      s:append(#s.current > 0 and linked(b:link(m, s.prev, s.key), town) or town)
+      s:append(#s.current > 0 and linked(b:link(m, s.prev, s.key), described) or described)
       s:enter(here, m.zone)
       b.last, b.there = here, false
     else
@@ -139,8 +145,8 @@ function tell.kill(s, m)
   local t = { one = true, teeth = TEETH[m.kind or ""], mechanical = m.kind == "Mechanical" or nil }
   local people = foeOf(m.name, m.kind)
   if people then t[people] = true end
-  if m.quarry or SKIP[m.kind or ""] then -- told by its quest, or not a fight
-  elseif m.first and KINDS[m.kind] then
+  if m.quarry or SKIP[m.kind or ""] then return end -- told by its quest, or not a fight
+  if m.first and KINDS[m.kind] then
     s:tell("c-first", { kind = KINDS[m.kind] }, t)
   elseif m.elite then
     s:tell("c-elite", { foe = namedElite(m.name) and m.name or article(m.name) })
@@ -152,11 +158,15 @@ function tell.kill(s, m)
 end
 function tell.raid(s, m) s:tell("c-raid", { n = words(m.raid) }) end
 -- a stretch at a craft: what was made, in one clause (the most first)
-function tell.made(s, m)
+function tell.made(s)
   local log, i = s.ch.log, s.i
   if s.merged[i] then return end
   local made, order, j = {}, {}, i
-  while log[j] and (log[j].k == "made" or log[j].k == "skill") and (j == i or (log[j].at or 0) - (log[j - 1].at or 0) <= 1800) do
+  while
+    log[j]
+    and (log[j].k == "made" or log[j].k == "skill")
+    and (j == i or (log[j].at or 0) - (log[j - 1].at or 0) <= 1800)
+  do
     local x = log[j]
     if x.k == "made" then
       local name = linkName(x)
@@ -194,13 +204,23 @@ function tell.pvp(s, m)
   if #fight == 1 and m.name then
     local who = (RACE_NAME[m.race or ""] or "") .. (CLASS_NAME[m.class or ""] and " " .. CLASS_NAME[m.class] or "")
     who = who:gsub("^ ", "")
-    s:alone("pvp-one", b:here({ name = m.first or m.name, who = who ~= "" and article(who) or nil }, s.place),
-      s:tags({ known = who ~= "" or nil }, m), m)
+    s:alone(
+      "pvp-one",
+      b:here({ name = m.first or m.name, who = who ~= "" and article(who) or nil }, s.place),
+      s:tags({ known = who ~= "" or nil }, m),
+      m
+    )
   else
     local horde = 0
-    for _, x in ipairs(fight) do if HORDE_RACE[x.race or ""] then horde = horde + 1 end end
-    s:alone("pvp-many", b:here({ n = words(#fight), side = horde * 2 >= #fight and "the Horde" or "the Alliance" }, s.place),
-      s:tags(nil, m), m)
+    for _, x in ipairs(fight) do
+      if HORDE_RACE[x.race or ""] then horde = horde + 1 end
+    end
+    s:alone(
+      "pvp-many",
+      b:here({ n = words(#fight), side = horde * 2 >= #fight and "the Horde" or "the Alliance" }, s.place),
+      s:tags(nil, m),
+      m
+    )
   end
 end
 -- a group formed: those who joined together, in one clause (by their first
@@ -214,7 +234,9 @@ function tell.group(s, m)
     s.merged[j] = true
     j = j + 1
   end
-  for _, name in ipairs(names) do if #s.mates < 4 then table.insert(s.mates, name) end end
+  for _, name in ipairs(names) do
+    if #s.mates < 4 then table.insert(s.mates, name) end
+  end
   s:tell("c-group", { mates = listing(names) }, { one = #names == 1 or nil })
 end
 -- a dungeon's last master: a sentence of its own
@@ -224,12 +246,24 @@ function tell.boss(s, m) s:tell("c-boss", { boss = m.name, dungeon = mid(s.dunge
 function tell.learned(s, m)
   local spells = {}
   for _, sp in ipairs(m.spells) do
-    if not ((s.c.profs or {})[sp] or sp:find("^Apprentice ") or sp:find("^Journeyman ") or sp:find("^Expert ")
-      or sp:find("^Artisan ") or sp:find("^Master ")) then table.insert(spells, sp) end
+    if
+      not (
+        (s.c.profs or {})[sp]
+        or sp:find("^Apprentice ")
+        or sp:find("^Journeyman ")
+        or sp:find("^Expert ")
+        or sp:find("^Artisan ")
+        or sp:find("^Master ")
+      )
+    then
+      table.insert(spells, sp)
+    end
   end
   if #spells > 0 then
     local named = {}
-    for j = 1, math.min(#spells, 3) do named[j] = spells[j] end
+    for j = 1, math.min(#spells, 3) do
+      named[j] = spells[j]
+    end
     s:tell("c-trainer", { spells = listing(named) }, { many = #spells > 3 or nil, one = #spells == 1 or nil })
   end
 end
@@ -244,7 +278,11 @@ end
 function tell.gearOrLoot(s, m)
   local item = linkName(m)
   if item then
-    s:tell("c-" .. m.k, { item = itemName(item) }, { made = m.made or nil, held = m.held or nil, fine = (m.quality or 2) >= 3 or nil })
+    s:tell(
+      "c-" .. m.k,
+      { item = itemName(item) },
+      { made = m.made or nil, held = m.held or nil, fine = (m.quality or 2) >= 3 or nil }
+    )
   end
   s.found = m.k == "loot" and item or nil
 end
@@ -252,7 +290,9 @@ function tell.tame(s, m) s:tell("c-tame", { pet = m.name, family = m.family and 
 
 -- The moments of their own, each its own sentence, where it happened.
 local own = {}
-function own.rare(s, m) s:alone("rare", s.book:here({ foe = m.name }, s.place), s:tags({ elite = m.elite or nil }, m), m) end
+function own.rare(s, m)
+  s:alone("rare", s.book:here({ foe = m.name }, s.place), s:tags({ elite = m.elite or nil }, m), m)
+end
 function own.close(s, m)
   local b = s.book
   if #s.current >= 3 then s:newParagraph() end
@@ -261,10 +301,14 @@ function own.close(s, m)
   if m.foe and last and last.name == m.foe and (b.told or 0) - last.told <= 1 then
     foe = last.many and "one of them" or (m.foe and "another " .. m.foe)
   end
-  s:alone(m.hp <= 5 and "close-deep" or "close-light", b:here({ foe = foe }, s.place),
-    s:tags({ night = m.night or false, foe = m.foe ~= nil }, m), m)
+  s:alone(
+    m.hp <= 5 and "close-deep" or "close-light",
+    b:here({ foe = foe }, s.place),
+    s:tags({ night = m.night or false, foe = m.foe ~= nil }, m),
+    m
+  )
 end
-function own.died(s, m) s:alone("died", s.book:here({ foe = deathFoe(m.death, article) }, s.place), deathTags(m.death), m) end
+function own.died(s, m) s:alone("died", s.book:here({ foe = deathFoe(m.death) }, s.place), deathTags(m.death), m) end
 function own.dungeon(s, m)
   local b = s.book
   s.dungeon = m.name
@@ -281,8 +325,15 @@ function own.power(s, m) s:alone("power", { spell = m.spell }, s:tags({ [m.kind 
 function own.ride(s, m) s:alone(m.k, {}, s:tags(nil, m), m) end
 -- back from death: how, where, how long it took
 function own.revived(s, m)
-  s:alone("revived", s.book:here({ by = m.by, graveyard = m.graveyard and mid(m.graveyard), time = m.took and playedWords(m.took) },
-    s.place), s:tags({ [m.how or "corpse"] = true }, m), m)
+  s:alone(
+    "revived",
+    s.book:here(
+      { by = m.by, graveyard = m.graveyard and mid(m.graveyard), time = m.took and playedWords(m.took) },
+      s.place
+    ),
+    s:tags({ [m.how or "corpse"] = true }, m),
+    m
+  )
 end
 function own.petdied(s, m) s:alone("petdied", s.book:here({ pet = m.name }, s.place), s:tags(nil, m), m) end
 function own.campfire(s, m) s:alone("campfire", s.book:here({}, s.place), s:tags(nil, m), m) end
@@ -300,6 +351,7 @@ function own.wake(s, m)
   local indoors = m.inside and m.after ~= "rest"
   s:alone(indoors and "wake-in" or "wake", s.book:here({}, s.place), s:tags({ rest = m.after == "rest" or nil }, m))
 end
+-- selene: allow(mixed_table) -- (an arm: { kind, fn, when = guard })
 local OWN = {
   { "rare", own.rare },
   { "close", own.close },
@@ -316,13 +368,12 @@ local OWN = {
 }
 function tell.own(s, m)
   s:flush() -- before its place is worked out: "there" depends on the sentence before
-  if s.place and s.place ~= s.scene then
-    s:enter(s.place, m.zone)
-  end
+  if s.place and s.place ~= s.scene then s:enter(s.place, m.zone) end
   match(m, OWN, s)
 end
 
 -- Each moment by the first arm that fits it, in this order.
+-- selene: allow(mixed_table) -- (an arm: { kind, fn, when = guard })
 local ARMS = {
   { "_", nothing, when = function(s, m) return m == s.startPlace end }, -- told by the opening
   { "_", nothing, when = function(s) return s.relog[s.i] end }, -- a relog: no night
@@ -359,8 +410,12 @@ local function opening(s)
   if start.zone then b.placeNames[start.zone] = true end
   local first = s.n == 1 and (c.began and c.began.level or 1) == 1 and s.lvl == 1
   if where then
-    local line = b:say(first and "beginning" or "opening", s.n .. "|open", b:here({ where = mid(where) }, where),
-      s:tags({ night = start.night or nil }))
+    local line = b:say(
+      first and "beginning" or "opening",
+      s.n .. "|open",
+      b:here({ where = mid(where) }, where),
+      s:tags({ night = start.night or nil })
+    )
     if line then s:append(line) end
     -- a life's first page: the land it begins in
     local land = first and b:sceneryOf(start.zone, start.night)
@@ -401,7 +456,10 @@ local function ending(s, e)
     plainUnless("quests")
     local giver
     for i = #ch.log, 1, -1 do
-      if ch.log[i].k == "quest" and ch.log[i].giver then giver = ch.log[i].giver break end
+      if ch.log[i].k == "quest" and ch.log[i].giver then
+        giver = ch.log[i].giver
+        break
+      end
     end
     say("quests-many", "recap-q", { n = words(ch.quests), giver = giver }, s:tags())
   end
@@ -411,16 +469,29 @@ local function ending(s, e)
   plainUnless("kills")
   if x and x.n >= 3 then
     if y and y.n >= 3 then
-      say("kills-two", "recap-k", b:here({ n1 = words(x.n), foes1 = plural(x.name), n2 = words(y.n), foes2 = plural(y.name) }, nil),
-        s:tags({ lots = x.n >= 15 or nil }))
+      say(
+        "kills-two",
+        "recap-k",
+        b:here({ n1 = words(x.n), foes1 = plural(x.name), n2 = words(y.n), foes2 = plural(y.name) }, nil),
+        s:tags({ lots = x.n >= 15 or nil })
+      )
     else
-      say("kills", "recap-k", b:here({ n = words(x.n), foes = plural(x.name) }, nil), s:tags({ lots = x.n >= 15 or nil }))
+      say(
+        "kills",
+        "recap-k",
+        b:here({ n = words(x.n), foes = plural(x.name) }, nil),
+        s:tags({ lots = x.n >= 15 or nil })
+      )
     end
   end
   local played = ch.played or 0
   plainUnless("closing")
-  say("closing", "end", { time = playedWords(played), gold = goldWords(ch.gold) },
-    s:tags({ slow = played > 7200 or nil, quick = (played > 0 and played < 1800) or nil, rest = e.how == "rest" or nil }))
+  say(
+    "closing",
+    "end",
+    { time = playedWords(played), gold = goldWords(ch.gold) },
+    s:tags({ slow = played > 7200 or nil, quick = (played > 0 and played < 1800) or nil, rest = e.how == "rest" or nil })
+  )
   s.onlyPlain = false
   if e.how == "long" then
     say(e.inside and "night-in" or "night", "last", b:here({}, e.place), s:tags({ last = true, night = true }))
@@ -428,7 +499,12 @@ local function ending(s, e)
     -- the highest level: the journey's end, the journal's last words
     say("summit", "last", b:here({ level = words(e.level or 60) }, e.place), s:tags({ last = true }))
   else
-    say("rest", "last", b:here({ place = mid(e.place) }, e.place), s:tags({ fire = e.how == "campfire" or nil, last = true }))
+    say(
+      "rest",
+      "last",
+      b:here({ place = mid(e.place) }, e.place),
+      s:tags({ fire = e.how == "campfire" or nil, last = true })
+    )
   end
 end
 
@@ -453,20 +529,36 @@ function Book:chapter(n, ch)
   return s:text()
 end
 
-
 function Book:prologue(p)
   local zone = p.zone
-  return self:say("prologue", "prologue", self:here({
-    zone = mid(zone), quests = (p.quests or 0) > 1 and words(p.quests) or nil,
-    inn = mid(p.inn), played = playedWords(p.played),
-  }, zone), {})
+  return self:say(
+    "prologue",
+    "prologue",
+    self:here({
+      zone = mid(zone),
+      quests = (p.quests or 0) > 1 and words(p.quests) or nil,
+      inn = mid(p.inn),
+      played = playedWords(p.played),
+    }, zone),
+    {}
+  )
 end
 
 -- The epitaph of a Hardcore life, in the third person: how it ended (a line
 -- telling the cause wins), what it was (its totals, a rare, a dungeon), and a
 -- farewell (often in the voice of its race or class).
-local RACE = { Human = "human", Dwarf = "dwarf", NightElf = "night elf", Gnome = "gnome", Draenei = "draenei",
-  Orc = "orc", Troll = "troll", Tauren = "tauren", Scourge = "Forsaken", BloodElf = "blood elf" }
+local RACE = {
+  Human = "human",
+  Dwarf = "dwarf",
+  NightElf = "night elf",
+  Gnome = "gnome",
+  Draenei = "draenei",
+  Orc = "orc",
+  Troll = "troll",
+  Tauren = "tauren",
+  Scourge = "Forsaken",
+  BloodElf = "blood elf",
+}
 function Book:epitaph(c)
   local d = c.death or {}
   local race, class = RACE[c.race] or "", (c.class or ""):lower()
@@ -481,23 +573,37 @@ function Book:epitaph(c)
   -- character's, race and class, which are not a cause)
   local cause = deathTags(d)
   cause.low, cause.high = tags.low, tags.high -- a short life or a long one says how it ended too
-  local first = self:say("epitaph", "epitaph", self:here({ name = c.name, who = who, level = words(d.level or 0),
-    zone = mid(d.zone), foe = deathFoe(d, article) }, place), tags, cause)
+  local first = self:say(
+    "epitaph",
+    "epitaph",
+    self:here({ name = c.name, who = who, level = words(d.level or 0), zone = mid(d.zone), foe = deathFoe(d) }, place),
+    tags,
+    cause
+  )
 
   local quests, kills, played, rare, dungeon, zones = 0, 0, 0, nil, nil, 0
   for _, ch in ipairs(c.chapters or {}) do
     quests = quests + (ch.quests or 0)
     played = played + (ch.played or 0)
-    for _, n in pairs(ch.kills or {}) do kills = kills + n end
+    for _, n in pairs(ch.kills or {}) do
+      kills = kills + n
+    end
     for _, m in ipairs(ch.log or {}) do
       if m.k == "rare" then rare = rare or m.name end
       if m.k == "dungeon" then dungeon = dungeon or m.name end
     end
   end
-  for key in pairs(c.visited or {}) do if key:sub(-1) == "|" then zones = zones + 1 end end
+  for key in pairs(c.visited or {}) do
+    if key:sub(-1) == "|" then zones = zones + 1 end
+  end
   local second = self:say("remembrance", "remembrance", {
-    name = c.name, played = playedWords(played), quests = quests > 1 and words(quests) or nil, -- "one tasks": no
-    kills = kills > 1 and words(kills) or nil, rare = rare, dungeon = mid(dungeon), zones = zones > 1 and words(zones) or nil,
+    name = c.name,
+    played = playedWords(played),
+    quests = quests > 1 and words(quests) or nil, -- "one tasks": no
+    kills = kills > 1 and words(kills) or nil,
+    rare = rare,
+    dungeon = mid(dungeon),
+    zones = zones > 1 and words(zones) or nil,
   }, { low = tags.low, high = tags.high, inside = tags.inside })
   local third = self:say("farewell", "farewell", { name = c.name }, { low = tags.low })
   if not first then return nil end
@@ -518,9 +624,15 @@ local function entry(b, i, ch)
   local e = ch.ended
   if e and e.level then to = math.max(to, e.level) end
   return {
-    number = i, text = b:chapter(i, ch), chapter = ch, open = not e or nil,
+    number = i,
+    text = b:chapter(i, ch),
+    chapter = ch,
+    open = not e or nil,
     place = e and e.place or (ch.start and (ch.start.sub or ch.start.zone)),
-    from = ch.start and ch.start.level or 1, to = to, rare = rare, close = close,
+    from = ch.start and ch.start.level or 1,
+    to = to,
+    rare = rare,
+    close = close,
   }
 end
 
@@ -529,12 +641,23 @@ end
 -- lesson). Any change, and the book is written again whole.
 local function identity(c)
   local p, trades = c.prologue or {}, {}
-  for name in pairs(c.profs or {}) do trades[#trades + 1] = name end
+  for name in pairs(c.profs or {}) do
+    trades[#trades + 1] = name
+  end
   table.sort(trades)
   return table.concat({
-    tostring(c.guid), tostring(c.race), tostring(c.class), tostring(c.faction), tostring(c.hardcore),
-    tostring(c.began and c.began.level), tostring(p.level), tostring(p.quests), tostring(p.inn), tostring(p.zone),
-    tostring(p.played), table.concat(trades, ","),
+    tostring(c.guid),
+    tostring(c.race),
+    tostring(c.class),
+    tostring(c.faction),
+    tostring(c.hardcore),
+    tostring(c.began and c.began.level),
+    tostring(p.level),
+    tostring(p.quests),
+    tostring(p.inn),
+    tostring(p.zone),
+    tostring(p.played),
+    table.concat(trades, ","),
   }, "|")
 end
 
@@ -569,13 +692,19 @@ end
 function ns.writeBook(c, keep)
   local chapters = c.chapters or {}
   local closed = 0
-  while chapters[closed + 1] and chapters[closed + 1].ended do closed = closed + 1 end
+  while chapters[closed + 1] and chapters[closed + 1].ended do
+    closed = closed + 1
+  end
   local b, book, from = newBook(c), { chapters = {} }, 1
   local kept = keep and reusable(keep, c, closed)
   if kept then
-    for k, v in pairs(keep.state) do b[k] = copy(v) end
+    for k, v in pairs(keep.state) do
+      b[k] = copy(v)
+    end
     book.prologue = keep.prologue
-    for i = 1, keep.closed do book.chapters[i] = keep.chapters[i] end
+    for i = 1, keep.closed do
+      book.chapters[i] = keep.chapters[i]
+    end
     from = keep.closed + 1
   elseif c.prologue then
     book.prologue = b:prologue(c.prologue)
@@ -584,7 +713,9 @@ function ns.writeBook(c, keep)
   local function remember()
     keep.identity, keep.closed, keep.prologue, keep.state = identity(c), closed, book.prologue, snapshot(b)
     keep.records, keep.chapters = {}, {}
-    for i = 1, closed do keep.records[i], keep.chapters[i] = chapters[i], book.chapters[i] end
+    for i = 1, closed do
+      keep.records[i], keep.chapters[i] = chapters[i], book.chapters[i]
+    end
   end
   if keep and not kept and closed == 0 then remember() end
   for i = from, #chapters do

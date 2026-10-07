@@ -8,18 +8,29 @@ assert(loadfile(DIR .. "Data_Classic.lua"))("Hearthtale", ns)
 assert(loadfile(DIR .. "Names.lua"))("Hearthtale", ns)
 dofile("addon/test/writer-files.lua")(ns, DIR)
 local ok, D = pcall(dofile, ".cache/audit/game.lua")
-if not ok then io.stderr:write("no game data: run bun scripts/audit-data.ts\n") os.exit(1) end
+if not ok then
+  io.stderr:write("no game data: run bun scripts/audit-data.ts\n")
+  os.exit(1)
+end
 
-local function sorted(t) table.sort(t) return t end
+local function sorted(t)
+  table.sort(t)
+  return t
+end
 local function section(title, lines)
   io.write(("\n## %s (%d)\n\n"):format(title, #lines))
-  for _, l in ipairs(sorted(lines)) do io.write(l, "\n") end
+  for _, l in ipairs(sorted(lines)) do
+    io.write(l, "\n")
+  end
 end
 
 -- Places: as the writer names them inside a sentence.
 local places, seen = {}, {}
 for _, name in pairs(D.zones) do
-  if not seen[name] then seen[name] = true; table.insert(places, ("I reached %s."):format(ns.mid(name))) end
+  if not seen[name] then
+    seen[name] = true
+    table.insert(places, ("I reached %s."):format(ns.mid(name)))
+  end
 end
 section("places", places)
 
@@ -42,8 +53,11 @@ io.write(("\n(%d creatures with several spawn points: always an article)\n"):for
 local tasks, results = {}, {}
 for id, q in pairs(D.quests) do
   for _, t in ipairs(q.texts or {}) do
-    if t ~= "" and ns.instruction(t) then table.insert(tasks, ("I managed to %s. [%d %s]"):format(ns.taskOf(t), id, q.title))
-    elseif t ~= "" then table.insert(results, ("%s [%d %s]"):format(t, id, q.title)) end
+    if t ~= "" and ns.instruction(t) then
+      table.insert(tasks, ("I managed to %s. [%d %s]"):format(ns.taskOf(t), id, q.title))
+    elseif t ~= "" then
+      table.insert(results, ("%s [%d %s]"):format(t, id, q.title))
+    end
   end
 end
 section("event objectives told as tasks", tasks)
@@ -76,7 +90,10 @@ section("finds (blue and better)", finds)
 local problems = {}
 local function never(pattern, lines, what)
   for _, l in ipairs(lines) do
-    if (l:gsub(" %[.*$", "")):find(pattern) then table.insert(problems, what .. ": " .. l) break end
+    if (l:gsub(" %[.*$", "")):find(pattern) then
+      table.insert(problems, what .. ": " .. l)
+      break
+    end
   end
 end
 never("^I reached The ", places, "a place with its own article, capitalised")
@@ -85,17 +102,43 @@ never("^I killed an? Mr%. ", named, "an article before a title")
 never("^I managed to %u", tasks, "a task starting in capitals")
 never("^I managed to .* The ", tasks, "a capitalised article inside a task")
 never("an? An? ", things, "two articles")
-for _, title in ipairs({ "Baron", "Lord", "Lady", "Captain", "King", "Queen", "General", "Commander", "Chief", "Prince",
-  "Overlord", "Archmage", "Foreman", "Sergeant", "Lieutenant", "Marshal" }) do
+for _, title in ipairs({
+  "Baron",
+  "Lord",
+  "Lady",
+  "Captain",
+  "King",
+  "Queen",
+  "General",
+  "Commander",
+  "Chief",
+  "Prince",
+  "Overlord",
+  "Archmage",
+  "Foreman",
+  "Sergeant",
+  "Lieutenant",
+  "Marshal",
+}) do
   never("an? " .. title .. " %u%a*'s ", things, "an article before a titled owner")
   never("an? " .. title .. " %u%a*'s ", finds, "an article before a titled owner")
 end
 for _, l in ipairs(results) do
-  if l:find("^%l") then table.insert(problems, "a result told as a task: " .. l) break end
+  if l:find("^%l") then
+    table.insert(problems, "a result told as a task: " .. l)
+    break
+  end
 end
 if #problems > 0 then
   io.stderr:write(table.concat(problems, "\n"), "\n")
   os.exit(1)
 end
-io.stderr:write(("all good (audit: %d places, %d creatures, %d objectives, %d quest items, %d finds)\n")
-  :format(#places, #named + #generic, #tasks + #results, #things, #finds))
+io.stderr:write(
+  ("all good (audit: %d places, %d creatures, %d objectives, %d quest items, %d finds)\n"):format(
+    #places,
+    #named + #generic,
+    #tasks + #results,
+    #things,
+    #finds
+  )
+)

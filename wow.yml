@@ -1,0 +1,213 @@
+# The game's globals the addon uses (selene.toml), and its own: saved
+# variables and the slash command.
+base: lua51
+name: wow
+globals:
+  AlertFrame:
+    any: true
+  AlertFrame_OnClick:
+    any: true
+  AlertFrame_SetDuration:
+    any: true
+  ButtonFrameTemplate_HideButtonBar:
+    any: true
+  C_AddOns:
+    any: true
+  C_GameRules:
+    any: true
+  C_Item:
+    any: true
+  C_QuestLog:
+    any: true
+  C_Timer:
+    any: true
+  C_UnitAuras:
+    any: true
+  C_XMLUtil:
+    any: true
+  CombatLogGetCurrentEventInfo:
+    any: true
+  CreateFrame:
+    any: true
+  GameTooltip:
+    any: true
+  GetAddOnMetadata:
+    any: true
+  GetBindLocation:
+    any: true
+  GetBuildInfo:
+    any: true
+  GetCurrentRegion:
+    any: true
+  GetCursorPosition:
+    any: true
+  GetExpansionLevel:
+    any: true
+  GetGameTime:
+    any: true
+  GetInstanceInfo:
+    any: true
+  GetInventoryItemLink:
+    any: true
+  GetItemInfo:
+    any: true
+  GetLocale:
+    any: true
+  GetMaxPlayerLevel:
+    any: true
+  GetMoney:
+    any: true
+  GetNumGroupMembers:
+    any: true
+  GetNumQuestLeaderBoards:
+    any: true
+  GetNumSkillLines:
+    any: true
+  GetPlayerInfoByGUID:
+    any: true
+  GetProfessionInfo:
+    any: true
+  GetProfessions:
+    any: true
+  GetQuestID:
+    any: true
+  GetQuestLogIndexByID:
+    any: true
+  GetQuestLogLeaderBoard:
+    any: true
+  GetQuestsCompleted:
+    any: true
+  GetRealZoneText:
+    any: true
+  GetRealmName:
+    any: true
+  GetSkillLineInfo:
+    any: true
+  GetSubZoneText:
+    any: true
+  GetTime:
+    any: true
+  GetTitleForQuestID:
+    any: true
+  HearthtaleChar:
+    any: true
+  HearthtaleHall:
+    any: true
+  HearthtaleSettings:
+    any: true
+  IsInInstance:
+    any: true
+  IsInRaid:
+    any: true
+  IsIndoors:
+    any: true
+  IsMounted:
+    any: true
+  IsQuestComplete:
+    any: true
+  IsResting:
+    any: true
+  LinkProcessorResponse:
+    any: true
+  LinkUtil:
+    any: true
+  MAX_PLAYER_LEVEL_TABLE:
+    any: true
+  Minimap:
+    any: true
+  NumTaxiNodes:
+    any: true
+  PanelTemplates_SetNumTabs:
+    any: true
+  PanelTemplates_SetTab:
+    any: true
+  PanelTemplates_TabResize:
+    any: true
+  PlaySound:
+    any: true
+  SECONDARY_SKILLS:
+    any: true
+  SLASH_HEARTHTALE1:
+    any: true
+  SLASH_HEARTHTALE2:
+    any: true
+  SOUNDKIT:
+    any: true
+  STANDARD_TEXT_FONT:
+    any: true
+  SetItemRef:
+    any: true
+  SetPortraitTexture:
+    any: true
+  Settings:
+    any: true
+  SlashCmdList:
+    any: true
+  TRADE_SKILLS:
+    any: true
+  TakeTaxiNode:
+    any: true
+  TaxiNodeGetType:
+    any: true
+  TaxiNodeName:
+    any: true
+  UIParent:
+    any: true
+  UISpecialFrames:
+    any: true
+  UnitAffectingCombat:
+    any: true
+  UnitBuff:
+    any: true
+  UnitCanAttack:
+    any: true
+  UnitClass:
+    any: true
+  UnitClassification:
+    any: true
+  UnitCreatureFamily:
+    any: true
+  UnitCreatureType:
+    any: true
+  UnitExists:
+    any: true
+  UnitFactionGroup:
+    any: true
+  UnitGUID:
+    any: true
+  UnitHealth:
+    any: true
+  UnitHealthMax:
+    any: true
+  UnitIsDead:
+    any: true
+  UnitIsDeadOrGhost:
+    any: true
+  UnitIsGhost:
+    any: true
+  UnitIsPlayer:
+    any: true
+  UnitIsTapDenied:
+    any: true
+  UnitLevel:
+    any: true
+  UnitName:
+    any: true
+  UnitRace:
+    any: true
+  UnitSex:
+    any: true
+  UnitTokenFromGUID:
+    any: true
+  date:
+    any: true
+  geterrorhandler:
+    any: true
+  hooksecurefunc:
+    any: true
+  issecretvalue:
+    any: true
+  strtrim:
+    any: true
+  time:
+    any: true

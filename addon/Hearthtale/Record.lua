@@ -54,7 +54,8 @@ local secret = ns.secret
 local LINK = "|c[^|]+|Hitem:[^|]+|h%[.-%]|h|r"
 -- A link's own quality, from its colour: always there, even for an item the
 -- game hasn't loaded yet (whose info it doesn't have to give).
-local QUALITY_COLOUR = { ["9d9d9d"] = 0, ffffff = 1, ["1eff00"] = 2, ["0070dd"] = 3, a335ee = 4, ff8000 = 5, e6cc80 = 6 }
+local QUALITY_COLOUR =
+  { ["9d9d9d"] = 0, ffffff = 1, ["1eff00"] = 2, ["0070dd"] = 3, a335ee = 4, ff8000 = 5, e6cc80 = 6 }
 local function linkQuality(link)
   local q = link:match("^|cnIQ(%d+):")
   if q then return tonumber(q) end
@@ -69,7 +70,9 @@ local function itemInfo(link)
   local api = (C_Item and C_Item.GetItemInfo) or GetItemInfo
   if api then
     local ok, n, _, q = pcall(api, link)
-    if ok then name, quality = n, q end
+    if ok then
+      name, quality = n, q
+    end
   end
   return name or link:match("|h%[(.-)%]|h"), quality or linkQuality(link)
 end
@@ -84,8 +87,8 @@ local function playerName(first, second)
 end
 ns.playerName = playerName
 
-local CAP = 4 * 3600      -- a chapter's play time after which any logout closes it
-local MIN_MOMENTS = 3     -- what a chapter needs before a rest can close it
+local CAP = 4 * 3600 -- a chapter's play time after which any logout closes it
+local MIN_MOMENTS = 3 -- what a chapter needs before a rest can close it
 -- The auras of a campfire: Cozy Fire (the cooking fires, both games), and
 -- Forever's camps (Welcoming Campfire, Well Rested).
 local FIRES = { 7353, 7358, 1232234, 1229739, 1289723, 1225478 }
@@ -107,7 +110,9 @@ local function where()
   if secret(sub) or sub == "" or sub == zone then sub = nil end
   return zone, sub
 end
-local function changed() if ns.onRecord then ns.onRecord() end end
+local function changed()
+  if ns.onRecord then ns.onRecord() end
+end
 
 -- ── the chapter in progress ──────────────────────────────────────────────────
 local function chapter()
@@ -124,8 +129,14 @@ local function chapter()
       c.visited[zone .. "|"] = true
       c.visited[zone .. "|" .. (sub or "")] = true
     end
-    ch = { start = { at = now(), level = UnitLevel("player"), zone = zone, sub = sub, night = night() },
-      log = {}, kills = {}, quests = 0, played = 0, gold = 0 }
+    ch = {
+      start = { at = now(), level = UnitLevel("player"), zone = zone, sub = sub, night = night() },
+      log = {},
+      kills = {},
+      quests = 0,
+      played = 0,
+      gold = 0,
+    }
     table.insert(c.chapters, ch)
   end
   return ch
@@ -202,9 +213,12 @@ ns.on("PLAYER_LOGIN", function()
   if not c.prologue and (c.began.level or 1) > 1 then
     local done = GetQuestsCompleted and GetQuestsCompleted()
     local n = 0
-    for _ in pairs(done or {}) do n = n + 1 end
+    for _ in pairs(done or {}) do
+      n = n + 1
+    end
     local zone = where()
-    c.prologue = { level = c.began.level, quests = n, inn = GetBindLocation and GetBindLocation(), zone = zone, gold = GetMoney() }
+    c.prologue =
+      { level = c.began.level, quests = n, inn = GetBindLocation and GetBindLocation(), zone = zone, gold = GetMoney() }
   end
   sessionFrom = GetTime()
   c.money = GetMoney()
@@ -222,7 +236,9 @@ local function hasAura(id)
   return ok and aura ~= nil
 end
 local isFire = {}
-for _, id in ipairs(FIRES) do isFire[id] = true end
+for _, id in ipairs(FIRES) do
+  isFire[id] = true
+end
 local function byFire()
   if C_UnitAuras and C_UnitAuras.GetPlayerAuraBySpellID then
     for _, id in ipairs(FIRES) do
@@ -248,7 +264,12 @@ ns.onUnit("UNIT_AURA", "player", function()
   if fire and not warm then
     local ch, zone, sub = chapter(), where()
     local last
-    for i = #ch.log, 1, -1 do if ch.log[i].k == "campfire" then last = ch.log[i] break end end
+    for i = #ch.log, 1, -1 do
+      if ch.log[i].k == "campfire" then
+        last = ch.log[i]
+        break
+      end
+    end
     if not (last and now() - last.at < 3600 and last.zone == zone and last.sub == sub) then moment("campfire") end
   end
   warm = fire
@@ -260,9 +281,17 @@ ns.on("PLAYER_LOGOUT", function()
   local zone, sub = where()
   local rest = IsResting and IsResting()
   local inside = IsIndoors and IsIndoors()
-  char().logout = { at = now(), rest = (rest and not secret(rest)) or nil, fire = byFire() or nil,
-    zone = zone, sub = sub, place = sub or zone, level = UnitLevel("player"), night = night() or nil,
-    inside = (inside and not secret(inside)) or nil }
+  char().logout = {
+    at = now(),
+    rest = (rest and not secret(rest)) or nil,
+    fire = byFire() or nil,
+    zone = zone,
+    sub = sub,
+    place = sub or zone,
+    level = UnitLevel("player"),
+    night = night() or nil,
+    inside = (inside and not secret(inside)) or nil,
+  }
 end)
 
 local function close(ch, how, l, ahead)
@@ -295,11 +324,22 @@ local function settle(l, c, ahead)
     note("night", { last = true })
     close(ch, "long", l, ahead)
   else
-    if rested then note("rested", { place = l.place, fire = l.fire }) else note("night", {}) end
+    if rested then
+      note("rested", { place = l.place, fire = l.fire })
+    else
+      note("night", {})
+    end
     if ahead then return end
     local zone, sub = where()
-    table.insert(ch.log, { k = "wake", at = now(), night = night() or nil, after = rested and "rest" or "night",
-      zone = zone or l.zone, sub = sub or l.sub, inside = l.inside })
+    table.insert(ch.log, {
+      k = "wake",
+      at = now(),
+      night = night() or nil,
+      after = rested and "rest" or "night",
+      zone = zone or l.zone,
+      sub = sub or l.sub,
+      inside = l.inside,
+    })
   end
 end
 
@@ -337,7 +377,9 @@ local function moved()
   c.visited[zone .. "|"] = true
   -- a dungeon's own name: its entry tells it (PLAYER_ENTERING_WORLD below)
   local inside, kind
-  if IsInInstance then inside, kind = IsInInstance() end
+  if IsInInstance then
+    inside, kind = IsInInstance()
+  end
   if inside and (kind == "party" or kind == "raid") and not sub then return end
   -- a chapter begun before the game said where (Forever, at login): this is
   -- where it began, not an arrival
@@ -348,7 +390,9 @@ local function moved()
   end
   moment("place", { new = newZone and "zone" or nil })
 end
-for _, e in ipairs({ "ZONE_CHANGED_NEW_AREA", "ZONE_CHANGED", "ZONE_CHANGED_INDOORS" }) do ns.on(e, moved) end
+for _, e in ipairs({ "ZONE_CHANGED_NEW_AREA", "ZONE_CHANGED", "ZONE_CHANGED_INDOORS" }) do
+  ns.on(e, moved)
+end
 ns.on("PLAYER_ENTERING_WORLD", moved)
 
 ns.on("HEARTHSTONE_BOUND", function()
@@ -371,7 +415,9 @@ end
 -- there, and the journal with it.
 local function maxLevel()
   local max = GetMaxPlayerLevel and GetMaxPlayerLevel()
-  if (not max or secret(max)) and MAX_PLAYER_LEVEL_TABLE and GetExpansionLevel then max = MAX_PLAYER_LEVEL_TABLE[GetExpansionLevel()] end
+  if (not max or secret(max)) and MAX_PLAYER_LEVEL_TABLE and GetExpansionLevel then
+    max = MAX_PLAYER_LEVEL_TABLE[GetExpansionLevel()]
+  end
   return (type(max) == "number" and max > 0) and max or 60
 end
 ns.on("PLAYER_LEVEL_UP", function(newLevel)
@@ -393,7 +439,8 @@ end)
 -- by then). Classic passes (index, id), Forever (id).
 local function titleOf(id)
   return (C_QuestLog and C_QuestLog.GetTitleForQuestID and C_QuestLog.GetTitleForQuestID(id))
-    or (GetTitleForQuestID and GetTitleForQuestID(id)) or nil
+    or (GetTitleForQuestID and GetTitleForQuestID(id))
+    or nil
 end
 
 -- What a quest asks, from the quest log: its objectives' lines ("Kobold
@@ -403,7 +450,9 @@ local function rawObjectives(id)
   local raw = {}
   if C_QuestLog and C_QuestLog.GetQuestObjectives then
     local ok, list = pcall(C_QuestLog.GetQuestObjectives, id)
-    for _, o in ipairs(ok and list or {}) do table.insert(raw, { text = o.text, type = o.type, n = o.numRequired, finished = o.finished }) end
+    for _, o in ipairs(ok and list or {}) do
+      table.insert(raw, { text = o.text, type = o.type, n = o.numRequired, finished = o.finished })
+    end
   elseif GetQuestLogIndexByID and GetNumQuestLeaderBoards and GetQuestLogLeaderBoard then
     local index = GetQuestLogIndexByID(id)
     if index and index > 0 then
@@ -425,7 +474,9 @@ local function finishedAll(id)
     local ok, done = pcall(api, id)
     return ok and not secret(done) and (done == true or done == 1)
   end
-  for _, o in ipairs(raw) do if not o.finished then return false end end
+  for _, o in ipairs(raw) do
+    if not o.finished then return false end
+  end
   return true
 end
 local function objectivesOf(id)
@@ -436,7 +487,11 @@ local function objectivesOf(id)
       local name, n, have, own
       for _, g in ipairs({ "QUEST_MONSTERS_KILLED", "QUEST_OBJECTS_FOUND" }) do
         local a, b, c = ns.match(g, o.text)
-        if a then name, have, n = a, tonumber(b), tonumber(c) own = g ~= "QUEST_MONSTERS_KILLED" break end
+        if a then
+          name, have, n = a, tonumber(b), tonumber(c)
+          own = g ~= "QUEST_MONSTERS_KILLED"
+          break
+        end
       end
       -- a name the game hasn't filled in yet (an item not loaded: "0/8 "): the
       -- objectives aren't known yet, and are read again at the next update
@@ -446,14 +501,15 @@ local function objectivesOf(id)
       end
       -- a kill told in the quest's own words ("Peons Awoken: 0/5"): its text,
       -- not a creature's name
-      if o.type == "monster" and own then o.text, name = name, nil end
+      if o.type == "monster" and own then
+        o.text, name = name, nil
+      end
       -- an item already in hand when the quest is taken: a thing to deliver
       local held = o.type == "item" and (o.finished or (have and n and have >= n)) or nil
       -- (an event's count, before or after it: "0/1 Find the camp", "Find the camp: 0/1")
       local event = not name and (o.text:gsub(":%s*%d+/%d+$", ""):gsub("^%d+/%d+%s*", "")) or nil
       if event and not event:find("%S") then return nil end -- nothing but a count yet
-      table.insert(out, { type = o.type, name = name, n = n or o.n, text = event,
-        held = held })
+      table.insert(out, { type = o.type, name = name, n = n or o.n, text = event, held = held })
     end
   end
   return #out > 0 and out or nil
@@ -466,12 +522,19 @@ ns.on("QUEST_ACCEPTED", function(a, b)
   -- (a quest from an item: no npc; the target then only if a living friend,
   -- not the corpse the item came from)
   -- (nor a player: a quest shared by a companion is mine, its giver unknown)
-  local friendly = UnitExists and UnitExists("target") and not (UnitIsDead and UnitIsDead("target"))
-    and not (UnitCanAttack and UnitCanAttack("player", "target")) and not (UnitIsPlayer and UnitIsPlayer("target"))
+  local friendly = UnitExists
+    and UnitExists("target")
+    and not (UnitIsDead and UnitIsDead("target"))
+    and not (UnitCanAttack and UnitCanAttack("player", "target"))
+    and not (UnitIsPlayer and UnitIsPlayer("target"))
   local giver = UnitName("npc") or (friendly and UnitName("target")) or nil
   local objectives = objectivesOf(id)
-  c.pending[id] = { giver = (giver and not secret(giver)) and giver or nil, title = titleOf(id), objectives = objectives,
-    held = finishedAll(id) or nil } -- done from the start: nothing to tell before the turn-in
+  c.pending[id] = {
+    giver = (giver and not secret(giver)) and giver or nil,
+    title = titleOf(id),
+    objectives = objectives,
+    held = finishedAll(id) or nil,
+  } -- done from the start: nothing to tell before the turn-in
 end)
 -- The quest log fills in after the acceptance (the objectives, once known),
 -- and tells when a quest's work is done: told then and there, where it
@@ -517,8 +580,14 @@ ns.on("QUEST_TURNED_IN", function(id)
   named(id, c.pending and c.pending[id])
   local ch = chapter()
   ch.quests = ch.quests + 1
-  moment("quest", { id = id, title = titleOf(id) or p.title, giver = p.giver, ender = ender, objectives = p.objectives,
-    told = p.done or nil }) -- told: its work was told when done
+  moment("quest", {
+    id = id,
+    title = titleOf(id) or p.title,
+    giver = p.giver,
+    ender = ender,
+    objectives = p.objectives,
+    told = p.done or nil,
+  }) -- told: its work was told when done
   ender = nil
   if c.pending then c.pending[id] = nil end
 end)
@@ -538,25 +607,30 @@ ns.on("QUEST_REMOVED", function(id)
     end
     changed()
   end
-  if C_Timer then C_Timer.After(1, check) else check() end
+  if C_Timer then
+    C_Timer.After(1, check)
+  else
+    check()
+  end
 end)
 
 -- ── the creatures met (for their kind and rank when they die) ───────────────
 local units = {} -- guid = { name, kind, rank }
-local order = {}
+local seenOrder = {} -- their guids, the oldest first (the last 300 kept)
 local function seen(unit)
   if not UnitExists(unit) or UnitIsPlayer(unit) then return end
   local guid = UnitGUID(unit)
   if not guid or secret(guid) or units[guid] then return end
-  local name, ctype, family, rank = UnitName(unit), UnitCreatureType(unit), UnitCreatureFamily(unit), UnitClassification(unit)
+  local name, ctype, family, rank =
+    UnitName(unit), UnitCreatureType(unit), UnitCreatureFamily(unit), UnitClassification(unit)
   if secret(name) then return end
   units[guid] = {
     name = name,
     kind = (not secret(family) and family) or (not secret(ctype) and ctype) or nil,
     rank = not secret(rank) and rank or nil,
   }
-  table.insert(order, guid)
-  if #order > 300 then units[table.remove(order, 1)] = nil end
+  table.insert(seenOrder, guid)
+  if #seenOrder > 300 then units[table.remove(seenOrder, 1)] = nil end
 end
 ns.on("PLAYER_TARGET_CHANGED", function() seen("target") end)
 ns.on("UPDATE_MOUSEOVER_UNIT", function() seen("mouseover") end)
@@ -582,9 +656,17 @@ local function slain(guid, name)
     -- a quest's quarry: the quest, turned in, tells it
     local quarry
     for _, p in pairs(c.pending or {}) do
-      for _, o in ipairs(p.objectives or {}) do if o.name == u.name then quarry = true end end
+      for _, o in ipairs(p.objectives or {}) do
+        if o.name == u.name then quarry = true end
+      end
     end
-    moment("kill", { name = u.name, kind = u.kind, first = first, elite = (u.rank == "elite" and not inside) or nil, quarry = quarry })
+    moment("kill", {
+      name = u.name,
+      kind = u.kind,
+      first = first,
+      elite = (u.rank == "elite" and not inside) or nil,
+      quarry = quarry,
+    })
   end
   if u.kind then c.kinds[u.kind] = true end
 end
@@ -618,7 +700,9 @@ local function killed(attacker, victim)
   local token = UnitTokenFromGUID and UnitTokenFromGUID(victim)
   if token and not secret(token) then seen(token) end
   if victim:find("^Player") then
-    if token and not secret(token) then vanquished(victim, UnitName(token)) else
+    if token and not secret(token) then
+      vanquished(victim, UnitName(token))
+    else
       local name = GetPlayerInfoByGUID and select(6, GetPlayerInfoByGUID(victim))
       vanquished(victim, name)
     end
@@ -633,11 +717,11 @@ if not ns.forever then
   ns.on("COMBAT_LOG_EVENT_UNFILTERED", function()
     local _, sub, _, source, sourceName, _, _, dest, destName = CombatLogGetCurrentEventInfo()
     local me, pet = UnitGUID("player"), UnitGUID("pet")
-    if sub == "PARTY_KILL" and partyKill then
-      -- (told by the event of its own)
-    elseif sub == "PARTY_KILL" and (source == me or source == pet) and dest and dest:find("^Creature") then
+    -- (a kill: told by PARTY_KILL itself where the client has it)
+    local mine = sub == "PARTY_KILL" and not partyKill and (source == me or source == pet) and dest
+    if mine and dest:find("^Creature") then
       slain(dest, destName)
-    elseif sub == "PARTY_KILL" and (source == me or source == pet) and dest and dest:find("^Player") then
+    elseif mine and dest:find("^Player") then
       vanquished(dest, destName)
     elseif dest == me and sub == "ENVIRONMENTAL_DAMAGE" then
       local kind = select(12, CombatLogGetCurrentEventInfo())
@@ -659,10 +743,16 @@ elseif not partyKill then
     if not UnitIsDead("target") then
       local mine, theirs = UnitAffectingCombat("player"), UnitAffectingCombat("target")
       local claimed = UnitIsTapDenied and UnitIsTapDenied("target")
-      if not secret(mine) and not secret(theirs) and not secret(claimed) and mine and theirs and not claimed then fought[guid] = true end
+      if not secret(mine) and not secret(theirs) and not secret(claimed) and mine and theirs and not claimed then
+        fought[guid] = true
+      end
     elseif fought[guid] and not counted[guid] then
       counted[guid] = true
-      if UnitIsPlayer("target") then vanquished(guid, UnitName("target")) else slain(guid, UnitName("target")) end
+      if UnitIsPlayer("target") then
+        vanquished(guid, UnitName("target"))
+      else
+        slain(guid, UnitName("target"))
+      end
     end
   end
   ns.on("PLAYER_TARGET_CHANGED", look)
@@ -695,7 +785,11 @@ ns.onUnit("UNIT_HEALTH", "player", function()
     lastClose = now()
     moment("close", { foe = who, hp = hp })
   end
-  if C_Timer then C_Timer.After(5, check) else check() end
+  if C_Timer then
+    C_Timer.After(5, check)
+  else
+    check()
+  end
 end)
 
 -- ── company and dungeons ─────────────────────────────────────────────────────
@@ -743,6 +837,8 @@ end)
 -- ("0/8 Tough Wolf Meat") puts the name last, and match() gives it first.
 local patterns = {} -- the game's format = { pattern, order }, each made once
 local function pattern(global)
+  -- (the game's string by its name: some clients don't have every one)
+  -- selene: allow(global_usage)
   local format = _G[global]
   if type(format) ~= "string" then return end
   local known = patterns[format]
@@ -766,7 +862,9 @@ local function match(global, text)
   local got = { text:match(p) }
   if #got == 0 then return end
   local out = {}
-  for i, v in ipairs(got) do out[order[i] or i] = v end
+  for i, v in ipairs(got) do
+    out[order[i] or i] = v
+  end
   return unpack(out, 1, #got)
 end
 ns.pattern, ns.match = pattern, match
@@ -776,9 +874,25 @@ ns.pattern, ns.match = pattern, match
 -- by the professions, below: left out here); anything else, a trainer's
 -- lesson (spells learned together are one moment).
 local POWERS = {
-  [5487] = "form", [768] = "form", [1066] = "form", [783] = "form", [9634] = "form", [24858] = "form", [33943] = "form",
-  [697] = "demon", [712] = "demon", [691] = "demon", [1122] = "demon", [18540] = "demon", [30146] = "demon",
-  [5784] = "steed", [23161] = "steed", [13819] = "steed", [23214] = "steed", [34769] = "steed", [34767] = "steed",
+  [5487] = "form",
+  [768] = "form",
+  [1066] = "form",
+  [783] = "form",
+  [9634] = "form",
+  [24858] = "form",
+  [33943] = "form",
+  [697] = "demon",
+  [712] = "demon",
+  [691] = "demon",
+  [1122] = "demon",
+  [18540] = "demon",
+  [30146] = "demon",
+  [5784] = "steed",
+  [23161] = "steed",
+  [13819] = "steed",
+  [23214] = "steed",
+  [34769] = "steed",
+  [34767] = "steed",
 }
 local RANKED = { Apprentice = true, Journeyman = true, Expert = true, Artisan = true, Master = true }
 local function professionSpell(name)
@@ -810,7 +924,8 @@ ns.on("CHAT_MSG_SYSTEM", function(msg)
     end
   end
 end)
-local MILESTONES = { [50] = true, [75] = true, [100] = true, [150] = true, [200] = true, [225] = true, [250] = true, [300] = true }
+local MILESTONES =
+  { [50] = true, [75] = true, [100] = true, [150] = true, [200] = true, [225] = true, [250] = true, [300] = true }
 ns.on("CHAT_MSG_SKILL", function(msg)
   if secret(msg) then return end
   local skill, rank = match("SKILL_RANK_UP", msg)
@@ -833,7 +948,11 @@ local function trades()
       local name, header, _, _, _, _, max = GetSkillLineInfo(i)
       if header then
         section = name
-      elseif name and not secret(name) and (section == TRADE_SKILLS or section == SECONDARY_SKILLS or name:find("Riding")) then
+      elseif
+        name
+        and not secret(name)
+        and (section == TRADE_SKILLS or section == SECONDARY_SKILLS or name:find("Riding"))
+      then
         out[name] = max or 0
       end
     end
@@ -978,7 +1097,10 @@ end)
 
 ns.on("PLAYER_MONEY", function()
   local c, money = char(), GetMoney()
-  if c.money and money > c.money then local ch = chapter(); ch.gold = ch.gold + (money - c.money) end
+  if c.money and money > c.money then
+    local ch = chapter()
+    ch.gold = ch.gold + (money - c.money)
+  end
   c.money = money
 end)
 
@@ -989,14 +1111,28 @@ ns.on("PLAYER_DEAD", function()
   local zone, sub = where()
   local cause = "foe"
   if lastHit and now() - lastHit.at <= 10 and lastHit.env then
-    cause = (lastHit.env == "FALLING" and "fall") or (lastHit.env == "DROWNING" and "drowning") or (lastHit.env == "LAVA" and "lava") or "nature"
+    cause = (lastHit.env == "FALLING" and "fall")
+      or (lastHit.env == "DROWNING" and "drowning")
+      or (lastHit.env == "LAVA" and "lava")
+      or "nature"
   end
   local name, guid
-  if cause == "foe" then name, guid = foe(true) end
+  if cause == "foe" then
+    name, guid = foe(true)
+  end
   local u = guid and units[guid]
-  local d = { at = now(), level = UnitLevel("player"), zone = zone, sub = sub, foe = name, cause = cause,
-    player = (guid and guid:find("^Player")) and true or nil, kind = u and u.kind, rank = u and u.rank,
-    inside = (IsInInstance and IsInInstance()) or nil }
+  local d = {
+    at = now(),
+    level = UnitLevel("player"),
+    zone = zone,
+    sub = sub,
+    foe = name,
+    cause = cause,
+    player = (guid and guid:find("^Player")) and true or nil,
+    kind = u and u.kind,
+    rank = u and u.rank,
+    inside = (IsInInstance and IsInInstance()) or nil,
+  }
   c.death = d
   c.deaths = (c.deaths or 0) + 1
   c.dying = not c.hardcore and { at = now(), zone = zone, sub = sub } or nil
@@ -1040,7 +1176,14 @@ ns.on("PLAYER_UNGHOST", function()
   c.dying = nil
   local function told()
     local healer = C_UnitAuras and C_UnitAuras.GetPlayerAuraBySpellID and hasAura(SICKNESS)
-    moment("revived", { how = healer and "healer" or "corpse", graveyard = d.graveyard, took = now() - (d.released or d.at) })
+    moment(
+      "revived",
+      { how = healer and "healer" or "corpse", graveyard = d.graveyard, took = now() - (d.released or d.at) }
+    )
   end
-  if C_Timer then C_Timer.After(1, told) else told() end
+  if C_Timer then
+    C_Timer.After(1, told)
+  else
+    told()
+  end
 end)

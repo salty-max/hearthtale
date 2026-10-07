@@ -9,8 +9,13 @@ local function chapters(G, only)
   local book = G.ns.writeBook(HearthtaleChar)
   for i, ch in ipairs(book.chapters) do
     if only and i > only then break end
-    io.write(("## Chapter %d (%s)\n\n%s\n\n"):format(ch.number,
-      ch.from == ch.to and ("level " .. ch.from) or ("levels %d to %d"):format(ch.from, ch.to), ch.text or "(nothing to tell)"))
+    io.write(
+      ("## Chapter %d (%s)\n\n%s\n\n"):format(
+        ch.number,
+        ch.from == ch.to and ("level " .. ch.from) or ("levels %d to %d"):format(ch.from, ch.to),
+        ch.text or "(nothing to tell)"
+      )
+    )
   end
 end
 

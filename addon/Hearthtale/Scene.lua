@@ -16,8 +16,17 @@ Scene.__index = Scene
 
 -- Related work keeps together in a sentence: learning two trades is one
 -- thought, a trade followed by a fight a new one.
-local FAMILIES = { quest = "work", kill = "work", boss = "work", loot = "work", gear = "work",
-  learned = "practice", skill = "practice", prof = "practice", made = "practice" }
+local FAMILIES = {
+  quest = "work",
+  kill = "work",
+  boss = "work",
+  loot = "work",
+  gear = "work",
+  learned = "practice",
+  skill = "practice",
+  prof = "practice",
+  made = "practice",
+}
 
 -- Curation: in a scene, the first LOW_TOLD routine hand-ins (a delivery, a
 -- report back, a message carried, a favour known only by who asked, green
@@ -29,34 +38,66 @@ local LOW_TOLD = 2
 -- Chapter n of the book, ch its record.
 local function newScene(book, n, ch)
   local s = setmetatable({
-    book = book, n = n, ch = ch, c = book.c,
-    paragraphs = {}, current = {},
+    book = book,
+    n = n,
+    ch = ch,
+    c = book.c,
+    paragraphs = {},
+    current = {},
     -- the scene: its place (and zone), the places of the chapter so far, a
     -- plain kill told there
-    scene = nil, sceneZone = nil, seenHere = {}, killed = false,
+    scene = nil,
+    sceneZone = nil,
+    seenHere = {},
+    killed = false,
     -- the sentence being written: its clauses (their kinds, the creature a
     -- plain kill clause names: one told by its quest is dropped), the link it
     -- takes, whether it names its place, an arrival framing it; its clauses
     -- that may carry a remark, those that do, a highlight, a turned clause
-    pending = {}, pendingKinds = {}, pendingFoes = {}, lead = nil, named = false,
-    arrival = false, arrivalMode = nil, sentenceLimit = nil,
-    pendingRoutine = 0, pendingRemarks = 0, pendingHighlight = false, pendingTurn = false,
+    pending = {},
+    pendingKinds = {},
+    pendingFoes = {},
+    lead = nil,
+    named = false,
+    arrival = false,
+    arrivalMode = nil,
+    sentenceLimit = nil,
+    pendingRoutine = 0,
+    pendingRemarks = 0,
+    pendingHighlight = false,
+    pendingTurn = false,
     -- the paragraph: who it named, the things carried in it (when), a quip told
-    peopleNamed = {}, thingsCarried = {}, quipped = false,
+    peopleNamed = {},
+    thingsCarried = {},
+    quipped = false,
     -- the chapter's voice: race and class lines in some chapters only (two
     -- at most); a remark every two or three routine clauses, not after a
     -- sentence that had one
-    voiceChapter = hash(book.seed .. "|voice|" .. n) % 3 == 0, voiceUsed = 0,
-    routineCount = 0, nextRemark = 2 + hash(book.seed .. "|remarks|" .. n) % 2, lastSentenceRemark = false,
+    voiceChapter = hash(book.seed .. "|voice|" .. n) % 3 == 0,
+    voiceUsed = 0,
+    routineCount = 0,
+    nextRemark = 2 + hash(book.seed .. "|remarks|" .. n) % 2,
+    lastSentenceRemark = false,
     onlyPlain = false, -- (the recap: plain lines only, but for its one thought)
     -- the moment being told (i its place in the log, key its seed, place
     -- where it happened), and the one before
-    m = nil, i = nil, key = nil, place = nil, prev = nil, foldNow = false,
+    m = nil,
+    i = nil,
+    key = nil,
+    place = nil,
+    prev = nil,
+    foldNow = false,
     -- the fold: hand-ins told in the scene it counts for, its tally
-    lowTold = 0, lowScene = nil, folded = { errands = 0, gear = 0 },
+    lowTold = 0,
+    lowScene = nil,
+    folded = { errands = 0, gear = 0 },
     -- who joined so far; the dungeon I'm in; moments told with the one
     -- before; the find just told; where each quest's work was told in the log
-    mates = {}, dungeon = nil, merged = {}, found = nil, doneAt = {},
+    mates = {},
+    dungeon = nil,
+    merged = {},
+    found = nil,
+    doneAt = {},
     -- a night (or a rest) and its waking less than half an hour apart: a
     -- relog, not a break (the recorder no longer keeps them; older journals have them)
     relog = {},
@@ -72,7 +113,13 @@ local function newScene(book, n, ch)
   s.start, s.lvl = start, start.level or 1
   for j, m in ipairs(ch.log or {}) do
     local w = ch.log[j + 1]
-    if (m.k == "night" or m.k == "rested") and not m.last and w and w.k == "wake" and (w.at or 0) - (m.at or 0) < 1800 then
+    if
+      (m.k == "night" or m.k == "rested")
+      and not m.last
+      and w
+      and w.k == "wake"
+      and (w.at or 0) - (m.at or 0) < 1800
+    then
       s.relog[j], s.relog[j + 1] = true, true
     end
   end
@@ -84,7 +131,10 @@ end
 -- already, or the sentence before had one (an arrival alone frames what
 -- follows: kept whole, the remark waits).
 function Scene:prepareRemark()
-  if self.pendingRemarks > 0 or (self.lastSentenceRemark and #self.pending > 0 and not (self.arrival and #self.pending == 1)) then
+  if
+    self.pendingRemarks > 0
+    or (self.lastSentenceRemark and #self.pending > 0 and not (self.arrival and #self.pending == 1))
+  then
     self:flush()
   end
 end
@@ -100,7 +150,10 @@ function Scene:append(text, routine, remarks, highlight)
 end
 
 function Scene:newParagraph()
-  if #self.current > 0 then table.insert(self.paragraphs, self.current); self.current = {} end
+  if #self.current > 0 then
+    table.insert(self.paragraphs, self.current)
+    self.current = {}
+  end
   self.quipped = false
   self.peopleNamed, self.thingsCarried = {}, {}
 end
@@ -112,14 +165,20 @@ function Scene:text()
   if #self.paragraphs == 0 then return nil end
   local merged = {}
   for _, p in ipairs(self.paragraphs) do
-    if #p == 1 and #merged > 0 then table.insert(merged[#merged], p[1]) else table.insert(merged, p) end
+    if #p == 1 and #merged > 0 then
+      table.insert(merged[#merged], p[1])
+    else
+      table.insert(merged, p)
+    end
   end
   if #merged > 1 and #merged[1] == 1 then
     table.insert(merged[2], 1, merged[1][1])
     table.remove(merged, 1)
   end
   local out = {}
-  for _, p in ipairs(merged) do table.insert(out, table.concat(p, " ")) end
+  for _, p in ipairs(merged) do
+    table.insert(out, table.concat(p, " "))
+  end
   return table.concat(out, "\n\n")
 end
 
@@ -153,25 +212,38 @@ function Scene:flush()
       -- An action may already coordinate its own verbs. Give that thought
       -- a setting rather than introducing yet another "and" before it.
       local mode = self.arrivalMode
-      if mode == 0 or (mode == 2 and actions:find(" and ")) then text = "When I " .. pending[1] .. ", I " .. actions
+      if mode == 0 or (mode == 2 and actions:find(" and ")) then
+        text = "When I " .. pending[1] .. ", I " .. actions
       elseif mode == 1 then
         if self.pendingKinds[2] == "inn" then actions = actions:gsub(" there", "", 1) end
         text = "I " .. pending[1] .. ", where I " .. actions
-      else text = "I " .. pending[1] .. " and " .. actions end
+      else
+        text = "I " .. pending[1] .. " and " .. actions
+      end
     else
       local join = " and "
       -- A fight followed by a completed errand is an observed sequence,
       -- not an inferred cause. Other unrelated acts need no forced link.
-      if pending[1]:find("[,;:]") or pending[1]:find(" and ") or last:find("[,;:]") or last:find(" and ") then join = "; I "
-      elseif #pending == 2 and self.pendingKinds[1] == "kill" and self.pendingKinds[2] == "quest" then join = " before I " end
+      if pending[1]:find("[,;:]") or pending[1]:find(" and ") or last:find("[,;:]") or last:find(" and ") then
+        join = "; I "
+      elseif #pending == 2 and self.pendingKinds[1] == "kill" and self.pendingKinds[2] == "quest" then
+        join = " before I "
+      end
       local before = {}
-      for j = 1, #pending - 1 do before[j] = pending[j] end
+      for j = 1, #pending - 1 do
+        before[j] = pending[j]
+      end
       text = "I " .. (join == "; I " and listing(before) or table.concat(before, ", ")) .. join .. last
     end
   elseif not self.pendingTurn then
     text = "I " .. text
   end
-  self:append(linked(self.lead, capitalise(text .. ".")), self.pendingRoutine, self.pendingRemarks, self.pendingHighlight)
+  self:append(
+    linked(self.lead, capitalise(text .. ".")),
+    self.pendingRoutine,
+    self.pendingRemarks,
+    self.pendingHighlight
+  )
   self.pendingRoutine, self.pendingRemarks, self.pendingHighlight, self.pendingTurn = 0, 0, false, false
   -- "there" only right after the place is named
   if not self.named then b.there = true end
@@ -182,8 +254,9 @@ end
 -- Whether a clause of this kind starts a sentence of its own: the one being
 -- written is of other work (and not an arrival, which may frame either).
 function Scene:otherWork(kind)
-  return #self.pending > 0 and not self.arrival and
-    (not FAMILIES[kind] or FAMILIES[kind] ~= FAMILIES[self.pendingKinds[1]])
+  return #self.pending > 0
+    and not self.arrival
+    and (not FAMILIES[kind] or FAMILIES[kind] ~= FAMILIES[self.pendingKinds[1]])
 end
 
 -- A clause for a moment m (the one being told, or the last one the fold
@@ -220,9 +293,17 @@ function Scene:clause(text, said, m, key, isArrival)
   if said.remark then self.pendingRemarks = self.pendingRemarks + 1 end
   if highlight then self.pendingHighlight = true end
   if turned then self.pendingTurn = true end
-  if turned or highlight or #pending >= self.sentenceLimit or text:find("[;%.!%?]")
-    or (isArrival and said.remark) or (self.pendingRemarks > 0 and #pending >= 2)
-    or (#pending >= 2 and (complex or pending[1]:find("[,;:]") or pending[1]:find(" and "))) then self:flush() end
+  if
+    turned
+    or highlight
+    or #pending >= self.sentenceLimit
+    or text:find("[;%.!%?]")
+    or (isArrival and said.remark)
+    or (self.pendingRemarks > 0 and #pending >= 2)
+    or (#pending >= 2 and (complex or pending[1]:find("[,;:]") or pending[1]:find(" and ")))
+  then
+    self:flush()
+  end
 end
 
 -- A moment of its own: a sentence, after the clauses before it (m: the
@@ -275,8 +356,14 @@ function Scene:arrive(place, zone, opener)
   if opener then
     text, said = b:say(opener, key, { place = mid(place), _place = place }, self:tags(nil, m), nil, true)
   else
-    text, said = b:say(back and "c-return" or "c-travel", key .. "|go", { place = mid(place), _place = place },
-      self:tags(nil, m), nil, true)
+    text, said = b:say(
+      back and "c-return" or "c-travel",
+      key .. "|go",
+      { place = mid(place), _place = place },
+      self:tags(nil, m),
+      nil,
+      true
+    )
   end
   self:clause(text, said, m, key, true)
 end
@@ -323,14 +410,24 @@ function Scene:dropKill(t)
       -- (its remark, if it had one, goes with it: the budget counts again)
       if self.pending[j]:find(", ") then self.pendingRemarks = math.max(0, self.pendingRemarks - 1) end
       self.pendingRoutine = math.max(0, self.pendingRoutine - 1)
-      table.remove(self.pending, j); table.remove(self.pendingKinds, j); table.remove(self.pendingFoes, j)
+      table.remove(self.pending, j)
+      table.remove(self.pendingKinds, j)
+      table.remove(self.pendingFoes, j)
       dropped = true
     end
   end
   -- already told, a sentence before: the quest's count is "more" of them
   local last = b.lastFoe
-  if not dropped and (o.n or 1) > 1 and last and last.name == o.name and not last.many
-    and (b.told or 0) - last.told <= 1 then t.more = true end
+  if
+    not dropped
+    and (o.n or 1) > 1
+    and last
+    and last.name == o.name
+    and not last.many
+    and (b.told or 0) - last.told <= 1
+  then
+    t.more = true
+  end
 end
 
 -- ── the moments around ───────────────────────────────────────────────────────
@@ -338,13 +435,17 @@ end
 function Scene:nextOf(j)
   local log = self.ch.log
   j = j + 1
-  while log[j] and log[j].k == "level" do j = j + 1 end
+  while log[j] and log[j].k == "level" do
+    j = j + 1
+  end
   return log[j]
 end
 function Scene:prevAt(j)
   local log = self.ch.log
   j = j - 1
-  while j > 0 and log[j] and log[j].k == "level" do j = j - 1 end
+  while j > 0 and log[j] and log[j].k == "level" do
+    j = j - 1
+  end
   return j
 end
 -- A quest's work handed in on the spot (its turn-in next, in the same place):
@@ -390,16 +491,25 @@ function Scene:fold()
   self.foldNow = false
   if what == "low" then
     local here = place or self.scene
-    if here ~= self.lowScene then self:emitFold(); self.lowTold, self.lowScene = 0, here end
+    if here ~= self.lowScene then
+      self:emitFold()
+      self.lowTold, self.lowScene = 0, here
+    end
     if self.lowTold >= LOW_TOLD then
       local folded = self.folded
       self.foldNow = true
-      if m.k == "gear" then folded.gear = folded.gear + 1 else folded.errands = folded.errands + 1 end
+      if m.k == "gear" then
+        folded.gear = folded.gear + 1
+      else
+        folded.errands = folded.errands + 1
+      end
       folded.m, folded.key = m, self.key
     else
       self.lowTold = self.lowTold + 1
     end
-  elseif what ~= "silent" and ((place and place ~= self.lowScene) or m.k == "place" or m.k == "dungeon" or m.k == "flight") then
+  elseif
+    what ~= "silent" and ((place and place ~= self.lowScene) or m.k == "place" or m.k == "dungeon" or m.k == "flight")
+  then
     self:emitFold() -- the place left: its tally, once
   end
 end
@@ -417,8 +527,4 @@ function Scene:emitFold()
 end
 
 -- (for the next files of the writer)
-ns.writer = ns.writer or {}
-do
-  local W = ns.writer
-  W.newScene = newScene
-end
+W.newScene = newScene

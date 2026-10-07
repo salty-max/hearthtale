@@ -21,9 +21,7 @@ function ns.setOption(key, value)
 end
 
 -- Does the game say whether this character is Hardcore?
-function ns.gameKnowsHardcore()
-  return C_GameRules ~= nil and C_GameRules.IsHardcoreActive ~= nil
-end
+function ns.gameKnowsHardcore() return C_GameRules ~= nil and C_GameRules.IsHardcoreActive ~= nil end
 
 local category
 
@@ -33,31 +31,55 @@ function ns.createSettingsPanel()
 
   local function checkbox(key, name, tooltip, invert)
     invert = invert or false
-    local setting = Settings.RegisterProxySetting(category, "HEARTHTALE_" .. key:upper(), Settings.VarType.Boolean, name,
+    local setting = Settings.RegisterProxySetting(
+      category,
+      "HEARTHTALE_" .. key:upper(),
+      Settings.VarType.Boolean,
+      name,
       not DEFAULTS[key] == invert,
       function() return ns.option(key) ~= invert end,
-      function(value) ns.setOption(key, value ~= invert) end)
+      function(value) ns.setOption(key, value ~= invert) end
+    )
     Settings.CreateCheckbox(category, setting, tooltip)
   end
-  checkbox("chat", "A line in chat for each chapter", "When a chapter closes (you rested at an inn, in a city or by a campfire), a line in chat with a link to it.")
-  checkbox("toast", "Alert when a book closes", "The game's alert when a Hardcore character falls and its book joins the Hall of the Fallen (the chat line stays).")
+  checkbox(
+    "chat",
+    "A line in chat for each chapter",
+    "When a chapter closes (you rested at an inn, in a city or by a campfire), a line in chat with a link to it."
+  )
+  checkbox(
+    "toast",
+    "Alert when a book closes",
+    "The game's alert when a Hardcore character falls and its book joins the Hall of the Fallen (the chat line stays)."
+  )
   checkbox("minimapHidden", "Minimap button", "The journal by the minimap: click to open it, drag to move it.", true)
 
   -- Where the game can't tell, the player says whether this character is
   -- Hardcore (its death then closes the book).
   if not ns.gameKnowsHardcore() then
-    local setting = Settings.RegisterProxySetting(category, "HEARTHTALE_HARDCORE", Settings.VarType.Boolean,
-      "This character is Hardcore", false,
-      function() local c = ns.journal() return c and c.hardcore == true or false end,
+    local setting = Settings.RegisterProxySetting(
+      category,
+      "HEARTHTALE_HARDCORE",
+      Settings.VarType.Boolean,
+      "This character is Hardcore",
+      false,
+      function()
+        local c = ns.journal()
+        return c and c.hardcore == true or false
+      end,
       function(value)
         local c = ns.journal()
         if not c or c.closed then return end
         c.hardcoreChosen = value or nil
         c.hardcore = value or nil
         if ns.refresh then ns.refresh() end
-      end)
-    Settings.CreateCheckbox(category, setting,
-      "This character's death closes its book: an epitaph, and its journal joins the Hall of the Fallen. For this character only.")
+      end
+    )
+    Settings.CreateCheckbox(
+      category,
+      setting,
+      "This character's death closes its book: an epitaph, and its journal joins the Hall of the Fallen. For this character only."
+    )
   end
 
   Settings.RegisterAddOnCategory(category)

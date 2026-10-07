@@ -12,8 +12,22 @@ end
 dofile("addon/test/writer-files.lua")(ns)
 local book = ns.writeBook(c)
 io.write("# ", c.name or "?", "'s journal\n\n")
-io.write("*", c.name or "?", ", ", (c.race or ""):lower(), " ", (c.class or ""):lower(), ", ", c.realm or "",
-  forever and " (Forever)" or "", ", recorded by Hearthtale ", (c.book and c.book.version) or "?", "*\n\n")
+io.write(
+  "*",
+  c.name or "?",
+  ", ",
+  (c.race or ""):lower(),
+  " ",
+  (c.class or ""):lower(),
+  ", ",
+  c.realm or "",
+  forever and " (Forever)" or "",
+  ", recorded by Hearthtale ",
+  (c.book and c.book.version) or "?",
+  "*\n\n"
+)
 if book.prologue then io.write(book.prologue, "\n\n") end
-for i, ch in ipairs(book.chapters) do io.write("## Chapter ", i, "\n\n", ch.text or "", "\n\n") end
+for i, ch in ipairs(book.chapters) do
+  io.write("## Chapter ", i, "\n\n", ch.text or "", "\n\n")
+end
 if book.epitaph then io.write("---\n\n", book.epitaph, "\n") end

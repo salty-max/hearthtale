@@ -16,7 +16,9 @@ end
 -- The fallen, the most recent first.
 function ns.fallen()
   local list = {}
-  for _, life in pairs(hall()) do table.insert(list, life) end
+  for _, life in pairs(hall()) do
+    table.insert(list, life)
+  end
   table.sort(list, function(a, b)
     local x, y = a.death and a.death.at or 0, b.death and b.death.at or 0
     if x ~= y then return x > y end
@@ -53,7 +55,11 @@ local function setUp(frame, guid)
   -- recipe toast's own way, forbids changing the crop afterwards on Forever).
   if not frame.hearthtaleMask and frame.CreateMaskTexture then
     frame.hearthtaleMask = frame:CreateMaskTexture()
-    frame.hearthtaleMask:SetTexture("Interface\\CharacterFrame\\TempPortraitAlphaMask", "CLAMPTOBLACKADDITIVE", "CLAMPTOBLACKADDITIVE")
+    frame.hearthtaleMask:SetTexture(
+      "Interface\\CharacterFrame\\TempPortraitAlphaMask",
+      "CLAMPTOBLACKADDITIVE",
+      "CLAMPTOBLACKADDITIVE"
+    )
     frame.hearthtaleMask:SetAllPoints(frame.Icon)
     frame.Icon:AddMaskTexture(frame.hearthtaleMask)
   end
@@ -66,7 +72,9 @@ end
 
 local function toast(guid)
   if not toasts then
-    if not (AlertFrame and AlertFrame.AddQueuedAlertFrameSubSystem and C_XMLUtil and C_XMLUtil.GetTemplateInfo) then return end
+    if not (AlertFrame and AlertFrame.AddQueuedAlertFrameSubSystem and C_XMLUtil and C_XMLUtil.GetTemplateInfo) then
+      return
+    end
     if not C_XMLUtil.GetTemplateInfo(TOAST) then return end
     toasts = AlertFrame:AddQueuedAlertFrameSubSystem(TOAST, setUp, 2, 6)
   end
@@ -80,7 +88,10 @@ ns.onDeath = function()
   local c = ns.journal()
   if not (c and c.hardcore and c.guid) then return end
   enshrine(c)
-  print(ns.PREFIX .. ("The journal of %s is closed. It rests in the %s."):format(c.name or "?", link(c.guid, "Hall of the Fallen")))
+  print(
+    ns.PREFIX
+      .. ("The journal of %s is closed. It rests in the %s."):format(c.name or "?", link(c.guid, "Hall of the Fallen"))
+  )
   if ns.option("toast") then toast(c.guid) end
   if ns.onHall then ns.onHall() end
 end

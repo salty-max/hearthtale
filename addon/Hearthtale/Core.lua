@@ -34,7 +34,9 @@ local listeners = {}
 
 local function heard(event, ...)
   if not char or char.closed then return end
-  for _, fn in ipairs(listeners[event]) do fn(...) end
+  for _, fn in ipairs(listeners[event]) do
+    fn(...)
+  end
 end
 
 frame:SetScript("OnEvent", function(_, event, ...)
@@ -62,7 +64,9 @@ function ns.onUnit(event, unit, fn)
     f.listeners = {}
     f:SetScript("OnEvent", function(_, e, ...)
       if not char or char.closed then return end
-      for _, listener in ipairs(f.listeners[e]) do listener(...) end
+      for _, listener in ipairs(f.listeners[e]) do
+        listener(...)
+      end
     end)
     units[unit] = f
   end
@@ -110,8 +114,13 @@ local function link(code)
   elseif char then
     code = code:upper()
     char.link = { code = code, at = time() }
-    print(PREFIX .. "code " .. code .. " kept. Log out or /reload with Ravenpost running, and this book joins your "
-      .. "library on hearthtale.app.")
+    print(
+      PREFIX
+        .. "code "
+        .. code
+        .. " kept. Log out or /reload with Ravenpost running, and this book joins your "
+        .. "library on hearthtale.app."
+    )
   end
 end
 
