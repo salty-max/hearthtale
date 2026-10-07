@@ -3,7 +3,7 @@ kind: r-item
 ---
 - weighing more in my pack than in the asking
 - with an eye to the workmanship
-- pleased to have every piece of it
+- [one !plural] pleased to have every piece of it
 - [!one !plural] counted and recounted, as a dwarf should
 - [!one !plural] packed tight as a miner's cart
 - [one !plural] small for all the bother, as these things go

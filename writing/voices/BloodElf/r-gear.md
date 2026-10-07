@@ -7,7 +7,7 @@ kind: r-gear
 - [!made] a modest improvement, but an improvement
 - [!made hc] one more defence against an unworthy end
 - [made] finished to my own exacting standards
-- [made] rather well made, if I do say so
+- [made] rather well finished, if I do say so
 - [made] neat work, I thought
 - [!made] a welcome addition, whatever my first impression
 - [!made !held] curious how well the fit would endure a day's wear

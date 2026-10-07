@@ -151,6 +151,12 @@ The plan and its decisions: PLAN.md.
   rest fold into one clause (`c-fold`: "saw to four more errands besides"),
   written when the next thing happens so finished sentences never change.
   Deeds, firsts, dangers and finds are always told.
+- Weight (`weigh` in Writer.lua), from the moment alone so a later moment never
+  rewrites what was read: 0 a hand-in (no remark), 1 the ordinary, 2 a deed,
+  3 a highlight (a first, an elite, a tamed pet, one named foe asked for, an
+  escort). A highlight has a sentence to itself (an arrival may frame it) and a
+  remark whenever one is free, even after a remarked sentence. A remark never
+  repeats a word of its clause's own wording (made/making, own, hand, work).
 - The chapter's recap (tasks, fighting, time) holds one thought: the others
   are its `[plain]` sentences. The rest that ends the chapter has its own.
 - Topic tags (teeth, mechanical, cloth, meat, explore, escort, made) require

@@ -337,6 +337,19 @@ local ROUTINE = {
   ["c-skill"] = "r-lesson", ["c-prof"] = "r-lesson", ["c-travel"] = "r-road", ["c-return"] = "r-road",
   ["c-place"] = "r-road", ["c-inn"] = "r-inn", ["c-group"] = "r-company", ["c-report"] = "r-task",
 }
+-- How much a clause matters, from its own moment alone (a later moment never
+-- changes it, so text already read stays as it was): 0 a routine hand-in (no
+-- remark), 1 the ordinary, 2 a deed, 3 a highlight (a sentence of its own,
+-- and the narrator's thought on it when one is free).
+local function weigh(kind, ctx)
+  if kind == "c-first" or kind == "c-elite" or kind == "c-tame" then return 3 end
+  if kind == "c-deed-kill" then return ctx.one and 3 or 2 end -- one asked for: a named foe
+  if kind == "c-deed-task" then return ctx.escort and 3 or 2 end
+  if kind == "c-gear" then return ctx.fine and 2 or ctx.made and 1 or 0 end
+  if kind == "c-report" or kind == "c-deliver" or kind == "c-deed-word" or kind == "c-quest" or kind == "c-fold" then return 0 end
+  if kind == "c-boss" or kind == "c-loot" then return 2 end
+  return 1
+end
 -- The other side's people, as a sentence names them ("a night elf hunter").
 local RACE_NAME = { Human = "human", Dwarf = "dwarf", NightElf = "night elf", Gnome = "gnome", Draenei = "draenei",
   Orc = "orc", Troll = "troll", Tauren = "tauren", Scourge = "Forsaken", BloodElf = "blood elf" }
@@ -400,12 +413,16 @@ function Book:say(kind, key, values, tags, prefer, raw)
   local ctx = setmetatable(tags or {}, { __index = self.base })
   if kind == "c-return" then ctx.back = true end -- for its remark: a place known
   local routine, wantRemark = ROUTINE[kind], false
-  self.selectedRoutine, self.selectedRemark = routine, false
-  if routine then
+  local weight = weigh(kind, ctx)
+  self.selectedRoutine, self.selectedRemark, self.selectedWeight = routine, false, weight
+  -- a remark every few ordinary clauses, sooner for a deed, on a highlight
+  -- whenever it can; a hand-in neither has one nor counts towards one
+  if routine and weight > 0 then
     self.routineCount = (self.routineCount or 0) + 1
-    if self.routineCount >= (self.nextRemark or 2) then
+    if weight >= 3 or self.routineCount >= (self.nextRemark or 2) - (weight >= 2 and 1 or 0) then
       if self.prepareRemark then self.prepareRemark() end
-      wantRemark = not self.pendingRemark and not self.lastSentenceRemark
+      -- (not on two sentences in a row, unless the second is a highlight)
+      wantRemark = not self.pendingRemark and (weight >= 3 or not self.lastSentenceRemark)
     end
   end
   for k, v in pairs(self.voice) do if values[k] == nil then values[k] = v end end
@@ -563,7 +580,7 @@ function Book:say(kind, key, values, tags, prefer, raw)
   if routine then self.lastVerb = text:match("^(%a+)") end
   -- a remark ends a clause that has no comma of its own
   if wantRemark and not text:find(",") and not ctx.trophy then -- (a trophy speaks for itself)
-    local remark = self:remark(routine, key, values, ctx)
+    local remark = self:remark(routine, key, values, ctx, (text:gsub("{%w+}", "")))
     if remark then
       text = text .. ", " .. remark
       self.selectedRemark = true
@@ -590,17 +607,40 @@ function Book:say(kind, key, values, tags, prefer, raw)
   return raw and text or capitalise(text)
 end
 
+-- The words a remark may not repeat from its clause's own wording ("a vest I
+-- had made, made by my own hands"): those of four letters or more, and a few
+-- families by their root. (What the clause names may come back: "eight Linen
+-- Cloth, wondering what could be sewn from so much cloth".)
+local COMMON = { with = true, that = true, than = true, what = true, them = true, their = true, there = true, more = true,
+  into = true, from = true, have = true, been = true, were = true, when = true, ["then"] = true, some = true, just = true,
+  this = true, they = true, once = true, still = true, before = true, after = true, again = true }
+local ROOTS = { making = "made", make = "made", makes = "made", hands = "hand", handiwork = "hand", handmade = "hand",
+  own = "own", works = "work", workmanship = "work" }
+local function echoWords(text)
+  local words = {}
+  for w in text:lower():gmatch("%a+") do
+    local root = ROOTS[w] or (#w >= 4 and not COMMON[w] and w) or nil
+    if root then words[root] = true end
+  end
+  return words
+end
+
 -- A remark from a pool (writing/r-*.md, and the race's own): a fresh one,
 -- the race's first, one about the moment's subject (its teeth, the meat)
 -- before the general; once all were used, the one used longest ago, if
 -- REMARK_GAP chapters have passed; else none.
-function Book:remark(pool, key, values, ctx)
+function Book:remark(pool, key, values, ctx, clauseText)
   local race = self.c.race or "Human"
   local own, list = self.own and self.own[pool], ns.data.writing[pool]
   local ownFresh, fresh, all = {}, {}, {}
+  local said = clauseText and echoWords(clauseText) or {}
+  local function echoes(line)
+    for w in pairs(echoWords(line)) do if said[w] then return true end end
+    return false
+  end
   local function add(from, mine)
     for i, s in ipairs(from or {}) do
-      if satisfied(s.tags, ctx) and fillable(s[1], values) then
+      if satisfied(s.tags, ctx) and fillable(s[1], values) and not echoes(s[1]) then
         local e = mine and { s = s, id = "v:" .. pool .. i, reach = race .. "/" .. pool .. "#" .. i }
           or { s = s, id = pool .. i, reach = pool .. "#" .. i }
         table.insert(all, e)
@@ -859,11 +899,11 @@ function Book:chapter(n, ch)
   self.voiceChapter = hash(self.seed .. "|voice|" .. n) % 3 == 0
   self.routineCount, self.nextRemark = 0, 2 + hash(self.seed .. "|remarks|" .. n) % 2
   self.pendingRemark, self.lastSentenceRemark = false, false
-  local function append(text, routine, remarks)
+  local function append(text, routine, remarks, highlight)
     table.insert(current, text)
     self.told = (self.told or 0) + 1
     self.lastSentenceRemark = (remarks or 0) > 0
-    if ns.writerSentence then ns.writerSentence(text, routine or 0, remarks or 0, n) end
+    if ns.writerSentence then ns.writerSentence(text, routine or 0, remarks or 0, n, highlight) end
   end
   local function newParagraph()
     if #current > 0 then table.insert(paragraphs, current); current = {} end
@@ -892,7 +932,7 @@ function Book:chapter(n, ch)
   local pending, lead, sentences, named = {}, nil, 0, false -- named: the sentence names its place
   local arrival, arrivalMode, sentenceLimit, pendingKinds = false, nil, nil, {}
   local pendingFoes = {} -- the creature a plain kill clause names (one told by its quest is dropped)
-  local pendingRoutine, pendingRemarks = 0, 0
+  local pendingRoutine, pendingRemarks, pendingHighlight = 0, 0, false
   local prev -- the moment before the one being told
   local families = { quest = "work", kill = "work", boss = "work", loot = "work", gear = "work",
     learned = "practice", skill = "practice", prof = "practice", made = "practice" }
@@ -927,9 +967,9 @@ function Book:chapter(n, ch)
     else
       text = "I " .. text
     end
-    append(linked(lead, capitalise(text .. ".")), pendingRoutine, pendingRemarks)
+    append(linked(lead, capitalise(text .. ".")), pendingRoutine, pendingRemarks, pendingHighlight)
     self.lastSentenceRemark, self.pendingRemark = pendingRemarks > 0, false
-    pendingRoutine, pendingRemarks = 0, 0
+    pendingRoutine, pendingRemarks, pendingHighlight = 0, 0, false
     -- "there" only right after the place is named
     if not named then self.there = true end
     pending, lead, named, arrival, arrivalMode, sentenceLimit, pendingKinds = {}, nil, false, false, nil, nil, {}
@@ -950,6 +990,9 @@ function Book:chapter(n, ch)
     -- Keep related work together. Learning two trades is one thought; a
     -- trade followed by a fight is a new one. An arrival may frame either.
     local kind = m and m.k or ""
+    -- a highlight has its sentence to itself (an arrival may frame it)
+    local highlight = self.selectedWeight == 3
+    if highlight and #pending > 0 and not (arrival and #pending == 1) then flush() end
     if #pending > 0 and not arrival and
       (not families[kind] or families[kind] ~= families[pendingKinds[1]]) then flush() end
     if #pending == 0 then
@@ -963,9 +1006,11 @@ function Book:chapter(n, ch)
     table.insert(pending, text)
     table.insert(pendingKinds, kind)
     table.insert(pendingFoes, m and m.k == "kill" and m.name or false)
-    if self.selectedRoutine then pendingRoutine = pendingRoutine + 1 end
+    -- (the clauses that may carry a remark: not a hand-in)
+    if self.selectedRoutine and (self.selectedWeight or 1) > 0 then pendingRoutine = pendingRoutine + 1 end
     if self.selectedRemark then pendingRemarks, self.pendingRemark = pendingRemarks + 1, true end
-    if #pending >= sentenceLimit or text:find("[;%.!%?]")
+    if highlight then pendingHighlight = true end
+    if highlight or #pending >= sentenceLimit or text:find("[;%.!%?]")
       or (isArrival and self.selectedRemark) or (self.pendingRemark and #pending >= 2)
       or (#pending >= 2 and (complex or pending[1]:find("[,;:]") or pending[1]:find(" and "))) then flush() end
   end
@@ -1301,7 +1346,10 @@ function Book:chapter(n, ch)
       found = nil
     elseif m.k == "gear" or m.k == "loot" then
       local item = m.link and m.link:match("%[(.-)%]")
-      if item then inScene(c_("c-" .. m.k, { item = itemName(item) }, { made = m.made or nil, held = m.held or nil })) end
+      if item then
+        inScene(c_("c-" .. m.k, { item = itemName(item) },
+          { made = m.made or nil, held = m.held or nil, fine = (m.quality or 2) >= 3 or nil }))
+      end
       found = m.k == "loot" and item or nil
     elseif m.k == "tame" then
       inScene(c_("c-tame", { pet = m.name, family = m.family and article(m.family:lower()) }))
