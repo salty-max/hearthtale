@@ -63,8 +63,8 @@ The plan and its decisions: PLAN.md.
   `Settings.lua` (account settings, the Options page), `Minimap.lua`.
 - `addon/CURSEFORGE.md`: the project page. `assets/logo-master.png` is the
   painted logo master; `assets/logo.png` and `assets/logo-1024.png` are its
-  512px and 1024px exports (resize the master with magick). The previous SVG
-  and exports are kept in `assets/previous/`; prompts are in `assets/logo-prompts.json`.
+  512px and 1024px exports (resize the master with magick). The
+  prompts are in `assets/logo-prompts.json`.
   The source TOC has an `@INTERFACE@` placeholder: not installable as is;
   `scripts/package.ts` builds `dist/classic` and `dist/forever`.
 - `addon/test/game.lua`: the fake game (WoW API, events, a character to play,
@@ -87,10 +87,10 @@ The plan and its decisions: PLAN.md.
   reachable, none used again within 6 uses of its kind, and a chapter told one
   moment more keeps what it had (but its last sentence).
 - `addon/test/voices.lua`: the same synthetic day for each narrator, to compare
-  diction and rhythm without changing events. Regenerate the comparison with
-  `FOREVER=1 luajit addon/test/voices.lua compare > docs/race-comparison.md`.
-  Its `moments` mode writes `docs/voice-moments.md`: flights, outdoor rests,
-  setbacks, revival, dungeon endings and the final page for the remaining voices.
+  diction and rhythm without changing events: `FOREVER=1 luajit
+  addon/test/voices.lua compare > .cache/race-comparison.md` (read, not kept).
+  Its `moments` mode: flights, outdoor rests, setbacks, revival, dungeon
+  endings and the final page for each voice.
 
 ## Writing the sentences
 
@@ -202,10 +202,14 @@ The plan and its decisions: PLAN.md.
 - After changing the writing: `bun run addon:build`, then `bun run addon:check`,
   regenerate `docs/sample.md` and the site seed (`bun run addon:seed`), and
   read the generated books again. Check flow across sentences, not just the
-  quality of each template alone. `docs/narrative-review.md` records the
-  direction and an example of the resulting prose. Regenerate and read
-  `docs/race-comparison.md` when changing racial expression; use the restraint
-  and era boundaries in `docs/race-voices.md`.
+  quality of each template alone: read paragraphs. Concrete observation does
+  more work than remarks about "the journey", "my account" or "remembering".
+  A racial voice is a way of looking at the world, not an obligation to
+  mention ale, honour, trees or the grave in every sentence. Places in
+  flowing sentences, not chains of possessives ("the cold of Dun Morogh", not
+  "Dun Morogh's cold"). Regenerate and read the race comparison (`voices.lua
+  compare`) when changing racial expression; use the restraint and era
+  boundaries in `docs/race-voices.md`.
 - In `c-inn`, `{inn}` includes its preposition ("at Ratchet") or is "there" when the
   binding place has just been named. Do not add "at" or "to" before it.
 

@@ -53,7 +53,8 @@ every errand. Cultural vocabulary can colour a reaction without requiring
 a catchphrase. All races retain full sentences and the same allowance for
 three related clauses.
 
-Read `docs/race-comparison.md` with the names hidden: the same recorded
+Read the comparison (`FOREVER=1 luajit addon/test/voices.lua compare >
+.cache/race-comparison.md`) with the names hidden: the same recorded
 events should produce recognisably different people while retaining their
 facts. Read the full journeys in `docs/sample.md` for the subtler effect of
 the voice across a chapter.
@@ -78,10 +79,10 @@ ones. Windshapers look for connection, while the High Order put more trust
 in something they have examined themselves. None of these tendencies
 requires every sentence to express it.
 
-`docs/voice-moments.md` supplements the routine day with identical synthetic
-records of a first flight, a night outside, danger, death, a companion's
-help, a dungeon's end and the final journal entry. Regenerate it with
-`FOREVER=1 luajit addon/test/voices.lua moments`. These are separate editorial
+The `moments` mode (`FOREVER=1 luajit addon/test/voices.lua moments`)
+supplements the routine day with identical synthetic records of a first
+flight, a night outside, danger, death, a companion's help, a dungeon's end
+and the final journal entry. These are separate editorial
 scenes across a life, not a canonical levelling route. Read them for repeated
 words and adjacent thoughts as well as racial character; a good line alone
 can still crowd out the feeling of the line beside it.
