@@ -341,7 +341,7 @@ function ns.refresh(latest)
   local c = ns.journal()
   -- Who I am, beside the portrait.
   local race, class = UnitRace("player"), UnitClass("player")
-  book.who:SetText(("%s, level %d %s %s%s"):format(UnitName("player") or "", UnitLevel("player") or 0, race or "", class or "",
+  book.who:SetText(("%s, level %d %s %s%s"):format(ns.journal().name or UnitName("player") or "", UnitLevel("player") or 0, race or "", class or "",
     c.closed and "  -  Fallen" or c.hardcore and "  -  Hardcore" or ""))
   if book.selectedTab == 2 then refreshHall(latest) else refreshJournal(latest) end
 end

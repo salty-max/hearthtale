@@ -49,20 +49,40 @@
 -- with me.
 local _, ns = ...
 local secret = ns.secret
--- An item's name and quality: C_Item in today's clients (the global is gone
--- from Classic Era since 1.15), the global in older ones.
-local function itemInfo(link)
-  local api = (C_Item and C_Item.GetItemInfo) or GetItemInfo
-  if not api then return end
-  local ok, name, _, quality = pcall(api, link)
-  if not ok then return end
-  if not quality and C_Item and C_Item.GetItemQualityByID then
-    local id = tonumber(link:match("item:(%d+)") or "")
-    local okQ, q = pcall(C_Item.GetItemQualityByID, id)
-    if okQ then quality = q end
-  end
-  return name, quality
+-- An item link, as the game writes it in a message: coloured the old way
+-- ("|cff1eff00|Hitem:…") or the new ("|cnIQ2:|Hitem:…").
+local LINK = "|c[^|]+|Hitem:[^|]+|h%[.-%]|h|r"
+-- A link's own quality, from its colour: always there, even for an item the
+-- game hasn't loaded yet (whose info it doesn't have to give).
+local QUALITY_COLOUR = { ["9d9d9d"] = 0, ffffff = 1, ["1eff00"] = 2, ["0070dd"] = 3, a335ee = 4, ff8000 = 5, e6cc80 = 6 }
+local function linkQuality(link)
+  local q = link:match("^|cnIQ(%d+):")
+  if q then return tonumber(q) end
+  local colour = link:match("^|c%x%x(%x%x%x%x%x%x)")
+  return colour and QUALITY_COLOUR[colour:lower()]
 end
+-- An item's name and quality: C_Item in today's clients (the global is gone
+-- from Classic Era since 1.15), the global in older ones; an item not loaded
+-- yet, from its link.
+local function itemInfo(link)
+  local name, quality
+  local api = (C_Item and C_Item.GetItemInfo) or GetItemInfo
+  if api then
+    local ok, n, _, q = pcall(api, link)
+    if ok then name, quality = n, q end
+  end
+  return name or link:match("|h%[(.-)%]|h"), quality or linkQuality(link)
+end
+
+-- A player's name: on Forever a first name and a surname (UnitName's second
+-- value; elsewhere it's a realm, left out). The full name, and the first.
+local function playerName(first, second)
+  if not first or secret(first) then return nil end
+  first = first:match("^([^-]+)") or first -- (without a realm: "Name-Realm")
+  if ns.forever and second and second ~= "" and not secret(second) then return first .. " " .. second, first end
+  return first, first
+end
+ns.playerName = playerName
 
 local CAP = 4 * 3600      -- a chapter's play time after which any logout closes it
 local MIN_MOMENTS = 3     -- what a chapter needs before a rest can close it
@@ -174,7 +194,7 @@ ns.on("PLAYER_LOGIN", function()
     local faction = UnitFactionGroup("player")
     if not secret(faction) and (faction == "Alliance" or faction == "Horde") then c.faction = faction:lower() end
   end
-  c.name, c.sex = UnitName("player"), UnitSex("player")
+  c.name, c.sex = playerName(UnitName("player")), UnitSex("player")
   -- where it lives, for the site (the Battle.net region: 1 US, 3 EU...)
   c.realm = GetRealmName and GetRealmName() or nil
   c.region = GetCurrentRegion and GetCurrentRegion() or nil
@@ -418,13 +438,20 @@ local function objectivesOf(id)
         local a, b, c = ns.match(g, o.text)
         if a then name, have, n = a, tonumber(b), tonumber(c) own = g ~= "QUEST_MONSTERS_KILLED" break end
       end
+      -- a name the game hasn't filled in yet (an item not loaded: "0/8 "): the
+      -- objectives aren't known yet, and are read again at the next update
+      if name then
+        name = name:match("^%s*(.-)%s*$")
+        if name == "" or name:match("^%d+$") then return nil end
+      end
       -- a kill told in the quest's own words ("Peons Awoken: 0/5"): its text,
       -- not a creature's name
       if o.type == "monster" and own then o.text, name = name, nil end
       -- an item already in hand when the quest is taken: a thing to deliver
       local held = o.type == "item" and (o.finished or (have and n and have >= n)) or nil
       -- (an event's count, before or after it: "0/1 Find the camp", "Find the camp: 0/1")
-      local event = not name and (o.text:gsub(":%s*%d+/%d+$", ""):gsub("^%d+/%d+%s+", "")) or nil
+      local event = not name and (o.text:gsub(":%s*%d+/%d+$", ""):gsub("^%d+/%d+%s*", "")) or nil
+      if event and not event:find("%S") then return nil end -- nothing but a count yet
       table.insert(out, { type = o.type, name = name, n = n or o.n, text = event,
         held = held })
     end
@@ -449,11 +476,11 @@ end)
 -- The quest log fills in after the acceptance (the objectives, once known),
 -- and tells when a quest's work is done: told then and there, where it
 -- happened; the turn-in, later, is the return to who asked.
--- (0.5.0 read today's "0/8 Tough Wolf Meat" the wrong way round and kept "0"
--- for a name: read again while the quest is still in the log)
+-- (a name kept before the game had filled it in: "0" by 0.5.0, " " by 0.5.1;
+-- read again while the quest is still in the log)
 local function misread(objectives)
   for _, o in ipairs(objectives or {}) do
-    if o.name and o.name:match("^%d+$") then return true end
+    if o.name and (o.name:match("^%d+$") or not o.name:find("%S")) then return true end
   end
   return false
 end
@@ -473,13 +500,21 @@ ns.on("QUEST_LOG_UPDATE", function()
 end)
 -- Who I returned to: the one I talk to when the quest is completed.
 local ender
+-- Objectives still without their names (the item not loaded yet): read
+-- again, while the quest is still in the log (the turn-in window too).
+local function named(id, p)
+  if p and (not p.objectives or misread(p.objectives)) then p.objectives = objectivesOf(id) or p.objectives end
+end
 ns.on("QUEST_COMPLETE", function()
   local name = UnitName("npc")
   ender = (name and not secret(name)) and name or nil
+  local id = GetQuestID and GetQuestID()
+  if id and id ~= 0 then named(id, (char().pending or {})[id]) end
 end)
 ns.on("QUEST_TURNED_IN", function(id)
   local c = char()
   local p = c.pending and c.pending[id] or {}
+  named(id, c.pending and c.pending[id])
   local ch = chapter()
   ch.quests = ch.quests + 1
   moment("quest", { id = id, title = titleOf(id) or p.title, giver = p.giver, ender = ender, objectives = p.objectives,
@@ -555,7 +590,7 @@ ns.slain = slain
 
 -- A player of the other side killed in the open world: who, of what race and
 -- class (a battleground's are no part of the tale).
-local function vanquished(guid, name)
+local function vanquished(guid, name, second)
   if battleground() or not guid or secret(guid) then return end
   local race, class
   if GetPlayerInfoByGUID then
@@ -563,8 +598,9 @@ local function vanquished(guid, name)
     if not secret(englishClass) then class = englishClass end
     if not secret(englishRace) then race = englishRace end
   end
-  if name and not secret(name) then name = name:match("^([^-]+)") end -- without the realm
-  moment("pvp", { name = (name and not secret(name)) and name or nil, race = race, class = class })
+  local full, first = playerName(name, second)
+  -- (the full name kept; the journal calls them by the first)
+  moment("pvp", { name = full, first = first ~= full and first or nil, race = race, class = class })
 end
 
 -- Classic: the combat log names the killer. Forever: corpses I fought.
@@ -642,10 +678,10 @@ ns.on("GROUP_ROSTER_UPDATE", function()
   inRaid = false
   for i = 1, n do
     local unit = IsInRaid and IsInRaid() and ("raid" .. i) or ("party" .. i)
-    local name = UnitName(unit)
-    if name and not secret(name) and name ~= UnitName("player") and not ch.company[name] then
+    local name, first = playerName(UnitName(unit))
+    if name and name ~= char().name and not ch.company[name] then
       ch.company[name] = true
-      moment("group", { name = name, class = select(2, UnitClass(unit)) })
+      moment("group", { name = name, first = first ~= name and first or nil, class = select(2, UnitClass(unit)) })
     end
   end
 end)
@@ -820,7 +856,7 @@ ns.on("CHAT_MSG_LOOT", function(msg)
   local c = char()
   for _, g in ipairs({ "LOOT_ITEM_CREATED_SELF_MULTIPLE", "LOOT_ITEM_CREATED_SELF" }) do -- (the counted form first: the other matches it too)
     local found, many = match(g, msg)
-    local link = found and msg:match("|c%x+|Hitem:[^|]+|h%[.-%]|h|r")
+    local link = found and msg:match(LINK)
     local id = link and tonumber(link:match("item:(%d+)"))
     if id then
       c.made = c.made or {}
@@ -842,7 +878,7 @@ ns.on("CHAT_MSG_LOOT", function(msg)
   for _, g in ipairs({ "LOOT_ITEM_SELF", "LOOT_ITEM_SELF_MULTIPLE" }) do
     if match(g, msg) then mine = true end
   end
-  local link = mine and msg:match("|c%x+|Hitem:[^|]+|h%[.-%]|h|r")
+  local link = mine and msg:match(LINK)
   if not link then return end
   local _, quality = itemInfo(link)
   if quality and quality >= 3 then moment("loot", { link = link, quality = quality }) end

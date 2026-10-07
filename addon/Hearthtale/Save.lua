@@ -30,7 +30,10 @@ end
 
 function ns.writeDown(c)
   local version = addonVersion()
-  c.book = written(ns.settledView(c), UnitLevel("player"))
+  -- a writer's error doesn't cost the save: the last book is kept, the error
+  -- still shown (the records, saved anyway, write it right once fixed)
+  local ok, book = pcall(written, ns.settledView(c), UnitLevel("player"))
+  if ok then c.book = book elseif geterrorhandler then geterrorhandler()(book) end
   -- the fallen: written once per version of the addon (their records no longer change)
   for _, life in ipairs(ns.fallen()) do
     if not (life.book and life.book.version == version) then

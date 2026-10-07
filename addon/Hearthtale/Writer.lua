@@ -99,12 +99,12 @@ local TITLES = { Mr = true, Mrs = true, Captain = true, Lord = true, Lady = true
   Colonel = true, Farmer = true, Geomancer = true, Lorekeeper = true, Private = true, Tinkerer = true, Advisor = true,
   Old = true, Ol = true, Ranger = true, Broodlord = true, Pyroguard = true, Archbishop = true, Bishop = true,
   Crier = true, Emissary = true, Emmisary = true, Matron = true, Herald = true, Courier = true, Warlord = true, Highlord = true, Count = true, Duke = true, Magistrate = true }
--- A moment's first objective, as recorded. One whose name is only a number
--- ("8 0s": a client's "0/8 Tough Wolf Meat" read the wrong way round by
--- 0.5.0's recorder) has lost its real name: not told.
+-- A moment's first objective, as recorded. One whose name the game hadn't
+-- filled in yet when it was recorded ("0" by 0.5.0, " " by 0.5.1: an item
+-- not loaded) has no real name: not told.
 local function objectiveOf(m)
   local o = m.objectives and m.objectives[1]
-  if o and o.name and o.name:match("^%d+$") then return nil end
+  if o and o.name and (o.name:match("^%d+$") or not o.name:find("%S")) then return nil end
   return o
 end
 
@@ -121,6 +121,7 @@ local function itemName(name)
   if part and TROPHY[part] then return whose .. "'s " .. part:lower() end
   -- the thing itself, before an "of": "Chausses of Westfall" are many
   local last = (name:match("^(.-) of ") or name):match("(%S+)$")
+  if not last then return name end
   -- a person's ("Zanzil's Seal") is named; a role's ("Champion's Helm") is not
   -- (an owner opening the name: "Book from Sven's Farm" is a book)
   local head = name:match("^(.-) %l") or name
@@ -140,6 +141,7 @@ local function things(name)
   local known = ns.names and ns.names.plural[name]
   if known then return known end
   local last = name:match("(%S+)$")
+  if not last then return name end
   if name:find("'s ") or UNCOUNTED[last] or last:find("weed$") or last:find("moss$") or last:find("dust$") then return name end
   return plural(name)
 end
@@ -1455,7 +1457,7 @@ function Book:chapter(n, ch)
         if #fight == 1 and m.name then
           local who = (RACE_NAME[m.race or ""] or "") .. (CLASS_NAME[m.class or ""] and " " .. CLASS_NAME[m.class] or "")
           who = who:gsub("^ ", "")
-          alone("pvp-one", key, self:here({ name = m.name, who = who ~= "" and article(who) or nil }, place),
+          alone("pvp-one", key, self:here({ name = m.first or m.name, who = who ~= "" and article(who) or nil }, place),
             tags({ known = who ~= "" or nil }, m), m)
         else
           local horde = 0
@@ -1467,9 +1469,10 @@ function Book:chapter(n, ch)
     elseif m.k == "group" then
       -- a group formed: those who joined together, in one clause
       if not merged[i] then
-        local names, j = { m.name }, i + 1
+        -- (by their first name, on Forever: "Harrysaun", not "Harrysaun Brightwood")
+        local names, j = { m.first or m.name }, i + 1
         while ch.log[j] and ch.log[j].k == "group" and (ch.log[j].at or 0) - (m.at or 0) <= 120 do
-          table.insert(names, ch.log[j].name)
+          table.insert(names, ch.log[j].first or ch.log[j].name)
           merged[j] = true
           j = j + 1
         end

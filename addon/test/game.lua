@@ -18,6 +18,9 @@ local state = {
   money = 0, health = 100, hardcore = true, bind = "Anvilmar", party = {}, race = "Dwarf", class = "PALADIN",
   gear = {}, skills = {},
 }
+-- Items the client has loaded: until then it gives no info for one (asking
+-- loads it), and a quest's objective for it comes without its name ("0/8 ").
+local loaded = {}
 local printed = {}
 function print(msg) table.insert(printed, msg) end
 function strtrim(s) return (s:gsub("^%s+", ""):gsub("%s+$", "")) end
@@ -41,6 +44,10 @@ C_QuestLog = {
       local copy = {}
       for k, v in pairs(o) do copy[k] = v end
       local name, have, need = (o.text or ""):match("^(.-): (%d+)/(%d+)$")
+      if name and o.type == "item" and not loaded[name] then
+        loaded[name] = true -- (the log asks for it: named the next time)
+        name = ""
+      end
       if name then copy.text = ("%s/%s %s"):format(have, need, name) end
       out[i] = copy
     end
@@ -80,10 +87,11 @@ function UnitGUID(u)
   if u == "target" and state.target and state.target.player then return state.target.guid end
   if u == "target" and state.target then return creatureGuid(state.target.id, state.target.n) end
 end
+-- (a player's second name: a surname on Forever, a realm elsewhere)
 function UnitName(u)
-  if u == "player" then return state.name or "Sealinedion" end
+  if u == "player" then return state.name or "Sealinedion", state.surname end
   if u == "npc" then return state.npc end
-  if state.party[u] then return state.party[u].name end
+  if state.party[u] then return state.party[u].name, state.party[u].surname end
   if u == "target" and state.target and state.target.player then return state.target.name end
   local c = unitOf(u)
   return c and c.name
@@ -120,11 +128,14 @@ local ITEMS = { ["Ragged Leather Gloves"] = { 1, 3, 1 }, ["Frostmane Leather Ves
 local itemCount = 3
 -- (today's clients, Classic Era and Forever alike, have only C_Item.GetItemInfo)
 C_Item = { GetItemInfo = function(link)
-  local name = link:match("%[(.-)%]"); local i = ITEMS[name]; if i then return name, link, i[1], i[2] end
+  local name = link:match("%[(.-)%]"); local i = ITEMS[name]
+  if not loaded[name] then loaded[name] = true return nil end -- (asking loads it)
+  if i then return name, link, i[1], i[2] end
 end }
 local function itemLink(name, quality)
   if not ITEMS[name] then itemCount = itemCount + 1; ITEMS[name] = { quality or 2, 10, 100 + itemCount } end
-  return ("|cff1eff00|Hitem:%d::::::::1:::::|h[%s]|h|r"):format(ITEMS[name][3], name)
+  local colour = ({ [0] = "9d9d9d", "ffffff", "1eff00", "0070dd", "a335ee", "ff8000" })[ITEMS[name][1]] or "1eff00"
+  return ("|cff%s|Hitem:%d::::::::1:::::|h[%s]|h|r"):format(colour, ITEMS[name][3], name)
 end
 function GetInventoryItemLink(_, slot) return state.gear[slot] and itemLink(state.gear[slot]) end
 -- Skills: { name, header, max }, as the skills pane lists them.
