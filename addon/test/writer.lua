@@ -985,6 +985,45 @@ end
 table.sort(unused)
 for _, u in ipairs(unused) do problem("never written", "unreachable sentence", u) end
 
+-- The open journal writes the book again at each moment, the closed chapters
+-- from what it kept (ns.writeBook(c, keep)): the same book as written whole,
+-- word for word, at every step of a life (each chapter open, half told, then
+-- whole, then closed).
+local function sameBook(x, y)
+  if x.prologue ~= y.prologue or x.epitaph ~= y.epitaph or #x.chapters ~= #y.chapters then return false end
+  for i, a in ipairs(x.chapters) do
+    local b = y.chapters[i]
+    for _, k in ipairs({ "number", "text", "place", "from", "to", "open", "rare", "close" }) do
+      if a[k] ~= b[k] then return false end
+    end
+  end
+  return true
+end
+local hooks = { ns.writerUsed, ns.writerSentence, ns.writerRemark }
+ns.writerUsed, ns.writerSentence, ns.writerRemark = nil, nil, nil
+for _, n in ipairs({ 1, 2, 3, 6 }) do -- (a Hardcore life, one met mid-life, both, neither)
+  local race = RACES[n]
+  local whole = life(race, COMBOS[race][1], n % 3 == 0, n % 2 == 0 and 20 or 1, 60)
+  local all, keep = whole.chapters, {}
+  local c = setmetatable({ chapters = {} }, { __index = whole })
+  for i, ch in ipairs(all) do
+    c.chapters[i] = ch
+    local log, ended = ch.log, ch.ended
+    ch.ended = nil
+    for _, upTo in ipairs({ math.floor(#log / 2), #log }) do
+      ch.log = { unpack(log, 1, upTo) }
+      if not sameBook(ns.writeBook(c, keep), ns.writeBook(c)) then
+        problem("kept", race .. ": chapter " .. i .. " open, " .. upTo .. " moments", "not the book written whole")
+      end
+    end
+    ch.log, ch.ended = log, ended
+    if not sameBook(ns.writeBook(c, keep), ns.writeBook(c)) then
+      problem("kept", race .. ": chapter " .. i .. " closed", "not the book written whole")
+    end
+  end
+end
+ns.writerUsed, ns.writerSentence, ns.writerRemark = hooks[1], hooks[2], hooks[3]
+
 -- Words and plurals.
 local function eq(a, b, what) if a ~= b then problem("words", what, tostring(a) .. " ~= " .. tostring(b)) end end
 eq(ns.words(1), "one", "1"); eq(ns.words(21), "twenty-one", "21"); eq(ns.words(115), "a hundred and fifteen", "115")

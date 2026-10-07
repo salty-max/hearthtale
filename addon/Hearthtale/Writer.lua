@@ -11,6 +11,7 @@ local goldWords, RACE_NAME, HORDE_RACE, CLASS_NAME = W.goldWords, W.RACE_NAME, W
 local FINAL, foeOf, town, topKills = W.FINAL, W.foeOf, W.town, W.topKills
 local linked, rankName, hash = W.linked, W.rankName, W.hash
 local Book, newBook, newScene = W.Book, W.newBook, W.newScene
+local copy = ns.copy
 
 -- A moment m told by the first arm that fits it, as Rust's match: an arm is
 -- { kind, fn, when = guard }, its kind a moment's kind, a set of them
@@ -506,29 +507,89 @@ function Book:epitaph(c)
   return table.concat(parts, " ")
 end
 
+-- A chapter's entry in the book: its text and what the list shows of it.
+local function entry(b, i, ch)
+  local rare, close, to = nil, nil, (ch.start and ch.start.level) or 1
+  for _, m in ipairs(ch.log or {}) do
+    if m.k == "rare" then rare = true end
+    if m.k == "close" then close = true end
+    if m.k == "level" then to = m.level end
+  end
+  local e = ch.ended
+  if e and e.level then to = math.max(to, e.level) end
+  return {
+    number = i, text = b:chapter(i, ch), chapter = ch, open = not e or nil,
+    place = e and e.place or (ch.start and (ch.start.sub or ch.start.zone)),
+    from = ch.start and ch.start.level or 1, to = to, rare = rare, close = close,
+  }
+end
+
+-- What the closed chapters were written with, besides their records: who the
+-- character is, its prologue, the trades it knows (a trade's own spell is no
+-- lesson). Any change, and the book is written again whole.
+local function identity(c)
+  local p, trades = c.prologue or {}, {}
+  for name in pairs(c.profs or {}) do trades[#trades + 1] = name end
+  table.sort(trades)
+  return table.concat({
+    tostring(c.guid), tostring(c.race), tostring(c.class), tostring(c.faction), tostring(c.hardcore),
+    tostring(c.began and c.began.level), tostring(p.level), tostring(p.quests), tostring(p.inn), tostring(p.zone),
+    tostring(p.played), table.concat(trades, ","),
+  }, "|")
+end
+
+-- The writer between two chapters: all it remembers, but what the character
+-- is (fixed by newBook).
+local FIXED = { c = true, voice = true, own = true, style = true, base = true }
+local function snapshot(b)
+  local state = {}
+  for k, v in pairs(b) do
+    if not FIXED[k] then state[k] = copy(v) end
+  end
+  return state
+end
+
+-- How many of the chapters kept can be used as they were written: all of
+-- them, if the character is the same and so are their records, else none.
+local function reusable(keep, c, closed)
+  if not keep.closed or keep.closed > closed or keep.identity ~= identity(c) then return false end
+  for i = 1, keep.closed do
+    if c.chapters[i] ~= keep.records[i] then return false end
+  end
+  return true
+end
+
 -- The whole book: { prologue = text, chapters = { { number, text, place, from,
 -- to (levels), rare, close, open, chapter } }, epitaph, repeats, minGap }
 -- (minGap: the fewest uses of a kind between two uses of one of its sentences)
-function ns.writeBook(c)
-  local b = newBook(c)
-  local book = { chapters = {} }
-  if c.prologue then
+-- keep: a table the caller keeps between two writings of the same character's
+-- book (the open journal, at each moment). The closed chapters are written
+-- once; then only the open one is, from where the writer stood after them. A
+-- closed chapter never changes, so the book reads the same as written whole.
+function ns.writeBook(c, keep)
+  local chapters = c.chapters or {}
+  local closed = 0
+  while chapters[closed + 1] and chapters[closed + 1].ended do closed = closed + 1 end
+  local b, book, from = newBook(c), { chapters = {} }, 1
+  local kept = keep and reusable(keep, c, closed)
+  if kept then
+    for k, v in pairs(keep.state) do b[k] = copy(v) end
+    book.prologue = keep.prologue
+    for i = 1, keep.closed do book.chapters[i] = keep.chapters[i] end
+    from = keep.closed + 1
+  elseif c.prologue then
     book.prologue = b:prologue(c.prologue)
   end
-  for i, ch in ipairs(c.chapters or {}) do
-    local rare, close, to = nil, nil, (ch.start and ch.start.level) or 1
-    for _, m in ipairs(ch.log or {}) do
-      if m.k == "rare" then rare = true end
-      if m.k == "close" then close = true end
-      if m.k == "level" then to = m.level end
-    end
-    if ch.ended and ch.ended.level then to = math.max(to, ch.ended.level) end
-    local e = ch.ended
-    table.insert(book.chapters, {
-      number = i, text = b:chapter(i, ch), chapter = ch, open = not e or nil,
-      place = e and e.place or (ch.start and (ch.start.sub or ch.start.zone)),
-      from = ch.start and ch.start.level or 1, to = to, rare = rare, close = close,
-    })
+  -- the book up to its last closed chapter, and the writer as it stood then
+  local function remember()
+    keep.identity, keep.closed, keep.prologue, keep.state = identity(c), closed, book.prologue, snapshot(b)
+    keep.records, keep.chapters = {}, {}
+    for i = 1, closed do keep.records[i], keep.chapters[i] = chapters[i], book.chapters[i] end
+  end
+  if keep and not kept and closed == 0 then remember() end
+  for i = from, #chapters do
+    book.chapters[i] = entry(b, i, chapters[i])
+    if keep and i == closed then remember() end
   end
   if c.hardcore and c.death then book.epitaph = b:epitaph(c) end
   book.repeats, book.minGap, book.minGapKind = b.repeats, b.minGap, b.minGapKind

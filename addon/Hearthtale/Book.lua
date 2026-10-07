@@ -136,6 +136,9 @@ end
 local book, list, page
 local build -- made on first opening (below)
 local written -- this character's book as last written: { prologue, chapters, epitaph }
+-- What the writer keeps between two writings (ns.writeBook): this character's,
+-- and each fallen life's in the Hall (by guid).
+local kept, keptHall = {}, {}
 local current -- its open chapter: a number, or "prologue"
 local hallLife, hallKey -- in the Hall: the open life (its guid) and its page ("epitaph", "prologue", a chapter's number)
 local asked -- opened at a page (a link): don't go to the last chapter
@@ -294,7 +297,7 @@ end
 -- open the last chapter (opening the book), else keep the open one.
 local function refreshJournal(latest)
   local c = ns.journal()
-  written = ns.writeBook(c)
+  written = ns.writeBook(c, kept)
   local known = current == "prologue" and written.prologue or chapterOf(written, current)
   if latest or not known then
     local last = written.chapters[#written.chapters]
@@ -327,7 +330,8 @@ local function refreshHall(scroll)
       selected = life.guid == hallLife and hallKey == "epitaph",
       click = function() hallLife, hallKey = life.guid, "epitaph"; ns.refresh() end })
     if life.guid == hallLife then
-      open, w = life, ns.writeBook(life)
+      keptHall[life.guid] = keptHall[life.guid] or {}
+      open, w = life, ns.writeBook(life, keptHall[life.guid])
       chapterRows(entries, w, hallKey, function(key) hallKey = key; ns.refresh() end, 14)
     end
   end
