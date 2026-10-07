@@ -54,9 +54,12 @@ The plan and its decisions: PLAN.md.
 - `addon/Hearthtale/`: `Core.lua` (the character's record, events,
   `/hearthtale`), `Record.lua` (the chapters and their moments, as they happen;
   a logout settled at the next login: under 30 minutes away it's no break,
-  nothing told; indoors without an inn, a night `inside`. Kills on Forever,
-  without a combat log: the target watched through the fight, its health and
-  flags, one fought and seen dying is a kill, not one another claimed),
+  nothing told; indoors without an inn, a night `inside`. Kills: my killing
+  blow or my pet's, from `PARTY_KILL` (killer, victim), an event of its own on
+  Forever and Classic since 1.15.9 (secret only in a Forever instance, where
+  no creature can be told), else the combat log's line; the name from what
+  was seen (target, mouse-over, nameplates) or `UnitTokenFromGUID`. Without
+  either (an older Forever client): the target watched through the fight),
   `Writer.lua` (the prose, written from the records when read),
   `Save.lua` (the book written into the saved file at each logout, for the
   site: it never writes its own),

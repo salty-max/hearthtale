@@ -55,6 +55,14 @@ frame:RegisterEvent("PLAYER_LOGOUT")
 
 -- Other files listen through this frame (ns.on). An event a client doesn't
 -- know is simply never heard.
+-- Does this client have the event? (registering an unknown one throws)
+local probe = CreateFrame("Frame")
+function ns.knows(event)
+  local ok = pcall(probe.RegisterEvent, probe, event)
+  if ok then probe:UnregisterEvent(event) end
+  return ok
+end
+
 function ns.on(event, fn)
   if not listeners[event] then
     listeners[event] = {}

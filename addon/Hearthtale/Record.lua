@@ -566,6 +566,7 @@ local function seen(unit)
 end
 ns.on("PLAYER_TARGET_CHANGED", function() seen("target") end)
 ns.on("UPDATE_MOUSEOVER_UNIT", function() seen("mouseover") end)
+ns.on("NAME_PLATE_UNIT_ADDED", function(unit) seen(unit) end) -- (names only: nothing depends on them)
 
 -- A kill: counted for the recap; the chapter's first of a creature is a
 -- moment (the first of its kind for the character, an elite outside
@@ -610,13 +611,37 @@ local function vanquished(guid, name, second)
   moment("pvp", { name = full, first = first ~= full and first or nil, race = race, class = class })
 end
 
--- Classic: the combat log names the killer. Forever: corpses I fought.
+-- Kills: my killing blow or my pet's, however it was dealt (a DoT, an area
+-- spell, a creature never targeted, one with no loot). PARTY_KILL (killer,
+-- victim) is an event of its own where the client has it (Forever, Classic
+-- since 1.15.9), else a line of the combat log. Its GUIDs are secret only in
+-- an instance on Forever, where no creature can be told from another.
+local partyKill = ns.knows and ns.knows("PARTY_KILL")
+local function killed(attacker, victim)
+  if not attacker or not victim or secret(attacker) or secret(victim) then return end
+  if attacker ~= UnitGUID("player") and attacker ~= UnitGUID("pet") then return end
+  -- (one never targeted nor moused over: the game may still know it as a unit)
+  local token = UnitTokenFromGUID and UnitTokenFromGUID(victim)
+  if token and not secret(token) then seen(token) end
+  if victim:find("^Player") then
+    if token and not secret(token) then vanquished(victim, UnitName(token)) else
+      local name = GetPlayerInfoByGUID and select(6, GetPlayerInfoByGUID(victim))
+      vanquished(victim, name)
+    end
+  elseif victim:find("^Creature") or victim:find("^Vehicle") then
+    slain(victim)
+  end
+end
+if partyKill then ns.on("PARTY_KILL", killed) end
+
 local lastHit
 if not ns.forever then
   ns.on("COMBAT_LOG_EVENT_UNFILTERED", function()
     local _, sub, _, source, sourceName, _, _, dest, destName = CombatLogGetCurrentEventInfo()
     local me, pet = UnitGUID("player"), UnitGUID("pet")
-    if sub == "PARTY_KILL" and (source == me or source == pet) and dest and dest:find("^Creature") then
+    if sub == "PARTY_KILL" and partyKill then
+      -- (told by the event of its own)
+    elseif sub == "PARTY_KILL" and (source == me or source == pet) and dest and dest:find("^Creature") then
       slain(dest, destName)
     elseif sub == "PARTY_KILL" and (source == me or source == pet) and dest and dest:find("^Player") then
       vanquished(dest, destName)
@@ -627,8 +652,8 @@ if not ns.forever then
       lastHit = { name = sourceName, guid = source, at = now() }
     end
   end)
-else
-  -- My target, watched as the fight goes (its health, its flags), not only
+elseif not partyKill then
+  -- (a Forever client without PARTY_KILL) My target, watched as the fight goes (its health, its flags), not only
   -- when it's chosen: one I fought (both of us in combat, not another's to
   -- claim) and then see dead is my kill. (A target is mostly chosen before
   -- the fight starts, and dies still chosen.)
