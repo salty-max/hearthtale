@@ -2,8 +2,8 @@
 kind: r-gear
 ---
 - [!made !held] light enough not to trouble my step
-- [!made] fine work, though not our own
-- [!made] quiet enough for the forest
+- [!made] finer work than I expected
+- [!made] quiet enough to move unheard
 - [!made] needing a few days to feel like mine
 - [!made hc] one more care taken against a careless end
 - [made !held] each seam laid with patience

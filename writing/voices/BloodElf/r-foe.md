@@ -12,5 +12,5 @@ kind: r-foe
 - [mechanical] crude workmanship, to the last
 - [night] the dark doing my aim no favours
 - [hc] reminded how little stood between me and ruin
-- [low] still learning that grace and survival are not the same
+- [low] less graceful about it than I meant to be
 - [high] with a precision I had worked hard to earn

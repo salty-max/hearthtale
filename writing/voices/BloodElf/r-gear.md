@@ -8,4 +8,4 @@ kind: r-gear
 - [!made hc] one more defence against an unworthy end
 - [made] finished to my own exacting standards
 - [made] rather well made, if I do say so
-- [made] proof that care can make up for circumstance
+- [made] neat work, I thought

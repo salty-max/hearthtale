@@ -6,7 +6,7 @@ kind: r-road
 - [!back] another piece of the land to learn
 - [!back] measuring the place by its walls and its water
 - [!back] wary until I knew who held it
-- [!back night] its fires the first thing I saw
+- [!back night] arriving in the dark
 - [back] the road under my feet already known
 - [back] the place unchanged, though I was not
 - [back] returning with something to show for the absence

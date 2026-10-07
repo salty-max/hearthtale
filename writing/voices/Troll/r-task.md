@@ -1,10 +1,10 @@
 ---
 kind: r-task
 ---
-- a favour done being a favour owed
-- small work, but the tribe runs on small work
-- learning who here would stand by their word
-- done my own way, which worked
+- my legs feeling it afterwards
+- small work, quickly done
+- with a few new faces to remember
+- my own way, which worked
 - without much fuss and without much thanks
 - a good turn to remember
 - [explore] the land showing me its tricks one by one

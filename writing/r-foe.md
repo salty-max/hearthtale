@@ -9,7 +9,7 @@ kind: r-foe
 - the quiet afterwards almost as loud as the fight
 - taking a moment to steady myself afterwards
 - without ever feeling I had the measure of it
-- which settled one question about the road ahead
+- glad of the quiet that followed
 - [one] its last swing closer than I liked
 - [!one] the last of them harder than the first
 - [!one] one at a time, as sensibly as I could manage

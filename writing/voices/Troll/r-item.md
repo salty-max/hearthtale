@@ -10,5 +10,5 @@ kind: r-item
 - [one !plural] easier to carry than to find
 - [meat] the smell of it making me hungry
 - [cloth] good for bandages if nothing else
-- [night] the moon helping more than I expected
+- [night] my eyes used to the dark
 - [hc] my eyes on the bushes all the while

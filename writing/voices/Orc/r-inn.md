@@ -2,10 +2,10 @@
 kind: r-inn
 ---
 - somewhere to return to with my strength spent
-- rest earned being rest well used
+- my strength spent and a bed waiting
 - the stone a promise of the road home
-- with the smell of the cookfire for a welcome
-- the innkeeper wary of me only as long as was polite
+- glad of walls for the night
+- the stone heavy with the promise of rest
 - a hearth worth defending, if it came to that
-- [night] the fire low and the talk lower
-- [hc] a safe camp being worth more than a bold one
+- [night] late, and glad to stop
+- [hc] a safe place to wake, which mattered

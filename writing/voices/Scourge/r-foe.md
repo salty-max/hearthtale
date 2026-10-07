@@ -1,7 +1,7 @@
 ---
 kind: r-foe
 ---
-- efficiently, the only virtue I insist on
+- efficiently, with nothing wasted
 - [one] one more thing that would not get up again, unlike some of us
 - with no more fuss than the matter required
 - my own pulse, had I one, unbothered

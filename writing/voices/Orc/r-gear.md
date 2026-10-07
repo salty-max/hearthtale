@@ -2,7 +2,7 @@
 kind: r-gear
 ---
 - [!made] strong enough for the work ahead
-- [!made] sound kit, which is all a fight respects
+- [!made] sound kit, and heavy where it counted
 - [!made] one weakness fewer for an enemy to find
 - [!made] eager to see how the new kit would serve
 - [!made hc] protection I meant to rely on

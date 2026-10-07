@@ -6,7 +6,7 @@ kind: r-road
 - [!back] watching the edges before the middle
 - [!back] a new place, so new dangers
 - [!back] the smell of it telling me plenty
-- [!back night] its fires a good sign, mostly
+- [!back night] arriving after dark
 - [back] the place still standing, good
 - [back] old ground, easy ground
 - [back] the faces remembering mine

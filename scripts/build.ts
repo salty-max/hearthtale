@@ -159,6 +159,14 @@ function parseFile(file: string, kind: string | null): Parsed | null {
     const least = kind === null ? 12 : 8; // shared, a race's own
     if (sentences.length < least) fail(file, `a pool of remarks needs at least ${least}`);
     for (const s of sentences) if (/^(and|but|then)\b/.test(s.text)) fail(file, `a remark follows a comma, not a conjunction: ${s.text}`);
+    // after my own action ("I took up tailoring, …"), a past participle reads as
+    // a second verb missing its "and": "…, practised until my arms complained"
+    if (/^r-(road|lesson|company|task)$/.test(own))
+      for (const s of sentences) {
+        const first = s.text.split(/[ ,]/)[0];
+        if (/^(\w+ed|done|made|found|built|taught|brought|kept|learnt)$/.test(first) && !/^(un\w+|pleased|surprised|relieved|tired|interested)$/.test(first))
+          fail(file, `a remark after my own action can't start with a past participle: ${s.text}`);
+      }
   }
   if (sentences.some((s) => s.tags.includes("plain")) && !(own && RECAP.has(own))) fail(file, "[plain] marks a recap's plain sentence");
   if (own && RECAP.has(own) && kind === null && sentences.filter((s) => s.tags.includes("plain")).length < 5)

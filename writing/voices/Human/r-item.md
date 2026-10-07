@@ -10,5 +10,5 @@ kind: r-item
 - [one !plural] someone's loss and someone else's gain
 - [meat] thinking of a proper kitchen the whole way
 - [cloth] good enough for a farmer's shirt
-- [night] by lantern light, when I could find one
+- [night] squinting in the dark the whole time
 - [hc] watching the treeline all the while

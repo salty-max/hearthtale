@@ -1,9 +1,9 @@
 ---
 kind: r-company
 ---
-- our silences companionable
+- glad of quiet company
 - [one] two watchers being better than one
-- learning their ways as they learned mine
+- watching how they moved in a fight
 - trusting them a little more by the end
 - the road gentler for the company
 - glad of a steady companion

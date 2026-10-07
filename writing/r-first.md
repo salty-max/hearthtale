@@ -3,7 +3,7 @@ kind: r-first
 ---
 - quicker and meaner than any description of them
 - learning more in the first minute than from all I had heard
-- not at all what the stories had led me to expect
+- nothing like what I had pictured
 - curious, once it was over, how they lived
 - a lesson I suspected would be repeated
 - wary of the next ones before I had seen them

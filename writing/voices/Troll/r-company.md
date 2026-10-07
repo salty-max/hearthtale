@@ -2,10 +2,10 @@
 kind: r-company
 ---
 - the road better with a friend
-- [one] two hunters better than one
-- trading stories as we went
+- [one] two pairs of eyes better than one
+- glad of the help
 - trusting them more by the end
 - easy company, the best kind
-- [one] the work halved, the laughter doubled
+- [one] the work halved
 - [night] the dark easier to share
-- [hc one] watching each other's backs, as survivors do
+- [hc] watching my back and theirs

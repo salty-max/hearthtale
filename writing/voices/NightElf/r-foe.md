@@ -8,7 +8,7 @@ kind: r-foe
 - [one] a life I would have spared, given the choice
 - [!one] one by one, with care
 - [teeth] hunger being no crime, though it nearly cost me
-- [mechanical] such contraptions having no place in a living wood
+- [mechanical] a contraption with no life in it to end
 - [night] the light of Elune enough to fight by
 - [hc] aware how short even a long life can be made
 - [low] still learning how little time a fight allows

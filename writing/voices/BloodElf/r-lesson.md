@@ -4,10 +4,11 @@ kind: r-lesson
 - with considerably more practice to come
 - the principles elegant, the practice demanding
 - a refinement I had been waiting for
-- the teaching precise, which I appreciated
-- practised until it lost its awkwardness
-- keen to see it put to proper use
+- precise work, which I appreciated
+- [one] its awkwardness gone after a little practice
+- [one] keen to see it put to proper use
 - [new] a craft worth mastering properly
 - [new] beginning at the beginning, as one must
 - [low] still an apprentice in this, if in little else
 - [high] adding one more polish to an old skill
+- [!one] keen to see them put to proper use

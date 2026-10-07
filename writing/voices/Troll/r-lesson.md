@@ -3,11 +3,12 @@ kind: r-lesson
 ---
 - one more trick for the pack
 - worth the time, every bit
-- the trainer's way a little different from mine
-- practised until it came easy
-- eager to try it where it counted
-- the kind of lesson that keeps you breathing
+- the movements strange at first
+- [one] easy after a little practice
+- [one] eager to try it where it counted
+- [one] my hands quick to take to it
 - [new] something new for the tribe to use
 - [new] starting slow, as the wise do
 - [low] still green in this, but learning
 - [high] fitting neatly among the old tricks
+- [!one] eager to try them where it counted

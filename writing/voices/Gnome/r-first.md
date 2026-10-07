@@ -2,7 +2,7 @@
 kind: r-first
 ---
 - a fascinating subject, at a safe distance
-- less predictable than my notes had suggested
+- less predictable than I had assumed
 - worth a page of observations later
 - behaving in a way I had not accounted for
 - my hypothesis about them disproved within seconds

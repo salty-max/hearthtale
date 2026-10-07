@@ -3,11 +3,11 @@ kind: r-road
 ---
 - [!grouped] the road dusty and the company scarce
 - [!back] curious what its people were like
-- [!back] its name on a signpost before I saw a roof
+- [!back] keen to see it up close
 - [!back] keen to see what work the place had for me
 - [!back !home] a stranger, and plain to everyone
-- [!back night] its lamps the first welcome I had
+- [!back night] arriving after dark
 - [back] a few faces nodding at me now
 - [back] the road worn into habit by now
-- [back] finding it busier than I remembered
-- [high] one more town that had seen worse days
+- [back] much as I remembered it
+- [high] one more place on a long road

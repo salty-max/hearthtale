@@ -2,11 +2,11 @@
 kind: r-task
 ---
 - a small kindness, freely given
-- the sort of help a tribe is built on
-- learning the needs of the people here
-- done patiently, which is to say done well
+- glad to lighten someone's load
+- with more of the place known to me
+- without hurry
 - with no need of thanks
-- a debt of friendship honoured
+- my legs tired by the end
 - [explore] the land speaking a little more plainly to me
 - [explore] walking it slowly, as the old ones taught
 - [escort] matching my pace to theirs

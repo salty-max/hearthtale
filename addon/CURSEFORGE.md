@@ -17,11 +17,15 @@ For Classic Era (Hardcore, Season of Discovery), TBC Anniversary and World of Wa
 A chapter runs from one rest to the next. Logging out in the wild is a night outdoors, and the chapter goes on; after four hours of play, the next logout closes it wherever you are.
 
 - **The road**: where the chapter began, the lands and places seen for the first time, the inn you made your home, your flights, the campfires you sat by, the nights outdoors.
-- **The work**: what each quest had you do (the wolves you hunted, the meat you brought, the message you carried), for whom, and who you returned to.
+- **The work**: what each quest had you do (the wolves you hunted, the meat you brought, the message you carried), told where you did it, for whom, and who you returned to. A quest you abandon is left out.
 - **The fights**: each new creature fought, the first of each kind, elites, rares, and the close calls (under a tenth of your health, and alive to tell it), by night or day; when the chapter closes, what you fought most.
-- **The company**: who you grouped with, the dungeons you went into and the bosses who stayed there.
+- **The company**: who you grouped with, the dungeons and raids you went into and the bosses who stayed there.
+- **The other side**: a player of the other faction you kill in the open world, by name, race and class, or several together when the fighting runs on. Battlegrounds are not part of the tale.
+- **Death**: on a normal realm, how you died and how you came back: the run back from the graveyard as a ghost, the spirit healer's bargain, or a companion who raised you.
 - **What you became**: what the trainer taught you; a druid's new forms, a warlock's new demons, a class's own steed; the professions you took up and their ranks, riding and the first ride; each piece of gear the first time you wear it (and if you made it yourself, the journal says so); a hunter's new pets, and the times they fell.
-- **The rest**: the rare finds (blue and better), your professions' milestones, and at the end the time it took and the gold it brought.
+- **The rest**: the rare finds you loot (blue and better; a quest's reward is told when you wear it), an evening at your craft in one line, your professions' milestones, and at the end the time it took and the gold it brought.
+
+The journal ends when you reach the highest level of your game: the last chapter closes there, with the journey's end.
 
 A character you already play gets a prologue from what the game knows of its life so far, and chapters from there.
 

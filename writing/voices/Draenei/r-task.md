@@ -2,12 +2,12 @@
 kind: r-task
 ---
 - a small help, freely given
-- the kind of kindness that makes strangers into neighbours
-- learning what mattered to the people here
-- done with care, as all such things should be
+- glad to be of use
+- with a little more of the place known to me
+- with care
 - hoping it would make a difference
-- a step towards belonging
+- a little less a stranger for it
 - [explore] the land a little less strange with every step
 - [explore] learning its paths as one learns a new language
-- [escort] patient with their pace and their fears
+- [escort] patient with their pace
 - [night] the dark softened by the stars

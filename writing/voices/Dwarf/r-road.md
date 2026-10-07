@@ -6,7 +6,7 @@ kind: r-road
 - [!back] keen to put a place to the name
 - [!back] judging the stonework before the people
 - [!back] curious what the locals would make of a dwarf
-- [!back night] lamplight in a window the first thing I saw
+- [!back night] its outline dark against the sky
 - [back] the road shorter the second time, as roads are
 - [back] glad to be heading somewhere I knew
 - [back] the same ruts in the road as before

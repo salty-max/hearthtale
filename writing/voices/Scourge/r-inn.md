@@ -5,7 +5,7 @@ kind: r-inn
 - somewhere to return to that did not flinch at me
 - a room, a door and fewer questions
 - the stone indifferent to my condition
-- the innkeeper's eyes not lingering, which I appreciated
+- a door I could close
 - a place of my choosing, which still matters
-- [night] the common room emptier, which suited me
+- [night] at an hour the living keep to their beds
 - [hc] a refuge worth having, even for one already dead

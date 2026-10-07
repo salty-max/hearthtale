@@ -3,7 +3,7 @@ kind: r-item
 ---
 - with the patience of someone not short of time
 - for reasons nobody volunteered
-- the smell bothering everyone but me
+- the smell, if any, lost on me
 - [!one !plural] not a collection I intended to keep
 - [!one !plural] the count exact, which is more than the request was
 - [one !plural] someone's treasure, apparently

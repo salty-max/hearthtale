@@ -4,7 +4,7 @@ kind: r-task
 - competently, as one would expect
 - a small favour, graciously done
 - the details handled with some care
-- learning who here could be relied upon
+- with a few more names worth remembering
 - the request rather beneath me, though I did not say so
 - without complaint, outwardly at least
 - [explore] the place more interesting than its reputation

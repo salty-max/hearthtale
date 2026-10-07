@@ -5,9 +5,9 @@ kind: r-task
 - a small task neatly finished
 - the sort of thing that only looks simple
 - a few improvements to the process already in mind
-- learning who here actually knew what they were doing
+- noting what could be done better
 - with the satisfaction of a ticked box
 - [explore] sketching the layout in my head as I went
 - [explore] the place more interesting than its map
 - [escort] working out how to go faster without saying so
-- [night] my lamp doing more work than I was
+- [night] the dark slowing everything down

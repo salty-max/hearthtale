@@ -2,10 +2,10 @@
 kind: r-inn
 ---
 - a bed I could count on
-- the kind of place where nobody asks too many questions
-- the innkeeper friendly enough to remember my name
+- a place to sleep without one eye open
+- a bed waiting at the end of the road
 - somewhere to come back to, which mattered more than I said
 - the stone warm in my pocket
-- a hearth and a hot meal in reach
-- [night] the common room still loud at that hour
+- somewhere dry to come back to
+- [night] glad to be done with the day
 - [hc] a safe door worth knowing

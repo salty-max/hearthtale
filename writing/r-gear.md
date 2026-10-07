@@ -7,7 +7,7 @@ kind: r-gear
 - [!made !held] curious how long the new fit would last
 - [!made] a small change, but one I felt at once
 - [!made low] beginning to look like someone who meant it
-- [!made high] worth more to me than any price
+- [!made high] an improvement I could feel at once
 - [!made hc] one more thing between me and a bad end
 - [made !held] every stitch familiar
 - [made] every flaw known only to me

@@ -1,11 +1,11 @@
 ---
 kind: r-task
 ---
-- the need behind it older than the one who asked, I suspected
+- finishing before the light changed
 - with time enough to do it properly
-- learning the shape of the place by its needs
-- an errand small enough to do well
-- with the patience such work deserves
+- seeing the place a little more clearly for it
+- small, and done with care
+- without hurrying any of it
 - the land seeming to watch it done
 - [explore] slow enough to see what others pass by
 - [explore] the place keeping more secrets than it showed
