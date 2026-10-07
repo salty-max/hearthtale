@@ -10,6 +10,7 @@
 ## X-License: GPL-3.0-or-later
 
 Data.lua
+Names.lua
 Core.lua
 Record.lua
 Writer.lua

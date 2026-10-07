@@ -29,6 +29,18 @@ The plan and its decisions: PLAN.md.
   (`ROUTINE` in `Writer.lua` maps each clause kind to its pool). Each is a
   phrase after a comma: lower case, no stop, no leading "and". At least 12
   shared, 8 per race.
+- `addon/Hearthtale/Names.lua` (generated, committed): how the game itself
+  writes its names, counted over all its quest texts and NPC speech: places
+  with or without "the", creatures by name ("Hogger"), as one of a kind ("the
+  Defias Messenger") or with "a", quest items' plurals ("8 Tough Wolf Meat"),
+  role owners in item names ("a Champion's Helm" vs "Zanzil's Seal"). Where the
+  game is silent, `scripts/names.ts` decides from the name (macOS's
+  /usr/share/dict/words) and the writer's rules the rest. `bun run audit`
+  downloads the data (cmangos classic-db, pfQuest's places) into `.cache/`,
+  regenerates Names.lua and runs `addon/test/audit.lua`: every place,
+  creature, objective and item of the game through the writer, reviewed in
+  `.cache/audit/report.txt` and checked for regressions. Fix by rule, never
+  by name.
 - `writing/scenery/<slug>.md`: a place described the first time a book meets
   it (front matter `place:`, `type:` zone | town | dungeon, `faction:`
   alliance | horde | neutral, optional `home:` races). Lines tagged by

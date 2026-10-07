@@ -37,6 +37,7 @@ if ... == "compare" then
   local ns = {}
   local forever = os.getenv("FOREVER") == "1"
   assert(loadfile("addon/Hearthtale/" .. (forever and "Data_Forever.lua" or "Data_Classic.lua")))("Hearthtale", ns)
+  assert(loadfile("addon/Hearthtale/Names.lua"))("Hearthtale", ns)
   assert(loadfile("addon/Hearthtale/Writer.lua"))("Hearthtale", ns)
   io.write("# One day, different voices\n\n")
   io.write("A synthetic record used to compare expression, not a canonical quest sequence.\n")

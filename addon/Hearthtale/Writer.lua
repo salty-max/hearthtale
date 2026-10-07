@@ -51,21 +51,27 @@ local COMMON = { Valley = true, Temple = true, Hall = true, Halls = true, Ring =
 local TRAILING = { District = true, Quarter = true } -- "the Dwarven District", "the Mage Quarter"
 local function mid(name)
   if not name then return nil end
+  -- as the game itself writes it (Names.lua), else by the rules below
+  local known = ns.names
+  if known and known.placeThe[name] then return "the " .. name end
+  if known and known.placeBare[name] then return name end
   local first = name:match("^(%a+) of ")
   if first and COMMON[first] then return "the " .. name end
   if TRAILING[name:match("(%a+)$") or ""] and not name:find("^The ") then return "the " .. name end
   return (name:gsub("^The ", "the "))
 end
+ns.mid = mid
 
 local IRREGULAR = { Wolf = "Wolves", Thief = "Thieves", Elf = "Elves", Dwarf = "Dwarves", Man = "Men",
   Woman = "Women", Mouse = "Mice", Sheep = "Sheep", Deer = "Deer", Shaman = "Shamans", Undead = "Undead", Dead = "Dead",
   Vermin = "Vermin", Wildkin = "Wildkin", Moonkin = "Moonkin",
-  Dragonkin = "Dragonkin", Kin = "Kin", Wolfkin = "Wolfkin", Spawn = "Spawn", Fish = "Fish" }
+  Dragonkin = "Dragonkin", Salmon = "Salmon", Trout = "Trout", Moose = "Moose", Kin = "Kin", Wolfkin = "Wolfkin", Spawn = "Spawn", Fish = "Fish" }
 local function plural(name)
   local head, tail = name:match("^(.-)( of .+)$")
   if head then return plural(head) .. tail end
   local before, last = name:match("^(.-)(%S+)$")
   if IRREGULAR[last] then return before .. IRREGULAR[last] end
+  if last:match("fish$") then return name end -- "Queenfish", like "Fish"
   if last:match("[^aeiouAEIOU]y$") then return before .. last:sub(1, -2) .. "ies" end
   if last:match("ss$") or last:match("[xz]$") or last:match("[cs]h$") then return name .. "es" end
   if last:match("s$") then return name end -- already many: "Scavenged Goods"
@@ -79,6 +85,10 @@ ns.plural = plural
 local TROPHY = { Head = true, Skull = true, Heart = true, Scalp = true }
 local MASS = { Armor = true, Mail = true, Garb = true, Attire = true, Regalia = true, Raiment = true, Plate = true, Leather = true }
 local function itemName(name)
+  -- one the game never counts ("8 Linen Cloth"): no article, but for a
+  -- word that is its own plural ("an Explosive Sheep")
+  local known = ns.names and ns.names.plural[name]
+  if known == name and not name:find("s$") and not IRREGULAR[name:match("(%a+)$") or ""] then return name end
   -- its own article: "An Unsent Letter" reads "an Unsent Letter"
   local own = name:match("^(An?) ") or name:match("^(The) ")
   if own then return own:lower() .. name:sub(#own + 1) end
@@ -87,7 +97,10 @@ local function itemName(name)
   if part and TROPHY[part] then return whose .. "'s " .. part:lower() end
   -- the thing itself, before an "of": "Chausses of Westfall" are many
   local last = (name:match("^(.-) of ") or name):match("(%S+)$")
-  if name:find("'s ") or last:match("s$") or MASS[last] then return name end
+  -- a person's ("Zanzil's Seal") is named; a role's ("Champion's Helm") is not
+  local owner = name:match("(%a+)'s ")
+  if owner and not (ns.names and ns.names.roles[owner]) then return name end
+  if last:match("s$") or MASS[last] then return name end
   return (name:match("^[AEIOUaeiou]") and "an " or "a ") .. name
 end
 ns.itemName = itemName
@@ -98,6 +111,9 @@ local UNCOUNTED = { Meat = true, Cloth = true, Leather = true, Silk = true, Wool
   Blood = true, Moss = true, Sand = true, Ash = true, Powder = true, Venom = true, Ichor = true, Dust = true, Silver = true,
   Gold = true, Iron = true, Copper = true, Bark = true, Root = false, Mail = true, Grain = true, Barley = true, Rye = true, Corn = true }
 local function things(name)
+  -- as the game writes it after a number (Names.lua), else by the rules
+  local known = ns.names and ns.names.plural[name]
+  if known then return known end
   local last = name:match("(%S+)$")
   if name:find("'s ") or UNCOUNTED[last] or last:find("weed$") or last:find("moss$") or last:find("dust$") then return name end
   return plural(name)
@@ -110,12 +126,27 @@ ns.things = things
 local TITLES = { Mr = true, Mrs = true, Captain = true, Lord = true, Lady = true, King = true, Queen = true,
   Prince = true, Princess = true, Baron = true, Baroness = true, General = true, Commander = true, Chief = true,
   Overlord = true, Archmage = true, Foreman = true, Sergeant = true, Lieutenant = true, Marshal = true,
-  Master = true, Emperor = true, Warlord = true, Highlord = true, Count = true, Duke = true, Magistrate = true }
+  Master = true, Archivist = true, Magus = true, Khan = true, Emperor = true, Brother = true, Sister = true,
+  Father = true, Mother = true, Gatekeeper = true, Jailor = true, Taskmaster = true, Watcher = true, Acolyte = true,
+  Ambassador = true, Engineer = true, Boss = true, Apothecary = true, Deathguard = true, Guard = true, Huntsman = true,
+  Rifleman = true, Miner = true, Protector = true, Cannoneer = true, Grunt = true, Scout = true, Priestess = true,
+  Bloodlord = true, Battleguard = true, Warchief = true, Admiral = true, Inquisitor = true, Chieftain = true,
+  Colonel = true, Farmer = true, Geomancer = true, Lorekeeper = true, Private = true, Tinkerer = true, Advisor = true,
+  Old = true, Ol = true, Ranger = true, Broodlord = true, Pyroguard = true, Warlord = true, Highlord = true, Count = true, Duke = true, Magistrate = true }
 local function article(name)
   if not name then return nil end
-  if TITLES[name:match("^(%a+)") or ""] then return name end
+  -- a title before a name ("Brother Ravenoak"), not the name alone ("Guard")
+  if TITLES[name:match("^(%a+)") or ""] and name:find(" ") then return name end
+  if name:find("^The ") then return "the " .. name:sub(5) end -- "The Evalcharr"
+  -- as the game itself writes it (Names.lua): a person, or one of a kind
+  local known = ns.names
+  if known and known.creatureBare[name] then return name end
+  if known and known.creatureThe[name] then return "the " .. name end
+  -- a name of its own: "Targorr the Dread", "Rhahk'Zor"
+  if name:find(" the ") or name:find("^%u%a*'%a+$") then return name end
   return (name:match("^[AEIOUaeiou]") and "an " or "a ") .. name
 end
+ns.article = article
 
 -- Kinds worth a "first of its kind" (the game's English names; people are
 -- not a kind, critters are not a fight, and a beast without a family is
@@ -317,6 +348,7 @@ local REMARK_GAP = 10
 -- Tags that name what a remark is about: such a remark, when it fits, comes first.
 local SUBJECTS = { teeth = true, mechanical = true, cloth = true, meat = true, explore = true, escort = true, made = true }
 
+local PEOPLE = { "giver", "ender", "boss", "mates", "pet" } -- slots that name people
 local Book = {}
 Book.__index = Book
 
@@ -358,6 +390,10 @@ function Book:say(kind, key, values, tags, prefer, raw)
     end
   end
   for k, v in pairs(self.voice) do if values[k] == nil then values[k] = v end end
+  -- people named with their article ("The Defias Traitor"): "the" inside a sentence
+  for _, k in ipairs(PEOPLE) do
+    if type(values[k]) == "string" then values[k] = values[k]:gsub("^The ", "the "):gsub(", The ", ", the "):gsub(" and The ", " and the ") end
+  end
   -- A place just named is not named again by a sentence without a verb,
   -- unless no other sentence fits.
   local named = values["in"]
@@ -585,14 +621,34 @@ end
 -- A quest, told by what it asked: so many of a creature slain, so many of a
 -- thing brought, a task, a message carried to another (a clause); else only
 -- who asked; a quest with nothing but its title goes untold.
--- An objective that says what is done, not what to do ("Moonkin Stone found"):
--- it can't follow "I managed to".
-local DONE = { found = true, slain = true, made = true, built = true, met = true, done = true, freed = true }
-local function doneText(text)
-  local last = text:gsub("[%.:].*$", ""):match("(%a+)%s*$")
-  return last and (DONE[last:lower()] or last:find("[^e]ed$") or last:find("[^e]en$")) and true or false
+-- An objective the log writes as an instruction ("Burn the Highvale Notes")
+-- reads as a task done; one that names a result ("Banner Destroyed", "Flame
+-- of Stratholme", "Attack Plan: Orgrimmar destroyed") can't follow "I
+-- managed to", and the quest is told by who asked. (Checked against every
+-- objective of the game: addon/test/audit.lua.)
+local INSTRUCTIONS = {}
+for v in ("accept activate ask assist attack awaken banish break bring build burn bury calm capture catch check "
+  .. "chart cleanse climb close collect convince cook craft cure defeat defend deliver descend destroy dig discover "
+  .. "douse drop enter escort examine excavate explore extinguish feed find fly follow free gather guard harvest heal "
+  .. "help hunt ignite inspect interrogate investigate kill learn light locate lure mark obtain observe open persuade "
+  .. "place plant protect purge purify question raise reach read recover recruit release repair rescue retrieve "
+  .. "return revive ride sabotage save scare scout search set shatter shut slay smash speak spy steal study summon "
+  .. "survive take talk tame test throw toss track trap travel uncover unearth unlock use view visit wake warn "
+  .. "witness"):gmatch("%a+") do
+  INSTRUCTIONS[v] = true
 end
+local function instruction(text)
+  return INSTRUCTIONS[(text:match("^(%a+)") or ""):lower()] and not text:find("[:?]") or false
+end
+ns.instruction = instruction
 local function lowerFirst(text) return (text:gsub("^%u", string.lower)) end
+-- An objective as a task done: "Escort The Defias Traitor to discover where
+-- VanCleef is hiding" is "escort the Defias Traitor to discover where
+-- VanCleef was hiding".
+local function taskOf(text)
+  return (lowerFirst((text:gsub("[%.:]%s*$", ""))):gsub(" The ", " the "):gsub(" is ", " was "):gsub(" are ", " were "))
+end
+ns.taskOf = taskOf
 function Book:deed(m, key, tags)
   local o = m.objectives and m.objectives[1]
   local objective = o and o.text and lowerFirst(o.text)
@@ -621,11 +677,10 @@ function Book:deed(m, key, tags)
     tags.cloth = o.name:match("Cloth$") or o.name:match("Silk$") or o.name:match("Wool$") or nil
     tags.meat = o.name:match("Meat$") or nil -- uncounted: "it"
     done = self:say("c-deed-item", key, values, tags, tags.trophy and { trophy = true } or nil, true)
-  elseif o and o.text and not doneText(o.text) then
+  elseif o and o.text and instruction(o.text) then
     -- told after the fact: "escort the Defias Traitor to discover where
     -- VanCleef was hiding" (the log's "The Defias Traitor", "is hiding")
-    values.task = lowerFirst((o.text:gsub("[%.:]%s*$", "")))
-      :gsub(" The ", " the "):gsub(" is ", " was "):gsub(" are ", " were ")
+    values.task = taskOf(o.text)
     -- Taming objectives describe the same event as UNIT_PET. Leave that
     -- telling to the pet record, even before it arrives: no lookahead and
     -- no rewriting a finished quest sentence when the pet is later named.

@@ -8,6 +8,7 @@ local DIR = "addon/Hearthtale/"
 local ns = {}
 local forever = os.getenv("FOREVER") == "1"
 assert(loadfile(DIR .. (forever and "Data_Forever.lua" or "Data_Classic.lua")))("Hearthtale", ns)
+assert(loadfile(DIR .. "Names.lua"))("Hearthtale", ns)
 assert(loadfile(DIR .. "Writer.lua"))("Hearthtale", ns)
 
 -- A small random generator of our own, for the same lives on every machine.
@@ -368,9 +369,9 @@ end
 if sceneText:find("leatherworking and brought down", 1, true) then
   problem("scene joins", "a trade and a fight were forced together", sceneText)
 end
-local framed = sceneText:find("When I reached Farm, I brought down a Wolf.", 1, true)
-  or sceneText:find("I reached Farm, where I brought down a Wolf.", 1, true)
-  or sceneText:find("I reached Farm and brought down a Wolf.", 1, true)
+local framed = sceneText:find("When I reached the Farm, I brought down a Wolf.", 1, true)
+  or sceneText:find("I reached the Farm, where I brought down a Wolf.", 1, true)
+  or sceneText:find("I reached the Farm and brought down a Wolf.", 1, true)
 if not framed then problem("scene joins", "the arrival did not frame its action", sceneText) end
 if not (sceneText:find("Afterwards, I found three Apples.", 1, true)
   or sceneText:find("After that encounter, I found three Apples.", 1, true)) then
@@ -384,7 +385,7 @@ end
 fixtureWriting["c-kill"] = { { "stood against {foe} and prevailed" } }
 fixtureWriting["c-deed-kill"] = { { "dealt with {n} {foes} and finished the work" } }
 local compoundText = ns.writeBook(recorded).chapters[1].text
-if compoundText:find("I reached Farm and stood against", 1, true)
+if compoundText:find("I reached the Farm and stood against", 1, true)
   or compoundText:find("prevailed and dealt with", 1, true) then
   problem("scene joins", "a compound thought gained a competing conjunction", compoundText)
 end
@@ -729,7 +730,7 @@ eq(ns.plural("Frostmane Shaman"), "Frostmane Shamans", "shaman"); eq(ns.plural("
 eq(ns.plural("Rotting Dead"), "Rotting Dead", "dead")
 eq(ns.plural("Scavenged Goods"), "Scavenged Goods", "already many"); eq(ns.plural("Rough Glass"), "Rough Glasses", "glass")
 eq(ns.things("Crag Boar Rib"), "Crag Boar Ribs", "ribs"); eq(ns.things("Tough Wolf Meat"), "Tough Wolf Meat", "meat")
-eq(ns.things("Shimmerweed"), "Shimmerweed", "weed"); eq(ns.things("Linen Cloth"), "Linen Cloth", "cloth"); eq(ns.plural("Kobold Vermin"), "Kobold Vermin", "vermin")
+eq(ns.things("Shimmerweed"), "Shimmerweeds", "as the game writes it: 6 Shimmerweeds"); eq(ns.things("Linen Cloth"), "Linen Cloth", "cloth"); eq(ns.plural("Kobold Vermin"), "Kobold Vermin", "vermin")
 eq(ns.itemName("Wolf Fang Necklace"), "a Wolf Fang Necklace", "a"); eq(ns.itemName("Cuirboulle Gloves"), "Cuirboulle Gloves", "plural")
 eq(ns.itemName("An Unsent Letter"), "an Unsent Letter", "own article"); eq(ns.itemName("Wiley's Note"), "Wiley's Note", "possessive note")
 eq(ns.itemName("Smite's Mighty Hammer"), "Smite's Mighty Hammer", "possessive"); eq(ns.itemName("Blackened Defias Armor"), "Blackened Defias Armor", "mass")

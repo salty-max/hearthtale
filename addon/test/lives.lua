@@ -33,6 +33,8 @@ local function moves(G)
     state.titles = state.titles or {}
     state.titles[quest] = title
     state.objectives = { [quest] = objective and { objective } or {} }
+    -- a quest with nothing to do but go to someone is complete at once, as in the game
+    state.complete = { [quest] = not objective or nil }
     state.npc = giver
     if G.forever then fire("QUEST_ACCEPTED", quest) else fire("QUEST_ACCEPTED", 1, quest) end
     state.npc = nil
@@ -460,6 +462,8 @@ function lives.edric()
   end
   local function complete(id)
     for _, o in ipairs(state.objectives[id]) do o.finished = true end
+    state.complete = state.complete or {}
+    state.complete[id] = true
     fire("QUEST_LOG_UPDATE")
   end
   local function found(name, n) return { text = name .. ": 0/" .. n, type = "item", numRequired = n } end
@@ -498,8 +502,8 @@ function lives.edric()
   complete(message)
   go("Sentinel Hill")
   turnIn(message, "Gryan Stoutmantle", 600)
-  local escort = accept("The Defias Brotherhood", "The Defias Traitor",
-    { text = "Escort The Defias Traitor to discover where VanCleef is hiding", type = "event" })
+  -- (an escort has no objectives in the log: the game marks it complete)
+  local escort = accept("The Defias Brotherhood", "The Defias Traitor", nil)
   go("Moonbrook")
   slay("Defias Pillager", 2)
   slay("Defias Highwayman", 1)
