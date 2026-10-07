@@ -156,7 +156,8 @@ local function life(race, class, hc, from, to)
       local hunter = class == "HUNTER" and level >= 10
       if r > 100 then
         if r <= 103 then
-          add(m("gear", { link = "|cff1eff00|Hitem:1|h[" .. one(ITEMS) .. "]|h|r", quality = 2, made = chance(0.3) or nil }))
+          add(m("gear", { link = "|cff1eff00|Hitem:1|h[" .. one(ITEMS) .. "]|h|r", quality = 2, made = chance(0.3) or nil,
+            held = chance(0.3) or nil }))
         elseif r <= 105 then
           local learned = chance(0.4)
           add(m("prof", { name = one(SKILLS), learned = learned or nil,
@@ -303,33 +304,7 @@ ns.writerSentence = function(text, routine, remarks)
   if previousRemark and remarks > 0 then problem("remark budget", "successive sentences carried routine remarks", text) end
   previousRemark = remarks > 0
 end
-local function inspect(where, text)
-  if not text then return end
-  local checks = {
-    { "{", "a slot left unfilled" }, { "nil", "nil in the text" }, { "  ", "a double space" },
-    { "%%", "a health percentage in the narrative" },
-    { " %.", "a space before a full stop" }, { " ,", "a space before a comma" }, { "%.%.", "two full stops" },
-    { ",%.", "a comma before a full stop" }, { "there there", "there there" }, 
-    { "%f[%a]in in%f[%A]", "in in" }, { "%f[%a]in there%f[%A]", "in there" }, { "%f[%a]a a%f[%A]", "a a" }, { "%f[%a]the the%f[%A]", "the the" },
-    { "%f[%a]there%f[%A][^%.!%?]*%f[%a]there%f[%A]", "there twice in a sentence" }, { " ;", "a space before a semicolon" },
-    { "[;:] *[%.!%?]", "nothing after a colon" },
-    { "^%l", "a lowercase start" },
-    { "[%.!%?]\"? +%l", "a sentence starting in lowercase" }, { "[^%.!%?\"]$", "no full stop at the end" },
-    { "\n%l", "a paragraph starting in lowercase" }, { "\n\n\n", "an empty paragraph" }, { "[^%.!%?\"\n]\n", "a paragraph without a full stop" },
-  }
-  for _, c in ipairs(checks) do
-    if text:find(c[1]) then problem(where, c[2], text) end
-  end
-  -- A count of one before a plural ("one tasks"), but not "twenty-one tasks"
-  -- or "a hundred and one tasks".
-  for at, noun in text:gmatch("()[Oo]ne (%a+)") do
-    local before = text:sub(math.max(1, at - 4), at - 1)
-    local plural = ({ tasks = 1, foes = 1, lands = 1, good = 1, errands = 1, jobs = 1, quests = 1 })[noun]
-    if plural and not before:find("%a$") and not before:find("%-$") and not before:find("and $") then
-      problem(where, "one, then a plural", text)
-    end
-  end
-end
+local inspect = dofile("addon/test/inspect.lua")(problem)
 
 -- The joins serve a scene: related practice stays together, an arrival
 -- frames one action, and a close call has an aftermath. Use one candidate
@@ -616,7 +591,7 @@ for _, race in ipairs(comparison.races) do
 end
 
 trackRemarks = true
-for _, round in ipairs({ { 1, 12 }, { 1, 60 }, { 18, 41 }, { 38, 60 }, { 1, 30 }, { 1, 7 }, { 20, 50 } }) do
+for _, round in ipairs({ { 1, 12 }, { 1, 60 }, { 18, 41 }, { 38, 60 }, { 1, 30 }, { 1, 7 }, { 20, 50 }, { 15, 45 } }) do
   for _, race in ipairs(RACES) do
   local classes = COMBOS[race]
     for _, class in ipairs(classes) do

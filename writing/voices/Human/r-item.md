@@ -1,13 +1,13 @@
 ---
 kind: r-item
 ---
-- the sort of chore that keeps a place running
+- one more small thing set right
 - with an ache in my back for my trouble
 - pleased someone had a use in mind
-- [!one] every one of them where someone had dropped it
-- [!one] enough of them to fill a sack, nearly
-- [one] small enough to carry, hard enough to find
-- [one] someone's loss and someone else's gain
+- [!one !plural] every one of them where someone had dropped it
+- [!one !plural] enough of them to fill a sack, nearly
+- [one !plural] small enough to carry, hard enough to find
+- [one !plural] someone's loss and someone else's gain
 - [meat] thinking of a proper kitchen the whole way
 - [cloth] good enough for a farmer's shirt
 - [night] by lantern light, when I could find one

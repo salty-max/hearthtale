@@ -5,16 +5,22 @@ kind: c-gear
 - [!made] added {item} to my equipment
 - [!made] made {item} part of my kit
 - [!made] began using {item}
-- [!made] fitted myself with {item}
 - [!made] went on equipped with {item}
-- [made] put on {item} of my own making
+- [!made !held] fitted myself with {item}
+- [!made !held] put on {item}
+- [!made !held] took to wearing {item}
+- [!made !held] strapped on {item}
+- [!made held] took up {item}
+- [!made held] armed myself with {item}
+- [!made held] took {item} in hand
 - [made] equipped {item}, my own work
-- [made] began wearing {item}, made with my own hands
-- [made] fitted myself with {item} I had made
-- [made] wore {item} for the first time, fresh from my own work
-- [made] tried {item} on, my own handiwork
-- [!made] put on {item}
-- [!made] took to wearing {item}
-- [!made] strapped on {item}
-- [made] buckled on {item}, fresh from my own work
-- [made] dressed myself in {item} of my own making
+- [made !held] put on {item} of my own making
+- [made !held] began wearing {item}, made with my own hands
+- [made !held] fitted myself with {item} I had made
+- [made !held] wore {item} for the first time, fresh from my own work
+- [made !held] tried {item} on, my own handiwork
+- [made !held] buckled on {item}, fresh from my own work
+- [made !held] dressed myself in {item} of my own making
+- [made held] took up {item}, my own work
+- [made held] armed myself with {item} of my own making
+- [made held] took {item} in hand, fresh from my own work

@@ -2,10 +2,10 @@
 kind: r-gear
 ---
 - [!made] sturdy enough for the long road
-- [!made] a good fit, after a little adjusting
+- [!made !held] a good fit, after a little adjusting
 - [!made] made by careful hands, whoever they were
 - [!made] heavier than I was used to, though not by much
 - [!made hc] one more shelter against a bad end
 - [made] made slowly, and the better for it
 - [made] my own hands' work, plain and sound
-- [made] with care in every seam
+- [made !held] with care in every seam

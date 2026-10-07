@@ -2,10 +2,10 @@
 kind: r-gear
 ---
 - [!made] solid work, from whatever forge
-- [!made] a fair fit, with room for a good meal
-- [!made] the stitching better than I expected
-- [!made] curious whether the new kit would wear as well as it looked
-- [!made hc] one more layer between me and the worst of it
+- [!made !held] a fair fit, with room for a good meal
+- [!made !held] the stitching better than I expected
+- [!made !held] curious whether the new kit would wear as well as it looked
+- [!made hc !held] one more layer between me and the worst of it
 - [made] every flaw mine and known
 - [made] good honest work, if I do say so
 - [made] pleased to know the workmanship firsthand

@@ -2,7 +2,7 @@
 kind: r-gear
 ---
 - [client:forever !made] light enough not to weigh me down
-- [client:forever !made] a better fit than I expected
+- [client:forever !made !held] a better fit than I expected
 - [client:forever !made] the new balance taking some getting used to
 - [client:forever !made] curious how the wind would treat the new kit
 - [client:forever !made hc] one more care against a bad fall

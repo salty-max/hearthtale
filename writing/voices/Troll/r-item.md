@@ -4,10 +4,10 @@ kind: r-item
 - the job simple, the walking less so
 - useful to somebody, plainly
 - light work for a survivor
-- [!one] each one where something had left it
-- [!one] the pack full and the day still young
-- [one] small, but somebody wanted it badly
-- [one] easier to carry than to find
+- [!one !plural] each one where something had left it
+- [!one !plural] the pack full and the day still young
+- [one !plural] small, but somebody wanted it badly
+- [one !plural] easier to carry than to find
 - [meat] the smell of it making me hungry
 - [cloth] good for bandages if nothing else
 - [night] the moon helping more than I expected

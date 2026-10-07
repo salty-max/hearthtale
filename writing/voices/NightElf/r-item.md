@@ -4,10 +4,10 @@ kind: r-item
 - taking no more than was asked
 - with an eye to what the land could spare
 - noticing more along the way than I had been sent for
-- [!one] each found where something living had left it
-- [!one] gathered slowly, as such things should be
-- [one] where the land had hidden it
-- [one] lighter in my hand than the search had been
+- [!one !plural] each found where something living had left it
+- [!one !plural] gathered slowly, as such things should be
+- [one !plural] where the land had hidden it
+- [one !plural] lighter in my hand than the search had been
 - [meat] with thanks to the creature that had given it
 - [cloth] the weave plain beside our own
 - [night] the moonlight showing what the day had hidden

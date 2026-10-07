@@ -40,8 +40,12 @@ The plan and its decisions: PLAN.md.
   downloads the data (cmangos classic-db, pfQuest's places) into `.cache/`,
   regenerates Names.lua and runs `addon/test/audit.lua`: every place,
   creature, objective and item of the game through the writer, reviewed in
-  `.cache/audit/report.txt` and checked for regressions. Fix by rule, never
-  by name.
+  `.cache/audit/report.txt` and checked for regressions; then
+  `addon/test/playthrough.lua`: each race played from level 1 to 30 on the
+  game's real quests (its levelling road, real givers, targets, droppers,
+  enders and rewards), every chapter through the shared checks
+  (`addon/test/inspect.lua`), the books in `.cache/audit/books/` to read.
+  Fix by rule, never by name.
 - `writing/scenery/<slug>.md`: a place described the first time a book meets
   it (front matter `place:`, `type:` zone | town | dungeon, `faction:`
   alliance | horde | neutral, optional `home:` races). Lines tagged by
