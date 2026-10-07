@@ -9,7 +9,7 @@ local ns = {}
 local forever = os.getenv("FOREVER") == "1"
 assert(loadfile(DIR .. (forever and "Data_Forever.lua" or "Data_Classic.lua")))("Hearthtale", ns)
 assert(loadfile(DIR .. "Names.lua"))("Hearthtale", ns)
-assert(loadfile(DIR .. "Writer.lua"))("Hearthtale", ns)
+dofile("addon/test/writer-files.lua")(ns, DIR)
 
 -- A small random generator of our own, for the same lives on every machine.
 local state = 12345

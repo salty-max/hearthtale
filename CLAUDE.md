@@ -17,7 +17,7 @@ The plan and its decisions: PLAN.md.
 - `writing/voices/<Race>/<kind>.md`: a race's own sentences (same format,
   `<Race>` as the game names it: `Scourge`, `NightElf`). The writer prefers
   them, lets a used one back after `OWN_GAP` uses of the kind, and falls back
-  on the shared ones; `STYLE` in `Writer.lua` keeps three clauses available
+  on the shared ones; `STYLE` in `Lines.lua` keeps three clauses available
   for every race and varies time words. Flavour comes from outlook and phrasing, never
   from broken grammar or a racial caricature. `docs/race-voices.md` records
   the lore sources, cultural outlooks and limits on expression for all races.
@@ -26,7 +26,7 @@ The plan and its decisions: PLAN.md.
   narrator's reaction a routine clause may end with ("…, with rather more
   appetite for a cooked supper"). Pools by subject: `r-foe`, `r-first`,
   `r-item`, `r-task`, `r-gear`, `r-lesson`, `r-road`, `r-inn`, `r-company`
-  (`ROUTINE` in `Writer.lua` maps each clause kind to its pool). Each is a
+  (`ROUTINE` in `Lines.lua` maps each clause kind to its pool). Each is a
   phrase after a comma: lower case, no stop, no leading "and". At least 12
   shared, 8 per race.
 - `addon/Hearthtale/Names.lua` (generated, committed): how the game itself
@@ -60,11 +60,19 @@ The plan and its decisions: PLAN.md.
   no creature can be told), else the combat log's line; the name from what
   was seen (target, mouse-over, nameplates) or `UnitTokenFromGUID`. Without
   either (an older Forever client): the target watched through the fight),
-  `Writer.lua` (the prose, written from the records when read; a chapter's
-  moments go through `match(m, arms)`, Rust-like: one arm per kind of moment,
-  `{ kind, fn, when = guard }`, the first that fits runs; what each tells is
-  `tell.<kind>`, the moments of their own `own.<kind>`. A new kind of moment
-  is a new arm, in its place in the order),
+  the writer (the prose, written from the records when read), in four files
+  sharing `ns.writer` (each exports at its end what the next ones import):
+  `Language.lua` (pure helpers: numbers and lists in words, places, plurals,
+  articles, items, tasks, what a foe or a thing is), `Lines.lua` (the Book:
+  a book's choice of lines, `Book:say`, remarks, a quest's deed, links,
+  scenery), `Scene.lua` (a chapter being told: the clauses of the sentence
+  being written and how they join, the scene, the moment being told, the
+  fold) and `Writer.lua` (the chapters: each moment goes through
+  `match(m, ARMS, s)`, Rust-like: one arm per kind of moment,
+  `{ kind, fn, when = guard }`, the first that fits runs `fn(s, m)` with the
+  chapter's Scene; what each tells is `tell.<kind>`, the moments of their own
+  `own.<kind>`. A new kind of moment is a new arm, in its place in the order;
+  its state lives on the Scene, never in a local of `Book:chapter`),
   `Save.lua` (the book written into the saved file at each logout, for the
   site: it never writes its own),
   `Book.lua` (the window: chapters on the left, the open one on the right; a
@@ -166,7 +174,7 @@ The plan and its decisions: PLAN.md.
   written once the place is left or the chapter ends, so finished sentences
   never change.
   Deeds, firsts, dangers and finds are always told.
-- Weight (`weigh` in Writer.lua), from the moment alone so a later moment never
+- Weight (`weigh` in Lines.lua), from the moment alone so a later moment never
   rewrites what was read: 0 a hand-in (no remark), 1 the ordinary, 2 a deed,
   3 a highlight (a first, an elite, a tamed pet, one named foe asked for, an
   escort). A highlight has a sentence to itself (an arrival may frame it) and a

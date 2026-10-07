@@ -45,7 +45,7 @@ const errors: string[] = [];
 const fail = (file: string, msg: string) => errors.push(`${file}: ${msg}`);
 const q = (s: string) => JSON.stringify(s);
 
-// Each kind and the slots the writer (Writer.lua) fills for it.
+// Each kind and the slots the writer (Writer.lua, Scene.lua) fills for it.
 const KINDS: Record<string, string[]> = {
   beginning: ["where", "at", "in"],
   opening: ["where", "at", "in"],
@@ -111,7 +111,7 @@ const KINDS: Record<string, string[]> = {
   "c-inn": ["inn"],
   "c-boss": ["boss", "dungeon"],
   "c-tame": ["pet", "family"],
-  // remarks a routine clause may end with (Writer.lua's ROUTINE)
+  // remarks a routine clause may end with (Lines.lua's ROUTINE)
   "r-foe": [], "r-first": [], "r-item": [], "r-task": [], "r-gear": [], "r-lesson": [], "r-road": [], "r-inn": [],
   "r-company": [],
 };

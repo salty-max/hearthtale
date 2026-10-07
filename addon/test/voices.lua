@@ -75,7 +75,7 @@ if ... == "compare" or ... == "moments" then
   local forever = os.getenv("FOREVER") == "1"
   assert(loadfile("addon/Hearthtale/" .. (forever and "Data_Forever.lua" or "Data_Classic.lua")))("Hearthtale", ns)
   assert(loadfile("addon/Hearthtale/Names.lua"))("Hearthtale", ns)
-  assert(loadfile("addon/Hearthtale/Writer.lua"))("Hearthtale", ns)
+  dofile("addon/test/writer-files.lua")(ns)
   io.write(moments and "# Larger moments, different voices\n\n" or "# One day, different voices\n\n")
   io.write("A synthetic record used to compare expression, not a canonical quest sequence.\n")
   io.write("The events, their order and the selection seed are identical. Classes use valid options\n")

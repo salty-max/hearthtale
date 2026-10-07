@@ -11,7 +11,7 @@ local DIR = "addon/Hearthtale/"
 local ns = {}
 assert(loadfile(DIR .. "Data_Classic.lua"))("Hearthtale", ns)
 assert(loadfile(DIR .. "Names.lua"))("Hearthtale", ns)
-assert(loadfile(DIR .. "Writer.lua"))("Hearthtale", ns)
+dofile("addon/test/writer-files.lua")(ns, DIR)
 local ok, D = pcall(dofile, ".cache/audit/game.lua")
 if not ok then io.stderr:write("no game data: run bun run audit\n") os.exit(1) end
 
