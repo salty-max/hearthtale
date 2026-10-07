@@ -40,4 +40,6 @@ bun run check                      # the addon's checks, then typecheck, lint, t
 
 ## License
 
-GPL-3.0-or-later (see LICENSE). Not affiliated with Blizzard Entertainment.
+GPL-3.0-or-later (see LICENSE). The writer's names (`addon/Hearthtale/Names.lua`) and its audit draw on
+[cmangos classic-db](https://github.com/cmangos/classic-db) (GPL-3.0) and [pfQuest](https://github.com/shagu/pfQuest)'s
+place names (MIT); the names themselves are Blizzard's. Not affiliated with Blizzard Entertainment.

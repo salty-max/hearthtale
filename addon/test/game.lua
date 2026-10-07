@@ -33,6 +33,11 @@ if not FOREVER then C_GameRules = { IsHardcoreActive = function() return state.h
 C_QuestLog = {
   GetTitleForQuestID = function(id) return state.titles and state.titles[id] end,
   GetQuestObjectives = function(id) return state.objectives and state.objectives[id] or {} end,
+  IsComplete = function(id)
+    local list = state.objectives and state.objectives[id]
+    if list and #list > 0 then for _, o in ipairs(list) do if not o.finished then return false end end return true end
+    return state.complete ~= nil and state.complete[id] == true
+  end,
 }
 QUEST_MONSTERS_KILLED = "%s slain: %d/%d"
 QUEST_OBJECTS_FOUND = "%s: %d/%d"
@@ -214,7 +219,7 @@ LinkProcessorResponse = { Handled = 2 }
 -- ── load the addon ───────────────────────────────────────────────────────────
 local ns = {}
 assert(loadfile(DIR .. (FOREVER and "Data_Forever.lua" or "Data_Classic.lua")))("Hearthtale", ns)
-for _, f in ipairs({ "Core.lua", "Record.lua", "Writer.lua", "Book.lua", "Hall.lua", "Save.lua", "Settings.lua", "Minimap.lua" }) do assert(loadfile(DIR .. f))("Hearthtale", ns) end
+for _, f in ipairs({ "Names.lua", "Core.lua", "Record.lua", "Writer.lua", "Book.lua", "Hall.lua", "Save.lua", "Settings.lua", "Minimap.lua" }) do assert(loadfile(DIR .. f))("Hearthtale", ns) end
 local D = ns.data
 -- Resting and campfires: the game's resting state, the auras on me.
 state.auras = {}

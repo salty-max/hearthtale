@@ -347,10 +347,16 @@ local function rawObjectives(id)
   end
   return raw
 end
--- Every objective met (a quest with none has nothing to finish before its turn-in).
+-- Every objective met. A quest with none (an escort, a word to carry) is
+-- done when the game says so: complete from the start, it was only to carry.
 local function finishedAll(id)
   local raw = rawObjectives(id)
-  if #raw == 0 then return false end
+  if #raw == 0 then
+    local api = (C_QuestLog and C_QuestLog.IsComplete) or IsQuestComplete
+    if not api then return false end
+    local ok, done = pcall(api, id)
+    return ok and not secret(done) and (done == true or done == 1)
+  end
   for _, o in ipairs(raw) do if not o.finished then return false end end
   return true
 end
@@ -384,7 +390,7 @@ ns.on("QUEST_ACCEPTED", function(a, b)
   local giver = UnitName("npc") or (friendly and UnitName("target")) or nil
   local objectives = objectivesOf(id)
   c.pending[id] = { giver = (giver and not secret(giver)) and giver or nil, title = titleOf(id), objectives = objectives,
-    held = objectives and finishedAll(id) or nil } -- done from the start: nothing to tell before the turn-in
+    held = finishedAll(id) or nil } -- done from the start: nothing to tell before the turn-in
 end)
 -- The quest log fills in after the acceptance (the objectives, once known),
 -- and tells when a quest's work is done: told then and there, where it
@@ -394,7 +400,8 @@ ns.on("QUEST_LOG_UPDATE", function()
     if not p.objectives then
       p.objectives = objectivesOf(id)
       if p.objectives and finishedAll(id) then p.held = true end
-    elseif not p.done and not p.held and finishedAll(id) then
+    end
+    if not p.done and not p.held and finishedAll(id) then
       p.done = true
       moment("done", { id = id, title = p.title, giver = p.giver, objectives = p.objectives })
     end
