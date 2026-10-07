@@ -1,7 +1,7 @@
 ---
 kind: quests-many
 ---
-- I had completed {n} tasks, with a little less uncertainty about what people needed from me.
+- {n} tasks had been seen through, with a little less uncertainty about what people needed from me.
 - {n} tasks were finished, and I was pleased to have been useful while finding my way.
 - I counted {n} tasks done, some easier to understand once I had attempted them.
 - There were {n} completed tasks to enter before I rested.

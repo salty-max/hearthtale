@@ -4,9 +4,9 @@ kind: rest
 - I rested {at}, glad to put my pack down before it became a permanent part of me.
 - I settled {at}, with the work done well enough that it could wait without worrying me.
 - I stopped {at}, where being still made a welcome change from making headway.
-- I rested {at}, glad to have the weight of my pack off my shoulders.
+- Glad to have the weight of my pack off my shoulders, I rested {at}.
 - I made myself comfortable {at}. There was no virtue in being uncomfortable when the choice was mine.
 - I paused {at}, content to let the road manage without me for a while.
 - I rested {at}, with enough behind me to have earned the pleasure of doing very little.
 - I stopped {at} and let the stiffness ease before asking anything more of myself.
-- I put the journey aside {at}, glad to have reached somewhere I could think with my pack off.
+- Glad to have reached somewhere I could think with my pack off, I put the journey aside {at}.

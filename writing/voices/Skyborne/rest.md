@@ -3,10 +3,10 @@ kind: rest
 ---
 - [client:forever faction:horde] I rested {at}, content to feel part of the place without needing to do anything more within it.
 - [client:forever faction:alliance] I settled {at}, allowing a few unresolved questions to remain unresolved until I had slept.
-- [client:forever] I stopped {at}, grateful to let my feet grow accustomed to staying still.
+- [client:forever] Grateful to let my feet grow accustomed to staying still, I stopped {at}.
 - [client:forever] I rested {at}, with less interest in the view ahead than in the comfort of not approaching it yet.
 - [client:forever night] I settled {at}, glad to put down the effort of finding my way through the dark.
 - [client:forever] I paused {at}, surprised by how tired I felt once I was no longer moving.
 - [client:forever faction:horde] I rested {at}, with a growing fondness for somewhere I had once known only as a destination.
-- [client:forever faction:alliance] I stopped {at}, pleased that the place had become familiar enough to need less of my attention.
+- [client:forever faction:alliance] Pleased that the place had become familiar enough to need less of my attention, I stopped {at}.
 - [client:forever] I settled {at}, content to let the distance I had covered be enough for now.

@@ -9,4 +9,4 @@ kind: rest
 - I rested {at}, allowing myself the undignified pleasure of having nothing urgent to do.
 - I paused {at}, with my business finished for now and my continued presence apparently tolerated.
 - I rested {at}, glad to let my own thoughts occupy the space where orders once belonged.
-- I put the road aside {at}, content that I could take it up again by choice.
+- Content that I could take it up again by choice, I put the road aside {at}.

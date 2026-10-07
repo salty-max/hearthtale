@@ -3,7 +3,7 @@ kind: rest
 ---
 - I rested {at}, content to have no immediate demand upon my attention.
 - I settled {at}, where being still required less effort than appearing tireless.
-- I paused {at}, grateful for the small luxury of attending to my own comfort.
+- Grateful for the small luxury of attending to my own comfort, I paused {at}.
 - I rested {at}, allowing the day's affairs to remain concluded for a while.
 - I stopped {at}. There was very little I wanted badly enough to get up for just then.
 - I rested {at}, with a little distance between the work and my judgement of it.

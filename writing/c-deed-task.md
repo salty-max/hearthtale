@@ -9,3 +9,6 @@ kind: c-deed-task
 - set out to {task} and did so
 - did what was needed to {task}
 - undertook to {task}
+- [turn] the task was to {task}, and it was done
+- [turn] there was {giver}'s request to {task}, and I saw it through
+- [turn] it fell to me to {task}

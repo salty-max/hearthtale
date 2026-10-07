@@ -2,32 +2,32 @@
 kind: rest
 ---
 - [last !fire] I rested {at} and set down the last of this account, grateful that the road could wait a while.
-- [last !fire] I settled {at}, letting the day's work become something I could think about rather than something still to do.
+- [last !fire] Letting the day's work become something I could think about rather than something still to do, I settled {at}.
 - [last !fire] I stopped to rest {at}, with enough of the journey behind me to bring this chapter to an end.
 - [last !fire] I put my account in order {at}, where the pause gave me room to consider what the day had meant.
 - [last !fire] I rested {at}, glad to let my thoughts return to the journey without having to follow it any farther.
 - [last !fire] I set the book aside {at}, leaving the next part of the road for when I was ready to take it up.
 - [last !fire hc] I came to rest {at}, alive to remember the day and grateful that remembering was all it asked of me now.
-- [last fire] I rested beside the fire {at}, watching the flames after I had finished the last words of this chapter.
+- [last fire] Watching the flames after I had finished the last words of this chapter, I rested beside the fire {at}.
 - [last fire] I let the warmth of the fire {at} hold my attention while the day's work settled in my thoughts.
 - [last fire] I set this account down beside the fire {at}, content to let the road wait beyond its light.
 - [last fire] I rested by the fire {at}, with enough behind me to give these pages an ending.
-- [!last !fire] I stopped {at} for a while, glad to make a pause in the journey before it carried me farther.
+- [!last !fire] Glad to make a pause in the journey before it carried me farther, I stopped {at} for a while.
 - [!last !fire] I rested {at}, turning over what had happened while it was still clear in my thoughts.
-- [!last fire] I sat beside the fire {at}, grateful for a little warmth between one part of the journey and the next.
+- [!last fire] Grateful for a little warmth between one part of the journey and the next, I sat beside the fire {at}.
 - [!last !fire] I paused {at}, with time at last to notice how much the road had occupied me.
 - [!last !fire] I rested a while {at}, where the journey could continue without asking anything of me just yet.
 - [!last fire] I stopped by the fire {at}, letting its movement take the place of my own for a while.
-- [!last fire] I rested beside the flames {at}, content for the moment to let the road go on without me.
+- [!last fire] Content for the moment to let the road go on without me, I rested beside the flames {at}.
 - [last !fire] I came to rest {at} and closed the account for now, with the next part of my life still unwritten.
 - [last fire] I finished this chapter beside the fire {at}, watching its light while my thoughts went back over the road.
-- [!last fire] I rested near the fire {at}, glad to have something warm and simple to attend to.
+- [!last fire] Glad to have something warm and simple to attend to, I rested near the fire {at}.
 - [!last fire] I sat by the flames {at}, watching them while the work of travelling left my thoughts.
-- [!last fire] I stopped beside a fire {at}, grateful for its warmth before I had decided how long to stay.
+- [!last fire] Grateful for its warmth before I had decided how long to stay, I stopped beside a fire {at}.
 - [!last fire] I paused by the fire {at}, with no need for the moment to look beyond its light.
 - [!last !fire] I stopped to rest {at}, where being still let me notice how ready I had been for it.
 - [!last !fire] I rested {at} and let the last part of the road pass through my thoughts.
 - [!last !fire] I made a pause {at}, content to have reached somewhere I could put the journey aside.
-- [!last !fire] I stayed a while {at}, letting the day's business wait while I rested.
+- [!last !fire] Letting the day's business wait while I rested, I stayed a while {at}.
 - [last fire] I finished my account beside the fire {at}, glad to have reached a place where the day could become a story.
 - [last fire] I rested by the flames {at}, leaving the next part of the road beyond their light for now.

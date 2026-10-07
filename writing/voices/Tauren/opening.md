@@ -5,8 +5,8 @@ kind: opening
 - I began again {at}, glad to feel my strength ready for the distance.
 - I set out {at}, interested in what the people here needed as well as where the road led.
 - I opened a fresh page {at}, with a little of my attention still on the ground behind me.
-- I made ready {at}, content to begin without deciding the shape of the whole day.
+- Content to begin without deciding the shape of the whole day, I made ready {at}.
 - I went on {at}, curious what I would notice when I was less concerned with arriving.
-- I began this stretch {at}, hoping to know something of the place beyond the quickest path through it.
+- Hoping to know something of the place beyond the quickest path through it, I began this stretch {at}.
 - I returned to my account {at}, with the quiet pleasure of having farther to go and time enough for the distance.
 - I set out {at}, wondering what stories I would be glad to carry back to my people.

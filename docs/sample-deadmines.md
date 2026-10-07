@@ -11,27 +11,29 @@ I've lost count of the roads behind me. Sixty-four tasks, the people say. I star
 
 ## Chapter 1 (levels 18 to 20)
 
-I took up the road in the Dwarven District, with a little curiosity left over from my worrying. I made it as far as the Trade District. I left Stormwind by air for Sentinel Hill, with a little of the day's hurry falling away beneath me.
+I took up the road in the Dwarven District, with a little curiosity left over from my worrying. The road brought me to the Trade District. I left Stormwind by air for Sentinel Hill, with a little of the day's hurry falling away beneath me.
 
-Westfall lay dark and quiet, its windmills turning over farms nobody tended any more. A light in a window was rare enough to make me wonder who still dared to keep one. A stone tower stood on Sentinel Hill, and around it the People's Militia had pitched their tents. Farmers who had lost everything queued for soup, and it made me angrier than I expected. I walked into the Dagger Hills, with less of the place visible than I would have liked. I put an end to a Defias Pathstalker. I recovered a Mysterious Message, someone's loss and someone else's gain.
+Westfall lay dark and quiet, its windmills turning over farms nobody tended any more. A light in a window was rare enough to make me wonder who still dared to keep one. A stone tower stood on Sentinel Hill, and around it the People's Militia had pitched their tents. Farmers who had lost everything queued for soup, and it made me angrier than I expected. I set foot in the Dagger Hills, with less of the place visible than I would have liked. A Defias Pathstalker did not get up again. I recovered a Mysterious Message, someone's loss and someone else's gain.
 
-I headed back to Sentinel Hill and saw Gryan Stoutmantle again, the work behind me. Moonbrook was a ruin after dark, its broken walls black against the sky. Somewhere among the burned houses the Defias were talking, and I kept to the shadows. I dealt with a Defias Pillager. I obliged the Defias Traitor.
+The road led me back to Sentinel Hill. I saw Gryan Stoutmantle again, the work behind me. Moonbrook was a ruin after dark, its broken walls black against the sky. Somewhere among the burned houses the Defias were talking, and I kept to the shadows. A Defias Pillager went down before me. I obliged the Defias Traitor.
 
-I returned to Sentinel Hill, curious what lay beyond the next turn. I told Gryan Stoutmantle the work was done. I joined Thessaly, Brannigan, Rowan and Halvard.
+I came back to Sentinel Hill, the road dusty and the company scarce. I reported back to Gryan Stoutmantle. I had Thessaly, Brannigan, Rowan and Halvard for company.
 
-I went back to Moonbrook, with my legs beginning to feel the walk. I saw off an Undead Excavator. I recovered four Miners' Union Cards. I gathered Thistlenettle's Badge, hoping the collection would be useful. Timber props held up the tunnels of the Deadmines, and the air tasted of dust and lamp oil. Somewhere ahead, machinery was hammering, as if the whole hill were being worked from the inside. I got the better of a Defias Miner and stood over Rhahk'Zor at last. I tracked down a Gnoam Sprecklesprocket, with an ache in my back for my trouble. I was there when Sneed fell; I fought Gilnid and won.
+I went back to Moonbrook, the road worn into habit by now. An Undead Excavator was the next to fall. I tracked down four Miners' Union Cards. I collected Thistlenettle's Badge, hoping the collection would be useful. Timber props held up the tunnels of the Deadmines, and the air tasted of dust and lamp oil. Somewhere ahead, machinery was hammering, as if the whole hill were being worked from the inside. I dealt with a Defias Miner and stood over Rhahk'Zor at last. I tracked down a Gnoam Sprecklesprocket, with an ache in my back for my trouble. Sneed fell at last. Gilnid did not survive the fight.
 
-The tunnel opened onto a hidden cove, and in the water lay a full-sized ship, armoured and lined with cannons, built in secret beneath Westfall. I understood then how much VanCleef had been planning. I finished off a Defias Pirate. I tracked down ten Red Silk Bandanas, enough of them to fill a sack, nearly.
+The tunnel opened onto a hidden cove, and in the water lay a full-sized ship, armoured and lined with cannons, built in secret beneath Westfall. I understood then how much VanCleef had been planning. A Defias Pirate fell to me. I recovered ten Red Silk Bandanas, enough of them to fill a sack, nearly.
 
-Mr. Smite nearly finished me. My hands went on shaking after there was any need for them to move. I lived to see Mr. Smite fall. I came by Smite's Mighty Hammer, had it in use before long and finished off Captain Greenskin. With Edwin VanCleef defeated, I could think about leaving the Deadmines instead of surviving the next encounter. I took VanCleef's head as proof. I brought down Cookie.
+Mr. Smite nearly finished me. My hands went on shaking after there was any need for them to move. I was there when Mr. Smite fell. Smite's Mighty Hammer was among the spoils, a rare thing. I had it in use before long; I fought Captain Greenskin and won. With Edwin VanCleef defeated, I could think about leaving the Deadmines instead of surviving the next encounter. I took VanCleef's head as proof. Cookie was the next to fall.
 
-That night, I made my way back to Sentinel Hill, the road worn into habit by now. By nightfall, I handed in my work to Gryan Stoutmantle; I dealt with one more errand, and with my gear. I flew from Sentinel Hill to Stormwind, glad to see how the places fitted together from above.
+That night, I returned to Sentinel Hill, much as I remembered it. By nightfall, I told Gryan Stoutmantle the work was done; I dealt with one more errand, and with my gear. I flew from Sentinel Hill to Stormwind, glad to see how the places fitted together from above.
 
-I found my way to Cathedral Square, where I made sure an Unsent Letter reached Baros Alexston. When I found myself back in the Dwarven District, I checked in with Wilder Thistlenettle and Shoni the Shilent. I arrived in Old Town, arriving after dark. I added Cleave and Retaliation to what I knew.
+I walked into Cathedral Square, where I made sure an Unsent Letter reached Baros Alexston. My way took me back to the Dwarven District. I let Wilder Thistlenettle and Shoni the Shilent know it was done.
 
-I had completed eight jobs, and found myself remembering the people who had asked for them. I had brought down eight Defias Miners and six Defias Pirates over the stretch. I had spent two hours and a half on it. I settled in the Trade District, with the comfortable feeling of having got somewhere I could stop.
+I arrived in Old Town, hoping the place would be less confusing up close. I added Cleave and Retaliation to what I knew.
+
+I had completed eight jobs, and found myself remembering the people who had asked for them. The fighting had been mostly eight Defias Miners and six Defias Pirates. I had spent two hours and a half on it. I settled in the Trade District, with the comfortable feeling of having got somewhere I could stop.
 
 ## Chapter 2 (level 20)
 
-I returned to my account in the Trade District, already wondering which names would turn up again.
+Already wondering which names would turn up again, I returned to my account in the Trade District.
 

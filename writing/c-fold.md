@@ -38,3 +38,11 @@ kind: c-fold
 - [onlygear] took the time to change some of my gear
 - [onlygear] fitted myself with some new gear
 - [onlygear] made a few changes to my gear
+- [turn !gear !one] {n} more errands were seen to besides
+- [turn !gear !one] there were {n} smaller jobs as well, all seen to
+- [turn !gear !one] {n} more errands went the same way
+- [turn !gear one] one more errand was seen to besides
+- [turn !gear one] there was one smaller job as well, soon seen to
+- [turn gear !onlygear !one] {n} more errands and a change of gear filled out the rest
+- [turn gear !onlygear one] one more errand and a change of gear filled out the rest
+- [turn onlygear] a piece or two of my gear changed along the way

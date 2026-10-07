@@ -3,10 +3,10 @@ kind: opening
 ---
 - I began again {at}, with my purpose clearer than the route I would take to it.
 - I took up the road {at}, willing to find something of interest even in the business I could not avoid.
-- I set out {at}, hoping the day would repay a little attention to its finer details.
+- Hoping the day would repay a little attention to its finer details, I set out {at}.
 - I opened a fresh page {at}, with enough to do that nostalgia could keep its own company for a while.
 - I made ready {at}, with several doubts I saw no reason to display.
 - I went on {at}, curious what would reward a closer look.
 - I began this stretch {at}, with more in mind than enduring another day.
-- I returned to my account {at}, determined to set down what happened as carefully as what I had hoped for.
+- Determined to set down what happened as carefully as what I had hoped for, I returned to my account {at}.
 - I set out {at}, rather looking forward to the distance despite myself.

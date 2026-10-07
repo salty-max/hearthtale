@@ -8,3 +8,6 @@ kind: c-travel
 - took the road to {place}
 - pushed on to {place}
 - made for {place}
+- [turn] the road took me on to {place}
+- [turn] the road led on to {place}
+- [turn] after that it was on to {place}

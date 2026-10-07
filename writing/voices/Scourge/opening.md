@@ -8,5 +8,5 @@ kind: opening
 - I went on {at}, with no particular desire to be forgiven for continuing to exist.
 - I began this stretch {at}. I had unfinished business, which was as good a reason as most people ever found.
 - I returned to my account {at}, where a few plain facts were preferable to someone else's explanation of me.
-- I made ready {at}, unwilling to let neglect do what an enemy had not.
+- Unwilling to let neglect do what an enemy had not, I made ready {at}.
 - I took up the road {at}, carrying my own intentions for a change.

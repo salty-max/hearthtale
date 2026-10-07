@@ -9,3 +9,5 @@ kind: c-loot
 - was lucky enough to find {item}
 - turned up {item} among the spoils
 - pulled {item} from the spoils, a fine thing
+- [turn] {item} turned up among the spoils
+- [turn] {item} was among the spoils, a rare thing

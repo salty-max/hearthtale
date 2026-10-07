@@ -149,7 +149,8 @@ The plan and its decisions: PLAN.md.
 - Curation: in each place, the first two routine hand-ins (a delivery, a report
   back, a message, a favour known only by who asked, green gear) are told; the
   rest fold into one clause (`c-fold`: "saw to four more errands besides"),
-  written when the next thing happens so finished sentences never change.
+  written once the place is left or the chapter ends, so finished sentences
+  never change.
   Deeds, firsts, dangers and finds are always told.
 - Weight (`weigh` in Writer.lua), from the moment alone so a later moment never
   rewrites what was read: 0 a hand-in (no remark), 1 the ordinary, 2 a deed,
@@ -157,6 +158,11 @@ The plan and its decisions: PLAN.md.
   escort). A highlight has a sentence to itself (an arrival may frame it) and a
   remark whenever one is free, even after a remarked sentence. A remark never
   repeats a word of its clause's own wording (made/making, own, hand, work).
+- Openings: a clause tagged `[turn]` has its own subject ("{foe} fell to me",
+  "the road brought me to {place}"): it opens a sentence alone and is only
+  chosen when no remark is wanted (a remark's subject is "I"). Frame pools
+  (opening, rest, wake, campfire, recaps) mix in lines that don't start with
+  "I". A routine hand-in fold is told once per place.
 - The chapter's recap (tasks, fighting, time) holds one thought: the others
   are its `[plain]` sentences. The rest that ends the chapter has its own.
 - Topic tags (teeth, mechanical, cloth, meat, explore, escort, made) require

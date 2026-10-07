@@ -6,7 +6,7 @@ kind: opening
 - [client:forever] I began again {at}, interested in what I would notice once I stopped comparing everything with home.
 - [client:forever night] I continued {at}, with fewer things visible and more room to misjudge the distance between them.
 - [client:forever] I returned to my account {at}, with my attention closer to the ground than it had been when I began.
-- [client:forever] I set out {at}, curious about what I had passed without properly understanding.
+- [client:forever] Curious about what I had passed without properly understanding, I set out {at}.
 - [client:forever faction:horde] I began another stretch {at}, hoping to find a little more ease between myself and the people here.
-- [client:forever faction:alliance] I continued {at}, determined to ask better questions than I had arrived with.
+- [client:forever faction:alliance] Determined to ask better questions than I had arrived with, I continued {at}.
 - [client:forever] I took up my journal {at}, with the place beginning to arrange itself into something I could recognise.

@@ -9,3 +9,5 @@ kind: c-trainer
 - trained in {spells}
 - added {spells} to what I knew
 - came away from training with {spells}
+- [turn] my training added {spells}
+- [turn] the trainer taught me {spells}

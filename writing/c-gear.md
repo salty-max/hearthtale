@@ -28,3 +28,7 @@ kind: c-gear
 - [made] made {item} part of my kit, my own work
 - [made held] wielded {item}, made by my own hand
 - [made] went on equipped with {item} I had made
+- [turn !made !held] {item} replaced what I had been wearing
+- [turn !made !held] {item} went on in place of the old
+- [turn !made held] {item} came with me from then on
+- [turn made] {item}, fresh from my own work, went on next

@@ -8,3 +8,6 @@ kind: c-place
 - made it as far as {place}
 - arrived in {place}
 - set foot in {place}
+- [turn] the road brought me to {place}
+- [turn] my path led into {place}
+- [turn] the way went on into {place}

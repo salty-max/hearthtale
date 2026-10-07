@@ -539,6 +539,29 @@ for place, p in pairs(ns.data.scenery or {}) do
   end
 end
 
+-- Every race, class and hardcore pairing through an inn and a fighting
+-- recap: the lines kept for one class or for hardcore all reachable.
+for _, race in ipairs(RACES) do
+  for _, class in ipairs(COMBOS[race]) do
+    for _, hc in ipairs({ true, false }) do
+      for seed = 1, 3 do
+        -- (eight chapters: the race's own lines come first, the shared after)
+        local chapters = {}
+        for n = 1, 8 do
+          chapters[n] = { start = { level = 20, zone = "Country", sub = "Home" }, quests = 0,
+            played = 3600, gold = 0, kills = { Wolf = 12 }, log = {
+              { k = "kill", name = "Wolf", kind = "Wolf", sub = "Home", zone = "Country", at = 50 },
+              { k = "inn", place = "Home", sub = "Home", zone = "Country", at = 100 },
+            }, ended = { level = 20, place = "Home", how = "rest" } }
+        end
+        local c = { guid = "pairing-" .. race .. class .. tostring(hc) .. seed, race = race, class = class, hardcore = hc or nil,
+          began = { level = 20 }, chapters = chapters }
+        for _, ch in ipairs(ns.writeBook(c).chapters) do inspect(race .. " " .. class .. " pairing", ch.text) end
+      end
+    end
+  end
+end
+
 -- The journey's end at the highest level, for every race's own lines.
 for _, race in ipairs(RACES) do
   for seed = 1, 12 do
@@ -623,7 +646,8 @@ for _, race in ipairs(RACES) do
     }
     local text = ns.writeBook(c).chapters[1].text
     inspect(race .. " uncovered fights", text)
-    if not text:find("eighteen Scorpids", 1, true) or text:find("twenty Wolves", 1, true) then
+    -- (a number may open the sentence: "Eighteen Scorpids had fallen")
+    if not text:lower():find("eighteen scorpids", 1, true) or text:lower():find("twenty wolves", 1, true) then
       problem(race .. " uncovered fights", "the recap repeated an objective or lost other fighting", text)
     end
   end

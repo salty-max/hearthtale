@@ -13,3 +13,7 @@ kind: c-kill
 - put an end to {foe}
 - defeated {foe}
 - got the better of {foe}
+- [turn] {foe} fell to me
+- [turn] {foe} did not get up again
+- [turn] {foe} was the next to fall
+- [turn] {foe} went down before me

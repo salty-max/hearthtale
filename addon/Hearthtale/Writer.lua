@@ -265,7 +265,7 @@ end
 
 local function satisfied(tags, ctx)
   for _, t in ipairs(tags or {}) do
-    if t == "aside" or t == "plain" then -- marks, not conditions
+    if t == "aside" or t == "plain" or t == "turn" then -- marks, not conditions
     elseif t:sub(1, 1) == "!" then
       if ctx[t:sub(2)] then return false end
     elseif not ctx[t] then return false end
@@ -476,6 +476,10 @@ function Book:say(kind, key, values, tags, prefer, raw)
     if not self.inChapter then return true end
     if isVoice(s) and not (self.voiceChapter and self.voiceUsed < 2) and not hasTag(s, "first") then return false end -- a first, once in a life, may
     if self.quipped and not MATTERS[kind] and isQuip(s) then return false end
+    -- a clause turned round ("{foe} fell to me") opens a sentence of its own,
+    -- and takes no remark (a remark's subject is "I": "the road led me back,
+    -- glad to be heading home" would dangle)
+    if hasTag(s, "turn") and ((self.openClauses or 0) > 0 or wantRemark) then return false end
     return true
   end
   -- The candidates, each with its id (what "used" remembers) and its name in
@@ -572,6 +576,7 @@ function Book:say(kind, key, values, tags, prefer, raw)
   if ns.writerUsed then ns.writerUsed[e.reach] = true end
   local chosen = e.s
   local text = chosen[1]
+  self.selectedTurn = hasTag(chosen, "turn")
   if seen then -- who this sentence names, for the rest of the paragraph
     for _, k in ipairs(PEOPLE) do
       if type(asked[k]) == "string" and text:find("{" .. k .. "}", 1, true) then each(asked[k], function(name) seen[name] = true end) end
@@ -845,10 +850,16 @@ function Book:linkWord(which, key)
 end
 -- A sentence with its link before it ("That night, I..."), if it begins with
 -- "I", "My" or an article.
+-- A sentence's first word a link may come before ("Afterwards, the road…",
+-- "Later, six Defias…"): not a name, which keeps its capital and no link.
+local OPENERS = { My = true, A = true, An = true, The = true, It = true, There = true }
+local NUMBER_WORDS = {}
+for w in ("two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen "
+  .. "eighteen nineteen twenty thirty forty fifty sixty seventy eighty ninety"):gmatch("%a+") do NUMBER_WORDS[w] = true end
 local function linked(word, text)
   if not word then return text end
   local head, rest = text:match("^(%a+)( .*)$")
-  if not head or not (head == "I" or head == "My" or head == "A" or head == "An" or head == "The") then return text end
+  if not head or not (head == "I" or OPENERS[head] or NUMBER_WORDS[head:lower()]) then return text end
   if head ~= "I" then head = head:lower() end
   return word .. " " .. head .. rest
 end
@@ -938,7 +949,7 @@ function Book:chapter(n, ch)
   local pending, lead, sentences, named = {}, nil, 0, false -- named: the sentence names its place
   local arrival, arrivalMode, sentenceLimit, pendingKinds = false, nil, nil, {}
   local pendingFoes = {} -- the creature a plain kill clause names (one told by its quest is dropped)
-  local pendingRoutine, pendingRemarks, pendingHighlight = 0, 0, false
+  local pendingRoutine, pendingRemarks, pendingHighlight, pendingTurn = 0, 0, false, false
   local prev -- the moment before the one being told
   local families = { quest = "work", kill = "work", boss = "work", loot = "work", gear = "work",
     learned = "practice", skill = "practice", prof = "practice", made = "practice" }
@@ -970,12 +981,13 @@ function Book:chapter(n, ch)
         for j = 1, #pending - 1 do before[j] = pending[j] end
         text = "I " .. (join == "; I " and listing(before) or table.concat(before, ", ")) .. join .. last
       end
-    else
+    elseif not pendingTurn then
       text = "I " .. text
     end
     append(linked(lead, capitalise(text .. ".")), pendingRoutine, pendingRemarks, pendingHighlight)
     self.lastSentenceRemark, self.pendingRemark = pendingRemarks > 0, false
-    pendingRoutine, pendingRemarks, pendingHighlight = 0, 0, false
+    pendingRoutine, pendingRemarks, pendingHighlight, pendingTurn = 0, 0, false, false
+    self.openClauses = 0
     -- "there" only right after the place is named
     if not named then self.there = true end
     pending, lead, named, arrival, arrivalMode, sentenceLimit, pendingKinds = {}, nil, false, false, nil, nil, {}
@@ -996,8 +1008,10 @@ function Book:chapter(n, ch)
     -- Keep related work together. Learning two trades is one thought; a
     -- trade followed by a fight is a new one. An arrival may frame either.
     local kind = m and m.k or ""
-    -- a highlight has its sentence to itself (an arrival may frame it)
-    local highlight = self.selectedWeight == 3
+    -- a highlight has its sentence to itself (an arrival may frame it), and
+    -- so has a clause turned round ("{foe} fell to me")
+    local highlight, turned = self.selectedWeight == 3, self.selectedTurn
+    if turned then flush() end
     if highlight and #pending > 0 and not (arrival and #pending == 1) then flush() end
     if #pending > 0 and not arrival and
       (not families[kind] or families[kind] ~= families[pendingKinds[1]]) then flush() end
@@ -1016,15 +1030,17 @@ function Book:chapter(n, ch)
     if self.selectedRoutine and (self.selectedWeight or 1) > 0 then pendingRoutine = pendingRoutine + 1 end
     if self.selectedRemark then pendingRemarks, self.pendingRemark = pendingRemarks + 1, true end
     if highlight then pendingHighlight = true end
-    if highlight or #pending >= sentenceLimit or text:find("[;%.!%?]")
+    if turned then pendingTurn = true end
+    self.openClauses = #pending
+    if turned or highlight or #pending >= sentenceLimit or text:find("[;%.!%?]")
       or (isArrival and self.selectedRemark) or (self.pendingRemark and #pending >= 2)
       or (#pending >= 2 and (complex or pending[1]:find("[,;:]") or pending[1]:find(" and "))) then flush() end
   end
   -- Curation: in a scene, the first LOW_TOLD routine hand-ins (a delivery, a
   -- report back, a message carried, a favour known only by who asked, green
-  -- gear) are told; the rest fold into one clause when the next thing
-  -- happens ("…, and saw to four more errands besides"). The deeds
-  -- themselves, the firsts, the dangers, the finds are always told.
+  -- gear) are told; the rest fold into one clause, told once the place is
+  -- left or the chapter ends ("I saw to four more errands besides"). The
+  -- deeds themselves, the firsts, the dangers, the finds are always told.
   local LOW_TOLD = 2
   local lowTold, lowScene, folded = 0, nil, { errands = 0, gear = 0 }
   local function emitFold()
@@ -1164,8 +1180,8 @@ function Book:chapter(n, ch)
       else
         lowTold = lowTold + 1
       end
-    elseif what ~= "silent" then
-      emitFold()
+    elseif what ~= "silent" and ((place and place ~= lowScene) or m.k == "place" or m.k == "dungeon" or m.k == "flight") then
+      emitFold() -- the place left: its tally, once
     end
     if foldNow then
       -- told in the scene's tally

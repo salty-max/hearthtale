@@ -4,9 +4,9 @@ kind: rest
 - I rested {at}, where I could put down the burden without putting aside the purpose.
 - I settled {at}, glad to have work behind me that needed no excuse.
 - I stopped {at}. Strength needed care if it was to be of use again.
-- I rested {at}, letting the day's demands leave me before I judged the work.
+- Letting the day's demands leave me before I judged the work, I rested {at}.
 - I paused {at}, with no honour lost in admitting that I was ready to stop.
 - I rested {at}, where the next deed could wait until I could give it my full strength.
 - I stopped {at}, content to have done what I could rather than promised what I could not.
 - I rested {at}, with the work finished for now and its lessons still mine to keep.
-- I put the road aside {at}, grateful for a pause I did not have to win by force.
+- Grateful for a pause I did not have to win by force, I put the road aside {at}.

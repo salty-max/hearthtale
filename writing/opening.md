@@ -5,26 +5,29 @@ kind: opening
 - [!night] I began this part of my account {at}, with the day still before me.
 - [!night] I took up my journey {at}, glad to have another day in which to make something of it.
 - I opened a fresh page {at}, with the last stretch behind me and more still to discover.
-- [night] I went on {at} after dark, more conscious of the quiet between one footfall and the next.
+- [night] More conscious of the quiet between one footfall and the next, I went on {at} after dark.
 - [night] I began this stretch {at}, letting my thoughts find their way into the night ahead.
 - [night] I turned back to my account {at}, with the night already around me.
-- [!night] I began again {at}, wondering what I would have to remember by the time the day was done.
+- [!night] Wondering what I would have to remember by the time the day was done, I began again {at}.
 - I took up the road {at}, where this part of my story would begin.
 - I returned to my journal {at}, ready to carry its account a little farther.
 - I looked about me {at} before going on, wanting to notice more than the work that lay ahead.
 - I began this stretch {at}, with enough of the journey behind me to wonder how the next part would differ.
-- I set out {at}, still turning over what the road had already taught me.
+- Still turning over what the road had already taught me, I set out {at}.
 - I took up my account {at}, where there was still plenty left for me to learn.
 - I went on {at}, with my thoughts reaching ahead of me along the road.
 - I began my next page {at}, knowing that even familiar ground could give me something new to remember.
-- [hc] I began again {at}, grateful to have another part of my life left to write.
+- [hc] Grateful to have another part of my life left to write, I began again {at}.
 - [hc high] I took up the journey {at}, conscious of how much I now stood to lose.
-- [class:MAGE] I began again {at}, curious to see how much use I could make of what I had learned.
+- [class:MAGE] Curious to see how much use I could make of what I had learned, I began again {at}.
 - [class:HUNTER] I took up the journey {at}, looking beyond the road for what moved around it.
 - [class:ROGUE] I began this stretch {at}, keeping as much attention on my surroundings as on my destination.
 - [class:WARLOCK] I went on {at}, aware that the power I sought would ask for judgement as well as nerve.
-- [class:PRIEST] I began again {at}, hoping to find a place for my faith in the work before me.
+- [class:PRIEST] Hoping to find a place for my faith in the work before me, I began again {at}.
 - [class:DRUID] I took up the road {at}, attentive to the life carrying on beside my own.
 - [class:SHAMAN] I began this stretch {at}, listening as well as looking while I found my way.
-- [class:WARRIOR] I went on {at}, determined to make what strength I had useful.
+- [class:WARRIOR] Determined to make what strength I had useful, I went on {at}.
 - [class:PALADIN] I began again {at}, wanting to make my convictions useful to someone besides myself.
+- [!night] Morning came {at}, and with it the road.
+- [!night] The day began {at}, with the next stretch still to be decided.
+- [night] The night was already deep {at} when I took up the account again.
