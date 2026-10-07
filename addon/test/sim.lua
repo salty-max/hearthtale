@@ -10,6 +10,18 @@ local function check(cond, msg) assert(cond, msg); io.write("✓ " .. msg .. "\n
 -- ── a life ───────────────────────────────────────────────────────────────────
 check(D.client == (FOREVER and "forever" or "classic") and D.writing.opening, "each game's data file is its own, with the writing")
 check(ns.forever == FOREVER, FOREVER and "Forever is recognised" or "Classic is recognised")
+
+-- A game message's blanks, in argument order: today's numbered format and an
+-- older client's plain one read alike.
+do
+  local today, older = QUEST_OBJECTS_FOUND, "%s: %d/%d"
+  local name, have, need = ns.match("QUEST_OBJECTS_FOUND", "0/8 Tough Wolf Meat")
+  QUEST_OBJECTS_FOUND = older
+  local name2, have2, need2 = ns.match("QUEST_OBJECTS_FOUND", "Tough Wolf Meat: 0/8")
+  QUEST_OBJECTS_FOUND = today
+  check(name == "Tough Wolf Meat" and have == "0" and need == "8" and name2 == name and have2 == have and need2 == need,
+    "an objective read in argument order, numbered (\"0/8 Tough Wolf Meat\") or not")
+end
 HearthtaleChar = { guid = "Player-6113-0DEAD000", chapters = {} }
 login()
 local J = HearthtaleChar
