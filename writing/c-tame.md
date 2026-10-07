@@ -14,3 +14,5 @@ kind: c-tame
 - took {pet} on as my companion
 - befriended {pet}, {family}
 - gained {pet}, {family}, as a companion
+- won {pet} over
+- gave my new companion the name {pet}

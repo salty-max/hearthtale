@@ -81,7 +81,7 @@ By the end, three tasks were done. Doing ordinary work well remained preferable 
 
 I opened a fresh page in Ratchet, glad that there was still more to understand than to mourn. I fetched eight Linen Cloth. I took up tailoring, keen to use it for others' sake. I put on a Brown Linen Robe of my own making. I had Kelsa for company, trusting them a little more with each mile.
 
-I set foot in the Merchant Coast. I brought down a Southsea Brigand, with regret that it had come to that; I got the better of six Southsea Brigands. A Southsea Brigand left me barely alive. I wanted another chance to become part of this world, not only another memory within it. Afterwards, I set out to recover the missing cargo and did so, a small help, freely given. I made my way back to Ratchet, where I bound my stone.
+I set foot in the Merchant Coast. I brought down a Southsea Brigand, the Light giving me patience, if not ease; I got the better of six Southsea Brigands. A Southsea Brigand left me barely alive. I wanted another chance to become part of this world, not only another memory within it. Afterwards, I set out to recover the missing cargo and did so, a small help, freely given. I made my way back to Ratchet, where I bound my stone.
 
 By the end, three tasks were done. Care could take an ordinary shape and remain care. I had worked an hour and a half and earned nineteen silver. I paused in Ratchet, glad of a little quiet in a world I was still learning.
 

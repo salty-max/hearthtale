@@ -59,6 +59,11 @@ local FIRES = { 7353, 7358, 1232234, 1229739, 1289723, 1225478 }
 local function char() return ns.journal() end
 local function now() return time() end
 local function night()
+  -- no night or day under the ground: a dungeon is neither
+  if IsInInstance then
+    local inside, kind = IsInInstance()
+    if inside and (kind == "party" or kind == "raid") then return false end
+  end
   local h = GetGameTime and GetGameTime()
   return h ~= nil and not secret(h) and (h < 6 or h >= 18)
 end
@@ -98,6 +103,9 @@ local function moment(k, fields)
   local m = fields or {}
   m.k, m.at, m.night = k, now(), night() or nil
   m.zone, m.sub = m.zone or zone, m.sub or sub
+  -- in company (a group): no line about being alone
+  local n = GetNumGroupMembers and GetNumGroupMembers() or 0
+  if not secret(n) and n > 0 then m.grouped = true end
   table.insert(ch.log, m)
   changed()
   return m
@@ -323,7 +331,7 @@ end
 -- What a quest asks, from the quest log: its objectives' lines ("Kobold
 -- Vermin slain: 0/10", "Tough Wolf Meat: 0/8"), read through the game's own
 -- formats; the rest ("Find the missing diplomat") kept as it is.
-local function objectivesOf(id)
+local function rawObjectives(id)
   local raw = {}
   if C_QuestLog and C_QuestLog.GetQuestObjectives then
     local ok, list = pcall(C_QuestLog.GetQuestObjectives, id)
@@ -337,6 +345,17 @@ local function objectivesOf(id)
       end
     end
   end
+  return raw
+end
+-- Every objective met (a quest with none has nothing to finish before its turn-in).
+local function finishedAll(id)
+  local raw = rawObjectives(id)
+  if #raw == 0 then return false end
+  for _, o in ipairs(raw) do if not o.finished then return false end end
+  return true
+end
+local function objectivesOf(id)
+  local raw = rawObjectives(id)
   local out = {}
   for _, o in ipairs(raw) do
     if o.text and not secret(o.text) then
@@ -363,12 +382,22 @@ ns.on("QUEST_ACCEPTED", function(a, b)
   local friendly = UnitExists and UnitExists("target") and not (UnitIsDead and UnitIsDead("target"))
     and not (UnitCanAttack and UnitCanAttack("player", "target"))
   local giver = UnitName("npc") or (friendly and UnitName("target")) or nil
-  c.pending[id] = { giver = (giver and not secret(giver)) and giver or nil, title = titleOf(id), objectives = objectivesOf(id) }
+  local objectives = objectivesOf(id)
+  c.pending[id] = { giver = (giver and not secret(giver)) and giver or nil, title = titleOf(id), objectives = objectives,
+    held = objectives and finishedAll(id) or nil } -- done from the start: nothing to tell before the turn-in
 end)
--- The quest log fills in after the acceptance: the objectives, once known.
+-- The quest log fills in after the acceptance (the objectives, once known),
+-- and tells when a quest's work is done: told then and there, where it
+-- happened; the turn-in, later, is the return to who asked.
 ns.on("QUEST_LOG_UPDATE", function()
   for id, p in pairs(char().pending or {}) do
-    if not p.objectives then p.objectives = objectivesOf(id) end
+    if not p.objectives then
+      p.objectives = objectivesOf(id)
+      if p.objectives and finishedAll(id) then p.held = true end
+    elseif not p.done and not p.held and finishedAll(id) then
+      p.done = true
+      moment("done", { id = id, title = p.title, giver = p.giver, objectives = p.objectives })
+    end
   end
 end)
 -- Who I returned to: the one I talk to when the quest is completed.
@@ -382,7 +411,8 @@ ns.on("QUEST_TURNED_IN", function(id)
   local p = c.pending and c.pending[id] or {}
   local ch = chapter()
   ch.quests = ch.quests + 1
-  moment("quest", { title = titleOf(id) or p.title, giver = p.giver, ender = ender, objectives = p.objectives })
+  moment("quest", { id = id, title = titleOf(id) or p.title, giver = p.giver, ender = ender, objectives = p.objectives,
+    told = p.done or nil }) -- told: its work was told when done
   ender = nil
   if c.pending then c.pending[id] = nil end
 end)

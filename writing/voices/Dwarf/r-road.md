@@ -2,7 +2,7 @@
 kind: r-road
 ---
 - my boots having opinions about the distance
-- the hills on either side worth a second look
+- the country on either side worth a second look
 - [!back] keen to put a place to the name
 - [!back] judging the stonework before the people
 - [!back] curious what the locals would make of a dwarf

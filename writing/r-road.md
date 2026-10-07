@@ -2,7 +2,7 @@
 kind: r-road
 ---
 - my legs reminding me of the distance
-- the weather keeping me company most of the way
+- [!grouped] the weather keeping me company most of the way
 - noting where the paths and the people went
 - [!back] the name finally matched to a place
 - [!back] curious what the place would make of me
