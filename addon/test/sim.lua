@@ -137,6 +137,8 @@ check(#moments("loot") == 0, "green loot isn't told (it is, once worn)")
 fire("CHAT_MSG_LOOT", "You receive loot: " .. itemLink("Pendant of Myzrael", 3) .. ".")
 fire("CHAT_MSG_LOOT", "Brannor receives loot: " .. itemLink("Pendant of Myzrael", 3) .. ".")
 check(#moments("loot") == 1 and moments("loot")[1].link:find("Pendant of Myzrael", 1, true), "a blue find is (mine only)")
+fire("CHAT_MSG_LOOT", "You receive item: " .. itemLink("Chausses of Westfall", 3) .. ".")
+check(#moments("loot") == 1, "a blue quest reward received is no find (told when worn, if it is)")
 
 -- Gear: what is worn when the journal first looks is noted quietly; then each
 -- item worn for the first time (green or better), crafted ones marked.
