@@ -68,19 +68,17 @@ function tell.place(s, m)
     local land = b:sceneryOf(m.zone, m.night)
     if land then s:append(land) else s:alone("zone", { zone = mid(m.zone) }, s:tags(nil, m)) end
     b.last = nil
-    s.scene, s.sceneZone = nil, nil
+    s:enter(nil, nil)
     local town = m.sub and b:sceneryOf(m.sub, m.night)
     if town then
       s:append(town)
-      s.scene, s.sceneZone = m.sub, m.zone
-      s.seenHere[m.sub] = true
+      s:enter(m.sub, m.zone)
       b.last, b.there = m.sub, false
     elseif m.sub then
       s:arrive(m.sub, m.zone, s.seenHere[m.sub] and "c-return" or "c-place")
     else
       -- the land itself, just named: here, without arriving again
-      s.scene, s.sceneZone = m.zone, m.zone
-      s.seenHere[m.zone] = true
+      s:enter(m.zone, m.zone)
     end
   elseif m.sub or m.zone then
     local here = m.sub or m.zone
@@ -90,8 +88,7 @@ function tell.place(s, m)
       s:flush()
       if #s.current >= 3 then s:newParagraph() end
       s:append(#s.current > 0 and linked(b:link(m, s.prev, s.key), town) or town)
-      s.scene, s.sceneZone, s.killed = here, m.zone, false
-      s.seenHere[here] = true
+      s:enter(here, m.zone)
       b.last, b.there = here, false
     else
       s:arrive(here, m.zone, s.seenHere[here] and "c-return" or "c-place")
@@ -104,8 +101,7 @@ function tell.flight(s, m)
   s:alone("flight", { from = mid(town(m.from)), to = mid(town(m.to)) }, s:tags({ first = not b.flown or nil }, m), m)
   b.flown = true
   if s.place then
-    s.scene, s.sceneZone = s.place, m.zone
-    s.seenHere[s.place] = true
+    s:enter(s.place, m.zone)
     b.last, b.there = s.place, false
   end
 end
@@ -320,8 +316,7 @@ local OWN = {
 function tell.own(s, m)
   s:flush() -- before its place is worked out: "there" depends on the sentence before
   if s.place and s.place ~= s.scene then
-    s.scene, s.sceneZone, s.killed = s.place, m.zone, false
-    s.seenHere[s.place] = true
+    s:enter(s.place, m.zone)
   end
   match(m, OWN, s)
 end
@@ -369,8 +364,7 @@ local function opening(s)
     -- a life's first page: the land it begins in
     local land = first and b:sceneryOf(start.zone, start.night)
     if land then s:append(land) end
-    s.scene, s.sceneZone = where, start.zone
-    s.seenHere[where] = true
+    s:enter(where, start.zone)
   end
 end
 
