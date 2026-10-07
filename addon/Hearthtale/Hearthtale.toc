@@ -13,6 +13,9 @@ Data.lua
 Names.lua
 Core.lua
 Record.lua
+Language.lua
+Lines.lua
+Scene.lua
 Writer.lua
 Book.lua
 Hall.lua

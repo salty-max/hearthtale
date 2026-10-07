@@ -271,7 +271,7 @@ LinkProcessorResponse = { Handled = 2 }
 -- ── load the addon ───────────────────────────────────────────────────────────
 local ns = {}
 assert(loadfile(DIR .. (FOREVER and "Data_Forever.lua" or "Data_Classic.lua")))("Hearthtale", ns)
-for _, f in ipairs({ "Names.lua", "Core.lua", "Record.lua", "Writer.lua", "Book.lua", "Hall.lua", "Save.lua", "Settings.lua", "Minimap.lua" }) do assert(loadfile(DIR .. f))("Hearthtale", ns) end
+for _, f in ipairs({ "Names.lua", "Core.lua", "Record.lua", "Language.lua", "Lines.lua", "Scene.lua", "Writer.lua", "Book.lua", "Hall.lua", "Save.lua", "Settings.lua", "Minimap.lua" }) do assert(loadfile(DIR .. f))("Hearthtale", ns) end
 local D = ns.data
 -- Resting and campfires: the game's resting state, the auras on me.
 state.auras = {}
