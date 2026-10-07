@@ -50,6 +50,7 @@ local function kindOf(c) return FAMILY[c.family or 0] or TYPE[c.type or 0] end
 -- somewhere, its items dropped or found somewhere (or in hand from the start).
 local function playable(q, race, class)
   if q.zone == nil or q.zone <= 0 then return false end -- class, profession and holiday quests
+  if q.repeatable then return false end -- turned in again and again: a player's choice, not the road
   if q.races and q.races ~= 0 and bit.band(q.races, RACE[race]) == 0 then return false end
   if q.classes and q.classes ~= 0 and bit.band(q.classes, CLASS[class]) == 0 then return false end
   for _, t in ipairs(q.targets or {}) do
@@ -234,6 +235,26 @@ local function play(race, class)
   return c
 end
 
+-- The people who give and take back quests: none named three times in a
+-- paragraph (a second mention reads without the name).
+local PEOPLE = {}
+for _, q in pairs(D.quests) do
+  for _, id in ipairs(q.starters or {}) do if D.creatures[id] then PEOPLE[D.creatures[id].name] = true end end
+  for _, id in ipairs(q.enders or {}) do if D.creatures[id] then PEOPLE[D.creatures[id].name] = true end end
+end
+local function namedOnce(where, text)
+  for paragraph in (text or ""):gmatch("[^\n]+") do
+    local counts = {}
+    for name in pairs(PEOPLE) do
+      if #name > 3 and paragraph:find(name, 1, true) then
+        -- (a possessive is an item's name, "Gazlowe's Ledger", not a mention)
+        local _, n = paragraph:gsub(name:gsub("%p", "%%%0") .. "%f[^%w']", "")
+        if n >= 3 then problem(where, name .. " named " .. n .. " times in a paragraph", paragraph) end
+      end
+    end
+  end
+end
+
 os.execute("mkdir -p .cache/audit/books")
 local books, chapters, quests = 0, 0, 0
 for _, life in ipairs(LIVES) do
@@ -245,6 +266,7 @@ for _, life in ipairs(LIVES) do
   for _, ch in ipairs(book.chapters) do
     chapters = chapters + 1
     inspect(("%s %s chapter %d"):format(life[1], life[2], ch.number), ch.text)
+    namedOnce(("%s %s chapter %d"):format(life[1], life[2], ch.number), ch.text)
     f:write(("## Chapter %d (levels %d to %d)\n\n%s\n\n"):format(ch.number, ch.from, ch.to, ch.text or ""))
   end
   for _, ch in ipairs(c.chapters) do quests = quests + ch.quests end

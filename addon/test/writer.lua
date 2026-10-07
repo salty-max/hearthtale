@@ -518,6 +518,26 @@ for _, race in ipairs(RACES) do
   end
 end
 
+-- A thing carried from one to the next ("I carried Deliah's Ring to Hadrec,
+-- took it on to Sevren"), or handed over twice to the same person: named once.
+for _, race in ipairs(RACES) do
+  for seed = 1, 16 do
+    local function deliver(ender, at)
+      return { k = "quest", ender = ender, objectives = { { type = "item", name = "Deliah's Ring", n = 1, held = true } },
+        zone = "Silverpine Forest", sub = "The Sepulcher", at = at }
+    end
+    local c = { guid = "carried-on-" .. seed, race = race, class = COMBOS[race][1], began = { level = 20 },
+      chapters = { { start = { level = 20, zone = "Silverpine Forest", sub = "The Sepulcher" }, kills = {}, quests = 0, played = 100, gold = 0,
+        log = seed % 2 == 0 and { deliver("High Executor Hadrec", 100), deliver("Magistrate Sevren", 200), deliver("Raleigh Andrean", 300) }
+          or { deliver("High Executor Hadrec", 100), deliver("High Executor Hadrec", 200), deliver("Magistrate Sevren", 300) } } } }
+    local text = ns.writeBook(c).chapters[1].text
+    inspect(race .. " carried on", text)
+    local _, rings = text:gsub("Deliah's Ring", "")
+    local _, hadrec = text:gsub("Hadrec", "")
+    if rings > 1 or hadrec > 1 then problem(race .. " carried on", "a thing or a person named again and again", text) end
+  end
+end
+
 -- Repeated journeys exercise return wording as well as one-off arrivals.
 for _, race in ipairs(RACES) do
   local log = {}

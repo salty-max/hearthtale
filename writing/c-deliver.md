@@ -1,11 +1,27 @@
 ---
 kind: c-deliver
 ---
-- carried {thing} to {ender}
-- delivered {thing} to {ender}
-- put {thing} into {ender}'s hands
-- brought {thing} to {ender}
-- took {thing} to {ender}
-- handed {thing} over to {ender}
-- saw {thing} safely to {ender}
-- made sure {thing} reached {ender}
+- [!again !onward] carried {thing} to {ender}
+- [!again !onward] delivered {thing} to {ender}
+- [!again !onward] put {thing} into {ender}'s hands
+- [!again !onward] brought {thing} to {ender}
+- [!again !onward] took {thing} to {ender}
+- [!again !onward] handed {thing} over to {ender}
+- [!again !onward] saw {thing} safely to {ender}
+- [!again !onward] made sure {thing} reached {ender}
+- [again !onward] handed over {thing} as well
+- [again !onward] gave over {thing} while I was at it
+- [again !onward] delivered {thing} too
+- [again !onward] added {thing} to what I had brought
+- [again !onward] handed {thing} over with the rest
+- [again !onward] passed on {thing} in the same visit
+- [again !onward] brought {thing} along at the same time
+- [onward !again] took it on to {ender}
+- [onward !again] carried it on to {ender}
+- [onward !again] passed it on to {ender}
+- [onward !again] brought it on to {ender}
+- [onward !again] went on with it to {ender}
+- [onward again] handed it over again
+- [onward again] gave it over once more
+- [onward again] turned it in a second time
+- [onward again] handed it back for the next errand

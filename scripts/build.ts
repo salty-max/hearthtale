@@ -110,7 +110,7 @@ const KINDS: Record<string, string[]> = {
 };
 const VOICE = ["home", "kin", "faith", "weapon"];
 const TAGS = ["home", "ally", "foe", "neutral", "night", "hc", "high", "low", "first", "elite", "lots", "many", "slow", "quick",
-  "foe", "fall", "drowning", "lava", "nature", "beast", "people", "player", "inside", "rest", "fire", "last", "one", "aside", "plain", "back", "done", "grouped", "held", "plural", "trophy", "corpse", "healer", "self", "known", "more", "teeth", "mechanical", "cloth", "meat", "explore", "escort", "new", "made", "form", "demon", "steed"];
+  "foe", "fall", "drowning", "lava", "nature", "beast", "people", "player", "inside", "rest", "fire", "last", "one", "aside", "plain", "back", "done", "grouped", "held", "plural", "trophy", "corpse", "healer", "self", "known", "more", "again", "onward", "teeth", "mechanical", "cloth", "meat", "explore", "escort", "new", "made", "form", "demon", "steed"];
 const RACES = ["Human", "Dwarf", "NightElf", "Gnome", "Draenei", "Orc", "Troll", "Tauren", "Scourge", "BloodElf", "Skyborne"];
 const ROUTINE = new Set("deed-kill deed-item deed-task deed-word deliver report kill first gear trainer inn travel return place group skill prof".split(" ").map((kind) => `c-${kind}`));
 // The recap's kinds: one sentence of the recap holds a thought, the others are plain.

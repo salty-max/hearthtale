@@ -1,11 +1,18 @@
 ---
 kind: c-report
 ---
-- reported back to {ender}
-- let {ender} know it was done
-- told {ender} the work was done
-- gave {ender} the news
-- returned to {ender} with the work done
-- checked in with {ender}
-- saw {ender} again, the work behind me
-- handed in my work to {ender}
+- [!again] reported back to {ender}
+- [!again] let {ender} know it was done
+- [!again] told {ender} the work was done
+- [!again] gave {ender} the news
+- [!again] returned to {ender} with the work done
+- [!again] checked in with {ender}
+- [!again] saw {ender} again, the work behind me
+- [!again] handed in my work to {ender}
+- [again] reported back once more
+- [again] went back with the rest of it done
+- [again] checked in again
+- [again] handed over the rest
+- [again] reported the rest done as well
+- [again] came back with more done
+- [again] saw that business finished too

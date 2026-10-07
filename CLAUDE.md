@@ -115,6 +115,12 @@ The plan and its decisions: PLAN.md.
   "I took up tailoring, practised…"; the build refuses it). "it" only with
   `[one]` (a lesson of several spells is "them"; the build refuses "it"
   without `[one]` in a lesson's remark).
+- Name things once: within a paragraph, a person already named is not named
+  again (a deed drops who asked; a return, a delivery, a message or a
+  giver's request takes its `[again]` wording, "I reported back once more");
+  a creature just killed is "five more" or "one of them"; a thing delivered
+  just before is "it" (`[onward]`), further back "the ring". The playthroughs
+  fail on a quest giver named three times in a paragraph.
 - The races must sound apart (the build checks it): a remark's first three
   words open remarks of two races at most, and a pool holds two stock
   feelings ("glad", "pleased", "relieved", "curious", "surprised") at most.
