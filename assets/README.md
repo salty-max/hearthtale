@@ -6,4 +6,3 @@ An original painted fantasy-item logo inspired by the visual style of [Archivist
 - `logo.png`: 512px square export.
 - `logo-master.png`: full-resolution generated master; resize this for future exports.
 - `logo-prompts.json`: the generation prompt and reference.
-- `previous/`: the original vector logo and PNG exports, kept for comparison.

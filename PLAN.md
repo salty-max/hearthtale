@@ -63,7 +63,7 @@ site).
    the page in the in-game book's look; phone first. Started 6 October 2026:
    the library, a book's contents, its chapters and epitaph, on test characters
    played through the addon (addon/test/seed.lua).
-6. **Ravenpost** (done, 6 October 2026, not released yet): the companion moved
+6. **Ravenpost** (done, 6 October 2026; released, 0.2.3 on 7 October): the companion moved
    to its own repo (salty-max/ravenpost, history kept) and renamed; it uploads
    each addon's file to its site (WowLocker.lua to WoWLocker, Hearthtale.lua to
    Hearthtale, one character per request, only the fields the site reads),
@@ -199,8 +199,11 @@ Forever's Professions cards). Two tabs:
 
 ## Steps
 
-Status (6 October 2026): 1 to 6 done; 7 reviewed (516 sentences read, fixes
-in), release 0.1.0 next.
+Status (7 October 2026): all seven done; the addon released through 0.5.2 on
+GitHub (not yet on CurseForge), tested live on Forever's beta. Next: an
+example book on the homepage, a simpler way in for a first visit, a Hardcore
+beta, a voice setting (the race's or a neutral narrator), and a journal for a
+character already at the highest level (it never levels, so never ends).
 
 1. The repository, from the Field Journal's skeleton.
 2. The recording, with the simulation.
