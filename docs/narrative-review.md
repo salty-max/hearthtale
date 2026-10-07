@@ -163,3 +163,124 @@ others are told plainly, and the rest that closes the chapter keeps its own.
 
 Places are described in flowing sentences rather than chains of possessives
 ("the cold of Dun Morogh", not "Dun Morogh's cold … Ironforge's mountain").
+
+## The remaining voices
+
+This pass follows the later quest-work, naming, death, crafting and dungeon
+changes. It deepens human, gnome, Darkspear, tauren, blood elf, draenei and
+both Skyborne traditions. Each now has its own writing across 28 kinds of
+moment, with full sentences and room for feelings other than weariness.
+The original four voices and the writer's rules stay intact. Two shared
+first-flight lines specific to gnomes and tauren give way to their fuller
+voice files, and a tauren zone arrival moves into its own file, so no
+superseded line remains unreachable.
+
+The before excerpts below come from the previous generated comparison;
+the after excerpts come from the regenerated comparison. They show the
+change from a judgement about ordinary work to a reaction from the person
+doing it. The larger scenes in `docs/voice-moments.md` also let each voice
+carry through flights, a night outside, death and help, a dungeon's end and
+the journal's final page.
+
+**Human** notices people and familiar places, with the plain warmth of
+someone who wants to get home. Before:
+
+> I set out to recover the missing cargo and did so, the kind of work nobody
+> writes songs about.
+
+After:
+
+> A Southsea Brigand left me within a breath of the end. The same road
+> looked quite different when I could bear to look along it again.
+
+**Gnome** is curious and willing to revise an impression, without turning
+fear into a lesson in ingenuity. Before:
+
+> A mistake was something to learn from only if I remained available for
+> the lesson.
+
+After:
+
+> A Southsea Brigand left me barely alive. My hands were shaking too much
+> for cleverness to feel like much of an achievement.
+
+**Darkspear** keeps a wary humour and an interest in good company. The
+speaker can set that humour aside when frightened. Before:
+
+> People learned what a stranger was worth through such things.
+
+After:
+
+> I opened a fresh page in Ratchet, interested in the next good chance and
+> watchful for its neighbours.
+
+**Tauren** brings physical presence and care for a shared pace, with the
+Earth Mother reserved for moments that warrant the reference. Before:
+
+> I took up tailoring, the lesson settling slowly, like rain into soil.
+
+After:
+
+> I took up tailoring, curious how the next attempt would feel.
+
+The close call has more room:
+
+> A Southsea Brigand left me barely alive. I wanted to feel the ground
+> beneath my hooves for many days yet.
+
+**Blood elf** distinguishes composure from confidence, allowing fear and
+affection without giving every errand a sneer. Before:
+
+> Doing ordinary work well remained preferable to making excuses for its
+> ordinariness.
+
+After:
+
+> By the end, three tasks were done. I found myself remembering the people
+> who had asked for them.
+
+**Draenei** has courtesy, curiosity and a wish to belong, alongside the
+ordinary fear that faith does not erase. Before:
+
+> Care could take an ordinary shape and remain care.
+
+After:
+
+> I escaped a Southsea Brigand, shaken by how little had stood between a
+> mistake and the end of everything I still wanted to do.
+
+**Skyborne** keeps two traditions without assigning one from class. Their
+previous close-call reflection was the same:
+
+> The future I wanted for my people still needed living hands to make it.
+
+Windshaper after:
+
+> A Southsea Brigand nearly killed me. For a while I wanted nothing more
+> than to feel that I still belonged among the living things around me.
+
+High Order after:
+
+> I barely survived a Southsea Brigand. I could see where I had misjudged
+> the danger, but understanding it did very little to quiet my fear.
+
+Read the surrounding paragraphs in `docs/race-comparison.md`, not only
+these excerpts. The everyday remarks remain occasional; cultural names
+and metaphors should not pile up in neighbouring passages. The review of
+the larger scenes removed repeated references to homeland or faith around
+the same death, and varied the draenei's repeated unfamiliarity so it did
+not become their only feeling.
+
+The pass passed `bun run check`, including both recording simulations,
+832 Classic books across 19,852 chapters and 928 Forever books across
+22,166 chapters, all prose and scenery reachability, repetition and sentence
+stability checks, type checking, lint and the API and site tests. Routine
+remarks remained at 34% in both catalogs, with none repeated within a book's
+first ten chapters. The separate real-quest playthrough passed 1,792 quests
+across 146 chapters and eight books; early, middle and late chapters of the
+four revised Classic voices were read alongside the controlled comparisons.
+
+Both catalogs, the sample journeys, the two voice comparisons and all seven
+site seed books were regenerated. The larger-moment comparison was also
+checked for filled slots, sentence joins and its recorded destinations,
+companion, final boss and final level. No recording or assembly rule changed.

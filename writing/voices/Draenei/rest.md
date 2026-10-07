@@ -1,12 +1,12 @@
 ---
 kind: rest
 ---
-- I rested {at}, grateful for a place where nothing asked me to leave at once.
-- I settled {at}, allowing comfort to be something received without having to explain it.
-- I paused {at}, glad of a little quiet in a world I was still learning.
-- I rested {at}, with time to let the day's kindnesses remain beside its difficulties.
-- I stopped {at}, content for a while to be here rather than on the way elsewhere.
-- I rested {at}, giving my strength the care I hoped to bring to other lives.
-- I paused {at}. A place could become familiar through stillness as well as passage.
-- I rested {at}, with the welcome fact that the next beginning did not have to be immediate.
-- I put the road aside {at}, grateful to remain in this world without having to hurry through it.
+- I rested {at}, grateful to let my feet be still while the rest of me caught up.
+- I settled {at}, pleased that the name now meant somewhere I could return to.
+- I stopped {at}, with a tiredness I had been too occupied to notice properly.
+- I made time to rest {at}, allowing myself the same patience I would have wished for someone else.
+- [night] I rested {at}, content to leave the unfamiliar dark outside my plans for a while.
+- I paused {at}, with several questions still unanswered and no desire to hurry through them.
+- I rested {at}, thankful that I could put my attention down without letting everything else fall with it.
+- I settled {at}, glad of a pause that did not require me to explain myself.
+- I stopped {at}, beginning to recognise the comfort of a familiar place.

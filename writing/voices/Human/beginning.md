@@ -1,7 +1,7 @@
 ---
 kind: beginning
 ---
-- I began {at}, where other people's troubles were already close enough to become my own.
-- I opened my journal {at}. Kingdoms might be rebuilt by great names, but someone still had to see to the road.
-- I set out {at}, hoping I could make myself useful before I learned how much there was to fear.
-- I began {at}, with a life to make and neighbours whose lives would not wait while I made it.
+- I began {at}, with a living to make and more neighbours than I yet knew by name.
+- I opened my journal {at}. Stormwind had been rebuilt; I wanted to see what a person could build with an ordinary pair of hands.
+- I set out {at}, hoping I would find someone to ask when the road grew unfamiliar.
+- I began {at}, eager to see a little of the world beyond the troubles nearest home.

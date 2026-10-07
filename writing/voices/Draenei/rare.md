@@ -1,7 +1,7 @@
 ---
 kind: rare
 ---
-- I brought down {foe} {at}, grateful that I could put the danger behind me and keep what it had taught.
-- {foe} fell to me {at}. I remembered the encounter with relief, without wishing to make the loss larger in its telling.
-- I overcame {foe} {at}, and gave the name its place among the things this world had taught me.
-- I killed {foe} {at}, a difficult part of the journey that I was glad to have passed through.
+- I encountered {foe} {at}, a name I wanted to remember precisely rather than confuse with all the others I was learning.
+- {foe} fell {at}. I was relieved to have survived the meeting, though that was not quite the same as being glad of it.
+- I faced {foe} {at}, with rather more attention than I usually gave a single encounter.
+- I came upon {foe} {at}, and the encounter stayed with me after I had moved on.

@@ -1,14 +1,13 @@
 ---
 kind: r-lesson
 ---
-- one more trick for the pack
-- worth the time, every bit
-- the movements strange at first
-- [one] easy after a little practice
-- [one] eager to try it where it counted
-- [one] my hands quick to take to it
-- [new] something new for the tribe to use
-- [new] starting slow, as the wise do
-- [low] still green in this, but learning
-- [high] fitting neatly among the old tricks
-- [!one] eager to try them where it counted
+- keen to see what stayed with me in practice
+- with my hands still learning the feel of the work
+- pleasantly occupied with the unfamiliar parts
+- with rather more to try than I had time for at once
+- glad to have something new to draw on
+- curious how much easier the next attempt would feel
+- [new] wondering where the trade might take me
+- [new] with room for a new knack among the old
+- [low] willing to begin slowly despite my impatience
+- [high] pleased to find something new to learn

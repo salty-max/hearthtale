@@ -1,12 +1,12 @@
 ---
 kind: rest
 ---
-- I rested {at}, allowing the place to go on around me without asking it for more.
-- I settled {at}, grateful for a pause in which nothing needed to be won.
-- I stopped {at}, and let my thoughts find a pace gentler than the road.
-- I rested {at}, content to belong to the world without proving my usefulness every moment.
-- I paused {at}, giving my strength the care I expected it to give others.
-- I rested {at}, with the day's needs answered as well as I could answer them.
-- I stopped {at}, glad that patience could be a comfort as well as a duty.
-- I rested {at}, making room for the quiet that my purpose had crowded out.
-- I put the road aside {at}, grateful for time to be still within it.
+- I rested {at}, letting my attention reach beyond the next thing to be done.
+- I settled {at}, grateful for a pause that asked nothing of my strength.
+- I stopped {at}, and let my thoughts find a pace gentler than my feet had kept.
+- I rested {at}, content to be here without making anything more of the moment.
+- I paused {at}, with my shoulders easing as the day's hurry left them.
+- I rested {at}, thinking of the places I would like to see again without an errand before me.
+- I stopped {at}, glad to have time to feel the quiet after so much movement.
+- I rested {at}, with my tiredness plain to me now I no longer needed to go on.
+- I put the road aside {at}, and was pleased to find myself in no haste to take it up.

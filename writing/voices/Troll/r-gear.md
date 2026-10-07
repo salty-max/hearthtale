@@ -1,11 +1,11 @@
 ---
 kind: r-gear
 ---
-- [!made] good enough to keep
-- [!made !held] better than what I wore before
-- [!made] fitting well enough after a bit of work
-- [!made] light, which I like
-- [!made hc] one more thing standing between me and a bad end
-- [made] made with my own hands, the old way
-- [made] rough, but sure to hold
-- [made] my own work, and proud of it
+- [!made] pleased to have another piece worth relying on
+- [!made !held] curious how the fit would feel after some walking
+- [!made] eager to find out how well the new piece would last
+- [!made] a welcome change in my kit
+- [!made hc] glad of another thing between me and a bad end
+- [made] rather fond of the result for having made it myself
+- [made] with some quiet satisfaction in my own handiwork
+- [made] keen to see my work meet more than my own approval

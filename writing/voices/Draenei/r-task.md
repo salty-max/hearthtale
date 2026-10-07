@@ -1,13 +1,13 @@
 ---
 kind: r-task
 ---
-- a small help, freely given
-- glad to be of use
-- with a little more of the place known to me
-- with care
-- hoping it would make a difference
-- a little less a stranger for it
-- [explore] the land a little less strange with every step
-- [explore] learning its paths as one learns a new language
-- [escort] patient with their pace
-- [night] the dark softened by the stars
+- pleased that I had understood what was needed
+- with a little less uncertainty about offering my help
+- curious about what I might be asked next
+- ready to give my attention to something else
+- with more effort behind the request than I had first understood
+- glad to have seen the work through
+- [explore] more at ease with the place now that I had found my way through
+- [escort] relieved that I no longer had to watch for danger to someone else
+- [night] glad not to be searching in the dark any longer
+- hoping I would find the next request easier to understand

@@ -1,15 +1,13 @@
 ---
 kind: r-lesson
 ---
-- [client:forever] with more questions than I began with
-- [client:forever] the lesson clearer from a second angle
-- [client:forever one] smooth as flight after a little practice
-- [client:forever one] curious how it would change with use
-- [client:forever] a little steadier for it
-- [client:forever faction:horde] a gift I meant to share
-- [client:forever faction:alliance] knowledge worth holding on to
-- [client:forever new] a whole new perspective to learn
-- [client:forever new] starting at the bottom, which suited my curiosity
-- [client:forever low] still a beginner, though a willing one
-- [client:forever high] the new fitting easily among the old
-- [client:forever !one] curious how they would change with use
+- [client:forever faction:horde] curious where the new knowledge would lead in practice
+- [client:forever faction:alliance] with a little more that I could test for myself
+- [client:forever] pleased to have something new to attempt
+- [client:forever] with more questions than I had brought to the lesson
+- [client:forever one] interested in where it might prove useful
+- [client:forever !one] curious how the lessons would fit together
+- [client:forever] less certain that I had reached the limits of what I could learn
+- [client:forever] with more to practise than I had arrived with
+- [client:forever] hoping the new knowledge would feel more familiar in use
+- [client:forever] with my attention still caught by what I had just learned

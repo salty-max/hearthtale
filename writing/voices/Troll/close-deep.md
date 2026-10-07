@@ -1,8 +1,8 @@
 ---
 kind: close-deep
 ---
-- {foe} nearly killed me {at}. My people had survived too much for me to spend my part in a careless moment.
-- I barely survived {foe} {at}, grateful for another chance without pretending I had earned it by good judgement.
-- {foe} left me barely alive {at}. The road had stopped being a place for clever answers and become a place I very much wanted to leave.
-- [!foe] I barely survived {at}, with no wish to test how much more luck I had.
-- [!foe] I came within a breath of the end {at}. There were still names I wanted to hear spoken by voices other than my own.
+- {foe} nearly killed me {at}. For a while I could think only of finding safety, and had no room left for pretending I was unafraid.
+- I barely survived {foe} {at}, with my luck looking thinner than I cared to examine.
+- {foe} left me barely alive {at}. I wanted distance from that moment more than I wanted to make a tale of it.
+- [!foe] I barely survived {at}, and could not stop feeling how near the other ending had been.
+- [!foe] I came within a breath of the end {at}. I thought of the Darkspear, and of how much I still wanted to see among my own people.

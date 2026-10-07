@@ -1,9 +1,9 @@
 ---
 kind: quests-many
 ---
-- [client:forever] I had completed {n} tasks, learning the ground through what its people needed from it.
-- [client:forever] The {n} jobs behind me had made experience firmer than the expectations I began with.
-- [client:forever] I counted {n} errands finished, with something useful carried forward from each.
-- [client:forever] By the end, {n} tasks were done. A different world became less distant through ordinary work.
-- [client:forever] I had seen {n} jobs through, and found more to rely on in practice than in assumption.
-- [client:forever] I had brought {n} tasks to an end, with a little more understood and made dependable.
+- [client:forever faction:horde] I had completed {n} tasks, pleased to be finding a place in more than my own plans.
+- [client:forever faction:alliance] {n} tasks were finished, giving me more to judge the work by than the requests alone.
+- [client:forever] I counted {n} tasks done, some less straightforward at close quarters than they had sounded.
+- [client:forever] There were {n} completed tasks to enter before I stopped.
+- [client:forever] I had seen {n} tasks through, and wanted to let my attention come to rest.
+- [client:forever] I put down {n} tasks completed, ready to leave the next request until I could think clearly about it.

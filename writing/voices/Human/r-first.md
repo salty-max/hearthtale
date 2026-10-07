@@ -1,11 +1,11 @@
 ---
 kind: r-first
 ---
-- nothing like I had imagined
-- worth knowing, in the way bad news is worth knowing
-- quicker than I was ready for
-- the sort of thing a guard would have shrugged at
-- a lesson in not trusting how things look
-- [teeth] with more teeth than any farm dog
-- [night] which I would rather have met by daylight
-- [low] one more thing I had not been ready for
+- rather less curious once they came close
+- not quite the introduction I had pictured
+- quick to lose my interest in a closer look
+- with plenty to remember about their movements
+- wary of the next meeting already
+- [teeth] much more aware of where I put my hands
+- [night] wishing I could see them more clearly
+- [low] with my confidence still catching up

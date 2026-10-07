@@ -1,11 +1,11 @@
 ---
 kind: r-gear
 ---
-- [!made] a sensible improvement
-- [!made !held] adjusted twice before everything sat right
-- [!made] better engineered than appearances suggested
-- [!made] already planning a modification or two
-- [!made hc] one more safeguard, which is always wise
-- [made] precisely to my own specifications
-- [made] with one or two features nobody else would think of
-- [made] the second attempt, which was much better
+- [!made] curious about how the new piece would serve
+- [!made !held] interested in the fit once the novelty wore off
+- [!made] with a few possible improvements already in mind
+- [!made] pleasantly occupied with the details
+- [!made hc] glad to have another precaution available
+- [made] with a particular interest in how my own work held up
+- [made] pleased to recognise my choices in the result
+- [made] already thinking about what I might try next time

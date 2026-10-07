@@ -1,8 +1,8 @@
 ---
 kind: close-deep
 ---
-- {foe} nearly killed me {at}. I wanted another day, and found that was the whole of the matter when it came to it.
-- I barely survived {foe} {at}, with more left unfinished than I had cared to notice before.
-- {foe} left me within a breath of the end {at}. The road no longer looked as ordinary as it had.
-- [!foe] I barely survived {at}, and discovered that wanting to get home was quite different from assuming I would.
-- [!foe] I came very near the end {at}. I had not known how strongly I meant to stay until the choice almost left me.
+- {foe} nearly killed me {at}. I wanted to get home, with a force that surprised me.
+- I barely survived {foe} {at}. Even after the danger passed, I kept expecting another moment of it.
+- {foe} left me within a breath of the end {at}. The same road looked quite different when I could bear to look along it again.
+- [!foe] I barely survived {at}, and could not stop thinking about how little it would have taken.
+- [!foe] I came very near the end {at}. There were people I wanted to see again, and things I had not thought urgent enough to say.

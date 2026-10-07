@@ -1,13 +1,13 @@
 ---
 kind: r-road
 ---
-- the earth steady beneath my hooves
-- the sky wide and the road long
-- [!back] listening to the land before entering it
-- [!back] curious what its people held dear
-- [!back !home] a stranger, though not unwelcome
-- [!back night] arriving under the stars
-- [back] the land already familiar to me
-- [back] the paths already familiar
-- [back] finding it much as I left it
-- [high] one more place the earth had shown me
+- with my hooves feeling the distance
+- curious about the ground beyond the way I had taken
+- [!back] taking time to look about before going farther
+- [!back] interested in the lives that made their home here
+- [!back] hoping I would have time for more than passing through
+- [!back night] making out what I could beyond the road
+- [back] glad to recognise the way beneath my feet
+- [back] with less need to think about each turn
+- [back] curious what I would notice on another visit
+- [high] pleased by how many names had become places I knew

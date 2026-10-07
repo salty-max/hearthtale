@@ -1,12 +1,12 @@
 ---
 kind: opening
 ---
-- I set out {at}, wondering who would need a hand before I was through.
-- I began again {at}. There was no shortage of trouble, but I had never found waiting improved it.
-- I took up the road {at}, ready to see whether the day's promises would amount to anything.
-- I opened a fresh page {at}, with work enough nearby to make the wider world wait a little.
-- I made ready {at}, hoping to leave at least one thing better than I found it.
-- I went on {at}, where names mattered more to me than the grand cause people put them under.
-- I began this stretch {at}, with the last day's worries smaller for having survived them.
-- I returned to my account {at}. A place was easier to care about once I knew who depended on it.
-- I set out {at}, with the road ahead and a fair chance of being needed somewhere along it.
+- I set out {at}, wondering whose doorstep the day's work would bring me to.
+- I began again {at}. There was plenty to do, and I felt better once I was moving.
+- I took up the road {at}, with a little curiosity left over from my worrying.
+- I opened a fresh page {at}, glad to have somewhere to put the things I might otherwise forget.
+- I made ready {at}, hoping for a day I could tell plainly when I got back.
+- I went on {at}, interested in who lived here as well as what needed doing.
+- I began this stretch {at}, with my plans still looking possible before I had begun testing them.
+- I returned to my account {at}, already wondering which names would turn up again.
+- I set out {at}, keen to get beyond thinking about the road and see some of it.

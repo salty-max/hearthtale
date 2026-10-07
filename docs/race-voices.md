@@ -7,16 +7,16 @@ Use these as literary interpretations of the lore, not canonical quotations.
 
 | Race | What lies behind the voice | Expression |
 | --- | --- | --- |
-| Human | Rebuilding after repeated wars; adaptable people who depend on neighbours and institutions that can fail them. | Familiar, direct, socially attentive; hope with an occasional doubt about grand promises. |
+| Human | Rebuilding after repeated wars; adaptable people who depend on neighbours and institutions that can fail them. | Familiar, direct, socially attentive; errands turn names into people, and danger makes home feel urgent. |
 | Dwarf | Ironforge's craftsmanship and loyalty, with renewed curiosity about ancient origins and the wider world. | Concrete comparisons, plain judgements, warm understatement; pride in a job that holds up. |
 | Night elf | An ancient, formerly secluded people facing change, with the cost of reckless power in their history. | Measured phrasing, watchfulness and long perspective; beauty and suspicion can share a sentence. |
-| Gnome | Ingenuity and curiosity continuing after the loss of Gnomeregan. | Precise, lively, self-correcting; cheerful experiments without turning every character into an engineer. |
+| Gnome | Ingenuity and curiosity continuing after the loss of Gnomeregan. | Precise, lively, self-correcting; curiosity can outrun the feet, but fear need not become an amusing experiment. |
 | Orc | Freedom from demonic domination, a shamanic inheritance, and a place still being built in a hostile world. | Deliberate, forceful, accountable; distinguish earned honour from bloodlust and boasting. |
-| Darkspear troll | Displacement, loyalty to the tribe, and an alliance that made survival possible. | Resourceful, rhythmic, wry; respect for the loa and a survivor's eye for trouble, without a phonetic accent. |
-| Tauren | The Earth Mother, balance, communal responsibility, and a debt of friendship to the orcs. | Patient, grounded and hospitable; strength with restraint, rather than endless nature proverbs. |
+| Darkspear troll | Displacement, loyalty to the tribe, and an alliance that made survival possible. | Resourceful, rhythmic, wry; trouble earns a watchful eye and sometimes a smile, with warmth for company and no phonetic accent. |
+| Tauren | The Earth Mother, balance, communal responsibility, and a debt of friendship to the orcs. | Patient, grounded and hospitable; attention to weight, effort and a shared pace, without turning every stop into a nature proverb. |
 | Forsaken | Freedom from the Lich King's control; a hostile living world and a difficult second existence. | Exacting, dry, guarded; ownership of choices, black humour and flashes of feeling beneath it. |
-| Blood elf | Quel'Thalas's devastation, the loss of the Sunwell, and a proud culture negotiating dependence and survival. | Composed and particular, with restrained irony; pride can conceal anxiety, without contempt in every line. |
-| Draenei | Exile, persecution and the guidance of Velen and the naaru; searching for allies in an unfamiliar world. | Courteous, considered, resilient; hope expressed through care, without a sermon at every stop. |
+| Blood elf | Quel'Thalas's devastation, the loss of the Sunwell, and a proud culture negotiating dependence and survival. | Composed and particular, with restrained irony; distinguish appearing collected from feeling safe, and allow pleasure and affection beside pride. |
+| Draenei | Exile, persecution and the guidance of Velen and the naaru; searching for allies in an unfamiliar world. | Courteous, considered, resilient; curiosity and the wish to belong alongside faith, with patience for the narrator's own uncertainty too. |
 | Skyborne (Forever) | Missing elemental mentors and the insecurity their disappearance exposed. Windshapers seek their restoration; the High Order seek recovered arcane knowledge and greater self-reliance. | Attentive to change and perspective; warmer reciprocity for Windshapers, more analytical independence for the High Order. |
 
 ## Sources and boundaries
@@ -57,3 +57,31 @@ Read `docs/race-comparison.md` with the names hidden: the same recorded
 events should produce recognisably different people while retaining their
 facts. Read the full journeys in `docs/sample.md` for the subtler effect of
 the voice across a chapter.
+
+## The remaining voices in longer scenes
+
+Human, gnome, Darkspear, tauren, blood elf, draenei and Skyborne now have
+their own prose across 28 kinds, including flights, outdoor nights, waking,
+death and each means of revival, final dungeon bosses and the journal's
+last page. The original four voices are unchanged. Two former race-specific
+first-flight lines in the shared pool are replaced by the gnome and tauren
+files, and a tauren zone arrival moves into its voice file; the general
+fallback remains. Routine facts, remark frequency and the writer's sentence
+length allowance stay the same.
+
+The ordinary vocabulary should make these differences felt before a deity
+or homeland is named. A human wonders who needs a hand; a gnome revises an
+impression; a Darkspear narrator keeps some humour for a safer moment. A
+tauren notices how a shared pace feels, a blood elf admits the effort of
+composure, and a draenei gradually finds familiar names among unfamiliar
+ones. Windshapers look for connection, while the High Order put more trust
+in something they have examined themselves. None of these tendencies
+requires every sentence to express it.
+
+`docs/voice-moments.md` supplements the routine day with identical synthetic
+records of a first flight, a night outside, danger, death, a companion's
+help, a dungeon's end and the final journal entry. Regenerate it with
+`FOREVER=1 luajit addon/test/voices.lua moments`. These are separate editorial
+scenes across a life, not a canonical levelling route. Read them for repeated
+words and adjacent thoughts as well as racial character; a good line alone
+can still crowd out the feeling of the line beside it.

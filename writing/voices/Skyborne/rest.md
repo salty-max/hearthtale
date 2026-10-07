@@ -1,12 +1,12 @@
 ---
 kind: rest
 ---
-- [client:forever] I rested {at}, allowing the day's changes to settle into a clearer view.
-- [client:forever] I settled {at}, glad to have a point of stillness in the journey.
-- [client:forever] I paused {at}, with time to consider what I had been too occupied to notice.
-- [client:forever] I rested {at}, leaving the next uncertainty beyond the edge of my attention for now.
-- [client:forever] I stopped {at}, content that being still need not mean losing my way.
-- [client:forever] I rested {at}, with no need to turn every impression immediately into a conclusion.
-- [client:forever] I paused {at}, giving the ground I had reached more attention than the distance ahead.
-- [client:forever] I rested {at}, where I could let my thoughts change direction without having to follow them.
-- [client:forever] I put the road aside {at}, grateful for something dependable to return to while I considered the next step.
+- [client:forever faction:horde] I rested {at}, content to feel part of the place without needing to do anything more within it.
+- [client:forever faction:alliance] I settled {at}, allowing a few unresolved questions to remain unresolved until I had slept.
+- [client:forever] I stopped {at}, grateful to let my feet grow accustomed to staying still.
+- [client:forever] I rested {at}, with less interest in the view ahead than in the comfort of not approaching it yet.
+- [client:forever night] I settled {at}, glad to put down the effort of finding my way through the dark.
+- [client:forever] I paused {at}, surprised by how tired I felt once I was no longer moving.
+- [client:forever faction:horde] I rested {at}, with a growing fondness for somewhere I had once known only as a destination.
+- [client:forever faction:alliance] I stopped {at}, pleased that the place had become familiar enough to need less of my attention.
+- [client:forever] I settled {at}, content to let the distance I had covered be enough for now.

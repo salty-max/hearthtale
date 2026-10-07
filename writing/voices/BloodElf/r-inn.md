@@ -1,11 +1,11 @@
 ---
 kind: r-inn
 ---
-- somewhere to retreat to with dignity
-- adequate, which would do
-- a small certainty in an uncertain world
-- the stone a quiet reassurance
-- a bed and some peace
-- a door I could close on the day
-- [night] late enough to be done with the day
-- [hc] a sanctuary worth knowing
+- a small certainty I was quite ready to appreciate
+- with a shorter return journey to look forward to
+- pleased to have that much settled before going on
+- somewhere to come back and gather myself
+- with rather less of the return on my mind
+- already anticipating the pleasure of stopping here
+- [night] glad not to retrace the whole route in poor light
+- [hc] with some reassurance in having a retreat

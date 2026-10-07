@@ -1,13 +1,13 @@
 ---
 kind: r-road
 ---
-- the distance slightly longer than estimated
-- making a note of the shortcuts
-- [!back] curious how the place had been built
-- [!back] a whole new set of things to look at
-- [!back] the people taller than me, as usual
-- [!back night] its paths harder to follow in the dark
-- [back] the route already filed away
-- [back] finding it improved in two small ways and worse in one
-- [back] quicker the second time, as predicted
-- [high] one more entry in a long, long list
+- with more to look at than I had allowed time for
+- curious whether I had overlooked a shorter way
+- [!back] eager to see how the place fitted together
+- [!back] with far too many details competing for my attention
+- [!back] taking a closer look before settling on a first impression
+- [!back night] wishing I could make out a little more of the place
+- [back] remembering something I meant to look at again
+- [back] glad to have the turns already in my head
+- [back] curious what I would notice on a second visit
+- [high] with more of the names on my route beginning to fit together

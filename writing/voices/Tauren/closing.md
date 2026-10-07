@@ -1,9 +1,9 @@
 ---
 kind: closing
 ---
-- The work had occupied {time}, and I was content to let the next part wait until I could meet it well.
-- I had earned {gold} in {time}, something to carry without allowing it to become the reason for the road.
-- After {time}, I was ready to stop and give the day's quieter lessons room.
-- I had spent {time} travelling, a part of the day that belonged to more than my own purpose.
-- The stretch had taken {time}. Rest was care for what I would ask of myself next.
-- I had spent {time} on the road and earned {gold}, with enough done to welcome the pause.
+- The work had occupied {time}, and my strength was ready for a gentler use.
+- I had earned {gold} in {time}, something useful to carry into the next stretch.
+- After {time}, I wanted a little quiet in which to remember the day.
+- I had spent {time} travelling, and felt the distance as soon as I stopped.
+- The stretch had taken {time}. I was glad to give my legs the rest they had been asking for.
+- I had spent {time} on the road and earned {gold}, with enough behind me to welcome stillness.

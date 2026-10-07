@@ -1,7 +1,7 @@
 ---
 kind: beginning
 ---
-- I began {at}, hoping to become more than another stranger seeking a place to stay.
-- I opened my journal {at}. My people had carried hope through long exile; I meant to give it work to do here.
-- I set out {at}, with gratitude for the chance to begin and care for the lives already around me.
-- I began {at}, willing to learn the names of this world before asking it to know mine.
+- I began {at}, hoping to become more than a stranger who needed somewhere to stay. There was a whole world here whose names I had yet to learn.
+- I opened my journal {at}. My people had carried hope through exile; I wanted to find out what I could do with mine now that I had somewhere to stand.
+- I set out {at}, grateful for another beginning, though I would have liked to feel less uncertain about it.
+- I began {at}, with Velen's faith in this world to encourage me and my own questions to keep me company.

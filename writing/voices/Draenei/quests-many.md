@@ -1,9 +1,9 @@
 ---
 kind: quests-many
 ---
-- I had completed {n} tasks, small acts through which a stranger might begin to belong.
-- The {n} jobs behind me had made my presence useful, and the country a little less unfamiliar.
-- I counted {n} errands finished, grateful to have been asked for help rather than merely given shelter.
-- By the end, {n} tasks were done. Care could take an ordinary shape and remain care.
-- I had seen {n} jobs through, learning the lives of others through what they needed.
-- I had brought {n} tasks to an end, with hope given something practical to accomplish.
+- I had completed {n} tasks, with a little less uncertainty about what people needed from me.
+- {n} tasks were finished, and I was pleased to have been useful while finding my way.
+- I counted {n} tasks done, some easier to understand once I had attempted them.
+- There were {n} completed tasks to enter before I rested.
+- I had seen {n} tasks through, and was ready to stop thinking about what remained.
+- I put down {n} tasks completed, glad to have had enough strength for them.

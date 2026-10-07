@@ -1,8 +1,8 @@
 ---
 kind: close-light
 ---
-- {foe} nearly finished me {at}. The things I had put off suddenly seemed foolish to leave waiting.
-- I survived {foe} {at}, and my hands did not stop shaking for some time.
-- {foe} nearly ended me {at}. I had no brave account ready, only relief.
-- [!foe] I nearly fell {at}, and thought of how quickly someone could become an absence in other people's lives.
-- [!foe] I came through a close call {at}, with my plans suddenly worth more than the confidence I had made them with.
+- {foe} nearly finished me {at}. My hands went on shaking after there was any need for them to move.
+- I survived {foe} {at}, and took a while to feel as steady as I was trying to look.
+- {foe} nearly ended me {at}. I had been thinking about the next errand; for a while I could think only about this.
+- [!foe] I nearly fell {at}, and found myself wanting the ordinary comfort of a familiar doorstep.
+- [!foe] I came through a close call {at}, with much less hurry to get on with the day.

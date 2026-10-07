@@ -1,8 +1,8 @@
 ---
 kind: close-light
 ---
-- {foe} nearly ended me {at}. I had brought hope a long way only to treat the life carrying it too lightly.
-- I survived {foe} {at}, grateful for another chance to meet this world with better judgement.
-- {foe} brought me close to the end {at}. Afterwards, the possibility of belonging here felt more precious than before.
-- [!foe] I nearly fell {at}, reminded that endurance did not free me from the need for care.
-- [!foe] I came through a close call {at}, with enough fear to admit how much I still wished to give.
+- {foe} gave me a difficult fight {at}. I had been trying to judge the danger by what I knew of other creatures, and the comparison had nearly failed me.
+- I came away from {foe} {at}, relieved and rather less certain that I understood the danger here.
+- {foe} pressed me hard {at}, and it took a little while before I could think of anything beyond getting clear.
+- I had an uncomfortable encounter with {foe} {at}. I would have preferred to learn those limits less abruptly.
+- {foe} almost got the better of me {at}, leaving me grateful for the chance to be more careful.

@@ -1,13 +1,13 @@
 ---
 kind: r-item
 ---
-- the count correct on the second attempt
-- with a mind to improving the method next time
-- a tidy little exercise in logistics
-- [!one !plural] each one catalogued, at least in my head
-- [!one !plural] more of them than my pockets were designed for
-- [one !plural] smaller than expected, which was a pleasant surprise
-- [one !plural] not where any sensible system would have put it
-- [meat] my thoughts drifting to supper, as they do
-- [cloth] with a few ideas for what to make of it
-- [night] working in rather poor light
+- pleased to have reached the count without losing track
+- already thinking about how I might shorten the next search
+- with my attention still catching on the details
+- [!one !plural] checking the count again before I trusted my satisfaction
+- [!one !plural] glad to have the whole collection together
+- [one !plural] more interested in the find now the search was over
+- [one !plural] curious about what had made the search so awkward
+- [meat] rather distracted by thoughts of supper
+- [cloth] with a few possible uses for all that cloth in mind
+- [night] finding the poor light less interesting than inconvenient

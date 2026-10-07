@@ -1,11 +1,11 @@
 ---
 kind: r-first
 ---
-- creatures of this land as much as I was
-- watching how they moved before I judged them
-- worthy of respect, if not of trust
-- the Earth Mother's children, all the same
-- a lesson in patience as much as in danger
-- [teeth] fierce in the way of hungry things
-- [night] their shapes hard to read in the dark
-- [low] one more thing my elders had not had time to tell me
+- with more caution about our next meeting
+- watching their movements as closely as I could
+- curious about them once the danger was over
+- rather less sure of my first impression
+- with a new sense of how little of this country I knew
+- [teeth] glad to have room between me and those jaws
+- [night] finding their shapes harder to judge in the dark
+- [low] conscious of how much I still had to learn

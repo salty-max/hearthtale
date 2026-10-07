@@ -1,11 +1,11 @@
 ---
 kind: r-first
 ---
-- strange to me, and I to them
-- worth understanding, not only fearing
-- unlike anything I had known before this world
-- a reminder of how much here was still new to me
-- fierce, though perhaps only frightened
-- [teeth] their teeth a lesson I would remember
-- [night] their shapes uncertain in the dark
-- [low] one more thing this world had not prepared me for
+- with rather more to learn about the danger than the name
+- surprised by how unfamiliar the fight felt
+- more wary of getting within reach again
+- with the name much easier to remember afterwards
+- less inclined to judge the danger by appearances
+- [teeth] with a new respect for the teeth
+- [mechanical] curious about what could keep such a thing moving
+- relieved to have come through my first encounter

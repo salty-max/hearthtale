@@ -1,16 +1,15 @@
 ---
 kind: r-foe
 ---
-- with rather more effort than I would admit
-- efficiently, if without much elegance
-- a matter settled, and not before time
-- my composure intact, if not my patience
-- the sort of thing one does not mention at court
-- [one] a tiresome obstacle, removed
-- [!one] each more irritating than the last
-- [teeth] my dignity, at least, unbitten
-- [mechanical] crude workmanship, to the last
-- [night] the dark doing my aim no favours
-- [hc] reminded how little stood between me and ruin
-- [low] less graceful about it than I meant to be
-- [high] with a precision I had worked hard to earn
+- with more effort than I was eager to admit
+- with my composure returning in its own time
+- rather relieved to put the encounter behind me
+- with less patience left than I had begun with
+- [one] quite content to leave that acquaintance at an end
+- [!one] increasingly pleased to reach the last of them
+- [teeth] glad to be beyond the reach of those jaws
+- [mechanical] curious about the construction once I no longer had to face it
+- [night] finding the poor light unhelpful to my judgement
+- [hc] conscious of how little had separated me from ruin
+- [low] less graceful in the attempt than I had intended
+- [high] pleased to feel some precision in what I was doing

@@ -1,11 +1,11 @@
 ---
 kind: r-first
 ---
-- trouble with a new face
-- worth remembering, the way the jungle teaches
-- not so different from the beasts back home
-- faster than they looked, as such things go
-- the loa keeping their own counsel on it
-- [teeth] their teeth a lesson in respect
-- [night] their eyes shining in the dark
-- [low] another thing this land had to teach me
+- with a new sort of trouble to remember
+- curious enough once the danger was out of reach
+- less eager for the next meeting than I had been for this
+- with their movements still in my mind afterwards
+- wondering what the loa would make of my surprise
+- [teeth] with no appetite for a closer view of those teeth
+- [night] wishing the dark had kept a little less to itself
+- [low] with my confidence a pace behind my feet
