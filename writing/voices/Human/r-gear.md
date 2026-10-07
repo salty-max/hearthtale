@@ -8,10 +8,10 @@ kind: r-gear
 - [!made hc] one more chance between me and a bad end
 - [made] nothing fancy, but sound
 - [made !held] every crooked stitch my own
-- [made !held] pleased to wear what I had made
+- [made !held] pleased with how it turned out
 - [!made] a welcome addition to what I had to rely on
 - [!made] rather pleased to have the choice
 - [!made] keen to see how well the new piece would serve
 - [!made hc] reassuring to have between me and trouble
 - [made !held] with a little pride in wearing my own handiwork
-- [made] more attached to the result for having made it
+- [made] more attached to the result for the effort it took

@@ -164,6 +164,16 @@ function parseFile(file: string, kind: string | null): Parsed | null {
     if (own === "r-lesson")
       for (const s of sentences)
         if (/\b(it|its)\b/i.test(s.text) && !s.tags.includes("one")) fail(file, `"it" in a lesson's remark needs [one]: ${s.text}`);
+    // a find may be one thing or several: a count for several ("…, counting
+    // them twice"); "it" for one, a mass ("[cloth]", "[meat]"), each of several
+    // ("each one where the wind had left it"), or none ("it took", "it was")
+    if (own === "r-item")
+      for (const s of sentences) {
+        if (/\b(count|counting|counted|them|each|so many)\b/i.test(s.text) && !s.tags.includes("!one"))
+          fail(file, `a count in a find's remark needs [!one]: ${s.text}`);
+        if (/\b(it|its)\b/.test(s.text.replace(/\bit (took|needed|was)\b/g, "")) && !s.tags.some((t) => /^(!?one|cloth|meat)$/.test(t)))
+          fail(file, `"it" in a find's remark needs [one]: ${s.text}`);
+      }
     // after my own action ("I took up tailoring, …"), a past participle reads as
     // a second verb missing its "and": "…, practised until my arms complained"
     if (/^r-(road|lesson|company|task)$/.test(own))

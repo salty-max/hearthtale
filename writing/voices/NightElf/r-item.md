@@ -1,8 +1,8 @@
 ---
 kind: r-item
 ---
-- careful not to damage it
-- careful of what grew around it
+- [one !plural] careful not to damage it
+- [one !plural] careful of what grew around it
 - noticing more along the way than I had been sent for
 - [!one !plural] each found where something living had left it
 - [!one !plural] found one at a time, slowly

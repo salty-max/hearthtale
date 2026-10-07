@@ -8,4 +8,4 @@ kind: r-gear
 - [!made hc] one more barrier between me and a final death
 - [made] stitched by hands that do not tremble
 - [made] my own work, exacting as ever
-- [made !held] the seams straighter than anything I made alive
+- [made !held] the seams straighter than anything I sewed alive

@@ -6,7 +6,7 @@ kind: r-gear
 - [!made] made by careful hands, whoever they were
 - [!made] heavier than I was used to, though not by much
 - [!made hc] one more shelter against a bad end
-- [made] made slowly, and the better for it
+- [made] patiently finished, and the better for it
 - [made] my own hands' work, plain and sound
 - [made !held] with care in every seam
 - [!made] curious how well the new piece would serve on the road

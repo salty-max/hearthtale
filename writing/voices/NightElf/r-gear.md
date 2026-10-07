@@ -7,5 +7,5 @@ kind: r-gear
 - [!made] needing a few days to feel like mine
 - [!made hc] one more care taken against a careless end
 - [made !held] each seam laid with patience
-- [made] made slowly, and the better for it
-- [made] with the care of the making still in mind
+- [made] finished slowly, and the better for it
+- [made] with the care of every step still in mind

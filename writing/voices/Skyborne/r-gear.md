@@ -5,7 +5,7 @@ kind: r-gear
 - [client:forever !made !held] a better fit than I expected
 - [client:forever !made] the new balance taking some getting used to
 - [client:forever !made] curious how the wind would treat the new kit
-- [client:forever made] made with my own hands, and trusted for it
+- [client:forever made] shaped by me, and trusted for it
 - [client:forever made] each piece set where I wanted it
 - [client:forever made] the result of more patience than I usually have
 - [client:forever faction:horde] curious how the unfamiliar weight would settle into use

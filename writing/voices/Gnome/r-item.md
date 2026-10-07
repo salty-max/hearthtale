@@ -1,7 +1,7 @@
 ---
 kind: r-item
 ---
-- the count correct on the second attempt
+- [!one !plural] the count correct on the second attempt
 - with a mind to improving the method next time
 - a tidy little exercise in logistics
 - [!one !plural] each one catalogued, at least in my head

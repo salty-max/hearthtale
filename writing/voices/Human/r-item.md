@@ -13,7 +13,7 @@ kind: r-item
 - [night] squinting in the dark the whole time
 - [hc] watching the treeline all the while
 - glad to leave the searching behind me
-- with more interest in the find now I had the full count
+- [!one !plural] with more interest in the find now I had the full count
 - hoping the collection would be useful
 - [!one !plural] counting them twice before I was satisfied
 - [one !plural] with no wish to lose the find on the way back

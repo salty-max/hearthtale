@@ -156,7 +156,10 @@ local function life(race, class, hc, from, to)
       local hunter = class == "HUNTER" and level >= 10
       if r > 100 then
         if r <= 103 then
-          add(m("gear", { link = "|cff1eff00|Hitem:1|h[" .. one(ITEMS) .. "]|h|r", quality = 2, made = chance(0.3) or nil,
+          -- (its quality from its name: no draw of its own, so the rest of the
+          -- book's chances stay as they were)
+          local item = one(ITEMS)
+          add(m("gear", { link = "|cff1eff00|Hitem:1|h[" .. item .. "]|h|r", quality = #item % 2 == 0 and 3 or 2, made = chance(0.3) or nil,
             held = chance(0.3) or nil }))
         elseif r <= 105 then
           local learned = chance(0.4)
@@ -324,10 +327,10 @@ ns.writerRemark = function(id, chapter, book)
   end
   remarkSeen[id] = true
 end
-ns.writerSentence = function(text, routine, remarks)
+ns.writerSentence = function(text, routine, remarks, _, highlight)
   routineTotal, remarkTotal = routineTotal + routine, remarkTotal + remarks
   if remarks > 1 then problem("remark budget", "two remarks shared a sentence", text) end
-  if previousRemark and remarks > 0 then problem("remark budget", "successive sentences carried routine remarks", text) end
+  if previousRemark and remarks > 0 and not highlight then problem("remark budget", "successive sentences carried routine remarks", text) end
   previousRemark = remarks > 0
 end
 local inspect = dofile("addon/test/inspect.lua")(problem)
@@ -409,6 +412,7 @@ ns.data, ns.writerUsed = originalData, originalUsed
 -- its own conjunction before the semicolon.
 ns.data, ns.writerUsed = { writing = fixtureWriting }, nil
 fixtureWriting["c-first"] = { { "had my first taste of fighting {kind}" } }
+fixtureWriting["c-kill"] = { { "killed {foe}" } }
 fixtureWriting["c-deed-item"] = { { "brought {giver} {n} {thing}" } }
 fixtureWriting["c-gear"] = { { "began using {item}, which I had made myself" } }
 fixtureWriting["c-inn"] = { { "bound my hearthstone {inn}" } }
@@ -416,16 +420,16 @@ local tripleSeen, orcTripleSeen = false, false
 for seed = 1, 40 do
   local c = { guid = "joins-" .. seed, race = "Human", class = "HUNTER",
     chapters = { { start = { level = 20, zone = "Country", sub = "Home" }, log = {
-      { k = "kill", first = true, kind = "Boar", name = "Boar", sub = "Home", zone = "Country" },
+      { k = "kill", kind = "Boar", name = "Boar", sub = "Home", zone = "Country" },
       { k = "quest", giver = "Ragnar", sub = "Home", zone = "Country", objectives = { { type = "item", name = "Crag Boar Rib", n = 6 } } },
       { k = "gear", made = true, link = "item:1:[Leather Vest]", sub = "Home", zone = "Country" },
     } } } }
   local text = ns.writeBook(c).chapters[1].text
-  if text:find("boars, brought Ragnar", 1, true) then problem("three clauses", "a final conjunction was lost before a semicolon", text) end
-  if text:find("boars and brought Ragnar six Crag Boar Ribs; I began using", 1, true) then tripleSeen = true end
+  if text:find("a Boar, brought Ragnar", 1, true) then problem("three clauses", "a final conjunction was lost before a semicolon", text) end
+  if text:find("a Boar and brought Ragnar six Crag Boar Ribs; I began using", 1, true) then tripleSeen = true end
   c.race = "Orc"
   text = ns.writeBook(c).chapters[1].text
-  if text:find("boars and brought Ragnar six Crag Boar Ribs; I began using", 1, true) then orcTripleSeen = true end
+  if text:find("a Boar and brought Ragnar six Crag Boar Ribs; I began using", 1, true) then orcTripleSeen = true end
   c.chapters[1].log = {
     { k = "place", sub = "Ratchet", zone = "Country" },
     { k = "inn", place = "Ratchet", sub = "Ratchet", zone = "Country" },
@@ -515,6 +519,17 @@ for _, race in ipairs(RACES) do
     local text = ns.writeBook(c).chapters[1].text
     local _, names = text:gsub("Southsea Brigand", "")
     if names > 1 then problem(race .. " named once", "a creature named again and again", text) end
+  end
+end
+
+-- The journey's end at the highest level, for every race's own lines.
+for _, race in ipairs(RACES) do
+  for seed = 1, 12 do
+    local c = { guid = "summit-" .. race .. seed, race = race, class = COMBOS[race][1], began = { level = 59 }, finished = true,
+      chapters = { { start = { level = 59, zone = "Winterspring", sub = "Everlook" }, kills = {}, quests = 0, played = 100, gold = 0,
+        log = { { k = "kill", name = "Winterfall Ursa", kind = "Humanoid", zone = "Winterspring", sub = "Everlook", at = 100 } },
+        ended = { level = 60, zone = "Winterspring", sub = "Everlook", place = "Everlook", how = "summit" } } } }
+    inspect(race .. " summit", ns.writeBook(c).chapters[1].text)
   end
 end
 
