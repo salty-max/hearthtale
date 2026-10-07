@@ -3,10 +3,10 @@ kind: r-item
 ---
 - heavier in my pack than I had bargained for
 - with dirt under my nails for the trouble
-- a small thing to someone, plainly
+- worth more to whoever asked than to me
 - pleased with how little searching it took in the end
 - keeping half an eye on my surroundings the whole time
-- harder to spot than I had been told
+- harder to spot than I had expected
 - [!one !plural] each one harder to find than the last
 - [!one !plural] the last of them where I had looked first
 - [!one !plural] counting them twice to be sure

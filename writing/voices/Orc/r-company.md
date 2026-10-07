@@ -1,10 +1,10 @@
 ---
 kind: r-company
 ---
-- stronger together, as the Horde was meant to be
+- the fighting easier with a shoulder beside mine
 - [one] trusting each other more with every fight
-- shoulder to shoulder, as our elders taught
-- little talk, all of it useful
+- shoulder to shoulder through the worst of it
+- glad of steady help when it counted
 - sharing the work and the credit equally
 - the road easier with someone to answer to
 - [night one] the dark less of a threat to two

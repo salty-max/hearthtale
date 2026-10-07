@@ -1,11 +1,11 @@
 ---
 kind: r-item
 ---
-- taking no more than was asked
-- with an eye to what the land could spare
+- careful not to damage it
+- careful of what grew around it
 - noticing more along the way than I had been sent for
 - [!one !plural] each found where something living had left it
-- [!one !plural] gathered slowly, as such things should be
+- [!one !plural] found one at a time, slowly
 - [one !plural] where the land had hidden it
 - [one !plural] lighter in my hand than the search had been
 - [meat] with thanks to the creature that had given it

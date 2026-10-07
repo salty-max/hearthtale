@@ -2,10 +2,10 @@
 kind: r-inn
 ---
 - a hearth worth returning to
-- the welcome warm and the door wide
+- a place to set down my pack
 - somewhere to rest my strength
 - the stone a promise of home
-- a good place to share a meal
-- the innkeeper kind to a weary traveller
-- [night] the fire glowing softly in the dark
+- a place to rest my legs
+- glad of a roof over my horns
+- [night] the night well along by then
 - [hc] a safe shelter, wisely chosen

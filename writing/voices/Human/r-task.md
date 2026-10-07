@@ -2,12 +2,12 @@
 kind: r-task
 ---
 - the kind of work nobody writes songs about
-- honest work, which is not nothing
-- learning which neighbours could be counted on
-- one more promise kept on someone's behalf
-- the sort of help a place remembers
-- with no reward but a nod, which was enough
+- my feet sore by the end
+- with a few more names to remember
+- glad to cross it off
+- quicker than I feared
+- without much ceremony
 - [explore] the lie of the land plainer in my head
 - [explore] getting a sense of where trouble might come from
-- [escort] talking to keep both our spirits up
-- [night] lamps lit in the windows as I went
+- [escort] keeping an eye on them every step
+- [night] the dark coming on as I worked

@@ -6,8 +6,8 @@ kind: r-road
 - [!back] noting its architecture with a critical eye
 - [!back !home] a stranger, and impossible to miss
 - [!back] wondering whether it had a decent inn
-- [!back night] its lamps rather dim, I thought
+- [!back night] arriving in poor light
 - [back] the place unchanged, for better or worse
 - [back] the way familiar now, which was a comfort
 - [back] the welcome no warmer, but no colder
-- [high] one more place that had learned my name
+- [high] one more place on a long list

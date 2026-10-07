@@ -488,6 +488,12 @@ for _, race in ipairs(RACES) do
       local text = ns.writeBook(c).chapters[1].text
       if not text:find("Mend Pet", 1, true) or (#spells > 1 and not text:find("Concussive Shot and Mend Pet", 1, true))
         or text:find("proper use of it", 1, true) then problem("spell agreement", "a lesson lost a spell or used a singular pronoun for a list", text) end
+      -- (its remark too: "Concussive Shot and Mend Pet, my choice to learn it")
+      local after = #spells > 1 and text:match("Mend Pet, ([^.;]*)")
+      local OBJECT = { learn = true, try = true, test = true, use = true, improve = true, master = true, to = true, of = true, find = true }
+      for verb in (after or ""):gmatch("(%a+) it%f[%A]") do
+        if OBJECT[verb] then problem("spell agreement", "a remark said \"it\" after several spells", text) end
+      end
     end
   end
 end

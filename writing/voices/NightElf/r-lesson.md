@@ -1,13 +1,14 @@
 ---
 kind: r-lesson
 ---
-- aware that knowing a thing and understanding it are not the same
-- the teaching older than the teacher
-- practised in quiet until it came without thought
+- the movements strange to my hands at first
+- [one] the shape of it settling in my mind
+- [one] repeating it in quiet until it came without thought
 - a little more patient with myself than before
-- with time enough to master it, I hoped
-- the lesson settling slowly, as the best ones do
+- [one] with time enough to master it, I hoped
+- the lesson settling slowly
 - [new] the first step of a long path
 - [new] curious what the craft would ask of me
 - [low] young in this, if in little else
 - [high] the new and the old settling together
+- [!one] repeating them in quiet until they came without thought

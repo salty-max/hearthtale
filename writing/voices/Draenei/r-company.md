@@ -3,9 +3,9 @@ kind: r-company
 ---
 - the road kinder for being shared
 - grateful for the company
-- learning their stories as they learned mine
+- glad of a steady hand nearby
 - trusting them a little more with each mile
 - [one] the work lighter for two
-- [one] kindness on both sides
+- [one] the danger easier to face with two
 - [night] the dark less lonely together
 - [hc] each of us looking out for the other

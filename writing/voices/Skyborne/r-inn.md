@@ -5,7 +5,7 @@ kind: r-inn
 - [client:forever] somewhere to come back to, which mattered more than I expected
 - [client:forever] the stone steady in my hand
 - [client:forever] a roof, for once, instead of sky
-- [client:forever] the innkeeper curious, but polite
+- [client:forever] a place to rest from the wind
 - [client:forever] one long journey fewer in my future
-- [client:forever night] the fire a small star to come home to
+- [client:forever night] the night sky wide above it
 - [client:forever hc] a safe landing worth knowing

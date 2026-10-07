@@ -6,6 +6,6 @@ kind: r-gear
 - [!made] the sort of thing a guard would envy
 - [!made] heavier than I expected, which seemed promising
 - [!made hc] one more chance between me and a bad end
-- [made] nothing fancy, but honest work
+- [made] nothing fancy, but sound
 - [made !held] every crooked stitch my own
 - [made !held] pleased to wear what I had made

@@ -2,12 +2,13 @@
 kind: r-lesson
 ---
 - strength given a better shape
-- worth more than any boast
-- practised until it felt like mine
-- the old teachers' patience still in it
-- eager to test it where it counted
-- humbler for the teaching
-- [new] a useful trade for a people still building
-- [new] starting small, as everything we have was started
+- something to show for the evening
+- [one] the new move sitting right in my hands by the end
+- [one] slow to come to my hands at first
+- [one] eager to test it where it counted
+- sweat on my brow by the end
+- [new] curious what my hands could make of it
+- [new] starting from the very first step
 - [low] one more thing to earn before I could claim it
 - [high] the lesson sharper for all the fights behind it
+- [!one] eager to test them where it counted

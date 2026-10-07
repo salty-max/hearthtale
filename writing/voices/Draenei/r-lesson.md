@@ -2,12 +2,13 @@
 kind: r-lesson
 ---
 - with gratitude for the teaching
-- the lesson patient, as I tried to be
-- practised until it felt like mine
+- slow to learn, and I was patient
+- [one] mine after a little patient practice
 - the knowledge a gift to carry carefully
-- keen to use it for others' sake
-- humbler for what I did not yet know
+- [one] keen to use it for others' sake
+- aware of how much practice it would take
 - [new] a new path, and I was willing
 - [new] the first step of a long study
 - [low] a beginner still, but a hopeful one
 - [high] old wisdom welcoming the new
+- [!one] keen to use them for others' sake

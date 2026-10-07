@@ -5,7 +5,7 @@ kind: r-inn
 - an elegant solution to the problem of walking
 - the mechanism of the stone still a puzzle to me
 - somewhere to return and think
-- the innkeeper unbothered by gnomes, which helped
+- a fixed point to return to, which I appreciated
 - the chairs too big, as always
-- [night] the fire still going, efficiently
+- [night] late, by any reasonable measure
 - [hc] a safe retreat being simply good planning

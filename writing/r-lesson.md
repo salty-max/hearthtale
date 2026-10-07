@@ -3,14 +3,15 @@ kind: r-lesson
 ---
 - with a good deal still to practise
 - the theory easier than the practice
-- impatient to try it somewhere that mattered
+- [one] impatient to try it somewhere that mattered
 - turning the lesson over in my head for some time after
-- aware how much was still to learn
+- my hands still slow with the new movements
 - surprised how quickly hands learn what the head resists
 - a little clumsier at first than I would have liked
-- the trainer's warnings still in my ears
+- the new movements awkward for a while
 - pleased with the progress, if not the pace
-- [new] not yet sure where it would lead
-- [new] beginning with the simplest part of it
+- [new one] not yet sure where it would lead
+- [new one] beginning with the simplest part of it
 - [low] a beginner still, but less of one
 - [high] old habits making room for something new
+- [!one] impatient to try them somewhere that mattered

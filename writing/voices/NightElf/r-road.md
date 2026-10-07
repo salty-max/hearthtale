@@ -4,7 +4,7 @@ kind: r-road
 - the wind moving ahead of me as if to announce me
 - the road quiet enough to think on
 - [!back] listening to the place before entering it
-- [!back] older or younger than I had been told
+- [!back] taking its measure from a distance
 - [!back] noting who watched the road and who did not
 - [!back night] the stars my guide most of the way
 - [back] finding it changed in small ways

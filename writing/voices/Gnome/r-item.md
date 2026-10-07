@@ -10,4 +10,4 @@ kind: r-item
 - [one !plural] not where any sensible system would have put it
 - [meat] my thoughts drifting to supper, as they do
 - [cloth] with a few ideas for what to make of it
-- [night] working by the light of a very small lamp
+- [night] working in rather poor light

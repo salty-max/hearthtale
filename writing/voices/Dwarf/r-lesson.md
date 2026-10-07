@@ -4,10 +4,11 @@ kind: r-lesson
 - my hands slower than my pride
 - the sort of skill that comes with calluses
 - with a fair bit of the lesson to keep straight
-- keen to try it somewhere with more at stake
-- practised until my arms complained
-- the trainer gruff enough to be worth listening to
+- [one] keen to try it somewhere with more at stake
+- my arms complaining by the end of the practice
+- the motions stubborn as a new hinge
 - [new] starting at the bottom, as every apprentice does
 - [new] hoping for a little of my kin's old knack
 - [low] still a long way from a master's bench
 - [high] old lessons making room for one more
+- [!one] keen to try them somewhere with more at stake

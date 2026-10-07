@@ -3,10 +3,10 @@ kind: r-task
 ---
 - for whatever use they had in mind
 - without asking why, since I rarely got a straight answer
-- a favour remembered being a useful thing
+- one more favour owed to me
 - precisely as asked, no more
-- the living around me pretending not to watch
-- my own choice, which still mattered to me
+- without anyone thanking me, as expected
+- on my own terms, as I prefer
 - [explore] noting the exits, from habit
 - [explore] mapping it for my own purposes as well
 - [escort] keeping pace with someone so obviously alive

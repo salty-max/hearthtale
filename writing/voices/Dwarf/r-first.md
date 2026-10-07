@@ -1,7 +1,7 @@
 ---
 kind: r-first
 ---
-- tougher than the tales at the bar made out
+- tougher than they looked
 - a fact for the ledger, if a sore one
 - worth knowing, the way bad ice is worth knowing
 - slower to fall than I would have liked

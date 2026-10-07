@@ -2,8 +2,8 @@
 kind: r-company
 ---
 - company I had chosen, still a novelty
-- [one] the talk thin, which suited us both
-- useful hands, whatever their pulse
+- [one] a living back to watch, for once
+- useful hands in a fight
 - not friendship exactly, though close to it
 - trusting them as far as I trust anyone
 - better company than I expected

@@ -12,5 +12,5 @@ kind: r-foe
 - [client:forever mechanical] built without any feeling for the air
 - [client:forever night] the dark changing every angle
 - [client:forever hc] aware how little the sky forgives a fall
-- [client:forever faction:horde] done as our mentors would have wished, I hoped
+- [client:forever faction:horde] the way our mentors would have wished, I hoped
 - [client:forever faction:alliance] one more problem solved without waiting for answers from above

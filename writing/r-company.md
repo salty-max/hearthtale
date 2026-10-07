@@ -2,14 +2,14 @@
 kind: r-company
 ---
 - [one] the road easier for two
-- the talk better than I had expected
+- the fighting easier with someone at my side
 - [one] a second pair of eyes on the shadows
 - sharing the work and, now and then, the credit
-- [one] learning more from watching than either of us admitted
+- [one] learning a thing or two from watching them fight
 - our pace finding itself after a while
 - glad of the company
-- [one] not that either of us said much
-- trading stories as the road allowed
+- [one] glad of someone to share the watch
+- less alone in the quiet stretches
 - [night] the dark easier to bear in company
-- [hc one] safer, and both of us knew it
-- [low one] both of us still finding our feet
+- [hc] safer for not being alone
+- [low] new enough to be glad of the help

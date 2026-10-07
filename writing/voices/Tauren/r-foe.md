@@ -1,9 +1,9 @@
 ---
 kind: r-foe
 ---
-- taking no more than the land asked of me
+- my breath slow again before long
 - with a moment's stillness afterwards
-- the balance kept, if not gladly
+- with no pleasure in it
 - my strength used, not spent
 - slow to anger and quick to finish
 - [one] a life I did not take lightly
@@ -11,6 +11,6 @@ kind: r-foe
 - [teeth] its hunger as honest as any
 - [mechanical] a thing that had never known the earth
 - [night] the stars watching, as they always do
-- [hc] reminded that even the strong return to the earth
+- [hc] my heart slow to settle afterwards
 - [low] still learning to carry my strength wisely
 - [high] with the calm of long practice

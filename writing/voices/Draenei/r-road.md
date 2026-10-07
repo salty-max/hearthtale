@@ -6,7 +6,7 @@ kind: r-road
 - [!back !home] a stranger, as everywhere
 - [!back] hoping for a welcome, if not expecting one
 - [!back] its shapes unlike anything on our world
-- [!back night] its lights a quiet comfort
+- [!back night] arriving under strange stars
 - [back] the faces more familiar now
 - [back] the way known, which was a gift
 - [back] finding it a little more like home

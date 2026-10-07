@@ -1,13 +1,13 @@
 ---
 kind: r-task
 ---
-- my word given and kept
-- the kind of deed that earns a place among others
-- asked plainly and done the same way
-- no glory in it, only use
-- with a better idea of who could be trusted here
+- glad to have it done
+- my shoulders tired by the end
+- quickly, without wasted effort
+- dusty work, and quickly done
+- with a few more faces I could put names to
 - one more debt settled
 - [explore] the land opening to me piece by piece
 - [explore] learning the ground the way a scout should
 - [escort] keeping myself between the danger and my charge
-- [night] the camps quiet around me as I went
+- [night] the dark slowing me down

@@ -1,11 +1,11 @@
 ---
 kind: r-company
 ---
-- the road shorter for the conversation
+- the road shorter in company
 - [one] an extra pair of eyes on the hedgerows
-- swapping stories about where we came from
-- easy company, which is rarer than it sounds
+- glad of help when it counted
+- easy company
 - trusting them more with every mile
-- [one] the work halved and the jokes doubled
+- [one] the work halved
 - [night] glad not to be alone in the dark
-- [hc one] both of us careful for the other
+- [hc] careful to keep them in sight

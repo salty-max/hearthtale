@@ -2,10 +2,10 @@
 kind: r-inn
 ---
 - somewhere to retreat to with dignity
-- the rooms adequate, the company less so
+- adequate, which would do
 - a small certainty in an uncertain world
 - the stone a quiet reassurance
-- a fire, a bed and some peace
-- the innkeeper attentive, which I appreciated
-- [night] the common room blessedly quiet
+- a bed and some peace
+- a door I could close on the day
+- [night] late enough to be done with the day
 - [hc] a sanctuary worth knowing

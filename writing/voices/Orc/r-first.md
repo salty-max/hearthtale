@@ -1,9 +1,9 @@
 ---
 kind: r-first
 ---
-- learning their measure the only way that counts
+- learning their measure blow by blow
 - worth respecting, though not fearing
-- harder than the drill-masters had warned
+- harder than they looked
 - a lesson I meant to learn once only
 - quicker to anger than I was, which was something
 - [teeth] the land breeding things with teeth to match it

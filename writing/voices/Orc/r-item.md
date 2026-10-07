@@ -1,8 +1,8 @@
 ---
 kind: r-item
 ---
-- carried as far as was needed and no further
-- earned, if not glamorous
+- no heavier than I could carry
+- dull work, but done
 - with no complaint worth making
 - work for the hands while the mind went elsewhere
 - [!one !plural] every one of them accounted for

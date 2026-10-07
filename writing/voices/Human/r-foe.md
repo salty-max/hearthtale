@@ -11,6 +11,6 @@ kind: r-foe
 - [teeth] keeping all my fingers, which I counted
 - [mechanical] its gears still ticking when it fell
 - [night] the dark making it uglier than it needed to be
-- [hc] reminded that the road owes nobody a safe return
+- [hc] my hands shaking once it was over
 - [low] still more luck than skill, if I am honest
 - [high] steadier than I would once have been

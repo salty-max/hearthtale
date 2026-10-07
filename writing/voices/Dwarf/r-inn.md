@@ -3,9 +3,9 @@ kind: r-inn
 ---
 - with rather more hope of an ale on my return
 - a good stone, and a better hearth
-- the barkeep's name already in my head
-- somewhere warm with a cellar under it
-- the beds short but sound
+- a stone I meant to put to good use
+- somewhere to come back to and get my boots off
+- a bed I meant to make good use of
 - the kind of place you would walk home to in a blizzard
-- [night] the fire banked but not out
+- [night] late enough that a bed sounded better than anything
 - [hc] a door I could shut on the world

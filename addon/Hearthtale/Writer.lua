@@ -1154,9 +1154,9 @@ function Book:chapter(n, ch)
         inScene(c_("c-trainer", { spells = listing(named) }, { many = #spells > 3 or nil, one = #spells == 1 or nil }))
       end
     elseif m.k == "skill" then
-      inScene(c_("c-skill", { skill = m.name:lower(), rank = words(m.rank) }))
+      inScene(c_("c-skill", { skill = m.name:lower(), rank = words(m.rank) }, { one = true }))
     elseif m.k == "prof" then
-      inScene(c_("c-prof", { prof = m.name:lower(), rank = rankName(m.rank) }, { new = m.learned or nil }))
+      inScene(c_("c-prof", { prof = m.name:lower(), rank = rankName(m.rank) }, { new = m.learned or nil, one = true }))
     elseif m.k == "gear" and found == (m.link and m.link:match("%[(.-)%]")) then
       inScene(c_("c-wear-found", {})) -- the find just told, put to use
       found = nil

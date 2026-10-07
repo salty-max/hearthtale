@@ -1,9 +1,9 @@
 ---
 kind: r-item
 ---
-- taking only what was needed
+- with care for what grew nearby
 - with a word of thanks to the land
-- carried gently, as such things should be
+- carried gently
 - [!one !plural] each one gathered without hurry
 - [!one !plural] the weight of them settling easily on my back
 - [one !plural] small in my hand, though someone had need of it

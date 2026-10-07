@@ -104,6 +104,14 @@ The plan and its decisions: PLAN.md.
   "I" ("bound my hearthstone {inn}"). Related work may share a sentence;
   an arrival frames one action. Internal commas are allowed; a semicolon or
   full sentence closes the thought. Test joins in the generated sample.
+- A remark reacts to what the record shows (the fight, the find, the walk,
+  the hands, the hour) or to the narrator's own feeling, never a general moral
+  ("a job done properly, the only sort worth doing") and never an invented
+  fact: no lamps, fires, innkeepers, trainers' manners, payments, stories, a
+  companion's looks or talk. After my own action (road, lesson, company,
+  errand) it can't start with a past participle (it reads as a second verb:
+  "I took up tailoring, practised…"; the build refuses it). "it" only with
+  `[one]` (a lesson of several spells is "them").
 - Routine clauses (`c-*`) are plain facts; the voice of a routine moment is
   in its remark (`r-*`). The writer adds one to roughly one routine clause in
   three, at most one per sentence, never in consecutive sentences, and none
@@ -116,6 +124,15 @@ The plan and its decisions: PLAN.md.
   come back after `REMARK_GAP` (10) chapters; shared ones fill every other
   gap; otherwise the clause goes without. A routine clause avoids the verb of
   the one before. Race files hold only routine lines unique to the race.
+- Moments of their own: a world PvP kill (`pvp-one`, by name, race and class
+  when alone; `pvp-many` when several fall within ten minutes; nothing in a
+  battleground), a death's aftermath (`revived`: `[corpse]` ghost run,
+  `[healer]` spirit healer, `[ally]` raised by a companion, `[self]` soulstone
+  or ankh), a dungeon's or raid's last boss (`boss-final`), the journey's end
+  at the game's highest level (`summit`: the journal stops recording). A
+  stretch at a craft is one clause (`c-made`); a raid is one moment (`c-raid`).
+  A quest's work is told where it was done (`done`), its turn-in a short return
+  (`c-report`); an abandoned quest's work is taken back.
 - The chapter's recap (tasks, fighting, time) holds one thought: the others
   are its `[plain]` sentences. The rest that ends the chapter has its own.
 - Topic tags (teeth, mechanical, cloth, meat, explore, escort, made) require

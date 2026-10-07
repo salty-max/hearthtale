@@ -3,9 +3,9 @@ kind: r-company
 ---
 - with less cause to mutter to myself
 - [one] a sturdy pair of hands to have at my back
-- swapping tall tales and short rations
-- the walk better for the talk
+- glad of someone else to watch the ridges
+- the walk shorter in company
 - decent company, whatever their clan
 - [one] easier work for two pairs of hands
-- [night one] two lanterns being better than one
+- [night one] two pairs of eyes better than one in the dark
 - [hc one] watching each other's backs as we went

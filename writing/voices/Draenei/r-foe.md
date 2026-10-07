@@ -3,7 +3,7 @@ kind: r-foe
 ---
 - with regret that it had come to that
 - steadier afterwards than I expected
-- a necessary thing, done with care
+- with care, and without anger
 - the Light giving me patience, if not ease
 - [grouped] glad no one else had been hurt
 - [one] a life I would have spared, if I could

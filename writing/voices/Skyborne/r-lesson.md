@@ -3,8 +3,8 @@ kind: r-lesson
 ---
 - [client:forever] with more questions than I began with
 - [client:forever] the lesson clearer from a second angle
-- [client:forever] practised until it felt like flight
-- [client:forever] curious how it would change with use
+- [client:forever one] smooth as flight after a little practice
+- [client:forever one] curious how it would change with use
 - [client:forever] a little steadier for it
 - [client:forever faction:horde] a gift I meant to share
 - [client:forever faction:alliance] knowledge worth holding on to
@@ -12,3 +12,4 @@ kind: r-lesson
 - [client:forever new] starting at the bottom, which suited my curiosity
 - [client:forever low] still a beginner, though a willing one
 - [client:forever high] the new fitting easily among the old
+- [client:forever !one] curious how they would change with use

@@ -4,8 +4,8 @@ kind: r-inn
 - a place to rest that the road could not take from me
 - the stone cool in my palm
 - somewhere to return when the wild grew too loud
-- with the quiet of a well-kept house
+- a quiet place to come back to
 - a doorway I would come to know well
-- the innkeeper's welcome measured, as was mine
-- [night] its lamps soft against the dark
+- a place my feet would learn
+- [night] the night already deep
 - [hc] a refuge worth knowing well
