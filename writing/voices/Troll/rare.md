@@ -1,7 +1,7 @@
 ---
 kind: rare
 ---
-- I brought down {foe} {at}, a name worth carrying beyond the place where I found it.
-- {foe} fell to me {at}. I could be pleased about that without making the foe larger every time I told it.
-- I got the better of {foe} {at}, with the road free to offer me a different trouble next.
-- I killed {foe} {at}, an encounter I would remember when the easier ones had lost their edges.
+- I brought down {foe} {at}, a name that would keep its edge when I thought about the day.
+- {foe} fell to me {at}. I was glad of that ending, without needing to make the foe any larger in the telling.
+- I got the better of {foe} {at}, and was content to leave the next encounter to another day.
+- I killed {foe} {at}, with relief enough that I did not have to work at feeling pleased.

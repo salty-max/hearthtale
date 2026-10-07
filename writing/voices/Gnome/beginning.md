@@ -2,6 +2,6 @@
 kind: beginning
 ---
 - I began {at}, with a great many questions and no intention of letting my size set the scale of them.
-- I opened my journal {at}. Losing Gnomeregan had not improved the world, but it had left plenty of work for curious minds.
-- I set out {at}, meaning to distinguish what I knew from what merely seemed likely. I expected the second list to be longer.
-- I began {at}, hopeful that a difficulty would usually contain the beginnings of its own solution.
+- I opened my journal {at}. I could not give Gnomeregan back to my people, but there was a world outside it I wanted to understand.
+- I set out {at}, with more ideas than I could sensibly try at once and the happy difficulty of choosing among them.
+- I began {at}, curious whether the things that looked simple would stay that way when I got closer.

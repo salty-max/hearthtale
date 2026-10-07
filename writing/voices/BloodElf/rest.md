@@ -1,12 +1,12 @@
 ---
 kind: rest
 ---
-- I rested {at}, content to have no immediate necessity to accommodate.
-- I settled {at}, where stillness required less effort than keeping up appearances.
+- I rested {at}, content to have no immediate demand upon my attention.
+- I settled {at}, where being still required less effort than appearing tireless.
 - I paused {at}, grateful for the small luxury of attending to my own comfort.
 - I rested {at}, allowing the day's affairs to remain concluded for a while.
-- I stopped {at}. There was no dignity to be gained by refusing a sensible pause.
-- I rested {at}, with a little distance at last between the work and my judgement of it.
-- I paused {at}, glad to let composure become a feeling rather than an obligation.
-- I rested {at}, unwilling to let exhaustion pass itself off as discipline.
-- I put the road aside {at}, and found the absence of demands quite agreeable.
+- I stopped {at}. There was very little I wanted badly enough to get up for just then.
+- I rested {at}, with a little distance between the work and my judgement of it.
+- I paused {at}, glad to let composure become a feeling instead of something I maintained.
+- I rested {at}, and admitted to myself how tired I had become.
+- I put the road aside {at}, finding the absence of demands quite agreeable.

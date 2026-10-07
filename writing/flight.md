@@ -3,8 +3,6 @@ kind: flight
 ---
 - [first] I flew from {from} to {to} for the first time. Familiar ground looked small beneath me.
 - [first] My first flight, from {from} to {to}, showed how little of the world the road revealed.
-- [first race:Tauren] I first flew from {from} to {to}, surprised by the strangeness of the earth below.
-- [first race:Gnome] My first flight, from {from} to {to}, left me as curious about the ride as the view.
 - [!first] I flew from {from} to {to}, leaving the distance to another pair of wings.
 - I flew from {from} to {to}, with the world spread out beneath me.
 - I flew from {from} to {to}, looking for familiar places below.

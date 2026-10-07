@@ -1,12 +1,12 @@
 ---
 kind: opening
 ---
-- I took up the road {at}, ready to see what trouble had dressed itself as opportunity.
-- I began again {at}. A long promise was no use to a short day's hunger.
-- I set out {at}, with a little caution for the road and a little laughter for myself.
-- I opened a fresh page {at}, where the next good chance might look much like the next bad one.
-- I made ready {at}, with no wish to spend strength where wit would do.
-- I went on {at}, keeping my people's persistence closer than my own complaints.
-- I began this stretch {at}, watching for what moved and what seemed too still.
-- I returned to my account {at}. The road taught plainly enough, once a person stopped telling it what to say.
-- I set out {at}, with respect for the loa and no intention of leaving all the work to them.
+- I took up the road {at}, curious what the day had dressed up to look harmless.
+- I began again {at}, with an appetite for getting on and a little caution left to balance it.
+- I set out {at}, keeping a little laughter for myself in case the road offered none.
+- I opened a fresh page {at}, interested in the next good chance and watchful for its neighbours.
+- I made ready {at}, hoping to have some strength left after my clever ideas had had their say.
+- I went on {at}, rather glad I had somewhere to go besides back over my worries.
+- I began this stretch {at}, looking at the edges of the way as much as the middle.
+- I returned to my account {at}, with a few things I wanted to see again from a safer distance.
+- I set out {at}, wondering what the loa would make of me worrying over the next turn.

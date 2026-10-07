@@ -1,11 +1,11 @@
 ---
 kind: r-company
 ---
-- the road better for being shared
-- [one] our strengths complementing each other
-- trusting them as one trusts the earth
-- glad of steady company
-- sharing the work
-- watching how they fought
-- [night] the dark lighter for the company
-- [hc] each keeping watch for the other
+- glad to have the road within more than my own attention
+- with a little less unease about what lay ahead
+- pleased to have company close enough to turn to
+- hoping the distance would sit easily with us both
+- more at ease with the distance before us
+- [one] glad of another pair of eyes beside me
+- [night] finding the dark less lonely in company
+- [hc] keeping part of my attention on them as we went

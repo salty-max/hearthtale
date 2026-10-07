@@ -1,11 +1,11 @@
 ---
 kind: r-inn
 ---
-- a place to return to, in a world still strange
-- glad of a door to close
-- somewhere to rest and remember
-- the stone a small anchor
-- among strangers who might become friends
-- a quiet place to rest
-- [night] late, and glad to rest
-- [hc] a refuge worth knowing well
+- pleased that I would know where to return
+- with less uncertainty about where I could rest
+- grateful to have a familiar destination for my hearthstone
+- beginning to feel less like a visitor passing through
+- with one fewer question to carry on the road
+- glad that the place was becoming more than a name
+- ready to let myself grow accustomed to returning
+- with a quiet wish to feel at home here

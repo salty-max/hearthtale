@@ -1,12 +1,12 @@
 ---
 kind: opening
 ---
-- [client:forever faction:horde] I took up the road {at}, listening for what the day might reveal about the world our mentors had left unexplained.
-- [client:forever faction:alliance] I began again {at}, determined to turn what I learned into something my people could rely on.
-- [client:forever] I set out {at}, willing to change my view before declaring the ground at fault.
-- [client:forever] I opened a fresh page {at}, with the next answer perhaps depending on a better question.
-- [client:forever] I made ready {at}, attentive to the small changes that a fixed purpose could hide.
-- [client:forever] I went on {at}, with more to understand than the direction I was taking.
-- [client:forever] I began this stretch {at}. A different vantage could change the meaning of familiar things.
-- [client:forever] I returned to my account {at}, keeping what I had seen apart from what I had expected.
-- [client:forever] I set out {at}, prepared to learn what carried weight when old certainties no longer did.
+- [client:forever faction:horde] I took up the road {at}, wondering what I would discover by meeting this place on its own terms.
+- [client:forever faction:alliance] I opened a fresh page {at}, with a few conclusions I was prepared to revise if the place required it.
+- [client:forever] I began again {at}, interested in what I would notice once I stopped comparing everything with home.
+- [client:forever night] I continued {at}, with fewer things visible and more room to misjudge the distance between them.
+- [client:forever] I returned to my account {at}, with my attention closer to the ground than it had been when I began.
+- [client:forever] I set out {at}, curious about what I had passed without properly understanding.
+- [client:forever faction:horde] I began another stretch {at}, hoping to find a little more ease between myself and the people here.
+- [client:forever faction:alliance] I continued {at}, determined to ask better questions than I had arrived with.
+- [client:forever] I took up my journal {at}, with the place beginning to arrange itself into something I could recognise.

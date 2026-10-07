@@ -1,12 +1,12 @@
 ---
 kind: rest
 ---
-- I rested {at}, leaving the road to spend its trouble elsewhere.
-- I settled {at}, with no wish to make a trial of sitting still.
-- I paused {at}. Strength kept longer when it was not spent merely to show it.
-- I rested {at}, leaving room for a little good humour after the work.
+- I rested {at}, leaving the road to spend its trouble elsewhere for a while.
+- I settled {at}, quite pleased to have nothing to prove by staying on my feet.
+- I paused {at}, with my thoughts going farther than my legs wished to follow.
+- I rested {at}, and found a little room for good humour once the hurry was gone.
 - I stopped {at}, content that the next stretch could wait its turn.
-- I rested {at}, with enough of the day behind me to be glad of the quiet.
-- I paused {at}, letting my thoughts go farther than my feet cared to.
-- I rested {at}, keeping what I had learned and putting the hurry aside.
-- I left the road to itself {at}, pleased to have a choice about when to take it up.
+- I rested {at}, glad of some quiet after keeping so much of myself ready to move.
+- I paused {at}, letting the day come back without inviting more of it.
+- I rested {at}, with no desire to turn a sensible stop into a grand decision.
+- I left the road to itself {at}, pleased to choose when I would take it up again.

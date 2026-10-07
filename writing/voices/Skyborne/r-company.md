@@ -1,11 +1,11 @@
 ---
 kind: r-company
 ---
-- [client:forever one] the world easier to see with two
-- [client:forever] glad of a second pair of eyes
-- [client:forever] trusting them more by the end
-- [client:forever] learning from how they saw things
-- [client:forever] the work lighter for the sharing
-- [client:forever faction:horde] help given and taken freely
-- [client:forever faction:alliance] glad of help I had not needed to ask for
-- [client:forever night] the dark smaller with company
+- [client:forever faction:horde] glad to have someone beside me as I found my way
+- [client:forever faction:alliance] curious how our judgement would compare
+- [client:forever] with less need to keep watch in every direction myself
+- [client:forever] interested in what another pair of eyes would notice
+- [client:forever] more at ease with the next uncertain stretch
+- [client:forever] with a little less weight upon my own decisions
+- [client:forever] hoping we would find a comfortable pace together
+- [client:forever] pleased that I need not face the next trouble alone

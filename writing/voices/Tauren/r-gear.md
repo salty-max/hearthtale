@@ -1,11 +1,11 @@
 ---
 kind: r-gear
 ---
-- [!made] sturdy enough for the long road
-- [!made !held] a good fit, after a little adjusting
-- [!made] made by careful hands, whoever they were
-- [!made] heavier than I was used to, though not by much
-- [!made hc] one more shelter against a bad end
-- [made] made slowly, and the better for it
-- [made] my own hands' work, plain and sound
-- [made !held] with care in every seam
+- [!made] curious how well the new piece would serve on the road
+- [!made !held] interested in how the fit would feel after a day's travel
+- [!made] a welcome addition to what I could depend on
+- [!made] pleased to have a choice beyond making do
+- [!made hc] glad of another protection to carry with me
+- [made] with a quiet pleasure in putting my own work to use
+- [made] more interested in the result for having made it myself
+- [made !held] hoping my hands had left me something comfortable to wear

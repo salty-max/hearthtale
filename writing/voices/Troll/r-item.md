@@ -1,14 +1,14 @@
 ---
 kind: r-item
 ---
-- the job simple, the walking less so
-- useful to somebody, plainly
-- light work for a survivor
-- [!one !plural] each one where something had left it
-- [!one !plural] the pack full and the day still young
-- [one !plural] small, but somebody wanted it badly
-- [one !plural] easier to carry than to find
-- [meat] the smell of it making me hungry
-- [cloth] good for bandages if nothing else
-- [night] my eyes used to the dark
-- [hc] my eyes on the bushes all the while
+- glad to have the finding done with
+- more interested in the collection now I could stop looking
+- with my thoughts already on the walk back
+- [!one !plural] counting them once more before I trusted my pleasure
+- [!one !plural] glad not to need another of the lot
+- [one !plural] with more satisfaction than the size of the find suggested
+- [one !plural] rather pleased the search had come to something
+- [meat] with the thought of supper making the return more attractive
+- [cloth] wondering how far all that cloth would go
+- [night] letting my eyes take their time in the dark
+- [hc] with part of my attention always beyond the search

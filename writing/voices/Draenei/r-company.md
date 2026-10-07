@@ -1,11 +1,11 @@
 ---
 kind: r-company
 ---
-- the road kinder for being shared
-- grateful for the company
-- glad of a steady hand nearby
-- trusting them a little more with each mile
-- [one] the work lighter for two
-- [one] the danger easier to face with two
-- [night] the dark less lonely together
-- [hc] each of us looking out for the other
+- curious to see how we would find a pace together
+- with less need to keep watch in every direction myself
+- more at ease with someone beside me
+- hoping my unfamiliarity would not slow us too much
+- glad of the chance to be known by more than my appearance
+- with a little less weight upon my own decisions
+- interested in how another person would approach the same trouble
+- grateful that I need not face the next uncertainty alone

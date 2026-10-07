@@ -1,7 +1,7 @@
 ---
 kind: rare
 ---
-- I brought down {foe} {at}, and gave the encounter its place without making victory the whole of it.
-- {foe} fell to me {at}. I remained to remember the fight, and meant to do so without enlarging it.
-- I overcame {foe} {at}, glad that my strength had been enough and gladder that the struggle was finished.
-- I killed {foe} {at}, a deed I would carry with care rather than display without thought.
+- I brought down {foe} {at}, and let the encounter remain in my thoughts after the danger had passed.
+- {foe} fell to me {at}. I was glad to have lived through the fight, and needed a little time to feel the gladness.
+- I overcame {foe} {at}, with relief enough that I had no wish to go searching for another struggle.
+- I killed {foe} {at}, and kept returning to that moment when I thought about the day.

@@ -1,11 +1,11 @@
 ---
 kind: r-inn
 ---
-- somewhere to come back to, which a wanderer learns to value
-- the stone a good friend to have
-- a roof, simple and fine
-- a place to rest without watching my back
-- a place to rest my legs between hunts
-- one less long walk ahead
-- [night] late, and ready to stop
-- [hc] a safe place worth remembering
+- one less long walk to think about
+- with somewhere to come back to now
+- pleased to have this much of the route settled
+- glad the return would not ask the same of my legs
+- already looking forward to the shortcut
+- with a little less of the next journey on my mind
+- [night] glad not to retrace every step in the dark
+- [hc] relieved to have a retreat in mind

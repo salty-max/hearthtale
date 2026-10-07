@@ -1,13 +1,13 @@
 ---
 kind: r-road
 ---
-- the road dusty, which I tried not to mind
-- [!back] curious what the place would make of me
-- [!back] noting its architecture with a critical eye
-- [!back !home] a stranger, and impossible to miss
-- [!back] wondering whether it had a decent inn
-- [!back night] arriving in poor light
-- [back] the place unchanged, for better or worse
-- [back] the way familiar now, which was a comfort
-- [back] the welcome no warmer, but no colder
-- [high] one more place on a long list
+- with more interest in the destination than I cared to admit
+- curious what would reward a closer look
+- [!back] keen to form an opinion from more than a name
+- [!back] with my attention on the way through before anything else
+- [!back] rather pleased to have somewhere unfamiliar before me
+- [!back night] wishing I could see more before deciding what I thought
+- [back] with some comfort in recognising the turns
+- [back] curious whether I would feel differently on this visit
+- [back] glad to have less need to think about the route
+- [high] surprised by how many once unfamiliar names now meant somewhere to me

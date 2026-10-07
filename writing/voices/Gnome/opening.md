@@ -1,12 +1,12 @@
 ---
 kind: opening
 ---
-- I began again {at}, with enough unanswered questions to make staying put seem wasteful.
-- I took up the road {at}. The last stretch had given me several useful ideas and corrected rather more.
-- I set out {at}, curious about what people here had solved and what they had simply become accustomed to.
-- I opened a fresh page {at}, where my conclusions would have room to improve.
-- I made ready {at}, with no reason to call a problem impossible before I had looked properly.
-- I went on {at}, pleased that the world remained larger than my explanations of it.
-- I began this stretch {at}. Progress rarely arrived in the order I had planned, but it generally arrived.
-- I returned to my account {at}, hoping to make the next entry more accurate than the last.
-- I set out {at}, with a healthy supply of curiosity and some caution earned at greater expense.
+- I began again {at}, with enough unanswered questions to make staying put difficult.
+- I took up the road {at}, rather pleased that I had not yet run out of things to wonder about.
+- I set out {at}, curious what people here had worked out for themselves.
+- I opened a fresh page {at}, leaving room beside my conclusions in case they needed correcting.
+- I made ready {at}, with several possibilities still looking promising.
+- I went on {at}, keen to see what a closer look would change.
+- I began this stretch {at}, hoping my feet could keep up with the things that interested me.
+- I returned to my account {at}, already remembering something I wished I had looked at longer.
+- I set out {at}, with my curiosity restored and a little more caution available if I remembered to use it.

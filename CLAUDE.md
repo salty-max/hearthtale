@@ -89,6 +89,8 @@ The plan and its decisions: PLAN.md.
 - `addon/test/voices.lua`: the same synthetic day for each narrator, to compare
   diction and rhythm without changing events. Regenerate the comparison with
   `FOREVER=1 luajit addon/test/voices.lua compare > docs/race-comparison.md`.
+  Its `moments` mode writes `docs/voice-moments.md`: flights, outdoor rests,
+  setbacks, revival, dungeon endings and the final page for the remaining voices.
 
 ## Writing the sentences
 

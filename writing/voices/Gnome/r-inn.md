@@ -1,11 +1,11 @@
 ---
 kind: r-inn
 ---
-- a reliable fixed point, at least
-- an elegant solution to the problem of walking
-- the mechanism of the stone still a puzzle to me
-- somewhere to return and think
-- a fixed point to return to, which I appreciated
-- the chairs too big, as always
-- [night] late, by any reasonable measure
-- [hc] a safe retreat being simply good planning
+- an agreeable reduction in future walking
+- pleased to have the return settled so neatly
+- curious about the stone despite having more immediate uses for it
+- somewhere to go back and think
+- with one part of the route now pleasantly simple
+- rather looking forward to the shortcut
+- [night] glad to have fewer directions to worry about in the dark
+- [hc] with a little less uncertainty about retreating

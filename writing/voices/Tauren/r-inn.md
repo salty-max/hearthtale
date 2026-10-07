@@ -1,11 +1,11 @@
 ---
 kind: r-inn
 ---
-- a hearth worth returning to
-- a place to set down my pack
-- somewhere to rest my strength
-- the stone a promise of home
-- a place to rest my legs
-- glad of a roof over my horns
-- [night] the night well along by then
-- [hc] a safe shelter, wisely chosen
+- somewhere to come back and put my pack down
+- with less of the return journey weighing on me
+- pleased to know where I would stop again
+- a comforting choice to have made before going farther
+- with a shorter way back now in mind
+- already glad to spare my legs the return walk
+- [night] with less uncertainty about returning in the dark
+- [hc] thankful to have a retreat ready

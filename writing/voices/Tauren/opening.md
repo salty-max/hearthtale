@@ -1,12 +1,12 @@
 ---
 kind: opening
 ---
-- I took up the road {at}, listening to the place before deciding what I would ask of it.
-- I began again {at}, with enough strength to be useful and no need to spend it in haste.
-- I set out {at}, hoping to meet the day's needs without creating more of my own.
-- I opened a fresh page {at}. The road was shared with lives that did not know its name.
-- I made ready {at}, keeping my own purpose from becoming the whole of my attention.
-- I went on {at}, with my people's patience in mind when my own ran short.
-- I began this stretch {at}, aware that reaching somewhere and knowing it were different things.
-- I returned to my account {at}, willing to let small duties have their proper weight.
-- I set out {at}, with the Earth Mother in my thoughts and work before my hands.
+- I took up the road {at}, with time to look about before choosing my way.
+- I began again {at}, glad to feel my strength ready for the distance.
+- I set out {at}, interested in what the people here needed as well as where the road led.
+- I opened a fresh page {at}, with a little of my attention still on the ground behind me.
+- I made ready {at}, content to begin without deciding the shape of the whole day.
+- I went on {at}, curious what I would notice when I was less concerned with arriving.
+- I began this stretch {at}, hoping to know something of the place beyond the quickest path through it.
+- I returned to my account {at}, with the quiet pleasure of having farther to go and time enough for the distance.
+- I set out {at}, wondering what stories I would be glad to carry back to my people.

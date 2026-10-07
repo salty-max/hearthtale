@@ -1,14 +1,14 @@
 ---
 kind: r-item
 ---
-- one more small thing set right
-- with an ache in my back for my trouble
-- pleased someone had a use in mind
-- [!one !plural] every one of them where someone had dropped it
-- [!one !plural] enough of them to fill a sack, nearly
-- [one !plural] small enough to carry, hard enough to find
-- [one !plural] someone's loss and someone else's gain
-- [meat] thinking of a proper kitchen the whole way
-- [cloth] good enough for a farmer's shirt
-- [night] squinting in the dark the whole time
-- [hc] watching the treeline all the while
+- glad to leave the searching behind me
+- with more interest in the find now I had the full count
+- hoping the collection would be useful
+- [!one !plural] counting them twice before I was satisfied
+- [!one !plural] glad not to need another
+- [one !plural] pleased to have the search end with something in my hands
+- [one !plural] with no wish to lose the find on the way back
+- [meat] with my thoughts turning to a proper supper
+- [cloth] wondering what could be sewn from so much cloth
+- [night] taking longer to pick things out in the dark
+- [hc] finding myself looking up from the search more often

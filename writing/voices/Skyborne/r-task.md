@@ -1,17 +1,16 @@
 ---
 kind: r-task
 ---
-- [client:forever] the need behind it clearer once I had done it
-- [client:forever] a small change in a world full of them
-- [client:forever] learning how things were arranged here
-- [client:forever] with attention, if not with certainty
-- [client:forever] with a clearer view of the place
-- [client:forever faction:horde] glad to give help
-- [client:forever faction:alliance !grouped] one more thing I could manage on my own
-- [client:forever explore] the place making more sense from a second angle
-- [client:forever explore] noting how the wind moved through it
-- [client:forever escort] keeping my pace low and my eyes up
-- [client:forever night] the dark asking more attention than usual
-- [client:forever] one more thread of this place in my hands
-- [client:forever] the request simpler than the reasons behind it
-- [client:forever] useful, at least
+- [client:forever faction:horde] pleased to have found something useful to offer
+- [client:forever faction:alliance] with a clearer idea of what the request had involved
+- [client:forever] curious about what I might be asked next
+- [client:forever] with more effort behind the work than I had first expected
+- [client:forever] glad to have seen the request through
+- [client:forever] ready to give my attention to something else
+- [client:forever] with a little relief once the last part was settled
+- [client:forever] curious how the work fitted into the place
+- [client:forever] pleased to have a definite answer rather than another question
+- [client:forever explore] with a better sense of the distances within the place
+- [client:forever escort] relieved that I no longer had to watch for danger to someone else
+- [client:forever night] glad not to be searching through the dark any longer
+- [client:forever] with a little less uncertainty about attempting the next request

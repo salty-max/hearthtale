@@ -1,14 +1,13 @@
 ---
 kind: r-lesson
 ---
-- with gratitude for the teaching
-- slow to learn, and I was patient
-- [one] mine after a little patient practice
-- the knowledge a gift to carry carefully
-- [one] keen to use it for others' sake
-- aware of how much practice it would take
-- [new] a new path, and I was willing
-- [new] the first step of a long study
-- [low] a beginner still, but a hopeful one
-- [high] old wisdom welcoming the new
-- [!one] keen to use them for others' sake
+- curious to try what I had learned
+- with new questions about what I could attempt
+- pleased to understand a little more than the names
+- less certain that I had reached the limits of what I could learn
+- with more to practise than I had arrived with
+- [one] interested in where it might prove useful
+- [!one] interested in how the lessons might work together
+- glad to have something new to occupy my attention
+- with a little less doubt about attempting something unfamiliar
+- hoping practice would make the new knowledge feel less distant

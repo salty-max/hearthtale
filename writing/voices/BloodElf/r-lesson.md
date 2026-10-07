@@ -2,13 +2,12 @@
 kind: r-lesson
 ---
 - with considerably more practice to come
-- the principles elegant, the practice demanding
-- a refinement I had been waiting for
-- precise work, which I appreciated
-- [one] its awkwardness gone after a little practice
-- [one] keen to see it put to proper use
-- [new] a craft worth mastering properly
-- [new] beginning at the beginning, as one must
-- [low] still an apprentice in this, if in little else
-- [high] adding one more polish to an old skill
-- [!one] keen to see them put to proper use
+- clearer about the principle than the execution
+- pleased to have something new to refine
+- with my intentions rather ahead of my hands
+- interested in where I could make the approach more precise
+- rather more encouraged than I meant to show
+- [new] curious how much care the trade would reward
+- [new] willing to begin without expecting to excel at once
+- [low] very conscious of being an apprentice in this
+- [high] pleased to find room for something new among familiar skills

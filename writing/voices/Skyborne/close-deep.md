@@ -1,8 +1,8 @@
 ---
 kind: close-deep
 ---
-- [client:forever] {foe} nearly killed me {at}. All the paths I had imagined ahead of me narrowed to the one I needed to survive.
-- [client:forever] I barely survived {foe} {at}, with nothing secure left except the wish to go on.
-- [client:forever] {foe} left me barely alive {at}. The future I wanted for my people still needed living hands to make it.
-- [client:forever !foe] I barely survived {at}, and found no comfort in the distance I might have covered if I had not.
-- [client:forever !foe] I came within a breath of the end {at}. For a while, being able to choose the next step was all the freedom I needed.
+- [client:forever faction:horde] {foe} nearly killed me {at}. For a while I wanted nothing more than to feel that I still belonged among the living things around me.
+- [client:forever faction:alliance] I barely survived {foe} {at}. I could see where I had misjudged the danger, but understanding it did very little to quiet my fear.
+- [client:forever] {foe} came close to ending my life {at}. I had never felt the distance to safety quite so sharply.
+- [client:forever] I escaped {foe} {at}, with all my attention fixed on the next moment in which I could still be alive.
+- [client:forever] {foe} nearly finished me {at}. Once I was clear, I found that I wanted to stay still more than I wanted to feel brave.

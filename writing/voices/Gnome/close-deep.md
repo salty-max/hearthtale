@@ -1,8 +1,8 @@
 ---
 kind: close-deep
 ---
-- {foe} nearly killed me {at}. For once I had no desire to investigate the next stage of the problem.
-- I barely survived {foe} {at}, with all my cleverness reduced to the very satisfactory fact that I was still here.
-- {foe} left me barely alive {at}. A mistake was something to learn from only if I remained available for the lesson.
-- [!foe] I barely survived {at}, and was glad that an account of what went wrong would not have to be written by someone else.
-- [!foe] I came within a breath of the end {at}. Curiosity was suddenly less urgent than having another chance to indulge it.
+- {foe} nearly killed me {at}. For once I had no wish to find out what happened next.
+- I barely survived {foe} {at}, and could not make myself curious about anything for a while.
+- {foe} left me barely alive {at}. My hands were shaking too much for cleverness to feel like much of an achievement.
+- [!foe] I barely survived {at}. I had never been so glad to be available to correct my own mistakes.
+- [!foe] I came within a breath of the end {at}, with all my grand ideas suddenly depending on something as small as the next breath.

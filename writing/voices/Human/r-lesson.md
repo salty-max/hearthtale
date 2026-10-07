@@ -2,13 +2,12 @@
 kind: r-lesson
 ---
 - with a good deal still to practise
-- the new moves clumsy at first
-- pleased to have something new to rely on
-- [one] keen to see if it would hold up in a real fight
-- the knack of it slow in coming
-- a little more ready for whatever came next
-- [new] a trade that might feed me one day
-- [new] the first rung of a long ladder
-- [low] green as spring grass in it, still
-- [high] the lesson easier for all the ones before it
-- [!one] keen to see if they would hold up in a real fight
+- more confident about the next attempt than the last
+- keen to find out how much had stayed with me
+- with the unfamiliar parts still turning in my head
+- pleased to have made some progress
+- with my hands slower than I would have liked
+- [new] curious whether the trade would suit me
+- [new] hoping this might become a useful way to earn my keep
+- [low] very conscious of being a beginner
+- [high] glad to have something new to work at

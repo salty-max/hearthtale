@@ -1,14 +1,13 @@
 ---
 kind: r-item
 ---
-- carefully, so nothing went to waste
-- with the hope that the find would help
-- the search quiet and almost peaceful
-- [!one !plural] each one counted with care
-- [!one !plural] more than I expected to find
-- [one !plural] small, but someone had need of it
-- [one !plural] where it had been waiting for someone
-- [meat] grateful for food in a strange land
-- [cloth] with thoughts of who might wear it
-- [night] the stars helping me look
-- [hc] watchful the whole while
+- curious about the unfamiliar name
+- pleased to recognise what I had been looking for
+- with less uncertainty about what I needed to bring back
+- [cloth] with the feel of the cloth holding my attention
+- [meat] thinking with rather more interest about a meal
+- with more satisfaction in finding the right thing than I had expected
+- with a little more weight to carry than before
+- hoping I had understood the request correctly
+- [one !plural] glad that the search was over
+- [night] with more care than I would have needed in daylight

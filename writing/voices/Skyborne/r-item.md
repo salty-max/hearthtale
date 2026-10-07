@@ -1,13 +1,13 @@
 ---
 kind: r-item
 ---
-- [client:forever] spotted from above before I could reach the spot
-- [client:forever] with an eye to how things come to rest where they lie
-- [client:forever] lighter work than the search suggested
-- [client:forever !one !plural] each one where the wind might have left it
-- [client:forever !one !plural] the count right on the first try
-- [client:forever one !plural] small, though someone had plainly missed it
-- [client:forever one !plural] easier to see than to reach
-- [client:forever meat] thinking of the meal it would make
-- [client:forever cloth] the weave interesting to look at closely
-- [client:forever night] the dark changing where things seemed to lie
+- [client:forever faction:horde] pleased to recognise what I had been looking for
+- [client:forever faction:alliance] curious whether a closer look would tell me more
+- [client:forever cloth] with the feel of the cloth holding my attention
+- [client:forever meat] thinking with rather more interest about a meal
+- [client:forever] with a little more weight to carry than before
+- [client:forever] surprised by the satisfaction of finding the right thing
+- [client:forever] interested in the unfamiliar name
+- [client:forever] with one less thing to search for
+- [client:forever one !plural] glad that the search was over
+- [client:forever night] with more care than I would have needed in daylight

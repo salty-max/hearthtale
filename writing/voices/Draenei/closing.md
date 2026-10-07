@@ -1,9 +1,9 @@
 ---
 kind: closing
 ---
-- The work had occupied {time}, and I was grateful for a pause in which to put it in order.
-- I had earned {gold} in {time}, resources to carry into the life I was making here.
-- After {time}, I could consider the day without needing to hurry past what it had offered.
-- I had spent {time} on the road, becoming a little less a stranger with each useful thing done.
-- The stretch had taken {time}. Endurance included knowing when to care for what remained of my strength.
-- I had spent {time} travelling and earned {gold}, enough to make the next part less uncertain.
+- I had been travelling for {time}, long enough for the unfamiliar names to come a little more easily.
+- {time} had passed before I stopped to consider how tired I had become.
+- I put down {time} for this stretch, pleased to have more of this world within reach of memory.
+- After {time}, I was ready to leave the remaining questions for a rested mind.
+- I had spent {time} on the road, and wanted a quiet pause before I took it up again.
+- I had been busy for {time}; the chance to stop felt very welcome.

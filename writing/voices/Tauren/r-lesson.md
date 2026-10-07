@@ -1,14 +1,13 @@
 ---
 kind: r-lesson
 ---
-- [one] with patience enough to learn it properly
-- [one] my hands slow to find it at first
-- my strength finding a new use
-- natural to my hands before long
-- the lesson settling slowly, like rain into soil
-- [one] keen to use it for the good of others
-- [new] the first step on a new path
-- [new] a trade to serve the tribe
-- [low] young in this, and willing to learn
-- [high] the old and new finding their balance
-- [!one] keen to use them for the good of others
+- with my hands slower than my intentions
+- willing to take time over the unfamiliar parts
+- pleased to feel the beginning of some confidence
+- with more practice ahead than I had imagined
+- curious how the next attempt would feel
+- with my strength finding a less familiar use
+- [new] wondering how the trade might be useful among my people
+- [new] glad to have a new kind of work to learn
+- [low] with plenty of time needed before I would feel at ease
+- [high] interested in where the new learning met what I already knew

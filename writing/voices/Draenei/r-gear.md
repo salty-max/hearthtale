@@ -1,11 +1,11 @@
 ---
 kind: r-gear
 ---
-- [!made] welcome, wherever it had come from
-- [!made !held] a good fit for strange shoulders
-- [!made] sturdier than appearances suggested
-- [!made] welcome protection on an unfamiliar road
-- [!made hc] one more care against a careless end
-- [made] made with patience and some hope
-- [made] my own work, carefully done
-- [made] proof that my hands could still make something good
+- curious to see how the unfamiliar weight would feel in use
+- with a little more confidence in what I wore
+- [!held] hoping the fit would still feel as kind after a long walk
+- interested in how much difference the change would make
+- [made] pleased to be wearing something I had made here
+- with rather more pleasure in the change than I had expected
+- [held] taking a moment to get used to the balance
+- [!held] glad of the extra protection

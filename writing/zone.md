@@ -13,6 +13,5 @@ kind: zone
 - I entered {zone} with my eyes open and my kit close to hand.
 - [hc] I came to {zone}, where care would matter as much as it had on the road behind.
 - [hc high] I reached {zone}, carrying a long journey that one mistake could still end.
-- [race:Tauren] I entered {zone} and considered what my elders might have noticed first.
 - [class:MAGE] I came into {zone}, conscious of how much there was here that my studies had not described.
 - [class:HUNTER] I reached {zone}, ready to learn the country as well as the things that lived in it.

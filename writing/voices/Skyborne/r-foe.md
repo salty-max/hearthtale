@@ -1,16 +1,15 @@
 ---
 kind: r-foe
 ---
-- [client:forever] the shift of the fight worth remembering
-- [client:forever] a little wiser about how such things move
-- [client:forever] with the wind still tugging at me afterwards
-- [client:forever one] quicker than I had read it
-- [client:forever] my balance found again only after
-- [client:forever one] one more pattern I had misread at first
-- [client:forever !one] each one changing the shape of the next
-- [client:forever teeth] keeping well clear of the teeth
-- [client:forever mechanical] built without any feeling for the air
-- [client:forever night] the dark changing every angle
-- [client:forever hc] aware how little the sky forgives a fall
-- [client:forever faction:horde] the way our mentors would have wished, I hoped
-- [client:forever faction:alliance] one more problem solved without waiting for answers from above
+- [client:forever faction:horde] relieved to have a little room around me again
+- [client:forever faction:alliance] more aware of what I had misjudged in the encounter
+- [client:forever] with rather more effort than I had expected
+- [client:forever teeth] glad to be beyond the teeth
+- [client:forever] less inclined to let my attention wander
+- [client:forever] pleased that I had kept my nerve
+- [client:forever] with no wish to close that distance again just yet
+- [client:forever] still too occupied with the fight to think far beyond it
+- [client:forever mechanical] curious about the workings once the danger had passed
+- [client:forever] more tired than I had intended to become
+- [client:forever] with a better sense of the danger at close quarters
+- [client:forever] thankful that I had come through
