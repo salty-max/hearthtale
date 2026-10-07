@@ -1,4 +1,4 @@
-import { Check, Copy, Link2 } from "lucide-react";
+import { Check, Copy, Link2, RefreshCw } from "lucide-react";
 import { useState } from "react";
 import { useLinkCode } from "@/lib/api";
 import { useLocale, useT } from "@/lib/i18n";
@@ -30,9 +30,22 @@ export function LinkCharacter() {
                 void navigator.clipboard?.writeText(command).then(() => setCopied(true));
               }}
               aria-label={t.link.copy}
+              title={t.link.copy}
               className="rounded p-2 text-parchment/70 hover:text-parchment"
             >
               {copied ? <Check className="size-5" /> : <Copy className="size-5" />}
+            </button>
+            <button
+              onClick={() => {
+                setCopied(false);
+                link.mutate();
+              }}
+              disabled={link.isPending}
+              aria-label={t.link.again}
+              title={t.link.again}
+              className="rounded p-2 text-parchment/70 hover:text-parchment disabled:opacity-50"
+            >
+              <RefreshCw className={`size-5${link.isPending ? " animate-spin" : ""}`} aria-hidden />
             </button>
           </div>
           <p className="mt-2 text-sm text-parchment/60">{t.link.then(until)}</p>

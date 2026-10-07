@@ -38,6 +38,7 @@ const en = {
     get: "Get a code",
     type: "In the game, type:",
     copy: "Copy",
+    again: "Get a new code",
     then: (until: string) => `Then log out or /reload. The code works until ${until}, once.`,
   },
   start: {
