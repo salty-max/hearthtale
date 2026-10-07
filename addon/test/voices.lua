@@ -13,7 +13,11 @@ function voices.day(race, faction)
     { k = "group", name = "Kelsa" },
     { k = "place", sub = "The Merchant Coast" },
     { k = "kill", name = "Southsea Brigand", kind = "Humanoid" },
-    { k = "quest", giver = "Wharfmaster Dizzywig", objectives = { { type = "monster", name = "Southsea Brigand", n = 6 } } },
+    {
+      k = "quest",
+      giver = "Wharfmaster Dizzywig",
+      objectives = { { type = "monster", name = "Southsea Brigand", n = 6 } },
+    },
     { k = "close", foe = "Southsea Brigand", hp = 3 },
     { k = "quest", giver = "Wharfmaster Dizzywig", objectives = { { text = "Recover the missing cargo" } } },
     { k = "inn", sub = "Ratchet", place = "Ratchet" },
@@ -23,13 +27,23 @@ function voices.day(race, faction)
     m.sub = m.sub or (i < 5 and "Ratchet" or "The Merchant Coast")
   end
   return {
-    guid = "one-day-many-voices", race = race, faction = faction,
-    class = race == "BloodElf" and "MAGE" or (race == "Skyborne" and (faction == "horde" and "SHAMAN" or "MAGE") or "WARRIOR"),
-    began = { level = 20 }, chapters = { {
-      start = { level = 20, at = 1000, zone = "The Barrens", sub = "Ratchet" },
-      log = log, quests = 3, kills = { ["Southsea Brigand"] = 6 }, played = 5400, gold = 1900,
-      ended = { level = 20, place = "Ratchet", how = "rest" },
-    } },
+    guid = "one-day-many-voices",
+    race = race,
+    faction = faction,
+    class = race == "BloodElf" and "MAGE"
+      or (race == "Skyborne" and (faction == "horde" and "SHAMAN" or "MAGE") or "WARRIOR"),
+    began = { level = 20 },
+    chapters = {
+      {
+        start = { level = 20, at = 1000, zone = "The Barrens", sub = "Ratchet" },
+        log = log,
+        quests = 3,
+        kills = { ["Southsea Brigand"] = 6 },
+        played = 5400,
+        gold = 1900,
+        ended = { level = 20, place = "Ratchet", how = "rest" },
+      },
+    },
   }
 end
 
@@ -42,12 +56,21 @@ function voices.moments(race, faction)
     for i, m in ipairs(log) do
       m.at, m.zone, m.sub, m.level = 1000 + i * 300, "The Barrens", "Ratchet", level
     end
-    return { start = { level = level, at = 1000, zone = "The Barrens", sub = "Ratchet" },
-      log = log, quests = 0, kills = {}, played = 1800, gold = 0, ended = ended }
+    return {
+      start = { level = level, at = 1000, zone = "The Barrens", sub = "Ratchet" },
+      log = log,
+      quests = 0,
+      kills = {},
+      played = 1800,
+      gold = 0,
+      ended = ended,
+    }
   end
   local departure = chapter(1, {
     { k = "flight", from = "Gadgetzan", to = "Everlook" },
-    { k = "campfire" }, { k = "night" }, { k = "wake", after = "night" },
+    { k = "campfire" },
+    { k = "night" },
+    { k = "wake", after = "night" },
   }, { level = 1, place = "Everlook", how = "rest" })
   departure.start.zone, departure.start.sub = "Tanaris", "Gadgetzan"
   for i, m in ipairs(departure.log) do
@@ -58,7 +81,10 @@ function voices.moments(race, faction)
     departure,
     chapter(20, {
       { k = "close", foe = "Southsea Brigand", hp = 3 },
-      { k = "died", death = { cause = "foe", foe = "Southsea Brigand", level = 20, zone = "The Barrens", sub = "Ratchet" } },
+      {
+        k = "died",
+        death = { cause = "foe", foe = "Southsea Brigand", level = 20, zone = "The Barrens", sub = "Ratchet" },
+      },
       { k = "revived", how = "ally", by = "Kelsa" },
     }, { level = 20, place = "Ratchet", how = "rest" }),
     chapter(59, {
@@ -91,7 +117,9 @@ if ... == "compare" or ... == "moments" then
     end
   end
   local races = moments and { "Human", "Gnome", "Troll", "Tauren", "BloodElf", "Draenei" } or voices.races
-  for _, race in ipairs(races) do show(race) end
+  for _, race in ipairs(races) do
+    show(race)
+  end
   if forever then
     show("Skyborne", "horde", "Skyborne: Windshaper")
     show("Skyborne", "alliance", "Skyborne: High Order")

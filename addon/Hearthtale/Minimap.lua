@@ -60,7 +60,11 @@ function ns.createMinimapButton()
   border:SetPoint("TOPLEFT")
 
   button:SetScript("OnClick", function(_, mouse)
-    if mouse == "RightButton" then ns.openSettings() else ns.toggle() end
+    if mouse == "RightButton" then
+      ns.openSettings()
+    else
+      ns.toggle()
+    end
   end)
   button:SetScript("OnDragStart", function(self) self:SetScript("OnUpdate", follow) end)
   button:SetScript("OnDragStop", function(self) self:SetScript("OnUpdate", nil) end)
@@ -70,9 +74,20 @@ function ns.createMinimapButton()
     local chapters, fallen = summary()
     GameTooltip:AddLine(chapters == 1 and "1 chapter" or ("%d chapters"):format(chapters), 1, 1, 1)
     if fallen > 0 then
-      GameTooltip:AddLine(fallen == 1 and "1 book in the Hall of the Fallen" or ("%d books in the Hall of the Fallen"):format(fallen), 1, 1, 1)
+      GameTooltip:AddLine(
+        fallen == 1 and "1 book in the Hall of the Fallen" or ("%d books in the Hall of the Fallen"):format(fallen),
+        1,
+        1,
+        1
+      )
     end
-    GameTooltip:AddLine("Click to open the journal, right-click for the settings. Drag to move this button.", 0.7, 0.7, 0.7, true)
+    GameTooltip:AddLine(
+      "Click to open the journal, right-click for the settings. Drag to move this button.",
+      0.7,
+      0.7,
+      0.7,
+      true
+    )
     GameTooltip:Show()
   end)
   button:SetScript("OnLeave", function() GameTooltip:Hide() end)

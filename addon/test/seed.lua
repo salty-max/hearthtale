@@ -11,21 +11,32 @@ local function json(v, indent)
   if t == "nil" then return "null" end
   if t == "boolean" or t == "number" then return tostring(v) end
   if t == "string" then
-    return '"' .. v:gsub('[%c"\\]', function(c)
-      return ({ ['"'] = '\\"', ["\\"] = "\\\\", ["\n"] = "\\n", ["\t"] = "\\t" })[c] or ("\\u%04x"):format(c:byte())
-    end) .. '"'
+    return '"'
+      .. v:gsub(
+        '[%c"\\]',
+        function(c)
+          return ({ ['"'] = '\\"', ["\\"] = "\\\\", ["\n"] = "\\n", ["\t"] = "\\t" })[c] or ("\\u%04x"):format(c:byte())
+        end
+      )
+      .. '"'
   end
   local inner = indent .. "  "
   if #v > 0 or next(v) == nil then
     local out = {}
-    for _, x in ipairs(v) do table.insert(out, inner .. json(x, inner)) end
+    for _, x in ipairs(v) do
+      table.insert(out, inner .. json(x, inner))
+    end
     return #out == 0 and "[]" or "[\n" .. table.concat(out, ",\n") .. "\n" .. indent .. "]"
   end
   local keys = {}
-  for k in pairs(v) do table.insert(keys, k) end
+  for k in pairs(v) do
+    table.insert(keys, k)
+  end
   table.sort(keys)
   local out = {}
-  for _, k in ipairs(keys) do table.insert(out, inner .. json(tostring(k)) .. ": " .. json(v[k], inner)) end
+  for _, k in ipairs(keys) do
+    table.insert(out, inner .. json(tostring(k)) .. ": " .. json(v[k], inner))
+  end
   return "{\n" .. table.concat(out, ",\n") .. "\n" .. indent .. "}"
 end
 
@@ -35,8 +46,15 @@ for _, name in ipairs({ "brannok", "pippa", "aldric", "grashnak", "aelyndra", "m
   G.logout()
   local c = HearthtaleChar
   table.insert(characters, {
-    guid = c.guid, name = c.name, realm = c.realm, region = c.region, race = c.race, class = c.class,
-    hardcore = c.hardcore or false, fallen = c.closed or false, book = c.book,
+    guid = c.guid,
+    name = c.name,
+    realm = c.realm,
+    region = c.region,
+    race = c.race,
+    class = c.class,
+    hardcore = c.hardcore or false,
+    fallen = c.closed or false,
+    book = c.book,
   })
 end
 io.write(json(characters), "\n")

@@ -15,7 +15,9 @@ local _, ns = ...
 
 -- ── look ─────────────────────────────────────────────────────────────────────
 local T = {
-  gold = { 0.85, 0.70, 0.42 }, text = { 0.93, 0.88, 0.76 }, soft = { 0.62, 0.57, 0.49 },
+  gold = { 0.85, 0.70, 0.42 },
+  text = { 0.93, 0.88, 0.76 },
+  soft = { 0.62, 0.57, 0.49 },
   rule = { 0.85, 0.70, 0.42, 0.25 },
 }
 local LATIN = { enUS = true, enGB = true, frFR = true, deDE = true, esES = true, esMX = true, itIT = true, ptBR = true }
@@ -120,7 +122,13 @@ local function scrollArea(name, parent, width)
     local size = math.max(24, height * height / (height + range))
     self.thumb:SetHeight(size)
     self.thumb:ClearAllPoints()
-    self.thumb:SetPoint("TOPRIGHT", self, "TOPRIGHT", 8, -(height - size) * math.min(1, self:GetVerticalScroll() / range))
+    self.thumb:SetPoint(
+      "TOPRIGHT",
+      self,
+      "TOPRIGHT",
+      8,
+      -(height - size) * math.min(1, self:GetVerticalScroll() / range)
+    )
     self.thumb:Show()
   end
   function s:ScrollTo(y)
@@ -164,9 +172,7 @@ local function levels(ch)
   return ("levels %d to %d"):format(ch.from, ch.to)
 end
 
-local function chapterOf(w, number)
-  return w.chapters[number]
-end
+local function chapterOf(w, number) return w.chapters[number] end
 
 local function show(title, sub, text)
   page.title:SetText(title)
@@ -198,12 +204,13 @@ local function showPage(life, w, key)
   table.insert(parts, levels(ch))
   table.insert(parts, when(ch))
   local last = key == #w.chapters
-  if life.closed and last then table.insert(parts, "the end")
-  elseif ch.open then table.insert(parts, "still being written") end
-  local text = ch.text
-  if life.closed and last and w.epitaph then
-    text = (text and text .. "\n\n" or "") .. EPITAPH:format(w.epitaph)
+  if life.closed and last then
+    table.insert(parts, "the end")
+  elseif ch.open then
+    table.insert(parts, "still being written")
   end
+  local text = ch.text
+  if life.closed and last and w.epitaph then text = (text and text .. "\n\n" or "") .. EPITAPH:format(w.epitaph) end
   show(("Chapter %d"):format(key), table.concat(parts, "  -  "), text)
 end
 
@@ -240,7 +247,9 @@ end
 -- The list: { title, place, close, rare, indent, selected, click } per row.
 -- scroll: bring the selected row into view.
 local function render(entries, scroll)
-  for _, r in ipairs(rows) do r:Hide() end
+  for _, r in ipairs(rows) do
+    r:Hide()
+  end
   local y, selectedY = 0, nil
   for i, e in ipairs(entries) do
     local r = row(i)
@@ -267,7 +276,11 @@ local function render(entries, scroll)
     r.selected:SetShown(e.selected and true or false)
     if e.selected then selectedY = y end
     r:SetScript("OnClick", e.click)
-    if e.click then r:Enable() else r:Disable() end
+    if e.click then
+      r:Enable()
+    else
+      r:Disable()
+    end
     r:Show()
     y = y + 36
   end
@@ -279,17 +292,36 @@ end
 -- A book's chapters as rows (indent: under a fallen life's name).
 local function chapterRows(entries, w, selectedKey, open, indent)
   if w.epitaph and indent then
-    table.insert(entries, { key = "epitaph", title = "Epitaph", indent = indent, selected = selectedKey == "epitaph",
-      click = function() open("epitaph") end })
+    table.insert(entries, {
+      key = "epitaph",
+      title = "Epitaph",
+      indent = indent,
+      selected = selectedKey == "epitaph",
+      click = function() open("epitaph") end,
+    })
   end
   if w.prologue then
-    table.insert(entries, { key = "prologue", title = "Prologue", place = "Before this journal", indent = indent,
-      selected = selectedKey == "prologue", click = function() open("prologue") end })
+    table.insert(entries, {
+      key = "prologue",
+      title = "Prologue",
+      place = "Before this journal",
+      indent = indent,
+      selected = selectedKey == "prologue",
+      click = function() open("prologue") end,
+    })
   end
   for _, ch in ipairs(w.chapters) do
     local under = ch.place and (ch.place .. ", " .. levels(ch)) or levels(ch)
-    table.insert(entries, { key = ch.number, title = ("Chapter %d"):format(ch.number), place = ch.open and "still being written" or under,
-      close = ch.close, rare = ch.rare, indent = indent, selected = selectedKey == ch.number, click = function() open(ch.number) end })
+    table.insert(entries, {
+      key = ch.number,
+      title = ("Chapter %d"):format(ch.number),
+      place = ch.open and "still being written" or under,
+      close = ch.close,
+      rare = ch.rare,
+      indent = indent,
+      selected = selectedKey == ch.number,
+      click = function() open(ch.number) end,
+    })
   end
 end
 
@@ -304,9 +336,16 @@ local function refreshJournal(latest)
     current = last and last.number or (written.prologue and "prologue") or nil
   end
   local entries = {}
-  chapterRows(entries, written, current, function(key) current = key; ns.refresh() end)
+  chapterRows(entries, written, current, function(key)
+    current = key
+    ns.refresh()
+  end)
   render(entries, latest)
-  if current then showPage(c, written, current) else show("", "", nil) end
+  if current then
+    showPage(c, written, current)
+  else
+    show("", "", nil)
+  end
 end
 
 -- The Hall tab: the fallen, the most recent first; the open one's pages under
@@ -314,8 +353,12 @@ end
 local function refreshHall(scroll)
   local fallen = ns.fallen()
   local known = false
-  for _, life in ipairs(fallen) do if life.guid == hallLife then known = true end end
-  if not known then hallLife, hallKey = fallen[1] and fallen[1].guid, "epitaph" end
+  for _, life in ipairs(fallen) do
+    if life.guid == hallLife then known = true end
+  end
+  if not known then
+    hallLife, hallKey = fallen[1] and fallen[1].guid, "epitaph"
+  end
   local entries = {}
   if #fallen == 0 then
     table.insert(entries, { title = "No one has fallen", place = "May it stay so." })
@@ -325,14 +368,23 @@ local function refreshHall(scroll)
   local open, w
   for _, life in ipairs(fallen) do
     local d = life.death or {}
-    table.insert(entries, { key = life.guid, title = life.name or "?",
+    table.insert(entries, {
+      key = life.guid,
+      title = life.name or "?",
       place = ("Level %d %s %s"):format(d.level or 0, life.raceName or "", life.className or ""),
       selected = life.guid == hallLife and hallKey == "epitaph",
-      click = function() hallLife, hallKey = life.guid, "epitaph"; ns.refresh() end })
+      click = function()
+        hallLife, hallKey = life.guid, "epitaph"
+        ns.refresh()
+      end,
+    })
     if life.guid == hallLife then
       keptHall[life.guid] = keptHall[life.guid] or {}
       open, w = life, ns.writeBook(life, keptHall[life.guid])
-      chapterRows(entries, w, hallKey, function(key) hallKey = key; ns.refresh() end, 14)
+      chapterRows(entries, w, hallKey, function(key)
+        hallKey = key
+        ns.refresh()
+      end, 14)
     end
   end
   render(entries, scroll)
@@ -345,9 +397,20 @@ function ns.refresh(latest)
   local c = ns.journal()
   -- Who I am, beside the portrait.
   local race, class = UnitRace("player"), UnitClass("player")
-  book.who:SetText(("%s, level %d %s %s%s"):format(ns.journal().name or UnitName("player") or "", UnitLevel("player") or 0, race or "", class or "",
-    c.closed and "  -  Fallen" or c.hardcore and "  -  Hardcore" or ""))
-  if book.selectedTab == 2 then refreshHall(latest) else refreshJournal(latest) end
+  book.who:SetText(
+    ("%s, level %d %s %s%s"):format(
+      ns.journal().name or UnitName("player") or "",
+      UnitLevel("player") or 0,
+      race or "",
+      class or "",
+      c.closed and "  -  Fallen" or c.hardcore and "  -  Hardcore" or ""
+    )
+  )
+  if book.selectedTab == 2 then
+    refreshHall(latest)
+  else
+    refreshJournal(latest)
+  end
 end
 
 -- The tabs, under the window's bottom edge: the character sheet's on Classic,
@@ -365,13 +428,17 @@ local function hasTemplate(name)
 end
 
 local function buildTabs()
-  local template = hasTemplate("CharacterFrameTabButtonTemplate") and "CharacterFrameTabButtonTemplate" or "PanelTabButtonTemplate"
+  local template = hasTemplate("CharacterFrameTabButtonTemplate") and "CharacterFrameTabButtonTemplate"
+    or "PanelTabButtonTemplate"
   for n, text in ipairs({ "Journal", "Hall of the Fallen" }) do
     local tab = CreateFrame("Button", "HearthtaleFrameTab" .. n, book, template)
     tab:SetID(n)
     tab:SetText(text)
-    if n == 1 then tab:SetPoint("TOPLEFT", book, "BOTTOMLEFT", 14, 2)
-    else tab:SetPoint("LEFT", "HearthtaleFrameTab" .. (n - 1), "RIGHT", -14, 0) end
+    if n == 1 then
+      tab:SetPoint("TOPLEFT", book, "BOTTOMLEFT", 14, 2)
+    else
+      tab:SetPoint("LEFT", "HearthtaleFrameTab" .. (n - 1), "RIGHT", -14, 0)
+    end
     tab:SetScript("OnClick", function(self)
       ns.showTab(self:GetID())
       if PlaySound and SOUNDKIT and SOUNDKIT.IG_CHARACTER_INFO_TAB then PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB) end
@@ -394,16 +461,24 @@ local function gameWindow()
   if not ok or not frame then return nil end
   if ButtonFrameTemplate_HideButtonBar then ButtonFrameTemplate_HideButtonBar(frame) end
   if type(frame.Inset) == "table" then frame.Inset:Hide() end
-  if frame.SetTitle then frame:SetTitle(TITLE)
-  elseif type(frame.TitleText) == "table" then frame.TitleText:SetText(TITLE) end
+  if frame.SetTitle then
+    frame:SetTitle(TITLE)
+  elseif type(frame.TitleText) == "table" then
+    frame.TitleText:SetText(TITLE)
+  end
   return frame
 end
 
 local function portrait()
-  local p = (book.GetPortrait and book:GetPortrait()) or (type(book.portrait) == "table" and book.portrait)
-    or (type(book.PortraitContainer) == "table" and book.PortraitContainer.portrait) or nil
-  if p and SetPortraitTexture then SetPortraitTexture(p, "player")
-  elseif book.SetPortraitToAsset then book:SetPortraitToAsset("Interface\\Icons\\INV_Misc_Book_08") end
+  local p = (book.GetPortrait and book:GetPortrait())
+    or (type(book.portrait) == "table" and book.portrait)
+    or (type(book.PortraitContainer) == "table" and book.PortraitContainer.portrait)
+    or nil
+  if p and SetPortraitTexture then
+    SetPortraitTexture(p, "player")
+  elseif book.SetPortraitToAsset then
+    book:SetPortraitToAsset("Interface\\Icons\\INV_Misc_Book_08")
+  end
 end
 
 function build()
@@ -425,7 +500,9 @@ function build()
     book:SetBackdrop({
       bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background-Dark",
       edgeFile = "Interface\\DialogFrame\\UI-DialogBox-Gold-Border",
-      tile = true, tileSize = 32, edgeSize = 32,
+      tile = true,
+      tileSize = 32,
+      edgeSize = 32,
       insets = { left = 11, right = 12, top = 12, bottom = 11 },
     })
     local title = label(book, TITLE_FONT, 16, T.gold)
@@ -495,7 +572,11 @@ function ns.openChapter(number)
   current, asked = number, true
   book.selectedTab = 1
   if PanelTemplates_SetTab then PanelTemplates_SetTab(book, 1) end
-  if book:IsShown() then ns.refresh() else book:Show() end
+  if book:IsShown() then
+    ns.refresh()
+  else
+    book:Show()
+  end
   asked = false
 end
 
@@ -507,9 +588,15 @@ function ns.openHall(guid)
   hallLife, hallKey = guid, "epitaph"
   book.selectedTab = 2
   if PanelTemplates_SetTab then PanelTemplates_SetTab(book, 2) end
-  if book:IsShown() then ns.refresh(true) else book:Show() end
+  if book:IsShown() then
+    ns.refresh(true)
+  else
+    book:Show()
+  end
 end
-ns.onHall = function() if book and book:IsShown() then ns.refresh() end end
+ns.onHall = function()
+  if book and book:IsShown() then ns.refresh() end
+end
 
 -- A chapter closes: a line in chat with a link to it (a setting).
 function ns.link(target, text) return ("|cffc9a227|Hhearthtale:%s|h[%s]|h|r"):format(target, text) end
@@ -546,5 +633,9 @@ ns.onRecord = function()
     pending = false
     if book:IsShown() then ns.refresh() end
   end
-  if C_Timer then C_Timer.After(1, later) else later() end
+  if C_Timer then
+    C_Timer.After(1, later)
+  else
+    later()
+  end
 end
