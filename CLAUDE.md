@@ -311,6 +311,7 @@ scripts/release.sh [--version X.Y.Z] NOTES.md       # the addon: tag, push; Acti
 ## Conventions
 
 - Plain ASCII in `writing/` (' and plain quotes).
-- Conventional Commits, lowercase subjects; push freely, ask before releasing.
+- Conventional Commits, lowercase subjects; commit locally, ask before any
+  push, release or deploy.
 - Lore and places true to the original game; the writing is in the first
   person, never the League's voice.
