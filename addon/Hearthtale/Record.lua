@@ -696,6 +696,8 @@ end
 ns.on("PLAYER_EQUIPMENT_CHANGED", function() lookAtGear(char().worn == nil) end) -- the first look is quiet
 
 -- Loot: a find of note (blue and above; the green ones are told when worn).
+-- Only what is looted: an item received (a quest's reward, a purchase) is
+-- no find, and is told when worn, if it is.
 ns.on("CHAT_MSG_LOOT", function(msg)
   if secret(msg) then return end
   local c = char()
@@ -710,7 +712,7 @@ ns.on("CHAT_MSG_LOOT", function(msg)
     end
   end
   local mine = false
-  for _, g in ipairs({ "LOOT_ITEM_SELF", "LOOT_ITEM_SELF_MULTIPLE", "LOOT_ITEM_PUSHED_SELF", "LOOT_ITEM_PUSHED_SELF_MULTIPLE" }) do
+  for _, g in ipairs({ "LOOT_ITEM_SELF", "LOOT_ITEM_SELF_MULTIPLE" }) do
     local p = pattern(g)
     if p and msg:match(p) then mine = true end
   end
