@@ -99,6 +99,15 @@ local TITLES = { Mr = true, Mrs = true, Captain = true, Lord = true, Lady = true
   Colonel = true, Farmer = true, Geomancer = true, Lorekeeper = true, Private = true, Tinkerer = true, Advisor = true,
   Old = true, Ol = true, Ranger = true, Broodlord = true, Pyroguard = true, Archbishop = true, Bishop = true,
   Crier = true, Emissary = true, Emmisary = true, Matron = true, Herald = true, Courier = true, Warlord = true, Highlord = true, Count = true, Duke = true, Magistrate = true }
+-- A moment's first objective, as recorded. One whose name is only a number
+-- ("8 0s": a client's "0/8 Tough Wolf Meat" read the wrong way round by
+-- 0.5.0's recorder) has lost its real name: not told.
+local function objectiveOf(m)
+  local o = m.objectives and m.objectives[1]
+  if o and o.name and o.name:match("^%d+$") then return nil end
+  return o
+end
+
 local function itemName(name)
   -- one the game never counts ("8 Linen Cloth"): no article, but for a
   -- word that is its own plural ("an Explosive Sheep")
@@ -843,7 +852,7 @@ local function taskOf(text)
 end
 ns.taskOf = taskOf
 function Book:deed(m, key, tags)
-  local o = m.objectives and m.objectives[1]
+  local o = objectiveOf(m)
   local objective = o and o.text and lowerFirst(o.text)
   if objective and (objective:match("^tame ") or objective:lower():match(" tamed[%.:]?%s*$")) then return end
   local ender = m.ender ~= m.giver and m.ender or nil
@@ -1165,7 +1174,7 @@ function Book:chapter(n, ch)
   -- tells that kill itself: "I brought down a Brigand; I killed six Brigands"
   -- is one telling too many.
   local function dropKill(m, t)
-    local o = m.objectives and m.objectives[1]
+    local o = objectiveOf(m)
     if not (o and o.type == "monster" and o.name) then return end
     local dropped = false
     for j = #pending, 1, -1 do
@@ -1231,7 +1240,7 @@ function Book:chapter(n, ch)
       local justDone = m.id and doneAt[m.id] == i - 1 and placeOf(ch.log[i - 1]) == placeOf(m)
       return (m.ender and not justDone) and "low" or "silent"
     end
-    local o = m.objectives and m.objectives[1]
+    local o = objectiveOf(m)
     if o and o.type == "item" and o.held and o.name and m.ender then return "low" end -- a delivery
     if o and (o.type == "monster" or o.type == "item") and o.name then return nil end
     if o and o.text and instruction(o.text) then return nil end
@@ -1545,7 +1554,7 @@ function Book:chapter(n, ch)
     local top = (function()
       local covered, remaining = {}, {}
       for _, m in ipairs(ch.log or {}) do
-        local o = m.k == "quest" and m.objectives and m.objectives[1]
+        local o = m.k == "quest" and objectiveOf(m)
         if o and o.type == "monster" and o.name then covered[o.name] = true end
       end
       for name, count in pairs(ch.kills or {}) do

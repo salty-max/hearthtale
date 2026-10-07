@@ -32,15 +32,30 @@ function GetQuestsCompleted() return state.questsDone or {} end
 if not FOREVER then C_GameRules = { IsHardcoreActive = function() return state.hardcore end } end
 C_QuestLog = {
   GetTitleForQuestID = function(id) return state.titles and state.titles[id] end,
-  GetQuestObjectives = function(id) return state.objectives and state.objectives[id] or {} end,
+  -- (the tests write objectives as "Tough Wolf Meat: 0/8"; today's Classic
+  -- client says "0/8 Tough Wolf Meat", and so does this one outside Forever)
+  GetQuestObjectives = function(id)
+    local list = state.objectives and state.objectives[id] or {}
+    if FOREVER then return list end
+    local out = {}
+    for i, o in ipairs(list) do
+      local copy = {}
+      for k, v in pairs(o) do copy[k] = v end
+      local name, have, need = (o.text or ""):match("^(.-): (%d+)/(%d+)$")
+      if name then copy.text = ("%s/%s %s"):format(have, need, name) end
+      out[i] = copy
+    end
+    return out
+  end,
   IsComplete = function(id)
     local list = state.objectives and state.objectives[id]
     if list and #list > 0 then for _, o in ipairs(list) do if not o.finished then return false end end return true end
     return state.complete ~= nil and state.complete[id] == true
   end,
 }
-QUEST_MONSTERS_KILLED = "%s slain: %d/%d"
-QUEST_OBJECTS_FOUND = "%s: %d/%d"
+-- (numbered blanks in today's client: the name last)
+QUEST_MONSTERS_KILLED = FOREVER and "%s slain: %d/%d" or "%2$d/%3$d %1$s slain"
+QUEST_OBJECTS_FOUND = FOREVER and "%s: %d/%d" or "%2$d/%3$d %1$s"
 C_Timer = { After = function(_, fn) fn() end }
 SlashCmdList = {}
 
@@ -104,7 +119,9 @@ function GetInstanceInfo() return state.instance end
 -- Items: { quality, item level, id }.
 local ITEMS = { ["Ragged Leather Gloves"] = { 1, 3, 1 }, ["Frostmane Leather Vest"] = { 2, 8, 2 }, ["Wolf Fang Necklace"] = { 2, 10, 3 } }
 local itemCount = 3
-function GetItemInfo(link) local name = link:match("%[(.-)%]"); local i = ITEMS[name]; if i then return name, link, i[1], i[2] end end
+-- (today's Classic client has only C_Item.GetItemInfo; the global, here, in Forever)
+local function getItemInfo(link) local name = link:match("%[(.-)%]"); local i = ITEMS[name]; if i then return name, link, i[1], i[2] end end
+if FOREVER then GetItemInfo = getItemInfo else C_Item = { GetItemInfo = getItemInfo } end
 local function itemLink(name, quality)
   if not ITEMS[name] then itemCount = itemCount + 1; ITEMS[name] = { quality or 2, 10, 100 + itemCount } end
   return ("|cff1eff00|Hitem:%d::::::::1:::::|h[%s]|h|r"):format(ITEMS[name][3], name)
