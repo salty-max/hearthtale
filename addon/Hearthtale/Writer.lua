@@ -859,7 +859,13 @@ local function rankName(rank) return rank and ((rank:match("^[aeiou]") and "an "
 -- A place described, the first time in the book the character comes to it
 -- (writing/scenery/): as home, an ally's land, enemy ground or neutral, by
 -- night or day. Nil if there is nothing written for it, or it was told.
+-- A dungeon by the instance's own name, where it differs from the place's
+-- (the game gives both, depending on where it is asked).
+local SCENERY_ALIAS = { Deadmines = "The Deadmines", ["Stormwind Stockade"] = "The Stockade",
+  ["The Temple of Atal'Hakkar"] = "Sunken Temple", ["Temple of Ahn'Qiraj"] = "Ahn'Qiraj Temple" }
+
 function Book:sceneryOf(name, night)
+  name = SCENERY_ALIAS[name or ""] or name
   local p = name and ns.data.scenery and ns.data.scenery[name]
   if not p or self.sceneSeen[name] then return nil end
   self.sceneSeen[name] = true
