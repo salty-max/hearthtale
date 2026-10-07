@@ -351,6 +351,7 @@ local ROUTINE = {
   ["c-deed-task"] = "r-task", ["c-deed-word"] = "r-task", ["c-deliver"] = "r-task", ["c-gear"] = "r-gear", ["c-trainer"] = "r-lesson",
   ["c-skill"] = "r-lesson", ["c-prof"] = "r-lesson", ["c-travel"] = "r-road", ["c-return"] = "r-road",
   ["c-place"] = "r-road", ["c-inn"] = "r-inn", ["c-group"] = "r-company", ["c-report"] = "r-task",
+  ["c-handed-kill"] = "r-foe", ["c-handed-item"] = "r-item",
 }
 -- How much a clause matters, from its own moment alone (a later moment never
 -- changes it, so text already read stays as it was): 0 a routine hand-in (no
@@ -358,7 +359,8 @@ local ROUTINE = {
 -- and the narrator's thought on it when one is free).
 local function weigh(kind, ctx)
   if kind == "c-first" or kind == "c-elite" or kind == "c-tame" then return 3 end
-  if kind == "c-deed-kill" then return ctx.one and 3 or 2 end -- one asked for: a named foe
+  if kind == "c-deed-kill" or kind == "c-handed-kill" then return ctx.one and 3 or 2 end -- one asked for: a named foe
+  if kind == "c-handed-item" then return 2 end
   if kind == "c-deed-task" then return ctx.escort and 3 or 2 end
   if kind == "c-deed-item" then return 2 end
   if kind == "c-gear" then return ctx.fine and 2 or ctx.made and 1 or 0 end
@@ -456,7 +458,8 @@ local SPECIFIC = setmetatable({ night = true, back = true, new = true, lots = tr
 local PEOPLE = { "giver", "ender", "boss", "mates", "pet" } -- slots that name people
 -- Who asked, left out of a deed when already named; the kinds told without
 -- the person when already named (their [again] sentences).
-local AGAIN_DROPS = { ["c-deed-kill"] = true, ["c-deed-item"] = true, ["c-deed-task"] = true, ["c-deed-word"] = true }
+local AGAIN_DROPS = { ["c-deed-kill"] = true, ["c-deed-item"] = true, ["c-deed-task"] = true, ["c-deed-word"] = true,
+  ["c-handed-kill"] = true, ["c-handed-item"] = true }
 local AGAIN = { ["c-report"] = true, ["c-deliver"] = true, ["c-deed-word"] = true, ["c-quest"] = true }
 local Book = {}
 Book.__index = Book
@@ -885,7 +888,12 @@ function Book:deed(m, key, tags)
     tags.teeth = ({ Wolf = true, Cat = true, Bear = true, Boar = true, Crocolisk = true, Raptor = true })[self.creatureKinds[o.name] or ""]
     local people = foeOf(o.name, self.creatureKinds[o.name])
     if people then tags[people] = true end
-    done = self:say("c-deed-kill", key, values, tags, nil, true)
+    -- (handed in on the spot: to whom, if not named in the paragraph already)
+    if tags.handed and not tags.more then
+      local handed = { n = values.n, foes = values.foes, giver = m.ender or m.giver }
+      done = self:say("c-handed-kill", key, handed, tags, nil, true)
+    end
+    done = done or self:say("c-deed-kill", key, values, tags, nil, true)
   elseif o and o.type == "item" and o.held and o.name and m.ender then
     -- a thing in hand when the quest was taken (a note, a letter found on a
     -- foe), carried to another: a delivery
@@ -920,7 +928,11 @@ function Book:deed(m, key, tags)
     tags.meat = o.name:match("Meat$") or nil -- uncounted: "it"
     local kind = not (tags.cloth or tags.meat) and thingOf(o.name)
     if kind then tags[kind] = true end
-    done = self:say("c-deed-item", key, values, tags, tags.trophy and { trophy = true } or nil, true)
+    if tags.handed and not tags.more and not tags.trophy then
+      local handed = { n = values.n, thing = values.thing, giver = m.ender or m.giver }
+      done = self:say("c-handed-item", key, handed, tags, nil, true)
+    end
+    done = done or self:say("c-deed-item", key, values, tags, tags.trophy and { trophy = true } or nil, true)
   elseif o and o.text and instruction(o.text) then
     -- told after the fact: "escort the Defias Traitor to discover where
     -- VanCleef was hiding" (the log's "The Defias Traitor", "is hiding")
@@ -1259,6 +1271,33 @@ function Book:chapter(n, ch)
   local mates, dungeon = {}, nil -- who joined me so far in the chapter; the dungeon I'm in
   local merged, found = {}, nil -- moments told with the one before; the find just told
   local doneAt = {} -- quest = where its work was told in the log
+  -- the moments told on either side (a level reached isn't one)
+  local function nextOf(j)
+    j = j + 1
+    while ch.log[j] and ch.log[j].k == "level" do j = j + 1 end
+    return ch.log[j]
+  end
+  local function prevAt(j)
+    j = j - 1
+    while j > 0 and ch.log[j] and ch.log[j].k == "level" do j = j - 1 end
+    return j
+  end
+  -- a quest's work handed in on the spot (its turn-in next, in the same
+  -- place): told once, at the turn-in, with whom it was for ("I brought Sten
+  -- Stoutarm eight Tough Wolf Meat"); the work alone says less
+  -- a night (or a rest) and its waking less than half an hour apart: a relog,
+  -- not a break (the recorder no longer keeps them; older journals have them)
+  local relog = {}
+  for j, m in ipairs(ch.log or {}) do
+    local w = ch.log[j + 1]
+    if (m.k == "night" or m.k == "rested") and not m.last and w and w.k == "wake" and (w.at or 0) - (m.at or 0) < 1800 then
+      relog[j], relog[j + 1] = true, true
+    end
+  end
+  local function handedNext(m, i)
+    local nx = nextOf(i)
+    return nx and nx.k == "quest" and nx.told and nx.id ~= nil and nx.id == m.id and placeOf(nx) == placeOf(m)
+  end
   -- what a moment is to the fold: "low" (a routine hand-in), "silent" (told
   -- with another, or not at all: neither told nor tallied), else nothing
   local function routine(m, i)
@@ -1266,9 +1305,12 @@ function Book:chapter(n, ch)
     if m.k == "gear" then return (m.quality or 2) < 3 and not m.made and "low" or nil end
     if m.k ~= "quest" and m.k ~= "done" then return nil end
     if m.abandoned then return "silent" end
-    if m.k == "quest" and m.told then -- a report back, unless right after the work
-      local justDone = m.id and doneAt[m.id] == i - 1 and placeOf(ch.log[i - 1]) == placeOf(m)
-      return (m.ender and not justDone) and "low" or "silent"
+    if m.k == "done" and handedNext(m, i) then return "silent" end -- told at its turn-in
+    if m.k == "quest" and m.told then -- a report back; right after the work, the work itself
+      local j = prevAt(i)
+      local justDone = m.id and doneAt[m.id] == j and j > 0 and placeOf(ch.log[j]) == placeOf(m)
+      if justDone then return nil end
+      return m.ender and "low" or "silent"
     end
     local o = objectiveOf(m)
     if o and o.type == "item" and o.held and o.name and m.ender then return "low" end -- a delivery
@@ -1317,6 +1359,8 @@ function Book:chapter(n, ch)
     end
     if m == startPlace then
       -- told by the opening
+    elseif relog[i] then
+      -- a relog: no night
     elseif foldNow then
       -- told in the scene's tally
     elseif m.k == "level" then
@@ -1372,17 +1416,27 @@ function Book:chapter(n, ch)
     elseif m.k == "done" and m.abandoned then
       -- a quest given up: as if never done
     elseif m.k == "done" then
-      -- a quest's work done: told where it happened
+      -- a quest's work done: told where it happened (or at its turn-in, if
+      -- that comes right after, in the same place)
       if m.id then doneAt[m.id] = i end
-      local t = tags({ done = true }, m) -- (not the hand-in: "brought back" waits for it)
-      prepare()
-      dropKill(m, t)
-      clause(self:deed(m, key, t), m, key)
+      if not handedNext(m, i) then
+        local t = tags({ done = true }, m) -- (not the hand-in: "brought back" waits for it)
+        prepare()
+        dropKill(m, t)
+        clause(self:deed(m, key, t), m, key)
+      end
     elseif m.k == "quest" and m.told then
-      -- its work told already: the turn-in is a return to who asked, none
-      -- when it comes right after the work, the returns in a row as one
-      local justDone = m.id and doneAt[m.id] == i - 1 and placeOf(ch.log[i - 1]) == place
-      if not merged[i] and m.ender and not justDone then
+      -- its work told already: the turn-in is a return to who asked, the
+      -- returns in a row as one; right after the work, in the same place,
+      -- the work and the hand-in in one ("I brought Sten eight …")
+      local j = prevAt(i)
+      local justDone = m.id and doneAt[m.id] == j and j > 0 and placeOf(ch.log[j]) == place
+      if justDone then
+        local t = tags({ handed = true }, m)
+        prepare()
+        dropKill(m, t)
+        clause(self:deed(m, key, t), m, key)
+      elseif not merged[i] and m.ender then
         local enders, seenEnder, j = { m.ender }, { [m.ender] = true }, i + 1
         while ch.log[j] and ch.log[j].k == "quest" and ch.log[j].told and ch.log[j].ender
           and placeOf(ch.log[j]) == place do
@@ -1558,12 +1612,14 @@ function Book:chapter(n, ch)
       elseif m.k == "rested" then
         alone("rest", key, self:here({ place = mid(m.place) }, m.place), tags({ fire = m.fire or nil, last = false }, m), m)
       elseif m.k == "night" and not m.last then
-        alone("night", key, self:here({}, place), tags({ last = false }, m), m)
+        -- (indoors without an inn: a corner of a hall, not the open ground)
+        alone(m.inside and "night-in" or "night", key, self:here({}, place), tags({ last = false }, m), m)
       elseif m.k == "wake" then
         flush()
         newParagraph()
         self.last = nil
-        alone("wake", key, self:here({}, place), tags({ rest = m.after == "rest" or nil }, m))
+        local indoors = m.inside and m.after ~= "rest"
+        alone(indoors and "wake-in" or "wake", key, self:here({}, place), tags({ rest = m.after == "rest" or nil }, m))
       end
     end
     if m.k ~= "level" then prev = m end
@@ -1626,7 +1682,7 @@ function Book:chapter(n, ch)
       tags({ slow = played > 7200 or nil, quick = (played > 0 and played < 1800) or nil, rest = e.how == "rest" or nil }))
     self.onlyPlain = nil
     if e.how == "long" then
-      say("night", "last", self:here({}, e.place), tags({ last = true, night = true }))
+      say(e.inside and "night-in" or "night", "last", self:here({}, e.place), tags({ last = true, night = true }))
     elseif e.how == "summit" then
       -- the highest level: the journey's end, the journal's last words
       say("summit", "last", self:here({ level = words(e.level or 60) }, e.place), tags({ last = true }))

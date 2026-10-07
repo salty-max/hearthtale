@@ -66,6 +66,9 @@ const KINDS: Record<string, string[]> = {
   campfire: ["at", "in"],
   night: ["at", "in"],
   wake: ["at", "in"],
+  // the same, indoors without an inn (a hall, a barracks, a cellar)
+  "night-in": ["at", "in"],
+  "wake-in": ["at", "in"],
   rest: ["place", "at", "in"],
   power: ["spell"],
   mount: [],
@@ -83,6 +86,9 @@ const KINDS: Record<string, string[]> = {
   "c-elite": ["foe"],
   "c-deed-kill": ["n", "foes", "giver", "ender"],
   "c-deed-item": ["n", "thing", "giver", "ender"],
+  // the work handed in on the spot, to whom: "brought Sten Stoutarm eight Tough Wolf Meat"
+  "c-handed-kill": ["n", "foes", "giver"],
+  "c-handed-item": ["n", "thing", "giver"],
   "c-deed-task": ["task", "giver", "ender"],
   "c-deed-word": ["giver", "ender"],
   "c-deliver": ["thing", "ender", "giver"],
@@ -116,7 +122,7 @@ const TAGS = ["home", "ally", "foe", "neutral", "night", "hc", "high", "low", "f
   "scarlet", "undead", "demon", "elemental", "dragonkin", "spider",
   "stone", "egg", "feather", "hide", "paper", "plant", "relic", "remains", "teeth", "mechanical", "cloth", "meat", "explore", "escort", "new", "made", "form", "demon", "steed"];
 const RACES = ["Human", "Dwarf", "NightElf", "Gnome", "Draenei", "Orc", "Troll", "Tauren", "Scourge", "BloodElf", "Skyborne"];
-const ROUTINE = new Set("deed-kill deed-item deed-task deed-word deliver report kill first gear trainer inn travel return place group skill prof".split(" ").map((kind) => `c-${kind}`));
+const ROUTINE = new Set("deed-kill deed-item deed-task deed-word deliver report kill first gear trainer inn travel return place group skill prof handed-kill handed-item".split(" ").map((kind) => `c-${kind}`));
 // The recap's kinds: one sentence of the recap holds a thought, the others are plain.
 const RECAP = new Set(["quests-many", "kills", "kills-two", "closing"]);
 const CLASSES = ["WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK", "DRUID"];

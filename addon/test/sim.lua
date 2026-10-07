@@ -323,10 +323,17 @@ local view = ns.settledView(J)
 check(#ch().log == logBeforeNight and view.chapters[1].log[#view.chapters[1].log].k == "night" and view ~= J,
   "a logout in the wild: the book tells the night outdoors (not the waking yet); the journal itself waits for the next login")
 check(B1.chapters[1].text == ns.writeBook(view).chapters[1].text, "the saved text is the game's, word for word")
+G.wait(3600) -- (away an hour: a real break)
 login()
 check(#J.chapters == 1 and moments("night")[1] and moments("wake")[1] and moments("wake")[1].after == "night" and #printed == before,
   "a logout in the wild: a night outdoors, then the road again, the same chapter")
 local nights = #moments("night")
+-- A relog (away two minutes): no break, nothing told.
+local logBeforeRelog = #ch().log
+logout()
+G.wait(120)
+login()
+check(#ch().log == logBeforeRelog and #moments("night") == nights, "a relog of two minutes: no night, nothing told")
 reload()
 check(#moments("night") == nights and #J.chapters == 1, "a /reload is no night")
 
@@ -334,6 +341,7 @@ check(#moments("night") == nights and #J.chapters == 1, "a /reload is no night")
 state.resting, state.sub = true, "Thunderbrew Distillery"
 local printedBefore = #printed
 logout()
+G.wait(3600)
 local B2 = J.book.chapters[1]
 check(not B2.open and B2.ended and B2.text:find("Thunderbrew Distillery", 1, true) and not ch(1).ended and #printed == printedBefore,
   "a logout at an inn: the saved book tells the chapter closed at once (the journal settles it at the next login, with its chat line)")
@@ -350,6 +358,7 @@ check(not closed.open and closed.place == "Thunderbrew Distillery" and closed.te
 -- Too little written: a rest doesn't close it.
 state.resting = true
 logout()
+G.wait(3600)
 state.resting = false
 login()
 check(#J.chapters == 2 and moments("rested")[1] and moments("wake")[1].after == "rest", "a rest with almost nothing written: a line, and the chapter goes on")
@@ -361,6 +370,7 @@ for i = 1, 3 do
 end
 state.auras[1229739] = true
 logout()
+G.wait(3600)
 state.auras[1229739] = nil
 login()
 check(#J.chapters == 3 and ch(2).ended.how == "campfire", "a logout by a campfire closes the chapter")
@@ -369,6 +379,7 @@ check(#J.chapters == 3 and ch(2).ended.how == "campfire", "a logout by a campfir
 for i = 1, 3 do state.titles = { [300 + i] = "Chore " .. i }; fire("QUEST_TURNED_IN", 300 + i, 80, 0) end
 G.played(4 * 3600 + 60)
 logout()
+G.wait(3600)
 login()
 check(#J.chapters == 4 and ch(3).ended.how == "long" and moments("night", 3)[1].last, "past four hours, a night outdoors closes it")
 
@@ -643,5 +654,28 @@ else
     "elsewhere the second name is a realm: left out")
 end
 state.name, state.surname, state.party = nil, nil, {}
+
+-- Forever: a creature someone else hit first isn't mine; one I fought, chosen
+-- before the fight and dying still chosen, is.
+do
+  local C = HearthtaleChar
+  local function wolves() local cur = C.chapters[#C.chapters]; return cur.kills["Ragged Young Wolf"] or 0 end
+  local before = wolves()
+  kill(1, 990)
+  kill(1, 991, true)
+  if FOREVER then
+    check(wolves() == before + 1, "Forever: a creature fought and seen dying is a kill; one another claimed isn't")
+  end
+  -- A night indoors without an inn (a hall, a barracks): told as such.
+  state.indoors = true
+  logout()
+  G.wait(3600)
+  login()
+  state.indoors = nil
+  local log = C.chapters[#C.chapters].log
+  local night, wake = log[#log - 1], log[#log]
+  check(night and night.k == "night" and night.inside and wake and wake.k == "wake" and wake.inside,
+    "a night indoors without an inn: kept as such, for the writer")
+end
 
 io.write(FOREVER and "all good (Forever)\n" or "all good\n")

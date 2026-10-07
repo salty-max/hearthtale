@@ -1,0 +1,21 @@
+---
+kind: c-handed-kill
+---
+- [!one !more] killed {n} {foes} for {giver}
+- [!one !more] dealt with {n} {foes} for {giver}
+- [!one !more] saw to {n} {foes} for {giver}
+- [!one !more] cut down {n} {foes} at {giver}'s asking
+- [!one !more] brought down {n} {foes} for {giver}
+- [!one !more] cleared out {n} {foes} for {giver}
+- [!one !more] finished off {n} {foes} at {giver}'s request
+- [!one !more] put down {n} {foes} for {giver}
+- [!one !more] hunted down {n} {foes} for {giver}
+- [!one !more] thinned out {n} {foes} for {giver}
+- [one !more] killed {foes} for {giver}
+- [one !more] dealt with {foes} for {giver}
+- [one !more] put an end to {foes} for {giver}
+- [one !more] brought down {foes} at {giver}'s request
+- [one !more] defeated {foes} for {giver}
+- [one !more] hunted down {foes} for {giver}
+- [one !more] finished {foes} off at {giver}'s asking
+- [one !more] saw to {foes} for {giver}

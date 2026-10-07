@@ -268,6 +268,7 @@ local function life(race, class, hc, from, to)
         add(m("campfire"))
       elseif r <= 90 then
         if chance(0.7) then add(m("night")) else add(m("rested", { place = one(zone[2]), fire = chance(0.3) or nil })) end
+        clock = clock + 3600 -- (a real break: a relog of minutes isn't told)
         add(m("wake", { after = ch.log[#ch.log].k == "rested" and "rest" or "night" }))
       elseif r <= 92 then
         add(m("inn", { place = one(zone[2]) }))
@@ -588,6 +589,60 @@ for _, race in ipairs(RACES) do
   inspect(race .. " surnames", text)
   if text:find("Brightwood") or text:find("Ashmane") or not text:find("Harrysaun") or not text:find("Grukk") then
     problem(race .. " surnames", "the people met not by their first name", text)
+  end
+end
+
+-- A quest's work handed in on the spot (its turn-in next, same place): told
+-- once, at the turn-in, with whom it was for. Apart (a journey between): the
+-- work where it was done, the return later.
+for _, race in ipairs(RACES) do
+  for seed = 1, 8 do
+    local kind = seed % 2 == 0 and { type = "monster", name = "Rockjaw Trogg", n = seed % 4 == 0 and 1 or 6 }
+      or { type = "item", name = "Tough Wolf Meat", n = seed % 3 == 0 and 1 or 8 }
+    local function at(t, sub) return { zone = "Dun Morogh", sub = sub or "Coldridge Valley", at = t } end
+    local function m(t, fields, sub) local x = at(t, sub); for k, v in pairs(fields) do x[k] = v end; return x end
+    local spot = { guid = "handed-" .. race .. seed, race = race, class = COMBOS[race][1], began = { level = 2 }, chapters = { {
+      start = { level = 2, zone = "Dun Morogh", sub = "Coldridge Valley" }, log = {
+        m(100, { k = "done", id = 179, giver = "Sten Stoutarm", objectives = { kind } }),
+        m(110, { k = "level", level = 3 }),
+        m(120, { k = "quest", id = 179, told = true, giver = "Sten Stoutarm", ender = "Sten Stoutarm", objectives = { kind } }),
+      } } } }
+    local text = ns.writeBook(spot).chapters[1].text
+    inspect(race .. " handed on the spot", text)
+    local _, sten = text:gsub("Sten Stoutarm", "")
+    if sten ~= 1 then problem(race .. " handed on the spot", "the work and the hand-in not told once, with whom", text) end
+    local apart = { guid = "apart-" .. race .. seed, race = race, class = COMBOS[race][1], began = { level = 2 }, chapters = { {
+      start = { level = 2, zone = "Dun Morogh", sub = "Coldridge Valley" }, log = {
+        m(100, { k = "done", id = 179, giver = "Sten Stoutarm", objectives = { kind } }),
+        m(200, { k = "place", zone = "Dun Morogh", sub = "Anvilmar" }, "Anvilmar"),
+        m(300, { k = "quest", id = 179, told = true, giver = "Sten Stoutarm", ender = "Sten Stoutarm", objectives = { kind } }, "Anvilmar"),
+      } } } }
+    text = ns.writeBook(apart).chapters[1].text
+    inspect(race .. " handed apart", text)
+    if not text:find("Sten Stoutarm", 1, true) or not (text:find("Wolf Meat", 1, true) or text:find("Trogg", 1, true)) then
+      problem(race .. " handed apart", "the work or the return lost", text)
+    end
+  end
+end
+
+-- A relog (a night and its waking minutes apart): no night told. A night
+-- indoors without an inn, and its waking, and a long stretch ending indoors.
+for _, race in ipairs(RACES) do
+  for seed = 1, 6 do
+    local function m(t, fields) fields.zone, fields.sub, fields.at = "Dun Morogh", "Anvilmar", t; return fields end
+    local c = { guid = "nights-" .. race .. seed, race = race, class = COMBOS[race][1], hardcore = seed % 3 == 0 or nil,
+      began = { level = 2 }, chapters = { {
+        start = { level = 2, zone = "Dun Morogh", sub = "Anvilmar" }, played = 4 * 3600 + 60, log = {
+          m(100, { k = "kill", name = "Ragged Young Wolf", kind = "Wolf" }),
+          m(200, { k = "night" }), m(300, { k = "wake", after = "night" }),
+          m(400, { k = "kill", name = "Rockjaw Trogg", kind = "Humanoid" }),
+          m(500, { k = "night", inside = true, night = seed % 2 == 0 or nil }),
+          m(9000, { k = "wake", after = "night", inside = true, night = seed % 2 == 0 or nil }),
+          m(9100, { k = "kill", name = "Small Crag Boar", kind = "Boar" }),
+          m(9200, { k = "night", last = true, inside = true }),
+        }, ended = { level = 2, zone = "Dun Morogh", sub = "Anvilmar", place = "Anvilmar", how = "long", inside = true } } } }
+    local text = ns.writeBook(c).chapters[1].text
+    inspect(race .. " nights", text)
   end
 end
 
