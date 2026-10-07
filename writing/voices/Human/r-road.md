@@ -1,7 +1,7 @@
 ---
 kind: r-road
 ---
-- the road dusty and the company scarce
+- [!grouped] the road dusty and the company scarce
 - [!back] curious what its people were like
 - [!back] its name on a signpost before I saw a roof
 - [!back] keen to see what work the place had for me

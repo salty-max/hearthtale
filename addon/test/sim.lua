@@ -78,6 +78,41 @@ state.npc = nil
 local q2 = moments("quest")[2].objectives[1]
 check(q2.type == "monster" and q2.name == "Rockjaw Trogg" and q2.n == 6, "… a kill quest read through the game's own format (\"%s slain\")")
 
+-- A quest's work done in one place and turned in at another: the work is a
+-- moment where it happened, the turn-in a return; a note in hand from the
+-- start has nothing done before its delivery.
+local function accept(id, title, giver, objective)
+  state.npc, state.titles = giver, { [id] = title }
+  state.objectives = { [id] = { objective } }
+  if FOREVER then fire("QUEST_ACCEPTED", id) else fire("QUEST_ACCEPTED", 1, id) end
+  fire("QUEST_LOG_UPDATE")
+  state.npc = nil
+end
+local function turnIn(id, ender)
+  state.npc = ender
+  fire("QUEST_COMPLETE")
+  fire("QUEST_TURNED_IN", id, 80, 0)
+  state.npc = nil
+end
+accept(181, "The Troll Cave", "Grelin Whitebeard", { text = "Frostmane Troll Whelp slain: 0/14", type = "monster", numRequired = 14 })
+state.sub = "Frostmane Hold"
+state.objectives[181][1].finished = true
+fire("QUEST_LOG_UPDATE")
+fire("QUEST_LOG_UPDATE")
+local done = moments("done")
+check(#done == 1 and done[1].sub == "Frostmane Hold" and done[1].giver == "Grelin Whitebeard" and done[1].objectives[1].name == "Frostmane Troll Whelp",
+  "a quest's work done: a moment where it happened, once")
+state.sub = "Anvilmar"
+turnIn(181, "Grelin Whitebeard")
+check(moments("quest")[3].told and moments("quest")[3].sub == "Anvilmar", "… its turn-in, elsewhere, a return to who asked")
+accept(182, "Coldridge Valley Mail Delivery", "Talin Keeneye",
+  { text = "Grelin's Letter: 1/1", type = "item", numRequired = 1, finished = true })
+fire("QUEST_LOG_UPDATE")
+turnIn(182, "Grelin Whitebeard")
+local mail = moments("quest")[4]
+check(#moments("done") == 1 and not mail.told and mail.objectives[1].held,
+  "a note in hand from the start: nothing done before its delivery")
+
 -- Kills.
 kill(1, 1); kill(1, 2); kill(2, 3)
 local kills = moments("kill")
@@ -232,7 +267,13 @@ local one = book.chapters[1]
 check(not book.prologue and one.number == 1 and one.open and one.from == 1 and one.to == 2 and one.close and one.rare
   and one.text:find("Tough Wolf Meat", 1, true) and one.text:find("Rockjaw Troggs", 1, true) and not one.text:find('"Dwarven Outfitters"', 1, true)
   and not one.text:find("{", 1, true), "chapter 1, still being written: its moments in order, the quests told by what was done")
-check(not one.text:find("level", 1, true), "a level reached isn't told (the chapter's levels say it)")
+do -- the Troll Cave: its work told in Frostmane Hold, then a return to Grelin in Anvilmar
+  local work = one.text:find("Frostmane Troll Whelps", 1, true)
+  local back = work and one.text:find("Anvilmar", work, true)
+  local returned = back and one.text:find("Grelin Whitebeard", back, true)
+  check(work and back and returned, "a quest's work told where it happened, the return where it was turned in")
+end
+check(not one.text:find("level two", 1, true), "a level reached isn't told (the chapter's levels say it)")
 local textBefore = one.text
 state.sub = "Kharanos"
 fire("ZONE_CHANGED")

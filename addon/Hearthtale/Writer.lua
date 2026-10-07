@@ -300,7 +300,7 @@ local ROUTINE = {
   ["c-kill"] = "r-foe", ["c-deed-kill"] = "r-foe", ["c-first"] = "r-first", ["c-deed-item"] = "r-item",
   ["c-deed-task"] = "r-task", ["c-deed-word"] = "r-task", ["c-deliver"] = "r-task", ["c-gear"] = "r-gear", ["c-trainer"] = "r-lesson",
   ["c-skill"] = "r-lesson", ["c-prof"] = "r-lesson", ["c-travel"] = "r-road", ["c-return"] = "r-road",
-  ["c-place"] = "r-road", ["c-inn"] = "r-inn", ["c-group"] = "r-company",
+  ["c-place"] = "r-road", ["c-inn"] = "r-inn", ["c-group"] = "r-company", ["c-report"] = "r-task",
 }
 -- The last masters of the dungeons: their fall is a sentence of its own.
 local FINAL = {}
@@ -615,6 +615,7 @@ function Book:deed(m, key, tags)
   elseif o and o.type == "item" and o.name then
     local count = o.n or 1
     values.n, values.thing = words(count), count > 1 and things(o.name) or itemName(o.name)
+    if tags.done then values.giver = nil end -- found, not yet handed over
     tags.one = count == 1 or nil
     tags.trophy = TROPHY[o.name:match("^(%a+) of ") or ""] or nil
     tags.cloth = o.name:match("Cloth$") or o.name:match("Silk$") or o.name:match("Wool$") or nil
@@ -740,6 +741,7 @@ function Book:chapter(n, ch)
     if t.home == nil then t.home = (land and land.home and land.home[c.race or ""]) or nil end
     local level = (m and m.level) or lvl
     if t.night == nil then t.night = (m and m.night) or nil end
+    if t.grouped == nil then t.grouped = (m and m.grouped) or nil end
     if t.high == nil then t.high = level >= 40 or nil end
     if t.low == nil then t.low = level <= 10 or nil end
     return t
@@ -876,7 +878,8 @@ function Book:chapter(n, ch)
   end
 
   local mates, dungeon = {}, nil -- who joined me so far in the chapter; the dungeon I'm in
-  local merged, found = {}, nil -- group moments told with the one before; the find just told
+  local merged, found = {}, nil -- moments told with the one before; the find just told
+  local doneAt = {} -- quest = where its work was told in the log
   for i, m in ipairs(ch.log or {}) do
     if m.sub then self.placeNames[m.sub] = true end
     if m.zone then self.placeNames[m.zone] = true end
@@ -942,6 +945,27 @@ function Book:chapter(n, ch)
         scene, sceneZone = place, m.zone
         seenHere[place] = true
         self.last, self.there = place, false
+      end
+    elseif m.k == "done" then
+      -- a quest's work done: told where it happened
+      if m.id then doneAt[m.id] = i end
+      local t = tags({ done = true }, m) -- (not the hand-in: "brought back" waits for it)
+      prepare()
+      clause(self:deed(m, key, t), m, key)
+    elseif m.k == "quest" and m.told then
+      -- its work told already: the turn-in is a return to who asked, none
+      -- when it comes right after the work, the returns in a row as one
+      local justDone = m.id and doneAt[m.id] == i - 1 and placeOf(ch.log[i - 1]) == place
+      if not merged[i] and m.ender and not justDone then
+        local enders, seenEnder, j = { m.ender }, { [m.ender] = true }, i + 1
+        while ch.log[j] and ch.log[j].k == "quest" and ch.log[j].told and ch.log[j].ender
+          and placeOf(ch.log[j]) == place do
+          if not seenEnder[ch.log[j].ender] then table.insert(enders, ch.log[j].ender) end
+          seenEnder[ch.log[j].ender] = true
+          merged[j] = true
+          j = j + 1
+        end
+        inScene(c_("c-report", { ender = listing(enders) }))
       end
     elseif m.k == "quest" then
       local t = tags(nil, m)
@@ -1103,7 +1127,7 @@ function Book:chapter(n, ch)
     local played = ch.played or 0
     plainUnless("closing")
     say("closing", "end", { time = playedWords(played), gold = goldWords(ch.gold) },
-      tags({ slow = played > 7200 or nil, quick = (played > 0 and played < 1800) or nil }))
+      tags({ slow = played > 7200 or nil, quick = (played > 0 and played < 1800) or nil, rest = e.how == "rest" or nil }))
     self.onlyPlain = nil
     if e.how == "long" then
       say("night", "last", self:here({}, e.place), tags({ last = true, night = true }))

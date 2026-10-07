@@ -5,7 +5,7 @@ kind: r-foe
 - steadier afterwards than I expected
 - a necessary thing, done with care
 - the Light giving me patience, if not ease
-- glad no one else had been hurt
+- [grouped] glad no one else had been hurt
 - [one] a life I would have spared, if I could
 - [!one] each faced in turn, without hatred
 - [teeth] grateful to keep all my fingers

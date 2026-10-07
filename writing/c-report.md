@@ -1,0 +1,11 @@
+---
+kind: c-report
+---
+- reported back to {ender}
+- let {ender} know it was done
+- told {ender} the work was done
+- gave {ender} the news
+- returned to {ender} with the work done
+- checked in with {ender}
+- saw {ender} again, the work behind me
+- handed in my work to {ender}

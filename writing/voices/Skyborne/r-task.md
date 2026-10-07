@@ -7,7 +7,7 @@ kind: r-task
 - [client:forever] done with attention, if not with certainty
 - [client:forever] with a better view of who relied on whom
 - [client:forever faction:horde] giving as I hoped to be given to
-- [client:forever faction:alliance] one more thing I could manage on my own
+- [client:forever faction:alliance !grouped] one more thing I could manage on my own
 - [client:forever explore] the place making more sense from a second angle
 - [client:forever explore] noting how the wind moved through it
 - [client:forever escort] keeping my pace low and my eyes up

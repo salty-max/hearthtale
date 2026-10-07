@@ -4,19 +4,24 @@ kind: c-deed-item
 - [!one] gathered {n} {thing}
 - [!one] collected {n} {thing}
 - [!one] found {n} {thing}
-- [!one] brought back {n} {thing}
+- [!one !done] brought back {n} {thing}
 - [!one] recovered {n} {thing}
-- [!one] came back with {n} {thing}
+- [!one !done] came back with {n} {thing}
 - [!one] tracked down {n} {thing}
-- [!one] fetched {n} {thing}
+- [!one !done] fetched {n} {thing}
 - [one] gathered {thing}
 - [one] collected {thing}
 - [one] found {thing}
-- [one] brought back {thing}
+- [one !done] brought back {thing}
 - [one] recovered {thing}
-- [one] came back with {thing}
+- [one !done] came back with {thing}
 - [one] tracked down {thing}
-- [one] fetched {thing}
-- [one trophy] brought {giver} {thing}
-- [one trophy] laid {thing} before {giver}
-- [one trophy] set {thing} down in front of {giver}
+- [one !done] fetched {thing}
+- [one trophy !done] brought {giver} {thing}
+- [one trophy !done] laid {thing} before {giver}
+- [one trophy !done] set {thing} down in front of {giver}
+- [!one done] had all {n} {thing}
+- [!one done] had {n} {thing} in my pack
+- [one done] had {thing} in my pack
+- [one trophy done] took {thing} as proof
+- [one trophy done] claimed {thing} as proof of the deed

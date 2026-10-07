@@ -2,7 +2,7 @@
 kind: r-foe
 ---
 - without pleasure in it
-- the forest quieter for it, though not better
+- the place quieter for it, though not better
 - regretting that it had come to this
 - watchful long after it was over
 - [one] a life I would have spared, given the choice

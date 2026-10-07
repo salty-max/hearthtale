@@ -133,11 +133,15 @@ local function life(race, class, hc, from, to)
   local sub = zone[2][1]
   local seen, kinds, level, once = {}, {}, from, {}
   local clock, isNight = 1790000000, false
+  local questId, returns = 0, {} -- quests whose work was told, not yet returned
+  local grouped = false
   local function m(k, fields)
     fields = fields or {}
     clock = clock + (chance(0.15) and rand(3600, 10000) or rand(60, 900))
     if chance(0.15) then isNight = not isNight end
+    if grouped and chance(0.1) then grouped = false end
     fields.k, fields.zone, fields.sub, fields.night, fields.at = k, fields.zone or zone[1], fields.sub or sub, isNight or nil, clock
+    fields.grouped = grouped or nil
     return fields
   end
   while level <= to do
@@ -145,6 +149,8 @@ local function life(race, class, hc, from, to)
       log = {}, kills = {}, quests = 0, played = rand(600, 18000), gold = rand(0, 3) == 0 and 0 or rand(5, 40000) }
     local function add(x) table.insert(ch.log, x) end
     for _ = 1, rand(3, 22) do
+      -- the returns to who asked, now and then, one or several in a row
+      while #returns > 0 and chance(0.25) do add(m("quest", table.remove(returns, 1))) end
       local r = rand(112)
       local hunter = class == "HUNTER" and level >= 10
       if r > 100 then
@@ -187,8 +193,17 @@ local function life(race, class, hc, from, to)
         elseif roll <= 78 then -- a note in hand, to be delivered
           o = { { type = "item", name = one({ "Wiley's Note", "An Unsent Letter", "Sealed Report" }), n = 1, held = true } }
         end
-        add(m("quest", { title = chance(0.95) and one(QUESTS) or nil, giver = chance(0.8) and one(GIVERS) or nil,
-          ender = (chance(0.4) or (o and o[1].held)) and one(GIVERS) or nil, objectives = o }))
+        local q = { title = chance(0.95) and one(QUESTS) or nil, giver = chance(0.8) and one(GIVERS) or nil,
+          ender = (chance(0.4) or (o and o[1].held)) and one(GIVERS) or nil, objectives = o }
+        if o and not o[1].held and chance(0.6) then
+          -- its work done and told now; the return later (or right away)
+          questId = questId + 1
+          q.id, q.told, q.ender = questId, true, q.ender or one(GIVERS)
+          add(m("done", { id = q.id, title = q.title, giver = q.giver, objectives = o }))
+          if chance(0.3) then add(m("quest", q)) else table.insert(returns, q) end
+        else
+          add(m("quest", q))
+        end
       elseif r <= 52 then
         local cr = one(CREATURES)
         local n = rand(1, 12)
@@ -203,6 +218,7 @@ local function life(race, class, hc, from, to)
       elseif r <= 60 then
         add(m("close", { foe = chance(0.8) and one(CREATURES)[1] or nil, hp = rand(1, 9) }))
       elseif r <= 63 then
+        grouped = true -- the company stays a while
         add(m("group", { name = one(MATES), class = "WARRIOR" }))
       elseif r <= 66 then
         local d = one(DUNGEONS)

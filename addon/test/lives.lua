@@ -38,6 +38,8 @@ local function moves(G)
     state.npc = nil
     G.wait(2 * MINUTE)
     if work then work() end
+    -- the work done: the quest log says so, where it happened
+    if objective then objective.finished = true; fire("QUEST_LOG_UPDATE") end
     state.npc = ender or giver
     fire("QUEST_COMPLETE")
     fire("QUEST_TURNED_IN", quest, 100, 0)
@@ -456,6 +458,10 @@ function lives.edric()
     state.npc = nil
     G.wait(MINUTE)
   end
+  local function complete(id)
+    for _, o in ipairs(state.objectives[id]) do o.finished = true end
+    fire("QUEST_LOG_UPDATE")
+  end
   local function found(name, n) return { text = name .. ": 0/" .. n, type = "item", numRequired = n } end
   local function held(name) return { text = name .. ": 1/1", type = "item", numRequired = 1, finished = true } end
   local function slain(name, n) return { text = name .. " slain: 0/" .. n, type = "monster", numRequired = n } end
@@ -489,6 +495,7 @@ function lives.edric()
   slay("Defias Pathstalker", 3)
   slay("Defias Messenger", 1)
   loot("A Mysterious Message")
+  complete(message)
   go("Sentinel Hill")
   turnIn(message, "Gryan Stoutmantle", 600)
   local escort = accept("The Defias Brotherhood", "The Defias Traitor",
@@ -497,6 +504,7 @@ function lives.edric()
   slay("Defias Pillager", 2)
   slay("Defias Highwayman", 1)
   G.wait(5 * MINUTE)
+  complete(escort)
   go("Sentinel Hill")
   turnIn(escort, "Gryan Stoutmantle", 700)
   local head = accept("The Defias Brotherhood", "Gryan Stoutmantle", found("Head of VanCleef", 1))
@@ -512,8 +520,10 @@ function lives.edric()
   slay("Undead Excavator", 6, "Undead")
   slay("Undead Dynamiter", 3, "Undead")
   for _ = 1, 4 do loot("Miners' Union Card") end
+  complete(memories)
   slay("Foreman Thistlenettle", 1, "Undead")
   loot("Thistlenettle's Badge")
+  complete(brother)
 
   -- ── the Deadmines ─────────────────────────────────────────────────────────────
   state.instance, state.zone, state.sub = "The Deadmines", "The Deadmines", nil
@@ -528,6 +538,7 @@ function lives.edric()
   slay("Goblin Craftsman", 3)
   slay("Sneed's Shredder", 1, "Mechanical", nil, "elite")
   loot("Gnoam Sprecklesprocket")
+  complete(assault)
   boss("Sneed", "Humanoid", 2)
   for _ = 1, 6 do loot("Red Silk Bandana") end
   slay("Goblin Engineer", 4)
@@ -538,6 +549,7 @@ function lives.edric()
   slay("Defias Companion", 3, "Beast")
   slay("Defias Squallshaper", 3)
   for _ = 1, 4 do loot("Red Silk Bandana") end
+  complete(bandanas)
   closeCall("Mr. Smite", 8)
   boss("Mr. Smite", "Humanoid", 4)
   loot("Smite's Mighty Hammer", 3)
@@ -546,6 +558,7 @@ function lives.edric()
   boss("Captain Greenskin", "Humanoid", 5)
   boss("Edwin VanCleef", "Humanoid", 6)
   loot("Head of VanCleef")
+  complete(head)
   loot("An Unsent Letter")
   local letter = accept("The Unsent Letter", nil, held("An Unsent Letter"))
   boss("Cookie", "Humanoid", 7)
