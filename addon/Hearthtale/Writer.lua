@@ -839,7 +839,18 @@ for v in ("accept activate ask assist attack awaken banish break bring build bur
   .. "witness"):gmatch("%a+") do
   INSTRUCTIONS[v] = true
 end
+-- The hand-in a quest's text may end with ("… and speak to Branstock
+-- Khalder"): the return, told as such, not part of the task.
+local HAND_IN = { "speak", "talk", "report", "return" }
+local function handIn(text)
+  local lower = text:lower()
+  for _, verb in ipairs(HAND_IN) do
+    if lower:find("^" .. verb .. " to ") and not lower:find(" and ") then return true end
+  end
+  return false
+end
 local function instruction(text)
+  if handIn(text) then return false end -- only the return: a word carried
   return INSTRUCTIONS[(text:match("^(%a+)") or ""):lower()] and not text:find("[:?]") or false
 end
 ns.instruction = instruction
@@ -848,7 +859,11 @@ local function lowerFirst(text) return (text:gsub("^%u", string.lower)) end
 -- VanCleef is hiding" is "escort the Defias Traitor to discover where
 -- VanCleef was hiding".
 local function taskOf(text)
-  return (lowerFirst((text:gsub("[%.:]%s*$", ""))):gsub(" The ", " the "):gsub(" is ", " was "):gsub(" are ", " were "))
+  text = text:gsub("[%.:]%s*$", "")
+  for _, verb in ipairs(HAND_IN) do
+    text = text:gsub(",? and " .. verb .. " to .+$", ""):gsub(",? then " .. verb .. " to .+$", "")
+  end
+  return (lowerFirst(text):gsub(" The ", " the "):gsub(" is ", " was "):gsub(" are ", " were "))
 end
 ns.taskOf = taskOf
 function Book:deed(m, key, tags)
@@ -908,6 +923,9 @@ function Book:deed(m, key, tags)
     -- told after the fact: "escort the Defias Traitor to discover where
     -- VanCleef was hiding" (the log's "The Defias Traitor", "is hiding")
     values.task = taskOf(o.text)
+    -- (a place the reader knows already: not named again at the end)
+    local at = values.task:match(" in ([^,]+)$") or values.task:match(" at ([^,]+)$")
+    if at and self.placeNames[at] then values.task = values.task:sub(1, -(#at + 5)) end
     -- Taming objectives describe the same event as UNIT_PET. Leave that
     -- telling to the pet record, even before it arrives: no lookahead and
     -- no rewriting a finished quest sentence when the pet is later named.
@@ -1030,6 +1048,16 @@ function Book:chapter(n, ch)
     self.peopleNamed, self.thingsCarried = {}, {}
   end
   local start = ch.start or {}
+  -- a start whose place the game had not told yet (Forever, at login): the
+  -- first place, moments later, is where the chapter began, not an arrival
+  local startPlace
+  do
+    local m = ch.log and ch.log[1]
+    if not start.zone and m and m.k == "place" and m.zone and (m.at or 0) - (start.at or 0) <= 60 then
+      start = setmetatable({ zone = m.zone, sub = m.sub }, { __index = start })
+      startPlace = m
+    end
+  end
   local lvl = start.level or 1
   local function tags(t, m)
     t = t or {}
@@ -1285,7 +1313,9 @@ function Book:chapter(n, ch)
     elseif what ~= "silent" and ((place and place ~= lowScene) or m.k == "place" or m.k == "dungeon" or m.k == "flight") then
       emitFold() -- the place left: its tally, once
     end
-    if foldNow then
+    if m == startPlace then
+      -- told by the opening
+    elseif foldNow then
       -- told in the scene's tally
     elseif m.k == "level" then
       lvl = m.level or lvl -- a level reached: recorded, not told
