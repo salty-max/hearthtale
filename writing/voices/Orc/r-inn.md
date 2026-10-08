@@ -1,11 +1,11 @@
 ---
 kind: r-inn
 ---
-- somewhere to return to with my strength spent
-- my strength spent and a bed waiting
-- the stone a promise of the road home
-- glad of walls for the night
-- the stone heavy with the promise of rest
-- a hearth worth defending, if it came to that
-- [night] late, and glad to stop
-- [hc] a safe place to wake, which mattered
+- closer to Orgrimmar's comfort in spirit, if not in miles
+- already ready for the peace promised by the return
+- my legs rather grateful for a stone's enchantment
+- hoping for shelter without another struggle
+- more comforting than a brave account of how little rest I needed
+- one less road between me and a place to stop
+- [night] quite ready to let the night go unwatched by me
+- [hc] loath to ask the ancestors for help I could prepare myself

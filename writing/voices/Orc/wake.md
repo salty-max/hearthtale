@@ -1,9 +1,9 @@
 ---
 kind: wake
 ---
-- [!rest] I rose {at} after a rough rest, with the work ahead giving me reason to move.
-- [!rest] I was on my feet again {at}, ready to find what the next stretch would ask.
-- [!rest] I broke camp {at}, putting what I had brought back in order.
-- [!rest] Still conscious of where I had slept, I roused myself {at} with {weapon} close.
-- [rest] I returned to the road {at}, carrying the benefit of the pause with me.
-- [rest] I went on {at}, ready to put the little rest to use.
+- [!rest] I rose {at}, with the ground no kinder to an orc's back than anyone else's.
+- [!rest] I was on my feet again {at}, hoping the road would be easier than the rough rest had been.
+- [!rest] I got up {at}, a little less weary and no less free to choose where I went.
+- [!rest] I rose {at}, with more stiffness than any proud account of endurance would admit.
+- [rest] I returned to the road {at}, with my blood quiet and my strength less spent.
+- [rest] I went on {at}, grateful to have had a pause nobody could order away from me.

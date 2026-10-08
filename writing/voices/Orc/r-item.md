@@ -1,14 +1,14 @@
 ---
 kind: r-item
 ---
-- no heavier than I could carry
-- dull work, but done
-- with no complaint worth making
-- work for the hands while the mind went elsewhere
-- [!one !plural] every one of them accounted for
-- [!one !plural] a heavy load for a small reward, but it was the work
-- [one !plural] small, but someone had need of it
-- [one !plural] easier to carry than to find
-- [meat] the smell of it putting me in mind of a cookfire
-- [cloth] useful to whoever mended the tents
-- [night] the stars enough to search by
+- my shoulders less willing than my promise to help
+- rather more carrying than an orc's reputation should invite
+- the next request unlikely to find my shoulders so eager
+- my hands fit for more patient work than a fight
+- [!one !plural] my shoulders more aware of each piece than my willingness had been
+- [!one !plural] each burden another reason to spare the strength I had
+- [one !plural] not yet sure it would repay my legs for their trouble
+- [one !plural] my hands eager to surrender it to someone else's need
+- [meat] wishing for the smell of a Horde cookfire
+- [cloth] soft stuff to set beside the hard work of a new homeland
+- [night] the dark asking more of my eyes than my arms could supply

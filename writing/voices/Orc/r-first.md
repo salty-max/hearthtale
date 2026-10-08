@@ -1,11 +1,11 @@
 ---
 kind: r-first
 ---
-- learning their measure blow by blow
-- worth respecting, though not fearing
-- harder than they looked
-- a lesson I meant to learn once only
-- quicker to anger than I was, which was something
-- [teeth] the land breeding things with teeth to match it
-- [night] in the dark, where every lesson comes harder
-- [low] another thing the land would teach me the hard way
+- my blood stirring before I wanted it to
+- rather more wary than an orc's reputation allowed
+- my strength no promise that the fight would be easy
+- my courage finding more comfort in distance than in a closer look
+- my anger easier to rouse than to put aside
+- [teeth] those teeth worth more caution than a boast could give
+- [night] my ears keener than my eyes in that darkness
+- [low] still learning how much the world could ask of me

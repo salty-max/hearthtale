@@ -1,12 +1,12 @@
 ---
 kind: opening
 ---
-- I took up the road {at}, with work ahead and no reason to wait for someone else to begin it.
-- I began again {at}. What was asked of me deserved an answer in deeds.
-- I set out {at}, determined to leave the place stronger for whatever work I could do.
-- I made ready {at}, with yesterday's mistakes worth carrying only if I had learned from them.
-- Conscious that freedom meant little if I let pride choose in my place, I went on {at}.
-- I opened a fresh page {at}, ready to put my strength to something that would last.
-- I began this stretch {at}, where there was more to be done than to be said.
-- I took up the road {at}. A deed should bear its own weight without a boast to hold it up.
-- I set out {at}, with my people's future nearer in my thoughts than any glory of my own.
+- I took up the road {at}, with the thought of Durotar making the distance feel worth bearing.
+- I began again {at}, no one's captive and not yet as certain of the road as I wished.
+- I set out {at}, hoping to be useful to a people who needed builders as much as fighters.
+- I made ready {at}, with my own impatience a more familiar enemy than anything ahead.
+- I went on {at}, remembering how much Thrall had risked to give our people a home.
+- I set out {at}, free to walk away and unwilling to leave the work to someone else.
+- I began this stretch {at}, more eager for the road than for another test of my blood.
+- I took up the road {at}, wishing the ancestors could lend me a little of their endurance.
+- I set out {at}, with the Horde's new life dearer to me than the old tales of conquest.

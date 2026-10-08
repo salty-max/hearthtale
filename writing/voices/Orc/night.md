@@ -1,12 +1,12 @@
 ---
 kind: night
 ---
-- [!last] I slept {at} on the ground, where the day's work gave me reason enough to rest.
-- [!last] I made camp {at} and let the road wait for a while.
-- [!last] I slept {at} with {weapon} close, aware of how far I was from a roof.
-- [!last] I bedded down {at}, making what rest I could of the place I had reached.
-- [!last] I spent the night {at} resting lightly, with my attention returning to every sound.
-- [!last] I slept beneath the open sky {at}, glad to have reached a place where I could stop.
-- [last] I stopped {at} after a long stretch without shelter, and let these pages end with the night's rest.
-- [last] I spent another night in the open {at}, where the journey had gone far enough for this account.
-- [last] I lay down {at} with the road behind me for now, and set this part of the story aside.
+- [!last] I slept on the ground {at}, grateful that no camp fence kept me from leaving in the morning.
+- [!last] I settled outside {at}, with the wish for home stronger once I stopped moving towards anything.
+- [!last] I bedded down {at}, hoping the ancestors would spare me dreams of chains.
+- [!last] I lay down {at}, as ready to surrender to rest as I had been unwilling to yield in danger.
+- [!last] I slept lightly {at}, with the habits of a watchful people harder to put aside than my weariness.
+- [!last] I slept beneath the open sky {at}, missing Durotar without wanting to be shut away from the rest of the world.
+- [last] I settled outside {at}, with a free person's road waiting beyond the pause.
+- [last] I spent the night in the open {at}; Orgrimmar's walls would have been welcome, but I could bear this.
+- [last] I lay down {at}, wishing the road had asked less of me and no less of my courage.

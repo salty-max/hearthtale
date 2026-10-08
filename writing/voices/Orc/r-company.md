@@ -1,11 +1,11 @@
 ---
 kind: r-company
 ---
-- the fighting easier with a shoulder beside mine
-- [one] trusting each other more with every fight
-- shoulder to shoulder through the worst of it
-- glad of steady help when it counted
-- sharing the work and the credit equally
-- the road easier with someone to answer to
-- [night one] the dark less of a threat to two
-- [hc one] watching each other as closely as the foe
+- less alone beyond the shelter of the Horde
+- [one] a second life worth keeping from the ancestors
+- nearer to the feeling of a shared camp
+- my courage no longer carrying all the weight
+- my pride finding less cause to hurry into danger
+- my trust feeling less like a risk
+- [night one] less exposed beneath the dark
+- [hc one] neither of us a life I wanted the ancestors to take yet

@@ -1,13 +1,13 @@
 ---
 kind: r-task
 ---
-- glad to have it done
-- my shoulders tired by the end
-- quickly, without wasted effort
-- dusty work, and quickly done
-- with a few more faces I could put names to
-- one more debt settled
-- [explore] the land opening to me piece by piece
-- [explore] learning the ground the way a scout should
-- [escort] keeping myself between the danger and my charge
-- [night] the dark slowing me down
+- my shoulders less willing by the end
+- rather ready for a request that did not need walking
+- my patience a less obvious strength than my arms
+- no need of a battle to leave me weary
+- more names I hoped the Horde could count on
+- my legs less willing to be offered so readily again
+- [explore] wondering how a scout would read the way ahead
+- [explore] my stride less certain without familiar ground
+- [escort] unwilling to hurry another life towards the ancestors
+- [night] my eyes wanting the light more than my pride admitted
