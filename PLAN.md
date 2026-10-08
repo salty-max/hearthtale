@@ -125,8 +125,8 @@ Per level, as it happens:
   quest giver targeted at acceptance); the notable ones (elite, dungeon, chain
   ends, class quests).
 - **Fights**: kills by kind (creature type and family, from the unit when met;
-  Classic: the combat log's kills; Forever: corpses targeted dead
-  after a fight, as the Field Journal), the first of each kind, rares and
+  the killing blow, mine or my pet's, from `PARTY_KILL` (Forever, Classic
+  since 1.15.9), else the combat log's line), the first of each kind, rares and
   elites, bosses; close calls (under a tenth of health, alive five seconds
   later), with the foe and the place.
 - **Company**: groups (members' names, classes), dungeons entered and their
