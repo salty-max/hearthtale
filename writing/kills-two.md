@@ -1,19 +1,19 @@
 ---
 kind: kills-two
 ---
-- {n1} {foes1} and {n2} {foes2} had fallen to me, enough for one halt.
-- I counted {n1} {foes1} and {n2} {foes2} among the fighting {at}, though the numbers left much of it untold.
-- I had dealt with {n1} {foes1} and {n2} {foes2} {at}, work I was glad to look back on from somewhere quiet.
-- I had brought down {n1} {foes1} and {n2} {foes2} {at}, with the encounters still clear as I wrote.
+- {n1} {foes1} and {n2} {foes2} had fallen to me, enough to make a quiet return very inviting.
+- I counted {n1} {foes1} and {n2} {foes2} among the fighting {at}, with no appetite for adding to either.
+- I had dealt with {n1} {foes1} and {n2} {foes2} {at}, and was ready to welcome something that did not want a fight.
+- I had brought down {n1} {foes1} and {n2} {foes2} {at}, with my hands ready for gentler work.
 - I put down {n1} {foes1} and {n2} {foes2} {at}, enough fighting to make the pause welcome.
-- Between the {n1} {foes1} and the {n2} {foes2} {at}, I had learned how much a road could ask of me.
-- {n1} {foes1} and {n2} {foes2} had fallen to me {at}, each encounter part of the distance behind me.
-- I remembered {n1} {foes1} and {n2} {foes2} among the day's work {at}, and was glad to have its account finished.
+- Between the {n1} {foes1} and the {n2} {foes2} {at}, I had grown very fond of the prospect of going home.
+- {n1} {foes1} and {n2} {foes2} had fallen to me {at}, and I wanted no further trial of my endurance.
+- I had fought {n1} {foes1} and {n2} {foes2} {at}, with a quiet evening suddenly seeming a generous ambition.
 - Much of my time {at} had gone into fighting {n1} {foes1} and {n2} {foes2}.
-- The fighting {at} had brought me through {n1} {foes1} and {n2} {foes2}, with more to remember than their number.
+- The fighting {at} had brought me through {n1} {foes1} and {n2} {foes2}, with more relief than pride by the end.
 - [lots] I had dealt with {n1} {foes1} and {n2} {foes2}, enough that I could still feel the work when I stopped.
-- [lots] {n1} {foes1} and {n2} {foes2} had fallen to me {at}, with the last encounters easier to remember than the first.
-- [hc] I had survived {n1} {foes1} and {n2} {foes2}, grateful that none had made these my final pages.
+- [lots] {n1} {foes1} and {n2} {foes2} had fallen to me {at}, and I was ready to let the rest of the world keep its distance.
+- [hc] I had survived {n1} {foes1} and {n2} {foes2}, grateful that none had made another name to mourn of me.
 - [class:HUNTER !low] I had hunted {n1} {foes1} and {n2} {foes2}, enough to want a trail that led somewhere without another struggle.
 - [class:MAGE] I had brought down {n1} {foes1} and {n2} {foes2}, enough to want my magic put to a kinder use.
 - [class:WARRIOR] I had fought {n1} {foes1} and {n2} {foes2}, enough to leave my anger quieter than my weariness.
@@ -27,5 +27,5 @@ kind: kills-two
 - [plain] I had killed {n1} {foes1} and {n2} {foes2} in all.
 - [plain] The fighting {at} had been mostly {n1} {foes1} and {n2} {foes2}.
 - [plain] Of the fighting, {n1} {foes1} and {n2} {foes2} made up the most.
-- {n1} {foes1} and {n2} {foes2} had fallen {at}, enough for one halt.
+- {n1} {foes1} and {n2} {foes2} had fallen {at}, enough to make the next quiet mile welcome.
 - [plain] {n1} {foes1} and {n2} {foes2} had fallen {at} by the end.

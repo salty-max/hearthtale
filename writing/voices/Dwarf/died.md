@@ -9,4 +9,4 @@ kind: died
 - [lava] Fire killed me {at}; I was flesh, for all my people's fondness for the forge.
 - [nature] I died {at}, and the ground that usually steadied me had offered no refuge.
 - [foe] {foe} killed me {at}. I hated the thought of leaving my kin to hear the name without me.
-- I died {at}, with more country left to see and far too much of it between me and home.
+- I died {at}, with more country left to see and a great deal of ale I would never taste.

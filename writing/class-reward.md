@@ -2,7 +2,7 @@
 kind: class-reward
 ---
 - [summon] In return, {giver} taught me to call {pet}.
-- [summon] {giver} taught me to summon {pet}; I would have to grow used to that company.
+- [summon] {giver} taught me to summon {pet}, and I liked the promise of having something else for enemies to aim at.
 - [summon] My reward from {giver} was {pet} of my own to call on.
 - [summon] For the work, {giver} taught me to summon {pet}, a servant from the wrong side of the world.
 - [summon] I learned the summoning of {pet} from {giver}, with more appetite for the power than for the company.

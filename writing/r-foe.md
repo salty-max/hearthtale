@@ -1,78 +1,78 @@
 ---
 kind: r-foe
 ---
-- the fight quicker than I had feared
-- my hands not quite steady afterwards
-- with less grace than I would have liked
-- short of breath for a while after
-- a closer thing than it looked from a distance
-- the quiet afterwards almost as loud as the fight
-- taking a moment to steady myself afterwards
-- without ever feeling I had the measure of it
-- glad of the quiet that followed
-- [one] its last swing closer than I liked
-- [!one] the last of them harder than the first
-- [!one] one at a time, as sensibly as I could manage
-- [night] the dark making every movement larger
-- [teeth] counting my fingers afterwards, just in case
-- [mechanical] the smell of hot oil hanging about the place afterwards
-- [hc] aware how little room a mistake would have left me
-- [low] still learning how a fight ought to go
-- [high] with the ease of long practice, which I did not entirely trust
-- [murloc] the gurgling still ringing in my ears
-- [murloc] smelling of the shore for the rest of the day
-- [murloc] with a new dislike for anything that croaked
-- [kobold] the little ones no easier than the big
-- [kobold] the squeaking easier to bear once it had stopped
-- [kobold] candle wax spattered further than seemed possible
-- [gnoll] the snarling worse than the bites
-- [gnoll] the smell of wet fur clinging to me afterwards
-- [gnoll] with no sign that the land would ever run out of gnolls
-- [harpy] the shrieking still in my ears
-- [harpy] feathers settling around me long after
-- [harpy] the screeching worse than any talon
-- [quilboar] the stink of them hanging over everything
-- [quilboar] with thorns caught in everything I wore
-- [quilboar] those tusks closer than I liked
-- [centaur] the hoofbeats still thudding in my chest
-- [centaur] the dust taking a long while to settle
-- [centaur] the war cries carrying further than any reach
-- [ogre] with a new respect for how far an ogre could reach
-- [ogre] every swing of the club something to get well out of the way of
-- [ogre] the ground still shaking in my memory
-- [troll] with an uncomfortable sense of how practised trolls were at this
-- [troll] painted faces and tusks staying with me longer than I wanted
-- [troll] quicker on the feet than I had allowed for
-- [naga] the hissing in my ears long after
-- [naga] seawater and scales everywhere
-- [naga] quicker than anything with that many scales had a right to be
-- [satyr] the reek of fel lingering afterwards
-- [satyr] the laughter worse than the claws
-- [satyr] with that corrupted laughter hard to shake off
-- [furbolg] more bear than I had bargained for
-- [furbolg] the woods quieter for it, though not happier
-- [furbolg] stronger than all that shambling had suggested
-- [trogg] the stink of them clinging to me afterwards
-- [trogg] harder in the skull than anything had a right to be
-- [trogg] the grunting echoing long after
-- [outlaw] a life of crime ending exactly where such lives do
-- [outlaw] the kind of greed that ends exactly like that
-- [outlaw] with no pity to spare for anyone in that trade
-- [scarlet] the certainty more unsettling than the blade
-- [scarlet] the prayers turning to curses at the end
-- [scarlet] the red of those tabards staying in my eyes
-- [undead] glad that the dead stayed down this time
-- [undead] the smell of the grave clinging to everything
-- [undead] the cold lingering on my hands
-- [demon] the air tasting of brimstone long after
-- [demon] with the uneasy feeling that it had only gone elsewhere
-- [demon] the reek of the Nether hanging about the place
-- [elemental] with the strange sense of having fought the land itself
-- [elemental] the air still humming afterwards
-- [elemental] nothing left behind but a strange quiet
-- [dragonkin] the smell of scales and smoke in the air
-- [dragonkin] the heat of dragon breath still on my skin
-- [dragonkin] with a healthy respect for anything with wings and a temper
-- [spider] webbing in my hair for the rest of the day
-- [spider] checking my collar for anything with too many legs
-- [spider] the skittering still in my ears
+- more relieved than my pride wanted to show
+- my hands slow to believe the danger was over
+- rather less graceful than I meant to be
+- my courage taking longer to settle than my body
+- not an encounter I wanted to invite twice
+- more aware of the quiet than I had been before
+- my knees less certain than my pride
+- not yet willing to trust the stillness afterwards
+- ready for something gentler than another struggle
+- [one] no eagerness to give it another chance
+- [!one] their numbers harder on my courage than I wanted to admit
+- [!one] their defeat more welcome than impressive
+- [night] my eyes weary of guessing at movement
+- [teeth] rather protective of the fingers near those jaws
+- [mechanical] no wish to learn how readily flesh could yield to metal
+- [hc] unwilling to be remembered merely for being brave
+- [low] still more eager than experienced
+- [high] less eager to let confidence lead my hands
+- [murloc] no appetite for another gurgling introduction
+- [murloc] rather less fond of the sound of a murloc's voice
+- [murloc] newly wary of anything with a murloc's stare
+- [kobold] less tempted to take a small shape for a small danger
+- [kobold] no wish to put my hands near those little claws
+- [kobold] rather wary of a kobold's attachment to its candle
+- [gnoll] more respect for those jaws than for my own courage
+- [gnoll] rather keener to keep clear of a gnoll's reach
+- [gnoll] no confidence that the next stretch would be free of gnolls
+- [harpy] more wary of talons than I had been beforehand
+- [harpy] rather ready for company without claws
+- [harpy] no desire to discover how close a harpy could come
+- [quilboar] more aware of those tusks than of my own cleverness
+- [quilboar] rather less eager to meet the business end of a quill
+- [quilboar] those tusks nothing I wanted at arm's length
+- [centaur] my feet no match for the speed a centaur could bring
+- [centaur] no wish to be the small body beneath four hooves
+- [centaur] rather respectful of an enemy with that much weight to spare
+- [ogre] newly fond of the distance beyond an ogre's reach
+- [ogre] rather aware of how easily an ogre could overpower me
+- [ogre] my own body feeling inconveniently small beside so much bulk
+- [troll] less eager to test a troll's endurance than my own
+- [troll] the tusks easier to admire from beyond reach
+- [troll] more respect for a troll's quickness than before
+- [naga] no desire to have those coils within reach again
+- [naga] rather too conscious of the teeth behind a naga's hiss
+- [naga] less inclined to take scales for sluggishness
+- [satyr] no wish to let those demonic horns come closer
+- [satyr] rather wary of the claws beneath that corrupted shape
+- [satyr] more fear than fascination in the demonic company
+- [furbolg] more respectful of a furbolg's bulk than my own bravery
+- [furbolg] no appetite for being held within those great arms
+- [furbolg] less tempted to mistake a shambling stride for weakness
+- [trogg] my courage no promise against a trogg's strength
+- [trogg] more wary of those heavy fists than I had been before
+- [trogg] rather aware of how much a trogg could bring within reach
+- [outlaw] no delight in the human shape of the danger
+- [outlaw] less eager to meet another outlaw beyond a safe distance
+- [outlaw] not inclined to forgive an enemy merely for being a person
+- [scarlet] more frightened by a crusader's resolve than reassured by the name
+- [scarlet] no wish to become a Scarlet victory worth celebrating
+- [scarlet] rather troubled that faith could put me in such danger
+- [undead] no confidence that death meant the danger was over
+- [undead] rather keener to remain beyond the reach of the dead
+- [undead] my own body dearer after facing something death had not kept
+- [demon] no wish to carry a demon's attention any further
+- [demon] rather less comfortable with what could come out of the Nether
+- [demon] more eager to leave demonic company than to understand it
+- [elemental] rather wary of an element that could turn towards me
+- [elemental] less certain how to put distance between myself and such a thing
+- [elemental] no wish to make another trial of an element's strength
+- [dragonkin] rather respectful of the strength beneath those scales
+- [dragonkin] my own soft skin a poor match for a dragon's kind
+- [dragonkin] no appetite for testing the reach of a scaled enemy
+- [spider] my fingers decidedly fond of staying clear of fangs
+- [spider] rather keener to keep a spider beyond my collar
+- [spider] less tempted to discover how near those legs could come

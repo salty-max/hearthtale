@@ -1,30 +1,30 @@
 ---
 kind: kills
 ---
-- {n} {foes} had fallen to me {at}, more fighting than their number alone could tell.
-- I counted {n} {foes} among the fights {at}, remembering the encounters as well as their end.
-- I had dealt with {n} {foes} {at}, and was glad to consider the work from somewhere quiet.
-- I had killed {n} {foes}, though setting down the number made it look simpler than it had felt.
-- I fought my way through {n} {foes} {at}, with each encounter adding something to the account.
-- I remembered the {n} {foes} I had fought {at} as I put the day in order.
-- I had come through fights with {n} {foes}, and was grateful to be here to remember them.
+- {n} {foes} had fallen to me {at}, enough fighting to make the next quiet stretch very dear.
+- I counted {n} {foes} among the fights {at}, and hoped to leave the number alone for a while.
+- I had dealt with {n} {foes} {at}, and wanted the next stranger to be friendly.
+- I had killed {n} {foes}, enough to be tired of finding my courage useful.
+- I fought my way through {n} {foes} {at}, and was ready to give my hands a gentler occupation.
+- I had fought {n} {foes} {at}, with no wish to see how many more I could endure.
+- I had come through fights with {n} {foes}, and was grateful that none had been my last.
 - The {n} {foes} I had killed {at} had occupied much of this stretch.
-- {n} {foes} had fallen to me, enough to leave their names clear in my thoughts.
-- I counted {n} {foes} among the day's fighting {at}, with the road still waiting beyond them.
-- [lots] I had fought {n} {foes}, enough that stopping felt like part of the work rather than a departure from it.
-- [lots] I had dealt with {n} {foes} {at}, and felt the length of that work when I finally stopped.
-- [lots] {n} {foes} had fallen to me, with little room between one fight and its place in my memory.
+- {n} {foes} had fallen to me, and I wanted the next familiar face more than another opponent.
+- I counted {n} {foes} among the day's fighting {at}, rather ready for supper instead of another struggle.
+- [lots] I had fought {n} {foes}, enough to make a quiet return seem worth more than another victory.
+- [lots] I had dealt with {n} {foes} {at}, and felt the work settle into my shoulders once I stopped.
+- [lots] {n} {foes} had fallen to me, enough to give me a tenderness for ordinary, untroubled life.
 - [hc] I counted {n} {foes}, grateful to be the one counting.
 - [class:HUNTER !low] I had hunted {n} {foes} {at}, with less appetite for the chase than for an undisturbed return.
-- [class:WARLOCK] I had killed {n} {foes}, and felt less fond of the smell of destruction than of the spells that promised it.
+- [class:WARLOCK] I had killed {n} {foes}, and wanted the next use for my magic to cost me nothing dearer than a soul shard.
 - [class:MAGE] I had brought down {n} {foes}, and wanted the next use for my magic to be as harmless as conjuring supper.
 - [class:ROGUE] I had dealt with {n} {foes}, and wanted the next stretch of my life to pass considerably less noticed.
 - [class:PRIEST] {n} {foes} had fallen to me, and I wanted my next prayer to mend something instead of ending it.
 - [class:SHAMAN] I had fought {n} {foes}, and was ready to ask the elements for the warmth of a small fire instead of another battle.
 - [class:WARRIOR] I had fought {n} {foes}, with my rage no longer feeling like something I wanted to feed.
 - I had killed {n} {foes} in all {at}, a part of the day I was ready to put behind me.
-- By the end I had put down {n} {foes} {at}, glad that the fighting was now something to remember.
-- I had come through encounters with {n} {foes} {at}, with more of the road still left to take.
+- By the end I had put down {n} {foes} {at}, with less appetite for fighting than when I began.
+- I had come through encounters with {n} {foes} {at}, and wanted my next introduction to be less dangerous.
 - [plain] {n} {foes} had fallen to me {at}.
 - [plain] The fighting came to {n} {foes}.
 - [plain] I had faced {n} {foes} {at}.
@@ -35,6 +35,6 @@ kind: kills
 - [plain] I had killed {n} {foes} in all.
 - [plain] My tally came to {n} {foes}.
 - [plain] Of the fighting, {n} {foes} made up the most.
-- {n} {foes} had fallen {at} by the end, more fighting than the number could tell.
-- The fighting {at} had cost {n} {foes} their lives, and me a good deal of sweat.
+- {n} {foes} had fallen {at} by the end, and I hoped to pass the next stretch unnoticed.
+- The fighting {at} had cost {n} {foes} their lives, and me more effort than I wanted to spare again.
 - [plain] {n} {foes} had fallen {at} by the end.

@@ -8,6 +8,6 @@ kind: night
 - [!last] I spent the night {at} in the open, with Elune's name a comfort rather than a plea.
 - [!last] I lay down {at}, and let a mortal body's need for rest have its way.
 - [last] I settled outside {at}, longing for Teldrassil's shelter without wishing to hide from the world forever.
-- [last] I lay down beneath the sky {at}, with the night no stranger to me even so far from home.
+- [last] I lay down beneath the sky {at}, with the night no stranger to me even when I wanted a moonwell's peace.
 - [last] I bedded down {at}, ready to surrender to sleep what I had refused to surrender to fear.
 - [!last] I slept rough {at}, finding more comfort in the night than in the ground beneath me.

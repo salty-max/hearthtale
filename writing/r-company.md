@@ -1,15 +1,15 @@
 ---
 kind: r-company
 ---
-- [one] the road easier for two
-- the fighting easier with someone at my side
-- [one] a second pair of eyes on the shadows
-- sharing the work and, now and then, the credit
-- [one] learning a thing or two from watching them fight
-- our pace finding itself after a while
-- glad of the company
-- [one] glad of someone to share the watch
-- less alone in the quiet stretches
-- [night] the dark easier to bear in company
-- [hc] safer for not being alone
-- [low] new enough to be glad of the help
+- [one] less alone with the distance to cover
+- less exposed than I had felt on my own
+- [one] another pair of eyes worth more than bravado
+- my courage relieved of some of the burden
+- [one] hoping we would both have an easier return
+- my stride less lonely than before
+- rather grateful to have someone beside me
+- [one] less obliged to be watchful in every direction
+- company warmer than another mile alone
+- [night] my fear no longer filling the whole night
+- [hc] unwilling to let the road take either of us
+- [low] new enough to be grateful rather than proud

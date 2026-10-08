@@ -3,7 +3,7 @@ kind: r-lesson
 ---
 - my fingers less obedient than a familiar tool
 - with the slow ache of an apprentice's pride
-- less comfortable as a learner than as a dwarf who knew his business
+- less comfortable as a learner than as someone who knew the craft
 - [one] keen to have it ready when the danger came
 - my patience taking as much exercise as my hands
 - stubborn about learning what would not come easily

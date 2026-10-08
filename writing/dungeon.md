@@ -1,26 +1,26 @@
 ---
 kind: dungeon
 ---
-- I went down into {dungeon}.
-- [aside] {dungeon}. Dark, close, and full of things that wanted me dead.
-- {dungeon}: I went in with {mates} and came out with stories.
-- [aside] {dungeon} with {mates}. We lost our way twice and our nerve once, but not our lives.
-- [hc aside] {dungeon}. On this realm, a dungeon is where careless parties go to die. We were careful.
+- I went down into {dungeon}, with no wish to become a reason for someone else to turn back.
+- [aside] I entered {dungeon}, rather less fearless than I wanted to appear.
+- I went into {dungeon} with {mates}, grateful not to face its dangers alone.
+- [aside] I entered {dungeon} with {mates}, hoping we would all have a way back out.
+- [hc aside] I went into {dungeon}, with one life to keep and less confidence than I would have liked.
 - [class:PRIEST aside] I entered {dungeon} with {mates}, hoping my prayers would come as readily in fear as they had in safety.
 - [class:WARRIOR] I entered {dungeon} with {mates}, hoping a warrior's stubbornness would hold where anger alone could not.
 - [class:ROGUE aside] I entered {dungeon} with {mates}, hoping quiet feet would serve us better than a bold introduction.
-- I spent a long day underground in {dungeon}.
-- [aside] {dungeon}. I won't go back in a hurry.
-- I went into {dungeon} and came out again, which is the whole of the story worth telling.
-- {dungeon}: torches, traps and too many stairs.
-- I braved {dungeon}, and it nearly had me.
-- I came out of {dungeon} blinking at the daylight.
-- {dungeon}. We went in, did what we came for, and got out.
-- [aside] I saw {dungeon} with my own eyes. Most of it was trying to kill me.
-- [hc] I went into {dungeon} with my heart in my mouth, and came out with it still beating.
+- I entered {dungeon}, more wary of what waited inside than eager to be impressive.
+- [aside] I went into {dungeon}, with a very ordinary wish to leave it alive afterwards.
+- I entered {dungeon}, hoping for a safe return before I had even begun.
+- I ventured into {dungeon}, willing enough to go forward and very unwilling to be trapped.
+- I braved {dungeon}, with my courage more willing than the rest of me.
+- I went into {dungeon}, hoping the way out would remain as easy to find as the way in.
+- I entered {dungeon}, with my life rather dearer to me than the chance of a fine victory.
+- [aside] I saw {dungeon} for myself, and wished I felt as bold as the decision to enter suggested.
+- [hc] I went into {dungeon}, with no second life waiting if I spent this one badly.
 - I went into {dungeon} with {mates}.
-- {dungeon}, with {mates} at my side.
+- I entered {dungeon}, with {mates} beside me and very glad of the company.
 - [class:MAGE aside] I entered {dungeon} with {mates}, hoping to keep the dangers at a spell's distance.
-- I went into {dungeon}.
-- I entered {dungeon}.
-- We made our way into {dungeon}.
+- I went into {dungeon}, determined not to let eagerness make my decisions for me.
+- I entered {dungeon}, hoping to come back with more than reasons for regret.
+- We made our way into {dungeon}, and I was grateful for the people who had chosen to come with me.

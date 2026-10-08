@@ -5,7 +5,7 @@ kind: r-inn
 - already ready for the peace promised by the return
 - my legs rather grateful for a stone's enchantment
 - hoping for shelter without another struggle
-- more comforting than a brave account of how little rest I needed
+- more comforting than another attempt to seem tireless
 - one less road between me and a place to stop
 - [night] quite ready to let the night go unwatched by me
 - [hc] loath to ask the ancestors for help I could prepare myself

@@ -4,15 +4,15 @@ kind: r-road
 - my short legs making a long road of it
 - wishing the distance had been designed by a gnome
 - [!back] hoping to find something that did not require standing on tiptoe
-- [!back] a long way from the close-packed comfort of Tinker Town
+- [!back] rather fond of the close-packed comfort of Tinker Town
 - [!back] my small place in the world feeling smaller still
 - [!back night] my ears trying to make up for my eyes
-- [!back] wondering how a gnome could make a home so far from Gnomeregan
+- [!back] a gnome hoping to find more gears than stairs
 - [!back] hoping my feet would forgive the detour
 - [!back night] rather nearer the ground than I wanted to be in the dark
 - [back] my feet recognising the journey before I enjoyed the arrival
 - [back] less likely to waste my short stride on a wrong turn
 - [back] my legs petitioning for a shorter walk this time
-- [high] far enough from Tinker Town to miss the clatter
+- [high] still fonder of Tinker Town's clatter than of a long road
 - my stride doing its best against the distance
 - wishing I could trade a little ingenuity for longer legs

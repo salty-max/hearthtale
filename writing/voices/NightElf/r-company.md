@@ -3,7 +3,7 @@ kind: r-company
 ---
 - a Sentinel's watch less painfully missed
 - [one] a second life dearer to me than the distance
-- no longer the only one beyond the forest's shelter
+- a little more at ease than a lone Sentinel could afford
 - my reserve giving way to the relief of company
 - a little of home's ease returning to my stride
 - the quiet paths of home easier to leave with help beside me

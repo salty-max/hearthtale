@@ -1,24 +1,24 @@
 ---
 kind: opening
 ---
-- [!night] Daylight found me {at}, ready to take up the journey and see where it would lead.
-- [!night] I began this part of my account {at}, with the day still before me.
-- [!night] I took up my journey {at}, glad to have another day in which to make something of it.
-- I opened a fresh page {at}, with the last stretch behind me and more still to discover.
-- [night] More conscious of the quiet between one footfall and the next, I went on {at} after dark.
-- [night] I began this stretch {at}, letting my thoughts find their way into the night ahead.
-- [night] I turned back to my account {at}, with the night already around me.
-- [!night] Wondering what I would have to remember by the time the day was done, I began again {at}.
-- I took up the road {at}, where this part of my story would begin.
-- I returned to my journal {at}, ready to carry its account a little farther.
-- I looked about me {at} before going on, wanting to notice more than the work that lay ahead.
-- I began this stretch {at}, with enough of the journey behind me to wonder how the next part would differ.
-- Still turning over what the road had already taught me, I set out {at}.
-- I took up my account {at}, where there was still plenty left for me to learn.
-- I went on {at}, with my thoughts reaching ahead of me along the road.
-- I began my next page {at}, knowing that even familiar ground could give me something new to remember.
-- [hc] Grateful to have another part of my life left to write, I began again {at}.
-- [hc high] I took up the journey {at}, conscious of how much I now stood to lose.
+- [!night] I set out {at}, ready to give the day more than a tired pair of legs.
+- [!night] I began again {at}, hoping the day's work would leave me some strength to enjoy the evening.
+- [!night] I took up the road {at}, grateful for another day in which to put my feet to use.
+- I set out {at}, more willing to move than to stand about worrying.
+- [night] I went on {at} after dark, with my ears doing more of the work than my eyes.
+- [night] I began this stretch {at}, hoping the night would offer fewer surprises than hiding places.
+- [night] I set out {at}, less eager for the darkness than for getting where I was going.
+- [!night] I began again {at}, hoping for a day that would leave little reason to be frightened.
+- I took up the road {at}, with my legs willing and my courage still negotiating.
+- I set out {at}, ready to be useful and rather hoping it would not require another long walk.
+- I went on {at}, with a stranger's caution and a traveller's wish to be welcomed.
+- I began this stretch {at}, hoping my feet would have fewer reasons to complain by its end.
+- I set out {at}, still more stubborn about going on than sensible about stopping.
+- I made ready {at}, with no desire to let another hour pass in hesitation.
+- I went on {at}, hoping a little distance would quiet the worries I had brought.
+- I set out {at}, as ready for company as for work.
+- [hc] I began again {at}, grateful to be alive and unwilling to take another morning for granted.
+- [hc high] I took up the road {at}, with too much life behind me to throw away the life ahead.
 - [class:MAGE] I began again {at}, with a mage's affection for problems that could be approached over conjured water instead of shouted spells.
 - [class:HUNTER] I took up the road {at}, with a hunter's patience more willing than a hunter's hunger for the chase.
 - [class:ROGUE] I began this stretch {at}, with a healthy affection for ways in that would leave a quiet way out.
@@ -28,6 +28,6 @@ kind: opening
 - [class:SHAMAN] I set out {at}, hoping to hear the elements more gently than in the thunder of a fight.
 - [class:WARRIOR] I set out {at}, with a warrior's habit of judging trouble by the reach of a weapon.
 - [class:PALADIN] I began again {at}, hoping to lend the Light's strength without finding every need at the end of a weapon.
-- [!night] Morning came {at}, and with it the road.
-- [!night] The day began {at}, with the next stretch still to be decided.
-- [night] The night was already deep {at} when I took up the account again.
+- [!night] I began {at}, hoping the day would leave me some strength for myself.
+- [!night] I set out {at}, hoping the day had something gentler than danger in store.
+- [night] I took up the road {at} after dark, with rather more care than hurry.

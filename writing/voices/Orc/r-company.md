@@ -1,7 +1,7 @@
 ---
 kind: r-company
 ---
-- less alone beyond the shelter of the Horde
+- company as steadying as the shelter of a shared camp
 - [one] a second life worth keeping from the ancestors
 - nearer to the feeling of a shared camp
 - my courage no longer carrying all the weight

@@ -1,19 +1,19 @@
 ---
 kind: prologue
 ---
-- I should have started this journal long ago. I have done {quests} good turns already, and I'm writing this {at}.
-- I am no novice. I've done {quests} tasks for strangers, and I call {inn} home. This journal starts late, {at}.
-- I've been on the road for {played} of my life. I start writing now, {at}, because someone should remember.
-- I've lost count of the roads behind me. {quests} tasks, the people say. I start this journal {at}.
-- I meant to write all of this down from the beginning. I didn't. So this begins {at}, in the middle.
-- The story so far, in short: I left {home}, I took work, I lived. {quests} tasks done. The rest begins {at}.
-- {played} on the road, {quests} tasks done, and a room at {inn}. That's what I was, before this journal.
-- I start this journal {at}, with a lot behind me already: {quests} tasks, {played} of travel.
-- [hc] I've survived this long on a realm that forgives nothing. {quests} tasks, one life. I start writing {at}, in case it ends.
-- [hc] Every day I live here is borrowed. I start this journal {at}, so the days aren't lost when the debt comes due.
-- [race:Dwarf] My kin in {home} would want an account. Here it is, starting late, {at}.
-- [race:Scourge] I was dead once. I've decided to keep better records this time. This begins {at}.
-- [race:NightElf] My kind live long, and forget much. I begin this journal {at}.
-- [race:Gnome] I keep notes on everything else. Now, on myself. {at}, page one.
-- [race:Orc] I fought for the Horde long before I wrote about it. This begins {at}.
-- [race:Tauren] The elders say a story is only lost if no one tells it. I begin mine {at}.
+- I had completed {quests} tasks already when this stretch began {at}.
+- I had seen {quests} jobs through, and my hearthstone was bound at {inn}; I went on {at} with work already behind me.
+- I had spent {played} in the world before setting out on this stretch {at}.
+- I had {quests} tasks behind me when I began this part of the road {at}.
+- I went on {at}, no longer new to the world even if the way ahead was unfamiliar.
+- I had completed {quests} tasks before reaching this part of my life {at}.
+- I had spent {played} in the world, with {quests} tasks done and my hearthstone at {inn}.
+- I began this stretch {at}, with {quests} tasks and {played} already behind me.
+- [hc] I had seen {quests} tasks through and was still alive; I went on {at}, unwilling to spend that life carelessly.
+- [hc] I went on {at}, with no second life waiting if this one ended.
+- [race:Dwarf] I began this stretch {at}, with the mountain's stubbornness dearer to me than the chance to look impressive.
+- [race:Scourge] I went on {at}, still a corpse with no intention of returning to anyone's keeping.
+- [race:NightElf] I began this stretch {at}, with Elune's gentleness dearer than the patience people expected of me.
+- [race:Gnome] I went on {at}, a gnome with a rather large distance still to put beneath short legs.
+- [race:Orc] I began again {at}, free to serve the Horde without another master's chains.
+- [race:Tauren] I went on {at}, with my hooves still as fond of steady ground as ever.

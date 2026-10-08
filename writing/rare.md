@@ -1,21 +1,21 @@
 ---
 kind: rare
 ---
-- {foe} fell to me {at}. I kept a trophy, and I keep thinking about it.
-- I brought down {foe} {at}. The hunters will want to hear it.
-- {foe}. I won't pretend it was easy; I'll only say it was me who walked away.
-- {at} I found {foe}, or {foe} found me. Only one of us left.
-- I'd heard the name {foe} at every campfire. {at} I ended it.
-- {foe}, {in}. A rare foe, and a rarer chance.
-- Luck put {foe} in my path {at}. I did the rest with {weapon}.
-- I killed {foe} {at}. Not many can say that.
-- {foe} {in}: the talk of the road, until we met.
-- I tracked {foe} {at} for an afternoon, and it was worth it.
-- [elite] {foe} {in}. It should have killed me. It didn't.
-- [elite] I fought {foe} {at}, the hardest fight of my life so far.
-- [hc] {foe} {in}. On this realm, glory is a poor reason to die. I took the fight anyway, and I'm here to write it.
+- I brought down {foe} {at}, with a relief too large to make much room for pride.
+- I overcame {foe} {at}, and wanted the next familiar face more than another impressive name to fight.
+- I killed {foe} {at}, with my courage taking rather longer than my hands to settle.
+- I defeated {foe} {at}, and felt a sudden affection for all the uneventful miles I had complained about.
+- I brought down {foe} {at}, with no wish to discover how readily I could do it twice.
+- I overcame {foe} {at}, feeling rather less invulnerable than victorious.
+- I defeated {foe} {at}, and was grateful to keep the life that had brought me this far.
+- I killed {foe} {at}, with more appetite for safety than for the telling of it.
+- {foe} fell to me {at}, and I was ready for a quieter sort of company.
+- I brought down {foe} {at}, and let the thought of a safe return be enough to celebrate.
+- [elite] I overcame {foe} {at}, with my pride slower to recover than my relief.
+- [elite] I defeated {foe} {at}, and felt the next breath more keenly than the victory.
+- [hc] I brought down {foe} {at}, unwilling to make a final test of my courage even for so memorable a name.
 - [class:HUNTER] I brought down {foe} {at}, with a hunter's relief at remaining more than a set of tracks going nowhere.
 - [class:ROGUE] I overcame {foe} {at}, and was grateful to be the one who could still choose to disappear.
-- {foe} {in}, and I lived to tell it.
-- I came across {foe} {at} and didn't run.
-- {foe} fell to me {at}. A story for the next inn.
+- I defeated {foe} {at}, and wanted nothing more demanding than a quiet evening afterwards.
+- I overcame {foe} {at}, with my stomach taking longer than my hands to believe it was over.
+- {foe} fell to me {at}, and I hoped the road would offer gentler introductions after that.

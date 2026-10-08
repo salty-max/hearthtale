@@ -1,16 +1,16 @@
 ---
 kind: r-first
 ---
-- quicker and meaner than any description of them
-- learning more in the first minute than from all I had heard
-- nothing like what I had pictured
-- curious, once it was over, how they lived
-- a lesson I suspected would be repeated
-- wary of the next ones before I had seen them
-- noting how they moved before they struck
-- the name now attached to a very particular memory
-- [teeth] with a healthy respect for their teeth
-- [mechanical] puzzled who had built such things, and why
-- [night] which the dark did nothing to improve
-- [hc] grateful the lesson had not cost more
-- [low] one more thing nobody had mentioned at the start
+- my courage less substantial than it had felt before
+- rather too conscious of the skin beneath my confidence
+- no longer tempted to get a better look
+- my feet keener to leave than my pride
+- not the sort of introduction I would choose twice
+- more wary of what might be within reach
+- my stomach no more certain than my hands
+- less interested in the name than the danger
+- [teeth] those teeth deserving more distance than admiration
+- [mechanical] rather keen to stay clear of moving metal
+- [night] my eyes wanting a kinder introduction than the dark allowed
+- [hc] very attached to remaining alive and unremarkable
+- [low] new enough to this to envy someone else's ease

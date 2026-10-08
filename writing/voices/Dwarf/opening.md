@@ -1,7 +1,7 @@
 ---
 kind: opening
 ---
-- I took up the road {at}, a long way from the Great Forge's welcome din.
+- I took up the road {at}, with the Great Forge's welcome din still dearer than the call of a long road.
 - I began again {at}, feeling sturdy enough to make the road earn my complaints.
 - I set out {at}, with more of the world to see than the inside of a mountain.
 - I made ready {at}, hoping for ground worth the Explorers' League's attention.

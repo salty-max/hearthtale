@@ -2,11 +2,11 @@
 kind: rest
 ---
 - I rested {at}, leaving the loa to find their amusement without another performance from me.
-- I settled {at}, no more inclined to hurry than a hunter with the day's work behind him.
+- I settled {at}, no more inclined to hurry than a hunter returning to camp.
 - I paused {at}, wishing the sea were near enough to hear without another step.
 - I rested {at}, with enough room inside the weariness for a grin again.
 - I stopped {at}, ready for an evening that asked no more of a troll than sitting still.
 - As ready for quiet as a Darkspear after a long hunt, I rested {at}.
 - I paused {at}, with the tribe's familiar warmth dearer than any chance to be impressive.
-- I rested {at}, quite content to be the troll who knew when his feet had had enough.
+- I rested {at}, quite content to let my feet have their well-earned idleness.
 - Ready to let my patience serve my own body for once, I rested {at}.

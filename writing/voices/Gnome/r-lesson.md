@@ -12,7 +12,7 @@ kind: r-lesson
 - [new] a beginner again, which was less comfortable than a familiar tool
 - [new] a new way for a gnome to be useful beyond Tinker Town
 - [new] not yet sure which part would make my fingers ache
-- [low] rather conscious of the small body that would have to practise
+- [low] more at home with a clattering mechanism than with an unfamiliar knack
 - [low] my fingers still wanting gears they could actually see
 - [high] less dependent on anyone taking pity on my size
 - [high] another way to be more trouble than I looked

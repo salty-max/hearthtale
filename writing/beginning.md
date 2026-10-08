@@ -1,11 +1,11 @@
 ---
 kind: beginning
 ---
-- I began my account {at}, curious to see what sort of life these pages would come to hold.
-- I set out {at} with more to learn than I knew how to ask, and decided to remember the learning as well as the deeds.
-- I opened this journal {at}, while the road ahead was still something I could only imagine.
-- I wanted to remember how it felt to be at the beginning, so I put down my first words {at}.
-- I began {at}, hoping that the work before me would become something I could call my own.
-- I made my first entry {at}, with the world still larger than any plans I had made for it.
-- [hc] I began {at}, knowing that I had only one life to spend and wanting to give it a story worth keeping.
-- [hc] I opened my journal {at}, aware that every page would belong to the same, irreplaceable life.
+- I began {at}, with the road still more inviting than frightening.
+- I set out {at}, hoping to find a place that would be glad I had come.
+- I began {at}, with my feet willing and no certainty how long that would last.
+- I set out {at}, with more courage than experience and a healthy wish to keep both.
+- I began {at}, ready to be useful without yet knowing what the work would cost.
+- I set out {at}, hoping to come home with more than a longer list of worries.
+- [hc] I began {at}, with one life to keep and no wish to spend it proving I was fearless.
+- [hc] I set out {at}, hoping the road would be kind enough to let me grow old.

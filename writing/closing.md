@@ -1,39 +1,39 @@
 ---
 kind: closing
 ---
-- [quick] The work had taken only {time}, but it had given me something worth setting down.
-- I had been busy for {time}, and welcomed the chance to put the account in order.
-- [quick] Only {time} had passed, though the road had already left its mark on my thoughts.
-- I had spent {time} at work and earned {gold}, which gave this stretch a useful end.
+- [quick] The work had taken only {time}, though my feet seemed to have expected less.
+- I had been busy for {time}, enough to make staying still feel rather inviting.
+- [quick] Only {time} had passed, and I was grateful to have some strength left for myself.
+- I had spent {time} at work and earned {gold}, a welcome weight to have come by honestly.
 - [slow] The work had occupied {time}, and I had earned {gold} along the way.
-- I had earned {gold} in {time}, with enough still ahead to make me glad of it.
+- I had earned {gold} in {time}, enough to make the next day's needs less troubling.
 - All of it had taken {time}, long enough to be ready for a pause.
-- I had given {time} to this stretch of the road, with {gold} to show for it.
+- I had given {time} to the road and earned {gold}; I wanted something gentler asked of me now.
 - [plain] I had spent {time} at work and come away {gold} richer.
-- The journey had occupied {time}, and I was glad to have kept some record of it.
-- I had been at it for {time}, with more to remember than I had expected at the start.
-- I had spent {time} travelling and working, enough to appreciate a little quiet.
-- I was {gold} richer after {time} of work, which eased one concern at least.
-- [slow] It had taken {time}, and the chance to stop felt well earned.
-- [slow] I had spent {time} on this stretch, letting the account catch up with what had happened.
-- [quick] The work was over in {time}, before I had quite grown used to it.
-- [hc] I had survived {time} on the road, glad to be the one putting it into words.
-- [hc high] Another {time} lay behind me, added to a journey I was still unwilling to lose.
+- The journey had occupied {time}, and my legs welcomed the chance to be ordinary weary legs again.
+- I had been at it for {time}, enough to leave me less eager to volunteer for another favour.
+- I had spent {time} travelling and working, and wanted a little quiet of my own.
+- I was {gold} richer after {time} of work, with tomorrow's bread rather less of a worry.
+- [slow] It had taken {time}, and I was ready to stop pretending the distance had cost me nothing.
+- [slow] I had spent {time} on this stretch, enough to make the prospect of another mile unwelcome.
+- [quick] The work was over in {time}, with a little of my strength still unclaimed.
+- [hc] I had survived {time} on the road, grateful to be alive without needing another proof of courage.
+- [hc high] Another {time} lay behind me, and I was still unwilling to risk the life that had carried me so far.
 - [class:ROGUE] I had earned {gold} in {time}, a welcome weight for a purse and less welcome news for anyone hoping to empty mine.
 - [class:MAGE] I had been at work for {time}, enough to long for a difficulty I could approach over a quiet book.
 - [class:PALADIN] I had spent {time} at work, and hoped {faith} would forgive a servant who wanted a quiet evening.
 - [class:WARRIOR] I had been busy for {time}, enough to make the prospect of lifting anything heavier than supper unappealing.
-- I had earned {gold} over {time}, a useful measure of what the journey had brought.
+- I had earned {gold} over {time}, enough to feel a little more secure about the next stretch.
 - [plain] I ended this stretch {gold} richer after {time} of work.
-- The account covered {time}, though writing it brought some moments nearer than others.
-- I had been at it for {time}, and was ready to consider the work rather than do more of it.
-- This part of the road had taken {time}, with things I wanted to remember.
-- The work had occupied {time}, and I had done what I could with it.
-- I had spent {time} on the road, leaving enough here to distinguish it from the next stretch.
-- So much had happened in {time} that I was glad to set the account down while it was clear.
-- I had been busy for {time}, and this was where I could finally pause.
-- [quick] I had only needed {time} for the work, but welcomed the rest that followed.
-- [slow] I had been occupied for {time}, long enough to know I should stop before weariness chose for me.
+- I had spent {time} at work, and was ready for somebody else to be useful for a while.
+- I had been at it for {time}, with more relief in stopping than pride wanted to admit.
+- This part of the road had taken {time}, and I was ready to let my feet be still.
+- The work had occupied {time}, enough to make a quiet evening seem a generous reward.
+- I had spent {time} on the road, and wanted something warmer than the next stranger's request.
+- After {time}, I had rather less willingness to spare than I had started with.
+- I had been busy for {time}, with no desire to discover how much longer stubbornness could carry me.
+- [quick] I had only needed {time} for the work, and welcomed the chance to rest before weariness became urgent.
+- [slow] I had been occupied for {time}, long enough to value a pause more than another promise to help.
 - [plain] It had taken {time}.
 - [plain] All told, it had taken {time}.
 - [plain] I had been at it for {time}.
@@ -45,10 +45,10 @@ kind: closing
 - [plain slow] The stretch had run to {time}.
 - [plain] I came away {gold} richer after {time}.
 - [plain] I had worked {time} and earned {gold}.
-- The stretch had taken {time}, and most of it had been worth the effort.
-- All of it had taken {time}, longer than it felt and shorter than it looked written down.
-- [slow] The hours had added up to {time}, and my legs had counted every one of them.
-- [quick] It had all taken only {time}, which surprised me when I worked it out.
+- The stretch had taken {time}, enough to let my feet complain without my arguing back.
+- All of it had taken {time}; I felt the distance more keenly once I no longer had to keep pace with it.
+- [slow] The hours had added up to {time}, and my legs had reckoned every one.
+- [quick] It had all taken only {time}, with less weariness than I had expected to carry away.
 - [plain] The road had taken {time} of my day.
 - [plain] All of it had taken {time}.
 - [plain] It came to {time} in all.

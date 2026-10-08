@@ -3,7 +3,7 @@ kind: r-company
 ---
 - a little nearer to the comfort of a familiar street
 - [one] another pair of eyes worth more than bravado
-- less alone beyond the reach of the guards
+- company as reassuring as a neighbour's welcome
 - my courage relieved of some of the burden
 - hoping we would both get home with something to laugh over
 - [one] two of us for the road to worry about

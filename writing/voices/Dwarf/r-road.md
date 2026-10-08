@@ -2,7 +2,7 @@
 kind: r-road
 ---
 - my feet making a fair complaint about the distance
-- rather homesick for the weight of the mountain overhead
+- rather more at ease with the weight of a mountain overhead
 - [!back] hoping the place would offer more than a reason to turn back
 - [!back] wondering what an explorer would find beneath all this
 - [!back] a dwarf's worth of curiosity about the ground
@@ -10,4 +10,4 @@ kind: r-road
 - [back] my feet recognising the way before my spirits lifted
 - [back] less far from feeling at home than on the first visit
 - [back] rather ready to stop tramping the same distance
-- [high] far enough from the Great Forge to miss the din
+- [high] fonder of the Great Forge's din than of a long road
