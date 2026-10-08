@@ -2,11 +2,11 @@
 kind: opening
 ---
 - I took up the road {at}, with the earth's steadiness dearer to me than the speed of the journey.
-- I began again {at}, more willing to lend my strength than to hurry another living thing.
-- I set out {at}, hoping to find neighbours worthy of the trust our people had found in the orcs.
+- I began again {at}, with a shu'halo's care for the lives my strength might help.
+- I set out {at}, mindful of the trust our people had found in the orcs.
 - I began this stretch {at}, a child of wanderers still learning the pleasures of a settled home.
-- I made ready {at}, wishing a shu'halo's patience came as readily as a shu'halo's weight.
-- I went on {at}, hoping to bring home more than a tale of how far my hooves had carried me.
+- I set off {at}, with my people's patience to draw on and my own unease to contend with.
+- I went on {at}, with some of Mulgore's unhurried warmth still in my thoughts.
 - I set out {at}, with Cairne's new home dear enough to make the wider world worth knowing.
 - I took up the road again {at}, no more eager to race it than a kodo would have been.
 - I began {at}, wanting to be useful without having to make a fight of it.

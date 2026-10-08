@@ -9,7 +9,7 @@ kind: r-company
 - company as welcome as Cairne's shelter had been to our wanderers
 - [night] less lonely beneath Mu'sha's hours
 - [hc] too fond of company to leave the life beside me unguarded
-- hoping the road would be kind to us both
-- [one] another pair of eyes worth more than my size
+- a shu'halo with good company for an unfamiliar road
+- [one] another pair of eyes to keep the journey safe
 - [night] at ease with the dark when I did not have to watch it alone
 - [hc] my strength feeling less entirely my own

@@ -1,18 +1,18 @@
 ---
 kind: r-task
 ---
-- ready to lend my strength to a quieter life
-- hoping my strength would spare someone else's
-- my hooves reckoning the distance without my help
-- my patience willing to carry what hurry could not
+- a quiet use for a shu'halo's strength
+- somebody else's burden eased by the effort
+- an ordinary task taking its share of my endurance
+- a shu'halo's patience given some useful work
 - eager for the ease of a quiet camp
-- my legs ready to stop being sturdy for a while
+- the request having made full use of my endurance
 - [explore] wondering how the path would treat smaller travellers
-- [explore] my hooves patient with the unfamiliar ground
-- [escort] unwilling to make another life hurry to suit my stride
-- rather more weary than my size might suggest
-- my hooves remembering every stretch of the way
+- [explore] a hunter taking care with the unfamiliar ground
+- [escort] another life setting the undertaking's pace
+- a task that had worn through a shu'halo's patience
+- the way thoroughly fixed in my memory
 - in no hurry to find another favour to carry
 - [explore] a hunter's eye useful beyond the business of the hunt
 - [explore] patient enough to watch before hurrying
-- [night] my hooves finding the ground more readily than my eyes
+- [night] the dark making patience a necessity

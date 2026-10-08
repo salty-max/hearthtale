@@ -4,7 +4,7 @@ kind: r-gear
 - [!made] something sturdy to put against the road's demands
 - [!made !held] a fit I hoped would let me move without a struggle
 - [!made] comfort dearer to me than another ornament
-- [!made] rather willing to carry weight that would repay the trouble
+- [!made] a useful weight to add to my belongings
 - [!made hc] a thick hide hardly enough to entrust my life to
 - [made] as welcome as bringing a good hunt home
 - [made] my fingers capable of finer things than my size suggested

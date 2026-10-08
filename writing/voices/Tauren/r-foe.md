@@ -2,23 +2,23 @@
 kind: r-foe
 ---
 - my breath slow to find its usual steadiness
-- ready for a hunter's quiet after the struggle
+- the quiet after a hunt suddenly precious
 - no pleasure in spending my strength this way
-- my shoulders wanting a gentler burden
+- my strength due for a gentler use
 - my anger slower to leave than I wished
 - [one] not a life I had any wish to waste
 - [!one] their numbers enough to unsettle even my weight
 - [teeth] those teeth no reason to forget the hunger behind them
 - [mechanical] rather far from the life the Earth Mother had nourished
-- [night] more watchful beneath the night than I cared to be
+- [night] the night giving my vigilance no peace
 - [hc] my heart no steadier for being held in so large a body
-- [low] a novice hunter finding my size less reassuring than I had hoped
-- [high] my strength quieter and more certain than before
+- [low] a novice hunter learning the limits of strength
+- [high] a quiet certainty returning to my strength
 - my breath working harder than a kodo's after a climb
 - in no hurry to offer the Earth Mother another death
 - [!more] wearier than a hunter would care to seem
 - slow to feel the steadiness of the ground again
-- [one] not an encounter I wanted to bring back to my people
+- [one] an encounter I could have spared my people
 - [!one] their defeat no reason to want more fighting
 - [teeth] my hide no invitation to put those jaws nearer
 - [night] my ears patient where my eyes could find no help

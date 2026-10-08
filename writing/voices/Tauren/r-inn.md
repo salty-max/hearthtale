@@ -5,10 +5,10 @@ kind: r-inn
 - already wanting to let my weight settle
 - shelter dearer to me than another stretch of the road
 - [night] beneath Mu'sha's hours and eager for shelter
-- [hc] a long stride no substitute for a hearthstone
-- my hooves rather grateful for the shortcut
+- [hc] a hearthstone's certainty welcome in a life with no second chance
+- an easy return arranged without troubling anyone
 - a comfort to set beside the shelter of Thunder Bluff
 - one less distance to bear when my strength was gone
 - a comfort no nomad's camp could have offered
 - [night] a safe return even beneath Mu'sha's hours
-- [hc] a comfort as solid as Thunder Bluff beneath my hooves
+- [hc] a little certainty to carry beyond Thunder Bluff

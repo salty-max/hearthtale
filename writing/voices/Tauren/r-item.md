@@ -3,19 +3,19 @@ kind: r-item
 ---
 - my broad hands no excuse for careless handling
 - someone else's need worth the trouble of carrying
-- rather fonder of carrying than of taking life
+- a peaceful use for a hunter's patience
 - [!one !plural] as careful with the last piece as with the first
-- [!one !plural] my shoulders accepting what my hooves would have to bear
+- [!one !plural] each piece a manageable share of the request
 - [one !plural] wondering how it would look in smaller hands
-- [one !plural] hoping it was worth the distance from a quiet camp
+- [one !plural] the quiet of camp dear to me after the search
 - [meat] with a hunter's gratitude and no wish to waste
 - [cloth] soft enough to think fondly of a resting place
-- [night] my eyes more patient than useful in the dark
+- [night] my patience little help against the dark
 - [hc] reluctant to let the search take all my vigilance
-- ready for the peace of an unhurried cookfire
+- the peace of an unhurried cookfire pleasantly in mind
 - [!one !plural] my broad fingers taking each piece with care
 - [!one !plural] each find a little more weight for the road home
 - [meat] wondering how the meat would taste beside a familiar cookfire
-- [cloth] rather more useful than another hide for the camp
+- [cloth] a useful comfort to bring to camp
 - [night] my fingers working while my eyes took their time
 - [hc] my ears keeping watch beyond the business at hand

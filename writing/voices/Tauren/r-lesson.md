@@ -9,12 +9,12 @@ kind: r-lesson
 - [one] eager to give it some use among the people of Mulgore
 - [new] an apprentice's place no smaller for being unfamiliar
 - [new] a craft that might earn a welcome at a shared camp
-- [low] an apprentice willing to accept the help I needed
+- [low] an apprentice accepting the help a new skill needed
 - [high] content to begin as slowly as a calf finding balance
 - [!one] eager to find uses for them beyond a fight
 - my fingers finding the delicate parts harder than the heavy ones
 - an apprentice without a calf's eagerness to seem grown
-- my shoulders no help with the part that needed care
+- my strength no help with the delicate part
 - [new] a possible use for my hands beyond the hunt
 - [low] still too new to this to mistake my size for aptitude
-- [high] less clumsy than when the work had first come to me
+- [high] a welcome ease coming into the familiar skill
