@@ -21,7 +21,7 @@ kind: kills
 - [class:ROGUE] I had dealt with {n} {foes}, and had reason by the end to value care as much as quickness.
 - [class:PRIEST] {n} {foes} had fallen to me, with rather more to consider afterwards than the number.
 - [class:SHAMAN] I had killed {n} {foes}, and tried to find a place for what the fighting had taught me.
-- [class:WARRIOR] I had fought {n} {foes}, gaining a clearer sense of what I could ask of my strength.
+- [class:WARRIOR] I had fought {n} {foes}, with my rage no longer feeling like something I wanted to feed.
 - I had killed {n} {foes} in all {at}, a part of the day I was ready to put behind me.
 - By the end I had put down {n} {foes} {at}, glad that the fighting was now something to remember.
 - I had come through encounters with {n} {foes} {at}, with more of the road still left to take.

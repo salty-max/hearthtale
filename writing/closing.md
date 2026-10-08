@@ -22,7 +22,7 @@ kind: closing
 - [class:ROGUE] I had earned {gold} in {time}, enough to make the next stretch less uncertain.
 - [class:MAGE] I had been at work for {time}, and was ready to turn my attention to something quiet.
 - [class:PALADIN] I had spent {time} in work I hoped was worthy of {faith}.
-- [class:WARRIOR] I had been busy for {time}, and found a welcome in the chance to set my kit aside.
+- [class:WARRIOR] I had been busy for {time}, enough to make the prospect of lifting anything heavier than supper unappealing.
 - I had earned {gold} over {time}, a useful measure of what the journey had brought.
 - [plain] I ended this stretch {gold} richer after {time} of work.
 - The account covered {time}, though writing it brought some moments nearer than others.

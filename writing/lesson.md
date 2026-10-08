@@ -17,8 +17,8 @@ kind: lesson
 - [spell:Lay_on_Hands] Lay on Hands was the Light's answer for when everything else had failed.
 - [spell:Divine_Protection] Divine Protection gave me a moment in which nothing could touch me.
 - [spell:Hammer_of_Justice] With Hammer of Justice, the Light could stop a foe in its tracks.
-- [spell:Charge] With Charge, the distance between me and a foe stopped mattering.
-- [spell:Execute] Execute was the blow that finishes what the rest of a fight began.
+- [spell:Charge] I learned Charge, and could close the distance before my courage had time to argue about it.
+- [spell:Execute] I learned Execute, with the ugly comfort of knowing how to finish a fight that had already cost enough.
 - [spell:Pick_Pocket] Once I could pick pockets, I looked at every purse I passed a little differently.
 - [spell:Sap] With Sap, I could put a foe to sleep before it knew I was there.
 - [spell:Vanish] Vanish was a way out of any fight I did not care to finish.
