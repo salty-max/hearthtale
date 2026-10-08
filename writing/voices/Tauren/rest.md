@@ -1,12 +1,12 @@
 ---
 kind: rest
 ---
-- I rested {at}, letting my attention reach beyond the next thing to be done.
-- Grateful for a pause that asked nothing of my strength, I settled {at}.
-- I stopped {at}, and let my thoughts find a pace gentler than my feet had kept.
-- I rested {at}, content to be here without making anything more of the moment.
-- I paused {at}, with my shoulders easing as the day's hurry left them.
-- Thinking of the places I would like to see again without an errand before me, I rested {at}.
-- I stopped {at}, glad to have time to feel the quiet after so much movement.
-- I rested {at}, with my tiredness plain to me now I no longer needed to go on.
-- I put the road aside {at}, and was pleased to find myself in no haste to take it up.
+- I rested {at}, as ready for stillness as a kodo at the end of a long march.
+- With nothing more asked of these broad shoulders, I settled {at}.
+- I stopped {at}, letting my weight belong to the earth for a while.
+- I rested {at}, with the wish for a shared Mulgore camp stronger than the wish to go anywhere.
+- I paused {at}, no longer obliged to make a large body look tireless.
+- As weary as a hunter coming home, I rested {at}.
+- I stopped {at}, letting the Earth Mother's steadiness reach further than the soles of my hooves.
+- I rested {at}, grateful that the next mile could wait without being frightened away.
+- I paused {at}, with no greater ambition than to feel my own strength return quietly.

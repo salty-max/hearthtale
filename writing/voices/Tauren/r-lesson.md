@@ -1,20 +1,20 @@
 ---
 kind: r-lesson
 ---
-- [one] with patience enough to learn it properly
-- [one] my hands slow to find it at first
-- my strength finding a new use
-- natural to my hands before long
-- the lesson settling slowly, like rain into soil
-- [one] keen to use it for the good of others
-- [new] the first step on a new path
-- [new] a trade to serve the tribe
-- [low] young in this, and willing to learn
-- [high] the old and new finding their balance
-- [!one] keen to use them for the good of others
-- willing to take time over the unfamiliar parts
-- pleased to feel the beginning of some confidence
-- with more practice ahead than I had imagined
-- [new] wondering how the trade might be useful among my people
-- [low] with plenty of time needed before I would feel at ease
-- [high] interested in where the new learning met what I already knew
+- [one] eager to find a use for it among my people
+- [one] my broad fingers slower than my willingness
+- another way to be useful beyond the hunt
+- my patience having to do the work my size could not
+- no quicker to learn than a smaller pair of hands
+- [one] eager to give it some use among the people of Mulgore
+- [new] an apprentice's place no smaller for being unfamiliar
+- [new] a craft that might earn a welcome at a shared camp
+- [low] an apprentice willing to accept the help I needed
+- [high] content to begin as slowly as a calf finding balance
+- [!one] eager to find uses for them beyond a fight
+- my fingers finding the delicate parts harder than the heavy ones
+- an apprentice without a calf's eagerness to seem grown
+- my shoulders no help with the part that needed care
+- [new] a possible use for my hands beyond the hunt
+- [low] still too new to this to mistake my size for aptitude
+- [high] less clumsy than when the work had first come to me

@@ -1,18 +1,18 @@
 ---
 kind: r-task
 ---
-- a small kindness, freely given
-- glad to lighten someone's load
-- with more of the place known to me
-- without hurry
-- with no need of thanks
-- my legs tired by the end
-- [explore] the land speaking a little more plainly to me
-- [explore] walking it slowly, as the old ones taught
-- [escort] matching my pace to theirs
-- with some of my tiredness reaching me once the work was over
-- with more of the route known than I had meant to learn
-- willing to let the next request wait a little
-- [explore] keeping the turns in mind as I crossed the ground
-- [explore] looking beyond the path when I could
-- [night] with more of my attention on where to put my feet
+- ready to lend my strength to a quieter life
+- hoping my strength would spare someone else's
+- my hooves reckoning the distance without my help
+- my patience willing to carry what hurry could not
+- eager for the ease of a quiet camp
+- my legs ready to stop being sturdy for a while
+- [explore] wondering how the path would treat smaller travellers
+- [explore] my hooves patient with the unfamiliar ground
+- [escort] unwilling to make another life hurry to suit my stride
+- rather more weary than my size might suggest
+- my hooves remembering every stretch of the way
+- in no hurry to find another favour to carry
+- [explore] a hunter's eye useful beyond the business of the hunt
+- [explore] patient enough to watch before hurrying
+- [night] my hooves finding the ground more readily than my eyes

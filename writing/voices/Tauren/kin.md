@@ -1,8 +1,8 @@
 ---
 kind: kin
 ---
-- We were both shu'halo, and the land felt less wide for it.
-- It was a comfort to find one of my own people so far from Mulgore.
-- That was another of the shu'halo, and I was glad to share a little of the road with my own.
-- We were both of the plains, and that made the work lighter.
-- Here was one of my own people so far from home, and the Earth Mother felt nearer for it.
+- Another shu'halo was working beyond Mulgore, and I felt less alone for knowing the name.
+- We were both of the shu'halo, with the same wide plains to call home.
+- I was working with one of my own people again, and the name recalled the ease of Thunder Bluff.
+- Another of the plains' people was here; the country seemed less far from Mulgore for it.
+- We were both shu'halo away from home, still carrying something of our people's shared camps with us.

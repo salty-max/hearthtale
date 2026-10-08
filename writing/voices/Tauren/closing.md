@@ -1,9 +1,9 @@
 ---
 kind: closing
 ---
-- The work had occupied {time}, and my strength was ready for a gentler use.
-- I had earned {gold} in {time}, something useful to carry into the next stretch.
-- After {time}, I wanted a little quiet in which to remember the day.
-- I had spent {time} travelling, and felt the distance as soon as I stopped.
-- The stretch had taken {time}. I was glad to give my legs the rest they had been asking for.
-- I had spent {time} on the road and earned {gold}, with enough behind me to welcome stillness.
+- The work had occupied {time}, and even a shu'halo's shoulders could welcome stillness.
+- I had earned {gold} in {time}, a little more to bring back to the people of Mulgore.
+- After {time}, I wanted a quiet as wide as the plains of home.
+- I had spent {time} travelling, with the distance lodged firmly in my hooves.
+- The stretch had taken {time}. I would have liked the unhurried comfort of a kodo herd for company.
+- I had spent {time} on the road and earned {gold}; my strength was ready for something gentler than carrying on.

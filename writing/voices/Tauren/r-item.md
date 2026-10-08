@@ -1,21 +1,21 @@
 ---
 kind: r-item
 ---
-- with care for what grew nearby
-- with a word of thanks to the land
-- carried gently
-- [!one !plural] each one gathered without hurry
-- [!one !plural] the weight of them settling easily on my back
-- [one !plural] small in my hand, though someone had need of it
-- [one !plural] where the earth had kept it
-- [meat] grateful to the creature that gave it
-- [cloth] good for the camp, whatever its use
-- [night] the moon showing me where to look
-- [hc] listening to the land around me as I worked
-- curious what use the find would be put to
-- [!one !plural] making sure of the count before I went on
-- [!one !plural] pleased not to need another of the collection
-- [meat] with thoughts of a meal and a rest afterwards
-- [cloth] wondering how many uses could be found for all that cloth
-- [night] giving my eyes more time to make things out
-- [hc] listening beyond the search as I worked
+- my broad hands no excuse for careless handling
+- someone else's need worth the trouble of carrying
+- rather fonder of carrying than of taking life
+- [!one !plural] as careful with the last piece as with the first
+- [!one !plural] my shoulders accepting what my hooves would have to bear
+- [one !plural] wondering how it would look in smaller hands
+- [one !plural] hoping it was worth the distance from a quiet camp
+- [meat] with a hunter's gratitude and no wish to waste
+- [cloth] soft enough to think fondly of a resting place
+- [night] my eyes more patient than useful in the dark
+- [hc] reluctant to let the search take all my vigilance
+- ready for the peace of an unhurried cookfire
+- [!one !plural] my broad fingers taking each piece with care
+- [!one !plural] each find a little more weight for the road home
+- [meat] wondering how the meat would taste beside a familiar cookfire
+- [cloth] rather more useful than another hide for the camp
+- [night] my fingers working while my eyes took their time
+- [hc] my ears keeping watch beyond the business at hand

@@ -1,16 +1,16 @@
 ---
 kind: r-first
 ---
-- creatures of this land as much as I was
-- watching how they moved before I judged them
-- worthy of respect, if not of trust
-- the Earth Mother's children, all the same
-- a lesson in patience as much as in danger
-- [teeth] fierce in the way of hungry things
-- [night] their shapes hard to read in the dark
-- with more caution about our next meeting
-- watching their movements as closely as I could
-- curious about them once the danger was over
-- rather less sure of my first impression
-- [night] finding their shapes harder to judge in the dark
-- [low] conscious of how much I still had to learn
+- my weight no promise of safety
+- more watchful than a grazing kodo
+- keener to know the earth's children than to disturb them
+- not nearly as sheltered by my size as I wished
+- my hooves longing for a quieter path
+- [teeth] those jaws no kindness to a hunter's respect
+- [night] my eyesight less useful beneath Mu'sha's hours
+- rather slower to welcome a second encounter
+- my patience unable to quiet my heart
+- more eager for distance than a closer acquaintance
+- my horns no reassurance against the danger
+- [night] less able to judge the movement than the dark around it
+- [low] an inexperienced hunter wishing for Mulgore's shelter
