@@ -1,16 +1,16 @@
 ---
 kind: r-task
 ---
-- my small hands no excuse for leaving the job unfinished
-- my fingers itching for a more mechanical sort of trouble
-- hoping the next request would suit shorter legs
-- my feet wanting wheels by the end
-- rather conscious that errands were designed by taller people
-- my knees feeling every bit of the distance
-- little enough of me, but enough for this
-- [explore] wondering how far a small pair of legs would have to venture
-- [explore] hoping the way out would be easier on my feet
-- [escort] unwilling to let my small charge become a large disaster
+- another loose end tidied away
+- my taste for mechanical trouble going unsatisfied
+- an errand that had made full use of my resourcefulness
+- a gnome becoming thoroughly acquainted with the practical difficulties
+- my ingenuity put to an unexpectedly ordinary use
+- a persistent little problem finally dealt with
+- some useful work accomplished outside a workshop
+- [explore] a gnome's interest caught by unfamiliar territory
+- [explore] the route safely added to my store of useful knowledge
+- [escort] another life giving the undertaking an uncomfortable urgency
 - [escort] my own safety suddenly sharing space with someone else's
-- [night] my eyes straining harder than any gear I knew
-- [night] rather keen to finish before the dark found a use for my size
+- [night] my eyes struggling with details the dark kept hiding
+- [night] a task I could finally stop puzzling over

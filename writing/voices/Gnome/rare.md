@@ -1,7 +1,7 @@
 ---
 kind: rare
 ---
-- I brought down {foe} {at}, and felt absurdly proud that something so small as me could do it.
-- {foe} fell to me {at}. I hoped the name would sound impressive back in Tinker Town.
+- I brought down {foe} {at}, and felt a gnome's absurd triumph at coming through something so alarming.
+- {foe} fell to me {at}. That was a name worth taking back to Tinker Town.
 - I overcame {foe} {at}, with my heart rattling fit to shake every bolt loose.
-- I killed {foe} {at}. For a little while I felt as if I ought to be taller.
+- I killed {foe} {at}, and briefly forgave my own habit of getting into trouble.

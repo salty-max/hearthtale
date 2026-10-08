@@ -1,13 +1,13 @@
 ---
 kind: r-inn
 ---
-- a welcome answer to the length of my legs
-- hoping my feet would appreciate the arrangement
+- a wonderfully compact answer to the problem of getting home
+- a return journey neatly solved
 - no engineer yet able to improve on coming home in a blink
 - rather taken with a stone that could save so many steps
-- [night] quite ready to stop being the smallest thing on the road
+- [night] the prospect of a safe return settling my nerves
 - [hc] unwilling to gamble on finding shelter at the last moment
-- my short stride no match for a hearthstone
-- more interested in the return than in a lecture on the enchantment
-- one less distance for these legs to argue with
+- one enchantment I could appreciate without taking apart
+- a reliable return built into the next venture
+- a solution even Mekkatorque might admire
 - almost as good as fitting wheels to my feet

@@ -1,25 +1,25 @@
 ---
 kind: r-foe
 ---
-- my small hands steadier now the fighting was over
-- my knees threatening to fold like badly fitted hinges
+- my confidence rattling back into place
+- a sudden sympathy for mechanisms that shook themselves apart
 - [one] little enough flesh between a gnome and the grave
-- [!one] their number making my own size feel unfortunate
+- [!one] their number testing every scrap of my ingenuity
 - [one] no longer in any hurry to discover how close I could get
 - [!one] their absence making room enough for even a gnome to breathe
 - my heart still clattering like a faulty pump
 - [teeth] my fingers grateful to have escaped those teeth
-- [teeth] rather protective of my ten small fingers
-- [mechanical] wishing that much engineering had gone into something kinder
+- [teeth] my fingers quite determined to stay attached
+- [mechanical] such engineering squandered on something murderous
 - [mechanical] half sorry to silence a mechanism, even a murderous one
-- [night] my small shadow feeling very exposed
+- [night] my silhouette suddenly feeling terribly distinct
 - [night] my ears working harder than my eyes
-- [hc] unwilling to become another missing gnome
+- [hc] no intention of joining Gnomeregan's missing
 - [hc] very fond of the little life I still had
-- [low] my courage rather larger before the fight than during it
-- [high] less easily mistaken for something helpless
+- [low] a beginner's pride thoroughly shaken
+- [high] a gnome who had learned to be dangerous
 - my stomach taking longer than my hands to settle
 - [one] no longer inclined to get within reach
 - [!one] their defeat worth several deep breaths
 - [trogg] the loss of Gnomeregan much too close in my mind
-- [trogg] more bitter about these than an ordinary enemy
+- [trogg] the loss of Gnomeregan making this bitter work
