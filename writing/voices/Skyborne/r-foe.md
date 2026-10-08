@@ -2,21 +2,21 @@
 kind: r-foe
 ---
 - [client:forever] my balance taking longer than my pride to recover
-- [client:forever] more relieved than I meant to let a stranger see
-- [client:forever] my feet suddenly very fond of remaining steady
-- [client:forever one] not a danger I wanted within reach again
+- [client:forever] a relief I kept quietly to myself
+- [client:forever] a sudden distrust of the ease I had taken for granted
+- [client:forever one] a danger I had no taste for meeting again
 - [client:forever] my heart refusing the quiet my face tried to offer
 - [client:forever one !more] almost as attached to being alive as to the open sky
 - [client:forever !one] their numbers enough to make a skyward glance feel useless
 - [client:forever teeth] those teeth too close to the flesh beneath my confidence
 - [client:forever mechanical] no sympathy for a mechanism built to make the ground dangerous
-- [client:forever night] my hearing more useful than my eyes beneath the night
-- [client:forever hc] not nearly ready to let the earth have me for good
+- [client:forever night] my hearing occupied by what the night concealed
+- [client:forever hc] a skyborn elf with no intention of staying down for good
 - [client:forever faction:horde] our missing mentors dearer to me in the relief afterwards
 - [client:forever faction:alliance !more] a High Order elf unwilling to wait for a patron to save me
 - [client:forever faction:alliance !more] my people's proud traditions poor shelter against a blow
-- [client:forever] more affection for my life than pride in the victory
+- [client:forever] a fierce affection for a life still mine
 - [client:forever] my balance no longer entirely borrowed from courage
-- [client:forever !more] more strength required than a blessing could promise
-- [client:forever] my feet no more willing than my heart to repeat the struggle
+- [client:forever !more] a struggle no blessing could take out of my hands
+- [client:forever] an encounter I could cheerfully leave behind
 - [client:forever] thankful I had not become another absence at home

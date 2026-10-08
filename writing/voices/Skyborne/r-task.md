@@ -1,20 +1,20 @@
 ---
 kind: r-task
 ---
-- [client:forever] my feet less fond of the work than my willingness
-- [client:forever] ready to admire somebody else's willingness to travel
+- [client:forever] my offer of help acquiring a practical cost
+- [client:forever] an obliging elf beginning to regret the offer
 - [client:forever] my hands finding a use no blessing needed to supply
-- [client:forever] my endurance less dependable than my wish to oblige
-- [client:forever] more patience required than the wide sky ever seemed to ask
-- [client:forever faction:horde] hoping our mentors would find us kinder for their absence
+- [client:forever] my endurance given a thorough exercise
+- [client:forever] a request trying the patience of a skyborn elf
+- [client:forever faction:horde] a Windshaper putting some kindness into our mentors' absence
 - [client:forever explore] a route I hoped another traveller could follow without a blessing
-- [client:forever explore] my balance no excuse for leaving the path unremembered
+- [client:forever explore] the route acquiring the familiarity of a path at home
 - [client:forever escort] a slower pace worth the trouble of keeping another life safe
-- [client:forever night] my eyes less willing than my patience to search in the dark
+- [client:forever night] the search a demanding occupation beneath the night
 - [client:forever] one more reason to value the people who lived upon this ground
-- [client:forever] my feet wishing the request had required less distance
-- [client:forever] almost as ready to rest as I had been to offer help
+- [client:forever] the distance giving my generosity a practical education
+- [client:forever] a skyborn elf with no appetite for further useful activity
 - [client:forever faction:alliance] something the High Order could count on my hands to finish
 - [client:forever] no further claim on my strength welcome just yet
 - [client:forever] wondering whether a wind spirit would find our errands amusing
-- [client:forever explore] my steps rather more certain of the way than before
+- [client:forever explore] the way fixed in my memory for the return

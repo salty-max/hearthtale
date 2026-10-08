@@ -5,8 +5,8 @@ kind: opening
 - [client:forever faction:alliance] I began again {at}, with a scholar's longing for the arcane lore lost in Eldre'Thalas.
 - [client:forever] I set out {at}, with the sky still familiar and the earth no less insistent about being walked upon.
 - [client:forever night] I went on {at}, patient with the night but less certain of the ground beyond what I could see.
-- [client:forever] I began this stretch {at}, rather ready for a road that treated my feet gently.
-- [client:forever] I set out {at}, willing to find a place among people who knew the earth better than I did.
-- [client:forever faction:horde] I began again {at}, hoping to find allies who would help us bring the wind spirits home.
-- [client:forever faction:alliance] I went on {at}, a child of the High Order trusting a skill I could practise more than a blessing I could only wait for.
-- [client:forever] I took up the road {at}, with more of the ground familiar to me and no less fondness for the sky.
+- [client:forever] I began this stretch {at}, with the restless interest of a skyborn elf in unfamiliar company.
+- [client:forever] I set out {at}, taking an interest in the people who knew this country.
+- [client:forever faction:horde] I began again {at}, a Windshaper seeking allies in the search for the wind spirits.
+- [client:forever faction:alliance] I went on {at}, a child of the High Order with a skill to practise and no patron to wait for.
+- [client:forever] I took up the road {at}, my interest in this country surviving all its inconveniences.
