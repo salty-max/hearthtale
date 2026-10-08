@@ -1,11 +1,11 @@
 ---
 kind: r-gear
 ---
-- [!made !held] light enough not to trouble my step
-- [!made] finer work than I expected
-- [!made] quiet enough to move unheard
-- [!made] needing a few days to feel like mine
-- [!made hc] one more care taken against a careless end
-- [made !held] each seam laid with patience
-- [made] finished slowly, and the better for it
-- [made] with the care of every step still in mind
+- [!made !held] a better prospect than clothing that fought my stride
+- [!made] a little shelter I could carry beyond the forest
+- [!made] the weight less troubling than the danger it could spare
+- [!made] not yet as familiar as a path beneath Teldrassil
+- [!made hc] another kindness to the mortal body I still had
+- [made !held] my patience woven into something I could wear
+- [made] as satisfying as the unhurried finish of a long watch
+- [made] my patience rewarded in something I could carry

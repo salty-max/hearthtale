@@ -1,13 +1,13 @@
 ---
 kind: r-task
 ---
-- finishing before the light changed
-- with time enough to do it properly
-- seeing the place a little more clearly for it
-- small, and done with care
-- without hurrying any of it
-- the land seeming to watch it done
-- [explore] slow enough to see what others pass by
-- [explore] the place keeping more secrets than it showed
-- [escort] matching my pace to someone with less time than I
-- [night] the stars enough to see by
+- my patience more willing than my feet
+- less eager for another favour than I would have been rested
+- rather ready for the quiet of a moonwell
+- a mortal body's weariness making itself felt
+- my reserve no protection against being asked again
+- rather more inclined to stay beneath Teldrassil next time
+- [explore] a Sentinel's caution worth keeping on an unfamiliar path
+- [explore] wary of what even a Sentinel might miss
+- [escort] unwilling to surrender another life to the path
+- [night] my eyes more patient with the dark than the work deserved

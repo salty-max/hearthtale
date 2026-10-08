@@ -1,8 +1,8 @@
 ---
 kind: campfire
 ---
-- I paused by a fire {at}, letting my thoughts follow the flames.
-- I rested by a fire {at} and listened to the world around it.
-- Grateful for the small comfort it offered, I held my hands toward a fire {at}.
-- I sat by the fire {at}, listening between the crackle of the flames.
-- [night] I rested beside a fire {at}, with Elune's light beyond the little circle of warmth.
+- I paused by a fire {at}, thinking of the watchfires of the Sentinels rather than the burning at Hyjal.
+- I rested by a fire {at}, with a warmth that made the distance from the forest feel less sharp.
+- I held my hands towards a fire {at}, grateful to enjoy a flame instead of fearing what it might consume.
+- I sat beside the fire {at}, with the smell of burning wood pulling gently at my longing for home.
+- [night] I rested at a fire {at}, with the night beyond it more familiar to me than the little circle of heat.

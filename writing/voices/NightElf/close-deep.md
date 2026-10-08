@@ -1,8 +1,8 @@
 ---
 kind: close-deep
 ---
-- {foe} nearly ended me {at}, and all the days I had left unconsidered seemed precious at once.
-- I barely survived {foe} {at}. Patience would not buy back a life after I had spent it carelessly.
-- {foe} brought me within a breath of the end {at}. I could not find a teaching that made leaving the world less difficult.
-- [!foe] I barely survived {at}, and listened afterwards with an attention I had been too certain to give before.
-- [!foe] I came very near the end {at}. Long memory was no protection against the smallness of a single moment.
+- {foe} nearly ended me {at}. Hyjal had taken our immortality; I was not ready to give up what remained.
+- I barely survived {foe} {at}, with Elune's name closer to a plea than a prayer.
+- {foe} left me barely alive {at}. I wanted the stillness of a moonwell, not the stillness of death.
+- [!foe] I barely survived {at}, and longed for the shelter of Teldrassil with a child's helplessness.
+- [!foe] I came very near the end {at}. Ten thousand years of our people's survival had not made my own fear smaller.

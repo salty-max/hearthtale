@@ -1,15 +1,17 @@
 ---
 kind: r-foe
 ---
-- without pleasure in it
-- the place quieter for it, though not better
-- regretting that it had come to this
-- watchful long after it was over
-- [one] a life I would have spared, given the choice
-- [!one] one by one, with care
-- [teeth] hunger being no crime, though it nearly cost me
-- [mechanical] a contraption with no life in it to end
-- [night] the light of Elune enough to fight by
-- [hc] aware how short even a long life can be made
-- [low] still learning how little time a fight allows
-- [high] with an old patience in my hands
+- my reserve no disguise for how mortal I felt
+- my composure slower to return than my breath
+- a moonwell's peace dearer to me than another victory
+- my ears unwilling to stop listening for danger
+- [one] not a death I had any wish to savour
+- [!one] their numbers a poor match for the peace I had hoped to keep
+- [teeth] those teeth worth a Sentinel's vigilance
+- [mechanical] no living spirit for me to mourn in that mechanism
+- [night] more watchful than restful beneath the night
+- [hc] unwilling to waste the mortal years left to me
+- [low] my fear quicker than a Sentinel's poise
+- [high] my patience steadier than my heart
+- [satyr] the Highborne's ruin too near for comfort in that demonic shape
+- [satyr] our old shame giving me no fondness for the horns before me

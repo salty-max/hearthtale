@@ -1,11 +1,11 @@
 ---
 kind: r-first
 ---
-- watching them a long while before they noticed me
-- understanding them a little better in the end
-- not cruel, only hungry
-- something older in their manner than I expected
-- [teeth] fierce in the way of all things that must eat
-- [night] their eyes catching the moonlight
-- [mechanical] alien to everything that grows
-- [low] one more lesson in a long education
+- my patience no substitute for distance
+- rather keener to watch from a Sentinel's distance
+- less at ease than I would have been with a nightsaber
+- my ears no quicker than my eyes to make the danger familiar
+- [teeth] those jaws deserving no less care than a nightsaber's
+- [night] more watchful in the hour I usually found kindest
+- [mechanical] uncomfortably far from anything a forest could have grown
+- [low] still new to dangers the Sentinels would have known

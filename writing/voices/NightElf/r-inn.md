@@ -1,11 +1,11 @@
 ---
 kind: r-inn
 ---
-- a place to rest that the road could not take from me
-- the stone cool in my palm
-- somewhere to return when the wild grew too loud
-- a quiet place to come back to
-- a doorway I would come to know well
-- a place my feet would learn
-- [night] the night already deep
-- [hc] a refuge worth knowing well
+- the distance from shelter less cruel with a hearthstone
+- almost as comforting as a moonwell's peace
+- hoping the return would quiet my heart
+- my mortal weariness rather grateful for the promise
+- one less place to approach as a stranger
+- not quite home, but nearer to it than another night on the road
+- [night] at ease with the hour, if not with the need to stop
+- [hc] no wish to let danger find me without a refuge

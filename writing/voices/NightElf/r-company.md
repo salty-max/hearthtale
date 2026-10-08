@@ -1,11 +1,11 @@
 ---
 kind: r-company
 ---
-- glad of quiet company
-- [one] two watchers being better than one
-- watching how they moved in a fight
-- trusting them a little more by the end
-- the road gentler for the company
-- glad of a steady companion
-- [night] the moonlight shared between us
-- [hc one] each of us guarding the other's back
+- a Sentinel's watch less painfully missed
+- [one] a second life dearer to me than the distance
+- no longer the only one beyond the forest's shelter
+- my reserve giving way to the relief of company
+- a little of home's ease returning to my stride
+- the quiet paths of home easier to leave with help beside me
+- [night] less alone in the part of the day I loved best
+- [hc one] another life too dear to surrender to the path

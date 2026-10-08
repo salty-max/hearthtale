@@ -1,14 +1,14 @@
 ---
 kind: r-lesson
 ---
-- the movements strange to my hands at first
-- [one] the shape of it settling in my mind
-- [one] repeating it in quiet until it came without thought
-- a little more patient with myself than before
-- [one] with time enough to master it, I hoped
-- the lesson settling slowly
-- [new] the first step of a long path
-- [new] curious what the craft would ask of me
-- [low] young in this, if in little else
-- [high] the new and the old settling together
-- [!one] repeating them in quiet until they came without thought
+- my patience less strained than my fingers
+- [one] something I hoped would serve beyond our forests
+- [one] willing to give it longer than a moment's eagerness
+- more forgiving of slow fingers than of careless ones
+- [one] no longer able to promise myself forever to master it
+- less at ease as an apprentice than a kaldorei might appear
+- [new] at the root of a skill I could not yet call mine
+- [new] wondering whether the Sentinels would find a use for such work
+- [low] new enough to this to envy another person's ease
+- [high] patient enough to give the difficult parts their due
+- [!one] hoping they would come readily when patience was no longer enough

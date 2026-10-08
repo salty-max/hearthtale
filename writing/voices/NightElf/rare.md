@@ -1,7 +1,7 @@
 ---
 kind: rare
 ---
-- I brought down {foe} {at}, and kept the encounter apart in my thoughts from the ordinary fighting.
-- {foe} fell to me {at}. I gave the name its place here, without pretending a death meant the same thing as an understanding.
-- I faced {foe} {at} and prevailed, with the memory still returning in the quiet between other deeds.
-- I killed {foe} {at}, and found the encounter returning to me in the quiet.
+- I brought down {foe} {at}, and wished my heart would return to the stillness I remembered from the moonwells.
+- {foe} fell to me {at}. I felt how mortal I was in the relief that followed.
+- I overcame {foe} {at}, with Elune's name in my thoughts before any pride in the victory.
+- I killed {foe} {at}, and wanted the forest's gentleness more than the telling of a triumph.
