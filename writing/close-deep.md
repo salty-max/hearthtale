@@ -1,27 +1,27 @@
 ---
 kind: close-deep
 ---
-- I came within a breath of the end {at}. {foe} had left so little room for another mistake that I could scarcely believe I was still here.
-- {foe} nearly ended me {at}, and my thoughts would not settle after the danger passed.
-- I barely survived {at}. For a moment, all the road I had imagined ahead of me had disappeared.
-- The encounter with {foe} {at} almost closed this book before I was ready. I still had things I wanted to put in it.
-- I was almost lost {at}, and afterwards the familiar things around me seemed worth looking at again.
-- One more bad moment {at} might have been the end. I kept returning to that thought while trying to go on.
-- I survived {at} with so little left to spare that relief and disbelief were difficult to tell apart.
-- {foe} brought me closer to the end than I wished to understand {at}. I understood it anyway.
-- [night] I barely survived {at} after dark, and the night seemed larger than it had before the encounter.
-- [hc] {foe} nearly ended me {at}. Every page already written, and every one I had yet to write, had almost become a story without me.
-- [hc] I came within a breath of the end {at}, where surviving gave me a chance I could not count on twice.
-- [hc] I barely survived {at}. I wanted to remember the fear clearly enough that comfort would not turn it into a boast.
-- [hc high] I came close to losing all that road behind me {at}. The length of it offered no protection against one mistake.
+- {foe} left me barely alive {at}. I wanted something as ordinary as a safe return more fiercely than I had ever wanted praise.
+- {foe} nearly ended me {at}, and left my hands unable to believe the danger was over.
+- I barely survived {at}. The next quiet moment felt too dear to hurry through.
+- {foe} nearly killed me {at}; I had no courage left for anything except wanting to stay alive.
+- I barely survived {at}, and longed for the kind of shelter I had once taken for granted.
+- I came very near death {at}, with no comfort in knowing how small the final mistake would have been.
+- I survived {at}, too shaken to make much distinction between relief and fear for a while.
+- {foe} nearly killed me {at}. I wanted to grow old over ordinary troubles instead of being remembered for this.
+- [night] I barely survived {at} after dark, and wished for daylight with an urgency I could not quiet.
+- [hc] {foe} nearly ended me {at}. I had one life, and wanted it more than any glory the struggle could offer.
+- [hc] I came close to dying {at}, grateful for a chance I could not afford to count on twice.
+- [hc] I barely survived {at}, with my hands wanting the steadiness fear had taken from them.
+- [hc high] I nearly died {at}; all the distance behind me would have been very little comfort if I had.
 - [class:PALADIN] I barely survived {at}, with my faith no less dear for being too frightened to make a graceful prayer.
 - [class:PRIEST] I nearly died {at}, with no words for a prayer beyond the wish not to be taken yet.
 - [class:SHAMAN] I barely survived {at}, and wanted the earth's steadiness beneath me without having to be gathered back into it.
 - [class:WARRIOR] I barely survived {at}; my rage had been very eager to fight and considerably less helpful when I wanted to live.
-- I was a breath from the end {at}, and for a while could think of nothing but the fact that I was still here.
-- {foe} left me barely alive {at}. The memory made the next ordinary moment feel like something I had been allowed to keep.
-- I came close to dying {at}, and the thought followed me long after the danger had gone.
-- I nearly lost myself {at}, where the road might have ended without any regard for what I meant to do next.
-- I survived {at} by a margin I could not bring myself to call enough.
-- I came through the danger {at}, but it would be some time before I stopped carrying it in my thoughts.
-- [night] {foe} nearly ended my journey {at} in the dark. For a while, even looking toward another day felt uncertain.
+- I nearly died {at}, and needed a little time with no demand on me beyond remaining alive.
+- {foe} left me barely alive {at}, with the wish to be safely home stronger than the courage that had brought me out.
+- I came close to dying {at}, and wanted the next voice I heard to mean comfort rather than another request.
+- I barely survived {at}, with nothing fine or fearless in how badly I wanted to remain.
+- I survived {at} by a narrow margin, too narrow for pride to find much purchase.
+- I came through the danger {at}, with my hands slow to trust the quiet afterwards.
+- [night] {foe} nearly killed me {at} in the dark. I longed for an ordinary morning without having to prove I deserved it.

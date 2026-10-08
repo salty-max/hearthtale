@@ -3,16 +3,16 @@ kind: died-back
 ---
 - [corpse foe] {foe} killed me {at}, and I walked back from the graveyard as a ghost to take up my body again.
 - [corpse foe] {foe} had the better of me {at}; my ghost found its way back from the graveyard, and I rose again.
-- [corpse foe] I fell to {foe} {at} and made the grey walk back from the graveyard to my body, poorer and wiser.
+- [corpse foe] I fell to {foe} {at} and walked back as a ghost to a body I was less willing to risk again.
 - [corpse foe] {foe} put me in the ground {at}, though not for long: my ghost walked back and I rose where I had fallen.
 - [corpse fall] I fell to my death {at} and had to walk back from the graveyard as a ghost to collect myself.
-- [corpse fall] I misjudged a ledge {at}, and the ground did not; my ghost came back for my body, sorer and more careful.
-- [corpse drowning] I drowned {at}, and my ghost came back to the water's edge to find my body.
-- [corpse lava] I walked into fire {at}, and my ghost came back for what was left of me without wanting to discuss it.
+- [corpse fall] I fell to my death {at}, and my ghost came back for a body I was very unwilling to leave behind.
+- [corpse drowning] I drowned {at}, and returned as a ghost to reclaim my body, with no wish to try the water again.
+- [corpse lava] Fire killed me {at}, and my ghost came back for my body with no affection for the warmth.
 - [corpse nature] The land itself killed me {at}, and my ghost walked back to my body warier of it.
-- [corpse] I died {at} and made the long, grey walk back from the graveyard to my body.
+- [corpse] I died {at} and walked back from the graveyard as a ghost, with my body suddenly very dear to me.
 - [corpse] I died {at}, woke among the ghosts at the graveyard and walked back to take up my life again.
-- [corpse] I died {at}; the walk back from the graveyard was long and cold, but my body was where I had left it.
+- [corpse] I died {at}; my ghost returned from the graveyard, and I was grateful to have my body again.
 - [corpse] {at} I died, and saw what the far side of the world looks like on the ghost's walk back to my body.
 - [corpse] I died {at}, and walked back as a ghost to a body I was very glad to have again.
 - [healer foe] {foe} killed me {at}, and rather than walk back as a ghost I let the spirit healer raise me, weak and worn.
@@ -20,14 +20,14 @@ kind: died-back
 - [healer foe] I fell to {foe} {at} and let the spirit healer bring me back, paying for it in weakness.
 - [healer] I died {at} and took the spirit healer's bargain, paying for it in weakness and in the state of my gear.
 - [healer] I died {at}, and woke at the graveyard by the spirit healer's hand, drained but alive.
-- [healer] I died {at} and chose the spirit healer over the walk back, and felt the cost for a long while.
+- [healer] I died {at} and chose the spirit healer over the walk back, with weakness a price I was willing to bear.
 - [healer] I died {at}; the spirit healer raised me at the graveyard, and the weakness stayed with me.
 - [healer] I died {at} and came back by the spirit healer's hand, weaker and my gear the worse for it.
 - [ally foe] {foe} killed me {at}, but {by} raised me where I fell.
 - [ally foe] {foe} had the better of me {at}, until {by} called me back.
 - [ally foe] I fell to {foe} {at}, and {by} would not leave me dead.
 - [ally] I died {at}, and {by} brought me back on the spot.
-- [ally] I died {at}, and came back to {by}'s voice before my spirit had gone far.
+- [ally] I died {at}, and {by} restored me to a body I was very grateful not to leave behind.
 - [ally] I died {at}; {by} raised me where I lay, and I owed them my life.
 - [ally] I died {at}, and {by} spared me the long walk as a ghost.
 - [ally] I died {at}, but not for long: {by} raised me where I had fallen.

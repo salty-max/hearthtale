@@ -9,7 +9,7 @@ kind: r-item
 - [one !plural] wondering whether it would have been worth an afternoon in Eversong
 - [one !plural] not yet willing to surrender it to the road
 - [meat] keener on a proper supper than on carrying the smell of one
-- [cloth] rather keener on what a good tailor could make of the cloth
+- [cloth] rather keener on what a good tailor could make of the weave
 - [night] my eyes refusing to make an elegant business of the dark
 - [hc] too wary to let somebody else's missing things take all my attention
 - my patience returning only once the search was over

@@ -1,11 +1,11 @@
 ---
 kind: c-elite
 ---
-- fought {foe}, a hard fight that I won
-- faced {foe} and walked away
-- brought down {foe}, which took everything I had
-- beat {foe}, though it was a near thing
-- took on {foe} and lived
-- [hc] fought {foe} with more care than courage
-- stood my ground against {foe}
-- outlasted {foe}
+- fought {foe} and won, with no appetite for making another trial of my strength
+- faced {foe} and lived to go on
+- brought down {foe}, with more relief than I would have liked to show
+- beat {foe}, and wanted the next stranger to be friendly
+- took on {foe}, grateful not to have met the end of my road
+- [hc] fought {foe} with a life I was unwilling to spend on pride
+- stood my ground against {foe}, with my knees rather less certain than my decision
+- outlasted {foe}, more eager to be alive than to be impressive

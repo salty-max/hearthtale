@@ -1,17 +1,17 @@
 ---
 kind: r-lesson
 ---
-- with a good deal still to practise
-- the theory easier than the practice
-- [one] impatient to try it somewhere that mattered
-- turning the lesson over in my head for some time after
-- my hands still slow with the new movements
-- surprised how quickly hands learn what the head resists
-- a little clumsier at first than I would have liked
-- the new movements awkward for a while
-- pleased with the progress, if not the pace
-- [new one] not yet sure where it would lead
-- [new one] beginning with the simplest part of it
-- [low] a beginner still, but less of one
-- [high] old habits making room for something new
-- [!one] impatient to try them somewhere that mattered
+- my fingers slower than my willingness
+- rather more patience required than I had offered at the start
+- [one] hoping it would come readily when danger could not wait
+- less comfortable as a learner than I had sounded when I asked
+- my hands no quicker for wishing them to be
+- more eager than skilful, and willing to ask for help
+- my pride having to make room for clumsiness
+- my fingers still short of the ease I wanted
+- rather taken with a knack I could carry away with me
+- [new one] not yet sure where it might earn me a welcome
+- [new one] my patience beginning with the simplest part of it
+- [low] new enough to need help without wanting to look helpless
+- [high] less dependent on a familiar way of doing things
+- [!one] hoping they would serve when confidence could not

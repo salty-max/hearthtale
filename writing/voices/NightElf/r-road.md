@@ -1,8 +1,8 @@
 ---
 kind: r-road
 ---
-- my feet missing the familiar paths beneath Teldrassil
-- less at ease beyond the shelter of the forests
+- my footing easier on the familiar paths beneath Teldrassil
+- a forest's child before I was a traveller
 - [!back] hoping the distance would not make me forget the way home
 - [!back] wary of trusting the place as easily as a moonwell
 - [!back] my reserve a poor disguise for being a stranger
@@ -10,4 +10,4 @@ kind: r-road
 - [back] the familiar path dearer to me than the speed of returning
 - [back] less foreign to the way than on my first coming
 - [back] rather glad not to begin as a stranger again
-- [high] too far beyond Teldrassil to take shelter for granted
+- [high] still fonder of a moonwell's peace than of a long road

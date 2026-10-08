@@ -1,45 +1,45 @@
 ---
 kind: r-item
 ---
-- heavier in my pack than I had bargained for
-- with dirt under my nails for the trouble
-- worth more to whoever asked than to me
-- pleased with how little searching it took in the end
-- keeping half an eye on my surroundings the whole time
-- harder to spot than I had expected
-- [!one !plural] each one harder to find than the last
-- [!one !plural] the last of them where I had looked first
-- [!one !plural] counting them twice to be sure
-- [!one !plural] wondering what anyone needed with so many
-- [one !plural] right where it should not have been
-- [one !plural] smaller in my hand than the trouble of finding it
-- [one !plural] wondering what anyone wanted with it
-- [cloth] with thoughts of what a tailor might make of it
-- [meat] with supper very much on my mind
-- [night] the dark making the search twice as long
-- [egg !one] careful not to crack any of them
-- [egg one !plural] careful not to crack it
-- [egg] with an eye on the sky in case the parents came back
-- [egg] still warm, which I tried not to think about
-- [feather] light as nothing, for all the trouble
-- [feather] stray feathers drifting out of my pack for days
-- [feather] the softest part of the day's work
-- [hide] the smell reaching me before I had done
-- [hide] stiff with blood and dirt
-- [hide] rolled up tight against the smell
-- [paper] tempted to read more than I should have
-- [paper] the ink smudged but still legible
-- [paper one !plural] folded carefully, in case it mattered more than it seemed
-- [plant] with the green smell on my hands
-- [plant] careful not to bruise the leaves
-- [plant] with dirt under my nails and a little more patience than before
-- [stone one !plural] heavier than it looked
-- [stone !one] the weight of them pulling at my pack
-- [stone] glinting even in poor light
-- [relic one !plural] older than any hands that had held it since
-- [relic !one] older than any hands that had held them since
-- [relic] wondering who had made such things, and when
-- [relic] handled with more care than I usually manage
-- [remains] not the most pleasant thing to carry
-- [remains] wrapped well, for everyone's sake
-- [remains] glad of a strong stomach
+- my shoulders less eager than the person who asked
+- rather more patience required than the request suggested
+- hoping the burden would be welcome to somebody else
+- less fond of looking than of finally finding
+- unwilling to let the search take all my vigilance
+- my eyes slower to recognise the find than I wanted
+- [!one !plural] each piece another claim on my willingness
+- [!one !plural] counting them before asking my feet to go further
+- [!one !plural] counting them with more care than enthusiasm
+- [!one !plural] wondering why one person could need so many
+- [one !plural] not yet willing to let it out of my keeping
+- [one !plural] wondering how it could have asked so much of a small favour
+- [one !plural] rather keener to hand it over than to carry it
+- [cloth] wondering what a good tailor could make out of the cloth
+- [meat] my appetite more interested in cooking than collecting
+- [night] my eyes taking their time where the dark would not oblige
+- [egg !one] my hands more careful than the burden usually required
+- [egg one !plural] not eager to discover how readily it could crack
+- [egg] rather reluctant to meet whatever had laid the eggs
+- [egg] my hands unusually gentle with so fragile a burden
+- [feather] light enough to make the search seem unreasonable
+- [feather] wondering how many feathers could justify such a journey
+- [feather] softer stuff than most of the day's business
+- [hide] rather ready for the hide to become a tailor's problem
+- [hide] wondering whether a tanner would find the burden more inviting
+- [hide] more interested in handing over than keeping the hide
+- [paper] rather tempted by writing that had cost so much to find
+- [paper] hoping the writing would be less troublesome than the search
+- [paper one !plural] rather more careful with it than the errand's size suggested
+- [plant] my fingers gentler with the leaves than with the searching
+- [plant] rather ready for someone else to judge the greenery
+- [plant] hoping the greenery would be worth the search
+- [stone one !plural] my shoulders less grateful for it than the person who asked
+- [stone !one] my back feeling each stone more keenly than my willingness
+- [stone] my shoulders finding little comfort in a stone's small size
+- [relic one !plural] wondering whose hands had first valued it
+- [relic !one] wondering whose hands had first valued them
+- [relic] rather aware of how little I knew about the relics I carried
+- [relic] my hands gentler with something that had lasted this long
+- [remains] rather more intimate with the remains than I wanted
+- [remains] hoping to be rid of the remains before another request found me
+- [remains] my stomach less interested in the burden than my promise to help

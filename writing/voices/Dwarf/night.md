@@ -1,12 +1,12 @@
 ---
 kind: night
 ---
-- [!last] I slept rough {at}, wishing the mountain could put a roof over me from this far away.
+- [!last] I slept rough {at}, wishing the earth had put as much care into comfort as a dwarven mason.
 - [!last] I settled outside {at}, with a dwarf's bulk and rather less than a dwarf's comfort.
 - [!last] I lay down {at}, wondering how stone could feel so friendly at home and so hard beneath a back.
 - [!last] I bedded down {at}, ready to stop being the only thing holding me upright.
 - [!last] I slept outside {at}, with the thought of Ironforge's shelter more comforting than the ground.
 - [!last] I settled on the ground {at}; I had a newly tender feeling for innkeepers.
 - [last] I lay down outside {at}, feeling less like a traveller than a stone someone had finally dropped.
-- [last] I settled beneath the sky {at}, with the mountain of home much too far above my head.
+- [last] I settled beneath the sky {at}, with my bones rather less hard than the ground seemed to expect.
 - [last] I bedded down {at}, hoping my back would forgive the choice by morning.

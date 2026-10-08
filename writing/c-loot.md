@@ -4,7 +4,7 @@ kind: c-loot
 - found {item}, a rare thing
 - came by {item}
 - took {item} from the spoils
-- found {item}, worth more than the rest put together
+- found {item}, a prize I had no wish to leave behind
 - won {item}
 - was lucky enough to find {item}
 - turned up {item} among the spoils

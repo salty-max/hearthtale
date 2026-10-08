@@ -3,17 +3,17 @@ kind: pvp-one
 ---
 - [known] I killed {name}, {who}, {in}.
 - [known] I fought {name}, {who}, {in}, and won.
-- [known] I met {name}, {who}, {in}, and only one of us walked on.
+- [known] I killed {name}, {who}, {in}, and wished our meeting had asked something gentler of us.
 - [known] {name}, {who}, fell to me {at}.
-- [known] {name} was {who}, and the fight between us was short.
-- [known] I crossed blades with {name}, {who}, and was the one left standing.
+- [known] I brought down {name}, {who}, with no wish to seek another enemy so like myself.
+- [known] I defeated {name}, {who}, with less pleasure in the victory than I might have expected.
 - [known] {name}, {who}, did not survive meeting me.
-- [known] I killed {name}, {who}, and moved on before anyone came looking.
-- [known hc] I killed {name}, {who}, {in}, and felt how close the other ending had been.
-- [!known] I fought {name} {at}, and walked away from it.
+- [known] I killed {name}, {who}, and wanted the next traveller to be a friend.
+- [known hc] I killed {name}, {who}, {in}, with one life too precious to feel proud of risking.
+- [!known] I killed {name} {at}, and wanted the next stranger to be less dangerous.
 - [!known] I killed {name} of the other side {at}.
 - [!known] {name} of the other side fell to me {at}.
-- [!known] I met {name}, one of the other side, and only I walked on.
-- [!known] {name} came within reach, and did not leave it.
-- [!known] I killed {name}, one of the other side, and kept going.
-- [!known] The fight with {name} was short, and ended in my favour.
+- [!known] I killed {name}, one of the other side, with no appetite for another such meeting.
+- [!known] I brought down {name} {at}, and wanted the next familiar face more than another enemy.
+- [!known] I killed {name}, one of the other side, and was ready for a gentler sort of company.
+- [!known] I defeated {name} {at}, with the wish for a quiet return rather stronger afterwards.

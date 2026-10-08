@@ -4,7 +4,7 @@ kind: rest
 - [client:forever faction:horde] I rested {at}, allowing a Windshaper's longing for our mentors to be tender rather than urgent.
 - [client:forever faction:alliance] I settled {at}, content that the High Order's future need not be built by one exhausted pair of hands.
 - [client:forever] As grateful for solid ground as any weary traveller, I stopped {at}.
-- [client:forever] I rested {at}, with the sky free to keep its distance without asking me to follow.
+- [client:forever] I rested {at}, more grateful for a place to stay than for any view it might offer.
 - [client:forever night] I settled {at}, grateful to stop finding my way through the dark.
 - [client:forever] I paused {at}, rather fond of the earth once it no longer required me to cross it.
 - [client:forever faction:horde] I rested {at}, hoping our missing mentors would someday find us able to welcome them home.

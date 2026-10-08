@@ -1,17 +1,17 @@
 ---
 kind: zone
 ---
-- I crossed into {zone}, ready to find what the country would ask of me.
-- I reached {zone} and took a moment to look about before going on.
-- I came into {zone}, carrying what the road behind me had taught.
-- I set foot in {zone} and tried to judge how much of it was familiar.
-- I found myself in {zone}, with new ground to learn.
-- [aside] I came into {zone}, aware that knowing its name had told me very little.
-- [aside] I reached {zone}, where I would have to earn an understanding of my own.
-- I came to {zone} and let my attention settle on what lay ahead.
-- My journey brought me into {zone}, with more of the road still to discover.
-- I entered {zone} with my eyes open and my kit close to hand.
-- [hc] I came to {zone}, where care would matter as much as it had on the road behind.
-- [hc high] I reached {zone}, carrying a long journey that one mistake could still end.
+- I crossed into {zone}, hoping for neighbours rather than another reason to be wary.
+- I reached {zone}, with my eyes eager and my feet hoping they had done enough.
+- I came into {zone}, rather more ready for a welcome than another long road.
+- I set foot in {zone}, hoping the way back would be easy to find when I wanted it.
+- I found myself in {zone}, with a stranger's hope of becoming something more familiar.
+- [aside] I came into {zone}, and hoped its people would have more to offer than work.
+- [aside] I reached {zone}, with the wish to be useful stronger than the wish to look important.
+- I came to {zone}, hoping to keep more of the visit than weariness in my legs.
+- My journey brought me into {zone}, with my caution almost as willing as my curiosity.
+- I entered {zone}, eager enough to look around without wanting to hurry into danger.
+- [hc] I came to {zone}, with my life too dear to mistake a new place for a safe one.
+- [hc high] I reached {zone}, with all the distance behind me no reason to risk my life carelessly now.
 - [class:MAGE] I came into {zone}, hoping a mage's reputation would earn something warmer than another request for conjured refreshments.
 - [class:HUNTER] I entered {zone}, hoping to know its trails well enough to walk them without making myself the quarry.

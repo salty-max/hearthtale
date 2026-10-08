@@ -1,7 +1,7 @@
 ---
 kind: quests-many
 ---
-- I had completed {n} tasks; evidently there were still uses for a gnome outside Tinker Town.
+- I had completed {n} tasks; evidently there were still uses for a gnome beyond a workshop.
 - By the end, {n} jobs were done, each one a little more weight behind my name.
 - I counted {n} errands finished, and felt I had walked enough for a person twice my height.
 - The {n} tasks behind me had kept my small hands quite full.

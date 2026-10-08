@@ -1,29 +1,29 @@
 ---
 kind: epitaph
 ---
-- Here ends the journal of {name}, {who}, who fell {in} at level {level}.
-- {name}, {who}, died {in} at level {level}. The road ends here.
-- Here lies {name}, {who}. Level {level}, {in}, and no further.
-- The last page of this journal was written {in}. {name} did not write another.
-- [foe] {name} fell to {foe} {in}, at level {level}. The journal stops there.
-- [foe] {foe} ended the road of {name}, {who}, {in}. Level {level}. One life, as the realm allows.
-- [beast] {name} was brought down by {foe} {in}, at level {level}. The wild keeps what it takes.
-- [beast] A beast, {in}: {foe}, and the end of {name}, {who}, at level {level}.
+- {name}, {who}, fell {in} at level {level}, with no further road to travel.
+- {name}, {who}, died {in} at level {level}, and could go no further.
+- {name}, {who}, lies {in}, at level {level}.
+- {name} died {in}, with more of life still wanted than the world allowed.
+- [foe] {name} fell to {foe} {in}, at level {level}, and did not rise again.
+- [foe] {foe} ended the life of {name}, {who}, {in} at level {level}.
+- [beast] {name} was brought down by {foe} {in}, at level {level}, with no kindness in the wild that kept the body.
+- [beast] {foe} killed {name}, {who}, {in} at level {level}, and the wild offered no way back.
 - [people] {name} died by the hand of {foe} {in}, at level {level}.
-- [people] {foe} struck the last blow {in}. {name}, {who}, fell at level {level}.
-- [player] {name} was slain by {foe}, another adventurer, {in}. Level {level}.
-- [player] Not a beast, nor a monster: {foe}. {name} fell {in}, at level {level}.
-- [elite] {name} faced {foe} {in} and did not walk away. Level {level}.
-- [inside] {name} went down into {zone} and did not come back up. Level {level}.
-- [inside foe] {foe} was the last thing {name} saw, deep {in}. Level {level}.
-- [fall] {name} fell {in}, and not to any foe: the ground came up too fast. Level {level}.
-- [fall] A misstep {in}, a long drop, and the end of {name}, {who}, at level {level}.
-- [drowning] {name} drowned {in}, at level {level}. The water does not care who you are.
-- [drowning] {name} went under {in} and never came up. Level {level}.
+- [people] {foe} struck the last blow {in}, and {name}, {who}, fell at level {level}.
+- [player] {name} was slain by {foe}, another adventurer, {in} at level {level}.
+- [player] {foe}, another adventurer, killed {name} {in}, at level {level}.
+- [elite] {name} faced {foe} {in}, at level {level}, and did not walk away.
+- [inside] {name} died within {zone}, at level {level}, with no return to the open world.
+- [inside foe] {foe} killed {name} {in}, at level {level}, and no further dawn was theirs to see.
+- [fall] {name} fell to death {in}, at level {level}, with no enemy to blame for the distance.
+- [fall] A fall ended the life of {name}, {who}, {in} at level {level}.
+- [drowning] {name} drowned {in}, at level {level}, beyond the reach of another breath.
+- [drowning] {name} drowned {in}, at level {level}, with no return from the water.
 - [lava] {name} died in fire {in}, at level {level}.
 - [nature] {name} died {in} at level {level}, taken by the world itself.
-- [low] {name}, {who}, fell {in} at level {level}, barely begun.
-- [low] So short a book. {name} fell {in}, at level {level}.
-- [high] {name} had come so far: level {level}. It ended {in} all the same.
-- [high] Hours upon hours of road behind {name}, and the end {in}, all the same. Level {level}.
-- Here ends the journal of {name}, {who}, at level {level}.
+- [low] {name}, {who}, fell {in} at level {level}, with so much of life still unknown.
+- [low] {name} died {in}, at level {level}, with the road scarcely begun.
+- [high] {name} had reached level {level} before dying {in}, with so much of the road behind.
+- [high] {name}'s road ended {in}, at level {level}, despite all the distance already travelled.
+- {name}, {who}, died at level {level}, with no further chance to go on.

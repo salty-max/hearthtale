@@ -1,17 +1,17 @@
 ---
 kind: remembrance
 ---
-- A life of {quests} good turns, and {kills} foes fought along the way.
-- In {played} of life, {quests} tasks done for strangers.
-- Among the deeds: {rare}, brought down. Few can claim as much.
-- Once, a walk out of {dungeon}, alive. Remember that.
-- {zones} lands seen, and {quests} tasks done in them.
-- Remember {rare}, and {quests} good turns.
-- {played} on the road. {quests} tasks done. {kills} foes fallen. Then this.
-- {played} lived on this realm, and lived well.
-- The campfires will tell of {rare} yet.
-- [!inside] {dungeon} was survived. Something smaller was not.
-- Careful for {played}. One moment was enough.
-- {kills} foes fell, before one finally didn't.
-- [low] Only the beginning: {quests} tasks, {kills} foes.
-- [high] {zones} lands seen, {quests} tasks done. Few get so far.
+- {name} had completed {quests} tasks and fought {kills} foes, with more to a life than either number could hold.
+- In {played} of life, {name} had seen {quests} tasks through.
+- {name} had brought down {rare}, and lived beyond that struggle.
+- {name} had survived {dungeon}, with more life waiting beyond its dangers then.
+- {name} had seen {zones} lands and completed {quests} tasks along the way.
+- {name} had overcome {rare} and seen {quests} tasks through, with a life beyond its last loss.
+- {name} had spent {played} in the world, with {quests} tasks done and {kills} foes fought.
+- {name} had lived for {played} on this realm, a life the last struggle could not entirely define.
+- {name} had brought down {rare}, and survived to go on beyond that encounter.
+- [!inside] {name} had survived {dungeon}, though the last danger had not been within it.
+- {name} had lived for {played}, with much to keep dear before the ending.
+- {kills} foes had fallen to {name} before the last struggle ended differently.
+- [low] {name} had completed {quests} tasks and fought {kills} foes, with so much still left beyond the beginning.
+- [high] {name} had seen {zones} lands and completed {quests} tasks, with much of a life already made.

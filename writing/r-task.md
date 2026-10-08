@@ -1,17 +1,17 @@
 ---
 kind: r-task
 ---
-- not quite sure what I had set in motion
-- curious what would come of it
-- glad to have it off my mind
-- seeing more of the place than the errand required
-- my boots the worse for it
-- simpler than it had sounded
-- without anyone explaining why, which no longer surprised me
-- my opinion of the errand improving as it went
-- the job taking longer than I had expected
-- [explore] with a new map forming in my head
-- [explore] the ground making more sense with every step
-- [escort] keeping to their pace the whole way
-- [escort] watching the road for both of us
-- [night] the dark adding nothing helpful
+- my feet rather less willing by the end
+- hoping the next request would leave me some strength for myself
+- my patience more useful than my eagerness
+- less fond of the walking than of being useful
+- my legs wishing a favour could do itself for once
+- more ready for a quiet return than another obligation
+- my willingness to help no promise of an endless supply
+- rather grateful the next small favour had not found me yet
+- my shoulders less enthusiastic than at the start
+- [explore] wondering how readily I could find the same way in a hurry
+- [explore] my feet no excuse for letting my vigilance wander
+- [escort] unwilling to make another life hurry to suit my own
+- [escort] more concerned for another life than for finishing quickly
+- [night] my eyes working harder than my patience in the dark

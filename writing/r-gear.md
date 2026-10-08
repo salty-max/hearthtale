@@ -1,19 +1,19 @@
 ---
 kind: r-gear
 ---
-- [!made !held] a better fit than what came before
-- [!made] the new weight taking some getting used to
-- [!made] one weak spot fewer
-- [!made !held] curious how long the new fit would last
-- [!made] a small change, but one I felt at once
-- [!made low] beginning to look like someone who meant it
-- [!made high] an improvement I could feel at once
-- [!made hc] one more thing between me and a bad end
-- [made !held] every stitch familiar
-- [made] every flaw known only to me
-- [made] proud of the work in a quiet sort of way
-- [made] trusting the work because I knew who had done it
-- [!made held] the balance good in my hand
-- [!made held] lighter in the hand than it looked
-- [!made held] keen to see what it could do
-- [made held] the grip shaped to my own hand
+- [!made !held] hoping the fit would spare me another discomfort
+- [!made] rather aware of how much my legs would have to carry
+- [!made] one less weakness to leave entirely to luck
+- [!made !held] wondering whether the fit would stay kind after a long road
+- [!made] not yet sure how readily the new weight would become familiar
+- [!made low] rather more substantial than a brave intention
+- [!made high] more willing to value comfort than appearances
+- [!made hc] unwilling to trust my life entirely to being hard to hit
+- [made !held] a finished piece worth the patience
+- [made] no stranger to the effort behind the result
+- [made] rather fonder of the finish than of the time it had cost
+- [made] more trusting of the result than of my own enthusiasm
+- [!made held] my fingers less uncertain about the balance than before
+- [!made held] hoping the weight would remain kind after a long day's use
+- [!made held] rather eager to find its virtues without meeting its limits
+- [made held] my fingers responsible for how the result would serve

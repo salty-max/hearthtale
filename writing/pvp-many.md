@@ -1,12 +1,12 @@
 ---
 kind: pvp-many
 ---
-- I brought down {n} of {side} {at}, one after another.
-- By the time the fighting with {side} died down {at}, {n} of them had fallen to me.
+- I brought down {n} of {side} {at}, enough fighting to make the next quiet stretch very dear.
+- By the end of the fighting with {side} {at}, {n} of them had fallen to me.
 - Skirmishes with {side} {at} cost them {n} of their own.
-- I fought {side} {at}, and {n} of them did not get up.
+- I fought {side} {at}, and {n} of them fell to me.
 - {side} lost {n} of their own to me {at}.
-- I clashed with {side} again and again {at}; {n} of them fell.
-- The fighting with {side} went my way: {n} of them fell to me.
-- I held my ground against {side}, and {n} of them paid for it.
-- [hc] I fought {side} {at} and lived; {n} of them did not.
+- I fought {side} {at}, with {n} of them falling and no pleasure in wanting more.
+- The fighting with {side} went my way, and {n} of them fell to me.
+- I brought down {n} of {side}, and hoped the next meeting would leave less need for violence.
+- [hc] I fought {side} {at}; {n} of them fell to me, and I wanted no further trial of the one life I had.

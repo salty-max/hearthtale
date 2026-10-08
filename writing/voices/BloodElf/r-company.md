@@ -6,7 +6,7 @@ kind: r-company
 - my pride finding it easier to accept help than my habits did
 - readier to brave the world than I could be alone
 - less alone with the hunger our people carried
-- not yet ready to call it friendship, and nearer than I expected
+- not quite ready to call it friendship, but unwilling to hurry the parting
 - [night] my composure less taxed beneath the night
 - [hc] too well acquainted with loss to leave another absence in the world
 - rather more comfort than a graceful introduction could supply

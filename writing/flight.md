@@ -8,7 +8,7 @@ kind: flight
 - I flew from {from} to {to}, looking for familiar places below.
 - I flew from {from} to {to}, glad to admire the distance instead of walking it.
 - I flew to {to}, looking back until {from} passed out of sight.
-- [!first] I flew from {from} to {to}, with a welcome pause for my thoughts.
+- [!first] I flew from {from} to {to}, grateful to let my legs be passengers for a while.
 - [hc] I flew to {to}, grateful for a view beyond the next fight.
 - [class:DRUID] I flew from {from} to {to} on borrowed wings, with the open air dearer than the distance it could save.
 - [!first] I caught a ride from {from} to {to}, with the long road passing beneath me.

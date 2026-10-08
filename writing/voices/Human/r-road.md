@@ -1,7 +1,7 @@
 ---
 kind: r-road
 ---
-- [!grouped] rather too far from a neighbour's help
+- [!grouped] rather fonder of a neighbour's help than of travelling alone
 - [!back] hoping the people would be kinder than the distance
 - [!back] less sure of my welcome than of my willingness to help
 - [!back] wondering whose trouble would find me first

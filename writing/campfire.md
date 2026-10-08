@@ -1,21 +1,21 @@
 ---
 kind: campfire
 ---
-- I sat by a campfire {at} and let the warmth do its work.
-- A fire {at}, and an hour beside it.
-- I warmed my hands at a campfire {at}.
-- I rested by a fire {at}, and felt the road go out of my legs.
-- A campfire {in}: warmth, a meal, and quiet.
-- I shared a fire {at} with whoever else was cold.
-- I stopped by a fire {at} and mended my gear while it burned.
-- {at} I found a fire and sat by it as long as I dared.
-- [night] I kept a fire burning {at} through the dark hours.
-- [night] The fire {at} was the only light for miles.
-- [hc aside night] A fire {in}. I sat with my back to it and my eyes on the dark.
-- [race:Tauren] I sat by a fire {at} and gave thanks to the Earth Mother for it.
+- I sat by a campfire {at}, letting the warmth reach the parts of me the road had wearied.
+- I stopped by a fire {at}, quite willing to let a little heat do what stubbornness could not.
+- I warmed my hands at a campfire {at}, grateful for a comfort so easy to accept.
+- I rested by a fire {at}, with no desire to trade its warmth for another mile.
+- I paused by a campfire {at}, wishing the rest of the day had asked as little of me.
+- I sat by a fire {at}, ready for company that did not require me to be useful.
+- I stopped by a fire {at}, letting my hands have warmth instead of another job.
+- I rested beside a fire {at}, with the simple comfort dearer than the distance I had come.
+- [night] I paused at a fire {at}, glad to let the night keep the road beyond it.
+- [night] I rested by a fire {at}, grateful for a little light that did not require me to travel towards it.
+- [hc aside night] I stopped by a fire {at}, enjoying its warmth without quite forgetting the dark.
+- [race:Tauren] I sat by a fire {at}, giving thanks to the Earth Mother for such a small kindness.
 - [class:MAGE] I sat by a fire {at}, enjoying a flame that needed no spell from me to keep it useful.
-- A fire {at}, and the smell of something cooking.
-- I sat by the embers {at} until my hands stopped aching.
-- [aside] Someone had a fire going {at}. I was glad of it.
-- I rested by a campfire {at} and listened to it crackle.
-- [night] A fire {at} kept the night at a distance.
+- I sat by a fire {at}, with warmth enough to make staying put an easy decision.
+- I paused beside a fire {at}, as ready for the heat as for the stillness.
+- [aside] Grateful for warmth that asked nothing in return, I rested beside a fire {at}.
+- I rested by a campfire {at}, and let its crackle take the place of my hurried breathing.
+- [night] I sat beside a fire {at}, glad to have something gentle to look at in the dark.

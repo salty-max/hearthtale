@@ -1,25 +1,25 @@
 ---
 kind: died
 ---
-- [foe] {foe} killed me {at}. I walked back from the graveyard as a ghost, which is a humbling way to travel.
-- [foe] I died {at}, at the hands of {foe}. The spirit healer didn't ask how.
-- [foe] {foe} put me in the ground {at}. I didn't stay there.
-- [foe] I lost a fight with {foe} {at}, and my life with it. For a while.
-- [foe] I was killed by {foe}. My pride took longer to come back than I did.
-- [player] {foe} killed me {at}. Another adventurer, and no friend of mine.
-- [fall] I fell to my death {at}. I'd like to say I was pushed.
-- [fall] I misjudged a ledge {at}. The ground did not.
-- [drowning] I drowned {at}. I am not built for water, as it turns out.
-- [lava] I walked into fire {at}. Don't ask.
-- [nature] I died {at}, and no foe did it. The world itself did.
-- I died {at}. I came back. Not everyone gets to say that.
-- I died {at}, and woke among the ghosts. The walk back was long and cold.
-- I died {at}. The graveyard was colder than the fight.
-- I came to my senses as a ghost {at}, and started the long walk back to my body.
-- {at} I died, and learned what the far side of the world looks like. Grey, mostly.
-- [foe] {foe} had the better of me {at}. I'll not forget the face.
-- [foe] I fell to {foe} {at}, and rose again, poorer and wiser.
-- I died {at}. The armourer was the only one glad of it.
-- I died {at}, and came back lighter by a little pride.
-- [foe] {foe} put an end to me {at}, for a while.
-- I died {at}. The road back from the graveyard was long enough to think about it.
+- [foe] {foe} killed me {at}, and I wanted my life back more than any victory I had imagined.
+- [foe] I died {at} at the hands of {foe}, with no room left for pride in the fight.
+- [foe] {foe} killed me {at}, and made the prospect of an ordinary home seem unbearably dear.
+- [foe] I lost a fight with {foe} {at}, and my life with it.
+- [foe] I was killed by {foe}, with far more left that I wanted to do than the struggle allowed.
+- [player] {foe}, another adventurer, killed me {at}; I had no kindness left for the thought of them.
+- [fall] I fell to my death {at}, with the ground suddenly offering a welcome I did not want.
+- [fall] I fell to my death {at}, unable to put anything gentler between myself and the ground.
+- [drowning] I drowned {at}, wanting air more fiercely than anything I had wanted beyond the water.
+- [lava] Fire killed me {at}, and I wanted a warmth that would have let me live.
+- [nature] I died {at}, with no enemy to blame for how badly I wanted to go on.
+- I died {at}, and wanted another chance at a life that had seemed so ordinary before.
+- I died {at}, with too much left dear to me to be willing to leave it.
+- I died {at}, and wished the next familiar place need not be a graveyard.
+- I died {at}, with no comfort in having survived the road that had brought me here.
+- I died {at}, wanting the quiet pleasures of life more than the dangers I had chosen.
+- [foe] {foe} had the better of me {at}, and I regretted every confidence that had made the fight seem easy.
+- [foe] I fell to {foe} {at}, with survival suddenly worth more than any pride I could have salvaged.
+- I died {at}, and wanted the ordinary burdens of being alive back again.
+- I died {at}, with far more affection for my body than I had felt while it was carrying me.
+- [foe] {foe} put an end to me {at}, and I had no wish to leave the world to it.
+- I died {at}, with no kindness in how abruptly the road could end.

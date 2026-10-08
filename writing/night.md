@@ -1,20 +1,20 @@
 ---
 kind: night
 ---
-- [!last] I spent the night in the open {at}, listening longer than I had by day.
-- [!last] I settled beneath the sky {at}, glad to stop even without an inn.
-- [!last] I rested outside {at}, with the night quiet around my thoughts.
-- [!last] I passed the night {at}, with the ground beneath me and the road put aside.
-- [!last] I spent the night outdoors {at}, missing the shelter of a roof.
-- [!last] I stopped {at} for the night, leaving the road to the dark.
-- [!last hc] I passed the night outside {at}, conscious of every sound beyond my resting place.
-- [last] I ended this stretch under the sky {at}, glad of a pause.
-- [last] I settled outside {at}, putting down my last words before resting.
-- [last] I spent another night outdoors {at}, ending the account where the road had left me.
-- [last] I closed this chapter {at}, with more road waiting beyond the night.
-- [!last] I paused for the night {at}, with time to think back over the day.
-- [!last] I spent the night {at}, content to let the world go on without me.
-- [last] I rested outdoors {at} and put the book aside for another day.
-- [last] I set down my last words {at}, with the open sky for shelter.
-- [last] I rested outside {at}, with the road and its account behind me.
-- [last] I closed the chapter {at}, glad that the quiet asked less than the day.
+- [!last] I spent the night in the open {at}, with rest more inviting than the search for shelter.
+- [!last] I settled beneath the sky {at}, grateful to stop without having to walk another mile for a roof.
+- [!last] I rested outside {at}, hoping the ground would prove kinder than it looked.
+- [!last] I passed the night {at}, with my feet finally free of the need to carry me anywhere.
+- [!last] I spent the night outdoors {at}, missing the comfort of a roof without wanting to go looking for one.
+- [!last] I stopped {at} for the night, ready to let the darkness have the road.
+- [!last hc] I passed the night outside {at}, with the thought of danger harder to put aside than my weariness.
+- [last] I settled beneath the sky {at}, hoping to wake with my legs rather more willing.
+- [last] I lay down outside {at}, grateful to have reached a place where I could stop.
+- [last] I spent another night outdoors {at}, with no wish to travel further for comfort.
+- [last] I settled {at}, with the darkness welcome to keep the next stretch until I was rested.
+- [!last] I paused for the night {at}, more tired than the distance had made me feel while I was moving.
+- [!last] I spent the night {at}, content to let the rest of the world find its own way for a while.
+- [last] I rested outdoors {at}, wishing the ground had been designed with a tired back in mind.
+- [last] I settled {at}, with enough road behind me to make stillness feel like an arrival.
+- [last] I rested outside {at}, hoping sleep would make the coming miles feel less expensive.
+- [last] I lay down {at}, grateful that the night asked less of me than the day had.

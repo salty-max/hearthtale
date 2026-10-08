@@ -1,7 +1,7 @@
 ---
 kind: r-gear
 ---
-- [!made] welcome protection for a traveller far from shelter
+- [!made] welcome protection for a traveller still learning this world's dangers
 - [!made !held] hoping my shoulders would find the fit forgiving
 - [!made] rather more comfort than a confident prayer could offer
 - [!made] less exposed on ground my hooves had yet to learn

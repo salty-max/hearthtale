@@ -1,9 +1,9 @@
 ---
 kind: summit
 ---
-- At level {level}, the road I had begun as a beginner came to its end, and so does this journal.
-- I had reached level {level}. Whatever came next would be another story; this one was told.
-- There was nothing more to become: level {level}, and the last page of this journal.
-- Level {level}: the end of the road I set out on, and of this account of it.
-- [hc] I reached level {level} alive. Few who start that road can say as much, and this journal ends with me still on my feet.
-- [hc] Level {level}, and still breathing. The journal closes here, on a life that was never taken.
+- I reached level {level}, with more of the world dear to me than when I first set out.
+- I reached level {level}, and wanted time to enjoy a life I had worked hard to keep.
+- At level {level}, I could take pride in how far my feet had carried me without needing another mile at once.
+- I reached level {level}, no longer the stranger who had once wondered whether the road would welcome me.
+- [hc] I reached level {level} alive, and felt a tenderness for my life no danger had managed to take from me.
+- [hc] I reached level {level}, still alive and very willing to remain so.

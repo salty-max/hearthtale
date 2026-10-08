@@ -6,7 +6,7 @@ kind: r-gear
 - [!made] something I would hate to leave for the troggs
 - [!made] hoping not to discover the weak point personally
 - [!made hc] not eager to test the protection to destruction
-- [made] my small hands capable of more than people expected
+- [made] my small hands capable of more than their size suggested
 - [made] a little piece of Gnomeregan's stubborn ingenuity
 - [made] nothing I would have been ashamed to bring to Tinker Town
 - [!made] weighing the comfort against the weight

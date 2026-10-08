@@ -3,7 +3,7 @@ kind: r-gear
 ---
 - [!made] something I would not be ashamed to bring to Ironforge
 - [!made !held] hoping for a fit that would not squeeze the supper out of me
-- [!made !held] rather rather fonder of durability than decoration
+- [!made !held] durability rather dearer to me than decoration
 - [!made !held] hoping not to spend the whole road adjusting the fit
 - [!made hc !held] more fond of protection than of testing my luck
 - [made] my own workmanship facing a harder judge than my pride

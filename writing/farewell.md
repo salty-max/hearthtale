@@ -1,18 +1,18 @@
 ---
 kind: farewell
 ---
-- Rest now, {name}.
+- May {name} find a gentler rest beyond the last struggle.
 - May the road be kind, wherever {name} walks now.
-- The journal is closed. Let it be read.
-- Let this book stand for {name}, now that {name} cannot.
-- [race:Dwarf] The clans of {home} will remember {name}.
-- [race:Orc] {name} died weapon in hand, as an orc should.
-- [race:Scourge] {name} had died once before. This time it was for good.
-- [race:NightElf] Elune light the way of {name}.
+- {name}'s life had room for more than the world allowed.
+- May {name} be remembered for more than this last loss.
+- [race:Dwarf] May the clans of {home} hold a place for {name}.
+- [race:Orc] {name} had a freedom no grave could give back to the camps.
+- [race:Scourge] {name} had died once before, and had still found a second life worth keeping.
+- [race:NightElf] May Elune light the way for {name}.
 - [race:Tauren] {name} has returned to the Earth Mother.
-- [race:Human] A candle will burn for {name} in the cathedral of {home}.
+- [race:Human] May the Light be gentle with this child of {home}.
 - [race:Gnome] Gnomeregan has lost another of its children.
-- [race:Troll] The loa have called {name} home.
+- [race:Troll] May the loa receive {name} kindly.
 - [race:BloodElf] The sun sets on another child of Quel'Thalas.
 - [race:Draenei] {name} fell far from Draenor, and farther still from Argus.
 - [class:PALADIN] May {faith} be gentler to {name} than the last struggle was.

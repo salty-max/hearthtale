@@ -2,7 +2,7 @@
 kind: died
 ---
 - [foe] {foe} killed me {at}, and I had no comfort in the thought of being brave about it.
-- [foe] I fell to {foe} {at}, with Durotar suddenly much too far from where I lay.
+- [foe] I fell to {foe} {at}, with far too much of Durotar's future still dear to me.
 - [fall] I fell to my death {at}; my strength had been of no use between the height and the ground.
 - [drowning] I drowned {at}, wanting a breath more fiercely than I had ever wanted a victory.
 - I died {at}, with the new homeland still needing living hands more than another remembered name.
