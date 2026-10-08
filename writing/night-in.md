@@ -6,7 +6,7 @@ kind: night-in
 - [!last] I settled indoors {at}, more willing to accept a little discomfort than to go looking for another place.
 - [!last] I rested inside {at}, glad to let the night keep the roads without me.
 - [!last] I spent the night indoors {at} without an inn, content to be sheltered for a while.
-- [!last] I rested inside {at}, with my legs no longer obliged to earn me another mile.
+- [!last] I rested inside {at}, with the day's demands safely on the other side of a wall.
 - [!last hc] I settled indoors {at}, grateful for a little shelter in a world that offered no second life.
 - [last] I ended this stretch indoors {at}, with the prospect of rest dearer than the search for an inn.
 - [last] I settled inside {at}, glad to have a roof without another journey to find one.

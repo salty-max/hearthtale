@@ -1,15 +1,15 @@
 ---
 kind: boss-final
 ---
-- [grouped] I helped bring down {boss}, and wanted the way out of {dungeon} more than another triumph.
+- [grouped] I helped bring down {boss}, and the way out of {dungeon} seemed a fine reward in itself.
 - {boss} fell, and I could think of leaving {dungeon} without preparing for another fight first.
 - I defeated {boss} in {dungeon}, with the relief slower to arrive than I had expected.
 - [grouped] We brought down {boss} at last, and I let myself believe we could leave {dungeon} alive.
 - {boss} fell, and I felt how badly I had wanted to leave {dungeon} in one piece.
-- I overcame {boss}, and wanted something gentler than the dangers of {dungeon} for a while.
+- I overcame {boss}, with the dangers of {dungeon} quite sufficient to occupy my thoughts for a while.
 - [grouped] We defeated {boss}, and I was grateful to have company for the way out of {dungeon}.
 - [hc] I defeated {boss}, still alive in {dungeon} and very glad that the next danger could wait.
 - {boss} went down at last, and I could stop expecting another demand on my courage from {dungeon}.
-- With {boss} defeated, I was ready to leave {dungeon} to someone less tired.
+- With {boss} defeated, I could leave {dungeon}, my taste for danger thoroughly satisfied.
 - {boss} fell, and the wish to be safely outside {dungeon} finally seemed within reach.
 - I overcame {boss}, and felt the weight of {dungeon} ease inside me.

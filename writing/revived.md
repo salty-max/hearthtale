@@ -10,10 +10,10 @@ kind: revived
 - [corpse] As a ghost I found the way back to my body, and stepped into it again.
 - [corpse] I returned from the graveyard as a ghost, with my own body dearer to me than any familiar face could have been.
 - [healer] At the graveyard in {graveyard}, I took the spirit healer's bargain rather than return to my body, and woke weak and worn.
-- [healer] The spirit healer raised me at the graveyard, with weakness a price I was willing to pay for being alive.
+- [healer] The spirit healer raised me at the graveyard; the weakness was a price I could gladly bear for being alive.
 - [healer] The spirit healer brought me back, at a price paid in strength and in the state of my gear.
 - [healer] I let the spirit healer raise me at the graveyard, and paid for it in weakness.
-- [healer] I took the spirit healer's help, grateful for a life I wanted too much to refuse the cost.
+- [healer] I took the spirit healer's help, grateful for a life I could reclaim despite the cost.
 - [healer] The spirit healer returned me to life, weakened, and my gear the worse for it.
 - [healer] I chose the spirit healer over the return to my body, and woke drained.
 - [ally] {by} raised me where I fell, and I was grateful to have a life in which to repay the kindness.

@@ -3,28 +3,28 @@ kind: kills
 ---
 - {n} {foes} had fallen to me {at}, enough fighting to make the next quiet stretch very dear.
 - I counted {n} {foes} among the fights {at}, and hoped to leave the number alone for a while.
-- I had dealt with {n} {foes} {at}, and wanted the next stranger to be friendly.
+- I had dealt with {n} {foes} {at}, with a new appreciation for a friendly introduction.
 - I had killed {n} {foes}, enough to be tired of finding my courage useful.
-- I fought my way through {n} {foes} {at}, and was ready to give my hands a gentler occupation.
+- I fought my way through {n} {foes} {at}, and the prospect of gentler work became very attractive.
 - I had fought {n} {foes} {at}, with no wish to see how many more I could endure.
 - I had come through fights with {n} {foes}, and was grateful that none had been my last.
 - The {n} {foes} I had killed {at} had occupied much of this stretch.
-- {n} {foes} had fallen to me, and I wanted the next familiar face more than another opponent.
-- I counted {n} {foes} among the day's fighting {at}, rather ready for supper instead of another struggle.
+- {n} {foes} had fallen to me, making the thought of a familiar face a comfort.
+- I counted {n} {foes} among the day's fighting {at}, with supper a pleasant thing to think of afterwards.
 - [lots] I had fought {n} {foes}, enough to make a quiet return seem worth more than another victory.
-- [lots] I had dealt with {n} {foes} {at}, and felt the work settle into my shoulders once I stopped.
+- [lots] I had dealt with {n} {foes} {at}, and the relief of stopping left me abruptly exhausted.
 - [lots] {n} {foes} had fallen to me, enough to give me a tenderness for ordinary, untroubled life.
 - [hc] I counted {n} {foes}, grateful to be the one counting.
 - [class:HUNTER !low] I had hunted {n} {foes} {at}, with less appetite for the chase than for an undisturbed return.
 - [class:WARLOCK] I had killed {n} {foes}, and wanted the next use for my magic to cost me nothing dearer than a soul shard.
-- [class:MAGE] I had brought down {n} {foes}, and wanted the next use for my magic to be as harmless as conjuring supper.
-- [class:ROGUE] I had dealt with {n} {foes}, and wanted the next stretch of my life to pass considerably less noticed.
-- [class:PRIEST] {n} {foes} had fallen to me, and I wanted my next prayer to mend something instead of ending it.
-- [class:SHAMAN] I had fought {n} {foes}, and was ready to ask the elements for the warmth of a small fire instead of another battle.
-- [class:WARRIOR] I had fought {n} {foes}, with my rage no longer feeling like something I wanted to feed.
-- I had killed {n} {foes} in all {at}, a part of the day I was ready to put behind me.
+- [class:MAGE] I had brought down {n} {foes}, and the prospect of conjuring supper gave me a private comfort.
+- [class:ROGUE] I had dealt with {n} {foes}; a rogue's quiet obscurity seemed a pleasant thing to return to.
+- [class:PRIEST] {n} {foes} had fallen to me, with the gentler uses of a priest's prayers dear to me afterwards.
+- [class:SHAMAN] I had fought {n} {foes}, and the gentler uses of the elements had become very dear to me.
+- [class:WARRIOR] I had fought {n} {foes}, and could let my rage subside without feeding it another struggle.
+- I had killed {n} {foes} in all {at}, a part of the day I could put behind me.
 - By the end I had put down {n} {foes} {at}, with less appetite for fighting than when I began.
-- I had come through encounters with {n} {foes} {at}, and wanted my next introduction to be less dangerous.
+- I had come through encounters with {n} {foes} {at}, and friendly company seemed a great luxury.
 - [plain] {n} {foes} had fallen to me {at}.
 - [plain] The fighting came to {n} {foes}.
 - [plain] I had faced {n} {foes} {at}.

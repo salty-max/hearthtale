@@ -1,17 +1,17 @@
 ---
 kind: r-road
 ---
-- my legs reckoning the distance without my help
+- the distance giving me plenty of time to think
 - [!grouped] rather more company in my worries than I wanted
-- my feet more ready to arrive than my caution
-- [!back] hoping the place would be kinder than the journey
-- [!back] less sure of my welcome than of my willingness to help
-- [!back] my legs unimpressed by the length of a small favour
-- [!back] more of a stranger than my confident stride suggested
-- [!back !home] rather aware of arriving among unfamiliar names
+- my interest in arriving overcoming a little unease
+- [!back] the question of my welcome still open
+- [!back] a stranger with an offer of help for an introduction
+- [!back] unfamiliar country giving the journey a new interest
+- [!back] a stranger behind an assured manner
+- [!back !home] an arrival among unfamiliar names
 - [!back night] my eyes asking more of the darkness than it would give
-- [back] my feet recognising what had once made me hesitate
-- [back] less a stranger to the way than on my first coming
-- [back] my stride easier once the turns came back to me
-- [back] more certain of where to stop than I had been before
-- [high] another distance my legs would not need to learn twice
+- [back] familiar ground losing its old power to trouble me
+- [back] a place beginning to feel like somewhere I knew
+- [back] the familiar turns making the way easy
+- [back] the place to stop already fixed in mind
+- [high] a distance I would not need to learn twice

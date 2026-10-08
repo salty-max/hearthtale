@@ -1,7 +1,7 @@
 ---
 kind: closing
 ---
-- The work had kept me busy for {time}, and a quiet supper had become a very fine prospect.
+- The work had kept me busy for {time}, and a quiet supper seemed an excellent use for what remained.
 - I had earned {gold} in {time}, enough to make tomorrow's bread less of a worry.
 - After {time}, an evening too dull for a town crier seemed a luxury.
 - I had spent {time} travelling; the road seemed to have followed me into every muscle.

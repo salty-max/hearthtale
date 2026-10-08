@@ -3,16 +3,16 @@ kind: quests-many
 ---
 - I had seen {n} tasks through by the end, enough to be tired of the sound of a small favour.
 - The {n} tasks behind me had left less for the people here to carry alone.
-- I had finished {n} errands, and wanted the next person to offer company rather than work.
+- I had finished {n} errands, and company without a favour attached seemed particularly welcome.
 - {n} jobs had been seen through along the way, enough to make the next request sound less inviting.
-- By the end I had seen {n} tasks through, with my feet ready for someone else to be useful.
+- By the end I had seen {n} tasks through, quite content to leave being useful to somebody else for a while.
 - I had completed {n} tasks, and wanted one small kindness that asked nothing back.
 - I had finished {n} jobs, enough to wish I had learned to refuse a favour gracefully.
 - I had brought {n} errands to an end, with {giver}'s the last claim on my strength for a while.
 - The {n} tasks behind me had left me rather more fond of sitting still than of being helpful.
-- I had finished {n} small jobs, and was ready to let the next traveller earn a welcome.
+- I had finished {n} small jobs, enough to excuse myself from the next request without shame.
 - [hc] I had survived to finish {n} tasks, and wanted more from the evening than another proof that I could be useful.
-- [class:PALADIN] I had seen {n} tasks through, and was ready to ask the Light for something as ordinary as a quiet evening.
+- [class:PALADIN] I had seen {n} tasks through, with the Light's shelter a quiet comfort at the end.
 - [class:HUNTER] The {n} tasks behind me had given my patience more work than the hunt alone could have found.
 - [plain] I had finished {n} tasks.
 - [plain] That made {n} tasks in all.

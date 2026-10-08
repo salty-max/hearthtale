@@ -1,17 +1,17 @@
 ---
 kind: r-lesson
 ---
-- my fingers slower than my willingness
-- rather more patience required than I had offered at the start
-- [one] hoping it would come readily when danger could not wait
-- less comfortable as a learner than I had sounded when I asked
-- my hands no quicker for wishing them to be
-- more eager than skilful, and willing to ask for help
+- an unfamiliar knack demanding an apprentice's care
+- my initial enthusiasm acquiring a practical cost
+- [one] a useful knack for the moment danger could not wait
+- an apprentice's difficulty taking the shine off my confidence
+- my hands taking their time with the unfamiliar demands
+- an enthusiastic beginner with plenty of questions
 - my pride having to make room for clumsiness
-- my fingers still short of the ease I wanted
+- my fingers slowly finding the ease of the knack
 - rather taken with a knack I could carry away with me
 - [new one] not yet sure where it might earn me a welcome
 - [new one] my patience beginning with the simplest part of it
 - [low] new enough to need help without wanting to look helpless
 - [high] less dependent on a familiar way of doing things
-- [!one] hoping they would serve when confidence could not
+- [!one] some useful lessons for a moment when confidence failed

@@ -1,33 +1,33 @@
 ---
 kind: opening
 ---
-- [!night] I set out {at}, ready to give the day more than a tired pair of legs.
-- [!night] I began again {at}, hoping the day's work would leave me some strength to enjoy the evening.
-- [!night] I took up the road {at}, grateful for another day in which to put my feet to use.
+- [!night] I set out {at}, with the day's possibilities still pleasantly unsettled.
+- [!night] I began again {at}, taking some pleasure in the day before finding it a useful occupation.
+- [!night] I took up the road {at}, grateful for another day whose troubles I had yet to meet.
 - I set out {at}, more willing to move than to stand about worrying.
 - [night] I went on {at} after dark, with my ears doing more of the work than my eyes.
-- [night] I began this stretch {at}, hoping the night would offer fewer surprises than hiding places.
+- [night] I began this stretch {at}, giving the night's hiding places a cautious share of my attention.
 - [night] I set out {at}, less eager for the darkness than for getting where I was going.
-- [!night] I began again {at}, hoping for a day that would leave little reason to be frightened.
-- I took up the road {at}, with my legs willing and my courage still negotiating.
-- I set out {at}, ready to be useful and rather hoping it would not require another long walk.
+- [!night] I began again {at}, with a private affection for the possibility of an ordinary day.
+- I took up the road {at}, my enthusiasm concealing a private unease.
+- I set out {at}, with help to offer and a healthy respect for the cost of offering it.
 - I went on {at}, with a stranger's caution and a traveller's wish to be welcomed.
-- I began this stretch {at}, hoping my feet would have fewer reasons to complain by its end.
+- I began this stretch {at}, curious what the country might have in store for me.
 - I set out {at}, still more stubborn about going on than sensible about stopping.
 - I made ready {at}, with no desire to let another hour pass in hesitation.
-- I went on {at}, hoping a little distance would quiet the worries I had brought.
-- I set out {at}, as ready for company as for work.
+- I went on {at}, letting the country occupy the attention my worries had claimed.
+- I set out {at}, with an interest in the people I might meet along the way.
 - [hc] I began again {at}, grateful to be alive and unwilling to take another morning for granted.
 - [hc high] I took up the road {at}, with too much life behind me to throw away the life ahead.
 - [class:MAGE] I began again {at}, with a mage's affection for problems that could be approached over conjured water instead of shouted spells.
-- [class:HUNTER] I took up the road {at}, with a hunter's patience more willing than a hunter's hunger for the chase.
+- [class:HUNTER] I took up the road {at}, letting a hunter's patience keep my appetite for the chase in check.
 - [class:ROGUE] I began this stretch {at}, with a healthy affection for ways in that would leave a quiet way out.
 - [class:WARLOCK] I set out {at}, with curses enough for my enemies and a healthy distrust of anything I could summon.
 - [class:PRIEST] I began again {at}, with hands I hoped would be called on more often to mend than to harm.
 - [class:DRUID] I took up the road {at}, still fond of a world that looked very different through a hunter's eyes and a healer's hands.
-- [class:SHAMAN] I set out {at}, hoping to hear the elements more gently than in the thunder of a fight.
+- [class:SHAMAN] I set out {at}, listening for the gentler voices of the elements.
 - [class:WARRIOR] I set out {at}, with a warrior's habit of judging trouble by the reach of a weapon.
-- [class:PALADIN] I began again {at}, hoping to lend the Light's strength without finding every need at the end of a weapon.
-- [!night] I began {at}, hoping the day would leave me some strength for myself.
-- [!night] I set out {at}, hoping the day had something gentler than danger in store.
+- [class:PALADIN] I began again {at}, with the Light's strength to offer whatever ordinary needs I might find.
+- [!night] I began {at}, with some strength to spend and an interest in where I might spend it.
+- [!night] I set out {at}, enjoying a moment's freedom from any urgent demand.
 - [night] I took up the road {at} after dark, with rather more care than hurry.

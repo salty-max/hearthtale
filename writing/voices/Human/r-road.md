@@ -1,7 +1,7 @@
 ---
 kind: r-road
 ---
-- [!grouped] a neighbour's company dear to me in unfamiliar country
+- [!grouped] a neighbour's company a comfort to think of on the way
 - [!back] the question of my welcome still unsettled
 - [!back] a stranger with help to offer and no introductions
 - [!back] wondering whose trouble would find me first

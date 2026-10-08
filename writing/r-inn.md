@@ -2,14 +2,14 @@
 kind: r-inn
 ---
 - one less long distance to worry over
-- rather ready for a return that needed no walking
-- something reassuringly small to set against a long road
-- my feet rather fonder of the enchantment than of its mystery
-- closer to shelter than the miles would have suggested
+- an easy return arranged in advance
+- a little certainty to carry into the unknown
+- the enchantment's usefulness quite sufficient to admire
+- a haven within reach of a stone
 - less inclined to dread retracing the way
-- hoping for a pause when the road had had enough of me
+- a pause to look forward to on my return
 - a little certainty I could keep within reach
-- one long walk fewer to ask of my legs
-- rather ready for the quiet promised by returning
-- [night] at an hour kinder to resting than to another journey
+- the return journey taken care of
+- the promised quiet pleasantly in mind
+- [night] the night giving shelter a particular appeal
 - [hc] unwilling to leave a safe return entirely to chance

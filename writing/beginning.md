@@ -2,10 +2,10 @@
 kind: beginning
 ---
 - I began {at}, with the road still more inviting than frightening.
-- I set out {at}, hoping to find a place that would be glad I had come.
-- I began {at}, with my feet willing and no certainty how long that would last.
+- I set out {at}, with the untested confidence of somebody who had yet to be turned away.
+- I began {at}, with an eager interest in a world I had barely started to know.
 - I set out {at}, with more courage than experience and a healthy wish to keep both.
-- I began {at}, ready to be useful without yet knowing what the work would cost.
-- I set out {at}, hoping to come home with more than a longer list of worries.
+- I began {at}, with help to offer and no clear notion of what the work would cost.
+- I set out {at}, curious about the world beyond the worries I already knew.
 - [hc] I began {at}, with one life to keep and no wish to spend it proving I was fearless.
 - [hc] I set out {at}, hoping the road would be kind enough to let me grow old.

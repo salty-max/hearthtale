@@ -1,45 +1,45 @@
 ---
 kind: r-item
 ---
-- my shoulders less eager than the person who asked
-- rather more patience required than the request suggested
-- hoping the burden would be welcome to somebody else
-- less fond of looking than of finally finding
+- the burden giving the request a practical cost
+- an ordinary request trying my patience
+- a burden with a destination I could be grateful for
+- the relief of finding making up for some of the search
 - unwilling to let the search take all my vigilance
-- my eyes slower to recognise the find than I wanted
+- the prize of the search an awkward thing to locate
 - [!one !plural] each piece another claim on my willingness
-- [!one !plural] counting them before asking my feet to go further
-- [!one !plural] counting them with more care than enthusiasm
+- [!one !plural] each piece accounted for before I could leave
+- [!one !plural] each piece given a deliberate share of my attention
 - [!one !plural] wondering why one person could need so many
-- [one !plural] not yet willing to let it out of my keeping
-- [one !plural] wondering how it could have asked so much of a small favour
-- [one !plural] rather keener to hand it over than to carry it
+- [one !plural] a find I had no intention of losing
+- [one !plural] the trouble of the search giving this an unexpected value
+- [one !plural] the destination a welcome end to the carrying
 - [cloth] wondering what a good tailor could make out of the cloth
-- [meat] my appetite more interested in cooking than collecting
+- [meat] the thought of cooking a pleasant reward for collecting
 - [night] my eyes taking their time where the dark would not oblige
-- [egg !one] my hands more careful than the burden usually required
+- [egg !one] my hands taking particular care with the fragile burden
 - [egg one !plural] not eager to discover how readily it could crack
 - [egg] rather reluctant to meet whatever had laid the eggs
 - [egg] my hands unusually gentle with so fragile a burden
 - [feather] light enough to make the search seem unreasonable
 - [feather] wondering how many feathers could justify such a journey
 - [feather] softer stuff than most of the day's business
-- [hide] rather ready for the hide to become a tailor's problem
+- [hide] a tanner welcome to the next part of the work
 - [hide] wondering whether a tanner would find the burden more inviting
-- [hide] more interested in handing over than keeping the hide
+- [hide] no inclination to keep the hide for myself
 - [paper] rather tempted by writing that had cost so much to find
-- [paper] hoping the writing would be less troublesome than the search
-- [paper one !plural] rather more careful with it than the errand's size suggested
-- [plant] my fingers gentler with the leaves than with the searching
+- [paper] the writing presenting a new puzzle after the search
+- [paper one !plural] the paper given the care the search had earned it
+- [plant] the leaves requiring some delicacy to keep intact
 - [plant] rather ready for someone else to judge the greenery
-- [plant] hoping the greenery would be worth the search
-- [stone one !plural] my shoulders less grateful for it than the person who asked
-- [stone !one] my back feeling each stone more keenly than my willingness
-- [stone] my shoulders finding little comfort in a stone's small size
+- [plant] the greenery's uses a new question after the search
+- [stone one !plural] a stone with no regard for the trouble of carrying it
+- [stone !one] each stone adding its weight to the request
+- [stone] dense mineral making an awkward burden
 - [relic one !plural] wondering whose hands had first valued it
 - [relic !one] wondering whose hands had first valued them
 - [relic] rather aware of how little I knew about the relics I carried
 - [relic] my hands gentler with something that had lasted this long
-- [remains] rather more intimate with the remains than I wanted
-- [remains] hoping to be rid of the remains before another request found me
-- [remains] my stomach less interested in the burden than my promise to help
+- [remains] the intimacy of the remains distinctly unpleasant
+- [remains] the remains a burden I could cheerfully hand over
+- [remains] my stomach protesting the generous offer

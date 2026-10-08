@@ -6,21 +6,21 @@ kind: dungeon
 - I went into {dungeon} with {mates}, grateful not to face its dangers alone.
 - [aside] I entered {dungeon} with {mates}, hoping we would all have a way back out.
 - [hc aside] I went into {dungeon}, with one life to keep and less confidence than I would have liked.
-- [class:PRIEST aside] I entered {dungeon} with {mates}, hoping my prayers would come as readily in fear as they had in safety.
-- [class:WARRIOR] I entered {dungeon} with {mates}, hoping a warrior's stubbornness would hold where anger alone could not.
-- [class:ROGUE aside] I entered {dungeon} with {mates}, hoping quiet feet would serve us better than a bold introduction.
+- [class:PRIEST aside] The prayers I could offer steadied me as I entered {dungeon} with {mates}.
+- [class:WARRIOR] I entered {dungeon} with {mates}, trusting to a warrior's stubbornness where anger alone might fail.
+- [class:ROGUE aside] I entered {dungeon} with {mates}, trusting to a quiet approach to spare us a difficult introduction.
 - I entered {dungeon}, more wary of what waited inside than eager to be impressive.
 - [aside] I went into {dungeon}, with a very ordinary wish to leave it alive afterwards.
-- I entered {dungeon}, hoping for a safe return before I had even begun.
-- I ventured into {dungeon}, willing enough to go forward and very unwilling to be trapped.
-- I braved {dungeon}, with my courage more willing than the rest of me.
-- I went into {dungeon}, hoping the way out would remain as easy to find as the way in.
+- I entered {dungeon}, giving the way back a careful place in my memory.
+- I ventured into {dungeon}, keeping a careful share of my attention for the way out.
+- I braved {dungeon}, making a considerable effort to look at ease.
+- I went into {dungeon}, with the way out still a comforting thing to think of.
 - I entered {dungeon}, with my life rather dearer to me than the chance of a fine victory.
 - [aside] I saw {dungeon} for myself, and wished I felt as bold as the decision to enter suggested.
 - [hc] I went into {dungeon}, with no second life waiting if I spent this one badly.
 - I went into {dungeon} with {mates}.
 - I entered {dungeon}, with {mates} beside me and very glad of the company.
-- [class:MAGE aside] I entered {dungeon} with {mates}, hoping to keep the dangers at a spell's distance.
+- [class:MAGE aside] I entered {dungeon} with {mates}, a mage with a great affection for keeping danger at a spell's distance.
 - I went into {dungeon}, determined not to let eagerness make my decisions for me.
-- I entered {dungeon}, hoping to come back with more than reasons for regret.
+- I entered {dungeon}, my interest in the place tempered by the risk of regretting it.
 - We made our way into {dungeon}, and I was grateful for the people who had chosen to come with me.

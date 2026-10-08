@@ -9,13 +9,13 @@ kind: rare
 - I overcame {foe} {at}, feeling rather less invulnerable than victorious.
 - I defeated {foe} {at}, and was grateful to keep the life that had brought me this far.
 - I killed {foe} {at}, with more appetite for safety than for the telling of it.
-- {foe} fell to me {at}, and I was ready for a quieter sort of company.
+- {foe} fell to me {at}, and a quiet evening seemed a fitting celebration.
 - I brought down {foe} {at}, and let the thought of a safe return be enough to celebrate.
 - [elite] I overcame {foe} {at}, with my pride slower to recover than my relief.
 - [elite] I defeated {foe} {at}, and felt the next breath more keenly than the victory.
 - [hc] I brought down {foe} {at}, unwilling to make a final test of my courage even for so memorable a name.
 - [class:HUNTER] I brought down {foe} {at}, with a hunter's relief at remaining more than a set of tracks going nowhere.
 - [class:ROGUE] I overcame {foe} {at}, and was grateful to be the one who could still choose to disappear.
-- I defeated {foe} {at}, and wanted nothing more demanding than a quiet evening afterwards.
+- I defeated {foe} {at}, with the effort leaving little taste for another triumph.
 - I overcame {foe} {at}, with my stomach taking longer than my hands to believe it was over.
 - {foe} fell to me {at}, and I hoped the road would offer gentler introductions after that.

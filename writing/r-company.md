@@ -2,14 +2,14 @@
 kind: r-company
 ---
 - [one] less alone with the distance to cover
-- less exposed than I had felt on my own
+- my vigilance no longer mine alone to bear
 - [one] another pair of eyes worth more than bravado
 - my courage relieved of some of the burden
-- [one] hoping we would both have an easier return
-- my stride less lonely than before
+- [one] another traveller to share the dangers of the way
+- the journey acquiring the ease of company
 - rather grateful to have someone beside me
 - [one] less obliged to be watchful in every direction
-- company warmer than another mile alone
+- a welcome companion for the distance ahead
 - [night] my fear no longer filling the whole night
 - [hc] unwilling to let the road take either of us
 - [low] new enough to be grateful rather than proud

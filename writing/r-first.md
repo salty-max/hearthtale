@@ -1,16 +1,16 @@
 ---
 kind: r-first
 ---
-- my courage less substantial than it had felt before
+- my confidence receiving a sharp correction
 - rather too conscious of the skin beneath my confidence
 - no longer tempted to get a better look
-- my feet keener to leave than my pride
+- a retreat acquiring a persuasive appeal
 - not the sort of introduction I would choose twice
 - more wary of what might be within reach
-- my stomach no more certain than my hands
-- less interested in the name than the danger
-- [teeth] those teeth deserving more distance than admiration
-- [mechanical] rather keen to stay clear of moving metal
-- [night] my eyes wanting a kinder introduction than the dark allowed
+- my stomach unsettled by the introduction
+- the danger taking the pleasure out of discovery
+- [teeth] those teeth quite sufficient to discourage a closer look
+- [mechanical] moving metal making curiosity an unwise indulgence
+- [night] the dark making the introduction distinctly uncomfortable
 - [hc] very attached to remaining alive and unremarkable
 - [low] new enough to this to envy someone else's ease

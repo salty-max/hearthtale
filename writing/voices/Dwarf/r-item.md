@@ -9,6 +9,6 @@ kind: r-item
 - [one !plural] a modest prize for a troublesome search
 - [one !plural] a find whose usefulness would have to justify the weight
 - [meat] wondering whether the smell would improve with cooking
-- [cloth] soft stuff to set beside the hard things a dwarf usually valued
+- [cloth] good material for something beyond a beard rag
 - [night] my eyes missing the welcome glare of a forge
 - [hc] unwilling to exchange my life for a full pack
