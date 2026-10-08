@@ -16,7 +16,7 @@ kind: kills
 - [lots] {n} {foes} had fallen to me, with little room between one fight and its place in my memory.
 - [hc] I counted {n} {foes}, grateful to be the one counting.
 - [class:HUNTER !low] I had hunted {n} {foes} {at}, learning something of the country through what lived in it.
-- [class:WARLOCK] I had killed {n} {foes}, enough to make me consider the uses of the power I was learning.
+- [class:WARLOCK] I had killed {n} {foes}, and felt less fond of the smell of destruction than of the spells that promised it.
 - [class:MAGE] I had brought down {n} {foes}, putting lessons to a test quite different from remembering them.
 - [class:ROGUE] I had dealt with {n} {foes}, and had reason by the end to value care as much as quickness.
 - [class:PRIEST] {n} {foes} had fallen to me, with rather more to consider afterwards than the number.

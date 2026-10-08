@@ -1,18 +1,18 @@
 ---
 kind: demon
 ---
-- [imp] I called my first imp out of the fire. It named itself {pet}, sneered at everything I owned and set to work anyway.
-- [imp] The first imp to answer me called itself {pet}, quick with fire and quicker with insults, and I decided I could live with both.
-- [imp] I bound an imp to my service. {pet} looked me over as if it had been sold something cheap, then threw its first bolt of fire without being asked twice.
-- [imp] {pet}, the imp I summoned, had opinions about my spells, my boots and my posture, and shared every one of them.
-- [voidwalker] I summoned my first voidwalker, {pet}, a silent shape of shadow that put itself between me and harm without complaint.
-- [voidwalker] {pet} rose from the dark at my call, a voidwalker with no voice and no opinions, which after the imp felt almost restful.
-- [voidwalker] The voidwalker I bound, {pet}, said nothing and took every blow meant for me, and I found that harder to read than any insult.
-- [succubus] I called a succubus to my side, {pet}, and was reminded that a servant who smiles is still a servant who is watching.
-- [succubus] {pet}, the succubus I summoned, was charming in a way I did not trust for a moment, and useful in a way I could not deny.
-- [felhunter] I summoned a felhunter, {pet}, a beast that sniffed at magic the way a hound sniffs at game, and kept close at my heel.
-- [felhunter] {pet}, my first felhunter, fed on the magic of anything that fought us, and seemed well pleased with the arrangement.
-- [felguard] I bound a felguard, {pet}, a towering soldier of the Legion who obeyed me with a contempt it barely troubled to hide.
-- [felguard] {pet} answered my call, a felguard taller than any door in town, and for once I chose my words with care.
-- I summoned {demon} for the first time, and it gave its name as {pet}. I watched it closely, and it watched me back.
-- {pet} came at my first call, {demon} bound to my service, and I resolved to remember which of us held the leash.
+- [imp] I summoned my first imp, {pet}, and took an immediate liking to the prospect of fire that would answer to me.
+- [imp] I called my first imp, {pet}; a small demon was still a demon, though the size made this easier to forget.
+- [imp] I bound my first imp, {pet}, with a certain affection for so much potential trouble in so little flesh.
+- [imp] I summoned {pet}, my first imp, and hoped I would be less likely to regret the fire than the company.
+- [voidwalker] I summoned my first voidwalker, {pet}, and found the bulk of that blue shadow unexpectedly reassuring.
+- [voidwalker] I called {pet}, my first voidwalker, glad to have something so substantial to send ahead of me.
+- [voidwalker] I bound my first voidwalker, {pet}; calling something out of the void was easier than feeling entirely safe beside it.
+- [succubus] I called my first succubus, {pet}, with no wish to mistake the pleasing shape for a kindly nature.
+- [succubus] I summoned {pet}, my first succubus; the horns made it easier to remember what I had called.
+- [felhunter] I summoned my first felhunter, {pet}, with a new sympathy for anyone who feared having their magic eaten.
+- [felhunter] I called my first felhunter, {pet}, a hound whose appetite for magic was a little too close to my own interests.
+- [felguard] I bound my first felguard, {pet}, and felt the danger of having a soldier of the Legion within reach.
+- [felguard] I summoned {pet}, my first felguard; that much demonic strength was a formidable thing to claim as mine.
+- I summoned {demon} for the first time, bound under the name {pet}, and felt less alone without feeling much safer.
+- I first summoned {pet}, {demon} bound to my service, with every intention of keeping the leash short.

@@ -22,7 +22,7 @@ kind: opening
 - [class:MAGE] Curious to see how much use I could make of what I had learned, I began again {at}.
 - [class:HUNTER] I took up the journey {at}, looking beyond the road for what moved around it.
 - [class:ROGUE] I began this stretch {at}, keeping as much attention on my surroundings as on my destination.
-- [class:WARLOCK] I went on {at}, aware that the power I sought would ask for judgement as well as nerve.
+- [class:WARLOCK] I set out {at}, with curses enough for my enemies and a healthy distrust of anything I could summon.
 - [class:PRIEST] Hoping to find a place for my faith in the work before me, I began again {at}.
 - [class:DRUID] I took up the road {at}, attentive to the life carrying on beside my own.
 - [class:SHAMAN] I began this stretch {at}, listening as well as looking while I found my way.
