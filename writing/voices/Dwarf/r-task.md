@@ -1,13 +1,13 @@
 ---
 kind: r-task
 ---
-- my patience harder to wear down than my legs
+- the request wearing a little shine off my stubbornness
 - already thirsty for something that was not another errand
 - rather aware of how far an obliging dwarf could be sent
 - my back wanting no further favours asked of it
 - more names to carry back to the mountain
 - thinking fondly of a well-earned ale
-- [explore] my footing worth more care than my pride would admit
+- [explore] a dwarf's caution kept busy by unfamiliar ground
 - [explore] wondering what older roads might lie beneath this one
 - [escort] unwilling to hurry another life into danger
 - [night] my eyes doing a poor imitation of a miner's lamp

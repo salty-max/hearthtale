@@ -4,8 +4,8 @@ kind: r-inn
 - already thirsty for an ale on the return
 - rather attached to a stone that could take me to shelter
 - better company in a pocket than another useless pebble
-- ready to get the weight off my feet on the return
-- hoping for a rest worthy of the walking
+- a comforting piece of magic for a dwarf to carry
+- a reliable way back to an unhurried ale
 - almost as reassuring as the mountain overhead
 - [night] readier for a bed than another hour's tramping
 - [hc] unwilling to trust my life to the distance from shelter

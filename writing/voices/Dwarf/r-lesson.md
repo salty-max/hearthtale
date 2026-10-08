@@ -1,14 +1,14 @@
 ---
 kind: r-lesson
 ---
-- my fingers less obedient than a familiar tool
+- my fingers making an apprentice of me
 - with the slow ache of an apprentice's pride
-- less comfortable as a learner than as someone who knew the craft
+- my pride chafing at the unfamiliar difficulty
 - [one] keen to have it ready when the danger came
 - my patience taking as much exercise as my hands
 - stubborn about learning what would not come easily
 - [new] an apprentice again, with no masterwork to hide behind
-- [new] hoping the mountain had sent me out with some knack to spare
+- [new] a new knack to put my stubbornness into
 - [low] still far from anything I would call mastery
 - [high] another skill to bring back under the mountain
-- [!one] hoping these would serve better than a confident boast
+- [!one] some useful additions to a dwarf's means of surviving
