@@ -320,6 +320,13 @@ scripts/release.sh [--version X.Y.Z] NOTES.md       # the addon: tag, push; Acti
 ## Conventions
 
 - Plain ASCII in `writing/` (' and plain quotes).
+- English game clients only (a decision, 8 October 2026): the record and the
+  writer match the game's English names (creature families, riding,
+  profession ranks, foe peoples); a localized client loses those lines, and
+  `addon/CURSEFORGE.md` says so. Don't add locale tables.
+- Lua: `bun run format:lua` (StyLua, `stylua.toml`) and `bun run lint:lua`
+  (selene, `selene.toml`; the game's globals in `wow.yml`: add one there when
+  the addon calls a new game function). Both run in `addon:check` and CI.
 - Conventional Commits, lowercase subjects; commit locally, ask before any
   push, release or deploy.
 - Lore and places true to the original game; the writing is in the first
