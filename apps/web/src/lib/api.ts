@@ -53,6 +53,19 @@ export function useConfirmPairing() {
   });
 }
 
+/** Removing one of my books from the site (its uploads then wait for a new link code). */
+export function useRemoveBook(id: number) {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: () => call<{ ok: true }>(`/api/characters/${id}`, { method: "DELETE" }),
+    onSuccess: () => {
+      qc.removeQueries({ queryKey: ["character", id] });
+      void qc.invalidateQueries({ queryKey: ["library"] });
+      void qc.invalidateQueries({ queryKey: ["hall"] });
+    },
+  });
+}
+
 export function useLinkCode() {
   return useMutation({ mutationFn: () => call<LinkCode>("/api/link-codes", { method: "POST" }) });
 }

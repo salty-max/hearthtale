@@ -6,7 +6,7 @@ import { eq } from "drizzle-orm";
 import { db } from "@/db";
 import { accounts, type AccountRow } from "@/db/schema";
 import { createSession, endSession, SESSION_COOKIE, SESSION_TTL_MS, sessionAccount, TEST_BNET_ID } from "@/lib/accounts";
-import { getCharacterBook, libraryOf } from "@/lib/characters";
+import { getCharacterBook, libraryOf, removeBook } from "@/lib/characters";
 import { confirmPairing, isPairCode, linkFor, pairingPending, pollPairing, startPairing } from "@/lib/companion";
 import { handleUpload } from "@/lib/upload";
 import { ogPage } from "@/lib/og";
@@ -102,6 +102,13 @@ app.get("/api/characters/:id", signedIn, async (c) => {
   if (!Number.isInteger(id) || id <= 0) return c.json({ error: "not found" }, 404);
   const found = await getCharacterBook(id, c.get("account")!.id);
   return found ? c.json(found) : c.json({ error: "not found" }, 404);
+});
+
+// Removing one of my books: it and its links go; its uploads wait for a new link code.
+app.delete("/api/characters/:id", signedIn, sameOrigin, async (c) => {
+  const id = Number(c.req.param("id"));
+  if (!Number.isInteger(id) || id <= 0) return c.json({ error: "not found" }, 404);
+  return (await removeBook(id, c.get("account")!.id)) ? c.json({ ok: true }) : c.json({ error: "not found" }, 404);
 });
 
 app.post("/api/link-codes", signedIn, sameOrigin, async (c) => c.json(await createLinkCode(c.get("account")!.id)));

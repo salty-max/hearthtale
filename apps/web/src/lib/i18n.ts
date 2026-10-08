@@ -127,6 +127,16 @@ const en = {
     hallWhy: "The public Hall, on hearthtale.app: anyone can read this fallen life's book there. You can take it back out.",
     gone: "This link doesn't lead to a book any more: it was revoked, or the book is gone.",
   },
+  remove: {
+    title: "Remove this book",
+    why: (name: string) =>
+      `${name}'s book leaves hearthtale.app, with every link you shared of it. The journal itself stays in the game.`,
+    companion:
+      "Ravenpost won't bring it back: its uploads of this character are refused from now on. To have the book here again, get a link code in your library and type /ht link CODE in the game.",
+    confirm: "Remove the book",
+    cancel: "Keep it",
+    failed: "The book couldn't be removed. Check your connection, then try again.",
+  },
   hall: {
     title: "Hall of the Fallen",
     intro: "Hardcore lives, ended, whose players chose to show them here: each with its epitaph, and its book to read.",

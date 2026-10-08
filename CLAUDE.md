@@ -318,6 +318,12 @@ Plan and steps: PLAN.md, "The site".
   `{ characters: [HearthtaleChar] }`, one character per request (Vercel takes
   4.5 MB). A book is kept only for a proven owner (Battle.net, already the
   account's, or a link code in the record); otherwise "unlinked", unstored.
+- Removing a book (`DELETE /api/characters/:id`, `lib/characters.ts`
+  `removeBook`; the bin beside "Share" in the reader, `RemoveDialog`, once
+  confirmed): the book and its share links go, and a note (`removed`: the
+  account, the GUID) refuses its companion's uploads ("removed", unstored)
+  until a new link code typed in the game brings it back (`decide` in
+  `lib/upload.ts` lifts the note).
 
 ## Commands
 
