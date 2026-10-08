@@ -22,5 +22,5 @@ kind: farewell
 - [class:ROGUE] {name} was never caught, until the end caught up.
 - [class:PRIEST] {name} healed many, and could not heal this.
 - [class:SHAMAN] The spirits carry {name} now.
-- [class:WARLOCK] Whatever {name} bargained with has come to collect.
+- [class:WARLOCK] {name} bound demons, but could not bind death.
 - [class:DRUID] {name} has gone back to the wild.

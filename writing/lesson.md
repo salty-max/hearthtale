@@ -1,11 +1,11 @@
 ---
 kind: lesson
 ---
-- [spell:Life_Tap] Life Tap was the first spell that asked to be paid in my own blood.
-- [spell:Fear] With Fear, I could fill a foe with terror and watch it run.
-- [spell:Drain_Life] Drain Life let me take back from a foe what it had taken from me.
-- [spell:Corruption] Corruption was a slow rot to set in a foe and leave to its work.
-- [spell:Health_Funnel] With Health Funnel, I could pour my own strength into my demon when it faltered.
+- [spell:Life_Tap] I learned Life Tap, a way to feed my magic from my own health; the hunger would come out of me.
+- [spell:Fear] I learned Fear, and could put the terror on the other side of a fight for once.
+- [spell:Drain_Life] I learned Drain Life, a hungry spell that could keep me alive at someone else's expense.
+- [spell:Corruption] I learned Corruption, which worked slowly enough to make a quick death seem generous.
+- [spell:Health_Funnel] I learned Health Funnel; keeping a demon alive could now cost me more than the summoning.
 - [spell:Polymorph] Polymorph could turn a foe into a sheep, which is more of an answer than it sounds.
 - [spell:Blink] Blink was a step through the air to somewhere safer, and I took to it at once.
 - [spell:Frost_Nova] Frost Nova held a foe in ice while I put some distance between us.
@@ -32,3 +32,6 @@ kind: lesson
 - [spell:Entangling_Roots] With Entangling Roots, the ground itself would hold a foe for me.
 - [spell:Healing_Touch] Healing Touch was the old craft of mending a body with the wild's own strength.
 - [spell:Rebirth] Rebirth could bring a fallen friend back in the middle of a fight.
+- [spell:Immolate] I learned Immolate, and liked the prospect of keeping a foe burning while I stayed out of reach.
+- [spell:Immolate] I learned Immolate, a nastier sort of fire than any hearth would welcome.
+- [spell:Life_Tap] I learned Life Tap, and could buy more magic with the health I needed to survive using it.

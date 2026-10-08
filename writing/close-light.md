@@ -18,7 +18,7 @@ kind: close-light
 - [class:MAGE] I survived the encounter with {foe} {at}, but no amount of studying had prepared me for the fear of it.
 - [class:ROGUE] I came close to falling {at}, where confidence had proved a poor substitute for caution.
 - [class:HUNTER !low] {foe} nearly had me {at}, and I thought of how readily I could leave my companion behind.
-- [class:WARLOCK] I was badly hurt {at}, reminded that power did not make my life any harder to spend.
+- [class:WARLOCK] I nearly died {at}, and wanted my own flesh back far more than another demon's strength.
 - I took a beating {at}, and found the relief of surviving it slower to arrive than I expected.
 - The danger {at} was over before I stopped feeling it. I had come too close to take that lightly.
 - I barely survived {at}, where the road ahead had briefly seemed beyond my reach.

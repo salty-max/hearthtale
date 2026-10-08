@@ -5,10 +5,10 @@ kind: power
 - [form] Learning {spell} gave me a new way to meet the wild, one I still had to grow accustomed to.
 - [form] I learned {spell}, aware that knowing its name was only the beginning of understanding it.
 - [form] I had learned {spell}, and felt there was a great deal of the world I would need to learn again.
-- [demon] I learned {spell}, adding another dangerous possibility to the work I had chosen.
-- [demon] With {spell} learned, I had a new servant to call and new reasons to consider what obedience meant.
-- [demon] I learned the summoning of {spell}, aware that another answer in the dark was not necessarily a friend.
-- [demon] I mastered {spell}, one more lesson whose usefulness would depend on my judgement.
+- [demon] I learned {spell}, and could call another creature from the dark without pretending it was a friend.
+- [demon] I learned {spell}; another demon could now reach me when I called, which was useful and not entirely reassuring.
+- [demon] I learned {spell}, with more hunger for a demon's strength than affection for its kind.
+- [demon] I learned {spell}, and hoped the demon would remain the one that paid most dearly for the arrangement.
 - [steed] I learned {spell}, and the thought of the long roads ahead seemed less burdensome.
 - [steed] Learning {spell} gave me a new way to travel, one I was eager to put to use.
 - [steed] I had learned {spell}, with the promise of a different pace to the journey.
