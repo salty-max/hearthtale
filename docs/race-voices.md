@@ -47,7 +47,10 @@ assumed profession and no invented reaction from an NPC.
 Routine clauses are plain; a race's reactions to them are its remark pools
 (`voices/<Race>/r-*.md`), told for roughly a third of routine clauses and
 never twice in ten chapters. React to the actual teeth, cloth, lesson,
-equipment or company in the record;
+equipment or company in the record, in words that make sense right after
+the clause ("I spoke with Mountaineer Thalos, a few improvements to the
+process already in mind" doesn't): not an abstract method, estimate or
+idea, and not the journal itself ("my account", "a fresh page");
 do not attach a reusable moral about freedom, craftsmanship or patience to
 every errand. Cultural vocabulary can colour a reaction without requiring
 a catchphrase. All races retain full sentences and the same allowance for
@@ -71,8 +74,8 @@ fallback remains. Routine facts, remark frequency and the writer's sentence
 length allowance stay the same.
 
 The ordinary vocabulary should make these differences felt before a deity
-or homeland is named. A human wonders who needs a hand; a gnome revises an
-impression; a Darkspear narrator keeps some humour for a safer moment. A
+or homeland is named. A human wonders who needs a hand; a gnome measures the
+world against its own size and its workings; a Darkspear narrator keeps some humour for a safer moment. A
 tauren notices how a shared pace feels, a blood elf admits the effort of
 composure, and a draenei gradually finds familiar names among unfamiliar
 ones. Windshapers look for connection, while the High Order put more trust

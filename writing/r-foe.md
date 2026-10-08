@@ -22,16 +22,16 @@ kind: r-foe
 - [murloc] the gurgling still ringing in my ears
 - [murloc] smelling of the shore for the rest of the day
 - [murloc] with a new dislike for anything that croaked
-- [kobold] glad there were no more tunnels to follow anyone into
+- [kobold] the little ones no easier than the big
 - [kobold] the squeaking easier to bear once it had stopped
 - [kobold] candle wax spattered further than seemed possible
 - [gnoll] the snarling worse than the bites
 - [gnoll] the smell of wet fur clinging to me afterwards
-- [gnoll] with no sign that the hills would ever run out of gnolls
+- [gnoll] with no sign that the land would ever run out of gnolls
 - [harpy] the shrieking still in my ears
 - [harpy] feathers settling around me long after
 - [harpy] the screeching worse than any talon
-- [quilboar] the stink of the pens hanging over everything
+- [quilboar] the stink of them hanging over everything
 - [quilboar] with thorns caught in everything I wore
 - [quilboar] those tusks closer than I liked
 - [centaur] the hoofbeats still thudding in my chest
@@ -42,7 +42,7 @@ kind: r-foe
 - [ogre] the ground still shaking in my memory
 - [troll] with an uncomfortable sense of how practised trolls were at this
 - [troll] painted faces and tusks staying with me longer than I wanted
-- [troll] the drums of the camps still beating somewhere
+- [troll] quicker on the feet than I had allowed for
 - [naga] the hissing in my ears long after
 - [naga] seawater and scales everywhere
 - [naga] quicker than anything with that many scales had a right to be
@@ -51,8 +51,8 @@ kind: r-foe
 - [satyr] with that corrupted laughter hard to shake off
 - [furbolg] more bear than I had bargained for
 - [furbolg] the woods quieter for it, though not happier
-- [furbolg] the totems still standing when it was over
-- [trogg] the stink of the caves following me out
+- [furbolg] stronger than all that shambling had suggested
+- [trogg] the stink of them clinging to me afterwards
 - [trogg] harder in the skull than anything had a right to be
 - [trogg] the grunting echoing long after
 - [outlaw] a life of crime ending exactly where such lives do

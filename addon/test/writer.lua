@@ -401,7 +401,9 @@ local function life(race, class, hc, from, to)
         elseif r == 115 then
           if not hc then
             add(m("died", { death = death(level, zone[1], sub) }))
-            local how = one({ "corpse", "corpse", "healer", "ally", "self" })
+            -- (the way back: most often soon after, and then told with the death)
+            if chance(0.4) then clock = clock + 2400 end
+            local how = one({ "corpse", "corpse", "healer", "healer", "ally", "ally", "self", "self" })
             add(m("revived", {
               how = how,
               by = how == "ally" and one(MATES) or nil,
@@ -459,6 +461,14 @@ local function life(race, class, hc, from, to)
           end
         else
           add(m("quest", q))
+          -- an errand whose ender sends me straight on with the next
+          if q.giver and q.ender and q.giver ~= q.ender and not (o and o[1].name) and chance(0.5) then
+            local last
+            repeat
+              last = one(GIVERS)
+            until last ~= q.giver and last ~= q.ender
+            add(m("quest", { title = one(QUESTS), giver = q.ender, ender = last }))
+          end
         end
       elseif r <= 52 then
         local cr = one(CREATURES)
@@ -598,7 +608,7 @@ local lines = {
   beginning = "I began {at}.",
   ["c-prof"] = "took up {prof}",
   ["c-place"] = "reached {place}",
-  ["c-kill"] = "brought down {foe}",
+  ["c-first"] = "fought {kind} for the first time",
   ["c-deed-kill"] = "killed {n} {foes} for {giver}",
   ["close-deep"] = "{foe} nearly ended me {at}. I was glad to survive.",
   ["c-deed-item"] = "found {n} {thing}",
@@ -618,7 +628,7 @@ local recorded = {
         { k = "prof", name = "Skinning", learned = true, zone = "Country", sub = "Home", at = 10 },
         { k = "prof", name = "Leatherworking", learned = true, zone = "Country", sub = "Home", at = 20 },
         { k = "place", zone = "Country", sub = "Farm", at = 30 },
-        { k = "kill", name = "Wolf", kind = "Beast", zone = "Country", sub = "Farm", at = 40 },
+        { k = "kill", name = "Wolf", kind = "Wolf", first = true, zone = "Country", sub = "Farm", at = 40 },
         {
           k = "quest",
           giver = "Farmer",
@@ -643,19 +653,14 @@ local sceneText = ns.writeBook(recorded).chapters[1].text
 if not sceneText:find("I took up skinning and took up leatherworking.", 1, true) then
   problem("scene joins", "related trades were split", sceneText)
 end
-if sceneText:find("leatherworking and brought down", 1, true) then
+if sceneText:find("leatherworking and fought", 1, true) then
   problem("scene joins", "a trade and a fight were forced together", sceneText)
 end
-local framed = sceneText:find("When I reached the Farm, I brought down a Wolf.", 1, true)
-  or sceneText:find("I reached the Farm, where I brought down a Wolf.", 1, true)
-  or sceneText:find("I reached the Farm and brought down a Wolf.", 1, true)
+local framed = sceneText:find("When I reached the Farm, I fought wolves for the first time.", 1, true)
+  or sceneText:find("I reached the Farm, where I fought wolves for the first time.", 1, true)
+  or sceneText:find("I reached the Farm and fought wolves for the first time.", 1, true)
 if not framed then problem("scene joins", "the arrival did not frame its action", sceneText) end
-if
-  not (
-    sceneText:find("Afterwards, I found Apples.", 1, true)
-    or sceneText:find("After that encounter, I found Apples.", 1, true)
-  )
-then
+if not (sceneText:find("Afterwards, I found", 1, true) or sceneText:find("After that encounter, I found", 1, true)) then
   problem("scene joins", "the next action lost the close call's aftermath", sceneText)
 end
 if sceneText ~= ns.writeBook(recorded).chapters[1].text then
@@ -663,8 +668,9 @@ if sceneText ~= ns.writeBook(recorded).chapters[1].text then
 end
 -- A compound action must survive both the arrival frame and an ordinary
 -- join, without three competing uses of "and" in the same thought.
-fixtureWriting["c-kill"] = { { "stood against {foe} and prevailed" } }
+fixtureWriting["c-first"] = { { "stood against {kind} and prevailed" } }
 fixtureWriting["c-deed-kill"] = { { "dealt with {n} {foes} and finished the work" } }
+fixtureWriting["c-loot"] = { { "found {item} and kept it" } }
 local compoundText = ns.writeBook(recorded).chapters[1].text
 if
   compoundText:find("I reached the Farm and stood against", 1, true)
@@ -681,8 +687,7 @@ local ordinaryCompound = ns.writeBook({
     {
       start = { level = 1, zone = "Country", sub = "Home" },
       log = {
-        -- (another creature than the quest's: a kill the quest counts is told by it)
-        { k = "kill", name = "Boar", kind = "Beast", zone = "Country", sub = "Home", at = 10 },
+        { k = "loot", link = "item:1:[Ring]", quality = 3, zone = "Country", sub = "Home", at = 10 },
         {
           k = "quest",
           giver = "Farmer",
@@ -695,7 +700,7 @@ local ordinaryCompound = ns.writeBook({
     },
   },
 }).chapters[1].text
-if not ordinaryCompound:find("prevailed; I dealt with", 1, true) then
+if not ordinaryCompound:find("kept it; I dealt with", 1, true) then
   problem("scene joins", "ordinary compound actions lost their grammatical join", ordinaryCompound)
 end
 ns.data, ns.writerUsed = originalData, originalUsed
@@ -705,7 +710,7 @@ ns.data, ns.writerUsed = originalData, originalUsed
 -- its own conjunction before the semicolon.
 ns.data, ns.writerUsed = { writing = fixtureWriting }, nil
 fixtureWriting["c-first"] = { { "had my first taste of fighting {kind}" } }
-fixtureWriting["c-kill"] = { { "killed {foe}" } }
+fixtureWriting["c-loot"] = { { "found {item}" } }
 fixtureWriting["c-deed-item"] = { { "brought {giver} {n} {thing}" } }
 fixtureWriting["c-gear"] = { { "began using {item}, which I had made myself" } }
 fixtureWriting["c-inn"] = { { "bound my hearthstone {inn}" } }
@@ -719,13 +724,13 @@ for seed = 1, 40 do
       {
         start = { level = 20, zone = "Country", sub = "Home" },
         log = {
-          { k = "kill", kind = "Boar", name = "Boar", sub = "Home", zone = "Country" },
+          { k = "loot", link = "item:1:[Ring]", quality = 3, sub = "Home", zone = "Country" },
           {
             k = "quest",
             giver = "Ragnar",
             sub = "Home",
             zone = "Country",
-            objectives = { { type = "item", name = "Crag Boar Rib", n = 6 } },
+            objectives = { { type = "item", name = "Crag Boar Rib", n = 2 } },
           },
           { k = "gear", made = true, link = "item:1:[Leather Vest]", sub = "Home", zone = "Country" },
         },
@@ -733,13 +738,13 @@ for seed = 1, 40 do
     },
   }
   local text = ns.writeBook(c).chapters[1].text
-  if text:find("a Boar, brought Ragnar", 1, true) then
+  if text:find("a Ring, brought Ragnar", 1, true) then
     problem("three clauses", "a final conjunction was lost before a semicolon", text)
   end
-  if text:find("a Boar and brought Ragnar Crag Boar Ribs; I began using", 1, true) then tripleSeen = true end
+  if text:find("a Ring and brought Ragnar Crag Boar Ribs; I began using", 1, true) then tripleSeen = true end
   c.race = "Orc"
   text = ns.writeBook(c).chapters[1].text
-  if text:find("a Boar and brought Ragnar Crag Boar Ribs; I began using", 1, true) then orcTripleSeen = true end
+  if text:find("a Ring and brought Ragnar Crag Boar Ribs; I began using", 1, true) then orcTripleSeen = true end
   c.chapters[1].log = {
     { k = "place", sub = "Ratchet", zone = "Country" },
     { k = "inn", place = "Ratchet", sub = "Ratchet", zone = "Country" },
@@ -1327,8 +1332,8 @@ for _, race in ipairs(RACES) do
 end
 
 -- Routine hand-ins past a scene's first two fold into one clause, told
--- when the next thing happens: every mix of errands and green gear, and
--- nobody from the folded ones named.
+-- once the place is left: every mix of errands and green gear, and nobody
+-- from the folded ones named.
 for _, race in ipairs(RACES) do
   for seed = 1, 36 do
     local errands, gear = ({ 0, 1, 3 })[seed % 3 + 1], ({ 0, 1, 2 })[math.floor(seed / 3) % 3 + 1]
@@ -1349,7 +1354,8 @@ for _, race in ipairs(RACES) do
     for i = 1, gear do
       add({ k = "gear", quality = 2, link = "item:1:[Folded Gear " .. i .. "]" })
     end
-    add({ k = "kill", name = "Rot Hide Gnoll", kind = "Humanoid" })
+    add({ k = "learned", spells = { "Fireball" } })
+    table.insert(log, { k = "place", zone = "Silverpine Forest", sub = "Fenris Isle", at = at + 100 })
     local c = {
       guid = "fold-" .. race .. seed,
       race = race,
@@ -1503,6 +1509,71 @@ for _, class in ipairs({ "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "MAG
       inspect("shared narrator epitaph", book.epitaph)
       for _, ch in ipairs(book.chapters) do
         inspect("shared narrator " .. class, ch.text)
+      end
+    end
+  end
+end
+
+-- Every death and every way back, soon after (one sentence) or long after
+-- (each its own); a warlock's every demon, a druid's every form; each race
+-- and class, several lives, each chapter closed with its recap.
+local DEATHS = {
+  { cause = "foe", foe = "Murloc Forager", kind = "Humanoid" },
+  { cause = "foe" },
+  { cause = "foe", foe = "Leofric", player = true },
+  { cause = "fall" },
+  { cause = "drowning" },
+  { cause = "lava" },
+  { cause = "nature" },
+}
+local FIRSTS = {
+  WARLOCK = { "Imp", "Voidwalker", "Succubus", "Felhunter", "Felguard" },
+  DRUID = { "bear", "cat", "travel", "aquatic", "moonkin", "tree", "flight" },
+}
+for _, race in ipairs(RACES) do
+  for _, class in ipairs(COMBOS[race]) do
+    for life = 1, 3 do
+      local chapters = {}
+      local function chapter(log)
+        for i, m in ipairs(log) do
+          m.zone, m.sub, m.at = "Westfall", "Sentinel Hill", m.at or i * 100
+        end
+        table.insert(chapters, {
+          start = { level = 12, zone = "Westfall", sub = "Sentinel Hill" },
+          ended = { how = "rest", place = "Sentinel Hill", level = 12, at = 20000 },
+          quests = 3,
+          played = 3600,
+          log = log,
+        })
+      end
+      for _, how in ipairs({ "corpse", "healer", "ally", "self" }) do
+        for _, d in ipairs(DEATHS) do
+          for _, later in ipairs({ 60, 3600 }) do
+            local death = { level = 12, zone = "Westfall", sub = "Sentinel Hill" }
+            for k, v in pairs(d) do
+              death[k] = v
+            end
+            chapter({
+              { k = "died", death = death, at = 100 },
+              {
+                k = "revived",
+                how = how,
+                by = how == "ally" and "Thessaly" or nil,
+                graveyard = "Sentinel Hill",
+                at = 100 + later,
+              },
+            })
+          end
+        end
+      end
+      for _, first in ipairs(FIRSTS[class] or {}) do
+        chapter({
+          class == "WARLOCK" and { k = "demon", name = "Zigfik", family = first } or { k = "shift", form = first },
+        })
+      end
+      local c = { guid = "deaths-" .. race .. class .. life, race = race, class = class, chapters = chapters }
+      for _, ch in ipairs(ns.writeBook(c).chapters) do
+        inspect(race .. " deaths and firsts", ch.text)
       end
     end
   end

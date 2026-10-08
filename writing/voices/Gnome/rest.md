@@ -2,7 +2,7 @@
 kind: rest
 ---
 - I rested {at}, allowing my thoughts to catch up with the rest of me.
-- I settled {at}, content to stop finding improvements for a little while.
+- I settled {at}, content to stop moving for a little while.
 - I paused {at}, with several things to consider and no reason to consider them standing.
 - Rather pleased to have no immediate problem to solve, I rested {at}.
 - I stopped {at}. My legs had made a convincing case for letting the next difficulty wait.

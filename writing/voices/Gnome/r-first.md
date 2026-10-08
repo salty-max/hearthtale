@@ -1,17 +1,15 @@
 ---
 kind: r-first
 ---
-- a fascinating subject, at a safe distance
-- less predictable than I had assumed
-- worth a page of observations later
-- behaving in a way I had not accounted for
-- my hypothesis about them disproved within seconds
+- nothing like the drawings I had seen
+- quicker than any description had warned me
 - [teeth] their jaws best studied from a distance
+- [teeth] my hands kept well clear of the business end
 - [mechanical] built worse than I would have built it
-- [low] one more variable nobody had mentioned
-- with my first impression in need of revision
+- [mechanical] wondering who had wound them up and left them running
+- a creature to sketch later, from memory and from further away
+- [low] something nobody had thought to mention
+- [night] all eyes and noise in the dark
+- with my first impression in need of some revision
+- much bigger up close, as most things are to me
 - curious how they moved once I was safely out of reach
-- much more convincing up close than I had hoped
-- with a good deal of my attention still on them afterwards
-- [teeth] satisfied with studying those jaws from a distance
-- [mechanical] curious about the making once the danger had passed

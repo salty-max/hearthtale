@@ -8,5 +8,5 @@ kind: opening
 - Content to begin without deciding the shape of the whole day, I made ready {at}.
 - I went on {at}, curious what I would notice when I was less concerned with arriving.
 - Hoping to know something of the place beyond the quickest path through it, I began this stretch {at}.
-- I returned to my account {at}, with the quiet pleasure of having farther to go and time enough for the distance.
+- I took up the road again {at}, with farther to go and time enough for the distance.
 - I set out {at}, wondering what stories I would be glad to carry back to my people.

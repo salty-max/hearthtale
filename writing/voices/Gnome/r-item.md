@@ -2,18 +2,16 @@
 kind: r-item
 ---
 - [!one !plural] the count correct on the second attempt
-- with a mind to improving the method next time
-- a tidy little exercise in logistics
 - [!one !plural] each one catalogued, at least in my head
-- [!one !plural] more of them than my pockets were designed for
-- [one !plural] smaller than expected, which was a pleasant surprise
-- [one !plural] not where any sensible system would have put it
-- [meat] my thoughts drifting to supper, as they do
-- [night] working in rather poor light
-- already thinking about how I might shorten the next search
-- with my attention still catching on the details
-- [!one !plural] checking the count again before I trusted my satisfaction
-- [one !plural] more interested in the find now the search was over
-- [one !plural] curious about what had made the search so awkward
-- [meat] rather distracted by thoughts of supper
+- [!one !plural] more of them than my pockets were sewn for
+- [one !plural] bigger in my hands than it had looked on the ground
+- [one !plural] not where anyone sensible would have put it
+- [one !plural] more interesting now the search was over
+- [meat] already working out how long it would want over a fire
+- [meat] enough supper for someone twice my size
+- [night] squinting at the ground in the dark
 - [night] finding the poor light less interesting than inconvenient
+- with mud to the knees, which on me is not very far up
+- [one !plural] tucked away where it would not rattle
+- [paper one !plural] my nose in it before I had decided to read it
+- [stone one !plural] turning it over for the grain before I put it away

@@ -19,3 +19,6 @@ kind: c-handed-kill
 - [one !more] hunted down {foes} for {giver}
 - [one !more] finished {foes} off at {giver}'s asking
 - [one !more] saw to {foes} for {giver}
+- [turn !one] {giver} wanted {foes} dealt with, and I saw to it
+- [turn !one] {giver} needed {foes} thinned out, so I thinned them
+- [turn one] {giver} wanted {foes} dead, and I obliged

@@ -1,7 +1,7 @@
 ---
 kind: c-elite
 ---
-- fought {foe} and won. A worthy fight
+- fought {foe} and won, and it was a fight worth having
 - faced {foe} head on, and stood
-- brought down {foe}. My blood ran hot
+- brought down {foe}, my blood still hot from it
 - beat {foe}, though it cost me

@@ -7,11 +7,10 @@ kind: r-company
 - the work going twice as fast
 - a second opinion close at hand
 - trusting their judgement, mostly
+- taking three steps to each of theirs
 - [night one] two pairs of eyes in the dark
 - [hc] safety in numbers, statistically speaking
-- with someone beside me to be curious about
+- [hc] careful to keep the company within reach
 - more at ease with help close at hand
-- wondering what they would make of my approach
 - rather pleased not to be the only one looking about
 - [night] with rather less unease about the dark
-- [hc] careful to keep the company within reach

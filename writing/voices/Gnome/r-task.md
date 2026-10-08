@@ -1,21 +1,16 @@
 ---
 kind: r-task
 ---
-- efficiently, if I say so myself
-- a small task neatly finished
-- a few improvements to the process already in mind
-- noting what could be done better
 - with the satisfaction of a ticked box
-- [explore] sketching the layout in my head as I went
-- [explore] the place more interesting than its map
-- [escort] working out how to go faster without saying so
-- [night] the dark slowing everything down
-- pleased with the result and still curious about the method
-- already thinking of a less awkward approach
+- quicker done than explained
 - rather satisfied to have the work behind me
-- noticing how much time the small details had taken
 - curious whether I could have saved myself some walking
+- with the shortest way already worked out for next time
+- my boots a good deal muddier for it
+- small work, but done properly
+- [explore] sketching the layout in my head as I went
 - [explore] fitting the turns together in my head as I went
-- [explore] wondering what I had missed by following this route
+- [escort] taking two steps to every one of theirs
 - [escort] with some of my attention always on the person beside me
+- [night] squinting at every turn in the dark
 - [night] finding the poor light unhelpful to my sense of direction

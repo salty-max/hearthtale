@@ -4,9 +4,9 @@ kind: opening
 - I began again {at}, with enough unanswered questions to make staying put difficult.
 - I took up the road {at}, rather pleased that I had not yet run out of things to wonder about.
 - Curious what people here had worked out for themselves, I set out {at}.
-- I opened a fresh page {at}, leaving room beside my conclusions in case they needed correcting.
-- I made ready {at}, with several possibilities still looking promising.
+- I set off again {at}, keen to get the day moving.
+- I made ready {at}, and checked my pack twice out of habit.
 - I went on {at}, keen to see what a closer look would change.
 - Hoping my feet could keep up with the things that interested me, I began this stretch {at}.
-- I returned to my account {at}, already remembering something I wished I had looked at longer.
+- I took up the road again {at}, at a pace my legs could keep and my curiosity could not.
 - I set out {at}, with my curiosity restored and a little more caution available if I remembered to use it.

@@ -190,16 +190,32 @@ The plan and its decisions: PLAN.md.
 - Scenes: a place is told the first time the chapter comes to it, with the
   first thing done there (a place only passed through isn't told), or when
   coming back after an hour or more (`c-return`); a quick way back (in and
-  out of an inn, back to the camp) moves the scene without a word. A quest
-  tells every objective of a kind together ("Rockjaw Troggs and Burly
-  Rockjaw Troggs"), its things and its creatures in two clauses; no counts
-  (a ledger's, not a journal's), only the weight of a great deal of work
-  ("a good many", "a great many"). The chapter's recap keeps its tallies.
+  out of an inn, back to the camp) is named by the next sentence ("Back in
+  Anvilmar, I…"), once a paragraph, else not at all. A quest tells every
+  objective of a kind together ("Rockjaw Troggs and Burly Rockjaw Troggs"),
+  its things and its creatures in two clauses of one sentence; no counts (a
+  ledger's, not a journal's), only size words (`sizes` in Language.lua:
+  "a good many", "plenty of", "a handful of", "a good deal of" for a thing
+  not counted, often none), none of the last four used again
+  (`Book:size`). The chapter's recap keeps its tallies.
+- A kill no quest asked for has no sentence of its own (a first of its kind
+  or an elite does): it is told with the next creatures or things a quest
+  asks for in the same place, within half an hour (`c-while`: "Ragged Young
+  Wolves fell to me while I fetched…"; `[handed]` for a hand-in, "before
+  I…"; `[complex]` when the deed has its own comma or "and"), else only in
+  the recap. Errands one after another, the ender of the first giving the
+  second, are one clause (`c-chain`: "from Sten to Talin and on to
+  Grelin"). A death and its way back within half an hour are one sentence
+  (`died-back`, by the way back: `[corpse]`, `[healer]`, `[ally]`
+  (`{by}`), `[self]`); a death the open chapter ends with waits for it.
+  Who asked may lead a sentence ("Talin Keeneye wanted Small Crag Boars
+  dealt with, and I saw to it"); two plain steps of the same work are now
+  and then "After I…, I…".
 - Curation: in each place, the first two routine hand-ins (a delivery, a report
   back, a message, a favour known only by who asked, green gear) are told; the
   rest fold into one clause (`c-fold`: "saw to four more errands besides"),
-  written once the place is left or the chapter ends, so finished sentences
-  never change.
+  written once the place is left or the chapter closes, so finished
+  sentences never change.
   Deeds, firsts, dangers and finds are always told.
 - Weight (`weigh` in Lines.lua), from the moment alone so a later moment never
   rewrites what was read: 0 a hand-in (no remark), 1 the ordinary, 2 a deed,

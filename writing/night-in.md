@@ -1,7 +1,7 @@
 ---
 kind: night-in
 ---
-- [!last] I found a corner out of the draught {at} and slept there, glad of walls if not of a bed.
+- [!last] I found a corner out of the draught {at} and slept in it, glad of walls if not of a bed.
 - [!last] I made do with a bench {at} for the night, with a roof over me and nothing softer.
 - [!last] I slept against a wall {at}, out of the weather, which was most of what I asked.
 - [!last] I settled in a quiet corner {at} for the night, with the building's noises to keep me company.

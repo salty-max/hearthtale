@@ -4,9 +4,9 @@ kind: opening
 - I took up the road {at}, curious what the day had dressed up to look harmless.
 - I began again {at}, with an appetite for getting on and a little caution left to balance it.
 - I set out {at}, keeping a little laughter for myself in case the road offered none.
-- I opened a fresh page {at}, interested in the next good chance and watchful for its neighbours.
-- Hoping to have some strength left after my clever ideas had had their say, I made ready {at}.
+- I set off {at}, quick on my feet and in no mood to waste the day.
+- I made ready {at}, with a joke kept back in case the day needed one.
 - I went on {at}, rather glad I had somewhere to go besides back over my worries.
 - I began this stretch {at}, looking at the edges of the way as much as the middle.
-- I returned to my account {at}, with a few things I wanted to see again from a safer distance.
+- I went back to the road {at}, one eye on the trees and one on the path.
 - Wondering what the loa would make of me worrying over the next turn, I set out {at}.

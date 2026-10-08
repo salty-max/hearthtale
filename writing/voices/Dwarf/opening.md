@@ -9,4 +9,4 @@ kind: opening
 - I went on {at}, where a little patience would serve me better than a great deal of grumbling.
 - Curious about the ground beneath the road as well as where it led, I began this stretch {at}.
 - I was ready to move {at}. The road was not going to shorten itself out of consideration.
-- I took up my account {at}, hoping the next page would have something worth bringing back to my kin.
+- I took up the road {at}, hoping for something worth bringing back to my kin.

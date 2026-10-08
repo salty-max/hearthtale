@@ -21,3 +21,7 @@ kind: c-handed-item
 - [one] put {thing} into {giver}'s hands
 - [one] gave {thing} to {giver}
 - [one] came back to {giver} with {thing}
+- [turn !one] {giver} had asked for {n} {thing}, and I brought them in
+- [turn one !plural] {giver} had asked for {thing}, and I brought it in
+- [turn !one] {giver} needed {n} {thing}, and I found them
+- [turn one !plural] {giver} needed {thing}, and I found it

@@ -9,7 +9,7 @@
 local _, ns = ...
 local W = ns.writer
 local words, listing, mid, objectiveOf, capitalise = W.words, W.listing, W.mid, W.objectiveOf, W.capitalise
-local instruction, linked, hash = W.instruction, W.linked, W.hash
+local instruction, linked, hash, plural, article = W.instruction, W.linked, W.hash, W.plural, W.article
 
 local Scene = {}
 Scene.__index = Scene
@@ -44,21 +44,26 @@ local function newScene(book, n, ch)
     c = book.c,
     paragraphs = {},
     current = {},
-    -- the scene: its place (and zone), the places of the chapter so far, a
-    -- plain kill told there
+    -- the scene: its place (and zone), the places of the chapter so far, the
+    -- creatures killed there no quest asked for (told with the work that
+    -- follows), a quiet return to tell with the next sentence ("Back in …")
     scene = nil,
     sceneZone = nil,
     seenHere = {},
     discovered = {}, -- places seen for the first time, their arrival not told yet: place = { m, key, prev }
-    killed = false,
-    -- the sentence being written: its clauses (their kinds, the creature a
-    -- plain kill clause names: one told by its quest is dropped), the link it
-    -- takes, whether it names its place, an arrival framing it; its clauses
-    -- that may carry a remark, those that do, a highlight, a turned clause
+    prey = {},
+    preyPlace = nil,
+    backTo = nil,
+    backTold = false, -- (in this paragraph)
+    -- the sentence being written: its clauses (their kinds, each without its
+    -- remark), the link it takes, whether it names its place, an arrival
+    -- framing it; its clauses that may carry a remark, those that do, a
+    -- highlight, a turned clause
     pending = {},
     pendingKinds = {},
-    pendingFoes = {},
+    pendingBare = {}, -- (each clause without its remark)
     lead = nil,
+    sentenceKey = nil, -- (the key of its first clause)
     named = false,
     arrival = false,
     arrivalMode = nil,
@@ -155,7 +160,7 @@ function Scene:newParagraph()
     table.insert(self.paragraphs, self.current)
     self.current = {}
   end
-  self.quipped = false
+  self.quipped, self.backTold = false, false
   self.peopleNamed, self.thingsCarried = {}, {}
 end
 
@@ -225,7 +230,9 @@ function Scene:flush()
       local join = " and "
       -- A fight followed by a completed errand is an observed sequence,
       -- not an inferred cause. Other unrelated acts need no forced link.
-      if pending[1]:find("[,;:]") or pending[1]:find(" and ") or last:find("[,;:]") or last:find(" and ") then
+      -- (the last clause's remark, after its comma, ends the sentence well)
+      local bare = self.pendingBare[#pending]
+      if pending[1]:find("[,;:]") or pending[1]:find(" and ") or bare:find("[,;:]") or bare:find(" and ") then
         join = "; I "
       elseif #pending == 2 and self.pendingKinds[1] == "kill" and self.pendingKinds[2] == "quest" then
         join = " before I "
@@ -235,6 +242,18 @@ function Scene:flush()
         before[j] = pending[j]
       end
       text = "I " .. (join == "; I " and listing(before) or table.concat(before, ", ")) .. join .. last
+      -- two plain steps of the same work, one after the other, now and then
+      -- told as such ("After I fetched…, I learned…"): not every sentence
+      -- opens on "I"
+      if
+        join == " and "
+        and #pending == 2
+        and not self.lead
+        and self.pendingKinds[1] ~= "kill"
+        and hash(b.seed .. "|after|" .. self.sentenceKey) % 3 == 0
+      then
+        text = "After I " .. pending[1] .. ", I " .. last
+      end
     end
   elseif not self.pendingTurn then
     text = "I " .. text
@@ -248,7 +267,7 @@ function Scene:flush()
   self.pendingRoutine, self.pendingRemarks, self.pendingHighlight, self.pendingTurn = 0, 0, false, false
   -- "there" only right after the place is named
   if not self.named then b.there = true end
-  self.pending, self.pendingKinds, self.pendingFoes = {}, {}, {}
+  self.pending, self.pendingKinds, self.pendingBare = {}, {}, {}
   self.lead, self.named, self.arrival, self.arrivalMode, self.sentenceLimit = nil, false, false, nil, nil
 end
 
@@ -261,11 +280,12 @@ function Scene:otherWork(kind)
 end
 
 -- A clause for a moment m (the one being told, or the last one the fold
--- counted), its text and what Book:say chose (said): a new sentence takes a
+-- counted), its text and what Book:say chose (said); continued: a quest's
+-- next part, which keeps to the sentence of the first. A new sentence takes a
 -- link (the time gone by, or the next thing in the scene); a sentence holds as
 -- many clauses as the race's style allows (STYLE), varying the length between
 -- two and three. A comma within a clause is not a reason to cut the thought short.
-function Scene:clause(text, said, m, key, isArrival)
+function Scene:clause(text, said, m, key, isArrival, continued)
   if not text then return end
   local b = self.book
   local complex = text:find("[,;:%.!%?]") or text:find(" and ")
@@ -275,9 +295,10 @@ function Scene:clause(text, said, m, key, isArrival)
   local highlight, turned = said.weight == 3, said.turn
   if turned then self:flush() end
   if highlight and #self.pending > 0 and not (self.arrival and #self.pending == 1) then self:flush() end
-  if self:otherWork(kind) then self:flush() end
+  if not continued and self:otherWork(kind) then self:flush() end
   if #self.pending == 0 then
-    self.lead = b:link(m, self.prev, key)
+    self.sentenceKey = key
+    self.lead = self:backLead(b:link(m, self.prev, key), key)
     self.sentenceLimit = isArrival and 2 or math.min(b.style.clauses, 2 + hash(b.seed .. "|length|" .. key) % 2)
     self.arrival = isArrival
     local mode = hash(b.seed .. "|arrival|" .. key) % 3
@@ -288,7 +309,7 @@ function Scene:clause(text, said, m, key, isArrival)
   local pending = self.pending
   table.insert(pending, text)
   table.insert(self.pendingKinds, kind)
-  table.insert(self.pendingFoes, m and m.k == "kill" and m.name or false)
+  table.insert(self.pendingBare, said.remark and text:sub(1, #text - #said.remark - 2) or text)
   -- (the clauses that may carry a remark: not a hand-in)
   if said.routine and said.weight > 0 then self.pendingRoutine = self.pendingRoutine + 1 end
   if said.remark then self.pendingRemarks = self.pendingRemarks + 1 end
@@ -307,11 +328,27 @@ function Scene:clause(text, said, m, key, isArrival)
   end
 end
 
+-- A quiet return named at the start of the sentence told there, after its
+-- link if it has one ("Back in Anvilmar, I…", "Later, back in Anvilmar, I…").
+-- Once a paragraph: more often reads as a ledger of comings and goings.
+local BACK = { "Back in %s,", "Once back in %s,", "In %s again," }
+function Scene:backLead(link, key)
+  local place = self.backTo
+  self.backTo = nil
+  if not place or self.backTold then return link end
+  self.backTold = true
+  local b = self.book
+  self.named, b.last, b.there = true, place, false
+  local back = BACK[hash(b.seed .. "|back|" .. key) % #BACK + 1]:format(mid(place))
+  return link and link .. " " .. back:gsub("^%u", string.lower) or back
+end
+
 -- A moment of its own: a sentence, after the clauses before it (m: the
 -- moment, to link it to the one before; nil: no link).
 function Scene:alone(kind, values, t, m)
   local b = self.book
   self:flush()
+  self.backTo = nil
   local s = b:say(kind, self.key, values, t)
   if s then self:append((#self.current > 0 and m) and linked(b:link(m, self.prev, self.key), s) or s) end
   return s
@@ -326,10 +363,10 @@ function Scene:placeOf(m)
   return m.zone
 end
 
--- A new scene at a place (nil: none yet, a land just entered), in a zone:
--- no kill told there yet.
+-- A new scene at a place (nil: none yet, a land just entered), in a zone
+-- (a quiet return to another place no longer to tell).
 function Scene:enter(place, zone)
-  self.scene, self.sceneZone, self.killed = place, zone, false
+  self.scene, self.sceneZone, self.backTo = place, zone, nil
   if place then self.seenHere[place] = true end
 end
 
@@ -362,6 +399,7 @@ function Scene:arrive(place, zone, opener, found)
     end
     self:enter(place, zone)
     b.last, b.there = nil, false
+    self.backTo = place -- (named by the next sentence: "Back in …")
     return
   end
   self:flush()
@@ -408,8 +446,10 @@ function Scene:tell(kind, values, t)
   local b, m = self.book, self.m
   self:prepare()
   if kind == "c-inn" then
+    -- (the town a quiet return names at the start of this sentence: "there")
+    local backHere = self.backTo == m.place and not self.backTold and #self.pending == 0
     values._place = m.place
-    values.inn = m.place == b.last and "there" or "at " .. mid(m.place)
+    values.inn = (m.place == b.last or backHere) and "there" or "at " .. mid(m.place)
   end
   local text, said = b:say(kind, self.key, values, self:tags(t, m), nil, true)
   self:clause(text, said, m, self.key)
@@ -442,53 +482,121 @@ local function parts(m)
   return out
 end
 
--- A quest's deed told in clauses (Book:deed), in its scene, t its tags.
+-- ── prey ─────────────────────────────────────────────────────────────────────
+-- A creature killed that no quest asked for: told with the next work done in
+-- the same place soon after ("Ragged Young Wolves fell to me while I fetched
+-- Tough Wolf Meat for Sten Stoutarm"), else not at all (the recap counts it).
+local PREY_TIME = 1800 -- (seconds from the kill to the work)
+local WORK = {
+  ["c-deed-kill"] = true,
+  ["c-deed-item"] = true,
+  ["c-handed-kill"] = true,
+  ["c-handed-item"] = true,
+}
+function Scene:hunted(m)
+  if self.preyPlace ~= self.place then
+    self.prey, self.preyPlace = {}, self.place
+  end
+  table.insert(self.prey, m)
+end
+
+-- The prey to tell with the work of m, in words ("Ragged Young Wolves and a
+-- Ragged Timber Wolf"), and whether it is one creature; nil if none.
+function Scene:takePrey(m)
+  local prey, b = self.prey, self.book
+  if #prey == 0 or self.preyPlace ~= self.place then return nil end
+  self.prey = {}
+  local asked = {}
+  for _, o in ipairs(m.objectives or {}) do
+    if o.name then asked[o.name] = true end
+  end
+  local names, total = {}, 0
+  for _, k in ipairs(prey) do
+    if (m.at or 0) - (k.at or 0) <= PREY_TIME and not asked[k.name] then
+      local n = (self.ch.kills or {})[k.name] or 1
+      total = total + n
+      if n > 1 then
+        local size = b:size(n, self.key .. "|" .. k.name, false, k.kind == "Wolf")
+        table.insert(names, (size ~= "" and size .. " " or "") .. plural(k.name))
+      else
+        table.insert(names, article(k.name))
+      end
+    end
+  end
+  if #names == 0 then return nil end
+  return listing(names), total == 1
+end
+
+-- A quest's deed told in clauses (Book:deed), in its scene, t its tags; the
+-- prey killed on the way told with its first.
 function Scene:deed(t)
-  local m = self.m
+  local m, b = self.m, self.book
   self:prepare()
-  for i, part in ipairs(parts(m)) do
+  local all = parts(m)
+  for i, part in ipairs(all) do
     local tags = i == 1 and t or self:tags({ done = t.done, handed = t.handed }, m)
-    self:dropKill(part, tags)
-    local text, said = self.book:deed(part, self.key, tags)
-    self:clause(text, said, m, self.key)
+    -- (a quest's parts in one sentence: the remark, if any, on its last)
+    tags.quiet = i < #all or nil
+    local text, said = b:deed(part, self.key, tags)
+    local prey, one
+    if i == 1 and text and WORK[said.kind] and not said.turn then
+      prey, one = self:takePrey(m)
+    end
+    if prey then
+      self:flush()
+      -- (a deed with a comma or an "and" of its own takes no second "and")
+      local bare = said.remark and text:sub(1, #text - #said.remark - 2) or text
+      local complex = (bare:find(",") or bare:find(" and ")) and true or nil
+      local t2 = self:tags({ one = one or nil, handed = t.handed or nil, complex = complex }, m)
+      local framed, f = b:say("c-while", self.key, { prey = prey, deed = text }, t2, nil, true)
+      if framed then
+        text, said.turn = framed, f.turn
+      end
+    end
+    self:clause(text, said, m, self.key, nil, i > 1)
   end
 end
 
--- A quest that counts a creature just killed in the sentence being written
--- tells that kill itself: "I brought down a Brigand; I killed six Brigands"
--- is one telling too many.
-function Scene:dropKill(m, t)
-  local b = self.book
+-- An errand (a word carried, no thing or creature asked for) whose ender
+-- gives the next one at once: the index of that next one in the log.
+local function errand(m)
   local o = objectiveOf(m)
-  if not (o and o.type == "monster" and o.name) then return end
-  local asked = {}
-  for _, f in ipairs(m.objectives) do
-    if f.type == "monster" and f.name then asked[f.name] = true end
+  return m.giver and m.ender and m.giver ~= m.ender and not (o and o.name)
+end
+function Scene:chainNext(m, i)
+  if m.told or not errand(m) then return nil end
+  local log, j = self.ch.log, i + 1
+  while log[j] and (log[j].k == "level" or log[j].k == "kill") do
+    j = j + 1
   end
-  local dropped = false
-  for j = #self.pending, 1, -1 do
-    if asked[self.pendingFoes[j]] then
-      -- (its remark, if it had one, goes with it: the budget counts again)
-      if self.pending[j]:find(", ") then self.pendingRemarks = math.max(0, self.pendingRemarks - 1) end
-      self.pendingRoutine = math.max(0, self.pendingRoutine - 1)
-      table.remove(self.pending, j)
-      table.remove(self.pendingKinds, j)
-      table.remove(self.pendingFoes, j)
-      dropped = true
-    end
+  local nx = log[j]
+  if nx and nx.k == "quest" and not nx.told and nx.giver == m.ender and errand(nx) and nx.ender ~= m.giver then
+    return j
   end
-  -- already told, a sentence before: the quest's count is "more" of them
-  local last = b.lastFoe
-  if
-    not dropped
-    and (o.n or 1) > 1
-    and last
-    and last.name == o.name
-    and not last.many
-    and (b.told or 0) - last.told <= 1
-  then
-    t.more = true
+end
+
+-- A death's way back, told with it: the index of the revival that follows
+-- soon after (a level, the same death told twice, a place crossed as a
+-- ghost between), if any.
+local REVIVAL_TIME = 1800
+local function ghostly(x, m) return x.k == "level" or x.k == "place" or (x.k == "died" and x.at == m.at) end
+function Scene:revivalOf(i)
+  local log, m, j = self.ch.log, self.ch.log[i], i + 1
+  while log[j] and ghostly(log[j], m) do
+    j = j + 1
   end
+  local r = log[j]
+  return r and r.k == "revived" and (r.at or 0) - (m.at or 0) <= REVIVAL_TIME and j or nil
+end
+-- A death the open chapter ends with, so far: its way back may come yet,
+-- to tell with it (told now, the sentence would change when it does).
+function Scene:awaitsRevival(i)
+  if self.ch.ended then return false end
+  local log, m, j = self.ch.log, self.ch.log[i], i + 1
+  while log[j] and ghostly(log[j], m) do
+    j = j + 1
+  end
+  return log[j] == nil
 end
 
 -- ── the moments around ───────────────────────────────────────────────────────

@@ -1,12 +1,12 @@
 ---
 kind: opening
 ---
-- I took up my journal {at}, curious to see whether I would recognise more than I had before.
+- I set out {at}, curious to see whether I would recognise more than I had before.
 - I began another stretch {at}, with a few familiar names among all the unfamiliar ones.
 - Pleased that setting out was beginning to feel like a choice, I opened a fresh page {at}.
-- [night] I returned to my account {at}, with the dark making this world a little harder to read.
+- [night] I went on {at}, with the dark making this world a little harder to read.
 - I set out again {at}, still learning where to put my trust and where to put my feet.
 - Hoping to have a little more patience with what I did not yet understand, I continued {at}.
 - I began {at}, with things I wanted to ask and a growing wish to have something useful to offer in return.
 - I took up the road {at}, more at ease with its strangeness than I had expected to become.
-- I opened my journal {at}, interested to see what would become familiar enough to miss.
+- I went on {at}, interested to see what would become familiar enough to miss.
