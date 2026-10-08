@@ -1,12 +1,12 @@
 ---
 kind: bag
 ---
-- [looted] Among the spoils was {item}, my first bag, and I was very fond of the prospect of {slots} more places to put things.
+- [looted] Among the spoils was {item}, my first bag, and I was already deciding what to fill {slots} more places with.
 - [looted] I took {item} from the spoils, with more pleasure in extra room than I would once have expected from a bag.
 - [looted] Fortune left {item} among the spoils, my first bag, and I felt ready to be rather less particular about a find's size.
 - [looted] {item} turned up among the spoils, with room for {slots} more things and a new temptation to keep too much.
 - I had {item}, my first bag, with room for {slots} more things.
-- I had {item} to carry what the road gave me, and liked the prospect of being able to bring more home.
+- I had {item} to carry what the road gave me, and stopped leaving good things behind.
 - With {item} I had extra space at last, and rather more ambition for what I could collect.
 - I got hold of {item}, and found a bag a more inviting possession than its ordinary name suggested.
 - I had a bag of my own at last, with room for {slots} more things and less reason to envy someone else's pack.

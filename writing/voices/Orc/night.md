@@ -4,7 +4,7 @@ kind: night
 - [!last] I slept on the ground {at}, grateful that no camp fence kept me from leaving in the morning.
 - [!last] I settled outside {at}, with the wish for home stronger once I stopped moving towards anything.
 - [!last] I bedded down {at}, leaving the night's dreams to the ancestors.
-- [!last] I lay down {at}, giving in to rest with an orc's thoroughness.
+- [!last] I lay down {at}, and slept like a wolf after the hunt.
 - [!last] I slept lightly {at}, with the habits of a watchful people harder to put aside than my weariness.
 - [!last] I slept beneath the open sky {at}, missing Durotar without wanting to be shut away from the rest of the world.
 - [last] I settled outside {at}, with a free person's road waiting beyond the pause.

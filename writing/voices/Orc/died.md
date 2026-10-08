@@ -7,6 +7,6 @@ kind: died
 - [drowning] I drowned {at}, wanting a breath more fiercely than I had ever wanted a victory.
 - I died {at}, with the new homeland still needing living hands more than another remembered name.
 - [lava] Fire killed me {at}; I had no strength to demand mercy from the flame.
-- [nature] I died {at}, with no enemy to face and no comfort in being an orc who would face one.
+- [nature] I died {at}, with no enemy to face, which somehow made it worse.
 - [foe] {foe} killed me {at}, and I feared leaving the ancestors nothing but another short life to weigh.
 - I died {at}, still hungry for the life our people had won beyond the camps.

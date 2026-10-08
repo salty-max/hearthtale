@@ -8,7 +8,7 @@ kind: shift
 - [cat] The first time I became a cat, I felt a hunter's patience beneath the wish to try my new paws.
 - [cat] In a cat's form for the first time, I felt quick enough to be anywhere before I had decided to go.
 - [travel] I took my travelling form for the first time, delighted to have a body made for crossing distance instead of resenting it.
-- [travel] The first time I shifted into my travelling form, the prospect of a long road became rather more inviting.
+- [travel] The first time I shifted into my travelling form, a long road stopped being something to dread.
 - [aquatic] I took a seal's shape in the water for the first time, and swam as if I had never needed to breathe.
 - [aquatic] The first time I took my water form, I could imagine feeling at home beneath the surface instead of merely passing through.
 - [moonkin] I took the moonkin's shape for the first time, feathered and heavy, with the moon's power close at hand.

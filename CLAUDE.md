@@ -248,6 +248,16 @@ The plan and its decisions: PLAN.md.
   after they were named: "We were both gnomes a long way from home"); a race
   with no land of its own working in its hosts' (`TAKEN_IN`: gnomes among
   the dwarves, the Darkspear among the orcs) says so once a life (`hosts`).
+- Assembly: a clause doesn't repeat the content words of the sentence it
+  joins (`Book:pick`), nor a size word one of its family ("a great many" after
+  "a good many": `Book:size`); a creature told once (by a quest, or as an
+  elite) isn't told again as prey or work (`Scene.toldFoes`); a thing just
+  found and then delivered is "the documents", or "it" for one thing; a
+  `[state]` line ("had them in my pack") takes no prey frame; `[ofprey]` keeps
+  "the Scale of Old Murk-Eye" from being taken "from Old Murk-Eye"; no size
+  word beside a creature asked for by name. Read the playthrough books
+  (`luajit addon/test/playthrough.lua`, `.cache/audit/books/`) after a
+  change: real quests show what the random lives don't.
 - Curation: in each place, the first two routine hand-ins (a delivery, a report
   back, a message, a favour known only by who asked, green gear) are told; the
   rest fold into one clause (`c-fold`: "saw to four more errands besides"),

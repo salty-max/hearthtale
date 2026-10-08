@@ -11,7 +11,7 @@ kind: r-gear
 - [made] nothing I would have been ashamed to bring to Tinker Town
 - [!made] weighing the comfort against the weight
 - [!made !held] stitched well enough to trust, which I checked twice
-- [!made] a sturdy bit of reassurance against the world's hazards
-- [made] my fingers responsible for every bit of the result
+- [!made] sturdy enough to survive my habit of getting into trouble
+- [made] every seam and rivet of it my own doing
 - [made] a reminder that the troggs had not taken our skill away
 - [made] as satisfying as a gear slipping neatly into place

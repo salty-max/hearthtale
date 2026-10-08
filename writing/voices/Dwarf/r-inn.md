@@ -5,7 +5,7 @@ kind: r-inn
 - rather attached to a stone that could take me to shelter
 - better company in a pocket than another useless pebble
 - magic I trusted about as far as I could throw it, which was a fair way
-- a reliable way back to an unhurried ale
+- a way back to somewhere with a proper roof
 - almost as reassuring as the mountain overhead
 - [night] readier for a bed than another hour's tramping
 - [hc] unwilling to trust my life to the distance from shelter

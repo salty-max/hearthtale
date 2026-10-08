@@ -1,17 +1,17 @@
 ---
 kind: r-road
 ---
-- the distance giving me plenty of time to think
-- [!grouped] rather more company in my worries than I wanted
-- my interest in arriving overcoming a little unease
-- [!back] the question of my welcome still open
-- [!back] a stranger with an offer of help for an introduction
-- [!back] unfamiliar country giving the journey a new interest
-- [!back] a stranger behind an assured manner
-- [!back !home] an arrival among unfamiliar names
-- [!back night] my eyes asking more of the darkness than it would give
-- [back] familiar ground losing its old power to trouble me
-- [back] a place beginning to feel like somewhere I knew
-- [back] the familiar turns making the way easy
-- [back] the place to stop already fixed in mind
-- [high] a distance I would not need to learn twice
+- my legs reminding me of the distance
+- [!grouped] the weather keeping me company most of the way
+- noting where the paths and the people went
+- [!back] the name finally matched to a place
+- [!back] curious what the place would make of me
+- [!back] the road longer than it had looked
+- [!back] taking in the place before anyone noticed me
+- [!back !home] among people who did not know my face
+- [!back night] its shapes uncertain in the dark
+- [back] the way familiar under my feet
+- [back] finding it much as I had left it
+- [back] quicker now that I knew the way
+- [back] a few faces I recognised
+- [high] one more place in a long list, though not a dull one

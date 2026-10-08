@@ -6,9 +6,9 @@ kind: campfire
 - I warmed my hands at a campfire {at}, grateful for a comfort so easy to accept.
 - I rested by a fire {at}, with no desire to trade its warmth for another mile.
 - I paused by a campfire {at}, content with a warmth that needed nothing useful from me.
-- I sat by a fire {at}, taking a quiet pleasure in the undemanding company of the flames.
+- I sat by a fire {at}, and watched it the way one watches anything that asks for nothing.
 - I stopped by a fire {at}, letting my hands have warmth instead of another job.
-- I rested beside a fire {at}, with the simple comfort dearer than the distance I had come.
+- I rested beside a fire {at}, and let the heat get into my hands.
 - [night] I paused at a fire {at}, glad to let the night keep the road beyond it.
 - [night] I rested by a fire {at}, grateful for a little light that did not require me to travel towards it.
 - [hc aside night] I stopped by a fire {at}, enjoying its warmth without quite forgetting the dark.

@@ -6,32 +6,32 @@ kind: lesson
 - [spell:Drain_Life] Drain Life entered my repertoire, a hungry spell that could keep me alive at someone else's expense.
 - [spell:Corruption] Corruption was mine to use, slow enough to make a quick death seem generous.
 - [spell:Health_Funnel] With Health Funnel learned, keeping a demon alive could now cost me my own health.
-- [spell:Polymorph] I learned Polymorph, and took an undignified comfort in the prospect of turning an enemy into a sheep.
+- [spell:Polymorph] Polymorph could turn a foe into a sheep, which is more of an answer than it sounds.
 - [spell:Blink] Blink gave me a sudden affection for the distance a single spell could put between me and danger.
 - [spell:Frost_Nova] Frost Nova offered a way to let ice hold an enemy while I found somewhere safer to stand.
 - [spell:Conjure_Water] I learned to conjure water, and liked having one less ordinary need to carry along the road.
 - [spell:Power_Word:_Shield] Power Word: Shield was a ward I could now set between myself and an enemy's blow.
 - [spell:Renew] I took instruction in Renew, comforted by healing that could keep working after the prayer ended.
-- [spell:Resurrection] Resurrection gave me the frightening prospect of calling someone back instead of leaving a name to mourn.
+- [spell:Resurrection] With Resurrection, I could call the dead back to life, which is not a thing to learn lightly.
 - [spell:Psychic_Scream] Psychic Scream was mine to use, a way to make my fear someone else's problem.
 - [spell:Lay_on_Hands] Lay on Hands gave me a fierce comfort in having something left to offer when an ordinary blessing would not be enough.
-- [spell:Divine_Protection] I learned Divine Protection, and liked the prospect of shelter made of Light.
+- [spell:Divine_Protection] Divine Protection gave me a moment in which nothing could touch me.
 - [spell:Hammer_of_Justice] Hammer of Justice offered a firm interruption to an enemy's intentions.
 - [spell:Charge] With Charge learned, I could close the distance before my courage had time to argue about it.
 - [spell:Execute] I took instruction in Execute, with the ugly comfort of knowing how to finish a fight that had already cost enough.
 - [spell:Pick_Pocket] Learning to pick pockets gave me a new sympathy for anyone who kept a hand on their purse.
-- [spell:Sap] Sap offered the prospect of leaving an enemy unconscious instead of making an introduction.
+- [spell:Sap] With Sap, I could put a foe to sleep before it knew I was there.
 - [spell:Vanish] Vanish was a new way to let an enemy wonder where its troubles had gone.
 - [spell:Sprint] I learned Sprint, and saw an excellent use for it in leaving trouble behind.
 - [spell:Aspect_of_the_Cheetah] Aspect of the Cheetah gave me a hunter's answer to a long road.
 - [spell:Feign_Death] Feign Death was a hunter's lie I could now tell to avoid becoming the truth of it.
 - [spell:Hunter's_Mark] Hunter's Mark offered a way to keep my quarry from becoming merely another movement I could not place.
 - [spell:Ghost_Wolf] I learned Ghost Wolf, and could borrow a swifter shape from the spirits without leaving my life behind.
-- [spell:Ancestral_Spirit] Ancestral Spirit brought the tender prospect of calling someone back before their place among us grew empty.
+- [spell:Ancestral_Spirit] With Ancestral Spirit, I could call a fallen friend's spirit back into their body.
 - [spell:Lightning_Shield] Lightning Shield was mine to call on, thunder waiting for the hand that reached for me.
 - [spell:Entangling_Roots] Entangling Roots offered a way to hold an enemy without keeping it within my own reach.
 - [spell:Healing_Touch] I took instruction in Healing Touch, grateful for a gentle answer to a frightened body's need.
 - [spell:Rebirth] Rebirth was the wild's answer to a death that came before the fighting was done, and I learned to call on it.
-- [spell:Immolate] Immolate offered the satisfying prospect of keeping a foe burning while I stayed out of reach.
+- [spell:Immolate] Immolate kept a foe burning while I stayed out of its reach, which suited me.
 - [spell:Immolate] I learned Immolate, a fire I would never welcome at my own hearth.
 - [spell:Life_Tap] With Life Tap learned, I could feed my magic at the cost of my own blood.

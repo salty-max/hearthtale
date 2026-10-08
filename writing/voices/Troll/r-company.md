@@ -4,7 +4,7 @@ kind: r-company
 - nearer to the warmth of the village fires at Sen'jin
 - the watch easier to share, as it always is among my people
 - the road friendlier for the company
-- better than keeping only the loa entertained
+- a laugh shared being worth two kept
 - [one] another life worth keeping safe out here
 - [night] the dark easier with someone to trade jokes with
 - [hc] unwilling to lose someone the tribe might have welcomed

@@ -2,10 +2,10 @@
 kind: r-item
 ---
 - [!one !plural] enough to fill every pocket I had sewn in
-- [!one !plural] each piece another part of the search accounted for
+- [!one !plural] each piece checked off against a list in my head
 - [!one !plural] a carrying problem worthy of gnomish invention
-- [one !plural] the awkwardness of the cargo occupying my ingenuity
-- [one !plural] a useful result to show for the search
+- [one !plural] awkward to carry, and I tried three ways before one worked
+- [one !plural] small in my hands and worth the bother
 - [one !plural] my fingers happy to be holding something other than a weapon
 - [meat] the smell making a persuasive case for sealed containers
 - [meat] a gnome suddenly interested in refrigeration

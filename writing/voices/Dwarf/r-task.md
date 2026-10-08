@@ -6,7 +6,7 @@ kind: r-task
 - rather aware of how far an obliging dwarf could be sent
 - my back wanting no further favours asked of it
 - more names to carry back to the mountain
-- thinking fondly of a well-earned ale
+- the job done as plainly as I like them
 - [explore] reading the rock as I went, out of old habit
 - [explore] wondering what older roads might lie beneath this one
 - [escort] unwilling to hurry another life into danger

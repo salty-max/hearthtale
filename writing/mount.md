@@ -1,7 +1,7 @@
 ---
 kind: mount
 ---
-- I rode my own mount for the first time, delighted at the change in the road's demands.
+- I rode my own mount for the first time, and the road got shorter.
 - I took my first ride on a mount of my own, with a sudden fondness for the miles I no longer had to walk.
 - I rode my own mount for the first time, and began to understand how a long road could feel inviting.
 - I took my first ride on my own mount, with a sudden taste for the distances I could now travel.

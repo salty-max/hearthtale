@@ -11,7 +11,7 @@ kind: c-quest
 - [!again] took care of what {giver} wanted
 - [!again] was of use to {giver}
 - [!again] gave {giver} the help they had asked for
-- [!again] settled what {giver} needed settled
+- [!again] did the job {giver} had for me
 - [!again] obliged {giver}
 - [again] did one more thing asked of me
 - [again] saw to another request while I was at it

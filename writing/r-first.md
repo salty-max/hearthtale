@@ -1,16 +1,16 @@
 ---
 kind: r-first
 ---
-- my confidence receiving a sharp correction
-- rather too conscious of the skin beneath my confidence
-- no longer tempted to get a better look
-- a retreat acquiring a persuasive appeal
-- not the sort of introduction I would choose twice
-- more wary of what might be within reach
-- my stomach unsettled by the introduction
-- the danger taking the pleasure out of discovery
-- [teeth] those teeth quite sufficient to discourage a closer look
-- [mechanical] moving metal making curiosity an unwise indulgence
-- [night] the dark making the introduction distinctly uncomfortable
-- [hc] very attached to remaining alive and unremarkable
-- [low] new enough to this to envy someone else's ease
+- quicker and meaner than any description of them
+- learning more in the first minute than from all I had heard
+- nothing like what I had pictured
+- curious, once it was over, how they lived
+- a lesson I suspected would be repeated
+- wary of the next ones before I had seen them
+- noting how they moved before they struck
+- the name now attached to a very particular memory
+- [teeth] with a healthy respect for their teeth
+- [mechanical] puzzled who had built such things, and why
+- [night] which the dark did nothing to improve
+- [hc] grateful the lesson had not cost more
+- [low] one more thing nobody had mentioned at the start

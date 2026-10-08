@@ -10,7 +10,7 @@ kind: r-task
 - [explore] fresh country, every bush of it a possible ambush
 - [escort] unwilling to lead another life where my luck would not reach
 - [night] the dark keeping my vigilance usefully occupied
-- the loa free to recommend another obliging troll next time
+- the next volunteer welcome to be somebody else
 - no appetite left for another voluntary errand
 - [explore] wondering how easily the way could hide a traveller
 - [explore] in no hurry to walk past a danger

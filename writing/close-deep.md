@@ -3,12 +3,12 @@ kind: close-deep
 ---
 - {foe} left me barely alive {at}. A safe return suddenly seemed worth all the dull errands that might come with it.
 - {foe} nearly ended me {at}, and left my hands unable to believe the danger was over.
-- I barely survived {at}. The next quiet moment felt too dear to hurry through.
+- I barely survived {at}. For a long while afterwards I sat still and simply breathed.
 - {foe} nearly killed me {at}; I had no courage left for anything except wanting to stay alive.
 - I barely survived {at}, and longed for the kind of shelter I had once taken for granted.
 - I came very near death {at}, with no comfort in knowing how small the final mistake would have been.
 - I survived {at}, too shaken to make much distinction between relief and fear for a while.
-- {foe} nearly killed me {at}. The prospect of growing old over ordinary troubles had become painfully dear.
+- {foe} nearly killed me {at}. I wanted, badly, to grow old worrying about ordinary things.
 - [night] I barely survived {at} after dark, and wished for daylight with an urgency I could not quiet.
 - [hc] {foe} nearly ended me {at}. I had one life, and all my fine notions of glory shrank beside the thought of losing it.
 - [hc] I came close to dying {at}, grateful for a chance I could not afford to count on twice.

@@ -9,4 +9,4 @@ kind: r-company
 - [client:forever night] the night less immense with another life nearby
 - [client:forever faction:alliance] a child of the High Order accepting help without a patron's claim
 - [client:forever] company steadier than another hour with my worries
-- [client:forever] a skyborn elf enjoying the ease of travelling together
+- [client:forever] the miles shorter with company

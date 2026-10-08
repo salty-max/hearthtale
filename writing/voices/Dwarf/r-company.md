@@ -1,7 +1,7 @@
 ---
 kind: r-company
 ---
-- less inclined to grumble within hearing of myself
+- someone to grumble at besides myself
 - [one] a companion worth having on the far side of the mountain
 - the country no longer mine to face alone
 - less of the distance left to my own stubbornness

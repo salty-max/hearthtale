@@ -1,7 +1,7 @@
 ---
 kind: boss-final
 ---
-- [grouped] I helped bring down {boss}, and the way out of {dungeon} seemed a fine reward in itself.
+- [grouped] I helped bring down {boss}, and the way out of {dungeon} was the best thing I saw all day.
 - {boss} fell, and I could think of leaving {dungeon} without preparing for another fight first.
 - I defeated {boss} in {dungeon}, with the relief slower to arrive than I had expected.
 - [grouped] We brought down {boss} at last, and I let myself believe we could leave {dungeon} alive.

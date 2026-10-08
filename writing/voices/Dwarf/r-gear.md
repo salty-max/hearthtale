@@ -3,9 +3,9 @@ kind: r-gear
 ---
 - [!made] something I would not be ashamed to bring to Ironforge
 - [!made !held] a fit that would leave room for supper decidedly welcome
-- [!made !held] durability earning my approval
+- [!made !held] the stitching sound, which I checked
 - [!made !held] no fondness for equipment that needed constant adjustment
 - [!made hc !held] a reassuring bit of protection against bad luck
 - [made] my own workmanship facing a harder judge than my pride
 - [made] as satisfying to finish as the last stroke on good iron
-- [made] my hands responsible for what would have to hold
+- [made] every rivet set where I wanted it

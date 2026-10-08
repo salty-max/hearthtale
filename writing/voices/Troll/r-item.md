@@ -4,7 +4,7 @@ kind: r-item
 - patience learned on the islands put to an ordinary use
 - a burden with a destination I would be happy to reach
 - longing for a hunt that brought back something easier to carry
-- [!one !plural] able to count each piece without asking the loa for help
+- [!one !plural] the whole lot heavier than it had any right to be
 - [!one !plural] each find adding its own inconvenience to the carrying
 - [one !plural] the search quite out of proportion to the prize
 - [one !plural] rather eager to let it become someone else's treasure

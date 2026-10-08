@@ -9,7 +9,7 @@ kind: power
 - [demon] I learned {spell}; another demon could now reach me when I called, which was useful and not entirely reassuring.
 - [demon] I learned {spell}, with more hunger for a demon's strength than affection for its kind.
 - [demon] I learned {spell}, and hoped the demon would remain the one that paid most dearly for the arrangement.
-- [steed] I learned {spell}, with the prospect of calling my own steed lending a new pleasure to the road.
+- [steed] I learned {spell}, and the road ahead looked shorter already.
 - [steed] Learning {spell} promised me a steed I could call, and unfamiliar distances began to look inviting.
 - [steed] I had learned {spell}, with a sudden fondness for roads I would no longer have to walk.
 - [steed] I learned {spell}, and wanted to know how the world would look from the back of such a steed.

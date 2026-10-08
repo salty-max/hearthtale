@@ -2,7 +2,7 @@
 kind: r-inn
 ---
 - not in need of sleep, but decidedly in favour of shelter
-- a haven for a corpse who still appreciated privacy
+- somewhere private, which matters more to the dead than you would think
 - a door between me and the living sounding quite inviting
 - my condition no obstacle to a hearthstone's enchantment
 - closer to having an address than a grave marker

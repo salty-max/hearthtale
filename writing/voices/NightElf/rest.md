@@ -8,5 +8,5 @@ kind: rest
 - I stopped {at}, and let the thought of home soften the day's unease.
 - I rested {at}, missing the forests with a tenderness I rarely allowed while moving.
 - I paused {at}, leaving the world to somebody else's vigilance for a little while.
-- As far from a moonwell as I felt, I rested {at}, finding a little of its peace in being still.
+- I rested {at}, and let the silence do what words could not.
 - I rested {at}, with the patience of my people finally serving my own tired body.

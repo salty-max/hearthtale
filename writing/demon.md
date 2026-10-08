@@ -1,7 +1,7 @@
 ---
 kind: demon
 ---
-- [imp] I summoned my first imp, {pet}, and took an immediate liking to the prospect of fire that would answer to me.
+- [imp] I summoned my first imp, {pet}, and liked at once the idea of fire that came when I called.
 - [imp] I called my first imp, {pet}; a small demon was still a demon, though the size made this easier to forget.
 - [imp] I bound my first imp, {pet}, with a certain affection for so much potential trouble in so little flesh.
 - [imp] I summoned {pet}, my first imp, and hoped I would be less likely to regret the fire than the company.

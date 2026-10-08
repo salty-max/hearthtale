@@ -11,7 +11,7 @@ kind: r-road
 - [back] the familiar way easing the journey
 - [back] less likely to need a guard's directions
 - rather susceptible to the promise of a friendly inn
-- the country giving me a new appreciation of roadside inns
+- the fields along the way a little like Elwynn's, and a little not
 - [!back] a stranger taking an interest in the people I might meet
 - [!back] my usefulness the only introduction I could offer
 - [!back] the comforts of home unexpectedly vivid

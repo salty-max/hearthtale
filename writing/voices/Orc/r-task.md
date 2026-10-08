@@ -2,12 +2,12 @@
 kind: r-task
 ---
 - my offer of help beginning to cost me
-- an ordinary request taking an orc's full measure
+- an ordinary request that took more out of me than a battle
 - my patience receiving a thorough exercise
 - no need of a battle to leave me weary
 - more names I hoped the Horde could count on
-- my generosity due for a quiet spell
+- my generosity in need of a rest
 - [explore] wondering how a scout would read the way ahead
-- [explore] an orc's caution kept busy by the unfamiliar country
+- [explore] reading the land for water, shelter and ambush, the old way
 - [escort] unwilling to hurry another life towards the ancestors
 - [night] the dark leaving little room for confidence in the search

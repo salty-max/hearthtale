@@ -5,7 +5,7 @@ kind: kills
 - I counted {n} {foes} among the fights {at}, and hoped to leave the number alone for a while.
 - I had dealt with {n} {foes} {at}, with a new appreciation for a friendly introduction.
 - I had killed {n} {foes}, enough to be tired of finding my courage useful.
-- I fought my way through {n} {foes} {at}, and the prospect of gentler work became very attractive.
+- I fought my way through {n} {foes} {at}, and gentler work suddenly looked very attractive.
 - I had fought {n} {foes} {at}, with no wish to see how many more I could endure.
 - I had come through fights with {n} {foes}, and was grateful that none had been my last.
 - The {n} {foes} I had killed {at} had occupied much of this stretch.
@@ -16,11 +16,11 @@ kind: kills
 - [lots] {n} {foes} had fallen to me, enough to give me a tenderness for ordinary, untroubled life.
 - [hc] I counted {n} {foes}, grateful to be the one counting.
 - [class:HUNTER !low] I had hunted {n} {foes} {at}, with less appetite for the chase than for an undisturbed return.
-- [class:WARLOCK] I had killed {n} {foes}, and wanted the next use for my magic to cost me nothing dearer than a soul shard.
-- [class:MAGE] I had brought down {n} {foes}, and the prospect of conjuring supper gave me a private comfort.
+- [class:WARLOCK] I had killed {n} {foes}, and hoped the next one would cost me nothing more than a soul shard.
+- [class:MAGE] I had brought down {n} {foes}, and conjured myself a supper to celebrate.
 - [class:ROGUE] I had dealt with {n} {foes}; a rogue's quiet obscurity seemed a pleasant thing to return to.
-- [class:PRIEST] {n} {foes} had fallen to me, with the gentler uses of a priest's prayers dear to me afterwards.
-- [class:SHAMAN] I had fought {n} {foes}, and the gentler uses of the elements had become very dear to me.
+- [class:PRIEST] {n} {foes} had fallen to me, and afterwards I prayed for something other than strength.
+- [class:SHAMAN] I had fought {n} {foes}, and asked the elements for something gentler afterwards.
 - [class:WARRIOR] I had fought {n} {foes}, and could let my rage subside without feeding it another struggle.
 - I had killed {n} {foes} in all {at}, a part of the day I could put behind me.
 - By the end I had put down {n} {foes} {at}, with less appetite for fighting than when I began.

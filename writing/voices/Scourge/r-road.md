@@ -1,11 +1,11 @@
 ---
 kind: r-road
 ---
-- a corpse in no particular hurry to announce the approach
+- in no particular hurry to announce myself
 - rather too visible to enjoy arriving unannounced
-- [!back !home] not expecting the warmest welcome for a corpse
+- [!back !home] ready for the usual looks
 - [!back] wondering how much reassurance the guards might need
-- [!back !home] a corpse relying on usefulness for an introduction
+- [!back !home] remembering when I could walk into a town without anyone reaching for a torch
 - [!back night] at an hour that made my condition less conspicuous
 - [back] less of a stranger, if no less dead
 - [back] my joints recognising the distance all too readily

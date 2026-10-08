@@ -1,17 +1,17 @@
 ---
 kind: r-road
 ---
-- [client:forever] a skyborn elf discovering the ordinary demands of distance
-- [client:forever !back] an elf of the sky still learning how the ground could feel familiar
+- [client:forever] the distance measured out step by step, the slow way
+- [client:forever !back] the ground still a stranger under my feet
 - [client:forever !back] an uncertain welcome to make without a patron's assurance
-- [client:forever !back] the country unfamiliar even to an elf of the sky
+- [client:forever !back] the country new to me even from above
 - [client:forever !back night] my eyes patient with a night that offered few directions
 - [client:forever back] my steps easier on ground that had once seemed foreign
 - [client:forever back] the familiar turns giving an easy welcome
 - [client:forever back] the return taking the uncertainty out of my arrival
-- [client:forever high] a skyborn elf finding some familiarity in the country
+- [client:forever high] the country no longer strange to me
 - [client:forever faction:horde !back] a Windshaper seeking company for the search still ahead
 - [client:forever faction:alliance !back] wondering what use the High Order could make of a life lived here
-- [client:forever] the country acquiring a place in my life beyond the view
-- [client:forever night] a child of the sky taking care with what the dark concealed
+- [client:forever] the country beginning to matter beyond the view
+- [client:forever night] careful of every shadow the dark offered
 - [client:forever] the arrival costing some of the courage I had set out with

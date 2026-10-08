@@ -3,7 +3,7 @@ kind: r-foe
 ---
 - my reserve no disguise for how mortal I felt
 - my composure slower to return than my breath
-- a moonwell's peace dearer to me than another victory
+- no victory song in me, only quiet
 - my ears unwilling to stop listening for danger
 - [one] not a death I had any wish to savour
 - [!one] their numbers a poor match for the peace I had hoped to keep

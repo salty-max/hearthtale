@@ -10,7 +10,7 @@ kind: died-back
 - [corpse drowning] I drowned {at}, and returned as a ghost to reclaim my body, with no wish to try the water again.
 - [corpse lava] Fire killed me {at}, and my ghost came back for my body with no affection for the warmth.
 - [corpse nature] The land itself killed me {at}, and my ghost walked back to my body warier of it.
-- [corpse] I died {at} and walked back from the graveyard as a ghost, with my body suddenly very dear to me.
+- [corpse] I died {at} and walked back from the graveyard as a ghost, never so glad to see my own face.
 - [corpse] I died {at}, woke among the ghosts at the graveyard and walked back to take up my life again.
 - [corpse] I died {at}; my ghost returned from the graveyard, and I was grateful to have my body again.
 - [corpse] {at} I died, and saw what the far side of the world looks like on the ghost's walk back to my body.

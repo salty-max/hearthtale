@@ -4,7 +4,7 @@ kind: c-elite
 - fought {foe} and won, with no appetite for making another trial of my strength
 - faced {foe} and lived to go on
 - brought down {foe}, with more relief than I would have liked to show
-- beat {foe}, and wanted the next stranger to be friendly
+- beat {foe}, and was in no hurry to meet another like it
 - took on {foe}, grateful not to have met the end of my road
 - [hc] fought {foe} with a life I was unwilling to spend on pride
 - stood my ground against {foe}, with my courage under considerable strain

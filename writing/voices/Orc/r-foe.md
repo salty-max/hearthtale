@@ -4,7 +4,7 @@ kind: r-foe
 - my breath coming with an unflattering urgency
 - my blood slow to quiet after the danger
 - my arms heavy enough to make me envy a rested orc
-- an orc with no appetite left for another struggle
+- no appetite left for another struggle
 - [one] not an enemy I had any wish to meet twice
 - [!one] their numbers testing my endurance
 - [teeth] those jaws too close to the soft parts of me

@@ -3,9 +3,9 @@ kind: r-first
 ---
 - my absent pulse keeping my alarm conveniently private
 - my remains feeling inconveniently vulnerable
-- a corpse with an unexpectedly fierce interest in escaping
+- an unexpectedly fierce interest in escaping
 - new company even to someone the grave had failed to keep
 - [teeth] those teeth no less unwelcome for my flesh being spoiled
 - [night] the darkness no help with the awkward introduction
 - [mechanical] not the only thing here that moved without being alive
-- [low] still discovering what else could want a corpse dead
+- [low] still discovering how many things wanted me dead again

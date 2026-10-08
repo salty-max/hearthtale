@@ -7,7 +7,7 @@ kind: r-road
 - [!back] counting the ways in and out, a habit since Gnomeregan
 - [!back] no convenient diagram of what lay ahead
 - [!back night] my ears trying to make up for my eyes
-- [!back] my interest caught by the unfamiliar surroundings
+- [!back] already wondering how the place was put together
 - [!back] a detour whose purpose had better justify it
 - [!back night] the dark concealing all the details I liked to examine
 - [back] familiar ground making the return feel wonderfully simple
@@ -15,4 +15,4 @@ kind: r-road
 - [back] my memory saving me some unnecessary wandering
 - [high] the long roads finally starting to feel like mine
 - a distance that would have justified a railway
-- my ingenuity occupied with the question of getting about
+- inventing better ways to travel in my head, none of them buildable

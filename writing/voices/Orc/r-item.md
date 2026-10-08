@@ -2,13 +2,13 @@
 kind: r-item
 ---
 - the burden testing the generosity of my offer
-- an orc discovering the unglamorous side of being helpful
-- the next request due to receive some careful consideration
-- a patient use for an orc's strength
-- [!one !plural] each piece giving substance to the request
+- the unglamorous side of being helpful, which no war song mentions
+- the next request likely to get a longer look from me
+- strength put to a patient use
+- [!one !plural] each piece counted into the pack like rations
 - [!one !plural] each burden another reason to spare the strength I had
 - [one !plural] the carrying an awkward part of the search
-- [one !plural] my hands eager to surrender it to someone else's need
+- [one !plural] not mine to keep, and I did not want it
 - [meat] the smell of a Horde cookfire suddenly dear to me
-- [cloth] a useful prospect for the Horde's tents
-- [night] strength quite useless against the difficulties of searching in the dark
+- [cloth] good for patching the tents back home
+- [night] my strength no use at all for finding things in the dark

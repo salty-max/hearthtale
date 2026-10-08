@@ -3,7 +3,7 @@ kind: r-lesson
 ---
 - my fingers making an apprentice of me
 - with the slow ache of an apprentice's pride
-- my pride chafing at the unfamiliar difficulty
+- my pride chafing at being bad at something
 - [one] keen to have it ready when the danger came
 - my patience taking as much exercise as my hands
 - stubborn about learning what would not come easily

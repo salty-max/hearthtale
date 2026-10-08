@@ -3,7 +3,7 @@ kind: died
 ---
 - [foe] {foe} killed me {at}, and victory meant nothing beside the life taken from me.
 - [foe] I died {at} at the hands of {foe}, with no room left for pride in the fight.
-- [foe] {foe} killed me {at}, and made the prospect of an ordinary home seem unbearably dear.
+- [foe] {foe} killed me {at}, and all I could think of was an ordinary door at home.
 - [foe] I lost a fight with {foe} {at}, and my life with it.
 - [foe] I was killed by {foe}, with far too much left to do.
 - [player] {foe}, another adventurer, killed me {at}; I had no kindness left for the thought of them.
@@ -13,7 +13,7 @@ kind: died
 - [lava] Fire killed me {at}; I could think of nothing but escaping its heat.
 - [nature] I died {at}, with no enemy to blame and no comfort in the absence.
 - I died {at}, and wanted another chance at a life that had seemed so ordinary before.
-- I died {at}, with too much left dear to me to let go easily.
+- I died {at}, with too much still unfinished to let go easily.
 - I died {at}, and wished the next familiar place need not be a graveyard.
 - I died {at}, with no comfort in having survived the road that had brought me here.
 - I died {at}, wanting the quiet pleasures of life more than the dangers I had chosen.

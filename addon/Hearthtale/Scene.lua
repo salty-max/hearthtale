@@ -54,6 +54,7 @@ local function newScene(book, n, ch)
     discovered = {}, -- places seen for the first time, their arrival not told yet: place = { m, key, prev }
     prey = {},
     preyPlace = nil,
+    toldFoes = {}, -- creatures told already (by a quest or as an elite): not again as prey or work
     backTo = nil,
     backTold = false, -- (in this paragraph)
     -- the sentence being written: its clauses (their kinds, each without its
@@ -257,6 +258,7 @@ function Scene:flush()
         and #pending == 2
         and not self.lead
         and self.pendingKinds[1] ~= "kill"
+        and not pending[1]:find(" I ")
         and hash(b.seed .. "|after|" .. self.sentenceKey) % 3 == 0
       then
         text = "After I " .. pending[1] .. ", I " .. last
@@ -522,7 +524,7 @@ function Scene:takePrey(m, only)
   for _, k in ipairs(prey) do
     if only and not only[k.name] then
       table.insert(rest, k)
-    elseif (m.at or 0) - (k.at or 0) <= PREY_TIME and not asked[k.name] then
+    elseif (m.at or 0) - (k.at or 0) <= PREY_TIME and not asked[k.name] and not self.toldFoes[k.name] then
       local n = (self.ch.kills or {})[k.name] or 1
       total = total + n
       local head = (k.name:match("(%a+)$") or k.name) .. "|" .. (k.kind or "")
@@ -575,30 +577,55 @@ function Scene:deed(t)
   local work = m.k == "done" and m or (doneAt and self.ch.log[doneAt])
   t.petName = work and work.pet or nil
   local all = parts(m)
+  -- (creatures told already, as an elite moments ago: the work is who asked)
+  local function told(part)
+    local any = false
+    for _, o in ipairs(part.objectives or {}) do
+      if o.type ~= "monster" or not o.name or not self.toldFoes[o.name] then return false end
+      any = true
+    end
+    return any
+  end
   for i, part in ipairs(all) do
-    local tags = i == 1 and t or self:tags({ done = t.done, handed = t.handed, petName = t.petName }, m)
-    -- (a quest's parts in one sentence: the remark, if any, on its last)
-    tags.quiet = i < #all or nil
-    -- (the creatures its things drop from, killed on the way: the hunt for them)
-    local from = i == 1 and sources(part)
-    if from then tags.prey = self:takePrey(m, from) end
-    local text, said = b:deed(part, self.key, tags)
-    local prey, one
-    if i == 1 and text and WORK[said.kind] and not said.turn then
-      prey, one = self:takePrey(m)
-    end
-    if prey then
-      self:flush()
-      -- (a deed with a comma or an "and" of its own takes no second "and")
-      local bare = said.remark and text:sub(1, #text - #said.remark - 2) or text
-      local complex = (bare:find(",") or bare:find(" and ")) and true or nil
-      local t2 = self:tags({ one = one or nil, handed = t.handed or nil, complex = complex }, m)
-      local framed, f = b:say("c-while", self.key, { prey = prey, deed = text }, t2, nil, true)
-      if framed then
-        text, said.turn = framed, f.turn
+    if told(part) then
+      if t.handed and #all == 1 and (m.ender or m.giver) then
+        local text, said = b:say("c-report", self.key, { ender = m.ender or m.giver }, self:tags(nil, m), nil, true)
+        self:clause(text, said, m, self.key)
       end
+    else
+      self:deedPart(m, part, i, #all, t)
     end
-    self:clause(text, said, m, self.key, nil, i > 1)
+  end
+end
+
+-- One part of a quest's work (its things, its creatures or its task), told.
+function Scene:deedPart(m, part, i, n, t)
+  local b = self.book
+  local tags = i == 1 and t or self:tags({ done = t.done, handed = t.handed, petName = t.petName }, m)
+  -- (a quest's parts in one sentence: the remark, if any, on its last)
+  tags.quiet = i < n or nil
+  -- (the creatures its things drop from, killed on the way: the hunt for them)
+  local from = i == 1 and sources(part)
+  if from then tags.prey = self:takePrey(m, from) end
+  local text, said = b:deed(part, self.key, tags)
+  local prey, one
+  if i == 1 and text and WORK[said.kind] and not said.turn and not said.state then
+    prey, one = self:takePrey(m)
+  end
+  if prey then
+    self:flush()
+    -- (a deed with a comma or an "and" of its own takes no second "and")
+    local bare = said.remark and text:sub(1, #text - #said.remark - 2) or text
+    local complex = (bare:find(",") or bare:find(" and ")) and true or nil
+    local t2 = self:tags({ one = one or nil, handed = t.handed or nil, complex = complex }, m)
+    local framed, f = b:say("c-while", self.key, { prey = prey, deed = text }, t2, nil, true)
+    if framed then
+      text, said.turn = framed, f.turn
+    end
+  end
+  self:clause(text, said, m, self.key, nil, i > 1)
+  for _, o in ipairs(part.objectives or {}) do
+    if o.type == "monster" and o.name then self.toldFoes[o.name] = true end
   end
 end
 

@@ -12,10 +12,10 @@ kind: dungeon
 - I entered {dungeon}, more wary of what waited inside than eager to be impressive.
 - [aside] I went into {dungeon}, with a very ordinary wish to leave it alive afterwards.
 - I entered {dungeon}, giving the way back a careful place in my memory.
-- I ventured into {dungeon}, keeping a careful share of my attention for the way out.
+- I ventured into {dungeon}, keeping one eye on the way out.
 - I braved {dungeon}, making a considerable effort to look at ease.
 - I went into {dungeon}, with the way out still a comforting thing to think of.
-- I entered {dungeon}, with my life rather dearer to me than the chance of a fine victory.
+- I entered {dungeon}, more interested in coming out than in any fine victory.
 - [aside] I saw {dungeon} for myself, and wished I felt as bold as the decision to enter suggested.
 - [hc] I went into {dungeon}, with no second life waiting if I spent this one badly.
 - I went into {dungeon} with {mates}.

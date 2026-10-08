@@ -7,7 +7,7 @@ kind: r-gear
 - [!made] a burden I hoped would earn its place on my back
 - [made] my fingers put to a peaceful use
 - [made] as welcome as a hunt that brought everyone home
-- [made] nothing I needed to ask the loa to finish
+- [made] shaped with patience and a little stubbornness
 - [!made] a piece whose next test I could happily postpone
 - [!made] the old piece losing its charm now I had a choice
 - [!made hc] unwilling to make a final test of Darkspear resilience

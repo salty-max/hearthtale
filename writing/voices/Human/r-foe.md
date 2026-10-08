@@ -14,7 +14,7 @@ kind: r-foe
 - [low !more] a beginner discovering what the recruiting songs left out
 - [high] the old fear returning without its old force
 - my breath refusing to come quietly
-- my courage in need of a quiet evening
+- wanting nothing so much as a hot bath and a locked door
 - my courage too thin to feel like armour
 - [one] not an enemy I would want at my door
 - [mechanical] rather keener on machines that could plough a field

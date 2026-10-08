@@ -1,13 +1,13 @@
 ---
 kind: r-foe
 ---
-- my confidence rattling back into place
+- my confidence returning a piece at a time
 - my nerves rattling long after the fight had stopped
 - [one] little enough flesh between me and the grave
 - [!one] their number testing every scrap of my ingenuity
 - [one] no longer in any hurry to discover how close I could get
 - [!one] the air easier to breathe with all of them down
-- my heart still clattering like a faulty pump
+- my hands still finding things to fidget with
 - [teeth] my fingers grateful to have escaped those teeth
 - [teeth] my fingers quite determined to stay attached
 - [mechanical] such engineering squandered on something murderous
@@ -21,5 +21,5 @@ kind: r-foe
 - my stomach taking longer than my hands to settle
 - [one] no longer inclined to get within reach
 - [!one] their defeat worth several deep breaths
-- [trogg] the loss of Gnomeregan much too close in my mind
+- [trogg] a small payment on what the troggs did to Gnomeregan
 - [trogg] the loss of Gnomeregan making this bitter work
