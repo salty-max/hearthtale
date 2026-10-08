@@ -1,13 +1,13 @@
 ---
 kind: died
 ---
-- [foe] {foe} killed me {at}, and I discovered that having died before did little to make the next time welcome.
-- [foe] I fell to {foe} {at}, with more unfinished business than I had expected to care about.
-- [fall] I fell to my death {at}, reminded that this body was no less vulnerable for having already been lost once.
-- [drowning] I drowned {at}, finding another way for the world to refuse me a place in it.
-- I died {at} and came back, glad of the return despite all the clever things I had told myself about death.
-- I died {at}, and found I wanted to go on more than familiarity with the grave had led me to suppose.
-- [lava] Fire killed me {at}, without much regard for whether I ought to have been dead already.
-- [nature] I died {at}, taken by the world itself rather than anyone who might have had a reason.
-- [foe] {foe} killed me {at}, and left me an encounter I meant to understand before meeting it again.
-- I died {at}, with enough of this second life left unfinished to make coming back matter.
+- [foe] {foe} killed me {at}, doing nothing to improve my opinion of second funerals.
+- [foe] I fell to {foe} {at}; apparently the world still regarded one death as insufficient.
+- [fall] I fell to my death {at}. Rot had not made me light enough to float.
+- [drowning] I drowned {at}, a particularly insulting end for someone who had little use for breath.
+- I died {at}, and felt rather cheated of the future Sylvanas had returned to us.
+- I died {at}. A familiar grave was still no place I wanted to revisit.
+- [lava] Fire killed me {at}, without pausing to ask whether I counted as living fuel.
+- [nature] I died {at}; the world had found a way to kill me without even supplying an enemy to resent.
+- [foe] {foe} killed me {at}, and I regretted giving anyone else the last word over my remains.
+- I died {at}, with far more attachment to this decaying body than I had liked to admit.

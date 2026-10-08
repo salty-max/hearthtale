@@ -1,12 +1,12 @@
 ---
 kind: opening
 ---
-- I began again {at}, with work waiting and the welcome, if any, safely optional.
-- I took up the road {at}. It had not learned to like me, but it had not managed to keep me out either.
-- I opened a fresh page {at}, pleased that the choice of what followed was still mine.
-- I set out {at}, where usefulness remained a more reliable introduction than appearance.
-- I went on {at}, with no particular desire to be forgiven for continuing to exist.
-- I began this stretch {at}. I had unfinished business, which was as good a reason as most people ever found.
-- I returned to my account {at}, where a few plain facts were preferable to someone else's explanation of me.
-- Unwilling to let neglect do what an enemy had not, I made ready {at}.
-- I took up the road {at}, carrying my own intentions for a change.
+- I began again {at}, with less breath than a living adventurer and no shortage of unfinished business.
+- I took up the road {at}, still unwilling to give the cemetery back its property.
+- I set out {at}, with all the welcome a corpse could reasonably hope for still ahead of me.
+- I went on {at}, hoping usefulness would introduce me before the smell did.
+- I began this stretch {at}, grateful that Sylvanas had not freed us merely to stand about decaying.
+- I set out {at}, with a dead body and a rather lively dislike of being ordered around.
+- I went on {at}, hoping the next person who wanted help would need less reassurance about the hand offering it.
+- I made ready {at}, no more inclined to rot quietly than I had been yesterday.
+- I took up the road {at}, with Lordaeron behind me and a healthy resentment of the word healthy.

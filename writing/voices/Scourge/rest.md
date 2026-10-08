@@ -1,12 +1,12 @@
 ---
 kind: rest
 ---
-- I rested {at}, pleasantly free of anyone needing me for the moment.
-- I settled {at}, where being still was a choice rather than a condition imposed on me.
-- I paused {at}, with no intention of mistaking solitude for abandonment.
-- I rested {at}. The world could carry on its objections without my immediate attendance.
-- I stopped {at}, and found the quiet easier company than I had expected.
-- I rested {at}, allowing myself the undignified pleasure of having nothing urgent to do.
-- I paused {at}, with my business finished for now and my continued presence apparently tolerated.
-- I rested {at}, glad to let my own thoughts occupy the space where orders once belonged.
-- Content that I could take it up again by choice, I put the road aside {at}.
+- I rested {at}, grateful to lie still without a lid being nailed over me.
+- I settled {at}, with no need to sleep and a very definite wish to stop.
+- I paused {at}, rather more attached to peace than my appearance might encourage people to believe.
+- I rested {at}, hoping an industrious apothecary would not find another use for my idle hands.
+- I stopped {at}, with my decaying joints quietly winning an argument against further walking.
+- I rested {at}, missing sleep rather more than I needed it.
+- I paused {at}; remaining motionless by choice still had a sweetness the grave had never offered.
+- I rested {at}, with no master's voice in my head to make stillness a crime.
+- As content as a corpse could be outside its appointed plot, I rested {at}.

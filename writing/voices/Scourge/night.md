@@ -1,13 +1,13 @@
 ---
 kind: night
 ---
-- [!last] I sat out the night {at}, with little to interrupt my thoughts.
-- [!last] I stopped beneath the open sky {at}, where a roof mattered less than having somewhere to remain.
-- [!last] I spent the night {at} with the road behind me for a while.
-- [!last] I waited for the world to take up its business again {at}, glad to have none of my own for the moment.
-- [!last] I rested {at} in the quiet, finding it easier company than most.
-- [!last] I spent the night {at} putting the day's work in order in my thoughts.
-- [last] I stopped {at} after a long stretch on the road, ready to end this part of the account.
-- [last] I spent another night in the open {at}, with enough behind me to give these pages an ending.
-- [last] I lay down {at} out of habit and set the account aside, leaving the rest for when I went on.
-- [!last] I passed the night {at} without much sleep, though I was glad enough to be still.
+- [!last] I sat out the night {at}, with no need to sleep and an old longing for the ease of it.
+- [!last] I stopped beneath the sky {at}, less concerned with a roof than with remaining unburied.
+- [!last] I spent the night {at}, grateful that darkness hid more than it threatened.
+- [!last] I waited out the night {at}; the living could keep their dreams, though I sometimes envied them.
+- [!last] I rested outside {at}, with my joints more grateful for stillness than my pride admitted.
+- [!last] I passed the night {at}, free to be motionless without belonging to anyone's graveyard.
+- [last] I stopped outside {at}, with no wish to turn the pause into a permanent arrangement.
+- [last] I spent another night in the open {at}; a roof would have been welcome, though I had endured worse lodgings.
+- [last] I lay down {at}, out of a habit death had not quite managed to cure.
+- [!last] I passed the night {at}, not sleeping so much as declining to do anything else.

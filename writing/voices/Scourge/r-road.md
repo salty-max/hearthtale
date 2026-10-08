@@ -1,13 +1,13 @@
 ---
 kind: r-road
 ---
-- unhurried, since I do not tire as I used to
-- unnoticed, or politely ignored
-- [!back !home] its people giving me the usual looks
-- [!back] noting where the guards stood
-- [!back !home] curious what welcome the place would manage
-- [!back night] arriving in the hours I prefer
-- [back] its welcome no warmer than before
-- [back] familiar enough to be dull, which I had learned to value
-- [back] still standing, a low bar but a real one
-- [high] one more place that had decided to tolerate me
+- my feet in less of a hurry than a living person's pulse
+- rather too visible to enjoy arriving unannounced
+- [!back !home] not expecting the warmest welcome for a corpse
+- [!back] wondering how much reassurance the guards might need
+- [!back !home] hoping usefulness would be sufficient introduction
+- [!back night] at an hour that made my condition less conspicuous
+- [back] less of a stranger, if no less dead
+- [back] my joints recognising the distance all too readily
+- [back] not entirely sorry to approach somewhere familiar
+- [high] the Undercity's notion of ordinary more comforting than I expected

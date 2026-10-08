@@ -1,11 +1,11 @@
 ---
 kind: r-inn
 ---
-- not that I need the sleep
-- a place that did not flinch at me
-- a room, a door and fewer questions
-- the stone indifferent to my condition
-- a door I could close
-- a place of my choosing, which still matters
-- [night] at an hour the living keep to their beds
-- [hc] a refuge worth having, even for one already dead
+- not in need of sleep, but decidedly in favour of shelter
+- hoping to be less conspicuous on the return
+- a door between me and the living sounding quite inviting
+- my condition no obstacle to a hearthstone's enchantment
+- closer to having an address than a grave marker
+- rather more comfortable than the lodgings death usually supplied
+- [night] at an hour I had little reason to resent
+- [hc] not prepared to let a long road arrange my final funeral

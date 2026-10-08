@@ -1,7 +1,7 @@
 ---
 kind: flight
 ---
-- [first] I first flew from {from} to {to}, pleased that the view required no introductions.
-- [!first] I flew from {from} to {to}.
-- I flew from {from} to {to}, with the road below needing none of my attention.
-- [!first] I flew on to {to}, grateful to leave the distance to someone else for once.
+- [first] My first flight from {from} to {to} gave me a view even the dead would have found stirring, which I did.
+- [!first] I flew from {from} to {to}, considerably above the height at which people usually preferred their corpses.
+- I flew from {from} to {to}, trusting the wings rather more readily than I trusted my own joints.
+- [!first] I flew on to {to}, with no need to offer my feet further employment.

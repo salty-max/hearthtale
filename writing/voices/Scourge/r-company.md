@@ -1,11 +1,11 @@
 ---
 kind: r-company
 ---
-- company I had chosen, still a novelty
-- [one] a living back to watch, for once
-- useful hands in a fight
-- not friendship exactly, though close to it
-- trusting them as far as I trust anyone
-- better company than I expected
-- [night one] two shadows instead of one
-- [hc] each keeping the other from a final end
+- the road looking less like an invitation to a second burial
+- [one] a second person worth more than an empty coffin
+- rather grateful for help that did not require an apothecary
+- nearer to friendship than a corpse ought to expect
+- less guarded than the habits of the Undercity usually allowed
+- my joints no longer the only ones doing the travelling
+- [night one] our shadows making less lonely company than my own
+- [hc] unwilling to be the corpse left to mourn

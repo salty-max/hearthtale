@@ -1,7 +1,7 @@
 ---
 kind: c-elite
 ---
-- fought {foe} and won, which surprised us both
-- outlasted {foe}; I have a head start on dying
-- took {foe} apart, piece by piece
-- beat {foe}, with most of my bones intact
+- overcame {foe}, in defiance of my own prognosis
+- outlasted {foe}, despite having died considerably earlier
+- defeated {foe} without joining the remains
+- beat {foe}, which was preferable to another funeral

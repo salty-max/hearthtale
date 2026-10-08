@@ -1,9 +1,9 @@
 ---
 kind: quests-many
 ---
-- {n} tasks had been seen through, an impressive quantity of ordinary business for someone supposedly beyond it.
-- The {n} tasks behind me had given people a use for me. That was not affection, but it had its advantages.
-- I had seen {n} errands through, and remained free to decide whether to accept the next.
-- By the end, {n} jobs were done. The world persisted in needing things from me, which was almost companionable.
-- I counted {n} completed tasks, none of which had required me to be grateful for an order.
-- I had brought {n} jobs to an end, and found I still cared about doing something well.
+- I had completed {n} tasks, an industrious showing from someone usually counted among the remains.
+- The {n} tasks behind me had made use of a corpse without requiring an apothecary's bench.
+- I had seen {n} errands through; the grave would have to go on missing its occupant.
+- By the end, {n} jobs were done, and being dead had saved me none of the walking.
+- I counted {n} completed tasks, which ought to have settled any doubt that a Forsaken could still be useful.
+- I had brought {n} jobs to an end, with more of me still working than appearances might suggest.
