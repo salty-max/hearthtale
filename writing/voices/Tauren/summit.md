@@ -1,6 +1,6 @@
 ---
 kind: summit
 ---
-- I reached level {level}, and closed the journal with gratitude for the lives that had become part of my own along the way.
-- At level {level}, I set these pages aside. I wanted time to remember the country I had crossed before choosing another path.
-- Level {level} marked the end of this account; I had carried more from the road than its distance.
+- I reached level {level}, still a child of the Earth Mother and more grateful for the life she had given me.
+- At level {level}, I could look towards Mulgore with more than the distance to bring home.
+- I reached level {level}, with a place among my own people no longer the only place I could imagine belonging.

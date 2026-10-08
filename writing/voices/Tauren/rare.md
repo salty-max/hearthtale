@@ -1,7 +1,7 @@
 ---
 kind: rare
 ---
-- I brought down {foe} {at}, and let the encounter remain in my thoughts after the danger had passed.
-- {foe} fell to me {at}. I was glad to have lived through the fight, and needed a little time to feel the gladness.
-- I overcame {foe} {at}, with relief enough that I had no wish to go searching for another struggle.
-- I killed {foe} {at}, and kept returning to that moment when I thought about the day.
+- I brought down {foe} {at}, and wanted Mulgore's gentleness more than another fight to test my strength.
+- {foe} fell to me {at}. I was grateful to the Earth Mother for the life I still had beneath this weight.
+- I overcame {foe} {at}, with the quiet afterwards as welcome as the end of a long hunt.
+- I killed {foe} {at}, and stood a while until my heart no longer seemed determined to run without me.

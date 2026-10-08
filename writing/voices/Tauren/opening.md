@@ -1,12 +1,12 @@
 ---
 kind: opening
 ---
-- I took up the road {at}, with time to look about before choosing my way.
-- I began again {at}, glad to feel my strength ready for the distance.
-- I set out {at}, interested in what the people here needed as well as where the road led.
-- I opened a fresh page {at}, with a little of my attention still on the ground behind me.
-- Content to begin without deciding the shape of the whole day, I made ready {at}.
-- I went on {at}, curious what I would notice when I was less concerned with arriving.
-- Hoping to know something of the place beyond the quickest path through it, I began this stretch {at}.
-- I took up the road again {at}, with farther to go and time enough for the distance.
-- I set out {at}, wondering what stories I would be glad to carry back to my people.
+- I took up the road {at}, with the earth's steadiness dearer to me than the speed of the journey.
+- I began again {at}, more willing to lend my strength than to hurry another living thing.
+- I set out {at}, hoping to find neighbours worthy of the trust our people had found in the orcs.
+- I began this stretch {at}, a child of wanderers still learning the pleasures of a settled home.
+- I made ready {at}, wishing a shu'halo's patience came as readily as a shu'halo's weight.
+- I went on {at}, hoping to bring home more than a tale of how far my hooves had carried me.
+- I set out {at}, with Cairne's new home dear enough to make the wider world worth knowing.
+- I took up the road again {at}, no more eager to race it than a kodo would have been.
+- I began {at}, wanting to be useful without having to make a fight of it.

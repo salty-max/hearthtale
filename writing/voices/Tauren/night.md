@@ -1,8 +1,8 @@
 ---
 kind: night
 ---
-- [!last] I lay down outside {at}, listening until the sounds around me no longer drew all of my attention.
-- [!last] I slept on the ground {at}, with my thoughts slower to settle than my body.
-- [!last] I bedded down {at}, glad to stop moving even with little comfort beneath me.
-- [last] I closed the journal {at} and settled on the ground, ready to give the night over to rest.
-- [last] I lay down outside {at}, with the day's distance behind me and no wish to add to it.
+- [!last] I lay down outside {at}, giving my weight to the earth without having to carry it another step.
+- [!last] I slept on the ground {at}, missing the ease of a camp shared with my people.
+- [!last] I bedded down {at}, hoping Mu'sha would watch over a traveller too weary to be watchful.
+- [last] I settled outside {at}, with the earth beneath me more reassuring than the long road ahead.
+- [last] I lay down {at}, thinking fondly of Mulgore without wishing to hurry through the rest of the world.

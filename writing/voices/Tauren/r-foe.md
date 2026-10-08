@@ -1,26 +1,26 @@
 ---
 kind: r-foe
 ---
-- my breath slow again before long
-- with a moment's stillness afterwards
-- with no pleasure in it
-- my strength used, not spent
-- slow to anger and quick to finish
-- [one] a life I did not take lightly
-- [!one] each in turn, without haste
-- [teeth] its hunger as honest as any
-- [mechanical] a thing that had never known the earth
-- [night] the stars watching, as they always do
-- [hc] my heart slow to settle afterwards
-- [low] still learning to carry my strength wisely
-- [high] with the calm of long practice
-- with my breath taking time to slow again
-- relieved to let my strength rest afterwards
-- [!more] with more weariness than pleasure in the end
-- slow to feel steady again
-- [one] with no wish to make another encounter of that sort
-- [!one] increasingly glad to have the fighting behind me
-- [teeth] keeping those jaws in mind after I was clear of them
-- [night] watching carefully where sight failed me
-- [hc] with my heart taking longer to settle than I expected
-- [high] thankful for the steadiness practice had given me
+- my breath slow to find its usual steadiness
+- ready for a hunter's quiet after the struggle
+- no pleasure in spending my strength this way
+- my shoulders wanting a gentler burden
+- my anger slower to leave than I wished
+- [one] not a life I had any wish to waste
+- [!one] their numbers enough to unsettle even my weight
+- [teeth] those teeth no reason to forget the hunger behind them
+- [mechanical] rather far from the life the Earth Mother had nourished
+- [night] more watchful beneath the night than I cared to be
+- [hc] my heart no steadier for being held in so large a body
+- [low] a novice hunter finding my size less reassuring than I had hoped
+- [high] my strength quieter and more certain than before
+- my breath working harder than a kodo's after a climb
+- in no hurry to offer the Earth Mother another death
+- [!more] wearier than a hunter would care to seem
+- slow to feel the steadiness of the ground again
+- [one] not an encounter I wanted to bring back to my people
+- [!one] their defeat no reason to want more fighting
+- [teeth] my hide no invitation to put those jaws nearer
+- [night] my ears patient where my eyes could find no help
+- [hc] too fond of my people to leave an empty place among them
+- [high] more able to hold my fear without letting it lead

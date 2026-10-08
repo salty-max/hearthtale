@@ -1,15 +1,15 @@
 ---
 kind: r-company
 ---
-- the road better for being shared
-- [one] our strengths complementing each other
-- trusting them as one trusts the earth
-- glad of steady company
-- sharing the work
-- watching how they fought
-- [night] the dark lighter for the company
-- [hc] each keeping watch for the other
-- hoping the distance would sit easily with us both
-- [one] glad of another pair of eyes beside me
-- [night] finding the dark less lonely in company
-- [hc] keeping part of my attention on them as we went
+- as welcome as the ease of a camp shared by my people
+- [one] another life to hold as dear as my own
+- nearer in spirit to a shared camp in Mulgore
+- my patience finding company gentler than solitude
+- readier to trust than I could be alone
+- company as welcome as Cairne's shelter had been to our wanderers
+- [night] less lonely beneath Mu'sha's hours
+- [hc] too fond of company to leave the life beside me unguarded
+- hoping the road would be kind to us both
+- [one] another pair of eyes worth more than my size
+- [night] at ease with the dark when I did not have to watch it alone
+- [hc] my strength feeling less entirely my own

@@ -1,14 +1,14 @@
 ---
 kind: r-inn
 ---
-- a hearth worth returning to
-- somewhere to rest my strength
-- glad of a roof over my horns
-- [night] the night well along by then
-- [hc] a safe shelter, wisely chosen
-- with less of the return journey weighing on me
-- pleased to know where I would stop again
-- a comforting choice to have made before going farther
-- with a shorter way back now in mind
-- [night] with less uncertainty about returning in the dark
-- [hc] thankful to have a retreat ready
+- a promise as warm as the prospect of a shared camp
+- already wanting to let my weight settle
+- shelter dearer to me than another stretch of the road
+- [night] beneath Mu'sha's hours and eager for shelter
+- [hc] a long stride no substitute for a hearthstone
+- my hooves rather grateful for the shortcut
+- a comfort to set beside the shelter of Thunder Bluff
+- one less distance to bear when my strength was gone
+- a comfort no nomad's camp could have offered
+- [night] a safe return even beneath Mu'sha's hours
+- [hc] a comfort as solid as Thunder Bluff beneath my hooves

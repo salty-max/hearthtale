@@ -1,8 +1,8 @@
 ---
 kind: close-light
 ---
-- {foe} nearly ended me {at}. I felt my strength returning before I could quite trust it.
-- I survived {foe} {at}, and stood for a while until my breath came more easily.
-- {foe} brought me close to the end {at}. The relief reached me slowly, and I was willing to give it time.
-- [!foe] I nearly fell {at}, with less strength left than I had believed possible a moment before.
-- [!foe] I came through a close call {at}, and did not feel ready to ask anything more of myself just then.
+- {foe} nearly ended me {at}; being difficult to move had not made me difficult to kill.
+- I survived {foe} {at}, with my heart heavy and my breath unwilling to quiet.
+- {foe} brought me close to death {at}. I wanted the Earth Mother's gentleness without having to return to her yet.
+- [!foe] I nearly fell {at}, with no comfort in knowing how much earth it would take to cover me.
+- [!foe] I came through a close call {at}, and felt suddenly very tender towards the life in this great body.

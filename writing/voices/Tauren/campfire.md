@@ -1,6 +1,6 @@
 ---
 kind: campfire
 ---
-- I sat beside a fire {at}, with the warmth easing the tiredness I had been carrying.
-- I paused by the fire {at}, content to let my thoughts move without following them on foot.
-- Grateful for this small part of the day that asked nothing more of me, I rested near the flames {at}.
+- I sat beside a fire {at}, with its warmth recalling the ease of a shared camp.
+- I paused by the fire {at}, ready for the comfort of a flame too small to threaten anything.
+- As content as a weary hunter coming home, I rested by a fire {at}.

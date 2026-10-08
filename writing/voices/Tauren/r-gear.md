@@ -1,16 +1,16 @@
 ---
 kind: r-gear
 ---
-- [!made] sturdy enough for the long road
-- [!made !held] a good fit, after a little adjusting
-- [!made] made by careful hands, whoever they were
-- [!made] heavier than I was used to, though not by much
-- [!made hc] one more shelter against a bad end
-- [made] patiently finished, and the better for it
-- [made] my own hands' work, plain and sound
-- [made !held] with care in every seam
-- [!made] curious how well the new piece would serve on the road
-- [!made !held] interested in how the fit would feel after a day's travel
-- [!made] a welcome addition to what I could depend on
-- [!made hc] glad of another protection to carry with me
-- [made] with a quiet pleasure in putting my own work to use
+- [!made] something sturdy to put against the road's demands
+- [!made !held] a fit I hoped would let me move without a struggle
+- [!made] comfort dearer to me than another ornament
+- [!made] rather willing to carry weight that would repay the trouble
+- [!made hc] a thick hide hardly enough to entrust my life to
+- [made] as welcome as bringing a good hunt home
+- [made] my fingers capable of finer things than my size suggested
+- [made !held] a finished piece worth the patience
+- [!made] a weak point I would rather find before danger did
+- [!made !held] a good fit as welcome as a sheltered camp
+- [!made] my survival worth the trouble of another burden
+- [!made hc] too fond of my life to spare myself a useful burden
+- [made] a piece fit to bring back to Thunder Bluff

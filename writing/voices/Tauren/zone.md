@@ -1,6 +1,6 @@
 ---
 kind: zone
 ---
-- I entered {zone}, interested in the lives that shared this ground before I had a path across it.
-- I reached {zone}, and took time to look beyond the way that had brought me here.
-- I entered {zone} and considered what my elders might have noticed first.
+- I entered {zone}, with Mulgore's paths still the measure my hooves brought to unfamiliar ground.
+- I reached {zone}, hoping to find neighbours rather than merely somewhere to pass through.
+- I came into {zone}, wondering what a child of the plains would learn to call home here.
