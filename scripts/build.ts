@@ -62,6 +62,10 @@ const KINDS: Record<string, string[]> = {
   closing: ["time", "gold"],
   prologue: ["at", "in", "zone", "quests", "inn", "played"],
   died: ["foe", "at", "in"],
+  // one of my own people met in another's land (told right after they were named: "we"),
+  // the hosts of a race with no land of its own
+  kin: [],
+  hosts: ["zone"],
   // a class's own quest turned in: what it taught ({pet}: "an imp", for a summoning)
   "class-reward": ["giver", "spell", "pet"],
   // a spell with a line of its own ([spell:Life Tap]), when learned

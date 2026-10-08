@@ -241,6 +241,13 @@ The plan and its decisions: PLAN.md.
   taught (`class-reward`, Knowledge.lua; `[summon]` and `{pet}` "an imp", or
   `[imp]`...). A spell with a line of its own (`lesson`, `[spell:Life_Tap]`,
   spaces as "_") is told by it, once a book, not in the trainer's list.
+- Who I am among others (`Scene:situate`, after each moment, from the people
+  its sentences named and Knowledge.lua): working for one of my own people
+  in a land that isn't theirs (`HOSTS` in Language.lua: whose land a zone
+  is) has a sentence of its own, once a zone in a book (`kin`, told right
+  after they were named: "We were both gnomes a long way from home"); a race
+  with no land of its own working in its hosts' (`TAKEN_IN`: gnomes among
+  the dwarves, the Darkspear among the orcs) says so once a life (`hosts`).
 - Curation: in each place, the first two routine hand-ins (a delivery, a report
   back, a message, a favour known only by who asked, green gear) are told; the
   rest fold into one clause (`c-fold`: "saw to four more errands besides"),
