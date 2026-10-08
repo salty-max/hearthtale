@@ -219,6 +219,14 @@ The plan and its decisions: PLAN.md.
   Who asked may lead a sentence ("Talin Keeneye wanted Small Crag Boars
   dealt with, and I saw to it"); two plain steps of the same work are now
   and then "After I…, I…".
+- Paragraphs are stretches of work (`Scene:segment`): a new zone, a new day,
+  a dungeon, a gap of an hour, or a move to another place once four moments
+  are told (nine at most) begins the next. A stretch is closed only once the
+  next has begun, so earlier paragraphs never change; the last one, still
+  being played, may be rewritten as it grows (the writer may look ahead
+  within it). Four quests or more in a row, nothing of note between, open
+  with `errands` ("There were smaller jobs after that..."), once a chapter.
+  A thing named for who asked for it or receives it is "the journal".
 - Curation: in each place, the first two routine hand-ins (a delivery, a report
   back, a message, a favour known only by who asked, green gear) are told; the
   rest fold into one clause (`c-fold`: "saw to four more errands besides"),

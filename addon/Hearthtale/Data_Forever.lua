@@ -832,6 +832,16 @@ ns.data = {
       { "Hours upon hours of road behind {name}, and the end {in}, all the same. Level {level}.", tags = { "high" } },
       { "Here ends the journal of {name}, {who}, at level {level}." },
     },
+    ["errands"] = {
+      { "There were smaller jobs after that, the kind a place runs on." },
+      { "After that came the small jobs, the ones nobody sings about and everybody needs." },
+      { "Then there were errands, a string of them, none large and none I could skip." },
+      { "The rest of it was smaller work, the kind that fills a day without being noticed." },
+      { "Smaller jobs came next, one on the heels of the other." },
+      { "What followed was a run of small favours." },
+      { "For a while after that, the work was all errands." },
+      { "Then came the everyday work, the sort every place has more of than hands for." },
+    },
     ["farewell"] = {
       { "Rest now, {name}." },
       { "May the road be kind, wherever {name} walks now." },

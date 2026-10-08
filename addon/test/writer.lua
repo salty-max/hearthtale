@@ -1566,6 +1566,12 @@ for _, race in ipairs(RACES) do
           end
         end
       end
+      -- word carried to the same person again, in one stretch
+      local errands = {}
+      for k, giver in ipairs({ "Gazlowe", "Sputtervalve", "Mebok Mizzyrix", "Wharfmaster Dizzywig" }) do
+        errands[k] = { k = "quest", giver = giver, ender = "Brewmaster Drohn", objectives = { { type = "log" } } }
+      end
+      chapter(errands)
       for _, first in ipairs(FIRSTS[class] or {}) do
         chapter({
           class == "WARLOCK" and { k = "demon", name = "Zigfik", family = first } or { k = "shift", form = first },
@@ -1796,7 +1802,7 @@ for _, race in ipairs(RACES) do
 end
 
 -- A chapter being written only grows: told one moment more, what was written
--- stays, but for its last sentence (the scene still being played).
+-- stays, but for its last paragraph (the stretch still being played).
 -- (the text with its abbreviations hidden: "Venture Co. Laborer" is one sentence)
 local function upTo(c, i, k)
   local copy = {}
@@ -1818,12 +1824,14 @@ end
 for _, race in ipairs(RACES) do
   local c = life(race, COMBOS[race][1], false, 1, 20)
   for i = 1, math.min(#c.chapters, 3) do
-    local before = upTo(c, i, 0):gsub("\n\n", " ")
+    local before = upTo(c, i, 0)
     for k = 1, #c.chapters[i].log do
-      local now = upTo(c, i, k):gsub("\n\n", " ")
-      local kept = before:match('^(.*[%.!%?]"?) [^%.!%?]*[%.!%?]"?$') or ""
-      if now:sub(1, #kept) ~= kept then
-        problem(race .. " chapter " .. i, "a finished sentence changed at moment " .. k, before .. "\n => " .. now)
+      local now = upTo(c, i, k)
+      -- (the paragraphs before the last, breaks aside: a paragraph of one
+      -- sentence joins the one before)
+      local kept = (before:match("^(.*)\n\n") or ""):gsub("\n\n", " ")
+      if now:gsub("\n\n", " "):sub(1, #kept) ~= kept then
+        problem(race .. " chapter " .. i, "a finished paragraph changed at moment " .. k, before .. "\n => " .. now)
         break
       end
       before = now

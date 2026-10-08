@@ -62,6 +62,8 @@ const KINDS: Record<string, string[]> = {
   closing: ["time", "gold"],
   prologue: ["at", "in", "zone", "quests", "inn", "played"],
   died: ["foe", "at", "in"],
+  // a run of errands, opened: "There were smaller jobs after that..."
+  errands: [],
   // a death and the way back right after it, in one sentence
   "died-back": ["foe", "by", "graveyard", "at", "in"],
   epitaph: ["name", "who", "level", "in", "at", "zone", "foe"],

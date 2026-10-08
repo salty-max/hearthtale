@@ -93,7 +93,6 @@ function tell.place(s, m)
     if described then
       -- a town seen for the first time: described, in its own sentences
       s:flush()
-      if #s.current >= 3 then s:newParagraph() end
       s:append(#s.current > 0 and linked(b:link(m, s.prev, s.key), described) or described)
       s:enter(here, m.zone)
       b.last, b.there = here, false
@@ -305,7 +304,6 @@ function own.rare(s, m)
 end
 function own.close(s, m)
   local b = s.book
-  if #s.current >= 3 then s:newParagraph() end
   -- the foe just named: "one of them", not its name again
   local foe, last = article(m.foe), b.lastFoe
   if m.foe and last and last.name == m.foe and (b.told or 0) - last.told <= 1 then
@@ -563,6 +561,8 @@ function Book:chapter(n, ch)
   opening(s)
   for i, m in ipairs(ch.log or {}) do
     s:at(i, m)
+    if s.starts[i] then s:nextStretch() end
+    if s.errandsFrom == i then s:errands() end
     s:fold() -- (a routine hand-in past the scene's few: told in its tally, s.foldNow)
     match(m, ARMS, s)
     if m.k ~= "level" then s.prev = m end
