@@ -8,7 +8,7 @@ kind: dungeon
 - [hc aside] {dungeon}. On this realm, a dungeon is where careless parties go to die. We were careful.
 - [class:PRIEST aside] I kept {mates} alive through {dungeon}. Nobody thanked the healer. Nobody ever does.
 - [class:WARRIOR] I entered {dungeon} with {mates}, hoping a warrior's stubbornness would hold where anger alone could not.
-- [class:ROGUE aside] {dungeon}. I opened every locked box in the place.
+- [class:ROGUE aside] I entered {dungeon} with {mates}, hoping quiet feet would serve us better than a bold introduction.
 - I spent a long day underground in {dungeon}.
 - [aside] {dungeon}. I won't go back in a hurry.
 - I went into {dungeon} and came out again, which is the whole of the story worth telling.
