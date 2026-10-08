@@ -1,12 +1,12 @@
 ---
 kind: died
 ---
-- [foe] {foe} killed me {at}, and I had time enough on the way back to think of what I ought to have done differently.
-- [foe] I fell to {foe} {at}, with rather less dignity than I would have liked to put in this account.
-- [fall] I fell to my death {at}, discovering too late that knowing mountains was no substitute for minding my footing.
-- [drowning] I drowned {at}, and found no comfort in remembering how often I had been warned about deep water.
-- I died {at}, with enough left unfinished to make the return feel more like a duty than a reprieve.
-- [lava] Fire killed me {at}, where I learned the hard way that familiarity with a forge did not make me proof against heat.
-- [nature] I died {at}, with no foe to blame and rather more to consider about the ground I had taken for granted.
-- [foe] {foe} got the better of me {at}, and I meant to remember the mistake before trying to settle the score.
-- I died {at}, and was glad enough to come back that I could afford to admit how badly I had wanted to.
+- [foe] {foe} killed me {at}. I had been as stubborn as stone, and about as quick to get out of the way.
+- [foe] I fell to {foe} {at}, with Ironforge suddenly further away than I could bear.
+- [fall] I fell to my death {at}; a dwarf's fondness for mountains was no protection against the drop.
+- [drowning] I drowned {at}, longing for a stretch of good, dry stone under my feet.
+- I died {at}, without having learned half of what the mountain kept from us.
+- [lava] Fire killed me {at}; I was flesh, for all my people's fondness for the forge.
+- [nature] I died {at}, and the ground that usually steadied me had offered no refuge.
+- [foe] {foe} killed me {at}. I hated the thought of leaving my kin to hear the name without me.
+- I died {at}, with more country left to see and far too much of it between me and home.

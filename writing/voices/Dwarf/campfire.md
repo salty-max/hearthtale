@@ -1,10 +1,10 @@
 ---
 kind: campfire
 ---
-- I stopped by a fire {at}, where the warmth made it easier to think about something besides the road.
-- I held my hands toward the fire {at}, glad to let them do nothing useful for a moment.
-- I sat by the fire {at} and let the day's work settle in my thoughts.
-- I rested beside the fire {at}, with my pack close and no need to shoulder it yet.
-- [night] I found a little warmth at a fire {at}, with the dark around its light.
-- I sat beside the embers {at} and began to appreciate how much I had needed the pause.
-- [aside] Grateful for warmth enough to make standing still a pleasure, I stopped at a fire {at}.
+- I warmed my hands at a fire {at}, grateful for heat that asked no work of me.
+- I sat beside the fire {at}, wishing Ironforge were as near as the warmth made it feel.
+- I stopped at a fire {at}, where watching the flames was easier than heaving another step out of my legs.
+- I rested by the fire {at}; even a dwarf could prefer a small flame to the Great Forge sometimes.
+- [night] I warmed myself at a fire {at}, with the night kept at a comfortable distance.
+- I paused beside a fire {at}, content to be warmed without having to tend a furnace.
+- [aside] The heat felt almost like a welcome from home, and I stopped by a fire {at}.

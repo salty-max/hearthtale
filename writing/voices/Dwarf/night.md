@@ -1,12 +1,12 @@
 ---
 kind: night
 ---
-- [!last] I slept rough {at}, with my back to the ground and little comfort to recommend it.
-- [!last] I made camp {at}, with my kit close and little trust in the night.
-- [!last] I spent a rough night {at}, where the thought of a proper rest grew more attractive by the hour.
-- [!last] I bedded down {at}, making what comfort I could from the place I had reached.
-- [!last] I slept lightly {at}, ready to wake at the sounds around me.
-- [!last] I made a bed for myself {at} and tried to put the road out of my thoughts.
-- [last] I closed the book {at}, with another night on the ground ahead of me.
-- [last] I settled beneath the sky {at}, glad to close these pages for the night.
-- [last] I lay down {at} on the ground and put the book aside, ready to let this stretch end.
+- [!last] I slept rough {at}, wishing the mountain could put a roof over me from this far away.
+- [!last] I settled outside {at}, with a dwarf's bulk and rather less than a dwarf's comfort.
+- [!last] I lay down {at}, wondering how stone could feel so friendly at home and so hard beneath a back.
+- [!last] I bedded down {at}, ready to stop being the only thing holding me upright.
+- [!last] I slept outside {at}, with the thought of Ironforge's shelter more comforting than the ground.
+- [!last] I settled on the ground {at}; I had a newly tender feeling for innkeepers.
+- [last] I lay down outside {at}, feeling less like a traveller than a stone someone had finally dropped.
+- [last] I settled beneath the sky {at}, with the mountain of home much too far above my head.
+- [last] I bedded down {at}, hoping my back would forgive the choice by morning.

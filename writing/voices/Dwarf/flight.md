@@ -1,8 +1,8 @@
 ---
 kind: flight
 ---
-- [first] On my first flight from {from} to {to}, I found the view worth the unease beneath my boots.
-- [!first] I flew from {from} to {to}, with rather more faith in the ground below.
-- [!first] I flew from {from} to {to}, glad to leave the long road to wings.
-- I flew from {from} to {to}, a quicker journey than my boots could manage.
-- [first aside] My first flight from {from} to {to} offered a fine view, though I missed a stone floor.
+- [first] My first flight from {from} to {to} gave me a splendid view, though I would have enjoyed it more from a mountain.
+- [!first] I flew from {from} to {to}, with the ground below looking reassuringly solid and inconveniently distant.
+- [!first] I flew from {from} to {to}, grateful not to have to prove my endurance over every mile.
+- I flew from {from} to {to}, feeling rather too substantial to be held up by anything but stone.
+- [first aside] My first flight from {from} to {to} was worth the view, once my stomach agreed to come along.

@@ -1,11 +1,11 @@
 ---
 kind: r-gear
 ---
-- [!made] solid work, from whatever forge
-- [!made !held] a fair fit, with room for a good meal
-- [!made !held] the stitching better than I expected
-- [!made !held] curious whether the new kit would wear as well as it looked
-- [!made hc !held] one more layer between me and the worst of it
-- [made] every flaw mine and known
-- [made] good honest work, if I do say so
-- [made] pleased to know the workmanship firsthand
+- [!made] something I would not be ashamed to bring to Ironforge
+- [!made !held] hoping for a fit that would not squeeze the supper out of me
+- [!made !held] rather rather fonder of durability than decoration
+- [!made !held] hoping not to spend the whole road adjusting the fit
+- [!made hc !held] more fond of protection than of testing my luck
+- [made] my own workmanship facing a harder judge than my pride
+- [made] as satisfying to finish as the last stroke on good iron
+- [made] my hands responsible for what would have to hold

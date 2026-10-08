@@ -1,14 +1,14 @@
 ---
 kind: r-item
 ---
-- weighing more in my pack than in the asking
-- with an eye to the workmanship
-- [one !plural] pleased to have every piece of it
-- [!one !plural] counted and recounted, as a dwarf should
-- [!one !plural] packed tight as a miner's cart
-- [one !plural] small for all the bother, as these things go
-- [one !plural] none the worse for where I found it
-- [meat] with rather more appetite for a cooked supper
-- [cloth] decent stuff, though I would sooner carry ore
-- [night] squinting by poor light the whole time
-- [hc] never lingering where the ground looked wrong
+- my shoulders less enthusiastic than the person who asked
+- wishing a burden could be lightened by admiring the craft
+- [one !plural] keener to hand it over than to carry it
+- [!one !plural] counting each piece as carefully as a miser counts gold
+- [!one !plural] my back feeling like the last mule out of a mine
+- [one !plural] rather a small thing to make so much trouble over
+- [one !plural] hoping it would be worth the weight
+- [meat] wondering whether the smell would improve with cooking
+- [cloth] soft stuff to set beside the hard things a dwarf usually valued
+- [night] my eyes missing the welcome glare of a forge
+- [hc] unwilling to exchange my life for a full pack

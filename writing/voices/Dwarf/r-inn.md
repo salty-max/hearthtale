@@ -1,11 +1,11 @@
 ---
 kind: r-inn
 ---
-- with rather more hope of an ale on my return
-- a good stone, and a better hearth
-- a stone I meant to put to good use
-- somewhere to come back to and get my boots off
-- a bed I meant to make good use of
-- the kind of place you would walk home to in a blizzard
-- [night] late enough that a bed sounded better than anything
-- [hc] a door I could shut on the world
+- already thirsty for an ale on the return
+- rather attached to a stone that could take me to shelter
+- better company in a pocket than another useless pebble
+- ready to get the weight off my feet on the return
+- hoping for a rest worthy of the walking
+- almost as reassuring as the mountain overhead
+- [night] readier for a bed than another hour's tramping
+- [hc] unwilling to trust my life to the distance from shelter

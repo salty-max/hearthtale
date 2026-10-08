@@ -1,8 +1,8 @@
 ---
 kind: zone
 ---
-- I crossed into {zone}, curious to see what was worth a closer look.
-- I came to {zone}, with more to learn than the route through it.
-- I entered {zone}, where secondhand stories would have to stand against what I found.
-- I reached {zone}, ready to make a fair judgement of the place.
-- I crossed into {zone}. New ground deserved better than an opinion brought from home.
+- I entered {zone}, wondering what the stone beneath it might tell the Explorers' League.
+- I came to {zone}, another stretch of ground beyond the mountain's familiar shelter.
+- I reached {zone}, wishing a dwarf could learn the country as quickly as he could walk into it.
+- I crossed into {zone}, with Ironforge further behind and no less dear for that.
+- I entered {zone}, hoping to find something old enough to make the journey worth a dwarf's while.

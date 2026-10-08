@@ -1,8 +1,8 @@
 ---
 kind: kin
 ---
-- That was another dwarf, and it was good to hear a voice from home so far from the forges.
-- We were kin, and that made the work feel nearer home.
-- That was a dwarf of the mountain, and we understood each other without much said.
-- That was another dwarf far from the forges, doing honest work, and I liked that.
-- We were both dwarves, and the work went as plainly as I like it.
+- Another dwarf was working far from Ironforge, and the name made the mountain feel nearer.
+- We were both dwarves; I could almost hear the Great Forge behind that name.
+- That was another of the mountain's people, and I felt a little less far from home.
+- I was working with a dwarf again, with no need to explain why Ironforge still pulled at me.
+- Here was another dwarf beyond the mountain, and I hoped we would both have something good to bring back.

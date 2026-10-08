@@ -1,13 +1,13 @@
 ---
 kind: r-road
 ---
-- my boots having opinions about the distance
-- the country on either side worth a second look
-- [!back] keen to put a place to the name
-- [!back] judging the stonework before the people
-- [!back] curious what the locals would make of a dwarf
-- [!back night] its outline dark against the sky
-- [back] the road shorter the second time, as roads are
-- [back] glad to be heading somewhere I knew
-- [back] the same ruts in the road as before
-- [high] one more road I could walk in my sleep
+- my feet making a fair complaint about the distance
+- rather homesick for the weight of the mountain overhead
+- [!back] hoping the place would offer more than a reason to turn back
+- [!back] wondering what an explorer would find beneath all this
+- [!back] a dwarf's worth of curiosity about the ground
+- [!back night] my eyes wishing the night had left the outlines clearer
+- [back] my feet recognising the way before my spirits lifted
+- [back] less far from feeling at home than on the first visit
+- [back] rather ready to stop tramping the same distance
+- [high] far enough from the Great Forge to miss the din

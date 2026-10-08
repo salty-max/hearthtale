@@ -1,12 +1,12 @@
 ---
 kind: rest
 ---
-- I rested {at}, glad to put my pack down before it became a permanent part of me.
-- I settled {at}, with the work done well enough that it could wait without worrying me.
-- I stopped {at}, where being still made a welcome change from making headway.
-- Glad to have the weight of my pack off my shoulders, I rested {at}.
-- I made myself comfortable {at}. There was no virtue in being uncomfortable when the choice was mine.
-- I paused {at}, content to let the road manage without me for a while.
-- I rested {at}, with enough behind me to have earned the pleasure of doing very little.
-- I stopped {at} and let the stiffness ease before asking anything more of myself.
-- Glad to have reached somewhere I could think with my pack off, I put the journey aside {at}.
+- I rested {at}, as content to stop as a miner reaching the end of a shift.
+- I settled {at}, wishing I could hear the Great Forge without having to move another step.
+- I stopped {at}, with a stiffness no pride in dwarven endurance would soften.
+- Ready to feel like flesh instead of worked iron, I rested {at}.
+- I rested {at}, hoping the mountain would forgive me for finding comfort somewhere else.
+- I paused {at}; an evening at home would have suited me, but this would do.
+- I rested {at}, with the road welcome to wear out somebody else for a while.
+- I stopped {at}, letting my strength come back without hammering it into another task.
+- As worn down as a quarry step, I rested {at}.

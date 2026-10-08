@@ -1,13 +1,13 @@
 ---
 kind: r-task
 ---
-- finishing before my patience ran out
-- not much to tell, which is how I like an errand to go
-- with a nod and no fuss
-- my back reminding me of it afterwards
-- with a few more faces to nod to
-- with a thirst coming on by the end
-- [explore] watching my footing as much as the view
-- [explore] reading the rock as I went
-- [escort] keeping my pace short and my eyes open
-- [night] by what little light the night allowed
+- my patience harder to wear down than my legs
+- already thirsty for something that was not another errand
+- rather aware of how far an obliging dwarf could be sent
+- my back wanting no further favours asked of it
+- more names to carry back to the mountain
+- thinking fondly of a well-earned ale
+- [explore] my footing worth more care than my pride would admit
+- [explore] wondering what older roads might lie beneath this one
+- [escort] unwilling to hurry another life into danger
+- [night] my eyes doing a poor imitation of a miner's lamp
