@@ -1,7 +1,7 @@
 import type { CharacterBook, CharacterSummary } from "@hearthtale/shared";
 import { and, asc, eq } from "drizzle-orm";
 import { db } from "@/db";
-import { characters, type CharacterRow } from "@/db/schema";
+import { characters, removed, type CharacterRow } from "@/db/schema";
 
 /** Books are private: an account sees its own characters, nobody else does. */
 
@@ -36,4 +36,21 @@ export async function getCharacterBook(id: number, accountId: number): Promise<C
     .from(characters)
     .where(and(eq(characters.id, id), eq(characters.ownerId, accountId)));
   return row ? { character: summary(row), book: row.book } : null;
+}
+
+/**
+ * Removes a book from the site, for its owner only: the book and its share
+ * links go, and its character's uploads are refused from then on (`removed`)
+ * until the owner links it again with a code typed in the game.
+ */
+export async function removeBook(id: number, accountId: number): Promise<boolean> {
+  return db.transaction(async (tx) => {
+    const [row] = await tx
+      .delete(characters)
+      .where(and(eq(characters.id, id), eq(characters.ownerId, accountId)))
+      .returning({ guid: characters.guid });
+    if (!row) return false;
+    await tx.insert(removed).values({ accountId, guid: row.guid }).onConflictDoNothing();
+    return true;
+  });
 }

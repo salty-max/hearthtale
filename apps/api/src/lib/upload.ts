@@ -1,7 +1,7 @@
 import type { Book, BookChapter, Client, UploadResult } from "@hearthtale/shared";
-import { eq, sql } from "drizzle-orm";
+import { and, eq, sql } from "drizzle-orm";
 import { db } from "@/db";
-import { accounts, characters, companionLinks, type CompanionLinkRow } from "@/db/schema";
+import { accounts, characters, companionLinks, removed, type CompanionLinkRow } from "@/db/schema";
 import { owns } from "@/lib/accounts";
 import { parseGuid, regionOf } from "@/lib/guid";
 import { takeLinkCode } from "@/lib/link";
@@ -13,7 +13,8 @@ import { log } from "@/lib/log";
  * (addon/Hearthtale/Save.lua). A book is kept only for a proven owner: the
  * companion's account if it owns the character on Battle.net or already had
  * it, else the account of a link code in the record (`/ht link CODE`). Anything
- * else waits, unstored, for a link.
+ * else waits, unstored, for a link. A book its owner removed from the site
+ * waits too, for a new link code.
  */
 
 export const MAX_CHARACTERS = 60;
@@ -103,6 +104,24 @@ export function parseCharacter(v: unknown): ParsedCharacter | null {
   };
 }
 
+/**
+ * Whose book it is, and the upload's answer: the companion's account if it
+ * already has the character or owns it on Battle.net, but not once it removed
+ * the book from the site; else the account of the link code in the record
+ * (codeOwner: asked only when needed, the code is used once).
+ */
+export async function decide(
+  companion: number,
+  facts: { removedHere: boolean; alreadyMine: boolean; ownsOnBnet: boolean },
+  codeOwner: () => Promise<number | null>,
+): Promise<{ owner: number | null; status: "saved" | "unlinked" | "removed"; lift: boolean }> {
+  if (!facts.removedHere && (facts.alreadyMine || facts.ownsOnBnet)) return { owner: companion, status: "saved", lift: false };
+  const owner = await codeOwner();
+  if (owner == null) return { owner: null, status: facts.removedHere ? "removed" : "unlinked", lift: false };
+  // (a new code brings a removed book back)
+  return { owner, status: "saved", lift: facts.removedHere && owner === companion };
+}
+
 export async function handleUpload(link: CompanionLinkRow, body: unknown): Promise<UploadResult> {
   const result: UploadResult = { characters: [] };
   const [account] = await db.select().from(accounts).where(eq(accounts.id, link.accountId));
@@ -116,14 +135,21 @@ export async function handleUpload(link: CompanionLinkRow, body: unknown): Promi
     const ids = parseGuid(c.guid)!;
     const region = regionOf(c.region);
     const [row] = await db.select({ id: characters.id, ownerId: characters.ownerId }).from(characters).where(eq(characters.guid, c.guid));
-    let owner: number | null = null;
-    if (row?.ownerId === link.accountId || (region && account && owns(account, region, ids.characterId))) owner = link.accountId;
+    const [gone] = await db
+      .select({ guid: removed.guid })
+      .from(removed)
+      .where(and(eq(removed.accountId, link.accountId), eq(removed.guid, c.guid)));
     // A code typed in the game: used once, only when nothing else proves it.
-    if (owner == null && c.linkCode) owner = await takeLinkCode(c.linkCode);
+    const { owner, status, lift } = await decide(
+      link.accountId,
+      { removedHere: !!gone, alreadyMine: row?.ownerId === link.accountId, ownsOnBnet: !!(region && account && owns(account, region, ids.characterId)) },
+      async () => (c.linkCode ? takeLinkCode(c.linkCode) : null),
+    );
     if (owner == null) {
-      result.characters.push({ guid: c.guid, name: c.name, status: "unlinked" });
+      result.characters.push({ guid: c.guid, name: c.name, status: status === "removed" ? "removed" : "unlinked" });
       continue;
     }
+    if (lift) await db.delete(removed).where(and(eq(removed.accountId, owner), eq(removed.guid, c.guid)));
     const values = {
       guid: c.guid,
       name: c.name,

@@ -108,6 +108,23 @@ export const shares = pgTable(
   (t) => [index("shares_character").on(t.characterId)],
 );
 
+/**
+ * A book its owner removed from the site: its character's uploads are refused
+ * (the companion is told "removed", nothing is stored) until the owner links
+ * it again with a new code typed in the game (`/ht link CODE`).
+ */
+export const removed = pgTable(
+  "removed",
+  {
+    accountId: integer("account_id")
+      .notNull()
+      .references(() => accounts.id, { onDelete: "cascade" }),
+    guid: text("guid").notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [primaryKey({ columns: [t.accountId, t.guid] })],
+);
+
 /** Tiny key/value store for the site's own state. */
 export const state = pgTable("state", {
   key: text("key").primaryKey(),

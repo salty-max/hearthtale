@@ -1,6 +1,6 @@
 import { describe, expect, test } from "bun:test";
 import seed from "@/db/seed/characters.json";
-import { parseBook, parseCharacter } from "@/lib/upload";
+import { decide, parseBook, parseCharacter } from "@/lib/upload";
 
 // The test characters: the addon's own saved records (addon/test/seed.lua).
 const brannok = (seed as { book: unknown }[])[0];
@@ -42,5 +42,23 @@ describe("upload", () => {
     expect(parseBook({ client: "classic", chapters: [] })).toBeNull();
     expect(parseBook({ client: "classic", at: 1, chapters: [{ text: "no number" }] })).toBeNull();
     expect(parseBook({ client: "classic", at: 1, chapters: [{ number: 1, text: "x".repeat(200_000) }] })!.chapters[0].text).toBeUndefined();
+  });
+});
+
+describe("whose book", () => {
+  const no = { removedHere: false, alreadyMine: false, ownsOnBnet: false };
+  const code = (owner: number | null) => async () => owner;
+  test("the companion's account, if it has the character or owns it on Battle.net", async () => {
+    expect(await decide(7, { ...no, alreadyMine: true }, code(null))).toEqual({ owner: 7, status: "saved", lift: false });
+    expect(await decide(7, { ...no, ownsOnBnet: true }, code(null))).toEqual({ owner: 7, status: "saved", lift: false });
+  });
+  test("else a link code's account, else it waits for a link", async () => {
+    expect(await decide(7, no, code(9))).toEqual({ owner: 9, status: "saved", lift: false });
+    expect(await decide(7, no, code(null))).toEqual({ owner: null, status: "unlinked", lift: false });
+  });
+  test("a book its owner removed waits for a new code, which brings it back", async () => {
+    const removed = { removedHere: true, alreadyMine: true, ownsOnBnet: true };
+    expect(await decide(7, removed, code(null))).toEqual({ owner: null, status: "removed", lift: false });
+    expect(await decide(7, removed, code(7))).toEqual({ owner: 7, status: "saved", lift: true });
   });
 });

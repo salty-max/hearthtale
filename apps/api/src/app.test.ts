@@ -15,6 +15,7 @@ describe("api", () => {
     expect(await (await app.request("/api/me")).json()).toBeNull();
     expect((await app.request("/api/library")).status).toBe(401);
     expect((await app.request("/api/characters/1")).status).toBe(401);
+    expect((await app.request("/api/characters/1", { method: "DELETE" })).status).toBe(401);
     expect((await app.request("/api/link-codes", { method: "POST" })).status).toBe(401);
   });
   test("signing in needs a region", async () => {
