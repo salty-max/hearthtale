@@ -8,7 +8,7 @@ kind: c-deed-task
 - went to {task}
 - set out to {task} and did so
 - did what was needed to {task}
-- undertook to {task}
+- took on the work to {task} and saw it through
 - [turn] the task was to {task}, and it was done
 - [turn] there was {giver}'s request to {task}, and I saw it through
 - [turn] it fell to me to {task}

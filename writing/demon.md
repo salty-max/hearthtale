@@ -1,0 +1,18 @@
+---
+kind: demon
+---
+- [imp] I called my first imp out of the fire. It named itself {pet}, sneered at everything I owned and set to work anyway.
+- [imp] The first imp to answer me called itself {pet}, quick with fire and quicker with insults, and I decided I could live with both.
+- [imp] I bound an imp to my service. {pet} looked me over as if it had been sold something cheap, then threw its first bolt of fire without being asked twice.
+- [imp] {pet}, the imp I summoned, had opinions about my spells, my boots and my posture, and shared every one of them.
+- [voidwalker] I summoned my first voidwalker, {pet}, a silent shape of shadow that put itself between me and harm without complaint.
+- [voidwalker] {pet} rose from the dark at my call, a voidwalker with no voice and no opinions, which after the imp felt almost restful.
+- [voidwalker] The voidwalker I bound, {pet}, said nothing and took every blow meant for me, and I found that harder to read than any insult.
+- [succubus] I called a succubus to my side, {pet}, and was reminded that a servant who smiles is still a servant who is watching.
+- [succubus] {pet}, the succubus I summoned, was charming in a way I did not trust for a moment, and useful in a way I could not deny.
+- [felhunter] I summoned a felhunter, {pet}, a beast that sniffed at magic the way a hound sniffs at game, and kept close at my heel.
+- [felhunter] {pet}, my first felhunter, fed on the magic of anything that fought us, and seemed well pleased with the arrangement.
+- [felguard] I bound a felguard, {pet}, a towering soldier of the Legion who obeyed me with a contempt it barely troubled to hide.
+- [felguard] {pet} answered my call, a felguard taller than any door in town, and for once I chose my words with care.
+- I summoned {demon} for the first time, and it gave its name as {pet}. I watched it closely, and it watched me back.
+- {pet} came at my first call, {demon} bound to my service, and I resolved to remember which of us held the leash.

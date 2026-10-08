@@ -1,0 +1,18 @@
+---
+kind: shift
+---
+- [bear] I took the shape of a bear for the first time, and felt the world grow small and solid under heavy paws.
+- [bear] The first time I became a bear, I understood why the forest gives them room: everything in me wanted to stand my ground.
+- [bear] I shifted into a bear's form for the first time, slow to think and very hard to move, and liked it more than I expected.
+- [cat] I took a cat's shape for the first time, and the grass, the wind and every small movement suddenly mattered.
+- [cat] The first time I became a cat, my steps went silent and my patience grew claws.
+- [cat] In a cat's form for the first time, I felt quick enough to be anywhere before I had decided to go.
+- [travel] I ran in my travelling form for the first time, and a road that had taken an hour took a fraction of it.
+- [travel] The first time I shifted to run the roads, the land went by in a long green blur, and I laughed out loud.
+- [aquatic] I took a seal's shape in the water for the first time, and swam as if I had never needed to breathe.
+- [aquatic] The first time I took my water form, the sea stopped being something to cross and became a place to be.
+- [moonkin] I took the moonkin's shape for the first time, feathered and heavy, with the moon's power close at hand.
+- [moonkin] The first time I became a moonkin, I felt faintly ridiculous and enormously strong, in that order.
+- [tree] I took the shape of a tree of life for the first time, and the wounds of those around me seemed to close at a thought.
+- [flight] I took to the air in a bird's form for the first time, and saw the land the way the birds always had.
+- I took a new shape for the first time, and found it was another way of being myself.

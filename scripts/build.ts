@@ -71,6 +71,10 @@ const KINDS: Record<string, string[]> = {
   "wake-in": ["at", "in"],
   rest: ["place", "at", "in"],
   power: ["spell"],
+  bag: ["item", "slots"],
+  gold: [],
+  demon: ["pet", "demon"],
+  shift: [],
   mount: [],
   riding: [],
   petdied: ["pet", "at", "in"],
@@ -120,7 +124,9 @@ const TAGS = ["home", "ally", "foe", "neutral", "night", "hc", "high", "low", "f
   "foe", "fall", "drowning", "lava", "nature", "beast", "people", "player", "inside", "rest", "fire", "last", "one", "aside", "plain", "back", "done", "grouped", "held", "plural", "trophy", "corpse", "healer", "self", "known", "more", "again", "onward", "gear", "onlygear", "turn",
   "murloc", "kobold", "gnoll", "harpy", "quilboar", "centaur", "ogre", "troll", "naga", "satyr", "furbolg", "trogg", "outlaw",
   "scarlet", "undead", "demon", "elemental", "dragonkin", "spider",
-  "stone", "egg", "feather", "hide", "paper", "plant", "relic", "remains", "teeth", "mechanical", "cloth", "meat", "explore", "escort", "new", "made", "form", "demon", "steed"];
+  "stone", "egg", "feather", "hide", "paper", "plant", "relic", "remains", "teeth", "mechanical", "cloth", "meat", "explore", "escort", "new", "made", "form", "demon", "steed",
+  "looted", "imp", "voidwalker", "succubus", "felhunter", "felguard",
+  "bear", "cat", "travel", "aquatic", "moonkin", "tree", "flight"];
 const RACES = ["Human", "Dwarf", "NightElf", "Gnome", "Draenei", "Orc", "Troll", "Tauren", "Scourge", "BloodElf", "Skyborne"];
 const ROUTINE = new Set("deed-kill deed-item deed-task deed-word deliver report kill first gear trainer inn travel return place group skill prof handed-kill handed-item".split(" ").map((kind) => `c-${kind}`));
 // The recap's kinds: one sentence of the recap holds a thought, the others are plain.

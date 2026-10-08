@@ -15,9 +15,10 @@
 -- "Timber in Shimmer Ridge.").
 local _, ns = ...
 local W = ns.writer
-local floor, words, listing, mid, plural, TROPHY = W.floor, W.words, W.listing, W.mid, W.plural, W.TROPHY
+local floor, listing, mid, plural, TROPHY = W.floor, W.listing, W.mid, W.plural, W.TROPHY
 local TITLES, objectiveOf, itemName, things = W.TITLES, W.objectiveOf, W.itemName, W.things
-local capitalise, FACTION, HOME, KIN = W.capitalise, W.FACTION, W.HOME, W.KIN
+local objectivesLike, size = W.objectivesLike, W.size
+local article, capitalise, FACTION, HOME, KIN = W.article, W.capitalise, W.FACTION, W.HOME, W.KIN
 local faith, weapon, FOE_PEOPLE, FOE_KIND, foeOf = W.faith, W.weapon, W.FOE_PEOPLE, W.FOE_KIND, W.foeOf
 local THING_KIND, thingOf, instruction, lowerFirst = W.THING_KIND, W.thingOf, W.instruction, W.lowerFirst
 local taskOf, TEETH = W.taskOf, W.TEETH
@@ -702,10 +703,17 @@ function Book:deed(m, key, tags)
   local values = { giver = m.giver, ender = ender }
   local done, said
   if o and o.type == "monster" and o.name then
-    local count = o.n or 1
-    -- one asked for is a named one, mostly ("Vagash"): no article
-    values.n, values.foes = words(count), count > 1 and plural(o.name) or o.name
-    if tags.more then values.n = words(count - 1) end -- "five more", the first told already
+    -- every creature asked for ("Rockjaw Troggs and Burly Rockjaw Troggs");
+    -- one asked for by a name of its own ("Vagash", "Grik'nir the Cold") as
+    -- it is, any other with its article ("a Snow Leopard Prowler")
+    local foes, count = {}, 0
+    for _, f in ipairs(objectivesLike(m, o)) do
+      local named = not f.name:find(" ") or f.name:find(" the ")
+      table.insert(foes, (f.n or 1) > 1 and plural(f.name) or named and f.name or article(f.name))
+      count = count + (f.n or 1)
+    end
+    values.n, values.foes = size(count), listing(foes)
+    if tags.more then values.n = "more" end -- the first told already
     self.lastFoe = { name = o.name, many = count > 1, told = self.told or 0 }
     tags.one = count == 1 or nil
     tags.teeth = TEETH[self.creatureKinds[o.name] or ""]
@@ -737,8 +745,14 @@ function Book:deed(m, key, tags)
     carried[o.name] = self.told or 0
     done, said = self:say("c-deliver", key, values, tags, nil, true)
   elseif o and o.type == "item" and o.name then
-    local count = o.n or 1
-    values.n, values.thing = words(count), count > 1 and things(o.name) or itemName(o.name)
+    -- every thing asked for ("Felix's Box, Felix's Chest and Felix's Bucket of
+    -- Bolts"), the weight of the work for one kind of thing only
+    local all, list = objectivesLike(m, o), {}
+    for _, f in ipairs(all) do
+      table.insert(list, (f.n or 1) > 1 and things(f.name) or itemName(f.name))
+    end
+    local count = #all == 1 and (o.n or 1) or 2
+    values.n, values.thing = #all == 1 and size(count) or "", listing(list)
     if tags.done then values.giver = nil end -- found, not yet handed over
     -- the same thing again, told just before: "four more Blood Shards"
     local last = self.lastThing

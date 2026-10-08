@@ -49,6 +49,7 @@ local function newScene(book, n, ch)
     scene = nil,
     sceneZone = nil,
     seenHere = {},
+    discovered = {}, -- places seen for the first time, their arrival not told yet: place = { m, key, prev }
     killed = false,
     -- the sentence being written: its clauses (their kinds, the creature a
     -- plain kill clause names: one told by its quest is dropped), the link it
@@ -341,14 +342,30 @@ function Scene:at(i, m)
   self.place = self:placeOf(m)
 end
 
--- A new scene at a place, for the moment being told: told as the journey
--- there (opener: the kind of line that tells it; a place just named needs none).
-function Scene:arrive(place, zone, opener)
-  local b, m, key = self.book, self.m, self.key
+-- A new scene at a place, for the moment being told. Told as the journey
+-- there (opener: the kind of line that tells it) the first time the chapter
+-- comes to it, or coming back after a long while; a return soon after (in
+-- and out of an inn, back to the camp from the hill) moves the scene without
+-- a word, the place then named by what is told there, if at all.
+local LONG = 3600 -- (seconds since the moment before)
+function Scene:arrive(place, zone, opener, found)
+  -- (found: a place's discovery, which its arrival tells, the same line
+  -- whatever first happens there)
+  local b, m, key = self.book, found and found.m or self.m, found and found.key or self.key
+  local back = self.seenHere[place]
+  local after = (m and m.at and self.prev and self.prev.at) and m.at - self.prev.at or 0
   self:emitFold()
+  if back and not opener and after < LONG then
+    if #self.current >= 4 then
+      self:flush()
+      self:newParagraph()
+    end
+    self:enter(place, zone)
+    b.last, b.there = nil, false
+    return
+  end
   self:flush()
   if #self.current >= 3 then self:newParagraph() end
-  local back = self.seenHere[place]
   self:enter(place, zone)
   if not opener and place == b.last then return end
   self.named = true
@@ -365,14 +382,24 @@ function Scene:arrive(place, zone, opener)
       true
     )
   end
+  -- (its link from the moment before the discovery, not before what came after)
+  local prev = self.prev
+  if found then self.prev = found.prev end
   self:clause(text, said, m, key, true)
+  self.prev = prev
 end
 
 -- The moment's clause goes in the scene where it happened: arrived there,
 -- and in a sentence of its kind of work.
 function Scene:prepare()
   local m = self.m
-  if self.place and self.place ~= self.scene then self:arrive(self.place, m.zone) end
+  local place = self.place
+  if place and place ~= self.scene then
+    -- (a place discovered: its arrival told as a discovery)
+    local found = self.discovered[place]
+    self:arrive(place, m.zone, found and "c-place" or nil, found)
+    self.discovered[place] = nil
+  end
   if self:otherWork(m.k) then self:flush() end
 end
 
@@ -388,25 +415,59 @@ function Scene:tell(kind, values, t)
   self:clause(text, said, m, self.key)
 end
 
--- A quest's deed told in a clause (Book:deed), in its scene, t its tags.
+-- A quest's work by its kinds: the things it asked for, the creatures, the
+-- rest, each a part of its own (the moment, with only those objectives),
+-- the first objective's kind first. ("Grund and Gozwin": a log found, a
+-- leopard slain: two clauses.)
+local function workOf(o)
+  if o.type == "monster" and o.name then return "foe" end
+  if o.type == "item" and o.name then return "thing" end
+  return "task"
+end
+local function parts(m)
+  local by, order = {}, {}
+  for _, o in ipairs(m.objectives or {}) do
+    local k = workOf(o)
+    if not by[k] then
+      by[k] = {}
+      table.insert(order, k)
+    end
+    table.insert(by[k], o)
+  end
+  if #order < 2 then return { m } end
+  local out = {}
+  for _, k in ipairs(order) do
+    table.insert(out, setmetatable({ objectives = by[k] }, { __index = m }))
+  end
+  return out
+end
+
+-- A quest's deed told in clauses (Book:deed), in its scene, t its tags.
 function Scene:deed(t)
   local m = self.m
   self:prepare()
-  self:dropKill(t)
-  local text, said = self.book:deed(m, self.key, t)
-  self:clause(text, said, m, self.key)
+  for i, part in ipairs(parts(m)) do
+    local tags = i == 1 and t or self:tags({ done = t.done, handed = t.handed }, m)
+    self:dropKill(part, tags)
+    local text, said = self.book:deed(part, self.key, tags)
+    self:clause(text, said, m, self.key)
+  end
 end
 
 -- A quest that counts a creature just killed in the sentence being written
 -- tells that kill itself: "I brought down a Brigand; I killed six Brigands"
 -- is one telling too many.
-function Scene:dropKill(t)
+function Scene:dropKill(m, t)
   local b = self.book
-  local o = objectiveOf(self.m)
+  local o = objectiveOf(m)
   if not (o and o.type == "monster" and o.name) then return end
+  local asked = {}
+  for _, f in ipairs(m.objectives) do
+    if f.type == "monster" and f.name then asked[f.name] = true end
+  end
   local dropped = false
   for j = #self.pending, 1, -1 do
-    if self.pendingFoes[j] == o.name then
+    if asked[self.pendingFoes[j]] then
       -- (its remark, if it had one, goes with it: the budget counts again)
       if self.pending[j]:find(", ") then self.pendingRemarks = math.max(0, self.pendingRemarks - 1) end
       self.pendingRoutine = math.max(0, self.pendingRoutine - 1)

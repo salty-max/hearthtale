@@ -58,13 +58,18 @@ The plan and its decisions: PLAN.md.
   and their moments, the logouts, places, levels; a logout settled at the
   next login: under 30 minutes away it's no break, nothing told; indoors
   without an inn, a night `inside`), `Quests.lua`, `Combat.lua` (the
-  creatures met, kills, close calls, death and the way back. Kills: my
-  killing blow or my pet's, from `PARTY_KILL` (killer, victim), an event of
+  creatures met, kills, close calls, death and the way back. Kills: the
+  killing blow of mine, my pet's or my group's, from `PARTY_KILL` (killer,
+  victim), an event of
   its own on Forever and Classic since 1.15.9 (secret only in a Forever
   instance, where no creature can be told), else the combat log's line; the
   name from what was seen (target, mouse-over, nameplates) or
-  `UnitTokenFromGUID`) and `Life.lua` (company, dungeons, learning,
-  trades, gear, loot, pets, the first ride, money). A game function is
+  `UnitTokenFromGUID`, else from a creature of the same kind seen; and a
+  quest's count gone up for a creature no kill told: another's blow on one I
+  tagged, which the game credits me with) and `Life.lua` (company, dungeons,
+  learning, trades, gear, loot, pets, a warlock's first demon of each kind
+  and a druid's first form (learned in the journal), the first bag, the first
+  gold piece, the first ride, money). A game function is
   checked before use only where the clients differ (a `C_` namespace, a
   function a client lacks); the test game (`addon/test/game.lua`) has every
   one the addon calls,
@@ -178,7 +183,18 @@ The plan and its decisions: PLAN.md.
   at the turn-in with whom it was for (`c-handed-item`, `c-handed-kill`:
   "I brought Sten Stoutarm eight Tough Wolf Meat"); an abandoned quest's work
   is taken back. A night and its waking under 30 minutes apart (older
-  journals) aren't told; indoors, `night-in`/`wake-in`.
+  journals) aren't told; indoors, `night-in`/`wake-in`. Firsts of a life:
+  `bag` (`[looted]`), `gold`, `demon` (`[imp]`, `[voidwalker]`...: by its
+  name), `shift` (`[bear]`, `[cat]`...); a demon's or a form's spell isn't a
+  lesson (told at its first use).
+- Scenes: a place is told the first time the chapter comes to it, with the
+  first thing done there (a place only passed through isn't told), or when
+  coming back after an hour or more (`c-return`); a quick way back (in and
+  out of an inn, back to the camp) moves the scene without a word. A quest
+  tells every objective of a kind together ("Rockjaw Troggs and Burly
+  Rockjaw Troggs"), its things and its creatures in two clauses; no counts
+  (a ledger's, not a journal's), only the weight of a great deal of work
+  ("a good many", "a great many"). The chapter's recap keeps its tallies.
 - Curation: in each place, the first two routine hand-ins (a delivery, a report
   back, a message, a favour known only by who asked, green gear) are told; the
   rest fold into one clause (`c-fold`: "saw to four more errands besides"),

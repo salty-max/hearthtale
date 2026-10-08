@@ -292,6 +292,7 @@ local function life(race, class, hc, from, to)
   local seen, kinds, level, once = {}, {}, from, {}
   local clock, isNight = 1790000000, false
   local questId, returns = 0, {} -- quests whose work was told, not yet returned
+  local lastThing -- the thing the last quest for a thing asked for
   local grouped = false
   local function m(k, fields)
     fields = fields or {}
@@ -340,10 +341,20 @@ local function life(race, class, hc, from, to)
           }))
         elseif r == 106 then
           -- once in a life each, as the game records them
-          local k = chance(0.5) and "riding" or "mount"
+          local k = one({ "riding", "mount", "bag", "gold" })
           if not once[k] then
             once[k] = true
-            add(m(k, { name = "Apprentice Riding" }))
+            if k == "bag" then
+              local looted = chance(0.5)
+              local bag = one({ "Small Brown Pouch", "Linen Bag", "Small Black Pouch" })
+              add(m(k, {
+                link = chance(0.9) and ("|cffffffff|Hitem:1|h[" .. bag .. "]|h|r") or nil,
+                slots = 6,
+                looted = looted or nil,
+              }))
+            else
+              add(m(k, { name = "Apprentice Riding" }))
+            end
           end
         elseif r == 107 then
           local kind = ({ DRUID = "form", WARLOCK = "demon", PALADIN = "steed" })[class]
@@ -351,6 +362,17 @@ local function life(race, class, hc, from, to)
           if spell and not once[spell] then
             once[spell] = true
             add(m("power", { spell = spell, kind = kind }))
+          end
+          -- (a warlock's first demon of a kind, a druid's first form: as today's journals record them)
+          local first = class == "WARLOCK" and one({ "Imp", "Voidwalker", "Succubus", "Felhunter", "Felguard" })
+            or class == "DRUID" and one({ "bear", "cat", "travel", "aquatic", "moonkin", "tree", "flight" })
+          if first and not once[first] then
+            once[first] = true
+            if class == "WARLOCK" then
+              add(m("demon", { name = one({ "Zigfik", "Ganrul", "Lirasha", "Kezzik" }), family = first }))
+            else
+              add(m("shift", { form = first }))
+            end
           end
         elseif r <= 109 then
           local pet = one(PETS)
@@ -395,6 +417,8 @@ local function life(race, class, hc, from, to)
       elseif r <= 12 then
         if chance(0.25) then zone = one(ZONES) end
         sub = one(zone[2])
+        -- (back to a place: often after a long while, a return then told)
+        if seen[sub] and chance(0.8) then clock = clock + rand(3600, 7200) end
         if not seen[sub] then
           local newZone = not seen[zone[1]] or nil
           seen[sub], seen[zone[1]] = true, true
@@ -406,7 +430,10 @@ local function life(race, class, hc, from, to)
         if roll <= 35 then
           o = { { type = "monster", name = one(CREATURES)[1], n = one({ 1, 6, 8, 10, 12, 15 }) } }
         elseif roll <= 65 then
-          o = { { type = "item", name = one(THINGS), n = one({ 1, 1, 5, 6, 8, 10 }) } }
+          -- (quests in a row often ask for the same thing: "more" of it)
+          local thing = lastThing and chance(0.3) and lastThing or one(THINGS)
+          lastThing = thing
+          o = { { type = "item", name = thing, n = one({ 1, 1, 5, 6, 8, 10 }) } }
         elseif roll <= 72 then
           o = { { type = "event", text = one(TASKS) } }
         elseif roll <= 78 then -- a note in hand, to be delivered
@@ -625,8 +652,8 @@ local framed = sceneText:find("When I reached the Farm, I brought down a Wolf.",
 if not framed then problem("scene joins", "the arrival did not frame its action", sceneText) end
 if
   not (
-    sceneText:find("Afterwards, I found three Apples.", 1, true)
-    or sceneText:find("After that encounter, I found three Apples.", 1, true)
+    sceneText:find("Afterwards, I found Apples.", 1, true)
+    or sceneText:find("After that encounter, I found Apples.", 1, true)
   )
 then
   problem("scene joins", "the next action lost the close call's aftermath", sceneText)
@@ -709,10 +736,10 @@ for seed = 1, 40 do
   if text:find("a Boar, brought Ragnar", 1, true) then
     problem("three clauses", "a final conjunction was lost before a semicolon", text)
   end
-  if text:find("a Boar and brought Ragnar six Crag Boar Ribs; I began using", 1, true) then tripleSeen = true end
+  if text:find("a Boar and brought Ragnar Crag Boar Ribs; I began using", 1, true) then tripleSeen = true end
   c.race = "Orc"
   text = ns.writeBook(c).chapters[1].text
-  if text:find("a Boar and brought Ragnar six Crag Boar Ribs; I began using", 1, true) then orcTripleSeen = true end
+  if text:find("a Boar and brought Ragnar Crag Boar Ribs; I began using", 1, true) then orcTripleSeen = true end
   c.chapters[1].log = {
     { k = "place", sub = "Ratchet", zone = "Country" },
     { k = "inn", place = "Ratchet", sub = "Ratchet", zone = "Country" },
@@ -1521,6 +1548,43 @@ for _, race in ipairs(RACES) do
   end
 end
 
+-- Coming back to a place after a long while: a return told, with its own
+-- remarks (a race's among them), in its home lands and away; and a weapon
+-- of one's own make taken up.
+for _, race in ipairs(RACES) do
+  local chapters = {}
+  for n = 1, 30 do
+    local zone = zoneNamed(n % 2 == 0 and (START[race] or "Elwynn Forest") or "The Barrens")
+    local log, at = {}, 0
+    for i = 1, 6 do
+      at = at + (i % 2 == 1 and 7200 or 300)
+      log[i] = {
+        k = "quest",
+        giver = "Gazlowe",
+        at = at,
+        zone = zone[1],
+        sub = zone[2][(i % 2) + 1],
+        objectives = { { type = "event", text = "Recover the missing cargo" } },
+      }
+    end
+    table.insert(log, {
+      k = "gear",
+      link = "|cff1eff00|Hitem:1|h[Heavy Copper Axe]|h|r",
+      quality = 2,
+      made = true,
+      held = true,
+      at = at + 60,
+      zone = zone[1],
+      sub = zone[2][1],
+    })
+    chapters[n] = { start = { level = 20, zone = zone[1], sub = zone[2][1] }, log = log }
+  end
+  local c = { guid = "long-returns-" .. race, race = race, class = COMBOS[race][1], chapters = chapters }
+  for _, ch in ipairs(ns.writeBook(c).chapters) do
+    inspect(race .. " long returns", ch.text)
+  end
+end
+
 -- Skyborne traditions follow a recorded faction. A missing faction must
 -- not be inferred even from a class currently restricted to one faction.
 if forever then
@@ -1566,13 +1630,12 @@ for _, race in ipairs(comparison.races) do
   local c = comparison.day(race)
   local text = ns.writeBook(c).chapters[1].text
   inspect(race .. " voice comparison", text)
-  -- (the six Brigands: all six, or the first told and "five more"; a count
-  -- may open its sentence)
+  -- (the Brigands: all of them, or the first told and "more"; no numbers)
   local low = text:lower()
   if
     not (
-      low:find("eight linen cloth", 1, true)
-      and (low:find("six southsea brigands", 1, true) or low:find("five more", 1, true))
+      low:find("linen cloth", 1, true)
+      and low:find("southsea brigand", 1, true)
       and text:find("Brown Linen Robe", 1, true)
       and text:find("Kelsa", 1, true)
     )

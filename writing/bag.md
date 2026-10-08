@@ -1,0 +1,13 @@
+---
+kind: bag
+---
+- [looted] Among the spoils was {item}, and I had it on my back before I thought to admire it: {slots} more places for whatever the road handed me.
+- [looted] I took {item} from the spoils and was gladder of it than of any blade, since my pack had been full for days.
+- [looted] Fortune left {item} among the spoils, the first bag of my own, and I stopped counting what I would have to leave behind.
+- [looted] {item} turned up among the spoils. It was nothing to look at, but it held {slots} more things than I could carry before.
+- I slung {item} on my back, the first bag of my own, with room for {slots} more things.
+- I finally had {item} to carry what the road gave me, and the pack I had been juggling was suddenly roomy.
+- With {item} on my back I had space at last, and no more choosing which find to throw away.
+- I got hold of {item}. A bag is a small thing, until you have spent days without one.
+- I had a bag of my own at last, with room for {slots} more things, and my pack stopped spilling over.
+- A first bag joined my pack, and with it {slots} more places for what the road would bring.
