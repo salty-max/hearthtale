@@ -57,7 +57,7 @@ Books are private: only you see them. Ravenpost sends the book and who it belong
 
 ## In English
 
-The journal is written in English, and in English only for now. On a game client in another language, the names it uses (places, creatures, quests, items) come from your game, so they will appear in that language inside English sentences.
+The journal is written in English, for English game clients. On a client in another language, the names it uses (places, creatures, quests, items) come from your game in that language, inside English sentences, and a few lines that rely on the game's English names are left out: a first fight with a kind of beast, learning to ride, a trade's new rank.
 
 ## Two packages
 
