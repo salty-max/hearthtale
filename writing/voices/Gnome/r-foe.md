@@ -1,23 +1,25 @@
 ---
 kind: r-foe
 ---
-- a problem solved, if inelegantly
-- faster than I had dared to hope
-- [one] an interesting specimen, in hindsight
-- [!one] each one teaching me something about the last
-- [one] taller than me and a good deal harder than it looked
-- [!one] all of them taller than me, and none of them as quick
-- with my heart going like a steam piston
-- [teeth] my fingers all present and accounted for
-- [teeth] acutely aware of where my fingers had been
-- [mechanical] a shame about the workmanship, really
-- [mechanical] still curious about the workings despite the trouble
-- [night] every shadow twice my height in the dark
-- [night] finding movement harder to judge in the poor light
-- [hc] the margin for error rather thinner than I like
-- [hc] conscious of just how little room I had left myself
-- [low] still learning where to stand
-- [high] most of it over before I had time to be frightened
-- my hands taking longer to settle than I expected
-- [one] less inclined to attempt another close examination
-- [!one] the last of them the most stubborn
+- my small hands steadier now the fighting was over
+- my knees threatening to fold like badly fitted hinges
+- [one] little enough flesh between a gnome and the grave
+- [!one] their number making my own size feel unfortunate
+- [one] no longer in any hurry to discover how close I could get
+- [!one] their absence making room enough for even a gnome to breathe
+- my heart still clattering like a faulty pump
+- [teeth] my fingers grateful to have escaped those teeth
+- [teeth] rather protective of my ten small fingers
+- [mechanical] wishing that much engineering had gone into something kinder
+- [mechanical] half sorry to silence a mechanism, even a murderous one
+- [night] my small shadow feeling very exposed
+- [night] my ears working harder than my eyes
+- [hc] unwilling to become another missing gnome
+- [hc] very fond of the little life I still had
+- [low] my courage rather larger before the fight than during it
+- [high] less easily mistaken for something helpless
+- my stomach taking longer than my hands to settle
+- [one] no longer inclined to get within reach
+- [!one] their defeat worth several deep breaths
+- [trogg] the loss of Gnomeregan much too close in my mind
+- [trogg] more bitter about these than an ordinary enemy

@@ -1,17 +1,17 @@
 ---
 kind: r-gear
 ---
-- [!made] a sensible improvement
-- [!made !held] adjusted twice before everything sat right
-- [!made] better engineered than appearances suggested
-- [!made] already planning a modification or two
-- [!made hc] one more safeguard, which is always wise
-- [made] precisely to my own specifications
-- [made] with one or two features nobody else would think of
-- [made] the second attempt, which was much better
-- [!made] curious about how the new piece would serve
-- [!made !held] interested in the fit once the novelty wore off
-- [!made] pleasantly occupied with the details
-- [made] with a particular interest in how my own work held up
-- [made] pleased to recognise my choices in the result
-- [made] already thinking about what I might try next time
+- [!made] more substantial than a confident explanation
+- [!made !held] hoping the size would spare me another battle with the fit
+- [!made] something I would hate to leave for the troggs
+- [!made] hoping not to discover the weak point personally
+- [!made hc] not eager to test the protection to destruction
+- [made] my small hands capable of more than people expected
+- [made] a little piece of Gnomeregan's stubborn ingenuity
+- [made] nothing I would have been ashamed to bring to Tinker Town
+- [!made] weighing the comfort against the weight
+- [!made !held] hoping to spend less time wrestling with my own equipment
+- [!made] a welcome bit of sturdiness for such a small owner
+- [made] my fingers responsible for every bit of the result
+- [made] a reminder that the troggs had not taken our skill away
+- [made] as satisfying as a gear slipping neatly into place

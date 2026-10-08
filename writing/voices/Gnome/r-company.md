@@ -1,16 +1,16 @@
 ---
 kind: r-company
 ---
-- [one] two heads being better than one, generally
-- with someone to explain my ideas to
-- the work divided sensibly
-- the work going twice as fast
-- a second opinion close at hand
-- trusting their judgement, mostly
-- taking three steps to each of theirs
-- [night one] two pairs of eyes in the dark
-- [hc] safety in numbers, statistically speaking
-- [hc] careful to keep the company within reach
-- more at ease with help close at hand
-- rather pleased not to be the only one looking about
-- [night] with rather less unease about the dark
+- [one] the pair of us a less inviting target
+- my small place in the company feeling worth a little more
+- less likely to disappear unnoticed behind an enemy
+- my courage no longer doing all the lifting
+- another name I hoped would not join the missing
+- more willing to venture beyond the shelter of Tinker Town
+- my short stride no longer feeling quite so lonely
+- [night one] a little less alone beneath that enormous dark
+- [hc] more of us for trouble to find, and more of us to answer
+- [hc] unwilling to lose another person I knew
+- less conscious of how little space I occupied
+- my heart running at a more comfortable speed
+- [night] less tempted to hurry through the dark on my own

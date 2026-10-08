@@ -1,13 +1,13 @@
 ---
 kind: r-inn
 ---
-- a reliable fixed point, at least
-- an elegant solution to the problem of walking
-- the mechanism of the stone still a puzzle to me
-- the chairs too big, as always
-- [night] late, by any reasonable measure
-- [hc] a safe retreat being simply good planning
-- an agreeable reduction in future walking
-- curious about the stone despite having more immediate uses for it
-- somewhere to go back and think
-- rather looking forward to the shortcut
+- a welcome answer to the length of my legs
+- hoping my feet would appreciate the arrangement
+- no engineer yet able to improve on coming home in a blink
+- rather taken with a stone that could save so many steps
+- [night] quite ready to stop being the smallest thing on the road
+- [hc] unwilling to gamble on finding shelter at the last moment
+- my short stride no match for a hearthstone
+- more interested in the return than in a lecture on the enchantment
+- one less distance for these legs to argue with
+- almost as good as fitting wheels to my feet

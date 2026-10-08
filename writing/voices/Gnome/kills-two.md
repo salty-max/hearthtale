@@ -1,6 +1,6 @@
 ---
 kind: kills-two
 ---
-- I counted {n1} {foes1} and {n2} {foes2} {at}, and was glad to confine the next bit of work to counting.
-- The tally {at} was {n1} {foes1} and {n2} {foes2}, with rather more to consider than the numbers showed.
-- I put down {n1} {foes1} and {n2} {foes2} {at}, pleased to have a result that needed no further experiment.
+- I counted {n1} {foes1} and {n2} {foes2} {at}, and felt rather less small beside the tally.
+- The fighting {at} had accounted for {n1} {foes1} and {n2} {foes2}. I was still in one piece, which mattered more.
+- I had brought down {n1} {foes1} and {n2} {foes2} {at}; the hands that did it seemed too small afterwards.

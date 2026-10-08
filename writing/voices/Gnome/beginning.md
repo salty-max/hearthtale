@@ -1,7 +1,7 @@
 ---
 kind: beginning
 ---
-- I began {at}, with a great many questions and no intention of letting my size set the scale of them.
-- I opened my journal {at}. I could not give Gnomeregan back to my people, but there was a world outside it I wanted to understand.
-- I set out {at}, with more ideas than I could sensibly try at once and the happy difficulty of choosing among them.
-- I began {at}, curious whether the things that looked simple would stay that way when I got closer.
+- I began {at}, a long way from Gnomeregan and considerably nearer to the ground than most adventurers.
+- I set out {at}, determined to give the name of gnome something to stand for besides refugee.
+- I set out {at}, with short legs, a stubborn heart and no wish to spend my whole life waiting for Gnomeregan back.
+- I began {at}, hoping the world had room for one more gnome; I did not require much.

@@ -1,17 +1,17 @@
 ---
 kind: r-item
 ---
-- [!one !plural] the count correct on the second attempt
-- [!one !plural] each one catalogued, at least in my head
-- [!one !plural] more of them than my pockets were sewn for
-- [one !plural] bigger in my hands than it had looked on the ground
-- [one !plural] not where anyone sensible would have put it
-- [one !plural] more interesting now the search was over
-- [meat] already working out how long it would want over a fire
-- [meat] enough supper for someone twice my size
-- [night] squinting at the ground in the dark
-- [night] finding the poor light less interesting than inconvenient
-- with mud to the knees, which on me is not very far up
-- [one !plural] tucked away where it would not rattle
-- [paper one !plural] my nose in it before I had decided to read it
-- [stone one !plural] turning it over for the grain before I put it away
+- [!one !plural] my small hands quite full by the end
+- [!one !plural] each piece another burden my legs had not volunteered for
+- [!one !plural] wishing gnomish pockets came with dwarven capacity
+- [one !plural] wondering how much of my carrying strength this would claim
+- [one !plural] hoping the search would earn my feet a rest
+- [one !plural] my fingers happy to be holding something other than a weapon
+- [meat] rather closer to the smell than a taller person would have been
+- [meat] hoping nobody expected a gnome to carry a kodo's supper
+- [night] my eyes wishing for a less enormous patch of darkness
+- [night] rather too near the ground to enjoy searching blindly
+- my small hands earning their keep
+- [one !plural] rather more cargo than ornament
+- [paper one !plural] hoping the writing would be easier to decipher than the search
+- [stone one !plural] my shoulders unimpressed by a stone's usefulness

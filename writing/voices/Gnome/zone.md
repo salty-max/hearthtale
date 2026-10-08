@@ -1,6 +1,6 @@
 ---
 kind: zone
 ---
-- I entered {zone}, with more questions than I could sensibly answer on a first visit.
-- I reached {zone}, and found myself looking about before deciding what deserved a closer look.
-- I came into {zone}, curious how much of my first impression would survive the day.
+- I entered {zone}, wondering what place a gnome might make in so much country.
+- I reached {zone}, another distance my legs had no business managing and had managed anyway.
+- I came into {zone}, carrying a little of Tinker Town with me in the way I looked at things.

@@ -1,9 +1,9 @@
 ---
 kind: died
 ---
-- [foe] {foe} killed me {at}. I had badly misjudged something, and the result left no room to argue.
-- [fall] I fell to my death {at}. It had looked a good deal shorter from the top.
-- [drowning] I drowned {at}, with all my thoughts narrowing to the air I could not reach.
-- [lava] Fire killed me {at}, and no part of the experience improved with closer examination.
-- [nature] I died {at}, with a great deal wrong and nobody to put the blame on.
-- I died {at}. Being small had never felt quite so much like a disadvantage.
+- [foe] {foe} killed me {at}. Being hard to reach had not been the same as being hard to kill.
+- [fall] I fell to my death {at}; being nearer to the ground had offered no protection at all.
+- [drowning] I drowned {at}, with lungs no ingenuity could persuade to run on water.
+- [lava] Fire killed me {at}. I had no fondness left for the phrase controlled combustion.
+- [nature] I died {at}, another reminder of how little flesh it took to hold a gnome together.
+- I died {at}. We had lost enough of our people already, and I hated to join that number.

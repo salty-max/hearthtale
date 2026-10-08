@@ -1,15 +1,15 @@
 ---
 kind: r-first
 ---
-- nothing like the drawings I had seen
-- quicker than any description had warned me
-- [teeth] their jaws best studied from a distance
-- [teeth] my hands kept well clear of the business end
-- [mechanical] built worse than I would have built it
-- [mechanical] wondering who had wound them up and left them running
-- a creature to sketch later, from memory and from further away
-- [low] something nobody had thought to mention
-- [night] all eyes and noise in the dark
-- with my first impression in need of some revision
-- much bigger up close, as most things are to me
-- curious how they moved once I was safely out of reach
+- my height suddenly feeling rather relevant
+- my small body offering too many convenient targets
+- [teeth] those teeth much too close to the height of my face
+- [teeth] my fingers decidedly fond of remaining attached
+- [mechanical] uncomfortably reminded that machines need not like their makers
+- [mechanical] wishing the builder had included a friendlier setting
+- my stomach behaving like a loose cog
+- [low] rather too new to this for so small a margin
+- [night] less eager to discover what moved beyond sight
+- my feet keener to retreat than the rest of me
+- my gnomish pride taking up more room than I did
+- my heart doing its best impression of an engine

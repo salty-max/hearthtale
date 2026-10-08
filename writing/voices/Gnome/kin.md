@@ -1,8 +1,8 @@
 ---
 kind: kin
 ---
-- We were both gnomes a long way from home, and neither of us needed Gnomeregan explained.
-- That was another gnome, one more of us making do in a country built for taller people.
-- It was good to find another gnome at work so far from home; we are fewer than we used to be.
-- We were both gnomes, and it was a relief to look someone in the eye without craning my neck.
-- That was another of Gnomeregan's scattered children, still at work, which I found encouraging.
+- We were both gnomes away from home; Gnomeregan had scattered us further than any invention of ours.
+- Another gnome was making a life outside Gnomeregan, and I felt less alone for knowing the name.
+- It was good to work with another of our scattered people, without having to explain what we had lost.
+- We were both gnomes, and for once the name beside mine did not make me feel quite so small.
+- Here was another of Mekkatorque's people, proof that Gnomeregan had not taken all of us down with it.

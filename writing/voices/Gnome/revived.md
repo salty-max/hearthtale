@@ -1,7 +1,7 @@
 ---
 kind: revived
 ---
-- [corpse] I found my body again as a ghost {at}, and was very glad to be back inside it, small as it is.
-- [healer] The spirit healer brought me back {at}. I had plenty of ideas for going on, but the weakness argued for waiting.
-- [ally] {by} raised me {at}, a very welcome solution to a difficulty I could not have put right alone.
-- [self] My own preparation raised me {at}, and I was far more relieved than pleased to have been right about it.
+- [corpse] I found my body again as a ghost {at}, and was very glad to fit inside it once more.
+- [healer] The spirit healer brought me back {at}, though I felt like a machine reassembled with half its parts missing.
+- [ally] {by} raised me {at}. I owed my life to someone else, a rather large debt for so small a person.
+- [self] My own preparation raised me {at}. I had never been so attached to the inventor responsible.

@@ -1,16 +1,16 @@
 ---
 kind: r-task
 ---
-- with the satisfaction of a ticked box
-- quicker done than explained
-- rather satisfied to have the work behind me
-- curious whether I could have saved myself some walking
-- with the shortest way already worked out for next time
-- my boots a good deal muddier for it
-- small work, but done properly
-- [explore] sketching the layout in my head as I went
-- [explore] fitting the turns together in my head as I went
-- [escort] taking two steps to every one of theirs
-- [escort] with some of my attention always on the person beside me
-- [night] squinting at every turn in the dark
-- [night] finding the poor light unhelpful to my sense of direction
+- my small hands no excuse for leaving the job unfinished
+- my fingers itching for a more mechanical sort of trouble
+- hoping the next request would suit shorter legs
+- my feet wanting wheels by the end
+- rather conscious that errands were designed by taller people
+- my knees feeling every bit of the distance
+- little enough of me, but enough for this
+- [explore] wondering how far a small pair of legs would have to venture
+- [explore] hoping the way out would be easier on my feet
+- [escort] unwilling to let my small charge become a large disaster
+- [escort] my own safety suddenly sharing space with someone else's
+- [night] my eyes straining harder than any gear I knew
+- [night] rather keen to finish before the dark found a use for my size
