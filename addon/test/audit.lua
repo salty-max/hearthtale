@@ -29,7 +29,7 @@ local places, seen = {}, {}
 for _, name in pairs(D.zones) do
   if not seen[name] then
     seen[name] = true
-    table.insert(places, ("I reached %s."):format(ns.mid(name)))
+    table.insert(places, ("I reached %s."):format(ns.writer.mid(name)))
   end
 end
 section("places", places)
@@ -41,7 +41,7 @@ seen = {}
 for _, c in pairs(D.creatures) do
   if c.name and not seen[c.name] and (c.npc or 0) == 0 and c.spawns > 0 and not c.name:find("[%(%[]") then
     seen[c.name] = true
-    local line = ("I killed %s. (%d spawn%s)"):format(ns.article(c.name), c.spawns, c.spawns == 1 and "" or "s")
+    local line = ("I killed %s. (%d spawn%s)"):format(ns.writer.article(c.name), c.spawns, c.spawns == 1 and "" or "s")
     table.insert(c.spawns == 1 and named or generic, line)
   end
 end
@@ -53,8 +53,8 @@ io.write(("\n(%d creatures with several spawn points: always an article)\n"):for
 local tasks, results = {}, {}
 for id, q in pairs(D.quests) do
   for _, t in ipairs(q.texts or {}) do
-    if t ~= "" and ns.instruction(t) then
-      table.insert(tasks, ("I managed to %s. [%d %s]"):format(ns.taskOf(t), id, q.title))
+    if t ~= "" and ns.writer.instruction(t) then
+      table.insert(tasks, ("I managed to %s. [%d %s]"):format(ns.writer.taskOf(t), id, q.title))
     elseif t ~= "" then
       table.insert(results, ("%s [%d %s]"):format(t, id, q.title))
     end
@@ -71,7 +71,10 @@ for _, q in pairs(D.quests) do
     local item = D.items[pair[1]]
     if item and not seen[item.name] then
       seen[item.name] = true
-      table.insert(things, ("I found %s / I found eight %s."):format(ns.itemName(item.name), ns.things(item.name)))
+      table.insert(
+        things,
+        ("I found %s / I found eight %s."):format(ns.writer.itemName(item.name), ns.writer.things(item.name))
+      )
     end
   end
 end
@@ -81,7 +84,7 @@ section("quest items", things)
 local finds = {}
 for _, item in pairs(D.items) do
   if (item.quality or 0) >= 3 and item.name and not item.name:find("^Monster ") then
-    table.insert(finds, ("I turned up %s."):format(ns.itemName(item.name)))
+    table.insert(finds, ("I turned up %s."):format(ns.writer.itemName(item.name)))
   end
 end
 section("finds (blue and better)", finds)

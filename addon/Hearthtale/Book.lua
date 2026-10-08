@@ -110,7 +110,7 @@ local function scrollArea(name, parent, width)
   s:SetScrollChild(c)
   s.child = c
   s.thumb = s:CreateTexture(nil, "OVERLAY")
-  s.thumb:SetColorTexture(0.85, 0.70, 0.42, 0.45)
+  s.thumb:SetColorTexture(T.gold[1], T.gold[2], T.gold[3], 0.45)
   s.thumb:SetWidth(3)
   function s:Range() return math.max(0, self.child:GetHeight() - self:GetHeight()) end
   function s:UpdateThumb()
@@ -172,8 +172,6 @@ local function levels(ch)
   return ("levels %d to %d"):format(ch.from, ch.to)
 end
 
-local function chapterOf(w, number) return w.chapters[number] end
-
 local function show(title, sub, text)
   page.title:SetText(title)
   page.sub:SetText(sub or "")
@@ -197,7 +195,7 @@ local function showPage(life, w, key)
     table.insert(sub, day(d.at))
     return show(life.name or "", table.concat(sub, "  -  "), w.epitaph and EPITAPH:format(w.epitaph))
   end
-  local ch = chapterOf(w, key)
+  local ch = w.chapters[key]
   if not ch then return end
   local parts = {}
   if ch.place then table.insert(parts, ch.place) end
@@ -330,7 +328,7 @@ end
 local function refreshJournal(latest)
   local c = ns.journal()
   written = ns.writeBook(c, kept)
-  local known = current == "prologue" and written.prologue or chapterOf(written, current)
+  local known = current == "prologue" and written.prologue or written.chapters[current]
   if latest or not known then
     local last = written.chapters[#written.chapters]
     current = last and last.number or (written.prologue and "prologue") or nil
@@ -393,13 +391,13 @@ end
 
 -- Rewrite what the open tab shows.
 function ns.refresh(latest)
-  if not book or not ns.journal() then return end
   local c = ns.journal()
+  if not book or not c then return end
   -- Who I am, beside the portrait.
   local race, class = UnitRace("player"), UnitClass("player")
   book.who:SetText(
     ("%s, level %d %s %s%s"):format(
-      ns.journal().name or UnitName("player") or "",
+      c.name or UnitName("player") or "",
       UnitLevel("player") or 0,
       race or "",
       class or "",
@@ -569,15 +567,15 @@ end
 function ns.openChapter(number)
   if not ns.journal() then return end
   if not book then build() end
-  current, asked = number, true
+  current = number
   book.selectedTab = 1
   if PanelTemplates_SetTab then PanelTemplates_SetTab(book, 1) end
   if book:IsShown() then
     ns.refresh()
   else
+    asked = true -- (its OnShow opens it there, not at the last chapter)
     book:Show()
   end
-  asked = false
 end
 
 -- Open the Hall at a fallen life (a click on the chat line or the toast); with
