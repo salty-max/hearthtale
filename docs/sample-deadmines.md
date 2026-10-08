@@ -7,11 +7,11 @@ bosses and loot as in Classic), played through the addon in the test's fake game
 
 ## Prologue
 
-I should have started this journal long ago. I have done sixty-four good turns already, and I'm writing this in Stormwind City.
+I had completed sixty-four tasks already when this stretch began in Stormwind City.
 
 ## Chapter 1 (levels 18 to 20)
 
-Glad to be moving again, I set out in the Dwarven District. I flew from Stormwind to Sentinel Hill, glad to see how the places fitted together from above.
+I set out in the Dwarven District, with more willingness than a Stormwind tax collector had any right to expect. I flew from Stormwind to Sentinel Hill, grateful for the distance without another chance to lose my way.
 
 Westfall lay dark and quiet, its windmills turning over farms nobody tended any more. A light in a window was rare enough to make me wonder who still dared to keep one. A stone tower stood on Sentinel Hill, and around it the People's Militia had pitched their tents. Farmers who had lost everything queued for soup, and it made me angrier than I expected. A Mysterious Message was in Gryan Stoutmantle's hands soon after. Moonbrook was a ruin after dark, its broken walls black against the sky. Somewhere among the burned houses the Defias were talking, and I kept to the shadows. I helped the Defias Traitor as I had promised. In Sentinel Hill again, I reported back once more. Thessaly, Brannigan, Rowan and Halvard joined me.
 
@@ -19,17 +19,17 @@ Once back in Moonbrook, I hunted down several Undead Excavators and Undead Dynam
 
 Mine carts stood abandoned on their rails, and the walls sweated in the lamplight. The deeper I went into the Deadmines, the louder the hammering grew. Rhahk'Zor did not survive the fight. I took a Gnoam Sprecklesprocket from a Sneed's Shredder. It was Sneed's turn to fall. Gilnid was the next to fall. Sea air reached me before I saw the cove. A great ironclad ship sat in the hidden harbour, its decks crowded with pirates, and I could hardly believe it had been built underground.
 
-I put down Defias Pirates, Defias Companions and Defias Squallshapers and gathered Red Silk Bandanas, with an ache in my back for my trouble. Mr. Smite nearly finished me in Ironclad Cove. My hands went on shaking after there was any need for them to move. Mr. Smite fell at last. After I came by Smite's Mighty Hammer, I had it in use before long. I saw the end of Captain Greenskin. Edwin VanCleef fell, and my business in the Deadmines was over. I was almost afraid to let the relief reach me. Mr. Smite, a few Defias Blackguards and Captain Greenskin fell to me while I claimed VanCleef's head as proof of the deed. I brought down Cookie.
+I put down Defias Pirates, Defias Companions and Defias Squallshapers and gathered Red Silk Bandanas, an errand's worth of ache for my trouble. Mr. Smite nearly finished me in Ironclad Cove, and my hands shook like a recruit's after the danger had passed. Mr. Smite fell at last. After I came by Smite's Mighty Hammer, I had it in use before long. I saw the end of Captain Greenskin. Edwin VanCleef fell, and I could leave the Deadmines. I wanted an ordinary doorstep more than any victory feast. Mr. Smite, a few Defias Blackguards and Captain Greenskin fell to me while I claimed VanCleef's head as proof of the deed. I brought down Cookie.
 
-Gryan Stoutmantle had my report soon after. I equipped Chausses of Westfall and ran one more errand. I left Sentinel Hill by air for Stormwind, with a little of the day's hurry falling away beneath me.
+Gryan Stoutmantle had my report soon after. I equipped Chausses of Westfall and ran one more errand. I left Sentinel Hill by air for Stormwind, hoping the people below had less troubling business than mine.
 
-Smaller jobs came next, one on the heels of the other. I came to Cathedral Square, the road dusty and the company scarce. I brought an Unsent Letter to Baros Alexston; I handed in my work to Wilder Thistlenettle and Shoni the Shilent.
+Smaller jobs came next, one on the heels of the other. I came to Cathedral Square, rather fonder of a neighbour's help than of travelling alone. I brought an Unsent Letter to Baros Alexston; I handed in my work to Wilder Thistlenettle and Shoni the Shilent.
 
-The road brought me to Old Town. I trained in Cleave and Retaliation, keen to find out how much had stayed with me.
+The road brought me to Old Town. I trained in Cleave and Retaliation, my courage in need of something sturdier than good intentions.
 
-I had seen eight tasks to their end. My tally came to eight Defias Miners and six Defias Pirates. I had spent two hours and a half travelling, and felt the distance when I stopped. I rested in the Trade District, glad to think back over the road instead of keeping pace with it.
+I had seen eight tasks to their end. My tally came to eight Defias Miners and six Defias Pirates. I had spent two hours and a half travelling; the road seemed to have followed me into every muscle. I rested in the Trade District, wishing the quiet could reach the people still worried about tomorrow's bread.
 
 ## Chapter 2 (level 20)
 
-I set out in the Trade District, wondering whose doorstep the day's work would bring me to.
+I set out in the Trade District, wondering whose troubles would have a claim on me before the day was done.
 
