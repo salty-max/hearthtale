@@ -20,7 +20,7 @@ kind: closing
 - [hc] I had survived {time} on the road, glad to be the one putting it into words.
 - [hc high] Another {time} lay behind me, added to a journey I was still unwilling to lose.
 - [class:ROGUE] I had earned {gold} in {time}, a welcome weight for a purse and less welcome news for anyone hoping to empty mine.
-- [class:MAGE] I had been at work for {time}, and was ready to turn my attention to something quiet.
+- [class:MAGE] I had been at work for {time}, enough to long for a difficulty I could approach over a quiet book.
 - [class:PALADIN] I had spent {time} at work, and hoped {faith} would forgive a servant who wanted a quiet evening.
 - [class:WARRIOR] I had been busy for {time}, enough to make the prospect of lifting anything heavier than supper unappealing.
 - I had earned {gold} over {time}, a useful measure of what the journey had brought.

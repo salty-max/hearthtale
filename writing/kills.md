@@ -17,7 +17,7 @@ kind: kills
 - [hc] I counted {n} {foes}, grateful to be the one counting.
 - [class:HUNTER !low] I had hunted {n} {foes} {at}, with less appetite for the chase than for an undisturbed return.
 - [class:WARLOCK] I had killed {n} {foes}, and felt less fond of the smell of destruction than of the spells that promised it.
-- [class:MAGE] I had brought down {n} {foes}, putting lessons to a test quite different from remembering them.
+- [class:MAGE] I had brought down {n} {foes}, and wanted the next use for my magic to be as harmless as conjuring supper.
 - [class:ROGUE] I had dealt with {n} {foes}, and wanted the next stretch of my life to pass considerably less noticed.
 - [class:PRIEST] {n} {foes} had fallen to me, and I wanted my next prayer to mend something instead of ending it.
 - [class:SHAMAN] I had fought {n} {foes}, and was ready to ask the elements for the warmth of a small fire instead of another battle.
