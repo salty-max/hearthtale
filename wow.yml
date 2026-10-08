@@ -207,3 +207,13 @@ globals:
     any: true
   time:
     any: true
+  C_Container:
+    any: true
+  ContainerIDToInventoryID:
+    any: true
+  GetItemInfoInstant:
+    any: true
+  GetContainerNumSlots:
+    any: true
+  GetShapeshiftFormID:
+    any: true

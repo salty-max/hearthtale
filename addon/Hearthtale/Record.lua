@@ -12,6 +12,9 @@
 --     prologue = { level, quests, inn, zone, gold, played }   a character met mid-life
 --     visited[zone .. "|" .. sub], kinds[kind]       the firsts, life-long
 --     money, pending[questId], worn[itemId], made[itemId], profs[name], pets[name], rode
+--     powers[spell], demons[family], forms[form]   a warlock's or a druid's, learned here; the
+--                                                    first of each told (a demon by its name)
+--     bagged, rich                                   a first bag worn, a first gold piece (false: not yet)
 --     logout = { at, rest, fire, place, zone, sub, level, night, inside }   the last
 --                                                    logout, settled at the next login
 --     finished                                       the highest level reached: nothing more is told
@@ -31,14 +34,16 @@
 --     quest { id, title, giver, ender, objectives, told }   a quest turned in (told: its
 --                                                    work was told when done); objectives =
 --                                                    { { type, name, n, text, held } }
---     kill { name, kind, first, elite, quarry }      the chapter's first of a creature
+--     kill { name, kind, first, elite, quarry }      the chapter's first of a creature (killed by
+--                                                    me, my pet, my group, or credited by a quest)
 --     rare { name, elite }  pvp { name, first, race, class }  close { foe, hp }
 --     died { death }  revived { how, by, graveyard, took }
 --     group { name, first, class } or { raid = n }  dungeon { name }  boss { name }
 --     learned { spells }  power { spell, kind }  skill { name, rank }
 --     prof { name, learned or rank }  riding { name }  mount  made { id, link, n }
 --     gear { link, quality, made, held }  loot { link, quality }
---     tame { name, family }  petdied { name }
+--     tame { name, family }  petdied { name }  demon { name, family }  shift { form }
+--     bag { link, slots, looted }  gold
 --     campfire  rested { place, fire }  night { last, inside }  wake { after, inside }
 local _, ns = ...
 local secret = ns.secret

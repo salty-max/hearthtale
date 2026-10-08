@@ -13,3 +13,40 @@ local function copy(t, skip)
   return out
 end
 ns.copy = copy
+
+-- Spells known by name (English clients): a druid's forms and a warlock's
+-- demons (spell = the form, or the demon's family as the game names it),
+-- told the first time they are used, not when learned; and a trade's own
+-- spells, learned with it, which the trade itself tells.
+ns.POWER_SPELLS = {
+  ["Summon Imp"] = "Imp",
+  ["Summon Voidwalker"] = "Voidwalker",
+  ["Summon Succubus"] = "Succubus",
+  ["Summon Felhunter"] = "Felhunter",
+  ["Summon Felguard"] = "Felguard",
+  ["Bear Form"] = "bear",
+  ["Dire Bear Form"] = "bear",
+  ["Cat Form"] = "cat",
+  ["Travel Form"] = "travel",
+  ["Aquatic Form"] = "aquatic",
+  ["Moonkin Form"] = "moonkin",
+  ["Tree of Life"] = "tree",
+  ["Flight Form"] = "flight",
+}
+ns.TRADE_SPELLS = {}
+for _, name in ipairs({
+  "Find Herbs",
+  "Herb Gathering",
+  "Gardening",
+  "Find Minerals",
+  "Smelting",
+  "Mining",
+  "Skinning",
+  "Fishing",
+  "Cooking",
+  "Basic Campfire",
+  "First Aid",
+  "Disenchant",
+}) do
+  ns.TRADE_SPELLS[name] = true
+end
