@@ -2,14 +2,14 @@
 kind: r-foe
 ---
 - my heart hammering like a forge bellows
-- the encounter leaving a dent in my stubbornness
+- my ears ringing like an anvil at the end of a long day
 - my reputation for toughness quite sufficiently tested
 - my confidence settling back onto solid ground
 - [one] hard enough to make me respect the struggle
-- [!one !more] their numbers putting a strain on my stubbornness
+- [!one !more] as many as a whole dig crew, and none of them friendly
 - [teeth] my beard decidedly fond of staying out of those jaws
 - [mechanical] rather sorry to see craft spent on killing
 - [night] the Great Forge's welcome glare dear to me in the dark
 - [hc] unwilling to leave my kin a name to mourn
 - [low] my courage still softer than it looked
-- [high] done the way an old hand does it, quickly and without fuss
+- [high] done with the steady swing of a smith at the end of a long shift

@@ -7,6 +7,6 @@ kind: rest
 - I rested {at}, and temporarily excused myself from being useful.
 - I stopped {at}, with a stronger affection for settled folk than I had brought to the journey.
 - I rested {at}, thinking of the people still worried about tomorrow's bread.
-- I paused {at}, enjoying a spell of quiet too ordinary to trouble a town crier.
+- I paused {at}, enjoying a quiet as plain as a Goldshire supper.
 - I rested {at}, with the thought of a safe doorstep enough to soften the day.
 - I stopped {at}, letting the day's demands dwindle to the simple matter of staying put.

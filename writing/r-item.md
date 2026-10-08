@@ -8,9 +8,9 @@ kind: r-item
 - keeping half an eye on my surroundings the whole time
 - harder to spot than I had expected
 - [!one !plural] each one harder to find than the last
-- [!one !plural] the last of them where I had looked first
+- [!one !plural] each one counted before I moved on
 - [!one !plural] counting them twice to be sure
-- [!one !plural] wondering what anyone needed with so many
+- [!one !plural !set] wondering what anyone needed with so many
 - [one !plural] right where it should not have been
 - [one !plural] smaller in my hand than the trouble of finding it
 - [one !plural] wondering what anyone wanted with it

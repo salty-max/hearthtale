@@ -13,6 +13,6 @@ kind: r-road
 - [back] familiar ground making the return feel wonderfully simple
 - [back] the way back already neatly arranged in my mind
 - [back] my memory saving me some unnecessary wandering
-- [high] the long roads finally starting to feel like mine
+- [high] the world above ground a little less strange to me now
 - a distance that would have justified a railway
 - inventing better ways to travel in my head, none of them buildable

@@ -3,10 +3,10 @@ kind: rest
 ---
 - I rested {at}, as content to stop as a miner reaching the end of a shift.
 - I settled {at}, with the din of the Great Forge pleasantly in mind.
-- I stopped {at}, with a stiffness no pride in dwarven endurance would soften.
+- I stopped {at}, with my knees as stiff as an old hinge left out in the snow.
 - I rested {at}, and let my strength return without trying to forge it into anything useful.
 - I rested {at}, and found that the sky made a passable roof after all.
 - I paused {at}; an evening at home would have suited me, but this would do.
 - I rested {at}, with the road welcome to wear out somebody else for a while.
-- I stopped {at}, and set the day down like a heavy pack.
+- I stopped {at}, and set the day down like a miner's pack at the end of a shift.
 - As worn down as a quarry step, I rested {at}.

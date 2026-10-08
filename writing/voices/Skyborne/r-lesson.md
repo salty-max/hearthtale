@@ -10,7 +10,7 @@ kind: r-lesson
 - [client:forever faction:alliance] a skill the High Order could keep without a patron's favour
 - [client:forever new] a craft the people beneath the sky might welcome me for
 - [client:forever new] an apprentice even with the sky of home behind my name
-- [client:forever low] no shame in asking for help
+- [client:forever low] as clumsy as a fledgling in a first gust
 - [client:forever high] an apprentice with no blessing to make the difficult part easy
 - [client:forever !one] new skills to keep when a mentor could not stay
 - [client:forever] my fingers learning the part no wide view could supply

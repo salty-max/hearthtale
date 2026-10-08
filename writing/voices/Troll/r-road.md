@@ -1,12 +1,12 @@
 ---
 kind: r-road
 ---
-- the country keeping my eyes busy
+- the country nothing like the jungle, which I kept noticing
 - [!back] wondering what the locals would make of tusks
-- [!back] my ears keeping watch for anything unfamiliar
+- [!back] my tusks drawing looks before my face did
 - [!back] less eager to hurry past what could become trouble
 - [!back] the sea's familiar rhythm still dear to me
-- [!back night] at an hour that made care worth keeping
+- [!back night] at an hour the jungle taught me to respect
 - [back] the familiar way letting my vigilance ease
 - [back] the country beginning to feel like a place I knew
 - [back] the names I knew bringing company to mind
@@ -18,4 +18,4 @@ kind: r-road
 - [!back night] my eyes asking the darkness to keep fewer secrets
 - [back] a familiar journey losing its old unease
 - [back] a known way without an assured welcome
-- [high] my longing for a familiar Darkspear camp stronger than my wanderlust
+- [high] my longing for the sound of surf stronger than my wanderlust

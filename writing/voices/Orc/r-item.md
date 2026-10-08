@@ -1,14 +1,14 @@
 ---
 kind: r-item
 ---
-- the burden testing the generosity of my offer
+- carried as the old warbands carried their supplies, without complaint
 - the unglamorous side of being helpful, which no war song mentions
-- the next request likely to get a longer look from me
-- strength put to a patient use
+- a peon's work, done without complaint
+- strength put to a patient use, as Thrall would want
 - [!one !plural] each piece counted into the pack like rations
 - [!one !plural] each burden another reason to spare the strength I had
 - [one !plural] the carrying an awkward part of the search
 - [one !plural] not mine to keep, and I did not want it
 - [meat] the smell of a Horde cookfire suddenly dear to me
 - [cloth] good for patching the tents back home
-- [night] my strength no use at all for finding things in the dark
+- [night] searching by feel, the way scouts do on a moonless march

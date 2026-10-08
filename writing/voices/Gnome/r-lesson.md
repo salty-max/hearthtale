@@ -7,13 +7,13 @@ kind: r-lesson
 - my pride taking an apprentice's knocks
 - [one] wondering how much trouble I could get into with this
 - [!one] wondering how much trouble these could keep me out of
-- [one] my fingers tying themselves in knots over it
-- [!one] some demanding additions to my repertoire
+- [one] fiddlier than any clockwork I ever assembled
+- [!one] each one filed away like a new schematic
 - [new] a beginner's awkwardness taking the shine off my enthusiasm
-- [new] a new way to be useful, Gnomeregan or no Gnomeregan
+- [new] a new way to be useful, which Mekkatorque asks of all of us
 - [new one] every part of it new to my hands
 - [low] a beginner missing the reassuring clatter of machinery
 - [low] my fingers slower than my head, which annoyed them both
 - [high] a useful addition to the ingenuity I had survived on
 - [high] one more trick for a bag already full of them
-- a knack worth having the next time trouble found me
+- a knack worth having on the day we take Gnomeregan back

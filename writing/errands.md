@@ -9,3 +9,9 @@ kind: errands
 - What followed was a run of small favours.
 - For a while after that, the work was all errands.
 - Then came the everyday work, the sort every place has more of than hands for.
+- The next while was given over to errands.
+- After that, the requests came one after another.
+- Then came a run of small requests, each simple enough on its own.
+- Next came the ordinary business of being useful.
+- For a time, everyone seemed to have something for me to do.
+- Then the asking began in earnest.

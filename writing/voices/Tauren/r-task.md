@@ -1,14 +1,14 @@
 ---
 kind: r-task
 ---
-- a quiet use for my strength
+- a quiet use for the strength the Earth Mother gave me
 - somebody else's burden eased by the effort
 - an ordinary task taking its share of my endurance
 - patience put to good work, as the elders like
 - my patience asking for a long sit
 - the request having made full use of my endurance
 - [explore] wondering how the path would treat smaller travellers
-- [explore] taking care with the unfamiliar ground
+- [explore] listening to the ground, as the elders taught
 - [escort] another life setting the undertaking's pace
 - a task long enough to try an elder's patience
 - the way thoroughly fixed in my memory

@@ -3,10 +3,10 @@ kind: r-item
 ---
 - my broad hands no excuse for careless handling
 - someone else's need worth the trouble of carrying
-- a peaceful use for patience
+- gathered the way the elders taught, taking no more than was needed
 - [!one !plural] as careful with the last piece as with the first
 - [!one !plural] each piece a manageable share of the request
-- [one !plural] wondering how it would look in smaller hands
+- [one !plural] turned over carefully in my broad hands
 - [one !plural] small in my broad hand and handled gently
 - [meat] with thanks to the creature, as my people offer it
 - [cloth] soft enough to think fondly of a resting place

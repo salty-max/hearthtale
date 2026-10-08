@@ -1,13 +1,13 @@
 ---
 kind: r-foe
 ---
-- my reserve no disguise for how mortal I felt
+- my breath quick and my face, I hoped, still composed
 - my composure slower to return than my breath
-- no victory song in me, only quiet
+- no song for it, only a quiet word to Elune afterwards
 - my ears unwilling to stop listening for danger
 - [one] not a death I had any wish to savour
 - [!one] their numbers a poor match for the peace I had hoped to keep
-- [teeth] those teeth as quick as any nightsaber's
+- [teeth] those teeth worse than anything in Teldrassil's woods
 - [mechanical] no living spirit for me to mourn in that mechanism
 - [night] the night holding no rest for my vigilance
 - [hc] unwilling to waste the mortal years left to me

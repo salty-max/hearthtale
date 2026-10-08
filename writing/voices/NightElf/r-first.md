@@ -2,8 +2,8 @@
 kind: r-first
 ---
 - my patience no substitute for distance
-- worth watching a long while before going nearer
-- a nightsaber's familiarity suddenly dear to me
+- watched from the shadows first, as my people learned to in the old forests
+- a Sentinel's calm suddenly very desirable
 - my ears no quicker than my eyes to make the danger familiar
 - [teeth] those jaws deserving no less care than a nightsaber's
 - [night] more watchful in the hour I usually found kindest

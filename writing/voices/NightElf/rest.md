@@ -1,12 +1,12 @@
 ---
 kind: rest
 ---
-- I rested {at}, longing for the hush beside a moonwell without wanting to travel another step to find it.
+- I rested {at}, and picked out the stars I knew among the branches.
 - I settled {at}, and let the stillness come over me like moonlight on water.
-- I paused {at}, and let my mortal strength return at its own pace.
-- I rested {at}, with Elune's name no longer pressed into the shape of a plea.
+- I paused {at}, and let my strength return as slowly as a tree regrows its bark.
+- I rested {at}, and let the quiet settle as it does in the glades of home.
 - I stopped {at}, and let the thought of home soften the day's unease.
 - I rested {at}, missing the forests with a tenderness I rarely allowed while moving.
 - I paused {at}, leaving the world to somebody else's vigilance for a little while.
-- I rested {at}, and let the silence do what words could not.
+- I rested {at}, and waited for the moon to rise, as my people always have.
 - I rested {at}, with the patience of my people finally serving my own tired body.

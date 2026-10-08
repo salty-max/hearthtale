@@ -1,20 +1,20 @@
 ---
 kind: r-task
 ---
-- [client:forever] my offer of help costing more than I had expected
-- [client:forever] an obliging elf beginning to regret the offer
+- [client:forever] help given freely, as the wind spirits once gave theirs
+- [client:forever] an errand the wind would have carried in half the time
 - [client:forever] my hands finding a use no blessing needed to supply
-- [client:forever] my endurance given a thorough exercise
-- [client:forever] a request trying my patience
+- [client:forever] the work as slow as a day without wind
+- [client:forever] a ground-bound errand if ever there was one
 - [client:forever faction:horde] a Windshaper putting some kindness into our mentors' absence
 - [client:forever explore] a route I hoped another traveller could follow without a blessing
 - [client:forever explore] the route acquiring the familiarity of a path at home
 - [client:forever escort] a slower pace worth the trouble of keeping another life safe
-- [client:forever night] the search slow in the dark
+- [client:forever night] the search slow without the sky's light
 - [client:forever] one more reason to value the people who lived upon this ground
-- [client:forever] the distance giving my generosity a practical education
-- [client:forever] my usefulness spent for one day
+- [client:forever] help of a sort that asks nothing of any spirit
+- [client:forever] as tired as a gull that has fought the wind all day
 - [client:forever faction:alliance] something the High Order could count on my hands to finish
-- [client:forever] no further claim on my strength welcome just yet
+- [client:forever] my strength spent as freely as a gale spends itself
 - [client:forever] wondering whether a wind spirit would find our errands amusing
 - [client:forever explore] the way fixed in my memory for the return

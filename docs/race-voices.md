@@ -80,9 +80,16 @@ Show the race, don't label it: a line names the narrator's own people ("even a
 kaldorei", "a Darkspear's ingenuity") five times at most in a race's files. A
 people's way of life is not the narrator's trade: a troll is no hunter unless
 `[class:HUNTER]`, a night elf no Sentinel (comparing oneself to them is fine).
-A signature motif stays rare enough to land: a gnome's size, a tauren's or
-draenei's hooves, a gnome's engineering (one line in eight at most). No line
-gives the narrator a gender ("a flame with no work for him").
+A signature motif stays rare enough to land: a gnome's size, a tauren's
+hooves, a gnome's engineering (one line in eight at most). The same holds for
+a homeland or an emblem: Gnomeregan, Mulgore, the Darkspear, Durotar, the
+moonwells, Elune's name, the kodo, the grave, stubbornness each in a dozen
+lines at most, so a book meets them a handful of times. A cut motif is
+replaced by another true detail of the same culture (An'she and Mu'sha, Camp
+Narache, Sen'jin's fish racks, the internment camps, Tinker Town, the Deeprun
+Tram, the Bronzebeards, Brill's roofs), never by a neutral line. Count a
+voice's words after a pass (the playthrough books show what a reader meets).
+No line gives the narrator a gender ("a flame with no work for him").
 
 ## Reading the results
 

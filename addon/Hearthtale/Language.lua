@@ -105,6 +105,11 @@ local IRREGULAR = {
   Woman = "Women",
   Mouse = "Mice",
   Sheep = "Sheep",
+  Tooth = "Teeth",
+  Foot = "Feet",
+  Hoof = "Hooves",
+  Leaf = "Leaves",
+  Knife = "Knives",
   Deer = "Deer",
   Shaman = "Shamans",
   Undead = "Undead",
@@ -134,10 +139,14 @@ local function plural(name)
   return name .. "s"
 end
 
+-- (words ending in "s" that name one thing: "a Telescopic Lens")
+local SINGULAR_S = { Lens = true, Atlas = true, Canvas = true, Gas = true, Chaos = true }
+
 -- Words for what can't be counted ("Linen Cloth", "Tough Wolf Meat").
 local UNCOUNTED = set([[
   Meat Cloth Leather Silk Wool Ore Water Oil Blood Moss Sand Ash Powder Venom Ichor Dust Silver Gold
-  Iron Copper Bark Mail Grain Barley Rye Corn
+  Iron Copper Bark Mail Grain Barley Rye Corn Pulp Nitroglycerin Salt Flour Ink Rum Ale Wine Honey Tar
+  Clay Coal Sap Resin Slime Ooze Mud
 ]])
 -- An item: "a Wolf Fang Necklace", but "Cuirboulle Gloves", "Blackened Defias
 -- Armor", "Smite's Mighty Hammer".
@@ -150,7 +159,7 @@ local TITLES = set([[
   Archmage Foreman Sergeant Lieutenant Marshal Master Archivist Magus Khan Emperor Brother Sister
   Father Mother Gatekeeper Jailor Taskmaster Watcher Acolyte Ambassador Engineer Boss Apothecary
   Deathguard Guard Huntsman Rifleman Miner Protector Cannoneer Grunt Scout Priestess Bloodlord
-  Battleguard Warchief Admiral Inquisitor Chieftain Colonel Farmer Geomancer Lorekeeper Private
+  Prospector Battleguard Warchief Admiral Inquisitor Chieftain Colonel Farmer Geomancer Lorekeeper Private
   Tinkerer Advisor Old Ol Ranger Broodlord Pyroguard Archbishop Bishop Crier Emissary Emmisary Matron
   Herald Courier Warlord Highlord Count Duke Magistrate
 ]])
@@ -222,8 +231,11 @@ local function itemName(name)
   -- a trophy: "Head of VanCleef" is VanCleef's head
   local part, whose = name:match("^(%a+) of (.+)$")
   if part and TROPHY[part] then return whose .. "'s " .. part:lower() end
-  -- the thing itself, before an "of": "Chausses of Westfall" are many
-  local last = (name:match("^(.-) of ") or name):match("(%S+)$")
+  -- the thing itself, before an "of": "Chausses of Westfall" are many, and
+  -- so are "Supplies for Sven"
+  local last = (name:match("^(.-) of ") or name:match("^(.-) for ") or name:match("^(.-) from ") or name):match(
+    "(%S+)$"
+  )
   if not last then return name end
   -- a person's ("Zanzil's Seal") is named; a role's ("Champion's Helm") is not
   -- (an owner opening the name: "Book from Sven's Farm" is a book)
@@ -232,7 +244,7 @@ local function itemName(name)
   -- (a title before the owner makes a person of it: "Baron Longshore's Head")
   local titled = owner and TITLES[head:match("(%a+)%.? " .. owner .. "'s ") or ""]
   if owner and (titled or not (ns.names and ns.names.roles[owner])) then return name end
-  if last:match("s$") or MASS[last] or UNCOUNTED[last] then return name end
+  if (last:match("s$") and not SINGULAR_S[last]) or MASS[last] or UNCOUNTED[last] then return name end
   return (name:match("^[AEIOUaeiou]") and "an " or "a ") .. name
 end
 
@@ -682,6 +694,7 @@ W.mid = mid
 W.plural = plural
 W.TROPHY = TROPHY
 W.TITLES = TITLES
+W.SINGULAR_S = SINGULAR_S
 W.objectiveOf = objectiveOf
 W.objectivesLike = objectivesLike
 W.sizes = sizes

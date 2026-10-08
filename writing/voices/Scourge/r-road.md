@@ -1,9 +1,9 @@
 ---
 kind: r-road
 ---
-- in no particular hurry to announce myself
+- keeping to the edges, as the newly dead learn to
 - rather too visible to enjoy arriving unannounced
-- [!back !home] ready for the usual looks
+- [!back !home] expecting the guards to stare and the children to run
 - [!back] wondering how much reassurance the guards might need
 - [!back !home] remembering when I could walk into a town without anyone reaching for a torch
 - [!back night] at an hour that made my condition less conspicuous

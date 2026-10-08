@@ -1,7 +1,7 @@
 ---
 kind: opening
 ---
-- I took up the road {at}, with the thought of Durotar making the distance feel worth bearing.
+- I took up the road {at}, at a pace the old marching drums would have kept.
 - I began again {at}, no one's captive and not yet as certain of the road as I wished.
 - I set out {at}, with some strength to offer a people still building their home.
 - I set off {at}, my own impatience already a familiar adversary.

@@ -7,9 +7,9 @@ kind: r-first
 - [teeth] my fingers decidedly fond of remaining attached
 - [mechanical] uncomfortably reminded that machines need not like their makers
 - [mechanical] a friendly setting apparently absent from the design
-- my stomach somewhere down around my boots
+- my stomach dropping like a tram car off its rails
 - [low] a beginner's confidence rattling loose
-- [night] more of them heard than seen
+- [night] heard long before seen, like faulty machinery in the dark
 - a retreat beginning to look like an excellent invention
 - my pride bristling at the prospect of being an easy meal
-- my heart going far faster than my feet
+- my heart racing like overwound clockwork

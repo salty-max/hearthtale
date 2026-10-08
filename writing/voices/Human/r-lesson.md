@@ -12,7 +12,7 @@ kind: r-lesson
 - [low one] still green enough to envy a recruit's confidence
 - [high] more accustomed to learning without having to swallow my pride
 - [!one] useful lessons for a kingdom whose guards could not be everywhere
-- one more thing I could do for myself instead of waiting for the guard
+- one more thing I could do for myself, with the king gone and the guard stretched thin
 - my courage in need of something sturdier than good intentions
 - an eager pupil still a long way from earning bread
 - a useful knack to put at somebody's service

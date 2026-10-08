@@ -12,5 +12,5 @@ kind: r-gear
 - [client:forever faction:alliance] a piece of my own effort to rely on
 - [client:forever] a pleasure in the solidity of something I could use
 - [client:forever held] my fingers getting acquainted with the unfamiliar balance
-- [client:forever !held] a good fit, which I appreciated more than I expected
+- [client:forever !held] light enough that the wind would not have minded it
 - [client:forever made] something I could trust without looking skyward for permission

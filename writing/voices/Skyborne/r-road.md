@@ -9,9 +9,9 @@ kind: r-road
 - [client:forever back] my steps easier on ground that had once seemed foreign
 - [client:forever back] the familiar turns giving an easy welcome
 - [client:forever back] the return taking the uncertainty out of my arrival
-- [client:forever high] the country no longer strange to me
+- [client:forever high] the ground almost as familiar now as the winds of home
 - [client:forever faction:horde !back] a Windshaper seeking company for the search still ahead
 - [client:forever faction:alliance !back] wondering what use the High Order could make of a life lived here
 - [client:forever] the country beginning to matter beyond the view
-- [client:forever night] careful of every shadow the dark offered
+- [client:forever night] the dark close and still, with no wind to read
 - [client:forever] the arrival costing some of the courage I had set out with

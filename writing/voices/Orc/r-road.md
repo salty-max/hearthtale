@@ -4,8 +4,8 @@ kind: r-road
 - the ground read as the elders taught, for water and for danger
 - the drums of Orgrimmar keeping a familiar place in my thoughts
 - [!back] wondering how many here had seen an orc outside a cage
-- [!back] my name worth nothing here yet
-- [!back] calm on the outside, watchful underneath
+- [!back] my clan's name worth nothing here yet
+- [!back] standing straight, as a free orc should
 - [!back night] my eyes no better than anyone else's in that dark
 - [back] the known route leaving little to trouble me
 - [back] this ground beginning to feel like mine

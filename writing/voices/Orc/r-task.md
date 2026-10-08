@@ -6,7 +6,7 @@ kind: r-task
 - my patience receiving a thorough exercise
 - no need of a battle to leave me weary
 - more names I hoped the Horde could count on
-- my generosity in need of a rest
+- work of the sort Durotar is built on
 - [explore] wondering how a scout would read the way ahead
 - [explore] reading the land for water, shelter and ambush, the old way
 - [escort] unwilling to hurry another life towards the ancestors

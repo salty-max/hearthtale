@@ -10,7 +10,7 @@ kind: r-lesson
 - [new] a craft the Darkspear might have good use for
 - [new] an apprentice's place no disgrace to a survivor
 - [low] new enough to this to wish for a gentler teacher than danger
-- [high] the knack settling in like an old habit
+- [high] old enough at this to teach the young ones at Sen'jin
 - [!one] eager to have them ready before trouble chose the hour
 - my pride having to wait for my fingers
 - rather taken with a knack no exile could strip away

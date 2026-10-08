@@ -210,9 +210,15 @@ The plan and its decisions: PLAN.md.
 - A kill no quest asked for has no sentence of its own (a first of its kind
   or an elite does). Killing the creatures a quest's things drop from
   (`drops` in Knowledge.lua) is the hunt for them (`c-hunt`: "I hunted Ragged
-  Young Wolves until Sten Stoutarm had the Tough Wolf Meat"); a creature's
-  variants (the same last word, the same kind) are one, named by the one
-  killed most. Any other kill is told with the next creatures or things a quest
+  Young Wolves until Sten Stoutarm had the Tough Wolf Meat"), only when every
+  thing asked for drops from a creature killed (else no Okra from the
+  Fleshrippers: `Scene:huntsAll`); a creature's variants (the same last word,
+  the same kind) are one, named by the one killed most, but a creature with a
+  name of its own (`creatureBare` in Names.lua, a title) is never a variant
+  nor plural. One creature (`[lone]`) is never hunted "until I had". A thing
+  named for its creature is named once: "Athrikus Narassin for the head",
+  "Durotar Tigers for a handful of furs", "Kuz, Nak and Lok Orcbane for their
+  skulls". Any other kill is told with the next creatures or things a quest
   asks for in the same place, within half an hour (`c-while`: "Ragged Young
   Wolves fell to me while I fetched…"; `[handed]` for a hand-in, "before
   I…"; `[complex]` when the deed has its own comma or "and"), else only in
@@ -230,12 +236,16 @@ The plan and its decisions: PLAN.md.
   next has begun, so earlier paragraphs never change; the last one, still
   being played, may be rewritten as it grows (the writer may look ahead
   within it). Four quests or more in a row, nothing of note between, open
-  with `errands` ("There were smaller jobs after that..."), once a chapter.
+  with `errands` ("There were smaller jobs after that..."), once in three
+  chapters.
   A thing named for who asked for it or receives it is "the journal".
 - The class: how I fight (`Book.fighting`, from `CLASS_FIGHT` and the spells
   learned, `ELEMENT` in Language.lua: fire, frost, arcane, shadow, curse,
-  holy, lightning, wrath, steel, arrow) tags a quest's kills, its lines
-  favoured every other time; a new way of fighting is tried on the next foes
+  holy, lightning, wrath, steel, arrow) tags a quest's kills and hunts, its
+  lines favoured one time in three (a phrase in one or two lines at most,
+  across c-deed-kill, c-handed-kill and c-hunt, or "took my axe to" comes back
+  every chapter); holy lines call on {faith} (the loa, Elune, the Light),
+  never the Light for every priest; a new way of fighting is tried on the next foes
   (`[tried]`, `{spell}`); the pet at my side when the work was done (`done`
   records it) is `[pet]`, `{pet}`. A class quest turned in tells what it
   taught (`class-reward`, Knowledge.lua; `[summon]` and `{pet}` "an imp", or
@@ -260,9 +270,11 @@ The plan and its decisions: PLAN.md.
   change: real quests show what the random lives don't.
 - Curation: in each place, the first two routine hand-ins (a delivery, a report
   back, a message, a favour known only by who asked, green gear) are told; the
-  rest fold into one clause (`c-fold`: "saw to four more errands besides"),
+  rest fold into one clause (`c-fold`: "saw to four more errands besides",
+  "made three more deliveries", "did Kurdram one more favour": `[deliveries]`
+  when all were, `{giver}` the last one's person, the things never named),
   written once the place is left or the chapter closes, so finished
-  sentences never change.
+  sentences never change. Common gear in a fold is told once in three folds.
   Deeds, firsts, dangers and finds are always told.
 - Weight (`weigh` in Lines.lua), from the moment alone so a later moment never
   rewrites what was read: 0 a hand-in (no remark), 1 the ordinary, 2 a deed,
@@ -281,7 +293,10 @@ The plan and its decisions: PLAN.md.
   clause. A fresh remark about that subject wins over a general one, even the
   race's own; an ordinary fight (a stray kill) takes a specific remark or
   none (`GATED`). Number agreement is checked by the build ("their" needs
-  [!one] in r-foe; "it"/counts in r-item).
+  [!one] in r-foe; "it"/counts in r-item). `[plural]` is one thing with a
+  plural name ("MacGrann's Dried Meats", "Venture Co. Documents were");
+  `[set]` several things, one of each ("a Shipment of Boots and a Telescopic
+  Lens"): no "all the …", no "so many".
 - The chapter's recap (tasks, fighting, time) holds one thought: the others
   are its `[plain]` sentences. The rest that ends the chapter has its own.
 - Topic tags (teeth, mechanical, cloth, meat, explore, escort, made) require

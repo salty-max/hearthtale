@@ -3,9 +3,9 @@ kind: r-gear
 ---
 - [!made !held] a welcome freedom from troublesome clothing
 - [!made] a little shelter I could carry beyond the forest
-- [!made] protection I would once have scorned, and now did not
+- [!made] fine enough to wear past the gates of Darnassus
 - [!made] not yet as familiar as a path beneath Teldrassil
-- [!made hc] another kindness to the mortal body I still had
+- [!made hc] well enough made that even a Sentinel would have nodded at it
 - [made !held] my patience woven into something I could wear
 - [made] as satisfying as the unhurried finish of a long watch
 - [made] my patience rewarded in something I could carry

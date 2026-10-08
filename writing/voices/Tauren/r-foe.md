@@ -7,7 +7,7 @@ kind: r-foe
 - my strength due for a gentler use
 - my anger slower to leave than I wished
 - [one] not a life I had any wish to waste
-- [!one] their numbers enough to unsettle me
+- [!one] as many as a kodo herd, and none so gentle
 - [teeth] those teeth no reason to forget the hunger behind them
 - [mechanical] rather far from the life the Earth Mother had nourished
 - [night] the night giving my vigilance no peace
@@ -16,7 +16,7 @@ kind: r-foe
 - [high] a quiet certainty returning to my strength
 - my breath working harder than a kodo's after a climb
 - in no hurry to offer the Earth Mother another death
-- wearier than I cared to show
+- my horns lowered long after there was nothing left to face
 - slow to feel the steadiness of the ground again
 - [one] an encounter I could have spared my people
 - [!one] their defeat no reason to want more fighting

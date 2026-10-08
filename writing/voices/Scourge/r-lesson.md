@@ -3,7 +3,7 @@ kind: r-lesson
 ---
 - [one] my fingers likely to decay before I had any wish to forget it
 - an apprenticeship less alarming than an apothecary's interest
-- my patience one thing the grave had not spoiled
+- my patience one thing the plague had not spoiled
 - some enthusiasm still lodged in these decaying fingers
 - a useful addition to the life I was keeping
 - something else for a corpse to do besides decay

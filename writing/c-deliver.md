@@ -25,6 +25,8 @@ kind: c-deliver
 - [onward again] gave it over once more
 - [onward again] turned it in a second time
 - [onward again] handed it back for the next errand
-- [turn !again !onward] {thing} found its way to {ender}
+- [turn !plural !again !onward] {thing} found its way to {ender}
 - [turn !again !onward] {thing} went safely into {ender}'s hands
-- [turn !again !onward] {thing} was in {ender}'s hands soon after
+- [turn !plural !again !onward] {thing} was in {ender}'s hands soon after
+- [turn plural !again !onward] {thing} found their way to {ender}
+- [turn plural !again !onward] {thing} were in {ender}'s hands soon after

@@ -10,4 +10,4 @@ kind: r-task
 - [explore] wondering how readily the living could find the way out
 - [explore] not volunteering to become somebody else's interesting remains
 - [escort] another life giving the request an unexpected urgency
-- [night] the dark no excuse to stop
+- [night] the dark suiting me better than it suits the living

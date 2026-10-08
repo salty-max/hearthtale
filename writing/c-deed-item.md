@@ -20,7 +20,7 @@ kind: c-deed-item
 - [one trophy !done !more] brought {giver} {thing}
 - [one trophy !done !more] laid {thing} before {giver}
 - [one trophy !done !more] set {thing} down in front of {giver}
-- [!one done !more state] had all the {thing} I needed
+- [!one !set done !more state] had all the {thing} I needed
 - [!one done !more state] had {n} {thing} in my pack
 - [one done !more state] had {thing} in my pack
 - [one trophy done !more] took {thing} as proof

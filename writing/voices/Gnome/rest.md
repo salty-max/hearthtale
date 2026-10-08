@@ -2,10 +2,10 @@
 kind: rest
 ---
 - I rested {at}, turning the day over in my head like a part I meant to fix later.
-- I settled {at}, and for once let my thoughts run on without me.
+- I settled {at}, and let my thoughts tick over like an engine left idling.
 - I paused {at}, content to leave every loose end exactly where it was.
 - I rested {at}, enjoying a pause without a problem that urgently needed solving.
-- I stopped {at}, and found the quiet surprisingly agreeable.
+- I stopped {at}, and found the quiet strange after a life among clanking machines.
 - I rested {at}, missing the familiar clatter of a city that was no longer ours to live in.
 - I paused {at}, with my enthusiasm temporarily out of service.
 - I rested {at}, and let the urge to improve things subside into a pleasant idleness.

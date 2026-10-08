@@ -1,9 +1,9 @@
 ---
 kind: r-first
 ---
-- my trust in dwarven toughness shaken
+- more rattled than a mine cart on a bad rail
 - my stomach as unsettled as loose scree
-- rather too near the soft parts beneath my stubbornness
+- close enough to make me miss the thick walls of Ironforge
 - less tempted to mistake solid footing for safety
 - my beard feeling like an unfortunate handhold
 - [teeth] those teeth giving me a new affection for distance

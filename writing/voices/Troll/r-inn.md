@@ -9,5 +9,5 @@ kind: r-inn
 - a useful safeguard against a weary homecoming
 - a way home fixed in mind, which the Darkspear never take for granted
 - an enchantment whose practical uses delighted me
-- a journey back with nothing to watch for
+- a quicker way home than any canoe
 - [night] my eyes spared the trouble of finding the whole way back

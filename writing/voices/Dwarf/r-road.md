@@ -1,7 +1,7 @@
 ---
 kind: r-road
 ---
-- a fair distance, and my good humour worn thin by the end
+- a fair distance for legs built for tunnels
 - rather more at ease with the weight of a mountain overhead
 - [!back] a new place, and new stone to look at
 - [!back] wondering what an explorer would find beneath all this

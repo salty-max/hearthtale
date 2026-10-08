@@ -34,28 +34,48 @@ kind: c-deed-kill
 - [fire !one] put {n} {foes} to the fire
 - [fire !one] left {n} {foes} smouldering
 - [fire one] burned {foes} down
+- [fire one] put {foes} to the fire
 - [frost !one] froze {n} {foes} where they stood
 - [frost !one] brought down {n} {foes} in a storm of frost
 - [frost one] froze {foes} where it stood
+- [frost !one] cut {n} {foes} down with ice
+- [frost one] cut {foes} down with ice
 - [arcane !one] battered {n} {foes} with raw magic
 - [arcane one] battered {foes} with raw magic
 - [shadow !one] struck down {n} {foes} with shadow
 - [shadow !one] sent bolts of shadow into {n} {foes}
 - [shadow one] struck {foes} down with shadow
+- [shadow one] sent shadow into {foes}
 - [curse !one] cursed {n} {foes} and let the rot do its work
 - [curse one] cursed {foes} and let the rot do its work
-- [holy !one] smote {n} {foes} with the Light
-- [holy one] smote {foes} with the Light
+- [holy !one] smote {n} {foes} in the name of {faith}
+- [holy one] smote {foes} in the name of {faith}
+- [holy !one] called on {faith} against {n} {foes}
+- [holy one] called on {faith} against {foes}
 - [lightning !one] called lightning down on {n} {foes}
 - [lightning one] called lightning down on {foes}
+- [lightning !one] struck {n} {foes} down with lightning
+- [lightning one] struck {foes} down with lightning
+- [lightning !one] let the storm loose on {n} {foes}
 - [wrath !one] turned the wild's wrath on {n} {foes}
 - [wrath one] turned the wild's wrath on {foes}
+- [wrath !one] called the wild down on {n} {foes}
+- [wrath one] called the wild down on {foes}
+- [wrath !one] let nature's anger loose on {n} {foes}
+- [wrath one] let nature's anger loose on {foes}
 - [steel !one] took {weapon} to {n} {foes}
 - [steel !one] cut my way through {n} {foes}
-- [steel one] took {weapon} to {foes}
+- [steel one] cut {foes} down with {weapon}
+- [steel !one] waded into {n} {foes}
+- [steel !one] put {weapon} to work on {n} {foes}
+- [steel one] went blow for blow with {foes}
+- [steel one] brought {weapon} down on {foes}
+- [steel one] met {foes} with {weapon}
 - [arrow !one] brought down {n} {foes} with {weapon}
 - [arrow !one] picked off {n} {foes} from a distance
 - [arrow one] brought {foes} down with {weapon}
+- [arrow !one] shot down {n} {foes}
+- [arrow one] shot {foes} down
 - [tried !one] tried my new {spell} on {n} {foes}, and it worked
 - [tried !one] put {spell} to its first real use on {n} {foes}
 - [tried one] tried my new {spell} on {foes}, and it worked

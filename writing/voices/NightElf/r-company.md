@@ -1,9 +1,9 @@
 ---
 kind: r-company
 ---
-- the silence between us a comfortable one
+- quiet company, the sort a nightsaber keeps
 - [one] a second life dearer to me than the distance
-- the watch shared, as the old ways prefer
+- the watch shared, as the Sentinels share it
 - my reserve giving way to the relief of company
 - a familiar ease returning to the journey
 - the quiet paths of home easier to leave with help beside me

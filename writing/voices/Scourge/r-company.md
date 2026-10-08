@@ -8,4 +8,4 @@ kind: r-company
 - the habits of the Undercity relaxing their guard
 - my joints no longer the only ones doing the travelling
 - [night one] two shadows to keep the darkness occupied
-- [hc] unwilling to be the one left to mourn
+- [hc] having buried enough people once already

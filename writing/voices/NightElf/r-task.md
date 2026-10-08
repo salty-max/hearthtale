@@ -1,13 +1,13 @@
 ---
 kind: r-task
 ---
-- another favour, and I did not grudge it
+- a small kindness, of the sort Elune's priestesses teach
 - the request outlasting my taste for useful activity
-- the work done without fuss, as I prefer
-- the day longer than it had any right to be
+- quietly, the way my people prefer to do most things
+- the sun too long in the sky for my liking
 - my reserve no protection against being asked again
 - rather more inclined to stay beneath Teldrassil next time
-- [explore] each turn of the path remembered for the way back
+- [explore] moving through it as a Sentinel would, unheard
 - [explore] wary of what even a Sentinel might miss
 - [escort] unwilling to surrender another life to the path
 - [night] the dark testing the patience of my search
