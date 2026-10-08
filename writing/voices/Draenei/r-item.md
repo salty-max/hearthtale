@@ -1,22 +1,22 @@
 ---
 kind: r-item
 ---
-- carefully, so nothing went to waste
-- with the hope that the find would help
-- the search quiet and almost peaceful
-- [!one !plural] each one counted with care
-- [!one !plural] more than I expected to find
-- [one !plural] small, but someone had need of it
-- [one !plural] where it had been waiting for someone
-- [meat] grateful for food in a strange land
-- [cloth] with thoughts of who might wear it
-- [night] the stars helping me look
-- [hc] watchful the whole while
-- curious about the unfamiliar name
-- pleased to recognise what I had been looking for
-- with less uncertainty about what I needed to bring back
-- [cloth] with the feel of the cloth holding my attention
-- [meat] thinking with rather more interest about a meal
-- with a little more weight to carry than before
-- hoping I had understood the request correctly
-- [night] with more care than I would have needed in daylight
+- my hands gentler now they had something to carry
+- a burden I hoped would spare another traveller
+- rather more patience required than strength
+- [!one !plural] as careful with each piece as with provisions for an exile
+- [!one !plural] my shoulders still willing where my hooves would object
+- [one !plural] a find I tried to picture in a smaller pair of hands
+- [one !plural] too grateful for the find to let the road have the burden back
+- [meat] with a traveller's gratitude for anything that could become supper
+- [cloth] wondering what welcome a tailor could make out of the cloth
+- [night] my eyes taking their time with the darkness
+- [hc] reluctant to leave danger unwatched for a stranger's burden
+- keener on helping than explaining how little I knew of this world
+- my fingers glad to have found what the request meant
+- hoping the carrying would be kinder than the searching
+- [cloth] soft enough to recall that this world could offer gentleness
+- [meat] rather more inviting as a meal than as a burden
+- my hooves less grateful than my willingness to help
+- hoping I had not brought a traveller's misunderstanding back with me
+- [night] my eyes needing the patience my hands wanted to spend

@@ -1,18 +1,18 @@
 ---
 kind: r-task
 ---
-- a small help, freely given
-- with a little more of the place known to me
-- with care
-- hoping it would make a difference
-- a little less a stranger for it
-- [explore] the land a little less strange with every step
-- [explore] learning its paths as one learns a new language
-- [escort] patient with their pace
-- [night] the dark softened by the stars
-- pleased that I had understood what was needed
-- with a little less uncertainty about offering my help
-- curious about what I might be asked next
-- ready to give my attention to something else
-- with more effort behind the request than I had first understood
-- hoping I would find the next request easier to understand
+- my courtesy rather more willing than my legs
+- hoping a traveller's help could earn a neighbour's place
+- willing to rest before offering my strength again
+- more of myself offered than my unfamiliarity might suggest
+- a stranger finding a place among the burdens of neighbours
+- [explore] wondering how another exile might find the way
+- [explore] my hooves learning what a stranger's eye could miss
+- [escort] careful not to make another life hurry merely to spare my patience
+- [night] my eyes gentler with the dark than with being kept busy
+- my gratitude for being needed no cure for weary legs
+- ready for a kindness that asked no more of my hooves
+- hoping to hear my name as something other than a stranger's
+- more eager for a quiet return than another useful introduction
+- my feet reckoning the distance without consulting my manners
+- hoping a little familiarity would spare the next traveller

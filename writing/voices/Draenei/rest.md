@@ -1,12 +1,12 @@
 ---
 kind: rest
 ---
-- I rested {at}, grateful to let my feet be still while the rest of me caught up.
-- Pleased that the name now meant somewhere I could return to, I settled {at}.
-- I stopped {at}, with a tiredness I had been too occupied to notice properly.
-- I made time to rest {at}, allowing myself the same patience I would have wished for someone else.
-- [night] I rested {at}, content to leave the unfamiliar dark outside my plans for a while.
-- I paused {at}, with several questions still unanswered and no desire to hurry through them.
-- Thankful that I could put my attention down without letting everything else fall with it, I rested {at}.
-- I settled {at}, glad of a pause that did not require me to explain myself.
-- I stopped {at}, beginning to recognise the comfort of a familiar place.
+- I rested {at}, grateful to let my hooves have no purpose beyond holding me here.
+- As content as a traveller finally welcomed, I settled {at}.
+- I stopped {at}, with the desire for the Exodar's familiar shelter stronger than the desire to wander.
+- I rested {at}, wishing the peace could reach the Broken as gently as it reached me.
+- [night] I rested {at}, with the night less strange than it had seemed when our people first arrived.
+- I paused {at}, allowing the Light's comfort to be enough without another demand on my strength.
+- As ready for shelter as any exile, I rested {at}.
+- I settled {at}, grateful to stop being a stranger who always had somewhere else to reach.
+- I stopped {at}, hoping a home could grow out of ordinary pauses like this one.

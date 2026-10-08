@@ -1,8 +1,8 @@
 ---
 kind: close-light
 ---
-- {foe} gave me a difficult fight {at}. I had been trying to judge the danger by what I knew of other creatures, and the comparison had nearly failed me.
-- I came away from {foe} {at}, relieved and rather less certain that I understood the danger here.
-- {foe} pressed me hard {at}, and it took a little while before I could think of anything beyond getting clear.
-- I had an uncomfortable encounter with {foe} {at}. I would have preferred to learn those limits less abruptly.
-- {foe} almost got the better of me {at}, leaving me grateful for the chance to be more careful.
+- {foe} nearly killed me {at}, and made my size feel like an invitation rather than a protection.
+- I survived {foe} {at}, with more fear than the calm of my people usually allowed me to show.
+- {foe} pressed me close to death {at}. I wanted the Light's comfort without having to be taken into it yet.
+- I barely survived {foe} {at}, and missed the Exodar's familiar shelter more sharply than I wished to admit.
+- {foe} nearly ended me {at}, with my heart working harder than my outward composure suggested.

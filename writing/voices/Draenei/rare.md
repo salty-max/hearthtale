@@ -1,7 +1,7 @@
 ---
 kind: rare
 ---
-- I encountered {foe} {at}, a name I wanted to remember precisely rather than confuse with all the others I was learning.
-- {foe} fell {at}. I was relieved to have survived the meeting, though that was not quite the same as being glad of it.
-- I faced {foe} {at}, with rather more attention than I usually gave a single encounter.
-- I came upon {foe} {at}, and the encounter stayed with me after I had moved on.
+- I brought down {foe} {at}, with more gratitude for my life than pride in having taken another.
+- {foe} fell to me {at}. I wanted the peace the naaru promised more than another reason to test my faith.
+- I overcame {foe} {at}, and hoped this world would find gentler work for me soon.
+- I killed {foe} {at}, with the thought of the Exodar suddenly a comfort rather than a reminder of exile.

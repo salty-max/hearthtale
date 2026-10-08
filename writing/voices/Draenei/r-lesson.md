@@ -1,21 +1,21 @@
 ---
 kind: r-lesson
 ---
-- with gratitude for the teaching
-- slow to learn, though I was patient
-- [one] mine after a little patient practice
-- the knowledge a gift to carry carefully
-- [one] keen to use it for others' sake
-- aware of how much practice lay ahead
-- [new] a new path, and I was willing
-- [low] a beginner still, but a hopeful one
-- [high] old wisdom welcoming the new
-- [!one] keen to use them for others' sake
-- curious to try what I had learned
-- with new questions about what I could attempt
-- pleased to understand a little more than the names
-- less certain that I had reached the limits of what I could learn
-- with more to practise than I had arrived with
-- [!one] interested in how the lessons might work together
-- with a little less doubt about attempting something unfamiliar
-- hoping practice would make the new knowledge feel less distant
+- my gratitude warmer than my fingers were skilful
+- an exile's patience useful in beginning again
+- [one] hoping it would travel better than my old certainty
+- something else no exile could strip away by taking a home
+- [one] eager to put it to use for a neighbour
+- my eagerness no shortcut past the difficult part
+- [new] a craft this new world might welcome me for
+- [low] an apprentice willing to ask for help without shame
+- [high] another use for hands that had known so many departures
+- [!one] eager to spare others some fear by learning them well
+- my fingers slower than the welcome I hoped to earn
+- more willingness than grace in my first attempts
+- rather proud of learning more than how to flee
+- my patience tested by a smaller trouble than the Legion
+- my broad hands no help with the most delicate part
+- [!one] eager to have the lessons ready before fear chose the hour
+- readier to ask for help than to remain a helpless stranger
+- hoping practice would make an unfamiliar world feel nearer

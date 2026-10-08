@@ -1,6 +1,6 @@
 ---
 kind: boss-final
 ---
-- {boss} fell, and the danger that had drawn me into {dungeon} was finally behind me. I wanted to be outside again, among more ordinary uncertainties.
-- With {boss} defeated, I could leave {dungeon}. The thought of a safe return felt more precious than anything I had hoped to find within.
-- {boss} was down at last. I let myself feel the relief before trying to make anything more of it.
+- {boss} fell, and I could leave {dungeon}. I was grateful to the Light for the prospect of an ordinary return.
+- I defeated {boss} in {dungeon}, with the open world suddenly feeling more like a refuge than a place of exile.
+- With {boss} down, my work in {dungeon} was finished; I wanted my next prayer to be one of thanks rather than fear.

@@ -1,20 +1,20 @@
 ---
 kind: r-foe
 ---
-- with regret that it had come to that
-- steadier afterwards than I expected
-- with care, and without anger
-- the Light giving me patience, if not ease
-- [grouped] glad no one else had been hurt
-- [!one] each faced in turn, without hatred
-- [teeth] grateful to keep all my fingers
-- [mechanical] a thing without a will of its own
-- [hc] remembering how much my people had already lost
-- [low] still learning to trust my own strength
-- relieved to have room to think again
-- [!more] with more effort than I had hoped to need
-- less confident that I had judged the danger correctly
-- with little wish to repeat the encounter just yet
-- still trying to understand what had made the fight difficult
-- [!more] more tired than I had wanted to admit
-- thankful that I had come through
+- my hands wanting gentler work than this
+- more grateful for my life than eager to test it
+- no appetite for making anger feel like a victory
+- my prayer to the Light less composed than my face
+- [grouped] less alone with the fear than I might have been
+- [!one] their numbers a burden I did not want to enlarge
+- [teeth] my fingers rather dearer to me than those jaws allowed
+- [mechanical] no living spirit to plead with inside that mechanism
+- [hc] unwilling to add another name to our people's losses
+- [low] an inexperienced traveller finding my size little protection
+- my breath refusing the quiet my manners preferred
+- [!more] more strength required than a kind request could supply
+- less certain I could trust an easy appearance
+- an exile unwilling to bring such danger nearer to the Exodar
+- my patience slower to return than my relief
+- [!more] more weary than Velen's example would have led me to show
+- thankful the Light had not yet called me away

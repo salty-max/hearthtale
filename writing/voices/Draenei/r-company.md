@@ -1,14 +1,14 @@
 ---
 kind: r-company
 ---
-- the road kinder for being shared
-- grateful for the company
-- [one] the work lighter for two
-- [one] the danger easier to face with two
-- [night] the dark less lonely together
-- curious to see how we would find a pace together
-- hoping my unfamiliarity would not slow us too much
-- glad of the chance to be known by more than my appearance
-- with a little less weight upon my own decisions
-- interested in how another person would approach the same trouble
-- grateful that I need not face the next uncertainty alone
+- company as dear as a familiar name from the Exodar
+- grateful not to carry the strangeness alone
+- [one] two lives worth more than an easy pace
+- [one] less fearful of being lost beyond the Exodar's shelter
+- [night] the night gentler when another life was near
+- hoping our strides would find a kinder agreement
+- my unfamiliarity less of a burden with help beside me
+- more than a stranger's shape in my own eyes
+- my gratitude easier to feel than to express gracefully
+- willing to trust before the road made trust essential
+- no longer alone beneath a world I was learning to love
