@@ -1,7 +1,7 @@
 ---
 kind: kills
 ---
-- I had brought down {n} {foes}, and found the encounters harder to set aside than to count.
-- I counted {n} {foes}; their number did not make them indistinct.
-- {n} {foes} had fallen to me, with more to carry from the work than their names alone.
-- [lots] I had fought {n} {foes}, enough to welcome a pause in which the world could ask something quieter of me.
+- I had brought down {n} {foes}, and felt far from the peace of the moonwells.
+- I counted {n} {foes}; surviving them had given me no appetite for another fight.
+- {n} {foes} had fallen to me, enough to make the quiet of home seem almost a luxury.
+- [lots] I had fought {n} {foes}, and longed to hear something gentler than my own heart after danger.

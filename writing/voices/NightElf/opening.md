@@ -1,12 +1,12 @@
 ---
 kind: opening
 ---
-- I took up the path {at}, looking first for what had changed while my attention was elsewhere.
-- I began again {at}, with no wish to mistake a familiar name for familiar ground.
-- I set out {at}, letting the world reach my attention before my purpose narrowed it.
-- I opened a fresh page {at}. Even a brief passage through a place could leave something that endured.
-- Conscious that haste had made older mistakes than mine, I went on {at}.
-- I began this stretch {at}, with no intention of letting reserve be mistaken for uncertainty.
-- I made ready {at}, with time to look about before choosing my path.
-- I went on {at}, with the quiet between deeds still part of what I wished to remember.
-- I set out {at}, wary of how quickly strangers could make certainty out of so little.
+- I took up the path {at}, with the patience of my people and rather less of their former certainty.
+- I began again {at}, hoping for work that would leave a little more of the wild unspoiled.
+- I set out {at}, still attached to the moonwells without wishing to spend my life beside them.
+- I went on {at}, a mortal now, though I had no wish to hurry merely because I could no longer wait forever.
+- I began this stretch {at}, remembering how dearly our people had paid for trusting power too easily.
+- I set out {at}, hoping to find something of the forest's gentleness beyond its borders.
+- I made ready {at}, wishing the road asked as little of me as a path beneath Teldrassil.
+- I went on {at}, with Elune's name steadying the part of me that still wanted to turn home.
+- I set out {at}, no more eager than a Sentinel to leave trouble unwatched.

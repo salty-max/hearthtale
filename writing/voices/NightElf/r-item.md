@@ -1,13 +1,13 @@
 ---
 kind: r-item
 ---
-- [one !plural] careful not to damage it
-- [one !plural] careful of what grew around it
-- noticing more along the way than I had been sent for
-- [!one !plural] each found where something living had left it
-- [!one !plural] found one at a time, slowly
-- [one !plural] where the land had hidden it
-- [one !plural] lighter in my hand than the search had been
-- [meat] with thanks to the creature that had given it
-- [cloth] the weave plain beside our own
-- [night] the moonlight showing what the day had hidden
+- [one !plural] no desire to keep it from whoever needed it
+- [one !plural] my care for the living things around me no reason to hurry
+- my fingers gentler now they had something to carry
+- [!one !plural] each piece another burden for a mortal body's strength
+- [!one !plural] each find another reason to miss the ease of the forest
+- [one !plural] the distance weighing more heavily on me than the find
+- [one !plural] my hands less weary of it than my feet
+- [meat] with a hunter's reluctance to waste what had died
+- [cloth] softer stuff than most of the road's business
+- [night] my eyes more at ease with the dark than my hands with the search

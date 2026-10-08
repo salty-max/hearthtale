@@ -1,7 +1,7 @@
 ---
 kind: beginning
 ---
-- I began {at}, where the world beyond familiar paths had become impossible to leave to others.
-- I opened this journal {at}. My people's long memory did not spare me the need to look for myself.
-- I set out {at}, with the cost of careless power in mind and no wish to add to it.
-- I began {at}, meaning to watch before I called anything understood.
+- I began {at}, with a mortal life ahead of me and no wish to spend it longing for what Hyjal had taken.
+- I set out {at}, a child of a people who had watched ten thousand years pass and were learning to count the cost of one.
+- I began {at}, hoping to serve more than the uneasy peace beneath Teldrassil's new branches.
+- I set out {at}, carrying the memory of our people's forests beyond their shelter.

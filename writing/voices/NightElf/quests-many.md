@@ -1,9 +1,9 @@
 ---
 kind: quests-many
 ---
-- I had seen {n} tasks through, and knew more of the people who had asked them of me.
-- The {n} tasks behind me had taught me something of the people who lived here, beyond what a first glance could tell.
-- I had completed {n} errands, and found the country less distant for knowing what its people needed.
-- By the end, {n} tasks were done. Small needs could reveal a place as clearly as its oldest stones.
-- I had finished {n} tasks, and found myself wondering about their givers.
-- I had brought {n} jobs to an end, with a little more understood and much still beyond my view.
+- I had seen {n} tasks through, with the names of strangers no longer quite so foreign to me.
+- The {n} tasks behind me had brought other people's troubles nearer than the safety of our forests.
+- I had completed {n} errands, small enough beside the work of the Sentinels, but mine to bear.
+- By the end, {n} tasks were done, and I wished the people here a little of the moonwells' peace.
+- I had finished {n} tasks, with less strength left than a kaldorei's pride might like to acknowledge.
+- I had brought {n} jobs to an end, with my own need for stillness harder to set aside.

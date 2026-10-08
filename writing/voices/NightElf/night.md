@@ -1,13 +1,13 @@
 ---
 kind: night
 ---
-- [!last] I slept beneath the open sky {at}, letting the quiet settle around me.
-- [!last] I bedded down {at}, glad of room enough to be still for a while.
-- [!last] I rested {at} with the sky above me, glad of the pause in my journey.
-- [!last] I slept lightly {at}, listening to the world between moments of rest.
-- [!last] I spent the night {at} under the open sky, with more to think about than I had room to write.
-- [!last] I made what bed I could {at} and let the night pass around me.
-- [last] I stopped {at} after a long stretch of travelling, ready to let this part of the tale rest too.
-- [last] I settled beneath the sky {at} again and put these pages aside for another day.
-- [last] I spent the night in the open {at}, where this stretch of the road had come far enough.
-- [!last] I slept rough {at}, grateful for a little quiet even without shelter.
+- [!last] I slept in the open {at}, with the night feeling kinder than the day's demands.
+- [!last] I bedded down {at}, missing the quiet of a moonwell more than a roof.
+- [!last] I settled outside {at}, content to let the night hold me as the forests once had.
+- [!last] I slept lightly {at}, with a Sentinel's watchfulness harder to put aside than my weariness.
+- [!last] I spent the night {at} in the open, with Elune's name a comfort rather than a plea.
+- [!last] I lay down {at}, and let a mortal body's need for rest have its way.
+- [last] I settled outside {at}, longing for Teldrassil's shelter without wishing to hide from the world forever.
+- [last] I lay down beneath the sky {at}, with the night no stranger to me even so far from home.
+- [last] I bedded down {at}, ready to surrender to sleep what I had refused to surrender to fear.
+- [!last] I slept rough {at}, finding more comfort in the night than in the ground beneath me.

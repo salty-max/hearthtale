@@ -1,13 +1,13 @@
 ---
 kind: r-road
 ---
-- the wind moving ahead of me as if to announce me
-- the road quiet enough to think on
-- [!back] listening to the place before entering it
-- [!back] taking its measure from a distance
-- [!back] noting who watched the road and who did not
-- [!back night] the stars my guide most of the way
-- [back] finding it changed in small ways
-- [back] the path remembering me, or so it felt
-- [back] the way back shorter than the way out
-- [high] one more place I would remember long after its people
+- my feet missing the familiar paths beneath Teldrassil
+- less at ease beyond the shelter of the forests
+- [!back] hoping the distance would not make me forget the way home
+- [!back] wary of trusting the place as easily as a moonwell
+- [!back] my reserve a poor disguise for being a stranger
+- [!back night] more at home with the night than with this country
+- [back] the familiar path dearer to me than the speed of returning
+- [back] less foreign to the way than on my first coming
+- [back] rather glad not to begin as a stranger again
+- [high] too far beyond Teldrassil to take shelter for granted

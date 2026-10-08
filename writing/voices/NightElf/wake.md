@@ -1,9 +1,9 @@
 ---
 kind: wake
 ---
-- [!rest] I woke {at} beneath the open sky and took a moment to look about before moving.
-- [!rest] I rose {at} after the rough night's rest, with the path still waiting.
-- [!rest] I roused myself {at} and made ready to go on.
-- [!rest] I rose {at} after resting in the open, and listened before going on.
-- [rest] I set out again {at}, glad to have made a little room for rest.
-- [rest] I rose {at} and returned to the journey with my thoughts less crowded.
+- [!rest] I woke {at}, more ready for the world than I had been when I gave myself to sleep.
+- [!rest] I rose {at}, ready to leave sleep with a Sentinel's care rather than a Sentinel's haste.
+- [!rest] I roused myself {at}, with a mortal body's stiffness slower to leave than its dreams.
+- [!rest] I rose after the night outside {at}, hoping Elune would grant gentleness to the waking hours too.
+- [rest] I set out again {at}, with my patience restored by the pause.
+- [rest] I rose {at}, feeling less far from the peace of the moonwells.

@@ -1,12 +1,12 @@
 ---
 kind: died
 ---
-- [foe] {foe} killed me {at}, and the world seemed farther away while I found my way back through it.
-- [foe] I fell to {foe} {at}, with a memory that return would not simply put right.
-- [fall] I fell to my death {at}, reminded too late that even familiar heights required care.
-- [drowning] I drowned {at}, where the water I had trusted became the whole of the world for a moment.
-- I died {at} and returned. A second chance did not make the first loss small.
-- [lava] Fire killed me {at}, and I came back less willing to mistake confidence for understanding.
-- [nature] I died {at}, reminded that the world could be indifferent even to those who wished to know it.
-- [foe] {foe} ended me {at} for a time, and I carried the encounter with me when I returned.
-- I died {at}, with a strange interval in my journey that I could not make ordinary by putting it into words.
+- [foe] {foe} killed me {at}. I had not learned to live as a mortal before having to learn to die as one.
+- [foe] I fell to {foe} {at}, with Teldrassil's shelter suddenly more precious than I could reach.
+- [fall] I fell to my death {at}; height had offered none of the safety I associated with home.
+- [drowning] I drowned {at}, unable to reach the air while Elune's name filled what remained of my fear.
+- I died {at}, and wanted our lost immortality with a bitterness I had not expected.
+- [lava] Fire killed me {at}. My people's oldest terror had become mine in a single moment.
+- [nature] I died {at}, with no comfort in knowing that I belonged to the world that had taken me.
+- [foe] {foe} killed me {at}, and all the patience of our people could not soften my own wish to remain.
+- I died {at}, without the stillness of a moonwell or the shelter of a familiar tree to ease the thought.
