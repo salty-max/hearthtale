@@ -21,6 +21,6 @@ kind: farewell
 - [class:HUNTER !low] The wild has kept the last of {name}'s tracks.
 - [class:ROGUE] {name} has slipped beyond anyone's reach at last.
 - [class:PRIEST] May {name} find a gentler answer beyond the last prayer.
-- [class:SHAMAN] The spirits carry {name} now.
+- [class:SHAMAN] May the ancestors welcome {name} beyond the last struggle.
 - [class:WARLOCK] {name} bound demons, but could not bind death.
 - [class:DRUID] {name} has gone back to the wild.
