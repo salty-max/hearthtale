@@ -4,7 +4,7 @@ kind: r-company
 - someone to grumble at besides myself
 - [one] a companion worth having on the far side of the mountain
 - the country no longer mine to face alone
-- less of the distance left to my own stubbornness
+- company I would gladly have bought a round for
 - almost as heartening as a name from Ironforge
 - [one] two of us to hold the ground
 - [night one] a second pair of eyes welcome after dark

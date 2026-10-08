@@ -4,9 +4,9 @@ kind: opening
 - I began again {at}, with the obstinacy that had kept our people building after Gnomeregan.
 - I took up the road {at}, my enthusiasm intact despite the absence of anything resembling a plan.
 - I set out {at}, still possessed of a gnome's unfortunate interest in things that might explode.
-- I set off again {at}, too stubborn to let a good question go.
+- I set off again {at}, with three contraptions half-designed in my head and no tools to build them.
 - I made ready {at}, thinking how many of us now had to call the road home.
-- I went on {at}, still measuring every new place against the halls of Gnomeregan.
-- I set out {at}, with no workshop to retreat to since Gnomeregan, and the whole world to poke at instead.
+- I went on {at}, already redesigning half of what I saw.
+- I set out {at}, with no workshop to retreat to, and the whole world to poke at instead.
 - I took up the road again {at}, with a lively suspicion that trouble had not finished with me.
 - I set out {at}, feeling a little like a machine put back together with one screw left over.

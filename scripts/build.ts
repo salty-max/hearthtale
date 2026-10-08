@@ -109,7 +109,7 @@ const KINDS: Record<string, string[]> = {
   // errands one after another: the ender of the first gives the second
   "c-chain": ["giver", "via", "ender"],
   // a quest's things taken from the creatures they drop from: the hunt ({item}: their name alone)
-  "c-hunt": ["prey", "n", "thing", "item", "giver"],
+  "c-hunt": ["prey", "n", "thing", "item", "giver", "pet"],
   // a deed (its clause, {deed}) with the creatures killed on the way, no quest's
   "c-while": ["prey", "deed"],
   "c-deliver": ["thing", "ender", "giver"],
@@ -123,7 +123,7 @@ const KINDS: Record<string, string[]> = {
   "c-report": ["ender"],
   "c-wear-found": [],
   "c-raid": ["n"],
-  "c-fold": ["n"],
+  "c-fold": ["n", "giver"],
   "c-made": ["things"],
   "pvp-one": ["name", "who", "at", "in"],
   "pvp-many": ["n", "side", "at", "in"],
@@ -143,7 +143,7 @@ const TAGS = ["home", "ally", "foe", "neutral", "night", "hc", "high", "low", "f
   "scarlet", "undead", "demon", "elemental", "dragonkin", "spider",
   "stone", "egg", "feather", "hide", "paper", "plant", "relic", "remains", "teeth", "mechanical", "cloth", "meat", "explore", "escort", "new", "made", "form", "demon", "steed",
   "looted", "handed", "complex", "state", "ofprey", "summon", "also", "tried", "pet", "fire", "frost", "arcane", "shadow", "curse", "holy", "lightning", "wrath", "steel", "arrow", "imp", "voidwalker", "succubus", "felhunter", "felguard",
-  "bear", "cat", "travel", "aquatic", "moonkin", "tree", "flight"];
+  "bear", "cat", "travel", "aquatic", "moonkin", "tree", "flight", "deliveries", "lone", "set"];
 const RACES = ["Human", "Dwarf", "NightElf", "Gnome", "Orc", "Troll", "Tauren", "Scourge", "Skyborne"];
 const ROUTINE = new Set("deed-kill deed-item deed-task deed-word chain deliver report first gear trainer inn travel return place group skill prof handed-kill handed-item".split(" ").map((kind) => `c-${kind}`));
 // The recap's kinds: one sentence of the recap holds a thought, the others are plain.

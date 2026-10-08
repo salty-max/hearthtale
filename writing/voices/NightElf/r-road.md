@@ -4,10 +4,10 @@ kind: r-road
 - my footing easier on the familiar paths beneath Teldrassil
 - a forest's child before I was a traveller
 - [!back] the path home still dear to me in unfamiliar country
-- [!back] wary of trusting the place as easily as a moonwell
+- [!back] reading the land as a druid reads a sickened grove
 - [!back] my reserve a poor disguise for being a stranger
 - [!back night] the night familiar in a country I did not know
 - [back] the familiar path dearer to me than the speed of returning
 - [back] the way acquiring some welcome familiarity
 - [back] rather glad not to begin as a stranger again
-- [high] the roads of this world beginning to feel almost like old paths
+- [high] this land as familiar to me now as the paths of Teldrassil

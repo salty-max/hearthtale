@@ -5,7 +5,7 @@ kind: r-first
 - my grin covering some honest unease
 - my heart faster than a village drum
 - too fond of my hide to ask for a closer introduction
-- keeping the introduction short
+- a creature the witch doctors would have had a name and a charm for
 - [teeth] those teeth quite sufficient to discourage a brave grin
 - [night] my ears looking for what my eyes could not find
 - [low] new enough to this to wish an elder had come along
@@ -16,4 +16,4 @@ kind: r-first
 - the loa probably laughing at my surprise
 - [teeth] my fingers in no need of an intimate introduction
 - [night] my eyesight a poor substitute for knowing what the dark held
-- [low] still learning what an eager Darkspear could afford to meet
+- [low] still learning which fights to walk away from, as the old hunters teach their young

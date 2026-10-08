@@ -8,7 +8,7 @@ kind: r-lesson
 - my patience taking as much exercise as my hands
 - stubborn about learning what would not come easily
 - [new] an apprentice again, with no masterwork to hide behind
-- [new] a new knack to put my stubbornness into
+- [new] a new trade for hands raised near the Great Forge
 - [low] still far from anything I would call mastery
 - [high] another skill to bring back under the mountain
 - [!one] a few more tools in the kit, and I like tools

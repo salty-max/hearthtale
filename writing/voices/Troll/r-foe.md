@@ -3,14 +3,14 @@ kind: r-foe
 ---
 - [one] not an acquaintance I wanted to renew
 - my heart keeping a quicker rhythm than I cared to dance to
-- a Darkspear in no further need of the loa's attention
+- the loa's attention not needed, this time
 - too fond of my hide to end up as a warning in somebody else's story
 - my grin slower to return than my breath
 - [one] an enemy I would not want following me to the islands
-- [!one] their number enough to wear my patience thin
+- [!one] more of them than a raptor pack, and less polite
 - [teeth] those teeth nothing I wanted nearer my own hide
-- [mechanical] without its maker's fondness for a machine's persistence
-- [night] my ears doing the work my eyes could not
+- [mechanical] no spirit inside for any loa to claim
+- [night] the dark no stranger to me since the jungle
 - [hc] remembering how few of us the Darkspear could spare
 - [low] still too eager to look fearless for my own comfort
 - [high] less quick to let excitement lead my hands

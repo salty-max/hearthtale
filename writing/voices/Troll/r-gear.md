@@ -7,10 +7,10 @@ kind: r-gear
 - [!made] a burden I hoped would earn its place on my back
 - [made] my fingers put to a peaceful use
 - [made] as welcome as a hunt that brought everyone home
-- [made] shaped with patience and a little stubbornness
+- [made] good enough work that I almost trusted it without a charm
 - [!made] a piece whose next test I could happily postpone
 - [!made] the old piece losing its charm now I had a choice
-- [!made hc] unwilling to make a final test of Darkspear resilience
+- [!made hc] better protection than a troll's quick healing, which only goes so far
 - [made] rather proud of what a little patience could produce
 - [made] good enough to show off at Sen'jin Village
-- [made] something the Darkspear could have a use for
+- [made] as patient a piece of work as any island net-mender's

@@ -4,8 +4,8 @@ kind: r-item
 - [client:forever] a search whose details kept me close to the ground
 - [client:forever] learning how heavy useful things can be
 - [client:forever] my interest in the search thoroughly satisfied
-- [client:forever !one !plural] a count I had no wish to see grow larger
-- [client:forever !one !plural] each piece checked twice before I left
+- [client:forever !one !plural !set] a count I had no wish to see grow larger
+- [client:forever !one !plural] each piece weighed in my hand like ballast
 - [client:forever one !plural] a find I would rather have sought from above
 - [client:forever one !plural] keen to let someone else call it a treasure
 - [client:forever meat] a promising addition to supper despite the carrying

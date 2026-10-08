@@ -1,7 +1,7 @@
 ---
 kind: kin
 ---
-- We were both gnomes away from home; Gnomeregan had scattered us further than any invention of ours.
+- We were both gnomes a long way from home, flung further by the evacuation than any invention of ours could manage.
 - Another gnome was making a life outside Gnomeregan, and I felt less alone for knowing the name.
 - It was good to work with another of our scattered people, without having to explain what we had lost.
 - We were both gnomes, with a ruined city behind us and useful work still to do together.

@@ -1,11 +1,11 @@
 ---
 kind: r-item
 ---
-- [!one !plural] enough to fill every pocket I had sewn in
+- [!one !plural] sorted by size, the way a tinker sorts screws
 - [!one !plural] each piece checked off against a list in my head
 - [!one !plural] a carrying problem worthy of gnomish invention
-- [one !plural] awkward to carry, and I tried three ways before one worked
-- [one !plural] small in my hands and worth the bother
+- [one !plural] examined from every angle before it went into my pack
+- [one !plural] sized for once to hands like mine
 - [one !plural] my fingers happy to be holding something other than a weapon
 - [meat] the smell making a persuasive case for sealed containers
 - [meat] a gnome suddenly interested in refrigeration

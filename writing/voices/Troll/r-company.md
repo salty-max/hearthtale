@@ -3,9 +3,9 @@ kind: r-company
 ---
 - nearer to the warmth of the village fires at Sen'jin
 - the watch easier to share, as it always is among my people
-- the road friendlier for the company
+- company the way the tribe keeps it, loud and close
 - a laugh shared being worth two kept
-- [one] another life worth keeping safe out here
+- [one] one more life to look after, as Vol'jin looks after ours
 - [night] the dark easier with someone to trade jokes with
 - [hc] unwilling to lose someone the tribe might have welcomed
 - a familiar shore no longer my only comfort

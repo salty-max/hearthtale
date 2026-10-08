@@ -2,15 +2,15 @@
 kind: r-company
 ---
 - [one] the pair of us a less inviting target
-- my company accepted, oddities and all
-- more eyes looking out for trouble than I could manage alone
+- my company accepted, even my talk of sprockets
+- a better lookout than any contraption I could have built
 - my courage no longer doing all the lifting
 - company, which a refugee learns to value
-- [one] the kind of company our scattered people learned to treasure
+- [one] a companion as steady as a well-balanced flywheel
 - company for my inconvenient enthusiasms
 - [night one] a little less alone beneath that enormous dark
 - [hc] more of us for trouble to find, and more of us to answer
 - [hc] unwilling to lose another person I knew
-- a welcome I had not had to earn
+- a welcome as warm as Ironforge gave my people after the fall
 - [one] an extra pair of eyes, at a more useful height than mine
 - [night] some company to keep the dark from claiming all my attention

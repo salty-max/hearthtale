@@ -208,8 +208,10 @@ local AGAIN_DROPS = {
   ["c-handed-item"] = true,
   ["c-chain"] = true,
   ["c-hunt"] = true,
+  ["c-fold"] = true,
 }
 local AGAIN = { ["c-report"] = true, ["c-deliver"] = true, ["c-deed-word"] = true, ["c-quest"] = true }
+local SINGULAR_S = W.SINGULAR_S
 local Book = {}
 Book.__index = Book
 
@@ -812,7 +814,7 @@ function Book:deed(m, key, tags)
     local people = foeOf(o.name, self.creatureKinds[o.name])
     if people then tags[people] = true end
     -- how I fought them: my way of fighting (fire, steel...), a spell just
-    -- learned, the pet at my side; favoured every other time
+    -- learned, the pet at my side; favoured one time in three
     for e in pairs(self.fighting) do
       tags[e] = true
     end
@@ -822,7 +824,7 @@ function Book:deed(m, key, tags)
       self.fresh = nil
     elseif tags.petName and hash(self.seed .. "|pet|" .. key) % 3 == 0 then
       prefer = { pet = true }
-    elseif hash(self.seed .. "|fight|" .. key) % 2 == 0 then
+    elseif hash(self.seed .. "|fight|" .. key) % 3 == 0 then
       prefer = self.fighting
     end
     values.pet = tags.petName
@@ -849,6 +851,9 @@ function Book:deed(m, key, tags)
     local last = carried[o.name]
     -- ("it" for one thing; "Scarlet Crusade Documents" are "the documents")
     local many = o.name:find("[^s's]s$") and not o.name:find("'s ")
+    -- ("Ahanu's Leather Goods were in Tal's hands", not "was")
+    local noun = (o.name:match("^(.-) of ") or o.name):match("(%a+)$") or ""
+    tags.plural = noun:find("[^s]s$") and not SINGULAR_S[noun] or nil
     if last and (self.told or 0) - last <= 1 and not many then
       tags.onward = true
     elseif last then
@@ -878,9 +883,17 @@ function Book:deed(m, key, tags)
     if count > 1 and last and last.name == o.name and (self.told or 0) - last.told <= 1 then tags.more = true end
     self.lastThing = { name = o.name, told = self.told or 0 }
     tags.one = count == 1 or nil
-    -- one thing with a plural name ("Sea Creature Bones"): not "it"
+    -- several things, one of each ("Sleepers' Key, a Claw Key and a Barrow
+    -- Key"): not "all the …", nor "so many"
+    local single = #all > 1
+    for _, f in ipairs(all) do
+      if (f.n or 1) > 1 then single = false end
+    end
+    tags.set = single or nil
+    -- one thing with a plural name ("Sea Creature Bones", "MacGrann's Dried
+    -- Meats"): not "it"
     local head = (o.name:match("^(.-) of ") or o.name):match("(%a+)$") or ""
-    tags.plural = count == 1 and head:find("[^s']s$") and not o.name:find("'s ") or nil
+    tags.plural = count == 1 and head:find("[^s']s$") and not SINGULAR_S[head] or nil
     tags.trophy = TROPHY[o.name:match("^(%a+) of ") or ""] or nil
     tags.cloth = o.name:match("Cloth$") or o.name:match("Silk$") or o.name:match("Wool$") or nil
     tags.meat = o.name:match("Meat$") or nil -- uncounted: "it"
@@ -897,14 +910,106 @@ function Book:deed(m, key, tags)
         table.insert(names, (f.n or 1) > 1 and things(f.name) or f.name)
       end
       hunt.item = listing(names)
-      if not hunt.item:find("^[^,]-'s ") then hunt.item = "the " .. hunt.item end
+      if not hunt.item:find("^[^,]-'s ") then
+        -- (its own article goes: "the Mysterious Message", not "the A …")
+        hunt.item = "the " .. (hunt.item:match("^An? (.+)$") or hunt.item:match("^The (.+)$") or hunt.item)
+      end
       if owner and m.giver:find(owner, 1, true) == 1 then hunt.item = list[1] end
       -- (a thing named for the creature it comes from: "the Scale of Old
       -- Murk-Eye" is not taken "from Old Murk-Eye" as well)
+      local whose = o.name:match("^(.-)'s ") or o.name:match("^(.-s)' ")
       for name in tags.prey:gmatch("%u[%w' -]+%w") do
         if o.name:find(name, 1, true) then tags.ofprey = true end
+        -- ("Hezrul Bloodmark" for "Hezrul's Head"; "Baron Longshores", a
+        -- creature with a name of its own killed twice, for "Baron
+        -- Longshore's Head": one Baron Longshore)
+        if whose and ((" " .. name .. " "):find(" " .. whose .. " ", 1, true) or name == whose .. "s") then
+          tags.ofprey = true
+          -- (one creature by its own name, "Gregor Agamand", killed twice:
+          -- not "Gregor Agamands")
+          local one = name == whose .. "s" and whose
+          if not one and name:sub(1, #whose + 1) == whose .. " " and name:find("s$") then
+            for _, from in ipairs(ns.knowledge and ns.knowledge.drops[o.name] or {}) do
+              if from == name:sub(1, -2) then one = from end
+            end
+          end
+          local at = one and hunt.prey:find(name, 1, true)
+          if at then
+            hunt.prey = hunt.prey:sub(1, at - 1) .. one .. hunt.prey:sub(at + #name)
+            if hunt.prey == one then tags.lone = true end
+          end
+        end
       end
-      done, said = self:say("c-hunt", key, hunt, tags, nil, true)
+      -- ("hunted Athrikus Narassin for Athrikus Narassin's Head": "for the
+      -- head", the creature named once)
+      local short = tags.ofprey
+        and #all == 1
+        and (o.n or 1) == 1
+        and (o.name:match("'s (.+)$") or o.name:match("s' (.+)$") or o.name:match("^(.-) of "))
+      if short then
+        hunt.thing, hunt.item, hunt.n = "the " .. short:lower(), "the " .. short:lower(), ""
+      end
+      -- ("Durotar Tigers for Durotar Tiger Furs", "Tunnel Rat Ears from Tunnel
+      -- Rat Vermin": "for a handful of furs", "ears")
+      local part
+      if #all == 1 and not short then
+        local words = {}
+        for w in o.name:gmatch("%S+") do
+          table.insert(words, w)
+        end
+        for name in tags.prey:gmatch("%u[%w' -]+%w") do
+          local k, same = 0, true
+          for w in name:gmatch("%S+") do
+            local one = (w:gsub("ies$", "y"):gsub("ves$", "f"):gsub("s$", ""))
+            if same and (w == words[k + 1] or one == words[k + 1]) then
+              k = k + 1
+            else
+              same = false
+            end
+          end
+          if k >= 1 and k == #words - 1 and words[#words]:find("^%u%l+$") and not part then
+            part = (o.n or 1) > 1 and things(words[#words]):lower() or words[#words]:lower()
+          end
+        end
+      end
+      -- ("Kuz's Skull, Nak's Skull and Lok's Skull" from Kuz, Nak and Lok
+      -- Orcbane: "their skulls")
+      if #all > 1 then
+        local same, piece = true, nil
+        for _, f in ipairs(all) do
+          local whom, thing = f.name:match("^(.-)'s (%a+)$")
+          if
+            not whom
+            or (piece and thing ~= piece)
+            or not (" " .. tags.prey .. " "):find("[ ,]" .. whom:gsub("%p", "%%%0") .. "[ ,]")
+          then
+            same = false
+          end
+          piece = piece or thing
+        end
+        if same and piece then
+          local parts = (piece:find("s$") and piece or things(piece)):lower()
+          tags.ofprey, hunt.thing, hunt.item, hunt.n = true, "their " .. parts, "the " .. parts, ""
+        end
+      end
+      if part then
+        tags.ofprey = true
+        hunt.thing, hunt.item = (o.n or 1) > 1 and part or article(part), "the " .. part
+      end
+      -- how I hunted them: my way of fighting, the pet at my side, favoured
+      -- one time in three ("hunted" alone, hunt after hunt, wears thin)
+      for e in pairs(self.fighting) do
+        tags[e] = true
+      end
+      hunt.pet = tags.petName
+      tags.pet = hunt.pet and true or nil
+      local prefer
+      if tags.pet and hash(self.seed .. "|pet|" .. key) % 3 == 0 then
+        prefer = { pet = true }
+      elseif hash(self.seed .. "|fight|" .. key) % 3 == 0 then
+        prefer = self.fighting
+      end
+      done, said = self:say("c-hunt", key, hunt, tags, prefer, true)
     end
     if not done and tags.handed and not tags.more and not tags.trophy then
       local handed = { n = values.n, thing = values.thing, giver = m.ender or m.giver }

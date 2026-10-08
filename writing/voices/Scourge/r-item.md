@@ -3,10 +3,10 @@ kind: r-item
 ---
 - the patience of someone in no hurry to grow old
 - a burden whose uses I could leave to the Apothecarium
-- rather grateful not to need a deep breath over the business
+- [remains] rather grateful not to need a deep breath over the business
 - [!one !plural] a collection I felt no particular urge to keep
 - [!one !plural] each piece an argument for someone else doing the carrying
-- [one !plural] small, and handled with fingers that no longer feel much
+- [one !plural] handled with fingers that no longer feel much
 - [one !plural] rather attached to getting it out of my hands
 - [meat] food for someone with more demanding insides
 - [cloth] the cloth offering a decent covering for decay

@@ -10,7 +10,7 @@ local _, ns = ...
 local W = ns.writer
 local words, listing, mid, objectiveOf, capitalise = W.words, W.listing, W.mid, W.objectiveOf, W.capitalise
 local instruction, linked, hash, plural, article = W.instruction, W.linked, W.hash, W.plural, W.article
-local HOSTS, TAKEN_IN = W.HOSTS, W.TAKEN_IN
+local HOSTS, TAKEN_IN, TITLES = W.HOSTS, W.TAKEN_IN, W.TITLES
 
 local Scene = {}
 Scene.__index = Scene
@@ -521,13 +521,16 @@ function Scene:takePrey(m, only)
   -- kind: Ragged Young Wolves and a Ragged Timber Wolf are wolves, named by
   -- the one killed most)
   local groups, order, total = {}, {}, 0
+  -- (a creature with a name of its own, "Gregor Agamand", is no variant of
+  -- "Nissa Agamand", and one of it killed twice is still one)
+  local bare = ns.names and ns.names.creatureBare or {}
   for _, k in ipairs(prey) do
     if only and not only[k.name] then
       table.insert(rest, k)
     elseif (m.at or 0) - (k.at or 0) <= PREY_TIME and not asked[k.name] and not self.toldFoes[k.name] then
       local n = (self.ch.kills or {})[k.name] or 1
       total = total + n
-      local head = (k.name:match("(%a+)$") or k.name) .. "|" .. (k.kind or "")
+      local head = bare[k.name] and k.name or (k.name:match("(%a+)$") or k.name) .. "|" .. (k.kind or "")
       local g = groups[head]
       if not g then
         g = { n = 0, most = 0 }
@@ -543,7 +546,12 @@ function Scene:takePrey(m, only)
   self.prey = rest
   local names = {}
   for _, g in ipairs(order) do
-    if g.n > 1 then
+    -- (a creature with a name and a title of its own, killed twice, is still
+    -- one: "Prospector Khazgorm", not "Prospector Khazgorms")
+    g.one = bare[g.name] or TITLES[g.name:match("^(%a+) ") or ""]
+    if g.one then
+      table.insert(names, g.name)
+    elseif g.n > 1 then
       local size = b:size(g.n, self.key .. "|" .. g.name, false, g.kind == "Wolf")
       table.insert(names, (size ~= "" and size .. " " or "") .. plural(g.name))
     else
@@ -551,7 +559,28 @@ function Scene:takePrey(m, only)
     end
   end
   if #names == 0 then return nil end
-  return listing(names), total == 1
+  return listing(names), total == 1 or (#order == 1 and order[1].one and true)
+end
+
+-- Every thing this work asks for drops from a creature killed on the way,
+-- or the hunt would have the Okra drop from the Fleshrippers (the creatures
+-- then fought between finds: "c-while").
+function Scene:huntsAll(m)
+  if self.preyPlace ~= self.place then return false end
+  local drops, killed = ns.knowledge and ns.knowledge.drops or {}, {}
+  for _, k in ipairs(self.prey) do
+    killed[k.name] = true
+  end
+  for _, o in ipairs(m.objectives or {}) do
+    if o.type == "item" and o.name then
+      local any = false
+      for _, name in ipairs(drops[o.name] or {}) do
+        if killed[name] then any = true end
+      end
+      if not any then return false end
+    end
+  end
+  return true
 end
 
 -- The creatures this work's things drop from (Knowledge.lua), as a set; nil
@@ -606,7 +635,10 @@ function Scene:deedPart(m, part, i, n, t)
   tags.quiet = i < n or nil
   -- (the creatures its things drop from, killed on the way: the hunt for them)
   local from = i == 1 and sources(part)
-  if from then tags.prey = self:takePrey(m, from) end
+  if from and self:huntsAll(part) then
+    tags.prey, tags.lone = self:takePrey(m, from)
+    tags.lone = tags.lone or nil -- (one creature: no "until I had")
+  end
   local text, said = b:deed(part, self.key, tags)
   local prey, one
   if i == 1 and text and WORK[said.kind] and not said.turn and not said.state then
@@ -757,9 +789,9 @@ end
 -- A run of quests one after another, nothing of note between them (a
 -- lesson, a kill, a level, a new piece of gear may come between): ERRANDS of
 -- them or more open with what they are ("There were smaller jobs after
--- that…"), once a chapter. errandsFrom: the run's first moment. A class's
--- own quest is no errand.
-local ERRANDS = 4
+-- that…"), once in ERRANDS_GAP chapters (each chapter has its run).
+-- errandsFrom: the run's first moment. A class's own quest is no errand.
+local ERRANDS, ERRANDS_GAP = 4, 3
 local FILLER = {
   level = true,
   kill = true,
@@ -773,6 +805,8 @@ local FILLER = {
   inn = true,
 }
 function Scene:findErrands()
+  local b = self.book
+  if b.errandsAt and b.chapterNo - b.errandsAt < ERRANDS_GAP then return end
   local log, class, known = self.ch.log or {}, self.c.class, ns.knowledge and ns.knowledge.quests or {}
   local from, quests, n = nil, {}, 0
   for i, m in ipairs(log) do
@@ -797,7 +831,10 @@ function Scene:findErrands()
 end
 
 -- The run of errands, opened.
-function Scene:errands() self:alone("errands", {}, self:tags(nil, self.m)) end
+function Scene:errands()
+  self.book.errandsAt = self.book.chapterNo
+  self:alone("errands", {}, self:tags(nil, self.m))
+end
 
 -- ── who I am among others ─────────────────────────────────────────────────────
 -- After a moment told: the people its sentences named (Book:say keeps them
@@ -867,7 +904,16 @@ function Scene:fold()
       if m.k == "gear" then
         folded.gear = folded.gear + 1
       else
-        folded.errands = folded.errands + 1
+        -- what the errands were (all deliveries?) and who the last was for:
+        -- "made three more deliveries", "did Kurdram one more favour"
+        local o = objectiveOf(m)
+        local sort = not m.told and o and o.type == "item" and o.held and "deliveries" or "requests"
+        if folded.errands == 0 then
+          folded.what = sort
+        elseif folded.what ~= sort then
+          folded.what = "requests"
+        end
+        folded.errands, folded.who = folded.errands + 1, m.ender or m.giver
       end
       folded.m, folded.key = m, self.key
     else
@@ -881,14 +927,21 @@ function Scene:fold()
 end
 
 -- The tally, told.
+-- (common gear changed along the way: told in a tally once in GEAR_FOLDS,
+-- or every chapter would end on "and changed some of my gear")
+local GEAR_FOLDS = 3
 function Scene:emitFold()
-  local folded = self.folded
+  local folded, book = self.folded, self.book
   if folded.errands + folded.gear == 0 then return end
-  local fm, fk = folded.m, folded.key
-  local t = { one = folded.errands == 1 or nil, gear = folded.gear > 0 or nil, onlygear = folded.errands == 0 or nil }
-  local n = folded.errands
-  folded.errands, folded.gear = 0, 0
-  local text, said = self.book:say("c-fold", fk, { n = words(n) }, self:tags(t, fm), nil, true)
+  local gear = folded.gear > 0 and (book.foldsSinceGear or GEAR_FOLDS) >= GEAR_FOLDS
+  book.foldsSinceGear = gear and 1 or (book.foldsSinceGear or GEAR_FOLDS) + 1
+  local fm, fk, n = folded.m, folded.key, folded.errands
+  local t = { one = n == 1 or nil, gear = gear or nil, onlygear = n == 0 or nil }
+  if n > 0 then t[folded.what] = true end
+  local values = { n = words(n), giver = folded.who }
+  folded.errands, folded.gear, folded.what, folded.who = 0, 0, nil, nil
+  if n == 0 and not gear then return end
+  local text, said = self.book:say("c-fold", fk, values, self:tags(t, fm), nil, true)
   self:clause(text, said, fm, fk)
 end
 

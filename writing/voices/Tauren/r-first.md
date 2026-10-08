@@ -5,7 +5,7 @@ kind: r-first
 - more watchful than a grazing kodo
 - keener to know the earth's children than to disturb them
 - not nearly as sheltered by my size as I wished
-- the quiet of Mulgore suddenly very precious
+- my hooves wanting very much to be back on open plains
 - [teeth] those jaws respected, as all the Earth Mother's hungry children deserve
 - [night] my eyesight less useful beneath Mu'sha's hours
 - rather slower to welcome a second encounter
@@ -13,4 +13,4 @@ kind: r-first
 - the old caution of the plains advising a respectful distance
 - my horns no reassurance against the danger
 - [night] the dark concealing the movement I needed to judge
-- [low] young enough to miss Mulgore's shelter
+- [low] young enough to wish for the shelter of Camp Narache

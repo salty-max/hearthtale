@@ -10,8 +10,8 @@ kind: r-gear
 - [made] a little piece of Gnomeregan's stubborn ingenuity
 - [made] nothing I would have been ashamed to bring to Tinker Town
 - [!made] weighing the comfort against the weight
-- [!made !held] stitched well enough to trust, which I checked twice
-- [!made] sturdy enough to survive my habit of getting into trouble
+- [!made !held] well enough made that I only took it apart in my head
+- [!made] sound enough to pass a High Tinker's inspection
 - [made] every seam and rivet of it my own doing
 - [made] a reminder that the troggs had not taken our skill away
 - [made] as satisfying as a gear slipping neatly into place

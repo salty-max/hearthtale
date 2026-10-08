@@ -178,7 +178,8 @@ const personNpc = (n: string) => {
   const plain = (w: string) => dictionary.has(w.toLowerCase().replace(/[^a-z]/g, ""));
   return personal(n) || !plain(last) || / the /.test(n) || allNames.has(first.toLowerCase())
     || (!plain(first) && (uses.get(first) ?? 0) <= 1) || (/^\S+ of /.test(n) && !plain(first))
-    || ((firsts.get(first) ?? 0) >= 3 && words.length > 1); // a title before a name
+    // a title before a name ("Farmer Ray"), not a state before a role ("Captured Mountaineer")
+    || ((firsts.get(first) ?? 0) >= 3 && words.length > 1 && !/^\w{3,}ed$/.test(first));
 };
 const npcThe = data.questNpcs.filter((n) => !/^(The |")/.test(n) && !creatureBare.includes(n) && !personNpc(n));
 const roles = new Set<string>();

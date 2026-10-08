@@ -4,9 +4,9 @@ kind: r-task
 - a job I would have cheerfully left to someone else
 - an evening by the hearth increasingly attractive
 - my willingness to oblige in need of a rest
-- my generous offer beginning to wear thin
+- the sort of favour a good neighbour does without counting
 - no prospect of a song, and little need of one
-- [explore] keeping the way back clear in my head
+- [explore] every turn noted, as a soldier of Stormwind would
 - [explore] a guard's company a comforting thing to imagine
 - [escort] unwilling to send someone home as bad news
 - [night] my eyes wanting the comfort of daylight
@@ -14,6 +14,6 @@ kind: r-task
 - less certain I would volunteer so quickly next time
 - a peaceful trade suddenly looking attractive
 - [explore] a neighbour's need for a safe path easier to understand
-- [explore] every thicket a place I would have warned a child away from
+- [explore] every thicket the sort that hides gnolls back in Elwynn
 - [escort] rather more frightened for another life than I had expected
 - [night] my eyes straining harder than my patience

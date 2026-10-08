@@ -2,15 +2,15 @@
 kind: r-item
 ---
 - the burden taking some pleasure out of being helpful
-- an errand's worth of ache for my trouble
-- someone waiting at the end who needed this
+- the sort of chore the Stormwind Guard gives to new recruits
+- honest work, the kind Elwynn's farmhands do without thanks
 - [!one !plural] counting each piece with more care than a tax collector
-- [!one !plural] each piece testing the generosity of my offer
-- [one !plural] tucked away where I would not have to find it twice
+- [!one !plural] counted twice, as any Elwynn farmer counts the harvest
+- [one !plural] tucked away where no Defias cutpurse would find it
 - [one !plural] the prize of the search safely in my keeping
 - [meat] the smell of an Elwynn kitchen coming fondly to mind
 - [cloth] wondering how many worn shirts a tailor could mend
-- [night] the darkness making a kitchen window's light sound very dear
+- [night] the darkness making a kitchen window's light seem very dear
 - [hc] rather unwilling to die over somebody else's missing things
 - my generous offer beginning to feel overgenerous
 - [!one !plural] counting them as carefully as the next week's bread money

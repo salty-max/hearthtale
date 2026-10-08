@@ -6,7 +6,7 @@ kind: night
 - [!last] I bedded down {at}, leaving the night's dreams to the ancestors.
 - [!last] I lay down {at}, and slept like a wolf after the hunt.
 - [!last] I slept lightly {at}, with the habits of a watchful people harder to put aside than my weariness.
-- [!last] I slept beneath the open sky {at}, missing Durotar without wanting to be shut away from the rest of the world.
+- [!last] I slept beneath the open sky {at}, with no wall of the camps between me and it.
 - [last] I settled outside {at}, with a free person's road waiting beyond the pause.
 - [last] I spent the night in the open {at}; Orgrimmar's walls would have been welcome, but I could bear this.
 - [last] I lay down {at}, with no shame in the exhaustion of honest effort.

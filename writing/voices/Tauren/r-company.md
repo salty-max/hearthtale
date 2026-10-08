@@ -1,9 +1,9 @@
 ---
 kind: r-company
 ---
-- the road kinder with others on it
+- the road shared, as my people shared it on the long migrations
 - [one] another life to hold as dear as my own
-- some of the closeness of home on an unfamiliar road
+- a little of Bloodhoof Village's warmth on a strange road
 - my patience finding company gentler than solitude
 - readier to trust than I could be alone
 - company as welcome as Cairne's shelter had been to our wanderers

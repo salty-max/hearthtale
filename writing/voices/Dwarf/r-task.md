@@ -1,7 +1,7 @@
 ---
 kind: r-task
 ---
-- the request wearing a little shine off my stubbornness
+- work as honest as a day at the anvil
 - already thirsty for something that was not another errand
 - rather aware of how far an obliging dwarf could be sent
 - my back wanting no further favours asked of it

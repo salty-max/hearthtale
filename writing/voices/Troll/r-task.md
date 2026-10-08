@@ -11,8 +11,8 @@ kind: r-task
 - [escort] unwilling to lead another life where my luck would not reach
 - [night] the dark keeping my vigilance usefully occupied
 - the next volunteer welcome to be somebody else
-- no appetite left for another voluntary errand
+- enough errands to keep a whole village in gossip
 - [explore] wondering how easily the way could hide a traveller
-- [explore] in no hurry to walk past a danger
+- [explore] watching the trees for headhunters, out of old island habit
 - [escort] another life making the task suddenly serious
 - [night] my eyes doing a poor imitation of a jungle cat's

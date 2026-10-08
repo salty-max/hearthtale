@@ -7,8 +7,8 @@ kind: r-task
 - an errand hardly worth constructing an automaton for
 - my ingenuity put to an unexpectedly ordinary use
 - a persistent little problem finally dealt with
-- small work, but useful to someone
-- [explore] my interest caught by every unfamiliar corner
+- small work, like an apprentice's first week in Tinker Town
+- [explore] mapping every corner in my head as I went
 - [explore] the route safely added to my store of useful knowledge
 - [escort] someone else's life in my small hands for once
 - [escort] my own safety suddenly sharing space with someone else's

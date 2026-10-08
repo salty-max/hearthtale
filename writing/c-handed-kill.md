@@ -27,10 +27,12 @@ kind: c-handed-kill
 - [arcane !one] battered {n} {foes} with raw magic for {giver}
 - [shadow !one] struck down {n} {foes} with shadow for {giver}
 - [curse !one] cursed {n} {foes} to their end for {giver}
-- [holy !one] smote {n} {foes} with the Light for {giver}
+- [holy !one] called on {faith} against {n} {foes} for {giver}
 - [lightning !one] called lightning down on {n} {foes} for {giver}
 - [wrath !one] turned the wild's wrath on {n} {foes} for {giver}
+- [wrath !one] let nature's anger loose on {n} {foes} for {giver}
 - [steel !one] took {weapon} to {n} {foes} for {giver}
+- [steel !one] cut down {n} {foes} with {weapon} for {giver}
 - [arrow !one] brought down {n} {foes} with {weapon} for {giver}
 - [tried !one] tried my new {spell} on {n} {foes} for {giver}
 - [pet !one] fought {n} {foes} for {giver} with {pet} at my side

@@ -2,11 +2,11 @@
 kind: opening
 ---
 - I took up the road {at}, grinning, with an eye on whatever might be grinning back.
-- I began again {at}, with a fairly unreasonable appetite for finding out and enough caution to survive it.
+- I began again {at}, thinking of the Echo Isles and the day we would take them back from Zalazane.
 - I set out {at}, still fond of a world that had driven my people from too many shores.
 - I went on {at}, trusting the loa to find the day as interesting as I did.
 - I set off {at}, with an island tune going round in my head.
-- I began this stretch {at}, wanting something good to bring home to the Darkspear.
+- I began this stretch {at}, light on my feet the way island sand teaches you to be.
 - I set out {at}, with a jungle-born wariness even where the jungle was only in my thoughts.
 - I returned to the road {at}, with the easy walk and the open eyes my people learned the hard way.
 - I set out {at}, with the concerns of Sen'jin's people keeping my own in good company.

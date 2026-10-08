@@ -6,7 +6,7 @@ kind: r-lesson
 - another way to be useful beyond the hunt
 - my patience having to do the work my size could not
 - no quicker to learn than a smaller pair of hands
-- [one] eager to give it some use among the people of Mulgore
+- [one] eager to put it to use for my tribe
 - [new] an apprentice's place no smaller for being unfamiliar
 - [new] a craft worth bringing home to Mulgore
 - [low] an apprentice accepting the help a new skill needed

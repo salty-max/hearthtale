@@ -1364,10 +1364,10 @@ for _, race in ipairs(RACES) do
 end
 
 -- Routine hand-ins past a scene's first two fold into one clause, told
--- once the place is left: every mix of errands and green gear, and nobody
--- from the folded ones named.
+-- once the place is left: every mix of errands and green gear, nothing from
+-- the folded ones named (who the last was for, at most).
 for _, race in ipairs(RACES) do
-  for seed = 1, 36 do
+  for seed = 1, 72 do
     local errands, gear = ({ 0, 1, 3 })[seed % 3 + 1], ({ 0, 1, 2 })[math.floor(seed / 3) % 3 + 1]
     local log, at = {}, 100
     local function add(m)
@@ -1378,7 +1378,7 @@ for _, race in ipairs(RACES) do
     local function deliver(ender, thing)
       add({ k = "quest", ender = ender, objectives = { { type = "item", name = thing, n = 1, held = true } } })
     end
-    deliver("High Executor Hadrec", "Sealed Report")
+    deliver("High Executor Hadrec", seed % 4 == 0 and "Scarlet Crusade Documents" or "Sealed Report")
     deliver("Magistrate Sevren", "Wiley's Note")
     for i = 1, errands do
       deliver("Folded Person " .. i, "Folded Thing " .. i)
@@ -1406,16 +1406,17 @@ for _, race in ipairs(RACES) do
     }
     local text = ns.writeBook(c).chapters[1].text
     inspect(race .. " fold", text)
-    if text:find("Folded") then problem(race .. " fold", "a folded hand-in named", text) end
-    if
-      errands + gear > 0
-      and not text:find("gear")
-      and not text:find("errand")
-      and not text:find("job")
-      and not text:find("task")
-    then
-      problem(race .. " fold", "folded hand-ins never told", text)
+    if text:find("Folded Thing") or text:find("Folded Gear") then
+      problem(race .. " fold", "a folded hand-in named", text)
     end
+    for i = 1, errands - 1 do
+      if text:find("Folded Person " .. i, 1, true) then problem(race .. " fold", "not the last named", text) end
+    end
+    local told = false
+    for _, w in ipairs({ "gear", "errand", "job", "task", "favour", "deliver", "request", "report", "thing", "chore" }) do
+      if text:find(w, 1, true) then told = true end
+    end
+    if errands + gear > 0 and not told then problem(race .. " fold", "folded hand-ins never told", text) end
   end
 end
 
@@ -1622,15 +1623,24 @@ for _, race in ipairs(RACES) do
       if land then
         chapter({ { k = "quest", giver = "Sten Stoutarm", zone = land, sub = land, objectives = { { type = "log" } } } })
       end
-      -- the hunt for a quest's things, from the creatures they drop from
-      for hunt = 1, 4 do
+      -- the hunt for a quest's things, from the creatures they drop from, in
+      -- my way of fighting (a new one, learned between lives), with my pet
+      local element = ({ MAGE = { "Frostbolt", "Arcane Missiles" }, WARLOCK = { "Corruption", "Curse of Agony" } })[class]
+      for hunt = 1, 8 do
         local meat = { { type = "item", name = "Tough Wolf Meat", n = 8 } }
+        local pet = (class == "HUNTER" or class == "WARLOCK") and hunt % 2 == 0 and "Grimtooth" or nil
         local log = {
           { k = "kill", name = "Ragged Young Wolf", kind = "Wolf" },
-          { k = "done", id = 179 + hunt, giver = "Sten Stoutarm", objectives = meat },
+          { k = "done", id = 179 + hunt, giver = "Sten Stoutarm", objectives = meat, pet = pet },
         }
+        if hunt % 4 ~= 0 and hunt ~= 5 then -- (more than one creature, hunted "until I had")
+          table.insert(log, 1, { k = "kill", name = "Ragged Timber Wolf", kind = "Wolf" })
+        end
+        if hunt == 1 and element and life > 1 then
+          table.insert(log, 1, { k = "learned", spells = { element[life - 1] } })
+        end
         if (life + hunt) % 2 == 0 then
-          log[3] = {
+          log[#log + 1] = {
             k = "quest",
             id = 179 + hunt,
             giver = "Sten Stoutarm",

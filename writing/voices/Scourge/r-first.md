@@ -3,8 +3,8 @@ kind: r-first
 ---
 - my absent pulse keeping my alarm conveniently private
 - my remains feeling inconveniently vulnerable
-- an unexpectedly fierce interest in escaping
-- new company even to someone the grave had failed to keep
+- a fear the Scourge had not managed to beat out of me
+- nothing the Plaguelands had prepared me for
 - [teeth] those teeth no less unwelcome for my flesh being spoiled
 - [night] the darkness no help with the awkward introduction
 - [mechanical] not the only thing here that moved without being alive
