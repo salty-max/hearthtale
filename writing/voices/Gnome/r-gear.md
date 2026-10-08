@@ -1,17 +1,17 @@
 ---
 kind: r-gear
 ---
-- [!made] more substantial than a confident explanation
-- [!made !held] hoping the size would spare me another battle with the fit
+- [!made] a useful safeguard against my own enthusiasm
+- [!made !held] a welcome addition to a refugee's belongings
 - [!made] something I would hate to leave for the troggs
-- [!made] hoping not to discover the weak point personally
+- [!made] no enthusiasm for discovering a weak point personally
 - [!made hc] not eager to test the protection to destruction
-- [made] my small hands capable of more than their size suggested
+- [made] our city's ingenuity still alive in the result
 - [made] a little piece of Gnomeregan's stubborn ingenuity
 - [made] nothing I would have been ashamed to bring to Tinker Town
 - [!made] weighing the comfort against the weight
-- [!made !held] hoping to spend less time wrestling with my own equipment
-- [!made] a welcome bit of sturdiness for such a small owner
+- [!made !held] a gnome with something dependable to rely on
+- [!made] a sturdy bit of reassurance against the world's hazards
 - [made] my fingers responsible for every bit of the result
 - [made] a reminder that the troggs had not taken our skill away
 - [made] as satisfying as a gear slipping neatly into place

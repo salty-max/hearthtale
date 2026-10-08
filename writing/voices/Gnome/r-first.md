@@ -1,15 +1,15 @@
 ---
 kind: r-first
 ---
-- my height suddenly feeling rather relevant
-- my small body offering too many convenient targets
+- my enthusiasm losing a little steam
+- a gnome's ingenuity suddenly feeling uncomfortably theoretical
 - [teeth] those teeth much too close to the height of my face
 - [teeth] my fingers decidedly fond of remaining attached
 - [mechanical] uncomfortably reminded that machines need not like their makers
-- [mechanical] wishing the builder had included a friendlier setting
+- [mechanical] a friendly setting apparently absent from the design
 - my stomach behaving like a loose cog
-- [low] rather too new to this for so small a margin
-- [night] less eager to discover what moved beyond sight
-- my feet keener to retreat than the rest of me
-- my gnomish pride taking up more room than I did
+- [low] a beginner's confidence rattling loose
+- [night] the unseen parts of this encounter troubling me
+- a retreat beginning to look like an excellent invention
+- my pride bristling at the prospect of being an easy meal
 - my heart doing its best impression of an engine

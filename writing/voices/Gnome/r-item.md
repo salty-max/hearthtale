@@ -1,17 +1,17 @@
 ---
 kind: r-item
 ---
-- [!one !plural] my small hands quite full by the end
-- [!one !plural] each piece another burden my legs had not volunteered for
-- [!one !plural] wishing gnomish pockets came with dwarven capacity
-- [one !plural] wondering how much of my carrying strength this would claim
-- [one !plural] hoping the search would earn my feet a rest
+- [!one !plural] enough to keep a gnome's pockets busy
+- [!one !plural] each piece another part of the search accounted for
+- [!one !plural] a carrying problem worthy of gnomish invention
+- [one !plural] the awkwardness of the cargo occupying my ingenuity
+- [one !plural] a useful result to show for the search
 - [one !plural] my fingers happy to be holding something other than a weapon
-- [meat] rather closer to the smell than a taller person would have been
-- [meat] hoping nobody expected a gnome to carry a kodo's supper
-- [night] my eyes wishing for a less enormous patch of darkness
-- [night] rather too near the ground to enjoy searching blindly
-- my small hands earning their keep
+- [meat] the smell making a persuasive case for sealed containers
+- [meat] a gnome suddenly interested in refrigeration
+- [night] my eyes struggling with the search in the dark
+- [night] the dark frustrating every attempt to be methodical
+- a little order salvaged from the rummaging
 - [one !plural] rather more cargo than ornament
-- [paper one !plural] hoping the writing would be easier to decipher than the search
-- [stone one !plural] my shoulders unimpressed by a stone's usefulness
+- [paper one !plural] the writing presenting its own puzzle
+- [stone one !plural] a mineral with no consideration for the person carrying it

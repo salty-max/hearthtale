@@ -1,12 +1,12 @@
 ---
 kind: opening
 ---
-- I began again {at}, with a gnome's share of the road ahead and a gnome's legs to cover it.
-- I took up the road {at}, hoping to remain the smallest trouble I met.
-- The world had not shrunk while I was away, so I set out {at} to make the best of my own proportions.
-- I set off again {at}, more stubborn than a seized gear and rather easier to carry.
+- I began again {at}, with the obstinacy that had kept our people building after Gnomeregan.
+- I took up the road {at}, my enthusiasm intact despite the absence of anything resembling a plan.
+- I set out {at}, still possessed of a gnome's unfortunate interest in things that might explode.
+- I set off again {at}, as stubborn as a seized gear when something caught my interest.
 - I made ready {at}, thinking how many of us now had to call the road home.
 - I went on {at}, with the name of Gnomeregan still large enough to fill the empty spaces.
-- There were taller people to do this, but I was the gnome who was here, and I set out {at}.
-- I took up the road again {at}, ready to give my short legs another unreasonable assignment.
+- I set out {at}, a gnome with no workshop to retreat to when the world grew difficult.
+- I took up the road again {at}, with a lively suspicion that trouble had not finished with me.
 - I set out {at}, feeling a little like a machine put back together with one screw left over.

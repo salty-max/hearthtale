@@ -1,7 +1,7 @@
 ---
 kind: beginning
 ---
-- I began {at}, a refugee from Gnomeregan and considerably nearer to the ground than most adventurers.
+- I began {at}, one of Gnomeregan's scattered people with a useful pair of hands and an uncertain future.
 - I set out {at}, determined to give the name of gnome something to stand for besides refugee.
-- I set out {at}, with short legs, a stubborn heart and no wish to spend my whole life waiting for Gnomeregan back.
-- I began {at}, hoping the world had room for one more gnome; I did not require much.
+- I set out {at}, with a stubborn heart and no wish to spend my whole life waiting for Gnomeregan back.
+- I began {at}, taking some comfort in the ingenuity that had survived the loss of our city.

@@ -1,19 +1,19 @@
 ---
 kind: r-lesson
 ---
-- my small hands eager to catch up
-- hoping the danger would remain on the far end of the lesson
-- more accustomed to gears than to this sort of difficulty
-- less comfortable as an apprentice than I would have admitted in Tinker Town
+- a new knack to keep my ingenuity occupied
+- the dangerous possibilities already quite apparent
+- an unfamiliar difficulty without a gear I could inspect
+- a gnome's pride taking an apprentice's knocks
 - [one] wondering how much trouble I could get into with this
 - [!one] wondering how much trouble these could keep me out of
-- [one] my fingers wanting a turn at the difficult part
-- [!one] my small hands facing rather large demands
-- [new] a beginner again, which was less comfortable than a familiar tool
+- [one] a promising difficulty for my fingers
+- [!one] some demanding additions to a gnome's repertoire
+- [new] a beginner's awkwardness taking the shine off my enthusiasm
 - [new] a new way for a gnome to be useful beyond Tinker Town
-- [new] not yet sure which part would make my fingers ache
-- [low] more at home with a clattering mechanism than with an unfamiliar knack
-- [low] my fingers still wanting gears they could actually see
-- [high] less dependent on anyone taking pity on my size
-- [high] another way to be more trouble than I looked
-- hoping my fingers would remember when my heart began to race
+- [new] the knack still full of unfamiliar demands
+- [low] a beginner missing the reassuring clatter of machinery
+- [low] my fingers seeking gears they could actually see
+- [high] a useful addition to the ingenuity I had survived on
+- [high] my confidence acquiring some practical support
+- a knack to remember when trouble set my heart racing

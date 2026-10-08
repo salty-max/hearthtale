@@ -2,15 +2,15 @@
 kind: r-company
 ---
 - [one] the pair of us a less inviting target
-- my small place in the company feeling worth a little more
-- less likely to disappear unnoticed behind an enemy
+- my company welcome without a demonstration of what I could build
+- a gnome with someone to notice if I went missing
 - my courage no longer doing all the lifting
-- another name I hoped would not join the missing
-- more willing to venture beyond the shelter of Tinker Town
-- my short stride no longer feeling quite so lonely
+- another name to hold apart from Gnomeregan's missing
+- a welcome companion in the life our scattered people were making
+- some company for a gnome's inconvenient enthusiasms
 - [night one] a little less alone beneath that enormous dark
 - [hc] more of us for trouble to find, and more of us to answer
 - [hc] unwilling to lose another person I knew
-- less conscious of how little space I occupied
+- a gnome with a place among the others
 - my heart running at a more comfortable speed
-- [night] less tempted to hurry through the dark on my own
+- [night] some company to keep the dark from claiming all my attention

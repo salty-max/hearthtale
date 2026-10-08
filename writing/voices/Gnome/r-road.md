@@ -2,17 +2,17 @@
 kind: r-road
 ---
 - my short legs making a long road of it
-- wishing the distance had been designed by a gnome
-- [!back] hoping to find something that did not require standing on tiptoe
+- a distance crying out for a decent transport system
+- [!back] a new place to test a refugee's resourcefulness
 - [!back] rather fond of the close-packed comfort of Tinker Town
-- [!back] my small place in the world feeling smaller still
+- [!back] a gnome with no convenient diagram of what lay ahead
 - [!back night] my ears trying to make up for my eyes
-- [!back] a gnome hoping to find more gears than stairs
-- [!back] hoping my feet would forgive the detour
-- [!back night] rather nearer the ground than I wanted to be in the dark
-- [back] my feet recognising the journey before I enjoyed the arrival
-- [back] less likely to waste my short stride on a wrong turn
-- [back] my legs petitioning for a shorter walk this time
+- [!back] my interest caught by the unfamiliar surroundings
+- [!back] a detour whose purpose had better justify it
+- [!back night] the dark concealing all the details I liked to examine
+- [back] familiar ground making the return feel wonderfully simple
+- [back] the way back already neatly arranged in my mind
+- [back] my memory saving me some unnecessary wandering
 - [high] still fonder of Tinker Town's clatter than of a long road
-- my stride doing its best against the distance
-- wishing I could trade a little ingenuity for longer legs
+- a distance that would have justified a railway
+- my ingenuity occupied with the question of getting about
