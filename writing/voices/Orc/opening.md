@@ -3,10 +3,10 @@ kind: opening
 ---
 - I took up the road {at}, with the thought of Durotar making the distance feel worth bearing.
 - I began again {at}, no one's captive and not yet as certain of the road as I wished.
-- I set out {at}, hoping to be useful to a people who needed builders as much as fighters.
-- I made ready {at}, with my own impatience a more familiar enemy than anything ahead.
+- I set out {at}, with some strength to offer a people still building their home.
+- I set off {at}, my own impatience already a familiar adversary.
 - I went on {at}, remembering how much Thrall had risked to give our people a home.
 - I set out {at}, free to walk away and unwilling to leave the work to someone else.
-- I began this stretch {at}, more eager for the road than for another test of my blood.
-- I took up the road {at}, wishing the ancestors could lend me a little of their endurance.
+- I began this stretch {at}, drawn by the promise of a road I could choose for myself.
+- I took up the road {at}, thinking of the endurance of the ancestors.
 - I set out {at}, with the Horde's new life dearer to me than the old tales of conquest.

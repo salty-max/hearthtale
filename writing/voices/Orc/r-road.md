@@ -1,13 +1,13 @@
 ---
 kind: r-road
 ---
-- my stride still more at home with Durotar's red earth
-- the drums of Orgrimmar dearer to me once my feet began to weary
-- [!back] hoping to find a welcome beyond the Horde's walls
+- an orc taking an interest in unfamiliar ground
+- the drums of Orgrimmar keeping a familiar place in my thoughts
+- [!back] the question of my welcome outside the Horde still troubling me
 - [!back] wondering how an orc's name would weigh here
-- [!back] more wary than my stride might have suggested
+- [!back] an orc's caution hidden behind an assured manner
 - [!back night] my eyes no better than anyone else's in that dark
-- [back] my feet more certain of the way than my patience
-- [back] less a stranger to the ground than before
-- [back] the known way back more comforting than an easy boast
+- [back] the known route leaving little to trouble me
+- [back] this ground beginning to acquire a place in my life
+- [back] the known way a comfort against my unease
 - [high] the red earth of Durotar still the measure of every road I walked

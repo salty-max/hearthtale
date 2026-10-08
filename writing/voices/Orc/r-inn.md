@@ -2,10 +2,10 @@
 kind: r-inn
 ---
 - closer to Orgrimmar's comfort in spirit, if not in miles
-- already ready for the peace promised by the return
-- my legs rather grateful for a stone's enchantment
-- hoping for shelter without another struggle
-- more comforting than another attempt to seem tireless
+- a promise of peace kept close
+- an enchantment with a practical use beyond the Horde
+- an orc's return worth arranging in advance
+- the promise of shelter letting my pride rest
 - one less road between me and a place to stop
-- [night] quite ready to let the night go unwatched by me
+- [night] the night somebody else's to watch on my return
 - [hc] loath to ask the ancestors for help I could prepare myself

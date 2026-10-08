@@ -1,17 +1,17 @@
 ---
 kind: r-foe
 ---
-- my breath harder than I wanted it to be
+- my breath coming with an unflattering urgency
 - my blood slow to quiet after the danger
 - my arms heavy enough to make me envy a rested orc
-- rather ready for something gentler than another struggle
+- an orc with no appetite left for another struggle
 - [one] not an enemy I had any wish to meet twice
-- [!one] their numbers more trying than their courage
+- [!one] their numbers testing my endurance
 - [teeth] those jaws too close to the soft parts of me
 - [mechanical] rather less respectful of strength that somebody had wound up
 - [night] my ears working where my eyes could not
 - [hc] loath to rob the Horde of a life it could still use
-- [low] my courage less seasoned than my pride
+- [low] a beginner's courage still learning to withstand a fight
 - [high] my anger less eager to outrun my hands
 - [demon] my people's old chains close enough to make the fight bitter
-- [demon] less willing to fear the masters our people had cast off
+- [demon] an orc with no reverence left for the old masters

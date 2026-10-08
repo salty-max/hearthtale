@@ -1,14 +1,14 @@
 ---
 kind: r-item
 ---
-- my shoulders less willing than my promise to help
-- rather more carrying than an orc's reputation should invite
-- the next request unlikely to find my shoulders so eager
-- my hands fit for more patient work than a fight
-- [!one !plural] my shoulders more aware of each piece than my willingness had been
+- the burden testing the generosity of my offer
+- an orc discovering the unglamorous side of being helpful
+- the next request due to receive some careful consideration
+- a patient use for an orc's strength
+- [!one !plural] each piece giving substance to the request
 - [!one !plural] each burden another reason to spare the strength I had
-- [one !plural] not yet sure it would repay my legs for their trouble
+- [one !plural] the carrying an awkward part of the search
 - [one !plural] my hands eager to surrender it to someone else's need
-- [meat] wishing for the smell of a Horde cookfire
+- [meat] the smell of a Horde cookfire suddenly dear to me
 - [cloth] soft stuff to set beside the hard work of a new homeland
-- [night] the dark asking more of my eyes than my arms could supply
+- [night] strength quite useless against the difficulties of searching in the dark

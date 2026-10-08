@@ -2,10 +2,10 @@
 kind: r-first
 ---
 - my blood stirring before I wanted it to
-- rather more wary than an orc's reputation allowed
+- an orc's wariness concealed behind a fierce expression
 - my strength no promise that the fight would be easy
-- my courage finding more comfort in distance than in a closer look
+- my courage quietly recommending a safe distance
 - my anger easier to rouse than to put aside
-- [teeth] those teeth worth more caution than a boast could give
+- [teeth] those teeth making a boast quite useless
 - [night] my ears keener than my eyes in that darkness
 - [low] still learning how much the world could ask of me
