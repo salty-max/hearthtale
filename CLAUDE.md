@@ -227,6 +227,15 @@ The plan and its decisions: PLAN.md.
   within it). Four quests or more in a row, nothing of note between, open
   with `errands` ("There were smaller jobs after that..."), once a chapter.
   A thing named for who asked for it or receives it is "the journal".
+- The class: how I fight (`Book.fighting`, from `CLASS_FIGHT` and the spells
+  learned, `ELEMENT` in Language.lua: fire, frost, arcane, shadow, curse,
+  holy, lightning, wrath, steel, arrow) tags a quest's kills, its lines
+  favoured every other time; a new way of fighting is tried on the next foes
+  (`[tried]`, `{spell}`); the pet at my side when the work was done (`done`
+  records it) is `[pet]`, `{pet}`. A class quest turned in tells what it
+  taught (`class-reward`, Knowledge.lua; `[summon]` and `{pet}` "an imp", or
+  `[imp]`...). A spell with a line of its own (`lesson`, `[spell:Life_Tap]`,
+  spaces as "_") is told by it, once a book, not in the trainer's list.
 - Curation: in each place, the first two routine hand-ins (a delivery, a report
   back, a message, a favour known only by who asked, green gear) are told; the
   rest fold into one clause (`c-fold`: "saw to four more errands besides"),

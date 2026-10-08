@@ -21,7 +21,7 @@ local objectivesLike, sizes, uncounted = W.objectivesLike, W.sizes, W.uncounted
 local article, capitalise, FACTION, HOME, KIN = W.article, W.capitalise, W.FACTION, W.HOME, W.KIN
 local faith, weapon, FOE_PEOPLE, FOE_KIND, foeOf = W.faith, W.weapon, W.FOE_PEOPLE, W.FOE_KIND, W.foeOf
 local THING_KIND, thingOf, instruction, lowerFirst = W.THING_KIND, W.thingOf, W.instruction, W.lowerFirst
-local taskOf, TEETH = W.taskOf, W.TEETH
+local taskOf, TEETH, ELEMENT, CLASS_FIGHT = W.taskOf, W.TEETH, W.ELEMENT, W.CLASS_FIGHT
 
 -- ── the writer of one book ───────────────────────────────────────────────────
 local function hash(s)
@@ -234,6 +234,13 @@ local function newBook(c)
   b.creatureKinds = {} -- classifications actually recorded, not guessed from a quest's name
   b.placeNames = {} -- only places encountered so far; later events cannot rewrite an objective
   b.sizesUsed, b.sizesOrder = {}, {} -- the size words told last (Book:size)
+  -- how I fight (Book:learn): fire, shadow, steel... from my class and the
+  -- spells learned; a new one, to try on the next foes a quest asks for
+  b.fighting, b.fresh = {}, nil
+  b.noted = {} -- the spells told by a line of their own (writing/lesson.md)
+  for _, e in ipairs(CLASS_FIGHT[class] or {}) do
+    b.fighting[e] = true
+  end
   b.base = { hc = c.hardcore or nil, ["race:" .. race] = true, ["class:" .. class] = true }
   if b.faction then b.base["faction:" .. b.faction] = true end
   return b
@@ -513,8 +520,9 @@ function Book:say(kind, key, values, tags, prefer, raw)
     end
   end
   if routine then self.lastVerb = text:match("^(%a+)") end
-  -- a remark ends a clause that has no comma of its own
-  if wantRemark and not text:find(",") and not ctx.trophy then -- (a trophy speaks for itself)
+  -- a remark ends a clause that has no comma or "and" of its own ("cursed it
+  -- and let the rot do its work, taller than me" would hang off the rot)
+  if wantRemark and not text:find(",") and not text:find(" and ") and not ctx.trophy then -- (a trophy speaks for itself)
     local remark = self:remark(routine, key, values, ctx, (text:gsub("{%w+}", "")), weight >= 2)
     if remark then
       text = text .. ", " .. remark
@@ -695,6 +703,18 @@ function Book:here(values, place)
   return values
 end
 
+-- Spells learned: a new way of fighting (Immolate: fire, for a warlock who
+-- had only shadow) is tried on the next foes a quest asks for.
+function Book:learn(spells)
+  for _, spell in ipairs(spells) do
+    local e = ELEMENT[spell]
+    if e and not self.fighting[e] then
+      self.fighting[e] = true
+      self.fresh = self.fresh or spell
+    end
+  end
+end
+
 -- How many n is, in words (Language.lua's sizes): one of those that fit,
 -- not one of the last few used, so "a good many" doesn't come back every
 -- other quest; often none at all.
@@ -743,13 +763,30 @@ function Book:deed(m, key, tags)
     tags.mechanical = self.creatureKinds[o.name] == "Mechanical" or nil
     local people = foeOf(o.name, self.creatureKinds[o.name])
     if people then tags[people] = true end
+    -- how I fought them: my way of fighting (fire, steel...), a spell just
+    -- learned, the pet at my side; favoured every other time
+    for e in pairs(self.fighting) do
+      tags[e] = true
+    end
+    local prefer
+    if self.fresh then
+      tags.tried, values.spell, prefer = true, self.fresh, { tried = true }
+      self.fresh = nil
+    elseif tags.petName and hash(self.seed .. "|pet|" .. key) % 3 == 0 then
+      prefer = { pet = true }
+    elseif hash(self.seed .. "|fight|" .. key) % 2 == 0 then
+      prefer = self.fighting
+    end
+    values.pet = tags.petName
+    tags.pet = values.pet and true or nil
     -- (handed in on the spot: to whom, if not named in the paragraph already)
-    if tags.handed and not tags.more then
-      local handed = { n = values.n, foes = values.foes, giver = m.ender or m.giver }
-      done, said = self:say("c-handed-kill", key, handed, tags, nil, true)
+    if tags.handed then
+      local handed =
+        { n = values.n, foes = values.foes, giver = m.ender or m.giver, spell = values.spell, pet = values.pet }
+      done, said = self:say("c-handed-kill", key, handed, tags, prefer, true)
     end
     if not done then
-      done, said = self:say("c-deed-kill", key, values, tags, nil, true)
+      done, said = self:say("c-deed-kill", key, values, tags, prefer, true)
     end
   elseif o and o.type == "item" and o.held and o.name and m.ender then
     -- a thing in hand when the quest was taken (a note, a letter found on a

@@ -1,0 +1,17 @@
+---
+kind: class-reward
+---
+- [summon] In return, {giver} taught me to call {pet}.
+- [summon] {giver} was satisfied, and taught me to call {pet} of my own.
+- [summon] My reward from {giver} was {pet} of my own to call on.
+- [summon] When I came back, {giver} taught me to call {pet}, and I did not need to be asked twice.
+- [summon] {giver} judged the work well done and taught me the summoning of {pet}.
+- [imp] In return, {giver} taught me to call an imp: small, rude and on fire, and I liked it at once.
+- [voidwalker] In return, {giver} taught me to call a voidwalker, a silent shape of shadow to stand between me and harm.
+- [succubus] {giver} taught me to call a succubus, whose company would take some getting used to.
+- [felhunter] {giver} taught me to call a felhunter, a hound of the Nether that feeds on magic.
+- [!summon] In return, {giver} taught me {spell}.
+- [!summon] {giver} was satisfied, and taught me {spell}.
+- [!summon] The reward was a lesson: {giver} taught me {spell}.
+- [!summon] What {giver} gave me for it was {spell}, and it was worth the trouble.
+- [!summon] {giver} had been testing me, it turned out, and the reward was {spell}.

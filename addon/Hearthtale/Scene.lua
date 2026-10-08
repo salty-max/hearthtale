@@ -532,9 +532,13 @@ end
 function Scene:deed(t)
   local m, b = self.m, self.book
   self:prepare()
+  -- (the pet at my side when the work was done, if the record knows)
+  local doneAt = m.id and self.doneAt[m.id]
+  local work = m.k == "done" and m or (doneAt and self.ch.log[doneAt])
+  t.petName = work and work.pet or nil
   local all = parts(m)
   for i, part in ipairs(all) do
-    local tags = i == 1 and t or self:tags({ done = t.done, handed = t.handed }, m)
+    local tags = i == 1 and t or self:tags({ done = t.done, handed = t.handed, petName = t.petName }, m)
     -- (a quest's parts in one sentence: the remark, if any, on its last)
     tags.quiet = i < #all or nil
     local text, said = b:deed(part, self.key, tags)

@@ -544,6 +544,39 @@ local function thingOf(name)
   end
 end
 
+-- How a class fights, from what it knows: the spells that make an element of
+-- its fighting (the tags of its fighting lines), and what each class fights
+-- with from the start (a warlock's first Shadow Bolt, a mage's Fireball).
+local ELEMENT = {}
+for _, e in
+  ipairs(named([[
+  fire: Immolate, Fireball, Fire Blast, Searing Pain, Flame Shock, Scorch, Pyroblast, Flamestrike, Rain of Fire,
+        Hellfire
+  frost: Frostbolt, Cone of Cold, Blizzard, Frost Shock
+  arcane: Arcane Missiles, Arcane Explosion
+  shadow: Shadow Bolt, Shadow Word: Pain, Mind Blast, Mind Flay, Drain Life, Drain Soul
+  curse: Corruption, Curse of Agony, Curse of Weakness, Curse of Recklessness
+  holy: Smite, Holy Fire, Exorcism, Holy Shock, Consecration
+  lightning: Lightning Bolt, Chain Lightning, Earth Shock
+  wrath: Wrath, Moonfire, Starfire, Insect Swarm
+]]))
+do
+  for _, spell in ipairs(e[2]) do
+    ELEMENT[spell] = e[1]
+  end
+end
+local CLASS_FIGHT = {
+  WARRIOR = { "steel" },
+  ROGUE = { "steel" },
+  PALADIN = { "steel" },
+  HUNTER = { "arrow" },
+  SHAMAN = { "lightning" },
+  MAGE = { "fire" },
+  PRIEST = { "holy" },
+  WARLOCK = { "shadow" },
+  DRUID = { "wrath" },
+}
+
 local function town(node) return node and (node:match("^([^,]+)") or node) end
 
 -- The chapter's kills, the most first (for the closing recap).
@@ -669,6 +702,8 @@ W.foeOf = foeOf
 W.THING_KIND = THING_KIND
 W.thingOf = thingOf
 W.town = town
+W.ELEMENT = ELEMENT
+W.CLASS_FIGHT = CLASS_FIGHT
 W.topKills = topKills
 W.instruction = instruction
 W.lowerFirst = lowerFirst

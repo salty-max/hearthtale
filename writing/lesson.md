@@ -1,0 +1,34 @@
+---
+kind: lesson
+---
+- [spell:Life_Tap] Life Tap was the first spell that asked to be paid in my own blood.
+- [spell:Fear] With Fear, I could fill a foe with terror and watch it run.
+- [spell:Drain_Life] Drain Life let me take back from a foe what it had taken from me.
+- [spell:Corruption] Corruption was a slow rot to set in a foe and leave to its work.
+- [spell:Health_Funnel] With Health Funnel, I could pour my own strength into my demon when it faltered.
+- [spell:Polymorph] Polymorph could turn a foe into a sheep, which is more of an answer than it sounds.
+- [spell:Blink] Blink was a step through the air to somewhere safer, and I took to it at once.
+- [spell:Frost_Nova] Frost Nova held a foe in ice while I put some distance between us.
+- [spell:Conjure_Water] I could conjure water out of nothing now, which settled the question of what to drink on the road.
+- [spell:Power_Word:_Shield] Power Word: Shield was a ward of light to take the blows meant for me.
+- [spell:Renew] Renew was a healing that kept on working long after the prayer was done.
+- [spell:Resurrection] With Resurrection, I could call the dead back to life, which is not a thing to learn lightly.
+- [spell:Psychic_Scream] Psychic Scream was a cry that sent foes fleeing in terror.
+- [spell:Lay_on_Hands] Lay on Hands was the Light's answer for when everything else had failed.
+- [spell:Divine_Protection] Divine Protection gave me a moment in which nothing could touch me.
+- [spell:Hammer_of_Justice] With Hammer of Justice, the Light could stop a foe in its tracks.
+- [spell:Charge] With Charge, the distance between me and a foe stopped mattering.
+- [spell:Execute] Execute was the blow that finishes what the rest of a fight began.
+- [spell:Pick_Pocket] Once I could pick pockets, I looked at every purse I passed a little differently.
+- [spell:Sap] With Sap, I could put a foe to sleep before it knew I was there.
+- [spell:Vanish] Vanish was a way out of any fight I did not care to finish.
+- [spell:Sprint] Sprint was for the times when leaving quickly was the whole plan.
+- [spell:Aspect_of_the_Cheetah] With the Aspect of the Cheetah, the roads grew shorter.
+- [spell:Feign_Death] Feign Death was a lie told with my whole body.
+- [spell:Hunter's_Mark] With Hunter's Mark, nothing I had marked could hide from me.
+- [spell:Ghost_Wolf] Ghost Wolf let me run in the shape of a wolf, as the spirits do.
+- [spell:Ancestral_Spirit] With Ancestral Spirit, I could call a fallen friend's spirit back into their body.
+- [spell:Lightning_Shield] Lightning Shield was a ring of crackling light that struck back at whoever struck me.
+- [spell:Entangling_Roots] With Entangling Roots, the ground itself would hold a foe for me.
+- [spell:Healing_Touch] Healing Touch was the old craft of mending a body with the wild's own strength.
+- [spell:Rebirth] Rebirth could bring a fallen friend back in the middle of a fight.
