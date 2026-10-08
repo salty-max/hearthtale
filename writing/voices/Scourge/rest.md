@@ -3,8 +3,8 @@ kind: rest
 ---
 - I rested {at}, grateful to lie still without a lid being nailed over me.
 - I settled {at}, with no need to sleep and a very definite wish to stop.
-- I paused {at}, rather more attached to peace than my appearance might encourage people to believe.
-- I rested {at}, hoping an industrious apothecary would not find another use for my idle hands.
+- I paused {at}, content with a peace that had nothing permanent about it.
+- I rested {at}, briefly excusing myself from any use an industrious apothecary might find for me.
 - I stopped {at}, with my decaying joints quietly winning an argument against further walking.
 - I rested {at}, missing sleep rather more than I needed it.
 - I paused {at}; remaining motionless by choice still had a sweetness the grave had never offered.

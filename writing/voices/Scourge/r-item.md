@@ -1,13 +1,13 @@
 ---
 kind: r-item
 ---
-- less impatient than the living had much reason to be
-- hoping the burden had a use outside the Apothecarium
+- a corpse with time to spare for the search
+- a burden whose uses I could leave to the Apothecarium
 - rather grateful not to need a deep breath over the business
-- [!one !plural] counting them without wishing to keep the collection
+- [!one !plural] a collection I felt no particular urge to keep
 - [!one !plural] each piece an argument for someone else doing the carrying
-- [one !plural] hoping it was worth the time of a corpse
+- [one !plural] a useful occupation for a corpse's time
 - [one !plural] rather attached to getting it out of my hands
 - [meat] food for someone with more demanding insides
-- [cloth] rather better suited to clothing than another shroud
-- [night] more comfortable with the dark than with all the searching
+- [cloth] the cloth offering a decent covering for decay
+- [night] the darkness familiar without making the search pleasant

@@ -2,10 +2,10 @@
 kind: r-inn
 ---
 - not in need of sleep, but decidedly in favour of shelter
-- hoping to be less conspicuous on the return
+- a haven for a corpse who still appreciated privacy
 - a door between me and the living sounding quite inviting
 - my condition no obstacle to a hearthstone's enchantment
 - closer to having an address than a grave marker
-- rather more comfortable than the lodgings death usually supplied
+- a lodging whose chief attraction was the absence of burial
 - [night] at an hour I had little reason to resent
 - [hc] not prepared to let a long road arrange my final funeral

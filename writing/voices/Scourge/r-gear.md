@@ -3,9 +3,9 @@ kind: r-gear
 ---
 - [!made !held] a burial shroud a poor measure of how comfortable I hoped to be
 - [!made !held] less of my condition on display to the world
-- [!made] rather better than being buried with something fine
+- [!made] something to use while I was still above ground
 - [!made] my condition no reason to accept an equally decaying addition
-- [!made hc] a second obituary less appealing than a little protection
+- [!made hc] some protection against the need for another obituary
 - [made] the grave's verdict on my usefulness looking rather premature
 - [made] nothing an apothecary needed to preserve for me
 - [made !held] rather proud to wear something that was not funeral provision

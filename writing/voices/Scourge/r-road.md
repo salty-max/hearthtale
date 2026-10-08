@@ -1,13 +1,13 @@
 ---
 kind: r-road
 ---
-- my feet in less of a hurry than a living person's pulse
+- a corpse in no particular hurry to announce the approach
 - rather too visible to enjoy arriving unannounced
 - [!back !home] not expecting the warmest welcome for a corpse
 - [!back] wondering how much reassurance the guards might need
-- [!back !home] hoping usefulness would be sufficient introduction
+- [!back !home] a corpse relying on usefulness for an introduction
 - [!back night] at an hour that made my condition less conspicuous
 - [back] less of a stranger, if no less dead
 - [back] my joints recognising the distance all too readily
 - [back] not entirely sorry to approach somewhere familiar
-- [high] the Undercity's notion of ordinary more comforting than I expected
+- [high] the Undercity's peculiar comforts dear to me

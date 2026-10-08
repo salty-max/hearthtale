@@ -5,7 +5,7 @@ kind: r-company
 - [one] a second person worth more than an empty coffin
 - rather grateful for help that did not require an apothecary
 - nearer to friendship than a corpse ought to expect
-- less guarded than the habits of the Undercity usually allowed
+- the habits of the Undercity relaxing their guard
 - my joints no longer the only ones doing the travelling
-- [night one] our shadows making less lonely company than my own
+- [night one] two shadows to keep the darkness occupied
 - [hc] unwilling to be the corpse left to mourn

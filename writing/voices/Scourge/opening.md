@@ -7,6 +7,6 @@ kind: opening
 - I went on {at}, hoping usefulness would introduce me before the smell did.
 - I began this stretch {at}, grateful that Sylvanas had not freed us merely to stand about decaying.
 - I set out {at}, with a dead body and a rather lively dislike of being ordered around.
-- I went on {at}, hoping the next person who wanted help would need less reassurance about the hand offering it.
-- I made ready {at}, no more inclined to rot quietly than I had been yesterday.
+- I went on {at}, a corpse with help to offer and all the usual difficulty of making that sound inviting.
+- I set off {at}, with no intention of rotting quietly.
 - I took up the road {at}, with Lordaeron behind me and a healthy resentment of the word healthy.
