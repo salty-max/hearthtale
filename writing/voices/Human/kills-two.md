@@ -1,6 +1,6 @@
 ---
 kind: kills-two
 ---
-- I counted {n1} {foes1} and {n2} {foes2} {at}, and felt tired just putting the names together.
-- The fighting {at} had included {n1} {foes1} and {n2} {foes2}; I was glad to have that much behind me.
-- I put {n1} {foes1} and {n2} {foes2} into the tally {at}, with some relief that neither needed more of me just then.
+- I counted {n1} {foes1} and {n2} {foes2} {at}; I would have preferred a day I could measure in bread and errands.
+- The fighting {at} had included {n1} {foes1} and {n2} {foes2}, enough to make a quiet street seem precious.
+- I had brought down {n1} {foes1} and {n2} {foes2} {at}, and wanted a life that needed less killing to keep it going.

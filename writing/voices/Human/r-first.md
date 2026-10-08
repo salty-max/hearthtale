@@ -1,18 +1,18 @@
 ---
 kind: r-first
 ---
-- nothing like I had imagined
-- worth knowing, in the way bad news is worth knowing
-- quicker than I was ready for
-- the sort of thing a guard would have shrugged at
-- a lesson in not trusting how things look
-- [teeth] with more teeth than any farm dog
-- [night] which I would rather have met by daylight
-- rather less curious once they came close
-- not quite the introduction I had pictured
-- quick to lose my interest in a closer look
-- with plenty to remember about their movements
-- wary of the next meeting already
-- [teeth] much more aware of where I put my hands
-- [night] wishing I could see them more clearly
-- [low] with my confidence still catching up
+- my courage thinner than the stories had promised
+- rather wishing for the reach of a town guard
+- less sure the roads were meant for someone like me
+- my stomach behaving worse than my hands
+- no longer tempted to take the warnings for inn talk
+- [teeth] those teeth nothing I wanted near the soft parts of me
+- [night] my eyes wanting the reassurance of daylight
+- rather too conscious of how easy it was to die outside town
+- not the sort of introduction I would wish on a neighbour
+- my feet already missing the safety of a familiar street
+- wishing the Cathedral's comfort travelled further
+- rather less eager to be an adventurer than when I left
+- [teeth] a sudden affection for keeping all my fingers
+- [night] my courage struggling to see through the dark
+- [low] rather short of the experience the old soldiers took for granted

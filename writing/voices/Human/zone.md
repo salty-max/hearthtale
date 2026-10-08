@@ -1,6 +1,6 @@
 ---
 kind: zone
 ---
-- I entered {zone}, interested in the people who would make this more than another name along my route.
-- I reached {zone}, and took a moment to look about before the work drew me on.
-- I came into {zone}, with the pleasure and unease of having somewhere new to find my way through.
+- I entered {zone}, wondering how long it would take to know more than the guards and the road out.
+- I reached {zone}, with the hope of finding someone who needed a hand rather than a sword.
+- I came into {zone}, hoping to feel less of a stranger before it was time to leave.

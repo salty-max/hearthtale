@@ -1,19 +1,19 @@
 ---
 kind: r-task
 ---
-- the kind of work nobody writes songs about
-- my feet sore by the end
-- glad to cross it off
-- quicker than I feared
-- without much ceremony
-- [explore] the lie of the land plainer in my head
-- [explore] getting a sense of where trouble might come from
-- [escort] keeping an eye on them every step
-- [night] the dark coming on as I worked
-- glad to have something definite to report
-- with more questions about the request than when I began
-- with my feet asking for a pause by the end
-- [explore] picturing the turns I would need to find again
-- [explore] looking for the way back as well as the way on
-- [escort] keeping them in sight as I watched the road
-- [night] wishing I could see a little farther ahead
+- rather wishing an errand could do itself for once
+- my feet wanting an evening by the hearth
+- my willingness to oblige in need of a rest
+- my shoulders losing patience before I did
+- no prospect of a song, and little need of one
+- [explore] hoping the way back would be easier to find
+- [explore] my courage hoping the guards knew these paths too
+- [escort] unwilling to send someone home as bad news
+- [night] my eyes wanting the comfort of daylight
+- hoping the person who asked would have fewer worries now
+- less certain I would volunteer so quickly next time
+- my feet proposing a quite unreasonable retirement
+- [explore] a neighbour's need for a safe path easier to understand
+- [explore] less fond of the outward road than of the way home
+- [escort] rather more frightened for another life than I had expected
+- [night] my eyes straining harder than my patience

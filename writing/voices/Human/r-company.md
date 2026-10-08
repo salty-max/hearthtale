@@ -1,15 +1,15 @@
 ---
 kind: r-company
 ---
-- the road shorter in company
-- [one] an extra pair of eyes on the hedgerows
-- glad of help when it counted
-- easy company
-- trusting them more with every mile
-- [one] the work halved
-- [night] glad not to be alone in the dark
-- [hc] careful to keep them in sight
-- with less cause to glance behind me
-- more at ease than I had been alone
-- finding the road less lonely
-- [hc] reluctant to let them out of my sight
+- a little nearer to the comfort of a familiar street
+- [one] another pair of eyes worth more than bravado
+- less alone beyond the reach of the guards
+- my courage relieved of some of the burden
+- hoping we would both get home with something to laugh over
+- [one] two of us for the road to worry about
+- [night] my fear no longer filling every night sound with enemies
+- [hc] unwilling to let another name become bad news
+- town feeling less like the only place I could be safe
+- rather grateful that trust could still come easily
+- company I would welcome beside my own hearth
+- [hc] hoping we would both have an ordinary evening afterwards
