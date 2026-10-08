@@ -1,18 +1,18 @@
 ---
 kind: r-foe
 ---
-- my knees less reliable than I wanted to admit
+- my courage coming apart now I could afford it
 - my heart still trying to run away
 - nothing I would want brought to an Elwynn doorstep
-- rather ready to be safely within a town's walls again
+- the safety of a town's walls suddenly very attractive
 - my nerve slower to settle than the rest of me
 - [!one] their number making me miss the city watch
 - [teeth] all my fingers suddenly dear to me
 - [mechanical] rather wary of anything built to hurt people
 - [night] my eyes making enemies of the dark
 - [hc] unwilling to become another name read out at home
-- [low !more] rather short of the courage the recruiting songs promised
-- [high] less easily frightened than when the roads were new
+- [low !more] a beginner discovering what the recruiting songs left out
+- [high] the old fear returning without its old force
 - my breath refusing to come quietly
 - my courage in need of a quiet evening
 - my courage too thin to feel like armour

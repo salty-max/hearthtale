@@ -2,7 +2,7 @@
 kind: r-first
 ---
 - my courage thinner than the stories had promised
-- rather wishing for the reach of a town guard
+- a town guard's reach suddenly a very desirable thing
 - less sure the roads were meant for someone like me
 - my stomach behaving worse than my hands
 - no longer tempted to take the warnings for inn talk
@@ -10,9 +10,9 @@ kind: r-first
 - [night] my eyes wanting the reassurance of daylight
 - rather too conscious of how easy it was to die outside town
 - not the sort of introduction I would wish on a neighbour
-- my feet already missing the safety of a familiar street
-- wishing the Cathedral's comfort travelled further
-- rather less eager to be an adventurer than when I left
+- the safety of a familiar street suddenly precious
+- the Cathedral's comfort feeling far away
+- the attraction of adventure receiving a sharp correction
 - [teeth] a sudden affection for keeping all my fingers
 - [night] my courage struggling to see through the dark
-- [low] rather short of the experience the old soldiers took for granted
+- [low] a beginner with none of an old soldier's assurance

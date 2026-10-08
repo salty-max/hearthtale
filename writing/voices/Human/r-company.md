@@ -5,11 +5,11 @@ kind: r-company
 - [one] another pair of eyes worth more than bravado
 - company as reassuring as a neighbour's welcome
 - my courage relieved of some of the burden
-- hoping we would both get home with something to laugh over
+- the prospect of a shared laugh on the way home heartening me
 - [one] two of us for the road to worry about
 - [night] my fear no longer filling every night sound with enemies
 - [hc] unwilling to let another name become bad news
 - town feeling less like the only place I could be safe
 - rather grateful that trust could still come easily
 - company I would welcome beside my own hearth
-- [hc] hoping we would both have an ordinary evening afterwards
+- [hc] an ordinary evening together suddenly worth a great deal

@@ -1,15 +1,15 @@
 ---
 kind: r-inn
 ---
-- hoping the return would include a proper supper
+- a proper supper part of the attraction of returning
 - rather happier with shelter within a stone's reach
 - less likely to spend the next night missing a roof
 - closer to having an address than I had felt all day
-- something reassuringly small to set against a long road
-- [night] quite ready for an evening behind a door
+- a comfort that fitted neatly in a pocket
+- [night] an evening behind a door a very pleasant prospect
 - [hc] unwilling to leave the way home to chance
-- my feet rather grateful for the enchantment
+- a welcome promise of getting home safely
 - no wish to walk every mile twice
 - almost as good as knowing someone was expecting me
 - already thinking fondly of stopping
-- [hc] less far from safety than the distance suggested
+- [hc] a way back to safety tucked into my belongings

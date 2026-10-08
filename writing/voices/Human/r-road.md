@@ -1,20 +1,20 @@
 ---
 kind: r-road
 ---
-- [!grouped] rather fonder of a neighbour's help than of travelling alone
-- [!back] hoping the people would be kinder than the distance
-- [!back] less sure of my welcome than of my willingness to help
+- [!grouped] a neighbour's company dear to me in unfamiliar country
+- [!back] the question of my welcome still unsettled
+- [!back] a stranger with help to offer and no introductions
 - [!back] wondering whose trouble would find me first
 - [!back !home] rather aware of being a stranger beyond the familiar roads
 - [!back night] less keen to find my way by night
-- [back] hoping someone would still know my name
-- [back] my feet more familiar with the distance than they wished
+- [back] the names I knew coming fondly to mind
+- [back] the familiar way easing the journey
 - [back] less likely to need a guard's directions
 - rather susceptible to the promise of a friendly inn
-- my legs beginning to bargain for a pause
-- [!back] hoping for an easier welcome than the road had offered
-- [!back] wondering whether help would be wanted before introductions
-- [!back] less ready to admit how far from home I felt
-- [!back night] a lit doorway more inviting to me than another dark road
+- the country giving me a new appreciation of roadside inns
+- [!back] a stranger taking an interest in the people I might meet
+- [!back] my usefulness the only introduction I could offer
+- [!back] the comforts of home unexpectedly vivid
+- [!back night] the dark giving the thought of shelter a particular appeal
 - [back] the familiar way almost as comforting as a neighbour's face
-- [back] hoping the same names would still mean people I could help
+- [back] some familiar names to put to the place

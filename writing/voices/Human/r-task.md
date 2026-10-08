@@ -1,19 +1,19 @@
 ---
 kind: r-task
 ---
-- rather wishing an errand could do itself for once
-- my feet wanting an evening by the hearth
+- a job I would have cheerfully left to someone else
+- an evening by the hearth increasingly attractive
 - my willingness to oblige in need of a rest
-- my shoulders losing patience before I did
+- my generous offer beginning to wear thin
 - no prospect of a song, and little need of one
-- [explore] hoping the way back would be easier to find
-- [explore] my courage hoping the guards knew these paths too
+- [explore] the way back an important part of my interest
+- [explore] a guard's company a comforting thing to imagine
 - [escort] unwilling to send someone home as bad news
 - [night] my eyes wanting the comfort of daylight
-- hoping the person who asked would have fewer worries now
+- somebody else's worry taken care of for once
 - less certain I would volunteer so quickly next time
-- my feet proposing a quite unreasonable retirement
+- a peaceful trade suddenly looking attractive
 - [explore] a neighbour's need for a safe path easier to understand
-- [explore] less fond of the outward road than of the way home
+- [explore] a stranger's caution kept busy by the country
 - [escort] rather more frightened for another life than I had expected
 - [night] my eyes straining harder than my patience
