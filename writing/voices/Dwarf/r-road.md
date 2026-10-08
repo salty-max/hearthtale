@@ -1,13 +1,13 @@
 ---
 kind: r-road
 ---
-- my feet making a fair complaint about the distance
+- a fair distance to wear down a dwarf's good humour
 - rather more at ease with the weight of a mountain overhead
-- [!back] hoping the place would offer more than a reason to turn back
+- [!back] a new place to put an explorer's eye to use
 - [!back] wondering what an explorer would find beneath all this
 - [!back] a dwarf's worth of curiosity about the ground
-- [!back night] my eyes wishing the night had left the outlines clearer
-- [back] my feet recognising the way before my spirits lifted
-- [back] less far from feeling at home than on the first visit
-- [back] rather ready to stop tramping the same distance
+- [!back night] the dark obscuring the country I had come to see
+- [back] the familiar route a comfort in itself
+- [back] a place beginning to feel familiar enough for a dwarf to grumble
+- [back] a dwarf becoming well acquainted with that stretch of road
 - [high] fonder of the Great Forge's din than of a long road

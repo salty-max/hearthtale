@@ -4,9 +4,9 @@ kind: opening
 - I took up the road {at}, with the Great Forge's welcome din still dearer than the call of a long road.
 - I began again {at}, feeling sturdy enough to make the road earn my complaints.
 - I set out {at}, with more of the world to see than the inside of a mountain.
-- I made ready {at}, hoping for ground worth the Explorers' League's attention.
+- I set off {at}, with the Explorers' League's taste for old stone and unanswered questions.
 - I went on {at}, as stubborn about leaving a job half done as any dwarf of Ironforge.
-- I began this stretch {at}, willing to spend some strength before wishing for an ale.
+- I began this stretch {at}, with a dwarf's stubborn appetite for seeing a job through.
 - The stone beneath a road could have a longer history than the road itself, and I set out {at} to see what I could.
-- I was ready to move {at}, with my feet in better spirits than a dwarf ought to expect.
-- I took up the road {at}, still hoping to bring the mountain more than another missing name.
+- I set off {at}, in a cheerful mood I doubted even the road could wear through.
+- I took up the road {at}, with the mountain's safety already precious in my mind.

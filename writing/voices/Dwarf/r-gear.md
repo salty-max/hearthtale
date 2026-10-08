@@ -2,10 +2,10 @@
 kind: r-gear
 ---
 - [!made] something I would not be ashamed to bring to Ironforge
-- [!made !held] hoping for a fit that would not squeeze the supper out of me
-- [!made !held] durability rather dearer to me than decoration
-- [!made !held] hoping not to spend the whole road adjusting the fit
-- [!made hc !held] more fond of protection than of testing my luck
+- [!made !held] a fit that would leave room for supper decidedly welcome
+- [!made !held] durability earning my approval
+- [!made !held] no fondness for equipment that needed constant adjustment
+- [!made hc !held] a reassuring bit of protection against bad luck
 - [made] my own workmanship facing a harder judge than my pride
 - [made] as satisfying to finish as the last stroke on good iron
 - [made] my hands responsible for what would have to hold

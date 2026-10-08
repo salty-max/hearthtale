@@ -1,13 +1,13 @@
 ---
 kind: r-item
 ---
-- my shoulders less enthusiastic than the person who asked
-- wishing a burden could be lightened by admiring the craft
+- a burden with no consideration for dwarven endurance
+- the workmanship doing nothing to lighten the load
 - [one !plural] keener to hand it over than to carry it
 - [!one !plural] counting each piece as carefully as a miser counts gold
 - [!one !plural] my back feeling like the last mule out of a mine
-- [one !plural] rather a small thing to make so much trouble over
-- [one !plural] hoping it would be worth the weight
+- [one !plural] a modest prize for a troublesome search
+- [one !plural] a find whose usefulness would have to justify the weight
 - [meat] wondering whether the smell would improve with cooking
 - [cloth] soft stuff to set beside the hard things a dwarf usually valued
 - [night] my eyes missing the welcome glare of a forge

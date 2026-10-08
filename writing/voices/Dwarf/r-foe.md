@@ -2,14 +2,14 @@
 kind: r-foe
 ---
 - my heart hammering like a forge bellows
-- more battered in spirit than I cared to admit
-- rather ready to stop testing dwarven toughness
-- my legs feeling about as solid as mine props again
+- the encounter leaving a dent in my stubbornness
+- my reputation for toughness quite sufficiently tested
+- my confidence settling back onto solid ground
 - [one] hard enough to make me respect the struggle
 - [!one !more] their numbers putting a strain on my stubbornness
 - [teeth] my beard decidedly fond of staying out of those jaws
 - [mechanical] rather sorry to see craft spent on killing
-- [night] my eyes wishing for the light of the Great Forge
+- [night] the Great Forge's welcome glare dear to me in the dark
 - [hc] unwilling to leave my kin a name to mourn
 - [low] my courage still softer than it looked
 - [high] my hands remembering the old business without much comfort

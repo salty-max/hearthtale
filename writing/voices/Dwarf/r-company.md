@@ -3,7 +3,7 @@ kind: r-company
 ---
 - less inclined to grumble within hearing of myself
 - [one] a companion worth having on the far side of the mountain
-- my back feeling less exposed than a quarry face
+- the country no longer mine to face alone
 - less of the distance left to my own stubbornness
 - almost as heartening as a name from Ironforge
 - [one] two of us to hold the ground

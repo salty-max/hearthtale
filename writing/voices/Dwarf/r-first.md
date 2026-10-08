@@ -1,11 +1,11 @@
 ---
 kind: r-first
 ---
-- my dwarven hide feeling less thick than I liked
+- my trust in dwarven toughness shaken
 - my stomach as unsettled as loose scree
 - rather too near the soft parts beneath my stubbornness
 - less tempted to mistake solid footing for safety
 - my beard feeling like an unfortunate handhold
 - [teeth] those teeth giving me a new affection for distance
 - [night] my eyes no keener than anyone else's in that dark
-- [low] rather wishing the lesson had been delivered back in Ironforge
+- [low] a beginner suddenly homesick for Ironforge
