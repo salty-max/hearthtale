@@ -1572,7 +1572,7 @@ for _, race in ipairs(RACES) do
       local chapters = {}
       local function chapter(log)
         for i, m in ipairs(log) do
-          m.zone, m.sub, m.at = "Westfall", "Sentinel Hill", m.at or i * 100
+          m.zone, m.sub, m.at = m.zone or "Westfall", m.sub or "Sentinel Hill", m.at or i * 100
         end
         table.insert(chapters, {
           start = { level = 12, zone = "Westfall", sub = "Sentinel Hill" },
@@ -1608,6 +1608,24 @@ for _, race in ipairs(RACES) do
         errands[k] = { k = "quest", giver = giver, ender = "Brewmaster Drohn", objectives = { { type = "log" } } }
       end
       chapter(errands)
+      -- one of my own people met in other peoples' lands; the hosts of a
+      -- race with no land of its own
+      local kin = {}
+      for name, who in pairs(ns.knowledge.npcs) do
+        if who.people == race then table.insert(kin, name) end
+      end
+      table.sort(kin)
+      for z, zone in ipairs({ "Westfall", "Duskwood", "The Barrens", "Stranglethorn Vale", "Ashenvale", "Tanaris" }) do
+        if kin[z] then
+          chapter({
+            { k = "quest", giver = kin[z], ender = kin[z], zone = zone, sub = zone, objectives = { { type = "log" } } },
+          })
+        end
+      end
+      local land = ({ Gnome = "Dun Morogh", Troll = "Durotar" })[race]
+      if land then
+        chapter({ { k = "quest", giver = "Sten Stoutarm", zone = land, sub = land, objectives = { { type = "log" } } } })
+      end
       -- the hunt for a quest's things, from the creatures they drop from
       for hunt = 1, 4 do
         local meat = { { type = "item", name = "Tough Wolf Meat", n = 8 } }

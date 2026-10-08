@@ -10,6 +10,7 @@ local _, ns = ...
 local W = ns.writer
 local words, listing, mid, objectiveOf, capitalise = W.words, W.listing, W.mid, W.objectiveOf, W.capitalise
 local instruction, linked, hash, plural, article = W.instruction, W.linked, W.hash, W.plural, W.article
+local HOSTS, TAKEN_IN = W.HOSTS, W.TAKEN_IN
 
 local Scene = {}
 Scene.__index = Scene
@@ -111,6 +112,7 @@ local function newScene(book, n, ch)
     -- errands begins (Scene:segment)
     starts = {},
     errandsFrom = nil,
+    peopleSaid = {}, -- the people the moment being told named (Scene:situate)
   }, Scene)
   local start = ch.start or {}
   -- a start whose place the game had not told yet (Forever, at login): the
@@ -769,6 +771,34 @@ end
 
 -- The run of errands, opened.
 function Scene:errands() self:alone("errands", {}, self:tags(nil, self.m)) end
+
+-- ── who I am among others ─────────────────────────────────────────────────────
+-- After a moment told: the people its sentences named (Book:say keeps them
+-- in s.peopleSaid), read against Knowledge.lua. Working for one of my own people
+-- in a land that isn't theirs (a gnome's Felix Whindlebolt among the dwarves)
+-- has a sentence of its own, once a zone in a book (`kin`); a race with no
+-- land of its own, working in its hosts' (TAKEN_IN: gnomes among the dwarves,
+-- the Darkspear among the orcs), says so once a book (`hosts`).
+function Scene:situate()
+  local named, b, m = self.peopleSaid, self.book, self.m
+  if #named == 0 then return end
+  self.peopleSaid = {}
+  local race, zone = self.c.race, m.zone or ""
+  local host, npcs = HOSTS[zone], ns.knowledge and ns.knowledge.npcs or {}
+  if host and host == TAKEN_IN[race] and not b.hostsTold then
+    b.hostsTold = true
+    self:alone("hosts", { zone = mid(zone) }, self:tags({ first = true }, m), m) -- (once a life)
+  end
+  if host == race or b.kinZones[zone] then return end
+  for _, name in ipairs(named) do
+    local who = npcs[name]
+    if who and who.people == race then
+      b.kinZones[zone] = true
+      self:alone("kin", {}, self:tags(nil, m), m) -- ("We were both gnomes...": just named)
+      return
+    end
+  end
+end
 
 -- ── the fold ─────────────────────────────────────────────────────────────────
 -- What a moment is to the fold: "low" (a routine hand-in), "silent" (told

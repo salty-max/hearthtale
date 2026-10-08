@@ -577,6 +577,28 @@ local CLASS_FIGHT = {
   DRUID = { "wrath" },
 }
 
+-- Whose land a zone is (a people's own: the hosts where another works), and
+-- the races with no land of their own and who took them in (gnomes, since
+-- Gnomeregan, among the dwarves; the Darkspear among the orcs).
+local HOSTS = {}
+for _, h in
+  ipairs(named([[
+  Dwarf: Dun Morogh, Ironforge, Loch Modan, Anvilmar
+  Human: Elwynn Forest, Stormwind City, Westfall, Redridge Mountains, Duskwood
+  NightElf: Teldrassil, Darnassus, Darkshore
+  Orc: Durotar, Orgrimmar
+  Tauren: Mulgore, Thunder Bluff
+  Scourge: Tirisfal Glades, Undercity, Silverpine Forest
+  BloodElf: Eversong Woods, Silvermoon City, Ghostlands
+  Draenei: Azuremyst Isle, The Exodar, Bloodmyst Isle
+]]))
+do
+  for _, zone in ipairs(h[2]) do
+    HOSTS[zone] = h[1]
+  end
+end
+local TAKEN_IN = { Gnome = "Dwarf", Troll = "Orc" }
+
 local function town(node) return node and (node:match("^([^,]+)") or node) end
 
 -- The chapter's kills, the most first (for the closing recap).
@@ -703,6 +725,8 @@ W.THING_KIND = THING_KIND
 W.thingOf = thingOf
 W.town = town
 W.ELEMENT = ELEMENT
+W.HOSTS = HOSTS
+W.TAKEN_IN = TAKEN_IN
 W.CLASS_FIGHT = CLASS_FIGHT
 W.topKills = topKills
 W.instruction = instruction

@@ -239,6 +239,7 @@ local function newBook(c)
   -- spells learned; a new one, to try on the next foes a quest asks for
   b.fighting, b.fresh = {}, nil
   b.noted = {} -- the spells told by a line of their own (writing/lesson.md)
+  b.kinZones, b.hostsTold = {}, false -- (Scene:situate)
   for _, e in ipairs(CLASS_FIGHT[class] or {}) do
     b.fighting[e] = true
   end
@@ -516,7 +517,10 @@ function Book:say(kind, key, values, tags, prefer, raw)
   if seen then -- who this sentence names, for the rest of the paragraph
     for _, k in ipairs(PEOPLE) do
       if type(asked[k]) == "string" and text:find("{" .. k .. "}", 1, true) then
-        each(asked[k], function(name) seen[name] = true end)
+        each(asked[k], function(name)
+          seen[name] = true
+          table.insert(s.peopleSaid, name) -- (for Scene:situate)
+        end)
       end
     end
   end

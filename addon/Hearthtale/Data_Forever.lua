@@ -965,6 +965,12 @@ ns.data = {
       { "I had my first gold piece, and began, a little dangerously, to think about what it could buy." },
       { "The first gold piece came to my purse almost without my noticing, and after that I could not stop noticing it." },
     },
+    ["hosts"] = {
+      { "The dwarves had taken my people in after Gnomeregan, and {zone} had become our home as much as theirs, with everything built a size too large.", tags = { "race:Gnome", "first" } },
+      { "Since Gnomeregan, {zone} had to be home for my people as well as for the dwarves, who had made room for us.", tags = { "race:Gnome", "first" } },
+      { "The orcs had given the Darkspear a place in {zone} when we had none, and I meant to be worth the sharing.", tags = { "race:Troll", "first" } },
+      { "{zone} was the orcs' land, shared with my people by Thrall's choosing, and I did not forget it.", tags = { "race:Troll", "first" } },
+    },
     ["kills-two"] = {
       { "{n1} {foes1} and {n2} {foes2} had fallen to me, enough for one halt." },
       { "I counted {n1} {foes1} and {n2} {foes2} among the fighting {at}, though the numbers left much of it untold." },
@@ -1033,6 +1039,13 @@ ns.data = {
       { "{n} {foes} had fallen {at} by the end, more fighting than the number could tell." },
       { "The fighting {at} had cost {n} {foes} their lives, and me a good deal of sweat." },
       { "{n} {foes} had fallen {at} by the end.", tags = { "plain" } },
+    },
+    ["kin"] = {
+      { "We were of the same people, and it did me good to find one of my own so far from home." },
+      { "It was good to work for one of my own people, so far from home." },
+      { "That was one of my own people, and for a moment the land felt less foreign." },
+      { "Meeting one of my own people out here, I was surprised how much the familiar face was worth." },
+      { "It was easier to work for someone of my own people; less needed saying." },
     },
     ["lesson"] = {
       { "Life Tap was the first spell that asked to be paid in my own blood.", tags = { "spell:Life_Tap" } },
@@ -2287,6 +2300,13 @@ ns.data = {
         { "{n} {foes} had fallen to me, steady work that felt longer than it looked on the page." },
         { "I had fought {n} {foes}, enough that sitting still felt almost like a reward.", tags = { "lots" } },
       },
+      ["kin"] = {
+        { "That was another dwarf, and it was good to hear a voice from home so far from the forges." },
+        { "We were kin, and that made the work feel nearer home." },
+        { "That was a dwarf of the mountain, and we understood each other without much said." },
+        { "That was another dwarf far from the forges, doing honest work, and I liked that." },
+        { "We were both dwarves, and the work went as plainly as I like it." },
+      },
       ["night"] = {
         { "I slept rough {at}, with my back to the ground and little comfort to recommend it.", tags = { "!last" } },
         { "I made camp {at}, with my kit close and little trust in the night.", tags = { "!last" } },
@@ -2515,6 +2535,13 @@ ns.data = {
         { "I counted {n} {foes} among the fighting {at}, a simpler calculation than meeting them had been." },
         { "I had brought down {n} {foes} {at}, and kept thinking about what I might do differently next time." },
         { "{n} {foes} had fallen to me {at}. The total was definite, even if my conclusions were not." },
+      },
+      ["kin"] = {
+        { "We were both gnomes a long way from home, and neither of us needed Gnomeregan explained." },
+        { "That was another gnome, one more of us making do in a country built for taller people." },
+        { "It was good to find another gnome at work so far from home; we are fewer than we used to be." },
+        { "We were both gnomes, and it was a relief to look someone in the eye without craning my neck." },
+        { "That was another of Gnomeregan's scattered children, still at work, which I found encouraging." },
       },
       ["night"] = {
         { "I slept outside {at}, curled up small against the cold, which is one advantage of my size.", tags = { "!last" } },
@@ -3090,6 +3117,13 @@ ns.data = {
         { "{n} {foes} had fallen to me, with more to carry from the work than their names alone." },
         { "I had fought {n} {foes}, enough to welcome a pause in which the world could ask something quieter of me.", tags = { "lots" } },
       },
+      ["kin"] = {
+        { "We were both kaldorei, and the strangeness of the place eased a little." },
+        { "That was one of my kin, so far from Teldrassil, and for a moment I felt the forest's quiet." },
+        { "We were both children of the forest, and I was glad of it in a land of strangers." },
+        { "That was another kaldorei, and the quiet between us needed no explaining." },
+        { "One of my own people stood here too, and I did not feel so far from the trees." },
+      },
       ["night"] = {
         { "I slept beneath the open sky {at}, letting the quiet settle around me.", tags = { "!last" } },
         { "I bedded down {at}, glad of room enough to be still for a while.", tags = { "!last" } },
@@ -3568,6 +3602,13 @@ ns.data = {
         { "{n} {foes} had fallen to me, an ordinary part of a life I was still learning to call my own." },
         { "I counted {n} {foes} among the fighting, though the number made it look simpler than it had been." },
         { "I had fought {n} {foes}, enough to discover that I still valued being left in peace.", tags = { "lots" } },
+      },
+      ["kin"] = {
+        { "We were both Forsaken, which spared us the usual looks." },
+        { "That was another of us; among the living, it counted for something." },
+        { "We were both Forsaken, and there was no need to pretend otherwise." },
+        { "That was another of the Forsaken, working for a living like the rest of the world, which amused me." },
+        { "That was one of my own, and it was a rare pleasure not to be the strangest thing in sight." },
       },
       ["night"] = {
         { "I sat out the night {at}, with little to interrupt my thoughts.", tags = { "!last" } },
@@ -4068,6 +4109,13 @@ ns.data = {
         { "{n} {foes} had fallen to me {at}. I remembered more of the encounters than their number could hold." },
         { "I had faced {n} {foes} {at}, with little wish to add to the fighting just then." },
       },
+      ["kin"] = {
+        { "We were both shu'halo, and the land felt less wide for it." },
+        { "It was a comfort to find one of my own people so far from Mulgore." },
+        { "That was another of the shu'halo, and I was glad to share a little of the road with my own." },
+        { "We were both of the plains, and that made the work lighter." },
+        { "Here was one of my own people so far from home, and the Earth Mother felt nearer for it." },
+      },
       ["night"] = {
         { "I lay down outside {at}, listening until the sounds around me no longer drew all of my attention.", tags = { "!last" } },
         { "I slept on the ground {at}, with my thoughts slower to settle than my body.", tags = { "!last" } },
@@ -4350,6 +4398,13 @@ ns.data = {
         { "I counted {n} {foes} among the fighting {at}, pleased to be remembering it from a little distance." },
         { "I had brought down {n} {foes} {at}, and felt I had given that much of the day enough attention." },
         { "{n} {foes} had fallen to me {at}. I was quite willing to let the number stand without adding to it." },
+      },
+      ["kin"] = {
+        { "We were both Darkspear, and that was worth more than any welcome." },
+        { "That was another Darkspear so far from the Echo Isles, and I could not help grinning." },
+        { "We were both Darkspear, and I had a feeling we would get along." },
+        { "Here was another Darkspear far from the islands, and the loa felt a little closer." },
+        { "That was one of my own people, and the work went easier with someone who knew our ways." },
       },
       ["night"] = {
         { "I slept outside {at}, listening until the sounds stopped needing all of my attention.", tags = { "!last" } },

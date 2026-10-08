@@ -615,6 +615,7 @@ function Book:chapter(n, ch)
     if s.errandsFrom == i then s:errands() end
     s:fold() -- (a routine hand-in past the scene's few: told in its tally, s.foldNow)
     match(m, ARMS, s)
+    s:situate()
     if m.k ~= "level" then s.prev = m end
   end
   -- (the tally once the chapter ends: in an open one, the place may not be left)
