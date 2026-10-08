@@ -19,10 +19,10 @@ kind: lesson
 - [spell:Hammer_of_Justice] I learned Hammer of Justice, a way for the Light to interrupt an enemy more firmly than a prayer.
 - [spell:Charge] I learned Charge, and could close the distance before my courage had time to argue about it.
 - [spell:Execute] I learned Execute, with the ugly comfort of knowing how to finish a fight that had already cost enough.
-- [spell:Pick_Pocket] Once I could pick pockets, I looked at every purse I passed a little differently.
-- [spell:Sap] With Sap, I could put a foe to sleep before it knew I was there.
-- [spell:Vanish] Vanish was a way out of any fight I did not care to finish.
-- [spell:Sprint] Sprint was for the times when leaving quickly was the whole plan.
+- [spell:Pick_Pocket] I learned to pick pockets, and felt a new sympathy for anyone who kept a hand on their purse.
+- [spell:Sap] I learned Sap, and liked the prospect of leaving an enemy unconscious instead of making an introduction.
+- [spell:Vanish] I learned Vanish, a way to let an enemy wonder where its troubles had gone.
+- [spell:Sprint] I learned Sprint, with no shame in wanting to leave some problems further behind.
 - [spell:Aspect_of_the_Cheetah] I learned Aspect of the Cheetah, and could give my legs a hunter's answer to a long road.
 - [spell:Feign_Death] I learned Feign Death, a hunter's lie I hoped would keep me from becoming the truth of it.
 - [spell:Hunter's_Mark] I learned Hunter's Mark, a way to keep my quarry from becoming merely another movement I could not place.
