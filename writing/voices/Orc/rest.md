@@ -2,11 +2,11 @@
 kind: rest
 ---
 - I rested {at}, with my blood finally quiet enough to enjoy being still.
-- I settled {at}, wishing the peace of a shared camp were as near as my weariness.
-- I stopped {at}, with more affection for a builder's life than another battle could give me.
-- As ready for stillness as an orc after a long watch, I rested {at}.
+- I settled {at}, with the peace of a shared camp dear to me.
+- I stopped {at}, enjoying the sort of quiet a builder might come home to.
+- I rested {at}, with an orc's relief at the end of a long watch.
 - I paused {at}, grateful that no order could make me stand before I was willing.
 - I rested {at}, letting my strength return without demanding another proof of it.
 - I stopped {at}, missing the drums of home without wanting them to summon me anywhere.
-- I rested {at}, hoping the ancestors would find nothing shameful in so much relief.
-- Ready to be flesh rather than the Horde's reputation for toughness, I paused {at}.
+- I rested {at}, and left the ancestors to judge my unashamed relief.
+- I paused {at}, letting the Horde's reputation for toughness look after itself.

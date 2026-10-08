@@ -2,13 +2,13 @@
 kind: r-lesson
 ---
 - my strength no shortcut past clumsy fingers
-- less at ease learning than I was offering to help
+- an unfamiliar difficulty checking my enthusiasm
 - [one] a better hope than trusting courage to serve for skill
-- [one] no longer willing to mistake my eagerness for mastery
+- [one] my eagerness no longer mistaken for mastery
 - [one] wondering how well it would serve beyond a safe lesson
-- my patience taking more effort than my arms
-- [new one] hoping it might make me useful away from a battlefield
+- an orc finding patience a demanding exercise
+- [new one] a new skill with some use away from a battlefield
 - [new] an apprentice's pride harder to swallow than a defeat
 - [low one] still new enough to this to wish for easier learning
 - [high] my skill beginning to catch up with my blood
-- [!one] more ready to use them than to rely on a brave face
+- [!one] some practical support for the courage I would need

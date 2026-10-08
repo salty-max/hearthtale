@@ -2,9 +2,9 @@
 kind: r-gear
 ---
 - [!made] my hide less entirely responsible for keeping me alive
-- [!made] hoping the weight would earn its place
+- [!made] the weight due to justify a place in my belongings
 - [!made] one less temptation to trust entirely in stubbornness
-- [!made] something more substantial than the promise of an easy fight
+- [!made] some solid support for an orc's confidence
 - [!made hc] unwilling to meet the ancestors merely to save a little weight
 - [made] my fingers fit for something besides a fight
 - [made] almost as satisfying as the end of a hard fight

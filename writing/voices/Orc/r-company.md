@@ -8,4 +8,4 @@ kind: r-company
 - my pride finding less cause to hurry into danger
 - my trust feeling less like a risk
 - [night one] less exposed beneath the dark
-- [hc one] neither of us a life I wanted the ancestors to take yet
+- [hc one] two lives to keep from joining the ancestors

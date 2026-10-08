@@ -1,13 +1,13 @@
 ---
 kind: r-task
 ---
-- my shoulders less willing by the end
-- rather ready for a request that did not need walking
-- my patience a less obvious strength than my arms
+- my offer of help beginning to cost me
+- an ordinary request taking an orc's full measure
+- my patience receiving a thorough exercise
 - no need of a battle to leave me weary
 - more names I hoped the Horde could count on
-- my legs less willing to be offered so readily again
+- my generosity due for a quiet spell
 - [explore] wondering how a scout would read the way ahead
-- [explore] my stride less certain without familiar ground
+- [explore] an orc's caution kept busy by the unfamiliar country
 - [escort] unwilling to hurry another life towards the ancestors
-- [night] my eyes wanting the light more than my pride admitted
+- [night] the dark leaving little room for confidence in the search
