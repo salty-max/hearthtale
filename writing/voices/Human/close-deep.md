@@ -1,8 +1,8 @@
 ---
 kind: close-deep
 ---
-- {foe} nearly killed me {at}. I wanted to get home, with a force that surprised me.
-- I barely survived {foe} {at}. Even after the danger passed, I kept expecting another moment of it.
-- {foe} left me within a breath of the end {at}. The same road looked quite different when I could bear to look along it again.
-- [!foe] I barely survived {at}, and could not stop thinking about how little it would have taken.
-- [!foe] I came very near the end {at}. There were people I wanted to see again, and things I had not thought urgent enough to say.
+- {foe} nearly killed me {at}. I wanted a familiar doorstep, and the sound of my name spoken without alarm.
+- I barely survived {foe} {at}; for a moment, the safety promised by Stormwind's walls seemed impossibly far away.
+- {foe} left me barely alive {at}. I had never wanted so badly to grow old over ordinary worries.
+- [!foe] I barely survived {at}, and could think of nothing finer than getting home without needing to be carried.
+- [!foe] I came very near the end {at}. I hoped the Light had heard the prayer I could scarcely form.

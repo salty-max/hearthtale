@@ -1,12 +1,12 @@
 ---
 kind: rest
 ---
-- I rested {at}, glad that nothing needed sorting out this very moment.
-- I settled {at}, with the comfortable feeling of having got somewhere I could stop.
-- Letting the day's worries grow a little less urgent, I paused {at}.
-- I rested {at}, with no wish to be useful again until I had stopped aching.
-- I stopped {at}. For once I could look about without looking for the way out.
-- I rested {at}, glad to think back over the road instead of keeping pace with it.
-- Pleased to have a little time nobody had yet found a use for, I paused {at}.
-- I rested {at}, with enough behind me to leave the unfinished things alone for a while.
-- I set the journey down {at}, hoping the next stretch would feel as manageable after some rest.
+- I rested {at}, ready for the kind of peace that asked nothing more than staying put.
+- I settled {at}, missing the harmless noise of neighbours at the end of a day's work.
+- As weary as a field hand after harvest, I paused {at}.
+- I rested {at}, hoping nobody would need me before my feet had forgiven the road.
+- I stopped {at}, with a stronger affection for settled folk than I had brought to the journey.
+- I rested {at}, wishing the quiet could reach the people still worried about tomorrow's bread.
+- Ready for an evening too ordinary to make a story of, I paused {at}.
+- I rested {at}, with the thought of a safe doorstep enough to soften the day.
+- I stopped {at}, hoping a little peace would leave me willing to be useful again.

@@ -1,7 +1,7 @@
 ---
 kind: revived
 ---
-- [corpse] I found my body again as a ghost {at}. Being back in it felt ordinary and astonishing at once.
-- [healer] The spirit healer raised me {at}, and I was glad of the return despite the weakness.
-- [ally] {by} raised me {at}. I had never been so glad to owe someone a favour.
-- [self] My own preparation brought me back {at}, and I was almost surprised to find myself alive again.
+- [corpse] I found my body again as a ghost {at}, and felt an absurd tenderness for the familiar weight of it.
+- [healer] The spirit healer raised me {at}. I hoped the Light would forgive how little strength I had left for thanks.
+- [ally] {by} raised me {at}, and I had never wanted so badly to repay a neighbour's kindness.
+- [self] My own preparation brought me back {at}, with an ordinary life suddenly seeming a grand enough ambition.

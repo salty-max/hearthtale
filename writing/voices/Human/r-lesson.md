@@ -1,21 +1,21 @@
 ---
 kind: r-lesson
 ---
-- with a good deal still to practise
-- the new moves clumsy at first
-- pleased to have something new to rely on
-- [one] keen to see if it would hold up in a real fight
-- [one] the knack of it slow in coming
-- a little more ready for whatever came next
-- [new] a trade that might feed me one day
-- [new] the first rung of a long ladder
-- [low one] green as spring grass in it, still
-- [high] the lesson easier for all the ones that came before
-- [!one] keen to see if they would hold up in a real fight
-- more confident about the next attempt than the last
-- keen to find out how much had stayed with me
-- with the unfamiliar parts still turning in my head
-- pleased to have made some progress
-- with my hands slower than I would have liked
-- [new] hoping this might become a useful way to earn my keep
-- [low] very conscious of being a beginner
+- my fingers less certain than my willingness
+- rather grateful for a lesson that did not begin with danger
+- hoping the next need would find me less helpless
+- [one] a little more prepared to use it when fear would not let me think
+- [one] wishing the knack came as easily as the name
+- less dependent on somebody arriving in time to help
+- [new] a possible living that did not require a recruiting sergeant
+- [new] hoping to earn bread rather than another bruise
+- [low one] still green enough to envy a recruit's confidence
+- [high] more accustomed to learning without having to swallow my pride
+- [!one] hoping they would come more readily than a prayer in danger
+- less comfortable learning than I had sounded when I offered
+- my courage in need of something sturdier than good intentions
+- an eager pupil still a long way from earning bread
+- hoping to repay the learning with more than an eager face
+- my patience no quicker than my fingers
+- [new] a little closer to being able to pay my own way
+- [low] still short of the ease I admired in the old hands

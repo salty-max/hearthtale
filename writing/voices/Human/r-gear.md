@@ -1,17 +1,17 @@
 ---
 kind: r-gear
 ---
-- [!made !held] a decent fit, for once
-- [!made] better than anything I had started out with
-- [!made] the sort of thing a guard would envy
-- [!made] heavier than I expected, which seemed promising
-- [!made hc] one more chance between me and a bad end
-- [made] nothing fancy, but sound
-- [made !held] every crooked stitch my own
-- [made !held] pleased with how it turned out
-- [!made] a welcome addition to what I had to rely on
-- [!made] rather pleased to have the choice
-- [!made] keen to see how well the new piece would serve
-- [!made hc] reassuring to have between me and trouble
-- [made !held] with a little pride in wearing my own handiwork
-- [made] more attached to the result for the effort it took
+- [!made !held] rather fond of being able to breathe inside my clothing
+- [!made] rather better than hoping a guard would arrive
+- [!made] something I might have admired on a passing adventurer
+- [!made] more reassuring than a recruitment speech
+- [!made hc] no wish to leave my safety entirely to the Light
+- [made] nothing fancy enough for a Stormwind shop window
+- [made !held] hoping my sewing would survive longer than my patience
+- [made !held] rather proud to wear something that had cost effort instead of coin
+- [!made] one less thing to envy in somebody else's kit
+- [!made] more comfort than a promise from a distant guard
+- [!made] hoping the new weight would feel familiar by the next mile
+- [!made hc] worth more to me than looking impressive
+- [made !held] less dependent on what I could afford in a shop
+- [made] rather fond of something that had come from my own effort

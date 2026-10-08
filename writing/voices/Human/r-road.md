@@ -1,20 +1,20 @@
 ---
 kind: r-road
 ---
-- [!grouped] the road dusty and the company scarce
-- [!back] curious what its people were like
-- [!back] keen to see it up close
-- [!back] keen to see what work the place had for me
-- [!back !home] a stranger, and plain to everyone
-- [!back night] arriving after dark
-- [back] a few faces nodding at me now
-- [back] the road worn into habit by now
-- [back] much as I remembered it
-- curious what lay beyond the next turn
-- with my legs beginning to feel the walk
-- [!back] hoping the place would be less confusing up close
-- [!back] interested in who might need a hand here
-- [!back] keen to get my bearings before going farther
-- [!back night] with less of the place visible than I would have liked
-- [back] with the route coming back to me as I went
-- [back] wondering what I would find this time
+- [!grouped] rather too far from a neighbour's help
+- [!back] hoping the people would be kinder than the distance
+- [!back] less sure of my welcome than of my willingness to help
+- [!back] wondering whose trouble would find me first
+- [!back !home] rather aware of being a stranger beyond the familiar roads
+- [!back night] less keen to find my way by night
+- [back] hoping someone would still know my name
+- [back] my feet more familiar with the distance than they wished
+- [back] less likely to need a guard's directions
+- rather susceptible to the promise of a friendly inn
+- my legs beginning to bargain for a pause
+- [!back] hoping for an easier welcome than the road had offered
+- [!back] wondering whether help would be wanted before introductions
+- [!back] less ready to admit how far from home I felt
+- [!back night] a lit doorway more inviting to me than another dark road
+- [back] the familiar way almost as comforting as a neighbour's face
+- [back] hoping the same names would still mean people I could help

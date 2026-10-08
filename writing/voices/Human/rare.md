@@ -1,7 +1,7 @@
 ---
 kind: rare
 ---
-- I brought down {foe} {at}, and kept returning to that encounter when I thought about the day.
-- {foe} fell to me {at}. I was pleased to have survived, and willing to admit how relieved I was.
-- I dealt with {foe} {at}, a name I would remember after the smaller troubles had run together.
-- I killed {foe} {at}, and felt the relief before I thought of making anything of the victory.
+- I brought down {foe} {at}, and hoped the name would sound less frightening when I told it at home.
+- {foe} fell to me {at}; I could almost enjoy the thought of the telling once my knees steadied.
+- I overcame {foe} {at}, feeling a little nearer to the adventurers I had watched pass through town.
+- I killed {foe} {at}, and wanted an ordinary evening badly enough to feel foolish about it.

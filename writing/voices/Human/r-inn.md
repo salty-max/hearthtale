@@ -1,15 +1,15 @@
 ---
 kind: r-inn
 ---
-- a bed I could count on
-- a place to sleep without one eye open
-- a bed waiting at the end of the road
-- somewhere to come back to, which mattered more than I said
-- the stone warm in my pocket
-- [night] glad to be done with the day
-- [hc] a safe door worth knowing
-- glad not to walk the whole way back
-- with the return journey rather less on my mind
-- a small comfort to have ready
-- already looking forward to stopping here
-- [hc] with some comfort in having a retreat
+- hoping the return would include a proper supper
+- rather happier with shelter within a stone's reach
+- less likely to spend the next night missing a roof
+- closer to having an address than I had felt all day
+- something reassuringly small to set against a long road
+- [night] quite ready for an evening behind a door
+- [hc] unwilling to leave the way home to chance
+- my feet rather grateful for the enchantment
+- no wish to walk every mile twice
+- almost as good as knowing someone was expecting me
+- already thinking fondly of stopping
+- [hc] less far from safety than the distance suggested

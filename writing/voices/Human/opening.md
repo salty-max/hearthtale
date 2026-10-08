@@ -1,12 +1,12 @@
 ---
 kind: opening
 ---
-- I set out {at}, wondering whose doorstep the day's work would bring me to.
-- I began again {at}. There was plenty to do, and I felt better once I was moving.
-- I took up the road {at}, with a little curiosity left over from my worrying.
-- Glad to be moving again, I set out {at}.
-- I made ready {at}, hoping for a day I could tell plainly when I got back.
-- I went on {at}, interested in who lived here as well as what needed doing.
-- I began this stretch {at}, hoping the day would be kinder than the last.
-- Already wondering which faces I would see again, I took up the road {at}.
-- I set out {at}, keen to get beyond thinking about the road and see some of it.
+- I set out {at}, wondering whose troubles would have a claim on me before the day was done.
+- I began again {at}, hoping for work that would leave both me and my neighbours a little better off.
+- I took up the road {at}, still susceptible to the promise of a quiet life somewhere beyond it.
+- I set out {at}, with more willingness than a Stormwind tax collector had any right to expect.
+- I made ready {at}, hoping to be back before another evening had become a journey.
+- I went on {at}, with the names of people who needed help harder to ignore than the distance.
+- I began this stretch {at}, rather hoping the Light had a gentler day in mind.
+- The kingdom had room for heroes, but I would settle for coming home useful, and set out {at}.
+- I took up the road {at}, wanting a little more of the world than the wars had left us.

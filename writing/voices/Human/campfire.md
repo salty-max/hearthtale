@@ -1,6 +1,6 @@
 ---
 kind: campfire
 ---
-- I stopped by a fire {at}, grateful to have something to attend to besides the next mile.
-- I warmed my hands by a fire {at}, and thought about where the road had brought me.
-- Letting the day's names and places come back without hurrying them, I sat by the fire {at}.
+- I warmed my hands at a fire {at}, and wished for bread just out of an Elwynn oven.
+- I stopped by a fire {at}, with its warmth making the distance from home feel shorter.
+- I sat beside the fire {at}, wanting no grander company than folk I could trust not to reach for a weapon.

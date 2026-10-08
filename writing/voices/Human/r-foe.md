@@ -1,23 +1,23 @@
 ---
 kind: r-foe
 ---
-- harder work than it had any right to be
-- my heart going for some time after
-- the kind of fight you never tell your mother about
-- no worse for it than a bruise or two
-- glad to have kept my nerve
-- [!one] the last of them the most stubborn
-- [teeth] keeping all my fingers, which I counted
-- [mechanical] its gears still ticking when it fell
-- [night] the dark making it uglier than it needed to be
-- [hc] my hands shaking once it was over
-- [low !more] still more luck than skill, if I am honest
-- [high] steadier than I would once have been
-- my heart still going when the fight was over
-- glad to find my nerve had held
-- with less breath left than I cared to admit
-- [one] with no wish to meet that foe on the way back
-- [mechanical] much less interested in machinery at close quarters
-- [night] straining to make out each movement
-- [hc] slow to stop shaking afterwards
-- [high] steadier than I remembered being at the start
+- my knees less reliable than I wanted to admit
+- my heart still trying to run away
+- nothing I would want brought to an Elwynn doorstep
+- rather ready to be safely within a town's walls again
+- my nerve slower to settle than the rest of me
+- [!one] their number making me miss the city watch
+- [teeth] all my fingers suddenly dear to me
+- [mechanical] rather wary of anything built to hurt people
+- [night] my eyes making enemies of the dark
+- [hc] unwilling to become another name read out at home
+- [low !more] rather short of the courage the recruiting songs promised
+- [high] less easily frightened than when the roads were new
+- my breath refusing to come quietly
+- my courage in need of a quiet evening
+- my courage too thin to feel like armour
+- [one] not an enemy I would want at my door
+- [mechanical] rather keener on machines that could plough a field
+- [night] my eyes straining where a guard's lantern would have helped
+- [hc] slow to feel safe once the fighting stopped
+- [high] more able to keep fear out of my fingers
