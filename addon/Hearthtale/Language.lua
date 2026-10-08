@@ -157,10 +157,31 @@ local TITLES = set([[
 -- A moment's first objective, as recorded. One whose name the game hadn't
 -- filled in yet when it was recorded ("0" by 0.5.0, " " by 0.5.1: an item
 -- not loaded) has no real name: not told.
+local function misread(o) return o.name and (o.name:match("^%d+$") or not o.name:find("%S")) end
 local function objectiveOf(m)
   local o = m.objectives and m.objectives[1]
-  if o and o.name and (o.name:match("^%d+$") or not o.name:find("%S")) then return nil end
+  if o and misread(o) then return nil end
   return o
+end
+-- All of a moment's objectives of the same kind as the first ("Rockjaw
+-- Trogg" and "Burly Rockjaw Trogg": creatures; Felix's box, chest and bucket:
+-- things), as recorded.
+local function objectivesLike(m, first)
+  local out = {}
+  for _, o in ipairs(m.objectives or {}) do
+    if not misread(o) and o.type == first.type and (o.name ~= nil) == (first.name ~= nil) and o.held == first.held then
+      table.insert(out, o)
+    end
+  end
+  return out
+end
+
+-- How many, as the story tells it: no number (a ledger's, not a journal's),
+-- but the weight of a great deal of work.
+local function size(n)
+  if n >= 20 then return "a great many" end
+  if n >= 12 then return "a good many" end
+  return ""
 end
 
 local function itemName(name)
@@ -548,7 +569,9 @@ local function lowerFirst(text) return (text:gsub("^%u", string.lower)) end
 -- VanCleef is hiding" is "escort the Defias Traitor to discover where
 -- VanCleef was hiding".
 local function taskOf(text)
-  text = text:gsub("[%.:]%s*$", "")
+  text = text:gsub("[%.:!]+%s*$", "")
+  -- (a deadline is the game's, not the deed's: "before it gets cold in five minutes")
+  text = text:gsub(" before [^,]- in %a+ minutes?$", ""):gsub(" within %a+ minutes?$", "")
   for _, verb in ipairs(HAND_IN) do
     text = text:gsub(",? and " .. verb .. " to .+$", ""):gsub(",? then " .. verb .. " to .+$", "")
   end
@@ -583,6 +606,8 @@ W.plural = plural
 W.TROPHY = TROPHY
 W.TITLES = TITLES
 W.objectiveOf = objectiveOf
+W.objectivesLike = objectivesLike
+W.size = size
 W.itemName = itemName
 W.things = things
 W.article = article

@@ -236,7 +236,7 @@ fire("CHAT_MSG_SYSTEM", "You have learned a new spell: |cff71d5ff|Hspell:13819|h
 local power = moments("power")[1]
 check(
   power and power.spell == "Summon Warhorse" and power.kind == "steed" and #moments("learned") == 1,
-  "a new power (a steed, a druid's form, a warlock's demon): a moment of its own, by its spell id"
+  "a class's own steed: a moment of its own, by its spell id"
 )
 fire("CHAT_MSG_LOOT", "You receive loot: " .. itemLink("Frostmane Leather Vest") .. ".")
 check(#moments("loot") == 0, "green loot isn't told (it is, once worn)")
@@ -429,10 +429,13 @@ check(
   "chapter 1, still being written: its moments in order, the quests told by what was done"
 )
 do -- the Troll Cave: its work told in Frostmane Hold, then a return to Grelin in Anvilmar
-  local work = one.text:find("Frostmane Troll Whelps", 1, true)
-  local back = work and one.text:find("Anvilmar", work, true)
-  local returned = back and one.text:find("Grelin Whitebeard", back, true)
-  check(work and back and returned, "a quest's work told where it happened, the return where it was turned in")
+  local hold = one.text:find("Frostmane Hold", 1, true)
+  local work = hold and one.text:find("Frostmane Troll Whelps", hold, true)
+  local returned = work and one.text:find("Grelin Whitebeard", work, true)
+  check(
+    work and returned and not one.text:sub(work, returned):find("Anvilmar", 1, true),
+    "a quest's work told where it happened, the return to who asked after it (a quick way back is no journey)"
+  )
 end
 check(not one.text:find("level two", 1, true), "a level reached isn't told (the chapter's levels say it)")
 local textBefore = one.text
@@ -467,6 +470,10 @@ check(
 check(rows[1].marks[1]:IsShown() and rows[1].marks[2]:IsShown(), "marks: a skull for a close call, a star for a rare")
 state.sub = "Brewnall Village"
 fire("ZONE_CHANGED")
+local bind = state.bind
+state.bind = "Brewnall Village"
+fire("HEARTHSTONE_BOUND") -- (a place is told with what is done there)
+state.bind = bind
 check(page.body:GetText():find("Brewnall Village", 1, true), "a new moment while the book is open: added at once")
 SlashCmdList.HEARTHTALE("")
 check(not B:IsShown(), "/ht again closes it")
@@ -791,6 +798,7 @@ check(
   back and back.how == "corpse" and back.graveyard == "Kharanos" and back.took == 300,
   "a ghost's run back to my body: from which graveyard, how long"
 )
+G.wait(60)
 state.health = 0
 fire("PLAYER_DEAD")
 state.health = 100
@@ -800,8 +808,10 @@ state.ghost, state.auras[15007] = false, true
 fire("PLAYER_UNGHOST")
 state.auras[15007] = nil
 check(revived()[2] and revived()[2].how == "healer", "the spirit healer's bargain (its sickness tells it)")
+G.wait(60)
 state.health = 0
 fire("PLAYER_DEAD")
+fire("PLAYER_DEAD") -- (the game may tell one death twice)
 state.health = 100
 fire("RESURRECT_REQUEST", "Thessaly")
 fire("PLAYER_ALIVE")
@@ -809,6 +819,11 @@ check(
   revived()[3] and revived()[3].how == "ally" and revived()[3].by == "Thessaly",
   "raised where I fell by a companion"
 )
+local deaths = 0
+for _, m in ipairs(K.chapters[#K.chapters].log) do
+  if m.k == "died" then deaths = deaths + 1 end
+end
+check(deaths == 3, "a death the game tells twice is told once")
 
 -- The other side met in the open world: who, of what race and class; in a
 -- battleground, nothing at all.
@@ -902,6 +917,82 @@ check(
   ledger and not ledger.abandoned and HearthtaleChar.pending[192] == nil,
   "a quest given up after its chapter closed: the closed chapter isn't rewritten"
 )
+
+-- Kills credited to me: my group's killing blows, and a quest's count gone up
+-- for a creature no kill told (another's blow on one I fought: the game
+-- credits whoever tagged it); a kill both told and counted counts once.
+local function killsOf(name) return K.chapters[#K.chapters].kills[name] or 0 end
+local leopard = G.creature("Snow Leopard Prowler", "Beast", "Cat")
+local before = killsOf("Snow Leopard Prowler")
+accept(
+  193,
+  "Grund and Gozwin",
+  "Grund Drokda",
+  { text = "Snow Leopard Prowler slain: 0/2", type = "monster", numRequired = 2 }
+)
+kill(leopard, 501, true) -- (another's killing blow)
+state.objectives[193][1] = { text = "Snow Leopard Prowler slain: 1/2", type = "monster", numRequired = 2 }
+fire("QUEST_LOG_UPDATE")
+check(killsOf("Snow Leopard Prowler") == before + 1, "a kill the quest credits me with, another's blow, is counted")
+kill(leopard, 502)
+state.objectives[193][1] =
+  { text = "Snow Leopard Prowler slain: 2/2", type = "monster", numRequired = 2, finished = true }
+fire("QUEST_LOG_UPDATE")
+check(killsOf("Snow Leopard Prowler") == before + 2, "… and one told and counted, once")
+state.party = { party1 = { name = "Thessaly", class = "PRIEST", guid = "Player-1-00TH" } }
+G.killedBy("Player-1-00TH", leopard, 503)
+check(killsOf("Snow Leopard Prowler") == before + 3, "a groupmate's killing blow is a kill of ours")
+G.killedBy("Player-1-00ZZ", leopard, 504)
+check(killsOf("Snow Leopard Prowler") == before + 3, "… a stranger's isn't")
+state.party = {}
+
+local learnedBefore = #told("learned")
+-- Firsts of a life: the first bag on my back (looted: they are rare at
+-- first), the first gold piece, a warlock's first demon of a kind and a
+-- druid's first form (both learned while the journal was kept).
+fire("CHAT_MSG_LOOT", "You receive loot: " .. G.itemLink("Small Brown Pouch", 1) .. ".")
+state.bags = { [1] = { name = "Small Brown Pouch", slots = 6 } }
+fire("BAG_UPDATE_DELAYED")
+state.bags[2] = { name = "Linen Bag", slots = 6 }
+fire("BAG_UPDATE_DELAYED")
+local bags = told("bag")
+check(
+  #bags == 1 and bags[1].looted and bags[1].slots == 6 and bags[1].link:find("Small Brown Pouch", 1, true),
+  "the first bag on my back, once: looted, its slots"
+)
+local richBefore = #told("gold")
+state.money = 9990
+fire("PLAYER_MONEY")
+state.money = 10020
+fire("PLAYER_MONEY")
+state.money = 25000
+fire("PLAYER_MONEY")
+check(#told("gold") == richBefore + 1, "the first gold piece, once")
+HearthtaleChar.class = "WARLOCK"
+fire("CHAT_MSG_SYSTEM", "You have learned a new spell: Summon Imp.")
+state.pet = { name = "Zigfik", family = "Imp", guid = "Pet-0-1-1-1-416-0001" }
+fire("UNIT_PET", "player")
+fire("UNIT_PET", "player")
+local demon = told("demon")
+check(
+  #demon == 1 and demon[1].name == "Zigfik" and demon[1].family == "Imp" and #told("learned") == learnedBefore,
+  "a warlock's first imp, by its name, once (not told as a lesson)"
+)
+state.pet = { name = "Ganrul", family = "Voidwalker", guid = "Pet-0-1-1-1-1860-0002" }
+fire("UNIT_PET", "player")
+check(#told("demon") == 1, "… and no demon whose summoning the journal didn't see learned")
+state.pet = nil
+HearthtaleChar.class = "DRUID"
+fire("CHAT_MSG_SYSTEM", "You have learned a new spell: Bear Form.")
+state.form = 5
+fire("UPDATE_SHAPESHIFT_FORM")
+fire("UPDATE_SHAPESHIFT_FORM")
+state.form = 1
+fire("UPDATE_SHAPESHIFT_FORM")
+local shifts = told("shift")
+check(#shifts == 1 and shifts[1].form == "bear", "a druid's first shift into a form learned, once")
+state.form = nil
+HearthtaleChar.class = state.class
 
 -- The highest level the game allows: the journey's end. The chapter closes
 -- there, and nothing more is told.

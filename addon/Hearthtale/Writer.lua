@@ -4,7 +4,7 @@
 -- (Lines.lua), its words by Language.lua.
 local _, ns = ...
 local W = ns.writer
-local words, listing, mid, plural, objectiveOf = W.words, W.listing, W.mid, W.plural, W.objectiveOf
+local words, listing, mid, plural = W.words, W.listing, W.mid, W.plural
 local itemName, things, article, KINDS, SKIP, TEETH = W.itemName, W.things, W.article, W.KINDS, W.SKIP, W.TEETH
 local deathTags, namedElite, deathFoe, playedWords = W.deathTags, W.namedElite, W.deathFoe, W.playedWords
 local goldWords, RACE_NAME, HORDE_RACE, CLASS_NAME = W.goldWords, W.RACE_NAME, W.HORDE_RACE, W.CLASS_NAME
@@ -97,9 +97,10 @@ function tell.place(s, m)
       s:append(#s.current > 0 and linked(b:link(m, s.prev, s.key), described) or described)
       s:enter(here, m.zone)
       b.last, b.there = here, false
-    else
-      s:arrive(here, m.zone, s.seenHere[here] and "c-return" or "c-place")
     end
+    -- (else the arrival is told with the first thing that happens there: a
+    -- place only passed through, nothing told there, isn't)
+    if not described then s.discovered[here] = { m = m, key = s.key, prev = s.prev } end
   end
 end
 function tell.inn(s, m) s:tell("c-inn", { inn = mid(m.place) }) end
@@ -126,6 +127,9 @@ end
 function tell.turnIn(s, m)
   local log, i = s.ch.log, s.i
   if s:justDone(m, i) then
+    -- (a sentence of its own: the work it tells, not told, may not join the
+    -- sentence before, already read as finished)
+    s:flush()
     s:deed(s:tags({ handed = true }, m))
   elseif not s.merged[i] and m.ender then
     local enders, seenEnder, k = { m.ender }, { [m.ender] = true }, i + 1
@@ -249,6 +253,8 @@ function tell.learned(s, m)
     if
       not (
         (s.c.profs or {})[sp]
+        or ns.TRADE_SPELLS[sp]
+        or ns.POWER_SPELLS[sp]
         or sp:find("^Apprentice ")
         or sp:find("^Journeyman ")
         or sp:find("^Expert ")
@@ -321,6 +327,19 @@ function own.dungeon(s, m)
   end
   b.last, b.there = s.place, false
 end
+-- the firsts of a life: a bag of one's own, a gold piece, a warlock's
+-- demon of a new kind, a druid's new shape
+function own.bag(s, m)
+  local name = m.link and m.link:match("%[(.-)%]")
+  local values = { item = name and itemName(name), slots = words(m.slots or 0) }
+  s:alone("bag", values, s:tags({ looted = m.looted or nil }, m), m)
+end
+function own.gold(s, m) s:alone("gold", {}, s:tags(nil, m), m) end
+function own.demon(s, m)
+  local family = (m.family or ""):lower()
+  s:alone("demon", { pet = m.name, demon = article(family) }, s:tags({ [family] = true }, m), m)
+end
+function own.shift(s, m) s:alone("shift", {}, s:tags({ [m.form or ""] = true }, m), m) end
 function own.power(s, m) s:alone("power", { spell = m.spell }, s:tags({ [m.kind or "form"] = true }, m), m) end
 function own.ride(s, m) s:alone(m.k, {}, s:tags(nil, m), m) end
 -- back from death: how, where, how long it took
@@ -355,9 +374,15 @@ end
 local OWN = {
   { "rare", own.rare },
   { "close", own.close },
+  -- (one death the game told twice: older journals recorded it twice)
+  { "died", nothing, when = function(s, m) return s.prev and s.prev.k == "died" and s.prev.at == m.at end },
   { "died", own.died, when = function(_, m) return m.death end },
   { "dungeon", own.dungeon },
   { "power", own.power },
+  { "bag", own.bag },
+  { "gold", own.gold },
+  { "demon", own.demon },
+  { "shift", own.shift },
   { kinds("mount", "riding"), own.ride },
   { "revived", own.revived },
   { "petdied", own.petdied },
@@ -439,8 +464,9 @@ local function ending(s, e)
   local top = (function()
     local covered, remaining = {}, {}
     for _, m in ipairs(ch.log or {}) do
-      local o = m.k == "quest" and objectiveOf(m)
-      if o and o.type == "monster" and o.name then covered[o.name] = true end
+      for _, o in ipairs(m.k == "quest" and m.objectives or {}) do
+        if o.type == "monster" and o.name then covered[o.name] = true end
+      end
     end
     for name, count in pairs(ch.kills or {}) do
       if not covered[name] then remaining[name] = count end
