@@ -1,12 +1,12 @@
 ---
 kind: opening
 ---
-- I began again {at}, with enough unanswered questions to make staying put difficult.
-- I took up the road {at}, rather pleased that I had not yet run out of things to wonder about.
-- Curious what people here had worked out for themselves, I set out {at}.
-- I set off again {at}, keen to get the day moving.
-- I made ready {at}, and checked my pack twice out of habit.
-- I went on {at}, keen to see what a closer look would change.
-- Hoping my feet could keep up with the things that interested me, I began this stretch {at}.
-- I took up the road again {at}, at a pace my legs could keep and my curiosity could not.
-- I set out {at}, with my curiosity restored and a little more caution available if I remembered to use it.
+- I began again {at}, with a gnome's share of the road ahead and a gnome's legs to cover it.
+- I took up the road {at}, hoping to remain the smallest trouble I met.
+- The world had not shrunk while I was away, so I set out {at} to make the best of my own proportions.
+- I set off again {at}, more stubborn than a seized gear and rather easier to carry.
+- I made ready {at}, thinking how many of us now had to call the road home.
+- I went on {at}, with the name of Gnomeregan still large enough to fill the empty spaces.
+- There were taller people to do this, but I was the gnome who was here, and I set out {at}.
+- I took up the road again {at}, ready to give my short legs another unreasonable assignment.
+- I set out {at}, feeling a little like a machine put back together with one screw left over.

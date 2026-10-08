@@ -1,9 +1,9 @@
 ---
 kind: quests-many
 ---
-- I had completed {n} tasks, and acquired several questions nobody had asked me to answer.
-- By the end, {n} jobs were done. I was pleased with the count without needing to round it up.
-- I counted {n} errands finished, with a better idea of what people here actually needed.
-- The {n} tasks behind me had kept showing me details I would have missed on a quicker visit.
-- I had seen {n} jobs through, and was still thinking about how I might have gone about them differently.
-- I had brought {n} tasks to an end, rather glad that my help had found a use.
+- I had completed {n} tasks; evidently there were still uses for a gnome outside Tinker Town.
+- By the end, {n} jobs were done, each one a little more weight behind my name.
+- I counted {n} errands finished, and felt I had walked enough for a person twice my height.
+- The {n} tasks behind me had kept my small hands quite full.
+- I had seen {n} jobs through, without requiring anyone to make the work smaller for me.
+- I had brought {n} tasks to an end. Gnomeregan was beyond my reach for now; these had not been.

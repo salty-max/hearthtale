@@ -2,17 +2,17 @@
 kind: r-road
 ---
 - my short legs making a long road of it
-- making a note of the shortcuts
-- [!back] trying to work out who had built the place, and how
-- [!back] a whole new set of things to look at
-- [!back] the people taller than me, as usual
-- [!back night] its paths harder to follow in the dark
-- [!back] eager to see how the place fitted together
-- [!back] with far too many details competing for my attention
-- [!back night] wishing I could make out a little more of the place
-- [back] the route already filed away
-- [back] quicker the second time, now that I knew the turns
-- [back] remembering something I meant to look at again
-- [high] one more entry in a long, long list
-- with more to look at than I had allowed time for
-- curious whether I had overlooked a shorter way
+- wishing the distance had been designed by a gnome
+- [!back] hoping to find something that did not require standing on tiptoe
+- [!back] a long way from the close-packed comfort of Tinker Town
+- [!back] my small place in the world feeling smaller still
+- [!back night] my ears trying to make up for my eyes
+- [!back] wondering how a gnome could make a home so far from Gnomeregan
+- [!back] hoping my feet would forgive the detour
+- [!back night] rather nearer the ground than I wanted to be in the dark
+- [back] my feet recognising the journey before I enjoyed the arrival
+- [back] less likely to waste my short stride on a wrong turn
+- [back] my legs petitioning for a shorter walk this time
+- [high] far enough from Tinker Town to miss the clatter
+- my stride doing its best against the distance
+- wishing I could trade a little ingenuity for longer legs

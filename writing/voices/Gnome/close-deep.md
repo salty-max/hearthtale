@@ -1,8 +1,8 @@
 ---
 kind: close-deep
 ---
-- {foe} nearly killed me {at}. For once I had no wish to find out what happened next.
-- I barely survived {foe} {at}, and could not make myself curious about anything for a while.
-- {foe} left me barely alive {at}. My hands were shaking too much for cleverness to feel like much of an achievement.
-- [!foe] I barely survived {at}. I had never been so glad to be available to correct my own mistakes.
-- [!foe] I came within a breath of the end {at}, with all my grand ideas suddenly depending on something as small as the next breath.
+- {foe} nearly killed me {at}. I wanted to see Gnomeregan again, and not as a ghost.
+- I barely survived {foe} {at}, with my heart hammering like a piston about to come loose.
+- {foe} left me barely alive {at}. For all our ingenuity, a gnome was still made of terribly fragile stuff.
+- [!foe] I barely survived {at}, and took a fierce, unreasonable pride in the next breath.
+- [!foe] I came within a breath of the end {at}. Mekkatorque had too few people left for me to throw one away.

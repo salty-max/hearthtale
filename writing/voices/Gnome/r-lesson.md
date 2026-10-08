@@ -1,19 +1,19 @@
 ---
 kind: r-lesson
 ---
-- the principles clear, the practice less so
-- with three questions for every answer
-- my hands not quite as quick as my head
-- the theory elegant, I thought
-- [one] eager to test it under real conditions
-- [!one] eager to test them under real conditions
-- [one] the gist of it scribbled on my cuff before I forgot
-- [!one] the gestures sketched in the margin of my notes
-- [new] the beginnings of a new field of study
-- [new] a whole new set of tools to master
-- [new] with the pleasant difficulty of being a beginner again
-- [low] very much a novice still
-- [low] conscious of how much I had not yet tried
-- [high] the new trick fitting neatly among the old
-- [high] interested in where the new learning met the old
-- with my hands still catching up to my intentions
+- my small hands eager to catch up
+- hoping the danger would remain on the far end of the lesson
+- more accustomed to gears than to this sort of difficulty
+- less comfortable as an apprentice than I would have admitted in Tinker Town
+- [one] wondering how much trouble I could get into with this
+- [!one] wondering how much trouble these could keep me out of
+- [one] my fingers wanting a turn at the difficult part
+- [!one] my small hands facing rather large demands
+- [new] a beginner again, which was less comfortable than a familiar tool
+- [new] a new way for a gnome to be useful beyond Tinker Town
+- [new] not yet sure which part would make my fingers ache
+- [low] rather conscious of the small body that would have to practise
+- [low] my fingers still wanting gears they could actually see
+- [high] less dependent on anyone taking pity on my size
+- [high] another way to be more trouble than I looked
+- hoping my fingers would remember when my heart began to race

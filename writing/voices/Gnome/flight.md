@@ -1,6 +1,6 @@
 ---
 kind: flight
 ---
-- [first] My first flight from {from} to {to} left me wanting to look in several directions at once.
-- I flew from {from} to {to}, fascinated by how differently the roads fitted together from above.
-- I left {from} by air for {to}, with plenty to watch and no need to hurry my own feet.
+- [first] My first flight from {from} to {to} finally put me above everyone else's elbows.
+- I flew from {from} to {to}, grateful to borrow a stride my legs could never manage.
+- I left {from} by air for {to}, looking down at distances I usually measured in aching feet.

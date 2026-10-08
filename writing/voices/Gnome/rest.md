@@ -1,12 +1,12 @@
 ---
 kind: rest
 ---
-- I rested {at}, allowing my thoughts to catch up with the rest of me.
-- I settled {at}, content to stop moving for a little while.
-- I paused {at}, with several things to consider and no reason to consider them standing.
-- Rather pleased to have no immediate problem to solve, I rested {at}.
-- I stopped {at}. My legs had made a convincing case for letting the next difficulty wait.
-- I rested {at}, letting the day's events settle before deciding what I thought of them.
-- I paused {at}, where doing nothing seemed a perfectly workable arrangement.
-- I rested {at}, with enough questions to keep me occupied without getting up.
-- Curious how much clearer the day would look after some rest, I set the journey aside {at}.
+- I rested {at}, letting a small body take a perfectly substantial rest.
+- I settled {at}, ready to stop running like a machine with its governor broken.
+- I paused {at}, and let my short legs be short without having to hurry them.
+- For once I was content to stay at ground level, and rested {at}.
+- I stopped {at}, as thoroughly unwound as anything in Tinker Town.
+- I rested {at}, missing the familiar clatter of a city that was no longer ours to live in.
+- I paused {at}, grateful that even my weariness took up little room.
+- I rested {at}, with my hands quiet and my feet no longer obliged to perform miracles.
+- A gnome could only run on stubbornness so long, and I stopped {at}.
