@@ -13,7 +13,7 @@ kind: campfire
 - [night] The fire {at} was the only light for miles.
 - [hc aside night] A fire {in}. I sat with my back to it and my eyes on the dark.
 - [race:Tauren] I sat by a fire {at} and gave thanks to the Earth Mother for it.
-- [class:MAGE] I lit a fire {at} with a flick of my fingers and sat beside it.
+- [class:MAGE] I sat by a fire {at}, enjoying a flame that needed no spell from me to keep it useful.
 - A fire {at}, and the smell of something cooking.
 - I sat by the embers {at} until my hands stopped aching.
 - [aside] Someone had a fire going {at}. I was glad of it.

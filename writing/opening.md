@@ -19,7 +19,7 @@ kind: opening
 - I began my next page {at}, knowing that even familiar ground could give me something new to remember.
 - [hc] Grateful to have another part of my life left to write, I began again {at}.
 - [hc high] I took up the journey {at}, conscious of how much I now stood to lose.
-- [class:MAGE] Curious to see how much use I could make of what I had learned, I began again {at}.
+- [class:MAGE] I began again {at}, with a mage's affection for problems that could be approached over conjured water instead of shouted spells.
 - [class:HUNTER] I took up the road {at}, with a hunter's patience more willing than a hunter's hunger for the chase.
 - [class:ROGUE] I began this stretch {at}, with a healthy affection for ways in that would leave a quiet way out.
 - [class:WARLOCK] I set out {at}, with curses enough for my enemies and a healthy distrust of anything I could summon.

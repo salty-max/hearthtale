@@ -20,7 +20,7 @@ kind: dungeon
 - [hc] I went into {dungeon} with my heart in my mouth, and came out with it still beating.
 - I went into {dungeon} with {mates}.
 - {dungeon}, with {mates} at my side.
-- [class:MAGE aside] {dungeon}. I froze, I burned, I conjured water for everyone.
+- [class:MAGE aside] I entered {dungeon} with {mates}, hoping to keep the dangers at a spell's distance.
 - I went into {dungeon}.
 - I entered {dungeon}.
 - We made our way into {dungeon}.

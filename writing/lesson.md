@@ -6,10 +6,10 @@ kind: lesson
 - [spell:Drain_Life] I learned Drain Life, a hungry spell that could keep me alive at someone else's expense.
 - [spell:Corruption] I learned Corruption, which worked slowly enough to make a quick death seem generous.
 - [spell:Health_Funnel] I learned Health Funnel; keeping a demon alive could now cost me more than the summoning.
-- [spell:Polymorph] Polymorph could turn a foe into a sheep, which is more of an answer than it sounds.
-- [spell:Blink] Blink was a step through the air to somewhere safer, and I took to it at once.
-- [spell:Frost_Nova] Frost Nova held a foe in ice while I put some distance between us.
-- [spell:Conjure_Water] I could conjure water out of nothing now, which settled the question of what to drink on the road.
+- [spell:Polymorph] I learned Polymorph, and the prospect of turning an enemy into a sheep was more comforting than dignified.
+- [spell:Blink] I learned Blink, with a sudden affection for the distance a single spell could put between me and danger.
+- [spell:Frost_Nova] I learned Frost Nova, a way to let ice hold an enemy while I found somewhere safer to stand.
+- [spell:Conjure_Water] I learned to conjure water, and liked having one less ordinary need to carry along the road.
 - [spell:Power_Word:_Shield] I learned Power Word: Shield, a ward I hoped would reach me sooner than an enemy's blow.
 - [spell:Renew] I learned Renew, and was comforted by healing that could keep working after the prayer ended.
 - [spell:Resurrection] I learned Resurrection, with the frightening hope of calling someone back instead of leaving a name to mourn.

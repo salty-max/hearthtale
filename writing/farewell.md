@@ -17,7 +17,7 @@ kind: farewell
 - [race:Draenei] {name} fell far from Draenor, and farther still from Argus.
 - [class:PALADIN] May {faith} be gentler to {name} than the last struggle was.
 - [class:WARRIOR] {name}'s strength could carry no further than this.
-- [class:MAGE] {name}'s books are left open at the page where the reading stopped.
+- [class:MAGE] No spell could carry {name} beyond this last distance.
 - [class:HUNTER !low] The wild has kept the last of {name}'s tracks.
 - [class:ROGUE] {name} has slipped beyond anyone's reach at last.
 - [class:PRIEST] May {name} find a gentler answer beyond the last prayer.
