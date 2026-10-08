@@ -26,9 +26,9 @@ kind: lesson
 - [spell:Aspect_of_the_Cheetah] I learned Aspect of the Cheetah, and could give my legs a hunter's answer to a long road.
 - [spell:Feign_Death] I learned Feign Death, a hunter's lie I hoped would keep me from becoming the truth of it.
 - [spell:Hunter's_Mark] I learned Hunter's Mark, a way to keep my quarry from becoming merely another movement I could not place.
-- [spell:Ghost_Wolf] Ghost Wolf let me run in the shape of a wolf, as the spirits do.
-- [spell:Ancestral_Spirit] With Ancestral Spirit, I could call a fallen friend's spirit back into their body.
-- [spell:Lightning_Shield] Lightning Shield was a ring of crackling light that struck back at whoever struck me.
+- [spell:Ghost_Wolf] I learned Ghost Wolf, and could borrow a swifter shape from the spirits without leaving my life behind.
+- [spell:Ancestral_Spirit] I learned Ancestral Spirit, with the tender hope of calling someone back before their place among us grew empty.
+- [spell:Lightning_Shield] I learned Lightning Shield, and liked the thought of thunder waiting for the hand that reached for me.
 - [spell:Entangling_Roots] With Entangling Roots, the ground itself would hold a foe for me.
 - [spell:Healing_Touch] Healing Touch was the old craft of mending a body with the wild's own strength.
 - [spell:Rebirth] Rebirth could bring a fallen friend back in the middle of a fight.
