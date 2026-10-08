@@ -32,7 +32,7 @@ I counted five jobs done, glad that I could put a proper ending to what people h
 
 ## Chapter 3 (levels 7 to 9)
 
-I made ready in Kharanos, giving my gear the sort of look that saves trouble later. When I tramped on to the Grizzled Den, I saw a Wendigo Mane safely to Pilot Stonegear. I shared the road with Thorgrim, the walk shorter in company. The way went on into Gol'Bolar Quarry. I brought down several Rockjaw Bonesnappers for Ozzie Togglevolt, harder in the skull than anything had a right to be.
+I made ready in Kharanos, giving my gear the sort of look that saves trouble later. When I tramped on to the Grizzled Den, I saw a Wendigo Mane safely to Pilot Stonegear. I shared the road with Thorgrim, the walk shorter in company. The way went on into Gol'Bolar Quarry. I brought down Rockjaw Bonesnappers for Ozzie Togglevolt, harder in the skull than anything had a right to be.
 
 In Kharanos again, I was taught Concussive Shot and Mend Pet. I took the road to Amberstill Ranch, the country on either side worth a second look. I brought Bristle into my care. Grateful for warmth enough to make standing still a pleasure, I stopped at a fire. Bristle fell. Out here, it could as easily have been me.
 

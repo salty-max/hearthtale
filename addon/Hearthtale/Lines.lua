@@ -162,7 +162,7 @@ local function weigh(kind, ctx)
   if kind == "c-deed-kill" or kind == "c-handed-kill" then return ctx.named and 3 or 2 end -- one asked for by name
   if kind == "c-handed-item" then return 2 end
   if kind == "c-deed-task" then return ctx.escort and 3 or 2 end
-  if kind == "c-deed-item" then return 2 end
+  if kind == "c-deed-item" or kind == "c-hunt" then return 2 end -- (a hunt: no remark, its creatures last)
   if kind == "c-gear" then return ctx.fine and 2 or ctx.made and 1 or 0 end
   if kind == "c-report" or kind == "c-deliver" or kind == "c-deed-word" or kind == "c-quest" or kind == "c-fold" then
     return 0
@@ -207,6 +207,7 @@ local AGAIN_DROPS = {
   ["c-handed-kill"] = true,
   ["c-handed-item"] = true,
   ["c-chain"] = true,
+  ["c-hunt"] = true,
 }
 local AGAIN = { ["c-report"] = true, ["c-deliver"] = true, ["c-deed-word"] = true, ["c-quest"] = true }
 local Book = {}
@@ -835,7 +836,14 @@ function Book:deed(m, key, tags)
     tags.meat = o.name:match("Meat$") or nil -- uncounted: "it"
     local kind = not (tags.cloth or tags.meat) and thingOf(o.name)
     if kind then tags[kind] = true end
-    if tags.handed and not tags.more and not tags.trophy then
+    -- (the hunt for them: the creatures they drop from, killed on the way)
+    if tags.prey and not tags.trophy then
+      local hunt = { prey = tags.prey, n = values.n, thing = values.thing, giver = m.ender or m.giver }
+      hunt.item = #all == 1 and things(o.name) or listing(list)
+      if owner and m.giver:find(owner, 1, true) == 1 then hunt.item = list[1]:gsub("^the ", "") end
+      done, said = self:say("c-hunt", key, hunt, tags, nil, true)
+    end
+    if not done and tags.handed and not tags.more and not tags.trophy then
       local handed = { n = values.n, thing = values.thing, giver = m.ender or m.giver }
       done, said = self:say("c-handed-item", key, handed, tags, nil, true)
     end

@@ -417,6 +417,17 @@ ns.data = {
       { "tried my new {spell} on {n} {foes} for {giver}", tags = { "tried", "!one" } },
       { "fought {n} {foes} for {giver} with {pet} at my side", tags = { "pet", "!one" } },
     },
+    ["c-hunt"] = {
+      { "hunted {prey} for {n} {thing}" },
+      { "went after {prey} for {n} {thing}", tags = { "!handed" } },
+      { "took {n} {thing} from {prey}" },
+      { "hunted down {prey} until I had {n} {thing}", tags = { "!handed" } },
+      { "hunted {prey} for the {item} {giver} wanted", tags = { "handed" } },
+      { "went after {prey} for the {item} {giver} needed", tags = { "handed" } },
+      { "took the {item} {giver} wanted from {prey}", tags = { "handed" } },
+      { "hunted {prey} until {giver} had the {item}", tags = { "handed" } },
+      { "{giver} wanted {item}, and {prey} had to give it up", tags = { "turn", "handed" } },
+    },
     ["c-inn"] = {
       { "bound my hearthstone {inn}" },
       { "set my hearthstone {inn}" },

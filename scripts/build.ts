@@ -104,6 +104,8 @@ const KINDS: Record<string, string[]> = {
   "c-deed-word": ["giver", "ender"],
   // errands one after another: the ender of the first gives the second
   "c-chain": ["giver", "via", "ender"],
+  // a quest's things taken from the creatures they drop from: the hunt ({item}: their name alone)
+  "c-hunt": ["prey", "n", "thing", "item", "giver"],
   // a deed (its clause, {deed}) with the creatures killed on the way, no quest's
   "c-while": ["prey", "deed"],
   "c-deliver": ["thing", "ender", "giver"],

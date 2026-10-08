@@ -483,8 +483,10 @@ local function parts(m)
 end
 
 -- ── prey ─────────────────────────────────────────────────────────────────────
--- A creature killed that no quest asked for: told with the next work done in
--- the same place soon after ("Ragged Young Wolves fell to me while I fetched
+-- A creature killed that no quest asked for: the hunt for a quest's things,
+-- if they drop from it ("I hunted Ragged Young Wolves for the Tough Wolf Meat
+-- Sten Stoutarm wanted"); else told with the next work done in the same place
+-- soon after ("Ragged Young Wolves fell to me while I fetched
 -- Tough Wolf Meat for Sten Stoutarm"), else not at all (the recap counts it).
 local PREY_TIME = 1800 -- (seconds from the kill to the work)
 local WORK = {
@@ -502,29 +504,63 @@ end
 
 -- The prey to tell with the work of m, in words ("Ragged Young Wolves and a
 -- Ragged Timber Wolf"), and whether it is one creature; nil if none.
-function Scene:takePrey(m)
+-- only: the creatures to take (those a quest's item drops from), the others
+-- left for the next work.
+function Scene:takePrey(m, only)
   local prey, b = self.prey, self.book
   if #prey == 0 or self.preyPlace ~= self.place then return nil end
-  self.prey = {}
-  local asked = {}
+  local asked, rest = {}, {}
   for _, o in ipairs(m.objectives or {}) do
     if o.name then asked[o.name] = true end
   end
-  local names, total = {}, 0
+  -- (one creature in its variants, by the last word of its name and its
+  -- kind: Ragged Young Wolves and a Ragged Timber Wolf are wolves, named by
+  -- the one killed most)
+  local groups, order, total = {}, {}, 0
   for _, k in ipairs(prey) do
-    if (m.at or 0) - (k.at or 0) <= PREY_TIME and not asked[k.name] then
+    if only and not only[k.name] then
+      table.insert(rest, k)
+    elseif (m.at or 0) - (k.at or 0) <= PREY_TIME and not asked[k.name] then
       local n = (self.ch.kills or {})[k.name] or 1
       total = total + n
-      if n > 1 then
-        local size = b:size(n, self.key .. "|" .. k.name, false, k.kind == "Wolf")
-        table.insert(names, (size ~= "" and size .. " " or "") .. plural(k.name))
-      else
-        table.insert(names, article(k.name))
+      local head = (k.name:match("(%a+)$") or k.name) .. "|" .. (k.kind or "")
+      local g = groups[head]
+      if not g then
+        g = { n = 0, most = 0 }
+        groups[head] = g
+        table.insert(order, g)
       end
+      g.n = g.n + n
+      if n > g.most then
+        g.name, g.kind, g.most = k.name, k.kind, n
+      end
+    end
+  end
+  self.prey = rest
+  local names = {}
+  for _, g in ipairs(order) do
+    if g.n > 1 then
+      local size = b:size(g.n, self.key .. "|" .. g.name, false, g.kind == "Wolf")
+      table.insert(names, (size ~= "" and size .. " " or "") .. plural(g.name))
+    else
+      table.insert(names, article(g.name))
     end
   end
   if #names == 0 then return nil end
   return listing(names), total == 1
+end
+
+-- The creatures this work's things drop from (Knowledge.lua), as a set; nil
+-- if none is known.
+local function sources(m)
+  local drops, out = ns.knowledge and ns.knowledge.drops or {}, nil
+  for _, o in ipairs(m.objectives or {}) do
+    for _, name in ipairs(o.type == "item" and o.name and drops[o.name] or {}) do
+      out = out or {}
+      out[name] = true
+    end
+  end
+  return out
 end
 
 -- A quest's deed told in clauses (Book:deed), in its scene, t its tags; the
@@ -541,6 +577,9 @@ function Scene:deed(t)
     local tags = i == 1 and t or self:tags({ done = t.done, handed = t.handed, petName = t.petName }, m)
     -- (a quest's parts in one sentence: the remark, if any, on its last)
     tags.quiet = i < #all or nil
+    -- (the creatures its things drop from, killed on the way: the hunt for them)
+    local from = i == 1 and sources(part)
+    if from then tags.prey = self:takePrey(m, from) end
     local text, said = b:deed(part, self.key, tags)
     local prey, one
     if i == 1 and text and WORK[said.kind] and not said.turn then
