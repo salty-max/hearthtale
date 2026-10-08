@@ -29,9 +29,9 @@ kind: lesson
 - [spell:Ghost_Wolf] I learned Ghost Wolf, and could borrow a swifter shape from the spirits without leaving my life behind.
 - [spell:Ancestral_Spirit] I learned Ancestral Spirit, with the tender hope of calling someone back before their place among us grew empty.
 - [spell:Lightning_Shield] I learned Lightning Shield, and liked the thought of thunder waiting for the hand that reached for me.
-- [spell:Entangling_Roots] With Entangling Roots, the ground itself would hold a foe for me.
-- [spell:Healing_Touch] Healing Touch was the old craft of mending a body with the wild's own strength.
-- [spell:Rebirth] Rebirth could bring a fallen friend back in the middle of a fight.
+- [spell:Entangling_Roots] I learned Entangling Roots, and could ask the earth to hold an enemy without holding it within my own reach.
+- [spell:Healing_Touch] I learned Healing Touch, grateful for a way to give a frightened body something gentler than another struggle.
+- [spell:Rebirth] I learned Rebirth, with the wild's answer to a death that came before the fighting was done.
 - [spell:Immolate] I learned Immolate, and liked the prospect of keeping a foe burning while I stayed out of reach.
 - [spell:Immolate] I learned Immolate, a nastier sort of fire than any hearth would welcome.
 - [spell:Life_Tap] I learned Life Tap, and could buy more magic with the health I needed to survive using it.
