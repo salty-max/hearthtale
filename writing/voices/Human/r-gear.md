@@ -2,16 +2,16 @@
 kind: r-gear
 ---
 - [!made !held] rather fond of being able to breathe inside my clothing
-- [!made] rather better than hoping a guard would arrive
+- [!made] a useful defence while the guards were elsewhere
 - [!made] something I might have admired on a passing adventurer
-- [!made] more reassuring than a recruitment speech
+- [!made] some solid reassurance against the next fight
 - [!made hc] no wish to leave my safety entirely to the Light
 - [made] nothing fancy enough for a Stormwind shop window
-- [made !held] hoping my sewing would survive longer than my patience
+- [made !held] my sewing due to face a demanding life
 - [made !held] rather proud to wear something that had cost effort instead of coin
 - [!made] one less thing to envy in somebody else's kit
-- [!made] more comfort than a promise from a distant guard
-- [!made] hoping the new weight would feel familiar by the next mile
-- [!made hc] worth more to me than looking impressive
+- [!made] a safeguard I could take beyond a guard's reach
+- [!made] the unfamiliar weight taking some getting used to
+- [!made hc] the protection a comfort with no second life to spare
 - [made !held] less dependent on what I could afford in a shop
 - [made] rather fond of something that had come from my own effort

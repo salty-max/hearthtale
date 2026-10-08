@@ -1,21 +1,21 @@
 ---
 kind: r-lesson
 ---
-- my fingers less certain than my willingness
+- a beginner's awkwardness getting in the way
 - rather grateful for a lesson that did not begin with danger
-- hoping the next need would find me less helpless
+- a little help against the next helpless moment
 - [one] a little more prepared to use it when fear would not let me think
-- [one] wishing the knack came as easily as the name
+- [one] the knack taking a good deal of learning
 - less dependent on somebody arriving in time to help
 - [new] a possible living that did not require a recruiting sergeant
-- [new] hoping to earn bread rather than another bruise
+- [new] a new means of earning an honest living
 - [low one] still green enough to envy a recruit's confidence
 - [high] more accustomed to learning without having to swallow my pride
-- [!one] hoping they would come more readily than a prayer in danger
-- less comfortable learning than I had sounded when I offered
+- [!one] useful lessons for a kingdom whose guards could not be everywhere
+- a lesson in the cost of an enthusiastic offer
 - my courage in need of something sturdier than good intentions
 - an eager pupil still a long way from earning bread
-- hoping to repay the learning with more than an eager face
+- a useful knack to put at somebody's service
 - my patience no quicker than my fingers
 - [new] a little closer to being able to pay my own way
-- [low] still short of the ease I admired in the old hands
+- [low] the ease of the old hands still a distant ambition

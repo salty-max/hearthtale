@@ -1,21 +1,21 @@
 ---
 kind: r-item
 ---
-- my shoulders wishing the request had been lighter
+- the burden taking some pleasure out of being helpful
 - an errand's worth of ache for my trouble
-- hoping the person who asked would have a use beyond sending me out
+- the intended use giving some sense to the search
 - [!one !plural] counting each piece with more care than a tax collector
-- [!one !plural] rather more to carry than I had wanted to volunteer for
-- [one !plural] wondering whether it would be worth the sore feet
-- [one !plural] not yet willing to let it out of my keeping
-- [meat] wishing for the smell of an Elwynn kitchen
+- [!one !plural] each piece testing the generosity of my offer
+- [one !plural] the search giving this an unexpected value
+- [one !plural] the prize of the search safely in my keeping
+- [meat] the smell of an Elwynn kitchen coming fondly to mind
 - [cloth] wondering how many worn shirts a tailor could mend
 - [night] the darkness making a kitchen window's light sound very dear
 - [hc] rather unwilling to die over somebody else's missing things
-- less keen on searching than I had been on offering help
+- my generous offer beginning to feel overgenerous
 - [!one !plural] counting them as carefully as the next week's bread money
-- hoping the burden would ease somebody else's
-- [!one !plural] my shoulders feeling each piece by the end
+- somebody else's need giving purpose to the burden
+- [!one !plural] every piece accounted for with a householder's care
 - [one !plural] not eager to have to find it all over again
 - [meat] rather more interested in a cooked supper
 - [cloth] softer stuff than most of the road's business
