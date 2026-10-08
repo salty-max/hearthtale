@@ -1,15 +1,15 @@
 ---
 kind: r-inn
 ---
-- one less long distance to worry over
-- an easy return arranged in advance
-- a little certainty to carry into the unknown
-- the enchantment's usefulness quite sufficient to admire
-- a haven within reach of a stone
-- less inclined to dread retracing the way
-- a pause to look forward to on my return
-- a little certainty I could keep within reach
-- the return journey taken care of
-- the promised quiet pleasantly in mind
-- [night] the night giving shelter a particular appeal
-- [hc] unwilling to leave a safe return entirely to chance
+- somewhere to come back to, at least
+- glad to know where I would wake
+- a small comfort to carry in my pack
+- trusting the stone more than I understood it
+- the hearthstone a small weight in my pack
+- which made the road ahead feel shorter
+- a place to mend when the road had done its worst
+- the stone warm in my hand for a moment
+- one long walk fewer in my future
+- for whatever a bed and a door are worth on the road
+- [night] a late hour to be settling such things
+- [hc] a safe place worth knowing the way to

@@ -1,19 +1,19 @@
 ---
 kind: r-task
 ---
-- [client:forever] my offer of help acquiring a practical cost
+- [client:forever] my offer of help costing more than I had expected
 - [client:forever] an obliging elf beginning to regret the offer
 - [client:forever] my hands finding a use no blessing needed to supply
 - [client:forever] my endurance given a thorough exercise
-- [client:forever] a request trying the patience of a skyborn elf
+- [client:forever] a request trying my patience
 - [client:forever faction:horde] a Windshaper putting some kindness into our mentors' absence
 - [client:forever explore] a route I hoped another traveller could follow without a blessing
 - [client:forever explore] the route acquiring the familiarity of a path at home
 - [client:forever escort] a slower pace worth the trouble of keeping another life safe
-- [client:forever night] the search a demanding occupation beneath the night
+- [client:forever night] the search slow in the dark
 - [client:forever] one more reason to value the people who lived upon this ground
 - [client:forever] the distance giving my generosity a practical education
-- [client:forever] a skyborn elf with no appetite for further useful activity
+- [client:forever] my usefulness spent for one day
 - [client:forever faction:alliance] something the High Order could count on my hands to finish
 - [client:forever] no further claim on my strength welcome just yet
 - [client:forever] wondering whether a wind spirit would find our errands amusing

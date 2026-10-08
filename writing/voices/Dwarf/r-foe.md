@@ -12,4 +12,4 @@ kind: r-foe
 - [night] the Great Forge's welcome glare dear to me in the dark
 - [hc] unwilling to leave my kin a name to mourn
 - [low] my courage still softer than it looked
-- [high] my hands remembering the old business without much comfort
+- [high] done the way an old hand does it, quickly and without fuss

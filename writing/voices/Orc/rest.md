@@ -4,7 +4,7 @@ kind: rest
 - I rested {at}, with my blood finally quiet enough to enjoy being still.
 - I settled {at}, with the peace of a shared camp dear to me.
 - I stopped {at}, finding an unexpected pleasure in being of no use to anyone for a while.
-- I rested {at}, with an orc's relief at the end of a long watch.
+- I rested {at}, like a wolf curled up after a long run.
 - I paused {at}, grateful that no order could make me stand before I was willing.
 - I rested {at}, letting my strength return without demanding another proof of it.
 - I stopped {at}, missing the drums of home without wanting them to summon me anywhere.

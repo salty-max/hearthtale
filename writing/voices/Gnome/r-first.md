@@ -9,7 +9,7 @@ kind: r-first
 - [mechanical] a friendly setting apparently absent from the design
 - my stomach somewhere down around my boots
 - [low] a beginner's confidence rattling loose
-- [night] the unseen parts of this encounter troubling me
+- [night] more of them heard than seen
 - a retreat beginning to look like an excellent invention
 - my pride bristling at the prospect of being an easy meal
 - my heart going far faster than my feet

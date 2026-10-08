@@ -1,10 +1,10 @@
 ---
 kind: r-task
 ---
-- another claim upon a kaldorei's patience
+- another favour, and I did not grudge it
 - the request outlasting my taste for useful activity
-- the peace of a moonwell pleasantly in mind
-- a mortal body's weariness making itself felt
+- the work done without fuss, as I prefer
+- the day longer than it had any right to be
 - my reserve no protection against being asked again
 - rather more inclined to stay beneath Teldrassil next time
 - [explore] each turn of the path remembered for the way back

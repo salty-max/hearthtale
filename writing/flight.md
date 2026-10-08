@@ -10,7 +10,7 @@ kind: flight
 - I flew to {to}, looking back until {from} passed out of sight.
 - [!first] I flew from {from} to {to}, enjoying a journey with no need to puzzle over the route.
 - [hc] I flew to {to}, grateful for a view beyond the next fight.
-- [class:DRUID] I flew from {from} to {to} on borrowed wings, with the open air dearer than the distance it could save.
+- [class:DRUID] I flew from {from} to {to} on borrowed wings, loving the open air more than the time it saved.
 - [!first] I caught a ride from {from} to {to}, with the long road passing beneath me.
 - [!first] I flew from {from} to {to}, watching the country change below.
 - I left {from} by air for {to}, tracing the road below with my eyes.

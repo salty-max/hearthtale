@@ -4,10 +4,10 @@ kind: r-item
 - [one !plural] no desire to keep it from whoever needed it
 - [one !plural] my care for the living things around me no reason to hurry
 - my fingers gentler now they had something to carry
-- [!one !plural] each piece another burden for a mortal body's strength
+- [!one !plural] each piece gathered with care and none of them crushed
 - [!one !plural] each find another reason to miss the ease of the forest
 - [one !plural] the length of the search taking its toll on my patience
 - [one !plural] the find bringing a little satisfaction to a weary search
-- [meat] with a hunter's reluctance to waste what had died
+- [meat] no part of it wasted, as the old ways teach
 - [cloth] the weave coarse beside what the looms of Darnassus make
 - [night] the dark familiar without making the search easy

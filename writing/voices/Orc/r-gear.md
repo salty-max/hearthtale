@@ -2,9 +2,9 @@
 kind: r-gear
 ---
 - [!made] my hide less entirely responsible for keeping me alive
-- [!made] the weight due to justify a place in my belongings
+- [!made] heavy, and worth it
 - [!made] one less temptation to trust entirely in stubbornness
-- [!made] some solid support for an orc's confidence
+- [!made] good enough to wear into Orgrimmar without shame
 - [!made hc] unwilling to meet the ancestors merely to save a little weight
 - [made] my fingers fit for something besides a fight
 - [made] almost as satisfying as the end of a hard fight

@@ -5,7 +5,7 @@ kind: r-first
 - my grin covering some honest unease
 - my heart faster than a village drum
 - too fond of my hide to ask for a closer introduction
-- not asking the loa to make the introduction warmer
+- keeping the introduction short
 - [teeth] those teeth quite sufficient to discourage a brave grin
 - [night] my ears looking for what my eyes could not find
 - [low] new enough to this to wish an elder had come along

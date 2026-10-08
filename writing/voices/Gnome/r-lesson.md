@@ -3,17 +3,17 @@ kind: r-lesson
 ---
 - a new knack to keep my ingenuity occupied
 - the dangerous possibilities already quite apparent
-- a difficulty that would not hold still to be examined
+- nothing there I could take apart to understand
 - my pride taking an apprentice's knocks
 - [one] wondering how much trouble I could get into with this
 - [!one] wondering how much trouble these could keep me out of
-- [one] a promising difficulty for my fingers
+- [one] my fingers tying themselves in knots over it
 - [!one] some demanding additions to my repertoire
 - [new] a beginner's awkwardness taking the shine off my enthusiasm
 - [new] a new way to be useful, Gnomeregan or no Gnomeregan
-- [new] the knack still full of unfamiliar demands
+- [new one] every part of it new to my hands
 - [low] a beginner missing the reassuring clatter of machinery
 - [low] my fingers slower than my head, which annoyed them both
 - [high] a useful addition to the ingenuity I had survived on
-- [high] my confidence acquiring some practical support
-- a knack to remember when trouble set my heart racing
+- [high] one more trick for a bag already full of them
+- a knack worth having the next time trouble found me

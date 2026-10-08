@@ -3,7 +3,7 @@ kind: close-light
 ---
 - {foe} nearly killed me {at}, and left my hands less steady than the danger now required.
 - I barely survived {foe} {at}, with a longing for shelter stronger than any pride in coming through.
-- I survived a close call {at}, and admiration seemed a poor comfort beside the prospect of a quiet evening.
+- I survived a close call {at}, and would have traded any praise for it for a quiet evening.
 - {foe} brought me close to death {at}. I could have taken quite a pleasure in a harmless task to complain about.
 - I barely survived {at}, and had no wish to discover whether my courage could bear another trial.
 - {foe} nearly ended me {at}; relief did not arrive nearly as quickly as I had expected.
@@ -15,7 +15,7 @@ kind: close-light
 - [hc] {foe} nearly killed me {at}, and I was grateful to keep the one life I had.
 - [class:PRIEST] I nearly died {at}; mending a frightened body seemed much harder when the body was mine.
 - [class:PALADIN] {foe} nearly ended me {at}. I wanted the Light's shelter without having to leave the world for it.
-- [class:MAGE] I survived {foe} {at}, with the familiar distance of a spell lesson suddenly very dear to me.
+- [class:MAGE] I survived {foe} {at}, and found myself missing the safe distance of a lesson hall.
 - [class:ROGUE] I nearly fell {at}, and wished I could slip out of fear as readily as I hoped to slip out of sight.
 - [class:HUNTER !low] {foe} nearly killed me {at}, and made the quiet work of following a trail seem very inviting.
 - [class:WARLOCK] I nearly died {at}, with my own flesh suddenly precious beyond any demon's strength.
@@ -23,4 +23,4 @@ kind: close-light
 - I nearly died {at}, and found the quiet afterwards harder to trust than I had expected.
 - I barely survived {at}, with no desire to repeat the lesson for a better telling.
 - {foe} nearly ended me {at}, making an ordinary life seem a very dear thing to lose.
-- I came through a close call {at}, with my courage rather more spent than my willingness to live.
+- I came through a close call {at}, my courage spent and my wish to live very much intact.

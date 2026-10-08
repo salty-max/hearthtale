@@ -3,7 +3,7 @@ kind: r-gear
 ---
 - [!made !held] a welcome freedom from troublesome clothing
 - [!made] a little shelter I could carry beyond the forest
-- [!made] the protection a comfort against a mortal world's hazards
+- [!made] protection I would once have scorned, and now did not
 - [!made] not yet as familiar as a path beneath Teldrassil
 - [!made hc] another kindness to the mortal body I still had
 - [made !held] my patience woven into something I could wear

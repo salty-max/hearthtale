@@ -1,13 +1,13 @@
 ---
 kind: r-road
 ---
-- an orc taking an interest in unfamiliar ground
+- the ground read as the elders taught, for water and for danger
 - the drums of Orgrimmar keeping a familiar place in my thoughts
-- [!back] the question of my welcome outside the Horde still troubling me
-- [!back] wondering how an orc's name would weigh here
-- [!back] an orc's caution hidden behind an assured manner
+- [!back] wondering how many here had seen an orc outside a cage
+- [!back] my name worth nothing here yet
+- [!back] calm on the outside, watchful underneath
 - [!back night] my eyes no better than anyone else's in that dark
 - [back] the known route leaving little to trouble me
-- [back] this ground beginning to acquire a place in my life
+- [back] this ground beginning to feel like mine
 - [back] the known way a comfort against my unease
 - [high] the red earth of Durotar still the measure of every road I walked

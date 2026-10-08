@@ -11,7 +11,7 @@ kind: zone
 - I came to {zone}, a stranger with time to take an interest in the place.
 - My journey brought me into {zone}, with my caution almost as willing as my curiosity.
 - I entered {zone}, eager enough to look around without wanting to hurry into danger.
-- [hc] I came to {zone}, with my life too dear to mistake a new place for a safe one.
+- [hc] I came to {zone}, careful not to mistake a new place for a safe one.
 - [hc high] I reached {zone}, with all the distance behind me no reason to risk my life carelessly now.
 - [class:MAGE] I came into {zone}, a mage with something to offer besides conjured refreshments.
 - [class:HUNTER] I entered {zone}, giving the trails a hunter's care for whatever might use them.

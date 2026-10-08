@@ -11,7 +11,7 @@ kind: r-road
 - [back] the country beginning to feel like a place I knew
 - [back] the names I knew bringing company to mind
 - the smells of the place telling me more than its signs
-- wondering what the loa found entertaining beyond the next turn
+- wondering what waited past the next turn, and grinning anyway
 - [!back] rather keen to know the way back before I needed it
 - [!back] my caution quicker than my willingness to feel at home
 - [!back] the sort of country worth a story at Sen'jin

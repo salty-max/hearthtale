@@ -1,17 +1,17 @@
 ---
 kind: r-lesson
 ---
-- an unfamiliar knack demanding an apprentice's care
-- my initial enthusiasm acquiring a practical cost
-- [one] a useful knack for the moment danger could not wait
-- an apprentice's difficulty taking the shine off my confidence
-- my hands taking their time with the unfamiliar demands
-- an enthusiastic beginner with plenty of questions
-- my pride having to make room for clumsiness
-- my fingers slowly finding the ease of the knack
-- rather taken with a knack I could carry away with me
-- [new one] not yet sure where it might earn me a welcome
-- [new one] my patience beginning with the simplest part of it
-- [low] new enough to need help without wanting to look helpless
-- [high] less dependent on a familiar way of doing things
-- [!one] some useful lessons for a moment when confidence failed
+- with a good deal still to practise
+- the theory easier than the practice
+- [one] impatient to try it somewhere that mattered
+- turning the lesson over in my head for some time after
+- my hands still slow with the new movements
+- surprised how quickly hands learn what the head resists
+- a little clumsier at first than I would have liked
+- the new movements awkward for a while
+- pleased with the progress, if not the pace
+- [new one] not yet sure where it would lead
+- [new one] beginning with the simplest part of it
+- [low] a beginner still, but less of one
+- [high] old habits making room for something new
+- [!one] impatient to try them somewhere that mattered

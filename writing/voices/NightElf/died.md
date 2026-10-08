@@ -9,4 +9,4 @@ kind: died
 - [lava] Fire killed me {at}. My people's oldest terror had become mine in a single moment.
 - [nature] I died {at}, with no comfort in knowing that I belonged to the world that had taken me.
 - [foe] {foe} killed me {at}, and all the patience of our people could not soften my own wish to remain.
-- I died {at}, without the stillness of a moonwell or the shelter of a familiar tree to ease the thought.
+- I died {at}, far from any tree I knew by name.

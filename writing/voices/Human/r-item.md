@@ -3,10 +3,10 @@ kind: r-item
 ---
 - the burden taking some pleasure out of being helpful
 - an errand's worth of ache for my trouble
-- the intended use giving some sense to the search
+- someone waiting at the end who needed this
 - [!one !plural] counting each piece with more care than a tax collector
 - [!one !plural] each piece testing the generosity of my offer
-- [one !plural] the search giving this an unexpected value
+- [one !plural] tucked away where I would not have to find it twice
 - [one !plural] the prize of the search safely in my keeping
 - [meat] the smell of an Elwynn kitchen coming fondly to mind
 - [cloth] wondering how many worn shirts a tailor could mend

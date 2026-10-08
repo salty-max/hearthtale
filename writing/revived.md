@@ -8,7 +8,7 @@ kind: revived
 - [corpse] My ghost returned to where I had fallen, and I rose with a very ordinary wish not to leave my body again.
 - [corpse] I went back as a ghost, found my body, and was grateful to feel its weight again.
 - [corpse] As a ghost I found the way back to my body, and stepped into it again.
-- [corpse] I returned from the graveyard as a ghost, with my own body dearer to me than any familiar face could have been.
+- [corpse] I returned from the graveyard as a ghost, and stepped back into my own body like coming home.
 - [healer] At the graveyard in {graveyard}, I took the spirit healer's bargain rather than return to my body, and woke weak and worn.
 - [healer] The spirit healer raised me at the graveyard; the weakness was a price I could gladly bear for being alive.
 - [healer] The spirit healer brought me back, at a price paid in strength and in the state of my gear.

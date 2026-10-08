@@ -36,7 +36,7 @@ end
 
 -- A line's tags: conditions the moment must meet ("night"; "!night", not at
 -- night), and marks, which aren't conditions.
-local MARKS = { aside = true, plain = true, turn = true }
+local MARKS = { aside = true, plain = true, turn = true, state = true }
 local function holds(tag, ctx)
   if MARKS[tag] then return true end
   if tag:sub(1, 1) == "!" then return not ctx[tag:sub(2)] end
@@ -248,6 +248,56 @@ local function newBook(c)
   return b
 end
 
+-- The words a remark may not repeat from its clause's own wording ("a vest I
+-- had made, made by my own hands"): those of four letters or more, and a few
+-- families by their root. (What the clause names may come back: "eight Linen
+-- Cloth, wondering what could be sewn from so much cloth".)
+local COMMON = {
+  with = true,
+  that = true,
+  than = true,
+  what = true,
+  them = true,
+  their = true,
+  there = true,
+  more = true,
+  into = true,
+  from = true,
+  have = true,
+  been = true,
+  were = true,
+  when = true,
+  ["then"] = true,
+  some = true,
+  just = true,
+  this = true,
+  they = true,
+  once = true,
+  still = true,
+  before = true,
+  after = true,
+  again = true,
+}
+local ROOTS = {
+  making = "made",
+  make = "made",
+  makes = "made",
+  hands = "hand",
+  handiwork = "hand",
+  handmade = "hand",
+  own = "own",
+  works = "work",
+  workmanship = "work",
+}
+local function echoWords(text)
+  local roots = {}
+  for w in text:lower():gmatch("%a+") do
+    local root = ROOTS[w] or (#w >= 4 and not COMMON[w] and w) or nil
+    if root then roots[root] = true end
+  end
+  return roots
+end
+
 -- ── one sentence ─────────────────────────────────────────────────────────────
 -- Book:say below, in its steps. In a chapter, the book's scene (self.scene,
 -- Scene.lua) keeps what a paragraph or a chapter remembers: who was named,
@@ -399,6 +449,27 @@ end
 -- one can help it; prefer: tags to favour.
 function Book:pick(kind, key, prefer, ownFresh, fresh, voiced, all)
   local routine = ROUTINE[kind]
+  -- (a clause doesn't repeat the words of the sentence it joins: "returned
+  -- with the work done and told Gryan the work was done")
+  local s = self.scene
+  if s and #s.pending > 0 then
+    local said = echoWords(table.concat(s.pending, " "))
+    local function fresh2(group)
+      local kept = {}
+      for _, e in ipairs(group) do
+        local echo = false
+        for w in pairs(echoWords((e.s[1]:gsub("{%w+}", "")))) do
+          if said[w] then echo = true end
+        end
+        if not echo then table.insert(kept, e) end
+      end
+      return kept
+    end
+    local o, f, v = fresh2(ownFresh), fresh2(fresh), fresh2(voiced)
+    if #o + #f > 0 then
+      ownFresh, fresh, voiced = o, f, v
+    end
+  end
   local function sameVerb(e) return routine and e and e.s[1]:match("^(%a+)") == self.lastVerb end
   if routine and self.lastVerb then
     local function other(group)
@@ -494,7 +565,7 @@ end
 -- wins over the rest). raw: a clause, left as it is (no capital).
 -- Returns the text and what was chosen: { kind, weight (weigh), routine (its
 -- remarks' pool, if routine), remark (the one added, if any), turn (a [turn]
--- line) }.
+-- line), state (a [state] line: "had them in my pack", no action) }.
 function Book:say(kind, key, values, tags, prefer, raw)
   if not ns.data.writing[kind] then return end
   local s = self.scene
@@ -513,7 +584,14 @@ function Book:say(kind, key, values, tags, prefer, raw)
   self:use(kind, e)
   local chosen = e.s
   local text = chosen[1]
-  local said = { kind = kind, weight = weight, routine = routine, remark = false, turn = hasTag(chosen, "turn") }
+  local said = {
+    kind = kind,
+    weight = weight,
+    routine = routine,
+    remark = false,
+    turn = hasTag(chosen, "turn"),
+    state = hasTag(chosen, "state"),
+  }
   if seen then -- who this sentence names, for the rest of the paragraph
     for _, k in ipairs(PEOPLE) do
       if type(asked[k]) == "string" and text:find("{" .. k .. "}", 1, true) then
@@ -545,56 +623,6 @@ function Book:say(kind, key, values, tags, prefer, raw)
   -- (and none left at the start: "{at}, my tenth level" with no place)
   text = text:gsub(" +([%.,;:!%?])", "%1"):gsub("  +", " "):gsub("^[ ,;:]+", "")
   return raw and text or capitalise(text), said
-end
-
--- The words a remark may not repeat from its clause's own wording ("a vest I
--- had made, made by my own hands"): those of four letters or more, and a few
--- families by their root. (What the clause names may come back: "eight Linen
--- Cloth, wondering what could be sewn from so much cloth".)
-local COMMON = {
-  with = true,
-  that = true,
-  than = true,
-  what = true,
-  them = true,
-  their = true,
-  there = true,
-  more = true,
-  into = true,
-  from = true,
-  have = true,
-  been = true,
-  were = true,
-  when = true,
-  ["then"] = true,
-  some = true,
-  just = true,
-  this = true,
-  they = true,
-  once = true,
-  still = true,
-  before = true,
-  after = true,
-  again = true,
-}
-local ROOTS = {
-  making = "made",
-  make = "made",
-  makes = "made",
-  hands = "hand",
-  handiwork = "hand",
-  handmade = "hand",
-  own = "own",
-  works = "work",
-  workmanship = "work",
-}
-local function echoWords(text)
-  local roots = {}
-  for w in text:lower():gmatch("%a+") do
-    local root = ROOTS[w] or (#w >= 4 and not COMMON[w] and w) or nil
-    if root then roots[root] = true end
-  end
-  return roots
 end
 
 -- A remark from a pool (writing/r-*.md, and the race's own): a fresh one,
@@ -724,12 +752,21 @@ end
 -- not one of the last few used, so "a good many" doesn't come back every
 -- other quest; often none at all.
 local SIZE_GAP = 4
+-- (a size word's family: "many" for "a good many" and "a great many", "deal"
+-- for "a good deal of" and "a great deal of")
+local function familyOf(w) return w:match("(%a+) of$") or w:match("(%a+)$") or w end
 function Book:size(n, key, mass, pack)
-  local fit, fresh = sizes(n, mass, pack), {}
-  for _, w in ipairs(fit) do
-    if w == "" or not self.sizesUsed[w] then table.insert(fresh, w) end
+  local fit, fresh, unused = sizes(n, mass, pack), {}, {}
+  -- (nor one of the same family: "a great many" just after "a good many")
+  local family = {}
+  for w in pairs(self.sizesUsed) do
+    family[familyOf(w)] = true
   end
-  if #fresh == 0 then fresh = fit end
+  for _, w in ipairs(fit) do
+    if w == "" or not self.sizesUsed[w] then table.insert(unused, w) end
+    if w == "" or not (self.sizesUsed[w] or family[familyOf(w)]) then table.insert(fresh, w) end
+  end
+  if #fresh == 0 then fresh = #unused > 0 and unused or fit end
   local w = fresh[hash(self.seed .. "|size|" .. key) % #fresh + 1]
   if w ~= "" then
     self.sizesUsed[w] = true
@@ -760,8 +797,14 @@ function Book:deed(m, key, tags)
       count = count + (f.n or 1)
     end
     tags.named = count == 1 and named or nil
+    -- (no size with a creature asked for by name: "Clerk Horrace
+    -- Whitesteed, Citizen Wilkes and Miner Hackett" are no handful)
+    local single = false
+    for _, f in ipairs(objectivesLike(m, o)) do
+      if (f.n or 1) == 1 then single = true end
+    end
     local pack = #foes == 1 and self.creatureKinds[o.name] == "Wolf"
-    values.n, values.foes = self:size(count, key, false, pack), listing(foes)
+    values.n, values.foes = single and "" or self:size(count, key, false, pack), listing(foes)
     self.lastFoe = { name = o.name, many = count > 1, told = self.told or 0 }
     tags.one = count == 1 or nil
     tags.teeth = TEETH[self.creatureKinds[o.name] or ""]
@@ -804,7 +847,9 @@ function Book:deed(m, key, tags)
     -- right after it was named; further back in the paragraph, named again)
     local carried = self.scene and self.scene.thingsCarried or {}
     local last = carried[o.name]
-    if last and (self.told or 0) - last <= 1 then
+    -- ("it" for one thing; "Scarlet Crusade Documents" are "the documents")
+    local many = o.name:find("[^s's]s$") and not o.name:find("'s ")
+    if last and (self.told or 0) - last <= 1 and not many then
       tags.onward = true
     elseif last then
       -- named before, further back: by what it is ("the ring", "the book")
@@ -824,6 +869,7 @@ function Book:deed(m, key, tags)
     -- had asked for Grelin Whitebeard's Journal" says it twice)
     local owner = m.giver and #all == 1 and (o.name:match("^(.-)'s (.+)$"))
     if owner and m.giver:find(owner, 1, true) == 1 then list[1] = "the " .. o.name:match("'s (.+)$"):lower() end
+    if #all == 1 and self.scene then self.scene.thingsCarried[o.name] = self.told or 0 end
     local count = #all == 1 and (o.n or 1) or 2
     values.n, values.thing = #all == 1 and self:size(count, key, uncounted(o.name)) or "", listing(list)
     if tags.done then values.giver = nil end -- found, not yet handed over
@@ -842,9 +888,22 @@ function Book:deed(m, key, tags)
     if kind then tags[kind] = true end
     -- (the hunt for them: the creatures they drop from, killed on the way)
     if tags.prey and not tags.trophy then
+      -- {item}: the things by name, with "the" ("the Tough Wolf Meat"), or a
+      -- name of their own ("Ilkrud Magthrull's Tome"), or "the tome" when
+      -- named for who asked
       local hunt = { prey = tags.prey, n = values.n, thing = values.thing, giver = m.ender or m.giver }
-      hunt.item = #all == 1 and things(o.name) or listing(list)
-      if owner and m.giver:find(owner, 1, true) == 1 then hunt.item = list[1]:gsub("^the ", "") end
+      local names = {}
+      for _, f in ipairs(all) do
+        table.insert(names, (f.n or 1) > 1 and things(f.name) or f.name)
+      end
+      hunt.item = listing(names)
+      if not hunt.item:find("^[^,]-'s ") then hunt.item = "the " .. hunt.item end
+      if owner and m.giver:find(owner, 1, true) == 1 then hunt.item = list[1] end
+      -- (a thing named for the creature it comes from: "the Scale of Old
+      -- Murk-Eye" is not taken "from Old Murk-Eye" as well)
+      for name in tags.prey:gmatch("%u[%w' -]+%w") do
+        if o.name:find(name, 1, true) then tags.ofprey = true end
+      end
       done, said = self:say("c-hunt", key, hunt, tags, nil, true)
     end
     if not done and tags.handed and not tags.more and not tags.trophy then

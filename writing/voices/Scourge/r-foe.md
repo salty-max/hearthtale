@@ -3,7 +3,7 @@ kind: r-foe
 ---
 - my bones wanting less vigorous employment
 - [one !more] no interest in seeing whether death would improve its temper
-- [!more] a corpse whose appetite for combat had been satisfied
+- my appetite for combat thoroughly satisfied
 - my absent pulse no measure of the fear
 - [one] another danger I would rather not take home
 - [!one] their persistence worth an unwelcome respect

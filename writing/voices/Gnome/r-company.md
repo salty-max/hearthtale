@@ -2,15 +2,15 @@
 kind: r-company
 ---
 - [one] the pair of us a less inviting target
-- my company welcome without a demonstration of what I could build
-- someone to notice if I went missing in the tall grass
+- my company accepted, oddities and all
+- more eyes looking out for trouble than I could manage alone
 - my courage no longer doing all the lifting
-- another name to hold apart from Gnomeregan's missing
-- a welcome companion in the life our scattered people were making
-- someone to share my inconvenient enthusiasms with
+- company, which a refugee learns to value
+- [one] the kind of company our scattered people learned to treasure
+- company for my inconvenient enthusiasms
 - [night one] a little less alone beneath that enormous dark
 - [hc] more of us for trouble to find, and more of us to answer
 - [hc] unwilling to lose another person I knew
-- a place found among the others
+- a welcome I had not had to earn
 - [one] an extra pair of eyes, at a more useful height than mine
 - [night] some company to keep the dark from claiming all my attention

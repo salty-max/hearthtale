@@ -9,7 +9,7 @@ kind: r-road
 - [!back night] the ground an uncertain thing in the dark
 - [back] a welcome familiarity settling over the way
 - [back] the familiar route giving me an unhurried confidence
-- my weight no smaller for the length of the road
+- in no hurry, which is how my people travel
 - [!back] eager to know the people as well as the path
 - [!back] wondering what a settled shu'halo might learn from these people
 - [!back] the patience of my people's wanderers not yet entirely worn out

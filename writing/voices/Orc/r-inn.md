@@ -4,7 +4,7 @@ kind: r-inn
 - closer to Orgrimmar's comfort in spirit, if not in miles
 - a promise of peace kept close
 - an enchantment with a practical use beyond the Horde
-- an orc's return worth arranging in advance
+- the red earth of home kept in a pouch, more or less
 - the promise of shelter letting my pride rest
 - one less road between me and a place to stop
 - [night] the night somebody else's to watch on my return

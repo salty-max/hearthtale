@@ -1,7 +1,7 @@
 ---
 kind: rest
 ---
-- I rested {at}, leaving the loa to find their amusement without another performance from me.
+- I rested {at}, with my back to something solid, as my people prefer.
 - I settled {at}, in no hurry at all, which the loa seemed to approve of.
 - I paused {at}, with the sound of the sea almost present in the quiet.
 - I rested {at}, with enough room inside the weariness for a grin again.

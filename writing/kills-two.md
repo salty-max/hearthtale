@@ -3,12 +3,12 @@ kind: kills-two
 ---
 - {n1} {foes1} and {n2} {foes2} had fallen to me, enough to make a quiet return very inviting.
 - I counted {n1} {foes1} and {n2} {foes2} among the fighting {at}, with no appetite for adding to either.
-- I had dealt with {n1} {foes1} and {n2} {foes2} {at}, with the quiet afterwards a comfort in itself.
-- I had brought down {n1} {foes1} and {n2} {foes2} {at}; a peaceful occupation suddenly seemed a great luxury.
+- I had dealt with {n1} {foes1} and {n2} {foes2} {at}, and the quiet afterwards was very welcome.
+- I had brought down {n1} {foes1} and {n2} {foes2} {at}; a peaceful trade suddenly looked very attractive.
 - I put down {n1} {foes1} and {n2} {foes2} {at}, enough fighting to make the pause welcome.
-- Between the {n1} {foes1} and the {n2} {foes2} {at}, I had grown very fond of the prospect of going home.
+- Between the {n1} {foes1} and the {n2} {foes2} {at}, I had grown very fond of the idea of going home.
 - {n1} {foes1} and {n2} {foes2} had fallen to me {at}, leaving my endurance thoroughly tested.
-- I had fought {n1} {foes1} and {n2} {foes2} {at}, with a quiet evening suddenly seeming a generous ambition.
+- I had fought {n1} {foes1} and {n2} {foes2} {at}, and wanted nothing more than a quiet evening.
 - Much of my time {at} had gone into fighting {n1} {foes1} and {n2} {foes2}.
 - The fighting {at} had brought me through {n1} {foes1} and {n2} {foes2}, with more relief than pride by the end.
 - [lots] I had dealt with {n1} {foes1} and {n2} {foes2}, enough that I could still feel the work when I stopped.

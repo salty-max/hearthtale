@@ -11,7 +11,7 @@ kind: r-foe
 - [client:forever teeth] those teeth too close to the flesh beneath my confidence
 - [client:forever mechanical] no sympathy for a mechanism built to make the ground dangerous
 - [client:forever night] my hearing occupied by what the night concealed
-- [client:forever hc] a skyborn elf with no intention of staying down for good
+- [client:forever hc] no intention of staying down for good
 - [client:forever faction:horde] our missing mentors dearer to me in the relief afterwards
 - [client:forever faction:alliance !more] a High Order elf unwilling to wait for a patron to save me
 - [client:forever faction:alliance !more] my people's proud traditions poor shelter against a blow

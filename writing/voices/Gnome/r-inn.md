@@ -8,6 +8,6 @@ kind: r-inn
 - [night] the prospect of a safe return settling my nerves
 - [hc] unwilling to gamble on finding shelter at the last moment
 - one enchantment I could appreciate without taking apart
-- a reliable return built into the next venture
+- a way home in my pocket, which every refugee should have
 - a solution even Mekkatorque might admire
 - almost as good as fitting wheels to my feet

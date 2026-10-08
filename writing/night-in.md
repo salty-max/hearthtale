@@ -2,13 +2,13 @@
 kind: night-in
 ---
 - [!last] I rested indoors {at}, grateful for shelter without having to find an inn.
-- [!last] I spent the night inside {at}, with a roof dearer to me than the prospect of travelling further.
+- [!last] I spent the night inside {at}, and was glad of the roof.
 - [!last] I settled indoors {at}, more willing to accept a little discomfort than to go looking for another place.
 - [!last] I rested inside {at}, glad to let the night keep the roads without me.
 - [!last] I spent the night indoors {at} without an inn, content to be sheltered for a while.
-- [!last] I rested inside {at}, with the day's demands safely on the other side of a wall.
+- [!last] I rested inside {at}, with the day shut out on the other side of a wall.
 - [!last hc] I settled indoors {at}, grateful for a little shelter in a world that offered no second life.
-- [last] I ended this stretch indoors {at}, with the prospect of rest dearer than the search for an inn.
+- [last] I ended this stretch indoors {at}, too tired to go looking for an inn.
 - [last] I settled inside {at}, glad to have a roof without another journey to find one.
 - [last] I stopped {at} for the night, with shelter enough to make staying an easy decision.
 - [last] I ended this stretch {at}, with an ordinary roof more welcome than another view of the road.

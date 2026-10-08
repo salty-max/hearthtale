@@ -4,7 +4,7 @@ kind: r-inn
 - the distance from shelter less cruel with a hearthstone
 - almost as comforting as a moonwell's peace
 - a haven for the return already fixed in my mind
-- my mortal weariness rather grateful for the promise
+- grateful for the promise of a proper rest
 - one less place to approach as a stranger
 - not quite home, but nearer to it than another night on the road
 - [night] at ease with the hour, if not with the need to stop

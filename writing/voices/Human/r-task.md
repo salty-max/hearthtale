@@ -6,7 +6,7 @@ kind: r-task
 - my willingness to oblige in need of a rest
 - my generous offer beginning to wear thin
 - no prospect of a song, and little need of one
-- [explore] the way back an important part of my interest
+- [explore] keeping the way back clear in my head
 - [explore] a guard's company a comforting thing to imagine
 - [escort] unwilling to send someone home as bad news
 - [night] my eyes wanting the comfort of daylight
@@ -14,6 +14,6 @@ kind: r-task
 - less certain I would volunteer so quickly next time
 - a peaceful trade suddenly looking attractive
 - [explore] a neighbour's need for a safe path easier to understand
-- [explore] a stranger's caution kept busy by the country
+- [explore] every thicket a place I would have warned a child away from
 - [escort] rather more frightened for another life than I had expected
 - [night] my eyes straining harder than my patience

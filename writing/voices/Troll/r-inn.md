@@ -5,7 +5,7 @@ kind: r-inn
 - a return I hoped would feel like a familiar camp
 - an easy journey back arranged without a guide
 - [night] the night welcome to its own entertainment on my return
-- [hc] doubtful that the loa would find my safe return entertaining
+- [hc] a safe way home, which the careful live long enough to use
 - a useful safeguard against a weary homecoming
 - a way home fixed in mind, which the Darkspear never take for granted
 - an enchantment whose practical uses delighted me

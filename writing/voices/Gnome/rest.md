@@ -1,7 +1,7 @@
 ---
 kind: rest
 ---
-- I rested {at}, letting the day's difficulties settle into something I could make sense of.
+- I rested {at}, turning the day over in my head like a part I meant to fix later.
 - I settled {at}, and for once let my thoughts run on without me.
 - I paused {at}, content to leave every loose end exactly where it was.
 - I rested {at}, enjoying a pause without a problem that urgently needed solving.

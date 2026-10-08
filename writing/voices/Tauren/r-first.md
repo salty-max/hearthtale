@@ -6,11 +6,11 @@ kind: r-first
 - keener to know the earth's children than to disturb them
 - not nearly as sheltered by my size as I wished
 - the quiet of Mulgore suddenly very precious
-- [teeth] those jaws no kindness to a hunter's respect
+- [teeth] those jaws respected, as all the Earth Mother's hungry children deserve
 - [night] my eyesight less useful beneath Mu'sha's hours
 - rather slower to welcome a second encounter
 - my patience unable to quiet my heart
-- a hunter's caution advising a respectful distance
+- the old caution of the plains advising a respectful distance
 - my horns no reassurance against the danger
 - [night] the dark concealing the movement I needed to judge
-- [low] a novice hunter feeling the absence of Mulgore's shelter
+- [low] young enough to miss Mulgore's shelter

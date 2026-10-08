@@ -1,17 +1,17 @@
 ---
 kind: r-task
 ---
-- my taste for useful activity beginning to wear thin
-- a generous offer due for a quiet spell
-- the request giving my patience some useful work
-- the satisfaction of helping taking the edge off the inconvenience
-- a favour I could cheerfully have left to somebody else
-- a quiet return an attractive prospect
-- a generous offer finding its practical limits
-- my share of useful activity quite sufficient for now
-- the request wearing some shine off my generosity
-- [explore] wondering how readily I could find the same way in a hurry
-- [explore] unfamiliar country keeping my vigilance occupied
-- [escort] unwilling to make another life hurry to suit my own
-- [escort] another life setting the undertaking's pace
-- [night] the dark making every part of the task deliberate
+- not quite sure what I had set in motion
+- curious what would come of it
+- glad to have it off my mind
+- seeing more of the place than the errand required
+- my boots the worse for it
+- simpler than it had sounded
+- without anyone explaining why, which no longer surprised me
+- my opinion of the errand improving as it went
+- the job taking longer than I had expected
+- [explore] with a new map forming in my head
+- [explore] the ground making more sense with every step
+- [escort] keeping to their pace the whole way
+- [escort] watching the road for both of us
+- [night] the dark adding nothing helpful

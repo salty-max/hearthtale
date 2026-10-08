@@ -10,4 +10,4 @@ kind: r-road
 - [back] the familiar path dearer to me than the speed of returning
 - [back] the way acquiring some welcome familiarity
 - [back] rather glad not to begin as a stranger again
-- [high] still fonder of a moonwell's peace than of a long road
+- [high] the roads of this world beginning to feel almost like old paths

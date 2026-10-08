@@ -8,5 +8,5 @@ kind: rest
 - I rested {at}, and found that the sky made a passable roof after all.
 - I paused {at}; an evening at home would have suited me, but this would do.
 - I rested {at}, with the road welcome to wear out somebody else for a while.
-- I stopped {at}, letting my strength come back without hammering it into another task.
+- I stopped {at}, and set the day down like a heavy pack.
 - As worn down as a quarry step, I rested {at}.

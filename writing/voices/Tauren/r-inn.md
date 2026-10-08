@@ -1,7 +1,7 @@
 ---
 kind: r-inn
 ---
-- a promise as warm as the prospect of a shared camp
+- a promise of shelter I could hold in one hand
 - already wanting to let my weight settle
 - shelter dearer to me than another stretch of the road
 - [night] beneath Mu'sha's hours and eager for shelter

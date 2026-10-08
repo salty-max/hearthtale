@@ -1,9 +1,9 @@
 ---
 kind: r-company
 ---
-- as welcome as the ease of a camp shared by my people
+- the road kinder with others on it
 - [one] another life to hold as dear as my own
-- nearer in spirit to a shared camp in Mulgore
+- some of the closeness of home on an unfamiliar road
 - my patience finding company gentler than solitude
 - readier to trust than I could be alone
 - company as welcome as Cairne's shelter had been to our wanderers

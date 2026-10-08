@@ -3,7 +3,7 @@ kind: r-road
 ---
 - a fair distance, and my good humour worn thin by the end
 - rather more at ease with the weight of a mountain overhead
-- [!back] a new place to put an explorer's eye to use
+- [!back] a new place, and new stone to look at
 - [!back] wondering what an explorer would find beneath all this
 - [!back] eyeing the stone of the place before its people
 - [!back night] the dark obscuring the country I had come to see

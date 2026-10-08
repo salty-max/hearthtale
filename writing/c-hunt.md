@@ -3,10 +3,10 @@ kind: c-hunt
 ---
 - hunted {prey} for {n} {thing}
 - [!handed] went after {prey} for {n} {thing}
-- took {n} {thing} from {prey}
+- [!ofprey] took {n} {thing} from {prey}
 - [!handed] hunted down {prey} until I had {n} {thing}
-- [handed] hunted {prey} for the {item} {giver} wanted
-- [handed] went after {prey} for the {item} {giver} needed
-- [handed] took the {item} {giver} wanted from {prey}
-- [handed] hunted {prey} until {giver} had the {item}
-- [turn handed] {giver} wanted {item}, and {prey} had to give it up
+- [handed] hunted {prey} for {item} that {giver} wanted
+- [handed] went after {prey} for {item} that {giver} needed
+- [handed !ofprey] took {item} that {giver} wanted from {prey}
+- [handed] hunted {prey} until {giver} had {item}
+- [turn handed] {prey} paid for {item} that {giver} wanted

@@ -11,9 +11,9 @@ kind: prologue
 - I began this stretch {at}, with {quests} tasks and {played} already behind me.
 - [hc] I had seen {quests} tasks through and was still alive; I went on {at}, unwilling to spend that life carelessly.
 - [hc] I went on {at}, with no second life waiting if this one ended.
-- [race:Dwarf] I began this stretch {at}, with the mountain's stubbornness dearer to me than the chance to look impressive.
+- [race:Dwarf] I began this stretch {at}, with the mountain's stubbornness in me and no great wish to look impressive.
 - [race:Scourge] I went on {at}, still a corpse with no intention of returning to anyone's keeping.
-- [race:NightElf] I began this stretch {at}, with Elune's gentleness dearer than the patience people expected of me.
+- [race:NightElf] I began this stretch {at}, with Elune's light to steady me.
 - [race:Gnome] I went on {at}, a gnome with some ingenuity left to put to work outside a workshop.
 - [race:Orc] I began again {at}, free to serve the Horde without another master's chains.
 - [race:Tauren] I went on {at}, with a shu'halo's interest in the people the road might bring me to.

@@ -4,14 +4,14 @@ kind: remembrance
 - {name} had completed {quests} tasks and fought {kills} foes, with more to a life than either number could hold.
 - In {played} of life, {name} had seen {quests} tasks through.
 - {name} had brought down {rare}, and lived beyond that struggle.
-- {name} had survived {dungeon}, with more life waiting beyond its dangers then.
+- {name} had come out of {dungeon} alive, once.
 - {name} had seen {zones} lands and completed {quests} tasks along the way.
-- {name} had overcome {rare} and seen {quests} tasks through, with a life beyond its last loss.
+- {name} had overcome {rare} and seen {quests} tasks through.
 - {name} had spent {played} in the world, with {quests} tasks done and {kills} foes fought.
 - {name} had lived for {played} on this realm, a life the last struggle could not entirely define.
-- {name} had brought down {rare}, and survived to go on beyond that encounter.
+- {name} had faced {rare} and won, a story worth the telling.
 - [!inside] {name} had survived {dungeon}, though the last danger had not been within it.
-- {name} had lived for {played}, with much to keep dear before the ending.
+- {name} had lived for {played}, and most of it was good.
 - {kills} foes had fallen to {name} before the last struggle ended differently.
-- [low] {name} had completed {quests} tasks and fought {kills} foes, with so much still left beyond the beginning.
+- [low] {name} had completed {quests} tasks and fought {kills} foes, with most of the world still to see.
 - [high] {name} had seen {zones} lands and completed {quests} tasks, with much of a life already made.

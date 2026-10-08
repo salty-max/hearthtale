@@ -1,14 +1,14 @@
 ---
 kind: opening
 ---
-- [!night] I set out {at}, with the day's possibilities still pleasantly unsettled.
-- [!night] I began again {at}, taking some pleasure in the day before finding it a useful occupation.
+- [!night] I set out {at}, with the whole day still undecided.
+- [!night] I began again {at}, and enjoyed the morning air before the work found me.
 - [!night] I took up the road {at}, grateful for another day whose troubles I had yet to meet.
 - I set out {at}, more willing to move than to stand about worrying.
 - [night] I went on {at} after dark, with my ears doing more of the work than my eyes.
-- [night] I began this stretch {at}, giving the night's hiding places a cautious share of my attention.
+- [night] I began this stretch {at}, watching the shadows more than the road.
 - [night] I set out {at}, less eager for the darkness than for getting where I was going.
-- [!night] I began again {at}, with a private affection for the possibility of an ordinary day.
+- [!night] I began again {at}, hoping for an ordinary day and not expecting one.
 - I took up the road {at}, my enthusiasm concealing a private unease.
 - I set out {at}, with help to offer and a healthy respect for the cost of offering it.
 - I went on {at}, with a stranger's caution and a traveller's wish to be welcomed.

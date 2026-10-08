@@ -6,7 +6,7 @@ kind: rest
 - I stopped {at}, letting my weight belong to the earth for a while.
 - I rested {at}, thinking of the welcome a Mulgore camp could offer a weary traveller.
 - I paused {at}, no longer obliged to make a large body look tireless.
-- As weary as a hunter coming home, I rested {at}.
+- As weary as a wanderer at the end of a season, I rested {at}.
 - I stopped {at}, with the Earth Mother's steadiness a quiet comfort.
 - I rested {at}, grateful that the next mile could wait without being frightened away.
 - I paused {at}, with no greater ambition than to feel my own strength return quietly.

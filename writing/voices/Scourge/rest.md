@@ -4,9 +4,9 @@ kind: rest
 - I rested {at}, grateful to lie still without a lid being nailed over me.
 - I settled {at}, with no need to sleep and a very definite wish to stop.
 - I paused {at}, content with a peace that had nothing permanent about it.
-- I rested {at}, briefly excusing myself from any use an industrious apothecary might find for me.
+- I rested {at}, and let the world get on without my help for a while.
 - I stopped {at}, with my decaying joints quietly winning an argument against further walking.
 - I rested {at}, missing sleep rather more than I needed it.
 - I paused {at}; remaining motionless by choice still had a sweetness the grave had never offered.
 - I rested {at}, with no master's voice in my head to make stillness a crime.
-- As content as a corpse could be outside its appointed plot, I rested {at}.
+- I rested {at}, thinking of Brill's crooked roofs with something like fondness.

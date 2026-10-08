@@ -7,7 +7,7 @@ kind: r-item
 - [!one !plural] counting each piece as carefully as a miser counts gold
 - [!one !plural] my back feeling like the last mule out of a mine
 - [one !plural] a modest prize for a troublesome search
-- [one !plural] a find whose usefulness would have to justify the weight
+- [one !plural] heavier than it looked, as the good stuff usually is
 - [meat] wondering whether the smell would improve with cooking
 - [cloth] good material for something beyond a beard rag
 - [night] my eyes missing the welcome glare of a forge

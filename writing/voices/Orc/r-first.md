@@ -2,7 +2,7 @@
 kind: r-first
 ---
 - my blood stirring before I wanted it to
-- an orc's wariness concealed behind a fierce expression
+- my wariness hidden behind tusks and a scowl
 - my strength no promise that the fight would be easy
 - my courage quietly recommending a safe distance
 - my anger easier to rouse than to put aside

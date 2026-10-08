@@ -2,7 +2,7 @@
 kind: r-lesson
 ---
 - my strength no shortcut past clumsy fingers
-- an unfamiliar difficulty checking my enthusiasm
+- the lesson humbling me faster than any foe
 - [one] a better hope than trusting courage to serve for skill
 - [one] my eagerness no longer mistaken for mastery
 - [one] wondering how well it would serve beyond a safe lesson
@@ -11,4 +11,4 @@ kind: r-lesson
 - [new] an apprentice's pride harder to swallow than a defeat
 - [low one] still new enough to this to wish for easier learning
 - [high] my skill beginning to catch up with my blood
-- [!one] some practical support for the courage I would need
+- [!one] better tools than rage alone

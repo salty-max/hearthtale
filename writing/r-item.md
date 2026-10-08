@@ -1,45 +1,45 @@
 ---
 kind: r-item
 ---
-- the burden giving the request a practical cost
-- an ordinary request trying my patience
-- a burden with a destination I could be grateful for
-- the relief of finding making up for some of the search
-- unwilling to let the search take all my vigilance
-- the prize of the search an awkward thing to locate
-- [!one !plural] each piece another claim on my willingness
-- [!one !plural] each piece accounted for before I could leave
-- [!one !plural] each piece given a deliberate share of my attention
-- [!one !plural] wondering why one person could need so many
-- [one !plural] a find I had no intention of losing
-- [one !plural] the trouble of the search giving this an unexpected value
-- [one !plural] the destination a welcome end to the carrying
-- [cloth] wondering what a good tailor could make out of the cloth
-- [meat] the thought of cooking a pleasant reward for collecting
-- [night] my eyes taking their time where the dark would not oblige
-- [egg !one] my hands taking particular care with the fragile burden
-- [egg one !plural] not eager to discover how readily it could crack
-- [egg] rather reluctant to meet whatever had laid the eggs
-- [egg] my hands unusually gentle with so fragile a burden
-- [feather] light enough to make the search seem unreasonable
-- [feather] wondering how many feathers could justify such a journey
-- [feather] softer stuff than most of the day's business
-- [hide] a tanner welcome to the next part of the work
-- [hide] wondering whether a tanner would find the burden more inviting
-- [hide] no inclination to keep the hide for myself
-- [paper] rather tempted by writing that had cost so much to find
-- [paper] the writing presenting a new puzzle after the search
-- [paper one !plural] the paper given the care the search had earned it
-- [plant] the leaves requiring some delicacy to keep intact
-- [plant] rather ready for someone else to judge the greenery
-- [plant] the greenery's uses a new question after the search
-- [stone one !plural] a stone with no regard for the trouble of carrying it
-- [stone !one] each stone adding its weight to the request
-- [stone] dense mineral making an awkward burden
-- [relic one !plural] wondering whose hands had first valued it
-- [relic !one] wondering whose hands had first valued them
-- [relic] rather aware of how little I knew about the relics I carried
-- [relic] my hands gentler with something that had lasted this long
-- [remains] the intimacy of the remains distinctly unpleasant
-- [remains] the remains a burden I could cheerfully hand over
-- [remains] my stomach protesting the generous offer
+- heavier in my pack than I had bargained for
+- with dirt under my nails for the trouble
+- worth more to whoever asked than to me
+- pleased with how little searching it took in the end
+- keeping half an eye on my surroundings the whole time
+- harder to spot than I had expected
+- [!one !plural] each one harder to find than the last
+- [!one !plural] the last of them where I had looked first
+- [!one !plural] counting them twice to be sure
+- [!one !plural] wondering what anyone needed with so many
+- [one !plural] right where it should not have been
+- [one !plural] smaller in my hand than the trouble of finding it
+- [one !plural] wondering what anyone wanted with it
+- [cloth] with thoughts of what a tailor might make of it
+- [meat] with supper very much on my mind
+- [night] the dark making the search twice as long
+- [egg !one] careful not to crack any of them
+- [egg one !plural] careful not to crack it
+- [egg] with an eye on the sky in case the parents came back
+- [egg] still warm, which I tried not to think about
+- [feather] light as nothing, for all the trouble
+- [feather] stray feathers drifting out of my pack for days
+- [feather] the softest part of the day's work
+- [hide] the smell reaching me before I had done
+- [hide] stiff with blood and dirt
+- [hide] rolled up tight against the smell
+- [paper] tempted to read more than I should have
+- [paper] the ink smudged but still legible
+- [paper one !plural] folded carefully, in case it mattered more than it seemed
+- [plant] with the green smell on my hands
+- [plant] careful not to bruise the leaves
+- [plant] with dirt under my nails and a little more patience than before
+- [stone one !plural] heavier than it looked
+- [stone !one] the weight of them pulling at my pack
+- [stone] glinting even in poor light
+- [relic one !plural] older than any hands that had held it since
+- [relic !one] older than any hands that had held them since
+- [relic] wondering who had made such things, and when
+- [relic] handled with more care than I usually manage
+- [remains] not the most pleasant load to carry
+- [remains] wrapped well, for everyone's sake
+- [remains] glad of a strong stomach

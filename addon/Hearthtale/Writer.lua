@@ -115,9 +115,13 @@ end
 -- A class's own quest, turned in: what it taught, a sentence of its own
 -- ("In return, Alamar Grimm taught me to call an imp"; Knowledge.lua).
 -- False if the quest is no class quest of mine, or teaches nothing.
-local function classReward(s, m)
+local function teaches(s, m)
   local q = m.id and ns.knowledge and ns.knowledge.quests[m.id]
-  if not (q and q.spell and q.class == s.c.class) then return false end
+  return q and q.spell and q.class == s.c.class and q or nil
+end
+local function classReward(s, m)
+  local q = teaches(s, m)
+  if not q then return false end
   s:prepare() -- (in its place: arrived there first)
   local family = q.spell:match("^Summon (.+)$")
   local t = { summon = family and true or nil }
@@ -150,10 +154,25 @@ function tell.turnIn(s, m)
     return
   elseif m.ender then
     local enders, seenEnder, k = { m.ender }, { [m.ender] = true }, i + 1
-    while log[k] and log[k].k == "quest" and log[k].told and log[k].ender and s:placeOf(log[k]) == s.place do
-      if not seenEnder[log[k].ender] then table.insert(enders, log[k].ender) end
-      seenEnder[log[k].ender] = true
-      s.merged[k] = true
+    while
+      log[k]
+      and (
+        log[k].k == "level"
+        or (
+          log[k].k == "quest"
+          and log[k].told
+          and log[k].ender
+          and s:placeOf(log[k]) == s.place
+          and not s:justDone(log[k], k)
+          and not teaches(s, log[k])
+        )
+      )
+    do
+      if log[k].k == "quest" then
+        if not seenEnder[log[k].ender] then table.insert(enders, log[k].ender) end
+        seenEnder[log[k].ender] = true
+        s.merged[k] = true
+      end
       k = k + 1
     end
     s:tell("c-report", { ender = listing(enders) })
@@ -176,7 +195,10 @@ function tell.kill(s, m)
   local b = s.book
   b.creatureKinds[m.name] = m.kind
   if m.quarry or SKIP[m.kind or ""] then return end -- told by its quest, or not a fight
-  if m.elite then return s:tell("c-elite", { foe = namedElite(m.name) and m.name or article(m.name) }) end
+  if m.elite then
+    s.toldFoes[m.name] = true
+    return s:tell("c-elite", { foe = namedElite(m.name) and m.name or article(m.name) })
+  end
   if m.first and KINDS[m.kind] then
     local t = { one = true, teeth = TEETH[m.kind or ""], mechanical = m.kind == "Mechanical" or nil }
     local people = foeOf(m.name, m.kind)
@@ -272,7 +294,7 @@ function tell.bossFinal(s, m) s:alone("boss-final", { boss = m.name, dungeon = m
 function tell.boss(s, m) s:tell("c-boss", { boss = m.name, dungeon = mid(s.dungeon) }) end
 -- (a trade's own spell, learned before the game listed the trade, is told by
 -- the trade); a spell with a line of its own (writing/lesson.md: Life Tap,
--- paid in blood) told by it, the first of them
+-- paid in blood) told by it after the lesson, the first of them
 local noted
 local function hasNote(spell)
   if not noted then
@@ -302,13 +324,13 @@ function tell.learned(s, m)
         or sp:find("^Master ")
       )
     then
-      if not note and hasNote(sp) and not s.book.noted[sp] then
-        note = sp
-      else
-        table.insert(spells, sp)
-      end
+      if not note and hasNote(sp) and not s.book.noted[sp] then note = sp end
+      table.insert(spells, sp)
     end
   end
+  -- (the lesson as a whole, then its spell with a line of its own; that
+  -- spell alone needs no list before it)
+  if note and #spells == 1 then spells = {} end
   if #spells > 0 then
     local named = {}
     for j = 1, math.min(#spells, 3) do

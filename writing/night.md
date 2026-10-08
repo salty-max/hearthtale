@@ -8,7 +8,7 @@ kind: night
 - [!last] I spent the night outdoors {at}, missing the comfort of a roof without wanting to go looking for one.
 - [!last] I stopped {at} for the night, leaving the dark in possession of the road.
 - [!last hc] I passed the night outside {at}, with the thought of danger harder to put aside than my weariness.
-- [last] I settled beneath the sky {at}, leaving the coming day's demands until morning.
+- [last] I settled beneath the sky {at}, and left tomorrow to tomorrow.
 - [last] I lay down outside {at}, grateful to have reached a place where I could stop.
 - [last] I spent another night outdoors {at}, with no wish to travel further for comfort.
 - [last] I settled {at}, with the darkness welcome to keep the next stretch until I was rested.
