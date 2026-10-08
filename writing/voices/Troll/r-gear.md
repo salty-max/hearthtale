@@ -2,8 +2,8 @@
 kind: r-gear
 ---
 - [!made] a piece I could bring back to the tribe without shame
-- [!made !held] a fit I hoped would leave a hunter free to move
-- [!made] some welcome protection against a hunter's mistake
+- [!made !held] loose enough to leave my long limbs free to move
+- [!made] one less gap for a blade to find
 - [!made] a burden I hoped would earn its place on my back
 - [made] my fingers put to a peaceful use
 - [made] as welcome as a hunt that brought everyone home
@@ -12,5 +12,5 @@ kind: r-gear
 - [!made] the old piece losing its charm now I had a choice
 - [!made hc] unwilling to make a final test of Darkspear resilience
 - [made] rather proud of what a little patience could produce
-- [made] a Darkspear's pride in the finished piece
+- [made] good enough to show off at Sen'jin Village
 - [made] something the Darkspear could have a use for

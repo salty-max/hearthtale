@@ -2,11 +2,11 @@
 kind: rest
 ---
 - I rested {at}, leaving the loa to find their amusement without another performance from me.
-- I settled {at}, no more inclined to hurry than a hunter returning to camp.
+- I settled {at}, in no hurry at all, which the loa seemed to approve of.
 - I paused {at}, with the sound of the sea almost present in the quiet.
 - I rested {at}, with enough room inside the weariness for a grin again.
 - I stopped {at}, enjoying an evening whose only demand was sitting still.
-- I rested {at}, with a Darkspear's contentment at the end of a long hunt.
+- I rested {at}, content in the way of someone who had come back from the day in one piece.
 - I paused {at}, with the tribe's familiar warmth dearer than any chance to be impressive.
 - I rested {at}, letting my curiosity look after itself without finding it another occupation.
 - I rested {at}, with no useful task left for my patience except doing nothing.

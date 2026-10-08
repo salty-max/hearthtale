@@ -10,7 +10,7 @@ kind: r-gear
 - [made] a little piece of Gnomeregan's stubborn ingenuity
 - [made] nothing I would have been ashamed to bring to Tinker Town
 - [!made] weighing the comfort against the weight
-- [!made !held] a gnome with something dependable to rely on
+- [!made !held] stitched well enough to trust, which I checked twice
 - [!made] a sturdy bit of reassurance against the world's hazards
 - [made] my fingers responsible for every bit of the result
 - [made] a reminder that the troggs had not taken our skill away

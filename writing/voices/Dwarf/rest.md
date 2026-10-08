@@ -5,7 +5,7 @@ kind: rest
 - I settled {at}, with the din of the Great Forge pleasantly in mind.
 - I stopped {at}, with a stiffness no pride in dwarven endurance would soften.
 - I rested {at}, and let my strength return without trying to forge it into anything useful.
-- I rested {at}, pleased to discover that a dwarf could find comfort without a mountain overhead.
+- I rested {at}, and found that the sky made a passable roof after all.
 - I paused {at}; an evening at home would have suited me, but this would do.
 - I rested {at}, with the road welcome to wear out somebody else for a while.
 - I stopped {at}, letting my strength come back without hammering it into another task.

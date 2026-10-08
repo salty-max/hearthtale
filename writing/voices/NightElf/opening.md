@@ -9,4 +9,4 @@ kind: opening
 - I set out {at}, carrying some affection for the world beyond our forests despite its harshness.
 - I set off {at}, with Teldrassil's shelter still dear to me.
 - I went on {at}, with Elune's name steadying the part of me that still wanted to turn home.
-- I set out {at}, with a Sentinel's distaste for leaving trouble unwatched.
+- I set out {at}, as unhurried as the old forest and no more trusting.

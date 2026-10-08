@@ -7,7 +7,7 @@ kind: r-foe
 - my ears unwilling to stop listening for danger
 - [one] not a death I had any wish to savour
 - [!one] their numbers a poor match for the peace I had hoped to keep
-- [teeth] those teeth worth a Sentinel's vigilance
+- [teeth] those teeth as quick as any nightsaber's
 - [mechanical] no living spirit for me to mourn in that mechanism
 - [night] the night holding no rest for my vigilance
 - [hc] unwilling to waste the mortal years left to me

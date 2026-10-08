@@ -3,14 +3,14 @@ kind: r-lesson
 ---
 - another knack the loa would not have to supply
 - my grin concealing a beginner's awkwardness
-- a lesson fit to try a hunter's patience
+- a lesson fit to try anyone's patience, mine first
 - [one] eager to have it ready before danger chose the hour
 - [one] wondering how it would serve beyond a safe lesson
 - [one] a confident manner hiding the difficulty
 - [new] a craft the Darkspear might have good use for
 - [new] an apprentice's place no disgrace to a survivor
 - [low] new enough to this to wish for a gentler teacher than danger
-- [high] a troll beginning to find a familiar ease in the knack
+- [high] the knack settling in like an old habit
 - [!one] eager to have them ready before trouble chose the hour
 - my pride having to wait for my fingers
 - rather taken with a knack no exile could strip away

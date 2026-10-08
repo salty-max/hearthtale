@@ -7,7 +7,7 @@ kind: r-task
 - a mortal body's weariness making itself felt
 - my reserve no protection against being asked again
 - rather more inclined to stay beneath Teldrassil next time
-- [explore] a Sentinel's caution worth keeping on an unfamiliar path
+- [explore] each turn of the path remembered for the way back
 - [explore] wary of what even a Sentinel might miss
 - [escort] unwilling to surrender another life to the path
 - [night] the dark testing the patience of my search

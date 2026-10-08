@@ -1,7 +1,7 @@
 ---
 kind: r-item
 ---
-- a hunter's patience put to an ordinary use
+- patience learned on the islands put to an ordinary use
 - a burden with a destination I would be happy to reach
 - longing for a hunt that brought back something easier to carry
 - [!one !plural] able to count each piece without asking the loa for help
@@ -10,11 +10,11 @@ kind: r-item
 - [one !plural] rather eager to let it become someone else's treasure
 - [meat] my appetite keener on cooking than on carrying
 - [cloth] the promise of a comfortable shirt sufficient to interest me
-- [night] my eyes taking their time where a hunter ought to
+- [night] my eyes taking their time in the dark
 - [hc] careful not to become somebody else's catch while searching
 - the thought of handing over the burden distinctly attractive
 - a favour whose demands had outgrown the offer
-- [!one !plural] my fingers accounting for each piece with a hunter's care
+- [!one !plural] each piece counted twice, an island habit
 - [!one !plural] counting them before promising my back any more work
 - [one !plural] eager to let someone else call it a prize
 - [one !plural] a find whose usefulness I could leave to someone else

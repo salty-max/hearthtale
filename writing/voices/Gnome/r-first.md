@@ -1,15 +1,15 @@
 ---
 kind: r-first
 ---
-- my enthusiasm losing a little steam
-- a gnome's ingenuity suddenly feeling uncomfortably theoretical
+- my enthusiasm lasting right up until they noticed me
+- my ingenuity suddenly feeling uncomfortably theoretical
 - [teeth] those teeth much too close to the height of my face
 - [teeth] my fingers decidedly fond of remaining attached
 - [mechanical] uncomfortably reminded that machines need not like their makers
 - [mechanical] a friendly setting apparently absent from the design
-- my stomach behaving like a loose cog
+- my stomach somewhere down around my boots
 - [low] a beginner's confidence rattling loose
 - [night] the unseen parts of this encounter troubling me
 - a retreat beginning to look like an excellent invention
 - my pride bristling at the prospect of being an easy meal
-- my heart doing its best impression of an engine
+- my heart going far faster than my feet

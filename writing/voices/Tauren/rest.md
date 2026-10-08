@@ -2,7 +2,7 @@
 kind: rest
 ---
 - I rested {at}, with the thorough contentment of a kodo at the end of a long march.
-- I settled {at}, and let a shu'halo's patience be useful simply in doing nothing.
+- I settled {at}, and let patience be useful simply in doing nothing.
 - I stopped {at}, letting my weight belong to the earth for a while.
 - I rested {at}, thinking of the welcome a Mulgore camp could offer a weary traveller.
 - I paused {at}, no longer obliged to make a large body look tireless.

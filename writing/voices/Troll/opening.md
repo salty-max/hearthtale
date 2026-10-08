@@ -1,12 +1,12 @@
 ---
 kind: opening
 ---
-- I took up the road {at}, with a Darkspear's watchful interest in what might be waiting.
-- I began again {at}, with a hunter's caution and a fairly unreasonable appetite for finding out.
+- I took up the road {at}, grinning, with an eye on whatever might be grinning back.
+- I began again {at}, with a fairly unreasonable appetite for finding out and enough caution to survive it.
 - I set out {at}, still fond of a world that had driven my people from too many shores.
-- I went on {at}, with my usual taste for finding out and a hunter's care about how.
+- I went on {at}, trusting the loa to find the day as interesting as I did.
 - I set off {at}, curious what entertainment the loa might find in my ordinary troubles.
 - I began this stretch {at}, wanting something good to bring home to the Darkspear.
 - I set out {at}, with a jungle-born wariness even where the jungle was only in my thoughts.
-- I returned to the road {at}, no more eager to be caught unawares than a hunter near an unfamiliar trail.
+- I returned to the road {at}, with the easy walk and the open eyes my people learned the hard way.
 - I set out {at}, with the concerns of Sen'jin's people keeping my own in good company.
