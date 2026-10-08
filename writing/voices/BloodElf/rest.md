@@ -1,12 +1,12 @@
 ---
 kind: rest
 ---
-- I rested {at}, content to have no immediate demand upon my attention.
-- I settled {at}, where being still required less effort than appearing tireless.
-- Grateful for the small luxury of attending to my own comfort, I paused {at}.
-- I rested {at}, allowing the day's affairs to remain concluded for a while.
-- I stopped {at}. There was very little I wanted badly enough to get up for just then.
-- I rested {at}, with a little distance between the work and my judgement of it.
-- I paused {at}, glad to let composure become a feeling instead of something I maintained.
-- I rested {at}, and admitted to myself how tired I had become.
-- I put the road aside {at}, finding the absence of demands quite agreeable.
+- I rested {at}, ready to let weariness show without treating it as a disgrace.
+- I settled {at}, with a little less effort spent on looking as though the road had cost me nothing.
+- As grateful for ordinary comfort as any exile, I paused {at}.
+- I rested {at}, allowing the longing for Silvermoon to be tender instead of bitter.
+- I stopped {at}, with privacy more inviting than anything I might be praised for doing next.
+- I rested {at}, missing Eversong's familiar ease without requiring the world to supply a likeness of it.
+- I paused {at}, glad to have a little pleasure that did not have to feed a hunger.
+- I rested {at}, with no wish to turn endurance into a performance for strangers.
+- I stopped {at}, rather grateful to feel like a person instead of a surviving piece of Quel'Thalas.

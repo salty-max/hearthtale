@@ -1,14 +1,14 @@
 ---
 kind: r-inn
 ---
-- somewhere to retreat to with dignity
-- adequate, which would do
-- a small certainty in an uncertain world
-- a bed and some peace
-- [night] late enough to be done with the day
-- [hc] a sanctuary worth knowing
-- a small certainty I was quite ready to appreciate
-- with a shorter return journey to look forward to
-- with rather less of the return on my mind
-- already anticipating the pleasure of stopping here
-- [hc] with some reassurance in having a retreat
+- nearer to privacy than I had felt on the road
+- willing to accept comfort without demanding splendour
+- one small security no memory of the Sunwell could give me
+- a welcome prospect of being less visibly tired
+- [night] ready to let the night manage without a performance of composure
+- [hc] unwilling to mistake pride for protection
+- a sanctuary I could want without being ashamed of the need
+- my feet rather fonder of magic when it shortened a return
+- a long road less likely to cost me my composure
+- already longing for a quiet return
+- [hc] a refuge dearer than my pride could easily admit

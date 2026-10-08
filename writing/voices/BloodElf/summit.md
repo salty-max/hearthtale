@@ -1,6 +1,6 @@
 ---
 kind: summit
 ---
-- I reached level {level} and closed the journal, with something of my own made and kept through all the uncertainty.
-- At level {level}, I set these pages aside. I wanted to remember what I had gained with the same care I had given what was lost.
-- Level {level} marked the end of this account, and I felt no need to hide my satisfaction from myself.
+- I reached level {level}, with more of a life to call mine than the Scourge had left my people.
+- At level {level}, I could want a future without having to measure it entirely against the lost Sunwell.
+- I reached level {level}, still a child of Quel'Thalas and no longer only a survivor of its grief.

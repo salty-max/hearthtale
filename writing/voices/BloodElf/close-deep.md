@@ -1,8 +1,8 @@
 ---
 kind: close-deep
 ---
-- {foe} nearly killed me {at}. For a while I was too frightened to care what anyone might have thought of me.
-- I barely survived {foe} {at}, with nothing elegant in the fear and no strength left to disguise it.
-- {foe} left me barely alive {at}. All I wanted to preserve suddenly depended on something as frail as my next breath.
-- [!foe] I barely survived {at}, and could not make pride into much comfort until the shaking stopped.
-- [!foe] I came within a breath of the end {at}. Survival had seemed a small ambition until it was almost beyond me.
+- {foe} nearly killed me {at}. Quel'Thalas had lost too many of us for me to find anything graceful about joining them.
+- I barely survived {foe} {at}, with terror stripping away the composure I had mistaken for courage.
+- {foe} left me barely alive {at}. I wanted Silvermoon, even broken as it was, more than anything I had come out to find.
+- [!foe] I barely survived {at}, with the lost Sunwell suddenly a grief I wanted years more to bear.
+- [!foe] I came very near the end {at}. I wanted to see whether our people's future would be kinder than our recent past.

@@ -1,7 +1,7 @@
 ---
 kind: wake
 ---
-- [!rest] I rose {at}, with the ground having left its opinion of me in my shoulders.
-- [!rest] I set out again {at}, glad to leave the rough night's rest behind.
-- [rest] Rather more collected after the pause, I took up the road {at}.
-- [rest] I went on {at}, pleased to have a little energy to match my intentions again.
+- [!rest] I rose {at}, with the ground having been entirely unimpressed by my upbringing.
+- [!rest] I set out again {at}, missing the comfort of home without wishing to spend another hour lying here.
+- [rest] Rather less weary and no less particular about the road, I went on {at}.
+- [rest] I took up the road {at}, with enough strength restored to make composure easier than a duty.

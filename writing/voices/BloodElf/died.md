@@ -1,9 +1,9 @@
 ---
 kind: died
 ---
-- [foe] {foe} killed me {at}. I had no composure left with which to make the ending less frightening.
-- [fall] I fell to my death {at}, with far too much time to understand the error and none to correct it.
-- [drowning] I drowned {at}, wanting air with an urgency that left every other concern small.
-- [lava] Fire killed me {at}. No part of my confidence had prepared me for that moment.
-- [nature] I died {at}, with no enemy to account for the end I had reached.
-- I died {at}. I had thought often enough of what Quel'Thalas had lost, but never willingly of being lost myself.
+- [foe] {foe} killed me {at}, adding another child of Quel'Thalas to a loss already too great.
+- [fall] I fell to my death {at}; elegance had been of no use against the distance.
+- [drowning] I drowned {at}, with the need for air swallowing every proud thought I had brought to the water.
+- [lava] Fire killed me {at}, and I hated that our people's recent grief should find another echo in me.
+- [nature] I died {at}, with no enemy to blame and no dignity to rescue from the ending.
+- I died {at}, still wanting a future in a kingdom that had lost so much of its past.

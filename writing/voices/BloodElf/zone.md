@@ -1,6 +1,6 @@
 ---
 kind: zone
 ---
-- I entered {zone}, curious what there might be to appreciate beyond the business that brought me here.
-- I reached {zone}, with no settled opinion and rather more interest than I intended to display.
-- I came into {zone}, taking time to look before deciding what I thought of the place.
+- I entered {zone}, wondering how readily a stranger could find beauty without comparing it to Eversong.
+- I reached {zone}, with Quel'Thalas behind my name and no wish to be pitied for it.
+- I came into {zone}, hoping the unfamiliar could offer more than another reminder of what home had lost.

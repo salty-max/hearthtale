@@ -1,8 +1,8 @@
 ---
 kind: close-light
 ---
-- {foe} nearly ended me {at}. My composure returned before my confidence, and I was very aware of the difference.
-- I survived {foe} {at}, with a sharply reduced opinion of how well I had judged the encounter.
-- {foe} brought me close to the end {at}. I was too relieved to care how undignified I might have looked.
-- [!foe] I nearly fell {at}, and needed a little time before I could pretend to feel collected again.
-- [!foe] I came through a close call {at}, rather grateful that I still had the chance to be embarrassed by my mistake.
+- {foe} nearly ended me {at}, and left the proud child of Silvermoon feeling very frail.
+- I survived {foe} {at}, with my composure returning well ahead of the steadiness it was meant to suggest.
+- {foe} brought me close to death {at}. I had no strength left to resent how undignified my relief felt.
+- [!foe] I nearly fell {at}, and missed the shelter of Quel'Thalas more fiercely than I would admit to a stranger.
+- [!foe] I came through a close call {at}; for a little while, survival was quite elegant enough for me.

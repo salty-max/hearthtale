@@ -1,16 +1,16 @@
 ---
 kind: r-road
 ---
-- the road dusty, which I tried not to mind
-- [!back] noting its architecture with a critical eye
-- [!back !home] a stranger, and impossible to miss
-- [!back] wondering whether it had a decent inn
-- [!back night] arriving in poor light
-- [back] the place unchanged, for better or worse
-- [back] the way familiar now, which was a comfort
-- [back] the welcome no warmer, but no colder
-- with more interest in the destination than I cared to admit
-- curious what would reward a closer look
-- [!back] keen to form an opinion from more than a name
-- [!back] rather pleased to have somewhere unfamiliar before me
-- [back] with some comfort in recognising the turns
+- my feet less fond of travelling than my pride admitted
+- [!back] the beauty of Silvermoon still the measure I brought to unfamiliar things
+- [!back !home] rather conscious of the kingdom behind my name
+- [!back] my taste for a fine welcome willing to settle for a safe one
+- [!back night] my eyes finding the hour less kind than Eversong's familiar ways
+- [back] less of a stranger than when I had first come
+- [back] my stride easier once the route returned to me
+- [back] hoping to arrive as more than a name from a broken kingdom
+- more eager to arrive than I wanted to reveal
+- my homesickness no reason to withhold a stranger's welcome
+- [!back] a child of Silvermoon hoping to belong without being pitied
+- [!back] almost willing to enjoy being beyond the familiar gardens
+- [back] my feet grateful not to have to ask the way

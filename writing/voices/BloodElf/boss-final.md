@@ -1,6 +1,6 @@
 ---
 kind: boss-final
 ---
-- {boss} fell, and my business in {dungeon} was concluded. I was willing to be very plainly relieved.
-- With {boss} defeated, I could finally think about leaving {dungeon} without needing to attend to the next danger.
-- {boss} was down at last. I waited for my composure to return, pleased to have the time to let it.
+- {boss} fell, and my business in {dungeon} was over. I wanted Silvermoon's battered beauty more than another triumph.
+- I defeated {boss} in {dungeon}, grateful to have time to collect myself without pretending I had never lost my composure.
+- With {boss} down in {dungeon}, I could admit how badly I had wanted to leave alive.

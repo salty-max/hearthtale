@@ -1,23 +1,23 @@
 ---
 kind: r-foe
 ---
-- [!more] with rather more effort than I would admit
-- efficiently, if without much elegance
-- a matter settled, and not before time
-- my composure intact, if not my patience
-- [one] a tiresome obstacle, removed
-- [!one !more] each more irritating than the last
-- [teeth] my dignity, at least, unbitten
-- [mechanical] crude workmanship, to the last
-- [night] the dark doing my aim no favours
-- [hc] reminded how little stood between me and ruin
-- [low] less graceful about it than I meant to be
-- [high] with a precision I had worked hard to earn
-- [!more] with more effort than I was eager to admit
-- with my composure returning in its own time
-- rather relieved to put the encounter behind me
-- with less patience left than I had begun with
-- [one] quite content to leave that acquaintance at an end
-- [!one] increasingly pleased to reach the last of them
-- [night] finding the poor light unhelpful to my judgement
-- [low] less graceful in the attempt than I had intended
+- [!more] my dignity slower to recover than my breath
+- no more fond of fighting than the hunger I lived with
+- my heart refusing to keep a courtly rhythm
+- ready for the gentler customs that had survived in Silvermoon
+- [one] not an acquaintance I had any wish to cultivate
+- [!one !more] their numbers more demanding than my patience
+- [teeth] those jaws no respecters of a fine appearance
+- [mechanical] no delight in so much machinery devoted to destruction
+- [night] my eyesight less sure than I pretended in the dark
+- [hc] a child of Quel'Thalas unwilling to become another loss
+- [low] less graceful about fear than I had hoped
+- [high] my hands more certain than my pride had once allowed
+- [!more] my composure costing rather more than it showed
+- less inclined to despise an ordinary life
+- almost ready to admit how much I wanted to survive
+- the craving for magic no kinder for the strain of fighting
+- [one] an opponent I would not want nearer to Silvermoon
+- [!one] their defeat a relief I did not care to disguise
+- [night] my eyes weary of guessing at movement
+- [low] less accomplished than my outward poise might suggest

@@ -1,20 +1,20 @@
 ---
 kind: r-task
 ---
-- competently, as one would expect
-- a small favour, graciously done
-- the details handled with some care
-- the request rather beneath me, though I did not say so
-- without complaint, outwardly at least
-- [explore] the place more interesting than its reputation
-- [explore] noting every detail, as a matter of habit
-- [escort] slowing my pace with what I hoped was grace
-- [night] the dark adding nothing to the experience
-- with some relief at reaching a definite result
-- curious what would follow from the request
-- with my patience rather thinner by the end
-- ready to let the next errand wait a little
-- [explore] taking time over the details beyond the first view
-- [explore] keeping the turns in mind for the return
-- [escort] watching my pace as well as the way ahead
-- [night] with the poor light asking for rather more care
+- the hunger for magic an unwelcome distraction from a small favour
+- rather less eager to be obliging by the end
+- my patience not yet as graceful as my manners
+- too busy being useful to uphold Silvermoon's reputation for grandeur
+- my breeding no protection against a tired pair of legs
+- [explore] a ranger's eye rather more useful than an admirer of fine gardens
+- [explore] my eyes refusing to take beauty for safety
+- [escort] too well acquainted with grief to neglect another life
+- [night] my patience less accommodating than the darkness required
+- rather more relieved than my manners conveyed
+- wishing the next request would leave room for something pleasant
+- my pride less strained than my willingness
+- quite ready for a favour that did not involve walking
+- [explore] keen to know the way back before my composure deserted me
+- [explore] my stride no excuse for leaving the way unremembered
+- [escort] more careful of another life than of my own appearance
+- [night] my eyesight of less use than the night required
