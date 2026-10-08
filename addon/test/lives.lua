@@ -49,10 +49,10 @@ local function moves(G)
       objective.finished = true
       fire("QUEST_LOG_UPDATE")
     end
-    state.npc = ender or giver
+    state.npc, state.questShown = ender or giver, quest
     fire("QUEST_COMPLETE")
     fire("QUEST_TURNED_IN", quest, 100, 0)
-    state.npc = nil
+    state.npc, state.questShown = nil, nil
     G.wait(3 * MINUTE)
   end
   local function slain(name, n) return { text = name .. " slain: 0/" .. n, type = "monster", numRequired = n } end
@@ -671,11 +671,11 @@ function lives.edric()
     return serial
   end
   local function turnIn(id, ender, copper)
-    state.npc = ender
+    state.npc, state.questShown = ender, id
     fire("QUEST_COMPLETE")
     state.money = state.money + (copper or 0)
     fire("QUEST_TURNED_IN", id, 1000, copper or 0)
-    state.npc = nil
+    state.npc, state.questShown = nil, nil
     G.wait(MINUTE)
   end
   local function complete(id)

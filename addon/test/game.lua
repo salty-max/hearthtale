@@ -172,6 +172,8 @@ function GetNumGroupMembers()
   return n > 0 and n + 1 or 0
 end
 function IsInRaid() return state.raid == true end
+-- the quest on the quest giver's window (0: none)
+function GetQuestID() return state.questShown or 0 end
 function IsInInstance() return state.instance ~= nil, state.instance and (state.instanceKind or "party") or "none" end
 function UnitIsGhost() return state.ghost == true end
 function GetMaxPlayerLevel() return state.maxLevel or 60 end

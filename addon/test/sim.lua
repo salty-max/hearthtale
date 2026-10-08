@@ -162,10 +162,10 @@ local function accept(id, title, giver, objective)
   state.npc = nil
 end
 local function turnIn(id, ender)
-  state.npc = ender
+  state.npc, state.questShown = ender, id
   fire("QUEST_COMPLETE")
   fire("QUEST_TURNED_IN", id, 80, 0)
-  state.npc = nil
+  state.npc, state.questShown = nil, nil
 end
 accept(
   181,
