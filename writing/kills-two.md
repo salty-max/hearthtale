@@ -14,7 +14,7 @@ kind: kills-two
 - [lots] I had dealt with {n1} {foes1} and {n2} {foes2}, enough that I could still feel the work when I stopped.
 - [lots] {n1} {foes1} and {n2} {foes2} had fallen to me {at}, with the last encounters easier to remember than the first.
 - [hc] I had survived {n1} {foes1} and {n2} {foes2}, grateful that none had made these my final pages.
-- [class:HUNTER !low] I had hunted {n1} {foes1} and {n2} {foes2}, learning to notice the country through its creatures.
+- [class:HUNTER !low] I had hunted {n1} {foes1} and {n2} {foes2}, enough to want a trail that led somewhere without another struggle.
 - [class:MAGE] I had brought down {n1} {foes1} and {n2} {foes2}, with much of the day's learning done far from a trainer.
 - [class:WARRIOR] I had fought {n1} {foes1} and {n2} {foes2}, enough to leave my anger quieter than my weariness.
 - [plain] I had fought {n1} {foes1} and {n2} {foes2}.

@@ -15,7 +15,7 @@ kind: kills
 - [lots] I had dealt with {n} {foes} {at}, and felt the length of that work when I finally stopped.
 - [lots] {n} {foes} had fallen to me, with little room between one fight and its place in my memory.
 - [hc] I counted {n} {foes}, grateful to be the one counting.
-- [class:HUNTER !low] I had hunted {n} {foes} {at}, learning something of the country through what lived in it.
+- [class:HUNTER !low] I had hunted {n} {foes} {at}, with less appetite for the chase than for an undisturbed return.
 - [class:WARLOCK] I had killed {n} {foes}, and felt less fond of the smell of destruction than of the spells that promised it.
 - [class:MAGE] I had brought down {n} {foes}, putting lessons to a test quite different from remembering them.
 - [class:ROGUE] I had dealt with {n} {foes}, and had reason by the end to value care as much as quickness.

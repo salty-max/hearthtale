@@ -14,4 +14,4 @@ kind: zone
 - [hc] I came to {zone}, where care would matter as much as it had on the road behind.
 - [hc high] I reached {zone}, carrying a long journey that one mistake could still end.
 - [class:MAGE] I came into {zone}, conscious of how much there was here that my studies had not described.
-- [class:HUNTER] I reached {zone}, ready to learn the country as well as the things that lived in it.
+- [class:HUNTER] I entered {zone}, hoping to know its trails well enough to walk them without making myself the quarry.
