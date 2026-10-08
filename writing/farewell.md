@@ -15,7 +15,7 @@ kind: farewell
 - [race:Troll] The loa have called {name} home.
 - [race:BloodElf] The sun sets on another child of Quel'Thalas.
 - [race:Draenei] {name} fell far from Draenor, and farther still from Argus.
-- [class:PALADIN] {name} served {faith} to the end.
+- [class:PALADIN] May {faith} be gentler to {name} than the last struggle was.
 - [class:WARRIOR] {name}'s strength could carry no further than this.
 - [class:MAGE] {name}'s books are left open at the page where the reading stopped.
 - [class:HUNTER !low] Somewhere, a pet waits for {name}.

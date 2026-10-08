@@ -27,7 +27,7 @@ kind: opening
 - [class:DRUID] I took up the road {at}, attentive to the life carrying on beside my own.
 - [class:SHAMAN] I began this stretch {at}, listening as well as looking while I found my way.
 - [class:WARRIOR] I set out {at}, with a warrior's habit of judging trouble by the reach of a weapon.
-- [class:PALADIN] I began again {at}, wanting to make my convictions useful to someone besides myself.
+- [class:PALADIN] I began again {at}, hoping to lend the Light's strength without finding every need at the end of a weapon.
 - [!night] Morning came {at}, and with it the road.
 - [!night] The day began {at}, with the next stretch still to be decided.
 - [night] The night was already deep {at} when I took up the account again.

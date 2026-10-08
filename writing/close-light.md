@@ -14,7 +14,7 @@ kind: close-light
 - [night] I came close to falling {at} after dark. The night felt less familiar when I was ready to go on.
 - [hc] {foe} nearly ended my journey {at}. Out here, survival offered a lesson only once.
 - [class:PRIEST] I was badly hurt {at}, and the thought of how much healing I still had to learn stayed with me.
-- [class:PALADIN] {foe} almost ended me {at}. Afterwards I was grateful for the chance to live up to what I believed.
+- [class:PALADIN] {foe} nearly ended me {at}. I wanted the Light's shelter without having to leave the world for it.
 - [class:MAGE] I survived the encounter with {foe} {at}, but no amount of studying had prepared me for the fear of it.
 - [class:ROGUE] I came close to falling {at}, where confidence had proved a poor substitute for caution.
 - [class:HUNTER !low] {foe} nearly had me {at}, and I thought of how readily I could leave my companion behind.
