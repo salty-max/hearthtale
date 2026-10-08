@@ -1,6 +1,6 @@
 ---
 kind: campfire
 ---
-- [client:forever faction:horde] I rested beside my campfire {at}, warming my hands before I began to think about the next stretch.
-- [client:forever faction:alliance] I sat by my campfire {at}, letting the immediate business of keeping warm take precedence over more difficult questions.
-- [client:forever] I made camp {at}, and found I was quite content to look no further than the fire for a while.
+- [client:forever faction:horde] I rested beside a fire {at}, content to ask the element for warmth rather than an answer about our missing mentors.
+- [client:forever faction:alliance] I sat by a fire {at}, with a comfort that required no recovered secret from Eldre'Thalas.
+- [client:forever] I stopped by a fire {at}, rather grateful for an element I could approach without a long search.

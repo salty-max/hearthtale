@@ -1,12 +1,12 @@
 ---
 kind: r-company
 ---
-- [client:forever one] the world easier to see with two
-- [client:forever] learning from how they saw things
-- [client:forever] the work lighter for the sharing
-- [client:forever faction:horde] help given and taken freely
-- [client:forever faction:alliance] glad of help I had not needed to ask for
-- [client:forever night] the dark smaller with company
-- [client:forever faction:alliance] curious how our judgement would compare
-- [client:forever] interested in what another pair of eyes would notice
-- [client:forever] hoping we would find a comfortable pace together
+- [client:forever one] company more comforting than all the distance of the sky
+- [client:forever] readier to trust someone else's knowledge of the ground
+- [client:forever] my balance easier when trust could do some of the work
+- [client:forever faction:horde] company as warm as the welcome I hoped our mentors would find
+- [client:forever faction:alliance] less obliged to make independence mean solitude
+- [client:forever night] the night less immense with another life nearby
+- [client:forever faction:alliance] my pride willing to accept help without treating it as a debt to a patron
+- [client:forever] company steadier than another hour with my worries
+- [client:forever] hoping our strides would find room for one another

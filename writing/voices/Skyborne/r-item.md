@@ -1,18 +1,18 @@
 ---
 kind: r-item
 ---
-- [client:forever] spotted from a height long before I reached the place
-- [client:forever] with an eye to how things come to rest where they lie
-- [client:forever] lighter work than the search suggested
-- [client:forever !one !plural] each one where the wind might have left it
-- [client:forever !one !plural] the count right on the first try
-- [client:forever one !plural] small, though someone had plainly missed it
-- [client:forever one !plural] easier to see than to reach
-- [client:forever meat] thinking of the meal it would make
-- [client:forever cloth] the weave interesting to look at closely
-- [client:forever night] the dark changing where things seemed to lie
-- [client:forever faction:alliance] curious whether a closer look would tell me more
-- [client:forever cloth] with the feel of the cloth holding my attention
-- [client:forever meat] thinking with rather more interest about a meal
-- [client:forever] surprised by the satisfaction of finding the right thing
-- [client:forever] with one less thing to search for
+- [client:forever] my fingers more useful than a wider view could have been
+- [client:forever] rather more carrying than the request had sounded like
+- [client:forever] my feet keener to finish than my curiosity
+- [client:forever !one !plural] a count I had no wish to see grow larger
+- [client:forever !one !plural] my fingers making certain my feet would not have to repeat the search
+- [client:forever one !plural] a find I would rather have sought from above
+- [client:forever one !plural] keen to let someone else call it a treasure
+- [client:forever meat] more inviting as supper than another burden for the road
+- [client:forever cloth] softer company than most of the ground's demands
+- [client:forever night] a wide view of little help where the darkness hid the find
+- [client:forever faction:alliance] a find I could enjoy without thanking a vanished patron
+- [client:forever cloth] a tailor's comfort more inviting than another mile beneath the sky
+- [client:forever meat] my appetite more impatient than my feet
+- [client:forever] keener on finishing the search than on admiring the view
+- [client:forever] one burden I hoped would not travel far with me

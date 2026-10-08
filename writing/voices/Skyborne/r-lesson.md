@@ -1,18 +1,18 @@
 ---
 kind: r-lesson
 ---
-- [client:forever] with more questions than I began with
-- [client:forever] the lesson clearer from a second angle
-- [client:forever one] smooth as flight after a little practice
-- [client:forever one] curious how it would change with use
-- [client:forever] a little steadier afterwards
-- [client:forever faction:horde] a gift I meant to share
-- [client:forever faction:alliance] knowledge worth holding on to
-- [client:forever new] a whole new perspective to learn
-- [client:forever new] starting at the bottom, which suited my curiosity
-- [client:forever low] still a beginner, though a willing one
-- [client:forever high] the new fitting easily among the old
-- [client:forever !one] curious how they would change with use
-- [client:forever] with more questions than I had brought to the lesson
-- [client:forever] less certain that I had reached the limits of what I could learn
-- [client:forever] hoping the new knowledge would feel more familiar in use
+- [client:forever] my fingers more willing than skilful
+- [client:forever] an apprentice rather less confident than I had meant to seem
+- [client:forever one] eager to know it as well as the pull of the sky
+- [client:forever one] my hope for it stronger than my wish to have a mentor watching
+- [client:forever] my balance in no danger, and my pride less fortunate
+- [client:forever faction:horde] a knack I hoped to give back to those who needed me
+- [client:forever faction:alliance] a skill the High Order could keep without a patron's favour
+- [client:forever new] a craft the people beneath the sky might welcome me for
+- [client:forever new] an apprentice even with the sky of home behind my name
+- [client:forever low] a skyborn apprentice willing to ask before clumsiness became expensive
+- [client:forever high] an apprentice with no blessing to make the difficult part easy
+- [client:forever !one] my hope for them stronger than my wish to have a mentor watching
+- [client:forever] my fingers learning the part no wide view could supply
+- [client:forever] readier to ask for help than to let pride keep me helpless
+- [client:forever] hoping practice would make the difficult part less foreign

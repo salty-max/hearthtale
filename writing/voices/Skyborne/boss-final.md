@@ -1,6 +1,6 @@
 ---
 kind: boss-final
 ---
-- [client:forever faction:horde] {boss} fell, and I could finally think of leaving {dungeon}. I wanted the relief of being outside with more around me than danger.
-- [client:forever faction:alliance] With {boss} defeated, my business in {dungeon} was concluded. I was content to leave the questions that remained until I had put some distance behind me.
-- [client:forever] {boss} was down at last, and I let my attention loosen beyond the next threat. It felt strange, and very welcome.
+- [client:forever faction:horde] {boss} fell, and I could leave {dungeon}; I wanted the open sky, and a gentler hope than surviving the next fight.
+- [client:forever faction:alliance] I defeated {boss} in {dungeon}, grateful that my own strength had held where no vanished patron could help me.
+- [client:forever] With {boss} down in {dungeon}, I could think of the sky again without fearing it had seen the last of me.

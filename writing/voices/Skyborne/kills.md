@@ -1,6 +1,6 @@
 ---
 kind: kills
 ---
-- [client:forever faction:horde] I had fought {n} {foes}, and was ready to give my attention to something that did not threaten me.
-- [client:forever faction:alliance] There had been fighting with {n} {foes}, leaving me with some uncomfortable corrections to my judgement.
-- [client:forever] I counted the encounters with {n} {foes}, relieved to be able to think beyond them.
+- [client:forever faction:horde] I had fought {n} {foes}, enough to want a quieter way of bringing our people closer to their missing mentors.
+- [client:forever faction:alliance] I counted {n} {foes}, and wished the High Order could find what it sought in an undisturbed library instead.
+- [client:forever] {n} {foes} had fallen to me; I wanted the open sky more than another test of my balance.

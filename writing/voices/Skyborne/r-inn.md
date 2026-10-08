@@ -1,13 +1,13 @@
 ---
 kind: r-inn
 ---
-- [client:forever] a fixed point in a changing world
-- [client:forever] the stone steady in my hand
-- [client:forever] a roof, for once, instead of sky
-- [client:forever] one long journey fewer in my future
-- [client:forever night] the night sky wide above it
-- [client:forever hc] a safe landing worth knowing
-- [client:forever faction:horde] beginning to feel a little more attached to the place
-- [client:forever] with one less uncertainty ahead of the next departure
-- [client:forever] glad that the name now meant somewhere to rest
-- [client:forever] ready to become familiar with returning
+- [client:forever] a little certainty I could hold between finger and thumb
+- [client:forever] less obliged to make my feet endure the whole return
+- [client:forever] ready for shelter that needed no wind spirit's blessing
+- [client:forever] one distance the earth would not be able to demand twice
+- [client:forever night] the night less inviting than a familiar place to return to
+- [client:forever hc] a safe return worth more than hope alone could promise
+- [client:forever faction:horde] closer to belonging among the people who knew this ground
+- [client:forever] my feet no longer responsible for every mile back
+- [client:forever] more comfort in a returning stone than its size suggested
+- [client:forever] almost as inviting as the prospect of being expected

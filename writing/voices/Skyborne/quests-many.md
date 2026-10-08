@@ -1,9 +1,9 @@
 ---
 kind: quests-many
 ---
-- [client:forever faction:horde] I had completed {n} tasks, pleased to be finding a place in more than my own plans.
-- [client:forever faction:alliance] {n} tasks were finished, giving me more to judge the work by than the requests alone.
-- [client:forever] I counted {n} tasks done, some less straightforward at close quarters than they had sounded.
-- [client:forever] I had {n} tasks behind me before I stopped, and fewer strangers around me.
-- [client:forever] I had seen {n} tasks through, and wanted to let my attention come to rest.
-- [client:forever] Ready to leave the next request until I could think clearly about it, I put down {n} tasks completed.
+- [client:forever faction:horde] I had completed {n} tasks, small enough beside the search for our mentors and worth doing for the people who needed them.
+- [client:forever faction:alliance] I had finished {n} tasks, with the High Order's wish for self-reliance beginning to feel like something my hands could bear.
+- [client:forever] I counted {n} jobs done, with my feet more impressed by the distance than by the number.
+- [client:forever] The {n} tasks behind me had given the earth more neighbours and fewer strangers.
+- [client:forever] I had seen {n} errands through, enough to make the stillness of home seem very inviting.
+- [client:forever] I had brought {n} tasks to an end, with no appetite for making every remaining mile prove my endurance.

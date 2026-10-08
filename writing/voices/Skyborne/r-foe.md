@@ -1,22 +1,22 @@
 ---
 kind: r-foe
 ---
-- [client:forever] the shift of the fight worth remembering
-- [client:forever] a little wiser about how such things move
-- [client:forever] with the wind still tugging at me afterwards
-- [client:forever one] quicker than I had read it
-- [client:forever] my balance slow to come back afterwards
-- [client:forever one !more] one more pattern I had misread at first
-- [client:forever !one] each one changing the shape of the next
-- [client:forever teeth] keeping well clear of the teeth
-- [client:forever mechanical] built without any feeling for the air
-- [client:forever night] the dark changing every angle
-- [client:forever hc] aware how little the sky forgives a fall
-- [client:forever faction:horde] the way our mentors would have wished, I hoped
-- [client:forever faction:alliance !more] one more problem solved without waiting for answers from above
-- [client:forever faction:alliance !more] more aware of what I had misjudged in the encounter
-- [client:forever] pleased that I had kept my nerve
-- [client:forever] still too occupied with the fight to think far beyond it
-- [client:forever !more] more tired than I had intended to become
-- [client:forever] with a better sense of the danger at close quarters
-- [client:forever] thankful that I had come through
+- [client:forever] my balance taking longer than my pride to recover
+- [client:forever] more relieved than I meant to let a stranger see
+- [client:forever] my feet suddenly very fond of remaining steady
+- [client:forever one] not a danger I wanted within reach again
+- [client:forever] my heart refusing the quiet my face tried to offer
+- [client:forever one !more] almost as attached to being alive as to the open sky
+- [client:forever !one] their numbers enough to make a skyward glance feel useless
+- [client:forever teeth] those teeth too close to the flesh beneath my confidence
+- [client:forever mechanical] no sympathy for a mechanism built to make the ground dangerous
+- [client:forever night] my hearing more useful than my eyes beneath the night
+- [client:forever hc] not nearly ready to let the earth have me for good
+- [client:forever faction:horde] our missing mentors dearer to me in the relief afterwards
+- [client:forever faction:alliance !more] a High Order elf unwilling to wait for a patron to save me
+- [client:forever faction:alliance !more] my people's proud traditions poor shelter against a blow
+- [client:forever] more affection for my life than pride in the victory
+- [client:forever] my balance no longer entirely borrowed from courage
+- [client:forever !more] more strength required than a blessing could promise
+- [client:forever] my feet no more willing than my heart to repeat the struggle
+- [client:forever] thankful I had not become another absence at home

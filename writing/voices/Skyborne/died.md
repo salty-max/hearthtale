@@ -1,10 +1,10 @@
 ---
 kind: died
 ---
-- [client:forever foe faction:horde] {foe} killed me {at}. I had felt myself becoming part of this world, and could not bear how suddenly the connection had been broken.
-- [client:forever foe faction:alliance] {foe} killed me {at}. All the things I had understood about the danger had failed to give me a way out of it.
-- [client:forever fall] I fell to my death {at}, with no distance left in which to recover my footing.
-- [client:forever drowning] I drowned {at}. Air had never seemed so far away as it did when I could no longer reach it.
-- [client:forever lava] The lava killed me {at}, unable to gain the distance I needed from the heat.
-- [client:forever nature] I died {at}, caught by a danger I had not managed to get clear of.
-- [client:forever] I died {at}, with everything I had meant to learn left terribly unfinished.
+- [client:forever foe faction:horde] {foe} killed me {at}, adding another silence to the one our vanished mentors had left.
+- [client:forever foe faction:alliance] {foe} killed me {at}, and I feared becoming one more loss the High Order could not recover.
+- [client:forever fall] I fell to my death {at}; the sky had offered no mercy in the distance between me and the earth.
+- [client:forever drowning] I drowned {at}, with air more precious than any elemental gift I could name.
+- [client:forever lava] Fire killed me {at}; I had no comfort in our people's closeness to the elements then.
+- [client:forever nature] I died {at}, with the earth taking no account of my longing for the sky.
+- [client:forever] I died {at}, with our people's future suddenly beyond any help my hands could offer.

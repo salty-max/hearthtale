@@ -1,16 +1,16 @@
 ---
 kind: r-gear
 ---
-- [client:forever !made] light enough not to weigh me down
-- [client:forever !made !held] a better fit than I expected
-- [client:forever !made] the new balance taking some getting used to
-- [client:forever !made] curious how the wind would treat the new kit
-- [client:forever made] shaped by me, and trusted for it
-- [client:forever made] each piece set where I wanted it
-- [client:forever made] the result of more patience than I usually have
-- [client:forever faction:horde] curious how the unfamiliar weight would settle into use
-- [client:forever faction:alliance] interested in testing the difference for myself
-- [client:forever] with more pleasure in the change than I had expected
-- [client:forever held] taking a moment to get used to the balance
-- [client:forever !held] hoping the fit would still feel kind after a long walk
-- [client:forever made] with some satisfaction in using my own work
+- [client:forever !made] less weight to resent between me and the next mile
+- [client:forever !made !held] hoping my stride would find the fit forgiving
+- [client:forever !made] my feet unwilling to let every addition become their burden
+- [client:forever !made] protection dearer than a plea to a silent patron
+- [client:forever made] my patience given a solid shape
+- [client:forever made] a little of my patience turned into something I could carry
+- [client:forever made] a piece no wind spirit needed to finish for me
+- [client:forever faction:horde] hoping our mentors would find us capable of more than waiting
+- [client:forever faction:alliance] my own effort more reassuring than a borrowed blessing
+- [client:forever] rather more pleasure than I had expected from something so solid
+- [client:forever held] my fingers getting acquainted with the unfamiliar balance
+- [client:forever !held] wishing the fit would remain kind when the distance grew long
+- [client:forever made] something I could trust without looking skyward for permission

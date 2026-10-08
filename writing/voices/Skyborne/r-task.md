@@ -1,20 +1,20 @@
 ---
 kind: r-task
 ---
-- [client:forever] the need behind it clearer once I had done it
-- [client:forever] a small change in a world full of them
-- [client:forever] learning how things were arranged here
-- [client:forever] with attention, if not with certainty
-- [client:forever] with a clearer view of the place
-- [client:forever faction:horde] glad to give help
-- [client:forever explore] the place making more sense from a second angle
-- [client:forever explore] noting how the wind moved through it
-- [client:forever escort] keeping my pace low and my eyes up
-- [client:forever night] the dark asking more attention than usual
-- [client:forever] one more thread of this place in my hands
-- [client:forever] the request simpler than the reasons behind it
-- [client:forever] useful, at least
-- [client:forever faction:alliance] with a clearer idea of what the request had involved
-- [client:forever] ready to give my attention to something else
-- [client:forever] curious how the work fitted into the place
-- [client:forever explore] with a better sense of the distances within the place
+- [client:forever] my feet less fond of the work than my willingness
+- [client:forever] ready to admire somebody else's willingness to travel
+- [client:forever] my hands finding a use no blessing needed to supply
+- [client:forever] my endurance less dependable than my wish to oblige
+- [client:forever] more patience required than the wide sky ever seemed to ask
+- [client:forever faction:horde] hoping our mentors would find us kinder for their absence
+- [client:forever explore] a route I hoped another traveller could follow without a blessing
+- [client:forever explore] my balance no excuse for leaving the path unremembered
+- [client:forever escort] a slower pace worth the trouble of keeping another life safe
+- [client:forever night] my eyes less willing than my patience to search in the dark
+- [client:forever] one more reason to value the people who lived upon this ground
+- [client:forever] my feet wishing the request had required less distance
+- [client:forever] almost as ready to rest as I had been to offer help
+- [client:forever faction:alliance] something the High Order could count on my hands to finish
+- [client:forever] no further claim on my strength welcome just yet
+- [client:forever] wondering whether a wind spirit would find our errands amusing
+- [client:forever explore] my steps rather more certain of the way than before
