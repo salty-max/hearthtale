@@ -19,7 +19,7 @@ kind: kills
 - [class:WARLOCK] I had killed {n} {foes}, and felt less fond of the smell of destruction than of the spells that promised it.
 - [class:MAGE] I had brought down {n} {foes}, putting lessons to a test quite different from remembering them.
 - [class:ROGUE] I had dealt with {n} {foes}, and wanted the next stretch of my life to pass considerably less noticed.
-- [class:PRIEST] {n} {foes} had fallen to me, with rather more to consider afterwards than the number.
+- [class:PRIEST] {n} {foes} had fallen to me, and I wanted my next prayer to mend something instead of ending it.
 - [class:SHAMAN] I had killed {n} {foes}, and tried to find a place for what the fighting had taught me.
 - [class:WARRIOR] I had fought {n} {foes}, with my rage no longer feeling like something I wanted to feed.
 - I had killed {n} {foes} in all {at}, a part of the day I was ready to put behind me.
