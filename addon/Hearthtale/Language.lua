@@ -555,10 +555,9 @@ local function taskOf(text)
   return (lowerFirst(text):gsub(" The ", " the "):gsub(" is ", " was "):gsub(" are ", " were "))
 end
 
--- A sentence with its link before it ("That night, I..."), if it begins with
--- "I", "My" or an article.
--- A sentence's first word a link may come before ("Afterwards, the road…",
--- "Later, six Defias…"): not a name, which keeps its capital and no link.
+-- A sentence with its link before it ("That night, I...", "Afterwards, the
+-- road…", "Later, six Defias…"): only if it begins with "I", one of these
+-- words or a number; a name keeps its capital and takes no link.
 local OPENERS = { My = true, A = true, An = true, The = true, It = true, There = true }
 local NUMBER_WORDS = set([[
   two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen
