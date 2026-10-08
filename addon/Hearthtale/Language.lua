@@ -381,42 +381,35 @@ local FACTION = {
   Dwarf = "alliance",
   NightElf = "alliance",
   Gnome = "alliance",
-  Draenei = "alliance",
   Orc = "horde",
   Troll = "horde",
   Tauren = "horde",
   Scourge = "horde",
-  BloodElf = "horde",
 }
 local HOME = {
   Human = "Stormwind",
   Dwarf = "Ironforge",
   Gnome = "Ironforge",
   NightElf = "Darnassus",
-  Draenei = "the Exodar",
   Orc = "Orgrimmar",
   Troll = "Sen'jin Village",
   Tauren = "Thunder Bluff",
   Scourge = "the Undercity",
-  BloodElf = "Silvermoon",
 }
 local KIN = {
   Human = "my people",
   Dwarf = "my kin",
   Gnome = "my fellow gnomes",
   NightElf = "my kin",
-  Draenei = "my people",
   Orc = "my clan",
   Troll = "the Darkspear",
   Tauren = "my tribe",
   Scourge = "the Forsaken",
-  BloodElf = "my people",
   Skyborne = "the shen'dorei",
 }
 local FAITH_RACE = {
   Human = "the Light",
   Dwarf = "the Light",
-  Draenei = "the Light",
   NightElf = "Elune",
   Tauren = "the Earth Mother",
   Troll = "the loa",
@@ -444,14 +437,12 @@ local RACE_NAME = {
   Dwarf = "dwarf",
   NightElf = "night elf",
   Gnome = "gnome",
-  Draenei = "draenei",
   Orc = "orc",
   Troll = "troll",
   Tauren = "tauren",
   Scourge = "Forsaken",
-  BloodElf = "blood elf",
 }
-local HORDE_RACE = { Orc = true, Troll = true, Tauren = true, Scourge = true, BloodElf = true }
+local HORDE_RACE = { Orc = true, Troll = true, Tauren = true, Scourge = true }
 local CLASS_NAME = {
   WARRIOR = "warrior",
   PALADIN = "paladin",
@@ -589,8 +580,6 @@ for _, h in
   Orc: Durotar, Orgrimmar
   Tauren: Mulgore, Thunder Bluff
   Scourge: Tirisfal Glades, Undercity, Silverpine Forest
-  BloodElf: Eversong Woods, Silvermoon City, Ghostlands
-  Draenei: Azuremyst Isle, The Exodar, Bloodmyst Isle
 ]]))
 do
   for _, zone in ipairs(h[2]) do

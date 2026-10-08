@@ -67,8 +67,6 @@ local ZONES = {
   { "Stranglethorn Vale", { "Booty Bay", "Grom'gol Base Camp", "Nesingwary's Expedition", "Zul'Kunda" } },
   { "Ashenvale", { "Astranaar", "Splintertree Post", "Raynewood Retreat" } },
   { "Tanaris", { "Gadgetzan", "Steamwheedle Port", "Zalashji's Den" } },
-  { "Eversong Woods", { "Sunstrider Isle", "Falconwing Square", "Fairbreeze Village" } },
-  { "Azuremyst Isle", { "Ammen Vale", "Azure Watch", "Odesyus' Landing" } },
 }
 local CREATURES = {
   { "Ragged Young Wolf", "Wolf" },
@@ -242,12 +240,10 @@ local START = {
   Dwarf = "Dun Morogh",
   Gnome = "Dun Morogh",
   NightElf = "Teldrassil",
-  Draenei = "Azuremyst Isle",
   Orc = "Durotar",
   Troll = "Durotar",
   Tauren = "Mulgore",
   Scourge = "Tirisfal Glades",
-  BloodElf = "Eversong Woods",
 }
 local function zoneNamed(name)
   for _, z in ipairs(ZONES) do
@@ -259,12 +255,10 @@ local COMBOS = {
   Dwarf = { "WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST" },
   NightElf = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "DRUID" },
   Gnome = { "WARRIOR", "ROGUE", "MAGE", "WARLOCK" },
-  Draenei = { "WARRIOR", "PALADIN", "HUNTER", "PRIEST", "SHAMAN", "MAGE" },
   Orc = { "WARRIOR", "HUNTER", "ROGUE", "SHAMAN", "WARLOCK" },
   Troll = { "WARRIOR", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE" },
   Tauren = { "WARRIOR", "HUNTER", "SHAMAN", "DRUID" },
   Scourge = { "WARRIOR", "ROGUE", "PRIEST", "MAGE", "WARLOCK" },
-  BloodElf = { "PALADIN", "HUNTER", "ROGUE", "PRIEST", "MAGE", "WARLOCK" },
 }
 
 local CAUSES = { "foe", "foe", "foe", "foe", "fall", "drowning", "lava", "nature" }
@@ -987,8 +981,8 @@ for place, p in pairs(ns.data.scenery or {}) do
   end
 end
 
--- Every race, class and hardcore pairing through an inn and a fighting
--- recap: the lines kept for one class or for hardcore all reachable.
+-- Every supported race, class and hardcore pairing through an inn, a
+-- dungeon and a fighting recap: class-specific lines remain reachable.
 for _, race in ipairs(RACES) do
   for _, class in ipairs(COMBOS[race]) do
     for _, hc in ipairs({ true, false }) do
@@ -1005,6 +999,8 @@ for _, race in ipairs(RACES) do
             log = { -- (a long fight, and a short)
               { k = "kill", name = "Wolf", kind = "Wolf", sub = "Home", zone = "Country", at = 50 },
               { k = "inn", place = "Home", sub = "Home", zone = "Country", at = 100 },
+              { k = "group", name = "Mara", class = "WARRIOR", at = 150 },
+              { k = "dungeon", name = "The Deadmines", at = 200 },
             },
             ended = { level = 20, place = "Home", how = "rest" },
           }

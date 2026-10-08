@@ -134,10 +134,7 @@ function UnitLevel(u) return u == "player" and state.level or 1 end
 function UnitRace() return state.race, state.race end
 function UnitFactionGroup()
   return state.faction
-    or (
-      ({ Orc = true, Troll = true, Tauren = true, Scourge = true, BloodElf = true })[state.race] and "Horde"
-      or "Alliance"
-    )
+    or (({ Orc = true, Troll = true, Tauren = true, Scourge = true })[state.race] and "Horde" or "Alliance")
 end
 function UnitClass(u)
   if state.party[u] then return state.party[u].class, state.party[u].class end

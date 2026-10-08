@@ -103,8 +103,8 @@ const en = {
     notFound: "This book isn't here.",
   },
   races: {
-    Human: "Human", Dwarf: "Dwarf", NightElf: "Night Elf", Gnome: "Gnome", Draenei: "Draenei", Orc: "Orc", Troll: "Troll",
-    Tauren: "Tauren", Scourge: "Undead", BloodElf: "Blood Elf", Skyborne: "Skyborne",
+    Human: "Human", Dwarf: "Dwarf", NightElf: "Night Elf", Gnome: "Gnome", Orc: "Orc", Troll: "Troll",
+    Tauren: "Tauren", Scourge: "Undead", Skyborne: "Skyborne",
   } as Record<string, string>,
   classes: {
     WARRIOR: "Warrior", PALADIN: "Paladin", HUNTER: "Hunter", ROGUE: "Rogue", PRIEST: "Priest", SHAMAN: "Shaman",

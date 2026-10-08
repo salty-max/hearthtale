@@ -13,8 +13,6 @@ kind: farewell
 - [race:Human] May the Light be gentle with this child of {home}.
 - [race:Gnome] Gnomeregan has lost another of its children.
 - [race:Troll] May the loa receive {name} kindly.
-- [race:BloodElf] The sun sets on another child of Quel'Thalas.
-- [race:Draenei] {name} fell far from Draenor, and farther still from Argus.
 - [class:PALADIN] May {faith} be gentler to {name} than the last struggle was.
 - [class:WARRIOR] {name}'s strength could carry no further than this.
 - [class:MAGE] No spell could carry {name} beyond this last distance.
