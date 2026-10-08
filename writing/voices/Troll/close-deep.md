@@ -1,8 +1,8 @@
 ---
 kind: close-deep
 ---
-- {foe} nearly killed me {at}. For a while I could think only of finding safety, and had no room left for pretending I was unafraid.
-- I barely survived {foe} {at}, with my luck looking thinner than I cared to examine.
-- {foe} left me barely alive {at}. I wanted distance from that moment more than I wanted to make a tale of it.
-- [!foe] I barely survived {at}, and could not stop feeling how near the other ending had been.
-- [!foe] I came within a breath of the end {at}. I thought of the Darkspear, and of how much I still wanted to see among my own people.
+- {foe} nearly killed me {at}. Sen'jin's people were too few for me to turn myself into another absence.
+- I barely survived {foe} {at}, and hoped the loa had not mistaken my fear for an invitation.
+- {foe} left me barely alive {at}. I wanted to hear the sea again without fearing it would be the last time.
+- [!foe] I barely survived {at}, with no clever answer to the grave and no wish to keep it company.
+- [!foe] I came very near the end {at}. I thought of the Darkspear, and wanted my place among them more than I could bear.

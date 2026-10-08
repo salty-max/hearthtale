@@ -1,24 +1,24 @@
 ---
 kind: r-item
 ---
-- the job simple, the walking less so
-- useful to somebody, plainly
-- light work for a survivor
-- [!one !plural] each one where something had left it
-- [!one !plural] the pack full and the day still young
-- [one !plural] small, but somebody wanted it badly
-- [one !plural] easier to carry than to find
-- [meat] the smell of it making me hungry
-- [cloth] good for bandages if nothing else
-- [night] my eyes used to the dark
-- [hc] my eyes on the bushes all the while
-- more interested in the collection now I could stop looking
-- with my thoughts already on the walk back
-- [!one !plural] counting them once more before I trusted my pleasure
-- [!one !plural] glad not to need another of the lot
-- [one !plural] with more satisfaction than the size of the find suggested
-- [one !plural] rather pleased the search had come to something
-- [meat] with the thought of supper making the return more attractive
-- [cloth] wondering how far all that cloth would go
-- [night] letting my eyes take their time in the dark
-- [hc] with part of my attention always beyond the search
+- my long stride no shortcut past the searching
+- hoping someone would want the burden more than I did
+- longing for a hunt that brought back something easier to carry
+- [!one !plural] able to count each piece without asking the loa for help
+- [!one !plural] my back feeling each find more keenly than my pride
+- [one !plural] wondering how so much walking could end in so small a thing
+- [one !plural] rather eager to let it become someone else's treasure
+- [meat] my appetite keener on cooking than on carrying
+- [cloth] softer company than most of the road's troubles
+- [night] my eyes taking their time where a hunter ought to
+- [hc] careful not to become somebody else's catch while searching
+- less interested in finding than in finally handing over
+- my long toes wanting no further part in a small favour
+- [!one !plural] my fingers accounting for each piece with a hunter's care
+- [!one !plural] counting them before promising my back any more work
+- [one !plural] eager to let someone else call it a prize
+- [one !plural] my legs rather less taken with it than the person who had asked
+- [meat] my stomach finding more promise in this than in another errand
+- [cloth] wondering how readily a camp could put the cloth to use
+- [night] my ears keeping watch while my eyes searched
+- [hc] reluctant to become prey while I was busy collecting

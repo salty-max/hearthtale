@@ -1,21 +1,21 @@
 ---
 kind: r-road
 ---
-- the road easy under my feet
-- [!back] keen to see who held the place
-- [!back] watching the edges before the middle
-- [!back] watching for whatever trouble a new place keeps
-- [!back] the smell of it telling me plenty
-- [!back night] arriving after dark
-- [back] glad to see the place still standing
-- [back] easy going on ground I already knew
-- [back] the faces remembering mine
-- with my attention on the edges of the way
-- curious what I would find past the next turn
-- [!back] keen to know my way out as well as my way in
-- [!back] looking about before letting myself feel at ease
-- [!back] rather interested in who might be here
-- [!back night] making less of the first view than I would by daylight
-- [back] remembering where I had hesitated before
-- [back] wondering what the place would offer this time
-- [high] with another familiar name to carry among the many
+- my feet measuring the way without asking permission
+- [!back] wondering what welcome a Darkspear could expect
+- [!back] my ears keeping a hunter's watch
+- [!back] less eager to hurry past what could become trouble
+- [!back] more at ease with the sea than with most roads
+- [!back night] at an hour that made a hunter's care worth keeping
+- [back] my stride easier once the way began to feel familiar
+- [back] less a stranger to the country than on my first coming
+- [back] hoping the same names would still mean company
+- my ears doing more work than my feet admitted
+- wondering what the loa found entertaining beyond the next turn
+- [!back] rather keen to know the way back before I needed it
+- [!back] my caution quicker than my willingness to feel at home
+- [!back] hoping for something the tribe would enjoy hearing about
+- [!back night] my eyes asking the darkness to keep fewer secrets
+- [back] my feet remembering what had once made me hesitate
+- [back] less sure of the welcome than of the way
+- [high] my longing for a familiar Darkspear camp stronger than my wanderlust

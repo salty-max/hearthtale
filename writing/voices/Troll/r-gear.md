@@ -1,16 +1,16 @@
 ---
 kind: r-gear
 ---
-- [!made] good enough to keep
-- [!made !held] better than what I wore before
-- [!made] fitting well enough after a bit of work
-- [!made] light, which I like
-- [made] shaped the old way
-- [made] rough, but sure to hold
-- [made] my own work, and proud of it
-- [!made] eager to find out how well the new piece would last
-- [!made] a welcome change in my kit
-- [!made hc] glad of another thing between me and a bad end
-- [made] rather fond of how it came out
-- [made] with some quiet satisfaction in my own handiwork
-- [made] keen to see my work meet more than my own approval
+- [!made] a piece I could bring back to the tribe without shame
+- [!made !held] a fit I hoped would leave a hunter free to move
+- [!made] rather less dependent on my feet being quick
+- [!made] a burden I hoped would earn its place on my back
+- [made] my fingers useful for more than keeping trouble away
+- [made] as welcome as a hunt that brought everyone home
+- [made] nothing I needed to ask the loa to finish
+- [!made] hoping the road would be a kinder judge than a fight
+- [!made] the old piece losing its charm now I had a choice
+- [!made hc] unwilling to make a final test of Darkspear resilience
+- [made] rather proud of what a little patience could produce
+- [made] less eager to trade the result away than I had expected
+- [made] something the Darkspear could have a use for

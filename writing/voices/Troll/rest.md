@@ -1,12 +1,12 @@
 ---
 kind: rest
 ---
-- I rested {at}, leaving the road to spend its trouble elsewhere for a while.
-- I settled {at}, quite pleased to have nothing to prove by staying on my feet.
-- I paused {at}, with my thoughts going farther than my legs wished to follow.
-- I rested {at}, and found a little room for good humour once the hurry was gone.
-- I stopped {at}, content that the next stretch could wait its turn.
-- Glad of some quiet after keeping so much of myself ready to move, I rested {at}.
-- I paused {at}, letting the day come back without inviting more of it.
-- I rested {at}, with no desire to turn a sensible stop into a grand decision.
-- Pleased to choose when I would take it up again, I left the road to itself {at}.
+- I rested {at}, leaving the loa to find their amusement without another performance from me.
+- I settled {at}, no more inclined to hurry than a hunter with the day's work behind him.
+- I paused {at}, wishing the sea were near enough to hear without another step.
+- I rested {at}, with enough room inside the weariness for a grin again.
+- I stopped {at}, ready for an evening that asked no more of a troll than sitting still.
+- As ready for quiet as a Darkspear after a long hunt, I rested {at}.
+- I paused {at}, with the tribe's familiar warmth dearer than any chance to be impressive.
+- I rested {at}, quite content to be the troll who knew when his feet had had enough.
+- Ready to let my patience serve my own body for once, I rested {at}.

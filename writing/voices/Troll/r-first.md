@@ -1,19 +1,19 @@
 ---
 kind: r-first
 ---
-- trouble with a new face
-- worth remembering, the way the jungle teaches
-- not so different from the beasts back home
-- faster than they looked, as such things go
-- the loa keeping their own counsel on it
-- [teeth] their teeth a lesson in respect
-- [night] their eyes shining in the dark
-- [low] another thing this land had to teach me
-- with a new sort of trouble to remember
-- curious enough once the danger was out of reach
-- less eager for the next meeting than I had been for this
-- with their movements still in my mind afterwards
-- wondering what the loa would make of my surprise
-- [teeth] with no appetite for a closer view of those teeth
-- [night] wishing the dark had kept a little less to itself
-- [low] with my confidence a pace behind my feet
+- trouble unfamiliar enough to keep my feet honest
+- rather less sure than a hunter ought to look
+- my heart faster than a village drum
+- too fond of my hide to ask for a closer introduction
+- not asking the loa to make the introduction warmer
+- [teeth] those teeth deserving more than a brave grin
+- [night] my ears looking for what my eyes could not find
+- [low] new enough to this to wish for an older hunter's ease
+- another reason to keep both eyes on the road
+- much keener on survival than acquaintance
+- quite unwilling to test trouble's kindness to strangers
+- my courage keeping a discreet distance
+- hoping the loa would find the next introduction less amusing
+- [teeth] my fingers worth more to me than a closer look
+- [night] my eyesight a poor substitute for knowing what the dark held
+- [low] still learning what an eager Darkspear could afford to meet
