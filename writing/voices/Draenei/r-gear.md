@@ -1,16 +1,16 @@
 ---
 kind: r-gear
 ---
-- [!made] welcome, wherever it had come from
-- [!made !held] a good fit for strange shoulders
-- [!made] sturdier than appearances suggested
-- [!made] welcome protection on an unfamiliar road
-- [!made hc] one more care against a careless end
-- [made] shaped with patience and some hope
-- [made] proof that I could still shape something good
-- curious to see how the unfamiliar weight would feel in use
-- with a little more confidence in what I wore
-- [!held] hoping the fit would still feel as kind after a long walk
-- interested in how much difference the change would make
-- [made] pleased to be wearing something shaped on this world
-- [held] taking a moment to get used to the balance
+- [!made] welcome protection for a traveller far from shelter
+- [!made !held] hoping my shoulders would find the fit forgiving
+- [!made] rather more comfort than a confident prayer could offer
+- [!made] less exposed on ground my hooves had yet to learn
+- [!made hc] a life I hoped to keep in this world rather than merely survive with pride
+- [made] my hands capable of giving something back to this world
+- [made] something an exile could finish without needing a home first
+- a weak point I would rather find before a struggle
+- my gratitude for the protection stronger than my pride in appearances
+- [!held] wishing my shoulders would remain comfortable after the next mile
+- a body I hoped to keep as whole as the ship had not been
+- [made] a small comfort as welcome as a friendly name in a strange country
+- [held] my fingers taking their time with the unfamiliar balance

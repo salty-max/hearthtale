@@ -1,9 +1,9 @@
 ---
 kind: quests-many
 ---
-- {n} tasks had been seen through, with a little less uncertainty about what people needed from me.
-- {n} tasks were finished, and I was pleased to have been useful while finding my way.
-- I counted {n} tasks done, some easier to understand once I had attempted them.
-- There were {n} tasks behind me before I rested, and a few more names I could put to faces.
-- I had seen {n} tasks through, and was ready to stop thinking about what remained.
-- I put down {n} tasks completed, glad to have had enough strength for them.
+- I had seen {n} tasks through, small enough beside our people's needs and dear to those who asked.
+- I had finished {n} jobs, and felt a little nearer to belonging than arriving had made me.
+- I counted {n} tasks done, with my hooves more conscious of the distance than my manners allowed.
+- The {n} tasks behind me had turned some of this world's strange names into people I could care for.
+- I had completed {n} errands, enough to welcome a little kindness towards my own weary body.
+- I had brought {n} jobs to an end, with less left for neighbours who had not asked to receive a fallen ship.

@@ -1,12 +1,12 @@
 ---
 kind: opening
 ---
-- I set out {at}, curious to see whether I would recognise more than I had before.
-- I began another stretch {at}, with a few familiar names among all the unfamiliar ones.
-- Pleased that setting out was beginning to feel like a choice, I opened a fresh page {at}.
-- [night] I went on {at}, with the dark making this world a little harder to read.
-- I set out again {at}, still learning where to put my trust and where to put my feet.
-- Hoping to have a little more patience with what I did not yet understand, I continued {at}.
-- I began {at}, with things I wanted to ask and a growing wish to have something useful to offer in return.
-- I took up the road {at}, more at ease with its strangeness than I had expected to become.
-- I went on {at}, interested to see what would become familiar enough to miss.
+- I set out {at}, hoping a stranger's help might earn something of a neighbour's welcome.
+- I began another stretch {at}, with the Light dear to me and the paths of this world still unfamiliar.
+- I went on {at}, a little more willing to believe this road could lead to a home rather than another refuge.
+- [night] I set out {at}, with my eyes patient with the night and my hooves careful of the ground.
+- I began again {at}, hoping to be known by something besides the world our people had come from.
+- I continued {at}, with Velen's faith easier to follow than the way beneath my feet.
+- I set out {at}, determined not to make my people's long exile an excuse for treating this world as temporary.
+- I took up the road {at}, with more affection for Azeroth than a frightened arrival could have allowed.
+- I went on {at}, hoping to bring the Exodar good news without having to hurry home with it.

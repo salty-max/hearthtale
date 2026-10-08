@@ -1,14 +1,14 @@
 ---
 kind: r-first
 ---
-- strange to me, and I to them
-- worth understanding, not only fearing
-- unlike anything I had known before this world
-- a reminder of how much here was still new to me
-- fierce, though perhaps only frightened
-- [teeth] their teeth a lesson I would remember
-- [night] their shapes uncertain in the dark
-- surprised by how unfamiliar the fight felt
-- more wary of getting within reach again
-- with the name much easier to remember afterwards
-- [mechanical] curious about what could keep such a thing moving
+- a stranger even to the dangers of this world
+- my faith no reason to put myself within reach
+- my faith less certain than it had felt within the Exodar
+- my hooves wishing for ground that offered fewer surprises
+- more caution than wonder in my introduction
+- [teeth] those teeth deserving more than a traveller's trust
+- [night] my eyes patient with shapes the dark would not explain
+- my heart less calm than my people's manners suggested
+- ready to give the next encounter rather more distance
+- too protective of our new refuge to want this danger nearer
+- [mechanical] wondering what sort of craft could give metal such a purpose

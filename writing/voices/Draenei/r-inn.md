@@ -1,14 +1,14 @@
 ---
 kind: r-inn
 ---
-- somewhere to rest and remember
-- among strangers who might become friends
-- a quiet place to rest
-- [night] late, and glad to rest
-- pleased that I would know where to return
-- with less uncertainty about where I could rest
-- grateful to have a familiar destination for my hearthstone
-- beginning to feel less like a visitor passing through
-- with one fewer question to carry on the road
-- ready to let myself grow accustomed to returning
-- with a quiet wish to feel at home here
+- nearer to having a home than merely somewhere to arrive
+- hoping to return as less of a stranger
+- my hooves fond of a promise that spared the distance
+- [night] in no hurry to make another introduction beneath the night
+- more certain of the return than of my next destination
+- one less road to tread with my strength spent
+- almost as comforting as an Exodar name spoken kindly
+- less entirely a visitor than I had felt on the road
+- my longing for shelter finding something small to hold
+- willing to let familiarity grow from the habit of returning
+- hoping a refuge could become something warmer in time

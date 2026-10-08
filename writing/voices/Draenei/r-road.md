@@ -1,19 +1,19 @@
 ---
 kind: r-road
 ---
-- the road long but not unkind
-- [!back] curious about the people who lived in it
-- [!back !home] a stranger, as everywhere
-- [!back] hoping for a welcome, if not expecting one
-- [!back] its shapes unlike anything on our world
-- [!back night] arriving under strange stars
-- [back] the faces more familiar now
-- [back] the way known, which was a gift
-- [back] finding it a little more like home
-- interested in which names were beginning to feel familiar
-- [back] pleased to recognise where I was going
-- with more ease than I had felt on setting out
-- [night] careful of what I could not yet make out
-- with my feet ready for a pause
-- [!back] uncertain what I would find but willing to find out
-- with a little less room in my thoughts for the road behind
+- my hooves carrying an exile's old patience
+- [!back] a stranger hoping for more than a passing traveller's welcome
+- [!back !home] my height no help with fitting into unfamiliar lives
+- [!back] hoping for more than the courtesy owed to a passing traveller
+- [!back] an exile with a broken ship dearer than any palace
+- [!back night] my eyes taking their time beneath this world's night
+- [back] a familiar route through a world that still held so many strangers
+- [back] my hooves recognising what had once felt strange
+- [back] nearer to a familiar return than another arrival
+- wondering which names I would miss when I was elsewhere
+- [back] my hooves less wary once I knew where I was going
+- less afraid of being lost than I had been on first arriving
+- [night] my ears finding what my eyes could not beneath the night
+- my hooves ready for a gentler claim on their endurance
+- [!back] willing to give the unknown a kinder welcome than fear suggested
+- an exile beginning to love the world that had caught us

@@ -1,6 +1,6 @@
 ---
 kind: zone
 ---
-- I entered {zone}, with another name to learn well enough that it might one day feel familiar.
-- I came into {zone}, curious what I would understand more easily by the time I left.
-- I reached {zone}, glad to find that the prospect of somewhere new could still outweigh the uncertainty.
+- I entered {zone}, hoping to learn more than the route another exile would need to pass through.
+- I came into {zone}, with a stranger's courtesy and a growing wish to feel at home.
+- I reached {zone}, grateful that the prospect of a new place could still mean something besides flight.

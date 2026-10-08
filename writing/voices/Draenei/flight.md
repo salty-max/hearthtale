@@ -1,6 +1,6 @@
 ---
 kind: flight
 ---
-- [first] I took my first flight from {from} to {to}. Seeing this world from above made me want to know it better, rather than making it feel any less strange.
-- I flew from {from} to {to}, pleased to have a little time to look without having to find the way beneath me.
-- I travelled by air from {from} to {to}, watching the distance pass with more ease than I would have felt on foot.
+- [first] My first flight from {from} to {to} let me enjoy the air without having to leave a world behind.
+- I flew from {from} to {to}, grateful for a journey with a destination rather than an exile's escape.
+- I travelled by air from {from} to {to}, looking down at ground I hoped our people would be allowed to keep.

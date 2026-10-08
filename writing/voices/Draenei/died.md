@@ -1,9 +1,9 @@
 ---
 kind: died
 ---
-- [foe] {foe} killed me {at}. I had wanted so much more time to learn this place that I could scarcely accept the end of that moment.
-- [fall] I fell to my death {at}, with the ground coming towards me too quickly for any hope of finding my footing.
-- [drowning] I drowned {at}. There had seemed to be time to reach air until suddenly there was none.
-- [lava] The lava killed me {at}, a heat from which I could find no way clear.
-- [nature] I died {at}, caught by a danger I had not managed to escape.
-- I died {at}, and all the things I had meant to do were left terribly unfinished.
+- [foe] {foe} killed me {at}, with too little of this new world known to me to bear leaving it.
+- [fall] I fell to my death {at}; solid ground had never seemed so far beyond my hooves.
+- [drowning] I drowned {at}, with the Light's name in my fear and no air left to give it voice.
+- [lava] Fire killed me {at}, and I longed for a gentler end than another of our people's flights from danger.
+- [nature] I died {at}, without an enemy to face or a road that could take me clear.
+- I died {at}, still hoping that Azeroth might become a home instead of another place our people had lost.
