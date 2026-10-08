@@ -80,8 +80,9 @@ end
 -- Kills: my killing blow or my pet's, however it was dealt (a DoT, an area
 -- spell, a creature never targeted, one with no loot). PARTY_KILL (killer,
 -- victim) is an event of its own where the client has it (Forever, Classic
--- since 1.15.9), else a line of the combat log. Its GUIDs are secret only in
--- an instance on Forever, where no creature can be told from another.
+-- since 1.15.9), else a line of the combat log (Classic before 1.15.9; never
+-- on Forever, which forbids it to addons). Its GUIDs are secret only in an
+-- instance on Forever, where no creature can be told from another.
 local partyKill = ns.knows("PARTY_KILL")
 local function killed(attacker, victim)
   if not attacker or not victim or secret(attacker) or secret(victim) then return end
@@ -120,35 +121,6 @@ if not ns.forever then
       lastHit = { name = sourceName, guid = source, at = now() }
     end
   end)
-elseif not partyKill then
-  -- A Forever client without PARTY_KILL: my target, watched as the fight goes
-  -- (its health, its flags), not only when it's chosen. One I fought (both of
-  -- us in combat, not another's to claim) and then see dead is my kill. (A
-  -- target is mostly chosen before the fight starts, and dies still chosen.)
-  local fought, counted = {}, {}
-  local function look()
-    if not UnitExists("target") then return end
-    local guid = UnitGUID("target")
-    if not guid or secret(guid) then return end
-    if not UnitIsDead("target") then
-      local mine, theirs = UnitAffectingCombat("player"), UnitAffectingCombat("target")
-      local claimed = UnitIsTapDenied("target")
-      if not secret(mine) and not secret(theirs) and not secret(claimed) and mine and theirs and not claimed then
-        fought[guid] = true
-      end
-    elseif fought[guid] and not counted[guid] then
-      counted[guid] = true
-      if UnitIsPlayer("target") then
-        vanquished(guid, UnitName("target"))
-      else
-        slain(guid, UnitName("target"))
-      end
-    end
-  end
-  ns.on("PLAYER_TARGET_CHANGED", look)
-  ns.on("PLAYER_REGEN_DISABLED", look)
-  ns.onUnit("UNIT_HEALTH", "target", look)
-  ns.onUnit("UNIT_FLAGS", "target", look)
 end
 
 -- ── close calls ──────────────────────────────────────────────────────────────

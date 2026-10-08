@@ -63,8 +63,7 @@ The plan and its decisions: PLAN.md.
   its own on Forever and Classic since 1.15.9 (secret only in a Forever
   instance, where no creature can be told), else the combat log's line; the
   name from what was seen (target, mouse-over, nameplates) or
-  `UnitTokenFromGUID`. Without either (an older Forever client): the target
-  watched through the fight) and `Life.lua` (company, dungeons, learning,
+  `UnitTokenFromGUID`) and `Life.lua` (company, dungeons, learning,
   trades, gear, loot, pets, the first ride, money). A game function is
   checked before use only where the clients differ (a `C_` namespace, a
   function a client lacks); the test game (`addon/test/game.lua`) has every

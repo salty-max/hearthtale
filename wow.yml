@@ -155,8 +155,6 @@ globals:
     any: true
   UISpecialFrames:
     any: true
-  UnitAffectingCombat:
-    any: true
   UnitBuff:
     any: true
   UnitCanAttack:
@@ -186,8 +184,6 @@ globals:
   UnitIsGhost:
     any: true
   UnitIsPlayer:
-    any: true
-  UnitIsTapDenied:
     any: true
   UnitLevel:
     any: true
