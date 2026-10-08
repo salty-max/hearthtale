@@ -51,15 +51,24 @@ The plan and its decisions: PLAN.md.
   alliance | horde | neutral, optional `home:` races). Lines tagged by
   viewpoint: `[home]`, `[ally]`, `[foe]`, `[neutral]`, plus `[night]`; 2-3
   sentences each.
-- `addon/Hearthtale/`: `Core.lua` (the character's record, events,
-  `/hearthtale`), `Record.lua` (the chapters and their moments, as they happen;
-  a logout settled at the next login: under 30 minutes away it's no break,
-  nothing told; indoors without an inn, a night `inside`. Kills: my killing
-  blow or my pet's, from `PARTY_KILL` (killer, victim), an event of its own on
-  Forever and Classic since 1.15.9 (secret only in a Forever instance, where
-  no creature can be told), else the combat log's line; the name from what
-  was seen (target, mouse-over, nameplates) or `UnitTokenFromGUID`. Without
-  either (an older Forever client): the target watched through the fight),
+- `addon/Hearthtale/`: `Util.lua` (plain-Lua helpers: the deep copy),
+  `Core.lua` (the character's record, events: `ns.on`, and `ns.onUnit` for a
+  unit event heard for one unit only; `/hearthtale`), the recorder in four
+  files sharing `ns.record`: `Record.lua` (the record's schema, the chapters
+  and their moments, the logouts, places, levels; a logout settled at the
+  next login: under 30 minutes away it's no break, nothing told; indoors
+  without an inn, a night `inside`), `Quests.lua`, `Combat.lua` (the
+  creatures met, kills, close calls, death and the way back. Kills: my
+  killing blow or my pet's, from `PARTY_KILL` (killer, victim), an event of
+  its own on Forever and Classic since 1.15.9 (secret only in a Forever
+  instance, where no creature can be told), else the combat log's line; the
+  name from what was seen (target, mouse-over, nameplates) or
+  `UnitTokenFromGUID`. Without either (an older Forever client): the target
+  watched through the fight) and `Life.lua` (company, dungeons, learning,
+  trades, gear, loot, pets, the first ride, money). A game function is
+  checked before use only where the clients differ (a `C_` namespace, a
+  function a client lacks); the test game (`addon/test/game.lua`) has every
+  one the addon calls,
   the writer (the prose, written from the records when read), in four files
   sharing `ns.writer` (each exports at its end what the next ones import):
   `Language.lua` (pure helpers: numbers and lists in words, places, plurals,
