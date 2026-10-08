@@ -8,7 +8,7 @@ kind: c-boss
 - stood over {boss} at last
 - was there when {boss} fell
 - [class:WARRIOR] came through the fight with {boss}, with my rage slower to settle than the danger
-- [class:PRIEST] lived to see {boss} fall, with much to consider about the fight
+- [class:PRIEST] lived to see {boss} fall, with my prayers less composed than I wanted them to be
 - lived to see {boss} fall
 - finished off {boss}
 - [turn] {boss} fell at last

@@ -15,7 +15,7 @@ kind: close-deep
 - [hc] I barely survived {at}. I wanted to remember the fear clearly enough that comfort would not turn it into a boast.
 - [hc high] I came close to losing all that road behind me {at}. The length of it offered no protection against one mistake.
 - [class:PALADIN] I barely survived {at}, with my faith no less dear for being too frightened to make a graceful prayer.
-- [class:PRIEST] I came within a breath of the end {at}. There was so much I still wanted to learn to mend.
+- [class:PRIEST] I nearly died {at}, with no words for a prayer beyond the wish not to be taken yet.
 - [class:SHAMAN] I nearly fell {at}, and afterwards listened for the world around me as though hearing it were something newly given.
 - [class:WARRIOR] I barely survived {at}; my rage had been very eager to fight and considerably less helpful when I wanted to live.
 - I was a breath from the end {at}, and for a while could think of nothing but the fact that I was still here.

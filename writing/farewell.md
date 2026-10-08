@@ -20,7 +20,7 @@ kind: farewell
 - [class:MAGE] {name}'s books are left open at the page where the reading stopped.
 - [class:HUNTER !low] The wild has kept the last of {name}'s tracks.
 - [class:ROGUE] {name} has slipped beyond anyone's reach at last.
-- [class:PRIEST] {name} healed many, and could not heal this.
+- [class:PRIEST] May {name} find a gentler answer beyond the last prayer.
 - [class:SHAMAN] The spirits carry {name} now.
 - [class:WARLOCK] {name} bound demons, but could not bind death.
 - [class:DRUID] {name} has gone back to the wild.

@@ -10,10 +10,10 @@ kind: lesson
 - [spell:Blink] Blink was a step through the air to somewhere safer, and I took to it at once.
 - [spell:Frost_Nova] Frost Nova held a foe in ice while I put some distance between us.
 - [spell:Conjure_Water] I could conjure water out of nothing now, which settled the question of what to drink on the road.
-- [spell:Power_Word:_Shield] Power Word: Shield was a ward of light to take the blows meant for me.
-- [spell:Renew] Renew was a healing that kept on working long after the prayer was done.
-- [spell:Resurrection] With Resurrection, I could call the dead back to life, which is not a thing to learn lightly.
-- [spell:Psychic_Scream] Psychic Scream was a cry that sent foes fleeing in terror.
+- [spell:Power_Word:_Shield] I learned Power Word: Shield, a ward I hoped would reach me sooner than an enemy's blow.
+- [spell:Renew] I learned Renew, and was comforted by healing that could keep working after the prayer ended.
+- [spell:Resurrection] I learned Resurrection, with the frightening hope of calling someone back instead of leaving a name to mourn.
+- [spell:Psychic_Scream] I learned Psychic Scream, and liked having a way to make my fear someone else's problem.
 - [spell:Lay_on_Hands] I learned Lay on Hands, with a fierce comfort in having something left to offer when an ordinary blessing would not be enough.
 - [spell:Divine_Protection] I learned Divine Protection, and liked the prospect of a little shelter made of Light rather than stone.
 - [spell:Hammer_of_Justice] I learned Hammer of Justice, a way for the Light to interrupt an enemy more firmly than a prayer.

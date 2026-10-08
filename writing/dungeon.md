@@ -6,7 +6,7 @@ kind: dungeon
 - {dungeon}: I went in with {mates} and came out with stories.
 - [aside] {dungeon} with {mates}. We lost our way twice and our nerve once, but not our lives.
 - [hc aside] {dungeon}. On this realm, a dungeon is where careless parties go to die. We were careful.
-- [class:PRIEST aside] I kept {mates} alive through {dungeon}. Nobody thanked the healer. Nobody ever does.
+- [class:PRIEST aside] I entered {dungeon} with {mates}, hoping my prayers would come as readily in fear as they had in safety.
 - [class:WARRIOR] I entered {dungeon} with {mates}, hoping a warrior's stubbornness would hold where anger alone could not.
 - [class:ROGUE aside] I entered {dungeon} with {mates}, hoping quiet feet would serve us better than a bold introduction.
 - I spent a long day underground in {dungeon}.
