@@ -1,13 +1,13 @@
 ---
 kind: r-item
 ---
-- with the patience of someone not short of time
-- for reasons nobody volunteered
-- the smell, if any, lost on me
-- [!one !plural] not a collection I intended to keep
-- [!one !plural] the count exact, which is more than the request was
-- [one !plural] someone's treasure, apparently
-- [one !plural] in better condition than its previous owner
-- [meat] food for those who still need it
-- [cloth] the living's appetite for cloth remaining a mystery
-- [night] the dark no obstacle to me
+- less impatient than the living had much reason to be
+- hoping the burden had a use outside the Apothecarium
+- rather grateful not to need a deep breath over the business
+- [!one !plural] counting them without wishing to keep the collection
+- [!one !plural] each piece an argument for someone else doing the carrying
+- [one !plural] hoping it was worth the time of a corpse
+- [one !plural] rather attached to getting it out of my hands
+- [meat] food for someone with more demanding insides
+- [cloth] rather better suited to clothing than another shroud
+- [night] more comfortable with the dark than with all the searching

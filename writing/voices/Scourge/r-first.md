@@ -1,11 +1,11 @@
 ---
 kind: r-first
 ---
-- unimpressed, though careful
-- making a note of their weaknesses
-- less frightening than the living seemed to think
-- creatures with fewer complaints than most people I had met
-- [teeth] their teeth rather wasted on what is left of me
-- [night] in the dark, where I see better than they suppose
-- [mechanical] ingenious, in a pointless sort of way
-- [low] one more thing the grave had not prepared me for
+- rather more wary than the lack of a pulse suggested
+- my remains feeling inconveniently vulnerable
+- less impressed by the danger than by my wish to escape
+- new company even to someone the grave had failed to keep
+- [teeth] those teeth no less unwelcome for my flesh being spoiled
+- [night] more at ease with the darkness than the introduction
+- [mechanical] not the only thing here that moved without being alive
+- [low] still discovering what else could want a corpse dead

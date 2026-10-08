@@ -1,9 +1,9 @@
 ---
 kind: closing
 ---
-- The work had occupied {time}. Keeping busy continued to be preferable to contemplating the alternative.
-- I had earned {gold} in {time}, proof that being unwelcome need not make one entirely unprofitable.
-- I had spent {time} on the road, choosing what to do with it. That part was worth recording.
-- After {time}, I was ready to put the day's business in order and let someone else need something for a while.
-- The stretch had taken {time}, though time had become an odd thing to count as mine.
-- I had spent {time} travelling and earned {gold}, enough to make this a more useful account than an obituary.
+- The work had occupied {time}, a useful stretch of not being in a grave.
+- I had earned {gold} in {time}; apparently a dead hand could still make a living.
+- I had spent {time} on the road, which was a considerable improvement on spending it under the road.
+- After {time}, I wanted a pause without an apothecary finding another use for me.
+- The stretch had taken {time}; I had once expected eternity to involve less walking.
+- I had spent {time} travelling and earned {gold}, proof that a corpse could occasionally be worth more above ground.

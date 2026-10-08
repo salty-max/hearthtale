@@ -1,11 +1,11 @@
 ---
 kind: r-gear
 ---
-- [!made !held] a better fit than my old shroud
-- [!made !held] concealing what needed concealing
-- [!made] secondhand, I assumed, like most things in my life
-- [!made] sturdier than me, which is not difficult
-- [!made hc] one more barrier between me and a final death
-- [made] stitched by hands that do not tremble
-- [made] my own work, exacting as ever
-- [made !held] the seams straighter than anything I sewed alive
+- [!made !held] a burial shroud a poor measure of how comfortable I hoped to be
+- [!made !held] less of my condition on display to the world
+- [!made] rather better than being buried with something fine
+- [!made] my condition no reason to accept an equally decaying addition
+- [!made hc] a second obituary less appealing than a little protection
+- [made] the grave's verdict on my usefulness looking rather premature
+- [made] nothing an apothecary needed to preserve for me
+- [made !held] rather proud to wear something that was not funeral provision

@@ -1,7 +1,7 @@
 ---
 kind: beginning
 ---
-- I began {at}, with my own hand on the page and no master's will behind it. A modest distinction, until one has lived without it.
-- I opened this account {at}. The living might debate whether I belonged in the world; I intended to keep occupying it.
-- I began {at}, where whatever remained of me was still mine to put to use.
-- I put down my first words {at}, an account chosen freely rather than another order carried out.
+- I began {at}, with Lordaeron in ruins and no intention of joining the rest of its abandoned property.
+- I set out {at}. Sylvanas had freed us from the Lich King, and I was inclined to keep the gift.
+- I began {at}, a corpse with business of my own and no appetite for another master's errands.
+- I set out {at}, hoping the world had room for someone it had already buried once.

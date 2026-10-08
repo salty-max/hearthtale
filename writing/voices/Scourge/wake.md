@@ -1,9 +1,9 @@
 ---
 kind: wake
 ---
-- [!rest] I stood up {at} after a quiet stretch of waiting and turned back to the road.
-- [!rest] I was ready to go on {at}, having spent enough of the pause with my own thoughts.
-- [!rest] I made ready {at}, with the road still offering something to do.
-- [!rest] I rose {at}, where my account would have to continue if I wanted it to.
-- [rest] I returned to the work {at}, with the pause already behind me.
-- [rest] I went on {at}, as rested as I had any need to be.
+- [!rest] I stood up {at}, having passed the night without needing to dream.
+- [!rest] I was ready to go on {at}, with no more wish to sleep than to remain indefinitely.
+- [!rest] I made ready {at}; a little stillness had done my joints more good than my dignity would admit.
+- [!rest] I rose {at}, still above ground and inclined to keep travelling on that side of it.
+- [rest] I returned to the work {at}, with less stiffness in the parts of me that still obliged.
+- [rest] I went on {at}, as restored as a corpse had any right to expect.

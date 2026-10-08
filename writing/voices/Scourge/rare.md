@@ -1,7 +1,7 @@
 ---
 kind: rare
 ---
-- I brought down {foe} {at}, and found myself pleased to have a name worth putting in the account.
-- {foe} fell to me {at}. I remained to write it down, an outcome I continued to prefer.
-- I killed {foe} {at}, a memorable interruption to the business of being left alive.
-- I faced {foe} {at} and prevailed. I had not lost the ability to take satisfaction in that, whatever else had gone.
+- I brought down {foe} {at}, with the satisfying prospect of being the corpse that walked away.
+- {foe} fell to me {at}; the dead could still have an excellent reason to remain upright.
+- I killed {foe} {at}, and found my attachment to this unpromising body had grown rather stronger.
+- I overcame {foe} {at}, with no pulse to celebrate and more relief than I could comfortably joke about.

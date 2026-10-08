@@ -1,8 +1,8 @@
 ---
 kind: campfire
 ---
-- I sat beside a fire {at}, finding its light easier company than most.
-- I paused by the fire {at} and watched it while the road went on without me.
-- I rested beside a fire {at}, where the movement of the flames held my attention.
-- I sat by the embers {at}, with no need to make the pause into anything more.
-- [night] I stopped by a fire {at}, with the dark around it making its light feel almost companionable.
+- I sat beside a fire {at}; lacking a pulse had not made me entirely indifferent to a little warmth.
+- I paused by a fire {at}, enjoying a flame without an apothecary's purpose behind it.
+- I rested at a fire {at}, with no wish to see how readily the rest of me would burn.
+- I sat by the fire {at}, finding the habit of seeking warmth harder to bury than myself.
+- [night] I stopped by a fire {at}, though the dark was less troubling to me than an open flame ought to have been.

@@ -1,15 +1,18 @@
 ---
 kind: r-foe
 ---
-- efficiently, with nothing wasted
-- [one !more] one more thing that would not get up again, unlike some of us
-- [!more] with no more fuss than the matter required
-- my own pulse, had I one, unbothered
-- [one] a poor argument, ended
-- [!one] persistent, though not as persistent as I was
-- [teeth] my flesh, such as it is, intact
-- [mechanical] at least it did not pretend to be alive
-- [night !more] the dark being more my element than any foe's
-- [hc] not inclined to waste a second life
-- [low] still relearning what this body could take
-- [high] with a practised economy of effort
+- my bones wanting less vigorous employment
+- [one !more] no interest in seeing whether death would improve its temper
+- [!more] less fond of combat than my condition might suggest
+- my absent pulse no measure of the fear
+- [one] another danger I would rather not take home
+- [!one] their persistence worth an unwelcome respect
+- [teeth] rather protective of the flesh I had left
+- [mechanical] no need to wonder whether that mechanism had a soul
+- [night !more] less conspicuous in the dark than I usually felt
+- [hc] unwilling to spend the second life Sylvanas had won us
+- [low] still learning what rot had left me to rely on
+- [high] my decaying fingers less uncertain than they had once been
+- [undead] no kinship with the dead merely for resembling them
+- [hc] my rotting hide still worth more to me than the soil beneath it
+- [class:PRIEST holy undead] almost resentful that the Light would still answer these dead hands

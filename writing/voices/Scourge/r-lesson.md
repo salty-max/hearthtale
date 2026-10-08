@@ -1,13 +1,13 @@
 ---
 kind: r-lesson
 ---
-- [one] mine by choice, and that mattered
-- dry work, which suited me
-- with a patience the living rarely have
-- my mind quicker than my old hands remembered
-- worth the evening, which I do not often say
-- a skill no one could order me to forget
-- [new] a trade for a second life
-- [new] beginning again, as I had grown used to
-- [low] still discovering what this body would allow
-- [high] the old knowledge making room, grudgingly
+- [one] my fingers likely to decay before I had any wish to forget it
+- an apprenticeship less alarming than an apothecary's interest
+- my patience one thing the grave had not spoiled
+- my willingness rather livelier than these fingers
+- rather more useful than learning to lie still
+- something else for a corpse to do besides decay
+- [new] a trade with prospects beyond a graveyard
+- [new] a beginner again, without having to die first
+- [low] still learning which parts of me would cooperate
+- [high] more of the old knack returning than I had expected
