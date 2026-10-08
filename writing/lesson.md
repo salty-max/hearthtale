@@ -14,9 +14,9 @@ kind: lesson
 - [spell:Renew] Renew was a healing that kept on working long after the prayer was done.
 - [spell:Resurrection] With Resurrection, I could call the dead back to life, which is not a thing to learn lightly.
 - [spell:Psychic_Scream] Psychic Scream was a cry that sent foes fleeing in terror.
-- [spell:Lay_on_Hands] Lay on Hands was the Light's answer for when everything else had failed.
-- [spell:Divine_Protection] Divine Protection gave me a moment in which nothing could touch me.
-- [spell:Hammer_of_Justice] With Hammer of Justice, the Light could stop a foe in its tracks.
+- [spell:Lay_on_Hands] I learned Lay on Hands, with a fierce comfort in having something left to offer when an ordinary blessing would not be enough.
+- [spell:Divine_Protection] I learned Divine Protection, and liked the prospect of a little shelter made of Light rather than stone.
+- [spell:Hammer_of_Justice] I learned Hammer of Justice, a way for the Light to interrupt an enemy more firmly than a prayer.
 - [spell:Charge] I learned Charge, and could close the distance before my courage had time to argue about it.
 - [spell:Execute] I learned Execute, with the ugly comfort of knowing how to finish a fight that had already cost enough.
 - [spell:Pick_Pocket] Once I could pick pockets, I looked at every purse I passed a little differently.

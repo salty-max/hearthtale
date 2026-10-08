@@ -21,7 +21,7 @@ kind: closing
 - [hc high] Another {time} lay behind me, added to a journey I was still unwilling to lose.
 - [class:ROGUE] I had earned {gold} in {time}, enough to make the next stretch less uncertain.
 - [class:MAGE] I had been at work for {time}, and was ready to turn my attention to something quiet.
-- [class:PALADIN] I had spent {time} in work I hoped was worthy of {faith}.
+- [class:PALADIN] I had spent {time} at work, and hoped {faith} would forgive a servant who wanted a quiet evening.
 - [class:WARRIOR] I had been busy for {time}, enough to make the prospect of lifting anything heavier than supper unappealing.
 - I had earned {gold} over {time}, a useful measure of what the journey had brought.
 - [plain] I ended this stretch {gold} richer after {time} of work.

@@ -12,7 +12,7 @@ kind: quests-many
 - The {n} tasks behind me made this feel like a stretch of my own life rather than simply a distance travelled.
 - I had finished {n} small jobs, and found myself thinking about how much of the journey lay in such ordinary work.
 - [hc] Grateful that I still had the chance to consider them, I looked back over {n} tasks.
-- [class:PALADIN] I had seen {n} tasks through, trying to give my convictions a place in ordinary work.
+- [class:PALADIN] I had seen {n} tasks through, and was ready to ask the Light for something as ordinary as a quiet evening.
 - [class:HUNTER] The {n} tasks behind me had taught me to attend to the people along the road as well as the creatures beyond it.
 - [plain] I had finished {n} tasks.
 - [plain] That made {n} tasks in all.
