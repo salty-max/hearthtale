@@ -1,16 +1,16 @@
 ---
 kind: r-company
 ---
-- better company than I had expected
-- the help surprisingly welcome
-- sharing the burden with some grace
-- trusting them a little more by the end
-- the road less tedious for it
-- a useful ally, I conceded
-- [night] the dark rather less oppressive in company
-- [hc] each of us careful of the other
-- finding the company more welcome than I had expected
-- pleased to share the distance
-- with less need to appear quite so certain of the way
-- less inclined to hurry through the journey
-- [hc] relieved to have help within reach
+- better company than the grief I had brought from home
+- less obliged to look entirely self-sufficient
+- my pride finding it easier to accept help than my habits did
+- readier to brave the world than I could be alone
+- less alone with the hunger our people carried
+- not yet ready to call it friendship, and nearer than I expected
+- [night] my composure less taxed beneath the night
+- [hc] too well acquainted with loss to leave another absence in the world
+- rather more comfort than a graceful introduction could supply
+- almost as welcome as a familiar name from Silvermoon
+- less need to pretend I knew every turn
+- the hunger less lonely with someone beside me
+- [hc] less exposed than even a proud elf could wish to be alone

@@ -1,18 +1,18 @@
 ---
 kind: r-lesson
 ---
-- with considerably more practice to come
-- the principles elegant, the practice demanding
-- a refinement I had been waiting for
-- precise work, which I appreciated
-- [one] its awkwardness gone after a little practice
-- [new] a craft worth mastering properly
-- [new] beginning at the beginning, as one must
-- [low] still an apprentice in this, if in little else
-- [high] adding one more polish to an old skill
-- clearer about the principle than the execution
-- with my intentions rather ahead of my hands
-- rather more encouraged than I meant to show
-- [new] curious how much care the trade would reward
-- [new] willing to begin without expecting to excel at once
-- [high] pleased to find room for something new among familiar skills
+- my hands less refined in practice than in appearance
+- rather more work than a graceful explanation had promised
+- my pride having to make room for clumsiness
+- my patience less refined than my taste
+- [one] no longer able to make elegance stand in for learning it
+- [new] a craft I could carry away from any ruined city
+- [new] an apprentice with more pride to bruise than most
+- [low] an apprentice rather envious of a master's ease
+- [high] less inclined to let old accomplishment excuse new ignorance
+- my need for magic no kindness to an apprentice's clumsiness
+- my fingers catching up with what I wanted them to do
+- more encouragement than I cared to show a stranger
+- [new] almost afraid to imagine a Silvermoon master inspecting my beginning
+- [new] willing to learn an ordinary craft without Silvermoon's former airs
+- [high] another knack the Scourge could not take merely by breaking stone

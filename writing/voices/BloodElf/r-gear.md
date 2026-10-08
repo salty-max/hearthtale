@@ -1,16 +1,16 @@
 ---
 kind: r-gear
 ---
-- [!made] serviceable, if not beautiful
-- [!made] better cut than I expected
-- [!made !held] adjusted until everything sat properly
-- [!made] a modest improvement, but an improvement
-- [!made hc] one more defence against an unworthy end
-- [made] finished to my own exacting standards
-- [made] rather well finished, if I do say so
-- [made] neat work, I thought
-- [!made] a welcome addition, whatever my first impression
-- [!made !held] curious how well the fit would endure a day's wear
-- [!made] rather pleased with the change in my equipment
-- [made] with a particular interest in how my own work would serve
-- [made] with some quiet satisfaction in my own handiwork
+- [!made] survival rather dearer to me than being admired
+- [!made] something I could value without comparing it to Silvermoon work
+- [!made !held] a fit kind enough to spare my pride further indignities
+- [!made] less fine than a courtly gift, and rather more useful on this road
+- [!made hc] unwilling to trust my life to a graceful appearance
+- [made] my pride attached to the effort as much as the finish
+- [made] a finish I would not have been ashamed to show a Silvermoon master
+- [made] nothing I needed to apologise for bringing into use
+- [!made] one small comfort I could still call mine
+- [!made !held] wishing the fit would remain kind after a long journey
+- [!made] rather less eager to keep the old piece once I had a choice
+- [made] my own patience giving something back for a change
+- [made] more satisfaction than I had expected from such ordinary labour

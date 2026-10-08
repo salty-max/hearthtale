@@ -1,17 +1,17 @@
 ---
 kind: r-first
 ---
-- less charming than they looked from a distance
-- worth a note, though not a fond one
-- rather more dangerous than they looked
-- unlike anything in Eversong
-- a lesson I would rather have learned from a book
-- [teeth] their teeth considerably less decorative than they appeared
-- [night] which the dark did nothing to improve
-- with my first impression considerably revised
-- rather more attentive once they came close
-- curious about them once curiosity was safe again
-- with little desire for an immediate second meeting
-- less certain of my expectations than before
-- [teeth] satisfied with the distance I could keep from those teeth
-- [low] rather conscious of how much had surprised me
+- my taste for the unfamiliar sharply diminished
+- nothing I wanted brought into an Eversong garden
+- less charming at close quarters than I could wish
+- a long way from the sheltered creatures of home
+- my composure finding danger harder to bear than ugliness
+- [teeth] those teeth making my dignity feel rather thin
+- [night] my eyes resenting the darkness more than my pride admitted
+- more caution than admiration in my introduction
+- my heartbeat rather less composed than my face
+- quite unwilling to mistake fascination for an invitation
+- rather keener on the sort of acquaintance that kept its distance
+- not nearly as sheltered by elegance as I had hoped
+- [teeth] my fingers too dear to me to put near those jaws
+- [low] an inexperienced survivor wishing for a gentler lesson

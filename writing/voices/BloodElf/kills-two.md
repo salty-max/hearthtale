@@ -1,6 +1,6 @@
 ---
 kind: kills-two
 ---
-- I counted {n1} {foes1} and {n2} {foes2} {at}, glad to put the fighting at the distance of an account.
-- The tally {at} was {n1} {foes1} and {n2} {foes2}, which gave me no desire to add another encounter.
-- I put {n1} {foes1} and {n2} {foes2} on the page {at}, with a little more relief than the neatness of the list suggested.
+- I counted {n1} {foes1} and {n2} {foes2} {at}, without finding anything particularly fine in having needed so much violence.
+- The fighting {at} had accounted for {n1} {foes1} and {n2} {foes2}; I wanted a gentler occupation for my hands.
+- I had brought down {n1} {foes1} and {n2} {foes2} {at}, with enough relief to make pride feel rather beside the point.

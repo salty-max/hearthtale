@@ -1,6 +1,6 @@
 ---
 kind: flight
 ---
-- [first] My first flight from {from} to {to} offered a wider view than I had prepared myself to enjoy.
-- I flew from {from} to {to}, watching the country below with rather more interest than the journey's practical purpose required.
-- I left {from} by air for {to}, pleased to admire the distance without having to endure it underfoot.
+- [first] My first flight from {from} to {to} offered a grandeur I could enjoy without trying to make it belong to Quel'Thalas.
+- I flew from {from} to {to}, willing to admire a world that had left our own corner of it in ruins.
+- I left {from} by air for {to}, glad to put the distance beneath me without another demand on my composure.

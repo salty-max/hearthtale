@@ -1,22 +1,22 @@
 ---
 kind: r-item
 ---
-- an undignified task, honestly done
-- with more care than the request deserved
-- pleased, despite myself, to have the task finished
-- [!one !plural] each one less presentable than the last
-- [!one !plural] the full count, naturally
-- [one !plural] hardly worth the trouble, though someone thought otherwise
-- [one !plural] in better condition than I expected
-- [meat] not the sort of thing I usually carry
-- [cloth] coarse stuff, though serviceable
-- [night] the dark making the search slower than it needed to be
-- [hc] keeping my wits about me all the while
-- with more satisfaction in finishing the search than I had expected
-- rather pleased to have the collection complete
-- [!one !plural] making certain of the count before allowing myself to be satisfied
-- [!one !plural] with no appetite for finding another just then
-- [meat] rather more interested in a meal than in further collecting
-- [cloth] with an interest in what could be made of all that cloth
-- [night] wishing the light were a little more obliging
-- [hc] keeping part of my attention beyond the work
+- a find easier to satisfy someone with than the hunger of my people
+- rather more care than my impatience wanted to offer
+- less particular about the work than a Silvermoon visitor might expect
+- [!one !plural] every piece another argument for somebody else doing the carrying
+- [!one !plural] counting them without finding much grace in the burden
+- [one !plural] wondering whether it would have been worth an afternoon in Eversong
+- [one !plural] not yet willing to surrender it to the road
+- [meat] keener on a proper supper than on carrying the smell of one
+- [cloth] rather keener on what a good tailor could make of the cloth
+- [night] my eyes refusing to make an elegant business of the dark
+- [hc] too wary to let somebody else's missing things take all my attention
+- my patience returning only once the search was over
+- rather more satisfaction than I meant to display
+- [!one !plural] a count I would finish before allowing my feet a reprieve
+- [!one !plural] no desire to enlarge the collection for my own amusement
+- [meat] my appetite less particular than my pride had promised
+- [cloth] a plain weave not beyond a gifted hand's use
+- [night] the darkness a poor light for admiring a find
+- [hc] my composure no reason to leave danger unwatched
