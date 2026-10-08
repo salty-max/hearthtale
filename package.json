@@ -21,7 +21,7 @@
     "db:generate": "bun run --filter @hearthtale/api db:generate",
     "db:migrate": "bun run --filter @hearthtale/api db:migrate",
     "db:seed": "bun run --filter @hearthtale/api db:seed",
-    "audit": "bun scripts/audit-data.ts && bun scripts/names.ts && luajit addon/test/audit.lua > .cache/audit/report.txt && luajit addon/test/playthrough.lua",
+    "audit": "bun scripts/audit-data.ts && bun scripts/names.ts && bun scripts/knowledge.ts && luajit addon/test/audit.lua > .cache/audit/report.txt && luajit addon/test/playthrough.lua",
     "addon:seed": "luajit addon/test/seed.lua > apps/api/src/db/seed/characters.json",
     "addon:build": "bun scripts/build.ts",
     "addon:check": "bun run lint:lua && bun scripts/build.ts --check && luajit addon/test/sim.lua && FOREVER=1 luajit addon/test/sim.lua && luajit addon/test/writer.lua && FOREVER=1 luajit addon/test/writer.lua && luajit addon/test/sample.lua > /dev/null && luajit addon/test/seed.lua > /dev/null && FOREVER=1 luajit addon/test/voices.lua compare > /dev/null",
