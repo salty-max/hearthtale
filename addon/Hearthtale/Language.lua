@@ -70,14 +70,12 @@ local function words(n)
   end
   return tostring(n)
 end
-ns.words = words
 
 local function listing(items)
   if #items == 0 then return nil end
   if #items == 1 then return items[1] end
   return table.concat(items, ", ", 1, #items - 1) .. " and " .. items[#items]
 end
-ns.listing = listing
 
 -- A name inside a sentence: "The Barrens" reads "the Barrens", and a place
 -- the game names without its article reads with it ("the Valley of Strength").
@@ -97,7 +95,6 @@ local function mid(name)
   if TRAILING[name:match("(%a+)$") or ""] and not name:find("^The ") then return "the " .. name end
   return (name:gsub("^The ", "the "))
 end
-ns.mid = mid
 
 local IRREGULAR = {
   Wolf = "Wolves",
@@ -136,7 +133,6 @@ local function plural(name)
   if last:match("[a-z]man$") then return before .. last:sub(1, -4) .. "men" end
   return name .. "s"
 end
-ns.plural = plural
 
 -- Words for what can't be counted ("Linen Cloth", "Tough Wolf Meat").
 local UNCOUNTED = set([[
@@ -191,7 +187,6 @@ local function itemName(name)
   if last:match("s$") or MASS[last] or UNCOUNTED[last] then return name end
   return (name:match("^[AEIOUaeiou]") and "an " or "a ") .. name
 end
-ns.itemName = itemName
 
 -- Things in numbers: "six Crag Boar Ribs", but "eight Tough Wolf Meat" (a
 -- name that can't be counted stays as it is).
@@ -206,7 +201,6 @@ local function things(name)
   end
   return plural(name)
 end
-ns.things = things
 
 -- A creature named in passing: "a Frostmane Novice". The game can't tell a
 -- named creature from a common one, so only rares go without (by their name).
@@ -224,7 +218,6 @@ local function article(name)
   if name:find(" the ") or name:find("^%u%a*'%a+$") then return name end
   return (name:match("^[AEIOUaeiou]") and "an " or "a ") .. name
 end
-ns.article = article
 
 -- Kinds worth a "first of its kind" (the game's English names; people are
 -- not a kind, critters are not a fight, and a beast without a family is
@@ -316,7 +309,6 @@ local function playedWords(s)
   end
   return words(h) .. " hours" .. ((r >= 15 and r < 45) and " and a half" or "")
 end
-ns.playedWords = playedWords
 
 local function goldWords(copper)
   if not copper or copper < 1 then return nil end
@@ -329,7 +321,6 @@ local function goldWords(copper)
   local g = floor(copper / 10000)
   return g == 1 and "a gold piece" or words(g) .. " gold"
 end
-ns.goldWords = goldWords
 
 local function capitalise(text)
   text = text:gsub("^(%W*)(%l)", function(p, c) return p .. c:upper() end)
@@ -552,7 +543,6 @@ local function instruction(text)
   if handIn(text) then return false end -- only the return: a word carried
   return INSTRUCTIONS[(text:match("^(%a+)") or ""):lower()] and not text:find("[:?]") or false
 end
-ns.instruction = instruction
 local function lowerFirst(text) return (text:gsub("^%u", string.lower)) end
 -- An objective as a task done: "Escort The Defias Traitor to discover where
 -- VanCleef is hiding" is "escort the Defias Traitor to discover where
@@ -564,7 +554,6 @@ local function taskOf(text)
   end
   return (lowerFirst(text):gsub(" The ", " the "):gsub(" is ", " was "):gsub(" are ", " were "))
 end
-ns.taskOf = taskOf
 
 -- A sentence with its link before it ("That night, I..."), if it begins with
 -- "I", "My" or an article.

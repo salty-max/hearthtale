@@ -218,7 +218,6 @@ local function newBook(c)
     usedIn = {},
     uses = 0,
     seed = c.guid or "",
-    zones = {},
     flown = false,
     repeats = 0,
     chapterNo = 0,

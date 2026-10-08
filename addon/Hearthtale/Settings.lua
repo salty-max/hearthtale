@@ -5,18 +5,23 @@
 -- can't tell (no C_GameRules), kept in its journal.
 local _, ns = ...
 
-local DEFAULTS = { chat = true, toast = true, minimapHidden = false }
+-- (minimapAngle: the button's place around the minimap, in degrees; 200 is
+-- to the left, clear of the game's buttons and the siblings')
+local DEFAULTS = { chat = true, toast = true, minimapHidden = false, minimapAngle = 200 }
+
+local function saved()
+  if type(HearthtaleSettings) ~= "table" then HearthtaleSettings = {} end
+  return HearthtaleSettings
+end
 
 function ns.option(key)
-  if type(HearthtaleSettings) ~= "table" then HearthtaleSettings = {} end
-  local v = HearthtaleSettings[key]
+  local v = saved()[key]
   if v == nil then return DEFAULTS[key] end
   return v
 end
 
 function ns.setOption(key, value)
-  if type(HearthtaleSettings) ~= "table" then HearthtaleSettings = {} end
-  HearthtaleSettings[key] = value
+  saved()[key] = value
   if key == "minimapHidden" and ns.updateMinimapButton then ns.updateMinimapButton() end
 end
 
