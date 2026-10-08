@@ -1608,6 +1608,25 @@ for _, race in ipairs(RACES) do
         errands[k] = { k = "quest", giver = giver, ender = "Brewmaster Drohn", objectives = { { type = "log" } } }
       end
       chapter(errands)
+      -- the hunt for a quest's things, from the creatures they drop from
+      for hunt = 1, 4 do
+        local meat = { { type = "item", name = "Tough Wolf Meat", n = 8 } }
+        local log = {
+          { k = "kill", name = "Ragged Young Wolf", kind = "Wolf" },
+          { k = "done", id = 179 + hunt, giver = "Sten Stoutarm", objectives = meat },
+        }
+        if (life + hunt) % 2 == 0 then
+          log[3] = {
+            k = "quest",
+            id = 179 + hunt,
+            giver = "Sten Stoutarm",
+            ender = "Sten Stoutarm",
+            told = true,
+            objectives = meat,
+          }
+        end
+        chapter(log)
+      end
       -- a class's own quests turned in: handed in on the spot, or a return
       local rewards, seenSpell = {}, {}
       for id, q in pairs(ns.knowledge.quests) do
