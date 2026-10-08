@@ -107,6 +107,10 @@ local function newScene(book, n, ch)
     -- a night (or a rest) and its waking less than half an hour apart: a
     -- relog, not a break (the recorder no longer keeps them; older journals have them)
     relog = {},
+    -- the stretches: the moments that begin a paragraph, and where a run of
+    -- errands begins (Scene:segment)
+    starts = {},
+    errandsFrom = nil,
   }, Scene)
   local start = ch.start or {}
   -- a start whose place the game had not told yet (Forever, at login): the
@@ -129,6 +133,7 @@ local function newScene(book, n, ch)
       s.relog[j], s.relog[j + 1] = true, true
     end
   end
+  s:segment()
   book.scene = s
   return s
 end
@@ -393,17 +398,12 @@ function Scene:arrive(place, zone, opener, found)
   local after = (m and m.at and self.prev and self.prev.at) and m.at - self.prev.at or 0
   self:emitFold()
   if back and not opener and after < LONG then
-    if #self.current >= 4 then
-      self:flush()
-      self:newParagraph()
-    end
     self:enter(place, zone)
     b.last, b.there = nil, false
     self.backTo = place -- (named by the next sentence: "Back in …")
     return
   end
   self:flush()
-  if #self.current >= 3 then self:newParagraph() end
   self:enter(place, zone)
   if not opener and place == b.last then return end
   self.named = true
@@ -629,6 +629,103 @@ function Scene:justDone(m, i)
   local j = self:prevAt(i)
   return m.id and self.doneAt[m.id] == j and j > 0 and self:placeOf(self.ch.log[j]) == self:placeOf(m)
 end
+
+-- ── stretches ────────────────────────────────────────────────────────────────
+-- The chapter's paragraphs, worked out from its whole log: a stretch of work
+-- ends at a new zone, a new day, a dungeon, a long gap, or a move to another
+-- place once it holds enough (STRETCH moments told; LONGEST at most). A stretch is
+-- closed only once the next has begun, so a closed paragraph never changes;
+-- the one being played may, as it grows. (Not while a death waits for its
+-- way back: the two are told together.)
+local STRETCH, LONGEST = 4, 9
+local function counted(m)
+  if m.k == "level" or m.k == "revived" then return false end
+  if m.k == "kill" then return m.first or m.elite or false end
+  if m.k == "place" then return m.new == "zone" end
+  return true
+end
+function Scene:segment()
+  local log, starts, n, here, dying = self.ch.log or {}, {}, 0, nil, false
+  for i, m in ipairs(log) do
+    local place, prev = m.sub or m.zone, log[i - 1]
+    local cut = prev
+      and (
+        m.k == "wake"
+        or m.k == "dungeon"
+        or (m.k == "place" and m.new == "zone")
+        or (m.at and prev.at and m.at - prev.at > 3600)
+        or (n >= STRETCH and counted(m) and place ~= here)
+        or n >= LONGEST
+      )
+    if cut and not dying then
+      starts[i], n, here = true, 0, nil
+    end
+    if counted(m) then
+      n, here = n + 1, place
+    end
+    if m.k == "died" then
+      dying = true
+    elseif m.k ~= "place" and m.k ~= "level" then
+      dying = false
+    end
+  end
+  self.starts = starts
+  self:findErrands()
+end
+
+-- A new stretch: the tally of the one before, and a new paragraph.
+function Scene:nextStretch()
+  self:emitFold()
+  self:flush()
+  self:newParagraph()
+  self.book.last = nil
+  self.lowTold, self.lowScene = 0, nil -- (its own few hand-ins told in full)
+end
+
+-- A run of quests one after another, nothing of note between them (a
+-- lesson, a kill, a level, a new piece of gear may come between): ERRANDS of
+-- them or more open with what they are ("There were smaller jobs after
+-- that…"), once a chapter. errandsFrom: the run's first moment. A class's
+-- own quest is no errand.
+local ERRANDS = 4
+local FILLER = {
+  level = true,
+  kill = true,
+  place = true,
+  learned = true,
+  prof = true,
+  skill = true,
+  gear = true,
+  loot = true,
+  made = true,
+  inn = true,
+}
+function Scene:findErrands()
+  local log, class, known = self.ch.log or {}, self.c.class, ns.knowledge and ns.knowledge.quests or {}
+  local from, quests, n = nil, {}, 0
+  for i, m in ipairs(log) do
+    if self.starts[i] then
+      from, quests, n = nil, {}, 0
+    end
+    local own = m.id and known[m.id] and known[m.id].class == class
+    if (m.k == "quest" or m.k == "done") and not m.abandoned and not own then
+      from = from or i
+      local id = m.id or m.title or i
+      if not quests[id] then
+        quests[id], n = true, n + 1
+      end
+      if n >= ERRANDS then
+        self.errandsFrom = from
+        return
+      end
+    elseif not FILLER[m.k] then
+      from, quests, n = nil, {}, 0
+    end
+  end
+end
+
+-- The run of errands, opened.
+function Scene:errands() self:alone("errands", {}, self:tags(nil, self.m)) end
 
 -- ── the fold ─────────────────────────────────────────────────────────────────
 -- What a moment is to the fold: "low" (a routine hand-in), "silent" (told

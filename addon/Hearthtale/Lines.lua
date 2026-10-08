@@ -755,6 +755,9 @@ function Book:deed(m, key, tags)
     -- a thing in hand when the quest was taken (a note, a letter found on a
     -- foe), carried to another: a delivery
     values.ender, values.thing = m.ender, itemName(o.name)
+    -- (a thing named for whom it goes to: "the journal", once)
+    local owner = o.name:match("^(.-)'s ")
+    if owner and m.ender:find(owner, 1, true) == 1 then values.thing = "the " .. o.name:match("'s (.+)$"):lower() end
     -- the same thing, delivered just before: "took it on to …" ("it" only
     -- right after it was named; further back in the paragraph, named again)
     local carried = self.scene and self.scene.thingsCarried or {}
@@ -775,6 +778,10 @@ function Book:deed(m, key, tags)
     for _, f in ipairs(all) do
       table.insert(list, (f.n or 1) > 1 and things(f.name) or itemName(f.name))
     end
+    -- a thing named for who asked for it: "the journal" ("Grelin Whitebeard
+    -- had asked for Grelin Whitebeard's Journal" says it twice)
+    local owner = m.giver and #all == 1 and (o.name:match("^(.-)'s (.+)$"))
+    if owner and m.giver:find(owner, 1, true) == 1 then list[1] = "the " .. o.name:match("'s (.+)$"):lower() end
     local count = #all == 1 and (o.n or 1) or 2
     values.n, values.thing = #all == 1 and self:size(count, key, uncounted(o.name)) or "", listing(list)
     if tags.done then values.giver = nil end -- found, not yet handed over
