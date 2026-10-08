@@ -26,7 +26,7 @@ kind: opening
 - [class:PRIEST] Hoping to find a place for my faith in the work before me, I began again {at}.
 - [class:DRUID] I took up the road {at}, attentive to the life carrying on beside my own.
 - [class:SHAMAN] I began this stretch {at}, listening as well as looking while I found my way.
-- [class:WARRIOR] Determined to make what strength I had useful, I went on {at}.
+- [class:WARRIOR] I set out {at}, with a warrior's habit of judging trouble by the reach of a weapon.
 - [class:PALADIN] I began again {at}, wanting to make my convictions useful to someone besides myself.
 - [!night] Morning came {at}, and with it the road.
 - [!night] The day began {at}, with the next stretch still to be decided.

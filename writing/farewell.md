@@ -16,7 +16,7 @@ kind: farewell
 - [race:BloodElf] The sun sets on another child of Quel'Thalas.
 - [race:Draenei] {name} fell far from Draenor, and farther still from Argus.
 - [class:PALADIN] {name} served {faith} to the end.
-- [class:WARRIOR] {name} never took a step back, and took none at the end.
+- [class:WARRIOR] {name}'s strength could carry no further than this.
 - [class:MAGE] {name}'s books are left open at the page where the reading stopped.
 - [class:HUNTER !low] Somewhere, a pet waits for {name}.
 - [class:ROGUE] {name} was never caught, until the end caught up.

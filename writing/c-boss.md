@@ -7,7 +7,7 @@ kind: c-boss
 - fought {boss} and won
 - stood over {boss} at last
 - was there when {boss} fell
-- [class:WARRIOR] came through the fight with {boss}, glad that strength had been enough
+- [class:WARRIOR] came through the fight with {boss}, with my rage slower to settle than the danger
 - [class:PRIEST] lived to see {boss} fall, with much to consider about the fight
 - lived to see {boss} fall
 - finished off {boss}
