@@ -1,18 +1,18 @@
 ---
 kind: r-item
 ---
-- [client:forever] my fingers more useful than a wider view could have been
-- [client:forever] rather more carrying than the request had sounded like
-- [client:forever] my feet keener to finish than my curiosity
+- [client:forever] a search whose details kept me close to the ground
+- [client:forever] a skyborn elf learning the inconvenience of useful cargo
+- [client:forever] my interest in the search thoroughly satisfied
 - [client:forever !one !plural] a count I had no wish to see grow larger
-- [client:forever !one !plural] my fingers making certain my feet would not have to repeat the search
+- [client:forever !one !plural] each piece accounted for before I could leave
 - [client:forever one !plural] a find I would rather have sought from above
 - [client:forever one !plural] keen to let someone else call it a treasure
-- [client:forever meat] more inviting as supper than another burden for the road
-- [client:forever cloth] softer company than most of the ground's demands
+- [client:forever meat] a promising addition to supper despite the carrying
+- [client:forever cloth] a tailor's chance to make an unfamiliar lodging comfortable
 - [client:forever night] a wide view of little help where the darkness hid the find
 - [client:forever faction:alliance] a find I could enjoy without thanking a vanished patron
-- [client:forever cloth] a tailor's comfort more inviting than another mile beneath the sky
-- [client:forever meat] my appetite more impatient than my feet
+- [client:forever cloth] a tailor's comfort to occupy my thoughts
+- [client:forever meat] my appetite quite impatient with the business of carrying
 - [client:forever] keener on finishing the search than on admiring the view
 - [client:forever] one burden I hoped would not travel far with me

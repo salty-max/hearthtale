@@ -1,17 +1,17 @@
 ---
 kind: r-road
 ---
-- [client:forever] my feet patient with the earth's insistence on distance
+- [client:forever] a skyborn elf discovering the ordinary demands of distance
 - [client:forever !back] an elf of the sky still learning how the ground could feel familiar
-- [client:forever !back] rather less sheltered by a blessing than I wanted to be
-- [client:forever !back] my balance no excuse for hurrying into an unknown place
+- [client:forever !back] an uncertain welcome to make without a patron's assurance
+- [client:forever !back] the country unfamiliar even to an elf of the sky
 - [client:forever !back night] my eyes patient with a night that offered few directions
 - [client:forever back] my steps easier on ground that had once seemed foreign
-- [client:forever back] a familiar route dearer to me than its distance
-- [client:forever back] a familiar return dearer to me than another new arrival
-- [client:forever high] my stride less troubled by the ground than it used to be
-- [client:forever faction:horde !back] a Windshaper hoping for allies in the search for our mentors
+- [client:forever back] the familiar turns giving an easy welcome
+- [client:forever back] the return taking the uncertainty out of my arrival
+- [client:forever high] a skyborn elf finding some familiarity in the country
+- [client:forever faction:horde !back] a Windshaper seeking company for the search still ahead
 - [client:forever faction:alliance !back] wondering what use the High Order could make of a life lived here
-- [client:forever] the ground more than a place to pass above now I knew the way
-- [client:forever night] my stride cautious where my eyes could find little help
-- [client:forever] more of my courage spent arriving than I cared to show
+- [client:forever] the country acquiring a place in my life beyond the view
+- [client:forever night] a child of the sky taking care with what the dark concealed
+- [client:forever] the arrival costing some of the courage I had set out with

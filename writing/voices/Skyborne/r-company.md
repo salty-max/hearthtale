@@ -1,12 +1,12 @@
 ---
 kind: r-company
 ---
-- [client:forever one] company more comforting than all the distance of the sky
+- [client:forever one] some company to make the wide world feel friendly
 - [client:forever] readier to trust someone else's knowledge of the ground
-- [client:forever] my balance easier when trust could do some of the work
+- [client:forever] the ease of company settling my unease among strangers
 - [client:forever faction:horde] company as warm as the welcome I hoped our mentors would find
 - [client:forever faction:alliance] less obliged to make independence mean solitude
 - [client:forever night] the night less immense with another life nearby
-- [client:forever faction:alliance] my pride willing to accept help without treating it as a debt to a patron
+- [client:forever faction:alliance] a child of the High Order accepting help without a patron's claim
 - [client:forever] company steadier than another hour with my worries
-- [client:forever] hoping our strides would find room for one another
+- [client:forever] a skyborn elf enjoying the ease of travelling together

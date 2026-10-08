@@ -1,13 +1,13 @@
 ---
 kind: r-first
 ---
-- [client:forever] my balance less certain than my courage wanted
+- [client:forever] my balance giving my courage an unwelcome test
 - [client:forever] too near the flesh beneath a skyborn elf's confidence
 - [client:forever] nothing a skyward gaze could keep safely distant
-- [client:forever] more wary of being caught within reach than of looking foolish
+- [client:forever] the risk of being caught within reach keeping me cautious
 - [client:forever night] my eyesight of little help with ground the night had hidden
 - [client:forever faction:horde] our vanished mentors too far beyond a frightened call
 - [client:forever] an encounter I would not want nearer to home
-- [client:forever] less willing to let an easy appearance lower my guard
+- [client:forever] a skyborn elf taking care with an easy appearance
 - [client:forever teeth] those jaws little comfort to a child of the sky
-- [client:forever] a skyborn elf wanting rather more distance from danger than this
+- [client:forever] a child of the sky with a sudden affection for keeping distance
