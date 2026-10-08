@@ -1,24 +1,24 @@
 ---
 kind: r-foe
 ---
-- [one] not the first to try me, nor the last
-- quick and done, which is the best kind
-- the spirits watching, maybe, and nodding
-- [!more] a survivor's work, no more
-- with a grin I kept to myself
-- [one] a fair try on its part
-- [!one] one after another, like waves on the shore
-- [teeth] its teeth meeting nothing but air
-- [mechanical] metal and grease, no spirit in it
-- [night] the dark more my friend than its
+- [one] not an acquaintance I wanted to renew
+- my heart keeping a quicker rhythm than I cared to dance to
+- almost ready to ask the loa for less attention
+- [!more] too fond of my hide to become a hunter's warning tale
+- my grin slower to return than my breath
+- [one] an enemy I would not want following me to the islands
+- [!one] their number enough to wear a hunter's patience thin
+- [teeth] those teeth nothing I wanted nearer my own hide
+- [mechanical] without its maker's fondness for a machine's persistence
+- [night] my ears doing a hunter's work beyond the reach of sight
 - [hc] remembering how few of us the Darkspear could spare
-- [low] still learning when to strike and when to wait
-- [high] easy as breathing, almost
-- glad to reach the quiet after the fight
-- with my breath still catching up to me
-- rather less certain of my own cleverness
-- relieved enough to feel a smile returning
-- [one] with no hurry to make that acquaintance again
-- [teeth] keeping a respectful distance in my thoughts as well
-- [hc] very conscious of the life I had kept
-- [low !more] with more caution ready for the next attempt
+- [low] still too eager to look fearless for my own comfort
+- [high] less quick to let excitement lead my hands
+- more relieved than any grin could conveniently show
+- my breath reluctant to adopt a quieter rhythm
+- rather short of the cleverness I would have claimed beforehand
+- my smile returning without much help from pride
+- [one] an opponent I hoped the loa would not send twice
+- [teeth] those jaws worth keeping at a hunter's distance
+- [hc] too fond of the tribe to leave another empty place
+- [low !more] my courage less certain than my long stride

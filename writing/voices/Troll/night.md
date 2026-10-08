@@ -1,8 +1,8 @@
 ---
 kind: night
 ---
-- [!last] I slept outside {at}, listening until the sounds stopped needing all of my attention.
-- [!last] I bedded down {at}, with the ground offering little reason to stay awake admiring it.
-- [!last] I settled for the night {at}, hoping the loa had less interest in my dreams than in someone else's.
-- [last] I closed the journal {at} and lay down outside, with no wish to make more of the day.
-- [last] I settled on the ground {at}, glad to leave the next turn unwritten until I reached it.
+- [!last] I slept outside {at}, with the sort of care a hunter learned before the jungle could teach it harder.
+- [!last] I bedded down {at}, missing a Darkspear camp's familiar ease more than a fine bed.
+- [!last] I settled for the night {at}, hoping the loa would let my dreams be dull for once.
+- [last] I lay down outside {at}, quite content to be the troll who stopped before his feet mutinied.
+- [last] I settled on the ground {at}, wishing for the sound of the sea without wanting the journey to it.

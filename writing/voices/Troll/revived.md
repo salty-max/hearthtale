@@ -1,7 +1,7 @@
 ---
 kind: revived
 ---
-- [corpse] I found my body again as a ghost {at}, and was glad enough to take up even its aches.
-- [healer] The spirit healer raised me {at}. I had little strength left, but a very firm wish to keep it.
-- [ally] {by} brought me back {at}, a favour I would not be quick to forget.
-- [self] My own preparation returned me to life {at}, and I was relieved enough to leave the boasting until later.
+- [corpse] I found my body as a ghost {at}, and was grateful the loa had not decided to keep the better part of me.
+- [healer] The spirit healer raised me {at}, with more weakness than I wanted and more life than I had feared.
+- [ally] {by} brought me back {at}; the debt would travel home with me even if the road never brought us together again.
+- [self] My own preparation returned me to life {at}, with my pride slower to recover than the rest of me.

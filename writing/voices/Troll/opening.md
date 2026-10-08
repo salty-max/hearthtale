@@ -1,12 +1,12 @@
 ---
 kind: opening
 ---
-- I took up the road {at}, curious what the day had dressed up to look harmless.
-- I began again {at}, with an appetite for getting on and a little caution left to balance it.
-- I set out {at}, keeping a little laughter for myself in case the road offered none.
-- I set off {at}, quick on my feet and in no mood to waste the day.
-- I made ready {at}, with a joke kept back in case the day needed one.
-- I went on {at}, rather glad I had somewhere to go besides back over my worries.
-- I began this stretch {at}, looking at the edges of the way as much as the middle.
-- I went back to the road {at}, one eye on the trees and one on the path.
-- Wondering what the loa would make of me worrying over the next turn, I set out {at}.
+- I took up the road {at}, hoping to recognise trouble before trouble recognised a Darkspear.
+- I began again {at}, with a hunter's caution and a fairly unreasonable appetite for finding out.
+- I set out {at}, still fond of a world that had driven my people from too many shores.
+- I went on {at}, with my feet willing and the rest of me prepared to listen to complaints later.
+- I made ready {at}, hoping the loa had gentler entertainment in mind than another narrow escape.
+- I began this stretch {at}, wanting something good to bring home to the Darkspear.
+- I set out {at}, with a jungle-born wariness even where the jungle was only in my thoughts.
+- I returned to the road {at}, no more eager to be caught unawares than a hunter near an unfamiliar trail.
+- I set out {at}, rather hoping Sen'jin's people would have one less reason to worry by the time I returned.

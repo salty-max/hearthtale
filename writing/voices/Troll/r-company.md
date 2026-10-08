@@ -1,15 +1,15 @@
 ---
 kind: r-company
 ---
-- the road better with a friend
-- glad of the help
-- trusting them more by the end
-- easy company, the best kind
-- [one] the work halved
-- [night] the dark easier to share
-- [hc] watching my back and theirs
-- glad not to watch the whole road alone
-- with the company easing my attention a little
-- more willing to go on with help nearby
-- [night] with less unease about the dark around us
-- [hc] keeping an eye on them as well as the route
+- nearer to the warmth of a Darkspear camp
+- more at ease than a hunter could be alone
+- my shoulders more at ease with someone beside me
+- better than keeping only the loa entertained
+- [one] another life worth keeping safe in the hunt
+- [night] less alone beneath the hours a hunter watched most carefully
+- [hc] unwilling to lose someone the tribe might have welcomed
+- more willing to venture beyond a familiar shore
+- my ears relieved of watching the whole road
+- less liable to hear danger in every quiet stretch
+- [night] the night less hungry with company beside me
+- [hc] my trust no longer doing all the dangerous work

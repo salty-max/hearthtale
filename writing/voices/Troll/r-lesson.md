@@ -1,21 +1,21 @@
 ---
 kind: r-lesson
 ---
-- one more trick for the pack
-- worth the time, every bit
-- the movements strange at first
-- [one] easy after a little practice
-- [one] eager to try it where it counted
-- [one] my hands quick to take to it
-- [new] something new for the tribe to use
-- [new] starting slow, as the wise do
-- [low] still green in this, but learning
-- [high] fitting neatly among the old tricks
-- [!one] eager to try them on the next trouble
-- keen to see what stayed with me in practice
-- pleasantly occupied with the unfamiliar parts
-- curious how much easier the next attempt would feel
-- [new] wondering where the trade might take me
-- [new] with room for a new knack among the old
-- [low] willing to begin slowly despite my impatience
-- [high] pleased to find something new to learn
+- another knack the loa would not have to supply
+- my grin rather quicker than my fingers
+- rather more patience required than a hunter's tale might suggest
+- [one] eager to have it ready before danger chose the hour
+- [one] wondering how it would serve beyond a safe lesson
+- [one] my confidence in it rather better displayed than felt
+- [new] a craft the Darkspear might have good use for
+- [new] an apprentice's place no disgrace to a survivor
+- [low] new enough to this to wish for a gentler teacher than danger
+- [high] less green than the eager troll who first offered to learn
+- [!one] eager to have them ready before trouble chose the hour
+- my pride having to wait for my fingers
+- rather taken with a knack no exile could strip away
+- my patience harder to summon than my enthusiasm
+- [new] wondering what welcome the trade could earn beyond the islands
+- [new] more willing to be clumsy now than helpless later
+- [low] still learning how slowly a quick pair of hands could begin
+- [high] a veteran of enough surprises to value another knack

@@ -1,6 +1,6 @@
 ---
 kind: boss-final
 ---
-- {boss} fell, and I was done in {dungeon}. I waited a little before letting myself enjoy that thought.
-- With {boss} defeated, the way out of {dungeon} interested me rather more than another victory.
-- {boss} was down at last. I could find the pleasure in it once I stopped bracing for the next moment.
+- {boss} fell, and I was done in {dungeon}. I hoped the loa had enjoyed watching more than I had enjoyed being watched.
+- I defeated {boss} in {dungeon}, and wanted the way out more than another opportunity to be impressive.
+- With {boss} down in {dungeon}, I could almost hear the sea instead of my own racing heart.

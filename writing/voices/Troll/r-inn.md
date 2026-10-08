@@ -1,13 +1,13 @@
 ---
 kind: r-inn
 ---
-- the stone a good friend to have
-- a roof, simple and fine
-- one less long walk ahead
-- [night] late, and ready to stop
-- [hc] a safe place worth remembering
-- one less long walk to think about
-- with somewhere to come back to now
-- glad the return would not ask the same of my legs
-- already looking forward to the shortcut
-- [night] glad not to retrace every step in the dark
+- as welcome to my legs as a road that shortened itself
+- a return I hoped would feel like a familiar camp
+- my feet grateful to have some distance taken off their hands
+- [night] quite willing to leave the night to its own devices
+- [hc] doubtful that the loa would find my safe return entertaining
+- one less long walk for my feet to complain over
+- shelter no longer dependent on a troll's long stride
+- more fond of enchantment when my legs could benefit
+- eager for a return that spared my feet another adventure
+- [night] my eyes spared the trouble of finding the whole way back

@@ -1,7 +1,7 @@
 ---
 kind: beginning
 ---
-- I began {at}, with the Darkspear in my thoughts and a whole stretch of world that did not yet know me.
-- I opened my journal {at}. My people had been driven far enough; I wanted a few of the roads ahead to be of my own choosing.
-- I set out {at}, willing to welcome good company and curious enough to see what lay past the trouble.
-- I began {at}, with respect for the loa and plenty before me that needed my own attention.
+- I began {at}, a Darkspear with a road to choose instead of another shore to flee.
+- I set out {at}; Sen'jin's people had survived too much for me to spend the rest of my life hiding.
+- I began {at}, hoping to bring Vol'jin something better than another tale of what we had lost.
+- I set out {at}, with respect for the loa and no expectation that they would do my walking for me.

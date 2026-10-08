@@ -1,6 +1,6 @@
 ---
 kind: summit
 ---
-- I reached level {level} and closed the journal, with my place in the world rather clearer than when I had opened it.
-- At level {level}, I set these pages aside. I wanted to read how far I had come before choosing where I would go next.
-- Level {level} was the last mark in this account, and I took a quiet pleasure in the life I had made along the road.
+- I reached level {level}, with the Darkspear's scattered shores no longer the only places that meant home to me.
+- At level {level}, I had more to bring my people than a tale of surviving what came after us.
+- I reached level {level}, and hoped Sen'jin's people would find something to smile over in the life I had made.

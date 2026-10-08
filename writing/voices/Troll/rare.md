@@ -1,7 +1,7 @@
 ---
 kind: rare
 ---
-- I brought down {foe} {at}, a name that would keep its edge when I thought about the day.
-- {foe} fell to me {at}. I was glad of that ending, without needing to make the foe any larger in the telling.
-- I got the better of {foe} {at}, and was content to leave the next encounter to another day.
-- I killed {foe} {at}, with relief enough that I did not have to work at feeling pleased.
+- I brought down {foe} {at}, and hoped the loa would find somebody else's courage interesting for a while.
+- {foe} fell to me {at}. The Darkspear could still surprise the world, though I was grateful not to be the surprise this time.
+- I overcame {foe} {at}, with my heart too busy celebrating to leave much room for pride.
+- I killed {foe} {at}, and found the thought of a familiar shore suddenly very sweet.

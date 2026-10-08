@@ -1,18 +1,18 @@
 ---
 kind: r-task
 ---
-- my legs feeling it afterwards
-- small work, quickly done
-- my own way, which worked
-- without much fuss and without much thanks
-- a good turn to remember
-- [explore] the land showing me its tricks one by one
-- [explore] learning the paths the way the hunters do
-- [escort] my eyes on the road for both of us
-- [night] the dark no stranger to me
-- curious what might come of the request
-- less eager to volunteer for another just then
-- [explore] looking for the turns I might need again in a hurry
-- [explore] watching where the way narrowed as I went
-- [escort] keeping them in sight while I looked ahead
-- [night] with the dark asking for more of my attention
+- my long legs no promise that the work would be short
+- ready to admire somebody else's legs at work
+- my patience more useful than a hunter's quickness
+- no need to invent trouble when a small favour could supply it
+- wishing the next voice would ask less of my feet
+- [explore] wondering what a hunter would notice beyond the path
+- [explore] my caution keeping pace with my stride
+- [escort] unwilling to lead another life where my luck would not reach
+- [night] more attentive than I felt obliged to be in daylight
+- hoping the loa would leave the next small favour to someone else
+- less eager to volunteer my legs for another journey
+- [explore] wondering how easily the way could hide a traveller
+- [explore] my feet no reason to let my vigilance hurry
+- [escort] rather more worried for another life than my grin suggested
+- [night] my eyes doing a poor imitation of a jungle cat's

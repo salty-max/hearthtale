@@ -1,6 +1,6 @@
 ---
 kind: zone
 ---
-- I entered {zone}, interested in the new ground and careful about letting that interest lead me.
-- I reached {zone}, with a little of my attention already looking for the way back.
-- I came into {zone}, curious what would look different once I knew the place better.
+- I entered {zone}, hoping a Darkspear's name would travel better than the rumours that usually preceded it.
+- I reached {zone}, with one part of me seeking a welcome and another seeking the way back.
+- I came into {zone}, wondering what good the tribe might find in the road ahead.
