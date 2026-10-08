@@ -2,11 +2,11 @@
 kind: rest
 ---
 - I rested {at}, longing for the hush beside a moonwell without wanting to travel another step to find it.
-- As ready for stillness as a Sentinel at the end of a watch, I settled {at}.
+- I settled {at}, with the relief of a Sentinel at the end of a watch.
 - I paused {at}, and let my mortal strength return at its own pace.
 - I rested {at}, with Elune's name no longer pressed into the shape of a plea.
-- I stopped {at}, wishing the path home could be as short as the wish to be on it.
+- I stopped {at}, and let the thought of home soften the day's unease.
 - I rested {at}, missing the forests with a tenderness I rarely allowed while moving.
-- I paused {at}, willing to let the world go unwatched by me for a little while.
+- I paused {at}, leaving the world to somebody else's vigilance for a little while.
 - As far from a moonwell as I felt, I rested {at}, finding a little of its peace in being still.
 - I rested {at}, with the patience of my people finally serving my own tired body.

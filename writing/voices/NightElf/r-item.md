@@ -6,8 +6,8 @@ kind: r-item
 - my fingers gentler now they had something to carry
 - [!one !plural] each piece another burden for a mortal body's strength
 - [!one !plural] each find another reason to miss the ease of the forest
-- [one !plural] the distance weighing more heavily on me than the find
-- [one !plural] my hands less weary of it than my feet
+- [one !plural] the length of the search taking its toll on my patience
+- [one !plural] the find bringing a little satisfaction to a weary search
 - [meat] with a hunter's reluctance to waste what had died
 - [cloth] softer stuff than most of the road's business
-- [night] my eyes more at ease with the dark than my hands with the search
+- [night] the dark familiar without making the search easy

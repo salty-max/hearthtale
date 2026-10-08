@@ -1,13 +1,13 @@
 ---
 kind: r-task
 ---
-- my patience more willing than my feet
-- less eager for another favour than I would have been rested
-- rather ready for the quiet of a moonwell
+- another claim upon a kaldorei's patience
+- the request outlasting my taste for useful activity
+- the peace of a moonwell pleasantly in mind
 - a mortal body's weariness making itself felt
 - my reserve no protection against being asked again
 - rather more inclined to stay beneath Teldrassil next time
 - [explore] a Sentinel's caution worth keeping on an unfamiliar path
 - [explore] wary of what even a Sentinel might miss
 - [escort] unwilling to surrender another life to the path
-- [night] my eyes more patient with the dark than the work deserved
+- [night] the dark testing the patience of my search

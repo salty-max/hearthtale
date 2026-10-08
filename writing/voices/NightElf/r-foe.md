@@ -9,7 +9,7 @@ kind: r-foe
 - [!one] their numbers a poor match for the peace I had hoped to keep
 - [teeth] those teeth worth a Sentinel's vigilance
 - [mechanical] no living spirit for me to mourn in that mechanism
-- [night] more watchful than restful beneath the night
+- [night] the night holding no rest for my vigilance
 - [hc] unwilling to waste the mortal years left to me
 - [low] my fear quicker than a Sentinel's poise
 - [high] my patience steadier than my heart
