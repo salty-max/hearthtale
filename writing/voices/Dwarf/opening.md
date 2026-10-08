@@ -1,12 +1,12 @@
 ---
 kind: opening
 ---
-- I took up the road {at}, with my pack settled and no use in standing about.
-- I began again {at}, ready to find whether the next stretch was as hard as it looked.
-- I opened a fresh page {at}. Best get the work straight before making a tale of it.
-- I set out {at}, with a mind to do the job properly and see something besides the job.
-- I made ready {at}, giving my gear the sort of look that saves trouble later.
-- I went on {at}, where a little patience would serve me better than a great deal of grumbling.
-- Curious about the ground beneath the road as well as where it led, I began this stretch {at}.
-- I was ready to move {at}. The road was not going to shorten itself out of consideration.
-- I took up the road {at}, hoping for something worth bringing back to my kin.
+- I took up the road {at}, a long way from the Great Forge's welcome din.
+- I began again {at}, feeling sturdy enough to make the road earn my complaints.
+- I set out {at}, with more of the world to see than the inside of a mountain.
+- I made ready {at}, hoping for ground worth the Explorers' League's attention.
+- I went on {at}, as stubborn about leaving a job half done as any dwarf of Ironforge.
+- I began this stretch {at}, willing to spend some strength before wishing for an ale.
+- The stone beneath a road could have a longer history than the road itself, and I set out {at} to see what I could.
+- I was ready to move {at}, with my feet in better spirits than a dwarf ought to expect.
+- I took up the road {at}, still hoping to bring the mountain more than another missing name.

@@ -1,11 +1,11 @@
 ---
 kind: r-first
 ---
-- tougher than they looked
-- a fact for the ledger, if a sore one
-- worth knowing, the way bad ice is worth knowing
-- slower to fall than I would have liked
-- the kind of thing you remember by the bruise
-- [teeth] with fresh respect for what was in their mouths
-- [night] in bad light, which never helps an introduction
-- [low] a lesson my elders had somehow left out
+- my dwarven hide feeling less thick than I liked
+- my stomach as unsettled as loose scree
+- rather too near the soft parts beneath my stubbornness
+- less tempted to mistake solid footing for safety
+- my beard feeling like an unfortunate handhold
+- [teeth] those teeth giving me a new affection for distance
+- [night] my eyes no keener than anyone else's in that dark
+- [low] rather wishing the lesson had been delivered back in Ironforge

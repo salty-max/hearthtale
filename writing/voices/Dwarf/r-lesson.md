@@ -1,14 +1,14 @@
 ---
 kind: r-lesson
 ---
-- my hands slower than my pride
-- the sort of skill that comes with calluses
-- with a fair bit of the lesson to keep straight
-- [one] keen to try it somewhere with more at stake
-- my arms complaining by the end of the practice
-- the motions stubborn as a new hinge
-- [new] starting at the bottom, as every apprentice does
-- [new] hoping for a little of my kin's old knack
-- [low] still a long way from a master's bench
-- [high] old lessons making room for one more
-- [!one] keen to try them somewhere with more at stake
+- my fingers less obedient than a familiar tool
+- with the slow ache of an apprentice's pride
+- less comfortable as a learner than as a dwarf who knew his business
+- [one] keen to have it ready when the danger came
+- my patience taking as much exercise as my hands
+- stubborn about learning what would not come easily
+- [new] an apprentice again, with no masterwork to hide behind
+- [new] hoping the mountain had sent me out with some knack to spare
+- [low] still far from anything I would call mastery
+- [high] another skill to bring back under the mountain
+- [!one] hoping these would serve better than a confident boast

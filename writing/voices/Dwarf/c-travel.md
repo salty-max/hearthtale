@@ -1,4 +1,4 @@
 ---
 kind: c-travel
 ---
-- tramped on to {place}
+- took the road on to {place}

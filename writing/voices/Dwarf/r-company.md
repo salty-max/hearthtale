@@ -1,11 +1,11 @@
 ---
 kind: r-company
 ---
-- with less cause to mutter to myself
-- [one] a sturdy pair of hands to have at my back
-- glad of someone else to watch the ridges
-- the walk shorter in company
-- decent company, whatever their clan
-- [one] easier work for two pairs of hands
-- [night one] two pairs of eyes better than one in the dark
-- [hc one] watching each other's backs as we went
+- less inclined to grumble within hearing of myself
+- [one] a companion worth having on the far side of the mountain
+- my back feeling less exposed than a quarry face
+- less of the distance left to my own stubbornness
+- almost as heartening as a name from Ironforge
+- [one] two of us to hold the ground
+- [night one] a second pair of eyes welcome after dark
+- [hc one] more determined to see us both back alive

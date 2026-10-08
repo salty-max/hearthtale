@@ -1,7 +1,7 @@
 ---
 kind: beginning
 ---
-- I opened my journal {at}, meaning to bring home a sound tale as well as sound boots.
-- I began {at}, where there was work to be done and a fair bit beyond it worth looking into.
-- I set out {at} with my kin in mind. A name was worth keeping only if the work behind it stood up.
-- I put my first words down {at}, curious to see what the world had buried besides trouble.
+- I began {at}, with Ironforge behind my name and the wish to bring something worthy of it home.
+- I set out {at}, hoping for a little of the wider world the Explorers' League was always digging up.
+- I set out {at}, a dwarf of the mountain with a good deal of country still to put under my boots.
+- I began {at}, wondering whether the road would take me nearer the old secrets beneath the stone.
