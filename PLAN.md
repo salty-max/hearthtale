@@ -4,7 +4,7 @@ A World of Warcraft addon: the character's own journal, written as it plays,
 in the first person, one chapter from rest to rest. On Hardcore, a death closes the
 book with an epitaph, and the life joins the Hall of the Fallen.
 
-Games: Classic Era (Hardcore, Season of Discovery), TBC Anniversary, World of
+Games: Classic Era (Hardcore, Season of Discovery), World of
 Warcraft: Forever. One source, one package per game, as Lorekeeper's Codex and
 Explorer's Field Journal (same release, CI and CurseForge tooling).
 
@@ -38,7 +38,7 @@ site).
 | Question | Decision |
 |---|---|
 | Home | A site of its own at hearthtale.app, in this repo (a monorepo, as WoWLocker: addon/, apps/api, apps/web, packages/shared). Vercel Pro (team jellycat, project hearthtale, functions in fra1) + **Neon** through the Vercel integration (free plan, Frankfurt; chosen over Supabase by the user: with no poller, its scale-to-zero suits a site that only wakes for uploads and readers). |
-| Accounts | Battle.net sign-in: the characters the Battle.net API knows (Classic Era, Hardcore, SoD, TBC Anniversary) are found and attached on their own. A code typed in the game (`/ht link CODE`) attaches any other (Forever has no Battle.net namespace). |
+| Accounts | Battle.net sign-in: the characters the Battle.net API knows (Classic Era, Hardcore, SoD) are found and attached on their own. A code typed in the game (`/ht link CODE`) attaches any other (Forever has no Battle.net namespace). |
 | Upload | **Ravenpost**, one companion for WoWLocker and Hearthtale: its own repo (salty-max/ravenpost), moved out of wow-locker and renamed; each site linked separately from its settings page (its own sign-in, its own upload key). |
 | Prose | Links follow recorded changes: arrival, time passing, nightfall, the aftermath of a close call. No arbitrary "then" between errands, no "Place: text" headings, and no health percentages in the narrative. Emotion and interpretation belong to the protagonist; specific actions and outcomes come from the record. A quip (an [aside]) is at most once a paragraph, except for moments that matter. |
 | Sharing | Private by default; a share link per book, chapter or epitaph, with a preview card for Discord and Reddit. Fallen Hardcore books may be offered to a public Hall. |

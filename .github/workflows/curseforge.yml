@@ -1,5 +1,5 @@
 # Uploads a release's two packages to CurseForge: Hearthtale-classic.zip
-# (Classic Era, TBC Anniversary) and Hearthtale-forever.zip (Forever),
+# (Classic Era) and Hearthtale-forever.zip (Forever),
 # each filed under its game versions (from its TOC). Called by release.yml;
 # run it by hand to upload an existing release (Actions → CurseForge → Run
 # workflow, with its tag).

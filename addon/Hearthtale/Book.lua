@@ -77,7 +77,7 @@ local function card(parent)
 end
 
 -- Classic's panels: the game's inset, darkened a little for the text; behind
--- the list, the quest log's dark book (TBC's two-pane log, where the game has it).
+-- the list, the quest log's dark book (its two-pane art, where the game has it).
 local function inset(parent, book)
   local ok, f = pcall(CreateFrame, "Frame", nil, parent, "InsetFrameTemplate")
   if not (ok and f) then f = CreateFrame("Frame", nil, parent) end

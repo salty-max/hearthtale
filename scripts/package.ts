@@ -1,6 +1,6 @@
 /**
  * Builds one package per game from addon/Hearthtale:
- *   dist/classic/Hearthtale  + dist/Hearthtale-classic.zip   Classic Era, TBC Anniversary
+ *   dist/classic/Hearthtale  + dist/Hearthtale-classic.zip   Classic Era (Hardcore, Season of Discovery)
  *   dist/forever/Hearthtale  + dist/Hearthtale-forever.zip   World of Warcraft: Forever
  * Each gets the shared code, its game's data file as Data.lua, and a TOC
  * claiming its game's interface versions. The source folder is not itself an
@@ -17,7 +17,7 @@ const ROOT = join(import.meta.dir, "..");
 const SRC = join(ROOT, "addon/Hearthtale");
 const DIST = join(ROOT, "dist");
 const GAMES = [
-  { name: "classic", content: "Data_Classic.lua", interface: "11509, 20506" },
+  { name: "classic", content: "Data_Classic.lua", interface: "11509" },
   { name: "forever", content: "Data_Forever.lua", interface: "16001" },
 ];
 
