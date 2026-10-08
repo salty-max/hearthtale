@@ -1,13 +1,13 @@
 ---
 kind: r-inn
 ---
-- as welcome to my legs as a road that shortened itself
+- a fine arrangement for a Darkspear to return by
 - a return I hoped would feel like a familiar camp
-- my feet grateful to have some distance taken off their hands
-- [night] quite willing to leave the night to its own devices
+- an easy journey back arranged without a guide
+- [night] the night welcome to its own entertainment on my return
 - [hc] doubtful that the loa would find my safe return entertaining
-- one less long walk for my feet to complain over
-- shelter no longer dependent on a troll's long stride
-- more fond of enchantment when my legs could benefit
-- eager for a return that spared my feet another adventure
+- a useful safeguard against a weary homecoming
+- a hunter with a refuge fixed in mind
+- an enchantment whose practical uses delighted me
+- a journey back with no need for a hunter's watchfulness
 - [night] my eyes spared the trouble of finding the whole way back

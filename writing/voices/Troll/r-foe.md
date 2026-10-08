@@ -3,7 +3,7 @@ kind: r-foe
 ---
 - [one] not an acquaintance I wanted to renew
 - my heart keeping a quicker rhythm than I cared to dance to
-- almost ready to ask the loa for less attention
+- a Darkspear in no further need of the loa's attention
 - [!more] too fond of my hide to become a hunter's warning tale
 - my grin slower to return than my breath
 - [one] an enemy I would not want following me to the islands
@@ -14,11 +14,11 @@ kind: r-foe
 - [hc] remembering how few of us the Darkspear could spare
 - [low] still too eager to look fearless for my own comfort
 - [high] less quick to let excitement lead my hands
-- more relieved than any grin could conveniently show
+- my relief quite beyond the uses of a grin
 - my breath reluctant to adopt a quieter rhythm
-- rather short of the cleverness I would have claimed beforehand
+- the encounter shaking some cleverness out of me
 - my smile returning without much help from pride
 - [one] an opponent I hoped the loa would not send twice
 - [teeth] those jaws worth keeping at a hunter's distance
 - [hc] too fond of the tribe to leave another empty place
-- [low !more] my courage less certain than my long stride
+- [low !more] a beginner's courage receiving an unwelcome exercise

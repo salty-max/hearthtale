@@ -1,18 +1,18 @@
 ---
 kind: r-task
 ---
-- my long legs no promise that the work would be short
-- ready to admire somebody else's legs at work
-- my patience more useful than a hunter's quickness
-- no need to invent trouble when a small favour could supply it
-- wishing the next voice would ask less of my feet
+- a Darkspear thoroughly occupied by an ordinary favour
+- an ordinary request I could cheerfully have left to another troll
+- a hunter's patience put to an unglamorous use
+- a favour supplying all the trouble a Darkspear needed
+- my generosity due for a quiet spell
 - [explore] wondering what a hunter would notice beyond the path
-- [explore] my caution keeping pace with my stride
+- [explore] a hunter's caution given fresh country to examine
 - [escort] unwilling to lead another life where my luck would not reach
-- [night] more attentive than I felt obliged to be in daylight
-- hoping the loa would leave the next small favour to someone else
-- less eager to volunteer my legs for another journey
+- [night] the dark keeping my vigilance usefully occupied
+- the loa free to recommend another obliging troll next time
+- a troll with no appetite for another voluntary errand
 - [explore] wondering how easily the way could hide a traveller
-- [explore] my feet no reason to let my vigilance hurry
-- [escort] rather more worried for another life than my grin suggested
+- [explore] a hunter with no intention of hurrying past a danger
+- [escort] another life making the task suddenly serious
 - [night] my eyes doing a poor imitation of a jungle cat's

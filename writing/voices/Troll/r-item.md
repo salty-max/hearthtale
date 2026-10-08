@@ -1,24 +1,24 @@
 ---
 kind: r-item
 ---
-- my long stride no shortcut past the searching
-- hoping someone would want the burden more than I did
+- a hunter's patience put to an ordinary use
+- a burden with a destination I would be happy to reach
 - longing for a hunt that brought back something easier to carry
 - [!one !plural] able to count each piece without asking the loa for help
-- [!one !plural] my back feeling each find more keenly than my pride
-- [one !plural] wondering how so much walking could end in so small a thing
+- [!one !plural] each find adding its own inconvenience to the carrying
+- [one !plural] the search quite out of proportion to the prize
 - [one !plural] rather eager to let it become someone else's treasure
 - [meat] my appetite keener on cooking than on carrying
-- [cloth] softer company than most of the road's troubles
+- [cloth] the promise of a comfortable shirt sufficient to interest me
 - [night] my eyes taking their time where a hunter ought to
 - [hc] careful not to become somebody else's catch while searching
-- less interested in finding than in finally handing over
-- my long toes wanting no further part in a small favour
+- the thought of handing over the burden distinctly attractive
+- a favour whose demands had outgrown the offer
 - [!one !plural] my fingers accounting for each piece with a hunter's care
 - [!one !plural] counting them before promising my back any more work
 - [one !plural] eager to let someone else call it a prize
-- [one !plural] my legs rather less taken with it than the person who had asked
-- [meat] my stomach finding more promise in this than in another errand
+- [one !plural] a find whose usefulness I could leave to someone else
+- [meat] a promising interruption to an ordinary errand
 - [cloth] wondering how readily a camp could put the cloth to use
 - [night] my ears keeping watch while my eyes searched
 - [hc] reluctant to become prey while I was busy collecting

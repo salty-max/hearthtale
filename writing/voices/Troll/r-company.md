@@ -2,14 +2,14 @@
 kind: r-company
 ---
 - nearer to the warmth of a Darkspear camp
-- more at ease than a hunter could be alone
-- my shoulders more at ease with someone beside me
+- a hunter with company to ease the vigilance
+- some welcome company for a Darkspear on the road
 - better than keeping only the loa entertained
 - [one] another life worth keeping safe in the hunt
 - [night] less alone beneath the hours a hunter watched most carefully
 - [hc] unwilling to lose someone the tribe might have welcomed
-- more willing to venture beyond a familiar shore
-- my ears relieved of watching the whole road
+- a familiar shore no longer my only comfort
+- some room for a grin in a hunter's vigilance
 - less liable to hear danger in every quiet stretch
 - [night] the night less hungry with company beside me
 - [hc] my trust no longer doing all the dangerous work

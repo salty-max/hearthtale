@@ -1,21 +1,21 @@
 ---
 kind: r-road
 ---
-- my feet measuring the way without asking permission
+- a hunter's interest occupied by the country
 - [!back] wondering what welcome a Darkspear could expect
 - [!back] my ears keeping a hunter's watch
 - [!back] less eager to hurry past what could become trouble
-- [!back] more at ease with the sea than with most roads
+- [!back] the sea's familiar rhythm still dear to me
 - [!back night] at an hour that made a hunter's care worth keeping
-- [back] my stride easier once the way began to feel familiar
-- [back] less a stranger to the country than on my first coming
-- [back] hoping the same names would still mean company
-- my ears doing more work than my feet admitted
+- [back] the familiar way letting my vigilance ease
+- [back] the country beginning to feel like a place I knew
+- [back] the names I knew bringing company to mind
+- a hunter's ears kept busy by unfamiliar surroundings
 - wondering what the loa found entertaining beyond the next turn
 - [!back] rather keen to know the way back before I needed it
 - [!back] my caution quicker than my willingness to feel at home
-- [!back] hoping for something the tribe would enjoy hearing about
+- [!back] the sort of country a Darkspear could enjoy describing
 - [!back night] my eyes asking the darkness to keep fewer secrets
-- [back] my feet remembering what had once made me hesitate
-- [back] less sure of the welcome than of the way
+- [back] a familiar journey losing its old unease
+- [back] a known way without an assured welcome
 - [high] my longing for a familiar Darkspear camp stronger than my wanderlust
