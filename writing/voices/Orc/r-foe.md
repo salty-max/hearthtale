@@ -1,15 +1,17 @@
 ---
 kind: r-foe
 ---
-- my breath hard by the end
-- my blood up longer than the fight deserved
-- my arms heavy afterwards
-- over in a few hard blows
-- [one] a worthy enough foe in its way
-- [!one] each one met head on
-- [teeth] fast, but not fast enough
-- [mechanical] all gears and no sense of when to stop
-- [night] fighting by sound as much as by sight
-- [hc] remembering that pride had buried better orcs than me
-- [low] my strength still running ahead of my judgement
-- [high] with the calm that comes of many such fights
+- my breath harder than I wanted it to be
+- my blood slow to quiet after the danger
+- my arms heavy enough to make me envy a rested orc
+- rather ready for something gentler than another struggle
+- [one] not an enemy I had any wish to meet twice
+- [!one] their numbers more trying than their courage
+- [teeth] those jaws too close to the soft parts of me
+- [mechanical] rather less respectful of strength that somebody had wound up
+- [night] my ears working where my eyes could not
+- [hc] loath to rob the Horde of a life it could still use
+- [low] my courage less seasoned than my pride
+- [high] my anger less eager to outrun my hands
+- [demon] my people's old chains close enough to make the fight bitter
+- [demon] less willing to fear the masters our people had cast off

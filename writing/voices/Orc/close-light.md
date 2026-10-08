@@ -1,8 +1,8 @@
 ---
 kind: close-light
 ---
-- {foe} nearly ended me {at}. Pride had asked more of my strength than sense would have allowed.
-- I survived {foe} {at}, but could find no honour in calling a mistake courage.
-- {foe} brought me close to the end {at}. I had work left to do, and no use for a glorious excuse for abandoning it.
-- [!foe] I nearly fell {at}. Being free to choose a risk did not make the choice wise.
-- [!foe] I came through a close call {at}, with less certainty about myself and more attention to what I was doing.
+- {foe} nearly ended me {at}; I felt how little flesh lay beneath an orc's reputation.
+- I survived {foe} {at}, with my blood running hot long after I had any use for rage.
+- {foe} brought me close to death {at}, and I wanted to hear Orgrimmar's drums without having to march to them.
+- [!foe] I nearly fell {at}, with the ancestors nearer than I had any wish to bring them.
+- [!foe] I came through a close call {at}, my heart pounding harder than a war drum.

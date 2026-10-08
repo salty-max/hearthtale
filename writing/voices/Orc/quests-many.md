@@ -1,9 +1,9 @@
 ---
 kind: quests-many
 ---
-- {n} tasks had been seen through, each an answer more useful than a promise.
-- The {n} tasks behind me had given my strength a purpose beyond myself.
-- I had seen {n} jobs through, and could face the people who had needed them without an excuse.
-- By the end, {n} tasks were done. A place among others was built through such work, not granted by a name.
-- I counted {n} completed tasks, glad to have given something to the life we were building.
-- I had brought {n} errands to an end, with deeds enough to judge this stretch honestly.
+- I had completed {n} tasks, with less left for the living hands trying to hold the Horde together.
+- The {n} tasks behind me had made a new home seem something an ordinary orc could help build.
+- I had seen {n} jobs through, enough to feel useful without needing another fight.
+- By the end, {n} tasks were done, and I wanted Orgrimmar's shelter as much as anyone I had helped.
+- I counted {n} completed tasks, a better use for a free life than waiting to be ordered forward.
+- I had brought {n} errands to an end, with my legs more tired than the part of me that wanted to be needed.

@@ -1,8 +1,8 @@
 ---
 kind: campfire
 ---
-- I stopped by a fire {at}, with time to consider the work behind me.
-- I rested beside a fire {at}, glad to have the warmth while I could.
-- I sat by the fire {at} and found the quiet easier to welcome than I had expected.
-- Letting the road wait for a while, I held my hands toward the fire {at}.
-- [night] I rested beside a fire {at}, where the darkness made its warmth more welcome.
+- I sat beside a fire {at}, with the heat against my hands gentler than the heat of battle.
+- I rested by a fire {at}, wishing for the easy company of a Horde camp without its need for vigilance.
+- I stopped beside the fire {at}; I could almost forget how far I was from Durotar.
+- I held my hands towards a fire {at}, grateful to ask nothing of the flame but warmth.
+- [night] I rested beside a fire {at}, with the darkness beyond it recalling the long watches a new homeland needed.

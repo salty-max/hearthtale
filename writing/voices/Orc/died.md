@@ -1,12 +1,12 @@
 ---
 kind: died
 ---
-- [foe] {foe} killed me {at}, leaving me a defeat to understand before I could think of making it right.
-- [foe] I fell to {foe} {at}, and came back with less faith in what strength alone could promise.
-- [fall] I fell to my death {at}, with nothing honourable in the mistake and nothing to gain by pretending otherwise.
-- [drowning] I drowned {at}, where determination had been no substitute for air.
-- I died {at}, and returned with work still waiting that I was no longer willing to take lightly.
-- [lava] Fire killed me {at}, and pride offered no protection from what I had failed to heed.
-- [nature] I died {at}, struck down by the world itself rather than an enemy I could meet in a fight.
-- [foe] {foe} killed me {at}, and the memory would have to teach me something if I meant to go on.
-- I died {at} and came back, with another chance to make use of what the defeat had cost me.
+- [foe] {foe} killed me {at}, and I had no comfort in the thought of being brave about it.
+- [foe] I fell to {foe} {at}, with Durotar suddenly much too far from where I lay.
+- [fall] I fell to my death {at}; my strength had been of no use between the height and the ground.
+- [drowning] I drowned {at}, wanting a breath more fiercely than I had ever wanted a victory.
+- I died {at}, with the new homeland still needing living hands more than another remembered name.
+- [lava] Fire killed me {at}; I had no strength to demand mercy from the flame.
+- [nature] I died {at}, with no enemy to face and no comfort in being an orc who would face one.
+- [foe] {foe} killed me {at}, and I feared leaving the ancestors nothing but another short life to weigh.
+- I died {at}, still hungry for the life our people had won beyond the camps.

@@ -1,11 +1,11 @@
 ---
 kind: r-gear
 ---
-- [!made] strong enough for the work ahead
-- [!made] sound kit, and heavy where it counted
-- [!made] one weakness fewer for an enemy to find
-- [!made] eager to see how the new kit would serve
-- [!made hc] protection I meant to rely on
-- [made] every part of it something I could answer for
-- [made] work I could answer for
-- [made] rough, but mine
+- [!made] my hide less entirely responsible for keeping me alive
+- [!made] hoping the weight would earn its place
+- [!made] one less temptation to trust entirely in stubbornness
+- [!made] something more substantial than the promise of an easy fight
+- [!made hc] unwilling to meet the ancestors merely to save a little weight
+- [made] my fingers fit for something besides a fight
+- [made] almost as satisfying as the end of a hard fight
+- [made] no appetite for boasting before the result had endured

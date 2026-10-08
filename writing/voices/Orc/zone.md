@@ -1,7 +1,7 @@
 ---
 kind: zone
 ---
-- I crossed into {zone}, where my purpose would have to meet the country as it was.
-- I entered {zone}, ready to judge what lay ahead by more than its reputation.
-- I came to {zone}, with no wish to mistake unfamiliar ground for enemy ground.
-- I reached {zone}, where deeds would matter more than the name I carried.
+- I crossed into {zone}, hoping to find more than another reason to prove an orc's strength.
+- I entered {zone}, with the Horde behind my name and no wish to make the name a threat.
+- I came to {zone}, wondering what welcome a child of Durotar would find.
+- I reached {zone}, with home still dear enough to make every unfamiliar mile matter.

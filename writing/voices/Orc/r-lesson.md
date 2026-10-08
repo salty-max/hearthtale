@@ -1,14 +1,14 @@
 ---
 kind: r-lesson
 ---
-- strength given a better shape
-- something to show for the evening
-- [one] the new move sitting right in my hands by the end
-- [one] slow to come to my hands at first
-- [one] eager to test it where it counted
-- sweat on my brow by the end
-- [new one] curious what my hands could make of it
-- [new] starting from the very first step
-- [low one] one more thing to earn before I could claim it
-- [high] the lesson sharper for all the fights behind me
-- [!one] eager to test them in a real fight
+- my strength no shortcut past clumsy fingers
+- less at ease learning than I was offering to help
+- [one] a better hope than trusting courage to serve for skill
+- [one] no longer willing to mistake my eagerness for mastery
+- [one] wondering how well it would serve beyond a safe lesson
+- my patience taking more effort than my arms
+- [new one] hoping it might make me useful away from a battlefield
+- [new] an apprentice's pride harder to swallow than a defeat
+- [low one] still new enough to this to wish for easier learning
+- [high] my skill beginning to catch up with my blood
+- [!one] more ready to use them than to rely on a brave face

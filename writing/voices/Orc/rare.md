@@ -1,7 +1,7 @@
 ---
 kind: rare
 ---
-- I brought down {foe} {at}. That deed would stand without being made larger in the telling.
-- {foe} fell to me {at}, a test I was glad to have met rather than merely imagined.
-- I killed {foe} {at}, knowing that a name worth remembering was not a reason to forget the care the fight had needed.
-- I faced {foe} {at} and prevailed. I meant to carry the lesson as faithfully as the victory.
+- I brought down {foe} {at}, with a fierce relief that had little to do with honour.
+- {foe} fell to me {at}, and I wished the ancestors could see how glad I was to remain among the living.
+- I killed {foe} {at}, with my blood still hot enough to make the quiet difficult.
+- I overcame {foe} {at}, and wanted a safe return to the Horde more than a boast about the name.

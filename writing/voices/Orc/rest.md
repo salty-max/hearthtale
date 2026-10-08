@@ -1,12 +1,12 @@
 ---
 kind: rest
 ---
-- I rested {at}, where I could put down the burden without putting aside the purpose.
-- I settled {at}, glad to have work behind me that needed no excuse.
-- I stopped {at}. Strength needed care if it was to be of use again.
-- Letting the day's demands leave me before I judged the work, I rested {at}.
-- I paused {at}, with no honour lost in admitting that I was ready to stop.
-- I rested {at}, where the next deed could wait until I could give it my full strength.
-- I stopped {at}, content to have done what I could rather than promised what I could not.
-- I rested {at}, with the work finished for now and its lessons still mine to keep.
-- Grateful for a pause I did not have to win by force, I put the road aside {at}.
+- I rested {at}, with my blood finally quiet enough to enjoy being still.
+- I settled {at}, wishing the peace of a shared camp were as near as my weariness.
+- I stopped {at}, with more affection for a builder's life than another battle could give me.
+- As ready for stillness as an orc after a long watch, I rested {at}.
+- I paused {at}, grateful that no order could make me stand before I was willing.
+- I rested {at}, letting my strength return without demanding another proof of it.
+- I stopped {at}, missing the drums of home without wanting them to summon me anywhere.
+- I rested {at}, hoping the ancestors would find nothing shameful in so much relief.
+- Ready to be flesh rather than the Horde's reputation for toughness, I paused {at}.

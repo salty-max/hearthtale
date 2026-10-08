@@ -1,4 +1,4 @@
 ---
 kind: c-travel
 ---
-- marched to {place}
+- made my way to {place}
