@@ -2,20 +2,20 @@
 kind: r-lesson
 ---
 - another knack the loa would not have to supply
-- my grin rather quicker than my fingers
-- rather more patience required than a hunter's tale might suggest
+- my grin concealing a beginner's awkwardness
+- a lesson fit to try a hunter's patience
 - [one] eager to have it ready before danger chose the hour
 - [one] wondering how it would serve beyond a safe lesson
-- [one] my confidence in it rather better displayed than felt
+- [one] a confident manner hiding the difficulty
 - [new] a craft the Darkspear might have good use for
 - [new] an apprentice's place no disgrace to a survivor
 - [low] new enough to this to wish for a gentler teacher than danger
-- [high] less green than the eager troll who first offered to learn
+- [high] a troll beginning to find a familiar ease in the knack
 - [!one] eager to have them ready before trouble chose the hour
 - my pride having to wait for my fingers
 - rather taken with a knack no exile could strip away
 - my patience harder to summon than my enthusiasm
 - [new] wondering what welcome the trade could earn beyond the islands
-- [new] more willing to be clumsy now than helpless later
+- [new] a beginner's clumsiness accepted for the sake of surviving
 - [low] still learning how slowly a quick pair of hands could begin
 - [high] a veteran of enough surprises to value another knack

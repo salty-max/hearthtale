@@ -3,10 +3,10 @@ kind: rest
 ---
 - I rested {at}, leaving the loa to find their amusement without another performance from me.
 - I settled {at}, no more inclined to hurry than a hunter returning to camp.
-- I paused {at}, wishing the sea were near enough to hear without another step.
+- I paused {at}, with the sound of the sea almost present in the quiet.
 - I rested {at}, with enough room inside the weariness for a grin again.
-- I stopped {at}, ready for an evening that asked no more of a troll than sitting still.
-- As ready for quiet as a Darkspear after a long hunt, I rested {at}.
+- I stopped {at}, enjoying an evening whose only demand was sitting still.
+- I rested {at}, with a Darkspear's contentment at the end of a long hunt.
 - I paused {at}, with the tribe's familiar warmth dearer than any chance to be impressive.
-- I rested {at}, quite content to let my feet have their well-earned idleness.
-- Ready to let my patience serve my own body for once, I rested {at}.
+- I rested {at}, letting my curiosity look after itself without finding it another occupation.
+- I rested {at}, with no useful task left for my patience except doing nothing.

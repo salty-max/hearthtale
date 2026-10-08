@@ -1,19 +1,19 @@
 ---
 kind: r-first
 ---
-- trouble unfamiliar enough to keep my feet honest
-- rather less sure than a hunter ought to look
+- a new acquaintance for a hunter's caution
+- my assured manner covering a troll's honest unease
 - my heart faster than a village drum
 - too fond of my hide to ask for a closer introduction
 - not asking the loa to make the introduction warmer
-- [teeth] those teeth deserving more than a brave grin
+- [teeth] those teeth quite sufficient to discourage a brave grin
 - [night] my ears looking for what my eyes could not find
 - [low] new enough to this to wish for an older hunter's ease
 - another reason to keep both eyes on the road
 - much keener on survival than acquaintance
 - quite unwilling to test trouble's kindness to strangers
 - my courage keeping a discreet distance
-- hoping the loa would find the next introduction less amusing
-- [teeth] my fingers worth more to me than a closer look
+- a Darkspear trying to see what the loa might find amusing
+- [teeth] my fingers in no need of an intimate introduction
 - [night] my eyesight a poor substitute for knowing what the dark held
 - [low] still learning what an eager Darkspear could afford to meet

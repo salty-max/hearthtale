@@ -3,14 +3,14 @@ kind: r-gear
 ---
 - [!made] a piece I could bring back to the tribe without shame
 - [!made !held] a fit I hoped would leave a hunter free to move
-- [!made] rather less dependent on my feet being quick
+- [!made] some welcome protection against a hunter's mistake
 - [!made] a burden I hoped would earn its place on my back
-- [made] my fingers useful for more than keeping trouble away
+- [made] my fingers put to a peaceful use
 - [made] as welcome as a hunt that brought everyone home
 - [made] nothing I needed to ask the loa to finish
-- [!made] hoping the road would be a kinder judge than a fight
+- [!made] a piece whose next test I could happily postpone
 - [!made] the old piece losing its charm now I had a choice
 - [!made hc] unwilling to make a final test of Darkspear resilience
 - [made] rather proud of what a little patience could produce
-- [made] less eager to trade the result away than I had expected
+- [made] a Darkspear's pride in the finished piece
 - [made] something the Darkspear could have a use for
