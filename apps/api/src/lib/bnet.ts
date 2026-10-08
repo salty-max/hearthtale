@@ -69,8 +69,8 @@ export async function userInfo(userToken: string): Promise<{ id?: number; battle
   return res.ok ? ((await res.json()) as { id?: number; battletag?: string }) : {};
 }
 
-/** The games whose characters Battle.net can list: Classic Era (Hardcore, SoD), TBC Anniversary. */
-export const FLAVOURS = ["classic1x", "classicann"] as const;
+/** The games whose characters Battle.net can list: Classic Era (Hardcore, SoD). */
+export const FLAVOURS = ["classic1x"] as const;
 export type Flavour = (typeof FLAVOURS)[number];
 
 export type RawAccountProfile = {

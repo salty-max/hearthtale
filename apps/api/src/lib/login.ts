@@ -6,7 +6,7 @@ import { log } from "@/lib/log";
 
 /**
  * "Sign in with Battle.net": the account, its characters in the chosen region
- * (Classic Era and TBC Anniversary: the games Battle.net can list), a session.
+ * (Classic Era: the game Battle.net can list), a session.
  * The access token is used once, right in the callback, then dropped.
  */
 

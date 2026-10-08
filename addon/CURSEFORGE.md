@@ -4,7 +4,7 @@
 
 **Your character's own journal, written as you play.** Every quest, every new foe, every place, every close call, the gear you first wear and the trades you learn are written down as they happen, in your character's own voice, and a chapter closes when you rest: when you log out at an inn, in a city or by a campfire. On Hardcore, a death closes the book with an epitaph, and the life joins the Hall of the Fallen.
 
-For Classic Era (Hardcore, Season of Discovery), TBC Anniversary and World of Warcraft: Forever. A sibling of [Lorekeeper's Codex](https://www.curseforge.com/wow/addons/lorekeepers-codex) and [Explorer's Field Journal](https://github.com/salty-max/field-journal), in the same look, but it stands alone.
+For Classic Era (Hardcore, Season of Discovery) and World of Warcraft: Forever. A sibling of [Lorekeeper's Codex](https://www.curseforge.com/wow/addons/lorekeepers-codex) and [Explorer's Field Journal](https://github.com/salty-max/field-journal), in the same look, but it stands alone.
 
 ## A page of it
 
@@ -46,7 +46,7 @@ When a Hardcore character dies, its book closes: an epitaph telling how it ended
 Your journal, on your phone too: **[hearthtale.app](https://hearthtale.app)** shows each book exactly as the game wrote it. It's optional: the addon works on its own, in game.
 
 1. Install **[Ravenpost](https://github.com/salty-max/ravenpost)**, the free companion app (Windows and macOS, open source; it also serves WoWLocker). Addons can't use the network: Ravenpost sends each character's book a few seconds after you log out or `/reload`.
-2. In Ravenpost, click **Link Hearthtale** and sign in with Battle.net on hearthtale.app: your Classic Era and TBC Anniversary characters are recognised on their own.
+2. In Ravenpost, click **Link Hearthtale** and sign in with Battle.net on hearthtale.app: your Classic Era characters are recognised on their own.
 3. World of Warcraft: Forever characters (or any Battle.net can't find): get a code in the library on hearthtale.app and type `/ht link CODE` in game.
 
 Books are private: only you see them. Ravenpost sends the book and who it belongs to, nothing else; the addon's records stay on your computer. Step by step: [hearthtale.app/start](https://hearthtale.app/start).
@@ -63,7 +63,7 @@ The journal is written in English, for English game clients. On a client in anot
 
 Each game has its own file: pick the one for yours (the CurseForge app does it for you).
 
-- **Classic**: Classic Era, Hardcore, Season of Discovery, TBC Anniversary.
+- **Classic**: Classic Era, Hardcore, Season of Discovery.
 - **Forever**: World of Warcraft: Forever. Forever closes the combat log to addons, so a kill is counted when you target the corpse after fighting it.
 
 ## Settings

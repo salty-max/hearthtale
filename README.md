@@ -6,7 +6,7 @@ whom you fought and met, what you learned and wore, what nearly killed you. A ch
 rest: logging out at an inn, in a city or by a campfire. On a Hardcore realm, a death closes the
 book with an epitaph, and the life joins the Hall of the Fallen.
 
-For Classic Era (Hardcore, Season of Discovery), TBC Anniversary and World of
+For Classic Era (Hardcore, Season of Discovery) and World of
 Warcraft: Forever. A sibling of Lorekeeper's Codex and Explorer's Field Journal.
 
 ## Use
