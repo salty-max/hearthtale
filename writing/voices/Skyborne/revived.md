@@ -1,8 +1,8 @@
 ---
 kind: revived
 ---
-- [client:forever corpse faction:horde] I found my body {at} and returned to life, thankful to feel myself within the world again.
-- [client:forever corpse faction:alliance] I returned to my body {at}, alive once more and in no hurry to test the limits of that good fortune.
-- [client:forever healer] A spirit healer restored me {at}. I was weak, but glad to be able to feel more than the distance from my own life.
-- [client:forever ally] {by} brought me back {at}, and for a while gratitude occupied every thought that fear had left behind.
-- [client:forever self] I returned to life {at} through my own means, relieved that what I had prepared had held when I needed it.
+- [client:forever corpse faction:horde] I found my body as a ghost {at}, thankful our mentors' absence had not become another loss for my people.
+- [client:forever corpse faction:alliance] I returned to my body {at}, with the High Order's future too dear to me to spend my life carelessly.
+- [client:forever healer] A spirit healer restored me {at}; weakness was a small cost beside having weight in the world again.
+- [client:forever ally] {by} brought me back {at}, and the kindness felt dearer than any blessing I might have expected from the sky.
+- [client:forever self] My own preparation returned me to life {at}, with my hands having kept what pride alone could not.

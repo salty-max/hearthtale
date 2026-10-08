@@ -1,7 +1,7 @@
 ---
 kind: beginning
 ---
-- [client:forever faction:horde] I began {at}, with the absence of the wind spirits still a strange silence in our teachings. I wanted to find what had become of them, and what remained for us to learn together.
-- [client:forever faction:alliance] I opened my journal {at}. The High Order had learned how much could vanish with those we depended on; I wanted knowledge we could keep in our own hands.
-- [client:forever] I began {at}, curious how much of what I knew would make sense from down here.
-- [client:forever] I set out {at}, with unfamiliar ground beneath me and familiar questions arriving from a different direction.
+- [client:forever faction:horde] I began {at}, a Windshaper following the silence our missing mentors had left, hoping the wind spirits were not lost to us forever.
+- [client:forever faction:alliance] I set out {at}, with the High Order's need for the lost lore of Eldre'Thalas dearer to me than another borrowed blessing.
+- [client:forever] I began {at}, with the sky of home in my heart and the solid earth asking a different sort of patience.
+- [client:forever] I set out {at}, one of the shen'dorei learning how much distance a pair of feet could have to bear.

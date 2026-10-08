@@ -1,7 +1,7 @@
 ---
 kind: wake
 ---
-- [client:forever rest faction:horde] I woke {at}, glad to find that the place felt a little more familiar before I had even begun to move.
-- [client:forever rest faction:alliance] I woke {at}, with my questions less tangled than they had been when I lay down.
-- [client:forever !rest] Curious what I would notice after the pause, I took up my journey again {at}.
-- [client:forever !rest] I took up the road again {at}, with my attention ready to reach beyond the next few steps.
+- [client:forever rest faction:horde] I rose {at}, with our missing mentors no less dear to me and the road a little easier to bear.
+- [client:forever rest faction:alliance] I went on {at}, with the High Order's devotion to self-reliance less demanding after a rest.
+- [client:forever !rest] I took up my journey again {at}, with the hard ground still making its acquaintance felt in my back.
+- [client:forever !rest] I rose {at}, rather ready for the sky's freedom after a night spent entirely in the earth's keeping.

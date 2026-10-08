@@ -1,13 +1,13 @@
 ---
 kind: r-first
 ---
-- [client:forever] moving in ways I had not expected
-- [client:forever] worth watching from more than one angle
-- [client:forever] nothing my mentors had described
-- [client:forever] curious, once it was over, what drove them
-- [client:forever night] their shapes uncertain without the sky's light
-- [client:forever faction:horde] surprised by how quickly the encounter had turned dangerous
-- [client:forever] with the name much easier to remember afterwards
-- [client:forever] less ready to judge a threat from a distance
-- [client:forever teeth] more wary of coming within reach of the teeth
-- [client:forever] with a better sense of how much room I needed
+- [client:forever] my balance less certain than my courage wanted
+- [client:forever] too near the flesh beneath a skyborn elf's confidence
+- [client:forever] nothing a skyward gaze could keep safely distant
+- [client:forever] more wary of being caught within reach than of looking foolish
+- [client:forever night] my eyesight of little help with ground the night had hidden
+- [client:forever faction:horde] our vanished mentors too far beyond a frightened call
+- [client:forever] an encounter I would not want nearer to home
+- [client:forever] less willing to let an easy appearance lower my guard
+- [client:forever teeth] those jaws little comfort to a child of the sky
+- [client:forever] a skyborn elf wanting rather more distance from danger than this

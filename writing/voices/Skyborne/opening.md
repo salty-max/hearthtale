@@ -1,12 +1,12 @@
 ---
 kind: opening
 ---
-- [client:forever faction:horde] I took up the road {at}, wondering what I would discover by meeting this place on its own terms.
-- [client:forever faction:alliance] I opened a fresh page {at}, with a few conclusions I was prepared to revise if the place required it.
-- [client:forever] I began again {at}, interested in what I would notice once I stopped comparing everything with home.
-- [client:forever night] I continued {at}, with fewer things visible and more room to misjudge the distance between them.
-- [client:forever] I set out again {at}, with my attention closer to the ground than it had been when I began.
-- [client:forever] Curious about what I had passed without properly understanding, I set out {at}.
-- [client:forever faction:horde] I began another stretch {at}, hoping to find a little more ease between myself and the people here.
-- [client:forever faction:alliance] Determined to ask better questions than I had arrived with, I continued {at}.
-- [client:forever] I went on {at}, with the place beginning to arrange itself into something I could recognise.
+- [client:forever faction:horde] I took up the road {at}, with a Windshaper's hope that kindness might reach further than another demand of the elements.
+- [client:forever faction:alliance] I began again {at}, with a scholar's longing for the arcane lore lost in Eldre'Thalas.
+- [client:forever] I set out {at}, with the sky still familiar and the earth no less insistent about being walked upon.
+- [client:forever night] I went on {at}, patient with the night but less certain of the ground beyond what I could see.
+- [client:forever] I began this stretch {at}, rather ready for a road that treated my feet gently.
+- [client:forever] I set out {at}, willing to find a place among people who knew the earth better than I did.
+- [client:forever faction:horde] I began again {at}, hoping to find allies who would help us bring the wind spirits home.
+- [client:forever faction:alliance] I went on {at}, a child of the High Order trusting a skill I could practise more than a blessing I could only wait for.
+- [client:forever] I took up the road {at}, with more of the ground familiar to me and no less fondness for the sky.

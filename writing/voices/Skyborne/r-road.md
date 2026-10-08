@@ -1,17 +1,17 @@
 ---
 kind: r-road
 ---
-- [client:forever] the air different from where I started
-- [client:forever !back] curious how the place would look from above
-- [client:forever !back] the shape of it new to me
-- [client:forever !back] noting where the wind came from
-- [client:forever !back night] its shape dark below the stars
-- [client:forever back] the place a little changed since I left
-- [client:forever back] the way already traced in my memory
-- [client:forever back] finding it much as I had pictured it
-- [client:forever high] one more view added to a long collection
-- [client:forever faction:horde !back] curious to find where I might fit into the place
-- [client:forever faction:alliance !back] interested in what would become clearer at close quarters
-- [client:forever] with more ease than I had felt on setting out
-- [client:forever night] careful of the distances I could no longer judge clearly
-- [client:forever] with less attention to spare for the road behind
+- [client:forever] my feet patient with the earth's insistence on distance
+- [client:forever !back] an elf of the sky still learning how the ground could feel familiar
+- [client:forever !back] rather less sheltered by a blessing than I wanted to be
+- [client:forever !back] my balance no excuse for hurrying into an unknown place
+- [client:forever !back night] my eyes patient with a night that offered few directions
+- [client:forever back] my steps easier on ground that had once seemed foreign
+- [client:forever back] a familiar route dearer to me than its distance
+- [client:forever back] a familiar return dearer to me than another new arrival
+- [client:forever high] my stride less troubled by the ground than it used to be
+- [client:forever faction:horde !back] a Windshaper hoping for allies in the search for our mentors
+- [client:forever faction:alliance !back] wondering what use the High Order could make of a life lived here
+- [client:forever] the ground more than a place to pass above now I knew the way
+- [client:forever night] my stride cautious where my eyes could find little help
+- [client:forever] more of my courage spent arriving than I cared to show
