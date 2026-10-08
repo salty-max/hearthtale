@@ -18,7 +18,7 @@ kind: farewell
 - [class:PALADIN] May {faith} be gentler to {name} than the last struggle was.
 - [class:WARRIOR] {name}'s strength could carry no further than this.
 - [class:MAGE] {name}'s books are left open at the page where the reading stopped.
-- [class:HUNTER !low] Somewhere, a pet waits for {name}.
+- [class:HUNTER !low] The wild has kept the last of {name}'s tracks.
 - [class:ROGUE] {name} was never caught, until the end caught up.
 - [class:PRIEST] {name} healed many, and could not heal this.
 - [class:SHAMAN] The spirits carry {name} now.

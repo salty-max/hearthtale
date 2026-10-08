@@ -23,9 +23,9 @@ kind: lesson
 - [spell:Sap] With Sap, I could put a foe to sleep before it knew I was there.
 - [spell:Vanish] Vanish was a way out of any fight I did not care to finish.
 - [spell:Sprint] Sprint was for the times when leaving quickly was the whole plan.
-- [spell:Aspect_of_the_Cheetah] With the Aspect of the Cheetah, the roads grew shorter.
-- [spell:Feign_Death] Feign Death was a lie told with my whole body.
-- [spell:Hunter's_Mark] With Hunter's Mark, nothing I had marked could hide from me.
+- [spell:Aspect_of_the_Cheetah] I learned Aspect of the Cheetah, and could give my legs a hunter's answer to a long road.
+- [spell:Feign_Death] I learned Feign Death, a hunter's lie I hoped would keep me from becoming the truth of it.
+- [spell:Hunter's_Mark] I learned Hunter's Mark, a way to keep my quarry from becoming merely another movement I could not place.
 - [spell:Ghost_Wolf] Ghost Wolf let me run in the shape of a wolf, as the spirits do.
 - [spell:Ancestral_Spirit] With Ancestral Spirit, I could call a fallen friend's spirit back into their body.
 - [spell:Lightning_Shield] Lightning Shield was a ring of crackling light that struck back at whoever struck me.

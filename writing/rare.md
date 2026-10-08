@@ -14,7 +14,7 @@ kind: rare
 - [elite] {foe} {in}. It should have killed me. It didn't.
 - [elite] I fought {foe} {at}, the hardest fight of my life so far.
 - [hc] {foe} {in}. On this realm, glory is a poor reason to die. I took the fight anyway, and I'm here to write it.
-- [class:HUNTER] I'd tracked {foe} for days. It ended {at}.
+- [class:HUNTER] I brought down {foe} {at}, with a hunter's relief at remaining more than a set of tracks going nowhere.
 - [class:ROGUE] {foe} {in}. I went through what it left behind, carefully.
 - {foe} {in}, and I lived to tell it.
 - I came across {foe} {at} and didn't run.
