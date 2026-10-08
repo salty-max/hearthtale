@@ -2,8 +2,8 @@
 -- expression from the different starter-zone stories in lives.lua. It is
 -- an editorial comparison, not a claim about a canonical quest sequence.
 local voices = {}
-voices.races = { "Human", "Dwarf", "NightElf", "Gnome", "Orc", "Troll", "Tauren", "Scourge", "BloodElf", "Draenei" }
-voices.labels = { NightElf = "Night elf", Scourge = "Forsaken", BloodElf = "Blood elf" }
+voices.races = { "Human", "Dwarf", "NightElf", "Gnome", "Orc", "Troll", "Tauren", "Scourge" }
+voices.labels = { NightElf = "Night elf", Scourge = "Forsaken" }
 
 function voices.day(race, faction)
   local log = {
@@ -30,8 +30,7 @@ function voices.day(race, faction)
     guid = "one-day-many-voices",
     race = race,
     faction = faction,
-    class = race == "BloodElf" and "MAGE"
-      or (race == "Skyborne" and (faction == "horde" and "SHAMAN" or "MAGE") or "WARRIOR"),
+    class = race == "Skyborne" and (faction == "horde" and "SHAMAN" or "MAGE") or "WARRIOR",
     began = { level = 20 },
     chapters = {
       {
@@ -116,7 +115,7 @@ if ... == "compare" or ... == "moments" then
       io.write(ch.text .. "\n\n")
     end
   end
-  local races = moments and { "Human", "Gnome", "Troll", "Tauren", "BloodElf", "Draenei" } or voices.races
+  local races = moments and { "Human", "Gnome", "Troll", "Tauren" } or voices.races
   for _, race in ipairs(races) do
     show(race)
   end

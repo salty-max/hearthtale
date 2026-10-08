@@ -19,8 +19,8 @@ const CLASS_COLOUR: Record<string, string> = {
   DRUID: "#ff7c0a",
 };
 const RACE: Record<string, string> = {
-  Human: "Human", Dwarf: "Dwarf", NightElf: "Night Elf", Gnome: "Gnome", Draenei: "Draenei", Orc: "Orc", Troll: "Troll",
-  Tauren: "Tauren", Scourge: "Undead", BloodElf: "Blood Elf", Skyborne: "Skyborne",
+  Human: "Human", Dwarf: "Dwarf", NightElf: "Night Elf", Gnome: "Gnome", Orc: "Orc", Troll: "Troll",
+  Tauren: "Tauren", Scourge: "Undead", Skyborne: "Skyborne",
 };
 const cap = (s: string) => s.charAt(0) + s.slice(1).toLowerCase();
 const esc = (s: string) => s.replace(/[&<>"']/g, (ch) => `&#${ch.charCodeAt(0)};`);

@@ -652,12 +652,10 @@ local RACE = {
   Dwarf = "dwarf",
   NightElf = "night elf",
   Gnome = "gnome",
-  Draenei = "draenei",
   Orc = "orc",
   Troll = "troll",
   Tauren = "tauren",
   Scourge = "Forsaken",
-  BloodElf = "blood elf",
 }
 function Book:epitaph(c)
   local d = c.death or {}

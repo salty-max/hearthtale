@@ -17,12 +17,10 @@ are literary interpretations of the lore, not canonical quotations.
 | Darkspear troll | Sen'jin's people, Vol'jin, the loa, scattered shores and Thrall's welcome. A hunter's caution leaves room for warmth and a grin once danger has passed. | A phonetic accent, "mon", a loa at every turn, or pretending the narrator personally witnessed Sen'jin's death. |
 | Tauren | The Earth Mother, An'she and Mu'sha; Cairne's settled home, shared camps, kodo and respect for the hunt. Broad hands and hooves sometimes change how ordinary work feels. | A nature proverb at every pause, size in every remark, assumed personal nomadic history, or treating patience as immunity to fear. |
 | Forsaken | Sylvanas's liberation, Lordaeron's ruins and an Undercity the freed dead can call their own. Rot, absent breath and awkward habits of the former life invite dry humour; continued life remains precious. | A joke in every sentence, personal feelings attributed to Sylvanas, invented disgust from a living NPC, or indifference to danger simply because the narrator is dead. |
-| Blood elf | Quel'Thalas after Arthas, the lost Sunwell, the hunger for magic and Kael'thas's promised future. Fine craft and the effort of keeping composure sit beside affection for a damaged home. | Constant disdain for others, elegance as the only personality, or knowledge of later Sunwell events. |
-| Draenei | Velen, the naaru, the Light, the Broken and the long flight from the Legion; a damaged Exodar and a new world that might become home. Courtesy gives unfamiliar names room to become neighbours. | Invented encounters with the Broken, a personal age inferred from the people's exile, endless solemnity, or automatic acceptance by the people met. |
 | Skyborne (Forever) | Skywall and the missing wind spirits. Windshapers seek their mentors and allies for that search; the High Order seek the lost arcane lore of Eldre'Thalas and skills they can retain themselves. | Wings as anatomy, invented elemental answers, or assigning a tradition from class rather than the recorded faction. |
 
 A memory of home is not proof that the event happened far from it. General
-lines must also work in Ironforge, Silvermoon, Darnassus or the Exodar. The
+lines must also work in Ironforge, Stormwind, Darnassus or the Undercity. The
 `kin` kind is different: the writer has established that the narrator is
 working with one of their people outside that people's homeland.
 
@@ -36,7 +34,7 @@ use; they must not claim a cast the record never supplied.
 | Class | What colours the prose |
 | --- | --- |
 | Warrior | Rage, weapon's reach, endurance and the difference between being eager to fight and wanting to live. |
-| Paladin | The Light as shelter and service, a blessing's practical comfort, and faith that does not remove fear. Shared lines fit both Alliance paladins and blood elf Blood Knights. |
+| Paladin | The Light as shelter and service, a blessing's practical comfort, and faith that does not remove fear. The supported races follow the Classic paladin traditions. |
 | Hunter | Trails, keeping a safe distance, the patience of the hunt and a pet's recorded companionship. |
 | Rogue | Quiet ways in and out, the value of a purse, and relief at being able to disappear. |
 | Priest | Prayers that can protect or wound, the wish to mend, and resurrection as a person spared rather than another technique acquired. Do not impose the Light on every race's faith. |
@@ -49,12 +47,11 @@ use; they must not claim a cast the record never supplied.
 
 - [Blizzard's Classic introduction](https://news.blizzard.com/en-us/article/23317716/taking-your-first-steps-in-world-of-warcraft-classic)
   gives the original eight races' cultural starting points.
-- [Blizzard's Burning Crusade story overview](https://news.blizzard.com/en-us/article/23679744/burning-crusade-classic-the-story-so-far)
-  gives the blood elves' and draenei's starting circumstances.
 - [Blizzard's Forever race introduction](https://news.blizzard.com/en-us/article/24304075/create-the-hero-you-want-to-be-in-world-of-warcraft-forever)
   gives Skyborne identity and the two faction traditions.
 
-The familiar races retain their Classic or early Burning Crusade outlooks. No
+The eight familiar races retain their Classic outlooks. Burning Crusade is not
+supported; blood elf and draenei player voices are not part of the catalogs. No
 later wars, destroyed capitals, changed leadership or future character fates
 belong here. A character can know a people's history without claiming to have
 personally witnessed it. Skyborne lines require `client:forever`; thoughts
