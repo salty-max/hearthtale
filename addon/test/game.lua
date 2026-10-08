@@ -117,6 +117,7 @@ end
 function UnitGUID(u)
   if u == "player" then return state.guid end
   if u == "pet" then return state.pet and state.pet.guid end
+  if state.party[u] then return state.party[u].guid end
   if u == "target" and state.target and state.target.player then return state.target.guid end
   if u == "target" and state.target then return creatureGuid(state.target.id, state.target.n) end
 end
@@ -210,7 +211,29 @@ local function itemLink(name, quality)
   local colour = ({ [0] = "9d9d9d", "ffffff", "1eff00", "0070dd", "a335ee", "ff8000" })[ITEMS[name][1]] or "1eff00"
   return ("|cff%s|Hitem:%d::::::::1:::::|h[%s]|h|r"):format(colour, ITEMS[name][3], name)
 end
-function GetInventoryItemLink(_, slot) return state.gear[slot] and itemLink(state.gear[slot]) end
+-- Bags on the back: state.bags[1..4] = { name, slots } (the backpack: 16 slots).
+local BAGS = { ["Small Brown Pouch"] = true, ["Linen Bag"] = true }
+function GetInventoryItemLink(_, slot)
+  local bag = slot >= 20 and state.bags and state.bags[slot - 19]
+  if bag then return itemLink(bag.name) end
+  return state.gear[slot] and itemLink(state.gear[slot])
+end
+C_Container = {
+  GetContainerNumSlots = function(bag)
+    if bag == 0 then return 16 end
+    local b = state.bags and state.bags[bag]
+    return b and b.slots or 0
+  end,
+  ContainerIDToInventoryID = function(bag) return 19 + bag end,
+}
+-- an item's id and class (1: a container)
+C_Item.GetItemInfoInstant = function(link)
+  local name = link:match("%[(.-)%]")
+  local i = ITEMS[name]
+  if i then return i[3], nil, nil, nil, nil, BAGS[name] and 1 or 4 end
+end
+-- a druid's form (GetShapeshiftFormID's: 1 cat, 5 bear...)
+function GetShapeshiftFormID() return state.form end
 -- Skills: { name, header, max }, as the skills pane lists them.
 TRADE_SKILLS, SECONDARY_SKILLS = "Professions", "Secondary Skills"
 function GetNumSkillLines() return #state.skills end
@@ -480,7 +503,18 @@ local function creature(name, type, family, rank)
   return #CREATURES
 end
 
+-- A kill by someone else (a groupmate: guid): the event, or the combat log's line.
+local function killedBy(source, id, n)
+  if FOREVER then
+    fire("PARTY_KILL", source, creatureGuid(id, n))
+  else
+    combatLog = { clock, "PARTY_KILL", false, source, "Someone", 0, 0, creatureGuid(id, n), CREATURES[id].name, 0, 0 }
+    fire("COMBAT_LOG_EVENT_UNFILTERED")
+  end
+end
+
 return {
+  killedBy = killedBy,
   ns = ns,
   D = D,
   state = state,

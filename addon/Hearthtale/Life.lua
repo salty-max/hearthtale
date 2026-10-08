@@ -50,30 +50,12 @@ end)
 -- demon, a class's own steed (a moment of their own); a profession's rank (told
 -- by the professions, below: left out here); anything else, a trainer's
 -- lesson (spells learned together are one moment).
-local POWERS = {
-  [5487] = "form",
-  [768] = "form",
-  [1066] = "form",
-  [783] = "form",
-  [9634] = "form",
-  [24858] = "form",
-  [33943] = "form",
-  [697] = "demon",
-  [712] = "demon",
-  [691] = "demon",
-  [1122] = "demon",
-  [18540] = "demon",
-  [30146] = "demon",
-  [5784] = "steed",
-  [23161] = "steed",
-  [13819] = "steed",
-  [23214] = "steed",
-  [34769] = "steed",
-  [34767] = "steed",
-}
+-- A class's own steed: a moment of its own when learned.
+local STEEDS = { [5784] = true, [23161] = true, [13819] = true, [23214] = true, [34769] = true, [34767] = true }
+local POWERS, TRADE = ns.POWER_SPELLS, ns.TRADE_SPELLS
 local RANKED = { Apprentice = true, Journeyman = true, Expert = true, Artisan = true, Master = true }
 local function professionSpell(name)
-  if (char().profs or {})[name] then return true end
+  if TRADE[name] or (char().profs or {})[name] then return true end
   local first = name:match("^(%a+) ")
   return first and RANKED[first] or false
 end
@@ -84,8 +66,12 @@ ns.on("CHAT_MSG_SYSTEM", function(msg)
     if raw then
       local id = tonumber(raw:match("|Hspell:(%d+)"))
       local spell = raw:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", ""):gsub("|H.-|h%[?(.-)%]?|h", "%1")
-      if id and POWERS[id] then
-        moment("power", { spell = spell, kind = POWERS[id] })
+      if id and STEEDS[id] then
+        moment("power", { spell = spell, kind = "steed" })
+      elseif POWERS[spell] then
+        local c = char()
+        c.powers = c.powers or {}
+        c.powers[spell] = true
       elseif not professionSpell(spell) then
         -- a trainer's visit is one moment: spells learned together merge
         local ch = chapter()
@@ -221,12 +207,27 @@ ns.on("CHAT_MSG_LOOT", function(msg)
   if quality and quality >= 3 then moment("loot", { link = link, quality = quality }) end
 end)
 
--- ── a hunter's pet, a first ride ─────────────────────────────────────────────
+-- ── pets, demons, forms, a first ride ────────────────────────────────────────
 -- A hunter's new companion (a pet not met before, by name), and its deaths;
--- the first time the character rides a mount of its own.
+-- a warlock's first demon of each kind, by its name; a druid's first shift
+-- into each form; the first time the character rides a mount of its own.
+-- (A demon or a form the journal saw learned: one known before it began is
+-- no first.)
 local petDown = false
+local function lookAtDemon()
+  local c = char()
+  if not UnitExists("pet") then return end
+  local name, family = UnitName("pet"), UnitCreatureFamily("pet")
+  if not name or secret(name) or not family or secret(family) then return end
+  c.demons = c.demons or {}
+  if c.demons[family] or not (c.powers or {})["Summon " .. family] then return end
+  c.demons[family] = name
+  moment("demon", { name = name, family = family })
+end
+
 local function lookAtPet(quiet)
   local c = char()
+  if c.class == "WARLOCK" then return lookAtDemon() end
   if c.class ~= "HUNTER" then return end
   if not UnitExists("pet") then
     c.pets = c.pets or {} -- no pet yet: the first one tamed is news
@@ -251,6 +252,41 @@ ns.onUnit("UNIT_HEALTH", "pet", function()
   end
   petDown = dead and true or false
 end)
+-- (GetShapeshiftFormID's forms)
+local FORMS = {
+  [1] = "cat",
+  [2] = "tree",
+  [3] = "travel",
+  [4] = "aquatic",
+  [5] = "bear",
+  [8] = "bear",
+  [27] = "flight",
+  [29] = "flight",
+  [31] = "moonkin",
+  [35] = "moonkin",
+}
+local FORM_SPELL = {}
+for spell, form in pairs(POWERS) do
+  FORM_SPELL[form] = FORM_SPELL[form] or {}
+  table.insert(FORM_SPELL[form], spell)
+end
+ns.on("UPDATE_SHAPESHIFT_FORM", function()
+  local c = char()
+  if c.class ~= "DRUID" then return end
+  local id = GetShapeshiftFormID()
+  local form = id and not secret(id) and FORMS[id]
+  if not form then return end
+  c.forms = c.forms or {}
+  if c.forms[form] then return end
+  local learned = false
+  for _, spell in ipairs(FORM_SPELL[form] or {}) do
+    if (c.powers or {})[spell] then learned = true end
+  end
+  if not learned then return end
+  c.forms[form] = true
+  moment("shift", { form = form })
+end)
+
 ns.onUnit("UNIT_AURA", "player", function()
   local c = char()
   if c.rode then return end
@@ -261,6 +297,46 @@ ns.onUnit("UNIT_AURA", "player", function()
   end
 end)
 
+-- ── a first bag, a first gold piece ──────────────────────────────────────────
+-- The first bag worn on the back (where it came from, if it was looted: bags
+-- are rare at first, and dear to buy); the first gold piece. A journal begun
+-- with them already notes them quietly.
+local GOLD = 10000 -- copper
+local lootedBag -- the last bag looted: its item id
+local function bagSlots(bag)
+  local get = (C_Container and C_Container.GetContainerNumSlots) or GetContainerNumSlots
+  local n = get(bag)
+  return (n and not secret(n)) and n or 0
+end
+local function lookAtBags(quiet)
+  local c = char()
+  if c.bagged then return end
+  for bag = 1, 4 do
+    local slots = bagSlots(bag)
+    if slots > 0 then
+      c.bagged = true
+      if quiet then return end
+      local toSlot = (C_Container and C_Container.ContainerIDToInventoryID) or ContainerIDToInventoryID
+      local link = GetInventoryItemLink("player", toSlot(bag))
+      local id = link and not secret(link) and tonumber(link:match("item:(%d+)"))
+      moment("bag", { link = id and link or nil, slots = slots, looted = (id and id == lootedBag) or nil })
+      return
+    end
+  end
+  c.bagged = false
+end
+ns.on("BAG_UPDATE_DELAYED", function() lookAtBags(char().bagged == nil) end)
+-- (a bag looted: noted, for the bag when it is worn)
+local CONTAINER = 1 -- an item's class
+ns.on("CHAT_MSG_LOOT", function(msg)
+  if secret(msg) or not match("LOOT_ITEM_SELF", msg) then return end
+  local link = msg:match(LINK)
+  local get = (C_Item and C_Item.GetItemInfoInstant) or GetItemInfoInstant
+  if not (link and get) then return end
+  local id, _, _, _, _, class = get(link)
+  if class == CONTAINER then lootedBag = id end
+end)
+
 -- At login: what the character already wears, knows and keeps, noted quietly
 -- (a journal begun mid-life doesn't announce a whole wardrobe).
 ns.on("PLAYER_ENTERING_WORLD", function(initial)
@@ -269,11 +345,17 @@ ns.on("PLAYER_ENTERING_WORLD", function(initial)
   lookAtGear(c.worn == nil)
   lookAtTrades(c.profs == nil)
   lookAtPet(c.pets == nil)
+  lookAtBags(c.bagged == nil)
   if c.rode == nil and IsMounted() then c.rode = true end
+  if c.rich == nil then c.rich = GetMoney() >= GOLD end
 end)
 
 ns.on("PLAYER_MONEY", function()
   local c, money = char(), GetMoney()
+  if c.rich == false and money >= GOLD then
+    c.rich = true
+    moment("gold")
+  end
   if c.money and money > c.money then
     local ch = chapter()
     ch.gold = ch.gold + (money - c.money)

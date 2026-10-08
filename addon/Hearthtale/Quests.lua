@@ -85,6 +85,32 @@ local function objectivesOf(id)
   return #out > 0 and out or nil
 end
 
+-- How many of each creature a quest has counted so far ("Rockjaw Trogg
+-- slain: 3/6"): name = count.
+local function killCounts(id)
+  local counts = {}
+  for _, o in ipairs(rawObjectives(id)) do
+    if o.type == "monster" and o.text and not secret(o.text) then
+      local name, have = match("QUEST_MONSTERS_KILLED", o.text)
+      name = name and name:match("^%s*(.-)%s*$")
+      if name and name ~= "" and tonumber(have) then counts[name] = tonumber(have) end
+    end
+  end
+  return counts
+end
+
+-- A quest's count gone up: those kills credited to me (Combat.lua tells the
+-- ones it hasn't heard of: another's killing blow on a creature I fought,
+-- which the game credits me with).
+local function creditKills(id, p)
+  local counts = killCounts(id)
+  for name, have in pairs(counts) do
+    local before = (p.counted or {})[name]
+    if before and have > before then R.credited(name, have - before) end
+  end
+  p.counted = counts
+end
+
 ns.on("QUEST_ACCEPTED", function(a, b)
   local id, c = b or a, char()
   if not id then return end
@@ -104,6 +130,7 @@ ns.on("QUEST_ACCEPTED", function(a, b)
     title = titleOf(id),
     objectives = objectives,
     held = finishedAll(id) or nil,
+    counted = killCounts(id),
   } -- done from the start: nothing to tell before the turn-in
 end)
 -- The quest log fills in after the acceptance (the objectives, once known),
@@ -125,6 +152,7 @@ ns.on("QUEST_LOG_UPDATE", function()
     elseif misread(p.objectives) then
       p.objectives = objectivesOf(id) or p.objectives -- (its work, if done, still told below)
     end
+    creditKills(id, p)
     if not p.done and not p.held and finishedAll(id) then
       p.done = true
       moment("done", { id = id, title = p.title, giver = p.giver, objectives = p.objectives })
