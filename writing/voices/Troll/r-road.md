@@ -4,11 +4,11 @@ kind: r-road
 - the road easy under my feet
 - [!back] keen to see who held the place
 - [!back] watching the edges before the middle
-- [!back] a new place, so new dangers
+- [!back] watching for whatever trouble a new place keeps
 - [!back] the smell of it telling me plenty
 - [!back night] arriving after dark
-- [back] the place still standing, good
-- [back] old ground, easy ground
+- [back] glad to see the place still standing
+- [back] easy going on ground I already knew
 - [back] the faces remembering mine
 - with my attention on the edges of the way
 - curious what I would find past the next turn

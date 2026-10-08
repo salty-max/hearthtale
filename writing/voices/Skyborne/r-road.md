@@ -6,7 +6,7 @@ kind: r-road
 - [client:forever !back] the shape of it new to me
 - [client:forever !back] noting where the wind came from
 - [client:forever !back night] its shape dark below the stars
-- [client:forever back] the place shifted a little since I left
+- [client:forever back] the place a little changed since I left
 - [client:forever back] the way already traced in my memory
 - [client:forever back] finding it much as I had pictured it
 - [client:forever high] one more view added to a long collection

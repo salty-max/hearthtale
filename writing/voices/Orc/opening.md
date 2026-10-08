@@ -8,5 +8,5 @@ kind: opening
 - Conscious that freedom meant little if I let pride choose in my place, I went on {at}.
 - I opened a fresh page {at}, ready to put my strength to something that would last.
 - I began this stretch {at}, where there was more to be done than to be said.
-- I took up my account {at}. A deed should bear its own weight without a boast to hold it up.
+- I took up the road {at}. A deed should bear its own weight without a boast to hold it up.
 - I set out {at}, with my people's future nearer in my thoughts than any glory of my own.

@@ -8,5 +8,5 @@ kind: opening
 - I made ready {at}, with several doubts I saw no reason to display.
 - I went on {at}, curious what would reward a closer look.
 - I began this stretch {at}, with more in mind than enduring another day.
-- Determined to set down what happened as carefully as what I had hoped for, I returned to my account {at}.
+- Determined to look as composed as I hoped to feel, I set out {at}.
 - I set out {at}, rather looking forward to the distance despite myself.

@@ -131,7 +131,7 @@ function tell.turnIn(s, m)
     -- sentence before, already read as finished)
     s:flush()
     s:deed(s:tags({ handed = true }, m))
-  elseif not s.merged[i] and m.ender then
+  elseif m.ender then
     local enders, seenEnder, k = { m.ender }, { [m.ender] = true }, i + 1
     while log[k] and log[k].k == "quest" and log[k].told and log[k].ender and s:placeOf(log[k]) == s.place do
       if not seenEnder[log[k].ender] then table.insert(enders, log[k].ender) end
@@ -143,28 +143,34 @@ function tell.turnIn(s, m)
   end
 end
 function tell.quest(s, m) s:deed(s:tags(nil, m)) end
+-- an errand whose ender sends me straight on with the next: one clause,
+-- from the first who asked to the last ("from Sten Stoutarm to Talin Keeneye
+-- and on to Grelin Whitebeard")
+function tell.chain(s, m)
+  local j = s:chainNext(m, s.i)
+  local nx = s.ch.log[j]
+  s.merged[j] = true
+  s:tell("c-chain", { giver = m.giver, via = m.ender, ender = nx.ender })
+end
 function tell.kill(s, m)
   local b = s.book
   b.creatureKinds[m.name] = m.kind
-  local t = { one = true, teeth = TEETH[m.kind or ""], mechanical = m.kind == "Mechanical" or nil }
-  local people = foeOf(m.name, m.kind)
-  if people then t[people] = true end
   if m.quarry or SKIP[m.kind or ""] then return end -- told by its quest, or not a fight
+  if m.elite then return s:tell("c-elite", { foe = namedElite(m.name) and m.name or article(m.name) }) end
   if m.first and KINDS[m.kind] then
+    local t = { one = true, teeth = TEETH[m.kind or ""], mechanical = m.kind == "Mechanical" or nil }
+    local people = foeOf(m.name, m.kind)
+    if people then t[people] = true end
     s:tell("c-first", { kind = KINDS[m.kind] }, t)
-  elseif m.elite then
-    s:tell("c-elite", { foe = namedElite(m.name) and m.name or article(m.name) })
-  elseif not (s.killed and s.place == s.scene) then
-    s:tell("c-kill", { foe = article(m.name) }, t)
-    s.killed = true
-    b.lastFoe = { name = m.name, many = false, told = b.told or 0 }
   end
+  -- (a kill no quest asked for says little alone: told with the work that
+  -- follows, if any)
+  s:hunted(m)
 end
 function tell.raid(s, m) s:tell("c-raid", { n = words(m.raid) }) end
 -- a stretch at a craft: what was made, in one clause (the most first)
 function tell.made(s)
   local log, i = s.ch.log, s.i
-  if s.merged[i] then return end
   local made, order, j = {}, {}, i
   while
     log[j]
@@ -195,7 +201,6 @@ end
 -- several within a few minutes, together
 function tell.pvp(s, m)
   local b, log, i = s.book, s.ch.log, s.i
-  if s.merged[i] then return end
   local fight, j = { m }, i + 1
   while log[j] do
     if log[j].k == "pvp" then
@@ -231,7 +236,6 @@ end
 -- name, on Forever: "Harrysaun", not "Harrysaun Brightwood")
 function tell.group(s, m)
   local log, i = s.ch.log, s.i
-  if s.merged[i] then return end
   local names, j = { m.first or m.name }, i + 1
   while log[j] and log[j].k == "group" and (log[j].at or 0) - (m.at or 0) <= 120 do
     table.insert(names, log[j].first or log[j].name)
@@ -315,6 +319,20 @@ function own.close(s, m)
   )
 end
 function own.died(s, m) s:alone("died", s.book:here({ foe = deathFoe(m.death) }, s.place), deathTags(m.death), m) end
+-- a death and the way back right after it: one sentence
+function own.diedBack(s, m)
+  local j = s:revivalOf(s.i)
+  local r = s.ch.log[j]
+  s.merged[j] = true
+  local t = deathTags(m.death)
+  t[r.how or "corpse"] = true
+  s:alone(
+    "died-back",
+    s.book:here({ foe = deathFoe(m.death), by = r.by, graveyard = r.graveyard and mid(r.graveyard) }, s.place),
+    t,
+    m
+  )
+end
 function own.dungeon(s, m)
   local b = s.book
   s.dungeon = m.name
@@ -376,6 +394,8 @@ local OWN = {
   { "close", own.close },
   -- (one death the game told twice: older journals recorded it twice)
   { "died", nothing, when = function(s, m) return s.prev and s.prev.k == "died" and s.prev.at == m.at end },
+  { "died", own.diedBack, when = function(s, m) return m.death and s:revivalOf(s.i) end },
+  { "died", nothing, when = function(s) return s:awaitsRevival(s.i) end },
   { "died", own.died, when = function(_, m) return m.death end },
   { "dungeon", own.dungeon },
   { "power", own.power },
@@ -400,6 +420,7 @@ end
 -- Each moment by the first arm that fits it, in this order.
 -- selene: allow(mixed_table) -- (an arm: { kind, fn, when = guard })
 local ARMS = {
+  { "_", nothing, when = function(s) return s.merged[s.i] end }, -- told with another
   { "_", nothing, when = function(s, m) return m == s.startPlace end }, -- told by the opening
   { "_", nothing, when = function(s) return s.relog[s.i] end }, -- a relog: no night
   { "_", nothing, when = function(s) return s.foldNow end }, -- told in the scene's tally
@@ -410,6 +431,7 @@ local ARMS = {
   { "done", nothing, when = function(_, m) return m.abandoned end }, -- a quest given up: as if never done
   { "done", tell.done },
   { "quest", tell.turnIn, when = function(_, m) return m.told end },
+  { "quest", tell.chain, when = function(s, m) return s:chainNext(m, s.i) end },
   { "quest", tell.quest },
   { "kill", tell.kill },
   { "group", tell.raid, when = function(_, m) return m.raid end },
@@ -545,7 +567,8 @@ function Book:chapter(n, ch)
     match(m, ARMS, s)
     if m.k ~= "level" then s.prev = m end
   end
-  s:emitFold()
+  -- (the tally once the chapter ends: in an open one, the place may not be left)
+  if ch.ended then s:emitFold() end
   s:flush()
   -- (not while it is still being written; a death on Hardcore ends it with
   -- the epitaph instead)

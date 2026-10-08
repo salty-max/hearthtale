@@ -177,18 +177,45 @@ local function objectivesLike(m, first)
 end
 
 -- How many, as the story tells it: no number (a ledger's, not a journal's),
--- but the weight of a great deal of work.
-local function size(n)
-  if n >= 20 then return "a great many" end
-  if n >= 12 then return "a good many" end
-  return ""
+-- but the weight of the work, in words that vary ("" is none: "Rockjaw
+-- Troggs"). mass: a thing not counted ("a good deal of Linen Cloth"); pack:
+-- creatures that run in packs.
+local function sizes(n, mass, pack)
+  if mass then
+    if n >= 20 then return { "a great deal of", "a heavy load of", "no small amount of" } end
+    if n >= 12 then return { "a good deal of", "plenty of", "a fair amount of" } end
+    return { "" }
+  end
+  local out
+  if n >= 20 then
+    out = { "a great many", "dozens of", "no end of" }
+    if n >= 40 then table.insert(out, "scores of") end
+  elseif n >= 12 then
+    out = { "a good many", "a fair number of", "plenty of", "quite a few" }
+    if n > 12 then table.insert(out, "more than a dozen") end
+  elseif n >= 6 then
+    return { "", "", "several" }
+  elseif n >= 3 then
+    return { "", "", "a few", "a handful of" }
+  else
+    return { "" }
+  end
+  if pack then table.insert(out, "a whole pack of") end
+  return out
+end
+
+-- A thing the game never counts ("8 Linen Cloth", "8 Tough Wolf Meat"): its
+-- plural is its name (but for a word that is its own plural: "Explosive Sheep").
+local function uncounted(name)
+  local known = ns.names and ns.names.plural[name]
+  if known then return known == name and not name:find("s$") and not IRREGULAR[name:match("(%a+)$") or ""] end
+  return UNCOUNTED[name:match("(%a+)$") or ""] or false
 end
 
 local function itemName(name)
   -- one the game never counts ("8 Linen Cloth"): no article, but for a
   -- word that is its own plural ("an Explosive Sheep")
-  local known = ns.names and ns.names.plural[name]
-  if known == name and not name:find("s$") and not IRREGULAR[name:match("(%a+)$") or ""] then return name end
+  if ns.names and ns.names.plural[name] and uncounted(name) then return name end
   -- its own article: "An Unsent Letter" reads "an Unsent Letter"
   local own = name:match("^(An?) ") or name:match("^(The) ")
   if own then return own:lower() .. name:sub(#own + 1) end
@@ -570,6 +597,12 @@ local function lowerFirst(text) return (text:gsub("^%u", string.lower)) end
 -- VanCleef was hiding".
 local function taskOf(text)
   text = text:gsub("[%.:!]+%s*$", "")
+  -- a thing named for whom it goes back to: "Return Nori's Mug to Nori
+  -- Pridedrift" returns the mug
+  text = text:gsub(
+    "(%u%a+)'s (%u[%a ]-) to (%1%f[%A])",
+    function(_, thing, who) return "the " .. thing:lower() .. " to " .. who end
+  )
   -- (a deadline is the game's, not the deed's: "before it gets cold in five minutes")
   text = text:gsub(" before [^,]- in %a+ minutes?$", ""):gsub(" within %a+ minutes?$", "")
   for _, verb in ipairs(HAND_IN) do
@@ -607,7 +640,8 @@ W.TROPHY = TROPHY
 W.TITLES = TITLES
 W.objectiveOf = objectiveOf
 W.objectivesLike = objectivesLike
-W.size = size
+W.sizes = sizes
+W.uncounted = uncounted
 W.itemName = itemName
 W.things = things
 W.article = article

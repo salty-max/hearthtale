@@ -433,7 +433,10 @@ do -- the Troll Cave: its work told in Frostmane Hold, then a return to Grelin i
   local work = hold and one.text:find("Frostmane Troll Whelps", hold, true)
   local returned = work and one.text:find("Grelin Whitebeard", work, true)
   check(
-    work and returned and not one.text:sub(work, returned):find("Anvilmar", 1, true),
+    work
+      and returned
+      and not one.text:sub(work, returned):find(" to Anvilmar", 1, true)
+      and not one.text:sub(work, returned):find("myself back in", 1, true),
     "a quest's work told where it happened, the return to who asked after it (a quick way back is no journey)"
   )
 end
@@ -756,27 +759,38 @@ check(
 )
 SlashCmdList.HEARTHTALE("")
 
--- A death on a normal realm: told in its chapter; the book goes on.
+-- A death on a normal realm: told in its chapter, with its way back once it
+-- comes; the book goes on.
 state.health, state.target = 0, nil
 fire("PLAYER_DEAD")
 state.health = 100
 local K = HearthtaleChar
 state.sub = "Gol'Bolar Quarry"
 fire("ZONE_CHANGED")
-ns.writerUsed = {}
-ns.writeBook(K)
-local told = false
-for key in pairs(ns.writerUsed) do
-  if key:find("died#", 1, true) then told = true end
-end -- the shared line or the race's own
-ns.writerUsed = nil
+-- (which kinds the book told: the shared lines or the race's own)
+local function toldKinds()
+  ns.writerUsed = {}
+  ns.writeBook(K)
+  local kinds = {}
+  for key in pairs(ns.writerUsed) do
+    local kind = key:match("^[%a]+/(.-)#") or key:match("^(.-)#")
+    if kind then kinds[kind] = true end
+  end
+  ns.writerUsed = nil
+  return kinds
+end
+local waiting = toldKinds()
 local died, last = 0, K.chapters[#K.chapters].log
 for _, m in ipairs(last) do
   if m.k == "died" then died = died + 1 end
 end
 check(
-  not K.closed and died == 1 and last[#last].sub == "Gol'Bolar Quarry" and told and not HearthtaleHall.lives[state.guid],
-  "a death on a normal realm: told in its chapter, no Hall, the book goes on"
+  not K.closed
+    and died == 1
+    and last[#last].sub == "Gol'Bolar Quarry"
+    and not waiting.died
+    and not HearthtaleHall.lives[state.guid],
+  "a death on a normal realm: in its chapter, not told before its way back, no Hall, the book goes on"
 )
 
 -- How I came back from death: a ghost's run to my body, the spirit healer's
@@ -798,6 +812,8 @@ check(
   back and back.how == "corpse" and back.graveyard == "Kharanos" and back.took == 300,
   "a ghost's run back to my body: from which graveyard, how long"
 )
+local kinds = toldKinds()
+check(kinds["died-back"] and not kinds.revived, "… told with the death, in one sentence")
 G.wait(60)
 state.health = 0
 fire("PLAYER_DEAD")

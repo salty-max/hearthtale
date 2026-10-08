@@ -2,25 +2,22 @@
 kind: r-foe
 ---
 - a problem solved, if inelegantly
-- my estimate of the difficulty revised upward
-- with a note to approach the next one differently
-- faster than my calculations had predicted
-- the outcome correct, the method open to improvement
+- faster than I had dared to hope
 - [one] an interesting specimen, in hindsight
 - [!one] each one teaching me something about the last
+- [one] taller than me and a good deal harder than it looked
+- [!one] all of them taller than me, and none of them as quick
+- with my heart going like a steam piston
 - [teeth] my fingers all present and accounted for
+- [teeth] acutely aware of where my fingers had been
 - [mechanical] a shame about the workmanship, really
-- [night] the poor light skewing every estimate
+- [mechanical] still curious about the workings despite the trouble
+- [night] every shadow twice my height in the dark
+- [night] finding movement harder to judge in the poor light
 - [hc] the margin for error rather thinner than I like
-- [low] still refining my technique, so to speak
-- [high] with an efficiency I was frankly proud of
-- [!more] rather more pleased with the outcome than my approach
-- with a new idea about how to meet the next encounter
+- [hc] conscious of just how little room I had left myself
+- [low] still learning where to stand
+- [high] most of it over before I had time to be frightened
 - my hands taking longer to settle than I expected
 - [one] less inclined to attempt another close examination
-- [!one] with my attention much sharper by the last encounter
-- [teeth] acutely aware of where my fingers had been
-- [mechanical] still curious about the workings despite the trouble
-- [night] finding movement harder to judge in the poor light
-- [hc] conscious of just how little room I had left myself
-- [low !more] with more to practise than I had expected
+- [!one] the last of them the most stubborn

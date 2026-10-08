@@ -5,7 +5,7 @@ kind: r-foe
 - [client:forever] a little wiser about how such things move
 - [client:forever] with the wind still tugging at me afterwards
 - [client:forever one] quicker than I had read it
-- [client:forever] my balance found again only after
+- [client:forever] my balance slow to come back afterwards
 - [client:forever one !more] one more pattern I had misread at first
 - [client:forever !one] each one changing the shape of the next
 - [client:forever teeth] keeping well clear of the teeth

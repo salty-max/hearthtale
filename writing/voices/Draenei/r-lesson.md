@@ -2,7 +2,7 @@
 kind: r-lesson
 ---
 - with gratitude for the teaching
-- slow to learn, and I was patient
+- slow to learn, though I was patient
 - [one] mine after a little patient practice
 - the knowledge a gift to carry carefully
 - [one] keen to use it for others' sake

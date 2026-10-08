@@ -8,5 +8,5 @@ kind: opening
 - Conscious that haste had made older mistakes than mine, I went on {at}.
 - I began this stretch {at}, with no intention of letting reserve be mistaken for uncertainty.
 - I made ready {at}, with time to look about before choosing my path.
-- I returned to my account {at}, with the quiet between deeds still part of what I wished to remember.
+- I went on {at}, with the quiet between deeds still part of what I wished to remember.
 - I set out {at}, wary of how quickly strangers could make certainty out of so little.

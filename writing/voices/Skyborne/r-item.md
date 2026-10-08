@@ -1,7 +1,7 @@
 ---
 kind: r-item
 ---
-- [client:forever] spotted from above before I could reach the spot
+- [client:forever] spotted from a height long before I reached the place
 - [client:forever] with an eye to how things come to rest where they lie
 - [client:forever] lighter work than the search suggested
 - [client:forever !one !plural] each one where the wind might have left it

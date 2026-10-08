@@ -17,7 +17,7 @@ local _, ns = ...
 local W = ns.writer
 local floor, listing, mid, plural, TROPHY = W.floor, W.listing, W.mid, W.plural, W.TROPHY
 local TITLES, objectiveOf, itemName, things = W.TITLES, W.objectiveOf, W.itemName, W.things
-local objectivesLike, size = W.objectivesLike, W.size
+local objectivesLike, sizes, uncounted = W.objectivesLike, W.sizes, W.uncounted
 local article, capitalise, FACTION, HOME, KIN = W.article, W.capitalise, W.FACTION, W.HOME, W.KIN
 local faith, weapon, FOE_PEOPLE, FOE_KIND, foeOf = W.faith, W.weapon, W.FOE_PEOPLE, W.FOE_KIND, W.foeOf
 local THING_KIND, thingOf, instruction, lowerFirst = W.THING_KIND, W.thingOf, W.instruction, W.lowerFirst
@@ -133,12 +133,12 @@ local OWN_GAP = 8
 -- narrator's own reaction ("…, with rather more appetite for supper"), told
 -- for about one routine clause in three, never the same one soon again.
 local ROUTINE = {
-  ["c-kill"] = "r-foe",
   ["c-deed-kill"] = "r-foe",
   ["c-first"] = "r-first",
   ["c-deed-item"] = "r-item",
   ["c-deed-task"] = "r-task",
   ["c-deed-word"] = "r-task",
+  ["c-chain"] = "r-task",
   ["c-deliver"] = "r-task",
   ["c-gear"] = "r-gear",
   ["c-trainer"] = "r-lesson",
@@ -159,7 +159,7 @@ local ROUTINE = {
 -- and the narrator's thought on it when one is free).
 local function weigh(kind, ctx)
   if kind == "c-first" or kind == "c-elite" or kind == "c-tame" then return 3 end
-  if kind == "c-deed-kill" or kind == "c-handed-kill" then return ctx.one and 3 or 2 end -- one asked for: a named foe
+  if kind == "c-deed-kill" or kind == "c-handed-kill" then return ctx.named and 3 or 2 end -- one asked for by name
   if kind == "c-handed-item" then return 2 end
   if kind == "c-deed-task" then return ctx.escort and 3 or 2 end
   if kind == "c-deed-item" then return 2 end
@@ -196,7 +196,7 @@ local SPECIFIC = setmetatable(
   { __index = SUBJECTS }
 )
 
-local PEOPLE = { "giver", "ender", "boss", "mates", "pet" } -- slots that name people
+local PEOPLE = { "giver", "via", "ender", "boss", "mates", "pet" } -- slots that name people
 -- Who asked, left out of a deed when already named; the kinds told without
 -- the person when already named (their [again] sentences).
 local AGAIN_DROPS = {
@@ -206,6 +206,7 @@ local AGAIN_DROPS = {
   ["c-deed-word"] = true,
   ["c-handed-kill"] = true,
   ["c-handed-item"] = true,
+  ["c-chain"] = true,
 }
 local AGAIN = { ["c-report"] = true, ["c-deliver"] = true, ["c-deed-word"] = true, ["c-quest"] = true }
 local Book = {}
@@ -232,6 +233,7 @@ local function newBook(c)
   b.remarkChapter = {} -- the chapter each remark was last told in
   b.creatureKinds = {} -- classifications actually recorded, not guessed from a quest's name
   b.placeNames = {} -- only places encountered so far; later events cannot rewrite an objective
+  b.sizesUsed, b.sizesOrder = {}, {} -- the size words told last (Book:size)
   b.base = { hc = c.hardcore or nil, ["race:" .. race] = true, ["class:" .. class] = true }
   if b.faction then b.base["faction:" .. b.faction] = true end
   return b
@@ -481,15 +483,16 @@ end
 -- fill the slots (_place: the place {at}, {in} or {where} names), tags add to
 -- the character's. prefer: tags to favour (a fresh sentence with one of them
 -- wins over the rest). raw: a clause, left as it is (no capital).
--- Returns the text and what was chosen: { weight (weigh), routine (its
--- remarks' pool, if routine), remark (one was added), turn (a [turn] line) }.
+-- Returns the text and what was chosen: { kind, weight (weigh), routine (its
+-- remarks' pool, if routine), remark (the one added, if any), turn (a [turn]
+-- line) }.
 function Book:say(kind, key, values, tags, prefer, raw)
   if not ns.data.writing[kind] then return end
   local s = self.scene
   local ctx = setmetatable(tags or {}, { __index = self.base })
   if kind == "c-return" then ctx.back = true end -- for its remark: a place known
   local routine, weight = ROUTINE[kind], weigh(kind, ctx)
-  local wantRemark = remarkDue(s, routine, weight)
+  local wantRemark = not ctx.quiet and remarkDue(s, routine, weight)
   for k, v in pairs(self.voice) do
     if values[k] == nil then values[k] = v end
   end
@@ -501,7 +504,7 @@ function Book:say(kind, key, values, tags, prefer, raw)
   self:use(kind, e)
   local chosen = e.s
   local text = chosen[1]
-  local said = { weight = weight, routine = routine, remark = false, turn = hasTag(chosen, "turn") }
+  local said = { kind = kind, weight = weight, routine = routine, remark = false, turn = hasTag(chosen, "turn") }
   if seen then -- who this sentence names, for the rest of the paragraph
     for _, k in ipairs(PEOPLE) do
       if type(asked[k]) == "string" and text:find("{" .. k .. "}", 1, true) then
@@ -515,7 +518,7 @@ function Book:say(kind, key, values, tags, prefer, raw)
     local remark = self:remark(routine, key, values, ctx, (text:gsub("{%w+}", "")), weight >= 2)
     if remark then
       text = text .. ", " .. remark
-      said.remark = true
+      said.remark = remark
       s.nextRemark = s.routineCount + 2 + hash(self.seed .. "|remark-gap|" .. key) % 2
     end
   end
@@ -692,6 +695,25 @@ function Book:here(values, place)
   return values
 end
 
+-- How many n is, in words (Language.lua's sizes): one of those that fit,
+-- not one of the last few used, so "a good many" doesn't come back every
+-- other quest; often none at all.
+local SIZE_GAP = 4
+function Book:size(n, key, mass, pack)
+  local fit, fresh = sizes(n, mass, pack), {}
+  for _, w in ipairs(fit) do
+    if w == "" or not self.sizesUsed[w] then table.insert(fresh, w) end
+  end
+  if #fresh == 0 then fresh = fit end
+  local w = fresh[hash(self.seed .. "|size|" .. key) % #fresh + 1]
+  if w ~= "" then
+    self.sizesUsed[w] = true
+    table.insert(self.sizesOrder, w)
+    if #self.sizesOrder > SIZE_GAP then self.sizesUsed[table.remove(self.sizesOrder, 1)] = nil end
+  end
+  return w
+end
+
 -- A quest's deed, in a clause: the creatures killed, the things gathered or
 -- delivered, the task done, or who asked. Returns the text and what was
 -- chosen, as Book:say.
@@ -706,17 +728,19 @@ function Book:deed(m, key, tags)
     -- every creature asked for ("Rockjaw Troggs and Burly Rockjaw Troggs");
     -- one asked for by a name of its own ("Vagash", "Grik'nir the Cold") as
     -- it is, any other with its article ("a Snow Leopard Prowler")
-    local foes, count = {}, 0
+    local foes, count, named = {}, 0, false
     for _, f in ipairs(objectivesLike(m, o)) do
-      local named = not f.name:find(" ") or f.name:find(" the ")
+      named = not f.name:find(" ") or f.name:find(" the ")
       table.insert(foes, (f.n or 1) > 1 and plural(f.name) or named and f.name or article(f.name))
       count = count + (f.n or 1)
     end
-    values.n, values.foes = size(count), listing(foes)
-    if tags.more then values.n = "more" end -- the first told already
+    tags.named = count == 1 and named or nil
+    local pack = #foes == 1 and self.creatureKinds[o.name] == "Wolf"
+    values.n, values.foes = self:size(count, key, false, pack), listing(foes)
     self.lastFoe = { name = o.name, many = count > 1, told = self.told or 0 }
     tags.one = count == 1 or nil
     tags.teeth = TEETH[self.creatureKinds[o.name] or ""]
+    tags.mechanical = self.creatureKinds[o.name] == "Mechanical" or nil
     local people = foeOf(o.name, self.creatureKinds[o.name])
     if people then tags[people] = true end
     -- (handed in on the spot: to whom, if not named in the paragraph already)
@@ -752,7 +776,7 @@ function Book:deed(m, key, tags)
       table.insert(list, (f.n or 1) > 1 and things(f.name) or itemName(f.name))
     end
     local count = #all == 1 and (o.n or 1) or 2
-    values.n, values.thing = #all == 1 and size(count) or "", listing(list)
+    values.n, values.thing = #all == 1 and self:size(count, key, uncounted(o.name)) or "", listing(list)
     if tags.done then values.giver = nil end -- found, not yet handed over
     -- the same thing again, told just before: "four more Blood Shards"
     local last = self.lastThing
@@ -779,8 +803,14 @@ function Book:deed(m, key, tags)
     -- VanCleef was hiding" (the log's "The Defias Traitor", "is hiding")
     values.task = taskOf(o.text)
     -- (a place the reader knows already: not named again at the end)
-    local at = values.task:match(" in ([^,]+)$") or values.task:match(" at ([^,]+)$")
-    if at and self.placeNames[at] then values.task = values.task:sub(1, -(#at + 5)) end
+    local prep, at = values.task:match(" (in) ([^,]+)$")
+    if not at then
+      prep, at = values.task:match(" (at) ([^,]+)$")
+    end
+    if not at then
+      prep, at = values.task:match(" (inside) ([^,]+)$")
+    end
+    if at and self.placeNames[at] then values.task = values.task:sub(1, -(#at + #prep + 3)) end
     -- Taming objectives describe the same event as UNIT_PET. Leave that
     -- telling to the pet record, even before it arrives: no lookahead and
     -- no rewriting a finished quest sentence when the pet is later named.

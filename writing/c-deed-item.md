@@ -20,14 +20,14 @@ kind: c-deed-item
 - [one trophy !done !more] brought {giver} {thing}
 - [one trophy !done !more] laid {thing} before {giver}
 - [one trophy !done !more] set {thing} down in front of {giver}
-- [!one done !more] had all {n} {thing}
+- [!one done !more] had all the {thing} I needed
 - [!one done !more] had {n} {thing} in my pack
 - [one done !more] had {thing} in my pack
 - [one trophy done !more] took {thing} as proof
 - [one trophy done !more] claimed {thing} as proof of the deed
 - [!one more] found {n} more {thing}
 - [!one more] gathered {n} more {thing}
-- [!one more] collected another {n} {thing}
+- [!one more] collected still more {thing}
 - [!one more] came by {n} more {thing}
 - [!one more] tracked down {n} more {thing}
 - [!one more] had {n} more {thing} before long
@@ -40,6 +40,6 @@ kind: c-deed-item
 - [turn !one !more] the search turned up {n} {thing}
 - [turn !one !more] it took some searching to find {n} {thing}
 - [turn !one !more] {giver} wanted {n} {thing}, and got them
-- [turn !one !more] the count reached {n} {thing} in the end
+- [turn !one !more] in the end there were {n} {thing} in my pack
 - [turn one !plural !trophy !more] the search turned up {thing}
 - [turn one !plural !trophy !more] it took some searching to find {thing}

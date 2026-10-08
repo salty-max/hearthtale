@@ -62,6 +62,8 @@ const KINDS: Record<string, string[]> = {
   closing: ["time", "gold"],
   prologue: ["at", "in", "zone", "quests", "inn", "played"],
   died: ["foe", "at", "in"],
+  // a death and the way back right after it, in one sentence
+  "died-back": ["foe", "by", "graveyard", "at", "in"],
   epitaph: ["name", "who", "level", "in", "at", "zone", "foe"],
   campfire: ["at", "in"],
   night: ["at", "in"],
@@ -85,7 +87,6 @@ const KINDS: Record<string, string[]> = {
   "c-place": ["place"],
   "c-travel": ["place"],
   "c-return": ["place"],
-  "c-kill": ["foe"],
   "c-first": ["kind"],
   "c-elite": ["foe"],
   "c-deed-kill": ["n", "foes", "giver", "ender"],
@@ -95,6 +96,10 @@ const KINDS: Record<string, string[]> = {
   "c-handed-item": ["n", "thing", "giver"],
   "c-deed-task": ["task", "giver", "ender"],
   "c-deed-word": ["giver", "ender"],
+  // errands one after another: the ender of the first gives the second
+  "c-chain": ["giver", "via", "ender"],
+  // a deed (its clause, {deed}) with the creatures killed on the way, no quest's
+  "c-while": ["prey", "deed"],
   "c-deliver": ["thing", "ender", "giver"],
   "c-quest": ["giver"],
   "c-trainer": ["spells"],
@@ -125,10 +130,10 @@ const TAGS = ["home", "ally", "foe", "neutral", "night", "hc", "high", "low", "f
   "murloc", "kobold", "gnoll", "harpy", "quilboar", "centaur", "ogre", "troll", "naga", "satyr", "furbolg", "trogg", "outlaw",
   "scarlet", "undead", "demon", "elemental", "dragonkin", "spider",
   "stone", "egg", "feather", "hide", "paper", "plant", "relic", "remains", "teeth", "mechanical", "cloth", "meat", "explore", "escort", "new", "made", "form", "demon", "steed",
-  "looted", "imp", "voidwalker", "succubus", "felhunter", "felguard",
+  "looted", "handed", "complex", "imp", "voidwalker", "succubus", "felhunter", "felguard",
   "bear", "cat", "travel", "aquatic", "moonkin", "tree", "flight"];
 const RACES = ["Human", "Dwarf", "NightElf", "Gnome", "Draenei", "Orc", "Troll", "Tauren", "Scourge", "BloodElf", "Skyborne"];
-const ROUTINE = new Set("deed-kill deed-item deed-task deed-word deliver report kill first gear trainer inn travel return place group skill prof handed-kill handed-item".split(" ").map((kind) => `c-${kind}`));
+const ROUTINE = new Set("deed-kill deed-item deed-task deed-word chain deliver report first gear trainer inn travel return place group skill prof handed-kill handed-item".split(" ").map((kind) => `c-${kind}`));
 // The recap's kinds: one sentence of the recap holds a thought, the others are plain.
 const RECAP = new Set(["quests-many", "kills", "kills-two", "closing"]);
 const CLASSES = ["WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK", "DRUID"];

@@ -10,8 +10,8 @@ kind: r-foe
 - [!one] one after another, like waves on the shore
 - [teeth] its teeth meeting nothing but air
 - [mechanical] metal and grease, no spirit in it
-- [night !more] the dark my friend more than its
-- [hc] remembering how many of my people the sea had already taken
+- [night] the dark more my friend than its
+- [hc] remembering how few of us the Darkspear could spare
 - [low] still learning when to strike and when to wait
 - [high] easy as breathing, almost
 - glad to reach the quiet after the fight

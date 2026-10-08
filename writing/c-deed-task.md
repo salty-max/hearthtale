@@ -6,9 +6,9 @@ kind: c-deed-task
 - found a way to {task}
 - was able to {task}
 - went to {task}
-- set out to {task} and did so
-- did what was needed to {task}
-- took on the work to {task} and saw it through
-- [turn] the task was to {task}, and it was done
-- [turn] there was {giver}'s request to {task}, and I saw it through
+- agreed to {task}, and did
+- made time to {task}
+- offered to {task}, and saw to it
+- [turn] {giver} asked me to {task}, so I did
+- [turn] {giver} needed someone to {task}, and I was at hand
 - [turn] it fell to me to {task}
