@@ -99,6 +99,15 @@ local function killCounts(id)
   return counts
 end
 
+-- The pet at my side, if one is out: its name and family ("Zigfik", "Imp"),
+-- for the work done with it.
+local function companion()
+  if not UnitExists("pet") then return nil end
+  local name, family = UnitName("pet"), UnitCreatureFamily("pet")
+  if not name or secret(name) then return nil end
+  return name, (family and not secret(family)) and family or nil
+end
+
 -- A quest's count gone up: those kills credited to me (Combat.lua tells the
 -- ones it hasn't heard of: another's killing blow on a creature I fought,
 -- which the game credits me with).
@@ -155,7 +164,11 @@ ns.on("QUEST_LOG_UPDATE", function()
     creditKills(id, p)
     if not p.done and not p.held and finishedAll(id) then
       p.done = true
-      moment("done", { id = id, title = p.title, giver = p.giver, objectives = p.objectives })
+      local pet, family = companion()
+      moment(
+        "done",
+        { id = id, title = p.title, giver = p.giver, objectives = p.objectives, pet = pet, petFamily = family }
+      )
     end
   end
 end)

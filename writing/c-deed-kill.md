@@ -30,3 +30,36 @@ kind: c-deed-kill
 - [turn !one] {n} {foes} fell, as {giver} had asked
 - [turn !one] {n} {foes} would not be bothering anyone again
 - [turn !one] {n} {foes} went down one after another
+- [fire !one] burned {n} {foes}
+- [fire !one] put {n} {foes} to the fire
+- [fire !one] left {n} {foes} smouldering
+- [fire one] burned {foes} down
+- [frost !one] froze {n} {foes} where they stood
+- [frost !one] brought down {n} {foes} in a storm of frost
+- [frost one] froze {foes} where it stood
+- [arcane !one] battered {n} {foes} with raw magic
+- [arcane one] battered {foes} with raw magic
+- [shadow !one] struck down {n} {foes} with shadow
+- [shadow !one] sent bolts of shadow into {n} {foes}
+- [shadow one] struck {foes} down with shadow
+- [curse !one] cursed {n} {foes} and let the rot do its work
+- [curse one] cursed {foes} and let the rot do its work
+- [holy !one] smote {n} {foes} with the Light
+- [holy one] smote {foes} with the Light
+- [lightning !one] called lightning down on {n} {foes}
+- [lightning one] called lightning down on {foes}
+- [wrath !one] turned the wild's wrath on {n} {foes}
+- [wrath one] turned the wild's wrath on {foes}
+- [steel !one] took {weapon} to {n} {foes}
+- [steel !one] cut my way through {n} {foes}
+- [steel one] took {weapon} to {foes}
+- [arrow !one] brought down {n} {foes} with {weapon}
+- [arrow !one] picked off {n} {foes} from a distance
+- [arrow one] brought {foes} down with {weapon}
+- [tried !one] tried my new {spell} on {n} {foes}, and it worked
+- [tried !one] put {spell} to its first real use on {n} {foes}
+- [tried one] tried my new {spell} on {foes}, and it worked
+- [tried one] put {spell} to its first real use on {foes}
+- [pet !one] fought {n} {foes} with {pet} at my side
+- [pet !one] set {pet} on {n} {foes} and finished what was left
+- [pet one] fought {foes} with {pet} at my side

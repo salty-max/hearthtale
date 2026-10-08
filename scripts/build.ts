@@ -62,6 +62,10 @@ const KINDS: Record<string, string[]> = {
   closing: ["time", "gold"],
   prologue: ["at", "in", "zone", "quests", "inn", "played"],
   died: ["foe", "at", "in"],
+  // a class's own quest turned in: what it taught ({pet}: "an imp", for a summoning)
+  "class-reward": ["giver", "spell", "pet"],
+  // a spell with a line of its own ([spell:Life Tap]), when learned
+  lesson: ["spell"],
   // a run of errands, opened: "There were smaller jobs after that..."
   errands: [],
   // a death and the way back right after it, in one sentence
@@ -91,10 +95,10 @@ const KINDS: Record<string, string[]> = {
   "c-return": ["place"],
   "c-first": ["kind"],
   "c-elite": ["foe"],
-  "c-deed-kill": ["n", "foes", "giver", "ender"],
+  "c-deed-kill": ["n", "foes", "giver", "ender", "spell", "pet"],
   "c-deed-item": ["n", "thing", "giver", "ender"],
   // the work handed in on the spot, to whom: "brought Sten Stoutarm eight Tough Wolf Meat"
-  "c-handed-kill": ["n", "foes", "giver"],
+  "c-handed-kill": ["n", "foes", "giver", "spell", "pet"],
   "c-handed-item": ["n", "thing", "giver"],
   "c-deed-task": ["task", "giver", "ender"],
   "c-deed-word": ["giver", "ender"],
@@ -132,7 +136,7 @@ const TAGS = ["home", "ally", "foe", "neutral", "night", "hc", "high", "low", "f
   "murloc", "kobold", "gnoll", "harpy", "quilboar", "centaur", "ogre", "troll", "naga", "satyr", "furbolg", "trogg", "outlaw",
   "scarlet", "undead", "demon", "elemental", "dragonkin", "spider",
   "stone", "egg", "feather", "hide", "paper", "plant", "relic", "remains", "teeth", "mechanical", "cloth", "meat", "explore", "escort", "new", "made", "form", "demon", "steed",
-  "looted", "handed", "complex", "imp", "voidwalker", "succubus", "felhunter", "felguard",
+  "looted", "handed", "complex", "summon", "also", "tried", "pet", "fire", "frost", "arcane", "shadow", "curse", "holy", "lightning", "wrath", "steel", "arrow", "imp", "voidwalker", "succubus", "felhunter", "felguard",
   "bear", "cat", "travel", "aquatic", "moonkin", "tree", "flight"];
 const RACES = ["Human", "Dwarf", "NightElf", "Gnome", "Draenei", "Orc", "Troll", "Tauren", "Scourge", "BloodElf", "Skyborne"];
 const ROUTINE = new Set("deed-kill deed-item deed-task deed-word chain deliver report first gear trainer inn travel return place group skill prof handed-kill handed-item".split(" ").map((kind) => `c-${kind}`));
@@ -140,10 +144,12 @@ const ROUTINE = new Set("deed-kill deed-item deed-task deed-word chain deliver r
 const RECAP = new Set(["quests-many", "kills", "kills-two", "closing"]);
 const CLASSES = ["WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK", "DRUID"];
 const tagOk = (t: string) => {
-  const [k, v] = t.replace(/^!/, "").split(":");
+  const bare = t.replace(/^!/, ""), colon = bare.indexOf(":");
+  const [k, v] = colon < 0 ? [bare, undefined] : [bare.slice(0, colon), bare.slice(colon + 1)];
   if (v === undefined) return TAGS.includes(k);
   return (k === "race" && RACES.includes(v)) || (k === "class" && CLASSES.includes(v)) ||
-    (k === "faction" && ["alliance", "horde"].includes(v)) || (k === "client" && CLIENTS.includes(v));
+    (k === "faction" && ["alliance", "horde"].includes(v)) || (k === "client" && CLIENTS.includes(v)) ||
+    (k === "spell" && /^[A-Z][A-Za-z':_]+$/.test(v)); // a spell's name, its spaces "_": [spell:Life_Tap]
 };
 
 type Sentence = { text: string; tags: string[] };

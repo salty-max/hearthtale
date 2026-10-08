@@ -30,7 +30,8 @@
 --   }
 --   moments: { k = kind, at, night, zone, sub, grouped, ... }
 --     place { new = "zone" or nil }  inn { place }  flight { from, to }  level { level }
---     done { id, title, giver, objectives, abandoned }   a quest's work done
+--     done { id, title, giver, objectives, abandoned, pet, petFamily }   a quest's work done
+--                                                    (pet: the one at my side then)
 --     quest { id, title, giver, ender, objectives, told }   a quest turned in (told: its
 --                                                    work was told when done); objectives =
 --                                                    { { type, name, n, text, held } }

@@ -161,6 +161,40 @@ local TASKS = {
   "Escort the caravan to the Crossroads",
 }
 local SPELLS = {
+  -- (the ways of fighting and the spells with a line of their own)
+  "Arcane Missiles",
+  "Immolate",
+  "Smite",
+  "Wrath",
+  "Life Tap",
+  "Fear",
+  "Drain Life",
+  "Health Funnel",
+  "Polymorph",
+  "Blink",
+  "Frost Nova",
+  "Conjure Water",
+  "Power Word: Shield",
+  "Renew",
+  "Resurrection",
+  "Psychic Scream",
+  "Lay on Hands",
+  "Divine Protection",
+  "Charge",
+  "Execute",
+  "Pick Pocket",
+  "Sap",
+  "Vanish",
+  "Sprint",
+  "Aspect of the Cheetah",
+  "Feign Death",
+  "Hunter's Mark",
+  "Ghost Wolf",
+  "Ancestral Spirit",
+  "Lightning Shield",
+  "Entangling Roots",
+  "Healing Touch",
+  "Rebirth",
   "Blessing of Might",
   "Judgement",
   "Hammer of Justice",
@@ -453,7 +487,9 @@ local function life(race, class, hc, from, to)
           -- its work done and told now; the return later (or right away)
           questId = questId + 1
           q.id, q.told, q.ender = questId, true, q.ender or one(GIVERS)
-          add(m("done", { id = q.id, title = q.title, giver = q.giver, objectives = o }))
+          -- (a hunter's or a warlock's pet at my side, now and then)
+          local pet = (class == "HUNTER" or class == "WARLOCK") and chance(0.5) and one({ "Zigfik", "Bristle" }) or nil
+          add(m("done", { id = q.id, title = q.title, giver = q.giver, objectives = o, pet = pet }))
           if chance(0.3) then
             add(m("quest", q))
           else
@@ -1572,6 +1608,28 @@ for _, race in ipairs(RACES) do
         errands[k] = { k = "quest", giver = giver, ender = "Brewmaster Drohn", objectives = { { type = "log" } } }
       end
       chapter(errands)
+      -- a class's own quests turned in: handed in on the spot, or a return
+      local rewards, seenSpell = {}, {}
+      for id, q in pairs(ns.knowledge.quests) do
+        if q.class == class and q.spell and not seenSpell[q.spell] then
+          seenSpell[q.spell] = true
+          table.insert(rewards, id)
+        end
+      end
+      table.sort(rewards)
+      for _, id in ipairs(rewards) do
+        local work = { { type = "item", name = "Feather Charm", n = 3 } }
+        if life % 2 == 1 then
+          chapter({
+            { k = "done", id = id, giver = "Alamar Grimm", objectives = work },
+            { k = "quest", id = id, giver = "Alamar Grimm", ender = "Alamar Grimm", told = true, objectives = work },
+          })
+        else
+          chapter({
+            { k = "quest", id = id, giver = "Alamar Grimm", ender = "Alamar Grimm", told = true, objectives = work },
+          })
+        end
+      end
       for _, first in ipairs(FIRSTS[class] or {}) do
         chapter({
           class == "WARLOCK" and { k = "demon", name = "Zigfik", family = first } or { k = "shift", form = first },

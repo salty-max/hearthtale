@@ -22,3 +22,15 @@ kind: c-handed-kill
 - [turn !one] {giver} wanted {foes} dealt with, and I saw to it
 - [turn !one] {giver} needed {foes} thinned out, so I thinned them
 - [turn one] {giver} wanted {foes} dead, and I obliged
+- [fire !one] burned {n} {foes} for {giver}
+- [frost !one] froze {n} {foes} where they stood for {giver}
+- [arcane !one] battered {n} {foes} with raw magic for {giver}
+- [shadow !one] struck down {n} {foes} with shadow for {giver}
+- [curse !one] cursed {n} {foes} to their end for {giver}
+- [holy !one] smote {n} {foes} with the Light for {giver}
+- [lightning !one] called lightning down on {n} {foes} for {giver}
+- [wrath !one] turned the wild's wrath on {n} {foes} for {giver}
+- [steel !one] took {weapon} to {n} {foes} for {giver}
+- [arrow !one] brought down {n} {foes} with {weapon} for {giver}
+- [tried !one] tried my new {spell} on {n} {foes} for {giver}
+- [pet !one] fought {n} {foes} for {giver} with {pet} at my side

@@ -994,6 +994,16 @@ check(
   #demon == 1 and demon[1].name == "Zigfik" and demon[1].family == "Imp" and #told("learned") == learnedBefore,
   "a warlock's first imp, by its name, once (not told as a lesson)"
 )
+accept(196, "Pet Work", "Grelin Whitebeard", { text = "Wolf Pelt: 0/1", type = "item", numRequired = 1 })
+state.objectives[196][1].finished = true
+fire("QUEST_LOG_UPDATE")
+local withPet = told("done")
+withPet = withPet[#withPet]
+check(
+  withPet and withPet.id == 196 and withPet.pet == "Zigfik" and withPet.petFamily == "Imp",
+  "a quest's work done with my pet out: which one"
+)
+turnIn(196, "Grelin Whitebeard")
 state.pet = { name = "Ganrul", family = "Voidwalker", guid = "Pet-0-1-1-1-1860-0002" }
 fire("UNIT_PET", "player")
 check(#told("demon") == 1, "… and no demon whose summoning the journal didn't see learned")

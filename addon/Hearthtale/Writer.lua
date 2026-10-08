@@ -112,6 +112,21 @@ function tell.flight(s, m)
     b.last, b.there = s.place, false
   end
 end
+-- A class's own quest, turned in: what it taught, a sentence of its own
+-- ("In return, Alamar Grimm taught me to call an imp"; Knowledge.lua).
+-- False if the quest is no class quest of mine, or teaches nothing.
+local function classReward(s, m)
+  local q = m.id and ns.knowledge and ns.knowledge.quests[m.id]
+  if not (q and q.spell and q.class == s.c.class) then return false end
+  s:prepare() -- (in its place: arrived there first)
+  local family = q.spell:match("^Summon (.+)$")
+  local t = { summon = family and true or nil }
+  if family then t[family:lower()] = true end
+  local values = { giver = m.ender or m.giver, spell = q.spell, pet = family and article(family:lower()) }
+  s:alone("class-reward", values, s:tags(t, m), m)
+  return true
+end
+
 -- a quest's work done: told where it happened (or at its turn-in, if that
 -- comes right after, in the same place)
 function tell.done(s, m)
@@ -130,6 +145,9 @@ function tell.turnIn(s, m)
     -- sentence before, already read as finished)
     s:flush()
     s:deed(s:tags({ handed = true }, m))
+    classReward(s, m)
+  elseif classReward(s, m) then -- (the reward says I came back)
+    return
   elseif m.ender then
     local enders, seenEnder, k = { m.ender }, { [m.ender] = true }, i + 1
     while log[k] and log[k].k == "quest" and log[k].told and log[k].ender and s:placeOf(log[k]) == s.place do
@@ -141,7 +159,10 @@ function tell.turnIn(s, m)
     s:tell("c-report", { ender = listing(enders) })
   end
 end
-function tell.quest(s, m) s:deed(s:tags(nil, m)) end
+function tell.quest(s, m)
+  s:deed(s:tags(nil, m))
+  classReward(s, m)
+end
 -- an errand whose ender sends me straight on with the next: one clause,
 -- from the first who asked to the last ("from Sten Stoutarm to Talin Keeneye
 -- and on to Grelin Whitebeard")
@@ -249,9 +270,25 @@ end
 -- a dungeon's last master: a sentence of its own
 function tell.bossFinal(s, m) s:alone("boss-final", { boss = m.name, dungeon = mid(s.dungeon) }, s:tags(nil, m), m) end
 function tell.boss(s, m) s:tell("c-boss", { boss = m.name, dungeon = mid(s.dungeon) }) end
--- (a trade's own spell, learned before the game listed the trade, is told by the trade)
+-- (a trade's own spell, learned before the game listed the trade, is told by
+-- the trade); a spell with a line of its own (writing/lesson.md: Life Tap,
+-- paid in blood) told by it, the first of them
+local noted
+local function hasNote(spell)
+  if not noted then
+    noted = {}
+    for _, line in ipairs(ns.data.writing.lesson or {}) do
+      for _, t in ipairs(line.tags or {}) do
+        local name = t:match("^spell:(.+)$") -- (its spaces "_": [spell:Life_Tap])
+        if name then noted[(name:gsub("_", " "))] = true end
+      end
+    end
+  end
+  return noted[spell]
+end
 function tell.learned(s, m)
-  local spells = {}
+  s.book:learn(m.spells)
+  local spells, note = {}, nil
   for _, sp in ipairs(m.spells) do
     if
       not (
@@ -265,7 +302,11 @@ function tell.learned(s, m)
         or sp:find("^Master ")
       )
     then
-      table.insert(spells, sp)
+      if not note and hasNote(sp) and not s.book.noted[sp] then
+        note = sp
+      else
+        table.insert(spells, sp)
+      end
     end
   end
   if #spells > 0 then
@@ -274,6 +315,15 @@ function tell.learned(s, m)
       named[j] = spells[j]
     end
     s:tell("c-trainer", { spells = listing(named) }, { many = #spells > 3 or nil, one = #spells == 1 or nil })
+  end
+  if note then
+    s.book.noted[note] = true
+    s:alone(
+      "lesson",
+      { spell = note },
+      s:tags({ ["spell:" .. note:gsub(" ", "_")] = true, also = #spells > 0 or nil }, m),
+      m
+    )
   end
 end
 function tell.skill(s, m) s:tell("c-skill", { skill = m.name:lower(), rank = words(m.rank) }, { one = true }) end
