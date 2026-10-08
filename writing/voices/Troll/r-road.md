@@ -1,20 +1,20 @@
 ---
 kind: r-road
 ---
-- a hunter's interest occupied by the country
-- [!back] wondering what welcome a Darkspear could expect
-- [!back] my ears keeping a hunter's watch
+- the country keeping my eyes busy
+- [!back] wondering what the locals would make of tusks
+- [!back] my ears keeping watch for anything unfamiliar
 - [!back] less eager to hurry past what could become trouble
 - [!back] the sea's familiar rhythm still dear to me
-- [!back night] at an hour that made a hunter's care worth keeping
+- [!back night] at an hour that made care worth keeping
 - [back] the familiar way letting my vigilance ease
 - [back] the country beginning to feel like a place I knew
 - [back] the names I knew bringing company to mind
-- a hunter's ears kept busy by unfamiliar surroundings
+- the smells of the place telling me more than its signs
 - wondering what the loa found entertaining beyond the next turn
 - [!back] rather keen to know the way back before I needed it
 - [!back] my caution quicker than my willingness to feel at home
-- [!back] the sort of country a Darkspear could enjoy describing
+- [!back] the sort of country worth a story at Sen'jin
 - [!back night] my eyes asking the darkness to keep fewer secrets
 - [back] a familiar journey losing its old unease
 - [back] a known way without an assured welcome

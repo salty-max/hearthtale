@@ -7,7 +7,7 @@ kind: r-task
 - my back wanting no further favours asked of it
 - more names to carry back to the mountain
 - thinking fondly of a well-earned ale
-- [explore] a dwarf's caution kept busy by unfamiliar ground
+- [explore] reading the rock as I went, out of old habit
 - [explore] wondering what older roads might lie beneath this one
 - [escort] unwilling to hurry another life into danger
 - [night] my eyes doing a poor imitation of a miner's lamp

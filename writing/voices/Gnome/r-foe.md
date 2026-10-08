@@ -2,11 +2,11 @@
 kind: r-foe
 ---
 - my confidence rattling back into place
-- a sudden sympathy for mechanisms that shook themselves apart
-- [one] little enough flesh between a gnome and the grave
+- my nerves rattling long after the fight had stopped
+- [one] little enough flesh between me and the grave
 - [!one] their number testing every scrap of my ingenuity
 - [one] no longer in any hurry to discover how close I could get
-- [!one] their absence making room enough for even a gnome to breathe
+- [!one] the air easier to breathe with all of them down
 - my heart still clattering like a faulty pump
 - [teeth] my fingers grateful to have escaped those teeth
 - [teeth] my fingers quite determined to stay attached
@@ -17,7 +17,7 @@ kind: r-foe
 - [hc] no intention of joining Gnomeregan's missing
 - [hc] very fond of the little life I still had
 - [low] a beginner's pride thoroughly shaken
-- [high] a gnome who had learned to be dangerous
+- [high] small, perhaps, but no longer harmless
 - my stomach taking longer than my hands to settle
 - [one] no longer inclined to get within reach
 - [!one] their defeat worth several deep breaths

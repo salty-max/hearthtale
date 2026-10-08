@@ -1,7 +1,7 @@
 ---
 kind: r-item
 ---
-- [!one !plural] enough to keep a gnome's pockets busy
+- [!one !plural] enough to fill every pocket I had sewn in
 - [!one !plural] each piece another part of the search accounted for
 - [!one !plural] a carrying problem worthy of gnomish invention
 - [one !plural] the awkwardness of the cargo occupying my ingenuity

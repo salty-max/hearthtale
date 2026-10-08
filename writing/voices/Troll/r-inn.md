@@ -1,13 +1,13 @@
 ---
 kind: r-inn
 ---
-- a fine arrangement for a Darkspear to return by
+- a fine way back, and no swimming required
 - a return I hoped would feel like a familiar camp
 - an easy journey back arranged without a guide
 - [night] the night welcome to its own entertainment on my return
 - [hc] doubtful that the loa would find my safe return entertaining
 - a useful safeguard against a weary homecoming
-- a hunter with a refuge fixed in mind
+- a way home fixed in mind, which the Darkspear never take for granted
 - an enchantment whose practical uses delighted me
-- a journey back with no need for a hunter's watchfulness
+- a journey back with nothing to watch for
 - [night] my eyes spared the trouble of finding the whole way back

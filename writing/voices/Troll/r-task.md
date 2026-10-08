@@ -1,18 +1,18 @@
 ---
 kind: r-task
 ---
-- a Darkspear thoroughly occupied by an ordinary favour
+- an ordinary favour, done properly anyway
 - an ordinary request I could cheerfully have left to another troll
-- a hunter's patience put to an unglamorous use
-- a favour supplying all the trouble a Darkspear needed
+- the kind of work that keeps a village fed
+- a favour with all the trouble I needed for one day
 - my generosity due for a quiet spell
-- [explore] wondering what a hunter would notice beyond the path
-- [explore] a hunter's caution given fresh country to examine
+- [explore] reading the ground the way the trackers of the isles taught
+- [explore] fresh country, every bush of it a possible ambush
 - [escort] unwilling to lead another life where my luck would not reach
 - [night] the dark keeping my vigilance usefully occupied
 - the loa free to recommend another obliging troll next time
-- a troll with no appetite for another voluntary errand
+- no appetite left for another voluntary errand
 - [explore] wondering how easily the way could hide a traveller
-- [explore] a hunter with no intention of hurrying past a danger
+- [explore] in no hurry to walk past a danger
 - [escort] another life making the task suddenly serious
 - [night] my eyes doing a poor imitation of a jungle cat's

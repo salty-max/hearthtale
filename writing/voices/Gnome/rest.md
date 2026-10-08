@@ -2,11 +2,11 @@
 kind: rest
 ---
 - I rested {at}, letting the day's difficulties settle into something I could make sense of.
-- I settled {at}, and stopped running like a machine with its governor broken.
+- I settled {at}, and for once let my thoughts run on without me.
 - I paused {at}, content to leave every loose end exactly where it was.
 - I rested {at}, enjoying a pause without a problem that urgently needed solving.
-- I stopped {at}, as thoroughly unwound as anything in Tinker Town.
+- I stopped {at}, and found the quiet surprisingly agreeable.
 - I rested {at}, missing the familiar clatter of a city that was no longer ours to live in.
 - I paused {at}, with my enthusiasm temporarily out of service.
 - I rested {at}, and let the urge to improve things subside into a pleasant idleness.
-- A gnome could only run on stubbornness so long, and I stopped {at}.
+- I stopped {at}, out of stubbornness and very nearly out of everything else.

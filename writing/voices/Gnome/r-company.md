@@ -3,14 +3,14 @@ kind: r-company
 ---
 - [one] the pair of us a less inviting target
 - my company welcome without a demonstration of what I could build
-- a gnome with someone to notice if I went missing
+- someone to notice if I went missing in the tall grass
 - my courage no longer doing all the lifting
 - another name to hold apart from Gnomeregan's missing
 - a welcome companion in the life our scattered people were making
-- some company for a gnome's inconvenient enthusiasms
+- someone to share my inconvenient enthusiasms with
 - [night one] a little less alone beneath that enormous dark
 - [hc] more of us for trouble to find, and more of us to answer
 - [hc] unwilling to lose another person I knew
-- a gnome with a place among the others
-- my heart running at a more comfortable speed
+- a place found among the others
+- [one] an extra pair of eyes, at a more useful height than mine
 - [night] some company to keep the dark from claiming all my attention

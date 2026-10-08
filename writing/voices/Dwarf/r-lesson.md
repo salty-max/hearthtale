@@ -11,4 +11,4 @@ kind: r-lesson
 - [new] a new knack to put my stubbornness into
 - [low] still far from anything I would call mastery
 - [high] another skill to bring back under the mountain
-- [!one] some useful additions to a dwarf's means of surviving
+- [!one] a few more tools in the kit, and I like tools

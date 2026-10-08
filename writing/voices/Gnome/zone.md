@@ -1,6 +1,6 @@
 ---
 kind: zone
 ---
-- I entered {zone}, wondering what place a gnome might make in so much country.
-- I reached {zone}, with a lively interest in what a gnome might find useful in unfamiliar country.
+- I entered {zone}, wondering what place my people might yet make in so much country.
+- I reached {zone}, and began cataloguing it before I had properly arrived.
 - I came into {zone}, carrying a little of Tinker Town with me in the way I looked at things.

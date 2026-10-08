@@ -3,7 +3,7 @@ kind: r-inn
 ---
 - a wonderfully compact answer to the problem of getting home
 - a return journey neatly solved
-- no engineer yet able to improve on coming home in a blink
+- the fastest way home anyone had shown me
 - rather taken with a stone that could save so many steps
 - [night] the prospect of a safe return settling my nerves
 - [hc] unwilling to gamble on finding shelter at the last moment

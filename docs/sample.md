@@ -14,13 +14,13 @@ I set out in Coldridge Valley, a dwarf of the mountain with a good deal of count
 
 The journal went safely into Grelin Whitebeard's hands. I went on equipped with a Frostmane Leather Belt. Back in Anvilmar, the trainer taught me Serpent Sting and Track Beasts. I delivered a message to Marryk Nurribit.
 
-I had done six tasks by the end. I counted ten Ragged Young Wolves and four Burly Rockjaw Troggs, enough fighting to knock the edge off a dwarf. All told, it had taken an hour and thirty-five minutes. I rested in Anvilmar, as content to stop as a miner reaching the end of a shift.
+I had done six tasks by the end. I counted ten Ragged Young Wolves and four Burly Rockjaw Troggs, enough fighting to blunt a good axe. All told, it had taken an hour and thirty-five minutes. I rested in Anvilmar, as content to stop as a miner reaching the end of a shift.
 
 ## Chapter 2 (levels 4 to 7)
 
 I set off in Anvilmar, in a cheerful mood I doubted even the road could wear through. I smelled the Thunderbrew Distillery before I had properly reached Kharanos. Smoke rose above the houses, where dwarves and gnomes crowded together against the cold, and I felt my shoulders ease at the sight. My hearthstone was bound at the Thunderbrew Distillery from then on. I began my training in skinning, my fingers making an apprentice of me; I learned the first of leatherworking. I faced boars for the first time, those teeth quite sufficient to discourage a closer look. I delivered a Crag Boar Rib to Ragnar Thunderbrew. I finished a Handstitched Leather Vest. I put on a Handstitched Leather Vest of my own making.
 
-I found my way to the Grizzled Den, a dwarf's worth of curiosity about the ground. I completed Loslor Rudge's errand with Hegnar Rumbleshot. My path led into Brewnall Village. I took a Gyromechanic Gear to Razzle Sprysprocket. My training added Arcane Shot. I lay down in Shimmer Ridge, wondering how stone could feel so friendly at home and so hard beneath a back.
+I found my way to the Grizzled Den, eyeing the stone of the place before its people. I completed Loslor Rudge's errand with Hegnar Rumbleshot. My path led into Brewnall Village. I took a Gyromechanic Gear to Razzle Sprysprocket. My training added Arcane Shot. I lay down in Shimmer Ridge, wondering how stone could feel so friendly at home and so hard beneath a back.
 
 I got up in Shimmer Ridge, feeling as if someone had tried to quarry me while I slept. I killed Timber there, and felt as if a great weight had come off the mountain above me. I improved my skinning to fifty, still far from anything I would call mastery. A Frostmane Scepter was among the spoils, a rare thing.
 
@@ -56,11 +56,11 @@ I began again in Razor Hill, no one's captive and not yet as certain of the road
 
 ## Chapter 1 (levels 1 to 5)
 
-I began in Shadowglen, with a mortal life ahead of me and no wish to spend it longing for what Hyjal had taken. Moonlight silvered the leaves of Teldrassil while owls called overhead. I listened between my footfalls, unwilling to hurry through so much quiet. I encountered boars at close quarters, those jaws deserving no less care than a nightsaber's. Young Thistle Boars fell to me before I turned the wild's wrath on Young Nightsabers for Conservator Ilthalaine. I delivered a message to Mardant Strongoak. I thinned out Grells for Tarindrella, demonic company quite sufficient for my curiosity. I had my first encounter with spiders, rather keener to watch from a Sentinel's distance.
+I began in Shadowglen, with a mortal life ahead of me and no wish to spend it longing for what Hyjal had taken. Moonlight silvered the leaves of Teldrassil while owls called overhead. I listened between my footfalls, unwilling to hurry through so much quiet. I encountered boars at close quarters, those jaws deserving no less care than a nightsaber's. Young Thistle Boars fell to me before I turned the wild's wrath on Young Nightsabers for Conservator Ilthalaine. I delivered a message to Mardant Strongoak. I thinned out Grells for Tarindrella, demonic company quite sufficient for my curiosity. I had my first encounter with spiders, worth watching a long while before going nearer.
 
 I handed a Webwood Venom Sac over to Gilshalan Windwalker. The trainer taught me Moonfire and Rejuvenation. Rain scented the houses around the moonwell in Dolanaar. The sentinels kept their patient watch on the road, and I let my guard down a little. I carried a message on to Iverron. I bedded down, missing the quiet of a moonwell more than a roof.
 
-I rose in Dolanaar, leaving sleep with a Sentinel's careful attention to the world. I made sure a Nightsaber Pelt reached Zenn Foulhoof and brought an Emerald Dreamcatcher to Tallonkai Swiftroot. I swapped a piece or two of my gear.
+I rose in Dolanaar, listening to the morning before I trusted it. I made sure a Nightsaber Pelt reached Zenn Foulhoof and brought an Emerald Dreamcatcher to Tallonkai Swiftroot. I swapped a piece or two of my gear.
 
 I had seen seven tasks through, with the names of strangers no longer quite so foreign to me. Most of it had been against eleven Webwood Spiders and four Nightsabers. All of it had taken an hour and twenty-five minutes. I paused in Dolanaar, and let my mortal strength return at its own pace.
 

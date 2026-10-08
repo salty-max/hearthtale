@@ -6,7 +6,7 @@ kind: opening
 - I set out {at}, with more of the world to see than the inside of a mountain.
 - I set off {at}, with the Explorers' League's taste for old stone and unanswered questions.
 - I went on {at}, as stubborn about leaving a job half done as any dwarf of Ironforge.
-- I began this stretch {at}, with a dwarf's stubborn appetite for seeing a job through.
+- I began this stretch {at}, with a job half done and no intention of leaving it that way.
 - The stone beneath a road could have a longer history than the road itself, and I set out {at} to see what I could.
 - I set off {at}, in a cheerful mood I doubted even the road could wear through.
 - I took up the road {at}, with the mountain's safety already precious in my mind.

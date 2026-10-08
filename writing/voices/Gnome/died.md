@@ -5,5 +5,5 @@ kind: died
 - [fall] I fell to my death {at}; being nearer to the ground had offered no protection at all.
 - [drowning] I drowned {at}, with lungs no ingenuity could persuade to run on water.
 - [lava] Fire killed me {at}. I had no fondness left for the phrase controlled combustion.
-- [nature] I died {at}, another reminder of how little flesh it took to hold a gnome together.
+- [nature] I died {at}, and nothing in the land had meant anything by it.
 - I died {at}. We had lost enough of our people already, and I hated to join that number.

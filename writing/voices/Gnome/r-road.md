@@ -4,8 +4,8 @@ kind: r-road
 - my short legs making a long road of it
 - a distance crying out for a decent transport system
 - [!back] a new place to test a refugee's resourcefulness
-- [!back] rather fond of the close-packed comfort of Tinker Town
-- [!back] a gnome with no convenient diagram of what lay ahead
+- [!back] counting the ways in and out, a habit since Gnomeregan
+- [!back] no convenient diagram of what lay ahead
 - [!back night] my ears trying to make up for my eyes
 - [!back] my interest caught by the unfamiliar surroundings
 - [!back] a detour whose purpose had better justify it
@@ -13,6 +13,6 @@ kind: r-road
 - [back] familiar ground making the return feel wonderfully simple
 - [back] the way back already neatly arranged in my mind
 - [back] my memory saving me some unnecessary wandering
-- [high] still fonder of Tinker Town's clatter than of a long road
+- [high] the long roads finally starting to feel like mine
 - a distance that would have justified a railway
 - my ingenuity occupied with the question of getting about

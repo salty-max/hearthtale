@@ -1,6 +1,6 @@
 ---
 kind: zone
 ---
-- I entered {zone}, a Darkspear with no control over the rumours that might have arrived before me.
+- I entered {zone}, wondering what rumours about trolls had got there first.
 - I reached {zone}, with one part of me seeking a welcome and another seeking the way back.
 - I came into {zone}, wondering what good the tribe might find in the road ahead.

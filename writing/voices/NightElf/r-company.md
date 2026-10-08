@@ -1,9 +1,9 @@
 ---
 kind: r-company
 ---
-- a Sentinel's watch less painfully missed
+- the silence between us a comfortable one
 - [one] a second life dearer to me than the distance
-- the vigilance of a lone Sentinel no longer mine to bear
+- the watch shared, as the old ways prefer
 - my reserve giving way to the relief of company
 - a familiar ease returning to the journey
 - the quiet paths of home easier to leave with help beside me

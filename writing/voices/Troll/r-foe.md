@@ -4,13 +4,13 @@ kind: r-foe
 - [one] not an acquaintance I wanted to renew
 - my heart keeping a quicker rhythm than I cared to dance to
 - a Darkspear in no further need of the loa's attention
-- [!more] too fond of my hide to become a hunter's warning tale
+- too fond of my hide to end up as a warning in somebody else's story
 - my grin slower to return than my breath
 - [one] an enemy I would not want following me to the islands
-- [!one] their number enough to wear a hunter's patience thin
+- [!one] their number enough to wear my patience thin
 - [teeth] those teeth nothing I wanted nearer my own hide
 - [mechanical] without its maker's fondness for a machine's persistence
-- [night] my ears doing a hunter's work beyond the reach of sight
+- [night] my ears doing the work my eyes could not
 - [hc] remembering how few of us the Darkspear could spare
 - [low] still too eager to look fearless for my own comfort
 - [high] less quick to let excitement lead my hands
@@ -19,6 +19,6 @@ kind: r-foe
 - the encounter shaking some cleverness out of me
 - my smile returning without much help from pride
 - [one] an opponent I hoped the loa would not send twice
-- [teeth] those jaws worth keeping at a hunter's distance
+- [teeth] those jaws worth keeping a spear's length away
 - [hc] too fond of the tribe to leave another empty place
 - [low !more] a beginner's courage receiving an unwelcome exercise

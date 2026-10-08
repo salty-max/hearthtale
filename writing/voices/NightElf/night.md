@@ -4,7 +4,7 @@ kind: night
 - [!last] I slept in the open {at}, with the night feeling kinder than the day's demands.
 - [!last] I bedded down {at}, missing the quiet of a moonwell more than a roof.
 - [!last] I settled outside {at}, content to let the night hold me as the forests once had.
-- [!last] I slept lightly {at}, with a Sentinel's watchfulness harder to put aside than my weariness.
+- [!last] I slept lightly {at}, under a moon I could at least be sure of.
 - [!last] I spent the night {at} in the open, with Elune's name a comfort rather than a plea.
 - [!last] I lay down {at}, and let a mortal body's need for rest have its way.
 - [last] I settled outside {at}, longing for Teldrassil's shelter without wishing to hide from the world forever.

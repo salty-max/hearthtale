@@ -1,7 +1,7 @@
 ---
 kind: quests-many
 ---
-- I had completed {n} jobs, enough to make a dwarf feel useful outside the mountain.
+- I had completed {n} jobs, all of them done to a standard I would not be ashamed to show in Ironforge.
 - By the end, {n} tasks were behind me, and a quiet evening had a great deal to recommend it.
 - I had finished {n} jobs for folk along the road; their names would give me something to talk of back in Ironforge.
 - The {n} tasks behind me had worn down a fair share of dwarven stubbornness.

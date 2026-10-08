@@ -76,6 +76,14 @@ words or reaction, or a companion's appearance. Wishes and comparisons leave
 room for character without adding events. Gear remarks must work for what the
 tags establish: a crafted piece is not automatically cloth or armour.
 
+Show the race, don't label it: a line names the narrator's own people ("even a
+kaldorei", "a Darkspear's ingenuity") five times at most in a race's files. A
+people's way of life is not the narrator's trade: a troll is no hunter unless
+`[class:HUNTER]`, a night elf no Sentinel (comparing oneself to them is fine).
+A signature motif stays rare enough to land: a gnome's size, a tauren's or
+draenei's hooves, a gnome's engineering (one line in eight at most). No line
+gives the narrator a gender ("a flame with no work for him").
+
 ## Reading the results
 
 After each racial pass, build the catalogs and run `bun run addon:check`.

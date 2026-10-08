@@ -1,15 +1,15 @@
 ---
 kind: r-company
 ---
-- nearer to the warmth of a Darkspear camp
-- a hunter with company to ease the vigilance
-- some welcome company for a Darkspear on the road
+- nearer to the warmth of the village fires at Sen'jin
+- the watch easier to share, as it always is among my people
+- the road friendlier for the company
 - better than keeping only the loa entertained
-- [one] another life worth keeping safe in the hunt
-- [night] less alone beneath the hours a hunter watched most carefully
+- [one] another life worth keeping safe out here
+- [night] the dark easier with someone to trade jokes with
 - [hc] unwilling to lose someone the tribe might have welcomed
 - a familiar shore no longer my only comfort
-- some room for a grin in a hunter's vigilance
+- room for a grin again, with someone to share it
 - less liable to hear danger in every quiet stretch
 - [night] the night less hungry with company beside me
 - [hc] my trust no longer doing all the dangerous work

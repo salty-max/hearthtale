@@ -1,16 +1,16 @@
 ---
 kind: r-task
 ---
-- a quiet use for a shu'halo's strength
+- a quiet use for my strength
 - somebody else's burden eased by the effort
 - an ordinary task taking its share of my endurance
-- a shu'halo's patience given some useful work
+- patience put to good work, as the elders like
 - eager for the ease of a quiet camp
 - the request having made full use of my endurance
 - [explore] wondering how the path would treat smaller travellers
 - [explore] a hunter taking care with the unfamiliar ground
 - [escort] another life setting the undertaking's pace
-- a task that had worn through a shu'halo's patience
+- a task long enough to try an elder's patience
 - the way thoroughly fixed in my memory
 - in no hurry to find another favour to carry
 - [explore] a hunter's eye useful beyond the business of the hunt

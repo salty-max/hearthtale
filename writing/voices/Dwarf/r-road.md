@@ -1,13 +1,13 @@
 ---
 kind: r-road
 ---
-- a fair distance to wear down a dwarf's good humour
+- a fair distance, and my good humour worn thin by the end
 - rather more at ease with the weight of a mountain overhead
 - [!back] a new place to put an explorer's eye to use
 - [!back] wondering what an explorer would find beneath all this
-- [!back] a dwarf's worth of curiosity about the ground
+- [!back] eyeing the stone of the place before its people
 - [!back night] the dark obscuring the country I had come to see
 - [back] the familiar route a comfort in itself
-- [back] a place beginning to feel familiar enough for a dwarf to grumble
-- [back] a dwarf becoming well acquainted with that stretch of road
+- [back] familiar enough by now to grumble about
+- [back] every rut of that road known to my boots
 - [high] fonder of the Great Forge's din than of a long road
