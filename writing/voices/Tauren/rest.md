@@ -1,12 +1,12 @@
 ---
 kind: rest
 ---
-- I rested {at}, as ready for stillness as a kodo at the end of a long march.
-- With nothing more asked of these broad shoulders, I settled {at}.
+- I rested {at}, with the thorough contentment of a kodo at the end of a long march.
+- I settled {at}, and let a shu'halo's patience be useful simply in doing nothing.
 - I stopped {at}, letting my weight belong to the earth for a while.
-- I rested {at}, with the wish for a shared Mulgore camp stronger than the wish to go anywhere.
+- I rested {at}, thinking of the welcome a Mulgore camp could offer a weary traveller.
 - I paused {at}, no longer obliged to make a large body look tireless.
 - As weary as a hunter coming home, I rested {at}.
-- I stopped {at}, letting the Earth Mother's steadiness reach further than the soles of my hooves.
+- I stopped {at}, with the Earth Mother's steadiness a quiet comfort.
 - I rested {at}, grateful that the next mile could wait without being frightened away.
 - I paused {at}, with no greater ambition than to feel my own strength return quietly.

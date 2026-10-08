@@ -1,18 +1,18 @@
 ---
 kind: r-road
 ---
-- my hooves feeling the distance before I admired it
+- an unhurried traveller taking in the country
 - a child of the plains even on an unfamiliar path
-- [!back] hoping the ground would become familiar in time
-- [!back] a stranger hoping to find neighbours rather than opponents
-- [!back !home] a shu'halo hoping for the welcome our people had found in the orcs
-- [!back night] my hooves more certain of the ground than my eyes
-- [back] less foreign to the path than on my first coming
-- [back] my hooves recognising what my eyes had yet to settle on
+- [!back] the unfamiliar ground keeping my attention
+- [!back] a stranger taking an interest in possible neighbours
+- [!back !home] a shu'halo carrying our people's friendship beyond the orcs
+- [!back night] the ground an uncertain thing in the dark
+- [back] a welcome familiarity settling over the way
+- [back] the familiar route giving me an unhurried confidence
 - my weight no smaller for the length of the road
 - [!back] eager to know the people as well as the path
 - [!back] wondering what a settled shu'halo might learn from these people
 - [!back] the patience of my people's wanderers not yet entirely worn out
-- [!back night] my ears finding more than my eyes could use
+- [!back night] my ears occupied by what the dark kept hidden
 - [back] closer to knowing the way home than on my first visit
 - [back] a familiar path as welcome as the face of a neighbour

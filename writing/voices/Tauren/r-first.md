@@ -5,12 +5,12 @@ kind: r-first
 - more watchful than a grazing kodo
 - keener to know the earth's children than to disturb them
 - not nearly as sheltered by my size as I wished
-- my hooves longing for a quieter path
+- the quiet of Mulgore suddenly very precious
 - [teeth] those jaws no kindness to a hunter's respect
 - [night] my eyesight less useful beneath Mu'sha's hours
 - rather slower to welcome a second encounter
 - my patience unable to quiet my heart
-- more eager for distance than a closer acquaintance
+- a hunter's caution advising a respectful distance
 - my horns no reassurance against the danger
-- [night] less able to judge the movement than the dark around it
-- [low] an inexperienced hunter wishing for Mulgore's shelter
+- [night] the dark concealing the movement I needed to judge
+- [low] a novice hunter feeling the absence of Mulgore's shelter
