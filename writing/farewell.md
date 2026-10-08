@@ -23,4 +23,4 @@ kind: farewell
 - [class:PRIEST] May {name} find a gentler answer beyond the last prayer.
 - [class:SHAMAN] May the ancestors welcome {name} beyond the last struggle.
 - [class:WARLOCK] {name} bound demons, but could not bind death.
-- [class:DRUID] {name} has gone back to the wild.
+- [class:DRUID] May the wild receive {name} gently after the last struggle.

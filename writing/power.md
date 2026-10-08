@@ -1,10 +1,10 @@
 ---
 kind: power
 ---
-- [form] I learned {spell}, and began to understand how much a different shape could change my sense of the world.
-- [form] Learning {spell} gave me a new way to meet the wild, one I still had to grow accustomed to.
-- [form] I learned {spell}, aware that knowing its name was only the beginning of understanding it.
-- [form] I had learned {spell}, and felt there was a great deal of the world I would need to learn again.
+- [form] I learned {spell}, and could meet the wild in something nearer its own shape.
+- [form] Learning {spell} gave me another shape to take, and a new respect for the body I would borrow.
+- [form] I learned {spell}, with a druid's impatience to know the world through more than these same old senses.
+- [form] I had learned {spell}, and liked having another shape to put between myself and trouble.
 - [demon] I learned {spell}, and could call another creature from the dark without pretending it was a friend.
 - [demon] I learned {spell}; another demon could now reach me when I called, which was useful and not entirely reassuring.
 - [demon] I learned {spell}, with more hunger for a demon's strength than affection for its kind.

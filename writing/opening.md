@@ -24,7 +24,7 @@ kind: opening
 - [class:ROGUE] I began this stretch {at}, with a healthy affection for ways in that would leave a quiet way out.
 - [class:WARLOCK] I set out {at}, with curses enough for my enemies and a healthy distrust of anything I could summon.
 - [class:PRIEST] I began again {at}, with hands I hoped would be called on more often to mend than to harm.
-- [class:DRUID] I took up the road {at}, attentive to the life carrying on beside my own.
+- [class:DRUID] I took up the road {at}, still fond of a world that looked very different through a hunter's eyes and a healer's hands.
 - [class:SHAMAN] I set out {at}, hoping to hear the elements more gently than in the thunder of a fight.
 - [class:WARRIOR] I set out {at}, with a warrior's habit of judging trouble by the reach of a weapon.
 - [class:PALADIN] I began again {at}, hoping to lend the Light's strength without finding every need at the end of a weapon.
