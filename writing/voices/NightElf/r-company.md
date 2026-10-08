@@ -3,9 +3,9 @@ kind: r-company
 ---
 - a Sentinel's watch less painfully missed
 - [one] a second life dearer to me than the distance
-- a little more at ease than a lone Sentinel could afford
+- the vigilance of a lone Sentinel no longer mine to bear
 - my reserve giving way to the relief of company
-- a little of home's ease returning to my stride
+- a familiar ease returning to the journey
 - the quiet paths of home easier to leave with help beside me
 - [night] less alone in the part of the day I loved best
 - [hc one] another life too dear to surrender to the path

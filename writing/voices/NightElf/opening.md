@@ -2,11 +2,11 @@
 kind: opening
 ---
 - I took up the path {at}, with the patience of my people and rather less of their former certainty.
-- I began again {at}, hoping for work that would leave a little more of the wild unspoiled.
+- I began again {at}, with a kaldorei's care for what the wild might lose through our carelessness.
 - I set out {at}, still attached to the moonwells without wishing to spend my life beside them.
 - I went on {at}, a mortal now, though I had no wish to hurry merely because I could no longer wait forever.
 - I began this stretch {at}, remembering how dearly our people had paid for trusting power too easily.
-- I set out {at}, hoping to find something of the forest's gentleness beyond its borders.
-- I made ready {at}, wishing the road asked as little of me as a path beneath Teldrassil.
+- I set out {at}, carrying some affection for the world beyond our forests despite its harshness.
+- I set off {at}, with Teldrassil's shelter still dear to me.
 - I went on {at}, with Elune's name steadying the part of me that still wanted to turn home.
-- I set out {at}, no more eager than a Sentinel to leave trouble unwatched.
+- I set out {at}, with a Sentinel's distaste for leaving trouble unwatched.

@@ -3,11 +3,11 @@ kind: r-road
 ---
 - my footing easier on the familiar paths beneath Teldrassil
 - a forest's child before I was a traveller
-- [!back] hoping the distance would not make me forget the way home
+- [!back] the path home still dear to me in unfamiliar country
 - [!back] wary of trusting the place as easily as a moonwell
 - [!back] my reserve a poor disguise for being a stranger
-- [!back night] more at home with the night than with this country
+- [!back night] the night familiar in a country I did not know
 - [back] the familiar path dearer to me than the speed of returning
-- [back] less foreign to the way than on my first coming
+- [back] the way acquiring some welcome familiarity
 - [back] rather glad not to begin as a stranger again
 - [high] still fonder of a moonwell's peace than of a long road

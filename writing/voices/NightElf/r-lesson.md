@@ -1,14 +1,14 @@
 ---
 kind: r-lesson
 ---
-- my patience less strained than my fingers
+- my patience given an apprentice's exercise
 - [one] something I hoped would serve beyond our forests
-- [one] willing to give it longer than a moment's eagerness
-- more forgiving of slow fingers than of careless ones
+- [one] a knack to learn without hurrying
+- slow fingers forgiven their lack of ease
 - [one] no longer able to promise myself forever to master it
-- less at ease as an apprentice than a kaldorei might appear
+- a kaldorei's composure concealing an apprentice's awkwardness
 - [new] at the root of a skill I could not yet call mine
 - [new] wondering whether the Sentinels would find a use for such work
 - [low] new enough to this to envy another person's ease
 - [high] patient enough to give the difficult parts their due
-- [!one] hoping they would come readily when patience was no longer enough
+- [!one] some useful knowledge for the moment patience failed

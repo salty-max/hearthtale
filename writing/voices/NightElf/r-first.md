@@ -3,7 +3,7 @@ kind: r-first
 ---
 - my patience no substitute for distance
 - rather keener to watch from a Sentinel's distance
-- less at ease than I would have been with a nightsaber
+- a nightsaber's familiarity suddenly dear to me
 - my ears no quicker than my eyes to make the danger familiar
 - [teeth] those jaws deserving no less care than a nightsaber's
 - [night] more watchful in the hour I usually found kindest

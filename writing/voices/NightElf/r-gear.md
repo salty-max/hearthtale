@@ -1,9 +1,9 @@
 ---
 kind: r-gear
 ---
-- [!made !held] a better prospect than clothing that fought my stride
+- [!made !held] a welcome freedom from troublesome clothing
 - [!made] a little shelter I could carry beyond the forest
-- [!made] the weight less troubling than the danger it could spare
+- [!made] the protection a comfort against a mortal world's hazards
 - [!made] not yet as familiar as a path beneath Teldrassil
 - [!made hc] another kindness to the mortal body I still had
 - [made !held] my patience woven into something I could wear
