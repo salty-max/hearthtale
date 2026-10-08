@@ -3,13 +3,13 @@ kind: close-light
 ---
 - {foe} nearly killed me {at}, and left my hands less steady than the danger now required.
 - I barely survived {foe} {at}, with a longing for shelter stronger than any pride in coming through.
-- I survived a close call {at}, rather more ready for a quiet evening than for admiration.
-- {foe} brought me close to death {at}. I wanted the next small task to be harmless enough to complain about.
+- I survived a close call {at}, and admiration seemed a poor comfort beside the prospect of a quiet evening.
+- {foe} brought me close to death {at}. I could have taken quite a pleasure in a harmless task to complain about.
 - I barely survived {at}, and had no wish to discover whether my courage could bear another trial.
 - {foe} nearly ended me {at}; relief did not arrive nearly as quickly as I had expected.
 - I nearly fell {at}, with the thought of remaining alive taking up all the room in me.
 - I came through a close call {at}, too shaken to enjoy having proved I could survive one.
-- I nearly died {at}, and wanted the comfort of a place where nobody expected me to be brave.
+- I nearly died {at}, and the thought of somewhere I need not be brave comforted me.
 - [night] I survived a close call {at} in the dark, with my fear slower to leave than the danger.
 - [night] I nearly fell {at} after dark; daylight had rarely sounded so kind.
 - [hc] {foe} nearly killed me {at}, and I was grateful to keep the one life I had.
@@ -18,9 +18,9 @@ kind: close-light
 - [class:MAGE] I survived {foe} {at}, with the familiar distance of a spell lesson suddenly very dear to me.
 - [class:ROGUE] I nearly fell {at}, and wished I could slip out of fear as readily as I hoped to slip out of sight.
 - [class:HUNTER !low] {foe} nearly killed me {at}, and made the quiet work of following a trail seem very inviting.
-- [class:WARLOCK] I nearly died {at}, and wanted my own flesh back far more than another demon's strength.
+- [class:WARLOCK] I nearly died {at}, with my own flesh suddenly precious beyond any demon's strength.
 - I survived a close call {at}, with the relief taking its time reaching the parts of me that still wanted to flee.
 - I nearly died {at}, and found the quiet afterwards harder to trust than I had expected.
 - I barely survived {at}, with no desire to repeat the lesson for a better telling.
-- {foe} nearly ended me {at}, and I wanted to be safely ordinary for a while.
+- {foe} nearly ended me {at}, making an ordinary life seem a very dear thing to lose.
 - I came through a close call {at}, with my courage rather more spent than my willingness to live.

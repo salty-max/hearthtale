@@ -9,5 +9,5 @@ kind: r-item
 - [one !plural] the length of the search taking its toll on my patience
 - [one !plural] the find bringing a little satisfaction to a weary search
 - [meat] with a hunter's reluctance to waste what had died
-- [cloth] softer stuff than most of the road's business
+- [cloth] a mending task a Sentinel might welcome between watches
 - [night] the dark familiar without making the search easy

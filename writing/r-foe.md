@@ -1,18 +1,18 @@
 ---
 kind: r-foe
 ---
-- more relieved than my pride wanted to show
+- my relief resisting any attempt to look dignified
 - my hands slow to believe the danger was over
-- rather less graceful than I meant to be
-- my courage taking longer to settle than my body
+- my composure requiring some private repair
+- my courage slow to believe the danger over
 - not an encounter I wanted to invite twice
 - more aware of the quiet than I had been before
-- my knees less certain than my pride
+- my confidence in need of a quiet recovery
 - not yet willing to trust the stillness afterwards
-- ready for something gentler than another struggle
+- my appetite for struggle thoroughly satisfied
 - [one] no eagerness to give it another chance
-- [!one] their numbers harder on my courage than I wanted to admit
-- [!one] their defeat more welcome than impressive
+- [!one] their numbers putting my courage to a thorough test
+- [!one] their defeat a cause for unflattering relief
 - [night] my eyes weary of guessing at movement
 - [teeth] rather protective of the fingers near those jaws
 - [mechanical] no wish to learn how readily flesh could yield to metal
@@ -20,59 +20,59 @@ kind: r-foe
 - [low] still more eager than experienced
 - [high] less eager to let confidence lead my hands
 - [murloc] no appetite for another gurgling introduction
-- [murloc] rather less fond of the sound of a murloc's voice
+- [murloc] the gurgling an unpleasant thing to remember
 - [murloc] newly wary of anything with a murloc's stare
-- [kobold] less tempted to take a small shape for a small danger
+- [kobold] a kobold's claws quite sufficient to command respect
 - [kobold] no wish to put my hands near those little claws
-- [kobold] rather wary of a kobold's attachment to its candle
-- [gnoll] more respect for those jaws than for my own courage
-- [gnoll] rather keener to keep clear of a gnoll's reach
+- [kobold] a kobold's candle a possession best left unchallenged
+- [gnoll] those jaws giving my courage a useful check
+- [gnoll] a gnoll's reach giving my caution plenty to do
 - [gnoll] no confidence that the next stretch would be free of gnolls
-- [harpy] more wary of talons than I had been beforehand
-- [harpy] rather ready for company without claws
+- [harpy] a new respect for the reach of talons
+- [harpy] clawed company quite sufficient for one encounter
 - [harpy] no desire to discover how close a harpy could come
-- [quilboar] more aware of those tusks than of my own cleverness
-- [quilboar] rather less eager to meet the business end of a quill
+- [quilboar] the tusks claiming all my attention
+- [quilboar] a quill's sharpness impossible to ignore
 - [quilboar] those tusks nothing I wanted at arm's length
-- [centaur] my feet no match for the speed a centaur could bring
-- [centaur] no wish to be the small body beneath four hooves
-- [centaur] rather respectful of an enemy with that much weight to spare
+- [centaur] the speed of a centaur troubling me
+- [centaur] the weight of a centaur a dismal thing to imagine overhead
+- [centaur] a centaur's weight a compelling reason to keep clear
 - [ogre] newly fond of the distance beyond an ogre's reach
-- [ogre] rather aware of how easily an ogre could overpower me
-- [ogre] my own body feeling inconveniently small beside so much bulk
-- [troll] less eager to test a troll's endurance than my own
+- [ogre] an ogre's strength taking the pleasure out of bravado
+- [ogre] an ogre's bulk sufficient to take the shine off bravery
+- [troll] a troll's endurance making the fight difficult
 - [troll] the tusks easier to admire from beyond reach
-- [troll] more respect for a troll's quickness than before
+- [troll] a troll's quickness freshly impressed on me
 - [naga] no desire to have those coils within reach again
-- [naga] rather too conscious of the teeth behind a naga's hiss
+- [naga] a naga's hiss giving my imagination plenty to fear
 - [naga] less inclined to take scales for sluggishness
 - [satyr] no wish to let those demonic horns come closer
-- [satyr] rather wary of the claws beneath that corrupted shape
-- [satyr] more fear than fascination in the demonic company
-- [furbolg] more respectful of a furbolg's bulk than my own bravery
+- [satyr] the claws of that corrupted kind troubling me
+- [satyr] the demonic company taking the pleasure out of curiosity
+- [furbolg] a furbolg's bulk quite sufficient to command caution
 - [furbolg] no appetite for being held within those great arms
-- [furbolg] less tempted to mistake a shambling stride for weakness
+- [furbolg] a furbolg's shambling gait no promise of weakness
 - [trogg] my courage no promise against a trogg's strength
-- [trogg] more wary of those heavy fists than I had been before
-- [trogg] rather aware of how much a trogg could bring within reach
+- [trogg] those heavy fists giving the encounter an urgency of its own
+- [trogg] a trogg's reach leaving little room for confidence
 - [outlaw] no delight in the human shape of the danger
 - [outlaw] less eager to meet another outlaw beyond a safe distance
 - [outlaw] not inclined to forgive an enemy merely for being a person
-- [scarlet] more frightened by a crusader's resolve than reassured by the name
+- [scarlet] a crusader's resolve making faith an alarming thing to face
 - [scarlet] no wish to become a Scarlet victory worth celebrating
-- [scarlet] rather troubled that faith could put me in such danger
+- [scarlet] a crusader's faith giving me no shelter from the danger
 - [undead] no confidence that death meant the danger was over
-- [undead] rather keener to remain beyond the reach of the dead
+- [undead] the persistence of the dead taking the shine off courage
 - [undead] my own body dearer after facing something death had not kept
 - [demon] no wish to carry a demon's attention any further
-- [demon] rather less comfortable with what could come out of the Nether
-- [demon] more eager to leave demonic company than to understand it
-- [elemental] rather wary of an element that could turn towards me
+- [demon] demonic company giving me a new respect for being left alone
+- [demon] demonic company quite sufficient for my curiosity
+- [elemental] the element's strength a dismal thing to imagine turned on me
 - [elemental] less certain how to put distance between myself and such a thing
 - [elemental] no wish to make another trial of an element's strength
-- [dragonkin] rather respectful of the strength beneath those scales
+- [dragonkin] the strength beneath those scales occupying my caution
 - [dragonkin] my own soft skin a poor match for a dragon's kind
 - [dragonkin] no appetite for testing the reach of a scaled enemy
 - [spider] my fingers decidedly fond of staying clear of fangs
-- [spider] rather keener to keep a spider beyond my collar
-- [spider] less tempted to discover how near those legs could come
+- [spider] a spider within my collar a thought to discourage any familiarity
+- [spider] a spider's reach giving my imagination nothing pleasant to do

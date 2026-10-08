@@ -3,16 +3,16 @@ kind: kills-two
 ---
 - {n1} {foes1} and {n2} {foes2} had fallen to me, enough to make a quiet return very inviting.
 - I counted {n1} {foes1} and {n2} {foes2} among the fighting {at}, with no appetite for adding to either.
-- I had dealt with {n1} {foes1} and {n2} {foes2} {at}, and was ready to welcome something that did not want a fight.
-- I had brought down {n1} {foes1} and {n2} {foes2} {at}, with my hands ready for gentler work.
+- I had dealt with {n1} {foes1} and {n2} {foes2} {at}, with the quiet afterwards a comfort in itself.
+- I had brought down {n1} {foes1} and {n2} {foes2} {at}; a peaceful occupation suddenly seemed a great luxury.
 - I put down {n1} {foes1} and {n2} {foes2} {at}, enough fighting to make the pause welcome.
 - Between the {n1} {foes1} and the {n2} {foes2} {at}, I had grown very fond of the prospect of going home.
-- {n1} {foes1} and {n2} {foes2} had fallen to me {at}, and I wanted no further trial of my endurance.
+- {n1} {foes1} and {n2} {foes2} had fallen to me {at}, leaving my endurance thoroughly tested.
 - I had fought {n1} {foes1} and {n2} {foes2} {at}, with a quiet evening suddenly seeming a generous ambition.
 - Much of my time {at} had gone into fighting {n1} {foes1} and {n2} {foes2}.
 - The fighting {at} had brought me through {n1} {foes1} and {n2} {foes2}, with more relief than pride by the end.
 - [lots] I had dealt with {n1} {foes1} and {n2} {foes2}, enough that I could still feel the work when I stopped.
-- [lots] {n1} {foes1} and {n2} {foes2} had fallen to me {at}, and I was ready to let the rest of the world keep its distance.
+- [lots] {n1} {foes1} and {n2} {foes2} had fallen to me {at}; I could leave the rest of the world alone for a while.
 - [hc] I had survived {n1} {foes1} and {n2} {foes2}, grateful that none had made another name to mourn of me.
 - [class:HUNTER !low] I had hunted {n1} {foes1} and {n2} {foes2}, enough to want a trail that led somewhere without another struggle.
 - [class:MAGE] I had brought down {n1} {foes1} and {n2} {foes2}, enough to want my magic put to a kinder use.

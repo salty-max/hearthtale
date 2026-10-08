@@ -7,5 +7,5 @@ kind: c-elite
 - beat {foe}, and wanted the next stranger to be friendly
 - took on {foe}, grateful not to have met the end of my road
 - [hc] fought {foe} with a life I was unwilling to spend on pride
-- stood my ground against {foe}, with my knees rather less certain than my decision
+- stood my ground against {foe}, with my courage under considerable strain
 - outlasted {foe}, more eager to be alive than to be impressive

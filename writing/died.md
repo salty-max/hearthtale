@@ -1,19 +1,19 @@
 ---
 kind: died
 ---
-- [foe] {foe} killed me {at}, and I wanted my life back more than any victory I had imagined.
+- [foe] {foe} killed me {at}, and victory meant nothing beside the life taken from me.
 - [foe] I died {at} at the hands of {foe}, with no room left for pride in the fight.
 - [foe] {foe} killed me {at}, and made the prospect of an ordinary home seem unbearably dear.
 - [foe] I lost a fight with {foe} {at}, and my life with it.
-- [foe] I was killed by {foe}, with far more left that I wanted to do than the struggle allowed.
+- [foe] I was killed by {foe}, with far too much left to do.
 - [player] {foe}, another adventurer, killed me {at}; I had no kindness left for the thought of them.
 - [fall] I fell to my death {at}, with the ground suddenly offering a welcome I did not want.
 - [fall] I fell to my death {at}, unable to put anything gentler between myself and the ground.
-- [drowning] I drowned {at}, wanting air more fiercely than anything I had wanted beyond the water.
-- [lava] Fire killed me {at}, and I wanted a warmth that would have let me live.
-- [nature] I died {at}, with no enemy to blame for how badly I wanted to go on.
+- [drowning] I drowned {at}, with the whole world reduced to the need for air.
+- [lava] Fire killed me {at}; I could think of nothing but escaping its heat.
+- [nature] I died {at}, with no enemy to blame and no comfort in the absence.
 - I died {at}, and wanted another chance at a life that had seemed so ordinary before.
-- I died {at}, with too much left dear to me to be willing to leave it.
+- I died {at}, with too much left dear to me to let go easily.
 - I died {at}, and wished the next familiar place need not be a graveyard.
 - I died {at}, with no comfort in having survived the road that had brought me here.
 - I died {at}, wanting the quiet pleasures of life more than the dangers I had chosen.

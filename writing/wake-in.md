@@ -1,9 +1,9 @@
 ---
 kind: wake-in
 ---
-- I got up {at}, grateful that my legs were no longer quite so reluctant to carry me.
+- I got up {at}, with a private gratitude for the comfort of shelter.
 - I rose {at}, with a night indoors behind me and a little more willingness to go on.
-- I took up the road {at}, hoping my legs would forgive the coming distance.
+- I took up the road {at}, my interest in going on restored by the pause.
 - I went on {at}, glad the pause had been spent under a roof.
 - I was up again {at}, a little stiff and ready to go on.
 - I went on {at}, a night indoors behind me.

@@ -21,13 +21,13 @@ Mine carts stood abandoned on their rails, and the walls sweated in the lampligh
 
 I put down Defias Pirates, Defias Companions and Defias Squallshapers and gathered Red Silk Bandanas, an errand's worth of ache for my trouble. Mr. Smite nearly finished me in Ironclad Cove, and my hands shook like a recruit's after the danger had passed. Mr. Smite fell at last. After I came by Smite's Mighty Hammer, I had it in use before long. I saw the end of Captain Greenskin. Edwin VanCleef fell, and I could leave the Deadmines. I wanted an ordinary doorstep more than any victory feast. Mr. Smite, a few Defias Blackguards and Captain Greenskin fell to me while I claimed VanCleef's head as proof of the deed. I brought down Cookie.
 
-Gryan Stoutmantle had my report soon after. I equipped Chausses of Westfall and ran one more errand. I left Sentinel Hill by air for Stormwind, hoping the people below had less troubling business than mine.
+Gryan Stoutmantle had my report soon after. I equipped Chausses of Westfall and ran one more errand. I left Sentinel Hill by air for Stormwind, thinking of the homes below and all the ordinary lives inside them.
 
-Smaller jobs came next, one on the heels of the other. I came to Cathedral Square, rather fonder of a neighbour's help than of travelling alone. I brought an Unsent Letter to Baros Alexston; I handed in my work to Wilder Thistlenettle and Shoni the Shilent.
+Smaller jobs came next, one on the heels of the other. I came to Cathedral Square, a neighbour's company a comfort to think of on the way. I brought an Unsent Letter to Baros Alexston; I handed in my work to Wilder Thistlenettle and Shoni the Shilent.
 
 The road brought me to Old Town. I trained in Cleave and Retaliation, my courage in need of something sturdier than good intentions.
 
-I had seen eight tasks to their end. My tally came to eight Defias Miners and six Defias Pirates. I had spent two hours and a half travelling; the road seemed to have followed me into every muscle. I rested in the Trade District, wishing the quiet could reach the people still worried about tomorrow's bread.
+I had seen eight tasks to their end. My tally came to eight Defias Miners and six Defias Pirates. I had spent two hours and a half travelling; the road seemed to have followed me into every muscle. I rested in the Trade District, thinking of the people still worried about tomorrow's bread.
 
 ## Chapter 2 (level 20)
 

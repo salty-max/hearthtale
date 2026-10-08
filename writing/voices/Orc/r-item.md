@@ -10,5 +10,5 @@ kind: r-item
 - [one !plural] the carrying an awkward part of the search
 - [one !plural] my hands eager to surrender it to someone else's need
 - [meat] the smell of a Horde cookfire suddenly dear to me
-- [cloth] soft stuff to set beside the hard work of a new homeland
+- [cloth] a useful prospect for the Horde's tents
 - [night] strength quite useless against the difficulties of searching in the dark

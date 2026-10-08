@@ -4,11 +4,11 @@ kind: night
 - [!last] I spent the night in the open {at}, with rest more inviting than the search for shelter.
 - [!last] I settled beneath the sky {at}, grateful to stop without having to walk another mile for a roof.
 - [!last] I rested outside {at}, hoping the ground would prove kinder than it looked.
-- [!last] I passed the night {at}, with my feet finally free of the need to carry me anywhere.
+- [!last] I passed the night {at}, with nothing useful left to do but let the tiredness settle.
 - [!last] I spent the night outdoors {at}, missing the comfort of a roof without wanting to go looking for one.
-- [!last] I stopped {at} for the night, ready to let the darkness have the road.
+- [!last] I stopped {at} for the night, leaving the dark in possession of the road.
 - [!last hc] I passed the night outside {at}, with the thought of danger harder to put aside than my weariness.
-- [last] I settled beneath the sky {at}, hoping to wake with my legs rather more willing.
+- [last] I settled beneath the sky {at}, leaving the coming day's demands until morning.
 - [last] I lay down outside {at}, grateful to have reached a place where I could stop.
 - [last] I spent another night outdoors {at}, with no wish to travel further for comfort.
 - [last] I settled {at}, with the darkness welcome to keep the next stretch until I was rested.
@@ -16,5 +16,5 @@ kind: night
 - [!last] I spent the night {at}, content to let the rest of the world find its own way for a while.
 - [last] I rested outdoors {at}, wishing the ground had been designed with a tired back in mind.
 - [last] I settled {at}, with enough road behind me to make stillness feel like an arrival.
-- [last] I rested outside {at}, hoping sleep would make the coming miles feel less expensive.
+- [last] I rested outside {at}, with the coming miles somebody else's problem until morning.
 - [last] I lay down {at}, grateful that the night asked less of me than the day had.

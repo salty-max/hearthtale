@@ -2,11 +2,11 @@
 kind: campfire
 ---
 - I sat by a campfire {at}, letting the warmth reach the parts of me the road had wearied.
-- I stopped by a fire {at}, quite willing to let a little heat do what stubbornness could not.
+- I stopped by a fire {at}, letting a little heat do what stubbornness could not.
 - I warmed my hands at a campfire {at}, grateful for a comfort so easy to accept.
 - I rested by a fire {at}, with no desire to trade its warmth for another mile.
-- I paused by a campfire {at}, wishing the rest of the day had asked as little of me.
-- I sat by a fire {at}, ready for company that did not require me to be useful.
+- I paused by a campfire {at}, content with a warmth that needed nothing useful from me.
+- I sat by a fire {at}, taking a quiet pleasure in the undemanding company of the flames.
 - I stopped by a fire {at}, letting my hands have warmth instead of another job.
 - I rested beside a fire {at}, with the simple comfort dearer than the distance I had come.
 - [night] I paused at a fire {at}, glad to let the night keep the road beyond it.
@@ -15,7 +15,7 @@ kind: campfire
 - [race:Tauren] I sat by a fire {at}, giving thanks to the Earth Mother for such a small kindness.
 - [class:MAGE] I sat by a fire {at}, enjoying a flame that needed no spell from me to keep it useful.
 - I sat by a fire {at}, with warmth enough to make staying put an easy decision.
-- I paused beside a fire {at}, as ready for the heat as for the stillness.
+- I paused beside a fire {at}, enjoying the warmth without hurrying the chance to be still.
 - [aside] Grateful for warmth that asked nothing in return, I rested beside a fire {at}.
 - I rested by a campfire {at}, and let its crackle take the place of my hurried breathing.
 - [night] I sat beside a fire {at}, glad to have something gentle to look at in the dark.

@@ -2,19 +2,19 @@
 kind: wake
 ---
 - [!rest] I took up the road {at} after a night outside, with the ground less inviting than it had been when I lay down.
-- [!rest] I rose {at}, more willing to carry myself now I had rested.
+- [!rest] I rose {at}, with my patience restored by the pause.
 - [!rest] I went on {at}, with my eyes on the way and my back still complaining about the ground.
 - [!rest] Still feeling the rough rest, I returned to the road {at}.
-- [!rest] I was ready to go on {at}, without much desire to try the ground for another night.
+- [!rest] I went on {at}, leaving the ground I had slept on without regret.
 - [!rest] I set out again {at}, grateful for what rest I had managed.
 - [!rest hc] Grateful to have another day on the road, I rose {at}.
 - [rest] I went on {at} after resting, with the next mile rather less unwelcome.
-- [rest] I took up the road {at}, hoping my legs would forgive the coming distance.
-- [rest] I returned to the road {at}, more willing to move than I had been when I stopped.
-- [rest] I stood up {at} and faced the road again, ready to go on.
+- [rest] I took up the road {at}, with my taste for unfamiliar country restored.
+- [rest] I returned to the road {at}, with my taste for going on restored.
+- [rest] I stood up {at} and faced the road again, with some curiosity about where it might take me.
 - [rest] I went on {at}, with my strength restored enough to offer it to someone else again.
 - [rest] I turned back to the road {at}, without needing to persuade myself quite so firmly.
 - [rest] I set out {at} after the pause, with less weariness to put between me and the next stranger.
-- [rest] I went on {at}, ready to find out how much travelling my legs would forgive.
+- [rest] I went on {at}, curious what the country still had for me to discover.
 - [!rest] Glad to leave the ground to hardier joints, I rose {at} after the night outside.
-- [!rest] I set out {at}, with my shoulders wanting no further acquaintance with the ground.
+- [!rest] I set out {at}, with no fond memories of the ground I had slept on.

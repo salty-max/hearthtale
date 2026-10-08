@@ -1,17 +1,17 @@
 ---
 kind: r-task
 ---
-- my feet rather less willing by the end
-- hoping the next request would leave me some strength for myself
-- my patience more useful than my eagerness
-- less fond of the walking than of being useful
-- my legs wishing a favour could do itself for once
-- more ready for a quiet return than another obligation
-- my willingness to help no promise of an endless supply
-- rather grateful the next small favour had not found me yet
-- my shoulders less enthusiastic than at the start
+- my taste for useful activity beginning to wear thin
+- a generous offer due for a quiet spell
+- the request giving my patience some useful work
+- the satisfaction of helping taking the edge off the inconvenience
+- a favour I could cheerfully have left to somebody else
+- a quiet return an attractive prospect
+- a generous offer finding its practical limits
+- my share of useful activity quite sufficient for now
+- the request wearing some shine off my generosity
 - [explore] wondering how readily I could find the same way in a hurry
-- [explore] my feet no excuse for letting my vigilance wander
+- [explore] unfamiliar country keeping my vigilance occupied
 - [escort] unwilling to make another life hurry to suit my own
-- [escort] more concerned for another life than for finishing quickly
-- [night] my eyes working harder than my patience in the dark
+- [escort] another life setting the undertaking's pace
+- [night] the dark making every part of the task deliberate
