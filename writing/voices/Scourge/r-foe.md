@@ -3,16 +3,16 @@ kind: r-foe
 ---
 - my bones wanting less vigorous employment
 - [one !more] no interest in seeing whether death would improve its temper
-- [!more] less fond of combat than my condition might suggest
+- [!more] a corpse whose appetite for combat had been satisfied
 - my absent pulse no measure of the fear
 - [one] another danger I would rather not take home
 - [!one] their persistence worth an unwelcome respect
 - [teeth] rather protective of the flesh I had left
 - [mechanical] no need to wonder whether that mechanism had a soul
-- [night !more] less conspicuous in the dark than I usually felt
+- [night !more] the dark doing my appearance a kindness
 - [hc] unwilling to spend the second life Sylvanas had won us
 - [low] still learning what rot had left me to rely on
-- [high] my decaying fingers less uncertain than they had once been
+- [high] a useful steadiness in these decaying fingers
 - [undead] no kinship with the dead merely for resembling them
-- [hc] my rotting hide still worth more to me than the soil beneath it
+- [hc] my rotting hide still of use to its occupant
 - [class:PRIEST holy undead] almost resentful that the Light would still answer these dead hands

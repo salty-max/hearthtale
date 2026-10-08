@@ -1,11 +1,11 @@
 ---
 kind: r-first
 ---
-- rather more wary than the lack of a pulse suggested
+- my absent pulse keeping my alarm conveniently private
 - my remains feeling inconveniently vulnerable
-- less impressed by the danger than by my wish to escape
+- a corpse with an unexpectedly fierce interest in escaping
 - new company even to someone the grave had failed to keep
 - [teeth] those teeth no less unwelcome for my flesh being spoiled
-- [night] more at ease with the darkness than the introduction
+- [night] the darkness no help with the awkward introduction
 - [mechanical] not the only thing here that moved without being alive
 - [low] still discovering what else could want a corpse dead
