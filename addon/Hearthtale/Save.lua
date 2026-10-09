@@ -6,8 +6,9 @@
 -- (the logout settled in advance: ns.settledView); a /reload is put right by
 -- the next logout.
 --   book = { version, client, at, level, prologue, epitaph,
---            chapters = { { number, text, place, from, to, open, rare, close,
---                           began, ended } } }
+--            chapters = { { number, text, diary, place, from, to, open, rare,
+--                           close, began, ended } } }
+-- (diary: the chapter as its diary entry, Diary.lua, shown first)
 local _, ns = ...
 
 local function addonVersion()
@@ -16,7 +17,7 @@ local function addonVersion()
 end
 
 local function written(c, level)
-  local b = ns.writeBook(c)
+  local b, diary = ns.writeBook(c), ns.writeDiary(c)
   local out = {
     version = addonVersion(),
     client = ns.data.client,
@@ -31,6 +32,7 @@ local function written(c, level)
     table.insert(out.chapters, {
       number = ch.number,
       text = ch.text,
+      diary = diary.entries[ch.number] and diary.entries[ch.number].text,
       place = ch.place,
       from = ch.from,
       to = ch.to,

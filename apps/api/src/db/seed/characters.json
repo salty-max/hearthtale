@@ -6,6 +6,7 @@
         {
           "began": 1790900000,
           "close": true,
+          "diary": "I began in Coldridge Valley, with Ironforge behind my name and the wish to bring something worthy of it home. The cold of Dun Morogh caught in my throat, and the pines bowed under their snow. Above the valleys rose the mountain that holds Ironforge, and the sight of it made the cold easier to bear. The richest seam in all that work was destroying Araj the Summoner, the lich who held Andorhal, and taking a shard of his phylactery to High Executor Derrington. A Frostmane Troll Whelp nearly killed me there, and I was grateful to keep the one life I had. The rest was five small jobs, the kind that teach you every path in a place. I am still on my feet, though only just, and I intend to find the flaw that nearly cost me everything before something else finds it for me.",
           "ended": 1790905640,
           "from": 1,
           "number": 1,
@@ -15,6 +16,7 @@
         },
         {
           "began": 1790941640,
+          "diary": "The gnomes of Tinker Town knew better than anyone what a lost home costs, and I set out in Anvilmar with my own all the dearer for it. Both Timber and Vagash fell to me, and each deserves a proper telling, which I mean to take my time over. Hunter's Mark offered a way to keep my quarry from becoming merely another movement I could not place. I took up skinning. The rest of it was errands, five in all, and I did them as well as I could. I met foes worth the meeting, and came away from them a little surer of what I am made of.",
           "ended": 1790979755,
           "from": 4,
           "number": 2,
@@ -25,6 +27,7 @@
         },
         {
           "began": 1791012155,
+          "diary": "With daylight still to spend, I headed off in Kharanos meaning to get good wear out of every hour of it. The work that would bear the most weight, if anyone leaned on it, was delivering the invisibility liquor to Maybell, so she could slip away from the Maclure Vineyards to see Tommy Joe. Thorgrim shared the road with me for a while. I saw Loch Modan for the first time, my own people's country though new to my eyes. I tamed a boar, giving it the name Bristle.",
           "from": 7,
           "number": 3,
           "open": true,
@@ -52,6 +55,7 @@
       "chapters": [
         {
           "began": 1790900000,
+          "diary": "I set out in Coldridge Valley, determined to give the name of gnome something to stand for besides refugee. The snow of Dun Morogh glowed blue under the stars, and the cold felt cleaner for it. I knew the shapes of those mountains even in the dark. Arcane Missiles was mine now, and the next fight would not go quite like the last. Something new is mine to use now, and I have already thought of more ways to put it to work than are strictly sensible.",
           "ended": 1790902535,
           "from": 1,
           "number": 1,
@@ -62,6 +66,7 @@
         {
           "began": 1790934935,
           "close": true,
+          "diary": "In Dun Morogh, sorted by importance, the job at the top of the pile was destroying Araj the Summoner, the lich who held Andorhal, and taking a shard of his phylactery to High Executor Derrington. A Frostmane Headhunter nearly ended me in Frostmane Hold, and being a small target suddenly seemed a very inadequate defence. I learned to conjure water, and liked having one less ordinary need to carry along the road. I came away from my trainer with Frostbolt, and wondered what it would do against my next foe.",
           "ended": 1790937695,
           "from": 3,
           "number": 2,
@@ -90,6 +95,7 @@
       "chapters": [
         {
           "began": 1790900000,
+          "diary": "I set out in Darkshire after nightfall, wishing I had a few of the Night Watch at my back. I died in Raven Hill, another life cut short in a kingdom with too many empty places already. Hammer of Justice offered a firm interruption to an enemy's intentions. Dying has shown me how much I still want from the years ahead, and I mean to be careful enough to have them.",
           "ended": 1790904440,
           "from": 23,
           "number": 1,
@@ -99,6 +105,7 @@
         },
         {
           "began": 1790940440,
+          "diary": "In Duskwood, the deed I would gladly have done for nothing was slaying Old Murk-Eye, the murloc whose raids killed the lighthouse keeper's family, for the ghost of Captain Grayson.",
           "from": 24,
           "number": 2,
           "open": true,
@@ -128,6 +135,7 @@
         {
           "began": 1790900000,
           "close": true,
+          "diary": "I began in the Valley of Trials, with Thrall's new homeland to call my own and no wish to repay it with empty boasting. Heat rose from the red dust of Durotar, as if the ground itself were breathing. This was the land we had claimed, and I meant to learn how to belong to it. The task I would choose to be known by was slaying Old Murk-Eye, the murloc whose raids killed the lighthouse keeper's family, for the ghost of Captain Grayson. I came through a close call in Razor Hill, too shaken to enjoy having proved I could survive one. Sarkoth fell to me, and I have thought about it since. I came within a breath of the end, and what I carry away from it is not pride at surviving but the plain knowledge of how badly I wanted to.",
           "ended": 1790906150,
           "from": 1,
           "number": 1,
@@ -137,6 +145,7 @@
         },
         {
           "began": 1790938550,
+          "diary": "I went on in Razor Hill after dark, keeping my temper with a night that hid more of the way than I liked. With Charge learned, I could close the distance before my courage had time to argue about it.",
           "from": 5,
           "number": 2,
           "open": true,
@@ -164,6 +173,7 @@
       "chapters": [
         {
           "began": 1790900000,
+          "diary": "I began in Shadowglen, with Dolanaar the farthest place I could yet picture and the rest of Kalimdor no more than names across the water. Moonlight silvered the leaves of Teldrassil while owls called overhead. I listened between my footfalls, unwilling to hurry through so much quiet. Of all the tracks I left, the one worth following back was slaying Old Murk-Eye, the murloc whose raids killed the lighthouse keeper's family, for the ghost of Captain Grayson. My training gave me Moonfire, a new way to fight, and I was impatient for a chance to use it. Besides that, I worked through six smaller tasks, one after another. Something new has taken root in me, and like any root it will be a while before I can tell how deep it goes.",
           "ended": 1790933810,
           "from": 1,
           "number": 1,
@@ -173,6 +183,7 @@
         },
         {
           "began": 1790966210,
+          "diary": "The day began in Dolanaar as most of mine did, with a long moment of listening before I moved.",
           "from": 5,
           "number": 2,
           "open": true,
@@ -200,6 +211,7 @@
       "chapters": [
         {
           "began": 1790900000,
+          "diary": "I began in Deathknell, a corpse with business of my own and no appetite for another master's errands. Crows called over the crypts of Tirisfal, toward the broken walls of Lordaeron. Night changed little here, though it left me feeling less conspicuous. Weighed without sentiment, the best work I did was destroying Araj the Summoner, the lich who held Andorhal, and taking a shard of his phylactery to High Executor Derrington. I brought down Maggot Eye, and that fight has stayed with me. Power Word: Shield was a ward I could now set between myself and an enemy's blow. My training gave me Shadow Word: Pain, a new way to fight, and I was impatient for a chance to use it. The hours left over went on six small jobs, each finished before the next began. I was supposed to have stopped changing when I died, and I welcome every sign that I have not.",
           "ended": 1790906615,
           "from": 1,
           "number": 1,
@@ -209,6 +221,7 @@
         },
         {
           "began": 1790939015,
+          "diary": "Plans had failed whole kingdoms in my time, so I set out in Brill with a modest one and held it loosely. I learned Renew, a healing that went on working after the prayer ended, and went on burning in my hands as long as it did.",
           "from": 5,
           "number": 2,
           "open": true,
@@ -237,6 +250,7 @@
         {
           "began": 1790900000,
           "close": true,
+          "diary": "Tavern talk had told me a good deal about the wider world, and I carried on in the Dwarven District, sorting the truth from the embroidery as I went. The deed I would gladly have done for nothing was bringing Taretha's pendant, given up by a frightened Elysa, back to Krusk, the small thing the Warchief had spent so much to recover. I barely survived in Ironclad Cove, with no desire to repeat the lesson for a better telling. The Deadmines was the hardest place I went, and I did not go alone: Thessaly, Brannigan and Rowan came with me. I defeated Edwin VanCleef in the Deadmines, with the relief slower to arrive than I had expected. I saw Westfall for the first time, my own people's country though new to my eyes. It would have taken very little more to kill me, and I have stopped telling myself that such things only happen to other people.",
           "ended": 1790909585,
           "from": 18,
           "number": 1,
@@ -246,6 +260,7 @@
         },
         {
           "began": 1790945585,
+          "diary": "With the king missing, the roads still had to be walked and the errands run, and I set out in the Trade District to take my share.",
           "from": 20,
           "number": 2,
           "open": true,

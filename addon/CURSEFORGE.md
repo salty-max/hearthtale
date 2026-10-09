@@ -31,6 +31,7 @@ A character you already play gets a prologue from what the game knows of its lif
 
 ## How it is written
 
+- Each chapter opens as a diary entry: the stretch as your character would write it at the rest that ends it, in your race's own voice: what the work that mattered was for (from the quests' own words), picking up a story left off in an earlier entry, the dangers, the foes worth naming, new lands and powers, the rest of the work in a line. The full chapter, scene by scene, is a click away.
 - In the first person, in scenes: what happened in one place is told together ("I reached Kharanos, took a room at Thunderbrew Distillery and found the boar ribs Ragnar Thunderbrew wanted"), and the road and the hours between scenes link them (I went back to Anvilmar; later that day; that night). Close calls, rares, nights and new powers get a sentence of their own. Now and then, the turns of phrase of your race and class: a dwarf's beard and ale, a Forsaken's second life, a paladin's Light, a hunter's pet.
 - Graver on Hardcore, and graver still as the levels climb.
 - Some 730 sentences and phrases, chosen to fit the moment: the hour, the first time or the tenth, how close the call, alone or in a group. A place just named becomes "there"; a sentence doesn't come back soon after it was used.
@@ -53,7 +54,7 @@ Books are private: only you see them. Ravenpost sends the book and who it belong
 
 ## The book
 
-`/hearthtale` (or `/ht`), or the book by the minimap, opens it: your portrait and who you are; the chapters on the left (a skull marks a close call, a star a rare); the chapter on the right. A second tab holds the Hall of the Fallen. When a chapter closes, a line in chat links to it.
+`/hearthtale` (or `/ht`), or the book by the minimap, opens it: your portrait and who you are; the chapters on the left (a skull marks a close call, a star a rare); the chapter's diary entry on the right, the full chapter a click away. A second tab holds the Hall of the Fallen. When a chapter closes, a line in chat links to it.
 
 ## In English
 

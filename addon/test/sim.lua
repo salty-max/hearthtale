@@ -481,17 +481,23 @@ local bind = state.bind
 state.bind = "Brewnall Village"
 fire("HEARTHSTONE_BOUND") -- (a place is told with what is done there)
 state.bind = bind
-check(page.body:GetText():find("Brewnall Village", 1, true), "a new moment while the book is open: added at once")
--- The diary setting (a prototype): the chapter's diary entry instead, and back.
-local full = page.body:GetText()
-ns.setOption("diary", true)
+-- The chapter's diary entry first, the chapter in full a click away.
 local diaryText = page.body:GetText()
 check(
-  diaryText ~= full and diaryText == ns.writeDiary(ns.journal()).entries[1].text,
-  "the diary setting shows the chapter's diary entry"
+  diaryText == ns.writeDiary(ns.journal()).entries[1].text
+    and page.toggle:IsShown()
+    and page.toggle.label:GetText() == "Read the full chapter",
+  "a chapter opens on its diary entry, the full chapter a click away"
 )
-ns.setOption("diary", false)
-check(page.body:GetText() == full, "and without it, the chapter in full")
+page.toggle.scripts.OnClick(page.toggle)
+check(
+  page.body:GetText() == ns.writeBook(ns.journal()).chapters[1].text
+    and page.toggle.label:GetText() == "Back to the diary entry",
+  "a click: the chapter in full"
+)
+check(page.body:GetText():find("Brewnall Village", 1, true), "a new moment while the book is open: added at once")
+page.toggle.scripts.OnClick(page.toggle)
+check(page.body:GetText() == diaryText, "and back to the diary entry")
 SlashCmdList.HEARTHTALE("")
 check(not B:IsShown(), "/ht again closes it")
 
@@ -511,6 +517,12 @@ check(
     and B1.chapters[1].text
     and B1.chapters[1].began,
   "at logout, the book is written into the saved file"
+)
+check(
+  B1
+    and B1.chapters[1].diary == ns.writeDiary(ns.settledView(J)).entries[1].text
+    and B1.chapters[1].diary ~= B1.chapters[1].text,
+  "… each chapter with its diary entry, read first on the site"
 )
 check(J.realm == "Nightslayer" and J.region == 3, "… and where the character lives")
 local view = ns.settledView(J)
