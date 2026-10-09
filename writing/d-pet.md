@@ -1,0 +1,12 @@
+---
+kind: d-pet
+---
+- [!demon] {pet} was at my side through all of it.
+- [!demon again] {pet} fought beside me the whole way, as ever.
+- [!demon] I was glad of {pet}'s company for every mile of it.
+- [!demon] {pet} and I had the measure of most of what came at us.
+- [!demon again] As ever, {pet} took a share of every fight.
+- [!demon] {pet} kept close throughout, and earned a good part of the credit.
+- [demon] {pet} served as a bound demon serves, and I watched every moment of that service all the same.
+- [demon] {pet} did my bidding through all of it, and I never once forgot what I had bound.
+- [demon] I sent {pet} ahead into most of the fights, without one complaint in return, which I found almost more unsettling than defiance.

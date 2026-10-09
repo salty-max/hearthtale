@@ -17,3 +17,7 @@ kind: rest
 - [client:forever !home] I paused {at}, my feet aching from more walking than a year on Zephras had ever asked of them.
 - [client:forever hc] I rested {at}, determined not to become one more thing Zephras had lost.
 - [client:forever] I stopped {at}, and allowed myself the rare courtesy of having nothing to do.
+- [client:forever fire] I sat by the fire {at}, where the smoke was the only thing in sight in any hurry to reach the sky.
+- [client:forever last !fire] I stopped {at} once the work was done, and for a while kept nothing aloft but my own spirits.
+- [client:forever !last faction:alliance] I paused {at}, and went back over what I had done the way my scholarly forebears might have gone over a difficult text, unhurried and with some pleasure.
+- [client:forever !last faction:horde] I rested {at}, my skysight as idle as my feet for once.

@@ -17,3 +17,13 @@ kind: opening
 - The old clans had become one people only lately, and I set out {at} wondering how much of their old pride I still carried without knowing it.
 - [night] I went on {at} after dark, keeping my temper with a night that hid more of the way than I liked.
 - [home] The land my people had only lately settled still had more work than hands, and I got moving {at}, meaning to lend mine.
+- I started out {at}, my hands wanting work before my head had settled on what it should be.
+- Nothing had asked anything of me yet, and I got moving {at} before something did.
+- [home] Dry country asks for strong backs rather than brave speeches, and I set out {at} offering mine.
+- [night] Darkness makes a poor scout of anyone, and I kept moving {at}, slower than my patience liked.
+- Trouble finds whoever sits waiting for it, so I went out {at} to meet it on my own terms.
+- I shouldered my pack {at} and let my legs set the pace, since my temper would only have hurried them.
+- [!home] I set out {at} on ground that still felt borrowed, and walked it with a guest's care.
+- I took to the road {at}, resolved to save my anger for whatever truly earned it.
+- [night] I pressed on {at} in the dark, treading more quietly than I usually bother to.
+- The Horde is more peoples than one now, and I headed out {at} ready to work beside any of them.

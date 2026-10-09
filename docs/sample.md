@@ -14,11 +14,11 @@ I set out in Coldridge Valley, a dwarf of the mountain with a good deal of count
 
 The journal went safely into Grelin Whitebeard's hands. I went on equipped with a Frostmane Leather Belt. Back in Anvilmar, the trainer taught me Serpent Sting and Track Beasts. I delivered a message to Marryk Nurribit.
 
-I had done six tasks by the end. The tally was ten Ragged Young Wolves and four Burly Rockjaw Troggs. I had had a bellyful of both. All told, it had taken an hour and thirty-five minutes. I stopped in Anvilmar, and found that sitting still took less practice than I had feared.
+I had done six tasks by the end. The tally was ten Ragged Young Wolves and four Burly Rockjaw Troggs. I had had a bellyful of both. All told, it had taken an hour and thirty-five minutes. I paused in Anvilmar; an evening at home would have suited me, but this would do.
 
 ## Chapter 2 (levels 4 to 7)
 
-I set out in Anvilmar, with more of the world to see than the inside of a mountain. I smelled the Thunderbrew Distillery before I had properly reached Kharanos. Smoke rose above the houses, where dwarves and gnomes crowded together against the cold, and I felt my shoulders ease at the sight. My hearthstone was bound at the Thunderbrew Distillery from then on. I began my training in skinning, my fingers making an apprentice of me; I took up leatherworking. I faced boars for the first time, with a healthy respect for their teeth. I delivered a Crag Boar Rib to Ragnar Thunderbrew. I finished a Handstitched Leather Vest. I put on a Handstitched Leather Vest of my own making.
+I went on in Anvilmar, in no great hurry and in no doubt that I would get where I was going. I smelled the Thunderbrew Distillery before I had properly reached Kharanos. Smoke rose above the houses, where dwarves and gnomes crowded together against the cold, and I felt my shoulders ease at the sight. My hearthstone was bound at the Thunderbrew Distillery from then on. I began my training in skinning, my fingers making an apprentice of me; I took up leatherworking. I faced boars for the first time, with a healthy respect for their teeth. I delivered a Crag Boar Rib to Ragnar Thunderbrew. I finished a Handstitched Leather Vest. I put on a Handstitched Leather Vest of my own making.
 
 I found my way to the Grizzled Den, eyeing the stone of the place before its people. I completed Loslor Rudge's errand with Hegnar Rumbleshot. My path led into Brewnall Village. I took a Gyromechanic Gear to Razzle Sprysprocket. My training added Arcane Shot. I lay down in Shimmer Ridge, wondering how stone could feel so friendly at home and so hard beneath a back.
 
@@ -28,11 +28,11 @@ The road brought me to Frostmane Hold. I agreed to explore Frostmane Hold, and d
 
 In Kharanos again, I came away from training with Raptor Strike. Hunter's Mark offered a way to keep my quarry from becoming merely another movement I could not place.
 
-I counted five jobs done, and began to understand the attraction of an evening at the inn. Of the fighting, eleven Leper Gnomes and ten Frostmane Snowstriders made up the most. The stretch had taken two hours and a half. I halted in Kharanos, and counted staying alive the soundest piece of work I had done.
+I counted five jobs done, and began to understand the attraction of an evening at the inn. Of the fighting, eleven Leper Gnomes and ten Frostmane Snowstriders made up the most. The stretch had taken two hours and a half. I stopped in Kharanos, with my knees as stiff as an old hinge left out in the snow.
 
 ## Chapter 3 (levels 7 to 9)
 
-I set off in Kharanos, in a cheerful mood I doubted even the road could wear through. When I took the road on to the Grizzled Den, I saw a Wendigo Mane safely to Pilot Stonegear. I shared the road with Thorgrim, company I would gladly have bought a round for. The way went on into Gol'Bolar Quarry. I brought down Rockjaw Bonesnappers with my rifle for Ozzie Togglevolt, the stink of them clinging to me afterwards.
+I got under way in Kharanos, trusting my legs to hold out longer than the day's troubles. When I took the road on to the Grizzled Den, I saw a Wendigo Mane safely to Pilot Stonegear. I shared the road with Thorgrim, company I would gladly have bought a round for. The way went on into Gol'Bolar Quarry. I brought down Rockjaw Bonesnappers with my rifle for Ozzie Togglevolt, the stink of them clinging to me afterwards.
 
 Back in Kharanos, I was taught Concussive Shot and Mend Pet. I took the road to Amberstill Ranch, rather more at ease with the weight of a mountain overhead. I brought Bristle into my care. The heat felt almost like a welcome from home, and I stopped by a fire. Bristle fell. Out here, it could as easily have been me.
 
@@ -46,11 +46,11 @@ I set out in the Valley of Trials, a child of a people who had broken their chai
 
 What followed was a run of small favours. A Cactus Apple went safely into Galgar's hands. I obliged Foreman Thazz'ril. At Razor Hill I heard the forge before I saw the drilling. Beyond the barracks, Kul Tiras ships sat off the coast, and I understood why no one in the town ever quite stood at rest. I completed Gornek's errand with Master Gadrin. My training added Rend and Battle Shout. I fitted myself with a Rough Leather Vest. A Kul Tiras Marine nearly ended me; I felt how little lay beneath my people's fearsome reputation. I carried one more thing to Rezlak. I dealt with Scorpid Workers first and finished off Kul Tiras Sailors at Gar'Thok's request, their numbers testing my endurance.
 
-I had finished eight tasks. Nine Scorpid Workers had fallen to me over the stretch. The work had taken an hour and forty-five minutes, enough to make the quiet of a settled camp seem precious. I paused in Razor Hill, grateful that no order could make me stand before I was willing.
+I had finished eight tasks. Nine Scorpid Workers had fallen to me over the stretch. The work had taken an hour and forty-five minutes, enough to make the quiet of a settled camp seem precious. I settled in Razor Hill, and let the day's work fall away from me one piece at a time.
 
 ## Chapter 2 (levels 5 to 6)
 
-I set out in Razor Hill, free to walk away and unwilling to leave the work to someone else. The drums of Orgrimmar echoed off the spiked walls as I came in. At Grommash Hold I felt the weight of it: a city our people had built for themselves, with no one's chains on it. The road brought me to the Valley of Strength. I came away knowing Thunder Clap, my strength no shortcut past clumsy fingers. With Charge learned, I could close the distance before my courage had time to argue about it. I took the message to Gor the Enforcer.
+I continued in Razor Hill, remembering how much Thrall had risked to give our people a home. The drums of Orgrimmar echoed off the spiked walls as I came in. At Grommash Hold I felt the weight of it: a city our people had built for themselves, with no one's chains on it. The road brought me to the Valley of Strength. I came away knowing Thunder Clap, my strength no shortcut past clumsy fingers. With Charge learned, I could close the distance before my courage had time to argue about it. I took the message to Gor the Enforcer.
 
 # Aelyndra, a Hardcore night elf druid
 
@@ -62,11 +62,11 @@ I handed a Webwood Venom Sac over to Gilshalan Windwalker. The trainer taught me
 
 I rose in Dolanaar, listening to the morning before I trusted it. I made sure a Nightsaber Pelt reached Zenn Foulhoof and brought an Emerald Dreamcatcher to Tallonkai Swiftroot. I swapped a piece or two of my gear.
 
-I had seen seven tasks through, with the names of strangers no longer quite so foreign to me. Most of it had been against eleven Webwood Spiders and four Nightsabers. All of it had taken an hour and twenty-five minutes. I rested in Dolanaar, and waited for the moon to rise, as my people always have.
+I had seen seven tasks through, with the names of strangers no longer quite so foreign to me. Most of it had been against eleven Webwood Spiders and four Nightsabers. All of it had taken an hour and twenty-five minutes. I stopped in Dolanaar, and let the thought of home soften the day's unease.
 
 ## Chapter 2 (levels 5 to 6)
 
-I set out in Dolanaar, as unhurried as the old forest and no more trusting. The white stone and still pools of Darnassus slowed me without my meaning to. Near the Temple of the Moon the old hush settled around me, and I was home. I came to the Temple of the Moon. I did what Mathrengyl Bearwalker asked of me.
+I headed out in Dolanaar, fond of every living thing I passed and wary of most of them. The white stone and still pools of Darnassus slowed me without my meaning to. Near the Temple of the Moon the old hush settled around me, and I was home. I came to the Temple of the Moon. I did what Mathrengyl Bearwalker asked of me.
 
 # Mortis, a Forsaken priest
 
@@ -76,9 +76,9 @@ I began in Deathknell, with Lordaeron in ruins and no intention of joining the r
 
 A Scarlet Armband was in Executor Arren's hands soon after. I took instruction in Shadow Word: Pain. Power Word: Shield was a ward I could now set between myself and an enemy's blow. After the tombs, the crooked roofs of Brill looked almost companionable. Around the Gallows' End Tavern my people went about their business, and the town kept going on stubbornness alone. I made sure a Tirisfal Pumpkin reached Apothecary Johaan. I dealt with Maggot Eye for Executor Zygand, the dark doing my appearance a kindness; I added a Lightweight Chain Robe to my equipment.
 
-The tasks came to seven, the last for Executor Zygand. The fighting came to twelve Scarlet Converts and eight Wretched Zombies. I had spent an hour and fifty minutes on the road, and enjoyed having an end to the day's demands. I rested in Brill, with no master's voice in my head to make stillness a crime.
+The tasks came to seven, the last for Executor Zygand. The fighting came to twelve Scarlet Converts and eight Wretched Zombies. I had spent an hour and fifty minutes on the road, and enjoyed having an end to the day's demands. I settled in Brill, and allowed myself the rare luxury of not being on my guard.
 
 ## Chapter 2 (levels 5 to 6)
 
-I went on in Brill as one of the Horde, an arrangement its oldest members and its newest were both still getting used to. Green canals ran through the Undercity, past the bubbling Apothecarium, deep beneath the ruins of Lordaeron. Out of so much that had survived badly, we had made a city, and it was ours. My path led into the Trade Quarter. I took lessons in Mind Blast. I took instruction in Renew, comforted by healing that could keep working after the prayer ended. A Vile Fin Scale went safely into Master Apothecary Faranell's hands.
+The day began in Brill, and I met it prepared to be pleasantly surprised and fully equipped for the other kind. Green canals ran through the Undercity, past the bubbling Apothecarium, deep beneath the ruins of Lordaeron. Out of so much that had survived badly, we had made a city, and it was ours. My path led into the Trade Quarter. I took lessons in Mind Blast. I learned Renew, a healing that went on working after the prayer ended, and went on burning in my hands as long as it did. A Vile Fin Scale went safely into Master Apothecary Faranell's hands.
 

@@ -17,3 +17,7 @@ kind: rest
 - I settled {at}, and for once keeping still felt like ease rather than lying low.
 - [hc] I rested {at}, still breathing, which is reason enough to celebrate where I come from.
 - Content to be of no use for a while, I rested {at} and listened to nothing in particular.
+- [fire] I sat by the fire {at}, and decided it lacked only a drum and a few friends from home to be perfect.
+- [!fire] I rested {at}, treating myself to the thought of crabs cracked open on a warm rock by the sea.
+- [last] I settled {at}, and let tiredness come in like a slow tide without arguing with it.
+- I rested {at}, privately amused at how much effort I had spent getting somewhere to sit down.

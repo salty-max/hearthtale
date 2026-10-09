@@ -13,3 +13,13 @@ kind: d-close
 - I would rather be measured by what I do than by what my people once did, and I will stand by what I did in {land}.
 - [found !class:SHAMAN] New country makes me look twice at everything, and I would sooner learn it slowly than be taught a hard lesson by it.
 - [learned !class:WARLOCK] I can do more than I could, and I mean to earn the right to it in the fights ahead.
+- [hard !hc] I have died and got up again, and the shame of it matters far less to me than working out what I misjudged.
+- [near] I came within a breath of the end, and what I carry away from it is not pride at surviving but the plain knowledge of how badly I wanted to.
+- [found] Each new land I walk into makes the world bigger and my own certainties smaller, and I have come to like the trade.
+- [learned] I have more to draw on than before, and the real test is whether I reach for it in a hard moment or fall back on plain strength out of habit.
+- [delve] Every corner of that dungeon belonged to someone who wanted me gone, and I came out with sharper eyes and rather less swagger than I took in.
+- [grouped] Working beside others asks something different of me, a willingness to hold back and trust another's timing, and I found more of it in me than I expected.
+- [fought] Beating a real enemy leaves me with more respect than hatred, and I would hope for the same from anyone who ever beats me.
+- [quiet] None of it would make much of a story, and I find I do not mind plain work, so long as somebody is better off for it.
+- [hc] Any fight I cannot walk away from is a fight lost, whatever anyone might sing about it afterwards, and I choose mine with that in mind.
+- Strength was never the hard part for me; knowing where to spend it is, and every stretch like this one teaches me a little more about that.

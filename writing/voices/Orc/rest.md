@@ -17,3 +17,7 @@ kind: rest
 - [fire] I sat by the fire {at}, and found it easy to believe, as the shamans did, that a spirit lived in the flame and deserved thanks.
 - [last] The day's work was finished, a kind of victory the old warbands had never thought to celebrate, and I settled {at} to enjoy it.
 - I settled {at}; resting was a discipline my restless people had come to late, and I had yet to master it.
+- [last] I stopped {at}, and let the aches of the stretch have their say now that nothing else needed me.
+- [fire] I kept close to the fire {at}, turning the day over in my head until none of it quickened my pulse any more.
+- I stayed put {at}, and for once let my hands lie idle without feeling they ought to be busy.
+- [last] I called it done {at}, tired in the way only a full stretch of useful work ever leaves me.

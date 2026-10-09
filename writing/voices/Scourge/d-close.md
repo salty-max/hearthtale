@@ -11,3 +11,13 @@ kind: d-close
 - [hc !hard] I have had my one return from the dead already, and I go carefully, knowing nothing will bring me back a second time.
 - Bit by bit, I am getting to know whoever it was that came back, and on the whole I approve.
 - Every day I spend as I please is one the Lich King meant to have, which lends even the dull ones a certain relish.
+- [hard] Dying makes me want to know exactly where I went wrong, and I intend to work it out before it can happen again.
+- [near] Something very nearly took this life from me, and I find I am angry about it, which is a better sign than fear.
+- [found] Strange country makes me careful and curious in roughly equal measure, and I hope never to be cured of either.
+- [learned] What I can do now is mine and answers to no one else, and that matters to me more than the power itself.
+- [delve] I kept my nerve underground about as well as I keep it anywhere, which is to say better than I feared and worse than I would like.
+- [grouped] In company, I notice how quickly I stop watching the others and start watching out for them.
+- [fought] Beating foes of that sort leaves me with a cold, quiet satisfaction that I feel no need to apologise for.
+- [quiet] Small work suits a mind that has had enough of grand causes, and mine has had more than its share.
+- [hc near] With no second rising to count on, coming that close to the end has left me more careful than I have ever been.
+- I finish these days a little more capable than I began them, and I would settle for that from anyone, myself included.

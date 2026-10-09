@@ -11,7 +11,7 @@ I had completed sixty-four tasks already when this stretch began in Stormwind Ci
 
 ## Chapter 1 (levels 18 to 20)
 
-I took up the road in the Dwarven District, still susceptible to the promise of a quiet life somewhere beyond it. I flew from Stormwind to Sentinel Hill, grateful for the distance without another chance to lose my way.
+With the king missing, the roads still had to be walked and the errands run, and I set out in the Dwarven District to take my share. I flew from Stormwind to Sentinel Hill, grateful for the distance without another chance to lose my way.
 
 Westfall lay dark and quiet, its windmills turning over farms nobody tended any more. A light in a window was rare enough to make me wonder who still dared to keep one. A stone tower stood on Sentinel Hill, and around it the People's Militia had pitched their tents. Farmers who had lost everything queued for soup, and it made me angrier than I expected. A Mysterious Message was in Gryan Stoutmantle's hands soon after. Moonbrook was a ruin after dark, its broken walls black against the sky. Somewhere among the burned houses the Defias were talking, and I kept to the shadows. I helped the Defias Traitor as I had promised. In Sentinel Hill again, I saw Gryan Stoutmantle again, the work behind me. Thessaly, Brannigan, Rowan and Halvard joined me.
 
@@ -21,13 +21,15 @@ Mine carts stood abandoned on their rails, and the walls sweated in the lampligh
 
 I cleared away Defias Pirates, Defias Companions and Defias Squallshaper as I gathered Red Silk Bandanas, packed as neatly as a quartermaster's stores. Mr. Smite nearly finished me in Ironclad Cove, and my hands shook like a recruit's after the danger had passed. Mr. Smite fell at last. After I came by Smite's Mighty Hammer, I had it in use before long. I saw the end of Captain Greenskin. Edwin VanCleef fell, and I could leave the Deadmines. I wanted an ordinary doorstep more than any victory feast. Mr. Smite, a few Defias Blackguards and Captain Greenskin fell to me while I claimed VanCleef's head as proof of the deed. I brought down Cookie.
 
-By nightfall, back in Sentinel Hill, I checked in with Gryan Stoutmantle and made Chausses of Westfall part of my kit. I ran one more errand. I left Sentinel Hill by air for Stormwind, thinking of the homes below and all the ordinary lives inside them. I found my way to Cathedral Square, my own footsteps the only conversation on the way. I brought an Unsent Letter to Baros Alexston.
+By nightfall, back in Sentinel Hill, I checked in with Gryan Stoutmantle and made Chausses of Westfall part of my kit. Scout Riell had my report soon after. I left Sentinel Hill by air for Stormwind, thinking of the homes below and all the ordinary lives inside them.
 
-Once back in the Dwarven District, I told Wilder Thistlenettle and Shoni the Shilent the work was done. The road brought me to Old Town. I trained in Cleave and Retaliation, my courage in need of something sturdier than good intentions.
+There were smaller jobs after that, the kind a place runs on. I came to Cathedral Square, my own footsteps the only conversation on the way. I brought an Unsent Letter to Baros Alexston; I handed in my work to Wilder Thistlenettle and Shoni the Shilent.
 
-I had seen eight tasks to their end. My tally came to eight Defias Miners and six Defias Pirates. All told it had taken two hours and a half, enough to leave me as stiff as a sentry at the end of a double watch. I rested in the Trade District, back among walls and doors, which suited me better than any view.
+The road brought me to Old Town. I trained in Cleave and Retaliation, my courage in need of something sturdier than good intentions.
+
+I had seen eight tasks to their end. My tally came to eight Defias Miners and six Defias Pirates. All told it had taken two hours and a half, enough to leave me as stiff as a sentry at the end of a double watch. I stopped in the Trade District, letting the day's demands dwindle to the simple matter of staying put.
 
 ## Chapter 2 (level 20)
 
-The kingdom had room for heroes, but I would settle for coming home useful, and set out in the Trade District.
+I took up the road in the Trade District, still susceptible to the promise of a quiet life somewhere beyond it.
 

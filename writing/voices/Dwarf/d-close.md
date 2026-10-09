@@ -11,3 +11,13 @@ kind: d-close
 - [hc !hard] I have the one life and no other, and I treat it the way a careful miner treats the timbers holding up the roof.
 - It is not finished work yet, but another course is laid, and the next one will have something solid to sit on.
 - Most work looks different to fresh eyes, and I will leave the judging of this stretch until I have some.
+- [hard] I died out there, and nothing stings quite like watching something give way under load, even when the something is me.
+- [near] I came within a hair's breadth of the end, and I keep turning that moment over like a doubtful casting, hunting for the air bubble that nearly split it.
+- [found] Each new country makes the world larger and the way home longer, and so far I have not once minded the trade.
+- [learned] I have something new at my command now, and like any good piece of kit, it will earn its place by holding up when it matters.
+- [delve] The first rule of any dig is to come back out of it, and that place leaned on the rule harder than I would have liked.
+- [grouped] I have always judged folk by whether they stand firm when it counts, and the company I kept gave me no cause to complain.
+- [fought] I met foes worth the meeting, and came away from them a little surer of what I am made of.
+- [quiet] Nothing in {land} tried very hard to kill me, and I mean to enjoy the novelty for as long as it lasts.
+- [hc] Any sensible expedition carries a spare of whatever it cannot do without, and since a life is the one thing I have no spare of, I mean to look after it.
+- Not every day yields metal worth keeping, but these, taken all round, were worth the smelting.

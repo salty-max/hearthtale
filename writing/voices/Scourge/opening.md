@@ -17,3 +17,13 @@ kind: opening
 - [high] I took up the road {at}, a long way from the day in Deathknell when I first wondered what was left of me.
 - Work was waiting {at}, and the novelty of going to it by my own choice had not yet worn off.
 - The road had no opinion of what I was, which made it better company than most, and I took it up again {at}.
+- [!night] The day began {at}, and I met it prepared to be pleasantly surprised and fully equipped for the other kind.
+- I made a start {at}, as civil as anyone was to me and not a great deal more.
+- [!night] I set off {at} in plain daylight, which I tolerate rather better than the stories about my kind suggest.
+- [night] I went on {at} in the dark, with my own eyes the only lookout I fully believed in.
+- [home] I resumed the work {at}, on ground the Scarlet Crusade still coveted and was never going to get.
+- [!home] I carried on {at}, asking little of a land that owed me nothing.
+- There was work to be had {at}, and I went to it with a clear head and a short list of people I trusted.
+- Curiosity got me moving {at} well before any sense of duty did, and I was content to let it lead.
+- Plans had failed whole kingdoms in my time, so I set out {at} with a modest one and held it loosely.
+- I headed out {at}, sceptical of easy work and quietly hoping for some.

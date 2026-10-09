@@ -1727,14 +1727,14 @@ end
 do
   local heavy, middling = {}, {}
   for id, why in pairs(ns.data.why or {}) do
-    if why[1] == 3 and #why[2] <= 85 then table.insert(heavy, id) end -- (two that fit one sentence)
+    if why[1] == 3 and #why[2] <= 105 then table.insert(heavy, id) end -- (two that fit one sentence)
     if why[1] == 2 then table.insert(middling, id) end
   end
   table.sort(heavy)
   table.sort(middling)
   for r, race in ipairs(RACES) do
     local chapters = {}
-    for n = 1, 12 do
+    for n = 1, 24 do -- (long enough for the shared frames after the race's own)
       local log, k = {}, (r * 13 + n * 7)
       local function quest(id, at)
         table.insert(
@@ -1757,8 +1757,14 @@ do
         gold = 0,
       }
     end
-    local c =
-      { guid = "story-" .. race, race = race, class = COMBOS[race][1], began = { level = 20 }, chapters = chapters }
+    local c = {
+      guid = "story-" .. race,
+      race = race,
+      class = COMBOS[race][1],
+      faction = race == "Skyborne" and "horde" or nil, -- (the Skyborne's tradition follows their side)
+      began = { level = 20 },
+      chapters = chapters,
+    }
     for i, e in ipairs(ns.writeDiary(c).entries) do
       inspect(race .. " story diary " .. i, e.text)
     end
@@ -1788,6 +1794,180 @@ do
     },
   }
   inspect("home lands diary", ns.writeDiary(c).entries[1].text)
+end
+
+-- The diary's links (Diary.lua): a chain's story taken up again in a later
+-- entry, and finished; foes who nearly killed me, several in an entry; new
+-- lands of my own people's, two at once, for every race that has them; the
+-- pet at my side, named again a few entries on.
+do
+  local whys, K = ns.data.why or {}, ns.knowledge
+  local members = {}
+  for id, root in pairs(K.chains) do
+    local why = whys[id]
+    if why and why[1] >= 2 and #why[2] <= 120 then
+      members[root] = members[root] or {}
+      table.insert(members[root], id)
+    end
+  end
+  local threads = {}
+  for _, ids in pairs(members) do
+    table.sort(ids)
+    local ends, mids = {}, {}
+    for _, id in ipairs(ids) do
+      table.insert(K.ends[id] and ends or mids, id)
+    end
+    if #mids >= 2 and #ends >= 1 then table.insert(threads, { mids[1], mids[2], ends[1] }) end
+  end
+  table.sort(threads, function(x, y) return x[1] < y[1] end)
+  assert(#threads > 0, "no quest chain with a story")
+  local RARES = {
+    "Mother Fang",
+    "Gruff Swiftbite",
+    "Snarlmane",
+    "Lady Moongazer",
+    "Foe Reaper 4000",
+    "Mug'thol",
+    "Ribchaser",
+    "Leech Widow",
+    "Old Cliff Jumper",
+    "Rak'shiri",
+    "Sister Riven",
+    "Lord Malathrom",
+    "Kazon",
+    "Sergeant Brashclaw",
+    "Fedfennel",
+    "Brack",
+    "Rippa",
+    "Bjarn",
+    "Timber",
+    "Mangeclaw",
+  }
+  local HOMES = {}
+  local CITIES = { ["Stormwind City"] = true, Ironforge = true, Darnassus = true, Orgrimmar = true }
+  CITIES["Thunder Bluff"], CITIES.Undercity, CITIES.Anvilmar = true, true, true
+  for zone, owner in pairs(ns.writer.HOSTS) do
+    if not CITIES[zone] then -- (a city is known from the first day: no new land)
+      HOMES[owner] = HOMES[owner] or {}
+      table.insert(HOMES[owner], zone)
+    end
+  end
+  for r, race in ipairs(RACES) do
+    local homes = HOMES[race] or HOMES[ns.writer.TAKEN_IN[race] or ""] or {}
+    table.sort(homes)
+    local chapters = {}
+    for n = 1, 12 do
+      local t, log = n * 100000, {}
+      -- (the first two: new lands alone, the race's own words free for them)
+      local chain = threads[(r * 4 + math.floor((n - 1) / 3)) % #threads + 1]
+      if n > 2 then
+        table.insert(
+          log,
+          { k = "quest", id = chain[(n - 1) % 3 + 1], giver = "Sten Stoutarm", told = true, at = t + 10 }
+        )
+      end
+      -- (foes worth naming, one to three, one of them nearly the end of me)
+      local foes = {}
+      for k = 1, n > 2 and n % 3 + 1 or 0 do
+        foes[k] = RARES[(r * 7 + n * 3 + k) % #RARES + 1] .. (n > 6 and " the Elder" or "")
+        table.insert(log, { k = "rare", name = foes[k], zone = "Wetlands", sub = "Wetlands", at = t + 20 + k })
+      end
+      if n % 2 == 0 and foes[1] then
+        table.insert(log, { k = "close", hp = 20, foe = foes[1], zone = "Wetlands", sub = "Wetlands", at = t + 30 })
+      end
+      -- (two lands of my own people's, or of my hosts', at once)
+      if n <= 2 and homes[2 * n] then
+        for k = 2 * n - 1, 2 * n do
+          table.insert(log, { k = "place", new = "zone", zone = homes[k], sub = homes[k], at = t + 40 + k })
+        end
+      end
+      chapters[n] = {
+        start = { level = 20, zone = "Wetlands", sub = "Menethil Harbor" },
+        log = log,
+        ended = { level = 20, place = "Menethil Harbor", how = "rest" },
+        kills = {},
+        quests = 1,
+        played = 3600,
+        gold = 0,
+      }
+    end
+    for life = 1, 3 do
+      local c = {
+        guid = "links-" .. race .. life,
+        race = race,
+        class = COMBOS[race][1],
+        faction = race == "Skyborne" and (life % 2 == 0 and "horde" or "alliance") or nil,
+        began = { level = 20 },
+        chapters = chapters,
+      }
+      for i, e in ipairs(ns.writeDiary(c).entries) do
+        inspect(race .. " links diary " .. i, e.text)
+      end
+    end
+  end
+  -- stretches of nothing but small work, early in a life
+  for _, race in ipairs(RACES) do
+    local chapters = {}
+    for n = 1, 12 do
+      chapters[n] = {
+        start = { level = 6, zone = "Wetlands", sub = "Menethil Harbor" },
+        log = {},
+        ended = { level = 6, place = "Menethil Harbor", how = "rest" },
+        kills = {},
+        quests = 2,
+        played = 3600,
+        gold = 0,
+      }
+    end
+    local c =
+      { guid = "quiet-" .. race, race = race, class = COMBOS[race][1], began = { level = 6 }, chapters = chapters }
+    for i, e in ipairs(ns.writeDiary(c).entries) do
+      inspect(race .. " quiet diary " .. i, e.text)
+    end
+  end
+  -- the pet: a warlock's demon, a hunter's beast, at my side through the work
+  for _, life in ipairs({
+    { "Human", "WARLOCK", "Zigfik", "Imp" },
+    { "Orc", "WARLOCK", "Grimbal", "Voidwalker" },
+    { "Gnome", "WARLOCK", "Kazrix", "Imp" },
+    { "Scourge", "WARLOCK", "Rohgar", "Felhunter" },
+    { "Dwarf", "HUNTER", "Ashpaw", "Bear" },
+    { "NightElf", "HUNTER", "Shadowmane", "Cat" },
+    { "Tauren", "HUNTER", "Plainsrunner", "Tallstrider" },
+    { "Troll", "HUNTER", "Snapjaw", "Crocolisk" },
+    { "Orc", "HUNTER", "Bloodfang", "Wolf" },
+  }) do
+    local chapters = {}
+    for n = 1, 12 do
+      local t, log = n * 100000, {}
+      for k = 1, 4 do
+        table.insert(log, {
+          k = "done",
+          id = 1000000 + n * 10 + k,
+          giver = "Sten Stoutarm",
+          objectives = { { type = "monster", name = "Mottled Boar", n = 6 } },
+          zone = "Wetlands",
+          sub = "Wetlands",
+          at = t + k * 60,
+          pet = life[3],
+          petFamily = life[4],
+        })
+      end
+      chapters[n] = {
+        start = { level = 20, zone = "Wetlands", sub = "Menethil Harbor" },
+        log = log,
+        ended = { level = 20, place = "Menethil Harbor", how = "rest" },
+        kills = {},
+        quests = 4,
+        played = 3600,
+        gold = 0,
+      }
+    end
+    local c = { guid = "pet-" .. life[3], race = life[1], class = life[2], began = { level = 20 }, chapters = chapters }
+    for i, e in ipairs(ns.writeDiary(c).entries) do
+      inspect(life[1] .. " pet diary " .. i, e.text)
+    end
+  end
 end
 
 -- A trinket put on: carried, not worn.

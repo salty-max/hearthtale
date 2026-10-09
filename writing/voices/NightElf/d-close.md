@@ -11,3 +11,13 @@ kind: d-close
 - [hc !hard] A tree that falls does not stand again, and neither would I, so I am glad to end this stretch with my roots still in the ground.
 - I expect to turn this stretch over in my thoughts for a long while yet, since I have never been quick to decide what a thing meant.
 - The next stretch will come in its own good time, and I would sooner meet it rested than early.
+- [hard !hc] My people once thought death a stranger, and this stretch made the two of us better acquainted than I ever wished.
+- [near] I was very nearly lost, and my nerves have not yet agreed with me that it is over.
+- [found] The world holds far more than the old stories ever troubled to tell, and I am beginning to love it for what they left out.
+- [learned] Something new has taken root in me, and like any root it will be a while before I can tell how deep it goes.
+- [delve] I was made for open nights and long sightlines, and after being shut in among enemies, a horizon is the thing I want most.
+- [grouped] For a while the road held more footsteps than my own, and I found myself listening for theirs as closely as for any danger.
+- [fought] I brought down foes worth naming, and what I feel is less pride than a need to sit still until the fight has gone out of me.
+- [quiet] It was a stretch of small things in {land}, and I am coming to think that small things are most of what a mortal life is made of.
+- [hc] I carry a single life as carefully as water in cupped hands, and so far I have not spilled a drop.
+- Whatever this stretch held, the moon will keep its course over all of it, and I take more comfort in that than I can easily explain.

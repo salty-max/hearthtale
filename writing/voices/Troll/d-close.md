@@ -11,3 +11,13 @@ kind: d-close
 - [hc !hard] I have only the one life, and the longer I keep it, the more attached to it I become.
 - I end this stretch as watchful as I began it and with my spirits in one piece, and I ask little more of the road than that.
 - Taken all together, it was a stretch I could recount back in the village without much embarrassment, though I might leave out a part or two.
+- [hard] Death had its turn with me and then let me go, and I am taking that as a hint to dance more and die less.
+- [near] That close call has left me with an enormous appetite, and I take it as my body's vote for staying alive.
+- [found] There is a lot of world out here that has never heard proper drumming, and I find that more of a pity than a worry.
+- [learned] I have something new to my name now, and the vain part of me would like an audience of friends before any enemy gets a look at it.
+- [delve] After so long between walls, I would give a good deal for an open beach and a fish cooked on a stick.
+- [grouped] Sharing the road put me in mind of the cooking fires at home, where nobody eats alone if anyone can help it.
+- [fought] That fighting will make good telling around a fire one day, once I have worked out which parts to make bigger.
+- [quiet] Small work and no fright, with a supper still to come, is better luck than I usually get.
+- [hc] All I have is the one life, and I mean to carry it back to the water's edge one day with every story still in it.
+- Whatever else these days held, I am still good company for myself, and on the road that counts for a great deal.
