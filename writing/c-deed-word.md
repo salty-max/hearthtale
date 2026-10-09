@@ -11,7 +11,7 @@ kind: c-deed-word
 - [!again] completed the errand from {giver} to {ender}
 - [again] passed on another message while I was at it
 - [again] carried one more word along
-- [again] took another errand's word with me
+- [again] took a second errand along as well
 - [again] settled one more errand on the same visit
 - [again] delivered a second message in the same visit
 - [again] saw another errand through on the same visit

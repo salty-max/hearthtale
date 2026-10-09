@@ -131,6 +131,10 @@ check(
     and o.n == 8,
   "a quest turned in: what it asked (eight Tough Wolf Meat), who gave it, who I returned to"
 )
+check(
+  quest and quest.giverSex == "female" and quest.enderSex == "female" and not quest.enderBeast,
+  "… and what the game said of them: their sex (the writer's pronoun), no beast"
+)
 state.npc, state.objectives =
   "Balir Frosthammer", { [180] = { { text = "Rockjaw Trogg slain: 0/6", type = "monster", numRequired = 6 } } }
 if FOREVER then

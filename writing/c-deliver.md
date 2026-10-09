@@ -3,7 +3,7 @@ kind: c-deliver
 ---
 - [!again !onward] carried {thing} to {ender}
 - [!again !onward] delivered {thing} to {ender}
-- [!again !onward] put {thing} into {ender}'s hands
+- [!again !onward !beast] put {thing} into {ender}'s hands
 - [!again !onward] brought {thing} to {ender}
 - [!again !onward] took {thing} to {ender}
 - [!again !onward] handed {thing} over to {ender}
@@ -26,7 +26,7 @@ kind: c-deliver
 - [onward again] turned it in a second time
 - [onward again] handed it back for the next errand
 - [turn !plural !again !onward] {thing} found its way to {ender}
-- [turn !again !onward] {thing} went safely into {ender}'s hands
-- [turn !plural !again !onward] {thing} was in {ender}'s hands soon after
+- [turn !again !onward !beast] {thing} went safely into {ender}'s hands
+- [turn !plural !again !onward !beast] {thing} was in {ender}'s hands soon after
 - [turn plural !again !onward] {thing} found their way to {ender}
-- [turn plural !again !onward] {thing} were in {ender}'s hands soon after
+- [turn plural !again !onward !beast] {thing} were in {ender}'s hands soon after

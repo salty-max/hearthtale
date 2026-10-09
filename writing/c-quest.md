@@ -2,7 +2,7 @@
 kind: c-quest
 ---
 - [!again] did what {giver} asked of me
-- [!again] answered {giver}'s need
+- [!again] saw to {giver}'s request
 - [!again] lent {giver} a hand
 - [!again] kept my word to {giver}
 - [!again] helped {giver} as I had promised
@@ -10,7 +10,7 @@ kind: c-quest
 - [!again] carried out what {giver} needed
 - [!again] took care of what {giver} wanted
 - [!again] was of use to {giver}
-- [!again] gave {giver} the help they had asked for
+- [!again] gave {giver} the help {pron} had asked for
 - [!again] did the job {giver} had for me
 - [!again] obliged {giver}
 - [again] did one more thing asked of me

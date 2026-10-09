@@ -162,6 +162,7 @@ function Scene:append(text, routine, remarks, highlight)
   table.insert(self.current, text)
   b.told = (b.told or 0) + 1
   self.lastSentenceRemark = (remarks or 0) > 0
+  self.lastHighlightRemark = self.lastSentenceRemark and highlight and true or false
   if ns.writerSentence then ns.writerSentence(text, routine or 0, remarks or 0, self.n, highlight) end
 end
 
@@ -171,7 +172,7 @@ function Scene:newParagraph()
     self.current = {}
   end
   self.quipped, self.backTold = false, false
-  self.peopleNamed, self.thingsCarried, self.slain = {}, {}, {}
+  self.peopleNamed, self.slain = {}, {} -- (the things carried: remembered for the chapter)
   self.peopleSaid = {} -- (a person named in the paragraph before is no meeting here)
 end
 
@@ -578,7 +579,7 @@ function Scene:takePrey(m, only, except)
     end
   end
   if #names == 0 then return nil end
-  return listing(names), total == 1 or (#order == 1 and order[1].one and true)
+  return listing(names), total == 1 or (#order == 1 and order[1].one and true), total
 end
 
 -- Whether a creature is the owner of a trophy already told ("Thule
@@ -678,16 +679,17 @@ function Scene:deedPart(m, part, i, n, t)
     tags.lone = tags.lone or nil -- (one creature: no "until I had")
   end
   local text, said = b:deed(part, self.key, tags)
-  local prey, one
+  local prey, one, total
   if i == 1 and text and WORK[said.kind] and not said.turn and not said.state then
-    prey, one = self:takePrey(m, nil, sources(part))
+    prey, one, total = self:takePrey(m, nil, sources(part))
   end
   if prey then
     self:flush()
     -- (a deed with a comma or an "and" of its own takes no second "and")
     local bare = said.remark and text:sub(1, #text - #said.remark - 2) or text
     local complex = (bare:find(",") or bare:find(" and ")) and true or nil
-    local t2 = self:tags({ one = one or nil, handed = t.handed or nil, complex = complex }, m)
+    local t2 =
+      self:tags({ one = one or nil, handed = t.handed or nil, complex = complex, lots = (total or 0) >= 10 or nil }, m)
     local framed, f = b:say("c-while", self.key, { prey = prey, deed = text }, t2, nil, true)
     if framed then
       text, said.turn = framed, f.turn

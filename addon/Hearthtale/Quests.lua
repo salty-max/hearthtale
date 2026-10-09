@@ -120,6 +120,13 @@ local function creditKills(id, p)
   p.counted = counts
 end
 
+-- A person's sex as the game gives it (UnitSex: 2 male, 3 female, 1 unknown).
+local function sexOf(unit)
+  local s = UnitSex and UnitSex(unit)
+  if not s or secret(s) then return nil end
+  return (s == 2 and "male") or (s == 3 and "female") or nil
+end
+
 ns.on("QUEST_ACCEPTED", function(a, b)
   local id, c = b or a, char()
   if not id then return end
@@ -132,10 +139,12 @@ ns.on("QUEST_ACCEPTED", function(a, b)
     and not (UnitIsDead and UnitIsDead("target"))
     and not (UnitCanAttack and UnitCanAttack("player", "target"))
     and not (UnitIsPlayer and UnitIsPlayer("target"))
-  local giver = UnitName("npc") or (friendly and UnitName("target")) or nil
+  local unit = UnitName("npc") and "npc" or (friendly and "target") or nil
+  local giver = unit and UnitName(unit) or nil
   local objectives = objectivesOf(id)
   c.pending[id] = {
     giver = (giver and not secret(giver)) and giver or nil,
+    giverSex = unit and sexOf(unit) or nil,
     title = titleOf(id),
     objectives = objectives,
     held = finishedAll(id) or nil,
@@ -172,8 +181,9 @@ ns.on("QUEST_LOG_UPDATE", function()
     end
   end
 end)
--- Who I returned to: the one I talk to when the quest is completed.
-local ender
+-- Who I returned to: the one I talk to when the quest is completed, what the
+-- game says of them (a man, a woman: the writer's "he", "she"; a beast: no hands).
+local ender, enderSex, enderBeast
 -- Objectives still without their names (the item not loaded yet): read
 -- again, while the quest is still in the log (the turn-in window too).
 local function named(id, p)
@@ -182,6 +192,9 @@ end
 ns.on("QUEST_COMPLETE", function()
   local name = UnitName("npc")
   ender = (name and not secret(name)) and name or nil
+  enderSex = ender and sexOf("npc") or nil
+  local kind = ender and UnitCreatureType and UnitCreatureType("npc")
+  enderBeast = (kind and not secret(kind) and kind == "Beast") or nil
   local id = GetQuestID()
   if id and id ~= 0 then named(id, (char().pending or {})[id]) end
 end)
@@ -195,11 +208,14 @@ ns.on("QUEST_TURNED_IN", function(id)
     id = id,
     title = titleOf(id) or p.title,
     giver = p.giver,
+    giverSex = p.giverSex,
     ender = ender,
+    enderSex = enderSex,
+    enderBeast = enderBeast,
     objectives = p.objectives,
     told = p.done or nil,
   }) -- told: its work was told when done
-  ender = nil
+  ender, enderSex, enderBeast = nil, nil, nil
   if c.pending then c.pending[id] = nil end
 end)
 

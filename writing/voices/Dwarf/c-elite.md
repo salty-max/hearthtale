@@ -1,8 +1,8 @@
 ---
 kind: c-elite
 ---
-- stood my ground against {foe} and prevailed
+- [!many] stood my ground against {foe} and prevailed
 - met {foe} with more stubbornness than fear
-- brought {foe} down without being brought down myself
-- outlasted {foe}, though I felt the cost
+- [!many] brought {foe} down without being brought down myself
+- outlasted {foe}, and was not too proud to be glad of it
 - fought {foe} until the fight was mine

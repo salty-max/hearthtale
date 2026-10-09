@@ -128,7 +128,7 @@ local STYLE = {
 }
 
 -- How many uses of a kind before one of the race's own sentences may come back.
-local OWN_GAP = 8
+local OWN_GAP = 12
 -- The routine clauses, and the pool of remarks each may end with: the
 -- narrator's own reaction ("…, with rather more appetite for supper"), told
 -- for about one routine clause in three, never the same one soon again.
@@ -325,8 +325,10 @@ local function remarkDue(s, routine, weight)
   s.routineCount = s.routineCount + 1
   if weight >= 3 or s.routineCount >= s.nextRemark - (weight >= 2 and 1 or 0) then
     s:prepareRemark()
-    -- (not on two sentences in a row, unless the second is a highlight)
-    return s.pendingRemarks == 0 and (weight >= 3 or not s.lastSentenceRemark)
+    -- (not on two sentences in a row, unless the second is a highlight after
+    -- an ordinary one: never on every highlight of a run, "I took on Ol' Sooty,
+    -- grateful…" after "I fought a Mo'grosh Enforcer and won, with no appetite…")
+    return s.pendingRemarks == 0 and (not s.lastSentenceRemark or (weight >= 3 and not s.lastHighlightRemark))
   end
   return false
 end
@@ -611,7 +613,14 @@ function Book:say(kind, key, values, tags, prefer, raw)
   if routine then self.lastVerb = text:match("^(%a+)") end
   -- a remark ends a clause that has no comma or "and" of its own ("cursed it
   -- and let the rot do its work, taller than me" would hang off the rot)
-  if wantRemark and not text:find(",") and not text:find(" and ") and not ctx.trophy then -- (a trophy speaks for itself)
+  -- (the clause as it will read: a list of things or creatures filled in,
+  -- "Lurker Venom, a Mo'grosh Crystal and a Crocolisk Tear", takes none either)
+  -- (a lesson's or a company's list is one thing, remarked as such: "impatient to try them")
+  local filled = text
+  if kind ~= "c-trainer" and kind ~= "c-group" then
+    filled = text:gsub("{(%w+)}", function(k) return type(values[k]) == "string" and values[k] or "" end)
+  end
+  if wantRemark and not filled:find(",") and not filled:find(" and ") and not ctx.trophy then -- (a trophy speaks for itself)
     local remark = self:remark(routine, key, values, ctx, (text:gsub("{%w+}", "")), weight >= 2)
     if remark then
       text = text .. ", " .. remark
@@ -772,7 +781,9 @@ function Book:size(n, key, mass, pack)
     if w == "" or not self.sizesUsed[w] then table.insert(unused, w) end
     if w == "" or not (self.sizesUsed[w] or family[familyOf(w)]) then table.insert(fresh, w) end
   end
-  if #fresh == 0 then fresh = #unused > 0 and unused or fit end
+  -- (all of them said lately: none at all, never the one just said again,
+  -- "a fair number of Sunscale Screechers for a fair number of Raptor Heads")
+  if #fresh == 0 then fresh = #unused > 0 and unused or { "" } end
   local w = fresh[hash(self.seed .. "|size|" .. key) % #fresh + 1]
   if w ~= "" then
     self.sizesUsed[w] = true
@@ -791,6 +802,12 @@ function Book:deed(m, key, tags)
   if objective and (objective:match("^tame ") or objective:lower():match(" tamed[%.:]?%s*$")) then return end
   local ender = m.ender ~= m.giver and m.ender or nil
   local values = { giver = m.giver, ender = ender }
+  -- who they are, as the game said or knows: "he", "she" (else no line with
+  -- a pronoun for them); a beast takes nothing "into its hands"
+  local npcs = ns.knowledge and ns.knowledge.npcs or {}
+  local sex = m.giverSex or (npcs[m.giver or ""] or {}).sex
+  local beast = (m.ender and (m.enderBeast or (npcs[m.ender] or {}).beast)) or (npcs[m.giver or ""] or {}).beast
+  tags.beast = beast or nil
   local done, said
   if o and o.type == "monster" and o.name then
     -- every creature asked for ("Rockjaw Troggs and Burly Rockjaw Troggs");
@@ -1062,7 +1079,8 @@ function Book:deed(m, key, tags)
   end
   -- nothing to tell but who asked: that much; a title alone isn't told
   if not done and m.giver then
-    done, said = self:say("c-quest", key, { giver = m.giver }, tags, nil, true)
+    local pron = (sex == "male" and "he") or (sex == "female" and "she") or nil
+    done, said = self:say("c-quest", key, { giver = m.giver, pron = pron }, tags, nil, true)
   end
   return done, said
 end

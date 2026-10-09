@@ -24,7 +24,7 @@ kind: c-hunt
 - [handed] tracked down {prey} for {item} that {giver} wanted
 - [handed] brought down {prey} for {item} that {giver} needed
 - [!lone fire !handed] burned through {prey} until I had {n} {thing}
-- [fire handed] burned through {prey} for {item} that {giver} wanted
+- [!lone fire handed] burned through {prey} for {item} that {giver} wanted
 - [!lone frost !handed] went after {prey} with frost until I had {n} {thing}
 - [frost handed] went after {prey} with frost for {item} that {giver} needed
 - [arcane !handed] battered {prey} with raw magic for {n} {thing}

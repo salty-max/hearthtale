@@ -18,7 +18,7 @@ kind: c-handed-item
 - [one] recovered {thing} for {giver}
 - [one] fetched {thing} for {giver}
 - [one] tracked down {thing} for {giver}
-- [one] put {thing} into {giver}'s hands
+- [one !beast] put {thing} into {giver}'s hands
 - [one] gave {thing} to {giver}
 - [one] came back to {giver} with {thing}
 - [turn !one] {giver} had asked for {n} {thing}, and I brought them in

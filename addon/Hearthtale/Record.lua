@@ -32,7 +32,8 @@
 --     place { new = "zone" or nil }  inn { place }  flight { from, to }  level { level }
 --     done { id, title, giver, objectives, abandoned, pet, petFamily }   a quest's work done
 --                                                    (pet: the one at my side then)
---     quest { id, title, giver, ender, objectives, told }   a quest turned in (told: its
+--     quest { id, title, giver, ender, objectives, told,   a quest turned in (told: its
+--             giverSex, enderSex, enderBeast }
 --                                                    work was told when done); objectives =
 --                                                    { { type, name, n, text, held } }
 --     kill { name, kind, first, elite, quarry }      the chapter's first of a creature (killed by
