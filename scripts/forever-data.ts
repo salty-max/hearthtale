@@ -416,7 +416,12 @@ const qs = (s: string) => JSON.stringify(s);
 const CLASSES = Object.entries(CLASS);
 for (const [id, q] of [...quests].sort((x, y) => x[0] - y[0])) {
   const cls = CLASSES.filter(([, bit]) => (q.classes ?? 0) & bit).map(([c]) => c);
-  if (cls.length === 1) knowledge.push(`K.quests[${id}] = { class = ${qs(cls[0])} }`);
+  // (a shaman's initiation into an element: its totem, given at the end)
+  const totem = ({ 5175: "earth", 5176: "fire", 5177: "water", 5178: "air" } as Record<number, string>)[
+    q.rewards.find((r) => r >= 5175 && r <= 5178) ?? 0
+  ];
+  if (cls.length === 1 || totem)
+    knowledge.push(`K.quests[${id}] = { class = ${qs(totem ? "SHAMAN" : cls[0])}${totem ? `, totem = ${qs(totem)}` : ""} }`);
 }
 // (their chains, as Knowledge.lua's: chains[id] the first quest, ends[id] the
 // last; a link one to one only, a prerequisite of several is no story going on)

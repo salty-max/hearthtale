@@ -9,10 +9,14 @@ kind: demon
 - [voidwalker] I called {pet}, my first voidwalker, glad to have something so substantial to send ahead of me.
 - [voidwalker] I bound my first voidwalker, {pet}; calling something out of the void was easier than feeling entirely safe beside it.
 - [succubus] I called my first succubus, {pet}, with no wish to mistake the pleasing shape for a kindly nature.
-- [succubus] I summoned {pet}, my first succubus; the horns made it easier to remember what I had called.
+- [succubus] I summoned {pet}, my first succubus, and reminded myself often what it was I had called.
 - [felhunter] I summoned my first felhunter, {pet}, with a new sympathy for anyone who feared having their magic eaten.
 - [felhunter] I called my first felhunter, {pet}, a hound whose appetite for magic was a little too close to my own interests.
 - [felguard] I bound my first felguard, {pet}, and felt the danger of having a soldier of the Legion within reach.
 - [felguard] I summoned {pet}, my first felguard; that much demonic strength was a formidable thing to claim as mine.
 - I summoned {demon} for the first time, bound under the name {pet}, and felt less alone without feeling much safer.
 - I first summoned {pet}, {demon} bound to my service, with every intention of keeping the leash short.
+- [known imp] I put the summoning I had been taught to use at last, and {pet} came, an imp with a name of its own.
+- [known voidwalker] The voidwalker I had learned to call came at last, and answered to {pet}.
+- [known succubus] I called on what I had been taught, and {pet} came, a succubus with a name of her own.
+- [known felhunter] The felhunter I had learned to summon came at last, and answered to {pet}.

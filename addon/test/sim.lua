@@ -481,23 +481,13 @@ local bind = state.bind
 state.bind = "Brewnall Village"
 fire("HEARTHSTONE_BOUND") -- (a place is told with what is done there)
 state.bind = bind
--- The chapter's diary entry first, the chapter in full a click away.
-local diaryText = page.body:GetText()
+-- The chapter as its diary entry, the journal as the character writes it,
+-- written again from the record at each new moment.
 check(
-  diaryText == ns.writeDiary(ns.journal(), ns.writeBook(ns.journal())).entries[1].text
-    and page.toggle:IsShown()
-    and page.toggle.label:GetText() == "Read the full chapter",
-  "a chapter opens on its diary entry, the full chapter a click away"
+  page.body:GetText() == ns.writeDiary(ns.journal(), ns.writeBook(ns.journal())).entries[1].text
+    and page.body:GetText() ~= "",
+  "a chapter reads as its diary entry, written again at each new moment"
 )
-page.toggle.scripts.OnClick(page.toggle)
-check(
-  page.body:GetText() == ns.writeBook(ns.journal()).chapters[1].text
-    and page.toggle.label:GetText() == "Back to the diary entry",
-  "a click: the chapter in full"
-)
-check(page.body:GetText():find("Brewnall Village", 1, true), "a new moment while the book is open: added at once")
-page.toggle.scripts.OnClick(page.toggle)
-check(page.body:GetText() == diaryText, "and back to the diary entry")
 SlashCmdList.HEARTHTALE("")
 check(not B:IsShown(), "/ht again closes it")
 

@@ -96,8 +96,6 @@ const en = {
     closeCall: "a close call",
     rare: "a rare foe slain",
     nothingYet: "Nothing written yet.",
-    fullChapter: "Read the full chapter",
-    diaryEntry: "Back to the diary entry",
     previous: "Previous",
     next: "Next",
     close: "Close",

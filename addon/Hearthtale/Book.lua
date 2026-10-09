@@ -3,9 +3,9 @@
 -- the corner, who they are beside it. Two tabs. The Journal: on the left, the
 -- prologue (a character met mid-life) and the chapters (one from rest to rest),
 -- where each closed and the levels it covers under it, a skull for a close
--- call, a star for a rare; on the right, the open chapter's diary entry
--- (Diary.lua), the chapter in full a click away (a closed book's last one
--- ends with its epitaph, in gold). The Hall
+-- call, a star for a rare; on the right, the open chapter as its diary entry
+-- (Diary.lua), the journal as the character writes it (a closed book's last
+-- one ends with its epitaph, in gold). The Hall
 -- of the Fallen (Hall.lua): the closed books of the account's Hardcore
 -- characters, the open one's epitaph and chapters under its name. Light text and
 -- gold titles on dark panels: Forever's Professions cards; on Classic, the
@@ -149,7 +149,6 @@ local written -- this character's book as last written: { prologue, chapters, ep
 -- and each fallen life's in the Hall (by guid).
 local kept, keptHall = {}, {}
 local current -- its open chapter: a number, or "prologue"
-local full = false -- the open chapter in full rather than its diary entry (until another is opened)
 local hallLife, hallKey -- in the Hall: the open life (its guid) and its page ("epitaph", "prologue", a chapter's number)
 local asked -- opened at a page (a link): don't go to the last chapter
 local WIDTH = 440
@@ -175,7 +174,6 @@ local function levels(ch)
 end
 
 local function show(title, sub, text)
-  page.toggle:Hide()
   page.title:SetText(title)
   page.sub:SetText(sub or "")
   page.body:SetTextColor(unpack(text and T.text or T.soft))
@@ -210,16 +208,11 @@ local function showPage(life, w, key)
   elseif ch.open then
     table.insert(parts, "still being written")
   end
-  -- its diary entry first (Diary.lua), the chapter in full a click away
+  -- its diary entry (Diary.lua): the journal as the character writes it
   local entry = w.diary and w.diary.entries[key]
-  local text = (entry and not full) and entry.text or ch.text
+  local text = entry and entry.text or ch.text
   if life.closed and last and w.epitaph then text = (text and text .. "\n\n" or "") .. EPITAPH:format(w.epitaph) end
   show(("Chapter %d"):format(key), table.concat(parts, "  -  "), text)
-  if entry then
-    page.toggle.label:SetText(full and "Back to the diary entry" or "Read the full chapter")
-    page.toggle:SetWidth(page.toggle.label:GetStringWidth() + 4)
-    page.toggle:Show()
-  end
 end
 
 local rows = {}
@@ -341,13 +334,12 @@ local function refreshJournal(latest)
   written.diary = ns.writeDiary(c, written)
   local known = current == "prologue" and written.prologue or written.chapters[current]
   if latest or not known then
-    full = false
     local last = written.chapters[#written.chapters]
     current = last and last.number or (written.prologue and "prologue") or nil
   end
   local entries = {}
   chapterRows(entries, written, current, function(key)
-    current, full = key, false
+    current = key
     ns.refresh()
   end)
   render(entries, latest)
@@ -384,7 +376,7 @@ local function refreshHall(scroll)
       place = ("Level %d %s %s"):format(d.level or 0, life.raceName or "", life.className or ""),
       selected = life.guid == hallLife and hallKey == "epitaph",
       click = function()
-        hallLife, hallKey, full = life.guid, "epitaph", false
+        hallLife, hallKey = life.guid, "epitaph"
         ns.refresh()
       end,
     })
@@ -393,7 +385,7 @@ local function refreshHall(scroll)
       open, w = life, ns.writeBook(life, keptHall[life.guid])
       w.diary = ns.writeDiary(life, w)
       chapterRows(entries, w, hallKey, function(key)
-        hallKey, full = key, false
+        hallKey = key
         ns.refresh()
       end, 14)
     end
@@ -554,19 +546,6 @@ function build()
   page.sub = label(page.child, BODY_FONT, 12, T.soft)
   page.sub:SetPoint("TOPLEFT", page.title, "BOTTOMLEFT", 0, -7)
   page.sub:SetWidth(WIDTH)
-  -- the diary entry or the chapter in full, by the title
-  page.toggle = CreateFrame("Button", nil, page.child)
-  page.toggle:SetHeight(18)
-  page.toggle:SetPoint("TOPRIGHT", 0, -16)
-  page.toggle.label = label(page.toggle, BODY_FONT, 12, T.gold)
-  page.toggle.label:SetPoint("RIGHT")
-  page.toggle:SetScript("OnEnter", function(self) self.label:SetTextColor(unpack(T.text)) end)
-  page.toggle:SetScript("OnLeave", function(self) self.label:SetTextColor(unpack(T.gold)) end)
-  page.toggle:SetScript("OnClick", function()
-    full = not full
-    ns.refresh()
-  end)
-  page.toggle:Hide()
   local headerRule = rule(page.child)
   headerRule:SetPoint("TOPLEFT", 0, -62)
   headerRule:SetPoint("TOPRIGHT", 0, -62)
@@ -593,7 +572,7 @@ end
 function ns.openChapter(number)
   if not ns.journal() then return end
   if not book then build() end
-  current, full = number, false
+  current = number
   book.selectedTab = 1
   if PanelTemplates_SetTab then PanelTemplates_SetTab(book, 1) end
   if book:IsShown() then
@@ -609,7 +588,7 @@ end
 function ns.openHall(guid)
   if not ns.journal() then return end
   if not book then build() end
-  hallLife, hallKey, full = guid, "epitaph", false
+  hallLife, hallKey = guid, "epitaph"
   book.selectedTab = 2
   if PanelTemplates_SetTab then PanelTemplates_SetTab(book, 2) end
   if book:IsShown() then
