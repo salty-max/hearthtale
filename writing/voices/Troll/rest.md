@@ -2,11 +2,18 @@
 kind: rest
 ---
 - I rested {at}, with my back to something solid, as my people prefer.
-- I settled {at}, in no hurry at all, which the loa seemed to approve of.
+- I settled {at}, in no hurry at all, and let the day's wariness drain out of my shoulders.
 - I paused {at}, with the sound of the sea almost present in the quiet.
-- I rested {at}, with enough room inside the weariness for a grin again.
+- I rested {at}, and found the day's troubles funnier now that they were behind me.
 - I stopped {at}, enjoying an evening whose only demand was sitting still.
 - I rested {at}, and missed the drums of Sen'jin Village more than I expected.
 - I paused {at}, with the tribe's familiar warmth dearer than any chance to be impressive.
 - I rested {at}, letting my curiosity look after itself without finding it another occupation.
 - I rested {at}, with no useful task left for my patience except doing nothing.
+- Quick as my body was to mend, weariness kept its own pace, and I rested {at} until it had gone.
+- [!fire] Few of the places we had called home had let us rest with both eyes closed, so I made the most of a safe place {at}.
+- I rested {at}, as unbothered as a raptor stretched out after a good meal.
+- [last fire] I rested by the fire {at}, and let the smoke carry the day's long vigilance away.
+- I settled {at}, and for once keeping still felt like ease rather than lying low.
+- [hc] I rested {at}, still breathing, which is reason enough to celebrate where I come from.
+- Content to be of no use for a while, I rested {at} and listened to nothing in particular.

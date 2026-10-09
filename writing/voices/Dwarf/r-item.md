@@ -2,13 +2,13 @@
 kind: r-item
 ---
 - [!remains] packed as tightly as a miner packs for a long dig
-- the workmanship doing nothing to lighten the load
+- [!one] the workmanship doing nothing to lighten the load
 - [one !plural] keener to hand it over than to carry it
 - [!one !plural] counting each piece as carefully as a miser counts gold
-- [!one !plural] my back feeling like the last mule out of a mine
+- [!one !plural] my shoulders taking the weight the way a good beam takes a roof
 - [one !plural] a modest prize for a troublesome search
-- [one !plural !remains] heavier than it looked, as the good stuff usually is
+- [stone one !plural] heavier than it looked, as the good stuff usually is
 - [meat] wondering whether the smell would improve with cooking
-- [cloth] good material for something beyond a beard rag
+- [cloth] decent weave, if a touch thin for a Dun Morogh winter
 - [night] my eyes missing the welcome glare of a forge
 - [hc] unwilling to exchange my life for a full pack

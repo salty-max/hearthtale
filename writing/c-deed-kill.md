@@ -64,11 +64,11 @@ kind: c-deed-kill
 - [wrath !one] let nature's anger loose on {n} {foes}
 - [wrath one] let nature's anger loose on {foes}
 - [steel !one] took {weapon} to {n} {foes}
-- [steel !one] cut my way through {n} {foes}
+- [steel !one !class:ROGUE] cut my way through {n} {foes}
 - [steel one] cut {foes} down with {weapon}
-- [steel !one] waded into {n} {foes}
+- [steel !one !class:ROGUE] waded into {n} {foes}
 - [steel !one] put {weapon} to work on {n} {foes}
-- [steel one] went blow for blow with {foes}
+- [steel one !class:ROGUE] went blow for blow with {foes}
 - [steel one] brought {weapon} down on {foes}
 - [steel one] met {foes} with {weapon}
 - [arrow !one] brought down {n} {foes} with {weapon}
@@ -76,6 +76,42 @@ kind: c-deed-kill
 - [arrow one] brought {foes} down with {weapon}
 - [arrow !one] shot down {n} {foes}
 - [arrow one] shot {foes} down
+- [fire !one] set {n} {foes} alight one after another
+- [fire one] set {foes} alight
+- [fire !one] sent fire through {n} {foes}
+- [frost one] left {foes} stiff with frost
+- [frost !one] slowed {n} {foes} with frost and finished them
+- [arcane !one] tore into {n} {foes} with arcane bolts
+- [arcane one] tore into {foes} with arcane bolts
+- [arcane !one] spent a good deal of mana on {n} {foes}
+- [arcane one] wore down {foes} with missiles of pure magic
+- [shadow !one] let shadow eat away at {n} {foes}
+- [shadow one] let shadow eat away at {foes}
+- [curse !one] laid curses on {n} {foes} and waited
+- [curse one] laid a curse on {foes} and waited
+- [curse !one] wore down {n} {foes} with curses
+- [holy !one] put {n} {foes} down with the help of {faith}
+- [holy one] put {foes} down with the help of {faith}
+- [lightning class:SHAMAN !one] called on the elements against {n} {foes}
+- [lightning class:SHAMAN one] called on the elements against {foes}
+- [lightning class:SHAMAN !low !one] fought {n} {foes} from among my totems
+- [lightning class:SHAMAN !low one] fought {foes} from among my totems
+- [moon !one] brought moonfire down on {n} {foes}
+- [moon one] brought moonfire down on {foes}
+- [moon !one] turned the moon's light on {n} {foes}
+- [moon one] turned the moon's light on {foes}
+- [steel class:ROGUE !one] took {n} {foes} unawares, one after another
+- [steel class:ROGUE one] took {foes} unawares
+- [steel class:ROGUE !one] slipped a blade into {n} {foes}
+- [steel class:ROGUE one] came at {foes} from behind
+- [steel class:WARRIOR !one] met {n} {foes} head on
+- [steel class:WARRIOR one] met {foes} head on and gave no ground
+- [steel class:WARRIOR !low !one] charged into {n} {foes}
+- [steel class:PALADIN !one] struck down {n} {foes} with {weapon} and {faith} behind it
+- [steel class:PALADIN one] brought {weapon} down on {foes} with {faith} behind it
+- [arrow !one] dropped {n} {foes} before they could close the distance
+- [arrow !one] kept {weapon} busy on {n} {foes}
+- [arrow one] kept {foes} at a distance until it was over
 - [tried !one] tried my new {spell} on {n} {foes}, and it worked
 - [tried !one] put {spell} to its first real use on {n} {foes}
 - [tried one] tried my new {spell} on {foes}, and it worked

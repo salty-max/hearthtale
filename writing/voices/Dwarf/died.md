@@ -2,7 +2,7 @@
 kind: died
 ---
 - [foe] {foe} killed me {at}. I had been as stubborn as stone, and about as quick to get out of the way.
-- [foe] I fell to {foe} {at}, with Ironforge suddenly further away than I could bear.
+- [foe] I fell to {foe} {at}; I had thought myself harder to break than that.
 - [fall] I fell to my death {at}; a dwarf's fondness for mountains was no protection against the drop.
 - [drowning] I drowned {at}, longing for a stretch of good, dry stone under my feet.
 - I died {at}, without having learned half of what the mountain kept from us.

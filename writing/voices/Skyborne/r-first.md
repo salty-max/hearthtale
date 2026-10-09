@@ -2,12 +2,14 @@
 kind: r-first
 ---
 - [client:forever] my balance giving my courage an unwelcome test
-- [client:forever] far too close for anyone raised among the clouds
-- [client:forever] nothing a skyward gaze could keep safely distant
-- [client:forever] the risk of being caught within reach keeping me cautious
-- [client:forever night] my eyesight of little help with ground the night had hidden
-- [client:forever faction:horde] our vanished mentors too far beyond a frightened call
-- [client:forever] an encounter I would not want nearer to home
-- [client:forever] my ease as thin as the high air of home
+- [client:forever] a meeting better left to a crystal's account
+- [client:forever faction:alliance] every detail of them noted, as a scholar's descendant should
+- [client:forever] my good manners of no use to me whatsoever
+- [client:forever] my hands quicker than my composure
 - [client:forever teeth] those jaws a good reason to prefer heights
-- [client:forever] a sudden wish for a high ledge between us
+- [client:forever teeth] watching the teeth more closely than anything else about them
+- [client:forever night] the dark keeping them hidden until they were close
+- [client:forever mechanical] made with none of the grace of the spirits' old gifts
+- [client:forever low] still new enough to the world to be startled by it
+- [client:forever] my footing tested as hard as my nerve
+- [client:forever] a kind I meant to understand before meeting more of them

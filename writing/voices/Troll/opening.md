@@ -4,9 +4,16 @@ kind: opening
 - I took up the road {at}, grinning, with an eye on whatever might be grinning back.
 - I began again {at}, thinking of the Echo Isles and the day we would take them back from Zalazane.
 - I set out {at}, still fond of a world that had driven my people from too many shores.
-- I kept going {at}, trusting the loa to find the day as interesting as I did.
-- I set off {at}, with an island tune going round in my head.
-- I began this stretch {at}, light on my feet the way island sand teaches you to be.
+- I kept going {at}, cheerful in the way of a people who have had to laugh in some very poor places.
+- I set off {at}, with one of the old drumming songs going round in my head.
+- I began this stretch {at}, light on my feet and ready to change direction at the first sign of trouble.
 - I set out {at}, with a jungle-born wariness even where the jungle was only in my thoughts.
 - I returned to the road {at}, with the easy walk and the open eyes my people learned the hard way.
 - I set out {at}, with the concerns of Sen'jin's people keeping my own in good company.
+- Some of my own tribe still walked under Zalazane's hexes, and I set out {at} with that weighing on me more than any pack.
+- Vol'jin had held our people together since his father's death, and I took up the road {at} meaning to be worth the trouble.
+- With what we owed Thrall in mind, I set out {at}, happy to pay a little of it back in ordinary work.
+- [hc] I made a start {at}, easy in my manner and careful with every step, which is how my people have outlived worse roads.
+- [night] I took up the road {at} after dark, listening for the soft feet of anything that hunted at this hour.
+- I took to the road {at}, and it looked friendly enough, which in my experience is the moment to look twice.
+- I began again {at}, my eyes going to the ground for scorpids out of plain Durotar habit.

@@ -4,6 +4,9 @@ kind: quests-many
 - I had seen {n} tasks through, easing a little of the work for the people here.
 - The {n} tasks behind me had given me some of the pleasure of bringing a good hunt back to my people.
 - I counted {n} jobs finished, enough to welcome the quiet work of a settled camp.
-- By the end, {n} tasks were done; a shu'halo's strength had found ample use in ordinary kindness.
+- By the end, {n} tasks were done, and I felt less a newcomer to the Horde and more a part of it.
 - I had completed {n} errands, and the people who asked for them felt a little more like a tribe.
 - I had brought {n} tasks to an end, enough to leave me content with my usefulness for the day.
+- {n} tasks lay behind me, and I went over them as a herder counts the herd home at dusk, slowly and with some pride.
+- [hc] {n} tasks had sent me out, and I had come back from every one of them; that was the part I meant to keep doing.
+- I had done {n} tasks of the kind that keep Bloodhoof Village going, small and needed, and was content with that.

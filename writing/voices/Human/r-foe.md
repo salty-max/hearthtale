@@ -3,7 +3,7 @@ kind: r-foe
 ---
 - my courage coming apart now I could afford it
 - my heart still trying to run away
-- nothing I would want brought to an Elwynn doorstep
+- one less worry for whoever lived nearest
 - the safety of a town's walls suddenly very attractive
 - my nerve slower to settle than the rest of me
 - [!one] their number making me miss the city watch

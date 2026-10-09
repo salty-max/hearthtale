@@ -2,11 +2,18 @@
 kind: opening
 ---
 - I set out {at}, wondering whose troubles would have a claim on me before the day was done.
-- I began again {at}, with the needs of my neighbours to keep me from dwelling on my own.
+- I began again {at}, minding the old soldiers' advice to eat when I could and rest when I could.
 - I took up the road {at}, still susceptible to the promise of a quiet life somewhere beyond it.
-- I set out {at}, with more willingness than a Stormwind tax collector had any right to expect.
-- I set off {at}, already counting a safe return among the day's ambitions.
+- I set out {at}, more willing to do a day's work than the House of Nobles had been to pay for one.
+- I set off {at}, with a safe return at the top of the day's ambitions.
 - I kept going {at}, with the names of people who needed help harder to ignore than the distance.
-- I began this stretch {at}, trusting the Light to lend me some patience for whatever came.
+- [!class:WARLOCK] I began this stretch {at}, trusting the Light to lend me some patience for whatever came.
 - The kingdom had room for heroes, but I would settle for coming home useful, and set out {at}.
 - I took up the road {at}, drawn by the parts of the world the wars had spared.
+- [night] I set out {at} in the dark, wishing for a few of Darkshire's Night Watch at my back.
+- Someone was always in want of a hand, and I set out {at} meaning to be the one who offered it.
+- [hc] I made ready {at}, determined to grow old the slow way, one sensible decision at a time.
+- [class:PALADIN] I began again {at}, carrying the Light as the Church had always taught it, a shelter to lend rather than a banner to wave.
+- [high] I took up the road {at}, a long way now from the beginner who had first walked out of Northshire.
+- [night] Dark had settled {at} by the time I set out, and my curiosity about the country could wait for daylight.
+- With the king missing, the roads still had to be walked and the errands run, and I set out {at} to take my share.

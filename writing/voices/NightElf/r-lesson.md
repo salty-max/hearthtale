@@ -2,7 +2,7 @@
 kind: r-lesson
 ---
 - my patience given an apprentice's exercise
-- [one] something I hoped would serve beyond our forests
+- [one] something to practise by starlight until it came easily
 - [one] a knack to learn without hurrying
 - slow fingers forgiven their lack of ease
 - [one] no longer able to promise myself forever to master it
@@ -11,4 +11,4 @@ kind: r-lesson
 - [new] a craft my long years might finally make room for
 - [low] new enough to this to envy another person's ease
 - [high] patient enough to give the difficult parts their due
-- [!one] some useful knowledge for the moment patience failed
+- [!one] some useful knowledge for the day stillness was not enough

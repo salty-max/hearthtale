@@ -4,16 +4,16 @@ kind: r-foe
 - my breath slow to find its usual steadiness
 - the quiet after a hunt suddenly precious
 - no pleasure in spending my strength this way
-- my strength due for a gentler use
+- work I would sooner have left to the Bluffwatchers
 - my anger slower to leave than I wished
 - [one] not a life I had any wish to waste
 - [!one] as many as a kodo herd, and none so gentle
 - [teeth] those teeth no reason to forget the hunger behind them
-- [mechanical] rather far from the life the Earth Mother had nourished
+- [mechanical] the Venture Company's kind of greed, built into something that could fight back
 - [night] the night giving my vigilance no peace
 - [hc] my heart no steadier for being held in so large a body
 - [low] still learning the limits of my strength
-- [high] a quiet certainty returning to my strength
+- [high] a long way now from my first nervous fights around Camp Narache
 - my breath working harder than a kodo's after a climb
 - in no hurry to offer the Earth Mother another death
 - my horns lowered long after nothing was left to face

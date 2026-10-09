@@ -7,12 +7,12 @@ kind: r-lesson
 - my pride taking an apprentice's knocks
 - [one] wondering how much trouble I could get into with this
 - [!one] wondering how much trouble these could keep me out of
-- [one] fiddlier than any clockwork I ever assembled
-- [!one] each one filed away like a new schematic
+- [one] fiddlier than it looked, and it had looked fiddly
+- [!one] each one filed away in the order I meant to try them
 - [new] a beginner's awkwardness taking the shine off my enthusiasm
 - [new] a new way to be useful, which Mekkatorque asks of all of us
 - [new one] every part of it new to my hands
-- [low] a beginner missing the reassuring clatter of machinery
+- [low] a beginner with far more questions than the lesson had answers
 - [low] my fingers slower than my head, which annoyed them both
 - [high] a useful addition to the ingenuity I had survived on
 - [high] one more trick for a bag already full of them

@@ -3,13 +3,13 @@ kind: r-lesson
 ---
 - [client:forever] an unfamiliar knack demanding a beginner's care
 - [client:forever] an apprentice's difficulty hidden behind an assured manner
-- [client:forever one] eager to know it as well as the pull of the sky
+- [client:forever one] something to keep wherever the road went
 - [client:forever one] a new skill to keep when a mentor could not stay
 - [client:forever] my balance in no danger, and my pride less fortunate
 - [client:forever faction:horde] a knack I hoped to give back to those who needed me
 - [client:forever faction:alliance] a skill the High Order could keep without a patron's favour
-- [client:forever new] a craft the people beneath the sky might welcome me for
-- [client:forever new] an apprentice even with the sky of home behind my name
+- [client:forever new] a craft useful enough to make a stranger welcome
+- [client:forever new] a beginner again, which my pride took harder than my hands
 - [client:forever low] as clumsy as a fledgling in a first gust
 - [client:forever high] an apprentice with no blessing to make the difficult part easy
 - [client:forever !one] new skills to keep when a mentor could not stay

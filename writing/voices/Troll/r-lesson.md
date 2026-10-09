@@ -1,8 +1,8 @@
 ---
 kind: r-lesson
 ---
-- another knack the loa would not have to supply
-- my grin concealing a beginner's awkwardness
+- itching to practise where nobody would see me fumble
+- a cheerful face over a beginner's awkwardness
 - a lesson fit to try anyone's patience, mine first
 - [one] eager to have it ready before danger chose the hour
 - [one] wondering how it would serve beyond a safe lesson
@@ -15,7 +15,7 @@ kind: r-lesson
 - my pride having to wait for my fingers
 - rather taken with a knack no exile could strip away
 - my patience harder to summon than my enthusiasm
-- [new] wondering what welcome the trade could earn beyond the islands
+- [new] a trade that would travel well, as everything of ours has had to since Stranglethorn
 - [new] a beginner's clumsiness accepted for the sake of surviving
 - [low] still learning how slowly a quick pair of hands could begin
 - [high] a veteran of enough surprises to value another knack

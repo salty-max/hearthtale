@@ -3,7 +3,7 @@ kind: r-first
 ---
 - my weight no promise of safety
 - more watchful than a grazing kodo
-- keener to know the earth's children than to disturb them
+- keener to understand them than to disturb them, as the Cenarion Circle would wish
 - not nearly as sheltered by my size as I wished
 - my hooves wanting very much to be back on open plains
 - [teeth] those jaws respected, as all the Earth Mother's hungry children deserve

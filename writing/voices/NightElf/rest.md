@@ -1,7 +1,7 @@
 ---
 kind: rest
 ---
-- I rested {at}, and picked out the stars I knew among the branches.
+- I rested {at}, and picked out the stars I knew, whatever the land beneath them.
 - I settled {at}, and let the stillness come over me like moonlight on water.
 - I paused {at}, and let my strength return as slowly as a tree regrows its bark.
 - I rested {at}, and let the quiet settle as it does in the glades of home.
@@ -9,4 +9,11 @@ kind: rest
 - I rested {at}, missing the forests with a tenderness I rarely allowed while moving.
 - I paused {at}, leaving the world to somebody else's vigilance for a little while.
 - I rested {at}, and waited for the moon to rise, as my people always have.
-- I rested {at}, with the patience of my people finally serving my own tired body.
+- I rested {at}, as if I still had all the time in the world, and knew very well I did not.
+- [!fire] I sat quietly {at}, and listened until every sound around me was one I could name.
+- [fire] I rested by the fire {at}, letting it warm me while my eyes stayed on the dark beyond it.
+- [last] I settled {at}, and let the hours pass without asking anything of them.
+- Stillness came to me {at} more easily than sleep, and I let it stay as long as it liked.
+- [hc] I stopped {at}, never quite letting go of my guard, as befits anyone with only one life to lose.
+- [!last] I paused {at}, as a nightsaber pauses, quite still and not at all asleep.
+- [last !fire] Rest found me {at}, as quietly as an owl folding its wings.

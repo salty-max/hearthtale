@@ -6,4 +6,7 @@ kind: quests-many
 - I had seen {n} jobs through, enough to feel useful without needing another fight.
 - By the end, {n} tasks were done, and I understood the appeal of a settled life in Orgrimmar.
 - I counted {n} completed tasks, a better use for a free life than waiting to be ordered forward.
-- I had brought {n} errands to an end; being needed had given my strength a thorough use.
+- I had brought {n} errands to an end, and found being needed a good deal better than being feared.
+- {n} tasks lay behind me, none of them likely to be spoken of in Grommash Hold, which suited me well enough.
+- I had finished {n} tasks; my people had once counted their worth in enemies, and I liked this way of counting better.
+- Those {n} tasks had asked more of my hands than of my temper, an arrangement I had come to prefer.

@@ -12,7 +12,7 @@ kind: r-road
 - in no hurry, which is how my people travel
 - [!back] eager to know the people as well as the path
 - [!back] wondering what a settled shu'halo might learn from these people
-- [!back] the patience of my people's wanderers not yet entirely worn out
+- [!back] meeting the place with the open mind Cairne once showed the orcs
 - [!back night] my ears occupied by what the dark kept hidden
 - [back] closer to knowing the way home than on my first visit
 - [back] a familiar path as welcome as the face of a neighbour

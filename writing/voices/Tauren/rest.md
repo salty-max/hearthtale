@@ -2,11 +2,18 @@
 kind: rest
 ---
 - I rested {at}, with the thorough contentment of a kodo at the end of a long march.
-- I settled {at}, and let patience be useful simply in doing nothing.
-- I stopped {at}, letting my weight belong to the earth for a while.
+- I settled {at}, and let the stillness come as slowly as evening comes over Stonebull Lake.
+- I stopped {at}, with the still water of the Pools of Vision in mind and very little else.
 - I rested {at}, thinking of the wind on the high mesas of Thunder Bluff.
 - I paused {at}, no longer obliged to make a large body look tireless.
 - As weary as a wanderer at the end of a season, I rested {at}.
 - I stopped {at}, and gave thanks to An'she and Mu'sha, who watch over the land by turns.
 - I rested {at}, grateful that the next mile could wait without being frightened away.
-- I paused {at}, with no greater ambition than to feel my own strength return quietly.
+- I paused {at}, with no greater ambition than to sit as still as a totem for a while.
+- After a day of other people's needs, I rested {at} and let my own come first.
+- The road could wait; I rested {at} the way a herd rests, all at once and without apology.
+- Nothing had to die while I rested {at}, and I was thankful for the hour.
+- [hc] I rested {at}, with only one life to return to the Earth Mother and no wish to return it early.
+- I sat down {at} and went over the day the way the elders go over a question, from every side before deciding anything.
+- [last] I let the work end {at}, with nothing left in it that needed me.
+- [!last] I broke the journey {at}, meaning to take it up again once my breath had come back to me.

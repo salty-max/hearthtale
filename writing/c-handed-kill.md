@@ -34,5 +34,10 @@ kind: c-handed-kill
 - [steel !one] took {weapon} to {n} {foes} for {giver}
 - [steel !one] cut down {n} {foes} with {weapon} for {giver}
 - [arrow !one] brought down {n} {foes} with {weapon} for {giver}
+- [moon !one] brought moonfire down on {n} {foes} for {giver}
+- [steel class:ROGUE !one] took {n} {foes} unawares for {giver}
+- [lightning class:SHAMAN !one] turned the elements on {n} {foes} for {giver}
+- [steel class:PALADIN !one] struck down {n} {foes} for {giver}, {faith} behind every blow
+- [arcane !one] tore into {n} {foes} with arcane bolts for {giver}
 - [tried !one] tried my new {spell} on {n} {foes} for {giver}
 - [pet !one] fought {n} {foes} for {giver} with {pet} at my side

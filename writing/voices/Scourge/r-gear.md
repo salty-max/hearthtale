@@ -4,7 +4,7 @@ kind: r-gear
 - [!made !held] a burial shroud a poor measure of how comfortable I hoped to be
 - [!made !held] less of my condition on display to the world
 - [!made] something to use while I was still above ground
-- [!made] my condition no reason to accept an equally decaying addition
+- [!made] something I fully expected to wear out before I did
 - [!made hc] some protection against the need for another obituary
 - [made] the grave's verdict on my usefulness looking rather premature
 - [made] nothing an apothecary needed to preserve for me

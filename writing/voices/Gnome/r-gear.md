@@ -7,11 +7,11 @@ kind: r-gear
 - [!made] no enthusiasm for discovering a weak point personally
 - [!made hc] not eager to test the protection to destruction
 - [made] our city's ingenuity still alive in the result
-- [made] a little piece of Gnomeregan's stubborn ingenuity
+- [made] precise to a degree nobody else would ever notice
 - [made] nothing I would have been ashamed to bring to Tinker Town
 - [!made] weighing the comfort against the weight
 - [!made !held] well enough made that I only took it apart in my head
-- [!made] sound enough to pass a High Tinker's inspection
+- [!made] sound enough to satisfy even my fussiest instincts
 - [made] every seam and rivet of it my own doing
 - [made] a reminder that the troggs had not taken our skill away
-- [made] as satisfying as a gear slipping neatly into place
+- [made] the measurements right on the first attempt, a small private triumph

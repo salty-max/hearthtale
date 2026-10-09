@@ -14,5 +14,5 @@ kind: r-road
 - [back] the way back already neatly arranged in my mind
 - [back] my memory saving me some unnecessary wandering
 - [high] the world above ground a little less strange to me now
-- a distance that would have justified a railway
+- the distance worked out in paces long before I arrived
 - inventing better ways to travel in my head, none of them buildable

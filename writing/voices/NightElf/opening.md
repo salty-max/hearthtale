@@ -1,12 +1,19 @@
 ---
 kind: opening
 ---
-- I took up the path {at}, with the patience of my people and rather less of their former certainty.
+- I took up the path {at}, as sure of the stars as ever and rather less sure of anything else.
 - I began again {at}, with a kaldorei's care for what the wild might lose through our carelessness.
 - I set out {at}, with the wisps of Shadowglen still drifting through my memory.
 - I continued {at}, keeping to the quiet edges of the road, as my people do.
 - I began this stretch {at}, remembering how dearly our people had paid for trusting power too easily.
-- I set out {at}, carrying some affection for the world beyond our forests despite its harshness.
-- I set off {at}, with Teldrassil's shelter still dear to me.
+- I set out {at}, fonder of the noisy world of the younger races than I had ever expected to be.
+- I set off {at}, with a nightsaber's ease in my step and rather less of its confidence.
 - I kept going {at}, with the patience of a people who once waited ten thousand years.
 - I set out {at}, as unhurried as the old forest and no more trusting.
+- [night] I went on {at} after dark, with the hours my eyes liked best still ahead of me.
+- [!night] I took to the road {at} in daylight, which still felt like borrowed hours to someone who loved the night.
+- With an owl's attention to every movement, I took up the road {at}.
+- [hc] I began again {at}, unwilling to spend carelessly a life that Hyjal had already made shorter.
+- [home] I made a start {at}, where every call and footfall had a name I knew.
+- [!home] I set out {at}, far from the moonwells and learning, a little at a time, to do without them.
+- [!night] The day began {at} as most of mine did, with a long moment of listening before I moved.

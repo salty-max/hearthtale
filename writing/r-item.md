@@ -2,7 +2,7 @@
 kind: r-item
 ---
 - heavier in my pack than I had bargained for
-- with dirt under my nails for the trouble
+- [stone] with grit under my nails for the trouble
 - worth more to whoever asked than to me
 - pleased with how little searching it took in the end
 - keeping half an eye on my surroundings the whole time
@@ -19,7 +19,7 @@ kind: r-item
 - [night] the dark making the search twice as long
 - [egg !one] careful not to crack any of them
 - [egg one !plural] careful not to crack it
-- [egg] with an eye on the sky in case the parents came back
+- [egg] with an eye out in case the parents came back
 - [egg] still warm, which I tried not to think about
 - [feather] light as nothing, for all the trouble
 - [feather] stray feathers drifting out of my pack for days

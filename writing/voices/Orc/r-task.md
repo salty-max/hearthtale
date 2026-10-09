@@ -5,7 +5,7 @@ kind: r-task
 - an ordinary request that took more out of me than a battle
 - my patience receiving a thorough exercise
 - no need of a battle to leave me weary
-- more names I hoped the Horde could count on
+- one small piece of the work a young Horde needed done
 - work of the sort Durotar is built on
 - [explore] wondering how a scout would read the way ahead
 - [explore] reading the land for water, shelter and ambush, the old way

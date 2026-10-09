@@ -6,7 +6,7 @@ kind: r-item
 - a peon's work, done without complaint
 - strength put to a patient use, as Thrall would want
 - [!one !plural] each piece counted into the pack like rations
-- [!one !plural] each burden another reason to spare the strength I had
+- [!one !plural] carried with the care a warband gives its supplies
 - [one !plural] the carrying an awkward part of the search
 - [one !plural] not mine to keep, and I did not want it
 - [meat] the smell of a Horde cookfire suddenly dear to me

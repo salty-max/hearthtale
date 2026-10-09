@@ -5,7 +5,7 @@ kind: night
 - [!last] I settled outside {at}, with a dwarf's bulk and rather less than a dwarf's comfort.
 - [!last] I lay down {at}, wondering how stone could feel so friendly at home and so hard beneath a back.
 - [!last] I bedded down {at}, with all the grace of a sack of ore being unloaded.
-- [!last] I slept outside {at}, with the thought of Ironforge's shelter more comforting than the ground.
+- [!last] I slept outside {at}, and would have given a good deal for four thick walls and a door that shut.
 - [!last] I settled on the ground {at}; I had a newly tender feeling for innkeepers.
 - [last] I lay down outside {at}, feeling less like a traveller than a stone someone had finally dropped.
 - [last] I settled beneath the sky {at}, with my bones rather less hard than the ground seemed to expect.

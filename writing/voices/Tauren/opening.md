@@ -1,12 +1,19 @@
 ---
 kind: opening
 ---
-- I took up the road {at}, with the earth's steadiness dearer to me than the speed of the journey.
-- I began again {at}, with a shu'halo's care for the lives my strength might help.
+- [!night] I took up the road {at} beneath An'she's watch, with a day's work ahead and no wish to hurry it.
+- [night] I set out {at} beneath Mu'sha's watch, trusting her eye in the dark a good deal more than my own.
 - I set out {at}, mindful of the trust our people had found in the orcs.
 - I began this stretch {at}, a child of wanderers still learning the pleasures of a settled home.
 - I set off {at}, with my people's patience to draw on and my own unease to contend with.
 - I kept going {at}, at the unhurried pace of my people's old migrations.
 - I set out {at}, with Cairne's new home dear enough to make the wider world worth knowing.
-- I took up the road again {at}, no more eager to race it than a kodo would have been.
+- I took up the road again {at}, in no more of a hurry than the lifts of Thunder Bluff, which nobody has ever managed to rush.
 - I began {at}, wanting to be useful without having to make a fight of it.
+- I made ready {at}, still wary of anyone who looked at a hillside the way the Venture Company had looked at ours.
+- As watchful as a tallstrider and, I hoped, rather harder to catch, I set out {at}.
+- The druids of Elder Rise would have had me leave each place no poorer than I found it, and I began again {at}, meaning to try.
+- I set out {at}, hoping any Grimtotem on the road would keep their quarrel with Cairne to themselves.
+- [!night] I began again {at}, wanting what any village wants of a day: the work done, and everyone back before dark.
+- The tribes had only lately joined the Horde, and I took up the road {at}, hoping to give the rest of it a good account of us.
+- Quick to help and slow to anger was how I hoped to meet strangers, and I continued {at} in that spirit.

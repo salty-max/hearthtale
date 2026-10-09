@@ -2,11 +2,11 @@
 kind: r-company
 ---
 - [client:forever one] some company to make the wide world feel friendly
-- [client:forever] readier to trust someone else's knowledge of the ground
+- [client:forever] readier to trust a stranger than my upbringing advised
 - [client:forever] the ease of company settling my unease among strangers
 - [client:forever faction:horde] company as warm as the welcome I hoped our mentors would find
 - [client:forever faction:alliance] less obliged to make independence mean solitude
 - [client:forever night] the night less immense with another life nearby
-- [client:forever faction:alliance] a child of the High Order accepting help without a patron's claim
+- [client:forever faction:alliance] help I accepted gladly, whatever the Windshapers say of our pride
 - [client:forever] company steadier than another hour with my worries
-- [client:forever] company on the ground almost as good as the company of the winds
+- [client:forever] my small world a few people larger

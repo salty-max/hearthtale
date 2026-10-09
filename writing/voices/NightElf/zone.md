@@ -7,3 +7,6 @@ kind: zone
 - [!home] I reached {zone}, with Teldrassil behind me and no wish to spend the whole visit looking back.
 - [home] I came back beneath the trees of {zone}, and felt my shoulders ease.
 - [home] I returned to {zone}, where the sentinels' watchfulness was my own people's.
+- [back !home] I came back to {zone}, its paths already kept in a memory that lets very little go.
+- [back !home] I returned to {zone}, a little less wary of it than the first time, though not by much.
+- [home] I was back in {zone}, among sounds and paths I knew, and let my guard down a careful little way.

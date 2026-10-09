@@ -1,8 +1,8 @@
 ---
 kind: r-item
 ---
-- patience learned on the islands put to an ordinary use
-- a burden with a destination I would be happy to reach
+- my eyes better at the finding than my back was at the carrying
+- [!one] a burden with a destination I would be happy to reach
 - longing for a hunt that brought back something easier to carry
 - [!one !plural !set] enough to fill a fishing boat, nearly
 - [!one !plural] each find adding its own inconvenience to the carrying
@@ -12,9 +12,9 @@ kind: r-item
 - [cloth] the promise of a comfortable shirt sufficient to interest me
 - [night] searching by starlight, as we fished on the isles
 - [hc] careful not to become somebody else's catch while searching
-- the thought of handing over the burden distinctly attractive
+- [!one] the thought of handing over the burden distinctly attractive
 - a favour whose demands had outgrown the offer
-- [!one !plural] each piece counted twice, an island habit
+- [!one !plural] each piece counted twice, the way a village counts anything that has to go round
 - [!one !plural] counting them before promising my back any more work
 - [one !plural] eager to let someone else call it a prize
 - [one !plural] a find whose usefulness I could leave to someone else

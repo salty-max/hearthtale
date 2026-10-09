@@ -7,3 +7,6 @@ kind: closing
 - I had been busy for {time}, and even my gift for making light of things needed a rest.
 - The stretch had taken {time}; on the isles we would have called that a day and gone fishing.
 - I had spent {time} travelling and earned {gold}; I would rather carry the money than another person's troubles for a while.
+- [slow] The work had run to {time}, long even for legs like mine, and I let them have their complaint.
+- [quick] It had taken only {time}, and I was a little suspicious of how easily it had gone.
+- With {time} behind me and {gold} to show for it, I was ready to leave every other favour until I had slept.

@@ -1,11 +1,11 @@
 ---
 kind: r-task
 ---
-- a quiet use for the strength the Earth Mother gave me
+- the kind of help Bloodhoof Village runs on
 - somebody else's burden eased by the effort
 - an ordinary task taking its share of my endurance
-- patience put to good work, as the elders like
-- my patience asking for a long sit
+- a little of what the orcs once did for us, repaid
+- ready for a long sit at the edge of a mesa
 - the request having made full use of my endurance
 - [explore] wondering how the path would treat smaller travellers
 - [explore] listening to the ground, as the elders taught
@@ -14,5 +14,5 @@ kind: r-task
 - the way thoroughly fixed in my memory
 - in no hurry to find another favour to carry
 - [explore] following the land's own paths, the old way
-- [explore] patient enough to watch before hurrying
-- [night] the dark making patience a necessity
+- [explore] looking the land over as a druid of Elder Rise might, for whatever lives in it
+- [night] the dark harder to read than the open grass of home

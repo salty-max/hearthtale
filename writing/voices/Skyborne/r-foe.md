@@ -3,20 +3,24 @@ kind: r-foe
 ---
 - [client:forever] my balance taking longer than my pride to recover
 - [client:forever] a relief I kept quietly to myself
-- [client:forever] a sudden distrust of the ease I had taken for granted
+- [client:forever] my ancestors' fine manners forgotten while it lasted
 - [client:forever one] a danger I had no taste for meeting again
 - [client:forever] my heart refusing the quiet my face tried to offer
-- [client:forever one !more] almost as attached to being alive as to the open sky
-- [client:forever !one] their numbers enough to make a skyward glance feel useless
-- [client:forever teeth] those teeth too close to the flesh beneath my confidence
-- [client:forever mechanical] no sympathy for a mechanism built to make the ground dangerous
+- [client:forever one !more] the fight over long before my hands believed it
+- [client:forever !one] their numbers a shock to someone from so small a people
+- [client:forever teeth] those teeth nearer than I ever meant to let anything come
+- [client:forever mechanical] no grace in the workmanship and no mercy either
 - [client:forever night] my hearing occupied by what the night concealed
-- [client:forever hc] no intention of staying down for good
-- [client:forever faction:horde] our missing mentors dearer to me in the relief afterwards
-- [client:forever faction:alliance !more] a High Order elf unwilling to wait for a patron to save me
-- [client:forever faction:alliance !more] my people's proud traditions poor shelter against a blow
+- [client:forever hc] my one life held closer than ever afterwards
+- [client:forever faction:horde] a Windshaper's oath no shield, but reason enough to stay alive
+- [client:forever faction:alliance !more] a High Order elf with no one to wait for but myself
+- [client:forever faction:alliance] reckless, the Windshapers would have said, and still alive
 - [client:forever] a fierce affection for a life still mine
-- [client:forever] my balance no longer entirely borrowed from courage
+- [client:forever] a fight that left my good intentions badly rumpled
 - [client:forever !more] a struggle no blessing could take out of my hands
 - [client:forever] an encounter I could cheerfully leave behind
 - [client:forever] thankful I had not become another absence at home
+- [client:forever elemental] as mindless as the echoes the wind spirits left behind
+- [client:forever undead] a sight to put me in mind of the hollows of Shadowgale
+- [client:forever harpy] wings wasted on anything so vicious
+- [client:forever satyr] a reminder of what the worst of the Highborne became

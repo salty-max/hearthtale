@@ -5,8 +5,15 @@ kind: rest
 - I settled {at}, with no need to sleep and a very definite wish to stop.
 - I paused {at}, content with a peace that had nothing permanent about it.
 - I rested {at}, as still as I had once lain in Lordaeron's earth, and in much better company.
-- I stopped {at}, with my decaying joints quietly winning an argument against further walking.
+- I stopped {at}, and let the quiet gather over me as evenly as dust in a shut room.
 - I rested {at}, missing sleep rather more than I needed it.
 - I paused {at}, and let my joints settle like an old house in Brill.
 - I rested {at}, with no master's voice in my head to make stillness a crime.
 - I rested {at}, thinking of Brill's crooked roofs with something like fondness.
+- I sat down {at}, with nothing required of me and nobody entitled to require it.
+- The day's errands could wait; I stopped {at}, having learned that most things keep longer than people suppose.
+- I settled {at}, and allowed myself the rare luxury of not being on my guard.
+- [fire] I sat by the fire {at}, far enough back to enjoy it without becoming part of it.
+- Keeping still had never been the difficulty; I sat {at}, pleased simply to be left alone while I did it.
+- I lingered {at}, and let the day's irritations sink out of sight like anything dropped in the Undercity's canals.
+- Being counted among the Horde still struck me as strange, and I settled {at} turning it over without reaching a verdict.

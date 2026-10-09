@@ -9,7 +9,7 @@ kind: r-foe
 - [!one] their numbers testing my endurance
 - [teeth] those jaws too close to the soft parts of me
 - [mechanical] rather less respectful of strength that somebody had wound up
-- [night] my ears working where my eyes could not
+- [night !fire !lightning] my ears working where my eyes could not
 - [hc] loath to rob the Horde of a life it could still use
 - [low] a beginner's courage still learning to withstand a fight
 - [high] my anger less eager to outrun my hands

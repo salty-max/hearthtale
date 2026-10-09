@@ -6,6 +6,6 @@ kind: r-company
 - help that asked no questions about my condition
 - nearer to friendship than a corpse ought to expect
 - the habits of the Undercity relaxing their guard
-- my joints no longer the only ones doing the travelling
+- the Horde's alliance meaning rather more than a name for a while
 - [night one] two shadows to keep the darkness occupied
 - [hc] having buried enough people once already
