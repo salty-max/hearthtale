@@ -60,6 +60,7 @@ local function newScene(book, n, ch)
     backTo = nil,
     backTold = false, -- (in this paragraph)
     backAt = {}, -- (the paragraph each place's return was last named in)
+    backLand = nil, -- (the return named is a land's: always told)
     -- the sentence being written: its clauses (their kinds, each without its
     -- remark), the link it takes, whether it names its place, an arrival
     -- framing it; its clauses that may carry a remark, those that do, a
@@ -378,14 +379,16 @@ end
 -- Once a paragraph, and the same place not in the paragraph after: more
 -- often reads as a ledger of comings and goings. (Not the wording just used.)
 local BACK = { "Back %s,", "Once back %s,", "%s again," } -- ("in Anvilmar", "on Zephras Isle")
+-- (a land come back to always is: backLand, Writer.lua tell.place)
 function Scene:backDue(place)
   local last = self.backAt[place]
-  return place ~= nil and not self.backTold and not (last and #self.paragraphs + 1 - last < 2)
+  return place ~= nil and not self.backTold and (self.backLand or not (last and #self.paragraphs + 1 - last < 2))
 end
 function Scene:backLead(link, key)
   local place = self.backTo
-  self.backTo = nil
-  if not self:backDue(place) then return link end
+  local due = self:backDue(place)
+  self.backTo, self.backLand = nil, nil
+  if not due then return link end
   self.backTold, self.backAt[place] = true, #self.paragraphs + 1
   local b = self.book
   self.named, b.last, b.there = true, place, false
@@ -401,7 +404,7 @@ end
 function Scene:alone(kind, values, t, m)
   local b = self.book
   self:flush()
-  self.backTo = nil
+  self.backTo, self.backLand = nil, nil
   local s = b:say(kind, self.key, values, t)
   if s then self:append((#self.current > 0 and m) and linked(b:link(m, self.prev, self.key), s) or s) end
   return s
@@ -419,7 +422,7 @@ end
 -- A new scene at a place (nil: none yet, a land just entered), in a zone
 -- (a quiet return to another place no longer to tell).
 function Scene:enter(place, zone)
-  self.scene, self.sceneZone, self.backTo = place, zone, nil
+  self.scene, self.sceneZone, self.backTo, self.backLand = place, zone, nil, nil
   if place then self.seenHere[place] = true end
 end
 
