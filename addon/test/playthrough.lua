@@ -576,6 +576,7 @@ local function play(race, class, side)
               link = ("|cff1eff00|Hitem:%d|h[%s]|h|r"):format(r, item.name),
               quality = item.quality,
               held = item.class == 2 or (item.slot or 0) == 14 or nil,
+              trinket = (item.slot or 0) == 12 or nil,
             }) -- a weapon, a shield
             break
           end

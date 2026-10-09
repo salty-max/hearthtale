@@ -411,7 +411,7 @@ function tell.gearOrLoot(s, m)
     s:tell(
       "c-" .. m.k,
       { item = itemName(item) },
-      { made = m.made or nil, held = m.held or nil, fine = (m.quality or 2) >= 3 or nil }
+      { made = m.made or nil, held = m.held or nil, trinket = m.trinket or nil, fine = (m.quality or 2) >= 3 or nil }
     )
   end
   s.found = m.k == "loot" and item or nil

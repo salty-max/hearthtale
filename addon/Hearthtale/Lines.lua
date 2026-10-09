@@ -361,9 +361,12 @@ function Book:people(kind, values, ctx, seen)
     end
     local who = kind == "c-quest" and values.giver or values.ender
     if AGAIN[kind] and type(who) == "string" then
-      local all = true
+      -- (without the name only when it was said just before, or twice already:
+      -- "I checked in again" three sentences on leaves the reader guessing)
+      local all, at, told = true, self.scene and self.scene.namedAt or {}, self.told or 0
       each(who, function(name)
-        if not seen[name] then all = false end
+        local recent = at[name] and told - at[name] <= 2
+        if not seen[name] or not (recent or (tonumber(seen[name]) or 1) >= 2) then all = false end
       end)
       if all then ctx.again = true end
     end
@@ -603,7 +606,8 @@ function Book:say(kind, key, values, tags, prefer, raw)
     for _, k in ipairs(PEOPLE) do
       if type(asked[k]) == "string" and text:find("{" .. k .. "}", 1, true) then
         each(asked[k], function(name)
-          seen[name] = true
+          seen[name] = (tonumber(seen[name]) or 0) + 1
+          s.namedAt[name] = self.told or 0
           -- (for Scene:situate; a fold's "the last of them for …" is no meeting)
           if kind ~= "c-fold" then table.insert(s.peopleSaid, name) end
         end)

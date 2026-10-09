@@ -1633,6 +1633,31 @@ if forever then
   end
 end
 
+-- A trinket put on: carried, not worn.
+for seed = 1, 9 do
+  local c = {
+    guid = "trinket-" .. seed,
+    race = RACES[seed % #RACES + 1],
+    class = "WARRIOR",
+    chapters = {
+      {
+        start = { level = 20, zone = "Country", sub = "Home" },
+        log = {
+          {
+            k = "gear",
+            link = "|cff1eff00|Hitem:5079|h[Cold Basilisk Eye]|h|r",
+            quality = 2,
+            trinket = true,
+            zone = "Country",
+            sub = "Home",
+          },
+        },
+      },
+    },
+  }
+  inspect("a trinket", ns.writeBook(c).chapters[1].text)
+end
+
 -- Cenarius's own fought (the Horde's Stonetalon quests): a druid's unease,
 -- or a tauren's, once in a while.
 for _, who in ipairs({ { "Tauren", "WARRIOR" }, { "NightElf", "DRUID" }, { "Tauren", "DRUID" } }) do

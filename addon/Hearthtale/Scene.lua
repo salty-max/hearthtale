@@ -78,6 +78,7 @@ local function newScene(book, n, ch)
     pendingTurn = false,
     -- the paragraph: who it named, the things carried in it (when), a quip told
     peopleNamed = {},
+    namedAt = {}, -- (when each was named: the book's sentence count)
     thingsCarried = {},
     quipped = false,
     -- the chapter's voice: race and class lines in some chapters only (two
@@ -172,7 +173,7 @@ function Scene:newParagraph()
     self.current = {}
   end
   self.quipped, self.backTold = false, false
-  self.peopleNamed, self.slain = {}, {} -- (the things carried: remembered for the chapter)
+  self.peopleNamed, self.namedAt, self.slain = {}, {}, {} -- (the things carried: remembered for the chapter)
   self.peopleSaid = {} -- (a person named in the paragraph before is no meeting here)
 end
 
