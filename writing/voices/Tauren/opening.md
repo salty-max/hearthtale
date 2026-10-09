@@ -13,7 +13,7 @@ kind: opening
 - I made ready {at}, still wary of anyone who looked at a hillside the way the Venture Company had looked at ours.
 - As watchful as a tallstrider and, I hoped, rather harder to catch, I set out {at}.
 - The druids of Elder Rise would have had me leave each place no poorer than I found it, and I began again {at}, meaning to try.
-- I set out {at}, hoping to give the rest of the Horde a fair account of Cairne's people.
+- [!night] I took to the road {at}, and the wind brought me nothing urgent, which I took as good counsel.
 - [!night] I began again {at}, wanting what any village wants of a day: the work done, and everyone back before dark.
 - The tribes had only lately joined the Horde, and I took up the road {at}, hoping to give the rest of it a good account of us.
 - [!home] Quick to help and slow to anger was how I hoped to meet strangers, and I continued {at} in that spirit.

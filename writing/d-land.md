@@ -2,7 +2,7 @@
 kind: d-land
 ---
 - [one !home !hosts] I set foot in {lands} for the first time.
-- [one !home !hosts] I came into {lands} as a stranger, which is how every land starts.
+- [one !home !hosts !town] I came into {lands} as a stranger, which is how every land starts.
 - [one !home !hosts] For the first time, the road took me into {lands}.
 - [one !home !hosts] I had never been to {lands} before, and I looked at everything twice.
 - [one !home !hosts] I saw {lands} with my own eyes for the first time.
@@ -18,3 +18,5 @@ kind: d-land
 - [capital home] I walked into {lands} for the first time, and a city I had only heard of became a place I could find my way home to.
 - [capital home] I saw {lands} with my own eyes at last, and found it larger, louder and more mine than I had pictured.
 - [capital hosts] I came into {lands} for the first time, the city that had taken my people in, and looked at it with a guest's gratitude and a stranger's eyes.
+- [one town] I walked into {lands} for the first time, and let the size and noise of it wash over me.
+- [one town] I saw {lands} for the first time, a city full of strangers who all seemed to know exactly where they were going.

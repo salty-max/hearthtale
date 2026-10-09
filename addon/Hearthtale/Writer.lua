@@ -62,15 +62,6 @@ local function linkName(x) return x.link and x.link:match("%[(.-)%]") end
 local tell = {}
 function tell.level(s, m) s.lvl = m.level or s.lvl end -- a level reached: recorded, not told
 local QUICK = 3600 -- (a land left less than this long ago: a quick return)
--- (a people's capital: a city, no farms nor hills)
-local CITIES = {
-  ["Stormwind City"] = true,
-  Ironforge = true,
-  Darnassus = true,
-  Orgrimmar = true,
-  ["Thunder Bluff"] = true,
-  Undercity = true,
-}
 function tell.weapon(s, m) s.book.weaponHeld = W.WEAPON_OF[m.weapon or -1] or s.book.weaponHeld end
 function tell.place(s, m)
   local b = s.book
@@ -108,7 +99,7 @@ function tell.place(s, m)
     if land then
       s:append(land)
     else
-      s:alone("zone", { zone = mid(m.zone) }, s:tags({ back = back or nil, town = CITIES[m.zone] }, m))
+      s:alone("zone", { zone = mid(m.zone) }, s:tags({ back = back or nil, town = W.CITIES[m.zone] }, m))
     end
     s.lastNamed = m.zone
     s:enter(nil, nil)

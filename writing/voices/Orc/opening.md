@@ -25,5 +25,5 @@ kind: opening
 - I shouldered my pack {at} and let my legs set the pace, since my temper would only have hurried them.
 - [!home] I set out {at} on ground that still felt borrowed, and walked it with a guest's care.
 - I took to the road {at}, resolved to save my anger for whatever truly earned it.
-- [night] I pressed on {at} in the dark, treading more quietly than I usually bother to.
+- [night !class:ROGUE] I pressed on {at} in the dark, treading more quietly than I usually bother to.
 - The Horde is more peoples than one now, and I headed out {at} ready to work beside any of them.

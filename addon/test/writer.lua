@@ -2154,31 +2154,105 @@ do
     if why[1] == 3 then table.insert(heavy, id) end
   end
   table.sort(heavy)
+  -- a story's reaction, by its subject: the dead, demons, a beast or a
+  -- villain of a name, a rescue, and the peoples of note to a narrator
+  local rescues = {}
+  for _, id in ipairs(heavy) do
+    local verb = whys[id][2]:match("^(%a+)")
+    if verb == "escorted" or verb == "rescued" or verb == "freed" then table.insert(rescues, id) end
+  end
+  local subjects = {
+    { "Skeletal Fiend", "Undead", 8 },
+    { "Felguard Sentry", "Demon", 6 },
+    { "Mangeclaw", "Beast", 1 },
+    { "Hogger", "Humanoid", 1 },
+    { false },
+    { "Leper Gnome", "Humanoid", 10 },
+    { "Highborne Apparition", "Undead", 6 },
+    { "Keeper Ordanus", "Humanoid", 1 },
+  }
   for r, race in ipairs(RACES) do
-    local chapters = {}
-    for n, foe in ipairs({
-      { "Skeletal Fiend", "Undead", 8 },
-      { "Felguard Sentry", "Demon", 6 },
-      { "Mangeclaw", "Beast", 1 },
-    }) do
-      local id, t = heavy[(r * 11 + n * 5) % #heavy + 1], n * 100000
-      chapters[n] = stretch(n, {
-        { k = "kill", name = foe[1], kind = foe[2], zone = "Wetlands", sub = "Wetlands", at = t + 5 },
-        {
+    for life = 1, 3 do
+      local chapters = {}
+      for n = 1, 2 * #subjects do
+        local foe = subjects[(n + life) % #subjects + 1]
+        local t = n * 100000
+        local id = foe[1] and heavy[(r * 11 + n * 5 + life) % #heavy + 1] or rescues[(r + n + life) % #rescues + 1]
+        local log = {}
+        if foe[1] then
+          table.insert(
+            log,
+            { k = "kill", name = foe[1], kind = foe[2], zone = "Wetlands", sub = "Wetlands", at = t + 5 }
+          )
+        end
+        table.insert(log, {
           k = "done",
           id = id,
           giver = "Sten Stoutarm",
-          objectives = { { type = "monster", name = foe[1], n = foe[3] } },
+          objectives = foe[1] and { { type = "monster", name = foe[1], n = foe[3] } } or {},
           zone = "Wetlands",
           sub = "Wetlands",
           at = t + 10,
-        },
-      })
-    end
-    for life = 1, 2 do
+        })
+        chapters[n] = stretch(n, log)
+      end
       local c = { guid = "react-" .. race .. life, race = race, class = COMBOS[race][1], chapters = chapters }
+      if race == "Skyborne" then c.faction = life % 2 == 0 and "horde" or "alliance" end
       for i, e in ipairs(ns.writeDiary(c).entries) do
         inspect(race .. " reaction diary " .. i, e.text)
+      end
+    end
+  end
+  -- the foes worth naming, one, two or more, a hard fight among them or not
+  local RARES = {
+    "Mangeclaw",
+    "Old Murk-Eye",
+    "Snarlmane",
+    "Mother Fang",
+    "Hogger",
+    "Bjarn",
+    "Rak'shiri",
+    "Sludginn",
+    "Ma'ruk Wyrmscale",
+    "Vagash",
+    "Mazzranache",
+    "Gath'Ilzogg",
+    "Chief Sharpclaw",
+    "Lord Azrethoc",
+    "Lord Banehollow",
+    "Lord Captain Wyrmak",
+    "Lord Cobrahn",
+    "Lord Arkkoroc",
+  }
+  for r, race in ipairs(RACES) do
+    for life = 1, 3 do
+      local chapters, met = {}, 0
+      for n, count in ipairs({ 1, 1, 1, 2, 3, 1, 2, 3, 1 }) do
+        local hard = n <= 5
+        local t, log = n * 100000, {}
+        for k = 1, count do
+          met = met + 1 -- (a foe named once a diary: a new one each time)
+          local name = RARES[(r + life + met) % #RARES + 1]
+          table.insert(log, { k = "rare", name = name, zone = "Wetlands", sub = "Wetlands", at = t + k })
+          if hard and k == 1 then
+            table.insert(log, { k = "close", foe = name, hp = 4, zone = "Wetlands", sub = "Wetlands", at = t + k + 1 })
+          end
+        end
+        if hard and (life > 1 or n > 1) then -- (a death told: the close call is a hard fight among the foes)
+          table.insert(log, {
+            k = "died",
+            death = { level = 22, zone = "Wetlands", cause = "foe", foe = "Mosshide Gnoll" },
+            zone = "Wetlands",
+            at = t + 50,
+          })
+          table.insert(log, { k = "revived", how = "healer", zone = "Wetlands", at = t + 60 })
+        end
+        chapters[n] = stretch(n, log)
+      end
+      local c = { guid = "foes-" .. race .. life, race = race, class = COMBOS[race][1], chapters = chapters }
+      if race == "Skyborne" then c.faction = life % 2 == 0 and "horde" or "alliance" end
+      for i, e in ipairs(ns.writeDiary(c).entries) do
+        inspect(race .. " foes diary " .. i, e.text)
       end
     end
   end

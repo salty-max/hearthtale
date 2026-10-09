@@ -7,7 +7,7 @@ kind: rest
 - I rested {at}, like a wolf curled up after a long run.
 - I paused {at}, grateful that no order could make me stand before I was willing.
 - I rested {at}, and wondered whether my people had ever known such ease on Draenor, before the demons found them.
-- I stopped {at}, missing the drums of home without wanting them to summon me anywhere.
+- [!home] I stopped {at}, missing the drums of home without wanting them to summon me anywhere.
 - I rested {at}, and left the ancestors to judge my unashamed relief.
 - I paused {at}, and let my shoulders forget the weight of the day's work.
 - This stillness was nothing like the grey lethargy that had held my people in the camps, and I rested {at} the gladder for knowing the difference.

@@ -803,6 +803,15 @@ local FIRST_SPELLS = {
   DRUID = { "Wrath", "Healing Touch" },
 }
 W.FIRST_SPELLS = FIRST_SPELLS
+-- (a people's capital: a city, no farms nor hills, no "country")
+W.CITIES = {
+  ["Stormwind City"] = true,
+  Ironforge = true,
+  Darnassus = true,
+  Orgrimmar = true,
+  ["Thunder Bluff"] = true,
+  Undercity = true,
+}
 W.FOE_KIND = FOE_KIND
 -- (a quest's "giver" or "ender" that is no person: a corpse, a machine, a
 -- spirit of the elements; "I brought word to the Dead Cultist" is not told)

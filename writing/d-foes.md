@@ -1,17 +1,16 @@
 ---
 kind: d-foes
 ---
-- [one !hard] Of all the fighting, the one with {foes} stays with me.
-- [one !hard] I brought down {foes}, and that fight has stayed with me.
-- [one !hard] {foes} fell to me, and I have thought about it since.
-- [one !hard] I faced {foes}, and walked away from it.
-- [one hard] {foes} was the hardest fight of these days, and I came through it.
-- [one hard] I brought down {foes}, and not easily.
-- [two !hard] Of all the fighting, the fights with {foes} are the ones that stay with me.
-- [two !hard !plural] I brought down {foes}, and both fights have stayed with me.
-- [two hard] I came through fights with {foes}, and neither was easy.
-- [!one !two !hard] Of all the fighting, {foes} are the ones that stay with me.
+- [one !hard] I brought down {foes}, and walked on lighter for it.
+- [one !hard] {foes} fell to me, and that was the end of that.
+- [one !hard] I faced {foes} and came away on my own feet.
+- [one !hard] I put an end to {foes}.
+- [one hard] {foes} came close to ending me before I ended the fight.
+- [one hard] I brought down {foes}, and only just.
+- [two !hard] I brought down {foes}, one after the other.
+- [two !hard !plural] Both {foes} fell to me before the stretch was out.
+- [two hard] I came through fights with {foes}, and one of them very nearly went the other way.
 - [!one !two !hard] I brought down {foes}, one fight after another.
-- [!one !two !hard] {foes} all fell to me, and I have thought about them since.
-- [!one !two hard] {foes} were the hardest fights of these days, and I came through every one.
+- [!one !two !hard] {foes} all fell to me before the stretch was out.
+- [!one !two hard] I fought my way through {foes}, and one of those fights very nearly went the other way.
 - [!one !two hard] I brought down {foes}, and not one of those fights was easy.

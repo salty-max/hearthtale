@@ -2,7 +2,7 @@
 kind: night
 ---
 - [!last] I slept rough {at}; the earth had little of a dwarven mason's care for comfort.
-- [!last] I settled outside {at}, with a dwarf's bulk and rather less than a dwarf's comfort.
+- [!last] I settled outside {at}, and missed the honest weight of stone overhead.
 - [!last] I lay down {at}, wondering how stone could feel so friendly at home and so hard beneath a back.
 - [!last] I bedded down {at}, with all the grace of a sack of ore being unloaded.
 - [!last] I slept outside {at}, and would have given a good deal for four thick walls and a door that shut.

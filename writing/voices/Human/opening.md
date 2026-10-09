@@ -26,4 +26,4 @@ kind: opening
 - [home] I started out {at} on ground my own people had built on, farmed and fought over for generations, which steadied me more than I had expected.
 - I headed out {at}, resolved to be brave only where it was strictly necessary.
 - I was on my way again {at}, with two willing hands and the usual doubts about the rest of me.
-- Tavern talk had told me a good deal about the wider world, and I carried on {at}, sorting the truth from the embroidery as I went.
+- I carried on {at}, sorting what I had heard of the wider world from what I found in it.
