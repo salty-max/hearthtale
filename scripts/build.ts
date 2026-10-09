@@ -142,7 +142,7 @@ const KINDS: Record<string, string[]> = {
   "d-deaths": ["times"],
   "d-dungeon": ["dungeon", "mates"],
   "d-company": ["mates"],
-  "d-chores": ["n", "people"],
+  "d-chores": [],
   "d-close": ["land"],
   // the stretch's story: what the work that mattered was for (writing/why/)
   "d-why": ["why"],
@@ -151,6 +151,11 @@ const KINDS: Record<string, string[]> = {
   "d-why-also": ["why"],
   // a pet or a demon named again, at my side through a stretch
   "d-pet": ["pet"],
+  // a hunter's companion tamed (the first, then another); a shaman's
+  // initiation into an element; a reaction to the stretch's story
+  "d-tame": ["pet", "family"],
+  "d-initiation": [],
+  "d-react": [],
   // remarks a routine clause may end with (Lines.lua's ROUTINE)
   "r-foe": [], "r-first": [], "r-item": [], "r-task": [], "r-gear": [], "r-lesson": [], "r-road": [], "r-inn": [],
   "r-company": [],
@@ -164,7 +169,8 @@ const TAGS = ["home", "ally", "foe", "neutral", "night", "hc", "high", "low", "f
   "looted", "handed", "complex", "state", "ofprey", "summon", "also", "tried", "pet", "fire", "frost", "arcane", "shadow", "curse", "holy", "lightning", "wrath", "moon", "steel", "arrow", "imp", "voidwalker", "succubus", "felhunter", "felguard",
   "bear", "cat", "travel", "aquatic", "moonkin", "tree", "flight", "deliveries", "lone", "set", "melee", "trinket",
   "hard", "near", "found", "learned", "delve", "quiet", "diary", "hosts", "two", "much", "fought", "zalazane", "thread", "settled", "story", "town",
-  "jewel", "seed", "food", "cargo", "leper", "highborne", "venture", "harmless", "w3", "paid", "after", "capital", "leader", "away", "used", "taken"];
+  "jewel", "seed", "food", "cargo", "leper", "highborne", "venture", "harmless", "w3", "paid", "after", "capital", "leader", "away", "used", "taken",
+  "rescue", "villain", "earth", "water", "air"];
 const RACES = ["Human", "Dwarf", "NightElf", "Gnome", "Orc", "Troll", "Tauren", "Scourge", "Skyborne"];
 const ROUTINE = new Set("deed-kill deed-item deed-task deed-word chain deliver report first gear trainer inn travel return place group skill prof handed-kill handed-item".split(" ").map((kind) => `c-${kind}`));
 // The recap's kinds: one sentence of the recap holds a thought, the others are plain.
@@ -203,8 +209,12 @@ function parseFile(file: string, kind: string | null): Parsed | null {
     const slots = own === "scenery" ? [] : (KINDS[own ?? ""] ?? []);
     for (const [, slot] of sentence.text.matchAll(/\{([^}]*)\}/g))
       if (!slots.includes(slot) && !VOICE.includes(slot)) fail(file, `{${slot}} is not a slot of ${own}: ${sentence.text}`);
+    // (a life the record can't know: no family, childhood, past trade or possessions of the narrator's)
+    if (/\b(all my life|when I was young|as a child|in my youth|my (father|mother|brother|sister|parents|family|workshop|tools|old job|former))\b/i.test(sentence.text))
+      fail(file, `a personal history the record can't know: ${sentence.text}`);
     if (own?.startsWith("c-") || own?.startsWith("r-")) {
-      if (!/^[a-z]/.test(sentence.text) && !(sentence.tags.includes("turn") && /^\{/.test(sentence.text)) || /[.!?;:]$/.test(sentence.text))
+      // (a clause may open on a turned subject, "{foe} fell to me", or on the deed itself, "{why}": "escorted …")
+      if (!/^[a-z]/.test(sentence.text) && !(sentence.tags.includes("turn") && /^\{/.test(sentence.text)) && sentence.text !== "{why}" || /[.!?;:]$/.test(sentence.text))
         fail(file, `a clause starts in lower case, with no stop: ${sentence.text}`);
       // a clause turned round has its own subject: not "I", and not after "I"
       if (sentence.tags.includes("turn") && /^(i|I)\b/.test(sentence.text)) fail(file, `a turned clause has a subject of its own: ${sentence.text}`);
@@ -338,7 +348,45 @@ for (const f of mdFiles(SCENERY_DIR)) {
 // reads after "I spent the better part of it …", weighed 1 (an errand) to 3
 // (a story's climax).
 const WHY_DIR = join(WRITING, "why");
-const why = new Map<number, { w: number; text: string; client?: string }>(); // (forever-*.md: Forever's own quests)
+const why = new Map<number, { w: number; text: string; deed: string; client?: string }>(); // (forever-*.md: Forever's own quests)
+// The deed itself, as the diary tells it: "killing Hogger, …" is "killed
+// Hogger, …", read after "I", the first verb and those joined to it ("and
+// bringing", ", then meeting") in the past; a form the English word list
+// doesn't know fails the build (IRREGULAR, or reword the why).
+const ENGLISH = new Set<string>(JSON.parse(readFileSync(join(import.meta.dir, "..", "node_modules", "an-array-of-english-words", "index.json"), "utf8")));
+const IRREGULAR: Record<string, string> = {
+  bearing: "bore", beating: "beat", becoming: "became", binding: "bound", blowing: "blew", breaking: "broke",
+  bringing: "brought", building: "built", buying: "bought", catching: "caught", choosing: "chose", coming: "came",
+  cutting: "cut", dealing: "dealt", digging: "dug", doing: "did", drawing: "drew", drinking: "drank", driving: "drove",
+  dying: "died", eating: "ate", feeding: "fed", fighting: "fought", finding: "found", flying: "flew", freezing: "froze",
+  getting: "got", giving: "gave", going: "went", growing: "grew", having: "had", hearing: "heard", hiding: "hid",
+  holding: "held", keeping: "kept", laying: "laid", leading: "led", leaving: "left", lending: "lent", letting: "let",
+  lighting: "lit", making: "made", meeting: "met", overcoming: "overcame", paying: "paid", putting: "put", reading: "read",
+  repaying: "repaid", riding: "rode", ridding: "rid", rising: "rose", running: "ran", seeing: "saw", seeking: "sought",
+  selling: "sold", sending: "sent", setting: "set", shooting: "shot", shrinking: "shrank", shutting: "shut", sitting: "sat",
+  slaying: "slew", speaking: "spoke", spending: "spent", standing: "stood", stealing: "stole", striking: "struck",
+  stringing: "strung", swearing: "swore", swimming: "swam", taking: "took", teaching: "taught", tearing: "tore",
+  telling: "told", throwing: "threw", waking: "woke", winning: "won", polymorphing: "polymorphed", sowing: "sowed",
+  sewing: "sewed", leaping: "leapt", lying: "lay", fleeing: "fled", forgetting: "forgot", forgiving: "forgave",
+  understanding: "understood", undertaking: "undertook", withstanding: "withstood", rebuilding: "rebuilt", feeling: "felt",
+  wearing: "wore", sinking: "sank", spinning: "spun", sweeping: "swept", sleeping: "slept", shaking: "shook", saying: "said",
+};
+// (-ing words that are no verb here)
+const NOT_VERBS = new Set(["bring", "spring", "string", "thing", "king", "ring", "wing", "sling", "sting", "cunning", "willing",
+  "evening", "morning", "nothing", "something", "anything", "everything", "being", "during", "ceiling", "darling"]);
+const JOINED = /(^|, and then |, and |, then | and then | then | and | or )([a-z]+ing)\b/g;
+function deedOf(text: string, file: string): string {
+  return text.replace(JOINED, (all: string, sep: string, g: string) => {
+    if (NOT_VERBS.has(g)) return all;
+    let past = IRREGULAR[g];
+    if (!past) {
+      const stem = g.slice(0, -3);
+      past = /[^aeiou]y$/.test(stem) ? stem.slice(0, -1) + "ied" : /e$/.test(stem) ? stem + "d" : stem + "ed";
+      if (!ENGLISH.has(past)) fail(file, `"${g}": no past form known (add it to IRREGULAR, or reword): ${text}`);
+    }
+    return sep + past;
+  });
+}
 for (const f of mdFiles(WHY_DIR)) {
   const file = join(WHY_DIR, f);
   const src = readFileSync(file, "utf8");
@@ -358,7 +406,7 @@ for (const f of mdFiles(WHY_DIR)) {
     if (/\b(you|your|I|quest|quests|objective)\b/.test(text)) fail(file, `no "you", "I", "quest" or "objective" in a why: ${text}`);
     if (/[$<>[\]{}"]/.test(text)) fail(file, `no $, <>, [], {} or double quotes in a why: ${text}`);
     if (why.has(id)) fail(file, `quest ${id} twice`);
-    why.set(id, { w, text, client: f.startsWith("forever-") ? "forever" : undefined });
+    why.set(id, { w, text, deed: deedOf(text, file), client: f.startsWith("forever-") ? "forever" : undefined });
   }
 }
 
@@ -404,7 +452,7 @@ ${voiceBody}
 ${placeBody}
   },
   why = {
-${[...why.entries()].filter(([, v]) => !v.client || v.client === client).sort((a, b) => a[0] - b[0]).map(([id, v]) => `    [${id}] = { ${v.w}, ${q(v.text)} },`).join("\n")}
+${[...why.entries()].filter(([, v]) => !v.client || v.client === client).sort((a, b) => a[0] - b[0]).map(([id, v]) => `    [${id}] = { ${v.w}, ${q(v.deed)} },`).join("\n")}
   },
 }
 `;

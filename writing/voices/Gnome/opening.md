@@ -4,7 +4,7 @@ kind: opening
 - I began again {at}, as obstinate as the refugees who had started over in a borrowed corner of the dwarves' city.
 - I took up the road {at}, my enthusiasm intact despite the absence of anything resembling a plan.
 - I set out {at}, still possessed of an unfortunate interest in anything that might explode.
-- I set off again {at}, with three contraptions half-designed in my head and no tools to build them.
+- I set off again {at}, my head already busy with ways the day's work might be done better.
 - I made ready {at}, thinking how many of us now had to call the road home.
 - I continued {at}, already redesigning half of what I saw.
 - I set out {at}, with no workshop to retreat to, and the whole world to poke at instead.

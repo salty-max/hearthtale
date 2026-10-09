@@ -1,0 +1,11 @@
+---
+kind: d-initiation
+---
+- [earth] I earned the earth's favour at last, and came away with its totem, the first of the elements to answer me.
+- [earth] The earth accepted me; I carried its totem away as proof, and stood on the ground differently after.
+- [fire] I earned the favour of fire, and its totem with it, and the flame seemed less a stranger to me after.
+- [fire] Fire answered me at last; I came away with its totem and a respect for it I had not had before.
+- [water] The water spirits accepted me, and I came away with their totem and a steadier sense of my own power.
+- [water] I earned the favour of water, and its totem, and something in me eased that I had not known was tight.
+- [air] The air answered me at last, and I came away with its totem and the wind, it seemed, at my back.
+- [air] I earned the air's favour and its totem, the last of the elements to take my measure.

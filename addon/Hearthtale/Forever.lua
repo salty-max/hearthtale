@@ -16,7 +16,7 @@ K.quests[65602] = { class = "WARLOCK" }
 K.quests[65603] = { class = "WARLOCK" }
 K.quests[92466] = { class = "SHAMAN" }
 K.quests[92467] = { class = "SHAMAN" }
-K.quests[92468] = { class = "SHAMAN" }
+K.quests[92468] = { class = "SHAMAN", totem = "earth" }
 K.quests[92481] = { class = "MAGE" }
 K.quests[92482] = { class = "HUNTER" }
 K.quests[92483] = { class = "ROGUE" }
@@ -32,14 +32,14 @@ K.quests[94013] = { class = "HUNTER" }
 K.quests[94050] = { class = "HUNTER" }
 K.quests[94373] = { class = "SHAMAN" }
 K.quests[94374] = { class = "SHAMAN" }
-K.quests[94375] = { class = "SHAMAN" }
+K.quests[94375] = { class = "SHAMAN", totem = "earth" }
 K.quests[94638] = { class = "DRUID" }
 K.quests[94978] = { class = "HUNTER" }
 K.quests[94979] = { class = "HUNTER" }
 K.quests[97243] = { class = "SHAMAN" }
 K.quests[97244] = { class = "SHAMAN" }
 K.quests[97245] = { class = "SHAMAN" }
-K.quests[97257] = { class = "SHAMAN" }
+K.quests[97257] = { class = "SHAMAN", totem = "fire" }
 K.quests[98581] = { class = "SHAMAN" }
 K.chains[65602] = 65602
 K.chains[65603] = 65602

@@ -1,18 +1,9 @@
 ---
 kind: d-why
 ---
-- The work that mattered most was {why}.
-- What I will remember of it is {why}.
-- The heart of it was {why}.
-- Above everything else, I remember {why}.
-- If I keep one thing from these days, it is {why}.
-- Of everything I did, what counted was {why}.
-- What mattered was {why}.
-- I will not soon forget {why}.
-- The part that counted was {why}.
-- [thread !settled] I went back to the business I had started before: {why}.
-- [thread !settled] The old business went on: {why}.
-- [thread !settled] Picking up where I had left off, I set about {why}.
-- [thread !settled] I took up the old thread again: {why}.
-- [thread settled] What I had started before came to its end at last: {why}.
-- [thread settled] The old business was finished at last: {why}.
+- I {why}.
+- [thread !settled] Picking up where I had left off, I {why}.
+- [thread !settled] Back at the business I had begun before, I {why}.
+- [thread !settled] The old business went on, and I {why}.
+- [thread settled] At last, I {why}.
+- [thread settled] I saw the old business through to its end: I {why}.

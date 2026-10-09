@@ -2111,6 +2111,77 @@ do
       end
     end
   end
+  -- a shaman's initiations (each element's totem); a summoning taught, then
+  -- its demon called a stretch later; a story's foe the dead, a demon, a beast
+  local function stretch(n, log)
+    return {
+      start = { level = 20, zone = "Wetlands", sub = "Menethil Harbor" },
+      log = log,
+      ended = { level = 20, place = "Menethil Harbor", how = "rest" },
+      kills = {},
+      quests = 1,
+      played = 3600,
+      gold = 0,
+    }
+  end
+  for r, race in ipairs({ "Orc", "Troll", "Tauren" }) do
+    for life = 1, 2 do
+      local chapters = {}
+      for n, id in ipairs({ 1518, 1527, 96, 1531 }) do
+        chapters[n] = stretch(n, { { k = "quest", id = id, giver = "Kranal Fiss", at = n * 100000 + 10 } })
+      end
+      local c = { guid = "totem-" .. race .. life .. r, race = race, class = "SHAMAN", chapters = chapters }
+      for i, e in ipairs(ns.writeDiary(c).entries) do
+        inspect(race .. " initiation diary " .. i, e.text)
+      end
+    end
+  end
+  for _, race in ipairs({ "Human", "Orc", "Gnome", "Scourge" }) do
+    local chapters, n = {}, 0
+    for _, pair in ipairs({ { 1470, "Imp" }, { 1471, "Voidwalker" }, { 1474, "Succubus" }, { 1795, "Felhunter" } }) do
+      n = n + 1
+      chapters[n] = stretch(n, { { k = "quest", id = pair[1], giver = "Alamar Grimm", at = n * 100000 + 10 } })
+      n = n + 1
+      chapters[n] = stretch(n, { { k = "demon", name = "Zig" .. n, family = pair[2], at = n * 100000 + 10 } })
+    end
+    local c = { guid = "summoned-" .. race, race = race, class = "WARLOCK", chapters = chapters }
+    for i, e in ipairs(ns.writeDiary(c).entries) do
+      inspect(race .. " summoning diary " .. i, e.text)
+    end
+  end
+  local heavy = {}
+  for id, why in pairs(whys) do
+    if why[1] == 3 then table.insert(heavy, id) end
+  end
+  table.sort(heavy)
+  for r, race in ipairs(RACES) do
+    local chapters = {}
+    for n, foe in ipairs({
+      { "Skeletal Fiend", "Undead", 8 },
+      { "Felguard Sentry", "Demon", 6 },
+      { "Mangeclaw", "Beast", 1 },
+    }) do
+      local id, t = heavy[(r * 11 + n * 5) % #heavy + 1], n * 100000
+      chapters[n] = stretch(n, {
+        { k = "kill", name = foe[1], kind = foe[2], zone = "Wetlands", sub = "Wetlands", at = t + 5 },
+        {
+          k = "done",
+          id = id,
+          giver = "Sten Stoutarm",
+          objectives = { { type = "monster", name = foe[1], n = foe[3] } },
+          zone = "Wetlands",
+          sub = "Wetlands",
+          at = t + 10,
+        },
+      })
+    end
+    for life = 1, 2 do
+      local c = { guid = "react-" .. race .. life, race = race, class = COMBOS[race][1], chapters = chapters }
+      for i, e in ipairs(ns.writeDiary(c).entries) do
+        inspect(race .. " reaction diary " .. i, e.text)
+      end
+    end
+  end
   -- the pet: a warlock's demon, a hunter's beast, at my side through the work
   for _, life in ipairs({
     { "Human", "WARLOCK", "Zigfik", "Imp" },
@@ -2154,6 +2225,89 @@ do
       inspect(life[1] .. " pet diary " .. i, e.text)
     end
   end
+end
+
+-- The diary's selection (Diary.lua): a milestone told however crowded the
+-- stretch; a spell's new rank no news; a second companion told as another;
+-- an initiation told; a finished entry the same however many come after.
+do
+  local function stretch(log, quests)
+    return {
+      start = { level = 20, zone = "Dun Morogh", sub = "Kharanos" },
+      log = log,
+      ended = { level = 20, place = "Kharanos", how = "rest" },
+      kills = {},
+      quests = quests or 1,
+      played = 3600,
+      gold = 0,
+    }
+  end
+  local heavy = {}
+  for id, why in pairs(ns.data.why) do
+    if why[1] == 3 then table.insert(heavy, id) end
+  end
+  table.sort(heavy)
+  for r, race in ipairs({ "Human", "Orc", "Gnome", "Scourge" }) do
+    local c = {
+      guid = "crowded-" .. race,
+      race = race,
+      class = "WARLOCK",
+      chapters = {
+        stretch({
+          { k = "learned", spells = { "Immolate", "Corruption", "Life Tap", "Fear" }, at = 10 },
+          { k = "quest", id = heavy[r], giver = "Sten Stoutarm", at = 20 },
+          { k = "quest", id = heavy[r + 10], giver = "Sten Stoutarm", at = 25 },
+          { k = "demon", name = "Kazrix", family = "Imp", at = 30 },
+          { k = "died", death = { foe = "Rockjaw Trogg" }, zone = "Dun Morogh", sub = "Kharanos", at = 40 },
+          { k = "revived", how = "corpse", at = 60 },
+          { k = "place", new = "zone", zone = "Loch Modan", sub = "Loch Modan", at = 70 },
+          { k = "rare", name = "Mother Fang", zone = "Loch Modan", sub = "Loch Modan", at = 80 },
+          { k = "group", name = "Korrak", at = 90 },
+          { k = "shift", form = "bear", at = 95 },
+        }, 9),
+      },
+    }
+    local text = ns.writeDiary(c).entries[1].text
+    if not text:find("Kazrix", 1, true) then
+      problem(race .. " crowded diary", "a milestone lost to lesser things", text)
+    end
+  end
+  -- a new rank of a spell: told the first time only
+  local ranks = {
+    guid = "ranks",
+    race = "Gnome",
+    class = "MAGE",
+    chapters = {
+      stretch({ { k = "learned", spells = { "Frostbolt" }, at = 10 } }),
+      stretch({ { k = "learned", spells = { "Frostbolt", "Frostbolt" }, at = 10 } }),
+    },
+  }
+  local second = ns.writeDiary(ranks).entries[2].text
+  if second:find("Frostbolt", 1, true) then problem("ranks diary", "a new rank told as a new spell", second) end
+  -- a second companion: another, not the first
+  for seed = 1, 6 do
+    local pets = {
+      guid = "pets-" .. seed,
+      race = "Dwarf",
+      class = "HUNTER",
+      chapters = {
+        stretch({ { k = "tame", name = "Dusk", family = "Boar", at = 10 } }),
+        stretch({ { k = "tame", name = "Ashpaw", family = "Bear", at = 10 } }),
+      },
+    }
+    local entries = ns.writeDiary(pets).entries
+    if not entries[1].text:find("Dusk", 1, true) then
+      problem("pets diary", "the first companion untold", entries[1].text)
+    end
+    if not entries[2].text:find("Ashpaw", 1, true) or entries[2].text:find("first", 1, true) then
+      problem("pets diary", "a second companion told as the first, or not at all", entries[2].text)
+    end
+  end
+  -- a shaman's initiation: told
+  local totem =
+    { guid = "totem", race = "Orc", class = "SHAMAN", chapters = { stretch({ { k = "quest", id = 1518, at = 10 } }) } }
+  local told = ns.writeDiary(totem).entries[1].text
+  if not told:find("totem", 1, true) then problem("initiation diary", "an element's favour untold", told) end
 end
 
 -- A trinket put on: carried, not worn.
@@ -2562,18 +2716,43 @@ for _, round in ipairs({
             longest, longestText = #ch.text, ch.text
           end
         end
-        -- the diary of the same life (Diary.lua), through the same checks; no
-        -- sentence of an entry the same as one of its chapter's, or the one
-        -- before (the chapter is a click away)
-        for _, e in ipairs(ns.writeDiary(c, book).entries) do
+        -- the diary of the same life (Diary.lua), what is read, through the same
+        -- checks; no more than one thought of a kind in an entry ("stays with
+        -- me"); a finished entry the same however many come after
+        local entries = ns.writeDiary(c, book).entries
+        for _, e in ipairs(entries) do
           inspect(("%s %s diary %d"):format(race, class, e.number), e.text)
-          local near = ((book.chapters[e.number] or {}).text or "")
-            .. "\n"
-            .. ((book.chapters[e.number - 1] or {}).text or "")
-          for sentence in (e.text or ""):gmatch("[^.!?]+[.!?]") do
-            sentence = sentence:gsub("^%s+", "")
-            if #sentence > 30 and near:find(sentence, 1, true) then
-              problem(("%s %s diary %d"):format(race, class, e.number), "said word for word in its chapter", sentence)
+          local marks = 0
+          for _, mark in ipairs({
+            "stays with me",
+            "left a mark",
+            "leave a mark",
+            "turning it over",
+            "turning them over",
+          }) do
+            if e.text:find(mark, 1, true) then marks = marks + 1 end
+          end
+          if marks > 1 then
+            problem(("%s %s diary %d"):format(race, class, e.number), "one reflection twice", e.text)
+          end
+        end
+        if #c.chapters > 3 and books % 7 == 0 then
+          local shorter = {}
+          for k, v in pairs(c) do
+            shorter[k] = v
+          end
+          shorter.chapters = {}
+          for k = 1, #c.chapters - 1 do
+            shorter.chapters[k] = c.chapters[k]
+          end
+          local before = ns.writeDiary(shorter, ns.writeBook(shorter)).entries
+          for k = 1, #before - 1 do
+            if before[k].text ~= entries[k].text then
+              problem(
+                ("%s %s diary %d"):format(race, class, k),
+                "a finished entry changed when another came",
+                entries[k].text
+              )
             end
           end
         end

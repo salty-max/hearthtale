@@ -13,7 +13,7 @@ I had completed sixty-four tasks already when this stretch began in Stormwind Ci
 
 With the king missing, the roads still had to be walked and the errands run, and I set out in the Dwarven District to take my share. I flew from Stormwind to Sentinel Hill, grateful for the distance without another chance to lose my way.
 
-Westfall lay dark and quiet, its windmills turning over farms nobody tended any more. A light in a window was rare enough to make me wonder who still dared to keep one. A stone tower stood on Sentinel Hill, and around it the People's Militia had pitched their tents. Farmers who had lost everything queued for soup, and it made me angrier than I expected. A Mysterious Message was in Gryan Stoutmantle's hands soon after. Moonbrook was a ruin after dark, its broken walls black against the sky. Somewhere among the burned houses the Defias were talking, and I kept to the shadows. I gave my whole attention to slaying Syndicate thieves and footpads near Tarren Mill, the gang believed behind the murder of Southshore's last magistrate. Gryan Stoutmantle heard that the work was done. Thessaly, Brannigan, Rowan and Halvard joined me.
+Westfall lay dark and quiet, its windmills turning over farms nobody tended any more. A light in a window was rare enough to make me wonder who still dared to keep one. A stone tower stood on Sentinel Hill, and around it the People's Militia had pitched their tents. Farmers who had lost everything queued for soup, and it made me angrier than I expected. A Mysterious Message was in Gryan Stoutmantle's hands soon after. Moonbrook was a ruin after dark, its broken walls black against the sky. Somewhere among the burned houses the Defias were talking, and I kept to the shadows. I slew Syndicate thieves and footpads near Tarren Mill, the gang believed behind the murder of Southshore's last magistrate. I saw Gryan Stoutmantle again, the work behind me. Thessaly, Brannigan, Rowan and Halvard joined me.
 
 Once back in Moonbrook, I hunted down several Undead Excavators and Undead Dynamiters until I had a handful of Miners' Union Cards. Defias Pillagers and a Defias Highwayman fell to me while I killed Foreman Thistlenettle for the badge, an errand Northshire Abbey would have handed to the newest novice.
 
@@ -23,7 +23,7 @@ There were Defias Pirates, Defias Companions and Defias Squallshaper to fight of
 
 By nightfall, back in Sentinel Hill, I checked in with Gryan Stoutmantle and made Chausses of Westfall part of my kit. Scout Riell had my report soon after. I left Sentinel Hill by air for Stormwind, thinking of the homes below and all the ordinary lives inside them.
 
-My path led into Cathedral Square. I brought an Unsent Letter to Baros Alexston; I gave Wilder Thistlenettle and Shoni the Shilent the news.
+My path led into Cathedral Square. I brought an Unsent Letter to Baros Alexston; I handed in my work to Wilder Thistlenettle and Shoni the Shilent.
 
 I set foot in Old Town, the fields along the way a little like Elwynn's, and a little not. The trainer taught me Cleave and Retaliation.
 

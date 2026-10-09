@@ -124,33 +124,39 @@ The plan and its decisions: PLAN.md.
   chapter's Scene; what each tells is `tell.<kind>`, the moments of their own
   `own.<kind>`. A new kind of moment is a new arm, in its place in the order;
   its state lives on the Scene, never in a local of `Book:chapter`),
-  `Diary.lua` (each chapter as a short entry written at the rest that ends
-  it, read first in the window and on the site, the chapter in full a click
-  away; from the same
-  record and the Book's lines: the opening, its story (`d-why`, `d-why2`,
-  a second climax too long to share the sentence `d-why-also`: writing/why/;
-  a quest's story told once, led by its place when elsewhere; a chain's quest
-  after an entry of the last four told one of it, `[thread]`, its end
-  `[thread settled]`: Knowledge.lua `chains`, one-to-one links only, `ends`,
-  the last quest with work before a return), new lands (`d-land`), new spells
-  (`d-powers`, a spell's new rank never), the firsts of a life, named foes
-  (`d-foes`; one that killed me is the death's), deaths (`d-deaths`) or the
-  closest call, a dungeon or company, the pet at my side named again
-  (`d-pet`, every fourth entry at most, `[again]` once named so), the
-  ordinary work in one sentence (`d-chores`), a thought on the stretch's
-  shape (`d-close`: `[hard]`, `[near]`, `[found]`, `[learned]`, `[delve]`,
-  `[quiet]`, `[grouped]`, `[fought]`), the rest; each race has its own of
-  every frame (two of its own an entry at most, the ending aside);
-  a lesson's own `[diary]` line; never a sentence its chapter, or the one
-  before, says word for word (`ns.writeDiary(c, book)`, checked by the
-  writer test); `[!diary]` keeps out a line that leans
-  on a moment the diary doesn't tell; `luajit addon/test/read.lua <saved
-  file> diary` and the playthroughs' `*.diary.md` show both side by side),
+  `Diary.lua` (the journal as read, in the window and on the site: each
+  chapter as an entry written at the rest that ends it; the chapters, from
+  Writer.lua, are the record told in full, kept for the tests and the
+  writer's tellings, no longer shown. From the same record and the Book's
+  lines, by what weighs most: the milestones of a life, always (a first
+  demon of its kind, `[known]` when a class quest taught its summoning
+  before, merged when the same stretch; a form; a companion, `d-tame`
+  `[first]` or another; a shaman's initiation, `d-initiation`, from the
+  quest that gives an element's totem, Knowledge.lua `totem`; a class
+  quest's reward), the story, always (the deed itself, "I killed Hogger, …":
+  writing/why/'s phrase in the past, `d-why`, `d-why2`, `d-why-also`; a
+  class's own quest is a milestone, never a story; a chain's quest after an
+  entry of the last four told one of it by the same people, `[thread]`, its
+  end `[thread settled]`: Knowledge.lua `chains`, one-to-one links, `ends`;
+  now and then a word on what it was, `d-react`: `[rescue]`, `[villain]`,
+  `[undead]`, `[demon]`, `[beast]`), deaths (`d-deaths`) or the closest
+  call, a dungeon and its end, a capital's first sight, a Skyborne's first
+  ground below the islands, players slain, a raid, a find, a pet lost; then
+  in the room left (`ROOM`, less one for each milestone): named foes
+  (`d-foes`), new lands (`d-land`), a lesson's own `[diary]` line or a new
+  way of fighting (`d-powers`), company, a trade, a ride, the first bag or
+  gold, the pet named again (`d-pet`); the small work (`d-chores`, never
+  counted) only when nothing else was; the ending a thought on a danger
+  (`d-close`: `[hard]`, `[near]`, `[delve]`), else the rest. Told in the
+  order it happened, two paragraphs from `PARAGRAPH` sentences; two of the
+  race's own lines an entry at most, the ending aside; `[!diary]` keeps out
+  a line that leans on a moment the diary doesn't tell; `luajit
+  addon/test/read.lua <saved file> diary` and the playthroughs' `*.diary.md`
+  show each entry beside its chapter),
   `Save.lua` (the book written into the saved file at each logout, each
   chapter with its diary entry, for the site: it never writes its own),
   `Book.lua` (the window: chapters on the left, the open one's diary entry on
-  the right, the chapter in full a click away; a second tab for the Hall of
-  the Fallen), `Hall.lua` (a Hardcore death: the
+  the right; a second tab for the Hall of the Fallen), `Hall.lua` (a Hardcore death: the
   book closed and copied to the account-wide Hall, a chat line, the toast),
   `Settings.lua` (account settings, the Options page), `Minimap.lua`.
 - `addon/CURSEFORGE.md`: the project page. `assets/logo-master.png` is the
@@ -438,8 +444,8 @@ Plan and steps: PLAN.md, "The site".
   crawlers on those pages get an OpenGraph card from the function
   (scripts/vercel-build.sh routes them by user agent; `/api/og/…` by hand).
   The web reader is one component (`components/Reader.tsx`, parts by address)
-  for my books, share links and the Hall; a chapter opens on its diary entry
-  (`BookChapter.diary`), the full chapter a click away.
+  for my books, share links and the Hall; a chapter reads as its diary entry
+  (`BookChapter.diary`; a book saved before entries were, its prose).
 - The companion, Ravenpost (`lib/companion.ts`, `lib/upload.ts`): pairing
   device-code style (`/api/companion/pair/start` → the user confirms on
   `/pair?code=…` → `/pair/poll` hands the token over once; only its hash is

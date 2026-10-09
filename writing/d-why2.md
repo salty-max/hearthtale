@@ -1,6 +1,6 @@
 ---
 kind: d-why2
 ---
-- Above everything else, I remember {why}, and after that, {why2}.
-- What mattered was {why}; after it came {why2}.
-- Of everything I did, what counted was {why}, and then {why2}.
+- I {why}, and later {why2}.
+- I {why}; after that, I {why2}.
+- First I {why}, and then I {why2}.

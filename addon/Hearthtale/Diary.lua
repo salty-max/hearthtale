@@ -27,18 +27,6 @@ local function homeOf(race, zone)
   return nil
 end
 
--- A people, as the diary says whom the work was for; mine, "my own people".
-local PEOPLE = {
-  Human = "the humans",
-  Dwarf = "the dwarves",
-  NightElf = "the night elves",
-  Gnome = "the gnomes",
-  Orc = "the orcs",
-  Troll = "the Darkspear",
-  Tauren = "the tauren",
-  Scourge = "the Forsaken",
-  Skyborne = "the shen'dorei",
-}
 -- A people's own city: never new country to them.
 local CAPITAL = {
   Human = "Stormwind City",
@@ -50,17 +38,36 @@ local CAPITAL = {
   Tauren = "Thunder Bluff",
   Scourge = "Undercity",
 }
-local FIRSTS = { demon = true, shift = true, tame = true, mount = true, riding = true, power = true }
-local POWERS = { demon = true, shift = true, tame = true, power = true, ["class-reward"] = true } -- (new powers, of those)
-local TRAVEL_FORMS = { travel = true, aquatic = true, flight = true } -- (no new way of fighting)
+local FIRSTS =
+  { demon = true, shift = true, tame = true, mount = true, riding = true, power = true, bag = true, gold = true }
+-- (how much each telling weighs: milestones and the story always told, then
+-- what happened that a life remembers, then what fills the room left)
+local MILESTONE = { demon = true, shift = true, tame = true, power = true, ["class-reward"] = true, initiation = true }
+local ROOM = 6 -- (an entry's sentences of the lesser kind, at most, less one for each milestone)
+local PARAGRAPH = 7 -- (an entry this long, or longer: two paragraphs)
+-- What a story was, for a word on it: a rescue, a villain's end, the dead, demons, a beast.
+local RESCUE = { escorted = true, freed = true, rescued = true, defended = true, saved = true, protected = true }
+local function SUBJECT(text, objectives, kinds)
+  local verb = text:match("^(%a+)")
+  if RESCUE[verb] or text:find("^helped %S+ escape") or text:find("^sneaked out") then return "rescue" end
+  local bare = ns.names and ns.names.creatureBare or {}
+  for _, o in ipairs(objectives or {}) do
+    if o.type == "monster" and o.name then
+      -- (its kind, from the kills recorded: the dead, demons, a beast of a name)
+      local kind = kinds[o.name]
+      if kind == "Undead" then return "undead" end
+      if kind == "Demon" then return "demon" end
+      if bare[o.name] and (o.n or 1) == 1 then return kind == "Beast" and "beast" or "villain" end
+    end
+  end
+  if (verb == "killed" or verb == "slew" or verb == "defeated") and text:find("^%a+ %u") then return "villain" end
+  return nil
+end
 local WAY_BACK = 1800 -- (a death and its way back: one sentence)
-local CHORES = 5 -- (the rest of the work told only if it was this much at least)
-local SENTENCES = 6 -- (an entry's length: the rest of the work, then the pet, left out beyond it)
 local PAIR = 190 -- (two climaxes in one sentence up to this length, else in two)
 local ZALAZANE = 826 -- (the quest that ends him: a Darkspear's hope fulfilled)
 local ZEPHRAS = "Zephras Isle" -- (the Skyborne's island: leaving it, a moment of a life)
 local LATE = 1e9 -- (the pet, the rest of the work and the ending: after all that happened)
-local PAID = { "bounty", "reward", "pay" } -- (a why that names them: no "for nothing")
 local DEMONS = { Imp = true, Voidwalker = true, Succubus = true, Felhunter = true, Felguard = true, Infernal = true }
 local PET_GAP = 4 -- (a pet named again: not in the entries just after)
 
@@ -87,6 +94,11 @@ local function gather(d, c, ch)
     spellAt = {},
     mateAt = {},
     dungeonAt = {},
+    pvp = {}, -- players of the other side slain, in the open
+    kinds = {}, -- [a creature killed] = its kind
+    finds = {}, -- loot of note (epic and above)
+    raids = {},
+    petdied = {},
   }
   local seenMate, seenSpell, seenDungeon, dungeon = {}, {}, {}, nil
   local bare = ns.names and ns.names.creatureBare or {}
@@ -171,10 +183,19 @@ local function gather(d, c, ch)
       table.insert(f.finals, { boss = m.name, dungeon = dungeon })
     end
     if m.k == "quest" and m.id == ZALAZANE then d.zalazane = true end
+    if m.k == "pvp" then table.insert(f.pvp, { m = m, i = i }) end
+    if m.k == "kill" and m.name and m.kind then f.kinds[m.name] = m.kind end
+    if m.k == "loot" and (m.quality or 0) >= 4 and m.link then table.insert(f.finds, { m = m, i = i }) end
+    if m.k == "group" and m.raid then table.insert(f.raids, { m = m, i = i }) end
+    if m.k == "petdied" and m.name then table.insert(f.petdied, { m = m, i = i }) end
     if m.k == "weapon" then d.book.weaponHeld = W.WEAPON_OF[m.weapon or -1] or d.book.weaponHeld end
     -- a class quest's reward (Knowledge.lua), a first of the life
+    -- (a shaman's initiation into an element: the quest that gives its totem)
     local reward = m.k == "quest" and m.id and ns.knowledge and ns.knowledge.quests[m.id]
-    if reward and reward.spell and reward.class == c.class then
+    if reward and reward.totem and reward.class == c.class then
+      table.insert(f.firsts, { k = "initiation", totem = reward.totem, m = m })
+      f.at[f.firsts[#f.firsts]] = i
+    elseif reward and reward.spell and reward.class == c.class then
       table.insert(f.firsts, { k = "class-reward", q = reward, m = m })
       f.at[f.firsts[#f.firsts]] = i
     end
@@ -215,6 +236,16 @@ local function gather(d, c, ch)
     end
   end
   f.main = main
+  -- (a summoning taught and the demon called the same stretch: one moment,
+  -- the demon by its name)
+  local called = {}
+  for _, m in ipairs(f.firsts) do
+    if m.k == "demon" and m.family then called["Summon " .. m.family] = true end
+  end
+  for k = #f.firsts, 1, -1 do
+    local m = f.firsts[k]
+    if m.k == "class-reward" and called[m.q.spell] then table.remove(f.firsts, k) end
+  end
   for _, foe in ipairs(f.foes) do
     if foe.n then -- (an elite kind: several, its plural)
       foe.plural = foe.n > 1
@@ -222,36 +253,6 @@ local function gather(d, c, ch)
     end
   end
   return f
-end
-
--- Whom the rest of the work was for: the people of all its tasks
--- (Knowledge.lua; a task whose giver is unknown counts for no one): "the
--- jobs for the humans" says every one; mine as "my own people", unless at
--- home.
-local function workedFor(f, skip, race, home, story)
-  local npcs, count, total = ns.knowledge and ns.knowledge.npcs or {}, {}, 0
-  for id, w in pairs(f.work) do
-    if not skip[id] then
-      total = total + 1
-      local who = w.giver and npcs[w.giver] and npcs[w.giver].people
-      if not who and w.zone == "Zephras Isle" then who = "Skyborne" end -- (Forever's islanders)
-      if who then count[who] = (count[who] or 0) + 1 end
-    end
-  end
-  for who, k in pairs(count) do
-    if k == total then
-      local people = who == race and (not home and "my own people" or nil) or PEOPLE[who]
-      -- (not when the story just named them: "for the Forsaken" twice)
-      for _, q in ipairs(story or {}) do
-        local text = ours(q.text, race)
-        if people and (text:find(people, 1, true) or (who == race and text:find("my people", 1, true))) then
-          return nil
-        end
-      end
-      return people
-    end
-  end
-  return nil
 end
 
 -- The stretch's story: the quests whose work weighed most (writing/why/:
@@ -264,6 +265,9 @@ local function storyOf(d, ch, f, thin)
   local race = d.c.race or "Human"
   for i, m in ipairs(ch.log or {}) do
     local why = m.id and whys[m.id]
+    -- (a class's own quest is told by what it gave, a milestone, not as a story)
+    local classed = m.id and ns.knowledge and ns.knowledge.quests[m.id]
+    if classed and classed.class == d.c.class then why = nil end
     if why and (m.k == "quest" or m.k == "done") and not m.abandoned and not seen[m.id] and not d.storied[m.id] then
       seen[m.id] = true
       local w = f.work[m.id] or {}
@@ -305,7 +309,14 @@ do
   COMMON[w] = true
 end
 
--- One chapter's entry.
+-- One chapter's entry. What it tells, by what weighs most: the milestones of
+-- a life (a first demon of its kind, a form, a companion, an element's
+-- favour, a class's reward) and the stretch's story, always, then deaths
+-- and the closest call, a dungeon, a first sight, a fight with players, a
+-- find; then, in the room left, the foes worth naming, new lands, lessons,
+-- company, the pet; the small work only when nothing else was; an ending on
+-- a danger's thought, else the rest. Told in the order it happened, two
+-- paragraphs when it runs long.
 local function entry(d, n, ch)
   local b, c = d.book, d.c
   local race = c.race or "Human"
@@ -313,13 +324,15 @@ local function entry(d, n, ch)
   if start.zone then d.lands[start.zone] = true end -- (where it began is no new country)
   local f = gather(d, c, ch)
   local level = (e and e.level) or start.level or 1
-  local out, events, owned = {}, 0, 0
+  local out, events, owned, lesser = {}, 0, 0, 0
   -- (at: where in the stretch it happened, the entry told in that order)
   local function add(text, event, when)
     if text and text ~= "" then
       out[#out + 1] = { text = text, at = when or LATE, seq = #out + 1 }
       if event then events = events + 1 end
+      return true
     end
+    return false
   end
   local function tags(t, zone)
     t = t or {}
@@ -337,19 +350,10 @@ local function entry(d, n, ch)
     if said and said.own then owned = owned + 1 end
     return text
   end
-  -- (a line the chapter under it, or the one before, says word for word:
-  -- another, up to three times, else none; a story frame led by its place:
-  -- not one that opens with a phrase of its own)
+  -- (not a word of its own the entry used already, "sympathy" twice: a line
+  -- that does only if no other will; the chapter, a record no longer read,
+  -- only says whether a new spell was put to use)
   local near = d.written and ((d.written[n] or "") .. "\n" .. (d.written[n - 1] or "")) or ""
-  local function fresh(text)
-    for sentence in text:gmatch("[^.!?;]+[.!?;]?") do
-      sentence = sentence:gsub("^%s+", "")
-      if #sentence > 24 and near:find(sentence, 1, true) then return false end
-    end
-    return true
-  end
-  -- (nor a word of its own the entry used already, "sympathy" twice: a line
-  -- that does, only if no other will)
   local function echoes(text, values)
     local own = {}
     for _, v in pairs(values or {}) do
@@ -372,7 +376,7 @@ local function entry(d, n, ch)
       local before = owned
       local text = say(kind, k == 1 and key or key .. k, values, t, zone, prefer)
       if not text then return fallback end
-      if fresh(text) and (not ok or ok(text)) then
+      if not ok or ok(text) then
         if not echoes(text, values) then return text end
         if not fallback then
           fallback, kept = text, owned
@@ -395,7 +399,7 @@ local function entry(d, n, ch)
   end
 
   -- where it began, in the race's voice (a life's first page: its land,
-  -- too); every other entry that goes on where the last one rested, its
+  -- too); one entry in three that goes on where the last one rested, its
   -- story leads instead, named by its place
   b.last, b.there = nil, false
   local where = start.sub or start.zone
@@ -420,52 +424,83 @@ local function entry(d, n, ch)
       false,
       -2
     )
-    if first then
-      local scenery = b:sceneryOf(start.zone, start.night)
-      if scenery and not near:find(scenery, 1, true) then add(scenery, false, -1) end
-    end
+    if first then add(b:sceneryOf(start.zone, start.night), false, -1) end
     b.last, b.there = where, false
     -- (a story elsewhere than where the entry began: led by its own place)
     if leads and storyZone ~= start.zone then lead = at(storyZone) end
   end
+  b.last = nil -- (told in the order things happened: a place is named, never "there")
 
-  -- the story of the stretch: what the work that mattered was for; a
-  -- chain's quest when an earlier entry told one of it, the business taken
-  -- up again (Knowledge.lua: chains), or finished
+  -- the milestones of a life, every one: a demon (by its name; one taught
+  -- before, its summoning put to use at last), a form, a companion (the first,
+  -- or another), an element's favour, a class's reward, a power
+  local milestones = 0
+  for k, m in ipairs(f.firsts) do
+    local key, text = "first" .. k, nil
+    if m.k == "demon" then
+      local family = (m.family or ""):lower()
+      local known = d.summoned[family] and true or nil
+      text = sayFresh(
+        "demon",
+        key,
+        { pet = m.name, demon = article(family) },
+        { [family] = true, known = known },
+        nil,
+        known and { known = true } or { [family] = true }
+      )
+    elseif m.k == "shift" then
+      text = sayFresh("shift", key, {}, { [m.form or ""] = true }, nil, { [m.form or ""] = true })
+    elseif m.k == "power" then
+      text = sayFresh("power", key, { spell = m.spell }, { [m.kind or "form"] = true })
+    elseif m.k == "tame" then
+      text = sayFresh(
+        "d-tame",
+        key,
+        { pet = m.name, family = m.family and article(m.family:lower()) },
+        { first = not d.tamed or nil },
+        nil,
+        m.family and { first = not d.tamed or nil } or nil
+      )
+      d.tamed = true
+    elseif m.k == "initiation" then
+      text = sayFresh("d-initiation", key, {}, { [m.totem] = true }, nil, { [m.totem] = true })
+    elseif m.k == "class-reward" then
+      local family = m.q.spell:match("^Summon (.+)$")
+      local t = { summon = family and true or nil }
+      if family then
+        t[family:lower()] = true
+        d.summoned[family:lower()] = n -- (its first summoning, later: by the demon's name)
+      end
+      text = sayFresh("class-reward", key, {
+        giver = m.m.ender or m.m.giver,
+        spell = m.q.spell,
+        pet = family and article(family:lower()),
+      }, t)
+    end
+    if text then
+      add(text, true, f.at[m])
+      milestones = milestones + 1
+      if m.k == "tame" or m.k == "demon" then d.pets[m.name] = { said = n } end -- (named: met)
+    end
+  end
+
+  -- the story of the stretch: the deed that mattered, told as done ("I
+  -- killed Hogger, …"); a chain's quest after a recent entry told one of it
+  -- by the same people, the business taken up again, or finished; a second
+  -- climax in the same sentence when both are short, else its own; and, now
+  -- and then, a word on what it was (a rescue, a villain's end, the dead)
   local chains, ends = ns.knowledge and ns.knowledge.chains or {}, ns.knowledge and ns.knowledge.ends or {}
-  local also -- (a second climax too long to share the sentence: its own)
+  local also
   if #story > 0 then
     local text
     local why = ours(story[1].text, race)
-    -- (led by its place: a frame that begins with a phrase of its own takes no lead)
-    local function plain(said)
-      local pos = said:find(why, 1, true)
-      return not lead or not pos or not said:sub(1, pos - 1):find(",")
-    end
-    -- (a climax's frames for a climax; "for nothing" not for a bounty)
-    local paid = false
-    for _, word in ipairs(PAID) do
-      if story[1].text:find("%f[%a]" .. word) then paid = true end
-    end
     local sameVerb = story[2] and story[1].text:match("^(%S+)") == story[2].text:match("^(%S+)")
     if #story == 2 and #story[1].text + #story[2].text <= PAIR and not sameVerb then
-      text = sayFresh(
-        "d-why2",
-        "why",
-        { why = why, why2 = ours(story[2].text, race) },
-        { w3 = true, paid = paid or nil },
-        nil,
-        nil,
-        plain
-      )
+      text = sayFresh("d-why2", "why", { why = why, why2 = ours(story[2].text, race) }, {})
     else
       also = story[2]
       local q = story[1]
       local root = chains[q.id]
-      -- (a chain told in the last few entries, by the same people: the one
-      -- who gave or took back the quest told then gives this one; further
-      -- back, or by others, the reader has lost the thread; its last quest,
-      -- the business finished)
       local before = root and d.threads[root]
       local w = f.work[q.id] or {}
       local thread = before
@@ -474,21 +509,22 @@ local function entry(d, n, ch)
         and w.giver
         and (w.giver == before.giver or w.giver == before.ender)
       local t = thread and { thread = true, settled = ends[q.id] or nil } or {}
-      t.w3, t.paid = q.w == 3 or nil, paid or nil
-      -- (the race's own frames every other entry: a voice, not a mannerism)
-      if not thread and n % 2 == 0 then t._shared = true end
       local prefer = thread and (t.settled and { settled = true } or { thread = true }) or nil
-      text = sayFresh("d-why", "why", { why = why }, t, nil, prefer, plain)
+      text = sayFresh("d-why", "why", { why = why }, t, nil, prefer)
     end
     if text and lead then
-      -- ("I" stays a capital after the place: "In Loch Modan, I will not soon forget …")
+      -- ("I" stays a capital after the place: "In Loch Modan, I killed …")
       local rest = text:find("^I[ ']") and text or lowerFirst(text)
       text = lead:gsub("^%l", string.upper) .. ", " .. rest
     end
-    add(text, true, story[1].i)
+    local told = add(text, true, story[1].i)
     if also then add(say("d-why-also", "also", { why = ours(also.text, race) }, {}), false, also.i) end
+    -- (what it was, a word on it: one entry in two, a climax always)
+    local subject = told and SUBJECT(story[1].text, (f.work[story[1].id] or {}).objectives, f.kinds)
+    if subject and (story[1].w == 3 or n % 2 == 0) and milestones < 2 then
+      add(sayFresh("d-react", "react", {}, { [subject] = true }, nil, { [subject] = true }), false, story[1].i + 0.5)
+    end
   end
-
   for _, q in ipairs(story) do
     d.storied[q.id] = true -- (its work done here, its return in the next: told once)
     local root = chains[q.id]
@@ -502,7 +538,6 @@ local function entry(d, n, ch)
   for _, m in ipairs(f.closes) do
     if m.foe then dangerFoes[m.foe] = true end
   end
-  b.last = nil -- (told in the order things happened: a place is named, never "there")
   if #f.deaths == 1 then
     local death = f.deaths[1]
     local m, r = death.m, death.back
@@ -552,47 +587,7 @@ local function entry(d, n, ch)
     )
   end
 
-  -- the foes worth naming: a rare, a named foe a quest sent me after, then
-  -- elites; never one the story's work was about, one that killed me, nor
-  -- one named before in the diary; a hard fight only one the record says
-  -- nearly killed me
-  local storyFoes = {}
-  for _, q in ipairs(story) do
-    for _, o in ipairs((f.work[q.id] or {}).objectives or {}) do
-      if o.name then storyFoes[o.name] = true end
-    end
-  end
-  table.sort(f.foes, function(x, y) return x.rank < y.rank end)
-  local foes, hard, seen, many, foeAt = {}, false, {}, false, nil
-  for _, foe in ipairs(f.foes) do
-    local inText = false
-    for _, q in ipairs(story) do
-      if q.text:find(foe.name, 1, true) then inText = true end
-    end
-    local skip = inText or storyFoes[foe.name] or deathFoes[foe.name] or d.toldFoes[foe.name] or seen[foe.name]
-    if not skip and #foes < 3 then
-      seen[foe.name], d.toldFoes[foe.name] = true, true
-      table.insert(foes, foe.shown or foe.name)
-      if foe.plural then many = true end
-      foeAt = math.min(foeAt or foe.i or LATE, foe.i or LATE)
-      if dangerFoes[foe.name] then hard = true end
-    end
-  end
-  if #foes > 0 then
-    add(
-      say("d-foes", "foes", { foes = listing(foes) }, {
-        -- (one foe in name and number: "Pyrewood Sentries" are no "one")
-        one = (#foes == 1 and not many) or nil,
-        two = #foes == 2 or nil,
-        plural = many or nil, -- (an elite kind among them: no "both fights")
-        hard = hard or nil,
-      }),
-      true,
-      foeAt
-    )
-  end
-
-  -- a dungeon, and its end; else company
+  -- a dungeon, and its end
   local below = f.dungeons[1]
   if below then
     add(
@@ -608,19 +603,7 @@ local function entry(d, n, ch)
         f.dungeonAt[below] + 0.5
       )
     end
-  elseif #mates > 0 then
-    local again = true
-    for _, mate in ipairs(mates) do
-      if not d.mates[mate] then again = false end
-      d.mates[mate] = true
-    end
-    add(
-      say("d-company", "company", { mates = listing(mates) }, { one = #mates == 1 or nil, again = again or nil }),
-      false,
-      f.mateAt[mates[1]]
-    )
   end
-
   -- my people's city, its first sight (or our hosts', for those taken in)
   if f.capital then
     local kind = homeOf(race, f.capital.zone)
@@ -650,6 +633,111 @@ local function entry(d, n, ch)
       f.away.i
     )
   end
+  -- a fight with players of the other side, in the open (one by name, or several)
+  if #f.pvp > 0 then
+    local m = f.pvp[1].m
+    if #f.pvp == 1 and m.name then
+      local who = (W.RACE_NAME[m.race or ""] or "")
+        .. (W.CLASS_NAME[m.class or ""] and " " .. W.CLASS_NAME[m.class] or "")
+      who = who:gsub("^ ", "")
+      add(
+        sayFresh(
+          "pvp-one",
+          "pvp",
+          b:here({ name = m.first or m.name, who = who ~= "" and article(who) or nil }, m.sub or m.zone),
+          { known = who ~= "" or nil },
+          m.zone
+        ),
+        true,
+        f.pvp[1].i
+      )
+    else
+      local horde = 0
+      for _, x in ipairs(f.pvp) do
+        if W.HORDE_RACE[x.m.race or ""] then horde = horde + 1 end
+      end
+      add(
+        sayFresh(
+          "pvp-many",
+          "pvp",
+          b:here({ n = words(#f.pvp), side = horde * 2 >= #f.pvp and "the Horde" or "the Alliance" }, m.sub or m.zone),
+          {},
+          m.zone
+        ),
+        true,
+        f.pvp[1].i
+      )
+    end
+  end
+  -- a raid; a find of note; a pet lost
+  if #f.raids > 0 then
+    local clause = b:say("c-raid", n .. "|diary|raid", { n = words(f.raids[1].m.raid) }, tags({}), nil, true)
+    add(clause and ("I " .. clause .. "."), true, f.raids[1].i)
+  end
+  for k, x in ipairs(f.finds) do
+    if k > 1 then break end
+    local item = x.m.link:match("%[(.-)%]")
+    local clause = item
+      and b:say("c-loot", n .. "|diary|find", { item = W.itemName(item) }, tags({ fine = true }), nil, true)
+    add(clause and ("I " .. clause .. "."), true, x.i)
+  end
+  for _, x in ipairs(f.petdied) do
+    add(sayFresh("petdied", "petdied", b:here({ pet = x.m.name }, x.m.sub or x.m.zone), {}, x.m.zone), true, x.i)
+  end
+
+  -- in the room left (less for each milestone, never none): the foes worth
+  -- naming, new lands, lessons and new ways of fighting, company, a trade
+  -- taken up, a ride, the first bag or gold, the pet named again
+  local room = math.max(1, ROOM - #out - milestones)
+  local function more(text, event, when)
+    if lesser >= room then return false end
+    if add(text, event, when) then
+      lesser = lesser + 1
+      return true
+    end
+    return false
+  end
+
+  -- the foes worth naming: a rare, a named foe a quest sent me after, then
+  -- elites; never one the story's work was about, one that killed me, nor
+  -- one named before in the diary; a hard fight only one the record says
+  -- nearly killed me
+  local storyFoes = {}
+  for _, q in ipairs(story) do
+    for _, o in ipairs((f.work[q.id] or {}).objectives or {}) do
+      if o.name then storyFoes[o.name] = true end
+    end
+  end
+  table.sort(f.foes, function(x, y) return x.rank < y.rank end)
+  local foes, hard, seen, many, foeAt = {}, false, {}, false, nil
+  for _, foe in ipairs(f.foes) do
+    local inText = false
+    for _, q in ipairs(story) do
+      if q.text:find(foe.name, 1, true) then inText = true end
+    end
+    local skip = inText or storyFoes[foe.name] or deathFoes[foe.name] or d.toldFoes[foe.name] or seen[foe.name]
+    if not skip and #foes < 3 then
+      seen[foe.name], d.toldFoes[foe.name] = true, true
+      table.insert(foes, foe.shown or foe.name)
+      if foe.plural then many = true end
+      foeAt = math.min(foeAt or foe.i or LATE, foe.i or LATE)
+      if dangerFoes[foe.name] then hard = true end
+    end
+  end
+  if #foes > 0 then
+    more(
+      sayFresh("d-foes", "foes", { foes = listing(foes) }, {
+        -- (one foe in name and number: "Pyrewood Sentries" are no "one")
+        one = (#foes == 1 and not many) or nil,
+        two = #foes == 2 or nil,
+        plural = many or nil, -- (an elite kind among them: no "both fights")
+        hard = hard or nil,
+      }),
+      true,
+      foeAt
+    )
+  end
+
   -- new country: lands strange to my people, else theirs, else our hosts'
   local strange, homes, hosted = {}, {}, {}
   for _, zone in ipairs(f.lands) do
@@ -668,8 +756,8 @@ local function entry(d, n, ch)
     named[k] = mid(lands[k])
   end
   if #named > 0 then
-    add(
-      say("d-land", "land", { lands = listing(named) }, {
+    more(
+      sayFresh("d-land", "land", { lands = listing(named) }, {
         one = #named == 1 or nil,
         home = landTag == "home" or false,
         hosts = landTag == "hosts" or nil,
@@ -679,11 +767,9 @@ local function entry(d, n, ch)
     )
   end
 
-  -- what I can do now: a power of note (a spell with a line of its own,
-  -- two an entry at most, in the entry it was learned; a demon, a form, a
-  -- pet, a class quest's reward, a trade, a mount); a trainer's list only for
-  -- a new way of fighting (a noted spell's way is no news after it); two
-  -- power sentences at most
+  -- what I can do now: a spell with a line of its own (two at most, in the
+  -- entry it was learned), else a new way of fighting (a noted spell's way is
+  -- no news after it)
   local fighting, notes, newWay = {}, {}, false
   for _, sp in ipairs(f.spells) do
     local way = ELEMENT[sp]
@@ -696,69 +782,21 @@ local function entry(d, n, ch)
       table.insert(fighting, sp)
     end
   end
-  local powers = 0
-  for _, note in ipairs(notes) do
-    add(
-      say("lesson", "lesson" .. powers, { spell = note }, { ["spell:" .. note:gsub(" ", "_")] = true }),
+  for k, note in ipairs(notes) do
+    more(
+      say("lesson", "lesson" .. k, { spell = note }, { ["spell:" .. note:gsub(" ", "_")] = true }),
       false,
       f.spellAt[note]
     )
-    powers = powers + 1
   end
-  for k, m in ipairs(f.firsts) do
-    if powers >= 2 then break end
-    local key = "first" .. k
-    local text
-    if m.k == "demon" then
-      local family = (m.family or ""):lower()
-      text = sayFresh(
-        "demon",
-        key,
-        { pet = m.name, demon = article(family) },
-        { [family] = true },
-        nil,
-        { [family] = true }
-      )
-    elseif m.k == "shift" then
-      text = sayFresh("shift", key, {}, { [m.form or ""] = true }, nil, { [m.form or ""] = true })
-    elseif m.k == "power" then
-      text = sayFresh("power", key, { spell = m.spell }, { [m.kind or "form"] = true })
-    elseif m.k == "class-reward" then
-      local family = m.q.spell:match("^Summon (.+)$")
-      local t = { summon = family and true or nil }
-      if family then t[family:lower()] = true end
-      text = sayFresh("class-reward", key, {
-        giver = m.m.ender or m.m.giver,
-        spell = m.q.spell,
-        pet = family and article(family:lower()),
-      }, t)
-    elseif m.k == "prof" or m.k == "tame" then
-      local values = m.k == "prof" and { prof = m.name:lower() }
-        or { pet = m.name, family = m.family and article(m.family:lower()) }
-      local t = tags(m.k == "prof" and { new = true, one = true } or {})
-      for try = 1, 4 do
-        local clause = b:say("c-" .. m.k, n .. "|diary|" .. key .. (try > 1 and try or ""), values, t, nil, true)
-        text = clause and ("I " .. clause .. ".")
-        if not text or fresh(text) then break end
-        text = nil
-      end
-    else
-      text = sayFresh(m.k, key, {}, {})
-    end
-    if text then
-      add(text, false, f.at[m])
-      powers = powers + 1
-      if m.k == "tame" or m.k == "demon" then d.pets[m.name] = { said = n } end -- (named: met)
-    end
-  end
-  if newWay and powers < 2 then
+  if newWay and #notes == 0 then
     local spells = {}
     for k = 1, math.min(#fighting, 3) do
       spells[k] = fighting[k]
     end
     -- (put to use already in its chapter, "tried my new Frostbolt": said so)
     local used = near:find("my new " .. spells[1], 1, true) or near:find(spells[1] .. " to its first real use", 1, true)
-    add(
+    more(
       say(
         "d-powers",
         "powers",
@@ -770,9 +808,47 @@ local function entry(d, n, ch)
     )
   end
 
+  -- company (not when the dungeon told it)
+  if not below and #mates > 0 then
+    local again = true
+    for _, mate in ipairs(mates) do
+      if not d.mates[mate] then again = false end
+      d.mates[mate] = true
+    end
+    more(
+      say("d-company", "company", { mates = listing(mates) }, { one = #mates == 1 or nil, again = again or nil }),
+      false,
+      f.mateAt[mates[1]]
+    )
+  end
+
+  -- the lesser firsts: a trade taken up, a ride, the first bag, the first gold
+  for k, m in ipairs(f.firsts) do
+    if not MILESTONE[m.k] then
+      local key, text = "small" .. k, nil
+      if m.k == "prof" then
+        for try = 1, 4 do
+          local clause = b:say(
+            "c-prof",
+            n .. "|diary|" .. key .. (try > 1 and try or ""),
+            { prof = m.name:lower() },
+            tags({ new = true, one = true }),
+            nil,
+            true
+          )
+          text = clause and ("I " .. clause .. ".")
+          if text then break end
+        end
+      else
+        text = sayFresh(m.k, key, {}, { looted = m.looted or nil })
+      end
+      more(text, false, f.at[m])
+    end
+  end
+
   -- the pet at my side through most of the work, named again (one an
   -- earlier entry met), not in the entries just after (four to six), nor
-  -- beside a new one, nor in a full entry
+  -- beside a new one
   local pet, most = nil, 0
   for name, k in pairs(f.pets) do
     if k > most or (k == most and pet and name < pet) then
@@ -784,74 +860,40 @@ local function entry(d, n, ch)
   end
   local known = pet and d.pets[pet]
   local gap = PET_GAP + (pet and #pet or 0) % 3
-  if known and most >= 3 and most * 2 >= f.done and n - (known.said or 0) >= gap and #out < SENTENCES - 1 then
+  if known and most >= 3 and most * 2 >= f.done and n - (known.said or 0) >= gap then
     -- ("as ever" once it has been named so)
-    add(
-      sayFresh("d-pet", "pet", { pet = pet }, { demon = f.demons[pet] or nil, again = known.said and true or nil }),
-      false,
-      LATE + 1
-    )
-    known.said = n
+    if
+      more(
+        sayFresh("d-pet", "pet", { pet = pet }, { demon = f.demons[pet] or nil, again = known.said and true or nil }),
+        false,
+        LATE + 1
+      )
+    then
+      known.said = n
+    end
   end
   for name in pairs(f.pets) do
     d.pets[name] = d.pets[name] or {}
   end
 
-  -- the rest of the work, in one sentence, when there was enough of it and
-  -- the entry is thin (one thing told besides, or two every other entry;
-  -- "the rest", "besides": after something), and not full
+  -- the small work, only when nothing else was told
   local rest = (ch.quests or 0) - #story
-  local thinEnough = events <= 1 or (events == 2 and n % 2 == 0)
-  if rest >= CHORES and thinEnough and #out < SENTENCES - 1 then
-    add(
-      sayFresh("d-chores", "chores", {
-        n = words(rest),
-        people = workedFor(f, inStory, race, homeOf(race, f.main) == "home", story),
-      }, {
-        lots = rest >= 10 or nil,
-        also = events > 0 or nil,
-        much = events > 1 or nil,
-        hosts = homeOf(race, f.main) == "hosts" or nil, -- (our hosts' land, a Darkspear's Durotar)
-      }),
-      false,
-      LATE + 2
-    )
-  end
+  if rest >= 3 and events == 0 and #out <= 2 then add(sayFresh("d-chores", "chores", {}, {}), false, LATE + 2) end
 
-  local powerful = newWay
-  for _, m in ipairs(f.firsts) do
-    if POWERS[m.k] and not (m.k == "shift" and TRAVEL_FORMS[m.form or ""]) then powerful = true end
-  end
-  -- how it ends (not after a Hardcore death: the epitaph has the last word)
+  -- how it ends (not after a Hardcore death: the epitaph has the last word):
+  -- a thought on a danger (a death, a near thing, a dungeon), else the rest
   if e and e.how ~= "death" then
     local shape = {
       hard = #f.deaths > 0 or nil,
       near = (#f.deaths == 0 and #f.closes > 0) or nil,
-      found = #strange > 0 or nil, -- (a land of my own people's is no new country)
-      learned = powerful or nil, -- (a new way of fighting or a power, not a lesson's utility)
       delve = below ~= nil or nil,
-      grouped = #f.mates > 0 or nil,
-      fought = #foes > 0 or nil,
     }
-    shape.quiet = not (shape.hard or shape.near or shape.found or shape.learned or shape.delve or shape.fought)
-        and #story == 0
-      or nil
-    -- the thought, when the stretch gave something to think on (a death
-    -- before a close call, a dungeon, new country, a new power, company);
-    -- else, the rest it ended with, in the race's voice
-    -- (new country's thought every other time: its land was just told)
-    if shape.found then d.found = (d.found or 0) + 1 end
     local prefer
-    for _, k in ipairs({ "hard", "near", "delve", "found", "learned", "grouped", "fought" }) do
-      if shape[k] and not (k == "found" and d.found % 2 == 0) then
+    for _, k in ipairs({ "hard", "near", "delve" }) do
+      if shape[k] then
         prefer = { [k] = true }
         break
       end
-    end
-    -- (a stretch of nothing but small work: its thought every other time)
-    if not prefer and shape.quiet then
-      d.quiet = (d.quiet or 0) + 1
-      if d.quiet % 2 == 1 then prefer = { quiet = true } end
     end
     owned = math.min(owned, 1) -- (the ending may always be the race's own)
     if prefer then
@@ -893,11 +935,13 @@ local function entry(d, n, ch)
     if x.at ~= y.at then return x.at < y.at end
     return x.seq < y.seq
   end)
-  local texts = {}
+  -- (a long entry in two paragraphs, at the middle: what happened, then the rest)
+  local texts, split = {}, #out >= PARAGRAPH and math.ceil(#out / 2) or nil
   for k, o in ipairs(out) do
-    texts[k] = o.text
+    texts[#texts + 1] = o.text
+    if k == split then texts[#texts + 1] = "\n\n" end
   end
-  return table.concat(texts, " ")
+  return (table.concat(texts, " "):gsub(" \n\n ", "\n\n"))
 end
 
 -- The diary of a character: { entries = { { number, text, from, to, place, open } } };
@@ -920,6 +964,7 @@ function ns.writeDiary(c, w)
     storied = {}, -- [quest id]: its story told
     threads = {}, -- [a chain's first quest] = { n, giver, ender }: the last entry that told one of it
     pets = {}, -- [name] = { said = the last entry that named it }: a pet met before
+    summoned = {}, -- [a demon's kind] = the entry a class quest taught its summoning
   }
   d.book.ownGap = 18 -- (one line a kind an entry: the race's own come back later than a chapter's)
   for _, way in ipairs(CLASS_FIGHT[c.class or ""] or {}) do

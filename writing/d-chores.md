@@ -1,24 +1,8 @@
 ---
 kind: d-chores
 ---
-- [also] The rest was ordinary work, {n} tasks of it, for {people}.
-- [!also] Most of my time went on smaller jobs for {people}, {n} of them.
-- [also much] Between all that, I saw to {n} tasks for {people}, none of them much on their own.
-- [also] I ran {n} errands for {people} besides.
-- [also] The rest was {n} small jobs, the kind that teach you every path in a place.
-- [!also] I saw {n} tasks through, most of them too small to dwell on.
-- [also] {n} tasks filled the gaps between, most of them for {people}.
-- [also] The rest of it was errands, {n} in all, and I did them as well as I could.
-- [!also] I did {n} jobs for {people}, small ones mostly, and every one of them needed doing.
-- [!also] My time went on {n} ordinary tasks, the kind nobody makes songs about.
-- [!also] It came to {n} tasks of plain, useful work, most of them for {people}.
-- [also] Around all that, there were {n} smaller jobs, and I saw each of them through.
-- [also] Besides that, I worked through {n} smaller tasks, one after another.
-- [also] In between I saw to {n} errands, small ones that still needed doing.
-- [also] The hours left over went on {n} small jobs, each finished before the next began.
-- [also much] There was still room for {n} lesser jobs around all of that.
-- [also lots] On top of it all came {n} small jobs, enough to keep my hands busy whenever nothing larger called.
-- [!also] Most of it was ordinary work, {n} tasks of it, done one after another.
-- [!also lots] I worked my way through {n} tasks, none of them large, and the sheer number of them was the hardest part.
-- [!also] It was a stretch of plain work, {n} tasks in all, with little to set one apart from the next.
-- [also] Alongside that, {n} smaller tasks came my way, and none of them went undone.
+- The rest of it was small work, the kind every place has more of than hands for.
+- Otherwise it was errands, one after another, none worth a page of its own.
+- I spent the stretch on smaller jobs, and was glad enough of the plain work.
+- Small jobs filled the stretch, and I saw them through without much to tell.
+- It was a stretch of errands, useful and forgettable in about equal measure.

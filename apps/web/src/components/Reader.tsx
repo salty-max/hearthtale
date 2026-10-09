@@ -10,9 +10,9 @@ import { readerClasses, useSettings } from "@/lib/settings";
 import { CLASS_COLOURS } from "@/lib/wow";
 
 /**
- * The reader: one part of a book on its page (the prologue, a chapter or the
- * epitaph), the contents in a drawer, the previous and next parts below. A
- * chapter opens on its diary entry, the full chapter a click away.
+ * The reader: one part of a book on its page (the prologue, a chapter as its
+ * diary entry, or the epitaph), the contents in a drawer, the previous and
+ * next parts below.
  * Wherever the book comes from (my library, a share link, the Hall): `hrefFor`
  * gives each part's address, `actions` sit in the toolbar.
  */
@@ -31,8 +31,6 @@ export function Reader({
 }) {
   const t = useT();
   const [contents, setContents] = useState(false);
-  // (the part read in full: another part opens on its diary entry again)
-  const [fullPart, setFullPart] = useState<string | null>(null);
   const settings = useSettings();
   const all = parts(book);
   const at = all.findIndex((p) => p.key === part);
@@ -43,9 +41,8 @@ export function Reader({
   const several = all.length > 1;
   const ch = here.kind === "chapter" ? book.chapters.find((c) => c.number === here.number) : undefined;
   const title = here.kind === "prologue" ? t.book.prologue : here.kind === "epitaph" ? t.book.epitaph : t.book.chapter(here.number);
-  const diary = ch?.diary;
-  const full = !diary || fullPart === part;
-  const text = here.kind === "prologue" ? book.prologue : here.kind === "epitaph" ? book.epitaph : full ? ch?.text : diary;
+  // (a chapter as its diary entry; a book saved before entries were, its prose)
+  const text = here.kind === "prologue" ? book.prologue : here.kind === "epitaph" ? book.epitaph : (ch?.diary ?? ch?.text);
   // "Anvilmar · levels 1 to 4", or "levels 7 to 9 · still being written"
   const sub = ch
     ? [
@@ -83,18 +80,10 @@ export function Reader({
       )}
       {/* The page stays still; only its text scrolls (a new part starts at its top). */}
       <article className={`${cls.page} mt-3 flex min-h-0 flex-1 flex-col overflow-hidden rounded-md`}>
-        <div key={full ? `${part}:full` : part} className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-6 py-8 sm:px-12 sm:py-10">
+        <div key={part} className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-6 py-8 sm:px-12 sm:py-10">
           <header className="text-center">
             <h1 className={here.kind === "epitaph" ? `title text-3xl ${fallenColour}` : "title page-title text-3xl"}>{title}</h1>
             {sub && <p className="page-faded mt-1 italic">{sub}</p>}
-            {diary && (
-              <button
-                onClick={() => setFullPart(full ? null : part)}
-                className="page-faded mt-2 text-sm underline decoration-dotted underline-offset-4 hover:text-[var(--page-title)]"
-              >
-                {full ? t.book.diaryEntry : t.book.fullChapter}
-              </button>
-            )}
           </header>
           <div className={`mt-6 space-y-4 ${cls.text} ${here.kind === "epitaph" ? "text-center italic" : ""}`}>
             {paragraphs(text).length === 0 && <p className="page-faded italic">{t.book.nothingYet}</p>}
