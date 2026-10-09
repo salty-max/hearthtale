@@ -6,7 +6,7 @@ kind: r-task
 - the kind of work that keeps a village fed
 - a favour with all the trouble I needed for one day
 - my generosity due for a quiet spell
-- [explore] reading the ground the way the trackers of the isles taught
+- [explore] noting every place that could hide a raptor, whether or not the country had any
 - [explore] fresh country, every bush of it a possible ambush
 - [escort] unwilling to lead another life where my luck would not reach
 - [night] the dark keeping my vigilance usefully occupied

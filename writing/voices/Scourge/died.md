@@ -10,4 +10,4 @@ kind: died
 - [lava] Fire killed me {at}, without pausing to ask whether I counted as living fuel.
 - [nature] I died {at}; the world had found a way to kill me without even supplying an enemy to resent.
 - [foe] {foe} killed me {at}, and I regretted giving anyone else the last word over my remains.
-- I died {at}, with far more attachment to this decaying body than I had liked to admit.
+- I died {at}, and dying again was no easier to accept than I imagined the first time had been.

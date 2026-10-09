@@ -4,9 +4,9 @@ kind: r-item
 - [one !plural] no desire to keep it from whoever needed it
 - [one !plural] my care for the living things around me no reason to hurry
 - my fingers gentler now they had something to carry
-- [!one !plural] each piece gathered with care and none of them crushed
-- [!one !plural] each find another reason to miss the ease of the forest
-- [one !plural] the length of the search taking its toll on my patience
+- [plant !one !plural] each piece gathered with care and none of them crushed
+- [!one !plural] each one sought out by eyes better suited to moonlight
+- [one !plural] hidden well enough to have fooled anyone in a greater hurry
 - [one !plural] the find bringing a little satisfaction to a weary search
 - [meat] no part of it wasted, as the old ways teach
 - [cloth] the weave coarse beside what the looms of Darnassus make

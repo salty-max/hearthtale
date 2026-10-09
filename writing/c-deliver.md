@@ -9,10 +9,10 @@ kind: c-deliver
 - [!again !onward] handed {thing} over to {ender}
 - [!again !onward] saw {thing} safely to {ender}
 - [!again !onward] made sure {thing} reached {ender}
-- [again !onward] handed over {thing} as well
+- [again !onward] dropped off {thing} besides
 - [again !onward] gave over {thing} while I was at it
 - [again !onward] delivered {thing} too
-- [again !onward] added {thing} to what I had brought
+- [again !onward] handed over {thing} as well
 - [again !onward] handed {thing} over with the rest
 - [again !onward] passed on {thing} in the same visit
 - [again !onward] brought {thing} along at the same time

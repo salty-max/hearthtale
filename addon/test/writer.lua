@@ -164,6 +164,7 @@ local SPELLS = {
   "Immolate",
   "Smite",
   "Wrath",
+  "Moonfire",
   "Life Tap",
   "Fear",
   "Drain Life",
@@ -1633,6 +1634,91 @@ if forever then
   end
 end
 
+-- Lands come back to, away and at home, at level 20 and 45 (each race's own
+-- arrival lines: [back], [home], [high]); elites of one people fought one
+-- after another; the Scarlet Crusade fought for a quest.
+do
+  local HOME = {
+    Human = "Westfall",
+    Dwarf = "Loch Modan",
+    Gnome = "Loch Modan",
+    NightElf = "Darkshore",
+    Orc = "Durotar",
+    Troll = "Durotar",
+    Tauren = "Mulgore",
+    Scourge = "Silverpine Forest",
+    Skyborne = "Zephras Isle",
+  }
+  local HORDE = { Orc = true, Troll = true, Tauren = true, Scourge = true }
+  for _, race in ipairs(RACES) do
+    for _, faction in ipairs(race == "Skyborne" and { "alliance", "horde" } or { "" }) do
+      local horde = HORDE[race] or faction == "horde"
+      local a, b = horde and "The Barrens" or "Wetlands", horde and "Stonetalon Mountains" or "Arathi Highlands"
+      for _, level in ipairs({ 20, 45 }) do
+        local chapters = {}
+        for n = 1, 14 do
+          local t = n * 100000
+          local log = {
+            { k = "place", new = "zone", zone = b, sub = b, at = t + 60 },
+            { k = "place", new = "zone", zone = a, sub = a, at = t + 600 },
+            { k = "place", new = "zone", zone = HOME[race], sub = HOME[race], at = t + 1200 },
+            { k = "place", new = "zone", zone = b, sub = b, at = t + 1800 },
+          }
+          if n % 3 == 0 then
+            for _, name in ipairs({ "Mo'grosh Ogre", "Mo'grosh Brute", "Mo'grosh Enforcer" }) do
+              table.insert(
+                log,
+                { k = "kill", name = name, kind = "Humanoid", elite = true, zone = b, sub = b, at = t + 1900 }
+              )
+            end
+          elseif n % 3 == 1 then
+            for _, name in ipairs({ "Mottled Boar", "Mottled Worg" }) do
+              table.insert(
+                log,
+                { k = "kill", name = name, kind = "Beast", elite = true, zone = b, sub = b, at = t + 1900 }
+              )
+            end
+          end
+          local scarlet = { { type = "monster", name = "Scarlet Convert", n = 10 } }
+          table.insert(
+            log,
+            { k = "kill", name = "Scarlet Convert", kind = "Humanoid", quarry = true, zone = b, sub = b, at = t + 2000 }
+          )
+          table.insert(log, {
+            k = "done",
+            id = 900 + n,
+            giver = "Executor Zygand",
+            objectives = scarlet,
+            zone = b,
+            sub = b,
+            at = t + 2100,
+          })
+          chapters[n] = {
+            start = { level = level, zone = a, sub = a },
+            log = log,
+            ended = { level = level, place = b, how = "rest" },
+            kills = {},
+            quests = 1,
+            played = 3600,
+            gold = 0,
+          }
+        end
+        local c = {
+          guid = "lands-" .. race .. faction .. level,
+          race = race,
+          class = COMBOS[race][1],
+          faction = faction ~= "" and faction or nil,
+          began = { level = level },
+          chapters = chapters,
+        }
+        for i, ch in ipairs(ns.writeBook(c).chapters) do
+          inspect(race .. " lands " .. level .. " ch" .. i, ch.text)
+        end
+      end
+    end
+  end
+end
+
 -- A trinket put on: carried, not worn.
 for seed = 1, 9 do
   local c = {
@@ -1791,8 +1877,12 @@ for _, race in ipairs(RACES) do
       end
       -- the hunt for a quest's things, from the creatures they drop from, in
       -- my way of fighting (a new one, learned between lives), with my pet
-      local element = ({ MAGE = { "Frostbolt", "Arcane Missiles" }, WARLOCK = { "Corruption", "Curse of Agony" } })[class]
-      for hunt = 1, 8 do
+      local element = ({
+        MAGE = { "Frostbolt", "Arcane Missiles" },
+        WARLOCK = { "Corruption", "Curse of Agony" },
+        DRUID = { "Moonfire" },
+      })[class]
+      for hunt = 1, 12 do
         local meat = { { type = "item", name = "Tough Wolf Meat", n = 8 } }
         local pet = (class == "HUNTER" or class == "WARLOCK") and hunt % 2 == 0 and "Grimtooth" or nil
         local log = {

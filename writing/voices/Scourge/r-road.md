@@ -8,6 +8,6 @@ kind: r-road
 - [!back !home] remembering when I could walk into a town without anyone reaching for a torch
 - [!back night] at an hour that made my condition less conspicuous
 - [back] less of a stranger, if no less dead
-- [back] my joints recognising the distance all too readily
+- [back] noting every way out again, an old Undercity habit
 - [back] not entirely sorry to approach somewhere familiar
 - [high] the Undercity's peculiar comforts dear to me

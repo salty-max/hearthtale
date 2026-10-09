@@ -1,9 +1,12 @@
 ---
 kind: closing
 ---
-- [client:forever faction:horde] I had been travelling for {time}, with our missing mentors dear to me through all the day's distractions.
+- [client:forever faction:horde] I had been at it for {time}, no nearer to the wind spirits, but perhaps a little nearer to the allies we would need to find them.
 - [client:forever faction:alliance] The stretch had taken {time}, enough to make the High Order's appetite for self-reliance feel rather tiring.
-- [client:forever] After {time}, I could spare the world my questions for a while.
-- [client:forever] After {time}, I had quite exhausted my patience with the ground's insistence on distance.
+- [client:forever] After {time}, even my curiosity about so large a world was ready to rest.
+- [client:forever] I had earned {gold} in {time}, a sum I would gladly have traded for one evening's news from Anvilas or Siroccas.
 - [client:forever] I had spent {time} travelling, and company without an errand attached would have suited me.
-- [client:forever] I had been busy for {time}, and missed the wind of home, which never asked me to stand still.
+- [client:forever slow] The work had taken {time}, and I had walked more of it than I would once have believed one pair of feet could manage.
+- [client:forever home] After {time}, I could not pass a pylon without looking to see whether it still held.
+- [client:forever hc] I had survived {time}, and meant my ashes to wait a long while yet before anyone gave them to the winds.
+- [client:forever] I had been at work for {time}, and my courtesy had held up rather better than my feet.

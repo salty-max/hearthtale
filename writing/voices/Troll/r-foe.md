@@ -3,7 +3,7 @@ kind: r-foe
 ---
 - [one] not an acquaintance I wanted to renew
 - my heart keeping a quicker rhythm than I cared to dance to
-- the loa's attention not needed, this time
+- [!one] fewer than the rival tribes of Stranglethorn could muster, but more than enough
 - too fond of my hide to end up as a warning in somebody else's story
 - my grin slower to return than my breath
 - [one] an enemy I would not want following me to the islands
@@ -14,11 +14,11 @@ kind: r-foe
 - [hc] remembering how few of us the Darkspear could spare
 - [low] still too eager to look fearless for my own comfort
 - [high] less quick to let excitement lead my hands
-- my relief quite beyond the uses of a grin
+- my laughter waiting until the danger had properly gone
 - my breath reluctant to adopt a quieter rhythm
 - the encounter shaking some cleverness out of me
 - my smile returning without much help from pride
-- [one] an opponent I hoped the loa would not send twice
+- [troll] tusks like my own, and not a scrap of kinship behind them
 - [teeth] those jaws worth keeping a spear's length away
 - [hc] too fond of the tribe to leave another empty place
 - [low !more] a beginner's courage receiving an unwelcome exercise

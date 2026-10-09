@@ -6,3 +6,7 @@ kind: zone
 - [!home] I came into {zone}, wondering what good the tribe might find in the road ahead.
 - [home] I came back into {zone}, the land Thrall had shared with my people, and walked it easier.
 - [home] I returned to {zone}, among the orcs who had taken the Darkspear in.
+- [home] I came back into {zone}, where the dry heat had stopped surprising me and begun to feel like my own.
+- [home] I returned to {zone}, and caught myself walking like someone who belonged there.
+- [!home !back] I came into {zone} and looked first for water and a way out, as a people driven out of Stranglethorn soon learns to.
+- [back !home] I came back to {zone}, with my eyes going straight to the places where trouble had waited before.

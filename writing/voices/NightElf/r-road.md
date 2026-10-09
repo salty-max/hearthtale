@@ -1,7 +1,7 @@
 ---
 kind: r-road
 ---
-- my footing easier on the familiar paths beneath Teldrassil
+- my steps quieter than the road had any need of
 - a forest's child before I was a traveller
 - [!back] the path home still dear to me in unfamiliar country
 - [!back] reading the land as a druid reads a sickened grove

@@ -2,16 +2,16 @@
 kind: r-road
 ---
 - [client:forever] the distance measured out step by step, the slow way
-- [client:forever !back] the ground still a stranger under my feet
-- [client:forever !back] an uncertain welcome to make without a patron's assurance
-- [client:forever !back] the country new to me even from above
+- [client:forever !back] each face a new one to learn
+- [client:forever !back] an uncertain welcome to make with nothing but good manners
+- [client:forever !back !home] a place my people had no account of, after so many centuries away
 - [client:forever !back night] my eyes patient with a night that offered few directions
-- [client:forever back] my steps easier on ground that had once seemed foreign
+- [client:forever back] my steps easier in a place that had once seemed foreign
 - [client:forever back] the familiar turns giving an easy welcome
 - [client:forever back] the return taking the uncertainty out of my arrival
-- [client:forever high] the ground almost as familiar now as the winds of home
+- [client:forever high !home] this world almost as familiar to me now as Zephras
 - [client:forever faction:horde !back] a Windshaper seeking company for the search still ahead
 - [client:forever faction:alliance !back] wondering what use the High Order could make of a life lived here
-- [client:forever] the country beginning to matter beyond the view
-- [client:forever night] the dark close and still, with no wind to read
+- [client:forever] with an islander's eye for a long view
+- [client:forever night] every step taken on trust in the dark
 - [client:forever] the arrival costing some of the courage I had set out with

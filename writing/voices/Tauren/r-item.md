@@ -3,14 +3,14 @@ kind: r-item
 ---
 - my broad hands no excuse for careless handling
 - someone else's need worth the trouble of carrying
-- gathered the way the elders taught, taking no more than was needed
+- [plant] gathered the way the elders taught, taking no more than was needed
 - [!one !plural] as careful with the last piece as with the first
 - [!one !plural] each piece a manageable share of the request
-- [one !plural] turned over carefully in my broad hands
+- [one !plural] kept as close to me as a calf keeps to its mother
 - [one !plural] small in my broad hand and handled gently
 - [meat] with thanks to the creature, as my people offer it
 - [cloth] soft enough to think fondly of a resting place
-- [night] my patience little help against the dark
+- [night] wishing An'she had been up to help me look
 - [hc] reluctant to let the search take all my vigilance
 - the peace of an unhurried cookfire pleasantly in mind
 - [!one !plural] my broad fingers taking each piece with care
@@ -18,4 +18,4 @@ kind: r-item
 - [meat] wondering how the meat would taste beside a familiar cookfire
 - [cloth] a useful comfort to bring to camp
 - [night] my fingers working while my eyes took their time
-- [hc] my ears keeping watch beyond the business at hand
+- [hc] one ear open the whole time, as if the quilboar of Brambleblade Ravine might be near

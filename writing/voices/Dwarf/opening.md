@@ -1,12 +1,19 @@
 ---
 kind: opening
 ---
-- I took up the road {at}, with the Great Forge's welcome din still dearer than the call of a long road.
+- I got under way {at}, trusting my legs to hold out longer than the day's troubles.
 - I began again {at}, feeling sturdy enough to make the road earn my complaints.
 - I set out {at}, with more of the world to see than the inside of a mountain.
 - I set off {at}, with the Explorers' League's taste for old stone and unanswered questions.
-- I continued {at}, as stubborn about leaving a job half done as any dwarf of Ironforge.
+- I continued {at}, convinced that most trouble gives way if it is leaned on long enough.
 - I began this stretch {at}, with a job half done and no intention of leaving it that way.
 - The stone beneath a road could have a longer history than the road itself, and I set out {at} to see what I could.
 - I set off {at}, in a cheerful mood I doubted even the road could wear through.
 - I took up the road {at}, with the mountain's safety already precious in my mind.
+- Rams are sure of their footing on any ice, and I took up the road {at} hoping to be half as sure of my own.
+- I went on {at}, in no great hurry and in no doubt that I would get where I was going.
+- I began again {at}, spending my strength as carefully as I would spend good coin.
+- [night] I made a start {at} after dark, giving every shadow the suspicion I would give a cracked beam overhead.
+- Brann Bronzebeard never waited for a road to be safe before taking it, and I started out {at} in something of the same spirit.
+- The gnomes of Tinker Town knew better than anyone what a lost home costs, and I set out {at} with my own all the dearer for it.
+- I made ready {at}, sizing up the day's work by its weight rather than by my worries.

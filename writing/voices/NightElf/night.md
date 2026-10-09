@@ -2,7 +2,7 @@
 kind: night
 ---
 - [!last] I slept in the open {at}, with the night feeling kinder than the day's demands.
-- [!last] I bedded down {at} in the open, as my people did long before Darnassus had walls.
+- [!last] I bedded down {at} in the open, as my people did for long ages before Darnassus was raised.
 - [!last] I settled outside {at}, content to let the night hold me as the forests once had.
 - [!last] I slept lightly {at}, under a moon I could at least be sure of.
 - [!last] I spent the night {at} in the open, with Elune's name a comfort rather than a plea.

@@ -2,18 +2,18 @@
 kind: r-foe
 ---
 - my confidence reassembled one piece at a time
-- my nerves rattling like loose bolts long after the fight
+- going over the fight step by step for anything I could improve
 - [one] little enough flesh between me and the grave
 - [!one] their number testing every scrap of my ingenuity
 - [one] no longer in any hurry to discover how close I could get
-- [!one] the air sweeter with all of them down, and no gnome takes clean air for granted now
+- [!one] the air sweeter with all of them down, and my people no longer took clean air for granted
 - my hands fidgeting for a wrench they did not have
 - [teeth] my fingers grateful to have escaped those teeth
 - [teeth] my fingers quite determined to stay attached
 - [mechanical] such engineering squandered on something murderous
 - [mechanical] half sorry to silence a mechanism, even a murderous one
 - [night] my silhouette suddenly feeling terribly distinct
-- [night] my ears working harder than my eyes
+- [night !fire !lightning] my ears working harder than my eyes
 - [hc] no intention of joining Gnomeregan's missing
 - [hc] very fond of the little life I still had
 - [low] a beginner's pride thoroughly shaken

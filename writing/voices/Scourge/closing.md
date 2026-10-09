@@ -7,3 +7,6 @@ kind: closing
 - After {time}, I had done more good than the living would ever credit to one of us.
 - The stretch had taken {time}, with the Undercity's familiar business pleasantly in mind.
 - I had spent {time} travelling and earned {gold}, enough to give my plans a little substance.
+- [!home] After {time} away at work, I found myself missing the Gallows' End Tavern, whose name had come to suit its regulars rather well.
+- I was {gold} richer after {time}, and coin, at least, never cared what I was.
+- [slow] All of it had taken {time}, longer than any working day I could remember from the life before.

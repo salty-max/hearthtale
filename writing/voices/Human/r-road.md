@@ -1,7 +1,7 @@
 ---
 kind: r-road
 ---
-- [!grouped] a neighbour's company a comfort to think of on the way
+- [!grouped] my own footsteps the only conversation on the way
 - [!back] the question of my welcome still unsettled
 - [!back] a stranger with help to offer and no introductions
 - [!back] wondering whose trouble would find me first
@@ -16,5 +16,5 @@ kind: r-road
 - [!back] my usefulness the only introduction I could offer
 - [!back] the comforts of home unexpectedly vivid
 - [!back night] the dark giving the thought of shelter a particular appeal
-- [back] the familiar way almost as comforting as a neighbour's face
+- [back] my feet already sure of the turnings
 - [back] some familiar names to put to the place

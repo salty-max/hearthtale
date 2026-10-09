@@ -1,8 +1,12 @@
 ---
 kind: zone
 ---
-- [client:forever faction:horde !home] I entered {zone}, hoping to find allies in the search for the wind spirits rather than merely a way through.
-- [client:forever faction:alliance !home] I came into {zone}, with the High Order's need for lost arcane lore making the unfamiliar worth approaching.
-- [client:forever !home] I reached {zone}, with the solid earth no less foreign than it was inviting to a child of the sky.
+- [client:forever faction:horde !home] I came into {zone}, with the Grand Skyseer's words in mind: the path to our salvation lay below.
+- [client:forever faction:alliance !home] I reached {zone}, holding to the Supreme Magister's belief that Azeroth was the key to our future.
+- [client:forever !home !back] I crossed into {zone}, and caught myself looking for the place where it would simply stop, as every road on Zephras eventually did.
 - [client:forever home] I came back to {zone}, where the edges of the world were open sky again.
 - [client:forever home] I returned to {zone}, and counted the pylons still standing as I came in.
+- [client:forever !home !back] I entered {zone}, a stranger with thousands of years of my people's absence to account for, if anyone asked.
+- [client:forever back !home] I returned to {zone}, and walked its roads now without looking for a drop at every turn.
+- [client:forever home] I was home in {zone} again, ready to say "Gale's greetings" and mean every word of it.
+- [client:forever hc !home !back] I came to {zone} and took its measure slowly; a single life is quickly spent in a place one does not know.

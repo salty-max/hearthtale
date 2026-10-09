@@ -65,3 +65,10 @@ kind: c-hunt
 - [lightning handed] struck {prey} down with lightning for {item} that {giver} needed
 - [wrath !lone !handed] called the wild down on {prey} until I had {n} {thing}
 - [arrow !handed] shot down {prey} for {n} {thing}
+- [!lone moon !handed] brought moonfire down on {prey} until I had {n} {thing}
+- [moon handed] brought moonfire down on {prey} for {item} that {giver} wanted
+- [steel class:ROGUE !handed] stalked {prey} for {n} {thing}
+- [steel class:ROGUE handed] stalked {prey} for {item} that {giver} needed
+- [lightning class:SHAMAN !lone !handed] fought {prey} with the elements until I had {n} {thing}
+- [!lone arcane !handed] wore down {prey} with arcane bolts until I had {n} {thing}
+- [!lone curse !handed] wore down {prey} with curses until I had {n} {thing}

@@ -1,14 +1,14 @@
 ---
 kind: r-item
 ---
-- [!one !plural] sorted by size, the way a tinker sorts screws
+- [!one !plural] sorted by size before they went into my pack
 - [!one !plural] each piece checked off against a list in my head
-- [!one !plural] a carrying problem worthy of gnomish invention
+- [!one !plural] a carrying problem I solved several better ways in my head
 - [one !plural] examined from every angle before it went into my pack
 - [one !plural] sized for once to hands like mine
 - [one !plural] my fingers happy to be holding something other than a weapon
 - [meat] the smell making a persuasive case for sealed containers
-- [meat] a gnome suddenly interested in refrigeration
+- [meat] my nose reminded that not everything improves with keeping
 - [night] my eyes struggling with the search in the dark
 - [night] the dark frustrating every attempt to be methodical
 - a little order salvaged from the rummaging

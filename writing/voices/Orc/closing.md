@@ -7,3 +7,6 @@ kind: closing
 - This stretch had kept me busy for {time}; I could feel the road even after I stopped.
 - I had worked for {time}, and my strength had reached a limit my pride could do nothing about.
 - I had earned {gold} in {time}. The Horde needed more than warriors, and I could use more than a warrior's pay.
+- {time} had gone by, every hour of it spent as I chose, and that alone would have seemed a fortune to my people in the camps.
+- [slow] The work had run to {time}, and by the end even my temper was too tired to flare.
+- I had earned {gold} over {time}, enough to think fondly of a slow walk down the Drag with coin to spend.

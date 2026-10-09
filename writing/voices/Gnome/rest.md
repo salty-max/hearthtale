@@ -2,11 +2,18 @@
 kind: rest
 ---
 - I rested {at}, turning the day over in my head like a part I meant to fix later.
-- I settled {at}, and let my thoughts tick over like an engine left idling.
+- I settled {at}, and let my thoughts wander off without asking them to bring anything useful back.
 - I paused {at}, content to leave every loose end exactly where it was.
 - I rested {at}, enjoying a pause without a problem that urgently needed solving.
-- I stopped {at}, and found the quiet strange after a life among clanking machines.
+- I stopped {at}, clean out of ideas and perfectly content to stay that way.
 - I rested {at}, missing the familiar clatter of a city that was no longer ours to live in.
 - I paused {at}, with my enthusiasm temporarily out of service.
 - I rested {at}, and let the urge to improve things subside into a pleasant idleness.
 - I stopped {at}, out of stubbornness and very nearly out of everything else.
+- [fire] I rested by the fire {at}, and for once had no opinion about how it might burn more efficiently.
+- My feet had kept a stricter count of the day than I had, and I rested {at} on their advice.
+- [hc] I rested {at}, with one life to look after and every intention of making it last.
+- I rested {at}, more comfortably than my people had in the crowded first weeks after the evacuation.
+- I rested {at}, and wondered whether Mekkatorque ever let himself sit still this long.
+- I settled {at}, and thought fondly of the Deeprun Tram, which let its passengers sit down for the whole journey.
+- Nothing needed measuring, mending or explaining for a while, so I rested {at}.

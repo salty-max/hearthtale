@@ -5,7 +5,7 @@ kind: r-company
 - [one] a companion worth having on the far side of the mountain
 - the country no longer mine to face alone
 - company I would gladly have bought a round for
-- almost as heartening as a name from Ironforge
+- as heartening as the roofs of Kharanos after a cold walk
 - [one] two of us to hold the ground
 - [night one] a second pair of eyes welcome after dark
 - [hc one] more determined to see us both back alive

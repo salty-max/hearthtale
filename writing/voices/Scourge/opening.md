@@ -5,8 +5,15 @@ kind: opening
 - I took up the road {at}, still unwilling to give the cemetery back its property.
 - I set out {at}, ready for the usual looks and determined to be useful anyway.
 - I continued {at}, hoping usefulness would introduce me before the smell did.
-- I began this stretch {at}, grateful that Sylvanas had not freed us merely to stand about decaying.
+- I began this stretch {at}, unwilling to waste the freedom Sylvanas had won us on standing still.
 - I set out {at}, with a dead body and a rather lively dislike of being ordered around.
-- I kept going {at}, remembering the farms of Lordaeron as they were and walking past what they had become.
-- I set off {at}, with no intention of rotting quietly.
-- I took up the road {at}, with Lordaeron behind me and a healthy resentment of the word healthy.
+- I kept going {at}, remembering the farms of Lordaeron as they had been before the plague, which was the kinder way to remember them.
+- I set off {at}, keeping my own counsel, a habit the Undercity encouraged.
+- I took up the road {at}, sound enough for the work and nursing a healthy resentment of the word healthy.
+- The world had not been arranged for the likes of me, but I set out {at} intending to make good use of it anyway.
+- I went on {at} as one of the Horde, an arrangement its oldest members and its newest were both still getting used to.
+- [night] I started out {at} after dark, having come to prefer the night for its quiet roads and short conversations.
+- [hc] No third life would follow this second one, and I set out {at} with that firmly in mind.
+- [high] I took up the road {at}, a long way from the day in Deathknell when I first wondered what was left of me.
+- Work was waiting {at}, and the novelty of going to it by my own choice had not yet worn off.
+- The road had no opinion of what I was, which made it better company than most, and I took it up again {at}.

@@ -6,7 +6,7 @@ kind: r-company
 - a better lookout than any contraption I could have built
 - my courage no longer doing all the lifting
 - company, which a refugee learns to value
-- [one] a companion as steady as a well-balanced flywheel
+- [one] a companion steadier than my nerves, which was all I asked
 - company for my inconvenient enthusiasms
 - [night one] a little less alone beneath that enormous dark
 - [hc] more of us for trouble to find, and more of us to answer

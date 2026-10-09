@@ -1,8 +1,8 @@
 ---
 kind: r-first
 ---
-- a new face for the old caution of the isles
-- my grin covering some honest unease
+- one more creature to learn the habits of before it learned mine
+- a show of good humour covering some honest unease
 - my heart faster than a village drum
 - too fond of my hide to ask for a closer introduction
 - a creature the witch doctors would have had a name and a charm for
@@ -13,7 +13,7 @@ kind: r-first
 - much keener on survival than acquaintance
 - quite unwilling to test trouble's kindness to strangers
 - my courage keeping a discreet distance
-- the loa probably laughing at my surprise
+- a creature best kept at arm's length, and mine are long
 - [teeth] my fingers in no need of an intimate introduction
 - [night] my eyesight a poor substitute for knowing what the dark held
 - [low] still learning which fights to walk away from, as the old hunters teach their young

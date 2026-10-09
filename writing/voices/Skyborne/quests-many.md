@@ -1,9 +1,12 @@
 ---
 kind: quests-many
 ---
-- [client:forever faction:horde] I had completed {n} tasks; the search for our mentors left room for the ordinary needs of people here.
-- [client:forever faction:alliance] I had finished {n} tasks, with the High Order's wish for self-reliance beginning to feel like something my hands could bear.
+- [client:forever faction:horde] I had seen {n} tasks through; the oath was to find the spirits, but the people in front of me needed help sooner.
+- [client:forever faction:alliance] I had finished {n} tasks with no blessing but my own effort, which was all the High Order asked of us.
 - [client:forever] I counted {n} jobs done, none of which the wind spirits would have noticed, which I minded less than I expected.
-- [client:forever] The {n} tasks behind me had given the earth more neighbours and fewer strangers.
-- [client:forever] I had seen {n} errands through, enough to make the stillness of home seem very inviting.
-- [client:forever] I had brought {n} tasks to an end, with no appetite for making every remaining mile prove my endurance.
+- [client:forever] The {n} tasks behind me had made a few more strangers into neighbours, of a sort.
+- [client:forever] I had finished {n} tasks, more errands than any Highborne ancestor of mine would have stooped to, and I was rather proud of every one.
+- [client:forever] {n} tasks lay behind me, the last of them for {giver}, whose name I meant to remember.
+- [client:forever] I had completed {n} tasks, and liked best the ones that mended something, belonging as I did to an island where so much was failing.
+- [client:forever] I had seen {n} tasks through, enough to know that people were much the same whether their homes floated or not.
+- [client:forever hc] I had survived {n} tasks, knowing from Ban'aethal how suddenly everything could be lost.

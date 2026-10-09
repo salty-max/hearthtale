@@ -1,20 +1,20 @@
 ---
 kind: r-item
 ---
-- the burden taking some pleasure out of being helpful
-- the sort of chore the Stormwind Guard gives to new recruits
-- honest work, the kind Elwynn's farmhands do without thanks
-- [!one !plural] counting each piece with more care than a tax collector
-- [!one !plural] counted twice, as any Elwynn farmer counts the harvest
+- [!one] the burden taking some pleasure out of being helpful
+- an errand Northshire Abbey would have handed to the newest novice
+- [plant] green to the knuckles from the picking
+- [!one !plural] each piece wrapped against the jostle of the road
+- [!one !plural] packed as neatly as a quartermaster's stores
 - [one !plural] tucked away where no Defias cutpurse would find it
 - [one !plural] the prize of the search safely in my keeping
-- [meat] the smell of an Elwynn kitchen coming fondly to mind
+- [meat] the makings of a decent Westfall stew, given a pot and an evening
 - [cloth] wondering how many worn shirts a tailor could mend
 - [night] the darkness making a kitchen window's light seem very dear
 - [hc] rather unwilling to die over somebody else's missing things
 - my generous offer beginning to feel overgenerous
-- [!one !plural] counting them as carefully as the next week's bread money
-- somebody else's need giving purpose to the burden
+- [!one !plural] the load settling into my pack like a pedlar's wares
+- [!one] somebody else's need giving purpose to the burden
 - [!one !plural] every piece accounted for with a householder's care
 - [one !plural] not eager to have to find it all over again
 - [meat] rather more interested in a cooked supper

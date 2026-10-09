@@ -11,10 +11,10 @@ kind: r-foe
 - [mechanical] no need to wonder whether that mechanism had a soul
 - [night !more] the dark doing my appearance a kindness
 - [hc] unwilling to spend the second life Sylvanas had won us
-- [low] still learning what rot had left me to rely on
-- [high] a useful steadiness in these decaying fingers
+- [low] still finding out how much of my old nerve had come back with me
+- [high] a steadiness in my hands I had not had when I first rose
 - [undead] no kinship with the dead merely for resembling them
-- [hc] my rotting hide still of use to its occupant
+- [scarlet] the Crusade no nearer to burning my people out of Lordaeron
 - [class:PRIEST holy undead] almost resentful that the Light would still answer these dead hands
 - [holy !one] the Light as hard on my own flesh as on theirs
 - [holy one] the Light's heat still in my fingers long after it had finished with the foe

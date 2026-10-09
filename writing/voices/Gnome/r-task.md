@@ -3,7 +3,7 @@ kind: r-task
 ---
 - another loose end tidied away
 - a puzzle without the pleasure of taking anything apart
-- an errand that needed more patience than cleverness
+- an errand that needed more patience than wit
 - an errand hardly worth constructing an automaton for
 - my ingenuity put to an unexpectedly ordinary use
 - a persistent little problem finally dealt with

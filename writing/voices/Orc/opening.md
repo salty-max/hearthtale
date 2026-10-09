@@ -1,12 +1,19 @@
 ---
 kind: opening
 ---
-- I took up the road {at}, at a pace the old marching drums would have kept.
+- I took up the road {at}; my people had crossed a whole sea to find a home, and one more day's walk seemed a small thing beside it.
 - I began again {at}, no one's captive and not yet as certain of the road as I wished.
-- I set out {at}, with some strength to offer a people still building their home.
+- I set out {at}, with willing hands for a people who had raised Orgrimmar from bare red rock in a handful of years.
 - I set off {at}, my own impatience already a familiar adversary.
 - I continued {at}, remembering how much Thrall had risked to give our people a home.
 - I set out {at}, free to walk away and unwilling to leave the work to someone else.
 - I began this stretch {at}, drawn by the promise of a road I could choose for myself.
 - I took up the road {at}, thinking of the endurance of the ancestors.
 - I set out {at}, with the Horde's new life dearer to me than the old tales of conquest.
+- No overseer had ordered me out, and I set off {at} the more willingly for it.
+- I began again {at}, thinking of the shamans who had taught my people to listen to the elements once more after so long listening to demons.
+- I made ready {at}, with Grom Hellscream's sacrifice in mind and no intention of being careless with what it had bought.
+- I continued {at}, wondering what the lost world of Draenor would have made of this one.
+- The old clans had become one people only lately, and I set out {at} wondering how much of their old pride I still carried without knowing it.
+- [night] I went on {at} after dark, keeping my temper with a night that hid more of the way than I liked.
+- The land my people had only lately settled still had more work than hands, and I got moving {at}, meaning to lend mine.

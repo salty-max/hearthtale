@@ -9,3 +9,5 @@ kind: zone
 - [home] I came back into {zone}, where the stonework and the stubbornness were both familiar.
 - [home] I reached {zone}, and Khaz Modan's air did me more good than any inn.
 - [home] I came back into {zone}, among my own people again, and walked a little taller for it.
+- [!home !back] I came into {zone}, quite prepared to dislike it and rather hoping to be proved wrong.
+- [back !home] I returned to {zone}, with a grudge or two against its worst corners still unsettled.

@@ -3,8 +3,10 @@ kind: zone
 ---
 - [!home !back] I crossed into {zone}, where nobody had yet decided what to make of me.
 - [!home] I came to {zone}, with no wish to explain the whole of Lordaeron before being allowed to pass.
-- [!home] I entered {zone}, considerably less dead than I might look to a stranger.
+- [!home] I entered {zone}, taking its measure with the patience of someone in no hurry to be liked.
 - [!home] I reached {zone}, with a useful pair of hands and the regrettable appearance of having been dug up.
 - [!home] I crossed into {zone}, and wanted the Undercity's ease more than I expected to.
 - [home] I came back into {zone}, where nobody flinched at the sight of me.
 - [home] I returned to {zone}: Lordaeron's ruin, and for all that, mine.
+- [!home !back] I came into {zone}, curious what the world had been doing with itself while the Scourge had the use of me.
+- [home] I came back into {zone}, and set aside some of my wariness among my own.

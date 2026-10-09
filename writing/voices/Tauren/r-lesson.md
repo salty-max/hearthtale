@@ -15,6 +15,6 @@ kind: r-lesson
 - my fingers finding the delicate parts harder than the heavy ones
 - an apprentice without a calf's eagerness to seem grown
 - my strength no help with the delicate part
-- [new] a possible use for my hands beyond the hunt
+- [new] something to offer the next camp of my people besides an appetite
 - [low] still too new to this to mistake my size for aptitude
 - [high] a welcome ease coming into the familiar skill

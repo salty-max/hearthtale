@@ -2,12 +2,13 @@
 kind: r-inn
 ---
 - [client:forever] a little certainty I could hold between finger and thumb
-- [client:forever] an easy return arranged without relying on a patron
+- [client:forever] an easy return arranged with no one's leave but my own
 - [client:forever] a reliable piece of magic to take into an uncertain world
-- [client:forever] one distance the earth would not be able to demand twice
+- [client:forever] one road I would not have to walk twice
 - [client:forever night] the night no obstacle to a return I could count on
 - [client:forever hc] a return I could arrange in a life without second chances
-- [client:forever faction:horde] closer to belonging among the people who knew this ground
+- [client:forever faction:horde] somewhere to come back to while the search went on
 - [client:forever] an enchantment taking care of the homeward journey
 - [client:forever] a haven kept within the reach of a stone
 - [client:forever] almost as inviting as the prospect of being expected
+- [client:forever] a stone I could trust to work every time, unlike the pylons

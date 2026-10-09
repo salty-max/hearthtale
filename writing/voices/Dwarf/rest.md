@@ -1,12 +1,19 @@
 ---
 kind: rest
 ---
-- I rested {at}, as content to stop as a miner reaching the end of a shift.
-- I settled {at}, with the din of the Great Forge pleasantly in mind.
+- I took my ease {at}, as content as a ram in the Amberstill pens.
+- Even good iron needs time to cool between heats, and I settled {at} with that for my excuse.
 - I stopped {at}, with my knees as stiff as an old hinge left out in the snow.
 - I rested {at}, and let my strength return without trying to forge it into anything useful.
-- I rested {at}, and found that the sky made a passable roof after all.
+- [fire] I rested {at}, and found that the sky made a passable roof after all.
 - I paused {at}; an evening at home would have suited me, but this would do.
 - I rested {at}, with the road welcome to wear out somebody else for a while.
-- I stopped {at}, and set the day down like a miner's pack at the end of a shift.
+- I stopped {at}, and found that sitting still took less practice than I had feared.
 - As worn down as a quarry step, I rested {at}.
+- Rest is a tool like any other, and I took it up {at} without apology.
+- I stopped {at}, and let my shoulders drop for the first time in a while.
+- [fire] I settled by the fire {at}, and let the heat do for my joints what no amount of grumbling had.
+- [hc] I halted {at}, and counted staying alive the soundest piece of work I had done.
+- [!last !fire] I settled {at} for a while; the next job could come and find me if it wanted me so badly.
+- [last !fire] I called it a day {at}, with the work done soundly enough to leave it be.
+- [last fire] I sat by the fire {at}, and let it be the only thing still working.

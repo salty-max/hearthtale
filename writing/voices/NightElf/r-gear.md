@@ -2,10 +2,10 @@
 kind: r-gear
 ---
 - [!made !held] a welcome freedom from troublesome clothing
-- [!made] a little shelter I could carry beyond the forest
+- [!made] a little shelter to carry wherever the road went
 - [!made] fine enough to wear past the gates of Darnassus
-- [!made] not yet as familiar as a path beneath Teldrassil
+- [!made] a stranger to me still, as most new things were at first
 - [!made hc] well enough made that even a Sentinel would have nodded at it
-- [made !held] my patience woven into something I could wear
+- [made !held] long in coming together and all the better for it
 - [made] as satisfying as the unhurried finish of a long watch
 - [made] my patience rewarded in something I could carry

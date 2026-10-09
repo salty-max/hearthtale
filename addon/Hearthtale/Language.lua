@@ -583,7 +583,8 @@ for _, e in
   curse: Corruption, Curse of Agony, Curse of Weakness, Curse of Recklessness
   holy: Smite, Holy Fire, Exorcism, Holy Shock, Consecration
   lightning: Lightning Bolt, Chain Lightning, Earth Shock
-  wrath: Wrath, Moonfire, Starfire, Insect Swarm
+  wrath: Wrath, Insect Swarm
+  moon: Moonfire, Starfire
 ]]))
 do
   for _, spell in ipairs(e[2]) do

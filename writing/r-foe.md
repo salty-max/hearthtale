@@ -21,7 +21,7 @@ kind: r-foe
 - [high] with the ease of long practice, which I did not entirely trust
 - [murloc] the gurgling still ringing in my ears
 - [murloc] smelling of the shore for the rest of the day
-- [murloc] with a new dislike for anything that croaked
+- [murloc] with a new dislike for anything that gurgled
 - [kobold] the little ones no easier than the big
 - [kobold] the squeaking easier to bear once it had stopped
 - [kobold] candle wax spattered further than seemed possible
@@ -51,14 +51,14 @@ kind: r-foe
 - [satyr] with that corrupted laughter hard to shake off
 - [furbolg] more bear than I had bargained for
 - [furbolg] the woods quieter for it, though not happier
-- [furbolg] stronger than all that shambling had suggested
+- [furbolg] stronger than all that lumbering had suggested
 - [trogg] the stink of them clinging to me afterwards
 - [trogg melee] harder in the skull than anything had a right to be
 - [trogg] the grunting echoing long after
 - [outlaw] a life of crime ending exactly where such lives do
 - [outlaw] the kind of greed that ends exactly like that
 - [outlaw] with no pity to spare for anyone in that trade
-- [scarlet] the certainty more unsettling than the blade
+- [scarlet melee] the certainty more unsettling than the blade
 - [scarlet] the prayers turning to curses at the end
 - [scarlet] the red of those tabards staying in my eyes
 - [undead] glad that the dead stayed down this time

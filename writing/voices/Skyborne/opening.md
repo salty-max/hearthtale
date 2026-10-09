@@ -1,12 +1,19 @@
 ---
 kind: opening
 ---
-- [client:forever faction:horde] I took up the road {at}, with a Windshaper's hope that kindness might reach further than another demand of the elements.
-- [client:forever faction:alliance] I began again {at}, with a scholar's longing for the arcane lore lost in Eldre'Thalas.
-- [client:forever] I set out {at}, with the sky still familiar and the earth no less insistent about being walked upon.
-- [client:forever night] I continued {at}, patient with the night but less certain of the ground beyond what I could see.
-- [client:forever] I began this stretch {at}, with the wind at my back, which I took as a good sign.
-- [client:forever] I set out {at}, taking an interest in the people who knew this country.
+- [client:forever faction:alliance] I began again {at}, hoping to come a little nearer to the arcane lore our ancestors had left behind in Eldre'Thalas.
+- [client:forever faction:alliance] I kept going {at}, as the High Order would have it: on my own strength, and by no one else's leave.
+- [client:forever faction:alliance] I set out {at}, wondering what the Kirin Tor might teach a people who had kept hidden from them for thousands of years.
 - [client:forever faction:horde] I began again {at}, a Windshaper seeking allies in the search for the wind spirits.
-- [client:forever faction:alliance] I kept going {at}, a child of the High Order with a skill to practise and no patron to wait for.
-- [client:forever] I took up the road {at}, my interest in this country surviving all its inconveniences.
+- [client:forever faction:horde] I took up the road {at}, hoping our skysight might one day catch some trace of the spirits who first granted it.
+- [client:forever faction:horde] The Windshapers had always tended what the spirits left in our keeping, and I began again {at} in the same careful frame of mind.
+- [client:forever home] I set out {at}, with the failing pylons on my mind before anything else.
+- [client:forever home] I began again {at}, among a people grown used to doing without the spirits, and not yet used to doing without each other.
+- [client:forever !home] I took up the road {at}, in a country that had never had to wonder what held it up.
+- [client:forever !home] I set out {at} with "Gale's greetings" ready for anyone I met, whether or not they knew what it meant.
+- [client:forever !home] I kept going {at}, in a world with more people in it than all of Zephras could hold, each of them someone I might yet come to know.
+- [client:forever night] I continued {at} after dark, never fully at ease at night since Ban'aethal had begun to fall in the middle of one.
+- [client:forever] I set out {at}, with an islander's habit of trusting nothing to bear my weight until I had tested it.
+- [client:forever] I took up the road {at}, as unhurried as my Highborne forebears and, I hoped, rather less proud.
+- [client:forever] Work was wanting hands {at}, and I set out to lend mine.
+- [client:forever hc] I began again {at}, mindful that a people as few as mine could not spare a single life, least of all to carelessness.

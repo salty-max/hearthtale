@@ -1,9 +1,12 @@
 ---
 kind: closing
 ---
-- The work had occupied {time}, and I was glad of a stillness the old forest would have approved of.
-- I had earned {gold} in {time}; I valued the shelter of Teldrassil more than anything I could have bought.
+- [!home] The work had occupied {time}, and I thought with some longing of the quiet terraces of Darnassus.
+- [!home] I had earned {gold} in {time}; nothing it could buy would have pleased me as much as the sight of Teldrassil rising out of the sea.
 - After {time}, I wanted nothing louder than wind in leaves.
 - I had been busy for {time}, longer than a Sentinel's watch and with none of its quiet.
 - The stretch had taken {time}, and quiet without vigilance had become a precious thing.
-- After {time}, my purse held another {gold}, a little security of a less enduring kind than our forests.
+- After {time}, my purse held another {gold}, though I still found it odd to measure a day by the weight of metal.
+- [slow] I had been at it for {time}, long enough to tire even someone who had never learned to hurry.
+- [quick] It had taken only {time}, hardly long enough by the reckoning I grew up with to call it work at all.
+- [hc] I had kept my one life through {time} of work, and asked nothing more of the hours ahead than to keep it a while longer.

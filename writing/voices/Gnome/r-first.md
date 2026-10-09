@@ -4,12 +4,12 @@ kind: r-first
 - my enthusiasm lasting right up until they noticed me
 - my ingenuity suddenly feeling uncomfortably theoretical
 - [teeth] those teeth much too close to the height of my face
-- [teeth] my fingers decidedly fond of remaining attached
+- [teeth] my fingers counted twice afterwards, just to be sure
 - [mechanical] uncomfortably reminded that machines need not like their makers
 - [mechanical] a friendly setting apparently absent from the design
-- my stomach dropping like a tram car off its rails
+- my stomach dropping before my feet had decided what to do
 - [low] a beginner's confidence rattling loose
-- [night] heard long before seen, like faulty machinery in the dark
+- [night] heard long before seen, which gave my imagination far too long to work
 - a retreat beginning to look like an excellent invention
 - my pride bristling at the prospect of being an easy meal
-- my heart racing like overwound clockwork
+- my heart going at a pace I would not have believed of it

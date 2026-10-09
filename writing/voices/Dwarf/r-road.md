@@ -10,4 +10,4 @@ kind: r-road
 - [back] the familiar route a comfort in itself
 - [back] familiar enough by now to grumble about
 - [back] every rut of that road known to my boots
-- [high] fonder of the Great Forge's din than of a long road
+- [high] envying the gryphon riders their way of skipping the miles

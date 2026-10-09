@@ -1,13 +1,13 @@
 ---
 kind: r-lesson
 ---
-- [one] my fingers likely to decay before I had any wish to forget it
+- [one] something my patchy memory seemed willing to hold on to
 - an apprenticeship less alarming than an apothecary's interest
 - my patience one thing the plague had not spoiled
-- some enthusiasm still lodged in these decaying fingers
+- my wits as quick as they had been in life
 - a useful addition to the life I was keeping
-- something else for a corpse to do besides decay
-- [new] a trade with prospects beyond a graveyard
+- a step further from the mindless thing the Scourge had made of me
+- [new] a trade with a future, which was more than I had once expected to have
 - [new] a beginner again, without having to die first
 - [low] still learning which parts of me would cooperate
 - [high] a welcome discovery of something still working

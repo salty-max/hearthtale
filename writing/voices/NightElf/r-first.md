@@ -1,11 +1,15 @@
 ---
 kind: r-first
 ---
-- my patience no substitute for distance
-- watched from the shadows first, as my people learned to in the old forests
+- a nearer acquaintance than I would have chosen
+- a sight I would sooner have taken in from the shadows
 - a Sentinel's calm suddenly very desirable
 - my ears no quicker than my eyes to make the danger familiar
 - [teeth] those jaws deserving no less care than a nightsaber's
 - [night] more watchful in the hour I usually found kindest
 - [mechanical] uncomfortably far from anything a forest could have grown
 - [low] young by my people's reckoning, and it showed
+- proof that the world had not stood still while we kept apart from it
+- their sound now one I would know again anywhere
+- [hc] my one life suddenly a narrow thing to have risked on them
+- [night] the dark at least no stranger to my eyes

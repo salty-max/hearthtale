@@ -6,10 +6,10 @@ kind: r-foe
 - my reputation for toughness quite sufficiently tested
 - my confidence settling back onto solid ground
 - [one] hard enough to make me respect the struggle
-- [!one !more] as many as a whole dig crew, and none of them friendly
-- [teeth] my beard decidedly fond of staying out of those jaws
+- [!one !more] rather more than I had hands for, and none of them friendly
+- [teeth] my knuckles decidedly fond of staying out of those jaws
 - [mechanical] rather sorry to see craft spent on killing
-- [night] the Great Forge's welcome glare dear to me in the dark
+- [night] half blind in the dark, for all I watched like a lookout on the Thandol Span
 - [hc] unwilling to leave my kin a name to mourn
 - [low] my courage still softer than it looked
 - [high] done with the steady swing of a smith at the end of a long shift
