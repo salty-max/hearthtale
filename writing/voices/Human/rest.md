@@ -17,3 +17,7 @@ kind: rest
 - [hc] I rested {at}, thinking of all the people the wars had never let grow old, and meaning not to join them.
 - [!fire] I rested {at}, back among walls and doors, which suited me better than any view.
 - [last] The last of the work was behind me, and I rested {at} without listening for the next.
+- [!fire] I rested {at} and let my shoulders drop from around my ears, where the day had put them.
+- [fire] I settled by the fire {at}, and for a while my only duty was to stay warm and keep out of trouble, which I managed admirably.
+- [last] I rested {at}, having given the world a fair day's work and taken a fair day's weariness in exchange.
+- [!last] I stopped {at} for a breather, the kind a carter gives the horse and too seldom takes.

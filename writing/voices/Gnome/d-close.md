@@ -11,3 +11,13 @@ kind: d-close
 - [hc] I have no spare life to fall back on, so I have stopped thinking of caution as dull and started treating it as the cleverest thing I do.
 - I can think of a better way to have done nearly all of it, and I find that oddly encouraging.
 - The world is still a great deal larger and stranger than I am, and on most days I count that in its favour.
+- [hard] I have been dead now, however briefly, and the small, delicate apparatus that keeps me breathing has never seemed more precious.
+- [near] That close call has left me jumpy, and for a while yet I mean to let caution walk in front and curiosity trail behind.
+- [found] Somebody ought to measure all this country properly, and I am beginning to suspect I would enjoy being that somebody.
+- [learned] What I can do now would have frightened me a little not long ago, and I mean to stay just frightened enough to use it carefully.
+- [delve] A crowd of enemies in close quarters is a kind of trouble my people know far too well, and I am in no hurry to go back into one.
+- [grouped] Travelling with others meant I could stop doing all the worrying myself, and I was surprised how much lighter that made me.
+- [fought] Fights like those make me feel very small and, once they are over, a good deal braver than I have any reason to be.
+- [quiet] There is a real satisfaction in small jobs done exactly right, and I had no wish for anything larger to come along and spoil it.
+- [hc] One life leaves no room for a failed experiment, so every plan gets tested in my head before I trust my neck to it.
+- I have gone over these days until most of the pieces fit, and the few that still do not are the ones I mean to look into next.

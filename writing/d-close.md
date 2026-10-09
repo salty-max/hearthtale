@@ -15,6 +15,6 @@ kind: d-close
 - [quiet] It was quiet, all small work and no great danger, and I did not mind.
 - [quiet] Small work, done well enough; the days ahead may ask for more.
 - [grouped] Good company made the road shorter.
-- [low] I am still new to all of this, and every day shows it.
+- [quiet low] I am still new to all of this, and every day shows it.
 - [high] After so long on the road, the world still finds ways to surprise me.
 - [hc] One life, still mine; that is the only tally that matters.

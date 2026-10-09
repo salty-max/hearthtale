@@ -11,3 +11,13 @@ kind: d-close
 - [client:forever hc !hard] The one life I have is still whole, and I have taken to treating danger as I treat strangers: politely, attentively and never too close.
 - [client:forever] I have been both cautious and curious this stretch, and I would not part with either, whatever trouble they make between them.
 - [client:forever] My people are used to measuring things in centuries, and I keep being surprised by how much a single stretch can hold.
+- [client:forever hard !hc] I died, and the world went on without so much as a pause, which is a humbling discovery for someone whose people feel every single loss.
+- [client:forever near] I came within a breath of the end, and since then I have carried my life the way we carry our old relics, as something only lent to me for a while.
+- [client:forever found] My people left this world long before most of its present borders were drawn, so each new land I cross shows me something none of our histories could have told me.
+- [client:forever learned !home] I came down from the sky a visitor, and each new strength makes me feel more like someone this world will have to take into account.
+- [client:forever delve] My people survived by slipping away from danger, not by walking into the heart of it, and that dungeon left me wondering which of the two I take after.
+- [client:forever grouped] Travelling with others reminded me that my people were never meant to live as scattered as they do now, and I liked being one of several again.
+- [client:forever fought] I stood my ground against foes I had never imagined meeting, and I am still faintly astonished that the one who did it came from our small corner of Skywall.
+- [client:forever quiet] Nothing broke, fell or caught fire this stretch, and at home that counts as reason enough to be thankful.
+- [client:forever hc] Our druids are so few that each of them is precious to us, and with no second life to fall back on, I have started to think of my own life the same way.
+- [client:forever] The Shal'nan, our old accounts say, led us from behind a featureless golden mask, and on days like these I begin to see the appeal.

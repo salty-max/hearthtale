@@ -11,3 +11,13 @@ kind: d-close
 - [hc !hard] With no second try to fall back on, I have started guarding my own neck the way a careful farmer guards the seed corn.
 - The world is still putting itself back together after its wars, and I would rather have a part in that than watch it from behind a window.
 - [!class:WARLOCK] If anyone asks what I have been doing, I will have a plain answer and a clear conscience, and that is enough for me.
+- [hard !hc] Death was an interruption rather than an ending this time, and I would rather not find out how many interruptions I am allowed.
+- [near] I keep turning that narrow escape over in my mind, the way one keeps checking a candle already snuffed, knowing it is out and looking all the same.
+- [hc near] I have only the one life, and from now on I mean to carry it the way a sensible traveller carries a full purse, close and well out of reach.
+- [found] Every new country turns out to be somebody's home, held as dear as I hold mine, and that changes how I walk through it.
+- [learned] I can do something now that I could not before, and it pleases me the way the first joint that fits without shaving pleases an apprentice.
+- [delve] In a place like that, I found out how much of my courage depends on knowing the way out, which is less courage than I had hoped and about as much as most people have.
+- [grouped] I like the person I am with others beside me: steadier, a little braver, and much less inclined to talk to myself.
+- [fought] I won the fights that mattered, and I am in no hurry to find out whether I could win them twice.
+- [quiet] I could string a whole season of days like these together and call it a good life.
+- I am tired in the honest way, from use rather than worry, and I mean to enjoy it while it lasts.

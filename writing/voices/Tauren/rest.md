@@ -17,3 +17,7 @@ kind: rest
 - I sat down {at} and went over the day the way the elders go over a question, from every side before deciding anything.
 - [last] I let the work end {at}, with nothing left in it that needed me.
 - [!last] I broke the journey {at}, meaning to take it up again once my breath had come back to me.
+- [fire] I settled near the fire {at}, close enough to feel it through my hide and far enough to keep my fur from singeing.
+- I stopped {at}, and let the land have its quiet back.
+- [last] I let the day come off my back {at} like the packs from a kodo at the end of the trail.
+- I rested {at}, as patient with my own weariness as I try to be with anyone else's.

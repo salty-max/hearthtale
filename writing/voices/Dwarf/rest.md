@@ -17,3 +17,7 @@ kind: rest
 - [!last !fire] I settled {at} for a while; the next job could come and find me if it wanted me so badly.
 - [last !fire] I called it a day {at}, with the work done soundly enough to leave it be.
 - [last fire] I sat by the fire {at}, and let it be the only thing still working.
+- [last !fire] I knocked off {at}, with the day's work stacked neatly behind me and no wish to add a single piece to the pile.
+- [last] I set my burdens down {at}, and only then felt how much they had weighed.
+- [fire] I drew up to the fire {at}, close enough to warm my toes and far enough to keep them, about the last fine judgement I had left in me.
+- [!last !fire] I took a breather {at}, long enough to let my heart slow to a working pace.

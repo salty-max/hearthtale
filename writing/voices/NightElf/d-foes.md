@@ -1,0 +1,11 @@
+---
+kind: d-foes
+---
+- [one !hard] {foes} fell to me, and afterwards I asked no more of the moment than to hear the world go about its business again.
+- [one !hard] I went up against {foes} with every sense awake, which is the only way I know to meet anything that strong.
+- [one hard] {foes} pressed me harder than anything else in these days, and the fighting went my way only at the end, and by a narrower margin than I like.
+- [two !hard] I faced {foes}, and both fights left me more thoughtful than proud.
+- [two hard] I fought {foes} and came through both, though the harder of the two nearly took more than I had left to give.
+- [!one !two !hard] {foes} all fell to me in turn, and I took no more pride in the last of them than in the first.
+- [!one !two !hard] I took on {foes}, and with each of them I let caution lead and kept pride a long way behind.
+- [!one !two hard] {foes} all stood in my way, and at least one of those fights took me closer to the end than I ever wish to stand again.

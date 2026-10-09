@@ -17,3 +17,7 @@ kind: rest
 - I rested {at}, and wondered whether Mekkatorque ever let himself sit still this long.
 - I settled {at}, and thought fondly of the Deeprun Tram, which let its passengers sit down for the whole journey.
 - Nothing needed measuring, mending or explaining for a while, so I rested {at}.
+- [last] I rested {at}, with everything behind me sorted into order and nothing ahead yet asking to be sorted.
+- [fire] I settled near the fire {at}, close enough for warmth and far enough back to keep my eyebrows, a distance I take some care to get right.
+- [!last] I paused {at}, and waited for my head to stop humming with everything still left to do.
+- I sat down {at}, and quite deliberately did not count anything at all.

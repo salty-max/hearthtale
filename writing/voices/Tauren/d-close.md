@@ -11,3 +11,13 @@ kind: d-close
 - [hc] I carry the only life I have the way water is carried over dry country, with care at every step, and I spilled none of it this time.
 - I have tried to be more useful than fearsome, and on the whole I think I managed it.
 - I am a little more at home in the world than I was, and that seems reason enough to keep walking.
+- [hard !hc] Dying has shown me that the Earth Mother is patient with her children, and I would rather not learn where that patience ends.
+- [near] I came close enough to the end that the ancestors seemed only a step away, and I am not ready to take that step.
+- [found] Each new land I cross makes my people's country feel smaller and dearer at the same time.
+- [learned] What I can do now is still settling into me, slowly, the way rain sinks into dry ground.
+- [delve] I am made for long views, and a place where every turning hid an enemy has left me hungry for a horizon.
+- [grouped] Walking with others felt like my people's old way of travelling, together and at the pace of the slowest, and I liked it more than I expected.
+- [fought] My people honour a worthy foe, and now that the fighting is over, I find I do too.
+- [quiet] It was a stretch of small work, the kind that fills most of any camp's days, and I think no less of it for that.
+- [hc] Having only one life makes me slower to fight and quicker to give thanks, and I would not change either.
+- Whatever the world asked of me, I tried to answer it as my people would want, without complaint and without cruelty.

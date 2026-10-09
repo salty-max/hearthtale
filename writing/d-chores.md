@@ -12,3 +12,13 @@ kind: d-chores
 - [!also] I did {n} jobs for {people}, small ones mostly, and every one of them needed doing.
 - [!also] My time went on {n} ordinary tasks, the kind nobody makes songs about.
 - [!also] It came to {n} tasks of plain, useful work, most of them for {people}.
+- [also] Around all that, there were {n} smaller jobs, and I saw each of them through.
+- [also] Besides that, I worked through {n} smaller tasks, one after another.
+- [also] In between I saw to {n} errands, small ones that still needed doing.
+- [also] The hours left over went on {n} small jobs, each finished before the next began.
+- [also much] There was still room for {n} lesser jobs around all of that.
+- [also lots] On top of it all came {n} small jobs, enough to keep my hands busy whenever nothing larger called.
+- [!also] Most of it was ordinary work, {n} tasks of it, done one after another.
+- [!also lots] I worked my way through {n} tasks, none of them large, and the sheer number of them was the hardest part.
+- [!also] It was a stretch of plain work, {n} tasks in all, with little to set one apart from the next.
+- [also] Alongside that, {n} smaller tasks came my way, and none of them went undone.

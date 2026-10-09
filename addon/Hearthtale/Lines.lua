@@ -523,23 +523,25 @@ function Book:pick(kind, key, prefer, ownFresh, fresh, voiced, all)
       fresh, voiced = f, v
     end
   end
+  local function favours(e)
+    for _, t in ipairs(e.s.tags or {}) do
+      if prefer[t] then return true end
+    end
+    return false
+  end
+  local only = false -- (the lines preferred, when there are any: no other of the race's comes back)
   if prefer then
     -- (the race's own first, as ever, among the lines preferred)
     local function favoured(group)
       local found = {}
       for _, e in ipairs(group) do
-        for _, t in ipairs(e.s.tags or {}) do
-          if prefer[t] then
-            table.insert(found, e)
-            break
-          end
-        end
+        if favours(e) then table.insert(found, e) end
       end
       return found
     end
     local ownFavoured, sharedFavoured = favoured(ownFresh), favoured(fresh)
     if #ownFavoured + #sharedFavoured > 0 then
-      ownFresh, fresh, voiced = ownFavoured, sharedFavoured, {}
+      ownFresh, fresh, voiced, only = ownFavoured, sharedFavoured, {}, true
     end
   end
   local h = hash(self.seed .. "|" .. kind .. "|" .. key)
@@ -559,6 +561,7 @@ function Book:pick(kind, key, prefer, ownFresh, fresh, voiced, all)
         and self.used[x.id]
         and (self.kindUses[kind] or 0) - self.usedIn[x.id] >= gap
         and not sameVerb(x)
+        and not (only and not favours(x))
       then
         table.insert(spaced, x)
       end

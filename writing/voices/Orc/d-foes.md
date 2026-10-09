@@ -1,0 +1,11 @@
+---
+kind: d-foes
+---
+- [one !hard] I fought {foes} and won, and I would not mind being judged by that fight.
+- [one !hard] The fight worth naming was the one with {foes}, and I came away from it steadier than I went in.
+- [one hard] My fight with {foes} came close to being my last, and the win still feels more like a reprieve than a triumph.
+- [two !hard] Both {foes} fell to me, and I kept my head through each fight, which pleased me more than winning them.
+- [two hard] I beat both {foes}, though one of those fights came nearer to finishing me than I like to admit.
+- [!one !two !hard] I took on {foes} in turn, and every one of those fights left me a little surer of myself.
+- [!one !two !hard] I went up against {foes}, and none of them asked more of me than steady footing and patience.
+- [!one !two hard] I fought {foes}, and one of those fights had me wondering, for a bad moment, whether I had finally picked one too many.

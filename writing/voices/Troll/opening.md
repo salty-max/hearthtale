@@ -17,3 +17,13 @@ kind: opening
 - [night] I took up the road {at} after dark, listening for the soft feet of anything that hunted at this hour.
 - I took to the road {at}, and it looked friendly enough, which in my experience is the moment to look twice.
 - [!home] I began again {at}, my eyes going to the ground for scorpids out of plain Durotar habit.
+- Off I went again {at}, long legs first and good sense trailing somewhat behind.
+- [!night] Daylight {at} found me rested and ready to like whatever came next, which is all anyone back home ever asks of a morning.
+- I pushed off {at} the way fishers push off from the sand, all at once and without a backward look.
+- I headed off {at} already planning supper, the one kind of forethought nobody ever had to teach me.
+- I started out {at} in a generous mood, the kind that makes a long road feel more like a visit.
+- [night] Nights at home belonged to the drums, so the dark {at} felt more like an invitation than a warning as I set out.
+- I was up and about {at} with both tusks, all my limbs and most of my wits, which I counted a fine start.
+- Some part of me still expects every road to end at the water with something good on the coals, and I set out {at} as hopeful as ever.
+- [home] I went on {at} among orcs who had been strangers to us once and were neighbours now, which still warms me.
+- Nobody had asked me to fetch anything yet when I got going {at}, and I meant to enjoy that for as long as it lasted.

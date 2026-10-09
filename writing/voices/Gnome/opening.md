@@ -17,3 +17,13 @@ kind: opening
 - The road could have been laid out better, like most things, but I set out {at} and followed it all the same.
 - I set out {at}, with the hard-won cheerfulness of a people who had come up out of the radiation still making plans.
 - I took up the road {at}, my head already busy with sums nobody had asked me to do.
+- [!night] By daylight every road looks shorter than it is, and I began {at} meaning to find out by how much.
+- [night] I started out {at}, keeping my eyes on the ground just ahead and my imagination on a very short lead.
+- I made a start {at}, with my nerves and my curiosity arguing over which of them should go first.
+- I went on {at}, fond of the world in spite of all my people had lost in it.
+- [hc] I set off {at}, guarding my one life as carefully as the only working model of something irreplaceable.
+- Fear had kept pace with me before, and I carried on {at} allowing it to come along but not to choose the way.
+- There were questions waiting all along the road, and I headed off {at} hoping to settle at least a few of them.
+- Good spirits make the best fuel I know of, and I got under way {at} with a full supply.
+- I was off {at}, with a careful plan for the day and every expectation of having to revise it.
+- [night] Darkness has a way of rearranging familiar shapes into alarming ones, and I pressed on {at} refusing to be fooled by any of them.

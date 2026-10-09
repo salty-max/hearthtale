@@ -17,3 +17,13 @@ kind: opening
 - [high] I took up the road {at}, a long way now from the beginner who had first walked out of Northshire.
 - [night] Dark had settled {at} by the time I set out, and my curiosity about the country could wait for daylight.
 - With the king missing, the roads still had to be walked and the errands run, and I set out {at} to take my share.
+- Nothing worth having came free except other people's opinions, and I got to work {at} to earn the rest.
+- Another day's work waited {at}, and I went at it the way a shopkeeper takes down the shutters, without making a speech about it.
+- [night] The hour belonged to owls and watchmen rather than honest travellers, but I was up and about {at} all the same.
+- [!night] I got going at a respectable hour {at}, as any decent working person would, and hoped the day would return the courtesy.
+- My people had raised a whole city again from its rubble, and next to that, the work waiting for me {at} looked modest enough to start on cheerfully.
+- [!home] I pressed on {at}, a guest in country with ways of its own, and kept the habits of home to myself until I knew which of them would be welcome.
+- [home] I started out {at} on ground my own people had built on, farmed and fought over for generations, which steadied me more than I had expected.
+- I headed out {at}, resolved to be brave only where it was strictly necessary.
+- I was on my way again {at}, with two willing hands and the usual doubts about the rest of me.
+- Tavern talk had told me a good deal about the wider world, and I carried on {at}, sorting the truth from the embroidery as I went.

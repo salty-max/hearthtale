@@ -12,8 +12,18 @@ kind: opening
 - [client:forever !home] I took up the road {at}, in a country that had never had to wonder what held it up.
 - [client:forever !home] I set out {at} with "Gale's greetings" ready for anyone I met, whether or not they knew what it meant.
 - [client:forever !home] I kept going {at}, in a world with more people in it than all of Zephras could hold, each of them someone I might yet come to know.
-- [client:forever night] I continued {at} after dark, never fully at ease at night since Ban'aethal fell into the sky one night.
+- [client:forever night] I continued {at} after dark, never fully at ease at that hour since Ban'aethal was lost in a single night.
 - [client:forever] I set out {at}, with an islander's habit of trusting nothing to bear my weight until I had tested it.
 - [client:forever] I took up the road {at}, as unhurried as my Highborne forebears and, I hoped, rather less proud.
 - [client:forever] Work was wanting hands {at}, and I set out to lend mine.
 - [client:forever hc] I began again {at}, mindful that a people as few as mine could not spare a single life, least of all to carelessness.
+- [client:forever !home] Few people this side of the sky had ever met one of my kind, and I went about my business {at}, meaning to be a fair introduction to the rest of us.
+- [client:forever faction:alliance] Some among the Windshapers say the High Order's confidence has outrun its competence, and I set to work {at} meaning to close the gap from the competence side.
+- [client:forever faction:horde] What the spirits once gave my people, we Windshapers count as a debt, and I went out {at} to pay back a little of it wherever I could.
+- [client:forever night] I moved on {at} after dark, keeping my pace to what my feet could vouch for rather than what my eyes could guess.
+- [client:forever home] With the skycutters no longer safe between the islands, whatever needed doing {at} fell to those of us already here, and I took my share of it.
+- [client:forever !home] This world spends its plenty as if it could never run short, and I set out {at} still trying not to stare.
+- [client:forever] I got back to work {at}, with the habit of a people too few to leave any job for somebody else.
+- [client:forever] I went on {at} with a little of my rebel forebears' dislike of being told what could not be done.
+- [client:forever] I came to the work {at} the way one handles anything precious and failing at home, slowly and with both hands.
+- [client:forever !night] I set off {at} by daylight, glad of a light that comes back every morning without anyone needing to tend it.

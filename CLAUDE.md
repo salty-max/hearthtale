@@ -126,12 +126,19 @@ The plan and its decisions: PLAN.md.
   its state lives on the Scene, never in a local of `Book:chapter`),
   `Diary.lua` (a prototype, behind the "Diary entries" setting: each
   chapter as a short entry written at the rest that ends it, from the same
-  record and the Book's lines: the opening, new lands (`d-land`), new spells
+  record and the Book's lines: the opening, its story (`d-why`, `d-why2`:
+  writing/why/; a quest's story told once; a chain's quest after an earlier
+  entry told one of it, `[thread]`, its last `[thread settled]`: Knowledge.lua
+  `chains`, `ends`), new lands (`d-land`), new spells
   (`d-powers`, a spell's new rank never), the firsts of a life, named foes
-  (`d-foes`), deaths (`d-deaths`) or the closest call, a dungeon or company,
-  the ordinary work in one sentence (`d-chores`), a thought on the stretch's
+  (`d-foes`; one that killed me is the death's), deaths (`d-deaths`) or the
+  closest call, a dungeon or company, the pet at my side named again
+  (`d-pet`, every fourth entry at most, `[again]` once named so), the
+  ordinary work in one sentence (`d-chores`), a thought on the stretch's
   shape (`d-close`: `[hard]`, `[near]`, `[found]`, `[learned]`, `[delve]`,
-  `[quiet]`, `[grouped]`), the rest; `[!diary]` keeps out a line that leans
+  `[quiet]`, `[grouped]`, `[fought]`), the rest; each race has its own of
+  every frame (two of its own an entry at most, the ending aside);
+  `[!diary]` keeps out a line that leans
   on a moment the diary doesn't tell; `luajit addon/test/read.lua <saved
   file> diary` and the playthroughs' `*.diary.md` show both side by side),
   `Save.lua` (the book written into the saved file at each logout, for the

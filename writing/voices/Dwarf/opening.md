@@ -17,3 +17,13 @@ kind: opening
 - Brann Bronzebeard never waited for a road to be safe before taking it, and I started out {at} in something of the same spirit.
 - The gnomes of Tinker Town knew better than anyone what a lost home costs, and I set out {at} with my own all the dearer for it.
 - I made ready {at}, sizing up the day's work by its weight rather than by my worries.
+- I set off {at} feeling properly tempered, hard enough for the day's knocks without being brittle about them.
+- I began {at} with my scales empty, ready to weigh the day as a fair assayer weighs ore, by what it turned out to hold.
+- [night] I started off {at} after dark, which bothered me less than it might; the greatest city I know lies where no sunlight reaches.
+- [home] I set out {at} on ground my own people have held and worked for generations, which is as good a start as I know of.
+- Good boots and a sound pack will carry anyone further than good intentions, and I took to the road {at} with the first two in decent order.
+- Somewhere an old sealed door is always waiting for the right hands, and I went looking {at}, quietly hoping they might be mine.
+- I began again {at}, steady on my feet and hard to knock over, which has always struck me as the right way to meet trouble.
+- [!home] I set out {at} among other people's roads and other people's walls, judging both by how squarely they had been built.
+- [!night] With daylight still to spend, I headed off {at} meaning to get good wear out of every hour of it.
+- My people are slow to start and slower to stop, and I got moving {at} meaning to live up to the second half at least.

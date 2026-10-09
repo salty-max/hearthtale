@@ -17,3 +17,13 @@ kind: opening
 - [home] I made a start {at}, where every call and footfall had a name I knew.
 - [!home] I set out {at}, far from the moonwells and learning, a little at a time, to do without them.
 - [!night] The day began {at} as most of mine did, with a long moment of listening before I moved.
+- I set out {at}, letting the land show me its ways before I asked anything of it.
+- [night] Night had already fallen when I started {at}, and the world at last kept a pace I understood.
+- Ishnu-alah, goes the old greeting, and I went out {at} hoping some of that good fortune was meant for me.
+- [home] I was on the move {at} with the land on my side for once, and found staying watchful harder than I had expected.
+- Mortal as I was, I saw no sense in waiting for a better hour, and took the road {at}.
+- [!night] I began {at} in the full light of day, with half my mind already waiting for dusk.
+- I left my rest {at} the way a doe leaves a clearing, with one look back and then none.
+- I headed out {at}, fond of every living thing I passed and wary of most of them.
+- [!home] I went my way {at}, polite as any visitor ought to be and watchful as any stranger had better be.
+- [!night] The day {at} had its own business, and I set out to learn what part of it was mine.
