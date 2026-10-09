@@ -249,7 +249,30 @@ local PEOPLE_SIDE = {
   Tauren = "horde",
   Scourge = "horde",
 }
+-- (a title another quest gives to its class: Call of Fire is a shaman's)
+local TITLE_CLASSES = {}
+for _, q in pairs(D.quests) do
+  if (q.classes or 0) ~= 0 and q.title then TITLE_CLASSES[q.title] = bit.bor(TITLE_CLASSES[q.title] or 0, q.classes) end
+end
+-- (a giver whose every other quest is a class's: Ravenholdt's for rogues)
+local GIVER = {}
+for _, q in pairs(D.quests) do
+  for _, id in ipairs(q.starters or {}) do
+    local g = GIVER[id] or { all = 0, classed = 0, mask = 0 }
+    GIVER[id] = g
+    g.all = g.all + 1
+    if (q.classes or 0) ~= 0 then
+      g.classed, g.mask = g.classed + 1, bit.bor(g.mask, q.classes)
+    end
+  end
+end
 local function unrecorded(q, class, side)
+  local mask = (q.classes or 0) == 0 and TITLE_CLASSES[q.title or ""]
+  if mask and bit.band(mask, CLASS[class]) == 0 then return false end
+  for _, id in ipairs((q.classes or 0) == 0 and q.starters or {}) do
+    local g = GIVER[id]
+    if g and g.classed > 0 and g.classed == g.all - 1 and bit.band(g.mask, CLASS[class]) == 0 then return false end
+  end
   local sides = {}
   for _, list in ipairs({ q.starters or {}, q.enders or {} }) do
     for _, id in ipairs(list) do
@@ -596,7 +619,13 @@ local function play(race, class, side)
           end
         end
         local held = a.objectives and a.objectives[1] and a.objectives[1].held
-        if a.objectives and not held then
+        -- (an escort or an event: no objective in the log, the game says when
+        -- it is done, as Quests.lua hears it)
+        if q.event and not a.objectives then
+          wait(10 * 60)
+          a.done = true
+          moment("done", { id = id, title = q.title, giver = a.giver, pet = pet, petFamily = petFamily })
+        elseif a.objectives and not held then
           a.done = true
           moment(
             "done",
@@ -704,7 +733,7 @@ for _, life in ipairs(LIVES) do
   end
   f:close()
   -- the diary (Diary.lua), each entry beside the chapter it tells
-  local diary = ns.writeDiary(c)
+  local diary = ns.writeDiary(c, book)
   f = io.open(("%s/%s-%s.diary.md"):format(BOOKS, life[1], life[2]:lower()), "w")
   f:write(("# %s %s, the diary\n\n"):format(life[1], life[2]:lower()))
   for i, e in ipairs(diary.entries) do

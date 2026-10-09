@@ -32,6 +32,7 @@ async function fetchOnce(url: string, file: string) {
 const lua = (v: unknown): string => {
   if (v === null || v === undefined || v === "") return "nil";
   if (typeof v === "number") return String(v);
+  if (typeof v === "boolean") return v ? "true" : "nil";
   if (typeof v === "string") return JSON.stringify(v).replace(/\\u([0-9a-f]{4})/g, (_, h) => `\\u{${h}}`);
   if (Array.isArray(v)) return "{" + v.map(lua).join(",") + "}";
   return "{" + Object.entries(v as object).filter(([, x]) => x !== undefined && x !== null && x !== "")
@@ -74,6 +75,8 @@ for (const r of rows(sql, "quest_template")) {
   quests[r.entry as number] = { title: r.Title, objectives: r.Objectives, texts, items, targets, src: r.SrcItemId || null,
     classes: r.RequiredClasses || null, rewards, money: (r.RewOrReqMoney as number) > 0 ? r.RewOrReqMoney : null,
     repeatable: ((r.SpecialFlags as number) & 1) === 1 || null,
+    // (an escort or an event: the game says when it is done, no objective counts it)
+    event: ((r.SpecialFlags as number) & 2) === 2 && items.length === 0 && targets.length === 0 || null,
     zone: r.ZoneOrSort, min: r.MinLevel, level: r.QuestLevel, races: r.RequiredRaces, prev: r.PrevQuestId || null,
     next: r.NextQuestInChain || null,
     // (one quest of a group only: Volcor's escape through stealth or through force)
