@@ -483,7 +483,8 @@ local DUNGEON_ENDS = list([[
   High Inquisitor Whitemane, Amnennar the Coldbringer, Archaedas, Chief Ukorz Sandscalp,
   Princess Theradras, Shade of Eranikus, Emperor Dagran Thaurissan, Overlord Wyrmthalak,
   General Drakkisath, King Gordok, Immol'thar, Prince Tortheldrin, Darkmaster Gandling,
-  Baron Rivendare, Balnazzar
+  Baron Rivendare, Balnazzar,
+  Rath'mael, Durgen Dirgehammer, Relic Guardian
 ]])
 local RAID_ENDS = list([[
   Onyxia, Ragnaros, Nefarian, Hakkar, Ossirian the Unscarred, C'Thun, Kel'Thuzad, Prince Malchezaar,
