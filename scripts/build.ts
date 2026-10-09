@@ -326,7 +326,7 @@ for (const f of mdFiles(SCENERY_DIR)) {
 // reads after "I spent the better part of it …", weighed 1 (an errand) to 3
 // (a story's climax).
 const WHY_DIR = join(WRITING, "why");
-const why = new Map<number, { w: number; text: string }>();
+const why = new Map<number, { w: number; text: string; client?: string }>(); // (forever-*.md: Forever's own quests)
 for (const f of mdFiles(WHY_DIR)) {
   const file = join(WHY_DIR, f);
   const src = readFileSync(file, "utf8");
@@ -346,7 +346,7 @@ for (const f of mdFiles(WHY_DIR)) {
     if (/\b(you|your|I|quest|quests|objective)\b/.test(text)) fail(file, `no "you", "I", "quest" or "objective" in a why: ${text}`);
     if (/[$<>[\]{}"]/.test(text)) fail(file, `no $, <>, [], {} or double quotes in a why: ${text}`);
     if (why.has(id)) fail(file, `quest ${id} twice`);
-    why.set(id, { w, text });
+    why.set(id, { w, text, client: f.startsWith("forever-") ? "forever" : undefined });
   }
 }
 
@@ -392,7 +392,7 @@ ${voiceBody}
 ${placeBody}
   },
   why = {
-${[...why.entries()].sort((a, b) => a[0] - b[0]).map(([id, v]) => `    [${id}] = { ${v.w}, ${q(v.text)} },`).join("\n")}
+${[...why.entries()].filter(([, v]) => !v.client || v.client === client).sort((a, b) => a[0] - b[0]).map(([id, v]) => `    [${id}] = { ${v.w}, ${q(v.text)} },`).join("\n")}
   },
 }
 `;
