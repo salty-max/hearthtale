@@ -1722,6 +1722,49 @@ do
   end
 end
 
+-- The diary's story (Diary.lua, writing/why/): stretches with one quest that
+-- mattered, or two that were climaxes, told by what the work was for.
+do
+  local heavy, middling = {}, {}
+  for id, why in pairs(ns.data.why or {}) do
+    if why[1] == 3 and #why[2] <= 85 then table.insert(heavy, id) end -- (two that fit one sentence)
+    if why[1] == 2 then table.insert(middling, id) end
+  end
+  table.sort(heavy)
+  table.sort(middling)
+  for r, race in ipairs(RACES) do
+    local chapters = {}
+    for n = 1, 12 do
+      local log, k = {}, (r * 13 + n * 7)
+      local function quest(id, at)
+        table.insert(
+          log,
+          { k = "quest", id = id, giver = "Sten Stoutarm", ender = "Sten Stoutarm", told = true, at = at }
+        )
+      end
+      quest(middling[k % #middling + 1], n * 100000 + 10)
+      if n % 2 == 0 then
+        quest(heavy[k % #heavy + 1], n * 100000 + 20)
+        quest(heavy[(k + 5) % #heavy + 1], n * 100000 + 30)
+      end
+      chapters[n] = {
+        start = { level = 20, zone = "Wetlands", sub = "Menethil Harbor" },
+        log = log,
+        ended = { level = 20, place = "Menethil Harbor", how = "rest" },
+        kills = {},
+        quests = #log,
+        played = 3600,
+        gold = 0,
+      }
+    end
+    local c =
+      { guid = "story-" .. race, race = race, class = COMBOS[race][1], began = { level = 20 }, chapters = chapters }
+    for i, e in ipairs(ns.writeDiary(c).entries) do
+      inspect(race .. " story diary " .. i, e.text)
+    end
+  end
+end
+
 -- A trinket put on: carried, not worn.
 for seed = 1, 9 do
   local c = {

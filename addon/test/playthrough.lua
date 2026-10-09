@@ -644,7 +644,9 @@ for _, life in ipairs(LIVES) do
   f:write(("# %s %s, the diary\n\n"):format(life[1], life[2]:lower()))
   for i, e in ipairs(diary.entries) do
     inspect(("%s %s diary %d"):format(life[1], life[2], i), e.text)
-    f:write(("## %d. Levels %d to %d\n\n%s\n\n"):format(i, e.from or 1, e.to or 1, e.text))
+    local levels = e.from == e.to and ("level %d"):format(e.from or 1)
+      or ("levels %d to %d"):format(e.from or 1, e.to or 1)
+    f:write(("## %d. %s%s\n\n%s\n\n"):format(i, e.place and e.place .. ", " or "", levels, e.text))
     local ch = book.chapters[i]
     if ch and ch.text then
       f:write(("<details><summary>The chapter in full</summary>\n\n%s\n\n</details>\n\n"):format(ch.text))

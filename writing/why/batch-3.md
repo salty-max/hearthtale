@@ -1,0 +1,264 @@
+---
+kind: why
+---
+# Eastern Plaguelands
+- 5065 2 | prying the third and fourth Tablets of Mosh'aru from the mossflayer trolls for Prospector Ironboot, who feared their secrets
+- 5142 2 | searching ruined Darrowshire for little Pamela, the niece a wandering spirit had hidden there when the battle began
+- 5149 1 | finding the doll little Pamela had left in town, something to hold while she waited alone for her father to come for her
+- 5152 1 | carrying word of Pamela to her Auntie Marlene, who had not the heart to tell the child what became of her father
+- 5153 2 | digging up Joseph Redpath's wedding ring for Chromie, in hope of changing the fate of a man the Scourge had twisted
+- 5168 2 | gathering Davil Lightfire's libram and Captain Redpath's cracked shield for Carlin Redpath, relics of Darrowshire's heroes
+- 5181 2 | retrieving the skull of Horgus the Ravager and the shattered sword of Marduk the Black, villains of Darrowshire's battle
+- 5206 2 | hunting scourge champions for skulls that made Carlin Redpath's crystal resonate, the last reagent of Chromie's spell
+- 5210 1 | bringing Carlin Redpath the Annals of Darrowshire, whose new pages told of the days after the battle
+- 5211 2 | freeing the souls of Darrowshire's fallen defenders by destroying the ghouls and flayers the Scourge had made of them
+- 5241 1 | finding Pamela's Uncle Carlin to tell him she was waiting for him and his story about the rabbits and the berry jam
+- 5246 2 | recovering the Sacred Highborne Writings from Azshara, so Aurora Skycaller could mend the Crystal of Zin-Malor
+- 5247 1 | fetching thorium, crystal restore and dire water from Dire Maul, so Aurora Skycaller could fuse the crystal whole
+- 5248 2 | taking the mended Crystal of Zin-Malor to Lake Kel'Theril, to show a highborne spirit the old wrong made right
+- 5265 3 | opening the Argent Hold, locked for years with none worthy to reach inside, in reward for service to the Argent Dawn
+- 5281 1 | seeking out Egan, whose work with ghosts might aid the restless spirits of those who died in the fall of Stratholme
+- 5464 2 | carrying the soulbound keepsake to Leonid Barthalomew, so a soul might cling to Ras Frostwhisper as it had to the keepsake
+- 5542 1 | thinning the plaguehounds and their runts for Tirion Fordring, to earn a warm meal and some conversation at his stead
+- 5543 1 | destroying the plaguebats that struck from the skies over the Plaguelands, at the request of Tirion Fordring
+- 5544 1 | harvesting carrion worm meat, the one beast the Plague had spared, so Tirion Fordring could restock his food for winter
+- 5601 2 | searching Darrowshire for the family a refugee of Lordaeron had left behind, most of all her little sister Pamela
+- 5721 3 | reliving the battle of Darrowshire with its risen spirits, to defeat Redpath the Corrupted and save Joseph Redpath's soul
+- 5781 2 | recovering the toy hammer young Taelan buried at his father's false grave, to help him regain what he had lost
+- 5845 2 | bringing back the Symbol of Lost Honor, the standard Taelan threw down at Northdale when he renounced all he had known
+- 5846 2 | searching Caer Darrow for Renfray's portrait of Tirion Fordring with his wife and son, his fondest memory
+- 5941 1 | taking the Bundle of Relics to Chromie in Andorhal, who said that with them Darrowshire could yet be saved
+- 5942 1 | opening the chest behind Pamela's house with the key her father sent along with his thanks
+- 6021 3 | killing Zaeldarr the Outcast, the dead troll whose gang stole bodies from the pit at Light's Hope Chapel
+- 6022 1 | slaughtering the Scourge of Corin's Crossing for living rot, ground fast enough to feed Nathanos Blightcaller's hounds
+- 6024 2 | granting Infiltrator Hameya's plea for death before the lich's whispers drove him to infect more of his people
+- 6026 1 | gathering thorium, a golden rod, bombs and triggers for Smokey LaRue, hired by the Argent Dawn for some demolition work
+- 6041 2 | blowing up the Scourge ziggurats and slaughterhouses of Plaguewood that Smokey LaRue had marked for the Argent Dawn
+- 6042 1 | swatting plaguebats off the farm so Nathanos Blightcaller could take his hounds after the Scourge without being accosted
+- 6133 2 | raiding the high elves' Quel'Lithien lodge for the Quel'Thalas Registry at the ranger lord's behest, leaving grief behind
+- 6135 2 | tracking down Duskwing, the albino demon bat, for the white fur Nathanos Blightcaller would fashion into a reward
+- 6136 3 | destroying Borelgore, the corpulent maggot beast that had cost Nathanos Blightcaller entire regiments
+- 6145 2 | intercepting the Crimson Courier for the Grand Crusader's Command, the daily report that was the key to striking the Crusade
+- 6146 2 | eating a rotten apple to pass as a crusader in Tyr's Hand and deliver an altered command, a ruse to expose the Scarlet Oracle
+- 6148 3 | hunting down Demetria, the Scarlet Oracle and the Grand Crusader's chief advisor, on the road from Tyr's Hand
+- 6164 1 | fetching Augustus the Touched's receipt book from his room at the inn, so he could open up shop in Terrordale again
+- 6185 2 | scouring the Plaguelands for word of the Blightcaller and the missing SI:7 agents, whom Flint Shadowmore feared dead
+- 6187 3 | assembling an army to destroy Nathanos Blightcaller, the human ranger lord turned champion of the Forsaken
+- 8929 1 | trying a goblin's ghost revealer at the gates of Stratholme to speak with Anthion Harmon, slain there by the undead
+- 8930 1 | testing a goblin's invention at Stratholme's gates to learn what the ghost of Anthion Harmon knew
+- 8946 2 | carrying Ysida's Locket to the ghost of Anthion Harmon as proof she lived, so he could rest in peace at last
+- 8947 1 | gathering dark iron, leather, mooncloth and hides for Anthion Harmon, to take a piece of Valthalak's medallion by force
+- 9121 1 | paying Archmage Angela Dosantos in crystals and gold for the Kirin Tor cloaking that slips past the wards of Naxxramas
+- 9122 1 | bringing arcane and nexus crystals to Archmage Angela Dosantos for the cloaking that opens the rune portal into Naxxramas
+- 9123 1 | receiving at no cost, for unwavering service to the Argent Dawn, the arcane cloaking that opens the way into Naxxramas
+- 9124 1 | collecting crypt fiend parts for Huntsman Leopold, who made Cryptstalker armor for those who venture into Naxxramas
+- 9126 1 | smashing Scourge for the bone fragments Rohan the Assassin always needed more of for his Bonescythe armor
+- 9128 1 | gathering cores of elements from elementals across the world for Archmage Angela Dosantos, who paid in insignias
+- 9131 1 | scrounging Dark Iron scraps for Korfax to put together sets of Dreadnaught armor for the Dawn's champions
+- 9136 1 | picking savage fronds for Rayne's Dreamwalker armor, made for the heroes who enter Naxxramas
+- 9165 1 | carrying a writ of safe passage, signed once a caravan had made it through the Scourge, back to Dispatch Commander Metz
+- 9664 2 | capturing the four old towers of the Eastern Plaguelands, to tighten the Alliance's noose around the Forsaken
+- 9665 2 | seizing the four towers of the Eastern Plaguelands to stave off an Alliance incursion on the Forsaken's eastern border
+# Duskwood
+- 55 3 | turning Morbent's Bane on Morbent Fel in his house above Raven Hill and slaying him, the revenge Sven had long hoped for
+- 56 2 | clearing skeletons from Tranquil Gardens for the Night Watch, guarding Darkshire alone since Stormwind withdrew its guards
+- 57 2 | driving the skeletal fiends and horrors from the Raven Hill graveyard, as the undead infested the forest around Darkshire
+- 58 2 | ridding the eastern mausoleum of Raven Hill of its Plague Spreaders, with too few Watchers left to keep Darkshire safe
+- 66 1 | asking after the name Stalvan at the Town Hall, a clue from Madame Eva's trance as she feared for her granddaughter Alyssa
+- 67 1 | looking for word of Stalvan Mistmantle at the Moonbrook Schoolhouse, his last known address in Clerk Daltry's registry
+- 68 1 | bringing Clerk Daltry a dusty unsent letter from a footlocker in Moonbrook, proof that Stalvan had lived there after all
+- 69 1 | following a half scratched-out address in the town registry to the Lion's Pride Inn in Goldshire, in search of Stalvan
+- 70 2 | delivering a letter of Stalvan's, left behind by a messenger who fled the Lion's Pride Inn screaming one stormy night
+- 72 1 | searching the Flintridge family's last possessions, bound for auction long after the massacre, for a clue to Stalvan
+- 74 1 | showing the torn journal page from the Flintridge crate to Marshal Haggard, whose failing eyes still knew the hand
+- 75 1 | fetching the faded journal page from the chest upstairs for Marshal Haggard, too nearly blind to read it himself
+- 78 1 | taking the faded journal page to Tavernkeep Smitts, an expert in local lore, who recognized the handwriting at once
+- 79 2 | bringing Commander Ebonlocke the muddy pages found where visiting nobles were slaughtered, tying the evidence to Stalvan
+- 80 2 | having Clerk Daltry match the bloodstained journal page to the signatures in his registry, proving Stalvan's guilt
+- 90 1 | gathering lean wolf flanks and Stormwind seasoning herbs for the Seasoned Wolf Kabobs Chef Grual called a house favorite
+- 93 1 | collecting gooey spider legs for Chef Grual's Dusky Crab Cakes, to feed Jitters after weeks of grubs and weeds
+- 95 2 | digging up what a shadowy figure buried behind the old stump at Sven's farm, where Dark Riders slaughtered his family
+- 98 3 | executing Stalvan Mistmantle at his cottage north of Darkshire, the murderer Madame Eva's premonition had uncovered
+- 101 1 | gathering fangs, fingers and venom so Madame Eva could enchant a Totem of Infliction against a danger she foresaw
+- 133 1 | collecting ghoul ribs for Abercrombie's effigy, a scarecrow for ghouls after Bone Chewers pounded on his walls
+- 134 1 | recovering Abercrombie's crate of tools and herbs from near the ogre mound, left behind when ogres chased him off
+- 149 1 | taking a spectral comb to the sad spirit Blind Mary, so Madame Eva could glean ghost hair from it for thread
+- 154 1 | bringing the comb back to Madame Eva after Blind Mary cried that she was a monster no one would think lovely again
+- 156 1 | plucking rot blossoms from the skulls of Raven Hill's skeletons for Tavernkeep Smitts's zombie juice, thinning their ranks
+- 157 1 | bringing Abercrombie the ghost hair thread, good for binding evil spirits or sewing life into lifeless things
+- 159 1 | taking Abercrombie the zombie juice he wanted against the cold nights, a brew strong enough to raise the dead
+- 160 1 | carrying Abercrombie's letter to his old friend the Mayor of Darkshire, who found it written in a tongue he could not read
+- 163 1 | looking into what haunted Raven Hill, where Calor had seen shadows moving, and finding only Jitters in hiding
+- 164 1 | delivering supplies to Sven's camp at the edge of Duskwood, his followers too few to spare a man to fetch them from town
+- 165 1 | checking on the old man in the shack above Raven Hill cemetery, who had long stopped coming into town for supplies
+- 173 1 | taking on the Nightbane Shadow Weaver worgen of Brightwood Grove, to prove worthy of Master Carevin's band
+- 174 1 | getting a bronze tube for Viktori Prism'Antras, the first part of a device to read in the stars the truth of the forest's change
+- 175 1 | tracking down Mary, once known for always carrying a looking glass, to ask a mirror of her for Viktori's star device
+- 177 1 | wresting Blind Mary's looking glass from the Insane Ghoul of Tranquil Gardens, the mirror Viktori's device lacked
+- 181 2 | taking the ogre Zzarc'Vul's monocle for the lens of Viktori's stargazing device, the last piece of Cog's blueprint
+- 221 2 | culling the Nightbane Dark Runners that had overrun the Rotting Orchard, the bulk of the worgen in the woods, for Calor
+- 222 2 | facing the Nightbane Vile Fangs and Tainted Ones by their bonfires in the south, the most dangerous worgen in Duskwood
+- 223 1 | carrying Calor's letter of recommendation to Master Jonathan Carevin, to join his fight against demons and the undead
+- 225 1 | asking Sirra Von'Indi about Morgan Ladimore, whose weathered grave had been freshly dug up
+- 226 1 | thinning the starving and rabid dire wolves that harried Lars on his way back to Sven's Camp with meat
+- 228 3 | killing Mor'Ladim, the risen body of Morgan Ladimore, who wandered Duskwood attacking Watchmen on patrol
+- 229 1 | bringing Watcher Sarah Ladimore news of her father, whose death had always troubled her
+- 230 1 | bringing Sven the book dug up at his farm, which told him the shadowy figure had witnessed his family's death
+- 231 3 | laying Sarah Ladimore's ring on her father's grave, so Morgan Ladimore would know she lived and his soul could rest
+- 240 1 | bringing the Dusky Crab Cakes back to Jitters, starving in his hiding place in the ghost town
+- 245 1 | rooting out the pygmy venom web spiders overrunning Duskwood's western border, too many for the Night Watch
+- 251 1 | having Abercrombie's strange letter to the mayor translated by Sirra Von'Indi, learned in languages and ancient arts
+- 252 2 | carrying the translated letter to Lord Ello Ebonlocke, revealing that the help given Abercrombie had doomed Darkshire
+- 253 3 | taking the Embalmer's still-beating heart from his wife Eliza's grave, to break his power and shield the town of Darkshire
+- 262 1 | showing the book from Sven's farm around Darkshire, to find the skulker Sven saw the night his family was killed
+- 265 1 | asking around Darkshire after the book's owner, a nervous, jittery stranger who had bought it in town a month before
+- 266 1 | searching the inn for word of the book's owner, who had left in a hurry, muttering about being hunted, and gone west
+- 268 2 | taking Jitters' completed journal to Sven, the account that set him against the dark riders and Morbent Fel
+- 269 1 | bringing Jitters' journal to Bishop Farthing in the Cathedral of Light, for counsel before facing Morbent Fel
+- 270 1 | asking Glorin Steelbrow in Menethil Harbor after the Lightforge Iron lost at sea, metal for a weapon against Morbent Fel
+- 321 1 | searching the wreck of the Flying Osprey for its Lightforge Iron, only to find the chest clawed open by murlocs
+- 322 1 | taking the lightforge ingots to Grimand Elmore in Stormwind, to forge a weapon to give even Morbent Fel worry
+- 323 2 | fighting Morbent Fel's skeletal minions, so Sven would know the strength needed to face the necromancer
+- 324 1 | hunting the murloc raiders near the wreck of the Flying Osprey for the lightforge ingots they had stolen
+- 325 1 | bringing Morbent's Bane, forged of the lightforge iron, to Sven as proof against the fiend Morbent Fel
+- 453 2 | tracking the book's nervous author west of Darkshire, and finding Jitters, hiding from whatever hunted him
+- 526 1 | taking back from the murlocs the lightforge ingots they had carried off, since one alone would craft nothing decent
+- 1383 1 | gathering panther hearts, Mire Lord fungus and a Deep Strider tumor for Apothecary Faustin's so-called truth serum
+- 1391 2 | bringing the captive Infiltrator Marksen in Stonard an ale laced with Faustin's truth serum, a quiet Forsaken errand
+- 1395 1 | rushing a crate of powerstones to Nethergarde Keep before they lost their power, too urgent to wait for a caravan
+# Warsong Gulch
+- 7788 1 | defending Silverwing Hold in Warsong Gulch against the Horde, who were felling the sacred forest for their war machines
+- 7789 1 | fighting the Silverwing Sentinels in Warsong Gulch, for a Horde that held the wilds of Ashenvale its own to harvest
+- 7871 1 | pushing the invading Horde back from Silverwing Hold in Warsong Gulch, to spare the evergreens of the sacred forest
+- 7872 1 | battling the Horde in Warsong Gulch for the Silverwing Sentinels, whose sacred forest was being felled for war machines
+- 7873 1 | defending Silverwing Hold in Warsong Gulch against the Horde, who were felling the sacred forest for their war machines
+- 7874 1 | cutting down the Silverwing Sentinels in Warsong Gulch, who would stop the Horde harvesting Ashenvale's woods
+- 7875 1 | battling the Alliance in Warsong Gulch for the Warsong Outriders, so the Horde could keep logging Ashenvale
+- 7876 1 | fighting the Silverwing Sentinels in Warsong Gulch, for a Horde that held the wilds of Ashenvale its own to harvest
+- 8290 1 | pushing the invading Horde back from Silverwing Hold in Warsong Gulch, to spare the evergreens of the sacred forest
+- 8291 1 | battling the Horde in Warsong Gulch for the Silverwing Sentinels, whose sacred forest was being felled for war machines
+- 8294 1 | cutting down the Silverwing Sentinels in Warsong Gulch, who would stop the Horde harvesting Ashenvale's woods
+- 8295 1 | battling the Alliance in Warsong Gulch for the Warsong Outriders, so the Horde could keep logging Ashenvale
+# sort 261
+- 6061 1 | taming an adult plainstrider with Yaw Sharpmane's rod, a first step toward oneness with nature in the tauren way
+- 6062 1 | subduing a dire mottled boar near Razor Hill with Thotar's taming rod, a first test of command over a beast
+- 6063 1 | taming a webwood lurker with Dazalar's rod, to prove a hunter understood that nature is to be respected rather than bent
+- 6064 1 | trying a large crag boar as a companion with Grif Wildheart's taming rod, to see what kind of beast suited
+- 6082 3 | mastering an armored scorpid, the last of Thotar's trials, to earn the power to tame and command a beast of any choosing
+- 6083 1 | taming a surf crawler off the Echo Isles for Thotar, learning that a pet must become an extension of its hunter
+- 6084 1 | winning over a snow leopard for Grif Wildheart, a swifter, more agile companion than the burly crag boar
+- 6085 3 | taming an ice claw bear, Grif Wildheart's last trial before granting the power to tame a loyal pet of any kind
+- 6087 1 | taming a prairie stalker for Yaw Sharpmane, to take on its swift, fearless nature and fight as one with a beast
+- 6088 3 | bringing a swoop down from the sky with the taming rod, Yaw Sharpmane's last trial before choosing a companion
+- 6101 1 | taming a nightsaber stalker for Dazalar, to learn how the creatures of a changing nature differ from one another
+- 6102 3 | winning a strigid screecher from the skies, Dazalar's last trial before choosing a companion of land, water or sky
+- 7632 2 | seeking the owner of an ancient petrified leaf that glowed green with something old and powerful
+- 7634 2 | slaying an adult blue dragon for sinew, so Hastat the Ancient could bind his leaf into a quiver unseen in 10,000 years
+- 7635 2 | slaying a mature black dragon for its sinew, so Stoma the Ancient could enchant an almost indestructible bowstring
+- 7636 3 | facing alone the four demonic corrupters of the Burning Legion, for their heads and Vartrus the Ancient's stave
+- 8153 1 | hunting mosshoof coursers for perfect antlers, a sign of supreme confidence, for Ogtinc's hunter's charm
+- 8231 1 | tracking wavethrashers along the coast of Azshara for scales that mirror a hunter's strength, for Ogtinc's charm
+- 8232 3 | slaying the green drake Morphaz in the Temple of Atal'Hakkar with others, for the last trophy of Ogtinc's charm
+# sort 263
+- 28 2 | diving into Lake Elune'ara for a shrine bauble and racing it to the Shrine of Remulos, a first trial for the aquatic form
+- 29 2 | searching Lake Elune'ara for a shrine bauble and racing it to the Shrine of Remulos before it decayed, the Trial of the Lake
+- 30 3 | joining the halves of the Pendant of the Sea Lion, agility and endurance, to pass the trial for the aquatic form
+- 272 3 | finding and joining both halves of the Pendant of the Sea Lion, proof of the agility and endurance a water form needs
+- 5929 2 | seeking out the Great Bear Spirit in Moonglade, as every druid must, to learn from it the true nature of the bear
+- 5930 2 | sitting at the feet of the Great Bear Spirit in Moonglade, every druid's first tutor in the nature of the bear
+- 6001 3 | calling forth Lunaclaw at the Moonkin Stone near Auberdine and facing it, for the strength of body and heart a druid needs
+- 6002 3 | facing Lunaclaw at the Moonkin Stone west of Taurajo, for the strength of body and heart one of the Claw must have
+- 6122 2 | drawing water from the cave by Cliffspring Falls, past the naga, to find the poison sickening the deer of Darkshore
+- 6123 1 | gathering earthroot and lunar fungus for the salve Alanndarian Nightsong would make for Darkshore's poisoned deer
+- 6124 2 | curing sickly deer across Darkshore with Alanndarian Nightsong's salve, victims of a taint spreading through the land
+- 6127 2 | drawing water atop Dreadmist Peak, likely tainted by the Burning Blade, to trace the poison sickening the gazelles
+- 6128 1 | bringing down kodos for their horns and finding earthroot, for Tonga Runetotem's salve for the poisoned gazelles
+- 6129 2 | tending the sickly gazelles of the northern Barrens with Tonga Runetotem's salve, to give the cure a head start
+- 9052 1 | collecting bloodcap and Gorishi stings for Torwa Pathfinder's toxin, to pacify a great creature of Un'Goro unharmed
+- 9053 2 | recovering a putrid vine from the bottom of the Temple of Atal'Hakkar, to make Torwa Pathfinder's toxin strong enough
+# Tirisfal Glades
+- 354 2 | destroying the risen Agamands for their remains, revenge for Coleman Farthing, whom their pride had doomed to undeath
+- 356 2 | patrolling behind the Bulwark to slay the Scourge that slipped past, so its defenders faced no attack from the rear
+- 358 2 | slaying the Rot Hide gnolls robbing the Mass Graves for the Scourge's armies, and taking their ichor for the apothecaries
+- 361 1 | delivering Thurman Agamand's last letter to Yvette Farthing, who had begged him to leave Agamand Mills with her
+- 362 2 | destroying Devlin Agamand, whose mad chattering still carried from the mills, so Coleman Farthing could have his bones
+- 365 1 | stealing pumpkins from a farm under the Scarlet Crusade's nose for Apothecary Johaan, a first lesson in the Forsaken's ways
+- 366 1 | returning Gunther's spellbook with Bethor's enchantment upon it, in hope the freed lich would join the Forsaken
+- 367 1 | collecting darkhound blood for Apothecary Johaan, a first test toward a new plague to bring the Scourge to ruin
+- 368 1 | gathering Vile Fin scales for Johaan's plague, since plaguing a whole world took more than poisoning one victim
+- 369 1 | drawing venom from vicious night web spiders, the agent of an ancient plague, to complete Johaan's deadly new concoction
+- 370 2 | killing Captain Perrine and his brigade at the tower southwest of Brill, found through the Crusade's captured documents
+- 371 2 | cutting down Captain Vachon and his friars, raiders from the ruined tower near the Balnir Farmstead, to slow the Crusade
+- 372 3 | assassinating Captain Melrache and his two bodyguards, the ruthless commander of the Crusaders raiding past Faol's Rest
+- 374 1 | taking Scarlet Insignia Rings from slain crusaders as proof of loyalty to Varimathras and the Dark Lady
+- 375 1 | bringing duskbat pelts and thread to Gretchen Dedmar, so hands shaking with the Plague's chill could sew a blanket
+- 398 3 | executing Maggot Eye, the gnoll who stole corpses near Garren's Haunt for the Lich King's army, for Brill's reward
+- 404 1 | beating back the Scourge that had crept in by the old bridge west of Brill, for the Deathguards
+- 407 1 | feeding a pumpkin laced with Johaan's latest formula to the captured Scarlet Zealot in the Gallow's End Tavern cellar
+- 408 3 | putting down the Agamand ancestors in the family crypt and taking the skull of Captain Dargol, the Scourge's leader there
+- 409 2 | summoning and destroying Lillith Nefara at her bloody altar, proof for Gunther of being the Lich King's foe
+- 411 2 | bringing Gunther's Nether Gem to Bethor Iceshard so the old comrades could speak, the wayward lich won over
+- 426 2 | breaking the Scourge at the Agamand Mills before they could make it a base for attacks across Tirisfal
+- 427 1 | slaying Scarlet Warriors at the tower past the Solliden Farmstead, to prove worthy of serving the Dark Lady
+- 445 1 | carrying Apothecary Johaan's findings to Apothecary Renferrel at the Sepulcher, toward the New Plague the Dark Lady desired
+- 492 2 | serving a captured dwarven mountaineer Johaan's special drink, a hint of what the Dark Lady had planned for the rest of Azeroth
+- 5481 1 | picking gloom weed for big-handed Gordo, only to learn his master, Junior Apothecary Holland, had no need of it
+- 5482 1 | gathering doom weed by the mass gravesite for Junior Apothecary Holland, the weed his servant Gordo kept getting wrong
+- 5901 1 | filling a jar with Plaguewood termites for Mickey Levine, who meant to take a lumber mill from the Scarlet Crusade
+- 5902 2 | setting a barrel of termites loose in the Northridge Lumber Mill, to rob the Scarlet Crusade of its precious lumber
+# Blasted Lands
+- 2521 1 | finding a flawless draenethyst sphere, among the rarest of crystals, for Kum'isha, who hoped it could open a rift home
+- 2522 1 | recovering another flawless draenethyst sphere for Kum'isha the Collector, still hopeful after the first portal home failed
+- 2581 1 | gathering jowls, lungs and a pincer for Bloodmage Drazial, who had seen a hyena's jaws snap through thorium steel
+- 2582 1 | fetching more parts for another dose of Bloodmage Drazial's snickerfang assay, despite his warning of its lasting harm
+- 2583 1 | serving as first test subject for Bloodmage Drazial's elixir of the hardy boars, after bringing him the lungs and pincers
+- 2584 1 | going back into the wasteland for more of Bloodmage Drazial's lung juice cocktail, addictive even to the strong-willed
+- 2585 1 | hunting scorpoks, vultures and a boar for Bloodmage Drazial's attempt to bottle the scorpok's grace and quickness
+- 2586 1 | trading more pincers and gizzards to Bloodmage Drazial for one sample of the scorpok assay, the other nine kept for his research
+- 2601 1 | harvesting redstone basilisk brains for Bloodmage Lynnore, who had seen the beasts think more cleverly than some humanoids
+- 2602 1 | bringing Bloodmage Lynnore more basilisk brains and gizzards for another dose of her compound, its focus worn off
+- 2603 1 | collecting vulture gizzards for Bloodmage Lynnore, curious how carrion birds withstood the pestilence, in hope of a cure
+- 2604 1 | gathering more gizzards and jowls for Bloodmage Lynnore's gizzard gum, after its spiritual euphoria had worn off
+- 2621 1 | asking Dispatch Commander Ruag in Stonard what became of the orders the Fallen Hero never waited for
+- 2681 2 | shattering the stones that bound the Fallen Hero's men to Razelikh's service, so their tortured souls could rest
+- 2721 2 | finding out what became of Lieutenant Kirith, last heard screaming under Archmage Allistarj's experiments
+- 2744 1 | seeking the demon hunter Loramus Thalipedes in Azshara, since Razelikh's triad could not die within the Blasted Lands
+- 2783 1 | putting aside the war with the orcs to join the Fallen Hero of the Horde against the Burning Legion
+- 3627 2 | slaying Grol the Destroyer, Lady Sevine and Archmage Allistarj for the pieces of the amulet that summons Razelikh
+- 3628 3 | destroying Razelikh the Defiler atop the highest mountain of the Blasted Lands, his horn a symbol of hope
+# Blackrock Mountain
+- 3906 2 | slaying Overmaster Pyron, the fire lord the Dark Iron dwarves summoned, before he could plague the land with drought
+- 4262 2 | killing Overmaster Pyron at the Blackrock Quarry so Jalinda Sprig's expedition could get into Blackrock Depths
+- 8960 1 | taking a goblin's ghost revealer to Blackrock Mountain to find Bodley, who never came back from Blackrock Spire
+- 8961 2 | gathering the remains of three nobles of fire and a Hallowed Brazier, to recover the rest of Lord Valthalak's amulet
+- 8962 1 | taking Druidical Remains from the silithid of Hive'Regal, to call the druid Mor Grayhoof's spirit to Bodley's brazier
+- 8963 1 | wresting a Starbreeze Village Relic from the Frostmaul giants, to draw the priestess Isalien's spirit to Bodley's brazier
+- 8964 1 | taking a Brilliant Sword of Zealotry from Tyr's Hand, to call up Jarien and Sothos, who had aspired to Scarlet knighthood
+- 8965 1 | gathering Soul Ashes of the Banished on Purgation Isle, to summon the ogre necromancer Kormok with Bodley's brazier
+- 8985 1 | recovering a Starbreeze Village Relic from the Frostmaul giants, to entice the spirit of Isalien, who grew up there
+- 8986 1 | gathering Druidical Remains around Hive'Regal, to call up Mor Grayhoof, whose Cenarion Circle friends fell there
+- 8987 1 | winning a Brilliant Sword of Zealotry in Tyr's Hand, so Bodley could call up the Scarlet-minded siblings Jarien and Sothos
+- 8988 1 | taking Soul Ashes from Purgation Isle, where the ogre Kormok loved summoning the banished dead, to lure his spirit
+- 8994 1 | stripping bracers from the orcs of Blackrock Spire and finding a Flask of Supreme Power, to attune Bodley's brazier
+- 8996 2 | bringing Bodley the Brazier of Beckoning and word that Lord Valthalak would call off his spectral assassins
+- 9032 1 | searching Blackrock Mountain with a goblin's ghost revealer for Bodley, never heard of since he set out for Blackrock Spire
+# Scholomance
+- 4771 3 | planting Dawn's Gambit in the Scholomance's viewing room and defeating the undead mage Vectus and his scourge scholars
+- 5341 2 | recovering the four Barov deeds from the Scholomance for Alexi Barov, before his living brother Weldon could claim them
+- 5343 2 | recovering the Barov deeds from the Scholomance for Weldon Barov, before his undead brother Alexi could lay hands on them
+- 5382 3 | destroying Doctor Theolen Krastinov, the Butcher of thousands, and burning the remains of Eva and Lucien Sarkhoff
+- 5384 3 | luring Kirtonos the Herald with the blood of innocents and destroying him, the master Krastinov had served
+- 5466 3 | making the lich Ras Frostwhisper mortal with the soulbound keepsake and striking him down, a mortal blow to the Scourge
+- 5515 2 | striking down Jandice Barov in the catacombs for Krastinov's Bag of Horrors, the means of summoning his master Kirtonos
+- 5529 2 | killing the plagued hatchlings bred in the Scholomance, before the Scourge could raise a dragonflight of its own
+- 5531 1 | bringing the frozen dragon eggs, kept from the Scourge's experiments, to Betina Bigglezink and her weapon against them
+- 5582 1 | taking a rare healthy scale from a plagued hatchling to Betina Bigglezink, to study the Scourge's machinations
+- 8969 2 | summoning Kormok's spirit in Ras Frostwhisper's chamber and slaying him for the left piece of Lord Valthalak's amulet
+- 8992 2 | calling up Kormok's spirit in the Scholomance and slaying him for his piece, making Lord Valthalak's amulet whole
+# Molten Core
+- 7848 2 | recovering a core fragment in Blackrock Depths, so Lothos Riftwaker could open the rift into the maw of the Firelord
+- 8578 1 | searching the Molten Core for Narain Soothfancy's scrying goggles, lost there a month before by someone nosing around
+# Feathermoon Stronghold
+- 3791 2 | bringing morrowgrain to Quintis Jonespyre, troubled that the Arch Druid was gathering so much of it in the Circle's name
+# Onyxia's Lair
+- 7509 3 | letting Onyxia's breath heat the ancient blade, then slaying her and driving it into her corpse to forge Quel'Serrar

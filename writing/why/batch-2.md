@@ -1,0 +1,331 @@
+---
+kind: why
+---
+# Stranglethorn Vale
+- 185 1 | proving a hunter's mettle to Ajeck Rouack on the young tigers near Nesingwary's camp, the first of her trials
+- 186 1 | stalking the grown Stranglethorn Tigers, the next step of Ajeck Rouack's training in the tiger hunt
+- 187 1 | tracking down the elder tigers of Stranglethorn, the fiercest and hardest to find, to show Ajeck Rouack the training had taken
+- 188 3 | hunting down Sin'Dall, the elusive tiger Nesingwary's party had tracked for weeks, and earning the name of master tiger hunter
+- 189 1 | collecting Bloodscalp ears for Kebok of Booty Bay, whose agents and guards the trolls had been killing in the jungle
+- 190 1 | starting out on young panthers, the first proof Sir S. J. Erlgadin asked of anyone joining Hemet's hunt
+- 191 1 | moving up to full-grown panthers, tougher game, to be thought worthy of Nesingwary's big game hunters
+- 192 1 | dropping Shadowmaw Panthers, the deadliest cats in Stranglethorn, as Sir S. J. Erlgadin's hardest test of a panther hunter
+- 193 3 | slaying the great panther Bhag'thera, who had eluded Nesingwary's party, and bringing his fang to Sir S. J. Erlgadin
+- 194 1 | bagging Stranglethorn Raptors for Hemet Nesingwary, who left the finding of them to the hunter as half the challenge
+- 195 1 | taking on the Lashtail Raptors, Hemet Nesingwary's next and stiffer test of a raptor hunter
+- 196 1 | tracking the cagey Jungle Stalkers, the hardest raptors to find and kill, to earn Hemet Nesingwary's tip on the best hunting yet
+- 197 3 | killing Tethis, a wily raptor even Hemet Nesingwary had failed to bring down, and bringing back its talon
+- 198 1 | carrying goblin supplies to Private Thorsen, land mines Lieutenant Doren's rebels needed against Kurzen and his men
+- 200 2 | searching Kurzen's Compound for Bookie Herod's records, to learn how Private Thorsen's secret had leaked to Kurzen
+- 201 1 | scouting the hunters' camp upriver for Krazek in Booty Bay, who wanted to know what Hemet Nesingwary was about
+- 202 3 | storming the Stockpile to kill Colonel Kurzen and his leaders, saving Lieutenant Doren's band of rebels
+- 203 2 | raiding Kurzen's camp to cut down his Jungle Fighters and ease the pressure on the outnumbered rebels
+- 204 2 | stripping Kurzen's Medicine Men of their Jungle Remedies and Venom Fern Extract, so the rebels could heal their own
+- 205 2 | taking Skullsplitter Fetishes from their witchdoctors for Brother Nimetz, who sought the secret of Kurzen's fall into evil
+- 206 3 | killing the ogre mage Mai'Zoth, whose mind magic Brother Nimetz blamed for Kurzen's corruption, and taking his Mind's Eye
+- 207 2 | copying four troll tablets in the ruins of Stranglethorn for Brother Nimetz, who suspected troll magic behind Kurzen's fall
+- 208 3 | hunting King Bangalash, the great white tiger Hemet Nesingwary had come to Stranglethorn for, a prize no other hunter had taken
+- 209 1 | prying tusks from Skullsplitter trolls for Kebok, who passed them off as tiger fangs to buyers in the South Seas
+- 210 1 | taking the rebel cook's broken Crock Pot back to Krazek in Booty Bay, the goblin who had made it, to be mended
+- 213 1 | stealing Tumbled Crystals from the Venture Co. geologists for Kebok, as Baron Revilgaz pushed back against Gelriz's meddling
+- 215 1 | learning from Lieutenant Doren that Private Thorsen had gone back among Kurzen's men as a spy for the rebels
+- 328 2 | opening Bookie Herod's strongbox in the Stockpile with a key hidden in his ledger, hoping to learn how Thorsen was found out
+- 329 2 | bringing a muddy note from Herod's strongbox to Lieutenant Doren, the clue to a traitor within the rebel camp
+- 330 2 | checking Corporal Sethman's patrol schedules to learn who had shared Thorsen's routes, and so who had betrayed him
+- 331 3 | unmasking Private Merle as the spy among Lieutenant Doren's rebels, a traitor they could not have survived for long
+- 338 1 | gathering the scattered pages of Hemet Nesingwary's novel for Barnil Stonepot, who had let the wind blow them across the jungle
+- 339 1 | piecing together the first chapter of The Green Hills of Stranglethorn, where Nesingwary names his hunting companions
+- 340 1 | finding the lost pages of Chapter II of Nesingwary's novel, its tales of panther and tiger hunts, for Barnil Stonepot
+- 341 1 | restoring Chapter III of Nesingwary's manuscript, with Erlgadin and Rouack's first kill with a dwarven rifle
+- 342 1 | recovering the last pages of Chapter IV, the finale of The Green Hills of Stranglethorn, for Barnil Stonepot
+- 348 3 | fetching the heart of Mokk the Savage, summoned by Witch Doctor Unbagwa, the only cure for Fin Fizracket's deadly fever
+- 568 1 | culling the Lashtail Raptors outside Grom'gol, which threatened the Horde's supply line to Stonard
+- 569 2 | striking at the ogres of the Mizjah Ruins, who kept ambushing the caravans meant to supply Stonard
+- 570 1 | collecting Shadowmaw claws and a flawless tigress fang, the first reagents of an enchantment Far Seer Mok'thardin meant to make
+- 571 1 | hunting Elder Mistvale Gorillas for a perfect aged sinew, the magical tether to hold Mok'thardin's charm together
+- 572 1 | plucking Jungle Stalker feathers from the raptors south of Grom'gol for Far Seer Mok'thardin's enchantment
+- 573 2 | fetching Holy Spring Water past the naga explorers who had advanced on the spring, the last reagent of Mok'thardin's choker
+- 574 2 | breaking Kurzen's Commandoes and Headshrinkers in the Stockpile, his best troops, and giving the rebels hope of surviving
+- 575 1 | skinning river crocolisks for Drizzlik, the Booty Bay leathercrafter, who had a dozen Excelsior boots to make
+- 576 2 | getting Dizzy One-Eye's enchanted glass eye back from the Bloodsail Buccaneers who had jumped him, so the old sea dog could see
+- 577 1 | taking cheaper Snapjaw Crocolisk skins at Lake Nazferiti to fill out the inner layers of Drizzlik's boots
+- 578 2 | finding the haunted island off the coast for Baron Revilgaz, who hoped the Stone of the Tides might soon be his
+- 580 1 | fishing Whiskey Slim's lost bottles of Pupellyverbos Port out of the sea, before his captain gave him a taste of the cat
+- 581 2 | hunting Bloodscalps for their tusks, to prove fit to help Nimboya search for Yenniku, his chief's lost son
+- 582 2 | taking shrunken heads from Bloodscalp Headhunters so Nimboya could make sure Yenniku's was not among them
+- 584 3 | killing the Bloodscalp chief Gan'zulah and Nezzliok the Dire, their heads for Nimboya's cauldron to force the truth of Yenniku
+- 585 2 | stealing Skullsplitter trophy skulls from three ruins to appease the spirit of Nezzliok, who knew where Yenniku had been taken
+- 586 3 | cutting into the heart of the Skullsplitters to defeat their chief, Ana'thek the Cruel, as Gan'zulah's raging spirit demanded
+- 587 1 | winning back the snuff the Bloodsail Raiders had hijacked, for Deeg, a pirate who could find none in Booty Bay
+- 588 1 | bringing word to Kin'weelay that Zanzil the Outcast held Yenniku body and soul, leaving only the faintest hope
+- 589 2 | gathering Pulsing Blue Shards from Ironjaw Basilisks in the Crystalvein Mine, magic Kin'weelay needed to bend the Mind's Eye
+- 591 3 | wresting the Mind's Eye from the ogre mage Mai'Zoth in the Mosh'Ogg mound, the only hope of saving Yenniku
+- 592 3 | trapping Yenniku's soul in a gem at the Ruins of Aboraz and carrying it to Nimboya, freeing him from Zanzil the Outcast
+- 594 2 | searching for the writer of a message in a bottle, a captive held by a great Skymane on an island in the South Seas
+- 595 1 | scouting the cove north of Booty Bay for First Mate Crazz, after word of Bloodsail Buccaneers all over southern Stranglethorn
+- 596 1 | taking bloody bone necklaces from Bloodscalp trolls for Kin'weelay, whose rites would weaken the Darkspears' enemies
+- 597 1 | bringing First Mate Crazz a Bloodsail map, proof their men were camped by Booty Bay waiting for a signal to attack
+- 598 1 | hunting Skullsplitters for their split bone necklaces, carrying on the Darkspears' old war with the tribe for Kin'weelay
+- 599 1 | warning Fleet Master Seahorn of the attack the Bloodsail Buccaneers were planning on Booty Bay
+- 600 1 | seizing Singing Blue Crystals from the Venture Company miners near the Crystalvein Mine for Crank Fizzlebub
+- 601 1 | taking bracers from the water elementals of the haunted island, so a Dalaran mage could study the curse of the Stone of the Tides
+- 602 1 | carrying the water elemental bracers to Archmage Ansirem Runeweaver in Dalaran, who knew the legends of the Stone of the Tides
+- 604 2 | raiding the Bloodsail command post on the Wild Shore for their charts and orders, to learn their plan against Booty Bay
+- 605 1 | harvesting Singing Crystal shards from basilisk hides for Crank Fizzlebub, kept from the crystals by the Venture Company
+- 606 1 | frightening Shaky Phillipe with gorilla giblets into paying the gambling debt he owed Sea Wolf MacKinley
+- 607 1 | collecting Shaky Phillipe's overdue payment for Sea Wolf MacKinley, along with his promise he had meant to pay
+- 608 3 | killing Captain Stillwater, Captain Keelhaul and Fleet Master Firallon to break the Bloodsail attack on Booty Bay
+- 609 1 | collecting from three cursed gamblers in the jungle ruins a foot, a spyglass and a ring they owed Sea Wolf MacKinley
+- 610 2 | taking Catelyn's dagger back from Pretty Boy Duncan of the Bloodsail, the blade needed to break the altar of the Stone
+- 611 3 | breaking the Altar of the Tides with Catelyn's Blade and killing Gazban, to bring the Stone of the Tides to Baron Revilgaz
+- 613 1 | searching the Mosh'Ogg ogres for Maury's key, to open the locked foot that held what he owed Sea Wolf MacKinley
+- 614 2 | recovering Captain Smotts' chest from Gorlash, one of the sea giants who had smashed his ship and killed his crew
+- 617 1 | gathering akiris reed from the naga along the beach for Privateer Bloads, whose friend Groy paid well for it
+- 618 3 | luring the giant Negolash with buzzard wings and wine, then killing him to win back Captain Smotts' cutlass
+- 621 1 | taking samples of Zanzil's mind-bending mixture from his followers for Crank Fizzlebub, who meant to find a use for it
+- 622 1 | bringing the mended Crock Pot back to Corporal Kaleb, so the rebel camp could get its dinner started
+- 623 1 | shipping a bundle of akiris reed to Privateer Groy in Theramore, for a client who wanted more right away
+- 624 1 | following Cortello's riddle to a clue hidden under a bridge in the Swamp of Sorrows
+- 625 1 | chasing the riddle's next clue to a cave in the southwest of Dustwallow Marsh
+- 626 2 | solving the last of Cortello's riddles under the great falls of the Hinterlands, where a treasure chest waited
+- 627 1 | mining bloodstone ore in Drywhisker Gorge for Krazek, the favor he asked while he mended the Crock Pot
+- 628 1 | drawing out an elder saltwater crocolisk for its prized skin, the outer layer of Drizzlik's Excelsior boots
+- 629 1 | braving the murlocs of the Vile Reef for a shard of the tablet of Gri'lek, for the Darkspears to enshrine in Orgrimmar
+- 630 3 | slaying King Mukla, the great Skymane, to free Princess Poobah from the chain that held her on his island
+- 1127 1 | bringing Crank Fizzlebub more of Zanzil's mixture to brew Fool's Stout, a drink wanted back at the races
+- 4621 3 | killing Fleet Master Seahorn and Baron Revilgaz of Booty Bay, so the Bloodsail could sail free, and becoming their admiral
+- 7838 2 | winning a dozen Arena Master trinkets on the floor of the Gurubashi Arena, enough to be named its Grandmaster
+- 8551 2 | winning back Captain Smotts' chest from Gorlash, one of the sea giants who had wrecked his ship and killed his crew
+- 8552 2 | returning a sash embroidered HS to Captain Smotts, proof that Mok'rash, one of the giants who had wrecked his ships, was dead
+- 8554 3 | baiting the giant Negolash with buzzard wings and wine, then killing him to recover Captain Smotts' cutlass
+# Ashenvale
+- 2 2 | bringing Sharptalon's claw to Senani Thunderheart, proof that the hippogryph who had terrorized the lumber camps' peons was dead
+- 23 2 | presenting the paw of Ursangous, a great bear with many kills to his name, to Senani Thunderheart for the Ashenvale Hunt
+- 24 2 | claiming the head of Shadumbra, the nightsaber that made every trip west of Splintertree Post dangerous, for the Ashenvale Hunt
+- 25 2 | clearing the befouled elementals that had halted the transports past Mystral Lake, and scouting the Alliance outpost there
+- 216 2 | thinning the Thistlefur furbolgs, whose village blocked the Horde's path between Zoram'gar and Splintertree Post
+- 247 3 | completing the Ashenvale Hunt for Senani Thunderheart, with all three of its legendary beasts slain and proven
+- 824 1 | taking a befouled water globe to Je'neu Sancrea of the Earthen Ring, who feared it fed a corruption of the elements
+- 976 2 | guarding Feero through Ashenvale Forest with supplies and messages Auberdine needed against the forest's dark threats
+- 991 2 | searching the shrine in Lake Falathim for Raene Wolfrunner's friend Teronis, and finding him dead among the murlocs
+- 1007 1 | searching the site of a naga ambush on the Zoram Strand for Talen's ancient statuette, the reason he had braved that coast
+- 1008 2 | driving the Wrathtail naga from the Zoram Strand, where the drowned city of Zoram lies, for Shindrell Swiftfire
+- 1009 3 | taking the Ring of Zoram from Ruuzel, leader of the naga, the key Talen needed to unlock the secrets of his statuette
+- 1010 2 | searching Bathran's Haunt for Bathran's Hair, a plant Orendil Broadleaf needed to treat a sick child in the village
+- 1011 2 | stealing a bottle of disease from the Forsaken camp near Dor'Danil, so Kayneth Stillwind could learn what they meant to spread
+- 1012 2 | destroying the maddened ghosts of Dor'danil's druids, murdered by the Forsaken, so their spirits might at last find peace
+- 1016 2 | divining from the elementals' bracers who had been filling the pools with corruption, for Sentinel Velene Starstrike
+- 1017 3 | killing Sarilus Foulborne, the undead mage fouling the waters with corrupted elementals, for Sentinel Velene Starstrike
+- 1020 1 | carrying Orendil's cure to Pelturas Whitemoon in Astranaar, the parent of the sick child
+- 1021 2 | searching Xavian for the dryads who had gone to take back the Branch of Cenarius, and finding Anilia dying
+- 1022 2 | studying the Tome of Mel'Thandris at the Howling Vale, to learn why wolf-men had overrun the shrine
+- 1023 2 | finding the glowing gem Teronis had died seeking and bringing his journal back to Raene Wolfrunner
+- 1025 2 | fighting the Foulweald furbolgs who had been attacking travelers on the road east, to help the Sentinels protect the land
+- 1026 1 | taking a wooden key from the corrupted treants to open a hidden chest holding the next piece of Dartol's Rod
+- 1027 2 | recovering the last piece of Dartol's Rod, hidden by the druids of Dor'danil before they were killed
+- 1028 2 | finding a hidden shrine in the mountains and re-enchanting Dartol's Rod there, the work Teronis had died to begin
+- 1030 2 | taking furbolg form with Dartol's Rod to speak with an uncorrupted furbolg, who blamed the night elves for the corruption of his kin
+- 1031 3 | killing Geltharis and returning the Branch of Cenarius to the dryads, Anilia's dying wish
+- 1032 1 | slaying the satyrs who had taken Anilia, for her grieving sister Illiyana
+- 1033 2 | bringing Elune's Tear from the isle on Iris Lake to Pelturas, to wash away the corruption sickening Relara
+- 1034 2 | gathering frosted dust in the Ruins of Stardust for a poultice to bring down Relara's fever
+- 1035 3 | slaying the Shadethicket Oracle for a fallen moonstone, the power Pelturas believed would give Relara back her strength
+- 1037 1 | asking Thyn'tel Bladeweaver in Darnassus about Velinde Starsong, the priestess who had vanished from Ashenvale
+- 1038 2 | searching Velinde Starsong's chest in the Sentinels' bunkhouse for her journal, which made her disappearance look more troubling
+- 1039 1 | tracing Velinde Starsong through the wharfmaster's ledgers in Ratchet, where she had booked passage to Booty Bay
+- 1040 1 | trailing Velinde to Booty Bay and the caravaneer Ruzzgot, of whom she had asked about travel overland
+- 1041 1 | following the caravan road to Darkshire, where Velinde had parted from Ruzzgot's caravan
+- 1042 1 | seeking out the Carevin family of Darkshire, hunters of the worgen that Velinde's trail had led to
+- 1043 2 | searching the worgen-infested mine south of Darkshire, where the wolf-men were first found, for signs of the Scythe of Elune
+- 1044 2 | bringing Thyn'tel Bladeweaver word of Velinde Starsong's fate, the end of a long search from Ashenvale to Duskwood
+- 1045 3 | killing Ran Bloodtooth and his guards for Krolg, an uncorrupted furbolg determined that his people police their own
+- 1046 2 | bringing Ran Bloodtooth's skull and Dartol's Rod to Raene Wolfrunner, finishing what Teronis had died to begin
+- 1054 3 | killing Dal Bloodclaw, chieftain of the Thistlefur furbolgs, whose growing numbers might soon dare to attack Astranaar
+- 1070 1 | looking for Kaela Shadowspear in Stonetalon, sent to investigate the land and not heard from since
+- 1134 2 | killing pridewings near Mirkfallon Lake to deny their venom to the orc assassins said to use it on the Alliance
+- 1918 1 | bringing a befouled water globe from Mystral Lake to Mastok Wrilehiss, in case it held what had fouled the lake
+- 4581 1 | carrying Shindrell's report to the druid Kayneth Stillwind, who feared a corruption moving through Ashenvale
+- 6441 1 | collecting satyr horns for Pixel, a trader bound for Ratchet, where they were in high demand
+- 6442 2 | throwing the Wrathtail naga back into the sea from the Zoram Strand, land the Horde had worked hard to claim
+- 6462 2 | recovering the sacred charms of Mitsuwa's kin from Thistlefur Hold, taken by the furbolgs who killed them on the road
+- 6482 3 | escorting Ruul, Yama Snowhoof's brother, out of the Thistlefur camp, where the furbolgs had taken him for a bear and starved him
+- 6503 2 | hunting the Ashenvale Outrunners spying on the Horde's defenses, to blind the Alliance before it could attack
+- 6504 1 | finding the scattered pages of a shredder manual for Gurda Ragescar, who could not work the new shredder without them
+- 6544 3 | fighting beside Torek's raiders in their attack on Silverwing Outpost and its leader, Duriel Moonfire
+- 6571 1 | gathering saw blades, rope, oil and axes for the Warsong Lumber Camp, wresting the rope and oil back from furbolgs and satyrs
+- 6621 3 | raising Karang's banner on the Foulweald totem mound and holding it until Chief Murgut came out to be defeated
+- 6641 3 | guarding Muglash while he lured out Vorsha the Lasher, the hydra that kept attacking Zoram'gar, and seeing her slain
+- 6922 2 | bringing Je'neu Sancrea the strange globe that had fed Baron Aquanis in Blackfathom, proof of what had corrupted him
+# Thousand Needles
+- 1104 1 | gathering salty scorpid venom for Fizzle Brassbolts, the base of a fuel to make the gnomes' rocket car burn hotter
+- 1105 1 | collecting tortoise shells for Wizzle Brassbolts to build fuel tanks strong enough to hold his brother's fierce new fuel
+- 1106 1 | carrying Fizzle's letter to Martek the Exiled in the Badlands, a great smith who might know how to make harder pistons
+- 1107 1 | cutting tail fins from the Saltscale murlocs of the Vile Reef for a composite to keep the rocket car from tearing itself apart
+- 1108 1 | taking indurium flakes from the Stonevault troggs for Martek to test, a metal that might stand the heat of Fizzle's engine
+- 1110 1 | scavenging crashed rocket car parts across the Shimmering Flats for Kravel Koalbeard to sell to the racers
+- 1111 1 | fetching the gnomes' long-delayed car parts from Wharfmaster Dizzywig in Ratchet for Kravel Koalbeard
+- 1114 1 | delivering the car parts Fizzle Brassbolts had long waited for, short one small piece Kravel had kept back
+- 1117 1 | bringing Kravel the rumors Krazek had dug up on Nazz Steamboil, a secret the goblin pilot would pay a fortune to keep
+- 1118 1 | taking Kravel's new scheme to Crank Fizzlebub in Booty Bay, who would need something to addle the racers' wits
+- 1119 1 | bringing back a Fool's Stout, brewed by Crank Fizzlebub from Zanzil's mixture, for Kravel's scheme against the racers
+- 1120 1 | plying the gnome pit crew with Fool's Stout before the race, as Kravel's scheme demanded
+- 1121 1 | slipping Fool's Stout to the goblin pit crew before the race, so Kravel's bet would pay
+- 1147 2 | pushing the silithid back from the dig site for Moktar Krin's half-dead war party, who could not fight them alone
+- 1148 2 | bringing silithid hearts, talons and carapaces to Korran at the Crossroads, to learn what the creatures were
+- 1175 1 | clearing basilisks away from the racetrack for Trackmaster Zherin, after one had caused a big crash with the Red Thunder
+- 1176 1 | collecting hollow vulture bones for Pozzik, light and strong for tweaking the goblins' racers
+- 1179 1 | carrying a crate of crash helmets to Wizzle Brassbolts, whose rocket car pilots kept crashing and giving themselves concussions
+- 1182 2 | stealing the fuel regulator blueprints from Cozzle's locked house at Lake Nazferiti, for the goblin racer Pozzik
+- 1183 1 | delivering the fuel regulator blueprints to Pozzik, who could now build a better one for his racer from the ground up
+- 1187 1 | recovering Razzeric's seaforium booster from a zeppelin crashed in Dustwallow Marsh, the extra power he wanted for his racer
+- 1188 1 | taking the seaforium booster to Shreev in Gadgetzan to have its safety removed, at Razzeric's reckless insistence
+- 1189 1 | returning the modified booster to Razzeric, with Shreev's warning that one mistake would leave him a burnt spot on the track
+- 1190 2 | stealing Rizzle Brassbolts' plans under cover of Zamek's diversion, to learn why the gnomes' cars had grown faster
+- 1194 1 | bringing Pozzik a sample of indurium ore found with Rizzle's plans, the secret of the gnomes' faster cars
+- 1394 2 | returning to Dorn Plainstalker at the end of his trials, to be rewarded for a mind, body and spirit proven strong
+- 4542 1 | carrying an urgent warning of renewed centaur attacks to Cliffwatcher Longhorn at Freewind Post
+- 4767 1 | gathering wyvern eggs at Highperch for Elu, who needed more wyverns for the wind riders and hoped to become one
+- 4770 3 | escorting Pao'ka Swiftmountain, lost for days after getting too close to the wyvern nests, out of Highperch to Whitereach Post
+- 4821 2 | taking the alien egg from a serpent den for Hagar Lightninghoof, who wanted to know what the serpents guarded so closely
+- 4841 2 | attacking the Galak centaur camp north of Freewind Post in revenge for the caravan they had slaughtered
+- 4865 1 | bringing word to Motega Firemane that the legend of Arikara was true, and that vengeance had come to Thousand Needles
+- 4881 2 | warning Kanati Greycloud of the centaur plot to kill him for daring to set up a hunting camp
+- 4904 3 | escorting Lakota Windsong out of Darkcloud Pinnacle, where Arnak had taken her after killing her brother, back to Thalia
+- 4966 3 | standing with Kanati Greycloud against the centaur assassins sent to kill him
+- 5062 1 | harvesting Incendia agave for Magatha Grimtotem to enchant into a powder that would summon Arikara
+- 5064 2 | stealing three secret notes from Darkcloud Pinnacle, to learn what the Grimtotem were plotting with unknown agents
+- 5088 3 | summoning Arikara at the sacred fire of life and slaying her, a creature Magatha feared was stalking Cairne Bloodhoof
+- 5147 3 | bringing Arnak Grimtotem, the outcast wanted for murder and kidnapping, to justice for Cliffwatcher Longhorn
+- 5151 2 | slaying the caged panther that wore Wizlo Bearingshiner's hypercapacitor, for the lone survivor of a centaur raid on a caravan
+- 5361 1 | carrying Cliffwatcher Longhorn's report of unusual centaur activity to his brother Nataka at Ghost Walker Post in Desolace
+- 5762 1 | delivering Kravel's crate of special-gauge ammunition to Hemet Nesingwary's hunting camp in Stranglethorn
+# Stonetalon Mountains
+- 1057 2 | driving the Bloodfury harpies out of the Charred Vale for Keeper Albagorm, so the burnt land could begin to grow back
+- 1058 1 | gathering sap, whiskers, courser eyes and a fey dragon scale for Witch Doctor Jin'Zil's forest magic, brewed for his caged elves
+- 1059 1 | carrying Keeper Albagorm's plea to Falfindel Waywarder, a druid who could call forest spirits to help reclaim the Charred Vale
+- 1062 2 | killing Venture Co. loggers in Windshear Crag for Seereth Stonebreak, to stop the goblins burning and felling the forest
+- 1068 2 | wrecking the shredders XT:4 and XT:9, the machines of Seereth's vision that felled trees with impossible speed
+- 1071 2 | keeping the Venture Co. at bay in Windshear Crag so Gaxim Rustfizzle could plan the inventions he hoped would save the forest
+- 1073 1 | proving some skill at alchemy to Lomac Gearstrip in Ironforge with a few potions, the price of his Nitromirglyceronium
+- 1074 1 | carrying the volatile Nitromirglyceronium back to Gaxim Rustfizzle, the spark for his wagons of dynamite
+- 1076 1 | taking debris from a Westfall dust devil to Collin Mauren, for a scroll to set off Gaxim's explosives from afar
+- 1077 1 | bringing the Scroll of Messaging to Gaxim, the last piece of the remote explosive meant to cover a raid on the Venture Co. site
+- 1078 1 | collecting crystalized basilisk scales in the Charred Vale for Collin Mauren, ground into a reagent for his spells
+- 1079 2 | setting off a distraction at the lumber mill in Windshear Crag and stealing the Venture Co.'s engineering plans for Gaxim
+- 1080 2 | stealing the Venture Co. letters from Windshear Mine under cover of Gaxim's explosives
+- 1082 1 | bringing Sentinel Thenysil word that Kaela and Gaxim were alive, and well on their way to stopping the Venture Co. goblins
+- 1083 1 | thinning the burning spirits loosed on the Charred Vale when the Venture Co. set it aflame, for Kaela Shadowspear
+- 1084 2 | taking corroded shrapnel from a wounded treant so Gaxim could learn whether the goblins' weapons had corrupted it
+- 1087 1 | killing the Sons and Daughters of Cenarius for Braelyn Firehand, who hated how the druids stifled the flow of magic
+- 1088 3 | taking the head of Ordanus, one of the eldest sons of Cenarius, from the top of Raynewood for Braelyn Firehand
+- 1089 2 | unlocking the druids' hoard in the Talon Den on Stonetalon Peak with secrets Braelyn had wrung from one of them
+- 1090 2 | guarding Piznik while he mined a sample of Gerenzo's mysterious gold-green ore, to learn what the gnome was planning
+- 1091 1 | bringing the stolen Venture Co. letters to Kaela Shadowspear, with word of how well the raid had gone
+- 1092 1 | carrying the unidentified ore to Ziz Fizziks, whose new boss would pay well to learn Gerenzo's plans
+- 1093 1 | taking the Super Reaper 6000 blueprints from one of its operators for Ziz Fizziks, whom Gerenzo wanted dead on sight
+- 1094 1 | delivering a sealed envelope of stolen Venture Company documents from Ziz Fizziks to Sputtervalve in Ratchet
+- 1095 1 | carrying Sputtervalve's new orders to Ziz Fizziks: Gerenzo, whom the trade princes did not approve of, was to be removed
+- 1096 3 | killing Gerenzo Wrenchwhistle, the half-mechanical gnome running the Venture Co. site, and bringing his metal arm to Ziz Fizziks
+- 5881 1 | bringing Grish Longrunner at the Great Lift word of his relief, so he could at last visit his family
+- 6282 2 | culling the Bloodfury harpies of Stonetalon for Maggran Earthbinder, the source of the harpies spreading across Kalimdor
+- 6283 3 | slaying Bloodfury Ripper, all but a queen to the harpies, so their numbers would at last diminish
+- 6284 3 | killing Besseleth, the old spider of Sishir Canyon, so travelers could come to Sun Rock Retreat without fear
+- 6301 1 | gathering Gaea seeds at Mirkfallon Lake for Tammra Windfield to bless, to begin healing the wrecked land
+- 6381 2 | planting enchanted Gaea seeds at the heart of the Charred Vale, to help the cycle of life return to the burnt land
+- 6393 1 | destroying fire elementals in the Charred Vale for Tsunaman, whose Tribunal of the Tides waged war on their fiery cousins
+- 6401 1 | bringing Tammra Windfield the news that her niece Kaya had survived the attack on her village
+- 6421 2 | exploring the kobold cave at Boulderslide Ravine for Resonite crystals, so Mor'rogal could learn what evil lurked below
+- 6461 1 | killing the Deepmoss spiders that raided Malaka'Jin's camps at night to steal the trolls' hunt
+- 6481 3 | smashing open the Resonite cask and slaying Goggeroc, an Earthen the kobolds had dug up, before it could threaten Kalimdor
+- 6523 3 | escorting Kaya Flathoof to Camp Aparaje after her rescue, so her father Makaba would know she was safe
+- 6548 2 | killing Grimtotem raiders for Makaba Flathoof, who had barely escaped when they massacred his village
+- 6629 3 | killing Grundig Darkcloud, who had led the Grimtotem attack on Makaba Flathoof's village
+# Blackrock Spire
+- 4701 3 | destroying Halycon, the corrupt beast at the source of the Blackrock orcs' worgs, whose numbers never dwindled
+- 4724 3 | slaying Halycon, gigantic den mother of the Bloodaxe worgs, and living through her mate Gizrul the Slavener
+- 4729 1 | catching a Bloodaxe worg pup in Blackrock Spire for Kibler, who tamed exotic beasts as pets for the rich
+- 4734 1 | testing Tinkee Steamboil's eggscilloscope on a black dragon egg in the Rookery, high in Blackrock Spire
+- 4735 1 | freezing and collecting black dragon eggs from the Rookery for Tinkee Steamboil and her patron
+- 4742 2 | taking the three gemstones of command from the generals of the lower spire, to adorn Vaelan's Seal of Ascension
+- 4743 3 | breaking the will of the ancient drake Emberstrife in the Wyrmbog and forcing his flame upon the Seal of Ascension
+- 4764 1 | finding Doomrigger's Clasp, a gem-encrusted dwarven relic, in the ruined Hall of Fortune for Mayara Brightwing's patron
+- 4765 1 | delivering the crated Doomrigger's Clasp to Count Remington Ridgewell in Stormwind for his family museum
+- 4768 1 | recovering the Darkstone Tablet, the mad alchemist Urheld Darkstone's research, from Blackrock Spire for Vivian Lagrave
+- 4788 2 | taking the last Mosh'aru tablets from the Smolderthorn trolls of the spire for Prospector Ironboot, who feared what was coming
+- 4862 1 | collecting spire spider eggs for Kibler, who had sent Bijou after them and not heard from her in weeks
+- 4866 1 | getting deliberately poisoned by Mother Smolderweb, so Ragged John could milk the venom for his ale
+- 4867 1 | getting back Warosh's mojo in Blackrock Spire, to lift the curse Urok had laid on his mind
+- 4903 3 | killing Highlord Omokk, War Master Voone and Overlord Wyrmthalak and seizing their documents for Warlord Goretooth
+- 4974 3 | taking the head of Warchief Rend Blackhand to Thrall in Orgrimmar, a crippling blow to the Blackrock orcs
+- 4981 1 | tracking down Bijou in Blackrock Spire, a goblin operative who had spent Horde funds while working for Kibler
+- 4982 1 | recovering the recon gear Bijou had stashed in the spire after she set off an alarm, the price of her return
+- 4983 1 | carrying Bijou's reconnaissance report to Grandmaster Lexlort in Kargath, an advantage over the Blackrock orcs
+- 5001 1 | recovering the goblin Bijou's belongings in Blackrock Spire in exchange for what she had learned of the Blackrock threat
+- 5002 1 | bringing Bijou's map to Marshal Maxwell, marking where Nefarian's lieutenants held the lower citadel
+- 5047 1 | carrying a glowing piece of flesh, snatched by Finkle Einhorn from the beast's innards, to Malyfous Darkhammer in Everlook
+- 5081 3 | destroying War Master Voone, Highlord Omokk and Overlord Wyrmthalak to throw the Blackrock command into chaos
+- 5089 1 | bringing Marshal Maxwell a letter from General Drakkisath, found on the corpse of a slain serpent
+- 5102 3 | destroying General Drakkisath in Blackrock Spire for Marshal Maxwell, who carried the fight to the black dragons' doorstep
+- 5127 2 | slaying Goraluk Anvilcrack and driving Lorax's fel-imbued pike through his heart, to claim the soul he had bartered away
+- 5160 1 | carrying Awbee's scale to Haleh in Winterspring, so the matron protectorate could scry what Awbee had felt in the spire
+- 6502 3 | taking the Blood of the Black Dragon Champion from General Drakkisath, to remake the amulet that opens Onyxia's lair
+- 6569 2 | gathering black dragonspawn eyes in the upper spire for Myranda the Hag, for an illusion to fool the black flight's gatekeeper
+- 6602 3 | killing General Drakkisath and bringing his blood to Rexxar, to waken the key to Onyxia's lair
+- 7761 2 | finding the brand General Drakkisath guarded, to bear the Mark of Drakkisath that opens the way into Blackwing
+- 8966 2 | summoning and slaying the spirit of Mor Grayhoof, possessed by a piece of Lord Valthalak's amulet, so it could rest in peace
+- 8989 2 | laying the possessed spirit of Mor Grayhoof to rest and bringing Bodley the reassembled amulet of Lord Valthalak
+- 8995 3 | summoning Lord Valthalak in the Beast's old chamber and killing him again, so his spirit could take back his amulet
+# Dire Maul
+- 1193 1 | mending a broken trap with a thorium widget and frost oil, a nasty surprise for any ogre that wandered by
+- 1318 2 | seeking the Gauntlet of Gordok Might, stolen long ago by the elf Tortheldrin, which only the true Gordok king could win back
+- 5518 1 | bringing cloth, leather and thread to the chained goblin Knot Thimblejack for an ogre suit to slip past Captain Kromcrush
+- 5525 2 | freeing Knot Thimblejack, a goblin chained in the Gordok wing who had expected to end up an ogre's appetizer
+- 7429 1 | unlocking Knot Thimblejack's chains in the Gordok wing, to the goblin's loud delight
+- 7441 2 | chasing the imp Pusillin through the Warpwood Quarter to recover Azj'Tordin's stolen book of incantations
+- 7461 3 | destroying Immol'thar in his prison and ending Prince Tortheldrin, to lay the spirits of Eldre'Thalas to rest
+- 7463 2 | extracting Hydrospawn's essence, an anomaly in the east wing that Lorekeeper Lydros wanted catalogued, for a useful cantrip
+- 7481 2 | searching Dire Maul for Kariel Winthalus, an elven master who fled with ancient artifacts, and finding only that they were lost
+- 7482 2 | looking through Dire Maul for the lost elven master Kariel Winthalus and the knowledge he carried, and finding no trace of him
+- 7483 1 | bringing Lorekeeper Lydros the Libram of Rapidity and costly reagents, for an arcanum that lends armor a little haste
+- 7484 1 | finding the Libram of Focus, lost somewhere in that wing, so Lorekeeper Lydros could conjure its arcanum
+- 7485 1 | returning the Libram of Protection, whose loss had made its owner weep like an infant, to Lorekeeper Lydros for an arcanum
+- 7488 3 | stopping the blood elf mage Lethtendris and taking her web, which ensnared Dire Maul's magic, before it could do lasting harm
+- 7489 3 | defeating Lethtendris, who meant to turn Dire Maul's tainted magic on her enemies, and bringing her web to Talo Thornhoof
+- 7507 2 | returning Foror's Compendium of Dragon Slaying, its seal broken, to the Athenaeum rather than selling it on the black market
+- 7508 1 | presenting Lorekeeper Lydros with a dull elven blade, to be heated in a dragon's breath and tempered in her blood
+- 7703 3 | winning back the Gauntlet of Gordok Might from Prince Tortheldrin, proof of being the true ruler of the Gordok
+- 8949 1 | killing ogres for their warbeads to feed Falrin Treeshaper's hatred, his brother having died at their hands
+- 8950 1 | gathering a spectre's essence, dark runes and brilliant shards for Falrin Treeshaper's enchantment on a challenge banner
+- 8967 2 | summoning and slaying the spirit of Isalien, a priestess ambushed in Dire Maul by Alzzin the Wildshaper, to put her to rest
+- 8990 2 | laying Isalien's possessed spirit to rest and bringing Bodley the reassembled amulet of Lord Valthalak
+# Darnassus
+- 730 1 | looking in Darkshore for signs of the dwarven excavation team, unheard from in weeks
+- 2518 3 | ending the suffering of Lady Sathrah, a spider once beloved of Elune now gone mad, and taking her silvery spinnerets
+- 2520 2 | offering Lady Sathrah's spinnerets at the temple fountain, so the holy waters could cleanse her corruption and she might be reborn
+- 3764 1 | digging up Un'Goro soil for the Cenarion Circle in Darnassus, to sort fact from falsehood about its magical qualities
+- 3785 1 | growing morrowgrain from Tharlendis seeds in Un'Goro soil, a mysterious herb the Arch Druid meant to unravel
+# sort 201
+- 3638 2 | pledging life-long secrecy to the goblin engineers, giving up gnome engineering for good
+- 3639 2 | building big iron bombs, solid dynamite and explosive sheep for Nixx Sprocketspring, to earn a Goblin Engineer Membership Card
+- 3640 2 | signing the gnome engineers' pledge of secrecy for Tinkmaster Overspark, closing the door on goblin engineering for good
+- 3641 2 | making mithril tubes, a scope and target dummies for Tinkmaster Overspark, to earn a Gnome Engineer Membership Card
+- 3642 2 | swearing the gnome engineers' oath of secrecy before Oglethorpe Obnoticus in Booty Bay, forsaking goblin engineering
+- 3643 2 | showing Oglethorpe Obnoticus samples of work, mithril tubes, a scope and target dummies, for a Gnome Engineer Membership Card
+# Zul'Farrak
+- 2768 2 | recovering the divino-matic rod Chief Engineer Bilgewhizzle needed to find new water holes, stolen by Sergeant Bly
+- 2770 3 | summoning the great beast Gahz'rilla from the trolls' sacred pool and taking his electrified scale for Wizzle Brassbolts' car
+- 2846 3 | wrenching the Tiara of the Deep from the Hydromancer Velratha, who had sent thieves to steal it from Tabetha
+- 2865 1 | gathering uncracked scarab shells in Zul'Farrak for Tran'rek, the beetles having been hunted near to extinction elsewhere
+- 2936 2 | defeating Theka the Martyr for the tablet bearing the Witherbark spider god's true name, so Master Gadrin could summon her
+- 2991 2 | taking Nekrum Gutchewer's medallion for Thadius Grimshade, the price of his help in finding the gryphon Sharpbeak
+- 3042 1 | collecting troll temper from the Sandfury trolls for Trenton Lighthammer, a prized agent for tempering his wares
+- 3527 2 | prying the two Mosh'aru tablets from Theka the Martyr and Hydromancer Velratha, a prophecy of how to contain Hakkar's essence
+# The Deadmines
+- 166 3 | assassinating Edwin VanCleef in the Deadmines, the beginning of the end for the Defias Brotherhood that plagued Westfall
+- 167 2 | searching the collapsed Moonbrook mine for Wilder Thistlenettle's brother, and bringing back only his Explorers' League badge
+- 168 1 | gathering the Miners' Union cards of those lost in the cave-in, so Wilder Thistlenettle could tell their families
+- 214 2 | cutting down the highest-ranking Defias in VanCleef's hideout and bringing their red silk bandanas to Scout Riell as proof
+- 2040 2 | salvaging a goblin shredder's power supply from the Deadmines for Shoni the Shilent, to drill a way back into Gnomeregan
+# sort 264
+- 3379 2 | hunting down the poachers slaughtering the spiders of the Searing Gorge, the source of shadow silk, for Nilith
+- 3385 3 | killing Trade Master Kovic and his minion Clunk, whose cutthroat Undermarket had close ties with the Dark Iron dwarves
