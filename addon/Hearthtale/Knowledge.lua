@@ -806,34 +806,34 @@ quests[9270] = { class = "MAGE" }
 quests[9271] = { class = "WARLOCK" }
 quests[9362] = { class = "MAGE" }
 quests[9364] = { class = "MAGE", spell = "Polymorph: Pig" }
-npcs["\"Auntie\" Bernice Stonefield"] = { sex = "female" }
-npcs["\"Pretty Boy\" Duncan"] = { sex = "male" }
-npcs["\"Sea Wolf\" MacKinley"] = { sex = "male" }
-npcs["\"Shaky\" Phillipe"] = { sex = "male" }
-npcs["\"Stinky\" Ignatz"] = { sex = "male" }
-npcs["\"Swamp Eye\" Jarl"] = { sex = "male" }
-npcs["Abercrombie"] = { role = "The Hermit", sex = "male" }
-npcs["Acolyte Dellis"] = { sex = "male" }
-npcs["Acolyte Magaz"] = { sex = "female" }
+npcs["\"Auntie\" Bernice Stonefield"] = { people = "Human", sex = "female" }
+npcs["\"Pretty Boy\" Duncan"] = { people = "Human", sex = "male" }
+npcs["\"Sea Wolf\" MacKinley"] = { people = "Human", sex = "male" }
+npcs["\"Shaky\" Phillipe"] = { people = "Human", sex = "male" }
+npcs["\"Stinky\" Ignatz"] = { people = "Human", sex = "male" }
+npcs["\"Swamp Eye\" Jarl"] = { people = "Human", sex = "male" }
+npcs["Abercrombie"] = { people = "Human", role = "The Hermit", sex = "male" }
+npcs["Acolyte Dellis"] = { people = "Human", sex = "male" }
+npcs["Acolyte Magaz"] = { people = "Orc", sex = "female" }
 npcs["Acolyte Wytula"] = { sex = "female" }
-npcs["Adjutant Tesoran"] = { sex = "male" }
+npcs["Adjutant Tesoran"] = { people = "Human", sex = "male" }
 npcs["Advisor Belgrum"] = { people = "Dwarf", sex = "male" }
 npcs["Aelthalyste"] = { people = "Scourge", role = "Priest Trainer" }
-npcs["Ag'tor Bloodfist"] = { sex = "male" }
-npcs["Agent Kearnen"] = { sex = "female" }
+npcs["Ag'tor Bloodfist"] = { people = "Orc", sex = "male" }
+npcs["Agent Kearnen"] = { people = "Human", sex = "female" }
 npcs["Ageron Kargal"] = { sex = "male" }
 npcs["Agnar Beastamer"] = { sex = "male" }
 npcs["Ahanu"] = { people = "Tauren", role = "Leather Armor Merchant", sex = "male" }
-npcs["Ajeck Rouack"] = { sex = "female" }
-npcs["Ak'Zeloth"] = { sex = "male" }
+npcs["Ajeck Rouack"] = { people = "Human", sex = "female" }
+npcs["Ak'Zeloth"] = { people = "Orc", sex = "male" }
 npcs["Al'tabim the All-Seeing"] = { sex = "male" }
 npcs["Alamar Grimm"] = { people = "Gnome", role = "Warlock Trainer", sex = "male" }
 npcs["Alanndarian Nightsong"] = { people = "NightElf", sex = "female" }
-npcs["Alchemist Arbington"] = { sex = "male" }
+npcs["Alchemist Arbington"] = { people = "Human", sex = "male" }
 npcs["Alchemist Pestlezugg"] = { role = "Alchemy Supplies", sex = "male" }
 npcs["Aldris Fourclouds"] = { sex = "male" }
 npcs["Alessandro Luca"] = { people = "Scourge", role = "Blue Moon Odds and Ends", sex = "male" }
-npcs["Alexander Calder"] = { people = "Dwarf", role = "Warlock Trainer", sex = "male" }
+npcs["Alexander Calder"] = { people = "Human", role = "Warlock Trainer", sex = "male" }
 npcs["Alexi Barov"] = { role = "House of Barov", sex = "male" }
 npcs["Alliance Brigadier General"] = { people = "Dwarf", sex = "male" }
 npcs["Alyissia"] = { people = "NightElf", role = "Warrior Trainer", sex = "female" }
@@ -845,9 +845,9 @@ npcs["Andorgos"] = { role = "Brood of Malygos", sex = "female" }
 npcs["Andrew Brownell"] = { people = "Scourge", sex = "male" }
 npcs["Andron Gant"] = { people = "Scourge", sex = "male" }
 npcs["Angelas Moonbreeze"] = { people = "NightElf", sex = "female" }
-npcs["Angus Stern"] = { role = "Head Chef", sex = "male" }
+npcs["Angus Stern"] = { people = "Human", role = "Head Chef", sex = "male" }
 npcs["Anishar"] = { people = "NightElf", role = "Rogue Trainer", sex = "male" }
-npcs["Anthion Harmon"] = { sex = "male" }
+npcs["Anthion Harmon"] = { people = "Human", sex = "male" }
 npcs["Antur Fallow"] = { people = "Tauren", sex = "female" }
 npcs["Apothecary Dithers"] = { people = "Scourge", sex = "male" }
 npcs["Apothecary Faustin"] = { people = "Scourge", role = "Royal Apothecary Society", sex = "male" }
@@ -859,7 +859,7 @@ npcs["Apothecary Renferrel"] = { people = "Scourge", role = "Royal Apothecary So
 npcs["Apothecary Staffron Lerent"] = { role = "Royal Apothecary Society", sex = "male" }
 npcs["Apothecary Zamah"] = { people = "Scourge", role = "Royal Apothecary Society", sex = "female" }
 npcs["Apothecary Zinge"] = { people = "Scourge", role = "Royal Apothecary Society", sex = "female" }
-npcs["Apprentice Kryten"] = { sex = "male" }
+npcs["Apprentice Kryten"] = { people = "Human", sex = "male" }
 npcs["Arantir"] = { role = "The Hand of Chaos", sex = "male" }
 npcs["Arathandris Silversky"] = { role = "Emerald Circle", sex = "female" }
 npcs["Arcanist Nozzlespring"] = { sex = "male" }
@@ -868,88 +868,88 @@ npcs["Arch Druid Hamuul Runetotem"] = { people = "Tauren", sex = "male" }
 npcs["Arch Druid Renferal"] = { sex = "female" }
 npcs["Archaeologist Flagongut"] = { people = "Dwarf", role = "Explorers' League", sex = "male" }
 npcs["Archaeologist Hollee"] = { people = "Dwarf", role = "Explorers' League", sex = "female" }
-npcs["Archbishop Benedictus"] = { sex = "male" }
-npcs["Archmage Angela Dosantos"] = { role = "Brotherhood of the Light", sex = "female" }
-npcs["Archmage Ansirem Runeweaver"] = { role = "Kirin Tor", sex = "male" }
-npcs["Archmage Malin"] = { sex = "male" }
-npcs["Archmage Tervosh"] = { sex = "male" }
-npcs["Archmage Xylem"] = { sex = "male" }
+npcs["Archbishop Benedictus"] = { people = "Human", sex = "male" }
+npcs["Archmage Angela Dosantos"] = { people = "Human", role = "Brotherhood of the Light", sex = "female" }
+npcs["Archmage Ansirem Runeweaver"] = { people = "Human", role = "Kirin Tor", sex = "male" }
+npcs["Archmage Malin"] = { people = "Human", sex = "male" }
+npcs["Archmage Tervosh"] = { people = "Human", sex = "male" }
+npcs["Archmage Xylem"] = { people = "Human", sex = "male" }
 npcs["Arei"] = { people = "NightElf" }
 npcs["Argent Guard Manados"] = { role = "The Argent Dawn", sex = "male" }
 npcs["Argent Guard Thaelrid"] = { role = "The Argent Dawn", sex = "male" }
-npcs["Argent Officer Garush"] = { role = "The Argent Dawn", sex = "male" }
-npcs["Argent Officer Pureheart"] = { role = "The Argent Dawn", sex = "female" }
+npcs["Argent Officer Garush"] = { people = "Orc", role = "The Argent Dawn", sex = "male" }
+npcs["Argent Officer Pureheart"] = { people = "Human", role = "The Argent Dawn", sex = "female" }
 npcs["Argent Outfitter"] = { role = "The Argent Dawn", sex = "female" }
-npcs["Argent Quartermaster"] = { role = "The Argent Dawn", sex = "male" }
+npcs["Argent Quartermaster"] = { people = "Human", role = "The Argent Dawn", sex = "male" }
 npcs["Argent Quartermaster Hasana"] = { role = "The Argent Dawn", sex = "female" }
 npcs["Argent Quartermaster Lightspark"] = { role = "The Argent Dawn", sex = "male" }
-npcs["Argent Recruiter"] = { role = "The Argent Dawn", sex = "male" }
-npcs["Argent Scout"] = { role = "The Argent Dawn", sex = "male" }
+npcs["Argent Recruiter"] = { people = "Human", role = "The Argent Dawn", sex = "male" }
+npcs["Argent Scout"] = { people = "Orc", role = "The Argent Dawn", sex = "male" }
 npcs["Argos Nightwhisper"] = { people = "NightElf", sex = "male" }
-npcs["Aristan Mottar"] = { sex = "male" }
-npcs["Arnok"] = { role = "First Aid Trainer", sex = "male" }
-npcs["Arthur the Faithful"] = { role = "Paladin Trainer", sex = "male" }
+npcs["Aristan Mottar"] = { people = "Human", sex = "male" }
+npcs["Arnok"] = { people = "Orc", role = "First Aid Trainer", sex = "male" }
+npcs["Arthur the Faithful"] = { people = "Human", role = "Paladin Trainer", sex = "male" }
 npcs["Artilleryman Sheldonore"] = { people = "Dwarf", sex = "male" }
-npcs["Artist Renfray"] = { sex = "female" }
+npcs["Artist Renfray"] = { people = "Human", sex = "female" }
 npcs["Arygos"] = { sex = "male" }
 npcs["Ashlan Stonesmirk"] = { people = "Dwarf", sex = "male" }
 npcs["Astarii Starseeker"] = { people = "NightElf", role = "Priest Trainer", sex = "female" }
 npcs["Asterion"] = { people = "NightElf", sex = "male" }
 npcs["Atal'ai Exile"] = { sex = "male" }
 npcs["Athridas Bearmantle"] = { people = "NightElf", sex = "male" }
-npcs["Aturk the Anvil"] = { sex = "male" }
+npcs["Aturk the Anvil"] = { people = "Orc", sex = "male" }
 npcs["Augustus the Touched"] = { sex = "male" }
 npcs["Auld Stonespire"] = { people = "Tauren", sex = "male" }
 npcs["Aurel Goldleaf"] = { sex = "female" }
-npcs["Aurius"] = { sex = "male" }
+npcs["Aurius"] = { people = "Human", sex = "male" }
 npcs["Austil de Mon"] = { people = "Scourge", role = "Warrior Trainer", sex = "male" }
 npcs["Ayanna Everstride"] = { people = "NightElf", role = "Hunter Trainer", sex = "female" }
 npcs["Azar Stronghammer"] = { people = "Dwarf", role = "Paladin Trainer", sex = "male" }
 npcs["Azj'Tordin"] = { sex = "male" }
-npcs["Azore Aldamort"] = { role = "The Argent Dawn", sex = "male" }
+npcs["Azore Aldamort"] = { people = "Human", role = "The Argent Dawn", sex = "male" }
 npcs["Baelog"] = { sex = "male" }
-npcs["Bailiff Conacher"] = { sex = "male" }
+npcs["Bailiff Conacher"] = { people = "Human", sex = "male" }
 npcs["Bailor Stonehand"] = { people = "Dwarf", sex = "male" }
 npcs["Baine Bloodhoof"] = { people = "Tauren", sex = "male" }
 npcs["Balir Frosthammer"] = { people = "Dwarf", sex = "male" }
-npcs["Balos Jacken"] = { sex = "male" }
+npcs["Balos Jacken"] = { people = "Human", sex = "male" }
 npcs["Balthule Shadowstrike"] = { people = "NightElf", sex = "male" }
 npcs["Baltus Fowler"] = { people = "Scourge", role = "Warrior Trainer", sex = "male" }
 npcs["Baristolth of the Shifting Sands"] = { sex = "male" }
 npcs["Barithras Moonshade"] = { sex = "male" }
-npcs["Barkeep Daniels"] = { sex = "male" }
+npcs["Barkeep Daniels"] = { people = "Human", sex = "male" }
 npcs["Barnil Stonepot"] = { sex = "male" }
 npcs["Baron Revilgaz"] = { sex = "male" }
-npcs["Baros Alexston"] = { role = "City Architect", sex = "male" }
+npcs["Baros Alexston"] = { people = "Human", role = "City Architect", sex = "male" }
 npcs["Barrus"] = { people = "Dwarf", role = "Fishing Promoter", sex = "male" }
-npcs["Bartleby"] = { role = "Drunk", sex = "male" }
-npcs["Bartolo Ginsetti"] = { sex = "male" }
+npcs["Bartleby"] = { people = "Human", role = "Drunk", sex = "male" }
+npcs["Bartolo Ginsetti"] = { people = "Human", sex = "male" }
 npcs["Bashana Runetotem"] = { people = "Tauren", sex = "female" }
 npcs["Bath'rah the Windwatcher"] = { sex = "male" }
-npcs["Batrider Pele'keiki"] = { role = "Firebloom Collector", sex = "male" }
+npcs["Batrider Pele'keiki"] = { people = "Troll", role = "Firebloom Collector", sex = "male" }
 npcs["Beetix Ficklespragg"] = { sex = "female" }
 npcs["Beldin Steelgrill"] = { people = "Dwarf", sex = "male" }
-npcs["Belgrom Rockmaul"] = { sex = "male" }
+npcs["Belgrom Rockmaul"] = { people = "Orc", sex = "male" }
 npcs["Belia Thundergranite"] = { people = "Dwarf", role = "Pet Trainer", sex = "female" }
-npcs["Belnistrasz"] = { sex = "male" }
+npcs["Belnistrasz"] = { people = "Human", sex = "male" }
 npcs["Bena Winterhoof"] = { people = "Tauren", role = "Expert Alchemist", sex = "female" }
-npcs["Bengor"] = { sex = "male" }
+npcs["Bengor"] = { people = "Orc", sex = "male" }
 npcs["Beram Skychaser"] = { people = "Tauren", role = "Shaman Trainer", sex = "male" }
 npcs["Bethor Iceshard"] = { people = "Scourge", sex = "male" }
 npcs["Betina Bigglezink"] = { role = "The Argent Dawn", sex = "female" }
 npcs["Bibbly F'utzbuckle"] = { sex = "male" }
 npcs["Bijou"] = { sex = "female" }
-npcs["Bingles Blastenheimer"] = { people = "Dwarf", sex = "male" }
+npcs["Bingles Blastenheimer"] = { people = "Gnome", sex = "male" }
 npcs["Bink"] = { people = "Gnome", role = "Mage Trainer", sex = "female" }
-npcs["Bishop DeLavey"] = { sex = "male" }
-npcs["Bishop Farthing"] = { sex = "male" }
-npcs["Bloodguard Rawtar"] = { role = "Lean Wolf Steak Collector", sex = "female" }
-npcs["Bloodsail Traitor"] = { sex = "male" }
+npcs["Bishop DeLavey"] = { people = "Human", sex = "male" }
+npcs["Bishop Farthing"] = { people = "Human", sex = "male" }
+npcs["Bloodguard Rawtar"] = { people = "Orc", role = "Lean Wolf Steak Collector", sex = "female" }
+npcs["Bloodsail Traitor"] = { people = "Human", sex = "male" }
 npcs["Bluff Runner Windstrider"] = { people = "Tauren", sex = "male" }
 npcs["Bodley"] = { sex = "male" }
 npcs["Bonnie Stoneflayer"] = { people = "Dwarf", role = "Light Leather Collector", sex = "female" }
 npcs["Bor Wildmane"] = { sex = "male" }
-npcs["Borgosh Corebender"] = { role = "Weaponsmith", sex = "male" }
+npcs["Borgosh Corebender"] = { people = "Orc", role = "Weaponsmith", sex = "male" }
 npcs["Bounty Hunter Kolark"] = { people = "Tauren", sex = "male" }
 npcs["Braenna Flintcrag"] = { people = "Dwarf", role = "Priest Trainer", sex = "female" }
 npcs["Brandur Ironhammer"] = { people = "Dwarf", role = "Paladin Trainer", sex = "male" }
@@ -957,60 +957,60 @@ npcs["Branstock Khalder"] = { people = "Dwarf", role = "Priest Trainer", sex = "
 npcs["Braug Dimspirit"] = { people = "Tauren", sex = "male" }
 npcs["Brave Moonhorn"] = { people = "Tauren", sex = "male" }
 npcs["Brave Windfeather"] = { people = "Tauren", sex = "female" }
-npcs["Brewmaster Drohn"] = { sex = "male" }
+npcs["Brewmaster Drohn"] = { people = "Orc", sex = "male" }
 npcs["Brewmeister Bilger"] = { people = "Dwarf", sex = "male" }
 npcs["Briarthorn"] = { people = "Gnome", role = "Warlock Trainer", sex = "male" }
-npcs["Brine"] = { sex = "female" }
+npcs["Brine"] = { people = "Orc", sex = "female" }
 npcs["Brock Stoneseeker"] = { people = "Dwarf", role = "Mining Trainer", sex = "male" }
 npcs["Brohann Caskbelly"] = { people = "Dwarf", role = "Explorers' League", sex = "male" }
 npcs["Bromos Grummner"] = { people = "Dwarf", role = "Paladin Trainer", sex = "male" }
 npcs["Bronn Fitzwrench"] = { sex = "male" }
-npcs["Brother Anton"] = { role = "Scarlet Crusade Emissary", sex = "male" }
-npcs["Brother Crowley"] = { role = "Scarlet Crusade Emissary", sex = "male" }
-npcs["Brother Joshua"] = { role = "Priest Trainer", sex = "male" }
-npcs["Brother Kristoff"] = { sex = "male" }
-npcs["Brother Neals"] = { sex = "male" }
-npcs["Brother Nimetz"] = { sex = "male" }
-npcs["Brother Paxton"] = { role = "Librarian", sex = "male" }
-npcs["Brother Sammuel"] = { role = "Paladin Trainer", sex = "male" }
-npcs["Brother Sarno"] = { sex = "male" }
-npcs["Brother Wilhelm"] = { role = "Paladin Trainer", sex = "male" }
+npcs["Brother Anton"] = { people = "Human", role = "Scarlet Crusade Emissary", sex = "male" }
+npcs["Brother Crowley"] = { people = "Human", role = "Scarlet Crusade Emissary", sex = "male" }
+npcs["Brother Joshua"] = { people = "Human", role = "Priest Trainer", sex = "male" }
+npcs["Brother Kristoff"] = { people = "Human", sex = "male" }
+npcs["Brother Neals"] = { people = "Human", sex = "male" }
+npcs["Brother Nimetz"] = { people = "Human", sex = "male" }
+npcs["Brother Paxton"] = { people = "Human", role = "Librarian", sex = "male" }
+npcs["Brother Sammuel"] = { people = "Human", role = "Paladin Trainer", sex = "male" }
+npcs["Brother Sarno"] = { people = "Human", sex = "male" }
+npcs["Brother Wilhelm"] = { people = "Human", role = "Paladin Trainer", sex = "male" }
 npcs["Brumn Winterhoof"] = { people = "Tauren", role = "Master Elemental Leatherworker", sex = "male" }
 npcs["Bubulo Acerbus"] = { people = "Gnome", role = "Alliance Cloth Quartermaster", sex = "male" }
 npcs["Caelestrasz"] = { sex = "male" }
 npcs["Cain Firesong"] = { people = "Scourge", role = "Mage Trainer", sex = "male" }
 npcs["Cairne Bloodhoof"] = { people = "Tauren", role = "High Chieftain", sex = "male" }
 npcs["Calandrath"] = { role = "Innkeeper", sex = "female" }
-npcs["Calor"] = { sex = "male" }
+npcs["Calor"] = { people = "Human", sex = "male" }
 npcs["Calvin Montague"] = { people = "Scourge", sex = "male" }
 npcs["Canaga Earthcaller"] = { people = "Troll", sex = "male" }
 npcs["Captain Blackanvil"] = { role = "Ironforge Brigade Captain", sex = "male" }
-npcs["Captain Danuvin"] = { role = "The People's Militia", sex = "male" }
-npcs["Captain Garran Vimes"] = { sex = "male" }
-npcs["Captain Nials"] = { sex = "female" }
-npcs["Captain Pentigast"] = { sex = "male" }
+npcs["Captain Danuvin"] = { people = "Human", role = "The People's Militia", sex = "male" }
+npcs["Captain Garran Vimes"] = { people = "Human", sex = "male" }
+npcs["Captain Nials"] = { people = "Human", sex = "female" }
+npcs["Captain Pentigast"] = { people = "Human", sex = "male" }
 npcs["Captain Rugelfuss"] = { people = "Dwarf", sex = "male" }
 npcs["Captain Steelgut"] = { role = "Blackwater Raiders", sex = "male" }
 npcs["Captain Stoutfist"] = { people = "Dwarf", sex = "male" }
-npcs["Captain Vanessa Beltis"] = { sex = "female" }
+npcs["Captain Vanessa Beltis"] = { people = "Human", sex = "female" }
 npcs["Captured Arko'narin"] = { sex = "female" }
-npcs["Captured Mountaineer"] = { people = "Scourge", sex = "male" }
-npcs["Captured Scarlet Zealot"] = { people = "Scourge", sex = "male" }
+npcs["Captured Mountaineer"] = { people = "Dwarf", sex = "male" }
+npcs["Captured Scarlet Zealot"] = { people = "Human", sex = "male" }
 npcs["Caravaneer Ruzzgot"] = { sex = "male" }
 npcs["Carendin Halgar"] = { sex = "male" }
-npcs["Caretaker Alen"] = { role = "The Argent Dawn", sex = "male" }
-npcs["Caretaker Folsom"] = { sex = "male" }
-npcs["Carlin Redpath"] = { role = "The Argent Dawn", sex = "male" }
+npcs["Caretaker Alen"] = { people = "Human", role = "The Argent Dawn", sex = "male" }
+npcs["Caretaker Folsom"] = { people = "Human", sex = "male" }
+npcs["Carlin Redpath"] = { people = "Human", role = "The Argent Dawn", sex = "male" }
 npcs["Caryssia Moonhunter"] = { people = "NightElf", role = "Tribal Leatherworking Trainer", sex = "female" }
-npcs["Catelyn the Blade"] = { role = "Blackwater Raiders", sex = "female" }
+npcs["Catelyn the Blade"] = { people = "Human", role = "Blackwater Raiders", sex = "female" }
 npcs["Caz Twosprocket"] = { sex = "male" }
-npcs["Cazul"] = { sex = "male" }
+npcs["Cazul"] = { people = "Orc", sex = "male" }
 npcs["Cenarion Emissary Blackhoof"] = { sex = "male" }
 npcs["Cenarion Emissary Jademoon"] = { sex = "female" }
 npcs["Cerellean Whiteclaw"] = { people = "NightElf", sex = "male" }
-npcs["Chef Breanna"] = { sex = "female" }
-npcs["Chef Grual"] = { sex = "male" }
-npcs["Chef Jessen"] = { sex = "male" }
+npcs["Chef Breanna"] = { people = "Human", sex = "female" }
+npcs["Chef Grual"] = { people = "Human", sex = "male" }
+npcs["Chef Jessen"] = { people = "Human", sex = "male" }
 npcs["Chemist Cuely"] = { people = "Scourge", sex = "male" }
 npcs["Chemist Fuely"] = { people = "Scourge", sex = "male" }
 npcs["Chief Archaeologist Greywhisker"] = { people = "Dwarf", role = "Explorers' League", sex = "male" }
@@ -1024,76 +1024,76 @@ npcs["Chromie"] = { sex = "female" }
 npcs["Chronos"] = { role = "He Who Never Forgets!", sex = "male" }
 npcs["Claire Willower"] = { people = "Scourge", sex = "female" }
 npcs["Clarice Foster"] = { people = "Scourge", sex = "female" }
-npcs["Clavicus Knavingham"] = { role = "Alliance Cloth Quartermaster", sex = "male" }
-npcs["Clerk Daltry"] = { sex = "male" }
-npcs["Clerk Lendry"] = { sex = "male" }
+npcs["Clavicus Knavingham"] = { people = "Human", role = "Alliance Cloth Quartermaster", sex = "male" }
+npcs["Clerk Daltry"] = { people = "Human", sex = "male" }
+npcs["Clerk Lendry"] = { people = "Human", sex = "male" }
 npcs["Cliffwatcher Longhorn"] = { people = "Tauren", sex = "male" }
-npcs["Colara Dean"] = { sex = "female" }
+npcs["Colara Dean"] = { people = "Human", sex = "female" }
 npcs["Coleman Farthing"] = { people = "Scourge", sex = "male" }
-npcs["Collin Mauren"] = { sex = "male" }
+npcs["Collin Mauren"] = { people = "Human", sex = "male" }
 npcs["Colossus Researcher Eazel"] = { sex = "male" }
 npcs["Colossus Researcher Nestor"] = { sex = "male" }
-npcs["Colossus Researcher Sophia"] = { sex = "female" }
-npcs["Commander Aggro'gosh"] = { sex = "male" }
-npcs["Commander Althea Ebonlocke"] = { role = "Leader of The Night Watch", sex = "female" }
-npcs["Commander Ashlam Valorfist"] = { sex = "male" }
+npcs["Colossus Researcher Sophia"] = { people = "Human", sex = "female" }
+npcs["Commander Aggro'gosh"] = { people = "Orc", sex = "male" }
+npcs["Commander Althea Ebonlocke"] = { people = "Human", role = "Leader of The Night Watch", sex = "female" }
+npcs["Commander Ashlam Valorfist"] = { people = "Human", sex = "male" }
 npcs["Commander Duffy"] = { sex = "male" }
-npcs["Commander Eligor Dawnbringer"] = { role = "Brotherhood of the Light", sex = "male" }
-npcs["Commander Gor'shak"] = { role = "Kargath Expeditionary Force", sex = "male" }
-npcs["Commander Karl Philips"] = { sex = "male" }
+npcs["Commander Eligor Dawnbringer"] = { people = "Human", role = "Brotherhood of the Light", sex = "male" }
+npcs["Commander Gor'shak"] = { people = "Orc", role = "Kargath Expeditionary Force", sex = "male" }
+npcs["Commander Karl Philips"] = { people = "Human", sex = "male" }
 npcs["Commander Louis Philips"] = { sex = "male" }
 npcs["Commander Mar'alith"] = { sex = "male" }
 npcs["Commander Mulfort"] = { sex = "male" }
-npcs["Commander Samaul"] = { sex = "male" }
-npcs["Commander Thomas Helleran"] = { role = "The Argent Dawn", sex = "male" }
-npcs["Connor Rivers"] = { role = "Apprentice Chef", sex = "male" }
+npcs["Commander Samaul"] = { people = "Human", sex = "male" }
+npcs["Commander Thomas Helleran"] = { people = "Human", role = "The Argent Dawn", sex = "male" }
+npcs["Connor Rivers"] = { people = "Human", role = "Apprentice Chef", sex = "male" }
 npcs["Conservator Ilthalaine"] = { people = "NightElf", sex = "male" }
-npcs["Cook Torka"] = { sex = "male" }
+npcs["Cook Torka"] = { people = "Orc", sex = "male" }
 npcs["Corithras Moonrage"] = { people = "NightElf", sex = "male" }
 npcs["Cork Gizelton"] = { sex = "male" }
-npcs["Corporal Carnes"] = { role = "Iron Bar Collector", sex = "male" }
-npcs["Corporal Kaleb"] = { sex = "male" }
-npcs["Corporal Keeshan"] = { sex = "male" }
-npcs["Corporal Melkins"] = { sex = "male" }
-npcs["Corporal Sethman"] = { sex = "male" }
-npcs["Corporal Teeka Bloodsnarl"] = { sex = "female" }
+npcs["Corporal Carnes"] = { people = "Human", role = "Iron Bar Collector", sex = "male" }
+npcs["Corporal Kaleb"] = { people = "Human", sex = "male" }
+npcs["Corporal Keeshan"] = { people = "Human", sex = "male" }
+npcs["Corporal Melkins"] = { people = "Human", sex = "male" }
+npcs["Corporal Sethman"] = { people = "Human", sex = "male" }
+npcs["Corporal Teeka Bloodsnarl"] = { people = "Orc", sex = "female" }
 npcs["Corporal Thund Splithoof"] = { sex = "male" }
-npcs["Councilman Millstipe"] = { role = "Council of Darkshire", sex = "male" }
-npcs["Count Remington Ridgewell"] = { role = "House of Nobles", sex = "male" }
+npcs["Councilman Millstipe"] = { people = "Human", role = "Council of Darkshire", sex = "male" }
+npcs["Count Remington Ridgewell"] = { people = "Human", role = "House of Nobles", sex = "male" }
 npcs["Courier Hammerfall"] = { people = "Dwarf", sex = "male" }
 npcs["Craftsman Wilhelm"] = { role = "Brotherhood of the Light", sex = "male" }
 npcs["Crane Operator Bigglefuzz"] = { sex = "male" }
 npcs["Crank Fizzlebub"] = { sex = "male" }
-npcs["Craven Drok"] = { sex = "male" }
-npcs["Crier Goodman"] = { sex = "male" }
-npcs["Crusader Lord Valdelmar"] = { sex = "male" }
+npcs["Craven Drok"] = { people = "Orc", sex = "male" }
+npcs["Crier Goodman"] = { people = "Human", sex = "male" }
+npcs["Crusader Lord Valdelmar"] = { people = "Human", sex = "male" }
 npcs["Curator Thorius"] = { people = "Dwarf", sex = "male" }
 npcs["Curgle Cranklehop"] = { sex = "female" }
 npcs["Dadanga"] = { beast = true }
-npcs["Daio the Decrepit"] = { sex = "male" }
+npcs["Daio the Decrepit"] = { people = "Human", sex = "male" }
 npcs["Dalar Dawnweaver"] = { people = "Scourge", sex = "male" }
 npcs["Dalinda Malem"] = { sex = "female" }
 npcs["Dame Twinbraid"] = { people = "Dwarf", role = "Thorium Bar Collector", sex = "female" }
 npcs["Dannal Stern"] = { people = "Scourge", role = "Warrior Trainer", sex = "male" }
-npcs["Daphne Stilwell"] = { sex = "female" }
-npcs["Dar"] = { sex = "male" }
-npcs["Darcy"] = { role = "Waitress", sex = "female" }
+npcs["Daphne Stilwell"] = { people = "Human", sex = "female" }
+npcs["Dar"] = { people = "Orc", sex = "male" }
+npcs["Darcy"] = { people = "Human", role = "Waitress", sex = "female" }
 npcs["Dark Cleric Beryl"] = { people = "Scourge", role = "Priest Trainer", sex = "male" }
 npcs["Dark Cleric Duesten"] = { people = "Scourge", role = "Priest Trainer", sex = "male" }
 npcs["Darkcaller Yanka"] = { people = "Scourge", sex = "female" }
 npcs["Darkreaver's Fallen Charger"] = { beast = true }
 npcs["Darkspear Commendation Officer"] = { sex = "male" }
-npcs["Darn Talongrip"] = { sex = "male" }
+npcs["Darn Talongrip"] = { people = "Orc", sex = "male" }
 npcs["Darnassus Commendation Officer"] = { people = "NightElf", sex = "male" }
 npcs["Darnath Bladesinger"] = { people = "NightElf", role = "Warrior Trainer", sex = "male" }
-npcs["Darren Malvew"] = { role = "Stablehand", sex = "male" }
-npcs["Darsok Swiftdagger"] = { sex = "male" }
+npcs["Darren Malvew"] = { people = "Human", role = "Stablehand", sex = "male" }
+npcs["Darsok Swiftdagger"] = { people = "Orc", sex = "male" }
 npcs["Daryl Riknussun"] = { people = "Dwarf", role = "Cooking Trainer", sex = "male" }
-npcs["Daryl the Youngling"] = { people = "Dwarf", sex = "male" }
+npcs["Daryl the Youngling"] = { people = "Human", sex = "male" }
 npcs["Daryn Lightwind"] = { people = "NightElf", role = "Cenarion Lore Keeper", sex = "female" }
 npcs["Dashel Stonefist"] = { sex = "male" }
 npcs["David Trias"] = { people = "Scourge", role = "Rogue Trainer", sex = "male" }
-npcs["Dawnwatcher Selgorm"] = { role = "The Argent Dawn", sex = "male" }
+npcs["Dawnwatcher Selgorm"] = { people = "Human", role = "The Argent Dawn", sex = "male" }
 npcs["Dawnwatcher Shaedlass"] = { role = "The Argent Dawn", sex = "male" }
 npcs["Dazalar"] = { people = "NightElf", role = "Hunter Trainer", sex = "male" }
 npcs["Deathguard Burgess"] = { people = "Scourge", sex = "male" }
@@ -1112,57 +1112,57 @@ npcs["Deathstalker Lesh"] = { people = "Scourge", sex = "female" }
 npcs["Deathstalker Vincent"] = { sex = "male" }
 npcs["Deathstalker Zraedus"] = { people = "Scourge", sex = "male" }
 npcs["Deeg"] = { role = "Blackwater Raiders", sex = "male" }
-npcs["Deino"] = { role = "Mage Trainer", sex = "female" }
-npcs["Delgren the Purifier"] = { sex = "male" }
-npcs["Deliana"] = { sex = "female" }
-npcs["Demisette Cloyce"] = { role = "Warlock Trainer", sex = "female" }
+npcs["Deino"] = { people = "Troll", role = "Mage Trainer", sex = "female" }
+npcs["Delgren the Purifier"] = { people = "Human", sex = "male" }
+npcs["Deliana"] = { people = "Human", sex = "female" }
+npcs["Demisette Cloyce"] = { people = "Human", role = "Warlock Trainer", sex = "female" }
 npcs["Denalan"] = { people = "NightElf", sex = "male" }
 npcs["Denatharion"] = { people = "NightElf", role = "Druid Trainer", sex = "male" }
 npcs["Dendrite Starblaze"] = { sex = "male" }
-npcs["Deputy Feldon"] = { sex = "male" }
-npcs["Deputy Rainer"] = { sex = "male" }
-npcs["Deputy Willem"] = { sex = "male" }
+npcs["Deputy Feldon"] = { people = "Human", sex = "male" }
+npcs["Deputy Rainer"] = { people = "Human", sex = "male" }
+npcs["Deputy Willem"] = { people = "Human", sex = "male" }
 npcs["Derotain Mudsipper"] = { role = "The Thorium Brotherhood", sex = "male" }
-npcs["Devrak"] = { role = "Wind Rider Master", sex = "male" }
+npcs["Devrak"] = { people = "Orc", role = "Wind Rider Master", sex = "male" }
 npcs["Dinita Stonemantle"] = { people = "Dwarf", role = "Vault Administrator", sex = "female" }
 npcs["Dink"] = { people = "Gnome", role = "Mage Trainer", sex = "male" }
 npcs["Dirania Silvershine"] = { people = "NightElf", sex = "female" }
 npcs["Dirge Quikcleave"] = { role = "Butcher", sex = "male" }
 npcs["Dirk Thunderwood"] = { sex = "male" }
-npcs["Dispatch Commander Metz"] = { role = "The Argent Dawn", sex = "male" }
-npcs["Dispatch Commander Ruag"] = { sex = "male" }
-npcs["Dizzy One-Eye"] = { role = "Blackwater Raiders", sex = "male" }
-npcs["Doan Karhan"] = { sex = "male" }
+npcs["Dispatch Commander Metz"] = { people = "Human", role = "The Argent Dawn", sex = "male" }
+npcs["Dispatch Commander Ruag"] = { people = "Orc", sex = "male" }
+npcs["Dizzy One-Eye"] = { people = "Human", role = "Blackwater Raiders", sex = "male" }
+npcs["Doan Karhan"] = { people = "Human", sex = "male" }
 npcs["Doc Mixilpixil"] = { people = "Gnome", sex = "male" }
-npcs["Dockmaster Baren"] = { sex = "male" }
+npcs["Dockmaster Baren"] = { people = "Human", sex = "male" }
 npcs["Doctor Draxlegauge"] = { role = "Blackwater Raiders", sex = "male" }
 npcs["Doctor Gregory Victor"] = { people = "Scourge", role = "Trauma Surgeon", sex = "male" }
-npcs["Doctor Gustaf VanHowzen"] = { role = "Trauma Surgeon", sex = "male" }
+npcs["Doctor Gustaf VanHowzen"] = { people = "Human", role = "Trauma Surgeon", sex = "male" }
 npcs["Doctor Serratus"] = { role = "Rugged Leather Collector", sex = "male" }
 npcs["Donova Snowden"] = { sex = "female" }
-npcs["Donyal Tovald"] = { role = "Librarian", sex = "male" }
-npcs["Doras"] = { role = "Wind Rider Master", sex = "male" }
+npcs["Donyal Tovald"] = { people = "Human", role = "Librarian", sex = "male" }
+npcs["Doras"] = { people = "Orc", role = "Wind Rider Master", sex = "male" }
 npcs["Dorion"] = { people = "NightElf", role = "Hunter Trainer", sex = "male" }
 npcs["Dorius Stonetender"] = { sex = "male" }
 npcs["Dorn Plainstalker"] = { people = "Tauren", sex = "male" }
-npcs["Dran Droffers"] = { role = "Droffers and Son Salvage", sex = "male" }
-npcs["Dreka'Sur"] = { sex = "female" }
+npcs["Dran Droffers"] = { people = "Orc", role = "Droffers and Son Salvage", sex = "male" }
+npcs["Dreka'Sur"] = { people = "Orc", sex = "female" }
 npcs["Drizzlik"] = { sex = "male" }
 npcs["Drulzegar Skraghook"] = { sex = "male" }
-npcs["Drum Fel"] = { sex = "male" }
-npcs["Drusilla La Salle"] = { role = "Warlock Trainer", sex = "female" }
-npcs["Duke Nicholas Zverenhoff"] = { role = "The Argent Dawn", sex = "male" }
-npcs["Dungar Longdrink"] = { role = "Gryphon Master", sex = "male" }
+npcs["Drum Fel"] = { people = "Orc", sex = "male" }
+npcs["Drusilla La Salle"] = { people = "Human", role = "Warlock Trainer", sex = "female" }
+npcs["Duke Nicholas Zverenhoff"] = { people = "Human", role = "The Argent Dawn", sex = "male" }
+npcs["Dungar Longdrink"] = { people = "Human", role = "Gryphon Master", sex = "male" }
 npcs["Durnan Furcutter"] = { people = "Dwarf", role = "Cloth & Leather Armor Merchant", sex = "male" }
-npcs["Duthorian Rall"] = { sex = "male" }
+npcs["Duthorian Rall"] = { people = "Human", sex = "male" }
 npcs["Dying Archaeologist"] = { sex = "male" }
-npcs["Eagan Peltskinner"] = { sex = "male" }
+npcs["Eagan Peltskinner"] = { people = "Human", sex = "male" }
 npcs["Ebru"] = { role = "Disciple of Naralex", sex = "female" }
 npcs["Egan"] = { sex = "male" }
 npcs["Einar Stonegrip"] = { people = "Dwarf", sex = "male" }
-npcs["Einris Brightspear"] = { role = "Hunter Trainer", sex = "female" }
-npcs["Eitrigg"] = { sex = "male" }
-npcs["Elaine Carevin"] = { sex = "female" }
+npcs["Einris Brightspear"] = { people = "Dwarf", role = "Hunter Trainer", sex = "female" }
+npcs["Eitrigg"] = { people = "Orc", sex = "male" }
+npcs["Elaine Carevin"] = { people = "Human", sex = "female" }
 npcs["Elanaria"] = { people = "NightElf", sex = "female" }
 npcs["Elder Bellowrage"] = { sex = "male" }
 npcs["Elder Bladeleaf"] = { sex = "male" }
@@ -1216,106 +1216,106 @@ npcs["Elder Windrun"] = { sex = "male" }
 npcs["Elder Windtotem"] = { sex = "female" }
 npcs["Elder Winterhoof"] = { sex = "male" }
 npcs["Elenia Haydon"] = { sex = "female" }
-npcs["Elling Trias"] = { role = "Master of Cheese", sex = "male" }
+npcs["Elling Trias"] = { people = "Human", role = "Master of Cheese", sex = "male" }
 npcs["Elsharin"] = { role = "Mage Trainer" }
 npcs["Elu"] = { people = "Tauren", role = "Wind Rider Apprentice", sex = "male" }
-npcs["Elysa"] = { sex = "female" }
-npcs["Emmisary Gormok"] = { sex = "male" }
+npcs["Elysa"] = { people = "Human", sex = "female" }
+npcs["Emmisary Gormok"] = { people = "Orc", sex = "male" }
 npcs["Emmisary Whitebeard"] = { sex = "male" }
 npcs["Enohar Thunderbrew"] = { people = "Dwarf", sex = "female" }
-npcs["Enyo"] = { role = "Mage Trainer", sex = "female" }
+npcs["Enyo"] = { people = "Troll", role = "Mage Trainer", sex = "female" }
 npcs["Erelas Ambersky"] = { people = "NightElf", sex = "male" }
 npcs["Eridan Bluewind"] = { role = "Emerald Circle", sex = "female" }
 npcs["Erion Shadewhisper"] = { people = "NightElf", role = "Rogue Trainer", sex = "male" }
-npcs["Eris Havenfire"] = { sex = "female" }
-npcs["Ertog Ragetusk"] = { sex = "male" }
-npcs["Eva Sarkhoff"] = { sex = "female" }
-npcs["Evert Sorisam"] = { sex = "male" }
+npcs["Eris Havenfire"] = { people = "Human", sex = "female" }
+npcs["Ertog Ragetusk"] = { people = "Orc", sex = "male" }
+npcs["Eva Sarkhoff"] = { people = "Human", sex = "female" }
+npcs["Evert Sorisam"] = { people = "Human", sex = "male" }
 npcs["Evonice Sootsmoker"] = { role = "The Thorium Brotherhood", sex = "female" }
 npcs["Executor Arren"] = { people = "Scourge", sex = "male" }
 npcs["Executor Zygand"] = { people = "Scourge", sex = "male" }
 npcs["Exzhal"] = { role = "Servitor of Rastakhan", sex = "male" }
 npcs["Eyahn Eagletalon"] = { sex = "male" }
-npcs["Fahrad"] = { role = "Grand Master Rogue", sex = "male" }
+npcs["Fahrad"] = { people = "Human", role = "Grand Master Rogue", sex = "male" }
 npcs["Faldreas Goeth'Shael"] = { people = "NightElf", sex = "male" }
 npcs["Falfindel Waywarder"] = { people = "NightElf", sex = "male" }
-npcs["Falkhaan Isenstrider"] = { sex = "male" }
+npcs["Falkhaan Isenstrider"] = { people = "Human", sex = "male" }
 npcs["Falla Sagewind"] = { sex = "female" }
-npcs["Fallen Hero of the Horde"] = { sex = "male" }
+npcs["Fallen Hero of the Horde"] = { people = "Orc", sex = "male" }
 npcs["Falrin Treeshaper"] = { sex = "male" }
 npcs["Falstad Wildhammer"] = { role = "High Thane", sex = "male" }
 npcs["Falthir the Sightless"] = { sex = "male" }
-npcs["Far Seer Mok'thardin"] = { sex = "male" }
+npcs["Far Seer Mok'thardin"] = { people = "Orc", sex = "male" }
 npcs["Fariel Starsong"] = { role = "Coin of Ancestry Collector", sex = "female" }
-npcs["Farmer Furlbrow"] = { sex = "male" }
-npcs["Farmer Saldean"] = { sex = "male" }
+npcs["Farmer Furlbrow"] = { people = "Human", sex = "male" }
+npcs["Farmer Saldean"] = { people = "Human", sex = "male" }
 npcs["Father Cobb"] = { people = "Scourge", role = "Priest Trainer", sex = "male" }
-npcs["Father Inigo Montoy"] = { role = "Brotherhood of the Light", sex = "male" }
+npcs["Father Inigo Montoy"] = { people = "Human", role = "Brotherhood of the Light", sex = "male" }
 npcs["Father Lankester"] = { people = "Scourge", role = "Priest Trainer", sex = "male" }
 npcs["Father Lazarus"] = { people = "Scourge", role = "Priest Trainer", sex = "male" }
-npcs["Feegly the Exiled"] = { sex = "male" }
-npcs["Feero Ironhand"] = { sex = "male" }
-npcs["Fel'zerul"] = { sex = "male" }
-npcs["Felgur Twocuts"] = { sex = "male" }
+npcs["Feegly the Exiled"] = { people = "Dwarf", sex = "male" }
+npcs["Feero Ironhand"] = { people = "Human", sex = "male" }
+npcs["Fel'zerul"] = { people = "Orc", sex = "male" }
+npcs["Felgur Twocuts"] = { people = "Orc", sex = "male" }
 npcs["Felix Whindlebolt"] = { people = "Gnome", sex = "male" }
 npcs["Felnok Steelspring"] = { sex = "male" }
 npcs["Fenstad Argyle"] = { sex = "male" }
 npcs["Festival Flamekeeper"] = { sex = "female" }
 npcs["Festival Loremaster"] = { people = "Dwarf", sex = "male" }
-npcs["Festival Talespinner"] = { sex = "male" }
-npcs["Field Marshal Afrasiabi"] = { sex = "male" }
-npcs["Field Marshal Oslight"] = { sex = "male" }
+npcs["Festival Talespinner"] = { people = "Scourge", sex = "male" }
+npcs["Field Marshal Afrasiabi"] = { people = "Human", sex = "male" }
+npcs["Field Marshal Oslight"] = { people = "Human", sex = "male" }
 npcs["Field Marshal Snowfall"] = { people = "Dwarf", role = "War Effort Commander", sex = "male" }
-npcs["Field Marshal Teravaine"] = { sex = "male" }
+npcs["Field Marshal Teravaine"] = { people = "Human", sex = "male" }
 npcs["Fin Fizracket"] = { role = "Blackwater Raiders", sex = "male" }
 npcs["Finkle Einhorn"] = { sex = "male" }
 npcs["First Mate Crazz"] = { role = "Blackwater Raiders", sex = "male" }
-npcs["First Mate Fitzsimmons"] = { sex = "male" }
+npcs["First Mate Fitzsimmons"] = { people = "Human", sex = "male" }
 npcs["First Mate Nilzlix"] = { role = "Blackwater Raiders", sex = "male" }
 npcs["Fisherman Lin'do"] = { role = "Spotted Yellowtail Collector", sex = "male" }
 npcs["Fizzle Brassbolts"] = { sex = "male" }
 npcs["Fleet Master Seahorn"] = { role = "Blackwater Raiders", sex = "male" }
-npcs["Flint Shadowmore"] = { role = "SI:7", sex = "male" }
+npcs["Flint Shadowmore"] = { people = "Human", role = "SI:7", sex = "male" }
 npcs["Foggy MacKreel"] = { people = "Dwarf", sex = "male" }
-npcs["Foreman Oslow"] = { sex = "male" }
+npcs["Foreman Oslow"] = { people = "Human", sex = "male" }
 npcs["Foreman Stonebrow"] = { people = "Dwarf", role = "Miners' League", sex = "male" }
-npcs["Foreman Thazz'ril"] = { sex = "male" }
+npcs["Foreman Thazz'ril"] = { people = "Orc", sex = "male" }
 npcs["Fraggar Thundermantle"] = { sex = "male" }
 npcs["Frahun Shadewhisper"] = { people = "NightElf", role = "Rogue Trainer", sex = "male" }
 npcs["Franclorn Forgewright"] = { sex = "male" }
-npcs["Frang"] = { role = "Warrior Trainer", sex = "male" }
+npcs["Frang"] = { people = "Orc", role = "Warrior Trainer", sex = "male" }
 npcs["Frankal Stonebridge"] = { sex = "male" }
-npcs["Frostwolf Ambassador Rokhstrom"] = { sex = "female" }
-npcs["Frostwolf Quartermaster"] = { sex = "male" }
+npcs["Frostwolf Ambassador Rokhstrom"] = { people = "Orc", sex = "female" }
+npcs["Frostwolf Quartermaster"] = { people = "Orc", sex = "male" }
 npcs["Frostwolf Stable Master"] = { role = "Stable Master", sex = "female" }
-npcs["Frostwolf Wolf Rider Commander"] = { sex = "male" }
+npcs["Frostwolf Wolf Rider Commander"] = { people = "Orc", sex = "male" }
 npcs["Furen Longbeard"] = { sex = "male" }
-npcs["Furl Scornbrow"] = { sex = "male" }
+npcs["Furl Scornbrow"] = { people = "Orc", sex = "male" }
 npcs["Furmund"] = { people = "Tauren", sex = "male" }
 npcs["Fylerian Nightwing"] = { people = "NightElf", role = "Druid Trainer", sex = "male" }
-npcs["Gaeriyan"] = { sex = "male" }
+npcs["Gaeriyan"] = { people = "Human", sex = "male" }
 npcs["Gaerolas Talvethren"] = { people = "NightElf", sex = "male" }
-npcs["Gakin the Darkbinder"] = { sex = "male" }
+npcs["Gakin the Darkbinder"] = { people = "Human", sex = "male" }
 npcs["Galamav the Marksman"] = { role = "Kargath Expeditionary Force", sex = "male" }
-npcs["Galen Goodward"] = { sex = "male" }
-npcs["Galgar"] = { sex = "male" }
+npcs["Galen Goodward"] = { people = "Human", sex = "male" }
+npcs["Galgar"] = { people = "Orc", sex = "male" }
 npcs["Galvan the Ancient"] = { role = "Artisan Blacksmith of the Mithril Order", sex = "male" }
-npcs["Gan'rul Bloodeye"] = { sex = "male" }
+npcs["Gan'rul Bloodeye"] = { people = "Orc", sex = "male" }
 npcs["Gann Stonespire"] = { people = "Tauren", sex = "male" }
-npcs["Gar'Thok"] = { sex = "male" }
+npcs["Gar'Thok"] = { people = "Orc", sex = "male" }
 npcs["Gart Mistrunner"] = { people = "Tauren", role = "Druid Trainer", sex = "male" }
 npcs["Gaxim Rustfizzle"] = { sex = "male" }
 npcs["Gazin Tenorm"] = { sex = "male" }
 npcs["Gazlowe"] = { sex = "male" }
-npcs["Gazrog"] = { sex = "male" }
-npcs["Gelkak Gyromast"] = { people = "Dwarf", sex = "male" }
+npcs["Gazrog"] = { people = "Orc", sex = "male" }
+npcs["Gelkak Gyromast"] = { people = "Gnome", sex = "male" }
 npcs["Gelvas Grimegate"] = { role = "Darkmoon Faire Ticket Redemption", sex = "male" }
 npcs["Genavie Callow"] = { sex = "female" }
-npcs["General Kirika"] = { sex = "female" }
-npcs["General Marcus Jonathan"] = { role = "High Commander of Stormwind Defense", sex = "male" }
+npcs["General Kirika"] = { people = "Orc", sex = "female" }
+npcs["General Marcus Jonathan"] = { people = "Human", role = "High Commander of Stormwind Defense", sex = "male" }
 npcs["Gennia Runetotem"] = { people = "Tauren", role = "Druid Trainer", sex = "female" }
 npcs["Geologist Larksbane"] = { sex = "female" }
-npcs["Gerard Tiller"] = { sex = "male" }
+npcs["Gerard Tiller"] = { people = "Human", sex = "male" }
 npcs["Gerrig Bonegrip"] = { people = "Dwarf", sex = "male" }
 npcs["Gershala Nightwhisper"] = { people = "NightElf", sex = "male" }
 npcs["Ghak Healtouch"] = { people = "Dwarf", role = "Journeyman Alchemist", sex = "male" }
@@ -1323,35 +1323,35 @@ npcs["Ghede"] = { people = "Tauren", sex = "male" }
 npcs["Gilshalan Windwalker"] = { people = "NightElf", sex = "male" }
 npcs["Ginro Hearthkindle"] = { people = "NightElf", sex = "male" }
 npcs["Glorin Steelbrow"] = { people = "Dwarf", sex = "male" }
-npcs["Gnoarn"] = { people = "Dwarf", sex = "male" }
+npcs["Gnoarn"] = { people = "Gnome", sex = "male" }
 npcs["Gnome Pit Boss"] = { sex = "male" }
 npcs["Gnomeregan Commendation Officer"] = { people = "Gnome", sex = "male" }
 npcs["Goblin Pit Boss"] = { sex = "male" }
 npcs["Godrick Farsan"] = { people = "Scourge", sex = "male" }
-npcs["Gol'dir"] = { sex = "male" }
+npcs["Gol'dir"] = { people = "Orc", sex = "male" }
 npcs["Golhine the Hooded"] = { people = "NightElf", role = "Druid Trainer", sex = "male" }
 npcs["Goli Krumn"] = { people = "Dwarf", sex = "male" }
 npcs["Golnir Bouldertoe"] = { people = "Dwarf", role = "Mining Supplier", sex = "male" }
-npcs["Gor'mul"] = { sex = "male" }
-npcs["Gorbold Steelhand"] = { people = "NightElf", role = "General Trade Supplier", sex = "male" }
+npcs["Gor'mul"] = { people = "Orc", sex = "male" }
+npcs["Gorbold Steelhand"] = { people = "Dwarf", role = "General Trade Supplier", sex = "male" }
 npcs["Gordo"] = { people = "Scourge" }
 npcs["Gordon Wendham"] = { people = "Scourge", role = "Weapons Merchant", sex = "male" }
-npcs["Gorn"] = { sex = "male" }
-npcs["Gornek"] = { sex = "male" }
+npcs["Gorn"] = { people = "Orc", sex = "male" }
+npcs["Gornek"] = { people = "Orc", sex = "male" }
 npcs["Gorzeeki Wildeyes"] = { sex = "male" }
 npcs["Gracina Spiritmight"] = { people = "NightElf", sex = "female" }
 npcs["Graham Van Talen"] = { people = "Scourge", role = "Journeyman Engineer", sex = "male" }
-npcs["Gramma Stonefield"] = { sex = "female" }
+npcs["Gramma Stonefield"] = { people = "Human", sex = "female" }
 npcs["Grand Mason Marblesten"] = { people = "Dwarf", role = "Royal Stonecutters Union", sex = "male" }
 npcs["Granis Swiftaxe"] = { people = "Dwarf", role = "Warrior Trainer", sex = "male" }
-npcs["Grark Lorkrub"] = { sex = "male" }
-npcs["Great-father Winter"] = { sex = "male" }
+npcs["Grark Lorkrub"] = { people = "Orc", sex = "male" }
+npcs["Great-father Winter"] = { people = "Orc", sex = "male" }
 npcs["Greatfather Winter"] = { sex = "male" }
 npcs["Greatmother Hawkwind"] = { people = "Tauren", sex = "female" }
 npcs["Gregan Brewspewer"] = { sex = "male" }
-npcs["Gregor Greystone"] = { role = "The Argent Dawn", sex = "male" }
+npcs["Gregor Greystone"] = { people = "Human", role = "The Argent Dawn", sex = "male" }
 npcs["Grelin Whitebeard"] = { people = "Dwarf", sex = "male" }
-npcs["Greshka"] = { role = "Demon Master", sex = "female" }
+npcs["Greshka"] = { people = "Orc", role = "Demon Master", sex = "female" }
 npcs["Greta Mosshoof"] = { role = "Emerald Circle", sex = "female" }
 npcs["Gretchen Dedmar"] = { people = "Scourge", sex = "female" }
 npcs["Grif Wildheart"] = { people = "Dwarf", role = "Hunter Trainer", sex = "male" }
@@ -1360,25 +1360,25 @@ npcs["Grimbooze Thunderbrew"] = { people = "Dwarf", sex = "male" }
 npcs["Grimnur Stonebrand"] = { people = "Dwarf", role = "Fishing Trainer", sex = "male" }
 npcs["Grinkle"] = { role = "Fishing Promoter", sex = "male" }
 npcs["Grish Longrunner"] = { people = "Tauren", sex = "male" }
-npcs["Grol'dar"] = { role = "Warlock Trainer", sex = "male" }
-npcs["Grub"] = { sex = "male" }
+npcs["Grol'dar"] = { people = "Orc", role = "Warlock Trainer", sex = "male" }
+npcs["Grub"] = { people = "Orc", sex = "male" }
 npcs["Grull Hawkwind"] = { people = "Tauren", sex = "male" }
 npcs["Grumnus Steelshaper"] = { people = "Dwarf", role = "Armor Crafter", sex = "male" }
-npcs["Grunt Dogran"] = { sex = "male" }
-npcs["Grunt Logmar"] = { sex = "male" }
-npcs["Grunt Maug"] = { role = "Tin Bar Collector", sex = "male" }
-npcs["Gryan Stoutmantle"] = { role = "The People's Militia", sex = "male" }
+npcs["Grunt Dogran"] = { people = "Orc", sex = "male" }
+npcs["Grunt Logmar"] = { people = "Orc", sex = "male" }
+npcs["Grunt Maug"] = { people = "Orc", role = "Tin Bar Collector", sex = "male" }
+npcs["Gryan Stoutmantle"] = { people = "Human", role = "The People's Militia", sex = "male" }
 npcs["Gryphon Master Talonaxe"] = { sex = "male" }
 npcs["Gryth Thurden"] = { people = "Dwarf", role = "Gryphon Master", sex = "male" }
-npcs["Guard Berton"] = { sex = "male" }
-npcs["Guard Byron"] = { sex = "male" }
+npcs["Guard Berton"] = { people = "Human", sex = "male" }
+npcs["Guard Byron"] = { people = "Human", sex = "male" }
 npcs["Guard Didier"] = { role = "Brotherhood of the Light", sex = "male" }
-npcs["Guard Howe"] = { sex = "male" }
-npcs["Guard Parker"] = { sex = "male" }
-npcs["Guard Thomas"] = { sex = "male" }
+npcs["Guard Howe"] = { people = "Human", sex = "male" }
+npcs["Guard Parker"] = { people = "Human", sex = "male" }
+npcs["Guard Thomas"] = { people = "Human", sex = "male" }
 npcs["Gubber Blump"] = { people = "Dwarf", sex = "male" }
 npcs["Gunther Arcanus"] = { people = "Scourge", sex = "male" }
-npcs["Gurda Ragescar"] = { sex = "female" }
+npcs["Gurda Ragescar"] = { people = "Orc", sex = "female" }
 npcs["Gurda Wildmane"] = { sex = "female" }
 npcs["Gwennyth Bly'Leggonde"] = { people = "NightElf", sex = "female" }
 npcs["Hadoken Swiftstrider"] = { sex = "male" }
@@ -1386,68 +1386,68 @@ npcs["Hagar Lightninghoof"] = { people = "Tauren", sex = "male" }
 npcs["Hammertoe Grez"] = { people = "Dwarf", sex = "male" }
 npcs["Hana'zua"] = { people = "Troll", sex = "male" }
 npcs["Hands Springsprocket"] = { sex = "male" }
-npcs["Hank the Hammer"] = { role = "The Mithril Order", sex = "male" }
+npcs["Hank the Hammer"] = { people = "Human", role = "The Mithril Order", sex = "male" }
 npcs["Hansel Heavyhands"] = { role = "The Thorium Brotherhood", sex = "male" }
 npcs["Harb Clawhoof"] = { people = "Tauren", role = "Kodo Mounts", sex = "male" }
 npcs["Harbinger Balthazad"] = { people = "Scourge", sex = "male" }
 npcs["Harken Windtotem"] = { sex = "male" }
-npcs["Harlan Bagley"] = { sex = "male" }
+npcs["Harlan Bagley"] = { people = "Human", sex = "male" }
 npcs["Harlo Barnaby"] = { people = "Dwarf", sex = "male" }
 npcs["Harlo Wigglesworth"] = { sex = "male" }
-npcs["Haromm"] = { role = "Shaman Trainer", sex = "male" }
-npcs["Harry Burlguard"] = { sex = "male" }
+npcs["Haromm"] = { people = "Orc", role = "Shaman Trainer", sex = "male" }
+npcs["Harry Burlguard"] = { people = "Human", sex = "male" }
 npcs["Harutt Thunderhorn"] = { people = "Tauren", role = "Warrior Trainer", sex = "male" }
 npcs["Haughty Modiste"] = { role = "Fashion Designer", sex = "female" }
 npcs["Healer Longrunner"] = { people = "Tauren", role = "Wool Bandage Collector", sex = "male" }
 npcs["Hegnar Rumbleshot"] = { people = "Dwarf", role = "Gunsmith", sex = "male" }
 npcs["Helendis Riverhorn"] = { people = "NightElf", sex = "male" }
-npcs["Helgrum the Swift"] = { sex = "male" }
+npcs["Helgrum the Swift"] = { people = "Orc", sex = "male" }
 npcs["Hemet Nesingwary"] = { sex = "male" }
-npcs["Henchman Valik"] = { sex = "male" }
+npcs["Henchman Valik"] = { people = "Human", sex = "male" }
 npcs["Henze Faulk"] = { sex = "male" }
 npcs["Heralath Fallowbrook"] = { people = "NightElf", sex = "male" }
 npcs["Herald Moonstalker"] = { people = "NightElf", sex = "female" }
-npcs["Herbalist Proudfeather"] = { role = "Peacebloom Collector", sex = "female" }
-npcs["Hermit Ortell"] = { sex = "male" }
+npcs["Herbalist Proudfeather"] = { people = "Tauren", role = "Peacebloom Collector", sex = "female" }
+npcs["Hermit Ortell"] = { people = "Human", sex = "male" }
 npcs["Hierophant Theodora Mulvadania"] = { role = "Kargath Expeditionary Force", sex = "female" }
 npcs["High Executor Darthalia"] = { people = "Scourge", sex = "female" }
 npcs["High Executor Derrington"] = { sex = "male" }
 npcs["High Executor Hadrec"] = { people = "Scourge", sex = "male" }
 npcs["High Explorer Magellas"] = { people = "Dwarf", role = "Explorers' League", sex = "male" }
-npcs["High Overlord Saurfang"] = { sex = "male" }
+npcs["High Overlord Saurfang"] = { people = "Orc", sex = "male" }
 npcs["High Priest Rohan"] = { role = "Priest Trainer", sex = "male" }
-npcs["High Priest Thel'danis"] = { sex = "male" }
-npcs["High Priestess Laurena"] = { role = "Priest Trainer", sex = "female" }
-npcs["High Priestess MacDonnell"] = { sex = "female" }
-npcs["High Sorcerer Andromath"] = { sex = "male" }
+npcs["High Priest Thel'danis"] = { people = "NightElf", sex = "male" }
+npcs["High Priestess Laurena"] = { people = "Human", role = "Priest Trainer", sex = "female" }
+npcs["High Priestess MacDonnell"] = { people = "Human", sex = "female" }
+npcs["High Sorcerer Andromath"] = { people = "Human", sex = "male" }
 npcs["High Tinker Mekkatorque"] = { role = "King of Gnomes", sex = "male" }
-npcs["Highlord Bolvar Fordragon"] = { sex = "male" }
-npcs["Highlord Demitrian"] = { sex = "male" }
-npcs["Highlord Taelan Fordring"] = { role = "Highlord of the Scarlet Crusade", sex = "male" }
+npcs["Highlord Bolvar Fordragon"] = { people = "Human", sex = "male" }
+npcs["Highlord Demitrian"] = { people = "Human", sex = "male" }
+npcs["Highlord Taelan Fordring"] = { people = "Human", role = "Highlord of the Scarlet Crusade", sex = "male" }
 npcs["Historian Karnik"] = { people = "Dwarf", sex = "male" }
 npcs["Hogral Bakkan"] = { people = "Dwarf", role = "Rogue Trainer", sex = "male" }
-npcs["Hol'anyee Marshal"] = { sex = "female" }
+npcs["Hol'anyee Marshal"] = { people = "Human", sex = "female" }
 npcs["Holt Thunderhorn"] = { people = "Tauren", role = "Hunter Trainer", sex = "male" }
-npcs["Horde Warbringer"] = { sex = "male" }
+npcs["Horde Warbringer"] = { people = "Orc", sex = "male" }
 npcs["Hornizz Brimbuzzle"] = { sex = "male" }
 npcs["Huldar"] = { people = "Dwarf", sex = "male" }
 npcs["Hulfdan Blackbeard"] = { people = "Dwarf", role = "Rogue Trainer", sex = "male" }
 npcs["Huntress Swiftriver"] = { people = "NightElf", role = "Spotted Yellowtail Collector", sex = "female" }
-npcs["Huntsman Leopold"] = { role = "The Scarlet Crusade", sex = "male" }
+npcs["Huntsman Leopold"] = { people = "Human", role = "The Scarlet Crusade", sex = "male" }
 npcs["Huntsman Markhor"] = { role = "Stable Master", sex = "male" }
 npcs["Huum Wildmane"] = { sex = "male" }
 npcs["Idriana"] = { people = "NightElf", role = "Banker", sex = "female" }
 npcs["Illiyana"] = { people = "NightElf" }
 npcs["Illiyana Moonblaze"] = { role = "Silverwing Supply Officer", sex = "female" }
-npcs["Ilsa Corbin"] = { role = "Warrior Trainer", sex = "female" }
+npcs["Ilsa Corbin"] = { people = "Human", role = "Warrior Trainer", sex = "female" }
 npcs["Impsy"] = { role = "Niby's Minion" }
-npcs["Infiltrator Marksen"] = { sex = "male" }
-npcs["Innkeeper Allison"] = { role = "Innkeeper", sex = "female" }
-npcs["Innkeeper Farley"] = { role = "Innkeeper", sex = "male" }
+npcs["Infiltrator Marksen"] = { people = "Human", sex = "male" }
+npcs["Innkeeper Allison"] = { people = "Human", role = "Innkeeper", sex = "female" }
+npcs["Innkeeper Farley"] = { people = "Human", role = "Innkeeper", sex = "male" }
 npcs["Innkeeper Firebrew"] = { people = "Dwarf", role = "Innkeeper", sex = "male" }
-npcs["Innkeeper Grosk"] = { role = "Innkeeper", sex = "male" }
-npcs["Innkeeper Gryshka"] = { role = "Innkeeper", sex = "female" }
-npcs["Innkeeper Kauth"] = { role = "Innkeeper", sex = "male" }
+npcs["Innkeeper Grosk"] = { people = "Orc", role = "Innkeeper", sex = "male" }
+npcs["Innkeeper Gryshka"] = { people = "Orc", role = "Innkeeper", sex = "female" }
+npcs["Innkeeper Kauth"] = { people = "Tauren", role = "Innkeeper", sex = "male" }
 npcs["Innkeeper Keldamyr"] = { people = "NightElf", role = "Innkeeper", sex = "male" }
 npcs["Innkeeper Norman"] = { people = "Scourge", role = "Innkeeper", sex = "male" }
 npcs["Innkeeper Pala"] = { people = "Tauren", role = "Innkeeper", sex = "female" }
@@ -1461,68 +1461,68 @@ npcs["Islen Waterseer"] = { sex = "female" }
 npcs["Iverron"] = { people = "NightElf", sex = "male" }
 npcs["Ivy Leafrunner"] = { role = "Emerald Circle", sex = "female" }
 npcs["J.D. Collie"] = { sex = "female" }
-npcs["Jahan Hawkwing"] = { role = "Leather & Mail Armor Merchant", sex = "male" }
+npcs["Jahan Hawkwing"] = { people = "Tauren", role = "Leather & Mail Armor Merchant", sex = "male" }
 npcs["Jalinda Sprig"] = { sex = "female" }
-npcs["James Halloran"] = { sex = "male" }
+npcs["James Halloran"] = { people = "Human", sex = "male" }
 npcs["Jandria"] = { people = "NightElf", role = "Priest Trainer", sex = "female" }
 npcs["Janela Stouthammer"] = { sex = "female" }
 npcs["Jang"] = { role = "Fishmaster Apprentice", sex = "female" }
 npcs["Jangdor Swiftstrider"] = { people = "Tauren", role = "Leatherworking Supplies", sex = "male" }
-npcs["Janice Felstone"] = { sex = "female" }
+npcs["Janice Felstone"] = { people = "Human", sex = "female" }
 npcs["Jannok Breezesong"] = { people = "NightElf", role = "Rogue Trainer", sex = "male" }
 npcs["Jannos Lighthoof"] = { people = "Tauren", role = "Druid Trainer", sex = "male" }
 npcs["Jarkal Mossmeld"] = { people = "Troll", sex = "male" }
 npcs["Jaron Stoneshaper"] = { people = "Dwarf", role = "Explorers' League", sex = "male" }
 npcs["Jarven Thunderbrew"] = { people = "Dwarf", sex = "male" }
-npcs["Javnir Nashak"] = { sex = "male" }
+npcs["Javnir Nashak"] = { people = "Orc", sex = "male" }
 npcs["Je'neu Sancrea"] = { people = "Troll", role = "The Earthen Ring", sex = "male" }
-npcs["Jediga"] = { sex = "female" }
+npcs["Jediga"] = { people = "Orc", sex = "female" }
 npcs["Jen'shan"] = { people = "Troll", role = "Hunter Trainer", sex = "female" }
 npcs["Jenal"] = { people = "NightElf", role = "Ditch Digger", sex = "male" }
-npcs["Jennea Cannon"] = { role = "Mage Trainer", sex = "female" }
+npcs["Jennea Cannon"] = { people = "Human", role = "Mage Trainer", sex = "female" }
 npcs["Jer'kai Moonweaver"] = { sex = "female" }
 npcs["Jeremiah Payson"] = { people = "Scourge", role = "Cockroach Vendor", sex = "male" }
 npcs["Jern Hornhelm"] = { people = "Dwarf", role = "Explorers' League", sex = "male" }
 npcs["Jes'rimon"] = { sex = "male" }
-npcs["Jessica Redpath"] = { sex = "female" }
+npcs["Jessica Redpath"] = { people = "Human", sex = "female" }
 npcs["Jessir Moonbow"] = { sex = "female" }
 npcs["Jinar'Zillen"] = { people = "Troll", sex = "male" }
-npcs["Jitters"] = { sex = "male" }
+npcs["Jitters"] = { people = "Human", sex = "male" }
 npcs["Jocaste"] = { people = "NightElf", role = "Hunter Trainer", sex = "female" }
-npcs["John Turner"] = { sex = "male" }
-npcs["Jonathan Carevin"] = { sex = "male" }
-npcs["Jonathan the Revelator"] = { sex = "male" }
+npcs["John Turner"] = { people = "Human", sex = "male" }
+npcs["Jonathan Carevin"] = { people = "Human", sex = "male" }
+npcs["Jonathan the Revelator"] = { people = "Human", sex = "male" }
 npcs["Jorah Annison"] = { people = "Scourge", sex = "male" }
-npcs["Jordan Stilwell"] = { sex = "male" }
-npcs["Jorgen"] = { sex = "male" }
-npcs["Jorik Kerridan"] = { role = "Rogue Trainer", sex = "male" }
+npcs["Jordan Stilwell"] = { people = "Human", sex = "male" }
+npcs["Jorgen"] = { people = "Human", sex = "male" }
+npcs["Jorik Kerridan"] = { people = "Human", role = "Rogue Trainer", sex = "male" }
 npcs["Jorn Skyseer"] = { sex = "male" }
 npcs["Josef Gregorian"] = { people = "Scourge", role = "Artisan Tailor", sex = "male" }
-npcs["Jotek"] = { sex = "male" }
-npcs["Jubahl Corpseseeker"] = { people = "Gnome", role = "Demon Trainer", sex = "male" }
+npcs["Jotek"] = { people = "Orc", sex = "male" }
+npcs["Jubahl Corpseseeker"] = { people = "Human", role = "Demon Trainer", sex = "male" }
 npcs["Juli Stormkettle"] = { people = "Gnome", role = "Mage Trainer", sex = "female" }
 npcs["Junior Apothecary Holland"] = { people = "Scourge", role = "Royal Apothecary Society", sex = "male" }
-npcs["Kaal Soulreaper"] = { people = "Scourge", role = "Warlock Trainer", sex = "male" }
-npcs["Kadrak"] = { sex = "male" }
+npcs["Kaal Soulreaper"] = { people = "Orc", role = "Warlock Trainer", sex = "male" }
+npcs["Kadrak"] = { people = "Orc", sex = "male" }
 npcs["Kaela Shadowspear"] = { sex = "female" }
 npcs["Kal"] = { people = "NightElf", role = "Druid Trainer", sex = "male" }
-npcs["Kalaran Windblade"] = { sex = "male" }
+npcs["Kalaran Windblade"] = { people = "Human", sex = "male" }
 npcs["Kali Remik"] = { people = "Troll", sex = "female" }
-npcs["Kaltunk"] = { sex = "male" }
+npcs["Kaltunk"] = { people = "Orc", sex = "male" }
 npcs["Kanati Greycloud"] = { people = "Tauren", sex = "male" }
-npcs["Kandrostrasz"] = { role = "Brood of Alexstrasza", sex = "male" }
-npcs["Kaplak"] = { role = "Rogue Trainer", sex = "male" }
-npcs["Karang Amakkar"] = { sex = "male" }
-npcs["Kardris Dreamseeker"] = { role = "Shaman Trainer", sex = "female" }
-npcs["Kargal Battlescar"] = { sex = "male" }
-npcs["Karl Boran"] = { sex = "male" }
+npcs["Kandrostrasz"] = { people = "Human", role = "Brood of Alexstrasza", sex = "male" }
+npcs["Kaplak"] = { people = "Orc", role = "Rogue Trainer", sex = "male" }
+npcs["Karang Amakkar"] = { people = "Orc", sex = "male" }
+npcs["Kardris Dreamseeker"] = { people = "Orc", role = "Shaman Trainer", sex = "female" }
+npcs["Kargal Battlescar"] = { people = "Orc", sex = "male" }
+npcs["Karl Boran"] = { people = "Human", sex = "male" }
 npcs["Karna Remtravel"] = { sex = "female" }
 npcs["Karos Razok"] = { people = "Scourge", role = "Bat Handler", sex = "male" }
-npcs["Kartosh"] = { role = "Warlock Trainer", sex = "male" }
-npcs["Karus"] = { role = "Banker", sex = "male" }
+npcs["Kartosh"] = { people = "Orc", role = "Warlock Trainer", sex = "male" }
+npcs["Karus"] = { people = "Orc", role = "Banker", sex = "male" }
 npcs["Kary Thunderhorn"] = { people = "Tauren", role = "Hunter Trainer", sex = "female" }
-npcs["Katar"] = { sex = "male" }
-npcs["Katie Hunter"] = { role = "Horse Breeder", sex = "female" }
+npcs["Katar"] = { people = "Orc", sex = "male" }
+npcs["Katie Hunter"] = { people = "Human", role = "Horse Breeder", sex = "female" }
 npcs["Katoom the Angler"] = { role = "Fishing Trainer & Supplies", sex = "male" }
 npcs["Kaya Flathoof"] = { people = "Tauren", sex = "female" }
 npcs["Kaymard Copperpinch"] = { role = "Smokywood Pastures", sex = "male" }
@@ -1532,20 +1532,20 @@ npcs["Keeper Albagorm"] = { people = "NightElf" }
 npcs["Keeper Bel'dugur"] = { people = "Scourge", sex = "male" }
 npcs["Keeper Bel'varil"] = { people = "Scourge", sex = "male" }
 npcs["Keeper Moonshade"] = { people = "NightElf", role = "Runecloth Bandage Collector", sex = "male" }
-npcs["Keeper of the Rolls"] = { role = "The Argent Dawn", sex = "male" }
-npcs["Keldran"] = { sex = "male" }
+npcs["Keeper of the Rolls"] = { people = "Human", role = "The Argent Dawn", sex = "male" }
+npcs["Keldran"] = { people = "Orc", sex = "male" }
 npcs["Kelek Skykeeper"] = { role = "Emerald Circle", sex = "male" }
-npcs["Kelm Hargunth"] = { role = "Warsong Supply Officer", sex = "male" }
+npcs["Kelm Hargunth"] = { people = "Orc", role = "Warsong Supply Officer", sex = "male" }
 npcs["Kelv Sternhammer"] = { people = "Dwarf", role = "Warrior Trainer", sex = "male" }
 npcs["Ken'jai"] = { people = "Troll", role = "Priest Trainer", sex = "male" }
 npcs["Ken'zigla"] = { people = "Troll", sex = "male" }
 npcs["Kerlonian Evershade"] = { people = "NightElf", role = "Druid of the Claw", sex = "male" }
 npcs["Kernobee"] = { sex = "male" }
-npcs["Kerri Hicks"] = { role = "The Strongest Woman Alive!", sex = "female" }
-npcs["Keryn Sylvius"] = { role = "Rogue Trainer", sex = "female" }
+npcs["Kerri Hicks"] = { people = "Human", role = "The Strongest Woman Alive!", sex = "female" }
+npcs["Keryn Sylvius"] = { people = "Human", role = "Rogue Trainer", sex = "female" }
 npcs["Keyl Swiftclaw"] = { sex = "male" }
 npcs["Kharan Mighthammer"] = { sex = "male" }
-npcs["Khelden Bremen"] = { role = "Mage Trainer", sex = "male" }
+npcs["Khelden Bremen"] = { people = "Human", role = "Mage Trainer", sex = "male" }
 npcs["Kibler"] = { sex = "male" }
 npcs["Kil'hala"] = { people = "Troll", role = "Journeyman Tailor", sex = "male" }
 npcs["Kilram"] = { sex = "male" }
@@ -1555,33 +1555,33 @@ npcs["Kindal Moonweaver"] = { sex = "female" }
 npcs["Kinelory"] = { sex = "female" }
 npcs["King Magni Bronzebeard"] = { people = "Dwarf", role = "Lord of Ironforge", sex = "male" }
 npcs["Kirge Sternhorn"] = { people = "Tauren", sex = "male" }
-npcs["Kirsta Deepshadow"] = { sex = "female" }
-npcs["Klannoc Macleod"] = { role = "The Islander", sex = "male" }
+npcs["Kirsta Deepshadow"] = { people = "Human", sex = "female" }
+npcs["Klannoc Macleod"] = { people = "Human", role = "The Islander", sex = "male" }
 npcs["Klockmort Spannerspan"] = { people = "Gnome", sex = "male" }
 npcs["Knot Thimblejack"] = { sex = "male" }
 npcs["Kor'ghan"] = { people = "Troll", sex = "male" }
-npcs["Korfax, Champion of the Light"] = { role = "Brotherhood of the Light", sex = "male" }
-npcs["Korin Fel"] = { sex = "female" }
+npcs["Korfax, Champion of the Light"] = { people = "Human", role = "Brotherhood of the Light", sex = "male" }
+npcs["Korin Fel"] = { people = "Orc", sex = "female" }
 npcs["Korran"] = { people = "Troll", sex = "male" }
 npcs["Krakle"] = { sex = "male" }
-npcs["Kranal Fiss"] = { sex = "male" }
+npcs["Kranal Fiss"] = { people = "Orc", sex = "male" }
 npcs["Krang Stonehoof"] = { people = "Tauren", role = "Warrior Trainer", sex = "male" }
 npcs["Kravel Koalbeard"] = { sex = "male" }
 npcs["Krazek"] = { sex = "male" }
 npcs["Kreldig Ungor"] = { role = "Reclaimers Inc.", sex = "male" }
 npcs["Krinkle Goodsteel"] = { role = "Blacksmithing Supplies", sex = "male" }
-npcs["Krog"] = { sex = "male" }
+npcs["Krog"] = { people = "Orc", sex = "male" }
 npcs["Krom Stoutarm"] = { people = "Dwarf", sex = "male" }
-npcs["Kruban Darkblade"] = { role = "Darkmoon Faire Barker", sex = "male" }
-npcs["Krueg Skullsplitter"] = { sex = "male" }
-npcs["Krug Skullsplit"] = { role = "Orgrimmar Legion Captain", sex = "male" }
-npcs["Krusk"] = { sex = "male" }
+npcs["Kruban Darkblade"] = { people = "Orc", role = "Darkmoon Faire Barker", sex = "male" }
+npcs["Krueg Skullsplitter"] = { people = "Orc", sex = "male" }
+npcs["Krug Skullsplit"] = { people = "Orc", role = "Orgrimmar Legion Captain", sex = "male" }
+npcs["Krusk"] = { people = "Orc", sex = "male" }
 npcs["Kuray'bin"] = { people = "Troll", sex = "male" }
-npcs["Kurgul"] = { role = "Demon Trainer", sex = "male" }
+npcs["Kurgul"] = { people = "Orc", role = "Demon Trainer", sex = "male" }
 npcs["Kyra Windblade"] = { people = "NightElf", role = "Warrior Trainer", sex = "female" }
 npcs["Lady Callow"] = { role = "Mageweave Bandage Collector", sex = "female" }
-npcs["Lady Jaina Proudmoore"] = { role = "Ruler of Theramore", sex = "female" }
-npcs["Lady Katrana Prestor"] = { sex = "female" }
+npcs["Lady Jaina Proudmoore"] = { people = "Human", role = "Ruler of Theramore", sex = "female" }
+npcs["Lady Katrana Prestor"] = { people = "Human", sex = "female" }
 npcs["Lady Sylvanas Windrunner"] = { role = "Banshee Queen", sex = "female" }
 npcs["Lago Blackwrench"] = { people = "Gnome", sex = "male" }
 npcs["Laird"] = { people = "NightElf", role = "Fish Vendor", sex = "male" }
@@ -1592,32 +1592,32 @@ npcs["Lard"] = { role = "Innkeeper" }
 npcs["Lariia"] = { people = "NightElf", role = "Priest Trainer", sex = "female" }
 npcs["Larion"] = { sex = "male" }
 npcs["Laris Geardawdle"] = { sex = "male" }
-npcs["Lars"] = { sex = "male" }
+npcs["Lars"] = { people = "Human", sex = "male" }
 npcs["Latronicus Moonspear"] = { people = "NightElf", sex = "male" }
 npcs["Laurna Morninglight"] = { people = "NightElf", role = "Priest Trainer", sex = "female" }
 npcs["Layo Starstrike"] = { role = "The Cenarion Circle", sex = "male" }
 npcs["Lelanai"] = { people = "NightElf", role = "Saber Handler", sex = "female" }
 npcs["Leonid Barthalomew the Revered"] = { role = "The Argent Dawn", sex = "male" }
-npcs["Lexlort"] = { role = "Kargath Expeditionary Force", sex = "male" }
+npcs["Lexlort"] = { people = "Orc", role = "Kargath Expeditionary Force", sex = "male" }
 npcs["Librarian Mae Paledust"] = { people = "Dwarf", role = "Explorers' League", sex = "female" }
-npcs["Lieutenant Beitha"] = { role = "The Argent Dawn", sex = "female" }
+npcs["Lieutenant Beitha"] = { people = "Orc", role = "The Argent Dawn", sex = "female" }
 npcs["Lieutenant Dagel"] = { role = "The Argent Dawn", sex = "male" }
-npcs["Lieutenant Doren"] = { sex = "male" }
-npcs["Lieutenant Farren Orinelle"] = { sex = "male" }
+npcs["Lieutenant Doren"] = { people = "Human", sex = "male" }
+npcs["Lieutenant Farren Orinelle"] = { people = "Human", sex = "male" }
 npcs["Lieutenant Haggerdin"] = { sex = "male" }
-npcs["Lieutenant Jocryn Heldric"] = { sex = "male" }
-npcs["Lieutenant Lisande"] = { role = "The Argent Dawn", sex = "female" }
-npcs["Lieutenant Nevell"] = { role = "The Argent Dawn", sex = "male" }
-npcs["Lieutenant Orrin"] = { role = "The Argent Dawn", sex = "male" }
+npcs["Lieutenant Jocryn Heldric"] = { people = "Human", sex = "male" }
+npcs["Lieutenant Lisande"] = { people = "Human", role = "The Argent Dawn", sex = "female" }
+npcs["Lieutenant Nevell"] = { people = "Human", role = "The Argent Dawn", sex = "male" }
+npcs["Lieutenant Orrin"] = { people = "Human", role = "The Argent Dawn", sex = "male" }
 npcs["Lieutenant Rotimer"] = { role = "Stormpike Guard Recruitment Officer", sex = "male" }
-npcs["Lieutenant Rukag"] = { role = "The Argent Dawn", sex = "male" }
+npcs["Lieutenant Rukag"] = { people = "Orc", role = "The Argent Dawn", sex = "male" }
 npcs["Liladris Moonriver"] = { people = "NightElf", sex = "female" }
 npcs["Lilith the Lithe"] = { sex = "female" }
 npcs["Lilliam Sparkspindle"] = { people = "Gnome", role = "Expert Engineer", sex = "male" }
 npcs["Linken"] = { sex = "male" }
 npcs["Liv Rizzlefix"] = { role = "Workshop Assistant", sex = "female" }
-npcs["Llane Beshere"] = { role = "Warrior Trainer", sex = "male" }
-npcs["Locke Okarr"] = { sex = "male" }
+npcs["Llane Beshere"] = { people = "Human", role = "Warrior Trainer", sex = "male" }
+npcs["Locke Okarr"] = { people = "Orc", sex = "male" }
 npcs["Loganaar"] = { role = "Druid Trainer", sex = "male" }
 npcs["Loh'atu"] = { sex = "male" }
 npcs["Lokhtos Darkbargainer"] = { role = "The Thorium Brotherhood", sex = "male" }
@@ -1626,91 +1626,91 @@ npcs["Lomac Gearstrip"] = { people = "Gnome", sex = "male" }
 npcs["Longbraid the Grim"] = { people = "Dwarf", sex = "male" }
 npcs["Lookout Captain Lolo Longstriker"] = { role = "The Thorium Brotherhood", sex = "male" }
 npcs["Loramus Thalipedes"] = { sex = "male" }
-npcs["Lord Baurles K. Wishock"] = { role = "House of Nobles", sex = "male" }
-npcs["Lord Ello Ebonlocke"] = { role = "Mayor of Darkshire", sex = "male" }
-npcs["Lord Grayson Shadowbreaker"] = { role = "Paladin Trainer", sex = "male" }
-npcs["Lord Jorach Ravenholdt"] = { role = "Lord of the Assassin's League", sex = "male" }
-npcs["Lord Maxwell Tyrosus"] = { role = "The Argent Dawn", sex = "male" }
-npcs["Lord Tirion Fordring"] = { role = "Order of the Silver Hand", sex = "male" }
-npcs["Lord Tony Romano"] = { role = "Rogue Trainer", sex = "male" }
+npcs["Lord Baurles K. Wishock"] = { people = "Human", role = "House of Nobles", sex = "male" }
+npcs["Lord Ello Ebonlocke"] = { people = "Human", role = "Mayor of Darkshire", sex = "male" }
+npcs["Lord Grayson Shadowbreaker"] = { people = "Human", role = "Paladin Trainer", sex = "male" }
+npcs["Lord Jorach Ravenholdt"] = { people = "Human", role = "Lord of the Assassin's League", sex = "male" }
+npcs["Lord Maxwell Tyrosus"] = { people = "Human", role = "The Argent Dawn", sex = "male" }
+npcs["Lord Tirion Fordring"] = { people = "Human", role = "Order of the Silver Hand", sex = "male" }
+npcs["Lord Tony Romano"] = { people = "Human", role = "Rogue Trainer", sex = "male" }
 npcs["Lorekeeper Javon"] = { sex = "male" }
 npcs["Lorekeeper Kildrath"] = { sex = "male" }
 npcs["Lorekeeper Lydros"] = { sex = "male" }
 npcs["Lorekeeper Mykos"] = { sex = "female" }
 npcs["Lorekeeper Raintotem"] = { people = "Tauren", sex = "male" }
-npcs["Loremaster Dibbs"] = { sex = "male" }
+npcs["Loremaster Dibbs"] = { people = "Human", sex = "male" }
 npcs["Loslor Rudge"] = { people = "Dwarf", role = "Engineering Supplies", sex = "male" }
 npcs["Lotherias"] = { people = "NightElf", sex = "female" }
 npcs["Lotwil Veriatus"] = { sex = "male" }
 npcs["Lucien Tosselwrench"] = { sex = "male" }
 npcs["Lucius"] = { people = "Dwarf", sex = "male" }
-npcs["Lumak"] = { role = "Fishing Trainer", sex = "male" }
+npcs["Lumak"] = { people = "Orc", role = "Fishing Trainer", sex = "male" }
 npcs["Lunar Festival Emissary"] = { sex = "male" }
 npcs["Lunar Festival Harbinger"] = { sex = "female" }
 npcs["Lunar Festival Herald"] = { sex = "male" }
 npcs["Luther Pickman"] = { people = "Scourge", role = "Warlock Trainer", sex = "male" }
-npcs["Lyria Du Lac"] = { role = "Warrior Trainer", sex = "female" }
-npcs["Ma Stonefield"] = { sex = "female" }
-npcs["Madame Eva"] = { sex = "female" }
+npcs["Lyria Du Lac"] = { people = "Human", role = "Warrior Trainer", sex = "female" }
+npcs["Ma Stonefield"] = { people = "Human", sex = "female" }
+npcs["Madame Eva"] = { people = "Human", sex = "female" }
 npcs["Magatha Grimtotem"] = { people = "Tauren", role = "Elder Crone", sex = "female" }
-npcs["Magga"] = { sex = "female" }
+npcs["Magga"] = { people = "Orc", sex = "female" }
 npcs["Maggran Earthbinder"] = { people = "Tauren", sex = "male" }
 npcs["Magis Sparkmantle"] = { people = "Gnome", role = "Mage Trainer", sex = "male" }
 npcs["Magistrate Bluntnose"] = { people = "Dwarf", sex = "male" }
-npcs["Magistrate Henry Maleb"] = { sex = "male" }
-npcs["Magistrate Marduke"] = { sex = "male" }
+npcs["Magistrate Henry Maleb"] = { people = "Human", sex = "male" }
+npcs["Magistrate Marduke"] = { people = "Human", sex = "male" }
 npcs["Magistrate Sevren"] = { people = "Scourge", sex = "male" }
-npcs["Magistrate Solomon"] = { sex = "male" }
+npcs["Magistrate Solomon"] = { people = "Human", sex = "male" }
 npcs["Magmar Fellhew"] = { people = "Dwarf", sex = "male" }
-npcs["Magus Tirth"] = { sex = "male" }
+npcs["Magus Tirth"] = { people = "Human", sex = "male" }
 npcs["Magus Wordeen Voidglare"] = { people = "Scourge", sex = "male" }
 npcs["Mahren Skyseer"] = { sex = "female" }
 npcs["Mai'Lahii"] = { people = "Troll", role = "Fishing Supplies", sex = "female" }
 npcs["Mai'ah"] = { people = "Troll", role = "Mage Trainer", sex = "female" }
-npcs["Major Mattingly"] = { sex = "male" }
-npcs["Major Samuelson"] = { role = "Stormwind City Guard", sex = "male" }
+npcs["Major Mattingly"] = { people = "Human", sex = "male" }
+npcs["Major Samuelson"] = { people = "Human", role = "Stormwind City Guard", sex = "male" }
 npcs["Makaba Flathoof"] = { people = "Tauren", sex = "male" }
 npcs["Malakai Cross"] = { people = "Scourge", role = "Priest Trainer", sex = "male" }
 npcs["Malfurion Stormrage"] = { sex = "male" }
-npcs["Malton Droffers"] = { role = "Droffers and Son Salvage", sex = "male" }
+npcs["Malton Droffers"] = { people = "Orc", role = "Droffers and Son Salvage", sex = "male" }
 npcs["Malyfous Darkhammer"] = { role = "The Thorium Brotherhood", sex = "male" }
-npcs["Mankrik"] = { sex = "male" }
+npcs["Mankrik"] = { people = "Orc", sex = "male" }
 npcs["Mara Rennick"] = { sex = "female" }
 npcs["Mardant Strongoak"] = { people = "NightElf", role = "Druid Trainer", sex = "male" }
 npcs["Marek Ironheart"] = { people = "Dwarf", sex = "male" }
-npcs["Margoz"] = { sex = "male" }
+npcs["Margoz"] = { people = "Orc", sex = "male" }
 npcs["Marin Noggenfogger"] = { sex = "male" }
 npcs["Marion Call"] = { people = "Scourge", role = "Rogue Trainer", sex = "female" }
-npcs["Marlene Redpath"] = { sex = "female" }
+npcs["Marlene Redpath"] = { people = "Human", sex = "female" }
 npcs["Marleth Barleybrew"] = { people = "Dwarf", sex = "female" }
 npcs["Marli Wishrunner"] = { sex = "female" }
 npcs["Marryk Nurribit"] = { people = "Gnome", role = "Mage Trainer", sex = "male" }
 npcs["Marshal Bluewall"] = { people = "Dwarf", sex = "male" }
-npcs["Marshal Dughan"] = { sex = "male" }
-npcs["Marshal Haggard"] = { sex = "male" }
-npcs["Marshal Marris"] = { sex = "male" }
-npcs["Marshal Maxwell"] = { sex = "male" }
-npcs["Marshal McBride"] = { sex = "male" }
-npcs["Marshal Redpath"] = { sex = "male" }
-npcs["Marshal Windsor"] = { sex = "male" }
+npcs["Marshal Dughan"] = { people = "Human", sex = "male" }
+npcs["Marshal Haggard"] = { people = "Human", sex = "male" }
+npcs["Marshal Marris"] = { people = "Human", sex = "male" }
+npcs["Marshal Maxwell"] = { people = "Human", sex = "male" }
+npcs["Marshal McBride"] = { people = "Human", sex = "male" }
+npcs["Marshal Redpath"] = { people = "Human", sex = "male" }
+npcs["Marshal Windsor"] = { people = "Human", sex = "male" }
 npcs["Marta Finespindle"] = { people = "Gnome", role = "Thick Leather Collector", sex = "female" }
-npcs["Martek the Exiled"] = { sex = "male" }
-npcs["Martie Jainrose"] = { sex = "female" }
+npcs["Martek the Exiled"] = { people = "Orc", sex = "male" }
+npcs["Martie Jainrose"] = { people = "Human", sex = "female" }
 npcs["Marukai"] = { people = "Troll", sex = "female" }
 npcs["Marvon Rivetseeker"] = { sex = "male" }
 npcs["Master Apothecary Faranell"] = { people = "Scourge", role = "Royal Apothecary Society", sex = "male" }
 npcs["Master Engineer Zinfizzlex"] = { sex = "male" }
 npcs["Master Gadrin"] = { people = "Troll", sex = "male" }
-npcs["Master Mathias Shaw"] = { role = "Leader of SI:7", sex = "male" }
+npcs["Master Mathias Shaw"] = { people = "Human", role = "Leader of SI:7", sex = "male" }
 npcs["Master Mechanic Castpipe"] = { people = "Gnome", sex = "male" }
 npcs["Master Nightsong"] = { people = "NightElf", role = "Purple Lotus Collector", sex = "male" }
 npcs["Master Sergeant Fizzlebolt"] = { people = "Gnome", role = "War Effort Recruiter", sex = "male" }
-npcs["Master Sergeant Maclure"] = { role = "War Effort Recruiter", sex = "female" }
+npcs["Master Sergeant Maclure"] = { people = "Human", role = "War Effort Recruiter", sex = "female" }
 npcs["Master Sergeant Moonshadow"] = { people = "NightElf", role = "War Effort Recruiter", sex = "female" }
 npcs["Master Smith Burninate"] = { role = "The Thorium Brotherhood", sex = "male" }
 npcs["Master Vornal"] = { people = "Troll", sex = "male" }
-npcs["Mastok Wrilehiss"] = { sex = "male" }
-npcs["Mataus the Wrathcaster"] = { role = "The Scarlet Crusade", sex = "male" }
+npcs["Mastok Wrilehiss"] = { people = "Orc", sex = "male" }
+npcs["Mataus the Wrathcaster"] = { people = "Human", role = "The Scarlet Crusade", sex = "male" }
 npcs["Mathiel"] = { people = "NightElf", sex = "male" }
 npcs["Mathrengyl Bearwalker"] = { people = "NightElf", role = "Druid Trainer", sex = "male" }
 npcs["Maur Grimtotem"] = { sex = "male" }
@@ -1719,12 +1719,12 @@ npcs["Maurin Bonesplitter"] = { people = "Scourge", sex = "male" }
 npcs["Maxan Anvol"] = { people = "Dwarf", role = "Priest Trainer", sex = "male" }
 npcs["Maximillion"] = { people = "Scourge", role = "Warlock Trainer", sex = "male" }
 npcs["Maxwort Uberglint"] = { sex = "male" }
-npcs["Mayara Brightwing"] = { sex = "female" }
-npcs["Maybell Maclure"] = { sex = "female" }
+npcs["Mayara Brightwing"] = { people = "Human", sex = "female" }
+npcs["Maybell Maclure"] = { people = "Human", sex = "female" }
 npcs["Maybess Riverbreeze"] = { role = "Emerald Circle", sex = "female" }
 npcs["Maywiki of Zuldazar"] = { sex = "female" }
-npcs["Mazen Mac'Nadir"] = { role = "Academy of Arcane Arts and Sciences", sex = "male" }
-npcs["McGavan"] = { role = "The Mithril Order", sex = "male" }
+npcs["Mazen Mac'Nadir"] = { people = "Human", role = "Academy of Arcane Arts and Sciences", sex = "male" }
+npcs["McGavan"] = { people = "Human", role = "The Mithril Order", sex = "male" }
 npcs["Mebok Mizzyrix"] = { sex = "male" }
 npcs["Meela Dawnstrider"] = { people = "Tauren", role = "Shaman Trainer", sex = "female" }
 npcs["Meggi Peppinrocker"] = { sex = "female" }
@@ -1733,40 +1733,40 @@ npcs["Melithar Staghelm"] = { people = "NightElf", sex = "male" }
 npcs["Melizza Brimbuzzle"] = { sex = "female" }
 npcs["Melnan Darkstone"] = { role = "Darkmoon Faire Barker", sex = "male" }
 npcs["Melor Stonehoof"] = { sex = "male" }
-npcs["Menara Voidrender"] = { sex = "female" }
+npcs["Menara Voidrender"] = { people = "Human", sex = "female" }
 npcs["Mennet Carkad"] = { people = "Scourge", sex = "male" }
-npcs["Merideth Carlson"] = { role = "Horse Breeder", sex = "female" }
-npcs["Merissa Stilwell"] = { sex = "female" }
+npcs["Merideth Carlson"] = { people = "Human", role = "Horse Breeder", sex = "female" }
+npcs["Merissa Stilwell"] = { people = "Human", sex = "female" }
 npcs["Merithra of the Dream"] = { sex = "female" }
 npcs["Merok Longstride"] = { sex = "male" }
 npcs["Merrin Rockweaver"] = { people = "Dwarf", role = "Explorers' League", sex = "female" }
 npcs["Michael Garrett"] = { people = "Scourge", role = "Bat Handler", sex = "male" }
 npcs["Mickey Levine"] = { sex = "female" }
-npcs["Mikhail"] = { role = "Bartender", sex = "male" }
+npcs["Mikhail"] = { people = "Human", role = "Bartender", sex = "male" }
 npcs["Miles Dexter"] = { people = "Scourge", role = "Rogue Trainer", sex = "male" }
 npcs["Miles Welsh"] = { people = "Scourge", role = "Priest Trainer", sex = "male" }
 npcs["Milli Featherwhistle"] = { people = "Gnome", role = "Mechanostrider Merchant", sex = "female" }
-npcs["Milly Osworth"] = { sex = "female" }
-npcs["Milton Sheaf"] = { role = "Librarian", sex = "male" }
+npcs["Milly Osworth"] = { people = "Human", sex = "female" }
+npcs["Milton Sheaf"] = { people = "Human", role = "Librarian", sex = "male" }
 npcs["Miner Cromwell"] = { role = "Copper Bar Collector", sex = "male" }
 npcs["Miran"] = { sex = "male" }
-npcs["Mirket"] = { role = "Warlock Trainer", sex = "female" }
-npcs["Misha Tor'kren"] = { sex = "female" }
+npcs["Mirket"] = { people = "Orc", role = "Warlock Trainer", sex = "female" }
+npcs["Misha Tor'kren"] = { people = "Orc", sex = "female" }
 npcs["Mist"] = { people = "NightElf", beast = true }
 npcs["Mistina Steelshield"] = { people = "Dwarf", role = "Alliance Cloth Quartermaster", sex = "female" }
 npcs["Mitsuwa"] = { people = "Troll", sex = "male" }
-npcs["Moktar Krin"] = { sex = "male" }
-npcs["Mokvar"] = { sex = "male" }
+npcs["Moktar Krin"] = { people = "Orc", sex = "male" }
+npcs["Mokvar"] = { people = "Orc", sex = "male" }
 npcs["Molthor"] = { role = "Hand of Rastakhan", sex = "male" }
 npcs["Monika Sengutz"] = { people = "Scourge", sex = "female" }
-npcs["Monty"] = { people = "Dwarf", role = "Rat Extermination Specialist", sex = "male" }
+npcs["Monty"] = { people = "Gnome", role = "Rat Extermination Specialist", sex = "male" }
 npcs["Moon Priestess Amara"] = { people = "NightElf", sex = "female" }
 npcs["Mor'rogal"] = { people = "Tauren", sex = "male" }
-npcs["Mor'zul Bloodbringer"] = { sex = "male" }
-npcs["Morgan Pestle"] = { sex = "male" }
-npcs["Morgan Stern"] = { sex = "male" }
+npcs["Mor'zul Bloodbringer"] = { people = "Human", sex = "male" }
+npcs["Morgan Pestle"] = { people = "Human", sex = "male" }
+npcs["Morgan Stern"] = { people = "Human", sex = "male" }
 npcs["Morin Cloudstalker"] = { people = "Tauren", sex = "male" }
-npcs["Morja"] = { sex = "female" }
+npcs["Morja"] = { people = "Orc", sex = "female" }
 npcs["Mosarn"] = { sex = "male" }
 npcs["Motega Firemane"] = { people = "Tauren", sex = "male" }
 npcs["Motley Garmason"] = { people = "Dwarf", sex = "male" }
@@ -1780,8 +1780,8 @@ npcs["Mountaineer Rockgar"] = { people = "Dwarf", sex = "male" }
 npcs["Mountaineer Stormpike"] = { people = "Dwarf", sex = "male" }
 npcs["Mountaineer Thalos"] = { people = "Dwarf", sex = "male" }
 npcs["Mountaineer Wallbang"] = { people = "Dwarf", sex = "male" }
-npcs["Muglash"] = { sex = "male" }
-npcs["Muigin"] = { sex = "male" }
+npcs["Muglash"] = { people = "Orc", sex = "male" }
+npcs["Muigin"] = { people = "Human", sex = "male" }
 npcs["Muiredon Battleforge"] = { people = "Dwarf", sex = "male" }
 npcs["Mulgris Deepriver"] = { sex = "male" }
 npcs["Mull Thunderhorn"] = { people = "Tauren", sex = "male" }
@@ -1801,21 +1801,21 @@ npcs["Narain Soothfancy"] = { sex = "male" }
 npcs["Nardstrum Copperpinch"] = { role = "Smokywood Pastures", sex = "male" }
 npcs["Narm Faulk"] = { sex = "male" }
 npcs["Narm Skychaser"] = { people = "Tauren", role = "Shaman Trainer", sex = "male" }
-npcs["Nartok"] = { role = "Warlock Trainer", sex = "male" }
-npcs["Nat Pagle"] = { sex = "male" }
+npcs["Nartok"] = { people = "Orc", role = "Warlock Trainer", sex = "male" }
+npcs["Nat Pagle"] = { people = "Human", sex = "male" }
 npcs["Nataka Longhorn"] = { people = "Tauren", sex = "male" }
-npcs["Nathaniel Dumah"] = { sex = "male" }
+npcs["Nathaniel Dumah"] = { people = "Human", sex = "male" }
 npcs["Nathanos Blightcaller"] = { role = "Champion of the Banshee Queen", sex = "male" }
-npcs["Nazeer Bloodpike"] = { sex = "male" }
-npcs["Nazgrel"] = { role = "Advisor to Thrall", sex = "male" }
-npcs["Neeka Bloodscar"] = { sex = "female" }
-npcs["Neeru Fireblade"] = { sex = "male" }
+npcs["Nazeer Bloodpike"] = { people = "Orc", sex = "male" }
+npcs["Nazgrel"] = { people = "Orc", role = "Advisor to Thrall", sex = "male" }
+npcs["Neeka Bloodscar"] = { people = "Orc", sex = "female" }
+npcs["Neeru Fireblade"] = { people = "Orc", sex = "male" }
 npcs["Nessa Shadowsong"] = { people = "NightElf", role = "Fishing Supplies", sex = "female" }
 npcs["Niby the Almighty"] = { sex = "male" }
-npcs["Nikova Raskol"] = { sex = "female" }
-npcs["Nilith Lokrav"] = { sex = "female" }
+npcs["Nikova Raskol"] = { people = "Human", sex = "female" }
+npcs["Nilith Lokrav"] = { people = "Human", sex = "female" }
 npcs["Nimboya"] = { people = "Troll", sex = "male" }
-npcs["Nipsy"] = { people = "Dwarf", sex = "male" }
+npcs["Nipsy"] = { people = "Gnome", sex = "male" }
 npcs["Nissa Firestone"] = { people = "Dwarf", role = "First Aid Trainer", sex = "female" }
 npcs["Nixx Sprocketspring"] = { role = "Master Goblin Engineer", sex = "male" }
 npcs["Nogg"] = { role = "Expert Engineer", sex = "male" }
@@ -1823,44 +1823,44 @@ npcs["Noggle Ficklespragg"] = { sex = "male" }
 npcs["Nori Pridedrift"] = { people = "Dwarf", sex = "male" }
 npcs["Novice Elreth"] = { people = "Scourge", sex = "female" }
 npcs["Novice Thaivand"] = { people = "Scourge", sex = "male" }
-npcs["Nurse Stonefield"] = { role = "Silk Bandage Collector", sex = "female" }
-npcs["Nyrill"] = { role = "Xylem's Apprentice", sex = "male" }
+npcs["Nurse Stonefield"] = { people = "Human", role = "Silk Bandage Collector", sex = "female" }
+npcs["Nyrill"] = { people = "Human", role = "Xylem's Apprentice", sex = "male" }
 npcs["Oben Rageclaw"] = { people = "NightElf", sex = "male" }
 npcs["Officer Gothena"] = { people = "Scourge", role = "Undercity Commendations", sex = "female" }
 npcs["Officer Ironbeard"] = { people = "Dwarf", role = "Ironforge Commendations", sex = "male" }
 npcs["Officer Lunalight"] = { people = "NightElf", role = "Darnassus Commendations", sex = "female" }
-npcs["Officer Maloof"] = { role = "Stormwind Commendations", sex = "male" }
+npcs["Officer Maloof"] = { people = "Human", role = "Stormwind Commendations", sex = "male" }
 npcs["Officer Porterhouse"] = { people = "Gnome", role = "Gnomeregan Commendations", sex = "male" }
-npcs["Officer Redblade"] = { role = "Orgrimmar Commendations", sex = "female" }
+npcs["Officer Redblade"] = { people = "Orc", role = "Orgrimmar Commendations", sex = "female" }
 npcs["Officer Thunderstrider"] = { people = "Tauren", role = "Thunder Bluff Commendations", sex = "female" }
 npcs["Officer Vu'Shalay"] = { people = "Troll", role = "Darkspear Commendations", sex = "male" }
 npcs["Oglethorpe Obnoticus"] = { role = "Master Gnome Engineer", sex = "male" }
-npcs["Ogunaro Wolfrunner"] = { role = "Kennel Master", sex = "male" }
-npcs["Okothos Ironrager"] = { role = "Armorsmith", sex = "male" }
-npcs["Ol' Emma"] = { sex = "female" }
+npcs["Ogunaro Wolfrunner"] = { people = "Orc", role = "Kennel Master", sex = "male" }
+npcs["Okothos Ironrager"] = { people = "Orc", role = "Armorsmith", sex = "male" }
+npcs["Ol' Emma"] = { people = "Human", sex = "female" }
 npcs["Olmin Burningbeard"] = { people = "Dwarf", role = "Hunter Trainer", sex = "male" }
 npcs["Onin MacHammar"] = { people = "Dwarf", sex = "male" }
 npcs["Onu"] = { role = "Ancient of Lore" }
-npcs["Ophek"] = { sex = "male" }
+npcs["Ophek"] = { people = "Orc", sex = "male" }
 npcs["Oralius"] = { people = "Dwarf", sex = "male" }
 npcs["Oran Snakewrithe"] = { people = "Scourge", sex = "female" }
 npcs["Orendil Broadleaf"] = { people = "NightElf", sex = "male" }
 npcs["Orenthil Whisperwind"] = { people = "NightElf", sex = "male" }
-npcs["Orgnil Soulscar"] = { sex = "male" }
-npcs["Orgrimmar Commendation Officer"] = { sex = "male" }
+npcs["Orgnil Soulscar"] = { people = "Orc", sex = "male" }
+npcs["Orgrimmar Commendation Officer"] = { people = "Orc", sex = "male" }
 npcs["Orm Stonehoof"] = { sex = "male" }
-npcs["Ormak Grimshot"] = { role = "Hunter Trainer", sex = "male" }
+npcs["Ormak Grimshot"] = { people = "Orc", role = "Hunter Trainer", sex = "male" }
 npcs["Ormer Ironbraid"] = { people = "Dwarf", sex = "male" }
-npcs["Ormok"] = { role = "Rogue Trainer", sex = "male" }
+npcs["Ormok"] = { people = "Orc", role = "Rogue Trainer", sex = "male" }
 npcs["Ormyr Flinteye"] = { people = "Dwarf", role = "Rogue Trainer", sex = "male" }
-npcs["Orok Deathbane"] = { sex = "male" }
-npcs["Orokk Omosh"] = { sex = "male" }
-npcs["Orphan Matron Battlewail"] = { sex = "female" }
-npcs["Orphan Matron Nightingale"] = { sex = "female" }
+npcs["Orok Deathbane"] = { people = "Orc", sex = "male" }
+npcs["Orokk Omosh"] = { people = "Orc", sex = "male" }
+npcs["Orphan Matron Battlewail"] = { people = "Orc", sex = "female" }
+npcs["Orphan Matron Nightingale"] = { people = "Human", sex = "female" }
 npcs["Orwin Gizzmick"] = { sex = "male" }
-npcs["Osric Strang"] = { role = "Heavy Armor Merchant", sex = "male" }
+npcs["Osric Strang"] = { people = "Human", role = "Heavy Armor Merchant", sex = "male" }
 npcs["Otho Moji'ko"] = { role = "Cooking Supplier", sex = "male" }
-npcs["Overlord Runthak"] = { sex = "male" }
+npcs["Overlord Runthak"] = { people = "Orc", sex = "male" }
 npcs["Overseer Oilfist"] = { role = "The Thorium Brotherhood", sex = "male" }
 npcs["Ox"] = { people = "Tauren", role = "The Mithril Order", sex = "male" }
 npcs["Ozzie Togglevolt"] = { people = "Gnome", sex = "male" }
@@ -1869,8 +1869,8 @@ npcs["Pao'ka Swiftmountain"] = { people = "Tauren", sex = "male" }
 npcs["Parqual Fintallas"] = { people = "Scourge", sex = "male" }
 npcs["Patrick Garrett"] = { people = "Scourge", sex = "male" }
 npcs["Pelturas Whitemoon"] = { sex = "male" }
-npcs["Peter Galen"] = { role = "Master Dragonscale Leatherworker", sex = "male" }
-npcs["Phin Odelic"] = { sex = "male" }
+npcs["Peter Galen"] = { people = "Human", role = "Master Dragonscale Leatherworker", sex = "male" }
+npcs["Phin Odelic"] = { people = "Human", sex = "male" }
 npcs["Pierce Shackleton"] = { people = "Scourge", role = "Mage Trainer", sex = "male" }
 npcs["Pilot Bellowfiz"] = { people = "Dwarf", sex = "male" }
 npcs["Pilot Hammerfoot"] = { people = "Dwarf", sex = "male" }
@@ -1882,24 +1882,24 @@ npcs["Piznik"] = { role = "Venture Co.", sex = "male" }
 npcs["Porthannius"] = { people = "NightElf", sex = "male" }
 npcs["Pozzik"] = { sex = "male" }
 npcs["Prate Cloudseer"] = { sex = "female" }
-npcs["Pratt McGrubben"] = { role = "Leatherworking Supplies", sex = "male" }
+npcs["Pratt McGrubben"] = { people = "Human", role = "Leatherworking Supplies", sex = "male" }
 npcs["Priestess A'moora"] = { people = "NightElf", sex = "female" }
 npcs["Priestess Alathea"] = { role = "Priest Trainer", sex = "female" }
-npcs["Priestess Anetta"] = { role = "Priest Trainer", sex = "female" }
-npcs["Priestess Josetta"] = { role = "Priest Trainer", sex = "female" }
+npcs["Priestess Anetta"] = { people = "Human", role = "Priest Trainer", sex = "female" }
+npcs["Priestess Josetta"] = { people = "Human", role = "Priest Trainer", sex = "female" }
 npcs["Primal Torntusk"] = { sex = "female" }
 npcs["Primalist Thurloga"] = { sex = "female" }
 npcs["Princess Moira Bronzebeard"] = { role = "Princess of Ironforge", sex = "female" }
 npcs["Princess Poobah"] = { sex = "female" }
 npcs["Private Draxlegauge"] = { people = "Gnome", role = "Stranglekelp Collector", sex = "male" }
-npcs["Private Hendel"] = { sex = "male" }
-npcs["Private Porter"] = { role = "Medium Leather Collector", sex = "male" }
+npcs["Private Hendel"] = { people = "Human", sex = "male" }
+npcs["Private Porter"] = { people = "Human", role = "Medium Leather Collector", sex = "male" }
 npcs["Private Rocknot"] = { sex = "male" }
-npcs["Private Thorsen"] = { sex = "male" }
-npcs["Privateer Bloads"] = { sex = "male" }
-npcs["Privateer Groy"] = { sex = "male" }
+npcs["Private Thorsen"] = { people = "Human", sex = "male" }
+npcs["Privateer Bloads"] = { people = "Human", sex = "male" }
+npcs["Privateer Groy"] = { people = "Human", sex = "male" }
 npcs["Professor Phizzlethorpe"] = { role = "Blackwater Raiders", sex = "male" }
-npcs["Professor Thaddeus Paleo"] = { role = "Darkmoon Faire Cards & Exotic Goods", sex = "male" }
+npcs["Professor Thaddeus Paleo"] = { people = "Human", role = "Darkmoon Faire Cards & Exotic Goods", sex = "male" }
 npcs["Prospector Ironband"] = { people = "Dwarf", sex = "male" }
 npcs["Prospector Ironboot"] = { sex = "male" }
 npcs["Prospector Remtravel"] = { people = "Dwarf", role = "Explorers' League", sex = "male" }
@@ -1907,9 +1907,9 @@ npcs["Prospector Ryedol"] = { people = "Dwarf", role = "Explorers' League", sex 
 npcs["Prospector Stonehewer"] = { sex = "female" }
 npcs["Prospector Stormpike"] = { people = "Dwarf", sex = "male" }
 npcs["Prospector Whelgar"] = { people = "Dwarf", role = "Explorers' League", sex = "male" }
-npcs["Quae"] = { sex = "female" }
-npcs["Quartermaster Lewis"] = { role = "Quartermaster", sex = "male" }
-npcs["Quartermaster Lungertz"] = { sex = "male" }
+npcs["Quae"] = { people = "Human", sex = "female" }
+npcs["Quartermaster Lewis"] = { people = "Human", role = "Quartermaster", sex = "male" }
+npcs["Quartermaster Lungertz"] = { people = "Human", sex = "male" }
 npcs["Quartermaster Miranda Breechlock"] = { role = "The Argent Dawn", sex = "female" }
 npcs["Quentin"] = { people = "NightElf", sex = "male" }
 npcs["Quinn Yorick"] = { people = "Scourge", role = "Deathstalker", sex = "male" }
@@ -1921,29 +1921,29 @@ npcs["Ragged John"] = { sex = "male" }
 npcs["Ragnar Thunderbrew"] = { people = "Dwarf", sex = "male" }
 npcs["Rahauro"] = { people = "Tauren", role = "Magatha's Servant", sex = "male" }
 npcs["Raleigh Andrean"] = { people = "Scourge", role = "Ex-Chef", sex = "male" }
-npcs["Raleigh the Devout"] = { sex = "male" }
+npcs["Raleigh the Devout"] = { people = "Human", sex = "male" }
 npcs["Ralston Farnsley"] = { people = "Scourge", role = "Horde Cloth Quartermaster", sex = "male" }
 npcs["Rane Yorick"] = { people = "Scourge", role = "Deathstalker", sex = "female" }
 npcs["Ranshalla"] = { people = "NightElf", sex = "female" }
-npcs["Rashona Straglash"] = { role = "Horde Cloth Quartermaster", sex = "female" }
+npcs["Rashona Straglash"] = { people = "Orc", role = "Horde Cloth Quartermaster", sex = "female" }
 npcs["Rau Cliffrunner"] = { people = "Tauren", sex = "male" }
-npcs["Ravenholdt Guard"] = { role = "Assassin's League", sex = "male" }
+npcs["Ravenholdt Guard"] = { people = "Human", role = "Assassin's League", sex = "male" }
 npcs["Rayne"] = { role = "Cenarion Circle", sex = "female" }
 npcs["Razzeric"] = { sex = "male" }
 npcs["Razzle Sprysprocket"] = { people = "Gnome", sex = "male" }
-npcs["Reginald Windsor"] = { sex = "male" }
+npcs["Reginald Windsor"] = { people = "Human", sex = "male" }
 npcs["Regnus Thundergranite"] = { people = "Dwarf", role = "Hunter Trainer", sex = "male" }
-npcs["Regthar Deathgate"] = { sex = "male" }
+npcs["Regthar Deathgate"] = { people = "Orc", sex = "male" }
 npcs["Rejold Barleybrew"] = { people = "Dwarf", sex = "male" }
 npcs["Rellian Greenspyre"] = { people = "NightElf", sex = "male" }
-npcs["Rema Schneider"] = { sex = "female" }
-npcs["Remains of Trey Lightforge"] = { sex = "male" }
+npcs["Rema Schneider"] = { people = "Human", sex = "female" }
+npcs["Remains of Trey Lightforge"] = { people = "Human", sex = "male" }
 npcs["Remains of a Paladin"] = { sex = "male" }
-npcs["Remen Marcot"] = { sex = "male" }
-npcs["Remy \"Two Times\""] = { sex = "male" }
-npcs["Renato Gallina"] = { sex = "male" }
+npcs["Remen Marcot"] = { people = "Human", sex = "male" }
+npcs["Remy \"Two Times\""] = { people = "Human", sex = "male" }
+npcs["Renato Gallina"] = { people = "Human", sex = "male" }
 npcs["Renzik \"The Shiv\""] = { role = "SI:7 Operative", sex = "male" }
-npcs["Rexxar"] = { role = "Champion of the Horde", sex = "male" }
+npcs["Rexxar"] = { people = "Orc", role = "Champion of the Horde", sex = "male" }
 npcs["Rezlak"] = { role = "Tinkers' Union", sex = "male" }
 npcs["Rhag Garmason"] = { people = "Dwarf", sex = "male" }
 npcs["Rhapsody Shindigger"] = { sex = "male" }
@@ -1961,10 +1961,10 @@ npcs["Ringo"] = { sex = "male" }
 npcs["Rinling"] = { sex = "male" }
 npcs["Rivern Frostwind"] = { role = "Wintersaber Trainers", sex = "male" }
 npcs["Roetten Stonehammer"] = { role = "Reclaimers Inc.", sex = "male" }
-npcs["Rohan the Assassin"] = { role = "The Scarlet Crusade", sex = "male" }
-npcs["Rok Orhan"] = { sex = "female" }
+npcs["Rohan the Assassin"] = { people = "Human", role = "The Scarlet Crusade", sex = "male" }
+npcs["Rok Orhan"] = { people = "Orc", sex = "female" }
 npcs["Roon Wildmane"] = { sex = "male" }
-npcs["Royal Factor Bathrilor"] = { role = "Stormwind Census", sex = "male" }
+npcs["Royal Factor Bathrilor"] = { people = "Human", role = "Stormwind Census", sex = "male" }
 npcs["Royal Historian Archesonus"] = { people = "Dwarf", sex = "female" }
 npcs["Royal Overseer Bauhaus"] = { people = "Scourge", role = "Undercity Census", sex = "male" }
 npcs["Rudra Amberstill"] = { people = "Dwarf", sex = "female" }
@@ -1975,30 +1975,30 @@ npcs["Rutgar Glyphshaper"] = { sex = "male" }
 npcs["Rutherford Twing"] = { role = "Defilers Supply Officer", sex = "male" }
 npcs["Ruul Eagletalon"] = { people = "Tauren", sex = "male" }
 npcs["Ruul Snowhoof"] = { sex = "male" }
-npcs["Ruzan"] = { sex = "male" }
-npcs["Rwag"] = { role = "Rogue Trainer", sex = "male" }
+npcs["Ruzan"] = { people = "Orc", sex = "male" }
+npcs["Rwag"] = { people = "Orc", role = "Rogue Trainer", sex = "male" }
 npcs["Sage Korolusk"] = { people = "Tauren", sex = "male" }
 npcs["Sage Truthseeker"] = { people = "Tauren", sex = "male" }
 npcs["Sagorne Creststrider"] = { people = "Tauren", role = "Shaman Trainer", sex = "male" }
-npcs["Salma Saldean"] = { sex = "female" }
-npcs["Samuel Hawke"] = { role = "League of Arathor Supply Officer", sex = "male" }
-npcs["Sandahl"] = { role = "Warlock Trainer", sex = "male" }
+npcs["Salma Saldean"] = { people = "Human", sex = "female" }
+npcs["Samuel Hawke"] = { people = "Human", role = "League of Arathor Supply Officer", sex = "male" }
+npcs["Sandahl"] = { people = "Human", role = "Warlock Trainer", sex = "male" }
 npcs["Sara Balloo"] = { people = "Dwarf", sex = "female" }
-npcs["Sara Timberlain"] = { sex = "female" }
+npcs["Sara Timberlain"] = { people = "Human", sex = "female" }
 npcs["Sarah Sadwhistle"] = { people = "Gnome", role = "Roast Raptor Collector", sex = "female" }
-npcs["Sarah Tanner"] = { role = "Master Elemental Leatherworker", sex = "female" }
+npcs["Sarah Tanner"] = { people = "Human", role = "Master Elemental Leatherworker", sex = "female" }
 npcs["Scholar Runethorn"] = { people = "NightElf", sex = "female" }
 npcs["Scooty"] = { role = "Chief Engineer", sex = "male" }
-npcs["Scout Bloodfist"] = { sex = "male" }
-npcs["Scout Galiaan"] = { role = "The People's Militia", sex = "male" }
-npcs["Scout Riell"] = { role = "The People's Militia", sex = "female" }
-npcs["Se'Jib"] = { role = "Master Tribal Leatherworker", sex = "male" }
+npcs["Scout Bloodfist"] = { people = "Orc", sex = "male" }
+npcs["Scout Galiaan"] = { people = "Human", role = "The People's Militia", sex = "male" }
+npcs["Scout Riell"] = { people = "Human", role = "The People's Militia", sex = "female" }
+npcs["Se'Jib"] = { people = "Troll", role = "Master Tribal Leatherworker", sex = "male" }
 npcs["Searn Firewarder"] = { people = "Troll", sex = "male" }
 npcs["Security Chief Bilgewhizzle"] = { role = "Water Co. Security", sex = "male" }
 npcs["Seer Graytongue"] = { people = "Tauren", sex = "male" }
 npcs["Seer Ravenfeather"] = { people = "Tauren", sex = "female" }
 npcs["Seer Wiserunner"] = { people = "Tauren", sex = "male" }
-npcs["Seereth Stonebreak"] = { sex = "female" }
+npcs["Seereth Stonebreak"] = { people = "Orc", sex = "female" }
 npcs["Senani Thunderheart"] = { people = "Tauren", sex = "female" }
 npcs["Senator Barin Redstone"] = { people = "Dwarf", sex = "male" }
 npcs["Senator Mehr Stonehallow"] = { people = "Dwarf", sex = "male" }
@@ -2021,14 +2021,14 @@ npcs["Sentinel Tysha Moonblade"] = { people = "NightElf", sex = "female" }
 npcs["Sentinel Velene Starstrike"] = { people = "NightElf", sex = "female" }
 npcs["Serge Hinott"] = { people = "Scourge", role = "Expert Alchemist", sex = "male" }
 npcs["Sergeant Durgen Stormpike"] = { sex = "male" }
-npcs["Sergeant Hartman"] = { sex = "male" }
-npcs["Sergeant Major Germaine"] = { role = "Arthas' Tears Collector", sex = "female" }
+npcs["Sergeant Hartman"] = { people = "Human", sex = "male" }
+npcs["Sergeant Major Germaine"] = { people = "Human", role = "Arthas' Tears Collector", sex = "female" }
 npcs["Sergeant Stonebrow"] = { people = "Dwarf", role = "Copper Bar Collector", sex = "male" }
-npcs["Sergeant Umala"] = { role = "Thick Leather Collector", sex = "female" }
-npcs["Sergeant Yohwa"] = { sex = "female" }
-npcs["Sergra Darkthorn"] = { sex = "female" }
-npcs["Seril Scourgebane"] = { sex = "male" }
-npcs["Sha'ni Proudtusk"] = { sex = "female" }
+npcs["Sergeant Umala"] = { people = "Orc", role = "Thick Leather Collector", sex = "female" }
+npcs["Sergeant Yohwa"] = { people = "Human", sex = "female" }
+npcs["Sergra Darkthorn"] = { people = "Orc", sex = "female" }
+npcs["Seril Scourgebane"] = { people = "Human", sex = "male" }
+npcs["Sha'ni Proudtusk"] = { people = "Troll", sex = "female" }
 npcs["Shadow Priest Allister"] = { people = "Scourge", sex = "male" }
 npcs["Shadow Priest Sarvis"] = { people = "Scourge", sex = "male" }
 npcs["Shadow Priestess Shai"] = { sex = "female" }
@@ -2041,71 +2041,71 @@ npcs["Shandris Feathermoon"] = { people = "NightElf", role = "General of the Sen
 npcs["Sharlindra"] = { people = "Scourge" }
 npcs["Shay Leafrunner"] = { people = "NightElf", sex = "female" }
 npcs["Sheal Runetotem"] = { people = "Tauren", role = "Druid Trainer", sex = "female" }
-npcs["Sheldras Moontree"] = { role = "Druid Trainer", sex = "male" }
+npcs["Sheldras Moontree"] = { people = "NightElf", role = "Druid Trainer", sex = "male" }
 npcs["Shen'dralar Ancient"] = { sex = "female" }
 npcs["Shenthul"] = { people = "Troll", role = "Rogue Trainer", sex = "male" }
-npcs["Shikrik"] = { role = "Shaman Trainer", sex = "female" }
+npcs["Shikrik"] = { people = "Orc", role = "Shaman Trainer", sex = "female" }
 npcs["Shindrell Swiftfire"] = { people = "NightElf", sex = "female" }
 npcs["Shizzle"] = { sex = "male" }
-npcs["Shoni the Shilent"] = { people = "Dwarf", sex = "female" }
+npcs["Shoni the Shilent"] = { people = "Gnome", sex = "female" }
 npcs["Short John Mithril"] = { sex = "male" }
 npcs["Shreev"] = { sex = "male" }
-npcs["Sian'dur"] = { role = "Hunter Trainer", sex = "female" }
-npcs["Sian'tsu"] = { role = "Shaman Trainer", sex = "female" }
+npcs["Sian'dur"] = { people = "Troll", role = "Hunter Trainer", sex = "female" }
+npcs["Sian'tsu"] = { people = "Troll", role = "Shaman Trainer", sex = "female" }
 npcs["Sida"] = { people = "Dwarf", sex = "female" }
 npcs["Sigrun Ironhew"] = { people = "Dwarf", sex = "male" }
 npcs["Siln Skychaser"] = { people = "Tauren", role = "Shaman Trainer", sex = "female" }
-npcs["Sir S. J. Erlgadin"] = { sex = "male" }
-npcs["Sirra Von'Indi"] = { role = "Historian of Darkshire", sex = "male" }
+npcs["Sir S. J. Erlgadin"] = { people = "Human", sex = "male" }
+npcs["Sirra Von'Indi"] = { people = "Human", role = "Historian of Darkshire", sex = "male" }
 npcs["Sister Aquinne"] = { people = "NightElf", role = "Novice Priestess", sex = "female" }
 npcs["Skinner Jamani"] = { role = "Heavy Leather Collector", sex = "female" }
 npcs["Skorn Whitecloud"] = { people = "Tauren", sex = "male" }
 npcs["Skuerto"] = { people = "Dwarf", sex = "male" }
 npcs["Slicky Gastronome"] = { people = "Gnome", role = "Rainbow Fin Albacore Collector", sex = "male" }
 npcs["Smeed Scrabblescrew"] = { sex = "male" }
-npcs["Smith Argus"] = { role = "Journeyman Blacksmith", sex = "male" }
-npcs["Smith Regzar"] = { sex = "male" }
-npcs["Smith Slagtree"] = { role = "Blacksmithing Supplies", sex = "male" }
+npcs["Smith Argus"] = { people = "Human", role = "Journeyman Blacksmith", sex = "male" }
+npcs["Smith Regzar"] = { people = "Orc", sex = "male" }
+npcs["Smith Slagtree"] = { people = "Orc", role = "Blacksmithing Supplies", sex = "male" }
 npcs["Smokey LaRue"] = { sex = "male" }
 npcs["Solm Hargrin"] = { people = "Dwarf", role = "Rogue Trainer", sex = "male" }
-npcs["Sorek"] = { role = "Warrior Trainer", sex = "male" }
+npcs["Sorek"] = { people = "Orc", role = "Warrior Trainer", sex = "male" }
 npcs["Sovik"] = { role = "Engineering Supplies", sex = "male" }
 npcs["Spackle Thornberry"] = { people = "Gnome", role = "Demon Trainer", sex = "male" }
 npcs["Spark Nilminer"] = { sex = "male" }
 npcs["Spigot Operator Luglunket"] = { role = "Gadgetzan Water Co.", sex = "male" }
 npcs["Spirit of Kirith"] = { sex = "male" }
 npcs["Spraggle Frock"] = { sex = "female" }
-npcs["Springspindle Fizzlegear"] = { people = "Dwarf", role = "Artisan Engineer", sex = "male" }
+npcs["Springspindle Fizzlegear"] = { people = "Gnome", role = "Artisan Engineer", sex = "male" }
 npcs["Sprinkle"] = { sex = "female" }
 npcs["Sprogger"] = { sex = "male" }
 npcs["Sputtervalve"] = { role = "Tinkers' Union", sex = "male" }
-npcs["Squire Maltrake"] = { sex = "male" }
+npcs["Squire Maltrake"] = { people = "Human", sex = "male" }
 npcs["Stanley"] = { beast = true }
 npcs["Sten Stoutarm"] = { people = "Dwarf", sex = "male" }
-npcs["Stephanie Turner"] = { sex = "female" }
-npcs["Stoley"] = { sex = "male" }
+npcs["Stephanie Turner"] = { people = "Human", sex = "female" }
+npcs["Stoley"] = { people = "Human", sex = "male" }
 npcs["Stomper Kreeg"] = { role = "The Drunk" }
 npcs["Stoneguard Clayhoof"] = { role = "Runecloth Bandage Collector", sex = "female" }
 npcs["Storm Shadowhoof"] = { sex = "male" }
 npcs["Stormpike Quartermaster"] = { sex = "male" }
 npcs["Stormpike Ram Rider Commander"] = { sex = "male" }
 npcs["Stormpike Stable Master"] = { role = "Stable Master", sex = "female" }
-npcs["Stormwind Commendation Officer"] = { sex = "male" }
-npcs["Strahad Farsan"] = { sex = "male" }
-npcs["Supervisor Raelen"] = { sex = "female" }
-npcs["Suzetta Gallina"] = { sex = "female" }
-npcs["Sven Yorgen"] = { sex = "male" }
-npcs["Swart"] = { role = "Shaman Trainer", sex = "male" }
-npcs["Syndicate Master Ryson"] = { sex = "male" }
+npcs["Stormwind Commendation Officer"] = { people = "Human", sex = "male" }
+npcs["Strahad Farsan"] = { people = "Human", sex = "male" }
+npcs["Supervisor Raelen"] = { people = "Human", sex = "female" }
+npcs["Suzetta Gallina"] = { people = "Human", sex = "female" }
+npcs["Sven Yorgen"] = { people = "Human", sex = "male" }
+npcs["Swart"] = { people = "Orc", role = "Shaman Trainer", sex = "male" }
+npcs["Syndicate Master Ryson"] = { people = "Human", sex = "male" }
 npcs["Syral Bladeleaf"] = { people = "NightElf", sex = "female" }
 npcs["Syurna"] = { people = "NightElf", role = "Rogue Trainer", sex = "female" }
-npcs["Tabetha"] = { sex = "female" }
+npcs["Tabetha"] = { people = "Human", sex = "female" }
 npcs["Tai'jin"] = { people = "Troll", role = "Priest Trainer", sex = "female" }
 npcs["Taiga Wisemane"] = { people = "Tauren", sex = "male" }
 npcs["Tajarri"] = { sex = "female" }
-npcs["Takar the Seer"] = { sex = "male" }
-npcs["Takata Steelblade"] = { sex = "male" }
-npcs["Takrin Pathseeker"] = { sex = "male" }
+npcs["Takar the Seer"] = { people = "Human", sex = "male" }
+npcs["Takata Steelblade"] = { people = "Orc", sex = "male" }
+npcs["Takrin Pathseeker"] = { people = "Orc", sex = "male" }
 npcs["Tal"] = { people = "Tauren", role = "Wind Rider Master", sex = "male" }
 npcs["Talen"] = { people = "NightElf", sex = "male" }
 npcs["Talendria"] = { people = "NightElf", sex = "female" }
@@ -2116,16 +2116,16 @@ npcs["Talo Thornhoof"] = { people = "Tauren", sex = "male" }
 npcs["Talvash del Kissel"] = { people = "Gnome", sex = "male" }
 npcs["Tammra Windfield"] = { people = "Tauren", sex = "female" }
 npcs["Tannok Frosthammer"] = { people = "Dwarf", role = "Innkeeper Assistant", sex = "male" }
-npcs["Tannysa"] = { role = "Herbalism Trainer", sex = "female" }
-npcs["Tapoke \"Slim\" Jahn"] = { sex = "male" }
+npcs["Tannysa"] = { people = "NightElf", role = "Herbalism Trainer", sex = "female" }
+npcs["Tapoke \"Slim\" Jahn"] = { people = "Human", sex = "male" }
 npcs["Tarindrella"] = { people = "NightElf" }
 npcs["Taronn Redfeather"] = { role = "Emerald Circle", sex = "male" }
 npcs["Tarrel Rockweaver"] = { people = "Dwarf", sex = "male" }
-npcs["Tarshaw Jaggedscar"] = { role = "Warrior Trainer", sex = "male" }
+npcs["Tarshaw Jaggedscar"] = { people = "Orc", role = "Warrior Trainer", sex = "male" }
 npcs["Taskmaster Fizzule"] = { sex = "male" }
 npcs["Taskmaster Scrange"] = { role = "The Thorium Brotherhood", sex = "male" }
-npcs["Tatternack Steelforge"] = { sex = "male" }
-npcs["Tavernkeep Smitts"] = { sex = "male" }
+npcs["Tatternack Steelforge"] = { people = "Orc", sex = "male" }
+npcs["Tavernkeep Smitts"] = { people = "Human", sex = "male" }
 npcs["Telf Joolam"] = { sex = "male" }
 npcs["Telonis"] = { people = "NightElf", role = "Artisan Leatherworker", sex = "male" }
 npcs["Temma of the Wells"] = { sex = "male" }
@@ -2133,31 +2133,31 @@ npcs["Tenaron Stormgrip"] = { people = "NightElf", sex = "male" }
 npcs["Terenthis"] = { people = "NightElf", sex = "male" }
 npcs["Teronis' Corpse"] = { people = "NightElf", sex = "male" }
 npcs["Thadius Grimshade"] = { people = "Dwarf", sex = "male" }
-npcs["Thal'trak Proudtusk"] = { role = "Kargath Expeditionary Force", sex = "male" }
+npcs["Thal'trak Proudtusk"] = { people = "Troll", role = "Kargath Expeditionary Force", sex = "male" }
 npcs["Thalia Amberhide"] = { people = "Tauren", sex = "female" }
 npcs["Tharek Blackstone"] = { people = "Dwarf", sex = "male" }
 npcs["Tharnariun Treetender"] = { people = "NightElf", sex = "male" }
 npcs["The Abominable Greench"] = { beast = true }
-npcs["The Defias Traitor"] = { sex = "male" }
+npcs["The Defias Traitor"] = { people = "Human", sex = "male" }
 npcs["Theldurin the Lost"] = { sex = "male" }
-npcs["Theocritus"] = { role = "Mage of Tower Azora", sex = "male" }
+npcs["Theocritus"] = { people = "Human", role = "Mage of Tower Azora", sex = "male" }
 npcs["Theodrus Frostbeard"] = { people = "Dwarf", role = "Priest Trainer", sex = "male" }
-npcs["Theramore Lieutenant"] = { sex = "male" }
+npcs["Theramore Lieutenant"] = { people = "Human", sex = "male" }
 npcs["Theridran"] = { people = "NightElf", role = "Druid Trainer", sex = "male" }
 npcs["Thersa Windsong"] = { people = "Tauren", sex = "female" }
-npcs["Therzok"] = { sex = "male" }
-npcs["Thistleheart"] = { people = "Dwarf", role = "Warlock Trainer", sex = "male" }
+npcs["Therzok"] = { people = "Orc", sex = "male" }
+npcs["Thistleheart"] = { people = "Gnome", role = "Warlock Trainer", sex = "male" }
 npcs["Thomas"] = { role = "Altar Boy" }
-npcs["Thor"] = { role = "Gryphon Master", sex = "male" }
+npcs["Thor"] = { people = "Human", role = "Gryphon Master", sex = "male" }
 npcs["Thorgas Grimson"] = { people = "Dwarf", role = "Hunter Trainer", sex = "male" }
 npcs["Thorgrum Borrelson"] = { people = "Dwarf", role = "Gryphon Master", sex = "male" }
-npcs["Thork"] = { sex = "male" }
-npcs["Thorkaf Dragoneye"] = { role = "Master Dragonscale Leatherworker", sex = "male" }
+npcs["Thork"] = { people = "Orc", sex = "male" }
+npcs["Thorkaf Dragoneye"] = { people = "Orc", role = "Master Dragonscale Leatherworker", sex = "male" }
 npcs["Thorvald Deepforge"] = { sex = "male" }
-npcs["Thotar"] = { role = "Hunter Trainer", sex = "male" }
-npcs["Thrall"] = { role = "Warchief", sex = "male" }
+npcs["Thotar"] = { people = "Orc", role = "Hunter Trainer", sex = "male" }
+npcs["Thrall"] = { people = "Orc", role = "Warchief", sex = "male" }
 npcs["Thran Khorman"] = { people = "Dwarf", role = "Warrior Trainer", sex = "male" }
-npcs["Thun'grim Firegaze"] = { sex = "male" }
+npcs["Thun'grim Firegaze"] = { people = "Orc", sex = "male" }
 npcs["Thunder Bluff Commendation Officer"] = { sex = "male" }
 npcs["Thunderheart"] = { role = "Kargath Expeditionary Force", sex = "male" }
 npcs["Thundris Windweaver"] = { people = "NightElf", sex = "male" }
@@ -2168,15 +2168,15 @@ npcs["Tigor Skychaser"] = { people = "Tauren", role = "Shaman Trainer", sex = "m
 npcs["Tinkee Steamboil"] = { sex = "female" }
 npcs["Tinkerwiz"] = { role = "Journeyman Engineer", sex = "male" }
 npcs["Tinkmaster Overspark"] = { role = "Master Gnome Engineer", sex = "male" }
-npcs["Tirion Fordring"] = { sex = "male" }
+npcs["Tirion Fordring"] = { people = "Human", sex = "male" }
 npcs["Tiza Battleforge"] = { people = "Dwarf", sex = "female" }
-npcs["Tok'Kar"] = { sex = "male" }
+npcs["Tok'Kar"] = { people = "Orc", sex = "male" }
 npcs["Toldren Deepiron"] = { people = "Dwarf", role = "Priest Trainer", sex = "male" }
-npcs["Tommy Joe Stonefield"] = { sex = "male" }
+npcs["Tommy Joe Stonefield"] = { people = "Human", sex = "male" }
 npcs["Tonga Runetotem"] = { people = "Tauren", sex = "male" }
 npcs["Tooga"] = { beast = true }
 npcs["Tor'gan"] = { people = "Troll", sex = "male" }
-npcs["Torek"] = { sex = "male" }
+npcs["Torek"] = { people = "Orc", sex = "male" }
 npcs["Torm Ragetotem"] = { people = "Tauren", role = "Warrior Trainer", sex = "male" }
 npcs["Tormek Stoneriver"] = { sex = "male" }
 npcs["Tormus Deepforge"] = { people = "Dwarf", sex = "male" }
@@ -2187,29 +2187,29 @@ npcs["Tran'rek"] = { sex = "male" }
 npcs["Trenton Lighthammer"] = { role = "The Mithril Order", sex = "male" }
 npcs["Treshala Fallowbrook"] = { people = "NightElf", sex = "female" }
 npcs["Troyas Moonbreeze"] = { people = "NightElf", sex = "male" }
-npcs["Trull Failbane"] = { sex = "male" }
+npcs["Trull Failbane"] = { people = "Orc", sex = "male" }
 npcs["Tundra MacGrann"] = { people = "Dwarf", sex = "male" }
 npcs["Turak Runetotem"] = { people = "Tauren", role = "Druid Trainer", sex = "male" }
 npcs["Tymor"] = { sex = "male" }
 npcs["Tyrande Whisperwind"] = { role = "High Priestess of Elune", sex = "female" }
 npcs["Tyrion"] = { sex = "male" }
-npcs["Ukor"] = { sex = "male" }
+npcs["Ukor"] = { people = "Orc", sex = "male" }
 npcs["Ula'elek"] = { people = "Troll", sex = "male" }
-npcs["Ulfir Ironbeard"] = { role = "Hunter Trainer", sex = "male" }
-npcs["Umber"] = { sex = "male" }
-npcs["Umbranse the Spiritspeaker"] = { sex = "male" }
+npcs["Ulfir Ironbeard"] = { people = "Dwarf", role = "Hunter Trainer", sex = "male" }
+npcs["Umber"] = { people = "Human", sex = "male" }
+npcs["Umbranse the Spiritspeaker"] = { people = "Human", sex = "male" }
 npcs["Umi Rumplesnicker"] = { sex = "female" }
 npcs["Umpi"] = { people = "Scourge", beast = true }
 npcs["Un'Thuwa"] = { people = "Troll", role = "Mage Trainer", sex = "male" }
 npcs["Una"] = { people = "Tauren", role = "Artisan Leatherworker", sex = "female" }
 npcs["Undercity Commendation Officer"] = { sex = "male" }
 npcs["Undertaker Mordo"] = { people = "Scourge", sex = "male" }
-npcs["Ur'kyo"] = { role = "Priest Trainer", sex = "male" }
-npcs["Ursula Deline"] = { role = "Warlock Trainer", sex = "female" }
+npcs["Ur'kyo"] = { people = "Troll", role = "Priest Trainer", sex = "male" }
+npcs["Ursula Deline"] = { people = "Human", role = "Warlock Trainer", sex = "female" }
 npcs["Ursyn Ghull"] = { people = "Scourge", role = "Mage Trainer", sex = "female" }
 npcs["Uthel'nay"] = { people = "Troll", role = "Mage Trainer", sex = "male" }
-npcs["Uzzek"] = { sex = "male" }
-npcs["Vaelan"] = { sex = "male" }
+npcs["Uzzek"] = { people = "Orc", sex = "male" }
+npcs["Vaelan"] = { people = "Human", sex = "male" }
 npcs["Vahlarriel Demonslayer"] = { sex = "male" }
 npcs["Valadar Starsong"] = { role = "Coin of Ancestry Collector", sex = "male" }
 npcs["Valstag Ironjaw"] = { people = "Dwarf", sex = "male" }
@@ -2223,63 +2223,63 @@ npcs["Vel'rin Fang"] = { people = "Troll", sex = "male" }
 npcs["Velora Nitely"] = { people = "Scourge", sex = "female" }
 npcs["Venya Marthand"] = { sex = "female" }
 npcs["Veren Tallstrider"] = { people = "Tauren", sex = "male" }
-npcs["Verna Furlbrow"] = { sex = "female" }
-npcs["Verner Osgood"] = { sex = "male" }
+npcs["Verna Furlbrow"] = { people = "Human", sex = "female" }
+npcs["Verner Osgood"] = { people = "Human", sex = "male" }
 npcs["Veron Amberstill"] = { people = "Dwarf", role = "Ram Breeder", sex = "male" }
 npcs["Vesprystus"] = { people = "NightElf", role = "Hippogryph Master", sex = "male" }
 npcs["Vestia Moonspear"] = { people = "NightElf", sex = "female" }
 npcs["Vethsera"] = { role = "Brood of Ysera", sex = "female" }
 npcs["Vidra Hearthstove"] = { people = "Dwarf", sex = "female" }
-npcs["Viktori Prism'Antras"] = { sex = "male" }
-npcs["Vincent Hyal"] = { sex = "male" }
+npcs["Viktori Prism'Antras"] = { people = "Human", sex = "male" }
+npcs["Vincent Hyal"] = { people = "Human", sex = "male" }
 npcs["Vinchaxa"] = { role = "Servitor of Zanza", sex = "male" }
 npcs["Vish Kozus"] = { role = "Captain of the Guard", sex = "male" }
 npcs["Vizzklick"] = { role = "Tailoring Supplies", sex = "male" }
-npcs["Voggah Deathgrip"] = { sex = "male" }
+npcs["Voggah Deathgrip"] = { people = "Orc", sex = "male" }
 npcs["Volcor"] = { sex = "male" }
 npcs["Vorn Skyseer"] = { people = "Tauren", sex = "male" }
 npcs["Vorrel Sengutz"] = { people = "Scourge", sex = "male" }
 npcs["Wagner Hammerstrike"] = { people = "Dwarf", sex = "male" }
-npcs["Warcaller Gorlach"] = { sex = "male" }
+npcs["Warcaller Gorlach"] = { people = "Orc", sex = "male" }
 npcs["Warden Haro"] = { sex = "male" }
-npcs["Warden Thelwater"] = { sex = "male" }
-npcs["Warlord Gorchuk"] = { people = "Tauren", role = "War Effort Commander", sex = "male" }
-npcs["Warlord Goretooth"] = { role = "Kargath Expeditionary Force", sex = "male" }
-npcs["Warmaster Garrick"] = { sex = "male" }
-npcs["Warmaster Laggrond"] = { sex = "male" }
+npcs["Warden Thelwater"] = { people = "Human", sex = "male" }
+npcs["Warlord Gorchuk"] = { people = "Orc", role = "War Effort Commander", sex = "male" }
+npcs["Warlord Goretooth"] = { people = "Orc", role = "Kargath Expeditionary Force", sex = "male" }
+npcs["Warmaster Garrick"] = { people = "Orc", sex = "male" }
+npcs["Warmaster Laggrond"] = { people = "Orc", sex = "male" }
 npcs["Warosh"] = { role = "The Cursed" }
-npcs["Warsong Outrider"] = { sex = "female" }
-npcs["Warsong Runner"] = { sex = "male" }
-npcs["Warsong Scout"] = { sex = "female" }
-npcs["Watcher Backus"] = { role = "The Night Watch", sex = "male" }
-npcs["Watcher Biggs"] = { sex = "male" }
-npcs["Watcher Dodds"] = { role = "The Night Watch", sex = "male" }
-npcs["Watcher Ladimore"] = { role = "The Night Watch", sex = "female" }
-npcs["Watcher Mahar Ba"] = { sex = "male" }
-npcs["Watchmaster Sorigal"] = { sex = "male" }
-npcs["Weldon Barov"] = { role = "House of Barov", sex = "male" }
+npcs["Warsong Outrider"] = { people = "Orc", sex = "female" }
+npcs["Warsong Runner"] = { people = "Orc", sex = "male" }
+npcs["Warsong Scout"] = { people = "Orc", sex = "female" }
+npcs["Watcher Backus"] = { people = "Human", role = "The Night Watch", sex = "male" }
+npcs["Watcher Biggs"] = { people = "Human", sex = "male" }
+npcs["Watcher Dodds"] = { people = "Human", role = "The Night Watch", sex = "male" }
+npcs["Watcher Ladimore"] = { people = "Human", role = "The Night Watch", sex = "female" }
+npcs["Watcher Mahar Ba"] = { people = "Human", sex = "male" }
+npcs["Watchmaster Sorigal"] = { people = "Human", sex = "male" }
+npcs["Weldon Barov"] = { people = "Human", role = "House of Barov", sex = "male" }
 npcs["Wenikee Boltbucket"] = { sex = "female" }
 npcs["Wharfmaster Dizzywig"] = { sex = "male" }
 npcs["Wharfmaster Lozgil"] = { sex = "male" }
 npcs["Whiskey Slim"] = { role = "Blackwater Raiders", sex = "male" }
 npcs["Whulwert Copperpinch"] = { role = "Smokywood Pastures", sex = "male" }
 npcs["Wilder Thistlenettle"] = { people = "Dwarf", sex = "male" }
-npcs["Wiley the Black"] = { sex = "male" }
-npcs["William Pestle"] = { sex = "male" }
-npcs["Williden Marshal"] = { sex = "male" }
+npcs["Wiley the Black"] = { people = "Human", sex = "male" }
+npcs["William Pestle"] = { people = "Human", sex = "male" }
+npcs["Williden Marshal"] = { people = "Human", sex = "male" }
 npcs["Willix the Importer"] = { sex = "male" }
 npcs["Willow"] = { role = "Twilight's Hammer", sex = "female" }
 npcs["Windcaller Kaldon"] = { sex = "male" }
 npcs["Windcaller Proudhorn"] = { sex = "female" }
 npcs["Windcaller Yessendra"] = { sex = "female" }
-npcs["Wing Commander Guse"] = { sex = "female" }
-npcs["Wing Commander Ichman"] = { sex = "male" }
+npcs["Wing Commander Guse"] = { people = "Orc", sex = "female" }
+npcs["Wing Commander Ichman"] = { people = "Human", sex = "male" }
 npcs["Wing Commander Jeztor"] = { sex = "female" }
-npcs["Wing Commander Mulverick"] = { sex = "male" }
+npcs["Wing Commander Mulverick"] = { people = "Orc", sex = "male" }
 npcs["Wing Commander Slidore"] = { sex = "male" }
 npcs["Wing Commander Vipore"] = { sex = "male" }
 npcs["Winna Hazzard"] = { people = "Scourge", sex = "female" }
-npcs["Witch Doctor Jin'Zil"] = { sex = "male" }
+npcs["Witch Doctor Jin'Zil"] = { people = "Troll", sex = "male" }
 npcs["Witch Doctor Mau'ari"] = { sex = "female" }
 npcs["Witch Doctor Unbagwa"] = { sex = "male" }
 npcs["Witch Doctor Uzer'i"] = { sex = "male" }
@@ -2288,16 +2288,16 @@ npcs["Wizlo Bearingshiner"] = { people = "Tauren", sex = "male" }
 npcs["Wizzle Brassbolts"] = { sex = "male" }
 npcs["Wonderform Operator"] = { role = "Smokywood Pastures", sex = "male" }
 npcs["Wrenix the Wretched"] = { sex = "male" }
-npcs["Wu Shen"] = { role = "Warrior Trainer", sex = "male" }
+npcs["Wu Shen"] = { people = "Human", role = "Warrior Trainer", sex = "male" }
 npcs["Wulmort Jinglepocket"] = { role = "Smokywood Pastures", sex = "male" }
 npcs["Wynd Nightchaser"] = { people = "NightElf", sex = "male" }
-npcs["Wynne Larson"] = { role = "Robe Merchant", sex = "female" }
-npcs["X'yera"] = { role = "Priest Trainer", sex = "male" }
+npcs["Wynne Larson"] = { people = "Human", role = "Robe Merchant", sex = "female" }
+npcs["X'yera"] = { people = "Troll", role = "Priest Trainer", sex = "male" }
 npcs["Xanis Flameweaver"] = { people = "Tauren", sex = "male" }
 npcs["Xen'Zilla"] = { sex = "male" }
 npcs["Xiggs Fuselighter"] = { people = "Dwarf", sex = "male" }
 npcs["Xizk Goodstitch"] = { role = "Tailoring Supplies", sex = "male" }
-npcs["Xor'juul"] = { role = "Hunter Trainer", sex = "male" }
+npcs["Xor'juul"] = { people = "Troll", role = "Hunter Trainer", sex = "male" }
 npcs["Yama Snowhoof"] = { people = "Tauren", sex = "female" }
 npcs["Yaw Sharpmane"] = { people = "Tauren", role = "Hunter Trainer", sex = "male" }
 npcs["Yebb Neblegear"] = { sex = "male" }
@@ -2306,33 +2306,33 @@ npcs["Yenniku"] = { role = "Darkspear Hostage", sex = "male" }
 npcs["Yorba Screwspigot"] = { sex = "female" }
 npcs["Yori Crackhelm"] = { people = "Dwarf", sex = "male" }
 npcs["Yorus Barleybrew"] = { sex = "male" }
-npcs["Ysida Harmon"] = { sex = "female" }
+npcs["Ysida Harmon"] = { people = "Human", sex = "female" }
 npcs["Yuka Screwspigot"] = { sex = "female" }
 npcs["Yvette Farthing"] = { people = "Scourge", sex = "female" }
-npcs["Zaldimar Wefhellt"] = { role = "Mage Trainer", sex = "male" }
+npcs["Zaldimar Wefhellt"] = { people = "Human", role = "Mage Trainer", sex = "male" }
 npcs["Zamael Lunthistle"] = { sex = "male" }
 npcs["Zamek"] = { sex = "male" }
 npcs["Zamja"] = { people = "Troll", role = "Cooking Trainer", sex = "female" }
 npcs["Zando'zan"] = { people = "Troll", sex = "male" }
 npcs["Zangen Stonehoof"] = { people = "Tauren", sex = "male" }
-npcs["Zankaja"] = { sex = "female" }
+npcs["Zankaja"] = { people = "Orc", sex = "female" }
 npcs["Zanza the Restless"] = { sex = "male" }
-npcs["Zardeth of the Black Claw"] = { sex = "male" }
-npcs["Zargh"] = { role = "Butcher", sex = "male" }
+npcs["Zardeth of the Black Claw"] = { people = "Human", sex = "male" }
+npcs["Zargh"] = { people = "Orc", role = "Butcher", sex = "male" }
 npcs["Zarlman Two-Moons"] = { people = "Tauren", sex = "male" }
 npcs["Zarrin"] = { people = "NightElf", role = "Cook", sex = "male" }
-npcs["Zaruk"] = { sex = "male" }
-npcs["Zayus"] = { role = "High Priest", sex = "male" }
+npcs["Zaruk"] = { people = "Orc", sex = "male" }
+npcs["Zayus"] = { people = "Troll", role = "High Priest", sex = "male" }
 npcs["Zengu"] = { people = "Troll", sex = "male" }
 npcs["Zenn Foulhoof"] = { people = "NightElf" }
-npcs["Zevrost"] = { role = "Warlock Trainer", sex = "male" }
+npcs["Zevrost"] = { people = "Orc", role = "Warlock Trainer", sex = "male" }
 npcs["Zggi"] = { role = "Zardeth's Minion" }
 npcs["Zilzibin Drumlore"] = { people = "Troll", sex = "male" }
 npcs["Ziz Fizziks"] = { sex = "male" }
 npcs["Zjolnir"] = { people = "Troll", role = "Raptor Handler", sex = "male" }
-npcs["Zor Lonetree"] = { role = "Elder Far Seer", sex = "male" }
+npcs["Zor Lonetree"] = { people = "Orc", role = "Elder Far Seer", sex = "male" }
 npcs["Zorbin Fandazzle"] = { sex = "male" }
-npcs["Zureetha Fargaze"] = { sex = "female" }
+npcs["Zureetha Fargaze"] = { people = "Orc", sex = "female" }
 drops["99-Year-Old Port"] = { "Mad Magglish" }
 drops["A Mysterious Message"] = { "Defias Messenger" }
 drops["A Sycamore Branch"] = { "Cursed Sycamore" }
