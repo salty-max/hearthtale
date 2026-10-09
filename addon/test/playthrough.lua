@@ -127,6 +127,93 @@ local SIDE_RACES = { alliance = 1 + 4 + 8 + 64, horde = 2 + 16 + 32 + 128 }
 local MATES = { "Thessaly", "Brannigan", "Rowan", "Halvard", "Ysolde", "Korrak", "Mirelle", "Durgan" }
 local TO = tonumber(os.getenv("PLAYTHROUGH_LEVEL") or "") or 30
 
+-- What a class can use, as the original game has it: its weapons (item
+-- subclasses), the armour it wears before and after 40 (cloth 1, leather 2,
+-- mail 3, plate 4), a shield. A reward it can't use isn't taken.
+local WEAPONS = {
+  WARRIOR = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 13, 15, 16, 18 },
+  PALADIN = { 0, 1, 4, 5, 6, 7, 8 },
+  HUNTER = { 0, 1, 2, 3, 6, 7, 8, 10, 13, 15, 16, 18 },
+  ROGUE = { 2, 3, 4, 7, 13, 15, 16, 18 },
+  PRIEST = { 4, 10, 15, 19 },
+  SHAMAN = { 0, 4, 5, 10, 13, 15 },
+  MAGE = { 7, 10, 15, 19 },
+  WARLOCK = { 7, 10, 15, 19 },
+  DRUID = { 4, 5, 10, 13, 15 },
+}
+local ARMOR = {
+  WARRIOR = { 3, 4 },
+  PALADIN = { 3, 4 },
+  HUNTER = { 2, 3 },
+  SHAMAN = { 2, 3 },
+  ROGUE = { 2, 2 },
+  DRUID = { 2, 2 },
+  PRIEST = { 1, 1 },
+  MAGE = { 1, 1 },
+  WARLOCK = { 1, 1 },
+}
+local SHIELDS = { WARRIOR = true, PALADIN = true, SHAMAN = true }
+local function usable(item, class, level)
+  if item.classes and bit.band(item.classes, CLASS[class]) == 0 then return false end
+  if item.req and item.req > level then return false end
+  if item.class == 2 then
+    for _, sub in ipairs(WEAPONS[class]) do
+      if sub == item.sub then return true end
+    end
+    return false
+  end
+  if item.class ~= 4 then return false end
+  if item.sub == 0 then return true end -- rings, necklaces, trinkets
+  if item.sub == 6 then return SHIELDS[class] or false end
+  if item.sub > 4 then return false end
+  return item.sub <= ARMOR[class][level >= 40 and 2 or 1]
+end
+
+-- What a class learns, as its trainers teach it (.cache/audit/game.lua's
+-- lessons, from cmangos): every other level, what opened since the last
+-- visit; a race's own priest spells for that race; a form or a demon is a
+-- power, not a lesson (Util.lua), told when first used.
+local RACIAL = {
+  Starshards = "NightElf",
+  ["Elune's Grace"] = "NightElf",
+  ["Desperate Prayer"] = "Human Dwarf",
+  ["Fear Ward"] = "Dwarf",
+  Feedback = "Human",
+  ["Touch of Weakness"] = "Scourge",
+  ["Devouring Plague"] = "Scourge",
+  ["Hex of Weakness"] = "Troll",
+  Shadowguard = "Troll",
+}
+local NOT_TAUGHT = { ["Elemental Fury"] = true } -- (a shaman's talent in the warrior trainers' list)
+local function lessonsAt(class, race, from, to)
+  local out = {}
+  for l = from, to do
+    for _, spell in ipairs(((D.lessons or {})[class] or {})[l] or {}) do
+      local own = RACIAL[spell]
+      if
+        not spell:find("^zz")
+        and not NOT_TAUGHT[spell]
+        and not ns.POWER_SPELLS[spell]
+        and (not own or own:find(race))
+      then
+        table.insert(out, spell)
+      end
+    end
+  end
+  return out
+end
+-- A warlock's demons and a druid's forms, at the levels the original game
+-- gives them (its class quests, which the road leaves out); a hunter's first
+-- pet at 10, a beast of the land.
+local DEMONS = {
+  { 4, "Imp", "Zigfik" },
+  { 10, "Voidwalker", "Ganrul" },
+  { 20, "Succubus", "Lirasha" },
+  { 30, "Felhunter", "Kezzik" },
+}
+local FORMS = { { 10, "bear" }, { 16, "aquatic" }, { 20, "cat" }, { 30, "travel" } }
+local PET_NAMES = { "Bristle", "Grimfang", "Thistle", "Ember", "Dusk", "Rook" }
+
 local function creature(id) return id and id > 0 and D.creatures[id] or nil end
 local function kindOf(c) return FAMILY[c.family or 0] or TYPE[c.type or 0] end
 
@@ -216,16 +303,27 @@ local function play(race, class, side)
   end
   local level, done, kinds = 1, {}, {}
   local zone = road[1]
+  local at = zone -- (where I am: the quests' land, or an ender's far away)
   local clock, toLevel = 1790000000 + 8 * 3600, 0
   local ch, mates, grouped, told = nil, {}, false, 0
-  local function zoneName(id) return D.zones[id] or ("Zone " .. id) end
+  local pet, petFamily, lessonLevel, powers, lastBeast = nil, nil, 0, {}, nil
+  -- (an area's land: Coldridge Valley lies in Dun Morogh)
+  local function landOf(id)
+    for _ = 1, 4 do
+      if not (D.parents or {})[id] then break end
+      id = D.parents[id]
+    end
+    return id
+  end
+  local function zoneName(id) return D.zones[landOf(id)] or ("Zone " .. landOf(id)) end
+  local function subName(id) return landOf(id) ~= id and D.zones[id] or nil end
   local function night()
     local h = math.floor(clock / 3600) % 24
     return h >= 21 or h < 6
   end
   local function newChapter()
     ch = {
-      start = { level = level, zone = zoneName(zone), night = night() or nil },
+      start = { level = level, zone = zoneName(at), sub = subName(at), night = night() or nil },
       log = {},
       kills = {},
       quests = 0,
@@ -236,8 +334,10 @@ local function play(race, class, side)
   end
   local function moment(k, fields)
     fields = fields or {}
-    fields.k, fields.at, fields.zone, fields.night, fields.grouped =
-      k, clock, fields.zone or zoneName(zone), night() or nil, grouped or nil
+    if not fields.zone then
+      fields.zone, fields.sub = zoneName(at), subName(at)
+    end
+    fields.k, fields.at, fields.night, fields.grouped = k, clock, night() or nil, grouped or nil
     table.insert(ch.log, fields)
     return fields
   end
@@ -247,6 +347,8 @@ local function play(race, class, side)
   end
   local function kill(cr, n, quarry)
     if not cr then return end
+    if cr.rank == 2 or cr.rank == 4 then n = 1 end -- (a rare lives once)
+    if FAMILY[cr.family or 0] then lastBeast = FAMILY[cr.family] end
     local first = ch.kills[cr.name] == nil
     ch.kills[cr.name] = (ch.kills[cr.name] or 0) + n
     wait(40 * n)
@@ -263,6 +365,50 @@ local function play(race, class, side)
       })
     end
     if kind then kinds[kind] = true end
+  end
+  -- What the class gains at this level: the trainer's lessons, every other
+  -- level; a warlock's demon, a druid's form, a hunter's first pet.
+  local function classMoments()
+    if level % 2 == 0 and level > lessonLevel then
+      local spells = lessonsAt(class, race, lessonLevel + 1, level)
+      lessonLevel = level
+      if #spells > 0 then
+        wait(120)
+        moment("learned", { spells = spells })
+      end
+    end
+    if class == "WARLOCK" then
+      for _, d in ipairs(DEMONS) do
+        if level >= d[1] and not powers[d[2]] then
+          powers[d[2]] = true
+          pet, petFamily = d[3], d[2]
+          moment("demon", { name = d[3], family = d[2] })
+        end
+      end
+    elseif class == "DRUID" then
+      for _, f in ipairs(FORMS) do
+        if level >= f[1] and not powers[f[2]] then
+          powers[f[2]] = true
+          moment("shift", { form = f[2] })
+        end
+      end
+    elseif class == "HUNTER" and level >= 10 and not pet and lastBeast then
+      pet, petFamily = PET_NAMES[(#c.chapters % #PET_NAMES) + 1], lastBeast
+      moment("tame", { name = pet, family = petFamily })
+    end
+  end
+  local function levelUp()
+    level, toLevel = level + 1, 0
+    moment("level", { level = level })
+    classMoments()
+  end
+  -- (on the way to whoever takes a quest back, in another land, and home again)
+  local function travel(to)
+    if not to or to == at then return end
+    local before = landOf(at)
+    at = to
+    wait(20 * 60)
+    moment("place", landOf(to) ~= before and { new = "zone" } or {})
   end
   -- the first land on the road with a quest open now
   local function opens(z)
@@ -310,9 +456,10 @@ local function play(race, class, side)
     if #open == 0 then
       local z = nextZone()
       if z then
-        zone = z
+        local before = landOf(at)
+        zone, at = z, z
         wait(15 * 60)
-        moment("place", { new = "zone" })
+        moment("place", landOf(z) ~= before and { new = "zone" } or {})
       else
         -- nothing open anywhere: a level gained by fighting, as players do
         local here = {}
@@ -324,8 +471,7 @@ local function play(race, class, side)
           end
         end
         kill(creature(here[#here]), 20)
-        level, toLevel = level + 1, 0
-        moment("level", { level = level })
+        levelUp()
       end
     else
       local batch = {}
@@ -372,11 +518,16 @@ local function play(race, class, side)
         for _, pair in ipairs(q.items or {}) do
           local s = D.sources[pair[1]]
           if q.src ~= pair[1] and s and s.creatures then
-            -- the creature that drops it most widely (not a lone boss that happens to)
+            -- the creature that drops it most widely (not a lone boss that happens
+            -- to), in the quest's own land if one lives there
             local best
-            for _, cid in ipairs(s.creatures) do
-              local cr = creature(cid)
-              if cr and cr.spawns > 0 and (not best or cr.spawns > best.spawns) then best = cr end
+            for _, local_ in ipairs({ true, false }) do
+              for _, cid in ipairs(s.creatures) do
+                local cr = creature(cid)
+                local here = not local_ or (cr and cr.zone and landOf(cr.zone) == landOf(q.zone))
+                if cr and here and cr.spawns > 0 and (not best or cr.spawns > best.spawns) then best = cr end
+              end
+              if best then break end
             end
             kill(best, best and best.spawns > 1 and math.ceil(pair[2] * 1.5) or 1)
           elseif q.src ~= pair[1] then
@@ -386,7 +537,10 @@ local function play(race, class, side)
         local held = a.objectives and a.objectives[1] and a.objectives[1].held
         if a.objectives and not held then
           a.done = true
-          moment("done", { id = id, title = q.title, giver = a.giver, objectives = a.objectives })
+          moment(
+            "done",
+            { id = id, title = q.title, giver = a.giver, objectives = a.objectives, pet = pet, petFamily = petFamily }
+          )
         end
       end
       if grouped and not elite then grouped = false end
@@ -395,6 +549,10 @@ local function play(race, class, side)
       for _, id in ipairs(batch) do
         local q, a = D.quests[id], accepted[id]
         local ender = q.enders and creature(q.enders[1])
+        -- (an ender in another land: the way there)
+        if ender and ender.zone and landOf(ender.zone) ~= landOf(at) and D.zones[landOf(ender.zone)] then
+          travel(landOf(ender.zone))
+        end
         moment("quest", {
           id = id,
           title = q.title,
@@ -407,7 +565,13 @@ local function play(race, class, side)
         done[id], told = true, told + 1
         for _, r in ipairs(q.rewards or {}) do
           local item = D.items[r]
-          if item and (item.class == 2 or item.class == 4) and (item.slot or 0) > 0 and (item.quality or 0) >= 2 then
+          if
+            item
+            and (item.class == 2 or item.class == 4)
+            and (item.slot or 0) > 0
+            and (item.quality or 0) >= 2
+            and usable(item, class, level)
+          then
             moment("gear", {
               link = ("|cff1eff00|Hitem:%d|h[%s]|h|r"):format(r, item.name),
               quality = item.quality,
@@ -417,14 +581,12 @@ local function play(race, class, side)
           end
         end
         toLevel = toLevel + 1
-        if toLevel >= 4 + math.floor(level / 4) then
-          toLevel, level = 0, level + 1
-          moment("level", { level = level })
-        end
+        if toLevel >= 4 + math.floor(level / 4) then levelUp() end
       end
+      travel(zone) -- (back to the quests' land, if a turn-in took me away)
       -- a rest, now and then: the chapter closes
       if ch.played >= 9000 then
-        ch.ended = { level = level, place = zoneName(zone), how = "rest" }
+        ch.ended = { level = level, place = subName(at) or zoneName(at), how = "rest" }
         clock = clock + 9 * 3600
         newChapter()
       end
