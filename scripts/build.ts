@@ -114,7 +114,7 @@ const KINDS: Record<string, string[]> = {
   // a deed (its clause, {deed}) with the creatures killed on the way, no quest's
   "c-while": ["prey", "deed"],
   "c-deliver": ["thing", "ender", "giver"],
-  "c-quest": ["giver"],
+  "c-quest": ["giver", "pron"],
   "c-trainer": ["spells"],
   "c-skill": ["skill", "rank"],
   "c-prof": ["prof", "rank"],

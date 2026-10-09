@@ -236,6 +236,11 @@ local function itemName(name)
   -- its own article: "An Unsent Letter" reads "an Unsent Letter"
   local own = name:match("^(An?) ") or name:match("^(The) ")
   if own then return own:lower() .. name:sub(#own + 1) end
+  -- a thing's own part, one of a kind: "the Top of Gelkak's Key"
+  local piece = name:match("^(%a+) of ")
+  if piece == "Top" or piece == "Middle" or piece == "Bottom" or piece == "Upper" or piece == "Lower" then
+    return "the " .. name
+  end
   -- a trophy: "Head of VanCleef" is VanCleef's head
   local part, whose = name:match("^(%a+) of (.+)$")
   if part and TROPHY[part] then return whose .. "'s " .. part:lower() end

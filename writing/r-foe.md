@@ -26,7 +26,7 @@ kind: r-foe
 - [kobold] the squeaking easier to bear once it had stopped
 - [kobold] candle wax spattered further than seemed possible
 - [gnoll] the snarling worse than the bites
-- [gnoll] the smell of wet fur clinging to me afterwards
+- [gnoll melee] the smell of wet fur clinging to me afterwards
 - [gnoll] with no sign that the land would ever run out of gnolls
 - [harpy] the shrieking still in my ears
 - [harpy] feathers settling around me long after
@@ -53,7 +53,7 @@ kind: r-foe
 - [furbolg] the woods quieter for it, though not happier
 - [furbolg] stronger than all that shambling had suggested
 - [trogg] the stink of them clinging to me afterwards
-- [trogg] harder in the skull than anything had a right to be
+- [trogg melee] harder in the skull than anything had a right to be
 - [trogg] the grunting echoing long after
 - [outlaw] a life of crime ending exactly where such lives do
 - [outlaw] the kind of greed that ends exactly like that
@@ -63,7 +63,7 @@ kind: r-foe
 - [scarlet] the red of those tabards staying in my eyes
 - [undead] glad that the dead stayed down this time
 - [undead] the smell of the grave clinging to everything
-- [undead] the cold lingering on my hands
+- [undead melee] the cold lingering on my hands
 - [demon] the air tasting of brimstone long after
 - [demon] with the uneasy feeling that it had only gone elsewhere
 - [demon] the reek of the Nether hanging about the place

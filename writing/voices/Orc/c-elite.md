@@ -1,7 +1,7 @@
 ---
 kind: c-elite
 ---
-- fought {foe} and prevailed
-- faced {foe} and held my ground
+- [!many] fought {foe} and prevailed
+- [!many] faced {foe} and held my ground
 - brought down {foe} after a hard fight
 - overcame {foe}, though the struggle taxed me

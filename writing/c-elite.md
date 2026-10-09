@@ -1,11 +1,17 @@
 ---
 kind: c-elite
 ---
-- fought {foe} and won, with no appetite for making another trial of my strength
-- faced {foe} and lived to go on
+- [!many] fought {foe} and won, with no appetite for making another trial of my strength
+- [!many] faced {foe} and lived to go on
 - brought down {foe}, with more relief than I would have liked to show
-- beat {foe}, and was in no hurry to meet another like it
+- [!people !many] beat {foe}, and was in no hurry to meet another like it
 - took on {foe}, grateful not to have met the end of my road
 - [hc] fought {foe} with a life I was unwilling to spend on pride
 - stood my ground against {foe}, with my courage under considerable strain
 - outlasted {foe}, more eager to be alive than to be impressive
+- [!many] came through a fight with {foe} that I would be going over in my head for days
+- brought down {foe} at last, with nothing left over for celebrating
+- held on against {foe} until it was over, and only then noticed how hard my heart was going
+- stood over {foe} afterwards, astonished to be the one still standing
+- [!people !many] finished {foe}, and gave its kind a wide berth from then on
+- [!many] won the fight with {foe}, and did not much care how it had looked

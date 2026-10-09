@@ -201,7 +201,32 @@ function tell.kill(s, m)
   if m.elite then
     s.toldFoes[m.name] = true
     s.slain[m.name] = true
-    return s:tell("c-elite", { foe = namedElite(m.name) and m.name or article(m.name) })
+    -- (elites of one people fought one after another, in one sentence: "a
+    -- Mo'grosh Ogre, a Brute and an Enforcer"; a level between them is no break)
+    local foes, first, j = { namedElite(m.name) and m.name or article(m.name) }, m.name:match("^(%S+) "), s.i + 1
+    while first and s.ch.log[j] do
+      local n = s.ch.log[j]
+      if n.k == "level" then
+        j = j + 1
+      elseif
+        n.k == "kill"
+        and n.elite
+        and not s.merged[j]
+        and n.name:match("^(%S+) ") == first
+        and (n.at or 0) - (m.at or 0) < 1800
+      then
+        s.merged[j], s.toldFoes[n.name], s.slain[n.name] = true, true, true
+        table.insert(foes, article((n.name:gsub("^%S+ ", ""))))
+        j = j + 1
+      else
+        break
+      end
+    end
+    -- (a person is no "it": "another like it" is for a beast)
+    return s:tell("c-elite", { foe = listing(foes) }, {
+      people = m.kind == "Humanoid" or nil,
+      many = #foes > 1 or nil,
+    })
   end
   if m.first and KINDS[m.kind] then
     local t = { one = true, teeth = TEETH[m.kind or ""], mechanical = m.kind == "Mechanical" or nil }
@@ -332,9 +357,13 @@ function tell.learned(s, m)
       table.insert(spells, sp)
     end
   end
-  -- (the lesson as a whole, then its spell with a line of its own; that
-  -- spell alone needs no list before it)
-  if note and #spells == 1 then spells = {} end
+  -- (the lesson as a whole, then its spell with a line of its own: that
+  -- spell told once, by its line, not in the list as well)
+  if note then
+    for k = #spells, 1, -1 do
+      if spells[k] == note then table.remove(spells, k) end
+    end
+  end
   if #spells > 0 then
     local named = {}
     for j = 1, math.min(#spells, 3) do

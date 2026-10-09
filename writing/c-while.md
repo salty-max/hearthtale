@@ -8,7 +8,7 @@ kind: c-while
 - [turn !one] there were {prey} to fight off before I {deed}
 - [turn one] there was {prey} to fight off before I {deed}
 - [turn !handed] {prey} kept me busy while I {deed}
-- [turn !one] after a fight or two with {prey}, I {deed}
+- [turn !one !lots] after a fight or two with {prey}, I {deed}
 - [turn one] after a fight with {prey}, I {deed}
 - [turn !one] {prey} were down before I {deed}
 - [turn one] {prey} was down before I {deed}
