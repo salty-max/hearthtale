@@ -61,12 +61,30 @@ local function linkName(x) return x.link and x.link:match("%[(.-)%]") end
 -- What each kind of moment tells.
 local tell = {}
 function tell.level(s, m) s.lvl = m.level or s.lvl end -- a level reached: recorded, not told
+local QUICK = 3600 -- (a land left less than this long ago: a quick return)
 function tell.place(s, m)
   local b = s.book
   if m.new == "zone" then
     s:flush()
     s:newParagraph()
     b.last = nil
+    -- (the land left, and when)
+    if b.land and b.land ~= m.zone and m.at then b.landLeft[b.land] = m.at end
+    b.land = m.zone
+    local left = b.landLeft[m.zone]
+    if b.landsSeen[m.zone] and left and m.at and m.at - left < QUICK then
+      -- a land left within the hour, come back to (a quest handed in over
+      -- the border): no arrival of its own; its town says where, or the next
+      -- sentence does ("Back in Mulgore, I…")
+      if m.sub then
+        s:arrive(m.sub, m.zone)
+      else
+        s:enter(m.zone, m.zone)
+        s.backTo = m.zone
+      end
+      s.backLand = s.backTo ~= nil or nil
+      return
+    end
     -- a land seen for the first time: described, else the plain line
     local land = b:sceneryOf(m.zone, m.night)
     local back = b.landsSeen[m.zone]
@@ -577,6 +595,7 @@ local function opening(s)
   if start.zone then
     b.placeNames[start.zone] = true
     b.landsSeen[start.zone] = true
+    b.land = start.zone
   end
   local first = s.n == 1 and (c.began and c.began.level or 1) == 1 and s.lvl == 1
   if where then

@@ -177,6 +177,7 @@ local REMARK_GAP = 10
 -- Tags that name what a remark is about: such a remark, when it fits, comes first.
 local SUBJECTS =
   { teeth = true, mechanical = true, cloth = true, meat = true, explore = true, escort = true, made = true }
+local BURN = { holy = true } -- (a remark about the Light's burn: Book:remark)
 for _, people in ipairs(FOE_PEOPLE) do
   SUBJECTS[people[1]] = true
 end
@@ -234,6 +235,7 @@ local function newBook(c)
   b.faction = (c.faction == "alliance" or c.faction == "horde") and c.faction or FACTION[race]
   b.sceneSeen = {} -- places already described in this book
   b.landsSeen = {} -- lands (zones) already come to in this book: a return is told as one
+  b.landLeft = {} -- when each land was last left: a quick return to it (Writer.lua tell.place)
   b.remarkChapter = {} -- the chapter each remark was last told in
   b.creatureKinds = {} -- classifications actually recorded, not guessed from a quest's name
   b.placeNames = {} -- only places encountered so far; later events cannot rewrite an objective
@@ -629,8 +631,32 @@ function Book:say(kind, key, values, tags, prefer, raw)
   if kind ~= "c-trainer" and kind ~= "c-group" then
     filled = text:gsub("{(%w+)}", function(k) return type(values[k]) == "string" and values[k] or "" end)
   end
-  if wantRemark and not filled:find(",") and not filled:find(" and ") and not ctx.trophy then -- (a trophy speaks for itself)
-    local remark = self:remark(routine, key, values, ctx, (text:gsub("{%w+}", "")), weight >= 2)
+  local free = not filled:find(",") and not filled:find(" and ") and not ctx.trophy -- (a trophy speaks for itself)
+  -- a Forsaken fighting with the Light: it burns them (Ask CDev), and one
+  -- such fight in three ends on it, a remark of the race's own about the burn
+  local burn = false
+  if
+    routine == "r-foe"
+    and self.base["race:Scourge"]
+    and values.faith == "the Light"
+    and text:find("{faith}", 1, true)
+  then
+    local n = self.lightFights or 0
+    if n % 3 ~= 0 then
+      self.lightFights = n + 1
+    elseif free and not said.turn and s then
+      if not wantRemark then
+        s:prepareRemark()
+        wantRemark = s.pendingRemarks == 0 and not s.lastSentenceRemark
+      end
+      if wantRemark then
+        burn, self.lightFights = true, n + 1
+      end
+    end
+  end
+  if wantRemark and free then
+    local rctx = burn and setmetatable({ holy = true, burn = true }, { __index = ctx }) or ctx
+    local remark = self:remark(routine, key, values, rctx, (text:gsub("{%w+}", "")), weight >= 2)
     if remark then
       text = text .. ", " .. remark
       said.remark = remark
@@ -714,6 +740,20 @@ function Book:remark(pool, key, values, ctx, clauseText, general)
   -- the race's own, else a shared one over a general line in any voice
   local ownAbout, sharedAbout = only(ownFresh, SUBJECTS), only(fresh, SUBJECTS)
   local e
+  -- the Light burning a Forsaken (Book:say): the race's own words for it,
+  -- a fresh one, else the one used longest ago once spaced enough
+  if ctx.burn then
+    local burns = only(ownFresh, BURN)
+    if #burns > 0 then
+      e = burns[pick % #burns + 1]
+    else
+      for _, x in ipairs(only(all, BURN)) do
+        local spaced = self.chapterNo - self.remarkChapter[x.id] >= REMARK_GAP
+        if x.id:sub(1, 2) == "v:" and spaced and (not e or self.used[x.id] < self.used[e.id]) then e = x end
+      end
+    end
+  end
+  if e then return self:useRemark(pool, e, values) end
   if #ownAbout > 0 then
     e = ownAbout[pick % #ownAbout + 1]
   elseif #sharedAbout > 0 then
@@ -740,6 +780,10 @@ function Book:remark(pool, key, values, ctx, clauseText, general)
     e = e or (not own and oldest(nil)) or nil
     if not e then return nil end
   end
+  return self:useRemark(pool, e, values)
+end
+-- The remark chosen: remembered as used, filled in.
+function Book:useRemark(pool, e, values)
   self:use(pool, e)
   self.remarkChapter[e.id] = self.chapterNo
   if ns.writerRemark then ns.writerRemark(e.id, self.chapterNo, self) end

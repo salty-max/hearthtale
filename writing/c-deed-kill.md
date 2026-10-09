@@ -107,8 +107,8 @@ kind: c-deed-kill
 - [steel class:WARRIOR !one] met {n} {foes} head on
 - [steel class:WARRIOR one] met {foes} head on and gave no ground
 - [steel class:WARRIOR !low !one] charged into {n} {foes}
-- [steel class:PALADIN !one] struck down {n} {foes} with {weapon} and {faith} behind it
-- [steel class:PALADIN one] brought {weapon} down on {foes} with {faith} behind it
+- [steel class:PALADIN !one] struck down {n} {foes} with {faith} behind every swing of {weapon}
+- [steel class:PALADIN one] brought {weapon} down on {foes} with {faith} behind the blow
 - [arrow !one] dropped {n} {foes} before they could close the distance
 - [arrow !one] kept {weapon} busy on {n} {foes}
 - [arrow one] kept {foes} at a distance until it was over
