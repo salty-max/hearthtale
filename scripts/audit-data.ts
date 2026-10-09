@@ -13,6 +13,10 @@ const DIR = path.join(import.meta.dir, "..", ".cache", "audit");
 const SOURCES = {
   db: "https://raw.githubusercontent.com/cmangos/classic-db/master/Full_DB/ClassicDB_1_12_1_z2815.sql.gz",
   zones: "https://raw.githubusercontent.com/shagu/pfQuest/master/db/enUS/zones.lua",
+  // where every creature stands (its spawns' zones), pfQuest (MIT)
+  units: "https://raw.githubusercontent.com/shagu/pfQuest/master/db/units.lua",
+  // the client's areas, for the land each one lies in (Coldridge Valley: Dun Morogh)
+  areas: "https://wago.tools/db2/AreaTable/csv?product=wow_classic_era",
 };
 
 async function fetchOnce(url: string, file: string) {
@@ -37,14 +41,21 @@ const lua = (v: unknown): string => {
 mkdirSync(DIR, { recursive: true });
 const dump = await fetchOnce(SOURCES.db, "classicdb.sql.gz");
 const zonesFile = await fetchOnce(SOURCES.zones, "pfquest-zones.lua");
+const unitsFile = await fetchOnce(SOURCES.units, "pfquest-units.lua");
+const areasFile = await fetchOnce(SOURCES.areas, "areatable-era.csv");
 const sql = gunzipSync(readFileSync(dump)).toString("utf8");
 
 const spawns = new Map<number, number>();
 for (const r of rows(sql, "creature")) spawns.set(r.id as number, (spawns.get(r.id as number) ?? 0) + 1);
+// (a creature's land: the zone of its first spawn, as pfQuest has it)
+const unitZone = new Map<number, number>();
+for (const m of readFileSync(unitsFile, "utf8").matchAll(/\n {2}\[(\d+)\] = \{\n {4}\["coords"\] = \{\n {6}\[1\] = \{ [-\d.]+, [-\d.]+, (\d+),/g))
+  unitZone.set(Number(m[1]), Number(m[2]));
 const creatures: Record<number, object> = {};
 for (const r of rows(sql, "creature_template")) {
   creatures[r.Entry as number] = { name: r.Name, sub: r.SubName, rank: r.Rank, type: r.CreatureType, family: r.Family,
-    min: r.MinLevel, max: r.MaxLevel, spawns: spawns.get(r.Entry as number) ?? 0, npc: r.NpcFlags };
+    min: r.MinLevel, max: r.MaxLevel, spawns: spawns.get(r.Entry as number) ?? 0, npc: r.NpcFlags,
+    zone: unitZone.get(r.Entry as number) };
 }
 const starters = new Map<number, number[]>(), enders = new Map<number, number[]>();
 for (const [table, map] of [["creature_questrelation", starters], ["creature_involvedrelation", enders]] as const)
@@ -68,7 +79,8 @@ for (const r of rows(sql, "quest_template")) {
 }
 const items: Record<number, object> = {};
 for (const r of rows(sql, "item_template"))
-  items[r.entry as number] = { name: r.name, quality: r.Quality, class: r.class, sub: r.subclass, slot: r.InventoryType };
+  items[r.entry as number] = { name: r.name, quality: r.Quality, class: r.class, sub: r.subclass, slot: r.InventoryType,
+    classes: (r.AllowableClass as number) > 0 && (r.AllowableClass as number) !== 32767 ? r.AllowableClass : null, req: r.RequiredLevel || null };
 const objects: Record<number, string> = {};
 const chests = new Map<number, number[]>(); // loot id = the objects that hold it
 for (const r of rows(sql, "gameobject_template")) {
@@ -91,20 +103,54 @@ for (const r of rows(sql, "gameobject_loot_template")) {
   const s = (sources[r.item as number] ??= {});
   s.objects = [...new Set([...(s.objects ?? []), ...(chests.get(r.entry as number) ?? [])])];
 }
+// A class trainer's lessons, by the level they open at: class = { [level] = { spell, ... } }
+// (a trainer's spell teaches another: the one taught, as knowledge.ts reads it)
+const CLASS_IDS: Record<number, string> = { 1: "WARRIOR", 2: "PALADIN", 3: "HUNTER", 4: "ROGUE", 5: "PRIEST", 7: "SHAMAN", 8: "MAGE", 9: "WARLOCK", 11: "DRUID" };
+const spellName = new Map<number, string>();
+const teaches = new Map<number, number>();
+for (const r of rows(sql, "spell_template")) {
+  spellName.set(r.Id as number, r.SpellName as string);
+  for (const k of [1, 2, 3]) if (r[`Effect${k}`] === 36 && r[`EffectTriggerSpell${k}`]) teaches.set(r.Id as number, r[`EffectTriggerSpell${k}`] as number);
+}
+const templateClass = new Map<number, string>();
+for (const r of rows(sql, "creature_template"))
+  if (r.TrainerType === 0 && CLASS_IDS[r.TrainerClass as number] && r.TrainerTemplateId) templateClass.set(r.TrainerTemplateId as number, CLASS_IDS[r.TrainerClass as number]);
+const lessons: Record<string, Record<number, string[]>> = {};
+for (const r of rows(sql, "npc_trainer_template")) {
+  const cls = templateClass.get(r.entry as number);
+  const spell = spellName.get(teaches.get(r.spell as number) ?? (r.spell as number));
+  // (a new spell only: a rank of one known, or of a talent, needs it first)
+  if (!cls || !spell || !(r.reqlevel as number) || (r.ReqAbility1 as number)) continue;
+  const byLevel = (lessons[cls] ??= {});
+  const list = (byLevel[r.reqlevel as number] ??= []);
+  if (!list.includes(spell)) list.push(spell);
+}
 const zones: Record<number, string> = {};
 for (const m of readFileSync(zonesFile, "utf8").matchAll(/\[(\d+)\] = "((?:[^"\\]|\\.)*)"/g)) {
   const name = m[2].replace(/\\(.)/g, "$1").trim(); // Lua's \' is '
   if (!/UNUSED|^Jeff |TEST|DELETE|Delete ME|Test|\*\*\*|^GM |Programmer|Designer|Not Used/.test(name)) zones[Number(m[1])] = name;
 }
 
+// The land each area lies in (its zone): parents[area] = zone.
+const parents: Record<number, number> = {};
+{
+  const [head, ...lines] = readFileSync(areasFile, "utf8").trim().split("\n");
+  const cols = head.split(",");
+  const id = cols.indexOf("ID"), parent = cols.indexOf("ParentAreaID");
+  for (const line of lines) {
+    const cells = line.match(/("([^"]|"")*"|[^,]*)(,|$)/g)!.map((c) => c.replace(/,$/, ""));
+    if (Number(cells[parent]) > 0) parents[Number(cells[id])] = Number(cells[parent]);
+  }
+}
+
 // (in chunks: a Lua function holds at most 65536 constants)
 const out = ["-- generated by scripts/audit-data.ts: do not edit",
-  "local D = { creatures = {}, quests = {}, items = {}, objects = {}, zones = {}, sources = {} }"];
-for (const [name, table] of Object.entries({ creatures, quests, items, objects, zones, sources })) {
+  "local D = { creatures = {}, quests = {}, items = {}, objects = {}, zones = {}, sources = {}, parents = {}, lessons = {} }"];
+for (const [name, table] of Object.entries({ creatures, quests, items, objects, zones, sources, parents, lessons })) {
   const entries = Object.entries(table);
   for (let i = 0; i < entries.length; i += 1000) {
     out.push(`;(function(t)`);
-    for (const [id, v] of entries.slice(i, i + 1000)) out.push(`t[${id}]=${lua(v)}`);
+    for (const [id, v] of entries.slice(i, i + 1000)) out.push(`t[${/^\d+$/.test(id) ? id : JSON.stringify(id)}]=${lua(v)}`);
     out.push(`end)(D.${name})`);
   }
 }
