@@ -37,7 +37,9 @@ function partName(shared: SharedBook): string {
 /** The opening lines of what's shared, for the card. */
 export function ogText(shared: SharedBook, max = 220): string {
   const b = shared.book;
-  const text = b.epitaph && (shared.part === "epitaph" || shared.part === undefined && shared.character.fallen) ? b.epitaph : (b.prologue ?? b.chapters[0]?.text ?? b.epitaph ?? "");
+  // (a chapter's diary entry before its prose: the shorter telling, read first)
+  const first = b.chapters[0];
+  const text = b.epitaph && (shared.part === "epitaph" || shared.part === undefined && shared.character.fallen) ? b.epitaph : (b.prologue ?? first?.diary ?? first?.text ?? b.epitaph ?? "");
   const flat = text.replace(/\s+/g, " ").trim();
   return flat.length > max ? `${flat.slice(0, max - 1).replace(/\s+\S*$/, "")}…` : flat;
 }

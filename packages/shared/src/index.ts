@@ -21,6 +21,8 @@ export type BookChapter = {
   number: number;
   /** The prose, paragraphs separated by a blank line. Missing: nothing to tell yet. */
   text?: string;
+  /** The same stretch as the character's diary entry (Diary.lua): shown first, the prose a click away. */
+  diary?: string;
   /** Where it closed, or where it began while still being written. */
   place?: string;
   /** The levels it covers. */

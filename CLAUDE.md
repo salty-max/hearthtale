@@ -124,8 +124,9 @@ The plan and its decisions: PLAN.md.
   chapter's Scene; what each tells is `tell.<kind>`, the moments of their own
   `own.<kind>`. A new kind of moment is a new arm, in its place in the order;
   its state lives on the Scene, never in a local of `Book:chapter`),
-  `Diary.lua` (a prototype, behind the "Diary entries" setting: each
-  chapter as a short entry written at the rest that ends it, from the same
+  `Diary.lua` (each chapter as a short entry written at the rest that ends
+  it, read first in the window and on the site, the chapter in full a click
+  away; from the same
   record and the Book's lines: the opening, its story (`d-why`, `d-why2`:
   writing/why/; a quest's story told once; a chain's quest after an earlier
   entry told one of it, `[thread]`, its last `[thread settled]`: Knowledge.lua
@@ -141,10 +142,11 @@ The plan and its decisions: PLAN.md.
   `[!diary]` keeps out a line that leans
   on a moment the diary doesn't tell; `luajit addon/test/read.lua <saved
   file> diary` and the playthroughs' `*.diary.md` show both side by side),
-  `Save.lua` (the book written into the saved file at each logout, for the
-  site: it never writes its own),
-  `Book.lua` (the window: chapters on the left, the open one on the right; a
-  second tab for the Hall of the Fallen), `Hall.lua` (a Hardcore death: the
+  `Save.lua` (the book written into the saved file at each logout, each
+  chapter with its diary entry, for the site: it never writes its own),
+  `Book.lua` (the window: chapters on the left, the open one's diary entry on
+  the right, the chapter in full a click away; a second tab for the Hall of
+  the Fallen), `Hall.lua` (a Hardcore death: the
   book closed and copied to the account-wide Hall, a chat line, the toast),
   `Settings.lua` (account settings, the Options page), `Minimap.lua`.
 - `addon/CURSEFORGE.md`: the project page. `assets/logo-master.png` is the
@@ -431,7 +433,8 @@ Plan and steps: PLAN.md, "The site".
   crawlers on those pages get an OpenGraph card from the function
   (scripts/vercel-build.sh routes them by user agent; `/api/og/…` by hand).
   The web reader is one component (`components/Reader.tsx`, parts by address)
-  for my books, share links and the Hall.
+  for my books, share links and the Hall; a chapter opens on its diary entry
+  (`BookChapter.diary`), the full chapter a click away.
 - The companion, Ravenpost (`lib/companion.ts`, `lib/upload.ts`): pairing
   device-code style (`/api/companion/pair/start` → the user confirms on
   `/pair?code=…` → `/pair/poll` hands the token over once; only its hash is

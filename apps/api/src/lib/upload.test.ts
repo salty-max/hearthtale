@@ -43,6 +43,11 @@ describe("upload", () => {
     expect(parseBook({ client: "classic", at: 1, chapters: [{ text: "no number" }] })).toBeNull();
     expect(parseBook({ client: "classic", at: 1, chapters: [{ number: 1, text: "x".repeat(200_000) }] })!.chapters[0].text).toBeUndefined();
   });
+  test("a chapter's diary entry, kept beside its prose", () => {
+    const [ch] = parseBook({ client: "classic", at: 1, chapters: [{ number: 1, text: "The chapter.", diary: "The entry." }] })!.chapters;
+    expect(ch.diary).toBe("The entry.");
+    expect(ch.text).toBe("The chapter.");
+  });
 });
 
 describe("whose book", () => {

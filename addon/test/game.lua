@@ -304,6 +304,9 @@ local function ui()
       if k == "GetStringHeight" then
         return function() return 14 end
       end
+      if k == "GetStringWidth" then
+        return function(self) return 6 * #(rawget(self, "text") or "") end
+      end
       if k == "SetHeight" then
         return function(self, v) self.height = v end
       end

@@ -7,7 +7,7 @@ local _, ns = ...
 
 -- (minimapAngle: the button's place around the minimap, in degrees; 200 is
 -- to the left, clear of the game's buttons and the siblings')
-local DEFAULTS = { chat = true, toast = true, minimapHidden = false, minimapAngle = 200, diary = false }
+local DEFAULTS = { chat = true, toast = true, minimapHidden = false, minimapAngle = 200 }
 
 local function saved()
   if type(HearthtaleSettings) ~= "table" then HearthtaleSettings = {} end
@@ -23,7 +23,6 @@ end
 function ns.setOption(key, value)
   saved()[key] = value
   if key == "minimapHidden" and ns.updateMinimapButton then ns.updateMinimapButton() end
-  if key == "diary" and ns.refresh then ns.refresh() end
 end
 
 -- Does the game say whether this character is Hardcore?
@@ -59,11 +58,6 @@ function ns.createSettingsPanel()
     "The game's alert when a Hardcore character falls and its book joins the Hall of the Fallen (the chat line stays)."
   )
   checkbox("minimapHidden", "Minimap button", "The journal by the minimap: click to open it, drag to move it.", true)
-  checkbox(
-    "diary",
-    "Diary entries (prototype)",
-    "Each chapter as a short diary entry, written at the rest that ends it, instead of the chapter in full."
-  )
 
   -- Where the game can't tell, the player says whether this character is
   -- Hardcore (its death then closes the book).

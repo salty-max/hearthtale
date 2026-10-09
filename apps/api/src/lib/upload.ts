@@ -49,6 +49,7 @@ function chapter(v: unknown): BookChapter | null {
   return {
     number,
     text: str(c.text, MAX_TEXT),
+    diary: str(c.diary, MAX_TEXT),
     place: str(c.place),
     from: int(c.from) ?? 1,
     to: int(c.to) ?? int(c.from) ?? 1,
