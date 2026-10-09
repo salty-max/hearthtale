@@ -95,6 +95,23 @@ for (const r of rows(sql, "quest_template")) {
   if (q.class) quests[r.entry as number] = q;
 }
 
+// Quest chains: for each quest of one, the chain's first quest (chains[id])
+// and whether it ends it (ends[id]): a diary goes back to a story left off.
+const prevOf = new Map<number, number>(), continues = new Set<number>();
+for (const r of rows(sql, "quest_template")) {
+  const id = r.entry as number, prev = Math.abs(Number(r.PrevQuestId)), next = Number(r.NextQuestInChain);
+  if (prev > 0) { prevOf.set(id, prev); continues.add(prev); }
+  if (next > 0) { continues.add(id); if (!prevOf.has(next)) prevOf.set(next, id); }
+}
+const rootOf = (id: number) => {
+  const seen = new Set<number>();
+  let x = id;
+  while (prevOf.has(x) && !seen.has(x)) { seen.add(x); x = prevOf.get(x)!; }
+  return x;
+};
+const chains = new Map<number, number>();
+for (const id of new Set([...prevOf.keys(), ...continues])) chains.set(id, rootOf(id));
+
 // The quest givers and enders by name (as the record knows them): their
 // people and calling, their sex (their model's: the writer's "he" or "she")
 // and whether they are a beast (who takes nothing "into their hands"); a
@@ -147,10 +164,11 @@ const out = [
   "-- quests[id] = { class, spell }: a class's own quest and the spell it gives",
   "-- npcs[name] = { people, role, sex, beast }: a quest giver's people, calling, sex, a beast",
   "-- drops[item] = { creature, ... }: the creatures a quest's item drops from",
+  "-- chains[id] = the first quest of its chain; ends[id]: the last of one",
   "local _, ns = ...",
-  "local K = { quests = {}, npcs = {}, drops = {} }",
+  "local K = { quests = {}, npcs = {}, drops = {}, chains = {}, ends = {} }",
   "ns.knowledge = K",
-  "local quests, npcs, drops = K.quests, K.npcs, K.drops",
+  "local quests, npcs, drops, chains, ends = K.quests, K.npcs, K.drops, K.chains, K.ends",
 ];
 for (const [id, v] of Object.entries(quests).sort((a, b) => Number(a[0]) - Number(b[0])))
   out.push(`quests[${id}] = { class = ${q(v.class!)}${v.spell ? `, spell = ${q(v.spell)}` : ""} }`);
@@ -165,6 +183,10 @@ for (const [item, set] of [...drops].sort((a, b) => (a[0] < b[0] ? -1 : 1))) {
   if (set.size === 0 || set.size > MAX_DROPS) continue;
   out.push(`drops[${q(item)}] = { ${[...set].sort().map(q).join(", ")} }`);
   dropped++;
+}
+for (const [id, root] of [...chains].sort((a, b) => a[0] - b[0])) {
+  out.push(`chains[${id}] = ${root}`);
+  if (!continues.has(id)) out.push(`ends[${id}] = true`);
 }
 writeFileSync(OUT, out.join("\n") + "\n");
 console.log(`✓ ${Object.keys(quests).length} class quests, ${npcs.size} quest givers, ${dropped} quest items' sources → ${path.relative(process.cwd(), OUT)}`);
