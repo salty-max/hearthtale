@@ -6,7 +6,7 @@ kind: rest
 - I stopped {at}, with my knees as stiff as an old hinge left out in the snow.
 - I rested {at}, and let my strength return without trying to forge it into anything useful.
 - [fire] I rested {at}, and found that the sky made a passable roof after all.
-- I paused {at}; an evening at home would have suited me, but this would do.
+- [!home] I paused {at}; an evening at home would have suited me, but this would do.
 - I rested {at}, with the road welcome to wear out somebody else for a while.
 - I stopped {at}, and found that sitting still took less practice than I had feared.
 - As worn down as a quarry step, I rested {at}.

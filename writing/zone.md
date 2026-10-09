@@ -19,5 +19,5 @@ kind: zone
 - [back !home] I returned to {zone}, knowing which way the paths ran and where the trouble usually waited.
 - [back !home] I came back into {zone}, glad of landmarks I already knew.
 - [back !home] I found my way back to {zone}, less a stranger there than before.
-- [back !home] {zone} took me in again, its hills and roads already half familiar.
+- [back !home !town] {zone} took me in again, its roads already half familiar.
 - [back !home hc] I came back to {zone}, no less careful for having survived it once.

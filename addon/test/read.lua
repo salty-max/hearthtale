@@ -30,7 +30,7 @@ io.write(
   "*\n\n"
 )
 if book.prologue then io.write(book.prologue, "\n\n") end
-local diary = withDiary and ns.writeDiary(c)
+local diary = withDiary and ns.writeDiary(c, book)
 for i, ch in ipairs(book.chapters) do
   io.write("## Chapter ", i, "\n\n")
   if diary then io.write("### The diary\n\n", diary.entries[i].text, "\n\n### The full chapter\n\n") end

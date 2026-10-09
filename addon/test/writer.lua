@@ -1730,8 +1730,19 @@ do
     if why[1] == 3 and #why[2] <= 105 then table.insert(heavy, id) end -- (two that fit one sentence)
     if why[1] == 2 then table.insert(middling, id) end
   end
-  table.sort(heavy)
   table.sort(middling)
+  -- (pairs that share a sentence: short, and not the same verb)
+  local whys = ns.data.why
+  table.sort(heavy, function(x, y) return #whys[x][2] < #whys[y][2] or (#whys[x][2] == #whys[y][2] and x < y) end)
+  local pairs_ = {}
+  for i = 1, #heavy do
+    for j = i + 1, #heavy do
+      local a, b = whys[heavy[i]][2], whys[heavy[j]][2]
+      if #a + #b <= 190 and a:match("^(%S+)") ~= b:match("^(%S+)") and #pairs_ < 40 then
+        table.insert(pairs_, { heavy[i], heavy[j] })
+      end
+    end
+  end
   for r, race in ipairs(RACES) do
     local chapters = {}
     for n = 1, 24 do -- (long enough for the shared frames after the race's own)
@@ -1743,9 +1754,13 @@ do
         )
       end
       quest(middling[k % #middling + 1], n * 100000 + 10)
-      if n % 2 == 0 then
-        quest(heavy[k % #heavy + 1], n * 100000 + 20)
-        quest(heavy[(k + 5) % #heavy + 1], n * 100000 + 30)
+      if n % 4 == 2 then
+        local pair = pairs_[(r * 5 + n) % #pairs_ + 1]
+        quest(pair[1], n * 100000 + 20)
+        quest(pair[2], n * 100000 + 30)
+      elseif n % 4 == 0 then -- (two too long for one sentence: the second its own)
+        quest(heavy[#heavy - (r + n / 4) % 8], n * 100000 + 20)
+        quest(heavy[#heavy - 8 - (r * 3 + n / 4) % 8], n * 100000 + 30)
       end
       chapters[n] = {
         start = { level = 20, zone = "Wetlands", sub = "Menethil Harbor" },
@@ -1802,6 +1817,11 @@ end
 -- pet at my side, named again a few entries on.
 do
   local whys, K = ns.data.why or {}, ns.knowledge
+  local middling = {}
+  for id, why in pairs(whys) do
+    if why[1] == 2 then table.insert(middling, id) end
+  end
+  table.sort(middling)
   local members = {}
   for id, root in pairs(K.chains) do
     local why = whys[id]
@@ -1905,16 +1925,46 @@ do
       end
     end
   end
-  -- stretches of nothing but small work, early in a life
-  for _, race in ipairs(RACES) do
+  -- stretches of nothing but small work, early in a life; then the work
+  -- of one people (whom the rest of the work was for), a story or a foe beside
+  local GIVERS = { "Sten Stoutarm", "Gryan Stoutmantle", "Executor Zygand", "Gornek" }
+  -- (a land their own or their hosts', worked in for one people or all sorts)
+  local HOSTED = { Troll = "Durotar", Gnome = "Dun Morogh", NightElf = "Darkshore" }
+  for r, race in ipairs(RACES) do
     local chapters = {}
-    for n = 1, 12 do
+    for n = 1, 48 do
+      local log, quests = {}, 2
+      if n > 12 then
+        local t = n * 100000
+        for k = 1, 6 do
+          table.insert(log, {
+            k = "quest",
+            id = 1000000 + n * 10 + k,
+            giver = GIVERS[(r + n + ((n > 36 and n % 2 == 1) and k or 0)) % #GIVERS + 1],
+            at = t + k,
+          })
+        end
+        if n % 3 == 0 then
+          table.insert(
+            log,
+            { k = "quest", id = middling[(r * 7 + n) % #middling + 1], giver = "Sten Stoutarm", at = t + 9 }
+          )
+        end
+        if n % 4 == 0 then
+          table.insert(
+            log,
+            { k = "rare", name = "Old Greypaw " .. r .. n, zone = "Wetlands", sub = "Wetlands", at = t + 8 }
+          )
+        end
+        quests = #log
+      end
+      local zone = n > 36 and HOSTED[race] or "Wetlands"
       chapters[n] = {
-        start = { level = 6, zone = "Wetlands", sub = "Menethil Harbor" },
-        log = {},
-        ended = { level = 6, place = "Menethil Harbor", how = "rest" },
+        start = { level = 6, zone = zone, sub = zone },
+        log = log,
+        ended = { level = 6, place = zone, how = "rest" },
         kills = {},
-        quests = 2,
+        quests = quests,
         played = 3600,
         gold = 0,
       }
@@ -1923,6 +1973,35 @@ do
       { guid = "quiet-" .. race, race = race, class = COMBOS[race][1], began = { level = 6 }, chapters = chapters }
     for i, e in ipairs(ns.writeDiary(c).entries) do
       inspect(race .. " quiet diary " .. i, e.text)
+    end
+  end
+  -- escorts and events: work with no objective, done, then handed in (by
+  -- its why, else by who asked)
+  for r, race in ipairs(RACES) do
+    local chapters = {}
+    for n = 1, 12 do
+      local t, id = n * 100000, n % 2 == 0 and middling[(r * 3 + n) % #middling + 1] or 2000000 + r * 100 + n
+      chapters[n] = {
+        start = { level = 20, zone = "Wetlands", sub = "Menethil Harbor" },
+        log = {
+          { k = "done", id = id, giver = "Sentinel Aynasha", zone = "Wetlands", sub = "Wetlands", at = t + 60 },
+          { k = "quest", id = id, giver = "Sentinel Aynasha", ender = "Sentinel Onaeya", told = true, at = t + 900 },
+        },
+        ended = { level = 20, place = "Menethil Harbor", how = "rest" },
+        kills = {},
+        quests = 1,
+        played = 3600,
+        gold = 0,
+      }
+    end
+    local c =
+      { guid = "escort-" .. race, race = race, class = COMBOS[race][1], began = { level = 20 }, chapters = chapters }
+    local book = ns.writeBook(c)
+    for i, ch in ipairs(book.chapters) do
+      inspect(race .. " escort " .. i, ch.text)
+    end
+    for i, e in ipairs(ns.writeDiary(c, book).entries) do
+      inspect(race .. " escort diary " .. i, e.text)
     end
   end
   -- the pet: a warlock's demon, a hunter's beast, at my side through the work
@@ -2376,9 +2455,20 @@ for _, round in ipairs({
             longest, longestText = #ch.text, ch.text
           end
         end
-        -- the diary of the same life (Diary.lua), through the same checks
-        for _, e in ipairs(ns.writeDiary(c).entries) do
+        -- the diary of the same life (Diary.lua), through the same checks; no
+        -- sentence of an entry the same as one of its chapter's, or the one
+        -- before (the chapter is a click away)
+        for _, e in ipairs(ns.writeDiary(c, book).entries) do
           inspect(("%s %s diary %d"):format(race, class, e.number), e.text)
+          local near = ((book.chapters[e.number] or {}).text or "")
+            .. "\n"
+            .. ((book.chapters[e.number - 1] or {}).text or "")
+          for sentence in (e.text or ""):gmatch("[^.!?]+[.!?]") do
+            sentence = sentence:gsub("^%s+", "")
+            if #sentence > 30 and near:find(sentence, 1, true) then
+              problem(("%s %s diary %d"):format(race, class, e.number), "said word for word in its chapter", sentence)
+            end
+          end
         end
         repeats = repeats + book.repeats
         if book.minGap and (not gaps[book.minGapKind] or book.minGap < gaps[book.minGapKind]) then

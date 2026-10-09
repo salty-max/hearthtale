@@ -6,7 +6,7 @@ kind: r-item
 - [plant] green to the knuckles from the picking
 - [!one !plural] each piece wrapped against the jostle of the road
 - [!one !plural] packed as neatly as a quartermaster's stores
-- [one !plural] tucked away where no Defias cutpurse would find it
+- [one !plural] tucked away where no cutpurse would find it
 - [one !plural] the prize of the search safely in my keeping
 - [meat] the makings of a decent Westfall stew, given a pot and an evening
 - [cloth] wondering how many worn shirts a tailor could mend

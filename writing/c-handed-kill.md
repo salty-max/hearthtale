@@ -23,7 +23,7 @@ kind: c-handed-kill
 - [turn !one] {giver} needed {foes} thinned out, so I thinned them
 - [turn one] {giver} wanted {foes} dead, and I obliged
 - [fire !one] burned {n} {foes} for {giver}
-- [frost !one] froze {n} {foes} where they stood for {giver}
+- [frost !one] slowed {n} {foes} with frost and finished them for {giver}
 - [arcane !one] battered {n} {foes} with raw magic for {giver}
 - [shadow !one] struck down {n} {foes} with shadow for {giver}
 - [curse !one] cursed {n} {foes} to their end for {giver}

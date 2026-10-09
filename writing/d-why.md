@@ -10,9 +10,9 @@ kind: d-why
 - What mattered was {why}.
 - I will not soon forget {why}.
 - The part that counted was {why}.
-- [thread] I went back to the business I had started before: {why}.
-- [thread] The old business went on: {why}.
-- [thread] Picking up where I had left off, I found myself {why}.
-- [thread] I took up the old thread again: {why}.
+- [thread !settled] I went back to the business I had started before: {why}.
+- [thread !settled] The old business went on: {why}.
+- [thread !settled] Picking up where I had left off, I found myself {why}.
+- [thread !settled] I took up the old thread again: {why}.
 - [thread settled] What I had started before came to its end at last: {why}.
 - [thread settled] The old business was finished at last: {why}.

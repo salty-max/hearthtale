@@ -97,20 +97,63 @@ for (const r of rows(sql, "quest_template")) {
 
 // Quest chains: for each quest of one, the chain's first quest (chains[id])
 // and whether it ends it (ends[id]): a diary goes back to a story left off.
-const prevOf = new Map<number, number>(), continues = new Set<number>();
+// Only a link one to one: a quest that opens several (or needs several) is a
+// prerequisite, not the same story going on.
+const succ = new Map<number, Set<number>>(), pred = new Map<number, Set<number>>();
+const link = (a: number, b: number) => {
+  if (a <= 0 || b <= 0 || a === b) return;
+  if (!succ.has(a)) succ.set(a, new Set());
+  if (!pred.has(b)) pred.set(b, new Set());
+  succ.get(a)!.add(b);
+  pred.get(b)!.add(a);
+};
+const hasWork = new Map<number, boolean>();
 for (const r of rows(sql, "quest_template")) {
-  const id = r.entry as number, prev = Math.abs(Number(r.PrevQuestId)), next = Number(r.NextQuestInChain);
-  if (prev > 0) { prevOf.set(id, prev); continues.add(prev); }
-  if (next > 0) { continues.add(id); if (!prevOf.has(next)) prevOf.set(next, id); }
+  const id = r.entry as number;
+  link(Math.abs(Number(r.PrevQuestId)), id);
+  link(id, Number(r.NextQuestInChain));
+  // (work in it: a creature, a thing to fetch, an escort or an event)
+  let work = ((r.SpecialFlags as number) & 2) === 2;
+  for (let k = 1; k <= 4; k++) {
+    if (r[`ReqCreatureOrGOId${k}`]) work = true;
+    if (r[`ReqItemId${k}`] && r[`ReqItemId${k}`] !== r.SrcItemId) work = true;
+  }
+  hasWork.set(id, work);
 }
-const rootOf = (id: number) => {
-  const seen = new Set<number>();
-  let x = id;
-  while (prevOf.has(x) && !seen.has(x)) { seen.add(x); x = prevOf.get(x)!; }
-  return x;
+const nextOf = (id: number) => {
+  const s = succ.get(id);
+  if (!s || s.size !== 1) return undefined;
+  const [n] = s;
+  return pred.get(n)!.size === 1 ? n : undefined;
+};
+const prevOf = (id: number) => {
+  const p = pred.get(id);
+  if (!p || p.size !== 1) return undefined;
+  const [x] = p;
+  return nextOf(x) === id ? x : undefined;
 };
 const chains = new Map<number, number>();
-for (const id of new Set([...prevOf.keys(), ...continues])) chains.set(id, rootOf(id));
+for (const id of new Set([...succ.keys(), ...pred.keys()])) {
+  if (nextOf(id) === undefined && prevOf(id) === undefined) continue;
+  const seen = new Set<number>();
+  let x = id;
+  while (prevOf(x) !== undefined && !seen.has(x)) {
+    seen.add(x);
+    x = prevOf(x)!;
+  }
+  chains.set(id, x);
+}
+// (a chain's end: its last quest, or the last with work in it before a
+// return or a delivery: Athrikus Narassin slain, not the walk back to Delgren)
+const idleAfter = (id: number): boolean => {
+  const seen = new Set<number>();
+  for (let n = nextOf(id); n !== undefined && !seen.has(n); n = nextOf(n)) {
+    seen.add(n);
+    if (hasWork.get(n)) return false;
+  }
+  return true;
+};
+const ends = (id: number) => nextOf(id) === undefined || (hasWork.get(id) === true && idleAfter(id));
 
 // The quest givers and enders by name (as the record knows them): their
 // people and calling, their sex (their model's: the writer's "he" or "she")
@@ -186,7 +229,7 @@ for (const [item, set] of [...drops].sort((a, b) => (a[0] < b[0] ? -1 : 1))) {
 }
 for (const [id, root] of [...chains].sort((a, b) => a[0] - b[0])) {
   out.push(`chains[${id}] = ${root}`);
-  if (!continues.has(id)) out.push(`ends[${id}] = true`);
+  if (ends(id)) out.push(`ends[${id}] = true`);
 }
 writeFileSync(OUT, out.join("\n") + "\n");
 console.log(`✓ ${Object.keys(quests).length} class quests, ${npcs.size} quest givers, ${dropped} quest items' sources → ${path.relative(process.cwd(), OUT)}`);

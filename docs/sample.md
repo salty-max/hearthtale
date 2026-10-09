@@ -10,11 +10,11 @@ Each race writes in its own voice, and a place seen for the first time is descri
 
 ## Chapter 1 (levels 1 to 4)
 
-I set out in Coldridge Valley, a dwarf of the mountain with a good deal of country still to put under my boots. The cold of Dun Morogh caught in my throat, and the pines bowed under their snow. Above the valleys rose the mountain that holds Ironforge, and the sight of it made the cold easier to bear. When I tramped into Anvilmar, I fought wolves for the first time, those teeth giving me a new affection for distance. I handed Tough Wolf Meat over to Sten Stoutarm. Once back in Coldridge Valley, I put down Burly Rockjaw Troggs and thinned out Rockjaw Troggs for Balir Frosthammer, the grunting echoing long after; I settled Talin Keeneye's business with Grelin Whitebeard. A Frostmane Troll Whelp brought me close to death there. I had no wish to give my kin another name to carve in stone. I dealt with plenty of Frostmane Troll Whelps, quicker on the feet than I had allowed for.
+I set out in Coldridge Valley, a dwarf of the mountain with a good deal of country still to put under my boots. The cold of Dun Morogh caught in my throat, and the pines bowed under their snow. Above the valleys rose the mountain that holds Ironforge, and the sight of it made the cold easier to bear. When I tramped into Anvilmar, I fought wolves for the first time, those teeth giving me a new affection for distance. I handed Tough Wolf Meat over to Sten Stoutarm. Once back in Coldridge Valley, I put down Burly Rockjaw Troggs and thinned out Rockjaw Troggs for Balir Frosthammer, the grunting echoing long after; I settled Talin Keeneye's business with Grelin Whitebeard. A Frostmane Troll Whelp brought me close to death there. I had no wish to give my kin another name to carve in stone. I kept my rifle busy on plenty of Frostmane Troll Whelps.
 
 The journal went safely into Grelin Whitebeard's hands. I went on equipped with a Frostmane Leather Belt. Back in Anvilmar, the trainer taught me Serpent Sting and Track Beasts. I delivered a message to Marryk Nurribit.
 
-I had done six tasks by the end. The tally was ten Ragged Young Wolves and four Burly Rockjaw Troggs. I had had a bellyful of both. All told, it had taken an hour and thirty-five minutes. I paused in Anvilmar; an evening at home would have suited me, but this would do.
+I had done six tasks by the end. The tally was ten Ragged Young Wolves and four Burly Rockjaw Troggs. I had had a bellyful of both. All told, it had taken an hour and thirty-five minutes. I set my burdens down in Anvilmar, and only then felt how much they had weighed.
 
 ## Chapter 2 (levels 4 to 7)
 
@@ -28,7 +28,7 @@ The road brought me to Frostmane Hold. I agreed to explore Frostmane Hold, and d
 
 In Kharanos again, I came away from training with Raptor Strike. Hunter's Mark offered a way to keep my quarry from becoming merely another movement I could not place.
 
-I counted five jobs done, and began to understand the attraction of an evening at the inn. Of the fighting, eleven Leper Gnomes and ten Frostmane Snowstriders made up the most. The stretch had taken two hours and a half. I stopped in Kharanos, with my knees as stiff as an old hinge left out in the snow.
+I counted five jobs done, and began to understand the attraction of an evening at the inn. Of the fighting, eleven Leper Gnomes and ten Frostmane Snowstriders made up the most. The stretch had taken two hours and a half. I rested in Kharanos, with the road welcome to wear out somebody else for a while.
 
 ## Chapter 3 (levels 7 to 9)
 
@@ -56,7 +56,7 @@ I continued in Razor Hill, remembering how much Thrall had risked to give our pe
 
 ## Chapter 1 (levels 1 to 5)
 
-I began in Shadowglen, with a mortal life ahead of me and no wish to spend it longing for what Hyjal had taken. Moonlight silvered the leaves of Teldrassil while owls called overhead. I listened between my footfalls, unwilling to hurry through so much quiet. I encountered boars at close quarters, those jaws deserving no less care than a nightsaber's. I fought off Young Thistle Boars and let nature's anger loose on Young Nightsabers for Conservator Ilthalaine; I delivered a message to Mardant Strongoak. I turned the wild's wrath on Grells for Tarindrella, the reek of the Nether hanging about the place. I had my first encounter with spiders, my ears no quicker than my eyes to make the danger familiar.
+I began in Shadowglen, with a mortal life ahead of me and no wish to spend it longing for what Hyjal had taken. Moonlight silvered the leaves of Teldrassil while owls called overhead. I listened between my footfalls, unwilling to hurry through so much quiet. I encountered boars at close quarters, those jaws deserving no less care than a nightsaber's. I fought off Young Thistle Boars and let nature's anger loose on Young Nightsabers for Conservator Ilthalaine; I delivered a message to Mardant Strongoak. I turned the wild's wrath on Grells for Tarindrella, the reek of the Nether hanging about the place. I had my first encounter with spiders, a sight I would sooner have taken in from the shadows.
 
 I handed a Webwood Venom Sac over to Gilshalan Windwalker. The trainer taught me Moonfire and Rejuvenation. Rain scented the houses around the moonwell in Dolanaar. The sentinels kept their patient watch on the road, and I let my guard down a little. I carried a message on to Iverron. I bedded down in the open, as my people did for long ages before Darnassus was raised.
 

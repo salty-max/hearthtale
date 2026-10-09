@@ -5,7 +5,7 @@ kind: d-foes
 - [one !hard] When the fighting was done, {foes} lay at my feet, and I allowed myself a moment's pride in clean work.
 - [one hard] The fight with {foes} took everything I had to give, and a good deal I had not known was there.
 - [one hard] I got the better of {foes} in the end, though only by the thickness of my own hide.
-- [two !hard] Both {foes} fell to me, and each deserves a proper telling, which I mean to take my time over.
+- [two !hard] Both {foes} fell to me, and I came away from each with the sound of it still ringing in my ears.
 - [two hard] I fought {foes} and came out the other side of both, though one of them left me a good deal less sound than it found me.
 - [!one !two !hard] I dealt with {foes} in turn, and all of them finished on the ground and I on my feet, which is the proper order of things.
 - [!one !two hard] I fought my way through {foes}, and by the last of them there was very little of me left that had not been knocked loose.

@@ -127,10 +127,12 @@ The plan and its decisions: PLAN.md.
   `Diary.lua` (each chapter as a short entry written at the rest that ends
   it, read first in the window and on the site, the chapter in full a click
   away; from the same
-  record and the Book's lines: the opening, its story (`d-why`, `d-why2`:
-  writing/why/; a quest's story told once; a chain's quest after an earlier
-  entry told one of it, `[thread]`, its last `[thread settled]`: Knowledge.lua
-  `chains`, `ends`), new lands (`d-land`), new spells
+  record and the Book's lines: the opening, its story (`d-why`, `d-why2`,
+  a second climax too long to share the sentence `d-why-also`: writing/why/;
+  a quest's story told once, led by its place when elsewhere; a chain's quest
+  after an entry of the last four told one of it, `[thread]`, its end
+  `[thread settled]`: Knowledge.lua `chains`, one-to-one links only, `ends`,
+  the last quest with work before a return), new lands (`d-land`), new spells
   (`d-powers`, a spell's new rank never), the firsts of a life, named foes
   (`d-foes`; one that killed me is the death's), deaths (`d-deaths`) or the
   closest call, a dungeon or company, the pet at my side named again
@@ -139,7 +141,9 @@ The plan and its decisions: PLAN.md.
   shape (`d-close`: `[hard]`, `[near]`, `[found]`, `[learned]`, `[delve]`,
   `[quiet]`, `[grouped]`, `[fought]`), the rest; each race has its own of
   every frame (two of its own an entry at most, the ending aside);
-  `[!diary]` keeps out a line that leans
+  a lesson's own `[diary]` line; never a sentence its chapter, or the one
+  before, says word for word (`ns.writeDiary(c, book)`, checked by the
+  writer test); `[!diary]` keeps out a line that leans
   on a moment the diary doesn't tell; `luajit addon/test/read.lua <saved
   file> diary` and the playthroughs' `*.diary.md` show both side by side),
   `Save.lua` (the book written into the saved file at each logout, each
@@ -233,7 +237,8 @@ The plan and its decisions: PLAN.md.
   at the game's highest level (`summit`: the journal stops recording). A
   stretch at a craft is one clause (`c-made`); a raid is one moment (`c-raid`).
   A quest's work is told where it was done (`done`), its turn-in a short return
-  (`c-report`); handed in on the spot (the turn-in next, same place), told once
+  (`c-report`); an escort or an event (no objective in the log, the game
+  says when it is done) is `c-event`, by its why, a highlight; handed in on the spot (the turn-in next, same place), told once
   at the turn-in with whom it was for (`c-handed-item`, `c-handed-kill`:
   "I brought Sten Stoutarm eight Tough Wolf Meat"); an abandoned quest's work
   is taken back. A night and its waking under 30 minutes apart (older

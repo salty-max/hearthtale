@@ -416,16 +416,32 @@ for (const [id, q] of [...quests].sort((x, y) => x[0] - y[0])) {
   const cls = CLASSES.filter(([, bit]) => (q.classes ?? 0) & bit).map(([c]) => c);
   if (cls.length === 1) knowledge.push(`K.quests[${id}] = { class = ${qs(cls[0])} }`);
 }
-// (their chains, as Knowledge.lua's: chains[id] the first quest, ends[id] the last)
-const fPrev = new Map<number, number>(), fContinues = new Set<number>();
-for (const [id, q] of quests) if (q.prev && q.prev > 0) { fPrev.set(id, q.prev); fContinues.add(q.prev); }
-for (const id of new Set([...fPrev.keys(), ...fContinues])) {
-  if (!quests.has(id)) continue;
+// (their chains, as Knowledge.lua's: chains[id] the first quest, ends[id] the
+// last; a link one to one only, a prerequisite of several is no story going on)
+const fSucc = new Map<number, number[]>(), fPred = new Map<number, number[]>();
+for (const [id, q] of quests)
+  if (q.prev && q.prev > 0 && quests.has(q.prev)) {
+    fSucc.set(q.prev, [...(fSucc.get(q.prev) ?? []), id]);
+    fPred.set(id, [...(fPred.get(id) ?? []), q.prev]);
+  }
+const fNext = (id: number) => {
+  const s = fSucc.get(id);
+  return s && s.length === 1 && fPred.get(s[0])!.length === 1 ? s[0] : undefined;
+};
+const fBack = (id: number) => {
+  const p = fPred.get(id);
+  return p && p.length === 1 && fNext(p[0]) === id ? p[0] : undefined;
+};
+for (const id of [...quests.keys()].sort((x, y) => x - y)) {
+  if (fNext(id) === undefined && fBack(id) === undefined) continue;
   const seen = new Set<number>();
   let x = id;
-  while (fPrev.has(x) && !seen.has(x)) { seen.add(x); x = fPrev.get(x)!; }
+  while (fBack(x) !== undefined && !seen.has(x)) {
+    seen.add(x);
+    x = fBack(x)!;
+  }
   knowledge.push(`K.chains[${id}] = ${x}`);
-  if (!fContinues.has(id)) knowledge.push(`K.ends[${id}] = true`);
+  if (fNext(id) === undefined) knowledge.push(`K.ends[${id}] = true`);
 }
 const MAX_DROPS = 12;
 const drops = new Map<string, Set<string>>();

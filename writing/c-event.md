@@ -1,0 +1,12 @@
+---
+kind: c-event
+---
+- [story] spent a good while {why}
+- [story] set about {why}, and saw it through
+- [story] had my hands full {why}
+- [story] gave my whole attention to {why}
+- [story] took on the work of {why}
+- [story] put my back into {why}
+- [!story] saw {giver}'s trouble through to its end
+- [!story] stood by {giver} until the thing was done
+- [!story] did what {giver} needed, and it took more than a message

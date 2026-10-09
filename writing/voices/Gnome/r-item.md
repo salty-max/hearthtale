@@ -12,6 +12,5 @@ kind: r-item
 - [night] my eyes struggling with the search in the dark
 - [night] the dark frustrating every attempt to be methodical
 - a little order salvaged from the rummaging
-- [one !plural] rather more cargo than ornament
 - [paper one !plural] the writing presenting its own puzzle
 - [stone one !plural] a mineral with no consideration for the person carrying it

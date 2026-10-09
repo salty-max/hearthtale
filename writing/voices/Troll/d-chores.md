@@ -6,5 +6,5 @@ kind: d-chores
 - [!also] {n} tasks for {people} kept me occupied and, for the most part, out of trouble.
 - [!also] I said yes to {n} small tasks, since saying no is a skill I have never troubled to learn.
 - [!also] There were {n} plain tasks to see to, and I did each with one eye on the work and the other on the country around it.
-- [also] Under it all ran {n} ordinary tasks, and each one made the country feel less like somebody else's and more like mine.
+- [also home] Under it all ran {n} ordinary tasks, and each one made the country feel less like somebody else's and more like mine.
 - [lots !also] The ordinary work alone ran to {n} tasks, and I kept my good cheer through most of them and my caution through all of them.

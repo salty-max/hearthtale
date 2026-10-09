@@ -17,7 +17,8 @@ local function addonVersion()
 end
 
 local function written(c, level)
-  local b, diary = ns.writeBook(c), ns.writeDiary(c)
+  local b = ns.writeBook(c)
+  local diary = ns.writeDiary(c, b)
   local out = {
     version = addonVersion(),
     client = ns.data.client,

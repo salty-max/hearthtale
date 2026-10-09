@@ -764,7 +764,32 @@ W.at = at
 W.TAKEN_IN = TAKEN_IN
 W.CLASS_FIGHT = CLASS_FIGHT
 W.topKills = topKills
+-- (in a quest's why, my own people are mine: "for the Forsaken", written by one)
+local OURS = {
+  Human = { { "the humans", "my people" } },
+  Dwarf = { { "the dwarves", "my people" } },
+  NightElf = { { "the night elves", "my people" }, { "the kaldorei", "my people" } },
+  Gnome = { { "the gnomes", "my people" } },
+  Orc = { { "the orcs", "my people" } },
+  Troll = {
+    { "the Darkspear tribe", "my tribe" },
+    { "the Darkspear trolls", "my people" },
+    { "the Darkspear", "my people" },
+  },
+  Tauren = { { "the tauren", "my people" }, { "the shu'halo", "my people" } },
+  Scourge = { { "the Forsaken", "my people" } },
+}
+-- A quest's why, as one of the people it names writes it: "for the
+-- Forsaken" is "for my people" in a Forsaken's diary.
+local function ours(text, race)
+  for _, pair in ipairs(OURS[race] or {}) do
+    text = text:gsub(pair[1]:gsub("%p", "%%%0"), pair[2])
+  end
+  return text
+end
+
 W.instruction = instruction
+W.ours = ours
 W.lowerFirst = lowerFirst
 W.taskOf = taskOf
 W.linked = linked

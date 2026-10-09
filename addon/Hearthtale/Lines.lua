@@ -21,7 +21,7 @@ local objectivesLike, sizes, uncounted = W.objectivesLike, W.sizes, W.uncounted
 local article, capitalise, FACTION, HOME, KIN = W.article, W.capitalise, W.FACTION, W.HOME, W.KIN
 local faith, weapon, FOE_PEOPLE, FOE_KIND, foeOf = W.faith, W.weapon, W.FOE_PEOPLE, W.FOE_KIND, W.foeOf
 local THING_KIND, thingOf, instruction, lowerFirst = W.THING_KIND, W.thingOf, W.instruction, W.lowerFirst
-local taskOf, TEETH, ELEMENT, CLASS_FIGHT = W.taskOf, W.TEETH, W.ELEMENT, W.CLASS_FIGHT
+local taskOf, TEETH, ELEMENT, CLASS_FIGHT, ours = W.taskOf, W.TEETH, W.ELEMENT, W.CLASS_FIGHT, W.ours
 
 -- ── the writer of one book ───────────────────────────────────────────────────
 local function hash(s)
@@ -137,6 +137,7 @@ local ROUTINE = {
   ["c-first"] = "r-first",
   ["c-deed-item"] = "r-item",
   ["c-deed-task"] = "r-task",
+  ["c-event"] = "r-task",
   ["c-deed-word"] = "r-task",
   ["c-chain"] = "r-task",
   ["c-deliver"] = "r-task",
@@ -162,6 +163,7 @@ local function weigh(kind, ctx)
   if kind == "c-deed-kill" or kind == "c-handed-kill" then return ctx.named and 3 or 2 end -- one asked for by name
   if kind == "c-handed-item" then return 2 end
   if kind == "c-deed-task" then return ctx.escort and 3 or 2 end
+  if kind == "c-event" then return 3 end -- (an escort, an event: a highlight)
   if kind == "c-deed-item" or kind == "c-hunt" then return 2 end -- (a hunt: no remark, its creatures last)
   if kind == "c-gear" then return ctx.fine and 2 or ctx.made and 1 or 0 end
   if kind == "c-report" or kind == "c-deliver" or kind == "c-deed-word" or kind == "c-quest" or kind == "c-fold" then
@@ -204,6 +206,7 @@ local AGAIN_DROPS = {
   ["c-deed-kill"] = true,
   ["c-deed-item"] = true,
   ["c-deed-task"] = true,
+  ["c-event"] = true,
   ["c-deed-word"] = true,
   ["c-handed-kill"] = true,
   ["c-handed-item"] = true,
@@ -213,6 +216,7 @@ local AGAIN_DROPS = {
 }
 local AGAIN = { ["c-report"] = true, ["c-deliver"] = true, ["c-deed-word"] = true, ["c-quest"] = true }
 local SINGULAR_S = W.SINGULAR_S
+local ZALAZANE = 826 -- (the quest that ends him)
 local Book = {}
 Book.__index = Book
 
@@ -229,6 +233,7 @@ local function newBook(c)
     chapterNo = 0,
     kindUses = {},
   }, Book)
+  b.race = race
   b.voice = { home = HOME[race], kin = KIN[race], faith = faith(race, class), weapon = weapon(race, class) }
   b.own = ns.data.voices and ns.data.voices[race] -- the race's own journal voice (writing/voices/<Race>/)
   b.style = STYLE[race] or STYLE.default
@@ -251,6 +256,12 @@ local function newBook(c)
   b.base = { hc = c.hardcore or nil, ["race:" .. race] = true, ["class:" .. class] = true }
   -- (a class that fights with a blade in hand: only it "cuts down" a foe)
   b.base.melee = (class == "WARRIOR" or class == "ROGUE" or class == "PALADIN") or nil
+  -- (the chapter Zalazane fell in: a Darkspear's hope for it ends there)
+  for i, ch in ipairs(c.chapters or {}) do
+    for _, m in ipairs(ch.log or {}) do
+      if m.k == "quest" and m.id == ZALAZANE and not b.zalazaneAt then b.zalazaneAt = i end
+    end
+  end
   if b.faction then b.base["faction:" .. b.faction] = true end
   return b
 end
@@ -553,7 +564,8 @@ function Book:pick(kind, key, prefer, ownFresh, fresh, voiced, all)
   local ownOldest
   if #ownFresh == 0 then
     -- (a routine clause's own verbs come back less often: they are short)
-    local gap = routine and 2 * OWN_GAP or OWN_GAP
+    local own = self.ownGap or OWN_GAP
+    local gap = routine and 2 * own or own
     local spaced = {}
     for _, x in ipairs(all) do
       if
@@ -877,6 +889,9 @@ end
 -- delivered, the task done, or who asked. Returns the text and what was
 -- chosen, as Book:say.
 function Book:deed(m, key, tags)
+  -- (work that mattered, writing/why/ weighs it 2 or more: no quip after it)
+  local why = m.id and ns.data.why and ns.data.why[m.id]
+  if why and why[1] >= 2 then tags.quiet = true end
   local o = objectiveOf(m)
   local objective = o and o.text and lowerFirst(o.text)
   if objective and (objective:match("^tame ") or objective:lower():match(" tamed[%.:]?%s*$")) then return end
@@ -1154,6 +1169,15 @@ function Book:deed(m, key, tags)
     local site = values.task:match("^explore the (.+)$")
     if site and (self.placeNames[site] or (ns.data.scenery or {})[site]) then values.task = "explore " .. mid(site) end
     done, said = self:say("c-deed-task", key, values, tags, nil, true)
+  elseif not o and (m.k == "done" or m.told) then
+    -- an escort, an event: no objective in the log, the game said when it was
+    -- done (Quests.lua); told by what it was for (writing/why/), else by who
+    -- asked, never as word carried to its ender
+    values.why = why and ours(why[2], self.race)
+    tags.story, tags.escort = values.why and true or nil, true
+    if values.why or m.giver then
+      done, said = self:say("c-event", key, values, tags, nil, true)
+    end
   elseif ender and m.giver then
     done, said = self:say("c-deed-word", key, values, tags, nil, true)
   end
