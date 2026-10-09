@@ -8,7 +8,7 @@ kind: quests-many
 - By the end I had seen {n} tasks through, quite content to leave being useful to somebody else for a while.
 - I had completed {n} tasks, and wanted one small kindness that asked nothing back.
 - I had finished {n} jobs, enough to wish I had learned to refuse a favour gracefully.
-- I had brought {n} errands to an end, with {giver}'s the last claim on my strength for a while.
+- I had brought {n} errands to an end, the last of them for {giver}.
 - The {n} tasks behind me had left me rather more fond of sitting still than of being helpful.
 - I had finished {n} small jobs, enough to excuse myself from the next request without shame.
 - [hc] I had survived to finish {n} tasks, and wanted more from the evening than another proof that I could be useful.
@@ -22,7 +22,7 @@ kind: quests-many
 - [plain] I had done {n} tasks by the end.
 - [plain] The tasks numbered {n} by the time I stopped.
 - [plain] I had seen {n} tasks to their end.
-- [plain] That came to {n} tasks, {giver}'s the last.
+- [plain] That came to {n} tasks, the last of them for {giver}.
 - [plain] All told, I had done {n} tasks.
 - {n} tasks were done by the end of it, enough to make a quiet evening seem well earned.
 - By the end, {n} jobs were behind me, and I hoped the next stranger needed no more than directions.

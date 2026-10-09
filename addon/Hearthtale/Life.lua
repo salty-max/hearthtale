@@ -153,8 +153,21 @@ ns.on("SKILL_LINES_CHANGED", function() lookAtTrades(false) end)
 -- Something worn for the first time (green and above; an item put on again,
 -- after another, is no news). worn[itemId] = true; made[itemId] = true for
 -- what the character crafted ("You create: ..."), told as such when put on.
+-- The weapon in hand (a hunter's: the bow or gun), by its kind (the game's
+-- weapon subclass: 7 a sword, 10 a staff...), whatever its quality: a moment
+-- no sentence tells, for the writer's "my sword" rather than one by race.
+local function lookAtWeapon(c)
+  local get = C_Item and C_Item.GetItemInfoInstant
+  local link = get and GetInventoryItemLink("player", c.class == "HUNTER" and 18 or 16)
+  if not link or secret(link) then return end
+  local _, _, _, _, _, classID, subclassID = get(link)
+  if classID ~= 2 or not subclassID or secret(subclassID) or c.weapon == subclassID then return end
+  c.weapon = subclassID
+  moment("weapon", { weapon = subclassID })
+end
 local function lookAtGear(quiet)
   local c = char()
+  lookAtWeapon(c)
   c.worn = c.worn or {}
   for slot = 1, 19 do
     local link = GetInventoryItemLink("player", slot)

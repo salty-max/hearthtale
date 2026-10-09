@@ -122,6 +122,10 @@ local IRREGULAR = {
   Shaman = "Shamans",
   Undead = "Undead",
   Dead = "Dead",
+  Highborne = "Highborne",
+  Matriarch = "Matriarchs",
+  Patriarch = "Patriarchs",
+  Monarch = "Monarchs",
   Vermin = "Vermin",
   Wildkin = "Wildkin",
   Moonkin = "Moonkin",
@@ -154,7 +158,7 @@ local SINGULAR_S = { Lens = true, Atlas = true, Canvas = true, Gas = true, Chaos
 local UNCOUNTED = set([[
   Meat Cloth Leather Silk Wool Ore Water Oil Blood Moss Sand Ash Powder Venom Ichor Dust Silver Gold
   Iron Copper Bark Mail Grain Barley Rye Corn Pulp Nitroglycerin Salt Flour Ink Rum Ale Wine Honey Tar
-  Clay Coal Sap Resin Slime Ooze Mud
+  Clay Coal Sap Resin Slime Ooze Mud Lumber
 ]])
 -- An item: "a Wolf Fang Necklace", but "Cuirboulle Gloves", "Blackened Defias
 -- Armor", "Smite's Mighty Hammer".
@@ -205,7 +209,7 @@ local function sizes(n, mass, pack)
   end
   local out
   if n >= 20 then
-    out = { "a great many", "dozens of", "no end of" }
+    out = { "a great many", "dozens of", "countless" }
     if n >= 40 then table.insert(out, "scores of") end
   elseif n >= 12 then
     out = { "a good many", "a fair number of", "plenty of", "quite a few" }
@@ -455,13 +459,28 @@ local function faith(race, class)
   return FAITH_RACE[race]
 end
 -- {weapon} is only ever an object ("fell to my hammer"), never a subject.
+-- (before a weapon in hand is known: by class, never by race but a dwarf
+-- hunter's first gun; then by the weapon held, WEAPON_OF its subclass)
 local function weapon(race, class)
-  if class == "WARRIOR" then
-    return (race == "Orc" or race == "Dwarf" or race == "Tauren" or race == "Troll") and "my axe" or "my sword"
-  end
+  if class == "WARRIOR" then return "my weapon" end
   if class == "HUNTER" then return race == "Dwarf" and "my rifle" or "my bow" end
-  return ({ PALADIN = "my hammer", ROGUE = "my blades", SHAMAN = "my mace" })[class] or "my staff"
+  return ({ PALADIN = "my hammer", ROGUE = "my dagger", SHAMAN = "my mace" })[class] or "my staff"
 end
+W.WEAPON_OF = {
+  [0] = "my axe",
+  [1] = "my axe",
+  [2] = "my bow",
+  [3] = "my rifle",
+  [4] = "my mace",
+  [5] = "my mace",
+  [6] = "my polearm",
+  [7] = "my sword",
+  [8] = "my sword",
+  [10] = "my staff",
+  [13] = "my fists",
+  [15] = "my dagger",
+  [18] = "my crossbow",
+}
 
 -- The other side's people, as a sentence names them ("a night elf hunter").
 local RACE_NAME = {
@@ -527,14 +546,27 @@ local FOE_PEOPLE = named([[
   satyr: Satyr, Hatefury, Bleakheart, Xavian, Haldarr, Legashi
   furbolg: Furbolg, Gnarlpine, Timbermaw, Foulweald, Thistlefur, Deadwood, Blackwood, Winterfall
   trogg: Trogg, Rockjaw, Stonesplinter, Stonevault
-  outlaw: Defias, Syndicate, Bandit, Brigand, Southsea, Bloodsail, Pirate, Highwayman, Venture Co,
-          Smuggler, Cutthroat, Wastewander
+  outlaw: Defias, Syndicate, Bandit, Brigand, Southsea, Bloodsail, Pirate, Highwayman, Smuggler,
+          Cutthroat, Wastewander
+  venture: Venture Co
   scarlet: Scarlet
   cenarion: Cenarius, Cenarion, Keeper Ordanus
 ]])
 local FOE_KIND =
   { Undead = "undead", Demon = "demon", Elemental = "elemental", Dragonkin = "dragonkin", Spider = "spider" }
+-- (peoples told by name whatever their kind: a leper gnome is a gnome, the
+-- Writhing Highborne are Highborne before they are undead)
+local BY_NAME = named([[
+  leper: Leper Gnome, Leprous
+  highborne: Highborne
+  cenarion: Cenarius, Cenarion, Keeper Ordanus
+]])
 local function foeOf(name, kind)
+  for _, people in ipairs(name and BY_NAME or {}) do
+    for _, word in ipairs(people[2]) do
+      if name:find(word, 1, true) then return people[1] end
+    end
+  end
   if FOE_KIND[kind or ""] then return FOE_KIND[kind] end
   if not name or (kind and kind ~= "Humanoid") then return nil end
   for _, people in ipairs(FOE_PEOPLE) do
@@ -545,6 +577,11 @@ local function foeOf(name, kind)
 end
 -- What a thing found is, from its name: a word of it ("Silithid Egg").
 local THING_KIND = named([[
+  jewel: Necklace, Ring, Pendant, Amulet, Charm, Locket, Choker, Brooch, Signet, Watch, Bracelet, Earring
+  seed: Seed, Acorn, Nut
+  food: Oats, Fish, Sunfish, Bread, Cake, Pie, Cheese, Apple, Berry, Berries, Grain, Flour, Lunch, Supper,
+        Ration, Jerky, Stew, Soup, Stout, Ale, Wine, Brew, Spice, Honey, Milk, Mushroom Stew
+  cargo: Barrel, Crate, Chest, Keg, Cask, Lumber, Log, Plank, Strongbox, Lockbox, Sack, Supplies, Shipment
   stone: Ore, Stone, Crystal, Rock, Gem, Shard, Pebble, Geode, Nugget
   egg: Egg
   feather: Feather, Plume, Quill, Down
@@ -552,7 +589,7 @@ local THING_KIND = named([[
   paper: Letter, Note, Journal, Book, Tome, Page, Plans, Orders, Map, Document, Report, Manual, Scroll,
          Ledger, Diary, Missive, Papers, Writ, Contract, Manifest, Parchment
   plant: Herb, Flower, Bloom, Petal, Root, Leaf, Moss, Mushroom, Fungus, Shroom, Weed, Lotus, Thistle,
-         Briar, Seed, Bark, Lily, Blossom, Sprout, Cactus, Vine, Frond, Bulb
+         Briar, Bark, Lily, Blossom, Sprout, Cactus, Vine, Frond, Bulb
   relic: Relic, Idol, Artifact, Statue, Statuette, Fragment, Tablet, Carving, Totem, Figurine, Rune
   remains: Bone, Skull, Claw, Fang, Tooth, Teeth, Tusk, Horn, Heart, Eye, Tail, Ear, Paw, Talon, Gland,
            Sac, Blood, Ichor, Mane, Brain, Tongue, Wing, Head, Scalp, Hoof, Spine, Venom, Snout, Beak,
@@ -753,7 +790,33 @@ W.HORDE_RACE = HORDE_RACE
 W.CLASS_NAME = CLASS_NAME
 W.FINAL = FINAL
 W.FOE_PEOPLE = FOE_PEOPLE
+-- A class's first spells, known from the first day: a new rank is no news.
+local FIRST_SPELLS = {
+  WARRIOR = { "Battle Stance", "Heroic Strike" },
+  PALADIN = { "Seal of Righteousness", "Holy Light" },
+  HUNTER = { "Raptor Strike", "Auto Shot" },
+  ROGUE = { "Sinister Strike", "Eviscerate", "Stealth" },
+  PRIEST = { "Smite", "Lesser Heal" },
+  SHAMAN = { "Lightning Bolt", "Healing Wave" },
+  MAGE = { "Fireball", "Frost Armor" },
+  WARLOCK = { "Shadow Bolt", "Demon Skin" },
+  DRUID = { "Wrath", "Healing Touch" },
+}
+W.FIRST_SPELLS = FIRST_SPELLS
 W.FOE_KIND = FOE_KIND
+-- (a quest's "giver" or "ender" that is no person: a corpse, a machine, a
+-- spirit of the elements; "I brought word to the Dead Cultist" is not told)
+local THINGS = set([[ Shredder Construct Manifestation Remains Corpse Totem Brazier ]])
+function W.isThing(name)
+  if not name then return false end
+  if name:find("^Dead ") or name:find("'s %u") then return true end
+  for word in name:gmatch("%a+") do
+    if THINGS[word] then return true end
+  end
+  return false
+end
+-- (beasts no one need fear: a first meeting with them is no fright)
+W.HARMLESS = { Turtle = true, Tallstrider = true, ["Carrion Bird"] = true }
 W.foeOf = foeOf
 W.THING_KIND = THING_KIND
 W.thingOf = thingOf

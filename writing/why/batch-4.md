@@ -12,7 +12,7 @@ kind: why
 - 848 1 | picking fungal spores by the oases for Apothecary Helbrim, whose fellow Forsaken prized their strange properties
 - 849 3 | blowing up the flying machine at Bael Modan, a dwarven weapon of war and an insult to Gann Stonespire's lost tribe
 - 850 3 | hunting down Barak Kodobane, one of the new leaders rallying the Kolkar centaurs, for Regthar Deathgate
-- 851 3 | stirring up the centaurs at the Stagnant Oasis until Verog the Dervish came, so his head could join Barak Kodobane's
+- 851 3 | stirring up the centaurs at the Stagnant Oasis until Verog the Dervish came, the next of the Kolkar leaders after Barak Kodobane
 - 852 3 | killing Hezrul Bloodmark, leader of the Kolkar, to fracture the centaurs and blunt their threat to the Horde
 - 853 1 | rushing Apothecary Helbrim's rendered spores to Apothecary Zamah in Thunder Bluff before the emulsion lost its potency
 - 855 1 | stripping bracers from Kolkar warriors for Regthar Deathgate's bounty, to thin the centaur troops
@@ -26,7 +26,7 @@ kind: why
 - 870 2 | searching the Forgotten Pools for the power seeping up beneath the Barrens, and finding a fissure for Tonga Runetotem
 - 871 2 | thinning the Razormane quilboars that had been attacking the supply lines from Durotar, for Thork at the Crossroads
 - 872 3 | killing Kreenig Snarlsnout, the Razormane behind the raids on the Durotar caravans, and bringing his tusk to Thork
-- 873 3 | swimming out to slay Isha Awak, the Deep Doom that had devoured many coastal humans, the worthy prey Mahren Skyseer set me
+- 873 3 | swimming out to slay Isha Awak, the Deep Doom of the coast, the worthy prey Mahren Skyseer had set me
 - 875 2 | picking off the Witchwing Slayers, the harpy lieutenants of the Dry Hills, in a decisive strike at their matriarchy
 - 876 3 | slaying Serena Bloodfeather, whose harpies raided Horde caravans to avenge the sister Rexxar had killed
 - 877 2 | planting dead seeds in a fissure at the Stagnant Oasis for Tonga Runetotem, and watching them spring to life
@@ -279,7 +279,7 @@ kind: why
 - 491 1 | handing the Woven Wand, token of a friendship Thule had betrayed, to his old colleague Bethor Iceshard
 - 493 1 | carrying Apothecary Renferrel's findings on the New Plague to Apothecary Lydon in Tarren Mill, to speed the work
 - 516 2 | finding Beren's Peril, where undead were massing for an attack, and striking them first for Shadow Priest Allister
-- 530 3 | killing Valdred Moray at the Greymane Wall and bringing his hands to Raleigh Andrean, whose wife Valdred had strangled
+- 530 3 | killing Valdred Moray at the Greymane Wall and bringing his hands to Raleigh Andrean, whose wife he had strangled
 - 6323 1 | flying Podrig's order to Gordon Wendham in the Undercity, for weapons to replace those the Deathguards had lost
 - 6324 1 | bringing Gordon's crate of weapons back to Deathguard Podrig, so the Sepulcher's guards would not be caught unprepared
 # Westfall

@@ -9,9 +9,12 @@ kind: d-land
 - [!one !home !hosts] I saw {lands} for the first time.
 - [!one !home !hosts] The road took me into new country: {lands}.
 - [!one !home !hosts] {lands} were all new ground to me, and I tried to take in as much as I could.
-- [!one !home !hosts] More of the world opened up ahead of me, {lands} among it.
+- [!one !home !hosts] More of the world opened up ahead of me, {lands} among the rest.
 - [!one !home !hosts] For the first time I saw {lands}.
 - [one home] I saw {lands} for the first time, my own people's country though new to my eyes.
 - [one home] I set eyes on {lands} at last, and was glad to know my own people's land for myself.
 - [!one home] I saw {lands} for the first time, all of it my own people's country.
 - [one hosts] I saw {lands} for the first time, part of the country that had taken my people in.
+- [capital home] I walked into {lands} for the first time, and a city I had only heard of became a place I could find my way home to.
+- [capital home] I saw {lands} with my own eyes at last, and found it larger, louder and more mine than I had pictured.
+- [capital hosts] I came into {lands} for the first time, the city that had taken my people in, and looked at it with a guest's gratitude and a stranger's eyes.

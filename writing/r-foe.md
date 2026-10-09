@@ -55,8 +55,8 @@ kind: r-foe
 - [trogg] the stink of them clinging to me afterwards
 - [trogg melee] harder in the skull than anything had a right to be
 - [trogg] the grunting echoing long after
-- [outlaw] a life of crime ending exactly where such lives do
-- [outlaw] the kind of greed that ends exactly like that
+- [outlaw !one] their thieving finished for good
+- [outlaw !one] their loot no use to them now
 - [outlaw] with no pity to spare for anyone in that trade
 - [scarlet melee] the certainty more unsettling than the blade
 - [scarlet] the prayers turning to curses at the end
@@ -78,3 +78,5 @@ kind: r-foe
 - [spider] the skittering still in my ears
 - [cenarion class:DRUID] uneasy at turning a druid's gifts on those who serve Cenarius
 - [cenarion race:Tauren !class:DRUID] with Cenarius's name weighing on me more than the fight had
+- [cenarion race:NightElf !class:DRUID] with no pleasure at all in raising a hand against the Cenarion Circle's own
+- [cenarion race:Tauren] the Earth Mother's quiet children set against me, and I against them

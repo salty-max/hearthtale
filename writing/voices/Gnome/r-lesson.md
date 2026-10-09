@@ -12,8 +12,8 @@ kind: r-lesson
 - [new] a beginner's awkwardness taking the shine off my enthusiasm
 - [new] a new way to be useful, which Mekkatorque asks of all of us
 - [new one] every part of it new to my hands
-- [low] a beginner with far more questions than the lesson had answers
+- [low] a beginner with far more questions than the training had answers
 - [low] my fingers slower than my head, which annoyed them both
 - [high] a useful addition to the ingenuity I had survived on
 - [high] one more trick for a bag already full of them
-- a knack worth having on the day we take Gnomeregan back
+- [one] a knack worth having on the day we take Gnomeregan back

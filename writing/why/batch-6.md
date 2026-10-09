@@ -268,7 +268,7 @@ kind: why
 - 412 2 | taking cogs and gears from the leper gnomes outside Gnomeregan for Razzle Sprysprocket's Recombobulator, meant to reverse their plight
 - 413 1 | carrying a barrel of Rejold's new Shimmer Stout to his brother Wellart at the guard tower on the Loch Modan border
 - 414 1 | taking a cask of Shimmer Stout to Mountaineer Kadrell in Thelsamar, so a fellow Mountaineer could taste the Barleybrews' latest
-- 417 3 | killing Mangeclaw, the huge Ice Claw Bear that mauled Pilot Hildelve, the revenge he wished for in his journal
+- 417 3 | killing Mangeclaw, the Ice Claw Bear that mauled Pilot Hildelve, as the dead pilot's journal asked
 - 419 1 | finding Pilot Mori Hildelve in the hills, frozen and dead, after he went looking for a rare ore for blastpowder
 - 432 2 | killing Rockjaw Skullthumpers in the Gol'Bolar quarry for a furious Foreman Stonebrow, whose work site they had wrecked
 - 433 2 | clearing Rockjaw Bonesnappers out of the Gol'Bolar quarry for Senator Mehr Stonehallow, so the miners could get back to work

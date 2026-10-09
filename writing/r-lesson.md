@@ -4,7 +4,7 @@ kind: r-lesson
 - with a good deal still to practise
 - the theory easier than the practice
 - [one] impatient to try it somewhere that mattered
-- turning the lesson over in my head for some time after
+- turning what I had learned over in my head for some time after
 - my hands still slow with the new movements
 - surprised how quickly hands learn what the head resists
 - a little clumsier at first than I would have liked

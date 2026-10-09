@@ -194,7 +194,7 @@ kind: why
 - 87760 3 | slaying the Stormscale beastmistress in the Ruins of Mathystra for her rod, so the naga could no longer enslave the threshers and sea turtles
 - 97914 1 | carrying Thundris Windweaver's letter to Baros Alexston in Stormwind, his plea to have Auberdine and its work recognised
 - 98013 2 | cutting down the Stormscale naga in the ruins for Arbal, cursed Highborne who might aid the Twilight's Hammer against the forests
-- 98025 3 | slaying Jai'vhanel, a black owl long a guardian there, gone mad and attacking travellers on the road to Auberdine
+- 98025 3 | slaying Jai'vhanel, a black owl long a guardian of Darkshore's roads, gone mad and attacking travellers on the road to Auberdine
 - 98028 2 | carrying the clouded water globe of Baron Marinous, the elemental guardian of a ruin, to Onu at the Grove of the Ancients
 - 98042 2 | seizing a peerless eye from the Twilight's cultists at the Master's Glaive for Thundris Windweaver, who saw in it the mark of an ancient evil
 - 98461 1 | carrying Hollee's note over the sea to Tarrel Rockweaver, an old classmate she still pined for, now happily married
@@ -242,7 +242,7 @@ kind: why
 - 92110 1 | fetching murloc eyes for the odd child in the Moonbrook barn, so she could mix her first real potion
 - 92742 2 | drawing water from the wells of the Jansen Stead and the Molsen Farm for Alba Fairmoon, to trace the poison corrupting Westfall's land
 - 92744 1 | cutting gills from the shoreline murlocs for Alba Fairmoon, to learn whether the poison had reached the sea and Stormwind's fish
-- 92745 2 | killing the miners the Defias worked in Jangolode Mine and the Gold Coast Quarry, after the wells turned up toxic metals
+- 92745 2 | killing the kobolds and gnolls the Defias had digging in Jangolode Mine and the Gold Coast Quarry, once the wells turned up toxic metals
 - 92747 2 | searching Moonbrook for signs of mining under the town, Alba Fairmoon's last lead on the poison in Westfall's soil
 - 92753 2 | planting explosives by the hidden forge in the Deadmines, the source of the poison seeping into Westfall's farmland
 - 92819 3 | setting off the detonator under Moonbrook to destroy the Deadmines forge, in hope that Westfall's land could begin to heal
@@ -318,7 +318,7 @@ kind: why
 - 96774 2 | prying an ancient Gurubashi idol from a priest of the Drowned City off Stranglethorn for Mazu'kon, a truesilver channel for old blood magic
 - 97538 1 | gathering mirkweed pods from Mirkfallon Lake for Tah Winterhoof, whose red pigment for painting had run out
 - 98424 2 | gathering Supervisor Fizsprocket's papers in the Venture Co. mine for Morin Cloudstalker, plans that could be turned against them
-- 98427 3 | stopping the Venture Co. shredder in the mine near Bloodhoof Village and taking its key, so it would fell not one more tree
+- 98427 3 | stopping the Venture Co. shredder in the mine near Bloodhoof Village and taking its key, so that it would fell no more trees
 - 98430 3 | freeing Perith Stormhoof, Cairne Bloodhoof's trusted Longwalker scout, from the gnolls of Palemane Rock before he became their feast
 - 98435 1 | delivering Thunderhorn's report on the cleansed wells of Mulgore to Arch Druid Hamuul Runetotem
 - 99079 1 | searching the eastern edge of Mulgore for Longwalker Malah Longwind, three days overdue, and finding her shot down with arrows

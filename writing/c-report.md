@@ -10,12 +10,12 @@ kind: c-report
 - [!again] saw {ender} again, the work behind me
 - [!again] handed in my work to {ender}
 - [again] reported back once more
-- [again] went back with the rest of it done
+- [again] reported that one done as well
 - [again] checked in again
-- [again] handed over the rest
+- [again] handed that one over as well
 - [again] reported the rest done as well
-- [again] came back with more done
-- [again] saw that business finished too
+- [again] went back to report that one too
+- [again] saw that one through as well
 - [turn !again] {ender} heard that the work was done
 - [turn !again] {ender} had my report soon after
 - [turn !again] word that it was done went back to {ender}

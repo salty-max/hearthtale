@@ -9,22 +9,22 @@ kind: c-deed-item
 - [!one !done !more] came back with {n} {thing}
 - [!one !more] tracked down {n} {thing}
 - [!one !done !more] fetched {n} {thing}
-- [one !more] gathered {thing}
-- [one !more] collected {thing}
-- [one !more] found {thing}
-- [one !done !more] brought back {thing}
-- [one !more] recovered {thing}
-- [one !done !more] came back with {thing}
-- [one !more] tracked down {thing}
-- [one !done !more] fetched {thing}
-- [one trophy !done !more] brought {giver} {thing}
-- [one trophy !done !more] laid {thing} before {giver}
-- [one trophy !done !more] set {thing} down in front of {giver}
+- [one !more !taken] gathered {thing}
+- [one !more !taken] collected {thing}
+- [one !more !taken] found {thing}
+- [one !done !more !taken] brought back {thing}
+- [one !more !taken] recovered {thing}
+- [one !done !more !taken] came back with {thing}
+- [one !more !taken] tracked down {thing}
+- [one !done !more !taken] fetched {thing}
+- [one trophy !done !more !taken] brought {giver} {thing}
+- [one trophy !done !more !taken] laid {thing} before {giver}
+- [one trophy !done !more !taken] set {thing} down in front of {giver}
 - [!one !set done !more state] had all the {thing} I needed
 - [!one done !more state] had {n} {thing} in my pack
-- [one done !more state] had {thing} in my pack
-- [one trophy done !more] took {thing} as proof
-- [one trophy done !more] claimed {thing} as proof of the deed
+- [one done !more state !taken] had {thing} in my pack
+- [one trophy done !more !taken] took {thing} as proof
+- [one trophy done !more !taken] claimed {thing} as proof of the deed
 - [!one more] found {n} more {thing}
 - [!one more] gathered {n} more {thing}
 - [!one more] collected still more {thing}
@@ -35,11 +35,15 @@ kind: c-deed-item
 - [turn !one !more] {n} {thing} went into my pack
 - [turn !one !more !cloth !meat] by the end, {n} {thing} were in my pack
 - [turn !one !done !more] {n} {thing} went back to {giver}
-- [turn one !plural !trophy !more] {thing} turned up at last
-- [turn one !plural !trophy !more] {thing} was in my hands before long
+- [turn one !plural !trophy !more !taken] {thing} turned up at last
+- [turn one !plural !trophy !more !taken] {thing} was in my hands before long
 - [turn !one !more] the search turned up {n} {thing}
 - [turn !one !more] it took some searching to find {n} {thing}
 - [turn !one !more] {giver} wanted {n} {thing}, and got them
 - [turn !one !more] in the end there were {n} {thing} in my pack
-- [turn one !plural !trophy !more] the search turned up {thing}
-- [turn one !plural !trophy !more] it took some searching to find {thing}
+- [turn one !plural !trophy !more !taken] the search turned up {thing}
+- [turn one !plural !trophy !more !taken] it took some searching to find {thing}
+- [one taken !more] brought down {owner} and took {thing}
+- [one taken !more] killed {owner} for {thing}
+- [one taken !more] fought {owner} for {thing}, and won
+- [one taken !more] took {thing} from {owner} once the fight was done

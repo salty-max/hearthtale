@@ -24,9 +24,7 @@ I found my way to the Grizzled Den, eyeing the stone of the place before its peo
 
 I got up in Shimmer Ridge, feeling as if someone had tried to quarry me while I slept. I killed Timber there, and felt as if a great weight had come off the mountain above me. I improved my skinning to fifty, still far from anything I would call mastery. A Frostmane Scepter was among the spoils, a rare thing.
 
-The road brought me to Frostmane Hold. I agreed to explore Frostmane Hold, and did. I arrived in Amberstill Ranch, a new place, and new stone to look at. I saw to Vagash for Rudra Amberstill, my knuckles decidedly fond of staying out of those jaws.
-
-In Kharanos again, I came away from training with Raptor Strike. Hunter's Mark offered a way to keep my quarry from becoming merely another movement I could not place.
+The road brought me to Frostmane Hold. I agreed to explore Frostmane Hold, and did. I arrived in Amberstill Ranch, a new place, and new stone to look at. I saw to Vagash for Rudra Amberstill, my knuckles decidedly fond of staying out of those jaws. Hunter's Mark offered a way to keep my quarry from becoming merely another movement I could not place.
 
 I counted five jobs done, and began to understand the attraction of an evening at the inn. Of the fighting, eleven Leper Gnomes and ten Frostmane Snowstriders made up the most. The stretch had taken two hours and a half. I rested in Kharanos, with the road welcome to wear out somebody else for a while.
 
@@ -34,7 +32,7 @@ I counted five jobs done, and began to understand the attraction of an evening a
 
 I got under way in Kharanos, trusting my legs to hold out longer than the day's troubles. When I took the road on to the Grizzled Den, I saw a Wendigo Mane safely to Pilot Stonegear. I shared the road with Thorgrim, company I would gladly have bought a round for. The way went on into Gol'Bolar Quarry. I brought down Rockjaw Bonesnappers with my rifle for Ozzie Togglevolt, the stink of them clinging to me afterwards.
 
-Back in Kharanos, I was taught Concussive Shot and Mend Pet. I took the road to Amberstill Ranch, rather more at ease with the weight of a mountain overhead. I brought Bristle into my care. The heat felt almost like a welcome from home, and I stopped by a fire. Bristle fell. Out here, it could as easily have been me.
+In Kharanos again, I came away from training with Concussive Shot and Mend Pet. I took the road to Amberstill Ranch, rather more at ease with the weight of a mountain overhead. I found a companion in Bristle, a boar. The heat felt almost like a welcome from home, and I stopped by a fire. Bristle fell. Out here, it could as easily have been me.
 
 The blue water of Loch Modan lay still behind the Stonewrought Dam. I knew dwarves built on a grand scale, but the weight of all that water made me stop and look. I reached North Gate Pass. I found the Stoutlager Inn of Thelsamar beside the loch. After the open hills, its ale and blood sausages interested me more than the distance I had come.
 
@@ -42,9 +40,9 @@ The blue water of Loch Modan lay still behind the Stonewrought Dam. I knew dwarv
 
 ## Chapter 1 (levels 1 to 5)
 
-I set out in the Valley of Trials, a child of a people who had broken their chains and still had a home to build. Heat rose from the red dust of Durotar, as if the ground itself were breathing. This was the land we had claimed, and I meant to learn how to belong to it. I took my axe to several Mottled Boars for Gornek, those jaws too close to the soft parts of me. I finished Sarkoth off at Hana'zua's asking, my arms aching as they used to after a day's labour in the camps. I cut down quite a few Vile Familiars with my axe for Zureetha Fargaze.
+I set out in the Valley of Trials, a child of a people who had broken their chains and still had a home to build. Heat rose from the red dust of Durotar, as if the ground itself were breathing. This was the land we had claimed, and I meant to learn how to belong to it. I took my weapon to several Mottled Boars for Gornek, those jaws too close to the soft parts of me. I finished Sarkoth off at Hana'zua's asking, my arms aching as they used to after a day's labour in the camps. I cut down quite a few Vile Familiars with my weapon for Zureetha Fargaze.
 
-What followed was a run of small favours. A Cactus Apple went safely into Galgar's hands. I obliged Foreman Thazz'ril. At Razor Hill I heard the forge before I saw the drilling. Beyond the barracks, Kul Tiras ships sat off the coast, and I understood why no one in the town ever quite stood at rest. I completed Gornek's errand with Master Gadrin. My training added Rend and Battle Shout. I fitted myself with a Rough Leather Vest. A Kul Tiras Marine nearly ended me; I felt how little lay beneath my people's fearsome reputation. I carried one more thing to Rezlak. I dealt with Scorpid Workers first and finished off Kul Tiras Sailors at Gar'Thok's request, their numbers testing my endurance.
+A Cactus Apple went safely into Galgar's hands. I obliged Foreman Thazz'ril. At Razor Hill I heard the forge before I saw the drilling. Beyond the barracks, Kul Tiras ships sat off the coast, and I understood why no one in the town ever quite stood at rest. I completed Gornek's errand with Master Gadrin. My training added Rend and Battle Shout. I fitted myself with a Rough Leather Vest. A Kul Tiras Marine nearly ended me; I felt how little lay beneath my people's fearsome reputation. I made one more delivery, to Rezlak. I dealt with Scorpid Workers first and finished off Kul Tiras Sailors at Gar'Thok's request, their numbers testing my endurance.
 
 I had finished eight tasks. Nine Scorpid Workers had fallen to me over the stretch. The work had taken an hour and forty-five minutes, enough to make the quiet of a settled camp seem precious. I settled in Razor Hill, and let the day's work fall away from me one piece at a time.
 
@@ -72,7 +70,7 @@ I headed out in Dolanaar, fond of every living thing I passed and wary of most o
 
 ## Chapter 1 (levels 1 to 5)
 
-I began in Deathknell, with Lordaeron in ruins and no intention of joining the rest of its abandoned property. Crows called over the crypts of Tirisfal, toward the broken walls of Lordaeron. Night changed little here, though it left me feeling less conspicuous. After that came the small jobs, the ones nobody sings about and everybody needs. I carried a message on to Shadow Priest Sarvis. I dealt with several Wretched Zombies first and saw off Mindless Zombies, no kinship with the dead merely for resembling them. I called on the Light against Young Night Web Spiders for Executor Arren and handed Scavenged Goods over to Deathguard Saltain.
+I began in Deathknell, with Lordaeron in ruins and no intention of joining the rest of its abandoned property. Crows called over the crypts of Tirisfal, toward the broken walls of Lordaeron. Night changed little here, though it left me feeling less conspicuous. I carried a message on to Shadow Priest Sarvis. I dealt with several Wretched Zombies first and saw off Mindless Zombies, no kinship with the dead merely for resembling them. I called on the Light against Young Night Web Spiders for Executor Arren and handed Scavenged Goods over to Deathguard Saltain.
 
 A Scarlet Armband was in Executor Arren's hands soon after. I took instruction in Shadow Word: Pain. Power Word: Shield was a ward I could now set between myself and an enemy's blow. After the tombs, the crooked roofs of Brill looked almost companionable. Around the Gallows' End Tavern my people went about their business, and the town kept going on stubbornness alone. I made sure a Tirisfal Pumpkin reached Apothecary Johaan. I dealt with Maggot Eye for Executor Zygand, the dark doing my appearance a kindness; I added a Lightweight Chain Robe to my equipment.
 

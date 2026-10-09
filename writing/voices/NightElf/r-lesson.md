@@ -7,7 +7,7 @@ kind: r-lesson
 - slow fingers forgiven their lack of ease
 - [one] no longer able to promise myself forever to master it
 - a kaldorei's composure concealing an apprentice's awkwardness
-- [new] at the root of a skill I could not yet call mine
+- [new one] at the root of a skill I could not yet call mine
 - [new] a craft my long years might finally make room for
 - [low] new enough to this to envy another person's ease
 - [high] patient enough to give the difficult parts their due

@@ -261,10 +261,24 @@ for _, q in pairs(D.quests) do
     local g = GIVER[id] or { all = 0, classed = 0, mask = 0 }
     GIVER[id] = g
     g.all = g.all + 1
+    if (q.objectives or ""):lower():find("pickpocket") then g.rogue = true end -- (Ravenholdt's)
     if (q.classes or 0) ~= 0 then
       g.classed, g.mask = g.classed + 1, bit.bor(g.mask, q.classes)
     end
   end
+end
+-- (the place a quest's own words give a person: "Magatha Grimtotem in
+-- Thunder Bluff")
+local ZONE_NAMED = {}
+for id, name in pairs(D.zones) do
+  ZONE_NAMED[name] = ZONE_NAMED[name] or id
+end
+local function placeNamed(q, person)
+  local text = q.objectives or ""
+  local at = person.name and text:find(person.name, 1, true)
+  local named = at and text:sub(at + #person.name):match("^,? in ([%u][%a' ]*%a)")
+  named = named and (named:match("^the (.+)$") or named)
+  return named and (ZONE_NAMED[named] or ZONE_NAMED["The " .. named])
 end
 local function unrecorded(q, class, side)
   local mask = (q.classes or 0) == 0 and TITLE_CLASSES[q.title or ""]
@@ -272,6 +286,7 @@ local function unrecorded(q, class, side)
   for _, id in ipairs((q.classes or 0) == 0 and q.starters or {}) do
     local g = GIVER[id]
     if g and g.classed > 0 and g.classed == g.all - 1 and bit.band(g.mask, CLASS[class]) == 0 then return false end
+    if g and g.rogue and class ~= "ROGUE" then return false end
   end
   local sides = {}
   for _, list in ipairs({ q.starters or {}, q.enders or {} }) do
@@ -499,8 +514,19 @@ local function play(race, class, side)
       end
     end
   end
+  -- (a Skyborne leaves Zephras Isle on the skycutter: its quest done, or
+  -- the island's work all done)
+  local SKYCUTTER = { 94946, 95349 }
+  local function grounded()
+    if race ~= "Skyborne" then return false end
+    for _, id in ipairs(SKYCUTTER) do
+      if done[id] then return false end
+    end
+    return opens(road[1])
+  end
   local function nextZone()
-    for _, z in ipairs(road) do
+    for k, z in ipairs(road) do
+      if k > 1 and grounded() then return nil end
       if opens(z) then return z end
     end
   end
@@ -621,7 +647,13 @@ local function play(race, class, side)
         local held = a.objectives and a.objectives[1] and a.objectives[1].held
         -- (an escort or an event: no objective in the log, the game says when
         -- it is done, as Quests.lua hears it)
-        if q.event and not a.objectives then
+        -- (Forever's, no flag known: an escort or a rescue by its words)
+        local escort = q.forever
+          and #(q.targets or {}) == 0
+          and #(q.items or {}) == 0
+          and (q.objectives or ""):match("^%s*(%a+)")
+        local verbs = { Escort = true, Protect = true, Defend = true, Guard = true, Help = true, Free = true }
+        if (q.event or verbs[escort or ""]) and not a.objectives then
           wait(10 * 60)
           a.done = true
           moment("done", { id = id, title = q.title, giver = a.giver, pet = pet, petFamily = petFamily })
@@ -640,13 +672,15 @@ local function play(race, class, side)
         local q, a = D.quests[id], accepted[id]
         local ender = q.enders and creature(q.enders[1])
         -- (an ender in another land: the way there; not into the other
-        -- side's own lands for one of Forever's)
-        local land = ender and ender.zone and landOf(ender.zone)
+        -- side's own lands for one of Forever's; where the quest's own words
+        -- put them, "Apothecary Lydon in Tarren Mill", over the data's zone)
+        local where = ender and (placeNamed(q, ender) or ender.zone)
+        local land = where and landOf(where)
         local foreign = q.forever
           and land
           and LANDS[side == "alliance" and "horde" or "alliance"][land]
           and not LANDS[side][land]
-        if land and land ~= landOf(at) and D.zones[land] and not foreign then travel(landOf(ender.zone)) end
+        if land and land ~= landOf(at) and D.zones[land] and not foreign then travel(where) end
         moment("quest", {
           id = id,
           title = q.title,
@@ -669,9 +703,12 @@ local function play(race, class, side)
             moment("gear", {
               link = ("|cff1eff00|Hitem:%d|h[%s]|h|r"):format(r, item.name),
               quality = item.quality,
-              held = item.class == 2 or (item.slot or 0) == 14 or nil,
+              held = item.class == 2 or (item.slot or 0) == 14 or (item.slot or 0) == 23 or nil,
               trinket = (item.slot or 0) == 12 or nil,
             }) -- a weapon, a shield
+            -- (the weapon in hand, by its kind, as Life.lua hears it)
+            local hand = item.class == 2 and ((class == "HUNTER") == (item.slot == 15 or item.slot == 26))
+            if hand then moment("weapon", { weapon = item.sub }) end
             break
           end
         end
