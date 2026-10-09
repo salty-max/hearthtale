@@ -43,7 +43,7 @@
 --     group { name, first, class } or { raid = n }  dungeon { name }  boss { name }
 --     learned { spells }  power { spell, kind }  skill { name, rank }
 --     prof { name, learned or rank }  riding { name }  mount  made { id, link, n }
---     gear { link, quality, made, held }  loot { link, quality }
+--     gear { link, quality, made, held, trinket }  loot { link, quality }
 --     tame { name, family }  petdied { name }  demon { name, family }  shift { form }
 --     bag { link, slots, looted }  gold
 --     campfire  rested { place, fire }  night { last, inside }  wake { after, inside }

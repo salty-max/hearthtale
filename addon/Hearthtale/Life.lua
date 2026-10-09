@@ -163,8 +163,15 @@ local function lookAtGear(quiet)
       c.worn[id] = true
       local _, quality = itemInfo(link)
       if not quiet and quality and quality >= 2 then
-        -- (in hand: a weapon, a shield, a bow, taken up rather than put on)
-        moment("gear", { link = link, quality = quality, made = (c.made or {})[id] or nil, held = slot >= 16 or nil })
+        -- (in hand: a weapon, a shield, a bow, taken up rather than put on; a
+        -- trinket, carried rather than worn)
+        moment("gear", {
+          link = link,
+          quality = quality,
+          made = (c.made or {})[id] or nil,
+          held = slot >= 16 or nil,
+          trinket = (slot == 13 or slot == 14) or nil,
+        })
       end
     end
   end
