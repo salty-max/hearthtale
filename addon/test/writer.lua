@@ -1542,6 +1542,32 @@ for _, race in ipairs(RACES) do
   end
 end
 
+-- Forever's own dungeons (the beta's), entered by each race: their places
+-- described from a home or from outside, their last bosses told as such.
+-- (Apart from the random lives, whose dungeons they would reshuffle.)
+if forever then
+  local FOREVER_DUNGEONS = {
+    { "The Hall of Thanes", { "Faldrim Anvilmar", "Magmatus", "Plunder", "Durgen Dirgehammer" } },
+    { "City of Dalaran", { "Arcane Anomaly", "Atrexis the Grave Knight", "Shade of the Archmage" } },
+  }
+  for _, race in ipairs(RACES) do
+    for k, d in ipairs(FOREVER_DUNGEONS) do
+      local log = { { k = "dungeon", name = d[1], zone = d[1], sub = d[1] } }
+      for _, boss in ipairs(d[2]) do
+        table.insert(log, { k = "boss", name = boss, zone = d[1], sub = d[1] })
+      end
+      local c = {
+        guid = "forever-dungeon-" .. race .. k,
+        race = race,
+        class = COMBOS[race][1],
+        faction = race == "Skyborne" and "alliance" or nil,
+        chapters = { { start = { level = 25, zone = "Country", sub = "Home" }, log = log } },
+      }
+      inspect(race .. " in " .. d[1], ns.writeBook(c).chapters[1].text)
+    end
+  end
+end
+
 local runs = 0
 -- Future or otherwise unwritten races still get a complete generic beginning.
 -- Racial beginnings now belong to their own catalogs rather than redundant
