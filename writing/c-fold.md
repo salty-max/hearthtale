@@ -18,16 +18,16 @@ kind: c-fold
 - [!gear one] cleared one more chore off my hands
 - [gear !onlygear !one] ran {n} more errands and changed some of my gear
 - [gear !onlygear !one] saw to {n} more errands, and to some new gear
-- [gear !onlygear !one] handled {n} odd jobs and a change of gear
+- [gear !onlygear !one] handled {n} odd jobs and found time for a change of gear
 - [gear !onlygear one] ran one more errand and changed some of my gear
 - [gear !onlygear one] saw to one more errand, and to some new gear
-- [gear !onlygear !one] worked through {n} more requests and a change of kit
-- [gear !onlygear !one] took care of {n} other small tasks and some new gear
+- [gear !onlygear !one] worked through {n} more requests, changing my kit between them
+- [gear !onlygear !one] took care of {n} other small tasks and put on some new gear between them
 - [gear !onlygear !one] dealt with {n} more requests, and with my gear
 - [gear !onlygear !one] ran {n} more errands and put on some new gear
 - [gear !onlygear !one] cleared {n} chores and swapped a piece or two of my gear
-- [gear !onlygear one] handled one odd job and a change of gear
-- [gear !onlygear one] took care of one other small task and some new gear
+- [gear !onlygear one] handled one odd job and found time for a change of gear
+- [gear !onlygear one] took care of one other small task and changed into some new gear
 - [gear !onlygear one] dealt with one more request, and with my gear
 - [gear !onlygear one] ran one more errand and put on some new gear
 - [onlygear] changed some of my gear along the way
