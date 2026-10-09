@@ -1,0 +1,22 @@
+---
+kind: d-close
+---
+- [hard] It was a hard stretch, and I mean to be more careful.
+- [hard] I came out of it alive, in the end, which is the best I can say for it.
+- [hard !hc] Every death teaches something, though I would rather learn more cheaply.
+- [near] I came closer to dying than I like to think about.
+- [near] One bad moment nearly ended all of it, and I have not stopped thinking about it.
+- [found] There is more of the world than I had imagined, and I have only seen the edge of it.
+- [found] Every new road makes me want the next one.
+- [learned] I can do more now than when I started, and I feel it in every fight.
+- [learned] I am not quite who I was when I set out, and the lessons are starting to show.
+- [delve] I spent long enough among walls full of enemies to value the open air.
+- [quiet] Nothing much happened, and I have learned to be grateful for stretches like that.
+- [quiet] It was a quiet stretch, all small work and no great danger, and I did not mind.
+- [quiet] Small work, done well enough; the next stretch may ask for more.
+- [grouped] Good company made the road shorter.
+- [low] I am still new to all of this, and every day shows it.
+- [high] After so long on the road, I still find something new to write down.
+- [hc] One life, still mine; that is the only tally that matters.
+- I wonder what the next stretch will bring.
+- I have filled another page, and I am glad of every line of it.

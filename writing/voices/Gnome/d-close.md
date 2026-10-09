@@ -1,0 +1,13 @@
+---
+kind: d-close
+---
+- [hard] Dying is not something I ever want to grow used to, and I keep tracing it all backwards, looking for the moment it could still have gone another way.
+- [near] I very nearly came to grief, and I am still trying to decide, less calmly than I would like, how much of that was bad luck and how much my own doing.
+- [found] New country sets my thoughts running well ahead of my feet, and this stretch gave them a great deal of ground to cover.
+- [learned] Something new is mine to use now, and I have already thought of more ways to put it to work than are strictly sensible.
+- [delve] Going into a place so full of enemies was nobody's idea of sound planning, and my shoulders are only now coming down from around my ears.
+- [quiet] All {land} asked of me was small, orderly work, and I enjoyed it rather more than an adventurer probably should.
+- [grouped] Any problem looks smaller with more than one person working at it, and I am grateful I did not face everything alone.
+- [hc] I have no spare life to fall back on, so I have stopped thinking of caution as dull and started treating it as the cleverest thing I do.
+- I can think of a better way to have done nearly all of it, and I find that oddly encouraging.
+- The world is still a great deal larger and stranger than I am, and on most days I count that in its favour.

@@ -133,6 +133,15 @@ const KINDS: Record<string, string[]> = {
   "c-inn": ["inn"],
   "c-boss": ["boss", "dungeon"],
   "c-tame": ["pet", "family"],
+  // the diary (Diary.lua): a chapter looked back on at its rest
+  "d-land": ["lands"],
+  "d-powers": ["spells"],
+  "d-foes": ["foes"],
+  "d-deaths": ["times"],
+  "d-dungeon": ["dungeon", "mates"],
+  "d-company": ["mates"],
+  "d-chores": ["n", "people"],
+  "d-close": ["land"],
   // remarks a routine clause may end with (Lines.lua's ROUTINE)
   "r-foe": [], "r-first": [], "r-item": [], "r-task": [], "r-gear": [], "r-lesson": [], "r-road": [], "r-inn": [],
   "r-company": [],
@@ -144,7 +153,8 @@ const TAGS = ["home", "ally", "foe", "neutral", "night", "hc", "high", "low", "f
   "scarlet", "cenarion", "undead", "demon", "elemental", "dragonkin", "spider",
   "stone", "egg", "feather", "hide", "paper", "plant", "relic", "remains", "teeth", "mechanical", "cloth", "meat", "explore", "escort", "new", "made", "form", "demon", "steed",
   "looted", "handed", "complex", "state", "ofprey", "summon", "also", "tried", "pet", "fire", "frost", "arcane", "shadow", "curse", "holy", "lightning", "wrath", "moon", "steel", "arrow", "imp", "voidwalker", "succubus", "felhunter", "felguard",
-  "bear", "cat", "travel", "aquatic", "moonkin", "tree", "flight", "deliveries", "lone", "set", "melee", "trinket"];
+  "bear", "cat", "travel", "aquatic", "moonkin", "tree", "flight", "deliveries", "lone", "set", "melee", "trinket",
+  "hard", "near", "found", "learned", "delve", "quiet", "diary"];
 const RACES = ["Human", "Dwarf", "NightElf", "Gnome", "Orc", "Troll", "Tauren", "Scourge", "Skyborne"];
 const ROUTINE = new Set("deed-kill deed-item deed-task deed-word chain deliver report first gear trainer inn travel return place group skill prof handed-kill handed-item".split(" ").map((kind) => `c-${kind}`));
 // The recap's kinds: one sentence of the recap holds a thought, the others are plain.

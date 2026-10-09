@@ -1,0 +1,11 @@
+---
+kind: d-chores
+---
+- The rest was ordinary work, {n} tasks of it, for {people}.
+- Most of my time went on smaller jobs for {people}, {n} of them.
+- Between all that, I saw to {n} tasks for {people}, none of them worth a page of their own.
+- I ran {n} errands for {people} besides.
+- The rest was {n} small jobs, the kind that teach you every path in a place.
+- I saw {n} tasks through, most of them too small to write about.
+- {n} tasks filled the gaps between, most of them for {people}.
+- The rest of it was errands, {n} in all, and I did them as well as I could.

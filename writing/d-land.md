@@ -1,0 +1,13 @@
+---
+kind: d-land
+---
+- [one] I set foot in {lands} for the first time.
+- [one] {lands} was new to me, and I spent the first while just learning its roads.
+- [one] I had never been to {lands} before, and I looked at everything twice.
+- [one] For the first time, the road took me into {lands}.
+- [one] I came into {lands} as a stranger, which is how every land starts.
+- [!one] I saw {lands} for the first time.
+- [!one] The road took me into new country: {lands}.
+- [!one] I had never set foot in {lands} before, and now I have.
+- [!one] {lands} were all new to me, and I tried to take in as much as I could.
+- [!one] More of the world opened up ahead of me, {lands} among it.

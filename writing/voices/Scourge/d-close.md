@@ -1,0 +1,13 @@
+---
+kind: d-close
+---
+- [hard] I have now died more often than anyone should, and I would very much like the count to stop where it is.
+- [near] Nearly losing this odd existence showed me how fond of it I have grown, which I had not expected of myself.
+- [found] Anywhere new, I still look first for what has been ruined, and only afterwards notice how much is whole.
+- [learned] I was supposed to have stopped changing when I died, and I welcome every sign that I have not.
+- [delve] A place like that ought to feel familiar to someone who lives beneath a ruined city, and yet I was as glad as anyone to leave it behind.
+- [quiet] It was an unremarkable stretch, and I have no complaint about that; my hands were once put to far worse uses.
+- [grouped] Working alongside others came more easily than I had feared; I have learned to trust very little, and it seems I can still make exceptions.
+- [hc !hard] I have had my one return from the dead already, and I go carefully, knowing nothing will bring me back a second time.
+- Bit by bit, I am getting to know whoever it was that came back, and on the whole I approve.
+- Every day I spend as I please is one the Lich King meant to have, which lends even the dull ones a certain relish.

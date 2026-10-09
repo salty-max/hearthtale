@@ -1698,7 +1698,7 @@ do
             log = log,
             ended = { level = level, place = b, how = "rest" },
             kills = {},
-            quests = 1,
+            quests = n % 2 == 0 and 12 or 1, -- (a long run of work, for the diary's [lots])
             played = 3600,
             gold = 0,
           }
@@ -1713,6 +1713,9 @@ do
         }
         for i, ch in ipairs(ns.writeBook(c).chapters) do
           inspect(race .. " lands " .. level .. " ch" .. i, ch.text)
+        end
+        for i, e in ipairs(ns.writeDiary(c).entries) do
+          inspect(race .. " lands " .. level .. " diary" .. i, e.text)
         end
       end
     end
@@ -2124,6 +2127,10 @@ for _, round in ipairs({
           if ch.text and #ch.text > longest then
             longest, longestText = #ch.text, ch.text
           end
+        end
+        -- the diary of the same life (Diary.lua), through the same checks
+        for _, e in ipairs(ns.writeDiary(c).entries) do
+          inspect(("%s %s diary %d"):format(race, class, e.number), e.text)
         end
         repeats = repeats + book.repeats
         if book.minGap and (not gaps[book.minGapKind] or book.minGap < gaps[book.minGapKind]) then

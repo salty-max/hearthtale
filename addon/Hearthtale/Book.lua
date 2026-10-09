@@ -208,6 +208,9 @@ local function showPage(life, w, key)
     table.insert(parts, "still being written")
   end
   local text = ch.text
+  -- (the diary's entry instead, where the setting asks for it: Diary.lua)
+  local entry = w.diary and w.diary.entries[key]
+  if entry then text = entry.text end
   if life.closed and last and w.epitaph then text = (text and text .. "\n\n" or "") .. EPITAPH:format(w.epitaph) end
   show(("Chapter %d"):format(key), table.concat(parts, "  -  "), text)
 end
@@ -328,6 +331,7 @@ end
 local function refreshJournal(latest)
   local c = ns.journal()
   written = ns.writeBook(c, kept)
+  if ns.option("diary") then written.diary = ns.writeDiary(c) end
   local known = current == "prologue" and written.prologue or written.chapters[current]
   if latest or not known then
     local last = written.chapters[#written.chapters]
@@ -379,6 +383,7 @@ local function refreshHall(scroll)
     if life.guid == hallLife then
       keptHall[life.guid] = keptHall[life.guid] or {}
       open, w = life, ns.writeBook(life, keptHall[life.guid])
+      if ns.option("diary") then w.diary = ns.writeDiary(life) end
       chapterRows(entries, w, hallKey, function(key)
         hallKey = key
         ns.refresh()

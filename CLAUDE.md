@@ -115,6 +115,16 @@ The plan and its decisions: PLAN.md.
   chapter's Scene; what each tells is `tell.<kind>`, the moments of their own
   `own.<kind>`. A new kind of moment is a new arm, in its place in the order;
   its state lives on the Scene, never in a local of `Book:chapter`),
+  `Diary.lua` (a prototype, behind the "Diary entries" setting: each
+  chapter as a short entry written at the rest that ends it, from the same
+  record and the Book's lines: the opening, new lands (`d-land`), new spells
+  (`d-powers`, a spell's new rank never), the firsts of a life, named foes
+  (`d-foes`), deaths (`d-deaths`) or the closest call, a dungeon or company,
+  the ordinary work in one sentence (`d-chores`), a thought on the stretch's
+  shape (`d-close`: `[hard]`, `[near]`, `[found]`, `[learned]`, `[delve]`,
+  `[quiet]`, `[grouped]`), the rest; `[!diary]` keeps out a line that leans
+  on a moment the diary doesn't tell; `luajit addon/test/read.lua <saved
+  file> diary` and the playthroughs' `*.diary.md` show both side by side),
   `Save.lua` (the book written into the saved file at each logout, for the
   site: it never writes its own),
   `Book.lua` (the window: chapters on the left, the open one on the right; a

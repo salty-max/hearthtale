@@ -1,0 +1,13 @@
+---
+kind: d-close
+---
+- [hard !hc] Dying has shown me how much I still want from the years ahead, and I mean to be careful enough to have them.
+- [near] It would have taken very little more to kill me, and I have stopped telling myself that such things only happen to other people.
+- [found] I used to picture the world as a few safe miles with wilderness beyond them, and every new land I cross makes those miles seem smaller.
+- [learned] I am still settling into what I can do now, the way one settles into new boots, by wearing them until they stop pinching.
+- [delve] After that dungeon, I could happily spend a week on nothing more dangerous than the lane between two farms.
+- [quiet] This was how I had imagined peace might feel, and I mean to enjoy it for as long as {land} allows.
+- [grouped !delve] In company, it all felt less like an adventure and more like a market day, which suits me far better.
+- [hc !hard] With no second try to fall back on, I have started guarding my own neck the way a careful farmer guards the seed corn.
+- The world is still putting itself back together after its wars, and I would rather have a part in that than watch it from behind a window.
+- If anyone asks what I have been doing, I will have a plain answer and a clear conscience, and that is enough for me.

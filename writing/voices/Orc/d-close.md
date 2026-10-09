@@ -1,0 +1,13 @@
+---
+kind: d-close
+---
+- [hard] Death got the better of me this time, and what I feel about it is anger of the useful kind, the kind that makes me look harder at what lies ahead instead of charging headlong into it.
+- [near] It was a narrower escape than I can honestly take credit for, and I keep turning over the difference between enduring something and simply being lucky.
+- [found] Every new land keeps its own earth, water and wind, and I mean to learn what they ask of a stranger before I start asking anything of them.
+- [learned] There is something new at my call now, and I intend to remain its master, which is more than my people managed with the powers they once reached for.
+- [delve] I have never been easy with walls close about me, even ones I walked between by my own choice, and open ground seems all the dearer for the time I spent inside them.
+- [quiet] Nothing much went wrong this time, and I am learning to take an easy stretch as a gift rather than as a warning that something worse is on its way.
+- [grouped] It did me good not to be alone for a while, and I have stopped counting the need for company as a weakness, in myself or in anyone else.
+- [hc] I have only the one life, and I guard it now the way anyone would guard a thing that can never be won back.
+- There is more ahead of me, and these days I look forward to it instead of bracing myself against it.
+- I would rather be measured by what I do than by what my people once did, and I am ready to answer for everything I did in {land}.
