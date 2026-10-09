@@ -64,7 +64,7 @@ The journal is written in English, for English game clients. On a client in anot
 Each game has its own file: pick the one for yours (the CurseForge app does it for you).
 
 - **Classic**: Classic Era, Hardcore, Season of Discovery.
-- **Forever**: World of Warcraft: Forever. Forever closes the combat log to addons, so a kill is counted when you target the corpse after fighting it.
+- **Forever**: World of Warcraft: Forever. Forever closes the combat log to addons, so kills come from the game's own kill event. Inside a Forever dungeon that event hides which creature fell, so only the kills a quest counts are told there.
 
 ## Settings
 
