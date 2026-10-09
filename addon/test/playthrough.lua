@@ -291,7 +291,18 @@ local function play(race, class)
         local q, a = D.quests[id], accepted[id]
         wait(5 * 60)
         for k, t in ipairs(q.targets or {}) do
-          kill(creature(t[1]), t[2], q.texts[k] == "")
+          -- (a creature to fight: the quest log's "slain", or its own words for a
+          -- kill; "Peons Awoken", "Find Aamelia Windfield" fight no one)
+          local own = q.texts[k] or ""
+          if
+            own == ""
+            or own:lower():find("slain")
+            or own:lower():find("killed")
+            or own:lower():find("defeated")
+            or own:lower():find("destroyed")
+          then
+            kill(creature(t[1]), t[2], own == "")
+          end
         end
         for _, pair in ipairs(q.items or {}) do
           local s = D.sources[pair[1]]
