@@ -178,6 +178,7 @@ local SPELLS = {
   "Resurrection",
   "Psychic Scream",
   "Lay on Hands",
+  "Turn Undead",
   "Divine Protection",
   "Charge",
   "Execute",
@@ -1043,6 +1044,80 @@ for _, race in ipairs(RACES) do
           inspect(race .. " " .. class .. " pairing", ch.text)
         end
       end
+    end
+  end
+end
+
+-- Every race and class from its first steps: a beginning of its own (the
+-- Forsaken priest's or paladin's Light) remains reachable.
+for _, race in ipairs(RACES) do
+  for _, class in ipairs(COMBOS[race]) do
+    for seed = 1, 2 do
+      local c = {
+        guid = ("first-steps-%s-%s-%d"):format(race, class, seed),
+        race = race,
+        class = class,
+        began = { level = 1 },
+        chapters = {
+          {
+            start = { level = 1, zone = "Country", sub = "Home" },
+            quests = 0,
+            played = 3600,
+            gold = 0,
+            kills = { Wolf = 4 },
+            log = { { k = "kill", name = "Wolf", kind = "Wolf", sub = "Home", zone = "Country", at = 50 } },
+            ended = { level = 3, place = "Home", how = "rest" },
+          },
+        },
+      }
+      if race == "Skyborne" then c.faction = seed == 1 and "alliance" or "horde" end
+      for _, ch in ipairs(ns.writeBook(c).chapters) do
+        inspect(race .. " " .. class .. " first steps", ch.text)
+      end
+      for _, e in ipairs(ns.writeDiary(c).entries) do
+        inspect(race .. " " .. class .. " first steps diary", e.text)
+      end
+    end
+  end
+end
+
+-- New ways of fighting in the diary, one or two, tried at once or not.
+local plain = {} -- (quests with no story of their own: the fight is the trainer's)
+for id = 300, 900 do
+  if not ns.data.why[id] and #plain < 60 then table.insert(plain, id) end
+end
+for r, race in ipairs(RACES) do
+  for life = 1, 6 do
+    local spells = life % 2 == 1 and { "Frostbolt", "Arcane Missiles" } or { "Frostbolt" }
+    local log = { { k = "learned", spells = spells, zone = "Westfall", sub = "Sentinel Hill", at = 100 } }
+    if life <= 4 then
+      table.insert(log, {
+        k = "done",
+        id = plain[r * 6 + life],
+        giver = "Gryan Stoutmantle",
+        objectives = { { type = "monster", name = "Defias Trapper", n = 8 } },
+        zone = "Westfall",
+        sub = "Sentinel Hill",
+        at = 400,
+      })
+    end
+    local c = {
+      guid = ("new-ways-%s-%d"):format(race, life),
+      race = race,
+      class = "MAGE",
+      chapters = {
+        {
+          start = { level = 8, zone = "Westfall", sub = "Sentinel Hill" },
+          ended = { how = "rest", place = "Sentinel Hill", level = 8, at = 20000 },
+          quests = 1,
+          played = 3600,
+          log = log,
+        },
+      },
+    }
+    if race == "Skyborne" then c.faction = "alliance" end
+    for _, e in ipairs(ns.writeDiary(c, ns.writeBook(c)).entries) do -- (the chapter: tried already?)
+      inspect(race .. " new ways diary", e.text)
     end
   end
 end
@@ -2571,6 +2646,18 @@ for _, race in ipairs(RACES) do
           }
         end
         chapter(log)
+      end
+      -- a quest's kills, one creature or several, in my way of fighting
+      for k = 1, 8 do
+        local one = k % 2 == 0
+        chapter({
+          {
+            k = "done",
+            id = 300 + k,
+            giver = "Gryan Stoutmantle",
+            objectives = { { type = "monster", name = one and "Gath'Ilzogg" or "Defias Trapper", n = one and 1 or 8 } },
+          },
+        })
       end
       -- a class's own quests turned in: handed in on the spot, or a return
       local rewards, seenSpell = {}, {}

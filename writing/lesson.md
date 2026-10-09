@@ -15,6 +15,8 @@ kind: lesson
 - [spell:Resurrection !race:Scourge !diary] With Resurrection, I could call the dead back to life, which is not a thing to learn lightly.
 - [spell:Psychic_Scream !diary] Psychic Scream was mine to use, a way to make my fear someone else's problem.
 - [spell:Lay_on_Hands !diary] Lay on Hands gave me a fierce comfort in having something left to offer when an ordinary blessing would not be enough.
+- [spell:Turn_Undead !race:Scourge !diary] Turn Undead gave me the Light's own answer to the walking dead.
+- [spell:Turn_Undead race:Scourge !diary] I learned Turn Undead, a strange weapon for one of the dead to carry, and took it up all the same.
 - [spell:Divine_Protection !diary] Divine Protection gave me a moment in which nothing could touch me.
 - [spell:Hammer_of_Justice !diary] Hammer of Justice offered a firm interruption to an enemy's intentions.
 - [spell:Charge !diary] With Charge learned, I could close the distance before my courage had time to argue about it.
@@ -49,7 +51,10 @@ kind: lesson
 - [diary spell:Renew !race:Scourge] Renew is mine, a healing that keeps working long after the prayer is done.
 - [diary spell:Resurrection !race:Scourge] I can call the dead back now, and I mean to treat that gift with care.
 - [diary spell:Psychic_Scream] Psychic Scream is mine now, and my fear has somewhere to go besides my own stomach.
-- [diary spell:Lay_on_Hands] Lay on Hands is mine now, something left to give when nothing else will do.
+- [diary spell:Lay_on_Hands !race:Scourge] Lay on Hands is mine now, something left to give when nothing else will do.
+- [diary spell:Lay_on_Hands race:Scourge] Lay on Hands is mine now, and the Light it pours through me burns every inch of the way; for someone who needs it, I can bear that.
+- [diary spell:Turn_Undead !race:Scourge] I can turn the walking dead with the Light now, and send them reeling from a fight they had no business in.
+- [diary spell:Turn_Undead race:Scourge] I can turn the dead with the Light now, and I try not to dwell on what that says about a Forsaken who calls on it.
 - [diary spell:Divine_Protection] Divine Protection can give me a moment nothing can touch, and I am learning to wait for the right one.
 - [diary spell:Hammer_of_Justice] Hammer of Justice is mine now, a way to stop a foe in the middle of its intentions.
 - [diary spell:Charge] I can close the distance in a single rush now, before my fear has time to catch up.
