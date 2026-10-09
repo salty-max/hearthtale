@@ -5,7 +5,7 @@ kind: d-why
 - What I will remember of it is {why}.
 - The heart of it was {why}.
 - Above everything else, I remember {why}.
-- If I keep one thing from it, it is {why}.
+- If I keep one thing from these days, it is {why}.
 - Of everything I did, what counted was {why}.
 - What mattered was {why}.
 - I will not soon forget {why}.

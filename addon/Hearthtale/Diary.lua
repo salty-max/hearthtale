@@ -287,8 +287,14 @@ local function entry(d, n, ch)
   local first = n == 1 and (c.began and c.began.level or 1) == 1 and (start.level or 1) == 1
   local lead
   local wentOn = d.lastPlace and (where == d.lastPlace or start.zone == d.lastZone)
-  if wentOn and #story > 0 and n % 2 == 0 then
-    lead = at(story[1].zone or start.zone)
+  local storyZone = story[1] and (story[1].zone or start.zone)
+  local newLand = false
+  for _, zone in ipairs(f.lands) do
+    if zone == storyZone then newLand = true end
+  end
+  -- (not a land the entry then tells as new: its first sight comes first)
+  if wentOn and #story > 0 and n % 2 == 0 and not newLand then
+    lead = at(storyZone)
   elseif where then
     add(say(first and "beginning" or "opening", "open", b:here({ where = mid(where) }, where), {
       night = start.night or nil,
