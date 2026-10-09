@@ -2,7 +2,7 @@
 kind: r-lesson
 ---
 - my strength no shortcut past clumsy fingers
-- the lesson humbling me faster than any foe
+- the training humbling me faster than any foe
 - [one] a better hope than trusting courage to serve for skill
 - [one] my eagerness no longer mistaken for mastery
 - [one] wondering how well it would serve beyond a safe lesson

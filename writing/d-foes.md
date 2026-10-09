@@ -1,14 +1,14 @@
 ---
 kind: d-foes
 ---
-- [one !hard] Of all the fighting, {foes} is the fight that stays with me.
+- [one !hard] Of all the fighting, the one with {foes} stays with me.
 - [one !hard] I brought down {foes}, and that fight has stayed with me.
 - [one !hard] {foes} fell to me, and I have thought about it since.
 - [one !hard] I faced {foes}, and walked away from it.
 - [one hard] {foes} was the hardest fight of these days, and I came through it.
 - [one hard] I brought down {foes}, and not easily.
-- [two !hard] Of all the fighting, {foes} are the fights that stay with me.
-- [two !hard] I brought down {foes}, and both fights have stayed with me.
+- [two !hard] Of all the fighting, the fights with {foes} are the ones that stay with me.
+- [two !hard !plural] I brought down {foes}, and both fights have stayed with me.
 - [two hard] I came through fights with {foes}, and neither was easy.
 - [!one !two !hard] Of all the fighting, {foes} are the ones that stay with me.
 - [!one !two !hard] I brought down {foes}, one fight after another.

@@ -210,7 +210,7 @@ kind: why
 - 20 2 | fighting the Blackrock orcs of Stonewatch Keep, whose raids kept the people of Lakeshire penned in town like cattle
 - 34 2 | putting an end to Bellygrub, the boar that kept trampling Martie Jainrose's garden and her daffodils
 - 89 1 | recovering iron pikes and rivets from the gnolls who hijacked Lakeshire's supplies, so the Everstill Bridge could be rebuilt
-- 91 2 | killing the Shadowhide gnolls who served the warlock Morganth, spreading terror upon Lakeshire, as the Law of Lakeshire demanded
+- 91 2 | killing the Shadowhide gnolls who served the warlock Morganth and kept Lakeshire in fear, as the Law of Lakeshire demanded
 - 92 1 | gathering condor meat, goretusk snouts and spider meat to restock Chef Breanna's bare cupboard for a Redridge Goulash
 - 94 1 | placing the Glyph of Azora by the Tower of Ilgalar so Theocritus could spy on his rival, the mage Morganth
 - 115 2 | taking midnight orbs from Blackrock shadowcasters to be destroyed, dark devices that had struck hard at Redridge's defenders

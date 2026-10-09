@@ -36,7 +36,7 @@ kind: r-item
 - [stone one !plural] heavier than it looked
 - [stone !one] the weight of them pulling at my pack
 - [stone] glinting even in poor light
-- [relic one !plural] older than any hands that had held it since
+- [relic one !plural] older than any hands that had held it
 - [relic !one] older than any hands that had held them since
 - [relic] wondering who had made such things, and when
 - [relic] handled with more care than I usually manage

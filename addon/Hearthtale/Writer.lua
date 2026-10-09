@@ -71,6 +71,7 @@ local CITIES = {
   ["Thunder Bluff"] = true,
   Undercity = true,
 }
+function tell.weapon(s, m) s.book.weaponHeld = W.WEAPON_OF[m.weapon or -1] or s.book.weaponHeld end
 function tell.place(s, m)
   local b = s.book
   if m.new == "zone" then
@@ -94,6 +95,12 @@ function tell.place(s, m)
       s.backLand = s.backTo ~= nil or nil
       return
     end
+    -- (a Skyborne's first ground below the islands: its own sentence, once a life)
+    if b.race == "Skyborne" and m.zone ~= "Zephras Isle" and not b.away then
+      b.away = true
+      local line = b:say("zone", s.key, { zone = mid(m.zone) }, s:tags({ away = true }, m), { away = true })
+      if line then s:append(line) end
+    end
     -- a land seen for the first time: described, else the plain line
     local land = b:sceneryOf(m.zone, m.night)
     local back = b.landsSeen[m.zone]
@@ -103,6 +110,7 @@ function tell.place(s, m)
     else
       s:alone("zone", { zone = mid(m.zone) }, s:tags({ back = back or nil, town = CITIES[m.zone] }, m))
     end
+    s.lastNamed = m.zone
     s:enter(nil, nil)
     -- (the land just named: the next sentence says "there", or nothing)
     b.last, b.there = m.zone, false
@@ -110,6 +118,7 @@ function tell.place(s, m)
     if described then
       s:append(described)
       s:enter(m.sub, m.zone)
+      s.lastNamed = m.sub
       b.last, b.there = m.sub, false
     elseif m.sub then
       s:arrive(m.sub, m.zone, s.seenHere[m.sub] and "c-return" or "c-place")
@@ -256,7 +265,12 @@ function tell.kill(s, m)
     })
   end
   if m.first and KINDS[m.kind] then
-    local t = { one = true, teeth = TEETH[m.kind or ""], mechanical = m.kind == "Mechanical" or nil }
+    local t = {
+      one = true,
+      teeth = TEETH[m.kind or ""],
+      mechanical = m.kind == "Mechanical" or nil,
+      harmless = W.HARMLESS[m.kind or ""],
+    }
     local people = foeOf(m.name, m.kind)
     if people then t[people] = true end
     s:tell("c-first", { kind = KINDS[m.kind] }, t)
@@ -346,8 +360,15 @@ function tell.group(s, m)
   s:tell("c-group", { mates = listing(names) }, { one = #names == 1 or nil })
 end
 -- a dungeon's last master: a sentence of its own
-function tell.bossFinal(s, m) s:alone("boss-final", { boss = m.name, dungeon = mid(s.dungeon) }, s:tags(nil, m), m) end
-function tell.boss(s, m) s:tell("c-boss", { boss = m.name, dungeon = mid(s.dungeon) }) end
+-- (a boss slain: its head, asked for after, is "the head", taken as proof)
+function tell.bossFinal(s, m)
+  s.slain[m.name] = true
+  s:alone("boss-final", { boss = m.name, dungeon = mid(s.dungeon) }, s:tags(nil, m), m)
+end
+function tell.boss(s, m)
+  s.slain[m.name] = true
+  s:tell("c-boss", { boss = m.name, dungeon = mid(s.dungeon) })
+end
 -- (a trade's own spell, learned before the game listed the trade, is told by
 -- the trade); a spell with a line of its own (writing/lesson.md: Life Tap,
 -- paid in blood) told by it after the lesson, the first of them
@@ -383,10 +404,12 @@ end
 -- The spells of a lesson worth telling: not a trade's own, a demon's or a
 -- form's (told at their first use), nor a trade's rank.
 local function taught(spells, c)
-  local out = {}
+  local out, seen = {}, {}
   for _, sp in ipairs(spells or {}) do
+    sp = sp:gsub(" %(.-%)$", "") -- (a rank in its name: "Create Healthstone (Minor)")
     if
-      not (
+      not seen[sp]
+      and not (
         (c.profs or {})[sp]
         or ns.TRADE_SPELLS[sp]
         or ns.POWER_SPELLS[sp]
@@ -397,14 +420,30 @@ local function taught(spells, c)
         or sp:find("^Master ")
       )
     then
+      seen[sp] = true
       table.insert(out, sp)
     end
   end
   return out
 end
 function tell.learned(s, m)
-  s.book:learn(m.spells)
-  local spells, note = taught(m.spells, s.c), nil
+  local b = s.book
+  -- (a spell known before, at a lower rank, is no lesson: the new ones, a new
+  -- way of fighting first)
+  local spells, later, note = {}, {}, nil
+  for _, sp in ipairs(taught(m.spells, s.c)) do
+    if not b.knownSpells[sp] then
+      local way = W.ELEMENT[sp]
+      table.insert((way and not b.fighting[way]) and spells or later, sp)
+    end
+  end
+  for _, sp in ipairs(later) do
+    table.insert(spells, sp)
+  end
+  for _, sp in ipairs(spells) do
+    b.knownSpells[sp] = true
+  end
+  b:learn(m.spells)
   for _, sp in ipairs(spells) do
     if not note and hasNote(sp, s.book) and not s.book.noted[sp] then note = sp end
   end
@@ -579,6 +618,7 @@ local ARMS = {
   { "_", nothing, when = function(s, m) return m == s.startPlace end }, -- told by the opening
   { "_", nothing, when = function(s) return s.relog[s.i] end }, -- a relog: no night
   { "_", nothing, when = function(s) return s.foldNow end }, -- told in the scene's tally
+  { "weapon", tell.weapon }, -- (the weapon in hand: never told, its name for "my sword")
   { "level", tell.level },
   { "place", tell.place },
   { "inn", tell.inn },
@@ -723,6 +763,35 @@ local function ending(s, e)
   end
 end
 
+-- A moment as the writer tells it: no person in it if who asked or took it
+-- back is a thing (goes untold); an objective the log words as a kill, "Slay
+-- 10 Dark Iron Spies", a kill (no digits, no count in the prose).
+local KILL_VERBS = { Slay = true, Kill = true, Defeat = true, Destroy = true }
+local function asTold(m)
+  local thing = W.isThing(m.giver) or W.isThing(m.ender)
+  local objectives, changed = m.objectives, false
+  for k, o in ipairs(m.objectives or {}) do
+    local verb, n, name = (o.type ~= "monster" and o.text or ""):match("^(%a+) (%d+) (.-)%.?$")
+    if verb and KILL_VERBS[verb] then
+      if not changed then
+        objectives, changed = {}, true
+        for j = 1, k - 1 do
+          objectives[j] = m.objectives[j]
+        end
+      end
+      objectives[k] = { type = "monster", name = name, n = tonumber(n) }
+    elseif changed then
+      objectives[k] = o
+    end
+  end
+  if not (thing or changed) then return m end
+  return setmetatable({
+    giver = not W.isThing(m.giver) and m.giver or nil,
+    ender = not W.isThing(m.ender) and m.ender or nil,
+    objectives = objectives,
+  }, { __index = m })
+end
+
 function Book:chapter(n, ch)
   self.last, self.there = nil, false
   self.chapterNo = self.chapterNo + 1
@@ -730,13 +799,14 @@ function Book:chapter(n, ch)
   local s = newScene(self, n, ch) -- (the book's scene until the chapter is told)
   opening(s)
   for i, m in ipairs(ch.log or {}) do
+    m = asTold(m)
     s:at(i, m)
     if s.starts[i] then s:nextStretch() end
     if s.errandsFrom == i then s:errands() end
     s:fold() -- (a routine hand-in past the scene's few: told in its tally, s.foldNow)
     match(m, ARMS, s)
     s:situate()
-    if m.k ~= "level" then s.prev = m end
+    if m.k ~= "level" and m.k ~= "weapon" then s.prev = m end
   end
   -- (the tally once the chapter ends: in an open one, the place may not be left)
   if ch.ended then s:emitFold() end

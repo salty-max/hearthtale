@@ -344,7 +344,7 @@ function Scene:clause(text, said, m, key, isArrival, continued)
   if not continued and self:otherWork(kind) then self:flush() end
   if #self.pending == 0 then
     self.sentenceKey = key
-    self.lead = self:backLead(b:link(m, self.prev, key), key)
+    self.lead = self:backLead(b:link(m, self.prev, key), key, text, turned)
     self.sentenceLimit = isArrival and 2 or math.min(b.style.clauses, 2 + hash(b.seed .. "|length|" .. key) % 2)
     self.arrival = isArrival
     local mode = hash(b.seed .. "|arrival|" .. key) % 3
@@ -380,20 +380,27 @@ end
 -- often reads as a ledger of comings and goings. (Not the wording just used.)
 local BACK = { "Back %s,", "Once back %s,", "%s again," } -- ("in Anvilmar", "on Zephras Isle")
 -- (a land come back to always is: backLand, Writer.lua tell.place)
+-- (another land always is, even twice in a paragraph; never a place the text
+-- just named: "I came back into the Barrens… Back in the Barrens")
 function Scene:backDue(place)
   local last = self.backAt[place]
-  return place ~= nil and not self.backTold and (self.backLand or not (last and #self.paragraphs + 1 - last < 2))
+  if place == nil or place == self.lastNamed then return false end
+  return self.backLand or (not self.backTold and not (last and #self.paragraphs + 1 - last < 2))
 end
-function Scene:backLead(link, key)
+-- (text: the clause it leads, turned: one with its own subject, which takes
+-- "Back in X," not "Once back"; nor "X again," before an "again" of its own)
+function Scene:backLead(link, key, text, turned)
   local place = self.backTo
   local due = self:backDue(place)
   self.backTo, self.backLand = nil, nil
   if not due then return link end
   self.backTold, self.backAt[place] = true, #self.paragraphs + 1
   local b = self.book
-  self.named, b.last, b.there = true, place, false
+  self.named, b.last, b.there, self.lastNamed = true, place, false, place
   local i = hash(b.seed .. "|back|" .. key) % #BACK + 1
   if i == b.backForm then i = i % #BACK + 1 end
+  if turned then i = 1 end
+  if i == 3 and text and text:find("again") then i = 1 end
   b.backForm = i
   local back = BACK[i]:format(W.at(place)):gsub("^%l", string.upper)
   return link and link .. " " .. back:gsub("^%u", string.lower) or back
@@ -457,7 +464,7 @@ function Scene:arrive(place, zone, opener, found)
   self:flush()
   self:enter(place, zone)
   if not opener and place == b.last then return end
-  self.named = true
+  self.named, self.lastNamed = true, place
   local text, said
   if opener then
     text, said = b:say(opener, key, { place = mid(place), _place = place }, self:tags(nil, m), nil, true)
@@ -563,9 +570,20 @@ end
 function Scene:takePrey(m, only, except)
   local prey, b = self.prey, self.book
   if #prey == 0 or self.preyPlace ~= self.place then return nil end
-  local asked, rest = {}, {}
+  local asked, rest, things = {}, {}, {}
   for _, o in ipairs(m.objectives or {}) do
     if o.name then asked[o.name] = true end
+    if o.type == "item" and o.name then table.insert(things, o.name) end
+  end
+  -- (nor the creature a thing of this work is named for: Zalazane, for
+  -- Zalazane's Head, is told with his head)
+  local function owns(name)
+    for _, t in ipairs(things) do
+      local whose = t:match("^(.-)'s ") or t:match(" of (%u.+)$")
+      whose = whose and (whose:match("^%a+ of (.+)$") or whose)
+      if whose and (" " .. name .. " "):find(" " .. whose .. " ", 1, true) then return true end
+    end
+    return false
   end
   -- (one creature in its variants, by the last word of its name and its
   -- kind: Ragged Young Wolves and a Ragged Timber Wolf are wolves, named by
@@ -580,6 +598,7 @@ function Scene:takePrey(m, only, except)
     elseif
       (m.at or 0) - (k.at or 0) <= PREY_TIME
       and not asked[k.name]
+      and not owns(k.name)
       and not self.toldFoes[k.name]
       and not self:trophyOf(k.name)
     then
@@ -949,24 +968,29 @@ function Scene:findErrands()
   if b.errandsAt and b.chapterNo - b.errandsAt < ERRANDS_GAP then return end
   local log, class, known = self.ch.log or {}, self.c.class, ns.knowledge and ns.knowledge.quests or {}
   local from, quests, n = nil, {}, 0
+  local whys, before = ns.data.why or {}, false -- (before: work told already, for "after that")
   for i, m in ipairs(log) do
     if self.starts[i] then
       from, quests, n = nil, {}, 0
     end
     local own = m.id and known[m.id] and known[m.id].class == class
-    if (m.k == "quest" or m.k == "done") and not m.abandoned and not own then
+    -- (a quest that mattered, or an elite's fight, is no errand: the run ends)
+    local weighty = (m.id and whys[m.id] and whys[m.id][1] >= 2) or (m.k == "kill" and m.elite)
+    if (m.k == "quest" or m.k == "done") and not m.abandoned and not own and not weighty then
       from = from or i
       local id = m.id or m.title or i
       if not quests[id] then
         quests[id], n = true, n + 1
       end
-      if n >= ERRANDS then
+      if n >= ERRANDS and before then
         self.errandsFrom = from
         return
       end
-    elseif not FILLER[m.k] then
+    elseif weighty or not FILLER[m.k] then
+      if from or (m.k ~= "place" and m.k ~= "level") then before = true end
       from, quests, n = nil, {}, 0
     end
+    if from == nil and (m.k == "quest" or m.k == "done") then before = true end
   end
 end
 
@@ -1092,7 +1116,9 @@ function Scene:emitFold()
   local values = { n = words(n), giver = folded.who }
   folded.errands, folded.gear, folded.what, folded.who = 0, 0, nil, nil
   if n == 0 and not gear then return end
-  local text, said = self.book:say("c-fold", fk, values, self:tags(t, fm), nil, true)
+  -- (deliveries told as such while those lines are fresh: "made three more deliveries")
+  local prefer = (t.deliveries and not t.gear) and { deliveries = true } or nil
+  local text, said = self.book:say("c-fold", fk, values, self:tags(t, fm), prefer, true)
   self:clause(text, said, fm, fk)
 end
 

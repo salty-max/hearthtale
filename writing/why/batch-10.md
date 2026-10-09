@@ -123,7 +123,7 @@ kind: why
 # Hillsbrad Foothills
 - 494 1 | running Deathstalker Lesh's coded word to Tarren Mill, the signal that Hillsbrad was ripe for attack
 - 496 1 | gathering grey bear tongues and creeper ichor for Apothecary Lydon, who sought killing agents to plague the humans
-- 498 3 | freeing Drull and Tog'thar from Durnholde Keep, orc warriors the humans had taken captive while they were scouting the Syndicate
+- 498 3 | freeing Drull and Tog'thar from Durnholde Keep, two orc scouts the humans had caught spying on the Syndicate
 - 499 1 | giving Lydon's assistant Umpi a taste of the Elixir of Suffering, a trial of what the Dark Lady planned for humans and Scourge
 - 501 1 | collecting mountain lion blood for Apothecary Lydon's death-brew, in the service of the New Plague
 - 502 1 | feeding Farmer Ray's dog Stanley the Elixir of Pain, Apothecary Lydon's test of a brew he hoped would please Lady Sylvanas

@@ -3,7 +3,7 @@ kind: zone
 ---
 - [!home !back] I crossed into {zone}, taking a stranger's interest in the people who lived here.
 - [!home] I reached {zone}, my interest in the country briefly overcoming my weariness.
-- I came into {zone}, with a safe welcome already a pleasant thing to think of.
+- [!back] I came into {zone}, curious what kind of welcome it kept for strangers.
 - [!home !back] I came into {zone}, taking a traveller's care to remember the way back.
 - [!home !back] I found myself in {zone}, with a stranger's hope of becoming something more familiar.
 - [aside !home !back] I came into {zone}, and hoped its people would have more to offer than work.
@@ -21,3 +21,9 @@ kind: zone
 - [back !home] I found my way back to {zone}, less a stranger there than before.
 - [back !home !town] {zone} took me in again, its roads already half familiar.
 - [back !home hc] I came back to {zone}, no less careful for having survived it once.
+- [away client:forever race:Skyborne] I came down from the islands at last, and set foot in {zone} with all of Zephras behind me.
+- [away client:forever race:Skyborne] The skycutter left me in {zone}, on ground that did not end at a cliff's edge.
+- [!back] I came into {zone} and took my first long look at it.
+- [!back] I reached {zone} with my eyes busier than my feet.
+- [!back] I crossed into {zone}, and slowed down to take it in.
+- [back !town] I found my way back to {zone}, and its paths came back to me as I walked.

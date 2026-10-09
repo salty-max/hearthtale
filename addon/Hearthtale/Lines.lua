@@ -49,10 +49,18 @@ local function satisfied(tags, ctx)
   return true
 end
 
+-- (a name with a title of its own, "Aetheen of the Gales", "Leonid
+-- Barthalomew the Revered", or a thing's, "Wizzlecrank's Shredder", takes
+-- no "'s"; "found a way to" no "find")
 local function fillable(text, values)
   for slot in text:gmatch("{(%w+)}") do
-    if values[slot] == nil then return false end
+    local v = values[slot]
+    if v == nil then return false end
+    if type(v) == "string" and text:find("{" .. slot .. "}'s", 1, true) then
+      if v:find(" of ", 1, true) or v:find(" the ", 1, true) or v:find("'s ", 1, true) then return false end
+    end
   end
+  if values.task and text:find("found a way to {task}", 1, true) and values.task:find("^find ") then return false end
   return true
 end
 
@@ -183,6 +191,7 @@ local BURN = { holy = true } -- (a remark about the Light's burn: Book:remark)
 for _, people in ipairs(FOE_PEOPLE) do
   SUBJECTS[people[1]] = true
 end
+SUBJECTS.leper, SUBJECTS.highborne = true, true -- (told by name, whatever their kind)
 for _, kind in pairs(FOE_KIND) do
   SUBJECTS[kind] = true
 end
@@ -234,6 +243,11 @@ local function newBook(c)
     kindUses = {},
   }, Book)
   b.race = race
+  -- (the spells known from the first day: a new rank of one is no lesson)
+  b.knownSpells = {}
+  for _, sp in ipairs(W.FIRST_SPELLS[class] or {}) do
+    b.knownSpells[sp] = true
+  end
   b.voice = { home = HOME[race], kin = KIN[race], faith = faith(race, class), weapon = weapon(race, class) }
   b.own = ns.data.voices and ns.data.voices[race] -- the race's own journal voice (writing/voices/<Race>/)
   b.style = STYLE[race] or STYLE.default
@@ -514,9 +528,18 @@ function Book:pick(kind, key, prefer, ownFresh, fresh, voiced, all)
   -- (a routine clause avoids the verb of the one before; a fold, the
   -- chapter's fold before it: "took care of two other small tasks… took
   -- care of one other small task")
-  local verb = routine and self.lastVerb or (kind == "c-fold" and self.scene and self.scene.foldVerb) or nil
-  local function sameVerb(e) return e and e.s[1]:match("^(%a+)") == verb end
-  if verb then
+  -- (any clause: "I hunted… I hunted", "set Dusk on… set Dusk on"; nor one
+  -- that ends as the one before did: "… soon after. … soon after.")
+  local clause = kind:find("^c%-") ~= nil
+  local verb = (clause and kind ~= "c-fold") and self.lastVerb
+    or (kind == "c-fold" and self.scene and self.scene.foldVerb)
+    or nil
+  local tail = clause and self.lastTail
+  local function tailOf(text) return text:match("(%a+ %a+)%W*$") end
+  local function sameVerb(e)
+    return e and ((verb and e.s[1]:match("^(%a+)") == verb) or (tail and tailOf(e.s[1]) == tail)) or false
+  end
+  if verb or tail then
     local function other(group)
       local kept = {}
       for _, e in ipairs(group) do
@@ -626,9 +649,13 @@ function Book:say(kind, key, values, tags, prefer, raw)
   local ctx = setmetatable(tags or {}, { __index = self.base })
   if kind == "c-return" then ctx.back = true end -- for its remark: a place known
   local routine, weight = ROUTINE[kind], weigh(kind, ctx)
+  -- (the first fight against Cenarius's own: a highlight, its unease told)
+  if ctx.cenarion and routine == "r-foe" and not self.cenarionSeen then
+    weight, self.cenarionSeen = 3, true
+  end
   local wantRemark = not ctx.quiet and remarkDue(s, routine, weight)
   for k, v in pairs(self.voice) do
-    if values[k] == nil then values[k] = v end
+    if values[k] == nil then values[k] = (k == "weapon" and self.weaponHeld) or v end -- (the weapon in hand, once known)
   end
   local seen = s and s.peopleNamed
   local asked = self:people(kind, values, ctx, seen)
@@ -659,7 +686,9 @@ function Book:say(kind, key, values, tags, prefer, raw)
       end
     end
   end
-  if routine then self.lastVerb = text:match("^(%a+)") end
+  if kind:find("^c%-") then
+    self.lastVerb, self.lastTail = text:match("^(%a+)"), text:match("(%a+ %a+)%W*$")
+  end
   if kind == "c-fold" and s then s.foldVerb = text:match("^(%a+)") end
   -- a remark ends a clause that has no comma or "and" of its own ("cursed it
   -- and let the rot do its work, taller than me" would hang off the rot)
@@ -885,6 +914,26 @@ function Book:size(n, key, mass, pack)
   return w
 end
 
+-- A thing named for the one it belongs or goes to, as they would hear it:
+-- "Grelin Whitebeard's Journal" to Grelin is "the journal", "Thazz'ril's
+-- Pick" to Foreman Thazz'ril "the pick", "a Letter to Grelin Whitebeard"
+-- "the letter", "Ebonlocke's Response to Solomon" "Ebonlocke's response".
+local function within(name, person) return person and (" " .. person .. " "):find(" " .. name .. " ", 1, true) end
+local function theirs(name, person)
+  local whose, what = name:match("^(.-)'s (.+)$")
+  if whose and within(whose, person) then return "the " .. what:lower() end
+  local thing, to = name:match("^(.-) to (%u.+)$")
+  if thing and (within(to, person) or within(to:match("(%S+)$"), person)) then
+    local owner, head = thing:match("^(.-'s) (.+)$")
+    if owner then return owner .. " " .. head:lower() end
+    return "the " .. (thing:match("^An? (.+)$") or thing):lower()
+  end
+end
+
+-- (the class's way of fighting, or the pet, in the clause just told: not in
+-- this one too, "I called on the Light… I called on the Light…")
+function Book:foughtJust() return self.foughtAt ~= nil and (self.told or 0) - self.foughtAt <= 1 end
+
 -- A quest's deed, in a clause: the creatures killed, the things gathered or
 -- delivered, the task done, or who asked. Returns the text and what was
 -- chosen, as Book:say.
@@ -929,6 +978,7 @@ function Book:deed(m, key, tags)
     tags.mechanical = self.creatureKinds[o.name] == "Mechanical" or nil
     local people = foeOf(o.name, self.creatureKinds[o.name])
     if people then tags[people] = true end
+    tags.harmless = W.HARMLESS[self.creatureKinds[o.name] or ""]
     -- how I fought them: my way of fighting (fire, steel...), a spell just
     -- learned, the pet at my side; favoured one time in three
     for e in pairs(self.fighting) do
@@ -938,10 +988,10 @@ function Book:deed(m, key, tags)
     if self.fresh then
       tags.tried, values.spell, prefer = true, self.fresh, { tried = true }
       self.fresh = nil
-    elseif tags.petName and hash(self.seed .. "|pet|" .. key) % 3 == 0 then
-      prefer = { pet = true }
-    elseif hash(self.seed .. "|fight|" .. key) % 3 == 0 then
-      prefer = self.fighting
+    elseif tags.petName and hash(self.seed .. "|pet|" .. key) % 3 == 0 and not self:foughtJust() then
+      prefer, self.foughtAt = { pet = true }, self.told or 0
+    elseif hash(self.seed .. "|fight|" .. key) % 3 == 0 and not self:foughtJust() then
+      prefer, self.foughtAt = self.fighting, self.told or 0
     end
     values.pet = tags.petName
     tags.pet = values.pet and true or nil
@@ -958,9 +1008,8 @@ function Book:deed(m, key, tags)
     -- a thing in hand when the quest was taken (a note, a letter found on a
     -- foe), carried to another: a delivery
     values.ender, values.thing = m.ender, itemName(o.name)
-    -- (a thing named for whom it goes to: "the journal", once)
-    local owner = o.name:match("^(.-)'s ")
-    if owner and m.ender:find(owner, 1, true) == 1 then values.thing = "the " .. o.name:match("'s (.+)$"):lower() end
+    -- (a thing named for whom it goes to: "the journal", "the letter", once)
+    values.thing = theirs(o.name, m.ender) or values.thing
     -- the same thing, delivered just before: "took it on to …" ("it" only
     -- right after it was named; further back in the paragraph, named again)
     local carried = self.scene and self.scene.thingsCarried or {}
@@ -979,6 +1028,10 @@ function Book:deed(m, key, tags)
     end
     carried[o.name] = self.told or 0
     done, said = self:say("c-deliver", key, values, tags, nil, true)
+  elseif o and o.type == "item" and o.held then
+    -- (a thing in hand from the start, the foreman's blackjack: never found;
+    -- its giving back, a delivery, is told at the turn-in)
+    return nil
   elseif o and o.type == "item" and o.name then
     -- every thing asked for ("Felix's Box, Felix's Chest and Felix's Bucket of
     -- Bolts"), the weight of the work for one kind of thing only
@@ -988,9 +1041,8 @@ function Book:deed(m, key, tags)
     end
     -- a thing named for who asked for it: "the journal" ("Grelin Whitebeard
     -- had asked for Grelin Whitebeard's Journal" says it twice)
-    local owner = m.giver and #all == 1 and (o.name:match("^(.-)'s (.+)$"))
-    local renamed = owner and m.giver:find(owner, 1, true) == 1
-    if renamed then list[1] = "the " .. o.name:match("'s (.+)$"):lower() end
+    local renamed = m.giver and #all == 1 and theirs(o.name, m.giver)
+    if renamed then list[1] = renamed end
     if #all == 1 and self.scene then self.scene.thingsCarried[o.name] = self.told or 0 end
     -- ("the harvest", Milly's eight sacks of it: one thing, never "all the the harvest")
     local count = renamed and 1 or (#all == 1 and (o.n or 1) or 2)
@@ -1019,11 +1071,34 @@ function Book:deed(m, key, tags)
         trophyOwner, trophyPart = w, h
       end
     end
+    -- (any part of a creature, or a thing it carried, its name saying whose:
+    -- "Essence of Nightlash", "Piece of Krom'zar's Banner", "Murgut's Totem")
+    if not trophyOwner then
+      local h, w = o.name:match("^(%a+) of (%u.+)$")
+      if h then
+        trophyOwner, trophyPart = w, h
+      end
+    end
+    local pieceOf = trophyOwner and trophyOwner:match("^(%a+) of ")
+    if pieceOf then trophyOwner = trophyOwner:sub(#pieceOf + 5) end
     if #all == 1 and trophyOwner and self.scene then
       self.scene.trophied[trophyOwner] = true
+      local part = (pieceOf and ("a " .. pieceOf:lower() .. " of the ") or "the ") .. trophyPart:lower()
       if not tags.prey and (o.n or 1) == 1 and self.scene:slainOwner(trophyOwner) then
-        values.thing, values.n, tags.trophy, tags.one, tags.plural, tags.quiet =
-          "the " .. trophyPart:lower(), "", true, true, nil, true
+        values.thing, values.n, tags.trophy, tags.one, tags.plural, tags.quiet = part, "", true, true, nil, true
+      elseif not tags.prey and (o.n or 1) == 1 and tags.done and not tags.handed then
+        -- (its owner a creature, the game's drops or its own name say so:
+        -- the thing taken from it where the work was done, never "the search
+        -- turned up"; at the hand-in, the trophy laid before who asked)
+        local from
+        for _, dropper in ipairs(ns.knowledge and ns.knowledge.drops[o.name] or {}) do
+          if (" " .. dropper .. " "):find(" " .. trophyOwner .. " ", 1, true) then from = dropper end
+        end
+        local bare = ns.names and ns.names.creatureBare or {}
+        from = from or (bare[trophyOwner] and trophyOwner)
+        if from then
+          values.owner, values.thing, values.n, tags.taken, tags.one, tags.plural = from, part, "", true, true, nil
+        end
       end
     end
     tags.cloth = o.name:match("Cloth$") or o.name:match("Silk$") or o.name:match("Wool$") or nil
@@ -1045,7 +1120,7 @@ function Book:deed(m, key, tags)
         -- (its own article goes: "the Mysterious Message", not "the A …")
         hunt.item = "the " .. (hunt.item:match("^An? (.+)$") or hunt.item:match("^The (.+)$") or hunt.item)
       end
-      if owner and m.giver:find(owner, 1, true) == 1 then hunt.item = list[1] end
+      if renamed then hunt.item = list[1] end
       -- (a thing named for the creature it comes from: "the Scale of Old
       -- Murk-Eye" is not taken "from Old Murk-Eye" as well)
       local whose = o.name:match("^(.-)'s ") or o.name:match("^(.-s)' ")
@@ -1135,10 +1210,10 @@ function Book:deed(m, key, tags)
       hunt.pet = tags.petName
       tags.pet = hunt.pet and true or nil
       local prefer
-      if tags.pet and hash(self.seed .. "|pet|" .. key) % 3 == 0 then
-        prefer = { pet = true }
-      elseif hash(self.seed .. "|fight|" .. key) % 3 == 0 then
-        prefer = self.fighting
+      if tags.pet and hash(self.seed .. "|pet|" .. key) % 3 == 0 and not self:foughtJust() then
+        prefer, self.foughtAt = { pet = true }, self.told or 0
+      elseif hash(self.seed .. "|fight|" .. key) % 3 == 0 and not self:foughtJust() then
+        prefer, self.foughtAt = self.fighting, self.told or 0
       end
       done, said = self:say("c-hunt", key, hunt, tags, prefer, true)
     end
@@ -1153,6 +1228,16 @@ function Book:deed(m, key, tags)
     -- told after the fact: "escort the Defias Traitor to discover where
     -- VanCleef was hiding" (the log's "The Defias Traitor", "is hiding")
     values.task = taskOf(o.text)
+    -- (one who asked, named in the task as well: "find Mankrik's Wife" for
+    -- Mankrik is "find his wife")
+    local own = m.giver and values.task:match("(%u[%w']+)'s %u")
+    if own and (" " .. m.giver .. " "):find(" " .. own .. " ", 1, true) then
+      local pron = (sex == "male" and "his") or (sex == "female" and "her") or "the"
+      values.task = values.task:gsub(
+        own:gsub("%p", "%%%0") .. "'s (%u%a*)",
+        function(w) return pron .. " " .. w:lower() end
+      )
+    end
     -- (a place the reader knows already: not named again at the end)
     local prep, at = values.task:match(" (in) ([^,]+)$")
     if not at then
@@ -1169,10 +1254,11 @@ function Book:deed(m, key, tags)
     local site = values.task:match("^explore the (.+)$")
     if site and (self.placeNames[site] or (ns.data.scenery or {})[site]) then values.task = "explore " .. mid(site) end
     done, said = self:say("c-deed-task", key, values, tags, nil, true)
-  elseif not o and (m.k == "done" or m.told) then
+  elseif (m.k == "done" or m.told) and (not o or (why and o.text and not o.name and o.type ~= "item")) then
     -- an escort, an event: no objective in the log, the game said when it was
-    -- done (Quests.lua); told by what it was for (writing/why/), else by who
-    -- asked, never as word carried to its ender
+    -- done (Quests.lua), or one that names its result ("Peons Awoken"); told
+    -- by what it was for (writing/why/), else by who asked, never as word
+    -- carried to its ender
     values.why = why and ours(why[2], self.race)
     tags.story, tags.escort = values.why and true or nil, true
     if values.why or m.giver then

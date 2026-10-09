@@ -1,13 +1,13 @@
 ---
 kind: r-lesson
 ---
-- [client:forever] an unfamiliar knack demanding a beginner's care
+- [client:forever one] an unfamiliar knack demanding a beginner's care
 - [client:forever] an apprentice's difficulty hidden behind an assured manner
 - [client:forever one] something to keep wherever the road went
 - [client:forever faction:alliance one] a new skill to keep when a mentor could not stay
 - [client:forever] my balance in no danger, and my pride less fortunate
-- [client:forever faction:horde] a knack I hoped to give back to those who needed me
-- [client:forever faction:alliance] a skill the High Order could keep without a patron's favour
+- [client:forever faction:horde one] a knack I hoped to give back to those who needed me
+- [client:forever faction:alliance one] a skill the High Order could keep without a patron's favour
 - [client:forever new] a craft useful enough to make a stranger welcome
 - [client:forever new] a beginner again, which my pride took harder than my hands
 - [client:forever low] as clumsy as a fledgling in a first gust
@@ -15,4 +15,4 @@ kind: r-lesson
 - [client:forever faction:alliance !one] new skills to keep when a mentor could not stay
 - [client:forever] my fingers learning the part no wide view could supply
 - [client:forever] readier to ask for help than to let pride keep me helpless
-- [client:forever] an unfamiliar knack beginning to feel useful
+- [client:forever one] an unfamiliar knack beginning to feel useful

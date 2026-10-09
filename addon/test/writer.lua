@@ -1439,7 +1439,19 @@ for _, race in ipairs(RACES) do
       if text:find("Folded Person " .. i, 1, true) then problem(race .. " fold", "not the last named", text) end
     end
     local told = false
-    for _, w in ipairs({ "gear", "errand", "job", "task", "favour", "deliver", "request", "report", "thing", "chore" }) do
+    for _, w in ipairs({
+      "gear",
+      "errand",
+      "job",
+      "task",
+      "favour",
+      "deliver",
+      "request",
+      "report",
+      "thing",
+      "chore",
+      "parcel",
+    }) do
       if text:find(w, 1, true) then told = true end
     end
     if errands + gear > 0 and not told then problem(race .. " fold", "folded hand-ins never told", text) end
@@ -1892,7 +1904,7 @@ do
         foes[k] = RARES[(r * 7 + n * 3 + k) % #RARES + 1] .. (n > 6 and " the Elder" or "")
         table.insert(log, { k = "rare", name = foes[k], zone = "Wetlands", sub = "Wetlands", at = t + 20 + k })
       end
-      if n % 2 == 0 and foes[1] then
+      if (n % 2 == 0 or n % 3 == 2) and foes[1] then
         table.insert(log, { k = "close", hp = 20, foe = foes[1], zone = "Wetlands", sub = "Wetlands", at = t + 30 })
       end
       -- (two lands of my own people's, or of my hosts', at once)
@@ -2002,6 +2014,101 @@ do
     end
     for i, e in ipairs(ns.writeDiary(c, book).entries) do
       inspect(race .. " escort diary " .. i, e.text)
+    end
+  end
+  -- an elite slain, then its head taken as proof; many deliveries in one place
+  for seed = 1, 12 do
+    local log = {
+      {
+        k = "kill",
+        name = "Ol' Sooty",
+        kind = "Beast",
+        elite = true,
+        zone = "Dun Morogh",
+        sub = "Dun Morogh",
+        at = 100,
+      },
+      {
+        k = "done",
+        id = 4000000 + seed,
+        giver = "Senator Mehr Stonehallow",
+        objectives = { { type = "item", name = "Ol' Sooty's Head", n = 1 } },
+        zone = "Dun Morogh",
+        sub = "Dun Morogh",
+        at = 160,
+      },
+    }
+    for k = 1, 6 do
+      table.insert(log, {
+        k = "quest",
+        id = 4100000 + seed * 10 + k,
+        giver = "Sten Stoutarm",
+        ender = "Talin Keeneye",
+        objectives = { { type = "item", name = "Sealed Letter", n = 1, held = true } },
+        zone = "Dun Morogh",
+        sub = "Kharanos",
+        at = 1000 + k * 60,
+      })
+    end
+    -- (and favours known only by who asked: a fold of requests)
+    for k = 1, 6 do
+      table.insert(log, {
+        k = "quest",
+        id = 4200000 + seed * 10 + k,
+        giver = "Grelin Whitebeard",
+        zone = "Dun Morogh",
+        sub = "Anvilmar",
+        at = 3000 + k * 60,
+      })
+    end
+    local c = {
+      guid = "trophy-" .. seed,
+      race = RACES[seed % #RACES + 1],
+      class = "WARRIOR",
+      chapters = {
+        {
+          start = { level = 10, zone = "Dun Morogh", sub = "Dun Morogh" },
+          log = log,
+          ended = { level = 10, place = "Kharanos", how = "rest" },
+          kills = { ["Ol' Sooty"] = 1 },
+          quests = 7,
+          played = 3600,
+          gold = 0,
+        },
+      },
+    }
+    inspect("trophy and deliveries", ns.writeBook(c).chapters[1].text)
+  end
+  -- fights against Cenarius's own, for those who revere him
+  for _, life in ipairs({ { "NightElf", "WARRIOR" }, { "NightElf", "PRIEST" }, { "Tauren", "WARRIOR" } }) do
+    for seed = 1, 4 do
+      local chapters = {}
+      for n = 1, 4 do
+        chapters[n] = {
+          start = { level = 20, zone = "Stonetalon Mountains", sub = "Stonetalon Mountains" },
+          log = {
+            {
+              k = "done",
+              id = 3000000 + n,
+              giver = "Sten Stoutarm",
+              objectives = { { type = "monster", name = "Son of Cenarius", n = 8 } },
+              zone = "Stonetalon Mountains",
+              sub = "Stonetalon Mountains",
+              at = n * 100000 + 60,
+            },
+          },
+          ended = { level = 20, place = "Stonetalon Mountains", how = "rest" },
+          kills = { ["Son of Cenarius"] = 8 },
+          quests = 1,
+          played = 3600,
+          gold = 0,
+        }
+      end
+      local c =
+        { guid = "cenarion-" .. life[1] .. life[2] .. seed, race = life[1], class = life[2], chapters = chapters }
+      for i, ch in ipairs(ns.writeBook(c).chapters) do
+        inspect(life[1] .. " cenarion " .. i, ch.text)
+      end
     end
   end
   -- the pet: a warlock's demon, a hunter's beast, at my side through the work

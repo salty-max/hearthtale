@@ -219,7 +219,7 @@ kind: why
 - 780 1 | killing the Battleboars the Bristlebacks had trained to be malicious, for snouts and flanks to stew for the young of the camp
 - 781 2 | bringing Chief Hawkwind the Bristleback warchief's plans for a siege of Camp Narache, in time to call Bloodhoof Village to help
 - 1656 1 | taking a bundle of furs to Innkeeper Kauth in Bloodhoof Village for a young tauren too worn out by the Rite of Strength
-- 3376 3 | bringing Brave Windfeather the head of Chief Sharptusk Thornmantle, whose Bristlebacks waged war on the tauren of the Mesa
+- 3376 3 | bringing Brave Windfeather the head of Chief Sharptusk Thornmantle, whose Bristlebacks waged war on the Mesa's tauren
 # sort 344
 - 7786 3 | bringing the Bindings of the Windseeker, elementium and the Essence of the Firelord so Highlord Demitrian could free Thunderaan
 - 7787 3 | forcing the lying Highlord Demitrian, after the Windseeker's defeat, to wake the dormant blade Thunderfury

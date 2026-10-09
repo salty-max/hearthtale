@@ -101,7 +101,7 @@ const KINDS: Record<string, string[]> = {
   "c-first": ["kind"],
   "c-elite": ["foe"],
   "c-deed-kill": ["n", "foes", "giver", "ender", "spell", "pet"],
-  "c-deed-item": ["n", "thing", "giver", "ender"],
+  "c-deed-item": ["n", "thing", "giver", "ender", "owner"],
   // the work handed in on the spot, to whom: "brought Sten Stoutarm eight Tough Wolf Meat"
   "c-handed-kill": ["n", "foes", "giver", "spell", "pet"],
   "c-handed-item": ["n", "thing", "giver"],
@@ -163,7 +163,8 @@ const TAGS = ["home", "ally", "foe", "neutral", "night", "hc", "high", "low", "f
   "stone", "egg", "feather", "hide", "paper", "plant", "relic", "remains", "teeth", "mechanical", "cloth", "meat", "explore", "escort", "new", "made", "form", "demon", "steed",
   "looted", "handed", "complex", "state", "ofprey", "summon", "also", "tried", "pet", "fire", "frost", "arcane", "shadow", "curse", "holy", "lightning", "wrath", "moon", "steel", "arrow", "imp", "voidwalker", "succubus", "felhunter", "felguard",
   "bear", "cat", "travel", "aquatic", "moonkin", "tree", "flight", "deliveries", "lone", "set", "melee", "trinket",
-  "hard", "near", "found", "learned", "delve", "quiet", "diary", "hosts", "two", "much", "fought", "zalazane", "thread", "settled", "story", "town"];
+  "hard", "near", "found", "learned", "delve", "quiet", "diary", "hosts", "two", "much", "fought", "zalazane", "thread", "settled", "story", "town",
+  "jewel", "seed", "food", "cargo", "leper", "highborne", "venture", "harmless", "w3", "paid", "after", "capital", "leader", "away", "used", "taken"];
 const RACES = ["Human", "Dwarf", "NightElf", "Gnome", "Orc", "Troll", "Tauren", "Scourge", "Skyborne"];
 const ROUTINE = new Set("deed-kill deed-item deed-task deed-word chain deliver report first gear trainer inn travel return place group skill prof handed-kill handed-item".split(" ").map((kind) => `c-${kind}`));
 // The recap's kinds: one sentence of the recap holds a thought, the others are plain.
@@ -221,6 +222,11 @@ function parseFile(file: string, kind: string | null): Parsed | null {
     if (own === "r-lesson")
       for (const s of sentences)
         if (/\b(it|its)\b/i.test(s.text) && !s.tags.includes("one")) fail(file, `"it" in a lesson's remark needs [one]: ${s.text}`);
+    // (nor one thing learned, "a knack", "a skill", after three spells)
+    if (own === "r-lesson")
+      for (const s of sentences)
+        if (/\b(a knack|a skill|the lesson|one more thing|an unfamiliar knack)\b/i.test(s.text) && !s.tags.includes("one"))
+          fail(file, `one thing learned in a lesson's remark needs [one]: ${s.text}`);
     // a fight may be with one foe or several: "their" for several
     if (own === "r-foe")
       for (const s of sentences)

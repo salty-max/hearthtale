@@ -2,7 +2,7 @@
 kind: why
 ---
 # Zephras Isle
-- 92460 3 | coming of age in Thendal Village, where Rorian the Dayseeker bestowed a relic carried by many before, one day to pass to another
+- 92460 3 | coming of age in Thendal Village, where Rorian the Dayseeker gave me a relic carried by many before me and one day to pass to another
 - 92461 1 | culling the vuldren of Thendal Grove, grown too many, to restore the harmony Rorian the Dayseeker said all its creatures shared
 - 92462 1 | exterminating the cirrusflies infesting the east of Thendal Grove for Elatrell Featherlight, before the swarm grew too large
 - 92463 2 | tracking the Cirrusfly Queen to her hive deep in the grove, since killing the workers alone would never end the infestation
@@ -90,13 +90,13 @@ kind: why
 - 94013 3 | taming a Vuldren Alpha in the Gustberry Lowlands, Quel'ana Quickgale's last trial before learning to bond with a companion for good
 - 94369 2 | warning High Elder Talaanis Shadowsong of Al'Akir now the wards were down, and telling him of the High Order's mission to Azeroth
 - 94411 2 | driving High Order apprentices from the standing stones north of Shen'dar Village for Illaya Amberwind, who feared their meddling
-- 94413 2 | chasing Windshaper novices from the ley line in the southwest forest for Rathiril Sunlance, who would not see it healed as a scar
+- 94413 2 | chasing Windshaper novices from the southwest forest's ley line for Rathiril Sunlance, who wanted it studied, not healed over as a scar
 - 94414 1 | looking upon the anchor pylon through Halaan Hawk-Eye's gift, one of the spirits' gifts that bind the island, its magic grown unstable
 - 94484 1 | checking on the druids of Shadowgale Forest, whose word to Lotheluum Starbreeze was overdue, and finding them in dire straits
 - 94485 1 | searching the roots of Shadowgale's trees for Lady's Tear moss, so Elegael Thornpaw could bind the wounds of the druids left in the den
 - 94486 1 | plucking feathers from the shrieklings of Shadowgale for the second half of Elegael Thornpaw's poultice
 - 94487 2 | prying bloodied heirlooms from the Al'Aketh in Shadowgale Forest, for Elegael Thornpaw to keep for a future generation
-- 94488 3 | killing Commander Haalien, a druid turned cultist who spilled his kin's blood, a cousin Elegael Thornpaw could hardly strike herself
+- 94488 3 | killing Commander Haalien, Elegael Thornpaw's own cousin, a druid turned cultist who had spilled his kin's blood
 - 94489 2 | carrying Elegael Thornpaw's poultices into the den to heal the wounded druids, and searching for her mate, Jorel Windsinger
 - 94490 2 | finding a torn missive on Haalien showing the cult had struck the druids for the pylon, on orders that may have come from Valanaar
 - 94491 2 | taking the missive and the fate of the fallen druids to Lotheluum Starbreeze in Valanaar, who feared a traitor in the city

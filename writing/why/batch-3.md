@@ -61,7 +61,7 @@ kind: why
 - 9665 2 | seizing the four towers of the Eastern Plaguelands to stave off an Alliance incursion on the Forsaken's eastern border
 # Duskwood
 - 55 3 | turning Morbent's Bane on Morbent Fel in his house above Raven Hill and slaying him, the revenge Sven had long hoped for
-- 56 2 | clearing skeletons from Tranquil Gardens for the Night Watch, guarding Darkshire alone since Stormwind withdrew its guards
+- 56 2 | clearing skeletons from Tranquil Gardens for the Night Watch, guarding Darkshire alone since Stormwind withdrew its soldiers
 - 57 2 | driving the skeletal fiends and horrors from the Raven Hill graveyard, where the undead were spreading through the forest around Darkshire
 - 58 2 | ridding the eastern mausoleum of Raven Hill of its Plague Spreaders, with too few Watchers left to keep Darkshire safe
 - 66 1 | asking after the name Stalvan at the Town Hall, a clue from Madame Eva's trance as she feared for her granddaughter Alyssa

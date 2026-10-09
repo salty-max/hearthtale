@@ -18,5 +18,5 @@ kind: c-quest
 - [again] took care of one more errand
 - [again] obliged once more
 - [again] helped with one more task on the same visit
-- [again] turned to the next request
+- [again] did what was asked of me once more
 - [again] saw one more piece of work through

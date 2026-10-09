@@ -203,7 +203,7 @@ kind: why
 - 376 1 | gathering scavenger paws and duskbat wings for Novice Elreth, who tended the wounded and tailored their armour
 - 380 2 | clearing the spiders from the gold mine near Deathknell, gold the Forsaken needed to survive
 - 381 2 | striking first at the Scarlet Crusade camp southeast of Deathknell, zealots sworn to destroy every undead, and taking their armbands
-- 382 3 | killing Meven Korgal, the Scarlet messenger sent from the Monastery, for the documents he carried to Deathknell
+- 382 3 | killing Meven Korgal, the Scarlet messenger sent from the Monastery, for the orders he carried to the Crusaders outside Deathknell
 - 383 1 | carrying the captured Scarlet Crusade documents, with the names of their officers in Tirisfal, to Executor Zygand in Brill
 - 590 1 | beating Calvin Montague when he denied owing the coin he had promised for carrying his letter to Brill
 - 3901 1 | thinning the rattlecage skeletons, tougher minions of the Lich King, to prove worthy of the freedom given to the Forsaken

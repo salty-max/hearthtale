@@ -13,7 +13,7 @@ kind: r-lesson
 - [high] old enough at this to teach the young ones at Sen'jin
 - [!one] eager to have them ready before trouble chose the hour
 - my pride having to wait for my fingers
-- rather taken with a knack no exile could strip away
+- [one] rather taken with a knack no exile could strip away
 - my patience harder to summon than my enthusiasm
 - [new] a trade that would travel well, as everything of ours has had to since Stranglethorn
 - [new] a beginner's clumsiness accepted for the sake of surviving
