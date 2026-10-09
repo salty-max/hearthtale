@@ -352,23 +352,40 @@ function Book:people(kind, values, ctx, seen)
     asked[k] = values[k]
   end
   if seen then
-    if type(values.giver) == "string" and seen[values.giver] and AGAIN_DROPS[kind] then values.giver = nil end
+    -- (how often the paragraph named someone: by a slot, or in words of its
+    -- own, a task's "speak with Aamelia Windfield")
+    local s = self.scene
+    local written = s and (table.concat(s.current, " ") .. " " .. table.concat(s.pending, " ")) or ""
+    local function times(name)
+      local n = tonumber(seen[name]) or (seen[name] and 1) or 0
+      local _, inText = written:gsub(name:gsub("%p", "%%%0"), "")
+      return math.max(n, inText)
+    end
+    if type(values.giver) == "string" and times(values.giver) > 0 and AGAIN_DROPS[kind] then values.giver = nil end
     -- a list of those I returned to: the ones already named leave it
+    -- (said enough: just before, or twice already: "I checked in again"
+    -- three sentences on would leave the reader guessing)
+    local at, told = s and s.namedAt or {}, self.told or 0
+    local function enough(name) return times(name) >= 2 or (times(name) > 0 and at[name] and told - at[name] <= 2) end
     if kind == "c-report" and type(values.ender) == "string" then
-      local rest = {}
+      -- (the ones not named yet; else the ones not said enough)
+      local rest, unsaid, count = {}, {}, 0
       each(values.ender, function(name)
-        if not seen[name] then table.insert(rest, name) end
+        count = count + 1
+        if times(name) == 0 then table.insert(rest, name) end
+        if not enough(name) then table.insert(unsaid, name) end
       end)
-      if #rest > 0 then values.ender = listing(rest) end
+      if #rest > 0 then
+        values.ender = listing(rest)
+      elseif #unsaid > 0 and #unsaid < count then
+        values.ender = listing(unsaid)
+      end
     end
     local who = kind == "c-quest" and values.giver or values.ender
     if AGAIN[kind] and type(who) == "string" then
-      -- (without the name only when it was said just before, or twice already:
-      -- "I checked in again" three sentences on leaves the reader guessing)
-      local all, at, told = true, self.scene and self.scene.namedAt or {}, self.told or 0
+      local all = true
       each(who, function(name)
-        local recent = at[name] and told - at[name] <= 2
-        if not seen[name] or not (recent or (tonumber(seen[name]) or 1) >= 2) then all = false end
+        if not enough(name) then all = false end
       end)
       if all then ctx.again = true end
     end

@@ -1,0 +1,132 @@
+---
+kind: why
+---
+# Zephras Isle
+- 92460 3 | coming of age in Thendal Village, where Rorian the Dayseeker bestowed a relic carried by many before, one day to pass to another
+- 92461 1 | culling the vuldren of Thendal Grove, grown too many, to restore the harmony Rorian the Dayseeker said all its creatures shared
+- 92462 1 | exterminating the cirrusflies infesting the east of Thendal Grove for Elatrell Featherlight, before the swarm grew too large
+- 92463 2 | tracking the Cirrusfly Queen to her hive deep in the grove, since killing the workers alone would never end the infestation
+- 92464 1 | seeking out Yala Windwatcher by the standing stones, where the simple wind sprites had turned agitated
+- 92465 2 | dispersing roiling winds and Al'Aketh converts in Thendal Grove for Yala Windwatcher, who blamed the cult for the sprites' violence
+- 92466 2 | driving Al'Aketh converts from the eastern standing stones for a Signet of Akir, proof of resolve before Windshaper Boro's trials
+- 92467 3 | drinking the Earth Sapta at the Rise of Spirits, where the earth taught its strength but could not say why the winds had left
+- 92468 2 | bringing the Rough Quartz from the manifestation of earth back to Windshaper Boro, to be the heart of a first earth totem
+- 92469 1 | warning Rorian the Dayseeker of the Al'Aketh in the grove, a clear escalation from a cult the village had long watched from afar
+- 92470 2 | proving resolve to Aetheen of the Gales by slaying the ursera scavengers and their den mother, Urs'anah
+- 92472 1 | heading south to Shen'dar Village at the word of Aetheen of the Gales, to offer Constable Aonda aid against the Al'Aketh threatening it
+- 92473 2 | putting down the scrawny ursera of the den southwest of the village for Valreaa Valewind, after a hungry one went for a boy at play
+- 92474 1 | leaping from the watchtower in Thendal Grove for Myriaal Mistwake's game and floating on the air, then being told not to waste the gift
+- 92515 2 | thinning the prideclaws pressing on Shen'dar Village before they took someone's pet or child, their pelts for Indari Sunseam's goods
+- 92516 1 | breaking up the hippogryph nesting grounds southeast of Shen'dar Village, matriarch and all, after the flock began harrying travellers
+- 92517 2 | clearing the bandit cave behind the waterfall north of Shen'dar Village and killing its leader, Badwind Bennic, for Constable Aonda
+- 92528 2 | posing as a recruit in Falaath Village and learning that Lorthuna, the cult's own leader, had her eyes on Shen'dar Village
+- 92529 1 | bearing Sania Silverstream's mark as a new recruit into Falaath Village, to be welcomed by Missionary Jasaan of the Al'Aketh
+- 92544 2 | killing Malduko Cloudcrush, the monster leading the Al'Aketh ruffians at the temple ruins, for the Rangers of Thendal Grove
+- 92550 3 | striking Falaath Village before the cult could strike Shen'dar, and taking Commander Cyclas's head back to Constable Aonda
+- 92551 1 | recovering the Shen'dar supplies the Al'Aketh had raided from the caravans and hoarded in Falaath Village, for townsfolk in dire need
+- 92553 1 | gathering eggs and strider meat for Zerril Softbreeze, to keep Shen'dar Village fed while no one had time to hunt or forage
+- 92579 1 | carrying Constable Aonda's report to Valennia Stormfist in Valanaar, word that the pylon and Shen'dar Village were safe for now
+- 92595 1 | listening to Illaya Amberwind on why the Windshapers needed every soul with the skysight, if the winds were ever to answer again
+- 92596 1 | sitting with Rathiril Sunlance to hear why the High Order, heirs of Eldre'Thalas, meant to help the islanders stand on their own
+- 92597 1 | drawing on a ley line at the standing stones for Falorne Fallwind, one of the lines newly broken through to the island's surface
+- 92598 1 | using the skysight at the elemental convergence by the standing stones, a gift Ventaari Brightwish thought might be the key to survival
+- 92640 2 | rallying the Windshapers and the High Order behind a strike on the Shrine of Akir, to stop Lorthuna before her scheme was done
+- 92642 2 | cutting down the cult's healers and brawlers below the eastern watchtower, where Yorana Windyreed's people could not hold much longer
+- 92643 2 | seeking out a cult turncoat hiding northwest of Valanaar who claimed to know the Al'Aketh's true plans, and finding him already dead
+- 92644 2 | handing High Elder Talaanis Shadowsong the damaged crystal found beneath the dead turncoat, in case it still held his secrets
+- 92645 3 | killing Commander Belguilos the Breaker, a former peacekeeper turned terror of the cult, to end the assault on the eastern watchtower
+- 92646 3 | following High Priestess Lorthuna through her portal to the Rohashi Spires, to face her with Ayessa Dawnsinger and Elaadrin Evengale
+- 92679 1 | answering Alvarion Windfield's plea for fighters to save his farm, though his wife Aamelia feared he had sent help to die for nothing
+- 92682 1 | picking stormapples and killing the bandits among the trees of the Windfield Orchard, working for meals until Ferauu's gang came
+- 92683 1 | swatting flutterflies for their wing dust, a chore Aamelia Windfield had put off for weeks with bandits lurking too near the house
+- 92684 1 | culling the ornery galestriders that stole stormapples from a light harvest, their tenderloins for Aamelia Windfield's pot
+- 92685 2 | raiding the bandit camp in the hills above the orchard for bloodied masks, to even the odds before Ferauu came for the Windfields
+- 92693 3 | standing with Aamelia Windfield against Ferauu and his thugs in a final stand at the orchard, and living to see it over
+- 92698 1 | puzzling over the broken words of a cyclone construct that had wandered the orchard's fields for decades, perhaps since the wind elementals left
+- 92701 1 | taking Constable Aonda's written report to Valennia Stormfist, who led the island's peacekeepers and needed to know what happened
+- 92703 1 | carrying the news from the orchard to Alvarion Windfield, with Aamelia's word to bring a Windshaper to look at the construct
+- 92708 1 | hearing Ayessa Dawnsinger's belief that the means to save Zephras Isle lay below, on Azeroth
+- 92709 1 | learning from Elaadrin Evengale that the forebears' lost magic was the key to saving Zephras Isle, and the Kirin Tor the way to it
+- 92727 2 | searching the road west of Valanaar for Fillion Flamebreeze, a High Order scholar overdue from the highlands, and finding his satchel
+- 92741 1 | hunting shrieklings in Shadowgale Forest, their numbers spilling out of the woods, for talons Iaadaria Bitterwind wanted to study
+- 92834 2 | taking prayer charms from Al'Aketh cultists for Elaadrin Evengale, after the cult sent back his envoy Belathaan Brightwish's tongue
+- 92840 2 | reading the elemental currents at the Overlook Standing Stones for the High Order, against Windshapers who called it a massacre
+- 92849 3 | finding Fillion Flamebreeze in the cave north of the road and carrying him to safety, before the beast that struck him could eat him
+- 92850 2 | returning to the Shriekling Den for the head of its matriarch, the beast that struck Fillion down, nested far too close to Valanaar
+- 92860 1 | pledging the High Order's full support to Valennia Stormfist against the Al'Aketh, who swore to avenge her cousin Belathaan
+- 92871 1 | carrying the Windshapers' pledge of full support to Valennia Stormfist, with rumours of the cult gearing up for something larger
+- 92880 1 | reporting to Valennia Stormfist that the eastern watchtower was stable again, to her plain relief
+- 92881 1 | going to High Elder Talaanis Shadowsong for a promising lead, since the attacks on both watchtowers were no coincidence
+- 92947 2 | storming the Shrine of Akir behind a distraction, cutting through its guardians while Valennia Stormfist led the flank
+- 93036 2 | getting close to Sania Silverstream, the Al'Aketh's missionary in Shen'dar Village, to learn for Constable Aonda what the cult planned
+- 93089 1 | carrying High Elder Talaanis Shadowsong's blessing to Elaadrin Evengale for the High Order's expedition from Zephras Isle to Azeroth
+- 93090 1 | bringing Ayessa Dawnsinger the High Elder's blessing for the Windshapers' expedition to Azeroth, the time to leave come at last
+- 93159 1 | keeping the Strange Hermit of Shadowgale Forest company, after so long without anyone to talk to, and hearing what little he would tell
+- 93160 1 | gathering Shadowgale acorns for the Strange Hermit to roast, since he feared becoming a giant bird's lunch out on the forest floor
+- 93165 1 | collecting ears from Al'Aketh cultists for Vayn Moongaze of the Nightclaw, repaying blood with blood for the tragedy at the enclave
+- 93172 2 | destroying the wind hollows that sang at the old ruins, in the Strange Hermit's hope that the trapped spirits would find peace
+- 93317 1 | catching Windsong Crawlers for Nyalah Brightfire in their short season, once a delicacy begged for on the other islands
+- 93318 2 | hunting down Vulgara the Insatiable, the winged vuldren terror of the highlands, for the bounty Constable Aonda posted on her head
+- 93319 1 | taking back the windstones bandits had pilfered from Shen'dar Village's emergency reserve, to tide Teeri Wellwind over
+- 93320 1 | hurrying to the eastern pylon watchtower under cult attack, where Yorana Windyreed's relief force was holding against greater numbers
+- 93552 1 | harvesting raw windstones in Thendal Grove for Dalia the Collector, the winds' own energy grown precious as the island's magic faded
+- 93735 1 | lending a hand to Riaani Nightwind, a Windshaper artisan mending one of the last working constructs in Valanaar
+- 93736 2 | gathering essences from the wind hollows of Shadowgale Forest for Endaria Mistgaze, sprites first seen once the spirits had left
+- 93737 2 | scavenging lightning, a gyrozephyr and a core for Riaani Nightwind's construct, so its memory might tell who had stolen its parts
+- 93738 2 | telling Ayessa Dawnsinger what the mended construct revealed, that Belathaan Brightwish of the High Order had taken its parts
+- 93740 2 | trading blood for blood with the Al'Aketh for Ayessa Dawnsinger, after Windshaper novices were found dead in the highlands
+- 93746 2 | confronting Belathaan Brightwish on the road to the Shrine of Akir to frighten him, and bringing Ayessa Dawnsinger word of his death
+- 93797 2 | fetching a Wind-Infused Bough from the wind shrine near Falaath Village for Belann Windwood, to craft a spell focus as young mages do
+- 93835 3 | taking the portal to the Rohashi Spires after the fleeing Lorthuna, to help Elaadrin Evengale and Ayessa Dawnsinger stop her
+- 93836 2 | warning High Elder Talaanis Shadowsong that the wards hiding Zephras were down and the island lay defenceless before Al'Akir
+- 93926 2 | racing to the western watchtower to call its peacekeepers home for Constable Aonda, and finding Peacekeeper Vaaniel already dead
+- 93927 3 | slaying Skypriest Aanders to stop the cult at the western watchtower, and gathering the keepsakes of the peacekeepers who died there
+- 93948 2 | carrying the Shadowsong Family Signet from the western watchtower to High Elder Talaanis Shadowsong, whose nephew had died there
+- 93949 1 | stamping out the skyhoppers of Valanaar for Valennia Stormfist, since the cult seemed to be using enchanted ones as spies
+- 93951 1 | gathering fallen hippogryph down for Taleen Shimmerthread, feathers for the islanders' hair, a small joy kept even in hard times
+- 93958 2 | pressing into the inner sanctum of the Shrine of Akir, gone unsettlingly quiet, and finding Valennia Stormfist gravely wounded
+- 94003 2 | reclaiming the Skybreaker Bulwark from the cultist Zaal Stormshield for Seena Skybreaker, the last of a line the Al'Aketh murdered
+- 94006 2 | seeking out Urs'endris, the spirit who taught druids the ursera shape, by the falls northeast of Valanaar, his domain falling into the sky
+- 94013 3 | taming a Vuldren Alpha in the Gustberry Lowlands, Quel'ana Quickgale's last trial before learning to bond with a companion for good
+- 94369 2 | warning High Elder Talaanis Shadowsong of Al'Akir now the wards were down, and telling him of the High Order's mission to Azeroth
+- 94411 2 | driving High Order apprentices from the standing stones north of Shen'dar Village for Illaya Amberwind, who feared their meddling
+- 94413 2 | chasing Windshaper novices from the ley line in the southwest forest for Rathiril Sunlance, who would not see it healed as a scar
+- 94414 1 | looking upon the anchor pylon through Halaan Hawk-Eye's gift, one of the spirits' gifts that bind the island, its magic grown unstable
+- 94484 1 | checking on the druids of Shadowgale Forest, whose word to Lotheluum Starbreeze was overdue, and finding them in dire straits
+- 94485 1 | searching the roots of Shadowgale's trees for Lady's Tear moss, so Elegael Thornpaw could bind the wounds of the druids left in the den
+- 94486 1 | plucking feathers from the shrieklings of Shadowgale for the second half of Elegael Thornpaw's poultice
+- 94487 2 | prying bloodied heirlooms from the Al'Aketh in Shadowgale Forest, for Elegael Thornpaw to keep for a future generation
+- 94488 3 | killing Commander Haalien, a druid turned cultist who spilled his kin's blood, a cousin Elegael Thornpaw could hardly strike herself
+- 94489 2 | carrying Elegael Thornpaw's poultices into the den to heal the wounded druids, and searching for her mate, Jorel Windsinger
+- 94490 2 | finding a torn missive on Haalien showing the cult had struck the druids for the pylon, on orders that may have come from Valanaar
+- 94491 2 | taking the missive and the fate of the fallen druids to Lotheluum Starbreeze in Valanaar, who feared a traitor in the city
+- 94493 1 | answering Elegael Thornpaw's plea in Shadowgale Forest, her den ambushed by the cult and many inside wounded or dying
+- 94568 2 | learning what the dead turncoat's crystal held of the cult's plans, and that the peacekeepers would fare badly against the cult in the open
+- 94638 3 | ending the suffering of Ur'endra, mate of Urs'endris, lost to madness and turned on her kin, to earn his blessing and the ursera shape
+- 94896 2 | recovering what the refugees of Ban'aethal left behind when it began drifting into the sky one night, for Ealaane Nimbuswalker
+- 94897 2 | searching the ruins of Ban'aethal for Resaan, who went back for supplies, and bringing only his heirloom home to Ealaane Nimbuswalker
+- 94946 3 | boarding the skycutter from Zephras Isle to Dalaran with the High Order's vanguard, to seek on Azeroth the means to save the island
+- 94978 1 | taming a Windsong Crawler with Quel'ana Quickgale's rod, the first challenge in learning the bond between beast and master
+- 94979 1 | earning the trust of an Ornery Galestrider in the Gustberry Lowlands, the second of Quel'ana Quickgale's taming trials
+- 95349 3 | crossing on the skycutter from Zephras Isle to Mulgore, home of the Earthen Ring, with the vanguard of the Windshapers sent to Azeroth
+- 96101 1 | sitting by Raan Wildwind's campfire to learn the basics of surviving outdoors, since a well-rested adventurer lives longer
+- 96646 1 | learning cooking from Zerril Softbreeze, the first step toward a campfire and a camp of one's own anywhere in the wilds
+- 97243 1 | carrying the Torch of Dormant Flame to Olariaan Swiftburn at the Shrine of Flames, to begin learning to heed the call of fire
+- 97244 2 | slaying Skypriest Faladiel, a Windshaper turned cultist with his former kin's blood on his hands, for the heart the fire ritual needed
+- 97245 2 | summoning the ancient forest sprite Kuramaa from its stump near the highlands Anchor Pylon, where only fire could harm it, for its mask
+- 97257 3 | carrying the Eternal Flame from Olariaan Swiftburn's ritual to Valanaar before it faded, lighting the brazier to end the trial of fire
+- 97963 1 | earning Nyassa Swiftdraught's lesson in crafting a Mana Well for camp, a draw for every healer and spellcaster nearby
+- 97964 1 | proving skill at the forge until Aedi Thriceforged would teach the Sharpening Wheel, for warriors and rogues to hone blades at camp
+- 97965 1 | practising first aid until Naleeia Tattermend would teach the First Aid Kit, healing at camp that might even save lives
+- 97967 1 | fishing until Fenn Fairweather would teach the Fish Bowl, a bit of joy for a camp in the wilds and the fighters around it
+- 97968 1 | picking herbs until Syriel Nightrain would teach the Incense Candle, to keep a camp's healers and spellcasters in high spirits
+- 97969 1 | working leather until Indari Sunseam would teach the making of a camp tent, cool on hot days and dry on rainy ones
+- 97970 1 | mining until Messana Crestwind would teach the Lodestone, whose extra oomph lifts the fighting of all gathered round a camp
+- 97971 1 | skinning until Mendalass Tattermend would teach the Camp Chair, a comfy seat to rest in before the next fight
+- 97972 1 | sewing until Taleen Shimmerthread would teach the Rallying Banner, an inspiring banner to keep a camp energised
+- 97973 1 | stitching cloth until Taleen Shimmerthread would teach the Rallying Banner, a banner to keep spirits up around a camp
+- 98284 1 | taking up enchanting until Nasalanna Windsinger would teach the Enchanted Lute, music for a camp's idle hours on the road
+- 98285 1 | tinkering until the Strange Hermit would teach the making of a Reagent Bot, one of the helpful constructs a camp needs
+- 98286 1 | enchanting until Nasalanna Windsinger would teach the Enchanted Lute, to entertain a camp through hard days on the trail
+- 98512 1 | clearing Al'Aketh assassins from a house on the hill north of Fendaal Windstone's patrol, stone cold killers about business no one knew
+- 99260 1 | bringing Elaadrin Evengale word from Fillion Flamebreeze that the readings to steer skycutters through the elemental plane were lost
