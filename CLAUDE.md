@@ -71,6 +71,15 @@ The plan and its decisions: PLAN.md.
   and the old races' new classes; books in `.cache/audit/books-forever/`).
   No source has the new zones' quests above the beta's levels, nor any new
   creature's type, family or rank.
+- `writing/why/*.md`: what each quest's work was for, for the diary
+  (`Diary.lua`): `- <id> <weight> | <phrase>`, a phrase in -ing that reads
+  after "The work that mattered most was …", written from the quest's own
+  texts (the giver's words, its objectives, its hand-in), weighed 1 (an
+  errand with a reason) to 3 (a story's climax, a rescue, a villain's end);
+  a quest with nothing to tell has no line. `batch-*.md` are Classic's
+  (from the classic-db dump), `forever-*.md` Forever's own (its quest texts
+  as published; in Data_Forever only). The build checks every phrase. A
+  quest weighed 2 or more is never folded in a chapter.
 - `writing/scenery/<slug>.md`: a place described the first time a book meets
   it (front matter `place:`, `type:` zone | town | dungeon, `faction:`
   alliance | horde | neutral, optional `home:` races, optional `client:` a
