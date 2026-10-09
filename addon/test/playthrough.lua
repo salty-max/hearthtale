@@ -123,6 +123,22 @@ if forever then
   }
 end
 local SIDE = { Human = "alliance", Dwarf = "alliance", Gnome = "alliance", NightElf = "alliance" }
+-- (the lands of one side only: a Forever quest's ender there, a creature
+-- of the old game Forever has put somewhere else, is met where the quest is)
+local LANDS = { alliance = {}, horde = {} }
+for race, road in pairs(ROAD) do
+  if race ~= "Skyborne" then
+    for _, z in ipairs(road) do
+      LANDS[SIDE[race] or "horde"][z] = true
+    end
+  end
+end
+for _, z in ipairs(ALLIANCE) do
+  LANDS.alliance[z] = true
+end
+for _, z in ipairs(HORDE) do
+  LANDS.horde[z] = true
+end
 local SIDE_RACES = { alliance = 1 + 4 + 8 + 64, horde = 2 + 16 + 32 + 128 }
 local MATES = { "Thessaly", "Brannigan", "Rowan", "Halvard", "Ysolde", "Korrak", "Mirelle", "Durgan" }
 local TO = tonumber(os.getenv("PLAYTHROUGH_LEVEL") or "") or 30
@@ -221,6 +237,33 @@ end
 local function creature(id) return id and id > 0 and D.creatures[id] or nil end
 local function kindOf(c) return FAMILY[c.family or 0] or TYPE[c.type or 0] end
 
+-- (Forever's quests, their class or side unrecorded: a class trainer's
+-- own is that class's; one whose people are all of one side, that side's)
+local PEOPLE_SIDE = {
+  Human = "alliance",
+  Dwarf = "alliance",
+  Gnome = "alliance",
+  NightElf = "alliance",
+  Orc = "horde",
+  Troll = "horde",
+  Tauren = "horde",
+  Scourge = "horde",
+}
+local function unrecorded(q, class, side)
+  local sides = {}
+  for _, list in ipairs({ q.starters or {}, q.enders or {} }) do
+    for _, id in ipairs(list) do
+      local c = creature(id)
+      local npc = c and ns.knowledge.npcs[c.name]
+      local trains = npc and npc.role and npc.role:match("^(%a+) Trainer$")
+      if (q.classes or 0) == 0 and trains and CLASS[trains:upper()] and trains:upper() ~= class then return false end
+      if npc and PEOPLE_SIDE[npc.people or ""] then sides[PEOPLE_SIDE[npc.people]] = true end
+    end
+  end
+  if not q.side and (q.races or 0) == 0 and sides.alliance ~= sides.horde and not sides[side] then return false end
+  return true
+end
+
 -- A quest one can play: open to the race and class, its targets alive
 -- somewhere, its items dropped or found somewhere (or in hand from the start).
 local function playable(q, race, class, side)
@@ -228,6 +271,7 @@ local function playable(q, race, class, side)
   if q.repeatable then return false end -- turned in again and again: a player's choice, not the road
   if q.side and q.side ~= side then return false end -- (Forever's: a side's own)
   if q.forever and not q.level then return false end -- (Forever's, its level unknown: not on the road)
+  if q.forever and not unrecorded(q, class, side) then return false end
   -- (a donation, "A Donation of Wool": sixty cloth gathered over many days, not a hunt)
   if q.forever and q.items and #q.items > 0 then
     local donation = true
@@ -306,6 +350,7 @@ local function play(race, class, side)
     table.insert(road, z)
   end
   local level, done, kinds = 1, {}, {}
+  local chosen = {} -- (an exclusive group: the one quest of it taken)
   local zone = road[1]
   local at = zone -- (where I am: the quests' land, or an ender's far away)
   local clock, toLevel = 1790000000 + 8 * 3600, 0
@@ -424,6 +469,7 @@ local function play(race, class, side)
         and (q.min or 1) <= level
         and (q.level or 1) <= level + 3
         and (not prev or done[prev])
+        and not (q.exclusive and chosen[q.exclusive] and chosen[q.exclusive] ~= id)
         and playable(q, race, class, side)
       then
         return true
@@ -447,6 +493,7 @@ local function play(race, class, side)
         and (q.min or 1) <= level
         and (q.level or 1) <= level + 3
         and (not prev or done[prev])
+        and not (q.exclusive and chosen[q.exclusive] and chosen[q.exclusive] ~= id)
         and playable(q, race, class, side)
       then
         table.insert(open, id)
@@ -479,8 +526,12 @@ local function play(race, class, side)
       end
     else
       local batch = {}
-      for i = 1, math.min(4, #open) do
-        batch[i] = open[i]
+      for _, id in ipairs(open) do
+        local group = D.quests[id].exclusive
+        if #batch < 4 and not (group and chosen[group]) then
+          table.insert(batch, id)
+          if group then chosen[group] = id end
+        end
       end
       local accepted = {}
       for _, id in ipairs(batch) do
@@ -559,10 +610,14 @@ local function play(race, class, side)
       for _, id in ipairs(batch) do
         local q, a = D.quests[id], accepted[id]
         local ender = q.enders and creature(q.enders[1])
-        -- (an ender in another land: the way there)
-        if ender and ender.zone and landOf(ender.zone) ~= landOf(at) and D.zones[landOf(ender.zone)] then
-          travel(landOf(ender.zone))
-        end
+        -- (an ender in another land: the way there; not into the other
+        -- side's own lands for one of Forever's)
+        local land = ender and ender.zone and landOf(ender.zone)
+        local foreign = q.forever
+          and land
+          and LANDS[side == "alliance" and "horde" or "alliance"][land]
+          and not LANDS[side][land]
+        if land and land ~= landOf(at) and D.zones[land] and not foreign then travel(landOf(ender.zone)) end
         moment("quest", {
           id = id,
           title = q.title,

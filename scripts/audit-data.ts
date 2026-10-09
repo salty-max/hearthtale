@@ -75,7 +75,9 @@ for (const r of rows(sql, "quest_template")) {
     classes: r.RequiredClasses || null, rewards, money: (r.RewOrReqMoney as number) > 0 ? r.RewOrReqMoney : null,
     repeatable: ((r.SpecialFlags as number) & 1) === 1 || null,
     zone: r.ZoneOrSort, min: r.MinLevel, level: r.QuestLevel, races: r.RequiredRaces, prev: r.PrevQuestId || null,
-    next: r.NextQuestInChain || null, starters: starters.get(r.entry as number), enders: enders.get(r.entry as number) };
+    next: r.NextQuestInChain || null,
+    // (one quest of a group only: Volcor's escape through stealth or through force)
+    exclusive: (r.ExclusiveGroup as number) > 0 ? r.ExclusiveGroup : null, starters: starters.get(r.entry as number), enders: enders.get(r.entry as number) };
 }
 const items: Record<number, object> = {};
 for (const r of rows(sql, "item_template"))
