@@ -1,0 +1,11 @@
+---
+kind: d-foes
+---
+- [one] The fight I will remember was with {foes}.
+- [one] I brought down {foes}, and not easily.
+- [one] Of all the fighting, {foes} is the one that stays with me.
+- [one] {foes} was the hardest fight of the stretch, and I came through it.
+- [!one] The fights I will remember were with {foes}.
+- [!one] I brought down {foes}, and not one of those fights was easy.
+- [!one] Of all the fighting, {foes} are the ones that stay with me.
+- [!one] {foes} were the hardest fights of the stretch, and I came through them all.

@@ -482,6 +482,16 @@ state.bind = "Brewnall Village"
 fire("HEARTHSTONE_BOUND") -- (a place is told with what is done there)
 state.bind = bind
 check(page.body:GetText():find("Brewnall Village", 1, true), "a new moment while the book is open: added at once")
+-- The diary setting (a prototype): the chapter's diary entry instead, and back.
+local full = page.body:GetText()
+ns.setOption("diary", true)
+local diaryText = page.body:GetText()
+check(
+  diaryText ~= full and diaryText == ns.writeDiary(ns.journal()).entries[1].text,
+  "the diary setting shows the chapter's diary entry"
+)
+ns.setOption("diary", false)
+check(page.body:GetText() == full, "and without it, the chapter in full")
 SlashCmdList.HEARTHTALE("")
 check(not B:IsShown(), "/ht again closes it")
 

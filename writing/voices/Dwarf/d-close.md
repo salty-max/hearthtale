@@ -1,0 +1,13 @@
+---
+kind: d-close
+---
+- [hard !hc] I died in this stretch, and I will go over how it happened the way a mason looks over a fallen wall, to find where it first gave.
+- [near] I am still on my feet, though only just, and I intend to find the flaw that nearly cost me everything before something else finds it for me.
+- [found] The map I carry in my head has a great deal more on it now, and I would dearly like to know what its far edges are made of.
+- [learned] This stretch left me with something new, and I would like to see it proven a few times before I trust my whole weight to it.
+- [delve] Close quarters have never unsettled me the way they unsettle some folk, and that dungeon put the boast to a fair test.
+- [quiet] What I did in {land} was mortar rather than stone, the kind of work nobody stops to admire, and I know well enough that nothing stands for long without it.
+- [grouped] I am used to trusting my own two hands, and it did me good to have a few more beside them for part of the way.
+- [hc !hard] I have the one life and no other, and I treat it the way a careful miner treats the timbers holding up the roof.
+- It is not finished work yet, but another course is laid, and the next one will have something solid to sit on.
+- Most work looks different to fresh eyes, and I will leave the judging of this stretch until I have some.

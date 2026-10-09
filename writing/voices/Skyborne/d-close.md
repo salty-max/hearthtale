@@ -1,0 +1,13 @@
+---
+kind: d-close
+---
+- [client:forever hard !hc] Death was a long way to fall for a lesson in caution, and I would sooner take the next one from a lower height.
+- [client:forever near] My worst moment felt like the ground giving way beneath me, and it will be a while before I trust it to stay put.
+- [client:forever found] Where I come from, the skystreams closed and the islands lost touch with one another, so a road that simply runs on into the next land still seems a remarkable thing to me.
+- [client:forever learned] What I gained this stretch I would like to keep well enough to hand on one day, as my people do with whatever matters to them.
+- [client:forever delve] The dangers I was used to all lay out in the open, and that dungeon showed me how much worse they can be when there is no horizon to see them coming.
+- [client:forever quiet] {land} let me off lightly this time, and I would like to credit my good sense for that rather than my luck.
+- [client:forever grouped] We say "winds guide you" at home, and I say it now to whoever shared the road with me this stretch, meaning it rather more than politeness asks.
+- [client:forever hc !hard] The one life I have is still whole, and I have taken to treating danger as I treat strangers: politely, attentively and never too close.
+- [client:forever] I have been both cautious and curious this stretch, and I would not part with either, whatever trouble they make between them.
+- [client:forever] My people are used to measuring things in centuries, and I keep being surprised by how much a single stretch can hold.

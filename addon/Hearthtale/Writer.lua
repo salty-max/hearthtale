@@ -371,13 +371,14 @@ local function hasNote(spell, book)
   end
   return false
 end
-function tell.learned(s, m)
-  s.book:learn(m.spells)
-  local spells, note = {}, nil
-  for _, sp in ipairs(m.spells) do
+-- The spells of a lesson worth telling: not a trade's own, a demon's or a
+-- form's (told at their first use), nor a trade's rank.
+local function taught(spells, c)
+  local out = {}
+  for _, sp in ipairs(spells or {}) do
     if
       not (
-        (s.c.profs or {})[sp]
+        (c.profs or {})[sp]
         or ns.TRADE_SPELLS[sp]
         or ns.POWER_SPELLS[sp]
         or sp:find("^Apprentice ")
@@ -387,9 +388,16 @@ function tell.learned(s, m)
         or sp:find("^Master ")
       )
     then
-      if not note and hasNote(sp, s.book) and not s.book.noted[sp] then note = sp end
-      table.insert(spells, sp)
+      table.insert(out, sp)
     end
+  end
+  return out
+end
+function tell.learned(s, m)
+  s.book:learn(m.spells)
+  local spells, note = taught(m.spells, s.c), nil
+  for _, sp in ipairs(spells) do
+    if not note and hasNote(sp, s.book) and not s.book.noted[sp] then note = sp end
   end
   -- (the lesson as a whole, then its spell with a line of its own: that
   -- spell told once, by its line, not in the list as well)
@@ -925,3 +933,6 @@ function ns.writeBook(c, keep)
   book.repeats, book.minGap, book.minGapKind = b.repeats, b.minGap, b.minGapKind
   return book
 end
+
+-- (for the diary, Diary.lua)
+W.taught, W.hasNote = taught, hasNote

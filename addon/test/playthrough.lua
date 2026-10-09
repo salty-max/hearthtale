@@ -638,6 +638,19 @@ for _, life in ipairs(LIVES) do
     quests = quests + ch.quests
   end
   f:close()
+  -- the diary (Diary.lua), each entry beside the chapter it tells
+  local diary = ns.writeDiary(c)
+  f = io.open(("%s/%s-%s.diary.md"):format(BOOKS, life[1], life[2]:lower()), "w")
+  f:write(("# %s %s, the diary\n\n"):format(life[1], life[2]:lower()))
+  for i, e in ipairs(diary.entries) do
+    inspect(("%s %s diary %d"):format(life[1], life[2], i), e.text)
+    f:write(("## %d. Levels %d to %d\n\n%s\n\n"):format(i, e.from or 1, e.to or 1, e.text))
+    local ch = book.chapters[i]
+    if ch and ch.text then
+      f:write(("<details><summary>The chapter in full</summary>\n\n%s\n\n</details>\n\n"):format(ch.text))
+    end
+  end
+  f:close()
 end
 io.write(("%d books, %d chapters, %d real quests played → %s/\n"):format(books, chapters, quests, BOOKS))
 if #problems > 0 then

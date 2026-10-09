@@ -1,0 +1,13 @@
+---
+kind: d-close
+---
+- [hard] I have walked more softly since dying, as if the land had reminded me whose it is.
+- [near] Coming so near my own end has made me think more gently about the ends I bring to others.
+- [found] Land I have only just met takes time to learn, and I would sooner walk it twice than claim to know it after a single crossing.
+- [learned] I came away from this stretch able to do something new, and I would like to grow worthy of it before I grow proud of it.
+- [delve] There are places in this world that feel like wounds in the land, and I went into one; I hope I left it a little nearer to healing.
+- [quiet] Most of the work in {land} was small this time, but grass grows the same way, and nobody calls it idle.
+- [grouped] Company suits me; I find I am braver with others around me, and kinder too.
+- [hc] I carry the only life I have the way water is carried over dry country, with care at every step, and I spilled none of it this time.
+- I have tried to be more useful than fearsome, and on the whole I think I managed it.
+- I am a little more at home in the world than I was, and that seems reason enough to keep walking.

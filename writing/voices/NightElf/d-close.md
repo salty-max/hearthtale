@@ -1,0 +1,13 @@
+---
+kind: d-close
+---
+- [hard !hc] Death found me in this stretch, and I mean to remember that loving the world has never made it gentle with me.
+- [near] I came nearer to dying than I care to dwell on, and part of me is still as tense as a stag that has heard a bowstring and not yet found the bow.
+- [found] New country was old long before I came to it, and I mean to tread lightly enough that it hardly knows I passed.
+- [learned] This stretch gave me something new, and I mean to know it by slow degrees rather than lean on it before I understand it.
+- [delve] Some places are wounds in the land, and I came away from that one hoping roots and moss will close over it in time.
+- [quiet] My troubles in {land} stayed small, just as our parting words, Ande'thoras-ethil, wish them to be, and I would gladly have a few more stretches like it.
+- [grouped] I am slow to let anyone walk at my back, and yet I would share the road with that company again without a second thought.
+- [hc !hard] A tree that falls does not stand again, and neither would I, so I am glad to end this stretch with my roots still in the ground.
+- I expect to turn this stretch over in my thoughts for a long while yet, since I have never been quick to decide what a thing meant.
+- The next stretch will come in its own good time, and I would sooner meet it rested than early.

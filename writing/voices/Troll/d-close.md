@@ -1,0 +1,13 @@
+---
+kind: d-close
+---
+- [hard !hc] Dying is not a habit I intend to keep, and next time death will have to work much harder for me.
+- [near] That brush with death has only just become funny, and a fright always sits easier with me once I have found the joke in it.
+- [found !hard] New country still puts me on my guard and in a fine mood at once, and I hope I never lose either.
+- [learned] This stretch left me with something new, and I mean to know it thoroughly before my life ever depends on it.
+- [delve] Close quarters with nowhere clear to run have never suited me, and this stretch kept me in them longer than I would have chosen.
+- [quiet] Plain work and a whole skin suit me, and I feel no need to trade them for a better story.
+- [grouped] I was not the only one watching for trouble this time, and I find my heart lighter for every extra pair of eyes.
+- [hc !hard] I have only the one life, and the longer I keep it, the more attached to it I become.
+- I end this stretch as watchful as I began it and with my spirits in one piece, and I ask little more of the road than that.
+- Taken all together, it was a stretch I could recount back in the village without much embarrassment, though I might leave out a part or two.
