@@ -1,12 +1,13 @@
 // What the game itself knows and the record doesn't, for the writer: which
 // quests belong to a class and the spell they give ("Beginnings": a warlock's
-// first imp), and who the quest givers are: their people (by the faction they
-// serve, where it is one people's own: Gnomeregan's gnomes, Darnassus's night
+// first imp), and who the quest givers are: their people (by their model's
+// race, from the client's tables on wago.tools, or the faction they serve
+// where it is one people's own: Gnomeregan's gnomes, Darnassus's night
 // elves...) and their calling ("Warlock Trainer"). From the classic-db dump
 // in .cache/audit (`bun scripts/audit-data.ts`), into
 // addon/Hearthtale/Knowledge.lua.
 //   bun scripts/knowledge.ts
-import { readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { gunzipSync } from "node:zlib";
 import path from "node:path";
 import { rows } from "./sql";
@@ -14,6 +15,31 @@ import { rows } from "./sql";
 const DIR = path.join(import.meta.dir, "..", ".cache", "audit");
 const OUT = path.join(import.meta.dir, "..", "addon", "Hearthtale", "Knowledge.lua");
 const sql = gunzipSync(readFileSync(path.join(DIR, "classicdb.sql.gz"))).toString("utf8");
+
+// The race of a creature's model, from the client's own tables (wago.tools,
+// Classic Era, one build pinned): what a person is when their faction serves
+// several peoples (Stormwind's, Orgrimmar's) or another's (the gnomes who
+// serve Ironforge).
+const ERA_BUILD = "1.15.9.70003";
+async function eraTable(name: string) {
+  const file = path.join(DIR, "wago", `${name}.${ERA_BUILD}.csv`);
+  if (!existsSync(file)) {
+    mkdirSync(path.dirname(file), { recursive: true });
+    const url = `https://wago.tools/db2/${name}/csv?product=wow_classic_era&build=${ERA_BUILD}`;
+    const res = await fetch(url, { headers: { "User-Agent": "Hearthtale/0.5 (addon data; github.com/salty-max/hearthtale)" } });
+    if (!res.ok) throw new Error(`${url}: ${res.status}`);
+    writeFileSync(file, await res.text());
+  }
+  const [head, ...lines] = readFileSync(file, "utf8").trim().split("\n");
+  const cols = head.split(",");
+  return lines.map((l) => Object.fromEntries(l.split(",").map((v, i) => [cols[i], v])));
+}
+const RACE: Record<string, string> = { 1: "Human", 2: "Orc", 3: "Dwarf", 4: "NightElf", 5: "Scourge", 6: "Tauren", 7: "Gnome", 8: "Troll" };
+const extended = new Map<string, string>();
+for (const r of await eraTable("CreatureDisplayInfo")) extended.set(r.ID, r.ExtendedDisplayInfoID);
+const raceOfExtra = new Map<string, string>();
+for (const r of await eraTable("CreatureDisplayInfoExtra")) raceOfExtra.set(r.ID, r.DisplayRaceID);
+const raceOf = (model: number) => RACE[raceOfExtra.get(extended.get(String(model)) ?? "") ?? ""];
 
 // The factions that are one people's own (their faction template ids).
 const PEOPLE: Record<number, string> = {
@@ -28,6 +54,18 @@ const PEOPLE: Record<number, string> = {
   71: "Scourge",
   126: "Troll", // Darkspear
 };
+// The factions of the capitals that serve several peoples: Stormwind's,
+// Theramore's and Orgrimmar's (a person there is what their model is).
+const CAPITALS = new Set([11, 12, 1077, 1078, 29, 85, 1074]);
+// A quest giver's people: their model's race, in their people's own faction
+// or a capital's; a human or an orc anywhere (no faction is theirs alone);
+// else what their faction says. (Not by model alone: a Dark Iron is a dwarf
+// to the client, a Zandalari a troll.)
+function peopleOf(faction: number, model: number) {
+  const race = raceOf(model), own = PEOPLE[faction];
+  if (race && (own || CAPITALS.has(faction) || race === "Human" || race === "Orc")) return race;
+  return own;
+}
 const CLASSES: [number, string][] = [
   [1, "WARRIOR"], [2, "PALADIN"], [4, "HUNTER"], [8, "ROGUE"], [16, "PRIEST"], [64, "SHAMAN"], [128, "MAGE"],
   [256, "WARLOCK"], [1024, "DRUID"],
@@ -68,7 +106,7 @@ const npcs = new Map<string, { people?: string; role?: string; sex?: string; bea
 for (const r of rows(sql, "creature_template")) {
   if (!questNpcs.has(r.Entry as number)) continue;
   const name = r.Name as string;
-  const people = PEOPLE[r.Faction as number];
+  const people = peopleOf(r.Faction as number, r.ModelId1 as number);
   const role = (r.SubName as string | null) || undefined;
   const sex = SEX[genderOf.get(r.ModelId1 as number) ?? 2];
   const beast = r.CreatureType === 1 || undefined;
