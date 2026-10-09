@@ -181,6 +181,70 @@ local function weigh(kind, ctx)
   return 1
 end
 
+-- A race's emblems, by the start of their words: a line on one, no other on
+-- it for MOTIF_GAP lines told (a voice is a way of looking, not a refrain:
+-- the forge, the camps, the drums, a hoof in every sentence).
+local MOTIFS = {
+  Dwarf = {
+    "forge",
+    "anvil",
+    "smith",
+    "smelt",
+    "assay",
+    "mortar",
+    "hinge",
+    "seam",
+    "keystone",
+    "quarr",
+    "mason",
+    "chisel",
+    "ale",
+    "beard",
+    "iron",
+  },
+  Gnome = {
+    "gnomeregan",
+    "refugee",
+    "radiat",
+    "evacuat",
+    "tinker",
+    "contraption",
+    "sprocket",
+    "gear",
+    "calculat",
+    "sum",
+    "reckon",
+    "measure",
+  },
+  Orc = { "thrall", "camp", "draenor", "durnholde", "warband", "temper", "rage", "blood", "chain", "grom" },
+  Troll = { "drum", "fish", "supper", "crab", "sea", "shore", "coal", "loa", "echo isles", "sen'jin", "village" },
+  Tauren = {
+    "hoof",
+    "hooves",
+    "horn",
+    "broad",
+    "my people",
+    "earth mother",
+    "plains",
+    "kodo",
+    "slow",
+    "unhurried",
+    "size",
+  },
+  Human = { "stormwind", "king", "mason", "bread", "neighbour", "doorstep", "honest", "conscience" },
+  NightElf = { "elune", "moon", "teldrassil", "centur", "ages", "glade", "root", "hyjal" },
+  Scourge = { "grave", "pulse", "lich king", "sylvanas", "plague", "coffin", "lid", "first life", "second life" },
+  Skyborne = { "island", "skycutter", "zephras", "balance", "footing", "skystream" },
+}
+local MOTIF_GAP = 12
+local function motifsOf(race, text)
+  local found, lower = {}, text:lower()
+  for _, m in ipairs(MOTIFS[race] or {}) do
+    if lower:find("%f[%a]" .. m) then table.insert(found, m) end
+  end
+  return found
+end
+
 -- Chapters before a remark may come back (none fresh left): sooner than
 -- that, the clause goes without.
 local REMARK_GAP = 10
@@ -243,6 +307,7 @@ local function newBook(c)
     kindUses = {},
   }, Book)
   b.race = race
+  b.motifAt = {} -- [a race's emblem] = the line told that last used it
   -- (the spells known from the first day: a new rank of one is no lesson)
   b.knownSpells = {}
   for _, sp in ipairs(W.FIRST_SPELLS[class] or {}) do
@@ -557,6 +622,25 @@ function Book:pick(kind, key, prefer, ownFresh, fresh, voiced, all)
       fresh, voiced = f, v
     end
   end
+  -- (nor a race's emblem used a moment ago: another line, if there is one)
+  local said = self.saidCount or 0
+  local function stale(e)
+    for _, m in ipairs(motifsOf(self.race, e.s[1])) do
+      if self.motifAt[m] and said - self.motifAt[m] < MOTIF_GAP then return true end
+    end
+    return false
+  end
+  local function lively(group)
+    local kept = {}
+    for _, e in ipairs(group) do
+      if not stale(e) then table.insert(kept, e) end
+    end
+    return kept
+  end
+  local lo, lf, lv = lively(ownFresh), lively(fresh), lively(voiced)
+  if #lo + #lf > 0 then
+    ownFresh, fresh, voiced = lo, lf, lv
+  end
   local function favours(e)
     for _, t in ipairs(e.s.tags or {}) do
       if prefer[t] then return true end
@@ -662,6 +746,11 @@ function Book:say(kind, key, values, tags, prefer, raw)
   local ownFresh, fresh, voiced, all = self:candidates(kind, values, ctx, wantRemark)
   if #all == 0 then return end
   local e = self:pick(kind, key, prefer, ownFresh, fresh, voiced, all)
+  -- (its emblems, remembered: MOTIFS)
+  self.saidCount = (self.saidCount or 0) + 1
+  for _, m in ipairs(motifsOf(self.race, e.s[1])) do
+    self.motifAt[m] = self.saidCount
+  end
   self:use(kind, e)
   local chosen = e.s
   local text = chosen[1]

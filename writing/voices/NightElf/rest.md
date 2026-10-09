@@ -17,7 +17,7 @@ kind: rest
 - [hc] I stopped {at}, never quite letting go of my guard, as befits anyone with only one life to lose.
 - [!last] I paused {at}, as a nightsaber pauses, quite still and not at all asleep.
 - [last !fire] Rest found me {at}, as quietly as an owl folding its wings.
-- [fire] I kept close to the fire {at}, grateful for its warmth and mindful of its appetite, as anyone raised among trees learns to be.
+- [fire] I kept close to the fire {at}, grateful for its warmth and mindful of its appetite, as my people learn to be among trees.
 - [last !fire] I rested {at}, my thoughts free to drift as far as they liked now that my feet would not have to follow them.
 - I stopped {at}, laying the road's cares aside like a cloak I would not need again until I rose.
 - [last] I settled down {at} and gave myself up to sleep, whatever dreams it meant to bring.

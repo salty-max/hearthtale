@@ -55,6 +55,10 @@ local function SUBJECT(text, objectives, kinds)
     if o.type == "monster" and o.name then
       -- (its kind, from the kills recorded: the dead, demons, a beast of a name)
       local kind = kinds[o.name]
+      -- (a people of note to the narrator: their own irradiated kin, their
+      -- forebears, Cenarius's own)
+      local people = W.foeOf(o.name, kind)
+      if people == "leper" or people == "highborne" or people == "cenarion" then return people end
       if kind == "Undead" then return "undead" end
       if kind == "Demon" then return "demon" end
       if bare[o.name] and (o.n or 1) == 1 then return kind == "Beast" and "beast" or "villain" end
@@ -79,6 +83,7 @@ local function gather(d, c, ch)
     spells = {},
     firsts = {},
     foes = {},
+    rares = {},
     deaths = {},
     closes = {},
     mates = {},
@@ -132,6 +137,7 @@ local function gather(d, c, ch)
       table.insert(f.firsts, m)
     elseif m.k == "rare" and m.name then
       table.insert(f.foes, { name = m.name, rank = 1, i = i })
+      f.rares[m.name] = true
     elseif m.k == "kill" and m.elite and m.name then
       -- (an elite with a name of its own, as it is, before the others; an
       -- elite of a kind, its plural if several; a kind's variants, "Mo'grosh
@@ -574,11 +580,15 @@ local function entry(d, n, ch)
     for _, m in ipairs(f.closes) do
       if (m.hp or 100) < (worst.hp or 100) then worst = m end
     end
+    if worst.foe then deathFoes[worst.foe] = true end -- (told there, not again among the foes)
     add(
       sayFresh(
         (worst.hp or 100) <= 5 and "close-deep" or "close-light",
         "close",
-        b:here({ foe = worst.foe and article(worst.foe) }, worst.sub or worst.zone),
+        b:here(
+          { foe = worst.foe and (f.rares[worst.foe] and worst.foe or article(worst.foe)) },
+          worst.sub or worst.zone
+        ),
         { night = worst.night or false, foe = worst.foe ~= nil },
         worst.zone
       ),
@@ -759,6 +769,7 @@ local function entry(d, n, ch)
     more(
       sayFresh("d-land", "land", { lands = listing(named) }, {
         one = #named == 1 or nil,
+        town = (#named == 1 and W.CITIES[lands[1]]) or nil,
         home = landTag == "home" or false,
         hosts = landTag == "hosts" or nil,
       }),

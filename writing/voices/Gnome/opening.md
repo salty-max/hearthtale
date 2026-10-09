@@ -7,7 +7,7 @@ kind: opening
 - I set off again {at}, my head already busy with ways the day's work might be done better.
 - I made ready {at}, thinking how many of us now had to call the road home.
 - I continued {at}, already redesigning half of what I saw.
-- I set out {at}, with no workshop to retreat to, and the whole world to poke at instead.
+- I set out {at}, with the whole world to poke at and nobody to tell me to stop.
 - I took up the road again {at}, with a lively suspicion that trouble had not finished with me.
 - I set out {at}, guessing the day's distances to the nearest hundred paces and fully expecting to be wrong.
 - [!night] Daylight showed me more of the country than I could possibly take in, and I set out {at} determined to try.
