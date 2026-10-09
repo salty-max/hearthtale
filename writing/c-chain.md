@@ -5,14 +5,14 @@ kind: c-chain
 - went from {giver} to {via}, and was sent on from there to {ender}
 - was passed along from {giver} to {via} and on to {ender}
 - ran an errand from {giver} to {via} that ended with {ender}
-- [turn] {giver} sent me to {via}, and {via} sent me on to {ender}
+- [turn] {giver} sent me to {via}, who sent me on to {ender}
 - [turn] one errand led to the next, from {giver} to {via} and on to {ender}
 - carried word to {via}, who sent me straight on to {ender}
 - went to {via} and was sent on from there to {ender}
 - [turn] {via} had another errand waiting, and it took me on to {ender}
 - took word on to {via}, who had another errand waiting for {ender}
 - went on to {via}, and from there to {ender}
-- was sent on to {via}, and from {via} to {ender}
+- was sent on to {via}, who passed me along to {ender}
 - carried the errand to {via} and on to {ender}
 - [turn] from {via}, the errand led on to {ender}
 - [turn] {giver}'s errand took me to {via}, and from there to {ender}

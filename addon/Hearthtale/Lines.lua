@@ -480,8 +480,12 @@ function Book:pick(kind, key, prefer, ownFresh, fresh, voiced, all)
       ownFresh, fresh, voiced = o, f, v
     end
   end
-  local function sameVerb(e) return routine and e and e.s[1]:match("^(%a+)") == self.lastVerb end
-  if routine and self.lastVerb then
+  -- (a routine clause avoids the verb of the one before; a fold, the
+  -- chapter's fold before it: "took care of two other small tasks… took
+  -- care of one other small task")
+  local verb = routine and self.lastVerb or (kind == "c-fold" and self.scene and self.scene.foldVerb) or nil
+  local function sameVerb(e) return e and e.s[1]:match("^(%a+)") == verb end
+  if verb then
     local function other(group)
       local kept = {}
       for _, e in ipairs(group) do
@@ -615,6 +619,7 @@ function Book:say(kind, key, values, tags, prefer, raw)
     end
   end
   if routine then self.lastVerb = text:match("^(%a+)") end
+  if kind == "c-fold" and s then s.foldVerb = text:match("^(%a+)") end
   -- a remark ends a clause that has no comma or "and" of its own ("cursed it
   -- and let the rot do its work, taller than me" would hang off the rot)
   -- (the clause as it will read: a list of things or creatures filled in,

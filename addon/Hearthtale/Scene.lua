@@ -169,6 +169,7 @@ end
 
 function Scene:newParagraph()
   if #self.current > 0 then
+    self.current.named = self.peopleNamed -- (who it named: see Scene:text)
     table.insert(self.paragraphs, self.current)
     self.current = {}
   end
@@ -178,20 +179,42 @@ function Scene:newParagraph()
 end
 
 -- The chapter's text: a paragraph of one sentence joins the one before it
--- (the first, the one after).
+-- (the first, the one after), unless both name the same person: each was
+-- told as a paragraph of its own, a name said again in full.
+local function joins(a, b)
+  for name in pairs(a.named or {}) do
+    if (b.named or {})[name] then return false end
+  end
+  return true
+end
+local function joinTo(into, p, first)
+  if first then
+    table.insert(into, 1, p[1])
+  else
+    table.insert(into, p[1])
+  end
+  local named = {}
+  for name in pairs(into.named or {}) do
+    named[name] = true
+  end
+  for name in pairs(p.named or {}) do
+    named[name] = true
+  end
+  into.named = named
+end
 function Scene:text()
   self:newParagraph()
   if #self.paragraphs == 0 then return nil end
   local merged = {}
   for _, p in ipairs(self.paragraphs) do
-    if #p == 1 and #merged > 0 then
-      table.insert(merged[#merged], p[1])
+    if #p == 1 and #merged > 0 and joins(p, merged[#merged]) then
+      joinTo(merged[#merged], p)
     else
       table.insert(merged, p)
     end
   end
-  if #merged > 1 and #merged[1] == 1 then
-    table.insert(merged[2], 1, merged[1][1])
+  if #merged > 1 and #merged[1] == 1 and joins(merged[1], merged[2]) then
+    joinTo(merged[2], merged[1], true)
     table.remove(merged, 1)
   end
   local out = {}
@@ -791,21 +814,50 @@ local function counted(m)
 end
 function Scene:segment()
   local log, starts, n, here, dying = self.ch.log or {}, {}, 0, nil, false
+  -- the fold as Scene:fold will keep it: a routine hand-in past a place's
+  -- few goes into the tally untold, and isn't counted (a long run of errands
+  -- is no reason for a new paragraph, which would tell and fold them again)
+  local lowScene, lowTold, tally, doneAt = nil, 0, 0, {}
   for i, m in ipairs(log) do
     local place, prev = m.sub or m.zone, log[i - 1]
+    local what = self:routine(m, i)
+    if m.k == "quest" and m.told and m.id and doneAt[m.id] == self:prevAt(i) then
+      local d = log[doneAt[m.id]]
+      if (d.sub or d.zone) == place then what = nil end -- (its work, told at its turn-in: Scene:justDone)
+    end
+    if m.k == "done" and m.id then doneAt[m.id] = i end
+    local carried = what == "low" and place ~= lowScene and tally > 0 and self:onlyHandIns(i)
+    local folds = what == "low" and (carried or (place == lowScene and lowTold >= LOW_TOLD))
     local cut = prev
       and (
         m.k == "wake"
         or m.k == "dungeon"
         or (m.k == "place" and m.new == "zone")
         or (m.at and prev.at and m.at - prev.at > 3600)
-        or (n >= STRETCH and counted(m) and place ~= here)
+        or (n >= STRETCH and counted(m) and not folds and place ~= here)
         or n >= LONGEST
       )
     if cut and not dying then
       starts[i], n, here = true, 0, nil
+      lowScene, lowTold, tally, carried = nil, 0, 0, false
     end
-    if counted(m) then
+    if what == "low" then
+      if place ~= lowScene then
+        if not carried then
+          lowTold, tally = 0, 0
+        end
+        lowScene = place
+      end
+      if lowTold >= LOW_TOLD then
+        tally, folds = tally + 1, true
+      else
+        lowTold, folds = lowTold + 1, false
+      end
+    elseif what ~= "silent" and (place ~= lowScene or m.k == "place" or m.k == "dungeon" or m.k == "flight") then
+      local goesOn = m.k == "place" and m.new ~= "zone" and tally > 0 and self:onlyHandIns(i)
+      if not goesOn then tally = 0 end
+    end
+    if counted(m) and not folds then
       n, here = n + 1, place
     end
     if m.k == "died" then
@@ -816,6 +868,41 @@ function Scene:segment()
   end
   self.starts = starts
   self:findErrands()
+end
+
+-- The stay that begins at moment i (until another place, zone, day or
+-- dungeon) holds routine hand-ins and nothing else: a move there is no new
+-- stretch, and its hand-ins join the tally of the place before (one fold,
+-- not two in a row).
+function Scene:onlyHandIns(i)
+  local log = self.ch.log or {}
+  local here, any = log[i].sub or log[i].zone, false
+  for j = i, #log do
+    local m, prev = log[j], log[j - 1]
+    if
+      j > i
+      and (
+        m.k == "wake"
+        or m.k == "dungeon"
+        or (m.k == "place" and m.new == "zone")
+        or (m.at and prev and prev.at and m.at - prev.at > 3600)
+        or (m.k ~= "level" and (m.sub or m.zone) ~= here)
+      )
+    then
+      return any
+    end
+    -- (work done: told, or handed in on the spot and told at its turn-in)
+    if m.k == "done" and not m.abandoned then return false end
+    if not (m.k == "place" or m.k == "level") then
+      local what = self:routine(m, j)
+      if what == "low" then
+        any = true
+      elseif what ~= "silent" then
+        return false
+      end
+    end
+  end
+  return any
 end
 
 -- A new stretch: the tally of the one before, and a new paragraph.
@@ -937,8 +1024,13 @@ function Scene:fold()
   if what == "low" then
     local here = place or self.scene
     if here ~= self.lowScene then
-      self:emitFold()
-      self.lowTold, self.lowScene = 0, here
+      local folded = self.folded
+      if folded.errands + folded.gear > 0 and self:onlyHandIns(self.i) then
+        self.lowScene = here -- (the tally goes on: nothing here but more of it)
+      else
+        self:emitFold()
+        self.lowTold, self.lowScene = 0, here
+      end
     end
     if self.lowTold >= LOW_TOLD then
       local folded = self.folded
@@ -964,7 +1056,9 @@ function Scene:fold()
   elseif
     what ~= "silent" and ((place and place ~= self.lowScene) or m.k == "place" or m.k == "dungeon" or m.k == "flight")
   then
-    self:emitFold() -- the place left: its tally, once
+    local folded = self.folded
+    local goesOn = m.k == "place" and m.new ~= "zone" and folded.errands + folded.gear > 0 and self:onlyHandIns(self.i)
+    if not goesOn then self:emitFold() end -- the place left: its tally, once
   end
 end
 
