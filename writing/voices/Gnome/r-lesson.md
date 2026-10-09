@@ -3,7 +3,7 @@ kind: r-lesson
 ---
 - a new knack to keep my ingenuity occupied
 - the dangerous possibilities already quite apparent
-- nothing there I could take apart to understand
+- no gears or springs to take apart and understand
 - my pride taking an apprentice's knocks
 - [one] wondering how much trouble I could get into with this
 - [!one] wondering how much trouble these could keep me out of

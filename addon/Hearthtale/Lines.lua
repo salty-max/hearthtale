@@ -233,6 +233,7 @@ local function newBook(c)
   b.style = STYLE[race] or STYLE.default
   b.faction = (c.faction == "alliance" or c.faction == "horde") and c.faction or FACTION[race]
   b.sceneSeen = {} -- places already described in this book
+  b.landsSeen = {} -- lands (zones) already come to in this book: a return is told as one
   b.remarkChapter = {} -- the chapter each remark was last told in
   b.creatureKinds = {} -- classifications actually recorded, not guessed from a quest's name
   b.placeNames = {} -- only places encountered so far; later events cannot rewrite an objective
@@ -246,6 +247,8 @@ local function newBook(c)
     b.fighting[e] = true
   end
   b.base = { hc = c.hardcore or nil, ["race:" .. race] = true, ["class:" .. class] = true }
+  -- (a class that fights with a blade in hand: only it "cuts down" a foe)
+  b.base.melee = (class == "WARRIOR" or class == "ROGUE" or class == "PALADIN") or nil
   if b.faction then b.base["faction:" .. b.faction] = true end
   return b
 end
@@ -599,7 +602,8 @@ function Book:say(kind, key, values, tags, prefer, raw)
       if type(asked[k]) == "string" and text:find("{" .. k .. "}", 1, true) then
         each(asked[k], function(name)
           seen[name] = true
-          table.insert(s.peopleSaid, name) -- (for Scene:situate)
+          -- (for Scene:situate; a fold's "the last of them for …" is no meeting)
+          if kind ~= "c-fold" then table.insert(s.peopleSaid, name) end
         end)
       end
     end
@@ -885,18 +889,31 @@ function Book:deed(m, key, tags)
     if count > 1 and last and last.name == o.name and (self.told or 0) - last.told <= 1 then tags.more = true end
     self.lastThing = { name = o.name, told = self.told or 0 }
     tags.one = count == 1 or nil
-    -- several things, one of each ("Sleepers' Key, a Claw Key and a Barrow
-    -- Key"): not "all the …", nor "so many"
-    local single = #all > 1
-    for _, f in ipairs(all) do
-      if (f.n or 1) > 1 then single = false end
-    end
-    tags.set = single or nil
+    -- several kinds of things ("Sleepers' Key, a Claw Key and a Barrow Key",
+    -- "Scaber Stalks and a Death Cap"): not "all the …", nor "so many"
+    tags.set = #all > 1 or nil
     -- one thing with a plural name ("Sea Creature Bones", "MacGrann's Dried
     -- Meats"): not "it"
     local head = (o.name:match("^(.-) of ") or o.name):match("(%a+)$") or ""
     tags.plural = count == 1 and head:find("[^s']s$") and not SINGULAR_S[head] or nil
     tags.trophy = TROPHY[o.name:match("^(%a+) of ") or ""] or nil
+    -- the trophy of a foe just told slain ("I took on Ol' Sooty", then Ol'
+    -- Sooty's Head): "the head", one, taken as proof, without a search or a
+    -- remark; and its owner, never told again as prey
+    local trophyOwner, trophyPart = o.name:match("^(.-)'s (.+)$")
+    if not trophyOwner then -- ("Head of Gath'Ilzogg")
+      local h, w = o.name:match("^(%a+) of (.+)$")
+      if TROPHY[h or ""] then
+        trophyOwner, trophyPart = w, h
+      end
+    end
+    if #all == 1 and trophyOwner and self.scene then
+      self.scene.trophied[trophyOwner] = true
+      if not tags.prey and (o.n or 1) == 1 and self.scene:slainOwner(trophyOwner) then
+        values.thing, values.n, tags.trophy, tags.one, tags.plural, tags.quiet =
+          "the " .. trophyPart:lower(), "", true, true, nil, true
+      end
+    end
     tags.cloth = o.name:match("Cloth$") or o.name:match("Silk$") or o.name:match("Wool$") or nil
     tags.meat = o.name:match("Meat$") or nil -- uncounted: "it"
     local kind = not (tags.cloth or tags.meat) and thingOf(o.name)

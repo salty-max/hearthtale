@@ -4,7 +4,7 @@ kind: c-handed-kill
 - [!one !more] killed {n} {foes} for {giver}
 - [!one !more] dealt with {n} {foes} for {giver}
 - [!one !more] saw to {n} {foes} for {giver}
-- [!one !more] cut down {n} {foes} at {giver}'s asking
+- [!one !more melee] cut down {n} {foes} at {giver}'s asking
 - [!one !more] brought down {n} {foes} for {giver}
 - [!one !more] cleared out {n} {foes} for {giver}
 - [!one !more] finished off {n} {foes} at {giver}'s request

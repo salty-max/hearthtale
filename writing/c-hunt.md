@@ -20,7 +20,7 @@ kind: c-hunt
 - [handed] earned {item} for {giver} the hard way, from {prey}
 - [!lone !handed] fought {prey} until I had {n} {thing}
 - [!handed] brought down {prey} for {n} {thing}
-- [!handed] cut down {prey} for {n} {thing}
+- [!handed melee] cut down {prey} for {n} {thing}
 - [handed] tracked down {prey} for {item} that {giver} wanted
 - [handed] brought down {prey} for {item} that {giver} needed
 - [!lone fire !handed] burned through {prey} until I had {n} {thing}

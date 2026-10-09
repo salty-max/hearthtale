@@ -55,6 +55,8 @@ local function newScene(book, n, ch)
     prey = {},
     preyPlace = nil,
     toldFoes = {}, -- creatures told already (by a quest or as an elite): not again as prey or work
+    slain = {}, -- named foes told slain in this paragraph (an elite, a rare): their trophy is "the head"
+    trophied = {}, -- owners of a trophy told ("Zalazane" of Zalazane's Head): not told again as prey
     backTo = nil,
     backTold = false, -- (in this paragraph)
     -- the sentence being written: its clauses (their kinds, each without its
@@ -169,7 +171,8 @@ function Scene:newParagraph()
     self.current = {}
   end
   self.quipped, self.backTold = false, false
-  self.peopleNamed, self.thingsCarried = {}, {}
+  self.peopleNamed, self.thingsCarried, self.slain = {}, {}, {}
+  self.peopleSaid = {} -- (a person named in the paragraph before is no meeting here)
 end
 
 -- The chapter's text: a paragraph of one sentence joins the one before it
@@ -198,10 +201,17 @@ end
 
 -- A moment's tags, with what the chapter knows of it: in the race's own lands
 -- (a place's scenery says whose home it is), at night, in a group, the level.
+-- (a race's own land: its people's (HOSTS), or the hosts' who took it in)
+local function homeOf(race, zone)
+  local owner = zone and HOSTS[zone]
+  return owner ~= nil and (owner == race or TAKEN_IN[race] == owner)
+end
 function Scene:tags(t, m)
   t = t or {}
   local land = m and m.zone and ns.data.scenery and ns.data.scenery[m.zone]
-  if t.home == nil then t.home = (land and land.home and land.home[self.c.race or ""]) or nil end
+  if t.home == nil then
+    t.home = (land and land.home and land.home[self.c.race or ""]) or (m and homeOf(self.c.race, m.zone)) or nil
+  end
   local level = (m and m.level) or self.lvl
   if t.night == nil then t.night = (m and m.night) or nil end
   if t.grouped == nil then t.grouped = (m and m.grouped) or nil end
@@ -509,8 +519,11 @@ end
 -- The prey to tell with the work of m, in words ("Ragged Young Wolves and a
 -- Ragged Timber Wolf"), and whether it is one creature; nil if none.
 -- only: the creatures to take (those a quest's item drops from), the others
--- left for the next work.
-function Scene:takePrey(m, only)
+-- left for the next work; taken, they are told (a kill quest after the hunt
+-- doesn't name them again). except: creatures not to frame this work with
+-- (those its own things drop from: never "the Cougars fell before I found
+-- Cougar Claws").
+function Scene:takePrey(m, only, except)
   local prey, b = self.prey, self.book
   if #prey == 0 or self.preyPlace ~= self.place then return nil end
   local asked, rest = {}, {}
@@ -525,11 +538,17 @@ function Scene:takePrey(m, only)
   -- "Nissa Agamand", and one of it killed twice is still one)
   local bare = ns.names and ns.names.creatureBare or {}
   for _, k in ipairs(prey) do
-    if only and not only[k.name] then
+    if (only and not only[k.name]) or (except and except[k.name]) then
       table.insert(rest, k)
-    elseif (m.at or 0) - (k.at or 0) <= PREY_TIME and not asked[k.name] and not self.toldFoes[k.name] then
+    elseif
+      (m.at or 0) - (k.at or 0) <= PREY_TIME
+      and not asked[k.name]
+      and not self.toldFoes[k.name]
+      and not self:trophyOf(k.name)
+    then
       local n = (self.ch.kills or {})[k.name] or 1
       total = total + n
+      if only then self.toldFoes[k.name] = true end
       local head = bare[k.name] and k.name or (k.name:match("(%a+)$") or k.name) .. "|" .. (k.kind or "")
       local g = groups[head]
       if not g then
@@ -562,14 +581,33 @@ function Scene:takePrey(m, only)
   return listing(names), total == 1 or (#order == 1 and order[1].one and true)
 end
 
+-- Whether a creature is the owner of a trophy already told ("Thule
+-- Ravenclaw" for Thule's Head): its head was the news, not another fight.
+function Scene:trophyOf(name)
+  for whose in pairs(self.trophied) do
+    if (" " .. name .. " "):find(" " .. whose .. " ", 1, true) then return true end
+  end
+  return false
+end
+-- A named foe told slain in this paragraph whose trophy this is ("Ol'
+-- Sooty" for Ol' Sooty's Head): its name, else nil.
+function Scene:slainOwner(whose)
+  for name in pairs(self.slain) do
+    if (" " .. name .. " "):find(" " .. whose .. " ", 1, true) then return name end
+  end
+end
+
 -- Every thing this work asks for drops from a creature killed on the way,
 -- or the hunt would have the Okra drop from the Fleshrippers (the creatures
 -- then fought between finds: "c-while").
 function Scene:huntsAll(m)
   if self.preyPlace ~= self.place then return false end
   local drops, killed = ns.knowledge and ns.knowledge.drops or {}, {}
+  -- (only creatures the hunt can still name: not told already, nor a trophy's owner)
   for _, k in ipairs(self.prey) do
-    killed[k.name] = true
+    if (m.at or 0) - (k.at or 0) <= PREY_TIME and not self.toldFoes[k.name] and not self:trophyOf(k.name) then
+      killed[k.name] = true
+    end
   end
   for _, o in ipairs(m.objectives or {}) do
     if o.type == "item" and o.name then
@@ -642,7 +680,7 @@ function Scene:deedPart(m, part, i, n, t)
   local text, said = b:deed(part, self.key, tags)
   local prey, one
   if i == 1 and text and WORK[said.kind] and not said.turn and not said.state then
-    prey, one = self:takePrey(m)
+    prey, one = self:takePrey(m, nil, sources(part))
   end
   if prey then
     self:flush()
@@ -853,7 +891,8 @@ function Scene:situate()
     b.hostsTold = true
     self:alone("hosts", { zone = mid(zone) }, self:tags({ first = true }, m), m) -- (once a life)
   end
-  if host == race or b.kinZones[zone] then return end
+  -- (at home, or in the hosts' land that took my people in: no news to meet them)
+  if host == race or host == TAKEN_IN[race] or b.kinZones[zone] then return end
   for _, name in ipairs(named) do
     local who = npcs[name]
     if who and who.people == race then

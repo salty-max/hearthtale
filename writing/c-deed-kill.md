@@ -8,7 +8,7 @@ kind: c-deed-kill
 - [!one] brought down {n} {foes}
 - [!one] overcame {n} {foes}
 - [!one] finished off {n} {foes}
-- [!one] cut down {n} {foes}
+- [!one melee] cut down {n} {foes}
 - [one] killed {foes}
 - [one] hunted down {foes}
 - [one] put down {foes}
@@ -16,7 +16,7 @@ kind: c-deed-kill
 - [one] brought down {foes}
 - [one] overcame {foes}
 - [one] finished off {foes}
-- [one] cut down {foes}
+- [one melee] cut down {foes}
 - [!one] saw off {n} {foes}
 - [!one] put an end to {n} {foes}
 - [!one] defeated {n} {foes}

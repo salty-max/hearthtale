@@ -1568,6 +1568,27 @@ if forever then
   end
 end
 
+-- The Skyborne of each side come down from Zephras Isle into foreign lands
+-- (their own arrivals, by side) and home again.
+if forever then
+  for _, faction in ipairs({ "alliance", "horde" }) do
+    for seed = 1, 12 do
+      local log = {}
+      for i, zone in ipairs({ "Far Country", "Old Marches", "Zephras Isle", "Far Country", "Zephras Isle" }) do
+        table.insert(log, { k = "place", new = "zone", zone = zone, sub = zone, at = i * 4000 })
+      end
+      local c = {
+        guid = ("skyborne-lands-%s-%d"):format(faction, seed),
+        race = "Skyborne",
+        class = faction == "alliance" and "MAGE" or "SHAMAN",
+        faction = faction,
+        chapters = { { start = { level = 13, zone = "Zephras Isle", sub = "Valanaar" }, log = log } },
+      }
+      inspect("Skyborne " .. faction .. " lands", ns.writeBook(c).chapters[1].text)
+    end
+  end
+end
+
 local runs = 0
 -- Future or otherwise unwritten races still get a complete generic beginning.
 -- Racial beginnings now belong to their own catalogs rather than redundant

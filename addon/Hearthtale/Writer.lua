@@ -69,13 +69,16 @@ function tell.place(s, m)
     b.last = nil
     -- a land seen for the first time: described, else the plain line
     local land = b:sceneryOf(m.zone, m.night)
+    local back = b.landsSeen[m.zone]
+    b.landsSeen[m.zone] = true
     if land then
       s:append(land)
     else
-      s:alone("zone", { zone = mid(m.zone) }, s:tags(nil, m))
+      s:alone("zone", { zone = mid(m.zone) }, s:tags({ back = back or nil }, m))
     end
-    b.last = nil
     s:enter(nil, nil)
+    -- (the land just named: the next sentence says "there", or nothing)
+    b.last, b.there = m.zone, false
     local described = m.sub and b:sceneryOf(m.sub, m.night)
     if described then
       s:append(described)
@@ -197,6 +200,7 @@ function tell.kill(s, m)
   if m.quarry or SKIP[m.kind or ""] then return end -- told by its quest, or not a fight
   if m.elite then
     s.toldFoes[m.name] = true
+    s.slain[m.name] = true
     return s:tell("c-elite", { foe = namedElite(m.name) and m.name or article(m.name) })
   end
   if m.first and KINDS[m.kind] then
@@ -372,6 +376,7 @@ function tell.tame(s, m) s:tell("c-tame", { pet = m.name, family = m.family and 
 -- The moments of their own, each its own sentence, where it happened.
 local own = {}
 function own.rare(s, m)
+  s.slain[m.name] = true
   s:alone("rare", s.book:here({ foe = m.name }, s.place), s:tags({ elite = m.elite or nil }, m), m)
 end
 function own.close(s, m)
@@ -524,14 +529,17 @@ local function opening(s)
   local b, start, c = s.book, s.start, s.c
   local where = start.sub or start.zone
   if start.sub then b.placeNames[start.sub] = true end
-  if start.zone then b.placeNames[start.zone] = true end
+  if start.zone then
+    b.placeNames[start.zone] = true
+    b.landsSeen[start.zone] = true
+  end
   local first = s.n == 1 and (c.began and c.began.level or 1) == 1 and s.lvl == 1
   if where then
     local line = b:say(
       first and "beginning" or "opening",
       s.n .. "|open",
       b:here({ where = mid(where) }, where),
-      s:tags({ night = start.night or nil })
+      s:tags({ night = start.night or nil }, { zone = start.zone })
     )
     if line then s:append(line) end
     -- a life's first page: the land it begins in
@@ -559,6 +567,8 @@ local function ending(s, e)
       for _, o in ipairs(m.k == "quest" and m.objectives or {}) do
         if o.type == "monster" and o.name then covered[o.name] = true end
       end
+      -- (a rare has its own sentence: never "fifteen Squiddics")
+      if m.k == "rare" and m.name then covered[m.name] = true end
     end
     for name, count in pairs(ch.kills or {}) do
       if not covered[name] then remaining[name] = count end
@@ -603,16 +613,21 @@ local function ending(s, e)
     end
   end
   local played = ch.played or 0
+  -- (where the chapter ends: a rest at home is told as one)
+  local here = { zone = e.zone or (ch.log[#ch.log] or {}).zone or (s.start or {}).zone }
   plainUnless("closing")
   say(
     "closing",
     "end",
     { time = playedWords(played), gold = goldWords(ch.gold) },
-    s:tags({ slow = played > 7200 or nil, quick = (played > 0 and played < 1800) or nil, rest = e.how == "rest" or nil })
+    s:tags(
+      { slow = played > 7200 or nil, quick = (played > 0 and played < 1800) or nil, rest = e.how == "rest" or nil },
+      here
+    )
   )
   s.onlyPlain = false
   if e.how == "long" then
-    say(e.inside and "night-in" or "night", "last", b:here({}, e.place), s:tags({ last = true, night = true }))
+    say(e.inside and "night-in" or "night", "last", b:here({}, e.place), s:tags({ last = true, night = true }, here))
   elseif e.how == "summit" then
     -- the highest level: the journey's end, the journal's last words
     say("summit", "last", b:here({ level = words(e.level or 60) }, e.place), s:tags({ last = true }))
@@ -621,7 +636,7 @@ local function ending(s, e)
       "rest",
       "last",
       b:here({ place = mid(e.place) }, e.place),
-      s:tags({ fire = e.how == "campfire" or nil, last = true })
+      s:tags({ fire = e.how == "campfire" or nil, last = true }, here)
     )
   end
 end

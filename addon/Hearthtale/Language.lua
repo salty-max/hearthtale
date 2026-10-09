@@ -534,7 +534,7 @@ end
 local THING_KIND = named([[
   stone: Ore, Stone, Crystal, Rock, Gem, Shard, Pebble, Geode, Nugget
   egg: Egg
-  feather: Feather, Plume, Quill
+  feather: Feather, Plume, Quill, Down
   hide: Hide, Pelt, Fur, Skin, Leather, Scale
   paper: Letter, Note, Journal, Book, Tome, Page, Plans, Orders, Map, Document, Report, Manual, Scroll,
          Ledger, Diary, Missive, Papers, Writ, Contract, Manifest, Parchment
@@ -549,7 +549,14 @@ local function thingOf(name)
   if not name then return nil end
   for _, kind in ipairs(THING_KIND) do
     for _, word in ipairs(kind[2]) do
-      if name:find("%f[%a]" .. word .. "e?s?%f[%A]") then return kind[1] end
+      if name:find("%f[%a]" .. word .. "e?s?%f[%A]") then
+        -- (a part heading "X of Y" that no creature drops is an object of
+        -- its own: the Horn of Awakening, not a beast's horn)
+        local head = name:match("^(%a+) of ")
+        local dropped = ns.knowledge and ns.knowledge.drops and ns.knowledge.drops[name]
+        if kind[1] == "remains" and head and head:find("^" .. word) and not dropped then return "relic" end
+        return kind[1]
+      end
       -- (a plant's name is often one word: "Earthroot", "Peacebloom")
       if kind[1] == "plant" and name:find("%l" .. word:lower() .. "s?%f[%A]") then return kind[1] end
     end

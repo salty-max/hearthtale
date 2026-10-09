@@ -16,7 +16,7 @@ kind: r-foe
 - [high] a quiet certainty returning to my strength
 - my breath working harder than a kodo's after a climb
 - in no hurry to offer the Earth Mother another death
-- my horns lowered long after there was nothing left to face
+- my horns lowered long after nothing was left to face
 - slow to feel the steadiness of the ground again
 - [one] an encounter I could have spared my people
 - [!one] their defeat no reason to want more fighting

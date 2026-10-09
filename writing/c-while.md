@@ -4,7 +4,7 @@ kind: c-while
 - [turn !handed] {prey} fell to me while I {deed}
 - [turn handed] {prey} fell to me before I {deed}
 - [turn !one !handed] between fights with {prey}, I {deed}
-- [turn] with {prey} cut down along the way, I {deed}
+- [turn melee] with {prey} cut down along the way, I {deed}
 - [turn !one] there were {prey} to fight off before I {deed}
 - [turn one] there was {prey} to fight off before I {deed}
 - [turn !handed] {prey} kept me busy while I {deed}
@@ -13,7 +13,7 @@ kind: c-while
 - [turn !one] {prey} were down before I {deed}
 - [turn one] {prey} was down before I {deed}
 - [!complex] fought off {prey} and {deed}
-- [!complex] cut down {prey} on the way and {deed}
+- [!complex melee] cut down {prey} on the way and {deed}
 - [!handed] cleared away {prey} as I {deed}
 - [!complex] dealt with {prey} first and {deed}
 - had {prey} to deal with before I {deed}
