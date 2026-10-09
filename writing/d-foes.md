@@ -1,11 +1,17 @@
 ---
 kind: d-foes
 ---
-- [one] The fight I will remember was with {foes}.
-- [one] I brought down {foes}, and not easily.
-- [one] Of all the fighting, {foes} is the one that stays with me.
-- [one] {foes} was the hardest fight of the stretch, and I came through it.
-- [!one] The fights I will remember were with {foes}.
-- [!one] I brought down {foes}, and not one of those fights was easy.
-- [!one] Of all the fighting, {foes} are the ones that stay with me.
-- [!one] {foes} were the hardest fights of the stretch, and I came through them all.
+- [one !hard] Of all the fighting, {foes} is the fight that stays with me.
+- [one !hard] I brought down {foes}, and that fight has stayed with me.
+- [one !hard] {foes} fell to me, and I have thought about it since.
+- [one !hard] I faced {foes}, and walked away from it.
+- [one hard] {foes} was the hardest fight of these days, and I came through it.
+- [one hard] I brought down {foes}, and not easily.
+- [two !hard] Of all the fighting, {foes} are the fights that stay with me.
+- [two !hard] I brought down {foes}, and both fights have stayed with me.
+- [two hard] I came through fights with {foes}, and neither was easy.
+- [!one !two !hard] Of all the fighting, {foes} are the ones that stay with me.
+- [!one !two !hard] I brought down {foes}, one fight after another.
+- [!one !two !hard] {foes} all fell to me, and I have thought about them since.
+- [!one !two hard] {foes} were the hardest fights of these days, and I came through every one.
+- [!one !two hard] I brought down {foes}, and not one of those fights was easy.

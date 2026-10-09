@@ -248,7 +248,7 @@ kind: why
 - 921 1 | filling a phial at the moonwell for Tenaron Stormgrip while learning what became of Nordrassil after the Battle of Mount Hyjal
 - 3519 1 | hurrying to tell Dirania Silvershine that Iverron had been badly poisoned by a spider called Githyiss the Vile
 - 3521 2 | gathering hyacinth mushrooms, moonpetal lilies and webwood ichor for Dirania's antidote to the poison in Iverron
-- 3522 3 | racing Iverron's antidote to him by the spider cave before its five minutes ran out
+- 3522 2 | racing Iverron's antidote to him by the spider cave before its five minutes ran out
 - 4495 1 | looking for Iverron, hours late for his daily visit to Dirania, near the spider-filled cave to the north
 # Valley of Trials
 - 788 1 | killing mottled boars to put some strength in a new recruit's backbone, Gornek's first trial
@@ -256,7 +256,7 @@ kind: why
 - 790 2 | slaying Sarkoth, the vicious scorpid that left Hana'zua bleeding on the plateau, to uphold the wounded orc's honour
 - 792 1 | driving back the Vile Familiars spilling from the Burning Blade coven, the first blow against the cult in the valley
 - 794 2 | wresting the Burning Blade Medallion from deep in their coven, to root the cult out of the Valley of Trials
-- 804 2 | bringing word of the wounded Hana'zua to Gornek, so help would be sent to him on the plateau
+- 804 1 | bringing Gornek word that Hana'zua lay wounded on the plateau, so help could be sent
 - 805 1 | warning Master Gadrin in Sen'jin Village that the Burning Blade had reached the Valley of Trials
 - 4402 1 | picking cactus apples for Galgar's famous cactus apple surprise, a treat against the heat of the valley
 - 5441 1 | waking the lazy peons with Foreman Thazz'ril's blackjack to keep them gathering lumber

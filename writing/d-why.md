@@ -1,12 +1,12 @@
 ---
 kind: d-why
 ---
-- I spent the better part of it {why}.
-- Most of the stretch went into {why}.
 - The work that mattered most was {why}.
 - What I will remember of it is {why}.
-- For most of it I was {why}.
-- Much of my time went to {why}.
 - The heart of it was {why}.
-- Most of my effort went into {why}.
-- Above everything else, I was {why}.
+- Above everything else, I remember {why}.
+- If I keep one thing from it, it is {why}.
+- Of everything I did, what counted was {why}.
+- What mattered was {why}.
+- I will not soon forget {why}.
+- The part that counted was {why}.

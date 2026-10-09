@@ -2,7 +2,7 @@
 kind: why
 ---
 # The Barrens
-- 819 1 | carrying an empty keg to someone who knew its maker, Chen Stormstout, who once traveled with Rexxar
+- 819 1 | carrying an empty keg to someone who knew its maker, Chen Stormstout, who once travelled with Rexxar
 - 821 1 | gathering tusks, kidneys and a thunder lizard horn so Brewmaster Drohn could brew Chen's stormstout once more
 - 822 1 | collecting lightning glands, a saliva gland and a kodo liver for Brewmaster Drohn's trogg ale, another of Chen's recipes
 - 843 2 | driving the dwarves from Bael Modan, whose blasts tore up Gann Stonespire's tribal lands, and taking Khazgorm's journal
@@ -12,7 +12,7 @@ kind: why
 - 848 1 | picking fungal spores by the oases for Apothecary Helbrim, whose fellow Forsaken prized their strange properties
 - 849 3 | blowing up the flying machine at Bael Modan, a dwarven weapon of war and an insult to Gann Stonespire's lost tribe
 - 850 3 | hunting down Barak Kodobane, one of the new leaders rallying the Kolkar centaurs, for Regthar Deathgate
-- 851 3 | stirring up the centaurs at the Stagnant Oasis until Verog the Dervish came, so his head could join Barak's
+- 851 3 | stirring up the centaurs at the Stagnant Oasis until Verog the Dervish came, so his head could join Barak Kodobane's
 - 852 3 | killing Hezrul Bloodmark, leader of the Kolkar, to fracture the centaurs and blunt their threat to the Horde
 - 853 1 | rushing Apothecary Helbrim's rendered spores to Apothecary Zamah in Thunder Bluff before the emulsion lost its potency
 - 855 1 | stripping bracers from Kolkar warriors for Regthar Deathgate's bounty, to thin the centaur troops
@@ -26,7 +26,7 @@ kind: why
 - 870 2 | searching the Forgotten Pools for the power seeping up beneath the Barrens, and finding a fissure for Tonga Runetotem
 - 871 2 | thinning the Razormane quilboars that had been attacking the supply lines from Durotar, for Thork at the Crossroads
 - 872 3 | killing Kreenig Snarlsnout, the Razormane behind the raids on the Durotar caravans, and bringing his tusk to Thork
-- 873 3 | swimming out to slay Isha Awak, the Deep Doom who had devoured many coastal humans, as Mahren Skyseer's honorable prey
+- 873 3 | swimming out to slay Isha Awak, the Deep Doom that had devoured many coastal humans, the worthy prey Mahren Skyseer set me
 - 875 2 | picking off the Witchwing Slayers, the harpy lieutenants of the Dry Hills, in a decisive strike at their matriarchy
 - 876 3 | slaying Serena Bloodfeather, whose harpies raided Horde caravans to avenge the sister Rexxar had killed
 - 877 2 | planting dead seeds in a fissure at the Stagnant Oasis for Tonga Runetotem, and watching them spring to life
@@ -86,7 +86,7 @@ kind: why
 - 8559 1 | giving Kandrostrasz the Qiraji Bindings of Command, magic to give a dragon pause, to be made into boots
 - 8560 1 | offering Kandrostrasz Ouro's Intact Hide, nearly impregnable yet supple, to be made into leggings
 - 8561 1 | presenting Vek'nilash's Circlet to Andorgos, worn thin by the Twin Emperors' whispers, to be remade into a crown
-- 8562 2 | laying the Carapace of the Old God before Vethsera, proof that C'Thun was slain, for armor fit for one who has slain a god
+- 8562 2 | laying the Carapace of the Old God before Vethsera, proof that C'Thun was slain, for armour fit for one who has slain a god
 - 8592 1 | silencing the Twin Emperors' whispers for Andorgos, and bringing him Vek'nilash's Circlet to be transmuted into a crown
 - 8593 1 | bringing Ouro's Intact Hide to Kandrostrasz to prove worthy of the dragons, for leggings of the worm's unnatural skin
 - 8594 1 | carrying the bindings of the highest Qiraji leaders to Andorgos, who made pauldrons of them and fallen Qiraji scales
@@ -94,12 +94,12 @@ kind: why
 - 8602 1 | trading the Qiraji Bindings of Dominance to the dragon Andorgos for pauldrons meant to strike fear into the Qiraji
 - 8603 2 | carrying the Husk of the Old God, a piece of the slain C'Thun, to Vethsera, who had not expected anyone to come back
 - 8621 1 | delivering the bindings of the most powerful qiraji to Kandrostrasz, who turned their ancient might into boots
-- 8622 2 | bringing the Carapace of the Old God to Vethsera after C'Thun's death had saved Azeroth, for armor bearing its glory and burden
+- 8622 2 | bringing the Carapace of the Old God to Vethsera after C'Thun's death had saved Azeroth, for armour bearing its glory and burden
 - 8623 1 | surrendering Vek'lor's Diadem to Andorgos, kept from his brother Arygos by the Twin Emperors, to be made into a crown
 - 8624 1 | hauling the Skin of the Great Sandworm to Kandrostrasz for leggings against the horrors waiting deeper in the temple
 - 8625 1 | handing the Qiraji Bindings of Dominance to Andorgos, to be shaped into pauldrons more dreadful than the wings of Nefarian
 - 8626 1 | giving Kandrostrasz the Qiraji Bindings of Command, magic to give a dragon pause, to be made into boots
-- 8627 2 | laying the Carapace of the Old God before Vethsera, proof that C'Thun was slain, for armor fit for one who has slain a god
+- 8627 2 | laying the Carapace of the Old God before Vethsera, proof that C'Thun was slain, for armour fit for one who has slain a god
 - 8628 1 | presenting Vek'lor's Diadem to Andorgos, worn thin by the Twin Emperors' whispers, to be remade into a crown
 - 8629 1 | offering Kandrostrasz the Skin of the Great Sandworm, nearly impregnable yet supple, to be made into leggings
 - 8630 1 | carrying the bindings of the highest Qiraji leaders to Andorgos, who made pauldrons of them and fallen Qiraji scales
@@ -108,12 +108,12 @@ kind: why
 - 8633 2 | carrying the Husk of the Old God, a piece of the slain C'Thun, to Vethsera, who had not expected anyone to come back
 - 8634 1 | taking the Qiraji Bindings of Dominance to Kandrostrasz in exchange for boots to help crush the vile qiraji
 - 8637 1 | delivering the bindings of the most powerful qiraji to Kandrostrasz, who turned their ancient might into boots
-- 8638 2 | bringing the Carapace of the Old God to Vethsera after C'Thun's death had saved Azeroth, for armor bearing its glory and burden
+- 8638 2 | bringing the Carapace of the Old God to Vethsera after C'Thun's death had saved Azeroth, for armour bearing its glory and burden
 - 8639 1 | surrendering Vek'lor's Diadem to Andorgos, kept from his brother Arygos by the Twin Emperors, to be made into a crown
 - 8640 1 | hauling Ouro's Intact Hide to Kandrostrasz for leggings against the horrors waiting deeper in the temple
 - 8641 1 | trading the Qiraji Bindings of Command to the dragon Andorgos for pauldrons meant to strike fear into the Qiraji
 - 8655 1 | giving Kandrostrasz the Qiraji Bindings of Dominance, magic to give a dragon pause, to be made into boots
-- 8656 2 | laying the Carapace of the Old God before Vethsera, proof that C'Thun was slain, for armor fit for one who has slain a god
+- 8656 2 | laying the Carapace of the Old God before Vethsera, proof that C'Thun was slain, for armour fit for one who has slain a god
 - 8657 1 | presenting Vek'lor's Diadem to Andorgos, worn thin by the Twin Emperors' whispers, to be remade into a crown
 - 8658 1 | offering Kandrostrasz the Skin of the Great Sandworm, nearly impregnable yet supple, to be made into leggings
 - 8659 1 | handing the Qiraji Bindings of Command to Andorgos, to be shaped into pauldrons more dreadful than the wings of Nefarian
@@ -123,7 +123,7 @@ kind: why
 - 8663 1 | bringing the Skin of the Great Sandworm to Kandrostrasz to prove worthy of the dragons, for leggings of the worm's unnatural skin
 - 8664 1 | carrying the bindings of the highest Qiraji leaders to Andorgos, who made pauldrons of them and fallen Qiraji scales
 - 8665 1 | delivering the bindings of the most powerful qiraji to Kandrostrasz, who turned their ancient might into boots
-- 8666 2 | bringing the Husk of the Old God to Vethsera after C'Thun's death had saved Azeroth, for armor bearing its glory and burden
+- 8666 2 | bringing the Husk of the Old God to Vethsera after C'Thun's death had saved Azeroth, for armour bearing its glory and burden
 - 8667 1 | surrendering Vek'lor's Diadem to Andorgos, kept from his brother Arygos by the Twin Emperors, to be made into a crown
 - 8668 1 | hauling the Skin of the Great Sandworm to Kandrostrasz for leggings against the horrors waiting deeper in the temple
 - 8669 1 | trading the Qiraji Bindings of Dominance to the dragon Andorgos for pauldrons meant to strike fear into the Qiraji
@@ -157,7 +157,7 @@ kind: why
 - 8802 3 | taking the Eye of C'Thun to Anachronos at the Caverns of Time, the last step of a journey of legend
 # Desolace
 - 261 1 | destroying the undead ravagers in the Valley of Bones to prove allegiance to Brother Anton and the Scarlet Crusade
-- 1052 1 | carrying Brother Anton's commendation to Raleigh the Devout in Southshore, for a place of honor in the Scarlet Monastery
+- 1052 1 | carrying Brother Anton's commendation to Raleigh the Devout in Southshore, for a place of honour in the Scarlet Monastery
 - 1365 3 | killing Khan Dez'hepah, leader of the Kolkar of Desolace, to break the clan before the centaurs could unite
 - 1366 1 | collecting ears from centaurs of every clan for Felgur Twocuts, to weaken their numbers and stamp out thoughts of expansion
 - 1367 1 | slaying Gelkis centaurs to win the trust of their rivals the Magram, so the Horde could learn to beat all the clans
@@ -172,7 +172,7 @@ kind: why
 - 1381 3 | killing Khan Hratha of the Maraudine for Warug, after winning a mouthpiece and blowing the war horn that called him out
 - 1382 1 | killing Magram centaurs to win the Gelkis' trust, so the Alliance might strike a pact with one warring clan
 - 1384 1 | snatching crude charms from the Kolkar for Uthek the Wise, who meant to burn them and laugh at their weak magic
-- 1385 1 | fighting the Gelkis to earn the Magram's favor, so the Alliance could learn how to beat the warring centaur clans
+- 1385 1 | fighting the Gelkis to earn the Magram's favour, so the Alliance could learn how to beat the warring centaur clans
 - 1386 1 | slaughtering Kolkar centaurs to the north to show Warug they could be killed the Magram way
 - 1387 1 | cutting ears from centaurs for Corporal Melkins at Nijel's Point, thinning the cruel clans in the hope of peace
 - 1437 2 | searching for the wagon of Tyranis and Dalinda Malem, missing Darnassian nobles, and finding it ambushed and empty
@@ -241,7 +241,7 @@ kind: why
 - 4301 2 | besting U'cha, the huge ape Torwa Pathfinder called one of the Earth Mother's greatest sons, and bringing back his pelt
 - 4491 3 | leading Ringo, overcome by heat on Fire Plume Ridge, back to his friend Spraggle Frock, with a canteen ready in case he fainted
 - 4492 1 | looking for Ringo on Fire Plume Ridge, a friend Spraggle Frock feared for after he went exploring the volcano
-- 4501 1 | thinning the pterrordax that menaced the crater's travelers, so the terrified Spraggle Frock might dare to leave camp
+- 4501 1 | thinning the pterrordax that menaced the crater's travellers, so the terrified Spraggle Frock might dare to leave camp
 - 4502 1 | gathering ash from the volcano's fire elementals for Liv Rizzlefix in Ratchet, who studied the crater's volcanic activity
 - 4503 1 | collecting webbed scales from pterrordaxes and diemetradons for the wings of Shizzle's flying machine, his way home
 # Silverpine Forest
@@ -255,12 +255,12 @@ kind: why
 - 429 1 | gathering discolored worg hearts so Apothecary Renferrel could brew a healing potion for the badly mauled Quinn Yorick
 - 430 1 | delivering Apothecary Renferrel's potion to Quinn Yorick at the Ivar Patch, so he could travel again
 - 435 2 | escorting Erland past the hungry wolves to the Deathstalker Rane Yorick, who had feared him lost
-- 437 3 | assaulting the rot hides at the Dead Fields until the banshee Nightlash appeared, and destroying her for the Forsaken
+- 437 3 | assaulting the Rot Hide gnolls at the Dead Fields until the banshee Nightlash appeared, and destroying her for the Forsaken
 - 438 2 | investigating the Decrepit Ferry, where the Scourge gathered, and finding a heap of wrapped corpses bound for Fenris Isle
-- 439 2 | bringing High Executor Hadrec a ring from a fresh corpse at the ferry, proof the rot hides were robbing Tirisfal's graves
+- 439 2 | bringing High Executor Hadrec a ring from a fresh corpse at the ferry, proof the Rot Hide gnolls were robbing Tirisfal's graves
 - 440 1 | showing Deliah's ring to Magistrate Sevren in Brill, who confirmed the rot hide gnolls had stolen her body
 - 441 1 | returning Deliah's ring to her husband Raleigh in the Undercity, who felt nothing for her death but burned for revenge
-- 442 3 | storming Fenris Isle to destroy Thule Ravenclaw, the traitor mage who led the rot hides for the Scourge
+- 442 3 | storming Fenris Isle to destroy Thule Ravenclaw, the traitor mage who led the Rot Hide gnolls for the Scourge
 - 443 2 | draining ichor from the rot hide gnolls on Fenris Isle so Apothecary Renferrel could learn who was behind them
 - 444 1 | carrying rot hide ichor to Bethor Iceshard in the Undercity, whose knowledge of magic might unravel the gnolls' origin
 - 446 1 | delivering Bethor Iceshard's scroll to Apothecary Renferrel, the makings of a potion against Thule Ravenclaw's spells
@@ -269,7 +269,7 @@ kind: why
 - 450 1 | slipping into the Pyrewood inn for the journal of Apothecary Berard, cursed by Arugal, who had studied an ancient plague
 - 451 1 | gathering lake moss and a rare murloc tumor for Master Apothecary Faranell's New Plague, as Berard's journal advised
 - 452 2 | helping Deathstalker Faerleia ambush the Pyrewood Council, the puppets through which Arugal ruled the cursed village
-- 460 2 | reuniting the head of Alaric, Thule's bodyguard, with the body the gnolls had buried in an unmarked grave at Fenris Keep
+- 460 2 | reuniting the head of Alaric, Thule Ravenclaw's bodyguard, with the body the gnolls had buried in an unmarked grave at Fenris Keep
 - 461 1 | carrying Alaric's body to a hidden alcove in Fenris Keep, where he wished to rest within the walls he had loved
 - 477 1 | prying open a Dalaran wizards' crate near Pyrewood, to learn why they were shipping supplies to backwater Ambermill
 - 478 1 | handing the strange pendant from the wizards' crate to Shadow Priest Allister, a clue to Dalaran's aims at Ambermill
@@ -279,14 +279,14 @@ kind: why
 - 491 1 | handing the Woven Wand, token of a friendship Thule had betrayed, to his old colleague Bethor Iceshard
 - 493 1 | carrying Apothecary Renferrel's findings on the New Plague to Apothecary Lydon in Tarren Mill, to speed the work
 - 516 2 | finding Beren's Peril, where undead were massing for an attack, and striking them first for Shadow Priest Allister
-- 530 3 | killing Valdred Moray at the Greymane Wall and bringing his hands to Raleigh Andrean, whose wife they had murdered
+- 530 3 | killing Valdred Moray at the Greymane Wall and bringing his hands to Raleigh Andrean, whose wife Valdred had strangled
 - 6323 1 | flying Podrig's order to Gordon Wendham in the Undercity, for weapons to replace those the Deathguards had lost
 - 6324 1 | bringing Gordon's crate of weapons back to Deathguard Podrig, so the Sepulcher's guards would not be caught unprepared
 # Westfall
-- 9 1 | clearing the Harvest Watchers from Farmer Saldean's fields and his neighbors', in the hope Westfall might prosper again
+- 9 1 | clearing the Harvest Watchers from Farmer Saldean's fields and his neighbours', in the hope Westfall might prosper again
 - 12 1 | hunting Defias Trappers and Smugglers across Westfall's farms to earn a place in Gryan Stoutmantle's People's Militia
 - 13 1 | driving Defias Pillagers and Looters from the Gold Coast Quarry and Moonbrook, the next step of training in the Militia
-- 14 2 | rooting out the Defias who had fled to the Dagger Hills, the deed that won induction into the People's Militia
+- 14 2 | rooting out the Defias who had fled to the Dagger Hills, which earned me a place in the People's Militia
 - 22 1 | fetching Goretusk livers for Salma Saldean's famous meat pie, a feast for her and Farmer Saldean
 - 36 1 | carrying Verna Furlbrow's recipe for Westfall stew to Salma Saldean before the Furlbrows left their overrun farm
 - 38 1 | gathering vulture meat, goretusk snouts, murloc eyes and okra so Salma Saldean could cook Verna's Westfall stew
@@ -306,14 +306,14 @@ kind: why
 - 138 1 | following the next clue to Captain Sanders' treasure east up the bluffs to an old barrel by a ruined chimney
 - 139 1 | chasing Captain Sanders' trail of clues north to an empty jug beside a lone windmill on the sea bluffs
 - 140 1 | swimming west to an island for Captain Sanders' treasure chest, the end of his trail of clues
-- 141 2 | carrying Shaw's report to Stoutmantle, naming the stonemason Edwin VanCleef, at odds with the King, as the likely Defias leader
+- 141 2 | carrying Shaw's report to Stoutmantle: the Defias leader was likely Edwin VanCleef, the stonemason who had fallen out with the King
 - 142 2 | hunting down the Defias Messenger on Westfall's roads for the message that proved VanCleef led the Brotherhood
 - 152 1 | clearing the murlocs from the Westfall coast for Captain Grayson, so shipwrecked sailors would be safe on its beaches
 - 153 1 | collecting red leather bandanas from Defias gang members for Scout Galiaan, who tracked the shifting Defias front by them
 - 155 3 | escorting the Defias Traitor to the Brotherhood's secret hideout, so Stoutmantle would know where VanCleef was hiding
 - 184 1 | returning the Furlbrows' stolen deed, which the thieves meant to forge, so the family might one day reclaim their land
-- 6281 1 | flying Quartermaster Lewis's note to Osric Strang in Stormwind, a request for armor as Sentinel Hill's supply dwindled
-- 6285 1 | bringing Osric's crate of armor back to Quartermaster Lewis for the fighting men and women of Sentinel Hill
+- 6281 1 | flying Quartermaster Lewis's note to Osric Strang in Stormwind, a request for armour as Sentinel Hill's supply dwindled
+- 6285 1 | bringing Osric's crate of armour back to Quartermaster Lewis for the fighting men and women of Sentinel Hill
 # Undercity
 - 232 1 | taking Apothecary Zinge's order to Alessandro Luca for a testing kit, the start of her plan to profit from Keever's research
 - 357 2 | stealing the spellbook of the lich on Brightwater Lake's island, which told Bethor Iceshard he was Gunther Arcanus

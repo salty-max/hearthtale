@@ -11,8 +11,8 @@ kind: lesson
 - [spell:Frost_Nova] Frost Nova offered a way to let ice hold an enemy while I found somewhere safer to stand.
 - [spell:Conjure_Water] I learned to conjure water, and liked having one less ordinary need to carry along the road.
 - [spell:Power_Word:_Shield] Power Word: Shield was a ward I could now set between myself and an enemy's blow.
-- [spell:Renew] I took instruction in Renew, comforted by healing that could keep working after the prayer ended.
-- [spell:Resurrection] With Resurrection, I could call the dead back to life, which is not a thing to learn lightly.
+- [spell:Renew !race:Scourge] I took instruction in Renew, comforted by healing that could keep working after the prayer ended.
+- [spell:Resurrection !race:Scourge] With Resurrection, I could call the dead back to life, which is not a thing to learn lightly.
 - [spell:Psychic_Scream] Psychic Scream was mine to use, a way to make my fear someone else's problem.
 - [spell:Lay_on_Hands] Lay on Hands gave me a fierce comfort in having something left to offer when an ordinary blessing would not be enough.
 - [spell:Divine_Protection] Divine Protection gave me a moment in which nothing could touch me.
@@ -24,7 +24,7 @@ kind: lesson
 - [spell:Vanish] Vanish was a new way to let an enemy wonder where its troubles had gone.
 - [spell:Sprint] I learned Sprint, and saw an excellent use for it in leaving trouble behind.
 - [spell:Aspect_of_the_Cheetah] Aspect of the Cheetah gave me a hunter's answer to a long road.
-- [spell:Feign_Death] Feign Death was a hunter's lie I could now tell to avoid becoming the truth of it.
+- [spell:Feign_Death] Feign Death was a lie I could now tell with my whole body, so that I need not become the truth of it.
 - [spell:Hunter's_Mark] Hunter's Mark offered a way to keep my quarry from becoming merely another movement I could not place.
 - [spell:Ghost_Wolf] I learned Ghost Wolf, and could borrow a swifter shape from the spirits without leaving my life behind.
 - [spell:Ancestral_Spirit] With Ancestral Spirit, I could call a fallen friend's spirit back into their body.
@@ -37,3 +37,5 @@ kind: lesson
 - [spell:Life_Tap] With Life Tap learned, I could feed my magic at the cost of my own blood.
 - [race:Scourge class:PRIEST spell:Smite] Smite came to me as it comes to any priest, and burned in my dead hands as it never would in living ones; I learned to call on the Light anyway.
 - [client:forever race:Scourge class:PALADIN spell:Holy_Light] I learned Holy Light, and the first time I held it, it was like taking hold of a fire that would not let go.
+- [spell:Renew race:Scourge] I learned Renew, a healing that went on working after the prayer ended, and went on burning in my hands as long as it did.
+- [spell:Resurrection race:Scourge] Resurrection was mine now; of all people, I knew what it was to be called back.

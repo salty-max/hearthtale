@@ -12,7 +12,7 @@ kind: opening
 - [client:forever !home] I took up the road {at}, in a country that had never had to wonder what held it up.
 - [client:forever !home] I set out {at} with "Gale's greetings" ready for anyone I met, whether or not they knew what it meant.
 - [client:forever !home] I kept going {at}, in a world with more people in it than all of Zephras could hold, each of them someone I might yet come to know.
-- [client:forever night] I continued {at} after dark, never fully at ease at night since Ban'aethal had begun to fall in the middle of one.
+- [client:forever night] I continued {at} after dark, never fully at ease at night since Ban'aethal fell into the sky one night.
 - [client:forever] I set out {at}, with an islander's habit of trusting nothing to bear my weight until I had tested it.
 - [client:forever] I took up the road {at}, as unhurried as my Highborne forebears and, I hoped, rather less proud.
 - [client:forever] Work was wanting hands {at}, and I set out to lend mine.

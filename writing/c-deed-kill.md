@@ -37,7 +37,7 @@ kind: c-deed-kill
 - [fire one] put {foes} to the fire
 - [frost !one] froze {n} {foes} where they stood
 - [frost !one] brought down {n} {foes} in a storm of frost
-- [frost one] froze {foes} where it stood
+- [frost one] froze {foes} in place
 - [frost !one] cut {n} {foes} down with ice
 - [frost one] cut {foes} down with ice
 - [arcane !one] battered {n} {foes} with raw magic

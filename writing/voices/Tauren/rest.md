@@ -8,7 +8,7 @@ kind: rest
 - I paused {at}, no longer obliged to make a large body look tireless.
 - As weary as a wanderer at the end of a season, I rested {at}.
 - I stopped {at}, and gave thanks to An'she and Mu'sha, who watch over the land by turns.
-- I rested {at}, grateful that the next mile could wait without being frightened away.
+- I rested {at}, knowing the next mile would keep until I was ready for it.
 - I paused {at}, with no greater ambition than to sit as still as a totem for a while.
 - After a day of other people's needs, I rested {at} and let my own come first.
 - The road could wait; I rested {at} the way a herd rests, all at once and without apology.

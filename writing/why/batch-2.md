@@ -88,7 +88,7 @@ kind: why
 - 624 1 | following Cortello's riddle to a clue hidden under a bridge in the Swamp of Sorrows
 - 625 1 | chasing the riddle's next clue to a cave in the southwest of Dustwallow Marsh
 - 626 2 | solving the last of Cortello's riddles under the great falls of the Hinterlands, where a treasure chest waited
-- 627 1 | mining bloodstone ore in Drywhisker Gorge for Krazek, the favor he asked while he mended the Crock Pot
+- 627 1 | mining bloodstone ore in Drywhisker Gorge for Krazek, the favour he asked while he mended the Crock Pot
 - 628 1 | drawing out an elder saltwater crocolisk for its prized skin, the outer layer of Drizzlik's Excelsior boots
 - 629 1 | braving the murlocs of the Vile Reef for a shard of the tablet of Gri'lek, for the Darkspears to enshrine in Orgrimmar
 - 630 3 | slaying King Mukla, the great Skymane, to free Princess Poobah from the chain that held her on his island
@@ -120,7 +120,7 @@ kind: why
 - 1021 2 | searching Xavian for the dryads who had gone to take back the Branch of Cenarius, and finding Anilia dying
 - 1022 2 | studying the Tome of Mel'Thandris at the Howling Vale, to learn why wolf-men had overrun the shrine
 - 1023 2 | finding the glowing gem Teronis had died seeking and bringing his journal back to Raene Wolfrunner
-- 1025 2 | fighting the Foulweald furbolgs who had been attacking travelers on the road east, to help the Sentinels protect the land
+- 1025 2 | fighting the Foulweald furbolgs who had been attacking travellers on the road east, to help the Sentinels protect the land
 - 1026 1 | taking a wooden key from the corrupted treants to open a hidden chest holding the next piece of Dartol's Rod
 - 1027 2 | recovering the last piece of Dartol's Rod, hidden by the druids of Dor'danil before they were killed
 - 1028 2 | finding a hidden shrine in the mountains and re-enchanting Dartol's Rod there, the work Teronis had died to begin
@@ -229,7 +229,7 @@ kind: why
 - 5881 1 | bringing Grish Longrunner at the Great Lift word of his relief, so he could at last visit his family
 - 6282 2 | culling the Bloodfury harpies of Stonetalon for Maggran Earthbinder, the source of the harpies spreading across Kalimdor
 - 6283 3 | slaying Bloodfury Ripper, all but a queen to the harpies, so their numbers would at last diminish
-- 6284 3 | killing Besseleth, the old spider of Sishir Canyon, so travelers could come to Sun Rock Retreat without fear
+- 6284 3 | killing Besseleth, the old spider of Sishir Canyon, so travellers could come to Sun Rock Retreat without fear
 - 6301 1 | gathering Gaea seeds at Mirkfallon Lake for Tammra Windfield to bless, to begin healing the wrecked land
 - 6381 2 | planting enchanted Gaea seeds at the heart of the Charred Vale, to help the cycle of life return to the burnt land
 - 6393 1 | destroying fire elementals in the Charred Vale for Tsunaman, whose Tribunal of the Tides waged war on their fiery cousins
@@ -286,7 +286,7 @@ kind: why
 - 7463 2 | extracting Hydrospawn's essence, an anomaly in the east wing that Lorekeeper Lydros wanted catalogued, for a useful cantrip
 - 7481 2 | searching Dire Maul for Kariel Winthalus, an elven master who fled with ancient artifacts, and finding only that they were lost
 - 7482 2 | looking through Dire Maul for the lost elven master Kariel Winthalus and the knowledge he carried, and finding no trace of him
-- 7483 1 | bringing Lorekeeper Lydros the Libram of Rapidity and costly reagents, for an arcanum that lends armor a little haste
+- 7483 1 | bringing Lorekeeper Lydros the Libram of Rapidity and costly reagents, for an arcanum that lends armour a little haste
 - 7484 1 | finding the Libram of Focus, lost somewhere in that wing, so Lorekeeper Lydros could conjure its arcanum
 - 7485 1 | returning the Libram of Protection, whose loss had made its owner weep like an infant, to Lorekeeper Lydros for an arcanum
 - 7488 3 | stopping the blood elf mage Lethtendris and taking her web, which ensnared Dire Maul's magic, before it could do lasting harm

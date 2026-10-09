@@ -42,7 +42,7 @@ kind: why
 - 7602 2 | harvesting flawless fel essences in Azshara, Jaedenar and the Blasted Lands, so Impsy could make the fel fire to raise Kroshius
 - 7603 3 | reigniting the infernal Kroshius in Shatter Scar Vale and slaying him for his core, Niby's price for teaching an infernal's summoning
 - 7623 1 | crossing Jaedenar cloaked by Gorzeeki's shadowy potions to ask Lord Banehollow of the Shadow Council for Xorothian stardust
-- 7624 2 | confronting Ulathek, Lord Banehollow's servant and Hel'nurath's spy, and bringing back the traitor's heart to win the dreadlord's favor
+- 7624 2 | confronting Ulathek, Lord Banehollow's servant and Hel'nurath's spy, and bringing back the traitor's heart to win the dreadlord's favour
 - 7625 1 | buying Xorothian stardust from Ur'dan, Lord Banehollow's servant, for the parchment that would open a portal to Xoroth
 - 7626 1 | procuring elixirs of shadow power for Gorzeeki's Bell of Dethmoora, one of three tools for the Circle of Greater Summoning
 - 7627 1 | finding large brilliant shards and dark iron ore for the Wheel of the Black March, which would direct the ritual's violent energies
@@ -200,8 +200,8 @@ kind: why
 - 9310 1 | showing Lieutenant Rukag a faint necrotic crystal from a fallen wight, a sign the Scourge had tried to make a camp in the Undercity
 # Deathknell
 - 364 2 | destroying the Mindless Ones overrunning the north of Deathknell, brothers and sisters once, now slaves of the Lich King
-- 376 1 | gathering scavenger paws and duskbat wings for Novice Elreth, who tended the wounded and tailored their armor
-- 380 2 | clearing the spiders from the gold mine northwest of Deathknell, gold the Forsaken needed to survive
+- 376 1 | gathering scavenger paws and duskbat wings for Novice Elreth, who tended the wounded and tailored their armour
+- 380 2 | clearing the spiders from the gold mine near Deathknell, gold the Forsaken needed to survive
 - 381 2 | striking first at the Scarlet Crusade camp southeast of Deathknell, zealots sworn to destroy every undead, and taking their armbands
 - 382 3 | killing Meven Korgal, the Scarlet messenger sent from the Monastery, for the documents he carried to Deathknell
 - 383 1 | carrying the captured Scarlet Crusade documents, with the names of their officers in Tirisfal, to Executor Zygand in Brill

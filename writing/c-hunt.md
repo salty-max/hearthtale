@@ -50,7 +50,7 @@ kind: c-hunt
 - [!lone pet !handed] hunted {prey} with {pet} until I had {n} {thing}
 - [pet handed] set {pet} on {prey} for {item} that {giver} needed
 - [fire !handed] burned {prey} down for {n} {thing}
-- [frost lone !handed] froze {prey} where it stood for {n} {thing}
+- [frost lone !handed] froze {prey} in place for {n} {thing}
 - [holy !handed] turned {faith}'s wrath on {prey} for {n} {thing}
 - [arcane handed] battered {prey} with raw magic for {item} that {giver} wanted
 - [shadow !handed] struck {prey} down with shadow for {n} {thing}

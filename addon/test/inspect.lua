@@ -29,8 +29,13 @@ return function(problem)
       { "\n\n\n", "an empty paragraph" },
       { '[^%.!%?"\n]\n', "a paragraph without a full stop" },
     }
+    -- (an abbreviation's stop ends no sentence: "the Venture Co. papers")
+    local plain = text
+    for _, short in ipairs({ "Co", "Mr", "Mrs", "St", "Dr", "Jr" }) do
+      plain = plain:gsub("%f[%a]" .. short .. "%.", short .. "_")
+    end
     for _, c in ipairs(checks) do
-      if text:find(c[1]) then problem(where, c[2], text) end
+      if plain:find(c[1]) then problem(where, c[2], text) end
     end
     -- A count of one before a plural ("one tasks"), but not "twenty-one tasks"
     -- or "a hundred and one tasks".

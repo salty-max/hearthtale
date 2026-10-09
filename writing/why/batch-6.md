@@ -3,8 +3,8 @@ kind: why
 ---
 # Naxxramas
 - 9033 2 | entering Naxxramas to destroy the Scourge Kel'Thuzad was amassing for another attack, proof of dedication to the Dawn
-- 9034 1 | bringing Korfax a Desecrated Breastplate and plate scraps from Naxxramas for a Dreadnaught Breastplate, armor worn by heroes
-- 9036 1 | carrying Desecrated Legplates back from Naxxramas for Korfax to remake as Dreadnaught Legplates, armor of heroes
+- 9034 1 | bringing Korfax a Desecrated Breastplate and plate scraps from Naxxramas for a Dreadnaught Breastplate, armour worn by heroes
+- 9036 1 | carrying Desecrated Legplates back from Naxxramas for Korfax to remake as Dreadnaught Legplates, armour of heroes
 - 9037 1 | handing Korfax a Desecrated Helmet and a pile of wartorn plate scraps for a Dreadnaught Helmet of his making
 - 9038 1 | gathering arcanite, hides and wartorn plate scraps so Korfax could renew Desecrated Pauldrons as Dreadnaught Pauldrons
 - 9039 1 | trading Desecrated Sabatons and wartorn scraps from the battles with the Scourge to Korfax for Dreadnaught Sabatons
@@ -12,26 +12,26 @@ kind: why
 - 9041 1 | taking a Desecrated Waistguard and cured hides to Korfax at Light's Hope Chapel for a Dreadnaught Waistguard
 - 9042 1 | delivering Desecrated Bracers and a Nexus Crystal to Korfax, who could craft them into Dreadnaught Bracers
 - 9043 1 | bringing Eligor Dawnbringer a Desecrated Tunic, a fallen hero's keepsake from the Lords of Naxxramas, to revive as a Redemption Tunic
-- 9044 1 | recovering Desecrated Legguards from the Lords of Naxxramas so Eligor Dawnbringer could revive the cursed armor as Redemption Legguards
+- 9044 1 | recovering Desecrated Legguards from the Lords of Naxxramas so Eligor Dawnbringer could revive the cursed armour as Redemption Legguards
 - 9045 1 | carrying a Desecrated Headpiece, remnant of a fallen hero, to Eligor Dawnbringer to be remade as a Redemption Headpiece
 - 9046 1 | supplying Eligor Dawnbringer with arcanite and Nexus Crystals to revitalize Desecrated Spaulders as Redemption Spaulders
 - 9047 1 | handing over Desecrated Boots from Naxxramas so Commander Eligor Dawnbringer could craft a pair of Redemption Boots
 - 9048 1 | reclaiming Desecrated Handguards from the Lords of Naxxramas for Eligor Dawnbringer to turn into Redemption Handguards
 - 9049 1 | taking a Desecrated Girdle, keepsake of a fallen hero, to Eligor Dawnbringer at Light's Hope for a Redemption Girdle
 - 9050 1 | collecting wartorn plate scraps and hides so Eligor Dawnbringer could revitalize Desecrated Wristguards as Redemption Wristguards
-- 9054 1 | bringing Huntsman Leopold a Desecrated Tunic and wartorn chain scraps for a Cryptstalker Tunic, armor both light and deadly
+- 9054 1 | bringing Huntsman Leopold a Desecrated Tunic and wartorn chain scraps for a Cryptstalker Tunic, armour both light and deadly
 - 9055 1 | carrying Desecrated Legguards out of Naxxramas so Huntsman Leopold could fashion Cryptstalker Legguards from crypt fiend carapace
 - 9056 1 | trading a Desecrated Headpiece and chain scraps to Huntsman Leopold for a Cryptstalker Headpiece of his own design
 - 9057 1 | gathering arcanite and cured hides so Huntsman Leopold could make Cryptstalker Spaulders from desecrated ones
-- 9058 1 | handing Huntsman Leopold Desecrated Boots and Nexus Crystals for Cryptstalker Boots, armor never before seen in the world
+- 9058 1 | handing Huntsman Leopold Desecrated Boots and Nexus Crystals for Cryptstalker Boots, armour never before seen in the world
 - 9059 1 | taking Desecrated Handguards to Huntsman Leopold, who could join them with crypt fiend carapace into Cryptstalker Handguards
 - 9060 1 | delivering a Desecrated Girdle and wartorn chain scraps to Huntsman Leopold for a Cryptstalker Girdle
 - 9061 1 | returning Desecrated Wristguards from Naxxramas to Huntsman Leopold to be fashioned into Cryptstalker Wristguards
-- 9068 1 | returning a Desecrated Tunic, armor of those who fell defending these lands, to Rimblat Earthshatter for an Earthshatter Tunic
-- 9069 1 | recovering Desecrated Legguards, armor of the fallen put to evil in Naxxramas, for Rimblat Earthshatter's Earthshatter Legguards
+- 9068 1 | returning a Desecrated Tunic, armour of those who fell defending these lands, to Rimblat Earthshatter for an Earthshatter Tunic
+- 9069 1 | recovering Desecrated Legguards, armour of the fallen put to evil in Naxxramas, for Rimblat Earthshatter's Earthshatter Legguards
 - 9070 1 | bringing Rimblat Earthshatter a Desecrated Headpiece and wartorn chain scraps to renew as an Earthshatter Headpiece
 - 9071 1 | gathering mooncloth and arcanite so Rimblat Earthshatter could purify Desecrated Spaulders into Earthshatter Spaulders
-- 9072 1 | carrying Desecrated Boots to Rimblat Earthshatter, so the armor of the fallen could be worn for battle once more as Earthshatter Boots
+- 9072 1 | carrying Desecrated Boots to Rimblat Earthshatter, so the armour of the fallen could be worn for battle once more as Earthshatter Boots
 - 9073 1 | handing Rimblat Earthshatter Desecrated Handguards and purification materials for a pair of Earthshatter Handguards
 - 9074 1 | taking a Desecrated Girdle back from the Scourge to Rimblat Earthshatter, to be remade as an Earthshatter Girdle
 - 9075 1 | honoring the fallen by bringing their Desecrated Wristguards to Rimblat Earthshatter for Earthshatter Wristguards
@@ -44,14 +44,14 @@ kind: why
 - 9083 1 | taking a Desecrated Waistguard to Rohan the Assassin, who would supply the bones for a Bonescythe Waistguard
 - 9084 1 | delivering Desecrated Bracers, leather scraps and his fee to Rohan the Assassin for Bonescythe Bracers
 - 9086 1 | recovering a Desecrated Tunic, stripped from a fallen hero and taken to Naxxramas, for Rayne to craft into a Dreamwalker Tunic
-- 9087 1 | bringing Rayne Desecrated Legguards and wartorn scraps so the armor of the fallen could become Dreamwalker Legguards
+- 9087 1 | bringing Rayne Desecrated Legguards and wartorn scraps so the armour of the fallen could become Dreamwalker Legguards
 - 9088 1 | taking a Desecrated Headpiece back from the Scourge for Rayne to make into a Dreamwalker Headpiece
 - 9089 1 | gathering the hides and Nexus Crystal Rayne needed to make Dreamwalker Spaulders from desecrated ones
 - 9090 1 | carrying Desecrated Boots and mooncloth to Rayne, who would craft Dreamwalker Boots from them
-- 9091 1 | handing Rayne Desecrated Handguards, armor the Scourge had stripped from the dead, for Dreamwalker Handguards
+- 9091 1 | handing Rayne Desecrated Handguards, armour the Scourge had stripped from the dead, for Dreamwalker Handguards
 - 9092 1 | reclaiming a Desecrated Girdle from Naxxramas so Rayne could make a Dreamwalker Girdle
 - 9093 1 | delivering Desecrated Wristguards and an Arcane Crystal to Rayne for a pair of Dreamwalker Wristguards
-- 9095 1 | bringing Archmage Angela Dosantos a Desecrated Robe for a Frostfire Robe, archmage's armor described in one of Medivh's tomes
+- 9095 1 | bringing Archmage Angela Dosantos a Desecrated Robe for a Frostfire Robe, archmage's armour described in one of Medivh's tomes
 - 9096 1 | gathering mooncloth and Nexus Crystals so Angela Dosantos could make Frostfire Leggings from a design in Medivh's books
 - 9097 1 | carrying a Desecrated Circlet to Archmage Angela Dosantos, who knew the Frostfire Circlet from Medivh's own tomes
 - 9098 1 | supplying Angela Dosantos with what she needed for Frostfire Shoulderpads, a design found among Medivh's personal effects
@@ -115,7 +115,7 @@ kind: why
 - 8549 1 | gathering peacebloom for Herbalist Proudfeather, to be brewed into potions for the Horde's coming trial at Ahn'Qiraj
 - 8580 1 | collecting firebloom for Batrider Pele'keiki, who guessed the Horde wanted it for things that go boom
 - 8582 1 | picking purple lotus for Apothecary Jezel, a reagent in the many potions the Horde would need at Ahn'Qiraj
-- 8588 1 | skinning heavy leather for Skinner Jamani, for the armor, reinforcement and plain tarps of the Horde's war materiel
+- 8588 1 | skinning heavy leather for Skinner Jamani, for the armour, reinforcement and plain tarps of the Horde's war materiel
 - 8590 1 | bringing thick leather to Sergeant Umala for the Horde's war materiel, with the gratitude of the Horde promised in return
 - 8600 1 | cutting rugged leather for Doctor Serratus, a stern judge of a skinner's knife, for the Ahn'Qiraj war effort
 - 8604 1 | stockpiling wool bandages for Healer Longrunner's first aid kits, since soldiers in the field cannot rely on a healer
@@ -269,7 +269,7 @@ kind: why
 - 413 1 | carrying a barrel of Rejold's new Shimmer Stout to his brother Wellart at the guard tower on the Loch Modan border
 - 414 1 | taking a cask of Shimmer Stout to Mountaineer Kadrell in Thelsamar, so a fellow Mountaineer could taste the Barleybrews' latest
 - 417 3 | killing Mangeclaw, the huge Ice Claw Bear that mauled Pilot Hildelve, the revenge he wished for in his journal
-- 419 2 | searching the hills for Pilot Mori Hildelve, missing for days while hunting a rare ore for blastpowder
+- 419 1 | finding Pilot Mori Hildelve in the hills, frozen and dead, after he went looking for a rare ore for blastpowder
 - 432 2 | killing Rockjaw Skullthumpers in the Gol'Bolar quarry for a furious Foreman Stonebrow, whose work site they had wrecked
 - 433 2 | clearing Rockjaw Bonesnappers out of the Gol'Bolar quarry for Senator Mehr Stonehallow, so the miners could get back to work
 - 466 1 | mining volatile incendicite ore in the Wetlands for Pilot Stonegear, hoping it would make cannon shells with a mighty punch
@@ -284,7 +284,7 @@ kind: why
 - 3442 1 | collecting hearts of flame and golem oil for Kalaran Windblade's torch, meant to set the Dark Iron sentry towers ablaze
 - 3443 1 | taking thorium plated daggers from the Dark Iron taskmasters and slavers, to be reforged into the shaft of Kalaran Windblade's torch
 - 3452 1 | seizing a Symbol of Ragnaros from the Twilight's Hammer camp, its foul magic meant for the casing of the torch
-- 3463 3 | setting the four Dark Iron sentry towers ablaze with the Torch of Retribution, leaving their first line of defense empty
+- 3463 3 | setting the four Dark Iron sentry towers ablaze with the Torch of Retribution, leaving their first line of defence empty
 - 3566 3 | slaying Lathoric the Black and Obsidion for Thorius, only to learn the trap had been his own brother's doing
 - 4449 1 | teaching the Dark Iron Geologists a lesson for the dwarf they locked in an outhouse, who also wanted silk cloth for reasons unsaid
 - 4450 1 | rounding up the goods on Krinkle Goodsteel's ledger and taking them to him in Gadgetzan, a job the outhouse prisoner had left unfinished

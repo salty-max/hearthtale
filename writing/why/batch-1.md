@@ -67,13 +67,13 @@ kind: why
 - 8777 1 | rooting out Hive'Regal burrowers as Cenarion Hold carried the war to Hive'Regal
 - 8778 1 | gathering volatile oils, rocket fuel and blasting powder for Arcanist Nozzlespring of the Ironforge Brigade
 - 8779 1 | procuring scrying materials for Geologist Larksbane, whose studies had served Cenarion Hold well
-- 8780 1 | restocking the Ironforge Brigade's armor kits, run dangerously low on the battlefield outside Hive'Zora
+- 8780 1 | restocking the Ironforge Brigade's armour kits, run dangerously low on the battlefield outside Hive'Zora
 - 8781 1 | arming the Ironforge Brigade with moonsteel broadswords, many of its supplies lost on the way to Silithus
 - 8782 1 | gathering mooncloth, runecloth and spider silk for uniforms, the newest volunteers having left Cenarion Hold short
 - 8783 1 | providing enchanted thorium and leather for Vargus, Cenarion Hold's blacksmith, so the troops could stay well equipped
 - 8785 1 | collecting mojo and oils of immolation for Shadow Priestess Shai, for a concoction the silithid would not like
 - 8786 1 | delivering massive iron axes to Merok Longstride, weapons the Orgrimmar Legion had asked for and the Hold could not spare
-- 8787 1 | replacing the armor kits the Orgrimmar Legion had lost on its way to Silithus
+- 8787 1 | replacing the armour kits the Orgrimmar Legion had lost on its way to Silithus
 - 8804 1 | assembling survival kits for the recruits of Cenarion Hold, prey to thirst and poison in the desert
 - 8805 1 | finding a batch of ornate mithril boots for Captain Vish Kozus and his mounted guard
 - 8806 1 | keeping the guard of Cenarion Hold in grinding stones, a supply they had run short of
@@ -84,7 +84,7 @@ kind: why
 - 8829 2 | gathering what Aurel Goldleaf needed to copy a twilight emissary's robe and try the cult's stones as a way through
 - 8856 1 | packing desert survival kits of water, anti-venom and baked salmon for the inexperienced volunteers at Cenarion Hold
 - 8857 1 | rushing a fresh husk sample from the fallen Colossus of Ashi to Oglethorpe Obnoticus in Booty Bay before it could rot
-- 8858 1 | carrying a husk of the Colossus of Regal to Overseer Oilfist in Searing Gorge, who meant to make armor of its chitin
+- 8858 1 | carrying a husk of the Colossus of Regal to Overseer Oilfist in Searing Gorge, who meant to make armour of its chitin
 - 8859 1 | hurrying a husk of the Colossus of Zora to Lord Maxwell Tyrosus, who hoped its secrets would help against the Scourge
 - 9023 2 | taking venom sacs from Kurinnaxx and Venoxis for Dirk Thunderwood, who sought a new poison for Lord Ravenholdt
 - 9248 1 | showing Aurel Goldleaf the scepter of a fallen Lord of the Abyssal Council, for a band to wear against the Qiraji
@@ -117,7 +117,7 @@ kind: why
 - 973 3 | facing down Ilkrud Magthrull, a powerful orc warlock at the Fire Scar Shrine, and taking his tome to Delgren
 - 982 1 | diving to the wrecks of the Silver Dawning and the Mist Veil, sunk by murlocs, for their dead captains' lockboxes
 - 983 1 | mending Buzzbox 827 with crawler legs for Wizbang, an inventor whose talking boxes needed constant repair
-- 984 2 | scouting a Blackwood furbolg camp for signs of corruption, for Terenthis, who vowed no more of his kind would be hurt
+- 984 2 | scouting a Blackwood furbolg camp for signs of corruption, for Terenthis, who had vowed no more night elves would be hurt
 - 985 2 | fighting the Blackwood furbolgs in their camp south of Auberdine, the biggest threat to its people
 - 986 1 | skinning moonstalker sires and matriarchs for fine pelts, so Terenthis could make a cloak to reach Volcor unhindered
 - 993 2 | seeking out Volcor, Grimclaw's wounded master, in a furbolg cave and bringing him an enchanted moonstalker cloak
@@ -127,7 +127,7 @@ kind: why
 - 1002 1 | feeding moonstalker fangs into Buzzbox 323 for a Wizbang who sounded drunker at every box
 - 1003 1 | fixing Buzzbox 525 with grizzled scalps, and learning the boxes also distilled liquor for a trade the night elves frowned on
 - 1138 1 | picking fine crab chunks out of reef crawlers for Gubber Blump, who loved crab more than anything
-- 1140 2 | freeing the trapped Highborne souls in Night Run and Satyrnaar, the last soulgems that fed the power of Athrikus
+- 1140 2 | freeing the Highborne souls trapped in the last two soulgems, in Night Run and Satyrnaar, that fed Athrikus's power
 - 1141 1 | catching Darkshore grouper for Gubber Blump, no boats having gone out since the murlocs moved in
 - 1143 3 | killing Athrikus Narassin atop the Tower of Althalaxx amid his warlocks, so the demonic forces there might be driven back
 - 2078 1 | leading Gelkak's mechanical first mate, the Threshwackonator 4100, back to its sunken captain to deal with the murlocs
@@ -183,7 +183,7 @@ kind: why
 - 7882 1 | stitching rugged leather jerkins for the Darkmoon Faire in trade for its tickets
 - 7883 1 | bringing the Darkmoon Faire costume pieces for the world's largest gnome, should one big enough ever be found
 - 7884 1 | crafting what the Darkmoon Faire needed for its Crocolisk Boy and Bearded Murloc act
-- 7885 1 | supplying the Darkmoon Faire with armor kits, one of them just right to patch a rip in a tent
+- 7885 1 | supplying the Darkmoon Faire with armour kits, one of them just right to patch a rip in a tent
 - 7889 1 | making coarse weightstones for the Darkmoon Faire, neither too heavy nor too light for building muscle
 - 7890 1 | hauling heavy grinding stones to a Faire hand who meant to build muscle lifting them
 - 7894 1 | building copper modulators for a secret Darkmoon Faire construction
@@ -210,7 +210,7 @@ kind: why
 - 20 2 | fighting the Blackrock orcs of Stonewatch Keep, whose raids kept the people of Lakeshire penned in town like cattle
 - 34 2 | putting an end to Bellygrub, the boar that kept trampling Martie Jainrose's garden and her daffodils
 - 89 1 | recovering iron pikes and rivets from the gnolls who hijacked Lakeshire's supplies, so the Everstill Bridge could be rebuilt
-- 91 2 | killing the Shadowhide gnolls who served Morganth, a mage spreading terror on Lakeshire, as the Law of Lakeshire demanded
+- 91 2 | killing the Shadowhide gnolls who served the warlock Morganth, spreading terror upon Lakeshire, as the Law of Lakeshire demanded
 - 92 1 | gathering condor meat, goretusk snouts and spider meat to restock Chef Breanna's bare cupboard for a Redridge Goulash
 - 94 1 | placing the Glyph of Azora by the Tower of Ilgalar so Theocritus could spy on his rival, the mage Morganth
 - 115 2 | taking midnight orbs from Blackrock shadowcasters to be destroyed, dark devices that had struck hard at Redridge's defenders
@@ -235,14 +235,14 @@ kind: why
 - 169 3 | killing Gath'Ilzogg, leader of the Blackrock attacks on Lakeshire, the first step to reclaim Stonewatch Keep for Stormwind
 - 178 1 | bringing a faded Shadowhide pendant to Theocritus the Mage, whose spell through it to Morganth's gnolls had seemed a failure
 - 180 3 | slaying Lieutenant Fangore, leader of the Shadowhide gnolls in Morganth's service, wanted dead by Magistrate Solomon
-- 219 3 | escorting the wounded Corporal Keeshan from his prison in a Blackrock cave back to Redridge, his regiment overpowered
+- 219 3 | escorting the wounded Corporal Keeshan, whose regiment the Blackrock orcs had overpowered, from his prison cave back to Redridge
 - 244 1 | warning Deputy Feldon of gnoll camps gathering near the road, a force that might advance into Elwynn
-- 246 2 | harrying the gnoll camps along Redridge's southern road to judge their numbers for Deputy Feldon, short of men
+- 246 2 | harrying the gnoll camps along Redridge's southern road to judge their numbers for Deputy Feldon, who had no men to spare
 - 248 1 | hiding a Glyph of Azora atop the watch tower by Stonewatch Keep, so Theocritus could look into the minds within
-- 249 3 | entering the Tower of Ilgalar to defeat Morganth, a warlock seeking the Scythe of Elune, saving Stormwind from grave peril
+- 249 3 | entering the Tower of Ilgalar to defeat Morganth before he could find the Scythe of Elune and turn it on Stormwind
 - 3741 1 | finding Hilary's necklace in the lake at Lakeshire, where the children had been told not to swim
 # Durotar
-- 784 3 | driving Lieutenant Benedict and his Kul Tiras men out of Tiragarde Keep, retaken in defiance of the Warchief's pact
+- 784 3 | driving Lieutenant Benedict and his Kul Tiras men out of Tiragarde Keep, which they had retaken in defiance of the Warchief's pact
 - 786 2 | destroying the Kolkar centaurs' attack plans, held by three leaders in Kolkar Crag, before they could strike Durotar
 - 791 1 | bringing canvas to Furl Scornbrow, too old for battle, who now made bags for younger warriors from his watchtower
 - 806 3 | defeating Fizzle Darkstorm, goblin warlock of the Burning Blade in Thunder Ridge, to deny the cult a foothold in Durotar
@@ -286,26 +286,26 @@ kind: why
 - 3374 2 | pledging to aid Ysera's Dragonflight by giving Itharius the chained essence of Eranikus, to redeem the dragon's soul
 # sort 182
 - 1582 1 | filling Lotherias's orders of embossed leather for the young adventurers of Darnassus, to learn the Moonglow Vest
-- 2847 1 | paying Pratt McGrubben ten thick leather to begin learning Wild Leather armor at Feathermoon Stronghold
-- 2848 1 | crafting thick armor kits and finding a wildvine for Pratt McGrubben, the price of the Wild Leather shoulders pattern
+- 2847 1 | paying Pratt McGrubben ten thick leather to begin learning Wild Leather armour at Feathermoon Stronghold
+- 2848 1 | crafting thick armour kits and finding a wildvine for Pratt McGrubben, the price of the Wild Leather shoulders pattern
 - 2849 1 | making Turtle Scale breastplates and gloves for Pratt McGrubben's orders, to earn the Wild Leather vest
 - 2850 1 | filling Pratt McGrubben's order of Nightscape tunics and headbands for the Wild Leather helmet pattern
 - 2851 1 | stitching Nightscape pants and boots and finding two wildvines, to learn Pratt McGrubben's Wild Leather boots
 - 2852 1 | crafting Turtle Scale helms and bracers for Pratt McGrubben, earning the pattern for Wild Leather leggings
 - 2853 2 | taking Pratt McGrubben's letter to his own teacher Telonis, to be named an equal and taught the last Wild Leather pattern
-- 2854 1 | paying Jangdor Swiftstrider ten thick leather to become his apprentice in Wild Leather armor at Camp Mojache
-- 2855 1 | crafting thick armor kits and finding a wildvine for Jangdor Swiftstrider, the price of the Wild Leather shoulders pattern
+- 2854 1 | paying Jangdor Swiftstrider ten thick leather to become his apprentice in Wild Leather armour at Camp Mojache
+- 2855 1 | crafting thick armour kits and finding a wildvine for Jangdor Swiftstrider, the price of the Wild Leather shoulders pattern
 - 2856 1 | making Turtle Scale breastplates and gloves for Jangdor Swiftstrider, to earn the Wild Leather vest
 - 2857 1 | stitching Nightscape tunics and headbands for Jangdor Swiftstrider's lesson in the Wild Leather helmet
 - 2858 1 | making Nightscape pants and boots and finding two wildvines, to learn Jangdor Swiftstrider's Wild Leather boots
 - 2859 1 | crafting Turtle Scale helms and bracers for Jangdor Swiftstrider, earning the pattern for Wild Leather leggings
 - 2860 2 | taking Jangdor Swiftstrider's letter to his teacher Una in Thunder Bluff, to be named an equal and taught the last pattern
-- 5141 2 | committing to dragonscale leatherworking for good, with scorpid armor and dragonscales for Peter Galen in Azshara
-- 5143 2 | choosing tribal leatherworking for good, offering Caryssia Moonhunter in Feralas the finest wild leather armor
+- 5141 2 | committing to dragonscale leatherworking for good, with scorpid armour and dragonscales for Peter Galen in Azshara
+- 5143 2 | choosing tribal leatherworking for good, offering Caryssia Moonhunter in Feralas the finest wild leather armour
 - 5144 2 | committing to elemental leatherworking, bringing Sarah Tanner in Searing Gorge essences of fire, water, earth and wind
-- 5145 2 | choosing the dragonscale path for good, proving it to Thorkaf Dragoneye in the Badlands with scorpid armor and dragonscales
+- 5145 2 | choosing the dragonscale path for good, proving it to Thorkaf Dragoneye in the Badlands with scorpid armour and dragonscales
 - 5146 2 | swearing to elemental leatherworking alone, with essences of the four elements for Brumn Winterhoof in the Arathi Mountains
-- 5148 2 | taking up tribal leatherworking for good, bringing Se'Jib in Stranglethorn Vale the finest samples of wild leather armor
+- 5148 2 | taking up tribal leatherworking for good, bringing Se'Jib in Stranglethorn Vale the finest samples of wild leather armour
 # Wailing Caverns
 - 914 3 | slaying the four leaders of the Druids of the Fang for their dream gems, to save the Barrens from a cursed future
 - 959 1 | chasing Mad Magglish into the Wailing Caverns for the stolen 99-year-old port, before Crane Operator Bigglefuzz lost his job

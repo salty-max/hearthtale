@@ -3,7 +3,7 @@ kind: opening
 ---
 - I began again {at}, with less breath than a living adventurer and no shortage of unfinished business.
 - I took up the road {at}, still unwilling to give the cemetery back its property.
-- I set out {at}, ready for the usual looks and determined to be useful anyway.
+- [!home] I set out {at}, ready for the usual looks and determined to be useful anyway.
 - I continued {at}, hoping usefulness would introduce me before the smell did.
 - I began this stretch {at}, unwilling to waste the freedom Sylvanas had won us on standing still.
 - I set out {at}, with a dead body and a rather lively dislike of being ordered around.

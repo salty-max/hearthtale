@@ -1,11 +1,10 @@
 ---
 kind: d-powers
 ---
-- [one] I learned {spells}, and was impatient for a chance to try it.
-- [one] My training gave me {spells}, one more thing I could do that I could not do before.
-- [one] I came away from my trainer with {spells}, and practised it whenever the road allowed.
-- [!one] I learned {spells}, and practised them whenever the road allowed.
-- [!one] My training gave me {spells}, and the fights afterwards felt different for it.
-- [!one] I came away from my trainer with {spells}.
-- [!one many] The trainers kept me busy: {spells}, and more besides.
-- [!one] I added {spells} to what I could do, and spent a while getting the feel of them.
+- [one] My training gave me {spells}, a new way to fight, and I was impatient for a chance to use it.
+- [one] I came away from my trainer with {spells}, and wondered what it would do against my next foe.
+- [one] {spells} was mine now, and the next fight would not go quite like the last.
+- [!one] My training gave me {spells}, new ways to fight, and I was impatient to try them.
+- [!one] I came away from my trainer with {spells}, and wondered how they would change the next fight.
+- [!one] {spells} were mine now, and my next fights would not go quite like the last ones.
+- [!one] I added {spells} to what I could do, and looked forward to the first chance to use them.
