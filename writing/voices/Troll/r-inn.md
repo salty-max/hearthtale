@@ -7,7 +7,7 @@ kind: r-inn
 - [night] the night welcome to its own entertainment on my return
 - [hc] a safe way home, which the careful live long enough to use
 - a useful safeguard against a weary homecoming
-- a way home fixed in mind, which the Darkspear never take for granted
+- a way home fixed in mind, which a people driven from two homes never takes for granted
 - an enchantment whose practical uses delighted me
 - a quicker way home than any canoe
 - [night] my eyes spared the trouble of finding the whole way back

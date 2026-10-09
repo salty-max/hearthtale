@@ -2,7 +2,7 @@
 kind: quests-many
 ---
 - I had completed {n} tasks, each one a little mortar for the walls of Orgrimmar.
-- The {n} tasks behind me had made a new home seem something an ordinary orc could help build.
+- The {n} tasks behind me had made a new home seem something ordinary hands could help build.
 - I had seen {n} jobs through, enough to feel useful without needing another fight.
 - By the end, {n} tasks were done, and I understood the appeal of a settled life in Orgrimmar.
 - I counted {n} completed tasks, a better use for a free life than waiting to be ordered forward.

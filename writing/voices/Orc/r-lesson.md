@@ -6,7 +6,7 @@ kind: r-lesson
 - [one] a better hope than trusting courage to serve for skill
 - [one] my eagerness no longer mistaken for mastery
 - [one] wondering how well it would serve beyond a safe lesson
-- an orc finding patience a demanding exercise
+- patience proving a harder discipline than any fight
 - [new one] a new skill with some use away from a battlefield
 - [new] an apprentice's pride harder to swallow than a defeat
 - [low one] still new enough to this to wish for easier learning

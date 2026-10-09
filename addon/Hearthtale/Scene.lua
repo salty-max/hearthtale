@@ -59,6 +59,7 @@ local function newScene(book, n, ch)
     trophied = {}, -- owners of a trophy told ("Zalazane" of Zalazane's Head): not told again as prey
     backTo = nil,
     backTold = false, -- (in this paragraph)
+    backAt = {}, -- (the paragraph each place's return was last named in)
     -- the sentence being written: its clauses (their kinds, each without its
     -- remark), the link it takes, whether it names its place, an arrival
     -- framing it; its clauses that may carry a remark, those that do, a
@@ -374,16 +375,24 @@ end
 
 -- A quiet return named at the start of the sentence told there, after its
 -- link if it has one ("Back in Anvilmar, I…", "Later, back in Anvilmar, I…").
--- Once a paragraph: more often reads as a ledger of comings and goings.
+-- Once a paragraph, and the same place not in the paragraph after: more
+-- often reads as a ledger of comings and goings. (Not the wording just used.)
 local BACK = { "Back %s,", "Once back %s,", "%s again," } -- ("in Anvilmar", "on Zephras Isle")
+function Scene:backDue(place)
+  local last = self.backAt[place]
+  return place ~= nil and not self.backTold and not (last and #self.paragraphs + 1 - last < 2)
+end
 function Scene:backLead(link, key)
   local place = self.backTo
   self.backTo = nil
-  if not place or self.backTold then return link end
-  self.backTold = true
+  if not self:backDue(place) then return link end
+  self.backTold, self.backAt[place] = true, #self.paragraphs + 1
   local b = self.book
   self.named, b.last, b.there = true, place, false
-  local back = BACK[hash(b.seed .. "|back|" .. key) % #BACK + 1]:format(W.at(place)):gsub("^%l", string.upper)
+  local i = hash(b.seed .. "|back|" .. key) % #BACK + 1
+  if i == b.backForm then i = i % #BACK + 1 end
+  b.backForm = i
+  local back = BACK[i]:format(W.at(place)):gsub("^%l", string.upper)
   return link and link .. " " .. back:gsub("^%u", string.lower) or back
 end
 
@@ -486,7 +495,7 @@ function Scene:tell(kind, values, t)
   self:prepare()
   if kind == "c-inn" then
     -- (the town a quiet return names at the start of this sentence: "there")
-    local backHere = self.backTo == m.place and not self.backTold and #self.pending == 0
+    local backHere = self.backTo == m.place and self:backDue(m.place) and #self.pending == 0
     values._place = m.place
     values.inn = (m.place == b.last or backHere) and "there" or "at " .. mid(m.place)
   end

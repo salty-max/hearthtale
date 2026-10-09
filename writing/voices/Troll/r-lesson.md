@@ -7,7 +7,7 @@ kind: r-lesson
 - [one] eager to have it ready before danger chose the hour
 - [one] wondering how it would serve beyond a safe lesson
 - [one] a confident manner hiding the difficulty
-- [new] a craft the Darkspear might have good use for
+- [new] a craft my people might have good use for
 - [new] an apprentice's place no disgrace to a survivor
 - [low] new enough to this to wish for a gentler teacher than danger
 - [high] old enough at this to teach the young ones at Sen'jin
