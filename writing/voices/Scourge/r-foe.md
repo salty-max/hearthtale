@@ -16,3 +16,6 @@ kind: r-foe
 - [undead] no kinship with the dead merely for resembling them
 - [hc] my rotting hide still of use to its occupant
 - [class:PRIEST holy undead] almost resentful that the Light would still answer these dead hands
+- [holy !one] the Light as hard on my own flesh as on theirs
+- [holy one] the Light's heat still in my fingers long after it had finished with the foe
+- [holy !one] the Light burning in my hands as surely as in them, and called on all the same

@@ -35,3 +35,5 @@ kind: lesson
 - [spell:Immolate] Immolate kept a foe burning while I stayed out of its reach, which suited me.
 - [spell:Immolate] I learned Immolate, a fire I would never welcome at my own hearth.
 - [spell:Life_Tap] With Life Tap learned, I could feed my magic at the cost of my own blood.
+- [race:Scourge class:PRIEST spell:Smite] Smite came to me as it comes to any priest, and burned in my dead hands as it never would in living ones; I learned to call on the Light anyway.
+- [client:forever race:Scourge class:PALADIN spell:Holy_Light] I learned Holy Light, and the first time I held it, it was like taking hold of a fire that would not let go.

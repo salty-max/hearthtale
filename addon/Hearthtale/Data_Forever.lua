@@ -1187,6 +1187,8 @@ ns.data = {
       { "Immolate kept a foe burning while I stayed out of its reach, which suited me.", tags = { "spell:Immolate" } },
       { "I learned Immolate, a fire I would never welcome at my own hearth.", tags = { "spell:Immolate" } },
       { "With Life Tap learned, I could feed my magic at the cost of my own blood.", tags = { "spell:Life_Tap" } },
+      { "Smite came to me as it comes to any priest, and burned in my dead hands as it never would in living ones; I learned to call on the Light anyway.", tags = { "race:Scourge", "class:PRIEST", "spell:Smite" } },
+      { "I learned Holy Light, and the first time I held it, it was like taking hold of a fire that would not let go.", tags = { "race:Scourge", "class:PALADIN", "spell:Holy_Light" } },
     },
     ["mount"] = {
       { "I rode my own mount for the first time, and the road got shorter." },
@@ -1467,6 +1469,8 @@ ns.data = {
       { "webbing in my hair for the rest of the day", tags = { "spider" } },
       { "checking my collar for anything with too many legs", tags = { "spider" } },
       { "the skittering still in my ears", tags = { "spider" } },
+      { "uneasy at turning a druid's gifts on those who serve Cenarius", tags = { "cenarion", "class:DRUID" } },
+      { "with Cenarius's name weighing on me more than the fight had", tags = { "cenarion", "race:Tauren", "!class:DRUID" } },
     },
     ["r-gear"] = {
       { "a better fit than what came before", tags = { "!made", "!held" } },
@@ -3132,6 +3136,7 @@ ns.data = {
         { "{foe} left me barely alive {at}. I wanted to see the Undercity again, a low ambition until the alternative grew close." },
         { "I barely survived {at}. The thought of rotting without knowing it frightened me more than I cared to admit.", tags = { "!foe" } },
         { "I came very near the end {at}, and discovered that having a grave waiting was no comfort at all.", tags = { "!foe" } },
+        { "{foe} nearly ended me {at}. Mending myself with the Light would have burned like a brand, and I was not sure I had the will left to bear it.", tags = { "class:PRIEST" } },
       },
       ["close-light"] = {
         { "{foe} nearly finished me {at}. Having already died was proving a poor qualification for doing it again." },
@@ -3139,6 +3144,8 @@ ns.data = {
         { "{foe} brought me close to the end {at}, and I missed the reassurance of a heartbeat for the first time in a while." },
         { "I nearly ceased to be {at}; I found nothing amusing about becoming ordinary cemetery furniture again.", tags = { "!foe" } },
         { "I came through a close call {at}, with no taste for jokes about death being a minor inconvenience.", tags = { "!foe" } },
+        { "{foe} nearly finished me {at}. The Light would have mended me, and it would have hurt almost as much as the wound.", tags = { "class:PRIEST" } },
+        { "{foe} nearly finished me {at}. I could have called the Light to close the wound, and knew exactly how much that would burn.", tags = { "class:PALADIN" } },
       },
       ["closing"] = {
         { "The work had occupied {time}; even without breath, I could be thoroughly tired of being useful." },
@@ -3251,6 +3258,9 @@ ns.data = {
         { "no kinship with the dead merely for resembling them", tags = { "undead" } },
         { "my rotting hide still of use to its occupant", tags = { "hc" } },
         { "almost resentful that the Light would still answer these dead hands", tags = { "class:PRIEST", "holy", "undead" } },
+        { "the Light as hard on my own flesh as on theirs", tags = { "holy", "!one" } },
+        { "the Light's heat still in my fingers long after it had finished with the foe", tags = { "holy", "one" } },
+        { "the Light burning in my hands as surely as in them, and called on all the same", tags = { "holy", "!one" } },
       },
       ["r-gear"] = {
         { "a burial shroud a poor measure of how comfortable I hoped to be", tags = { "!made", "!held" } },
@@ -3336,6 +3346,10 @@ ns.data = {
         { "I paused {at}, and let my joints settle like an old house in Brill." },
         { "I rested {at}, with no master's voice in my head to make stillness a crime." },
         { "I rested {at}, thinking of Brill's crooked roofs with something like fondness." },
+      },
+      ["revived"] = {
+        { "The spirit healer sent me back {at}, and the mending stung the way the Light always did in these dead hands.", tags = { "healer", "class:PRIEST" } },
+        { "The spirit healer sent me back {at}; even that kindness burned a little, as everything of the Light does in one of the Forsaken.", tags = { "healer", "class:PALADIN" } },
       },
       ["wake"] = {
         { "I stood up {at}, having passed the night without needing to dream.", tags = { "!rest" } },

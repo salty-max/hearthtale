@@ -325,17 +325,33 @@ function tell.boss(s, m) s:tell("c-boss", { boss = m.name, dungeon = mid(s.dunge
 -- the trade); a spell with a line of its own (writing/lesson.md: Life Tap,
 -- paid in blood) told by it after the lesson, the first of them
 local noted
-local function hasNote(spell)
+local function hasNote(spell, book)
   if not noted then
     noted = {}
     for _, line in ipairs(ns.data.writing.lesson or {}) do
       for _, t in ipairs(line.tags or {}) do
         local name = t:match("^spell:(.+)$") -- (its spaces "_": [spell:Life_Tap])
-        if name then noted[(name:gsub("_", " "))] = true end
+        if name then
+          name = name:gsub("_", " ")
+          noted[name] = noted[name] or {}
+          table.insert(noted[name], line)
+        end
       end
     end
   end
-  return noted[spell]
+  -- (a line for this race and class: a Forsaken priest's Smite is not every priest's)
+  for _, line in ipairs(noted[spell] or {}) do
+    local fits = true
+    for _, t in ipairs(line.tags or {}) do
+      local neg, k = t:match("^(!?)(%a+:.+)$")
+      if k and not k:find("^spell:") then
+        local has = book.base[k] == true
+        if (neg == "!") == has then fits = false end
+      end
+    end
+    if fits then return true end
+  end
+  return false
 end
 function tell.learned(s, m)
   s.book:learn(m.spells)
@@ -353,7 +369,7 @@ function tell.learned(s, m)
         or sp:find("^Master ")
       )
     then
-      if not note and hasNote(sp) and not s.book.noted[sp] then note = sp end
+      if not note and hasNote(sp, s.book) and not s.book.noted[sp] then note = sp end
       table.insert(spells, sp)
     end
   end
