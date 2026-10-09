@@ -3,7 +3,7 @@ kind: r-foe
 ---
 - my breath coming with an unflattering urgency
 - my blood slow to quiet after the danger
-- my arms heavy enough to make me envy a rested orc
+- my arms heavy enough to make me envy a dozing peon
 - my arms aching as they used to after a day's labour in the camps
 - [one] not an enemy I had any wish to meet twice
 - [!one] their numbers testing my endurance
