@@ -523,6 +523,7 @@ local FOE_PEOPLE = named([[
   outlaw: Defias, Syndicate, Bandit, Brigand, Southsea, Bloodsail, Pirate, Highwayman, Venture Co,
           Smuggler, Cutthroat, Wastewander
   scarlet: Scarlet
+  cenarion: Cenarius, Cenarion, Keeper Ordanus
 ]])
 local FOE_KIND =
   { Undead = "undead", Demon = "demon", Elemental = "elemental", Dragonkin = "dragonkin", Spider = "spider" }

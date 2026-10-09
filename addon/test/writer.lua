@@ -1589,6 +1589,75 @@ if forever then
   end
 end
 
+-- Forever's Forsaken paladins (and priests): the Light learned, and what it
+-- costs them, in a lesson, a close call and a revival.
+if forever then
+  for _, class in ipairs({ "PALADIN", "PRIEST" }) do
+    for seed = 1, 6 do
+      local c = {
+        guid = ("forsaken-light-%s-%d"):format(class, seed),
+        race = "Scourge",
+        class = class,
+        chapters = {
+          {
+            start = { level = 6, zone = "Tirisfal Glades", sub = "Brill" },
+            log = {
+              {
+                k = "learned",
+                spells = { class == "PALADIN" and "Holy Light" or "Smite" },
+                zone = "Tirisfal Glades",
+                sub = "Brill",
+                at = 100,
+              },
+              {
+                k = "close",
+                foe = "Rot Hide Gnoll",
+                hp = 10 + seed,
+                zone = "Tirisfal Glades",
+                sub = "Brill",
+                at = 2000,
+              },
+              {
+                k = "died",
+                death = { level = 6, zone = "Tirisfal Glades", cause = "foe", foe = "Rot Hide Gnoll" },
+                zone = "Tirisfal Glades",
+                at = 9000,
+              },
+              { k = "revived", how = "healer", zone = "Tirisfal Glades", at = 20000 },
+            },
+          },
+        },
+      }
+      inspect("Forsaken " .. class .. " and the Light", ns.writeBook(c).chapters[1].text)
+    end
+  end
+end
+
+-- Cenarius's own fought (the Horde's Stonetalon quests): a druid's unease,
+-- or a tauren's, once in a while.
+for _, who in ipairs({ { "Tauren", "WARRIOR" }, { "NightElf", "DRUID" }, { "Tauren", "DRUID" } }) do
+  for seed = 1, 10 do
+    local log = {}
+    for i, foe in ipairs({ "Sons of Cenarius", "Cenarion Botanist", "Daughters of Cenarius", "Sons of Cenarius" }) do
+      table.insert(log, {
+        k = "quest",
+        giver = "Braelyn Firehand",
+        objectives = { { type = "monster", name = foe, n = 8 } },
+        zone = "Stonetalon Mountains",
+        sub = "Sun Rock Retreat",
+        at = i * 1200,
+      })
+    end
+    local c = {
+      guid = ("cenarion-%s-%s-%d"):format(who[1], who[2], seed),
+      race = who[1],
+      class = who[2],
+      chapters = { { start = { level = 25, zone = "Stonetalon Mountains", sub = "Sun Rock Retreat" }, log = log } },
+    }
+    inspect(who[1] .. " " .. who[2] .. " against Cenarius's own", ns.writeBook(c).chapters[1].text)
+  end
+end
+
 local runs = 0
 -- Future or otherwise unwritten races still get a complete generic beginning.
 -- Racial beginnings now belong to their own catalogs rather than redundant

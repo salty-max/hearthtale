@@ -76,3 +76,5 @@ kind: r-foe
 - [spider] webbing in my hair for the rest of the day
 - [spider] checking my collar for anything with too many legs
 - [spider] the skittering still in my ears
+- [cenarion class:DRUID] uneasy at turning a druid's gifts on those who serve Cenarius
+- [cenarion race:Tauren !class:DRUID] with Cenarius's name weighing on me more than the fight had

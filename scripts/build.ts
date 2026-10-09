@@ -141,7 +141,7 @@ const VOICE = ["home", "kin", "faith", "weapon"];
 const TAGS = ["home", "ally", "foe", "neutral", "night", "hc", "high", "low", "first", "elite", "lots", "many", "slow", "quick",
   "foe", "fall", "drowning", "lava", "nature", "beast", "people", "player", "inside", "rest", "fire", "last", "one", "aside", "plain", "back", "done", "grouped", "held", "plural", "trophy", "corpse", "healer", "self", "known", "more", "again", "onward", "gear", "onlygear", "turn",
   "murloc", "kobold", "gnoll", "harpy", "quilboar", "centaur", "ogre", "troll", "naga", "satyr", "furbolg", "trogg", "outlaw",
-  "scarlet", "undead", "demon", "elemental", "dragonkin", "spider",
+  "scarlet", "cenarion", "undead", "demon", "elemental", "dragonkin", "spider",
   "stone", "egg", "feather", "hide", "paper", "plant", "relic", "remains", "teeth", "mechanical", "cloth", "meat", "explore", "escort", "new", "made", "form", "demon", "steed",
   "looted", "handed", "complex", "state", "ofprey", "summon", "also", "tried", "pet", "fire", "frost", "arcane", "shadow", "curse", "holy", "lightning", "wrath", "steel", "arrow", "imp", "voidwalker", "succubus", "felhunter", "felguard",
   "bear", "cat", "travel", "aquatic", "moonkin", "tree", "flight", "deliveries", "lone", "set", "melee"];

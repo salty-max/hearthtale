@@ -6,3 +6,4 @@ kind: close-deep
 - {foe} left me barely alive {at}. I wanted to see the Undercity again, a low ambition until the alternative grew close.
 - [!foe] I barely survived {at}. The thought of rotting without knowing it frightened me more than I cared to admit.
 - [!foe] I came very near the end {at}, and discovered that having a grave waiting was no comfort at all.
+- [class:PRIEST] {foe} nearly ended me {at}. Mending myself with the Light would have burned like a brand, and I was not sure I had the will left to bear it.

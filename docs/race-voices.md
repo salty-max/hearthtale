@@ -37,11 +37,11 @@ use; they must not claim a cast the record never supplied.
 | Paladin | The Light as shelter and service, a blessing's practical comfort, and faith that does not remove fear. The supported races follow the Classic paladin traditions. |
 | Hunter | Trails, keeping a safe distance, the patience of the hunt and a pet's recorded companionship. |
 | Rogue | Quiet ways in and out, the value of a purse, and relief at being able to disappear. |
-| Priest | Prayers that can protect or wound, the wish to mend, and resurrection as a person spared rather than another technique acquired. Do not impose the Light on every race's faith. |
+| Priest | Prayers that can protect or wound, the wish to mend, and resurrection as a person spared rather than another technique acquired. Do not impose the Light on every race's faith. A Forsaken priest (and Forever's Forsaken paladin) does call on the Light, and it burns them: "When undead channel the Light, it feels (to them) as if their entire bodies are being consumed in righteous fire", and its healing is "cripplingly painful" (Blizzard's Ask CDev). The cost is told at the first holy lesson, in about one holy fight in three, in their close calls and a healer's revival; never a joke. |
 | Shaman | Elements, ancestors, borrowed strength and the prospect of asking for something gentler than another battle. |
 | Mage | Fire, frost, arcane distance and useful conjuring; a sheep, a drink of water or a way out makes a lesson concrete. |
 | Warlock | Demons bound without being mistaken for friends, curses, life spent on mana, soul shards and an appetite for power that has a cost. |
-| Druid | The body and senses of each recorded form, the wild and the hope of protecting life. Learning a form and first taking it are distinct events. |
+| Druid | The body and senses of each recorded form, the wild and the hope of protecting life. Learning a form and first taking it are distinct events. Fighting Cenarius's own (the Horde's Stonetalon quests) leaves a druid, or any tauren, uneasy: one remark, no judgement. |
 
 ## Sources and era
 
