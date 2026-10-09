@@ -1,7 +1,7 @@
 ---
 kind: d-close
 ---
-- [hard] It was a hard stretch, and I mean to be more careful.
+- [hard] Those were hard days, and I mean to be more careful.
 - [hard] I came out of it alive, in the end, which is the best I can say for it.
 - [hard !hc] Every death teaches something, though I would rather learn more cheaply.
 - [near] I came closer to dying than I like to think about.
@@ -12,11 +12,9 @@ kind: d-close
 - [learned] I am not quite who I was when I set out, and the lessons are starting to show.
 - [delve] I spent long enough among walls full of enemies to value the open air.
 - [quiet] Nothing much happened, and I have learned to be grateful for stretches like that.
-- [quiet] It was a quiet stretch, all small work and no great danger, and I did not mind.
-- [quiet] Small work, done well enough; the next stretch may ask for more.
+- [quiet] It was quiet, all small work and no great danger, and I did not mind.
+- [quiet] Small work, done well enough; the days ahead may ask for more.
 - [grouped] Good company made the road shorter.
 - [low] I am still new to all of this, and every day shows it.
-- [high] After so long on the road, I still find something new to write down.
+- [high] After so long on the road, the world still finds ways to surprise me.
 - [hc] One life, still mine; that is the only tally that matters.
-- I wonder what the next stretch will bring.
-- I have filled another page, and I am glad of every line of it.

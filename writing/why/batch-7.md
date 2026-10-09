@@ -133,18 +133,18 @@ kind: why
 - 1700 1 | taking Furen Longbeard's notes to Grimand Elmore, a proud smith who hated the idea of learning anything from his old pupil
 - 1701 2 | gathering rare materials for Furen Longbeard's fire hardened mail, braving chimaeras for some of them
 - 1702 1 | carrying a cask of Barleybrew Scalder to the shieldsmith Furen Longbeard in Stormwind, to claim the shield Yorus promised
-- 1703 1 | bringing Furen's notes on his new armor techniques all the way to the blacksmith Mathiel in Darnassus
+- 1703 1 | bringing Furen's notes on his new armour techniques all the way to the blacksmith Mathiel in Darnassus
 - 1704 1 | carrying Furen's notes to Klockmort Spannerspan in Ironforge, who was nearly beside himself at Furen's breakthrough
-- 1705 2 | taking burning blood from the Nightbane worgen of Roland's Doom and a burning rock from Gutspill, for Grimand Elmore's armor
+- 1705 2 | taking burning blood from the Nightbane worgen of Roland's Doom and a burning rock from Gutspill, for Grimand Elmore's armour
 - 1708 1 | gathering searing coral on the coast south of Menethil Harbor for Klockmort Spannerspan, eager to try Furen's techniques
-- 1710 1 | searching below the Highperch wyvern nests for sunscorched egg shells, for armor Mathiel would make by Furen's new techniques
+- 1710 1 | searching below the Highperch wyvern nests for sunscorched egg shells, for armour Mathiel would make by Furen's new techniques
 - 1712 2 | gathering the items Bath'rah the Windwatcher needed to summon the wind lord Cyclonian, a test of strength and cunning
 - 1713 3 | defeating Cyclonian, the wind lord Bath'rah the Windwatcher had waited ages to see fall, and taking his whirlwind heart
 - 1719 3 | passing The Affray on Fray Island, beating every challenger and then Big Will to earn Klannoc Macleod's teaching
 - 1819 3 | unsealing Ulag the Cleaver and killing him, a Scourge captive the Deathguards had failed to free from the Lich King
 - 1821 2 | robbing the Agamand family crypt of its heirloom weapons for Coleman Farthing, whose employers in life had caused his death
 - 1824 3 | racing back from the Field of Giants with still-twitching antennae for Ruga Ragetotem, a timed trial on the warrior's path
-- 1838 1 | gathering smoky iron, azurite, iron bars and phlogiston for Thun'grim Firegaze to forge the first piece of a warrior's armor
+- 1838 1 | gathering smoky iron, azurite, iron bars and phlogiston for Thun'grim Firegaze to forge the first piece of a warrior's armour
 - 1842 1 | taking the swollen hooves of satyrs leeching Ashenvale's magic, so Ula'elek could work their power into brutal gauntlets
 - 1844 2 | slaying a chimaera matriarch in the ashen Charred Vale to end her misery, and bringing her galvanized horn to Orm Stonehoof
 - 1846 1 | collecting sturdy Dragonmaw shinbones in the Wetlands for brutal legguards by Velora Nitely, a fine armorsmith even in death
@@ -231,7 +231,7 @@ kind: why
 - 3621 1 | taking the tempered azsharite to Galvan the Ancient in Stranglethorn Vale, a smith able to harness fel energy into weapons
 - 5534 1 | wresting from the naga of Eldarath the rune the blood elves sought, Kim'jael's revenge on the employers who betrayed him
 - 5535 1 | releasing the restless Highborne spirits of the Shadowsong Shrine, as Loh'atu had promised the Sentinels
-- 5536 1 | purging the Haldarr satyrs from the sacred lands once traveled by Cenarius, to keep Loh'atu's oath to the Earthmother
+- 5536 1 | purging the Haldarr satyrs from the sacred lands once travelled by Cenarius, to keep Loh'atu's oath to the Earthmother
 - 6804 2 | curing the plagued water elementals of the Eastern Plaguelands with the Aspect of Neptulon, and defeating the maddened surges
 - 6805 1 | defeating the dust stormers and desert rumblers of Silithus, servants of air and earth, to prove conviction to Duke Hydraxis
 - 6821 3 | slaying the Pyroguard Emberseer, a fire servant held in Blackrock Spire, for the eye Duke Hydraxis wanted as proof of strength

@@ -5,10 +5,10 @@ kind: rest
 - I settled {at}, in no hurry at all, and let the day's wariness drain out of my shoulders.
 - I paused {at}, with the sound of the sea almost present in the quiet.
 - I rested {at}, and found the day's troubles funnier now that they were behind me.
-- I stopped {at}, enjoying an evening whose only demand was sitting still.
-- I rested {at}, and missed the drums of Sen'jin Village more than I expected.
-- I paused {at}, with the tribe's familiar warmth dearer than any chance to be impressive.
-- I rested {at}, letting my curiosity look after itself without finding it another occupation.
+- I stopped {at}, glad of an hour whose only demand was sitting still.
+- [!home] I rested {at}, and missed the drums of Sen'jin Village more than I expected.
+- I paused {at}, and thought of drums by the water and food shared out around a fire at home.
+- I rested {at}, and gave my curiosity a rest along with my legs.
 - I rested {at}, with no useful task left for my patience except doing nothing.
 - Quick as my body was to mend, weariness kept its own pace, and I rested {at} until it had gone.
 - [!fire] Few of the places we had called home had let us rest with both eyes closed, so I made the most of a safe place {at}.

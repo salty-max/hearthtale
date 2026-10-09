@@ -1014,6 +1014,9 @@ function Scene:routine(m, i)
   if m.k ~= "quest" and m.k ~= "done" then return nil end
   if m.abandoned then return "silent" end
   if m.k == "done" and self:handedNext(m, i) then return "silent" end -- told at its turn-in
+  -- (a story's work, an escort or a villain's end, is never folded: writing/why/)
+  local why = m.id and ns.data.why and ns.data.why[m.id]
+  if why and why[1] >= 2 then return nil end
   if m.k == "quest" and m.told then -- a report back; right after the work, the work itself
     if self:justDone(m, i) then return nil end
     return m.ender and "low" or "silent"

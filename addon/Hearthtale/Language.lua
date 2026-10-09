@@ -395,9 +395,16 @@ local function goldWords(copper)
   return g == 1 and "a gold piece" or words(g) .. " gold"
 end
 
+-- (not after an abbreviation's stop: "the Venture Co. papers")
+local ABBREVIATIONS = { Co = true, Mr = true, Mrs = true, St = true, Dr = true, Jr = true }
 local function capitalise(text)
   text = text:gsub("^(%W*)(%l)", function(p, c) return p .. c:upper() end)
-  return (text:gsub('([%.!%?]"? +%W*)(%l)', function(p, c) return p .. c:upper() end))
+  return (
+    text:gsub('(%a*)([%.!%?]"? +%W*)(%l)', function(word, p, c)
+      if ABBREVIATIONS[word] and p:sub(1, 1) == "." then return word .. p .. c end
+      return word .. p .. c:upper()
+    end)
+  )
 end
 
 -- ── the voice ────────────────────────────────────────────────────────────────

@@ -122,8 +122,8 @@ kind: why
 - 8257 3 | slaying the green drake Morphaz in the sunken temple of Atal'Hakkar for the blood Greta Mosshoof needed to begin healing Felwood
 # Hillsbrad Foothills
 - 494 1 | running Deathstalker Lesh's coded word to Tarren Mill, the signal that Hillsbrad was ripe for attack
-- 496 1 | gathering gray bear tongues and creeper ichor for Apothecary Lydon, who sought killing agents to plague the humans
-- 498 3 | freeing Drull and Tog'thar from Durnholde Keep, orc warriors the humans had taken captive while they investigated the Syndicate
+- 496 1 | gathering grey bear tongues and creeper ichor for Apothecary Lydon, who sought killing agents to plague the humans
+- 498 3 | freeing Drull and Tog'thar from Durnholde Keep, orc warriors the humans had taken captive while they were scouting the Syndicate
 - 499 1 | giving Lydon's assistant Umpi a taste of the Elixir of Suffering, a trial of what the Dark Lady planned for humans and Scourge
 - 501 1 | collecting mountain lion blood for Apothecary Lydon's death-brew, in the service of the New Plague
 - 502 1 | feeding Farmer Ray's dog Stanley the Elixir of Pain, Apothecary Lydon's test of a brew he hoped would please Lady Sylvanas
@@ -155,7 +155,7 @@ kind: why
 - 549 1 | cutting down Syndicate rogues and watchmen at Durnholde Keep, all of them wanted dead by order of Lady Sylvanas
 - 550 2 | carrying Darthalia's sealed commendation for the Battle of Hillsbrad to Varimathras, word of a decisive blow against the Alliance
 - 552 1 | recovering Helcular's Rod from the yeti in his old ritual lair, for an apprentice bent on vengeance against Southshore
-- 553 3 | charging Helcular's Rod at his three flames and driving it into his grave in Southshore, the apprentice's vengeance on the town
+- 553 3 | carrying out the vengeance Helcular's apprentice wanted on Southshore, charging the rod at three flames and driving it into Helcular's grave
 - 555 1 | hunting snapjaw turtles near Lake Lordamere so Chef Jessen could serve Southshore's famous Soothing Turtle Bisque again
 - 556 1 | gathering worn stone tokens, the means Dalaran's wizards used to control elementals, for Magus Voidglare to study
 - 557 1 | taking bracers of earth binding from Dalaran's elementals, the bonds that held them in a mage's service, for Magus Voidglare
@@ -166,7 +166,7 @@ kind: why
 - 564 2 | culling the mountain lions that came down from Alterac to prey on Darren Malvew's horses
 - 565 1 | gathering wool, fine thread, yeti fur and a Hillman's Cloak so the great Bartolo Ginsetti could sew his famous Yeti Fur Cloak
 - 566 3 | killing Baron Vardus, a Syndicate leader wanted for crimes against the Forsaken, and bringing his head to Darthalia
-- 567 2 | hunting the four Hillsbrad humans wanted for the murders of Forsaken and an ambush on supplies from the Undercity
+- 567 2 | hunting the four Hillsbrad humans wanted for murdering Forsaken and ambushing supplies from the Undercity
 - 658 2 | tracking down a Forsaken courier near the Go'Shek Farm for her sealed folder, which might shed light on what was happening in Hillsbrad
 - 659 1 | looking for Quae and Kinelory, Phin Odelic's friends gone quiet at the Go'Shek Farm while seeking proof the undead were at work
 - 660 2 | protecting Kinelory as she stole Apothecary Jorell's research from the farm before it could reach Tarren Mill
@@ -232,11 +232,11 @@ kind: why
 - 5545 1 | collecting bundles of wood the wolves and bears had driven Raelen's workers away from, so the lumber order would meet its deadline
 # Mulgore
 - 743 1 | testing strength against the Windfury harpies, one of Mulgore's natural enemies, before travelling on, as Ruul Eagletalon advised
-- 745 2 | driving off the Palemane gnolls, who slew Mulgore's wildlife unbridled and scorned all talk, for Baine Bloodhoof
+- 745 2 | driving the Palemane gnolls out of Mulgore for Baine Bloodhoof, since they killed its game without restraint and would not parley
 - 746 1 | smashing the dwarves' digging picks for Baine Bloodhoof, to teach them that hollowing the land is no path to knowledge
 - 748 1 | hunting prairie wolves and plainstriders for a totem to cleanse the Winterhoof Water Well, tainted by goblins
 - 749 1 | examining the burned Venture Co. caravan by Stonebull Lake for Morin Cloudstalker, after salvagers were seen at the wreck
-- 751 2 | bringing Morin Cloudstalker Venture Co. papers from the caravan, proof the goblins were robbing Mulgore of its ore
+- 751 2 | bringing Morin Cloudstalker the Venture Co. papers from the caravan, proof the goblins were robbing Mulgore of its ore
 - 754 2 | carrying the cleansing totem past the goblins to the Winterhoof Water Well, so its waters could be used again
 - 756 1 | taking claws from prairie stalkers and flatland cougars, whose purity in the hunt Mull Thunderhorn needed for the next cleansing totem
 - 758 2 | performing the cleansing ritual at the Thunderhorn Water Well, a deed its clan's ancestors praised in Mull Thunderhorn's dream
@@ -244,7 +244,7 @@ kind: why
 - 760 3 | cleansing the Wildmane Water Well, the last of the wells the goblins poisoned, so clean water would flow in Mulgore again
 - 761 1 | stalking the elusive swoop for its quills, a badge of cleverness and determination for Harken Windtotem
 - 764 2 | sending the Venture Co. a message at their Mulgore mine, so the goblins would not plunder the tauren's land unopposed
-- 765 3 | killing Supervisor Fizsprocket, mastermind of the Venture Co.'s plans to drive the tauren from their land, for his clipboard
+- 765 3 | taking Supervisor Fizsprocket's clipboard, the plans by which the Venture Co. meant to drive the tauren from their land
 - 766 2 | gathering a wolf heart, cougar femur, plainstrider scale and swoop gizzard to cure the infected bite Mazzranache gave Maur Raincaller
 - 770 2 | showing Ghost Howl's demon-scarred hide in Bloodhoof Village, where an old hunter could hardly believe the great wolf had fallen
 - 771 1 | gathering well stones and ambercorn for Zarlman Two-Moons to brew the Water of the Seers, a step of the Rite of Vision
@@ -255,7 +255,7 @@ kind: why
 - 861 1 | bringing flatland prowler claws to Melor Stonehoof on the Hunter's Rise, proof of the skill to walk the hunter's path
 # sort 284
 - 171 2 | bringing Randis home to Orphan Matron Nightingale at the end of Children's Week, an orphan who now wanted to be a hero
-- 172 1 | taking on Grunth, an orc orphan whose parents died with honor in battle, as a ward for Children's Week
+- 172 1 | taking on Grunth, an orc orphan whose parents died with honour in battle, as a ward for Children's Week
 - 558 1 | getting Lady Jaina Proudmoore's autograph in Theramore for a young ward who dreamed of being a hero of the Alliance
 - 910 1 | showing a young ward the docks of Ratchet and the ships that sail to Booty Bay, for an orphan who dreamed of being a Horde sailor
 - 911 1 | taking a young ward to the Mor'shan Rampart to see the frontier of Ashenvale, where Horde and Alliance clash

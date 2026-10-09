@@ -10,7 +10,7 @@ kind: opening
 - [!class:WARLOCK] I began this stretch {at}, trusting the Light to lend me some patience for whatever came.
 - The kingdom had room for heroes, but I would settle for coming home useful, and set out {at}.
 - I took up the road {at}, drawn by the parts of the world the wars had spared.
-- [night] I set out {at} in the dark, wishing for a few of Darkshire's Night Watch at my back.
+- [night] I set out {at} after nightfall, wishing I had a few of the Night Watch at my back.
 - Someone was always in want of a hand, and I set out {at} meaning to be the one who offered it.
 - [hc] I made ready {at}, determined to grow old the slow way, one sensible decision at a time.
 - [class:PALADIN] I began again {at}, carrying the Light as the Church had always taught it, a shelter to lend rather than a banner to wave.

@@ -420,6 +420,7 @@ function Book:candidates(kind, values, ctx, wantRemark)
   local race = self.c.race or "Human"
   local onlyPlain = s and s.onlyPlain
   local own, list = self.own and self.own[kind], ns.data.writing[kind]
+  if ctx._shared then own = nil end -- (the shared lines only: the diary's limit on a race's own)
   local ownFresh, fresh, voiced, all
   for pass = 1, 3 do
     ownFresh, fresh, voiced, all = {}, {}, {}, {}
@@ -506,41 +507,46 @@ function Book:pick(kind, key, prefer, ownFresh, fresh, voiced, all)
     end
   end
   if prefer then
-    local favoured = {}
-    for _, group in ipairs({ ownFresh, fresh }) do
+    -- (the race's own first, as ever, among the lines preferred)
+    local function favoured(group)
+      local found = {}
       for _, e in ipairs(group) do
         for _, t in ipairs(e.s.tags or {}) do
           if prefer[t] then
-            table.insert(favoured, e)
+            table.insert(found, e)
             break
           end
         end
       end
+      return found
     end
-    if #favoured > 0 then
-      ownFresh, fresh, voiced = {}, favoured, {}
+    local ownFavoured, sharedFavoured = favoured(ownFresh), favoured(fresh)
+    if #ownFavoured + #sharedFavoured > 0 then
+      ownFresh, fresh, voiced = ownFavoured, sharedFavoured, {}
     end
   end
   local h = hash(self.seed .. "|" .. kind .. "|" .. key)
   local pick = floor(h / 2)
   -- once all of the race's own were used: its oldest comes back, if it has
   -- been long enough (a voice that holds over a whole life, not shared prose)
+  -- (one of those spaced enough, chosen as the fresh ones are: the oldest
+  -- every time would replay the first round in its order)
   local ownOldest
   if #ownFresh == 0 then
+    -- (a routine clause's own verbs come back less often: they are short)
+    local gap = routine and 2 * OWN_GAP or OWN_GAP
+    local spaced = {}
     for _, x in ipairs(all) do
       if
         x.id:sub(1, 2) == "v:"
         and self.used[x.id]
-        and (not ownOldest or self.used[x.id] < self.used[ownOldest.id])
+        and (self.kindUses[kind] or 0) - self.usedIn[x.id] >= gap
+        and not sameVerb(x)
       then
-        ownOldest = x
+        table.insert(spaced, x)
       end
     end
-    -- (a routine clause's own verbs come back less often: they are short)
-    local gap = routine and 2 * OWN_GAP or OWN_GAP
-    if ownOldest and ((self.kindUses[kind] or 0) - self.usedIn[ownOldest.id] < gap or sameVerb(ownOldest)) then
-      ownOldest = nil
-    end
+    if #spaced > 0 then ownOldest = spaced[pick % #spaced + 1] end
   end
   if #ownFresh > 0 then return ownFresh[pick % #ownFresh + 1] end
   if ownOldest then
@@ -602,6 +608,7 @@ function Book:say(kind, key, values, tags, prefer, raw)
   local text = chosen[1]
   local said = {
     kind = kind,
+    own = e.id:sub(1, 2) == "v:", -- (a race's own line)
     weight = weight,
     routine = routine,
     remark = false,

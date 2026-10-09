@@ -58,7 +58,7 @@ kind: why
 - 8928 1 | buying a Fel Elemental Rod from a shifty imp in Darkwhisper Gorge, the last part of Mux's ghost revealer
 # Stormwind City
 - 212 1 | rushing a Chilled Basilisk Haunch from Stranglethorn to Angus Stern, who needed the meat fresh for a noble's birthday banquet
-- 333 1 | taking Harlan Bagley's request for more knitted clothing to the Canal Tailor, his stock run low with everyone buying armor
+- 333 1 | taking Harlan Bagley's request for more knitted clothing to the Canal Tailor, his stock run low with everyone buying armour
 - 334 1 | bringing young Thurman Schneider the sewing kit he had forgotten, without which he could not do his apprentice work
 - 335 1 | gathering a Tear of Tilloa and a Musquash Root for Zardeth the Black Claw, who meant to keep Lord Wishock from exposing the warlocks
 - 336 2 | serving Lord Wishock a bottle of Zardeth's Black Claw stout, so the warlocks of Stormwind could practice their ways undisturbed
@@ -87,7 +87,7 @@ kind: why
 - 6186 2 | breaking the news to Highlord Bolvar Fordragon that Nathanos Marris, once a noble ranger lord, had become the Forsaken's Blightcaller
 - 6403 3 | standing with Marshal Reginald Windsor as he unmasked Lady Prestor as Onyxia and gave his life to free Stormwind from her spell
 - 6501 2 | searching the world for one of dragon blood who could restore the Fragment of the Dragon's Eye, the key to Onyxia's lair
-- 7495 3 | presenting the Head of Onyxia to Highlord Bolvar Fordragon, long held under her gaze, and seeing Stormwind's honor restored
+- 7495 3 | presenting the Head of Onyxia to Highlord Bolvar Fordragon, long held under her gaze, and seeing Stormwind's honour restored
 - 7781 3 | laying the head of Nefarian, Lord of Blackrock, before Highlord Bolvar Fordragon, a victory the Alliance had not known in years
 # sort 366
 - 8867 1 | launching fireworks for the Lunar Festival, the yearly celebration of Moonglade's triumph over an ancient evil
@@ -120,7 +120,7 @@ kind: why
 # Loch Modan
 - 161 1 | carrying the strange powder from the dam to Ashlan Stonesmirk in Dun Modr, an explosives expert who could tell what it was
 - 217 3 | killing the trogg chieftain Grawmug and his guards Gnasher and Brawler, to push the troggs of Loch Modan back into the ground
-- 224 2 | fighting the Stonesplinter troggs tunneling up across Loch Modan, the gravest threat to Ironforge while its soldiers were at the front
+- 224 2 | fighting the Stonesplinter troggs tunnelling across Loch Modan, the gravest threat Ironforge faced while its soldiers were at the front
 - 237 2 | holding off the trogg skullthumpers and seers in the southern hills, buying time until the dwarves returned from the Alliance front
 - 250 2 | searching the eastern ramp of the Stonewrought Dam, where Dark Iron Sappers had been seen, for a clue to their next attack
 - 255 2 | fighting the Mo'grosh ogres camped by the lake as hired arms for Magistrate Bluntnose, while Thelsamar waited months for soldiers
@@ -154,7 +154,7 @@ kind: why
 - 476 1 | bringing Athridas Bearmantle grave news from the wounded Gaerolas: the Gnarlpine furbolgs had been driven mad by Fel Moss
 - 483 2 | recovering the Relics of Wakening from the ravaged Ban'ethil Barrow Den, lest the sleeping Druids of the Talon be lost in the Dream
 - 486 3 | slaying Ursal the Mauler, the Gnarlpine chieftain who drove his tribe mad, so the Druids of the Talon could be woken
-- 487 2 | clearing Gnarlpine ambushers off the road to Darnassus, where travelers bringing news and trade had come under attack
+- 487 2 | clearing Gnarlpine ambushers off the road to Darnassus, where travellers bringing news and trade had come under attack
 - 488 1 | fetching fangs, feathers and spider silk for Zenn Foulhoof, a satyr who laughed at the gullible for doing his bidding
 - 489 1 | slipping Zenn Foulhoof fel cones as a harmless-looking snack, the lesson the Council of the Forest demanded for having served the satyr
 - 918 1 | gathering timberling seeds around Lake Al'Ameth for Denalan, who hoped to grow gentler timberlings in his special soil
@@ -165,7 +165,7 @@ kind: why
 - 929 1 | filling a phial at the moonwell near Starbreeze for Corithras Moonrage, as he began the tale of how Teldrassil came to be
 - 930 1 | showing Denalan a strange glowing fruit, a plant from far off that reacted oddly with the soil of Teldrassil
 - 931 1 | bringing Denalan a shimmering frond, a plant he had last seen in the Swamp of Sorrows decades before
-- 932 3 | hunting down the satyr Lord Melenas in Fel Rock, plotting something foul much too close to Dolanaar
+- 932 3 | hunting down the satyr Lord Melenas, who was plotting something foul in Fel Rock, much too close to Dolanaar
 - 933 1 | braving the ill-tempered Gnarlpine to fill a phial at the moonwell by the Pools of Arlithrien for Corithras Moonrage
 - 934 1 | drawing water from the moonwell beneath the Oracle Tree, and hearing why the dragons refused to bless Teldrassil
 - 935 1 | carrying the moonwell waters to Arch Druid Fandral Staghelm, on whose shoulders the troubles of Teldrassil fell

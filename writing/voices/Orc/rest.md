@@ -2,16 +2,16 @@
 kind: rest
 ---
 - I rested {at}, with fresh sympathy for every peon ever caught asleep on the job.
-- I settled {at}, with the peace of a shared camp dear to me.
+- I settled {at}, and let the day's work fall away from me one piece at a time.
 - I stopped {at}, finding an unexpected pleasure in being of no use to anyone for a while.
 - I rested {at}, like a wolf curled up after a long run.
 - I paused {at}, grateful that no order could make me stand before I was willing.
 - I rested {at}, and wondered whether my people had ever known such ease on Draenor, before the demons found them.
 - I stopped {at}, missing the drums of home without wanting them to summon me anywhere.
 - I rested {at}, and left the ancestors to judge my unashamed relief.
-- I paused {at}, letting the Horde's reputation for toughness look after itself.
+- I paused {at}, and let my shoulders forget the weight of the day's work.
 - This stillness was nothing like the grey lethargy that had held my people in the camps, and I rested {at} the gladder for knowing the difference.
-- I kept still {at}, borrowing the patience of the Darkspear fishers at Sen'jin, who never hurried the sea.
+- I kept still {at}, and let the heat go out of my temper along with the day.
 - I paused {at}, and thought what an hour of my own would have been worth to Thrall as a boy behind the walls of Durnholde.
 - Somewhere a grunt was standing a long watch, and I sat down {at}, grateful that it was not me.
 - [fire] I sat by the fire {at}, and found it easy to believe, as the shamans did, that a spirit lived in the flame and deserved thanks.

@@ -214,6 +214,10 @@ local DEMONS = {
 local FORMS = { { 10, "bear" }, { 16, "aquatic" }, { 20, "cat" }, { 30, "travel" } }
 local PET_NAMES = { "Bristle", "Grimfang", "Thistle", "Ember", "Dusk", "Rook" }
 
+-- (a creature Classic left unused and Forever gave back a role: by its name)
+for _, c in pairs(D.creatures) do
+  if c.name then c.name = c.name:gsub("^UNUSED ", "") end
+end
 local function creature(id) return id and id > 0 and D.creatures[id] or nil end
 local function kindOf(c) return FAMILY[c.family or 0] or TYPE[c.type or 0] end
 
@@ -286,7 +290,7 @@ end
 local function play(race, class, side)
   side = side or SIDE[race] or "horde"
   local c = {
-    guid = "Player-1-PLAY" .. race .. (forever and class or ""),
+    guid = "Player-1-PLAY" .. race .. class, -- (each life its own: two of a race don't write alike)
     name = "Wanderer",
     race = race,
     class = class,
@@ -525,11 +529,17 @@ local function play(race, class, side)
               for _, cid in ipairs(s.creatures) do
                 local cr = creature(cid)
                 local here = not local_ or (cr and cr.zone and landOf(cr.zone) == landOf(q.zone))
-                if cr and here and cr.spawns > 0 and (not best or cr.spawns > best.spawns) then best = cr end
+                -- (elsewhere, never a creature far above the quest: no Maraudon elite for a well stone)
+                local near = cr and (local_ or (cr.max or 0) <= (q.level or 60) + 10)
+                if cr and here and near and cr.spawns > 0 and (not best or cr.spawns > best.spawns) then best = cr end
               end
               if best then break end
             end
-            kill(best, best and best.spawns > 1 and math.ceil(pair[2] * 1.5) or 1)
+            if best then
+              kill(best, best.spawns > 1 and math.ceil(pair[2] * 1.5) or 1)
+            else
+              wait(math.floor(4 * 60 * pair[2] / 2))
+            end
           elseif q.src ~= pair[1] then
             wait(math.floor(4 * 60 * pair[2] / 2))
           end
@@ -646,6 +656,7 @@ for _, life in ipairs(LIVES) do
     inspect(("%s %s diary %d"):format(life[1], life[2], i), e.text)
     local levels = e.from == e.to and ("level %d"):format(e.from or 1)
       or ("levels %d to %d"):format(e.from or 1, e.to or 1)
+    if e.open then levels = levels .. ", still being written" end
     f:write(("## %d. %s%s\n\n%s\n\n"):format(i, e.place and e.place .. ", " or "", levels, e.text))
     local ch = book.chapters[i]
     if ch and ch.text then

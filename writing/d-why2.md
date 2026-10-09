@@ -1,9 +1,9 @@
 ---
 kind: d-why2
 ---
-- I spent the better part of it {why}, and later {why2}.
-- First I was {why}, and after that {why2}.
-- Most of the stretch went into {why}; then came {why2}.
 - The work that mattered most was {why}, and after it, {why2}.
-- For a good while I was {why}, and then {why2}.
-- Two things filled it: {why}, and later {why2}.
+- What I will remember is {why}, and then {why2}.
+- Two things counted: {why}, and later {why2}.
+- Above everything else, I remember {why}, and after that, {why2}.
+- What mattered was {why}; after it came {why2}.
+- Of everything I did, what counted was {why}, and then {why2}.

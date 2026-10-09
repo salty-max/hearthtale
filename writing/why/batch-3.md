@@ -51,18 +51,18 @@ kind: why
 - 9121 1 | paying Archmage Angela Dosantos in crystals and gold for the Kirin Tor cloaking that slips past the wards of Naxxramas
 - 9122 1 | bringing arcane and nexus crystals to Archmage Angela Dosantos for the cloaking that opens the rune portal into Naxxramas
 - 9123 1 | receiving at no cost, for unwavering service to the Argent Dawn, the arcane cloaking that opens the way into Naxxramas
-- 9124 1 | collecting crypt fiend parts for Huntsman Leopold, who made Cryptstalker armor for those who venture into Naxxramas
-- 9126 1 | smashing Scourge for the bone fragments Rohan the Assassin always needed more of for his Bonescythe armor
+- 9124 1 | collecting crypt fiend parts for Huntsman Leopold, who made Cryptstalker armour for those who venture into Naxxramas
+- 9126 1 | smashing Scourge for the bone fragments Rohan the Assassin always needed more of for his Bonescythe armour
 - 9128 1 | gathering cores of elements from elementals across the world for Archmage Angela Dosantos, who paid in insignias
-- 9131 1 | scrounging Dark Iron scraps for Korfax to put together sets of Dreadnaught armor for the Dawn's champions
-- 9136 1 | picking savage fronds for Rayne's Dreamwalker armor, made for the heroes who enter Naxxramas
+- 9131 1 | scrounging Dark Iron scraps for Korfax to put together sets of Dreadnaught armour for the Dawn's champions
+- 9136 1 | picking savage fronds for Rayne's Dreamwalker armour, made for the heroes who enter Naxxramas
 - 9165 1 | carrying a writ of safe passage, signed once a caravan had made it through the Scourge, back to Dispatch Commander Metz
 - 9664 2 | capturing the four old towers of the Eastern Plaguelands, to tighten the Alliance's noose around the Forsaken
 - 9665 2 | seizing the four towers of the Eastern Plaguelands to stave off an Alliance incursion on the Forsaken's eastern border
 # Duskwood
 - 55 3 | turning Morbent's Bane on Morbent Fel in his house above Raven Hill and slaying him, the revenge Sven had long hoped for
 - 56 2 | clearing skeletons from Tranquil Gardens for the Night Watch, guarding Darkshire alone since Stormwind withdrew its guards
-- 57 2 | driving the skeletal fiends and horrors from the Raven Hill graveyard, as the undead infested the forest around Darkshire
+- 57 2 | driving the skeletal fiends and horrors from the Raven Hill graveyard, where the undead were spreading through the forest around Darkshire
 - 58 2 | ridding the eastern mausoleum of Raven Hill of its Plague Spreaders, with too few Watchers left to keep Darkshire safe
 - 66 1 | asking after the name Stalvan at the Town Hall, a clue from Madame Eva's trance as she feared for her granddaughter Alyssa
 - 67 1 | looking for word of Stalvan Mistmantle at the Moonbrook Schoolhouse, his last known address in Clerk Daltry's registry
@@ -77,7 +77,7 @@ kind: why
 - 80 2 | having Clerk Daltry match the bloodstained journal page to the signatures in his registry, proving Stalvan's guilt
 - 90 1 | gathering lean wolf flanks and Stormwind seasoning herbs for the Seasoned Wolf Kabobs Chef Grual called a house favorite
 - 93 1 | collecting gooey spider legs for Chef Grual's Dusky Crab Cakes, to feed Jitters after weeks of grubs and weeds
-- 95 2 | digging up what a shadowy figure buried behind the old stump at Sven's farm, where Dark Riders slaughtered his family
+- 95 2 | digging up what a shadowy figure had buried behind the old stump at Sven's farm, where dark riders had slaughtered Sven's family
 - 98 3 | executing Stalvan Mistmantle at his cottage north of Darkshire, the murderer Madame Eva's premonition had uncovered
 - 101 1 | gathering fangs, fingers and venom so Madame Eva could enchant a Totem of Infliction against a danger she foresaw
 - 133 1 | collecting ghoul ribs for Abercrombie's effigy, a scarecrow for ghouls after Bone Chewers pounded on his walls
@@ -95,7 +95,7 @@ kind: why
 - 174 1 | getting a bronze tube for Viktori Prism'Antras, the first part of a device to read in the stars the truth of the forest's change
 - 175 1 | tracking down Mary, once known for always carrying a looking glass, to ask a mirror of her for Viktori's star device
 - 177 1 | wresting Blind Mary's looking glass from the Insane Ghoul of Tranquil Gardens, the mirror Viktori's device lacked
-- 181 2 | taking the ogre Zzarc'Vul's monocle for the lens of Viktori's stargazing device, the last piece of Cog's blueprint
+- 181 2 | taking the ogre Zzarc'Vul's monocle for the lens of Viktori's stargazing device, the last piece it called for
 - 221 2 | culling the Nightbane Dark Runners that had overrun the Rotting Orchard, the bulk of the worgen in the woods, for Calor
 - 222 2 | facing the Nightbane Vile Fangs and Tainted Ones by their bonfires in the south, the most dangerous worgen in Duskwood
 - 223 1 | carrying Calor's letter of recommendation to Master Jonathan Carevin, to join his fight against demons and the undead
@@ -113,7 +113,7 @@ kind: why
 - 262 1 | showing the book from Sven's farm around Darkshire, to find the skulker Sven saw the night his family was killed
 - 265 1 | asking around Darkshire after the book's owner, a nervous, jittery stranger who had bought it in town a month before
 - 266 1 | searching the inn for word of the book's owner, who had left in a hurry, muttering about being hunted, and gone west
-- 268 2 | taking Jitters' completed journal to Sven, the account that set him against the dark riders and Morbent Fel
+- 268 2 | taking Jitters' finished journal to Sven, an account that set him against the dark riders and Morbent Fel
 - 269 1 | bringing Jitters' journal to Bishop Farthing in the Cathedral of Light, for counsel before facing Morbent Fel
 - 270 1 | asking Glorin Steelbrow in Menethil Harbor after the Lightforge Iron lost at sea, metal for a weapon against Morbent Fel
 - 321 1 | searching the wreck of the Flying Osprey for its Lightforge Iron, only to find the chest clawed open by murlocs
@@ -121,7 +121,7 @@ kind: why
 - 323 2 | fighting Morbent Fel's skeletal minions, so Sven would know the strength needed to face the necromancer
 - 324 1 | hunting the murloc raiders near the wreck of the Flying Osprey for the lightforge ingots they had stolen
 - 325 1 | bringing Morbent's Bane, forged of the lightforge iron, to Sven as proof against the fiend Morbent Fel
-- 453 2 | tracking the book's nervous author west of Darkshire, and finding Jitters, hiding from whatever hunted him
+- 453 2 | tracking the nervous stranger from Sven's farm west of Darkshire, and finding him, Jitters, hiding from whatever hunted him
 - 526 1 | taking back from the murlocs the lightforge ingots they had carried off, since one alone would craft nothing decent
 - 1383 1 | gathering panther hearts, Mire Lord fungus and a Deep Strider tumor for Apothecary Faustin's so-called truth serum
 - 1391 2 | bringing the captive Infiltrator Marksen in Stonard an ale laced with Faustin's truth serum, a quiet Forsaken errand
@@ -189,7 +189,7 @@ kind: why
 - 369 1 | drawing venom from vicious night web spiders, the agent of an ancient plague, to complete Johaan's deadly new concoction
 - 370 2 | killing Captain Perrine and his brigade at the tower southwest of Brill, found through the Crusade's captured documents
 - 371 2 | cutting down Captain Vachon and his friars, raiders from the ruined tower near the Balnir Farmstead, to slow the Crusade
-- 372 3 | assassinating Captain Melrache and his two bodyguards, the ruthless commander of the Crusaders raiding past Faol's Rest
+- 372 3 | assassinating Captain Melrache, ruthless commander of the Crusaders raiding past Faol's Rest, and his two bodyguards
 - 374 1 | taking Scarlet Insignia Rings from slain crusaders as proof of loyalty to Varimathras and the Dark Lady
 - 375 1 | bringing duskbat pelts and thread to Gretchen Dedmar, so hands shaking with the Plague's chill could sew a blanket
 - 398 3 | executing Maggot Eye, the gnoll who stole corpses near Garren's Haunt for the Lich King's army, for Brill's reward

@@ -1,16 +1,17 @@
 ---
 kind: d-land
 ---
-- [one] I set foot in {lands} for the first time.
-- [one] {lands} was new to me, and I spent the first while just learning its roads.
-- [one !home] I had never been to {lands} before, and I looked at everything twice.
-- [one] For the first time, the road took me into {lands}.
-- [one !home] I came into {lands} as a stranger, which is how every land starts.
-- [!one] I saw {lands} for the first time.
-- [!one] The road took me into new country: {lands}.
-- [!one] I had never set foot in {lands} before, and now I have.
-- [!one] {lands} were all new to me, and I tried to take in as much as I could.
-- [!one] More of the world opened up ahead of me, {lands} among it.
-- [one home] I saw {lands} for the first time, though it had always been part of my own people's country.
-- [one home] {lands} was new to my eyes, if not to my people, and I was glad to know it at last.
-- [!one home] I saw {lands} for the first time, lands my own people had always called theirs.
+- [one !home !hosts] I set foot in {lands} for the first time.
+- [one !home !hosts] I came into {lands} as a stranger, which is how every land starts.
+- [one !home !hosts] For the first time, the road took me into {lands}.
+- [one !home !hosts] I had never been to {lands} before, and I looked at everything twice.
+- [one !home !hosts] I saw {lands} with my own eyes for the first time.
+- [!one !home !hosts] I saw {lands} for the first time.
+- [!one !home !hosts] The road took me into new country: {lands}.
+- [!one !home !hosts] {lands} were all new ground to me, and I tried to take in as much as I could.
+- [!one !home !hosts] More of the world opened up ahead of me, {lands} among it.
+- [!one !home !hosts] For the first time I saw {lands}.
+- [one home] I saw {lands} for the first time, my own people's country though new to my eyes.
+- [one home] I set eyes on {lands} at last, and was glad to know my own people's land for myself.
+- [!one home] I saw {lands} for the first time, all of it my own people's country.
+- [one hosts] I saw {lands} for the first time, part of the country that had taken my people in.

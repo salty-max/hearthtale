@@ -345,7 +345,7 @@ local function life(race, class, hc, from, to)
   local sub = zone[2][1]
   local seen, kinds, level, once = {}, {}, from, {}
   local clock, isNight = 1790000000, false
-  local questId, returns = 0, {} -- quests whose work was told, not yet returned
+  local questId, returns = 1000000, {} -- quests whose work was told, not yet returned (ids no real quest has: no story of its own)
   local lastThing -- the thing the last quest for a thing asked for
   local grouped = false
   local function m(k, fields)
@@ -1763,6 +1763,31 @@ do
       inspect(race .. " story diary " .. i, e.text)
     end
   end
+end
+
+-- New lands of my own people's, two at once (a human's Westfall and Duskwood).
+do
+  local log = {
+    { k = "place", new = "zone", zone = "Westfall", sub = "Westfall", at = 100 },
+    { k = "place", new = "zone", zone = "Duskwood", sub = "Duskwood", at = 700 },
+  }
+  local c = {
+    guid = "homelands",
+    race = "Human",
+    class = "WARRIOR",
+    chapters = {
+      {
+        start = { level = 15, zone = "Elwynn Forest", sub = "Goldshire" },
+        log = log,
+        ended = { level = 15, place = "Darkshire", how = "rest" },
+        kills = {},
+        quests = 0,
+        played = 3600,
+        gold = 0,
+      },
+    },
+  }
+  inspect("home lands diary", ns.writeDiary(c).entries[1].text)
 end
 
 -- A trinket put on: carried, not worn.
