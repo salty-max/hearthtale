@@ -8,8 +8,7 @@ kind: r-first
 - [teeth] those jaws deserving no less care than a nightsaber's
 - [night] more watchful in the hour I usually found kindest
 - [mechanical] uncomfortably far from anything a forest could have grown
-- [low] young by my people's reckoning, and it showed
-- proof that the world had not stood still while we kept apart from it
+- [!home] proof that the world had not stood still while we kept apart from it
 - their sound now one I would know again anywhere
 - [hc] my one life suddenly a narrow thing to have risked on them
 - [night] the dark at least no stranger to my eyes

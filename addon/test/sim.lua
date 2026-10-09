@@ -484,7 +484,7 @@ state.bind = bind
 -- The chapter's diary entry first, the chapter in full a click away.
 local diaryText = page.body:GetText()
 check(
-  diaryText == ns.writeDiary(ns.journal()).entries[1].text
+  diaryText == ns.writeDiary(ns.journal(), ns.writeBook(ns.journal())).entries[1].text
     and page.toggle:IsShown()
     and page.toggle.label:GetText() == "Read the full chapter",
   "a chapter opens on its diary entry, the full chapter a click away"
@@ -520,7 +520,7 @@ check(
 )
 check(
   B1
-    and B1.chapters[1].diary == ns.writeDiary(ns.settledView(J)).entries[1].text
+    and B1.chapters[1].diary == ns.writeDiary(ns.settledView(J), ns.writeBook(ns.settledView(J))).entries[1].text
     and B1.chapters[1].diary ~= B1.chapters[1].text,
   "… each chapter with its diary entry, read first on the site"
 )

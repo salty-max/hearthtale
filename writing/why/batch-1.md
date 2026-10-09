@@ -110,7 +110,7 @@ kind: why
 - 958 1 | prying Highborne relics from the spirits of Ameth'Aran, so Thundris Windweaver could destroy their dormant evil
 - 963 2 | releasing the haunted spirit of Anaya Dawnrunner for Cerellean Whiteclaw, who loved her and had not the heart to do it
 - 965 1 | looking for Balthule Shadowstrike, overdue from his watch on the Tower of Althalaxx, for a worried Elissa Starbreeze
-- 966 2 | taking worn parchments from the warlocks at the Tower of Althalaxx, which named them the Cult of the Dark Strand
+- 966 2 | taking worn parchments from the warlocks at the Tower of Althalaxx, papers that named them the Cult of the Dark Strand
 - 967 1 | rushing Balthule's warning about the Cult of the Dark Strand to his master, Delgren the Purifier, at Maestra's Post
 - 968 1 | returning a battered copy of The Powers Below, a book of dark worship, to Gerrig Bonegrip's shop in Ironforge
 - 970 2 | seizing the Glowing Soul Gem at Ordil'Aran for Delgren, who believed it held the secret of the Dark Strand's power
@@ -127,7 +127,7 @@ kind: why
 - 1002 1 | feeding moonstalker fangs into Buzzbox 323 for a Wizbang who sounded drunker at every box
 - 1003 1 | fixing Buzzbox 525 with grizzled scalps, and learning the boxes also distilled liquor for a trade the night elves frowned on
 - 1138 1 | picking fine crab chunks out of reef crawlers for Gubber Blump, who loved crab more than anything
-- 1140 2 | freeing the Highborne souls trapped in the last two soulgems, in Night Run and Satyrnaar, that fed Athrikus's power
+- 1140 2 | freeing the Highborne souls whose soulgems, in Night Run and Satyrnaar, still fed Athrikus's power
 - 1141 1 | catching Darkshore grouper for Gubber Blump, no boats having gone out since the murlocs moved in
 - 1143 3 | killing Athrikus Narassin atop the Tower of Althalaxx amid his warlocks, so the demonic forces there might be driven back
 - 2078 1 | leading Gelkak's mechanical first mate, the Threshwackonator 4100, back to its sunken captain to deal with the murlocs

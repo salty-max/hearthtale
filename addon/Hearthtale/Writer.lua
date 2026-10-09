@@ -62,6 +62,15 @@ local function linkName(x) return x.link and x.link:match("%[(.-)%]") end
 local tell = {}
 function tell.level(s, m) s.lvl = m.level or s.lvl end -- a level reached: recorded, not told
 local QUICK = 3600 -- (a land left less than this long ago: a quick return)
+-- (a people's capital: a city, no farms nor hills)
+local CITIES = {
+  ["Stormwind City"] = true,
+  Ironforge = true,
+  Darnassus = true,
+  Orgrimmar = true,
+  ["Thunder Bluff"] = true,
+  Undercity = true,
+}
 function tell.place(s, m)
   local b = s.book
   if m.new == "zone" then
@@ -92,7 +101,7 @@ function tell.place(s, m)
     if land then
       s:append(land)
     else
-      s:alone("zone", { zone = mid(m.zone) }, s:tags({ back = back or nil }, m))
+      s:alone("zone", { zone = mid(m.zone) }, s:tags({ back = back or nil, town = CITIES[m.zone] }, m))
     end
     s:enter(nil, nil)
     -- (the land just named: the next sentence says "there", or nothing)
@@ -642,8 +651,9 @@ local function ending(s, e)
       -- (a rare has its own sentence: never "fifteen Squiddics")
       if m.k == "rare" and m.name then covered[m.name] = true end
     end
+    -- (nor a creature with a name of its own: no "three Lord Cyrik Blackforges")
     for name, count in pairs(ch.kills or {}) do
-      if not covered[name] then remaining[name] = count end
+      if not covered[name] and article(name) ~= name then remaining[name] = count end
     end
     return topKills(remaining)
   end)()
@@ -716,6 +726,7 @@ end
 function Book:chapter(n, ch)
   self.last, self.there = nil, false
   self.chapterNo = self.chapterNo + 1
+  self.base.zalazane = (self.zalazaneAt and n > self.zalazaneAt) or nil -- (dead: no line hoping for it)
   local s = newScene(self, n, ch) -- (the book's scene until the chapter is told)
   opening(s)
   for i, m in ipairs(ch.log or {}) do

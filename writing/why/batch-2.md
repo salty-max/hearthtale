@@ -153,7 +153,7 @@ kind: why
 - 6504 1 | finding the scattered pages of a shredder manual for Gurda Ragescar, who could not work the new shredder without them
 - 6544 3 | fighting beside Torek's raiders in their attack on Silverwing Outpost and its leader, Duriel Moonfire
 - 6571 1 | gathering saw blades, rope, oil and axes for the Warsong Lumber Camp, wresting the rope and oil back from furbolgs and satyrs
-- 6621 3 | raising Karang's banner on the Foulweald totem mound and holding it until Chief Murgut came out to be defeated
+- 6621 3 | raising Karang's banner on the Foulweald totem mound and holding it until Chief Murgut came out to face me, and fell
 - 6641 3 | guarding Muglash while he lured out Vorsha the Lasher, the hydra that kept attacking Zoram'gar, and seeing her slain
 - 6922 2 | bringing Je'neu Sancrea the strange globe that had fed Baron Aquanis in Blackfathom, proof of what had corrupted him
 # Thousand Needles

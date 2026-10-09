@@ -113,7 +113,7 @@ kind: why
 - 262 1 | showing the book from Sven's farm around Darkshire, to find the skulker Sven saw the night his family was killed
 - 265 1 | asking around Darkshire after the book's owner, a nervous, jittery stranger who had bought it in town a month before
 - 266 1 | searching the inn for word of the book's owner, who had left in a hurry, muttering about being hunted, and gone west
-- 268 2 | taking Jitters' finished journal to Sven, an account that set him against the dark riders and Morbent Fel
+- 268 2 | taking Jitters' finished journal to Sven, for what it told of the dark riders and Morbent Fel
 - 269 1 | bringing Jitters' journal to Bishop Farthing in the Cathedral of Light, for counsel before facing Morbent Fel
 - 270 1 | asking Glorin Steelbrow in Menethil Harbor after the Lightforge Iron lost at sea, metal for a weapon against Morbent Fel
 - 321 1 | searching the wreck of the Flying Osprey for its Lightforge Iron, only to find the chest clawed open by murlocs
@@ -121,7 +121,7 @@ kind: why
 - 323 2 | fighting Morbent Fel's skeletal minions, so Sven would know the strength needed to face the necromancer
 - 324 1 | hunting the murloc raiders near the wreck of the Flying Osprey for the lightforge ingots they had stolen
 - 325 1 | bringing Morbent's Bane, forged of the lightforge iron, to Sven as proof against the fiend Morbent Fel
-- 453 2 | tracking the nervous stranger from Sven's farm west of Darkshire, and finding him, Jitters, hiding from whatever hunted him
+- 453 2 | tracking the nervous stranger who had left Darkshire heading west, and finding him hiding from whatever hunted him
 - 526 1 | taking back from the murlocs the lightforge ingots they had carried off, since one alone would craft nothing decent
 - 1383 1 | gathering panther hearts, Mire Lord fungus and a Deep Strider tumor for Apothecary Faustin's so-called truth serum
 - 1391 2 | bringing the captive Infiltrator Marksen in Stonard an ale laced with Faustin's truth serum, a quiet Forsaken errand

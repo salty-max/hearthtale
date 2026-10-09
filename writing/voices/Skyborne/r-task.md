@@ -11,7 +11,7 @@ kind: r-task
 - [client:forever explore] the route acquiring the familiarity of a path at home
 - [client:forever escort] a slower pace worth the trouble of keeping another life safe
 - [client:forever night] the dark making a slow business of every step
-- [client:forever] the people here a little less strange to me afterwards
+- [client:forever !home] the people here a little less strange to me afterwards
 - [client:forever] help of a sort that asks nothing of any spirit
 - [client:forever] as tired as a gull that has fought the wind all day
 - [client:forever faction:alliance] something the High Order could count on my hands to finish

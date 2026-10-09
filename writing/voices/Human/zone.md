@@ -5,7 +5,7 @@ kind: zone
 - [!home melee] I reached {zone}, with the hope of finding someone who needed a hand rather than a sword.
 - [!home !back] I came into {zone}, a stranger with an ordinary person's interest in where the road might lead.
 - [home back] I came back into {zone}, where the roads and the voices were the kingdom's own.
-- [home] I reached {zone}, among farms and folk that made the word home mean something again.
+- [home !town] I reached {zone}, among farms and folk that made the word home mean something again.
 - [home] I reached {zone}, where nobody needed me to explain where I was from.
 - [!home !back] I came into {zone} for the first time, and found it larger than any account of it had prepared me for.
 - [!home !back] I crossed into {zone}, past the last of the roads I knew and into somebody else's idea of home.

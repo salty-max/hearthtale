@@ -5,9 +5,10 @@ kind: r-task
 - a request I could meet without leaving pieces behind
 - my usefulness a promising reason to be left unburied
 - my joints registering an objection I chose to ignore
-- with no intention of settling anywhere permanently
 - rather happy to have a use outside an apothecary's cellar
 - [explore] wondering how readily the living could find the way out
 - [explore] not volunteering to become somebody else's interesting remains
 - [escort] another life giving the request an unexpected urgency
 - [night] the dark suiting me better than it suits the living
+- a chore that used to bore me when I still had a pulse
+- neatly enough that nobody needed to look at me twice

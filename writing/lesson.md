@@ -1,41 +1,75 @@
 ---
 kind: lesson
 ---
-- [spell:Life_Tap] Life Tap taught me to pay for magic with my own health.
-- [spell:Fear] Fear was a new way to put the terror on the other side of a fight.
-- [spell:Drain_Life] Drain Life entered my repertoire, a hungry spell that could keep me alive at someone else's expense.
-- [spell:Corruption] Corruption was mine to use, slow enough to make a quick death seem generous.
-- [spell:Health_Funnel] With Health Funnel learned, keeping a demon alive could now cost me my own health.
-- [spell:Polymorph] Polymorph could turn a foe into a sheep, which is more of an answer than it sounds.
-- [spell:Blink] Blink gave me a sudden affection for the distance a single spell could put between me and danger.
-- [spell:Frost_Nova] Frost Nova offered a way to let ice hold an enemy while I found somewhere safer to stand.
-- [spell:Conjure_Water] I learned to conjure water, and liked having one less ordinary need to carry along the road.
-- [spell:Power_Word:_Shield] Power Word: Shield was a ward I could now set between myself and an enemy's blow.
-- [spell:Renew !race:Scourge] I took instruction in Renew, comforted by healing that could keep working after the prayer ended.
-- [spell:Resurrection !race:Scourge] With Resurrection, I could call the dead back to life, which is not a thing to learn lightly.
-- [spell:Psychic_Scream] Psychic Scream was mine to use, a way to make my fear someone else's problem.
-- [spell:Lay_on_Hands] Lay on Hands gave me a fierce comfort in having something left to offer when an ordinary blessing would not be enough.
-- [spell:Divine_Protection] Divine Protection gave me a moment in which nothing could touch me.
-- [spell:Hammer_of_Justice] Hammer of Justice offered a firm interruption to an enemy's intentions.
-- [spell:Charge] With Charge learned, I could close the distance before my courage had time to argue about it.
-- [spell:Execute] I took instruction in Execute, with the ugly comfort of knowing how to finish a fight that had already cost enough.
-- [spell:Pick_Pocket] Learning to pick pockets gave me a new sympathy for anyone who kept a hand on their purse.
-- [spell:Sap] With Sap, I could put a foe to sleep before it knew I was there.
-- [spell:Vanish] Vanish was a new way to let an enemy wonder where its troubles had gone.
-- [spell:Sprint] I learned Sprint, and saw an excellent use for it in leaving trouble behind.
-- [spell:Aspect_of_the_Cheetah] Aspect of the Cheetah gave me a hunter's answer to a long road.
-- [spell:Feign_Death] Feign Death was a lie I could now tell with my whole body, so that I need not become the truth of it.
-- [spell:Hunter's_Mark] Hunter's Mark offered a way to keep my quarry from becoming merely another movement I could not place.
-- [spell:Ghost_Wolf] I learned Ghost Wolf, and could borrow a swifter shape from the spirits without leaving my life behind.
-- [spell:Ancestral_Spirit] With Ancestral Spirit, I could call a fallen friend's spirit back into their body.
-- [spell:Lightning_Shield] Lightning Shield was mine to call on, thunder waiting for the hand that reached for me.
-- [spell:Entangling_Roots] Entangling Roots offered a way to hold an enemy without keeping it within my own reach.
-- [spell:Healing_Touch] I took instruction in Healing Touch, grateful for a gentle answer to a frightened body's need.
-- [spell:Rebirth] Rebirth was the wild's answer to a death that came before the fighting was done, and I learned to call on it.
-- [spell:Immolate] Immolate kept a foe burning while I stayed out of its reach, which suited me.
-- [spell:Immolate] I learned Immolate, a fire I would never welcome at my own hearth.
-- [spell:Life_Tap] With Life Tap learned, I could feed my magic at the cost of my own blood.
-- [race:Scourge class:PRIEST spell:Smite] Smite came to me as it comes to any priest, and burned in my dead hands as it never would in living ones; I learned to call on the Light anyway.
-- [client:forever race:Scourge class:PALADIN spell:Holy_Light] I learned Holy Light, and the first time I held it, it was like taking hold of a fire that would not let go.
-- [spell:Renew race:Scourge] I learned Renew, a healing that went on working after the prayer ended, and went on burning in my hands as long as it did.
-- [spell:Resurrection race:Scourge] Resurrection was mine now; of all people, I knew what it was to be called back.
+- [spell:Life_Tap !diary] Life Tap taught me to pay for magic with my own health.
+- [spell:Fear !diary] Fear was a new way to put the terror on the other side of a fight.
+- [spell:Drain_Life !diary] Drain Life entered my repertoire, a hungry spell that could keep me alive at someone else's expense.
+- [spell:Corruption !diary] Corruption was mine to use, slow enough to make a quick death seem generous.
+- [spell:Health_Funnel !diary] With Health Funnel learned, keeping a demon alive could now cost me my own health.
+- [spell:Polymorph !diary] Polymorph could turn a foe into a sheep, which is more of an answer than it sounds.
+- [spell:Blink !diary] Blink gave me a sudden affection for the distance a single spell could put between me and danger.
+- [spell:Frost_Nova !diary] Frost Nova offered a way to let ice hold an enemy while I found somewhere safer to stand.
+- [spell:Conjure_Water !diary] I learned to conjure water, and liked having one less ordinary need to carry along the road.
+- [spell:Power_Word:_Shield !diary] Power Word: Shield was a ward I could now set between myself and an enemy's blow.
+- [spell:Renew !race:Scourge !diary] I took instruction in Renew, comforted by healing that could keep working after the prayer ended.
+- [spell:Resurrection !race:Scourge !diary] With Resurrection, I could call the dead back to life, which is not a thing to learn lightly.
+- [spell:Psychic_Scream !diary] Psychic Scream was mine to use, a way to make my fear someone else's problem.
+- [spell:Lay_on_Hands !diary] Lay on Hands gave me a fierce comfort in having something left to offer when an ordinary blessing would not be enough.
+- [spell:Divine_Protection !diary] Divine Protection gave me a moment in which nothing could touch me.
+- [spell:Hammer_of_Justice !diary] Hammer of Justice offered a firm interruption to an enemy's intentions.
+- [spell:Charge !diary] With Charge learned, I could close the distance before my courage had time to argue about it.
+- [spell:Execute !diary] I took instruction in Execute, with the ugly comfort of knowing how to finish a fight that had already cost enough.
+- [spell:Pick_Pocket !diary] Learning to pick pockets gave me a new sympathy for anyone who kept a hand on their purse.
+- [spell:Sap !diary] With Sap, I could put a foe to sleep before it knew I was there.
+- [spell:Vanish !diary] Vanish was a new way to let an enemy wonder where its troubles had gone.
+- [spell:Sprint !diary] I learned Sprint, and saw an excellent use for it in leaving trouble behind.
+- [spell:Aspect_of_the_Cheetah !diary] Aspect of the Cheetah gave me a hunter's answer to a long road.
+- [spell:Feign_Death !diary] Feign Death was a lie I could now tell with my whole body, so that I need not become the truth of it.
+- [spell:Hunter's_Mark !diary] Hunter's Mark offered a way to keep my quarry from becoming merely another movement I could not place.
+- [spell:Ghost_Wolf !diary] I learned Ghost Wolf, and could borrow a swifter shape from the spirits without leaving my life behind.
+- [spell:Ancestral_Spirit !diary] With Ancestral Spirit, I could call a fallen friend's spirit back into their body.
+- [spell:Lightning_Shield !diary] Lightning Shield was mine to call on, thunder waiting for the hand that reached for me.
+- [spell:Entangling_Roots !diary] Entangling Roots offered a way to hold an enemy without keeping it within my own reach.
+- [spell:Healing_Touch !diary] I took instruction in Healing Touch, grateful for a gentle answer to a frightened body's need.
+- [spell:Rebirth !diary] Rebirth was the wild's answer to a death that came before the fighting was done, and I learned to call on it.
+- [spell:Immolate !diary] Immolate kept a foe burning while I stayed out of its reach, which suited me.
+- [spell:Immolate !diary] I learned Immolate, a fire I would never welcome at my own hearth.
+- [spell:Life_Tap !diary] With Life Tap learned, I could feed my magic at the cost of my own blood.
+- [race:Scourge class:PRIEST spell:Smite !diary] Smite came to me as it comes to any priest, and burned in my dead hands as it never would in living ones; I learned to call on the Light anyway.
+- [client:forever race:Scourge class:PALADIN spell:Holy_Light !diary] I learned Holy Light, and the first time I held it, it was like taking hold of a fire that would not let go.
+- [spell:Renew race:Scourge !diary] I learned Renew, a healing that went on working after the prayer ended, and went on burning in my hands as long as it did.
+- [spell:Resurrection race:Scourge !diary] Resurrection was mine now; of all people, I knew what it was to be called back.
+- [diary spell:Life_Tap] I can pay for my magic with my own health now, and I have not yet decided whether that is a bargain.
+- [diary spell:Fear] Fear is mine to cast now, and I like having the terror on the other side of a fight for a change.
+- [diary spell:Drain_Life] Drain Life is mine now, a spell that keeps me standing on someone else's account.
+- [diary spell:Corruption] I added Corruption to what I can do, a slow and patient kind of harm.
+- [diary spell:Health_Funnel] I can pour my own health into a demon now, which says something about the arrangement between us.
+- [diary spell:Polymorph] I can turn a foe into a sheep now, and I suspect I will never tire of it.
+- [diary spell:Blink] Blink is mine now, a single step that puts danger some distance behind me.
+- [diary spell:Frost_Nova] Frost Nova lets me pin an enemy in ice while I find a better place to stand.
+- [diary spell:Conjure_Water] I can conjure my own water now, one less thing to carry and one less thing to ask for.
+- [diary spell:Power_Word:_Shield] I can set a ward between myself and a blow now, and I feel steadier for it.
+- [diary spell:Renew !race:Scourge] Renew is mine, a healing that keeps working long after the prayer is done.
+- [diary spell:Resurrection !race:Scourge] I can call the dead back now, and I mean to treat that gift with care.
+- [diary spell:Psychic_Scream] Psychic Scream is mine now, and my fear has somewhere to go besides my own stomach.
+- [diary spell:Lay_on_Hands] Lay on Hands is mine now, something left to give when nothing else will do.
+- [diary spell:Divine_Protection] Divine Protection can give me a moment nothing can touch, and I am learning to wait for the right one.
+- [diary spell:Hammer_of_Justice] Hammer of Justice is mine now, a way to stop a foe in the middle of its intentions.
+- [diary spell:Charge] I can close the distance in a single rush now, before my fear has time to catch up.
+- [diary spell:Execute] Execute is mine now, for finishing a fight that has gone on long enough.
+- [diary spell:Pick_Pocket] I can lift a purse now without its owner noticing, and I find I keep a closer hand on my own.
+- [diary spell:Sap] Sap is mine, and a foe can now sleep through the start of its own bad luck.
+- [diary spell:Vanish] I can vanish from a fight now, and leave an enemy wondering where I went.
+- [diary spell:Sprint] Sprint is mine now, and leaving trouble behind has never been easier.
+- [diary spell:Aspect_of_the_Cheetah] I can run with a cheetah's speed now, and the long roads have shrunk to fit.
+- [diary spell:Feign_Death] I can play dead now, convincingly enough that I hope never to need the real thing.
+- [diary spell:Hunter's_Mark] Hunter's Mark is mine now, and no quarry of mine will vanish into the crowd.
+- [diary spell:Ghost_Wolf] I can borrow a ghost wolf's shape from the spirits now, and the roads feel shorter for it.
+- [diary spell:Ancestral_Spirit] I can call a fallen friend's spirit back to their body now, a gift I hope to need rarely.
+- [diary spell:Lightning_Shield] Lightning Shield is mine now, thunder waiting for anyone who reaches for me.
+- [diary spell:Entangling_Roots] Entangling Roots is mine, and the earth will hold an enemy for me when I ask.
+- [diary spell:Healing_Touch] Healing Touch is mine now, a gentle answer to a body in pain.
+- [diary spell:Rebirth] Rebirth is mine now, the wild's way of refusing a death that came too soon.
+- [diary spell:Immolate] Immolate is mine now, a fire that keeps burning after I have stepped away.
+- [diary spell:Renew race:Scourge] I can call on Renew now, though its healing burns in my hands for as long as it works.
+- [diary spell:Resurrection race:Scourge] I can call the dead back now; of all people, I know what that means.

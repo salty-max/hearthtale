@@ -338,7 +338,7 @@ end
 local function refreshJournal(latest)
   local c = ns.journal()
   written = ns.writeBook(c, kept)
-  written.diary = ns.writeDiary(c)
+  written.diary = ns.writeDiary(c, written)
   local known = current == "prologue" and written.prologue or written.chapters[current]
   if latest or not known then
     full = false
@@ -391,7 +391,7 @@ local function refreshHall(scroll)
     if life.guid == hallLife then
       keptHall[life.guid] = keptHall[life.guid] or {}
       open, w = life, ns.writeBook(life, keptHall[life.guid])
-      w.diary = ns.writeDiary(life)
+      w.diary = ns.writeDiary(life, w)
       chapterRows(entries, w, hallKey, function(key)
         hallKey, full = key, false
         ns.refresh()

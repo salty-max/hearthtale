@@ -21,7 +21,7 @@ kind: opening
 - I went on {at}, with a good deal of strength and the sense to spend very little of it on anger.
 - [night] I set out {at} while most sensible creatures slept, and tried to trouble the night no more than they did.
 - Grass, stone or swamp, the ground has to carry me, and I started {at} meaning to tread on it kindly.
-- Slow to start and hard to stop, like most of my people, I began again {at}.
+- Slow to start and hard to stop, I began again {at}.
 - There was work to be shared {at}, and I rose to carry my part of it.
 - [home] With every rise and hollow around me known by name, I made ready {at} in no doubt of my way.
 - [!home] I kept on {at}, giving the land the courtesy I would ask of any stranger crossing ours.

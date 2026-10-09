@@ -7,5 +7,5 @@ kind: d-foes
 - [two !hard] I got the better of both {foes}, and I keep comparing the two fights to work out which of us had the cleverer plan.
 - [two hard] I came through fights with both {foes}, and at least one of them came far too close to ending things.
 - [!one !two !hard] I saw off {foes}, every one of them, and found each fight interesting in quite a different way.
-- [!one !two !hard] I squared up to {foes}, and came away more curious about all of them than frightened of any.
+- [!one !two !hard] I squared up to {foes}, and came away shaken, whole and rather prouder than I let on.
 - [!one !two hard] I got through fights with {foes}, all of them, and I would rather not calculate how narrow the closest one was.

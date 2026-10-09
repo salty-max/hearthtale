@@ -12,7 +12,7 @@ kind: r-item
 - [cloth] soft enough to think fondly of a resting place
 - [night] wishing An'she had been up to help me look
 - [hc] reluctant to let the search take all my vigilance
-- the peace of an unhurried cookfire pleasantly in mind
+- [!remains] the peace of an unhurried cookfire pleasantly in mind
 - [!one !plural] my broad fingers taking each piece with care
 - [!one !plural] each find a little more weight for the road home
 - [meat] wondering how the meat would taste beside a familiar cookfire

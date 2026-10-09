@@ -10,6 +10,6 @@ kind: r-first
 - [night] my ears keener than my eyes in that darkness
 - [low] still learning how much the world could ask of me
 - [teeth] their jaws making me think more kindly of Durotar's scorpids
-- a kind I had no Orcish word for, which seemed a bad sign
+- [!beast] a kind I had no Orcish word for, which seemed a bad sign
 - [low] a lesson the Valley of Trials had only begun to teach me
 - the urge to roar at them losing out, just in time, to the urge to step back

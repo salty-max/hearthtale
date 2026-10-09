@@ -106,6 +106,8 @@ const KINDS: Record<string, string[]> = {
   "c-handed-kill": ["n", "foes", "giver", "spell", "pet"],
   "c-handed-item": ["n", "thing", "giver"],
   "c-deed-task": ["task", "giver", "ender"],
+  // an escort or an event, told by what it was for (writing/why/), else by who asked
+  "c-event": ["why", "giver"],
   "c-deed-word": ["giver", "ender"],
   // errands one after another: the ender of the first gives the second
   "c-chain": ["giver", "via", "ender"],
@@ -145,6 +147,8 @@ const KINDS: Record<string, string[]> = {
   // the stretch's story: what the work that mattered was for (writing/why/)
   "d-why": ["why"],
   "d-why2": ["why", "why2"],
+  // a second climax, too long to share the first's sentence
+  "d-why-also": ["why"],
   // a pet or a demon named again, at my side through a stretch
   "d-pet": ["pet"],
   // remarks a routine clause may end with (Lines.lua's ROUTINE)
@@ -159,7 +163,7 @@ const TAGS = ["home", "ally", "foe", "neutral", "night", "hc", "high", "low", "f
   "stone", "egg", "feather", "hide", "paper", "plant", "relic", "remains", "teeth", "mechanical", "cloth", "meat", "explore", "escort", "new", "made", "form", "demon", "steed",
   "looted", "handed", "complex", "state", "ofprey", "summon", "also", "tried", "pet", "fire", "frost", "arcane", "shadow", "curse", "holy", "lightning", "wrath", "moon", "steel", "arrow", "imp", "voidwalker", "succubus", "felhunter", "felguard",
   "bear", "cat", "travel", "aquatic", "moonkin", "tree", "flight", "deliveries", "lone", "set", "melee", "trinket",
-  "hard", "near", "found", "learned", "delve", "quiet", "diary", "hosts", "two", "much", "fought", "zalazane", "thread", "settled"];
+  "hard", "near", "found", "learned", "delve", "quiet", "diary", "hosts", "two", "much", "fought", "zalazane", "thread", "settled", "story", "town"];
 const RACES = ["Human", "Dwarf", "NightElf", "Gnome", "Orc", "Troll", "Tauren", "Scourge", "Skyborne"];
 const ROUTINE = new Set("deed-kill deed-item deed-task deed-word chain deliver report first gear trainer inn travel return place group skill prof handed-kill handed-item".split(" ").map((kind) => `c-${kind}`));
 // The recap's kinds: one sentence of the recap holds a thought, the others are plain.

@@ -18,3 +18,12 @@ kind: d-close
 - [quiet low] I am still new to all of this, and every day shows it.
 - [high] After so long on the road, the world still finds ways to surprise me.
 - [hc] One life, still mine; that is the only tally that matters.
+- [fought] A few of those fights were the kind that leave a mark, and I am still turning them over.
+- [fought] Some of what I faced deserved its name, and I am glad to have come through it on my feet.
+- [fought] The fights I keep going back to in my head are the hard ones, and there were a few of those.
+- [fought] I met foes worth the trouble of naming, and each of them showed me where my limits were.
+- [found] Each new place took some getting used to, and I liked that more than I expected.
+- [found] The world got larger this time, and my own corner of it a little smaller.
+- [found] I saw country I knew only by name, and none of it looked quite the way I had pictured.
+- [delve] Coming up out of that place, even plain open air felt like a reward.
+- [grouped] Sharing the work made it lighter, and made me better at it too.

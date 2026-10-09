@@ -6,7 +6,7 @@ kind: r-task
 - quietly, the way my people prefer to do most things
 - the sun too long in the sky for my liking
 - my reserve no protection against being asked again
-- rather more inclined to stay beneath Teldrassil next time
+- rather more inclined to stay beneath Teldrassil's boughs next time
 - [explore] moving through it as a Sentinel would, unheard
 - [explore] wary of what even a Sentinel might miss
 - [escort] unwilling to surrender another life to the path
