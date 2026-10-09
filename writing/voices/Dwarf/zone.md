@@ -1,8 +1,11 @@
 ---
 kind: zone
 ---
-- I entered {zone}, wondering what the stone beneath it might tell the Explorers' League.
-- I came to {zone}, already eyeing the rock of the place.
-- I reached {zone}, country that would take a good long while to learn properly.
-- I crossed into {zone}, with Ironforge further behind and no less dear for that.
-- I entered {zone}, wondering whether any dwarf had dug here before me.
+- [!home] I entered {zone}, wondering what the stone beneath it might tell the Explorers' League.
+- [!home !back] I came to {zone}, already eyeing the rock of the place.
+- [!home !back] I reached {zone}, country that would take a good long while to learn properly.
+- [!home] I crossed into {zone}, with Ironforge further behind and no less dear for that.
+- [!home !back] I entered {zone}, wondering whether any dwarf had dug here before me.
+- [home] I came back into {zone}, where the stonework and the stubbornness were both familiar.
+- [home] I reached {zone}, and Khaz Modan's air did me more good than any inn.
+- [home] I came back into {zone}, among my own people again, and walked a little taller for it.

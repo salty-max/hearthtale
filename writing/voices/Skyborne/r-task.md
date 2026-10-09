@@ -5,7 +5,7 @@ kind: r-task
 - [client:forever] an errand the wind would have carried in half the time
 - [client:forever] my hands finding a use no blessing needed to supply
 - [client:forever] the work as slow as a day without wind
-- [client:forever] a ground-bound errand if ever there was one
+- [client:forever] as ground-bound an errand as any I had known
 - [client:forever faction:horde] a Windshaper putting some kindness into our mentors' absence
 - [client:forever explore] a route I hoped another traveller could follow without a blessing
 - [client:forever explore] the route acquiring the familiarity of a path at home
