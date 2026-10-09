@@ -7,9 +7,14 @@
 -- through the writer's checks (inspect.lua); the books are written out for
 -- reading in .cache/audit/books/.
 --   luajit addon/test/playthrough.lua        (after `bun run audit`)
+--   FOREVER=1 luajit addon/test/playthrough.lua   WoW Forever: the Skyborne from
+--     Zephras Isle and the old races' new classes, on Forever's own quests
+--     too (.cache/audit/game-forever.lua, from scripts/forever-data.ts);
+--     the books in .cache/audit/books-forever/.
+local forever = os.getenv("FOREVER") == "1"
 local DIR = "addon/Hearthtale/"
 local ns = {}
-assert(loadfile(DIR .. "Data_Classic.lua"))("Hearthtale", ns)
+assert(loadfile(DIR .. (forever and "Data_Forever.lua" or "Data_Classic.lua")))("Hearthtale", ns)
 assert(loadfile(DIR .. "Names.lua"))("Hearthtale", ns)
 dofile("addon/test/writer-files.lua")(ns, DIR)
 local ok, D = pcall(dofile, ".cache/audit/game.lua")
@@ -17,6 +22,20 @@ if not ok then
   io.stderr:write("no game data: run bun run audit\n")
   os.exit(1)
 end
+if forever then
+  local found, F = pcall(dofile, ".cache/audit/game-forever.lua")
+  if not found then
+    io.stderr:write("no Forever data: run bun scripts/forever-data.ts\n")
+    os.exit(1)
+  end
+  for name, t in pairs(F) do
+    for id, v in pairs(t) do
+      if name == "quests" then v.forever = true end
+      D[name][id] = v
+    end
+  end
+end
+local BOOKS = forever and ".cache/audit/books-forever" or ".cache/audit/books"
 
 local problems = {}
 local function problem(where, msg, text)
@@ -53,6 +72,9 @@ local FAMILY = {
 local ALLIANCE = { 40, 38, 44, 148, 10, 11, 331, 267, 45, 400, 33 } -- Westfall … Stranglethorn
 local HORDE = { 17, 130, 406, 331, 267, 400, 45, 33 } -- the Barrens … Stranglethorn
 local ROAD = {
+  -- Zephras Isle (Forever), then where Valanaar's airships land: Dalaran in
+  -- the Alterac Mountains (Alliance), Skywatcher Plateau in Mulgore (Horde)
+  Skyborne = { alliance = { 16593, 36 }, horde = { 16593, 215 } },
   Human = { 9, 12 },
   Dwarf = { 132, 1 },
   Gnome = { 132, 1 },
@@ -82,6 +104,26 @@ local LIVES = {
   { "Tauren", "WARRIOR" },
   { "Scourge", "ROGUE" },
 }
+-- Forever: the Skyborne of each side (the High Order, Alliance; the
+-- Windshapers, Horde), and the old races' new classes.
+if forever then
+  LIVES = {
+    { "Skyborne", "MAGE", "alliance" },
+    { "Skyborne", "HUNTER", "alliance" },
+    { "Skyborne", "SHAMAN", "horde" },
+    { "Skyborne", "DRUID", "horde" },
+    { "Skyborne", "WARRIOR", "horde" },
+    { "Skyborne", "ROGUE", "alliance" },
+    { "Scourge", "PALADIN" },
+    { "Dwarf", "SHAMAN" },
+    { "Gnome", "PRIEST" },
+    { "Human", "HUNTER" },
+    { "Orc", "MAGE" },
+    { "Troll", "WARLOCK" },
+  }
+end
+local SIDE = { Human = "alliance", Dwarf = "alliance", Gnome = "alliance", NightElf = "alliance" }
+local SIDE_RACES = { alliance = 1 + 4 + 8 + 64, horde = 2 + 16 + 32 + 128 }
 local MATES = { "Thessaly", "Brannigan", "Rowan", "Halvard", "Ysolde", "Korrak", "Mirelle", "Durgan" }
 local TO = tonumber(os.getenv("PLAYTHROUGH_LEVEL") or "") or 30
 
@@ -90,10 +132,25 @@ local function kindOf(c) return FAMILY[c.family or 0] or TYPE[c.type or 0] end
 
 -- A quest one can play: open to the race and class, its targets alive
 -- somewhere, its items dropped or found somewhere (or in hand from the start).
-local function playable(q, race, class)
+local function playable(q, race, class, side)
   if q.zone == nil or q.zone <= 0 then return false end -- class, profession and holiday quests
   if q.repeatable then return false end -- turned in again and again: a player's choice, not the road
-  if q.races and q.races ~= 0 and bit.band(q.races, RACE[race]) == 0 then return false end
+  if q.side and q.side ~= side then return false end -- (Forever's: a side's own)
+  if q.forever and not q.level then return false end -- (Forever's, its level unknown: not on the road)
+  -- (a donation, "A Donation of Wool": sixty cloth gathered over many days, not a hunt)
+  if q.forever and q.items and #q.items > 0 then
+    local donation = true
+    for _, pair in ipairs(q.items) do
+      local item = D.items[pair[1]]
+      if not (item and item.class == 7 and pair[2] >= 20) then donation = false end
+    end
+    if donation then return false end
+  end
+  -- (the Skyborne have no bit of the old masks: a quest for every race of their side is theirs)
+  if q.races and q.races ~= 0 and race == "Skyborne" and bit.band(q.races, SIDE_RACES[side]) ~= SIDE_RACES[side] then
+    return false
+  end
+  if q.races and q.races ~= 0 and race ~= "Skyborne" and bit.band(q.races, RACE[race]) == 0 then return false end
   if q.classes and q.classes ~= 0 and bit.band(q.classes, CLASS[class]) == 0 then return false end
   for _, t in ipairs(q.targets or {}) do
     local c = creature(t[1])
@@ -101,7 +158,13 @@ local function playable(q, race, class)
   end
   for _, pair in ipairs(q.items or {}) do
     local s = D.sources[pair[1]]
-    if q.src ~= pair[1] and not (s and ((s.creatures and #s.creatures > 0) or (s.objects and #s.objects > 0))) then
+    -- (Forever's: an item whose source no trace saw is still found, somewhere)
+    local found = q.forever and D.items[pair[1]]
+    if
+      q.src ~= pair[1]
+      and not found
+      and not (s and ((s.creatures and #s.creatures > 0) or (s.objects and #s.objects > 0)))
+    then
       return false
     end
   end
@@ -133,20 +196,22 @@ local function objectivesOf(q)
   return #out > 0 and out or nil
 end
 
-local function play(race, class)
+local function play(race, class, side)
+  side = side or SIDE[race] or "horde"
   local c = {
-    guid = "Player-1-PLAY" .. race,
+    guid = "Player-1-PLAY" .. race .. (forever and class or ""),
     name = "Wanderer",
     race = race,
     class = class,
+    faction = race == "Skyborne" and side or nil, -- (as the game reports it: the tradition follows it)
     began = { level = 1 },
     chapters = {},
   }
   local road = {}
-  for _, z in ipairs(ROAD[race]) do
+  for _, z in ipairs(ROAD[race][side] or ROAD[race]) do
     table.insert(road, z)
   end
-  for _, z in ipairs(FACTION[race]) do
+  for _, z in ipairs(FACTION[race] or (side == "alliance" and ALLIANCE or HORDE)) do
     table.insert(road, z)
   end
   local level, done, kinds = 1, {}, {}
@@ -209,7 +274,7 @@ local function play(race, class)
         and (q.min or 1) <= level
         and (q.level or 1) <= level + 3
         and (not prev or done[prev])
-        and playable(q, race, class)
+        and playable(q, race, class, side)
       then
         return true
       end
@@ -232,7 +297,7 @@ local function play(race, class)
         and (q.min or 1) <= level
         and (q.level or 1) <= level + 3
         and (not prev or done[prev])
-        and playable(q, race, class)
+        and playable(q, race, class, side)
       then
         table.insert(open, id)
       end
@@ -392,13 +457,13 @@ local function namedOnce(where, text)
   end
 end
 
-os.execute("mkdir -p .cache/audit/books")
+os.execute("mkdir -p " .. BOOKS)
 local books, chapters, quests = 0, 0, 0
 for _, life in ipairs(LIVES) do
-  local c = play(life[1], life[2])
+  local c = play(life[1], life[2], life[3])
   local book = ns.writeBook(c)
   books = books + 1
-  local f = io.open((".cache/audit/books/%s-%s.md"):format(life[1], life[2]:lower()), "w")
+  local f = io.open(("%s/%s-%s.md"):format(BOOKS, life[1], life[2]:lower()), "w")
   f:write(("# %s %s, levels 1 to %d\n\n"):format(life[1], life[2]:lower(), c.chapters[#c.chapters].start.level))
   for _, ch in ipairs(book.chapters) do
     chapters = chapters + 1
@@ -411,7 +476,7 @@ for _, life in ipairs(LIVES) do
   end
   f:close()
 end
-io.write(("%d books, %d chapters, %d real quests played → .cache/audit/books/\n"):format(books, chapters, quests))
+io.write(("%d books, %d chapters, %d real quests played → %s/\n"):format(books, chapters, quests, BOOKS))
 if #problems > 0 then
   io.write(table.concat(problems, "\n"), "\n")
   os.exit(1)

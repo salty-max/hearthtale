@@ -6,4 +6,4 @@ kind: wake
 - [!rest] I got up {at}, feeling as if someone had tried to quarry me while I slept.
 - [!rest] I rose {at}, slowly, the way stone wakes.
 - [rest] I took up the road {at}, with a little more iron in me after the rest.
-- [rest] I went on {at}, the pause having put some warmth back into my good humour.
+- [rest] I kept going {at}, the pause having put some warmth back into my good humour.

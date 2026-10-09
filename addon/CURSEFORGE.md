@@ -74,4 +74,4 @@ Other commands: `/ht hall` opens the Hall of the Fallen; `/ht link CODE` links t
 
 ## Source
 
-Open source under GPL-3.0-or-later: [github.com/salty-max/hearthtale](https://github.com/salty-max/hearthtale). Not affiliated with Blizzard Entertainment.
+Open source under GPL-3.0-or-later: [github.com/salty-max/hearthtale](https://github.com/salty-max/hearthtale). What the writer knows of the game comes from [cmangos classic-db](https://github.com/cmangos/classic-db) and [pfQuest](https://github.com/shagu/pfQuest); for Forever's new content, from [AllTheThings](https://github.com/ATTWoWAddon/AllTheThings) and [QuestieDB](https://github.com/Questie/QuestieDB)'s traces of the beta. Thanks to all of them. Not affiliated with Blizzard Entertainment.

@@ -340,7 +340,7 @@ end
 -- A quiet return named at the start of the sentence told there, after its
 -- link if it has one ("Back in Anvilmar, I…", "Later, back in Anvilmar, I…").
 -- Once a paragraph: more often reads as a ledger of comings and goings.
-local BACK = { "Back in %s,", "Once back in %s,", "In %s again," }
+local BACK = { "Back %s,", "Once back %s,", "%s again," } -- ("in Anvilmar", "on Zephras Isle")
 function Scene:backLead(link, key)
   local place = self.backTo
   self.backTo = nil
@@ -348,7 +348,7 @@ function Scene:backLead(link, key)
   self.backTold = true
   local b = self.book
   self.named, b.last, b.there = true, place, false
-  local back = BACK[hash(b.seed .. "|back|" .. key) % #BACK + 1]:format(mid(place))
+  local back = BACK[hash(b.seed .. "|back|" .. key) % #BACK + 1]:format(W.at(place)):gsub("^%l", string.upper)
   return link and link .. " " .. back:gsub("^%u", string.lower) or back
 end
 

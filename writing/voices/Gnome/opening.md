@@ -6,7 +6,7 @@ kind: opening
 - I set out {at}, still possessed of a gnome's unfortunate interest in things that might explode.
 - I set off again {at}, with three contraptions half-designed in my head and no tools to build them.
 - I made ready {at}, thinking how many of us now had to call the road home.
-- I went on {at}, already redesigning half of what I saw.
+- I continued {at}, already redesigning half of what I saw.
 - I set out {at}, with no workshop to retreat to, and the whole world to poke at instead.
 - I took up the road again {at}, with a lively suspicion that trouble had not finished with me.
 - I set out {at}, feeling a little like a machine put back together with one screw left over.

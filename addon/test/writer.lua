@@ -281,9 +281,34 @@ end
 -- The races in a fixed order: pairs() would walk them differently on each run
 -- (LuaJIT hashes strings with a random seed), and the lives with them.
 local RACES = {}
+-- Forever: the Skyborne, who begin on Zephras Isle, and the old races'
+-- new classes (the client's CharBaseInfo against Classic Era's).
 if forever then
   COMBOS.Skyborne = { "WARRIOR", "HUNTER", "ROGUE", "SHAMAN", "MAGE", "DRUID" }
-  START.Skyborne = "The Barrens"
+  START.Skyborne = "Zephras Isle"
+  table.insert(ZONES, {
+    "Zephras Isle",
+    {
+      "Valanaar",
+      "Shen'dar Village",
+      "Thendal Grove",
+      "Thendal Village",
+      "Gustberry Lowlands",
+      "Shrine of Akir",
+      "Shadowgale Forest",
+      "Falaath Village",
+    },
+  })
+  for race, class in pairs({
+    Dwarf = "SHAMAN",
+    Gnome = "PRIEST",
+    Human = "HUNTER",
+    Orc = "MAGE",
+    Scourge = "PALADIN",
+    Troll = "WARLOCK",
+  }) do
+    table.insert(COMBOS[race], class)
+  end
 end
 for race in pairs(COMBOS) do
   table.insert(RACES, race)

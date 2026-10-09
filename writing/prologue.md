@@ -2,18 +2,18 @@
 kind: prologue
 ---
 - I had completed {quests} tasks already when this stretch began {at}.
-- I had seen {quests} jobs through, and my hearthstone was bound at {inn}; I went on {at} with work already behind me.
+- I had seen {quests} jobs through, and my hearthstone was bound at {inn}; I kept going {at} with work already behind me.
 - I had spent {played} in the world before setting out on this stretch {at}.
 - I had {quests} tasks behind me when I began this part of the road {at}.
-- I went on {at}, no longer new to the world even if the way ahead was unfamiliar.
+- I continued {at}, no longer new to the world even if the way ahead was unfamiliar.
 - I had completed {quests} tasks before reaching this part of my life {at}.
 - I had spent {played} in the world, with {quests} tasks done and my hearthstone at {inn}.
 - I began this stretch {at}, with {quests} tasks and {played} already behind me.
-- [hc] I had seen {quests} tasks through and was still alive; I went on {at}, unwilling to spend that life carelessly.
-- [hc] I went on {at}, with no second life waiting if this one ended.
+- [hc] I had seen {quests} tasks through and was still alive; I kept going {at}, unwilling to spend that life carelessly.
+- [hc] I continued {at}, with no second life waiting if this one ended.
 - [race:Dwarf] I began this stretch {at}, with the mountain's stubbornness in me and no great wish to look impressive.
-- [race:Scourge] I went on {at}, still a corpse with no intention of returning to anyone's keeping.
+- [race:Scourge] I kept going {at}, still a corpse with no intention of returning to anyone's keeping.
 - [race:NightElf] I began this stretch {at}, with Elune's light to steady me.
-- [race:Gnome] I went on {at}, a gnome with some ingenuity left to put to work outside a workshop.
+- [race:Gnome] I continued {at}, a gnome with some ingenuity left to put to work outside a workshop.
 - [race:Orc] I began again {at}, free to serve the Horde without another master's chains.
-- [race:Tauren] I went on {at}, with a shu'halo's interest in the people the road might bring me to.
+- [race:Tauren] I kept going {at}, with a shu'halo's interest in the people the road might bring me to.

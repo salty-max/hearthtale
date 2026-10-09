@@ -432,6 +432,7 @@ local ns = {}
 for line in io.lines(DIR .. "Hearthtale.toc") do
   local f = line:match("^([%w_]+%.lua)%s*$")
   if f == "Data.lua" then f = FOREVER and "Data_Forever.lua" or "Data_Classic.lua" end
+  if f == "Forever.lua" and not FOREVER then f = nil end -- (Forever's own content: its package only)
   if f then assert(loadfile(DIR .. f))("Hearthtale", ns) end
 end
 local D = ns.data

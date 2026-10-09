@@ -6,4 +6,4 @@ kind: wake
 - [!rest] I got up {at}, a little less weary and no less free to choose where I went.
 - [!rest] I rose {at}, with more stiffness than I would have shown the people of Orgrimmar.
 - [rest] I returned to the road {at}, with my blood quiet and my strength less spent.
-- [rest] I went on {at}, grateful to have had a pause nobody could order away from me.
+- [rest] I kept going {at}, grateful to have had a pause nobody could order away from me.

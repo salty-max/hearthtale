@@ -42,4 +42,7 @@ bun run check                      # the addon's checks, then typecheck, lint, t
 
 GPL-3.0-or-later (see LICENSE). The writer's names (`addon/Hearthtale/Names.lua`) and its audit draw on
 [cmangos classic-db](https://github.com/cmangos/classic-db) (GPL-3.0) and [pfQuest](https://github.com/shagu/pfQuest)'s
-place names (MIT); the names themselves are Blizzard's. Not affiliated with Blizzard Entertainment.
+place names (MIT); the names themselves are Blizzard's. The Forever package's own content (`addon/Hearthtale/Forever.lua`:
+Zephras Isle, Forever's new quests and creatures) draws on the beta client's tables ([wago.tools](https://wago.tools)),
+[AllTheThings](https://github.com/ATTWoWAddon/AllTheThings)' Forever database (MIT) and
+[QuestieDB](https://github.com/Questie/QuestieDB)'s traces of the beta. Not affiliated with Blizzard Entertainment.

@@ -6,7 +6,7 @@ kind: opening
 - I took up the road {at}, still susceptible to the promise of a quiet life somewhere beyond it.
 - I set out {at}, with more willingness than a Stormwind tax collector had any right to expect.
 - I set off {at}, already counting a safe return among the day's ambitions.
-- I went on {at}, with the names of people who needed help harder to ignore than the distance.
+- I kept going {at}, with the names of people who needed help harder to ignore than the distance.
 - I began this stretch {at}, trusting the Light to lend me some patience for whatever came.
 - The kingdom had room for heroes, but I would settle for coming home useful, and set out {at}.
 - I took up the road {at}, drawn by the parts of the world the wars had spared.

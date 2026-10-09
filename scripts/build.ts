@@ -28,6 +28,7 @@
  *   type: zone                 zone | town | dungeon
  *   home: Dwarf Gnome          the races whose home it is (optional)
  *   faction: alliance          whose land: alliance | horde | neutral
+ *   client: forever            a place of one game only (optional)
  *   ---
  *   - [home !night] ...        viewpoints: home, ally, foe, neutral; night
  *
@@ -285,7 +286,7 @@ for (const [opening, races] of openings)
   if (races.size > 2) errors.push(`writing/voices: "${opening}…" opens remarks of ${races.size} races (${[...races].join(", ")}): two at most`);
 
 // The places: writing/scenery/<place>.md.
-type Place = { place: string; type: string; home: string[]; faction: string; sentences: Sentence[] };
+type Place = { place: string; type: string; home: string[]; faction: string; client?: string; sentences: Sentence[] };
 const SCENERY_DIR = join(WRITING, "scenery");
 const scenery: Place[] = [];
 for (const f of mdFiles(SCENERY_DIR)) {
@@ -297,12 +298,14 @@ for (const f of mdFiles(SCENERY_DIR)) {
   const type = get("type");
   const faction = get("faction");
   const home = (get("home") ?? "").split(/\s+/).filter(Boolean);
+  const client = get("client"); // (a place of one game only: Forever's Zephras Isle)
   if (!place) fail(file, "place: missing");
   if (!type || !["zone", "town", "dungeon"].includes(type)) fail(file, "type: zone, town or dungeon");
   if (!faction || !["alliance", "horde", "neutral"].includes(faction)) fail(file, "faction: alliance, horde or neutral");
   for (const r of home) if (!RACES.includes(r)) fail(file, `home: ${r} is not a race`);
   if (scenery.some((p) => p.place === place)) fail(file, `place ${place} twice`);
-  if (place && type && faction) scenery.push({ place, type, home, faction, sentences: parsed.sentences });
+  if (client && !CLIENTS.includes(client)) fail(file, `client: ${CLIENTS.join(" or ")}`);
+  if (place && type && faction) scenery.push({ place, type, home, faction, client, sentences: parsed.sentences });
 }
 
 if (errors.length) {
@@ -327,6 +330,7 @@ function luaFor(client: string) {
     .map(([race, own]) => `    [${q(race)}] = {\n${[...own.entries()].map(([kind, list]) => `      [${q(kind)}] = {\n${lua(list, client, "        ")}\n      },`).join("\n")}\n    },`)
     .join("\n");
   const placeBody = scenery
+    .filter((p) => !p.client || p.client === client)
     .map(
       (p) =>
         `    [${q(p.place)}] = { type = ${q(p.type)}, faction = ${q(p.faction)}, home = { ${p.home.map((r) => `[${q(r)}] = true`).join(", ")} },\n${lua(p.sentences, client, "      ")}\n    },`,

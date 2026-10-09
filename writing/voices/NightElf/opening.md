@@ -4,9 +4,9 @@ kind: opening
 - I took up the path {at}, with the patience of my people and rather less of their former certainty.
 - I began again {at}, with a kaldorei's care for what the wild might lose through our carelessness.
 - I set out {at}, with the wisps of Shadowglen still drifting through my memory.
-- I went on {at}, keeping to the quiet edges of the road, as my people do.
+- I continued {at}, keeping to the quiet edges of the road, as my people do.
 - I began this stretch {at}, remembering how dearly our people had paid for trusting power too easily.
 - I set out {at}, carrying some affection for the world beyond our forests despite its harshness.
 - I set off {at}, with Teldrassil's shelter still dear to me.
-- I went on {at}, with the patience of a people who once waited ten thousand years.
+- I kept going {at}, with the patience of a people who once waited ten thousand years.
 - I set out {at}, as unhurried as the old forest and no more trusting.
