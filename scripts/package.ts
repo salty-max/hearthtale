@@ -20,6 +20,9 @@ const GAMES = [
   { name: "classic", content: "Data_Classic.lua", interface: "11509" },
   { name: "forever", content: "Data_Forever.lua", interface: "16001" },
 ];
+// Files of one game only (Forever's own content): left out of the others,
+// and out of their TOC.
+const ONLY: Record<string, string> = { "Forever.lua": "forever" };
 
 const toc = readFileSync(join(SRC, "Hearthtale.toc"), "utf8");
 if (!toc.includes("@INTERFACE@")) throw new Error("Hearthtale.toc: no @INTERFACE@ placeholder");
@@ -29,11 +32,12 @@ for (const game of GAMES) {
   rmSync(join(DIST, game.name), { recursive: true, force: true });
   mkdirSync(dir, { recursive: true });
   for (const f of readdirSync(SRC)) {
-    if (!f.endsWith(".lua") || f.startsWith("Data_")) continue;
+    if (!f.endsWith(".lua") || f.startsWith("Data_") || (ONLY[f] && ONLY[f] !== game.name)) continue;
     cpSync(join(SRC, f), join(dir, f));
   }
   cpSync(join(SRC, game.content), join(dir, "Data.lua"));
-  writeFileSync(join(dir, "Hearthtale.toc"), toc.replace("@INTERFACE@", game.interface));
+  const lines = toc.replace("@INTERFACE@", game.interface).split("\n");
+  writeFileSync(join(dir, "Hearthtale.toc"), lines.filter((l) => !(ONLY[l.trim()] && ONLY[l.trim()] !== game.name)).join("\n"));
   if (!process.argv.includes("--no-zip")) {
     const zip = join(DIST, `Hearthtale-${game.name}.zip`);
     if (existsSync(zip)) rmSync(zip);

@@ -4,7 +4,7 @@ kind: opening
 - I took up the road {at}, grinning, with an eye on whatever might be grinning back.
 - I began again {at}, thinking of the Echo Isles and the day we would take them back from Zalazane.
 - I set out {at}, still fond of a world that had driven my people from too many shores.
-- I went on {at}, trusting the loa to find the day as interesting as I did.
+- I kept going {at}, trusting the loa to find the day as interesting as I did.
 - I set off {at}, with an island tune going round in my head.
 - I began this stretch {at}, light on my feet the way island sand teaches you to be.
 - I set out {at}, with a jungle-born wariness even where the jungle was only in my thoughts.

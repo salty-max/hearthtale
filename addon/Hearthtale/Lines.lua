@@ -730,11 +730,11 @@ function Book:here(values, place)
   if not place then
     values.at = ""
   elseif place ~= self.last then
-    values.at, values._named = "in " .. mid(place), true
+    values.at, values._named = W.at(place), true
   else
     values.at = self.there and "" or "there"
   end
-  values["in"], values._place = place and "in " .. mid(place), place
+  values["in"], values._place = W.at(place), place
   return values
 end
 

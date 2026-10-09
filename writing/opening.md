@@ -5,17 +5,17 @@ kind: opening
 - [!night] I began again {at}, and enjoyed the morning air before the work found me.
 - [!night] I took up the road {at}, grateful for another day whose troubles I had yet to meet.
 - I set out {at}, more willing to move than to stand about worrying.
-- [night] I went on {at} after dark, with my ears doing more of the work than my eyes.
+- [night] I continued {at} after dark, with my ears doing more of the work than my eyes.
 - [night] I began this stretch {at}, watching the shadows more than the road.
 - [night] I set out {at}, less eager for the darkness than for getting where I was going.
 - [!night] I began again {at}, hoping for an ordinary day and not expecting one.
 - I took up the road {at}, my enthusiasm concealing a private unease.
 - I set out {at}, with help to offer and a healthy respect for the cost of offering it.
-- I went on {at}, with a stranger's caution and a traveller's wish to be welcomed.
+- I kept going {at}, with a stranger's caution and a traveller's wish to be welcomed.
 - I began this stretch {at}, curious what the country might have in store for me.
 - I set out {at}, still more stubborn about going on than sensible about stopping.
 - I made ready {at}, with no desire to let another hour pass in hesitation.
-- I went on {at}, letting the country occupy the attention my worries had claimed.
+- I continued {at}, letting the country occupy the attention my worries had claimed.
 - I set out {at}, with an interest in the people I might meet along the way.
 - [hc] I began again {at}, grateful to be alive and unwilling to take another morning for granted.
 - [hc high] I took up the road {at}, with too much life behind me to throw away the life ahead.

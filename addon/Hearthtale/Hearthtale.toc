@@ -12,6 +12,7 @@
 Data.lua
 Names.lua
 Knowledge.lua
+Forever.lua
 Util.lua
 Core.lua
 Record.lua

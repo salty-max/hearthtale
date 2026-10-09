@@ -36,6 +36,8 @@ jobs:
         run: FOREVER=1 luajit addon/test/sim.lua
       - name: Writer
         run: luajit addon/test/writer.lua
+      - name: Writer (Forever)
+        run: FOREVER=1 luajit addon/test/writer.lua
       - name: Sample
         run: luajit addon/test/sample.lua > /dev/null
       - name: Packages

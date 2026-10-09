@@ -5,7 +5,7 @@ kind: opening
 - I began again {at}, no one's captive and not yet as certain of the road as I wished.
 - I set out {at}, with some strength to offer a people still building their home.
 - I set off {at}, my own impatience already a familiar adversary.
-- I went on {at}, remembering how much Thrall had risked to give our people a home.
+- I continued {at}, remembering how much Thrall had risked to give our people a home.
 - I set out {at}, free to walk away and unwilling to leave the work to someone else.
 - I began this stretch {at}, drawn by the promise of a road I could choose for myself.
 - I took up the road {at}, thinking of the endurance of the ancestors.

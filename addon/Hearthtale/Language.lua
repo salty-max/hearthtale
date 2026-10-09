@@ -96,6 +96,14 @@ local function mid(name)
   return (name:gsub("^The ", "the "))
 end
 
+-- Where I was, as a sentence says it: "in Westfall", but "on Zephras Isle",
+-- "on the Echo Isles" (an island is stood on).
+local function at(name)
+  if not name then return nil end
+  local last = name:match("(%a+)$") or ""
+  return ((last == "Isle" or last == "Isles" or last == "Island" or last == "Islands") and "on " or "in ") .. mid(name)
+end
+
 local IRREGULAR = {
   Wolf = "Wolves",
   Thief = "Thieves",
@@ -582,7 +590,8 @@ local CLASS_FIGHT = {
 
 -- Whose land a zone is (a people's own: the hosts where another works), and
 -- the races with no land of their own and who took them in (gnomes, since
--- Gnomeregan, among the dwarves; the Darkspear among the orcs).
+-- Gnomeregan, among the dwarves; the Darkspear among the orcs). The Skyborne's
+-- is Zephras Isle (Forever), where they begin.
 local HOSTS = {}
 for _, h in
   ipairs(named([[
@@ -592,6 +601,7 @@ for _, h in
   Orc: Durotar, Orgrimmar
   Tauren: Mulgore, Thunder Bluff
   Scourge: Tirisfal Glades, Undercity, Silverpine Forest
+  Skyborne: Zephras Isle
 ]]))
 do
   for _, zone in ipairs(h[2]) do
@@ -728,6 +738,7 @@ W.thingOf = thingOf
 W.town = town
 W.ELEMENT = ELEMENT
 W.HOSTS = HOSTS
+W.at = at
 W.TAKEN_IN = TAKEN_IN
 W.CLASS_FIGHT = CLASS_FIGHT
 W.topKills = topKills

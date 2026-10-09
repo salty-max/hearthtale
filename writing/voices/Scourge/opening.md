@@ -4,9 +4,9 @@ kind: opening
 - I began again {at}, with less breath than a living adventurer and no shortage of unfinished business.
 - I took up the road {at}, still unwilling to give the cemetery back its property.
 - I set out {at}, ready for the usual looks and determined to be useful anyway.
-- I went on {at}, hoping usefulness would introduce me before the smell did.
+- I continued {at}, hoping usefulness would introduce me before the smell did.
 - I began this stretch {at}, grateful that Sylvanas had not freed us merely to stand about decaying.
 - I set out {at}, with a dead body and a rather lively dislike of being ordered around.
-- I went on {at}, remembering the farms of Lordaeron as they were and walking past what they had become.
+- I kept going {at}, remembering the farms of Lordaeron as they were and walking past what they had become.
 - I set off {at}, with no intention of rotting quietly.
 - I took up the road {at}, with Lordaeron behind me and a healthy resentment of the word healthy.

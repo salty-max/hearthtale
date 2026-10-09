@@ -6,7 +6,7 @@ kind: opening
 - I set out {at}, mindful of the trust our people had found in the orcs.
 - I began this stretch {at}, a child of wanderers still learning the pleasures of a settled home.
 - I set off {at}, with my people's patience to draw on and my own unease to contend with.
-- I went on {at}, at the unhurried pace of my people's old migrations.
+- I kept going {at}, at the unhurried pace of my people's old migrations.
 - I set out {at}, with Cairne's new home dear enough to make the wider world worth knowing.
 - I took up the road again {at}, no more eager to race it than a kodo would have been.
 - I began {at}, wanting to be useful without having to make a fight of it.
