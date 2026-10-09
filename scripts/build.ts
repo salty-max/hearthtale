@@ -142,6 +142,9 @@ const KINDS: Record<string, string[]> = {
   "d-company": ["mates"],
   "d-chores": ["n", "people"],
   "d-close": ["land"],
+  // the stretch's story: what the work that mattered was for (writing/why/)
+  "d-why": ["why"],
+  "d-why2": ["why", "why2"],
   // remarks a routine clause may end with (Lines.lua's ROUTINE)
   "r-foe": [], "r-first": [], "r-item": [], "r-task": [], "r-gear": [], "r-lesson": [], "r-road": [], "r-inn": [],
   "r-company": [],
@@ -318,6 +321,35 @@ for (const f of mdFiles(SCENERY_DIR)) {
   if (place && type && faction) scenery.push({ place, type, home, faction, client, sentences: parsed.sentences });
 }
 
+// What a quest's work was for: writing/why/*.md, "- <id> <weight> | <phrase>",
+// from the game's own quest texts, for the diary (Diary.lua): a phrase that
+// reads after "I spent the better part of it …", weighed 1 (an errand) to 3
+// (a story's climax).
+const WHY_DIR = join(WRITING, "why");
+const why = new Map<number, { w: number; text: string }>();
+for (const f of mdFiles(WHY_DIR)) {
+  const file = join(WHY_DIR, f);
+  const src = readFileSync(file, "utf8");
+  // eslint-disable-next-line no-control-regex -- any character outside ASCII, on purpose
+  const odd = src.match(/[^\x00-\x7f]/);
+  if (odd) fail(file, `non-ASCII character "${odd[0]}": use ' and plain quotes`);
+  if (!/^---\nkind: why\n---\n/.test(src)) { fail(file, "front matter: kind: why"); continue; }
+  for (const line of src.split("\n")) {
+    if (!line.startsWith("- ")) continue;
+    const m = line.match(/^- (\d+) ([123]) \| (.+)$/);
+    if (!m) { fail(file, `not "- <id> <weight> | <phrase>": ${line}`); continue; }
+    const [id, w, text] = [Number(m[1]), Number(m[2]), m[3]];
+    const first = text.split(" ")[0];
+    if (!/^[a-z][a-z-]*ing$/.test(first)) fail(file, `a why starts with a verb in -ing, in lower case: ${text}`);
+    if (/[.!?;:]$/.test(text)) fail(file, `a why has no final punctuation: ${text}`);
+    if (text.length > 150) fail(file, `a why of ${text.length} characters (150 at most): ${text}`);
+    if (/\b(you|your|I|quest|quests|objective)\b/.test(text)) fail(file, `no "you", "I", "quest" or "objective" in a why: ${text}`);
+    if (/[$<>[\]{}"]/.test(text)) fail(file, `no $, <>, [], {} or double quotes in a why: ${text}`);
+    if (why.has(id)) fail(file, `quest ${id} twice`);
+    why.set(id, { w, text });
+  }
+}
+
 if (errors.length) {
   console.error(errors.join("\n"));
   process.exit(1);
@@ -358,6 +390,9 @@ ${voiceBody}
   },
   scenery = {
 ${placeBody}
+  },
+  why = {
+${[...why.entries()].sort((a, b) => a[0] - b[0]).map(([id, v]) => `    [${id}] = { ${v.w}, ${q(v.text)} },`).join("\n")}
   },
 }
 `;

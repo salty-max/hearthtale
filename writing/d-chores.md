@@ -1,11 +1,14 @@
 ---
 kind: d-chores
 ---
-- The rest was ordinary work, {n} tasks of it, for {people}.
+- [also] The rest was ordinary work, {n} tasks of it, for {people}.
 - Most of my time went on smaller jobs for {people}, {n} of them.
-- Between all that, I saw to {n} tasks for {people}, none of them worth a page of their own.
-- I ran {n} errands for {people} besides.
-- The rest was {n} small jobs, the kind that teach you every path in a place.
+- [also] Between all that, I saw to {n} tasks for {people}, none of them worth a page of their own.
+- [also] I ran {n} errands for {people} besides.
+- [also] The rest was {n} small jobs, the kind that teach you every path in a place.
 - I saw {n} tasks through, most of them too small to write about.
-- {n} tasks filled the gaps between, most of them for {people}.
-- The rest of it was errands, {n} in all, and I did them as well as I could.
+- [also] {n} tasks filled the gaps between, most of them for {people}.
+- [also] The rest of it was errands, {n} in all, and I did them as well as I could.
+- I did {n} jobs for {people}, small ones mostly, and every one of them needed doing.
+- My time went on {n} ordinary tasks, the kind nobody makes songs about.
+- It came to {n} tasks of plain, useful work, most of them for {people}.

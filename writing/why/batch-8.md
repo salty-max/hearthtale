@@ -1,0 +1,233 @@
+---
+kind: why
+---
+# sort 61
+- 1470 2 | collecting skulls from the rattlecage skeletons near the abandoned smithy, the test Venya Marthand set before teaching the binding of an imp
+- 1471 3 | drawing an unbound voidwalker out of the circle of summoning with Carendin Halgar's runes and dominating it, to earn its summoning
+- 1473 2 | reclaiming Egalin's Grimoire, which held the first voidwalker's summoning, from Perrine, a Scarlet Crusade agent in a tower to the west
+- 1474 3 | baiting a succubus through the summoning circle with the Pure Hearts and overcoming it, so Carendin Halgar would teach the spell to call it
+- 1476 2 | claiming the hearts of Dalin Forgewright, who cared for refugees, and Comar Villard, faithful to his lost wife, as bait for a succubus
+- 1485 2 | slaying the vile familiars in the cave to the northeast for their heads, the proof Ruzan asked for before teaching the art of summoning
+- 1501 2 | recovering the Tablet of Verga from the Burning Blade at Skull Rock, so Gan'rul Bloodeye could teach the runes for a voidwalker
+- 1504 3 | defeating a voidwalker called forth with the Glyphs of Summoning in Neeru Fireblade's tent, so Gan'rul Bloodeye would teach its binding
+- 1509 1 | asking at the Crossroads for news of Dogran, Zankaja's mate, a week overdue home from his new post and not heard from
+- 1510 1 | following word of the wounded Dogran, held by the quilboar, to the Malaka'jin, where a healing draught had been sought for him
+- 1511 2 | carrying Ken'zigla's draught to Camp Taurajo for the dying Dogran, after goblins killed the first one sent to fetch it
+- 1512 2 | handing Gan'rul Bloodeye the pendant Dogran parted with, rather than chain Zankaja to an invalid, as bait for a succubus
+- 1513 3 | luring a succubus with Dogran's Pendant and subduing it, then returning the pendant so Gan'rul could bring Zankaja the news
+- 1515 3 | reaching Dogran in a heavily guarded quilboar camp north of Camp Taurajo with the draught that gave him the strength to hobble away
+- 1598 2 | stealing the Powers of the Void for Drusilla La Salle from the Defias tent in the Vineyards, a book a runaway novice took from the Abbey
+- 1599 2 | fighting the Frostmane novices in their cave to the southwest for feather charms, the proof Alamar Grimm wanted before teaching the imp
+- 1688 2 | hunting down Surena Caledon, the student who ran off with the Defias, for the bloodstone choker Gakin the Darkbinder wanted back
+- 1689 3 | calling up a voidwalker with Gakin's bloodstone choker at the circle below the Slaughtered Lamb and besting it, to learn to command one
+- 1738 2 | seeking the Heartswood in the ruins of Ordil'Aran, a tree grown where two lovers fell in the War of the Ancients, to tempt a succubus
+- 1739 3 | opening a portal with the Heartswood Core in the crypt beneath the Slaughtered Lamb, and besting the succubus that came through it
+- 1740 2 | hunting the fragments of the Orb of Soran'ruk through Blackfathom Deeps and Shadowfang Keep, so Doan Karhan could make it whole again
+- 1795 3 | reading the incantation from the Tome of the Cabal in Strahad Farsan's greater circle to pull forth a felhunter, then subduing it
+- 1799 2 | seizing an Infernal Orb from the Mannoroc Coven's warlocks in Desolace, for Tabetha to cleanse in Dustwallow Marsh at Menara's bidding
+- 1802 2 | piecing together the Tome of the Cabal for Krom Stoutarm, half held by the centaur of Thousand Needles, half lost off Southshore
+- 1803 2 | recovering the vandalized Tome of the Cabal for Jorah Annison, from the centaur of Thousand Needles and the coast west of Southshore
+- 1804 2 | wresting rods of channeling from the Dragonmaw spellcasters of the Wetlands, for the greater circle Strahad Farsan's acolytes would raise
+- 1805 2 | wresting rods of channeling from the Dragonmaw spellcasters of the Wetlands, for the greater circle Strahad Farsan's acolytes would raise
+- 4490 2 | receiving from Strahad Farsan the power to summon a felsteed, his reward for patience and hard work
+- 4961 3 | killing the Demon of the Orb as soon as Tabetha drew it out, before it could slip back inside, so the Infernal Orb could be cleansed
+- 4962 2 | capturing the soul of a Desolace felhound in the Felhas Ruby, for Menara Voidrender to merge with the cleansed orb
+- 4963 2 | trapping the spirit of a Desolace infernal in the Infus Emerald, for Menara Voidrender to merge with the cleansed orb
+- 4976 1 | returning the cleansed Infernal Orb to Menara Voidrender, to have a demon of choice imprisoned within it
+- 7563 2 | collecting the blood of Winterspring's owl beasts, maddened by Darkwhisper Gorge, as ink for the glyphs that would bind a dreadsteed
+- 7564 1 | delivering the case of owl beast blood to Gorzeeki Wildeyes, Mor'zul's alchemist, to be made into ink for the dreadsteed parchment
+- 7581 2 | spilling the blood of the Wildspawn satyrs in Dire Maul's Warpwood Quarter, to bond and power Daio's crystal prison for a Doomguard
+- 7582 2 | gathering the Tears of the Hederine from the demons of Darkwhisper Gorge, crystals hard enough to hold even a Doomguard
+- 7583 3 | imprisoning a Doomguard Commander in the Tainted Scar with Daio's crystal prison while it fought wildly to escape
+- 7602 2 | harvesting flawless fel essences in Azshara, Jaedenar and the Blasted Lands, so Impsy could make the fel fire to raise Kroshius
+- 7603 3 | reigniting the infernal Kroshius in Shatter Scar Vale and slaying him for his core, Niby's price for teaching an infernal's summoning
+- 7623 1 | crossing Jaedenar cloaked by Gorzeeki's shadowy potions to ask Lord Banehollow of the Shadow Council for Xorothian stardust
+- 7624 2 | confronting Ulathek, Lord Banehollow's servant and Hel'nurath's spy, and bringing back the traitor's heart to win the dreadlord's favor
+- 7625 1 | buying Xorothian stardust from Ur'dan, Lord Banehollow's servant, for the parchment that would open a portal to Xoroth
+- 7626 1 | procuring elixirs of shadow power for Gorzeeki's Bell of Dethmoora, one of three tools for the Circle of Greater Summoning
+- 7627 1 | finding large brilliant shards and dark iron ore for the Wheel of the Black March, which would direct the ritual's violent energies
+- 7628 1 | acquiring black dragonscales for Gorzeeki's Doomsday Candle, whose flames would burn any wayward demon that disrupted the ritual
+- 7629 2 | carrying Gorzeeki's imp in a jar into the Scholomance's alchemy lab, where it infused the dreadsteed parchment with Xorothian stardust
+- 7630 1 | obtaining arcanite bars for Gorzeeki's black lodestone, which would keep the dreadsteed ritual from fizzling out
+- 7631 3 | performing the ritual of the Circle of Greater Summoning to open a portal to Xoroth, then defeating a dreadsteed and binding its spirit
+- 8419 1 | bringing felcloth from the satyrs of Felwood to the imp Impsy, the sign of good faith he asked for
+- 8420 1 | looting felcloth from the Felwood satyrs for Impsy, who wanted a pet of his own just as Niby had him
+- 8421 1 | tearing rotting wood from the irontree folk and essence from the tainted oozes, for the eyes and demon smell of Impsy's homemade pet
+- 8422 2 | killing Gasher, Mijan, Zolo, Hukku, Zul'lor and Loro in the Sunken Temple for the voodoo feathers to stuff Impsy's pet
+# Ironforge
+- 637 1 | carrying Sully Balloo's waterlogged letter to his wife Sara in Ironforge, with word that he lay pinned beneath the icy waters
+- 683 1 | laying the grieving Sara Balloo's plea before King Magni Bronzebeard, since she could not face him in her grief
+- 689 2 | fetching Alterac Granite from Darrow Hill for the memorial King Magni commissioned to Sully Balloo, lost in the Thandol Span tragedy
+- 2039 1 | searching Loch Modan for Bingles Blastenheimer, missing a week after a reconnaissance flight over Gnomeregan
+- 2946 2 | bearing the miniature platinum discs to the sealed gates of Uldum for the Explorers' League, with no idea what they would wake there
+- 2948 1 | bringing Talvash del Kissel a silver bar, a moss agate and his fee to rework the Brilliant Gold Ring with a silver and agate lattice
+- 3201 1 | carrying the curator's proof of deed to Mountaineer Pebblebitty, who doubted Margol's horn was real, for the key she had promised
+- 3371 2 | searching the Slag Pits of the Searing Gorge for Dorius's men, enslaved by the Dark Irons, to fulfil the murdered Dorius's last wish
+- 3449 1 | making rubbings of four elven runes in the Ruins of Eldarath for Tymor, then signalling Pilot Xiggs Fuselighter to fly them out of Azshara
+- 3701 2 | studying the relics in the smoldering Ruins of Thaurissan, past the assassins who guard them, for the history of the Dark Iron dwarves
+- 4512 1 | collecting samples from the cursed and tainted oozes of Felwood for Laris Geardawdle, who wanted to know where all the ooze comes from
+- 4513 1 | hunting for pure ooze samples, untouched by any corruption, for Laris Geardawdle, who believed oozes take on the aspects of their land
+- 8905 1 | drawing blood from the frostsabers and bears of Winterspring for Deliana, who offered finer bracers in trade for it
+- 8906 1 | drawing blood from the frostsabers and bears of Winterspring for Deliana, who offered finer bracers in trade for it
+- 8907 1 | drawing blood from the frostsabers and bears of Winterspring for Deliana, who offered finer bracers in trade for it
+- 8908 1 | drawing blood from the frostsabers and bears of Winterspring for Deliana, who offered finer bracers in trade for it
+- 8909 1 | drawing blood from the frostsabers and bears of Winterspring for Deliana, who offered finer bracers in trade for it
+- 8910 1 | drawing blood from the frostsabers and bears of Winterspring for Deliana, who offered finer bracers in trade for it
+- 8911 1 | drawing blood from the frostsabers and bears of Winterspring for Deliana, who offered finer bracers in trade for it
+- 8912 1 | drawing blood from the frostsabers and bears of Winterspring for Deliana, who offered finer bracers in trade for it
+- 8951 2 | relaying Anthion's parting words to Deliana: Valthalak's curse would end only when his split medallion was mended, with Bodley's help
+- 8952 2 | relaying Anthion's parting words to Deliana: Valthalak's curse would end only when his split medallion was mended, with Bodley's help
+- 8953 2 | relaying Anthion's parting words to Deliana: Valthalak's curse would end only when his split medallion was mended, with Bodley's help
+- 8954 2 | relaying Anthion's parting words to Deliana: Valthalak's curse would end only when his split medallion was mended, with Bodley's help
+- 8955 2 | relaying Anthion's parting words to Deliana: Valthalak's curse would end only when his split medallion was mended, with Bodley's help
+- 8956 2 | relaying Anthion's parting words to Deliana: Valthalak's curse would end only when his split medallion was mended, with Bodley's help
+- 8958 2 | relaying Anthion's parting words to Deliana: Valthalak's curse would end only when his split medallion was mended, with Bodley's help
+- 8959 2 | relaying Anthion's parting words to Deliana: Valthalak's curse would end only when his split medallion was mended, with Bodley's help
+- 8977 1 | handing Deliana the Extra-Dimensional Ghost Revealer built by Mux, a goblin device she distrusted but had no choice but to rely on
+# Arathi Basin
+- 8080 2 | winning the battle for Arathi Basin and bringing a crate of its resources to Sergeant Maclear, to arm and feed the Alliance's troops
+- 8081 1 | winning Arathi Basin again for another resource crate, sent on by Sergeant Maclear to the quartermasters
+- 8105 2 | tearing the enemy's banners from the farm, mine, lumber mill and blacksmith of Arathi Basin for Field Marshal Oslight
+- 8114 2 | holding four bases of Arathi Basin at once for Field Marshal Oslight, to secure its resources and show the Horde the Alliance's dominance
+- 8115 3 | driving the Defilers out of all five bases of Arathi Basin at once, the League of Arathor's one strong push
+- 8120 2 | pulling down the League's banners at the mine, lumber mill, blacksmith and stables of Arathi Basin, claiming them for the Horde
+- 8121 2 | holding four points of Arathi Basin at once, to show the League of Arathor how quickly its holdings could be lost
+- 8122 3 | seizing all five bases of Arathi Basin at once while the League of Arathor's resolve weakened, a great victory for the Defilers
+- 8123 2 | winning Arathi Basin and taking a crate of its resources to Deathstalker Mortis, to cut the League of Arathor's supply lines
+- 8124 1 | carrying off another resource crate from Arathi Basin for Deathstalker Mortis, to keep the League of Arathor short of supplies
+- 8154 2 | winning the battle for Arathi Basin and bringing a crate of its resources to Sergeant Maclear, to arm and feed the Alliance's troops
+- 8155 2 | winning the battle for Arathi Basin and bringing a crate of its resources to Sergeant Maclear, to arm and feed the Alliance's troops
+- 8156 2 | winning the battle for Arathi Basin and bringing a crate of its resources to Sergeant Maclear, to arm and feed the Alliance's troops
+- 8157 1 | winning Arathi Basin again for another resource crate, sent on by Sergeant Maclear to the quartermasters
+- 8158 1 | winning Arathi Basin again for another resource crate, sent on by Sergeant Maclear to the quartermasters
+- 8159 1 | winning Arathi Basin again for another resource crate, sent on by Sergeant Maclear to the quartermasters
+- 8160 2 | winning Arathi Basin and taking a crate of its resources to Deathstalker Mortis, to cut the League of Arathor's supply lines
+- 8161 2 | winning Arathi Basin and taking a crate of its resources to Deathstalker Mortis, to cut the League of Arathor's supply lines
+- 8162 2 | winning Arathi Basin and taking a crate of its resources to Deathstalker Mortis, to cut the League of Arathor's supply lines
+- 8163 1 | carrying off another resource crate from Arathi Basin for Deathstalker Mortis, to keep the League of Arathor short of supplies
+- 8164 1 | carrying off another resource crate from Arathi Basin for Deathstalker Mortis, to keep the League of Arathor short of supplies
+- 8165 1 | carrying off another resource crate from Arathi Basin for Deathstalker Mortis, to keep the League of Arathor short of supplies
+- 8166 2 | tearing the enemy's banners from the farm, mine, lumber mill and blacksmith of Arathi Basin for Field Marshal Oslight
+- 8167 2 | tearing the enemy's banners from the farm, mine, lumber mill and blacksmith of Arathi Basin for Field Marshal Oslight
+- 8168 2 | tearing the enemy's banners from the farm, mine, lumber mill and blacksmith of Arathi Basin for Field Marshal Oslight
+- 8169 2 | pulling down the League's banners at the mine, lumber mill, blacksmith and stables of Arathi Basin, claiming them for the Horde
+- 8170 2 | pulling down the League's banners at the mine, lumber mill, blacksmith and stables of Arathi Basin, claiming them for the Horde
+- 8171 2 | pulling down the League's banners at the mine, lumber mill, blacksmith and stables of Arathi Basin, claiming them for the Horde
+- 8297 2 | winning the battle for Arathi Basin and bringing a crate of its resources to Sergeant Maclear, to arm and feed the Alliance's troops
+- 8298 1 | winning Arathi Basin again for another resource crate, sent on by Sergeant Maclear to the quartermasters
+- 8299 2 | winning Arathi Basin and taking a crate of its resources to Deathstalker Mortis, to cut the League of Arathor's supply lines
+- 8300 1 | carrying off another resource crate from Arathi Basin for Deathstalker Mortis, to keep the League of Arathor short of supplies
+# sort 162
+- 1858 3 | lifting Tazan's key from Gamon, his drunken assistant, to open the satchel for Therzok, the last proof needed to join the Shattered Hand
+- 1886 2 | procuring the personal effects of Astor Hadren, a messenger between Silverpine and the Undercity, as the first test of the Deathstalkers
+- 1898 1 | posing as the messenger Andron Gant expected, to learn which group he had been secretly aiding
+- 1899 2 | carrying Andron's ledger to Mennet Carkad, the proof Lord Varimathras wanted of the group Andron Gant had been secretly aiding
+- 1963 2 | killing Tazan, the troll who traded with the pirates near Ratchet, for the satchel of information Therzok wanted
+- 1978 3 | delivering Andron's ledger, which exposed the Syndicate, to Lord Varimathras, and being welcomed into the Deathstalkers for it
+- 1998 3 | killing Fenwick Thatros, a leader of the undead that had taken root in Silverpine, at the decrepit dock on Lordamere for Lord Varimathras
+- 1999 2 | picking the locks of the Kirin Tor at Ambermill for the Dalaran Status Report, documents the Deathstalkers were charged to recover
+- 2206 2 | infiltrating the dock house at Jerod's Landing for the Defias Dockmaster's shipping schedule, proof of their smuggling to Westfall
+- 2239 1 | carrying Onin's report on the long route of the king's ore tanks back to Hulfdan, so the Hidden Circle could plan its next step
+- 2241 1 | delivering lovestruck Jannok's rose to Syurna, who would speak to no one but a rogue
+- 2242 2 | rifling the packs of Sethir the Ancient, a satyr who had doomed all who approached, for clues to what ailed the forests of Teldrassil
+- 2282 2 | cracking Lucius's lockbox at Alther's Mill for the Token of Thievery, to earn a Certificate of Thievery
+- 2358 2 | cutting through Blackrock orcs until the Horns of Nez'ra, stolen from Ravenholdt manor years ago, were recovered for Arantir's Shadow
+- 2359 2 | breaking into the Defias tower past its inhuman guards to learn what the chest shipped from Duskwood held, for Mathias Shaw
+- 2381 2 | boarding the Tide Razor to steal the Southsea treasure for Wrenix the Wretched, whose last five thieves came back in pieces
+- 2458 1 | signalling Taskmaster Fizzule, the Shattered Hand's agent planted inside the Venture Co., with two flares and the Shattered Salute
+- 2478 3 | assassinating Grand Foreman Gallywix in the Venture Co. tower and stealing his cache of Zanzil's altered mixture for Shenthul
+- 2479 2 | bringing a sample of Zanzil's mixture to Serge Hinott in Tarren Mill, the one apothecary likely to cure its poison
+- 2609 2 | rounding up the makings of Doc Mixilpixil's cure for the 'itis' left by the touch of Zanzil
+- 6681 2 | seeking out the hidden Ravenholdt Manor in the hills of Hillsbrad with its seal, the first test of cunning for the Assassin's League
+- 8234 2 | recovering Lord Jorach Ravenholdt's Sealed Azure Bag from a Timbermaw shaman in Azshara, who had bought it from the thieves as a holy relic
+- 8235 1 | gathering the encoded fragments of Archmage Xylem's ruined books from the beasts of Azshara, so he could break the azure bag's enchantment
+- 8236 3 | hunting the green drake Morphaz deep in the Temple of Atal'Hakkar for the Azure Key Lord Ravenholdt thought lost forever
+# Badlands
+- 692 2 | gathering the torn fragments of the Scroll of Myzrael from the elementals fighting over them, perhaps the only chance against Myzrael
+- 703 1 | fetching buzzard wings for Rigglefuzz's barbecue, a favorite whose recipe he promised to share
+- 705 1 | diving for blue pearls at the Vile Reef in Stranglethorn, the powder Rigglefuzz needed for flash bombs to scare off the Badlands' scavengers
+- 706 1 | cutting a still-beating heart from a black drake whelp in Lethlor Ravine, so Sigrun Ironhew could show his fiery weapon enchantment
+- 708 1 | carrying a corroded black box from a giant condor's stomach to the Hall of Arms in Ironforge, stamped Engine #19 - Ironforge Siege Brigade
+- 710 1 | collecting small stone shards from the lesser rock elementals, for Lotwil Veriatus to test his shackles of elemental binding
+- 711 1 | prying large stone slabs off the rock elementals for Lotwil Veriatus's tests, a load he thought would take half a dozen tauren
+- 712 1 | stripping the bracers of rock binding from the greater rock elementals, to gauge the strength of Lotwil Veriatus's own shackles
+- 713 1 | learning to make frost oil from Bro'kin in Alterac, so Lotwil's shackles could keep his summoned elemental from killing everyone
+- 714 1 | finding a gyrochronatom, the small but crucial part Lotwil Veriatus needed to finish his shackles
+- 715 1 | bringing healing and invisibility potions to Lucien Tosselwrench, who expected to need them if Lotwil's experiment worked
+- 716 1 | supplying patterned bronze bracers so Lucien Tosselwrench could enchant them with the spare stones, thanks Lotwil was too cheap to give
+- 717 3 | breaking the Seal of the Earth to free and slay Blacklash and Hematus, Deathwing's lieutenants, for Garek of the Kirin Tor
+- 718 1 | recovering the supply crate the ogres of Camp Kosh took, without which Sigrun Ironhew's party could not get food
+- 719 1 | retrieving Prospector Ryedol's lucky pick from the Shadowforge Dark Irons who had attacked his dig site
+- 720 2 | telling Prospector Ryedol that Hammertoe Grez was alive and taken to Uldaman, as his chalk scrawl on a map said
+- 723 2 | carrying the wounded Hammertoe's amulet, his life's work, to Prospector Ryedol, with his plea to stop the Shadowforge clan
+- 724 1 | taking Hammertoe's amulet on to Historian Karnik in Ironforge, who had sought Uldaman's lost artifacts with him
+- 725 1 | running Historian Karnik's note to Advisor Belgrum, warning of the Shadowforge's activities in the Badlands
+- 727 1 | showing the Sigil of the Hammer to Gerrig Bonegrip, posing as one of his order, to obtain Yagyin's Digest for Theldurin
+- 728 1 | passing as one of Keeper Bel'dugur's order with the Sigil of the Hammer, to obtain Yagyin's Digest for Theldurin
+- 732 2 | wresting the Sign of the Earth from the ogres near Camp Boff for Garek, sent by Krasus of the Kirin Tor to end the trouble in Lethlor Ravine
+- 733 1 | scrounging scrap metal from the ogres of Dustbelch Grotto, so Sigrun could build defenses for the worried prospector's camp
+- 735 1 | gathering three items of power, named only in writing, for Gerrig Bonegrip, his price for a copy of Yagyin's Digest
+- 737 2 | bringing Yagyin's Digest to Theldurin the Lost, who hoped its knowledge would protect all from what might rise to the surface
+- 738 2 | searching the southernmost dig site past Angor Fortress for Prospector Agmond, unheard from in weeks, and finding only his bones
+- 739 3 | avenging Prospector Agmond on Murdaloc, the trogg whose name he scrawled in the sand as he died, and on the Stonevault Bonesnappers
+- 762 3 | killing Ambassador Infernus in Angor Fortress, sent by Ragnaros to oversee the Shadowforge's hunt for Uldaman's artifacts
+- 777 1 | fetching cog #5 for Lotwil Veriatus from Lucien Tosselwrench, who handed it over and took cover
+- 778 3 | defeating the Fam'retor Guardian, the elemental Lotwil Veriatus summoned to test his shackles, when his experiment went wrong
+- 782 2 | killing Boss Tho'grun, the ogre mercenary who betrayed Kargath, to take back the Sign of the Earth for Gorn
+- 793 3 | freeing the black drakes Blacklash and Hematus from the Seal of the Earth only to slay them, silencing the Horde's depraved allies of old
+- 1419 1 | hunting the crag coyotes that crept into Kargath to raid its food supplies, for Neeka Bloodscar
+- 1420 1 | carrying Neeka Bloodscar's report to Helgrum the Swift in Stonard, news that the Alliance had troubles of its own
+- 2203 1 | draining blood from scorched guardian dragons into thaumaturgy vessels, a dangerous task for Jarkal Mossmeld's own recipe
+- 2258 1 | gathering buzzard gizzards, coyote fangs and rock elemental shards to restock Jarkal Mossmeld's alchemy supplies
+- 3821 2 | searching the Burning Steppes for Sha'ni Proudtusk, missing three weeks while watching the Firegut ogres' rituals, for her husband Thal'trak
+- 4062 2 | bringing Lotwil Veriatus a shard marked G.L.A. from the machines destroyed in the Burning Steppes, to learn who had made them
+# sort 368
+- 9085 3 | unmasking and destroying a Shadow of Doom, one of the Lich King's most frightening creatures, at a Scourge summoning circle
+- 9153 2 | battling the Scourge around a necropolis's magic circles to break the defenses of the floating fortresses, for the Argent Dawn
+- 9260 2 | thinning the Scourge camped outside Stormwind and investigating their glowing runic circles, to learn what they were for
+- 9261 2 | thinning the Scourge camped outside Ironforge and investigating their glowing runic circles, to learn what they were for
+- 9262 2 | thinning the Scourge camped outside Darnassus and investigating their glowing runic circles, to learn what they were for
+- 9263 2 | thinning the Scourge camped outside Orgrimmar and investigating their glowing runic circles, to learn what they were for
+- 9264 2 | thinning the Scourge camped outside Thunder Bluff and investigating their glowing runic circles, to learn what they were for
+- 9265 2 | thinning the Scourge camped outside the Undercity and investigating their glowing runic circles, to learn what they were for
+- 9292 1 | showing Lieutenant Orrin a cracked necrotic crystal from an abomination, a sign the Scourge had tried to make a camp inside Stormwind
+- 9295 1 | giving the Keeper of the Rolls a torn letter found on the Scourge, a soldier's words to a loved one, in hope of finding the family
+- 9299 1 | giving the Keeper of the Rolls a careworn note found on the Scourge, a soldier's words to a loved one, in hope of finding the family
+- 9300 1 | giving the Keeper of the Rolls a ragged page found on the Scourge, a soldier's words to a loved one, in hope of finding the family
+- 9301 1 | giving the Keeper of the Rolls a bloodstained envelope from the Scourge, a soldier's words to a loved one, in hope of finding the family
+- 9302 1 | giving the Keeper of the Rolls a crumpled missive from the Scourge, a soldier's words to a loved one, in hope of finding the family
+- 9304 1 | giving the Keeper of the Rolls a smudged document from the Scourge, a soldier's words to a loved one, in hope of finding the family
+- 9310 1 | showing Lieutenant Rukag a faint necrotic crystal from a fallen wight, a sign the Scourge had tried to make a camp in the Undercity
+# Deathknell
+- 364 2 | destroying the Mindless Ones overrunning the north of Deathknell, brothers and sisters once, now slaves of the Lich King
+- 376 1 | gathering scavenger paws and duskbat wings for Novice Elreth, who tended the wounded and tailored their armor
+- 380 2 | clearing the spiders from the gold mine northwest of Deathknell, gold the Forsaken needed to survive
+- 381 2 | striking first at the Scarlet Crusade camp southeast of Deathknell, zealots sworn to destroy every undead, and taking their armbands
+- 382 3 | killing Meven Korgal, the Scarlet messenger sent from the Monastery, for the documents he carried to Deathknell
+- 383 1 | carrying the captured Scarlet Crusade documents, with the names of their officers in Tirisfal, to Executor Zygand in Brill
+- 590 1 | beating Calvin Montague when he denied owing the coin he had promised for carrying his letter to Brill
+- 3901 1 | thinning the rattlecage skeletons, tougher minions of the Lich King, to prove worthy of the freedom given to the Forsaken
+- 3902 1 | scavenging the crates of Deathknell for equipment, so the recruits still rising would not stumble about naked
+- 6395 2 | putting down Samuel Fipps, who killed his wife Marla after the plague took him, and burying him at her grave as she had wished
+# Maraudon
+- 7028 1 | collecting Theradric crystal carvings in Maraudon for Willow, who wanted to study the relics of the old gods hidden there
+- 7029 2 | purging Vyletongue's corruption from the Vylestem vines of Maraudon and slaying the Noxxious Scions driven out of them, for Vark Battlescar
+- 7041 2 | purging Vyletongue's corruption from the Vylestem vines of Maraudon and slaying the Noxxious Scions driven out of them, for Talendria
+- 7044 2 | winning back the two parts of Celebras's scepter from Noxxion and Lord Vyletongue, to reach Celebras, wandering blind and cursed in Maraudon
+- 7046 2 | helping Celebras the Redeemed reunite rod and diamond into his scepter, and taking up his hope of bringing peace to his uncle's spirit
+- 7064 3 | slaying Princess Theradras deep in Maraudon, so the remains of Zaetar, first son of Cenarius, might be recovered
+- 7065 3 | slaying Princess Theradras deep in Maraudon, so the remains of Zaetar, first son of Cenarius, might be recovered
+- 7066 2 | carrying the Seed of Life from Zaetar's spirit to Remulos in Moonglade, word that his brother lived on and had found peace
+- 7067 2 | fetching the Amulet of Union from the holy halls of Maraudon for the exiled Centaur Pariah, who hoped to unite the centaur tribes
+- 7068 1 | prying shadowshard fragments from the crystal creatures of Maraudon for Uthel'nay's magics
+- 7070 1 | collecting shadowshards from Maraudon's elementals for Archmage Tervosh, who was testing the arcane properties of crystals
+# Razorfen Downs
+- 3341 3 | killing the lich Amnennar the Coldbringer, who ruled the quilboar of Razorfen Downs for the Scourge, to sever his link to Ner'zhul
+- 3525 3 | guarding Belnistrasz as he shut down the quilboar's idol, the oven in which they consumed their captives from the Barrens
+- 3636 3 | slaying Amnennar the Coldbringer, the lich ruling the quilboar of Razorfen Downs, to end their unholy pact with the Scourge
+- 6521 3 | hunting down Ambassador Malcin outside Razorfen Downs, the Scourge envoy courting the quilboar, and bringing his head to Varimathras
+- 6522 2 | delivering to Varimathras a scroll found on the crone of Razorfen Kraul, Ambassador Malcin's offer of a pact with the Scourge
+- 6626 2 | thinning the battleguards, thornweavers and Death's Head cultists flocking to the Scourge diplomat at Razorfen Downs, for Myriam Moonsinger
+# Rut'theran Village
+- 978 1 | picking up fallen moontouched feathers in Winterspring for Erelas Ambersky, to see if its wildkin held the same magic as the Hinterlands'
+- 3661 1 | collecting wildkin feathers in the Hinterlands for Erelas Ambersky, who wondered whether the owlbeasts were truly made by Elune

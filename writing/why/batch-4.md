@@ -1,0 +1,371 @@
+---
+kind: why
+---
+# The Barrens
+- 819 1 | carrying an empty keg to someone who knew its maker, Chen Stormstout, who once traveled with Rexxar
+- 821 1 | gathering tusks, kidneys and a thunder lizard horn so Brewmaster Drohn could brew Chen's stormstout once more
+- 822 1 | collecting lightning glands, a saliva gland and a kodo liver for Brewmaster Drohn's trogg ale, another of Chen's recipes
+- 843 2 | driving the dwarves from Bael Modan, whose blasts tore up Gann Stonespire's tribal lands, and taking Khazgorm's journal
+- 844 1 | putting down the plainstriders that raided the Crossroads' food supplies, Sergra Darkthorn's first and easiest prey
+- 845 1 | hunting zhevra for their hooves, a shade tougher than plainstriders, as Sergra Darkthorn's next lesson
+- 846 2 | looting nitroglycerin, wood pulp and sodium nitrate so Gann Stonespire could give the dwarves a taste of their own medicine
+- 848 1 | picking fungal spores by the oases for Apothecary Helbrim, whose fellow Forsaken prized their strange properties
+- 849 3 | blowing up the flying machine at Bael Modan, a dwarven weapon of war and an insult to Gann Stonespire's lost tribe
+- 850 3 | hunting down Barak Kodobane, one of the new leaders rallying the Kolkar centaurs, for Regthar Deathgate
+- 851 3 | stirring up the centaurs at the Stagnant Oasis until Verog the Dervish came, so his head could join Barak's
+- 852 3 | killing Hezrul Bloodmark, leader of the Kolkar, to fracture the centaurs and blunt their threat to the Horde
+- 853 1 | rushing Apothecary Helbrim's rendered spores to Apothecary Zamah in Thunder Bluff before the emulsion lost its potency
+- 855 1 | stripping bracers from Kolkar warriors for Regthar Deathgate's bounty, to thin the centaur troops
+- 857 2 | stealing the Tear of the Moons from General Twinbraid's keep for Feegly the Exiled, who raved that its power was his
+- 858 1 | fetching the ignition key for Wizzlecrank, a goblin stuck inside a Venture Company shredder he meant to steal
+- 863 2 | guarding Wizzlecrank as he drove a stolen Venture Company shredder out of the Sludge Fen toward Sputtervalve in Ratchet
+- 865 1 | prying horns from sunscale scytheclaws for Mebok Mizzyrix, who meant to grind them into smart drinks and get rich
+- 867 1 | cutting talons from the Witchwing harpies that had ravaged the Horde's caravans, a first blow for Darsok Swiftdagger
+- 868 2 | digging silithid eggs from their mounds in the Field of Giants so Korran could study the strange insects for Orgrimmar
+- 869 1 | hunting the raptors that had somehow stolen the Crossroads guards' silver, so they would never steal again
+- 870 2 | searching the Forgotten Pools for the power seeping up beneath the Barrens, and finding a fissure for Tonga Runetotem
+- 871 2 | thinning the Razormane quilboars that had been attacking the supply lines from Durotar, for Thork at the Crossroads
+- 872 3 | killing Kreenig Snarlsnout, the Razormane behind the raids on the Durotar caravans, and bringing his tusk to Thork
+- 873 3 | swimming out to slay Isha Awak, the Deep Doom who had devoured many coastal humans, as Mahren Skyseer's honorable prey
+- 875 2 | picking off the Witchwing Slayers, the harpy lieutenants of the Dry Hills, in a decisive strike at their matriarchy
+- 876 3 | slaying Serena Bloodfeather, whose harpies raided Horde caravans to avenge the sister Rexxar had killed
+- 877 2 | planting dead seeds in a fissure at the Stagnant Oasis for Tonga Runetotem, and watching them spring to life
+- 878 1 | striking down the spiritual leaders of the Bristleback quilboars so the caged Mangletooth's Razormane could defeat them
+- 879 3 | killing Nak, Kuz and Lok Orcbane, the Razormane who raided the Horde and left Mangletooth to rot in a cage
+- 880 1 | gathering snapjaw shells so Tonga Runetotem could learn how the fissures changed the beasts that drank there
+- 881 2 | calling Echeyakee, white mist king of the savannah cats, from his lair with a horn and taking his hide to Sergra Darkthorn
+- 882 2 | baiting Ishamuhale, the fiercest sunscale raptor, with a zhevra carcass and taking his fang to Jorn Skyseer
+- 883 2 | bringing the hoof of Lakota'mani, the great kodo the tauren call Earthshaker, to Jorn at Camp Taurajo
+- 884 2 | presenting the sparking tailspike of Owatanka, the thunder lizard the tauren call Bluebolt, to Jorn at Camp Taurajo
+- 885 2 | hunting Washte Pawne, the rare thunderhawk called Spirit Biter, and bringing its stinging feather to Jorn Skyseer
+- 887 2 | clearing the Southsea Freebooters' camp south of Ratchet, pirates who kept raiding Gazlowe's ships
+- 888 1 | searching the pirate camp for Gazlowe's shipment of boots and the telescopic lens his new observatory still lacked
+- 890 1 | carrying Gazlowe's ledger to Wharfmaster Dizzywig, to check whether his missing shipment had ever arrived
+- 891 3 | laying siege to Northwatch Hold, whose guns kept sinking Captain Brightsun's ships, and slaying Captain Fairmount
+- 893 1 | seizing a dagger, a wand and a shield from the Razormane so Tatternack Steelforge could study their sturdier weapons
+- 894 1 | reaching the control console of a Venture Company research site, to work out how to free the mysterious samophlange
+- 895 3 | hunting down Baron Longshore of Gilneas, captain of the Heedless and wanted by Gazlowe for piracy
+- 896 1 | lifting a fist-sized emerald from the Venture Co. at Boulder Lode for Wharfmaster Dizzywig, who promised half its sale
+- 897 2 | showing Jorn Skyseer the head of the Harvester, an insect-like thing that did not belong in the Barrens
+- 898 3 | escorting Gilthares Firebough, sole survivor of a ship Theramore had sunk, out of Northwatch Hold to Ratchet
+- 899 1 | collecting Bristleback tusks for Mankrik, whose thirst for revenge on the pig men was far from quenched
+- 900 1 | shutting three valves on the Venture Company console so the samophlange's apparatus could be switched off
+- 901 1 | wresting the console key from Tinkerer Sniggles to unlock the Venture Company apparatus and reach the samophlange inside
+- 902 2 | pulling the samophlange from its console for Sputtervalve in Ratchet, to be sent on to the Tinkers' Union
+- 903 1 | stalking savannah prowlers in the tall grass for their claws, prey that could turn the hunter into the hunted
+- 905 1 | laying sunscale raptor feathers on the Scytheclaw nests to show their brethren no fear, as Sergra Darkthorn asked
+- 906 1 | bringing Lok's skull to Thork at the Crossroads, proof that the leader of the raids on his supply lines was dead
+- 907 1 | facing the great thunder lizards of the southern Barrens and bringing their blood to Jorn Skyseer as proof
+- 913 2 | slaying a thunderhawk for its wings, the hunt that brought Jorn Skyseer's teaching near its end
+- 1060 1 | carrying Darsok Swiftdagger's letter to the witch doctor Jin'Zil in Stonetalon, word that Serena Bloodfeather was dead
+- 1069 1 | gathering deepmoss spider eggs in Stonetalon for Mebok Mizzyrix, to sell to Booty Bay's craze for spider egg omelettes
+- 1145 1 | carrying Korran's sealed note to Orgrimmar, warning that the insects of the Field of Giants were deadlier than thought
+- 1153 1 | prying an ore sample from the Gravelsnout kobolds for Tatternack Steelforge, who hoped to forge a weapon for the warchief
+- 1492 1 | taking a crate of potions and reagents to Wharfmaster Dizzywig in Ratchet, to sail on the next boat to Blackwater Cove
+- 3281 2 | recovering the Crossroads guards' stolen silver from the raptors' nests at the Raptor Grounds, their next month's pay
+- 3301 1 | delivering a glowing snapjaw shell to Mura Runetotem, who hoped its secret could heal the dying forest of Silverpine
+- 3369 2 | carrying a shard of the Emerald Dream to Hamuul Runetotem in Thunder Bluff, a nightmare Falla would not speak of
+- 3370 2 | carrying a shard of the Emerald Dream to Mathrengyl Bearwalker in Darnassus, a nightmare Falla would not speak of
+- 3513 1 | taking an official-looking runed scroll to the guard tower by the Ashenvale border, in case it concerned the night elves
+- 3514 3 | killing Rynthariel the Keymaster and raising a Horde flag in the Talon Den, so the Alliance would send no more runners
+- 3921 1 | taking the broken samophlange to the clever Wenikee Boltbucket near Mor'shan Rampart, in the hope she could fix it
+- 3922 1 | raiding Venture Company tool buckets in the Sludge Fen for nugget slugs, so Wenikee Boltbucket could start on the samophlange
+- 3923 1 | bringing the battered samophlange to Rilli Greasygob in Orgrimmar, an old Venture Company hand who might mend it
+- 3924 2 | recovering the samophlange manual and its pages from Boss Copperplug, so Rilli Greasygob might learn to mend the device
+- 4021 3 | fighting the vengeful Kolkar from Desolace until Warlord Krom'zar appeared, and taking a piece of his banner
+- 4921 2 | searching the Barrens for some sign of Mankrik's wife, lost when the Bristlebacks overwhelmed their camp
+- 5041 1 | recovering the supply crates the Razormane had taken in their raid, supplies the Crossroads desperately needed
+- 5052 1 | bringing Mangletooth a Bristleback blood shard, to show an understanding of Agamaggan's magic and earn his blessings
+- 6362 1 | flying a bundle of Barrens hides to Ahanu in Thunder Bluff, who would work them into leather goods
+- 6364 1 | flying Ahanu's leather goods back to Jahan Hawkwing to sell to the hunters crowding the Crossroads
+- 6384 1 | flying Zargh's choice cuts of meat to his friend Gryshka, the innkeeper in Orgrimmar
+- 6386 1 | carrying Gryshka's letter of thanks back to Zargh, who took it as proof she liked his steaks
+- 6543 1 | carrying Kadrak's orders to the Warsong scouts in Ashenvale and bringing their reports back for the Horde's campaign
+# Ahn'Qiraj
+- 8544 1 | handing the Qiraji Bindings of Command to Andorgos, to be shaped into pauldrons more dreadful than the wings of Nefarian
+- 8559 1 | giving Kandrostrasz the Qiraji Bindings of Command, magic to give a dragon pause, to be made into boots
+- 8560 1 | offering Kandrostrasz Ouro's Intact Hide, nearly impregnable yet supple, to be made into leggings
+- 8561 1 | presenting Vek'nilash's Circlet to Andorgos, worn thin by the Twin Emperors' whispers, to be remade into a crown
+- 8562 2 | laying the Carapace of the Old God before Vethsera, proof that C'Thun was slain, for armor fit for one who has slain a god
+- 8592 1 | silencing the Twin Emperors' whispers for Andorgos, and bringing him Vek'nilash's Circlet to be transmuted into a crown
+- 8593 1 | bringing Ouro's Intact Hide to Kandrostrasz to prove worthy of the dragons, for leggings of the worm's unnatural skin
+- 8594 1 | carrying the bindings of the highest Qiraji leaders to Andorgos, who made pauldrons of them and fallen Qiraji scales
+- 8596 1 | taking the Qiraji Bindings of Command to Kandrostrasz in exchange for boots to help crush the vile qiraji
+- 8602 1 | trading the Qiraji Bindings of Dominance to the dragon Andorgos for pauldrons meant to strike fear into the Qiraji
+- 8603 2 | carrying the Husk of the Old God, a piece of the slain C'Thun, to Vethsera, who had not expected anyone to come back
+- 8621 1 | delivering the bindings of the most powerful qiraji to Kandrostrasz, who turned their ancient might into boots
+- 8622 2 | bringing the Carapace of the Old God to Vethsera after C'Thun's death had saved Azeroth, for armor bearing its glory and burden
+- 8623 1 | surrendering Vek'lor's Diadem to Andorgos, kept from his brother Arygos by the Twin Emperors, to be made into a crown
+- 8624 1 | hauling the Skin of the Great Sandworm to Kandrostrasz for leggings against the horrors waiting deeper in the temple
+- 8625 1 | handing the Qiraji Bindings of Dominance to Andorgos, to be shaped into pauldrons more dreadful than the wings of Nefarian
+- 8626 1 | giving Kandrostrasz the Qiraji Bindings of Command, magic to give a dragon pause, to be made into boots
+- 8627 2 | laying the Carapace of the Old God before Vethsera, proof that C'Thun was slain, for armor fit for one who has slain a god
+- 8628 1 | presenting Vek'lor's Diadem to Andorgos, worn thin by the Twin Emperors' whispers, to be remade into a crown
+- 8629 1 | offering Kandrostrasz the Skin of the Great Sandworm, nearly impregnable yet supple, to be made into leggings
+- 8630 1 | carrying the bindings of the highest Qiraji leaders to Andorgos, who made pauldrons of them and fallen Qiraji scales
+- 8631 1 | bringing Ouro's Intact Hide to Kandrostrasz to prove worthy of the dragons, for leggings of the worm's unnatural skin
+- 8632 1 | silencing the Twin Emperors' whispers for Andorgos, and bringing him Vek'nilash's Circlet to be transmuted into a crown
+- 8633 2 | carrying the Husk of the Old God, a piece of the slain C'Thun, to Vethsera, who had not expected anyone to come back
+- 8634 1 | taking the Qiraji Bindings of Dominance to Kandrostrasz in exchange for boots to help crush the vile qiraji
+- 8637 1 | delivering the bindings of the most powerful qiraji to Kandrostrasz, who turned their ancient might into boots
+- 8638 2 | bringing the Carapace of the Old God to Vethsera after C'Thun's death had saved Azeroth, for armor bearing its glory and burden
+- 8639 1 | surrendering Vek'lor's Diadem to Andorgos, kept from his brother Arygos by the Twin Emperors, to be made into a crown
+- 8640 1 | hauling Ouro's Intact Hide to Kandrostrasz for leggings against the horrors waiting deeper in the temple
+- 8641 1 | trading the Qiraji Bindings of Command to the dragon Andorgos for pauldrons meant to strike fear into the Qiraji
+- 8655 1 | giving Kandrostrasz the Qiraji Bindings of Dominance, magic to give a dragon pause, to be made into boots
+- 8656 2 | laying the Carapace of the Old God before Vethsera, proof that C'Thun was slain, for armor fit for one who has slain a god
+- 8657 1 | presenting Vek'lor's Diadem to Andorgos, worn thin by the Twin Emperors' whispers, to be remade into a crown
+- 8658 1 | offering Kandrostrasz the Skin of the Great Sandworm, nearly impregnable yet supple, to be made into leggings
+- 8659 1 | handing the Qiraji Bindings of Command to Andorgos, to be shaped into pauldrons more dreadful than the wings of Nefarian
+- 8660 1 | taking the Qiraji Bindings of Dominance to Kandrostrasz in exchange for boots to help crush the vile qiraji
+- 8661 2 | carrying the Husk of the Old God, a piece of the slain C'Thun, to Vethsera, who had not expected anyone to come back
+- 8662 1 | silencing the Twin Emperors' whispers for Andorgos, and bringing him Vek'nilash's Circlet to be transmuted into a crown
+- 8663 1 | bringing the Skin of the Great Sandworm to Kandrostrasz to prove worthy of the dragons, for leggings of the worm's unnatural skin
+- 8664 1 | carrying the bindings of the highest Qiraji leaders to Andorgos, who made pauldrons of them and fallen Qiraji scales
+- 8665 1 | delivering the bindings of the most powerful qiraji to Kandrostrasz, who turned their ancient might into boots
+- 8666 2 | bringing the Husk of the Old God to Vethsera after C'Thun's death had saved Azeroth, for armor bearing its glory and burden
+- 8667 1 | surrendering Vek'lor's Diadem to Andorgos, kept from his brother Arygos by the Twin Emperors, to be made into a crown
+- 8668 1 | hauling the Skin of the Great Sandworm to Kandrostrasz for leggings against the horrors waiting deeper in the temple
+- 8669 1 | trading the Qiraji Bindings of Dominance to the dragon Andorgos for pauldrons meant to strike fear into the Qiraji
+- 8689 1 | bringing a Qiraji Martial Drape to Keyl Swiftclaw in Silithus, to be resized into a cloak against Qiraji magic
+- 8690 1 | giving Keyl Swiftclaw a Qiraji Regal Drape and idols for its clasp, for a cloak in the attack on Ahn'Qiraj
+- 8691 1 | earning a cloak from Keyl Swiftclaw with a Qiraji Martial Drape and idols, protection in the fight against the Qiraji
+- 8692 1 | exchanging a Qiraji Regal Drape with Keyl Swiftclaw for a cloak with a clasp of idols, a ward against Qiraji magic
+- 8693 1 | bringing a Qiraji Martial Drape to Keyl Swiftclaw in Silithus, to be resized into a cloak against Qiraji magic
+- 8694 1 | giving Keyl Swiftclaw a Qiraji Regal Drape and idols for its clasp, for a cloak in the attack on Ahn'Qiraj
+- 8695 1 | earning a cloak from Keyl Swiftclaw with a Qiraji Regal Drape and idols, protection in the fight against the Qiraji
+- 8696 1 | exchanging a Qiraji Regal Drape with Keyl Swiftclaw for a cloak with a clasp of idols, a ward against Qiraji magic
+- 8697 1 | taking a Qiraji Ceremonial Ring from a Qiraji lieutenant to Windcaller Yessendra, who swapped its corrupted gem for a purer one
+- 8698 1 | carrying a Qiraji Magisterial Ring to Windcaller Yessendra to have its corrupted gem replaced and its power made agreeable
+- 8699 1 | purifying a Qiraji Magisterial Ring, its corrupted gem replaced by Windcaller Yessendra with one from an idol
+- 8700 1 | swapping the corrupted gem of a Qiraji Magisterial Ring for a purer one from the idols, with Windcaller Yessendra's help
+- 8701 1 | taking a Qiraji Ceremonial Ring from a Qiraji lieutenant to Windcaller Yessendra, who swapped its corrupted gem for a purer one
+- 8702 1 | carrying a Qiraji Ceremonial Ring to Windcaller Yessendra to have its corrupted gem replaced and its power made agreeable
+- 8703 1 | purifying a Qiraji Magisterial Ring, its corrupted gem replaced by Windcaller Yessendra with one from an idol
+- 8704 1 | swapping the corrupted gem of a Qiraji Ceremonial Ring for a purer one from the idols, with Windcaller Yessendra's help
+- 8705 1 | bringing a Qiraji Ornate Hilt to Warden Haro, who forged a weapon from the finest Qiraji materials
+- 8706 1 | entrusting a Qiraji Spiked Hilt to Warden Haro, who turned the shattered pieces of Qiraji artifacts into a weapon
+- 8707 1 | proving allegiance to the Circle with a Qiraji Ornate Hilt, which Warden Haro made into a weapon of perfect balance
+- 8708 1 | turning a Qiraji Ornate Hilt over to Warden Haro, who longed to work Qiraji materials, for a masterwork weapon
+- 8709 1 | bringing a Qiraji Spiked Hilt to Warden Haro, who forged a weapon from the finest Qiraji materials
+- 8710 1 | entrusting a Qiraji Ornate Hilt to Warden Haro, who turned the shattered pieces of Qiraji artifacts into a weapon
+- 8711 1 | proving allegiance to the Circle with a Qiraji Spiked Hilt, which Warden Haro made into a weapon of perfect balance
+- 8712 1 | turning a Qiraji Spiked Hilt over to Warden Haro, who longed to work Qiraji materials, for a masterwork weapon
+- 8789 1 | bringing Imperial Qiraji Armaments and elementium to Arygos for weapons that would cut through the Qiraji and their god
+- 8790 1 | fetching Imperial Qiraji Regalia and elementium for Merithra of the Dream, for weapons deadly to the Old God's servants
+- 8801 3 | prying an eye stalk from the remains of C'Thun, an evil older than the world, for the dragons in the next chamber
+- 8802 3 | taking the Eye of C'Thun to Anachronos at the Caverns of Time, the last step of a journey of legend
+# Desolace
+- 261 1 | destroying the undead ravagers in the Valley of Bones to prove allegiance to Brother Anton and the Scarlet Crusade
+- 1052 1 | carrying Brother Anton's commendation to Raleigh the Devout in Southshore, for a place of honor in the Scarlet Monastery
+- 1365 3 | killing Khan Dez'hepah, leader of the Kolkar of Desolace, to break the clan before the centaurs could unite
+- 1366 1 | collecting ears from centaurs of every clan for Felgur Twocuts, to weaken their numbers and stamp out thoughts of expansion
+- 1367 1 | slaying Gelkis centaurs to win the trust of their rivals the Magram, so the Horde could learn to beat all the clans
+- 1368 1 | slaying Magram centaurs to earn the respect of the Gelkis, so the Horde could learn to beat all the clans
+- 1369 1 | smashing the Gelkis' hoarded tears of Theradras for Warug, to show them their centaur mother would not protect them
+- 1370 1 | raiding the Magram's stores of dried meat for Uthek the Wise, so the Gelkis could fight on while their rivals went hungry
+- 1371 1 | finding Warug a new Advanced Target Dummy, like the waving wooden man he had taken from the cart of a gnome he killed
+- 1373 1 | winning a draenethyst shard from Ongeku in the Swamp of Sorrows, a crystal from a land of demons to strengthen Uthek's magic
+- 1374 3 | beheading Khan Jehn of the Magram for Uthek the Wise, so the clan would fall without its leader
+- 1375 3 | beheading Khan Shaka of the Gelkis for Warug, who wanted to stare at the head and laugh
+- 1380 3 | sounding the Maraudine War Horn to draw out Khan Hratha, and taking his key fragment to Uthek the Wise
+- 1381 3 | killing Khan Hratha of the Maraudine for Warug, after winning a mouthpiece and blowing the war horn that called him out
+- 1382 1 | killing Magram centaurs to win the Gelkis' trust, so the Alliance might strike a pact with one warring clan
+- 1384 1 | snatching crude charms from the Kolkar for Uthek the Wise, who meant to burn them and laugh at their weak magic
+- 1385 1 | fighting the Gelkis to earn the Magram's favor, so the Alliance could learn how to beat the warring centaur clans
+- 1386 1 | slaughtering Kolkar centaurs to the north to show Warug they could be killed the Magram way
+- 1387 1 | cutting ears from centaurs for Corporal Melkins at Nijel's Point, thinning the cruel clans in the hope of peace
+- 1437 2 | searching for the wagon of Tyranis and Dalinda Malem, missing Darnassian nobles, and finding it ambushed and empty
+- 1438 2 | finding Dalinda Malem in Thunder Axe Fortress, where the Burning Blade meant to sacrifice her to their demon masters
+- 1439 2 | settling the fate of Tyranis Malem, whose craving for the arcane had led his sister into the Burning Blade's hands
+- 1440 3 | escorting Dalinda Malem out of Thunder Axe Fortress and back to Vahlarriel Demonslayer at Nijel's Point
+- 1454 1 | searching for the chest the mage Karnitol abandoned to the sea giants, and finding it forced open and empty
+- 1456 1 | wresting Karnitol's satchel from the Slitherblade naga, who had looted his chest from the shipwreck
+- 1457 1 | returning Karnitol's satchel to Roetten Stonehammer in Ironforge, so the mage would have his belongings back
+- 1458 1 | collecting Hatefury satyr claws and horns for Kreldig Ungor, the first reagents on Leftwitch's list
+- 1459 1 | gathering scorpashi venom and aged kodo hides for Leftwitch's list, to help Kreldig Ungor get home to Ironforge sooner
+- 1465 2 | handing the Malem pendant to Vahlarriel Demonslayer, with word of tracks leading south to a Burning Blade fort
+- 1466 1 | harvesting felhound brains, nether wings and doomwarder blood from demons, the last and worst of Leftwitch's reagents
+- 1467 1 | carrying Leftwitch's package back to Roetten Stonehammer in Ironforge to collect the Reclaimers' pay
+- 1480 2 | showing a flayed demon skin to Maurin Bonesplitter, who read in its runes a contract signed by the demon Lord Azrethoc
+- 1481 1 | scalping a Hatefury shadowstalker so Maurin Bonesplitter could break the demon lord's wards against scrying
+- 1482 1 | prying an oracle crystal from the Slitherblade oracles, the focus Maurin Bonesplitter needed to find Lord Azrethoc
+- 1488 3 | slaying Lord Azrethoc and his warlock servant Jugkar Grim'rod before the demon could bend the Burning Blade to his goals
+- 5381 2 | seizing the Demon Box from the Burning Blade, which held the Hand of Iruxos they used to open portals at Mannoroc Coven
+- 5386 1 | fetching Bloodbelly fish from Shadowprey Village for Nataka Longhorn, who had long missed the smell of cooked fish
+- 5501 1 | gathering kodo bones from the Kodo Graveyard for Bibbly F'utzbuckle, whose customers made furniture and blasting powder of them
+- 5561 1 | jolting old kodos into tame ones with Smeed Scrabblescrew's kombobulator, for the caravan he had a partnership with
+- 5581 3 | banishing the demon portals at Mannoroc Coven with the Hand of Iruxos, to stem the tide of demons into the world
+- 5741 2 | wresting the Sceptre of Light from a Burning Blade seer at Thunder Axe Fortress, a relic said to sink whole cities
+- 5763 1 | carrying Roon Wildmane's kodo horn to Hemet Nesingwary in Stranglethorn, an invitation to hunt together again
+- 5821 2 | guarding the Gizelton Caravan past the Kolkar village, whose war drums usually brought its kodos to a halt
+- 5943 2 | protecting the Gizelton Caravan through Mannoroc Coven, where something had the kodos spooked
+- 6027 2 | summoning the guardian of the Book of the Ancients on Ranazjar Isle, and bringing the naga's secrets to Azore Aldamort
+- 6132 3 | getting Melizza Brimbuzzle out of the Valley of Spears before the Maraudine centaurs could put her in their cookpot
+- 6134 1 | luring Magram ghosts in the Valley of Bones to ghost magnets for their ghost-o-plasm, to be sold to the centaurs
+- 6142 1 | digging soft-shelled clam meat near a coastal wreck for Mai'Lahii, bait for the fishing that cured his headache
+- 6143 2 | avenging Drulzegar's fishing crew, slaughtered by the Slitherblade naga near Ranazjar Isle while he alone survived
+- 6161 1 | finding Rackmore's silver and golden keys and opening the treasure chest he had hidden on Ranazjar Isle
+# Un'Goro Crater
+- 974 1 | taking the temperature of hot spots on Fire Plume Ridge for Krakle, to learn whether the volcano warmed the crater's springs
+- 3844 1 | searching the pond beside a wrecked raft for a clue to its owner, and pulling a water-logged pack from the bottom
+- 3845 1 | returning a lost pack to Linken at Marshal's Refuge, who only half recognized his own belongings
+- 3881 2 | recovering food and research equipment from the overrun camps of Williden Marshal's stranded expedition, saving their lives
+- 3882 1 | digging up dinosaur bones for Spark Nilminer of Marshal Expeditions, who preferred not to know if they came from live beasts
+- 3883 2 | scraping a Gorishi hive wall for Hol'anyee Marshal, who wanted to know why the alien insects had come to Un'Goro
+- 3884 1 | returning a mangled journal to Williden Marshal, whose expedition had fled to higher ground from the crater's beasts
+- 3908 1 | bearing Linken's sword to Donova Snowden in Winterspring to be tempered, though Linken could not remember why
+- 3909 1 | tracking down Gregan Brewspewer in the wilds of Feralas for the Videre Elixir, so Linken's sword could be finished
+- 3912 2 | drinking the Videre Elixir in the graveyard outside Gadgetzan to speak with Gaeriyan, who could finish Linken's sword
+- 3913 1 | laying Linken's sword in the hollow beneath the gravestone Gaeriyan spoke of, where a flash of light transformed it
+- 3914 1 | returning the transformed sword to Linken, who still could not remember why he needed it
+- 3961 1 | bringing the Silver Totem of Aquementas to Linken, in the hope it would remind him he had come to fight Blazerunner
+- 3962 3 | breaking Blazerunner's aura and defeating him on Fire Plume Ridge for the Golden Flame, a power too dangerous for an evil heart
+- 4005 2 | summoning Aquementas at Lost Rigger Cove with the Book of Aquor to forge a totem that could break Blazerunner's aura
+- 4084 1 | collecting silvery claws and an irontree heart in Felwood for Eridan Bluewind, toward a power to dispel Blazerunner's aura
+- 4141 1 | picking bloodpetals for Muigin, who hoped to train the crater's plant creatures to pester Larion, whom he blamed for it all
+- 4142 1 | showing a bloodpetal to Gregan Brewspewer in Feralas, an expert who might explain the plants' strange intelligence
+- 4143 1 | gathering Atal'ai haze in the temple of Atal'Hakkar for Muigin, the horrid stuff that would let him control the bloodpetals
+- 4145 1 | cutting down the bloodpetal pests Muigin kept sending to annoy Larion, who blamed him for getting them lost
+- 4243 1 | searching the apes' lair at Fungal Rock for A-Me 01, Karna Remtravel's mechanical ape, and finding her dented and powerless
+- 4244 1 | fitting a new mithril casing into A-Me 01 so Karna Remtravel's mechanical ape might run again
+- 4245 2 | escorting the battered A-Me 01 back to Karna Remtravel past the gorillas of Un'Goro
+- 4284 1 | collecting power crystals of four colors for J.D. Collie, who sensed a power in them her experiments had yet to find
+- 4285 1 | finding the northern crystal pylon for J.D. Collie, who could not stop wondering what the pylons were for
+- 4287 1 | locating the eastern crystal pylon to put J.D. Collie's curiosity about the rumored pylons to rest
+- 4288 1 | seeking out the western crystal pylon, in the hope it held the key to J.D. Collie's fruitless crystal experiments
+- 4289 1 | skinning the great apes of northern Un'Goro for Torwa Pathfinder, pelts to clothe the tribe and proof of strength
+- 4290 2 | stealing meat from Lar'korwi's freshest kill to provoke the beast that had once hunted down Torwa Pathfinder's brother
+- 4291 1 | provoking Lar'korwi's ravasaur mates for their pheromone glands, the bait Torwa Pathfinder needed to draw him out
+- 4292 3 | baiting Lar'korwi with stolen meat and his mates' scent, and bringing the monster's head to Torwa Pathfinder
+- 4301 2 | besting U'cha, the huge ape Torwa Pathfinder called one of the Earth Mother's greatest sons, and bringing back his pelt
+- 4491 3 | leading Ringo, overcome by heat on Fire Plume Ridge, back to his friend Spraggle Frock, with a canteen ready in case he fainted
+- 4492 1 | looking for Ringo on Fire Plume Ridge, a friend Spraggle Frock feared for after he went exploring the volcano
+- 4501 1 | thinning the pterrordax that menaced the crater's travelers, so the terrified Spraggle Frock might dare to leave camp
+- 4502 1 | gathering ash from the volcano's fire elementals for Liv Rizzlefix in Ratchet, who studied the crater's volcanic activity
+- 4503 1 | collecting webbed scales from pterrordaxes and diemetradons for the wings of Shizzle's flying machine, his way home
+# Silverpine Forest
+- 99 2 | claiming enchanted shackles from the cursed folk of Pyrewood, the last piece Dalar Dawnweaver needed to undo Arugal's magic
+- 421 1 | killing Moonrage Whitescalps to prove worthy of Dalar Dawnweaver, who meant to rid Silverpine of Arugal's curse
+- 422 1 | retrieving the Remedy of Arugal from the spellbooks at the wheat farm, so Dalar Dawnweaver could learn the magic behind it
+- 423 1 | collecting enchanted shackles from Moonrage worgen for Dalar Dawnweaver, the items Arugal used to prop up his weak magic
+- 424 2 | beheading Grimson the Pale, the tainted foreman of the Deep Elem Mine, to win the mine for Varimathras's advance
+- 425 3 | killing Ivar the Foul, the ghoul who had mauled Quinn Yorick, so the wounded Deathstalker would have time to heal
+- 428 1 | finding the Deathstalkers Rane and Quinn Yorick, missing for weeks on a scouting mission through northern Silverpine
+- 429 1 | gathering discolored worg hearts so Apothecary Renferrel could brew a healing potion for the badly mauled Quinn Yorick
+- 430 1 | delivering Apothecary Renferrel's potion to Quinn Yorick at the Ivar Patch, so he could travel again
+- 435 2 | escorting Erland past the hungry wolves to the Deathstalker Rane Yorick, who had feared him lost
+- 437 3 | assaulting the rot hides at the Dead Fields until the banshee Nightlash appeared, and destroying her for the Forsaken
+- 438 2 | investigating the Decrepit Ferry, where the Scourge gathered, and finding a heap of wrapped corpses bound for Fenris Isle
+- 439 2 | bringing High Executor Hadrec a ring from a fresh corpse at the ferry, proof the rot hides were robbing Tirisfal's graves
+- 440 1 | showing Deliah's ring to Magistrate Sevren in Brill, who confirmed the rot hide gnolls had stolen her body
+- 441 1 | returning Deliah's ring to her husband Raleigh in the Undercity, who felt nothing for her death but burned for revenge
+- 442 3 | storming Fenris Isle to destroy Thule Ravenclaw, the traitor mage who led the rot hides for the Scourge
+- 443 2 | draining ichor from the rot hide gnolls on Fenris Isle so Apothecary Renferrel could learn who was behind them
+- 444 1 | carrying rot hide ichor to Bethor Iceshard in the Undercity, whose knowledge of magic might unravel the gnolls' origin
+- 446 1 | delivering Bethor Iceshard's scroll to Apothecary Renferrel, the makings of a potion against Thule Ravenclaw's spells
+- 447 1 | gathering bear hearts and spider blood for Master Apothecary Faranell, ingredients of a New Plague for Scourge and humans alike
+- 449 1 | carrying the Deathstalkers' report to High Executor Hadrec, word of a Scourge presence no one had accounted for
+- 450 1 | slipping into the Pyrewood inn for the journal of Apothecary Berard, cursed by Arugal, who had studied an ancient plague
+- 451 1 | gathering lake moss and a rare murloc tumor for Master Apothecary Faranell's New Plague, as Berard's journal advised
+- 452 2 | helping Deathstalker Faerleia ambush the Pyrewood Council, the puppets through which Arugal ruled the cursed village
+- 460 2 | reuniting the head of Alaric, Thule's bodyguard, with the body the gnolls had buried in an unmarked grave at Fenris Keep
+- 461 1 | carrying Alaric's body to a hidden alcove in Fenris Keep, where he wished to rest within the walls he had loved
+- 477 1 | prying open a Dalaran wizards' crate near Pyrewood, to learn why they were shipping supplies to backwater Ambermill
+- 478 1 | handing the strange pendant from the wizards' crate to Shadow Priest Allister, a clue to Dalaran's aims at Ambermill
+- 479 2 | stripping Dalaran pendants from the wizards at Ambermill to slow their work on the dormant ley energy node
+- 480 3 | killing the Dalaran archmage reawakening Ambermill's ley energy node, and taking his staff to Shadow Priest Allister
+- 481 1 | showing the rune-inscribed pendant to Dalar Dawnweaver, who knew it as a Kirin Tor tool for channeling magic
+- 491 1 | handing the Woven Wand, token of a friendship Thule had betrayed, to his old colleague Bethor Iceshard
+- 493 1 | carrying Apothecary Renferrel's findings on the New Plague to Apothecary Lydon in Tarren Mill, to speed the work
+- 516 2 | finding Beren's Peril, where undead were massing for an attack, and striking them first for Shadow Priest Allister
+- 530 3 | killing Valdred Moray at the Greymane Wall and bringing his hands to Raleigh Andrean, whose wife they had murdered
+- 6323 1 | flying Podrig's order to Gordon Wendham in the Undercity, for weapons to replace those the Deathguards had lost
+- 6324 1 | bringing Gordon's crate of weapons back to Deathguard Podrig, so the Sepulcher's guards would not be caught unprepared
+# Westfall
+- 9 1 | clearing the Harvest Watchers from Farmer Saldean's fields and his neighbors', in the hope Westfall might prosper again
+- 12 1 | hunting Defias Trappers and Smugglers across Westfall's farms to earn a place in Gryan Stoutmantle's People's Militia
+- 13 1 | driving Defias Pillagers and Looters from the Gold Coast Quarry and Moonbrook, the next step of training in the Militia
+- 14 2 | rooting out the Defias who had fled to the Dagger Hills, the deed that won induction into the People's Militia
+- 22 1 | fetching Goretusk livers for Salma Saldean's famous meat pie, a feast for her and Farmer Saldean
+- 36 1 | carrying Verna Furlbrow's recipe for Westfall stew to Salma Saldean before the Furlbrows left their overrun farm
+- 38 1 | gathering vulture meat, goretusk snouts, murloc eyes and okra so Salma Saldean could cook Verna's Westfall stew
+- 48 1 | fetching Holy Spring Water from a hidden well in the south for Grimbooze Thunderbrew's rhyming recipe for sweet amber
+- 49 1 | gathering sacks of barley, rye and corn for the mash of Grimbooze Thunderbrew's sweet amber
+- 50 1 | supplying truesilver so Grimbooze Thunderbrew could fashion a still for his private stash
+- 51 1 | fetching a sycamore branch for the charcoal that would filter Grimbooze Thunderbrew's spirit
+- 53 1 | hauling charred oak for the barrel that would age Grimbooze Thunderbrew's sweet amber, ending in a rhyming toast
+- 64 1 | retrieving Farmer Furlbrow's pocket watch, a wedding gift from Verna's father, from the farmhouse thieves had overrun
+- 102 1 | patrolling the grasslands for the gnolls who worked with the Deadmines thieves, and bringing their paws to Captain Danuvin
+- 103 1 | taking flasks of oil from the Harvest Monsters so Captain Grayson could keep the lighthouse lit for sailors near the rocks
+- 104 3 | slaying Old Murk-Eye, the murloc whose raids killed the lighthouse keeper's family, for the ghost of Captain Grayson
+- 117 1 | finding hops for Grimbooze Thunderbrew so his lager would taste more like beer and less like stew
+- 132 1 | bringing Wiley's note to Gryan Stoutmantle, a warning that the Defias were working with gnolls, kobolds and even goblins
+- 135 1 | showing Wiley's note to Mathias Shaw of SI:7, to learn whether the Defias had ties to the Stonemasons
+- 136 1 | following the first of Captain Sanders' clues to a footlocker half-buried by the one rusty anchor on the coast
+- 138 1 | following the next clue to Captain Sanders' treasure east up the bluffs to an old barrel by a ruined chimney
+- 139 1 | chasing Captain Sanders' trail of clues north to an empty jug beside a lone windmill on the sea bluffs
+- 140 1 | swimming west to an island for Captain Sanders' treasure chest, the end of his trail of clues
+- 141 2 | carrying Shaw's report to Stoutmantle, naming the stonemason Edwin VanCleef, at odds with the King, as the likely Defias leader
+- 142 2 | hunting down the Defias Messenger on Westfall's roads for the message that proved VanCleef led the Brotherhood
+- 152 1 | clearing the murlocs from the Westfall coast for Captain Grayson, so shipwrecked sailors would be safe on its beaches
+- 153 1 | collecting red leather bandanas from Defias gang members for Scout Galiaan, who tracked the shifting Defias front by them
+- 155 3 | escorting the Defias Traitor to the Brotherhood's secret hideout, so Stoutmantle would know where VanCleef was hiding
+- 184 1 | returning the Furlbrows' stolen deed, which the thieves meant to forge, so the family might one day reclaim their land
+- 6281 1 | flying Quartermaster Lewis's note to Osric Strang in Stormwind, a request for armor as Sentinel Hill's supply dwindled
+- 6285 1 | bringing Osric's crate of armor back to Quartermaster Lewis for the fighting men and women of Sentinel Hill
+# Undercity
+- 232 1 | taking Apothecary Zinge's order to Alessandro Luca for a testing kit, the start of her plan to profit from Keever's research
+- 357 2 | stealing the spellbook of the lich on Brightwater Lake's island, which told Bethor Iceshard he was Gunther Arcanus
+- 736 1 | gathering three relics of power for Keeper Bel'dugur, the price of Yagyin's Digest and of opening a chapter of the order
+- 864 1 | bringing the sealed field testing kit back to Apothecary Zinge, its data preserved for her study of Keever's research
+- 1164 2 | killing Kenata Dabyrie and her sons at their Arathi farmstead for Genavie Callow, who wanted their heads for robbing her
+- 1358 1 | carrying wolf heart samples to Apothecary Helbrim in the Barrens, who studied Lordaeron toxins in Kalimdor's beasts
+- 1359 1 | delivering samples of the strangely toxic wolf hearts to Apothecary Zinge, a new poison for the Society to study
+- 2995 2 | burning the Highvale records at the Quel'Danil Lodge to cut the high elves' lines of communication with would-be allies
+- 3568 2 | filling vials at the tide pools of the Ruins of Eldarath so Chemist Cuely could learn what had sickened Thersa Windsong
+- 3569 2 | giving Cuely's elixir to the ailing Thersa Windsong, who had found no other cure, in the hope it would save her
+- 4293 1 | testing slime samples from Felwood for the most corrupt, so Chemist Fuely could study the creatures of its Fel-touched pools
+- 4294 1 | collecting the purest slimes of Un'Goro Crater for Chemist Fuely, who wondered how creatures untouched by corruption evolved
+- 4642 1 | releasing a Felwood ooze beside a primal Un'Goro ooze for Chemist Fuely, and bringing back what was left of the meeting
+- 5049 1 | finding Jeremiah Payson, the Undercity cockroach vendor, to give him a package from his long-dead sister Janice Felstone
+# Stratholme
+- 5122 2 | recovering the Medallion of Faith so Aurius could leave the chapel and go after Baron Rivendare, who had helped corrupt him
+- 5125 3 | seeing Aurius through his reckoning in Stratholme, which left the paladin dying but with his soul saved
+- 5212 2 | gathering plagued flesh in Stratholme for Betina Bigglezink, who feared that the plague was growing stronger
+- 5213 2 | searching the ziggurats of Stratholme for Scourge data, to learn what had changed in the plague's active agents
+- 5214 1 | digging through the ruins of Fras Siabi's smoke shop for a surviving box of his famous tobacco, for Smokey LaRue
+- 5243 1 | recovering the Argent Dawn's holy water from the supply crates of Stratholme for Leonid Barthalomew the Revered
+- 5251 3 | destroying Archivist Galford and burning the Scarlet Archive in Stratholme, years of the Crusade's intelligence lost
+- 5262 3 | bringing the head of Balnazzar, the dreadlord posing as Grand Crusader, to Duke Nicholas Zverenhoff as proof
+- 5263 3 | destroying Baron Rivendare, Kel'Thuzad's errand boy who ruled Stratholme, and bringing his head to Duke Nicholas Zverenhoff
+- 5282 2 | freeing the restless souls of Stratholme's ghostly citizens with Egan's blaster, in the hope his mother was among them
+- 5463 2 | laying the Keepsake of Remembrance on Menethil's Gift, the unholy ground in Stratholme where Ras Frostwhisper became a lich
+- 5848 2 | uncovering the painting Of Love and Family beneath a picture of the twin moons in the Scarlet Bastion, for Tirion Fordring
+- 6163 3 | slaying Ramstein the Gorger, the abomination that had overwhelmed Nathanos Blightcaller on his stead, for his vengeance
+- 8945 3 | rescuing Ysida Harmon from Baron Rivendare, finishing what her husband Anthion had attempted
+- 8968 2 | summoning Jarien and Sothos with the Brazier of Beckoning and slaying them for the left piece of Lord Valthalak's amulet
+- 8991 2 | calling Jarien and Sothos back with the Brazier of Beckoning for the right piece of Lord Valthalak's amulet
+# Northshire Valley
+- 6 3 | hunting down Garrick Padfoot, a cutthroat who had plagued Elwynn's farmers and merchants, for Deputy Willem's bounty
+- 15 1 | clearing kobold workers from their camp by the Echo Ridge Mine, to learn for Marshal McBride how far the infestation ran
+- 18 1 | pulling red burlap bandanas from the Defias Brotherhood, a new band of thieves lurking across the river from Northshire
+- 21 2 | purging the Echo Ridge Mine of kobold laborers before they gained a deeper foothold in Northshire
+- 33 1 | hunting timber wolves for the tough meat Eagan Peltskinner wanted for his wolf steaks
+- 54 1 | carrying Marshal McBride's papers to Marshal Dughan in Goldshire, a commission as Acting Deputy to help keep Elwynn safe
+- 3904 2 | saving Milly Osworth's grape harvest from the overrun vineyards, before Defias thieves or trampling guards ruined it
+- 3905 1 | delivering Milly's grape manifest to Brother Neals in the abbey's bell tower, glad news of fresh grapes for more wine
+# Blackfathom Deeps
+- 971 2 | recovering the Lorgalis Manuscript from Blackfathom for Gerrig Bonegrip, who collected lore that could awaken Those Who Sleep
+- 1198 1 | seeking out Argent Guard Thaelrid in Blackfathom Deeps, a scout of the Argent Dawn who had not reported back in weeks
+- 1199 2 | tearing pendants from the Twilight's Hammer cultists massing with the naga in Blackfathom, to thwart their evil plan
+- 1200 3 | slaying Twilight Lord Kelris, who sacrificed innocents to Aku'Mai in a ruined temple of Elune, for Dawnwatcher Selgorm
+- 1275 1 | harvesting satyr and naga brain stems in Blackfathom for Gershala Nightwhisper, who feared the blood elves would be deformed too
+- 6561 3 | killing Twilight Lord Kelris, who fed innocents to Aku'Mai in a fallen temple of Elune, and taking his head to Bashana Runetotem
+- 6563 1 | prying sapphires of Aku'Mai from the walls of Blackfathom before the naga could make use of their elemental power
+- 6921 2 | retrieving the fathom core from the Moonshrine Ruins, so the Earthen Ring could learn what the Twilight's Hammer was doing
+# sort 1
+- 8446 2 | finding a druid to decipher a Nightmare Engulfed Object, whose corruption seemed tied to the dragons out of the Dream
+- 8447 2 | waiting as Keeper Remulos cleansed the nightmare-engulfed object in Lake Elune'ara, revealing a ring of Malfurion's
+# Ruins of Ahn'Qiraj
+- 8791 3 | presenting the head of Ossirian the Unscarred at Cenarion Hold, the cruel menace of the Ruins finally laid to rest

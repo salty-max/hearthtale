@@ -1,0 +1,288 @@
+---
+kind: why
+---
+# Zul'Gurub
+- 8053 1 | bringing Primal Hakkari Bindings out of Zul'Gurub to Jin'rokh the Breaker, a heathen's first proof among the Zandalar freethinkers
+- 8054 1 | wresting a Primal Hakkari Shawl from Hakkar's minions for Jin'rokh, honouring the freethinkers who never wavered against the Blood God
+- 8055 1 | taking a Primal Hakkari Tabard most painfully from the fools of Zul'Gurub, to prove worth as a freethinker to Jin'rokh once and for all
+- 8056 1 | offering Maywiki of Zuldazar a Primal Hakkari Armsplint from Zul'Gurub, to earn the bracers the Zandalar augurs prize above all others
+- 8057 1 | proving worth to Maywiki of Zuldazar with a Primal Hakkari Stanchion, for bracers fit for a Zandalar haruspex
+- 8058 1 | claiming vengeance on Hakkar's minions in the tribe's name, a Primal Hakkari Armsplint for Jin'rokh and the way of the vindicator
+- 8059 1 | carrying a Primal Hakkari Stanchion out of Zul'Gurub so Al'tabim the All-Seeing would teach the power of the demoniac
+- 8060 1 | prying Primal Hakkari Bindings from Zul'Gurub for Al'tabim the All-Seeing, mojo the Zandalar meant to turn on the risen Blood God
+- 8061 1 | fighting Hakkar's minions for a Primal Hakkari Stanchion, so Al'tabim would show what it means to be a Zandalar confessor
+- 8062 1 | hunting Hakkar's minions for Primal Hakkari Bindings, to show Falthir the Sightless how a hunter rates among Zandalar predators
+- 8063 1 | sowing madness in Zul'Gurub for a Primal Hakkari Armsplint, the price Falthir the Sightless set on the first of the madcap's armours
+- 8064 1 | delivering a Primal Hakkari Sash to Maywiki of Zuldazar, its latent power a treasure to the tribe, for a haruspex's belt
+- 8065 1 | taking a Primal Hakkari Tabard from Zul'Gurub to Maywiki of Zuldazar, the offering that made a haruspex revered among the tribe
+- 8066 1 | stalking Hakkar's minions for a Primal Hakkari Shawl, mojo Falthir the Sightless meant to turn against the Blood God's schemes
+- 8067 1 | winning a Primal Hakkari Aegis in Zul'Gurub for Falthir the Sightless, and with it the right to wear the Zandalar predator's mantle
+- 8068 1 | gathering a Primal Hakkari Shawl in Zul'Gurub for Al'tabim the All-Seeing, to earn the honoured mantle of the Zandalar illusionists
+- 8069 1 | wresting a Primal Hakkari Kossack from Zul'Gurub for Al'tabim, the price of an illusionist's robe said never to look the same twice
+- 8070 1 | facing the depravity of Hakkar's Gurubashi for a Primal Hakkari Sash, Al'tabim the All-Seeing's next step against the Blood God
+- 8071 1 | carrying a Primal Hakkari Aegis to Al'tabim the All-Seeing, retribution on Hakkar's minions repaid with a confessor's mantle
+- 8072 1 | weaving madness on the Zandalar's enemies in Zul'Gurub until a Primal Hakkari Girdle earned Falthir's madcap mantle
+- 8073 1 | seizing a Primal Hakkari Aegis from Zul'Gurub for Falthir the Sightless, a feat few thought possible, for the madcap's prized tunic
+- 8074 1 | offering Maywiki of Zuldazar a Primal Hakkari Girdle, proof of evil vanquished in Zul'Gurub, for the belt the Zandalar augurs wear
+- 8075 1 | defeating the evil that seeps out of Zul'Gurub for a Primal Hakkari Tabard, which Maywiki repaid with an augur's hauberk
+- 8076 1 | gaining a Primal Hakkari Sash in Zul'Gurub for Al'tabim the All-Seeing, power the Zandalar needed to survive their enemies
+- 8077 1 | tearing a Primal Hakkari Kossack from Zul'Gurub for Al'tabim the All-Seeing, a victory that assured the tribe Hakkar would not prevail
+- 8078 1 | wreaking havoc on Hakkar's minions for a Primal Hakkari Girdle, Jin'rokh's proof that Zul'Gurub had tasted Zandalar vengeance
+- 8079 1 | making Hakkar's minions pay for the mojo stolen from the Zandalar, a Primal Hakkari Kossack for Jin'rokh and a vindicator's breastplate
+- 8181 3 | demanding the egg from Yeh'kinya once the Mosh'aru Tablets showed it would bring Hakkar back, only to hear he was already reborn
+- 8183 3 | carrying the Heart of Hakkar to Molthor on Yojamba Isle, proof that the Soulflayer had been slain
+- 8184 1 | taking a Primal Hakkari Idol from Hakkar's mightiest lieutenants so Zanza could work the Presence of Might, an old troll enchantment
+- 8185 1 | searching the jinxed hoodoo for a punctured voodoo doll, half of what Zanza needed to make the Syncretist's Sigil
+- 8186 1 | stripping a Primal Hakkari Idol from the Hakkari lieutenants for Zanza, whose old troll mojo would become Death's Embrace
+- 8187 1 | collecting a Primal Hakkari Idol and a punctured voodoo doll for Zanza's Falcon's Call, an enchantment to show the Hakkari no mercy
+- 8188 1 | rummaging through Zul'Gurub's refuse for a voodoo doll and taking an idol from Hakkar's lieutenants, for Zanza's Vodouisant's Vigilant Embrace
+- 8189 1 | bringing Zanza a Primal Hakkari Idol and a punctured voodoo doll, the makings of the ancient enchantment called Presence of Sight
+- 8190 1 | wresting a Primal Hakkari Idol from Jin'do or the Bloodlord so Zanza could bind the Hoodoo Hex, an old troll enchantment
+- 8191 1 | digging a punctured voodoo doll out of the jinxed hoodoo and taking an idol from Hakkar's lieutenants, for Zanza's Prophetic Aura
+- 8192 1 | gathering what Zanza needed for the Animist's Caress, a Primal Hakkari Idol from Hakkar's lieutenants and a punctured voodoo doll
+- 8201 3 | stringing the heads of the high priests who channelled the troll gods' power into Hakkar, to weaken him, for Exzhal on Yojamba Isle
+- 8227 1 | returning the measuring tape Nat Pagle lost in Zul'Gurub, the one he had measured his biggest fish with
+- 8240 1 | destroying a Hakkari Bijou at the Altar of Zanza, one more wrested from the Blood God's minions
+# Felwood
+- 939 2 | bringing Xavaric's strange flute and Jadefire Felbind samples to Eridan Bluewind, who sensed ancient ones suffering in them
+- 996 1 | spending two Cenarion plant salves on a corrupted windblossom, which shed its twisted form and blossomed healthy
+- 998 1 | cleansing a windblossom of Felwood's corruption with two doses of Cenarion plant salve
+- 1514 1 | nursing a corrupted windblossom back to health with a pair of Cenarion plant salves
+- 2523 1 | cleansing a corrupted songflower with Cenarion plant salve until it shed its tainted form and bloomed vibrant again
+- 2878 1 | healing a corrupted songflower, a little Cenarion salve and it shook off its corruption and blossomed
+- 3363 1 | purifying a songflower that Felwood's corruption had twisted, watching it blossom healthy under the Cenarion salve
+- 4101 1 | gathering blood amber from the Warpwood elementals of Irontree Caverns, for Arathandris Silversky to study in hope of saving the rest of Felwood
+- 4102 1 | cutting blood amber from Warpwood elementals beyond hope of cleansing, so Maybess Riverbreeze could seek a way past Felwood's corruption
+- 4113 1 | restoring another corrupted songflower with Cenarion plant salve, one more plant of Felwood blooming clean
+- 4114 1 | salving a sick songflower back to health, its corrupted form falling away into a vibrant bloom
+- 4115 1 | purifying a corrupted windblossom, two salves from the Cenarion Circle and it bloomed vibrant again
+- 4116 1 | treating a corrupted songflower with Cenarion plant salve and seeing it blossom into a healthy plant
+- 4117 1 | working three Cenarion plant salves into a corrupted whipper root until it shed its corruption and grew healthy
+- 4118 1 | reviving a songflower from its corruption with a dose of Cenarion plant salve
+- 4119 1 | pouring four Cenarion plant salves on a corrupted Night Dragon plant until it shed its corruption and bloomed healthy
+- 4221 1 | healing a windblossom gone foul in Felwood, two Cenarion salves bringing back a vibrant bloom
+- 4222 1 | restoring a corrupted windblossom with two Cenarion plant salves, one more plant taken back from the corruption
+- 4261 3 | leading the ancient spirit Arei out of Felwood, trapped in the land's suffering since the Legion came, so it might finally rest
+- 4343 1 | anointing a corrupted windblossom with two Cenarion salves and watching it shed the corruption
+- 4401 1 | tending a corrupted songflower with Cenarion salve until it bloomed bright and whole
+- 4403 1 | treating a twisted windblossom with Cenarion plant salves until it blossomed whole and healthy
+- 4421 3 | killing Xavathras and his Jadefire satyrs at the Ruins of Constellas, who spread the corruption to every creature, for Eridan Bluewind
+- 4441 2 | fetching blessed water from the Temple of the Moon so Eridan Bluewind could try to free the ancient bound in Xavaric's flute
+- 4443 1 | cleansing a corrupted whipper root with three doses of Cenarion salve, leaving a vibrant, healthy plant
+- 4444 1 | healing a whipper root sick with Felwood's corruption, three Cenarion salves to bring it back
+- 4445 1 | purifying a corrupted whipper root, three Cenarion plant salves and it blossomed anew
+- 4446 1 | saving a corrupted whipper root with three Cenarion plant salves, the taint falling away from it at once
+- 4447 1 | cleansing a corrupted Night Dragon plant with four Cenarion salves, one more of Felwood's plants won back
+- 4448 1 | reviving a Night Dragon plant from Felwood's corruption, four doses of Cenarion salve to make it vibrant again
+- 4461 1 | restoring a whipper root twisted by corruption, three Cenarion salves turning it vibrant and healthy
+- 4462 1 | healing a corrupted Night Dragon plant with four Cenarion plant salves, the plant blossoming healthy at once
+- 4464 1 | mending a songflower twisted by corruption, the Cenarion salve turning it vibrant in moments
+- 4465 1 | freeing a songflower from Felwood's corruption with Cenarion plant salve, so it could bloom healthy again
+- 4466 1 | curing a corrupted windblossom with a double dose of Cenarion salve, its blossoms coming back vibrant
+- 4467 1 | reclaiming a windblossom from the corruption with two Cenarion plant salves
+- 4505 1 | drawing water from the Jadefire satyrs' corrupted moonwell for Winna Hazzard, who meant to turn the corruption against the Alliance
+- 4506 2 | loosing Winna Hazzard's kitten by the corrupted moonwell and bringing it back, her experiment in making corrupted sabers for the Horde
+- 4521 1 | clearing the owlbeasts of Winterspring for Trull Failbane, who suspected the wildkin guarded secrets of the night elves
+- 4721 2 | culling the berserk owlbeasts by the caves of southern Winterspring, maddened by the very thing Trull Failbane hoped they guarded
+- 4741 1 | hunting the moontouched owlbeasts of northern Winterspring, fiercer still, to push Trull Failbane's search deeper
+- 4906 3 | slaying Xavaric, who reaped the spoils of the corrupted moonwell, and his Jadefire betrayers to the north, for Eridan Bluewind
+- 5155 2 | cutting into the Shadow Council's forces in Jaedenar, where they plot with the Burning Legion, to win Greta Mosshoof's trust
+- 5156 2 | scouting Shatter Scar Vale for Taronn Redfeather, to see whether its infernal craters still held corrupt water, and finding they did
+- 5157 1 | filling a canteen at Jaedenar's corrupted Moon Well so Greta Mosshoof could break the Shadow Council's protective braziers
+- 5158 1 | carrying the corrupt moonwell water to Islen Waterseer in the Barrens, to ask the spirits of water to purify it
+- 5159 1 | bringing the water Islen Waterseer's spirits had purified back to Greta Mosshoof in Felwood, a sign the task was blessed
+- 5165 2 | dousing the four braziers of Shadow Hold with purified water so Greta Mosshoof could scry past the Shadow Council's wards
+- 5202 2 | searching Jaedenar for whatever a Shadow Council member's strange red key unlocked, and finding a prisoner desperate to escape
+- 5203 3 | escorting Arko'narin out of Shadow Hold with Trey's sword Lightforge, so she could warn her superiors of what was happening there
+- 5204 3 | killing the succubus Rakaiah, who had tortured Trey Lightforge, and gathering his remains so Arko'narin might have some peace
+- 5242 3 | killing Shadow Lord Fel'dan, head of the Shadow Council in Jaedenar and maker of pacts with the Legion, and his two succubi
+- 5385 2 | carrying Trey Lightforge's remains to Jessir Moonbow, so the fallen paladin could be given proper respects by his friends
+- 5882 1 | trading the spoils of the hunt to Arathandris Silversky for Cenarion plant salve, to purify the corrupted plants of Felwood
+- 5883 1 | bringing Arathandris Silversky vitriol mined in Felwood, the makings of the plant salve that purifies its corrupted plants
+- 5884 1 | gathering what Arathandris Silversky could purify into Cenarion plant salve, every bit of it a help in taking back Felwood
+- 5885 1 | handing over a skinner's haul to Arathandris Silversky for plant salves, to reclaim Felwood from the corruption
+- 5886 1 | giving up a lesser nether essence, the most potent stuff for turning swords into plowshares, for Arathandris Silversky's plant salve
+- 5887 1 | trading what the hunt had yielded to Maybess Riverbreeze for Cenarion plant salve, to scour Felwood for corrupted plants
+- 5888 1 | handing Maybess Riverbreeze vitriol from the mines of Felwood, the more of it the more salve for the corrupted plants
+- 5889 1 | bringing gathered goods to Maybess Riverbreeze to be purified into salve, every bit a help in taking back Felwood
+- 5890 1 | supplying Maybess Riverbreeze with a skinner's haul for plant salves, to reclaim Felwood from the corruption
+- 5891 1 | spending a lesser nether essence with Maybess Riverbreeze, the most potent thing for her salves, to heal Felwood's plants
+- 6162 3 | killing Overlord Ror, the befouled furbolg that Dreka'Sur's husband went after and never came back from, so his widow could rest
+- 8460 1 | driving back the corrupted Deadwood furbolgs near the Emerald Sanctuary, to earn the trust of Grazle and the wary Timbermaw
+- 8470 1 | taking a Deadwood ritual totem into Timbermaw Hold, where the furbolgs hoped to learn from it what poisoned their brethren's minds
+# sort 262
+- 5621 2 | healing the wounded Sentinel Shaya near Dolanaar and fortifying her, the test that earned a first robe of Elune's order
+- 5624 2 | healing Guard Roberts, hurt by the lake east of Goldshire, and fortifying him, to earn the robes of a priest of the Light
+- 5625 2 | mending Mountaineer Dolf's wounds outside Kharanos and granting him Fortitude, the test that earned Maxan Anvol's robe
+- 5648 2 | healing Grunt Kor'ja, hurt fighting Proudmoore's old troops south of Razor Hill, and blessing her, so she could defend the town again
+- 5650 2 | healing Deathguard Kel, wounded guarding Brill from gnolls, and fortifying him for duty, Dark Cleric Beryl's test of the light
+- 7622 3 | saving the peasants fleeing Stratholme, as Eris Havenfire never could, so her cursed existence would not go on
+- 8255 1 | hunting the mosshoof coursers of Azshara for their glands, first part of Ogtinc's restorative salve to heal Felwood
+- 8256 1 | taking an ichor of undeath from the lingering highborne of Eldarath, the one part poison the Felwood salve called for
+- 8257 3 | slaying the green drake Morphaz in the sunken temple of Atal'Hakkar for the blood Greta Mosshoof needed to begin healing Felwood
+# Hillsbrad Foothills
+- 494 1 | running Deathstalker Lesh's coded word to Tarren Mill, the signal that Hillsbrad was ripe for attack
+- 496 1 | gathering gray bear tongues and creeper ichor for Apothecary Lydon, who sought killing agents to plague the humans
+- 498 3 | freeing Drull and Tog'thar from Durnholde Keep, orc warriors the humans had taken captive while they investigated the Syndicate
+- 499 1 | giving Lydon's assistant Umpi a taste of the Elixir of Suffering, a trial of what the Dark Lady planned for humans and Scourge
+- 501 1 | collecting mountain lion blood for Apothecary Lydon's death-brew, in the service of the New Plague
+- 502 1 | feeding Farmer Ray's dog Stanley the Elixir of Pain, Apothecary Lydon's test of a brew he hoped would please Lady Sylvanas
+- 503 3 | freeing Gol'dir, leader of the Warchief's expedition, from the Syndicate in the Alterac Mountains, who made him haul burdens and dig
+- 506 2 | carrying back Gol'dir's word that Aliden Perenolde meant to enslave orcs like Blackmoore, and his mistress wore the Warchief's pendant
+- 507 3 | killing Lord Aliden Perenolde, who would have made slaves of the orcs, and asking his mistress Elysa for Taretha's pendant
+- 508 3 | bringing Taretha's pendant, given up by a frightened Elysa, back to Krusk, the small thing the Warchief had spent so much to recover
+- 509 1 | picking Mudsnout Blossoms at Nethander Stead for Apothecary Lydon's next elixir, to spread death and disease across the land
+- 513 1 | rushing Lydon's Mudsnout Composite to Master Apothecary Faranell in the Undercity, to be treated with his colloid of decay
+- 515 1 | gathering a troll's blood potion, daggerspine scales and torn fin eyes to activate the contagion in Lydon's mudsnout mixture
+- 517 1 | stealing a keg of Shindigger Stout from the dwarves of Dun Garok, so Lydon's plague would not be wasted on a mere frog or dog
+- 518 1 | thinning the Crushridge ogres who had overrun the ruins of Alterac, so Melisara could strike at their leader Mug'Thol
+- 519 2 | taking the heads of Targ, Muckrake and Glommus, Mug'Thol's loyal lieutenants, for Melisara in Tarren Mill
+- 520 3 | killing Mug'Thol and taking the Crown of Will from him, to end the Crushridge resistance to the Dark Lady
+- 521 2 | carrying the Crown of Will, the relic Mug'Thol used to defy the Dark Lady, to Sharlindra in the Undercity
+- 524 3 | leaving a plagued keg of Shindigger Stout for the captured Hillsbrad farmers, Apothecary Lydon's grim test of his new elixir
+- 527 2 | raiding the northern farms of Hillsbrad Fields and executing Farmer Ray and Farmer Getz, to cut the humans' food supply
+- 528 2 | hunting down the Hillsbrad peasants who had fled to the southern orchards, as the grip of death tightened on the town
+- 529 2 | killing Blacksmith Verringtan and his apprentices, who armed the townsfolk of Hillsbrad, and seizing a shipment of their iron
+- 532 3 | killing Magistrate Burnside and the Hillsbrad council, destroying their Proclamation and stealing the town registry, to break the town
+- 533 2 | searching the Syndicate camp north of Tarren Mill for any word of where the humans were holding Gol'dir, for Krusk
+- 536 1 | fighting the Torn Fin murlocs down the Western Strand in place of Lieutenant Farren Orinelle, who could barely rouse himself to obey Redpath
+- 539 2 | killing Foreman Bonds and his miners at the Azureload Mine, so its iron would arm the Dark Lady's soldiers instead
+- 541 3 | laying siege to Dun Garok and killing Captain Ironhill, to show the dwarves what aiding the humans would cost them
+- 544 2 | hunting down the Forsaken traitors held at the Lordamere Internment Camp and recovering the artifacts they stole from the Dark Lady
+- 545 1 | thinning Dalaran's summoners and their elemental slaves, so Magus Voidglare could search the ruins outside the dome for treasures
+- 546 1 | collecting human skulls for Deathguard Samsa, who envied the fighting in Hillsbrad from his post in Tarren Mill
+- 547 1 | getting Deathguard Humbert's sword back from the dwarven scouts of Dun Garok, who stole his gear while he gathered firewood
+- 549 1 | cutting down Syndicate rogues and watchmen at Durnholde Keep, all of them wanted dead by order of Lady Sylvanas
+- 550 2 | carrying Darthalia's sealed commendation for the Battle of Hillsbrad to Varimathras, word of a decisive blow against the Alliance
+- 552 1 | recovering Helcular's Rod from the yeti in his old ritual lair, for an apprentice bent on vengeance against Southshore
+- 553 3 | charging Helcular's Rod at his three flames and driving it into his grave in Southshore, the apprentice's vengeance on the town
+- 555 1 | hunting snapjaw turtles near Lake Lordamere so Chef Jessen could serve Southshore's famous Soothing Turtle Bisque again
+- 556 1 | gathering worn stone tokens, the means Dalaran's wizards used to control elementals, for Magus Voidglare to study
+- 557 1 | taking bracers of earth binding from Dalaran's elementals, the bonds that held them in a mage's service, for Magus Voidglare
+- 559 1 | collecting murloc heads on the Western Strand for Lieutenant Farren Orinelle, proof for Redpath that the murlocs were dealt with
+- 560 1 | carrying the dripping sack of murloc heads to Marshall Redpath for Farren Orinelle, who could not stand to touch them
+- 562 1 | putting down the Daggerspine naga for Lieutenant Farren Orinelle, who hoped the deed would win him a transfer back to Stormwind
+- 563 1 | carrying Farren Orinelle's report on the naga to Major Samuelson in Stormwind Keep, his hope of being reassigned to the city
+- 564 2 | culling the mountain lions that came down from Alterac to prey on Darren Malvew's horses
+- 565 1 | gathering wool, fine thread, yeti fur and a Hillman's Cloak so the great Bartolo Ginsetti could sew his famous Yeti Fur Cloak
+- 566 3 | killing Baron Vardus, a Syndicate leader wanted for crimes against the Forsaken, and bringing his head to Darthalia
+- 567 2 | hunting the four Hillsbrad humans wanted for the murders of Forsaken and an ambush on supplies from the Undercity
+- 658 2 | tracking down a Forsaken courier near the Go'Shek Farm for her sealed folder, which might shed light on what was happening in Hillsbrad
+- 659 1 | looking for Quae and Kinelory, Phin Odelic's friends gone quiet at the Go'Shek Farm while seeking proof the undead were at work
+- 660 2 | protecting Kinelory as she stole Apothecary Jorell's research from the farm before it could reach Tarren Mill
+- 661 1 | bringing Phin Odelic word that Quae and Kinelory were alive, and the research Kinelory took from the Go'Shek Farm
+- 676 1 | proving strength against the Boulderfist ogres before going to the aid of Hammerfall, under attack and close to falling
+# Blackrock Depths
+- 3802 3 | killing Fineous Darkvire for the hammer Ironfel and setting it in the hands of Franclorn Forgewright's statue, for the key to his city
+- 3907 3 | slaying Lord Incendius and bringing Thunderheart the tablet that named his master, Ragnaros, a general of the Old Gods
+- 3981 2 | finding Commander Gor'shak in the prisons of Blackrock Depths, after a note on an arrow showed him behind bars
+- 3982 2 | holding off the Dark Iron guards come for Gor'shak, who had let himself be captured to gather intelligence for Thrall
+- 4001 2 | questioning Kharan Mighthammer about the kidnapping of Princess Moira Bronzebeard and carrying all he knew to Thrall
+- 4003 3 | slaying Emperor Dagran Thaurissan to break his spell on Princess Moira Bronzebeard, without harming her, for Thrall
+- 4004 2 | bringing Thrall the news that Moira carried Thaurissan's child, an unborn Dark Iron who might one day rule Ironforge
+- 4024 2 | slaying the fire giant Bael'Gar and capturing his inner flame in a dragonflight molt, for Cyrus Therepentous, who craved its heat
+- 4063 3 | destroying Golem Lord Argelmach for Lotwil, who had killed him once before, only to find the head was another machine
+- 4081 2 | cutting down General Angerforge's first line in Blackrock Depths, the killers of the K.E.F.'s 109th division, for Warlord Goretooth
+- 4082 2 | striking at the high-ranking Dark Iron officials training their forces to snuff out the Kargath Expeditionary Force
+- 4121 2 | marching the traitor Grark Lorkrub in shackles through Blackrock Mountain to Lexlort's men waiting in the Searing Gorge
+- 4122 2 | binding Grark Lorkrub, caught selling the K.E.F.'s secrets to the Blackrock orcs, in their fortress in the Burning Steppes
+- 4123 2 | breaching the Lower Vault and defeating Watchman Doomgrip for the Heart of the Mountain, the gem Maxwort Uberglint had sought for years
+- 4126 2 | smashing Dark Iron kegs and taking back the Thunderbrew Lager recipe Hurley Blackbreath stole, for Ragnar Thunderbrew
+- 4132 3 | slaying General Angerforge, who ordered the slaughter of the K.E.F.'s 109th division, to bring him to justice for Warlord Goretooth
+- 4134 2 | taking the stolen Thunderbrew Lager recipe from Hurley Blackbreath for Vivian Lagrave, who wanted its virtues turned to Forsaken ends
+- 4136 2 | tracking Ribbly Screwspigot into Blackrock Depths for his sister Yuka, who wanted him or his head for Baron Revilgaz's bounty
+- 4201 1 | fetching gromsblood, giant silver veins and Golakka spring water for Mistress Nagmara's love potion, aimed at Private Rocknot
+- 4241 2 | searching Blackrock Depths for Marshal Windsor, to bring him back alive or proof he was dead, for Marshal Maxwell
+- 4242 1 | breaking the news to Marshal Maxwell that Windsor had lost his proof and, it seemed, his mind
+- 4263 3 | destroying Lord Incendius, the minion of Ragnaros who kept raising Pyron from the ashes, for Jalinda
+- 4264 2 | showing Marshal Windsor a crumpled note of Thaurissan's, a sign his stolen notes were not lost but being decrypted
+- 4282 3 | killing General Angerforge and Golem Lord Argelmach to take back the lost information Marshal Windsor needed as proof
+- 4286 1 | stripping Dark Iron fanny packs from the dwarves of Blackrock Depths for Oralius, who wanted the good stuff inside
+- 4322 3 | helping Marshal Windsor recover his gear and free his friends from Blackrock Depths before he set off to confront Bolvar
+- 4341 2 | finding Kharan Mighthammer in the prisons of Blackrock Depths for King Magni, who wanted answers about his missing daughter
+- 4361 1 | bearing Kharan's tale back to King Magni Bronzebeard in Ironforge, bad news of his daughter Moira
+- 4362 3 | killing Emperor Dagran Thaurissan to break his spell on Princess Moira, the only way King Magni saw to save his daughter
+- 4363 2 | telling King Magni, as Moira demanded, that the heir to Ironforge would be a Dark Iron, her child by Thaurissan
+- 7201 1 | prying Essence of the Elements from the golems of Blackrock Depths for Vivian Lagrave, who imagined what it could do for the Forsaken
+- 9015 2 | defying High Justice Grimstone in the Ring of the Law to draw out Theldren and his gladiators, for a piece of Lord Valthalak's amulet
+# Elwynn Forest
+- 11 1 | collecting painted armbands from the Riverpaw gnolls infesting Elwynn's borders, for the Stormwind Army's bounty
+- 37 2 | searching the river for Guard Thomas's missing men, Rolf and Malakai, and finding Malakai's medallion beside a stripped corpse
+- 39 1 | telling Marshal Dughan that Rolf and Malakai were dead and the murlocs of eastern Elwynn more than his troops could contain
+- 40 1 | urging Marshal Dughan, for Remy, to send troops east against the murlocs scaring away fish and attacking gentle folk
+- 45 2 | following webbed footprints to the murloc village at Stone Cairn Lake to learn what became of Rolf, and finding his body
+- 46 1 | thinning the murlocs of Stone Cairn Lake for the Stormwind Army's bounty, to help bring eastern Elwynn under control
+- 52 1 | culling the prowlers and young bears that kept attacking the Eastvale Logging Camp, for Guard Thomas
+- 61 1 | carrying William Pestle's candles to his brother Morgan at Pestle's Apothecary in Stormwind
+- 62 1 | scouting the Fargodeep Mine for Marshal Dughan, who had word it had become a haven for kobolds
+- 71 2 | bringing the medallions of Rolf and Malakai back to Guard Thomas, so he would know the fate of his murdered guards
+- 76 1 | exploring the distant Jasperlode Mine to confirm the kobolds there, more bad news for Marshal Dughan
+- 83 1 | taking red linen bandanas from the Defias of Elwynn so Sara Timberlain could make fine linen goods
+- 84 1 | carrying Auntie Bernice's Pork Belly Pie to Billy Maclure, whose memory of the necklace came back with a full belly
+- 86 1 | bringing boar meat to Auntie Bernice for a pork belly pie, the price of Billy Maclure's memory of her lost necklace
+- 87 2 | chasing a big gold-toothed kobold into the Fargodeep Mine for Auntie Bernice's lost necklace, which she had blamed on Billy Maclure
+- 88 2 | killing Princess, the Brackwells' prize-winning sow, before she came back to eat the Stonefields' whole crop
+- 106 1 | carrying Maybell Maclure's love letter to Tommy Joe Stonefield, whose family was the bitter enemy of hers
+- 107 1 | bringing Gramma Stonefield's note to William Pestle in Goldshire, in hope of a potion to unite the young lovers
+- 112 1 | taking crystal kelp from the murlocs of Crystal Lake for William Pestle's invisibility liquor
+- 114 2 | delivering the invisibility liquor to Maybell, so she could slip away from the Maclure Vineyards to see Tommy Joe
+- 123 2 | handing Marshal Dughan a schedule of gold shipments from Elwynn's mines to someone called the Collector
+- 147 3 | hunting down the Collector, who had been stealing gold from Elwynn's mines, and bringing his ring to Marshal Dughan
+- 176 3 | slaying Hogger, the huge gnoll who had overpowered every attempt at his capture, for the bounty in Goldshire
+- 5545 1 | collecting bundles of wood the wolves and bears had driven Raelen's workers away from, so the lumber order would meet its deadline
+# Mulgore
+- 743 1 | testing strength against the Windfury harpies, one of Mulgore's natural enemies, before travelling on, as Ruul Eagletalon advised
+- 745 2 | driving off the Palemane gnolls, who slew Mulgore's wildlife unbridled and scorned all talk, for Baine Bloodhoof
+- 746 1 | smashing the dwarves' digging picks for Baine Bloodhoof, to teach them that hollowing the land is no path to knowledge
+- 748 1 | hunting prairie wolves and plainstriders for a totem to cleanse the Winterhoof Water Well, tainted by goblins
+- 749 1 | examining the burned Venture Co. caravan by Stonebull Lake for Morin Cloudstalker, after salvagers were seen at the wreck
+- 751 2 | bringing Morin Cloudstalker Venture Co. papers from the caravan, proof the goblins were robbing Mulgore of its ore
+- 754 2 | carrying the cleansing totem past the goblins to the Winterhoof Water Well, so its waters could be used again
+- 756 1 | taking claws from prairie stalkers and flatland cougars, whose purity in the hunt Mull Thunderhorn needed for the next cleansing totem
+- 758 2 | performing the cleansing ritual at the Thunderhorn Water Well, a deed its clan's ancestors praised in Mull Thunderhorn's dream
+- 759 1 | hunting prairie wolf alphas for their teeth, the land's offering for the totem to cleanse the last well
+- 760 3 | cleansing the Wildmane Water Well, the last of the wells the goblins poisoned, so clean water would flow in Mulgore again
+- 761 1 | stalking the elusive swoop for its quills, a badge of cleverness and determination for Harken Windtotem
+- 764 2 | sending the Venture Co. a message at their Mulgore mine, so the goblins would not plunder the tauren's land unopposed
+- 765 3 | killing Supervisor Fizsprocket, mastermind of the Venture Co.'s plans to drive the tauren from their land, for his clipboard
+- 766 2 | gathering a wolf heart, cougar femur, plainstrider scale and swoop gizzard to cure the infected bite Mazzranache gave Maur Raincaller
+- 770 2 | showing Ghost Howl's demon-scarred hide in Bloodhoof Village, where an old hunter could hardly believe the great wolf had fallen
+- 771 1 | gathering well stones and ambercorn for Zarlman Two-Moons to brew the Water of the Seers, a step of the Rite of Vision
+- 772 2 | drinking the Water of the Seers before the tribal fire and following the vision, to pass the Rite of Vision
+- 773 2 | seeking the Ancestral Spirit at Red Rocks for the blessing of the Rite of Wisdom, and with it the duty of protecting Thunder Bluff
+- 776 3 | tracking the mighty kodo Arra'chea for its horn, to prove a hunter's skill to Cairne Bloodhoof after the Rites of the Earthmother
+- 833 2 | driving the Bristleback Interlopers from Red Rocks, the sacred burial ground of the tauren, for Lorekeeper Raintotem
+- 861 1 | bringing flatland prowler claws to Melor Stonehoof on the Hunter's Rise, proof of the skill to walk the hunter's path
+# sort 284
+- 171 2 | bringing Randis home to Orphan Matron Nightingale at the end of Children's Week, an orphan who now wanted to be a hero
+- 172 1 | taking on Grunth, an orc orphan whose parents died with honor in battle, as a ward for Children's Week
+- 558 1 | getting Lady Jaina Proudmoore's autograph in Theramore for a young ward who dreamed of being a hero of the Alliance
+- 910 1 | showing a young ward the docks of Ratchet and the ships that sail to Booty Bay, for an orphan who dreamed of being a Horde sailor
+- 911 1 | taking a young ward to the Mor'shan Rampart to see the frontier of Ashenvale, where Horde and Alliance clash
+- 915 1 | fetching Tigule and Foror's Strawberry Ice Cream for a young ward, his favourite treat in the whole wide world
+- 925 1 | asking Cairne Bloodhoof in Thunder Bluff for his hoofprint, a keepsake for a young ward who wanted to be a hero of the Horde
+- 1468 1 | taking on Randis, an orphan whose parents were adventurers, as a ward for Children's Week
+- 1479 1 | taking a young orphan to Darnassus to see the Bough of the Eternals, the bank hollowed out of a tree
+- 1558 1 | leading a young orphan to the middle of the Stonewrought Dam in Loch Modan to look out over the great waterfall
+- 1687 1 | taking a young orphan to the haunted lighthouse off Westfall, where the ghost of Captain Grayson appeared
+- 1800 1 | showing a young ward the old Lordaeron Throne Room, where Arthas took his own father's life
+- 3861 1 | finding Special Chicken Feed for a befriended chicken that seemed to be spelling out a word in the dirt
+- 4822 1 | buying a young ward Tigule and Foror's Strawberry Ice Cream, to him the best strawberry ice cream in the world
+- 5502 2 | bringing Grunth back to Orphan Matron Battlewail at the end of Children's Week, an orphan now set on being a hero
+# sort 101
+- 1579 1 | fishing up the box of gaffer jacks Wizbang Cranktoggle dropped overboard on a tipsy voyage to Auberdine
+- 1580 1 | fishing Wizbang Cranktoggle's lost electropellers out of the waters of Darkshore, dropped the night he passed out
+- 6607 2 | catching rare fish from four far-off waters for Nat Pagle, who promised to teach a thing or two about fishing in return
+- 8193 2 | rushing the catch to the judge, who had stood for hours with nothing to eat, in hope of being declared Master Angler
+# Timbermaw Hold
+- 6031 1 | bringing runecloth to Meilosh, so the Timbermaw could have clothing as fine as a night elf friend's runecloth cloak
+- 6032 1 | supplying Meilosh with mooncloth, sacred to the Timbermaw, for their holy garments, in return for a secret fashioning technique
+- 8461 2 | clearing the corrupted Deadwood camp near Timbermaw Hold for Nafien, who grieved that his tribe must fight its own brethren
+- 8464 2 | thinning the enraged Winterfall furbolgs of Winterfall Village, grown hostile to the Timbermaw, for Salfa
+- 8481 3 | summoning and destroying the demon Xandivious at High Chief Winterfall's cave, the corruption at the root of the Winterfall tribe
+- 8484 2 | bearing the Timbermaw Offering of Peace to King Magni Bronzebeard in Ironforge, a first step toward peace with the furbolgs
+- 8485 2 | carrying the Timbermaw Offering of Peace to Thrall in Orgrimmar, a first step toward peace with the furbolgs
+# Shadowfang Keep
+- 1013 1 | taking the Book of Ur, a Dalaran mage's studies of other worlds, from Shadowfang Keep for Keeper Bel'dugur's collection
+- 1014 3 | killing Arugal in Shadowfang Keep and bringing his head to Dalar Dawnweaver, to free Silverpine from his foul spells
+- 1098 2 | searching Shadowfang Keep for the deathstalkers Adamant and Vincent, sent to scout it before the assault, and finding Vincent dead

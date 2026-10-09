@@ -1,0 +1,273 @@
+---
+kind: why
+---
+# Alterac Valley
+- 5892 1 | hauling Dun Baldar's stored supplies out of the Irondeep mine, which the Alliance no longer had the troops to guard against the troggs
+- 5893 1 | bringing the Frostwolf supplies cached in the Coldtooth mine back to the keep, now that the clan could spare no warriors to hold it
+- 6801 1 | offering up the blood of slain Stormpike soldiers so the Frostwolf could call Lokholar the Ice Lord down on their enemies
+- 6846 1 | carrying the orders that left the assault to a commander's will, and that will was to strike at once
+- 6847 2 | recovering Master Ryson's All Seeing Eye from the Winterax trolls' caves, a cursed thing the Syndicate would sell its services for
+- 6848 2 | reclaiming Master Ryson's All Seeing Eye from the Winterax trolls, the price of the Syndicate's help in the war, curse and all
+- 6881 1 | gathering storm crystals from the Frostwolf so the Circle could amass the power to call Ivus the Forest Lord to the Alliance's aid
+- 6901 1 | delivering the overdue orders that let the Horde attack and show the Alliance their folly in coming to Alterac Valley
+- 6982 1 | raiding the Horde's depot in the Coldtooth mine, deep in their territory, to keep the Alliance supplied and strip the Horde of gear
+- 6985 1 | plundering the Stormpike stores in the Irondeep mine, deep in Alliance territory, to curtail their efforts and equip the Frostwolf
+- 7001 1 | taming a frostwolf from the valley's forest with a muzzle so the stables could fill and the Wolf Riders return to the front
+- 7002 1 | slaying the rams the Stormpike cavalry rode for their hides, so harnesses could be made and the Frostwolf Wolf Riders ride once more
+- 7026 1 | striking at the Frostwolf base for the hides of the wolves they ride, so the Stormpike cavalry would not charge into battle bareback
+- 7027 1 | snaring an Alterac ram with a training collar for the empty Stormpike stables, so the cavalry could be reborn
+- 7081 2 | tearing the Horde banner from one of Alterac Valley's graveyards, the sacred ground both sides fought over most savagely
+- 7082 2 | pulling the Alliance banner from a graveyard in Alterac Valley, where the battles raged fiercest and the lines kept shifting
+- 7101 2 | seizing an Alliance bunker for the Horde by pulling down its banner, so the Frostwolf troops could charge forward
+- 7102 2 | storming a Horde tower and tearing down its banner, driving their ranged troops out of position so the Alliance line could advance
+- 7122 2 | capturing a mine for the Stormpike by killing its leader, so troops could hold it and gather its minerals and cached supplies
+- 7124 2 | securing one of Alterac's mines for the Horde by slaying its leader, for its ore and the supplies cached in its depths
+- 7141 3 | killing Drek'Thar, the Frostwolf general, so the Explorers' League could search Alterac Valley for its artifacts
+- 7142 3 | slaying Vanndar Stormpike, the dwarven general, to drive the Stormpike invaders out of Alterac Valley
+- 7161 3 | recovering the Frostwolf Banner from the Wildpaw gnoll cave, the rite of battle every newcomer to the valley had to pass
+- 7162 3 | winning the Stormpike Banner from the Icewing Caverns to earn a place among the Stormpike and an initiate's insignia
+- 7163 1 | presenting the initiate's insignia to Warmaster Laggrond to be named a soldier and a friend of the Frostwolf Clan
+- 7164 1 | rising again in rank among the Frostwolf, a brave and honourable soldier in Warmaster Laggrond's eyes
+- 7165 2 | earning reverence among the Frostwolf, with tales of the fighting already told and the Stormpike said to shake in fear
+- 7166 2 | being raised to Hero of Frostwolf, exalted by the clan and told that command of the valley would soon follow
+- 7167 3 | receiving the Eye of Command from Warmaster Laggrond, praised by Drek'Thar and the Warchief for a stalwart defence of the clan
+- 7168 1 | presenting the initiate's insignia to Lieutenant Haggerdin, raised above mediocrity to a soldier of rank among the Stormpike
+- 7169 1 | being honoured among the Stormpike Guard for blows struck in the Field of Strife, with word of them sent to the king
+- 7170 2 | earning reverence among the Stormpike Guard, a hero in the making that Lieutenant Haggerdin never guessed at on first meeting
+- 7171 2 | rising to legend among the Stormpike, marked as the one likely to carry the Eye of Command
+- 7172 3 | taking up the Eye of Command for the Stormpike, a commander whose orders the troops would follow against the Frostwolf
+- 7181 3 | hunting down Korrak the Bloodrager, the cruel and cunning leader of the cannibal Winterax trolls, when he showed himself
+- 7202 3 | slaying Korrak the Bloodrager, who led the Winterax trolls that wanted Stormpike bones for their stew
+- 7223 1 | gathering Armor Scraps from the battlefield for Murgot Deepforge, who could not outfit the Stormpike veterans on Ironforge's supplies
+- 7224 1 | stripping Armor Scraps from fallen enemies so Smith Regzar could melt them down into armour for the Frostwolf troops
+- 7281 3 | killing Commander Karl Philips of the Stormpike, Louis Philips's own brother, in the hope the Banshee Queen could turn him as she had Louis
+- 7282 3 | destroying Commander Louis Philips, Karl Philips's brother made a mindless servant of the Banshee Queen, to end his torment
+- 7301 2 | searching Tower Point West and Frostwolf Keep for the Stormpike's best pilots, Wing Commanders Slidore, Vipore and Ichman
+- 7302 2 | finding out what became of Wing Commanders Guse, Jeztor and Mulverick, shot down over enemy ground, so a rescue could be attempted
+- 7361 1 | taking the head of a slain night elf to Najak Hexxen, who would not let Staghelm's people wipe out the Darkspear
+- 7362 1 | bringing a tuft of gnome hair to Ravak Grimtotem, who was studying the gnomes' resilience for Magatha, the Elder Crone
+- 7363 1 | collecting a slain human's bone chip for Commander Louis Philips and the Dark Apothecaries' cure for the human condition
+- 7364 1 | repaying the tauren for the gnome hair they cut from fallen gnomes by bringing Dirk Swindle a tauren's hoof
+- 7365 1 | stealing a slain troll's mojo for Athramanis, by Staghelm's order to exterminate the trolls on the field
+- 7366 1 | claiming a Forsaken heart for Commander Karl Philips, to be burned at the Cathedral of Light as the Archbishop's mercy
+- 7367 2 | killing the Frostwolf Explosives Expert near the Iceblood Garrison, so the Horde's mines could be disarmed and stay down
+- 7368 2 | hunting down the Stormpike Explosives Expert in the first tower on the Field of Strife, so their landmines would stay disarmed
+- 7381 3 | cutting down Korrak the Bloodrager again on his return to the Field of Strife, and bringing his skull to Warmaster Laggrond this time
+- 7382 3 | ending Korrak the Bloodrager once more on his return, and taking his skull to Lieutenant Haggerdin, who wanted the corpse burned this time
+- 7401 1 | ripping the spine from a slain dwarf for Sergeant Yazra Bloodsnarl, a warning to all who opposed the Frostwolf
+- 7402 1 | pulling a tooth from a slain orc as proof for Corporal Noreg Stormpike, by his standing order to the Stormpike soldiers
+# Orgrimmar
+- 81 1 | carrying the barrel of packaged Hinterlands Honey Ripple back to Dran Droffers, who would sell it to a tavern for five times the fee
+- 1146 1 | taking Belgrom's sealed note to Moktar Krin, whose war party had lost over half its number to insects erupting from a Shimmering Flats cave
+- 1434 2 | driving back the Hatefury satyrs of Desolace for Takata Steelblade, since Thrall would have the Burning Blade's allies slain
+- 1435 2 | drawing the corrupted spirits out of dying Burning Blade cultists into a gem, so Maurin Bonesplitter could put them somewhere safe
+- 1436 1 | reporting the Desolace campaign to Keldran, who wanted the Alliance never to think the Horde in league with the Burning Legion
+- 2950 1 | bringing Nogg a silver bar and a moss agate to set a lattice into the Brilliant Gold Ring and strengthen its magic
+- 3504 1 | carrying Belgrom Rockmaul's sealed letter to Ag'tor Bloodfist in Azshara, after the blood elf he trusted killed the warriors he lent her
+- 3505 2 | cutting down Magus Rimtori's blood elf workers in Azshara and scouting her camp for something that would draw her into a fight
+- 3506 3 | destroying Magus Rimtori's focusing crystal and killing the blood elf, so the spirits of the orcs she betrayed could be at peace
+- 3507 1 | bringing Magus Rimtori's head home to Belgrom Rockmaul in Orgrimmar, who had trusted her and wanted to see it for himself
+- 4300 1 | seeking out the rare white-clawed ravasaurs of Un'Goro Crater for Jes'rimon of the Hand, whose clients liked weapons crafted from those claws
+- 4941 1 | carrying word to Eitrigg and then to Thrall that Rend, thought slain decades ago, still lived
+- 5726 2 | seizing a lieutenant's insignia from the Burning Blade in Skull Rock for Thrall, who meant to find the true head of the traitors
+- 5727 2 | passing as one of the Burning Blade before Neeru Fireblade, the warlock Thrall knew to be their secret leader
+- 5729 1 | returning to Neeru Fireblade in the Cleft of Shadow to win his trust and learn more of the Shadow Council for Thrall
+- 5730 1 | telling Thrall of the Shadow Council's new agenda in the Barrens and Ashenvale, learned while posing as Neeru's lieutenant
+- 7490 3 | presenting the Head of Onyxia, brood mother of the Black Dragonflight, to Thrall in Orgrimmar
+- 7493 1 | learning to make a cloak of the brood mother's scales, a shield against the incendiary breath of Nefarian, Lord of Blackrock
+- 7783 3 | bringing the head of Nefarian, son of Deathwing, back to Thrall in Orgrimmar
+- 8913 1 | gathering venom from the spiders and scorpions of Silithus for Mokvar, who would trade far finer armour for plain Wildheart Bracers
+- 8914 1 | collecting Silithus venom from its spiders and scorpions for Mokvar, who offered a far finer piece for plain Beaststalker's Bindings
+- 8915 1 | drawing venom from the spiders and scorpions of Silithus for Mokvar, the favour he asked before trading up the Magister's Bindings
+- 8916 1 | fetching venom samples from the spiders and scorpions of Silithus for Mokvar, who would trade far better bracers for Devout Bracers
+- 8917 1 | harvesting venom from the spiders and scorpions of Silithus for Mokvar, the price of a far finer piece for plain Shadowcraft Bracers
+- 8918 1 | gathering venom from the scorpions and spiders of Silithus for Mokvar, who would trade far finer armour for the Bindings of Elements
+- 8919 1 | collecting venom from the spiders and scorpions of Silithus for Mokvar, the favour he asked before trading up the Dreadmist Bracers
+- 8920 1 | supplying Mokvar with venom from the spiders and scorpions of Silithus, the favour he asked before trading up the Bracers of Valor
+- 8957 1 | carrying Anthion's parting words to Mokvar, that only Bodley could find the pieces of Valthalak's amulet and so end the curse
+- 9007 2 | seeing Mokvar and the others delivered at last from the mistakes of their past, the long business of Valthalak's curse behind them
+- 9008 2 | closing the long business of Valthalak's curse with Mokvar, who said those efforts had delivered them all from the mistakes of their past
+- 9009 2 | finishing the matter of Valthalak's curse for Mokvar, who said it had delivered them from the mistakes of their past
+- 9010 2 | ending the long business of Valthalak's curse with Mokvar, who spoke of a debt that might never be repaid
+- 9011 2 | closing the tale of Valthalak's cursed amulet with Mokvar, who said those efforts had delivered them from the mistakes of the past
+- 9012 2 | finishing the long business of Valthalak's curse for Mokvar, delivered at last with the others from the mistakes of their past
+- 9013 2 | seeing the business of Valthalak's curse through for Mokvar, who said those efforts had delivered them from the mistakes of the past
+- 9014 2 | ending the matter of Valthalak's curse with Mokvar, who called it a truly amazing story and was delivered from the mistakes of the past
+- 9016 1 | returning with Anthion's last words to Mokvar, that Bodley alone could find the pieces of Valthalak's amulet and lift its curse
+- 9017 1 | carrying Anthion's parting words to Mokvar, that the curse would end only with Valthalak's amulet made whole, and only Bodley could find its pieces
+- 9018 1 | reporting Anthion's parting words to Mokvar, that Bodley was the only hope of finding the rest of Valthalak's amulet and ending the curse
+- 9019 1 | taking Anthion's last words to Mokvar, that only Bodley could find the remaining pieces of Valthalak's amulet and stop its spell
+- 9020 1 | relaying Anthion's parting words to Mokvar, that Bodley was the one hope of making Valthalak's amulet whole and ending the curse
+- 9021 1 | delivering Anthion's last words to Mokvar, that Bodley alone could find the rest of Valthalak's amulet and end the curse on them
+- 9022 1 | bearing Anthion's parting words back to Mokvar, that only Bodley could find the remaining pieces of Valthalak's amulet and lift the curse
+# Winterspring
+- 969 1 | fetching Frostmaul Shards from the ice giants' canyon for Witch Doctor Mau'ari, who would make a lucky charm from them
+- 977 1 | collecting two unbroken horns from the ice thistle patriarchs and matriarchs to finish Umi Rumplesnicker's mechanical yeti
+- 3783 1 | gathering thick fur from the ice thistle yetis for Umi Rumplesnicker's secret mechanical yeti, meant to impress her friends
+- 4809 1 | collecting uncracked chillwind horns, packed with cold, so Felnok Steelspring could complete Tinkee's order
+- 4810 1 | carrying Felnok's package of chillwind horns to Tinkee Steamboil in the Burning Steppes, along with the reminder that she owed Felnok
+- 4842 2 | following Donova Snowden's directions to the dark, muggy south of Winterspring, where demons in Darkwhisper Gorge seemed to be heating the springs
+- 4861 1 | braving the wildkin to reach Jaron Stoneshaper's wrecked camp, which he had barely escaped and where he feared a friend had not
+- 4864 2 | pulling Jaron Stoneshaper's tools from the snow and taking back the amulet he had unearthed from the wildkin who guarded it so fiercely
+- 4882 1 | showing a glowing Blue-feathered Necklace from a slain wildkin to Trull Failbane, who knew the owlbeasts better than most
+- 4883 2 | taking the wildkin's necklace to Nara Wildmane, who sensed that Elune had made the wildkin to guard her most sacred places
+- 4901 3 | lighting the cave torches with Ranshalla and guarding her while she recited the incantations of Kel'Theril to open the Altar of Elune
+- 4902 1 | telling Arch Druid Fandral Staghelm of the Altar of Elune, only to learn the Circle had long known the wildkin were Elune's guardians
+- 4970 1 | gathering shardtooth and chillwind meat to feed the frostsabers Rivern Frostwind was training
+- 5054 2 | hunting Ursius of the shardtooth bears for Storm Shadowhoof, a clever beast that had turned everyone sent after him into prey
+- 5055 2 | tracking down Brumeran of the chillwind, a graceful chimaera whose path had cost many their lives, as Storm Shadowhoof's next test
+- 5056 3 | calling Shy-Rotam, matriarch of the frostsabers, to her stone with the sacred meat of her kin and defeating her, Storm Shadowhoof's final test
+- 5057 1 | carrying Storm Shadowhoof's marker to Melor Stonehoof in Thunder Bluff, in remembrance of the great beasts of Winterspring brought down
+- 5063 1 | bringing Malyfous Darkhammer the pristine hide of the Beast and the rest of the components for a Cap of the Scarlet Savant
+- 5067 1 | gathering the pristine hide of the Beast and Frostwhisper's embalming fluid for Malyfous Darkhammer's attempt at the never-made Leggings of Arcana
+- 5068 1 | seeking out the components for a Breastplate of Bloodthirst, a piece said to have been made only once, for the assassin Garona
+- 5082 2 | fighting back the Winterfall furbolg, grown fiercely protective of the hot springs, so Donova Snowden could get back to studying their water
+- 5083 1 | showing Donova Snowden an empty Winterfall flask that still held a few glowing green drops
+- 5084 2 | searching the corrupted Deadwood furbolg camp in Felwood for signs of dealings between the Deadwood and the Winterfall
+- 5085 1 | bringing a sample of the Deadwood cauldron's green goo to Donova Snowden, afraid the Winterfall would soon be as corrupted as the Deadwood
+- 5086 2 | collecting droplets from the toxic horrors of the Irontree Woods so Donova could compare them with the cauldron's goo
+- 5087 2 | stopping the Winterfall Runners on their way from Felwood and taking their shipment, to cut off the Winterfall from the Deadwood
+- 5121 3 | slaying High Chief Winterfall, whose orders had likely turned a peaceful tribe aggressive, so the Winterfall would grow no worse
+- 5123 1 | handing the Crudely-written Log from High Chief Winterfall to Donova Snowden, who could make nothing of it
+- 5124 1 | gathering enchanted thorium, essence of fire and star rubies so Malyfous Darkhammer could work out the recipe for Fiery Plate Gauntlets
+- 5128 1 | bearing the High Chief's log to Kelek Skykeeper of the Emerald Circle in Felwood, who might translate what drove the furbolg to their firewater
+- 5163 2 | turning Umi's mechanical yeti loose on her friends Legacki, Sprinkle and Quixxil, who had made fun of her ideas
+- 5201 2 | driving the crazed Winterfall furbolg away from Frostsaber Rock, where Rivern Frostwind had watched them slay countless creatures
+- 5245 2 | picking the four Highborne Relic Fragments out of the ice of Kel'Theril's lake, pieces of the stolen relic that cursed the highborne to that place
+- 5253 2 | taking the Crystal of Zin-Malor to Fandral Staghelm, so its power would rest with those who would not abuse it
+- 5981 1 | felling the Frostmaul giants of the southern valley in the name of the frostsaber queen, Shy-Rotam, to prove loyalty to the frostsabers
+- 6030 1 | carrying Umbranse's Studies in Spirit Speaking to Duke Nicholas Zverenhoff, a linguist who might make sense of its jibber-jabber
+- 8471 1 | bringing a Winterfall Ritual Totem, heavy with dread, to the Timbermaw, who found in it the taint that set the Winterfall against them
+- 8798 1 | learning to build a mechanical yeti from Umi, her thanks to a fellow engineer for helping teach her friends a lesson
+# Dustwallow Marsh
+- 1135 1 | hunting Highperch wyverns in Thousand Needles for their venom sacs, worth more to Fiora Longears than the beasts themselves
+- 1166 1 | recovering Overlord Mok'Morokk's grog, snuff and strongbox from the old Stonemaul home he had fled when the dragons came
+- 1168 2 | fighting the black dragon army for Tharg, whose wife the dragons had killed and who wanted revenge and his home back
+- 1169 2 | taking tongues and hearts from the black whelps and hatchlings so Draz'Zilb could trace the evil that had descended on the old Stonemaul home
+- 1172 2 | destroying Onyxia's eggs in the Wyrmbog so no more whelps would hatch and the Stonemaul could one day reclaim their village
+- 1173 3 | challenging Overlord Mok'Morokk and beating him until he fled, so the Stonemaul could choose a leader to win back their home
+- 1177 1 | feeding Mudcrush Durtfeet a pile of Mirefin heads, since the hungry ogre promised to eat whoever failed to
+- 1201 2 | hunting down the Theramore infiltrators spying on Brackenwall Village, a clear message that the Horde would not tolerate spies
+- 1202 2 | diving for the footlocker beneath the Theramore docks to recover the Captain's Documents two Horde spies had thrown into the sea
+- 1203 1 | finding a Moonsteel Broadsword for Jarl, who had some cutting to do and would not say what
+- 1204 1 | hunting Mudrock turtles for their forked tongues, whose flavour Morgan Stern wanted in his Mudrock Soup and Bugs
+- 1205 2 | ending the life of Deadmire, an ancient crocolisk living in maddening pain, to lead the noble beast to peace for Melor
+- 1206 1 | collecting unpopped Darkmist spider eyes for Jarl, who liked their juice and, it seemed, their company
+- 1218 1 | gathering Soothing Spices for Jarl's swamp cooking, and a stew he promised to share
+- 1219 1 | carrying an orcish spy's report, found clutched in a severed orc hand, to a Theramore lieutenant
+- 1220 1 | bringing the orc spy's report to Captain Garran Vimes, who read orcish and needed to know of Horde spies near Theramore
+- 1222 2 | escorting 'Stinky' Ignatz out of a swamp full of critters while he searched for bogbean leaves for Morgan Stern
+- 1238 1 | carrying the last report of a Horde spy, found in a severed hand in the mud, to the spymaster Nazeer Bloodpike in Brackenwall
+- 1239 2 | bringing Nazeer Bloodpike the severed head of his agent Marg Nighteye, to learn whether the Alliance had killed him
+- 1240 2 | travelling with Marg Nighteye's head to Kin'weelay, the Darkspear witchdoctor at Grom'gol, so the angry spirit could tell of his death
+- 1251 2 | removing a blackened iron shield from the chimney of the burned Shady Rest Inn for Krog, who wondered if it had been left as a warning
+- 1252 2 | bringing the badge of Lieutenant Paval Reethe, found in the Shady Rest's rubble, to Captain Garran Vimes, who knew a guard's badge meant bad news
+- 1253 2 | taking the blackened iron shield from the ruins of the Shady Rest Inn to Captain Garran Vimes, a clue to whoever burned it
+- 1258 1 | gathering pristine crawler legs in the Swamp of Sorrows for Morgan Stern's new dish, the only crabs whose shells would do
+- 1261 2 | tracking down the muckshell that killed Marg Nighteye to recover the Jeweled Pendant he stole from an Alliance camp, finishing his mission
+- 1262 1 | carrying the Jeweled Pendant to Zor Lonetree in Orgrimmar, who knew Alliance politics and might find its noble owner
+- 1268 1 | telling Krog of the hoofprints leading away from the burned Shady Rest Inn, where the owner's wife and child had been killed
+- 1269 1 | showing Krog the badge of Paval Reethe, a human deserter suspected of stealing from Brackenwall's supplies
+- 1270 2 | getting 'Stinky' Ignatz out of a ring of critters and guarding him while he looked for bogbean for Mebok Mizzyrix
+- 1273 2 | going with Ogron to question the deserter Reethe, hoping for answers about the burning of the Shady Rest Inn
+- 1276 1 | showing the blackened shield to Mosarn, the Thunder Bluff smith whose name was on its rim, though he had made too many to remember this one
+- 1282 1 | asking Captain Garran Vimes about Smiling Jim, James Hyal, whose Shady Rest Inn had been burnt to the ground
+- 1284 1 | reporting the hoofprints leading from the burned Shady Rest Inn to Captain Vimes, who sent a tracker after them
+- 1285 1 | passing Captain Vimes the record of Paval Reethe, a Kul Tiras marine listed as missing, which he took to mean traitor
+- 1286 2 | seeking out Balos Jacken and the deserters squatting at Lost Point to learn what they knew of Reethe
+- 1287 1 | telling Captain Vimes the deserters had thrown Reethe out for raiding the ogres of Brackenwall Village
+- 1319 1 | showing the blackened shield to Caz Twosprocket, who judged it was not made by any smith on this side of the sea
+- 1320 1 | reporting to Captain Vimes that the shield's burnt strap had been made for someone large, likely a tauren
+- 1322 1 | collecting acidic venom sacs from the Darkmist spiders so Do'gol could clean the writing on the shield's rim
+- 6570 2 | slipping into Emberstrife's Den in the Wyrmbog in the guise of a dragonspawn, to face the old drake's tests for Onyxia's elite guard
+- 6601 1 | showing the Dull Drakefire Amulet to Rexxar, since Myranda's disguise would not hold inside Blackrock Spire
+# sort 82
+- 63 3 | defeating the Corrupt Manifestation of Water at the plague-tainted shrine in Silverpine, to cleanse its pool and call up a pure spirit
+- 96 2 | bringing the Shard of Water to Islen Waterseer as proof the shrine was cleansed, and earning a water totem
+- 100 1 | speaking with the pure water spirit at the cleansed shrine, which left the protection of life to the shaman
+- 220 1 | carrying Brine's blessed Vial of Purest Water to Islen Waterseer, the makings of a sapta and of the trial to come
+- 1103 1 | bringing a water sapta to Tiev Mordune, a troll shaman at the shrine who offered a second chance to see the pure water spirit
+- 1516 1 | taking two hooves from the Felstalkers for Canaga Earthcaller, the first test on the shaman's path toward the earth
+- 1517 3 | drinking the Earth Sapta at Spirit Rock, at the end of the Hidden Path, to stand humbly before the earth and pass its rite
+- 1518 2 | carrying the rough quartz from the earth spirit to Canaga Earthcaller as proof of the meeting, the heart of a first totem
+- 1519 1 | taking ritual salve from the Bristleback shamans for Seer Ravenfeather, enough to make an earth sapta
+- 1520 3 | drinking the Earth Sapta at the shaman shrine of Kodo Rock, binding the spirit to the earth in a young shaman's rite
+- 1521 2 | bringing the rough quartz to Seer Ravenfeather as proof of meeting the earth spirit, the heart of the totem she would craft
+- 1524 1 | climbing the hidden trail above the Southfury River to the Shrine of the Dormant Flame with a torch that marked an attempt to tame fire
+- 1525 1 | winning fire tar from the Razormane spellcasters and a reagent pouch from the Burning Blade cultists for Telf Joolam's fire sapta
+- 1526 3 | striking down the Minor Manifestation of Fire atop the Shrine of Eternal Flame and lighting the torch from its glowing ember
+- 1527 2 | bearing the Torch of Eternal Flame back to Kranal Fiss in the Barrens to receive a totem of fire
+- 1531 1 | seeking out Prate Cloudseer in Thousand Needles, who gave a totem to call upon the spirits of air
+- 1532 1 | finding Prate Cloudseer far to the east of Thousand Needles to receive a totem of air
+- 1534 1 | filling a waterskin at the fountain in the Ruins of Stardust in Ashenvale, the last sample Brine needed for the purest water
+- 1535 1 | filling a waterskin at the pond below Brine's hut, in quilboar country, the first sample of pure water for her sapta
+- 1536 1 | fetching water from the fresh spring well in Forsaken Tarren Mill, a holy vestige Brine remembered, for the sapta
+- 7667 1 | bringing Sagorne Creststrider two diamonds to finish a divination scryer that could pierce the shadows of the Great Ossuary
+- 8258 3 | killing Death Knight Darkreaver in the Scholomance's Great Ossuary, who threatened to twist the spirit realm to his bidding
+- 8410 1 | gathering samples of air, fire, earth and water for Bath'rah the Windwatcher, to show readiness for his summons
+- 8411 1 | presenting Bath'rah the Windwatcher with the four elements, the proof he wanted before trusting a shaman
+- 8412 1 | gathering bear claws and spider eyes in the Western Plaguelands for a spirit totem to protect Bath'rah from the spirits that turned on him
+- 8413 2 | killing six trolls of the Sunken Temple for their voodoo feathers, so Bath'rah's spirit totem would let him sleep at last
+# Thunder Bluff
+- 264 1 | laying Clarice's pendant on Yuriv's tomb at the Sepulcher, since she wanted nothing more to do with the husband who left her for his crusade
+- 744 1 | gathering azure and bronze harpy feathers for the headdress Eyahn Eagletalon was making for a brother soon to stand before Chief Bloodhoof
+- 768 1 | trading light leather from the hunt to Veren Tallstrider, who fashions clothes and armour for the people of Thunder Bluff
+- 769 1 | supplying Veren Tallstrider with leather and thread to learn the making of a Kodo Hide Bag
+- 1065 1 | carrying Apothecary Zamah's note to Apothecary Lydon in Tarren Mill, a plan to rid Stonetalon of the Venture Company without bloodshed
+- 1066 1 | obtaining vials of innocent blood from the Syndicate shadow mages of Durnholde Keep for Lydon's toxin to make the Venture Company docile
+- 1067 1 | bringing Lydon's Toxin back to Apothecary Zamah in Thunder Bluff, who would find a way to deliver it
+- 1086 3 | finding the Venture Co. sky port in Stonetalon and planting the Toxic Fogger there, in the hope it would reach their headquarters
+- 1131 2 | defeating Steelsnap, a tyrant hyena of Thousand Needles who spread fear and bloodshed among more peaceful beasts
+- 1136 3 | luring the elusive yeti Frostmaw out of the snows of the Alterac Mountains with Melor Stonehoof's scroll and defeating him for his mane
+- 1195 1 | taking an etched phial from the dryads of Ashenvale and filling it at a moonwell, to help breach the flame guarding a Galak relic
+- 1196 1 | carrying the moonwell water to Rau Cliffrunner at Freewind Post, since the dryads' kinship with the centaurs would let it breach the eternal flame
+- 1197 2 | dousing the eternal flame in Splithoof Hold and taking the Cloven Hoof from under the Galak centaurs' guard for Rau Cliffrunner
+- 2966 2 | taking the platinum discs from Uldaman to the sealed gates of Uldum, unsure what would happen, to learn the link between them
+- 2967 1 | telling Nara Wildmane that the gates of Uldum wanted the Plates of Uldum, missing from the discs
+- 3761 1 | collecting Un'Goro soil, rich in magic, for the Cenarion Circle's research in Thunder Bluff
+- 3786 1 | growing morrowgrain from Tharlendris seeds and Un'Goro soil for the Arch Druid, who hoped to unravel the mysterious herb
+# Gnomeregan
+- 2841 2 | getting Mekgineer Thermaplugg's safe combination and the rig blueprints inside the safe, so Nogg could make gnomish innovations goblin ones
+- 2904 2 | leading Kernobee, captured and beaten by Dark Iron dwarves, out of Gnomeregan so he could warn Tinkerwiz of their part in the new rig
+- 2922 2 | recovering Techbot's memory core in Gnomeregan for Tinkmaster Overspark, who hoped to fix his maddened creation
+- 2924 1 | collecting the essential artificials left behind in the flight from Gnomeregan, which Klockmort Spannerspan needed for his experiments
+- 2926 1 | filling a phial with fallout from the irradiated troggs for Ozzie Togglevolt's cure for the sickness of Gnomeregan
+- 2928 1 | tearing the guts out of Gnomeregan's robots for spare parts to fix Shoni's fleet of gyrodrillmatic excavationators
+- 2929 3 | killing Mekgineer Thermaplugg, who betrayed the gnomish people and made himself king of nothing, so Gnomeregan could be retaken
+- 2930 2 | working through Gnomeregan's security terminals to the prismatic punch card, the vital data the gnomes left behind when they fled
+- 2945 1 | feeding a grime-caked ring from a slain Dark Iron dwarf to the Sparklematic 5200, to see what precious thing lay under the residue
+- 2947 1 | tracing the initials TdK in the ring's band to its maker, who had kept a shop in Gnomeregan and wondered how the Dark Irons came by it
+- 2949 1 | following the NOG engraved in the ring to Nogg in Orgrimmar, who found it very interesting that the Dark Iron dwarves had it
+- 2962 1 | collecting high potency fallout from the irradiated slimes, lurkers and horrors of Gnomeregan, since Ozzie's first sample was too weak
+# Shadowglen
+- 456 1 | thinning the young nightsabers and thistle boars, too many after heavy spring rains, to keep the balance of nature in Shadowglen
+- 457 1 | culling mangy nightsabers and thistle boars before they ate through the forest's food, for Conservator Ilthalaine
+- 459 2 | taking Fel Moss from the grells that threatened Shadowglen, confirming Tarindrella's fear that its corruption was spreading through Teldrassil
+- 916 1 | gathering webwood venom sacs for Gilshalan Windwalker, who believed the new world tree had changed the spiders
+- 917 1 | fetching an unhatched egg from the webwood spiders' nest in the Shadowthread Cave for Gilshalan's studies in Darnassus
+- 921 1 | filling a phial at the moonwell for Tenaron Stormgrip while learning what became of Nordrassil after the Battle of Mount Hyjal
+- 3519 1 | hurrying to tell Dirania Silvershine that Iverron had been badly poisoned by a spider called Githyiss the Vile
+- 3521 2 | gathering hyacinth mushrooms, moonpetal lilies and webwood ichor for Dirania's antidote to the poison in Iverron
+- 3522 3 | racing Iverron's antidote to him by the spider cave before its five minutes ran out
+- 4495 1 | looking for Iverron, hours late for his daily visit to Dirania, near the spider-filled cave to the north
+# Valley of Trials
+- 788 1 | killing mottled boars to put some strength in a new recruit's backbone, Gornek's first trial
+- 789 1 | taking scorpid worker tails to Gornek as proof of prowess, and learning that the smallest foe can still be deadly
+- 790 2 | slaying Sarkoth, the vicious scorpid that left Hana'zua bleeding on the plateau, to uphold the wounded orc's honour
+- 792 1 | driving back the Vile Familiars spilling from the Burning Blade coven, the first blow against the cult in the valley
+- 794 2 | wresting the Burning Blade Medallion from deep in their coven, to root the cult out of the Valley of Trials
+- 804 2 | bringing word of the wounded Hana'zua to Gornek, so help would be sent to him on the plateau
+- 805 1 | warning Master Gadrin in Sen'jin Village that the Burning Blade had reached the Valley of Trials
+- 4402 1 | picking cactus apples for Galgar's famous cactus apple surprise, a treat against the heat of the valley
+- 5441 1 | waking the lazy peons with Foreman Thazz'ril's blackjack to keep them gathering lumber
+- 6394 1 | retrieving Foreman Thazz'ril's favourite pick from the Burning Blade Coven, left behind among the beasts that filled the cave
+# Scarlet Monastery
+- 1048 3 | laying waste to High Inquisitor Whitemane and her lieutenants in the Scarlet Monastery, the sharpest thorn in the Forsaken's side
+- 1049 2 | retrieving the Compendium of the Fallen from the Scarlet zealots for Sage Truthseeker, who doubted the Forsaken and wanted their research
+- 1050 2 | rescuing Mythology of the Titans from the Monastery's library for Librarian Mae Paledust, to unlock the secrets of the past
+- 1051 2 | avenging Vorrel Sengutz on the wife of the interrogator who tortured him, and bringing his wedding ring home to Monika in Tarren Mill
+- 1053 3 | crushing the deranged regime of the Scarlet Monastery for Raleigh the Devout, to spare the innocents it tortured as plagued
+- 1113 1 | cutting Hearts of Zeal from the Scarlet Crusade's disciples for Master Apothecary Faranell's most ghastly experiment
+# sort 324
+- 6622 2 | saving wounded soldiers in order of triage at Hammerfall, the examination to join the ranks of Horde Trauma
+- 6624 2 | tending wounded soldiers in order of triage, the critical first, the examination to join the ranks of Alliance Trauma

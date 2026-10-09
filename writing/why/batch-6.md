@@ -1,0 +1,331 @@
+---
+kind: why
+---
+# Naxxramas
+- 9033 2 | entering Naxxramas to destroy the Scourge Kel'Thuzad was amassing for another attack, proof of dedication to the Dawn
+- 9034 1 | bringing Korfax a Desecrated Breastplate and plate scraps from Naxxramas for a Dreadnaught Breastplate, armor worn by heroes
+- 9036 1 | carrying Desecrated Legplates back from Naxxramas for Korfax to remake as Dreadnaught Legplates, armor of heroes
+- 9037 1 | handing Korfax a Desecrated Helmet and a pile of wartorn plate scraps for a Dreadnaught Helmet of his making
+- 9038 1 | gathering arcanite, hides and wartorn plate scraps so Korfax could renew Desecrated Pauldrons as Dreadnaught Pauldrons
+- 9039 1 | trading Desecrated Sabatons and wartorn scraps from the battles with the Scourge to Korfax for Dreadnaught Sabatons
+- 9040 1 | returning Desecrated Gauntlets from the fighting in Naxxramas to Korfax, who would make them into Dreadnaught Gauntlets
+- 9041 1 | taking a Desecrated Waistguard and cured hides to Korfax at Light's Hope Chapel for a Dreadnaught Waistguard
+- 9042 1 | delivering Desecrated Bracers and a Nexus Crystal to Korfax, who could craft them into Dreadnaught Bracers
+- 9043 1 | bringing Eligor Dawnbringer a Desecrated Tunic, a fallen hero's keepsake from the Lords of Naxxramas, to revive as a Redemption Tunic
+- 9044 1 | recovering Desecrated Legguards from the Lords of Naxxramas so Eligor Dawnbringer could revive the cursed armor as Redemption Legguards
+- 9045 1 | carrying a Desecrated Headpiece, remnant of a fallen hero, to Eligor Dawnbringer to be remade as a Redemption Headpiece
+- 9046 1 | supplying Eligor Dawnbringer with arcanite and Nexus Crystals to revitalize Desecrated Spaulders as Redemption Spaulders
+- 9047 1 | handing over Desecrated Boots from Naxxramas so Commander Eligor Dawnbringer could craft a pair of Redemption Boots
+- 9048 1 | reclaiming Desecrated Handguards from the Lords of Naxxramas for Eligor Dawnbringer to turn into Redemption Handguards
+- 9049 1 | taking a Desecrated Girdle, keepsake of a fallen hero, to Eligor Dawnbringer at Light's Hope for a Redemption Girdle
+- 9050 1 | collecting wartorn plate scraps and hides so Eligor Dawnbringer could revitalize Desecrated Wristguards as Redemption Wristguards
+- 9054 1 | bringing Huntsman Leopold a Desecrated Tunic and wartorn chain scraps for a Cryptstalker Tunic, armor both light and deadly
+- 9055 1 | carrying Desecrated Legguards out of Naxxramas so Huntsman Leopold could fashion Cryptstalker Legguards from crypt fiend carapace
+- 9056 1 | trading a Desecrated Headpiece and chain scraps to Huntsman Leopold for a Cryptstalker Headpiece of his own design
+- 9057 1 | gathering arcanite and cured hides so Huntsman Leopold could make Cryptstalker Spaulders from desecrated ones
+- 9058 1 | handing Huntsman Leopold Desecrated Boots and Nexus Crystals for Cryptstalker Boots, armor never before seen in the world
+- 9059 1 | taking Desecrated Handguards to Huntsman Leopold, who could join them with crypt fiend carapace into Cryptstalker Handguards
+- 9060 1 | delivering a Desecrated Girdle and wartorn chain scraps to Huntsman Leopold for a Cryptstalker Girdle
+- 9061 1 | returning Desecrated Wristguards from Naxxramas to Huntsman Leopold to be fashioned into Cryptstalker Wristguards
+- 9068 1 | returning a Desecrated Tunic, armor of those who fell defending these lands, to Rimblat Earthshatter for an Earthshatter Tunic
+- 9069 1 | recovering Desecrated Legguards, armor of the fallen put to evil in Naxxramas, for Rimblat Earthshatter's Earthshatter Legguards
+- 9070 1 | bringing Rimblat Earthshatter a Desecrated Headpiece and wartorn chain scraps to renew as an Earthshatter Headpiece
+- 9071 1 | gathering mooncloth and arcanite so Rimblat Earthshatter could purify Desecrated Spaulders into Earthshatter Spaulders
+- 9072 1 | carrying Desecrated Boots to Rimblat Earthshatter, so the armor of the fallen could be worn for battle once more as Earthshatter Boots
+- 9073 1 | handing Rimblat Earthshatter Desecrated Handguards and purification materials for a pair of Earthshatter Handguards
+- 9074 1 | taking a Desecrated Girdle back from the Scourge to Rimblat Earthshatter, to be remade as an Earthshatter Girdle
+- 9075 1 | honoring the fallen by bringing their Desecrated Wristguards to Rimblat Earthshatter for Earthshatter Wristguards
+- 9077 1 | supplying Rohan the Assassin with a Desecrated Breastplate and leather scraps for a Bonescythe Breastplate, the bones his part
+- 9078 1 | bringing Rohan the Assassin Desecrated Legplates from the floating city of death, and his price, for Bonescythe Legplates
+- 9079 1 | paying Rohan the Assassin for his troubles and handing him a Desecrated Helmet to make a Bonescythe Helmet
+- 9080 1 | gathering hides and a Nexus Crystal so Rohan the Assassin could build Bonescythe Pauldrons from desecrated ones
+- 9081 1 | trading Desecrated Sabatons and coin to Rohan the Assassin for a pair of Bonescythe Sabatons
+- 9082 1 | carrying Desecrated Gauntlets down from Naxxramas for Rohan the Assassin to make into Bonescythe Gauntlets
+- 9083 1 | taking a Desecrated Waistguard to Rohan the Assassin, who would supply the bones for a Bonescythe Waistguard
+- 9084 1 | delivering Desecrated Bracers, leather scraps and his fee to Rohan the Assassin for Bonescythe Bracers
+- 9086 1 | recovering a Desecrated Tunic, stripped from a fallen hero and taken to Naxxramas, for Rayne to craft into a Dreamwalker Tunic
+- 9087 1 | bringing Rayne Desecrated Legguards and wartorn scraps so the armor of the fallen could become Dreamwalker Legguards
+- 9088 1 | taking a Desecrated Headpiece back from the Scourge for Rayne to make into a Dreamwalker Headpiece
+- 9089 1 | gathering the hides and Nexus Crystal Rayne needed to make Dreamwalker Spaulders from desecrated ones
+- 9090 1 | carrying Desecrated Boots and mooncloth to Rayne, who would craft Dreamwalker Boots from them
+- 9091 1 | handing Rayne Desecrated Handguards, armor the Scourge had stripped from the dead, for Dreamwalker Handguards
+- 9092 1 | reclaiming a Desecrated Girdle from Naxxramas so Rayne could make a Dreamwalker Girdle
+- 9093 1 | delivering Desecrated Wristguards and an Arcane Crystal to Rayne for a pair of Dreamwalker Wristguards
+- 9095 1 | bringing Archmage Angela Dosantos a Desecrated Robe for a Frostfire Robe, archmage's armor described in one of Medivh's tomes
+- 9096 1 | gathering mooncloth and Nexus Crystals so Angela Dosantos could make Frostfire Leggings from a design in Medivh's books
+- 9097 1 | carrying a Desecrated Circlet to Archmage Angela Dosantos, who knew the Frostfire Circlet from Medivh's own tomes
+- 9098 1 | supplying Angela Dosantos with what she needed for Frostfire Shoulderpads, a design found among Medivh's personal effects
+- 9099 1 | handing Archmage Angela Dosantos Desecrated Sandals from Naxxramas for a pair of Frostfire Sandals
+- 9100 1 | taking Desecrated Gloves and mooncloth to Angela Dosantos at Light's Hope for Frostfire Gloves
+- 9101 1 | trading a Desecrated Belt and wartorn scraps to Archmage Angela Dosantos for a Frostfire Belt
+- 9102 1 | delivering Desecrated Bindings to Angela Dosantos, the Watcher who learned of Frostfire from Medivh's tomes, for Frostfire Bindings
+- 9103 1 | meeting Mataus the Wrathcaster's high price for a Plagueheart Robe, its darkness enough to destroy them both
+- 9104 1 | bringing Mataus the Wrathcaster Desecrated Leggings for Plagueheart Leggings, dark work he priced high
+- 9105 1 | carrying a Desecrated Circlet to Mataus the Wrathcaster, who would risk the darkness of Plagueheart only for riches
+- 9106 1 | handing Mataus the Wrathcaster Desecrated Shoulderpads and hides for Plagueheart Shoulderpads, whatever the darkness in them
+- 9107 1 | taking Desecrated Sandals to Mataus the Wrathcaster, who meant to die a rich man, for Plagueheart Sandals
+- 9108 1 | gathering what Mataus the Wrathcaster demanded for a pair of Plagueheart Gloves
+- 9109 1 | trading a Desecrated Belt and Arcane Crystals to Mataus the Wrathcaster for a Plagueheart Belt
+- 9110 1 | delivering Desecrated Bindings and wartorn scraps to Mataus the Wrathcaster for Plagueheart Bindings
+- 9111 1 | bringing Father Inigo Montoy the vestments of the fallen and reagents of purification for a Robe of Faith
+- 9112 1 | returning Desecrated Leggings, stripped from those who died in battle, to Father Inigo Montoy for Leggings of Faith
+- 9113 1 | carrying a Desecrated Circlet to Father Inigo Montoy, to be purified into a Circlet of Faith
+- 9114 1 | restoring a little dignity to the fallen by taking their Desecrated Shoulderpads to Father Inigo Montoy for Shoulderpads of Faith
+- 9115 1 | handing Father Inigo Montoy Desecrated Sandals and purifying reagents for Sandals of Faith
+- 9116 1 | taking the Desecrated Gloves of the departed to Father Inigo Montoy for Gloves of Faith
+- 9117 1 | gathering reagents of purification for Father Inigo Montoy to make a Belt of Faith from desecrated remnants
+- 9118 1 | delivering Desecrated Bindings to Father Inigo Montoy at Light's Hope for Bindings of Faith
+- 9120 3 | carrying the Phylactery of Kel'Thuzad, all that remained of the master of Naxxramas, to Light's Hope Chapel instead of destroying it
+- 9229 2 | searching Naxxramas for Ramaladni, a pupil of Highlord Mograine who went in seeking vengeance and never returned
+- 9230 2 | finding a Frozen Rune so Korfax could restore Ramaladni's ring, broken and all that was found of him
+- 9232 1 | bringing Craftsman Wilhelm frozen runes and sapphires for a pair of pants, the one recipe Omarion had left him
+- 9233 1 | carrying the dead craftsman Omarion's handbook of recipes to his old friend Craftsman Wilhelm at Light's Hope
+- 9234 1 | paying Craftsman Wilhelm to make Icebane Gauntlets from frozen runes, with the recipes the late Omarion left him
+- 9235 1 | bringing Wilhelm frozen runes, thorium and his crafting fee for Icebane Bracers from Omarion's recipes
+- 9236 1 | commissioning an Icebane Breastplate from Craftsman Wilhelm, frozen runes from Naxxramas and thorium for a recipe of Omarion's
+- 9237 1 | supplying Craftsman Wilhelm with frozen runes and runecloth for a Glacial Cloak, a pattern from Omarion's handbook
+- 9238 1 | having Craftsman Wilhelm make Glacial Wrists from frozen runes and spider silk, thanks to Omarion's recipes
+- 9239 1 | gathering frozen runes and essences of water so Wilhelm could make Glacial Gloves from a recipe of Omarion's
+- 9240 1 | ordering a Glacial Vest from Craftsman Wilhelm, frozen runes, runecloth and silk for a pattern the late Omarion left
+- 9241 1 | trading frozen runes and enchanted leather to Craftsman Wilhelm for Polar Bracers, made from Omarion's recipes
+- 9242 1 | paying Craftsman Wilhelm's fee and bringing frozen runes for Polar Gloves, one of Omarion's patterns
+- 9243 1 | commissioning a Polar Tunic from Craftsman Wilhelm with frozen runes and enchanted leather, by a recipe of the late Omarion
+- 9244 1 | collecting frozen runes and heavy scorpid scales for Icy Scale Bracers that Wilhelm could make from Omarion's handbook
+- 9245 1 | bringing Craftsman Wilhelm frozen runes and scorpid scales for Icy Scale Gauntlets, a recipe Omarion had left him
+- 9246 1 | ordering an Icy Scale Breastplate from Craftsman Wilhelm, frozen runes and scorpid scale for one of Omarion's recipes
+# sort 365
+- 8492 1 | smelting copper bars for Sergeant Stonebrow in Ironforge, metal for the Alliance's war materiel against Ahn'Qiraj
+- 8494 1 | bringing iron bars to a grudging Corporal Carnes as the Alliance geared up for war in Ahn'Qiraj
+- 8499 1 | supplying thorium bars to Dame Twinbraid for the battalion of steam tanks the Alliance meant to airlift into Silithus
+- 8503 1 | pulling stranglekelp for Private Draxlegauge, who needed a great deal of it for the Ahn'Qiraj war effort
+- 8505 1 | picking purple lotus for Master Nightsong, herbs for the Alliance's stand against the ruthless silithid advance
+- 8509 1 | collecting Arthas' Tears for Sergeant Major Germaine, under orders for the Ahn'Qiraj war effort that nobody explained
+- 8511 1 | skinning light leather for Bonnie Stoneflayer, whose family of skinners tanned it for the Alliance's war materiel
+- 8513 1 | bringing medium leather to Private Porter, who tracked every piece gathered for the war at Ahn'Qiraj
+- 8515 1 | hauling thick leather to an excited Marta Finespindle, who needed a ton of it for the Ahn'Qiraj war effort
+- 8517 1 | making linen bandages for Sentinel Silversky, for a war at Ahn'Qiraj expected to be long and bloody
+- 8520 1 | rolling silk bandages for Nurse Stonefield so the soldiers bound for Ahn'Qiraj would have everything they needed
+- 8522 1 | donating runecloth bandages to Keeper Moonshade, to give those sent to Ahn'Qiraj every advantage to survive
+- 8524 1 | fishing and cooking rainbow fin albacore for Slicky Gastronome, food for the soldiers of the Ahn'Qiraj War
+- 8526 1 | roasting raptor for Sarah Sadwhistle, a reluctant volunteer stocking food for the soldiers bound for Ahn'Qiraj
+- 8528 1 | catching and cooking spotted yellowtail for Huntress Swiftriver's stockpile, food that would keep until the war began
+- 8532 1 | smelting copper ore into bars for Miner Cromwell in Orgrimmar, raw metal for the Horde's war materiel
+- 8542 1 | making tin bars for Grunt Maug, who would rather have been sharpening weapons for the war on the insects of Ahn'Qiraj
+- 8545 1 | mining and smelting mithril for Senior Sergeant T'kelah, bars to build what the Horde would need for the coming war
+- 8549 1 | gathering peacebloom for Herbalist Proudfeather, to be brewed into potions for the Horde's coming trial at Ahn'Qiraj
+- 8580 1 | collecting firebloom for Batrider Pele'keiki, who guessed the Horde wanted it for things that go boom
+- 8582 1 | picking purple lotus for Apothecary Jezel, a reagent in the many potions the Horde would need at Ahn'Qiraj
+- 8588 1 | skinning heavy leather for Skinner Jamani, for the armor, reinforcement and plain tarps of the Horde's war materiel
+- 8590 1 | bringing thick leather to Sergeant Umala for the Horde's war materiel, with the gratitude of the Horde promised in return
+- 8600 1 | cutting rugged leather for Doctor Serratus, a stern judge of a skinner's knife, for the Ahn'Qiraj war effort
+- 8604 1 | stockpiling wool bandages for Healer Longrunner's first aid kits, since soldiers in the field cannot rely on a healer
+- 8607 1 | finding mageweave bandages by whatever means for the war effort, to the surprise of a disdainful Lady Callow
+- 8609 1 | donating runecloth bandages to Stoneguard Clayhoof for the soldiers facing the silithid and whatever force controls them
+- 8611 1 | hunting wolves and cooking lean wolf steaks for Bloodguard Rawtar, salted away to feed the Horde's soldiers
+- 8613 1 | fishing up spotted yellowtail for Fisherman Lin'do, put in charge of collecting a ton of it for the Horde's war
+- 8615 1 | baking salmon for Chief Sharpclaw, a dish chosen to keep well and give soldiers the strength to lift an axe
+# sort 22
+- 1657 1 | tossing Forsaken stink bombs into the heart of Southshore for Darkcaller Yanka, a Hallow's End tribute to Forsaken liberation
+- 1658 1 | scouting the Forsaken's Wickerman Festival in Tirisfal Glade for Sergeant Hartman, who feared the trouble it would bring Southshore
+- 6962 1 | fetching gingerbread cookies and ice cold milk for Great-father Winter, worn out after greeting folk all day
+- 6963 2 | searching the snows of the Alterac Mountains for the Smokywood Pastures agent who went after a missing shipment of Winter Veil treats
+- 6983 3 | recovering the stolen Winter Veil treats from the Abominable Greench, the creature that had frozen Sacks into a snowman
+- 7025 1 | bringing Greatfather Winter gingerbread cookies and ice cold milk, a treat he had earned after a long day of greetings
+- 7042 2 | looking for the missing Smokywood Pastures investigator in the Alterac Mountains, sent after a lost shipment of holiday treats
+- 7043 3 | tracking down the Abominable Greench, who had stolen Smokywood Pastures' Winter Veil treats and turned poor Sacks into a snowman
+- 7061 1 | carrying a book of the old Winter Veil legends to Cairne Bloodhoof, who wanted the lore of his people kept alive
+- 7063 1 | taking a book on the Feast of Winter Veil to King Magni Bronzebeard, who was glad to see the older legends remembered
+- 8149 1 | laying a Harvest Festival tribute at Uther's Tomb in the Western Plaguelands, honoring the sacrifice of Uther Lightbringer
+- 8150 1 | placing a Harvest Festival tribute at Grom's Monument in Demon Fall Canyon, honoring the strength and sacrifice of Grom Hellscream
+- 8311 1 | trick-or-treating at the city inns for Jesper, a child at the Stormwind Orphanage too sick to go
+- 8312 1 | going trick-or-treating for Spoops, a sick child at the Orgrimmar Orphanage, and doing every trick the innkeepers asked
+- 8322 1 | fighting into the Southshore Inn to drop rotten eggs in its main brew keg, ruining the humans' prized ale for weeks to come
+- 8353 1 | clucking like a chicken at Innkeeper Firebrew for an Ironforge Mint, a treat for a sick child's Hallow's End
+- 8354 1 | clucking like a chicken for Innkeeper Norman, the price of an Undercity Mint for a sick child
+- 8355 1 | making train noises at Talvash del Kissel for a Gnomeregan Gumdrop meant for a sick child
+- 8356 1 | flexing for Innkeeper Allison to earn Stormwind Nougat for a sick child's Hallow's End
+- 8357 1 | dancing for Innkeeper Saelienne in exchange for Darnassus Marzipan for a sick child
+- 8358 1 | chugging like a train for Kali Remik in Sen'jin Village to win a Darkspear Gumdrop for a sick child
+- 8359 1 | flexing for Innkeeper Gryshka, who wanted a show of strength before handing over Orgrimmar Nougat for a sick child
+- 8360 1 | dancing for Innkeeper Pala in Thunder Bluff, the price of Thunder Bluff Marzipan for a sick child
+- 8373 1 | scrubbing Forsaken stink bombs off Southshore with a pine cleaner for Sergeant Hartman during Hallow's End
+- 8746 3 | freeing Metzen, one of Great-father Winter's eight reindeer, from the kidnappers who sent Smokywood Pastures ransom letters
+- 8762 3 | rescuing Metzen the Reindeer with a pouch of reindeer dust, following the clues in the two ransom letters sent to Smokywood Pastures
+- 8763 1 | feeding deeprock salt and five gold to a Holly Preserver, a secret shared with the hero of the day, for holly that never goes bad
+- 8799 1 | using the Holly Preserver on deeprock salt and five gold, a reward for the hero of the day, for holly that would never wilt
+- 8860 1 | delivering Smokywood Pastures fare to Innkeeper Allison in Stormwind to feed the crowds at the new year celebration
+- 8861 1 | bringing Smokywood Supplies to Innkeeper Pala in Thunder Bluff to feed the people come to celebrate the new year
+- 8897 1 | carrying Lieutenant Heldric's carefully penned note to his sweetheart Colara Dean, though he feared she would forget him for richer men
+- 8898 1 | delivering a letter rewritten twelve times by a smitten admirer to Colara Dean, who still remembered his beard and smile
+- 8899 1 | taking an immaculate letter to Colara Dean from an admirer left at a loss for words after thousands of years of them
+- 8900 1 | delivering a note to Elenia Haydon in the Undercity from an orc laughed at for the connection he had felt with her
+- 8901 1 | carrying a tauren's letter asking Elenia Haydon to come to Mulgore, a love she knew she could not return
+- 8902 1 | bringing Elenia Haydon a letter from the sweetheart she had been betrothed to a lifetime ago, too nervous to give it himself
+- 8903 2 | getting a Stormwind guard's love card for Aristan Mottar, who feared an unnatural epidemic of love had reached the city guards
+- 8904 2 | getting a guardian's moldy love card for Fenstad Argyle, who feared an unnatural epidemic of love was weakening the Undercity
+- 8979 2 | bringing the fashionable cologne and perfume to Apothecary Zinge, to test Fenstad Argyle's hunch that foul alchemy was clouding minds
+- 8980 1 | bringing Fenstad Argyle word from Apothecary Zinge that the new perfumes held traces of mind control potions
+- 8982 1 | asking Innkeeper Norman where his popular perfume had come from, tracing the tainted fragrances for Fenstad Argyle
+- 8983 1 | tracking down Mara Rennick, the new merchant who had sold the tainted perfume to Innkeeper Norman
+- 8984 3 | finding the maker of the tainted perfume, Apothecary Staffron Lerent, who meant it to weaken Alliance and Horde for the Shadow Council
+- 9024 2 | carrying cologne and perfume to Morgan Pestle to test Aristan Mottar's suspicion that foul alchemy had clouded the guards' thinking
+- 9025 1 | telling Aristan Mottar that Morgan Pestle had found traces of love potions and mind-altering draughts in the new perfumes
+- 9026 1 | asking Innkeeper Allison at The Gilded Rose where the cologne everyone wanted had come from
+- 9027 1 | questioning Evert Sorisam at The Finest Thread, the new merchant behind the cologne sold at The Gilded Rose
+- 9028 3 | tracing the cologne to Apothecary Staffron Lerent behind Ravenholdt Manor, who brewed it to leave Alliance and Horde lovesick and weak
+# Arathi Highlands
+- 635 1 | following a vision from a pulsing shard to a crystal in the northern mountains of Arathi, where someone seemed to plead for help
+- 636 1 | seeking the Shards of Myzrael, which an old book called a window into the prison of an elemental princess beneath Arathi
+- 639 2 | taking the Sigil of Strom from the Syndicate for Zengu, the first of the seals on the tomb of Trollbane and his troll-slaying sword
+- 640 2 | prying the five fragments of the Sigil of Thoradin from the Stromgarde defenders so Tor'gan could bind them whole again
+- 641 1 | bringing the restored Sigil of Thoradin back to Zengu, halfway to opening Trollbane's tomb
+- 642 2 | gathering Motes of Myzrael from the Drywhisker Kobolds to power a shard for Myzrael, a princess of the earth trapped by giants
+- 643 2 | taking the Sigil of Arathor from Lieutenant Valorcall, leader of the Stromgarde cavalry, for Zengu
+- 644 3 | killing Prince Galen Trollbane in his Stromgarde chapel for the last sigil sealing his father's tomb
+- 645 3 | breaking the wards on Trollbane's tomb in Stromgarde to take Trol'kalar, the troll-slaying sword the Darkspear wanted
+- 646 2 | delivering Trol'kalar to Zengu in Hammerfall, the greatest weapon of Strom and Arathor turned to the Darkspear's fight in Zul'Gurub
+- 651 2 | winning keys from the guarded Stones of Binding across Arathi to loosen the bonds holding Myzrael beneath the earth
+- 652 3 | killing the stone watcher Fozruk for the Rod of Order and opening the Keystone that held Myzrael chained
+- 656 3 | summoning Myzrael and defeating her before she grew strong enough to challenge the giants, then binding her again in her own shackles
+- 662 1 | diving to the sunken Maiden's Folly and Spirit of Silverpine for their charts and logs, so no prying eyes would find them
+- 664 2 | slaughtering the Daggerspine naga who killed the survivors of the Maiden's Folly, some solace for Captain Steelgut
+- 665 2 | guarding Professor Phizzlethorpe at the cursed cave while he charged the goggles meant to find the lost elven treasure
+- 666 1 | searching the sea floor with the Goggles of Gem Hunting for Elven Gems of the lost treasure, calcified into stone
+- 667 3 | manning the cannon to defend Shakes O'Breen from the Daggerspine attack, since his crew could not reach Booty Bay without him
+- 668 1 | handing the recovered Elven Gems to Captain O'Breen, the treasure his ships had come to Faldir's Cove for
+- 669 1 | carrying a sample Elven Gem to Fleet Master Seahorn in Booty Bay, proof O'Breen's stranded crew had found the treasure
+- 670 1 | carrying Fleet Master Seahorn's secret letter back to Shakes O'Breen, tied up off the Arathi coast
+- 671 2 | gathering Bloodstone Amulets for Tor'gan, who had found traces of demonic summoning at Northfold Manor
+- 672 1 | collecting raptor eyes so Tor'gan could craft an amulet to lift the despair of Gor'mul, broken since Doomhammer's death
+- 673 3 | killing the warlock Marez Cowl in Stromgarde for the Bloodstone Orb that summoned demons there, so Tor'gan could destroy it
+- 674 1 | giving Gor'mul the Raptor Talon Amulet from Tor'gan, hoping the raptors' strength would rekindle the warrior in him
+- 677 2 | slaying Witherbark trolls in their camps for Drum Fel, to show trolls and ogres alike that the Horde had a home in Arathi too
+- 678 2 | fighting the Boulderfist brutes and magi in their lair near the dwarven bridge, the harder test Drum Fel set
+- 679 3 | striking down the Boulderfist lords and their shaman in the ruins of Stromgarde, the leaders of the attacks on Hammerfall
+- 680 3 | killing Or'Kalar for Korin Fel, who kept the ogre's trap hidden from her husband so he would not rush off foolishly into it
+- 682 2 | taking back the badges of fallen Stromgarde militiamen from the Syndicate, who paid bounties for them, so their families could be told
+- 684 3 | hunting Marez Cowl, a demon-trafficking Syndicate warlock in Stromgarde, for the bounty at Refuge Pointe
+- 685 3 | bringing down Lord Falconcrest, head of the Syndicate in Arathi, and Otto, the bodyguard who had killed dozens of defenders
+- 687 2 | searching the Badlands for Theldurin the Lost, a mad deserter of the Twilight's Hammer who had stolen the scroll of Myzrael
+- 691 1 | gathering Witherbark tusks, medicine pouches and a shadow hunter knife as reagents for Archmage Malin's apprentice Kryten
+- 693 2 | wresting Trelane's Wand of Invocation from Kor'gresh in Boulderfist Hall before the ogre mastered its icy power
+- 694 1 | taking an Azure Agate from the Boulderfist shaman so Kryten could enchant it into a key to the Tower of Arathor's defenses
+- 696 2 | raiding the ogre-held Tower of Arathor for Trelane's phylactery, orb and ember agate
+- 701 1 | cutting raptor hearts from Highland Fleshstalkers so Tor'gan could imbue Gor'mul with the guile of the raptor
+- 702 2 | bringing Gor'mul the orb Tor'gan had filled with raptor spirit, another try at waking the warrior dormant in him
+# Wetlands
+- 275 2 | putting down the diseased Fen Creepers for Rethiel the Greenwarden, so the fever festering in the Wetlands could break
+- 276 2 | culling the Mosshide gnolls near the gate of Algaz for Rethiel the Greenwarden, their swelling numbers trampling the fen
+- 277 1 | taking crude flints from the Mosshides so Rethiel the Greenwarden could cast them into the sea, ending their burning of living wood
+- 279 2 | slaying Gobbler and his Bluegill kin for the Merchant Marines, the murlocs harrying merchants along the coast road
+- 281 1 | searching the coastal murloc camps for cargo dragged from the Blind Princess, among it a valuable statuette of Terenas Menethil
+- 284 1 | combing more murloc hovels along the coast for the missing Menethil Statuette
+- 285 1 | digging through the last murloc hovels to the north, sure the Menethil Statuette was close
+- 286 2 | returning the Menethil Statuette to Karl Boran, precious cargo lost when murlocs raided the Blind Princess
+- 288 1 | buying a flagon of mead for First Mate Fitzsimmons, sole survivor of the doomed Third Fleet, so he could finish his tale
+- 289 2 | putting down the cursed crew of the Third Fleet, First Mate Snellig among them, to free the souls of Fitzsimmons' shipmates
+- 290 2 | taking the strongbox key from Captain Halyndor, who still walked the doomed Intrepid, to reach the cursed thing binding his crew
+- 292 1 | bringing the Cursed Eye of Paleth from the Intrepid to the priest Glorin Steelbrow, hoping to learn how to lift its curse
+- 293 3 | taking the Cursed Eye of Paleth to Archbishop Benedictus in Stormwind to be cleansed, the way to free the Third Fleet's cursed dead
+- 294 2 | killing Mottled Raptors and Screechers for Ormer Ironbraid, whose brethren the raptors had slain at the Whelgar Excavation Site
+- 295 2 | slaying Mottled Scytheclaws and Razormaws below the bluff, to make the raptors pay for the dwarves of the dig
+- 296 3 | hunting Sarltooth, the great raptor Ormer Ironbraid blamed for leading the attack on the dig, and bringing back a talon as proof
+- 299 2 | unearthing the four lost fragments of the Goaz Stone for Prospector Whelgar, a Titan tablet that spoke of a doomed prophecy
+- 303 2 | pushing back the Dark Iron dwarves at Dun Modr for Motley Garmason, so the reserve might arrive in time to finish the drive
+- 304 3 | killing Balgaras the Foul, the cowardly Dark Iron warlock leading the thugs who took Dun Modr, for Longbraid the Grim
+- 305 2 | seeking Merrin Rockweaver at the excavation site for her worried husband Tarrel, two weeks without a letter from her
+- 306 1 | carrying Merrin's note to Tarrel, telling him raptors had overrun the dig and only three of the team survived
+- 455 2 | fighting through Dun Algaz against the Dragonmaw orcs, whose foothold threatened to cut Loch Modan off from Menethil Harbor
+- 464 2 | attacking the Dragonmaw encampment northeast of Menethil and taking their war banners as proof for Captain Stoutfist
+- 465 2 | burning the catapults Nek'rosh had built to lay siege to Menethil Harbor, cut off from reinforcements
+- 469 1 | carrying Einar's bundle of crocolisk skins to James Halloran, so Einar could put off facing his wife
+- 470 1 | recovering Sida's bag from the oozes of Ironbeard's Tomb, where she had thrown it to escape them
+- 471 1 | skinning giant crocolisks for James Halloran, whose apprentice the brutes had left barely alive
+- 472 2 | seeking Longbraid near fallen Dun Modr for a wounded soldier in Menethil, who hoped his leader still lived
+- 474 3 | killing Chieftain Nek'rosh of the Dragonmaw, a telling blow to the clan that had meant to besiege Menethil Harbor
+- 484 1 | skinning young crocolisks for James Halloran, the tanner whose cured skins sail to ports around the world
+- 631 2 | searching for Ol' Rustlocke, the scout Longbraid sent days before to see if the eastern bridge of the Thandol Span could be held
+- 632 1 | bringing Rhag Garmason the grim news of Ol' Rustlocke's death and the parchment found by his clenched fist
+- 633 3 | destroying Kam Deepfury's cache of explosives across the Thandol Span before it could sever the last bridge to the north
+- 634 1 | carrying the plea of Dun Modr's survivors to Captain Nials at Refuge Pointe, for soldiers to help retake the Thandol Span
+- 647 1 | rushing a batch of MacKreel's Moonshine to Brewmeister Bilger in Southshore to repay Foggy MacKreel's debt before it fell overdue
+- 1302 1 | seeking word in Theramore of James Hyal, an innkeeper whose brother had not heard from him in some time
+# Dun Morogh
+- 287 2 | scouting Frostmane Hold and killing its headhunters for Senir Whitebeard, who had seen too many trolls to dare go in
+- 291 1 | carrying Senir Whitebeard's report on the trolls to a sour Senator Barin Redstone in Ironforge
+- 310 1 | sneaking a barrel of Barleybrew Scalder into the Thunderbrew cellar, to teach the Thunderbrews theirs was not the only decent brew
+- 311 1 | bringing a pilfered barrel of Thunder Ale back to Marleth Barleybrew as proof of the switch
+- 312 2 | slipping into Old Icebeard's cave for Tundra MacGrann's dried meats, a month of food he would starve without
+- 313 1 | taking wendigo manes from the Grizzled Den for Pilot Stonegear, a rug for the deck of his siege engine Trollplow
+- 314 3 | slaying Vagash, the beast preying on the Amberstill rams while most of Magni's army was away at war
+- 315 1 | swiping shimmerweed from the Frostmane trolls for Rejold Barleybrew, who meant to brew the perfect stout
+- 317 1 | hunting boar meat and bear furs to stock Pilot Bellowfiz's tank Jetsteam for a month-long Siege Brigade mission
+- 318 1 | fetching a cask of Evershine for Pilot Bellowfiz, a brew to warm him on the cold road and burn in Jetsteam's furnace
+- 319 1 | clearing bears, boars and snow leopards from around Brewnall Village so its dwarves could get on with their brewing
+- 320 1 | bringing Pilot Bellowfiz his cask of Evershine, fire for Jetsteam's furnace on the long mission ahead
+- 384 1 | gathering crag boar ribs and a Rhapsody Malt for Ragnar Thunderbrew, whose trapper had gone off to war, for his family recipe
+- 400 1 | delivering a fresh order of tools to Beldin Steelgrill, who had broken his last fang-ratchet mid-repair on a siege engine
+- 412 2 | taking cogs and gears from the leper gnomes outside Gnomeregan for Razzle Sprysprocket's Recombobulator, meant to reverse their plight
+- 413 1 | carrying a barrel of Rejold's new Shimmer Stout to his brother Wellart at the guard tower on the Loch Modan border
+- 414 1 | taking a cask of Shimmer Stout to Mountaineer Kadrell in Thelsamar, so a fellow Mountaineer could taste the Barleybrews' latest
+- 417 3 | killing Mangeclaw, the huge Ice Claw Bear that mauled Pilot Hildelve, the revenge he wished for in his journal
+- 419 2 | searching the hills for Pilot Mori Hildelve, missing for days while hunting a rare ore for blastpowder
+- 432 2 | killing Rockjaw Skullthumpers in the Gol'Bolar quarry for a furious Foreman Stonebrow, whose work site they had wrecked
+- 433 2 | clearing Rockjaw Bonesnappers out of the Gol'Bolar quarry for Senator Mehr Stonehallow, so the miners could get back to work
+- 466 1 | mining volatile incendicite ore in the Wetlands for Pilot Stonegear, hoping it would make cannon shells with a mighty punch
+- 2160 1 | bringing a crate of inn supplies through the trogg-held pass to Tannok Frosthammer in Kharanos
+- 5541 1 | recovering a crate of ammunition a courier abandoned near the Grizzled Den and taking it to Hegnar Rumbleshot
+# Searing Gorge
+- 3181 1 | bringing Mountaineer Pebblebitty the great horn lodged with his own broken axe head, only to have him call it a fake
+- 3367 2 | trying to help the badly injured Dorius back toward Ironforge, bleeding inside and light headed
+- 3368 2 | carrying Dorius' singed letter to his brother Thorius in Ironforge, a plea to free the excavation team enslaved by Lathoric the Black
+- 3372 2 | taking a relic from the Twilight's Hammer to the Altar of Suntara, to release the archaeologists forced to work even after death
+- 3378 2 | recovering Zamael's golden prayer to Elune from the idol worshippers for Astarii Starseeker, so a caged soul's prayer would be heard
+- 3442 1 | collecting hearts of flame and golem oil for Kalaran Windblade's torch, meant to set the Dark Iron sentry towers ablaze
+- 3443 1 | taking thorium plated daggers from the Dark Iron taskmasters and slavers, to be reforged into the shaft of Kalaran Windblade's torch
+- 3452 1 | seizing a Symbol of Ragnaros from the Twilight's Hammer camp, its foul magic meant for the casing of the torch
+- 3463 3 | setting the four Dark Iron sentry towers ablaze with the Torch of Retribution, leaving their first line of defense empty
+- 3566 3 | slaying Lathoric the Black and Obsidion for Thorius, only to learn the trap had been his own brother's doing
+- 4449 1 | teaching the Dark Iron Geologists a lesson for the dwarf they locked in an outhouse, who also wanted silk cloth for reasons unsaid
+- 4450 1 | rounding up the goods on Krinkle Goodsteel's ledger and taking them to him in Gadgetzan, a job the outhouse prisoner had left unfinished
+- 4451 1 | finding the Grimesilt Outhouse Key and turning it to let ol' Locheed out of the outhouse the Dark Irons had locked
+- 7701 3 | killing Overseer Maltorius, the Thorium Brotherhood traitor commanding the Dark Iron crew of the Slag Pit, for the bounty
+- 7704 1 | bringing Chambermaid Pillaclencher's gigantic ornate pillow to Evonice Sootsmoker, who was overjoyed to have it
+- 7722 2 | recovering the Thorium Brotherhood's secret plans for fiery flux, stolen by the traitor Maltorius into the Slag Pit
+- 7723 1 | pounding Heavy War Golems around the Cauldron for Hansel Heavyhands, whose fingers had swollen too fat to fight
+- 7724 1 | killing the fire-spitting Greater Lava Spiders that upset the children, a job Hansel Heavyhands passed along
+- 7727 1 | clearing incendosaurs from the Slag Pit's lava pools so the Thorium Brotherhood could send its teams down to explore
+- 7728 1 | getting back a smithing tuyere and a lookout's spyglass the Dark Irons had stolen from the Thorium Brotherhood
+- 7729 1 | culling the Dark Iron taskmasters and slavers of the Searing Gorge for Taskmaster Scrange, to be rid of the competition
+# Coldridge Valley
+- 170 2 | driving back the Rockjaw troggs for Balir Frosthammer, whose camp to the west they had overrun only nights before
+- 179 1 | hunting wolves for Sten Stoutarm's Tough Wolf Meat, in trade for warm gloves against the frostbite
+- 182 2 | thinning the Frostmane troll whelps in the southern cave for Grelin Whitebeard, sent to Coldridge Valley to judge the troll threat
+- 183 1 | culling the Small Crag Boars by the frozen lake, grown so many that Talin Keeneye's daily hunting had become dangerous
+- 218 3 | killing Grik'nir the Cold in the troll cave to take back Grelin Whitebeard's stolen journal
+- 420 1 | carrying Grelin Whitebeard's report through the trogg-infested tunnel to his brother Senir in Kharanos
+- 3361 1 | recovering Felix Whindlebolt's chest, box and bucket of bolts from the trolls, lost when he fled irradiated Gnomeregan
+- 3364 1 | racing a scalding mornbrew to Durnan Furcutter in Anvilmar before it went cold
+# Sunken Temple
+- 1445 2 | seizing Fetishes of Hakkar in the Sunken Temple for Fel'Zerul, who feared they were the key to the Atal'ai ritual behind it all
+- 1446 3 | killing Jammal'an the Prophet, whose false visions of Hakkar doomed the Atal'ai, for the exile who had urged caution
+- 1475 2 | gathering intact Atal'ai Tablets from the Sunken Temple for Brohann Caskbelly, an old dwarf's final obligation in life
+- 3373 2 | placing the Essence of Eranikus in the font of his lair, trying to purge the trolls' taint from the green dragon's mind
+- 3446 1 | seeking the Altar of Hakkar in the Sunken Temple, the secret Marvon Rivetseeker glimpsed after nearly dying in a trap
+- 3447 2 | unlocking the secret of the circle of statues in the Sunken Temple, which Marvon believed hid a greater treasure
+- 3528 3 | summoning the avatar of Hakkar in the Sunken Temple and capturing its essence in the Egg of Hakkar for Yeh'kinya
+- 4146 1 | collecting Atal'ai haze from the temple's oozes and lurkers to fuel a bug zapper against the Bloodpetal pests
+- 8733 1 | seeking Malfurion's agent outside Darnassus, the first step toward cleansing Eranikus of the Old Gods' taint
+# The Stockade
+- 377 3 | assassinating Dextren Ward in the Stockade for Councilman Millstipe, the body seller Stormwind had spared from beheading
+- 378 3 | killing Kam Deepfury in the Stockade, the Dark Iron whose plan to bring down the Thandol Span cost Longbraid his kin
+- 386 3 | beheading Targorr the Dread, Gath'Ilzogg's ruthless executioner, whose sentence some noble had mysteriously put on hold
+- 387 2 | putting down the Defias inmates rioting in the Stockade for Warden Thelwater, for the safety of Stormwind
+- 388 2 | taking the red wool bandanas of the Defias for Nikova Raskol, whose grandson Mac was stabbed for scolding the prisoners who made them
+- 391 3 | killing Bazil Thredd, the Defias leader behind the Stockade riots, as proof of loyalty to a distrustful Warden Thelwater
+# Ragefire Chasm
+- 5722 2 | searching Ragefire Chasm for the body of Maur Grimtotem, Magatha's servant, and whatever he found before he died
+- 5724 1 | bringing Rahauro in Thunder Bluff the satchel Maur Grimtotem clutched as the troggs beat him down
+- 5725 2 | taking two spell books of shadow from the Searing Blade for Varimathras, Legion gifts the Dark Lady wanted in her own hands
+- 5728 3 | slaying Bazzalan and Jergosh the Invoker, leaders of the Searing Blade beneath Orgrimmar, for Thrall without Neeru Fireblade knowing
+- 5761 3 | killing Taragaman the Hungerer, the felguard leading the Searing Blade in Ragefire Chasm, for Neeru Fireblade

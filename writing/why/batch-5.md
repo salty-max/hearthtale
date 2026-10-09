@@ -1,0 +1,236 @@
+---
+kind: why
+---
+# Tanaris
+- 10 2 | searching the Gaping Chasm for Fizzledowser's missing assistant, Junior Surveyor Scrimshank, and finding only his surveying equipment
+- 32 1 | carrying Fizzledowser's report on the desert bugs to Zilzibin Drumlore in Orgrimmar, a troll scholar who might know how to stop them
+- 82 2 | prying parts off the Centipaar in the Noxious Lair so Alchemist Pestlezugg could learn what was draining the desert's water pools
+- 113 1 | bringing Fizzledowser the grim finding of Pestlezugg: the bugs were driven by some outside force, a threat to all of southern Kalimdor
+- 162 1 | taking Fizzledowser's report on the desert bugs to Gracina Spiritmight in Darnassus, a scholar who might know how to stop them
+- 351 1 | following a distress beacon to Oglethorpe's homing robot, crashed near the Gaping Chasm
+- 379 1 | wresting water pouches from the Wastewander nomads so Chief Engineer Bilgewhizzle would part with a power source
+- 648 2 | escorting the battered OOX-17/TN to Steamwheedle Port so Oglethorpe Obnoticus could get his homing robot back in the air
+- 654 1 | racing a two-hour power source to test the tissue of the basilisks, hyenas and scorpids of Tanaris with a field kit
+- 992 1 | tapping a pool near Sandsorrow Watch for the Gadgetzan Water Company, its wells lost to the nomads, and meeting a strange bug there
+- 1560 2 | leading Tooga, lost while fetching dinner, back to his wife Torta south of Steamwheedle Port
+- 1690 2 | driving back the Wastewander Bandits and Thieves who had seized nearly every water well around Gadgetzan
+- 1691 2 | thinning out the nomads' shadow mages, rogues and assassins so the Gadgetzan Water Company could win back its wells
+- 2605 1 | fetching a Laden Dew Gland from the cactus garden for Marin Noggenfogger, who hoped to brew a drink for his terrible thirst
+- 2641 1 | diving in a lake of the Hinterlands for a Violet Tragan, Sprinkle's secret ingredient for making Marin's foul dew drinkable
+- 2662 1 | seeing Marin Noggenfogger mix dew and violet powder into the elixir he swore would make him millions
+- 2781 3 | hunting down Caliph Scorpidsting, leader of the Wastewander outlaws, wanted for murdering Gadgetzan Water Co. employees
+- 2873 1 | taking back Stoley's rum from Captain Cuergo's pirate town so Stoley could settle a wager with MacKinley of Booty Bay
+- 2874 1 | settling MacKinley's bet with a bottle of Steamwheedle bilge rum, carried all the way to Booty Bay
+- 2875 3 | ending the pirate Andre Firebeard, wanted for crimes against Steamwheedle and Gadgetzan, his head standing in at his trial
+- 2876 1 | handing Steamwheedle Port a pirate's copy of its ship schedules, the sailings to Booty Bay marked with notes of loot and hard fights
+- 2954 2 | learning from the Stone Watcher of Norgannon that only the Plates of Uldum would open the way into Uldum
+- 3022 1 | carrying a crate of hippogryph eggs to the druid Erelas Ambersky in Rut'theran, who hatched them and trained the young
+- 3161 1 | digging up Gahz'ridian ornaments, relics of the trolls' hydra god Gahz'rilla, for Marvon Rivetseeker to study
+- 3362 1 | clearing the thistleshrubs out of Thistleshrub Valley so Tran'rek would dare go back in
+- 3444 1 | fetching a serpent-marked stone from Marvon Rivetseeker's workshop in Ratchet, to stir his memories of the Sunken Temple
+- 3520 2 | capturing the spirits of the vale screechers of Feralas for Yeh'kinya, who said they were linked to an old, old god
+- 4496 1 | gathering a Gorishi scent gland and Un'Goro soil for Pestlezugg's lure, meant to draw out the silithid hive queen
+- 4504 1 | collecting tar off the beasts of the Un'Goro tar pits for Tran'rek's latest scheme to earn a quick gold
+- 4507 3 | luring out the Gorishi Hive Queen and slaying her, then bringing her brain to Pestlezugg to study the silithid
+- 4508 1 | carrying Pestlezugg's Un'Goro report to Gracina Spiritmight, in hope the Alliance's leaders would heed the silithid threat
+- 4509 1 | carrying Pestlezugg's Un'Goro report to Zilzibin Drumlore, in hope the Horde's leaders would heed the silithid threat
+- 5801 2 | forging a skeleton key in the lava lake atop Fire Plume Ridge for Alchemist Arbington, a step toward facing Araj the Summoner
+- 5802 2 | forging a skeleton key in the lava lake atop Fire Plume Ridge for Apothecary Dithers, a step toward facing Araj the Summoner
+- 5863 3 | breaking the Dunemaul Compound and killing Gor'marok the Ravager before the ogres could build up a force in Tanaris
+- 8365 1 | taking hats off the Southsea pirates of Lost Rigger Cove for the Haughty Modiste, who dressed kings and warchiefs
+- 8366 2 | teaching the Southsea pirates of Lost Rigger Cove a lesson for Bilgewhizzle, since they had begun ignoring the Cartel's protection money
+- 8577 1 | tracking down Stewvul to take back the scrying goggles he had stolen from his ex-best friend, Narain Soothfancy
+- 8585 2 | killing Lord Lakmaeran on the Isle of Dread for Dirge Quikcleave, who meant to pass the beast off as a 500 pound chicken
+- 8586 1 | supplying Dirge Quikcleave with rocket fuel and deeprock salt for what became his Kickin' Chimaerok Chops
+- 8587 1 | hauling Dirge's 500 pound chicken back to Narain Soothfancy, who dug into it with both fists
+- 8597 1 | swimming out to a South Seas island for Narain Soothfancy's buried book, only to find it gone and a note in its place
+- 8598 1 | bringing Narain Soothfancy the ransom letter left by whoever had stolen his book
+- 8599 1 | delivering a love letter from Meridith, who had pulled Narain Soothfancy from his crashed gyrocopter, to the startled gnome
+- 8606 2 | making the ransom drop in Winterspring in disguise, a sack of rocks for gold, to snuff out the thieves who took Narain's book
+- 8620 2 | piecing together the eight scattered chapters of Draconic for Dummies after Doctor Weavil tore up Narain's only copy
+- 8728 2 | gathering arcanite, elementium and rare gems so Narain could craft the arcanite buoy Azuregos had asked for
+- 8742 3 | taking up the Scepter of the Shifting Sands, made whole at last, to shatter the prophecy of C'Thun
+- 8921 1 | assembling the parts of an ectoplasmic distiller for Mux Manascrambler, first piece of his extra-dimensional ghost revealer
+- 8922 1 | paying Mux Manascrambler in sealed blood for a machine to speak with the ghost of Anthion Harmon
+- 8923 1 | carrying venom samples to Mux Manascrambler as payment, in hope his device could reach the ghost of Anthion Harmon
+- 8924 2 | harvesting ectoplasm from the restless dead of Silithus, Winterspring and the Eastern Plaguelands for Mux's ghost revealer
+- 8925 2 | slaying Magma Lord Bokk in the Burning Steppes for the magma core that would power Mux's ghost revealer
+- 8928 1 | buying a Fel Elemental Rod from a shifty imp in Darkwhisper Gorge, the last part of Mux's ghost revealer
+# Stormwind City
+- 212 1 | rushing a Chilled Basilisk Haunch from Stranglethorn to Angus Stern, who needed the meat fresh for a noble's birthday banquet
+- 333 1 | taking Harlan Bagley's request for more knitted clothing to the Canal Tailor, his stock run low with everyone buying armor
+- 334 1 | bringing young Thurman Schneider the sewing kit he had forgotten, without which he could not do his apprentice work
+- 335 1 | gathering a Tear of Tilloa and a Musquash Root for Zardeth the Black Claw, who meant to keep Lord Wishock from exposing the warlocks
+- 336 2 | serving Lord Wishock a bottle of Zardeth's Black Claw stout, so the warlocks of Stormwind could practice their ways undisturbed
+- 346 1 | returning The Stresses of Iron to Brother Kristoff at last, for his speech on the Fortitude of the Spirit
+- 347 1 | digging Rethban Ore out of the gnoll-held Rethban Caverns so Brother Paxton could mix the ink to finish copying his book
+- 353 1 | carrying Grimand Elmore's new axe all the way to Mountaineer Stormpike in Loch Modan, eager to try it on troggs and kobolds
+- 373 2 | bringing Edwin VanCleef's unsent letter to Baros Alexston, the City Architect who had once been his fellow Stonemason
+- 392 2 | carrying a description of Bazil Thredd's mysterious visitor, Maelik, to Baros Alexston in hope he knew the man
+- 393 2 | taking the description to Mathias Shaw of SI:7, who knew the visitor as an assassin in the pay of Lord Gregor Lescovar
+- 396 2 | delivering Baros Alexston's report on the Defias to Stormwind Keep, and being commended for thwarting VanCleef's machinations
+- 399 1 | searching the burned Alexston Farmstead in Westfall for the first compass of Baros Alexston, a keepsake of his boyhood
+- 434 3 | killing Lord Gregor Lescovar and the assassin Marzon in the castle garden as they met to plot with the Defias
+- 540 2 | rescuing books from the ogres in the Ruins of Alterac for Loremaster Dibbs, the troll lore of The Arm of Gri'lek among them
+- 542 1 | returning the recovered tomes of Alterac to Milton Sheaf, saving their knowledge for the Royal Library of Stormwind
+- 543 2 | recovering the Perenolde Tiara, heirloom of Alterac's fallen rulers, from the ogre mage Grel'borg the Miser
+- 1244 2 | searching Addle's Stead in Duskwood for the Defias Docket, a clue to the diplomat who never reached Theramore
+- 1245 1 | carrying the Defias Docket to Elling Trias, a plan Watcher Backus said was bigger than him
+- 1249 2 | subduing Tapoke Jahn, the eavesdropper in Menethil's tavern, before he could slip away with what he knew of the missing diplomat
+- 1265 1 | searching Sentry Point for Private Hendel, said to be the Defias' man aboard the king's ship
+- 1324 3 | beating Private Hendel, the Defias' man aboard the king's ship, so Theramore could question him about the missing King
+- 1364 1 | recovering Khadgar's essays from the swamp creatures that frightened Dellis, and bringing them to Watcher Mahar Ba at Nethergarde
+- 1447 2 | brawling with Dashel Stonefist and his friends in Old Town until he talked about the Defias' plot
+- 1448 2 | finding the Temple of Atal'Hakkar sunk beneath the Pool of Tears, the mystery that had eluded old Brohann Caskbelly
+- 2746 1 | bringing Tyrion silk and Clara's apples for the disguise that would slip Spybot past Lescovar's guards
+- 5048 2 | seeking out Ol' Emma, the muttering old woman of Stormwind, who was indeed Emma Felstone, with a package from her sister Janice
+- 6186 2 | breaking the news to Highlord Bolvar Fordragon that Nathanos Marris, once a noble ranger lord, had become the Forsaken's Blightcaller
+- 6403 3 | standing with Marshal Reginald Windsor as he unmasked Lady Prestor as Onyxia and gave his life to free Stormwind from her spell
+- 6501 2 | searching the world for one of dragon blood who could restore the Fragment of the Dragon's Eye, the key to Onyxia's lair
+- 7495 3 | presenting the Head of Onyxia to Highlord Bolvar Fordragon, long held under her gaze, and seeing Stormwind's honor restored
+- 7781 3 | laying the head of Nefarian, Lord of Blackrock, before Highlord Bolvar Fordragon, a victory the Alliance had not known in years
+# sort 366
+- 8867 1 | launching fireworks for the Lunar Festival, the yearly celebration of Moonglade's triumph over an ancient evil
+- 8868 3 | summoning and defeating Omen, a fallen hero of the War of the Ancients, to quiet his rage for another year and earn Elune's blessing
+# sort 161
+- 1861 1 | drawing water from Mirror Lake for Jennea Cannon to test for magical taint, lest those who drank there be harmed
+- 1880 1 | recovering Bink's Mage-tastic Gizmonitor, left in a hut outside Gnomeregan when the gnomes fled, from among the leper gnomes
+- 1882 1 | picking snapdragons at the Balnir Farmstead so the Forsaken mages could measure how far the plague had crept into Tirisfal
+- 1884 2 | smashing the ju-ju heaps the warlock Zalazane had planted on the Echo Isles to twist the flow of magic in Durotar
+- 1920 2 | catching the invisible creatures loose in the Blue Recluse for Jennea Cannon, who feared a mana rift had opened there
+- 1921 1 | gathering linen and charged rift gems from the Silver Stream Mine so Wynne Larson could weave a robe fit for a mage
+- 1938 2 | retrieving Ur's Treatise on Shadow Magic from the tower of Ilgalar, where the fallen mage Morganth had taken it
+- 1940 1 | stripping pristine silk from the carrion recluses of Duskwood for a finer robe, one suited to an adept mage
+- 1944 1 | filling a flask at the highest falls of satyr-held Xavian for Deino, who sought the fabled magic of its waters
+- 1945 1 | taking locks of hair from the laughing sisters of Ashenvale, dryads who would never have given it willingly, for robes from Kil'hala
+- 1948 1 | finding jade and charging a bramble with lightning for Tabetha, the first materials of a mage's wand
+- 1950 1 | looking for Magus Tirth's missing apprentice around the Shimmering Flats races, for the phrase that opened his strongbox
+- 1951 2 | recovering Tirth's Rituals of Power from the Scarlet Monastery, sold off to pay his gambling debts, for Tabetha's wand ritual
+- 1954 1 | snatching an infernal orb from a Burning Blade summoner in Desolace, the vessel Tabetha needed for a staff or orb
+- 1955 2 | killing the demon Tabetha drove out of the infernal orb before it could leap back in
+- 1956 2 | defeating the obsidian sentinel in Uldaman for its ancient power source, to strengthen Tabetha's orb
+- 1957 2 | destroying the mana surges pouring from a rift Tabetha opened, so their energy could fill the empty orb
+- 1960 2 | capturing the invisible creatures of magic loose in Algernon's shop, so the Undercity's mages could learn why they had come
+- 1961 1 | taking mana gems from the Dalaran mages of Silverpine for Josef Gregorian to sew into spellfire robes
+- 8251 1 | wresting glittering dust from the blood elves of Azshara, who had killed Archmage Xylem's apprentice when he came to trade
+- 8252 1 | prying enchanted coral from the spitelash sirens, who had stripped the bay of it, for Archmage Xylem's research
+- 8253 3 | slaying the green drake Morphaz in the Sunken Temple for the arcane shard in his stomach, swallowed with Xylem's apprentice
+- 9362 2 | killing Warlord Krellian in the Temple of Zin-Malor for the prismatic shell Archmage Xylem's scrying had found
+- 9364 2 | polymorphing the Spitelash so the prismatic shell could gather their split essence, from which Archmage Xylem formed a new spell
+# Loch Modan
+- 161 1 | carrying the strange powder from the dam to Ashlan Stonesmirk in Dun Modr, an explosives expert who could tell what it was
+- 217 3 | killing the trogg chieftain Grawmug and his guards Gnasher and Brawler, to push the troggs of Loch Modan back into the ground
+- 224 2 | fighting the Stonesplinter troggs tunneling up across Loch Modan, the gravest threat to Ironforge while its soldiers were at the front
+- 237 2 | holding off the trogg skullthumpers and seers in the southern hills, buying time until the dwarves returned from the Alliance front
+- 250 2 | searching the eastern ramp of the Stonewrought Dam, where Dark Iron Sappers had been seen, for a clue to their next attack
+- 255 2 | fighting the Mo'grosh ogres camped by the lake as hired arms for Magistrate Bluntnose, while Thelsamar waited months for soldiers
+- 256 3 | hunting down Chok'sul, the ogre behind the attacks on Thelsamar, the dam and the excavation
+- 257 1 | meeting Daryl the Youngling's boastful challenge to bring down a flock of mountain buzzards against the clock
+- 258 1 | racing the clock against elder mountain boars to prove Daryl the Youngling wrong a second time
+- 263 2 | killing trogg shaman and bonesnappers for Mountaineer Wallbang, the reserves called to the front and the guards left alone
+- 267 1 | taking the fight to the troggs in the hills for Captain Rugelfuss, whose regiment could not leave its gate
+- 271 2 | killing Ol' Sooty, the bear that gave Daryl the Youngling his scar, at Vyrin Swiftwind's urging
+- 273 2 | catching up with Huldar's powder shipment to the excavation just as the porter Saean turned out to be a Dark Iron sympathizer
+- 274 1 | rushing back to Hinderweir with word that the powder was Seaforium, enough once wet to blow Ironforge out of the mountain
+- 278 2 | gathering lurker venom, a Mo'grosh crystal and a crocolisk tear for the mixture that could defuse the Dark Irons' Seaforium
+- 280 3 | swimming down to the Dark Irons' keg at the base of the Stonewrought Dam to stir in the disarming mixture before it blew
+- 297 1 | prying carved idols from the troggs at Ironband's Excavation, relics that drove them berserk, for Magmar Fellhew to study
+- 298 1 | bringing Ironband's progress report and his plea for more blastpowder to Jern Hornhelm in Thelsamar
+- 301 1 | carrying Ironband's report to Prospector Stormpike in Ironforge, who had sent blastpowder weeks before that never arrived
+- 307 1 | rescuing the Miners' League gear from the kobold-infested Silver Stream Mine before the warriors stormed in
+- 309 2 | escorting Miran and the blastpowder to Ironband's Excavation, with Dark Iron sympathizers about on the road
+- 385 1 | wrestling the crocolisks of the Loch's islands for meat and skins, the Farstrider Lodge's trade
+- 416 1 | rooting tunnel rat kobolds out of the foothills west of Thelsamar for the bounty on their ears
+- 418 1 | gathering bear meat, boar intestines and spider ichor for Vidra Hearthstove's famous blood sausages
+- 531 1 | presenting Ol' Sooty's head to Vyrin Swiftwind, who had itched for months to get back at that stuck-up Daryl
+- 1338 1 | carrying Mountaineer Stormpike's request for a shield to Furen Longbeard, the dwarven armorsmith he admired in Stormwind
+- 2038 2 | recovering the tools and Blastencapper explosives the troggs stole from Bingles, whose air assault on Gnomeregan depended on them
+- 2500 1 | collecting gizzards, coyote fangs and elemental shards in the Badlands to restock the alchemist Ghak Healtouch
+- 2501 1 | draining blood from scorched guardian dragons in the Badlands for Ghak Healtouch, in exchange for the recipe of his brew
+- 3182 2 | proving to Curator Thorius in Ironforge that the horn was truly Margol the Rager's, the price of a key to the Searing Gorge
+- 6391 1 | flying Brock Stoneseeker's list of his best mining students to Ironforge, where their honorary picks were waiting
+- 6392 1 | flying the honorary picks back to Brock Stoneseeker for his mining students, eager to try them on Loch Modan's ore
+# Teldrassil
+- 476 1 | bringing Athridas Bearmantle grave news from the wounded Gaerolas: the Gnarlpine furbolgs had been driven mad by Fel Moss
+- 483 2 | recovering the Relics of Wakening from the ravaged Ban'ethil Barrow Den, lest the sleeping Druids of the Talon be lost in the Dream
+- 486 3 | slaying Ursal the Mauler, the Gnarlpine chieftain who drove his tribe mad, so the Druids of the Talon could be woken
+- 487 2 | clearing Gnarlpine ambushers off the road to Darnassus, where travelers bringing news and trade had come under attack
+- 488 1 | fetching fangs, feathers and spider silk for Zenn Foulhoof, a satyr who laughed at the gullible for doing his bidding
+- 489 1 | slipping Zenn Foulhoof fel cones as a harmless-looking snack, the lesson the Council of the Forest demanded for having served the satyr
+- 918 1 | gathering timberling seeds around Lake Al'Ameth for Denalan, who hoped to grow gentler timberlings in his special soil
+- 919 1 | pulling up the timberling sprouts spreading around Lake Al'Ameth before they grew large enough to cause trouble
+- 922 1 | taking a timberling seed to Rellian Greenspyre in Darnassus, who found it carried its parent's taint
+- 923 2 | cutting down the tainted timberlings of Wellspring Lake for Rellian Greenspyre, their mossy tumors to be burned
+- 927 1 | handing Denalan the still-beating heart of Blackmoss the Fetid, wrapped in a dark, oily moss
+- 929 1 | filling a phial at the moonwell near Starbreeze for Corithras Moonrage, as he began the tale of how Teldrassil came to be
+- 930 1 | showing Denalan a strange glowing fruit, a plant from far off that reacted oddly with the soil of Teldrassil
+- 931 1 | bringing Denalan a shimmering frond, a plant he had last seen in the Swamp of Sorrows decades before
+- 932 3 | hunting down the satyr Lord Melenas in Fel Rock, plotting something foul much too close to Dolanaar
+- 933 1 | braving the ill-tempered Gnarlpine to fill a phial at the moonwell by the Pools of Arlithrien for Corithras Moonrage
+- 934 1 | drawing water from the moonwell beneath the Oracle Tree, and hearing why the dragons refused to bless Teldrassil
+- 935 1 | carrying the moonwell waters to Arch Druid Fandral Staghelm, on whose shoulders the troubles of Teldrassil fell
+- 937 2 | driving the harpies from their nests around the Oracle Tree, after they killed its messenger to Darnassus
+- 938 3 | leading Mist, a badly wounded sabercat, back to Sentinel Arynia Cloudsbreak, who had given her faithful companion up for dead
+- 940 1 | carrying the Oracle Tree's report to Fandral Staghelm, its last messenger having been killed by the harpies
+- 941 1 | planting the tainted heart of Blackmoss in Denalan's nutritive soil, which cleansed it
+- 997 1 | delivering a long-delayed package of rare earth to Denalan for his experiments on the plants of Teldrassil
+- 2438 1 | recovering Tallonkai Swiftroot's emerald dreamcatcher, a rare gift from the warden Gaerolas, from furbolg-held Starbreeze
+- 2459 2 | taking back the emerald Ferocitas the Dream Eater had stolen from Tallonkai's dreamcatcher, and thinning his Gnarlpine mystics
+- 2499 3 | hunting down Oakenscowl, once a grand leader of the timberlings, whose gargantuan tumor spread corruption around Lake Al'Ameth
+- 2541 2 | taking a voodoo charm from the Gnarlpine shaman for Oben Rageclaw, whose spirit they had torn from his sleeping body
+- 2561 3 | killing the soulless body of Oben Rageclaw, turned by the Gnarlpine against the Den, so his spirit could rest in the Emerald Dream
+- 7383 1 | filling a phial at the Oracle Tree's moonwell, the first and most powerful on Teldrassil, as Corithras told of the dragons' refusal
+# Burning Steppes
+- 3822 3 | taking Sha'ni's wedding nose-ring back from her killer Krom'Grul and carrying it, with her last words, to the grieving Thal'trak
+- 3823 2 | crippling the Firegut ogres who guarded Dreadmaul Rock and the Blackrock orcs' supply lines, at the raving Oralius's orders
+- 3824 3 | chopping off the head of Gor'tesh the Brute Lord, master of the Firegut ogres, for the decisive strike Oralius planned
+- 3825 2 | planting Gor'tesh's head on a pike atop Dreadmaul Rock, to send the remaining Firegut ogres running in terror
+- 4061 2 | prying shards from the rock automatons of the Burning Steppes so Theodora Mulvadania could trace where the golems were coming from
+- 4182 2 | pushing back the black dragonkin gathered below Helendis Riverhorn's ridge in the Burning Steppes
+- 4183 1 | carrying Helendis Riverhorn's warning to Magistrate Solomon: the black dragonflight was the true master of the Blackrock orcs
+- 4184 2 | pleading Lakeshire's case before Highlord Bolvar Fordragon, for the town could not survive both the Blackrock orcs and the black dragons
+- 4186 1 | returning to Lakeshire with Bolvar's decree, a deputy of Stormwind on whose shoulders the town's fate now rested
+- 4224 1 | finding Ragged John in his cave to learn what became of Marshal Windsor and the intelligence on the Blackrock lost with him
+- 4283 1 | stripping Blackrock medallions off the orcs for Oralius, who wanted badges to go with his ogre ear collection
+- 4296 1 | copying the Tablet of the Seven in the ruins of Thaurissan for Maxwort Uberglint, who hoped its dwarven lore would make them rich
+- 4726 1 | catching broodling essence with Tinkee Steamboil's Draco-Incarcinatrix 900, for her study of the dragon whelps
+- 4808 1 | carrying Tinkee's letter to Felnok Steelspring in Everlook, asking for parts to freeze dragon whelp eggs
+- 5522 2 | handing Tinkee's frozen dragon eggs to Leonid Barthalomew, who had tricked her so they would never reach her evil master
+# sort 369
+- 9319 1 | touching the bonfires burning deep in Blackrock Spire, Dire Maul, Scholomance and Stratholme for the Midsummer Fire Festival
+- 9322 1 | visiting the blue Midsummer fires of Winterspring, Azshara, Silithus and Un'Goro for the Festival Flamekeeper
+- 9323 1 | seeking out the blue Midsummer fires of the Blasted Lands, the Plaguelands, the Hinterlands and Searing Gorge
+- 9324 2 | stealing the flame from the heart of Orgrimmar itself for the Festival Loremaster's collection
+- 9325 2 | stealing the flame of the shaman of Thunder Bluff for the Festival Loremaster's collection
+- 9326 2 | stealing the smoldering flame from the ruins above the Undercity for the Festival Loremaster's collection
+- 9330 2 | stealing the flame from the heart of Stormwind itself for the Festival Talespinner's collection
+- 9331 2 | stealing the flame from the halls of Ironforge for the Festival Talespinner's collection
+- 9332 2 | stealing the flame from the shores of Teldrassil for the Festival Talespinner's collection
+- 9367 1 | making sure the bonfires of Stormwind, Ironforge and Darnassus burned hot and bright for the Midsummer Fire Festival
+- 9368 1 | making sure the bonfires of Orgrimmar, Thunder Bluff and the Undercity burned hot and bright for the Midsummer Fire Festival
+- 9388 1 | checking that the green Midsummer fires of the Barrens, Darkshore, Ashenvale and Stonetalon still burned
+- 9389 1 | seeing that the green Midsummer fires of the Wetlands, Silverpine, Westfall and Hillsbrad had not gone out
+# Red Cloud Mesa
+- 747 1 | hunting plainstriders for the meat and feathers Camp Narache had run short of, to prove worthy in Chief Hawkwind's eyes
+- 750 1 | skinning mountain cougars in the hills for Camp Narache, whose children needed clothing and whose tents needed mending
+- 752 1 | looking in on Chief Hawkwind's mother, gone a long while fetching water from the well
+- 753 1 | carrying a water pitcher back from the well for the Greatmother, whose old legs lacked their vigor
+- 757 3 | passing the Rite of Strength, first of the Rites of the Earthmother, against the Bristlebacks who raided Camp Narache
+- 780 1 | killing the Battleboars the Bristlebacks had trained to be malicious, for snouts and flanks to stew for the young of the camp
+- 781 2 | bringing Chief Hawkwind the Bristleback warchief's plans for a siege of Camp Narache, in time to call Bloodhoof Village to help
+- 1656 1 | taking a bundle of furs to Innkeeper Kauth in Bloodhoof Village for a young tauren too worn out by the Rite of Strength
+- 3376 3 | bringing Brave Windfeather the head of Chief Sharptusk Thornmantle, whose Bristlebacks waged war on the tauren of the Mesa
+# sort 344
+- 7786 3 | bringing the Bindings of the Windseeker, elementium and the Essence of the Firelord so Highlord Demitrian could free Thunderaan
+- 7787 3 | forcing the lying Highlord Demitrian, after the Windseeker's defeat, to wake the dormant blade Thunderfury
+- 9251 3 | recovering the head of Atiesh from Kel'Thuzad in Naxxramas and its base from Ahn'Qiraj, for Anachronos to make the staff whole
+- 9257 3 | defeating the hand of Sargeras, cast out of Atiesh on the consecrated earth of Stratholme, to cleanse the Greatstaff of the Guardian
+- 9269 3 | facing the hand of Sargeras, driven out of Atiesh on Stratholme's consecrated earth, to cleanse the Greatstaff of the Guardian
+- 9270 3 | destroying the demon cast out of Atiesh on the consecrated earth of Stratholme, the hand of Sargeras that befouled the staff
+- 9271 3 | overcoming the hand of Sargeras, loosed from Atiesh where Lordaeron's knights were murdered, to cleanse the Greatstaff
+# sort 24
+- 866 1 | gathering root samples from the herbs of the Barrens for Mebok Mizzyrix, who hoped the oasis water had given them valuable properties
+# sort 181
+- 1581 1 | mixing elixirs for Syral Bladeleaf, whose husband spent so long brewing for their shop that they never had time for each other
+# Alcaz Island
+- 8970 2 | gathering bloodkelp from the Strashaz naga of Alcaz Island so Bodley could divine where the last piece of the amulet lay
