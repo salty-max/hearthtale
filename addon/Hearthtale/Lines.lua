@@ -873,9 +873,11 @@ function Book:deed(m, key, tags)
     -- a thing named for who asked for it: "the journal" ("Grelin Whitebeard
     -- had asked for Grelin Whitebeard's Journal" says it twice)
     local owner = m.giver and #all == 1 and (o.name:match("^(.-)'s (.+)$"))
-    if owner and m.giver:find(owner, 1, true) == 1 then list[1] = "the " .. o.name:match("'s (.+)$"):lower() end
+    local renamed = owner and m.giver:find(owner, 1, true) == 1
+    if renamed then list[1] = "the " .. o.name:match("'s (.+)$"):lower() end
     if #all == 1 and self.scene then self.scene.thingsCarried[o.name] = self.told or 0 end
-    local count = #all == 1 and (o.n or 1) or 2
+    -- ("the harvest", Milly's eight sacks of it: one thing, never "all the the harvest")
+    local count = renamed and 1 or (#all == 1 and (o.n or 1) or 2)
     values.n, values.thing = #all == 1 and self:size(count, key, uncounted(o.name)) or "", listing(list)
     if tags.done then values.giver = nil end -- found, not yet handed over
     -- the same thing again, told just before: "four more Blood Shards"
