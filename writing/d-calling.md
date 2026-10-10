@@ -29,9 +29,11 @@ kind: d-calling
 - [spell:Hex_of_Weakness] Hex of Weakness was mine now, and a foe's strength could be made to leave it.
 - [spell:Shadowguard] Shadowguard was mine now, the loa's shadow wrapped close around me.
 - [spell:Shadowguard] I learned Shadowguard, and shadows gathered about me to strike back at whoever came close.
-- [teleport] I learned to step to {place} in a single breath, and the road home was never long again.
-- [teleport] With {spell} I could be home before a meal went cold, and the thought made every long road a little shorter.
-- [teleport] I learned {spell}, and the long walk home became a matter of a few words.
+- [teleport home] I learned to step to {place} in a single breath, and the road home was never long again.
+- [teleport home] With {spell} I could be home before a meal went cold, and the thought made every long road a little shorter.
+- [teleport home] I learned {spell}, and the long walk home became a matter of a few words.
+- [teleport !home] I learned to step to {place} in a single breath, and it was never more than a breath away again.
+- [teleport !home] I learned {spell}, and {place}, though it was not my people's city, was only a few words away wherever I stood.
 - [spell:Teleport:_Moonglade] I learned the way to Moonglade, the druids' own sanctuary, and could go there in a breath whenever I needed its quiet.
 - [spell:Teleport:_Moonglade] Moonglade was a breath away now, and I knew where to go when the world asked too much of me.
 - [spell:Polymorph] I can turn a foe into a sheep now, and I suspect I will never tire of it.
@@ -69,8 +71,9 @@ kind: d-calling
 - [spell:Pick_Lock] Pick Lock was mine now; doors and strongboxes became questions with answers.
 - [spell:Blind] I learned Blind, a pinch of powder that could take a foe out of a fight entirely.
 - [spell:Blind] Blind was mine, and a single foe could be made to forget I was there.
-- [portal] I learned to open a portal to {place}, and could send others home as easily as myself.
-- [portal] With {spell} I could open the way home for a whole party, and felt the mage's craft grow wider.
+- [portal home] I learned to open a portal to {place}, and could send others home as easily as myself.
+- [portal !home] I learned to open a portal to {place}, and could send a whole party there as easily as myself.
+- [portal home] With {spell} I could open the way home for a whole party, and felt the mage's craft grow wider.
 - [spell:Ritual_of_Summoning] I learned the Ritual of Summoning, and could draw a friend across the world to my side.
 - [spell:Ritual_of_Summoning] The Ritual of Summoning was mine, and distance between companions became a thing I could undo.
 - [spell:Reincarnation] I learned Reincarnation, and death became a door the spirits might let me walk back through.

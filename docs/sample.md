@@ -14,9 +14,9 @@ I began in Coldridge Valley, with Ironforge behind my name and the wish to bring
 
 ## Entry 2 (levels 4 to 7)
 
-I continued in Anvilmar, convinced that most trouble gives way if it is leaned on long enough. I set my hand to skinning and leatherworking. Wearing a Handstitched Leather Vest that I had made myself was a different pleasure from wearing anything found or given. I took the measure of Timber and found my own was enough, which is the kind of sum I like.
+I continued in Anvilmar, convinced that most trouble gives way if it is leaned on long enough. I set my hand to skinning and leatherworking. Wearing a Handstitched Leather Vest that I had made myself was a different pleasure from wearing anything found or given. I took the measure of Timber and found my own was enough, which is the kind of sum I like. I scouted Frostmane Hold and killed its headhunters for Senir Whitebeard, who had seen too many trolls to dare go in.
 
-I scouted Frostmane Hold and killed its headhunters for Senir Whitebeard, who had seen too many trolls to dare go in. Before the stretch was out, I also slew Vagash, the beast preying on the Amberstill rams while most of Magni's army was away at war. Hunter's Mark is mine now, and no quarry of mine will vanish into the crowd. I smelled the Thunderbrew Distillery before I had properly reached Kharanos. Smoke rose above the houses, where dwarves and gnomes crowded together against the cold, and I felt my shoulders ease at the sight.
+Before the stretch was out, I also slew Vagash, the beast preying on the Amberstill rams while most of Magni's army was away at war. Hunter's Mark is mine now, and no quarry of mine will vanish into the crowd. I smelled the Thunderbrew Distillery before I had properly reached Kharanos. Smoke rose above the houses, where dwarves and gnomes crowded together against the cold, and I felt my shoulders ease at the sight. I rested in Kharanos, with the road welcome to wear out somebody else for a while.
 
 ## Entry 3 (levels 7 to 9)
 
@@ -48,9 +48,9 @@ The day began in Dolanaar as most of mine did, with a long moment of listening b
 
 ## Entry 1 (levels 1 to 5)
 
-I set out in Deathknell, a Forsaken priest; the Light still answered me, and every time it answered, it burned. Crows called over the crypts of Tirisfal, toward the broken walls of Lordaeron. Night changed little here, though it left me feeling less conspicuous. I cleared the spiders from the gold mine near Deathknell, gold my people needed to survive. Not long after, I struck first at the Scarlet Crusade camp southeast of Deathknell, zealots sworn to destroy every undead, and took their armbands.
+I set out in Deathknell, a Forsaken priest; the Light still answered me, and every time it answered, it burned. Crows called over the crypts of Tirisfal, toward the broken walls of Lordaeron. Night changed little here, though it left me feeling less conspicuous. I cleared the spiders from the gold mine near Deathknell, gold my people needed to survive. I can set a ward between myself and a blow now, and I feel steadier for it.
 
-I can set a ward between myself and a blow now, and I feel steadier for it. After that, I executed Maggot Eye, the gnoll who stole corpses near Garren's Haunt for the Lich King's army, for Brill's reward. After the tombs, the crooked roofs of Brill looked almost companionable. Around the Gallows' End Tavern my people went about their business, and the town kept going on stubbornness alone. I settled in Brill, with no need to sleep and a very definite wish to stop.
+Not long after, I executed Maggot Eye, the gnoll who stole corpses near Garren's Haunt for the Lich King's army, for Brill's reward. After the tombs, the crooked roofs of Brill looked almost companionable. Around the Gallows' End Tavern my people went about their business, and the town kept going on stubbornness alone. I settled in Brill, with no need to sleep and a very definite wish to stop.
 
 ## Entry 2 (levels 5 to 6)
 
