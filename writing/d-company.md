@@ -11,3 +11,7 @@ kind: d-company
 - [again] I travelled with {mates} again for a while.
 - [again] {mates} and I shared the road once more.
 - [again] Once again, I had {mates} for company part of the way.
+- [reviver one] {mates} was with me again, the one who had once brought me back from death {at}.
+- [reviver one] I had {mates} beside me again, who had once brought me back from death {at}.
+- [reviver !one] I had company again in {mates}, and one of them had once brought me back from death {at}.
+- [reviver !one] {mates} travelled with me for a while, one of them the friend who had brought me back from death {at}.

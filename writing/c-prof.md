@@ -19,3 +19,5 @@ kind: c-prof
 - [dropped] gave up {prof}
 - [dropped] set {prof} aside for good
 - [dropped] put {prof} behind me
+- [rank one since] rose to {rank} rank in {prof}, which I had first taken up {began}
+- [rank one since] trained up to {rank} in {prof}, a long way from my first lessons {began}

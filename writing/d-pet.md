@@ -10,3 +10,5 @@ kind: d-pet
 - [demon] {pet} served as a bound demon serves, and I watched every moment of that service all the same.
 - [demon] {pet} did my bidding through all of it, and I never once forgot what I had bound.
 - [demon] I sent {pet} ahead into most of the fights, without one complaint in return, which I found almost more unsettling than defiance.
+- [!demon fell] {pet} had fallen once {where}, and was at my side through all of it all the same.
+- [!demon fell] {pet}, who had gone down once {where}, fought beside me the whole way.

@@ -195,7 +195,8 @@ An entry is the stretch looked back on at its rest, by what weighs most:
   …", and no company sentence after); a class's own quest
   is a milestone, never a story; a chain's quest after an entry of the last
   four told one of it by the same people is `[thread]`, its end `[thread
-  settled]`; now and then (`REACT_GAP` entries apart, never the same line
+  settled]`, whose business it was by name (`[who]`, `{who}`) unless the
+  deed names them; now and then (`REACT_GAP` entries apart, never the same line
   twice in a book) a word on what it was, `d-react`, by the story's subject
   (writing/why/; an errand's guessed: `[rescue]` of a named person, never
   souls, a thing, a place, one of a kind, nor one freed to be slain;
@@ -226,6 +227,12 @@ An entry is the stretch looked back on at its rest, by what weighs most:
   rank in a trade, a ride, the first flight (`flight`, from where to where),
   the first bag (by its name and room) or gold, the pet named again
   (`d-pet`);
+- continuity, sparse and from earlier entries only: one who brought me back
+  from death, in the company's sentence when met again (`d-company`
+  `[reviver]`, once); a foe of a name that killed me or nearly did, beaten
+  later (`d-revenge`, `[died]`, once, not when the story tells it); a pet
+  that fell once, named again (`d-pet` `[fell]`); a trade's first new rank,
+  where it was taken up (`c-prof` `[since]`);
 - the trades of the stretch, one sentence (`c-prof`: `[new]`, `[again]` after
   one was given up, `[rank]`, `[master]` at 300, `[dropped]`; one verb for
   those at the same stage, the stages in the order they came, what my hands

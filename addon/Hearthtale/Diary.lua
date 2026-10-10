@@ -751,6 +751,22 @@ local function entry(d, n, ch)
     end
   end
 
+  -- (one who brought me back from death in an earlier entry, met again:
+  -- said in the company's own sentence, once)
+  local function reviverIn(list)
+    local names = {}
+    for name in pairs(d.revivers) do
+      table.insert(names, name)
+    end
+    table.sort(names)
+    for _, mate in ipairs(list) do
+      for _, name in ipairs(names) do
+        local was = d.revivers[name]
+        if was.n < n and (name == mate or name:match("^([^%s%-]+)") == mate) then return name, was end
+      end
+    end
+  end
+
   -- the story of the stretch: the deed that mattered, told as done ("I
   -- killed Hogger, …"); a chain's quest after a recent entry told one of it
   -- by the same people, the business taken up again, or finished; a second
@@ -777,9 +793,12 @@ local function entry(d, n, ch)
         and before.n >= n - 4
         and w.giver
         and (w.giver == before.giver or w.giver == before.ender)
-      local t = thread and { thread = true, settled = ends[q.id] or nil } or {}
+      -- (whose business it was, by name, unless the deed names them itself)
+      local who = thread and not why:find(w.giver, 1, true) and w.giver or nil
+      local t = thread and { thread = true, settled = ends[q.id] or nil, who = who and true or nil } or {}
       local prefer = thread and (t.settled and { settled = true } or { thread = true }) or nil
-      text = sayFresh("d-why", "why", { why = why }, t, nil, prefer)
+      if prefer and who then prefer.who = true end
+      text = sayFresh("d-why", "why", { why = why, who = who }, t, nil, prefer)
     end
     -- (done in company: who was with me, in the deed's own sentence)
     local with = {}
@@ -857,6 +876,7 @@ local function entry(d, n, ch)
   -- deaths, else the closest call (a foe that killed me is told there; one
   -- that nearly did, a hard fight when the foes are named)
   local dangerFoes, deathFoes, dangerAt = {}, {}, nil
+  local bareNames = ns.names and ns.names.creatureBare or {} -- (a foe of a name: "Hogger")
   for _, m in ipairs(f.closes) do
     if m.foe then dangerFoes[m.foe] = true end
   end
@@ -866,6 +886,10 @@ local function entry(d, n, ch)
     local place = m.sub or m.zone
     local t = deathTags(m.death or {})
     if m.death and m.death.foe then deathFoes[m.death.foe] = true end
+    if r and r.how == "ally" and r.by then d.revivers[r.by] = { n = n, place = place } end
+    if m.death and m.death.foe and (bareNames[m.death.foe] or f.rares[m.death.foe]) then
+      d.dangers[m.death.foe] = { n = n, place = place, died = true }
+    end
     if r then
       t[r.how or "corpse"] = true
       add(
@@ -901,6 +925,9 @@ local function entry(d, n, ch)
       if (m.hp or 100) < (worst.hp or 100) then worst = m end
     end
     if worst.foe then deathFoes[worst.foe] = true end -- (told there, not again among the foes)
+    if worst.foe and (bareNames[worst.foe] or f.rares[worst.foe]) and not d.dangers[worst.foe] then
+      d.dangers[worst.foe] = { n = n, place = worst.sub or worst.zone }
+    end
     add(
       sayFresh(
         (worst.hp or 100) <= 5 and "close-deep" or "close-light",
@@ -913,6 +940,31 @@ local function entry(d, n, ch)
       f.at[worst]
     )
     dangerAt = f.at[worst]
+  end
+
+  -- a foe of a name that killed me or nearly did, in an earlier entry,
+  -- beaten now (not when the story tells it): told once, where it fell
+  for i, m in ipairs(ch.log or {}) do
+    local was = (m.k == "kill" or m.k == "rare") and m.name and d.dangers[m.name]
+    if was and was.n < n then
+      d.dangers[m.name], d.toldFoes[m.name] = nil, true
+      local told = false
+      for _, q in ipairs(story) do
+        if q.text:find(m.name, 1, true) then told = true end
+      end
+      if not told then
+        add(
+          sayFresh(
+            "d-revenge",
+            "revenge",
+            { foe = m.name, at = was.place and at(was.place) },
+            { died = was.died or nil }
+          ),
+          true,
+          i
+        )
+      end
+    end
   end
 
   -- a dungeon, and its end
@@ -1059,6 +1111,7 @@ local function entry(d, n, ch)
     add(clause and ("I " .. clause .. "."), true, x.i)
   end
   for _, x in ipairs(f.petdied) do
+    if d.pets[x.m.name] then d.pets[x.m.name].fell = x.m.sub or x.m.zone end -- (remembered, when named again)
     add(sayFresh("petdied", "petdied", here({ pet = x.m.name }, x.m.sub or x.m.zone), {}, x.m.zone), true, x.i)
   end
   -- a stop by a fire (not the one the entry ends at): shared with others,
@@ -1112,11 +1165,23 @@ local function entry(d, n, ch)
       if not d.mates[mate] then again = false end
       d.mates[mate] = true
     end
-    more(
-      say("d-company", "company", { mates = listing(mates) }, { one = #mates == 1 or nil, again = again or nil }),
-      false,
-      f.mateAt[mates[1]]
-    )
+    local reviver, was = reviverIn(mates)
+    if
+      more(
+        say(
+          "d-company",
+          "company",
+          { mates = listing(mates), at = was and was.place and at(was.place) },
+          { one = #mates == 1 or nil, again = again or nil, reviver = reviver and true or nil },
+          nil,
+          reviver and { reviver = true } or nil
+        ),
+        false,
+        f.mateAt[mates[1]]
+      ) and reviver
+    then
+      d.revivers[reviver] = nil
+    end
   end
 
   -- what I can do now: a spell with a line of its own (two at most, in the
@@ -1286,14 +1351,32 @@ local function entry(d, n, ch)
     end
     local clauses, weighty = {}, false
     for k, g in ipairs(groups) do
+      -- (the first new rank of a trade taken up in an earlier entry: where)
+      local name
+      for _, t in ipairs(f.trades) do
+        if #g.names == 1 and t.name:lower() == g.names[1] then name = t.name end
+      end
+      local began = g.stage == "rank" and #g.names == 1 and d.began[name or ""]
+      if began and began.n >= n then began = nil end
       local clause = b:say(
         "c-prof",
         n .. "|diary|trade" .. k,
-        { prof = listing(g.names), rank = g.rank, arank = g.rank and article(g.rank) },
-        tags({ [g.stage] = true, one = #g.names == 1 or nil }),
-        nil,
+        {
+          prof = listing(g.names),
+          rank = g.rank,
+          arank = g.rank and article(g.rank),
+          began = began and began.at or nil,
+        },
+        tags({ [g.stage] = true, one = #g.names == 1 or nil, since = began and true or nil }),
+        began and { since = true } or nil,
         true
       )
+      if g.stage == "rank" and name then d.began[name] = nil end
+      if (g.stage == "new" or g.stage == "again") and clause then
+        for _, t in ipairs(f.trades) do
+          if t.stage == g.stage then d.began[t.name] = { n = n, at = at(ch.log[t.i].sub or ch.log[t.i].zone) } end
+        end
+      end
       if clause then table.insert(clauses, clause) end
       if g.stage ~= "rank" then weighty = true end
     end
@@ -1372,12 +1455,19 @@ local function entry(d, n, ch)
     -- ("as ever" once it has been named so)
     if
       more(
-        sayFresh("d-pet", "pet", { pet = pet }, { demon = f.demons[pet] or nil, again = known.said and true or nil }),
+        sayFresh(
+          "d-pet",
+          "pet",
+          { pet = pet, where = known.fell and at(known.fell) },
+          { demon = f.demons[pet] or nil, again = known.said and true or nil, fell = known.fell and true or nil },
+          nil,
+          known.fell and { fell = true } or nil
+        ),
         false,
         LATE + 1
       )
     then
-      known.said = n
+      known.said, known.fell = n, nil
     end
   end
   for name in pairs(f.pets) do
@@ -1524,6 +1614,9 @@ function ns.writeBook(c)
     threads = {}, -- [a chain's first quest] = { n, giver, ender }: the last entry that told one of it
     pets = {}, -- [name] = { said = the last entry that named it }: a pet met before
     summoned = {}, -- [a demon's kind] = the entry a class quest taught its summoning
+    revivers = {}, -- [a name] = { n, place }: who brought me back from death, until met again
+    dangers = {}, -- [a foe of a name] = { n, place, died }: who killed me or nearly did, until beaten
+    began = {}, -- [a trade] = where I took it up, until its first new rank
     -- (a journal begun after the life's first steps: no land, no city told as
     -- seen for the first time, the record can't know it)
     late = (c.began and c.began.level or 1) > 1,

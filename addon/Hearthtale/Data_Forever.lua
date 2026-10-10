@@ -68,6 +68,8 @@ ns.data = {
       { "gave up {prof}", tags = { "dropped" } },
       { "set {prof} aside for good", tags = { "dropped" } },
       { "put {prof} behind me", tags = { "dropped" } },
+      { "rose to {rank} rank in {prof}, which I had first taken up {began}", tags = { "rank", "one", "since" } },
+      { "trained up to {rank} in {prof}, a long way from my first lessons {began}", tags = { "rank", "one", "since" } },
     },
     ["c-raid"] = {
       { "joined a raid of {n}" },
@@ -264,6 +266,10 @@ ns.data = {
       { "I travelled with {mates} again for a while.", tags = { "again" } },
       { "{mates} and I shared the road once more.", tags = { "again" } },
       { "Once again, I had {mates} for company part of the way.", tags = { "again" } },
+      { "{mates} was with me again, the one who had once brought me back from death {at}.", tags = { "reviver", "one" } },
+      { "I had {mates} beside me again, who had once brought me back from death {at}.", tags = { "reviver", "one" } },
+      { "I had company again in {mates}, and one of them had once brought me back from death {at}.", tags = { "reviver", "!one" } },
+      { "{mates} travelled with me for a while, one of them the friend who had brought me back from death {at}.", tags = { "reviver", "!one" } },
     },
     ["d-deaths"] = {
       { "I died {times}, and each time came back a little less pleased about it." },
@@ -384,6 +390,8 @@ ns.data = {
       { "{pet} served as a bound demon serves, and I watched every moment of that service all the same.", tags = { "demon" } },
       { "{pet} did my bidding through all of it, and I never once forgot what I had bound.", tags = { "demon" } },
       { "I sent {pet} ahead into most of the fights, without one complaint in return, which I found almost more unsettling than defiance.", tags = { "demon" } },
+      { "{pet} had fallen once {where}, and was at my side through all of it all the same.", tags = { "!demon", "fell" } },
+      { "{pet}, who had gone down once {where}, fought beside me the whole way.", tags = { "!demon", "fell" } },
     },
     ["d-powers"] = {
       { "My training gave me {spells}, a new way to fight, and I was impatient for a chance to use it.", tags = { "one", "!used" } },
@@ -415,6 +423,12 @@ ns.data = {
       { "I took no pleasure in it; whatever had been there before the corruption deserved better than what it became.", tags = { "victim" } },
       { "Some endings are kindnesses, and I tried hard to believe that one was.", tags = { "victim" } },
     },
+    ["d-revenge"] = {
+      { "I went back for {foe}, who had killed me {at}, and this time I walked away.", tags = { "died" } },
+      { "{foe} had killed me once {at}; this time I was the one left standing.", tags = { "died" } },
+      { "I met {foe} again, who had nearly killed me {at}, and settled the matter.", tags = { "!died" } },
+      { "{foe} had nearly finished me once {at}; the second meeting went my way.", tags = { "!died" } },
+    },
     ["d-tame"] = {
       { "I earned the trust of {family}, named it {pet}, and from then on I did not hunt alone.", tags = { "first" } },
       { "{pet} came to me as {family} out of the wild, and stayed as my first companion.", tags = { "first" } },
@@ -440,6 +454,11 @@ ns.data = {
       { "The old business went on, and I {why}.", tags = { "thread", "!settled" } },
       { "At last, I {why}.", tags = { "thread", "settled" } },
       { "I saw the old business through to its end: I {why}.", tags = { "thread", "settled" } },
+      { "Back at {who}'s business, I {why}.", tags = { "thread", "!settled", "who" } },
+      { "Picking up where {who} and I had left off, I {why}.", tags = { "thread", "!settled", "who" } },
+      { "{who}'s business called me back, and I {why}.", tags = { "thread", "!settled", "who" } },
+      { "I saw {who}'s business through to its end: I {why}.", tags = { "thread", "settled", "who" } },
+      { "At last, for {who}, I {why}.", tags = { "thread", "settled", "who" } },
     },
     ["d-why2"] = {
       { "I {why}, and later {why2}." },
