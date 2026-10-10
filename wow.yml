@@ -19,6 +19,8 @@ globals:
     any: true
   C_QuestLog:
     any: true
+  C_Spell:
+    any: true
   C_Timer:
     any: true
   C_UnitAuras:
@@ -50,6 +52,8 @@ globals:
   GetInventoryItemLink:
     any: true
   GetItemInfo:
+    any: true
+  GetSpellInfo:
     any: true
   GetLocale:
     any: true

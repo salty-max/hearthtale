@@ -54,6 +54,46 @@ end)
 local STEEDS = { [5784] = true, [23161] = true, [13819] = true, [23214] = true, [34769] = true, [34767] = true }
 local POWERS, TRADE = ns.POWER_SPELLS, ns.TRADE_SPELLS
 local RANKED = { Apprentice = true, Journeyman = true, Expert = true, Artisan = true, Master = true }
+-- A lesson put to use: the first cast of a spell learned in the chapter still
+-- being written, kept on its lesson's moment (used = { spell, ... }); the
+-- journal says a spell was used only then. (A closed chapter never changes.)
+local untried = {} -- [a spell's name] = { m = its lesson's moment, ch = its chapter }
+local function spellName(id)
+  local get = (C_Spell and C_Spell.GetSpellName) or GetSpellInfo
+  local name = get and get(id)
+  return (name and not secret(name)) and name or nil
+end
+ns.onUnit("UNIT_SPELLCAST_SUCCEEDED", "player", function(_, _, id)
+  if not id or secret(id) or next(untried) == nil then return end
+  local name = spellName(id)
+  local lesson = name and untried[name]
+  if not lesson then return end
+  untried[name] = nil
+  local chapters = char().chapters or {}
+  if chapters[#chapters] ~= lesson.ch or lesson.ch.ended then return end
+  lesson.m.used = lesson.m.used or {}
+  table.insert(lesson.m.used, name)
+  changed()
+end)
+-- (at login, or after a reload: the lessons of the chapter still open, not
+-- yet put to use)
+local function lookAtLessons()
+  local chapters = char().chapters or {}
+  local ch = chapters[#chapters]
+  if not ch or ch.ended then return end
+  for _, m in ipairs(ch.log or {}) do
+    if m.k == "learned" then
+      local used = {}
+      for _, sp in ipairs(m.used or {}) do
+        used[sp] = true
+      end
+      for _, sp in ipairs(m.spells or {}) do
+        if not used[sp] then untried[sp] = { m = m, ch = ch } end
+      end
+    end
+  end
+end
+ns.on("PLAYER_ENTERING_WORLD", lookAtLessons)
 local function professionSpell(name)
   if TRADE[name] or (char().profs or {})[name] then return true end
   local first = name:match("^(%a+) ")
@@ -80,8 +120,9 @@ ns.on("CHAT_MSG_SYSTEM", function(msg)
           table.insert(last.spells, spell)
           changed()
         else
-          moment("learned", { spells = { spell } })
+          last = moment("learned", { spells = { spell } })
         end
+        untried[spell] = { m = last, ch = ch }
       end
       return
     end

@@ -174,10 +174,15 @@ ns.on("QUEST_LOG_UPDATE", function()
     if not p.done and not p.held and finishedAll(id) then
       p.done = true
       local pet, family = companion()
-      moment(
-        "done",
-        { id = id, title = p.title, giver = p.giver, objectives = p.objectives, pet = pet, petFamily = family }
-      )
+      moment("done", {
+        id = id,
+        title = p.title,
+        giver = p.giver,
+        objectives = p.objectives,
+        pet = pet,
+        petFamily = family,
+        with = R.present(), -- (who was with me when it was done: not one who left before)
+      })
     end
   end
 end)
@@ -214,6 +219,7 @@ ns.on("QUEST_TURNED_IN", function(id)
     enderBeast = enderBeast,
     objectives = p.objectives,
     told = p.done or nil,
+    with = R.present(),
   }) -- told: its work was told when done
   ender, enderSex, enderBeast = nil, nil, nil
   if c.pending then c.pending[id] = nil end

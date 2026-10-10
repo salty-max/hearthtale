@@ -245,6 +245,16 @@ check(
   #learned == 1 and learned[1].spells[1] == "Blessing of Might" and learned[1].spells[2] == "Judgement",
   "a trainer's visit: one moment, its spells"
 )
+G.cast("Judgement")
+G.cast("Judgement")
+G.cast("Holy Light") -- (known before the journal: no lesson of its)
+check(
+  learned[1].used and #learned[1].used == 1 and learned[1].used[1] == "Judgement",
+  "a lesson put to use: its first cast, on its moment, once"
+)
+reload()
+G.cast("Blessing of Might")
+check(#learned[1].used == 2 and learned[1].used[2] == "Blessing of Might", "a lesson put to use after a reload")
 fire("CHAT_MSG_SYSTEM", "You have learned a new spell: |cff71d5ff|Hspell:13819|h[Summon Warhorse]|h|r.")
 local power = moments("power")[1]
 check(

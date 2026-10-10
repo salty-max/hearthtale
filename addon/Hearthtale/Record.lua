@@ -30,10 +30,11 @@
 --   }
 --   moments: { k = kind, at, night, zone, sub, grouped, ... }
 --     place { new = "zone" or nil }  inn { place }  flight { from, to }  level { level }
---     done { id, title, giver, objectives, abandoned, pet, petFamily }   a quest's work done
---                                                    (pet: the one at my side then)
+--     done { id, title, giver, objectives, abandoned, pet, petFamily, with }   a quest's work
+--                                                    done (pet: the one at my side then;
+--                                                    with: the party then, by first name)
 --     quest { id, title, giver, ender, objectives, told,   a quest turned in (told: its
---             giverSex, enderSex, enderBeast }
+--             giverSex, enderSex, enderBeast, with }
 --                                                    work was told when done); objectives =
 --                                                    { { type, name, n, text, held } }
 --     kill { name, kind, first, elite, quarry }      the chapter's first of a creature (killed by
@@ -41,7 +42,8 @@
 --     rare { name, elite }  pvp { name, first, race, class }  close { foe, hp }
 --     died { death }  revived { how, by, graveyard, took }
 --     group { name, first, class } or { raid = n }  dungeon { name }  boss { name }
---     learned { spells }  power { spell, kind }  skill { name, rank }
+--     learned { spells, used }  power { spell, kind }  skill { name, rank }
+--                                                    (used: those cast before the chapter closed)
 --     prof { name, learned or rank }  riding { name }  mount { name, kind }  made { id, link, n }
 --     gear { link, quality, made, held, trinket }  loot { link, quality }
 --     tame { name, family }  petdied { name }  demon { name, family }  shift { form }
@@ -497,6 +499,7 @@ ns.record = {
   itemInfo = itemInfo,
   LINK = LINK,
   playerName = playerName,
+  present = present,
   hasAura = hasAura,
   chapter = chapter,
   moment = moment,

@@ -231,6 +231,9 @@ C_Item.GetItemInfoInstant = function(link)
 end
 -- a druid's form (GetShapeshiftFormID's: 1 cat, 5 bear...)
 function GetShapeshiftFormID() return state.form end
+-- Spells by id, as a cast names them (cast(), below: one of mine, by its name).
+local SPELL_NAMES, SPELL_IDS, SPELL_ORDER = {}, {}, {}
+function GetSpellInfo(id) return SPELL_NAMES[id] end
 -- Skills: { name, header, max, folded }, as the skills pane lists them (a
 -- folded header hides what is under it).
 TRADE_SKILLS, SECONDARY_SKILLS = "Professions", "Secondary Skills"
@@ -419,6 +422,17 @@ local function offer(e, ...)
     if hears(f, e, ...) then f.scripts.OnEvent(f, e, ...) end
   end
 end
+-- A spell of mine cast, by its name.
+local function cast(name)
+  local id = SPELL_IDS[name]
+  if not id then
+    id = 900000 + #SPELL_ORDER + 1
+    SPELL_IDS[name] = id
+    table.insert(SPELL_ORDER, name)
+  end
+  SPELL_NAMES[id] = name
+  fire("UNIT_SPELLCAST_SUCCEEDED", "player", ("Cast-3-4170-0-1-%d-0001"):format(id), id)
+end
 
 -- The game's toasts, links and realm: keep what the addon hands them.
 local toasted = {}
@@ -543,6 +557,7 @@ return {
   reload = reload,
   kill = kill,
   vanquish = vanquish,
+  cast = cast,
   creature = creature,
   itemLink = itemLink,
   forever = FOREVER,
