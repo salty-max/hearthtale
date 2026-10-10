@@ -1539,15 +1539,15 @@ local function entry(d, n, ch)
   -- came, one verb for those in a row at the same stage ("took up herbalism
   -- and mining"), the trade just named as "it" ("took up herbalism and gave
   -- it up"), and what my hands made beside them (not the piece worn: told
-  -- already). A trade given up and taken up again straight after is no
-  -- change. A rank alone is a lesser thing; a trade begun, ended or
-  -- mastered, a moment of a life.
+  -- already). A trade given up and taken up again straight after is one
+  -- moment: a return to it. A rank alone is a lesser thing; a trade begun,
+  -- ended or mastered, a moment of a life.
   if #f.trades > 0 then
     local trades = {}
     for _, t in ipairs(f.trades) do
       local last = trades[#trades]
       if last and last.stage == "dropped" and t.stage == "again" and last.name == t.name then
-        table.remove(trades)
+        trades[#trades] = { name = t.name, stage = "back", i = last.i }
       else
         table.insert(trades, t)
       end
@@ -1589,7 +1589,7 @@ local function entry(d, n, ch)
         true
       )
       if g.stage == "rank" and name then d.began[name] = nil end
-      if (g.stage == "new" or g.stage == "again") and clause then
+      if (g.stage == "new" or g.stage == "again" or g.stage == "back") and clause then
         for _, t in ipairs(g.items) do
           d.began[t.name] = { n = n, at = at(ch.log[t.i].sub or ch.log[t.i].zone) }
         end

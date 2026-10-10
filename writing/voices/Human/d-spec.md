@@ -1,7 +1,7 @@
 ---
 kind: d-spec
 ---
-- [class:WARRIOR spec:Arms !change] I had chosen the way of Arms, the drilled, patient swordwork Stormwind's soldiers kept alive through two wars.
+- [class:WARRIOR spec:Arms !change] I had chosen the way of Arms, the drilled, patient craft Stormwind's soldiers kept alive through two wars.
 - [class:WARRIOR spec:Fury !change] I had chosen Fury, less tidy than any drill yard would like, and better suited to a world that seldom fought fair.
 - [class:WARRIOR spec:Protection !change] I had chosen Protection, the warrior's place between trouble and the people who could not stand against it.
 - [class:PALADIN spec:Holy !change] I had given myself to the Holy path, the Light as the Silver Hand first taught it: something carried for others.

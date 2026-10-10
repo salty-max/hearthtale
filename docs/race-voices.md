@@ -91,6 +91,22 @@ Tram, the Bronzebeards, Brill's roofs), never by a neutral line. Count a
 voice's words after a pass (the playthrough books show what a reader meets).
 No line gives the narrator a gender ("a flame with no work for him").
 
+## A people's own words
+
+A few words in a people's own tongue, verified in the original game, used at a
+moment that bears them (danger, grief, a homecoming, a choice of way) and in
+place of a plainer line, never as a tail on an ordinary errand. Spaced as an
+emblem (`MOTIFS` in Lines.lua), so a book meets one now and then, not as a
+catchphrase. The meaning travels with the word the first time it can.
+
+| Words | People | Meaning | Where |
+| --- | --- | --- | --- |
+| Lok'tar ogar | Orc | "Victory or death", the orcs' cry since Warcraft III | a close call; an orc's farewell |
+| Elune-adore | Night elf | "Elune be with you", the night elves' farewell in the game | a rest at home; a night elf's farewell |
+
+Before adding another: its meaning and use in the original game, the era
+(nothing later than Classic), and one fitting moment, not a set of them.
+
 ## Reading the results
 
 After each racial pass, build the catalogs and run `bun run addon:check`.

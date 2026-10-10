@@ -121,7 +121,7 @@ local MOTIFS = {
     "distances",
     "explain",
   },
-  Orc = { "thrall", "camp", "draenor", "durnholde", "warband", "temper", "rage", "blood", "chain", "grom" },
+  Orc = { "thrall", "camp", "draenor", "durnholde", "warband", "temper", "rage", "blood", "chain", "grom", "lok'tar" },
   Troll = {
     "drum",
     "fish",
@@ -161,7 +161,7 @@ local MOTIFS = {
     "size",
   },
   Human = { "stormwind", "king", "mason", "bread", "neighbour", "doorstep", "honest", "conscience", "own people" },
-  NightElf = { "elune", "moon", "teldrassil", "centur", "ages", "glade", "root", "hyjal" },
+  NightElf = { "elune", "moon", "teldrassil", "centur", "ages", "glade", "root", "hyjal", "sound" },
   Scourge = { "grave", "pulse", "lich king", "sylvanas", "plague", "coffin", "lid", "first life", "second life" },
   Skyborne = { "island", "skycutter", "zephras", "balance", "footing", "skystream" },
 }

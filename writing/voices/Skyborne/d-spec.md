@@ -8,7 +8,7 @@ kind: d-spec
 - [client:forever class:HUNTER spec:Marksmanship !change] I had chosen Marksmanship, an eye trained to judge distance across open sky.
 - [client:forever class:HUNTER spec:Survival !change] I had chosen Survival, the craft of living off whatever ground I stood on, island or otherwise.
 - [client:forever class:ROGUE spec:Assassination !change] I had chosen Assassination, quiet and quick, like a gust that is gone before anyone turns.
-- [client:forever class:ROGUE spec:Combat !change] I had chosen Combat, quick feet and quicker blades, the footing of a people who live on edges.
+- [client:forever class:ROGUE spec:Combat !change] I had chosen Combat, quick feet and quicker hands, the footing of a people who live on edges.
 - [client:forever class:ROGUE spec:Subtlety !change] I had chosen Subtlety; my people were hidden long before I learned to hide.
 - [client:forever class:SHAMAN spec:Elemental !change] I had chosen the Elemental way, calling on storm and stone while the wind spirits my people lost stayed silent.
 - [client:forever class:SHAMAN spec:Enhancement !change] I had chosen Enhancement, the elements' strength carried in my own arms until the winds could be found again.

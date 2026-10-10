@@ -1,15 +1,15 @@
 ---
 kind: d-spec
 ---
-- [class:WARRIOR spec:Arms !change] I had chosen the way of Arms, a discipline the Sentinels would recognise, though I made no claim to be one of them.
+- [class:WARRIOR spec:Arms !change] I had chosen the way of Arms, a patient, exacting craft that suited the quiet in me.
 - [class:WARRIOR spec:Fury !change] I had chosen Fury, and let the old wildness of my people show through the calm.
 - [class:WARRIOR spec:Protection !change] I had chosen Protection, to stand at the forest's edge like its oldest and most stubborn tree.
 - [class:HUNTER spec:Beast_Mastery !change] I had given myself to Beast Mastery, the trust of nightsaber and owl that my people have never mistaken for ownership.
-- [class:HUNTER spec:Marksmanship !change] I had chosen Marksmanship, my bow held as steady as any Sentinel's on the watch.
+- [class:HUNTER spec:Marksmanship !change] I had chosen Marksmanship, my aim learning to hold as still as an owl on a branch.
 - [class:HUNTER spec:Survival !change] I had chosen Survival, the forest's own patience turned to traps and waiting.
 - [class:ROGUE spec:Assassination !change] I had chosen Assassination, a quick end delivered in the silence my people move in by nature.
 - [class:ROGUE spec:Combat !change] I had chosen Combat, though a night elf's calm made it look a good deal less like brawling than it was.
-- [class:ROGUE spec:Subtlety !change] I had chosen Subtlety, which for my people is less a skill learned than a habit sharpened.
+- [class:ROGUE spec:Subtlety !change] I had chosen Subtlety, and found the quiet came to me more easily than any lesson had.
 - [class:PRIEST spec:Discipline !change] I had chosen Discipline, a faith that holds steady in the will, patient as the turning of the seasons.
 - [class:PRIEST spec:Holy !change] I had given myself to the Holy path, Elune's light turned to mending whatever the night had hurt.
 - [class:PRIEST spec:Shadow !change] I had turned to Shadow, the dark side of the moon, and hoped the goddess would not look away.

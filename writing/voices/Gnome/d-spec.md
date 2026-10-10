@@ -3,10 +3,10 @@ kind: d-spec
 ---
 - [class:WARRIOR spec:Arms !change] I had chosen the way of Arms, which rewards a good grip and a better angle, and I could manage both.
 - [class:WARRIOR spec:Fury !change] I had chosen Fury, and learned that a small body can hold a surprising amount of temper.
-- [class:WARRIOR spec:Protection !change] I had chosen Protection, a bigger shield than seemed sensible and every intention of standing behind it.
+- [class:WARRIOR spec:Protection !change] I had chosen Protection, and meant to be a great deal harder to move than I looked.
 - [class:ROGUE spec:Assassination !change] I had chosen Assassination, the most exacting of a rogue's crafts, which suited a mind that likes things exact.
 - [class:ROGUE spec:Combat !change] I had chosen Combat, quick and close, the sort of fighting bigger folk always underestimate.
-- [class:ROGUE spec:Subtlety !change] I had chosen Subtlety; being overlooked came naturally to my people long before I made an art of it.
+- [class:ROGUE spec:Subtlety !change] I had chosen Subtlety; I was overlooked often enough that I might as well make an art of it.
 - [class:MAGE spec:Arcane !change] I had given my study to the Arcane, the most intricate of the schools, which made it quite irresistible.
 - [class:MAGE spec:Fire !change] I had given my study to Fire, bright, loud and nearly as satisfying as a well-made explosion.
 - [class:MAGE spec:Frost !change] I had given my study to Frost, the cold of Dun Morogh made into something useful at last.

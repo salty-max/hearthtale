@@ -269,7 +269,7 @@ An entry is the stretch looked back on at its rest, by what weighs most:
   one was given up, `[rank]`, `[master]` at 300, `[dropped]`; in the order
   they came, one verb for those in a row at the same stage, the trade just
   named as "it" (`[it]`: "took up mining and gave it up"), one given up and
-  taken up again straight after no change at all, what my hands made beside
+  taken up again straight after a return to it (`[back]`), what my hands made beside
   them, never the piece worn): a trade begun, ended or mastered is always
   told, a rank alone in the room left; a weapon's 300 is no news; what my
   hands made, new to them, when no trade was told (`d-made`, `MADE_GAP`
@@ -363,7 +363,8 @@ name.
   lives don't. Places in flowing sentences, not chains of possessives ("the
   cold of Dun Morogh", not "Dun Morogh's cold"). Regenerate and read the race
   comparison (`voices.lua compare`) when changing racial expression; use the
-  restraint and era boundaries in `docs/race-voices.md`.
+  restraint and era boundaries in `docs/race-voices.md` (and its few words
+  in a people's own tongue, verified, at moments that bear them).
 
 ## The site (hearthtale.app)
 
