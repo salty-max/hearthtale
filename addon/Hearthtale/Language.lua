@@ -556,14 +556,30 @@ local FIRST_SPELLS = {
 W.FIRST_SPELLS = FIRST_SPELLS
 -- A class's defining moments learned as spells (a warlock's demons, a
 -- hunter's companions, a druid's forms and a shaman's totems are moments
--- of their own): a warrior's stances, a paladin's Redemption, a rogue's
--- poisons, a priest's own people's prayers, a mage's first way home, a
--- druid's way to Moonglade. By the tag its lines carry (writing/d-calling.md).
+-- of their own): a warrior's charge, stances and second weapon, a
+-- paladin's auras, Lay on Hands, Redemption and shield, a rogue's second
+-- blade, picks, poisons, vanishing and blinding, a priest's own people's
+-- prayers, a mage's sheep and ways home, a warlock's summoning circle, a
+-- shaman's ghost wolf and second life, a hunter's feigned death, a druid's
+-- Moonglade and Rebirth. By the tag its lines carry (writing/d-calling.md).
 local CALLING = {
-  WARRIOR = { ["Defensive Stance"] = true, ["Berserker Stance"] = true },
-  PALADIN = { Redemption = true },
-  ROGUE = { Poisons = true },
+  WARRIOR = {
+    Charge = true,
+    ["Defensive Stance"] = true,
+    ["Dual Wield"] = true,
+    ["Berserker Stance"] = true,
+    Whirlwind = true,
+  },
+  PALADIN = {
+    ["Devotion Aura"] = true,
+    ["Lay on Hands"] = true,
+    Redemption = true,
+    ["Retribution Aura"] = true,
+    ["Divine Shield"] = true,
+  },
+  ROGUE = { ["Dual Wield"] = true, ["Pick Lock"] = true, Poisons = true, Vanish = true, Blind = true },
   PRIEST = {
+    Resurrection = true,
     ["Desperate Prayer"] = true,
     Feedback = true,
     ["Fear Ward"] = true,
@@ -574,11 +590,16 @@ local CALLING = {
     ["Hex of Weakness"] = true,
     Shadowguard = true,
   },
-  DRUID = { ["Teleport: Moonglade"] = true },
+  MAGE = { Polymorph = true },
+  WARLOCK = { ["Ritual of Summoning"] = true },
+  SHAMAN = { ["Ghost Wolf"] = true, Reincarnation = true },
+  HUNTER = { ["Feign Death"] = true },
+  DRUID = { ["Teleport: Moonglade"] = true, Rebirth = true },
 }
 function W.callingOf(class, spell)
   if not spell then return nil end
   if class == "MAGE" and spell:find("^Teleport: ") then return "teleport" end -- (the first of them)
+  if class == "MAGE" and spell:find("^Portal: ") then return "portal" end
   if CALLING[class] and CALLING[class][spell] then return "spell:" .. spell:gsub(" ", "_") end
   return nil
 end

@@ -307,13 +307,44 @@ ns.on("UPDATE_SHAPESHIFT_FORM", function()
   moment("shift", { form = form })
 end)
 
+-- (the mount ridden: its aura's name, the game's English, and its kind)
+local MOUNT_KINDS = {
+  { "Skeletal", "skeletal" },
+  { "Mechanostrider", "mechanostrider" },
+  { "Ram", "ram" },
+  { "saber", "saber" },
+  { "Kodo", "kodo" },
+  { "Raptor", "raptor" },
+  { "Wolf", "wolf" },
+  { "Warhorse", "warhorse" },
+  { "Charger", "warhorse" },
+  { "Felsteed", "felsteed" },
+  { "Dreadsteed", "felsteed" },
+  { "Horse", "horse" },
+  { "Stallion", "horse" },
+  { "Mare", "horse" },
+  { "Pinto", "horse" },
+  { "Palomino", "horse" },
+}
+local function ridden()
+  for i = 1, 40 do
+    local name = UnitBuff("player", i)
+    if not name then return nil end
+    if not secret(name) then
+      for _, k in ipairs(MOUNT_KINDS) do
+        if name:find(k[1], 1, true) then return name, k[2] end
+      end
+    end
+  end
+end
 ns.onUnit("UNIT_AURA", "player", function()
   local c = char()
   if c.rode then return end
   local mounted = IsMounted()
   if mounted and not secret(mounted) then
     c.rode = true
-    moment("mount")
+    local name, kind = ridden()
+    moment("mount", { name = name, kind = kind })
   end
 end)
 

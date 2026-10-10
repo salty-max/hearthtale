@@ -11,7 +11,7 @@ export function Contents({ hrefFor, book, current, onPick }: { hrefFor: (part: s
     <ol className="divide-y divide-parchment/10">
       {parts(book).map((p) => {
         const ch = p.kind === "chapter" ? book.chapters.find((c) => c.number === p.number) : undefined;
-        const title = p.kind === "prologue" ? t.book.prologue : p.kind === "epitaph" ? t.book.epitaph : t.book.chapter(p.number);
+        const title = p.kind === "prologue" ? t.book.prologue : p.kind === "epitaph" ? t.book.epitaph : (ch?.title ?? t.book.chapter(p.number));
         const here = p.key === current;
         return (
           <li key={p.key}>
@@ -39,6 +39,7 @@ export function Contents({ hrefFor, book, current, onPick }: { hrefFor: (part: s
                 </span>
                 {ch && (
                   <span className="block text-parchment/60">
+                    {ch.title && `${t.book.chapter(ch.number)} · `}
                     {ch.open ? t.book.stillWriting : ch.place} · {t.book.levels(ch.from, ch.to)}
                   </span>
                 )}

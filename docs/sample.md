@@ -34,7 +34,7 @@ Later, I destroyed Araj the Summoner, the lich who held Andorhal, and took a sha
 
 ## Entry 2 (levels 5 to 6)
 
-I continued in Razor Hill, wondering what the lost world of Draenor would have made of this one. I saw Orgrimmar with my own eyes at last, and found it larger, louder and more mine than I had pictured. The drums of Orgrimmar echoed off the spiked walls as I came in. At Grommash Hold I felt the weight of it: a city our people had built for themselves, with no one's chains on it. I can close the distance in a single rush now, before my fear has time to catch up.
+I continued in Razor Hill, wondering what the lost world of Draenor would have made of this one. I saw Orgrimmar with my own eyes at last, and found it larger, louder and more mine than I had pictured. The drums of Orgrimmar echoed off the spiked walls as I came in. At Grommash Hold I felt the weight of it: a city our people had built for themselves, with no one's chains on it. I learned to Charge, and the distance between me and a foe stopped being a matter of courage.
 
 # Aelyndra, a Hardcore night elf druid
 

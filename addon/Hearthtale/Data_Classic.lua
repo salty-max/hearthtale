@@ -167,6 +167,47 @@ ns.data = {
       { "I learned {spell}, and the long walk home became a matter of a few words.", tags = { "teleport" } },
       { "I learned the way to Moonglade, the druids' own sanctuary, and could go there in a breath whenever I needed its quiet.", tags = { "spell:Teleport:_Moonglade" } },
       { "Moonglade was a breath away now, and I knew where to go when the world asked too much of me.", tags = { "spell:Teleport:_Moonglade" } },
+      { "I can turn a foe into a sheep now, and I suspect I will never tire of it.", tags = { "spell:Polymorph" } },
+      { "I can call the dead back now, and I mean to treat that gift with care.", tags = { "spell:Resurrection", "!race:Scourge" } },
+      { "Lay on Hands is mine now, something left to give when nothing else will do.", tags = { "spell:Lay_on_Hands", "!race:Scourge" } },
+      { "Lay on Hands is mine now, and the Light it pours through me burns every inch of the way; for someone who needs it, I can bear that.", tags = { "spell:Lay_on_Hands", "race:Scourge" } },
+      { "I can close the distance in a single rush now, before my fear has time to catch up.", tags = { "spell:Charge" } },
+      { "I can vanish from a fight now, and leave an enemy wondering where I went.", tags = { "spell:Vanish" } },
+      { "I can play dead now, convincingly enough that I hope never to need the real thing.", tags = { "spell:Feign_Death" } },
+      { "I can borrow a ghost wolf's shape from the spirits now, and the roads feel shorter for it.", tags = { "spell:Ghost_Wolf" } },
+      { "Rebirth is mine now, the wild's way of refusing a death that came too soon.", tags = { "spell:Rebirth" } },
+      { "I can call the dead back now; of all people, I know what that means.", tags = { "spell:Resurrection", "race:Scourge" } },
+      { "I learned Polymorph, and a foe could become a harmless sheep at a word.", tags = { "spell:Polymorph" } },
+      { "I learned to call the dead back, and meant to treat that gift with care.", tags = { "spell:Resurrection", "!race:Scourge" } },
+      { "I learned Lay on Hands, the paladin's last gift when nothing else will do.", tags = { "spell:Lay_on_Hands", "!race:Scourge" } },
+      { "I learned Lay on Hands, though all the Light it carries burns through me first.", tags = { "spell:Lay_on_Hands", "race:Scourge" } },
+      { "I learned to Charge, and the distance between me and a foe stopped being a matter of courage.", tags = { "spell:Charge" } },
+      { "I learned to Vanish, and a lost fight became something I could simply leave.", tags = { "spell:Vanish" } },
+      { "I learned to feign death, a lie told with my whole body.", tags = { "spell:Feign_Death" } },
+      { "I learned Ghost Wolf, and the spirits lent me a swifter shape for the road.", tags = { "spell:Ghost_Wolf" } },
+      { "I learned Rebirth, the wild's answer to a death that came before the fighting was done.", tags = { "spell:Rebirth" } },
+      { "I learned Devotion Aura, the first of a paladin's auras, and carried its steadiness into every fight.", tags = { "spell:Devotion_Aura" } },
+      { "Devotion Aura was my first aura, a quiet strength I could share with anyone at my side.", tags = { "spell:Devotion_Aura" } },
+      { "I learned Retribution Aura, and whoever struck me now paid a little for it in holy fire.", tags = { "spell:Retribution_Aura" } },
+      { "With Retribution Aura I could choose what my presence carried into a fight, and I chose to make it costly.", tags = { "spell:Retribution_Aura" } },
+      { "I learned Divine Shield, and for a few moments nothing in the world could touch me.", tags = { "spell:Divine_Shield" } },
+      { "Divine Shield was mine, the Light closed around me like a wall when I most needed one.", tags = { "spell:Divine_Shield" } },
+      { "I learned to fight with a weapon in each hand, and my blows came twice as fast.", tags = { "class:WARRIOR", "spell:Dual_Wield" } },
+      { "Dual wielding was mine now, and I stopped needing a shield to feel ready.", tags = { "class:WARRIOR", "spell:Dual_Wield" } },
+      { "I learned to fight with a blade in each hand, the way a rogue is meant to.", tags = { "class:ROGUE", "spell:Dual_Wield" } },
+      { "A second blade in my off hand changed every fight, and I wondered how I had managed with one.", tags = { "class:ROGUE", "spell:Dual_Wield" } },
+      { "I learned Whirlwind, and could strike everything around me in a single turn.", tags = { "spell:Whirlwind" } },
+      { "Whirlwind was mine, a whole ring of foes answered in one sweep of steel.", tags = { "spell:Whirlwind" } },
+      { "I learned to pick locks, and a closed chest stopped being the end of the matter.", tags = { "spell:Pick_Lock" } },
+      { "Pick Lock was mine now; doors and strongboxes became questions with answers.", tags = { "spell:Pick_Lock" } },
+      { "I learned Blind, a pinch of powder that could take a foe out of a fight entirely.", tags = { "spell:Blind" } },
+      { "Blind was mine, and a single foe could be made to forget I was there.", tags = { "spell:Blind" } },
+      { "I learned to open a portal to {place}, and could send others home as easily as myself.", tags = { "portal" } },
+      { "With {spell} I could open the way home for a whole party, and felt the mage's craft grow wider.", tags = { "portal" } },
+      { "I learned the Ritual of Summoning, and could draw a friend across the world to my side.", tags = { "spell:Ritual_of_Summoning" } },
+      { "The Ritual of Summoning was mine, and distance between companions became a thing I could undo.", tags = { "spell:Ritual_of_Summoning" } },
+      { "I learned Reincarnation, and death became a door the spirits might let me walk back through.", tags = { "spell:Reincarnation" } },
+      { "Reincarnation was mine now, the elements' promise to return me to my feet once in a while.", tags = { "spell:Reincarnation" } },
     },
     ["d-camp"] = {
       { "I sat by a campfire {at} for the first time on the road, and understood why travellers walk an extra mile to reach one.", tags = { "!last", "first", "!company" } },
@@ -519,37 +560,27 @@ ns.data = {
       { "Drain Life is mine now, a spell that keeps me standing on someone else's account.", tags = { "spell:Drain_Life" } },
       { "I added Corruption to what I can do, a slow and patient kind of harm.", tags = { "spell:Corruption" } },
       { "I can pour my own health into a demon now, which says something about the arrangement between us.", tags = { "spell:Health_Funnel" } },
-      { "I can turn a foe into a sheep now, and I suspect I will never tire of it.", tags = { "spell:Polymorph" } },
       { "Blink is mine now, a single step that puts danger some distance behind me.", tags = { "spell:Blink" } },
       { "Frost Nova lets me pin an enemy in ice while I find a better place to stand.", tags = { "spell:Frost_Nova" } },
       { "I can conjure my own water now, one less thing to carry and one less thing to ask for.", tags = { "spell:Conjure_Water" } },
       { "I can set a ward between myself and a blow now, and I feel steadier for it.", tags = { "spell:Power_Word:_Shield" } },
       { "Renew is mine, a healing that keeps working long after the prayer is done.", tags = { "spell:Renew", "!race:Scourge" } },
-      { "I can call the dead back now, and I mean to treat that gift with care.", tags = { "spell:Resurrection", "!race:Scourge" } },
       { "Psychic Scream is mine now, and my fear has somewhere to go besides my own stomach.", tags = { "spell:Psychic_Scream" } },
-      { "Lay on Hands is mine now, something left to give when nothing else will do.", tags = { "spell:Lay_on_Hands", "!race:Scourge" } },
-      { "Lay on Hands is mine now, and the Light it pours through me burns every inch of the way; for someone who needs it, I can bear that.", tags = { "spell:Lay_on_Hands", "race:Scourge" } },
       { "I can turn the walking dead with the Light now, and send them reeling from a fight they had no business in.", tags = { "spell:Turn_Undead", "!race:Scourge" } },
       { "I can turn the dead with the Light now, and I try not to dwell on what that says about a Forsaken who calls on it.", tags = { "spell:Turn_Undead", "race:Scourge" } },
       { "Divine Protection can give me a moment nothing can touch, and I am learning to wait for the right one.", tags = { "spell:Divine_Protection" } },
       { "Hammer of Justice is mine now, a way to stop a foe in the middle of its intentions.", tags = { "spell:Hammer_of_Justice" } },
-      { "I can close the distance in a single rush now, before my fear has time to catch up.", tags = { "spell:Charge" } },
       { "Execute is mine now, for finishing a fight that has gone on long enough.", tags = { "spell:Execute" } },
       { "I can lift a purse now without its owner noticing, and I find I keep a closer hand on my own.", tags = { "spell:Pick_Pocket" } },
       { "Sap is mine, and a foe can now sleep through the start of its own bad luck.", tags = { "spell:Sap" } },
-      { "I can vanish from a fight now, and leave an enemy wondering where I went.", tags = { "spell:Vanish" } },
       { "Sprint is mine now, and leaving trouble behind has never been easier.", tags = { "spell:Sprint" } },
       { "I can run with a cheetah's speed now, and the long roads have shrunk to fit.", tags = { "spell:Aspect_of_the_Cheetah" } },
-      { "I can play dead now, convincingly enough that I hope never to need the real thing.", tags = { "spell:Feign_Death" } },
       { "Hunter's Mark is mine now, and no quarry of mine will vanish into the crowd.", tags = { "spell:Hunter's_Mark" } },
-      { "I can borrow a ghost wolf's shape from the spirits now, and the roads feel shorter for it.", tags = { "spell:Ghost_Wolf" } },
       { "I can call a fallen friend's spirit back to their body now, a gift I hope to need rarely.", tags = { "spell:Ancestral_Spirit" } },
       { "Lightning Shield is mine now, thunder waiting for anyone who reaches for me.", tags = { "spell:Lightning_Shield" } },
       { "Entangling Roots is mine, and the earth will hold an enemy for me when I ask.", tags = { "spell:Entangling_Roots" } },
-      { "Rebirth is mine now, the wild's way of refusing a death that came too soon.", tags = { "spell:Rebirth" } },
       { "Immolate is mine now, a fire that keeps burning after I have stepped away.", tags = { "spell:Immolate" } },
       { "I can call on Renew now, though its healing burns in my hands for as long as it works.", tags = { "spell:Renew", "race:Scourge" } },
-      { "I can call the dead back now; of all people, I know what that means.", tags = { "spell:Resurrection", "race:Scourge" } },
     },
     ["mount"] = {
       { "I rode my own mount for the first time, and the road got shorter." },
@@ -558,6 +589,10 @@ ns.data = {
       { "I took my first ride on my own mount, with a sudden taste for the distances I could now travel." },
       { "For the first time, I rode instead of walking, and felt rather kinder towards the distance ahead." },
       { "I rode my own mount for the first time, grateful that even my weight could be somebody else's burden for a while.", tags = { "race:Tauren" } },
+      { "I rode my {mount} for the first time, and the miles began to pass without asking my feet." },
+      { "I took my {mount} out for the first time, and could not stop grinning at how fast the land went by." },
+      { "I rode my warhorse out for the first time, and the Light seemed to travel with us.", tags = { "warhorse" } },
+      { "I rode my felsteed for the first time, and its hooves left little scorch marks I tried not to look at.", tags = { "felsteed" } },
     },
     ["night-in"] = {
       { "I ended this stretch indoors {at}, too tired to go looking for an inn." },
@@ -817,6 +852,11 @@ ns.data = {
         { "{foe} killed me {at}. I hated the thought of leaving my kin to hear the name without me.", tags = { "foe" } },
         { "I died {at}, with more country left to see and a great deal of ale I would never taste." },
       },
+      ["mount"] = {
+        { "I rode my {mount} out for the first time, and every dwarf who ever trusted a ram on an icy path would have nodded at the sight.", tags = { "ram" } },
+        { "My {mount} took the road the way a dwarf takes a hill, head down and in no doubt, and I liked it at once.", tags = { "ram" } },
+        { "A ram of my own at last: I rode out on my {mount} feeling every inch the mountaineer.", tags = { "ram" } },
+      },
       ["night"] = {
         { "I lay down outside {at}, feeling less like a traveller than a stone someone had finally dropped." },
         { "I settled beneath the sky {at}, with my bones rather less hard than the ground seemed to expect." },
@@ -869,6 +909,10 @@ ns.data = {
         { "I knocked off {at}, with the day's work stacked neatly behind me and no wish to add a single piece to the pile.", tags = { "!fire" } },
         { "I set my burdens down {at}, and only then felt how much they had weighed." },
         { "I drew up to the fire {at}, close enough to warm my toes and far enough to keep them, about the last fine judgement I had left in me.", tags = { "fire" } },
+      },
+      ["riding"] = {
+        { "I learned to ride, and resolved to trust my mount on a mountain path at least as far as I trusted my own boots." },
+        { "Riding came easier than I expected; a dwarf's balance, it turns out, is good for more than standing still." },
       },
     },
     ["Gnome"] = {
@@ -937,6 +981,11 @@ ns.data = {
         { "I died {at}, undone by a world that was never designed with gnomes in mind.", tags = { "nature" } },
         { "I died {at}. We had lost enough of our people already, and I hated to join that number." },
       },
+      ["mount"] = {
+        { "My {mount} clanked into motion for the first time, and I spent the first mile listening to its gears with professional interest.", tags = { "mechanostrider" } },
+        { "I rode my {mount} for the first time, and found the engineering every bit as satisfying as the speed.", tags = { "mechanostrider" } },
+        { "A mechanostrider of my own: I rode my {mount} out of the gate and only stopped to adjust it twice.", tags = { "mechanostrider" } },
+      },
       ["night"] = {
         { "I lay down {at}; a safety catch on the whole world would have been a fine invention." },
         { "I settled outside {at}. Home had once meant more than the place where I stopped walking." },
@@ -989,6 +1038,10 @@ ns.data = {
         { "I rested {at}, with everything behind me sorted into order and nothing ahead yet asking to be sorted." },
         { "I settled near the fire {at}, close enough for warmth and far enough back to keep my eyebrows, a distance I take some care to get right.", tags = { "fire" } },
         { "I sat down {at}, and quite deliberately did not count anything at all." },
+      },
+      ["riding"] = {
+        { "I learned to ride, and immediately began wondering how the saddle could be improved." },
+        { "Riding, I found, was mostly a matter of trusting the machinery, which suited me." },
       },
       ["summit"] = {
         { "I reached level {level}, carrying the ingenuity of a lost city into a life I could hardly have imagined." },
@@ -1063,6 +1116,11 @@ ns.data = {
         { "I died {at}, without so much as an enemy to carry my anger.", tags = { "nature" } },
         { "I died {at}, another life cut short in a kingdom with too many empty places already." },
       },
+      ["mount"] = {
+        { "I rode my {mount} out for the first time, and felt for a mile or two like one of the knights in the old Stormwind ballads.", tags = { "horse" } },
+        { "A horse of my own at last; I rode my {mount} along the road and could not stop grinning.", tags = { "horse" } },
+        { "My {mount} and I took to the road for the first time, and the farms went by faster than I had ever seen them.", tags = { "horse" } },
+      },
       ["night"] = {
         { "I settled outside {at}, with no appetite left for the adventure of sleeping rough." },
         { "I lay down {at}, thinking of familiar faces until the strange surroundings ceased to trouble me." },
@@ -1115,6 +1173,10 @@ ns.data = {
         { "I rested {at} and let my shoulders drop from around my ears, where the day had put them.", tags = { "!fire" } },
         { "I settled by the fire {at}, and for a while my only duty was to stay warm and keep out of trouble, which I managed admirably.", tags = { "fire" } },
         { "I rested {at}, having given the world a fair day's work and taken a fair day's weariness in exchange." },
+      },
+      ["riding"] = {
+        { "I learned to ride, and the roads of the kingdom suddenly looked like an invitation." },
+        { "I took to riding gladly, and a little faster than was wise." },
       },
       ["summit"] = {
         { "I reached level {level}, with more people to be glad I had met than the stranger who set out could have named." },
@@ -1186,6 +1248,11 @@ ns.data = {
         { "{foe} killed me {at}, and all the long memory of our people could not soften my own wish to remain.", tags = { "foe" } },
         { "I died {at}, and became a wisp far from any tree I knew by name." },
       },
+      ["mount"] = {
+        { "I rode my {mount} for the first time, and its silent pace suited my people's way of crossing a forest.", tags = { "saber" } },
+        { "A saber's grace is a hard thing to match on foot; on my {mount}, I no longer had to try.", tags = { "saber" } },
+        { "I took my {mount} into the trees for the first time, and the forest seemed to make way for us.", tags = { "saber" } },
+      },
       ["night"] = {
         { "I settled outside {at}, longing for Teldrassil's shelter without wishing to hide from the world forever." },
         { "I lay down beneath the sky {at}, counting the stars until they counted me to sleep." },
@@ -1239,6 +1306,10 @@ ns.data = {
         { "I rested {at}, my thoughts free to drift as far as they liked now that my feet would not have to follow them.", tags = { "!fire" } },
         { "I stopped {at}, laying the road's cares aside like a cloak I would not need again until I rose." },
         { "I settled down {at} and gave myself up to sleep, whatever dreams it meant to bring." },
+      },
+      ["riding"] = {
+        { "I learned to ride, and allowed that some journeys need not be walked to be respected." },
+        { "Riding was a new kind of patience to learn, and I learned it." },
       },
     },
     ["Orc"] = {
@@ -1305,6 +1376,11 @@ ns.data = {
         { "{foe} killed me {at}, and I feared leaving the ancestors nothing but another short life to weigh.", tags = { "foe" } },
         { "I died {at}, still hungry for the life our people had won beyond the camps." },
       },
+      ["mount"] = {
+        { "I rode my {mount} for the first time, as the old clans rode, and felt something of them stir in me.", tags = { "wolf" } },
+        { "My {mount} ran as if it had been waiting for me, and I let it.", tags = { "wolf" } },
+        { "A wolf of my own at last: I rode my {mount} out through the gates with my head high.", tags = { "wolf" } },
+      },
       ["night"] = {
         { "I settled outside {at}, with a free person's road waiting beyond the pause." },
         { "I spent the night in the open {at}; Orgrimmar's walls would have been welcome, but I could bear this." },
@@ -1359,6 +1435,10 @@ ns.data = {
         { "I kept close to the fire {at}, turning the day over in my head until none of it quickened my pulse any more.", tags = { "fire" } },
         { "I stayed put {at}, and for once let my hands lie idle without feeling they ought to be busy." },
         { "I called it done {at}, tired in the way only a full stretch of useful work ever leaves me." },
+      },
+      ["riding"] = {
+        { "I learned to ride, and felt something of the old clans' wolf riders in it." },
+        { "Riding came naturally; my people have never liked to wait for the road." },
       },
     },
     ["Scourge"] = {
@@ -1432,6 +1512,11 @@ ns.data = {
         { "{foe} killed me {at}, and I regretted giving anyone else the last word over my remains.", tags = { "foe" } },
         { "I died {at}, and dying again was no easier to accept than I imagined the first time had been." },
       },
+      ["mount"] = {
+        { "I rode my {mount} for the first time, a horse as dead as I am and just as unwilling to stop.", tags = { "skeletal" } },
+        { "My {mount} never tired and never complained, and I found I appreciated both.", tags = { "skeletal" } },
+        { "The living's horses shy away from my kind; my {mount} had no such opinions.", tags = { "skeletal" } },
+      },
       ["night"] = {
         { "I stopped outside {at}, with no wish to turn the pause into a permanent arrangement." },
         { "I spent another night in the open {at}; a roof would have been welcome, though I had endured worse lodgings." },
@@ -1486,6 +1571,10 @@ ns.data = {
         { "I called the stretch finished {at}; whatever remained could wait for me or find someone more eager." },
         { "I rested {at}, turning over the people I had dealt with and which of them I would gladly deal with again." },
       },
+      ["riding"] = {
+        { "I learned to ride, and saw no reason the dead should walk when they could ride." },
+        { "Riding came easily; there is little a dead body fears from a fall." },
+      },
     },
     ["Skyborne"] = {
       ["beginning"] = {
@@ -1515,6 +1604,9 @@ ns.data = {
       ["died"] = {
 
       },
+      ["mount"] = {
+
+      },
       ["night"] = {
 
       },
@@ -1522,6 +1614,9 @@ ns.data = {
 
       },
       ["rest"] = {
+
+      },
+      ["riding"] = {
 
       },
       ["summit"] = {
@@ -1596,6 +1691,11 @@ ns.data = {
         { "I died {at}, with no enemy to meet and no path my hooves could hold.", tags = { "nature" } },
         { "I died {at}, far too willing to remain a child of the Earth Mother to welcome returning to her." },
       },
+      ["mount"] = {
+        { "I rode my {mount} for the first time, and its patient stride matched my own.", tags = { "kodo" } },
+        { "A kodo of my own: my {mount} carried my weight without complaint, which few things in this world can say.", tags = { "kodo" } },
+        { "I rode my {mount} out across the grass for the first time, unhurried, the way my people have always crossed the plains.", tags = { "kodo" } },
+      },
       ["night"] = {
         { "I settled outside {at}, with new respect for the tribes, who had slept this way for generations before they had a land of their own." },
         { "I lay down {at}, and listened for the drums of a plains camp many miles away.", tags = { "!home" } },
@@ -1649,6 +1749,10 @@ ns.data = {
         { "I stopped {at}, and let the land have its quiet back." },
         { "I let the day come off my back {at} like the packs from a kodo at the end of the trail." },
         { "I rested {at}, as patient with my own weariness as I try to be with anyone else's." },
+      },
+      ["riding"] = {
+        { "I learned to ride, and was quietly pleased to find a beast willing to carry me." },
+        { "Riding was new to a people who have walked their plains for generations, and I took to it slowly and well." },
       },
       ["summit"] = {
         { "I reached level {level}, still a child of the Earth Mother and more grateful for the life she had given me." },
@@ -1722,6 +1826,11 @@ ns.data = {
         { "I died {at}, without even an enemy I could have asked the witch doctors to curse.", tags = { "nature" } },
         { "I died {at}, with so much I still wanted to bring the Darkspear." },
       },
+      ["mount"] = {
+        { "I rode my {mount} for the first time, and it ran the way raptors run, all hunger and joy.", tags = { "raptor" } },
+        { "A raptor of my own: my {mount} and I tore along the road, and I laughed most of the way.", tags = { "raptor" } },
+        { "My {mount} snapped at the air the whole first mile, and I liked it better for it.", tags = { "raptor" } },
+      },
       ["night"] = {
         { "I lay down outside {at}, quite content to let the world get on without my interest for a while." },
         { "I settled on the ground {at}, with the sea's rhythm dear to me in the quiet." },
@@ -1776,6 +1885,10 @@ ns.data = {
         { "I rested {at}, treating myself to the thought of crabs cracked open on a warm rock by the sea.", tags = { "!fire" } },
         { "I settled {at}, and let tiredness come in like a slow tide without arguing with it." },
         { "I rested {at}, privately amused at how much effort I had spent getting somewhere to sit down." },
+      },
+      ["riding"] = {
+        { "I learned to ride, and could hardly wait to find out how fast a mount of my own could really go." },
+        { "Riding lessons were the best fun I had had in weeks, and I made no secret of it." },
       },
       ["summit"] = {
         { "I reached level {level}, with the scattered shores of my childhood no longer the only places that meant home to me." },

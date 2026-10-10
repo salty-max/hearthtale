@@ -299,12 +299,15 @@ check(
 )
 check(#moments("learned") == 1 and #moments("learned")[1].spells == 2, "a trade's own spell isn't a trainer's lesson")
 
--- The first ride.
-state.mounted = true
+-- The first ride: on what.
+state.mounted, state.buffs = true, { { name = "Brown Ram", id = 6899 } }
 fire("UNIT_AURA", "player")
 fire("UNIT_AURA", "player")
-state.mounted = false
-check(#moments("mount") == 1, "the first ride: once")
+state.mounted, state.buffs = false, nil
+check(
+  #moments("mount") == 1 and moments("mount")[1].name == "Brown Ram" and moments("mount")[1].kind == "ram",
+  "the first ride: once, and on what"
+)
 
 -- A hunter's pet (the journal is a paladin's: a hunter for a moment).
 J.class = "HUNTER"
@@ -449,7 +452,8 @@ check(
 check(not one.text:find("level two", 1, true), "a level reached isn't told (the chapter's levels say it)")
 io.write("    " .. one.text:gsub("\n\n", "\n    ") .. "\n")
 
--- The book, open.
+-- The book, open. (an entry's title: its weightiest moment, else "Entry N")
+local function titled(c, n) return ns.writeBook(c).chapters[n].title or ("Entry %d"):format(n) end
 SlashCmdList.HEARTHTALE("")
 local B, page, rows = HearthtaleFrame, HearthtalePage, ns.bookRows
 check(
@@ -461,12 +465,12 @@ check(
 )
 check(
   rows[1]:IsShown()
-    and rows[1].title:GetText() == "Entry 1"
-    and rows[1].place:GetText() == "still being written"
-    and page.title:GetText() == "Entry 1"
+    and rows[1].title:GetText() == titled(ns.journal(), 1)
+    and rows[1].place:GetText():find("still being written", 1, true)
+    and page.title:GetText() == titled(ns.journal(), 1)
     and page.sub:GetText():find("levels 1 to 2", 1, true)
     and page.sub:GetText():find("still being written", 1, true),
-  "a row per entry: Entry 1, still being written, levels 1 to 2"
+  "a row per entry: its title, still being written, levels 1 to 2"
 )
 check(rows[1].marks[1]:IsShown() and rows[1].marks[2]:IsShown(), "marks: a skull for a close call, a star for a rare")
 state.sub = "Brewnall Village"
@@ -598,9 +602,9 @@ check(
 )
 
 linkHandlers.hearthtale("hearthtale:chapter:1")
-check(B:IsShown() and page.title:GetText() == "Entry 1", "the chapter's link opens the book at it")
+check(B:IsShown() and page.title:GetText() == titled(ns.journal(), 1), "the chapter's link opens the book at it")
 check(
-  rows[1].place:GetText() == "Thunderbrew Distillery, levels 1 to 2",
+  rows[1].place:GetText():find("Thunderbrew Distillery, levels 1 to 2", 1, true),
   "… listed with where it closed and its levels"
 )
 SlashCmdList.HEARTHTALE("")
@@ -688,7 +692,7 @@ check(
     and B.selectedTab == 2
     and rows[1].title:GetText() == "Sealinedion"
     and rows[2].title:GetText() == "Epitaph"
-    and rows[3].title:GetText() == "Entry 1"
+    and rows[3].title:GetText() == titled(fallenLife, 1)
     and page.title:GetText() == "Sealinedion"
     and page.body:GetText():find(closedBook.epitaph, 1, true)
     and page.sub:GetText():find("Level 2 Dwarf Paladin", 1, true),
@@ -696,7 +700,7 @@ check(
 )
 rows[6].scripts.OnClick(rows[6])
 check(
-  page.title:GetText() == "Entry 4"
+  page.title:GetText() == titled(fallenLife, 4)
     and page.sub:GetText():find("the end", 1, true)
     and page.body:GetText():find(closedBook.epitaph, 1, true),
   "its last chapter ends with the epitaph"
@@ -704,7 +708,7 @@ check(
 ns.showTab(1)
 check(
   B.who:GetText():find("Fallen", 1, true)
-    and page.title:GetText() == "Entry 4"
+    and page.title:GetText() == titled(ns.journal(), 4)
     and page.body:GetText():find(closedBook.epitaph, 1, true),
   "the Journal tab: my own closed book, the same end"
 )
@@ -741,9 +745,9 @@ io.write("    " .. later.prologue .. "\n")
 SlashCmdList.HEARTHTALE("")
 check(
   rows[1].title:GetText() == "Prologue"
-    and rows[2].title:GetText() == "Entry 1"
+    and rows[2].title:GetText() == titled(HearthtaleChar, 1)
     and not (rows[3] and rows[3]:IsShown())
-    and page.title:GetText() == "Entry 1",
+    and page.title:GetText() == titled(HearthtaleChar, 1),
   "its book lists the prologue, then chapter 1"
 )
 rows[1].scripts.OnClick(rows[1])

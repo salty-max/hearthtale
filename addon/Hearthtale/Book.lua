@@ -207,7 +207,8 @@ local function showPage(life, w, key)
   end
   local text = ch.text
   if life.closed and last and w.epitaph then text = (text and text .. "\n\n" or "") .. EPITAPH:format(w.epitaph) end
-  show(("Entry %d"):format(key), table.concat(parts, "  -  "), text)
+  if ch.title then table.insert(parts, 1, ("Entry %d"):format(key)) end
+  show(ch.title or ("Entry %d"):format(key), table.concat(parts, "  -  "), text)
 end
 
 local rows = {}
@@ -218,6 +219,7 @@ local function row(i)
   r = CreateFrame("Button", nil, list.child)
   r:SetSize(ROW_WIDTH, 34)
   r.title = label(r, TITLE_FONT, 14, T.gold)
+  r.title:SetWordWrap(false) -- (a long title cut short, never over the marks)
   r.place = label(r, BODY_FONT, 11, T.soft)
   r.place:SetPoint("TOPLEFT", r.title, "BOTTOMLEFT", 0, -2)
   r.place:SetPoint("RIGHT", -8, 0)
@@ -254,6 +256,7 @@ local function render(entries, scroll)
     r.key = e.key
     r.title:ClearAllPoints()
     r.title:SetPoint("TOPLEFT", 8 + (e.indent or 0), -3)
+    r.title:SetPoint("RIGHT", r, "RIGHT", -36, 0)
     r.title:SetFont(TITLE_FONT, e.indent and 13 or 14, "")
     r.title:SetTextColor(unpack(e.click and T.gold or T.soft))
     r.title:SetText(e.title)
@@ -307,11 +310,14 @@ local function chapterRows(entries, w, selectedKey, open, indent)
     })
   end
   for _, ch in ipairs(w.chapters) do
-    local under = ch.place and (ch.place .. ", " .. levels(ch)) or levels(ch)
+    -- (its title, its number under it; a title that is the place doesn't say it twice)
+    local number = ("Entry %d"):format(ch.number)
+    local under = (ch.place and ch.place ~= ch.title) and (ch.place .. ", " .. levels(ch)) or levels(ch)
+    under = ch.open and "still being written" or under
     table.insert(entries, {
       key = ch.number,
-      title = ("Entry %d"):format(ch.number),
-      place = ch.open and "still being written" or under,
+      title = ch.title or number,
+      place = ch.title and (number .. " - " .. under) or under,
       close = ch.close,
       rare = ch.rare,
       indent = indent,

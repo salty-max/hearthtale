@@ -239,6 +239,11 @@ function GetSkillLineInfo(i)
   return s[1], s[2], nil, nil, nil, nil, s[3]
 end
 function IsMounted() return state.mounted == true end
+-- (the player's buffs, by index: { name, id })
+function UnitBuff(_, i)
+  local b = (state.buffs or {})[i]
+  if b then return b.name, nil, nil, nil, nil, nil, nil, nil, nil, b.id end
+end
 -- The game's formats, as in its global strings.
 ERR_LEARN_SPELL_S = "You have learned a new spell: %s."
 ERR_LEARN_ABILITY_S = "You have learned a new ability: %s."

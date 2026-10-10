@@ -11,6 +11,7 @@
           "from": 1,
           "number": 1,
           "place": "Anvilmar",
+          "title": "The Troll Cave",
           "to": 4
         },
         {
@@ -21,6 +22,7 @@
           "number": 2,
           "place": "Kharanos",
           "rare": true,
+          "title": "Dun Morogh",
           "to": 7
         },
         {
@@ -30,6 +32,7 @@
           "number": 3,
           "open": true,
           "place": "Kharanos",
+          "title": "Bristle",
           "to": 9
         }
       ],
@@ -57,6 +60,7 @@
           "from": 1,
           "number": 1,
           "place": "Anvilmar",
+          "title": "Dun Morogh",
           "to": 3
         },
         {
@@ -67,6 +71,7 @@
           "from": 3,
           "number": 2,
           "place": "Frostmane Hold",
+          "title": "Tools for Steelgrill",
           "to": 6
         }
       ],
@@ -95,6 +100,7 @@
           "from": 23,
           "number": 1,
           "place": "Darkshire",
+          "title": "A Death in Duskwood",
           "to": 24
         },
         {
@@ -104,6 +110,7 @@
           "number": 2,
           "open": true,
           "place": "Darkshire",
+          "title": "Bride of the Embalmer",
           "to": 25
         }
       ],
@@ -133,15 +140,17 @@
           "from": 1,
           "number": 1,
           "place": "Razor Hill",
+          "title": "Galgar's Cactus Apple Surprise",
           "to": 5
         },
         {
           "began": 1790938550,
-          "diary": "I continued in Razor Hill, wondering what the lost world of Draenor would have made of this one. I saw Orgrimmar with my own eyes at last, and found it larger, louder and more mine than I had pictured. The drums of Orgrimmar echoed off the spiked walls as I came in. At Grommash Hold I felt the weight of it: a city our people had built for themselves, with no one's chains on it. I can close the distance in a single rush now, before my fear has time to catch up.",
+          "diary": "I continued in Razor Hill, wondering what the lost world of Draenor would have made of this one. I saw Orgrimmar with my own eyes at last, and found it larger, louder and more mine than I had pictured. The drums of Orgrimmar echoed off the spiked walls as I came in. At Grommash Hold I felt the weight of it: a city our people had built for themselves, with no one's chains on it. I learned to Charge, and the distance between me and a foe stopped being a matter of courage.",
           "from": 5,
           "number": 2,
           "open": true,
           "place": "Razor Hill",
+          "title": "Charge",
           "to": 6
         }
       ],
@@ -169,6 +178,7 @@
           "from": 1,
           "number": 1,
           "place": "Dolanaar",
+          "title": "Webwood Venom",
           "to": 5
         },
         {
@@ -178,6 +188,7 @@
           "number": 2,
           "open": true,
           "place": "Dolanaar",
+          "title": "Darnassus",
           "to": 6
         }
       ],
@@ -205,6 +216,7 @@
           "from": 1,
           "number": 1,
           "place": "Brill",
+          "title": "Scavenging Deathknell",
           "to": 5
         },
         {
@@ -214,6 +226,7 @@
           "number": 2,
           "open": true,
           "place": "Brill",
+          "title": "Undercity",
           "to": 6
         }
       ],
@@ -242,6 +255,7 @@
           "from": 18,
           "number": 1,
           "place": "Trade District",
+          "title": "Red Silk Bandanas",
           "to": 20
         },
         {
@@ -251,6 +265,7 @@
           "number": 2,
           "open": true,
           "place": "Trade District",
+          "title": "Stormwind City",
           "to": 20
         }
       ],

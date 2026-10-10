@@ -858,7 +858,15 @@ for _, life in ipairs(LIVES) do
     namedOnce(where, ch.text)
     local levels = ch.from == ch.to and ("level %d"):format(ch.from) or ("levels %d to %d"):format(ch.from, ch.to)
     if ch.open then levels = levels .. ", still being written" end
-    f:write(("## %d. %s%s\n\n%s\n\n"):format(ch.number, ch.place and ch.place .. ", " or "", levels, ch.text or ""))
+    f:write(
+      ("## %d. %s (%s%s)\n\n%s\n\n"):format(
+        ch.number,
+        ch.title or "",
+        ch.place and ch.place .. ", " or "",
+        levels,
+        ch.text or ""
+      )
+    )
   end
   for _, ch in ipairs(c.chapters) do
     quests = quests + ch.quests

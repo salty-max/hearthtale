@@ -50,6 +50,7 @@ function chapter(v: unknown): BookChapter | null {
     number,
     text: str(c.text, MAX_TEXT),
     diary: str(c.diary, MAX_TEXT),
+    title: str(c.title, 120),
     place: str(c.place),
     from: int(c.from) ?? 1,
     to: int(c.to) ?? int(c.from) ?? 1,

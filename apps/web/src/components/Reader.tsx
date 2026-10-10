@@ -40,12 +40,13 @@ export function Reader({
   const next = all[at + 1];
   const several = all.length > 1;
   const ch = here.kind === "chapter" ? book.chapters.find((c) => c.number === here.number) : undefined;
-  const title = here.kind === "prologue" ? t.book.prologue : here.kind === "epitaph" ? t.book.epitaph : t.book.chapter(here.number);
+  const title = here.kind === "prologue" ? t.book.prologue : here.kind === "epitaph" ? t.book.epitaph : (ch?.title ?? t.book.chapter(here.number));
   // (a chapter as its diary entry; a book saved before entries were, its prose)
   const text = here.kind === "prologue" ? book.prologue : here.kind === "epitaph" ? book.epitaph : (ch?.diary ?? ch?.text);
   // "Anvilmar · levels 1 to 4", or "levels 7 to 9 · still being written"
   const sub = ch
     ? [
+        ch.title ? t.book.chapter(ch.number) : undefined,
         ch.open ? undefined : ch.place,
         t.book.levels(ch.from, ch.to),
         ch.open ? t.book.stillWriting : character.fallen && ch.number === book.chapters[book.chapters.length - 1]?.number && !book.chapters.some((c) => c.open) ? t.book.theEnd : undefined,
@@ -54,7 +55,11 @@ export function Reader({
         .join(" · ")
     : undefined;
   const label = (p: (typeof all)[number]) =>
-    p.kind === "prologue" ? t.book.prologue : p.kind === "epitaph" ? t.book.epitaph : t.book.chapter(p.number);
+    p.kind === "prologue"
+      ? t.book.prologue
+      : p.kind === "epitaph"
+        ? t.book.epitaph
+        : (book.chapters.find((c) => c.number === p.number)?.title ?? t.book.chapter(p.number));
   const cls = readerClasses(settings);
   const fallenColour = settings.theme === "night" ? "text-[#e0705f]" : "text-fallen";
   return (

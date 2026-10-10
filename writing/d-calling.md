@@ -34,3 +34,44 @@ kind: d-calling
 - [teleport] I learned {spell}, and the long walk home became a matter of a few words.
 - [spell:Teleport:_Moonglade] I learned the way to Moonglade, the druids' own sanctuary, and could go there in a breath whenever I needed its quiet.
 - [spell:Teleport:_Moonglade] Moonglade was a breath away now, and I knew where to go when the world asked too much of me.
+- [spell:Polymorph] I can turn a foe into a sheep now, and I suspect I will never tire of it.
+- [spell:Resurrection !race:Scourge] I can call the dead back now, and I mean to treat that gift with care.
+- [spell:Lay_on_Hands !race:Scourge] Lay on Hands is mine now, something left to give when nothing else will do.
+- [spell:Lay_on_Hands race:Scourge] Lay on Hands is mine now, and the Light it pours through me burns every inch of the way; for someone who needs it, I can bear that.
+- [spell:Charge] I can close the distance in a single rush now, before my fear has time to catch up.
+- [spell:Vanish] I can vanish from a fight now, and leave an enemy wondering where I went.
+- [spell:Feign_Death] I can play dead now, convincingly enough that I hope never to need the real thing.
+- [spell:Ghost_Wolf] I can borrow a ghost wolf's shape from the spirits now, and the roads feel shorter for it.
+- [spell:Rebirth] Rebirth is mine now, the wild's way of refusing a death that came too soon.
+- [spell:Resurrection race:Scourge] I can call the dead back now; of all people, I know what that means.
+- [spell:Polymorph] I learned Polymorph, and a foe could become a harmless sheep at a word.
+- [spell:Resurrection !race:Scourge] I learned to call the dead back, and meant to treat that gift with care.
+- [spell:Lay_on_Hands !race:Scourge] I learned Lay on Hands, the paladin's last gift when nothing else will do.
+- [spell:Lay_on_Hands race:Scourge] I learned Lay on Hands, though all the Light it carries burns through me first.
+- [spell:Charge] I learned to Charge, and the distance between me and a foe stopped being a matter of courage.
+- [spell:Vanish] I learned to Vanish, and a lost fight became something I could simply leave.
+- [spell:Feign_Death] I learned to feign death, a lie told with my whole body.
+- [spell:Ghost_Wolf] I learned Ghost Wolf, and the spirits lent me a swifter shape for the road.
+- [spell:Rebirth] I learned Rebirth, the wild's answer to a death that came before the fighting was done.
+- [spell:Devotion_Aura] I learned Devotion Aura, the first of a paladin's auras, and carried its steadiness into every fight.
+- [spell:Devotion_Aura] Devotion Aura was my first aura, a quiet strength I could share with anyone at my side.
+- [spell:Retribution_Aura] I learned Retribution Aura, and whoever struck me now paid a little for it in holy fire.
+- [spell:Retribution_Aura] With Retribution Aura I could choose what my presence carried into a fight, and I chose to make it costly.
+- [spell:Divine_Shield] I learned Divine Shield, and for a few moments nothing in the world could touch me.
+- [spell:Divine_Shield] Divine Shield was mine, the Light closed around me like a wall when I most needed one.
+- [class:WARRIOR spell:Dual_Wield] I learned to fight with a weapon in each hand, and my blows came twice as fast.
+- [class:WARRIOR spell:Dual_Wield] Dual wielding was mine now, and I stopped needing a shield to feel ready.
+- [class:ROGUE spell:Dual_Wield] I learned to fight with a blade in each hand, the way a rogue is meant to.
+- [class:ROGUE spell:Dual_Wield] A second blade in my off hand changed every fight, and I wondered how I had managed with one.
+- [spell:Whirlwind] I learned Whirlwind, and could strike everything around me in a single turn.
+- [spell:Whirlwind] Whirlwind was mine, a whole ring of foes answered in one sweep of steel.
+- [spell:Pick_Lock] I learned to pick locks, and a closed chest stopped being the end of the matter.
+- [spell:Pick_Lock] Pick Lock was mine now; doors and strongboxes became questions with answers.
+- [spell:Blind] I learned Blind, a pinch of powder that could take a foe out of a fight entirely.
+- [spell:Blind] Blind was mine, and a single foe could be made to forget I was there.
+- [portal] I learned to open a portal to {place}, and could send others home as easily as myself.
+- [portal] With {spell} I could open the way home for a whole party, and felt the mage's craft grow wider.
+- [spell:Ritual_of_Summoning] I learned the Ritual of Summoning, and could draw a friend across the world to my side.
+- [spell:Ritual_of_Summoning] The Ritual of Summoning was mine, and distance between companions became a thing I could undo.
+- [spell:Reincarnation] I learned Reincarnation, and death became a door the spirits might let me walk back through.
+- [spell:Reincarnation] Reincarnation was mine now, the elements' promise to return me to my feet once in a while.

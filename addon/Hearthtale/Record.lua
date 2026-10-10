@@ -42,7 +42,7 @@
 --     died { death }  revived { how, by, graveyard, took }
 --     group { name, first, class } or { raid = n }  dungeon { name }  boss { name }
 --     learned { spells }  power { spell, kind }  skill { name, rank }
---     prof { name, learned or rank }  riding { name }  mount  made { id, link, n }
+--     prof { name, learned or rank }  riding { name }  mount { name, kind }  made { id, link, n }
 --     gear { link, quality, made, held, trinket }  loot { link, quality }
 --     tame { name, family }  petdied { name }  demon { name, family }  shift { form }
 --     bag { link, slots, looted }  gold

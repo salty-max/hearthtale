@@ -25,13 +25,13 @@ const RACE: Record<string, string> = {
 const cap = (s: string) => s.charAt(0) + s.slice(1).toLowerCase();
 const esc = (s: string) => s.replace(/[&<>"']/g, (ch) => `&#${ch.charCodeAt(0)};`);
 
-/** The part a page shows, by name: "Entry 3", "Epitaph"… or the whole book. */
+/** The part a page shows, by name: an entry's title ("Entry 3" untitled), "Epitaph"… or the whole book. */
 function partName(shared: SharedBook): string {
   const p = shared.part;
   if (p === undefined) return "The book";
   if (p === "prologue") return "Prologue";
   if (p === "epitaph") return "Epitaph";
-  return `Entry ${p}`;
+  return shared.book.chapters.find((c) => String(c.number) === String(p))?.title ?? `Entry ${p}`;
 }
 
 /** The opening lines of what's shared, for the card. */
