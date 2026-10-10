@@ -75,7 +75,7 @@ const KINDS: Record<string, string[]> = {
   gold: [],
   demon: ["pet", "demon"],
   shift: [],
-  mount: [],
+  mount: ["mount"],
   riding: [],
   petdied: ["pet", "at", "in"],
   // players of the other side slain in the open
@@ -120,10 +120,10 @@ const KINDS: Record<string, string[]> = {
 };
 const VOICE = ["home", "kin", "faith", "weapon"];
 const TAGS = ["after", "again", "air", "ally", "aquatic", "away", "bear", "beast", "camp", "capital", "cat", "company", "cenarion",
-  "corpse", "delve", "demon", "drowning", "earth", "elite", "fall", "felguard", "felhunter", "fire", "first", "found", "made", "held", "trinket",
+  "corpse", "delve", "demon", "drowning", "earth", "elite", "fall", "felguard", "felhunter", "felsteed", "fire", "horse", "kodo", "mechanostrider", "ram", "raptor", "saber", "skeletal", "warhorse", "wolf", "first", "found", "made", "held", "trinket",
   "flight", "foe", "form", "grouped", "hard", "hc", "healer", "high", "highborne", "home", "hosts", "imp", "inside",
   "known", "last", "lava", "leper", "looted", "low", "moonkin", "moved", "nature", "near", "neutral", "new", "night",
-  "one", "people", "player", "plural", "rescue", "self", "settled", "steed", "succubus", "summon", "teleport", "thread", "town",
+  "one", "people", "player", "plural", "rescue", "self", "settled", "steed", "succubus", "summon", "portal", "teleport", "thread", "town",
   "travel", "tree", "two", "undead", "used", "villain", "voidwalker", "water", "zalazane"];
 const RACES = ["Human", "Dwarf", "NightElf", "Gnome", "Orc", "Troll", "Tauren", "Scourge", "Skyborne"];
 const CLASSES = ["WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK", "DRUID"];

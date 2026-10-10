@@ -18,6 +18,7 @@ Explorer's Field Journal (same release, CI and CurseForge tooling).
 | Data | Knowledge.lua keeps the class quests and the chains; the drops of quest items went with the hunts that told them; the quest givers' people and callings serve the playthrough only (`.cache/audit/npcs.lua`). |
 | Scenery | A place is described the first time a life meets it: a new land, a capital or a dungeon an entry tells, right after it is told, and the town an entry ends in, before its rest (decided 10 October 2026). |
 | Moments | Told again (10 October 2026): gear first worn below level 30, blue or made by me (an epic piece at any level); a class's defining spells for every class (a warrior's stances, a paladin's Redemption, a rogue's poisons, a priest's own people's prayers, a mage's first way home, a druid's way to Moonglade), beside the demons, companions, forms and totems; the fires: the life's first, one shared (the recorder notes the party at it), one of Forever's camps, the one an entry ends at. |
+| Titles | Each entry is titled by its weightiest moment in the game's own words (a quest's title, a name, a place), never made-up prose, and never one an earlier entry has (10 October 2026). Shown in the window, the saved book, the site and share cards. |
 | Naming | A reader sees entries: "Entry 3" in the window, the chat line, the settings and on the site. The data keeps its chapters (the saved file, the stored books, the site's routes): no migration for a word. |
 
 ## Voices and scenery (6 October 2026)

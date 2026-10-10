@@ -154,6 +154,24 @@ local DEMONS = { Imp = true, Voidwalker = true, Succubus = true, Felhunter = tru
 local PET_GAP = 4 -- (a pet named again: not in the entries just after)
 local GEAR_LEVEL = 30 -- (below it, a blue piece or one I made, worn for the first time, is told)
 local CAMP_GAP = 3 -- (a camp's fire told again: not in the entries just after)
+-- An entry's title, from the game's own words: a druid's form by its
+-- spell's name, a quest's title without its poster's "Wanted:".
+local FORM_TITLE = {
+  bear = "Bear Form",
+  cat = "Cat Form",
+  travel = "Travel Form",
+  aquatic = "Aquatic Form",
+  moonkin = "Moonkin Form",
+  tree = "Tree of Life",
+  flight = "Flight Form",
+}
+local function questTitle(title)
+  if not title then return nil end
+  title = title:gsub("^[Ww][Aa][Nn][Tt][Ee][Dd]!?:?%s*", ""):gsub("^Bounty:%s*", "")
+  -- ("Kill Grundig Darkcloud": the one it names)
+  title = title:gsub("^Kill (%u)", "%1"):gsub("^Slay (%u)", "%1")
+  return title ~= "" and title or nil
+end
 local REACT_GAP = 4 -- (a word on a story: not in the entries just after another)
 
 -- What a chapter holds that a diary tells, from its log.
@@ -186,6 +204,7 @@ local function gather(d, c, ch)
     finds = {}, -- loot of note (epic and above)
     gear = {}, -- worn for the first time: blue and better, or made by me, while the levels are low
     fires = {}, -- the stops by a campfire
+    titles = {}, -- [quest id]: its title, as the game gives it
     raids = {},
     petdied = {},
   }
@@ -282,6 +301,7 @@ local function gather(d, c, ch)
       table.insert(f.finals, { boss = m.name, dungeon = dungeon })
     end
     if m.k == "quest" and m.id == ZALAZANE then d.zalazane = true end
+    if (m.k == "quest" or m.k == "done") and m.id and m.title then f.titles[m.id] = m.title end
     if m.k == "pvp" then table.insert(f.pvp, { m = m, i = i }) end
     if m.k == "kill" and m.name and m.kind then f.kinds[m.name] = m.kind end
     if m.k == "loot" and (m.quality or 0) >= 4 and m.link then table.insert(f.finds, { m = m, i = i }) end
@@ -475,6 +495,12 @@ local function entry(d, n, ch)
     end
     return false
   end
+  -- (the entry's title: its weightiest moment, by the game's own words, a
+  -- quest's title, a name, a place; rank 1 weighs most)
+  local heads = {}
+  local function headline(rank, title)
+    if title and title ~= "" then table.insert(heads, { rank = rank, title = title, seq = #heads }) end
+  end
   -- (a place seen for the first time in a life: its description, writing/scenery/)
   local function scenery(place, night, when)
     local text = b:sceneryOf(place, night)
@@ -617,7 +643,7 @@ local function entry(d, n, ch)
       text = sayFresh(
         "d-calling",
         key,
-        { spell = m.spell, place = m.spell:match("^Teleport: (.+)$") },
+        { spell = m.spell, place = m.spell:match("^Teleport: (.+)$") or m.spell:match("^Portal: (.+)$") },
         { [m.tag] = true },
         nil,
         { [m.tag] = true }
@@ -639,6 +665,14 @@ local function entry(d, n, ch)
       add(text, true, f.at[m])
       milestones = milestones + 1
       if m.k == "tame" or m.k == "demon" then d.pets[m.name] = { said = n } end -- (named: met)
+      headline(
+        1,
+        (m.k == "tame" or m.k == "demon") and m.name
+          or m.k == "shift" and FORM_TITLE[m.form or ""]
+          or m.k == "initiation" and questTitle(m.m.title)
+          or m.k == "class-reward" and (questTitle(m.m.title) or m.q.spell)
+          or m.spell
+      )
     end
   end
 
@@ -694,6 +728,7 @@ local function entry(d, n, ch)
     end
     -- (what it was, a word on it: now and then, never the same twice)
     local subject = told and SUBJECT(story[1].text, (f.work[story[1].id] or {}).objectives, f.kinds)
+    if told then headline(subject and 2 or 5, questTitle(f.titles[story[1].id])) end
     if subject and (story[1].w == 3 or n % 2 == 0) and milestones < 2 and n - d.reactedAt >= REACT_GAP then
       local word = sayFresh(
         "d-react",
@@ -745,7 +780,9 @@ local function entry(d, n, ch)
     else
       add(sayFresh("died", "died", here({ foe = deathFoe(m.death or {}) }, place), t, m.zone), true, death.i)
     end
+    headline(4, m.zone and ("A Death " .. at(m.zone)))
   elseif #f.deaths > 1 then
+    headline(4, f.deaths[1].m.zone and ("Deaths " .. at(f.deaths[1].m.zone)))
     for _, death in ipairs(f.deaths) do -- (unnamed there: told plainly with the foes, if beaten after)
       if death.m.death and death.m.death.foe then dangerFoes[death.m.death.foe] = nil end
     end
@@ -782,6 +819,7 @@ local function entry(d, n, ch)
       f.dungeonAt[below]
     )
     scenery(below, f.nightAt[below], f.dungeonAt[below] + 0.25)
+    headline(3, below)
     local fin = f.finals[1]
     if fin then
       add(
@@ -810,6 +848,7 @@ local function entry(d, n, ch)
       f.capital.i
     )
     scenery(f.capital.zone, f.capital.night, f.capital.i + 0.25)
+    headline(6, f.capital.zone)
   end
   -- a Skyborne's first ground below the islands, once a life (after the
   -- island's own work that took me there: the skycutter, then the ground)
@@ -831,6 +870,7 @@ local function entry(d, n, ch)
       when
     )
     scenery(f.away.zone, f.away.night, when + 0.05)
+    headline(6, f.away.zone)
   end
   -- a fight with players of the other side, in the open (one by name, or several)
   if #f.pvp > 0 then
@@ -1021,6 +1061,7 @@ local function entry(d, n, ch)
       true,
       f.landAt[lands[1]]
     )
+    if told then headline(7, lands[1]) end
     -- (the first of them with a description of its own, right after)
     for k = 1, told and #named or 0 do
       local before = #out
@@ -1111,10 +1152,20 @@ local function entry(d, n, ch)
           if text then break end
         end
       else
-        -- (the first bag: what it is, its room)
+        -- (the first bag: what it is, its room; the first mount: which)
         local item = m.k == "bag" and m.link and m.link:match("%[(.-)%]")
-        local values = { item = item and W.itemName(item), slots = m.slots and words(m.slots) }
-        text = sayFresh(m.k, key, values, { looted = m.looted or nil })
+        local values = {
+          item = item and W.itemName(item),
+          slots = m.slots and words(m.slots),
+          mount = m.k == "mount" and m.name and m.name:lower() or nil,
+        }
+        local t = { looted = m.looted or nil }
+        if m.k == "mount" and m.kind then
+          t[m.kind] = true
+          owned = math.min(owned, 1) -- (a people's own mount: the race's own words, whatever came before)
+        end
+        text = sayFresh(m.k, key, values, t, nil, m.k == "mount" and m.kind and { [m.kind] = true } or nil)
+        if text and m.k == "mount" then headline(6, m.name) end
       end
       more(text, false, f.at[m])
     end
@@ -1243,7 +1294,21 @@ local function entry(d, n, ch)
     texts[#texts + 1] = o.text
     if k == split then texts[#texts + 1] = "\n\n" end
   end
-  return (table.concat(texts, " "):gsub(" \n\n ", "\n\n"))
+  -- the title: the weightiest moment not already a title, else where it was
+  headline(9, f.main or start.zone or where)
+  table.sort(heads, function(x, y)
+    if x.rank ~= y.rank then return x.rank < y.rank end
+    return x.seq < y.seq
+  end)
+  local title -- (none rather than one an earlier entry has)
+  for _, h in ipairs(heads) do
+    if not d.titled[h.title] then
+      title = h.title
+      break
+    end
+  end
+  if title then d.titled[title] = true end
+  return (table.concat(texts, " "):gsub(" \n\n ", "\n\n")), title
 end
 
 -- The book of a character, as read in the game and on the site, written
@@ -1265,6 +1330,7 @@ function ns.writeBook(c)
     reacted = {}, -- [text]: a word on a story, said
     initiated = {}, -- [element]: a shaman's initiation told
     called = {}, -- [a class's defining spell, its tag]: learned, told
+    titled = {}, -- [title]: an entry's already
     reactedAt = -REACT_GAP,
     threads = {}, -- [a chain's first quest] = { n, giver, ender }: the last entry that told one of it
     pets = {}, -- [name] = { said = the last entry that named it }: a pet met before
@@ -1290,9 +1356,11 @@ function ns.writeBook(c)
       if m.k == "level" then to = m.level end
     end
     if e and e.level then to = math.max(to, e.level) end
+    local text, title = entry(d, i, ch)
     book.chapters[i] = {
       number = i,
-      text = entry(d, i, ch),
+      text = text,
+      title = title,
       chapter = ch,
       place = (e and e.place) or start.sub or start.zone, -- (where it was written, or where it goes on)
       from = start.level or 1,

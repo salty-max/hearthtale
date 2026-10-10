@@ -23,6 +23,8 @@ export type BookChapter = {
   text?: string;
   /** The chapter as the character's diary entry (Diary.lua), paragraphs separated by a blank line. Missing: nothing to tell yet. */
   diary?: string;
+  /** Its title: its weightiest moment in the game's own words (a quest's title, a name, a place). Missing: "Entry N". */
+  title?: string;
   /** Where it closed, or where it began while still being written. */
   place?: string;
   /** The levels it covers. */

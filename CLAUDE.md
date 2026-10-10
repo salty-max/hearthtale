@@ -165,10 +165,14 @@ An entry is the stretch looked back on at its rest, by what weighs most:
   stretch); a form; a companion (`d-tame`, `[first]` or another); a shaman's
   initiation into an element (`d-initiation`, once an element, from the
   quest that gives its totem); a spell that defines the class (`d-calling`,
-  `W.callingOf`: a warrior's stances, a paladin's Redemption, a rogue's
-  poisons, a priest's own people's prayers, a mage's first way home, a
-  druid's way to Moonglade; once each, learned or a class quest's reward,
-  which it then stands for); a class quest's reward;
+  `W.callingOf` in Language.lua: a warrior's charge, stances, second weapon
+  and whirlwind, a paladin's auras, Lay on Hands, Redemption and shield, a
+  rogue's second blade, picks, poisons, vanishing and blinding, a priest's
+  own people's prayers and Resurrection, a mage's sheep and first teleport
+  and portal, a warlock's summoning circle, a shaman's ghost wolf and second
+  life, a hunter's feigned death, a druid's Moonglade and Rebirth; once
+  each, learned or a class quest's reward, which it then stands for); a
+  class quest's reward;
 - the story, always: the deed itself, "I killed Hogger, …" (`d-why`,
   `d-why2`, `d-why-also`; a second story elsewhere says where, "Later, in
   Westfall, I …", unless the sentence before named it); a class's own quest
@@ -211,6 +215,14 @@ An entry is the stretch looked back on at its rest, by what weighs most:
 Told in the order it happened (a place always named: no "there"), a lead
 story first now and then ("In Loch Modan, I …", where the last entry
 rested), its word right after it; two paragraphs from `PARAGRAPH` sentences.
+The first ride names its mount and speaks in the race's own words (a dwarf's
+ram), whatever came before. An entry's title is its weightiest moment in the
+game's own words, never made-up prose: a milestone (a demon's or a pet's
+name, a form, the element's quest, a defining spell), a story with a villain
+or a rescue (its quest's title, "Wanted:" or "Kill" taken off), a dungeon, a
+death ("A Death in Westfall"), any other story, the first ride, a capital or
+a new land, else the land it was lived in; none rather than one an earlier
+entry has.
 A book's frames never come back while a fresh one is left; a finished entry
 never changes, the open one is written again at each moment. A life met
 mid-life opens with its prologue; a Hardcore death closes the book with the

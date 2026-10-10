@@ -7,3 +7,7 @@ kind: mount
 - I took my first ride on my own mount, with a sudden taste for the distances I could now travel.
 - For the first time, I rode instead of walking, and felt rather kinder towards the distance ahead.
 - [race:Tauren] I rode my own mount for the first time, grateful that even my weight could be somebody else's burden for a while.
+- I rode my {mount} for the first time, and the miles began to pass without asking my feet.
+- I took my {mount} out for the first time, and could not stop grinning at how fast the land went by.
+- [warhorse] I rode my warhorse out for the first time, and the Light seemed to travel with us.
+- [felsteed] I rode my felsteed for the first time, and its hooves left little scorch marks I tried not to look at.

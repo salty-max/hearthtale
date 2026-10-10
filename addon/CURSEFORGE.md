@@ -14,11 +14,11 @@ For Classic Era (Hardcore, Season of Discovery) and World of Warcraft: Forever. 
 
 An entry runs from one rest to the next. Logging out in the wild is a night outdoors, and the entry goes on; after four hours of play, the next logout ends it wherever you are. It tells what weighs most:
 
-- **The milestones of a life**, always: what defines your class as you grow into it (a warlock's demons, a hunter's companions, a druid's forms and the way to Moonglade, a shaman's favour from each element, a warrior's stances, a paladin's Redemption, a rogue's poisons, a priest's own people's prayers, a mage's first way home), and what a class's own quest taught you.
+- **The milestones of a life**, always: what defines your class as you grow into it (a warlock's demons and summoning circle, a hunter's companions, a druid's forms, Moonglade and Rebirth, a shaman's favour from each element and the ghost wolf, a warrior's charge, stances and second weapon, a paladin's auras, Lay on Hands, Redemption and Divine Shield, a rogue's second blade, poisons and vanishing, a priest's own people's prayers, a mage's sheep and first way home), and what a class's own quest taught you.
 - **The story**: the work that mattered most, told as you did it and why (from the quests' own words: "I killed Hogger, the huge gnoll who had overpowered every attempt at his capture"), picking up a story left off in an earlier entry, and now and then a word on what it meant to you.
 - **The dangers**: how you died and came back, or the closest call (under a tenth of your health, and alive to tell it); the foes worth naming, rares and elites; a dungeon and its last boss; a player of the other faction killed in the open world (battlegrounds are not part of the tale).
 - **The road**: the lands, towns and dungeons seen for the first time, each described as your character meets it; your people's capital; the company you kept; the fires you stopped at (shared with companions, or one of Forever's camps); a rare find (epic and better).
-- **What you became**: the spells worth a line of their own, a new way of fighting, a trade taken up, the gear you first put on while the levels are low (a blue piece, or one you made yourself), the first ride, the first bag and the first gold piece, a companion at your side, and the times it fell.
+- **What you became**: the spells worth a line of their own, a new way of fighting, a trade taken up, the gear you first put on while the levels are low (a blue piece, or one you made yourself), learning to ride and your first ride on your people's own mount, the first bag and the first gold piece, a companion at your side, and the times it fell.
 
 A quiet stretch is a short entry; a big one runs longer. The journal ends when you reach the highest level of your game: the last entry ends there, with the journey's end.
 
@@ -28,6 +28,7 @@ A character you already play gets a prologue from what the game knows of its lif
 
 - In the first person, in your race's own voice: what it notices and how it says so (a dwarf's eye for stonework, a troll's appetite, a Forsaken's dry patience), never a caricature. Graver on Hardcore, and graver still as the levels climb.
 - About 1,470 lines and phrases, and over 3,200 quests' own stories, chosen to fit the moment: the hour, the first time or the tenth, how close the call, alone or in a group. A line doesn't come back soon after it was used.
+- Each entry is titled by its weightiest moment, in the game's own words: a companion's name, a dungeon, the quest that mattered most ("The Stolen Journal", "Zalazane", "Escape Through Stealth").
 - The entry you are living is written again as you play; a finished one stays as it was.
 - Written from what the addon records each time you open the book, so better sentences in later versions reach your old entries too. At each logout the book is also saved as written, for hearthtale.app.
 
@@ -47,7 +48,7 @@ Books are private: only you see them. Ravenpost sends the book and who it belong
 
 ## The book
 
-`/hearthtale` (or `/ht`), or the book by the minimap, opens it: your portrait and who you are; the entries on the left (a skull marks a close call, a star a rare); the open one on the right. A second tab holds the Hall of the Fallen. When an entry is written, a line in chat links to it.
+`/hearthtale` (or `/ht`), or the book by the minimap, opens it: your portrait and who you are; the entries on the left by their titles (a skull marks a close call, a star a rare); the open one on the right. A second tab holds the Hall of the Fallen. When an entry is written, a line in chat links to it.
 
 ## In English
 

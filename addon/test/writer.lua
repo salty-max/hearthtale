@@ -701,12 +701,16 @@ end
 -- A class's defining spells: learned from a trainer, or from a class quest
 -- (a priest's own people's prayer); a mage's first way home, once.
 local CALLED = {
-  WARRIOR = { "Defensive Stance", "Berserker Stance" },
-  PALADIN = { "Redemption" },
-  ROGUE = { "Poisons" },
-  DRUID = { "Teleport: Moonglade" },
-  MAGE = { "Teleport: Stormwind", "Teleport: Orgrimmar" },
+  WARRIOR = { "Charge", "Defensive Stance", "Dual Wield", "Berserker Stance", "Whirlwind" },
+  PALADIN = { "Devotion Aura", "Lay on Hands", "Redemption", "Retribution Aura", "Divine Shield" },
+  ROGUE = { "Dual Wield", "Pick Lock", "Poisons", "Vanish", "Blind" },
+  DRUID = { "Teleport: Moonglade", "Rebirth" },
+  MAGE = { "Polymorph", "Teleport: Stormwind", "Teleport: Orgrimmar", "Portal: Stormwind", "Portal: Orgrimmar" },
+  WARLOCK = { "Ritual of Summoning" },
+  SHAMAN = { "Ghost Wolf", "Reincarnation" },
+  HUNTER = { "Feign Death" },
   PRIEST = {
+    "Resurrection",
     "Desperate Prayer",
     "Feedback",
     "Fear Ward",
@@ -748,7 +752,7 @@ for class, spells in pairs(CALLED) do
           teleports = teleports + 1
         end
       end
-      if class == "MAGE" and teleports > 1 then problem(race .. " MAGE", "a way home told twice", "") end
+      if class == "MAGE" and teleports > 2 then problem(race .. " MAGE", "a way home told twice", "") end
     end
   end
 end
@@ -797,6 +801,51 @@ for r, race in ipairs(RACES) do
     if race == "Skyborne" then c.faction = life % 2 == 0 and "horde" or "alliance" end
     for i, ch in ipairs(ns.writeBook(c).chapters) do
       inspect(race .. " fire " .. i, ch.text)
+    end
+  end
+end
+
+-- Learning to ride, and the first ride: on one's own people's mount (a
+-- dwarf's ram), another's, a class's own steed.
+local MOUNTS = {
+  Dwarf = { "Brown Ram", "ram" },
+  Gnome = { "Red Mechanostrider", "mechanostrider" },
+  Human = { "Black Stallion", "horse" },
+  NightElf = { "Striped Nightsaber", "saber" },
+  Orc = { "Timber Wolf", "wolf" },
+  Troll = { "Emerald Raptor", "raptor" },
+  Tauren = { "Gray Kodo", "kodo" },
+  Scourge = { "Red Skeletal Horse", "skeletal" },
+  Skyborne = { "Swift Gale", nil },
+}
+for _, race in ipairs(RACES) do
+  for life = 1, 16 do
+    local own = MOUNTS[race] or { "Pinto", "horse" }
+    local ride = ({ [4] = { "Pinto", "horse" }, [5] = { "Warhorse", "warhorse" }, [6] = { "Felsteed", "felsteed" } })[life]
+      or own
+    local log = {
+      { k = "riding", name = "Apprentice Riding", zone = "Elwynn Forest", sub = "Goldshire", at = 50 },
+      { k = "mount", name = ride[1], kind = ride[2], zone = "Elwynn Forest", sub = "Goldshire", at = 100 },
+    }
+    local c = {
+      guid = ("ride-%s-%d"):format(race, life),
+      race = race,
+      class = life == 5 and "PALADIN" or life == 6 and "WARLOCK" or COMBOS[race][1],
+      chapters = {
+        {
+          start = { level = 40, zone = "Elwynn Forest", sub = "Goldshire" },
+          kills = {},
+          quests = 0,
+          played = 3600,
+          gold = 0,
+          log = life == 8 and { { k = "mount", zone = "Elwynn Forest", sub = "Goldshire", at = 100 } } or log,
+          ended = { level = 40, zone = "Elwynn Forest", sub = "Goldshire", place = "Goldshire", how = "rest" },
+        },
+      },
+    }
+    if race == "Skyborne" then c.faction = life % 2 == 0 and "horde" or "alliance" end
+    for _, ch in ipairs(ns.writeBook(c).chapters) do
+      inspect(race .. " ride " .. life, ch.text)
     end
   end
 end
