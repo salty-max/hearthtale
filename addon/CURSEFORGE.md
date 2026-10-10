@@ -50,7 +50,7 @@ Books are private: only you see them. Ravenpost sends the book and who it belong
 
 ## The book
 
-`/hearthtale` (or `/ht`), or the book by the minimap, opens it: your portrait, with a skull beside it on Hardcore; the entries on the left by their titles (a skull marks a close call, a star a rare); the open one on the right, where and when it was lived under its title. A second tab holds the Hall of the Fallen. When an entry is written, a line in chat links to it.
+`/hearthtale` (or `/ht`), or the book by the minimap, opens it: your portrait, and on Hardcore its mark beside it (a skull, then "Fallen" once the book closes); the entries on the left by their titles (a skull marks a close call, a star a rare); the open one on the right, its number and whether it is still being written above the title, where, at which levels and when under it. A second tab holds the Hall of the Fallen. When an entry is written, a line in chat links to it.
 
 ## In English
 
@@ -65,9 +65,9 @@ Each game has its own file: pick the one for yours (the CurseForge app does it f
 
 ## Settings
 
-The first time each character logs in with Hearthtale, a welcome page introduces the journal and offers its choices (`/ht welcome` shows it again). After that: Options → AddOns → Hearthtale (or `/ht settings`, or right-click the minimap button): a line in chat for each entry, the alert when a book closes, the minimap button. Where the game can't tell whether a character is Hardcore, a setting lets you say so.
+The first time each character logs in with Hearthtale, a welcome page introduces the journal and offers its choices (`/ht welcome` shows it again). After that: Options → AddOns → Hearthtale (or `/ht settings`, or right-click the minimap button): a line in chat for each entry, the alert when a book closes, the minimap button and where it sits. Where the game can't tell whether a character is Hardcore, a setting lets you say so.
 
-Settings are each character's own. Take another's from the welcome page or the Options page (any character of the same game), or bring them from anywhere with a code: `/ht export` on one character, `/ht import CODE` on the other.
+Settings are each character's own, as in most interface addons. A new character can take another's: choose one of your characters of the same game from a list (on the welcome page or the Options page), or bring them from anywhere, another game or another account, with a code: `/ht export` (or the welcome page's Give a code) on one character, `/ht import CODE` (or Use a code) on the other.
 
 Other commands: `/ht title [N] TEXT` names entry N (the last one without N), `/ht note [N] TEXT` writes in its margin (no TEXT removes it); `/ht hall` opens the Hall of the Fallen; `/ht link CODE` links this character to your library on hearthtale.app; `/ht minimap` shows or hides the button.
 
