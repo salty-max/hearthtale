@@ -71,6 +71,33 @@ if FOREVER then
 else
   check(not hcSetting, "Classic: the game tells Hardcore; no setting for it")
 end
+
+-- The welcome: on the account's first login, once; its choices are the
+-- settings (and this character's Hardcore where the game can't tell).
+local welcome, choices = ns.welcomeFrame, ns.welcomeChoices
+check(
+  welcome and welcome:IsShown() and #choices == (FOREVER and 4 or 3),
+  "the first login: the welcome page and its choices"
+)
+check(choices[1].box:GetChecked() and choices[2].box:GetChecked(), "… which show the settings as they are")
+choices[1].scripts.OnClick(choices[1])
+check(ns.option("chat") == false and not choices[1].box:GetChecked(), "… a click on a choice's words changes it")
+choices[1].scripts.OnClick(choices[1])
+check(ns.option("chat") == true, "… and back")
+if FOREVER then
+  welcome.scripts.OnShow(welcome) -- (shown again: as the settings are now)
+  check(choices[4].box:GetChecked() and J.hardcore, "… Forever: this character's Hardcore, as declared")
+  choices[4].scripts.OnClick(choices[4])
+  check(not J.hardcore and not J.hardcoreChosen, "… which the welcome changes too")
+  choices[4].scripts.OnClick(choices[4])
+end
+welcome:Hide()
+fire("PLAYER_ENTERING_WORLD", true, false)
+check(ns.option("welcomed") and not welcome:IsShown(), "… seen once: closed, it stays closed at the next login")
+SlashCmdList.HEARTHTALE("welcome")
+check(welcome:IsShown(), "… /ht welcome shows it again")
+welcome:Hide()
+
 local mm = HearthtaleMinimapButton
 check(mm and mm:IsShown(), "the minimap button")
 SlashCmdList.HEARTHTALE("minimap")
@@ -511,18 +538,20 @@ local B, page, rows = HearthtaleFrame, HearthtalePage, ns.bookRows
 check(
   B:IsShown()
     and G.portrait() == "player"
-    and B.who:GetText():find("Sealinedion, level 2", 1, true)
-    and B.who:GetText():find("Hardcore", 1, true),
-  "/ht opens the book: my portrait, who I am, Hardcore"
+    and B.hardcore:IsShown()
+    and B.hardcore.label:GetText() == "Hardcore"
+    and #B.hardcore.lines == 2,
+  "/ht opens the book: my portrait, and Hardcore's mark beside it (what it means, who says so)"
 )
 check(
   rows[1]:IsShown()
     and rows[1].title:GetText() == titled(ns.journal(), 1)
     and rows[1].place:GetText():find("still being written", 1, true)
     and page.title:GetText() == titled(ns.journal(), 1)
-    and page.sub:GetText():find("levels 1 to 2", 1, true)
-    and page.sub:GetText():find("still being written", 1, true),
-  "a row per entry: its title, still being written, levels 1 to 2"
+    and page.over:GetText():find("STILL BEING WRITTEN", 1, true)
+    and page.sub:GetText():lower():find("levels 1 to 2", 1, true)
+    and not page.sub:GetText():find("still being written", 1, true),
+  "a row per entry: its title, still being written; the page's header says so above its title, its levels under it"
 )
 check(rows[1].marks[1]:IsShown() and rows[1].marks[2]:IsShown(), "marks: a skull for a close call, a star for a rare")
 state.sub = "Brewnall Village"
@@ -747,22 +776,24 @@ check(
     and rows[3].title:GetText() == titled(fallenLife, 1)
     and page.title:GetText() == "Sealinedion"
     and page.body:GetText():find(closedBook.epitaph, 1, true)
-    and page.sub:GetText():find("Level 2 Dwarf Paladin", 1, true),
+    and page.sub:GetText():find("Level 2 Dwarf Paladin", 1, true)
+    and page.over:GetText() == "HARDCORE  \194\183  FALLEN",
   "the link opens the Hall: the life, its epitaph, its chapters"
 )
 rows[6].scripts.OnClick(rows[6])
 check(
   page.title:GetText() == titled(fallenLife, 4)
-    and page.sub:GetText():find("the end", 1, true)
+    and page.over:GetText():find("THE END", 1, true)
     and page.body:GetText():find(closedBook.epitaph, 1, true),
   "its last chapter ends with the epitaph"
 )
 ns.showTab(1)
 check(
-  B.who:GetText():find("Fallen", 1, true)
+  B.hardcore:IsShown()
+    and B.hardcore.label:GetText() == "Fallen"
     and page.title:GetText() == titled(ns.journal(), 4)
     and page.body:GetText():find(closedBook.epitaph, 1, true),
-  "the Journal tab: my own closed book, the same end"
+  "the Journal tab: my own closed book, the same end, the mark now Fallen"
 )
 SlashCmdList.HEARTHTALE("")
 

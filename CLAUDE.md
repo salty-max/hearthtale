@@ -146,12 +146,21 @@ its decisions: PLAN.md (the full chapter prose was dropped on 10 October
   `Kit.lua` (a copy of the kit shared with the Codex and the Field Journal,
   ~/code/addon-kit: never edit the copy; `bun run kit:sync` after changing
   the kit, `bun run kit:check` to verify), `Book.lua` (Hearthtale's ember
-  theme on the kit; the window: chapters on the left, the open one's entry on
-  the right, the player's note under it, an Edit button for its own title
-  and note; a second tab for the Hall of the Fallen), `Hall.lua` (a Hardcore
-  death: the book closed and copied to the account-wide Hall, a chat line,
-  the toast), `Settings.lua` (account settings, the Options page),
-  `Minimap.lua`.
+  theme on the kit; the window: the portrait, a Hardcore life's mark beside
+  it (a skull and the word, Fallen once closed; on hover what it means and
+  whether the game or the setting says so), chapters on the left, the open
+  one's entry on the right under its header (a line above the title: the
+  entry and how it stands; one under it: where, which levels, when, a short
+  date range; never wrapped), the player's note under it, an Edit button for
+  its own title and note; a second tab for the Hall of the Fallen),
+  `Hall.lua` (a Hardcore death: the book closed and copied to the
+  account-wide Hall, a chat line, the toast), `Settings.lua` (account
+  settings, the Options page; `ns.setHardcore` where the game can't tell),
+  `Welcome.lua` (the welcome page, once per account a few seconds after the
+  first login, out of combat, and `/ht welcome`: the logo, what the journal
+  is, the settings as choices; `Media/Logo.tga`, the logo at 256px with
+  rounded corners, made from `assets/logo.png` with magick; the packages
+  carry `Media/`), `Minimap.lua`.
 - `addon/CURSEFORGE.md`: the project page. `assets/logo-master.png` is the
   painted logo master; `assets/logo.png` and `assets/logo-1024.png` are its
   512px and 1024px exports (resize the master with magick). The

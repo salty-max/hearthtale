@@ -40,20 +40,30 @@ local current -- its open chapter: a number, or "prologue"
 local hallLife, hallKey -- in the Hall: the open life (its guid) and its page ("epitaph", "prologue", a chapter's number)
 local asked -- opened at a page (a link): don't go to the last chapter
 local WIDTH = 440
-local HEADER_H = 76
+local HEADER_H = 92
 local ROW_WIDTH = 204
 local EPITAPH = K.hex(T.accent) .. "%s|r" -- the epitaph, in the accent
 local NOTE = K.hex(T.accent) .. "Note|r\n|cffbfb08f%s|r" -- the player's own, in the margin
 
-local function day(at) return at and date("%d %b %Y", at) end
+local DOT = "  \194\183  " -- (a middle dot between the parts of a line)
 
--- When a chapter was lived: "5 Oct 2026", "5 Oct 2026 to 7 Oct 2026".
+local function day(at)
+  if not at then return nil end
+  local t = date("*t", at)
+  return ("%d %s %d"):format(t.day, date("%b", at), t.year)
+end
+
+-- When a chapter was lived, as short as it reads: "5 Oct 2026", "5 to 7 Oct
+-- 2026", "30 Sep to 2 Oct 2026", "30 Dec 2026 to 2 Jan 2027".
 local function when(ch)
   local c = ch.chapter
-  local from, to = day(c.start and c.start.at), day(c.ended and c.ended.at)
-  if not from then return nil end
-  if not to or to == from then return from end
-  return from .. " to " .. to
+  local a, b = c.start and c.start.at, c.ended and c.ended.at
+  if not a then return nil end
+  if not b or day(a) == day(b) then return day(a) end
+  local ta, tb = date("*t", a), date("*t", b)
+  if ta.year ~= tb.year then return day(a) .. " to " .. day(b) end
+  if ta.month ~= tb.month then return ("%d %s to %s"):format(ta.day, date("%b", a), day(b)) end
+  return ("%d to %s"):format(ta.day, day(b))
 end
 
 -- The levels a chapter covers: "level 12", "levels 11 to 13".
@@ -62,7 +72,15 @@ local function levels(ch)
   return ("levels %d to %d"):format(ch.from, ch.to)
 end
 
-local function show(title, sub, text)
+-- A page's header: a line above its title (what it is, how it stands), the
+-- title, and one line under it (where, which levels, when), never wrapped.
+local function upper(parts) return table.concat(parts, DOT):upper() end
+local function line(parts)
+  local s = table.concat(parts, DOT)
+  return s:sub(1, 1):upper() .. s:sub(2)
+end
+local function show(over, title, sub, text)
+  page.over:SetText(over or "")
   page.title:SetText(title)
   page.sub:SetText(sub or "")
   page.body:SetTextColor(unpack(text and T.text or T.soft))
@@ -76,32 +94,38 @@ end
 local function showPage(life, w, key)
   if key == "prologue" then
     local p = life.prologue or {}
-    return show("Prologue", ("Before this journal, at level %d"):format(p.level or 0), w.prologue)
+    return show(
+      upper({ "Before this journal" }),
+      "Prologue",
+      line({ ("taken up at level %d"):format(p.level or 0) }),
+      w.prologue
+    )
   end
   if key == "epitaph" then
     local d = life.death or {}
     local sub = { ("Level %d %s %s"):format(d.level or 0, life.raceName or "", life.className or "") }
     if life.realm then table.insert(sub, life.realm) end
     table.insert(sub, day(d.at))
-    return show(life.name or "", table.concat(sub, "  -  "), w.epitaph and EPITAPH:format(w.epitaph))
+    return show(upper({ "Hardcore", "fallen" }), life.name or "", line(sub), w.epitaph and EPITAPH:format(w.epitaph))
   end
   local ch = w.chapters[key]
   if not ch then return end
+  local over = {}
+  if ch.title then table.insert(over, ("Entry %d"):format(key)) end
+  local last = key == #w.chapters
+  if life.closed and last then
+    table.insert(over, "the end")
+  elseif ch.open then
+    table.insert(over, "still being written")
+  end
   local parts = {}
   if ch.place then table.insert(parts, ch.place) end
   table.insert(parts, levels(ch))
   table.insert(parts, when(ch))
-  local last = key == #w.chapters
-  if life.closed and last then
-    table.insert(parts, "the end")
-  elseif ch.open then
-    table.insert(parts, "still being written")
-  end
   local text = ch.text
   if ch.note then text = (text and text .. "\n\n" or "") .. NOTE:format(ch.note) end
   if life.closed and last and w.epitaph then text = (text and text .. "\n\n" or "") .. EPITAPH:format(w.epitaph) end
-  if ch.title then table.insert(parts, 1, ("Entry %d"):format(key)) end
-  show(ch.title or ("Entry %d"):format(key), table.concat(parts, "  -  "), text)
+  show(upper(over), ch.title or ("Entry %d"):format(key), line(parts), text)
 end
 
 local rows = {}
@@ -205,7 +229,7 @@ local function chapterRows(entries, w, selectedKey, open, indent)
     table.insert(entries, {
       key = ch.number,
       title = ch.title or number,
-      place = ch.title and (number .. " - " .. under) or under,
+      place = ch.title and (number .. DOT .. under) or under,
       close = ch.close,
       rare = ch.rare,
       indent = indent,
@@ -246,7 +270,7 @@ local function refreshJournal(latest)
   if current then
     showPage(c, written, current)
   else
-    show("", "", nil)
+    show("", "", "", nil)
   end
   if editor and editor:IsShown() and editor.n ~= current then closeEditor() end
   page.edit:SetShown(type(current) == "number") -- (an entry of mine: its title, a note)
@@ -269,7 +293,12 @@ local function refreshHall(scroll)
   if #fallen == 0 then
     table.insert(entries, { title = "No one has fallen", place = "May it stay so." })
     render(entries)
-    return show("The Hall of the Fallen", "", "The closed books of Hardcore characters rest here, to be read again.")
+    return show(
+      "",
+      "The Hall of the Fallen",
+      "",
+      "The closed books of Hardcore characters rest here, to be read again."
+    )
   end
   local open, w
   for _, life in ipairs(fallen) do
@@ -374,17 +403,7 @@ end
 function ns.refresh(latest)
   local c = ns.journal()
   if not book or not c then return end
-  -- Who I am, beside the portrait.
-  local race, class = UnitRace("player"), UnitClass("player")
-  book.who:SetText(
-    ("%s, level %d %s %s%s"):format(
-      c.name or UnitName("player") or "",
-      UnitLevel("player") or 0,
-      race or "",
-      class or "",
-      c.closed and "  -  Fallen" or c.hardcore and "  -  Hardcore" or ""
-    )
-  )
+  book.hardcore:Set(c)
   if book.selectedTab == 2 then
     refreshHall(latest)
   else
@@ -399,6 +418,51 @@ function ns.showTab(n)
   book.selectedTab = n
   if PanelTemplates_SetTab then PanelTemplates_SetTab(book, n) end
   ns.refresh(true)
+end
+
+-- A Hardcore life's mark beside the portrait: the game's skull for a deadly
+-- foe and the word, what it means on hover (and who says so: the game, or
+-- this character's setting where the game can't tell). Nothing otherwise.
+local MARK = "Interface\\TargetingFrame\\UI-TargetingFrame-Skull"
+local FALLEN = { 0.85, 0.32, 0.25 }
+local function hardcoreMark(parent, x)
+  local m = CreateFrame("Frame", nil, parent)
+  m:SetPoint("TOPLEFT", x, -30)
+  m:SetSize(110, 20)
+  m.icon = m:CreateTexture(nil, "ARTWORK")
+  m.icon:SetTexture(MARK)
+  m.icon:SetSize(16, 16)
+  m.icon:SetPoint("LEFT", 0, 0)
+  m.label = label(m, TITLE_FONT, 13, T.gold)
+  m.label:SetPoint("LEFT", m.icon, "RIGHT", 4, 0)
+  m:EnableMouse(true)
+  m:SetScript("OnEnter", function(self)
+    GameTooltip:SetOwner(self, "ANCHOR_BOTTOMRIGHT")
+    GameTooltip:SetText(self.label:GetText() or "", unpack(self.colour or T.gold))
+    for _, l in ipairs(self.lines or {}) do
+      GameTooltip:AddLine(l, 0.93, 0.88, 0.76, true)
+    end
+    GameTooltip:Show()
+  end)
+  m:SetScript("OnLeave", function() GameTooltip:Hide() end)
+  function m:Set(c)
+    if not (c and c.hardcore) then return self:Hide() end
+    local source = c.hardcoreChosen and "Marked so in Hearthtale's options (the game doesn't say here)."
+      or "As the game reports it."
+    if c.closed then
+      self.colour = FALLEN
+      self.label:SetText("Fallen")
+      self.lines = { "This life has ended: its book is closed, with its epitaph, and kept in the Hall of the Fallen." }
+    else
+      self.colour = T.gold
+      self.label:SetText("Hardcore")
+      self.lines =
+        { "One life, one book: a death closes it with an epitaph, and it joins the Hall of the Fallen.", source }
+    end
+    self.label:SetTextColor(unpack(self.colour))
+    self:Show()
+  end
+  return m
 end
 
 -- The window: the kit's standard game window (a plain dialog where the client
@@ -423,9 +487,8 @@ function build()
   K.movable(book, 780, 560)
   local edge = window and 8 or 14
 
-  -- Who I am, beside the portrait.
-  book.who = label(book, BODY_FONT, 11, T.gold)
-  book.who:SetPoint("TOPLEFT", 64, -36)
+  -- Beside the portrait, a Hardcore life's mark (refresh shows it).
+  book.hardcore = hardcoreMark(book, window and 64 or 20)
 
   -- Left: the chapters.
   local left = panel(book, true)
@@ -446,22 +509,31 @@ function build()
   page:SetPoint("TOPLEFT", sheet, "TOPLEFT", 26, -22)
   page:SetPoint("BOTTOMRIGHT", sheet, "BOTTOMRIGHT", -22, 14)
 
+  -- The header: what the page is and how it stands, its title, then where,
+  -- which levels and when (each on one line, cut short rather than wrapped).
+  page.over = label(page.child, BODY_FONT, 10, T.gold)
+  page.over:SetPoint("TOPLEFT", 0, -6)
+  page.over:SetWidth(WIDTH - 80) -- (clear of the Edit button)
+  page.over:SetWordWrap(false)
+  page.over:SetAlpha(0.85)
   page.title = label(page.child, TITLE_FONT, 24, T.gold)
-  page.title:SetPoint("TOPLEFT", 0, -10)
+  page.title:SetPoint("TOPLEFT", 0, -22)
   page.title:SetWidth(WIDTH)
   page.title:SetWordWrap(false)
   page.sub = label(page.child, BODY_FONT, 12, T.soft)
   page.sub:SetPoint("TOPLEFT", page.title, "BOTTOMLEFT", 0, -7)
   page.sub:SetWidth(WIDTH)
+  page.sub:SetWordWrap(false)
   local headerRule = rule(page.child)
-  headerRule:SetPoint("TOPLEFT", 0, -62)
-  headerRule:SetPoint("TOPRIGHT", 0, -62)
+  headerRule:SetPoint("TOPLEFT", 0, -78)
+  headerRule:SetPoint("TOPRIGHT", 0, -78)
   page.body = label(page.child, BODY_FONT, 13, T.text)
   page.body:SetPoint("TOPLEFT", 0, -HEADER_H)
   page.body:SetWidth(WIDTH)
   page.body:SetSpacing(4)
-  page.edit = buttonOf(sheet, "Edit", 70)
-  page.edit:SetPoint("TOPRIGHT", sheet, "TOPRIGHT", -22, -18)
+  page.edit = buttonOf(sheet, "Edit", 64)
+  page.edit:SetHeight(20)
+  page.edit:SetPoint("TOPRIGHT", sheet, "TOPRIGHT", -22, -20)
   page.edit:SetScript("OnClick", openEditor)
   page.edit:Hide()
   ns.bookEdit = page.edit -- (for the tests)
