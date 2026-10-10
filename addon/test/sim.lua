@@ -74,7 +74,7 @@ end
 
 -- The welcome: on the account's first login, once; its choices are the
 -- settings (and this character's Hardcore where the game can't tell).
-local welcome, choices = ns.welcomeFrame, ns.welcomeChoices
+local welcome, choices = ns.welcome.frame, ns.welcome.rows
 check(
   welcome and welcome:IsShown() and #choices == (FOREVER and 4 or 3),
   "the first login: the welcome page and its choices"
@@ -107,7 +107,7 @@ check(
 )
 profiles["Brannok - Nightslayer"] = { chat = false, toast = false, minimapHidden = true, minimapAngle = 90 }
 SlashCmdList.HEARTHTALE("welcome")
-local picker = ns.welcomePicker
+local picker = ns.welcome.picker
 local select = picker.select
 check(
   select.text:GetText() == "Choose a character"
@@ -135,8 +135,8 @@ check(
   "… its choices copied (never whether it saw the welcome), the boxes with them"
 )
 local code = ns.exportCode()
-check(code == "HT1:c0:t0:m0:a90", "… a code for them: " .. code)
-check(ns.importCode("HT1:c1:t1:m1:a200") and ns.option("chat") and ns.option("toast"), "… a code taken")
+check(code == "HT1:c0:t0:h1:a90", "… a code for them: " .. code)
+check(ns.importCode("HT1:c1:t1:h0:a200") and ns.option("chat") and ns.option("toast"), "… a code taken")
 check(
   not ns.importCode("hello") and not ns.importCode("HT1:x9") and ns.option("chat"),
   "… a wrong code refused, nothing changed"
@@ -144,7 +144,7 @@ check(
 check(ns.importCode("HT1:c0:z7") and ns.option("chat") == false, "… a later version's part left out")
 SlashCmdList.HEARTHTALE("import " .. code)
 check(ns.option("minimapAngle") == 90, "… /ht import CODE")
-ns.importCode("HT1:c1:t1:m1:a200")
+ns.importCode("HT1:c1:t1:h0:a200")
 local copyFrom = panel.settings.HEARTHTALE_COPYFROM
 local offered = copyFrom and copyFrom.options()
 check(
@@ -153,7 +153,7 @@ check(
 )
 copyFrom.set("Brannok - Nightslayer")
 check(ns.option("chat") == false, "… and copies one")
-ns.importCode("HT1:c1:t1:m1:a200")
+ns.importCode("HT1:c1:t1:h0:a200")
 welcome:Hide()
 -- Another character's first login: its own profile and welcome; the account's
 -- settings of before (0.6.0) for one who kept a journal, the defaults for one
