@@ -179,7 +179,7 @@ its decisions: PLAN.md (the full chapter prose was dropped on 10 October
   `dist/Hearthtale.zip` for a test in the game. A release is the BigWigs
   packager's (`.pkgmeta`, `.github/workflows/release.yml`, the same zip):
   GitHub, CurseForge (the TOCs' `X-Curse-Project-ID`) and Wago Addons
-  (`X-Wago-ID`, once its project exists; secret `WAGO_API_TOKEN`).
+  (`X-Wago-ID`, secret `WAGO_API_TOKEN`).
 - `addon/test/game.lua`: the fake game (WoW API, events, a character to play,
   the addon loaded), shared by:
   - `addon/test/sim.lua`: a life replayed, every recording asserted, its book
