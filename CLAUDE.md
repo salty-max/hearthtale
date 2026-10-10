@@ -163,7 +163,7 @@ its decisions: PLAN.md (the full chapter prose was dropped on 10 October
   the game can't tell), `Welcome.lua` (the welcome page, once per character a
   few seconds after its first login, out of combat, and `/ht welcome`: two
   columns as the journal's window, the logo and what the journal is, then
-  this character's choices and another's to take, picked or by a code;
+  this character's choices and another's to take, chosen in the kit's select or by a code;
   `Media/Logo.tga`, the logo at 256px with rounded corners, made from
   `assets/logo.png` with magick; the packages carry `Media/`),
   `Minimap.lua`.
