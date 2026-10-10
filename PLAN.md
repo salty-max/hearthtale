@@ -55,8 +55,14 @@ Classic Era:
 3. A whole postcard (opacity 0, the shot from a timer, opacity back): the
    interface goes and comes back, in and out of combat. The file wasn't found
    at first: it belongs in the client's `Screenshots/` folder (`_classic_era_`,
-   Forever's beta `_classic_beta_`). Found there, it proves a shot from a
-   timer needs no key press, which automatic postcards require.
+   Forever's beta `_classic_beta_`). Found there (two shots, Coldridge
+   Valley): a shot from a timer needs no key press, which automatic postcards
+   require. The interface is gone; NPCs' names and nameplates stay, as
+   decided. What the game draws on the minimap itself stays too, in the top
+   right corner: the player's arrow, a quest's dot, a quest area's outline.
+4. Next (`/pct 4`, `/pct 5`): the minimap's own opacity at 0 for the shot, or
+   the minimap hidden for it (out of combat only: Multishot found hiding it in
+   combat taints). The one that clears the corner is the one postcards use.
 
 ### Proposal
 
