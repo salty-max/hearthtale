@@ -7,14 +7,16 @@ kind: d-land
 - [one !home !hosts !late] I had never been to {lands} before, and I looked at everything twice.
 - [one !home !hosts !late] I saw {lands} with my own eyes for the first time.
 - [!one !home !hosts !late] I saw {lands} for the first time.
-- [!one !home !hosts !late] The road took me into new country: {lands}.
-- [!one !home !hosts !late] {lands} were all new ground to me, and I tried to take in as much as I could.
+- [!one !home !hosts !late !town] The road took me into new country: {lands}.
+- [!one !home !hosts !late !town] {lands} were all new ground to me, and I tried to take in as much as I could.
 - [!one !home !hosts !late] More of the world opened up ahead of me, {lands} among the rest.
 - [!one !home !hosts !late] For the first time I saw {lands}.
-- [one home !late] I saw {lands} for the first time, my own people's country though new to my eyes.
-- [one home !late] I set eyes on {lands} at last, and was glad to know my own people's land for myself.
-- [!one home !late] I saw {lands} for the first time, all of it my own people's country.
-- [one hosts !late] I saw {lands} for the first time, part of the country that had taken my people in.
+- [one home !late !town] I saw {lands} for the first time, my own people's country though new to my eyes.
+- [one home !late !town] I set eyes on {lands} at last, and was glad to know my own people's land for myself.
+- [!one home !late !town] I saw {lands} for the first time, all of it my own people's country.
+- [one home !late] I finally saw {lands} for myself, and it was ours in a way no map could have told me.
+- [!one home !late] I saw {lands} for the first time, and every road of them was ours.
+- [one hosts !late !town] I saw {lands} for the first time, part of the country that had taken my people in.
 - [capital home !late] I walked into {lands} for the first time, and a city I had only heard of became a place I could find my way home to.
 - [capital home !late] I saw {lands} with my own eyes at last, and found it larger, louder and more mine than I had pictured.
 - [capital hosts !late] I came into {lands} for the first time, the city that had taken my people in, and looked at it with a guest's gratitude and a stranger's eyes.
@@ -22,7 +24,7 @@ kind: d-land
 - [one town !late] I saw {lands} for the first time, a city full of strangers who all seemed to know exactly where they were going.
 - [one !home !hosts !late] I reached {lands} for the first time, and spent the first hour simply learning which way was which.
 - [one !home !hosts !late] My first steps in {lands} were careful ones, as they are anywhere I have not been before.
-- [one !home !hosts !late] I came to {lands} for the first time, and stopped more than once just to look.
+- [one !home !hosts !late] I came to {lands} for the first time, and wanted to stop and look at everything.
 - [one !home !hosts !town !late] I found my way into {lands}, a country I had known only by name until then.
 - [one !home !hosts !town !late] I found strange ground in {lands}, and learned its paths one wrong turn at a time.
 - [one !home !hosts !late] I arrived in {lands} with no notion of the place, and took my bearings before anything else.
@@ -36,14 +38,14 @@ kind: d-land
 - [late one !home !hosts] I crossed into {lands}, minding where I put my feet.
 - [late one !home !hosts !town] The road ran on into {lands}, and I followed it with my wits about me.
 - [late !one !home !hosts] My road ran on through {lands}.
-- [late !one !home !hosts] The work took me across {lands}, one country after another.
+- [late !one !home !hosts !town] The work took me across {lands}, one country after another.
 - [late !one !home !hosts] I made my way through {lands}, and each had its own roads to mind.
 - [late !one !home !hosts] {lands} passed under my feet, each with dangers of its own.
-- [late one home] I came into {lands}, my own people's country, and was glad to be among my own.
-- [late one home] My road ran through {lands}, my own people's land, and the thought steadied me.
-- [late !one home] I travelled through {lands}, all of it my own people's country.
+- [late one home !town] I came into {lands}, my own people's country, and was glad to be among my own.
+- [late one home !town] My road ran through {lands}, my own people's land, and the thought steadied me.
+- [late !one home !town] I travelled through {lands}, all of it my own people's country.
 - [late !one home] My road ran through {lands}, every mile of it my own people's.
-- [late one hosts] I came into {lands}, part of the country that had taken my people in.
+- [late one hosts !town] I came into {lands}, part of the country that had taken my people in.
 - [late capital home] I walked into {lands}, among my own people's walls and noise, and found my way about it easily enough.
 - [late capital home] I came into {lands}, and the city of my own people closed around me like a familiar coat.
 - [late capital hosts] I came into {lands}, the city that had taken my people in, and walked it with a guest's gratitude.

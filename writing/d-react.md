@@ -15,5 +15,5 @@ kind: d-react
 - [beast] I was sorry for the beast, a little, and not sorry at all that it was done.
 - [victim] It felt less like a victory than a release, and I was glad of that.
 - [victim] There was no triumph in it, only the hope that what had been lost there could rest now.
-- [victim] I took no pleasure in it; whatever had been there before the corruption deserved better than what it became.
+- [victim] I took no pleasure in it; that end was owed, and I was sorry it fell to me to bring it.
 - [victim] Some endings are kindnesses, and I tried hard to believe that one was.

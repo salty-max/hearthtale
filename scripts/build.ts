@@ -115,6 +115,8 @@ const KINDS: Record<string, string[]> = {
   "d-tame": ["pet", "family"],
   // a piece of gear worn for the first time (blue and better, or made by me, below level 30)
   "d-gear": ["item"],
+  // what my hands made, new to them, when no trade was told
+  "d-made": ["things"],
   // a spell that defines the class (a warrior's stances, a priest's own people's prayers, a mage's way home)
   "d-calling": ["spell", "place"],
   // a stop by a campfire: the first of a life, one shared, a camp's; or the one an entry ends at ([last])
@@ -128,7 +130,7 @@ const TAGS = ["after", "again", "air", "ally", "aquatic", "away", "bear", "beast
   "flight", "foe", "form", "grouped", "hard", "hc", "healer", "high", "highborne", "home", "hosts", "imp", "inside",
   "known", "last", "late", "lava", "master", "leper", "looted", "low", "moonkin", "moved", "nature", "near", "neutral", "new", "night",
   "one", "people", "player", "plural", "rank", "rescue", "self", "settled", "steed", "succubus", "summon", "portal", "teleport", "thread", "town",
-  "travel", "tree", "two", "undead", "used", "victim", "villain", "voidwalker", "water", "who", "zalazane", "since", "fell", "died", "reviver"];
+  "travel", "tree", "two", "undead", "used", "victim", "villain", "voidwalker", "water", "who", "zalazane", "since", "fell", "died", "reviver", "it", "old"];
 const RACES = ["Human", "Dwarf", "NightElf", "Gnome", "Orc", "Troll", "Tauren", "Scourge", "Skyborne"];
 const CLASSES = ["WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK", "DRUID"];
 const tagOk = (t: string) => {
@@ -139,6 +141,9 @@ const tagOk = (t: string) => {
     (k === "faction" && ["alliance", "horde"].includes(v)) || (k === "client" && CLIENTS.includes(v)) ||
     (k === "spell" && /^[A-Z][A-Za-z':_]+$/.test(v)); // a spell's name, its spaces "_": [spell:Life_Tap]
 };
+
+// (the kinds that tell a spell or a power learned: its use only as [used])
+const SPELL_KINDS = ["lesson", "d-calling", "d-powers", "power", "class-reward", "d-initiation", "shift", "demon"];
 
 type Sentence = { text: string; tags: string[] };
 type Parsed = { meta: string; sentences: Sentence[] };
@@ -167,6 +172,13 @@ function parseFile(file: string, kind: string | null): Parsed | null {
     // (a life the record can't know: no family, childhood, past trade or possessions of the narrator's)
     if (/\b(all my life|when I was young|as a child|in my youth|my (father|mother|brother|sister|parents|family|workshop|tools|old job|former))\b/i.test(sentence.text))
       fail(file, `a personal history the record can't know: ${sentence.text}`);
+    // (nor a habit, a comparison with all that came before, a spell put to use: the
+    // record has no such thing; a spell cast before its stretch closed is [used])
+    if (/\b(more than once|again and again|time and again|best \w+ (yet|ever)|best \w+ my hands|finer than anything|better than anything)\b/i.test(sentence.text))
+      fail(file, `a claim the record can't back: ${sentence.text}`);
+    if (SPELL_KINDS.includes(own ?? "") && !sentence.tags.includes("used") &&
+        /\b(put (it|them) to (work|use)|answered the first time|first time I (used|cast|called)|into every fight|has never been easier|have shrunk|found there was|learned how much)\b/i.test(sentence.text))
+      fail(file, `a spell put to use, which only a cast shows ([used]): ${sentence.text}`);
     if (own?.startsWith("c-")) {
       if (!/^[a-z]/.test(sentence.text) || /[.!?;:]$/.test(sentence.text))
         fail(file, `a clause starts in lower case, with no stop: ${sentence.text}`);

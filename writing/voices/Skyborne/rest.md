@@ -6,13 +6,13 @@ kind: rest
 - [client:forever faction:alliance] I rested {at}; the lore of Eldre'Thalas had been lost for thousands of years, and could stay lost until I had my strength back.
 - [client:forever faction:horde] I rested {at}, and let the search for our lost mentors wait an hour without feeling I had abandoned it.
 - [client:forever faction:horde] I stopped {at}, a Windshaper off duty, if such a thing existed.
-- [client:forever] I rested {at}, taking a private pleasure in being idle.
+- [client:forever] Idleness {at} was a private pleasure, and I took it without apology.
 - [client:forever] Shen'dorei means the hidden people, and for a while {at} I was happy to live up to the name.
 - [client:forever !home] I rested {at}, a long way from the skydocks of Valanaar, and not unhappy about it.
 - [client:forever home] I stopped {at}, and let myself forget, for a little while, that the island was failing beneath me.
-- [client:forever] I rested {at}, and for once did not listen for a voice in the stillness, as my people had done for centuries.
+- [client:forever] For once I did not listen for a voice in the stillness {at}, as my people had done for centuries.
 - [client:forever !home] I rested {at}, and thought of the crystals at the Calmbreeze Inn and their long account of the rebellion in Eldre'Thalas.
-- [client:forever !home] I rested {at}, and let my thoughts wander back to Windfield Orchard and the unhurried work of its trees.
+- [client:forever !home] My thoughts wandered back to Windfield Orchard and the unhurried work of its trees while I sat still {at}.
 - [client:forever !home] I paused {at}, my feet aching from more walking than a year on Zephras had ever asked of them.
 - [client:forever hc] I rested {at}, determined not to become one more thing Zephras had lost.
 - [client:forever] I stopped {at}, and allowed myself the rare courtesy of having nothing to do.

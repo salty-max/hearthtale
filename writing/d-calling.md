@@ -1,10 +1,10 @@
 ---
 kind: d-calling
 ---
-- [spell:Defensive_Stance] I learned Defensive Stance, and found there was more to a fight than hitting first.
+- [spell:Defensive_Stance] I learned Defensive Stance, and understood there was more to a fight than hitting first.
 - [spell:Defensive_Stance] Defensive Stance taught me to stand where the blows would land, and to make that my work.
 - [spell:Defensive_Stance] With Defensive Stance I could plant my feet and hold, and I began to understand what a shield wall is for.
-- [spell:Berserker_Stance] I took up Berserker Stance, and learned how much fury a body can hold without breaking.
+- [spell:Berserker_Stance] I took up Berserker Stance, and wondered how much fury a body can hold without breaking.
 - [spell:Berserker_Stance] Berserker Stance was the last of a warrior's three ways of standing, and the hungriest of them.
 - [spell:Redemption] I learned Redemption, and with it the power to call a fallen friend back to the Light.
 - [spell:Redemption !race:Scourge] Redemption was mine at last; no companion of mine need stay fallen while I could stand.
@@ -17,20 +17,20 @@ kind: d-calling
 - [spell:Feedback] I learned Feedback, and an enemy's spells became a risk to the one who cast them.
 - [spell:Fear_Ward] I could ward a friend against fear now, a gift my people's priests set great store by.
 - [spell:Fear_Ward] Fear Ward was mine, and courage became something I could hand to someone else.
-- [spell:Starshards] Starshards fell at my call now, Elune's own light turned against her enemies.
+- [spell:Starshards] Starshards would fall at my call now, Elune's own light turned against her enemies.
 - [spell:Starshards] I learned to call down Starshards, and the night sky was mine to call on.
 - [spell:Elune's_Grace] Elune's Grace was mine, and I felt the goddess's care in it as much as any power.
 - [spell:Elune's_Grace] I learned Elune's Grace, and knew blows would find me harder to reach beneath her light.
-- [spell:Touch_of_Weakness] I learned Touch of Weakness, and gave a little of my own frailty to whoever struck me.
+- [spell:Touch_of_Weakness] I learned Touch of Weakness, and could give a little of my own frailty to whoever struck me.
 - [spell:Touch_of_Weakness] Touch of Weakness was mine now; anyone who laid a hand on me would come away the poorer.
 - [spell:Devouring_Plague] Devouring Plague was mine now, the old sickness turned to my own use.
 - [spell:Devouring_Plague] I learned Devouring Plague, and there was a bitter justice in carrying a plague of my own.
 - [spell:Hex_of_Weakness] I learned Hex of Weakness, a troll priest's curse older than the Light I was taught beside it.
 - [spell:Hex_of_Weakness] Hex of Weakness was mine now, and a foe's strength could be made to leave it.
-- [spell:Shadowguard] Shadowguard was mine now, the loa's shadow wrapped close around me.
-- [spell:Shadowguard] I learned Shadowguard, and shadows gathered about me to strike back at whoever came close.
+- [spell:Shadowguard] Shadowguard was mine now, the loa's shadow to wrap close around me.
+- [spell:Shadowguard] I learned Shadowguard, and could gather shadows about me to strike back at whoever came close.
 - [teleport home] I learned to step to {place} in a single breath, and the road home was never long again.
-- [teleport home] With {spell} I could be home before a meal went cold, and the thought made every long road a little shorter.
+- [teleport home !race:Scourge] With {spell} I could be home before a meal went cold, and the thought made every long road a little shorter.
 - [teleport home] I learned {spell}, and the long walk home became a matter of a few words.
 - [teleport !home] I learned to step to {place} in a single breath, and it was never more than a breath away again.
 - [teleport !home] I learned {spell}, and {place}, though it was not my people's city, was only a few words away wherever I stood.
@@ -43,7 +43,7 @@ kind: d-calling
 - [spell:Charge] I can close the distance in a single rush now, before my fear has time to catch up.
 - [spell:Vanish] I can vanish from a fight now, and leave an enemy wondering where I went.
 - [spell:Feign_Death] I can play dead now, convincingly enough that I hope never to need the real thing.
-- [spell:Ghost_Wolf] I can borrow a ghost wolf's shape from the spirits now, and the roads feel shorter for it.
+- [spell:Ghost_Wolf] I can borrow a ghost wolf's shape from the spirits now, and the roads will be shorter for it.
 - [spell:Rebirth] Rebirth is mine now, the wild's way of refusing a death that came too soon.
 - [spell:Resurrection race:Scourge] I can call the dead back now; of all people, I know what that means.
 - [spell:Polymorph] I learned Polymorph, and a foe could become a harmless sheep at a word.
@@ -55,10 +55,10 @@ kind: d-calling
 - [spell:Feign_Death] I learned to feign death, a lie told with my whole body.
 - [spell:Ghost_Wolf] I learned Ghost Wolf, and the spirits lent me a swifter shape for the road.
 - [spell:Rebirth] I learned Rebirth, the wild's answer to a death that came before the fighting was done.
-- [spell:Devotion_Aura] I learned Devotion Aura, the first of a paladin's auras, and carried its steadiness into every fight.
+- [spell:Devotion_Aura] I learned Devotion Aura, the first of a paladin's auras, a steadiness to carry into the fights ahead.
 - [spell:Devotion_Aura] Devotion Aura was my first aura, a quiet strength I could share with anyone at my side.
-- [spell:Retribution_Aura] I learned Retribution Aura, and whoever struck me now paid a little for it in holy fire.
-- [spell:Retribution_Aura] With Retribution Aura I could choose what my presence carried into a fight, and I chose to make it costly.
+- [spell:Retribution_Aura] I learned Retribution Aura, and whoever struck me now would pay a little for it in holy fire.
+- [spell:Retribution_Aura] With Retribution Aura I could choose what my presence carried into a fight, and I meant to make it costly.
 - [spell:Divine_Shield] I learned Divine Shield, and knew that for a few moments, when it mattered, nothing in the world could touch me.
 - [spell:Divine_Shield] Divine Shield was mine, a wall of Light I could raise when I most needed one.
 - [class:WARRIOR spell:Dual_Wield] I learned to fight with a weapon in each hand, and wanted a second weapon at once to try it with.

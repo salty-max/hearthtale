@@ -1,16 +1,16 @@
 ---
 kind: rest
 ---
-- I rested {at}, content with a peace that asked nothing of me.
+- A peace that asked nothing of me found me {at}, and I took it.
 - I settled {at}, missing the harmless noise of neighbours at the end of a day's work.
 - As weary as a stonemason at the end of a long day on the city walls, I paused {at}.
 - I rested {at}, and temporarily excused myself from being useful.
 - I stopped {at}, with a stronger affection for settled folk than I had brought to the journey.
-- I rested {at}, thinking of the people still worried about tomorrow's bread.
+- My thoughts went to the people still worried about tomorrow's bread as I settled {at}.
 - I paused {at}, enjoying a quiet as plain as a Goldshire supper.
 - I rested {at}, with the thought of a safe doorstep enough to soften the day.
 - I stopped {at}, letting the day's demands dwindle to the simple matter of staying put.
-- [!fire] I rested {at}, and for once let other people's troubles keep until I was ready for them.
+- [!fire] For once I let other people's troubles keep until I was ready for them, and stopped {at}.
 - [fire] I rested by the fire {at}, close enough to feel it and far enough to keep my boots from scorching.
 - A rest {at} was all the reward I wanted just then, and I took it without apology.
 - [hc] I rested {at}, thinking of all the people the wars had never let grow old, and meaning not to join them.
@@ -18,4 +18,4 @@ kind: rest
 - The last of the work was behind me, and I rested {at} without listening for the next.
 - [!fire] I rested {at} and let my shoulders drop from around my ears, where the day had put them.
 - [fire] I settled by the fire {at}, and for a while my only duty was to stay warm and keep out of trouble, which I managed admirably.
-- I rested {at}, having given the world a fair day's work and taken a fair day's weariness in exchange.
+- A fair day's work given, a fair day's weariness taken in exchange: I called it even {at}.

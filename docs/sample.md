@@ -14,9 +14,9 @@ I began in Coldridge Valley, with Ironforge behind my name and the wish to bring
 
 ## Entry 2 (levels 4 to 7)
 
-I continued in Anvilmar, convinced that most trouble gives way if it is leaned on long enough. I set my hand to skinning and leatherworking. Wearing a Handstitched Leather Vest that I had made myself was a different pleasure from wearing anything found or given. I took the measure of Timber and found my own was enough, which is the kind of sum I like. I scouted Frostmane Hold and killed its headhunters for Senir Whitebeard, who had seen too many trolls to dare go in.
+I continued in Anvilmar, convinced that most trouble gives way if it is leaned on long enough. I set my hand to skinning and leatherworking. Wearing a Handstitched Leather Vest that I had made myself was a different pleasure from wearing anything found or given. When the fighting was done, Timber lay at my feet, and I allowed myself a moment's pride in clean work. I scouted Frostmane Hold and killed its headhunters for Senir Whitebeard, who had seen too many trolls to dare go in.
 
-Before the stretch was out, I also slew Vagash, the beast preying on the Amberstill rams while most of Magni's army was away at war. Hunter's Mark is mine now, and no quarry of mine will vanish into the crowd. I smelled the Thunderbrew Distillery before I had properly reached Kharanos. Smoke rose above the houses, where dwarves and gnomes crowded together against the cold, and I felt my shoulders ease at the sight. I rested in Kharanos, with the road welcome to wear out somebody else for a while.
+Not long after, I slew Vagash, the beast preying on the Amberstill rams while most of Magni's army was away at war. Hunter's Mark is mine now, and no quarry of mine will vanish into the crowd. I smelled the Thunderbrew Distillery before I had properly reached Kharanos. Smoke rose above the houses, where dwarves and gnomes crowded together against the cold, and I felt my shoulders ease at the sight. I rested in Kharanos, with the road welcome to wear out somebody else for a while.
 
 ## Entry 3 (levels 7 to 9)
 
@@ -38,7 +38,7 @@ The Horde is more peoples than one now, and I headed out in Razor Hill ready to 
 
 ## Entry 1 (levels 1 to 5)
 
-I began in Shadowglen, with Dolanaar the farthest place I could yet picture and the rest of Kalimdor no more than names across the water. Moonlight silvered the leaves of Teldrassil while owls called overhead. I listened between my footfalls, unwilling to hurry through so much quiet. I took Fel Moss from the grells that threatened Shadowglen, confirming Tarindrella's fear that its corruption was spreading through Teldrassil. Moonfire was mine now, and the next fight would not go quite like the last. Leaves and still water scented the houses around the moonwell in Dolanaar. The sentinels kept their patient watch on the road, and I let my guard down a little. I paused in Dolanaar, and let my strength return as slowly as a tree regrows its bark.
+I began in Shadowglen, with Dolanaar the farthest place I could yet picture and the rest of Kalimdor no more than names across the water. Moonlight silvered the leaves of Teldrassil while owls called overhead. I listened between my footfalls, unwilling to hurry through so much quiet. I took Fel Moss from the grells that threatened Shadowglen, confirming Tarindrella's fear that its corruption was spreading through Teldrassil. My training gave me Moonfire, a new way to fight, and I was impatient for a chance to use it. Leaves and still water scented the houses around the moonwell in Dolanaar. The sentinels kept their patient watch on the road, and I let my guard down a little. I paused in Dolanaar, and let my strength return as slowly as a tree regrows its bark.
 
 ## Entry 2 (levels 5 to 6)
 

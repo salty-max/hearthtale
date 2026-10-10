@@ -4,7 +4,7 @@ kind: d-foes
 - [one !hard] I brought down {foes}, and walked on lighter for it.
 - [one !hard] {foes} fell to me, and that was the end of that.
 - [one !hard] I faced {foes} and came away on my own feet.
-- [one !hard] I put an end to {foes}.
+- [one !hard] I put an end to {foes}, and walked away the lighter for it.
 - [one hard] {foes} came close to ending me before I ended the fight.
 - [one hard] I brought down {foes}, and only just.
 - [two !hard] I brought down {foes}, one after the other.

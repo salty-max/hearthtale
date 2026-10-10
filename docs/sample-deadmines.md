@@ -13,9 +13,9 @@ I had completed sixty-four tasks already when this stretch began in Stormwind Ci
 
 I carried on in the Dwarven District, sorting what I had heard of the wider world from what I found in it. I came into Westfall, my own people's country, and was glad to be among my own. Westfall lay dark and quiet, its windmills turning over farms nobody tended any more. A light in a window was rare enough to make me wonder who still dared to keep one. I escorted the Defias Traitor to the Brotherhood's secret hideout, so Stoutmantle would know where VanCleef was hiding. The Deadmines was the hardest place I went, and I did not go alone: Thessaly, Brannigan and Rowan came with me.
 
-Mine carts stood abandoned on their rails, and the walls sweated in the lamplight. The deeper I went into the Deadmines, the louder the hammering grew. Mr. Smite nearly ended me in Ironclad Cove. I had been wishing for a less ordinary life; I was not wishing for that now. I pulled Smite's Mighty Hammer from the spoils and put on my new find at once. After that, I assassinated Edwin VanCleef in the Deadmines, the beginning of the end for the Defias Brotherhood that plagued Westfall. After that dungeon, I could happily spend a week on nothing more dangerous than the lane between two farms.
+Mine carts stood abandoned on their rails, and the walls sweated in the lamplight. The deeper I went into the Deadmines, the louder the hammering grew. Mr. Smite nearly ended me in Ironclad Cove. I had been wishing for a less ordinary life; I was not wishing for that now. I pulled Smite's Mighty Hammer from the spoils and put on my new find at once. Not long after, I assassinated Edwin VanCleef in the Deadmines, the beginning of the end for the Defias Brotherhood that plagued Westfall. After that dungeon, I could happily spend a week on nothing more dangerous than the lane between two farms.
 
 ## Entry 2 (level 20)
 
-With the king missing, the roads still had to be walked and the errands run, and I set out in the Trade District to take my share.
+I headed out in the Trade District, resolved to be brave only where it was strictly necessary.
 
