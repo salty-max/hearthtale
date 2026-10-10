@@ -5,8 +5,92 @@ in the first person, one chapter from rest to rest. On Hardcore, a death closes 
 book with an epitaph, and the life joins the Hall of the Fallen.
 
 Games: Classic Era (Hardcore, Season of Discovery), World of
-Warcraft: Forever. One source, one package per game, as Lorekeeper's Codex and
-Explorer's Field Journal (same release, CI and CurseForge tooling).
+Warcraft: Forever. One source, one package for every game (a TOC per game, since
+10 October 2026), as Lorekeeper's Codex and Explorer's Field Journal (same
+release tooling: the BigWigs packager, GitHub, CurseForge and Wago).
+
+## Postcards (proposed 10 October 2026)
+
+A picture of the world at the moments that matter, without the interface,
+kept with its entry and shown with it on hearthtale.app. The idea is the
+user's; the research below is from Blizzard's own code for Classic Era 1.15.9
+and Forever 1.60.1 (Gethe/wow-ui-source), the clients' function lists
+(Ketho/BlizzardInterfaceResources), warcraft.wiki.gg, Multishot (the long-lived
+auto-screenshot addon, updated April 2026) and Musician (which drives the
+in-world layer).
+
+### What the game allows
+
+- `Screenshot()` exists in Classic Era, Forever and TBC Anniversary; neither
+  the wiki nor Blizzard's documentation marks it protected. It fires
+  `SCREENSHOT_STARTED`, then `SCREENSHOT_SUCCEEDED` or `SCREENSHOT_FAILED`. The
+  file is `Screenshots/WoWScrnShot_MMDDYY_HHMMSS.jpg` in the client's folder
+  (local time; `screenshotFormat`: jpeg by default, png or tga).
+- Hiding the interface is not an option. Alt+Z (TOGGLEUI) runs `CloseMenus`,
+  `CloseAllWindows`, then `SetUIVisibility(false)`, which hides `UIParent`: a
+  hidden window runs its OnHide, and the vendor's ends the trade
+  (`MerchantFrame_OnHide`: `CloseMerchant`, `CloseAllBags`). The bank, mail
+  and trade windows close the same way. pfUI (built for the 2006 client) hides
+  `UIParent`; Multishot does not.
+- Making it invisible is: `UIParent:SetAlpha(0)`, the shot, the opacity put
+  back at `SCREENSHOT_SUCCEEDED`/`FAILED` (Multishot's way). Nothing closes or
+  moves, opacity is no restricted action on a protected frame, and Multishot
+  avoids `Minimap:Hide()` because it taints in combat.
+- What `UIParent` doesn't hold stays in the picture: the in-world layer
+  (nameplates, raid target icons; names above heads and chat bubbles to
+  confirm) and the 3D marks (the selection circle). `SetInWorldUIVisibility`
+  switches that layer: Blizzard's commentator mode uses it to keep nameplates
+  while the interface is hidden, and Musician calls it after Alt+Z for the
+  same reason. Nobody calls it with `false` while the interface is shown:
+  whether that hides the layer, and whether nameplate addons (Plater, Kui)
+  rebuild their plates when it does, only the game can say (the test below).
+  Touching nameplates one by one is out: Musician gives up on Plater for it.
+
+### The test (the user, in game)
+
+Typed in chat, out of combat; each puts everything back after 3 seconds.
+
+1. `/run UIParent:SetAlpha(0) C_Timer.After(3,function() UIParent:SetAlpha(1) end)`:
+   what stays visible (nameplates, names above heads, chat bubbles, damage
+   numbers); at a vendor, the window must still be open after.
+2. `/run local f,n=CreateFrame("Frame"),0 f:RegisterEvent("NAME_PLATE_UNIT_REMOVED")f:SetScript("OnEvent",function()n=n+1 end)SetInWorldUIVisibility(false)C_Timer.After(3,function()SetInWorldUIVisibility(true)f:UnregisterAllEvents()print("removed",n)end)`:
+   whether nameplates and names vanish while the interface stays, any
+   flicker, and the count printed (0: the plates were only hidden; more: torn
+   down and rebuilt, heavier with a nameplate addon).
+3. `/run local a=UIParent:GetAlpha() UIParent:SetAlpha(0) SetInWorldUIVisibility(false) C_Timer.After(0.1,function() Screenshot() C_Timer.After(1,function() UIParent:SetAlpha(a) SetInWorldUIVisibility(true) end) end)`:
+   a whole postcard; the file in Screenshots/ shows what a postcard looks like.
+4. Commands 1 and 2 once in a fight: a red "Interface action failed because
+   of an AddOn" means blocked in combat (the plan never shoots in combat
+   anyway; it tells how careful the restore must be).
+
+### Proposal
+
+| Question | Proposal |
+|---|---|
+| Moments | Few, by weight: a capital first seen, a dungeon's last boss, the first ride, the highest level, a Hardcore death; at most two automatic postcards an entry. Plus the player's own: a key binding ("Take a postcard") and `/ht postcard`, the way to frame one's own, kept with the entry being written. |
+| The shot | Never in combat: a moment from a fight waits for `PLAYER_REGEN_ENABLED` plus a second, and is dropped after 20 seconds or a change of zone. Never over a loading screen, a cinematic or a movie; when the interface is already hidden (Alt+Z), the shot alone. The in-world layer off for it only if the test shows it clean. |
+| Restore | The opacity as it was (another addon may have faded it), never forced to 1 (Multishot's bug); a 2-second timer puts it back if the game never answers. |
+| Quiet | The centre "Screen captured" silenced for our shots (ActionStatus's three events off around it, then back); a short chat line instead, as an option. Hearthtale adds no sound and no window of its own. |
+| Settings | Postcards: automatic and mine / mine only / off, on the welcome page and the Options page, per character like the others. Nothing of the game's settings touched (screenshot format, names above heads): a crash mid-shot would leave them changed in Config.wtf. |
+| Record | Each postcard in its chapter: `postcards = { { at, stamp, k } }` (`at` the time, `stamp` the file's `MMDDYY_HHMMSS` at `SCREENSHOT_SUCCEEDED`, `k` the moment or `mine`); Save.lua writes them into the saved book. The in-game book can't show them (an addon can't read the Screenshots folder): a small mark beside the entry says it has pictures. |
+| Ravenpost | For a linked character, finds each postcard's file in `<client>/Screenshots/` by its stamp (a second either side, as Multishot does), jpeg or png (tga skipped); never moves or deletes the player's screenshots. Resizes to 1600 px wide JPEG (under Vercel's 4.5 MB) and uploads one a request (`POST /api/companion/postcard`: the character, the chapter, the stamp, the image), remembering what it sent. A "Send postcards" switch in its settings. |
+| Site | The images in Vercel Blob (the team is on Pro; its included storage to check) under unguessable names, served only through the API to whoever may read that entry (its owner, a share link covering it, the Hall for a fallen book). A `postcards` table (character, chapter, stamp, moment, blob key, size). The reader shows an entry's postcards under its title, larger on a click; the owner can delete one; removing a book removes its postcards. A share card may use the entry's postcard. |
+| Privacy | With the interface invisible, chat, whispers and names in windows can't reach a picture. Names above other players' heads may (the test tells): the in-world layer off, if clean, takes them out too. Postcards are as private as the book. |
+
+### Steps
+
+1. The test above (the user); its answers settle the in-world layer.
+2. The addon: Postcards.lua (the queue, the rules, the shot, the stamp), the
+   moments that call for one, the record and Save.lua, the settings and the
+   welcome page's choice, the key binding and `/ht postcard`; the test game
+   learns `Screenshot`, `SetInWorldUIVisibility` and the screenshot events.
+3. The site: the shared type (`BookChapter.postcards`), the table and its
+   migration, Blob storage, the upload endpoint, the reader, sharing and the
+   Hall, deletion.
+4. Ravenpost: the Screenshots folder of each client, matching, resizing,
+   uploading, the switch, its tests.
+5. Release order: the site, then Ravenpost, then the addon (which records
+   postcards on its own until they can travel).
 
 ## The journal is the diary (10 October 2026)
 
