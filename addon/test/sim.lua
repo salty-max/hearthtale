@@ -85,7 +85,7 @@ check(ns.option("chat") == false and not choices[1].box:GetChecked(), "… a cli
 choices[1].scripts.OnClick(choices[1])
 check(ns.option("chat") == true, "… and back")
 if FOREVER then
-  welcome.scripts.OnShow(welcome) -- (shown again: as the settings are now)
+  ns.showWelcome() -- (shown again: as the settings are now)
   check(choices[4].box:GetChecked() and J.hardcore, "… Forever: this character's Hardcore, as declared")
   choices[4].scripts.OnClick(choices[4])
   check(not J.hardcore and not J.hardcoreChosen, "… which the welcome changes too")
