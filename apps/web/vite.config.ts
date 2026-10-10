@@ -9,9 +9,9 @@ import path from "node:path";
 // `vite preview`, so the policy can be tried locally before it ships.
 const securityHeaders = JSON.parse(readFileSync(new URL("./security-headers.json", import.meta.url), "utf8")) as Record<string, string>;
 
-// The version people know is the addon's (its TOC, bumped by scripts/release.sh);
+// The version people know is the addon's (its TOCs, bumped by scripts/release.sh);
 // the deployed commit tells which build of the site it is (Vercel sets it).
-const toc = readFileSync(new URL("../../addon/Hearthtale/Hearthtale.toc", import.meta.url), "utf8");
+const toc = readFileSync(new URL("../../addon/Hearthtale/Hearthtale_Vanilla.toc", import.meta.url), "utf8");
 const addonVersion = /^## Version:\s*(\S+)/m.exec(toc)?.[1] ?? "dev";
 const commit = process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 7) ?? "dev";
 

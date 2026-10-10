@@ -1,12 +1,24 @@
-# Pushing a tag vX.Y.Z (scripts/release.sh does it): checks, zips one package
-# per game (Classic, Forever), publishes the GitHub release with the tag's
-# message as its notes and both zips, and uploads them to CurseForge once the project exists (repository variable
-# CURSEFORGE_PROJECT_ID, secret CURSEFORGE_TOKEN).
+# Pushing a tag vX.Y.Z (scripts/release.sh does it): checks, then the BigWigs
+# packager (.pkgmeta) makes one zip for every game (each loads its own TOC)
+# and publishes it, with the tag's message as its notes: the GitHub release,
+# CurseForge (the TOCs' X-Curse-Project-ID, secret CURSEFORGE_TOKEN) and Wago
+# Addons (the TOCs' X-Wago-ID, secret WAGO_API_TOKEN; none without either).
+#
+# To hold the stores back (a test in the game first), repository variable
+# HOLD_STORES=true (scripts/release.sh --hold sets it): the GitHub release
+# alone. Then run this workflow by hand with the tag (Actions → Release → Run
+# workflow, or gh workflow run release.yml -f tag=vX.Y.Z): CurseForge and Wago
+# alone.
 name: Release
 
 on:
   push:
     tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: A release already on GitHub, for CurseForge and Wago (e.g. v0.7.3)
+        required: true
 
 permissions:
   contents: write
@@ -15,11 +27,14 @@ jobs:
   release:
     runs-on: ubuntu-latest
     env:
-      TAG: ${{ github.ref_name }}
-      GH_TOKEN: ${{ github.token }}
+      TAG: ${{ inputs.tag || github.ref_name }}
+      # (BigWigsMods/packager, pinned: one zip, Hearthtale.zip, labelled by its version,
+      # the tag: a label takes no spaces; Unix line endings, as the folder has them)
+      PACKAGER_ARGS: -u -n "{package-name}:{project-version}"
     steps:
       - uses: actions/checkout@v7
         with:
+          ref: ${{ inputs.tag || github.ref }}
           fetch-depth: 0
       # checkout leaves the tag lightweight: fetch it again for its message.
       - run: git fetch --force --tags
@@ -27,19 +42,26 @@ jobs:
       # (the writing's build reads the English word list from node_modules)
       - run: bun install --frozen-lockfile
       - run: sudo apt-get install -y -qq luajit
-      - run: bun scripts/build.ts --check && luajit addon/test/sim.lua && FOREVER=1 luajit addon/test/sim.lua && luajit addon/test/writer.lua
-      - name: Packages (one zip per game)
-        run: bun scripts/package.ts
-      - name: Publish the release
+      - run: bun scripts/build.ts --check && luajit addon/test/sim.lua && FOREVER=1 luajit addon/test/sim.lua && luajit addon/test/writer.lua && bun scripts/package.ts --check
+      - name: The notes (the tag's message)
         run: |
-          git tag -l --format='%(contents)' "$TAG" | sed '/^-----BEGIN PGP SIGNATURE-----/,$d' > notes.md
-          [ -s notes.md ] || { echo "::error::tag $TAG has no message (release notes)"; exit 1; }
-          gh release create "$TAG" --title "$TAG" --notes-file notes.md dist/Hearthtale-classic.zip dist/Hearthtale-forever.zip
-
-  # Then CurseForge, once the project exists (see curseforge.yml).
-  curseforge:
-    needs: release
-    uses: ./.github/workflows/curseforge.yml
-    with:
-      tag: ${{ github.ref_name }}
-    secrets: inherit
+          git tag -l --format='%(contents)' "$TAG" | sed '/^-----BEGIN PGP SIGNATURE-----/,$d' > .release-notes.md
+          [ -s .release-notes.md ] || { echo "::error::tag $TAG has no message (release notes)"; exit 1; }
+      # Made once without publishing: the package must be the addon's folder,
+      # nothing more or less, before anything goes out.
+      - name: The package, checked
+        uses: BigWigsMods/packager@v2.6.1
+        with:
+          args: -d ${{ env.PACKAGER_ARGS }}
+          pandoc: false
+      - run: diff -r addon/Hearthtale .release/Hearthtale
+      - name: Published
+        uses: BigWigsMods/packager@v2.6.1
+        with:
+          args: ${{ env.PACKAGER_ARGS }}
+          pandoc: false
+        env:
+          # A tag: GitHub, and the stores unless held. By hand: the stores.
+          GITHUB_OAUTH: ${{ github.event_name == 'push' && github.token || '' }}
+          CF_API_KEY: ${{ (github.event_name == 'workflow_dispatch' || vars.HOLD_STORES != 'true') && secrets.CURSEFORGE_TOKEN || '' }}
+          WAGO_API_TOKEN: ${{ (github.event_name == 'workflow_dispatch' || vars.HOLD_STORES != 'true') && secrets.WAGO_API_TOKEN || '' }}

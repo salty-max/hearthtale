@@ -493,12 +493,11 @@ LinkUtil = { RegisterLinkHandler = function(kind, fn) linkHandlers[kind] = fn en
 LinkProcessorResponse = { Handled = 2 }
 
 -- ── load the addon ───────────────────────────────────────────────────────────
--- The files in the TOC's order; Data.lua is the game's own data file.
+-- The files in the order of the game's own TOC (its data, and Forever's own
+-- content in Forever's).
 local ns = {}
-for line in io.lines(DIR .. "Hearthtale.toc") do
+for line in io.lines(DIR .. (FOREVER and "Hearthtale_Camelot.toc" or "Hearthtale_Vanilla.toc")) do
   local f = line:match("^([%w_]+%.lua)%s*$")
-  if f == "Data.lua" then f = FOREVER and "Data_Forever.lua" or "Data_Classic.lua" end
-  if f == "Forever.lua" and not FOREVER then f = nil end -- (Forever's own content: its package only)
   if f then assert(loadfile(DIR .. f))("Hearthtale", ns) end
 end
 local D = ns.data

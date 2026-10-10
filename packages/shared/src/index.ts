@@ -13,7 +13,7 @@ export type Me = { battletag: string | null; regions: Region[]; test?: boolean }
 /** A code to type in the game: `/ht link CODE`. */
 export type LinkCode = { code: string; expiresAt: string };
 
-/** The game a book was written on (the addon's two packages). */
+/** The game a book was written on (each loads its own part of the addon). */
 export type Client = "classic" | "forever";
 
 /** One chapter as the addon wrote it at logout (Save.lua). */

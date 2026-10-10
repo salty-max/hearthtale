@@ -27,7 +27,7 @@ The addon (`addon/`, `writing/`):
 ```bash
 bun run addon:build     # writing → Data_Classic.lua, Data_Forever.lua
 bun run addon:check     # both up to date, simulation on both games, writer test
-bun run addon:package   # dist/classic, dist/forever, zipped
+bun run addon:package   # dist/Hearthtale.zip: one package for every game
 ```
 
 The site, hearthtale.app (`apps/`, `packages/`; needs `bun install` once):
@@ -42,7 +42,7 @@ bun run check                      # the addon's checks, then typecheck, lint, t
 
 GPL-3.0-or-later (see LICENSE). The writer's names (`addon/Hearthtale/Names.lua`) and its audit draw on
 [cmangos classic-db](https://github.com/cmangos/classic-db) (GPL-3.0) and [pfQuest](https://github.com/shagu/pfQuest)'s
-place names (MIT); the names themselves are Blizzard's. The Forever package's own content (`addon/Hearthtale/Forever.lua`:
+place names (MIT); the names themselves are Blizzard's. Forever's own content (`addon/Hearthtale/Forever.lua`:
 Zephras Isle, Forever's new quests and creatures) draws on the beta client's tables ([wago.tools](https://wago.tools)),
 [AllTheThings](https://github.com/ATTWoWAddon/AllTheThings)' Forever database (MIT) and
 [QuestieDB](https://github.com/Questie/QuestieDB)'s traces of the beta. Not affiliated with Blizzard Entertainment.

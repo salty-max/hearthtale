@@ -1,7 +1,7 @@
 # Every push and pull request: the addon (its Lua formatted and linted, the
 # writing builds and both data files are up to date with it, its simulation on both games, the writer's test with
-# hundreds of books, the sample, both packages) and the site (typecheck, lint,
-# tests, build).
+# hundreds of books, the sample, the package and the release's, made by the BigWigs
+# packager as release.yml makes it) and the site (typecheck, lint, tests, build).
 name: CI
 
 on:
@@ -42,8 +42,16 @@ jobs:
         run: FOREVER=1 luajit addon/test/writer.lua
       - name: Samples (the landing page's, as the writer writes them)
         run: luajit addon/test/sample.lua > /dev/null && luajit addon/test/sample.lua landing --check
-      - name: Packages
+      - name: Package (its TOCs agree)
         run: bun scripts/package.ts
+      # The release's package (release.yml), made without publishing: the
+      # addon's folder, nothing more or less.
+      - run: echo "(CI)" > .release-notes.md
+      - uses: BigWigsMods/packager@v2.6.1
+        with:
+          args: -d -u
+          pandoc: false
+      - run: diff -r addon/Hearthtale .release/Hearthtale
       - name: Site typecheck
         run: bun run typecheck
       - name: Site lint
