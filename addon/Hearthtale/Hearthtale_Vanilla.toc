@@ -9,6 +9,7 @@
 ## X-Website: https://github.com/salty-max/hearthtale
 ## X-License: GPL-3.0-or-later
 ## X-Curse-Project-ID: 1737290
+## X-Wago-ID: E6gzPnN1
 
 # Classic Era (Hardcore, Season of Discovery). Forever loads Hearthtale_Camelot.toc,
 # the same but for the interface and its data (scripts/package.ts checks).
