@@ -36,54 +36,49 @@ in-world layer).
   back at `SCREENSHOT_SUCCEEDED`/`FAILED` (Multishot's way). Nothing closes or
   moves, opacity is no restricted action on a protected frame, and Multishot
   avoids `Minimap:Hide()` because it taints in combat.
-- What `UIParent` doesn't hold stays in the picture: the in-world layer
-  (nameplates, raid target icons; names above heads and chat bubbles to
-  confirm) and the 3D marks (the selection circle). `SetInWorldUIVisibility`
-  switches that layer: Blizzard's commentator mode uses it to keep nameplates
-  while the interface is hidden, and Musician calls it after Alt+Z for the
-  same reason. Nobody calls it with `false` while the interface is shown:
-  whether that hides the layer, and whether nameplate addons (Plater, Kui)
-  rebuild their plates when it does, only the game can say (the test below).
-  Touching nameplates one by one is out: Musician gives up on Plater for it.
+- What `UIParent` doesn't hold stays in the picture: names above heads,
+  nameplates, raid target icons, the selection circle. `SetInWorldUIVisibility`
+  switches the in-world layer (Blizzard's commentator mode and Musician call
+  it with `true`, to keep nameplates after Alt+Z); the test showed it is no
+  help for a postcard (below).
 
-### The test (the user, in game)
+### The test (10 October 2026)
 
-Typed in chat, out of combat; each puts everything back after 3 seconds.
+The user played a throwaway addon (PostcardTest: `/pct 1`, `2`, `3`) in
+Classic Era:
 
-1. `/run UIParent:SetAlpha(0) C_Timer.After(3,function() UIParent:SetAlpha(1) end)`:
-   what stays visible (nameplates, names above heads, chat bubbles, damage
-   numbers); at a vendor, the window must still be open after.
-2. `/run local f,n=CreateFrame("Frame"),0 f:RegisterEvent("NAME_PLATE_UNIT_REMOVED")f:SetScript("OnEvent",function()n=n+1 end)SetInWorldUIVisibility(false)C_Timer.After(3,function()SetInWorldUIVisibility(true)f:UnregisterAllEvents()print("removed",n)end)`:
-   whether nameplates and names vanish while the interface stays, any
-   flicker, and the count printed (0: the plates were only hidden; more: torn
-   down and rebuilt, heavier with a nameplate addon).
-3. `/run local a=UIParent:GetAlpha() UIParent:SetAlpha(0) SetInWorldUIVisibility(false) C_Timer.After(0.1,function() Screenshot() C_Timer.After(1,function() UIParent:SetAlpha(a) SetInWorldUIVisibility(true) end) end)`:
-   a whole postcard; the file in Screenshots/ shows what a postcard looks like.
-4. Commands 1 and 2 once in a fight: a red "Interface action failed because
-   of an AddOn" means blocked in combat (the plan never shoots in combat
-   anyway; it tells how careful the restore must be).
+1. The interface invisible (`UIParent:SetAlpha(0)`, back after 3 seconds):
+   works, in and out of combat, and at a vendor its window is still open.
+2. The in-world layer off (`SetInWorldUIVisibility(false)`, the interface
+   shown): NPCs' names stay, nameplates are torn down (and rebuilt after:
+   heavy with a nameplate addon), and the game blocks it in combat. Out.
+3. A whole postcard (opacity 0, the shot from a timer, opacity back): the
+   interface goes and comes back, in and out of combat. The file wasn't found
+   at first: it belongs in the client's `Screenshots/` folder (`_classic_era_`,
+   Forever's beta `_classic_beta_`). Found there, it proves a shot from a
+   timer needs no key press, which automatic postcards require.
 
 ### Proposal
 
 | Question | Proposal |
 |---|---|
 | Moments | Few, by weight: a capital first seen, a dungeon's last boss, the first ride, the highest level, a Hardcore death; at most two automatic postcards an entry. Plus the player's own: a key binding ("Take a postcard") and `/ht postcard`, the way to frame one's own, kept with the entry being written. |
-| The shot | Never in combat: a moment from a fight waits for `PLAYER_REGEN_ENABLED` plus a second, and is dropped after 20 seconds or a change of zone. Never over a loading screen, a cinematic or a movie; when the interface is already hidden (Alt+Z), the shot alone. The in-world layer off for it only if the test shows it clean. |
+| The shot | Never in combat: a moment from a fight waits for `PLAYER_REGEN_ENABLED` plus a second, and is dropped after 20 seconds or a change of zone. (Opacity works in combat too, as the test showed: waiting is for the fight, a stutter mid-fight on Hardcore being no gift.) Never over a loading screen, a cinematic or a movie; when the interface is already hidden (Alt+Z), the shot alone. Names above heads and nameplates stay in the picture: the game's own settings say what shows, and they are left alone. |
 | Restore | The opacity as it was (another addon may have faded it), never forced to 1 (Multishot's bug); a 2-second timer puts it back if the game never answers. |
 | Quiet | The centre "Screen captured" silenced for our shots (ActionStatus's three events off around it, then back); a short chat line instead, as an option. Hearthtale adds no sound and no window of its own. |
 | Settings | Postcards: automatic and mine / mine only / off, on the welcome page and the Options page, per character like the others. Nothing of the game's settings touched (screenshot format, names above heads): a crash mid-shot would leave them changed in Config.wtf. |
 | Record | Each postcard in its chapter: `postcards = { { at, stamp, k } }` (`at` the time, `stamp` the file's `MMDDYY_HHMMSS` at `SCREENSHOT_SUCCEEDED`, `k` the moment or `mine`); Save.lua writes them into the saved book. The in-game book can't show them (an addon can't read the Screenshots folder): a small mark beside the entry says it has pictures. |
 | Ravenpost | For a linked character, finds each postcard's file in `<client>/Screenshots/` by its stamp (a second either side, as Multishot does), jpeg or png (tga skipped); never moves or deletes the player's screenshots. Resizes to 1600 px wide JPEG (under Vercel's 4.5 MB) and uploads one a request (`POST /api/companion/postcard`: the character, the chapter, the stamp, the image), remembering what it sent. A "Send postcards" switch in its settings. |
 | Site | The images in Vercel Blob (the team is on Pro; its included storage to check) under unguessable names, served only through the API to whoever may read that entry (its owner, a share link covering it, the Hall for a fallen book). A `postcards` table (character, chapter, stamp, moment, blob key, size). The reader shows an entry's postcards under its title, larger on a click; the owner can delete one; removing a book removes its postcards. A share card may use the entry's postcard. |
-| Privacy | With the interface invisible, chat, whispers and names in windows can't reach a picture. Names above other players' heads may (the test tells): the in-world layer off, if clean, takes them out too. Postcards are as private as the book. |
+| Privacy | With the interface invisible, chat, whispers and names in windows can't reach a picture. Names above other players' heads can, when the player shows them: postcards are as private as the book, and the owner sees one before sharing it. |
 
 ### Steps
 
-1. The test above (the user); its answers settle the in-world layer.
+1. The test above (done 10 October 2026: opacity alone).
 2. The addon: Postcards.lua (the queue, the rules, the shot, the stamp), the
    moments that call for one, the record and Save.lua, the settings and the
    welcome page's choice, the key binding and `/ht postcard`; the test game
-   learns `Screenshot`, `SetInWorldUIVisibility` and the screenshot events.
+   learns `Screenshot` and the screenshot events.
 3. The site: the shared type (`BookChapter.postcards`), the table and its
    migration, Blob storage, the upload endpoint, the reader, sharing and the
    Hall, deletion.
