@@ -96,6 +96,7 @@ const en = {
     closeCall: "a close call",
     rare: "a rare foe slain",
     nothingYet: "Nothing written yet.",
+    note: "A note in the margin",
     previous: "Previous",
     next: "Next",
     close: "Close",

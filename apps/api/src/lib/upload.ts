@@ -20,6 +20,7 @@ import { log } from "@/lib/log";
 export const MAX_CHARACTERS = 60;
 const MAX_CHAPTERS = 2000;
 const MAX_TEXT = 100_000;
+const MAX_NOTE = 2_000; // (the addon keeps a note to a thousand letters)
 
 export type ParsedCharacter = {
   guid: string;
@@ -51,6 +52,7 @@ function chapter(v: unknown): BookChapter | null {
     text: str(c.text, MAX_TEXT),
     diary: str(c.diary, MAX_TEXT),
     title: str(c.title, 120),
+    note: str(c.note, MAX_NOTE),
     place: str(c.place),
     from: int(c.from) ?? 1,
     to: int(c.to) ?? int(c.from) ?? 1,
