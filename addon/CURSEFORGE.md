@@ -7,7 +7,7 @@ Your character's own journal, written as you play: a diary entry in their voice 
 
 **Your character's own journal, written as you play.** The addon records your life as it happens (every quest, foe, place and close call), and each time you rest (a logout at an inn, in a city or by a campfire) the stretch becomes a diary entry in your character's own voice: what mattered, and what it meant to them. On Hardcore, a death closes the book with an epitaph, and the life joins the Hall of the Fallen.
 
-For Classic Era (Hardcore, Season of Discovery) and World of Warcraft: Forever. A sibling of [Lorekeeper's Codex](https://www.curseforge.com/wow/addons/lorekeepers-codex) and [Explorer's Field Journal](https://github.com/salty-max/field-journal), in the same look (each in its own colours), but it stands alone.
+For Classic Era (Hardcore, Season of Discovery) and World of Warcraft: Forever. A sibling of [Lorekeeper's Codex](https://www.curseforge.com/wow/addons/lorekeepers-codex) and [Explorer's Field Journal](https://www.curseforge.com/wow/addons/explorers-field-journal), in the same look (each in its own colours), but it stands alone.
 
 ## A page of it
 
@@ -72,6 +72,13 @@ The first time each character logs in with Hearthtale, a welcome page introduces
 Settings are each character's own, as in most interface addons. A new character can take another's: choose one of your characters of the same game from a list (on the welcome page or the Options page), or bring them from anywhere, another game or another account, with a code: `/ht export` (or the welcome page's Give a code) on one character, `/ht import CODE` (or Use a code) on the other.
 
 Other commands: `/ht title [N] TEXT` names entry N (the last one without N), `/ht note [N] TEXT` writes in its margin (no TEXT removes it); `/ht hall` opens the Hall of the Fallen; `/ht link CODE` links this character to your library on hearthtale.app; `/ht minimap` shows or hides the button.
+
+## Siblings
+
+The same look, each in its own colours, and each stands alone:
+
+- **[Lorekeeper's Codex](https://www.curseforge.com/wow/addons/lorekeepers-codex)** ([Wago](https://addons.wago.io/addons/j6jAL0NR)). The lore of Azeroth, written for you as you explore: each zone, figure of legend, people and quest you meet adds a page to your codex.
+- **[Explorer's Field Journal](https://www.curseforge.com/wow/addons/explorers-field-journal)** ([Wago](https://addons.wago.io/addons/ZKbq5y61)). A bestiary, an atlas and a record of your fish and herbs, filled in as you travel, with an Explorers' League naturalist's notes.
 
 ## Source
 
