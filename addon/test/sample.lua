@@ -19,6 +19,47 @@ local function chapters(G, only)
   end
 end
 
+-- luajit addon/test/sample.lua landing > apps/web/src/lib/samples.json (part
+-- of bun run addon:seed): the site's landing page, a page of each journal: the
+-- longest finished entry of four lives, each in its own voice, and the
+-- epitaph of one who fell. With --check (addon:check), fails when the site's
+-- copy is no longer what the writer writes.
+if arg and arg[1] == "landing" then
+  local json = dofile("addon/test/json.lua")
+  local samples = {}
+  for _, name in ipairs({ "brannok", "grashnak", "aelyndra", "mortis", "pippa" }) do
+    local G = lives[name]()
+    local c = HearthtaleChar
+    local book = G.ns.writeBook(c)
+    local s = { name = c.name, race = c.race, class = c.class, hardcore = c.hardcore or false }
+    if book.epitaph then
+      s.part, s.text = "epitaph", book.epitaph
+    else
+      local best
+      for _, ch in ipairs(book.chapters) do
+        if not ch.open and (not best or #ch.text > #best.text) then best = ch end
+      end
+      s.part, s.number, s.title, s.place, s.from, s.to, s.text =
+        "entry", best.number, best.title, best.place, best.from, best.to, best.text
+    end
+    table.insert(samples, s)
+  end
+  local out = json(samples) .. "\n"
+  -- --check: the site's copy must be what the writer writes now
+  if arg[2] == "--check" then
+    local f = io.open("apps/web/src/lib/samples.json")
+    local saved = f and f:read("*a")
+    if f then f:close() end
+    if saved ~= out then
+      io.stderr:write("apps/web/src/lib/samples.json is stale: run bun run addon:seed\n")
+      os.exit(1)
+    end
+    return
+  end
+  io.write(out)
+  return
+end
+
 -- luajit addon/test/sample.lua deadmines > docs/sample-deadmines.md: an evening
 if arg and arg[1] == "deadmines" then
   local G = lives.edric()
