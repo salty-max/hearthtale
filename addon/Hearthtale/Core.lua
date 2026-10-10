@@ -99,6 +99,7 @@ function ns.login()
     char = { guid = guid, began = { at = time(), level = UnitLevel("player") }, chapters = {} }
     HearthtaleChar = char
   end
+  if ns.loadProfile then ns.loadProfile(char) end
   if ns.onLogin then ns.onLogin(char) end
   if ns.createMinimapButton then ns.createMinimapButton() end
   if ns.createSettingsPanel then ns.createSettingsPanel() end
@@ -139,7 +140,8 @@ function ns.own(n) return char and char.notes and char.notes[n] or nil end
 local USAGE = "/ht opens the journal; /ht hall the Hall of the Fallen; /ht title [N] TEXT names an entry, "
   .. "/ht note [N] TEXT writes in its margin (the last entry without N, no TEXT to remove it); /ht link CODE "
   .. "links this character to hearthtale.app; /ht settings; /ht minimap shows or hides the button; /ht welcome "
-  .. "shows the welcome page again."
+  .. "shows the welcome page again; /ht export gives this character's settings as a code, /ht import CODE takes "
+  .. "them."
 
 -- A code from hearthtale.app, kept in the saved file: the next upload (after a
 -- logout or a /reload) carries it, and the site adds this book to that account.
@@ -197,6 +199,14 @@ SlashCmdList.HEARTHTALE = function(raw)
     ns.openHall()
   elseif msg == "welcome" then
     ns.showWelcome()
+  elseif msg == "export" then
+    ns.showWelcome("export")
+  elseif word == "import" and rest ~= "" then
+    if ns.importCode(rest) then
+      print(PREFIX .. "settings imported for this character.")
+    else
+      print(PREFIX .. "that isn't a Hearthtale settings code (/ht export makes one).")
+    end
   elseif code then
     link(code)
   else
