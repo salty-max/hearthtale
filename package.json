@@ -28,7 +28,9 @@
     "addon:package": "bun scripts/package.ts",
     "addon:golden": "bash scripts/golden.sh",
     "lint:lua": "stylua --check addon && selene addon/Hearthtale",
-    "format:lua": "stylua addon"
+    "format:lua": "stylua addon",
+    "kit:sync": "bun ../addon-kit/sync.ts addon/Hearthtale",
+    "kit:check": "bun ../addon-kit/sync.ts --check addon/Hearthtale"
   },
   "lint-staged": {
     "*.{ts,tsx}": "eslint --fix",

@@ -143,9 +143,12 @@ its decisions: PLAN.md (the full chapter prose was dropped on 10 October
   `Save.lua` (the book written into the saved file at each logout, each
   chapter's entry in `diary`, its title (the player's when given one) and
   the player's `note`, for the site: it never writes its own),
-  `Book.lua` (the window: chapters on the left, the open one's entry on the
-  right, the player's note under it, an Edit button for its own title and
-  note; a second tab for the Hall of the Fallen), `Hall.lua` (a Hardcore
+  `Kit.lua` (a copy of the kit shared with the Codex and the Field Journal,
+  ~/code/addon-kit: never edit the copy; `bun run kit:sync` after changing
+  the kit, `bun run kit:check` to verify), `Book.lua` (Hearthtale's ember
+  theme on the kit; the window: chapters on the left, the open one's entry on
+  the right, the player's note under it, an Edit button for its own title
+  and note; a second tab for the Hall of the Fallen), `Hall.lua` (a Hardcore
   death: the book closed and copied to the account-wide Hall, a chat line,
   the toast), `Settings.lua` (account settings, the Options page),
   `Minimap.lua`.

@@ -5,141 +5,32 @@
 -- where each closed and the levels it covers under it, a skull for a close
 -- call, a star for a rare; on the right, the open chapter as its diary entry
 -- (Diary.lua), the journal as the character writes it (a closed book's last
--- one ends with its epitaph, in gold). The Hall
--- of the Fallen (Hall.lua): the closed books of the account's Hardcore
--- characters, the open one's epitaph and chapters under its name. Light text and
--- gold titles on dark panels: Forever's Professions cards; on Classic, the
--- game's insets and the quest log's dark book behind the list. The text is
--- written from the records each time it is shown (Diary.lua). /hearthtale
--- opens it.
+-- one ends with its epitaph, in the accent). The Hall of the Fallen
+-- (Hall.lua): the closed books of the account's Hardcore characters, the open
+-- one's epitaph and chapters under its name. The siblings' look, from the
+-- shared kit (Kit.lua), in an ember theme: light text and warm titles on dark
+-- panels (Forever's Professions cards; on Classic, the game's insets and the
+-- quest log's dark book behind the list). The text is written from the
+-- records each time it is shown (Diary.lua). /hearthtale opens it.
 local _, ns = ...
 
 -- ── look ─────────────────────────────────────────────────────────────────────
-local T = {
-  gold = { 0.85, 0.70, 0.42 },
-  text = { 0.93, 0.88, 0.76 },
-  soft = { 0.62, 0.57, 0.49 },
-  rule = { 0.85, 0.70, 0.42, 0.25 },
-}
-local LATIN = { enUS = true, enGB = true, frFR = true, deDE = true, esES = true, esMX = true, itIT = true, ptBR = true }
-local BODY_FONT = STANDARD_TEXT_FONT or "Fonts\\FRIZQT__.TTF"
-local TITLE_FONT = (not GetLocale or LATIN[GetLocale()]) and "Fonts\\MORPHEUS.TTF" or BODY_FONT
+-- The kit's (Kit.lua), in Hearthtale's own theme: the embers of a fire at
+-- rest, a warm accent over panels a shade warmer.
+local K = ns.kit
+K.theme({
+  accent = { 0.93, 0.62, 0.38 },
+  ring = { 0.80, 0.46, 0.26 },
+  bar = { 0.90, 0.50, 0.20 },
+  tint = { 1.00, 0.90, 0.82 },
+  shade = { 0.05, 0.025, 0.015, 0.55 },
+  highlight = { 1.00, 0.78, 0.60 },
+})
+local T = K.T
+local label, rule, panel = K.label, K.rule, K.panel
+local BODY_FONT, TITLE_FONT = K.BODY_FONT, K.TITLE_FONT
 local SKULL = "Interface\\TargetingFrame\\UI-RaidTargetingIcon_8"
 local STAR = "Interface\\TargetingFrame\\UI-RaidTargetingIcon_1"
-
-local function label(parent, font, size, color)
-  local fs = parent:CreateFontString(nil, "OVERLAY")
-  fs:SetFont(font, size, "")
-  fs:SetTextColor(unpack(color))
-  fs:SetShadowOffset(1, -1)
-  fs:SetJustifyH("LEFT")
-  return fs
-end
-
-local function rule(parent)
-  local t = parent:CreateTexture(nil, "ARTWORK")
-  t:SetColorTexture(unpack(T.rule))
-  t:SetHeight(1)
-  return t
-end
-
--- Forever's Professions card (a dark rounded panel), cut in nine so it
--- stretches to any size without bending its corners.
-local CARD_FILE, CARD_W, CARD_H = 8164414, 1024, 512
-local CARD = { 1, 665, 1, 143 } -- the generic card, in the texture's pixels
-local CORNER = 16
-local function card(parent)
-  local f = CreateFrame("Frame", nil, parent)
-  local xs = { CARD[1], CARD[1] + CORNER, CARD[2] - CORNER, CARD[2] }
-  local ys = { CARD[3], CARD[3] + CORNER, CARD[4] - CORNER, CARD[4] }
-  for i = 1, 3 do
-    for j = 1, 3 do
-      local tex = f:CreateTexture(nil, "BACKGROUND")
-      tex:SetTexture(CARD_FILE)
-      tex:SetTexCoord(xs[j] / CARD_W, xs[j + 1] / CARD_W, ys[i] / CARD_H, ys[i + 1] / CARD_H)
-      if j ~= 2 then tex:SetWidth(CORNER) end
-      if i ~= 2 then tex:SetHeight(CORNER) end
-      -- Corners pinned to the frame's edges; edges and centre between them.
-      if j == 1 then tex:SetPoint("LEFT", f, "LEFT", 0, 0) end
-      if j == 2 then
-        tex:SetPoint("LEFT", f, "LEFT", CORNER, 0)
-        tex:SetPoint("RIGHT", f, "RIGHT", -CORNER, 0)
-      end
-      if j == 3 then tex:SetPoint("RIGHT", f, "RIGHT", 0, 0) end
-      if i == 1 then tex:SetPoint("TOP", f, "TOP", 0, 0) end
-      if i == 2 then
-        tex:SetPoint("TOP", f, "TOP", 0, -CORNER)
-        tex:SetPoint("BOTTOM", f, "BOTTOM", 0, CORNER)
-      end
-      if i == 3 then tex:SetPoint("BOTTOM", f, "BOTTOM", 0, 0) end
-    end
-  end
-  return f
-end
-
--- Classic's panels: the game's inset, darkened a little for the text; behind
--- the list, the quest log's dark book (its two-pane art, where the game has it).
-local function inset(parent, book)
-  local ok, f = pcall(CreateFrame, "Frame", nil, parent, "InsetFrameTemplate")
-  if not (ok and f) then f = CreateFrame("Frame", nil, parent) end
-  local shade = f:CreateTexture(nil, "BACKGROUND", nil, 1)
-  shade:SetPoint("TOPLEFT", 3, -3)
-  shade:SetPoint("BOTTOMRIGHT", -3, 3)
-  shade:SetColorTexture(0.03, 0.025, 0.02, 0.55)
-  if not book then return f end
-  local art = f:CreateTexture(nil, "BACKGROUND", nil, 2)
-  art:SetPoint("TOPLEFT", 3, -3)
-  art:SetPoint("BOTTOMRIGHT", -3, 3)
-  if art:SetTexture("Interface\\QuestFrame\\UI-QuestLogDualPane-Left") == false then
-    art:Hide()
-  else
-    art:SetTexCoord(20 / 512, 318 / 512, 74 / 512, 406 / 512)
-  end
-  return f
-end
-
-local function panel(parent, book)
-  if ns.forever then return card(parent) end
-  return inset(parent, book)
-end
-
--- A scroll area moved by the mouse wheel, with a thin gold thumb.
-local function scrollArea(name, parent, width)
-  local s = CreateFrame("ScrollFrame", name, parent)
-  local c = CreateFrame("Frame", nil, s)
-  c:SetSize(width, 1)
-  s:SetScrollChild(c)
-  s.child = c
-  s.thumb = s:CreateTexture(nil, "OVERLAY")
-  s.thumb:SetColorTexture(T.gold[1], T.gold[2], T.gold[3], 0.45)
-  s.thumb:SetWidth(3)
-  function s:Range() return math.max(0, self.child:GetHeight() - self:GetHeight()) end
-  function s:UpdateThumb()
-    local range, height = self:Range(), self:GetHeight()
-    if range <= 0 then
-      self.thumb:Hide()
-      return
-    end
-    local size = math.max(24, height * height / (height + range))
-    self.thumb:SetHeight(size)
-    self.thumb:ClearAllPoints()
-    self.thumb:SetPoint(
-      "TOPRIGHT",
-      self,
-      "TOPRIGHT",
-      8,
-      -(height - size) * math.min(1, self:GetVerticalScroll() / range)
-    )
-    self.thumb:Show()
-  end
-  function s:ScrollTo(y)
-    self:SetVerticalScroll(math.max(0, math.min(y, self:Range())))
-    self:UpdateThumb()
-  end
-  s:EnableMouseWheel(true)
-  s:SetScript("OnMouseWheel", function(self, delta) self:ScrollTo(self:GetVerticalScroll() - delta * 40) end)
-  return s
-end
 
 -- ── the book ─────────────────────────────────────────────────────────────────
 local book, list, page
@@ -151,8 +42,8 @@ local asked -- opened at a page (a link): don't go to the last chapter
 local WIDTH = 440
 local HEADER_H = 76
 local ROW_WIDTH = 204
-local EPITAPH = "|cffd9b36b%s|r" -- the epitaph, in gold
-local NOTE = "|cffd9b36bNote|r\n|cffbfb08f%s|r" -- the player's own, in the margin
+local EPITAPH = K.hex(T.accent) .. "%s|r" -- the epitaph, in the accent
+local NOTE = K.hex(T.accent) .. "Note|r\n|cffbfb08f%s|r" -- the player's own, in the margin
 
 local function day(at) return at and date("%d %b %Y", at) end
 
@@ -234,12 +125,7 @@ local function row(i)
     t:SetSize(12, 12)
     r.marks[m] = t
   end
-  r:SetHighlightTexture("Interface\\QuestFrame\\UI-QuestTitleHighlight", "ADD")
-  r.selected = r:CreateTexture(nil, "BACKGROUND")
-  r.selected:SetAllPoints()
-  r.selected:SetTexture("Interface\\QuestFrame\\UI-QuestTitleHighlight")
-  r.selected:SetBlendMode("ADD")
-  r.selected:SetAlpha(0.7)
+  r.selected = K.highlight(r)
   rows[i] = r
   return r
 end
@@ -506,8 +392,8 @@ function ns.refresh(latest)
   end
 end
 
--- The tabs, under the window's bottom edge: the character sheet's on Classic,
--- the shared panel tabs where that template doesn't exist (Forever).
+-- A tab chosen (the kit's, under the window's bottom edge): the Journal (1)
+-- or the Hall of the Fallen (2).
 function ns.showTab(n)
   if not book then return end
   book.selectedTab = n
@@ -515,52 +401,9 @@ function ns.showTab(n)
   ns.refresh(true)
 end
 
-local function hasTemplate(name)
-  if not (C_XMLUtil and C_XMLUtil.GetTemplateInfo) then return name == "CharacterFrameTabButtonTemplate" end
-  return C_XMLUtil.GetTemplateInfo(name) ~= nil
-end
-
-local function buildTabs()
-  local template = hasTemplate("CharacterFrameTabButtonTemplate") and "CharacterFrameTabButtonTemplate"
-    or "PanelTabButtonTemplate"
-  for n, text in ipairs({ "Journal", "Hall of the Fallen" }) do
-    local tab = CreateFrame("Button", "HearthtaleFrameTab" .. n, book, template)
-    tab:SetID(n)
-    tab:SetText(text)
-    if n == 1 then
-      tab:SetPoint("TOPLEFT", book, "BOTTOMLEFT", 14, 2)
-    else
-      tab:SetPoint("LEFT", "HearthtaleFrameTab" .. (n - 1), "RIGHT", -14, 0)
-    end
-    tab:SetScript("OnClick", function(self)
-      ns.showTab(self:GetID())
-      if PlaySound and SOUNDKIT and SOUNDKIT.IG_CHARACTER_INFO_TAB then PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB) end
-    end)
-    tab:SetScript("OnShow", function(self)
-      if PanelTemplates_TabResize then PanelTemplates_TabResize(self, 0) end
-    end)
-    if PanelTemplates_TabResize then PanelTemplates_TabResize(tab, 0) end
-  end
-  if PanelTemplates_SetNumTabs then PanelTemplates_SetNumTabs(book, 2) end
-  book.selectedTab = 1
-  if PanelTemplates_SetTab then PanelTemplates_SetTab(book, 1) end
-end
-
--- The standard game window (portrait, title bar), its inset removed; the
--- portrait is the character's own face.
+-- The window: the kit's standard game window (a plain dialog where the client
+-- has none), its portrait the character's own face.
 local TITLE = "Hearthtale"
-local function gameWindow()
-  local ok, frame = pcall(CreateFrame, "Frame", "HearthtaleFrame", UIParent, "ButtonFrameTemplate")
-  if not ok or not frame then return nil end
-  if ButtonFrameTemplate_HideButtonBar then ButtonFrameTemplate_HideButtonBar(frame) end
-  if type(frame.Inset) == "table" then frame.Inset:Hide() end
-  if frame.SetTitle then
-    frame:SetTitle(TITLE)
-  elseif type(frame.TitleText) == "table" then
-    frame.TitleText:SetText(TITLE)
-  end
-  return frame
-end
 
 local function portrait()
   local p = (book.GetPortrait and book:GetPortrait())
@@ -575,35 +418,9 @@ local function portrait()
 end
 
 function build()
-  local window = gameWindow()
-  book = window or CreateFrame("Frame", "HearthtaleFrame", UIParent, "BackdropTemplate")
-  book:SetSize(780, 560)
-  book:SetPoint("CENTER")
-  book:SetFrameStrata("HIGH")
-  book:SetToplevel(true)
-  book:SetMovable(true)
-  book:EnableMouse(true)
-  book:SetClampedToScreen(true)
-  book:RegisterForDrag("LeftButton")
-  book:SetScript("OnDragStart", book.StartMoving)
-  book:SetScript("OnDragStop", book.StopMovingOrSizing)
-  table.insert(UISpecialFrames, "HearthtaleFrame") -- Escape closes it
-  if not window then
-    -- No standard window on this client: a plain dialog frame.
-    book:SetBackdrop({
-      bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background-Dark",
-      edgeFile = "Interface\\DialogFrame\\UI-DialogBox-Gold-Border",
-      tile = true,
-      tileSize = 32,
-      edgeSize = 32,
-      insets = { left = 11, right = 12, top = 12, bottom = 11 },
-    })
-    local title = label(book, TITLE_FONT, 16, T.gold)
-    title:SetPoint("TOP", 0, -16)
-    title:SetText(TITLE)
-    local close = CreateFrame("Button", nil, book, "UIPanelCloseButton")
-    close:SetPoint("TOPRIGHT", -6, -6)
-  end
+  local window = K.gameWindow("HearthtaleFrame", TITLE)
+  book = window or K.dialog("HearthtaleFrame", TITLE)
+  K.movable(book, 780, 560)
   local edge = window and 8 or 14
 
   -- Who I am, beside the portrait.
@@ -616,7 +433,7 @@ function build()
   left:SetPoint("TOPLEFT", edge, -58)
   left:SetPoint("BOTTOMLEFT", edge, edge)
   left:SetWidth(244)
-  list = scrollArea("HearthtaleList", left, ROW_WIDTH)
+  list = K.scrollArea(left, ROW_WIDTH, "HearthtaleList")
   list:SetPoint("TOPLEFT", left, "TOPLEFT", 12, -12)
   list:SetPoint("BOTTOMRIGHT", left, "BOTTOMRIGHT", -18, 12)
 
@@ -625,7 +442,7 @@ function build()
   book.sheet = sheet
   sheet:SetPoint("TOPLEFT", left, "TOPRIGHT", 4, 32)
   sheet:SetPoint("BOTTOMRIGHT", -edge, edge)
-  page = scrollArea("HearthtalePage", sheet, WIDTH)
+  page = K.scrollArea(sheet, WIDTH, "HearthtalePage")
   page:SetPoint("TOPLEFT", sheet, "TOPLEFT", 26, -22)
   page:SetPoint("BOTTOMRIGHT", sheet, "BOTTOMRIGHT", -22, 14)
 
@@ -654,7 +471,9 @@ function build()
     ns.refresh(not asked)
     asked = false
   end)
-  buildTabs()
+  K.tabs(book, { "Journal", "Hall of the Fallen" }, function(n) ns.showTab(n) end)
+  book.selectedTab = 1
+  if PanelTemplates_SetTab then PanelTemplates_SetTab(book, 1) end
 end
 
 function ns.toggle()
