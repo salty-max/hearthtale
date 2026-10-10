@@ -11,6 +11,15 @@ local function check(cond, msg)
   io.write("✓ " .. msg .. "\n")
 end
 
+-- A quest's story is its own: the game's quests by their real ids
+-- (addon/test/quests.lua), a made-up quest by an id no quest has.
+local truth = dofile("addon/test/truth.lua")(ns, dofile("addon/test/quests.lua").titles)
+local function trueStories(where)
+  local wrong = {}
+  truth(HearthtaleChar or {}, where, function(at, msg) table.insert(wrong, at .. ": " .. msg) end)
+  check(#wrong == 0, "every quest told by its own story (" .. where .. ")" .. (wrong[1] and ": " .. wrong[1] or ""))
+end
+
 -- ── a life ───────────────────────────────────────────────────────────────────
 check(
   D.client == (FOREVER and "forever" or "classic") and D.writing.opening,
@@ -136,14 +145,14 @@ check(
   "… and what the game said of them: their sex (the writer's pronoun), no beast"
 )
 state.npc, state.objectives =
-  "Balir Frosthammer", { [180] = { { text = "Rockjaw Trogg slain: 0/6", type = "monster", numRequired = 6 } } }
+  "Balir Frosthammer", { [9000180] = { { text = "Rockjaw Trogg slain: 0/6", type = "monster", numRequired = 6 } } }
 if FOREVER then
-  fire("QUEST_ACCEPTED", 180)
+  fire("QUEST_ACCEPTED", 9000180)
 else
-  fire("QUEST_ACCEPTED", 2, 180)
+  fire("QUEST_ACCEPTED", 2, 9000180)
 end
 fire("QUEST_COMPLETE")
-fire("QUEST_TURNED_IN", 180, 80, 0)
+fire("QUEST_TURNED_IN", 9000180, 80, 0)
 state.npc = nil
 local q2 = moments("quest")[2].objectives[1]
 check(
@@ -172,13 +181,13 @@ local function turnIn(id, ender)
   state.npc, state.questShown = nil, nil
 end
 accept(
-  181,
+  182,
   "The Troll Cave",
   "Grelin Whitebeard",
   { text = "Frostmane Troll Whelp slain: 0/14", type = "monster", numRequired = 14 }
 )
 state.sub = "Frostmane Hold"
-state.objectives[181][1].finished = true
+state.objectives[182][1].finished = true
 fire("QUEST_LOG_UPDATE")
 fire("QUEST_LOG_UPDATE")
 local done = moments("done")
@@ -190,19 +199,19 @@ check(
   "a quest's work done: a moment where it happened, once"
 )
 state.sub = "Anvilmar"
-turnIn(181, "Grelin Whitebeard")
+turnIn(182, "Grelin Whitebeard")
 check(
   moments("quest")[3].told and moments("quest")[3].sub == "Anvilmar",
   "… its turn-in, elsewhere, a return to who asked"
 )
 accept(
-  182,
+  234,
   "Coldridge Valley Mail Delivery",
   "Talin Keeneye",
   { text = "Grelin's Letter: 1/1", type = "item", numRequired = 1, finished = true }
 )
 fire("QUEST_LOG_UPDATE")
-turnIn(182, "Grelin Whitebeard")
+turnIn(234, "Grelin Whitebeard")
 local mail = moments("quest")[4]
 check(
   #moments("done") == 1 and not mail.told and mail.objectives[1].held,
@@ -577,8 +586,8 @@ check(
 
 -- A campfire closes one too, with a few moments written.
 for i = 1, 3 do
-  state.titles = { [200 + i] = "Errand " .. i }
-  fire("QUEST_TURNED_IN", 200 + i, 80, 0)
+  state.titles = { [9000200 + i] = "Errand " .. i }
+  fire("QUEST_TURNED_IN", 9000200 + i, 80, 0)
 end
 state.auras[1229739] = true
 logout()
@@ -589,8 +598,8 @@ check(#J.chapters == 3 and ch(2).ended.how == "campfire", "a logout by a campfir
 
 -- The cap: four hours in a chapter, and any logout closes it.
 for i = 1, 3 do
-  state.titles = { [300 + i] = "Chore " .. i }
-  fire("QUEST_TURNED_IN", 300 + i, 80, 0)
+  state.titles = { [9000300 + i] = "Chore " .. i }
+  fire("QUEST_TURNED_IN", 9000300 + i, 80, 0)
 end
 G.played(4 * 3600 + 60)
 logout()
@@ -715,6 +724,7 @@ check(
 SlashCmdList.HEARTHTALE("")
 
 -- A character met mid-life: a prologue from what the game knows.
+trueStories("life 1")
 HearthtaleChar = nil
 state.guid, state.level, state.questsDone, state.hardcore =
   "Player-6113-0FFFFFF0", 23, { [1] = true, [2] = true, [3] = true }, false
@@ -889,19 +899,19 @@ local made = told("made")
 check(#made == 2 and made[1].n == 3 and made[2].n == 2, "what was made: one moment per thing, counted")
 
 -- A quest given up after its work was done: the work taken back.
-accept(190, "Bring Back the Mug", "Brewmaster", { text = "Lost Mug: 0/1", type = "item", numRequired = 1 })
-state.objectives[190][1].finished = true
+accept(9000190, "Bring Back the Mug", "Brewmaster", { text = "Lost Mug: 0/1", type = "item", numRequired = 1 })
+state.objectives[9000190][1].finished = true
 fire("QUEST_LOG_UPDATE")
-fire("QUEST_REMOVED", 190)
+fire("QUEST_REMOVED", 9000190)
 local gone = told("done")
-check(gone[#gone] and gone[#gone].id == 190 and gone[#gone].abandoned, "a quest abandoned: its work is taken back")
+check(gone[#gone] and gone[#gone].id == 9000190 and gone[#gone].abandoned, "a quest abandoned: its work is taken back")
 
 -- A quest shared by a companion: mine, its giver unknown (not the companion).
 state.target = { player = true, guid = "Player-1-00CC", name = "Thessaly" }
-accept(191, "Shared Errand", nil, { text = "Wolf Pelt: 0/3", type = "item", numRequired = 3 })
+accept(9000191, "Shared Errand", nil, { text = "Wolf Pelt: 0/3", type = "item", numRequired = 3 })
 state.target = nil
 check(
-  HearthtaleChar.pending[191] and HearthtaleChar.pending[191].giver == nil,
+  HearthtaleChar.pending[9000191] and HearthtaleChar.pending[9000191].giver == nil,
   "a shared quest: mine, its giver not the companion who shared it"
 )
 
@@ -913,19 +923,19 @@ check(
 
 -- A quest given up after the chapter that told its work closed: that chapter
 -- stays as it was written.
-accept(192, "Lost Ledger", "Clerk", { text = "Old Ledger: 0/1", type = "item", numRequired = 1 })
-state.objectives[192][1].finished = true
+accept(9000192, "Lost Ledger", "Clerk", { text = "Old Ledger: 0/1", type = "item", numRequired = 1 })
+state.objectives[9000192][1].finished = true
 fire("QUEST_LOG_UPDATE")
 local closed = K.chapters[#K.chapters]
 closed.ended = { at = time(), level = 10, how = "rest" }
 ns.chapter()
-fire("QUEST_REMOVED", 192)
+fire("QUEST_REMOVED", 9000192)
 local ledger
 for _, m in ipairs(closed.log) do
-  if m.k == "done" and m.id == 192 then ledger = m end
+  if m.k == "done" and m.id == 9000192 then ledger = m end
 end
 check(
-  ledger and not ledger.abandoned and HearthtaleChar.pending[192] == nil,
+  ledger and not ledger.abandoned and HearthtaleChar.pending[9000192] == nil,
   "a quest given up after its chapter closed: the closed chapter isn't rewritten"
 )
 
@@ -936,17 +946,17 @@ local function killsOf(name) return K.chapters[#K.chapters].kills[name] or 0 end
 local leopard = G.creature("Snow Leopard Prowler", "Beast", "Cat")
 local before = killsOf("Snow Leopard Prowler")
 accept(
-  193,
+  9000193,
   "Grund and Gozwin",
   "Grund Drokda",
   { text = "Snow Leopard Prowler slain: 0/2", type = "monster", numRequired = 2 }
 )
 kill(leopard, 501, true) -- (another's killing blow)
-state.objectives[193][1] = { text = "Snow Leopard Prowler slain: 1/2", type = "monster", numRequired = 2 }
+state.objectives[9000193][1] = { text = "Snow Leopard Prowler slain: 1/2", type = "monster", numRequired = 2 }
 fire("QUEST_LOG_UPDATE")
 check(killsOf("Snow Leopard Prowler") == before + 1, "a kill the quest credits me with, another's blow, is counted")
 kill(leopard, 502)
-state.objectives[193][1] =
+state.objectives[9000193][1] =
   { text = "Snow Leopard Prowler slain: 2/2", type = "monster", numRequired = 2, finished = true }
 fire("QUEST_LOG_UPDATE")
 check(killsOf("Snow Leopard Prowler") == before + 2, "… and one told and counted, once")
@@ -989,16 +999,16 @@ check(
   #demon == 1 and demon[1].name == "Zigfik" and demon[1].family == "Imp" and #told("learned") == learnedBefore,
   "a warlock's first imp, by its name, once (not told as a lesson)"
 )
-accept(196, "Pet Work", "Grelin Whitebeard", { text = "Wolf Pelt: 0/1", type = "item", numRequired = 1 })
-state.objectives[196][1].finished = true
+accept(9000196, "Pet Work", "Grelin Whitebeard", { text = "Wolf Pelt: 0/1", type = "item", numRequired = 1 })
+state.objectives[9000196][1].finished = true
 fire("QUEST_LOG_UPDATE")
 local withPet = told("done")
 withPet = withPet[#withPet]
 check(
-  withPet and withPet.id == 196 and withPet.pet == "Zigfik" and withPet.petFamily == "Imp",
+  withPet and withPet.id == 9000196 and withPet.pet == "Zigfik" and withPet.petFamily == "Imp",
   "a quest's work done with my pet out: which one"
 )
-turnIn(196, "Grelin Whitebeard")
+turnIn(9000196, "Grelin Whitebeard")
 state.pet = { name = "Ganrul", family = "Voidwalker", guid = "Pet-0-1-1-1-1860-0002" }
 fire("UNIT_PET", "player")
 check(#told("demon") == 1, "… and no demon whose summoning the journal didn't see learned")
@@ -1023,7 +1033,7 @@ fire("PLAYER_LEVEL_UP", state.level)
 local endCh = K.chapters[#K.chapters]
 local count = #endCh.log
 kill(1, 78)
-fire("QUEST_ACCEPTED", 1, 192)
+fire("QUEST_ACCEPTED", 1, 9000192)
 check(
   K.finished and endCh.ended and endCh.ended.how == "summit" and #endCh.log == count,
   "the highest level: the chapter closes, the journal ends, nothing more is told"
@@ -1035,6 +1045,7 @@ state.maxLevel = nil
 
 if FOREVER then
   for i, faction in ipairs({ "Horde", "Alliance" }) do
+    trueStories("life 2")
     HearthtaleChar = nil
     state.guid, state.level, state.race, state.faction = "Player-Skyborne-" .. i, 1, "Skyborne", faction
     login()
@@ -1051,6 +1062,7 @@ end
 
 -- A first login before the game says where (Forever, at times): the place
 -- it tells a moment later is where the chapter began, not an arrival.
+trueStories("life 3")
 HearthtaleChar = nil
 state.guid, state.level, state.race, state.faction, state.class = "Player-4619-015E0F3F", 1, "Dwarf", nil, "PRIEST"
 state.zone, state.sub = nil, nil
@@ -1129,6 +1141,7 @@ check(
 -- Forever's names: a first name and a surname (UnitName's second value,
 -- a realm elsewhere). The character's full name kept; a companion's too,
 -- with the first name the journal calls them by.
+trueStories("life 4")
 HearthtaleChar = nil
 state.guid, state.name, state.surname = "Player-4619-015E4047", "Hellefie", "Namzar"
 state.party = { party1 = { name = "Harrysaun", surname = "Brightwood", class = "PALADIN" } }
@@ -1208,4 +1221,5 @@ do
   )
 end
 
+trueStories("the last life")
 io.write(FOREVER and "all good (Forever)\n" or "all good\n")

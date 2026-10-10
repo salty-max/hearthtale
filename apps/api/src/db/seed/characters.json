@@ -1,33 +1,33 @@
 [
   {
     "book": {
-      "at": 1791018530,
+      "at": 1791017930,
       "chapters": [
         {
           "began": 1790900000,
           "close": true,
-          "diary": "I began in Coldridge Valley, with Ironforge behind my name and the wish to bring something worthy of it home. The cold of Dun Morogh caught in my throat, and the pines bowed under their snow. Above the valleys rose the mountain that holds Ironforge, and the sight of it made the cold easier to bear. A Frostmane Troll Whelp brought me close to death in Coldridge Valley. I could have taken quite a pleasure in a harmless task to complain about. I slew Old Murk-Eye, the murloc whose raids killed the lighthouse keeper's family, for the ghost of Captain Grayson. It was a fight worth the walk, and I came away from it with nothing to regret.\n\nAfter that, I destroyed Araj the Summoner, the lich who held Andorhal, and took a shard of his phylactery to High Executor Derrington. I am still on my feet, though only just, and I intend to find the flaw that nearly cost me everything before something else finds it for me.",
-          "ended": 1790905640,
+          "diary": "I began in Coldridge Valley, with Ironforge behind my name and the wish to bring something worthy of it home. The cold of Dun Morogh caught in my throat, and the pines bowed under their snow. Above the valleys rose the mountain that holds Ironforge, and the sight of it made the cold easier to bear. A Frostmane Troll Whelp brought me close to death in Coldridge Valley. I could have taken quite a pleasure in a harmless task to complain about. I killed Grik'nir the Cold in the troll cave to take back Grelin Whitebeard's stolen journal. It was a fight worth the walk, and I came away from it with nothing to regret. I am still on my feet, though only just, and I intend to find the flaw that nearly cost me everything before something else finds it for me.",
+          "ended": 1790904950,
           "from": 1,
           "number": 1,
           "place": "Anvilmar",
-          "title": "The Troll Cave",
+          "title": "The Stolen Journal",
           "to": 4
         },
         {
-          "began": 1790941640,
-          "diary": "The gnomes of Tinker Town knew better than anyone what a lost home costs, and I set out in Anvilmar with my own all the dearer for it. I began to learn skinning. I made a start at leatherworking. Wearing a Handstitched Leather Vest that I had made myself was a different pleasure from wearing anything found or given.\n\nBoth Timber and Vagash fell to me, and I came away from each with the sound of it still ringing in my ears. Hunter's Mark is mine now, and no quarry of mine will vanish into the crowd. I smelled the Thunderbrew Distillery before I had properly reached Kharanos. Smoke rose above the houses, where dwarves and gnomes crowded together against the cold, and I felt my shoulders ease at the sight. I stopped in Kharanos, and found that sitting still took less practice than I had feared.",
-          "ended": 1790979755,
+          "began": 1790940950,
+          "diary": "The gnomes of Tinker Town knew better than anyone what a lost home costs, and I set out in Anvilmar with my own all the dearer for it. I began to learn skinning. Wearing a Handstitched Leather Vest that I had made myself was a different pleasure from wearing anything found or given. I took the measure of Timber and found my own was enough, which is the kind of sum I like.\n\nI slew Vagash, the beast preying on the Amberstill rams while most of Magni's army was away at war. Hunter's Mark is mine now, and no quarry of mine will vanish into the crowd. I smelled the Thunderbrew Distillery before I had properly reached Kharanos. Smoke rose above the houses, where dwarves and gnomes crowded together against the cold, and I felt my shoulders ease at the sight.",
+          "ended": 1790979155,
           "from": 4,
           "number": 2,
           "place": "Kharanos",
           "rare": true,
-          "title": "Dun Morogh",
+          "title": "Protecting the Herd",
           "to": 7
         },
         {
-          "began": 1791012155,
-          "diary": "In Dun Morogh, I delivered the invisibility liquor to Maybell, so she could slip away from the Maclure Vineyards to see Tommy Joe. I tamed my first companion, a boar I called Bristle, and the road was never as lonely after. The first fire I warmed myself at in Amberstill Ranch taught me how much a little warmth can do for a tired body. Bristle fell in Amberstill Ranch. Out here, it could as easily have been me. I came into Loch Modan for the first time, and the stonework there knew my people's hands even if the roads did not yet know my feet. The blue water of Loch Modan lay still behind the Stonewrought Dam. I knew dwarves built on a grand scale, but the weight of all that water made me stop and look.",
+          "began": 1791011555,
+          "diary": "With daylight still to spend, I headed off in Kharanos meaning to get good wear out of every hour of it. I tamed my first companion, a boar I called Bristle, and the road was never as lonely after. The first fire I warmed myself at in Amberstill Ranch taught me how much a little warmth can do for a tired body. Bristle fell in Amberstill Ranch. Out here, it could as easily have been me. I came into Loch Modan for the first time, and the stonework there knew my people's hands even if the roads did not yet know my feet. The blue water of Loch Modan lay still behind the Stonewrought Dam. I knew dwarves built on a grand scale, but the weight of all that water made me stop and look.",
           "from": 7,
           "number": 3,
           "open": true,
@@ -51,32 +51,32 @@
   },
   {
     "book": {
-      "at": 1790937695,
+      "at": 1790937965,
       "chapters": [
         {
           "began": 1790900000,
-          "diary": "I set out in Coldridge Valley, determined to give the name of gnome something to stand for besides refugee. The snow of Dun Morogh glowed blue under the stars, and the cold felt cleaner for it. I knew the shapes of those mountains even in the dark. Arcane Missiles was mine now, and the next fight would not go quite like the last. My feet had kept a stricter count of the day than I had, and I rested in Anvilmar on their advice.",
-          "ended": 1790902535,
+          "diary": "I set out in Coldridge Valley, determined to give the name of gnome something to stand for besides refugee. The snow of Dun Morogh glowed blue under the stars, and the cold felt cleaner for it. I knew the shapes of those mountains even in the dark. I drove back the Rockjaw troggs for Balir Frosthammer, whose camp to the west they had overrun only nights before. Arcane Missiles was mine now, and the next fight would not go quite like the last. My feet had kept a stricter count of the day than I had, and I rested in Anvilmar on their advice.",
+          "ended": 1790902805,
           "from": 1,
           "number": 1,
           "place": "Anvilmar",
-          "title": "Dun Morogh",
+          "title": "A New Threat",
           "to": 3
         },
         {
-          "began": 1790934935,
+          "began": 1790935205,
           "close": true,
-          "diary": "I continued in Anvilmar, already redesigning half of what I saw. I slew Old Murk-Eye, the murloc whose raids killed the lighthouse keeper's family, for the ghost of Captain Grayson. Whatever that one had been planning, it would stay unbuilt now, and I was not sorry. I can conjure my own water now, one less thing to carry and one less thing to ask for. Later, I destroyed Araj the Summoner, the lich who held Andorhal, and took a shard of his phylactery to High Executor Derrington. I survived a close call in Frostmane Hold in the dark, with my fear slower to leave than the danger.",
-          "ended": 1790937695,
+          "diary": "I continued in Anvilmar, already redesigning half of what I saw. I can conjure my own water now, one less thing to carry and one less thing to ask for. I took cogs and gears from the leper gnomes outside Gnomeregan for Razzle Sprysprocket's Recombobulator, meant to reverse their plight. A Frostmane Headhunter nearly ended me in Frostmane Hold, and being a small target suddenly seemed a very inadequate defence.",
+          "ended": 1790937965,
           "from": 3,
           "number": 2,
           "place": "Frostmane Hold",
-          "title": "Tools for Steelgrill",
+          "title": "Operation Recombobulation",
           "to": 6
         }
       ],
       "client": "classic",
-      "epitaph": "A Frostmane Shadowcaster ended the life of Pippa, a gnome mage, in Frostmane Hold at level six. Pippa had completed five tasks and fought twenty-seven foes, with most of the world still to see. Gnomeregan has lost another of its children.",
+      "epitaph": "A Frostmane Shadowcaster ended the life of Pippa, a gnome mage, in Frostmane Hold at level six. Pippa had completed five tasks and fought thirty-three foes, with most of the world still to see. Gnomeregan has lost another of its children.",
       "level": 6,
       "version": "0.2.0"
     },
@@ -91,26 +91,26 @@
   },
   {
     "book": {
-      "at": 1790941310,
+      "at": 1790941985,
       "chapters": [
         {
           "began": 1790900000,
-          "diary": "I set out in Darkshire after nightfall, wishing I had a few of the Night Watch at my back. Hammer of Justice is mine now, a way to stop a foe in the middle of its intentions. I died in Raven Hill, another life cut short in a kingdom with too many empty places already. Darkshire huddled under its lamps at the edge of the dark wood, with the Night Watch on every corner. People spoke in low voices, as if the forest might hear. Dying has shown me how much I still want from the years ahead, and I mean to be careful enough to have them.",
-          "ended": 1790904440,
+          "diary": "I set out in Darkshire after nightfall, wishing I had a few of the Night Watch at my back. I drove the skeletal fiends and horrors from the Raven Hill graveyard, where the undead were spreading through the forest around Darkshire. Hammer of Justice is mine now, a way to stop a foe in the middle of its intentions. I died in Raven Hill, another life cut short in a kingdom with too many empty places already. Darkshire huddled under its lamps at the edge of the dark wood, with the Night Watch on every corner. People spoke in low voices, as if the forest might hear. Dying has shown me how much I still want from the years ahead, and I mean to be careful enough to have them.",
+          "ended": 1790904980,
           "from": 23,
           "number": 1,
           "place": "Darkshire",
-          "title": "A Death in Duskwood",
+          "title": "The Night Watch",
           "to": 24
         },
         {
-          "began": 1790940440,
-          "diary": "My people had raised a whole city again from its rubble, and next to that, the work waiting for me in Darkshire looked modest enough to start on cheerfully. I slew Old Murk-Eye, the murloc whose raids killed the lighthouse keeper's family, for the ghost of Captain Grayson. I had no wish to be a hero about it; I was only glad it was done.",
+          "began": 1790940980,
+          "diary": "My people had raised a whole city again from its rubble, and next to that, the work waiting for me in Darkshire looked modest enough to start on cheerfully. I collected ghoul ribs for Abercrombie's effigy, a scarecrow for ghouls after Bone Chewers pounded on his walls.",
           "from": 24,
           "number": 2,
           "open": true,
           "place": "Darkshire",
-          "title": "Bride of the Embalmer",
+          "title": "Ghoulish Effigy",
           "to": 25
         }
       ],
@@ -130,22 +130,22 @@
   },
   {
     "book": {
-      "at": 1790939810,
+      "at": 1790941085,
       "chapters": [
         {
           "began": 1790900000,
           "close": true,
-          "diary": "I began in the Valley of Trials, with Thrall's new homeland to call my own and no wish to repay it with empty boasting. Heat rose from the red dust of Durotar, as if the ground itself were breathing. This was the land we had claimed, and I meant to learn how to belong to it. I faced Sarkoth and came away on my own feet. I slew Old Murk-Eye, the murloc whose raids killed the lighthouse keeper's family, for the ghost of Captain Grayson. That one had it coming, and I saw no reason to pretend otherwise.\n\nLater, I destroyed Araj the Summoner, the lich who held Andorhal, and took a shard of his phylactery to High Executor Derrington. I came through a close call in Razor Hill, too shaken to enjoy having proved I could survive one. At Razor Hill I heard the forge before I saw the drilling. Beyond the barracks, Kul Tiras ships sat off the coast, and I understood why no one in the town ever quite stood at rest. I came within a breath of the end, and what I carry away from it is not pride at surviving but the plain knowledge of how badly I wanted to.",
-          "ended": 1790906150,
+          "diary": "I began in the Valley of Trials, with Thrall's new homeland to call my own and no wish to repay it with empty boasting. Heat rose from the red dust of Durotar, as if the ground itself were breathing. This was the land we had claimed, and I meant to learn how to belong to it. A Kul Tiras Marine nearly ended me in Tiragarde Keep; I felt how little lay beneath my people's fearsome reputation. I drove Lieutenant Benedict and his Kul Tiras men out of Tiragarde Keep, which they had retaken in defiance of the Warchief's pact. At Razor Hill I heard the forge before I saw the drilling. Beyond the barracks, Kul Tiras ships sat off the coast, and I understood why no one in the town ever quite stood at rest. I came within a breath of the end, and what I carry away from it is not pride at surviving but the plain knowledge of how badly I wanted to.",
+          "ended": 1790907245,
           "from": 1,
           "number": 1,
           "place": "Razor Hill",
-          "title": "Galgar's Cactus Apple Surprise",
+          "title": "Vanquish the Betrayers",
           "to": 5
         },
         {
-          "began": 1790938550,
-          "diary": "I continued in Razor Hill, wondering what the lost world of Draenor would have made of this one. I saw Orgrimmar with my own eyes at last, and found it larger, louder and more mine than I had pictured. The drums of Orgrimmar echoed off the spiked walls as I came in. At Grommash Hold I felt the weight of it: a city our people had built for themselves, with no one's chains on it. I learned to Charge, and the distance between me and a foe stopped being a matter of courage.",
+          "began": 1790939645,
+          "diary": "I continued in Razor Hill, wondering what the lost world of Draenor would have made of this one. I saw Orgrimmar with my own eyes at last, and found it larger, louder and more mine than I had pictured. The drums of Orgrimmar echoed off the spiked walls as I came in. At Grommash Hold I felt the weight of it: a city our people had built for themselves, with no one's chains on it. I learned to Charge, and the distance between me and a foe stopped being a matter of courage. I seized a lieutenant's insignia from the Burning Blade in Skull Rock for Thrall, who meant to find the true head of the traitors.",
           "from": 5,
           "number": 2,
           "open": true,
@@ -169,26 +169,26 @@
   },
   {
     "book": {
-      "at": 1790967770,
+      "at": 1790968175,
       "chapters": [
         {
           "began": 1790900000,
-          "diary": "I began in Shadowglen, with Dolanaar the farthest place I could yet picture and the rest of Kalimdor no more than names across the water. Moonlight silvered the leaves of Teldrassil while owls called overhead. I listened between my footfalls, unwilling to hurry through so much quiet. I slew Old Murk-Eye, the murloc whose raids killed the lighthouse keeper's family, for the ghost of Captain Grayson. Whatever ill that one had done the land, it would do no more, and the land would know it before I did.\n\nMy training gave me Moonfire, a new way to fight, and I was impatient for a chance to use it. After that, I destroyed Araj the Summoner, the lich who held Andorhal, and took a shard of his phylactery to High Executor Derrington. Rain scented the houses around the moonwell in Dolanaar. The sentinels kept their patient watch on the road, and I let my guard down a little. I paused in Dolanaar, and let my strength return as slowly as a tree regrows its bark.",
-          "ended": 1790933810,
+          "diary": "I began in Shadowglen, with Dolanaar the farthest place I could yet picture and the rest of Kalimdor no more than names across the water. Moonlight silvered the leaves of Teldrassil while owls called overhead. I listened between my footfalls, unwilling to hurry through so much quiet. I took Fel Moss from the grells that threatened Shadowglen, confirming Tarindrella's fear that its corruption was spreading through Teldrassil. Moonfire was mine now, and the next fight would not go quite like the last. Rain scented the houses around the moonwell in Dolanaar. The sentinels kept their patient watch on the road, and I let my guard down a little. I paused in Dolanaar, and let my strength return as slowly as a tree regrows its bark.",
+          "ended": 1790934215,
           "from": 1,
           "number": 1,
           "place": "Dolanaar",
-          "title": "Webwood Venom",
+          "title": "The Woodland Protector",
           "to": 5
         },
         {
-          "began": 1790966210,
-          "diary": "The day began in Dolanaar as most of mine did, with a long moment of listening before I moved. I walked into Darnassus for the first time, and a city I had only heard of became a place I could find my way home to. The white stone and still pools of Darnassus slowed me without my meaning to. Near the Temple of the Moon the old hush settled around me, and I was home.",
+          "began": 1790966615,
+          "diary": "The day began in Dolanaar as most of mine did, with a long moment of listening before I moved. I walked into Darnassus for the first time, and a city I had only heard of became a place I could find my way home to. The white stone and still pools of Darnassus slowed me without my meaning to. Near the Temple of the Moon the old hush settled around me, and I was home. I learned Bear Form from Mathrengyl Bearwalker for the work.",
           "from": 5,
           "number": 2,
           "open": true,
           "place": "Dolanaar",
-          "title": "Darnassus",
+          "title": "Body and Heart",
           "to": 6
         }
       ],
@@ -207,20 +207,20 @@
   },
   {
     "book": {
-      "at": 1790940275,
+      "at": 1790940350,
       "chapters": [
         {
           "began": 1790900000,
-          "diary": "I set out in Deathknell, a Forsaken priest; the Light still answered me, and every time it answered, it burned. Crows called over the crypts of Tirisfal, toward the broken walls of Lordaeron. Night changed little here, though it left me feeling less conspicuous. I slew Old Murk-Eye, the murloc whose raids killed the lighthouse keeper's family, for the ghost of Captain Grayson. I have no great faith in justice, but I made an exception for that one.\n\nBefore the stretch was out, I also destroyed Araj the Summoner, the lich who held Andorhal, and took a shard of his phylactery to High Executor Derrington. Maggot Eye fell to me, and that was the end of that. After the tombs, the crooked roofs of Brill looked almost companionable. Around the Gallows' End Tavern my people went about their business, and the town kept going on stubbornness alone. I settled in Brill, with no need to sleep and a very definite wish to stop.",
-          "ended": 1790906615,
+          "diary": "I set out in Deathknell, a Forsaken priest; the Light still answered me, and every time it answered, it burned. Crows called over the crypts of Tirisfal, toward the broken walls of Lordaeron. Night changed little here, though it left me feeling less conspicuous. I can set a ward between myself and a blow now, and I feel steadier for it. I executed Maggot Eye, the gnoll who stole corpses near Garren's Haunt for the Lich King's army, for Brill's reward. After the tombs, the crooked roofs of Brill looked almost companionable. Around the Gallows' End Tavern my people went about their business, and the town kept going on stubbornness alone. I settled in Brill, with no need to sleep and a very definite wish to stop.",
+          "ended": 1790907590,
           "from": 1,
           "number": 1,
           "place": "Brill",
-          "title": "Scavenging Deathknell",
+          "title": "Maggot Eye",
           "to": 5
         },
         {
-          "began": 1790939015,
+          "began": 1790939990,
           "diary": "Plans had failed whole kingdoms in my time, so I set out in Brill with a modest one and held it loosely. I saw the Undercity with my own eyes at last, and found it larger, louder and more mine than I had pictured. Green canals ran through the Undercity, past the bubbling Apothecarium, deep beneath the ruins of Lordaeron. Out of so much that had survived badly, we had made a city, and it was ours. I can call on Renew now, though its healing burns in my hands for as long as it works.",
           "from": 5,
           "number": 2,
@@ -250,12 +250,12 @@
         {
           "began": 1790900000,
           "close": true,
-          "diary": "I carried on in the Dwarven District, sorting what I had heard of the wider world from what I found in it. I walked into Stormwind City for the first time, and a city I had only heard of became a place I could find my way home to. The white walls of Stormwind rose over the canals, and the bells of the cathedral carried across the city. It was home, and I tried not to think about the masons who had rebuilt it and were never paid. I saw Westfall for the first time, my own people's country though new to my eyes. Westfall lay dark and quiet, its windmills turning over farms nobody tended any more. A light in a window was rare enough to make me wonder who still dared to keep one. The Deadmines was the hardest place I went, and I did not go alone: Thessaly, Brannigan and Rowan came with me. Mine carts stood abandoned on their rails, and the walls sweated in the lamplight. The deeper I went into the Deadmines, the louder the hammering grew.\n\nWe defeated Edwin VanCleef, and I was grateful to have company for the way out of the Deadmines. In the Deadmines, I killed Lord Aliden Perenolde, who would have made slaves of the orcs, and asked his mistress Elysa for Taretha's pendant. I had no wish to be a hero about it; I was only glad it was done. I barely survived in Ironclad Cove, with no desire to repeat the lesson for a better telling. I pulled Smite's Mighty Hammer from the spoils and put on my new find at once. Later, in Stormwind City, I brought Taretha's pendant, given up by a frightened Elysa, back to Krusk, the small thing the Warchief had spent so much to recover. I came closer to dying than I like to think about.",
+          "diary": "I carried on in the Dwarven District, sorting what I had heard of the wider world from what I found in it. I walked into Stormwind City for the first time, and a city I had only heard of became a place I could find my way home to. The white walls of Stormwind rose over the canals, and the bells of the cathedral carried across the city. It was home, and I tried not to think about the masons who had rebuilt it and were never paid. I saw Westfall for the first time, my own people's country though new to my eyes. Westfall lay dark and quiet, its windmills turning over farms nobody tended any more. A light in a window was rare enough to make me wonder who still dared to keep one. I escorted the Defias Traitor to the Brotherhood's secret hideout, so Stoutmantle would know where VanCleef was hiding.\n\nThe Deadmines was the hardest place I went, and I did not go alone: Thessaly, Brannigan and Rowan came with me. Mine carts stood abandoned on their rails, and the walls sweated in the lamplight. The deeper I went into the Deadmines, the louder the hammering grew. Mr. Smite nearly ended me in Ironclad Cove. I had been wishing for a less ordinary life; I was not wishing for that now. I pulled Smite's Mighty Hammer from the spoils and put on my new find at once. After that, I assassinated Edwin VanCleef in the Deadmines, the beginning of the end for the Defias Brotherhood that plagued Westfall. It would have taken very little more to kill me, and I have stopped telling myself that such things only happen to other people.",
           "ended": 1790909585,
           "from": 18,
           "number": 1,
           "place": "Trade District",
-          "title": "Red Silk Bandanas",
+          "title": "The Deadmines",
           "to": 20
         },
         {

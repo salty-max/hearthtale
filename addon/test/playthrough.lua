@@ -289,6 +289,18 @@ local PEOPLE_SIDE = {
   Tauren = "horde",
   Scourge = "horde",
 }
+-- A quest's story is its own (addon/test/truth.lua): each quest's title by its
+-- id, and the test lives' quests (addon/test/quests.lua) are the game's.
+local TITLES = {}
+for id, q in pairs(D.quests) do
+  TITLES[id] = q.title
+end
+local truth = dofile("addon/test/truth.lua")(ns, TITLES)
+for _, q in ipairs(dofile("addon/test/quests.lua").list) do
+  if TITLES[q[1]] ~= q[2] then
+    problem("addon/test/quests.lua", ("quest %d is %q in the game"):format(q[1], TITLES[q[1]] or "?"), q[2])
+  end
+end
 -- (a title another quest gives to its class: Call of Fire is a shaman's)
 local TITLE_CLASSES = {}
 for _, q in pairs(D.quests) do
@@ -848,6 +860,7 @@ local books, chapters, quests = 0, 0, 0
 for _, life in ipairs(LIVES) do
   local c = play(life[1], life[2], life[3])
   local book = ns.writeBook(c)
+  truth(c, life[1] .. " " .. life[2], problem)
   books = books + 1
   local f = io.open(("%s/%s-%s.md"):format(BOOKS, life[1], life[2]:lower()), "w")
   f:write(("# %s %s, levels 1 to %d\n\n"):format(life[1], life[2]:lower(), c.chapters[#c.chapters].start.level))
@@ -874,6 +887,51 @@ for _, life in ipairs(LIVES) do
   f:close()
 end
 io.write(("%d books, %d chapters, %d real quests played → %s/\n"):format(books, chapters, quests, BOOKS))
+
+-- The test lives (addon/test/lives.lua) play the game's quests as the game
+-- has them: who gives each, who takes it back, what it asks for (Classic's:
+-- the same in Forever).
+if not forever then
+  local lives = dofile("addon/test/lives.lua")
+  local function names(ids, of)
+    local t = {}
+    for _, id in ipairs(ids or {}) do
+      t[(of[id] or {}).name or false] = true
+    end
+    return t
+  end
+  for _, name in ipairs({ "brannok", "pippa", "aldric", "grashnak", "aelyndra", "mortis", "edric" }) do
+    lives[name]()
+    local seen = {}
+    for _, ch in ipairs(HearthtaleChar.chapters) do
+      for _, m in ipairs(ch.log) do
+        local q = m.k == "quest" and not seen[m.id] and D.quests[m.id]
+        if q then
+          seen[m.id] = true
+          local where = ("lives.%s quest %d"):format(name, m.id)
+          if m.giver and not names(q.starters, D.creatures)[m.giver] then
+            problem(where, "given by someone else in the game", m.giver)
+          end
+          if m.ender and not names(q.enders, D.creatures)[m.ender] then
+            problem(where, "turned in to someone else in the game", m.ender)
+          end
+          local asked = {}
+          for _, it in ipairs(q.items or {}) do
+            asked[(D.items[it[1]] or {}).name or false] = true
+          end
+          for _, t in ipairs(q.targets or {}) do
+            asked[(D.creatures[t[1]] or {}).name or false] = true
+          end
+          for _, o in ipairs(m.objectives or {}) do
+            if o.type ~= "event" and o.name and not asked[o.name] then
+              problem(where, "asks for something else in the game", o.name)
+            end
+          end
+        end
+      end
+    end
+  end
+end
 if #problems > 0 then
   io.write(table.concat(problems, "\n"), "\n")
   os.exit(1)

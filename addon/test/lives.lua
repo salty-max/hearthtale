@@ -5,6 +5,7 @@
 --   local lives = dofile("addon/test/lives.lua")
 --   local G = lives.brannok()
 local lives = {}
+local quests = dofile("addon/test/quests.lua")
 local MINUTE, HOUR = 60, 3600
 
 -- The moves of a life in one game: kill, travel, quests, levels, training,
@@ -25,14 +26,15 @@ local function moves(G)
     fire(zone and "ZONE_CHANGED_NEW_AREA" or "ZONE_CHANGED")
     G.wait(5 * MINUTE)
   end
-  local quest = 100
-  -- A quest from someone: its objective (as the quest log writes it), the work
-  -- done for it, and the one it is turned in to.
-  local function task(title, giver, objective, work, ender)
-    quest = quest + 1
+  -- A quest from someone: its objective (as the quest log writes it, or
+  -- several), the work done for it, the one it is turned in to and the way
+  -- back to them. Its id is the game's (quests.lua), so that its story is its own.
+  local function task(title, giver, objective, work, ender, back)
+    local objectives = objective and (objective.text and { objective } or objective) or {}
+    local quest = quests.id(title, giver, objectives[1]) or quests.made()
     state.titles = state.titles or {}
     state.titles[quest] = title
-    state.objectives = { [quest] = objective and { objective } or {} }
+    state.objectives = { [quest] = objectives }
     -- a quest with nothing to do but go to someone is complete at once, as in the game
     state.complete = { [quest] = not objective or nil }
     state.npc = giver
@@ -41,14 +43,18 @@ local function moves(G)
     else
       fire("QUEST_ACCEPTED", 1, quest)
     end
+    fire("QUEST_LOG_UPDATE") -- (the log fills in after the acceptance, as in the game)
     state.npc = nil
     G.wait(2 * MINUTE)
     if work then work() end
     -- the work done: the quest log says so, where it happened
     if objective then
-      objective.finished = true
+      for _, o in ipairs(objectives) do
+        o.finished = true
+      end
       fire("QUEST_LOG_UPDATE")
     end
+    if back then back() end
     state.npc, state.questShown = ender or giver, quest
     fire("QUEST_COMPLETE")
     fire("QUEST_TURNED_IN", quest, 100, 0)
@@ -200,10 +206,10 @@ function lives.brannok()
     go("Anvilmar")
     slay("Ragged Young Wolf", 10, "Beast", "Wolf")
   end)
-  task("A New Threat", "Balir Frosthammer", slain("Rockjaw Trogg", 6), function()
+  task("A New Threat", "Balir Frosthammer", { slain("Rockjaw Trogg", 6), slain("Burly Rockjaw Trogg", 6) }, function()
     go("Coldridge Valley")
     slay("Rockjaw Trogg", 6)
-    slay("Burly Rockjaw Trogg", 4)
+    slay("Burly Rockjaw Trogg", 6)
   end)
   ding()
   task("Coldridge Valley Mail Delivery", "Talin Keeneye", nil, function() G.wait(10 * MINUTE) end, "Grelin Whitebeard")
@@ -226,7 +232,6 @@ function lives.brannok()
   ding()
   go("Anvilmar")
   learn("Serpent Sting", "Track Beasts")
-  task("Scalding Mornbrew Delivery", "Durnan Furcutter", nil, function() G.wait(8 * MINUTE) end, "Marryk Nurribit")
   rest(10)
 
   -- ── the second: Kharanos, Brewnall Village, a night outdoors ────────────────
@@ -241,7 +246,7 @@ function lives.brannok()
   task(
     "Beer Basted Boar Ribs",
     "Ragnar Thunderbrew",
-    found("Crag Boar Rib", 6),
+    { found("Crag Boar Rib", 6), found("Rhapsody Malt", 1) },
     function() slay("Crag Boar", 9, "Beast", "Boar") end
   )
   fire("CHAT_MSG_LOOT", "You create: " .. itemLink("Handstitched Leather Vest") .. ".")
@@ -252,7 +257,7 @@ function lives.brannok()
   task(
     "Operation Recombobulation",
     "Razzle Sprysprocket",
-    found("Gyromechanic Gear", 8),
+    { found("Restabilization Cog", 8), found("Gyromechanic Gear", 8) },
     function() slay("Leper Gnome", 11) end
   )
   learn("Arcane Shot")
@@ -265,11 +270,16 @@ function lives.brannok()
   fire("CHAT_MSG_SKILL", "Your skill in Skinning has increased to 50.")
   ding()
   fire("CHAT_MSG_LOOT", "You receive loot: " .. itemLink("Frostmane Scepter", 3) .. ".")
-  task("Frostmane Hold", "Senir Whitebeard", { text = "Explore the Frostmane Hold", type = "event" }, function()
-    go("Frostmane Hold")
-    slay("Frostmane Headhunter", 3)
-  end)
-  task("Protecting the Herd", "Rudra Amberstill", slain("Vagash", 1), function()
+  task(
+    "Frostmane Hold",
+    "Senir Whitebeard",
+    { { text = "Explore the Frostmane Hold", type = "event" }, slain("Frostmane Headhunter", 5) },
+    function()
+      go("Frostmane Hold")
+      slay("Frostmane Headhunter", 5)
+    end
+  )
+  task("Protecting the Herd", "Rudra Amberstill", found("Fang of Vagash", 1), function()
     go("Amberstill Ranch")
     slay("Vagash", 1, "Beast", "Bear", "elite")
   end)
@@ -340,7 +350,10 @@ function lives.pippa()
     sub = "Coldridge Valley",
     bind = "Anvilmar",
   })
-  task("A New Threat", "Balir Frosthammer", slain("Rockjaw Trogg", 6), function() slay("Rockjaw Trogg", 6) end)
+  task("A New Threat", "Balir Frosthammer", { slain("Rockjaw Trogg", 6), slain("Burly Rockjaw Trogg", 6) }, function()
+    slay("Rockjaw Trogg", 6)
+    slay("Burly Rockjaw Trogg", 6)
+  end)
   task(
     "Dwarven Outfitters",
     "Sten Stoutarm",
@@ -355,7 +368,7 @@ function lives.pippa()
   rest(9)
   go("Coldridge Pass")
   go("Kharanos")
-  task("Tools for Steelgrill", "Beldin Steelgrill", nil, function() G.wait(6 * 60) end, "Tharek Blackstone")
+  task("Tools for Steelgrill", "Tharek Blackstone", nil, function() G.wait(6 * 60) end, "Beldin Steelgrill")
   ding()
   learn("Frostbolt", "Conjure Water")
   wear(5, "Apprentice's Robe")
@@ -363,7 +376,7 @@ function lives.pippa()
   task(
     "Operation Recombobulation",
     "Razzle Sprysprocket",
-    found("Gyromechanic Gear", 8),
+    { found("Restabilization Cog", 8), found("Gyromechanic Gear", 8) },
     function() slay("Leper Gnome", 9) end
   )
   ding()
@@ -407,11 +420,16 @@ function lives.aldric()
   G.fire("TIME_PLAYED_MSG", 172800, 3600)
   state.bind = "Darkshire"
   G.fire("HEARTHSTONE_BOUND")
-  task("The Night Watch", "Commander Althea Ebonlock", slain("Skeletal Fiend", 15), function()
-    go("Raven Hill Cemetery")
-    slay("Skeletal Fiend", 15, "Undead")
-    slay("Skeletal Horror", 3, "Undead")
-  end)
+  task(
+    "The Night Watch",
+    "Commander Althea Ebonlocke",
+    { slain("Skeletal Fiend", 15), slain("Skeletal Horror", 15) },
+    function()
+      go("Raven Hill Cemetery")
+      slay("Skeletal Fiend", 15, "Undead")
+      slay("Skeletal Horror", 15, "Undead")
+    end
+  )
   task("Worgen in the Woods", "Calor", slain("Nightbane Shadow Weaver", 6), function()
     go("Brightwood Grove")
     slay("Nightbane Shadow Weaver", 6)
@@ -420,16 +438,16 @@ function lives.aldric()
   wear(16, "Night Watch Shortsword")
   go("Darkshire")
   learn("Seal of Command", "Holy Light", "Hammer of Justice")
-  task("The Hermit", "Madame Eva", nil, function() go("The Hushed Bank") end, "Abercrombie")
+  task("The Hermit", "Elaine Carevin", nil, function() go("The Hushed Bank") end, "Abercrombie")
   go("Raven Hill")
   fall("Stitches", "Undead", nil, "elite")
   G.wait(10 * 60)
   go("Darkshire")
   state.resting = true
   rest(10)
-  task("Bride of the Embalmer", "Abercrombie", found("Ghoul Rib", 7), function()
+  task("Ghoulish Effigy", "Abercrombie", found("Ghoul Rib", 7), function()
     go("Tranquil Gardens Cemetery")
-    slay("Flesh Eating Worm", 6, "Beast")
+    slay("Plague Spreader", 9, "Undead")
   end)
   ding()
   return G
@@ -456,7 +474,7 @@ function lives.grashnak()
     bind = "Razor Hill",
   })
   task("Cutting Teeth", "Gornek", slain("Mottled Boar", 10), function() slay("Mottled Boar", 10, "Beast", "Boar") end)
-  task("Sarkoth", "Hana'zua", slain("Sarkoth", 1), function() slay("Sarkoth", 1, "Beast", "Scorpid") end)
+  task("Sarkoth", "Hana'zua", found("Sarkoth's Mangled Claw", 1), function() slay("Sarkoth", 1, "Beast", "Scorpid") end)
   ding()
   task(
     "Vile Familiars",
@@ -472,23 +490,38 @@ function lives.grashnak()
     { text = "Peons Awoken: 0/5", type = "event" },
     function() G.wait(10 * 60) end
   )
-  task("Report to Sen'jin Village", "Gornek", nil, function() go("Razor Hill") end, "Master Gadrin")
+  task(
+    "Sting of the Scorpid",
+    "Gornek",
+    found("Scorpid Worker Tail", 10),
+    function() slay("Scorpid Worker", 11, "Beast", "Scorpid") end
+  )
+  task("Report to Sen'jin Village", "Zureetha Fargaze", nil, function() go("Razor Hill") end, "Master Gadrin")
   learn("Rend", "Battle Shout")
   wear(5, "Rough Leather Vest")
   ding()
   task(
-    "Sting of the Scorpid",
-    "Rezlak",
-    found("Scorpid Worker Tail", 8),
-    function() slay("Scorpid Worker", 9, "Beast", "Scorpid") end
+    "Vanquish the Betrayers",
+    "Gar'Thok",
+    { slain("Kul Tiras Sailor", 10), slain("Kul Tiras Marine", 8), slain("Lieutenant Benedict", 1) },
+    function()
+      go("Tiragarde Keep")
+      slay("Kul Tiras Sailor", 10)
+      closeCall("Kul Tiras Marine", 9)
+      slay("Kul Tiras Marine", 8)
+      slay("Lieutenant Benedict", 1)
+    end,
+    nil,
+    function() go("Razor Hill") end
   )
-  closeCall("Kul Tiras Marine", 9)
-  task("Vanquish the Betrayers", "Gar'Thok", slain("Kul Tiras Sailor", 10), function() slay("Kul Tiras Sailor", 10) end)
   ding()
   rest(9)
   go("Valley of Strength", "Orgrimmar")
   learn("Charge", "Thunder Clap")
-  task("Hidden Enemies", "Thrall", nil, function() G.wait(10 * 60) end, "Gor the Enforcer")
+  task("Hidden Enemies", "Thrall", found("Lieutenant's Insignia", 1), function()
+    go("Skull Rock", "Durotar")
+    slay("Burning Blade Thug", 4)
+  end, nil, function() go("Valley of Wisdom", "Orgrimmar") end)
   ding()
   return G
 end
@@ -513,13 +546,18 @@ function lives.aelyndra()
     sub = "Shadowglen",
     bind = "Dolanaar",
   })
-  task("The Balance of Nature", "Conservator Ilthalaine", slain("Young Nightsaber", 7), function()
-    slay("Young Nightsaber", 7, "Beast", "Cat")
-    slay("Young Thistle Boar", 4, "Beast", "Boar")
-  end)
-  task("Etched Sigil", "Conservator Ilthalaine", nil, function() G.wait(5 * 60) end, "Mardant Strongoak")
+  task(
+    "The Balance of Nature",
+    "Conservator Ilthalaine",
+    { slain("Young Nightsaber", 7), slain("Young Thistle Boar", 4) },
+    function()
+      slay("Young Nightsaber", 7, "Beast", "Cat")
+      slay("Young Thistle Boar", 4, "Beast", "Boar")
+    end
+  )
+  task("Verdant Sigil", "Conservator Ilthalaine", nil, function() G.wait(5 * 60) end, "Mardant Strongoak")
   ding()
-  task("The Woodland Protector", "Tarindrella", slain("Grell", 8), function() slay("Grell", 8, "Demon") end)
+  task("The Woodland Protector", "Tarindrella", found("Fel Moss", 8), function() slay("Grell", 9, "Demon") end)
   task(
     "Webwood Venom",
     "Gilshalan Windwalker",
@@ -534,8 +572,12 @@ function lives.aelyndra()
   task(
     "Zenn's Bidding",
     "Zenn Foulhoof",
-    found("Nightsaber Pelt", 3),
-    function() slay("Nightsaber", 4, "Beast", "Cat") end
+    { found("Nightsaber Fang", 3), found("Strigid Owl Feather", 3), found("Webwood Spider Silk", 3) },
+    function()
+      slay("Nightsaber", 4, "Beast", "Cat")
+      slay("Strigid Owl", 4, "Beast", "Owl")
+      slay("Webwood Spider", 4, "Beast", "Spider")
+    end
   )
   task(
     "The Emerald Dreamcatcher",
@@ -579,16 +621,24 @@ function lives.mortis()
     bind = "Brill",
   })
   task("Rude Awakening", "Undertaker Mordo", nil, function() G.wait(5 * 60) end, "Shadow Priest Sarvis")
-  task("The Mindless Ones", "Shadow Priest Sarvis", slain("Mindless Zombie", 8), function()
-    slay("Mindless Zombie", 8, "Undead")
-    slay("Wretched Zombie", 8, "Undead")
-  end)
+  task(
+    "The Mindless Ones",
+    "Shadow Priest Sarvis",
+    { slain("Mindless Zombie", 8), slain("Wretched Zombie", 8) },
+    function()
+      slay("Mindless Zombie", 8, "Undead")
+      slay("Wretched Zombie", 8, "Undead")
+    end
+  )
   ding()
   task(
     "Night Web's Hollow",
     "Executor Arren",
-    slain("Young Night Web Spider", 10),
-    function() slay("Young Night Web Spider", 10, "Beast", "Spider") end
+    { slain("Young Night Web Spider", 10), slain("Night Web Spider", 8) },
+    function()
+      slay("Young Night Web Spider", 10, "Beast", "Spider")
+      slay("Night Web Spider", 8, "Beast", "Spider")
+    end
   )
   task("Scavenging Deathknell", "Deathguard Saltain", found("Scavenged Goods", 6), function() G.wait(15 * 60) end)
   ding()
@@ -601,19 +651,26 @@ function lives.mortis()
   learn("Shadow Word: Pain", "Power Word: Shield")
   ding()
   go("Brill")
-  task("Fields of Grief", "Apothecary Johaan", found("Tirisfal Pumpkin", 10), function() G.wait(20 * 60) end)
+  task(
+    "Fields of Grief",
+    "Deathguard Simmer",
+    found("Tirisfal Pumpkin", 10),
+    function() G.wait(20 * 60) end,
+    "Apothecary Johaan"
+  )
+  task("A New Plague", "Apothecary Johaan", found("Vile Fin Scale", 5), function() slay("Vile Fin Puddlejumper", 7) end)
   task(
     "Wanted: Maggot Eye",
-    "Executor Zygand",
-    slain("Maggot Eye", 1),
-    function() slay("Maggot Eye", 1, "Humanoid", nil, "elite") end
+    nil,
+    found("Maggot Eye's Paw", 1),
+    function() slay("Maggot Eye", 1, "Humanoid", nil, "elite") end,
+    "Executor Zygand"
   )
   wear(5, "Lightweight Chain Robe")
   ding()
   rest(9)
   go("The Trade Quarter", "Undercity")
   learn("Renew", "Mind Blast")
-  task("The Chill of Death", "Master Apothecary Faranell", found("Vile Fin Scale", 5), function() G.wait(10 * 60) end)
   ding()
   return G
 end
@@ -660,15 +717,15 @@ function lives.edric()
 
   -- The quest log: taken now, turned in later (not one task at a time).
   state.titles, state.objectives = {}, {}
-  local serial = 500
   local function accept(title, giver, objective)
-    serial = serial + 1
-    state.titles[serial], state.objectives[serial] = title, objective and { objective } or {}
+    local id = quests.id(title, giver, objective) or quests.made()
+    state.titles[id], state.objectives[id] = title, objective and { objective } or {}
     state.npc = giver
-    fire("QUEST_ACCEPTED", 1, serial)
+    fire("QUEST_ACCEPTED", 1, id)
+    fire("QUEST_LOG_UPDATE")
     state.npc = nil
     G.wait(MINUTE)
-    return serial
+    return id
   end
   local function turnIn(id, ender, copper)
     state.npc, state.questShown = ender, id
@@ -815,6 +872,17 @@ function lives.edric()
   go("Trade District")
   rest(10)
   return G
+end
+
+-- Each life's quests told by their own stories (addon/test/truth.lua): a quest
+-- made up for a life never borrows a real one's.
+local truth = dofile("addon/test/truth.lua")
+for name, life in pairs(lives) do
+  lives[name] = function(...)
+    local G = life(...)
+    truth(G.ns, quests.titles)(HearthtaleChar, name, function(where, msg) error(where .. ": " .. msg) end)
+    return G
+  end
 end
 
 return lives
