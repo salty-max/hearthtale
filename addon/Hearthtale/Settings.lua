@@ -7,7 +7,8 @@ local _, ns = ...
 
 -- (minimapAngle: the button's place around the minimap, in degrees; 200 is
 -- to the left, clear of the game's buttons and the siblings')
-local DEFAULTS = { chat = true, toast = true, minimapHidden = false, minimapAngle = 200 }
+-- (welcomed: the welcome page was seen, Welcome.lua)
+local DEFAULTS = { chat = true, toast = true, minimapHidden = false, minimapAngle = 200, welcomed = false }
 
 local function saved()
   if type(HearthtaleSettings) ~= "table" then HearthtaleSettings = {} end
@@ -27,6 +28,20 @@ end
 
 -- Does the game say whether this character is Hardcore?
 function ns.gameKnowsHardcore() return C_GameRules ~= nil and C_GameRules.IsHardcoreActive ~= nil end
+
+-- Where the game can't tell, the player says so (the Options page, the
+-- welcome): its death then closes the book. Never once the book is closed.
+function ns.isHardcore()
+  local c = ns.journal()
+  return c and c.hardcore == true or false
+end
+function ns.setHardcore(value)
+  local c = ns.journal()
+  if not c or c.closed then return end
+  c.hardcoreChosen = value or nil
+  c.hardcore = value or nil
+  if ns.refresh then ns.refresh() end
+end
 
 local category
 
@@ -68,17 +83,8 @@ function ns.createSettingsPanel()
       Settings.VarType.Boolean,
       "This character is Hardcore",
       false,
-      function()
-        local c = ns.journal()
-        return c and c.hardcore == true or false
-      end,
-      function(value)
-        local c = ns.journal()
-        if not c or c.closed then return end
-        c.hardcoreChosen = value or nil
-        c.hardcore = value or nil
-        if ns.refresh then ns.refresh() end
-      end
+      ns.isHardcore,
+      ns.setHardcore
     )
     Settings.CreateCheckbox(
       category,

@@ -36,6 +36,7 @@ for (const game of GAMES) {
     cpSync(join(SRC, f), join(dir, f));
   }
   cpSync(join(SRC, game.content), join(dir, "Data.lua"));
+  cpSync(join(SRC, "Media"), join(dir, "Media"), { recursive: true }); // (the logo, for the welcome page)
   const lines = toc.replace("@INTERFACE@", game.interface).split("\n");
   writeFileSync(join(dir, "Hearthtale.toc"), lines.filter((l) => !(ONLY[l.trim()] && ONLY[l.trim()] !== game.name)).join("\n"));
   if (!process.argv.includes("--no-zip")) {

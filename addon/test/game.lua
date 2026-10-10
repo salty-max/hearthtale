@@ -81,6 +81,7 @@ C_QuestLog = {
 QUEST_MONSTERS_KILLED = "%2$d/%3$d %1$s slain"
 QUEST_OBJECTS_FOUND = "%2$d/%3$d %1$s"
 C_Timer = { After = function(_, fn) fn() end }
+function InCombatLockdown() return false end
 SlashCmdList = {}
 
 -- Units: the player, a target, the quest giver, the party.
@@ -311,7 +312,11 @@ local function ui()
         end
       end
       if k == "Hide" then
-        return function(self) self.shown = false end
+        return function(self)
+          local was = self.shown
+          self.shown = false
+          if was and self.scripts.OnHide then self.scripts.OnHide(self) end
+        end
       end
       if k == "SetShown" then
         return function(self, v)
@@ -327,6 +332,12 @@ local function ui()
       end
       if k == "SetText" then
         return function(self, v) self.text = v end
+      end
+      if k == "SetChecked" then
+        return function(self, v) self.checked = v and true or false end
+      end
+      if k == "GetChecked" then
+        return function(self) return rawget(self, "checked") or false end
       end
       if k == "GetText" then
         return function(self) return rawget(self, "text") or "" end

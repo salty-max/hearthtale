@@ -27,4 +27,5 @@ Book.lua
 Hall.lua
 Save.lua
 Settings.lua
+Welcome.lua
 Minimap.lua

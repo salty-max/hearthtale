@@ -138,7 +138,8 @@ function ns.own(n) return char and char.notes and char.notes[n] or nil end
 -- ── /hearthtale ──────────────────────────────────────────────────────────────
 local USAGE = "/ht opens the journal; /ht hall the Hall of the Fallen; /ht title [N] TEXT names an entry, "
   .. "/ht note [N] TEXT writes in its margin (the last entry without N, no TEXT to remove it); /ht link CODE "
-  .. "links this character to hearthtale.app; /ht settings; /ht minimap shows or hides the button."
+  .. "links this character to hearthtale.app; /ht settings; /ht minimap shows or hides the button; /ht welcome "
+  .. "shows the welcome page again."
 
 -- A code from hearthtale.app, kept in the saved file: the next upload (after a
 -- logout or a /reload) carries it, and the site adds this book to that account.
@@ -194,6 +195,8 @@ SlashCmdList.HEARTHTALE = function(raw)
     if not ns.openSettings() then print(PREFIX .. "no settings page in this client.") end
   elseif msg == "hall" then
     ns.openHall()
+  elseif msg == "welcome" then
+    ns.showWelcome()
   elseif code then
     link(code)
   else

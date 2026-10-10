@@ -50,7 +50,7 @@ Books are private: only you see them. Ravenpost sends the book and who it belong
 
 ## The book
 
-`/hearthtale` (or `/ht`), or the book by the minimap, opens it: your portrait and who you are; the entries on the left by their titles (a skull marks a close call, a star a rare); the open one on the right. A second tab holds the Hall of the Fallen. When an entry is written, a line in chat links to it.
+`/hearthtale` (or `/ht`), or the book by the minimap, opens it: your portrait, with a skull beside it on Hardcore; the entries on the left by their titles (a skull marks a close call, a star a rare); the open one on the right, where and when it was lived under its title. A second tab holds the Hall of the Fallen. When an entry is written, a line in chat links to it.
 
 ## In English
 
@@ -65,7 +65,7 @@ Each game has its own file: pick the one for yours (the CurseForge app does it f
 
 ## Settings
 
-Options → AddOns → Hearthtale (or `/ht settings`, or right-click the minimap button): a line in chat for each entry, the alert when a book closes, the minimap button. Where the game can't tell whether a character is Hardcore, a setting lets you say so.
+The first time you log in with Hearthtale, a welcome page introduces the journal and offers its choices (`/ht welcome` shows it again). After that: Options → AddOns → Hearthtale (or `/ht settings`, or right-click the minimap button): a line in chat for each entry, the alert when a book closes, the minimap button. Where the game can't tell whether a character is Hardcore, a setting lets you say so.
 
 Other commands: `/ht title [N] TEXT` names entry N (the last one without N), `/ht note [N] TEXT` writes in its margin (no TEXT removes it); `/ht hall` opens the Hall of the Fallen; `/ht link CODE` links this character to your library on hearthtale.app; `/ht minimap` shows or hides the button.
 
