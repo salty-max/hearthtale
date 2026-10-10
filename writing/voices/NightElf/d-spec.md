@@ -1,0 +1,20 @@
+---
+kind: d-spec
+---
+- [class:WARRIOR spec:Arms !change] I had chosen the way of Arms, a discipline the Sentinels would recognise, though I made no claim to be one of them.
+- [class:WARRIOR spec:Fury !change] I had chosen Fury, and let the old wildness of my people show through the calm.
+- [class:WARRIOR spec:Protection !change] I had chosen Protection, to stand at the forest's edge like its oldest and most stubborn tree.
+- [class:HUNTER spec:Beast_Mastery !change] I had given myself to Beast Mastery, the trust of nightsaber and owl that my people have never mistaken for ownership.
+- [class:HUNTER spec:Marksmanship !change] I had chosen Marksmanship, my bow held as steady as any Sentinel's on the watch.
+- [class:HUNTER spec:Survival !change] I had chosen Survival, the forest's own patience turned to traps and waiting.
+- [class:ROGUE spec:Assassination !change] I had chosen Assassination, a quick end delivered in the silence my people move in by nature.
+- [class:ROGUE spec:Combat !change] I had chosen Combat, though a night elf's calm made it look a good deal less like brawling than it was.
+- [class:ROGUE spec:Subtlety !change] I had chosen Subtlety, which for my people is less a skill learned than a habit sharpened.
+- [class:PRIEST spec:Discipline !change] I had chosen Discipline, a faith that holds steady in the will, patient as the turning of the seasons.
+- [class:PRIEST spec:Holy !change] I had given myself to the Holy path, Elune's light turned to mending whatever the night had hurt.
+- [class:PRIEST spec:Shadow !change] I had turned to Shadow, the dark side of the moon, and hoped the goddess would not look away.
+- [class:DRUID spec:Balance !change] I had chosen Balance, the path of moon and stars, the sky's own light and the wild's together.
+- [class:DRUID spec:Feral_Combat !change] I had chosen Feral Combat, the strength of the Wild Gods borrowed one claw at a time.
+- [class:DRUID spec:Restoration !change] I had chosen Restoration, the green patience of the Emerald Dream turned to healing.
+- [change] I let {was} go and turned to {spec}, as unhurried about the change as the seasons are about theirs.
+- [change] After {was}, I turned to {spec}, and found the new path more familiar than I had expected.

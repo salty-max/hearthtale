@@ -1,0 +1,23 @@
+---
+kind: d-spec
+---
+- [class:WARRIOR spec:Arms !change] I had chosen the way of Arms, a soldier's craft that Lordaeron's dead remember better than its living ever did.
+- [class:WARRIOR spec:Fury !change] I had chosen Fury, and found a dead body could hold more anger than I had expected.
+- [class:WARRIOR spec:Protection !change] I had chosen Protection, and would stand in front of the living when it came to it, which is not without its irony.
+- [class:ROGUE spec:Assassination !change] I had chosen Assassination, the Royal Apothecary Society's poisons being far too good to leave in their bottles.
+- [class:ROGUE spec:Combat !change] I had chosen Combat, quick and graceless, the dead having no dignity left to protect.
+- [class:ROGUE spec:Subtlety !change] I had chosen Subtlety; passing unnoticed among the living came more easily than it ought to.
+- [class:PRIEST spec:Discipline !change] I had chosen Discipline, a faith of will over flesh, which suited flesh like mine.
+- [class:PRIEST spec:Holy !change] I had given myself to the Holy path, knowing the Light would burn me each time I called on it for someone else's sake.
+- [class:PRIEST spec:Shadow !change] I had turned to Shadow, which asked nothing of me that the grave had not already taught.
+- [class:MAGE spec:Arcane !change] I had given my study to the Arcane, the old craft of Dalaran's towers, which more than a few Forsaken learned in their first lives.
+- [class:MAGE spec:Fire !change] I had given my study to Fire, ever mindful of what fire does to dry old flesh.
+- [class:MAGE spec:Frost !change] I had given my study to Frost, the cold of the grave put to some use at last.
+- [class:WARLOCK spec:Affliction !change] I had chosen Affliction, curses that rot and wither, which a Forsaken understands better than most.
+- [class:WARLOCK spec:Demonology !change] I had chosen Demonology, and found demons no more unsettling than the master I had once been made to serve.
+- [class:WARLOCK spec:Destruction !change] I had chosen Destruction, fire enough to make the Scourge remember what they did to us.
+- [client:forever class:PALADIN spec:Holy !change] I had given myself to the Holy path, though the Light would burn me every time I turned it to mending.
+- [client:forever class:PALADIN spec:Protection !change] I had chosen Protection, a shield of Light that burns whoever bears it, held up for the living all the same.
+- [client:forever class:PALADIN spec:Retribution !change] I had chosen Retribution, the Light's judgement in dead hands, and I knew its fire would not spare me either.
+- [change] I gave up {was} for {spec}; changing what I am is something the Forsaken have had some practice at.
+- [change] {was} had served me, but death had taught me how little is permanent, and I took up {spec}.

@@ -1,0 +1,23 @@
+---
+kind: d-spec
+---
+- [class:WARRIOR spec:Arms !change] I had chosen the way of Arms, strength given shape and patience, as Thrall taught us strength should be.
+- [class:WARRIOR spec:Fury !change] I had chosen Fury, my own anger and nobody else's, which is no small thing for an orc to say.
+- [class:WARRIOR spec:Protection !change] I had chosen Protection, to put myself between the Horde's people and whatever would harm them.
+- [class:HUNTER spec:Beast_Mastery !change] I had given myself to Beast Mastery, a bond with a beast that the wolf-riders of my people have always understood.
+- [class:HUNTER spec:Marksmanship !change] I had chosen Marksmanship, the patience of a hunter who waits for a single clean shot.
+- [class:HUNTER spec:Survival !change] I had chosen Survival, the hard craft of a people who once learned to live on very little.
+- [class:ROGUE spec:Assassination !change] I had chosen Assassination, quick and final, with no wish to make anything suffer longer than it must.
+- [class:ROGUE spec:Combat !change] I had chosen Combat, open and direct, which sat better with me than skulking ever could.
+- [class:ROGUE spec:Subtlety !change] I had chosen Subtlety, the lesson some of my people learned in the camps: stay unseen, and live.
+- [class:SHAMAN spec:Elemental !change] I had chosen the Elemental way, the storm and earth that answered when Thrall called them back to our people.
+- [class:SHAMAN spec:Enhancement !change] I had chosen Enhancement, the spirits' strength in my own blows, the shaman's old place beside the warriors.
+- [class:SHAMAN spec:Restoration !change] I had chosen Restoration, asking the spirits to mend, which my people had too long forgotten they could ask.
+- [class:WARLOCK spec:Affliction !change] I had chosen Affliction, and knew better than most where the slow work of corruption can lead.
+- [class:WARLOCK spec:Demonology !change] I had chosen Demonology, demons bound and leashed, and never again the masters of my people.
+- [class:WARLOCK spec:Destruction !change] I had chosen Destruction, the fel fire that once enslaved my people, and meant to hold it rather than be held.
+- [client:forever class:MAGE spec:Arcane !change] I had given my study to the Arcane, an unusual path for an orc, and all the more mine for it.
+- [client:forever class:MAGE spec:Fire !change] I had given my study to Fire, which at least made no secret of what it was for.
+- [client:forever class:MAGE spec:Frost !change] I had given my study to Frost, the cold of Alterac where the Frostwolves endured, called down in a breath.
+- [change] I turned from {was} to {spec}, my own choice, freely made, which is still worth something to an orc.
+- [change] {was} had served me, but no orc was ever meant to stand still, and I took up {spec}.

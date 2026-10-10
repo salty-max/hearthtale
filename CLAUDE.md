@@ -204,7 +204,9 @@ An entry is the stretch looked back on at its rest, by what weighs most:
   life, a hunter's feigned death, a druid's Moonglade and Rebirth; once
   each, learned or a class quest's reward, which it then stands for); a
   class quest's reward; a specialization (`d-spec`, by its name as the game
-  gives it, `[spec:Fire]` and the class; `[change]` another after it, `{was}`);
+  gives it: each race's own take on each of its classes' trees, in its voice
+  file, `[class:MAGE spec:Fire]`; `[change]` another after it, `{was}`; the
+  shared lines only for a name none of those has);
   the highest level the game allows (`summit`);
 - the story, always: the deed itself, "I killed Hogger, …" (`d-why`,
   `d-why2`, `d-why-also`; a second story elsewhere says where, "Later, in
