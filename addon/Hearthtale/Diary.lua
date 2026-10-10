@@ -120,11 +120,13 @@ local function namesIn(text)
   return names
 end
 -- Whether a story says where it happened: the land it was done in, or a
--- place the game names (Names.lua: "Skull Rock", "the Deadmines"); it then
+-- place the game names (Names.lua: "Skull Rock", "the Deadmines", the places
+-- the stories name); it then
 -- takes no other place before it ("In Orgrimmar, I seized … in Skull Rock").
 local function namesPlace(text, zone)
   if zone and text:lower():find((zone:lower():gsub("^the ", "")), 1, true) then return true end
-  local the, bare = ns.names and ns.names.placeThe or {}, ns.names and ns.names.placeBare or {}
+  local known = ns.names or {}
+  local the, bare, named = known.placeThe or {}, known.placeBare or {}, known.placeNamed or {}
   local parts = {}
   for part in text:gmatch("[%w'%-]+") do
     table.insert(parts, part)
@@ -145,7 +147,7 @@ local function namesPlace(text, zone)
         j = j + 1
       end
       local name = table.concat(parts, " ", i, j):gsub("'s$", "")
-      if the[name] or bare[name] then return true end
+      if the[name] or bare[name] or named[name] then return true end
       i = j + 1
     else
       i = i + 1
@@ -511,7 +513,7 @@ local function storyOf(d, ch, f, thin)
   if told[1] and all[2] and told[1].w == 3 and (all[2].w == 3 or (deed(all[2]) and weighty >= 3)) then
     told[2] = all[2]
   end
-  if told[2] and all[3] and (all[3].w == 3 or deed(all[3])) and weighty >= 4 then told[3] = all[3] end
+  if told[2] and all[3] and all[3].w == 3 and weighty >= 4 then told[3] = all[3] end
   table.sort(told, function(x, y) return x.i < y.i end) -- (in the order they happened)
   return told
 end
@@ -713,11 +715,14 @@ local function entry(d, n, ch)
     elseif m.k == "initiation" then
       text = sayFresh("d-initiation", key, {}, { [m.totem] = true }, nil, { [m.totem] = true })
     elseif m.k == "calling" then
+      -- (a way to a city: home only when it is my people's, or our hosts')
+      local place = m.spell:match("^Teleport: (.+)$") or m.spell:match("^Portal: (.+)$")
+      local city = place and (place == "Stormwind" and "Stormwind City" or place)
       text = sayFresh(
         "d-calling",
         key,
-        { spell = m.spell, place = m.spell:match("^Teleport: (.+)$") or m.spell:match("^Portal: (.+)$") },
-        { [m.tag] = true },
+        { spell = m.spell, place = place },
+        { [m.tag] = true, home = city and homeOf(race, city) ~= nil or nil },
         nil,
         { [m.tag] = true }
       )
@@ -775,6 +780,13 @@ local function entry(d, n, ch)
   local chains, ends = ns.knowledge and ns.knowledge.chains or {}, ns.knowledge and ns.knowledge.ends or {}
   local also
   local storyTold, companyTold = false, false
+  local storyAt = nil -- (where the last of the story's sentences goes)
+  local function storyLast()
+    for _, o in ipairs(out) do
+      if storyAt and o.at > storyAt then return false end
+    end
+    return storyAt ~= nil
+  end
   local storied = {} -- (the stories told: a boss whose end one tells isn't told again)
   if #story > 0 then
     local text
@@ -821,6 +833,7 @@ local function entry(d, n, ch)
     end
     local told = add(text, true, first0 or story[1].i)
     storyTold = told
+    if told then storyAt = first0 or story[1].i end
     if told then
       table.insert(storied, story[1].text)
       if #story == 2 and not also then table.insert(storied, story[2].text) end
@@ -841,6 +854,7 @@ local function entry(d, n, ch)
         function(line) return line:match("^(%a+ %a+)") ~= opened end
       )
       if add(said, false, next.i) then
+        storyAt = math.max(storyAt or next.i, next.i)
         out[#out].where = where2
         table.insert(storied, next.text)
         opened = said:match("^(%a+ %a+)")
@@ -862,6 +876,7 @@ local function entry(d, n, ch)
       )
       if add(word, false, first0 and -1.75 or story[1].i + 0.5) then -- (right after its story)
         d.reacted[word], d.reactedAt = true, n
+        storyAt = math.max(storyAt or -2, first0 and -1.75 or story[1].i + 0.5)
         out[#out].follows = true -- (never the first of a paragraph)
       end
     end
@@ -1543,7 +1558,7 @@ local function entry(d, n, ch)
         )
       then
         d.fireSeen, d.fireAt = true, n -- (the fire the entry ends at)
-      elseif not (storyTold and n % 3 == 2 and #out >= 4) then -- (one entry in three ends on its story)
+      elseif not (storyTold and n % 3 == 2 and #out >= 4 and storyLast()) then -- (one entry in three ends on its story)
         add(
           sayFresh("rest", "last", here({ place = mid(e.place) }, e.place), {
             fire = e.how == "campfire" or nil,
