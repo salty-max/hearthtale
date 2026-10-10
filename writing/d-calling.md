@@ -9,7 +9,7 @@ kind: d-calling
 - [spell:Redemption] I learned Redemption, and with it the power to call a fallen friend back to the Light.
 - [spell:Redemption !race:Scourge] Redemption was mine at last; no companion of mine need stay fallen while I could stand.
 - [spell:Redemption race:Scourge] Redemption was mine, and of all paladins I knew best what it is to be called back.
-- [spell:Poisons] I learned to brew poisons, and my blades stopped being honest.
+- [spell:Poisons] I learned to brew poisons, and my blades need never be honest again.
 - [spell:Poisons] Poisons were mine to use now, a rogue's patience distilled into a vial.
 - [spell:Desperate_Prayer] I learned Desperate Prayer, the plea my people's priests keep for the moment nothing else is left.
 - [spell:Desperate_Prayer] Desperate Prayer was mine now, a prayer for my own skin, and I hoped to need it rarely.
@@ -18,9 +18,9 @@ kind: d-calling
 - [spell:Fear_Ward] I could ward a friend against fear now, a gift my people's priests set great store by.
 - [spell:Fear_Ward] Fear Ward was mine, and courage became something I could hand to someone else.
 - [spell:Starshards] Starshards fell at my call now, Elune's own light turned against her enemies.
-- [spell:Starshards] I learned to call down Starshards, and felt the night sky answer.
+- [spell:Starshards] I learned to call down Starshards, and the night sky was mine to call on.
 - [spell:Elune's_Grace] Elune's Grace was mine, and I felt the goddess's care in it as much as any power.
-- [spell:Elune's_Grace] I learned Elune's Grace, and blows found me harder to reach beneath her light.
+- [spell:Elune's_Grace] I learned Elune's Grace, and knew blows would find me harder to reach beneath her light.
 - [spell:Touch_of_Weakness] I learned Touch of Weakness, and gave a little of my own frailty to whoever struck me.
 - [spell:Touch_of_Weakness] Touch of Weakness was mine now; anyone who laid a hand on me would come away the poorer.
 - [spell:Devouring_Plague] Devouring Plague was mine now, the old sickness turned to my own use.
@@ -30,7 +30,7 @@ kind: d-calling
 - [spell:Shadowguard] Shadowguard was mine now, the loa's shadow wrapped close around me.
 - [spell:Shadowguard] I learned Shadowguard, and shadows gathered about me to strike back at whoever came close.
 - [teleport] I learned to step to {place} in a single breath, and the road home was never long again.
-- [teleport] With {spell} I could be home before a meal went cold, and I tested it more than once.
+- [teleport] With {spell} I could be home before a meal went cold, and the thought made every long road a little shorter.
 - [teleport] I learned {spell}, and the long walk home became a matter of a few words.
 - [spell:Teleport:_Moonglade] I learned the way to Moonglade, the druids' own sanctuary, and could go there in a breath whenever I needed its quiet.
 - [spell:Teleport:_Moonglade] Moonglade was a breath away now, and I knew where to go when the world asked too much of me.
@@ -57,14 +57,14 @@ kind: d-calling
 - [spell:Devotion_Aura] Devotion Aura was my first aura, a quiet strength I could share with anyone at my side.
 - [spell:Retribution_Aura] I learned Retribution Aura, and whoever struck me now paid a little for it in holy fire.
 - [spell:Retribution_Aura] With Retribution Aura I could choose what my presence carried into a fight, and I chose to make it costly.
-- [spell:Divine_Shield] I learned Divine Shield, and for a few moments nothing in the world could touch me.
-- [spell:Divine_Shield] Divine Shield was mine, the Light closed around me like a wall when I most needed one.
-- [class:WARRIOR spell:Dual_Wield] I learned to fight with a weapon in each hand, and my blows came twice as fast.
+- [spell:Divine_Shield] I learned Divine Shield, and knew that for a few moments, when it mattered, nothing in the world could touch me.
+- [spell:Divine_Shield] Divine Shield was mine, a wall of Light I could raise when I most needed one.
+- [class:WARRIOR spell:Dual_Wield] I learned to fight with a weapon in each hand, and wanted a second weapon at once to try it with.
 - [class:WARRIOR spell:Dual_Wield] Dual wielding was mine now, and I stopped needing a shield to feel ready.
 - [class:ROGUE spell:Dual_Wield] I learned to fight with a blade in each hand, the way a rogue is meant to.
-- [class:ROGUE spell:Dual_Wield] A second blade in my off hand changed every fight, and I wondered how I had managed with one.
+- [class:ROGUE spell:Dual_Wield] I learned to carry a second blade, and could hardly wait to put one in my off hand.
 - [spell:Whirlwind] I learned Whirlwind, and could strike everything around me in a single turn.
-- [spell:Whirlwind] Whirlwind was mine, a whole ring of foes answered in one sweep of steel.
+- [spell:Whirlwind] Whirlwind was mine, a way to answer a whole ring of foes in one sweep of steel.
 - [spell:Pick_Lock] I learned to pick locks, and a closed chest stopped being the end of the matter.
 - [spell:Pick_Lock] Pick Lock was mine now; doors and strongboxes became questions with answers.
 - [spell:Blind] I learned Blind, a pinch of powder that could take a foe out of a fight entirely.

@@ -36,7 +36,7 @@ I continued in Razor Hill, wondering what the lost world of Draenor would have m
 
 ## Entry 1 (levels 1 to 5)
 
-I began in Shadowglen, with Dolanaar the farthest place I could yet picture and the rest of Kalimdor no more than names across the water. Moonlight silvered the leaves of Teldrassil while owls called overhead. I listened between my footfalls, unwilling to hurry through so much quiet. I took Fel Moss from the grells that threatened Shadowglen, confirming Tarindrella's fear that its corruption was spreading through Teldrassil. Moonfire was mine now, and the next fight would not go quite like the last. Rain scented the houses around the moonwell in Dolanaar. The sentinels kept their patient watch on the road, and I let my guard down a little. I paused in Dolanaar, and let my strength return as slowly as a tree regrows its bark.
+I began in Shadowglen, with Dolanaar the farthest place I could yet picture and the rest of Kalimdor no more than names across the water. Moonlight silvered the leaves of Teldrassil while owls called overhead. I listened between my footfalls, unwilling to hurry through so much quiet. I took Fel Moss from the grells that threatened Shadowglen, confirming Tarindrella's fear that its corruption was spreading through Teldrassil. Moonfire was mine now, and the next fight would not go quite like the last. Leaves and still water scented the houses around the moonwell in Dolanaar. The sentinels kept their patient watch on the road, and I let my guard down a little. I paused in Dolanaar, and let my strength return as slowly as a tree regrows its bark.
 
 ## Entry 2 (levels 5 to 6)
 

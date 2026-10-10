@@ -102,9 +102,11 @@ its decisions: PLAN.md (the full chapter prose was dropped on 10 October
   `UnitTokenFromGUID`, else from a creature of the same kind seen; and a
   quest's count gone up for a creature no kill told: another's blow on one I
   tagged, which the game credits me with) and `Life.lua` (company, dungeons,
-  learning, trades, gear, loot, pets, a warlock's first demon of each kind
-  and a druid's first form (learned in the journal), the first bag, the first
-  gold piece, the first ride, money). A game function is
+  learning, trades, gear, loot, pets (tamed: soon after a Tame Beast; a new
+  one otherwise came from the stable, noted quietly), a warlock's first demon
+  of each kind and a druid's first form (learned in the journal), the first
+  bag, the first gold piece, the first ride (riding known at the journal's
+  first look: ridden before), money). A game function is
   checked before use only where the clients differ (a `C_` namespace, a
   function a client lacks); the test game (`addon/test/game.lua`) has every
   one the addon calls,
@@ -272,7 +274,9 @@ name.
   names it too, for sentences without a verb. A slot never doubles the word
   before it ("I went on {at}" with "on Zephras Isle" is refused).
 - Tags are conditions: night, hc, high (level 40+), low (10 and under: no
-  hunter's pet yet), first, elite, one, two, town, home, hosts; for a death:
+  hunter's pet yet), late (a journal begun after the life's first steps: no
+  land, city or fire told as seen for the first time, the record can't know
+  it; every such line is [!late]), first, elite, one, two, town, home, hosts; for a death:
   foe, fall, drowning, lava, nature, beast, people, player, inside; race:X,
   class:X, faction:x, client:x; "!night" = not at night. A tagged sentence
   is preferred while fresh; a life's first page prefers its class's own

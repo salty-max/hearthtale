@@ -1,11 +1,11 @@
 ---
 kind: d-gear
 ---
-- [!made !held !trinket !found] I put on {item}, and felt the difference before the first fight was over.
-- [!made !held !trinket !found] I wore {item} for the first time, a better fit for the road than anything before.
-- [!made !held !trinket] I put on {item}, finer than anything I had worn until then.
+- [!made !held !trinket !found] I put on {item}, and wanted a fight just to see how it would serve me.
+- [!made !held !trinket !found] I wore {item} for the first time, and walked a little taller for it.
+- [!made !held !trinket] I put on {item}, and felt readier for whatever the road had next.
 - [!made !held !trinket one] I put on {item}, and caught myself looking down at it more than once.
-- [!made held !found] I took up {item}, the best weapon my hands had known yet.
+- [!made held !found] I took up {item}, and my hand closed on it as if it had been waiting for me.
 - [!made held] I fought with {item} for the first time, and liked the weight of the change.
 - [!made trinket] I began carrying {item}, a small thing that counted for more than its size.
 - [made !held] I put on {item}, made with my own hands, and wore my own work with more pride than I let show.

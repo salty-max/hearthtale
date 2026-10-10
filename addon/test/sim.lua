@@ -323,8 +323,21 @@ J.class = "HUNTER"
 state.pet = { name = "Grrr", family = "Bear" }
 fire("UNIT_PET", "player")
 check(J.pets and J.pets.Grrr and #moments("tame") == 0, "the pet at hand when the journal first looks: noted")
+state.pet = { name = "Old Bessie", family = "Boar" }
+fire("UNIT_PET", "player")
+check(
+  J.pets["Old Bessie"] and #moments("tame") == 0,
+  "a pet new to the journal, no taming before it: from the stable, noted"
+)
+fire("UNIT_SPELLCAST_SUCCEEDED", "player", "Cast-3-4170-0-1-1515-0001", 1515)
+state.pet = { name = "Saltwater Snapjaw", family = "Crocolisk" }
+fire("UNIT_PET", "player")
 state.pet = { name = "Snapjaw", family = "Crocolisk" }
 fire("UNIT_PET", "player")
+check(
+  #moments("tame") == 1 and moments("tame")[1].name == "Snapjaw",
+  "a pet tamed after a Tame Beast: once, by the name given it soon after"
+)
 state.pet.dead = true
 fire("UNIT_HEALTH", "pet")
 fire("UNIT_HEALTH", "pet")
@@ -730,6 +743,7 @@ state.guid, state.level, state.questsDone, state.hardcore =
   "Player-6113-0FFFFFF0", 23, { [1] = true, [2] = true, [3] = true }, false
 login()
 local P = HearthtaleChar.prologue
+check(HearthtaleChar.rode == true, "a journal begun with riding known: ridden before, no first ride to tell")
 fire("TIME_PLAYED_MSG", 86400, 3600)
 fire("TIME_PLAYED_MSG", 90000, 7200)
 check(

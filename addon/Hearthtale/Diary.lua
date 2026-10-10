@@ -231,6 +231,8 @@ local function gather(d, c, ch)
   local bare = ns.names and ns.names.creatureBare or {}
   local log = ch.log or {}
   local capital = CAPITAL[c.race or ""]
+  -- (an entry begun in the city: no arrival in it to tell)
+  if ch.start and ch.start.zone == capital then d.capitalSeen = true end
   local level = ch.start and ch.start.level or 1
   local looted = {} -- [an item's id]: found in this stretch
   for i, m in ipairs(log) do
@@ -873,6 +875,7 @@ local function entry(d, n, ch)
       say("d-land", "capital", { lands = mid(f.capital.zone) }, {
         one = true,
         capital = true,
+        late = d.late,
         home = kind == "home" or false,
         hosts = kind == "hosts" or nil,
       }, nil, { capital = true }),
@@ -1086,6 +1089,7 @@ local function entry(d, n, ch)
     local told = more(
       sayFresh("d-land", "land", { lands = listing(named) }, {
         one = #named == 1 or nil,
+        late = d.late,
         town = (#named == 1 and W.CITIES[lands[1]]) or nil,
         home = landTag == "home" or false,
         hosts = landTag == "hosts" or nil,
@@ -1367,7 +1371,13 @@ function ns.writeBook(c)
     threads = {}, -- [a chain's first quest] = { n, giver, ender }: the last entry that told one of it
     pets = {}, -- [name] = { said = the last entry that named it }: a pet met before
     summoned = {}, -- [a demon's kind] = the entry a class quest taught its summoning
+    -- (a journal begun after the life's first steps: no land, no city told as
+    -- seen for the first time, the record can't know it)
+    late = (c.began and c.began.level or 1) > 1,
   }
+  if d.late then
+    d.away, d.fireSeen = true, true
+  end -- (nor a first fire, nor a first ground below the islands)
   d.book.ownGap = 18 -- (one line a kind an entry: the race's own come back later than a chapter's)
   for _, way in ipairs(CLASS_FIGHT[c.class or ""] or {}) do
     d.ways[way] = true
