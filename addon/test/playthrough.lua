@@ -242,6 +242,32 @@ local DEMONS = {
 local FORMS = { { 10, "bear" }, { 16, "aquatic" }, { 20, "cat" }, { 30, "travel" } }
 -- (a shaman's initiations: the element's totem, the end of its class quests)
 local TOTEMS = { { 4, "earth" }, { 10, "fire" }, { 20, "water" }, { 30, "air" } }
+-- (the spells that define a class, from its quests or its trainer, at the
+-- original game's levels: a warrior's stances, a priest's own people's
+-- prayers, a mage's way home)
+local CALLINGS = {
+  WARRIOR = { { 10, "Defensive Stance" }, { 30, "Berserker Stance" } },
+  PALADIN = { { 12, "Redemption" } },
+  ROGUE = { { 20, "Poisons" } },
+  DRUID = { { 10, "Teleport: Moonglade" } },
+}
+local PRAYERS = {
+  Human = { { 10, "Desperate Prayer" }, { 20, "Feedback" } },
+  Dwarf = { { 10, "Desperate Prayer" }, { 20, "Fear Ward" } },
+  NightElf = { { 10, "Starshards" }, { 20, "Elune's Grace" } },
+  Scourge = { { 10, "Touch of Weakness" }, { 20, "Devouring Plague" } },
+  Troll = { { 10, "Hex of Weakness" }, { 20, "Shadowguard" } },
+}
+local HOME = {
+  Human = "Stormwind",
+  Dwarf = "Ironforge",
+  Gnome = "Ironforge",
+  NightElf = "Darnassus",
+  Orc = "Orgrimmar",
+  Troll = "Orgrimmar",
+  Scourge = "Undercity",
+  Tauren = "Thunder Bluff",
+}
 local PET_NAMES = { "Bristle", "Grimfang", "Thistle", "Ember", "Dusk", "Rook" }
 
 -- (a creature Classic left unused and Forever gave back a role: by its name)
@@ -535,6 +561,19 @@ local function play(race, class, side)
     elseif class == "HUNTER" and level >= 10 and not pet and lastBeast then
       pet, petFamily = PET_NAMES[(#c.chapters % #PET_NAMES) + 1], lastBeast
       moment("tame", { name = pet, family = petFamily })
+    end
+    -- a spell that defines the class, as the game would teach it
+    local callings = CALLINGS[class] or (class == "PRIEST" and PRAYERS[race])
+    if class == "MAGE" then
+      local home = HOME[race] or (side == "horde" and "Orgrimmar" or "Stormwind")
+      callings = { { 20, "Teleport: " .. home } }
+    end
+    for _, k in ipairs(callings or {}) do
+      if level >= k[1] and not powers[k[2]] then
+        powers[k[2]] = true
+        wait(10 * 60)
+        moment("learned", { spells = { k[2] } })
+      end
     end
   end
   local function levelUp()

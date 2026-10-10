@@ -16,13 +16,13 @@ After that, I destroyed Araj the Summoner, the lich who held Andorhal, and took 
 
 ## Entry 2 (levels 4 to 7)
 
-The gnomes of Tinker Town knew better than anyone what a lost home costs, and I set out in Anvilmar with my own all the dearer for it. I began to learn skinning. I made a start at leatherworking. Both Timber and Vagash fell to me, and I came away from each with the sound of it still ringing in my ears.
+The gnomes of Tinker Town knew better than anyone what a lost home costs, and I set out in Anvilmar with my own all the dearer for it. I began to learn skinning. I made a start at leatherworking. Wearing a Handstitched Leather Vest that I had made myself was a different pleasure from wearing anything found or given.
 
-Hunter's Mark is mine now, and no quarry of mine will vanish into the crowd. I smelled the Thunderbrew Distillery before I had properly reached Kharanos. Smoke rose above the houses, where dwarves and gnomes crowded together against the cold, and I felt my shoulders ease at the sight. I stopped in Kharanos, and found that sitting still took less practice than I had feared.
+Both Timber and Vagash fell to me, and I came away from each with the sound of it still ringing in my ears. Hunter's Mark is mine now, and no quarry of mine will vanish into the crowd. I smelled the Thunderbrew Distillery before I had properly reached Kharanos. Smoke rose above the houses, where dwarves and gnomes crowded together against the cold, and I felt my shoulders ease at the sight. I stopped in Kharanos, and found that sitting still took less practice than I had feared.
 
 ## Entry 3 (levels 7 to 9)
 
-In Dun Morogh, I delivered the invisibility liquor to Maybell, so she could slip away from the Maclure Vineyards to see Tommy Joe. Thorgrim shared the road with me for a while. I tamed my first companion, a boar I called Bristle, and the road was never as lonely after. Bristle fell in Amberstill Ranch. Out here, it could as easily have been me. I came into Loch Modan for the first time, and the stonework there knew my people's hands even if the roads did not yet know my feet. The blue water of Loch Modan lay still behind the Stonewrought Dam. I knew dwarves built on a grand scale, but the weight of all that water made me stop and look.
+In Dun Morogh, I delivered the invisibility liquor to Maybell, so she could slip away from the Maclure Vineyards to see Tommy Joe. I tamed my first companion, a boar I called Bristle, and the road was never as lonely after. The first fire I warmed myself at in Amberstill Ranch taught me how much a little warmth can do for a tired body. Bristle fell in Amberstill Ranch. Out here, it could as easily have been me. I came into Loch Modan for the first time, and the stonework there knew my people's hands even if the roads did not yet know my feet. The blue water of Loch Modan lay still behind the Stonewrought Dam. I knew dwarves built on a grand scale, but the weight of all that water made me stop and look.
 
 # Grashnak, an orc warrior
 

@@ -91,7 +91,8 @@ its decisions: PLAN.md (the full chapter prose was dropped on 10 October
   files sharing `ns.record`: `Record.lua` (the record's schema, the chapters
   and their moments, the logouts, places, levels; a logout settled at the
   next login: under 30 minutes away it's no break, nothing told; indoors
-  without an inn, a night `inside`), `Quests.lua`, `Combat.lua` (the
+  without an inn, a night `inside`; a stop by a fire, one of Forever's camps
+  or not, and the party at it), `Quests.lua`, `Combat.lua` (the
   creatures met, kills, close calls, death and the way back. Kills: the
   killing blow of mine, my pet's or my group's, from `PARTY_KILL` (killer,
   victim), an event of
@@ -163,7 +164,11 @@ An entry is the stretch looked back on at its rest, by what weighs most:
   when a class quest taught its summoning before, merged when the same
   stretch); a form; a companion (`d-tame`, `[first]` or another); a shaman's
   initiation into an element (`d-initiation`, once an element, from the
-  quest that gives its totem); a class quest's reward;
+  quest that gives its totem); a spell that defines the class (`d-calling`,
+  `W.callingOf`: a warrior's stances, a paladin's Redemption, a rogue's
+  poisons, a priest's own people's prayers, a mage's first way home, a
+  druid's way to Moonglade; once each, learned or a class quest's reward,
+  which it then stands for); a class quest's reward;
 - the story, always: the deed itself, "I killed Hogger, …" (`d-why`,
   `d-why2`, `d-why-also`; a second story elsewhere says where, "Later, in
   Westfall, I …", unless the sentence before named it); a class's own quest
@@ -179,7 +184,12 @@ An entry is the stretch looked back on at its rest, by what weighs most:
   there, not again among the foes), a dungeon and its end ("we" when
   grouped), a capital's first sight, a Skyborne's first ground below the
   islands (after the island's work that took them there), players slain, a
-  raid, a find, a pet lost;
+  raid, a find (epic and better), a pet lost; a piece of gear worn for the
+  first time (`d-gear`: below level 30 a blue one or one I made, an epic one
+  at any level; one an entry, made first; with its find when looted in the
+  same stretch); a stop by a fire (`d-camp`: one shared with companions, the
+  life's first, one of Forever's camps now and then; `[last]` the fire the
+  entry ends at, in place of the rest);
 - a place seen for the first time in a life, described right after it is
   told (writing/scenery/: a new land, the first of an entry's with a
   description; a capital; a dungeon) and the town an entry ends in, before

@@ -414,6 +414,22 @@ fire("UNIT_AURA", "player")
 check(#moments("campfire") == 1, "a campfire's warmth: one moment per stop")
 state.auras[7353] = nil
 fire("UNIT_AURA", "player")
+-- One of Forever's camps, with company: who sat at it with me.
+do
+  local party, sub = state.party, state.sub
+  state.party, state.sub =
+    { party1 = { name = "Thessaly", class = "PRIEST", guid = "Player-1-00CC" } }, "Gol'Bolar Quarry"
+  state.auras[1229739] = true
+  fire("UNIT_AURA", "player")
+  local stop = moments("campfire")[2]
+  check(
+    stop and stop.camp and stop.with and stop.with[1] == "Thessaly" and not moments("campfire")[1].camp,
+    "a stop at one of Forever's camps: a camp, and who sat at it with me"
+  )
+  state.auras[1229739] = nil
+  fire("UNIT_AURA", "player")
+  state.party, state.sub = party, sub
+end
 
 -- The book of that chapter, its diary entry, written as it happens.
 local book = ns.writeBook(J)

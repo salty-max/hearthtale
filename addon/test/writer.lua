@@ -647,6 +647,160 @@ for place in pairs(ns.data.scenery or {}) do
   end
 end
 
+-- Gear worn for the first time, below level 30: a blue piece, one I made,
+-- a weapon, a trinket, one found in the same stretch; an epic one at any level.
+local WORN = {
+  { "Wolf Fang Necklace", 3 },
+  { "Cuirboulle Gloves", 3, made = true },
+  { "Smite's Mighty Hammer", 3, held = true },
+  { "Kodo Hunter's Bracers", 2, made = true },
+  { "Rune of Duty", 3, trinket = true },
+  { "Blackened Defias Armor", 3, found = true },
+  { "Archeus", 3, held = true, made = true },
+  { "Silver-thread Cloak", 3, found = true },
+}
+for r, race in ipairs(RACES) do
+  for life = 1, 3 do
+    local chapters = {}
+    for n = 1, #WORN do
+      local w = WORN[(n + life + r) % #WORN + 1]
+      local link = "|cff0070dd|Hitem:" .. (100 + n) .. "|h[" .. w[1] .. "]|h|r"
+      local log = {}
+      if w.found then
+        table.insert(log, { k = "loot", link = link, quality = w[2], zone = "Westfall", sub = "Moonbrook", at = 50 })
+      end
+      table.insert(log, {
+        k = "gear",
+        link = link,
+        quality = w[2],
+        made = w.made,
+        held = w.held,
+        trinket = w.trinket,
+        zone = "Westfall",
+        sub = "Moonbrook",
+        at = 100,
+      })
+      chapters[n] = {
+        start = { level = 12 + n, zone = "Westfall", sub = "Moonbrook" },
+        kills = {},
+        quests = 0,
+        played = 3600,
+        gold = 0,
+        log = log,
+        ended = { level = 12 + n, zone = "Westfall", sub = "Sentinel Hill", place = "Sentinel Hill", how = "rest" },
+      }
+    end
+    local c = { guid = ("worn-%s-%d"):format(race, life), race = race, class = COMBOS[race][1], chapters = chapters }
+    if race == "Skyborne" then c.faction = life % 2 == 0 and "horde" or "alliance" end
+    for i, ch in ipairs(ns.writeBook(c).chapters) do
+      inspect(race .. " worn " .. i, ch.text)
+    end
+  end
+end
+
+-- A class's defining spells: learned from a trainer, or from a class quest
+-- (a priest's own people's prayer); a mage's first way home, once.
+local CALLED = {
+  WARRIOR = { "Defensive Stance", "Berserker Stance" },
+  PALADIN = { "Redemption" },
+  ROGUE = { "Poisons" },
+  DRUID = { "Teleport: Moonglade" },
+  MAGE = { "Teleport: Stormwind", "Teleport: Orgrimmar" },
+  PRIEST = {
+    "Desperate Prayer",
+    "Feedback",
+    "Fear Ward",
+    "Starshards",
+    "Elune's Grace",
+    "Touch of Weakness",
+    "Devouring Plague",
+    "Hex of Weakness",
+    "Shadowguard",
+  },
+}
+for class, spells in pairs(CALLED) do
+  for _, race in ipairs(RACES) do
+    for life = 1, 3 do
+      local chapters = {}
+      for n, spell in ipairs(spells) do
+        chapters[n] = {
+          start = { level = 10 + n, zone = "Duskwood", sub = "Darkshire" },
+          kills = {},
+          quests = 0,
+          played = 3600,
+          gold = 0,
+          log = { { k = "learned", spells = { spell }, zone = "Duskwood", sub = "Darkshire", at = 100 } },
+          ended = { level = 10 + n, zone = "Duskwood", sub = "Darkshire", place = "Darkshire", how = "rest" },
+        }
+      end
+      local c =
+        { guid = ("called-%s-%s-%d"):format(class, race, life), race = race, class = class, chapters = chapters }
+      if race == "Skyborne" then c.faction = life % 2 == 0 and "horde" or "alliance" end
+      local book = ns.writeBook(c)
+      local teleports = 0
+      for i, ch in ipairs(book.chapters) do
+        inspect(race .. " " .. class .. " calling " .. i, ch.text)
+        if
+          ch.text:find("Teleport: ", 1, true)
+          or ch.text:find("single breath", 1, true)
+          or ch.text:find("a few words", 1, true)
+        then
+          teleports = teleports + 1
+        end
+      end
+      if class == "MAGE" and teleports > 1 then problem(race .. " MAGE", "a way home told twice", "") end
+    end
+  end
+end
+
+-- A stop by a fire: the first of a life, one shared with one or several, a
+-- camp's, by night; and an entry ending at a fire, alone, shared, at a camp.
+for r, race in ipairs(RACES) do
+  for life = 1, 4 do
+    local chapters = {}
+    local stops = {
+      { with = nil },
+      { with = { "Korrak" } },
+      { with = { "Korrak", "Thessaly" } },
+      { camp = true },
+      { night = true },
+      { camp = true, with = { "Halvard" } },
+      {},
+      { camp = true },
+    }
+    for n = 1, #stops * 2 do
+      local stop = stops[(n + life + r) % #stops + 1]
+      local last = n % 2 == 0 -- (every other entry ends at its fire)
+      chapters[n] = {
+        start = { level = 20, zone = "The Barrens", sub = "The Crossroads" },
+        kills = {},
+        quests = 0,
+        played = 3600,
+        gold = 0,
+        log = {
+          {
+            k = "campfire",
+            camp = stop.camp,
+            with = stop.with,
+            night = stop.night,
+            zone = "The Barrens",
+            sub = "Camp Taurajo",
+            at = 100,
+          },
+        },
+        ended = last
+            and { level = 20, zone = "The Barrens", sub = "Camp Taurajo", place = "Camp Taurajo", how = "campfire" }
+          or { level = 20, zone = "The Barrens", sub = "The Crossroads", place = "The Crossroads", how = "rest" },
+      }
+    end
+    local c = { guid = ("fires-%s-%d"):format(race, life), race = race, class = COMBOS[race][1], chapters = chapters }
+    if race == "Skyborne" then c.faction = life % 2 == 0 and "horde" or "alliance" end
+    for i, ch in ipairs(ns.writeBook(c).chapters) do
+      inspect(race .. " fire " .. i, ch.text)
+    end
+  end
+end
+
 -- A find of note (epic and above), one an entry: told by its name.
 for _, race in ipairs(RACES) do
   for life = 1, 4 do

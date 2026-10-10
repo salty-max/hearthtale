@@ -1,0 +1,36 @@
+---
+kind: d-calling
+---
+- [spell:Defensive_Stance] I learned Defensive Stance, and found there was more to a fight than hitting first.
+- [spell:Defensive_Stance] Defensive Stance taught me to stand where the blows would land, and to make that my work.
+- [spell:Defensive_Stance] With Defensive Stance I could plant my feet and hold, and I began to understand what a shield wall is for.
+- [spell:Berserker_Stance] I took up Berserker Stance, and learned how much fury a body can hold without breaking.
+- [spell:Berserker_Stance] Berserker Stance was the last of a warrior's three ways of standing, and the hungriest of them.
+- [spell:Redemption] I learned Redemption, and with it the power to call a fallen friend back to the Light.
+- [spell:Redemption !race:Scourge] Redemption was mine at last; no companion of mine need stay fallen while I could stand.
+- [spell:Redemption race:Scourge] Redemption was mine, and of all paladins I knew best what it is to be called back.
+- [spell:Poisons] I learned to brew poisons, and my blades stopped being honest.
+- [spell:Poisons] Poisons were mine to use now, a rogue's patience distilled into a vial.
+- [spell:Desperate_Prayer] I learned Desperate Prayer, the plea my people's priests keep for the moment nothing else is left.
+- [spell:Desperate_Prayer] Desperate Prayer was mine now, a prayer for my own skin, and I hoped to need it rarely.
+- [spell:Feedback] Feedback was mine now, a way to turn an enemy's magic back on its caster.
+- [spell:Feedback] I learned Feedback, and an enemy's spells became a risk to the one who cast them.
+- [spell:Fear_Ward] I could ward a friend against fear now, a gift my people's priests set great store by.
+- [spell:Fear_Ward] Fear Ward was mine, and courage became something I could hand to someone else.
+- [spell:Starshards] Starshards fell at my call now, Elune's own light turned against her enemies.
+- [spell:Starshards] I learned to call down Starshards, and felt the night sky answer.
+- [spell:Elune's_Grace] Elune's Grace was mine, and I felt the goddess's care in it as much as any power.
+- [spell:Elune's_Grace] I learned Elune's Grace, and blows found me harder to reach beneath her light.
+- [spell:Touch_of_Weakness] I learned Touch of Weakness, and gave a little of my own frailty to whoever struck me.
+- [spell:Touch_of_Weakness] Touch of Weakness was mine now; anyone who laid a hand on me would come away the poorer.
+- [spell:Devouring_Plague] Devouring Plague was mine now, the old sickness turned to my own use.
+- [spell:Devouring_Plague] I learned Devouring Plague, and there was a bitter justice in carrying a plague of my own.
+- [spell:Hex_of_Weakness] I learned Hex of Weakness, a troll priest's curse older than the Light I was taught beside it.
+- [spell:Hex_of_Weakness] Hex of Weakness was mine now, and a foe's strength could be made to leave it.
+- [spell:Shadowguard] Shadowguard was mine now, the loa's shadow wrapped close around me.
+- [spell:Shadowguard] I learned Shadowguard, and shadows gathered about me to strike back at whoever came close.
+- [teleport] I learned to step to {place} in a single breath, and the road home was never long again.
+- [teleport] With {spell} I could be home before a meal went cold, and I tested it more than once.
+- [teleport] I learned {spell}, and the long walk home became a matter of a few words.
+- [spell:Teleport:_Moonglade] I learned the way to Moonglade, the druids' own sanctuary, and could go there in a breath whenever I needed its quiet.
+- [spell:Teleport:_Moonglade] Moonglade was a breath away now, and I knew where to go when the world asked too much of me.
