@@ -11,7 +11,7 @@ const en = {
   home: {
     tagline: "Your character's own journal, written as you play.",
     intro:
-      "Hearthtale is a World of Warcraft addon. Every quest, every new foe, every place, every close call is written down as it happens, in your character's own voice, and a chapter closes when you rest at an inn or by a campfire. On Hardcore, a death closes the book with an epitaph.",
+      "Hearthtale is a World of Warcraft addon: your character's own journal, written as you play. Each time you rest at an inn or by a campfire, the stretch becomes a diary entry in your character's own voice. On Hardcore, a death closes the book with an epitaph.",
     soon: "Your journal, read in the game or here, on your phone: install the addon and Ravenpost, then sign in.",
     start: "Get started",
     games: "Classic Era, Hardcore, Season of Discovery and World of Warcraft: Forever.",
@@ -81,14 +81,14 @@ const en = {
     testIntro: "The test account: lives played through the addon in its test game, each book exactly as the addon saved it at logout.",
     empty: "No book on this shelf yet. With the addon installed, your characters' books arrive after you log out or /reload.",
     level: (n: number) => `Level ${n}`,
-    chapters: (n: number) => (n === 1 ? "1 chapter" : `${n} chapters`),
+    chapters: (n: number) => (n === 1 ? "1 entry" : `${n} entries`),
     hardcore: "Hardcore",
     fallen: "Fallen",
   },
   book: {
     contents: "Contents",
     prologue: "Prologue",
-    chapter: (n: number) => `Chapter ${n}`,
+    chapter: (n: number) => `Entry ${n}`,
     epitaph: "Epitaph",
     stillWriting: "still being written",
     theEnd: "the end",

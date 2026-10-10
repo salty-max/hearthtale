@@ -175,6 +175,7 @@ local function gather(d, c, ch)
     done = 0,
     at = {}, -- [moment] = its place in the log (an entry tells in the order things happened)
     landAt = {},
+    nightAt = {}, -- [a land or a dungeon]: seen first by night
     spellAt = {},
     mateAt = {},
     dungeonAt = {},
@@ -194,14 +195,14 @@ local function gather(d, c, ch)
     -- (my people's own city, its first sight; a Skyborne's first ground
     -- below the islands)
     if m.k == "place" and m.zone == capital and not d.capitalSeen then
-      d.capitalSeen, f.capital = true, { zone = m.zone, i = i }
+      d.capitalSeen, f.capital = true, { zone = m.zone, i = i, night = m.night }
     end
     if m.k == "place" and c.race == "Skyborne" and m.zone and m.zone ~= ZEPHRAS and not d.away then
-      d.away, f.away = true, { zone = m.zone, i = i }
+      d.away, f.away = true, { zone = m.zone, i = i, night = m.night }
     end
     if m.k == "place" and m.new == "zone" and m.zone and not d.lands[m.zone] then
       d.lands[m.zone] = true
-      f.landAt[m.zone] = i
+      f.landAt[m.zone], f.nightAt[m.zone] = i, m.night
       table.insert(f.lands, m.zone)
     elseif m.k == "learned" then
       -- (a spell's new rank is no new spell: told the first time only)
@@ -261,7 +262,7 @@ local function gather(d, c, ch)
       dungeon = m.name
       if not seenDungeon[m.name] then
         seenDungeon[m.name] = true
-        f.dungeonAt[m.name] = i
+        f.dungeonAt[m.name], f.nightAt[m.name] = i, m.night
         table.insert(f.dungeons, m.name)
       end
     elseif m.k == "boss" and m.name and FINAL[m.name] then
@@ -415,6 +416,7 @@ local function entry(d, n, ch)
     b.last, b.there = nil, false
     return b:here(values, place)
   end
+
   local race = c.race or "Human"
   local start, e = ch.start or {}, ch.ended
   -- (a start the game had not placed yet, Forever at login: where it told
@@ -437,6 +439,11 @@ local function entry(d, n, ch)
       return true
     end
     return false
+  end
+  -- (a place seen for the first time in a life: its description, writing/scenery/)
+  local function scenery(place, night, when)
+    local text = b:sceneryOf(place, night)
+    if text then add(text, false, when) end
   end
   local function tags(t, zone)
     t = t or {}
@@ -725,6 +732,7 @@ local function entry(d, n, ch)
       true,
       f.dungeonAt[below]
     )
+    scenery(below, f.nightAt[below], f.dungeonAt[below] + 0.25)
     local fin = f.finals[1]
     if fin then
       add(
@@ -752,6 +760,7 @@ local function entry(d, n, ch)
       true,
       f.capital.i
     )
+    scenery(f.capital.zone, f.capital.night, f.capital.i + 0.25)
   end
   -- a Skyborne's first ground below the islands, once a life (after the
   -- island's own work that took me there: the skycutter, then the ground)
@@ -772,6 +781,7 @@ local function entry(d, n, ch)
       true,
       when
     )
+    scenery(f.away.zone, f.away.night, when + 0.05)
   end
   -- a fight with players of the other side, in the open (one by name, or several)
   if #f.pvp > 0 then
@@ -896,7 +906,7 @@ local function entry(d, n, ch)
     named[k] = mid(lands[k])
   end
   if #named > 0 then
-    more(
+    local told = more(
       sayFresh("d-land", "land", { lands = listing(named) }, {
         one = #named == 1 or nil,
         town = (#named == 1 and W.CITIES[lands[1]]) or nil,
@@ -906,6 +916,12 @@ local function entry(d, n, ch)
       true,
       f.landAt[lands[1]]
     )
+    -- (the first of them with a description of its own, right after)
+    for k = 1, told and #named or 0 do
+      local before = #out
+      scenery(lands[k], f.nightAt[lands[k]], f.landAt[lands[1]] + 0.25)
+      if #out > before then break end
+    end
   end
 
   -- what I can do now: a spell with a line of its own (two at most, in the
@@ -1033,6 +1049,12 @@ local function entry(d, n, ch)
   local rest = (ch.quests or 0) - #story
   if rest >= 3 and events == 0 and #out <= 2 then
     add(sayFresh("d-chores", "chores", {}, { after = #out > 1 or nil }), false, LATE + 2) -- ("the rest of it": after something)
+  end
+
+  -- the town I rested in, the first time: its description, before the rest
+  if e and e.how ~= "death" and e.place then
+    local last = ch.log and ch.log[#ch.log]
+    scenery(e.place, last and last.night, LATE + 2.5)
   end
 
   -- how it ends (not after a Hardcore death: the epitaph has the last word):

@@ -16,7 +16,8 @@ Explorer's Field Journal (same release, CI and CurseForge tooling).
 | Code | The chapter writer (Scene.lua, Writer.lua's tellings, the clause and remark pools, their tests) is removed; the last of it is on the branch `chapters-archive` (tag `chapters-last`, 8877939). The book is Diary.lua's: the prologue, the entries, the epitaph. |
 | Saved book | Each chapter's entry in `diary`; `text` is no longer written (a book saved before keeps its prose there, and the site reads it in its place). |
 | Data | Knowledge.lua keeps the class quests and the chains; the drops of quest items went with the hunts that told them; the quest givers' people and callings serve the playthrough only (`.cache/audit/npcs.lua`). |
-| Scenery | Today the journal describes a life's first land only; whether an entry's new lands show their scenery, or the other places' descriptions go, is open. |
+| Scenery | A place is described the first time a life meets it: a new land, a capital or a dungeon an entry tells, right after it is told, and the town an entry ends in, before its rest (decided 10 October 2026). |
+| Naming | A reader sees entries: "Entry 3" in the window, the chat line, the settings and on the site. The data keeps its chapters (the saved file, the stored books, the site's routes): no migration for a word. |
 
 ## Voices and scenery (6 October 2026)
 

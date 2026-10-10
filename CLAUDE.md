@@ -1,9 +1,11 @@
 # Hearthtale
 
 A World of Warcraft addon: the character's own journal, written as it plays,
-in the first person: each chapter, from rest to rest (a logout at an inn, in
-a city, by a campfire), read as the diary entry the character writes at the
-rest that ends it; on Hardcore, an epitaph and the Hall of the Fallen.
+in the first person: each chapter of the record, from rest to rest (a logout
+at an inn, in a city, by a campfire), read as the diary entry the character
+writes at the rest that ends it ("Entry 3" to a reader: in the window, the
+chat line, on the site; the data keeps `chapters`); on Hardcore, an epitaph
+and the Hall of the Fallen.
 Sibling of Lorekeeper's Codex and Explorer's Field Journal (same games, look
 and tooling), but standalone: it reads none of their records. The plan and
 its decisions: PLAN.md (the full chapter prose was dropped on 10 October
@@ -76,8 +78,9 @@ its decisions: PLAN.md (the full chapter prose was dropped on 10 October
   know fails the build: IRREGULAR, or reword). `batch-*.md` are Classic's
   (from the classic-db dump), `forever-*.md` Forever's own (its quest texts
   as published; in Data_Forever only). The build checks every phrase.
-- `writing/scenery/<slug>.md`: a place described (`Book:sceneryOf`), today a
-  life's first land on its journal's first page (front matter `place:`,
+- `writing/scenery/<slug>.md`: a place described the first time a life meets
+  it (`Book:sceneryOf`): a life's first land, a land, a capital or a dungeon
+  an entry tells, the town an entry ends in (front matter `place:`,
   `type:` zone | town | dungeon, `faction:` alliance | horde | neutral,
   optional `home:` races, optional `client:` a place of one game only:
   Zephras Isle is `forever`). Lines tagged by viewpoint: `[home]`, `[ally]`,
@@ -177,6 +180,10 @@ An entry is the stretch looked back on at its rest, by what weighs most:
   grouped), a capital's first sight, a Skyborne's first ground below the
   islands (after the island's work that took them there), players slain, a
   raid, a find, a pet lost;
+- a place seen for the first time in a life, described right after it is
+  told (writing/scenery/: a new land, the first of an entry's with a
+  description; a capital; a dungeon) and the town an entry ends in, before
+  its rest;
 - in the room left (`ROOM`, less one for each milestone): named foes
   (`d-foes`; a rare by its name; "both" never before a kind), new lands
   (`d-land`; a city is no country: `[!town]`), a lesson's own line

@@ -207,7 +207,7 @@ local function showPage(life, w, key)
   end
   local text = ch.text
   if life.closed and last and w.epitaph then text = (text and text .. "\n\n" or "") .. EPITAPH:format(w.epitaph) end
-  show(("Chapter %d"):format(key), table.concat(parts, "  -  "), text)
+  show(("Entry %d"):format(key), table.concat(parts, "  -  "), text)
 end
 
 local rows = {}
@@ -310,7 +310,7 @@ local function chapterRows(entries, w, selectedKey, open, indent)
     local under = ch.place and (ch.place .. ", " .. levels(ch)) or levels(ch)
     table.insert(entries, {
       key = ch.number,
-      title = ("Chapter %d"):format(ch.number),
+      title = ("Entry %d"):format(ch.number),
       place = ch.open and "still being written" or under,
       close = ch.close,
       rare = ch.rare,
@@ -597,7 +597,7 @@ end
 function ns.link(target, text) return ("|cffc9a227|Hhearthtale:%s|h[%s]|h|r"):format(target, text) end
 ns.onChapter = function(number)
   if not ns.option("chat") then return end
-  print(ns.PREFIX .. ("chapter %d is written. %s"):format(number, ns.link("chapter:" .. number, "Read it")))
+  print(ns.PREFIX .. ("entry %d is written. %s"):format(number, ns.link("chapter:" .. number, "Read it")))
 end
 
 -- Links in chat (|Hhearthtale:chapter:<number>|h, |Hhearthtale:hall:<guid>|h): the

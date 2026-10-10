@@ -30,7 +30,7 @@ describe("sharing", () => {
   });
   test("the preview card: who, which part, the opening lines", () => {
     const shared: SharedBook = { character: who, book: cutBook(book, "2")!, part: "2" };
-    expect(ogTitle(shared)).toBe("Pippa, level 6 Gnome Mage (fallen) · Chapter 2");
+    expect(ogTitle(shared)).toBe("Pippa, level 6 Gnome Mage (fallen) · Entry 2");
     expect(ogText(shared)).toBe("I reached Kharanos.");
     expect(ogText({ character: who, book }, 20)).toBe("Pippa died by the…");
     const html = ogPage({ character: { ...who, name: "<b>" }, book, part: "epitaph" }, "/s/abc", "https://hearthtale.app");
