@@ -105,6 +105,20 @@ export function Reader({
               </p>
             ))}
           </div>
+          {/* The player's own note, set apart from the journal's words. */}
+          {ch?.note && (
+            <aside className={`mt-8 border-t border-current/15 pt-4 ${cls.text}`}>
+              <p className="page-faded text-sm tracking-wide uppercase">{t.book.note}</p>
+              <div className="mt-2 space-y-3 italic">
+                {ch.note
+                  .split(/\n+/)
+                  .filter((line) => line.trim())
+                  .map((line, i) => (
+                    <p key={i}>{line}</p>
+                  ))}
+              </div>
+            </aside>
+          )}
         </div>
       </article>
       {several && (

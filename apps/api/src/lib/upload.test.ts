@@ -43,6 +43,11 @@ describe("upload", () => {
     expect(parseBook({ client: "classic", at: 1, chapters: [{ text: "no number" }] })).toBeNull();
     expect(parseBook({ client: "classic", at: 1, chapters: [{ number: 1, text: "x".repeat(200_000) }] })!.chapters[0].text).toBeUndefined();
   });
+  test("the player's own note in an entry's margin", () => {
+    const [ch] = parseBook({ client: "classic", at: 1, chapters: [{ number: 1, diary: "The entry.", note: "Cold, all of it." }] })!.chapters;
+    expect(ch.note).toBe("Cold, all of it.");
+    expect(parseBook({ client: "classic", at: 1, chapters: [{ number: 1, note: "x".repeat(3_000) }] })!.chapters[0].note).toBeUndefined();
+  });
   test("a chapter's diary entry, kept beside its prose", () => {
     const [ch] = parseBook({ client: "classic", at: 1, chapters: [{ number: 1, text: "The chapter.", diary: "The entry." }] })!.chapters;
     expect(ch.diary).toBe("The entry.");
