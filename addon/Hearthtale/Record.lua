@@ -46,7 +46,7 @@
 --     gear { link, quality, made, held, trinket }  loot { link, quality }
 --     tame { name, family }  petdied { name }  demon { name, family }  shift { form }
 --     bag { link, slots, looted }  gold
---     campfire  rested { place, fire }  night { last, inside }  wake { after, inside }
+--     campfire { camp, with }  rested { place, fire }  night { last, inside }  wake { after, inside }
 local _, ns = ...
 local secret = ns.secret
 
@@ -93,6 +93,7 @@ local MIN_MOMENTS = 3 -- what a chapter needs before a rest can close it
 -- The auras of a campfire: Cozy Fire (the cooking fires, both games), and
 -- Forever's camps (Welcoming Campfire, Well Rested).
 local FIRES = { 7353, 7358, 1232234, 1229739, 1289723, 1225478 }
+local CAMPS = { [1232234] = true, [1229739] = true, [1289723] = true, [1225478] = true }
 
 local function char() return ns.journal() end
 local function now() return time() end
@@ -286,10 +287,11 @@ local isFire = {}
 for _, id in ipairs(FIRES) do
   isFire[id] = true
 end
+-- (which fire: its aura's id, else false)
 local function byFire()
   if hasAura(FIRES[1]) ~= nil then
     for _, id in ipairs(FIRES) do
-      if hasAura(id) then return true end
+      if hasAura(id) then return id end
     end
     return false
   end
@@ -297,13 +299,25 @@ local function byFire()
   for i = 1, 40 do
     local name, _, _, _, _, _, _, _, _, spellId = UnitBuff("player", i)
     if not name then return false end
-    if spellId and not secret(spellId) and isFire[spellId] then return true end
+    if spellId and not secret(spellId) and isFire[spellId] then return spellId end
   end
   return false
 end
+-- The party with me, by first name (not a raid's forty).
+local function present()
+  local n, raid = GetNumGroupMembers(), IsInRaid()
+  if secret(n) or secret(raid) or raid or not n or n < 2 then return nil end
+  local out = {}
+  for i = 1, n - 1 do
+    local name, first = playerName(UnitName("party" .. i))
+    if name then table.insert(out, first or name) end
+  end
+  return #out > 0 and out or nil
+end
 
 -- A campfire's warmth: a moment per stop (a fire found again within the hour,
--- in the same place, is the same stop).
+-- in the same place, is the same stop): one of Forever's camps or not, and
+-- who sat at it with me.
 local warm = false
 ns.onUnit("UNIT_AURA", "player", function()
   local fire = byFire()
@@ -316,7 +330,9 @@ ns.onUnit("UNIT_AURA", "player", function()
         break
       end
     end
-    if not (last and now() - last.at < 3600 and last.zone == zone and last.sub == sub) then moment("campfire") end
+    if not (last and now() - last.at < 3600 and last.zone == zone and last.sub == sub) then
+      moment("campfire", { camp = CAMPS[fire] or nil, with = present() })
+    end
   end
   warm = fire
 end)
@@ -329,7 +345,7 @@ ns.on("PLAYER_LOGOUT", function()
   char().logout = {
     at = now(),
     rest = (rest and not secret(rest)) or nil,
-    fire = byFire() or nil,
+    fire = byFire() and true or nil,
     zone = zone,
     sub = sub,
     place = sub or zone,

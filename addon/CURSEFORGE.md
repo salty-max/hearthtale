@@ -14,11 +14,11 @@ For Classic Era (Hardcore, Season of Discovery) and World of Warcraft: Forever. 
 
 An entry runs from one rest to the next. Logging out in the wild is a night outdoors, and the entry goes on; after four hours of play, the next logout ends it wherever you are. It tells what weighs most:
 
-- **The milestones of a life**, always: a warlock's first demon of each kind, a druid's new forms, a hunter's companions, a shaman's favour from each element, what a class's own quest taught you.
+- **The milestones of a life**, always: what defines your class as you grow into it (a warlock's demons, a hunter's companions, a druid's forms and the way to Moonglade, a shaman's favour from each element, a warrior's stances, a paladin's Redemption, a rogue's poisons, a priest's own people's prayers, a mage's first way home), and what a class's own quest taught you.
 - **The story**: the work that mattered most, told as you did it and why (from the quests' own words: "I killed Hogger, the huge gnoll who had overpowered every attempt at his capture"), picking up a story left off in an earlier entry, and now and then a word on what it meant to you.
 - **The dangers**: how you died and came back, or the closest call (under a tenth of your health, and alive to tell it); the foes worth naming, rares and elites; a dungeon and its last boss; a player of the other faction killed in the open world (battlegrounds are not part of the tale).
-- **The road**: the lands seen for the first time, your people's capital, the company you kept, a rare find (epic and better).
-- **What you became**: the spells worth a line of their own, a new way of fighting, a trade taken up, the first ride, the first bag and the first gold piece, a companion at your side, and the times it fell.
+- **The road**: the lands, towns and dungeons seen for the first time, each described as your character meets it; your people's capital; the company you kept; the fires you stopped at (shared with companions, or one of Forever's camps); a rare find (epic and better).
+- **What you became**: the spells worth a line of their own, a new way of fighting, a trade taken up, the gear you first put on while the levels are low (a blue piece, or one you made yourself), the first ride, the first bag and the first gold piece, a companion at your side, and the times it fell.
 
 A quiet stretch is a short entry; a big one runs longer. The journal ends when you reach the highest level of your game: the last entry ends there, with the journey's end.
 

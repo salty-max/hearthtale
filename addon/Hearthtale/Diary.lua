@@ -152,6 +152,8 @@ local ZEPHRAS = "Zephras Isle" -- (the Skyborne's island: leaving it, a moment o
 local LATE = 1e9 -- (the pet, the rest of the work and the ending: after all that happened)
 local DEMONS = { Imp = true, Voidwalker = true, Succubus = true, Felhunter = true, Felguard = true, Infernal = true }
 local PET_GAP = 4 -- (a pet named again: not in the entries just after)
+local GEAR_LEVEL = 30 -- (below it, a blue piece or one I made, worn for the first time, is told)
+local CAMP_GAP = 3 -- (a camp's fire told again: not in the entries just after)
 local REACT_GAP = 4 -- (a word on a story: not in the entries just after another)
 
 -- What a chapter holds that a diary tells, from its log.
@@ -182,6 +184,8 @@ local function gather(d, c, ch)
     pvp = {}, -- players of the other side slain, in the open
     kinds = {}, -- [a creature killed] = its kind
     finds = {}, -- loot of note (epic and above)
+    gear = {}, -- worn for the first time: blue and better, or made by me, while the levels are low
+    fires = {}, -- the stops by a campfire
     raids = {},
     petdied = {},
   }
@@ -189,8 +193,11 @@ local function gather(d, c, ch)
   local bare = ns.names and ns.names.creatureBare or {}
   local log = ch.log or {}
   local capital = CAPITAL[c.race or ""]
+  local level = ch.start and ch.start.level or 1
+  local looted = {} -- [an item's id]: found in this stretch
   for i, m in ipairs(log) do
     f.at[m] = i
+    if m.k == "level" and m.level then level = m.level end
     if m.zone then f.count[m.zone] = (f.count[m.zone] or 0) + 1 end
     -- (my people's own city, its first sight; a Skyborne's first ground
     -- below the islands)
@@ -205,9 +212,15 @@ local function gather(d, c, ch)
       f.landAt[m.zone], f.nightAt[m.zone] = i, m.night
       table.insert(f.lands, m.zone)
     elseif m.k == "learned" then
-      -- (a spell's new rank is no new spell: told the first time only)
+      -- (a spell's new rank is no new spell: told the first time only; one
+      -- that defines the class, a milestone)
       for _, sp in ipairs(taught(m.spells, c)) do
-        if not seenSpell[sp] and not d.known[sp] then
+        local calling = W.callingOf(c.class, sp)
+        if calling and not d.called[calling] then
+          d.called[calling], seenSpell[sp], d.known[sp] = true, true, true
+          table.insert(f.firsts, { k = "calling", spell = sp, tag = calling })
+          f.at[f.firsts[#f.firsts]] = i
+        elseif not seenSpell[sp] and not d.known[sp] then
           seenSpell[sp], d.known[sp] = true, true
           f.spellAt[sp] = i
           table.insert(f.spells, sp)
@@ -272,8 +285,19 @@ local function gather(d, c, ch)
     if m.k == "pvp" then table.insert(f.pvp, { m = m, i = i }) end
     if m.k == "kill" and m.name and m.kind then f.kinds[m.name] = m.kind end
     if m.k == "loot" and (m.quality or 0) >= 4 and m.link then table.insert(f.finds, { m = m, i = i }) end
+    if m.k == "loot" and m.link then looted[m.link:match("item:(%d+)") or ""] = true end
+    -- (below level 30 a blue piece, or one I made, is rare enough to be news;
+    -- an epic one always)
+    if
+      m.k == "gear"
+      and m.link
+      and (((m.quality or 0) >= 3 or m.made) and level < GEAR_LEVEL or (m.quality or 0) >= 4)
+    then
+      table.insert(f.gear, { m = m, i = i, found = looted[m.link:match("item:(%d+)") or ""] })
+    end
     if m.k == "group" and m.raid then table.insert(f.raids, { m = m, i = i }) end
     if m.k == "petdied" and m.name then table.insert(f.petdied, { m = m, i = i }) end
+    if m.k == "campfire" then table.insert(f.fires, { m = m, i = i }) end
     if m.k == "weapon" then d.book.weaponHeld = W.WEAPON_OF[m.weapon or -1] or d.book.weaponHeld end
     -- a class quest's reward (Knowledge.lua), a first of the life
     -- (a shaman's initiation into an element: the quest that gives its totem)
@@ -285,8 +309,19 @@ local function gather(d, c, ch)
         f.at[f.firsts[#f.firsts]] = i
       end
     elseif reward and reward.spell and reward.class == c.class then
-      table.insert(f.firsts, { k = "class-reward", q = reward, m = m })
-      f.at[f.firsts[#f.firsts]] = i
+      -- (a spell that defines the class: told as such, once)
+      local calling = W.callingOf(c.class, reward.spell)
+      local first
+      if calling and not d.called[calling] then
+        d.called[calling], d.known[reward.spell] = true, true
+        first = { k = "calling", spell = reward.spell, tag = calling }
+      elseif not calling then
+        first = { k = "class-reward", q = reward, m = m }
+      end
+      if first then
+        table.insert(f.firsts, first)
+        f.at[first] = i
+      end
     end
     if m.k == "done" then
       f.done = f.done + 1
@@ -542,10 +577,15 @@ local function entry(d, n, ch)
 
   -- the milestones of a life, every one: a demon (by its name; one taught
   -- before, its summoning put to use at last), a form, a companion (the first,
-  -- or another), an element's favour, a class's reward, a power
-  local milestones = 0
+  -- or another), an element's favour, a class's defining spell, a class's
+  -- reward (not beside its defining spell: the quest that taught it), a power
+  local milestones, called = 0, false
+  for _, m in ipairs(f.firsts) do
+    if m.k == "calling" then called = true end
+  end
   for k, m in ipairs(f.firsts) do
     local key, text = "first" .. k, nil
+    if m.k == "class-reward" and called then m = {} end
     if m.k == "demon" then
       local family = (m.family or ""):lower()
       local known = d.summoned[family] and true or nil
@@ -573,6 +613,15 @@ local function entry(d, n, ch)
       d.tamed = true
     elseif m.k == "initiation" then
       text = sayFresh("d-initiation", key, {}, { [m.totem] = true }, nil, { [m.totem] = true })
+    elseif m.k == "calling" then
+      text = sayFresh(
+        "d-calling",
+        key,
+        { spell = m.spell, place = m.spell:match("^Teleport: (.+)$") },
+        { [m.tag] = true },
+        nil,
+        { [m.tag] = true }
+      )
     elseif m.k == "class-reward" then
       local family = m.q.spell:match("^Summon (.+)$")
       local t = { summon = family and true or nil }
@@ -824,8 +873,37 @@ local function entry(d, n, ch)
     local clause = b:say("c-raid", n .. "|diary|raid", { n = words(f.raids[1].m.raid) }, tags({}), nil, true)
     add(clause and ("I " .. clause .. "."), true, f.raids[1].i)
   end
+  -- a piece of gear worn for the first time (one an entry: made, else the
+  -- finest), with its find when it came from this stretch's spoils
+  local worn
+  for _, x in ipairs(f.gear) do
+    if
+      not worn
+      or (x.m.made and not worn.m.made)
+      or (x.m.made == worn.m.made and (x.m.quality or 0) > (worn.m.quality or 0))
+    then
+      worn = x
+    end
+  end
+  if worn then
+    local name = worn.m.link:match("%[(.-)%]")
+    local item = name and W.itemName(name)
+    if item then
+      add(
+        sayFresh("d-gear", "gear", { item = item }, {
+          made = worn.m.made or nil,
+          held = worn.m.held or nil,
+          trinket = worn.m.trinket or nil,
+          found = worn.found or nil,
+          one = item ~= name or nil, -- ("a Wolf Fang Necklace": one thing; "Cuirboulle Gloves": a pair)
+        }),
+        true,
+        worn.i
+      )
+    end
+  end
   for k, x in ipairs(f.finds) do
-    if k > 1 then break end
+    if k > 1 or (worn and worn.found and worn.m.link == x.m.link) then break end -- (worn at once: told so)
     local item = x.m.link:match("%[(.-)%]")
     local clause = item
       and b:say("c-loot", n .. "|diary|find", { item = W.itemName(item) }, tags({ fine = true }), nil, true)
@@ -833,6 +911,33 @@ local function entry(d, n, ch)
   end
   for _, x in ipairs(f.petdied) do
     add(sayFresh("petdied", "petdied", here({ pet = x.m.name }, x.m.sub or x.m.zone), {}, x.m.zone), true, x.i)
+  end
+  -- a stop by a fire (not the one the entry ends at): shared with others,
+  -- the life's first, or one of the camps now and then
+  local ending = e and e.how == "campfire" and f.fires[#f.fires]
+  local stop
+  for _, x in ipairs(f.fires) do
+    if x ~= ending and (x.m.with or not d.fireSeen or (x.m.camp and n - (d.fireAt or -CAMP_GAP) >= CAMP_GAP)) then
+      stop = stop or x
+      if x.m.with and not stop.m.with then stop = x end
+    end
+  end
+  if stop then
+    local with = stop.m.with or {}
+    local told = add(
+      sayFresh("d-camp", "camp", here({ mates = #with > 0 and listing(with) or nil }, stop.m.sub or stop.m.zone), {
+        first = not d.fireSeen or nil,
+        company = #with > 0 or nil,
+        one = #with == 1 or nil,
+        camp = stop.m.camp or nil,
+        night = stop.m.night or nil,
+      }, stop.m.zone),
+      #with > 0 or not d.fireSeen, -- (a fire shared, or the first: a moment of the life)
+      stop.i
+    )
+    if told then
+      d.fireSeen, d.fireAt = true, n
+    end
   end
 
   -- in the room left (less for each milestone, never none): the foes worth
@@ -1085,6 +1190,29 @@ local function entry(d, n, ch)
         )
       elseif e.how == "summit" then
         add(sayFresh("summit", "last", here({ level = words(e.level or 60) }, e.place), {}, e.zone), false, LATE + 3)
+      elseif
+        ending
+        and add(
+          sayFresh(
+            "d-camp",
+            "camp",
+            here({
+              mates = ending.m.with and listing(ending.m.with) or nil,
+            }, e.place),
+            {
+              last = true,
+              company = ending.m.with and true or nil,
+              one = ending.m.with and #ending.m.with == 1 or nil,
+              camp = ending.m.camp or nil,
+              first = not d.fireSeen or nil,
+            },
+            e.zone
+          ),
+          false,
+          LATE + 3
+        )
+      then
+        d.fireSeen, d.fireAt = true, n -- (the fire the entry ends at)
       elseif not (storyTold and n % 3 == 2 and #out >= 4) then -- (one entry in three ends on its story)
         add(
           sayFresh("rest", "last", here({ place = mid(e.place) }, e.place), {
@@ -1136,6 +1264,7 @@ function ns.writeBook(c)
     storied = {}, -- [quest id]: its story told
     reacted = {}, -- [text]: a word on a story, said
     initiated = {}, -- [element]: a shaman's initiation told
+    called = {}, -- [a class's defining spell, its tag]: learned, told
     reactedAt = -REACT_GAP,
     threads = {}, -- [a chain's first quest] = { n, giver, ender }: the last entry that told one of it
     pets = {}, -- [name] = { said = the last entry that named it }: a pet met before

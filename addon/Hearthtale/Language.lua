@@ -554,6 +554,34 @@ local FIRST_SPELLS = {
   DRUID = { "Wrath", "Healing Touch" },
 }
 W.FIRST_SPELLS = FIRST_SPELLS
+-- A class's defining moments learned as spells (a warlock's demons, a
+-- hunter's companions, a druid's forms and a shaman's totems are moments
+-- of their own): a warrior's stances, a paladin's Redemption, a rogue's
+-- poisons, a priest's own people's prayers, a mage's first way home, a
+-- druid's way to Moonglade. By the tag its lines carry (writing/d-calling.md).
+local CALLING = {
+  WARRIOR = { ["Defensive Stance"] = true, ["Berserker Stance"] = true },
+  PALADIN = { Redemption = true },
+  ROGUE = { Poisons = true },
+  PRIEST = {
+    ["Desperate Prayer"] = true,
+    Feedback = true,
+    ["Fear Ward"] = true,
+    Starshards = true,
+    ["Elune's Grace"] = true,
+    ["Touch of Weakness"] = true,
+    ["Devouring Plague"] = true,
+    ["Hex of Weakness"] = true,
+    Shadowguard = true,
+  },
+  DRUID = { ["Teleport: Moonglade"] = true },
+}
+function W.callingOf(class, spell)
+  if not spell then return nil end
+  if class == "MAGE" and spell:find("^Teleport: ") then return "teleport" end -- (the first of them)
+  if CALLING[class] and CALLING[class][spell] then return "spell:" .. spell:gsub(" ", "_") end
+  return nil
+end
 -- (a people's capital: a city, no farms nor hills, no "country")
 W.CITIES = {
   ["Stormwind City"] = true,

@@ -109,15 +109,21 @@ const KINDS: Record<string, string[]> = {
   // a hunter's companion tamed (the first, then another); a shaman's
   // initiation into an element; a word on the stretch's story
   "d-tame": ["pet", "family"],
+  // a piece of gear worn for the first time (blue and better, or made by me, below level 30)
+  "d-gear": ["item"],
+  // a spell that defines the class (a warrior's stances, a priest's own people's prayers, a mage's way home)
+  "d-calling": ["spell", "place"],
+  // a stop by a campfire: the first of a life, one shared, a camp's; or the one an entry ends at ([last])
+  "d-camp": ["mates", "at", "in"],
   "d-initiation": [],
   "d-react": [],
 };
 const VOICE = ["home", "kin", "faith", "weapon"];
-const TAGS = ["after", "again", "air", "ally", "aquatic", "away", "bear", "beast", "capital", "cat", "cenarion",
-  "corpse", "delve", "demon", "drowning", "earth", "elite", "fall", "felguard", "felhunter", "fire", "first",
+const TAGS = ["after", "again", "air", "ally", "aquatic", "away", "bear", "beast", "camp", "capital", "cat", "company", "cenarion",
+  "corpse", "delve", "demon", "drowning", "earth", "elite", "fall", "felguard", "felhunter", "fire", "first", "found", "made", "held", "trinket",
   "flight", "foe", "form", "grouped", "hard", "hc", "healer", "high", "highborne", "home", "hosts", "imp", "inside",
-  "known", "lava", "leper", "looted", "low", "moonkin", "moved", "nature", "near", "neutral", "new", "night",
-  "one", "people", "player", "plural", "rescue", "self", "settled", "steed", "succubus", "summon", "thread", "town",
+  "known", "last", "lava", "leper", "looted", "low", "moonkin", "moved", "nature", "near", "neutral", "new", "night",
+  "one", "people", "player", "plural", "rescue", "self", "settled", "steed", "succubus", "summon", "teleport", "thread", "town",
   "travel", "tree", "two", "undead", "used", "villain", "voidwalker", "water", "zalazane"];
 const RACES = ["Human", "Dwarf", "NightElf", "Gnome", "Orc", "Troll", "Tauren", "Scourge", "Skyborne"];
 const CLASSES = ["WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK", "DRUID"];
