@@ -175,6 +175,10 @@ its decisions: PLAN.md (the full chapter prose was dropped on 10 October
     Classic), shared by:
   - `addon/test/sample.lua`: the first entries, `luajit addon/test/sample.lua > docs/sample.md`;
     the evening, `luajit addon/test/sample.lua deadmines > docs/sample-deadmines.md`;
+    the site's landing page, a page of each journal (`landing`: the longest
+    finished entry of four lives and Pippa's epitaph, into
+    `apps/web/src/lib/samples.json` by `bun run addon:seed`; `landing --check`
+    in addon:check fails when it is no longer what the writer writes);
   - `addon/test/seed.lua`: the seven lives, logged out so the addon saves their
     books, as the site's test data (`bun run addon:seed` writes
     `apps/api/src/db/seed/characters.json`; `bun run db:seed` loads it).
@@ -360,7 +364,7 @@ name.
   empty for one.
 - After changing the writing: `bun run addon:build`, then `bun run
   addon:check`, regenerate `docs/sample.md` and the site seed (`bun run
-  addon:seed`), and read the generated journals again
+  addon:seed`, the landing's samples with it), and read the generated journals again
   (`luajit addon/test/playthrough.lua`, `.cache/audit/books/`): read whole
   entries, not just each template alone; real quests show what the random
   lives don't. Places in flowing sentences, not chains of possessives ("the
@@ -398,6 +402,8 @@ Plan and steps: PLAN.md, "The site".
   (`.agents/`, `.claude/skills`, `skills-lock.json`): keep them out.
 - Local: `bun run db` (Postgres on :5435), `bun run db:migrate`,
   `bun run db:seed` (the test characters), `bun run dev` (api :3002, web :5175).
+  The landing (`routes/Home.tsx`) shows a page of each sample journal, one
+  voice at a time (`lib/samples.ts`: the writer's own, never edited by hand).
   The library (`/library`) and the reader (`/book/:id/:part`: one part per
   page, the contents in a drawer; `/book/:id` opens the part to read).
 - Accounts (`lib/accounts.ts`, `lib/login.ts`): "Sign in with Battle.net" in a

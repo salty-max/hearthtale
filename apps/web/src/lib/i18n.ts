@@ -15,6 +15,8 @@ const en = {
     soon: "Your journal, read in the game or here, on your phone: install the addon and Ravenpost, then sign in.",
     start: "Get started",
     games: "Classic Era, Hardcore, Season of Discovery and World of Warcraft: Forever.",
+    samplesTitle: "A page from the journals",
+    samplesWhy: "Written by the addon itself, from test characters' first evenings: each in its own voice, and the last words of one who fell on Hardcore.",
   },
   notFound: { title: "Lost in the mist", body: "There is no page here.", back: "Back to the hearth" },
   common: { loading: "Turning the pages…", loadError: "This page couldn't be loaded. Check your connection, then try again.", retry: "Try again" },
