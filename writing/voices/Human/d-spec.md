@@ -1,0 +1,26 @@
+---
+kind: d-spec
+---
+- [class:WARRIOR spec:Arms !change] I had chosen the way of Arms, the drilled, patient swordwork Stormwind's soldiers kept alive through two wars.
+- [class:WARRIOR spec:Fury !change] I had chosen Fury, less tidy than any drill yard would like, and better suited to a world that seldom fought fair.
+- [class:WARRIOR spec:Protection !change] I had chosen Protection, the warrior's place between trouble and the people who could not stand against it.
+- [class:PALADIN spec:Holy !change] I had given myself to the Holy path, the Light as the Silver Hand first taught it: something carried for others.
+- [class:PALADIN spec:Protection !change] I had chosen Protection, and meant to be the wall a frightened village could stand behind.
+- [class:PALADIN spec:Retribution !change] I had chosen Retribution, the Light's judgement in my hands, and prayed I would never use it more harshly than it deserved.
+- [class:ROGUE spec:Assassination !change] I had chosen Assassination, quiet work of the kind a city would rather not admit it needs.
+- [class:ROGUE spec:Combat !change] I had chosen Combat, plain and quick, the kind of fighting a city's back alleys teach anyone who listens.
+- [class:ROGUE spec:Subtlety !change] I had chosen Subtlety, the art of being the one face in a crowded street that nobody thinks to look at.
+- [class:PRIEST spec:Discipline !change] I had chosen Discipline, a faith that keeps its strength in the will, as the Cathedral's sternest teachers would want.
+- [class:PRIEST spec:Holy !change] I had given myself to the Holy path, my prayers turned to mending the people the wars had left hurt.
+- [class:PRIEST spec:Shadow !change] I had turned to Shadow, a side of faith the Cathedral of Light does not care to discuss, and meant to keep it on a short leash.
+- [class:MAGE spec:Arcane !change] I had given my study to the Arcane, the old discipline of Dalaran's towers and their long, careful books.
+- [class:MAGE spec:Fire !change] I had given my study to Fire, and could not honestly pretend it was only for the warmth.
+- [class:MAGE spec:Frost !change] I had given my study to Frost, the school that rewards a cool head, which I was resolved to keep.
+- [class:WARLOCK spec:Affliction !change] I had chosen Affliction, curses that do their work slowly, and tried not to think what the Cathedral would make of it.
+- [class:WARLOCK spec:Demonology !change] I had chosen Demonology, and kept my demons closer than any respectable neighbour would have liked.
+- [class:WARLOCK spec:Destruction !change] I had chosen Destruction, the fel fire that once helped burn Stormwind, and I meant to turn it the other way.
+- [client:forever class:HUNTER spec:Beast_Mastery !change] I had given myself to Beast Mastery, a bond with a beast that no farm dog in Elwynn ever prepared anyone for.
+- [client:forever class:HUNTER spec:Marksmanship !change] I had chosen Marksmanship, the patient aim the Alliance's rangers and riflemen have always prized.
+- [client:forever class:HUNTER spec:Survival !change] I had chosen Survival, traps and woodcraft for the wild country beyond the safe roads of Elwynn.
+- [change] I turned from {was} to {spec}, the way sensible people change trades when the old one stops putting bread on the table.
+- [change] {was} had served me honestly, but {spec} deserved a fair hearing, and I gave it one.

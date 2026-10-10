@@ -1,0 +1,23 @@
+---
+kind: d-spec
+---
+- [class:WARRIOR spec:Arms !change] I had chosen the way of Arms, a weapon worked the way a smith works metal, with patience and a sure hand.
+- [class:WARRIOR spec:Fury !change] I had chosen Fury, a dwarf's temper let off the leash and pointed squarely at the enemy.
+- [class:WARRIOR spec:Protection !change] I had chosen Protection, to stand like the gates of Ironforge: shut, solid and not about to move.
+- [class:PALADIN spec:Holy !change] I had given myself to the Holy path, the Light as it is kept in the Mystic Ward: steady, and close to hand.
+- [class:PALADIN spec:Protection !change] I had chosen Protection, faith set like a keystone where the weight of a fight would fall.
+- [class:PALADIN spec:Retribution !change] I had chosen Retribution, the Light given some weight behind it and a dwarf's plain sense of fairness.
+- [class:HUNTER spec:Beast_Mastery !change] I had given myself to Beast Mastery, the trust between hunter and beast that any mountaineer of Dun Morogh learns to respect.
+- [class:HUNTER spec:Marksmanship !change] I had chosen Marksmanship, the long, level aim my people have always admired in a good shot.
+- [class:HUNTER spec:Survival !change] I had chosen Survival, the mountain craft of traps and snow and outlasting whatever hunts you.
+- [class:ROGUE spec:Assassination !change] I had chosen Assassination, the business end of a craft my people like to pretend they never practise.
+- [class:ROGUE spec:Combat !change] I had chosen Combat, sturdy fighting with nothing fancy about it, the way a dwarf likes a good tool.
+- [class:ROGUE spec:Subtlety !change] I had chosen Subtlety, proof that a dwarf can be quiet when the work calls for it.
+- [class:PRIEST spec:Discipline !change] I had chosen Discipline, a faith built like good stonework, every prayer set firm on the one beneath it.
+- [class:PRIEST spec:Holy !change] I had given myself to the Holy path, my prayers the sort that patch a friend up and send them back on their feet.
+- [class:PRIEST spec:Shadow !change] I had turned to Shadow, not a road many of my people take, and I walked it as carefully as a bad shaft.
+- [client:forever class:SHAMAN spec:Elemental !change] I had chosen the Elemental way, storm and stone answering to a dwarf, which still struck me as a wonder.
+- [client:forever class:SHAMAN spec:Enhancement !change] I had chosen Enhancement, the earth's own strength carried into every blow, as steady as a hammer on the anvil.
+- [client:forever class:SHAMAN spec:Restoration !change] I had chosen Restoration, asking the spirits of stone and water to mend whatever the road broke.
+- [change] I set {was} aside for {spec}, the way a smith changes tools for finer work.
+- [change] {was} had held up well enough, but I reckoned {spec} would hold better, and went with my reckoning.

@@ -1,0 +1,17 @@
+---
+kind: d-spec
+---
+- [class:WARRIOR spec:Arms !change] I had chosen the way of Arms, a weapon held with the patience of a hunter of the plains.
+- [class:WARRIOR spec:Fury !change] I had chosen Fury, a stampede let loose, though kept pointed away from anything that did not deserve it.
+- [class:WARRIOR spec:Protection !change] I had chosen Protection, standing as broad as I am between the herd and harm.
+- [class:HUNTER spec:Beast_Mastery !change] I had given myself to Beast Mastery, the bond between hunter and beast that the Earth Mother allows, honoured as such.
+- [class:HUNTER spec:Marksmanship !change] I had chosen Marksmanship, the single clean shot the old ways of the hunt ask of anyone who would not waste a life.
+- [class:HUNTER spec:Survival !change] I had chosen Survival, the plains' old knowledge of trap and trail, learned from the land itself.
+- [class:SHAMAN spec:Elemental !change] I had chosen the Elemental way, the storms that cross Mulgore called down in the Earth Mother's name.
+- [class:SHAMAN spec:Enhancement !change] I had chosen Enhancement, the spirits' strength in my arms and gratitude for it in my heart.
+- [class:SHAMAN spec:Restoration !change] I had chosen Restoration, the gentler gift, asked of the spirits for others' sake.
+- [class:DRUID spec:Balance !change] I had chosen Balance, the light of An'she and Mu'sha, the Earth Mother's eyes, turned against her enemies.
+- [class:DRUID spec:Feral_Combat !change] I had chosen Feral Combat, the shapes of the wild worn with the respect they are owed.
+- [class:DRUID spec:Restoration !change] I had chosen Restoration, healing passed through my hands to whoever needed it, as the Earth Mother intends.
+- [change] I turned from {was} to {spec} in my own time, as any change worth making ought to be made.
+- [change] {was} had carried me a long way, and I set it down with thanks before taking up {spec}.

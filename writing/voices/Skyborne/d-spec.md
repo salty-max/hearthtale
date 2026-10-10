@@ -1,0 +1,23 @@
+---
+kind: d-spec
+---
+- [client:forever class:WARRIOR spec:Arms !change] I had chosen the way of Arms, reach and footing in balance, as a people who live above long drops learn them.
+- [client:forever class:WARRIOR spec:Fury !change] I had chosen Fury, a storm of my own making while the wind spirits stayed silent.
+- [client:forever class:WARRIOR spec:Protection !change] I had chosen Protection; a people as few as mine cannot spare anyone, so I would be the one who stood in front.
+- [client:forever class:HUNTER spec:Beast_Mastery !change] I had given myself to Beast Mastery, the trust between hunter and beast held as close as an island people holds its few.
+- [client:forever class:HUNTER spec:Marksmanship !change] I had chosen Marksmanship, an eye trained to judge distance across open sky.
+- [client:forever class:HUNTER spec:Survival !change] I had chosen Survival, the craft of living off whatever ground I stood on, island or otherwise.
+- [client:forever class:ROGUE spec:Assassination !change] I had chosen Assassination, quiet and quick, like a gust that is gone before anyone turns.
+- [client:forever class:ROGUE spec:Combat !change] I had chosen Combat, quick feet and quicker blades, the footing of a people who live on edges.
+- [client:forever class:ROGUE spec:Subtlety !change] I had chosen Subtlety; my people were hidden long before I learned to hide.
+- [client:forever class:SHAMAN spec:Elemental !change] I had chosen the Elemental way, calling on storm and stone while the wind spirits my people lost stayed silent.
+- [client:forever class:SHAMAN spec:Enhancement !change] I had chosen Enhancement, the elements' strength carried in my own arms until the winds could be found again.
+- [client:forever class:SHAMAN spec:Restoration !change] I had chosen Restoration, asking the elements to mend, the gentlest thing a shaman of Zephras could ask while the winds were gone.
+- [client:forever class:MAGE spec:Arcane !change] I had given my study to the Arcane, the oldest of my people's arts and the one most worth recovering.
+- [client:forever class:MAGE spec:Fire !change] I had given my study to Fire, warmth against the cold of the heights and something fiercer for my enemies.
+- [client:forever class:MAGE spec:Frost !change] I had given my study to Frost, the cold of the high winds called down in a single breath.
+- [client:forever class:DRUID spec:Balance !change] I had chosen Balance, the sky my people have always lived closest to, its moon and stars turned to my use.
+- [client:forever class:DRUID spec:Feral_Combat !change] I had chosen Feral Combat, the wild's own shapes, as sure-footed as anything born on the islands.
+- [client:forever class:DRUID spec:Restoration !change] I had chosen Restoration, the island's green growth coaxed into mending whatever the road had broken.
+- [client:forever change] I turned from {was} to {spec}, shifting my footing the way an islander shifts with the wind.
+- [client:forever change] {was} had carried me from Zephras, and {spec} would carry me further.

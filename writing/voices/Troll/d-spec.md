@@ -1,0 +1,26 @@
+---
+kind: d-spec
+---
+- [class:WARRIOR spec:Arms !change] I had chosen the way of Arms, a weapon swung with all the long reach my people are made for.
+- [class:WARRIOR spec:Fury !change] I had chosen Fury, and let the old troll fierceness out where it could do some good.
+- [class:WARRIOR spec:Protection !change] I had chosen Protection, standing between the Darkspear and anything that came for them.
+- [class:HUNTER spec:Beast_Mastery !change] I had given myself to Beast Mastery, the bond the Darkspear have long kept with the raptors of the islands.
+- [class:HUNTER spec:Marksmanship !change] I had chosen Marksmanship, a shot taken from far enough away to grin about afterwards.
+- [class:HUNTER spec:Survival !change] I had chosen Survival, the island craft of traps and stings and waiting in the reeds.
+- [class:ROGUE spec:Assassination !change] I had chosen Assassination, a jungle hunter's patience, ending things before they knew to be afraid.
+- [class:ROGUE spec:Combat !change] I had chosen Combat, loose-limbed and quick, more dance than drill.
+- [class:ROGUE spec:Subtlety !change] I had chosen Subtlety, and moved as quietly as a troll can, which is quieter than most expect.
+- [class:PRIEST spec:Discipline !change] I had chosen Discipline, a will as steady as the tide around the Echo Isles.
+- [class:PRIEST spec:Holy !change] I had given myself to the Holy path, healing done the Darkspear way, with a grin once the danger had passed.
+- [class:PRIEST spec:Shadow !change] I had turned to Shadow, where the darker gifts of the loa sit, and gave them the respect they demand.
+- [class:SHAMAN spec:Elemental !change] I had chosen the Elemental way, storm and sea called down as my people have long called on older powers.
+- [class:SHAMAN spec:Enhancement !change] I had chosen Enhancement, the spirits riding along with every blow.
+- [class:SHAMAN spec:Restoration !change] I had chosen Restoration, the spirits asked to mend, the way the tide smooths over what it once broke.
+- [class:MAGE spec:Arcane !change] I had given my study to the Arcane, an old troll art long before the younger races wrote it down.
+- [class:MAGE spec:Fire !change] I had given my study to Fire, as bright as a bonfire on the shore.
+- [class:MAGE spec:Frost !change] I had given my study to Frost, which for a troll used to island heat was a joke I never tired of.
+- [client:forever class:WARLOCK spec:Affliction !change] I had chosen Affliction, curses with all the patience of a hex, which my people know well.
+- [client:forever class:WARLOCK spec:Demonology !change] I had chosen Demonology, and kept my demons the way you keep a viper: admired from a distance.
+- [client:forever class:WARLOCK spec:Destruction !change] I had chosen Destruction, fel fire the elders of my people would frown on, and meant to use it with care.
+- [change] I turned from {was} to {spec} with a grin; a Darkspear knows when it is time to try a new trick.
+- [change] {was} had kept me alive, and I thanked it for that before going over to {spec} all the same.
