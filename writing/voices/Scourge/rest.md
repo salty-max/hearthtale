@@ -18,6 +18,5 @@ kind: rest
 - I lingered {at}, and let the day's irritations sink out of sight like anything dropped in the Undercity's canals.
 - Being counted among the Horde still struck me as strange, and I settled {at} turning it over without reaching a verdict.
 - [fire] I kept to the fireside {at}, watching the flames with the attention I usually save for strangers I have not made up my mind about.
-- [last] I called the stretch finished {at}; whatever remained could wait for me or find someone more eager.
-- [!last] I stopped {at} long enough to take stock of what was done and what was not, and no longer.
+- I called the stretch finished {at}; whatever remained could wait for me or find someone more eager.
 - I rested {at}, turning over the people I had dealt with and which of them I would gladly deal with again.

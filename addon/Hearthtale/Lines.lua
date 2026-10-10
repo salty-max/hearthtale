@@ -1,27 +1,19 @@
--- The writer's lines: one book's choice of sentences (Book:say), the
--- narrator's remarks (Book:remark), a quest's deed (Book:deed), the links
--- between sentences and the scenery of places. Each moment picks a sentence
--- or a clause of its kind (writing/<kind>.md):
+-- The book's lines: one book's choice of sentences (Book:say), the scenery
+-- of places, the lessons, the prologue and the epitaph. Each moment picks a
+-- sentence of its kind (writing/<kind>.md):
 --   - only sentences whose [tags] the moment has (night, hc, race:Dwarf...;
 --     "!night" = not at night) and whose {slots} it can fill;
 --   - a sentence never used twice in a book while a fresh one is left (then the
 --     one used longest ago);
 --   - chosen by a hash of the character and the moment, so the book reads the
 --     same each time it is opened.
--- A place just named becomes "there"; counts are written in words; every
--- sentence starts with a capital. A place is named ("in Thelsamar"), then
--- "there" once, then left out ("I put down six wolves."): {at} must read well
--- without it. {in} always names the place (for sentences without a verb:
--- "Timber in Shimmer Ridge.").
+-- Counts are written in words; every sentence starts with a capital. {at}
+-- names a place ("in Thelsamar"), {in} too, for sentences without a verb.
 local _, ns = ...
 local W = ns.writer
-local floor, listing, mid, plural, TROPHY = W.floor, W.listing, W.mid, W.plural, W.TROPHY
-local TITLES, objectiveOf, itemName, things = W.TITLES, W.objectiveOf, W.itemName, W.things
-local objectivesLike, sizes, uncounted = W.objectivesLike, W.sizes, W.uncounted
-local article, capitalise, FACTION, HOME, KIN = W.article, W.capitalise, W.FACTION, W.HOME, W.KIN
-local faith, weapon, FOE_PEOPLE, FOE_KIND, foeOf = W.faith, W.weapon, W.FOE_PEOPLE, W.FOE_KIND, W.foeOf
-local THING_KIND, thingOf, instruction, lowerFirst = W.THING_KIND, W.thingOf, W.instruction, W.lowerFirst
-local taskOf, TEETH, ELEMENT, CLASS_FIGHT, ours = W.taskOf, W.TEETH, W.ELEMENT, W.CLASS_FIGHT, W.ours
+local floor, mid, TITLES, capitalise = W.floor, W.mid, W.TITLES, W.capitalise
+local FACTION, HOME, KIN, faith, weapon = W.FACTION, W.HOME, W.KIN, W.faith, W.weapon
+local words, deathTags, deathFoe, playedWords = W.words, W.deathTags, W.deathFoe, W.playedWords
 
 -- ── the writer of one book ───────────────────────────────────────────────────
 local function hash(s)
@@ -35,10 +27,8 @@ local function hash(s)
 end
 
 -- A line's tags: conditions the moment must meet ("night"; "!night", not at
--- night), and marks, which aren't conditions.
-local MARKS = { aside = true, plain = true, turn = true, state = true }
+-- night).
 local function holds(tag, ctx)
-  if MARKS[tag] then return true end
   if tag:sub(1, 1) == "!" then return not ctx[tag:sub(2)] end
   return ctx[tag] and true or false
 end
@@ -67,123 +57,8 @@ local function fillable(text, values)
   return true
 end
 
-local function hasTag(s, tag)
-  for _, t in ipairs(s.tags or {}) do
-    if t == tag then return true end
-  end
-  return false
-end
--- A race's or a class's line.
-local function isVoice(s)
-  for _, t in ipairs(s.tags or {}) do
-    if t:find("^race:") or t:find("^class:") then return true end
-  end
-  return false
-end
--- A sentence with a quip, marked [aside] in writing/ ("I saw it through.
--- Nobody died, least of all me.").
-local function isQuip(s)
-  for _, t in ipairs(s.tags or {}) do
-    if t == "aside" then return true end
-  end
-  return false
-end
--- The moments that may always have one.
-local MATTERS = {
-  ["close-light"] = true,
-  ["close-deep"] = true,
-  rare = true,
-  died = true,
-  rest = true,
-  night = true,
-  beginning = true,
-  power = true,
-  petdied = true,
-}
-
--- How each race's journal runs (with its own sentences, writing/voices/): how
--- many clauses a sentence holds, and its own time words over the shared ones.
-local STYLE = {
-  default = { clauses = 3, links = {} },
-  Dwarf = {
-    clauses = 3,
-    links = {
-      night = { "Come nightfall,", "When the light went,", "That night," },
-      day = { "At first light,", "Come morning,", "With the dawn," },
-    },
-  },
-  Orc = {
-    clauses = 3,
-    links = {
-      night = { "At nightfall,", "In the dark,", "That night," },
-      day = { "At sunrise,", "With the sun,", "At dawn," },
-      later = { "Later,", "Hours later," },
-    },
-  },
-  NightElf = {
-    clauses = 3,
-    links = {
-      night = { "Beneath the moon,", "When Elune rose,", "As night fell," },
-      day = { "At dawn,", "With the first light,", "As the stars faded," },
-      later = { "In time,", "Some hours later,", "Later that day," },
-    },
-  },
-  Scourge = {
-    clauses = 3,
-    links = {
-      night = { "After dark,", "In the dark hours,", "That night," },
-      day = { "When the sun rose,", "By morning,", "Morning came, and" },
-      later = { "Later,", "In due course,", "Some hours on," },
-    },
-  },
-}
-
 -- How many uses of a kind before one of the race's own sentences may come back.
 local OWN_GAP = 12
--- The routine clauses, and the pool of remarks each may end with: the
--- narrator's own reaction ("…, with rather more appetite for supper"), told
--- for about one routine clause in three, never the same one soon again.
-local ROUTINE = {
-  ["c-deed-kill"] = "r-foe",
-  ["c-first"] = "r-first",
-  ["c-deed-item"] = "r-item",
-  ["c-deed-task"] = "r-task",
-  ["c-event"] = "r-task",
-  ["c-deed-word"] = "r-task",
-  ["c-chain"] = "r-task",
-  ["c-deliver"] = "r-task",
-  ["c-gear"] = "r-gear",
-  ["c-trainer"] = "r-lesson",
-  ["c-skill"] = "r-lesson",
-  ["c-prof"] = "r-lesson",
-  ["c-travel"] = "r-road",
-  ["c-return"] = "r-road",
-  ["c-place"] = "r-road",
-  ["c-inn"] = "r-inn",
-  ["c-group"] = "r-company",
-  ["c-report"] = "r-task",
-  ["c-handed-kill"] = "r-foe",
-  ["c-handed-item"] = "r-item",
-}
--- How much a clause matters, from its own moment alone (a later moment never
--- changes it, so text already read stays as it was): 0 a routine hand-in (no
--- remark), 1 the ordinary, 2 a deed, 3 a highlight (a sentence of its own,
--- and the narrator's thought on it when one is free).
-local function weigh(kind, ctx)
-  if kind == "c-first" or kind == "c-elite" or kind == "c-tame" then return 3 end
-  if kind == "c-deed-kill" or kind == "c-handed-kill" then return ctx.named and 3 or 2 end -- one asked for by name
-  if kind == "c-handed-item" then return 2 end
-  if kind == "c-deed-task" then return ctx.escort and 3 or 2 end
-  if kind == "c-event" then return 3 end -- (an escort, an event: a highlight)
-  if kind == "c-deed-item" or kind == "c-hunt" then return 2 end -- (a hunt: no remark, its creatures last)
-  if kind == "c-gear" then return ctx.fine and 2 or ctx.made and 1 or 0 end
-  if kind == "c-report" or kind == "c-deliver" or kind == "c-deed-word" or kind == "c-quest" or kind == "c-fold" then
-    return 0
-  end
-  if kind == "c-boss" or kind == "c-loot" then return 2 end
-  return 1
-end
-
 -- A race's emblems, by the start of their words: a line on one, no other on
 -- it for MOTIF_GAP lines told (a voice is a way of looking, not a refrain:
 -- the forge, the camps, the drums, a hoof in every sentence).
@@ -248,51 +123,7 @@ local function motifsOf(race, text)
   return found
 end
 
--- Chapters before a remark may come back (none fresh left): sooner than
--- that, the clause goes without.
-local REMARK_GAP = 10
--- Tags that name what a remark is about: such a remark, when it fits, comes first.
-local SUBJECTS =
-  { teeth = true, mechanical = true, cloth = true, meat = true, explore = true, escort = true, made = true }
-local BURN = { holy = true } -- (a remark about the Light's burn: Book:remark)
-for _, people in ipairs(FOE_PEOPLE) do
-  SUBJECTS[people[1]] = true
-end
-SUBJECTS.leper, SUBJECTS.highborne = true, true -- (told by name, whatever their kind)
-for _, kind in pairs(FOE_KIND) do
-  SUBJECTS[kind] = true
-end
-for _, kind in ipairs(THING_KIND) do
-  SUBJECTS[kind[1]] = true
-end
--- A remark about this moment, not any: its subject, the night, a return, a
--- first lesson, a long fight, a weapon in hand. The others are general.
--- The pools whose general lines would fit any moment of the kind (any fight
--- at all): kept for the deeds; an ordinary one takes a specific line or none.
-local GATED = { ["r-foe"] = true }
-local SPECIFIC = setmetatable(
-  { night = true, back = true, new = true, lots = true, held = true },
-  { __index = SUBJECTS }
-)
-
 local PEOPLE = { "giver", "via", "ender", "boss", "mates", "pet" } -- slots that name people
--- Who asked, left out of a deed when already named; the kinds told without
--- the person when already named (their [again] sentences).
-local AGAIN_DROPS = {
-  ["c-deed-kill"] = true,
-  ["c-deed-item"] = true,
-  ["c-deed-task"] = true,
-  ["c-event"] = true,
-  ["c-deed-word"] = true,
-  ["c-handed-kill"] = true,
-  ["c-handed-item"] = true,
-  ["c-chain"] = true,
-  ["c-hunt"] = true,
-  ["c-fold"] = true,
-}
-local AGAIN = { ["c-report"] = true, ["c-deliver"] = true, ["c-deed-word"] = true, ["c-quest"] = true }
-local SINGULAR_S = W.SINGULAR_S
-local ZALAZANE = 826 -- (the quest that ends him)
 local Book = {}
 Book.__index = Book
 
@@ -307,106 +138,22 @@ local function newBook(c, diary)
     usedIn = {},
     uses = 0,
     seed = c.guid or "",
-    flown = false,
-    repeats = 0,
-    chapterNo = 0,
     kindUses = {},
   }, Book)
   b.race = race
   b.motifAt = {} -- [a race's emblem] = the line told that last used it
-  -- (the spells known from the first day: a new rank of one is no lesson)
-  b.knownSpells = {}
-  for _, sp in ipairs(W.FIRST_SPELLS[class] or {}) do
-    b.knownSpells[sp] = true
-  end
   b.voice = { home = HOME[race], kin = KIN[race], faith = faith(race, class), weapon = weapon(race, class) }
   b.own = ns.data.voices and ns.data.voices[race] -- the race's own journal voice (writing/voices/<Race>/)
-  b.style = STYLE[race] or STYLE.default
   b.faction = (c.faction == "alliance" or c.faction == "horde") and c.faction or FACTION[race]
   b.sceneSeen = {} -- places already described in this book
-  b.landsSeen = {} -- lands (zones) already come to in this book: a return is told as one
-  b.landLeft = {} -- when each land was last left: a quick return to it (Writer.lua tell.place)
-  b.remarkChapter = {} -- the chapter each remark was last told in
-  b.creatureKinds = {} -- classifications actually recorded, not guessed from a quest's name
-  b.placeNames = {} -- only places encountered so far; later events cannot rewrite an objective
-  b.sizesUsed, b.sizesOrder = {}, {} -- the size words told last (Book:size)
-  -- how I fight (Book:learn): fire, shadow, steel... from my class and the
-  -- spells learned; a new one, to try on the next foes a quest asks for
-  b.fighting, b.fresh = {}, nil
   b.noted = {} -- the spells told by a line of their own (writing/lesson.md)
-  b.kinZones, b.hostsTold = {}, false -- (Scene:situate)
-  for _, e in ipairs(CLASS_FIGHT[class] or {}) do
-    b.fighting[e] = true
-  end
   b.base = { hc = c.hardcore or nil, ["race:" .. race] = true, ["class:" .. class] = true }
   -- (a class that fights with a blade in hand: only it "cuts down" a foe)
   b.base.melee = (class == "WARRIOR" or class == "ROGUE" or class == "PALADIN") or nil
-  -- (the chapter Zalazane fell in: a Darkspear's hope for it ends there)
-  for i, ch in ipairs(c.chapters or {}) do
-    for _, m in ipairs(ch.log or {}) do
-      if m.k == "quest" and m.id == ZALAZANE and not b.zalazaneAt then b.zalazaneAt = i end
-    end
-  end
   if b.faction then b.base["faction:" .. b.faction] = true end
   return b
 end
 
--- The words a remark may not repeat from its clause's own wording ("a vest I
--- had made, made by my own hands"): those of four letters or more, and a few
--- families by their root. (What the clause names may come back: "eight Linen
--- Cloth, wondering what could be sewn from so much cloth".)
-local COMMON = {
-  with = true,
-  that = true,
-  than = true,
-  what = true,
-  them = true,
-  their = true,
-  there = true,
-  more = true,
-  into = true,
-  from = true,
-  have = true,
-  been = true,
-  were = true,
-  when = true,
-  ["then"] = true,
-  some = true,
-  just = true,
-  this = true,
-  they = true,
-  once = true,
-  still = true,
-  before = true,
-  after = true,
-  again = true,
-}
-local ROOTS = {
-  making = "made",
-  make = "made",
-  makes = "made",
-  hands = "hand",
-  handiwork = "hand",
-  handmade = "hand",
-  own = "own",
-  works = "work",
-  workmanship = "work",
-}
-local function echoWords(text)
-  local roots = {}
-  for w in text:lower():gmatch("%a+") do
-    local root = ROOTS[w] or (#w >= 4 and not COMMON[w] and w) or nil
-    if root then roots[root] = true end
-  end
-  return roots
-end
-
--- ── one sentence ─────────────────────────────────────────────────────────────
--- Book:say below, in its steps. In a chapter, the book's scene (self.scene,
--- Scene.lua) keeps what a paragraph or a chapter remembers: who was named,
--- the quips and voice lines used, the remark budget.
-
--- A sentence chosen: what "used" remembers of it, the book its uses.
 function Book:use(kind, e)
   self.uses = self.uses + 1
   self.kindUses[kind] = (self.kindUses[kind] or 0) + 1
@@ -415,79 +162,10 @@ function Book:use(kind, e)
   if ns.writerUsed then ns.writerUsed[e.reach] = true end
 end
 
--- Whether a clause ends with a remark: one every few ordinary clauses,
--- sooner for a deed, on a highlight whenever it can; a hand-in neither has
--- one nor counts towards one.
-local function remarkDue(s, routine, weight)
-  if not (s and routine and weight > 0) then return false end
-  s.routineCount = s.routineCount + 1
-  if weight >= 3 or s.routineCount >= s.nextRemark - (weight >= 2 and 1 or 0) then
-    s:prepareRemark()
-    -- (not on two sentences in a row, unless the second is a highlight after
-    -- an ordinary one: never on every highlight of a run, "I took on Ol' Sooty,
-    -- grateful…" after "I fought a Mo'grosh Enforcer and won, with no appetite…")
-    return s.pendingRemarks == 0 and (not s.lastSentenceRemark or (weight >= 3 and not s.lastHighlightRemark))
-  end
-  return false
-end
-
-local function each(list, fn) -- "A, B and C": A, B, C
-  for part in (list:gsub(" and ", ", ")):gmatch("[^,]+") do
-    fn((part:gsub("^%s+", ""):gsub("%s+$", "")))
-  end
-end
-
--- The people a sentence names (values): those as given (returned, for the
--- paragraph to remember), with "the" where it belongs.
-function Book:people(kind, values, ctx, seen)
-  -- A person already named in this paragraph is not named again: who asked
-  -- is left out of a deed, and a return, a delivery, a message carried or a
-  -- giver's request is told without the name ("I reported back once more").
-  local asked = {} -- (the people as given, before "the" or a list is touched)
-  for _, k in ipairs(PEOPLE) do
-    asked[k] = values[k]
-  end
-  if seen then
-    -- (how often the paragraph named someone: by a slot, or in words of its
-    -- own, a task's "speak with Aamelia Windfield")
-    local s = self.scene
-    local written = s and (table.concat(s.current, " ") .. " " .. table.concat(s.pending, " ")) or ""
-    local function times(name)
-      local n = tonumber(seen[name]) or (seen[name] and 1) or 0
-      local _, inText = written:gsub(name:gsub("%p", "%%%0"), "")
-      return math.max(n, inText)
-    end
-    if type(values.giver) == "string" and times(values.giver) > 0 and AGAIN_DROPS[kind] then values.giver = nil end
-    -- a list of those I returned to: the ones already named leave it
-    -- (said enough: just before, or twice already: "I checked in again"
-    -- three sentences on would leave the reader guessing)
-    local at, told = s and s.namedAt or {}, self.told or 0
-    local function enough(name) return times(name) >= 2 or (times(name) > 0 and at[name] and told - at[name] <= 2) end
-    if kind == "c-report" and type(values.ender) == "string" then
-      -- (the ones not named yet; else the ones not said enough)
-      local rest, unsaid, count = {}, {}, 0
-      each(values.ender, function(name)
-        count = count + 1
-        if times(name) == 0 then table.insert(rest, name) end
-        if not enough(name) then table.insert(unsaid, name) end
-      end)
-      if #rest > 0 then
-        values.ender = listing(rest)
-      elseif #unsaid > 0 and #unsaid < count then
-        values.ender = listing(unsaid)
-      end
-    end
-    local who = kind == "c-quest" and values.giver or values.ender
-    if AGAIN[kind] and type(who) == "string" then
-      local all = true
-      each(who, function(name)
-        if not enough(name) then all = false end
-      end)
-      if all then ctx.again = true end
-    end
-  end
-  -- people named with their article ("The Defias Traitor") or by a role
-  -- ("the Captured Mountaineer", Names.lua): "the" inside a sentence
+-- The people a sentence names (values), with "the" where it belongs:
+-- people named with their article ("The Defias Traitor") or by a role ("the
+-- Captured Mountaineer", Names.lua).
+function Book:people(values)
   local roleNamed = ns.names and ns.names.npcThe or {}
   for _, k in ipairs(PEOPLE) do
     if type(values[k]) == "string" then
@@ -504,47 +182,26 @@ function Book:people(kind, values, ctx, seen)
       end)
     end
   end
-  return asked
 end
 
 -- The sentences of a kind that fit: the race's own fresh ones, the shared
 -- fresh ones (and those of them with tags), and all that fit, used or not.
 -- Each with its id (what "used" remembers) and its name in the reachability
 -- test: the race's own ("Dwarf/kill#3") and the shared ("kill#3").
-function Book:candidates(kind, values, ctx, wantRemark)
-  local s = self.scene
+function Book:candidates(kind, values, ctx)
   -- A place just named is not named again by a sentence without a verb,
   -- unless no other sentence fits.
   local named = values["in"]
   if named and values._place == self.last and not self.there then values["in"] = nil end
-  -- In a chapter: a race's or a class's line only in some chapters, twice at
-  -- most; a sentence with a quip (a second, wry sentence) once a paragraph,
-  -- but for the moments that matter.
-  local function allowed(line)
-    if not s then return true end
-    if isVoice(line) and not (s.voiceChapter and s.voiceUsed < 2) and not hasTag(line, "first") then return false end -- a first, once in a life, may
-    if s.quipped and not MATTERS[kind] and isQuip(line) then return false end
-    -- a clause turned round ("{foe} fell to me") opens a sentence of its own,
-    -- and takes no remark (a remark's subject is "I": "the road led me back,
-    -- glad to be heading home" would dangle)
-    if hasTag(line, "turn") and (#s.pending > 0 or wantRemark) then return false end
-    return true
-  end
   local race = self.c.race or "Human"
-  local onlyPlain = s and s.onlyPlain
   local own, list = self.own and self.own[kind], ns.data.writing[kind]
-  if ctx._shared then own = nil end -- (the shared lines only: the diary's limit on a race's own)
+  if ctx._shared then own = nil end -- (the shared lines only: an entry's limit on a race's own)
   local ownFresh, fresh, voiced, all
-  for pass = 1, 3 do
+  for _ = 1, 2 do
     ownFresh, fresh, voiced, all = {}, {}, {}, {}
     local function add(from, mine)
       for i, line in ipairs(from or {}) do
-        if
-          not (onlyPlain and pass < 3 and not hasTag(line, "plain"))
-          and satisfied(line.tags, ctx)
-          and fillable(line[1], values)
-          and (pass % 3 == 0 or allowed(line))
-        then
+        if satisfied(line.tags, ctx) and fillable(line[1], values) then
           local e = mine and { s = line, id = "v:" .. kind .. i, reach = race .. "/" .. kind .. "#" .. i }
             or { s = line, id = kind .. i, reach = kind .. "#" .. i }
           table.insert(all, e)
@@ -562,8 +219,7 @@ function Book:candidates(kind, values, ctx, wantRemark)
     add(own, true)
     add(list, false)
     if #all > 0 then break end
-    -- nothing allowed: first the place may be named again, then the limits go
-    if pass == 1 and values["in"] ~= named then values["in"] = named end
+    values["in"] = named -- (nothing fits: the place may be named again)
   end
   return ownFresh, fresh, voiced, all
 end
@@ -574,37 +230,10 @@ end
 -- A routine clause doesn't begin with the verb of the one before, if a fresh
 -- one can help it; prefer: tags to favour.
 function Book:pick(kind, key, prefer, ownFresh, fresh, voiced, all)
-  local routine = ROUTINE[kind]
-  -- (a clause doesn't repeat the words of the sentence it joins: "returned
-  -- with the work done and told Gryan the work was done")
-  local s = self.scene
-  if s and #s.pending > 0 then
-    local said = echoWords(table.concat(s.pending, " "))
-    local function fresh2(group)
-      local kept = {}
-      for _, e in ipairs(group) do
-        local echo = false
-        for w in pairs(echoWords((e.s[1]:gsub("{%w+}", "")))) do
-          if said[w] then echo = true end
-        end
-        if not echo then table.insert(kept, e) end
-      end
-      return kept
-    end
-    local o, f, v = fresh2(ownFresh), fresh2(fresh), fresh2(voiced)
-    if #o + #f > 0 then
-      ownFresh, fresh, voiced = o, f, v
-    end
-  end
-  -- (a routine clause avoids the verb of the one before; a fold, the
-  -- chapter's fold before it: "took care of two other small tasks… took
-  -- care of one other small task")
-  -- (any clause: "I hunted… I hunted", "set Dusk on… set Dusk on"; nor one
-  -- that ends as the one before did: "… soon after. … soon after.")
+  -- (a clause avoids the verb of the one before: "I hunted… I hunted"; nor
+  -- one that ends as the one before did: "… soon after. … soon after.")
   local clause = kind:find("^c%-") ~= nil
-  local verb = (clause and kind ~= "c-fold") and self.lastVerb
-    or (kind == "c-fold" and self.scene and self.scene.foldVerb)
-    or nil
+  local verb = clause and self.lastVerb or nil
   local tail = clause and self.lastTail
   local function tailOf(text) return text:match("(%a+ %a+)%W*$") end
   local function sameVerb(e)
@@ -676,9 +305,7 @@ function Book:pick(kind, key, prefer, ownFresh, fresh, voiced, all)
   -- every time would replay the first round in its order)
   local ownOldest
   if #ownFresh == 0 then
-    -- (a routine clause's own verbs come back less often: they are short)
-    local own = self.ownGap or OWN_GAP
-    local gap = routine and 2 * own or own
+    local gap = self.ownGap or OWN_GAP
     local spaced = {}
     for _, x in ipairs(all) do
       if
@@ -694,20 +321,12 @@ function Book:pick(kind, key, prefer, ownFresh, fresh, voiced, all)
     if #spaced > 0 then ownOldest = spaced[pick % #spaced + 1] end
   end
   if #ownFresh > 0 then return ownFresh[pick % #ownFresh + 1] end
-  if ownOldest and not (self.freshFirst and #fresh > 0) then
-    self.repeats = self.repeats + 1
-    return ownOldest
-  end
+  if ownOldest and not (self.freshFirst and #fresh > 0) then return ownOldest end
   if #voiced > 0 and h % 2 == 0 then return voiced[pick % #voiced + 1] end
   if #fresh > 0 then return fresh[pick % #fresh + 1] end
   local e = all[1]
   for _, x in ipairs(all) do
     if self.used[x.id] < self.used[e.id] then e = x end
-  end
-  self.repeats = self.repeats + 1
-  local gap = (self.kindUses[kind] or 0) - self.usedIn[e.id]
-  if not self.minGap or gap < self.minGap then
-    self.minGap, self.minGapKind = gap, kind
   end
   return e
 end
@@ -730,26 +349,15 @@ end
 -- fill the slots (_place: the place {at}, {in} or {where} names), tags add to
 -- the character's. prefer: tags to favour (a fresh sentence with one of them
 -- wins over the rest). raw: a clause, left as it is (no capital).
--- Returns the text and what was chosen: { kind, weight (weigh), routine (its
--- remarks' pool, if routine), remark (the one added, if any), turn (a [turn]
--- line), state (a [state] line: "had them in my pack", no action) }.
+-- Returns the text and what was chosen: { kind, own (a race's own line) }.
 function Book:say(kind, key, values, tags, prefer, raw)
   if not ns.data.writing[kind] then return end
-  local s = self.scene
   local ctx = setmetatable(tags or {}, { __index = self.base })
-  if kind == "c-return" then ctx.back = true end -- for its remark: a place known
-  local routine, weight = ROUTINE[kind], weigh(kind, ctx)
-  -- (the first fight against Cenarius's own: a highlight, its unease told)
-  if ctx.cenarion and routine == "r-foe" and not self.cenarionSeen then
-    weight, self.cenarionSeen = 3, true
-  end
-  local wantRemark = not ctx.quiet and remarkDue(s, routine, weight)
   for k, v in pairs(self.voice) do
     if values[k] == nil then values[k] = (k == "weapon" and self.weaponHeld) or v end -- (the weapon in hand, once known)
   end
-  local seen = s and s.peopleNamed
-  local asked = self:people(kind, values, ctx, seen)
-  local ownFresh, fresh, voiced, all = self:candidates(kind, values, ctx, wantRemark)
+  self:people(values)
+  local ownFresh, fresh, voiced, all = self:candidates(kind, values, ctx)
   if #all == 0 then return end
   local e = self:pick(kind, key, prefer, ownFresh, fresh, voiced, all)
   -- (its emblems, remembered: MOTIFS)
@@ -758,199 +366,16 @@ function Book:say(kind, key, values, tags, prefer, raw)
     self.motifAt[m] = self.saidCount
   end
   self:use(kind, e)
-  local chosen = e.s
-  local text = chosen[1]
-  local said = {
-    kind = kind,
-    own = e.id:sub(1, 2) == "v:", -- (a race's own line)
-    weight = weight,
-    routine = routine,
-    remark = false,
-    turn = hasTag(chosen, "turn"),
-    state = hasTag(chosen, "state"),
-  }
-  if seen then -- who this sentence names, for the rest of the paragraph
-    for _, k in ipairs(PEOPLE) do
-      if type(asked[k]) == "string" and text:find("{" .. k .. "}", 1, true) then
-        each(asked[k], function(name)
-          seen[name] = (tonumber(seen[name]) or 0) + 1
-          s.namedAt[name] = self.told or 0
-          -- (for Scene:situate; a fold's "the last of them for …" is no meeting)
-          if kind ~= "c-fold" then table.insert(s.peopleSaid, name) end
-        end)
-      end
-    end
-  end
+  local text = e.s[1]
   if kind:find("^c%-") then
     self.lastVerb, self.lastTail = text:match("^(%a+)"), text:match("(%a+ %a+)%W*$")
-  end
-  if kind == "c-fold" and s then s.foldVerb = text:match("^(%a+)") end
-  -- a remark ends a clause that has no comma or "and" of its own ("cursed it
-  -- and let the rot do its work, taller than me" would hang off the rot)
-  -- (the clause as it will read: a list of things or creatures filled in,
-  -- "Lurker Venom, a Mo'grosh Crystal and a Crocolisk Tear", takes none either)
-  -- (a lesson's or a company's list is one thing, remarked as such: "impatient to try them")
-  local filled = text
-  if kind ~= "c-trainer" and kind ~= "c-group" then
-    filled = text:gsub("{(%w+)}", function(k) return type(values[k]) == "string" and values[k] or "" end)
-  end
-  local free = not filled:find(",") and not filled:find(" and ") and not ctx.trophy -- (a trophy speaks for itself)
-  -- a Forsaken fighting with the Light: it burns them (Ask CDev), and one
-  -- such fight in three ends on it, a remark of the race's own about the burn
-  local burn = false
-  if
-    routine == "r-foe"
-    and self.base["race:Scourge"]
-    and values.faith == "the Light"
-    and text:find("{faith}", 1, true)
-  then
-    local n = self.lightFights or 0
-    if n % 3 ~= 0 then
-      self.lightFights = n + 1
-    elseif free and not said.turn and s then
-      if not wantRemark then
-        s:prepareRemark()
-        wantRemark = s.pendingRemarks == 0 and not s.lastSentenceRemark
-      end
-      if wantRemark then
-        burn, self.lightFights = true, n + 1
-      end
-    end
-  end
-  if wantRemark and free then
-    local rctx = burn and setmetatable({ holy = true, burn = true }, { __index = ctx }) or ctx
-    local remark = self:remark(routine, key, values, rctx, (text:gsub("{%w+}", "")), weight >= 2)
-    if remark then
-      text = text .. ", " .. remark
-      said.remark = remark
-      s.nextRemark = s.routineCount + 2 + hash(self.seed .. "|remark-gap|" .. key) % 2
-    end
-  end
-  if s then
-    if isVoice(chosen) then s.voiceUsed = s.voiceUsed + 1 end
-    if isQuip(chosen) and not MATTERS[kind] then s.quipped = true end
   end
   self:placed(text, values)
   text = text:gsub("{(%w+)}", values)
   -- a place left out: no space before the punctuation, none doubled
   -- (and none left at the start: "{at}, my tenth level" with no place)
   text = text:gsub(" +([%.,;:!%?])", "%1"):gsub("  +", " "):gsub("^[ ,;:]+", "")
-  return raw and text or capitalise(text), said
-end
-
--- A remark from a pool (writing/r-*.md, and the race's own): a fresh one,
--- the race's first, one about the moment's subject (its teeth, the meat)
--- before the general; once all were used, the one used longest ago, if
--- REMARK_GAP chapters have passed; else none.
-function Book:remark(pool, key, values, ctx, clauseText, general)
-  local race = self.c.race or "Human"
-  local own, list = self.own and self.own[pool], ns.data.writing[pool]
-  local ownFresh, fresh, all = {}, {}, {}
-  local said = clauseText and echoWords(clauseText) or {}
-  local function echoes(line)
-    for w in pairs(echoWords(line)) do
-      if said[w] then return true end
-    end
-    return false
-  end
-  local function add(from, mine)
-    for i, s in ipairs(from or {}) do
-      if satisfied(s.tags, ctx) and fillable(s[1], values) and not echoes(s[1]) then
-        local e = mine and { s = s, id = "v:" .. pool .. i, reach = race .. "/" .. pool .. "#" .. i }
-          or { s = s, id = pool .. i, reach = pool .. "#" .. i }
-        table.insert(all, e)
-        if not self.used[e.id] then table.insert(mine and ownFresh or fresh, e) end
-      end
-    end
-  end
-  add(own, true)
-  add(list, false)
-  local function specific(group)
-    local found = {}
-    for _, e in ipairs(group) do
-      for _, t in ipairs(e.s.tags or {}) do
-        if SUBJECTS[t] then
-          table.insert(found, e)
-          break
-        end
-      end
-    end
-    return #found > 0 and found or group
-  end
-  local pick = hash(self.seed .. "|" .. pool .. "|" .. key)
-  local function oldest(mine)
-    local o
-    for _, x in ipairs(all) do
-      if (mine == nil or (x.id:sub(1, 2) == "v:") == mine) and (not o or self.used[x.id] < self.used[o.id]) then
-        o = x
-      end
-    end
-    return o and self.chapterNo - self.remarkChapter[o.id] >= REMARK_GAP and o or nil
-  end
-  local function only(group, set)
-    local found = {}
-    for _, x in ipairs(group) do
-      for _, t in ipairs(x.s.tags or {}) do
-        if set[t] then
-          table.insert(found, x)
-          break
-        end
-      end
-    end
-    return found
-  end
-  -- about this moment first ("the gurgling still in my ears" after murlocs):
-  -- the race's own, else a shared one over a general line in any voice
-  local ownAbout, sharedAbout = only(ownFresh, SUBJECTS), only(fresh, SUBJECTS)
-  local e
-  -- the Light burning a Forsaken (Book:say): the race's own words for it,
-  -- a fresh one, else the one used longest ago once spaced enough
-  if ctx.burn then
-    local burns = only(ownFresh, BURN)
-    if #burns > 0 then
-      e = burns[pick % #burns + 1]
-    else
-      for _, x in ipairs(only(all, BURN)) do
-        local spaced = self.chapterNo - self.remarkChapter[x.id] >= REMARK_GAP
-        if x.id:sub(1, 2) == "v:" and spaced and (not e or self.used[x.id] < self.used[e.id]) then e = x end
-      end
-    end
-  end
-  if e then return self:useRemark(pool, e, values) end
-  if #ownAbout > 0 then
-    e = ownAbout[pick % #ownAbout + 1]
-  elseif #sharedAbout > 0 then
-    e = sharedAbout[pick % #sharedAbout + 1]
-  elseif not general and GATED[pool] then
-    -- an ordinary fight (a stray kill): a remark that answers to it (its
-    -- teeth, the night) or none, not one that would fit any fight
-    local near = only(ownFresh, SPECIFIC)
-    if #near == 0 then near = only(fresh, SPECIFIC) end
-    if #near == 0 then return nil end
-    e = near[pick % #near + 1]
-  -- the race's own while fresh, then back when spaced enough: the shared
-  -- ones fill the gaps, so the voice holds over a whole life
-  elseif #ownFresh > 0 then
-    local group = specific(ownFresh)
-    e = group[pick % #group + 1]
-  else
-    e = oldest(true)
-    -- (where the race has its own, the shared fill every other gap)
-    if not e and #fresh > 0 and (not own or pick % 2 == 0) then
-      local group = specific(fresh)
-      e = group[pick % #group + 1]
-    end
-    e = e or (not own and oldest(nil)) or nil
-    if not e then return nil end
-  end
-  return self:useRemark(pool, e, values)
-end
--- The remark chosen: remembered as used, filled in.
-function Book:useRemark(pool, e, values)
-  self:use(pool, e)
-  self.remarkChapter[e.id] = self.chapterNo
-  if ns.writerRemark then ns.writerRemark(e.id, self.chapterNo, self) end
-  return (e.s[1]:gsub("{(%w+)}", values))
+  return raw and text or capitalise(text), { kind = kind, own = e.id:sub(1, 2) == "v:" }
 end
 
 -- The place slots of a moment: {at} ("in Coldridge Valley", "there" if it was
@@ -967,445 +392,6 @@ function Book:here(values, place)
   return values
 end
 
--- Spells learned: a new way of fighting (Immolate: fire, for a warlock who
--- had only shadow) is tried on the next foes a quest asks for.
-function Book:learn(spells)
-  for _, spell in ipairs(spells) do
-    local e = ELEMENT[spell]
-    if e and not self.fighting[e] then
-      self.fighting[e] = true
-      self.fresh = self.fresh or spell
-    end
-  end
-end
-
--- How many n is, in words (Language.lua's sizes): one of those that fit,
--- not one of the last few used, so "a good many" doesn't come back every
--- other quest; often none at all.
-local SIZE_GAP = 4
--- (a size word's family: "many" for "a good many" and "a great many", "deal"
--- for "a good deal of" and "a great deal of")
-local function familyOf(w) return w:match("(%a+) of$") or w:match("(%a+)$") or w end
-function Book:size(n, key, mass, pack)
-  local fit, fresh, unused = sizes(n, mass, pack), {}, {}
-  -- (nor one of the same family: "a great many" just after "a good many")
-  local family = {}
-  for w in pairs(self.sizesUsed) do
-    family[familyOf(w)] = true
-  end
-  for _, w in ipairs(fit) do
-    if w == "" or not self.sizesUsed[w] then table.insert(unused, w) end
-    if w == "" or not (self.sizesUsed[w] or family[familyOf(w)]) then table.insert(fresh, w) end
-  end
-  -- (all of them said lately: none at all, never the one just said again,
-  -- "a fair number of Sunscale Screechers for a fair number of Raptor Heads")
-  if #fresh == 0 then fresh = #unused > 0 and unused or { "" } end
-  local w = fresh[hash(self.seed .. "|size|" .. key) % #fresh + 1]
-  if w ~= "" then
-    self.sizesUsed[w] = true
-    table.insert(self.sizesOrder, w)
-    if #self.sizesOrder > SIZE_GAP then self.sizesUsed[table.remove(self.sizesOrder, 1)] = nil end
-  end
-  return w
-end
-
--- A thing named for the one it belongs or goes to, as they would hear it:
--- "Grelin Whitebeard's Journal" to Grelin is "the journal", "Thazz'ril's
--- Pick" to Foreman Thazz'ril "the pick", "a Letter to Grelin Whitebeard"
--- "the letter", "Ebonlocke's Response to Solomon" "Ebonlocke's response".
-local function within(name, person) return person and (" " .. person .. " "):find(" " .. name .. " ", 1, true) end
-local function theirs(name, person)
-  local whose, what = name:match("^(.-)'s (.+)$")
-  if whose and within(whose, person) then return "the " .. what:lower() end
-  local thing, to = name:match("^(.-) to (%u.+)$")
-  if thing and (within(to, person) or within(to:match("(%S+)$"), person)) then
-    local owner, head = thing:match("^(.-'s) (.+)$")
-    if owner then return owner .. " " .. head:lower() end
-    return "the " .. (thing:match("^An? (.+)$") or thing):lower()
-  end
-end
-
--- (the class's way of fighting, or the pet, in the clause just told: not in
--- this one too, "I called on the Light… I called on the Light…")
-function Book:foughtJust() return self.foughtAt ~= nil and (self.told or 0) - self.foughtAt <= 1 end
-
--- A quest's deed, in a clause: the creatures killed, the things gathered or
--- delivered, the task done, or who asked. Returns the text and what was
--- chosen, as Book:say.
-function Book:deed(m, key, tags)
-  -- (work that mattered, writing/why/ weighs it 2 or more: no quip after it)
-  local why = m.id and ns.data.why and ns.data.why[m.id]
-  if why and why[1] >= 2 then tags.quiet = true end
-  local o = objectiveOf(m)
-  local objective = o and o.text and lowerFirst(o.text)
-  if objective and (objective:match("^tame ") or objective:lower():match(" tamed[%.:]?%s*$")) then return end
-  local ender = m.ender ~= m.giver and m.ender or nil
-  local values = { giver = m.giver, ender = ender }
-  -- who they are, as the game said or knows: "he", "she" (else no line with
-  -- a pronoun for them); a beast takes nothing "into its hands"
-  local npcs = ns.knowledge and ns.knowledge.npcs or {}
-  local sex = m.giverSex or (npcs[m.giver or ""] or {}).sex
-  local beast = (m.ender and (m.enderBeast or (npcs[m.ender] or {}).beast)) or (npcs[m.giver or ""] or {}).beast
-  tags.beast = beast or nil
-  local done, said
-  if o and o.type == "monster" and o.name then
-    -- every creature asked for ("Rockjaw Troggs and Burly Rockjaw Troggs");
-    -- one asked for by a name of its own ("Vagash", "Grik'nir the Cold") as
-    -- it is, any other with its article ("a Snow Leopard Prowler")
-    local foes, count, named = {}, 0, false
-    for _, f in ipairs(objectivesLike(m, o)) do
-      named = not f.name:find(" ") or f.name:find(" the ")
-      table.insert(foes, (f.n or 1) > 1 and plural(f.name) or named and f.name or article(f.name))
-      count = count + (f.n or 1)
-    end
-    tags.named = count == 1 and named or nil
-    -- (no size with a creature asked for by name: "Clerk Horrace
-    -- Whitesteed, Citizen Wilkes and Miner Hackett" are no handful)
-    local single = false
-    for _, f in ipairs(objectivesLike(m, o)) do
-      if (f.n or 1) == 1 then single = true end
-    end
-    local pack = #foes == 1 and self.creatureKinds[o.name] == "Wolf"
-    values.n, values.foes = single and "" or self:size(count, key, false, pack), listing(foes)
-    self.lastFoe = { name = o.name, many = count > 1, told = self.told or 0 }
-    tags.one = count == 1 or nil
-    tags.teeth = TEETH[self.creatureKinds[o.name] or ""]
-    tags.mechanical = self.creatureKinds[o.name] == "Mechanical" or nil
-    local people = foeOf(o.name, self.creatureKinds[o.name])
-    if people then tags[people] = true end
-    tags.harmless = W.HARMLESS[self.creatureKinds[o.name] or ""]
-    -- how I fought them: my way of fighting (fire, steel...), a spell just
-    -- learned, the pet at my side; favoured one time in three
-    for e in pairs(self.fighting) do
-      tags[e] = true
-    end
-    local prefer
-    if self.fresh then
-      tags.tried, values.spell, prefer = true, self.fresh, { tried = true }
-      self.fresh = nil
-    elseif tags.petName and hash(self.seed .. "|pet|" .. key) % 3 == 0 and not self:foughtJust() then
-      prefer, self.foughtAt = { pet = true }, self.told or 0
-    elseif hash(self.seed .. "|fight|" .. key) % 3 == 0 and not self:foughtJust() then
-      prefer, self.foughtAt = self.fighting, self.told or 0
-    end
-    values.pet = tags.petName
-    tags.pet = values.pet and true or nil
-    -- (handed in on the spot: to whom, if not named in the paragraph already)
-    if tags.handed then
-      local handed =
-        { n = values.n, foes = values.foes, giver = m.ender or m.giver, spell = values.spell, pet = values.pet }
-      done, said = self:say("c-handed-kill", key, handed, tags, prefer, true)
-    end
-    if not done then
-      done, said = self:say("c-deed-kill", key, values, tags, prefer, true)
-    end
-  elseif o and o.type == "item" and o.held and o.name and m.ender then
-    -- a thing in hand when the quest was taken (a note, a letter found on a
-    -- foe), carried to another: a delivery
-    values.ender, values.thing = m.ender, itemName(o.name)
-    -- (a thing named for whom it goes to: "the journal", "the letter", once)
-    values.thing = theirs(o.name, m.ender) or values.thing
-    -- the same thing, delivered just before: "took it on to …" ("it" only
-    -- right after it was named; further back in the paragraph, named again)
-    local carried = self.scene and self.scene.thingsCarried or {}
-    local last = carried[o.name]
-    -- ("it" for one thing; "Scarlet Crusade Documents" are "the documents")
-    local many = o.name:find("[^s's]s$") and not o.name:find("'s ")
-    -- ("Ahanu's Leather Goods were in Tal's hands", not "was")
-    local noun = (o.name:match("^(.-) of ") or o.name):match("(%a+)$") or ""
-    tags.plural = noun:find("[^s]s$") and not SINGULAR_S[noun] or nil
-    if last and (self.told or 0) - last <= 1 and not many then
-      tags.onward = true
-    elseif last then
-      -- named before, further back: by what it is ("the ring", "the book")
-      local head = (o.name:match("^(.-) %l") or o.name):match("(%a+)$")
-      if head then values.thing = "the " .. head:lower() end
-    end
-    carried[o.name] = self.told or 0
-    done, said = self:say("c-deliver", key, values, tags, nil, true)
-  elseif o and o.type == "item" and o.held then
-    -- (a thing in hand from the start, the foreman's blackjack: never found;
-    -- its giving back, a delivery, is told at the turn-in)
-    return nil
-  elseif o and o.type == "item" and o.name then
-    -- every thing asked for ("Felix's Box, Felix's Chest and Felix's Bucket of
-    -- Bolts"), the weight of the work for one kind of thing only
-    local all, list = objectivesLike(m, o), {}
-    for _, f in ipairs(all) do
-      table.insert(list, (f.n or 1) > 1 and things(f.name) or itemName(f.name))
-    end
-    -- a thing named for who asked for it: "the journal" ("Grelin Whitebeard
-    -- had asked for Grelin Whitebeard's Journal" says it twice)
-    local renamed = m.giver and #all == 1 and theirs(o.name, m.giver)
-    if renamed then list[1] = renamed end
-    if #all == 1 and self.scene then self.scene.thingsCarried[o.name] = self.told or 0 end
-    -- ("the harvest", Milly's eight sacks of it: one thing, never "all the the harvest")
-    local count = renamed and 1 or (#all == 1 and (o.n or 1) or 2)
-    values.n, values.thing = #all == 1 and self:size(count, key, uncounted(o.name)) or "", listing(list)
-    if tags.done then values.giver = nil end -- found, not yet handed over
-    -- the same thing again, told just before: "four more Blood Shards"
-    local last = self.lastThing
-    if count > 1 and last and last.name == o.name and (self.told or 0) - last.told <= 1 then tags.more = true end
-    self.lastThing = { name = o.name, told = self.told or 0 }
-    tags.one = count == 1 or nil
-    -- several kinds of things ("Sleepers' Key, a Claw Key and a Barrow Key",
-    -- "Scaber Stalks and a Death Cap"): not "all the …", nor "so many"
-    tags.set = #all > 1 or nil
-    -- one thing with a plural name ("Sea Creature Bones", "MacGrann's Dried
-    -- Meats"): not "it"
-    local head = (o.name:match("^(.-) of ") or o.name):match("(%a+)$") or ""
-    tags.plural = count == 1 and head:find("[^s']s$") and not SINGULAR_S[head] or nil
-    tags.trophy = TROPHY[o.name:match("^(%a+) of ") or ""] or nil
-    -- the trophy of a foe just told slain ("I took on Ol' Sooty", then Ol'
-    -- Sooty's Head): "the head", one, taken as proof, without a search or a
-    -- remark; and its owner, never told again as prey
-    local trophyOwner, trophyPart = o.name:match("^(.-)'s (.+)$")
-    if not trophyOwner then -- ("Head of Gath'Ilzogg")
-      local h, w = o.name:match("^(%a+) of (.+)$")
-      if TROPHY[h or ""] then
-        trophyOwner, trophyPart = w, h
-      end
-    end
-    -- (any part of a creature, or a thing it carried, its name saying whose:
-    -- "Essence of Nightlash", "Piece of Krom'zar's Banner", "Murgut's Totem")
-    if not trophyOwner then
-      local h, w = o.name:match("^(%a+) of (%u.+)$")
-      if h then
-        trophyOwner, trophyPart = w, h
-      end
-    end
-    local pieceOf = trophyOwner and trophyOwner:match("^(%a+) of ")
-    if pieceOf then trophyOwner = trophyOwner:sub(#pieceOf + 5) end
-    if #all == 1 and trophyOwner and self.scene then
-      self.scene.trophied[trophyOwner] = true
-      local part = (pieceOf and ("a " .. pieceOf:lower() .. " of the ") or "the ") .. trophyPart:lower()
-      if not tags.prey and (o.n or 1) == 1 and self.scene:slainOwner(trophyOwner) then
-        values.thing, values.n, tags.trophy, tags.one, tags.plural, tags.quiet = part, "", true, true, nil, true
-      elseif not tags.prey and (o.n or 1) == 1 and tags.done and not tags.handed then
-        -- (its owner a creature, the game's drops or its own name say so:
-        -- the thing taken from it where the work was done, never "the search
-        -- turned up"; at the hand-in, the trophy laid before who asked)
-        local from
-        for _, dropper in ipairs(ns.knowledge and ns.knowledge.drops[o.name] or {}) do
-          if (" " .. dropper .. " "):find(" " .. trophyOwner .. " ", 1, true) then from = dropper end
-        end
-        local bare = ns.names and ns.names.creatureBare or {}
-        from = from or (bare[trophyOwner] and trophyOwner)
-        if from then
-          values.owner, values.thing, values.n, tags.taken, tags.one, tags.plural = from, part, "", true, true, nil
-        end
-      end
-    end
-    tags.cloth = o.name:match("Cloth$") or o.name:match("Silk$") or o.name:match("Wool$") or nil
-    tags.meat = o.name:match("Meat$") or nil -- uncounted: "it"
-    local kind = not (tags.cloth or tags.meat) and thingOf(o.name)
-    if kind then tags[kind] = true end
-    -- (the hunt for them: the creatures they drop from, killed on the way)
-    if tags.prey and not tags.trophy then
-      -- {item}: the things by name, with "the" ("the Tough Wolf Meat"), or a
-      -- name of their own ("Ilkrud Magthrull's Tome"), or "the tome" when
-      -- named for who asked
-      local hunt = { prey = tags.prey, n = values.n, thing = values.thing, giver = m.ender or m.giver }
-      local names = {}
-      for _, f in ipairs(all) do
-        table.insert(names, (f.n or 1) > 1 and things(f.name) or f.name)
-      end
-      hunt.item = listing(names)
-      if not hunt.item:find("^[^,]-'s ") then
-        -- (its own article goes: "the Mysterious Message", not "the A …")
-        hunt.item = "the " .. (hunt.item:match("^An? (.+)$") or hunt.item:match("^The (.+)$") or hunt.item)
-      end
-      if renamed then hunt.item = list[1] end
-      -- (a thing named for the creature it comes from: "the Scale of Old
-      -- Murk-Eye" is not taken "from Old Murk-Eye" as well)
-      local whose = o.name:match("^(.-)'s ") or o.name:match("^(.-s)' ")
-      for name in tags.prey:gmatch("%u[%w' -]+%w") do
-        if o.name:find(name, 1, true) then tags.ofprey = true end
-        -- ("Hezrul Bloodmark" for "Hezrul's Head"; "Baron Longshores", a
-        -- creature with a name of its own killed twice, for "Baron
-        -- Longshore's Head": one Baron Longshore)
-        if whose and ((" " .. name .. " "):find(" " .. whose .. " ", 1, true) or name == whose .. "s") then
-          tags.ofprey = true
-          -- (one creature by its own name, "Gregor Agamand", killed twice:
-          -- not "Gregor Agamands")
-          local one = name == whose .. "s" and whose
-          if not one and name:sub(1, #whose + 1) == whose .. " " and name:find("s$") then
-            for _, from in ipairs(ns.knowledge and ns.knowledge.drops[o.name] or {}) do
-              if from == name:sub(1, -2) then one = from end
-            end
-          end
-          local at = one and hunt.prey:find(name, 1, true)
-          if at then
-            hunt.prey = hunt.prey:sub(1, at - 1) .. one .. hunt.prey:sub(at + #name)
-            if hunt.prey == one then tags.lone = true end
-          end
-        end
-      end
-      -- ("hunted Athrikus Narassin for Athrikus Narassin's Head": "for the
-      -- head", the creature named once)
-      local short = tags.ofprey
-        and #all == 1
-        and (o.n or 1) == 1
-        and (o.name:match("'s (.+)$") or o.name:match("s' (.+)$") or o.name:match("^(.-) of "))
-      if short then
-        hunt.thing, hunt.item, hunt.n = "the " .. short:lower(), "the " .. short:lower(), ""
-      end
-      -- ("Durotar Tigers for Durotar Tiger Furs", "Tunnel Rat Ears from Tunnel
-      -- Rat Vermin": "for a handful of furs", "ears")
-      local part
-      if #all == 1 and not short then
-        local words = {}
-        for w in o.name:gmatch("%S+") do
-          table.insert(words, w)
-        end
-        for name in tags.prey:gmatch("%u[%w' -]+%w") do
-          local k, same = 0, true
-          for w in name:gmatch("%S+") do
-            local one = (w:gsub("ies$", "y"):gsub("ves$", "f"):gsub("s$", ""))
-            if same and (w == words[k + 1] or one == words[k + 1]) then
-              k = k + 1
-            else
-              same = false
-            end
-          end
-          if k >= 1 and k == #words - 1 and words[#words]:find("^%u%l+$") and not part then
-            part = (o.n or 1) > 1 and things(words[#words]):lower() or words[#words]:lower()
-          end
-        end
-      end
-      -- ("Kuz's Skull, Nak's Skull and Lok's Skull" from Kuz, Nak and Lok
-      -- Orcbane: "their skulls")
-      if #all > 1 then
-        local same, piece = true, nil
-        for _, f in ipairs(all) do
-          local whom, thing = f.name:match("^(.-)'s (%a+)$")
-          if
-            not whom
-            or (piece and thing ~= piece)
-            or not (" " .. tags.prey .. " "):find("[ ,]" .. whom:gsub("%p", "%%%0") .. "[ ,]")
-          then
-            same = false
-          end
-          piece = piece or thing
-        end
-        if same and piece then
-          local parts = (piece:find("s$") and piece or things(piece)):lower()
-          tags.ofprey, hunt.thing, hunt.item, hunt.n = true, "their " .. parts, "the " .. parts, ""
-        end
-      end
-      if part then
-        tags.ofprey = true
-        hunt.thing, hunt.item = (o.n or 1) > 1 and part or article(part), "the " .. part
-      end
-      -- how I hunted them: my way of fighting, the pet at my side, favoured
-      -- one time in three ("hunted" alone, hunt after hunt, wears thin)
-      for e in pairs(self.fighting) do
-        tags[e] = true
-      end
-      hunt.pet = tags.petName
-      tags.pet = hunt.pet and true or nil
-      local prefer
-      if tags.pet and hash(self.seed .. "|pet|" .. key) % 3 == 0 and not self:foughtJust() then
-        prefer, self.foughtAt = { pet = true }, self.told or 0
-      elseif hash(self.seed .. "|fight|" .. key) % 3 == 0 and not self:foughtJust() then
-        prefer, self.foughtAt = self.fighting, self.told or 0
-      end
-      done, said = self:say("c-hunt", key, hunt, tags, prefer, true)
-    end
-    if not done and tags.handed and not tags.more and not tags.trophy then
-      local handed = { n = values.n, thing = values.thing, giver = m.ender or m.giver }
-      done, said = self:say("c-handed-item", key, handed, tags, nil, true)
-    end
-    if not done then
-      done, said = self:say("c-deed-item", key, values, tags, tags.trophy and { trophy = true } or nil, true)
-    end
-  elseif o and o.text and instruction(o.text) then
-    -- told after the fact: "escort the Defias Traitor to discover where
-    -- VanCleef was hiding" (the log's "The Defias Traitor", "is hiding")
-    values.task = taskOf(o.text)
-    -- (one who asked, named in the task as well: "find Mankrik's Wife" for
-    -- Mankrik is "find his wife")
-    local own = m.giver and values.task:match("(%u[%w']+)'s %u")
-    if own and (" " .. m.giver .. " "):find(" " .. own .. " ", 1, true) then
-      local pron = (sex == "male" and "his") or (sex == "female" and "her") or "the"
-      values.task = values.task:gsub(
-        own:gsub("%p", "%%%0") .. "'s (%u%a*)",
-        function(w) return pron .. " " .. w:lower() end
-      )
-    end
-    -- (a place the reader knows already: not named again at the end)
-    local prep, at = values.task:match(" (in) ([^,]+)$")
-    if not at then
-      prep, at = values.task:match(" (at) ([^,]+)$")
-    end
-    if not at then
-      prep, at = values.task:match(" (inside) ([^,]+)$")
-    end
-    if at and self.placeNames[at] then values.task = values.task:sub(1, -(#at + #prep + 3)) end
-    -- Taming objectives describe the same event as UNIT_PET. Leave that
-    -- telling to the pet record, even before it arrives: no lookahead and
-    -- no rewriting a finished quest sentence when the pet is later named.
-    tags.explore, tags.escort = values.task:match("^explore "), values.task:match("^escort ")
-    local site = values.task:match("^explore the (.+)$")
-    if site and (self.placeNames[site] or (ns.data.scenery or {})[site]) then values.task = "explore " .. mid(site) end
-    done, said = self:say("c-deed-task", key, values, tags, nil, true)
-  elseif (m.k == "done" or m.told) and (not o or (why and o.text and not o.name and o.type ~= "item")) then
-    -- an escort, an event: no objective in the log, the game said when it was
-    -- done (Quests.lua), or one that names its result ("Peons Awoken"); told
-    -- by what it was for (writing/why/), else by who asked, never as word
-    -- carried to its ender
-    values.why = why and ours(why[2], self.race)
-    tags.story, tags.escort = values.why and true or nil, true
-    if values.why or m.giver then
-      done, said = self:say("c-event", key, values, tags, nil, true)
-    end
-  elseif ender and m.giver then
-    done, said = self:say("c-deed-word", key, values, tags, nil, true)
-  end
-  -- nothing to tell but who asked: that much; a title alone isn't told
-  if not done and m.giver then
-    local pron = (sex == "male" and "he") or (sex == "female" and "she") or nil
-    done, said = self:say("c-quest", key, { giver = m.giver, pron = pron }, tags, nil, true)
-  end
-  return done, said
-end
-
--- Linking words, by what happened since the moment before: night falling,
--- morning, hours gone by. A connector needs a recorded change in time.
-local LINKS = {
-  night = { "That night,", "By nightfall,", "When night came," },
-  day = { "At first light,", "In the morning,", "With the dawn," },
-  later = { "Later,", "Some hours later,", "Later that day," },
-  aftermath = { "Afterwards,", "After that encounter," },
-}
-function Book:link(m, prev, key)
-  if not (m and prev and m.at and prev.at) then return nil end
-  local which
-  if m.night and not prev.night then
-    which = "night"
-  elseif prev.night and not m.night then
-    which = "day"
-  elseif m.at - prev.at > 3600 then
-    which = "later"
-  elseif prev.k == "close" then
-    which = "aftermath"
-  end
-  return which and self:linkWord(which, key)
-end
-function Book:linkWord(which, key)
-  local list = (self.style and self.style.links[which]) or LINKS[which]
-  local i = hash(self.seed .. "|word|" .. key) % #list + 1
-  -- never the same word twice running
-  if list[i] == self.lastLink then i = i % #list + 1 end
-  self.lastLink = list[i]
-  return list[i]
-end
-
--- A place described, the first time in the book the character comes to it
--- (writing/scenery/): as home, an ally's land, enemy ground or neutral, by
--- night or day. Nil if there is nothing written for it, or it was told.
--- A dungeon by the instance's own name, where it differs from the place's
--- (the game gives both, depending on where it is asked).
 local SCENERY_ALIAS = {
   Deadmines = "The Deadmines",
   ["Stormwind Stockade"] = "The Stockade",
@@ -1434,7 +420,149 @@ function Book:sceneryOf(name, night)
   return p[i][1]
 end
 
+-- ── the lessons, the prologue and the epitaph ────────────────────────────────
+-- (a trade's own spell, learned before the game listed the trade, is told by
+-- the trade); a spell with a line of its own (writing/lesson.md: Life Tap,
+-- paid in blood) told by it after the lesson, the first of them
+local noted
+local function hasNote(spell, book)
+  if not noted then
+    noted = {}
+    for _, line in ipairs(ns.data.writing.lesson or {}) do
+      for _, t in ipairs(line.tags or {}) do
+        local name = t:match("^spell:(.+)$") -- (its spaces "_": [spell:Life_Tap])
+        if name then
+          name = name:gsub("_", " ")
+          noted[name] = noted[name] or {}
+          table.insert(noted[name], line)
+        end
+      end
+    end
+  end
+  -- (a line for this race and class: a Forsaken priest's Smite is not every priest's)
+  for _, line in ipairs(noted[spell] or {}) do
+    local fits = true
+    for _, t in ipairs(line.tags or {}) do
+      local neg, k = t:match("^(!?)(%a+:.+)$")
+      if k and not k:find("^spell:") then
+        local has = book.base[k] == true
+        if (neg == "!") == has then fits = false end
+      end
+    end
+    if fits then return true end
+  end
+  return false
+end
+-- The spells of a lesson worth telling: not a trade's own, a demon's or a
+-- form's (told at their first use), nor a trade's rank.
+local function taught(spells, c)
+  local out, seen = {}, {}
+  for _, sp in ipairs(spells or {}) do
+    sp = sp:gsub(" %(.-%)$", "") -- (a rank in its name: "Create Healthstone (Minor)")
+    if
+      not seen[sp]
+      and not (
+        (c.profs or {})[sp]
+        or ns.TRADE_SPELLS[sp]
+        or ns.POWER_SPELLS[sp]
+        or sp:find("^Apprentice ")
+        or sp:find("^Journeyman ")
+        or sp:find("^Expert ")
+        or sp:find("^Artisan ")
+        or sp:find("^Master ")
+      )
+    then
+      seen[sp] = true
+      table.insert(out, sp)
+    end
+  end
+  return out
+end
+
+function Book:prologue(p)
+  local zone = p.zone
+  return self:say(
+    "prologue",
+    "prologue",
+    self:here({
+      zone = mid(zone),
+      quests = (p.quests or 0) > 1 and words(p.quests) or nil,
+      inn = mid(p.inn),
+      played = playedWords(p.played),
+    }, zone),
+    {}
+  )
+end
+
+-- The epitaph of a Hardcore life, in the third person: how it ended (a line
+-- telling the cause wins), what it was (its totals, a rare, a dungeon), and a
+-- farewell (often in the voice of its race or class).
+local RACE_WORD = {
+  Human = "human",
+  Dwarf = "dwarf",
+  NightElf = "night elf",
+  Gnome = "gnome",
+  Orc = "orc",
+  Troll = "troll",
+  Tauren = "tauren",
+  Scourge = "Forsaken",
+}
+function Book:epitaph(c)
+  local d = c.death or {}
+  local race, class = RACE_WORD[c.race] or "", (c.class or ""):lower()
+  local who = (race .. " " .. class):gsub("^ +", ""):gsub(" +$", "")
+  who = who ~= "" and ((who:match("^[aeiou]") and "an " or "a ") .. who) or nil
+  self.last = nil
+  local tags = deathTags(d)
+  tags.low = (d.level or 0) <= 10 or nil
+  tags.high = (d.level or 0) >= 40 or nil
+  local place = d.sub or d.zone
+  -- the line that tells how it ended wins (a copy: say() gives its tags the
+  -- character's, race and class, which are not a cause)
+  local cause = deathTags(d)
+  cause.low, cause.high = tags.low, tags.high -- a short life or a long one says how it ended too
+  local first = self:say(
+    "epitaph",
+    "epitaph",
+    self:here({ name = c.name, who = who, level = words(d.level or 0), zone = mid(d.zone), foe = deathFoe(d) }, place),
+    tags,
+    cause
+  )
+
+  local quests, kills, played, rare, dungeon, zones = 0, 0, 0, nil, nil, 0
+  for _, ch in ipairs(c.chapters or {}) do
+    quests = quests + (ch.quests or 0)
+    played = played + (ch.played or 0)
+    for _, n in pairs(ch.kills or {}) do
+      kills = kills + n
+    end
+    for _, m in ipairs(ch.log or {}) do
+      if m.k == "rare" then rare = rare or m.name end
+      if m.k == "dungeon" then dungeon = dungeon or m.name end
+    end
+  end
+  for key in pairs(c.visited or {}) do
+    if key:sub(-1) == "|" then zones = zones + 1 end
+  end
+  local second = self:say("remembrance", "remembrance", {
+    name = c.name,
+    played = playedWords(played),
+    quests = quests > 1 and words(quests) or nil, -- "one tasks": no
+    kills = kills > 1 and words(kills) or nil,
+    rare = rare,
+    dungeon = mid(dungeon),
+    zones = zones > 1 and words(zones) or nil,
+  }, { low = tags.low, high = tags.high, inside = tags.inside })
+  local third = self:say("farewell", "farewell", { name = c.name }, { low = tags.low })
+  if not first then return nil end
+  local parts = { first }
+  if second then table.insert(parts, second) end
+  if third then table.insert(parts, third) end
+  return table.concat(parts, " ")
+end
+
 -- (for the next files of the writer)
 W.hash = hash
 W.Book = Book
 W.newBook = newBook
+W.taught, W.hasNote = taught, hasNote

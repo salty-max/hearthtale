@@ -1,13 +1,6 @@
 ---
 kind: night
 ---
-- [!last] I slept in the open {at}, with the night feeling kinder than the day's demands.
-- [!last] I bedded down {at} in the open, as my people did for long ages before Darnassus was raised.
-- [!last] I settled outside {at}, content to let the night hold me as the forests once had.
-- [!last] I slept lightly {at}, under a moon I could at least be sure of.
-- [!last] I spent the night {at} in the open, with Elune's name a comfort rather than a plea.
-- [!last] I lay down {at}, thinking of the druids asleep in the Emerald Dream, and envying them a little.
-- [last] I settled outside {at}, longing for Teldrassil's shelter without wishing to hide from the world forever.
-- [last] I lay down beneath the sky {at}, counting the stars until they counted me to sleep.
-- [last] I bedded down {at}, surrendering to sleep what I had refused to surrender to fear.
-- [!last] I slept rough {at}, finding more comfort in the night than in the ground beneath me.
+- I settled outside {at}, longing for Teldrassil's shelter without wishing to hide from the world forever.
+- I lay down beneath the sky {at}, counting the stars until they counted me to sleep.
+- I bedded down {at}, surrendering to sleep what I had refused to surrender to fear.

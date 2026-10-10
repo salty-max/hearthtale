@@ -415,7 +415,7 @@ check(#moments("campfire") == 1, "a campfire's warmth: one moment per stop")
 state.auras[7353] = nil
 fire("UNIT_AURA", "player")
 
--- The book of that chapter, written as it happens.
+-- The book of that chapter, its diary entry, written as it happens.
 local book = ns.writeBook(J)
 local one = book.chapters[1]
 check(
@@ -426,34 +426,12 @@ check(
     and one.to == 2
     and one.close
     and one.rare
-    and one.text:find("Tough Wolf Meat", 1, true)
-    and one.text:find("Rockjaw Troggs", 1, true)
-    and not one.text:find('"Dwarven Outfitters"', 1, true)
+    and one.text ~= ""
     and not one.text:find("{", 1, true),
-  "chapter 1, still being written: its moments in order, the quests told by what was done"
+  "chapter 1, still being written: its entry, its levels and its marks (a close call, a rare)"
 )
-do -- the Troll Cave: its work told in Frostmane Hold, then a return to Grelin in Anvilmar
-  local hold = one.text:find("Frostmane Hold", 1, true)
-  local work = hold and one.text:find("Frostmane Troll Whelps", hold, true)
-  local returned = work and one.text:find("Grelin Whitebeard", work, true)
-  check(
-    work
-      and returned
-      and not one.text:sub(work, returned):find(" to Anvilmar", 1, true)
-      and not one.text:sub(work, returned):find("myself back in", 1, true),
-    "a quest's work told where it happened, the return to who asked after it (a quick way back is no journey)"
-  )
-end
 check(not one.text:find("level two", 1, true), "a level reached isn't told (the chapter's levels say it)")
-local textBefore = one.text
-state.sub = "Kharanos"
-fire("ZONE_CHANGED")
-local grown = ns.writeBook(J).chapters[1].text
-check(
-  grown:sub(1, #textBefore - 1) == textBefore:sub(1, #textBefore - 1) and #grown > #textBefore,
-  "a new moment adds to the chapter; what was written stays"
-)
-io.write("    " .. grown:gsub("\n\n", "\n    ") .. "\n")
+io.write("    " .. one.text:gsub("\n\n", "\n    ") .. "\n")
 
 -- The book, open.
 SlashCmdList.HEARTHTALE("")
@@ -484,8 +462,7 @@ state.bind = bind
 -- The chapter as its diary entry, the journal as the character writes it,
 -- written again from the record at each new moment.
 check(
-  page.body:GetText() == ns.writeDiary(ns.journal(), ns.writeBook(ns.journal())).entries[1].text
-    and page.body:GetText() ~= "",
+  page.body:GetText() == ns.writeBook(ns.journal()).chapters[1].text and page.body:GetText() ~= "",
   "a chapter reads as its diary entry, written again at each new moment"
 )
 SlashCmdList.HEARTHTALE("")
@@ -504,15 +481,10 @@ check(
     and B1.level == 2
     and #B1.chapters == 1
     and B1.chapters[1].open
-    and B1.chapters[1].text
+    and B1.chapters[1].diary
+    and not B1.chapters[1].text
     and B1.chapters[1].began,
-  "at logout, the book is written into the saved file"
-)
-check(
-  B1
-    and B1.chapters[1].diary == ns.writeDiary(ns.settledView(J), ns.writeBook(ns.settledView(J))).entries[1].text
-    and B1.chapters[1].diary ~= B1.chapters[1].text,
-  "… each chapter with its diary entry, read first on the site"
+  "at logout, the book is written into the saved file: each chapter as its diary entry"
 )
 check(J.realm == "Nightslayer" and J.region == 3, "… and where the character lives")
 local view = ns.settledView(J)
@@ -520,7 +492,7 @@ check(
   #ch().log == logBeforeNight and view.chapters[1].log[#view.chapters[1].log].k == "night" and view ~= J,
   "a logout in the wild: the book tells the night outdoors (not the waking yet); the journal itself waits for the next login"
 )
-check(B1.chapters[1].text == ns.writeBook(view).chapters[1].text, "the saved text is the game's, word for word")
+check(B1.chapters[1].diary == ns.writeBook(view).chapters[1].text, "the saved text is the game's, word for word")
 G.wait(3600) -- (away an hour: a real break)
 login()
 check(
@@ -548,11 +520,7 @@ logout()
 G.wait(3600)
 local B2 = J.book.chapters[1]
 check(
-  not B2.open
-    and B2.ended
-    and B2.text:find("Thunderbrew Distillery", 1, true)
-    and not ch(1).ended
-    and #printed == printedBefore,
+  not B2.open and B2.ended and B2.place == "Thunderbrew Distillery" and not ch(1).ended and #printed == printedBefore,
   "a logout at an inn: the saved book tells the chapter closed at once (the journal settles it at the next login, with its chat line)"
 )
 state.resting = false
@@ -575,10 +543,7 @@ check(
   "a line in chat, with a link to it"
 )
 local closed = ns.writeBook(J).chapters[1]
-check(
-  not closed.open and closed.place == "Thunderbrew Distillery" and closed.text:find("Thunderbrew Distillery", 1, true),
-  "its last line: the rest, where"
-)
+check(not closed.open and closed.place == "Thunderbrew Distillery", "closed where I rested")
 
 -- Too little written: a rest doesn't close it.
 state.resting = true
@@ -804,9 +769,9 @@ check(
   not K.closed
     and died == 1
     and last[#last].sub == "Gol'Bolar Quarry"
-    and not waiting.died
+    and waiting.died
     and not HearthtaleHall.lives[state.guid],
-  "a death on a normal realm: in its chapter, not told before its way back, no Hall, the book goes on"
+  "a death on a normal realm: in its chapter's entry, no Hall, the book goes on"
 )
 
 -- How I came back from death: a ghost's run to my body, the spirit healer's
@@ -923,13 +888,8 @@ check(
 
 local text = ns.writeBook(K).chapters[#K.chapters].text
 check(
-  text:find("ghost", 1, true)
-    and text:find("spirit healer", 1, true)
-    and text:find("Thessaly", 1, true)
-    and text:find("Leofric", 1, true)
-    and text:find("Linen Bandages", 1, true)
-    and not text:find("Mug", 1, true),
-  "the chapter tells them: the ghost, the healer, the companion, the duel won, the bandages; not the abandoned quest"
+  text:find("died three times", 1, true) and text:find("Leofric", 1, true) and not text:find("Mug", 1, true),
+  "its entry tells them: the deaths together, the duel won; not the abandoned quest"
 )
 
 -- A quest given up after the chapter that told its work closed: that chapter

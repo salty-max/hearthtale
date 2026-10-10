@@ -1,7 +1,6 @@
 ---
 kind: class-reward
 ---
-- [summon !diary] In return, {giver} taught me to call {pet}.
 - [summon] {giver} taught me to summon {pet}, and I liked the promise of having something else for enemies to aim at.
 - [summon] My reward from {giver} was {pet} of my own to call on.
 - [summon] For the work, {giver} taught me to summon {pet}, a servant from the wrong side of the world.
@@ -10,7 +9,6 @@ kind: class-reward
 - [voidwalker] {giver} taught me to call a voidwalker; the thought of putting solid shadow between me and an enemy was comforting.
 - [succubus] {giver} taught me to call a succubus, and I doubted that pleasant company was what I had bargained for.
 - [felhunter] {giver} taught me to call a felhunter, a hound of the Nether that feeds on magic.
-- [!summon !diary] In return, {giver} taught me {spell}.
 - [!summon] I learned {spell} from {giver} for the work.
 - [!summon] The reward was a lesson: {giver} taught me {spell}.
 - [!summon] What {giver} gave me for it was {spell}, and it was worth the trouble.

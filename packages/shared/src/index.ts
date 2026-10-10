@@ -19,9 +19,9 @@ export type Client = "classic" | "forever";
 /** One chapter as the addon wrote it at logout (Save.lua). */
 export type BookChapter = {
   number: number;
-  /** The prose, paragraphs separated by a blank line. Missing: nothing to tell yet. */
+  /** A book saved before diary entries were: the chapter's prose, read in their place. */
   text?: string;
-  /** The same stretch as the character's diary entry (Diary.lua): shown first, the prose a click away. */
+  /** The chapter as the character's diary entry (Diary.lua), paragraphs separated by a blank line. Missing: nothing to tell yet. */
   diary?: string;
   /** Where it closed, or where it began while still being written. */
   place?: string;

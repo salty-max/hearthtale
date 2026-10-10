@@ -1,13 +1,6 @@
 ---
 kind: night
 ---
-- [!last] I sat out the night {at}, with no need to sleep and an old longing for the ease of it.
-- [!last] I stopped beneath the sky {at}, less concerned with a roof than with remaining unburied.
-- [!last] I spent the night {at}, grateful that darkness hid more than it threatened.
-- [!last] I waited out the night {at}; the living could keep their dreams, though I sometimes envied them.
-- [!last] I rested outside {at}, and the dark kept its distance as politely as I kept mine.
-- [!last] I let the night go by {at} with the patience of someone who no longer counted the hours.
-- [last] I stopped outside {at}, with no wish to turn the pause into a permanent arrangement.
-- [last] I spent another night in the open {at}; a roof would have been welcome, though I had endured worse lodgings.
-- [last] I lay down {at}, out of a habit death had not quite managed to cure.
-- [!last] I passed the night {at}, not sleeping so much as declining to do anything else.
+- I stopped outside {at}, with no wish to turn the pause into a permanent arrangement.
+- I spent another night in the open {at}; a roof would have been welcome, though I had endured worse lodgings.
+- I lay down {at}, out of a habit death had not quite managed to cure.

@@ -35,6 +35,18 @@ if forever then
     end
   end
 end
+-- The quest givers, by name: their people and calling (scripts/knowledge.ts,
+-- and Forever's own callings, scripts/forever-data.ts)
+local found, NPCS = pcall(dofile, ".cache/audit/npcs.lua")
+if not found then
+  io.stderr:write("no quest givers: run bun scripts/knowledge.ts\n")
+  os.exit(1)
+end
+if forever then
+  for name, v in pairs(dofile(".cache/audit/npcs-forever.lua")) do
+    NPCS[name] = NPCS[name] or v
+  end
+end
 local BOOKS = forever and ".cache/audit/books-forever" or ".cache/audit/books"
 
 local problems = {}
@@ -294,7 +306,7 @@ local function unrecorded(q, class, side)
   for _, list in ipairs({ q.starters or {}, q.enders or {} }) do
     for _, id in ipairs(list) do
       local c = creature(id)
-      local npc = c and ns.knowledge.npcs[c.name]
+      local npc = c and NPCS[c.name]
       local trains = npc and npc.role and npc.role:match("^(%a+) Trainer$")
       if (q.classes or 0) == 0 and trains and CLASS[trains:upper()] and trains:upper() ~= class then return false end
       if npc and PEOPLE_SIDE[npc.people or ""] then sides[PEOPLE_SIDE[npc.people]] = true end
@@ -802,28 +814,15 @@ for _, life in ipairs(LIVES) do
   f:write(("# %s %s, levels 1 to %d\n\n"):format(life[1], life[2]:lower(), c.chapters[#c.chapters].start.level))
   for _, ch in ipairs(book.chapters) do
     chapters = chapters + 1
-    inspect(("%s %s chapter %d"):format(life[1], life[2], ch.number), ch.text)
-    namedOnce(("%s %s chapter %d"):format(life[1], life[2], ch.number), ch.text)
-    f:write(("## Chapter %d (levels %d to %d)\n\n%s\n\n"):format(ch.number, ch.from, ch.to, ch.text or ""))
+    local where = ("%s %s chapter %d"):format(life[1], life[2], ch.number)
+    inspect(where, ch.text)
+    namedOnce(where, ch.text)
+    local levels = ch.from == ch.to and ("level %d"):format(ch.from) or ("levels %d to %d"):format(ch.from, ch.to)
+    if ch.open then levels = levels .. ", still being written" end
+    f:write(("## %d. %s%s\n\n%s\n\n"):format(ch.number, ch.place and ch.place .. ", " or "", levels, ch.text or ""))
   end
   for _, ch in ipairs(c.chapters) do
     quests = quests + ch.quests
-  end
-  f:close()
-  -- the diary (Diary.lua), each entry beside the chapter it tells
-  local diary = ns.writeDiary(c, book)
-  f = io.open(("%s/%s-%s.diary.md"):format(BOOKS, life[1], life[2]:lower()), "w")
-  f:write(("# %s %s, the diary\n\n"):format(life[1], life[2]:lower()))
-  for i, e in ipairs(diary.entries) do
-    inspect(("%s %s diary %d"):format(life[1], life[2], i), e.text)
-    local levels = e.from == e.to and ("level %d"):format(e.from or 1)
-      or ("levels %d to %d"):format(e.from or 1, e.to or 1)
-    if e.open then levels = levels .. ", still being written" end
-    f:write(("## %d. %s%s\n\n%s\n\n"):format(i, e.place and e.place .. ", " or "", levels, e.text))
-    local ch = book.chapters[i]
-    if ch and ch.text then
-      f:write(("<details><summary>The chapter in full</summary>\n\n%s\n\n</details>\n\n"):format(ch.text))
-    end
   end
   f:close()
 end

@@ -21,8 +21,6 @@ Combat.lua
 Life.lua
 Language.lua
 Lines.lua
-Scene.lua
-Writer.lua
 Diary.lua
 Book.lua
 Hall.lua

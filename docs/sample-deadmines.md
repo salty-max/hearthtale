@@ -11,25 +11,11 @@ I had completed sixty-four tasks already when this stretch began in Stormwind Ci
 
 ## Chapter 1 (levels 18 to 20)
 
-With the king missing, the roads still had to be walked and the errands run, and I set out in the Dwarven District to take my share. I flew from Stormwind to Sentinel Hill, grateful for the distance without another chance to lose my way.
+I carried on in the Dwarven District, sorting what I had heard of the wider world from what I found in it. I walked into Stormwind City for the first time, and a city I had only heard of became a place I could find my way home to. I saw Westfall for the first time, my own people's country though new to my eyes. The Deadmines was the hardest place I went, and I did not go alone: Thessaly, Brannigan and Rowan came with me. We defeated Edwin VanCleef, and I was grateful to have company for the way out of the Deadmines.
 
-Westfall lay dark and quiet, its windmills turning over farms nobody tended any more. A light in a window was rare enough to make me wonder who still dared to keep one. A stone tower stood on Sentinel Hill, and around it the People's Militia had pitched their tents. Farmers who had lost everything queued for soup, and it made me angrier than I expected. A Mysterious Message was in Gryan Stoutmantle's hands soon after. Moonbrook was a ruin after dark, its broken walls black against the sky. Somewhere among the burned houses the Defias were talking, and I kept to the shadows. I slew Syndicate thieves and footpads near Tarren Mill, the gang believed behind the murder of Southshore's last magistrate. I saw Gryan Stoutmantle again, the work behind me. Thessaly, Brannigan, Rowan and Halvard joined me.
-
-Once back in Moonbrook, I hunted down several Undead Excavators and Undead Dynamiters until I had a handful of Miners' Union Cards. I cut down Defias Pillagers and a Defias Highwayman on the way and killed Foreman Thistlenettle for the badge, an errand Northshire Abbey would have handed to the newest novice.
-
-Mine carts stood abandoned on their rails, and the walls sweated in the lamplight. The deeper I went into the Deadmines, the louder the hammering grew. Rhahk'Zor did not survive the fight. I laid into a Sneed's Shredder for a Gnoam Sprecklesprocket. It was Sneed's turn to fall. Gilnid fell at last. Sea air reached me before I saw the cove. A great ironclad ship sat in the hidden harbour, its decks crowded with pirates, and I could hardly believe it had been built underground.
-
-I got clear of Defias Pirates, Defias Companions and Defias Squallshaper before I collected Red Silk Bandanas. Mr. Smite nearly finished me in Ironclad Cove, and my hands shook like a recruit's after the danger had passed. Mr. Smite was the next to fall. After I came by Smite's Mighty Hammer, I had it in use before long. I saw the end of Captain Greenskin. Edwin VanCleef fell, and I could leave the Deadmines. I wanted an ordinary doorstep more than any victory feast. Mr. Smite, a few Defias Blackguards and Captain Greenskin kept me busy while I claimed the head as proof of the deed. I brought down Cookie.
-
-By nightfall, back in Sentinel Hill, I checked in with Gryan Stoutmantle and made Chausses of Westfall part of my kit. Scout Riell had my report soon after. I left Sentinel Hill by air for Stormwind, thinking of the homes below and all the ordinary lives inside them.
-
-My path led into Cathedral Square. I brought an Unsent Letter to Baros Alexston; I handed in my work to Wilder Thistlenettle and Shoni the Shilent.
-
-I set foot in Old Town, the fields along the way a little like Elwynn's, and a little not. The trainer taught me Cleave and Retaliation.
-
-I had seen eight tasks to their end. My tally came to eight Defias Miners and six Defias Pirates. All told it had taken two hours and a half, enough to leave me as stiff as a sentry at the end of a double watch. I stopped in the Trade District, letting the day's demands dwindle to the simple matter of staying put.
+In the Deadmines, I killed Lord Aliden Perenolde, who would have made slaves of the orcs, and asked his mistress Elysa for Taretha's pendant. I had no wish to be a hero about it; I was only glad it was done. I barely survived in Ironclad Cove, with no desire to repeat the lesson for a better telling. Later, in Stormwind City, I brought Taretha's pendant, given up by a frightened Elysa, back to Krusk, the small thing the Warchief had spent so much to recover. I keep turning that narrow escape over in my mind, the way one keeps checking a candle already snuffed, knowing it is out and looking all the same.
 
 ## Chapter 2 (level 20)
 
-I took up the road in the Trade District, still susceptible to the promise of a quiet life somewhere beyond it.
+With the king missing, the roads still had to be walked and the errands run, and I set out in the Trade District to take my share.
 

@@ -13,11 +13,11 @@ kind: rest
 - Quick as my body was to mend, weariness kept its own pace, and I rested {at} until it had gone.
 - [!fire] Few of the places we had called home had let us rest with both eyes closed, so I made the most of a safe place {at}.
 - I rested {at}, as unbothered as a raptor stretched out after a good meal.
-- [last fire] I rested by the fire {at}, and let the smoke carry the day's long vigilance away.
+- [fire] I rested by the fire {at}, and let the smoke carry the day's long vigilance away.
 - I settled {at}, and for once keeping still felt like ease rather than lying low.
 - [hc] I rested {at}, still breathing, which is reason enough to celebrate where I come from.
 - Content to be of no use for a while, I rested {at} and listened to nothing in particular.
 - [fire] I sat by the fire {at}, and decided it lacked only a drum and a few friends from home to be perfect.
 - [!fire] I rested {at}, treating myself to the thought of crabs cracked open on a warm rock by the sea.
-- [last] I settled {at}, and let tiredness come in like a slow tide without arguing with it.
+- I settled {at}, and let tiredness come in like a slow tide without arguing with it.
 - I rested {at}, privately amused at how much effort I had spent getting somewhere to sit down.

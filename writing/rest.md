@@ -1,39 +1,24 @@
 ---
 kind: rest
 ---
-- [last !fire] I rested {at}, with no wish to let another small favour keep me standing.
-- [last !fire] I settled {at}, with nothing left to hurry towards for a while.
-- [last !fire] I stopped to rest {at}, grateful that the next mile could wait without my losing it.
-- [last !fire] I rested {at}, letting the weariness reach me without having to carry it further.
-- [last !fire] I rested {at}, with the road finally asking less of me than my own need for stillness.
-- [last !fire] I settled {at}, wanting the comfort of a pause more than the satisfaction of going further.
-- [last !fire hc] I rested {at}, alive and very willing to leave danger to somebody else for a while.
-- [last fire] I rested beside the fire {at}, and gave my endurance the evening off.
-- [last fire] I paused by the fire {at}, letting my hands enjoy something gentler than the day's work.
-- [last fire] I rested by a fire {at}, grateful to be warmed without needing to go anywhere.
-- [last fire] I settled beside the fire {at}, letting the road continue without me.
-- [!last !fire] I stopped {at} for a while, with the distance already covered quite sufficient for now.
-- [!last !fire] I rested {at}, more tired than I had allowed myself to feel while moving.
-- [!last fire] I sat beside a fire {at}, grateful for a comfort that was already within reach.
-- [!last !fire] I paused {at}, with no wish to answer another demand before my strength returned.
-- [!last !fire] I rested a while {at}, with the coming miles no longer quite so eager to trouble me.
-- [!last fire] I stopped by the fire {at}, content to give my hands warmth rather than another burden.
-- [!last fire] I rested beside a fire {at}, enjoying the heat without hurrying the chance to be still.
-- [last !fire] I settled {at}, with the next stretch welcome to wait until I wanted it.
-- [last fire] I rested beside the fire {at}, and let it warm me, which was all I asked of it.
-- [!last fire] I paused by a fire {at}, quite content to be the person doing nothing useful for a while.
-- [!last fire] I sat by the flames {at}, and did nothing useful at all.
-- [!last fire] I stopped beside a fire {at}, enjoying the warmth before deciding whether I was ready to leave it.
-- [!last fire] I rested by the fire {at}, with the comfort harder to give up than the road had been.
-- [!last !fire] I stopped to rest {at}, with no need to make my weariness look dignified.
-- [!last !fire] I rested {at}, grateful to put the distance behind me without taking up another task.
-- [!last !fire] I paused {at}, with enough stubbornness left to refuse to hurry.
-- [!last !fire] I rested {at}, and let the world's troubles wait until I had my strength back.
-- [last fire] I settled by a fire {at}, content with an evening that required nothing brave of me.
-- [last fire] I rested by the flames {at}, with the next stretch welcome to remain beyond the warmth for now.
-- [last !fire] I stopped {at} once the work was done, and let the quiet have me for a while.
-- [last !fire] I rested {at}, and the stillness came more easily than I expected.
-- [last !fire] I called a halt {at}, with nothing left that could not wait until I had slept.
-- [last !fire] I sat down {at} at last, and stayed down.
-- [last !fire] I rested {at}, with nowhere further to be and no wish to find one.
-- [last !fire] The work done, I let the day go quiet {at}.
+- [!fire] I rested {at}, with no wish to let another small favour keep me standing.
+- [!fire] I settled {at}, with nothing left to hurry towards for a while.
+- [!fire] I stopped to rest {at}, grateful that the next mile could wait without my losing it.
+- [!fire] I rested {at}, letting the weariness reach me without having to carry it further.
+- [!fire] I rested {at}, with the road finally asking less of me than my own need for stillness.
+- [!fire] I settled {at}, wanting the comfort of a pause more than the satisfaction of going further.
+- [!fire hc] I rested {at}, alive and very willing to leave danger to somebody else for a while.
+- [fire] I rested beside the fire {at}, and gave my endurance the evening off.
+- [fire] I paused by the fire {at}, letting my hands enjoy something gentler than the day's work.
+- [fire] I rested by a fire {at}, grateful to be warmed without needing to go anywhere.
+- [fire] I settled beside the fire {at}, letting the road continue without me.
+- [!fire] I settled {at}, with the next stretch welcome to wait until I wanted it.
+- [fire] I rested beside the fire {at}, and let it warm me, which was all I asked of it.
+- [fire] I settled by a fire {at}, content with an evening that required nothing brave of me.
+- [fire] I rested by the flames {at}, with the next stretch welcome to remain beyond the warmth for now.
+- [!fire] I stopped {at} once the work was done, and let the quiet have me for a while.
+- [!fire] I rested {at}, and the stillness came more easily than I expected.
+- [!fire] I called a halt {at}, with nothing left that could not wait until I had slept.
+- [!fire] I sat down {at} at last, and stayed down.
+- [!fire] I rested {at}, with nowhere further to be and no wish to find one.
+- [!fire] The work done, I let the day go quiet {at}.

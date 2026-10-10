@@ -1,6 +1,6 @@
 -- The writer's language: numbers and lists in words, places, plurals,
 -- articles, items, tasks, what a foe or a thing is. Pure helpers, no state.
--- (Language.lua, Lines.lua, Scene.lua and Writer.lua make the writer.)
+-- (Language.lua, Lines.lua and Diary.lua make the writer.)
 local _, ns = ...
 local W = {} -- what the writer's files share (each adds its own at its end)
 ns.writer = W
@@ -175,56 +175,6 @@ local TITLES = set([[
   Tinkerer Advisor Old Ol Ranger Broodlord Pyroguard Archbishop Bishop Crier Emissary Emmisary Matron
   Herald Courier Warlord Highlord Count Duke Magistrate
 ]])
--- A moment's first objective, as recorded. One whose name the game hadn't
--- filled in yet when it was recorded ("0" by 0.5.0, " " by 0.5.1: an item
--- not loaded) has no real name: not told.
-local function misread(o) return o.name and (o.name:match("^%d+$") or not o.name:find("%S")) end
-local function objectiveOf(m)
-  local o = m.objectives and m.objectives[1]
-  if o and misread(o) then return nil end
-  return o
-end
--- All of a moment's objectives of the same kind as the first ("Rockjaw
--- Trogg" and "Burly Rockjaw Trogg": creatures; Felix's box, chest and bucket:
--- things), as recorded.
-local function objectivesLike(m, first)
-  local out = {}
-  for _, o in ipairs(m.objectives or {}) do
-    if not misread(o) and o.type == first.type and (o.name ~= nil) == (first.name ~= nil) and o.held == first.held then
-      table.insert(out, o)
-    end
-  end
-  return out
-end
-
--- How many, as the story tells it: no number (a ledger's, not a journal's),
--- but the weight of the work, in words that vary ("" is none: "Rockjaw
--- Troggs"). mass: a thing not counted ("a good deal of Linen Cloth"); pack:
--- creatures that run in packs.
-local function sizes(n, mass, pack)
-  if mass then
-    if n >= 20 then return { "a great deal of", "a heavy load of", "no small amount of" } end
-    if n >= 12 then return { "a good deal of", "plenty of", "a fair amount of" } end
-    return { "" }
-  end
-  local out
-  if n >= 20 then
-    out = { "a great many", "dozens of", "countless" }
-    if n >= 40 then table.insert(out, "scores of") end
-  elseif n >= 12 then
-    out = { "a good many", "a fair number of", "plenty of", "quite a few" }
-    if n > 12 then table.insert(out, "more than a dozen") end
-  elseif n >= 6 then
-    return { "", "", "several" }
-  elseif n >= 3 then
-    return { "", "", "a few", "a handful of" }
-  else
-    return { "" }
-  end
-  if pack then table.insert(out, "a whole pack of") end
-  return out
-end
-
 -- A thing the game never counts ("8 Linen Cloth", "8 Tough Wolf Meat"): its
 -- plural is its name (but for a word that is its own plural: "Explosive Sheep").
 local function uncounted(name)
@@ -265,20 +215,6 @@ local function itemName(name)
   return (name:match("^[AEIOUaeiou]") and "an " or "a ") .. name
 end
 
--- Things in numbers: "six Crag Boar Ribs", but "eight Tough Wolf Meat" (a
--- name that can't be counted stays as it is).
-local function things(name)
-  -- as the game writes it after a number (Names.lua), else by the rules
-  local known = ns.names and ns.names.plural[name]
-  if known then return known end
-  local last = name:match("(%S+)$")
-  if not last then return name end
-  if name:find("'s ") or UNCOUNTED[last] or last:find("weed$") or last:find("moss$") or last:find("dust$") then
-    return name
-  end
-  return plural(name)
-end
-
 -- A creature named in passing: "a Frostmane Novice". The game can't tell a
 -- named creature from a common one, so only rares go without (by their name).
 -- (a title is a name of its own: "Mr. Smite", "Captain Greenskin")
@@ -296,43 +232,6 @@ local function article(name)
   return (name:match("^[AEIOUaeiou]") and "an " or "a ") .. name
 end
 
--- Kinds worth a "first of its kind" (the game's English names; people are
--- not a kind, critters are not a fight, and a beast without a family is
--- just a beast).
-local KINDS = {
-  Wolf = "wolves",
-  Cat = "great cats",
-  Spider = "spiders",
-  Bear = "bears",
-  Boar = "boars",
-  Crocolisk = "crocolisks",
-  ["Carrion Bird"] = "carrion birds",
-  Crab = "crabs",
-  Gorilla = "gorillas",
-  Raptor = "raptors",
-  Tallstrider = "tallstriders",
-  Scorpid = "scorpids",
-  Turtle = "turtles",
-  Bat = "bats",
-  Hyena = "hyenas",
-  Owl = "owls",
-  ["Wind Serpent"] = "wind serpents",
-  Serpent = "serpents",
-  Dragonhawk = "dragonhawks",
-  Ravager = "ravagers",
-  ["Warp Stalker"] = "warp stalkers",
-  Sporebat = "sporebats",
-  ["Nether Ray"] = "nether rays",
-  Undead = "undead",
-  Elemental = "elementals",
-  Demon = "demons",
-  Dragonkin = "dragonkin",
-  Giant = "giants",
-  Mechanical = "constructs",
-}
-local SKIP = { Critter = true, ["Non-combat Pet"] = true, Totem = true, ["Not specified"] = true, ["Gas Cloud"] = true }
--- Creature families a remark may speak of the teeth of.
-local TEETH = { Wolf = true, Cat = true, Bear = true, Boar = true, Crocolisk = true, Raptor = true }
 -- Creature types that are not beasts (a beast's kind is "Beast" or its family).
 local NOT_BEAST = set([[
   Humanoid Undead Elemental Demon Dragonkin Giant Mechanical Critter Aberration
@@ -385,18 +284,6 @@ local function playedWords(s)
     return d == 1 and "a whole day" or words(d) .. " days"
   end
   return words(h) .. " hours" .. ((r >= 15 and r < 45) and " and a half" or "")
-end
-
-local function goldWords(copper)
-  if not copper or copper < 1 then return nil end
-  if copper < 20 then return "a few coppers" end
-  if copper < 100 then return words(copper) .. " copper" end
-  if copper < 10000 then
-    local s = floor(copper / 100)
-    return s == 1 and "a silver piece" or words(s) .. " silver"
-  end
-  local g = floor(copper / 10000)
-  return g == 1 and "a gold piece" or words(g) .. " gold"
 end
 
 -- (not after an abbreviation's stop: "the Venture Co. papers")
@@ -575,44 +462,6 @@ local function foeOf(name, kind)
     end
   end
 end
--- What a thing found is, from its name: a word of it ("Silithid Egg").
-local THING_KIND = named([[
-  jewel: Necklace, Ring, Pendant, Amulet, Charm, Locket, Choker, Brooch, Signet, Watch, Bracelet, Earring
-  seed: Seed, Acorn, Nut
-  food: Oats, Fish, Sunfish, Bread, Cake, Pie, Cheese, Apple, Berry, Berries, Grain, Flour, Lunch, Supper,
-        Ration, Jerky, Stew, Soup, Stout, Ale, Wine, Brew, Spice, Honey, Milk, Mushroom Stew
-  cargo: Barrel, Crate, Chest, Keg, Cask, Lumber, Log, Plank, Strongbox, Lockbox, Sack, Supplies, Shipment
-  stone: Ore, Stone, Crystal, Rock, Gem, Shard, Pebble, Geode, Nugget
-  egg: Egg
-  feather: Feather, Plume, Quill, Down
-  hide: Hide, Pelt, Fur, Skin, Leather, Scale
-  paper: Letter, Note, Journal, Book, Tome, Page, Plans, Orders, Map, Document, Report, Manual, Scroll,
-         Ledger, Diary, Missive, Papers, Writ, Contract, Manifest, Parchment
-  plant: Herb, Flower, Bloom, Petal, Root, Leaf, Moss, Mushroom, Fungus, Shroom, Weed, Lotus, Thistle,
-         Briar, Bark, Lily, Blossom, Sprout, Cactus, Vine, Frond, Bulb
-  relic: Relic, Idol, Artifact, Statue, Statuette, Fragment, Tablet, Carving, Totem, Figurine, Rune
-  remains: Bone, Skull, Claw, Fang, Tooth, Teeth, Tusk, Horn, Heart, Eye, Tail, Ear, Paw, Talon, Gland,
-           Sac, Blood, Ichor, Mane, Brain, Tongue, Wing, Head, Scalp, Hoof, Spine, Venom, Snout, Beak,
-           Mandible, Tentacle, Liver, Flesh, Rib
-]])
-local function thingOf(name)
-  if not name then return nil end
-  for _, kind in ipairs(THING_KIND) do
-    for _, word in ipairs(kind[2]) do
-      if name:find("%f[%a]" .. word .. "e?s?%f[%A]") then
-        -- (a part heading "X of Y" that no creature drops is an object of
-        -- its own: the Horn of Awakening, not a beast's horn)
-        local head = name:match("^(%a+) of ")
-        local dropped = ns.knowledge and ns.knowledge.drops and ns.knowledge.drops[name]
-        if kind[1] == "remains" and head and head:find("^" .. word) and not dropped then return "relic" end
-        return kind[1]
-      end
-      -- (a plant's name is often one word: "Earthroot", "Peacebloom")
-      if kind[1] == "plant" and name:find("%l" .. word:lower() .. "s?%f[%A]") then return kind[1] end
-    end
-  end
-end
-
 -- How a class fights, from what it knows: the spells that make an element of
 -- its fighting (the tags of its fighting lines), and what each class fights
 -- with from the start (a warlock's first Shadow Bolt, a mage's Fireball).
@@ -669,116 +518,19 @@ do
 end
 local TAKEN_IN = { Gnome = "Dwarf", Troll = "Orc" }
 
-local function town(node) return node and (node:match("^([^,]+)") or node) end
-
--- The chapter's kills, the most first (for the closing recap).
-local function topKills(kills)
-  local top = {}
-  for name, n in pairs(kills or {}) do
-    table.insert(top, { name = name, n = n })
-  end
-  table.sort(top, function(a, b)
-    if a.n ~= b.n then return a.n > b.n end
-    return a.name < b.name
-  end)
-  return top
-end
-
--- A quest, told by what it asked: so many of a creature slain, so many of a
--- thing brought, a task, a message carried to another (a clause); else only
--- who asked; a quest with nothing but its title goes untold.
--- An objective the log writes as an instruction ("Burn the Highvale Notes")
--- reads as a task done; one that names a result ("Banner Destroyed", "Flame
--- of Stratholme", "Attack Plan: Orgrimmar destroyed") can't follow "I
--- managed to", and the quest is told by who asked. (Checked against every
--- objective of the game: addon/test/audit.lua.)
-local INSTRUCTIONS = set([[
-  accept activate ask assist attack awaken banish break bring build burn bury calm capture catch check
-  chart cleanse climb close collect convince cook craft cure defeat defend deliver descend destroy dig
-  discover douse drop enter escort examine excavate explore extinguish feed find fly follow free
-  gather guard harvest heal help hunt ignite inspect interrogate investigate kill learn light locate
-  lure mark obtain observe open persuade place plant protect purge purify question raise reach read
-  recover recruit release repair rescue retrieve return revive ride sabotage save scare scout search
-  set shatter shut slay smash speak spy steal study summon survive take talk tame test throw toss
-  track trap travel uncover unearth unlock use view visit wake warn witness%a+
-]])
--- The hand-in a quest's text may end with ("… and speak to Branstock
--- Khalder"): the return, told as such, not part of the task.
-local HAND_IN = { "speak", "talk", "report", "return" }
-local function handIn(text)
-  local lower = text:lower()
-  for _, verb in ipairs(HAND_IN) do
-    if lower:find("^" .. verb .. " to ") and not lower:find(" and ") then return true end
-  end
-  return false
-end
-local function instruction(text)
-  if handIn(text) then return false end -- only the return: a word carried
-  return INSTRUCTIONS[(text:match("^(%a+)") or ""):lower()] and not text:find("[:?]") or false
-end
 local function lowerFirst(text) return (text:gsub("^%u", string.lower)) end
--- An objective as a task done: "Escort The Defias Traitor to discover where
--- VanCleef is hiding" is "escort the Defias Traitor to discover where
--- VanCleef was hiding".
-local function taskOf(text)
-  text = text:gsub("[%.:!]+%s*$", "")
-  -- a thing named for whom it goes back to: "Return Nori's Mug to Nori
-  -- Pridedrift" returns the mug
-  text = text:gsub(
-    "(%u%a+)'s (%u[%a ]-) to (%1%f[%A])",
-    function(_, thing, who) return "the " .. thing:lower() .. " to " .. who end
-  )
-  -- (a deadline is the game's, not the deed's: "before it gets cold in five minutes")
-  text = text:gsub(" before [^,]- in %a+ minutes?$", ""):gsub(" within %a+ minutes?$", "")
-  for _, verb in ipairs(HAND_IN) do
-    text = text:gsub(",? and " .. verb .. " to .+$", ""):gsub(",? then " .. verb .. " to .+$", "")
-  end
-  return (lowerFirst(text):gsub(" The ", " the "):gsub(" is ", " was "):gsub(" are ", " were "))
-end
-
--- A sentence with its link before it ("That night, I...", "Afterwards, the
--- road…", "Later, six Defias…"): only if it begins with "I", one of these
--- words or a number; a name keeps its capital and takes no link.
-local OPENERS = { My = true, A = true, An = true, The = true, It = true, There = true }
-local NUMBER_WORDS = set([[
-  two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen
-  seventeen eighteen nineteen twenty thirty forty fifty sixty seventy eighty ninety%a+
-]])
-local function linked(word, text)
-  if not word then return text end
-  local head, rest = text:match("^(%a+)( .*)$")
-  if not head or not (head == "I" or OPENERS[head] or NUMBER_WORDS[head:lower()]) then return text end
-  if head ~= "I" then head = head:lower() end
-  return word .. " " .. head .. rest
-end
-
--- The rank a profession's trainer gives: "an apprentice", "a journeyman".
-local function rankName(rank) return rank and ((rank:match("^[aeiou]") and "an " or "a ") .. rank) end
-
 -- (for the next files of the writer)
 W.floor = floor
 W.words = words
 W.listing = listing
 W.mid = mid
 W.plural = plural
-W.TROPHY = TROPHY
 W.TITLES = TITLES
-W.SINGULAR_S = SINGULAR_S
-W.objectiveOf = objectiveOf
-W.objectivesLike = objectivesLike
-W.sizes = sizes
-W.uncounted = uncounted
 W.itemName = itemName
-W.things = things
 W.article = article
-W.KINDS = KINDS
-W.SKIP = SKIP
-W.TEETH = TEETH
 W.deathTags = deathTags
-W.namedElite = namedElite
 W.deathFoe = deathFoe
 W.playedWords = playedWords
-W.goldWords = goldWords
 W.capitalise = capitalise
 W.FACTION = FACTION
 W.HOME = HOME
@@ -789,7 +541,6 @@ W.RACE_NAME = RACE_NAME
 W.HORDE_RACE = HORDE_RACE
 W.CLASS_NAME = CLASS_NAME
 W.FINAL = FINAL
-W.FOE_PEOPLE = FOE_PEOPLE
 -- A class's first spells, known from the first day: a new rank is no news.
 local FIRST_SPELLS = {
   WARRIOR = { "Battle Stance", "Heroic Strike" },
@@ -812,30 +563,12 @@ W.CITIES = {
   ["Thunder Bluff"] = true,
   Undercity = true,
 }
-W.FOE_KIND = FOE_KIND
--- (a quest's "giver" or "ender" that is no person: a corpse, a machine, a
--- spirit of the elements; "I brought word to the Dead Cultist" is not told)
-local THINGS = set([[ Shredder Construct Manifestation Remains Corpse Totem Brazier ]])
-function W.isThing(name)
-  if not name then return false end
-  if name:find("^Dead ") or name:find("'s %u") then return true end
-  for word in name:gmatch("%a+") do
-    if THINGS[word] then return true end
-  end
-  return false
-end
--- (beasts no one need fear: a first meeting with them is no fright)
-W.HARMLESS = { Turtle = true, Tallstrider = true, ["Carrion Bird"] = true }
 W.foeOf = foeOf
-W.THING_KIND = THING_KIND
-W.thingOf = thingOf
-W.town = town
 W.ELEMENT = ELEMENT
 W.HOSTS = HOSTS
 W.at = at
 W.TAKEN_IN = TAKEN_IN
 W.CLASS_FIGHT = CLASS_FIGHT
-W.topKills = topKills
 -- (in a quest's why, my own people are mine: "for the Forsaken", written by one)
 local OURS = {
   Human = { { "the humans", "my people" } },
@@ -860,9 +593,5 @@ local function ours(text, race)
   return text
 end
 
-W.instruction = instruction
 W.ours = ours
 W.lowerFirst = lowerFirst
-W.taskOf = taskOf
-W.linked = linked
-W.rankName = rankName
