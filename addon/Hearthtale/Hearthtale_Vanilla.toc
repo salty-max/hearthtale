@@ -1,4 +1,4 @@
-## Interface: @INTERFACE@
+## Interface: 11509
 ## Title: Hearthtale
 ## Notes: Your character's own journal, written as you play, a chapter from rest to rest. On Hardcore, an epitaph and the Hall of the Fallen. /hearthtale to read it.
 ## Author: salty-max
@@ -8,11 +8,13 @@
 ## IconTexture: Interface\Icons\INV_Misc_Book_08
 ## X-Website: https://github.com/salty-max/hearthtale
 ## X-License: GPL-3.0-or-later
+## X-Curse-Project-ID: 1737290
 
-Data.lua
+# Classic Era (Hardcore, Season of Discovery). Forever loads Hearthtale_Camelot.toc,
+# the same but for the interface and its data (scripts/package.ts checks).
+Data_Classic.lua
 Names.lua
 Knowledge.lua
-Forever.lua
 Util.lua
 Core.lua
 Record.lua

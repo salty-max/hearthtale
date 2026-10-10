@@ -56,12 +56,11 @@ Books are private: only you see them. Ravenpost sends the book and who it belong
 
 The journal is written in English, for English game clients. On a client in another language, the names it uses (places, creatures, quests, items) come from your game in that language, inside English sentences, and a few lines that rely on the game's English names are left out, learning to ride among them.
 
-## Two packages
+## Every game, one download
 
-Each game has its own file: pick the one for yours (the CurseForge app does it for you).
+The same file for Classic Era (Hardcore, Season of Discovery) and World of Warcraft: Forever: each game loads its own part.
 
-- **Classic**: Classic Era, Hardcore, Season of Discovery.
-- **Forever**: World of Warcraft: Forever. Forever closes the combat log to addons, so kills come from the game's own kill event. Inside a Forever dungeon that event hides which creature fell, so only the kills a quest counts are told there.
+Forever closes the combat log to addons, so kills come from the game's own kill event. Inside a Forever dungeon that event hides which creature fell, so only the kills a quest counts are told there.
 
 ## Settings
 

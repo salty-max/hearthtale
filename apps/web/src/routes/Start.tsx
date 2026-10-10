@@ -24,8 +24,7 @@ export function Start() {
       <h2 className="title mt-8 text-xl text-[#7a5410]">{s.addonTitle}</h2>
       <p className="mt-2 text-lg">{s.addon}</p>
       <ul className="mt-3 space-y-3">
-        {file(FILES.classic, s.classic, s.classicDetail)}
-        {file(FILES.forever, s.forever, s.foreverDetail)}
+        {file(FILES.addon, s.download, s.downloadDetail)}
       </ul>
 
       <h2 className="title mt-8 text-xl text-[#7a5410]">{s.ravenpostTitle}</h2>
