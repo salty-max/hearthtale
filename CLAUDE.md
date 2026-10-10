@@ -282,7 +282,11 @@ name.
   says so, not a feeling word. A racial voice is a way of looking at the
   world, not an obligation to mention ale, honour, trees or the grave in
   every sentence: a race's emblems (`MOTIFS` in Lines.lua: the forge, the
-  camps, the drums) are spaced `MOTIF_GAP` lines apart.
+  camps, the drums, and what stands in for them, the hammer, the tally, the
+  meal; "$" for a word alone, "iron" not Ironforge) are spaced `MOTIF_GAP`
+  lines apart each and `EMBLEM_GAP` lines all together (unless the line is
+  the one wanted: a tauren's kodo for a first kodo), and every narrator's
+  relief at rest (`RESTFUL`: stillness, shoulders, aches) the same way.
 - Connectors need evidence: time passing, nightfall, an arrival, or the
   aftermath of a close call. Emotional interpretation is welcome; an
   unrecorded action, spell cast, trophy, payment or another person's

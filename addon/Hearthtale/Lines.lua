@@ -59,9 +59,11 @@ end
 
 -- How many uses of a kind before one of the race's own sentences may come back.
 local OWN_GAP = 12
--- A race's emblems, by the start of their words: a line on one, no other on
--- it for MOTIF_GAP lines told (a voice is a way of looking, not a refrain:
--- the forge, the camps, the drums, a hoof in every sentence).
+-- A race's emblems, by the start of their words ("$": the word alone): a
+-- line on one, no other on it for MOTIF_GAP lines told, nor on any of them
+-- for EMBLEM_GAP (a voice is a way of looking, not a refrain: the forge, the
+-- camps, the drums, a hoof in every sentence, nor the hammer when the forge
+-- is rationed).
 local MOTIFS = {
   Dwarf = {
     "forge",
@@ -76,9 +78,17 @@ local MOTIFS = {
     "quarr",
     "mason",
     "chisel",
-    "ale",
+    "ale$",
     "beard",
-    "iron",
+    "iron$",
+    -- (and what stands in for them: a voice is not a forge's vocabulary)
+    "temper",
+    "heats",
+    "brittle",
+    "ore$",
+    "hammer",
+    "metal",
+    "rivet",
   },
   Gnome = {
     "gnomeregan",
@@ -90,12 +100,40 @@ local MOTIFS = {
     "sprocket",
     "gear",
     "calculat",
-    "sum",
+    "sum$",
+    "sums$",
     "reckon",
     "measure",
+    "estimat",
+    "experiment",
+    "hypothes",
+    "engineer",
+    "tally",
   },
   Orc = { "thrall", "camp", "draenor", "durnholde", "warband", "temper", "rage", "blood", "chain", "grom" },
-  Troll = { "drum", "fish", "supper", "crab", "sea", "shore", "coal", "loa", "echo isles", "sen'jin", "village" },
+  Troll = {
+    "drum",
+    "fish",
+    "supper",
+    "crab",
+    "sea$",
+    "shore",
+    "coal",
+    "loa",
+    "echo isles",
+    "sen'jin",
+    "village",
+    "meal",
+    "food",
+    "eat$",
+    "eating",
+    "appetite",
+    "hungr",
+    "stew",
+    "cook",
+    "dish",
+    "feast",
+  },
   Tauren = {
     "hoof",
     "hooves",
@@ -103,6 +141,8 @@ local MOTIFS = {
     "broad",
     "my people",
     "earth mother",
+    "the land",
+    "elders",
     "plains",
     "kodo",
     "slow",
@@ -114,13 +154,23 @@ local MOTIFS = {
   Scourge = { "grave", "pulse", "lich king", "sylvanas", "plague", "coffin", "lid", "first life", "second life" },
   Skyborne = { "island", "skycutter", "zephras", "balance", "footing", "skystream" },
 }
-local MOTIF_GAP = 12
+-- (and every narrator's own habit at rest: the same relief, said the same way)
+local RESTFUL = { "stillness", "shoulders", "ache" }
+local MOTIF_GAP = 12 -- (the same emblem again)
+local EMBLEM_GAP = 6 -- (any of the race's emblems again: a voice that is not a refrain)
 local function motifsOf(race, text)
-  local found, lower = {}, text:lower()
-  for _, m in ipairs(MOTIFS[race] or {}) do
-    if lower:find("%f[%a]" .. m) then table.insert(found, m) end
+  local found, lower, emblem = {}, text:lower(), false
+  for k, list in ipairs({ MOTIFS[race] or {}, RESTFUL }) do
+    for _, m in ipairs(list) do
+      -- (a word's beginning, "calculat"; with "$", the word alone: "iron", not Ironforge)
+      local word = m:match("^(.-)%$$")
+      if lower:find("%f[%a]" .. (word and word .. "%f[%A]" or m)) then
+        table.insert(found, m)
+        if k == 1 then emblem = true end
+      end
+    end
   end
-  return found
+  return found, emblem
 end
 
 local PEOPLE = { "giver", "via", "ender", "boss", "mates", "pet" } -- slots that name people
@@ -257,10 +307,20 @@ function Book:pick(kind, key, prefer, ownFresh, fresh, voiced, all)
       fresh, voiced = f, v
     end
   end
-  -- (nor a race's emblem used a moment ago: another line, if there is one)
+  local function favours(e)
+    for _, t in ipairs(e.s.tags or {}) do
+      if prefer and prefer[t] then return true end
+    end
+    return false
+  end
+  -- (nor a race's emblem used a moment ago: another line, if there is one;
+  -- any of them a little longer ago, unless the line is the one wanted: a
+  -- tauren's kodo for a tauren's first kodo)
   local said = self.saidCount or 0
   local function stale(e)
-    for _, m in ipairs(motifsOf(self.race, e.s[1])) do
+    local found, emblem = motifsOf(self.race, e.s[1])
+    if emblem and self.emblemAt and said - self.emblemAt < EMBLEM_GAP and not favours(e) then return true end
+    for _, m in ipairs(found) do
       if self.motifAt[m] and said - self.motifAt[m] < MOTIF_GAP then return true end
     end
     return false
@@ -275,12 +335,6 @@ function Book:pick(kind, key, prefer, ownFresh, fresh, voiced, all)
   local lo, lf, lv = lively(ownFresh), lively(fresh), lively(voiced)
   if #lo + #lf > 0 then
     ownFresh, fresh, voiced = lo, lf, lv
-  end
-  local function favours(e)
-    for _, t in ipairs(e.s.tags or {}) do
-      if prefer[t] then return true end
-    end
-    return false
   end
   local only = false -- (the lines preferred, when there are any: no other of the race's comes back)
   if prefer then
@@ -362,9 +416,11 @@ function Book:say(kind, key, values, tags, prefer, raw)
   local e = self:pick(kind, key, prefer, ownFresh, fresh, voiced, all)
   -- (its emblems, remembered: MOTIFS)
   self.saidCount = (self.saidCount or 0) + 1
-  for _, m in ipairs(motifsOf(self.race, e.s[1])) do
+  local found, emblem = motifsOf(self.race, e.s[1])
+  for _, m in ipairs(found) do
     self.motifAt[m] = self.saidCount
   end
+  if emblem then self.emblemAt = self.saidCount end
   self:use(kind, e)
   local text = e.s[1]
   if kind:find("^c%-") then

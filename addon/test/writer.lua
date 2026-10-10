@@ -2054,7 +2054,8 @@ do
     if not entries[1].text:find("Dusk", 1, true) then
       problem("pets diary", "the first companion untold", entries[1].text)
     end
-    if not entries[2].text:find("Ashpaw", 1, true) or entries[2].text:find("first", 1, true) then
+    local tamed = entries[2].text:match("[^.]*Ashpaw[^.]*")
+    if not tamed or tamed:find("first", 1, true) then
       problem("pets diary", "a second companion told as the first, or not at all", entries[2].text)
     end
   end

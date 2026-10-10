@@ -3,24 +3,24 @@ kind: close-light
 ---
 - {foe} nearly killed me {at}, and left my hands less steady than the danger now required.
 - I barely survived {foe} {at}, with a longing for shelter stronger than any pride in coming through.
-- I survived a close call {at}, and would have traded any praise for it for a quiet evening.
+- [!foe] I survived a close call {at}, and would have traded any praise for it for a quiet evening.
 - {foe} brought me close to death {at}. I could have taken quite a pleasure in a harmless task to complain about.
-- I barely survived {at}, and had no wish to discover whether my courage could bear another trial.
+- [!foe] I barely survived {at}, and had no wish to discover whether my courage could bear another trial.
 - {foe} nearly ended me {at}; relief did not arrive nearly as quickly as I had expected.
-- I nearly fell {at}, with the thought of remaining alive taking up all the room in me.
-- I came through a close call {at}, too shaken to enjoy having proved I could survive one.
-- I nearly died {at}, and the thought of somewhere I need not be brave comforted me.
-- [night] I survived a close call {at} in the dark, with my fear slower to leave than the danger.
-- [night] I nearly fell {at} after dark; daylight had rarely sounded so kind.
+- [!foe] I nearly fell {at}, with the thought of remaining alive taking up all the room in me.
+- [!foe] I came through a close call {at}, too shaken to enjoy having proved I could survive one.
+- [!foe] I nearly died {at}, and the thought of somewhere I need not be brave comforted me.
+- [night !foe] I survived a close call {at} in the dark, with my fear slower to leave than the danger.
+- [night !foe] I nearly fell {at} after dark; daylight had rarely sounded so kind.
 - [hc] {foe} nearly killed me {at}, and I was grateful to keep the one life I had.
-- [class:PRIEST] I nearly died {at}; mending a frightened body seemed much harder when the body was mine.
+- [class:PRIEST] {foe} nearly killed me {at}; mending a frightened body seemed much harder when the body was mine.
 - [class:PALADIN] {foe} nearly ended me {at}. I wanted the Light's shelter without having to leave the world for it.
 - [class:MAGE] I survived {foe} {at}, and found myself missing the safe distance of a lesson hall.
-- [class:ROGUE] I nearly fell {at}, and wished I could slip out of fear as readily as I hoped to slip out of sight.
+- [class:ROGUE] {foe} nearly finished me {at}, and I wished I could slip out of fear as readily as I hoped to slip out of sight.
 - [class:HUNTER !low] {foe} nearly killed me {at}, and made the quiet work of following a trail seem very inviting.
-- [class:WARLOCK] I nearly died {at}, with my own flesh suddenly precious beyond any demon's strength.
-- I survived a close call {at}, with the relief taking its time reaching the parts of me that still wanted to flee.
-- I nearly died {at}, and found the quiet afterwards harder to trust than I had expected.
-- I barely survived {at}, with no desire to repeat the lesson for a better telling.
+- [class:WARLOCK] {foe} nearly killed me {at}, and my own flesh was suddenly precious beyond any demon's strength.
+- [!foe] I survived a close call {at}, with the relief taking its time reaching the parts of me that still wanted to flee.
+- [!foe] I nearly died {at}, and found the quiet afterwards harder to trust than I had expected.
+- [!foe] I barely survived {at}, with no desire to repeat the lesson for a better telling.
 - {foe} nearly ended me {at}, making an ordinary life seem a very dear thing to lose.
-- I came through a close call {at}, my courage spent and my wish to live very much intact.
+- [!foe] I came through a close call {at}, my courage spent and my wish to live very much intact.
