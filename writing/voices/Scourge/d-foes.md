@@ -4,8 +4,8 @@ kind: d-foes
 - [one !hard] I made an end of {foes}, and considered that particular matter closed without further ceremony.
 - [one !hard] Among everything I fought, {foes} earned a second thought, and got one.
 - [one hard] I got the better of {foes} at last, at a price I mean never to pay twice.
-- [two !hard] Both {foes} fell to me in turn, and I wasted no pity on either.
-- [two !hard] I took on {foes}, and neither gave me cause to doubt the outcome.
+- [two !hard !plural] Both {foes} fell to me in turn, and I wasted no pity on either.
+- [two !hard !plural] I took on {foes}, and neither gave me cause to doubt the outcome.
 - [two hard] I fought {foes}, and one or the other came far too close to winning.
 - [!one !two !hard] I dealt with {foes} in their turn, all of them, with more method than drama.
 - [!one !two hard] I faced {foes}, and one of them came nearer to ending me than I care to dwell on.

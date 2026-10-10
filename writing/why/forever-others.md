@@ -110,7 +110,7 @@ kind: why
 - 96395 3 | laying to rest the spirit of Faldrim Anvilmar, a thane consumed by an ancient grudge, at his ghostly attendant's plea
 - 98027 1 | returning a silver crescent necklace inscribed to Maliynn to its owner in Astranaar
 - 98059 1 | slipping Captain McManus's sealed request onto the Hillsbrad council's table, after they ignored every letter asking for soldiers
-- 98297 3 | slaying the warlocks binding a red dragonspawn at the Dragonmaw Gates and putting the creature out of its misery, as Howin Kindfeather asked
+- 98297 3 | slaying the warlocks who held a red dragonspawn bound at the Dragonmaw Gates, and putting the creature out of its misery, as Howin Kindfeather asked
 # Arathi Highlands
 - 79358 2 | gathering twisted totems of all four elements for Veyric Thunderhame, to learn how the quilboar turned the elements and prepare a counter-ritual
 - 94221 1 | bringing a golden rod ordered by writ to Muggol Breezebeard, who hoped it might help him commune with the Binding Stones
@@ -194,7 +194,7 @@ kind: why
 - 87760 3 | slaying the Stormscale beastmistress in the Ruins of Mathystra for her rod, so the naga could no longer enslave the threshers and sea turtles
 - 97914 1 | carrying Thundris Windweaver's letter to Baros Alexston in Stormwind, his plea to have Auberdine and its work recognised
 - 98013 2 | cutting down the Stormscale naga in the ruins for Arbal, cursed Highborne who might aid the Twilight's Hammer against the forests
-- 98025 3 | slaying Jai'vhanel, a black owl long a guardian of Darkshore's roads, gone mad and attacking travellers on the road to Auberdine
+- 98025 3 | slaying Jai'vhanel, a black owl long a guardian of Darkshore's roads, who had gone mad and turned on travellers bound for Auberdine
 - 98028 2 | carrying the clouded water globe of Baron Marinous, the elemental guardian of a ruin, to Onu at the Grove of the Ancients
 - 98042 2 | seizing a peerless eye from the Twilight's cultists at the Master's Glaive for Thundris Windweaver, who saw in it the mark of an ancient evil
 - 98461 1 | carrying Hollee's note over the sea to Tarrel Rockweaver, an old classmate she still pined for, now happily married

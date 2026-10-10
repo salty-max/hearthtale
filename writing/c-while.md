@@ -18,3 +18,7 @@ kind: c-while
 - [!complex] dealt with {prey} first and {deed}
 - had {prey} to deal with before I {deed}
 - [!complex] put down {prey} and {deed}
+- saw off {prey} before I {deed}
+- [!one] got clear of {prey} before I {deed}
+- [turn !one !lots] it took a few fights with {prey} before I {deed}
+- [turn one] it took a fight with {prey} before I {deed}

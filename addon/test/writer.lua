@@ -2229,6 +2229,46 @@ do
     if why[1] == 3 then table.insert(heavy, id) end
   end
   table.sort(heavy)
+  -- a rescue is of someone: never souls, a thing, a place, nor one freed to be slain
+  for text, want in pairs({
+    ["escorted the wounded Corporal Keeshan from his prison cave"] = "rescue",
+    ["freed Drull and Tog'thar from Durnholde Keep"] = "rescue",
+    ["escorted Galen away from the creatures about to eat him"] = "rescue",
+    ["freed the black drakes Blacklash and Hematus from the Seal of the Earth only to slay them"] = false,
+    ["freed the restless souls of Stratholme's ghostly citizens"] = false,
+    ["defended Silverwing Hold in Warsong Gulch against the Horde"] = false,
+    ["saved Milly Osworth's grape harvest from the overrun vineyards"] = false,
+    ["rescued books from the ogres in the Ruins of Alterac"] = false,
+    ["escorted the Defias Traitor to the Brotherhood's secret hideout"] = false,
+  }) do
+    local got = ns.storySubject(text, {}, {}) == "rescue" and "rescue" or false
+    if got ~= want then problem("story subject", "a rescue told wrong", text) end
+  end
+  -- a villain is one, named: never several, nor a name that only says whose
+  for text, want in pairs({
+    ["killed Kreenig Snarlsnout, the Razormane behind the raids"] = "villain",
+    ["slew Old Murk-Eye, the murloc whose raids"] = "villain",
+    ["killed Nak, Kuz and Lok Orcbane, the Razormane who raided the Horde"] = false,
+    ["killed Big Samras and Creepthess"] = false,
+    ["killed Venture Co. loggers in Windshear Crag"] = false,
+  }) do
+    if (ns.storySubject(text, {}, {}) or false) ~= want then problem("story subject", "a villain told wrong", text) end
+  end
+  if
+    ns.storySubject("killed the Kul Tiras men", {
+      { type = "monster", name = "Lieutenant Benedict", n = 1 },
+      { type = "monster", name = "Kul Tiras Sailor", n = 10 },
+    }, {}) == "villain"
+  then
+    problem("story subject", "a villain is one, not one among many", "Lieutenant Benedict")
+  end
+  if
+    ns.storySubject("rescued Mythology of the Titans from the Monastery's library", {
+      { type = "item", name = "Mythology of the Titans", n = 1 },
+    }, {}) == "rescue"
+  then
+    problem("story subject", "a thing the quest asks for is no rescue", "Mythology of the Titans")
+  end
   -- a story's reaction, by its subject: the dead, demons, a beast or a
   -- villain of a name, a rescue, and the peoples of note to a narrator
   local rescues = {}
@@ -2247,9 +2287,9 @@ do
     { "Keeper Ordanus", "Humanoid", 1 },
   }
   for r, race in ipairs(RACES) do
-    for life = 1, 3 do
+    for life = 1, #subjects do -- (a word on a story now and then: each life lands on other subjects)
       local chapters = {}
-      for n = 1, 2 * #subjects do
+      for n = 1, 4 * #subjects do
         local foe = subjects[(n + life) % #subjects + 1]
         local t = n * 100000
         local id = foe[1] and heavy[(r * 11 + n * 5 + life) % #heavy + 1] or rescues[(r + n + life) % #rescues + 1]
@@ -2275,6 +2315,41 @@ do
       if race == "Skyborne" then c.faction = life % 2 == 0 and "horde" or "alliance" end
       for i, e in ipairs(ns.writeDiary(c).entries) do
         inspect(race .. " reaction diary " .. i, e.text)
+      end
+    end
+  end
+  -- two stories in one entry, the second in another land: its place said
+  for r, race in ipairs(RACES) do
+    for life = 1, 3 do
+      local chapters = {}
+      for n = 1, 8 do
+        local t = n * 100000
+        local one, two = heavy[(r * 7 + n * 3 + life) % #heavy + 1], heavy[(r * 13 + n * 5 + life * 2) % #heavy + 1]
+        chapters[n] = stretch(n, {
+          {
+            k = "done",
+            id = one,
+            giver = "Sten Stoutarm",
+            objectives = {},
+            zone = "Wetlands",
+            sub = "Wetlands",
+            at = t + 10,
+          },
+          {
+            k = "done",
+            id = two,
+            giver = "Thundris Windweaver",
+            objectives = {},
+            zone = "Darkshore",
+            sub = "Auberdine",
+            at = t + 20,
+          },
+        })
+      end
+      local c = { guid = "elsewhere-" .. race .. life, race = race, class = COMBOS[race][1], chapters = chapters }
+      if race == "Skyborne" then c.faction = life % 2 == 0 and "horde" or "alliance" end
+      for i, e in ipairs(ns.writeDiary(c).entries) do
+        inspect(race .. " two lands diary " .. i, e.text)
       end
     end
   end

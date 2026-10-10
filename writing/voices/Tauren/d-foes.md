@@ -4,8 +4,8 @@ kind: d-foes
 - [one !hard] I met {foes} without hurry and without hatred, which is how I would want to meet any foe.
 - [one !hard] I faced {foes} and won, and took no more pleasure in the winning than a good hunter takes in the kill.
 - [one hard] The fight with {foes} came nearer to ending me than any other, and I left it a good deal humbler than I went in.
-- [two !hard] I faced both {foes}, and neither fight left me wanting another.
+- [two !hard !plural] I faced both {foes}, and neither fight left me wanting another.
 - [two hard] Between {foes}, I came nearer the end than I wanted, and learned how much of the open land I still mean to walk.
-- [!one !two !hard] {foes} fell to me in turn, and I wish each of them more peace now than the fight allowed them.
+- [!one !two !hard !plural] {foes} fell to me in turn, and I wish each of them more peace now than the fight allowed them.
 - [!one !two !hard] I faced {foes}, and carried no anger from one of those fights into the next.
 - [!one !two hard] {foes} all stood against me, and one of those fights very nearly gave my bones to the earth.

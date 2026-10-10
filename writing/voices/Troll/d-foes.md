@@ -4,8 +4,8 @@ kind: d-foes
 - [one !hard] I got the better of {foes}, and the day tasted sweeter for it.
 - [one !hard] {foes} found me in excellent spirits, and came off the worse.
 - [one hard] {foes} had a good try at making a meal of me before I settled the matter, and I am in no hurry for a second helping.
-- [two !hard] Both {foes} fell to me, and I would gladly tell either fight to anyone with a fire and time to listen.
+- [two !hard !plural] Both {foes} fell to me, and I would gladly tell either fight to anyone with a fire and time to listen.
 - [two hard] I beat {foes} in the end, though one of those fights had the better of me for a while.
-- [!one !two !hard] I saw the end of {foes}, every one, and walked on lighter for each of them.
+- [!one !two !hard !plural] I saw the end of {foes}, every one, and walked on lighter for each of them.
 - [!one !two hard] I outlasted {foes}, all of them, though one of those fights brought me nearer my end than I care to joke about.
 - [!one !two !hard] I took on {foes} one after another, and by the last of them it felt more like a dance than a fight.

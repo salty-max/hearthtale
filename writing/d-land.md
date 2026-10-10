@@ -20,3 +20,11 @@ kind: d-land
 - [capital hosts] I came into {lands} for the first time, the city that had taken my people in, and looked at it with a guest's gratitude and a stranger's eyes.
 - [one town] I walked into {lands} for the first time, and let the size and noise of it wash over me.
 - [one town] I saw {lands} for the first time, a city full of strangers who all seemed to know exactly where they were going.
+- [one !home !hosts] I reached {lands} for the first time, and spent the first hour simply learning which way was which.
+- [one !home !hosts] My first steps in {lands} were careful ones, as they are anywhere I have not been before.
+- [one !home !hosts] I came to {lands} for the first time, and stopped more than once just to look.
+- [one !home !hosts !town] I found my way into {lands}, a country I had known only by name until then.
+- [one !home !hosts !town] {lands} was strange ground to me, and I learned its paths one wrong turn at a time.
+- [one !home !hosts] I arrived in {lands} with no notion of the place, and took my bearings before anything else.
+- [one !home !hosts !town] New country opened up before me in {lands}, and I was in no hurry to pretend I knew it.
+- [one !home !hosts !town] I crossed into {lands}, and the road there felt longer than it was, as new roads do.
