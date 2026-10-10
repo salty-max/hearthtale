@@ -108,7 +108,22 @@ check(
 profiles["Brannok - Nightslayer"] = { chat = false, toast = false, minimapHidden = true, minimapAngle = 90 }
 SlashCmdList.HEARTHTALE("welcome")
 local picker = ns.welcomePicker
-check(picker.name:GetText() == "Brannok - Nightslayer", "… the welcome offers another character of this game")
+local select = picker.select
+check(
+  select.text:GetText() == "Choose a character"
+    and select.rows[1].text:GetText() == "Brannok - Nightslayer"
+    and not (select.rows[2] and select.rows[2]:IsShown()),
+  "… the welcome offers the other characters of this game, in a select"
+)
+select.scripts.OnClick(select)
+check(select.list:IsShown(), "… a click opens its list")
+select.rows[1].scripts.OnClick(select.rows[1])
+check(
+  select:GetValue() == "Brannok - Nightslayer"
+    and select.text:GetText() == "Brannok - Nightslayer"
+    and not select.list:IsShown(),
+  "… a choice closes it and shows the one chosen"
+)
 picker.copy.scripts.OnClick(picker.copy)
 check(
   ns.option("chat") == false

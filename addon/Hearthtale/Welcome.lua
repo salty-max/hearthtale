@@ -76,57 +76,30 @@ local function refresh()
   for _, row in ipairs(choices) do
     row.box:SetChecked(row.get() and true or false)
   end
-  local others = ns.otherProfiles()
-  picker.others = others
-  if picker.at > #others then picker.at = 1 end
-  picker.name:SetText(others[picker.at] or "No other character yet")
-  picker.name:SetTextColor(unpack(others[1] and T.text or T.soft))
-  for _, b in ipairs({ picker.prev, picker.next }) do
-    b:SetEnabled(#others > 1)
+  local options = {}
+  for _, other in ipairs(ns.otherProfiles()) do
+    table.insert(options, { value = other, text = other })
   end
-  picker.copy:SetEnabled(#others > 0)
+  picker.select.placeholder = options[1] and "Choose a character" or "No other character yet"
+  picker.select:SetOptions(options)
+  picker.copy:SetEnabled(picker.select:GetValue() ~= nil)
 end
 ns.refreshSettings = function()
   if frame and frame:IsShown() then refresh() end
 end
 
--- Another character of this game: its name between arrows, and Copy.
-local function arrow(parent, dir)
-  local b = CreateFrame("Button", nil, parent)
-  b:SetSize(24, 24)
-  local base = "Interface\\Buttons\\UI-SpellbookIcon-" .. dir .. "Page-"
-  b:SetNormalTexture(base .. "Up")
-  b:SetPushedTexture(base .. "Down")
-  b:SetDisabledTexture(base .. "Disabled")
-  b:SetHighlightTexture("Interface\\Buttons\\UI-Common-MouseHilight", "ADD")
-  return b
-end
+-- Another character of this game: chosen in a select (the kit's), and Copy.
 local function buildPicker(parent, anchor)
   picker = CreateFrame("Frame", nil, parent)
   picker:SetSize(TEXT, 26)
   picker:SetPoint("TOPLEFT", anchor, "BOTTOMLEFT", 0, -10)
-  picker.at = 1
-  picker.prev = arrow(picker, "Prev")
-  picker.prev:SetPoint("LEFT", 0, 0)
   picker.copy = button(picker, "Copy their choices", 150)
   picker.copy:SetPoint("RIGHT", 0, 0)
-  picker.next = arrow(picker, "Next")
-  picker.next:SetPoint("RIGHT", picker.copy, "LEFT", -8, 0)
-  picker.name = K.label(picker, K.BODY_FONT, 13, T.text)
-  picker.name:SetPoint("LEFT", picker.prev, "RIGHT", 4, 0)
-  picker.name:SetPoint("RIGHT", picker.next, "LEFT", -4, 0)
-  picker.name:SetJustifyH("CENTER")
-  picker.name:SetWordWrap(false)
-  local function step(d)
-    local n = #picker.others
-    if n == 0 then return end
-    picker.at = (picker.at - 1 + d) % n + 1
-    refresh()
-  end
-  picker.prev:SetScript("OnClick", function() step(-1) end)
-  picker.next:SetScript("OnClick", function() step(1) end)
+  picker.select = K.select(picker, TEXT - 160, "Choose a character")
+  picker.select:SetPoint("LEFT", 0, 0)
+  picker.select.onChange = function() picker.copy:SetEnabled(true) end
   picker.copy:SetScript("OnClick", function()
-    local other = picker.others[picker.at]
+    local other = picker.select:GetValue()
     if other and ns.copyProfile(other) then
       refresh()
       say(("%s's choices are this character's now."):format(other), T.accent)
