@@ -1527,7 +1527,7 @@ do
         race = race,
         class = COMBOS[race][1],
         faction = race == "Skyborne" and (life % 2 == 0 and "horde" or "alliance") or nil,
-        began = { level = 20 },
+        began = { level = life == 3 and 1 or 20 }, -- (a journal from the first steps: lands seen for the first time)
         chapters = chapters,
       }
       for i, e in ipairs(ns.writeBook(c).chapters) do

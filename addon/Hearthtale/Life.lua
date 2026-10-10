@@ -245,6 +245,14 @@ local function lookAtDemon()
   moment("demon", { name = name, family = family })
 end
 
+-- (a pet is tamed when it answers soon after a Tame Beast; one new to the
+-- journal otherwise came from the stable, tamed before the journal began:
+-- noted quietly. Renamed soon after its taming, the taming takes its name.)
+local TAME_BEAST, TAMING = 1515, 300
+local tamedAt, tamed -- the last Tame Beast cast; the taming it told
+ns.onUnit("UNIT_SPELLCAST_SUCCEEDED", "player", function(_, _, spell)
+  if spell and not secret(spell) and spell == TAME_BEAST then tamedAt = now() end
+end)
 local function lookAtPet(quiet)
   local c = char()
   if c.class == "WARLOCK" then return lookAtDemon() end
@@ -258,7 +266,13 @@ local function lookAtPet(quiet)
   c.pets = c.pets or {}
   if not c.pets[name] then
     c.pets[name] = (family and not secret(family)) and family or true
-    if not quiet then moment("tame", { name = name, family = c.pets[name] ~= true and c.pets[name] or nil }) end
+    local fresh = not quiet and tamedAt and now() - tamedAt <= TAMING
+    local kind = c.pets[name] ~= true and c.pets[name] or nil
+    if fresh and tamed and tamed.at >= tamedAt and tamed.family == kind then
+      tamed.name = name -- (its new name)
+    elseif fresh then
+      tamed = moment("tame", { name = name, family = kind })
+    end
   end
 end
 ns.onUnit("UNIT_PET", "player", function() lookAtPet(char().pets == nil) end)
@@ -397,7 +411,12 @@ ns.on("PLAYER_ENTERING_WORLD", function(initial)
   lookAtTrades(c.profs == nil)
   lookAtPet(c.pets == nil)
   lookAtBags(c.bagged == nil)
-  if c.rode == nil and IsMounted() then c.rode = true end
+  -- (riding known when the journal first looks: ridden before it began)
+  local rides = IsMounted()
+  for name in pairs(c.profs or {}) do
+    if name:find("Riding") then rides = true end
+  end
+  if c.rode == nil and rides then c.rode = true end
   if c.rich == nil then c.rich = GetMoney() >= GOLD end
 end)
 

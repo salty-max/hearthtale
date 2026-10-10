@@ -309,6 +309,7 @@ function lives.brannok()
     go("Amberstill Ranch")
     G.wait(10 * MINUTE)
   end)
+  fire("UNIT_SPELLCAST_SUCCEEDED", "player", "Cast-3-4170-0-1-1515-0001", 1515)
   state.pet = { name = "Bristle", family = "Boar" }
   fire("UNIT_PET", "player")
   G.wait(10 * MINUTE)
