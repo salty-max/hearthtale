@@ -7,3 +7,4 @@ kind: d-react
 - [rescue] A life carried safely home weighs more than any kill, and I felt the difference.
 - [cenarion] I was raised to honour Cenarius's children, and raising a hand against them sat heavily on me, whatever had turned them.
 - [beast] I asked the beast's pardon afterwards, as my people do, and meant it.
+- [victim] I asked the Earth Mother to take back gently what had been twisted out of its shape.

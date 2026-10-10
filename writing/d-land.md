@@ -24,23 +24,23 @@ kind: d-land
 - [one !home !hosts !late] My first steps in {lands} were careful ones, as they are anywhere I have not been before.
 - [one !home !hosts !late] I came to {lands} for the first time, and stopped more than once just to look.
 - [one !home !hosts !town !late] I found my way into {lands}, a country I had known only by name until then.
-- [one !home !hosts !town !late] {lands} was strange ground to me, and I learned its paths one wrong turn at a time.
+- [one !home !hosts !town !late] I found strange ground in {lands}, and learned its paths one wrong turn at a time.
 - [one !home !hosts !late] I arrived in {lands} with no notion of the place, and took my bearings before anything else.
 - [one !home !hosts !town !late] New country opened up before me in {lands}, and I was in no hurry to pretend I knew it.
 - [one !home !hosts !town !late] I crossed into {lands}, and the road there felt longer than it was, as new roads do.
-- [late one !home !hosts] The road brought me into {lands}, and I gave it a longer look than the work strictly needed.
+- [late one !home !hosts] The road brought me into {lands}, and I looked about me longer than the work strictly needed.
 - [late one !home !hosts] I came into {lands}, and took my bearings before anything else.
 - [late one !home !hosts] My road ran into {lands}, and I kept my eyes open there.
-- [late one !home !hosts !town] I made my way into {lands}, watching its roads and its hills in equal measure.
+- [late one !home !hosts !town] I made my way into {lands}, watching the roads and the hills in equal measure.
 - [late one !home !hosts !town] The work took me into {lands}, and I let the country tell me what it was.
 - [late one !home !hosts] I crossed into {lands}, minding where I put my feet.
-- [late one !home !hosts !town] {lands} lay ahead of me, and I walked into it with my wits about me.
+- [late one !home !hosts !town] The road ran on into {lands}, and I followed it with my wits about me.
 - [late !one !home !hosts] My road ran on through {lands}.
 - [late !one !home !hosts] The work took me across {lands}, one country after another.
 - [late !one !home !hosts] I made my way through {lands}, and each had its own roads to mind.
 - [late !one !home !hosts] {lands} passed under my feet, each with dangers of its own.
-- [late one home] I came into {lands}, my own people's country, and was glad to be among it.
-- [late one home] My road ran through {lands}, my own people's land, and it steadied me.
+- [late one home] I came into {lands}, my own people's country, and was glad to be among my own.
+- [late one home] My road ran through {lands}, my own people's land, and the thought steadied me.
 - [late !one home] I travelled through {lands}, all of it my own people's country.
 - [late !one home] My road ran through {lands}, every mile of it my own people's.
 - [late one hosts] I came into {lands}, part of the country that had taken my people in.

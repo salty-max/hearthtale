@@ -67,10 +67,15 @@ its decisions: PLAN.md (the full chapter prose was dropped on 10 October
   `.cache/audit/books-forever/`). No source has the new zones' quests above
   the beta's levels, nor any new creature's type, family or rank.
 - `writing/why/*.md`: what each quest's work was for, the story an entry
-  tells: `- <id> <weight> | <phrase>`, a phrase in -ing written from the
-  quest's own texts (the giver's words, its objectives, its hand-in), weighed
-  1 (an errand with a reason) to 3 (a story's climax, a rescue, a villain's
-  end); a quest with nothing to tell has no line. The build turns it into the
+  tells: `- <id> <weight> [<subject>] | <phrase>`, a phrase in -ing written
+  from the quest's own texts (the giver's words, its objectives, its
+  hand-in), weighed 1 (an errand with a reason) to 3 (a story's climax, a
+  rescue, a villain's end); a quest with nothing to tell has no line. A
+  story weighed 2 or 3 says what it was, for a word on it (the build
+  requires it): `villain` (one foe of a name, its wrongs ended), `victim`
+  (the corrupted, cursed or maddened put down or laid to rest, a release),
+  `rescue` (someone brought out alive), `beast` (a great beast hunted),
+  `undead`, `demon`, or `none`; an errand's is guessed. The build turns it into the
   deed itself, read after "I": "killing Hogger, …" is "killed Hogger, …", the
   first verb and those joined to it in the past (a gerund after a
   preposition, a comma or a noun keeps its own "and": "wanted for murdering
@@ -186,11 +191,12 @@ An entry is the stretch looked back on at its rest, by what weighs most:
   is a milestone, never a story; a chain's quest after an entry of the last
   four told one of it by the same people is `[thread]`, its end `[thread
   settled]`; now and then (`REACT_GAP` entries apart, never the same line
-  twice in a book) a word on what it was, `d-react`: `[rescue]` (of someone:
-  a named person; never souls, a thing, a place, one of a kind, nor one freed
-  to be slain), `[villain]` (one named foe), `[undead]`, `[demon]`,
-  `[beast]`, and a race's peoples of note (`[leper]`, `[highborne]`,
-  `[cenarion]`);
+  twice in a book) a word on what it was, `d-react`, by the story's subject
+  (writing/why/; an errand's guessed: `[rescue]` of a named person, never
+  souls, a thing, a place, one of a kind, nor one freed to be slain;
+  `[villain]` one named foe): `[villain]`, `[victim]`, `[rescue]`,
+  `[beast]`, `[undead]` (a Forsaken's own), `[demon]`, and first a race's
+  peoples of note (`[leper]`, `[highborne]`, `[cenarion]`);
 - deaths (`died`, `died-back`, `d-deaths`) or the closest call (its foe told
   there, not again among the foes), a dungeon and its end ("we" when
   grouped), a capital's first sight, a Skyborne's first ground below the

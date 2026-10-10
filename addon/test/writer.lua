@@ -1792,42 +1792,50 @@ do
   then
     problem("story subject", "a thing the quest asks for is no rescue", "Mythology of the Titans")
   end
-  -- a story's reaction, by its subject: the dead, demons, a beast or a
-  -- villain of a name, a rescue, and the peoples of note to a narrator
-  local rescues = {}
-  for _, id in ipairs(heavy) do
-    local verb = whys[id][2]:match("^(%a+)")
-    if verb == "escorted" or verb == "rescued" or verb == "freed" then table.insert(rescues, id) end
+  -- a story's reaction, by its subject (writing/why/ says it: the dead,
+  -- demons, a beast, a villain, a rescue, a victim's release) and the
+  -- peoples of note to a narrator (from what the quest asked)
+  local said = {}
+  for id, why in pairs(whys) do
+    if why[3] and why[3] ~= "" then
+      said[why[3]] = said[why[3]] or {}
+      table.insert(said[why[3]], id)
+    end
+  end
+  for _, ids in pairs(said) do
+    table.sort(ids)
   end
   local subjects = {
-    { "Skeletal Fiend", "Undead", 8 },
-    { "Felguard Sentry", "Demon", 6 },
-    { "Mangeclaw", "Beast", 1 },
-    { "Hogger", "Humanoid", 1 },
-    { false },
-    { "Leper Gnome", "Humanoid", 10 },
-    { "Highborne Apparition", "Undead", 6 },
-    { "Keeper Ordanus", "Humanoid", 1 },
+    { "undead" },
+    { "demon" },
+    { "beast" },
+    { "villain" },
+    { "rescue" },
+    { "victim" },
+    { false, "Leper Gnome", "Humanoid", 10 },
+    { false, "Highborne Apparition", "Undead", 6 },
+    { false, "Keeper Ordanus", "Humanoid", 1 },
   }
   for r, race in ipairs(RACES) do
     for life = 1, #subjects do -- (a word on a story now and then: each life lands on other subjects)
       local chapters = {}
       for n = 1, 4 * #subjects do
-        local foe = subjects[(n + life) % #subjects + 1]
+        local subject = subjects[(n + life) % #subjects + 1]
         local t = n * 100000
-        local id = foe[1] and heavy[(r * 11 + n * 5 + life) % #heavy + 1] or rescues[(r + n + life) % #rescues + 1]
+        local pool = subject[1] and said[subject[1]] or heavy
+        local id = pool[(r * 11 + n * 5 + life) % #pool + 1]
         local log = {}
-        if foe[1] then
+        if subject[2] then
           table.insert(
             log,
-            { k = "kill", name = foe[1], kind = foe[2], zone = "Wetlands", sub = "Wetlands", at = t + 5 }
+            { k = "kill", name = subject[2], kind = subject[3], zone = "Wetlands", sub = "Wetlands", at = t + 5 }
           )
         end
         table.insert(log, {
           k = "done",
           id = id,
           giver = "Sten Stoutarm",
-          objectives = foe[1] and { { type = "monster", name = foe[1], n = foe[3] } } or {},
+          objectives = subject[2] and { { type = "monster", name = subject[2], n = subject[4] } } or {},
           zone = "Wetlands",
           sub = "Wetlands",
           at = t + 10,

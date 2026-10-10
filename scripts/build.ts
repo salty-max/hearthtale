@@ -124,7 +124,7 @@ const TAGS = ["after", "again", "air", "ally", "aquatic", "away", "bear", "beast
   "flight", "foe", "form", "grouped", "hard", "hc", "healer", "high", "highborne", "home", "hosts", "imp", "inside",
   "known", "last", "late", "lava", "leper", "looted", "low", "moonkin", "moved", "nature", "near", "neutral", "new", "night",
   "one", "people", "player", "plural", "rescue", "self", "settled", "steed", "succubus", "summon", "portal", "teleport", "thread", "town",
-  "travel", "tree", "two", "undead", "used", "villain", "voidwalker", "water", "zalazane"];
+  "travel", "tree", "two", "undead", "used", "victim", "villain", "voidwalker", "water", "zalazane"];
 const RACES = ["Human", "Dwarf", "NightElf", "Gnome", "Orc", "Troll", "Tauren", "Scourge", "Skyborne"];
 const CLASSES = ["WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK", "DRUID"];
 const tagOk = (t: string) => {
@@ -230,12 +230,16 @@ for (const f of mdFiles(SCENERY_DIR)) {
   if (place && type && faction) scenery.push({ place, type, home, faction, client, sentences: parsed.sentences });
 }
 
-// What a quest's work was for: writing/why/*.md, "- <id> <weight> | <phrase>",
+// What a quest's work was for: writing/why/*.md, "- <id> <weight> [<subject>] | <phrase>",
 // from the game's own quest texts, for the diary (Diary.lua): a phrase that
 // reads after "I spent the better part of it …", weighed 1 (an errand) to 3
 // (a story's climax).
 const WHY_DIR = join(WRITING, "why");
-const why = new Map<number, { w: number; text: string; deed: string; client?: string }>(); // (forever-*.md: Forever's own quests)
+// (a story's subject: a villain's end, a victim's release (the corrupted, the
+// cursed, the mad put down or laid to rest), a rescue, a great beast, the
+// dead, demons; "none": nothing to say about it)
+const SUBJECTS = ["villain", "victim", "rescue", "beast", "undead", "demon", "none"];
+const why = new Map<number, { w: number; text: string; deed: string; subject?: string; client?: string }>(); // (forever-*.md: Forever's own quests)
 // The deed itself, as the diary tells it: "killing Hogger, …" is "killed
 // Hogger, …", read after "I", the first verb and those joined to it ("and
 // bringing", ", then meeting") in the past; a form the English word list
@@ -298,9 +302,12 @@ for (const f of mdFiles(WHY_DIR)) {
   if (!/^---\nkind: why\n---\n/.test(src)) { fail(file, "front matter: kind: why"); continue; }
   for (const line of src.split("\n")) {
     if (!line.startsWith("- ")) continue;
-    const m = line.match(/^- (\d+) ([123]) \| (.+)$/);
-    if (!m) { fail(file, `not "- <id> <weight> | <phrase>": ${line}`); continue; }
-    const [id, w, text] = [Number(m[1]), Number(m[2]), m[3]];
+    const m = line.match(/^- (\d+) ([123]) (?:([a-z]+) )?\| (.+)$/);
+    if (!m) { fail(file, `not "- <id> <weight> [<subject>] | <phrase>": ${line}`); continue; }
+    const [id, w, subject, text] = [Number(m[1]), Number(m[2]), m[3], m[4]];
+    // (what a weighty story was, for a word on it: said, never guessed)
+    if (w >= 2 && !subject) fail(file, `a why weighed ${w} says what it was (${SUBJECTS.join(", ")}): ${line}`);
+    if (subject && !SUBJECTS.includes(subject)) fail(file, `"${subject}" is no subject (${SUBJECTS.join(", ")}): ${line}`);
     const first = text.split(" ")[0];
     if (!/^[a-z][a-z-]*ing$/.test(first)) fail(file, `a why starts with a verb in -ing, in lower case: ${text}`);
     if (/[.!?;:]$/.test(text)) fail(file, `a why has no final punctuation: ${text}`);
@@ -308,7 +315,7 @@ for (const f of mdFiles(WHY_DIR)) {
     if (/\b(you|your|I|quest|quests|objective)\b/.test(text)) fail(file, `no "you", "I", "quest" or "objective" in a why: ${text}`);
     if (/[$<>[\]{}"]/.test(text)) fail(file, `no $, <>, [], {} or double quotes in a why: ${text}`);
     if (why.has(id)) fail(file, `quest ${id} twice`);
-    why.set(id, { w, text, deed: deedOf(text, file), client: f.startsWith("forever-") ? "forever" : undefined });
+    why.set(id, { w, text, deed: deedOf(text, file), subject: subject === "none" ? undefined : subject, client: f.startsWith("forever-") ? "forever" : undefined });
   }
 }
 
@@ -354,7 +361,7 @@ ${voiceBody}
 ${placeBody}
   },
   why = {
-${[...why.entries()].filter(([, v]) => !v.client || v.client === client).sort((a, b) => a[0] - b[0]).map(([id, v]) => `    [${id}] = { ${v.w}, ${q(v.deed)} },`).join("\n")}
+${[...why.entries()].filter(([, v]) => !v.client || v.client === client).sort((a, b) => a[0] - b[0]).map(([id, v]) => `    [${id}] = { ${v.w}, ${q(v.deed)}${v.w >= 2 ? `, ${q(v.subject ?? "")}` : ""} },`).join("\n")}
   },
 }
 `;
