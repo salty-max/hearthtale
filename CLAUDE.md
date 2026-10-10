@@ -188,7 +188,11 @@ An entry is the stretch looked back on at its rest, by what weighs most:
   class quest's reward;
 - the story, always: the deed itself, "I killed Hogger, …" (`d-why`,
   `d-why2`, `d-why-also`; a second story elsewhere says where, "Later, in
-  Westfall, I …", unless the sentence before named it); a class's own quest
+  Westfall, I …", unless it names its own place; a second climax, and in a
+  stretch full of stories a deed beside a climax, then a third: an entry
+  with much in it may grow; two follow-ups never open alike); done in
+  company, who was with me leads it ("With Oblock, Kyle and Fkn, I killed
+  …", and no company sentence after); a class's own quest
   is a milestone, never a story; a chain's quest after an entry of the last
   four told one of it by the same people is `[thread]`, its end `[thread
   settled]`; now and then (`REACT_GAP` entries apart, never the same line
@@ -212,13 +216,16 @@ An entry is the stretch looked back on at its rest, by what weighs most:
   told (writing/scenery/: a new land, the first of an entry's with a
   description; a capital; a dungeon) and the town an entry ends in, before
   its rest;
-- in the room left (`ROOM`, less one for each milestone): named foes
-  (`d-foes`; a rare by its name; "both" never before a kind), new lands
-  (`d-land`; a city is no country: `[!town]`), a lesson's own line
-  (`lesson`, `[spell:Life_Tap]`) or a new way of fighting (`d-powers`,
-  `[used]` when a quest's foes were fought after it), company, a new rank
-  in a trade, a ride, the first bag (by its name and room) or gold, the pet
-  named again (`d-pet`);
+- in the room left (`ROOM`, less one for each milestone, two at least),
+  by what matters to the one who lived it: company first, a lesson paid for
+  in my own health (`DEAR`: Life Tap over Immolate), named foes (`d-foes`; a
+  rare by its name; "both" never before a kind), new lands (`d-land`; a city
+  is no country: `[!town]`), the other lessons' own lines (`lesson`,
+  `[spell:Life_Tap]`; marked told only once told) or a new way of fighting
+  (`d-powers`, `[used]` when a quest's foes were fought after it), a new
+  rank in a trade, a ride, the first flight (`flight`, from where to where),
+  the first bag (by its name and room) or gold, the pet named again
+  (`d-pet`);
 - the trades of the stretch, one sentence (`c-prof`: `[new]`, `[again]` after
   one was given up, `[rank]`, `[master]` at 300, `[dropped]`; one verb for
   those at the same stage, the stages in the order they came, what my hands
@@ -226,8 +233,9 @@ An entry is the stretch looked back on at its rest, by what weighs most:
   is always told, a rank alone in the room left; a weapon's 300 is no news;
 - the small work (`d-chores`, never counted; "the rest of it" only `[after]`
   something) only when nothing else was;
-- the ending: a thought on a danger (`d-close`: `[hard]`, `[near]`,
-  `[delve]`), else the rest, the night outdoors or indoors, or the journey's
+- the ending: a thought on a danger (`d-close`: `[hard]`, `[near]` only
+  once three sentences were told since the danger's own, which carries its
+  feeling; `[delve]`), else the rest, the night outdoors or indoors, or the journey's
   end at the game's highest level (`summit`: the journal stops recording);
   one entry in three that told a story ends on it.
 

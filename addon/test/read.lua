@@ -53,7 +53,16 @@ local function moment(i, m)
   return table.concat(parts, " ")
 end
 for i, ch in ipairs(book.chapters) do
-  io.write("## Chapter ", i, "\n\n", ch.text or "", "\n\n")
+  io.write(
+    "## ",
+    i,
+    ". ",
+    ch.title or "Entry " .. i,
+    ch.place and " (" .. ch.place .. ")" or "",
+    "\n\n",
+    ch.text or "",
+    "\n\n"
+  )
   if withRecord then
     io.write("```\n")
     for j, m in ipairs(ch.chapter.log or {}) do

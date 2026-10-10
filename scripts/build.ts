@@ -76,6 +76,8 @@ const KINDS: Record<string, string[]> = {
   demon: ["pet", "demon"],
   shift: [],
   mount: ["mount"],
+  // a life's first flight: from where, to where
+  flight: ["from", "to"],
   riding: [],
   petdied: ["pet", "at", "in"],
   // players of the other side slain in the open

@@ -2491,6 +2491,73 @@ do
   end
 end
 
+-- What matters to the one who lived it survives a full entry: the company
+-- the story was done with (named in it), a first trade, a spell paid for
+-- in my own health over a plain one (a gnome warlock's first evening, as a
+-- real one went: a class reward, two deaths, Grik'nir with three friends).
+do
+  local Z, V = "Dun Morogh", "Coldridge Valley"
+  local function at(t, m)
+    m.at, m.zone, m.sub = 1000 + t * 60, m.zone or Z, m.sub or V
+    return m
+  end
+  local log = {
+    at(1, { k = "kill", name = "Ragged Young Wolf", kind = "Wolf", first = true }),
+    at(2, { k = "learned", spells = { "Immolate" }, sub = "Anvilmar" }),
+    at(3, {
+      k = "done",
+      id = 1599,
+      giver = "Alamar Grimm",
+      objectives = { { type = "item", name = "Feather Charm", n = 3 } },
+    }),
+    at(4, { k = "died", death = {} }),
+    at(5, { k = "revived", how = "corpse", graveyard = V, took = 54 }),
+    at(6, { k = "quest", id = 1599, giver = "Alamar Grimm", ender = "Alamar Grimm", told = true, sub = "Anvilmar" }),
+    at(7, { k = "learned", spells = { "Summon Imp", "Herbalism" }, sub = "Anvilmar" }),
+    at(8, { k = "prof", name = "Herbalism", learned = true, sub = "Anvilmar" }),
+    at(9, { k = "learned", spells = { "Corruption", "Curse of Weakness" }, sub = "Anvilmar" }),
+    at(10, { k = "group", name = "Oblock Phlocker", first = "Oblock", class = "WARLOCK", grouped = true }),
+    at(11, { k = "group", name = "Kyle Malone", first = "Kyle", class = "HUNTER", grouped = true }),
+    at(12, { k = "group", name = "Fkn Braindead", first = "Fkn", class = "WARLOCK", grouped = true }),
+    at(13, {
+      k = "done",
+      id = 218,
+      giver = "Grelin Whitebeard",
+      grouped = true,
+      objectives = { { type = "item", name = "Grelin Whitebeard's Journal", n = 1 } },
+    }),
+    at(
+      14,
+      { k = "quest", id = 218, giver = "Grelin Whitebeard", ender = "Grelin Whitebeard", told = true, night = true }
+    ),
+    at(15, { k = "died", death = {}, night = true }),
+    at(16, { k = "revived", how = "corpse", graveyard = V, took = 18, night = true }),
+    at(17, { k = "learned", spells = { "Life Tap", "Shadow Bolt" }, sub = "Anvilmar", night = true }),
+  }
+  local c = {
+    guid = "benchmark",
+    race = "Gnome",
+    class = "WARLOCK",
+    began = { level = 1 },
+    chapters = {
+      {
+        start = { level = 1, zone = Z, sub = V },
+        log = log,
+        ended = { level = 6, place = "Anvilmar", how = "rest" },
+        kills = {},
+        quests = 8,
+        played = 3600,
+        gold = 0,
+      },
+    },
+  }
+  local text = ns.writeBook(c).chapters[1].text or ""
+  inspect("benchmark diary", text)
+  for _, want in ipairs({ "Oblock, Kyle and Fkn", "herbalism", "my own health" }) do
+    if not text:find(want, 1, true) then problem("benchmark diary", "what mattered is lost: " .. want, text) end
+  end
+end
+
 -- Every sentence must be reachable by some life: the shared ones, each
 -- race's own, and each place's scenery.
 local unused = {}

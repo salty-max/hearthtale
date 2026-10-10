@@ -10,27 +10,29 @@ read as the diary entry written at the rest that ends it, in the race's own voic
 
 ## Entry 1 (levels 1 to 4)
 
-I began in Coldridge Valley, with Ironforge behind my name and the wish to bring something worthy of it home. The cold of Dun Morogh caught in my throat, and the pines bowed under their snow. Above the valleys rose the mountain that holds Ironforge, and the sight of it made the cold easier to bear. A Frostmane Troll Whelp brought me close to death in Coldridge Valley. I could have taken quite a pleasure in a harmless task to complain about. I killed Grik'nir the Cold in the troll cave to take back Grelin Whitebeard's stolen journal. It was a fight worth the walk, and I came away from it with nothing to regret. I am still on my feet, though only just, and I intend to find the flaw that nearly cost me everything before something else finds it for me.
+I began in Coldridge Valley, with Ironforge behind my name and the wish to bring something worthy of it home. The cold of Dun Morogh caught in my throat, and the pines bowed under their snow. Above the valleys rose the mountain that holds Ironforge, and the sight of it made the cold easier to bear. A Frostmane Troll Whelp brought me close to death in Coldridge Valley. I had no wish to give my kin another name to carve in stone. I thinned the Frostmane troll whelps in the southern cave for Grelin Whitebeard, sent to Coldridge Valley to judge the troll threat. After that, I killed Grik'nir the Cold in the troll cave to take back Grelin Whitebeard's stolen journal. I rested in Anvilmar, with the road welcome to wear out somebody else for a while.
 
 ## Entry 2 (levels 4 to 7)
 
 The gnomes of Tinker Town knew better than anyone what a lost home costs, and I set out in Anvilmar with my own all the dearer for it. I set my hand to skinning and leatherworking. Wearing a Handstitched Leather Vest that I had made myself was a different pleasure from wearing anything found or given. I took the measure of Timber and found my own was enough, which is the kind of sum I like.
 
-I slew Vagash, the beast preying on the Amberstill rams while most of Magni's army was away at war. Hunter's Mark is mine now, and no quarry of mine will vanish into the crowd. I smelled the Thunderbrew Distillery before I had properly reached Kharanos. Smoke rose above the houses, where dwarves and gnomes crowded together against the cold, and I felt my shoulders ease at the sight.
+I scouted Frostmane Hold and killed its headhunters for Senir Whitebeard, who had seen too many trolls to dare go in. Before the stretch was out, I also slew Vagash, the beast preying on the Amberstill rams while most of Magni's army was away at war. Hunter's Mark is mine now, and no quarry of mine will vanish into the crowd. I smelled the Thunderbrew Distillery before I had properly reached Kharanos. Smoke rose above the houses, where dwarves and gnomes crowded together against the cold, and I felt my shoulders ease at the sight.
 
 ## Entry 3 (levels 7 to 9)
 
-With daylight still to spend, I headed off in Kharanos meaning to get good wear out of every hour of it. I tamed my first companion, a boar I called Bristle, and the road was never as lonely after. The first fire I warmed myself at in Amberstill Ranch taught me how much a little warmth can do for a tired body. Bristle fell in Amberstill Ranch. Out here, it could as easily have been me. I came into Loch Modan for the first time, and the stonework there knew my people's hands even if the roads did not yet know my feet. The blue water of Loch Modan lay still behind the Stonewrought Dam. I knew dwarves built on a grand scale, but the weight of all that water made me stop and look.
+With daylight still to spend, I headed off in Kharanos meaning to get good wear out of every hour of it. Thorgrim shared the road with me for a while. I tamed my first companion, a boar I called Bristle, and the road was never as lonely after. The first fire I warmed myself at in Amberstill Ranch taught me how much a little warmth can do for a tired body.
+
+Bristle fell in Amberstill Ranch. Out here, it could as easily have been me. I came into Loch Modan for the first time, and the stonework there knew my people's hands even if the roads did not yet know my feet. The blue water of Loch Modan lay still behind the Stonewrought Dam. I knew dwarves built on a grand scale, but the weight of all that water made me stop and look.
 
 # Grashnak, an orc warrior
 
 ## Entry 1 (levels 1 to 5)
 
-I began in the Valley of Trials, with Thrall's new homeland to call my own and no wish to repay it with empty boasting. Heat rose from the red dust of Durotar, as if the ground itself were breathing. This was the land we had claimed, and I meant to learn how to belong to it. A Kul Tiras Marine nearly ended me in Tiragarde Keep; I felt how little lay beneath my people's fearsome reputation. I drove Lieutenant Benedict and his Kul Tiras men out of Tiragarde Keep, which they had retaken in defiance of the Warchief's pact. At Razor Hill I heard the forge before I saw the drilling. Beyond the barracks, Kul Tiras ships sat off the coast, and I understood why no one in the town ever quite stood at rest. I came within a breath of the end, and what I carry away from it is not pride at surviving but the plain knowledge of how badly I wanted to.
+I began in the Valley of Trials, with Thrall's new homeland to call my own and no wish to repay it with empty boasting. Heat rose from the red dust of Durotar, as if the ground itself were breathing. This was the land we had claimed, and I meant to learn how to belong to it. A Kul Tiras Marine nearly ended me in Tiragarde Keep; I felt how little lay beneath my people's fearsome reputation. I drove Lieutenant Benedict and his Kul Tiras men out of Tiragarde Keep, which they had retaken in defiance of the Warchief's pact. At Razor Hill I heard the forge before I saw the drilling. Beyond the barracks, Kul Tiras ships sat off the coast, and I understood why no one in the town ever quite stood at rest. I kept still in Razor Hill, and let the heat go out of my temper along with the day.
 
 ## Entry 2 (levels 5 to 6)
 
-I continued in Razor Hill, wondering what the lost world of Draenor would have made of this one. I saw Orgrimmar with my own eyes at last, and found it larger, louder and more mine than I had pictured. The drums of Orgrimmar echoed off the spiked walls as I came in. At Grommash Hold I felt the weight of it: a city our people had built for themselves, with no one's chains on it. I learned to Charge, and the distance between me and a foe stopped being a matter of courage. I seized a lieutenant's insignia from the Burning Blade in Skull Rock for Thrall, who meant to find the true head of the traitors.
+I began again in Razor Hill, keen to see whether the next job would test my arm or only my patience. I saw Orgrimmar with my own eyes at last, and found it larger, louder and more mine than I had pictured. The drums of Orgrimmar echoed off the spiked walls as I came in. At Grommash Hold I felt the weight of it: a city our people had built for themselves, with no one's chains on it. I learned to Charge, and the distance between me and a foe stopped being a matter of courage. I seized a lieutenant's insignia from the Burning Blade in Skull Rock for Thrall, who meant to find the true head of the traitors.
 
 # Aelyndra, a Hardcore night elf druid
 
@@ -46,9 +48,9 @@ The day began in Dolanaar as most of mine did, with a long moment of listening b
 
 ## Entry 1 (levels 1 to 5)
 
-I set out in Deathknell, a Forsaken priest; the Light still answered me, and every time it answered, it burned. Crows called over the crypts of Tirisfal, toward the broken walls of Lordaeron. Night changed little here, though it left me feeling less conspicuous. I can set a ward between myself and a blow now, and I feel steadier for it. I executed Maggot Eye, the gnoll who stole corpses near Garren's Haunt for the Lich King's army, for Brill's reward. I have no great faith in justice, but I made an exception for that one.
+I set out in Deathknell, a Forsaken priest; the Light still answered me, and every time it answered, it burned. Crows called over the crypts of Tirisfal, toward the broken walls of Lordaeron. Night changed little here, though it left me feeling less conspicuous. I cleared the spiders from the gold mine near Deathknell, gold my people needed to survive. Not long after, I struck first at the Scarlet Crusade camp southeast of Deathknell, zealots sworn to destroy every undead, and took their armbands.
 
-After the tombs, the crooked roofs of Brill looked almost companionable. Around the Gallows' End Tavern my people went about their business, and the town kept going on stubbornness alone. I settled in Brill, with no need to sleep and a very definite wish to stop.
+I can set a ward between myself and a blow now, and I feel steadier for it. After that, I executed Maggot Eye, the gnoll who stole corpses near Garren's Haunt for the Lich King's army, for Brill's reward. After the tombs, the crooked roofs of Brill looked almost companionable. Around the Gallows' End Tavern my people went about their business, and the town kept going on stubbornness alone. I settled in Brill, with no need to sleep and a very definite wish to stop.
 
 ## Entry 2 (levels 5 to 6)
 
