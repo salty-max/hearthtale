@@ -46,7 +46,9 @@ The day began in Dolanaar as most of mine did, with a long moment of listening b
 
 ## Entry 1 (levels 1 to 5)
 
-I set out in Deathknell, a Forsaken priest; the Light still answered me, and every time it answered, it burned. Crows called over the crypts of Tirisfal, toward the broken walls of Lordaeron. Night changed little here, though it left me feeling less conspicuous. I can set a ward between myself and a blow now, and I feel steadier for it. I executed Maggot Eye, the gnoll who stole corpses near Garren's Haunt for the Lich King's army, for Brill's reward. After the tombs, the crooked roofs of Brill looked almost companionable. Around the Gallows' End Tavern my people went about their business, and the town kept going on stubbornness alone. I settled in Brill, with no need to sleep and a very definite wish to stop.
+I set out in Deathknell, a Forsaken priest; the Light still answered me, and every time it answered, it burned. Crows called over the crypts of Tirisfal, toward the broken walls of Lordaeron. Night changed little here, though it left me feeling less conspicuous. I can set a ward between myself and a blow now, and I feel steadier for it. I executed Maggot Eye, the gnoll who stole corpses near Garren's Haunt for the Lich King's army, for Brill's reward. I have no great faith in justice, but I made an exception for that one.
+
+After the tombs, the crooked roofs of Brill looked almost companionable. Around the Gallows' End Tavern my people went about their business, and the town kept going on stubbornness alone. I settled in Brill, with no need to sleep and a very definite wish to stop.
 
 ## Entry 2 (levels 5 to 6)
 

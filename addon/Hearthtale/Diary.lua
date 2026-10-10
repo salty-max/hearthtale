@@ -138,7 +138,16 @@ local function namesPlace(text, zone)
   end
   return false
 end
-local function SUBJECT(text, objectives, kinds)
+-- (a weighty story says what it was, writing/why/: "" for nothing to say;
+-- an errand's is guessed from its words and what it asked; first, either
+-- way, a people of note to the narrator: their own irradiated kin, their
+-- forebears, Cenarius's own)
+local function SUBJECT(text, objectives, kinds, said)
+  for _, o in ipairs(objectives or {}) do
+    local people = o.type == "monster" and o.name and W.foeOf(o.name, kinds[o.name])
+    if people == "leper" or people == "highborne" or people == "cenarion" then return people end
+  end
+  if said then return said ~= "" and said or nil end
   if rescued(text, objectives) then return "rescue" end
   local verb = text:match("^(%a+)")
   local bare = ns.names and ns.names.creatureBare or {}
@@ -150,10 +159,6 @@ local function SUBJECT(text, objectives, kinds)
     if o.type == "monster" and o.name then
       -- (its kind, from the kills recorded: the dead, demons, a beast of a name)
       local kind = kinds[o.name]
-      -- (a people of note to the narrator: their own irradiated kin, their
-      -- forebears, Cenarius's own)
-      local people = W.foeOf(o.name, kind)
-      if people == "leper" or people == "highborne" or people == "cenarion" then return people end
       if kind == "Undead" then return "undead" end
       if kind == "Demon" then return "demon" end
       if bare[o.name] and foes == 1 then return kind == "Beast" and "beast" or "villain" end
@@ -446,10 +451,16 @@ local function storyOf(d, ch, f, thin)
       end
       -- (of two alike, the one for my own people: Zalazane, for a Darkspear)
       local mine = W.ours(why[2], race) ~= why[2]
-      table.insert(
-        all,
-        { id = m.id, w = why[1], text = why[2], i = i, deed = deed, mine = mine, zone = w.zone or m.zone }
-      )
+      table.insert(all, {
+        id = m.id,
+        w = why[1],
+        text = why[2],
+        said = why[3],
+        i = i,
+        deed = deed,
+        mine = mine,
+        zone = w.zone or m.zone,
+      })
     end
   end
   table.sort(all, function(x, y)
@@ -758,7 +769,7 @@ local function entry(d, n, ch)
       end
     end
     -- (what it was, a word on it: now and then, never the same twice)
-    local subject = told and SUBJECT(story[1].text, (f.work[story[1].id] or {}).objectives, f.kinds)
+    local subject = told and SUBJECT(story[1].text, (f.work[story[1].id] or {}).objectives, f.kinds, story[1].said)
     if told then headline(subject and 2 or 5, questTitle(f.titles[story[1].id])) end
     if subject and (story[1].w == 3 or n % 2 == 0) and milestones < 2 and n - d.reactedAt >= REACT_GAP then
       local word = sayFresh(

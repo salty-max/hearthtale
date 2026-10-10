@@ -2,67 +2,67 @@
 kind: why
 ---
 # Ashenvale
-- 908 2 | diving into Blackfathom Deeps for the fathom core, so Je'neu Sancrea and the Earthen Ring might stop the Twilight's Hammer there
-- 86757 2 | stripping swords and daggers from the orc grunts and scouts in eastern Ashenvale for Shandrina, to push the orcs back out of the forest
+- 908 2 none | diving into Blackfathom Deeps for the fathom core, so Je'neu Sancrea and the Earthen Ring might stop the Twilight's Hammer there
+- 86757 2 none | stripping swords and daggers from the orc grunts and scouts in eastern Ashenvale for Shandrina, to push the orcs back out of the forest
 - 98251 1 | thinning the beasts around a ravine in Ashenvale for Va'xug Firefure, lost there and seething at the forest
 - 98252 1 | guiding Va'xug Firefure's Eye of Kilrogg out of the ravine to the Ashenvale road, so the lost warlock could follow it out
-- 98417 2 | searching among the Satyrnaar demons west of Forest Song for Kurothel, the husband Maseara Autumnmoon could still feel in the woods
+- 98417 2 none | searching among the Satyrnaar demons west of Forest Song for Kurothel, the husband Maseara Autumnmoon could still feel in the woods
 # Tirisfal Glades
-- 65593 2 | procuring the hearts of Avelina Lilly and Isaac Pearson, lovers at opposite ends of the world, as a lure for Carendin Halgar's incubus
+- 65593 2 none | procuring the hearts of Avelina Lilly and Isaac Pearson, lovers at opposite ends of the world, as a lure for Carendin Halgar's incubus
 - 86784 1 | gathering firewood for Eleanor Shackleton's camp in the hills, a wanderer who knew the wilds of the Glades
-- 90902 2 | healing injured Deathguard with the Light through the pain it now caused, to reawaken what death had dulled
-- 91208 2 | seeking out a newly risen paladin who had fled into the hills, to lead her back to the Light if she could be reached
+- 90902 2 none | healing injured Deathguard with the Light through the pain it now caused, to reawaken what death had dulled
+- 91208 2 none | seeking out a newly risen paladin who had fled into the hills, to lead her back to the Light if she could be reached
 - 91285 1 | driving the Vile Fin murlocs back from Bandarion Keep, whose spawning grounds the new paladin order had taken
 - 91316 1 | scavenging lumber from a root cellar in ruined Shadowvale to rebuild Bandarion Keep, far from the Undercity's supplies
-- 91317 3 | ending the Tarnished at Shadowvale and taking their commander Rudolph Gelhardt's head, risen paladins who still killed Forsaken
-- 92422 3 | destroying Rath'mael, the necromancer whose unholy fog hid the Scourge in the streets of the Ruins of Lordaeron
-- 94438 3 | raising Deathguard Falgan with the Symbol of Life at Venomweb Vale, where he had stayed behind so his friend Billmuth could flee the Scarlets
-- 94440 2 | seizing the Scarlet Crusade's attack plans at Venomweb Vale, so the Deathguard could prepare an ambush before Brill was struck
+- 91317 3 none | ending the Tarnished at Shadowvale and taking their commander Rudolph Gelhardt's head, risen paladins who still killed Forsaken
+- 92422 3 villain | destroying Rath'mael, the necromancer whose unholy fog hid the Scourge in the streets of the Ruins of Lordaeron
+- 94438 3 rescue | raising Deathguard Falgan with the Symbol of Life at Venomweb Vale, where he had stayed behind so his friend Billmuth could flee the Scarlets
+- 94440 2 none | seizing the Scarlet Crusade's attack plans at Venomweb Vale, so the Deathguard could prepare an ambush before Brill was struck
 - 95314 1 | recovering bottles of Whispering Elixir from ruined Shadowvale for Carolai Anise, a banned brew her buyers were eager to get
 - 95328 1 | selling the squirming residue of a whispering horror to Father Lankester in the Undercity, who studied the void's touch on that forest
-- 95803 2 | presenting the head of Rudolph Gelhardt to Sylvanas Windrunner, to show the Dark Lady the paladins tended their own house
-- 96897 2 | killing the Cult of the Damned's neophytes and enforcers snooping outside the Undercity, for Hadric Harlson of the Argent Dawn
-- 96898 2 | gathering the necrotic crystal shards scattered when Naxxramas bore down on the Undercity, before the cultists could claim them
+- 95803 2 none | presenting the head of Rudolph Gelhardt to Sylvanas Windrunner, to show the Dark Lady the paladins tended their own house
+- 96897 2 none | killing the Cult of the Damned's neophytes and enforcers snooping outside the Undercity, for Hadric Harlson of the Argent Dawn
+- 96898 2 none | gathering the necrotic crystal shards scattered when Naxxramas bore down on the Undercity, before the cultists could claim them
 - 97558 1 | gathering bat membranes, darkhound hides and murloc skin for Shelene Rhobart, to patch Forsaken skin that never heals on its own
 - 98389 1 | freeing the newly risen from the webs of Night's Web Hollow for Aramis Hammerhand, to show the Forsaken their paladins meant them no harm
 - 99134 1 | punishing the Deathguards who had disappointed Executor Zygand, pain being one of the few delights left in death
 - 99141 1 | collecting the overdue reports of Executor Zygand's Deathguards, and one from the abomination Gordo
 - 99142 1 | gathering tomb weed from the Balnir Farmstead for Junior Apothecary Holland, an altered doom weed that drew the Scourge to it
-- 99144 3 | helping Bareth Dawnstone, a Forsaken paladin of Bandarion Keep, escape the Scarlet Crusade at Crusader's Outpost
+- 99144 3 rescue | helping Bareth Dawnstone, a Forsaken paladin of Bandarion Keep, escape the Scarlet Crusade at Crusader's Outpost
 - 99152 1 | gathering faintly glowing bones beneath Shadowvale for Hilda the Breaker, to learn how a Scourge threat had festered there unnoticed
-- 99153 2 | finding the glowing shard of the focusing crystal a cultist had hidden beneath Shadowvale, before it raised more dead
-- 99156 3 | killing Riptear, a rogue abomination that had slipped past the Bulwark into eastern Tirisfal, and bringing back its heart
+- 99153 2 none | finding the glowing shard of the focusing crystal a cultist had hidden beneath Shadowvale, before it raised more dead
+- 99156 3 villain | killing Riptear, a rogue abomination that had slipped past the Bulwark into eastern Tirisfal, and bringing back its heart
 # Undercity
-- 65597 3 | summoning an incubus over the lovers' hearts and beating it down, the trial Carendin Halgar set before he would teach the binding
-- 92421 2 | gathering intact limbs from the Scourge in the Ruins of Lordaeron for Morbin Lightbane, to mend Forsaken whose decaying flesh could not be reknit
+- 65597 3 demon | summoning an incubus over the lovers' hearts and beating it down, the trial Carendin Halgar set before he would teach the binding
+- 92421 2 none | gathering intact limbs from the Scourge in the Ruins of Lordaeron for Morbin Lightbane, to mend Forsaken whose decaying flesh could not be reknit
 - 94434 1 | giving linen to Tanis Alderwood, an Undercity beggar, to wrap his wife, who was falling apart while the apothecaries were busy
 - 95204 1 | bringing a weathered Crest of Lordaeron to Oran Snakewrithe in the Undercity, a rare relic of the kingdom that fell to the Scourge
-- 95216 2 | drawing a sample of Witherfang's venom, said to eat through undead flesh, for Theodore Griffs of the Royal Apothecary Society
+- 95216 2 none | drawing a sample of Witherfang's venom, said to eat through undead flesh, for Theodore Griffs of the Royal Apothecary Society
 - 97288 1 | bringing the much-reattached head of a strange abomination to Master Apothecary Faranell in the Undercity, who knew it at once
-- 97289 2 | setting the Baron's head, once a Grand Marshal of the Alliance, beside the body of Othmar for Faranell, so its secrets could be made to talk
+- 97289 2 none | setting the Baron's head, once a Grand Marshal of the Alliance, beside the body of Othmar for Faranell, so its secrets could be made to talk
 - 97291 1 | fetching a toxic skullcap, blisterweed and essence of agony around the Undercity for Faranell's serum, to bend the Baron to the Dark Lady's will
-- 97292 2 | feeding Faranell's hissing serum into the workings above Othmar, to show him why he should serve the Dark Lady loyally
+- 97292 2 none | feeding Faranell's hissing serum into the workings above Othmar, to show him why he should serve the Dark Lady loyally
 - 97891 1 | running an unstable potion across the canal to Doctor Martin Felben in time, after the last six had gone bad on the way
-- 97985 2 | slaying Stormheart, a huge thunder lizard of Thousand Needles, for the still-beating heart Calder Gray needed for an abomination
+- 97985 2 beast | slaying Stormheart, a huge thunder lizard of Thousand Needles, for the still-beating heart Calder Gray needed for an abomination
 # Stormwind City
-- 65602 2 | recovering a lovers' keepsake thousands of years old from a house in Ashenvale, the lure Gakin the Darkbinder needed to tempt an incubus
-- 65603 3 | calling up an incubus with the old figurine in the crypts below the Slaughtered Lamb and defeating it, the trial before Gakin would bind it
-- 92415 2 | showing a blood-stained letter from the graveyard of Lordaeron to Orphan Matron Nightingale, about a missing child of the Heartweaver family
+- 65602 2 none | recovering a lovers' keepsake thousands of years old from a house in Ashenvale, the lure Gakin the Darkbinder needed to tempt an incubus
+- 65603 3 demon | calling up an incubus with the old figurine in the crypts below the Slaughtered Lamb and defeating it, the trial before Gakin would bind it
+- 92415 2 none | showing a blood-stained letter from the graveyard of Lordaeron to Orphan Matron Nightingale, about a missing child of the Heartweaver family
 - 92456 1 | plucking a fel-infused blossom from the central garden of Dalaran for Shylamiir, curious about the Kirin Tor's mana-touched plants
-- 92489 3 | destroying the Arcanic Enigma in Dalaran for High Sorcerer Andromath, to help the Kirin Tor contain the wayward arcane energies in their city
+- 92489 3 none | destroying the Arcanic Enigma in Dalaran for High Sorcerer Andromath, to help the Kirin Tor contain the wayward arcane energies in their city
 - 92749 1 | getting coarse dynamite for Sprite Jumpsprocket, who took gladly to the idea of industrial sabotage in the Deadmines
 - 92751 1 | fetching an SI:7 prototype detonator for Sprite Jumpsprocket, so the blast under Westfall could be set off from safely outside
 - 93963 1 | calling on Magni Bronzebeard, High Tinker Mekkatorque and Tyrande Whisperwind in their capitals, as Bolvar Fordragon advised a guest
 - 95065 1 | fetching a shiny bauble and nightcrawlers for old Gilbert Gray at the Stormwind harbor, down to his last bait while the fish were biting
-- 95161 2 | delivering the blood-stained letter to Avette Fellwood in Duskwood, the new mother of Jeremy Heartweaver, who had not spoken since Lordaeron fell
+- 95161 2 none | delivering the blood-stained letter to Avette Fellwood in Duskwood, the new mother of Jeremy Heartweaver, who had not spoken since Lordaeron fell
 - 95195 1 | gathering the insignias of Lordaeron's fallen soldiers for General Marcus Jonathan, to be given to whatever kin were left in Stormwind
 - 97220 1 | hauling a shipment for the short-handed docks to the Gatehouse's stockroom, reached through Trias' Cheese shop in the Trade District
 - 97234 1 | carrying Roy Lewells's wrapped books to the Stormwind library for his book club, to trade them for newer writing
 - 97237 1 | finding the book club's chosen tomes on the library shelves for Roy Lewells, for lively talk in the cellar after hours
 - 97926 1 | bringing Baros Alexston's reply back to Thundris Windweaver, word that Stormwind's thin coffers had no help to spare for Auberdine
-- 98191 2 | bringing the statuette of King Terenas to Lord Grayson Shadowbreaker, to be kept in the Cathedral of Light, for the Light had gathered in it
+- 98191 2 none | bringing the statuette of King Terenas to Lord Grayson Shadowbreaker, to be kept in the Cathedral of Light, for the Light had gathered in it
 # Orgrimmar
-- 65610 2 | searching Fallen Sky Lake in Ashenvale for a sign of Krilge, the missing soldier Magar refused to believe a deserter
+- 65610 2 none | searching Fallen Sky Lake in Ashenvale for a sign of Krilge, the missing soldier Magar refused to believe a deserter
 - 93739 1 | calling on Vol'jin, Cairne Bloodhoof and Lady Sylvanas Windrunner in their capitals, as Thrall advised a guest of the Horde
 - 95697 1 | butchering thicket raptors in the excavation sites for Borstan, who wanted a grand take on homestyle cooking at his firepit
 - 96874 1 | hacking spines from the beasts of Thunder Ridge for Ug'thok, with stones to grind them, for the mighty axe head he was sure they would make
@@ -75,19 +75,19 @@ kind: why
 # Thunder Bluff
 - 76156 1 | slipping into the Venture Company mine in a flimsy disguise to steal seaforium charges, Boarton Shadetotem's test for a talent in the subtle arts
 - 76160 1 | crushing Windfury cones from beneath the harpy nests into a blade poison for Boarton Shadetotem, though it came out as pine nut butter
-- 76240 2 | filleting a smallfish with two knives before Boarton Shadetotem, his last try at finding a hidden talent, which proved to be ambidexterity
+- 76240 2 none | filleting a smallfish with two knives before Boarton Shadetotem, his last try at finding a hidden talent, which proved to be ambidexterity
 - 97485 1 | making incense from herbs, cedar, sinew and flint bought on the rises and scattering it to the winds off Hunter's Rise, a tauren tradition
 - 98823 1 | carrying the titan relic to Muln Earthfury of the Earthen Ring at the Skywatcher Plateau, who would know most about buried ruins
 # No zone
-- 78261 2 | stealing the Horn of Xelthos out of Shadowfang Keep alone, a job left in a note by someone signing as C, with Veenix's help past the gate
+- 78261 2 none | stealing the Horn of Xelthos out of Shadowfang Keep alone, a job left in a note by someone signing as C, with Veenix's help past the gate
 - 78823 1 | handing Hemet Nesingwary a primitive drawing of a great bird of prey, which he found interesting indeed
 - 79007 1 | following a charred note from a burned-out camp, whose riddle pointed to the twin land and a stranger's next hiding place
 - 79008 1 | following the riddle of a blistered note found in a burned-out camp, toward the twin land and a stranger's next hiding place
-- 79192 2 | tracking the note-writer toward a cosy spot between the Barrens and Desolace, after a note tied the charred dead to New Plague deliveries
+- 79192 2 none | tracking the note-writer toward a cosy spot between the Barrens and Desolace, after a note tied the charred dead to New Plague deliveries
 - 79229 1 | seeking someone in Desolace who knew of a pillaged campsite where two humans and a dwarf lay dead, killed by no beast or centaur
 - 79974 1 | reading the riddle of the waterfalls to find the eagle's nest, the next of the hidden note-writer's hideouts
 - 79975 1 | trailing the note-writer, loyal to the Eagle and Fist, toward an old barricade of the Old Kingdoms
-- 79976 2 | reaching the last hideout at Thoradin's Wall just after the note-writer had gone back underground to keep the work from the wrong hands
+- 79976 2 none | reaching the last hideout at Thoradin's Wall just after the note-writer had gone back underground to keep the work from the wrong hands
 - 79980 1 | digging up the stash the note-writer had left a hundred paces north, down a steep cliffside, with enough to keep going
 - 92109 1 | gathering vials, silverleaf and peacebloom for an odd little girl hiding in a Moonbrook barn, eager to learn alchemy like her daddy
 - 93663 1 | finding a lost goblin courier's shipment along the swamp road, likely a crocolisk's doing, and seeing it to the Harborage for its trader
@@ -99,104 +99,104 @@ kind: why
 - 94244 1 | fitting Narkk with dark leather shoulders on a writ, a pirate tired of a squawking bird's claws in his shoulder
 - 94247 1 | passing a lesser wizard's robe to Alan Sneeks, a man in dark leathers watching Dalaran on behalf of the Kirin Tor
 - 94254 1 | delivering a greater adept's robe on a writ to Magus Tirth, so he could at last wear robe and wizard hat together
-- 94505 2 | bringing the Shard of Water from the cleansed spirit of Stendel's Pond to Norric Lochthane, the proof he asked for before the water totem
+- 94505 2 none | bringing the Shard of Water from the cleansed spirit of Stendel's Pond to Norric Lochthane, the proof he asked for before the water totem
 - 95189 1 | returning a weathered Crest of Lordaeron from the ruins to Lady Dena Kennedy in Stormwind, one of the few relics left of the fallen kingdom
-- 95250 2 | searching the Ruins of Lordaeron for the Grand Marshal whose return Captain Truman still awaited, and bringing back the head of the Baron
-- 95795 2 | bringing Dorin Songblade in Lakeshire the news that his brother Daewyn had died in the excavation sites
-- 95809 2 | bringing Caitlin Grassman the reed heart Ardin wove in the excavation site, word that he had survived and was coming home
+- 95250 2 none | searching the Ruins of Lordaeron for the Grand Marshal whose return Captain Truman still awaited, and bringing back the head of the Baron
+- 95795 2 none | bringing Dorin Songblade in Lakeshire the news that his brother Daewyn had died in the excavation sites
+- 95809 2 none | bringing Caitlin Grassman the reed heart Ardin wove in the excavation site, word that he had survived and was coming home
 - 95883 1 | claiming a tortured soul from the undead of Beren's Peril, one of the pieces still missing from the ritual at the offering stone
 - 95884 1 | following a scrap of note to the offering stone in Beren's Peril, where someone had laid out the makings of a ritual
-- 95885 2 | offering blood willingly at the stone in Beren's Peril and facing the tortured soul it freed, to finish a ritual of unknown purpose
-- 96395 3 | laying to rest the spirit of Faldrim Anvilmar, a thane consumed by an ancient grudge, at his ghostly attendant's plea
+- 95885 2 none | offering blood willingly at the stone in Beren's Peril and facing the tortured soul it freed, to finish a ritual of unknown purpose
+- 96395 3 victim | laying to rest the spirit of Faldrim Anvilmar, a thane consumed by an ancient grudge, at his ghostly attendant's plea
 - 98027 1 | returning a silver crescent necklace inscribed to Maliynn to its owner in Astranaar
 - 98059 1 | slipping Captain McManus's sealed request onto the Hillsbrad council's table, after they ignored every letter asking for soldiers
-- 98297 3 | slaying the warlocks who held a red dragonspawn bound at the Dragonmaw Gates, and putting the creature out of its misery, as Howin Kindfeather asked
+- 98297 3 victim | slaying the warlocks who held a red dragonspawn bound at the Dragonmaw Gates, and putting the creature out of its misery, as Howin Kindfeather asked
 # Arathi Highlands
-- 79358 2 | gathering twisted totems of all four elements for Veyric Thunderhame, to learn how the quilboar turned the elements and prepare a counter-ritual
+- 79358 2 none | gathering twisted totems of all four elements for Veyric Thunderhame, to learn how the quilboar turned the elements and prepare a counter-ritual
 - 94221 1 | bringing a golden rod ordered by writ to Muggol Breezebeard, who hoped it might help him commune with the Binding Stones
 - 96016 1 | bringing the Eye of the Tempest to Bath'rah the Windwatcher, a troll shaman versed in storm elementals, to be made into a weapon
-- 96135 3 | setting twisted totems by the steam pools of Thousand Needles to summon the quilboar's elementals and put an end to the Razormane ritual
-- 96264 3 | defeating Charlga Razorflank in Razorfen Kraul for word of the ritual the quilboar were massing for, while the earth rumbled
+- 96135 3 none | setting twisted totems by the steam pools of Thousand Needles to summon the quilboar's elementals and put an end to the Razormane ritual
+- 96264 3 villain | defeating Charlga Razorflank in Razorfen Kraul for word of the ritual the quilboar were massing for, while the earth rumbled
 - 97539 1 | harvesting spider silk for Doctor Gregory Victor's field sutures, to keep the neglected infirmary at Hammerfall working
 # Thousand Needles
-- 79360 3 | defeating Charlga Razorflank in Razorfen Kraul for word of the quilboar's plans, a cause of the elemental unrest Bath'rah the Windwatcher had sensed
-- 79361 2 | gathering twisted totems of all four elements for Prate Cloudseer, to turn back the storm the quilboar meant to flood Thousand Needles with
-- 79366 3 | setting the twisted totems at the steam pools to call up the corrupted elementals and end the quilboar ritual, until the rumbling ground fell silent
+- 79360 3 villain | defeating Charlga Razorflank in Razorfen Kraul for word of the quilboar's plans, a cause of the elemental unrest Bath'rah the Windwatcher had sensed
+- 79361 2 none | gathering twisted totems of all four elements for Prate Cloudseer, to turn back the storm the quilboar meant to flood Thousand Needles with
+- 79366 3 none | setting the twisted totems at the steam pools to call up the corrupted elementals and end the quilboar ritual, until the rumbling ground fell silent
 - 98069 1 | recovering the supplies harpies took from the last caravan bound for Freewind Post, before the post ran short
-- 98070 2 | killing the Screeching harpies who ambushed every caravan through their canyon, lest none dare the trek to Freewind Post
+- 98070 2 none | killing the Screeching harpies who ambushed every caravan through their canyon, lest none dare the trek to Freewind Post
 # Duskwood
-- 79362 2 | finding Grant Valor's mace in the skeleton at Raven Hill Cemetery that wounded him, perhaps the unfinished business keeping his spirit there
-- 79363 2 | driving the Defias out of Addle's Stead, perhaps the unfinished business of Silvia Valor's spirit, who guarded Raven Hill's homes in life
-- 96138 2 | driving off the Splinter Fist ogres near Raven Hill, perhaps the unfinished business of Merrick Valor's spirit, who had kept its roads safe
+- 79362 2 none | finding Grant Valor's mace in the skeleton at Raven Hill Cemetery that wounded him, perhaps the unfinished business keeping his spirit there
+- 79363 2 none | driving the Defias out of Addle's Stead, perhaps the unfinished business of Silvia Valor's spirit, who guarded Raven Hill's homes in life
+- 96138 2 none | driving off the Splinter Fist ogres near Raven Hill, perhaps the unfinished business of Merrick Valor's spirit, who had kept its roads safe
 - 96139 1 | searching Raven Hill for any trace of its lost history for Sirra Von'Indi, who wanted its fallen folk remembered
 - 98372 1 | taking the unlit torch from a Night Watchman mauled by some large beast, a light to reveal what the darkness of Duskwood hid
 # Stonetalon Mountains
 - 86574 1 | recovering a dead courier's supplies from the Pridewing wyverns' nests, a shipment meant for Innkeeper Faralia at Stonetalon Peak
 - 86576 1 | collecting the golden sunstones the Bloodfury harpies hoard in the Charred Vale, for Mor'rogal, who had a use for them
 # Loch Modan
-- 86585 3 | raising a fallen mountaineer's trampled banner of Ironforge to call out Headsplitter, the trogg that had killed her
+- 86585 3 villain | raising a fallen mountaineer's trampled banner of Ironforge to call out Headsplitter, the trogg that had killed her
 - 86613 1 | returning the tools the excavators abandoned when the troggs overran their camp, for Magmar Fellhew's stalled dig
 - 86614 1 | returning a silver hair clip found in the debris to its owner, who had given it up for lost
 - 86667 1 | scooping a jar of snow at South Gate Pass for Norric Lochthane's shamanic workings, and getting it to him before it could melt
-- 86758 2 | hunting Daggerfang, the crocolisk that nearly took Marek Ironheart's hand, for the safety of the lake's other hunters
+- 86758 2 beast | hunting Daggerfang, the crocolisk that nearly took Marek Ironheart's hand, for the safety of the lake's other hunters
 - 86776 1 | smelting bronze bars for Morhan Coppertongue, whose forge in Thelsamar kept running short for tools, kettles and pots
-- 94466 2 | wresting fire tar from the Tunnel Rat geomancers and a pouch from a Stonesplinter seer, so Braldir Ashmantle could brew the fire sapta
-- 94467 3 | defeating a manifestation of fire atop the Shrine of Eternal Flame and lighting the brazier with its ember, to earn the fire's favour
-- 94502 3 | cleansing the corruption that had silenced the spirits of Stendel's Pond near Moonbrook, the last trial of the water rite
+- 94466 2 none | wresting fire tar from the Tunnel Rat geomancers and a pouch from a Stonesplinter seer, so Braldir Ashmantle could brew the fire sapta
+- 94467 3 none | defeating a manifestation of fire atop the Shrine of Eternal Flame and lighting the brazier with its ember, to earn the fire's favour
+- 94502 3 victim | cleansing the corruption that had silenced the spirits of Stendel's Pond near Moonbrook, the last trial of the water rite
 # Teldrassil
 - 87288 1 | skinning Teldrassil's aggressive nightsabers for Aldia, a trader in Dolanaar who would make the pelts into blankets and shawls
 - 97236 1 | offering the fang of Githyiss, a great spider, to a student of spiders in Aldrassil
-- 97977 2 | searching the Gnarlpine's abandoned camps for totems whose engravings might tell Tarindrella why the furbolg turned on the elves
+- 97977 2 none | searching the Gnarlpine's abandoned camps for totems whose engravings might tell Tarindrella why the furbolg turned on the elves
 - 98046 1 | carrying Fandral Staghelm's drained phial to Lariia in the Temple of the Moon, who found a few drops still in it
 - 98065 1 | presenting the moonwell remnants from Fandral's failed incantation to Tyrande Whisperwind, water blessed by Elune
-- 98392 2 | prying the amulets from three harpy leaders for Sentinel Arynia Cloudsbreak, to prove where the taint in their belts came from
-- 98403 3 | bringing down Xethorr the Wicked in the Cleft for Tallonkai Swiftroot, the satyr twisting Teldrassil's spiders with fel moss
-- 99046 2 | searching the road to the Oracle Glade for Sentinel Eralya Leafshadow, a runner still in training, long overdue with the Oracle Tree's message
+- 98392 2 none | prying the amulets from three harpy leaders for Sentinel Arynia Cloudsbreak, to prove where the taint in their belts came from
+- 98403 3 villain | bringing down Xethorr the Wicked in the Cleft for Tallonkai Swiftroot, the satyr twisting Teldrassil's spiders with fel moss
+- 99046 2 none | searching the road to the Oracle Glade for Sentinel Eralya Leafshadow, a runner still in training, long overdue with the Oracle Tree's message
 - 99047 1 | running to Byancie in Dolanaar for help, while Sentinel Eralya Leafshadow lay dying of wounds from the tainted harpies
-- 99050 2 | gathering lasher fronds, a vial and spring water for Byancie's salve, to hold back the rot long enough to bring Eralya home
-- 99053 3 | leading Sentinel Lynessa Duskblossom out of Ban'ethil Barrow Den, where the Gnarlpine had dragged her before she could deliver her message
-- 99073 2 | taking Byancie's salve to Sentinel Eralya Leafshadow on the road, to ease her suffering if it could not cure her
+- 99050 2 none | gathering lasher fronds, a vial and spring water for Byancie's salve, to hold back the rot long enough to bring Eralya home
+- 99053 3 rescue | leading Sentinel Lynessa Duskblossom out of Ban'ethil Barrow Den, where the Gnarlpine had dragged her before she could deliver her message
+- 99073 2 none | taking Byancie's salve to Sentinel Eralya Leafshadow on the road, to ease her suffering if it could not cure her
 # Wetlands
-- 87318 2 | searching Thandol Span for Essene Villard, lost when the Dark Irons fell on her and her partner Corma
-- 87491 2 | escorting a fire elemental the Dark Irons kept caged in Dun Modr out to its freedom, eager as it was to burn them all
-- 88756 2 | stealing back the explosives the Dark Irons hauled off to Direforge Hill, before they could make mischief with the powder
+- 87318 2 none | searching Thandol Span for Essene Villard, lost when the Dark Irons fell on her and her partner Corma
+- 87491 2 none | escorting a fire elemental the Dark Irons kept caged in Dun Modr out to its freedom, eager as it was to burn them all
+- 88756 2 none | stealing back the explosives the Dark Irons hauled off to Direforge Hill, before they could make mischief with the powder
 - 88757 1 | finding the necklace, spellbook and waterskin Essene Villard dropped while fleeing the Dark Irons
 - 88758 1 | carrying Essene's note back to Corma Villard, word that she was alive and on her way
 - 94497 1 | filling a waterskin where the falls below Hervdana Saegrund's cave meet the brackish marsh, her first sample for the water sapta
 - 94499 1 | drawing water from Stonewatch Falls, by the twisted Nightcrawler murlocs, for Hervdana Saegrund to learn what tainted it
 - 94500 1 | travelling to Astranaar in Ashenvale for a sample of its pure, ancient lake water, the last Hervdana Saegrund needed
 - 94501 1 | carrying Hervdana's vial of purest water to Norric Lochthane, who had one last task before the water rites
-- 95646 2 | killing a Highland Horror in the excavation sites for its root core, the corruption Rethiel the Greenwarden felt seeping down the gully
-- 95647 2 | searching the excavation sites for Ardin Grassman, gone too long after grasses taller than any seen, for his wife Caitlin
-- 95682 2 | clearing the Dragonmaw from the excavation sites so the Deathstalkers could move in unseen, and taking what orders they carried
+- 95646 2 none | killing a Highland Horror in the excavation sites for its root core, the corruption Rethiel the Greenwarden felt seeping down the gully
+- 95647 2 none | searching the excavation sites for Ardin Grassman, gone too long after grasses taller than any seen, for his wife Caitlin
+- 95682 2 none | clearing the Dragonmaw from the excavation sites so the Deathstalkers could move in unseen, and taking what orders they carried
 - 95810 1 | presenting a fractured titan relic from the rock automaton to Prospector Whelgar, to learn what kind of device it had been
 - 98072 1 | collecting crimson whelp scales along the Green Belt for James Halloran, worth far more to him than crocolisk hides
 - 98189 1 | finishing the Blind Princess's last delivery, carrying the Menethil statuette to Captain Stoutfist in Menethil Keep
 - 98190 1 | rushing the Menethil statuette, a rare memorial of King Terenas, to Bolvar Fordragon, out of the Dragonmaw's reach
 - 98197 1 | salvaging Khaz Modan timber and iron from the harbor, once stolen for the Old Horde's fleet, to bolster Menethil against the Dragonmaw
-- 98208 2 | recovering Nord'el, a bloom from the peak of Mount Hyjal, from the murloc-held wreck of the Flying Osprey for Sylessa Duskwhisper
+- 98208 2 none | recovering Nord'el, a bloom from the peak of Mount Hyjal, from the murloc-held wreck of the Flying Osprey for Sylessa Duskwhisper
 - 98209 1 | carrying Nord'el, the Bloom of the Heavens, to Thundris Windweaver in Auberdine for the weary Sylessa
-- 98216 2 | waking the Goaz Warder with its own stone and taking its titanic keystone for Prospector Whelgar, alarmed by talk of Old Gods
-- 98221 2 | destroying the Dragonmaw's attack plans in the Angerfang Encampment for Captain Stoutfist, to learn where they meant to strike next
-- 98223 2 | bringing Captain Stoutfist a burned Dragonmaw spellbook on the Demon Soul, patched by Nek'rosh, its fresh ink naming a Shadow Council
+- 98216 2 none | waking the Goaz Warder with its own stone and taking its titanic keystone for Prospector Whelgar, alarmed by talk of Old Gods
+- 98221 2 none | destroying the Dragonmaw's attack plans in the Angerfang Encampment for Captain Stoutfist, to learn where they meant to strike next
+- 98223 2 none | bringing Captain Stoutfist a burned Dragonmaw spellbook on the Demon Soul, patched by Nek'rosh, its fresh ink naming a Shadow Council
 - 98240 1 | hauling a crate of whelp scales out to Howin Kindfeather, who had sent his gryphon into town with the order
 - 98245 1 | collecting Razormaw incisors for Howin Kindfeather, sharp enough to work the whelp scales that ward off dragonfire
 - 98246 1 | gathering perfect Razormaw eggs for Howin Kindfeather, to fill the belly of his gryphon Bassbeak before his plan could go ahead
 - 98282 1 | extracting an unruptured venom gland from the spiders of Thelgen Rock for Caitlin Grassman, who needed antivenom before she could go out again
-- 98283 3 | luring Carnage, the maddened alpha of the Razormaw raptors, with diseased bear flesh and taking its head for Rethiel the Greenwarden
-- 98291 2 | thinning the Dragonmaw along their old retreat so Howin Kindfeather could get near Grim Batol and reclaim it for the Wildhammers
-- 98293 2 | seizing the weapons the Dragonmaw were stockpiling in their retreat for Captain Stoutfist, before more of their soldiers could be armed
-- 98310 2 | waking the golems Ados, Modr, Golm and Neru across the Wetlands with the Goaz Stone and taking their hearts for Prospector Whelgar
+- 98283 3 beast | luring Carnage, the maddened alpha of the Razormaw raptors, with diseased bear flesh and taking its head for Rethiel the Greenwarden
+- 98291 2 none | thinning the Dragonmaw along their old retreat so Howin Kindfeather could get near Grim Batol and reclaim it for the Wildhammers
+- 98293 2 none | seizing the weapons the Dragonmaw were stockpiling in their retreat for Captain Stoutfist, before more of their soldiers could be armed
+- 98310 2 none | waking the golems Ados, Modr, Golm and Neru across the Wetlands with the Goaz Stone and taking their hearts for Prospector Whelgar
 - 98313 1 | carrying Prospector Whelgar's bundle of relics to Historian Karnik in Ironforge, a mystery it would take an army of scholars to crack
 - 98815 1 | hunting thicket raptors in the Highlands excavation for their hides, for a trade with James Halloran, the tanner in Menethil Harbor
 - 98824 1 | donating the titan relic to High Explorer Magellas in Ironforge's Hall of Explorers, to be catalogued for the museum
 # Darkshore
-- 87760 3 | slaying the Stormscale beastmistress in the Ruins of Mathystra for her rod, so the naga could no longer enslave the threshers and sea turtles
+- 87760 3 villain | slaying the Stormscale beastmistress in the Ruins of Mathystra for her rod, so the naga could no longer enslave the threshers and sea turtles
 - 97914 1 | carrying Thundris Windweaver's letter to Baros Alexston in Stormwind, his plea to have Auberdine and its work recognised
-- 98013 2 | cutting down the Stormscale naga in the ruins for Arbal, cursed Highborne who might aid the Twilight's Hammer against the forests
-- 98025 3 | slaying Jai'vhanel, a black owl long a guardian of Darkshore's roads, who had gone mad and turned on travellers bound for Auberdine
-- 98028 2 | carrying the clouded water globe of Baron Marinous, the elemental guardian of a ruin, to Onu at the Grove of the Ancients
-- 98042 2 | seizing a peerless eye from the Twilight's cultists at the Master's Glaive for Thundris Windweaver, who saw in it the mark of an ancient evil
+- 98013 2 none | cutting down the Stormscale naga in the ruins for Arbal, cursed Highborne who might aid the Twilight's Hammer against the forests
+- 98025 3 victim | slaying Jai'vhanel, a black owl long a guardian of Darkshore's roads, who had gone mad and turned on travellers bound for Auberdine
+- 98028 2 none | carrying the clouded water globe of Baron Marinous, the elemental guardian of a ruin, to Onu at the Grove of the Ancients
+- 98042 2 none | seizing a peerless eye from the Twilight's cultists at the Master's Glaive for Thundris Windweaver, who saw in it the mark of an ancient evil
 - 98461 1 | carrying Hollee's note over the sea to Tarrel Rockweaver, an old classmate she still pined for, now happily married
 # Elwynn Forest
 - 91723 1 | thinning the kobold geomancers of Jasperlode Mine, whose crude magic kept throwing off Hamish Bergwort's instruments
@@ -205,152 +205,152 @@ kind: why
 - 91732 1 | fetching finely made picks from the depths of Jasperlode Mine for Hagar Lowe, whose logging tools had suffered for want of good steel
 - 91733 1 | fishing Ormin Pelford's axe, saw and toolbox out of the river below Eastvale, washed away when his wagon tipped, among murlocs and wolves
 - 91738 1 | treating Sergeant De Vries to a bottle of Thunder Applejack, the first his troops had seen in months
-- 91740 2 | carrying the head of Croaky to Ridgepoint Tower, the murloc leader whose kind had cost the watch two of its own
+- 91740 2 villain | carrying the head of Croaky to Ridgepoint Tower, the murloc leader whose kind had cost the watch two of its own
 - 91741 1 | returning a book a kobold had tried to eat to the little library Brother Paxton kept in the abbey
 - 91743 1 | rescuing Brother Paxton's books from the kobolds of Northshire Valley before, as he feared, they devoured his whole library
 - 91746 1 | trading the head of Elmpaw to Helene Peltskinner near Goldshire, a trophy she would prepare for some collector's mantle
 - 91751 1 | skinning Elwynn's wolves for Helene Peltskinner, who needed pelts to finish her orders while her husband was busy by the abbey
-- 91752 2 | wresting the sack of picture books from Shinyfinder Narf deep in Echo Ridge Mine, who had his kobolds steal them for him
+- 91752 2 none | wresting the sack of picture books from Shinyfinder Narf deep in Echo Ridge Mine, who had his kobolds steal them for him
 - 91753 1 | disenchanting the kobolds' wax effigies for Kitta Firewind, a lesson in the crude magic they practise without any schooling
 - 91772 1 | following the tracks of a kobold carrying off a sack of stolen books, which led toward the Fargodeep mine
-- 91775 2 | searching Fargodeep Mine for Brother Paxton's stolen books, above all Fun with Elementals, which even a kobold might use to summon a servant
-- 91777 3 | recovering the last two of Brother Paxton's books from Jasperlode Mine, where the kobolds' master might be summoning elementals
-- 94792 2 | taming a Rockhide boar with Josephine Carson's taming rod, a hunter's first lesson in earning a beast's trust
+- 91775 2 none | searching Fargodeep Mine for Brother Paxton's stolen books, above all Fun with Elementals, which even a kobold might use to summon a servant
+- 91777 3 none | recovering the last two of Brother Paxton's books from Jasperlode Mine, where the kobolds' master might be summoning elementals
+- 94792 2 none | taming a Rockhide boar with Josephine Carson's taming rod, a hunter's first lesson in earning a beast's trust
 - 94863 1 | taming a gray forest wolf with the rod, Josephine Carson's next lesson in winning the trust of fiercer companions
-- 94864 2 | taming a young forest bear, the final challenge Josephine Carson set to prove a hunter could earn even the mightiest companion
+- 94864 2 none | taming a young forest bear, the final challenge Josephine Carson set to prove a hunter could earn even the mightiest companion
 - 99127 1 | checking Jason Mathers's fishing traps in Crystal Lake, which held nothing but half-eaten fish
 - 99128 1 | thinning the murlocs at Crystal Lake for Jason Mathers, before there were no fish left anywhere in it
 - 99130 1 | gathering duskweed petals and animal blood for Remy Two Times, to make a poisoned bait that would teach the murlocs to keep away
 - 99143 1 | rummaging through the murloc camp for shiny junk Lee Brown hoped would make good bait for fish
 # Silverpine Forest
-- 91860 2 | searching Fenris Isle for the missing Earthen Ring envoys, a tauren and a cloaked elf, and finding the tauren's body on the gnolls' pyre
-- 91861 2 | searching Fenris Keep for the elf of the Earthen Ring party, in hope she was still alive somewhere inside
-- 91862 3 | freeing Lumina Windsinger, a shen'dorei Windshaper come to study the elements with the Earthen Ring, from the gnolls' cage in Fenris Keep
+- 91860 2 none | searching Fenris Isle for the missing Earthen Ring envoys, a tauren and a cloaked elf, and finding the tauren's body on the gnolls' pyre
+- 91861 2 none | searching Fenris Keep for the elf of the Earthen Ring party, in hope she was still alive somewhere inside
+- 91862 3 rescue | freeing Lumina Windsinger, a shen'dorei Windshaper come to study the elements with the Earthen Ring, from the gnolls' cage in Fenris Keep
 - 91920 1 | taking murloc eyes to Apothecary Renferrel for a better cure, since his potion of hearts had done nothing for Quinn Yorick
-- 91921 2 | rushing Renferrel's new potion to Quinn Yorick at the Ivar Patch, who had begun to resign himself to becoming a ghoul
-- 92401 2 | learning the fate of Edward Heartweaver for his wife Tabitha, gone missing in the Ruins of Lordaeron while searching for their lost son
-- 95036 2 | gathering lumber, silver and a gem for the blade Trevan Rol needed against Old Fire-Eye, the worgen that would not stay dead
+- 91921 2 rescue | rushing Renferrel's new potion to Quinn Yorick at the Ivar Patch, who had begun to resign himself to becoming a ghoul
+- 92401 2 none | learning the fate of Edward Heartweaver for his wife Tabitha, gone missing in the Ruins of Lordaeron while searching for their lost son
+- 95036 2 none | gathering lumber, silver and a gem for the blade Trevan Rol needed against Old Fire-Eye, the worgen that would not stay dead
 - 95111 1 | offering Ott, a humble weaponsmith in Tarren Mill, the commission for the blade, a chance to make something truly special
-- 95140 3 | killing Old Fire-Eye near the gates of Gilneas with the moonsilver blade, the worgen that doomed Lumina Windsinger's companion Banon
+- 95140 3 villain | killing Old Fire-Eye near the gates of Gilneas with the moonsilver blade, the worgen that doomed Lumina Windsinger's companion Banon
 - 95981 1 | culling Dalaran's wizards and watchers on the roads around Ambermill, to stop the Kirin Tor's pendants crossing into Silverpine
-- 96204 2 | escorting Lumina Windsinger out of Fenris Keep as she made the gnolls regret ever caging a Windshaper
-- 96984 3 | reaching the Violet Citadel, where Dalaran's disruption began, to help stop a catastrophe and take its arcane mote for Wordeen Voidglare
+- 96204 2 rescue | escorting Lumina Windsinger out of Fenris Keep as she made the gnolls regret ever caging a Windshaper
+- 96984 3 none | reaching the Violet Citadel, where Dalaran's disruption began, to help stop a catastrophe and take its arcane mote for Wordeen Voidglare
 - 96988 1 | prising cracked cores from Dalaran's rampaging constructs for Doctor Martin Felben, who dreamed of an army of arcane abominations
-- 98298 2 | tearing apart worgen by the Greymane Wall for Dalar Dawnweaver, to learn how their curse spread, since Arugal could only bind them
-- 98299 2 | putting down the human refugees by the Greymane Wall for Dalar Dawnweaver, before the worgen curse could make them Arugal's servants
+- 98298 2 none | tearing apart worgen by the Greymane Wall for Dalar Dawnweaver, to learn how their curse spread, since Arugal could only bind them
+- 98299 2 victim | putting down the human refugees by the Greymane Wall for Dalar Dawnweaver, before the worgen curse could make them Arugal's servants
 # Westfall
 - 92110 1 | fetching murloc eyes for the odd child in the Moonbrook barn, so she could mix her first real potion
-- 92742 2 | drawing water from the wells of the Jansen Stead and the Molsen Farm for Alba Fairmoon, to trace the poison corrupting Westfall's land
+- 92742 2 none | drawing water from the wells of the Jansen Stead and the Molsen Farm for Alba Fairmoon, to trace the poison corrupting Westfall's land
 - 92744 1 | cutting gills from the shoreline murlocs for Alba Fairmoon, to learn whether the poison had reached the sea and Stormwind's fish
-- 92745 2 | killing the kobolds and gnolls the Defias had digging in Jangolode Mine and the Gold Coast Quarry, once the wells turned up toxic metals
-- 92747 2 | searching Moonbrook for signs of mining under the town, Alba Fairmoon's last lead on the poison in Westfall's soil
-- 92753 2 | planting explosives by the hidden forge in the Deadmines, the source of the poison seeping into Westfall's farmland
-- 92819 3 | setting off the detonator under Moonbrook to destroy the Deadmines forge, in hope that Westfall's land could begin to heal
+- 92745 2 none | killing the kobolds and gnolls the Defias had digging in Jangolode Mine and the Gold Coast Quarry, once the wells turned up toxic metals
+- 92747 2 none | searching Moonbrook for signs of mining under the town, Alba Fairmoon's last lead on the poison in Westfall's soil
+- 92753 2 none | planting explosives by the hidden forge in the Deadmines, the source of the poison seeping into Westfall's farmland
+- 92819 3 none | setting off the detonator under Moonbrook to destroy the Deadmines forge, in hope that Westfall's land could begin to heal
 - 92909 1 | gathering isosprings and gyrostabilizers from the harvest golems for Ozwin Ironsprocket, chased into a stable at Saldean's Farm
 - 92910 1 | handing a harvester's salvaged assembly to Ozwin Ironsprocket, who wanted to learn what made the golems tick
 - 92911 1 | scrounging parts for Ozwin Ironsprocket's device to override the harvest golems' systems, built from the salvaged assembly
 # Alterac Mountains
-- 92434 2 | finding a way into Dalaran through the sewers by Lordamere Lake while its barrier was down, to learn the Kirin Tor's secrets for Wordeen Voidglare
-- 93680 2 | searching the Kirin Tor's camps for a way into rebuilt Dalaran, on the Dark Lady's doorstep, for Magus Wordeen Voidglare
+- 92434 2 none | finding a way into Dalaran through the sewers by Lordamere Lake while its barrier was down, to learn the Kirin Tor's secrets for Wordeen Voidglare
+- 93680 2 none | searching the Kirin Tor's camps for a way into rebuilt Dalaran, on the Dark Lady's doorstep, for Magus Wordeen Voidglare
 - 94947 1 | stepping through the Kirin Tor's portal to Stormwind as an emissary of the High Order, to meet the regent Bolvar Fordragon
 - 95125 1 | watching Ott forge the blade at Tarren Mill, the finest work of a smith who had only ever made humble, honest weapons
 - 95126 1 | bringing Ott's masterwork to Trevan Rol at the Sepulcher, the moonsilver blade meant to end Old Fire-Eye
 - 96137 1 | clearing the worgs that still claimed travellers in Duskwood, perhaps the unfinished business of Ira, the ranger whose spirit wandered there
-- 96779 3 | killing Lord Tomas inside Durnholde Keep for Ravenholdt, a single cut in the right place to wound the Syndicate
-- 96781 2 | picking Barton's scouting report from his pocket at Strahnbrad, to learn what the Syndicate sought in Alterac's ruins without alerting them
+- 96779 3 villain | killing Lord Tomas inside Durnholde Keep for Ravenholdt, a single cut in the right place to wound the Syndicate
+- 96781 2 none | picking Barton's scouting report from his pocket at Strahnbrad, to learn what the Syndicate sought in Alterac's ruins without alerting them
 - 96783 1 | stealing a Syndicate uniform at Northfold Manor, a disguise to slip into Stromgarde Keep and learn of a trade being arranged there
-- 96986 3 | defeating Atrexis the Grave Knight, a necromancer who betrayed the Forsaken and raised undead beneath Dalaran, for Melisara in Tarren Mill
+- 96986 3 villain | defeating Atrexis the Grave Knight, a necromancer who betrayed the Forsaken and raised undead beneath Dalaran, for Melisara in Tarren Mill
 # The Barrens
-- 92706 3 | killing Bruuz, the giant shark circling Ratchet's docks and attacking sailors, for the bounty Gazlowe put on its fin
+- 92706 3 beast | killing Bruuz, the giant shark circling Ratchet's docks and attacking sailors, for the bounty Gazlowe put on its fin
 - 95494 1 | gathering savannah lion hides for Vrang Wildgore, laid up with an injured leg but unwilling to fall short on his trade
 - 95495 1 | carrying Vrang Wildgore's hides up the ridge to a hermit tanner who, Vrang swore, was no threat whatever his looks
 - 95507 1 | checking Vrang Wildgore's traps across the valley, so the injured hunter would not go to bed hungry
-- 95508 2 | standing with Walton, a Kul Tiras deserter who had objected to executing civilians, when Terry Longdrink and the marines came for him
-- 95621 2 | killing the Kul Tiras soldiers camped by the wrecked caravan to learn why they had come, and finding they hunted a deserter
-- 95774 2 | reclaiming the bone jewels of Olgra, Mankrik's fallen wife, from the Razormane raiders for the memorial he was building her
-- 97003 3 | slaying Chol'aruk the Ravener, a monstrous quilboar in a cave on Thorn Hill, for Gur'ak, who had fought its like before
-- 97005 3 | slaying Chol'aruk the Ravener in its lair on Thorn Hill for Bainham, for the honour of the comrades he had lost to its kind
-- 97250 2 | killing the Alliance soldiers on the Dustwallow border who toppled the tauren pathfinders' landmarks and blamed the Horde for a burned tavern
+- 95508 2 rescue | standing with Walton, a Kul Tiras deserter who had objected to executing civilians, when Terry Longdrink and the marines came for him
+- 95621 2 none | killing the Kul Tiras soldiers camped by the wrecked caravan to learn why they had come, and finding they hunted a deserter
+- 95774 2 none | reclaiming the bone jewels of Olgra, Mankrik's fallen wife, from the Razormane raiders for the memorial he was building her
+- 97003 3 villain | slaying Chol'aruk the Ravener, a monstrous quilboar in a cave on Thorn Hill, for Gur'ak, who had fought its like before
+- 97005 3 villain | slaying Chol'aruk the Ravener in its lair on Thorn Hill for Bainham, for the honour of the comrades he had lost to its kind
+- 97250 2 none | killing the Alliance soldiers on the Dustwallow border who toppled the tauren pathfinders' landmarks and blamed the Horde for a burned tavern
 - 97253 1 | gathering the scattered parts of Wrenix the Wretched's machine from a pirate camp south of Ratchet, after the pirates took it apart
 # Swamp of Sorrows
 - 93176 1 | catching a tarantula, a hay weevil and a flesh picker with Amaryllis Webb's starter kit, to take up her study of insects
-- 93585 2 | escorting Father Tuttle past the draenei's savage kin to the Harborage, where the Church of the Holy Light hoped to win a foothold
+- 93585 2 none | escorting Father Tuttle past the draenei's savage kin to the Harborage, where the Church of the Holy Light hoped to win a foothold
 # Dun Morogh
-- 94373 2 | winning two bear pendants from the Frostmane trolls' cave for Teo Hammerstorm, the first test on the shaman's path of earth
-- 94374 3 | drinking the earth sapta at the Spirit Stone at the end of a hidden mountain path, to see what the earth had to show
-- 94375 2 | bringing the spirit's rough quartz to Teo Hammerstorm as proof of the meeting, to be the heart of an earth totem
+- 94373 2 none | winning two bear pendants from the Frostmane trolls' cave for Teo Hammerstorm, the first test on the shaman's path of earth
+- 94374 3 none | drinking the earth sapta at the Spirit Stone at the end of a hidden mountain path, to see what the earth had to show
+- 94375 2 none | bringing the spirit's rough quartz to Teo Hammerstorm as proof of the meeting, to be the heart of an earth totem
 - 94465 1 | carrying the Torch of the Dormant Flame to Braldir Ashmantle, keeper of a hidden shrine high in the crags of Loch Modan
-- 94468 2 | bringing the Torch of Eternal Flame down to Bruegs Kindleborn, who saw the spirit burning in it and granted a fire totem
+- 94468 2 none | bringing the Torch of Eternal Flame down to Bruegs Kindleborn, who saw the spirit burning in it and granted a fire totem
 - 95212 1 | hunting the fiercest leopards for pristine pelts for Amberstill Ranch, saddles for the rams bound to reinforce the Alterac expedition
 - 95213 1 | bringing an empty keg of blasting powder found among the troggs to Quarrymaster Thesten at Gol'Bolar Quarry
-- 95214 2 | recovering the blasting powder the troggs stole from Gol'Bolar Quarry, enough to open Magni's throne room to the sky, before they lit it
+- 95214 2 none | recovering the blasting powder the troggs stole from Gol'Bolar Quarry, enough to open Magni's throne room to the sky, before they lit it
 - 95217 1 | trading copper bars and boar hides to Frast Dokner for lessons in smithing, materials for repairs at the quarry camp
-- 96390 2 | killing the Dark Iron spies at Ironband's Compound for Earthseer Farsen, to nip their incursion into Dun Morogh in the bud
-- 96391 2 | bringing Earthseer Farsen a Dark Iron map of tunnels and highways that all converged beneath Ironforge itself
+- 96390 2 none | killing the Dark Iron spies at Ironband's Compound for Earthseer Farsen, to nip their incursion into Dun Morogh in the bud
+- 96391 2 none | bringing Earthseer Farsen a Dark Iron map of tunnels and highways that all converged beneath Ironforge itself
 - 96392 1 | looking through Earthseer Farsen's farsight to see how thick the Dark Irons lay across Dun Morogh
-- 96393 3 | claiming the head of Durgen Dirgehammer, commander of a Dark Iron incursion in the Hall of Thanes beneath Old Ironforge, for King Magni
-- 97277 2 | recovering Gozwin's mechanic's log from his camp and killing the snow leopard that had mauled him, for his friend Grund
-- 98319 2 | searching the wendigo-filled Grizzled Den for Mountaineer Cornelius, who had charged in alone, for his partner Gretchen
+- 96393 3 villain | claiming the head of Durgen Dirgehammer, commander of a Dark Iron incursion in the Hall of Thanes beneath Old Ironforge, for King Magni
+- 97277 2 beast | recovering Gozwin's mechanic's log from his camp and killing the snow leopard that had mauled him, for his friend Grund
+- 98319 2 none | searching the wendigo-filled Grizzled Den for Mountaineer Cornelius, who had charged in alone, for his partner Gretchen
 - 98321 1 | recovering the ore shipments miners dropped when wendigos overran the Grizzled Den, to get Tognus Flintfire's forge running again
 - 98323 1 | carrying Mountaineer Gretchen's report to Senir Whitebeard in Kharanos, that the Grizzled Den was a lost cause
-- 98326 2 | slaying Frosthowl, the wendigo that stole Gretta Ganter's fish, so her husband Paxton would not spend more nights on the frozen lake
+- 98326 2 beast | slaying Frosthowl, the wendigo that stole Gretta Ganter's fish, so her husband Paxton would not spend more nights on the frozen lake
 - 99158 1 | delivering a crate of holy candles to Father Gavin of the Argent Dawn at Misty Pine Refuge, his resting place for travellers
 - 99159 1 | gathering firewood for Father Gavin's hearth at Misty Pine Refuge, open to warm any soul
 - 99160 1 | destroying the ice elementals a rockslide had riled up, to make the mountain road around Misty Pine Refuge safer
-- 99161 2 | killing Avala, the great ice elemental behind the slides and sudden weather around Misty Pine Refuge, for Father Gavin
-- 99162 2 | searching the slopes for the rifles of mountaineers lost to the slides, so Father Gavin could send them home to any family
+- 99161 2 none | killing Avala, the great ice elemental behind the slides and sudden weather around Misty Pine Refuge, for Father Gavin
+- 99162 2 none | searching the slopes for the rifles of mountaineers lost to the slides, so Father Gavin could send them home to any family
 # Ironforge
 - 95041 1 | recovering the punch cards Jemma Quikswitch lost in the snow outside Gnomeregan, without which her family's archives could not be read
 - 96394 1 | putting the startled dead of the Hall of Thanes back to rest, so the keepers would go down to their duties again
 - 96403 1 | gathering dwarven heirlooms in the Hall of Thanes for Thom Filch, a gnome suspiciously eager to appraise them
 - 97263 1 | delivering a misplaced urgent package from Aerie Peak to Eldrun Stormbreaker, who had checked the mailbox every day for it
-- 98423 2 | bringing King Magni an old tablet from the vault, the peace the Bronzebeards and Wildhammers signed after the War of the Three Hammers
+- 98423 2 none | bringing King Magni an old tablet from the vault, the peace the Bronzebeards and Wildhammers signed after the War of the Three Hammers
 # Mulgore
 - 95350 1 | flying to Orgrimmar as an emissary of the Windshapers, to meet Thrall, Warchief of the Horde
 - 95664 1 | showing a strange titan relic from the excavation to the elders on the Elder Rise in Thunder Bluff, to learn what it might be
 - 95805 1 | carrying burning incense to the shrine of An'she and Mu'sha in the hills before it turned to ash, to honour the sun and the moon
-- 96130 2 | hunting Chakuyak, a prairie wolf so aggressive she had become a threat to travellers near Stonebull Lake
+- 96130 2 beast | hunting Chakuyak, a prairie wolf so aggressive she had become a threat to travellers near Stonebull Lake
 - 96241 1 | drawing venom from the gnawed corpses at Gloomrise for Mazu'kon, curious about the new creatures skittering there
-- 96259 2 | killing the spiders infesting Gloomrise, an ancient tauren burial ground they were defiling, for Muln Earthfury
+- 96259 2 none | killing the spiders infesting Gloomrise, an ancient tauren burial ground they were defiling, for Muln Earthfury
 - 96260 1 | gathering crystalline silk from the Gloomrise spinners for Yorn Grimtotem, after a scout came back half dead and wrapped in it
-- 96261 3 | destroying Broodmother Valraxx, the matriarch behind the spiders spreading through Gloomrise, to drive the brood off for good
-- 96294 2 | bringing Muln Earthfury the bloody letter found on Broodmother Valraxx, who had proved to be a night elf druid in a twisted form
-- 96774 2 | prying an ancient Gurubashi idol from a priest of the Drowned City off Stranglethorn for Mazu'kon, a truesilver channel for old blood magic
+- 96261 3 villain | destroying Broodmother Valraxx, the matriarch behind the spiders spreading through Gloomrise, to drive the brood off for good
+- 96294 2 none | bringing Muln Earthfury the bloody letter found on Broodmother Valraxx, who had proved to be a night elf druid in a twisted form
+- 96774 2 none | prying an ancient Gurubashi idol from a priest of the Drowned City off Stranglethorn for Mazu'kon, a truesilver channel for old blood magic
 - 97538 1 | gathering mirkweed pods from Mirkfallon Lake for Tah Winterhoof, whose red pigment for painting had run out
-- 98424 2 | gathering Supervisor Fizsprocket's papers in the Venture Co. mine for Morin Cloudstalker, plans that could be turned against them
-- 98427 3 | stopping the Venture Co. shredder in the mine near Bloodhoof Village and taking its key, so that it would fell no more trees
-- 98430 3 | freeing Perith Stormhoof, Cairne Bloodhoof's trusted Longwalker scout, from the gnolls of Palemane Rock before he became their feast
+- 98424 2 none | gathering Supervisor Fizsprocket's papers in the Venture Co. mine for Morin Cloudstalker, plans that could be turned against them
+- 98427 3 none | stopping the Venture Co. shredder in the mine near Bloodhoof Village and taking its key, so that it would fell no more trees
+- 98430 3 rescue | freeing Perith Stormhoof, Cairne Bloodhoof's trusted Longwalker scout, from the gnolls of Palemane Rock before he became their feast
 - 98435 1 | delivering Thunderhorn's report on the cleansed wells of Mulgore to Arch Druid Hamuul Runetotem
 - 99079 1 | searching the eastern edge of Mulgore for Longwalker Malah Longwind, three days overdue, and finding her shot down with arrows
-- 99080 3 | driving the Galak raiders out of Mulgore for Baine Bloodhoof and bringing back the head of Herak the Pillager as a warning
+- 99080 3 villain | driving the Galak raiders out of Mulgore for Baine Bloodhoof and bringing back the head of Herak the Pillager as a warning
 - 99081 1 | bringing Longwalker Malah's report to Brave Wildrunner, with word of her death and the new centaur camp her killers came from
 - 99101 1 | carrying Malah's report to Baine Bloodhoof, word of a centaur raiding party loose in Mulgore
 - 99108 1 | sparring in Krang Stonehoof's arena against novices and willing challengers, to learn the warriors' ways first hand
 - 99411 1 | feeding tender strider meat to Kyle, Ahab Wheathoof's runaway puppy, so he would settle down and come home
 # Redridge Mountains
-- 95772 2 | looking for Daewyn Songblade in Whelgar's excavation site, for his brother Dorin, who had heard nothing from him since he left
-- 95999 3 | killing Incinerator Gar'im, leader of an orc incursion in Render's Valley, whose fall gave Lakeshire hope of reclaiming Stonewatch Keep
+- 95772 2 none | looking for Daewyn Songblade in Whelgar's excavation site, for his brother Dorin, who had heard nothing from him since he left
+- 95999 3 villain | killing Incinerator Gar'im, leader of an orc incursion in Render's Valley, whose fall gave Lakeshire hope of reclaiming Stonewatch Keep
 - 98386 1 | clearing the tarantulas and their eggs from Alther's Mill for Foreman Oslow, so his workers could fetch lumber for the bridge safely
-- 98387 2 | robbing the Blackrock camps south of Stonewatch Keep of food and weapons for Marshal Marris, to starve the orcs out of Redridge
+- 98387 2 none | robbing the Blackrock camps south of Stonewatch Keep of food and weapons for Marshal Marris, to starve the orcs out of Redridge
 - 98407 1 | stripping the spiked collars from the gnoll thrashers for Deputy Feldon, to frighten gnolls camped too close to Lakeshire back into the hills
 # Durotar
 - 96821 1 | clearing the spiders nesting along the road in southern Durotar, so the peons of Razor Hill would dare travel it again
-- 96822 2 | recovering the weapons of the Horde's fallen from the outskirts of Tiragarde Keep, for Turroc to display in a place of honour
+- 96822 2 none | recovering the weapons of the Horde's fallen from the outskirts of Tiragarde Keep, for Turroc to display in a place of honour
 - 96825 1 | gathering prickly pears from the Razormane grounds for Cook Torka, a sweet treat for the troops and seeds to plant around Orgrimmar
 - 96873 1 | stripping Zalazane's binding spells from the hexed pendants of his enthralled trolls for Pa'zula, so their spirits could rest
 - 96876 1 | returning the pack Ukor dropped in southern Durotar as he ran from a huge spider
-- 97223 3 | killing the Bloodtalon Matriarch, a savage raptor that had killed many of Sen'jin's people, and saving her eggs for Xar'Ti to raise
-- 97225 2 | gathering the loa idols the Darkspear left on the Echo Isles, scattered by Zalazane's followers, lest the tribe offend its loa
+- 97223 3 beast | killing the Bloodtalon Matriarch, a savage raptor that had killed many of Sen'jin's people, and saving her eggs for Xar'Ti to raise
+- 97225 2 none | gathering the loa idols the Darkspear left on the Echo Isles, scattered by Zalazane's followers, lest the tribe offend its loa
 - 97279 1 | salvaging the training weapons failed recruits had left lying about, for Kzan Thornslash to mend for the next wave
 - 97281 1 | showing Rezlak near Drygulch Ravine a strange storm orb a harpy had been using
 - 97282 1 | harvesting charged thunder lizard organs so Rezlak could recharge the orb, in hope it would keep harpies off his caravan
 - 99048 1 | searching north of Tiragarde Keep for Heglan Shadeeye, a Shattered Hand watcher whose reports had suddenly stopped
-- 99049 2 | searching the wreck of Heglan Shadeeye's hut for signs of her killers, which proved to be naga come down the coast
-- 99051 2 | killing the naga scouts camped on Durotar's coast for Orgnil Soulscar, before they could gain a foothold so near Razor Hill
-- 99052 3 | killing the young sea giant that followed the naga down Durotar's north coast, strong enough to rip an orc in half
-- 99123 2 | leading Pal'juh, a young hunter who went scouting alone, out of Kolkar Crag after her magic ran out at the wrong time
+- 99049 2 none | searching the wreck of Heglan Shadeeye's hut for signs of her killers, which proved to be naga come down the coast
+- 99051 2 none | killing the naga scouts camped on Durotar's coast for Orgnil Soulscar, before they could gain a foothold so near Razor Hill
+- 99052 3 none | killing the young sea giant that followed the naga down Durotar's north coast, strong enough to rip an orc in half
+- 99123 2 rescue | leading Pal'juh, a young hunter who went scouting alone, out of Kolkar Crag after her magic ran out at the wrong time
 # Desolace
-- 97265 2 | raiding the Hatefury satyrs at Sargeron for Aka'rai, who had bargained with them for power and been cast aside
+- 97265 2 none | raiding the Hatefury satyrs at Sargeron for Aka'rai, who had bargained with them for power and been cast aside
 # Darnassus
 - 98067 1 | placing sentinel owls about Darnassus for Sentinel Dalia Sunblade, to keep watch while something was amiss on Teldrassil
 # Hillsbrad Foothills
@@ -358,11 +358,11 @@ kind: why
 - 98095 1 | uncorking apothecary vials on three peaks around Hillsbrad to draw the bat riders back to their drop-off points
 - 98459 1 | delivering a mocking gift from old Half-fish to Bart Tidewater, the so-called captain of the Maiden's Virtue
 # Un'Goro Crater
-- 98093 2 | clearing the hyenas and lizards around the tree Sulhasa had fled up in the southern Barrens, so she could get home to Camp Taurajo
+- 98093 2 rescue | clearing the hyenas and lizards around the tree Sulhasa had fled up in the southern Barrens, so she could get home to Camp Taurajo
 # Feralas
 - 98155 1 | gathering Pesterhide hyena pelts for Kristy Grant, to send to her sisters in Stormwind
 # Moonglade
 - 98341 1 | meeting the Avatar of Saeyleenan in Moonglade, a windborne cat spirit of Zephras come to oversee the trial of its own shape
-- 98342 3 | taking the relics of the fang, the claw and the silent shadow from the Stormrage Barrow Dens, the Great Cat Spirit's trial of cunning and stealth
-- 98396 3 | proving the cunning, stealth and ferocity of the cat by taking three relics from the spirits guarding the Stormrage Barrow Dens
-- 98404 3 | bearing three relics past the enraged spirits of the Stormrage Barrow Dens, the Avatar of Saeyleenan's trial for its windborne shape
+- 98342 3 none | taking the relics of the fang, the claw and the silent shadow from the Stormrage Barrow Dens, the Great Cat Spirit's trial of cunning and stealth
+- 98396 3 none | proving the cunning, stealth and ferocity of the cat by taking three relics from the spirits guarding the Stormrage Barrow Dens
+- 98404 3 none | bearing three relics past the enraged spirits of the Stormrage Barrow Dens, the Avatar of Saeyleenan's trial for its windborne shape
