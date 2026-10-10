@@ -141,6 +141,8 @@ globals:
     any: true
   MAX_PLAYER_LEVEL_TABLE:
     any: true
+  MenuUtil:
+    any: true
   Minimap:
     any: true
   NumTaxiNodes:
@@ -178,6 +180,20 @@ globals:
   TaxiNodeGetType:
     any: true
   TaxiNodeName:
+    any: true
+  UIDropDownMenu_AddButton:
+    any: true
+  UIDropDownMenu_CreateInfo:
+    any: true
+  UIDropDownMenu_DisableDropDown:
+    any: true
+  UIDropDownMenu_EnableDropDown:
+    any: true
+  UIDropDownMenu_Initialize:
+    any: true
+  UIDropDownMenu_SetText:
+    any: true
+  UIDropDownMenu_SetWidth:
     any: true
   UIParent:
     any: true
