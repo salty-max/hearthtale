@@ -64,7 +64,7 @@ const KINDS: Record<string, string[]> = {
   // a fine find (writing it as a clause: "I found {item}")
   "c-loot": ["item"],
   // a trade taken up
-  "c-prof": ["prof", "rank", "arank"],
+  "c-prof": ["prof", "rank", "arank", "began"],
   // a class's own quest turned in: what it taught ({pet}: "an imp", for a summoning)
   "class-reward": ["giver", "spell", "pet"],
   // a spell with a line of its own ([spell:Life Tap]), when learned
@@ -98,16 +98,18 @@ const KINDS: Record<string, string[]> = {
   "d-foes": ["foes"],
   "d-deaths": ["times"],
   "d-dungeon": ["dungeon", "mates"],
-  "d-company": ["mates"],
+  "d-company": ["mates", "at"],
   "d-chores": [],
   "d-close": ["land"],
   // the stretch's story: what the work that mattered was for (writing/why/)
-  "d-why": ["why"],
+  "d-why": ["why", "who"],
   "d-why2": ["why", "why2"],
   // a second climax, too long to share the first's sentence
   "d-why-also": ["why", "where"],
   // a pet or a demon named again, at my side through a stretch
-  "d-pet": ["pet"],
+  "d-pet": ["pet", "where"],
+  // continuity: a foe of a name that killed me or nearly did, beaten later
+  "d-revenge": ["foe", "at"],
   // a hunter's companion tamed (the first, then another); a shaman's
   // initiation into an element; a word on the stretch's story
   "d-tame": ["pet", "family"],
@@ -126,7 +128,7 @@ const TAGS = ["after", "again", "air", "ally", "aquatic", "away", "bear", "beast
   "flight", "foe", "form", "grouped", "hard", "hc", "healer", "high", "highborne", "home", "hosts", "imp", "inside",
   "known", "last", "late", "lava", "master", "leper", "looted", "low", "moonkin", "moved", "nature", "near", "neutral", "new", "night",
   "one", "people", "player", "plural", "rank", "rescue", "self", "settled", "steed", "succubus", "summon", "portal", "teleport", "thread", "town",
-  "travel", "tree", "two", "undead", "used", "victim", "villain", "voidwalker", "water", "zalazane"];
+  "travel", "tree", "two", "undead", "used", "victim", "villain", "voidwalker", "water", "who", "zalazane", "since", "fell", "died", "reviver"];
 const RACES = ["Human", "Dwarf", "NightElf", "Gnome", "Orc", "Troll", "Tauren", "Scourge", "Skyborne"];
 const CLASSES = ["WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK", "DRUID"];
 const tagOk = (t: string) => {

@@ -2558,6 +2558,84 @@ do
   end
 end
 
+-- Continuity, from earlier entries only: a foe of a name that killed me or
+-- nearly did, beaten later; a pet that fell once, named again later.
+do
+  local FOES = { "Hogger", "Mor'Ladim", "Bellygrub", "Gath'Ilzogg", "Mangeclaw", "Vagash" }
+  local function stretch(n, log)
+    return {
+      start = { level = 20, zone = "Duskwood", sub = "Darkshire" },
+      log = log,
+      ended = { level = 20, place = "Darkshire", how = "rest" },
+      kills = {},
+      quests = 0,
+      played = 3600,
+      gold = 0,
+    }
+  end
+  for r, race in ipairs(RACES) do
+    for life = 1, 4 do
+      local died = life % 2 == 0
+      local chapters = {}
+      for k = 1, 3 do
+        local foe = FOES[(r + life + k) % #FOES + 1]
+        local t = k * 1000000
+        local a = 2 * k - 1
+        chapters[a] = stretch(a, {
+          died and { k = "died", death = { foe = foe }, zone = "Duskwood", sub = "Raven Hill", at = t }
+            or { k = "close", hp = 12, foe = foe, zone = "Duskwood", sub = "Raven Hill", at = t },
+          died and {
+            k = "revived",
+            how = "corpse",
+            graveyard = "Darkshire",
+            zone = "Duskwood",
+            sub = "Raven Hill",
+            at = t + 60,
+          } or nil,
+        })
+        chapters[a + 1] = stretch(a + 1, {
+          { k = "kill", name = foe, zone = "Duskwood", sub = "Raven Hill", at = t + 500000 },
+        })
+      end
+      local c = { guid = "revenge-" .. race .. life, race = race, class = COMBOS[race][1], chapters = chapters }
+      if race == "Skyborne" then c.faction = life % 2 == 0 and "horde" or "alliance" end
+      for i, e in ipairs(ns.writeBook(c).chapters) do
+        inspect(race .. " revenge diary " .. i, e.text)
+      end
+    end
+  end
+  for r, race in ipairs({ "Dwarf", "NightElf", "Orc", "Troll", "Tauren" }) do
+    for life = 1, 2 do
+      local pet = ({ "Bristle", "Shadowmane", "Grimtooth" })[(r + life) % 3 + 1]
+      local chapters = {}
+      chapters[1] = stretch(1, {
+        { k = "tame", name = pet, family = "Boar", zone = "Duskwood", sub = "Raven Hill", at = 100 },
+        { k = "petdied", name = pet, zone = "Duskwood", sub = "Raven Hill", at = 200 },
+      })
+      for n = 2, 12 do
+        local log = {}
+        for q = 1, 4 do
+          table.insert(log, {
+            k = "done",
+            id = 9000000 + n * 10 + q,
+            pet = pet,
+            petFamily = "Boar",
+            objectives = { { type = "monster", name = "Starving Dire Wolf", n = 8 } },
+            zone = "Duskwood",
+            sub = "Darkshire",
+            at = n * 100000 + q * 60,
+          })
+        end
+        chapters[n] = stretch(n, log)
+      end
+      local c = { guid = "fell-" .. race .. life, race = race, class = "HUNTER", chapters = chapters }
+      for i, e in ipairs(ns.writeBook(c).chapters) do
+        inspect(race .. " fallen pet diary " .. i, e.text)
+      end
+    end
+  end
+end
+
 -- Every sentence must be reachable by some life: the shared ones, each
 -- race's own, and each place's scenery.
 local unused = {}
