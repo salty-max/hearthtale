@@ -148,7 +148,7 @@ const KINDS: Record<string, string[]> = {
   "d-why": ["why"],
   "d-why2": ["why", "why2"],
   // a second climax, too long to share the first's sentence
-  "d-why-also": ["why"],
+  "d-why-also": ["why", "where"],
   // a pet or a demon named again, at my side through a stretch
   "d-pet": ["pet"],
   // a hunter's companion tamed (the first, then another); a shaman's
@@ -161,7 +161,7 @@ const KINDS: Record<string, string[]> = {
   "r-company": [],
 };
 const VOICE = ["home", "kin", "faith", "weapon"];
-const TAGS = ["home", "ally", "foe", "neutral", "night", "hc", "high", "low", "first", "elite", "lots", "many", "slow", "quick",
+const TAGS = ["home", "ally", "foe", "neutral", "night", "hc", "high", "low", "first", "elite", "lots", "many", "slow", "quick", "moved",
   "foe", "fall", "drowning", "lava", "nature", "beast", "people", "player", "inside", "rest", "fire", "last", "one", "aside", "plain", "back", "done", "grouped", "held", "plural", "trophy", "corpse", "healer", "self", "known", "more", "again", "onward", "gear", "onlygear", "turn",
   "murloc", "kobold", "gnoll", "harpy", "quilboar", "centaur", "ogre", "troll", "naga", "satyr", "furbolg", "trogg", "outlaw",
   "scarlet", "cenarion", "undead", "demon", "elemental", "dragonkin", "spider",
@@ -374,10 +374,25 @@ const IRREGULAR: Record<string, string> = {
 // (-ing words that are no verb here)
 const NOT_VERBS = new Set(["bring", "spring", "string", "thing", "king", "ring", "wing", "sling", "sting", "cunning", "willing",
   "evening", "morning", "nothing", "something", "anything", "everything", "being", "during", "ceiling", "darling"]);
-const JOINED = /(^|, and then |, and |, then | and then | then | and | or )([a-z]+ing)\b/g;
+// The deed: the why's verbs in the past, the first and those joined to it
+// ("slaying X, and taking Y"); a gerund after a preposition ("wanted for
+// murdering Forsaken and ambushing supplies"), or after a comma ("…,
+// charging the rod and driving it") or a noun ("the shark circling Ratchet's
+// docks and attacking sailors"), keeps what " and" joins to it.
+const JOINED = /(^|, and then |, and so |, and |, then | and then | then | and | or |\b(?:for|by|after|before|without|from|of|in|on|about|into|while|when|since) |, | (?=[a-z]+ing (?:the |a |an |his |her |their |its |away |off |up |out |down |[A-Z])))([a-z]+ing)\b/g;
+const ING_NOUNS = new Set(["summoning", "building", "clothing", "offering", "painting", "gathering", "teaching", "writing", "warning"]);
+const JOINS = new Set(["", ", and then ", ", and so ", ", and ", ", then ", " and then ", " then ", " and ", " or "]);
 function deedOf(text: string, file: string): string {
+  let main = true; // (what a bare " and" joins is still the deed's own verb)
   return text.replace(JOINED, (all: string, sep: string, g: string) => {
     if (NOT_VERBS.has(g)) return all;
+    if (!JOINS.has(sep)) {
+      if (ING_NOUNS.has(g)) return all; // ("the circle of summoning": a thing)
+      main = false; // ("for murdering": its own " and …" follows it)
+      return all;
+    }
+    if (sep !== "" && !sep.startsWith(",") && !main) return all;
+    main = true;
     let past = IRREGULAR[g];
     if (!past) {
       const stem = g.slice(0, -3);

@@ -228,6 +228,8 @@ local DEMONS = {
   { 30, "Felhunter", "Kezzik" },
 }
 local FORMS = { { 10, "bear" }, { 16, "aquatic" }, { 20, "cat" }, { 30, "travel" } }
+-- (a shaman's initiations: the element's totem, the end of its class quests)
+local TOTEMS = { { 4, "earth" }, { 10, "fire" }, { 20, "water" }, { 30, "air" } }
 local PET_NAMES = { "Bristle", "Grimfang", "Thistle", "Ember", "Dusk", "Rook" }
 
 -- (a creature Classic left unused and Forever gave back a role: by its name)
@@ -369,6 +371,28 @@ local function objectivesOf(q)
   return #out > 0 and out or nil
 end
 
+-- The quest that ends a shaman's initiation into an element, for this
+-- race and side (Knowledge.lua's totem), if the game has one.
+local function totemQuest(element, race, side)
+  local ids = {}
+  for id, k in pairs(ns.knowledge.quests) do
+    -- (the original game's: Forever's own are on the road, played as found)
+    if k.class == "SHAMAN" and k.totem == element and D.quests[id] and not D.quests[id].forever then
+      table.insert(ids, id)
+    end
+  end
+  table.sort(ids)
+  for _, id in ipairs(ids) do
+    local q = D.quests[id]
+    local races = q.races or 0
+    if race == "Skyborne" then
+      if races == 0 or bit.band(races, SIDE_RACES[side]) ~= 0 then return id end
+    elseif races == 0 or bit.band(races, RACE[race]) ~= 0 then
+      return id
+    end
+  end
+end
+
 local function play(race, class, side)
   side = side or SIDE[race] or "horde"
   local c = {
@@ -477,6 +501,23 @@ local function play(race, class, side)
         if level >= f[1] and not powers[f[2]] then
           powers[f[2]] = true
           moment("shift", { form = f[2] })
+        end
+      end
+    elseif class == "SHAMAN" then
+      for _, t in ipairs(TOTEMS) do
+        local id = level >= t[1] and not powers[t[2]] and totemQuest(t[2], race, side)
+        if id then
+          powers[t[2]] = true
+          local q = D.quests[id]
+          local giver, ender = creature((q.starters or {})[1]), creature((q.enders or {})[1])
+          wait(15 * 60)
+          moment("quest", {
+            id = id,
+            title = q.title,
+            giver = giver and giver.name,
+            ender = (ender or giver) and (ender or giver).name,
+            objectives = {},
+          })
         end
       end
     elseif class == "HUNTER" and level >= 10 and not pet and lastBeast then

@@ -7,3 +7,6 @@ kind: d-land
 - [client:forever !one !home !hosts] I saw {lands} for the first time, more new country in a single stretch than I had once expected to see in my whole life.
 - [client:forever faction:horde !one !home !hosts] I crossed into {lands} for the first time, looking in each for friends the Windshapers might one day call on.
 - [client:forever faction:alliance !one !home !hosts] I travelled through {lands} for the first time, half hoping one of them still hid some scrap of the knowledge our forebears lost.
+- [client:forever away] I came down from the islands into {lands}, the first ground I had ever stood on that did not end at a drop, and it took me a while to trust it.
+- [client:forever away] {lands} was the first land below the sky I ever set foot on, and for the first hour I kept testing it with my heel, as if it might give way.
+- [client:forever away] I reached {lands} with all of Zephras behind me, and could not stop looking at how far the ground went on.

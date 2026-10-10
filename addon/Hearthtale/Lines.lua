@@ -51,11 +51,14 @@ end
 
 -- (a name with a title of its own, "Aetheen of the Gales", "Leonid
 -- Barthalomew the Revered", or a thing's, "Wizzlecrank's Shredder", takes
--- no "'s"; "found a way to" no "find")
+-- no "'s"; "found a way to" no "find"; nor a word said twice where the
+-- slot meets it: "went on {at}", "on Zephras Isle")
 local function fillable(text, values)
   for slot in text:gmatch("{(%w+)}") do
     local v = values[slot]
     if v == nil then return false end
+    local before = type(v) == "string" and text:match("(%a+) {" .. slot .. "}")
+    if before and v:match("^(%a+)") == before then return false end
     if type(v) == "string" and text:find("{" .. slot .. "}'s", 1, true) then
       if v:find(" of ", 1, true) or v:find(" the ", 1, true) or v:find("'s ", 1, true) then return false end
     end
@@ -293,10 +296,13 @@ local ZALAZANE = 826 -- (the quest that ends him)
 local Book = {}
 Book.__index = Book
 
-local function newBook(c)
+-- (diary: a short book read at a sitting, its frames never back while a
+-- fresh one is left, shared or the race's own)
+local function newBook(c, diary)
   local race, class = c.race or "Human", c.class or "WARRIOR"
   local b = setmetatable({
     c = c,
+    freshFirst = diary or nil,
     used = {},
     usedIn = {},
     uses = 0,
@@ -688,7 +694,7 @@ function Book:pick(kind, key, prefer, ownFresh, fresh, voiced, all)
     if #spaced > 0 then ownOldest = spaced[pick % #spaced + 1] end
   end
   if #ownFresh > 0 then return ownFresh[pick % #ownFresh + 1] end
-  if ownOldest then
+  if ownOldest and not (self.freshFirst and #fresh > 0) then
     self.repeats = self.repeats + 1
     return ownOldest
   end

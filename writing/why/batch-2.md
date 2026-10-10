@@ -174,7 +174,7 @@ kind: why
 - 1148 2 | bringing silithid hearts, talons and carapaces to Korran at the Crossroads, to learn what the creatures were
 - 1175 1 | clearing basilisks away from the racetrack for Trackmaster Zherin, after one had caused a big crash with the Red Thunder
 - 1176 1 | collecting hollow vulture bones for Pozzik, light and strong for tweaking the goblins' racers
-- 1179 1 | carrying a crate of crash helmets to Wizzle Brassbolts, whose rocket car pilots kept crashing and giving themselves concussions
+- 1179 1 | carrying a crate of crash helmets to Wizzle Brassbolts, whose rocket car pilots kept giving themselves concussions in crashes
 - 1182 2 | stealing the fuel regulator blueprints from Cozzle's locked house at Lake Nazferiti, for the goblin racer Pozzik
 - 1183 1 | delivering the fuel regulator blueprints to Pozzik, who could now build a better one for his racer from the ground up
 - 1187 1 | recovering Razzeric's seaforium booster from a zeppelin crashed in Dustwallow Marsh, the extra power he wanted for his racer
@@ -203,7 +203,7 @@ kind: why
 - 1057 2 | driving the Bloodfury harpies out of the Charred Vale for Keeper Albagorm, so the burnt land could begin to grow back
 - 1058 1 | gathering sap, whiskers, courser eyes and a fey dragon scale for Witch Doctor Jin'Zil's forest magic, brewed for his caged elves
 - 1059 1 | carrying Keeper Albagorm's plea to Falfindel Waywarder, a druid who could call forest spirits to help reclaim the Charred Vale
-- 1062 2 | killing Venture Co. loggers in Windshear Crag for Seereth Stonebreak, to stop the goblins burning and felling the forest
+- 1062 2 | killing Venture Co. loggers in Windshear Crag for Seereth Stonebreak, to stop the goblins from burning and felling the forest
 - 1068 2 | wrecking the shredders XT:4 and XT:9, the machines of Seereth's vision that felled trees with impossible speed
 - 1071 2 | keeping the Venture Co. at bay in Windshear Crag so Gaxim Rustfizzle could plan the inventions he hoped would save the forest
 - 1073 1 | proving some skill at alchemy to Lomac Gearstrip in Ironforge with a few potions, the price of his Nitromirglyceronium

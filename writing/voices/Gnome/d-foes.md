@@ -4,8 +4,8 @@ kind: d-foes
 - [one !hard] I beat {foes}, and spent the walk afterwards going over how I might have done it better.
 - [one !hard] I beat {foes}, and would dearly like to know what my chances had really been going in.
 - [one hard] I came within a hair of losing to {foes}, and I have counted my mistakes in that fight more often than is good for my sleep.
-- [two !hard] I got the better of both {foes}, and would rather not meet either of them again.
-- [two hard] I came through fights with both {foes}, and at least one of them came far too close to ending things.
+- [two !hard !plural] I got the better of both {foes}, and would rather not meet either of them again.
+- [two hard !plural] I came through fights with both {foes}, and at least one of them came far too close to ending things.
 - [!one !two !hard] I saw off {foes}, every one of them, and only afterwards let myself count how many there had been.
 - [!one !two !hard] I squared up to {foes}, and came away shaken, whole and rather prouder than I let on.
 - [!one !two hard] I got through fights with {foes}, all of them, and I would rather not calculate how narrow the closest one was.

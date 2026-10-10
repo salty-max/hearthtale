@@ -31,3 +31,9 @@ kind: rest
 - [!last !fire] I rested {at}, and let the world's troubles wait until I had my strength back.
 - [last fire] I settled by a fire {at}, content with an evening that required nothing brave of me.
 - [last fire] I rested by the flames {at}, with the next stretch welcome to remain beyond the warmth for now.
+- [last !fire] I stopped {at} once the work was done, and let the quiet have me for a while.
+- [last !fire] I rested {at}, and the stillness came more easily than I expected.
+- [last !fire] I called a halt {at}, with nothing left that could not wait until I had slept.
+- [last !fire] I sat down {at} at last, and stayed down.
+- [last !fire] I rested {at}, with nowhere further to be and no wish to find one.
+- [last !fire] The work done, I let the day go quiet {at}.
