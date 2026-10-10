@@ -2299,6 +2299,29 @@ for _, round in ipairs({
       for _, hc in ipairs({ true, false }) do
         local c = life(race, class, hc, round[1], round[2])
         local book = ns.writeBook(c)
+        -- (a book written as it is played, its finished entries kept between
+        -- readings, is the book written at once)
+        if hc and #c.chapters > 2 then
+          local grown = {}
+          for k, v in pairs(c) do
+            grown[k] = v
+          end
+          grown.chapters = {}
+          local whole = book
+          for k, ch in ipairs(c.chapters) do
+            grown.chapters[k] = ch
+            ns.writeBook(grown)
+          end
+          local again = ns.writeBook(grown)
+          for k, ch in ipairs(whole.chapters) do
+            if again.chapters[k].text ~= ch.text or again.chapters[k].title ~= ch.title then
+              problem(race .. " " .. class .. " kept entries", "an entry written in pieces differs", ch.text)
+            end
+          end
+          if again.epitaph ~= whole.epitaph then
+            problem(race .. " " .. class .. " kept entries", "the epitaph differs", whole.epitaph or "")
+          end
+        end
         if (c.death ~= nil) ~= (book.epitaph ~= nil) then
           problem(race .. " " .. class, "a Hardcore death without an epitaph, or the reverse", "")
         end

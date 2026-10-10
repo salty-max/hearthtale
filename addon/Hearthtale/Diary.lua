@@ -1596,38 +1596,89 @@ end
 -- number, text (its diary entry), place, from, to (levels), open, rare,
 -- close (the book's marks), chapter (its record) } }, epitaph (a Hardcore
 -- death) }.
-function ns.writeBook(c)
-  local d = {
-    c = c,
-    book = newBook(c, true),
-    lands = {},
-    known = {},
-    ways = {},
-    toldFoes = {},
-    mates = {},
-    storied = {}, -- [quest id]: its story told
-    reacted = {}, -- [text]: a word on a story, said
-    initiated = {}, -- [element]: a shaman's initiation told
-    called = {}, -- [a class's defining spell, its tag]: learned, told
-    titled = {}, -- [title]: an entry's already
-    reactedAt = -REACT_GAP,
-    threads = {}, -- [a chain's first quest] = { n, giver, ender }: the last entry that told one of it
-    pets = {}, -- [name] = { said = the last entry that named it }: a pet met before
-    summoned = {}, -- [a demon's kind] = the entry a class quest taught its summoning
-    revivers = {}, -- [a name] = { n, place }: who brought me back from death, until met again
-    dangers = {}, -- [a foe of a name] = { n, place, died }: who killed me or nearly did, until beaten
-    began = {}, -- [a trade] = where I took it up, until its first new rank
-    -- (a journal begun after the life's first steps: no land, no city told as
-    -- seen for the first time, the record can't know it)
-    late = (c.began and c.began.level or 1) > 1,
-  }
-  -- (late: nor a first fire, a first flight, a first ground below the islands)
-  if d.late then
-    d.away, d.fireSeen, d.flown = true, true, true
+-- (the finished entries of a book, kept with the book's memory after the
+-- last of them: a long life is not rewritten from its first page every time
+-- a page is turned. Every chapter but the last is finished: a logout under
+-- half an hour may reopen the last one. Kept per record, while it lives.)
+local kept = setmetatable({}, { __mode = "k" })
+local function snapshot(v, shared, seen)
+  if type(v) ~= "table" or shared[v] then return v end
+  if seen[v] then return seen[v] end
+  local out = {}
+  seen[v] = out
+  for k, x in pairs(v) do
+    out[snapshot(k, shared, seen)] = snapshot(x, shared, seen)
   end
-  d.book.ownGap = 18 -- (one line a kind an entry: the race's own come back later than a chapter's)
-  for _, way in ipairs(CLASS_FIGHT[c.class or ""] or {}) do
-    d.ways[way] = true
+  return setmetatable(out, getmetatable(v))
+end
+local function sharedOf(d)
+  -- (the record and the game's data are read, never copied)
+  local shared = { [d.c] = true }
+  for _, t in ipairs({ ns.data, ns.names, ns.knowledge, d.book.own, d.c.chapters }) do
+    if t then shared[t] = true end
+  end
+  return shared
+end
+local function stillKept(memo, c)
+  if memo.n >= #(c.chapters or {}) then return false end
+  for i = 1, memo.n do
+    local ch, was = c.chapters[i], memo.marks[i]
+    if ch ~= was.ch or #(ch.log or {}) ~= was.len or ch.ended ~= was.ended then return false end
+  end
+  return true
+end
+
+function ns.writeBook(c)
+  local memo = kept[c]
+  local d, book, from
+  if memo and stillKept(memo, c) then
+    d = snapshot(memo.d, sharedOf(memo.d), {})
+    book = { chapters = {}, prologue = memo.prologue }
+    for i = 1, memo.n do
+      book.chapters[i] = memo.chapters[i]
+    end
+    from = memo.n + 1
+  else
+    d = {
+      c = c,
+      book = newBook(c, true),
+      lands = {},
+      known = {},
+      ways = {},
+      toldFoes = {},
+      mates = {},
+      storied = {}, -- [quest id]: its story told
+      reacted = {}, -- [text]: a word on a story, said
+      initiated = {}, -- [element]: a shaman's initiation told
+      called = {}, -- [a class's defining spell, its tag]: learned, told
+      titled = {}, -- [title]: an entry's already
+      reactedAt = -REACT_GAP,
+      threads = {}, -- [a chain's first quest] = { n, giver, ender }: the last entry that told one of it
+      pets = {}, -- [name] = { said = the last entry that named it }: a pet met before
+      summoned = {}, -- [a demon's kind] = the entry a class quest taught its summoning
+      revivers = {}, -- [a name] = { n, place }: who brought me back from death, until met again
+      dangers = {}, -- [a foe of a name] = { n, place, died }: who killed me or nearly did, until beaten
+      began = {}, -- [a trade] = where I took it up, until its first new rank
+      -- (a journal begun after the life's first steps: no land, no city told as
+      -- seen for the first time, the record can't know it)
+      late = (c.began and c.began.level or 1) > 1,
+    }
+    -- (late: nor a first fire, a first flight, a first ground below the islands)
+    if d.late then
+      d.away, d.fireSeen, d.flown = true, true, true
+    end
+    d.book.ownGap = 18 -- (one line a kind an entry: the race's own come back later than a chapter's)
+    for _, way in ipairs(CLASS_FIGHT[c.class or ""] or {}) do
+      d.ways[way] = true
+    end
+    for _, sp in ipairs(FIRST_SPELLS[c.class or ""] or {}) do
+      d.known[sp] = true
+    end
+    local capital = CAPITAL[c.race or ""]
+    if capital then d.lands[capital] = true end
+    book = { chapters = {} }
+    if c.prologue then book.prologue = d.book:prologue(c.prologue) end
+    from = 1
   end
   -- (the trades: a skill of one at 300 is news, a weapon's is not)
   d.trades = {}
@@ -1636,14 +1687,9 @@ function ns.writeBook(c)
       if not name:find("Riding") then d.trades[name] = true end
     end
   end
-  for _, sp in ipairs(FIRST_SPELLS[c.class or ""] or {}) do
-    d.known[sp] = true
-  end
-  local capital = CAPITAL[c.race or ""]
-  if capital then d.lands[capital] = true end
-  local book = { chapters = {} }
-  if c.prologue then book.prologue = d.book:prologue(c.prologue) end
-  for i, ch in ipairs(c.chapters or {}) do
+  local chapters = c.chapters or {}
+  for i = from, #chapters do
+    local ch = chapters[i]
     local start, e = ch.start or {}, ch.ended
     local rare, close, to = nil, nil, start.level or 1
     for _, m in ipairs(ch.log or {}) do
@@ -1665,6 +1711,22 @@ function ns.writeBook(c)
       rare = rare,
       close = close,
     }
+    -- (the last finished one: kept, with the book's memory after it)
+    if i == #chapters - 1 and e then
+      local finished = true
+      for k = 1, i do
+        if not chapters[k].ended then finished = false end
+      end
+      if finished then
+        local marks, written = {}, {}
+        for k = 1, i do
+          marks[k] = { ch = chapters[k], len = #(chapters[k].log or {}), ended = chapters[k].ended }
+          written[k] = book.chapters[k]
+        end
+        kept[c] =
+          { n = i, d = snapshot(d, sharedOf(d), {}), chapters = written, prologue = book.prologue, marks = marks }
+      end
+    end
   end
   if c.hardcore and c.death then book.epitaph = d.book:epitaph(c) end
   return book

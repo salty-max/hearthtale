@@ -122,8 +122,12 @@ its decisions: PLAN.md (the full chapter prose was dropped on 10 October
   plurals, articles, items, what a foe is), `Lines.lua` (the Book: a book's
   choice of lines, `Book:say`; the scenery, the lessons, the prologue and the
   epitaph) and `Diary.lua` (`ns.writeBook`: { prologue, chapters = { {
-  number, text: its entry, place, from, to, open, rare, close } }, epitaph },
-  each chapter told as its entry: "The journal" below),
+  number, text: its entry, title, place, from, to, open, rare, close } },
+  epitaph }, each chapter told as its entry: "The journal" below; the
+  finished entries are kept per record with the book's memory after the last
+  of them, every chapter but the last being finished, so a reading resumes
+  there; the writer test checks a book written in pieces is the book written
+  at once),
   `Save.lua` (the book written into the saved file at each logout, each
   chapter's entry in `diary`, for the site: it never writes its own),
   `Book.lua` (the window: chapters on the left, the open one's entry on the
