@@ -602,9 +602,14 @@ local function life(race, class, hc, from, to)
     end
     local lastOne = level >= to
     if lastOne and to >= 60 and chance(0.7) then
-      -- the highest level: the journey's end
-      ch.ended = { level = 60, zone = zone[1], sub = sub, place = one(zone[2]), how = "summit" }
-      c.finished = true
+      -- the highest level: the journey's end, as an older version closed it;
+      -- now a moment of the life, the journal going on
+      if chance(0.5) then
+        ch.ended = { level = 60, zone = zone[1], sub = sub, place = one(zone[2]), how = "summit" }
+        c.finished = true
+      else
+        add(m("level", { level = 60, top = true }))
+      end
     elseif not lastOne or chance(0.5) then
       local how = one({ "rest", "rest", "campfire", "long" })
       ch.ended = { level = level, zone = zone[1], sub = sub, place = one(zone[2]), how = how }
@@ -968,6 +973,151 @@ for _, race in ipairs(RACES) do
   end
 end
 
+-- A specialization, each class's three, then another: the way a life took.
+do
+  local TREES = {
+    WARRIOR = { "Arms", "Fury", "Protection" },
+    PALADIN = { "Holy", "Protection", "Retribution" },
+    HUNTER = { "Beast Mastery", "Marksmanship", "Survival" },
+    ROGUE = { "Assassination", "Combat", "Subtlety" },
+    PRIEST = { "Discipline", "Holy", "Shadow" },
+    SHAMAN = { "Elemental", "Enhancement", "Restoration" },
+    MAGE = { "Arcane", "Fire", "Frost" },
+    WARLOCK = { "Affliction", "Demonology", "Destruction" },
+    DRUID = { "Balance", "Feral Combat", "Restoration" },
+  }
+  for _, race in ipairs(RACES) do
+    for _, class in ipairs(COMBOS[race]) do
+      local trees = TREES[class]
+      for k = 1, trees and 3 or 0 do
+        local chapters = {}
+        for n, spec in ipairs({ { trees[k] }, { trees[k % 3 + 1], trees[k] } }) do
+          chapters[n] = {
+            start = { level = 20 + n, zone = "Ashenvale", sub = "Astranaar" },
+            log = {
+              { k = "spec", name = spec[1], was = spec[2], zone = "Ashenvale", sub = "Astranaar", at = n * 100000 },
+            },
+            ended = { level = 20 + n, place = "Astranaar", how = "rest" },
+            kills = {},
+            quests = 0,
+            played = 3600,
+            gold = 0,
+          }
+        end
+        local c = { guid = ("spec-%s-%s-%d"):format(race, class, k), race = race, class = class, chapters = chapters }
+        if race == "Skyborne" then c.faction = k % 2 == 0 and "horde" or "alliance" end
+        for i, e in ipairs(ns.writeBook(c).chapters) do
+          inspect(race .. " " .. class .. " spec diary " .. i, e.text)
+          local want = i == 1 and trees[k] or trees[k % 3 + 1]
+          if not (e.text or ""):find(want, 1, true) then
+            problem(race .. " " .. class .. " spec diary " .. i, "the specialization untold: " .. want, e.text or "")
+          end
+        end
+      end
+    end
+  end
+end
+
+-- (a specialization none of Classic's trees names, as a modern client may give one)
+for r, race in ipairs(RACES) do
+  for k, spec in ipairs({ "Feral", "Guardian", "Feral", "Guardian" }) do
+    local c = {
+      guid = ("spec-new-%s-%d"):format(race, k),
+      race = race,
+      class = "DRUID",
+      chapters = {
+        {
+          start = { level = 20, zone = "Ashenvale", sub = "Astranaar" },
+          log = { { k = "spec", name = spec, zone = "Ashenvale", sub = "Astranaar", at = 100000 + r } },
+          ended = { level = 20, place = "Astranaar", how = "rest" },
+          kills = {},
+          quests = 0,
+          played = 3600,
+          gold = 0,
+        },
+      },
+    }
+    if race == "Skyborne" then c.faction = k % 2 == 0 and "horde" or "alliance" end
+    local text = ns.writeBook(c).chapters[1].text or ""
+    inspect(race .. " new spec diary", text)
+    if not text:find(spec, 1, true) then problem(race .. " new spec diary", "the specialization untold", text) end
+  end
+end
+
+-- One who brought me back from death, met again in a later entry, alone or
+-- with another: said in the company's sentence, once.
+for r, race in ipairs(RACES) do
+  for k = 1, 4 do
+    local mates = k % 2 == 0 and { "Thessaly" } or { "Thessaly", "Korrak" }
+    local second = {}
+    for j, mate in ipairs(mates) do
+      second[j] = { k = "group", name = mate, class = "PRIEST", zone = "Duskwood", sub = "Darkshire", at = 2000000 + j }
+    end
+    local function stretch(log)
+      return {
+        start = { level = 25, zone = "Duskwood", sub = "Darkshire" },
+        log = log,
+        ended = { level = 25, place = "Darkshire", how = "rest" },
+        kills = {},
+        quests = 0,
+        played = 3600,
+        gold = 0,
+      }
+    end
+    local c = {
+      guid = ("reviver-%s-%d"):format(race, k),
+      race = race,
+      class = COMBOS[race][1],
+      chapters = {
+        stretch({
+          {
+            k = "died",
+            death = { foe = "Black Widow Hatchling" },
+            zone = "Duskwood",
+            sub = "Raven Hill",
+            at = 1000000 + r,
+          },
+          { k = "revived", how = "ally", by = "Thessaly", zone = "Duskwood", sub = "Raven Hill", at = 1000060 + r },
+        }),
+        stretch(second),
+      },
+    }
+    if race == "Skyborne" then c.faction = k % 2 == 0 and "horde" or "alliance" end
+    for i, e in ipairs(ns.writeBook(c).chapters) do
+      inspect(race .. " reviver diary " .. i, e.text)
+    end
+  end
+end
+
+-- The player's own (a title given, a note) lie over the written book: the
+-- entries the same, the journal's title back once the player's is removed,
+-- even from the entries kept between readings.
+do
+  local c = life("Dwarf", "HUNTER", false, 1, 20)
+  local plainBook = ns.writeBook(c)
+  local first = plainBook.chapters[1]
+  c.notes = { [1] = { title = "My Own Title", text = "A line of my own." } }
+  local noted = ns.writeBook(c)
+  if
+    noted.chapters[1].title ~= "My Own Title"
+    or noted.chapters[1].note ~= "A line of my own."
+    or noted.chapters[1].text ~= first.text
+    or noted.chapters[1].writtenTitle ~= first.title
+  then
+    problem("own words", "a title or note not laid over the entry, or the entry changed", noted.chapters[1].text or "")
+  end
+  for k, ch in ipairs(plainBook.chapters) do
+    if k > 1 and (noted.chapters[k].text ~= ch.text or noted.chapters[k].title ~= ch.title) then
+      problem("own words", "another entry changed by a note", ch.text or "")
+    end
+  end
+  c.notes = nil
+  local again = ns.writeBook(c).chapters[1]
+  if again.title ~= first.title or again.note then
+    problem("own words", "the journal's title not back once the player's was removed", again.title or "")
+  end
+end
+
 -- The entries kept between readings hold no record alive: thirty books
 -- read, then let go, leave nothing behind once collected.
 do
@@ -1166,7 +1316,37 @@ for _, race in ipairs(RACES) do
   end
 end
 
--- The journey's end at the highest level, for every race's own lines.
+-- The journey's end at the highest level, as an older version closed it,
+-- for every race's own lines; and the highest level as a moment of the life.
+for _, race in ipairs(RACES) do
+  for seed = 1, 24 do
+    local log = {
+      { k = "kill", name = "Winterfall Ursa", kind = "Humanoid", zone = "Winterspring", sub = "Everlook", at = 100 },
+      { k = "level", level = 60, top = true, zone = "Winterspring", sub = "Everlook", at = 200 },
+    }
+    local c = {
+      guid = "top-" .. race .. seed,
+      race = race,
+      class = COMBOS[race][1],
+      began = { level = 59 },
+      chapters = {
+        {
+          start = { level = 59, zone = "Winterspring", sub = "Everlook" },
+          kills = {},
+          quests = 0,
+          played = 100,
+          gold = 0,
+          log = log,
+          ended = { level = 60, zone = "Winterspring", sub = "Everlook", place = "Everlook", how = "rest" },
+        },
+      },
+    }
+    if race == "Skyborne" then c.faction = seed % 2 == 0 and "horde" or "alliance" end
+    local text = ns.writeBook(c).chapters[1].text or ""
+    inspect(race .. " top level", text)
+    if not text:find("level sixty", 1, true) then problem(race .. " top level", "the highest level untold", text) end
+  end
+end
 for _, race in ipairs(RACES) do
   for seed = 1, 24 do
     local c = {

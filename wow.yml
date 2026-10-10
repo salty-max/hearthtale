@@ -13,11 +13,15 @@ globals:
     any: true
   C_AddOns:
     any: true
+  C_Container:
+    any: true
   C_GameRules:
     any: true
   C_Item:
     any: true
   C_QuestLog:
+    any: true
+  C_SpecializationInfo:
     any: true
   C_Spell:
     any: true
@@ -27,7 +31,11 @@ globals:
     any: true
   C_XMLUtil:
     any: true
+  ChatFontNormal:
+    any: true
   CombatLogGetCurrentEventInfo:
+    any: true
+  ContainerIDToInventoryID:
     any: true
   CreateFrame:
     any: true
@@ -38,6 +46,8 @@ globals:
   GetBindLocation:
     any: true
   GetBuildInfo:
+    any: true
+  GetContainerNumSlots:
     any: true
   GetCurrentRegion:
     any: true
@@ -53,7 +63,7 @@ globals:
     any: true
   GetItemInfo:
     any: true
-  GetSpellInfo:
+  GetItemInfoInstant:
     any: true
   GetLocale:
     any: true
@@ -66,6 +76,8 @@ globals:
   GetNumQuestLeaderBoards:
     any: true
   GetNumSkillLines:
+    any: true
+  GetNumTalentTabs:
     any: true
   GetPlayerInfoByGUID:
     any: true
@@ -85,9 +97,19 @@ globals:
     any: true
   GetRealmName:
     any: true
+  GetShapeshiftFormID:
+    any: true
   GetSkillLineInfo:
     any: true
+  GetSpecialization:
+    any: true
+  GetSpecializationInfo:
+    any: true
+  GetSpellInfo:
+    any: true
   GetSubZoneText:
+    any: true
+  GetTalentTabInfo:
     any: true
   GetTime:
     any: true
@@ -210,14 +232,4 @@ globals:
   strtrim:
     any: true
   time:
-    any: true
-  C_Container:
-    any: true
-  ContainerIDToInventoryID:
-    any: true
-  GetItemInfoInstant:
-    any: true
-  GetContainerNumSlots:
-    any: true
-  GetShapeshiftFormID:
     any: true

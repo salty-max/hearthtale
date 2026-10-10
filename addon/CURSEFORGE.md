@@ -18,9 +18,11 @@ An entry runs from one rest to the next. Logging out in the wild is a night outd
 - **The story**: the work that mattered most, told as you did it and why (from the quests' own words: "I killed Hogger, the huge gnoll who had overpowered every attempt at his capture"), picking up a story left off in an earlier entry, and now and then a word on what it meant to you.
 - **The dangers**: how you died and came back, or the closest call (under a tenth of your health, and alive to tell it); the foes worth naming, rares and elites; a dungeon and its last boss; a player of the other faction killed in the open world (battlegrounds are not part of the tale).
 - **The road**: the lands, towns and dungeons seen for the first time, each described as your character meets it; your people's capital; the company you kept; the fires you stopped at (shared with companions, or one of Forever's camps); a rare find (epic and better).
-- **What you became**: the spells worth a line of their own, a new way of fighting, a trade taken up, the gear you first put on while the levels are low (a blue piece, or one you made yourself), learning to ride and your first ride on your people's own mount, the first bag and the first gold piece, a companion at your side, and the times it fell.
+- **What you became**: the way you chose (your specialization, never the talents themselves), the spells worth a line of their own, a new way of fighting, a trade taken up and what your hands made, the gear you first put on while the levels are low (a blue piece, or one you made yourself), learning to ride and your first ride on your people's own mount, the first bag and the first gold piece, a companion at your side, and the times it fell.
 
-A quiet stretch is a short entry; a big one runs longer. The journal ends when you reach the highest level of your game: the last entry ends there, with the journey's end.
+A quiet stretch is a short entry; a big one runs longer. Reaching the highest level of your game is a moment of its own, and the journal goes on after it.
+
+The journal is yours too: give an entry a title of your own, or write a note in its margin, from the Edit button on its page (or `/ht title TEXT` and `/ht note TEXT` for the last entry). The journal's own words never change; yours show beside them, in the game and on hearthtale.app.
 
 A character you already play gets a prologue from what the game knows of its life so far, and entries from there.
 
@@ -65,7 +67,7 @@ Each game has its own file: pick the one for yours (the CurseForge app does it f
 
 Options → AddOns → Hearthtale (or `/ht settings`, or right-click the minimap button): a line in chat for each entry, the alert when a book closes, the minimap button. Where the game can't tell whether a character is Hardcore, a setting lets you say so.
 
-Other commands: `/ht hall` opens the Hall of the Fallen; `/ht link CODE` links this character to your library on hearthtale.app; `/ht minimap` shows or hides the button.
+Other commands: `/ht title [N] TEXT` names entry N (the last one without N), `/ht note [N] TEXT` writes in its margin (no TEXT removes it); `/ht hall` opens the Hall of the Fallen; `/ht link CODE` links this character to your library on hearthtale.app; `/ht minimap` shows or hides the button.
 
 ## Source
 

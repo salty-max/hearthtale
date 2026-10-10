@@ -38,11 +38,29 @@ local CAPITAL = {
   Tauren = "Thunder Bluff",
   Scourge = "Undercity",
 }
-local FIRSTS =
-  { demon = true, shift = true, tame = true, mount = true, riding = true, power = true, bag = true, gold = true }
+local FIRSTS = {
+  demon = true,
+  shift = true,
+  tame = true,
+  mount = true,
+  riding = true,
+  power = true,
+  bag = true,
+  gold = true,
+  spec = true,
+}
 -- (how much each telling weighs: milestones and the story always told, then
 -- what happened that a life remembers, then what fills the room left)
-local MILESTONE = { demon = true, shift = true, tame = true, power = true, ["class-reward"] = true, initiation = true }
+local MILESTONE = {
+  demon = true,
+  shift = true,
+  tame = true,
+  power = true,
+  ["class-reward"] = true,
+  initiation = true,
+  summit = true,
+  spec = true,
+}
 local ROOM = 6 -- (an entry's sentences of the lesser kind, at most, less one for each milestone)
 local PARAGRAPH = 7 -- (an entry this long, or longer: two paragraphs)
 -- What a story was, for a word on it: a rescue, a villain's end, the dead, demons, a beast.
@@ -285,6 +303,12 @@ local function gather(d, c, ch)
   for i, m in ipairs(log) do
     f.at[m] = i
     if m.k == "level" and m.level then level = m.level end
+    -- (the highest level the game allows: a moment of the life, the journal
+    -- going on after it)
+    if m.k == "level" and m.top then
+      table.insert(f.firsts, { k = "summit", level = m.level })
+      f.at[f.firsts[#f.firsts]] = i
+    end
     if m.zone then f.count[m.zone] = (f.count[m.zone] or 0) + 1 end
     -- (my people's own city, its first sight; a Skyborne's first ground
     -- below the islands)
@@ -794,6 +818,19 @@ local function entry(d, n, ch)
       d.tamed = true
     elseif m.k == "initiation" then
       text = sayFresh("d-initiation", key, {}, { [m.totem] = true }, nil, { [m.totem] = true })
+    elseif m.k == "summit" then
+      text = sayFresh("summit", key, { level = words(m.level or 60) }, {})
+    elseif m.k == "spec" and m.name then
+      -- (the way a life took, by the game's name for it; another after it)
+      local tag = "spec:" .. m.name:gsub(" ", "_")
+      text = sayFresh(
+        "d-spec",
+        key,
+        { spec = m.name, was = m.was },
+        { [tag] = true, change = m.was and true or nil },
+        nil,
+        not m.was and { [tag] = true } or nil
+      )
     elseif m.k == "calling" then
       -- (a way to a city: home only when it is my people's, or our hosts')
       local place = m.spell:match("^Teleport: (.+)$") or m.spell:match("^Portal: (.+)$")
@@ -825,11 +862,11 @@ local function entry(d, n, ch)
       add(text, true, f.at[m])
       milestones = milestones + 1
       if m.k == "tame" or m.k == "demon" then d.pets[m.name] = { said = n } end -- (named: met)
-      -- (a defining spell: below a villain's end or a rescue, a milestone of
-      -- the class rather than of this life)
+      -- (a defining spell, a specialization: below a villain's end or a
+      -- rescue, a milestone of the class rather than of this life)
       headline(
-        m.k == "calling" and 2.5 or 1,
-        (m.k == "tame" or m.k == "demon") and m.name
+        (m.k == "calling" or m.k == "spec") and 2.5 or 1,
+        (m.k == "tame" or m.k == "demon" or m.k == "spec") and m.name
           or m.k == "shift" and FORM_TITLE[m.form or ""]
           or m.k == "initiation" and questTitle(m.m.title)
           or m.k == "class-reward" and (questTitle(m.m.title) or m.q.spell)
@@ -1780,9 +1817,10 @@ end
 -- The book of a character, as read in the game and on the site, written
 -- from its records each time it is read (never stored but in the saved
 -- file, Save.lua): { prologue (a character met mid-life), chapters = { {
--- number, text (its diary entry), place, from, to (levels), open, rare,
--- close (the book's marks), chapter (its record) } }, epitaph (a Hardcore
--- death) }.
+-- number, text (its diary entry), title, place, from, to (levels), open,
+-- rare, close (the book's marks), chapter (its record); the player's own:
+-- note, a title given it (writtenTitle: the writer's) } }, epitaph (a
+-- Hardcore death) }.
 -- (the finished entries of a book, kept with the book's memory after the
 -- last of them: a long life is not rewritten from its first page every time
 -- a page is turned. Every chapter but the last is finished: a logout under
@@ -1928,5 +1966,19 @@ function ns.writeBook(c)
     end
   end
   if c.hardcore and c.death then book.epitaph = d.book:epitaph(c) end
+  -- the player's own, laid over the written book (which never changes): a
+  -- title given an entry (the writer's kept as writtenTitle), a note in its
+  -- margin (c.notes[n] = { title, text }, Core.lua)
+  for n, own in pairs(c.notes or {}) do
+    local ch = type(own) == "table" and book.chapters[n]
+    if ch then
+      local copy = {}
+      for k, v in pairs(ch) do
+        copy[k] = v
+      end
+      copy.writtenTitle, copy.title, copy.note = ch.title, own.title or ch.title, own.text
+      book.chapters[n] = copy
+    end
+  end
   return book
 end

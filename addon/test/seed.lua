@@ -43,6 +43,11 @@ end
 local characters = {}
 for _, name in ipairs({ "brannok", "pippa", "aldric", "grashnak", "aelyndra", "mortis", "edric" }) do
   local G = lives[name]()
+  -- (the player's own words, as the site shows them: a title given, a note)
+  if name == "brannok" then
+    SlashCmdList.HEARTHTALE("title 2 Timber and the Vest")
+    SlashCmdList.HEARTHTALE("note 2 First thing I ever made that was worth wearing. Buy more arrows before Kharanos.")
+  end
   G.logout()
   local c = HearthtaleChar
   table.insert(characters, {

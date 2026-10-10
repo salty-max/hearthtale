@@ -15,9 +15,11 @@
 --     powers[spell], demons[family], forms[form]   a warlock's or a druid's, learned here; the
 --                                                    first of each told (a demon by its name)
 --     bagged, rich                                   a first bag worn, a first gold piece (false: not yet)
+--     spec                                           the specialization held (false: none yet)
 --     logout = { at, rest, fire, place, zone, sub, level, night, inside }   the last
 --                                                    logout, settled at the next login
---     finished                                       the highest level reached: nothing more is told
+--     finished                                       (before 0.6: the highest level reached, the
+--                                                    journal stopped; cleared at login, it goes on)
 --     death, deaths, dying                           the last death; how many; the way back from it
 --   chapters[i] = {
 --     start = { at, level, zone, sub, night }
@@ -26,10 +28,11 @@
 --     played = seconds, gold = copper                time played in it, money gained
 --     company = { [name] = true }                    who joined (a group's names, once each)
 --     ended = { at, level, zone, sub, place, how, inside }   how: rest, campfire,
---                                                    long (the cap), summit, death
+--                                                    long (the cap), death; summit before 0.6
 --   }
 --   moments: { k = kind, at, night, zone, sub, grouped, ... }
---     place { new = "zone" or nil }  inn { place }  flight { from, to }  level { level }
+--     place { new = "zone" or nil }  inn { place }  flight { from, to }  level { level, top }
+--                                                    (top: the highest level the game allows)
 --     done { id, title, giver, objectives, abandoned, pet, petFamily, with }   a quest's work
 --                                                    done (pet: the one at my side then;
 --                                                    with: the party then, by first name)
@@ -47,7 +50,7 @@
 --     prof { name, learned or rank }  riding { name }  mount { name, kind }  made { id, link, n }
 --     gear { link, quality, made, held, trinket }  loot { link, quality }
 --     tame { name, family }  petdied { name }  demon { name, family }  shift { form }
---     bag { link, slots, looted }  gold
+--     bag { link, slots, looted }  gold  spec { name, was }
 --     campfire { camp, with }  rested { place, fire }  night { last, inside }  wake { after, inside }
 local _, ns = ...
 local secret = ns.secret
@@ -166,7 +169,6 @@ local function chapter()
   c.chapters = c.chapters or {}
   local ch = c.chapters[#c.chapters]
   -- the journey ended: nothing opens or changes a chapter any more
-  if c.finished then return { log = {}, kills = {}, quests = 0, played = 0, gold = 0, company = {} } end
   if not ch or ch.ended then
     local zone, sub = where()
     -- where it starts is named by its opening: not a discovery too
@@ -195,10 +197,8 @@ local function battleground()
   return inside and kind == "pvp"
 end
 local function moment(k, fields)
-  -- a battleground is no part of the tale (but for a level gained there);
-  -- nor anything after the journey's end (the highest level reached)
+  -- a battleground is no part of the tale (but for a level gained there)
   if k ~= "level" and battleground() then return end
-  if char().finished then return end
   local ch = chapter()
   local zone, sub = where()
   local m = fields or {}
@@ -469,20 +469,20 @@ hooksecurefunc("TakeTaxiNode", function(index)
 end)
 
 -- ── levels ───────────────────────────────────────────────────────────────────
--- The highest level the game allows: the journey's end. The chapter closes
--- there, and the journal with it.
+-- The highest level the game allows: a moment of a life (top), and the
+-- journal goes on. (One an older version closed there opens again.)
 local function maxLevel()
   local max = GetMaxPlayerLevel()
   return (not secret(max) and type(max) == "number" and max > 0) and max or 60
 end
 ns.on("PLAYER_LEVEL_UP", function(newLevel)
+  local top = not secret(newLevel) and newLevel >= maxLevel() or nil
+  moment("level", { level = newLevel, top = top })
+end)
+ns.on("PLAYER_ENTERING_WORLD", function()
   local c = char()
-  if c.finished then return end
-  moment("level", { level = newLevel })
-  if not secret(newLevel) and newLevel >= maxLevel() then
-    local zone, sub = where()
-    chapter().ended = ended("summit", now(), newLevel, zone, sub)
-    c.finished = true
+  if c and c.finished then
+    c.finished = nil
     changed()
   end
 end)

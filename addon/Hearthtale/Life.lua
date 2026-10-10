@@ -211,6 +211,62 @@ local function lookAtTrades(quiet)
 end
 ns.on("SKILL_LINES_CHANGED", function() lookAtTrades(false) end)
 
+-- ── a specialization ─────────────────────────────────────────────────────────
+-- The way a life took, by its name as the game gives it ("Fire",
+-- "Protection"): the specialization chosen, on today's client (Forever);
+-- on Classic's, the talent tree holding most of the points (ten at least,
+-- more than half of them). Never the talents themselves. A new one is a
+-- moment (spec { name, was }); one held when the journal first looks is
+-- noted quietly; talents unlearned, none for a while, is no change.
+local SPEC_POINTS = 10
+local function specOf()
+  local get = (C_SpecializationInfo and C_SpecializationInfo.GetSpecialization) or GetSpecialization
+  local info = (C_SpecializationInfo and C_SpecializationInfo.GetSpecializationInfo) or GetSpecializationInfo
+  if get and info then
+    local index = get()
+    if index and not secret(index) and index > 0 then
+      local _, name = info(index)
+      if name and not secret(name) then return name end
+    end
+  end
+  if not (GetNumTalentTabs and GetTalentTabInfo) then return nil end
+  local best, most, all = nil, 0, 0
+  for i = 1, GetNumTalentTabs() or 0 do
+    -- (Classic Era's: name, icon, points; later clients': id, name, text, icon, points)
+    local a, b, c, _, e = GetTalentTabInfo(i)
+    local name, points = a, c
+    if type(a) == "number" then
+      name, points = b, e
+    end
+    if type(name) == "string" and type(points) == "number" and not secret(name) and not secret(points) then
+      all = all + points
+      if points > most then
+        best, most = name, points
+      end
+    end
+  end
+  if best and most >= SPEC_POINTS and most * 2 > all then return best end
+  return nil
+end
+local function lookAtSpec(quiet)
+  local c = char()
+  local spec = specOf()
+  if quiet then
+    c.spec = spec or false
+  elseif spec and spec ~= c.spec then
+    moment("spec", { name = spec, was = c.spec or nil })
+    c.spec = spec
+  end
+end
+for _, e in ipairs({
+  "CHARACTER_POINTS_CHANGED",
+  "PLAYER_TALENT_UPDATE",
+  "ACTIVE_PLAYER_SPECIALIZATION_CHANGED",
+  "PLAYER_SPECIALIZATION_CHANGED",
+}) do
+  ns.on(e, function() lookAtSpec(char().spec == nil) end)
+end
+
 -- ── gear ─────────────────────────────────────────────────────────────────────
 -- Something worn for the first time (green and above; an item put on again,
 -- after another, is no news). worn[itemId] = true; made[itemId] = true for
@@ -473,6 +529,7 @@ ns.on("PLAYER_ENTERING_WORLD", function(initial)
   lookAtTrades(c.profs == nil)
   lookAtPet(c.pets == nil)
   lookAtBags(c.bagged == nil)
+  lookAtSpec(c.spec == nil)
   -- (riding known when the journal first looks: ridden before it began)
   local rides = IsMounted()
   for name in pairs(c.profs or {}) do

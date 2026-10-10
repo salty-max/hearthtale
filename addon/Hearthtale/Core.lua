@@ -11,6 +11,8 @@
 --   book = { ... }           the book as written at the last logout (Save.lua)
 --   link = { code, at }      a code from hearthtale.app (/ht link CODE), for the
 --                            next upload to add this book to that account
+--   notes[n] = { title, text }   the player's own: a title given entry n, a
+--                            note in its margin (the window, /ht title, /ht note)
 -- and the events every file listens to (ns.on, ns.onUnit).
 local _, ns = ...
 local PREFIX = "|cffc9a227Hearthtale:|r "
@@ -102,9 +104,41 @@ function ns.login()
   if ns.createSettingsPanel then ns.createSettingsPanel() end
 end
 
+-- ── the player's own words ───────────────────────────────────────────────────
+-- A title given an entry, a note in its margin: char.notes[n] = { title, text },
+-- beside the record (Diary.lua lays them over the written book). Plain text: a
+-- link keeps its name, the game's codes go; cut at a letter, not mid-way.
+local OWN_LIMIT = { title = 60, text = 1000 }
+local function plain(s)
+  s = s:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", ""):gsub("|H.-|h(.-)|h", "%1"):gsub("|T.-|t", "")
+  s = s:gsub("|n", "\n"):gsub("|", "")
+  return strtrim(s)
+end
+local function cut(s, limit)
+  if #s <= limit then return s end
+  local n = limit
+  while n > 0 and s:byte(n + 1) and s:byte(n + 1) >= 0x80 and s:byte(n + 1) < 0xC0 do
+    n = n - 1
+  end
+  return strtrim(s:sub(1, n))
+end
+-- (field: "title" or "text"; nothing: removed. False when there is no such entry)
+function ns.setOwn(n, field, value)
+  if not (char and char.chapters and char.chapters[n] and OWN_LIMIT[field]) then return false end
+  value = cut(plain(value or ""), OWN_LIMIT[field])
+  char.notes = char.notes or {}
+  local own = char.notes[n] or {}
+  own[field] = value ~= "" and value or nil
+  char.notes[n] = next(own) and own or nil
+  if ns.refresh then ns.refresh() end
+  return true
+end
+function ns.own(n) return char and char.notes and char.notes[n] or nil end
+
 -- ── /hearthtale ──────────────────────────────────────────────────────────────
-local USAGE = "/ht opens the journal; /ht hall the Hall of the Fallen; /ht link CODE links this character to "
-  .. "hearthtale.app; /ht settings; /ht minimap shows or hides the button."
+local USAGE = "/ht opens the journal; /ht hall the Hall of the Fallen; /ht title [N] TEXT names an entry, "
+  .. "/ht note [N] TEXT writes in its margin (the last entry without N, no TEXT to remove it); /ht link CODE "
+  .. "links this character to hearthtale.app; /ht settings; /ht minimap shows or hides the button."
 
 -- A code from hearthtale.app, kept in the saved file: the next upload (after a
 -- logout or a /reload) carries it, and the site adds this book to that account.
@@ -126,10 +160,33 @@ end
 
 SLASH_HEARTHTALE1 = "/hearthtale"
 SLASH_HEARTHTALE2 = "/ht"
-SlashCmdList.HEARTHTALE = function(msg)
-  msg = strtrim((msg or ""):lower())
+-- "/ht note 3 Text": entry 3; "/ht note Text": the last one (the case of the words kept)
+local function setOwn(field, rest)
+  if not char then return end
+  local first, text = rest:match("^(%d+)%s*(.*)$")
+  local n = tonumber(first)
+  if not (n and char.chapters and char.chapters[n]) then
+    n, text = char.chapters and #char.chapters or 0, rest
+  end
+  local what = field == "title" and "title" or "note"
+  if not ns.setOwn(n, field, text) then
+    print(PREFIX .. "no entry to give a " .. what .. " to yet.")
+  elseif text == "" then
+    print(PREFIX .. ("entry %d's %s removed."):format(n, what))
+  else
+    print(PREFIX .. ("entry %d's %s kept."):format(n, what))
+  end
+end
+
+SlashCmdList.HEARTHTALE = function(raw)
+  raw = strtrim(raw or "")
+  local msg = raw:lower()
   local code = msg:match("^link%s+(%w+)$")
-  if msg == "" then
+  local word, rest = raw:match("^(%a+)%s*(.*)$")
+  word = word and word:lower()
+  if word == "title" or word == "note" then
+    setOwn(word == "title" and "title" or "text", rest)
+  elseif msg == "" then
     ns.toggle()
   elseif msg == "minimap" then
     ns.setOption("minimapHidden", not ns.option("minimapHidden"))

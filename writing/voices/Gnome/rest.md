@@ -11,7 +11,7 @@ kind: rest
 - I sat down {at} and let my curiosity run on without me, since it never tires when I do.
 - I stopped {at}, out of stubbornness and very nearly out of everything else.
 - [fire] I rested by the fire {at}, and for once had no opinion about how it might burn more efficiently.
-- My feet had kept a stricter count of the day than I had, and I rested {at} on their advice.
+- My feet had been complaining for some time, and I rested {at} on their advice.
 - [hc] I rested {at}, with one life to look after and every intention of making it last.
 - I rested {at}, more comfortably than my people had in the crowded first weeks after the evacuation.
 - I rested {at}, and wondered whether Mekkatorque ever let himself sit still this long.

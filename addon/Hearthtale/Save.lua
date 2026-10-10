@@ -6,8 +6,9 @@
 -- (the logout settled in advance: ns.settledView); a /reload is put right by
 -- the next logout.
 --   book = { version, client, at, level, prologue, epitaph,
---            chapters = { { number, diary, title, place, from, to, open,
+--            chapters = { { number, diary, title, note, place, from, to, open,
 --                           rare, close, began, ended } } }
+-- (title: the player's own when given one; note: the player's, in its margin)
 -- (diary: the chapter as its diary entry, Diary.lua; a book saved before
 -- the entries were has its chapter's prose in "text", which the site reads
 -- in its place)
@@ -35,6 +36,7 @@ local function written(c, level)
       number = ch.number,
       diary = ch.text,
       title = ch.title,
+      note = ch.note,
       place = ch.place,
       from = ch.from,
       to = ch.to,

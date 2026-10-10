@@ -1069,22 +1069,102 @@ check(#shifts == 1 and shifts[1].form == "bear", "a druid's first shift into a f
 state.form = nil
 HearthtaleChar.class = state.class
 
--- The highest level the game allows: the journey's end. The chapter closes
--- there, and nothing more is told.
+-- The player's own: a title given an entry, a note in its margin (/ht title,
+-- /ht note, the window), laid over the written book, which never changes.
+local last = #K.chapters
+local before = ns.writeBook(K).chapters[last]
+SlashCmdList.HEARTHTALE("title The Long Walk")
+SlashCmdList.HEARTHTALE("note Grik'nir was |cff1eff00|Hitem:2589|h[Linen Cloth]|h|r easier than I feared.")
+local mine = ns.writeBook(K).chapters[last]
+check(
+  mine.title == "The Long Walk" and mine.writtenTitle == before.title and mine.text == before.text,
+  "a title given an entry, over the journal's own, its entry the same"
+)
+check(
+  mine.note == "Grik'nir was [Linen Cloth] easier than I feared.",
+  "a note in its margin: plain text, its case kept"
+)
+SlashCmdList.HEARTHTALE("title")
+check(ns.writeBook(K).chapters[last].title == before.title, "an entry's own title removed: the journal's again")
+SlashCmdList.HEARTHTALE("note 1 " .. ("word "):rep(300))
+check(#K.notes[1].text <= 1000, "a note kept to a thousand letters")
+SlashCmdList.HEARTHTALE("note 1")
+check(K.notes[1] == nil, "a note removed, nothing left of it")
+ns.openChapter(last)
+ns.bookEdit.scripts.OnClick()
+local editor = ns.bookEditor
+check(
+  editor and editor.shown and editor.note:GetText() == mine.note,
+  "the window's editor opens on the entry's own words"
+)
+editor.title:SetText("Cold Hands")
+editor.note:SetText("")
+editor.save.scripts.OnClick()
+check(
+  K.notes[last].title == "Cold Hands" and K.notes[last].text == nil and not editor.shown,
+  "the editor keeps a title; a note emptied is removed"
+)
+ns.writeDown(K)
+check(K.book.chapters[last].title == "Cold Hands", "the title given saved for the site")
+SlashCmdList.HEARTHTALE("note Cold, all of it.")
+ns.writeDown(K)
+check(K.book.chapters[last].note == "Cold, all of it.", "the note saved for the site")
+
+-- A specialization: the way a life took, never its talents. On Classic, the
+-- tree holding most of the points, ten at least; on Forever, the one chosen.
+-- One held when the journal first looked was noted quietly.
+local specsBefore = #told("spec")
+if FOREVER then
+  state.specs = { "Arcane", "Fire", "Frost" }
+  state.spec = 2
+  fire("ACTIVE_PLAYER_SPECIALIZATION_CHANGED")
+  fire("ACTIVE_PLAYER_SPECIALIZATION_CHANGED")
+  state.spec = 3
+  fire("ACTIVE_PLAYER_SPECIALIZATION_CHANGED")
+else
+  state.talents = { { "Arcane", 3 }, { "Fire", 9 }, { "Frost", 0 } }
+  fire("CHARACTER_POINTS_CHANGED")
+  check(#told("spec") == specsBefore, "talents spread thin: no specialization yet")
+  state.talents[2][2] = 10
+  fire("CHARACTER_POINTS_CHANGED")
+  fire("CHARACTER_POINTS_CHANGED")
+  state.talents = { { "Arcane", 0 }, { "Fire", 0 }, { "Frost", 0 } }
+  fire("CHARACTER_POINTS_CHANGED")
+  check(#told("spec") == specsBefore + 1, "talents unlearned: no change while none is held")
+  state.talents[3][2] = 12
+  fire("CHARACTER_POINTS_CHANGED")
+end
+local specs = told("spec")
+check(
+  #specs == specsBefore + 2
+    and specs[#specs - 1].name == "Fire"
+    and specs[#specs - 1].was == nil
+    and specs[#specs].name == "Frost"
+    and specs[#specs].was == "Fire",
+  "a specialization taken, then another, by its name (the one before kept)"
+)
+check(ns.writeBook(K).chapters[#K.chapters].text:find("Frost", 1, true), "a specialization told in its entry")
+
+-- The highest level the game allows: a moment of the life, and the journal
+-- goes on after it.
 state.maxLevel = state.level + 1
 state.level = state.level + 1
 fire("PLAYER_LEVEL_UP", state.level)
 local endCh = K.chapters[#K.chapters]
+local top = endCh.log[#endCh.log]
 local count = #endCh.log
 kill(1, 78)
-fire("QUEST_ACCEPTED", 1, 9000192)
 check(
-  K.finished and endCh.ended and endCh.ended.how == "summit" and #endCh.log == count,
-  "the highest level: the chapter closes, the journal ends, nothing more is told"
+  top.k == "level" and top.top and not endCh.ended and not K.finished and #endCh.log > count,
+  "the highest level: a moment of its own, and the journal goes on"
 )
 local summit = ns.writeBook(K).chapters[#K.chapters].text
 io.write("    " .. summit:gsub("\n", " ") .. "\n")
-check(summit:find("level twenty%-four"), "its last words: the journey's end")
+check(summit:find("level twenty%-four"), "the highest level, told in its entry")
+-- (a journal an older version closed there opens again at the next login)
+K.finished = true
+reload()
+check(K.finished == nil, "a journal closed at the highest level by an older version goes on")
 state.maxLevel = nil
 
 if FOREVER then
