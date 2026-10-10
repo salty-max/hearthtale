@@ -4,12 +4,12 @@ kind: rest
 - I rested {at}, and picked out the stars I knew, whatever the land beneath them.
 - I settled {at}, and let the stillness come over me like moonlight on water.
 - I paused {at}, and let my strength return as slowly as a tree regrows its bark.
-- I rested {at}, and let the quiet settle as it does in the glades of home.
+- The quiet settled {at} as it does in the glades of home, and I let it.
 - I stopped {at}, and let the thought of home soften the day's unease.
 - I rested {at}, missing the forests with a tenderness I rarely allowed while moving.
 - I paused {at}, leaving the world to somebody else's vigilance for a little while.
 - I rested {at}, and waited for the moon to rise, as my people always have.
-- I rested {at}, as if I still had all the time in the world, and knew very well I did not.
+- I lingered {at} as if I still had all the time in the world, and knew very well I did not.
 - [!fire] I sat quietly {at}, and listened until every sound around me was one I could name.
 - [fire] I rested by the fire {at}, letting it warm me while my eyes stayed on the dark beyond it.
 - I settled {at}, and let the hours pass without asking anything of them.
@@ -17,6 +17,6 @@ kind: rest
 - [hc] I stopped {at}, never quite letting go of my guard, as befits anyone with only one life to lose.
 - [!fire] Rest found me {at}, as quietly as an owl folding its wings.
 - [fire] I kept close to the fire {at}, grateful for its warmth and mindful of its appetite, as my people learn to be among trees.
-- [!fire] I rested {at}, my thoughts free to drift as far as they liked now that my feet would not have to follow them.
+- [!fire] My thoughts were free to drift as far as they liked {at}, now that my feet would not have to follow them.
 - I stopped {at}, laying the road's cares aside like a cloak I would not need again until I rose.
 - I settled down {at} and gave myself up to sleep, whatever dreams it meant to bring.

@@ -2,7 +2,7 @@
 kind: lesson
 ---
 - [spell:Life_Tap] I can pay for my magic with my own health now, and I have not yet decided whether that is a bargain.
-- [spell:Fear] Fear is mine to cast now, and I like having the terror on the other side of a fight for a change.
+- [spell:Fear] Fear is mine to cast now, and I like the thought of the terror on the other side of a fight for a change.
 - [spell:Drain_Life] Drain Life is mine now, a spell that keeps me standing on someone else's account.
 - [spell:Corruption] I added Corruption to what I can do, a slow and patient kind of harm.
 - [spell:Health_Funnel] I can pour my own health into a demon now, which says something about the arrangement between us.
@@ -14,13 +14,13 @@ kind: lesson
 - [spell:Psychic_Scream] Psychic Scream is mine now, and my fear has somewhere to go besides my own stomach.
 - [spell:Turn_Undead !race:Scourge] I can turn the walking dead with the Light now, and send them reeling from a fight they had no business in.
 - [spell:Turn_Undead race:Scourge] I can turn the dead with the Light now, and I try not to dwell on what that says about a Forsaken who calls on it.
-- [spell:Divine_Protection] Divine Protection can give me a moment nothing can touch, and I am learning to wait for the right one.
+- [spell:Divine_Protection] Divine Protection can give me a moment nothing can touch, and the art will be in choosing it.
 - [spell:Hammer_of_Justice] Hammer of Justice is mine now, a way to stop a foe in the middle of its intentions.
 - [spell:Execute] Execute is mine now, for finishing a fight that has gone on long enough.
 - [spell:Pick_Pocket] I can lift a purse now without its owner noticing, and I find I keep a closer hand on my own.
 - [spell:Sap] Sap is mine, and a foe can now sleep through the start of its own bad luck.
-- [spell:Sprint] Sprint is mine now, and leaving trouble behind has never been easier.
-- [spell:Aspect_of_the_Cheetah] I can run with a cheetah's speed now, and the long roads have shrunk to fit.
+- [spell:Sprint] Sprint is mine now, and trouble will have to be quick to keep up with me.
+- [spell:Aspect_of_the_Cheetah] I can run with a cheetah's speed now, and the long roads will shrink to fit.
 - [spell:Hunter's_Mark] Hunter's Mark is mine now, and no quarry of mine will vanish into the crowd.
 - [spell:Ancestral_Spirit] I can call a fallen friend's spirit back to their body now, a gift I hope to need rarely.
 - [spell:Lightning_Shield] Lightning Shield is mine now, thunder waiting for anyone who reaches for me.

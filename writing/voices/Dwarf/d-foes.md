@@ -1,7 +1,7 @@
 ---
 kind: d-foes
 ---
-- [one !hard] I took the measure of {foes} and found my own was enough, which is the kind of sum I like.
+- [one !hard] I tried my strength against {foes}, and it held, like a good seam under the pick.
 - [one !hard] When the fighting was done, {foes} lay at my feet, and I allowed myself a moment's pride in clean work.
 - [one hard] The fight with {foes} took everything I had to give, and a good deal I had not known was there.
 - [one hard] I got the better of {foes} in the end, though only by the thickness of my own hide.

@@ -1,24 +1,24 @@
 ---
 kind: rest
 ---
-- [!fire] I rested {at}, with no wish to let another small favour keep me standing.
+- [!fire] I let the next small favour go unasked {at}, and sat down instead.
 - [!fire] I settled {at}, with nothing left to hurry towards for a while.
 - [!fire] I stopped to rest {at}, grateful that the next mile could wait without my losing it.
 - [!fire] I rested {at}, letting the weariness reach me without having to carry it further.
-- [!fire] I rested {at}, with the road finally asking less of me than my own need for stillness.
+- [!fire] {at}, the road finally asked less of me than my own need for stillness, and I gave in to it.
 - [!fire] I settled {at}, wanting the comfort of a pause more than the satisfaction of going further.
 - [!fire hc] I rested {at}, alive and very willing to leave danger to somebody else for a while.
 - [fire] I rested beside the fire {at}, and gave my endurance the evening off.
 - [fire] I paused by the fire {at}, letting my hands enjoy something gentler than the day's work.
-- [fire] I rested by a fire {at}, grateful to be warmed without needing to go anywhere.
+- [fire] A fire {at} warmed me without asking me to go anywhere, and I was grateful for it.
 - [fire] I settled beside the fire {at}, letting the road continue without me.
 - [!fire] I settled {at}, with the next stretch welcome to wait until I wanted it.
 - [fire] I rested beside the fire {at}, and let it warm me, which was all I asked of it.
 - [fire] I settled by a fire {at}, content with an evening that required nothing brave of me.
-- [fire] I rested by the flames {at}, with the next stretch welcome to remain beyond the warmth for now.
+- [fire] The next stretch could stay beyond the firelight {at} for now; I meant to stay inside it.
 - [!fire] I stopped {at} once the work was done, and let the quiet have me for a while.
 - [!fire] I rested {at}, and the stillness came more easily than I expected.
 - [!fire] I called a halt {at}, with nothing left that could not wait until I had slept.
 - [!fire] I sat down {at} at last, and stayed down.
-- [!fire] I rested {at}, with nowhere further to be and no wish to find one.
+- [!fire] With nowhere further to be and no wish to find one, I stopped {at}.
 - [!fire] The work done, I let the day go quiet {at}.

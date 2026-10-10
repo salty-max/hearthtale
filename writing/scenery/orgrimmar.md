@@ -1,7 +1,7 @@
 ---
 place: Orgrimmar
 type: zone
-home: Orc Troll
+home: Orc
 faction: horde
 ---
 - [home] The drums of Orgrimmar echoed off the spiked walls as I came in. At Grommash Hold I felt the weight of it: a city our people had built for themselves, with no one's chains on it.

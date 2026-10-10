@@ -6,7 +6,7 @@ kind: rest
 - I paused {at}, content with a peace that had nothing permanent about it.
 - I rested {at}, as still as I had once lain in Lordaeron's earth, and in much better company.
 - I stopped {at}, and let the quiet gather over me as evenly as dust in a shut room.
-- I rested {at}, missing sleep rather more than I needed it.
+- I lay still {at}, missing sleep rather more than I needed it.
 - I paused {at}, and let my joints settle like an old house in Brill.
 - I rested {at}, with no master's voice in my head to make stillness a crime.
 - I rested {at}, thinking of Brill's crooked roofs with something like fondness.
@@ -19,4 +19,4 @@ kind: rest
 - Being counted among the Horde still struck me as strange, and I settled {at} turning it over without reaching a verdict.
 - [fire] I kept to the fireside {at}, watching the flames with the attention I usually save for strangers I have not made up my mind about.
 - I called the stretch finished {at}; whatever remained could wait for me or find someone more eager.
-- I rested {at}, turning over the people I had dealt with and which of them I would gladly deal with again.
+- I sat {at}, turning over the people I had dealt with and which of them I would gladly deal with again.

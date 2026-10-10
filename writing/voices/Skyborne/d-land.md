@@ -4,7 +4,7 @@ kind: d-land
 - [client:forever one !home !hosts !late] I set foot in {lands} for the first time, very likely one of the first of my people to walk there in an age.
 - [client:forever one !home !hosts !late] I came into {lands} for the first time, and turned the name over until it no longer sounded foreign to me.
 - [client:forever one !home !hosts !town !late] I walked into {lands} for the first time, and kept glancing up for the next island, as if the sky there might hold one too.
-- [client:forever !one !home !hosts !late] I saw {lands} for the first time, more new country in a single stretch than I had once expected to see in my whole life.
+- [client:forever !one !home !hosts !late !town] I saw {lands} for the first time, more new country in a single stretch than I had once expected to see in my whole life.
 - [client:forever faction:horde !one !home !hosts !late] I crossed into {lands} for the first time, looking in each for friends the Windshapers might one day call on.
 - [client:forever faction:alliance !one !home !hosts !late] I travelled through {lands} for the first time, half hoping one of them still hid some scrap of the knowledge our forebears lost.
 - [client:forever away] I came down from the islands into {lands}, the first ground I had ever stood on that did not end at a drop, and it took me a while to trust it.

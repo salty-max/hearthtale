@@ -5,6 +5,14 @@ kind: d-why-also
 - [moved] Later, {where}, I {why}.
 - [!moved] After that, I {why}.
 - [moved] After that, {where}, I {why}.
-- [!moved] Before the stretch was out, I also {why}.
+- [last !moved] Before the stretch was out, I also {why}.
+- [last moved] Before the stretch was out, {where}, I also {why}.
 - [!moved] Not long after, I {why}.
 - [moved] Not long after, {where}, I {why}.
+- [!moved] Then I {why}.
+- [moved] The road took me on, and {where} I {why}.
+- [night !moved] When night came, I {why}.
+- [night moved] When night came, {where}, I {why}.
+- [thread !moved] With that done, I {why}.
+- [thread !moved] That led me on, and I {why}.
+- [thread moved] With that done, {where}, I {why}.

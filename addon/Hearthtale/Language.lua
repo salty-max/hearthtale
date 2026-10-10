@@ -158,7 +158,7 @@ local SINGULAR_S = { Lens = true, Atlas = true, Canvas = true, Gas = true, Chaos
 local UNCOUNTED = set([[
   Meat Cloth Leather Silk Wool Ore Water Oil Blood Moss Sand Ash Powder Venom Ichor Dust Silver Gold
   Iron Copper Bark Mail Grain Barley Rye Corn Pulp Nitroglycerin Salt Flour Ink Rum Ale Wine Honey Tar
-  Clay Coal Sap Resin Slime Ooze Mud Lumber
+  Clay Coal Sap Resin Slime Ooze Mud Lumber Dynamite
 ]])
 -- An item: "a Wolf Fang Necklace", but "Cuirboulle Gloves", "Blackened Defias
 -- Armor", "Smite's Mighty Hammer".

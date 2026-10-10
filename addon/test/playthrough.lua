@@ -443,6 +443,83 @@ local function totemQuest(element, race, side)
   end
 end
 
+-- A life's trades, as players take them up: a gathering trade and a craft
+-- at the first trainers, their ranks as the skill allows (journeyman at 10,
+-- expert at 20), what the craft made; and, life by life, one trade given up
+-- for another, one given up and taken up again later, or a craft begun
+-- late beside a cook's or a healer's skill.
+local TRADES = {
+  {
+    "Herbalism",
+    "Alchemy",
+    { "Minor Healing Potion", "Elixir of Lion's Strength", "Lesser Healing Potion", "Swiftness Potion" },
+  },
+  {
+    "Mining",
+    "Blacksmithing",
+    { "Rough Sharpening Stone", "Copper Chain Belt", "Copper Bracers", "Rough Bronze Leggings" },
+  },
+  {
+    "Skinning",
+    "Leatherworking",
+    { "Light Armor Kit", "Handstitched Leather Boots", "Handstitched Leather Belt", "Fine Leather Belt" },
+  },
+  { "Herbalism", "Tailoring", { "Brown Linen Vest", "Linen Cloak", "Heavy Linen Gloves", "Brown Linen Robe" } },
+  { "Mining", "Engineering", { "Rough Blasting Powder", "Rough Dynamite", "Arclight Spanner", "Rough Copper Bomb" } },
+}
+local ITEM_ID = {}
+for id, it in pairs(D.items) do
+  if not ITEM_ID[it.name] or id < ITEM_ID[it.name] then ITEM_ID[it.name] = id end
+end
+local function tradePlan(race, class)
+  local h = 0
+  for ch in (race .. class):gmatch(".") do
+    h = h + ch:byte()
+  end
+  local pair, other = TRADES[h % #TRADES + 1], TRADES[(h + 2) % #TRADES + 1]
+  local gather, craft, made = pair[1], pair[2], pair[3]
+  -- { level, moment, fields }
+  local plan = {}
+  local function at(level, k, fields) table.insert(plan, { level, k, fields }) end
+  local function make(level, n) at(level, "made", { item = made[n], n = n == 1 and 5 or 1 }) end
+  local way = h % 4
+  if way == 3 then -- (a gatherer first, a craft late, a cook's skill between)
+    at(6, "prof", { name = gather, learned = true })
+    at(10, "prof", { name = "Cooking", learned = true })
+    at(12, "prof", { name = gather, rank = "journeyman" })
+    at(16, "prof", { name = craft, learned = true })
+    make(17, 1)
+    at(22, "prof", { name = craft, rank = "journeyman" })
+    make(23, 2)
+    return plan
+  end
+  at(5, "prof", { name = gather, learned = true })
+  at(5, "prof", { name = craft, learned = true })
+  make(7, 1)
+  at(10, "prof", { name = gather, rank = "journeyman" })
+  at(10, "prof", { name = craft, rank = "journeyman" })
+  make(12, 2)
+  if way == 1 then -- (the craft given up for another)
+    at(15, "prof", { name = craft, dropped = true })
+    at(15, "prof", { name = other[2], learned = true })
+    at(18, "made", { item = other[3][1], n = 4 })
+    at(20, "prof", { name = gather, rank = "expert" })
+    at(24, "prof", { name = other[2], rank = "journeyman" })
+    at(25, "made", { item = other[3][2], n = 1 })
+  elseif way == 2 then -- (the gathering given up, taken up again later)
+    at(14, "prof", { name = gather, dropped = true })
+    at(20, "prof", { name = craft, rank = "expert" })
+    at(22, "prof", { name = gather, learned = true, again = true })
+    make(24, 3)
+  else
+    at(20, "prof", { name = gather, rank = "expert" })
+    at(20, "prof", { name = craft, rank = "expert" })
+    make(21, 3)
+    make(26, 4)
+  end
+  return plan
+end
+
 local function play(race, class, side)
   side = side or SIDE[race] or "horde"
   local c = {
@@ -466,8 +543,9 @@ local function play(race, class, side)
   local zone = road[1]
   local at = zone -- (where I am: the quests' land, or an ender's far away)
   local clock, toLevel = 1790000000 + 8 * 3600, 0
-  local ch, mates, grouped, told = nil, {}, false, 0
+  local ch, party, grouped, told = nil, {}, false, 0
   local pet, petFamily, lessonLevel, powers, lastBeast = nil, nil, 0, {}, nil
+  local trades, tradeAt = tradePlan(race, class), 1
   -- (an area's land: Coldridge Valley lies in Dun Morogh)
   local function landOf(id)
     for _ = 1, 4 do
@@ -499,6 +577,8 @@ local function play(race, class, side)
       fields.zone, fields.sub = zoneName(at), subName(at)
     end
     fields.k, fields.at, fields.night, fields.grouped = k, clock, night() or nil, grouped or nil
+    -- (who was with me when a quest's work was done, or it was handed in)
+    if grouped and (k == "done" or k == "quest") then fields.with = { party[1], party[2] } end
     table.insert(ch.log, fields)
     return fields
   end
@@ -585,6 +665,26 @@ local function play(race, class, side)
         powers[k[2]] = true
         wait(10 * 60)
         moment("learned", { spells = { k[2] } })
+      end
+    end
+    -- the trades, at their levels (what was made: its link, as the game writes it)
+    while trades[tradeAt] and trades[tradeAt][1] <= level do
+      local t = trades[tradeAt]
+      tradeAt = tradeAt + 1
+      wait(5 * 60)
+      local fields = {}
+      for k, v in pairs(t[3]) do
+        fields[k] = v
+      end
+      if t[2] == "made" then
+        local id = ITEM_ID[fields.item]
+        fields.item = nil
+        if id then
+          fields.id, fields.link = id, ("|cffffffff|Hitem:%d|h[%s]|h|r"):format(id, D.items[id].name)
+          moment("made", fields)
+        end
+      else
+        moment(t[2], fields)
       end
     end
   end
@@ -703,6 +803,7 @@ local function play(race, class, side)
       if elite and not grouped then
         grouped = true
         local a, b = MATES[(told % #MATES) + 1], MATES[((told + 3) % #MATES) + 1]
+        party = { a, b }
         moment("group", { name = a })
         moment("group", { name = b })
       end

@@ -349,15 +349,20 @@ local function life(race, class, hc, from, to)
   local clock, isNight = 1790000000, false
   local questId, returns = 1000000, {} -- quests whose work was told, not yet returned (ids no real quest has: no story of its own)
   local lastThing -- the thing the last quest for a thing asked for
-  local grouped = false
+  local old = chance(0.2) -- (a record from before the party at a quest's end was kept)
+  local grouped, party = false, {}
   local function m(k, fields)
     fields = fields or {}
     clock = clock + (chance(0.15) and rand(3600, 10000) or rand(60, 900))
     if chance(0.15) then isNight = not isNight end
-    if grouped and chance(0.1) then grouped = false end
+    if grouped and chance(0.1) then
+      grouped, party = false, {}
+    end
     fields.k, fields.zone, fields.sub, fields.night, fields.at =
       k, fields.zone or zone[1], fields.sub or sub, isNight or nil, clock
     fields.grouped = grouped or nil
+    -- (who was with me then: an older record knows only that someone was)
+    if grouped and (k == "done" or k == "quest") and #party > 0 and not old then fields.with = { unpack(party) } end
     return fields
   end
   while level <= to do
@@ -548,7 +553,9 @@ local function life(race, class, hc, from, to)
         add(m("close", { foe = chance(0.8) and one(CREATURES)[1] or nil, hp = rand(1, 9) }))
       elseif r <= 63 then
         grouped = true -- the company stays a while
-        add(m("group", { name = one(MATES), class = "WARRIOR" }))
+        local mate = one(MATES)
+        if #party < 3 then table.insert(party, mate) end
+        add(m("group", { name = mate, class = "WARRIOR" }))
       elseif r <= 66 then
         local d = one(DUNGEONS)
         add(m("dungeon", { name = d[1] }))
@@ -961,15 +968,50 @@ for _, race in ipairs(RACES) do
   end
 end
 
--- New ways of fighting in the diary, one or two, tried at once or not.
+-- The entries kept between readings hold no record alive: thirty books
+-- read, then let go, leave nothing behind once collected.
+do
+  local probe, probed = setmetatable({}, { __mode = "k" }), 0
+  for k = 1, 30 do
+    local race = RACES[k % #RACES + 1]
+    local c = life(race, COMBOS[race][1], false, 1, 20)
+    if #c.chapters > 2 then
+      ns.writeBook(c)
+      probe[c], probed = true, probed + 1
+    end
+  end
+  if jit then jit.flush() end -- (LuaJIT's compiled code may hold the last one; the game's Lua has none)
+  collectgarbage("collect")
+  collectgarbage("collect")
+  local left = 0
+  for _ in pairs(probe) do
+    left = left + 1
+  end
+  if probed < 10 or left > 0 then
+    problem("kept entries", ("%d of %d records still alive once let go"):format(left, probed), "")
+  end
+end
+
+-- New ways of fighting in the diary, one or two, cast at once or not (a
+-- quest's fight after them is no cast: never told as used).
 local plain = {} -- (quests with no story of their own: the fight is the trainer's)
 for id = 300, 900 do
   if not ns.data.why[id] and #plain < 60 then table.insert(plain, id) end
 end
+local USED = { "put it to work", "put them to work", "answered the first time" }
 for r, race in ipairs(RACES) do
   for life = 1, 6 do
     local spells = life % 2 == 1 and { "Frostbolt", "Arcane Missiles" } or { "Frostbolt" }
-    local log = { { k = "learned", spells = spells, zone = "Westfall", sub = "Sentinel Hill", at = 100 } }
+    local log = {
+      {
+        k = "learned",
+        spells = spells,
+        used = life <= 2 and spells or nil,
+        zone = "Westfall",
+        sub = "Sentinel Hill",
+        at = 100,
+      },
+    }
     if life <= 4 then
       table.insert(log, {
         k = "done",
@@ -998,6 +1040,11 @@ for r, race in ipairs(RACES) do
     if race == "Skyborne" then c.faction = "alliance" end
     for _, e in ipairs(ns.writeBook(c).chapters) do -- (the chapter: tried already?)
       inspect(race .. " new ways diary", e.text)
+      for _, claim in ipairs(USED) do
+        if life > 2 and e.text:find(claim, 1, true) then
+          problem(race .. " new ways", "a spell told as used with no cast recorded", e.text)
+        end
+      end
     end
   end
 end
@@ -1535,6 +1582,127 @@ do
       end
     end
   end
+  -- strange lands, two at once (no city among them), for every race's own words
+  local FAR = {
+    "Stranglethorn Vale",
+    "Badlands",
+    "Desolace",
+    "Feralas",
+    "Tanaris",
+    "Arathi Highlands",
+    "Swamp of Sorrows",
+    "Thousand Needles",
+    "Stonetalon Mountains",
+    "Dustwallow Marsh",
+    "Searing Gorge",
+    "Hillsbrad Foothills",
+  }
+  for r, race in ipairs(RACES) do
+    for life = 1, 3 do
+      local chapters = {}
+      for n = 1, 6 do
+        local a, b = FAR[(r + life + 2 * n) % #FAR + 1], FAR[(r + life + 2 * n + 1) % #FAR + 1]
+        chapters[n] = {
+          start = { level = 30, zone = "Wetlands", sub = "Menethil Harbor" },
+          log = {
+            { k = "place", new = "zone", zone = a, sub = a, at = n * 100000 + 10 },
+            { k = "place", new = "zone", zone = b, sub = b, at = n * 100000 + 20 },
+          },
+          ended = { level = 30, place = "Menethil Harbor", how = "rest" },
+          kills = {},
+          quests = 0,
+          played = 3600,
+          gold = 0,
+        }
+      end
+      local c = {
+        guid = "far-" .. race .. life,
+        race = race,
+        class = COMBOS[race][1],
+        began = { level = 1 },
+        chapters = chapters,
+      }
+      if race == "Skyborne" then c.faction = life % 2 == 0 and "horde" or "alliance" end
+      for i, e in ipairs(ns.writeBook(c).chapters) do
+        inspect(race .. " far lands diary " .. i, e.text)
+      end
+    end
+  end
+  -- a chain's end told an entry or more after its middle ("the old business")
+  for r, race in ipairs(RACES) do
+    local chapters = {}
+    for j = 1, 6 do
+      local chain = threads[(r * 5 + j) % #threads + 1]
+      for k, log in ipairs({
+        { { k = "quest", id = chain[1], giver = "Sten Stoutarm", told = true } },
+        { { k = "kill", name = "Mottled Boar", kind = "Boar", first = true } },
+        { { k = "quest", id = chain[3], giver = "Sten Stoutarm", told = true } },
+      }) do
+        local n = (j - 1) * 3 + k
+        log[1].at, log[1].zone, log[1].sub = n * 100000 + 10, "Wetlands", "Menethil Harbor"
+        chapters[n] = {
+          start = { level = 20, zone = "Wetlands", sub = "Menethil Harbor" },
+          log = log,
+          ended = { level = 20, place = "Menethil Harbor", how = "rest" },
+          kills = {},
+          quests = 1,
+          played = 3600,
+          gold = 0,
+        }
+      end
+    end
+    local c = { guid = "old-" .. race, race = race, class = COMBOS[race][1], chapters = chapters }
+    if race == "Skyborne" then c.faction = r % 2 == 0 and "horde" or "alliance" end
+    for i, e in ipairs(ns.writeBook(c).chapters) do
+      inspect(race .. " old business diary " .. i, e.text)
+    end
+  end
+  -- two climaxes of one chain in a stretch, too long for one sentence: the
+  -- second told after night fell or not, in the same land or another
+  local twins = {}
+  for root, ids in pairs(members) do
+    local heavy = {}
+    for _, id in ipairs(ids) do
+      if whys[id][1] == 3 and not K.quests[id] then table.insert(heavy, id) end
+    end
+    table.sort(heavy)
+    if #heavy >= 2 and #whys[heavy[1]][2] + #whys[heavy[2]][2] > 190 then
+      table.insert(twins, { heavy[1], heavy[2], root = root })
+    end
+  end
+  table.sort(twins, function(x, y) return x[1] < y[1] end)
+  assert(#twins > 0, "no chain with two climaxes")
+  for r, race in ipairs(RACES) do
+    local chapters = {}
+    for n = 1, 8 do
+      local pair = twins[(r * 3 + n) % #twins + 1]
+      local dark, moved = n % 2 == 0, n % 4 >= 2
+      chapters[n] = {
+        start = { level = 20, zone = "Westfall", sub = "Sentinel Hill" },
+        log = {
+          { k = "done", id = pair[1], giver = "Gryan Stoutmantle", zone = "Westfall", at = n * 100000 + 10 },
+          {
+            k = "done",
+            id = pair[2],
+            giver = "Gryan Stoutmantle",
+            zone = moved and "Duskwood" or "Westfall",
+            night = dark or nil,
+            at = n * 100000 + 20,
+          },
+        },
+        ended = { level = 20, place = "Sentinel Hill", how = "rest" },
+        kills = {},
+        quests = 2,
+        played = 3600,
+        gold = 0,
+      }
+    end
+    local c = { guid = "twin-climax-" .. race, race = race, class = COMBOS[race][1], chapters = chapters }
+    if race == "Skyborne" then c.faction = r % 2 == 0 and "horde" or "alliance" end
+    for i, e in ipairs(ns.writeBook(c).chapters) do
+      inspect(race .. " follow-up diary " .. i, e.text)
+    end
+  end
   -- stretches of nothing but small work, early in a life; then the work
   -- of one people (whom the rest of the work was for), a story or a foe beside
   local GIVERS = { "Sten Stoutarm", "Gryan Stoutmantle", "Executor Zygand", "Gornek" }
@@ -1745,6 +1913,19 @@ do
     local c = { guid = "summoned-" .. race, race = race, class = "WARLOCK", chapters = chapters }
     for i, e in ipairs(ns.writeBook(c).chapters) do
       inspect(race .. " summoning diary " .. i, e.text)
+    end
+  end
+  -- (a first demon of each kind, its summoning not taught before in the journal)
+  for _, race in ipairs({ "Human", "Orc", "Gnome", "Scourge", "Troll", "Dwarf" }) do
+    for life = 1, 3 do
+      local chapters = {}
+      for n, family in ipairs({ "Imp", "Voidwalker", "Succubus", "Felhunter" }) do
+        chapters[n] = stretch(n, { { k = "demon", name = "Zig" .. n, family = family, at = n * 100000 + 10 } })
+      end
+      local c = { guid = "first-demon-" .. race .. life, race = race, class = "WARLOCK", chapters = chapters }
+      for i, e in ipairs(ns.writeBook(c).chapters) do
+        inspect(race .. " first demon diary " .. i, e.text)
+      end
     end
   end
   local heavy = {}
@@ -2465,6 +2646,28 @@ do
       { k = "skill", name = "Enchanting", rank = 300 },
       { k = "skill", name = "Tailoring", rank = 300 },
     },
+    -- (in the order they came: herbalism begun, given up, then alchemy)
+    {
+      want = { "herbalism", " it ", "alchemy" },
+      never = { "herbalism and alchemy", "aside herbalism", "herbalism aside" },
+      { k = "prof", name = "Herbalism", learned = true },
+      { k = "prof", name = "Herbalism", dropped = true },
+      { k = "prof", name = "Alchemy", learned = true },
+    },
+    -- (given up and taken up again straight after: no change, nothing told)
+    {
+      want = {},
+      never = { "herbalism", "for good" },
+      { k = "prof", name = "Herbalism", dropped = true },
+      { k = "prof", name = "Herbalism", learned = true, again = true },
+    },
+    -- (a trade begun, and its first rank: "in it")
+    {
+      want = { "mining", "journeyman" },
+      never = { "journeyman in mining", "rank in mining" },
+      { k = "prof", name = "Mining", learned = true },
+      { k = "prof", name = "Mining", rank = "journeyman" },
+    },
   }
   for r, race in ipairs(RACES) do
     for life = 1, 3 do
@@ -2488,6 +2691,7 @@ do
           played = 3600,
           gold = 0,
           want = s.want,
+          never = s.never,
         }
       end
       local c = {
@@ -2509,6 +2713,15 @@ do
         end
         if (e.text or ""):find("swords", 1, true) then
           problem(race .. " trades diary " .. i, "a weapon's skill told as a trade", e.text)
+        end
+        for _, words in ipairs(chapters[i].never or {}) do
+          if (e.text or ""):lower():find(words, 1, true) then
+            problem(
+              race .. " trades diary " .. i,
+              "trades told out of order, or a change that wasn't: " .. words,
+              e.text
+            )
+          end
         end
       end
     end
@@ -2548,6 +2761,7 @@ do
       id = 218,
       giver = "Grelin Whitebeard",
       grouped = true,
+      with = { "Oblock", "Kyle", "Fkn" },
       objectives = { { type = "item", name = "Grelin Whitebeard's Journal", n = 1 } },
     }),
     at(
@@ -2579,6 +2793,56 @@ do
   inspect("benchmark diary", text)
   for _, want in ipairs({ "Oblock, Kyle and Fkn", "herbalism", "my own health" }) do
     if not text:find(want, 1, true) then problem("benchmark diary", "what mattered is lost: " .. want, text) end
+  end
+end
+
+-- The company of a deed: who was with me when it was done, never one who
+-- had left (Alice joins, leaves, Bob joins, the quest is done); an older
+-- record, which knows only that I was in company, names no one in the deed.
+do
+  local Z, V = "Dun Morogh", "Coldridge Valley"
+  local function at(t, m)
+    m.at, m.zone, m.sub = 1000 + t * 60, m.zone or Z, m.sub or V
+    return m
+  end
+  for _, old in ipairs({ false, true }) do
+    local c = {
+      guid = old and "company-old" or "company",
+      race = "Dwarf",
+      class = "WARRIOR",
+      chapters = {
+        {
+          start = { level = 5, zone = Z, sub = V },
+          log = {
+            at(1, { k = "group", name = "Alice", class = "MAGE", grouped = true }),
+            at(2, { k = "group", name = "Bob", class = "PRIEST", grouped = true }),
+            at(3, {
+              k = "done",
+              id = 218,
+              giver = "Grelin Whitebeard",
+              grouped = true,
+              with = not old and { "Bob" } or nil,
+              objectives = { { type = "item", name = "Grelin Whitebeard's Journal", n = 1 } },
+            }),
+            at(4, { k = "quest", id = 218, giver = "Grelin Whitebeard", ender = "Grelin Whitebeard", told = true }),
+          },
+          ended = { level = 5, place = "Anvilmar", how = "rest" },
+          kills = {},
+          quests = 1,
+          played = 3600,
+          gold = 0,
+        },
+      },
+    }
+    local text = ns.writeBook(c).chapters[1].text or ""
+    inspect("company diary", text)
+    if not old and not text:find("With Bob, I", 1, true) then
+      problem("company diary", "the deed not told with who was there", text)
+    end
+    if text:find("Alice and Bob, I", 1, true) or text:find("With Alice", 1, true) then
+      problem("company diary", "one who had left told in the deed", text)
+    end
+    if old and text:find("^With ") then problem("company diary", "an older record's deed told with names", text) end
   end
 end
 

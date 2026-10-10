@@ -17,7 +17,11 @@ kind: c-prof
 - [master] reached the height of {prof}
 - [master one] mastered {prof}, as far as anyone could teach it
 - [dropped] gave up {prof}
-- [dropped] set {prof} aside for good
+- [dropped] set {prof} aside
 - [dropped] put {prof} behind me
 - [rank one since] rose to {rank} rank in {prof}, which I had first taken up {began}
 - [rank one since] trained up to {rank} in {prof}, a long way from my first lessons {began}
+- [dropped it] gave it up
+- [dropped it] set it aside
+- [rank it] rose to {rank} rank in it
+- [rank it] trained up to {rank} in it
