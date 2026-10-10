@@ -107,7 +107,8 @@ its decisions: PLAN.md (the full chapter prose was dropped on 10 October
   `UnitTokenFromGUID`, else from a creature of the same kind seen; and a
   quest's count gone up for a creature no kill told: another's blow on one I
   tagged, which the game credits me with) and `Life.lua` (company, dungeons,
-  learning, trades, gear, loot, pets (tamed: soon after a Tame Beast; a new
+  learning, trades (taken up, a rank, given up when the whole skills list
+  lacks it, taken up again), gear, loot, pets (tamed: soon after a Tame Beast; a new
   one otherwise came from the stable, noted quietly), a warlock's first demon
   of each kind and a druid's first form (learned in the journal), the first
   bag, the first gold piece, the first ride (riding known at the journal's
@@ -215,9 +216,14 @@ An entry is the stretch looked back on at its rest, by what weighs most:
   (`d-foes`; a rare by its name; "both" never before a kind), new lands
   (`d-land`; a city is no country: `[!town]`), a lesson's own line
   (`lesson`, `[spell:Life_Tap]`) or a new way of fighting (`d-powers`,
-  `[used]` when a quest's foes were fought after it), company, a trade, a
-  ride, the first bag (by its name and room) or gold, the pet named again
-  (`d-pet`);
+  `[used]` when a quest's foes were fought after it), company, a new rank
+  in a trade, a ride, the first bag (by its name and room) or gold, the pet
+  named again (`d-pet`);
+- the trades of the stretch, one sentence (`c-prof`: `[new]`, `[again]` after
+  one was given up, `[rank]`, `[master]` at 300, `[dropped]`; one verb for
+  those at the same stage, the stages in the order they came, what my hands
+  made beside them, never the piece worn): a trade begun, ended or mastered
+  is always told, a rank alone in the room left; a weapon's 300 is no news;
 - the small work (`d-chores`, never counted; "the rest of it" only `[after]`
   something) only when nothing else was;
 - the ending: a thought on a danger (`d-close`: `[hard]`, `[near]`,

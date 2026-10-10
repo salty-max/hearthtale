@@ -5,6 +5,17 @@ kind: c-prof
 - [new] began to learn {prof}
 - [new] started learning {prof}
 - [new] made a start at {prof}
-- [new] learned the first of {prof}
 - [new] set my hand to {prof}
 - [new] began my training in {prof}
+- [again] took up {prof} again, from the very beginning
+- [again] went back to {prof}, starting over from nothing
+- [again] returned to {prof}, a beginner at it once more
+- [rank] rose to {rank} rank in {prof}
+- [rank] trained up to {rank} in {prof}
+- [rank] earned {arank}'s standing in {prof}
+- [master one] came as far in {prof} as any trainer could take me
+- [master] reached the height of {prof}
+- [master one] mastered {prof}, as far as anyone could teach it
+- [dropped] gave up {prof}
+- [dropped] set {prof} aside for good
+- [dropped] put {prof} behind me

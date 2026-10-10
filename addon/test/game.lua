@@ -231,12 +231,21 @@ C_Item.GetItemInfoInstant = function(link)
 end
 -- a druid's form (GetShapeshiftFormID's: 1 cat, 5 bear...)
 function GetShapeshiftFormID() return state.form end
--- Skills: { name, header, max }, as the skills pane lists them.
+-- Skills: { name, header, max, folded }, as the skills pane lists them (a
+-- folded header hides what is under it).
 TRADE_SKILLS, SECONDARY_SKILLS = "Professions", "Secondary Skills"
-function GetNumSkillLines() return #state.skills end
+local function shown()
+  local out, folded = {}, false
+  for _, s in ipairs(state.skills) do
+    if s[2] then folded = s[4] or false end
+    if s[2] or not folded then table.insert(out, s) end
+  end
+  return out
+end
+function GetNumSkillLines() return #shown() end
 function GetSkillLineInfo(i)
-  local s = state.skills[i]
-  return s[1], s[2], nil, nil, nil, nil, s[3]
+  local s = shown()[i]
+  return s[1], s[2], s[2] and not s[4] or nil, nil, nil, nil, s[3]
 end
 function IsMounted() return state.mounted == true end
 -- (the player's buffs, by index: { name, id })

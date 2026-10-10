@@ -14,7 +14,7 @@ I began in Coldridge Valley, with Ironforge behind my name and the wish to bring
 
 ## Entry 2 (levels 4 to 7)
 
-The gnomes of Tinker Town knew better than anyone what a lost home costs, and I set out in Anvilmar with my own all the dearer for it. I began to learn skinning. Wearing a Handstitched Leather Vest that I had made myself was a different pleasure from wearing anything found or given. I took the measure of Timber and found my own was enough, which is the kind of sum I like.
+The gnomes of Tinker Town knew better than anyone what a lost home costs, and I set out in Anvilmar with my own all the dearer for it. I set my hand to skinning and leatherworking. Wearing a Handstitched Leather Vest that I had made myself was a different pleasure from wearing anything found or given. I took the measure of Timber and found my own was enough, which is the kind of sum I like.
 
 I slew Vagash, the beast preying on the Amberstill rams while most of Magni's army was away at war. Hunter's Mark is mine now, and no quarry of mine will vanish into the crowd. I smelled the Thunderbrew Distillery before I had properly reached Kharanos. Smoke rose above the houses, where dwarves and gnomes crowded together against the cold, and I felt my shoulders ease at the sight.
 

@@ -64,7 +64,7 @@ const KINDS: Record<string, string[]> = {
   // a fine find (writing it as a clause: "I found {item}")
   "c-loot": ["item"],
   // a trade taken up
-  "c-prof": ["prof", "rank"],
+  "c-prof": ["prof", "rank", "arank"],
   // a class's own quest turned in: what it taught ({pet}: "an imp", for a summoning)
   "class-reward": ["giver", "spell", "pet"],
   // a spell with a line of its own ([spell:Life Tap]), when learned
@@ -120,10 +120,10 @@ const KINDS: Record<string, string[]> = {
 };
 const VOICE = ["home", "kin", "faith", "weapon"];
 const TAGS = ["after", "again", "air", "ally", "aquatic", "away", "bear", "beast", "camp", "capital", "cat", "company", "cenarion",
-  "corpse", "delve", "demon", "drowning", "earth", "elite", "fall", "felguard", "felhunter", "felsteed", "fire", "horse", "kodo", "mechanostrider", "ram", "raptor", "saber", "skeletal", "warhorse", "wolf", "first", "found", "made", "held", "trinket",
+  "corpse", "delve", "demon", "dropped", "drowning", "earth", "elite", "fall", "felguard", "felhunter", "felsteed", "fire", "horse", "kodo", "mechanostrider", "ram", "raptor", "saber", "skeletal", "warhorse", "wolf", "first", "found", "made", "held", "trinket",
   "flight", "foe", "form", "grouped", "hard", "hc", "healer", "high", "highborne", "home", "hosts", "imp", "inside",
-  "known", "last", "late", "lava", "leper", "looted", "low", "moonkin", "moved", "nature", "near", "neutral", "new", "night",
-  "one", "people", "player", "plural", "rescue", "self", "settled", "steed", "succubus", "summon", "portal", "teleport", "thread", "town",
+  "known", "last", "late", "lava", "master", "leper", "looted", "low", "moonkin", "moved", "nature", "near", "neutral", "new", "night",
+  "one", "people", "player", "plural", "rank", "rescue", "self", "settled", "steed", "succubus", "summon", "portal", "teleport", "thread", "town",
   "travel", "tree", "two", "undead", "used", "victim", "villain", "voidwalker", "water", "zalazane"];
 const RACES = ["Human", "Dwarf", "NightElf", "Gnome", "Orc", "Troll", "Tauren", "Scourge", "Skyborne"];
 const CLASSES = ["WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK", "DRUID"];

@@ -227,6 +227,8 @@ local function gather(d, c, ch)
     kinds = {}, -- [a creature killed] = its kind
     finds = {}, -- loot of note (epic and above)
     gear = {}, -- worn for the first time: blue and better, or made by me, while the levels are low
+    trades = {}, -- a trade taken up, again, a new rank, mastered, given up
+    made = {}, -- what my hands made
     fires = {}, -- the stops by a campfire
     titles = {}, -- [quest id]: its title, as the game gives it
     raids = {},
@@ -271,8 +273,15 @@ local function gather(d, c, ch)
           table.insert(f.spells, sp)
         end
       end
-    elseif FIRSTS[m.k] or (m.k == "prof" and m.learned) then -- (a trade taken up)
+    elseif FIRSTS[m.k] then
       table.insert(f.firsts, m)
+    elseif m.k == "prof" and m.name then -- (a trade taken up, again, a rank, given up)
+      local stage = m.dropped and "dropped" or m.again and "again" or m.learned and "new" or "rank"
+      table.insert(f.trades, { name = m.name, stage = stage, rank = m.rank, i = i })
+    elseif m.k == "skill" and m.rank == 300 and d.trades[m.name or ""] then -- (as far as a trainer takes it)
+      table.insert(f.trades, { name = m.name, stage = "master", i = i })
+    elseif m.k == "made" and m.link then
+      table.insert(f.made, { m = m, i = i })
     elseif m.k == "rare" and m.name then
       table.insert(f.foes, { name = m.name, rank = 1, i = i })
       f.rares[m.name] = true
@@ -1181,24 +1190,74 @@ local function entry(d, n, ch)
     )
   end
 
-  -- the lesser firsts: a trade taken up, a ride, the first bag, the first gold
+  -- the trades of the stretch, in one sentence: taken up, taken up again, a
+  -- new rank, as far as a trainer takes them, given up; one verb for those
+  -- at the same stage, the stages in the order they came, and what my hands
+  -- made beside them (not the piece worn: told already). A rank alone is a
+  -- lesser thing; a trade begun, ended or mastered, a moment of a life.
+  if #f.trades > 0 then
+    local groups, byStage = {}, {}
+    for _, t in ipairs(f.trades) do
+      local key = t.stage .. (t.rank or "")
+      local g = byStage[key]
+      if not g then
+        g = { stage = t.stage, rank = t.rank, names = {}, seen = {} }
+        byStage[key] = g
+        table.insert(groups, g)
+      end
+      if not g.seen[t.name] then
+        g.seen[t.name] = true
+        table.insert(g.names, t.name:lower())
+      end
+    end
+    local clauses, weighty = {}, false
+    for k, g in ipairs(groups) do
+      local clause = b:say(
+        "c-prof",
+        n .. "|diary|trade" .. k,
+        { prof = listing(g.names), rank = g.rank, arank = g.rank and article(g.rank) },
+        tags({ [g.stage] = true, one = #g.names == 1 or nil }),
+        nil,
+        true
+      )
+      if clause then table.insert(clauses, clause) end
+      if g.stage ~= "rank" then weighty = true end
+    end
+    local things, listed = {}, {}
+    for _, x in ipairs(f.made) do
+      local name = x.m.link:match("%[(.-)%]")
+      if name and not listed[name] and not (worn and worn.m.link == x.m.link) and #things < 2 then
+        listed[name] = true
+        local one = W.itemName(name)
+        table.insert(things, (x.m.n or 1) > 1 and (one == name and name or plural(name)) or one)
+      end
+    end
+    if #clauses > 0 and #things > 0 then table.insert(clauses, "kept my hands busy with " .. listing(things)) end
+    if #clauses > 0 then
+      local joined = clauses[1]
+      if #clauses > 1 then
+        local ands = false
+        for _, clause in ipairs(clauses) do
+          if clause:find(" and ", 1, true) then ands = true end
+        end
+        joined = table.concat(clauses, ", ", 1, #clauses - 1)
+          .. ((ands or #clauses > 2) and ", and " or " and ")
+          .. clauses[#clauses]
+      end
+      local text = "I " .. joined .. "."
+      if weighty then
+        add(text, true, f.trades[1].i)
+      else
+        more(text, false, f.trades[1].i)
+      end
+    end
+  end
+
+  -- the lesser firsts: a ride, the first bag, the first gold
   for k, m in ipairs(f.firsts) do
     if not MILESTONE[m.k] then
       local key, text = "small" .. k, nil
-      if m.k == "prof" then
-        for try = 1, 4 do
-          local clause = b:say(
-            "c-prof",
-            n .. "|diary|" .. key .. (try > 1 and try or ""),
-            { prof = m.name:lower() },
-            tags({ new = true, one = true }),
-            nil,
-            true
-          )
-          text = clause and ("I " .. clause .. ".")
-          if text then break end
-        end
-      else
+      do
         -- (the first bag: what it is, its room; the first mount: which)
         local item = m.k == "bag" and m.link and m.link:match("%[(.-)%]")
         local values = {
@@ -1386,12 +1445,20 @@ function ns.writeBook(c)
     -- seen for the first time, the record can't know it)
     late = (c.began and c.began.level or 1) > 1,
   }
+  -- (late: nor a first fire, nor a first ground below the islands)
   if d.late then
     d.away, d.fireSeen = true, true
-  end -- (nor a first fire, nor a first ground below the islands)
+  end
   d.book.ownGap = 18 -- (one line a kind an entry: the race's own come back later than a chapter's)
   for _, way in ipairs(CLASS_FIGHT[c.class or ""] or {}) do
     d.ways[way] = true
+  end
+  -- (the trades: a skill of one at 300 is news, a weapon's is not)
+  d.trades = {}
+  for _, known in ipairs({ c.profs or {}, c.dropped or {} }) do
+    for name in pairs(known) do
+      if not name:find("Riding") then d.trades[name] = true end
+    end
   end
   for _, sp in ipairs(FIRST_SPELLS[c.class or ""] or {}) do
     d.known[sp] = true
