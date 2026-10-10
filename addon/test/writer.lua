@@ -2384,6 +2384,113 @@ for _, race in ipairs(RACES) do
   end
 end
 
+-- The trades of a stretch, in one sentence: two taken up together, two new
+-- ranks, mixed stages (each its own verb), a craft's work beside them, a
+-- trade given up and another taken up again, one at 300 (a weapon's 300 is
+-- no news), the secondary trades; known when the journal began, quiet.
+do
+  local link = function(name) return "|cff1eff00|Hitem:2580::::::::20:::::|h[" .. name .. "]|h|r" end
+  local STRETCHES = {
+    {
+      want = { "skinning and leatherworking" },
+      { k = "prof", name = "Skinning", learned = true },
+      { k = "prof", name = "Leatherworking", learned = true },
+    },
+    {
+      want = { "journeyman", "tailoring and first aid" },
+      { k = "prof", name = "Tailoring", rank = "journeyman" },
+      { k = "prof", name = "First Aid", rank = "journeyman" },
+    },
+    {
+      want = { "mining", "expert", "tailoring" },
+      { k = "prof", name = "Mining", learned = true },
+      { k = "prof", name = "Tailoring", rank = "expert" },
+    },
+    {
+      want = { "cooking", "Linen Bandages", "a Brown Linen Vest" },
+      { k = "prof", name = "Cooking", learned = true },
+      { k = "made", link = link("Linen Bandage"), n = 6 },
+      { k = "made", link = link("Brown Linen Vest"), n = 1 },
+    },
+    {
+      want = { "herbalism", "alchemy" },
+      { k = "prof", name = "Herbalism", dropped = true },
+      { k = "prof", name = "Alchemy", learned = true, again = true },
+    },
+    {
+      want = { "tailoring" },
+      { k = "skill", name = "Tailoring", rank = 300 },
+      { k = "skill", name = "Swords", rank = 300 },
+    },
+    {
+      want = { "fishing" },
+      { k = "prof", name = "Fishing", learned = true },
+      { k = "prof", name = "Mining", rank = "artisan" },
+    },
+    {
+      want = { "first aid", "cooking" },
+      { k = "prof", name = "First Aid", dropped = true },
+      { k = "prof", name = "Cooking", dropped = true },
+    },
+    {
+      want = { "alchemy" },
+      { k = "prof", name = "Alchemy", learned = true, again = true },
+    },
+    {
+      want = { "enchanting", "tailoring" },
+      { k = "skill", name = "Enchanting", rank = 300 },
+      { k = "skill", name = "Tailoring", rank = 300 },
+    },
+  }
+  for r, race in ipairs(RACES) do
+    for life = 1, 3 do
+      local chapters = {}
+      for n = 1, #STRETCHES do
+        local s = STRETCHES[(n + life + r) % #STRETCHES + 1]
+        local log = {}
+        for k, m in ipairs(s) do
+          local copy = { zone = "Wetlands", sub = "Menethil Harbor", at = n * 100000 + k * 60 }
+          for key, v in pairs(m) do
+            copy[key] = v
+          end
+          log[k] = copy
+        end
+        chapters[n] = {
+          start = { level = 30, zone = "Wetlands", sub = "Menethil Harbor" },
+          log = log,
+          ended = { level = 30, place = "Menethil Harbor", how = "rest" },
+          kills = {},
+          quests = 0,
+          played = 3600,
+          gold = 0,
+          want = s.want,
+        }
+      end
+      local c = {
+        guid = "trades-" .. race .. life,
+        race = race,
+        class = COMBOS[race][1],
+        faction = race == "Skyborne" and (life % 2 == 0 and "horde" or "alliance") or nil,
+        began = { level = 1 },
+        profs = { Tailoring = 300, Mining = 300, Enchanting = 300, Alchemy = 75, Fishing = 75 },
+        dropped = { Herbalism = true, ["First Aid"] = true, Cooking = true },
+        chapters = chapters,
+      }
+      for i, e in ipairs(ns.writeBook(c).chapters) do
+        inspect(race .. " trades diary " .. i, e.text)
+        for _, word in ipairs(chapters[i].want) do
+          if not (e.text or ""):find(word, 1, true) then
+            problem(race .. " trades diary " .. i, "a trade untold: " .. word, e.text or "")
+          end
+        end
+        if (e.text or ""):find("swords", 1, true) then
+          problem(race .. " trades diary " .. i, "a weapon's skill told as a trade", e.text)
+        end
+      end
+    end
+  end
+end
+
 -- Every sentence must be reachable by some life: the shared ones, each
 -- race's own, and each place's scenery.
 local unused = {}

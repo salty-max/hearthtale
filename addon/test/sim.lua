@@ -307,6 +307,26 @@ check(
   "a trade taken up, a new rank, riding learned"
 )
 check(#moments("learned") == 1 and #moments("learned")[1].spells == 2, "a trade's own spell isn't a trainer's lesson")
+-- A trade given up, and taken up again; a folded header hides trades, and
+-- nothing is given up for it.
+local skills = state.skills
+state.skills = {}
+for _, s in ipairs(skills) do
+  if s[1] ~= "Leatherworking" then table.insert(state.skills, s) end
+end
+fire("SKILL_LINES_CHANGED")
+local dropped = moments("prof")[#moments("prof")]
+check(
+  dropped.name == "Leatherworking" and dropped.dropped and J.profs.Leatherworking == nil,
+  "a trade given up: once, and no longer known"
+)
+state.skills[1] = { "Professions", true, nil, true }
+fire("SKILL_LINES_CHANGED")
+check(#moments("prof") == 3 and J.profs.Mining == 150, "a folded header in the skills pane: nothing given up")
+state.skills = skills
+fire("SKILL_LINES_CHANGED")
+local again = moments("prof")[#moments("prof")]
+check(again.name == "Leatherworking" and again.learned and again.again, "a trade taken up again, after it was given up")
 
 -- The first ride: on what.
 state.mounted, state.buffs = true, { { name = "Brown Ram", id = 6899 } }

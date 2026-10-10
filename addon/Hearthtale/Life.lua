@@ -99,18 +99,21 @@ end)
 -- ── professions ──────────────────────────────────────────────────────────────
 -- What the character knows of its trades: profs[name] = the rank's ceiling
 -- (75 apprentice, 150 journeyman, 225 expert, 300 artisan, 375 master). A new
--- trade, or a new rank, is a moment; riding is one too. Those known when the
--- journal first looks are noted quietly.
+-- trade, a new rank, a trade given up or taken up again is a moment; riding
+-- is one too. Those known when the journal first looks are noted quietly.
+-- (A trade is given up when the whole list no longer has it: a header folded
+-- in the skills pane hides its trades, and then nothing is given up.)
 local RANK_OF = { [75] = "apprentice", [150] = "journeyman", [225] = "expert", [300] = "artisan", [375] = "master" }
 local function trades()
-  local out = {}
+  local out, whole = {}, true
   if GetNumSkillLines and GetSkillLineInfo then
     if GetNumSkillLines() == 0 then return nil end -- not loaded yet (there are always weapons, languages)
     local section
     for i = 1, GetNumSkillLines() do
-      local name, header, _, _, _, _, max = GetSkillLineInfo(i)
+      local name, header, expanded, _, _, _, max = GetSkillLineInfo(i)
       if header then
         section = name
+        if not expanded then whole = false end
       elseif
         name
         and not secret(name)
@@ -125,24 +128,42 @@ local function trades()
       if name and not secret(name) then out[name] = max or 0 end
     end
   end
-  return out
+  return out, whole
+end
+local function sorted(t)
+  local keys = {}
+  for k in pairs(t) do
+    table.insert(keys, k)
+  end
+  table.sort(keys)
+  return keys
 end
 local function lookAtTrades(quiet)
   local c = char()
-  local list = trades()
+  local list, whole = trades()
   if not list then return end
   local known = c.profs
   c.profs = c.profs or {}
-  for name, max in pairs(list) do
-    local before = c.profs[name]
+  for _, name in ipairs(sorted(list)) do
+    local max, before = list[name], c.profs[name]
     c.profs[name] = max
     if known and not quiet then
       if name:find("Riding") and not before then
         moment("riding", { name = name })
       elseif not before then
-        moment("prof", { name = name, learned = true })
+        moment("prof", { name = name, learned = true, again = (c.dropped or {})[name] })
       elseif max > before and RANK_OF[max] then
         moment("prof", { name = name, rank = RANK_OF[max] })
+      end
+    end
+  end
+  if known and not quiet and whole then
+    for _, name in ipairs(sorted(c.profs)) do
+      if not list[name] and not name:find("Riding") then
+        c.profs[name] = nil
+        c.dropped = c.dropped or {}
+        c.dropped[name] = true
+        moment("prof", { name = name, dropped = true })
       end
     end
   end
