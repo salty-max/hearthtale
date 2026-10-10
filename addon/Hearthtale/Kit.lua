@@ -1,4 +1,4 @@
--- addon-kit 4ff33fd: a copy (kit:sync); edit ~/code/addon-kit/Kit.lua instead
+-- addon-kit 0bdf3bc: a copy (kit:sync); edit ~/code/addon-kit/Kit.lua instead
 -- The kit shared by Hearthtale, Lorekeeper's Codex and Explorer's Field
 -- Journal: the books' look and the pieces their windows are made of, each
 -- character's settings (taken from another, or by a code) and the welcome
@@ -653,7 +653,7 @@ function K.welcome(o)
     note:SetPoint("TOPLEFT", name, "BOTTOMLEFT", 0, -3)
     name:SetText(c.text)
     note:SetText(c.hint)
-    row.get = c.get
+    row.get, row.kind = c.get, c.options and "select" or "check"
     if c.options then
       name:SetPoint("TOPLEFT", 0, -3)
       note:SetWidth(WELCOME_TEXT - 190)
@@ -680,7 +680,7 @@ function K.welcome(o)
   -- The choices as they are now (after a copy, an import).
   local function refresh()
     for _, row in ipairs(rows) do
-      if row.box then
+      if row.kind == "check" then
         row.box:SetChecked(row.get() and true or false)
       else
         row.select:SetValue(row.get())
