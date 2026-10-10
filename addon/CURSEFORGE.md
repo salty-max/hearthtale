@@ -2,6 +2,9 @@
 
 <!-- Project description for curseforge.com (paste as the project's description). -->
 
+<!-- Summary (the project's summary on CurseForge and Wago, and the TOCs' Notes):
+Your character's own journal, written as you play: a diary entry in their voice at each rest, and an epitaph if a Hardcore life ends. -->
+
 **Your character's own journal, written as you play.** The addon records your life as it happens (every quest, foe, place and close call), and each time you rest (a logout at an inn, in a city or by a campfire) the stretch becomes a diary entry in your character's own voice: what mattered, and what it meant to them. On Hardcore, a death closes the book with an epitaph, and the life joins the Hall of the Fallen.
 
 For Classic Era (Hardcore, Season of Discovery) and World of Warcraft: Forever. A sibling of [Lorekeeper's Codex](https://www.curseforge.com/wow/addons/lorekeepers-codex) and [Explorer's Field Journal](https://github.com/salty-max/field-journal), in the same look (each in its own colours), but it stands alone.
