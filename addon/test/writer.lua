@@ -2834,10 +2834,10 @@ do
       { k = "prof", name = "Herbalism", dropped = true },
       { k = "prof", name = "Alchemy", learned = true },
     },
-    -- (given up and taken up again straight after: no change, nothing told)
+    -- (given up and taken up again straight after: one moment, a return)
     {
-      want = {},
-      never = { "herbalism", "for good" },
+      want = { "herbalism" },
+      never = { "for good", "aside herbalism and", "returned to herbalism" },
       { k = "prof", name = "Herbalism", dropped = true },
       { k = "prof", name = "Herbalism", learned = true, again = true },
     },

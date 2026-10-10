@@ -20,3 +20,4 @@ kind: rest
 - [!fire] My thoughts were free to drift as far as they liked {at}, now that my feet would not have to follow them.
 - I stopped {at}, laying the road's cares aside like a cloak I would not need again until I rose.
 - I settled down {at} and gave myself up to sleep, whatever dreams it meant to bring.
+- [home] Elune-adore, I thought as I rested {at}, for everyone still out on the roads.

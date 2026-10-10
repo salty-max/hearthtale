@@ -25,3 +25,6 @@ kind: c-prof
 - [dropped it] set it aside
 - [rank it] rose to {rank} rank in it
 - [rank it] trained up to {rank} in it
+- [back] gave up {prof} and soon came back to it
+- [back] set {prof} aside, then thought better of it
+- [back] put {prof} down and took it up again, beginning over

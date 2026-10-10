@@ -132,7 +132,7 @@ const TAGS = ["after", "again", "air", "ally", "aquatic", "away", "bear", "beast
   "flight", "foe", "form", "grouped", "hard", "hc", "healer", "high", "highborne", "home", "hosts", "imp", "inside",
   "known", "last", "late", "lava", "master", "leper", "looted", "low", "moonkin", "moved", "nature", "near", "neutral", "new", "night",
   "one", "people", "player", "plural", "rank", "rescue", "self", "settled", "steed", "succubus", "summon", "portal", "teleport", "thread", "town",
-  "travel", "tree", "two", "undead", "used", "victim", "villain", "voidwalker", "water", "who", "zalazane", "since", "fell", "died", "reviver", "it", "old", "change"];
+  "travel", "tree", "two", "undead", "used", "victim", "villain", "voidwalker", "water", "who", "zalazane", "since", "fell", "died", "reviver", "it", "old", "change", "back"];
 const RACES = ["Human", "Dwarf", "NightElf", "Gnome", "Orc", "Troll", "Tauren", "Scourge", "Skyborne"];
 const CLASSES = ["WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK", "DRUID"];
 const tagOk = (t: string) => {

@@ -38,7 +38,7 @@ The Horde is more peoples than one now, and I headed out in Razor Hill ready to 
 
 ## Entry 1 (levels 1 to 5)
 
-I began in Shadowglen, with Dolanaar the farthest place I could yet picture and the rest of Kalimdor no more than names across the water. Moonlight silvered the leaves of Teldrassil while owls called overhead. I listened between my footfalls, unwilling to hurry through so much quiet. I took Fel Moss from the grells that threatened Shadowglen, confirming Tarindrella's fear that its corruption was spreading through Teldrassil. My training gave me Moonfire, a new way to fight, and I was impatient for a chance to use it. Leaves and still water scented the houses around the moonwell in Dolanaar. The sentinels kept their patient watch on the road, and I let my guard down a little. I paused in Dolanaar, and let my strength return as slowly as a tree regrows its bark.
+I began in Shadowglen, with Dolanaar the farthest place I could yet picture and the rest of Kalimdor no more than names across the water. Moonlight silvered the leaves of Teldrassil while owls called overhead. I listened between my footfalls, unwilling to hurry through so much quiet. I took Fel Moss from the grells that threatened Shadowglen, confirming Tarindrella's fear that its corruption was spreading through Teldrassil. My training gave me Moonfire, a new way to fight, and I was impatient for a chance to use it. Leaves and still water scented the houses around the moonwell in Dolanaar. The sentinels kept their patient watch on the road, and I let my guard down a little. My thoughts were free to drift as far as they liked in Dolanaar, now that my feet would not have to follow them.
 
 ## Entry 2 (levels 5 to 6)
 
