@@ -15,7 +15,7 @@
         },
         {
           "began": 1790941640,
-          "diary": "The gnomes of Tinker Town knew better than anyone what a lost home costs, and I set out in Anvilmar with my own all the dearer for it. I began to learn skinning. I made a start at leatherworking. Both Timber and Vagash fell to me, and I came away from each with the sound of it still ringing in my ears. Hunter's Mark is mine now, and no quarry of mine will vanish into the crowd. I stopped in Kharanos, and found that sitting still took less practice than I had feared.",
+          "diary": "The gnomes of Tinker Town knew better than anyone what a lost home costs, and I set out in Anvilmar with my own all the dearer for it. I began to learn skinning. I made a start at leatherworking. Both Timber and Vagash fell to me, and I came away from each with the sound of it still ringing in my ears.\n\nHunter's Mark is mine now, and no quarry of mine will vanish into the crowd. I smelled the Thunderbrew Distillery before I had properly reached Kharanos. Smoke rose above the houses, where dwarves and gnomes crowded together against the cold, and I felt my shoulders ease at the sight. I stopped in Kharanos, and found that sitting still took less practice than I had feared.",
           "ended": 1790979755,
           "from": 4,
           "number": 2,
@@ -25,7 +25,7 @@
         },
         {
           "began": 1791012155,
-          "diary": "In Dun Morogh, I delivered the invisibility liquor to Maybell, so she could slip away from the Maclure Vineyards to see Tommy Joe. Thorgrim shared the road with me for a while. I tamed my first companion, a boar I called Bristle, and the road was never as lonely after. Bristle fell in Amberstill Ranch. Out here, it could as easily have been me. I came into Loch Modan for the first time, and the stonework there knew my people's hands even if the roads did not yet know my feet.",
+          "diary": "In Dun Morogh, I delivered the invisibility liquor to Maybell, so she could slip away from the Maclure Vineyards to see Tommy Joe. Thorgrim shared the road with me for a while. I tamed my first companion, a boar I called Bristle, and the road was never as lonely after. Bristle fell in Amberstill Ranch. Out here, it could as easily have been me. I came into Loch Modan for the first time, and the stonework there knew my people's hands even if the roads did not yet know my feet. The blue water of Loch Modan lay still behind the Stonewrought Dam. I knew dwarves built on a grand scale, but the weight of all that water made me stop and look.",
           "from": 7,
           "number": 3,
           "open": true,
@@ -90,7 +90,7 @@
       "chapters": [
         {
           "began": 1790900000,
-          "diary": "I set out in Darkshire after nightfall, wishing I had a few of the Night Watch at my back. Hammer of Justice is mine now, a way to stop a foe in the middle of its intentions. I died in Raven Hill, another life cut short in a kingdom with too many empty places already. Dying has shown me how much I still want from the years ahead, and I mean to be careful enough to have them.",
+          "diary": "I set out in Darkshire after nightfall, wishing I had a few of the Night Watch at my back. Hammer of Justice is mine now, a way to stop a foe in the middle of its intentions. I died in Raven Hill, another life cut short in a kingdom with too many empty places already. Darkshire huddled under its lamps at the edge of the dark wood, with the Night Watch on every corner. People spoke in low voices, as if the forest might hear. Dying has shown me how much I still want from the years ahead, and I mean to be careful enough to have them.",
           "ended": 1790904440,
           "from": 23,
           "number": 1,
@@ -128,7 +128,7 @@
         {
           "began": 1790900000,
           "close": true,
-          "diary": "I began in the Valley of Trials, with Thrall's new homeland to call my own and no wish to repay it with empty boasting. Heat rose from the red dust of Durotar, as if the ground itself were breathing. This was the land we had claimed, and I meant to learn how to belong to it. I faced Sarkoth and came away on my own feet. I slew Old Murk-Eye, the murloc whose raids killed the lighthouse keeper's family, for the ghost of Captain Grayson. That one had it coming, and I saw no reason to pretend otherwise.\n\nLater, I destroyed Araj the Summoner, the lich who held Andorhal, and took a shard of his phylactery to High Executor Derrington. I came through a close call in Razor Hill, too shaken to enjoy having proved I could survive one. I came within a breath of the end, and what I carry away from it is not pride at surviving but the plain knowledge of how badly I wanted to.",
+          "diary": "I began in the Valley of Trials, with Thrall's new homeland to call my own and no wish to repay it with empty boasting. Heat rose from the red dust of Durotar, as if the ground itself were breathing. This was the land we had claimed, and I meant to learn how to belong to it. I faced Sarkoth and came away on my own feet. I slew Old Murk-Eye, the murloc whose raids killed the lighthouse keeper's family, for the ghost of Captain Grayson. That one had it coming, and I saw no reason to pretend otherwise.\n\nLater, I destroyed Araj the Summoner, the lich who held Andorhal, and took a shard of his phylactery to High Executor Derrington. I came through a close call in Razor Hill, too shaken to enjoy having proved I could survive one. At Razor Hill I heard the forge before I saw the drilling. Beyond the barracks, Kul Tiras ships sat off the coast, and I understood why no one in the town ever quite stood at rest. I came within a breath of the end, and what I carry away from it is not pride at surviving but the plain knowledge of how badly I wanted to.",
           "ended": 1790906150,
           "from": 1,
           "number": 1,
@@ -137,7 +137,7 @@
         },
         {
           "began": 1790938550,
-          "diary": "I continued in Razor Hill, wondering what the lost world of Draenor would have made of this one. I saw Orgrimmar with my own eyes at last, and found it larger, louder and more mine than I had pictured. I can close the distance in a single rush now, before my fear has time to catch up.",
+          "diary": "I continued in Razor Hill, wondering what the lost world of Draenor would have made of this one. I saw Orgrimmar with my own eyes at last, and found it larger, louder and more mine than I had pictured. The drums of Orgrimmar echoed off the spiked walls as I came in. At Grommash Hold I felt the weight of it: a city our people had built for themselves, with no one's chains on it. I can close the distance in a single rush now, before my fear has time to catch up.",
           "from": 5,
           "number": 2,
           "open": true,
@@ -164,7 +164,7 @@
       "chapters": [
         {
           "began": 1790900000,
-          "diary": "I began in Shadowglen, with Dolanaar the farthest place I could yet picture and the rest of Kalimdor no more than names across the water. Moonlight silvered the leaves of Teldrassil while owls called overhead. I listened between my footfalls, unwilling to hurry through so much quiet. I slew Old Murk-Eye, the murloc whose raids killed the lighthouse keeper's family, for the ghost of Captain Grayson. Whatever ill that one had done the land, it would do no more, and the land would know it before I did.\n\nMy training gave me Moonfire, a new way to fight, and I was impatient for a chance to use it. After that, I destroyed Araj the Summoner, the lich who held Andorhal, and took a shard of his phylactery to High Executor Derrington. I paused in Dolanaar, and let my strength return as slowly as a tree regrows its bark.",
+          "diary": "I began in Shadowglen, with Dolanaar the farthest place I could yet picture and the rest of Kalimdor no more than names across the water. Moonlight silvered the leaves of Teldrassil while owls called overhead. I listened between my footfalls, unwilling to hurry through so much quiet. I slew Old Murk-Eye, the murloc whose raids killed the lighthouse keeper's family, for the ghost of Captain Grayson. Whatever ill that one had done the land, it would do no more, and the land would know it before I did.\n\nMy training gave me Moonfire, a new way to fight, and I was impatient for a chance to use it. After that, I destroyed Araj the Summoner, the lich who held Andorhal, and took a shard of his phylactery to High Executor Derrington. Rain scented the houses around the moonwell in Dolanaar. The sentinels kept their patient watch on the road, and I let my guard down a little. I paused in Dolanaar, and let my strength return as slowly as a tree regrows its bark.",
           "ended": 1790933810,
           "from": 1,
           "number": 1,
@@ -173,7 +173,7 @@
         },
         {
           "began": 1790966210,
-          "diary": "The day began in Dolanaar as most of mine did, with a long moment of listening before I moved. I walked into Darnassus for the first time, and a city I had only heard of became a place I could find my way home to.",
+          "diary": "The day began in Dolanaar as most of mine did, with a long moment of listening before I moved. I walked into Darnassus for the first time, and a city I had only heard of became a place I could find my way home to. The white stone and still pools of Darnassus slowed me without my meaning to. Near the Temple of the Moon the old hush settled around me, and I was home.",
           "from": 5,
           "number": 2,
           "open": true,
@@ -200,7 +200,7 @@
       "chapters": [
         {
           "began": 1790900000,
-          "diary": "I set out in Deathknell, a Forsaken priest; the Light still answered me, and every time it answered, it burned. Crows called over the crypts of Tirisfal, toward the broken walls of Lordaeron. Night changed little here, though it left me feeling less conspicuous. I slew Old Murk-Eye, the murloc whose raids killed the lighthouse keeper's family, for the ghost of Captain Grayson. I have no great faith in justice, but I made an exception for that one.\n\nBefore the stretch was out, I also destroyed Araj the Summoner, the lich who held Andorhal, and took a shard of his phylactery to High Executor Derrington. Maggot Eye fell to me, and that was the end of that. I settled in Brill, with no need to sleep and a very definite wish to stop.",
+          "diary": "I set out in Deathknell, a Forsaken priest; the Light still answered me, and every time it answered, it burned. Crows called over the crypts of Tirisfal, toward the broken walls of Lordaeron. Night changed little here, though it left me feeling less conspicuous. I slew Old Murk-Eye, the murloc whose raids killed the lighthouse keeper's family, for the ghost of Captain Grayson. I have no great faith in justice, but I made an exception for that one.\n\nBefore the stretch was out, I also destroyed Araj the Summoner, the lich who held Andorhal, and took a shard of his phylactery to High Executor Derrington. Maggot Eye fell to me, and that was the end of that. After the tombs, the crooked roofs of Brill looked almost companionable. Around the Gallows' End Tavern my people went about their business, and the town kept going on stubbornness alone. I settled in Brill, with no need to sleep and a very definite wish to stop.",
           "ended": 1790906615,
           "from": 1,
           "number": 1,
@@ -209,7 +209,7 @@
         },
         {
           "began": 1790939015,
-          "diary": "Plans had failed whole kingdoms in my time, so I set out in Brill with a modest one and held it loosely. I saw the Undercity with my own eyes at last, and found it larger, louder and more mine than I had pictured. I can call on Renew now, though its healing burns in my hands for as long as it works.",
+          "diary": "Plans had failed whole kingdoms in my time, so I set out in Brill with a modest one and held it loosely. I saw the Undercity with my own eyes at last, and found it larger, louder and more mine than I had pictured. Green canals ran through the Undercity, past the bubbling Apothecarium, deep beneath the ruins of Lordaeron. Out of so much that had survived badly, we had made a city, and it was ours. I can call on Renew now, though its healing burns in my hands for as long as it works.",
           "from": 5,
           "number": 2,
           "open": true,
@@ -237,7 +237,7 @@
         {
           "began": 1790900000,
           "close": true,
-          "diary": "I carried on in the Dwarven District, sorting what I had heard of the wider world from what I found in it. I walked into Stormwind City for the first time, and a city I had only heard of became a place I could find my way home to. I saw Westfall for the first time, my own people's country though new to my eyes. The Deadmines was the hardest place I went, and I did not go alone: Thessaly, Brannigan and Rowan came with me. We defeated Edwin VanCleef, and I was grateful to have company for the way out of the Deadmines.\n\nIn the Deadmines, I killed Lord Aliden Perenolde, who would have made slaves of the orcs, and asked his mistress Elysa for Taretha's pendant. I had no wish to be a hero about it; I was only glad it was done. I barely survived in Ironclad Cove, with no desire to repeat the lesson for a better telling. Later, in Stormwind City, I brought Taretha's pendant, given up by a frightened Elysa, back to Krusk, the small thing the Warchief had spent so much to recover. I keep turning that narrow escape over in my mind, the way one keeps checking a candle already snuffed, knowing it is out and looking all the same.",
+          "diary": "I carried on in the Dwarven District, sorting what I had heard of the wider world from what I found in it. I walked into Stormwind City for the first time, and a city I had only heard of became a place I could find my way home to. The white walls of Stormwind rose over the canals, and the bells of the cathedral carried across the city. It was home, and I tried not to think about the masons who had rebuilt it and were never paid. I saw Westfall for the first time, my own people's country though new to my eyes. Westfall lay dark and quiet, its windmills turning over farms nobody tended any more. A light in a window was rare enough to make me wonder who still dared to keep one. The Deadmines was the hardest place I went, and I did not go alone: Thessaly, Brannigan and Rowan came with me. Mine carts stood abandoned on their rails, and the walls sweated in the lamplight. The deeper I went into the Deadmines, the louder the hammering grew.\n\nWe defeated Edwin VanCleef, and I was grateful to have company for the way out of the Deadmines. In the Deadmines, I killed Lord Aliden Perenolde, who would have made slaves of the orcs, and asked his mistress Elysa for Taretha's pendant. I had no wish to be a hero about it; I was only glad it was done. I barely survived in Ironclad Cove, with no desire to repeat the lesson for a better telling. Later, in Stormwind City, I brought Taretha's pendant, given up by a frightened Elysa, back to Krusk, the small thing the Warchief had spent so much to recover. I came closer to dying than I like to think about.",
           "ended": 1790909585,
           "from": 18,
           "number": 1,

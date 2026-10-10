@@ -9,13 +9,13 @@ bosses and loot as in Classic), played through the addon in the test's fake game
 
 I had completed sixty-four tasks already when this stretch began in Stormwind City.
 
-## Chapter 1 (levels 18 to 20)
+## Entry 1 (levels 18 to 20)
 
-I carried on in the Dwarven District, sorting what I had heard of the wider world from what I found in it. I walked into Stormwind City for the first time, and a city I had only heard of became a place I could find my way home to. I saw Westfall for the first time, my own people's country though new to my eyes. The Deadmines was the hardest place I went, and I did not go alone: Thessaly, Brannigan and Rowan came with me. We defeated Edwin VanCleef, and I was grateful to have company for the way out of the Deadmines.
+I carried on in the Dwarven District, sorting what I had heard of the wider world from what I found in it. I walked into Stormwind City for the first time, and a city I had only heard of became a place I could find my way home to. The white walls of Stormwind rose over the canals, and the bells of the cathedral carried across the city. It was home, and I tried not to think about the masons who had rebuilt it and were never paid. I saw Westfall for the first time, my own people's country though new to my eyes. Westfall lay dark and quiet, its windmills turning over farms nobody tended any more. A light in a window was rare enough to make me wonder who still dared to keep one. The Deadmines was the hardest place I went, and I did not go alone: Thessaly, Brannigan and Rowan came with me. Mine carts stood abandoned on their rails, and the walls sweated in the lamplight. The deeper I went into the Deadmines, the louder the hammering grew.
 
-In the Deadmines, I killed Lord Aliden Perenolde, who would have made slaves of the orcs, and asked his mistress Elysa for Taretha's pendant. I had no wish to be a hero about it; I was only glad it was done. I barely survived in Ironclad Cove, with no desire to repeat the lesson for a better telling. Later, in Stormwind City, I brought Taretha's pendant, given up by a frightened Elysa, back to Krusk, the small thing the Warchief had spent so much to recover. I keep turning that narrow escape over in my mind, the way one keeps checking a candle already snuffed, knowing it is out and looking all the same.
+We defeated Edwin VanCleef, and I was grateful to have company for the way out of the Deadmines. In the Deadmines, I killed Lord Aliden Perenolde, who would have made slaves of the orcs, and asked his mistress Elysa for Taretha's pendant. I had no wish to be a hero about it; I was only glad it was done. I barely survived in Ironclad Cove, with no desire to repeat the lesson for a better telling. Later, in Stormwind City, I brought Taretha's pendant, given up by a frightened Elysa, back to Krusk, the small thing the Warchief had spent so much to recover. I came closer to dying than I like to think about.
 
-## Chapter 2 (level 20)
+## Entry 2 (level 20)
 
 With the king missing, the roads still had to be walked and the errands run, and I set out in the Trade District to take my share.
 

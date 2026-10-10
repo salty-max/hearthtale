@@ -12,7 +12,7 @@ For Classic Era (Hardcore, Season of Discovery) and World of Warcraft: Forever. 
 
 ## What an entry tells
 
-A chapter runs from one rest to the next. Logging out in the wild is a night outdoors, and the chapter goes on; after four hours of play, the next logout closes it wherever you are. Its entry tells what weighs most:
+An entry runs from one rest to the next. Logging out in the wild is a night outdoors, and the entry goes on; after four hours of play, the next logout ends it wherever you are. It tells what weighs most:
 
 - **The milestones of a life**, always: a warlock's first demon of each kind, a druid's new forms, a hunter's companions, a shaman's favour from each element, what a class's own quest taught you.
 - **The story**: the work that mattered most, told as you did it and why (from the quests' own words: "I killed Hogger, the huge gnoll who had overpowered every attempt at his capture"), picking up a story left off in an earlier entry, and now and then a word on what it meant to you.
@@ -20,20 +20,20 @@ A chapter runs from one rest to the next. Logging out in the wild is a night out
 - **The road**: the lands seen for the first time, your people's capital, the company you kept, a rare find (epic and better).
 - **What you became**: the spells worth a line of their own, a new way of fighting, a trade taken up, the first ride, the first bag and the first gold piece, a companion at your side, and the times it fell.
 
-A quiet stretch is a short entry; a big one runs longer. The journal ends when you reach the highest level of your game: the last chapter closes there, with the journey's end.
+A quiet stretch is a short entry; a big one runs longer. The journal ends when you reach the highest level of your game: the last entry ends there, with the journey's end.
 
-A character you already play gets a prologue from what the game knows of its life so far, and chapters from there.
+A character you already play gets a prologue from what the game knows of its life so far, and entries from there.
 
 ## How it is written
 
 - In the first person, in your race's own voice: what it notices and how it says so (a dwarf's eye for stonework, a troll's appetite, a Forsaken's dry patience), never a caricature. Graver on Hardcore, and graver still as the levels climb.
 - About 1,470 lines and phrases, and over 3,200 quests' own stories, chosen to fit the moment: the hour, the first time or the tenth, how close the call, alone or in a group. A line doesn't come back soon after it was used.
-- The open chapter's entry is written again as you play; a closed one stays as it was.
-- Written from what the addon records each time you open the book, so better sentences in later versions reach your old chapters too. At each logout the book is also saved as written, for hearthtale.app.
+- The entry you are living is written again as you play; a finished one stays as it was.
+- Written from what the addon records each time you open the book, so better sentences in later versions reach your old entries too. At each logout the book is also saved as written, for hearthtale.app.
 
 ## Hardcore: the Hall of the Fallen
 
-When a Hardcore character dies, its book closes: an epitaph telling how it ended and what the life was, a line in chat and the game's alert. The book joins the **Hall of the Fallen**, shared by all your characters, where every fallen life can be read again, chapter by chapter. On other realms, a death is told in its chapter, and the book goes on.
+When a Hardcore character dies, its book closes: an epitaph telling how it ended and what the life was, a line in chat and the game's alert. The book joins the **Hall of the Fallen**, shared by all your characters, where every fallen life can be read again, entry by entry. On other realms, a death is told in its entry, and the book goes on.
 
 ## Read it on hearthtale.app
 
@@ -47,7 +47,7 @@ Books are private: only you see them. Ravenpost sends the book and who it belong
 
 ## The book
 
-`/hearthtale` (or `/ht`), or the book by the minimap, opens it: your portrait and who you are; the chapters on the left (a skull marks a close call, a star a rare); the chapter's diary entry on the right. A second tab holds the Hall of the Fallen. When a chapter closes, a line in chat links to it.
+`/hearthtale` (or `/ht`), or the book by the minimap, opens it: your portrait and who you are; the entries on the left (a skull marks a close call, a star a rare); the open one on the right. A second tab holds the Hall of the Fallen. When an entry is written, a line in chat links to it.
 
 ## In English
 
@@ -62,7 +62,7 @@ Each game has its own file: pick the one for yours (the CurseForge app does it f
 
 ## Settings
 
-Options → AddOns → Hearthtale (or `/ht settings`, or right-click the minimap button): a line in chat for each chapter, the alert when a book closes, the minimap button. Where the game can't tell whether a character is Hardcore, a setting lets you say so.
+Options → AddOns → Hearthtale (or `/ht settings`, or right-click the minimap button): a line in chat for each entry, the alert when a book closes, the minimap button. Where the game can't tell whether a character is Hardcore, a setting lets you say so.
 
 Other commands: `/ht hall` opens the Hall of the Fallen; `/ht link CODE` links this character to your library on hearthtale.app; `/ht minimap` shows or hides the button.
 

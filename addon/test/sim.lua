@@ -445,12 +445,12 @@ check(
 )
 check(
   rows[1]:IsShown()
-    and rows[1].title:GetText() == "Chapter 1"
+    and rows[1].title:GetText() == "Entry 1"
     and rows[1].place:GetText() == "still being written"
-    and page.title:GetText() == "Chapter 1"
+    and page.title:GetText() == "Entry 1"
     and page.sub:GetText():find("levels 1 to 2", 1, true)
     and page.sub:GetText():find("still being written", 1, true),
-  "a row per chapter: Chapter 1, still being written, levels 1 to 2"
+  "a row per entry: Entry 1, still being written, levels 1 to 2"
 )
 check(rows[1].marks[1]:IsShown() and rows[1].marks[2]:IsShown(), "marks: a skull for a close call, a star for a rare")
 state.sub = "Brewnall Village"
@@ -538,8 +538,7 @@ check(
   "a logout at an inn closes the chapter; the next begins"
 )
 check(
-  printed[#printed]:find("chapter 1 is written", 1, true)
-    and printed[#printed]:find("|Hhearthtale:chapter:1|h", 1, true),
+  printed[#printed]:find("entry 1 is written", 1, true) and printed[#printed]:find("|Hhearthtale:chapter:1|h", 1, true),
   "a line in chat, with a link to it"
 )
 local closed = ns.writeBook(J).chapters[1]
@@ -583,7 +582,7 @@ check(
 )
 
 linkHandlers.hearthtale("hearthtale:chapter:1")
-check(B:IsShown() and page.title:GetText() == "Chapter 1", "the chapter's link opens the book at it")
+check(B:IsShown() and page.title:GetText() == "Entry 1", "the chapter's link opens the book at it")
 check(
   rows[1].place:GetText() == "Thunderbrew Distillery, levels 1 to 2",
   "… listed with where it closed and its levels"
@@ -673,7 +672,7 @@ check(
     and B.selectedTab == 2
     and rows[1].title:GetText() == "Sealinedion"
     and rows[2].title:GetText() == "Epitaph"
-    and rows[3].title:GetText() == "Chapter 1"
+    and rows[3].title:GetText() == "Entry 1"
     and page.title:GetText() == "Sealinedion"
     and page.body:GetText():find(closedBook.epitaph, 1, true)
     and page.sub:GetText():find("Level 2 Dwarf Paladin", 1, true),
@@ -681,7 +680,7 @@ check(
 )
 rows[6].scripts.OnClick(rows[6])
 check(
-  page.title:GetText() == "Chapter 4"
+  page.title:GetText() == "Entry 4"
     and page.sub:GetText():find("the end", 1, true)
     and page.body:GetText():find(closedBook.epitaph, 1, true),
   "its last chapter ends with the epitaph"
@@ -689,7 +688,7 @@ check(
 ns.showTab(1)
 check(
   B.who:GetText():find("Fallen", 1, true)
-    and page.title:GetText() == "Chapter 4"
+    and page.title:GetText() == "Entry 4"
     and page.body:GetText():find(closedBook.epitaph, 1, true),
   "the Journal tab: my own closed book, the same end"
 )
@@ -726,9 +725,9 @@ io.write("    " .. later.prologue .. "\n")
 SlashCmdList.HEARTHTALE("")
 check(
   rows[1].title:GetText() == "Prologue"
-    and rows[2].title:GetText() == "Chapter 1"
+    and rows[2].title:GetText() == "Entry 1"
     and not (rows[3] and rows[3]:IsShown())
-    and page.title:GetText() == "Chapter 1",
+    and page.title:GetText() == "Entry 1",
   "its book lists the prologue, then chapter 1"
 )
 rows[1].scripts.OnClick(rows[1])

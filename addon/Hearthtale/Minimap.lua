@@ -65,7 +65,7 @@ function ns.createMinimapButton()
     GameTooltip:SetOwner(self, "ANCHOR_LEFT")
     GameTooltip:AddLine("Hearthtale")
     local chapters, fallen = summary()
-    GameTooltip:AddLine(chapters == 1 and "1 chapter" or ("%d chapters"):format(chapters), 1, 1, 1)
+    GameTooltip:AddLine(chapters == 1 and "1 entry" or ("%d entries"):format(chapters), 1, 1, 1)
     if fallen > 0 then
       GameTooltip:AddLine(
         fallen == 1 and "1 book in the Hall of the Fallen" or ("%d books in the Hall of the Fallen"):format(fallen),

@@ -49,8 +49,8 @@ function ns.createSettingsPanel()
   end
   checkbox(
     "chat",
-    "A line in chat for each chapter",
-    "When a chapter closes (you rested at an inn, in a city or by a campfire), a line in chat with a link to it."
+    "A line in chat for each entry",
+    "When an entry is written (you rested at an inn, in a city or by a campfire), a line in chat with a link to it."
   )
   checkbox(
     "toast",
