@@ -115,6 +115,8 @@ const KINDS: Record<string, string[]> = {
   "d-tame": ["pet", "family"],
   // a piece of gear worn for the first time (blue and better, or made by me, below level 30)
   "d-gear": ["item"],
+  // a specialization taken: the way a life took ({was}: the one before)
+  "d-spec": ["spec", "was"],
   // what my hands made, new to them, when no trade was told
   "d-made": ["things"],
   // a spell that defines the class (a warrior's stances, a priest's own people's prayers, a mage's way home)
@@ -130,7 +132,7 @@ const TAGS = ["after", "again", "air", "ally", "aquatic", "away", "bear", "beast
   "flight", "foe", "form", "grouped", "hard", "hc", "healer", "high", "highborne", "home", "hosts", "imp", "inside",
   "known", "last", "late", "lava", "master", "leper", "looted", "low", "moonkin", "moved", "nature", "near", "neutral", "new", "night",
   "one", "people", "player", "plural", "rank", "rescue", "self", "settled", "steed", "succubus", "summon", "portal", "teleport", "thread", "town",
-  "travel", "tree", "two", "undead", "used", "victim", "villain", "voidwalker", "water", "who", "zalazane", "since", "fell", "died", "reviver", "it", "old"];
+  "travel", "tree", "two", "undead", "used", "victim", "villain", "voidwalker", "water", "who", "zalazane", "since", "fell", "died", "reviver", "it", "old", "change"];
 const RACES = ["Human", "Dwarf", "NightElf", "Gnome", "Orc", "Troll", "Tauren", "Scourge", "Skyborne"];
 const CLASSES = ["WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK", "DRUID"];
 const tagOk = (t: string) => {
@@ -139,11 +141,12 @@ const tagOk = (t: string) => {
   if (v === undefined) return TAGS.includes(k);
   return (k === "race" && RACES.includes(v)) || (k === "class" && CLASSES.includes(v)) ||
     (k === "faction" && ["alliance", "horde"].includes(v)) || (k === "client" && CLIENTS.includes(v)) ||
-    (k === "spell" && /^[A-Z][A-Za-z':_]+$/.test(v)); // a spell's name, its spaces "_": [spell:Life_Tap]
+    (k === "spell" && /^[A-Z][A-Za-z':_]+$/.test(v)) || // a spell's name, its spaces "_": [spell:Life_Tap]
+    (k === "spec" && /^[A-Z][A-Za-z_]+$/.test(v)); // a specialization's: [spec:Beast_Mastery]
 };
 
 // (the kinds that tell a spell or a power learned: its use only as [used])
-const SPELL_KINDS = ["lesson", "d-calling", "d-powers", "power", "class-reward", "d-initiation", "shift", "demon"];
+const SPELL_KINDS = ["lesson", "d-calling", "d-powers", "power", "class-reward", "d-initiation", "shift", "demon", "d-spec"];
 
 type Sentence = { text: string; tags: string[] };
 type Parsed = { meta: string; sentences: Sentence[] };

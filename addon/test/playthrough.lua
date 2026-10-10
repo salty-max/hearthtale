@@ -467,6 +467,20 @@ local TRADES = {
   { "Herbalism", "Tailoring", { "Brown Linen Vest", "Linen Cloak", "Heavy Linen Gloves", "Brown Linen Robe" } },
   { "Mining", "Engineering", { "Rough Blasting Powder", "Rough Dynamite", "Arclight Spanner", "Rough Copper Bomb" } },
 }
+-- A specialization, as a life takes one: once ten points are in a tree
+-- (level 19), by the class's tree a life leans to; now and then another
+-- later (level 26).
+local TREES = {
+  WARRIOR = { "Arms", "Fury", "Protection" },
+  PALADIN = { "Holy", "Protection", "Retribution" },
+  HUNTER = { "Beast Mastery", "Marksmanship", "Survival" },
+  ROGUE = { "Assassination", "Combat", "Subtlety" },
+  PRIEST = { "Discipline", "Holy", "Shadow" },
+  SHAMAN = { "Elemental", "Enhancement", "Restoration" },
+  MAGE = { "Arcane", "Fire", "Frost" },
+  WARLOCK = { "Affliction", "Demonology", "Destruction" },
+  DRUID = { "Balance", "Feral Combat", "Restoration" },
+}
 local ITEM_ID = {}
 for id, it in pairs(D.items) do
   if not ITEM_ID[it.name] or id < ITEM_ID[it.name] then ITEM_ID[it.name] = id end
@@ -546,6 +560,12 @@ local function play(race, class, side)
   local ch, party, grouped, told = nil, {}, false, 0
   local pet, petFamily, lessonLevel, powers, lastBeast = nil, nil, 0, {}, nil
   local trades, tradeAt = tradePlan(race, class), 1
+  local seed = 0
+  for ch in (race .. class):gmatch(".") do
+    seed = seed + ch:byte()
+  end
+  local trees = TREES[class] or {}
+  local spec, respec = trees[seed % 3 + 1], seed % 5 == 0 and trees[(seed + 1) % 3 + 1] or nil
   -- (an area's land: Coldridge Valley lies in Dun Morogh)
   local function landOf(id)
     for _ = 1, 4 do
@@ -666,6 +686,15 @@ local function play(race, class, side)
         wait(10 * 60)
         moment("learned", { spells = { k[2] } })
       end
+    end
+    -- the specialization, at its levels
+    if spec and level >= 19 and not powers.spec then
+      powers.spec = true
+      moment("spec", { name = spec })
+    end
+    if respec and level >= 26 and not powers.respec then
+      powers.respec = true
+      moment("spec", { name = respec, was = spec })
     end
     -- the trades, at their levels (what was made: its link, as the game writes it)
     while trades[tradeAt] and trades[tradeAt][1] <= level do

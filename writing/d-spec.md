@@ -1,0 +1,36 @@
+---
+kind: d-spec
+---
+- [!change] My training had found its leaning at last, {spec}, and I meant to follow where it led.
+- [!change] I had given myself to {spec}, and whatever else I might have been would have to wait.
+- [!change] I settled on {spec} as my way, and felt surer of myself for having chosen.
+- [change] I turned from {was} to {spec}, and meant to give the new way a fair trial.
+- [change] {was} had served me well enough, but my training leaned to {spec} now.
+- [change] I set {was} aside for {spec}, and felt like a beginner again in the best sense.
+- [class:WARRIOR spec:Arms !change] I had chosen the way of Arms, the patient craft of a weapon well used.
+- [class:WARRIOR spec:Fury !change] I had chosen Fury, and stopped pretending I wanted to fight any other way.
+- [class:WARRIOR spec:Protection !change] I had chosen Protection, the warrior's art of standing where the blows land.
+- [class:PALADIN spec:Holy !change] I had given myself to the Holy path, the Light I carried meant first for others.
+- [class:PALADIN spec:Protection !change] I had chosen Protection, the Light made into a shield for whoever stood behind me.
+- [class:PALADIN spec:Retribution !change] I had chosen Retribution, the Light turned to judgement in my own two hands.
+- [class:HUNTER spec:Beast_Mastery !change] I had given myself to Beast Mastery, the bond between hunter and beast at the heart of everything.
+- [class:HUNTER spec:Marksmanship !change] I had chosen Marksmanship, a hunter's patience narrowed down to a single shot.
+- [class:HUNTER spec:Survival !change] I had chosen Survival, the wild's own tricks and traps for staying alive in it.
+- [class:ROGUE spec:Assassination !change] I had chosen Assassination, the quiet science of ending a fight before it began.
+- [class:ROGUE spec:Combat !change] I had chosen Combat, and preferred my foes to see the blade coming, for all the good it did them.
+- [class:ROGUE spec:Subtlety !change] I had chosen Subtlety, the art of never quite being where anyone looked.
+- [class:PRIEST spec:Discipline !change] I had chosen Discipline, a faith that keeps its strength in the will as much as the heart.
+- [class:PRIEST spec:Holy !change] I had given myself to the Holy path, my prayers turned more and more to mending others.
+- [class:PRIEST spec:Shadow !change] I had turned to Shadow, the side of faith that answers a foe in kind.
+- [class:SHAMAN spec:Elemental !change] I had chosen the Elemental way, the storm and the stone to be called down on my foes.
+- [class:SHAMAN spec:Enhancement !change] I had chosen Enhancement, the spirits' strength carried in my own blows.
+- [class:SHAMAN spec:Restoration !change] I had chosen Restoration, the spirits asked to mend rather than to harm.
+- [class:MAGE spec:Arcane !change] I had given my study to the Arcane, the purest and least forgiving of the schools.
+- [class:MAGE spec:Fire !change] I had given my study to Fire, and the other schools would have to wait their turn.
+- [class:MAGE spec:Frost !change] I had given my study to Frost, the cold patience that holds a foe in place.
+- [class:WARLOCK spec:Affliction !change] I had chosen Affliction, the slow art of curses that do their work long after they are laid.
+- [class:WARLOCK spec:Demonology !change] I had chosen Demonology, and bound my fortunes ever more closely to the demons I command.
+- [class:WARLOCK spec:Destruction !change] I had chosen Destruction, fel fire with nothing patient about it.
+- [class:DRUID spec:Balance !change] I had chosen Balance, the moon and the stars as much my weapons as claw or root.
+- [class:DRUID spec:Feral_Combat !change] I had chosen Feral Combat, the wild's own shapes my way of meeting a fight.
+- [class:DRUID spec:Restoration !change] I had chosen Restoration, the wild's power to mend asked of me before its power to harm.

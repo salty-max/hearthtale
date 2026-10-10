@@ -4,19 +4,19 @@ kind: opening
 - I began again {at}, as obstinate as the refugees who had started over in a borrowed corner of the dwarves' city.
 - I took up the road {at}, my enthusiasm intact despite the absence of anything resembling a plan.
 - I set out {at}, still possessed of an unfortunate interest in anything that might explode.
-- I set off again {at}, my head already busy with ways the day's work might be done better.
+- I set off again {at}, small enough to be overlooked and quite happy to make use of it.
 - I made ready {at}, thinking how many of us now had to call the road home.
-- I continued {at}, already redesigning half of what I saw.
+- I continued {at}, saving up the day's wonders to tell them in Tinker Town.
 - I set out {at}, with the whole world to poke at and nobody to tell me to stop.
 - I took up the road again {at}, with a lively suspicion that trouble had not finished with me.
-- I set out {at}, guessing the day's distances to the nearest hundred paces and fully expecting to be wrong.
+- I set out {at}, curious about everything and in no hurry to be told what anything was for.
 - [!night] Daylight showed me more of the country than I could possibly take in, and I set out {at} determined to try.
 - [night] The dark made every sound twice as interesting and half as welcome, and I set out {at} listening to all of them.
 - [hc] I began again {at}, unwilling to let my people count one more of us among the lost.
 - Somewhere ahead was a problem nobody had solved properly yet, and I set off {at} hoping to be the one who did.
 - The road could have been laid out better, like most things, but I set out {at} and followed it all the same.
 - I set out {at}, with the hard-won cheerfulness of a people who had come up out of the radiation still making plans.
-- I took up the road {at}, my head already busy with sums nobody had asked me to do.
+- I took up the road {at}, sure that one day the halls of Gnomeregan would hear gnomish voices again.
 - [!night] By daylight every road looks shorter than it is, and I began {at} meaning to find out by how much.
 - [night] I started out {at}, keeping my eyes on the ground just ahead and my imagination on a very short lead.
 - I made a start {at}, with my nerves and my curiosity arguing over which of them should go first.

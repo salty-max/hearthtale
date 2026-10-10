@@ -231,6 +231,19 @@ C_Item.GetItemInfoInstant = function(link)
 end
 -- a druid's form (GetShapeshiftFormID's: 1 cat, 5 bear...)
 function GetShapeshiftFormID() return state.form end
+-- A specialization: Forever's, chosen (state.spec: its index among
+-- state.specs); Classic's, the talent trees and the points in each
+-- (state.talents = { { name, points } }), as Classic Era gives them.
+if FOREVER then
+  function GetSpecialization() return state.spec end
+  function GetSpecializationInfo(i) return 1000 + i, (state.specs or {})[i] end
+else
+  function GetNumTalentTabs() return #(state.talents or {}) end
+  function GetTalentTabInfo(i)
+    local t = state.talents[i]
+    return t[1], "Interface\\Icons\\Tree" .. i, t[2], "Tree" .. i
+  end
+end
 -- Spells by id, as a cast names them (cast(), below: one of mine, by its name).
 local SPELL_NAMES, SPELL_IDS, SPELL_ORDER = {}, {}, {}
 function GetSpellInfo(id) return SPELL_NAMES[id] end
@@ -342,7 +355,7 @@ local function ui()
       if k == "GetCenter" then
         return function() return 0, 0 end
       end
-      if k == "GetEffectiveScale" then
+      if k == "GetEffectiveScale" or k == "GetFrameLevel" then
         return function() return 1 end
       end
       if k == "CreateFontString" or k == "CreateTexture" then

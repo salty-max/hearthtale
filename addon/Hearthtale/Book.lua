@@ -152,6 +152,7 @@ local WIDTH = 440
 local HEADER_H = 76
 local ROW_WIDTH = 204
 local EPITAPH = "|cffd9b36b%s|r" -- the epitaph, in gold
+local NOTE = "|cffd9b36bNote|r\n|cffbfb08f%s|r" -- the player's own, in the margin
 
 local function day(at) return at and date("%d %b %Y", at) end
 
@@ -206,6 +207,7 @@ local function showPage(life, w, key)
     table.insert(parts, "still being written")
   end
   local text = ch.text
+  if ch.note then text = (text and text .. "\n\n" or "") .. NOTE:format(ch.note) end
   if life.closed and last and w.epitaph then text = (text and text .. "\n\n" or "") .. EPITAPH:format(w.epitaph) end
   if ch.title then table.insert(parts, 1, ("Entry %d"):format(key)) end
   show(ch.title or ("Entry %d"):format(key), table.concat(parts, "  -  "), text)
@@ -327,6 +329,18 @@ local function chapterRows(entries, w, selectedKey, open, indent)
   end
 end
 
+-- (the editor of an entry's own title and note, below: closed when another
+-- page is opened)
+local editor
+local function closeEditor()
+  if editor then
+    editor.title:ClearFocus()
+    editor.note:ClearFocus()
+    editor:Hide()
+  end
+  page:Show()
+end
+
 -- The Journal tab: this character's book, rewritten from the records. latest:
 -- open the last chapter (opening the book), else keep the open one.
 local function refreshJournal(latest)
@@ -348,11 +362,15 @@ local function refreshJournal(latest)
   else
     show("", "", nil)
   end
+  if editor and editor:IsShown() and editor.n ~= current then closeEditor() end
+  page.edit:SetShown(type(current) == "number") -- (an entry of mine: its title, a note)
 end
 
 -- The Hall tab: the fallen, the most recent first; the open one's pages under
 -- its name.
 local function refreshHall(scroll)
+  page.edit:Hide()
+  if editor and editor:IsShown() then closeEditor() end
   local fallen = ns.fallen()
   local known = false
   for _, life in ipairs(fallen) do
@@ -390,6 +408,80 @@ local function refreshHall(scroll)
   end
   render(entries, scroll)
   showPage(open, w, hallKey)
+end
+
+-- ── the player's own: a title, a note ────────────────────────────────────────
+-- An entry's own title and a note in its margin, written over its page (or
+-- with /ht title, /ht note; Core.lua keeps them): empty, the journal's own.
+local function buttonOf(parent, text, width)
+  local b = CreateFrame("Button", nil, parent, "UIPanelButtonTemplate")
+  b:SetSize(width, 22)
+  b:SetText(text)
+  return b
+end
+local function buildEditor(sheet)
+  editor = CreateFrame("Frame", nil, sheet)
+  editor:SetPoint("TOPLEFT", sheet, "TOPLEFT", 26, -22)
+  editor:SetPoint("BOTTOMRIGHT", sheet, "BOTTOMRIGHT", -22, 14)
+  editor.head = label(editor, TITLE_FONT, 22, T.gold)
+  editor.head:SetPoint("TOPLEFT", 0, -10)
+  editor.titleLabel = label(editor, BODY_FONT, 12, T.soft)
+  editor.titleLabel:SetPoint("TOPLEFT", 0, -50)
+  editor.titleLabel:SetWidth(WIDTH)
+  editor.title = CreateFrame("EditBox", nil, editor, "InputBoxTemplate")
+  editor.title:SetPoint("TOPLEFT", 6, -68)
+  editor.title:SetSize(WIDTH - 12, 24)
+  editor.title:SetAutoFocus(false)
+  editor.title:SetMaxLetters(60)
+  local noteLabel = label(editor, BODY_FONT, 12, T.soft)
+  noteLabel:SetPoint("TOPLEFT", 0, -104)
+  noteLabel:SetText("A note in its margin, in your own words")
+  local ground = editor:CreateTexture(nil, "BACKGROUND")
+  ground:SetColorTexture(0, 0, 0, 0.35)
+  ground:SetPoint("TOPLEFT", 0, -122)
+  ground:SetPoint("BOTTOMRIGHT", 0, 42)
+  editor.note = CreateFrame("EditBox", nil, editor)
+  editor.note:SetMultiLine(true)
+  editor.note:SetAutoFocus(false)
+  editor.note:SetMaxLetters(1000)
+  editor.note:SetFontObject(ChatFontNormal)
+  editor.note:SetWidth(WIDTH - 16)
+  editor.note:SetPoint("TOPLEFT", 8, -130)
+  editor.note:SetPoint("BOTTOMRIGHT", -8, 50)
+  -- (a click anywhere on its ground writes in it)
+  local area = CreateFrame("Button", nil, editor)
+  area:SetAllPoints(ground)
+  area:SetScript("OnClick", function() editor.note:SetFocus() end)
+  editor.note:SetFrameLevel(area:GetFrameLevel() + 1)
+  editor.save = buttonOf(editor, "Save", 90)
+  editor.save:SetPoint("BOTTOMRIGHT", 0, 8)
+  editor.cancel = buttonOf(editor, "Cancel", 90)
+  editor.cancel:SetPoint("RIGHT", editor.save, "LEFT", -8, 0)
+  editor.save:SetScript("OnClick", function()
+    local n = editor.n
+    closeEditor()
+    ns.setOwn(n, "title", editor.title:GetText())
+    ns.setOwn(n, "text", editor.note:GetText())
+  end)
+  editor.cancel:SetScript("OnClick", closeEditor)
+  editor.title:SetScript("OnEnterPressed", function() editor.note:SetFocus() end)
+  editor.title:SetScript("OnEscapePressed", closeEditor)
+  editor.note:SetScript("OnEscapePressed", function(self) self:ClearFocus() end)
+  ns.bookEditor = editor -- (for the tests)
+end
+local function openEditor()
+  local ch = written and type(current) == "number" and written.chapters[current]
+  if not ch then return end
+  if not editor then buildEditor(book.sheet) end
+  local own = ns.own(current) or {}
+  editor.n = current
+  editor.head:SetText(("Entry %d"):format(current))
+  local journals = own.title and ch.writtenTitle or ch.title -- (the title the journal gave it)
+  editor.titleLabel:SetText(journals and ("Its title (the journal's own: %s)"):format(journals) or "Its title")
+  editor.title:SetText(own.title or "")
+  editor.note:SetText(own.text or "")
+  page:Hide()
+  editor:Show()
 end
 
 -- Rewrite what the open tab shows.
@@ -551,6 +643,11 @@ function build()
   page.body:SetPoint("TOPLEFT", 0, -HEADER_H)
   page.body:SetWidth(WIDTH)
   page.body:SetSpacing(4)
+  page.edit = buttonOf(sheet, "Edit", 70)
+  page.edit:SetPoint("TOPRIGHT", sheet, "TOPRIGHT", -22, -18)
+  page.edit:SetScript("OnClick", openEditor)
+  page.edit:Hide()
+  ns.bookEdit = page.edit -- (for the tests)
 
   book:SetScript("OnShow", function()
     portrait()

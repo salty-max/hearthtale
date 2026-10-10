@@ -97,7 +97,10 @@ its decisions: PLAN.md (the full chapter prose was dropped on 10 October
   `[foe]`, `[neutral]`, plus `[night]`; 2-3 sentences each.
 - `addon/Hearthtale/`: `Util.lua` (plain-Lua helpers: the deep copy),
   `Core.lua` (the character's record, events: `ns.on`, and `ns.onUnit` for a
-  unit event heard for one unit only; `/hearthtale`), the recorder in four
+  unit event heard for one unit only; `/hearthtale`; the player's own words,
+  `notes[n] = { title, text }`: a title given an entry, a note in its margin,
+  plain text, from the window or `/ht title [N] TEXT`, `/ht note [N] TEXT`),
+  the recorder in four
   files sharing `ns.record`: `Record.lua` (the record's schema, the chapters
   and their moments, the logouts, places, levels; a logout settled at the
   next login: under 30 minutes away it's no break, nothing told; indoors
@@ -118,7 +121,10 @@ its decisions: PLAN.md (the full chapter prose was dropped on 10 October
   one otherwise came from the stable, noted quietly), a warlock's first demon
   of each kind and a druid's first form (learned in the journal), the first
   bag, the first gold piece, the first ride (riding known at the journal's
-  first look: ridden before), money). A game function is
+  first look: ridden before), money, a specialization: Forever's chosen one,
+  else Classic's talent tree holding most of the points, ten at least, never
+  the talents themselves). The highest level is a moment (`level` `top`);
+  the journal goes on after it. A game function is
   checked before use only where the clients differ (a `C_` namespace, a
   function a client lacks); the test game (`addon/test/game.lua`) has every
   one the addon calls,
@@ -135,9 +141,11 @@ its decisions: PLAN.md (the full chapter prose was dropped on 10 October
   there; the writer test checks a book written in pieces is the book written
   at once),
   `Save.lua` (the book written into the saved file at each logout, each
-  chapter's entry in `diary`, for the site: it never writes its own),
+  chapter's entry in `diary`, its title (the player's when given one) and
+  the player's `note`, for the site: it never writes its own),
   `Book.lua` (the window: chapters on the left, the open one's entry on the
-  right; a second tab for the Hall of the Fallen), `Hall.lua` (a Hardcore
+  right, the player's note under it, an Edit button for its own title and
+  note; a second tab for the Hall of the Fallen), `Hall.lua` (a Hardcore
   death: the book closed and copied to the account-wide Hall, a chat line,
   the toast), `Settings.lua` (account settings, the Options page),
   `Minimap.lua`.
@@ -195,7 +203,9 @@ An entry is the stretch looked back on at its rest, by what weighs most:
   and portal, a warlock's summoning circle, a shaman's ghost wolf and second
   life, a hunter's feigned death, a druid's Moonglade and Rebirth; once
   each, learned or a class quest's reward, which it then stands for); a
-  class quest's reward;
+  class quest's reward; a specialization (`d-spec`, by its name as the game
+  gives it, `[spec:Fire]` and the class; `[change]` another after it, `{was}`);
+  the highest level the game allows (`summit`);
 - the story, always: the deed itself, "I killed Hogger, …" (`d-why`,
   `d-why2`, `d-why-also`; a second story elsewhere says where, "Later, in
   Westfall, I …", unless it names its own place; a second climax, and in a
@@ -266,8 +276,8 @@ An entry is the stretch looked back on at its rest, by what weighs most:
   something) only when nothing else was;
 - the ending: a thought on a danger (`d-close`: `[hard]`, `[near]` only
   once three sentences were told since the danger's own, which carries its
-  feeling; `[delve]`), else the rest, the night outdoors or indoors, or the journey's
-  end at the game's highest level (`summit`: the journal stops recording);
+  feeling; `[delve]`), else the rest, the night outdoors or indoors (a
+  journal an older version closed at the highest level ends on `summit`);
   one entry in three that told a story ends on it.
 
 Told in the order it happened (a place always named: no "there"), a lead
@@ -278,10 +288,12 @@ ram), whatever came before. An entry's title is its weightiest moment in the
 game's own words, never made-up prose: a milestone (a demon's or a pet's
 name, a form, the element's quest), a story with a villain or a rescue (its
 quest's title, "Wanted:", "Kill" and a poster's quotes taken off), a
-defining spell, a dungeon, a death ("A Death in Westfall"), any other story,
+defining spell or a specialization, a dungeon, a death ("A Death in Westfall"), any other story,
 the first ride, a capital or a new land, another story of the entry or a
 foe of a name it ended ("Grawmug"), else the land it was lived in; none
-rather than one an earlier entry has.
+rather than one an earlier entry has. A title the player gives an entry
+shows in its place, and a note in its margin under it: both lie over the
+written book (`writtenTitle` keeps the writer's), which never changes.
 A book's frames never come back while a fresh one is left; a finished entry
 never changes, the open one is written again at each moment. A life met
 mid-life opens with its prologue; a Hardcore death closes the book with the
@@ -400,7 +412,8 @@ Plan and steps: PLAN.md, "The site".
   (scripts/vercel-build.sh routes them by user agent; `/api/og/…` by hand).
   The web reader is one component (`components/Reader.tsx`, parts by address)
   for my books, share links and the Hall; a chapter reads as its diary entry
-  (`BookChapter.diary`; a book saved before entries were, its prose, `text`).
+  (`BookChapter.diary`; a book saved before entries were, its prose, `text`),
+  the player's own note under it (`note`).
 - The companion, Ravenpost (`lib/companion.ts`, `lib/upload.ts`): pairing
   device-code style (`/api/companion/pair/start` → the user confirms on
   `/pair?code=…` → `/pair/poll` hands the token over once; only its hash is
