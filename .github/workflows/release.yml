@@ -24,6 +24,8 @@ jobs:
       # checkout leaves the tag lightweight: fetch it again for its message.
       - run: git fetch --force --tags
       - uses: oven-sh/setup-bun@v2
+      # (the writing's build reads the English word list from node_modules)
+      - run: bun install --frozen-lockfile
       - run: sudo apt-get install -y -qq luajit
       - run: bun scripts/build.ts --check && luajit addon/test/sim.lua && FOREVER=1 luajit addon/test/sim.lua && luajit addon/test/writer.lua
       - name: Packages (one zip per game)

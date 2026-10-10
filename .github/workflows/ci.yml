@@ -18,6 +18,8 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - uses: oven-sh/setup-bun@v2
+      # (first: the writing's build reads the English word list from node_modules)
+      - run: bun install --frozen-lockfile
       - run: sudo apt-get install -y -qq luajit
       - name: Lua tools (StyLua, selene)
         run: |
@@ -38,11 +40,10 @@ jobs:
         run: luajit addon/test/writer.lua
       - name: Writer (Forever)
         run: FOREVER=1 luajit addon/test/writer.lua
-      - name: Sample
-        run: luajit addon/test/sample.lua > /dev/null
+      - name: Samples (the landing page's, as the writer writes them)
+        run: luajit addon/test/sample.lua > /dev/null && luajit addon/test/sample.lua landing --check
       - name: Packages
         run: bun scripts/package.ts
-      - run: bun install --frozen-lockfile
       - name: Site typecheck
         run: bun run typecheck
       - name: Site lint
