@@ -1,12 +1,12 @@
--- The diary (a prototype beside the chapters of Writer.lua): each chapter as
--- the character would write it at the rest that ends it, the stretch looked
--- back on rather than told moment by moment. From the same record: its
--- story (what the work that mattered was for: writing/why/), dangers, the
--- foes worth naming, a dungeon or company, new country, a new way of
--- fighting and the firsts of a life, the rest of the work in a sentence,
--- and one ending: a thought when the stretch gave one, else the rest. Its
--- sentences are the book's own (Lines.lua: the race's voice, the spacing
--- of repeats), its words Language.lua's.
+-- The journal: each chapter as the character would write it at the rest
+-- that ends it, the stretch looked back on rather than told moment by
+-- moment. From the record: its milestones, its story (what the work that
+-- mattered was for: writing/why/), dangers, the foes worth naming, a
+-- dungeon or company, new country, a new way of fighting and the firsts of
+-- a life, the small work only when nothing else was, and one ending: a
+-- thought when the stretch gave one, else the rest. Its sentences are the
+-- book's own (Lines.lua: the race's voice, the spacing of repeats), its
+-- words Language.lua's.
 local _, ns = ...
 local W = ns.writer
 local words, listing, mid, article, plural = W.words, W.listing, W.mid, W.article, W.plural
@@ -316,10 +316,12 @@ local function gather(d, c, ch)
       end
     end
   end
-  -- (the land most of it happened in)
-  local main, most = ch.start and ch.start.zone, 0
+  -- (the land most of it happened in; a tie, where it began, else by name:
+  -- the same book on every reading)
+  local start = ch.start and ch.start.zone
+  local main, most = start, 0
   for zone, n in pairs(f.count) do
-    if n > most or (n == most and zone == main) then
+    if n > most or (n == most and zone ~= main and (zone == start or (main ~= start and zone < main))) then
       main, most = zone, n
     end
   end
@@ -407,8 +409,22 @@ end
 -- paragraphs when it runs long.
 local function entry(d, n, ch)
   local b, c = d.book, d.c
+  -- (a place always named: the entry is told in the order things happened,
+  -- after it is written, so a "there" could come before what it points to)
+  local function here(values, place)
+    b.last, b.there = nil, false
+    return b:here(values, place)
+  end
   local race = c.race or "Human"
   local start, e = ch.start or {}, ch.ended
+  -- (a start the game had not placed yet, Forever at login: where it told
+  -- me I was a moment later)
+  local placed = ch.log and ch.log[1]
+  if not (start.zone or start.sub) and placed and placed.k == "place" and (placed.zone or placed.sub) then
+    if (placed.at or 0) - (start.at or placed.at or 0) <= 60 then
+      start = setmetatable({ zone = placed.zone, sub = placed.sub }, { __index = start })
+    end
+  end
   if start.zone then d.lands[start.zone] = true end -- (where it began is no new country)
   local f = gather(d, c, ch)
   local level = (e and e.level) or start.level or 1
@@ -426,7 +442,6 @@ local function entry(d, n, ch)
     t = t or {}
     if t.home == nil then t.home = homeOf(race, zone or f.main) == "home" or nil end
     t.high, t.low = level >= 40 or nil, level <= 10 or nil
-    t.diary = true -- (no line that leans on a moment the diary doesn't tell: "In return, …")
     t.zalazane = d.zalazane -- (Zalazane dead: no line hoping for it)
     return t
   end
@@ -439,9 +454,7 @@ local function entry(d, n, ch)
     return text
   end
   -- (not a word of its own the entry used already, "sympathy" twice: a line
-  -- that does only if no other will; the chapter, a record no longer read,
-  -- only says whether a new spell was put to use)
-  local near = d.written and ((d.written[n] or "") .. "\n" .. (d.written[n - 1] or "")) or ""
+  -- that does only if no other will)
   local function echoes(text, values)
     local own = {}
     for _, v in pairs(values or {}) do
@@ -507,7 +520,7 @@ local function entry(d, n, ch)
     lead, first0 = at(storyZone), -2
   elseif where then
     add(
-      sayFresh(first and "beginning" or "opening", "open", b:here({ where = mid(where) }, where), {
+      sayFresh(first and "beginning" or "opening", "open", here({ where = mid(where) }, where), {
         night = start.night or nil,
       }, start.zone, first and { ["class:" .. (c.class or "")] = true } or nil), -- (a life's first page: the class's own, if any)
       false,
@@ -637,6 +650,7 @@ local function entry(d, n, ch)
       )
       if add(word, false, first0 and -1.75 or story[1].i + 0.5) then -- (right after its story)
         d.reacted[word], d.reactedAt = true, n
+        out[#out].follows = true -- (never the first of a paragraph)
       end
     end
   end
@@ -665,7 +679,7 @@ local function entry(d, n, ch)
         sayFresh(
           "died-back",
           "died",
-          b:here({ foe = deathFoe(m.death or {}), by = r.by, graveyard = r.graveyard and mid(r.graveyard) }, place),
+          here({ foe = deathFoe(m.death or {}), by = r.by, graveyard = r.graveyard and mid(r.graveyard) }, place),
           t,
           m.zone
         ),
@@ -673,7 +687,7 @@ local function entry(d, n, ch)
         death.i
       )
     else
-      add(sayFresh("died", "died", b:here({ foe = deathFoe(m.death or {}) }, place), t, m.zone), true, death.i)
+      add(sayFresh("died", "died", here({ foe = deathFoe(m.death or {}) }, place), t, m.zone), true, death.i)
     end
   elseif #f.deaths > 1 then
     for _, death in ipairs(f.deaths) do -- (unnamed there: told plainly with the foes, if beaten after)
@@ -694,10 +708,7 @@ local function entry(d, n, ch)
       sayFresh(
         (worst.hp or 100) <= 5 and "close-deep" or "close-light",
         "close",
-        b:here(
-          { foe = worst.foe and (f.rares[worst.foe] and worst.foe or article(worst.foe)) },
-          worst.sub or worst.zone
-        ),
+        here({ foe = worst.foe and (f.rares[worst.foe] and worst.foe or article(worst.foe)) }, worst.sub or worst.zone),
         { night = worst.night or false, foe = worst.foe ~= nil },
         worst.zone
       ),
@@ -717,7 +728,12 @@ local function entry(d, n, ch)
     local fin = f.finals[1]
     if fin then
       add(
-        sayFresh("boss-final", "final", { boss = fin.boss, dungeon = mid(fin.dungeon or below) }, {}),
+        sayFresh(
+          "boss-final",
+          "final",
+          { boss = fin.boss, dungeon = mid(fin.dungeon or below) },
+          { grouped = #mates > 0 or nil }
+        ),
         false,
         f.dungeonAt[below] + 0.5
       )
@@ -768,7 +784,7 @@ local function entry(d, n, ch)
         sayFresh(
           "pvp-one",
           "pvp",
-          b:here({ name = m.first or m.name, who = who ~= "" and article(who) or nil }, m.sub or m.zone),
+          here({ name = m.first or m.name, who = who ~= "" and article(who) or nil }, m.sub or m.zone),
           { known = who ~= "" or nil },
           m.zone
         ),
@@ -784,7 +800,7 @@ local function entry(d, n, ch)
         sayFresh(
           "pvp-many",
           "pvp",
-          b:here({ n = words(#f.pvp), side = horde * 2 >= #f.pvp and "the Horde" or "the Alliance" }, m.sub or m.zone),
+          here({ n = words(#f.pvp), side = horde * 2 >= #f.pvp and "the Horde" or "the Alliance" }, m.sub or m.zone),
           {},
           m.zone
         ),
@@ -806,7 +822,7 @@ local function entry(d, n, ch)
     add(clause and ("I " .. clause .. "."), true, x.i)
   end
   for _, x in ipairs(f.petdied) do
-    add(sayFresh("petdied", "petdied", b:here({ pet = x.m.name }, x.m.sub or x.m.zone), {}, x.m.zone), true, x.i)
+    add(sayFresh("petdied", "petdied", here({ pet = x.m.name }, x.m.sub or x.m.zone), {}, x.m.zone), true, x.i)
   end
 
   -- in the room left (less for each milestone, never none): the foes worth
@@ -919,8 +935,17 @@ local function entry(d, n, ch)
     for k = 1, math.min(#fighting, 3) do
       spells[k] = fighting[k]
     end
-    -- (put to use already in its chapter, "tried my new Frostbolt": said so)
-    local used = near:find("my new " .. spells[1], 1, true) or near:find(spells[1] .. " to its first real use", 1, true)
+    -- (put to use already in its stretch: a quest's foes fought after it)
+    local used, fought = false, false
+    for i = (f.spellAt[spells[1]] or 0) + 1, #(ch.log or {}) do
+      local m = ch.log[i]
+      if m.k == "kill" then fought = true end
+      if m.k == "done" then
+        for _, o in ipairs(m.objectives or {}) do
+          if o.type == "monster" or (o.type == "item" and fought) then used = true end
+        end
+      end
+    end
     more(
       say(
         "d-powers",
@@ -965,7 +990,10 @@ local function entry(d, n, ch)
           if text then break end
         end
       else
-        text = sayFresh(m.k, key, {}, { looted = m.looted or nil })
+        -- (the first bag: what it is, its room)
+        local item = m.k == "bag" and m.link and m.link:match("%[(.-)%]")
+        local values = { item = item and W.itemName(item), slots = m.slots and words(m.slots) }
+        text = sayFresh(m.k, key, values, { looted = m.looted or nil })
       end
       more(text, false, f.at[m])
     end
@@ -1029,27 +1057,16 @@ local function entry(d, n, ch)
       b.last = nil
       if e.how == "long" then
         add(
-          sayFresh(
-            e.inside and "night-in" or "night",
-            "last",
-            b:here({}, e.place),
-            { last = true, night = true },
-            e.zone
-          ),
+          sayFresh(e.inside and "night-in" or "night", "last", here({}, e.place), { night = true }, e.zone),
           false,
           LATE + 3
         )
       elseif e.how == "summit" then
-        add(
-          sayFresh("summit", "last", b:here({ level = words(e.level or 60) }, e.place), { last = true }, e.zone),
-          false,
-          LATE + 3
-        )
+        add(sayFresh("summit", "last", here({ level = words(e.level or 60) }, e.place), {}, e.zone), false, LATE + 3)
       elseif not (storyTold and n % 3 == 2 and #out >= 4) then -- (one entry in three ends on its story)
         add(
-          sayFresh("rest", "last", b:here({ place = mid(e.place) }, e.place), {
+          sayFresh("rest", "last", here({ place = mid(e.place) }, e.place), {
             fire = e.how == "campfire" or nil,
-            last = true,
           }, e.zone),
           false,
           LATE + 3
@@ -1071,6 +1088,7 @@ local function entry(d, n, ch)
   end
   -- (a long entry in two paragraphs, at the middle: what happened, then the rest)
   local texts, split = {}, #out >= PARAGRAPH and math.ceil(#out / 2) or nil
+  if split and out[split + 1] and out[split + 1].follows then split = split + 1 end
   for k, o in ipairs(out) do
     texts[#texts + 1] = o.text
     if k == split then texts[#texts + 1] = "\n\n" end
@@ -1078,18 +1096,16 @@ local function entry(d, n, ch)
   return (table.concat(texts, " "):gsub(" \n\n ", "\n\n"))
 end
 
--- The diary of a character: { entries = { { number, text, from, to, place, open } } };
--- w, its book as written (ns.writeBook), keeps an entry from saying what its
--- chapter says word for word.
-function ns.writeDiary(c, w)
-  local written = {}
-  for i, ch in ipairs(w and w.chapters or {}) do
-    written[ch.number or i] = ch.text
-  end
+-- The book of a character, as read in the game and on the site, written
+-- from its records each time it is read (never stored but in the saved
+-- file, Save.lua): { prologue (a character met mid-life), chapters = { {
+-- number, text (its diary entry), place, from, to (levels), open, rare,
+-- close (the book's marks), chapter (its record) } }, epitaph (a Hardcore
+-- death) }.
+function ns.writeBook(c)
   local d = {
     c = c,
     book = newBook(c, true),
-    written = written,
     lands = {},
     known = {},
     ways = {},
@@ -1112,18 +1128,29 @@ function ns.writeDiary(c, w)
   end
   local capital = CAPITAL[c.race or ""]
   if capital then d.lands[capital] = true end
-  local diary = { entries = {} }
+  local book = { chapters = {} }
+  if c.prologue then book.prologue = d.book:prologue(c.prologue) end
   for i, ch in ipairs(c.chapters or {}) do
     local start, e = ch.start or {}, ch.ended
-    local text = entry(d, i, ch)
-    diary.entries[i] = {
+    local rare, close, to = nil, nil, start.level or 1
+    for _, m in ipairs(ch.log or {}) do
+      if m.k == "rare" then rare = true end
+      if m.k == "close" then close = true end
+      if m.k == "level" then to = m.level end
+    end
+    if e and e.level then to = math.max(to, e.level) end
+    book.chapters[i] = {
       number = i,
-      text = text,
-      from = start.level,
-      to = (e and e.level) or start.level,
+      text = entry(d, i, ch),
+      chapter = ch,
       place = (e and e.place) or start.sub or start.zone, -- (where it was written, or where it goes on)
+      from = start.level or 1,
+      to = to,
       open = not e or nil,
+      rare = rare,
+      close = close,
     }
   end
-  return diary
+  if c.hardcore and c.death then book.epitaph = d.book:epitaph(c) end
+  return book
 end

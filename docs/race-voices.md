@@ -41,7 +41,7 @@ use; they must not claim a cast the record never supplied.
 | Shaman | Elements, ancestors, borrowed strength and the prospect of asking for something gentler than another battle. |
 | Mage | Fire, frost, arcane distance and useful conjuring; a sheep, a drink of water or a way out makes a lesson concrete. |
 | Warlock | Demons bound without being mistaken for friends, curses, life spent on mana, soul shards and an appetite for power that has a cost. |
-| Druid | The body and senses of each recorded form, the wild and the hope of protecting life. Learning a form and first taking it are distinct events. Fighting Cenarius's own (the Horde's Stonetalon quests) leaves a druid, or any tauren, uneasy: one remark, no judgement. |
+| Druid | The body and senses of each recorded form, the wild and the hope of protecting life. Learning a form and first taking it are distinct events. Fighting Cenarius's own (the Horde's Stonetalon quests) leaves a druid, or any tauren, uneasy: one word on it, no judgement. |
 
 ## Sources and era
 
@@ -57,24 +57,24 @@ belong here. A character can know a people's history without claiming to have
 personally witnessed it. Skyborne lines require `client:forever`; thoughts
 specific to a tradition also require the recorded faction.
 
-## Remarks and restraint
+## Reactions and restraint
 
-The routine action states the fact; its occasional remark supplies a personal
-reaction. React to the creature's teeth, the cloth, the burden, the spell or the
-company actually recorded. Avoid reusable morals, abstract principles and
-commentary about writing the journal. A recovered NPC's journal is still an
-item that may be named; the narrator's pages are never the subject.
+The deed states the fact; a word on it (`d-react`), now and then, supplies the
+personal reaction. React to what was recorded: the villain, the rescue, the
+dead, the beast, the peoples of note to the narrator. Avoid reusable morals,
+abstract principles and commentary about writing the journal. A recovered
+NPC's journal is still an item that may be named; the narrator's pages are
+never the subject.
 
-Remarks remain rationed by the existing writer, with one per sentence and no
-consecutive remarked routine sentences. Highlights may speak more strongly.
-The longer frames leave room for fear, affection, humour and rest, without
-forcing the same tragedy or cultural comparison into each one. All races keep
-full flowing sentences and the allowance for three related clauses.
+Reactions are rationed by the writer: four entries apart at least, and never
+the same line twice in a book. Milestones may speak more strongly. The frames
+(beginnings, rests, nights, a danger's thought) leave room for fear,
+affection, humour and rest, without forcing the same tragedy or cultural
+comparison into each one. All races keep full flowing sentences.
 
 No line may invent weather, a wound, a trophy, a payment, a spell cast, an NPC's
 words or reaction, or a companion's appearance. Wishes and comparisons leave
-room for character without adding events. Gear remarks must work for what the
-tags establish: a crafted piece is not automatically cloth or armour.
+room for character without adding events.
 
 Show the race, don't label it: a line names the narrator's own people ("even a
 kaldorei", "a Darkspear's ingenuity") five times at most in a race's files. A
@@ -99,9 +99,9 @@ recorded events should sound like different people. The `moments` mode adds
 flights, outdoor nights, danger, revival, a dungeon's end and the final entry;
 these are editorial scenes, not a canonical levelling route.
 
-Read the full chapters in `docs/sample.md` and `docs/sample-deadmines.md` for
-adjacent thoughts, repeated comparisons and the balance of plain facts with
-remarks. Keep the real saved-variable benchmark outside the repository: it is
-a personal book, not a fixture to publish. Regenerate the samples and site seed
-after the final pass, then check again that every line remains reachable and
-that the six-use spacing still holds.
+Read the entries in `docs/sample.md` and `docs/sample-deadmines.md`, and the
+playthroughs' journals, for adjacent thoughts, repeated comparisons and the
+balance of plain facts with reactions. Keep the real saved-variable benchmark
+outside the repository: it is a personal book, not a fixture to publish.
+Regenerate the samples and site seed after the final pass, then check again
+that every line remains reachable.

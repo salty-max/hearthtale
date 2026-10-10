@@ -10,7 +10,7 @@
 -- characters, the open one's epitaph and chapters under its name. Light text and
 -- gold titles on dark panels: Forever's Professions cards; on Classic, the
 -- game's insets and the quest log's dark book behind the list. The text is
--- written from the records each time it is shown (Writer.lua). /hearthtale
+-- written from the records each time it is shown (Diary.lua). /hearthtale
 -- opens it.
 local _, ns = ...
 
@@ -145,9 +145,6 @@ end
 local book, list, page
 local build -- made on first opening (below)
 local written -- this character's book as last written: { prologue, chapters, epitaph }
--- What the writer keeps between two writings (ns.writeBook): this character's,
--- and each fallen life's in the Hall (by guid).
-local kept, keptHall = {}, {}
 local current -- its open chapter: a number, or "prologue"
 local hallLife, hallKey -- in the Hall: the open life (its guid) and its page ("epitaph", "prologue", a chapter's number)
 local asked -- opened at a page (a link): don't go to the last chapter
@@ -208,9 +205,7 @@ local function showPage(life, w, key)
   elseif ch.open then
     table.insert(parts, "still being written")
   end
-  -- its diary entry (Diary.lua): the journal as the character writes it
-  local entry = w.diary and w.diary.entries[key]
-  local text = entry and entry.text or ch.text
+  local text = ch.text
   if life.closed and last and w.epitaph then text = (text and text .. "\n\n" or "") .. EPITAPH:format(w.epitaph) end
   show(("Chapter %d"):format(key), table.concat(parts, "  -  "), text)
 end
@@ -330,8 +325,7 @@ end
 -- open the last chapter (opening the book), else keep the open one.
 local function refreshJournal(latest)
   local c = ns.journal()
-  written = ns.writeBook(c, kept)
-  written.diary = ns.writeDiary(c, written)
+  written = ns.writeBook(c)
   local known = current == "prologue" and written.prologue or written.chapters[current]
   if latest or not known then
     local last = written.chapters[#written.chapters]
@@ -381,9 +375,7 @@ local function refreshHall(scroll)
       end,
     })
     if life.guid == hallLife then
-      keptHall[life.guid] = keptHall[life.guid] or {}
-      open, w = life, ns.writeBook(life, keptHall[life.guid])
-      w.diary = ns.writeDiary(life, w)
+      open, w = life, ns.writeBook(life)
       chapterRows(entries, w, hallKey, function(key)
         hallKey = key
         ns.refresh()

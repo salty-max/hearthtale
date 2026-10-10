@@ -1,7 +1,8 @@
--- The writer test: writes the books of many imaginary lives (every race and
--- class, Hardcore or not, met at level 1 or mid-life) and checks every
--- chapter: slots all filled, sentences capitalised and closed, no stray
--- spaces or doubled words, every sentence of writing/ reachable, few repeats.
+-- The writer test: writes the journals of many imaginary lives (every race
+-- and class, Hardcore or not, met at level 1 or mid-life) and checks every
+-- entry: slots all filled, sentences capitalised and closed, no stray spaces
+-- or doubled words, every sentence of writing/ reachable, a finished entry
+-- never changed by the next.
 --   luajit addon/test/writer.lua            the checks
 -- (a sample book, from a life played through the addon: addon/test/sample.lua)
 local DIR = "addon/Hearthtale/"
@@ -624,386 +625,62 @@ end
 
 -- ── the checks ───────────────────────────────────────────────────────────────
 ns.writerUsed = {}
-local problems, books, chapters, repeats, longest = {}, 0, 0, 0, 0
+local problems, books, chapters, longest = {}, 0, 0, 0
 local longestText
-local gaps = {} -- kind = the fewest uses of the kind between two uses of one of its sentences
 local function problem(where, msg, text)
-  if #problems < 20 then table.insert(problems, ("%s: %s\n    %s"):format(where, msg, text)) end
-end
-local routineTotal, remarkTotal, previousRemark = 0, 0, false
--- A remark is noticed when it comes back: none twice in a book's first ten chapters.
-local remarkSeen, remarkEarly, remarkBooks = {}, 0, 0
-local trackRemarks = false -- only in the lives below, as played
-ns.writerRemark = function(id, chapter, book)
-  if not trackRemarks then return end
-  if remarkSeen._book ~= book then remarkSeen = { _book = book } end
-  if chapter <= 10 and remarkSeen[id] then
-    remarkEarly = remarkEarly + 1
-    if os.getenv("WRITER_REMARKS") then io.stderr:write(id, " ", chapter, "\n") end
+  if #problems < (os.getenv("WRITER_ALL") and 100000 or 20) then
+    table.insert(problems, ("%s: %s\n    %s"):format(where, msg, text))
   end
-  remarkSeen[id] = true
-end
-ns.writerSentence = function(text, routine, remarks, _, highlight)
-  routineTotal, remarkTotal = routineTotal + routine, remarkTotal + remarks
-  if remarks > 1 then problem("remark budget", "two remarks shared a sentence", text) end
-  if previousRemark and remarks > 0 and not highlight then
-    problem("remark budget", "successive sentences carried routine remarks", text)
-  end
-  previousRemark = remarks > 0
 end
 local inspect = dofile("addon/test/inspect.lua")(problem)
 
--- The joins serve a scene: related practice stays together, an arrival
--- frames one action, and a close call has an aftermath. Use one candidate
--- per kind here so these checks concern assembly rather than word choice.
-local originalData, originalUsed = ns.data, ns.writerUsed
-local fixtureWriting = {}
-for kind, list in pairs(ns.data.writing) do
-  if not kind:find("^r%-") then fixtureWriting[kind] = list end -- no remarks: these check the joins
-end
-local lines = {
-  beginning = "I began {at}.",
-  ["c-prof"] = "took up {prof}",
-  ["c-place"] = "reached {place}",
-  ["c-first"] = "fought {kind} for the first time",
-  ["c-deed-kill"] = "killed {n} {foes} for {giver}",
-  ["close-deep"] = "{foe} nearly ended me {at}. I was glad to survive.",
-  ["c-deed-item"] = "found {n} {thing}",
-}
-for kind, line in pairs(lines) do
-  fixtureWriting[kind] = { { line } }
-end
-ns.data, ns.writerUsed = { writing = fixtureWriting }, nil
-local recorded = {
-  guid = "scene-joins",
-  race = "Human",
-  class = "MAGE",
-  chapters = {
-    {
-      start = { level = 1, zone = "Country", sub = "Home" },
-      log = {
-        { k = "prof", name = "Skinning", learned = true, zone = "Country", sub = "Home", at = 10 },
-        { k = "prof", name = "Leatherworking", learned = true, zone = "Country", sub = "Home", at = 20 },
-        { k = "place", zone = "Country", sub = "Farm", at = 30 },
-        { k = "kill", name = "Wolf", kind = "Wolf", first = true, zone = "Country", sub = "Farm", at = 40 },
-        {
-          k = "quest",
-          giver = "Farmer",
-          objectives = { { type = "monster", name = "Wolf", n = 2 } },
-          zone = "Country",
-          sub = "Farm",
-          at = 50,
-        },
-        { k = "close", foe = "Wolf", hp = 2, zone = "Country", sub = "Farm", at = 60 },
-        {
-          k = "quest",
-          objectives = { { type = "item", name = "Apple", n = 3 } },
-          zone = "Country",
-          sub = "Farm",
-          at = 70,
-        },
-      },
-    },
-  },
-}
-local sceneText = ns.writeBook(recorded).chapters[1].text
-if not sceneText:find("I took up skinning and took up leatherworking.", 1, true) then
-  problem("scene joins", "related trades were split", sceneText)
-end
-if sceneText:find("leatherworking and fought", 1, true) then
-  problem("scene joins", "a trade and a fight were forced together", sceneText)
-end
-local framed = sceneText:find("When I reached the Farm, I fought wolves for the first time.", 1, true)
-  or sceneText:find("I reached the Farm, where I fought wolves for the first time.", 1, true)
-  or sceneText:find("I reached the Farm and fought wolves for the first time.", 1, true)
-if not framed then problem("scene joins", "the arrival did not frame its action", sceneText) end
-if not (sceneText:find("Afterwards, I found", 1, true) or sceneText:find("After that encounter, I found", 1, true)) then
-  problem("scene joins", "the next action lost the close call's aftermath", sceneText)
-end
-if sceneText ~= ns.writeBook(recorded).chapters[1].text then
-  problem("scene joins", "the same record produced different prose", sceneText)
-end
--- A compound action must survive both the arrival frame and an ordinary
--- join, without three competing uses of "and" in the same thought.
-fixtureWriting["c-first"] = { { "stood against {kind} and prevailed" } }
-fixtureWriting["c-deed-kill"] = { { "dealt with {n} {foes} and finished the work" } }
-fixtureWriting["c-loot"] = { { "found {item} and kept it" } }
-local compoundText = ns.writeBook(recorded).chapters[1].text
-if
-  compoundText:find("I reached the Farm and stood against", 1, true)
-  or compoundText:find("prevailed and dealt with", 1, true)
-then
-  problem("scene joins", "a compound thought gained a competing conjunction", compoundText)
-end
-inspect("compound scene joins", compoundText)
-local ordinaryCompound = ns.writeBook({
-  guid = "ordinary-compound",
-  race = "Human",
-  class = "MAGE",
-  chapters = {
-    {
-      start = { level = 1, zone = "Country", sub = "Home" },
-      log = {
-        { k = "loot", link = "item:1:[Ring]", quality = 3, zone = "Country", sub = "Home", at = 10 },
-        {
-          k = "quest",
-          giver = "Farmer",
-          objectives = { { type = "monster", name = "Wolf", n = 2 } },
-          zone = "Country",
-          sub = "Home",
-          at = 20,
-        },
-      },
-    },
-  },
-}).chapters[1].text
-if not ordinaryCompound:find("kept it; I dealt with", 1, true) then
-  problem("scene joins", "ordinary compound actions lost their grammatical join", ordinaryCompound)
-end
-ns.data, ns.writerUsed = originalData, originalUsed
-
--- Exercise the reported joins independently of the prose lottery. The
--- third clause has an internal comma, but the preceding pair still needs
--- its own conjunction before the semicolon.
-ns.data, ns.writerUsed = { writing = fixtureWriting }, nil
-fixtureWriting["c-first"] = { { "had my first taste of fighting {kind}" } }
-fixtureWriting["c-loot"] = { { "found {item}" } }
-fixtureWriting["c-deed-item"] = { { "brought {giver} {n} {thing}" } }
-fixtureWriting["c-gear"] = { { "began using {item}, which I had made myself" } }
-fixtureWriting["c-inn"] = { { "bound my hearthstone {inn}" } }
-local tripleSeen, orcTripleSeen = false, false
-for seed = 1, 40 do
-  local c = {
-    guid = "joins-" .. seed,
-    race = "Human",
-    class = "HUNTER",
-    chapters = {
-      {
-        start = { level = 20, zone = "Country", sub = "Home" },
-        log = {
-          { k = "loot", link = "item:1:[Ring]", quality = 3, sub = "Home", zone = "Country" },
-          {
-            k = "quest",
-            giver = "Ragnar",
-            sub = "Home",
-            zone = "Country",
-            objectives = { { type = "item", name = "Crag Boar Rib", n = 2 } },
-          },
-          { k = "gear", made = true, link = "item:1:[Leather Vest]", sub = "Home", zone = "Country" },
-        },
-      },
-    },
-  }
-  local text = ns.writeBook(c).chapters[1].text
-  if text:find("a Ring, brought Ragnar", 1, true) then
-    problem("three clauses", "a final conjunction was lost before a semicolon", text)
-  end
-  if text:find("a Ring and brought Ragnar Crag Boar Ribs; I began using", 1, true) then tripleSeen = true end
-  c.race = "Orc"
-  text = ns.writeBook(c).chapters[1].text
-  if text:find("a Ring and brought Ragnar Crag Boar Ribs; I began using", 1, true) then orcTripleSeen = true end
-  c.chapters[1].log = {
-    { k = "place", sub = "Ratchet", zone = "Country" },
-    { k = "inn", place = "Ratchet", sub = "Ratchet", zone = "Country" },
-  }
-  text = ns.writeBook(c).chapters[1].text
-  local _, townNames = text:gsub("Ratchet", "")
-  if townNames ~= 1 or text:find("where I bound my hearthstone there", 1, true) then
-    problem("hearthstone join", "the town was named twice or both where and there were used", text)
-  end
-  c.chapters[1].log[2].place = "Broken Keel Tavern"
-  text = ns.writeBook(c).chapters[1].text
-  if not text:find("Broken Keel Tavern", 1, true) then
-    problem("hearthstone join", "a distinct inn name disappeared", text)
-  end
-end
-if not tripleSeen then problem("three clauses", "the three-part join was not exercised", "") end
-if not orcTripleSeen then problem("orc flow", "the orc lost the ability to carry three related clauses", "") end
-local tame = {
-  guid = "tame-once",
-  race = "Human",
-  class = "HUNTER",
-  chapters = {
-    {
-      start = { level = 10, zone = "Country", sub = "Farm" },
-      log = {
-        { k = "quest", objectives = { { text = "Tame a Large Crag Boar" } }, zone = "Country", sub = "Farm" },
-        { k = "tame", name = "Bristle", family = "Boar", zone = "Country", sub = "Farm" },
-      },
-    },
-  },
-}
-local tameText = ns.writeBook(tame).chapters[1].text
-if tameText:find("Large Crag Boar", 1, true) or not tameText:find("Bristle", 1, true) then
-  problem("taming", "the objective competed with the pet's introduction", tameText)
-end
-tame.chapters[1].log[1].title = "Taming the Beast"
-tame.chapters[1].log[1].objectives[1].text = "Large Crag Boar tamed"
-tameText = ns.writeBook(tame).chapters[1].text
-if tameText:find("Taming the Beast", 1, true) or not tameText:find("Bristle", 1, true) then
-  problem("taming", "a completed objective repeated the pet through its quest title", tameText)
-end
-for _, case in ipairs({
-  { "Frostmane Hold", "Explore the Frostmane Hold", "explore Frostmane Hold" },
-  { "The Barrens", "Explore the Barrens", "explore the Barrens" },
-  { "Farm", "Explore the tunnels", "explore the tunnels" },
-}) do
-  local c = {
-    guid = "objective-article",
-    race = "Human",
-    class = "MAGE",
-    chapters = {
-      {
-        start = { level = 10, zone = "Country", sub = case[1] },
-        log = {
-          { k = "quest", objectives = { { text = case[2] } }, zone = "Country", sub = case[1] },
-        },
-      },
-    },
-  }
-  fixtureWriting["c-deed-task"] = { { "managed to {task}" } }
-  local text = ns.writeBook(c).chapters[1].text
-  if not text:find(case[3], 1, true) then
-    problem("objective article", "an article was lost or added to the recorded name", text)
-  end
-  if case[1] == "Frostmane Hold" then
-    c.chapters[1].log = {
-      { k = "place", zone = "Country", sub = "Home" },
-      { k = "quest", zone = "Country", sub = "Home", objectives = { { text = case[2] } } },
-    }
-    text = ns.writeBook(c).chapters[1].text
-    if not text:find(case[3], 1, true) then
-      problem("objective article", "turning in elsewhere lost the explored place's name", text)
-    end
-  end
-end
-ns.data, ns.writerUsed = originalData, originalUsed
-
--- Lessons must agree with a single spell or a list, throughout every voice.
-for _, race in ipairs(RACES) do
-  for seed = 1, 40 do
-    for _, spells in ipairs({ { "Mend Pet" }, { "Concussive Shot", "Mend Pet" } }) do
-      local c = {
-        guid = "spell-agreement-" .. seed,
-        race = race,
-        class = "HUNTER",
-        chapters = {
-          {
-            start = { level = 20, zone = "Country", sub = "Home" },
-            log = {
-              { k = "prof", name = "Tailoring", learned = true, zone = "Country", sub = "Home" },
-              { k = "learned", spells = spells, zone = "Country", sub = "Home" },
-            },
-          },
-        },
-      }
-      local text = ns.writeBook(c).chapters[1].text
-      if
-        not text:find("Mend Pet", 1, true)
-        or (#spells > 1 and not text:find("Concussive Shot and Mend Pet", 1, true))
-        or text:find("proper use of it", 1, true)
-      then
-        problem("spell agreement", "a lesson lost a spell or used a singular pronoun for a list", text)
-      end
-      -- (its remark too: "Concussive Shot and Mend Pet, my choice to learn it")
-      local after = #spells > 1 and text:match("Mend Pet, ([^.;]*)")
-      local OBJECT = {
-        learn = true,
-        try = true,
-        test = true,
-        use = true,
-        improve = true,
-        master = true,
-        to = true,
-        of = true,
-        find = true,
-      }
-      for verb in (after or ""):gmatch("(%a+) it%f[%A]") do
-        if OBJECT[verb] then problem("spell agreement", 'a remark said "it" after several spells', text) end
-      end
-    end
-  end
-end
-
--- A creature named once: a kill, the quest that counts it, a close call
--- against it ("I brought down a Brigand. I put down five more. One of them
--- nearly ended me."), never its name three times over.
-for _, race in ipairs(RACES) do
-  for seed = 1, 12 do
-    local c = {
-      guid = "named-once-" .. race .. seed,
-      race = race,
-      class = COMBOS[race][1],
-      began = { level = 20 },
-      chapters = {
-        {
-          start = { level = 20, zone = "The Barrens", sub = "Ratchet" },
-          kills = {},
-          quests = 0,
-          played = 100,
-          gold = 0,
-          log = {
-            { k = "place", zone = "The Barrens", sub = "The Merchant Coast", at = 100 },
-            {
-              k = "kill",
-              name = "Southsea Brigand",
-              kind = "Humanoid",
-              zone = "The Barrens",
-              sub = "The Merchant Coast",
-              at = 200,
-            },
-            {
-              k = "quest",
-              giver = "Wharfmaster Dizzywig",
-              objectives = { { type = "monster", name = "Southsea Brigand", n = 6 } },
-              zone = "The Barrens",
-              sub = "The Merchant Coast",
-              at = 300,
-            },
-            {
-              k = "close",
-              foe = "Southsea Brigand",
-              hp = 4,
-              zone = "The Barrens",
-              sub = "The Merchant Coast",
-              at = 400,
-            },
-          },
-        },
-      },
-    }
-    local text = ns.writeBook(c).chapters[1].text
-    local _, names = text:gsub("Southsea Brigand", "")
-    if names > 1 then problem(race .. " named once", "a creature named again and again", text) end
-  end
-end
-
--- Every place described, entered by day and by night by each race (at home,
--- among allies, among foes): each description reachable, and checked.
-for place, p in pairs(ns.data.scenery or {}) do
+-- Every place described, by day and by night, for each race (at home, among
+-- allies, among foes): each description reachable through the book
+-- (Book:sceneryOf), and checked.
+for place in pairs(ns.data.scenery or {}) do
   for _, race in ipairs(RACES) do
     for seed = 1, 4 do
-      local night = seed % 2 == 0 or nil
-      local m = p.type == "dungeon" and { k = "dungeon", name = place, night = night, at = 100 }
-        or p.type == "town" and { k = "place", new = "zone", zone = "Somewhere", sub = place, night = night, at = 100 }
-        or { k = "place", new = "zone", zone = place, night = night, at = 100 }
-      local c = {
-        guid = "scenery-" .. place .. race .. seed,
-        race = race,
-        class = COMBOS[race][1],
-        began = { level = 30 },
-        chapters = {
+      local c = { guid = "scenery-" .. place .. race .. seed, race = race, class = COMBOS[race][1], chapters = {} }
+      if race == "Skyborne" then c.faction = seed <= 2 and "alliance" or "horde" end
+      inspect(race .. " scenery " .. place, ns.writer.newBook(c):sceneryOf(place, seed % 2 == 0 or nil))
+    end
+  end
+end
+
+-- A find of note (epic and above), one an entry: told by its name.
+for _, race in ipairs(RACES) do
+  for life = 1, 4 do
+    local chapters = {}
+    for n, item in ipairs({ "Thunderfury", "Lok'delar", "Benediction" }) do
+      chapters[n] = {
+        start = { level = 40, zone = "Tanaris", sub = "Gadgetzan" },
+        kills = {},
+        quests = 0,
+        played = 3600,
+        gold = 0,
+        log = {
           {
-            start = { level = 30, zone = "Elsewhere", sub = "Elsewhere" },
-            kills = {},
-            quests = 0,
-            played = 100,
-            gold = 0,
-            log = { m },
+            k = "loot",
+            link = "|cffa335ee|Hitem:1|h[" .. item .. "]|h|r",
+            quality = 4,
+            zone = "Tanaris",
+            sub = "Gadgetzan",
+            at = 100,
           },
         },
+        ended = { level = 40, zone = "Tanaris", sub = "Gadgetzan", place = "Gadgetzan", how = "rest" },
       }
-      inspect(race .. " scenery " .. place, ns.writeBook(c).chapters[1].text)
+    end
+    local c = { guid = ("finds-%s-%d"):format(race, life), race = race, class = COMBOS[race][1], chapters = chapters }
+    for _, ch in ipairs(ns.writeBook(c).chapters) do
+      inspect(race .. " find", ch.text)
+      if
+        not ch.text:find("Thunderfury", 1, true)
+        and not ch.text:find("Lok'delar", 1, true)
+        and not ch.text:find("Benediction", 1, true)
+      then
+        problem(race .. " find", "a find of note not told", ch.text)
+      end
     end
   end
 end
@@ -1074,7 +751,7 @@ for _, race in ipairs(RACES) do
       for _, ch in ipairs(ns.writeBook(c).chapters) do
         inspect(race .. " " .. class .. " first steps", ch.text)
       end
-      for _, e in ipairs(ns.writeDiary(c).entries) do
+      for _, e in ipairs(ns.writeBook(c).chapters) do
         inspect(race .. " " .. class .. " first steps diary", e.text)
       end
     end
@@ -1116,7 +793,7 @@ for r, race in ipairs(RACES) do
       },
     }
     if race == "Skyborne" then c.faction = "alliance" end
-    for _, e in ipairs(ns.writeDiary(c, ns.writeBook(c)).entries) do -- (the chapter: tried already?)
+    for _, e in ipairs(ns.writeBook(c).chapters) do -- (the chapter: tried already?)
       inspect(race .. " new ways diary", e.text)
     end
   end
@@ -1202,83 +879,6 @@ for _, race in ipairs(RACES) do
   end
 end
 
--- A quest's work handed in on the spot (its turn-in next, same place): told
--- once, at the turn-in, with whom it was for. Apart (a journey between): the
--- work where it was done, the return later.
-for _, race in ipairs(RACES) do
-  for seed = 1, 8 do
-    local kind = seed % 2 == 0 and { type = "monster", name = "Rockjaw Trogg", n = seed % 4 == 0 and 1 or 6 }
-      or { type = "item", name = "Tough Wolf Meat", n = seed % 3 == 0 and 1 or 8 }
-    local function at(t, sub) return { zone = "Dun Morogh", sub = sub or "Coldridge Valley", at = t } end
-    local function m(t, fields, sub)
-      local x = at(t, sub)
-      for k, v in pairs(fields) do
-        x[k] = v
-      end
-      return x
-    end
-    local spot = {
-      guid = "handed-" .. race .. seed,
-      race = race,
-      class = COMBOS[race][1],
-      began = { level = 2 },
-      chapters = {
-        {
-          start = { level = 2, zone = "Dun Morogh", sub = "Coldridge Valley" },
-          log = {
-            m(100, { k = "done", id = 179, giver = "Sten Stoutarm", objectives = { kind } }),
-            m(110, { k = "level", level = 3 }),
-            m(120, {
-              k = "quest",
-              id = 179,
-              told = true,
-              giver = "Sten Stoutarm",
-              ender = "Sten Stoutarm",
-              objectives = { kind },
-            }),
-          },
-        },
-      },
-    }
-    local text = ns.writeBook(spot).chapters[1].text
-    inspect(race .. " handed on the spot", text)
-    local _, sten = text:gsub("Sten Stoutarm", "")
-    if sten ~= 1 then
-      problem(race .. " handed on the spot", "the work and the hand-in not told once, with whom", text)
-    end
-    local apart = {
-      guid = "apart-" .. race .. seed,
-      race = race,
-      class = COMBOS[race][1],
-      began = { level = 2 },
-      chapters = {
-        {
-          start = { level = 2, zone = "Dun Morogh", sub = "Coldridge Valley" },
-          log = {
-            m(100, { k = "done", id = 179, giver = "Sten Stoutarm", objectives = { kind } }),
-            m(200, { k = "place", zone = "Dun Morogh", sub = "Anvilmar" }, "Anvilmar"),
-            m(300, {
-              k = "quest",
-              id = 179,
-              told = true,
-              giver = "Sten Stoutarm",
-              ender = "Sten Stoutarm",
-              objectives = { kind },
-            }, "Anvilmar"),
-          },
-        },
-      },
-    }
-    text = ns.writeBook(apart).chapters[1].text
-    inspect(race .. " handed apart", text)
-    if
-      not text:find("Sten Stoutarm", 1, true) or not (text:find("Wolf Meat", 1, true) or text:find("Trogg", 1, true))
-    then
-      problem(race .. " handed apart", "the work or the return lost", text)
-    end
-  end
-end
-
 -- A relog (a night and its waking minutes apart): no night told. A night
 -- indoors without an inn, and its waking, and a long stretch ending indoors.
 for _, race in ipairs(RACES) do
@@ -1316,123 +916,9 @@ for _, race in ipairs(RACES) do
   end
 end
 
--- An objective recorded with a number for its name (0.5.0's recorder read
--- "0/8 Tough Wolf Meat" the wrong way round): never written ("eight 0s").
-for _, race in ipairs(RACES) do
-  for seed = 1, 6 do
-    local o = { { type = seed % 2 == 0 and "item" or "monster", name = seed % 3 == 0 and " " or "0", n = 8 } }
-    local c = {
-      guid = "numbered-" .. race .. seed,
-      race = race,
-      class = COMBOS[race][1],
-      chapters = {
-        {
-          start = { level = 2, zone = "Dun Morogh", sub = "Coldridge Valley" },
-          log = {
-            {
-              k = "done",
-              id = 179,
-              giver = "Sten Stoutarm",
-              objectives = o,
-              zone = "Dun Morogh",
-              sub = "Coldridge Valley",
-              at = 100,
-            },
-            {
-              k = "quest",
-              id = 179,
-              told = true,
-              giver = "Sten Stoutarm",
-              ender = "Sten Stoutarm",
-              objectives = o,
-              zone = "Dun Morogh",
-              sub = "Coldridge Valley",
-              at = 200,
-            },
-          },
-        },
-      },
-    }
-    local text = ns.writeBook(c).chapters[1].text
-    inspect(race .. " numbered objective", text)
-    if text:find(" 0s") or text:find(" 0[ ,.;]") then
-      problem(race .. " numbered objective", "a number told as a name", text)
-    end
-  end
-end
-
--- Each people and kind of foe, and each kind of find, fought and found over
--- a few chapters by every race: the remarks about them all reachable.
-local SUBJECT_FOES = {
-  { "Murloc Raider", "Humanoid" },
-  { "Kobold Vermin", "Humanoid" },
-  { "Riverpaw Gnoll", "Humanoid" },
-  { "Bloodfeather Harpy", "Humanoid" },
-  { "Razormane Quilboar", "Humanoid" },
-  { "Kolkar Drudge", "Humanoid" },
-  { "Boulderfist Ogre", "Humanoid" },
-  { "Witherbark Troll", "Humanoid" },
-  { "Slitherblade Naga", "Humanoid" },
-  { "Hatefury Satyr", "Humanoid" },
-  { "Timbermaw Warrior", "Humanoid" },
-  { "Rockjaw Trogg", "Humanoid" },
-  { "Defias Thug", "Humanoid" },
-  { "Scarlet Crusader", "Humanoid" },
-  { "Rotting Dead", "Undead" },
-  { "Felguard", "Demon" },
-  { "Rock Elemental", "Elemental" },
-  { "Black Whelp", "Dragonkin" },
-  { "Webwood Spider", "Spider" },
-}
-local SUBJECT_THINGS = {
-  "Silithid Egg",
-  "Harpy Feather",
-  "Fine Moonstalker Pelt",
-  "Worn Parchment",
-  "Earthroot",
-  "Blood Shard",
-  "Mathystra Relic",
-  "Gnoll Paw",
-}
-for _, race in ipairs(RACES) do
-  for f, foe in ipairs(SUBJECT_FOES) do
-    local chapters = {}
-    for n = 1, 8 do
-      local thing = SUBJECT_THINGS[(f + n) % #SUBJECT_THINGS + 1]
-      -- (the find first: one remark a sentence, and the fight's would take it)
-      local log = {
-        {
-          k = "quest",
-          giver = "Ragnar",
-          sub = "Home",
-          zone = "Country",
-          at = 50,
-          objectives = { { type = "item", name = thing, n = n % 2 == 0 and 1 or 6 } },
-        },
-      }
-      for i = 1, 3 do
-        log[i + 1] = { k = "kill", name = foe[1], kind = foe[2], sub = "Home", zone = "Country", at = i * 100 }
-      end
-      log[5] = {
-        k = "quest",
-        giver = "Ragnar",
-        sub = "Home",
-        zone = "Country",
-        at = 400,
-        objectives = { { type = "monster", name = foe[1], n = n % 3 == 0 and 1 or 6 } },
-      }
-      chapters[n] = { start = { level = 30, zone = "Country", sub = "Home" }, log = log }
-    end
-    local c = { guid = "subjects-" .. race .. f, race = race, class = COMBOS[race][1], chapters = chapters }
-    for _, ch in ipairs(ns.writeBook(c).chapters) do
-      inspect(race .. " subjects " .. foe[1], ch.text)
-    end
-  end
-end
-
 -- The journey's end at the highest level, for every race's own lines.
 for _, race in ipairs(RACES) do
-  for seed = 1, 12 do
+  for seed = 1, 24 do
     local c = {
       guid = "summit-" .. race .. seed,
       race = race,
@@ -1461,172 +947,6 @@ for _, race in ipairs(RACES) do
       },
     }
     inspect(race .. " summit", ns.writeBook(c).chapters[1].text)
-  end
-end
-
--- Routine hand-ins past a scene's first two fold into one clause, told
--- once the place is left: every mix of errands and green gear, nothing from
--- the folded ones named (who the last was for, at most).
-for _, race in ipairs(RACES) do
-  for seed = 1, 72 do
-    local errands, gear = ({ 0, 1, 3 })[seed % 3 + 1], ({ 0, 1, 2 })[math.floor(seed / 3) % 3 + 1]
-    local log, at = {}, 100
-    local function add(m)
-      at = at + 100
-      m.zone, m.sub, m.at = "Silverpine Forest", "The Sepulcher", at
-      table.insert(log, m)
-    end
-    local function deliver(ender, thing)
-      add({ k = "quest", ender = ender, objectives = { { type = "item", name = thing, n = 1, held = true } } })
-    end
-    deliver("High Executor Hadrec", seed % 4 == 0 and "Scarlet Crusade Documents" or "Sealed Report")
-    deliver("Magistrate Sevren", "Wiley's Note")
-    for i = 1, errands do
-      deliver("Folded Person " .. i, "Folded Thing " .. i)
-    end
-    for i = 1, gear do
-      add({ k = "gear", quality = 2, link = "item:1:[Folded Gear " .. i .. "]" })
-    end
-    add({ k = "learned", spells = { "Fireball" } })
-    table.insert(log, { k = "place", zone = "Silverpine Forest", sub = "Fenris Isle", at = at + 100 })
-    local c = {
-      guid = "fold-" .. race .. seed,
-      race = race,
-      class = COMBOS[race][1],
-      began = { level = 20 },
-      chapters = {
-        {
-          start = { level = 20, zone = "Silverpine Forest", sub = "The Sepulcher" },
-          kills = {},
-          quests = 0,
-          played = 100,
-          gold = 0,
-          log = log,
-        },
-      },
-    }
-    local text = ns.writeBook(c).chapters[1].text
-    inspect(race .. " fold", text)
-    if text:find("Folded Thing") or text:find("Folded Gear") then
-      problem(race .. " fold", "a folded hand-in named", text)
-    end
-    for i = 1, errands - 1 do
-      if text:find("Folded Person " .. i, 1, true) then problem(race .. " fold", "not the last named", text) end
-    end
-    local told = false
-    for _, w in ipairs({
-      "gear",
-      "errand",
-      "job",
-      "task",
-      "favour",
-      "deliver",
-      "request",
-      "report",
-      "thing",
-      "chore",
-      "parcel",
-    }) do
-      if text:find(w, 1, true) then told = true end
-    end
-    if errands + gear > 0 and not told then problem(race .. " fold", "folded hand-ins never told", text) end
-  end
-end
-
--- A thing carried from one to the next ("I carried Deliah's Ring to Hadrec,
--- took it on to Sevren"), or handed over twice to the same person: named once.
-for _, race in ipairs(RACES) do
-  for seed = 1, 24 do
-    local function deliver(ender, at, thing)
-      return {
-        k = "quest",
-        ender = ender,
-        objectives = { { type = "item", name = thing or "Deliah's Ring", n = 1, held = true } },
-        zone = "Silverpine Forest",
-        sub = "The Sepulcher",
-        at = at,
-      }
-    end
-    local c = {
-      guid = "carried-on-" .. race .. seed,
-      race = race,
-      class = COMBOS[race][1],
-      began = { level = 20 },
-      chapters = {
-        {
-          start = { level = 20, zone = "Silverpine Forest", sub = "The Sepulcher" },
-          kills = {},
-          quests = 0,
-          played = 100,
-          gold = 0,
-          log = seed % 3 == 0 and {
-            deliver("High Executor Hadrec", 100),
-            deliver("Magistrate Sevren", 200),
-            deliver("Raleigh Andrean", 300),
-          } or seed % 3 == 1 and {
-            deliver("High Executor Hadrec", 100),
-            deliver("High Executor Hadrec", 200),
-            deliver("Magistrate Sevren", 300),
-          } or {
-            deliver("High Executor Hadrec", 100),
-            deliver("High Executor Hadrec", 200, "Wiley's Note"),
-            deliver("Magistrate Sevren", 300, "Sealed Report"),
-          },
-        },
-      },
-    }
-    local text = ns.writeBook(c).chapters[1].text
-    inspect(race .. " carried on", text)
-    local _, rings = text:gsub("Deliah's Ring", "")
-    local _, hadrec = text:gsub("Hadrec", "")
-    if rings > 1 or hadrec > 1 then
-      problem(race .. " carried on", "a thing or a person named again and again", text)
-    end
-  end
-end
-
--- Repeated journeys exercise return wording as well as one-off arrivals.
-for _, race in ipairs(RACES) do
-  local log = {}
-  for i = 1, 100 do
-    log[i] = { k = "place", sub = i % 2 == 0 and "Home" or "Farm", zone = "Country" }
-  end
-  local c = {
-    guid = "return-journeys",
-    race = race,
-    class = COMBOS[race][1],
-    chapters = { { start = { level = 20, zone = "Country", sub = "Home" }, log = log } },
-  }
-  inspect(race .. " return journeys", ns.writeBook(c).chapters[1].text)
-end
-
--- A busy fighting day can also include quests. Recap fighting the objectives
--- have not already told, and exercise the long-work variants of that ending.
-for _, race in ipairs(RACES) do
-  for seed = 1, 80 do
-    local c = {
-      guid = "uncovered-fights-" .. seed,
-      race = race,
-      class = COMBOS[race][1],
-      chapters = {
-        {
-          start = { level = 20, zone = "Country", sub = "Home" },
-          quests = 2,
-          played = 7200,
-          kills = { Wolf = 20, Scorpid = 18 },
-          log = {
-            { k = "quest", giver = "Farmer", objectives = { { type = "monster", name = "Wolf", n = 2 } } },
-          },
-          ended = { level = 20, place = "Home", how = "rest" },
-        },
-      },
-    }
-    local text = ns.writeBook(c).chapters[1].text
-    inspect(race .. " uncovered fights", text)
-    -- (a number may open the sentence: "Eighteen Scorpids had fallen")
-    if not text:lower():find("eighteen scorpids", 1, true) or text:lower():find("twenty wolves", 1, true) then
-      problem(race .. " uncovered fights", "the recap repeated an objective or lost other fighting", text)
-    end
   end
 end
 
@@ -1801,7 +1121,7 @@ do
         for i, ch in ipairs(ns.writeBook(c).chapters) do
           inspect(race .. " lands " .. level .. " ch" .. i, ch.text)
         end
-        for i, e in ipairs(ns.writeDiary(c).entries) do
+        for i, e in ipairs(ns.writeBook(c).chapters) do
           inspect(race .. " lands " .. level .. " diary" .. i, e.text)
         end
       end
@@ -1867,7 +1187,7 @@ do
       began = { level = 20 },
       chapters = chapters,
     }
-    for i, e in ipairs(ns.writeDiary(c).entries) do
+    for i, e in ipairs(ns.writeBook(c).chapters) do
       inspect(race .. " story diary " .. i, e.text)
     end
   end
@@ -1895,7 +1215,7 @@ do
       },
     },
   }
-  inspect("home lands diary", ns.writeDiary(c).entries[1].text)
+  inspect("home lands diary", ns.writeBook(c).chapters[1].text)
 end
 
 -- The diary's links (Diary.lua): a chain's story taken up again in a later
@@ -2007,7 +1327,7 @@ do
         began = { level = 20 },
         chapters = chapters,
       }
-      for i, e in ipairs(ns.writeDiary(c).entries) do
+      for i, e in ipairs(ns.writeBook(c).chapters) do
         inspect(race .. " links diary " .. i, e.text)
       end
     end
@@ -2058,7 +1378,7 @@ do
     end
     local c =
       { guid = "quiet-" .. race, race = race, class = COMBOS[race][1], began = { level = 6 }, chapters = chapters }
-    for i, e in ipairs(ns.writeDiary(c).entries) do
+    for i, e in ipairs(ns.writeBook(c).chapters) do
       inspect(race .. " quiet diary " .. i, e.text)
     end
   end
@@ -2087,7 +1407,7 @@ do
     for i, ch in ipairs(book.chapters) do
       inspect(race .. " escort " .. i, ch.text)
     end
-    for i, e in ipairs(ns.writeDiary(c, book).entries) do
+    for i, e in ipairs(ns.writeBook(c).chapters) do
       inspect(race .. " escort diary " .. i, e.text)
     end
   end
@@ -2206,7 +1526,7 @@ do
         chapters[n] = stretch(n, { { k = "quest", id = id, giver = "Kranal Fiss", at = n * 100000 + 10 } })
       end
       local c = { guid = "totem-" .. race .. life .. r, race = race, class = "SHAMAN", chapters = chapters }
-      for i, e in ipairs(ns.writeDiary(c).entries) do
+      for i, e in ipairs(ns.writeBook(c).chapters) do
         inspect(race .. " initiation diary " .. i, e.text)
       end
     end
@@ -2220,7 +1540,7 @@ do
       chapters[n] = stretch(n, { { k = "demon", name = "Zig" .. n, family = pair[2], at = n * 100000 + 10 } })
     end
     local c = { guid = "summoned-" .. race, race = race, class = "WARLOCK", chapters = chapters }
-    for i, e in ipairs(ns.writeDiary(c).entries) do
+    for i, e in ipairs(ns.writeBook(c).chapters) do
       inspect(race .. " summoning diary " .. i, e.text)
     end
   end
@@ -2313,7 +1633,7 @@ do
       end
       local c = { guid = "react-" .. race .. life, race = race, class = COMBOS[race][1], chapters = chapters }
       if race == "Skyborne" then c.faction = life % 2 == 0 and "horde" or "alliance" end
-      for i, e in ipairs(ns.writeDiary(c).entries) do
+      for i, e in ipairs(ns.writeBook(c).chapters) do
         inspect(race .. " reaction diary " .. i, e.text)
       end
     end
@@ -2348,7 +1668,7 @@ do
       end
       local c = { guid = "elsewhere-" .. race .. life, race = race, class = COMBOS[race][1], chapters = chapters }
       if race == "Skyborne" then c.faction = life % 2 == 0 and "horde" or "alliance" end
-      for i, e in ipairs(ns.writeDiary(c).entries) do
+      for i, e in ipairs(ns.writeBook(c).chapters) do
         inspect(race .. " two lands diary " .. i, e.text)
       end
     end
@@ -2401,7 +1721,7 @@ do
       end
       local c = { guid = "foes-" .. race .. life, race = race, class = COMBOS[race][1], chapters = chapters }
       if race == "Skyborne" then c.faction = life % 2 == 0 and "horde" or "alliance" end
-      for i, e in ipairs(ns.writeDiary(c).entries) do
+      for i, e in ipairs(ns.writeBook(c).chapters) do
         inspect(race .. " foes diary " .. i, e.text)
       end
     end
@@ -2445,7 +1765,7 @@ do
       }
     end
     local c = { guid = "pet-" .. life[3], race = life[1], class = life[2], began = { level = 20 }, chapters = chapters }
-    for i, e in ipairs(ns.writeDiary(c).entries) do
+    for i, e in ipairs(ns.writeBook(c).chapters) do
       inspect(life[1] .. " pet diary " .. i, e.text)
     end
   end
@@ -2491,7 +1811,7 @@ do
         }, 9),
       },
     }
-    local text = ns.writeDiary(c).entries[1].text
+    local text = ns.writeBook(c).chapters[1].text
     if not text:find("Kazrix", 1, true) then
       problem(race .. " crowded diary", "a milestone lost to lesser things", text)
     end
@@ -2506,7 +1826,7 @@ do
       stretch({ { k = "learned", spells = { "Frostbolt", "Frostbolt" }, at = 10 } }),
     },
   }
-  local second = ns.writeDiary(ranks).entries[2].text
+  local second = ns.writeBook(ranks).chapters[2].text
   if second:find("Frostbolt", 1, true) then problem("ranks diary", "a new rank told as a new spell", second) end
   -- a second companion: another, not the first
   for seed = 1, 6 do
@@ -2519,7 +1839,7 @@ do
         stretch({ { k = "tame", name = "Ashpaw", family = "Bear", at = 10 } }),
       },
     }
-    local entries = ns.writeDiary(pets).entries
+    local entries = ns.writeBook(pets).chapters
     if not entries[1].text:find("Dusk", 1, true) then
       problem("pets diary", "the first companion untold", entries[1].text)
     end
@@ -2530,61 +1850,10 @@ do
   -- a shaman's initiation: told
   local totem =
     { guid = "totem", race = "Orc", class = "SHAMAN", chapters = { stretch({ { k = "quest", id = 1518, at = 10 } }) } }
-  local told = ns.writeDiary(totem).entries[1].text
+  local told = ns.writeBook(totem).chapters[1].text
   if not told:find("totem", 1, true) then problem("initiation diary", "an element's favour untold", told) end
 end
 
--- A trinket put on: carried, not worn.
-for seed = 1, 9 do
-  local c = {
-    guid = "trinket-" .. seed,
-    race = RACES[seed % #RACES + 1],
-    class = "WARRIOR",
-    chapters = {
-      {
-        start = { level = 20, zone = "Country", sub = "Home" },
-        log = {
-          {
-            k = "gear",
-            link = "|cff1eff00|Hitem:5079|h[Cold Basilisk Eye]|h|r",
-            quality = 2,
-            trinket = true,
-            zone = "Country",
-            sub = "Home",
-          },
-        },
-      },
-    },
-  }
-  inspect("a trinket", ns.writeBook(c).chapters[1].text)
-end
-
--- Cenarius's own fought (the Horde's Stonetalon quests): a druid's unease,
--- or a tauren's, once in a while.
-for _, who in ipairs({ { "Tauren", "WARRIOR" }, { "NightElf", "DRUID" }, { "Tauren", "DRUID" } }) do
-  for seed = 1, 10 do
-    local log = {}
-    for i, foe in ipairs({ "Sons of Cenarius", "Cenarion Botanist", "Daughters of Cenarius", "Sons of Cenarius" }) do
-      table.insert(log, {
-        k = "quest",
-        giver = "Braelyn Firehand",
-        objectives = { { type = "monster", name = foe, n = 8 } },
-        zone = "Stonetalon Mountains",
-        sub = "Sun Rock Retreat",
-        at = i * 1200,
-      })
-    end
-    local c = {
-      guid = ("cenarion-%s-%s-%d"):format(who[1], who[2], seed),
-      race = who[1],
-      class = who[2],
-      chapters = { { start = { level = 25, zone = "Stonetalon Mountains", sub = "Sun Rock Retreat" }, log = log } },
-    }
-    inspect(who[1] .. " " .. who[2] .. " against Cenarius's own", ns.writeBook(c).chapters[1].text)
-  end
-end
-
-local runs = 0
 -- Future or otherwise unwritten races still get a complete generic beginning.
 -- Racial beginnings now belong to their own catalogs rather than redundant
 -- shared lines that a complete racial catalog would hide permanently.
@@ -2666,32 +1935,8 @@ for _, race in ipairs(RACES) do
           end
         end
       end
-      -- word carried to the same person again, in one stretch
-      local errands = {}
-      for k, giver in ipairs({ "Gazlowe", "Sputtervalve", "Mebok Mizzyrix", "Wharfmaster Dizzywig" }) do
-        errands[k] = { k = "quest", giver = giver, ender = "Brewmaster Drohn", objectives = { { type = "log" } } }
-      end
-      chapter(errands)
-      -- one of my own people met in other peoples' lands; the hosts of a
-      -- race with no land of its own
-      local kin = {}
-      for name, who in pairs(ns.knowledge.npcs) do
-        if who.people == race then table.insert(kin, name) end
-      end
-      table.sort(kin)
-      for z, zone in ipairs({ "Westfall", "Duskwood", "The Barrens", "Stranglethorn Vale", "Ashenvale", "Tanaris" }) do
-        if kin[z] then
-          chapter({
-            { k = "quest", giver = kin[z], ender = kin[z], zone = zone, sub = zone, objectives = { { type = "log" } } },
-          })
-        end
-      end
-      local land = ({ Gnome = "Dun Morogh", Troll = "Durotar" })[race]
-      if land then
-        chapter({ { k = "quest", giver = "Sten Stoutarm", zone = land, sub = land, objectives = { { type = "log" } } } })
-      end
-      -- the hunt for a quest's things, from the creatures they drop from, in
-      -- my way of fighting (a new one, learned between lives), with my pet
+      -- a quest's things fetched, in my way of fighting (a new one, learned
+      -- between lives), with my pet
       local element = ({
         MAGE = { "Frostbolt", "Arcane Missiles" },
         WARLOCK = { "Corruption", "Curse of Agony" },
@@ -2769,83 +2014,6 @@ for _, race in ipairs(RACES) do
   end
 end
 
--- A long run of ordinary errands must not exhaust the racial narrator and
--- leave the rest of the book to the shared voice: the race's own remarks
--- come back once spaced, the shared ones only fill the gaps. Observe real
--- selections without modifying any candidate pool or the writer's own history.
-for _, race in ipairs(RACES) do
-  local selected, own = 0, 0
-  local coverage = ns.writerUsed
-  ns.writerUsed = setmetatable({}, {
-    __newindex = function(_, reach)
-      coverage[reach] = true
-      if reach:find("r-task#", 1, true) then
-        selected = selected + 1
-        if reach:sub(1, #race + 1) == race .. "/" then own = own + 1 end
-      end
-    end,
-  })
-  -- forty chapters of four errands each
-  local chapters = {}
-  for n = 1, 40 do
-    local log = {}
-    for i = 1, 4 do
-      log[i] = {
-        k = "quest",
-        giver = "Gazlowe",
-        at = i * 300,
-        objectives = { { type = "event", text = "Recover the missing cargo" } },
-      }
-    end
-    chapters[n] = { start = { level = 20, zone = "The Barrens", sub = "Ratchet" }, log = log }
-  end
-  local c = { guid = "long-errands", race = race, class = COMBOS[race][1], chapters = chapters }
-  for _, ch in ipairs(ns.writeBook(c).chapters) do
-    inspect(race .. " long errands", ch.text)
-  end
-  ns.writerUsed = coverage
-  if selected < 30 or own < selected * 0.55 then
-    problem(race .. " long errands", "the racial voice faded during repeated work", own .. "/" .. selected)
-  end
-end
-
--- Coming back to a place after a long while: a return told, with its own
--- remarks (a race's among them), in its home lands and away; and a weapon
--- of one's own make taken up.
-for _, race in ipairs(RACES) do
-  local chapters = {}
-  for n = 1, 30 do
-    local zone = zoneNamed(n % 2 == 0 and (START[race] or "Elwynn Forest") or "The Barrens")
-    local log, at = {}, 0
-    for i = 1, 6 do
-      at = at + (i % 2 == 1 and 7200 or 300)
-      log[i] = {
-        k = "quest",
-        giver = "Gazlowe",
-        at = at,
-        zone = zone[1],
-        sub = zone[2][(i % 2) + 1],
-        objectives = { { type = "event", text = "Recover the missing cargo" } },
-      }
-    end
-    table.insert(log, {
-      k = "gear",
-      link = "|cff1eff00|Hitem:1|h[Heavy Copper Axe]|h|r",
-      quality = 2,
-      made = true,
-      held = true,
-      at = at + 60,
-      zone = zone[1],
-      sub = zone[2][1],
-    })
-    chapters[n] = { start = { level = 20, zone = zone[1], sub = zone[2][1] }, log = log }
-  end
-  local c = { guid = "long-returns-" .. race, race = race, class = COMBOS[race][1], chapters = chapters }
-  for _, ch in ipairs(ns.writeBook(c).chapters) do
-    inspect(race .. " long returns", ch.text)
-  end
-end
-
 -- Skyborne traditions follow a recorded faction. A missing faction must
 -- not be inferred even from a class currently restricted to one faction.
 if forever then
@@ -2891,16 +2059,9 @@ for _, race in ipairs(comparison.races) do
   local c = comparison.day(race)
   local text = ns.writeBook(c).chapters[1].text
   inspect(race .. " voice comparison", text)
-  -- (the Brigands: all of them, or the first told and "more"; no numbers)
+  -- (what the day's entry keeps: the trade taken up, the company, the close call)
   local low = text:lower()
-  if
-    not (
-      low:find("linen cloth", 1, true)
-      and low:find("southsea brigand", 1, true)
-      and text:find("Brown Linen Robe", 1, true)
-      and text:find("Kelsa", 1, true)
-    )
-  then
+  if not (low:find("tailoring", 1, true) and text:find("Kelsa", 1, true) and low:find("southsea brigand", 1, true)) then
     problem(race .. " voice comparison", "the voice lost a recorded fact", text)
   end
   if text ~= ns.writeBook(c).chapters[1].text then
@@ -2908,7 +2069,6 @@ for _, race in ipairs(comparison.races) do
   end
 end
 
-trackRemarks = true
 for _, round in ipairs({
   { 1, 12 },
   { 1, 60 },
@@ -2925,7 +2085,6 @@ for _, round in ipairs({
     local classes = COMBOS[race]
     for _, class in ipairs(classes) do
       for _, hc in ipairs({ true, false }) do
-        runs = runs + 1
         local c = life(race, class, hc, round[1], round[2])
         local book = ns.writeBook(c)
         if (c.death ~= nil) ~= (book.epitaph ~= nil) then
@@ -2942,22 +2101,18 @@ for _, round in ipairs({
         inspect(race .. " " .. class .. " prologue", book.prologue)
         inspect(race .. " " .. class .. " epitaph", book.epitaph)
         if round[1] > 1 and not book.prologue then problem(race .. " " .. class, "no prologue", "") end
+        -- every entry through the shared checks; no more than one thought of
+        -- a kind in an entry ("stays with me"); a hunter's pet not before 10
         for _, ch in ipairs(book.chapters) do
           chapters = chapters + 1
-          inspect(("%s %s chapter %d"):format(race, class, ch.number), ch.text)
+          local where = ("%s %s entry %d"):format(race, class, ch.number)
+          inspect(where, ch.text)
           if class == "HUNTER" and ch.to <= 10 and ch.text and ch.text:find("%f[%a]pet%f[%A]") then
-            problem(("%s HUNTER chapter %d"):format(race, ch.number), "a hunter's pet before level 10", ch.text)
+            problem(where, "a hunter's pet before level 10", ch.text)
           end
           if ch.text and #ch.text > longest then
             longest, longestText = #ch.text, ch.text
           end
-        end
-        -- the diary of the same life (Diary.lua), what is read, through the same
-        -- checks; no more than one thought of a kind in an entry ("stays with
-        -- me"); a finished entry the same however many come after
-        local entries = ns.writeDiary(c, book).entries
-        for _, e in ipairs(entries) do
-          inspect(("%s %s diary %d"):format(race, class, e.number), e.text)
           local marks = 0
           for _, mark in ipairs({
             "stays with me",
@@ -2966,42 +2121,35 @@ for _, round in ipairs({
             "turning it over",
             "turning them over",
           }) do
-            if e.text:find(mark, 1, true) then marks = marks + 1 end
+            if ch.text:find(mark, 1, true) then marks = marks + 1 end
           end
-          if marks > 1 then
-            problem(("%s %s diary %d"):format(race, class, e.number), "one reflection twice", e.text)
-          end
+          if marks > 1 then problem(where, "one reflection twice", ch.text) end
         end
+        -- a finished entry the same however many come after
         if #c.chapters > 3 and books % 7 == 0 then
           local shorter = {}
           for k, v in pairs(c) do
             shorter[k] = v
           end
-          shorter.chapters = {}
+          shorter.chapters, shorter.death, shorter.closed = {}, nil, nil
           for k = 1, #c.chapters - 1 do
             shorter.chapters[k] = c.chapters[k]
           end
-          local before = ns.writeDiary(shorter, ns.writeBook(shorter)).entries
+          local before = ns.writeBook(shorter).chapters
           for k = 1, #before - 1 do
-            if before[k].text ~= entries[k].text then
+            if before[k].text ~= book.chapters[k].text then
               problem(
-                ("%s %s diary %d"):format(race, class, k),
+                ("%s %s entry %d"):format(race, class, k),
                 "a finished entry changed when another came",
-                entries[k].text
+                book.chapters[k].text
               )
             end
           end
-        end
-        repeats = repeats + book.repeats
-        if book.minGap and (not gaps[book.minGapKind] or book.minGap < gaps[book.minGapKind]) then
-          gaps[book.minGapKind] = book.minGap
         end
       end
     end
   end
 end
-
-trackRemarks = false
 
 -- Deaths of every sort: closed Hardcore lives at levels low, middling and high,
 -- the foe known or not, the place known or not.
@@ -3021,44 +2169,6 @@ for _, race in ipairs(RACES) do
         if not book.epitaph then problem(race .. " " .. class, "a Hardcore death without an epitaph", "") end
         inspect(race .. " " .. class .. " epitaph", book.epitaph)
       end
-    end
-  end
-end
-
--- A chapter being written only grows: told one moment more, what was written
--- stays, but for its last paragraph (the stretch still being played).
--- (the text with its abbreviations hidden: "Venture Co. Laborer" is one sentence)
-local function upTo(c, i, k)
-  local copy = {}
-  for key, v in pairs(c) do
-    copy[key] = v
-  end
-  copy.chapters, copy.death = {}, nil
-  for j = 1, i - 1 do
-    copy.chapters[j] = c.chapters[j]
-  end
-  local ch = c.chapters[i]
-  local open = { start = ch.start, kills = ch.kills, quests = ch.quests, played = ch.played, gold = ch.gold, log = {} }
-  for j = 1, k do
-    open.log[j] = ch.log[j]
-  end
-  copy.chapters[i] = open
-  return ((ns.writeBook(copy).chapters[i].text or ""):gsub("Co%. ", "Co_ "):gsub("Mr%. ", "Mr_ "))
-end
-for _, race in ipairs(RACES) do
-  local c = life(race, COMBOS[race][1], false, 1, 20)
-  for i = 1, math.min(#c.chapters, 3) do
-    local before = upTo(c, i, 0)
-    for k = 1, #c.chapters[i].log do
-      local now = upTo(c, i, k)
-      -- (the paragraphs before the last, breaks aside: a paragraph of one
-      -- sentence joins the one before)
-      local kept = (before:match("^(.*)\n\n") or ""):gsub("\n\n", " ")
-      if now:gsub("\n\n", " "):sub(1, #kept) ~= kept then
-        problem(race .. " chapter " .. i, "a finished paragraph changed at moment " .. k, before .. "\n => " .. now)
-        break
-      end
-      before = now
     end
   end
 end
@@ -3092,45 +2202,6 @@ for _, u in ipairs(unused) do
   problem("never written", "unreachable sentence", u)
 end
 
--- The open journal writes the book again at each moment, the closed chapters
--- from what it kept (ns.writeBook(c, keep)): the same book as written whole,
--- word for word, at every step of a life (each chapter open, half told, then
--- whole, then closed).
-local function sameBook(x, y)
-  if x.prologue ~= y.prologue or x.epitaph ~= y.epitaph or #x.chapters ~= #y.chapters then return false end
-  for i, a in ipairs(x.chapters) do
-    local b = y.chapters[i]
-    for _, k in ipairs({ "number", "text", "place", "from", "to", "open", "rare", "close" }) do
-      if a[k] ~= b[k] then return false end
-    end
-  end
-  return true
-end
-local hooks = { ns.writerUsed, ns.writerSentence, ns.writerRemark }
-ns.writerUsed, ns.writerSentence, ns.writerRemark = nil, nil, nil
-for _, n in ipairs({ 1, 2, 3, 6 }) do -- (a Hardcore life, one met mid-life, both, neither)
-  local race = RACES[n]
-  local whole = life(race, COMBOS[race][1], n % 3 == 0, n % 2 == 0 and 20 or 1, 60)
-  local all, keep = whole.chapters, {}
-  local c = setmetatable({ chapters = {} }, { __index = whole })
-  for i, ch in ipairs(all) do
-    c.chapters[i] = ch
-    local log, ended = ch.log, ch.ended
-    ch.ended = nil
-    for _, upTo in ipairs({ math.floor(#log / 2), #log }) do
-      ch.log = { unpack(log, 1, upTo) }
-      if not sameBook(ns.writeBook(c, keep), ns.writeBook(c)) then
-        problem("kept", race .. ": chapter " .. i .. " open, " .. upTo .. " moments", "not the book written whole")
-      end
-    end
-    ch.log, ch.ended = log, ended
-    if not sameBook(ns.writeBook(c, keep), ns.writeBook(c)) then
-      problem("kept", race .. ": chapter " .. i .. " closed", "not the book written whole")
-    end
-  end
-end
-ns.writerUsed, ns.writerSentence, ns.writerRemark = hooks[1], hooks[2], hooks[3]
-
 -- Words and plurals.
 local function eq(a, b, what)
   if a ~= b then problem("words", what, tostring(a) .. " ~= " .. tostring(b)) end
@@ -3147,10 +2218,6 @@ eq(ns.writer.plural("Mud Thresh"), "Mud Threshes", "thresh")
 eq(ns.writer.plural("Rotting Dead"), "Rotting Dead", "dead")
 eq(ns.writer.plural("Scavenged Goods"), "Scavenged Goods", "already many")
 eq(ns.writer.plural("Rough Glass"), "Rough Glasses", "glass")
-eq(ns.writer.things("Crag Boar Rib"), "Crag Boar Ribs", "ribs")
-eq(ns.writer.things("Tough Wolf Meat"), "Tough Wolf Meat", "meat")
-eq(ns.writer.things("Shimmerweed"), "Shimmerweeds", "as the game writes it: 6 Shimmerweeds")
-eq(ns.writer.things("Linen Cloth"), "Linen Cloth", "cloth")
 eq(ns.writer.plural("Kobold Vermin"), "Kobold Vermin", "vermin")
 eq(ns.writer.itemName("Wolf Fang Necklace"), "a Wolf Fang Necklace", "a")
 eq(ns.writer.itemName("Cuirboulle Gloves"), "Cuirboulle Gloves", "plural")
@@ -3158,48 +2225,14 @@ eq(ns.writer.itemName("An Unsent Letter"), "an Unsent Letter", "own article")
 eq(ns.writer.itemName("Wiley's Note"), "Wiley's Note", "possessive note")
 eq(ns.writer.itemName("Smite's Mighty Hammer"), "Smite's Mighty Hammer", "possessive")
 eq(ns.writer.itemName("Blackened Defias Armor"), "Blackened Defias Armor", "mass")
-eq(
-  ns.writer.taskOf("Read the Hallowed Rune and speak to Branstock Khalder in Anvilmar."),
-  "read the Hallowed Rune",
-  "the hand-in left out"
-)
-eq(ns.writer.instruction("Speak to Branstock Khalder."), false, "only the return: no task")
 eq(ns.writer.playedWords(7170), "two hours", "1h59 is two hours")
 eq(ns.writer.playedWords(3600 + 58 * 60), "two hours", "1h58")
 eq(ns.writer.playedWords(1500), "twenty-five minutes", "25 min")
 eq(ns.writer.playedWords(5400), "an hour and a half", "1h30")
 eq(ns.writer.playedWords(9000), "two hours and a half", "2h30")
-eq(ns.writer.goldWords(12345), "a gold piece", "1g")
 
-io.write(
-  ("%d books, %d chapters, %d sentences repeated (%.1f per book), longest chapter %d characters\n"):format(
-    books,
-    chapters,
-    repeats,
-    repeats / books,
-    longest
-  )
-)
+io.write(("%d books, %d entries, longest entry %d characters\n"):format(books, chapters, longest))
 if os.getenv("WRITER_PROFILE") == "1" then io.write(longestText .. "\n") end
-io.write(("routine remarks: %d/%d (%.1f%%)\n"):format(remarkTotal, routineTotal, 100 * remarkTotal / routineTotal))
-io.write(("remarks repeated within a book's first ten chapters: %d\n"):format(remarkEarly))
-if remarkEarly > 0 then
-  problem("remark repeats", "a remark came back within a book's first ten chapters", tostring(remarkEarly))
-end
-if remarkTotal / routineTotal < 0.30 or remarkTotal / routineTotal > 0.45 then
-  problem("remark budget", "routine remarks strayed outside the target frequency", remarkTotal .. "/" .. routineTotal)
-end
-local kinds = {}
-for kind, gap in pairs(gaps) do
-  table.insert(kinds, ("%s %d"):format(kind, gap))
-end
-table.sort(kinds)
-io.write("fewest uses of a kind between two uses of one of its sentences: " .. table.concat(kinds, ", ") .. "\n")
-for kind, gap in pairs(gaps) do
-  if gap < 6 then
-    problem("repeats", "a sentence of " .. kind .. " used again after " .. gap .. " uses of its kind", "")
-  end
-end
 if #problems > 0 then
   io.write(table.concat(problems, "\n") .. "\n")
   os.exit(1)

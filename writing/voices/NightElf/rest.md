@@ -12,12 +12,11 @@ kind: rest
 - I rested {at}, as if I still had all the time in the world, and knew very well I did not.
 - [!fire] I sat quietly {at}, and listened until every sound around me was one I could name.
 - [fire] I rested by the fire {at}, letting it warm me while my eyes stayed on the dark beyond it.
-- [last] I settled {at}, and let the hours pass without asking anything of them.
+- I settled {at}, and let the hours pass without asking anything of them.
 - Stillness came to me {at} more easily than sleep, and I let it stay as long as it liked.
 - [hc] I stopped {at}, never quite letting go of my guard, as befits anyone with only one life to lose.
-- [!last] I paused {at}, as a nightsaber pauses, quite still and not at all asleep.
-- [last !fire] Rest found me {at}, as quietly as an owl folding its wings.
+- [!fire] Rest found me {at}, as quietly as an owl folding its wings.
 - [fire] I kept close to the fire {at}, grateful for its warmth and mindful of its appetite, as my people learn to be among trees.
-- [last !fire] I rested {at}, my thoughts free to drift as far as they liked now that my feet would not have to follow them.
+- [!fire] I rested {at}, my thoughts free to drift as far as they liked now that my feet would not have to follow them.
 - I stopped {at}, laying the road's cares aside like a cloak I would not need again until I rose.
-- [last] I settled down {at} and gave myself up to sleep, whatever dreams it meant to bring.
+- I settled down {at} and gave myself up to sleep, whatever dreams it meant to bring.

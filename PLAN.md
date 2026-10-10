@@ -8,6 +8,16 @@ Games: Classic Era (Hardcore, Season of Discovery), World of
 Warcraft: Forever. One source, one package per game, as Lorekeeper's Codex and
 Explorer's Field Journal (same release, CI and CurseForge tooling).
 
+## The journal is the diary (10 October 2026)
+
+| Question | Decision |
+|---|---|
+| Reading | Each chapter reads as its diary entry, in the game and on the site (diary first on 9 October, diary only on 10 October). The full chapter prose is no longer written. |
+| Code | The chapter writer (Scene.lua, Writer.lua's tellings, the clause and remark pools, their tests) is removed; the last of it is on the branch `chapters-archive` (tag `chapters-last`, 8877939). The book is Diary.lua's: the prologue, the entries, the epitaph. |
+| Saved book | Each chapter's entry in `diary`; `text` is no longer written (a book saved before keeps its prose there, and the site reads it in its place). |
+| Data | Knowledge.lua keeps the class quests and the chains; the drops of quest items went with the hunts that told them; the quest givers' people and callings serve the playthrough only (`.cache/audit/npcs.lua`). |
+| Scenery | Today the journal describes a life's first land only; whether an entry's new lands show their scenery, or the other places' descriptions go, is open. |
+
 ## Voices and scenery (6 October 2026)
 
 | Question | Decision |

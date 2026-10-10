@@ -2,40 +2,33 @@
 
 <!-- Project description for curseforge.com (paste as the project's description). -->
 
-**Your character's own journal, written as you play.** Every quest, every new foe, every place, every close call, the gear you first wear and the trades you learn are written down as they happen, in your character's own voice, and a chapter closes when you rest: when you log out at an inn, in a city or by a campfire. On Hardcore, a death closes the book with an epitaph, and the life joins the Hall of the Fallen.
+**Your character's own journal, written as you play.** The addon records your life as it happens (every quest, foe, place and close call), and each time you rest (a logout at an inn, in a city or by a campfire) the stretch becomes a diary entry in your character's own voice: what mattered, and what it meant to them. On Hardcore, a death closes the book with an epitaph, and the life joins the Hall of the Fallen.
 
 For Classic Era (Hardcore, Season of Discovery) and World of Warcraft: Forever. A sibling of [Lorekeeper's Codex](https://www.curseforge.com/wow/addons/lorekeepers-codex) and [Explorer's Field Journal](https://github.com/salty-max/field-journal), in the same look, but it stands alone.
 
 ## A page of it
 
-> I reached Kharanos, took a room at Thunderbrew Distillery, then took up skinning. I began to learn leatherworking, learned what boars are like and found the Crag Boar Ribs Ragnar Thunderbrew wanted, six in all. After that, I put on a Handstitched Leather Vest, made with my own hands.
->
-> Later that day, I walked into Shimmer Ridge and dealt with a Frostmane Snowstrider. I kept watch there more than I slept.
+> I took to the road in Durotar, and it looked friendly enough, which in my experience is the moment to look twice. I came into the Barrens for the first time, and wondered straight away what grew and swam there and how much of it was good to eat. I thinned the Razormane quilboars that had been attacking the supply lines from Durotar, for Thork at the Crossroads. I tamed my first companion and called it Dusk, and from then on I did not hunt alone. I rested in the Barrens, and gave my curiosity a rest along with my legs.
 
-## What a chapter tells
+## What an entry tells
 
-A chapter runs from one rest to the next. Logging out in the wild is a night outdoors, and the chapter goes on; after four hours of play, the next logout closes it wherever you are.
+A chapter runs from one rest to the next. Logging out in the wild is a night outdoors, and the chapter goes on; after four hours of play, the next logout closes it wherever you are. Its entry tells what weighs most:
 
-- **The road**: where the chapter began, the lands and places seen for the first time, the inn you made your home, your flights, the campfires you sat by, the nights outdoors.
-- **The work**: what each quest had you do (the wolves you hunted, the meat you brought, the message you carried), told where you did it, for whom, and who you returned to. A quest you abandon is left out.
-- **The fights**: each new creature fought, the first of each kind, elites, rares, and the close calls (under a tenth of your health, and alive to tell it), by night or day; when the chapter closes, what you fought most.
-- **The company**: who you grouped with, the dungeons and raids you went into and the bosses who stayed there.
-- **The other side**: a player of the other faction you kill in the open world, by name, race and class, or several together when the fighting runs on. Battlegrounds are not part of the tale.
-- **Death**: on a normal realm, how you died and how you came back: the run back from the graveyard as a ghost, the spirit healer's bargain, or a companion who raised you.
-- **What you became**: what the trainer taught you; a druid's new forms, a warlock's new demons, a class's own steed; the professions you took up and their ranks, riding and the first ride; each piece of gear the first time you wear it (and if you made it yourself, the journal says so); a hunter's new pets, and the times they fell.
-- **The rest**: the rare finds you loot (blue and better; a quest's reward is told when you wear it), an evening at your craft in one line, your professions' milestones, and at the end the time it took and the gold it brought.
+- **The milestones of a life**, always: a warlock's first demon of each kind, a druid's new forms, a hunter's companions, a shaman's favour from each element, what a class's own quest taught you.
+- **The story**: the work that mattered most, told as you did it and why (from the quests' own words: "I killed Hogger, the huge gnoll who had overpowered every attempt at his capture"), picking up a story left off in an earlier entry, and now and then a word on what it meant to you.
+- **The dangers**: how you died and came back, or the closest call (under a tenth of your health, and alive to tell it); the foes worth naming, rares and elites; a dungeon and its last boss; a player of the other faction killed in the open world (battlegrounds are not part of the tale).
+- **The road**: the lands seen for the first time, your people's capital, the company you kept, a rare find (epic and better).
+- **What you became**: the spells worth a line of their own, a new way of fighting, a trade taken up, the first ride, the first bag and the first gold piece, a companion at your side, and the times it fell.
 
-The journal ends when you reach the highest level of your game: the last chapter closes there, with the journey's end.
+A quiet stretch is a short entry; a big one runs longer. The journal ends when you reach the highest level of your game: the last chapter closes there, with the journey's end.
 
 A character you already play gets a prologue from what the game knows of its life so far, and chapters from there.
 
 ## How it is written
 
-- Each chapter is a diary entry: the stretch as your character would write it at the rest that ends it, in your race's own voice. The milestones of your life first (a first demon, a new form, a companion, an element's favour), then what you did that mattered, told as you did it and why (from the quests' own words), picking up a story left off in an earlier entry, the dangers, the foes worth naming, new lands and powers. A quiet stretch is a short entry; a big one runs longer.
-- In the first person, in scenes: what happened in one place is told together ("I reached Kharanos, took a room at Thunderbrew Distillery and found the boar ribs Ragnar Thunderbrew wanted"), and the road and the hours between scenes link them (I went back to Anvilmar; later that day; that night). Close calls, rares, nights and new powers get a sentence of their own. Now and then, the turns of phrase of your race and class: a dwarf's beard and ale, a Forsaken's second life, a paladin's Light, a hunter's pet.
-- Graver on Hardcore, and graver still as the levels climb.
-- Some 730 sentences and phrases, chosen to fit the moment: the hour, the first time or the tenth, how close the call, alone or in a group. A place just named becomes "there"; a sentence doesn't come back soon after it was used.
-- The chapter grows as you play: the scene you are in may still grow its last sentence; what is written before it stays as it is.
+- In the first person, in your race's own voice: what it notices and how it says so (a dwarf's eye for stonework, a troll's appetite, a Forsaken's dry patience), never a caricature. Graver on Hardcore, and graver still as the levels climb.
+- About 1,470 lines and phrases, and over 3,200 quests' own stories, chosen to fit the moment: the hour, the first time or the tenth, how close the call, alone or in a group. A line doesn't come back soon after it was used.
+- The open chapter's entry is written again as you play; a closed one stays as it was.
 - Written from what the addon records each time you open the book, so better sentences in later versions reach your old chapters too. At each logout the book is also saved as written, for hearthtale.app.
 
 ## Hardcore: the Hall of the Fallen
@@ -58,7 +51,7 @@ Books are private: only you see them. Ravenpost sends the book and who it belong
 
 ## In English
 
-The journal is written in English, for English game clients. On a client in another language, the names it uses (places, creatures, quests, items) come from your game in that language, inside English sentences, and a few lines that rely on the game's English names are left out: a first fight with a kind of beast, learning to ride, a trade's new rank.
+The journal is written in English, for English game clients. On a client in another language, the names it uses (places, creatures, quests, items) come from your game in that language, inside English sentences, and a few lines that rely on the game's English names are left out, learning to ride among them.
 
 ## Two packages
 

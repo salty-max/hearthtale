@@ -7,7 +7,6 @@ kind: rest
 - [client:forever faction:horde] I rested {at}, and let the search for our lost mentors wait an hour without feeling I had abandoned it.
 - [client:forever faction:horde] I stopped {at}, a Windshaper off duty, if such a thing existed.
 - [client:forever] I rested {at}, taking a private pleasure in being idle.
-- [client:forever night] I settled {at}, grateful to stop finding my way through the dark.
 - [client:forever] Shen'dorei means the hidden people, and for a while {at} I was happy to live up to the name.
 - [client:forever !home] I rested {at}, a long way from the skydocks of Valanaar, and not unhappy about it.
 - [client:forever home] I stopped {at}, and let myself forget, for a little while, that the island was failing beneath me.
@@ -18,6 +17,4 @@ kind: rest
 - [client:forever hc] I rested {at}, determined not to become one more thing Zephras had lost.
 - [client:forever] I stopped {at}, and allowed myself the rare courtesy of having nothing to do.
 - [client:forever fire] I sat by the fire {at}, where the smoke was the only thing in sight in any hurry to reach the sky.
-- [client:forever last !fire] I stopped {at} once the work was done, and for a while kept nothing aloft but my own spirits.
-- [client:forever !last faction:alliance] I paused {at}, and went back over what I had done the way my scholarly forebears might have gone over a difficult text, unhurried and with some pleasure.
-- [client:forever !last faction:horde] I rested {at}, my skysight as idle as my feet for once.
+- [client:forever !fire] I stopped {at} once the work was done, and for a while kept nothing aloft but my own spirits.

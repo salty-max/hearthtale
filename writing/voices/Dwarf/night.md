@@ -1,12 +1,6 @@
 ---
 kind: night
 ---
-- [!last] I slept rough {at}; the earth had little of a dwarven mason's care for comfort.
-- [!last] I settled outside {at}, and missed the honest weight of stone overhead.
-- [!last] I lay down {at}, wondering how stone could feel so friendly at home and so hard beneath a back.
-- [!last] I bedded down {at}, with all the grace of a sack of ore being unloaded.
-- [!last] I slept outside {at}, and would have given a good deal for four thick walls and a door that shut.
-- [!last] I settled on the ground {at}; I had a newly tender feeling for innkeepers.
-- [last] I lay down outside {at}, feeling less like a traveller than a stone someone had finally dropped.
-- [last] I settled beneath the sky {at}, with my bones rather less hard than the ground seemed to expect.
-- [last] I bedded down {at}, making a private promise to appreciate the next proper bed.
+- I lay down outside {at}, feeling less like a traveller than a stone someone had finally dropped.
+- I settled beneath the sky {at}, with my bones rather less hard than the ground seemed to expect.
+- I bedded down {at}, making a private promise to appreciate the next proper bed.

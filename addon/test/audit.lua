@@ -1,5 +1,5 @@
--- The writer against the whole game: every place, creature, quest objective
--- and item of Classic (.cache/audit/game.lua, from `bun scripts/audit-data.ts`)
+-- The writer against the whole game: every place, creature and item of
+-- Classic (.cache/audit/game.lua, from `bun scripts/audit-data.ts`)
 -- through the writer's own rules, written out for review.
 --   luajit addon/test/audit.lua > .cache/audit/report.txt
 local DIR = "addon/Hearthtale/"
@@ -48,22 +48,7 @@ end
 section("creatures met once (one spawn point)", named)
 io.write(("\n(%d creatures with several spawn points: always an article)\n"):format(#generic))
 
--- Quest objectives the log shows as text (events): as a task done, or
--- (a result, not an instruction) told by who asked.
-local tasks, results = {}, {}
-for id, q in pairs(D.quests) do
-  for _, t in ipairs(q.texts or {}) do
-    if t ~= "" and ns.writer.instruction(t) then
-      table.insert(tasks, ("I managed to %s. [%d %s]"):format(ns.writer.taskOf(t), id, q.title))
-    elseif t ~= "" then
-      table.insert(results, ("%s [%d %s]"):format(t, id, q.title))
-    end
-  end
-end
-section("event objectives told as tasks", tasks)
-section("event objectives told by who asked (results, not instructions)", results)
-
--- Quest items: one, and several.
+-- Quest items, as a sentence names them.
 local things = {}
 seen = {}
 for _, q in pairs(D.quests) do
@@ -71,10 +56,7 @@ for _, q in pairs(D.quests) do
     local item = D.items[pair[1]]
     if item and not seen[item.name] then
       seen[item.name] = true
-      table.insert(
-        things,
-        ("I found %s / I found eight %s."):format(ns.writer.itemName(item.name), ns.writer.things(item.name))
-      )
+      table.insert(things, ("I found %s."):format(ns.writer.itemName(item.name)))
     end
   end
 end
@@ -102,8 +84,6 @@ end
 never("^I reached The ", places, "a place with its own article, capitalised")
 never("^I killed an? The ", named, "an article before a name's own")
 never("^I killed an? Mr%. ", named, "an article before a title")
-never("^I managed to %u", tasks, "a task starting in capitals")
-never("^I managed to .* The ", tasks, "a capitalised article inside a task")
 never("an? An? ", things, "two articles")
 for _, title in ipairs({
   "Baron",
@@ -126,21 +106,14 @@ for _, title in ipairs({
   never("an? " .. title .. " %u%a*'s ", things, "an article before a titled owner")
   never("an? " .. title .. " %u%a*'s ", finds, "an article before a titled owner")
 end
-for _, l in ipairs(results) do
-  if l:find("^%l") then
-    table.insert(problems, "a result told as a task: " .. l)
-    break
-  end
-end
 if #problems > 0 then
   io.stderr:write(table.concat(problems, "\n"), "\n")
   os.exit(1)
 end
 io.stderr:write(
-  ("all good (audit: %d places, %d creatures, %d objectives, %d quest items, %d finds)\n"):format(
+  ("all good (audit: %d places, %d creatures, %d quest items, %d finds)\n"):format(
     #places,
     #named + #generic,
-    #tasks + #results,
     #things,
     #finds
   )

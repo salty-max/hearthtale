@@ -15,7 +15,7 @@
  * race:Dwarf, class:PALADIN...). Plain ASCII, like the siblings' content;
  * {slots} must be the kind's (KINDS) or the voice's, every kind must exist.
  * A sentence ends with . ! or ? (or a closing quote after one); a clause
- * (kinds c-*: "took a room at {inn}") starts in lower case, with no stop.
+ * (kinds c-*: "found {item}") starts in lower case, with no stop.
  *
  * writing/voices/<Race>/<kind>.md: a race's own sentences for a kind (its
  * journal's voice), used before the shared ones; same format, same slots.
@@ -46,43 +46,30 @@ const errors: string[] = [];
 const fail = (file: string, msg: string) => errors.push(`${file}: ${msg}`);
 const q = (s: string) => JSON.stringify(s);
 
-// Each kind and the slots the writer (Writer.lua, Scene.lua) fills for it.
+// Each kind and the slots the writer (Diary.lua, Lines.lua) fills for it.
 const KINDS: Record<string, string[]> = {
+  // where an entry begins (a life's first page: beginning)
   beginning: ["where", "at", "in"],
   opening: ["where", "at", "in"],
-  zone: ["zone"],
-  flight: ["from", "to"],
-  "quests-many": ["n", "quest", "giver"],
-  kills: ["n", "foes", "at", "in"],
-  "kills-two": ["n1", "foes1", "n2", "foes2", "at", "in"],
-  rare: ["foe", "at", "in"],
+  // a character met mid-life: what came before the journal
+  prologue: ["at", "in", "zone", "quests", "inn", "played"],
+  // dangers: the closest call, a death, a death and the way back right after it
   "close-light": ["foe", "at", "in"],
   "close-deep": ["foe", "at", "in"],
-  dungeon: ["dungeon", "boss", "mates"],
-  "boss-final": ["boss", "dungeon"],
-  closing: ["time", "gold"],
-  prologue: ["at", "in", "zone", "quests", "inn", "played"],
   died: ["foe", "at", "in"],
-  // one of my own people met in another's land (told right after they were named: "we"),
-  // the hosts of a race with no land of its own
-  kin: [],
-  hosts: ["zone"],
+  "died-back": ["foe", "by", "graveyard", "at", "in"],
+  // a dungeon's or a raid's last master; a raid
+  "boss-final": ["boss", "dungeon"],
+  "c-raid": ["n"],
+  // a fine find (writing it as a clause: "I found {item}")
+  "c-loot": ["item"],
+  // a trade taken up
+  "c-prof": ["prof", "rank"],
   // a class's own quest turned in: what it taught ({pet}: "an imp", for a summoning)
   "class-reward": ["giver", "spell", "pet"],
   // a spell with a line of its own ([spell:Life Tap]), when learned
   lesson: ["spell"],
-  // a run of errands, opened: "There were smaller jobs after that..."
-  errands: [],
-  // a death and the way back right after it, in one sentence
-  "died-back": ["foe", "by", "graveyard", "at", "in"],
-  epitaph: ["name", "who", "level", "in", "at", "zone", "foe"],
-  campfire: ["at", "in"],
-  night: ["at", "in"],
-  wake: ["at", "in"],
-  // the same, indoors without an inn (a hall, a barracks, a cellar)
-  "night-in": ["at", "in"],
-  "wake-in": ["at", "in"],
-  rest: ["place", "at", "in"],
+  // the firsts of a life
   power: ["spell"],
   bag: ["item", "slots"],
   gold: [],
@@ -91,51 +78,19 @@ const KINDS: Record<string, string[]> = {
   mount: [],
   riding: [],
   petdied: ["pet", "at", "in"],
-  remembrance: ["name", "played", "quests", "kills", "rare", "dungeon", "zones"],
-  farewell: ["name"],
-  // clauses: "I" and up to three of them make a sentence ("I reached
-  // Kharanos, took a room at Thunderbrew Distillery and killed a boar.")
-  "c-place": ["place"],
-  "c-travel": ["place"],
-  "c-return": ["place"],
-  "c-first": ["kind"],
-  "c-elite": ["foe"],
-  "c-deed-kill": ["n", "foes", "giver", "ender", "spell", "pet"],
-  "c-deed-item": ["n", "thing", "giver", "ender", "owner"],
-  // the work handed in on the spot, to whom: "brought Sten Stoutarm eight Tough Wolf Meat"
-  "c-handed-kill": ["n", "foes", "giver", "spell", "pet"],
-  "c-handed-item": ["n", "thing", "giver"],
-  "c-deed-task": ["task", "giver", "ender"],
-  // an escort or an event, told by what it was for (writing/why/), else by who asked
-  "c-event": ["why", "giver"],
-  "c-deed-word": ["giver", "ender"],
-  // errands one after another: the ender of the first gives the second
-  "c-chain": ["giver", "via", "ender"],
-  // a quest's things taken from the creatures they drop from: the hunt ({item}: their name alone)
-  "c-hunt": ["prey", "n", "thing", "item", "giver", "pet"],
-  // a deed (its clause, {deed}) with the creatures killed on the way, no quest's
-  "c-while": ["prey", "deed"],
-  "c-deliver": ["thing", "ender", "giver"],
-  "c-quest": ["giver", "pron"],
-  "c-trainer": ["spells"],
-  "c-skill": ["skill", "rank"],
-  "c-prof": ["prof", "rank"],
-  "c-gear": ["item"],
-  "c-loot": ["item"],
-  "c-group": ["mates"],
-  "c-report": ["ender"],
-  "c-wear-found": [],
-  "c-raid": ["n"],
-  "c-fold": ["n", "giver"],
-  "c-made": ["things"],
+  // players of the other side slain in the open
   "pvp-one": ["name", "who", "at", "in"],
   "pvp-many": ["n", "side", "at", "in"],
-  revived: ["by", "graveyard", "time", "at", "in"],
+  // how an entry ends: a rest, a night outdoors or indoors, the journey's end
+  rest: ["place", "at", "in"],
+  night: ["at", "in"],
+  "night-in": ["at", "in"],
   summit: ["level", "at", "in"],
-  "c-inn": ["inn"],
-  "c-boss": ["boss", "dungeon"],
-  "c-tame": ["pet", "family"],
-  // the diary (Diary.lua): a chapter looked back on at its rest
+  // a Hardcore death: the epitaph, in the third person
+  epitaph: ["name", "who", "level", "in", "at", "zone", "foe"],
+  remembrance: ["name", "played", "quests", "kills", "rare", "dungeon", "zones"],
+  farewell: ["name"],
+  // the entry's own kinds (Diary.lua)
   "d-land": ["lands"],
   "d-powers": ["spells"],
   "d-foes": ["foes"],
@@ -152,29 +107,19 @@ const KINDS: Record<string, string[]> = {
   // a pet or a demon named again, at my side through a stretch
   "d-pet": ["pet"],
   // a hunter's companion tamed (the first, then another); a shaman's
-  // initiation into an element; a reaction to the stretch's story
+  // initiation into an element; a word on the stretch's story
   "d-tame": ["pet", "family"],
   "d-initiation": [],
   "d-react": [],
-  // remarks a routine clause may end with (Lines.lua's ROUTINE)
-  "r-foe": [], "r-first": [], "r-item": [], "r-task": [], "r-gear": [], "r-lesson": [], "r-road": [], "r-inn": [],
-  "r-company": [],
 };
 const VOICE = ["home", "kin", "faith", "weapon"];
-const TAGS = ["home", "ally", "foe", "neutral", "night", "hc", "high", "low", "first", "elite", "lots", "many", "slow", "quick", "moved",
-  "foe", "fall", "drowning", "lava", "nature", "beast", "people", "player", "inside", "rest", "fire", "last", "one", "aside", "plain", "back", "done", "grouped", "held", "plural", "trophy", "corpse", "healer", "self", "known", "more", "again", "onward", "gear", "onlygear", "turn",
-  "murloc", "kobold", "gnoll", "harpy", "quilboar", "centaur", "ogre", "troll", "naga", "satyr", "furbolg", "trogg", "outlaw",
-  "scarlet", "cenarion", "undead", "demon", "elemental", "dragonkin", "spider",
-  "stone", "egg", "feather", "hide", "paper", "plant", "relic", "remains", "teeth", "mechanical", "cloth", "meat", "explore", "escort", "new", "made", "form", "demon", "steed",
-  "looted", "handed", "complex", "state", "ofprey", "summon", "also", "tried", "pet", "fire", "frost", "arcane", "shadow", "curse", "holy", "lightning", "wrath", "moon", "steel", "arrow", "imp", "voidwalker", "succubus", "felhunter", "felguard",
-  "bear", "cat", "travel", "aquatic", "moonkin", "tree", "flight", "deliveries", "lone", "set", "melee", "trinket",
-  "hard", "near", "found", "learned", "delve", "quiet", "diary", "hosts", "two", "much", "fought", "zalazane", "thread", "settled", "story", "town",
-  "jewel", "seed", "food", "cargo", "leper", "highborne", "venture", "harmless", "w3", "paid", "after", "capital", "leader", "away", "used", "taken",
-  "rescue", "villain", "earth", "water", "air"];
+const TAGS = ["after", "again", "air", "ally", "aquatic", "away", "bear", "beast", "capital", "cat", "cenarion",
+  "corpse", "delve", "demon", "drowning", "earth", "elite", "fall", "felguard", "felhunter", "fire", "first",
+  "flight", "foe", "form", "grouped", "hard", "hc", "healer", "high", "highborne", "home", "hosts", "imp", "inside",
+  "known", "lava", "leper", "looted", "low", "moonkin", "moved", "nature", "near", "neutral", "new", "night",
+  "one", "people", "player", "plural", "rescue", "self", "settled", "steed", "succubus", "summon", "thread", "town",
+  "travel", "tree", "two", "undead", "used", "villain", "voidwalker", "water", "zalazane"];
 const RACES = ["Human", "Dwarf", "NightElf", "Gnome", "Orc", "Troll", "Tauren", "Scourge", "Skyborne"];
-const ROUTINE = new Set("deed-kill deed-item deed-task deed-word chain deliver report first gear trainer inn travel return place group skill prof handed-kill handed-item".split(" ").map((kind) => `c-${kind}`));
-// The recap's kinds: one sentence of the recap holds a thought, the others are plain.
-const RECAP = new Set(["quests-many", "kills", "kills-two", "closing"]);
 const CLASSES = ["WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK", "DRUID"];
 const tagOk = (t: string) => {
   const bare = t.replace(/^!/, ""), colon = bare.indexOf(":");
@@ -212,58 +157,14 @@ function parseFile(file: string, kind: string | null): Parsed | null {
     // (a life the record can't know: no family, childhood, past trade or possessions of the narrator's)
     if (/\b(all my life|when I was young|as a child|in my youth|my (father|mother|brother|sister|parents|family|workshop|tools|old job|former))\b/i.test(sentence.text))
       fail(file, `a personal history the record can't know: ${sentence.text}`);
-    if (own?.startsWith("c-") || own?.startsWith("r-")) {
-      // (a clause may open on a turned subject, "{foe} fell to me", or on the deed itself, "{why}": "escorted …")
-      if (!/^[a-z]/.test(sentence.text) && !(sentence.tags.includes("turn") && /^\{/.test(sentence.text)) && sentence.text !== "{why}" || /[.!?;:]$/.test(sentence.text))
+    if (own?.startsWith("c-")) {
+      if (!/^[a-z]/.test(sentence.text) || /[.!?;:]$/.test(sentence.text))
         fail(file, `a clause starts in lower case, with no stop: ${sentence.text}`);
-      // a clause turned round has its own subject: not "I", and not after "I"
-      if (sentence.tags.includes("turn") && /^(i|I)\b/.test(sentence.text)) fail(file, `a turned clause has a subject of its own: ${sentence.text}`);
     } else if (!/[.!?]"?$/.test(sentence.text)) fail(file, `no full stop: ${sentence.text}`);
     if (sentences.some((o) => o.text === sentence.text)) fail(file, `twice: ${sentence.text}`);
     sentences.push(sentence);
   }
   if (!sentences.length) fail(file, "no sentence");
-  if (own && ROUTINE.has(own) && kind === null && sentences.length < 7) fail(file, "a routine kind needs at least seven ways to say it");
-  if (own?.startsWith("r-")) {
-    const least = kind === null ? 12 : 8; // shared, a race's own
-    if (sentences.length < least) fail(file, `a pool of remarks needs at least ${least}`);
-    for (const s of sentences) if (/^(and|but|then)\b/.test(s.text)) fail(file, `a remark follows a comma, not a conjunction: ${s.text}`);
-    // a lesson may be several spells: "it" only for one ("…, keen to try it")
-    if (own === "r-lesson")
-      for (const s of sentences)
-        if (/\b(it|its)\b/i.test(s.text) && !s.tags.includes("one")) fail(file, `"it" in a lesson's remark needs [one]: ${s.text}`);
-    // (nor one thing learned, "a knack", "a skill", after three spells)
-    if (own === "r-lesson")
-      for (const s of sentences)
-        if (/\b(a knack|a skill|the lesson|one more thing|an unfamiliar knack)\b/i.test(s.text) && !s.tags.includes("one"))
-          fail(file, `one thing learned in a lesson's remark needs [one]: ${s.text}`);
-    // a fight may be with one foe or several: "their" for several
-    if (own === "r-foe")
-      for (const s of sentences)
-        if (/\b(their|theirs)\b/i.test(s.text) && !s.tags.includes("!one"))
-          fail(file, `several foes in a fight's remark needs [!one]: ${s.text}`);
-    // a find may be one thing or several: a count for several ("…, counting
-    // them twice"); "it" for one, a mass ("[cloth]", "[meat]"), each of several
-    // ("each one where the wind had left it"), or none ("it took", "it was")
-    if (own === "r-item")
-      for (const s of sentences) {
-        if (/\b(count|counting|counted|them|each|so many)\b/i.test(s.text) && !s.tags.includes("!one"))
-          fail(file, `a count in a find's remark needs [!one]: ${s.text}`);
-        if (/\b(it|its)\b/.test(s.text.replace(/\bit (took|needed|was)\b/g, "")) && !s.tags.some((t) => /^(!?one|cloth|meat)$/.test(t)))
-          fail(file, `"it" in a find's remark needs [one]: ${s.text}`);
-      }
-    // after my own action ("I took up tailoring, …"), a past participle reads as
-    // a second verb missing its "and": "…, practised until my arms complained"
-    if (/^r-(road|lesson|company|task)$/.test(own))
-      for (const s of sentences) {
-        const first = s.text.split(/[ ,]/)[0];
-        if (/^(\w+ed|done|made|found|built|taught|brought|kept|learnt)$/.test(first) && !/^(un\w+|pleased|surprised|relieved|tired|interested)$/.test(first))
-          fail(file, `a remark after my own action can't start with a past participle: ${s.text}`);
-      }
-  }
-  if (sentences.some((s) => s.tags.includes("plain")) && !(own && RECAP.has(own))) fail(file, "[plain] marks a recap's plain sentence");
-  if (own && RECAP.has(own) && kind === null && sentences.filter((s) => s.tags.includes("plain")).length < 5)
-    fail(file, "a recap kind needs at least five [plain] sentences");
   return { meta: m[1], sentences };
 }
 
@@ -299,26 +200,6 @@ for (const race of existsSync(VOICES_DIR) ? readdirSync(VOICES_DIR).sort() : [])
   }
   voices.set(race, own);
 }
-
-// The voices must stay apart: a remark's opening (its first three words) is
-// shared by two races at most, and a pool holds two stock feelings ("glad",
-// "pleased", "relieved", "curious", "surprised") at most. A race's remarks
-// are its own way of seeing, not one template with a different tail.
-const STOCK = /\b(glad|pleased|relieved|curious|surprised)\b/i;
-const openings = new Map<string, Set<string>>();
-for (const [race, own] of voices) {
-  for (const [kind, sentences] of own) {
-    if (!kind.startsWith("r-")) continue;
-    const stock = sentences.filter((s) => STOCK.test(s.text));
-    if (stock.length > 2) errors.push(`writing/voices/${race}/${kind}.md: ${stock.length} stock feelings (two at most): ${stock.map((s) => s.text).join(" | ")}`);
-    for (const s of sentences) {
-      const opening = s.text.toLowerCase().split(/\s+/).slice(0, 3).join(" ");
-      openings.set(opening, (openings.get(opening) ?? new Set()).add(race));
-    }
-  }
-}
-for (const [opening, races] of openings)
-  if (races.size > 2) errors.push(`writing/voices: "${opening}…" opens remarks of ${races.size} races (${[...races].join(", ")}): two at most`);
 
 // The places: writing/scenery/<place>.md.
 type Place = { place: string; type: string; home: string[]; faction: string; client?: string; sentences: Sentence[] };
