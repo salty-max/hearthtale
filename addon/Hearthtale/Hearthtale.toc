@@ -22,6 +22,7 @@ Life.lua
 Language.lua
 Lines.lua
 Diary.lua
+Kit.lua
 Book.lua
 Hall.lua
 Save.lua
