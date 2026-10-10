@@ -133,6 +133,11 @@ its decisions: PLAN.md (the full chapter prose was dropped on 10 October
   the addon loaded), shared by:
   - `addon/test/sim.lua`: a life replayed, every recording asserted, its book
     written. `FOREVER=1` runs it as Forever.
+  - `addon/test/quests.lua`: the game's quests the test lives play, by their
+    real ids (a made-up quest: 9000000 on), and `addon/test/truth.lua`: a quest
+    told by its story (writing/why/) must be the game's quest of that id, the
+    same title (run by the lives, sim.lua and the playthroughs; the playthrough
+    also checks the lives' givers, enders and objectives against the game).
   - `addon/test/lives.lua`: lives played through the addon, as the game would
     send them (Brannok, a Hardcore dwarf hunter; Pippa, a Hardcore gnome mage
     who falls; Aldric, a human paladin met mid-life; Grashnak, an orc warrior;

@@ -31,7 +31,7 @@ quests[1474] = { class = "WARLOCK", spell = "Summon Succubus" }
 quests[1476] = { class = "WARLOCK" }
 quests[1478] = { class = "WARLOCK" }
 quests[1485] = { class = "WARLOCK", spell = "Summon Imp" }
-quests[1498] = { class = "WARRIOR", spell = "Taunt" }
+quests[1498] = { class = "WARRIOR", spell = "Defensive Stance" }
 quests[1499] = { class = "WARLOCK" }
 quests[1501] = { class = "WARLOCK" }
 quests[1502] = { class = "WARRIOR" }
@@ -87,16 +87,16 @@ quests[1652] = { class = "PALADIN", spell = "Sense Undead" }
 quests[1653] = { class = "PALADIN" }
 quests[1654] = { class = "PALADIN" }
 quests[1655] = { class = "PALADIN" }
-quests[1661] = { class = "PALADIN" }
-quests[1665] = { class = "WARRIOR", spell = "Taunt" }
+quests[1661] = { class = "PALADIN", spell = "Summon Warhorse" }
+quests[1665] = { class = "WARRIOR", spell = "Defensive Stance" }
 quests[1666] = { class = "WARRIOR" }
 quests[1667] = { class = "WARRIOR" }
-quests[1678] = { class = "WARRIOR", spell = "Taunt" }
+quests[1678] = { class = "WARRIOR", spell = "Defensive Stance" }
 quests[1679] = { class = "WARRIOR" }
 quests[1680] = { class = "WARRIOR" }
 quests[1681] = { class = "WARRIOR" }
 quests[1682] = { class = "WARRIOR" }
-quests[1683] = { class = "WARRIOR", spell = "Taunt" }
+quests[1683] = { class = "WARRIOR", spell = "Defensive Stance" }
 quests[1684] = { class = "WARRIOR" }
 quests[1685] = { class = "WARLOCK" }
 quests[1686] = { class = "WARRIOR" }
@@ -124,7 +124,7 @@ quests[1715] = { class = "WARLOCK" }
 quests[1716] = { class = "WARLOCK" }
 quests[1717] = { class = "WARLOCK" }
 quests[1718] = { class = "WARRIOR" }
-quests[1719] = { class = "WARRIOR", spell = "Intercept" }
+quests[1719] = { class = "WARRIOR", spell = "Berserker Stance" }
 quests[1738] = { class = "WARLOCK" }
 quests[1739] = { class = "WARLOCK", spell = "Summon Succubus" }
 quests[1740] = { class = "WARLOCK" }
@@ -157,7 +157,7 @@ quests[1804] = { class = "WARLOCK" }
 quests[1805] = { class = "WARLOCK" }
 quests[1806] = { class = "PALADIN" }
 quests[1818] = { class = "WARRIOR" }
-quests[1819] = { class = "WARRIOR", spell = "Taunt" }
+quests[1819] = { class = "WARRIOR", spell = "Defensive Stance" }
 quests[1820] = { class = "WARRIOR" }
 quests[1821] = { class = "WARRIOR" }
 quests[1822] = { class = "WARRIOR" }
@@ -390,8 +390,8 @@ quests[5929] = { class = "DRUID" }
 quests[5930] = { class = "DRUID" }
 quests[5931] = { class = "DRUID" }
 quests[5932] = { class = "DRUID" }
-quests[6001] = { class = "DRUID", spell = "Maul" }
-quests[6002] = { class = "DRUID", spell = "Maul" }
+quests[6001] = { class = "DRUID", spell = "Bear Form" }
+quests[6002] = { class = "DRUID", spell = "Bear Form" }
 quests[6061] = { class = "HUNTER" }
 quests[6062] = { class = "HUNTER" }
 quests[6063] = { class = "HUNTER" }
@@ -408,18 +408,18 @@ quests[6073] = { class = "HUNTER" }
 quests[6074] = { class = "HUNTER" }
 quests[6075] = { class = "HUNTER" }
 quests[6076] = { class = "HUNTER" }
-quests[6081] = { class = "HUNTER", spell = "Revive Pet" }
-quests[6082] = { class = "HUNTER", spell = "Dismiss Pet" }
+quests[6081] = { class = "HUNTER", spell = "Beast Training" }
+quests[6082] = { class = "HUNTER", spell = "Tame Beast" }
 quests[6083] = { class = "HUNTER" }
 quests[6084] = { class = "HUNTER" }
-quests[6085] = { class = "HUNTER", spell = "Dismiss Pet" }
-quests[6086] = { class = "HUNTER", spell = "Revive Pet" }
+quests[6085] = { class = "HUNTER", spell = "Tame Beast" }
+quests[6086] = { class = "HUNTER", spell = "Beast Training" }
 quests[6087] = { class = "HUNTER" }
-quests[6088] = { class = "HUNTER", spell = "Dismiss Pet" }
-quests[6089] = { class = "HUNTER", spell = "Revive Pet" }
+quests[6088] = { class = "HUNTER", spell = "Tame Beast" }
+quests[6089] = { class = "HUNTER", spell = "Beast Training" }
 quests[6101] = { class = "HUNTER" }
-quests[6102] = { class = "HUNTER", spell = "Dismiss Pet" }
-quests[6103] = { class = "HUNTER", spell = "Revive Pet" }
+quests[6102] = { class = "HUNTER", spell = "Tame Beast" }
+quests[6103] = { class = "HUNTER", spell = "Beast Training" }
 quests[6121] = { class = "DRUID" }
 quests[6122] = { class = "DRUID" }
 quests[6123] = { class = "DRUID" }
@@ -463,7 +463,7 @@ quests[7627] = { class = "WARLOCK" }
 quests[7628] = { class = "WARLOCK" }
 quests[7629] = { class = "WARLOCK" }
 quests[7630] = { class = "WARLOCK" }
-quests[7631] = { class = "WARLOCK" }
+quests[7631] = { class = "WARLOCK", spell = "Summon Dreadsteed" }
 quests[7632] = { class = "HUNTER" }
 quests[7633] = { class = "HUNTER" }
 quests[7634] = { class = "HUNTER" }
@@ -479,7 +479,7 @@ quests[7643] = { class = "PALADIN" }
 quests[7644] = { class = "PALADIN" }
 quests[7645] = { class = "PALADIN" }
 quests[7646] = { class = "PALADIN" }
-quests[7647] = { class = "PALADIN" }
+quests[7647] = { class = "PALADIN", spell = "Summon Charger" }
 quests[7648] = { class = "PALADIN" }
 quests[7666] = { class = "PALADIN" }
 quests[7667] = { class = "SHAMAN" }

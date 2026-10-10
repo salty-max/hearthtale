@@ -119,6 +119,25 @@ local function namesIn(text)
   end
   return names
 end
+-- Whether a story says where it happened: the land it was done in, or a
+-- place the game names (Names.lua: "Skull Rock", "the Deadmines"); it then
+-- takes no other place before it ("In Orgrimmar, I seized … in Skull Rock").
+local function namesPlace(text, zone)
+  if zone and text:lower():find((zone:lower():gsub("^the ", "")), 1, true) then return true end
+  local the, bare = ns.names and ns.names.placeThe or {}, ns.names and ns.names.placeBare or {}
+  local parts = {}
+  for part in text:gmatch("[%w'%-]+") do
+    table.insert(parts, part)
+  end
+  for i = 1, #parts do
+    local name = parts[i]
+    for j = i, math.min(i + 4, #parts) do
+      if j > i then name = name .. " " .. parts[j] end
+      if name:find("^%u") and (the[name] or bare[name]) then return true end
+    end
+  end
+  return false
+end
 local function SUBJECT(text, objectives, kinds)
   if rescued(text, objectives) then return "rescue" end
   local verb = text:match("^(%a+)")
@@ -383,10 +402,12 @@ local function gather(d, c, ch)
   end
   f.main = main
   -- (a summoning taught and the demon called the same stretch: one moment,
-  -- the demon by its name)
+  -- the demon by its name; a form taught and taken, the form; a steed, the power)
   local called = {}
   for _, m in ipairs(f.firsts) do
     if m.k == "demon" and m.family then called["Summon " .. m.family] = true end
+    if m.k == "shift" and m.form then called[m.form:gsub("^%l", string.upper) .. " Form"] = true end
+    if m.k == "power" and m.spell then called[m.spell] = true end
   end
   for k = #f.firsts, 1, -1 do
     local m = f.firsts[k]
@@ -582,7 +603,7 @@ local function entry(d, n, ch)
   end
   -- (its place said already by the story itself, "across Loch Modan": no lead;
   -- a land the entry then tells as new: its first sight comes first)
-  local leads = storyZone and not newLand and not story[1].text:find(storyZone, 1, true)
+  local leads = storyZone and not newLand and not namesPlace(story[1].text, storyZone)
   local first0 -- (a story that leads the entry, in place of its opening: told first)
   if wentOn and leads and n % 3 == 0 then
     lead, first0 = at(storyZone), -2
@@ -649,7 +670,9 @@ local function entry(d, n, ch)
         { [m.tag] = true }
       )
     elseif m.k == "class-reward" then
+      -- (a demon's summoning; a warhorse's or a dreadsteed's is a mount's)
       local family = m.q.spell:match("^Summon (.+)$")
+      if not DEMONS[family or ""] then family = nil end
       local t = { summon = family and true or nil }
       if family then
         t[family:lower()] = true
@@ -684,6 +707,7 @@ local function entry(d, n, ch)
   local chains, ends = ns.knowledge and ns.knowledge.chains or {}, ns.knowledge and ns.knowledge.ends or {}
   local also
   local storyTold = false
+  local storied = {} -- (the stories told: a boss whose end one tells isn't told again)
   if #story > 0 then
     local text
     local why = ours(story[1].text, race)
@@ -712,9 +736,13 @@ local function entry(d, n, ch)
     end
     local told = add(text, true, first0 or story[1].i)
     storyTold = told
+    if told then
+      table.insert(storied, story[1].text)
+      if not also and story[2] then table.insert(storied, story[2].text) end
+    end
     if also then
       -- (somewhere else than the first: "Later, in Darkshore, I …")
-      local moved = also.zone and also.zone ~= storyZone and not also.text:find(also.zone, 1, true)
+      local moved = also.zone and also.zone ~= storyZone and not namesPlace(also.text, also.zone)
       local where2 = moved and at(also.zone) or nil
       if
         add(
@@ -724,6 +752,7 @@ local function entry(d, n, ch)
         )
       then
         out[#out].where = where2
+        table.insert(storied, also.text)
       end
     end
     -- (what it was, a word on it: now and then, never the same twice)
@@ -821,6 +850,9 @@ local function entry(d, n, ch)
     scenery(below, f.nightAt[below], f.dungeonAt[below] + 0.25)
     headline(3, below)
     local fin = f.finals[1]
+    for _, text in ipairs(storied) do
+      if fin and text:find(fin.boss, 1, true) then fin = nil end -- (its end told by the story)
+    end
     if fin then
       add(
         sayFresh(

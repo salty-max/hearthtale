@@ -73,10 +73,13 @@ const CLASSES: [number, string][] = [
 
 const spellName = new Map<number, string>();
 for (const r of rows(sql, "spell_template")) spellName.set(r.Id as number, r.SpellName as string);
-// (a spell that teaches another: the one taught)
+// (a spell that teaches another: the one taught, the first of several: Bear
+// Form, not the Growl and Maul taught with it)
 const teaches = new Map<number, number>();
 for (const r of rows(sql, "spell_template"))
-  for (const k of [1, 2, 3]) if (r[`Effect${k}`] === 36 && r[`EffectTriggerSpell${k}`]) teaches.set(r.Id as number, r[`EffectTriggerSpell${k}`] as number);
+  for (const k of [1, 2, 3])
+    if (r[`Effect${k}`] === 36 && r[`EffectTriggerSpell${k}`] && !teaches.has(r.Id as number))
+      teaches.set(r.Id as number, r[`EffectTriggerSpell${k}`] as number);
 
 const questNpcs = new Set<number>();
 for (const table of ["creature_questrelation", "creature_involvedrelation"])
