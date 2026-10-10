@@ -307,8 +307,10 @@ local function ui()
       end
       if k == "Show" then
         return function(self)
+          -- (OnShow on a showing only, as in the game: not on a shown frame)
+          local was = self.shown
           self.shown = true
-          if self.scripts.OnShow then self.scripts.OnShow(self) end
+          if not was and self.scripts.OnShow then self.scripts.OnShow(self) end
         end
       end
       if k == "Hide" then
@@ -410,6 +412,7 @@ function SetPortraitTexture(_, unit) portraitOf = unit end
 local frames = {}
 function CreateFrame(_, name, _, template)
   local f = ui()
+  f.shown = true -- (a new frame is shown, as in the game)
   f.registered, f.unitsOf = {}, {}
   if template == "ButtonFrameTemplate" then -- the game's window has its portrait
     local p = ui()
