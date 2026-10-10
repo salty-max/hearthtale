@@ -33,7 +33,22 @@ K.quests[94050] = { class = "HUNTER" }
 K.quests[94373] = { class = "SHAMAN" }
 K.quests[94374] = { class = "SHAMAN" }
 K.quests[94375] = { class = "SHAMAN", totem = "earth" }
+K.quests[94449] = { class = "SHAMAN" }
+K.quests[94465] = { class = "SHAMAN" }
+K.quests[94466] = { class = "SHAMAN" }
+K.quests[94467] = { class = "SHAMAN" }
+K.quests[94468] = { class = "SHAMAN", totem = "fire" }
+K.quests[94494] = { class = "SHAMAN" }
+K.quests[94495] = { class = "SHAMAN" }
+K.quests[94497] = { class = "SHAMAN" }
+K.quests[94499] = { class = "SHAMAN" }
+K.quests[94500] = { class = "SHAMAN" }
+K.quests[94501] = { class = "SHAMAN" }
+K.quests[94502] = { class = "SHAMAN" }
+K.quests[94503] = { class = "SHAMAN" }
+K.quests[94505] = { class = "SHAMAN", totem = "water" }
 K.quests[94638] = { class = "DRUID" }
+K.quests[94789] = { class = "SHAMAN" }
 K.quests[94978] = { class = "HUNTER" }
 K.quests[94979] = { class = "HUNTER" }
 K.quests[97243] = { class = "SHAMAN" }

@@ -414,14 +414,36 @@ writeFileSync(path.join(AUDIT, "corpus-forever.txt"),
 const knowledge: string[] = [];
 const qs = (s: string) => JSON.stringify(s);
 const CLASSES = Object.entries(CLASS);
+const TOTEM_ITEMS: Record<number, string> = { 5175: "earth", 5176: "fire", 5177: "water", 5178: "air" };
+// (a shaman's rite, as the game titles it, "Call of Fire": the shaman's own,
+// never a story, whatever classes the beta's data leaves out. Its totem,
+// where no step of it is known to give one, at its end: the last of a run
+// of its steps, when that one brings the rite's prize home, "Bring the
+// Torch of Eternal Flame to Bruegs Kindleborn")
+const RITE = /^Call of (Earth|Fire|Water|Air)$/;
+const riteTotem = new Map<number, string>();
+{
+  const runs: number[][] = [];
+  for (const [id, q] of [...quests].filter(([, q]) => RITE.test(q.title ?? "")).sort((x, y) => x[0] - y[0])) {
+    const run = runs.at(-1), prev = run?.at(-1);
+    if (run && prev !== undefined && id - prev < 50 && quests.get(prev)!.title === q.title) run.push(id);
+    else runs.push([id]);
+  }
+  for (const run of runs) {
+    if (run.some((id) => quests.get(id)!.rewards.some((r) => TOTEM_ITEMS[r]))) continue;
+    const end = run.at(-1)!, q = quests.get(end)!;
+    if (/^Bring /.test(q.objectives ?? "")) riteTotem.set(end, q.title!.match(RITE)![1].toLowerCase());
+  }
+}
 for (const [id, q] of [...quests].sort((x, y) => x[0] - y[0])) {
   const cls = CLASSES.filter(([, bit]) => (q.classes ?? 0) & bit).map(([c]) => c);
   // (a shaman's initiation into an element: its totem, given at the end)
-  const totem = ({ 5175: "earth", 5176: "fire", 5177: "water", 5178: "air" } as Record<number, string>)[
-    q.rewards.find((r) => r >= 5175 && r <= 5178) ?? 0
-  ];
-  if (cls.length === 1 || totem)
-    knowledge.push(`K.quests[${id}] = { class = ${qs(totem ? "SHAMAN" : cls[0])}${totem ? `, totem = ${qs(totem)}` : ""} }`);
+  const totem = TOTEM_ITEMS[q.rewards.find((r) => TOTEM_ITEMS[r]) ?? 0] ?? riteTotem.get(id);
+  const rite = RITE.test(q.title ?? "");
+  if (cls.length === 1 || totem || rite)
+    knowledge.push(
+      `K.quests[${id}] = { class = ${qs(totem || rite ? "SHAMAN" : cls[0])}${totem ? `, totem = ${qs(totem)}` : ""} }`,
+    );
 }
 // (their chains, as Knowledge.lua's: chains[id] the first quest, ends[id] the
 // last; a link one to one only, a prerequisite of several is no story going on)
