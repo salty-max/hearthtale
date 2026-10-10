@@ -382,7 +382,7 @@ function GetCursorPosition() return 0, 0 end
 -- The game's settings panel: keep what the addon registers.
 local panel = { settings = {} }
 Settings = {
-  VarType = { Boolean = "boolean", Number = "number" },
+  VarType = { Boolean = "boolean", Number = "number", String = "string" },
   RegisterVerticalLayoutCategory = function(name)
     panel.name = name
     return { GetID = function() return 42 end }
@@ -393,6 +393,14 @@ Settings = {
     return s
   end,
   CreateCheckbox = function() end,
+  CreateDropdown = function(_, setting, options) setting.options = options end,
+  CreateControlTextContainer = function()
+    local data = {}
+    return {
+      Add = function(_, value, label) table.insert(data, { value = value, label = label }) end,
+      GetData = function() return data end,
+    }
+  end,
   RegisterAddOnCategory = function() panel.registered = true end,
   OpenToCategory = function(id) panel.opened = id end,
 }

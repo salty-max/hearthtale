@@ -154,13 +154,19 @@ its decisions: PLAN.md (the full chapter prose was dropped on 10 October
   date range; never wrapped), the player's note under it, an Edit button for
   its own title and note; a second tab for the Hall of the Fallen),
   `Hall.lua` (a Hardcore death: the book closed and copied to the
-  account-wide Hall, a chat line, the toast), `Settings.lua` (account
-  settings, the Options page; `ns.setHardcore` where the game can't tell),
-  `Welcome.lua` (the welcome page, once per account a few seconds after the
-  first login, out of combat, and `/ht welcome`: the logo, what the journal
-  is, the settings as choices; `Media/Logo.tga`, the logo at 256px with
-  rounded corners, made from `assets/logo.png` with magick; the packages
-  carry `Media/`), `Minimap.lua`.
+  account-wide Hall, a chat line, the toast), `Settings.lua` (each
+  character's settings, its profile "Name - Realm" in HearthtaleSettings, the
+  installation's: copied from another character of this game, or from a code
+  `HT1:c1:t1:m1:a200` made by `/ht export` and taken by `/ht import CODE`; a
+  character who kept a journal before 0.6.1 starts from the account's old
+  values; the Options page, its "Copy settings from"; `ns.setHardcore` where
+  the game can't tell), `Welcome.lua` (the welcome page, once per character a
+  few seconds after its first login, out of combat, and `/ht welcome`: two
+  columns as the journal's window, the logo and what the journal is, then
+  this character's choices and another's to take, picked or by a code;
+  `Media/Logo.tga`, the logo at 256px with rounded corners, made from
+  `assets/logo.png` with magick; the packages carry `Media/`),
+  `Minimap.lua`.
 - `addon/CURSEFORGE.md`: the project page. `assets/logo-master.png` is the
   painted logo master; `assets/logo.png` and `assets/logo-1024.png` are its
   512px and 1024px exports (resize the master with magick). The

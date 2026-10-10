@@ -98,6 +98,66 @@ SlashCmdList.HEARTHTALE("welcome")
 check(welcome:IsShown(), "… /ht welcome shows it again")
 welcome:Hide()
 
+-- Settings are each character's own ("Name - Realm"), kept for the game
+-- installation: another character's can be taken, picked or by a code.
+local profiles = HearthtaleSettings.profiles
+check(
+  ns.profileKey() == "Sealinedion - Nightslayer" and profiles[ns.profileKey()].welcomed,
+  "settings: this character's own profile"
+)
+profiles["Brannok - Nightslayer"] = { chat = false, toast = false, minimapHidden = true, minimapAngle = 90 }
+SlashCmdList.HEARTHTALE("welcome")
+local picker = ns.welcomePicker
+check(picker.name:GetText() == "Brannok - Nightslayer", "… the welcome offers another character of this game")
+picker.copy.scripts.OnClick(picker.copy)
+check(
+  ns.option("chat") == false
+    and ns.option("toast") == false
+    and ns.option("minimapHidden") == true
+    and ns.option("minimapAngle") == 90
+    and not choices[1].box:GetChecked()
+    and ns.option("welcomed"),
+  "… its choices copied (never whether it saw the welcome), the boxes with them"
+)
+local code = ns.exportCode()
+check(code == "HT1:c0:t0:m0:a90", "… a code for them: " .. code)
+check(ns.importCode("HT1:c1:t1:m1:a200") and ns.option("chat") and ns.option("toast"), "… a code taken")
+check(
+  not ns.importCode("hello") and not ns.importCode("HT1:x9") and ns.option("chat"),
+  "… a wrong code refused, nothing changed"
+)
+check(ns.importCode("HT1:c0:z7") and ns.option("chat") == false, "… a later version's part left out")
+SlashCmdList.HEARTHTALE("import " .. code)
+check(ns.option("minimapAngle") == 90, "… /ht import CODE")
+ns.importCode("HT1:c1:t1:m1:a200")
+local copyFrom = panel.settings.HEARTHTALE_COPYFROM
+local offered = copyFrom and copyFrom.options()
+check(
+  offered and offered[2] and offered[2].value == "Brannok - Nightslayer",
+  "… the Options page offers the other characters too"
+)
+copyFrom.set("Brannok - Nightslayer")
+check(ns.option("chat") == false, "… and copies one")
+ns.importCode("HT1:c1:t1:m1:a200")
+welcome:Hide()
+-- Another character's first login: its own profile and welcome; the account's
+-- settings of before (0.6.0) for one who kept a journal, the defaults for one
+-- who didn't.
+HearthtaleSettings.chat = false
+state.name = "Newcomer"
+ns.loadProfile({ chapters = {} })
+fire("PLAYER_ENTERING_WORLD", true, false)
+check(welcome:IsShown() and ns.option("chat") == true, "… a new character: the defaults, and its own welcome")
+welcome:Hide()
+state.name = "Oldtimer"
+ns.loadProfile({ chapters = { {} } })
+check(ns.option("chat") == false and not ns.option("welcomed"), "… one with a journal from before: its old settings")
+HearthtaleSettings.chat, profiles.Newcomer, profiles["Newcomer - Nightslayer"], profiles["Oldtimer - Nightslayer"] =
+  nil, nil, nil, nil
+profiles["Brannok - Nightslayer"] = nil
+state.name = nil
+ns.loadProfile(J)
+
 local mm = HearthtaleMinimapButton
 check(mm and mm:IsShown(), "the minimap button")
 SlashCmdList.HEARTHTALE("minimap")

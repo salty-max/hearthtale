@@ -65,7 +65,9 @@ Each game has its own file: pick the one for yours (the CurseForge app does it f
 
 ## Settings
 
-The first time you log in with Hearthtale, a welcome page introduces the journal and offers its choices (`/ht welcome` shows it again). After that: Options → AddOns → Hearthtale (or `/ht settings`, or right-click the minimap button): a line in chat for each entry, the alert when a book closes, the minimap button. Where the game can't tell whether a character is Hardcore, a setting lets you say so.
+The first time each character logs in with Hearthtale, a welcome page introduces the journal and offers its choices (`/ht welcome` shows it again). After that: Options → AddOns → Hearthtale (or `/ht settings`, or right-click the minimap button): a line in chat for each entry, the alert when a book closes, the minimap button. Where the game can't tell whether a character is Hardcore, a setting lets you say so.
+
+Settings are each character's own. Take another's from the welcome page or the Options page (any character of the same game), or bring them from anywhere with a code: `/ht export` on one character, `/ht import CODE` on the other.
 
 Other commands: `/ht title [N] TEXT` names entry N (the last one without N), `/ht note [N] TEXT` writes in its margin (no TEXT removes it); `/ht hall` opens the Hall of the Fallen; `/ht link CODE` links this character to your library on hearthtale.app; `/ht minimap` shows or hides the button.
 
