@@ -2,7 +2,7 @@
 ## Title: Hearthtale
 ## Notes: Your character's own journal, written as you play: a diary entry in their voice at each rest, and an epitaph if a Hardcore life ends.
 ## Author: salty-max
-## Version: 0.7.5
+## Version: 0.7.6
 ## SavedVariablesPerCharacter: HearthtaleChar
 ## SavedVariables: HearthtaleSettings, HearthtaleHall
 ## IconTexture: Interface\AddOns\Hearthtale\Media\Logo
