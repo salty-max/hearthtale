@@ -81,7 +81,10 @@ Classic Era:
 ### Steps
 
 1. The test above (done 10 October 2026: opacity alone).
-2. The addon: Postcards.lua (the queue, the rules, the shot, the stamp), the
+2. The addon: Postcards.lua (the queue, the rules, the stamp; the shot itself
+   the kit's `K.snapshot`, shared with the Codex's riddles and the Field
+   Journal's hunts, 11 October 2026: the Codex's PLAN.md, "The picture, in the
+   kit"), the
    moments that call for one, the record and Save.lua, the settings and the
    welcome page's choice, the key binding and `/ht postcard`; the test game
    learns `Screenshot` and the screenshot events.
