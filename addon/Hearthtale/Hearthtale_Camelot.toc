@@ -1,6 +1,7 @@
 ## Interface: 16001
 ## Title: Hearthtale
 ## Notes: Your character's own journal, written as you play: a diary entry in their voice at each rest, and an epitaph if a Hardcore life ends.
+## Category: Roleplay
 ## Author: salty-max
 ## Version: 0.7.6
 ## SavedVariablesPerCharacter: HearthtaleChar
