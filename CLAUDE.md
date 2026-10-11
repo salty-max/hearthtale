@@ -176,8 +176,11 @@ its decisions: PLAN.md (the full chapter prose was dropped on 10 October
   `Hearthtale_Camelot.toc`: Forever, 16001), the same but for the interface
   and the game's own files (`Data_Classic.lua`; `Data_Forever.lua` and
   `Forever.lua`). `scripts/package.ts` checks they agree and zips
-  `dist/Hearthtale.zip` for a test in the game. A release is the BigWigs
-  packager's (`.pkgmeta`, `.github/workflows/release.yml`, the same zip):
+  `dist/Hearthtale-<version>.zip` for a test in the game (`git describe`:
+  the tag, or v0.7.4-2-g1234abc between two, -dirty if changed). A release
+  is the BigWigs packager's (`.pkgmeta`, `.github/workflows/release.yml`:
+  `Hearthtale-vX.Y.Z.zip`; the site's download page finds it in the latest
+  release, `apps/web/src/lib/downloads.ts`):
   GitHub, CurseForge (the TOCs' `X-Curse-Project-ID`) and Wago Addons
   (`X-Wago-ID`, secret `WAGO_API_TOKEN`).
 - `addon/test/game.lua`: the fake game (WoW API, events, a character to play,

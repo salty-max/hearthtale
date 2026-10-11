@@ -28,9 +28,10 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TAG: ${{ inputs.tag || github.ref_name }}
-      # (BigWigsMods/packager, pinned: one zip, Hearthtale.zip, labelled by its version,
-      # the tag: a label takes no spaces; Unix line endings, as the folder has them)
-      PACKAGER_ARGS: -u -n "{package-name}:{project-version}"
+      # (BigWigsMods/packager, pinned: one zip, Hearthtale-vX.Y.Z.zip, its version in its
+      # name and its label, the tag: a label takes no spaces; Unix line endings, as
+      # the folder has them)
+      PACKAGER_ARGS: -u -n "{package-name}-{project-version}:{project-version}"
     steps:
       - uses: actions/checkout@v7
         with:

@@ -27,7 +27,7 @@ The addon (`addon/`, `writing/`):
 ```bash
 bun run addon:build     # writing → Data_Classic.lua, Data_Forever.lua
 bun run addon:check     # both up to date, simulation on both games, writer test
-bun run addon:package   # dist/Hearthtale.zip: one package for every game
+bun run addon:package   # dist/Hearthtale-<version>.zip: one package for every game
 ```
 
 The site, hearthtale.app (`apps/`, `packages/`; needs `bun install` once):

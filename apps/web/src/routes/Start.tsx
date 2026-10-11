@@ -1,19 +1,28 @@
 import { Link } from "@tanstack/react-router";
 import { Download } from "lucide-react";
-import { ADDON_RELEASES, FILES, RAVENPOST_RELEASES } from "@/lib/downloads";
+import { ADDON_RELEASES, type Download as File, RAVENPOST_RELEASES, useDownload } from "@/lib/downloads";
 import { useT } from "@/lib/i18n";
 
 /** Get started: the addon, Ravenpost, and linking them to the library. */
 export function Start() {
   const t = useT();
   const s = t.start;
-  const file = (href: string, label: string, detail: string) => (
+  const links = {
+    addon: useDownload("addon"),
+    windows: useDownload("windows"),
+    macos: useDownload("macos"),
+    windowsArm: useDownload("windowsArm"),
+  };
+  const file = (which: File, label: string, detail: string) => (
     <li>
-      <a href={href} className="btn">
+      <a href={links[which].href} className="btn">
         <Download className="size-4" aria-hidden />
         {label}
       </a>
-      <span className="mt-1 block text-ink-faded sm:ml-3 sm:mt-0 sm:inline">{detail}</span>
+      <span className="mt-1 block text-ink-faded sm:ml-3 sm:mt-0 sm:inline">
+        {detail}
+        {links[which].version ? ` (${links[which].version})` : ""}
+      </span>
     </li>
   );
   return (
@@ -24,17 +33,17 @@ export function Start() {
       <h2 className="title mt-8 text-xl text-[#7a5410]">{s.addonTitle}</h2>
       <p className="mt-2 text-lg">{s.addon}</p>
       <ul className="mt-3 space-y-3">
-        {file(FILES.addon, s.download, s.downloadDetail)}
+        {file("addon", s.download, s.downloadDetail)}
       </ul>
 
       <h2 className="title mt-8 text-xl text-[#7a5410]">{s.ravenpostTitle}</h2>
       <p className="mt-2 text-lg">{s.ravenpost}</p>
       <ul className="mt-3 space-y-3">
-        {file(FILES.windows, s.windows, s.windowsDetail)}
-        {file(FILES.macos, s.macos, s.macosDetail)}
+        {file("windows", s.windows, s.windowsDetail)}
+        {file("macos", s.macos, s.macosDetail)}
       </ul>
       <p className="mt-2 text-sm text-ink-faded">
-        <a href={FILES.windowsArm} className="underline">
+        <a href={links.windowsArm.href} className="underline">
           {s.windowsArm}
         </a>{" "}
         · {s.unsigned}
