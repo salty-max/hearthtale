@@ -42,7 +42,7 @@ function ns.createMinimapButton()
   button:SetHighlightTexture("Interface\\Minimap\\UI-Minimap-ZoomButton-Highlight")
 
   local icon = button:CreateTexture(nil, "BACKGROUND")
-  icon:SetTexture("Interface\\Icons\\INV_Misc_Book_08")
+  icon:SetTexture("Interface\\AddOns\\Hearthtale\\Media\\Logo")
   icon:SetSize(20, 20)
   icon:SetPoint("TOPLEFT", 7, -6)
   icon:SetTexCoord(0.08, 0.92, 0.08, 0.92)

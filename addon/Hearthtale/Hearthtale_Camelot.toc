@@ -5,7 +5,7 @@
 ## Version: 0.7.5
 ## SavedVariablesPerCharacter: HearthtaleChar
 ## SavedVariables: HearthtaleSettings, HearthtaleHall
-## IconTexture: Interface\Icons\INV_Misc_Book_08
+## IconTexture: Interface\AddOns\Hearthtale\Media\Logo
 ## X-Website: https://github.com/salty-max/hearthtale
 ## X-License: GPL-3.0-or-later
 ## X-Curse-Project-ID: 1737290

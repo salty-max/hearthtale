@@ -477,7 +477,7 @@ local function portrait()
   if p and SetPortraitTexture then
     SetPortraitTexture(p, "player")
   elseif book.SetPortraitToAsset then
-    book:SetPortraitToAsset("Interface\\Icons\\INV_Misc_Book_08")
+    book:SetPortraitToAsset("Interface\\AddOns\\Hearthtale\\Media\\Logo")
   end
 end
 
