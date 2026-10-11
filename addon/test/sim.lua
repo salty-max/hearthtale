@@ -43,6 +43,21 @@ end
 HearthtaleChar = { guid = "Player-6113-0DEAD000", chapters = {} }
 login()
 local J = HearthtaleChar
+do
+  -- one listener's error: reported, and the others still hear the event
+  local handler, reported, heard = geterrorhandler, nil, false
+  geterrorhandler = function()
+    return function(e) reported = e end
+  end
+  ns.on("HT_TEST_EVENT", function() error("a listener's fault") end)
+  ns.on("HT_TEST_EVENT", function() heard = true end)
+  fire("HT_TEST_EVENT")
+  geterrorhandler = handler
+  check(
+    heard and reported and reported:find("a listener's fault"),
+    "a listener's error is reported, the next still runs"
+  )
+end
 local function ch(i) return J.chapters[i or #J.chapters] end
 local function moments(k, i)
   local out = {}

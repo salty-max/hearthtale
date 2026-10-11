@@ -34,6 +34,11 @@ local state = {
 local loaded = {}
 local printed = {}
 function print(msg) table.insert(printed, msg) end
+-- The game's error handler: an error reported is raised again, so a test
+-- fails on it.
+function geterrorhandler()
+  return function(e) error(e, 0) end
+end
 function strtrim(s) return (s:gsub("^%s+", ""):gsub("%s+$", "")) end
 function GetGameTime() return state.hour, 0 end
 function GetRealZoneText() return state.zone end
