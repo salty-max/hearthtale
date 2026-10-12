@@ -1,4 +1,4 @@
--- addon-kit 560585f: a copy (kit:sync); edit the addon-kit repository's Kit.lua instead
+-- addon-kit 3af5139: a copy (kit:sync); edit the addon-kit repository's Kit.lua instead
 -- The kit shared by Hearthtale, Lorekeeper's Codex, Explorer's Field Journal
 -- and Second Wind: the books' look and the pieces their windows are made of
 -- (the list on the left, the page on the right and every part of a page, a
@@ -353,6 +353,10 @@ local function setTile(t, strip, i, w, fig)
   t:ClearAllPoints()
   t:SetPoint("TOPLEFT", strip, "TOPLEFT", (i - 1) * (w + TILE_GAP), 0)
   t.value:SetText(fig[1])
+  -- (a label no wider than its tile, on one line: a long one ends in "...",
+  -- never past the tile's edge)
+  t.label:SetWidth(w - 8)
+  t.label:SetWordWrap(false)
   t.label:SetText(fig[2])
   t:Show()
 end
