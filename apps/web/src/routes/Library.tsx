@@ -76,7 +76,7 @@ function BookCard({ c }: { c: CharacterSummary }) {
             <Link
               to="/book/$id"
               params={{ id: String(c.id) }}
-              className="truncate text-xl font-semibold after:absolute after:inset-0 after:rounded-lg"
+              className="truncate font-display text-xl font-semibold after:absolute after:inset-0 after:rounded-lg"
               style={{ color: classColour(c.class) }}
             >
               {c.name}
@@ -98,14 +98,14 @@ function BookCard({ c }: { c: CharacterSummary }) {
       {latest && (
         <div className="mt-3 border-t border-gold/15 pt-3">
           <p className="ui text-xs tracking-widest text-parchment/55 uppercase">{t.library.latest}</p>
-          <p className="truncate text-lg font-semibold text-gold-bright">{latestTitle}</p>
+          <p className="truncate font-display text-lg font-semibold text-gold-bright">{latestTitle}</p>
           <p className="truncate text-parchment/70">
             {[latest.title ? t.book.chapter(latest.number) : undefined, latest.open ? t.book.stillWriting : latest.place].filter(Boolean).join(" · ")}
           </p>
         </div>
       )}
       <div className="ui mt-auto flex flex-wrap items-center justify-between gap-2 pt-3 text-sm">
-        <span className="flex items-center gap-2 font-narrow text-base text-parchment/60">
+        <span className="flex items-center gap-2 text-parchment/60">
           <BookOpen className="size-4" aria-hidden />
           {t.library.chapters(c.chapters)} · {t.library.updated(ago(Date.parse(c.updatedAt), locale))}
         </span>

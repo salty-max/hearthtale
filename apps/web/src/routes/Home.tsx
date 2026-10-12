@@ -96,7 +96,7 @@ function Samples() {
           >
             <Crest token={x.class} size={26} />
             <span>
-              <span className="block font-semibold">{x.name}</span>
+              <span className="block font-display font-semibold">{x.name}</span>
               <span className="ui block text-xs opacity-80">
                 {raceClass(t, x)}
                 {x.part === "epitaph" ? ` · ${t.library.fallen}` : ""}
@@ -108,12 +108,14 @@ function Samples() {
       <article key={s.name} className={`${cls.page} fade-in mt-5 rounded-md px-6 py-8 sm:px-12 sm:py-10`}>
         <header className="text-center">
           <h3 className={epitaph ? `title text-3xl ${fallenColour}` : "title page-title text-3xl"}>{epitaph ? s.name : (s.title ?? t.book.chapter(s.number ?? 0))}</h3>
-          <p className="page-faded mt-1 italic">{sub}</p>
+          <p className="page-faded mt-1 text-lg italic">{sub}</p>
           <Flourish className="page-title mt-3 opacity-70" />
         </header>
         <div className={`mt-5 space-y-4 ${cls.text} ${epitaph ? "text-center italic" : ""}`}>
           {paragraphs(s.text).map((p, i) => (
-            <p key={i}>{p}</p>
+            <p key={i} className={i === 0 && !epitaph ? "drop-cap" : undefined}>
+              {p}
+            </p>
           ))}
         </div>
       </article>

@@ -29,7 +29,7 @@ export function Contents({ hrefFor, book, current, onPick }: { hrefFor: (part: s
             >
               <span className="min-w-0">
                 <span
-                  className={`block text-lg font-semibold ${
+                  className={`block font-display text-lg font-semibold ${
                     p.kind === "epitaph" ? "text-blood" : here ? "text-gold-bright" : "text-parchment"
                   }`}
                 >
@@ -39,7 +39,7 @@ export function Contents({ hrefFor, book, current, onPick }: { hrefFor: (part: s
                   <span className="ui block text-sm text-parchment/60">
                     {ch.title && `${t.book.chapter(ch.number)} · `}
                     {ch.open ? t.book.stillWriting : ch.place} · {t.book.levels(ch.from, ch.to)}
-                    {when && <span className="block font-narrow text-parchment/45">{when}</span>}
+                    {when && <span className="block text-parchment/45">{when}</span>}
                   </span>
                 )}
               </span>

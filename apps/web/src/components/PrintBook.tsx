@@ -10,7 +10,7 @@ export function PrintBook({ character, book }: { character: PublicCharacter; boo
   return (
     <div className="print-book font-book text-[12pt] leading-relaxed text-black">
       <header className="pt-[30vh] text-center">
-        <h1 className="font-ui text-[28pt] font-semibold">{t.exports.by(character.name)}</h1>
+        <h1 className="font-display text-[28pt] font-semibold">{t.exports.by(character.name)}</h1>
         <p className="mt-2 italic">{[`${t.library.level(character.level)} ${raceClass(t, character)}`, realmName(t, character)].filter(Boolean).join(" · ")}</p>
       </header>
       {parts(book).map((p) => {
@@ -19,7 +19,7 @@ export function PrintBook({ character, book }: { character: PublicCharacter; boo
         const sub = partSub(t, locale, character, book, p);
         return (
           <section key={p.key} className="break-before-page pt-8">
-            <h2 className="text-center font-ui text-[20pt] font-semibold">{partTitle(t, book, p)}</h2>
+            <h2 className="text-center font-display text-[20pt] font-semibold">{partTitle(t, book, p)}</h2>
             {sub && <p className="mb-6 text-center italic">{sub}</p>}
             <div className={`space-y-3 ${p.kind === "epitaph" ? "text-center italic" : ""}`}>
               {paragraphs(text).map((para, i) => (

@@ -419,19 +419,17 @@ Plan and steps: PLAN.md, "The site".
   (`lib/reading.ts`), a footer under every other page. The site by day or by
   night (`site`: as the device, day, night; `public/theme.js` sets it before
   the first paint, `lib/theme.ts` after), the reading options (size,
-  typeface: the game's, a printed book's or plain; paper, line spacing) and the
+  typeface: a printed book's or plain; paper, line spacing) and the
   language code in `lib/settings.ts` (per device), set on `/settings`. Routes
   in `src/router.tsx`, each page its title (`lib/title.ts`); every visible
   string in `src/lib/i18n.ts` (English only for now, the books being English:
   another language is one more catalog typed on `en` in CATALOGS, with its
   locale for dates; the language setting shows once there are two); the look
   in `src/index.css` (the in-game book: leather lit by a hearth, or a scribe's
-  desk by day; parchment pages; the addon's gold; two faces, the game's
-  serif and sans (its Fonts.xml), each a free one drawn alike: Friz Quadrata
-  for the words, the frame, the text, the entries and the titles (heavier,
-  in the gold) (`font-ui`: Proza Libre), Arial Narrow for numbers and dates
-  (`font-narrow`: Archivo Narrow); EB Garamond only as the reader's "Book"
-  typeface; `.panel`, `.btn`, `.title-gilded`,
+  desk by day; parchment pages; the addon's gold; three faces, as
+  WoWLocker's: Cinzel for titles and names (`font-display`), EB Garamond for
+  the book (`font-book`, the reader's default), Inter for the rest
+  (`font-sans`); `.panel`, `.btn`, `.title-gilded`,
   the class colours by day and night). The pictures (the
   logo at every size, the class crests: the game's UI-Classes-Circles) come
   from `apps/web/scripts/assets.py`, committed.

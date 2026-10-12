@@ -38,7 +38,7 @@ export function Hall() {
                       to="/hall/$id"
                       params={{ id: String(e.id) }}
                       search={{}}
-                      className="text-xl font-semibold after:absolute after:inset-0 after:rounded-lg"
+                      className="font-display text-xl font-semibold after:absolute after:inset-0 after:rounded-lg"
                       style={{ color: classColour(e.character.class) }}
                     >
                       {e.character.name}

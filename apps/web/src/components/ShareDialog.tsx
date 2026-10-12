@@ -77,7 +77,7 @@ export function ShareDialog({ open, onClose, character, book, part }: { open: bo
               <li key={s.token} className="flex items-center justify-between gap-2 py-2">
                 <span className="min-w-0">
                   <span className="block truncate">{partName(s.part)}</span>
-                  <span className="block font-narrow text-sm text-parchment/55">{new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(new Date(s.createdAt))}</span>
+                  <span className="ui block text-sm text-parchment/55">{new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(new Date(s.createdAt))}</span>
                 </span>
                 <span className="flex shrink-0 gap-1">
                   <button onClick={() => copy(s)} aria-label={t.share.copy} title={t.share.copy} className="rounded p-2 text-parchment/70 hover:text-parchment">

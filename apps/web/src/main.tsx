@@ -1,12 +1,10 @@
-// The game's two faces, free (index.css): the words, and the numbers; and the
-// reader's "Book" typeface.
-import "@fontsource/proza-libre/400.css";
-import "@fontsource/proza-libre/400-italic.css";
-import "@fontsource/proza-libre/500.css";
-import "@fontsource/proza-libre/600.css";
-import "@fontsource-variable/archivo-narrow";
+// The site's three faces (index.css): the titles, the book, the rest.
+import "@fontsource/cinzel/600.css";
+import "@fontsource/cinzel/700.css";
 import "@fontsource-variable/eb-garamond";
 import "@fontsource-variable/eb-garamond/wght-italic.css";
+import "@fontsource-variable/inter";
+import "@fontsource-variable/inter/wght-italic.css";
 import "./index.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RouterProvider } from "@tanstack/react-router";

@@ -4,14 +4,10 @@
    around parchment pages, brown ink, the addon's gold (|cffc9a227) for titles
    and links, and the red of a fallen life; by day (the light theme), the same
    book on a scribe's desk.
-   Two faces, the game's serif and sans (its Fonts.xml), each in a free one
-   drawn the same way:
-   - ui: Friz Quadrata, the words, all of them: the frame, the text (a
-     quest's, the addon's entries) and the titles, set heavier in the gold
-     as the game's frames set theirs: Proza Libre, as wide and flared;
-   - narrow: Arial Narrow, the numbers and the chat: dates, counts: Archivo
-     Narrow.
-   The reader's "Book" typeface is EB Garamond (--font-book). */
+   Three faces, as WoWLocker's: Cinzel for the titles and the names (the
+   carved capitals of the game's own title art), EB Garamond for the book (a
+   printed book's; the reader's "Book" typeface, its default), Inter for the
+   rest, the frame and the numbers. */
 @theme {
   --color-night: #120d09;
   --color-leather: #2a1d12;
@@ -28,9 +24,9 @@
   --color-fallen: #9b2a20;
   --color-page-title: #7a5410;
 
-  --font-ui: "Proza Libre", "Segoe UI", system-ui, sans-serif;
-  --font-narrow: "Archivo Narrow Variable", "Arial Narrow", sans-serif-condensed, sans-serif;
+  --font-display: "Cinzel", "Trajan Pro", Georgia, serif;
   --font-book: "EB Garamond Variable", Georgia, serif;
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
 }
 
 /* By day: the frame turns to the desk's light parchment, the words to ink, the
@@ -66,7 +62,7 @@ body {
      bottom of the screen on iOS continues the bar (the frame itself is night). */
   background: var(--color-leather);
   color: var(--color-parchment);
-  font-family: var(--font-ui);
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -138,14 +134,25 @@ body,
   .page-title {
     color: var(--page-title);
   }
+  /* An entry's first letter, large, in the title's face (an illuminated initial). */
+  .drop-cap::first-letter {
+    float: left;
+    margin: 0.08em 0.35rem 0 0;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 3.4em;
+    line-height: 0.82;
+    color: var(--page-title);
+  }
   .page-faded {
     color: var(--page-faded);
   }
 
-  /* A title: the words' face, heavier, in the gold. */
+  /* A title: carved capitals, in the gold. */
   .title {
-    font-family: var(--font-ui);
+    font-family: var(--font-display);
     font-weight: 600;
+    letter-spacing: 0.02em;
     color: var(--color-gold);
   }
   /* On a page of the book, a title takes the page's own ink. */
@@ -153,8 +160,9 @@ body,
     color: var(--page-title);
   }
   .title-gilded {
-    font-family: var(--font-ui);
-    font-weight: 600;
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: 0.02em;
     background: linear-gradient(180deg, var(--color-gold-bright) 10%, var(--color-gold) 55%, #8f6a14 100%);
     -webkit-background-clip: text;
     background-clip: text;
@@ -169,9 +177,9 @@ body,
   }
 
   /* The frame's words: labels, buttons, the menu (a shade heavier than the
-     text, as the game's gold labels read). */
+     text). */
   .ui {
-    font-family: var(--font-ui);
+    font-family: var(--font-sans);
     font-weight: 500;
   }
 
@@ -236,7 +244,7 @@ body,
     border-radius: 0.375rem;
     background: linear-gradient(180deg, color-mix(in srgb, var(--color-leather-edge) 85%, white 15%), var(--color-leather));
     color: var(--color-gold-bright);
-    font-family: var(--font-ui);
+    font-family: var(--font-sans);
     font-weight: 500;
     box-shadow:
       inset 0 1px 0 rgb(255 255 255 / 0.08),
@@ -287,7 +295,7 @@ body,
     padding: 0.05rem 0.5rem;
     border: 1px solid currentColor;
     border-radius: 999px;
-    font-family: var(--font-ui);
+    font-family: var(--font-sans);
     font-weight: 500;
     font-size: 0.8rem;
     line-height: 1.4;

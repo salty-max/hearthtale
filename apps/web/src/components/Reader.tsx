@@ -127,7 +127,7 @@ export function Reader({
           </span>
           <span className="flex min-w-0 items-center gap-2">
             <Crest token={character.class} size={26} />
-            <span className="truncate text-lg font-semibold" style={{ color: classColour(character.class) }}>
+            <span className="truncate font-display text-lg font-semibold" style={{ color: classColour(character.class) }}>
               {character.name}
             </span>
             {actions}
@@ -141,13 +141,15 @@ export function Reader({
           <div key={part} className="fade-in min-h-0 flex-1 overflow-y-auto overscroll-contain px-6 py-8 sm:px-12 sm:py-10">
             <header className="text-center">
               <h1 className={here.kind === "epitaph" ? `title text-3xl sm:text-4xl ${fallenColour}` : "title page-title text-3xl sm:text-4xl"}>{title}</h1>
-              {sub && <p className="page-faded mt-1.5 italic">{sub}</p>}
+              {sub && <p className="page-faded mt-1.5 text-lg italic">{sub}</p>}
               <Flourish className="page-title mt-3 opacity-70" />
             </header>
             <div className={`mt-5 space-y-4 ${cls.text} ${here.kind === "epitaph" ? "text-center italic" : ""}`}>
               {paragraphs(text).length === 0 && <p className="page-faded italic">{t.book.nothingYet}</p>}
               {paragraphs(text).map((p, i) => (
-                <p key={i}>{p}</p>
+                <p key={i} className={i === 0 && here.kind === "chapter" ? "drop-cap" : undefined}>
+                  {p}
+                </p>
               ))}
             </div>
             {/* The player's own note, set apart from the journal's words. */}
@@ -176,7 +178,7 @@ export function Reader({
             ) : (
               <span />
             )}
-            <span className="font-narrow text-parchment/55">{t.book.of(at + 1, all.length)}</span>
+            <span className="text-sm text-parchment/55">{t.book.of(at + 1, all.length)}</span>
             {next ? (
               <PartLink href={hrefFor(next.key)} className="flex min-w-0 items-center justify-end gap-1 hover:underline" title={t.book.keys}>
                 <span className="truncate">{partTitle(t, book, next)}</span>

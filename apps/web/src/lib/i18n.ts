@@ -283,7 +283,7 @@ const en = {
       "I reached Kharanos, took a room at Thunderbrew Distillery, then took up skinning. Later that day, I walked into Shimmer Ridge and dealt with a Frostmane Snowstrider.",
     size: "Text size",
     font: "Typeface",
-    fonts: { game: "Game", book: "Book", plain: "Plain" } as Record<string, string>,
+    fonts: { book: "Book", plain: "Plain" } as Record<string, string>,
     paper: "Paper",
     themes: { parchment: "Parchment", sepia: "Sepia", night: "Night" } as Record<string, string>,
     spacing: "Line spacing",
