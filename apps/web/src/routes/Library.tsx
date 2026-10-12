@@ -76,7 +76,7 @@ function BookCard({ c }: { c: CharacterSummary }) {
             <Link
               to="/book/$id"
               params={{ id: String(c.id) }}
-              className="truncate font-display text-2xl after:absolute after:inset-0 after:rounded-lg"
+              className="truncate text-xl font-semibold after:absolute after:inset-0 after:rounded-lg"
               style={{ color: classColour(c.class) }}
             >
               {c.name}
@@ -98,7 +98,7 @@ function BookCard({ c }: { c: CharacterSummary }) {
       {latest && (
         <div className="mt-3 border-t border-gold/15 pt-3">
           <p className="ui text-xs tracking-widest text-parchment/55 uppercase">{t.library.latest}</p>
-          <p className="truncate font-display text-xl text-gold-bright">{latestTitle}</p>
+          <p className="truncate text-lg font-semibold text-gold-bright">{latestTitle}</p>
           <p className="truncate text-parchment/70">
             {[latest.title ? t.book.chapter(latest.number) : undefined, latest.open ? t.book.stillWriting : latest.place].filter(Boolean).join(" · ")}
           </p>

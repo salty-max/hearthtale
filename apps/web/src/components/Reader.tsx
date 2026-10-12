@@ -127,7 +127,7 @@ export function Reader({
           </span>
           <span className="flex min-w-0 items-center gap-2">
             <Crest token={character.class} size={26} />
-            <span className="truncate font-display text-lg" style={{ color: classColour(character.class) }}>
+            <span className="truncate text-lg font-semibold" style={{ color: classColour(character.class) }}>
               {character.name}
             </span>
             {actions}
@@ -147,9 +147,7 @@ export function Reader({
             <div className={`mt-5 space-y-4 ${cls.text} ${here.kind === "epitaph" ? "text-center italic" : ""}`}>
               {paragraphs(text).length === 0 && <p className="page-faded italic">{t.book.nothingYet}</p>}
               {paragraphs(text).map((p, i) => (
-                <p key={i} className={i === 0 && here.kind === "chapter" ? "drop-cap" : undefined}>
-                  {p}
-                </p>
+                <p key={i}>{p}</p>
               ))}
             </div>
             {/* The player's own note, set apart from the journal's words. */}

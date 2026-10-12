@@ -29,7 +29,7 @@ export function Contents({ hrefFor, book, current, onPick }: { hrefFor: (part: s
             >
               <span className="min-w-0">
                 <span
-                  className={`block font-display text-xl ${
+                  className={`block text-lg font-semibold ${
                     p.kind === "epitaph" ? "text-blood" : here ? "text-gold-bright" : "text-parchment"
                   }`}
                 >

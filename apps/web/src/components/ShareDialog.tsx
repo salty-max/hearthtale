@@ -71,7 +71,7 @@ export function ShareDialog({ open, onClose, character, book, part }: { open: bo
 
       {(shares.data?.length ?? 0) > 0 && (
         <>
-          <h3 className="title mt-6 text-xl">{t.share.made}</h3>
+          <h3 className="title mt-6 text-lg">{t.share.made}</h3>
           <ul className="mt-2 divide-y divide-parchment/10">
             {shares.data!.map((s) => (
               <li key={s.token} className="flex items-center justify-between gap-2 py-2">

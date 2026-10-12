@@ -118,7 +118,7 @@ export function Settings() {
 
       <Section title={t.settings.reading}>
         <div className={`${cls.page} mt-3 rounded-md px-5 py-4`}>
-          <p className={`${cls.text} drop-cap`}>{t.settings.preview}</p>
+          <p className={cls.text}>{t.settings.preview}</p>
         </div>
         <Choice label={t.settings.size} name="size" value={s.size} options={SIZES} render={(k) => <span className={{ s: "text-sm", m: "text-base", l: "text-lg", xl: "text-xl" }[k]}>A</span>} />
         <Choice

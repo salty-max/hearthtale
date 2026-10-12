@@ -426,13 +426,12 @@ Plan and steps: PLAN.md, "The site".
   another language is one more catalog typed on `en` in CATALOGS, with its
   locale for dates; the language setting shows once there are two); the look
   in `src/index.css` (the in-game book: leather lit by a hearth, or a scribe's
-  desk by day; parchment pages; the addon's gold; the letters in the game's
-  three roles, each in a free face drawn alike (its Fonts.xml, and the
-  addon's kit): Morpheus for what is written in the world, titles, names and
-  figures (`font-display`: Almendra SC), Friz Quadrata for everything else,
-  the frame and the text, the entries too (`font-ui`: Proza Libre), Arial
-  Narrow for numbers and dates (`font-narrow`: Archivo Narrow); EB Garamond
-  only as the reader's "Book" typeface; `.panel`, `.btn`, `.title-gilded`,
+  desk by day; parchment pages; the addon's gold; two faces, the game's
+  serif and sans (its Fonts.xml), each a free one drawn alike: Friz Quadrata
+  for the words, the frame, the text, the entries and the titles (heavier,
+  in the gold) (`font-ui`: Proza Libre), Arial Narrow for numbers and dates
+  (`font-narrow`: Archivo Narrow); EB Garamond only as the reader's "Book"
+  typeface; `.panel`, `.btn`, `.title-gilded`,
   the class colours by day and night). The pictures (the
   logo at every size, the class crests: the game's UI-Classes-Circles) come
   from `apps/web/scripts/assets.py`, committed.

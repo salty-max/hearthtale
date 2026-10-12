@@ -1,9 +1,9 @@
-// The game's three faces, free (index.css): titles, the rest, numbers; and the
+// The game's two faces, free (index.css): the words, and the numbers; and the
 // reader's "Book" typeface.
-import "@fontsource/almendra-sc";
 import "@fontsource/proza-libre/400.css";
 import "@fontsource/proza-libre/400-italic.css";
 import "@fontsource/proza-libre/500.css";
+import "@fontsource/proza-libre/600.css";
 import "@fontsource-variable/archivo-narrow";
 import "@fontsource-variable/eb-garamond";
 import "@fontsource-variable/eb-garamond/wght-italic.css";

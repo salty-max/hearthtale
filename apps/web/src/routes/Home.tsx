@@ -96,7 +96,7 @@ function Samples() {
           >
             <Crest token={x.class} size={26} />
             <span>
-              <span className="block font-display">{x.name}</span>
+              <span className="block font-semibold">{x.name}</span>
               <span className="ui block text-xs opacity-80">
                 {raceClass(t, x)}
                 {x.part === "epitaph" ? ` · ${t.library.fallen}` : ""}
@@ -113,9 +113,7 @@ function Samples() {
         </header>
         <div className={`mt-5 space-y-4 ${cls.text} ${epitaph ? "text-center italic" : ""}`}>
           {paragraphs(s.text).map((p, i) => (
-            <p key={i} className={i === 0 && !epitaph ? "drop-cap" : undefined}>
-              {p}
-            </p>
+            <p key={i}>{p}</p>
           ))}
         </div>
       </article>
