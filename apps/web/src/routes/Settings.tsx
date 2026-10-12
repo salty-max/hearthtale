@@ -3,7 +3,7 @@ import { Bell, BellOff, LogIn, LogOut, Monitor, Moon, Sun } from "lucide-react";
 import type { ReactNode } from "react";
 import { useMe, useSignOut } from "@/lib/api";
 import { CATALOGS, LANGS, useLang, useT } from "@/lib/i18n";
-import { usePush } from "@/lib/push";
+import { usePush, usePushKey } from "@/lib/push";
 import { FONT_CLASS, FONTS, readerClasses, setSettings, SITE_THEMES, SIZES, SPACINGS, THEMES, useSettings, type Settings as S } from "@/lib/settings";
 import { useTitle } from "@/lib/title";
 
@@ -92,6 +92,7 @@ export function Settings() {
   const s = useSettings();
   const lang = useLang();
   const me = useMe();
+  const pushKey = usePushKey();
   const signOut = useSignOut();
   const cls = readerClasses(s);
   return (
@@ -132,9 +133,12 @@ export function Settings() {
         <Choice label={t.settings.spacing} name="spacing" value={s.spacing} options={SPACINGS} render={(k) => t.settings.spacings[k]} />
       </Section>
 
-      <Section title={t.push.title}>
-        <Notifications signedIn={!!me.data} />
-      </Section>
+      {/* (only where the site sends them: VAPID_* set) */}
+      {pushKey.data && (
+        <Section title={t.push.title}>
+          <Notifications signedIn={!!me.data} />
+        </Section>
+      )}
 
       {LANGS.length > 1 && (
         <Section title={t.settings.language}>

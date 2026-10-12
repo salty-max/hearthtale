@@ -26,17 +26,24 @@ async function registration(): Promise<ServiceWorkerRegistration | undefined> {
   return navigator.serviceWorker.getRegistration().then((r) => r ?? navigator.serviceWorker.ready);
 }
 
+// The site's public key for push (null: the site has none, VAPID_* unset: no notifications at all).
+const pushKey = {
+  queryKey: ["push-key"],
+  queryFn: async () => {
+    const res = await fetch("/api/push/key");
+    return res.ok ? ((await res.json()) as { key: string }).key : null;
+  },
+  staleTime: Infinity,
+};
+
+/** Whether the site sends notifications at all (its key, or null). */
+export function usePushKey() {
+  return useQuery(pushKey);
+}
+
 export function usePush(signedIn: boolean) {
   const qc = useQueryClient();
-  const key = useQuery({
-    queryKey: ["push-key"],
-    queryFn: async () => {
-      const res = await fetch("/api/push/key");
-      return res.ok ? ((await res.json()) as { key: string }).key : null;
-    },
-    enabled: signedIn && supported(),
-    staleTime: Infinity,
-  });
+  const key = useQuery({ ...pushKey, enabled: signedIn && supported() });
   const [subscribed, setSubscribed] = useState<boolean | null>(null);
   const [busy, setBusy] = useState(false);
   const [failed, setFailed] = useState(false);

@@ -496,7 +496,7 @@ Plan and steps: PLAN.md, "The site".
   `/api/push/key`); an upload that finishes entries the book before it hadn't
   (its same owner's) tells them, after the answer (`waitUntil`). Needs
   VAPID_PUBLIC_KEY, VAPID_PRIVATE_KEY and VAPID_SUBJECT (apps/api/.env.local,
-  Vercel); without them, none, and the setting says so.
+  Vercel), optional: without them, no notifications and no Settings section for them, the site otherwise the same.
 - A saved file brought by hand: `POST /api/upload` (signed in), the
   companion's upload as the session's account (`uploadAs` in `lib/upload.ts`).
 - Removing a book (`DELETE /api/characters/:id`, `lib/characters.ts`
