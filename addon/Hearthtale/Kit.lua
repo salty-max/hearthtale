@@ -1,4 +1,4 @@
--- addon-kit c8639c5: a copy (kit:sync); edit the addon-kit repository's Kit.lua instead
+-- addon-kit 1eeffdb: a copy (kit:sync); edit the addon-kit repository's Kit.lua instead
 -- The kit shared by Hearthtale, Lorekeeper's Codex, Explorer's Field Journal
 -- and Second Wind: the books' look and the pieces their windows are made of
 -- (the list on the left, the page on the right and every part of a page, a
@@ -362,6 +362,10 @@ end
 local function textWidth(fs)
   local get = fs.GetUnboundedStringWidth or fs.GetStringWidth
   local v = get and get(fs)
+  return type(v) == "number" and v or 0
+end
+local function textHeight(fs)
+  local v = fs.GetStringHeight and fs:GetStringHeight()
   return type(v) == "number" and v or 0
 end
 local function setTile(t, strip, i, w, fig)
@@ -1020,6 +1024,9 @@ function K.board(o)
     K.setBadge(r.medal, earned and K.GOLD or nil)
     r.title:SetText(a.title)
     r.text:SetText(a.text)
+    -- (a row grows with what it asks: a description on two lines is never cut)
+    local height = math.max(BOARD_ROW - 4, 7 + textHeight(r.title) + 5 + textHeight(r.text) + 6)
+    r:SetHeight(height)
     if earned then
       r.title:SetTextColor(unpack(T.gold))
       r.text:SetTextColor(unpack(T.text))
@@ -1046,6 +1053,7 @@ function K.board(o)
     else
       r.bg:SetColorTexture(1, 1, 1, 0.03)
     end
+    return height
   end
 
   function B:refresh(picked)
@@ -1094,9 +1102,9 @@ function K.board(o)
           r:ClearAllPoints()
           r:SetPoint("TOPLEFT", 0, -y)
           if a.id == picked then pickedY = y end
-          fill(r, a, group[3], picked)
+          local height = fill(r, a, group[3], picked)
           r:Show()
-          y = y + BOARD_ROW
+          y = y + height + 4
         end
         y = y + 12
       end
