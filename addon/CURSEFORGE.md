@@ -3,7 +3,7 @@
 <!-- Project description for curseforge.com (paste as the project's description). -->
 
 <!-- Summary (the project's summary on CurseForge and Wago, and the TOCs' Notes):
-Your character's own journal, written as you play: a diary entry in their voice at each rest, and an epitaph if a Hardcore life ends. -->
+A diary for your WoW character, written as you play, with an epitaph and a saved journal when a Hardcore life ends. -->
 
 Hearthtale keeps a diary for your character as you play. Quests, close calls, new places and the people you travel with become entries written in the first person, with a different voice for each race. On Hardcore, a death ends the journal with an epitaph and saves it in the Hall of the Fallen.
 
@@ -50,10 +50,10 @@ On other realms, death is recorded in the journal and the book carries on.
 **[hearthtale.app](https://hearthtale.app)** lets you read the same journal away from the game. The website is optional. You can use the addon entirely in game.
 
 1. Install **[Ravenpost](https://github.com/salty-max/ravenpost)**, the free, open source companion for Windows and macOS. It uploads your books a few seconds after you log out or use `/reload`.
-2. Click **Link Hearthtale** in Ravenpost and sign in with Battle.net on hearthtale.app. Classic Era characters are recognised automatically.
-3. For Forever characters, or any character Battle.net cannot find, get a code from your library on hearthtale.app and enter `/ht link CODE` in game.
+2. In Ravenpost's window, click **Link with Battle.net** on the Hearthtale card and sign in on hearthtale.app. Classic Era characters are recognised automatically.
+3. For Forever characters, or any character Battle.net cannot find, get a code from **Link a character** at the top of hearthtale.app and enter `/ht link CODE` in game.
 
-Your books are private. Ravenpost sends the written book and the information needed to identify its character. The addon's underlying records stay on your computer. Ravenpost also works with WoWLocker if you use both.
+Your books are private, and the notes you add stay yours even when you share a book. Ravenpost sends the written book and the information needed to identify its character. The addon's underlying records stay on your computer. Ravenpost also works with WoWLocker if you use both.
 
 Full setup instructions: [hearthtale.app/start](https://hearthtale.app/start).
 
