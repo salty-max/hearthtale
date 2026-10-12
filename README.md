@@ -35,11 +35,11 @@ text.
 Install Ravenpost, click **Link with Battle.net** on its Hearthtale card and
 sign in. For Forever characters, or any character Battle.net cannot find, get
 a code from **Link a character** on the site and enter `/ht link CODE` in
-game. Your book arrives after
-your next logout or `/reload`.
+game. Your book arrives after your next logout or `/reload`.
 
 The website is optional, and books are private unless you choose to share
-them. Setup instructions are at [hearthtale.app/start](https://hearthtale.app/start).
+them. Your notes stay out of a shared book and the Hall. Setup instructions
+are at [hearthtale.app/start](https://hearthtale.app/start).
 
 The addon is written for English game clients. On other clients, game names
 appear in their own language within English sentences, and some events that
