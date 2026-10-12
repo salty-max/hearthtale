@@ -12,6 +12,16 @@ import { useQuery } from "@tanstack/react-query";
 export const ADDON_REPO = "salty-max/hearthtale";
 export const RAVENPOST_REPO = "salty-max/ravenpost";
 export const ADDON_RELEASES = `https://github.com/${ADDON_REPO}/releases`;
+/** The addon on the addon managers' sites (the same release, from the same tag). */
+export const CURSEFORGE = "https://www.curseforge.com/wow/addons/hearthtale";
+export const WAGO = "https://addons.wago.io/addons/E6gzPnN1";
+
+/** The visitor's computer, for the companion's download to offer first. */
+export function osOf(ua = typeof navigator === "undefined" ? "" : navigator.userAgent): "macos" | "windows" | undefined {
+  if (/Mac OS X|Macintosh/.test(ua) && !/iPhone|iPad/.test(ua)) return "macos";
+  if (/Windows/.test(ua)) return "windows";
+  return undefined;
+}
 export const RAVENPOST_RELEASES = `https://github.com/${RAVENPOST_REPO}/releases`;
 
 /** Each download: its repo, its file's name (with its version or without). */

@@ -1,18 +1,27 @@
 import { REGIONS, type Region } from "@hearthtale/shared";
-import { LogIn } from "lucide-react";
+import { Check, LogIn } from "lucide-react";
 import { useState } from "react";
 import { useTestSignIn } from "@/lib/api";
 import { useT } from "@/lib/i18n";
+import { guessRegion } from "@/lib/region";
 
 /** "Sign in with Battle.net", in a region (Battle.net lists the characters of one region at a time). */
 export function SignIn({ problem, next }: { problem?: "failed" | "cancelled"; next?: string }) {
   const t = useT();
-  const [region, setRegion] = useState<Region>("eu");
+  const [region, setRegion] = useState<Region>(() => guessRegion());
   const test = useTestSignIn();
   return (
     <div className="page mx-auto mt-6 max-w-md rounded-md px-6 py-8 text-center">
-      <h2 className="title text-2xl text-[#7a5410]">{t.account.signInTitle}</h2>
+      <h2 className="title page-title text-2xl">{t.account.signInTitle}</h2>
       <p className="mt-3 text-lg">{t.account.signInWhy}</p>
+      <ul className="mx-auto mt-4 inline-block space-y-1 text-left">
+        {t.account.perks.map((p) => (
+          <li key={p} className="flex items-center gap-2">
+            <Check className="size-4 shrink-0 text-page-title" aria-hidden />
+            {p}
+          </li>
+        ))}
+      </ul>
       {problem && <p className="mt-3 text-fallen">{problem === "failed" ? t.account.failed : t.account.cancelled}</p>}
       <label className="mt-5 block text-ink-faded">
         {t.account.region}{" "}
@@ -28,7 +37,7 @@ export function SignIn({ problem, next }: { problem?: "failed" | "cancelled"; ne
           ))}
         </select>
       </label>
-      <a href={`/api/auth/login?region=${region}${next ? `&next=${encodeURIComponent(next)}` : ""}`} className="btn mt-5">
+      <a href={`/api/auth/login?region=${region}${next ? `&next=${encodeURIComponent(next)}` : ""}`} className="btn btn-primary mt-5">
         <LogIn className="size-4" aria-hidden />
         {t.account.signIn}
       </a>

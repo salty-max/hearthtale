@@ -1,18 +1,20 @@
 import type { Book } from "@hearthtale/shared";
 import { Skull, Star } from "lucide-react";
 import { PartLink } from "@/components/PartLink";
-import { parts } from "@/lib/book";
-import { useT } from "@/lib/i18n";
+import { partTitle, parts } from "@/lib/book";
+import { dateRange } from "@/lib/dates";
+import { useLocale, useT } from "@/lib/i18n";
 
-/** A book's table of contents: the prologue, each chapter (where, its levels, its marks), the epitaph. */
+/** A book's table of contents: the prologue, each chapter (where, its levels, when, its marks), the epitaph. */
 export function Contents({ hrefFor, book, current, onPick }: { hrefFor: (part: string) => string; book: Book; current?: string; onPick?: () => void }) {
   const t = useT();
+  const locale = useLocale();
   return (
     <ol className="divide-y divide-parchment/10">
       {parts(book).map((p) => {
         const ch = p.kind === "chapter" ? book.chapters.find((c) => c.number === p.number) : undefined;
-        const title = p.kind === "prologue" ? t.book.prologue : p.kind === "epitaph" ? t.book.epitaph : (ch?.title ?? t.book.chapter(p.number));
         const here = p.key === current;
+        const when = ch && dateRange(ch.began, ch.open ? undefined : ch.ended, locale, t.book.to);
         return (
           <li key={p.key}>
             <PartLink
@@ -25,22 +27,19 @@ export function Contents({ hrefFor, book, current, onPick }: { hrefFor: (part: s
                   : "flex items-center justify-between gap-3 border-l-2 border-transparent px-4 py-3 hover:bg-parchment/5"
               }
             >
-              <span>
+              <span className="min-w-0">
                 <span
-                  className={
-                    p.kind === "epitaph"
-                      ? "font-[family-name:var(--font-display)] text-lg text-[#e0705f]"
-                      : here
-                        ? "font-[family-name:var(--font-display)] text-lg text-gold-bright"
-                        : "font-[family-name:var(--font-display)] text-lg text-parchment"
-                  }
+                  className={`block font-[family-name:var(--font-display)] text-lg ${
+                    p.kind === "epitaph" ? "text-blood" : here ? "text-gold-bright" : "text-parchment"
+                  }`}
                 >
-                  {title}
+                  {partTitle(t, book, p)}
                 </span>
                 {ch && (
-                  <span className="block text-parchment/60">
+                  <span className="ui block text-sm text-parchment/60">
                     {ch.title && `${t.book.chapter(ch.number)} · `}
                     {ch.open ? t.book.stillWriting : ch.place} · {t.book.levels(ch.from, ch.to)}
+                    {when && <span className="block text-parchment/45">{when}</span>}
                   </span>
                 )}
               </span>

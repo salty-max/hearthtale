@@ -43,12 +43,12 @@ export function ContentsDrawer({
       onClick={(e) => {
         if (e.target === ref.current) onClose(); // the backdrop
       }}
-      className="drawer m-0 h-dvh max-h-dvh w-[22rem] max-w-[88vw] border-r border-leather-edge bg-leather p-0 text-parchment"
+      className="drawer backdrop m-0 h-dvh max-h-dvh w-[22rem] max-w-[88vw] border-0 border-r border-gold/40 p-0 text-parchment"
     >
       <div className="flex h-full flex-col">
         <div className="flex items-center justify-between px-4 pt-[max(1rem,env(safe-area-inset-top))]">
           <h2 className="title text-xl">{t.book.contents}</h2>
-          <button onClick={onClose} aria-label={t.book.close} className="rounded p-2 text-parchment/70 hover:text-parchment">
+          <button onClick={onClose} aria-label={t.common.close} className="rounded p-2 text-parchment/70 hover:text-parchment">
             <X className="size-5" />
           </button>
         </div>
@@ -58,7 +58,7 @@ export function ContentsDrawer({
         <nav aria-label={t.book.contents} className="flex-1 overflow-y-auto">
           <Contents hrefFor={hrefFor} book={book} current={current} onPick={onClose} />
         </nav>
-        <p className="px-4 pt-3 pb-[max(1rem,env(safe-area-inset-bottom))] text-center text-sm text-parchment/45">
+        <p className="ui px-4 pt-3 pb-[max(1rem,env(safe-area-inset-bottom))] text-center text-xs text-parchment/45">
           {t.book.written(written, book.version)}
         </p>
       </div>

@@ -1,44 +1,66 @@
 import { Link } from "@tanstack/react-router";
-import { Skull } from "lucide-react";
+import { BookOpen, Skull } from "lucide-react";
+import { Crest } from "@/components/Crest";
+import { Flourish } from "@/components/Flourish";
 import { LoadError, Loading } from "@/components/PageState";
 import { useHall } from "@/lib/api";
 import { useLocale, useT } from "@/lib/i18n";
-import { CLASS_COLOURS, raceClass, realmName } from "@/lib/wow";
+import { useTitle } from "@/lib/title";
+import { classColour, raceClass, realmName } from "@/lib/wow";
 
 /** The public Hall of the Fallen: Hardcore lives their owners chose to show, each with its epitaph. */
 export function Hall() {
   const t = useT();
   const locale = useLocale();
+  useTitle(t.hall.title);
   const { data, isPending, isError, refetch } = useHall();
   return (
     <section className="mx-auto max-w-3xl pb-4">
-      <h1 className="title text-3xl">{t.hall.title}</h1>
-      <p className="mt-2 text-lg text-parchment/75">{t.hall.intro}</p>
+      <div className="mt-2 text-center">
+        <Skull className="mx-auto size-9 text-blood" aria-hidden />
+        <h1 className="title-gilded mt-2 text-4xl">{t.hall.title}</h1>
+        <p className="mx-auto mt-2 max-w-xl text-lg text-parchment/75">{t.hall.intro}</p>
+        <Flourish className="mt-4 text-gold/70" />
+      </div>
       {isPending && <Loading />}
       {isError && <LoadError retry={() => void refetch()} />}
-      {data && data.length === 0 && <p className="mt-6 text-lg italic text-parchment/70">{t.hall.empty}</p>}
+      {data && data.length === 0 && <p className="mt-6 text-center text-lg italic text-parchment/70">{t.hall.empty}</p>}
       <ul className="mt-6 space-y-4">
         {data?.map((e) => (
           <li key={e.id}>
-            <Link to="/hall/$id" params={{ id: String(e.id) }} search={{}} className="block rounded-md border border-leather-edge bg-leather/80 p-4 shadow-lg transition hover:border-gold">
-              <div className="flex items-baseline justify-between gap-2">
-                <span className="font-[family-name:var(--font-display)] text-2xl" style={{ color: CLASS_COLOURS[e.character.class] }}>
-                  {e.character.name}
-                </span>
-                {e.diedAt && (
-                  <span className="flex items-center gap-1 text-sm text-[#e0705f]">
-                    <Skull className="size-4" aria-hidden />
-                    {new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(new Date(e.diedAt * 1000))}
-                  </span>
-                )}
+            <article className="panel panel-link relative p-5">
+              <div className="flex items-start gap-3">
+                <Crest token={e.character.class} size={48} className="grayscale-[35%]" />
+                <div className="min-w-0 flex-1">
+                  <div className="flex flex-wrap items-baseline justify-between gap-2">
+                    <Link
+                      to="/hall/$id"
+                      params={{ id: String(e.id) }}
+                      search={{}}
+                      className="font-[family-name:var(--font-display)] text-2xl after:absolute after:inset-0 after:rounded-lg"
+                      style={{ color: classColour(e.character.class) }}
+                    >
+                      {e.character.name}
+                    </Link>
+                    {e.diedAt && (
+                      <span className="tag text-blood">
+                        <Skull className="size-3" aria-hidden />
+                        {new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(new Date(e.diedAt * 1000))}
+                      </span>
+                    )}
+                  </div>
+                  <p className="ui text-parchment/80">
+                    {t.library.level(e.character.level)} {raceClass(t, e.character)}
+                    {realmName(t, e.character) && <span className="text-parchment/55"> · {realmName(t, e.character)}</span>}
+                  </p>
+                </div>
               </div>
-              <p className="text-parchment/80">
-                {t.library.level(e.character.level)} {raceClass(t, e.character)}
-                {realmName(t, e.character) && <span className="text-parchment/55"> · {realmName(t, e.character)}</span>}
+              {e.epitaph && <p className="mt-4 border-l-2 border-blood/50 pl-4 text-lg italic text-parchment/85">{e.epitaph}</p>}
+              <p className="ui mt-3 flex items-center gap-2 text-sm text-gold-bright">
+                <BookOpen className="size-4" aria-hidden />
+                {t.hall.read} · {t.library.chapters(e.chapters)}
               </p>
-              {e.epitaph && <p className="mt-3 italic text-parchment/85">{e.epitaph}</p>}
-              <p className="mt-2 text-sm text-gold-bright">{t.library.chapters(e.chapters)}</p>
-            </Link>
+            </article>
           </li>
         ))}
       </ul>

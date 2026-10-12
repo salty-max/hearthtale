@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import { linkIn, type Release } from "./downloads";
+import { linkIn, osOf, type Release } from "./downloads";
 
 const url = (name: string) => `https://github.com/x/releases/download/v1/${name}`;
 const release = (...names: string[]): Release => ({ tag: "v1", assets: names.map((name) => ({ name, url: url(name) })) });
@@ -21,5 +21,14 @@ describe("a download's link", () => {
   test("the release page, until GitHub answers or when the file isn't there", () => {
     expect(linkIn("addon", undefined)).toBe("https://github.com/salty-max/hearthtale/releases/latest");
     expect(linkIn("macos", release("other.zip"))).toBe("https://github.com/salty-max/ravenpost/releases/latest");
+  });
+});
+
+describe("the visitor's computer", () => {
+  test("from the browser's own words", () => {
+    expect(osOf("Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) AppleWebKit/605.1.15")).toBe("macos");
+    expect(osOf("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36")).toBe("windows");
+    expect(osOf("Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X)")).toBeUndefined();
+    expect(osOf("Mozilla/5.0 (X11; Linux x86_64)")).toBeUndefined();
   });
 });

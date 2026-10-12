@@ -12,7 +12,7 @@ export function LinkCharacter() {
   const command = link.data ? `/ht link ${link.data.code}` : "";
   const until = link.data ? new Date(link.data.expiresAt).toLocaleTimeString(locale, { hour: "2-digit", minute: "2-digit" }) : "";
   return (
-    <section className="mt-8 rounded-md border border-leather-edge bg-leather/60 p-4">
+    <section className="panel mt-8 p-4">
       <h2 className="title text-xl">{t.link.title}</h2>
       <p className="mt-1 text-parchment/75">{t.link.why}</p>
       {!link.data ? (
@@ -51,7 +51,7 @@ export function LinkCharacter() {
           <p className="mt-2 text-sm text-parchment/60">{t.link.then(until)}</p>
         </div>
       )}
-      {link.isError && <p className="mt-2 text-[#e0705f]">{t.common.loadError}</p>}
+      {link.isError && <p className="mt-2 text-blood">{t.common.loadError}</p>}
     </section>
   );
 }

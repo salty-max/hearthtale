@@ -1,8 +1,11 @@
 @import "tailwindcss";
 
-/* Hearthtale's look: the in-game book. A dark leather night around parchment
-   pages, brown ink, the addon's gold (|cffc9a227) for titles and links, and the
-   red of a fallen life. */
+/* Hearthtale's look: the in-game book. A dark leather night lit by a hearth
+   around parchment pages, brown ink, the addon's gold (|cffc9a227) for titles
+   and links, and the red of a fallen life; by day (the light theme), the same
+   book on a scribe's desk. Titles in Metamorphous (a free cousin of the game's
+   Morpheus, its book titles' face), the frame's words in Marcellus (in the
+   spirit of the game's Friz Quadrata), the book in EB Garamond. */
 @theme {
   --color-night: #120d09;
   --color-leather: #2a1d12;
@@ -14,10 +17,41 @@
   --color-gold: #c9a227;
   --color-gold-bright: #e8c75a;
   --color-ember: #d9772b;
+  /* a fallen life on the frame; on a page: fallen */
+  --color-blood: #e0705f;
   --color-fallen: #9b2a20;
+  --color-page-title: #7a5410;
 
-  --font-display: "Cinzel", Georgia, serif;
+  --font-display: "Metamorphous", Georgia, serif;
+  --font-ui: "Marcellus", Georgia, serif;
   --font-book: "EB Garamond Variable", Georgia, serif;
+}
+
+/* By day: the frame turns to the desk's light parchment, the words to ink, the
+   gold darkens to stay legible. The book's pages keep their own papers. */
+:root[data-theme="light"] {
+  --color-night: #eee1c2;
+  --color-leather: #e3d0a6;
+  --color-leather-edge: #b5946a;
+  --color-parchment: #2b1d10;
+  --color-gold: #8a6512;
+  --color-gold-bright: #6f4c0c;
+  --color-ember: #a8501a;
+  --color-blood: #a3301f;
+  color-scheme: light;
+}
+:root {
+  color-scheme: dark;
+  --glow: rgb(217 119 43 / 0.16);
+  --vignette: rgb(0 0 0 / 0.55);
+  --grain: rgb(255 220 160 / 0.025);
+  --shadow: 0 10px 30px rgb(0 0 0 / 0.5);
+}
+:root[data-theme="light"] {
+  --glow: rgb(255 214 140 / 0.45);
+  --vignette: rgb(120 84 40 / 0.18);
+  --grain: rgb(90 60 20 / 0.035);
+  --shadow: 0 8px 24px rgb(90 60 20 / 0.18);
 }
 
 html,
@@ -40,24 +74,37 @@ body,
   overscroll-behavior: none;
 }
 
+/* The frame's backdrop: a hearth's glow from below, the corners in shadow, a
+   faint tooled grain. */
+.backdrop {
+  background:
+    radial-gradient(ellipse 80% 55% at 50% 110%, var(--glow), transparent 70%),
+    radial-gradient(ellipse 120% 90% at 50% 40%, transparent 55%, var(--vignette)),
+    repeating-linear-gradient(45deg, var(--grain) 0 2px, transparent 2px 9px),
+    repeating-linear-gradient(-45deg, var(--grain) 0 2px, transparent 2px 9px),
+    var(--color-night);
+}
+
 /* Components sit in their layer, so utilities (text-…) can still override them. */
 @layer components {
   /* A page of the book. */
   .page {
     background:
       radial-gradient(ellipse at 50% 0%, rgb(255 250 235 / 0.55), transparent 60%),
-      linear-gradient(180deg, var(--color-parchment), var(--color-parchment-shade));
+      radial-gradient(ellipse at 50% 120%, rgb(120 80 30 / 0.18), transparent 60%),
+      linear-gradient(180deg, #f1e2bf, #e2cc9c);
     color: var(--color-ink);
-    border: 1px solid var(--color-leather-edge);
+    border: 1px solid #4a3320;
     box-shadow:
-      0 0 0 3px var(--color-leather),
+      inset 0 0 40px rgb(120 80 30 / 0.22),
+      0 0 0 3px #2a1d12,
       0 0 0 4px var(--color-gold),
-      0 12px 32px rgb(0 0 0 / 0.55);
+      var(--shadow);
   }
 
   /* The papers a book can be read on (Settings → Reading). */
   .page {
-    --page-title: #7a5410;
+    --page-title: var(--color-page-title);
     --page-faded: var(--color-ink-faded);
   }
   .page-sepia {
@@ -69,23 +116,115 @@ body,
     --page-faded: #6d4b2a;
   }
   .page-night {
-    background: linear-gradient(180deg, #221a12, #17110c);
+    background:
+      radial-gradient(ellipse at 50% 0%, rgb(232 199 90 / 0.08), transparent 60%),
+      linear-gradient(180deg, #221a12, #17110c);
     color: #e3d5b6;
     border-color: #3a2a1b;
-    --page-title: var(--color-gold-bright);
+    box-shadow:
+      inset 0 0 40px rgb(0 0 0 / 0.4),
+      0 0 0 3px #2a1d12,
+      0 0 0 4px #c9a227,
+      var(--shadow);
+    --page-title: #e8c75a;
     --page-faded: #a8977a;
   }
   .page-title {
+    color: var(--page-title);
+  }
+  /* An entry's first letter, large, in the title's face (an illuminated initial). */
+  .drop-cap::first-letter {
+    float: left;
+    margin: 0.08em 0.35rem 0 0;
+    font-family: var(--font-display);
+    font-size: 3.4em;
+    line-height: 0.82;
     color: var(--page-title);
   }
   .page-faded {
     color: var(--page-faded);
   }
 
+  /* A title: the book's face, in the gold, lit a little from above. */
   .title {
     font-family: var(--font-display);
     color: var(--color-gold);
-    letter-spacing: 0.02em;
+    letter-spacing: 0.01em;
+  }
+  /* On a page of the book, a title takes the page's own ink. */
+  .page .title {
+    color: var(--page-title);
+  }
+  .title-gilded {
+    font-family: var(--font-display);
+    background: linear-gradient(180deg, var(--color-gold-bright) 10%, var(--color-gold) 55%, #8f6a14 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 1px 0 rgb(0 0 0 / 0.35));
+  }
+  :root[data-theme="light"] .title-gilded {
+    background: linear-gradient(180deg, #a07a1c 10%, #7a5410 60%, #5a3c08 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    filter: none;
+  }
+
+  /* The frame's words: labels, buttons, the menu. */
+  .ui {
+    font-family: var(--font-ui);
+  }
+
+  /* A panel of tooled leather: a gold hairline inside, gold corners. */
+  .panel {
+    position: relative;
+    border: 1px solid var(--color-leather-edge);
+    border-radius: 0.5rem;
+    background:
+      radial-gradient(ellipse at 50% 0%, rgb(232 199 90 / 0.06), transparent 70%),
+      linear-gradient(180deg, color-mix(in srgb, var(--color-leather) 92%, white 8%), var(--color-leather));
+    box-shadow:
+      inset 0 0 0 1px rgb(201 162 39 / 0.12),
+      var(--shadow);
+  }
+  .panel::before,
+  .panel::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-color: var(--color-gold);
+    opacity: 0.55;
+    pointer-events: none;
+  }
+  .panel::before {
+    top: 5px;
+    left: 5px;
+    border-top: 1px solid;
+    border-left: 1px solid;
+    border-top-left-radius: 3px;
+  }
+  .panel::after {
+    bottom: 5px;
+    right: 5px;
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+    border-bottom-right-radius: 3px;
+  }
+  /* A panel to click: it rises and glows a little under the hand. */
+  .panel-link {
+    transition:
+      transform 0.18s ease,
+      box-shadow 0.18s ease,
+      border-color 0.18s ease;
+  }
+  .panel-link:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-gold);
+    box-shadow:
+      inset 0 0 0 1px rgb(201 162 39 / 0.25),
+      0 0 24px rgb(232 199 90 / 0.15),
+      var(--shadow);
   }
 
   .btn {
@@ -95,25 +234,91 @@ body,
     padding: 0.5rem 1rem;
     border: 1px solid var(--color-gold);
     border-radius: 0.375rem;
-    background: linear-gradient(180deg, var(--color-leather-edge), var(--color-leather));
+    background: linear-gradient(180deg, color-mix(in srgb, var(--color-leather-edge) 85%, white 15%), var(--color-leather));
     color: var(--color-gold-bright);
-    font-family: var(--font-display);
-    font-weight: 600;
+    font-family: var(--font-ui);
+    letter-spacing: 0.02em;
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 0.08),
+      0 2px 6px rgb(0 0 0 / 0.25);
+    transition:
+      border-color 0.15s ease,
+      box-shadow 0.15s ease,
+      filter 0.15s ease;
   }
   .btn:hover {
     border-color: var(--color-gold-bright);
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 0.1),
+      0 0 14px rgb(232 199 90 / 0.25);
+  }
+  .btn:disabled {
+    opacity: 0.55;
+  }
+  /* The one thing a page asks of you: gold, filled. */
+  .btn-primary {
+    border-color: #f0d272;
+    background: linear-gradient(180deg, #f0d272, #c9a227 55%, #a07a1c);
+    color: #2a1a08;
+    text-shadow: 0 1px 0 rgb(255 240 200 / 0.4);
+  }
+  .btn-primary:hover {
+    filter: brightness(1.06);
+  }
+  /* A button on a page of the book (the ink's colours). */
+  .page .btn:not(.btn-primary) {
+    background: linear-gradient(180deg, #3d2a18, #24180e);
+    color: #f0d272;
   }
   .btn:focus-visible,
   a:focus-visible,
-  button:focus-visible {
+  button:focus-visible,
+  select:focus-visible,
+  input:focus-visible {
     outline: 2px solid var(--color-gold-bright);
     outline-offset: 2px;
   }
+
+  /* A small coloured label (Hardcore, Fallen, New). */
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.05rem 0.5rem;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  /* A class's round crest, in a gold ring. */
+  .crest {
+    border-radius: 999px;
+    box-shadow:
+      0 0 0 2px var(--color-gold),
+      0 0 0 3px rgb(0 0 0 / 0.5),
+      0 2px 8px rgb(0 0 0 / 0.4);
+  }
 }
 
-/* A centred modal <dialog> (sharing). */
+/* A page's words appearing (a new route, a new entry). */
+.fade-in {
+  animation: fade-in 0.28s ease-out;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+
+/* A centred modal <dialog> (sharing, a confirmation). */
 .drawer-centre::backdrop {
   background: rgb(0 0 0 / 0.55);
+}
+.drawer-centre[open] {
+  animation: fade-in 0.2s ease-out;
 }
 
 /* The contents drawer (a modal <dialog>), sliding in from the left. */
@@ -129,7 +334,70 @@ body,
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .drawer[open] {
+  .drawer[open],
+  .drawer-centre[open],
+  .fade-in {
     animation: none;
   }
+  .panel-link,
+  .panel-link:hover {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* Printing a book (Save as PDF): the pages alone, in ink on white, one entry
+   after another. */
+@media print {
+  html,
+  body,
+  #root {
+    height: auto;
+    overflow: visible;
+    background: white;
+    color: black;
+  }
+  .no-print {
+    display: none !important;
+  }
+  /* (the frame lets the book run over as many pages as it takes) */
+  .backdrop {
+    position: static !important;
+    display: block !important;
+    background: white !important;
+  }
+  main {
+    overflow: visible !important;
+    padding: 0 !important;
+  }
+  .print-book {
+    display: block !important;
+  }
+}
+.print-book {
+  display: none;
+}
+
+/* The game's class colours by night; darker by day, to read on parchment. */
+:root {
+  --class-warrior: #c69b6d;
+  --class-paladin: #f48cba;
+  --class-hunter: #aad372;
+  --class-rogue: #fff468;
+  --class-priest: #ffffff;
+  --class-shaman: #2a8cf0;
+  --class-mage: #3fc7eb;
+  --class-warlock: #8788ee;
+  --class-druid: #ff7c0a;
+}
+:root[data-theme="light"] {
+  --class-warrior: #8a5e33;
+  --class-paladin: #b0407a;
+  --class-hunter: #4a7a1a;
+  --class-rogue: #8a7600;
+  --class-priest: #5e5a52;
+  --class-shaman: #0058aa;
+  --class-mage: #12789a;
+  --class-warlock: #5654b8;
+  --class-druid: #b85300;
 }

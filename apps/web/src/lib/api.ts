@@ -1,4 +1,4 @@
-import type { CharacterBook, CharacterSummary, HallEntry, LinkCode, Me, Share, SharedBook } from "@hearthtale/shared";
+import type { CharacterBook, CharacterSummary, HallEntry, LinkCode, Me, Share, SharedBook, UploadResult } from "@hearthtale/shared";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 export class NotFound extends Error {}
@@ -63,6 +63,16 @@ export function useRemoveBook(id: number) {
       void qc.invalidateQueries({ queryKey: ["library"] });
       void qc.invalidateQueries({ queryKey: ["hall"] });
     },
+  });
+}
+
+/** A character's record from a saved file brought by hand (lib/luasv.ts), as the companion would send it. */
+export function useUpload() {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: (record: unknown) =>
+      call<UploadResult>("/api/upload", { method: "POST", body: JSON.stringify({ characters: [record] }), headers: { "content-type": "application/json" } }),
+    onSuccess: () => void qc.invalidateQueries({ queryKey: ["library"] }),
   });
 }
 

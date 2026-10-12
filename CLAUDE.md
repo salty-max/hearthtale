@@ -413,14 +413,38 @@ Plan and steps: PLAN.md, "The site".
   function (bundled by `scripts/vercel-build.sh`).
 - `apps/web`: React 19 + Vite + Tailwind v4 + TanStack Router/Query, an
   installable PWA laid out as a native app: the window never scrolls (only
-  `main`, and in the reader only the book's text), a top bar that never wraps,
-  a bottom tab bar on phones (Library, Get started, Settings). Reading options
-  (size, typeface, paper, line spacing) and the language code in `lib/settings.ts`
-  (per device), set on `/settings`. Routes in `src/router.tsx`; every visible string in
-  `src/lib/i18n.ts` (English only for now, the books being English: another
-  language is one more catalog typed on `en` in CATALOGS, with its locale for
-  dates; the language setting shows once there are two); the look (the in-game book: leather,
-  parchment, the addon's gold) in `src/index.css`.
+  `main`, and in the reader only the book's text), a top bar that never wraps
+  (the logo, the menu, the day/night toggle), a bottom tab bar on phones
+  (Library, Hall, Get started, Settings) that steps aside while a book is read
+  (`lib/reading.ts`), a footer under every other page. The site by day or by
+  night (`site`: as the device, day, night; `public/theme.js` sets it before
+  the first paint, `lib/theme.ts` after), the reading options (size,
+  typeface: the book's, the game's or plain; paper, line spacing) and the
+  language code in `lib/settings.ts` (per device), set on `/settings`. Routes
+  in `src/router.tsx`, each page its title (`lib/title.ts`); every visible
+  string in `src/lib/i18n.ts` (English only for now, the books being English:
+  another language is one more catalog typed on `en` in CATALOGS, with its
+  locale for dates; the language setting shows once there are two); the look
+  in `src/index.css` (the in-game book: leather lit by a hearth, or a scribe's
+  desk by day; parchment pages; the addon's gold; titles in Metamorphous, a
+  free cousin of the game's Morpheus, the frame's words in Marcellus, in the
+  spirit of its Friz Quadrata, the book in EB Garamond; `.panel`, `.btn`,
+  `.title-gilded`, the class colours by day and night). The pictures (the
+  logo at every size, the class crests: the game's UI-Classes-Circles) come
+  from `apps/web/scripts/assets.py`, committed.
+  The library (`/library`): the last written to first, each book's crest,
+  latest entry, "New" since this device last read it, the road so far
+  (`lib/seen.ts`: what this device read, and where a book reopens). The
+  reader: the contents beside the page on a wide screen, the arrow keys and a
+  swipe turn the pages, an entry's dates as the addon's header; my books' More
+  menu: share, download (`lib/export.ts`: EPUB through `lib/zip.ts`, text, or
+  printed from `PrintBook`), the road so far (`/book/:id/road`: figures, the
+  levels over the days, the places, each entry), remove. A shared book or a
+  Hall book tells a visitor what Hearthtale is. A saved file brought by hand
+  (`/upload`, read in the browser by `lib/luasv.ts`, a port of Ravenpost's
+  parser) goes through the same upload as the companion's. Notifications of a
+  new entry (Settings; `lib/push.ts`, `public/push-sw.js`, imported by the
+  service worker). `/privacy`.
 - `packages/shared` (`@hearthtale/shared`): the wire contract, the saved book's
   shape (mirrors Save.lua). Source of truth.
 - Hosting: Vercel (team jellycat, project `hearthtale`, linked: `.vercel/`),
@@ -462,6 +486,15 @@ Plan and steps: PLAN.md, "The site".
   `{ characters: [HearthtaleChar] }`, one character per request (Vercel takes
   4.5 MB). A book is kept only for a proven owner (Battle.net, already the
   account's, or a link code in the record); otherwise "unlinked", unstored.
+- Notifications (`lib/push.ts`, `lib/webpush.ts` from WoWLocker: VAPID and
+  aes128gcm on Web Crypto): a browser's subscription per device
+  (`push_subscriptions`, `POST`/`DELETE /api/push/subscriptions`, the key at
+  `/api/push/key`); an upload that finishes entries the book before it hadn't
+  (its same owner's) tells them, after the answer (`waitUntil`). Needs
+  VAPID_PUBLIC_KEY, VAPID_PRIVATE_KEY and VAPID_SUBJECT (apps/api/.env.local,
+  Vercel); without them, none, and the setting says so.
+- A saved file brought by hand: `POST /api/upload` (signed in), the
+  companion's upload as the session's account (`uploadAs` in `lib/upload.ts`).
 - Removing a book (`DELETE /api/characters/:id`, `lib/characters.ts`
   `removeBook`; the bin beside "Share" in the reader, `RemoveDialog`, once
   confirmed): the book and its share links go, and a note (`removed`: the

@@ -4,10 +4,12 @@ import { Loading } from "@/components/PageState";
 import { SignIn } from "@/components/SignIn";
 import { useConfirmPairing, useMe, usePairing } from "@/lib/api";
 import { useT } from "@/lib/i18n";
+import { useTitle } from "@/lib/title";
 
 /** Ravenpost opened this page: the signed-in account takes this computer's uploads. */
 export function Pair() {
   const t = useT();
+  useTitle(t.pair.title);
   const { code = "" } = useSearch({ from: "/pair" });
   const me = useMe();
   const pairing = usePairing(code);
@@ -23,8 +25,8 @@ export function Pair() {
   const done = confirm.isSuccess;
   return (
     <section className="page mx-auto mt-6 max-w-md rounded-md px-6 py-8 text-center">
-      <Monitor className="mx-auto size-10 text-[#7a5410]" aria-hidden />
-      <h1 className="title mt-3 text-2xl text-[#7a5410]">{t.pair.title}</h1>
+      <Monitor className="mx-auto size-10 text-page-title" aria-hidden />
+      <h1 className="title mt-3 text-2xl">{t.pair.title}</h1>
       {done ? (
         <>
           <p className="mt-4 flex items-center justify-center gap-2 text-lg">

@@ -9,7 +9,10 @@ import { Pair } from "@/routes/Pair";
 import { Settings } from "@/routes/Settings";
 import { Hall } from "@/routes/Hall";
 import { HallBook, Shared } from "@/routes/Shared";
+import { Privacy } from "@/routes/Privacy";
+import { Road } from "@/routes/Road";
 import { Start } from "@/routes/Start";
+import { Upload } from "@/routes/Upload";
 
 const rootRoute = createRootRoute({ component: Layout, notFoundComponent: NotFound });
 const homeRoute = createRoute({ getParentRoute: () => rootRoute, path: "/", component: Home });
@@ -34,11 +37,28 @@ const pairRoute = createRoute({
   component: Pair,
   validateSearch: (s: Record<string, unknown>): { code?: string } => (typeof s.code === "string" ? { code: s.code } : {}),
 });
+const privacyRoute = createRoute({ getParentRoute: () => rootRoute, path: "/privacy", component: Privacy });
+const uploadRoute = createRoute({ getParentRoute: () => rootRoute, path: "/upload", component: Upload });
 const bookRoute = createRoute({ getParentRoute: () => rootRoute, path: "/book/$id", component: Book });
+const roadRoute = createRoute({ getParentRoute: () => rootRoute, path: "/book/$id/road", component: Road });
 const chapterRoute = createRoute({ getParentRoute: () => rootRoute, path: "/book/$id/$part", component: Chapter });
 
 export const router = createRouter({
-  routeTree: rootRoute.addChildren([homeRoute, startRoute, settingsRoute, sharedRoute, hallRoute, hallBookRoute, libraryRoute, pairRoute, bookRoute, chapterRoute]),
+  routeTree: rootRoute.addChildren([
+    homeRoute,
+    startRoute,
+    settingsRoute,
+    privacyRoute,
+    uploadRoute,
+    sharedRoute,
+    hallRoute,
+    hallBookRoute,
+    libraryRoute,
+    pairRoute,
+    bookRoute,
+    roadRoute,
+    chapterRoute,
+  ]),
   scrollRestoration: true,
 });
 

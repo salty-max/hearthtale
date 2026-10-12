@@ -1,17 +1,28 @@
 import { useSyncExternalStore } from "react";
 
-/** Per-device settings, kept in localStorage: the language (lib/i18n.ts) and how books read. */
+/** Per-device settings, kept in localStorage: the language (lib/i18n.ts), the site's light or dark, and how books read. */
 export type ReaderSize = "s" | "m" | "l" | "xl";
-export type ReaderFont = "serif" | "sans";
+/** serif: the book's Garamond; game: the game's own kind of letters (Marcellus); sans: plain. */
+export type ReaderFont = "serif" | "game" | "sans";
 export type ReaderTheme = "parchment" | "sepia" | "night";
 export type ReaderSpacing = "tight" | "normal" | "airy";
+/** The site's frame: by day, by night, or as the device is set (lib/theme.ts). */
+export type SiteTheme = "system" | "light" | "dark";
 /** lang: a language code, checked against the catalogs where it is used (lib/i18n.ts: no import cycle). */
-export type Settings = { lang: string; size: ReaderSize; font: ReaderFont; theme: ReaderTheme; spacing: ReaderSpacing };
+export type Settings = {
+  lang: string;
+  size: ReaderSize;
+  font: ReaderFont;
+  theme: ReaderTheme;
+  spacing: ReaderSpacing;
+  site: SiteTheme;
+};
 
 export const SIZES: ReaderSize[] = ["s", "m", "l", "xl"];
-export const FONTS: ReaderFont[] = ["serif", "sans"];
+export const FONTS: ReaderFont[] = ["serif", "game", "sans"];
 export const THEMES: ReaderTheme[] = ["parchment", "sepia", "night"];
 export const SPACINGS: ReaderSpacing[] = ["tight", "normal", "airy"];
+export const SITE_THEMES: SiteTheme[] = ["system", "light", "dark"];
 
 const KEY = "hearthtale.settings";
 const listeners = new Set<() => void>();
@@ -27,6 +38,7 @@ export function parseSettings(saved: unknown): Settings {
     font: pick(s.font, FONTS, "serif"),
     theme: pick(s.theme, THEMES, "parchment"),
     spacing: pick(s.spacing, SPACINGS, "normal"),
+    site: pick(s.site, SITE_THEMES, "system"),
   };
 }
 
@@ -69,6 +81,6 @@ export function useSettings(): Settings {
 export function readerClasses(s: Pick<Settings, "size" | "font" | "theme" | "spacing">): { page: string; text: string } {
   const size = { s: "text-lg", m: "text-xl", l: "text-2xl", xl: "text-[1.7rem]" }[s.size];
   const leading = { tight: "leading-snug", normal: "leading-relaxed", airy: "leading-loose" }[s.spacing];
-  const font = s.font === "sans" ? "font-sans" : "font-book";
+  const font = s.font === "sans" ? "font-sans" : s.font === "game" ? "font-ui" : "font-book";
   return { page: `page page-${s.theme}`, text: `${size} ${leading} ${font}` };
 }

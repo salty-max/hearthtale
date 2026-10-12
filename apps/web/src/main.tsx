@@ -1,6 +1,6 @@
 import "@fontsource-variable/eb-garamond";
-import "@fontsource/cinzel/600.css";
-import "@fontsource/cinzel/700.css";
+import "@fontsource/marcellus";
+import "@fontsource/metamorphous";
 import "./index.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RouterProvider } from "@tanstack/react-router";

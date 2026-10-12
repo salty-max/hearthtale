@@ -31,6 +31,15 @@ export default tseslint.config(
     languageOptions: { globals: { ...globals.node } },
   },
   {
+    // The web app's plain scripts: one before the first paint, one in the service worker
+    files: ["apps/web/public/theme.js"],
+    languageOptions: { globals: { ...globals.browser } },
+  },
+  {
+    files: ["apps/web/public/push-sw.js"],
+    languageOptions: { globals: { ...globals.serviceworker } },
+  },
+  {
     // React SPA
     files: ["apps/web/**/*.{ts,tsx}"],
     languageOptions: { globals: { ...globals.browser } },

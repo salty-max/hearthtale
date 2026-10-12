@@ -28,7 +28,7 @@ export default defineConfig(() => ({
       // A new deploy's SW waits and UpdatePrompt offers the reload: an installed
       // PWA can't be hard-refreshed, so "prompt" is what keeps it from going stale.
       registerType: "prompt",
-      includeAssets: ["favicon-32.png", "apple-touch-icon.png"],
+      includeAssets: ["favicon-16.png", "favicon-32.png", "apple-touch-icon.png", "theme.js", "push-sw.js"],
       manifest: {
         id: "/",
         name: "Hearthtale",
@@ -43,6 +43,7 @@ export default defineConfig(() => ({
         icons: [
           { src: "pwa-192.png", sizes: "192x192", type: "image/png" },
           { src: "pwa-512.png", sizes: "512x512", type: "image/png" },
+          { src: "pwa-maskable-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
         ],
       },
       workbox: {
@@ -51,6 +52,8 @@ export default defineConfig(() => ({
         // Take control of open pages as soon as a SW activates (else the first
         // session after install has no update banner: see lib/swUpdate.ts).
         clientsClaim: true,
+        // (a new entry's notification, and a tap on it: public/push-sw.js)
+        importScripts: ["push-sw.js"],
         globPatterns: ["**/*.{js,css,html,svg,png,woff2,ico}"],
         // Latin font subsets only; the others load on demand via unicode-range.
         globIgnores: ["**/*-{cyrillic,cyrillic-ext,greek,greek-ext,vietnamese}-*.woff2"],

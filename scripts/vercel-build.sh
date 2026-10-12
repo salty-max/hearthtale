@@ -43,7 +43,7 @@ const config = {
       dest: "/api",
     },
     { src: "^/assets/(.*)$", headers: { "cache-control": "public, max-age=31536000, immutable" }, continue: true },
-    { src: "^/(sw\\.js|workbox-[^/]+\\.js|manifest\\.webmanifest|index\\.html)?$", headers: { "cache-control": "no-cache" }, continue: true },
+    { src: "^/(sw\\.js|push-sw\\.js|theme\\.js|workbox-[^/]+\\.js|manifest\\.webmanifest|index\\.html)?$", headers: { "cache-control": "no-cache" }, continue: true },
     { handle: "filesystem" },
     { src: "^/(.*)$", dest: "/index.html" },
   ],
