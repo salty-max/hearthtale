@@ -64,7 +64,7 @@ export function Reader({
   useEffect(() => {
     const turn = (e: KeyboardEvent) => {
       if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
-      const el = e.target as HTMLElement | null;
+      const el = e.target instanceof Element ? e.target : null;
       if (el?.closest("input, textarea, select, [contenteditable=true], dialog[open]") || document.querySelector("dialog[open]")) return;
       const to = e.key === "ArrowLeft" ? prev : e.key === "ArrowRight" ? next : undefined;
       if (!to) return;

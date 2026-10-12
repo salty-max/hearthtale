@@ -4,7 +4,7 @@ import { Footer } from "@/components/Footer";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { UpdatePrompt } from "@/components/UpdatePrompt";
 import { useT } from "@/lib/i18n";
-import { isReading } from "@/lib/reading";
+import { isReading, pageOf } from "@/lib/reading";
 import { useSiteTheme } from "@/lib/theme";
 
 /**
@@ -55,7 +55,8 @@ export function Layout() {
         <span aria-hidden className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent" />
       </header>
       <main id="main" className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 py-3">
-        <div key={path} className={reading ? "fade-in h-full" : "fade-in"}>
+        {/* (a new page fades in; turning a book's page keeps the reader, only its text changes) */}
+        <div key={pageOf(path)} className={reading ? "fade-in h-full" : "fade-in"}>
           <Outlet />
         </div>
         {!reading && <Footer />}

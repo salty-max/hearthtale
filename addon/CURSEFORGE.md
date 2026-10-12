@@ -5,85 +5,97 @@
 <!-- Summary (the project's summary on CurseForge and Wago, and the TOCs' Notes):
 Your character's own journal, written as you play: a diary entry in their voice at each rest, and an epitaph if a Hardcore life ends. -->
 
-**Your character's own journal, written as you play.** The addon records your life as it happens (every quest, foe, place and close call), and each time you rest (a logout at an inn, in a city or by a campfire) the stretch becomes a diary entry in your character's own voice: what mattered, and what it meant to them. On Hardcore, a death closes the book with an epitaph, and the life joins the Hall of the Fallen.
+Hearthtale keeps a diary for your character as you play. Quests, close calls, new places and the people you travel with become entries written in the first person, with a different voice for each race. On Hardcore, a death ends the journal with an epitaph and saves it in the Hall of the Fallen.
 
-For Classic Era (Hardcore, Season of Discovery) and World of Warcraft: Forever. A sibling of [Lorekeeper's Codex](https://www.curseforge.com/wow/addons/lorekeepers-codex) and [Explorer's Field Journal](https://www.curseforge.com/wow/addons/explorers-field-journal), in the same look (each in its own colours), but it stands alone.
+For Classic Era (including Hardcore and Season of Discovery) and World of Warcraft: Forever.
 
-## A page of it
+## A page from the journal
 
 > I took to the road in Durotar, and it looked friendly enough, which in my experience is the moment to look twice. I came into the Barrens for the first time, and wondered straight away what grew and swam there and how much of it was good to eat. I thinned the Razormane quilboars that had been attacking the supply lines from Durotar, for Thork at the Crossroads. I tamed my first companion and called it Dusk, and from then on I did not hunt alone. I rested in the Barrens, and gave my curiosity a rest along with my legs.
 
-## What an entry tells
+## What goes into an entry
 
-An entry runs from one rest to the next. Logging out in the wild is a night outdoors, and the entry goes on; after four hours of play, the next logout ends it wherever you are. It tells what weighs most:
+An entry covers the time between rests. Log out at an inn, in a city or by a campfire, and it closes. Log out in the wild, and the journal records a night outdoors but keeps the entry going. After four hours of play, your next logout closes it wherever you are.
 
-- **The milestones of a life**, always: what defines your class as you grow into it (a warlock's demons and summoning circle, a hunter's companions, a druid's forms, Moonglade and Rebirth, a shaman's favour from each element and the ghost wolf, a warrior's charge, stances and second weapon, a paladin's auras, Lay on Hands, Redemption and Divine Shield, a rogue's second blade, poisons and vanishing, a priest's own people's prayers, a mage's sheep and first way home), and what a class's own quest taught you.
-- **The story**: the work that mattered most, told as you did it and why (from the quests' own words: "I killed Hogger, the huge gnoll who had overpowered every attempt at his capture"), naming who was at your side when it was done, picking up a story left off in an earlier entry, and now and then a word on what it meant to you.
-- **The dangers**: how you died and came back, or the closest call (under a tenth of your health, and alive to tell it); the foes worth naming, rares and elites; a dungeon and its last boss; a player of the other faction killed in the open world (battlegrounds are not part of the tale).
-- **The road**: the lands, towns and dungeons seen for the first time, each described as your character meets it; your people's capital; the company you kept; the fires you stopped at (shared with companions, or one of Forever's camps); a rare find (epic and better).
-- **What you became**: the way you chose (your specialization, never the talents themselves), the spells worth a line of their own, a new way of fighting, a trade taken up and what your hands made, the gear you first put on while the levels are low (a blue piece, or one you made yourself), learning to ride and your first ride on your people's own mount, the first bag and the first gold piece, a companion at your side, and the times it fell.
+The journal picks out the events worth remembering:
 
-A quiet stretch is a short entry; a big one runs longer. Reaching the highest level of your game is a moment of its own, and the journal goes on after it.
+- **Quests and their stories.** It tells what you did and why, using the quest's own story, and names the companions who were there. A quest chain can carry on across several entries.
+- **Class milestones.** A hunter's first pet, a warlock's demons, a druid's forms, a shaman's totems, a mage's first teleport. Class quests and defining spells get room of their own.
+- **Danger.** Deaths, recoveries, close calls below 10% health, rares, elites and dungeon bosses. Open-world PvP kills can appear too. Battlegrounds are left out.
+- **Travel and company.** New lands, towns and dungeons, your race's capital, the players you travelled with and the campfires where you stopped.
+- **Progress.** Your specialization, professions, things you made, notable gear and epic finds, your first bag, first gold piece and first mount. Pets have a place in the story, including the times they fall.
 
-The journal is yours too: give an entry a title of your own, or write a note in its margin, from the Edit button on its page (or `/ht title TEXT` and `/ht note TEXT` for the last entry). The journal's own words never change; yours show beside them, in the game and on hearthtale.app.
+A quiet evening makes a short entry. A dungeon run or a day full of quests gives it more to tell. Reaching the level cap is recorded too, and the journal continues afterwards.
 
-A character you already play gets a prologue from what the game knows of its life so far, and entries from there.
+You can give any entry your own title and add a note beneath it. Use the **Edit** button, or `/ht title TEXT` and `/ht note TEXT` for the latest entry. Your words are saved separately from the journal's text and appear both in game and on hearthtale.app.
 
-## How it is written
+Starting with a character you already play is fine. The journal opens with a prologue based on what the game knows, then follows your adventures from there.
 
-- In the first person, in your race's own voice: what it notices and how it says so (a dwarf's eye for stonework, a troll's appetite, a Forsaken's dry patience), never a caricature. Graver on Hardcore, and graver still as the levels climb.
-- About 1,900 lines and phrases, some 240 descriptions of places, and over 3,200 quests' own stories, chosen to fit the moment: the hour, the first time or the tenth, how close the call, alone or in a group. A line doesn't come back soon after it was used.
-- Each entry is titled by its weightiest moment, in the game's own words: a companion's name, a dungeon, the quest that mattered most ("The Stolen Journal", "Zalazane", "Escape Through Stealth").
-- The entry you are living is written again as you play; a finished one stays as it was.
-- Written from what the addon records each time you open the book, so better sentences in later versions reach your old entries too. At each logout the book is also saved as written, for hearthtale.app.
+## How the writing works
 
-## Hardcore: the Hall of the Fallen
+Hearthtale uses about 1,900 written lines and phrases, around 240 place descriptions and the stories of over 3,200 quests. It chooses them to suit what happened, the time of day and whether you were alone or with others. Recently used lines are held back to reduce repetition.
 
-When a Hardcore character dies, its book closes: an epitaph telling how it ended and what the life was, a line in chat and the game's alert. The book joins the **Hall of the Fallen**, shared by all your characters, where every fallen life can be read again, entry by entry. On other realms, a death is told in its entry, and the book goes on.
+Each race has its own way of looking at things. A dwarf notices stonework, a troll wonders what's edible, and a Forsaken takes a drier view. Hardcore entries grow more serious as the character gets further.
 
-## Read it on hearthtale.app
+Titles come from the game: a pet's name, a dungeon or a quest such as "The Stolen Journal" or "Escape Through Stealth". The current entry develops as you play. Finished entries stop changing as you play. Updates to the addon's writing can still improve older entries. At logout, Hearthtale saves a readable copy for the website.
 
-Your journal, on your phone too: **[hearthtale.app](https://hearthtale.app)** shows each book exactly as the game wrote it. It's optional: the addon works on its own, in game.
+## The Hall of the Fallen
 
-1. Install **[Ravenpost](https://github.com/salty-max/ravenpost)**, the free companion app (Windows and macOS, open source; it also serves WoWLocker). Addons can't use the network: Ravenpost sends each character's book a few seconds after you log out or `/reload`.
-2. In Ravenpost, click **Link Hearthtale** and sign in with Battle.net on hearthtale.app: your Classic Era characters are recognised on their own.
-3. World of Warcraft: Forever characters (or any Battle.net can't find): get a code in the library on hearthtale.app and type `/ht link CODE` in game.
+When a Hardcore character dies, Hearthtale writes an epitaph and closes the book. A chat message and an alert mark the death. The journal is kept in the **Hall of the Fallen**, shared by your characters, so you can return to that life and read its entries again.
 
-Books are private: only you see them. Ravenpost sends the book and who it belongs to, nothing else; the addon's records stay on your computer. Step by step: [hearthtale.app/start](https://hearthtale.app/start).
+On other realms, death is recorded in the journal and the book carries on.
 
-## The book
+## Read on your phone
 
-`/hearthtale` (or `/ht`), or the book by the minimap, opens it: your portrait, and on Hardcore its mark beside it (a skull, then "Fallen" once the book closes); the entries on the left by their titles (a skull marks a close call, a star a rare); the open one on the right, its number and whether it is still being written above the title, where, at which levels and when under it. A second tab holds the Hall of the Fallen. When an entry is written, a line in chat links to it.
+**[hearthtale.app](https://hearthtale.app)** lets you read the same journal away from the game. The website is optional. You can use the addon entirely in game.
 
-## In English
+1. Install **[Ravenpost](https://github.com/salty-max/ravenpost)**, the free, open source companion for Windows and macOS. It uploads your books a few seconds after you log out or use `/reload`.
+2. Click **Link Hearthtale** in Ravenpost and sign in with Battle.net on hearthtale.app. Classic Era characters are recognised automatically.
+3. For Forever characters, or any character Battle.net cannot find, get a code from your library on hearthtale.app and enter `/ht link CODE` in game.
 
-The journal is written in English, for English game clients. On a client in another language, the names it uses (places, creatures, quests, items) come from your game in that language, inside English sentences, and a few lines that rely on the game's English names are left out, learning to ride among them.
+Your books are private. Ravenpost sends the written book and the information needed to identify its character. The addon's underlying records stay on your computer. Ravenpost also works with WoWLocker if you use both.
 
-## Every game, one download
+Full setup instructions: [hearthtale.app/start](https://hearthtale.app/start).
 
-The same file for Classic Era (Hardcore, Season of Discovery) and World of Warcraft: Forever: each game loads its own part.
+## Opening the book
 
-Forever closes the combat log to addons, so kills come from the game's own kill event. Inside a Forever dungeon that event hides which creature fell, so only the kills a quest counts are told there.
+Type `/hearthtale` or `/ht`, or click the minimap button. Pick an entry from the list to read it, with its location, levels and dates. A skull marks a close call and a star marks a rare. The second tab holds the Hall of the Fallen. New entries are linked in chat.
 
-## Settings
+## Compatibility
 
-The first time each character logs in with Hearthtale, a welcome page introduces the journal and offers its choices (`/ht welcome` shows it again). After that: Options → AddOns → Hearthtale (or `/ht settings`, or right-click the minimap button): a line in chat for each entry, the alert when a book closes, the minimap button and where it sits. Where the game can't tell whether a character is Hardcore, a setting lets you say so.
+One download covers Classic Era, Hardcore, Season of Discovery and World of Warcraft: Forever.
 
-Settings are each character's own, as in most interface addons. A new character can take another's: choose one of your characters of the same game from a list (on the welcome page or the Options page), or bring them from anywhere, another game or another account, with a code: `/ht export` (or the welcome page's Give a code) on one character, `/ht import CODE` (or Use a code) on the other.
+The journal is written for **English game clients**. On other clients, names from the game appear in that language within English sentences. Some events that depend on English names, including learning to ride, will be missing.
 
-Other commands: `/ht title [N] TEXT` names entry N (the last one without N), `/ht note [N] TEXT` writes in its margin (no TEXT removes it); `/ht hall` opens the Hall of the Fallen; `/ht link CODE` links this character to your library on hearthtale.app; `/ht minimap` shows or hides the button.
+Forever restricts what addons can read about kills. In its dungeons, Hearthtale can only tell kills that are also counted by a quest.
 
-## Siblings
+## Settings and commands
 
-The same look, each in its own colours, and each stands alone:
+The welcome page appears once for each character. Open it again with `/ht welcome`, or find the settings under **Options > AddOns > Hearthtale**, through `/ht settings` or by right-clicking the minimap button.
 
-- **[Lorekeeper's Codex](https://www.curseforge.com/wow/addons/lorekeepers-codex)** ([Wago](https://addons.wago.io/addons/j6jAL0NR)). The lore of Azeroth, written for you as you explore: each zone, figure of legend, people and quest you meet adds a page to your codex.
-- **[Explorer's Field Journal](https://www.curseforge.com/wow/addons/explorers-field-journal)** ([Wago](https://addons.wago.io/addons/ZKbq5y61)). Riddles that lead you to the world's overlooked corners, rare quarries to hunt, and a bestiary, an atlas and your fish and herbs, filled in as you travel.
+You can change chat announcements, the alert when a book closes and the minimap button. If the game cannot identify a Hardcore character, you can mark it yourself in the settings.
+
+Settings are saved per character. Copy them from another character of the same game on the welcome or settings page, or transfer them between games and accounts with `/ht export` and `/ht import CODE`.
+
+- `/ht title [N] TEXT` gives entry N a title. Leave out N for the latest entry.
+- `/ht note [N] TEXT` adds a note. Leave out the text to remove it.
+- `/ht hall` opens the Hall of the Fallen.
+- `/ht link CODE` links the character to your website library.
+- `/ht minimap` shows or hides the minimap button.
+
+## Other addons
+
+These share Hearthtale's book style and work independently:
+
+- **[Lorekeeper's Codex](https://www.curseforge.com/wow/addons/lorekeepers-codex)** ([Wago](https://addons.wago.io/addons/j6jAL0NR)) unlocks lore pages as you explore Azeroth and meet its people.
+- **[Explorer's Field Journal](https://www.curseforge.com/wow/addons/explorers-field-journal)** ([Wago](https://addons.wago.io/addons/ZKbq5y61)) offers exploration riddles, rare hunts, a bestiary, an atlas and records of your fish and herbs.
 
 ## Support
 
-Hearthtale is free, and will stay free. If your journal has given you a page worth keeping, you can say thanks with a coffee on [Ko-fi](https://ko-fi.com/salty_max): it helps the books, and hearthtale.app, keep growing. Thank you for reading.
+Hearthtale is free and will stay free. If you've enjoyed reading your character's journal, you can support the addon and hearthtale.app with a coffee on [Ko-fi](https://ko-fi.com/salty_max). Thanks for your support.
 
 ## Source
 
-Open source under GPL-3.0-or-later: [github.com/salty-max/hearthtale](https://github.com/salty-max/hearthtale). What the writer knows of the game comes from [cmangos classic-db](https://github.com/cmangos/classic-db) and [pfQuest](https://github.com/shagu/pfQuest); for Forever's new content, from [AllTheThings](https://github.com/ATTWoWAddon/AllTheThings) and [QuestieDB](https://github.com/Questie/QuestieDB)'s traces of the beta. Thanks to all of them. Not affiliated with Blizzard Entertainment.
+Open source under GPL-3.0-or-later: [github.com/salty-max/hearthtale](https://github.com/salty-max/hearthtale).
+
+Game data comes from [cmangos classic-db](https://github.com/cmangos/classic-db) and [pfQuest](https://github.com/shagu/pfQuest). Forever data comes from [AllTheThings](https://github.com/ATTWoWAddon/AllTheThings) and [QuestieDB](https://github.com/Questie/QuestieDB)'s beta records. Thanks to their contributors. Not affiliated with Blizzard Entertainment.
