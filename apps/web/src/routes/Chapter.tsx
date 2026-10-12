@@ -12,17 +12,15 @@ import { SignIn } from "@/components/SignIn";
 import { NotFound, NotSignedIn, useCharacterBook } from "@/lib/api";
 import { useT } from "@/lib/i18n";
 import { markRead } from "@/lib/seen";
-import { useRouter } from "@tanstack/react-router";
 
 /**
- * One of my books, at a part: the reader, a way back to the library, and the
- * book's other doings under More: share it, download it, its road so far,
- * remove it from the site (last, apart). What this device has read is kept
+ * One of my books, at a part: the reader, a way back to the library, its road
+ * so far a click away, and the book's other doings under More: share it,
+ * download it, remove it from the site (last, apart). What this device has read is kept
  * (lib/seen.ts): the library's "New", and where the book opens next.
  */
 export function Chapter() {
   const t = useT();
-  const router = useRouter();
   const { id, part } = useParams({ from: "/book/$id/$part" });
   const [dialog, setDialog] = useState<"share" | "export" | "remove" | null>(null);
   const { data, error, refetch } = useCharacterBook(Number(id));
@@ -50,20 +48,26 @@ export function Chapter() {
           </Link>
         }
         actions={
-          <Menu
-            label={t.book.more}
-            icon={<MoreHorizontal className="size-5" aria-hidden />}
-            items={[
-              { label: t.book.share, icon: <Share2 className="size-4" aria-hidden />, onSelect: () => setDialog("share") },
-              { label: t.book.download, icon: <Download className="size-4" aria-hidden />, onSelect: () => setDialog("export") },
-              {
-                label: t.book.road,
-                icon: <MapIcon className="size-4" aria-hidden />,
-                onSelect: () => void router.navigate({ to: "/book/$id/road", params: { id } }),
-              },
-              { label: t.book.remove, icon: <Trash2 className="size-4" aria-hidden />, onSelect: () => setDialog("remove"), danger: true },
-            ]}
-          />
+          <>
+            <Link
+              to="/book/$id/road"
+              params={{ id }}
+              aria-label={t.book.road}
+              title={t.book.road}
+              className="rounded-md p-1.5 text-gold-bright hover:bg-gold/10"
+            >
+              <MapIcon className="size-5" aria-hidden />
+            </Link>
+            <Menu
+              label={t.book.more}
+              icon={<MoreHorizontal className="size-5" aria-hidden />}
+              items={[
+                { label: t.book.share, icon: <Share2 className="size-4" aria-hidden />, onSelect: () => setDialog("share") },
+                { label: t.book.download, icon: <Download className="size-4" aria-hidden />, onSelect: () => setDialog("export") },
+                { label: t.book.remove, icon: <Trash2 className="size-4" aria-hidden />, onSelect: () => setDialog("remove"), danger: true },
+              ]}
+            />
+          </>
         }
       />
       <PrintBook character={data.character} book={data.book} />

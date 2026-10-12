@@ -1,10 +1,9 @@
 import type { CharacterSummary } from "@hearthtale/shared";
 import { Link, useSearch } from "@tanstack/react-router";
-import { BookOpen, Map as MapIcon, Sparkles, Upload } from "lucide-react";
+import { Map as MapIcon, Sparkles, Upload } from "lucide-react";
 import { useEffect } from "react";
 import { Crest } from "@/components/Crest";
 import { HardcoreMark } from "@/components/HardcoreMark";
-import { LinkCharacter } from "@/components/LinkCharacter";
 import { LoadError, Loading } from "@/components/PageState";
 import { SignIn } from "@/components/SignIn";
 import { useLibrary, useMe } from "@/lib/api";
@@ -14,7 +13,7 @@ import { isNew, rememberUnseen, useSeen } from "@/lib/seen";
 import { useTitle } from "@/lib/title";
 import { classColour, raceClass, realmName } from "@/lib/wow";
 
-/** The signed-in account's characters, the last written to first, and a way to link more; signing in first. */
+/** The signed-in account's characters, the last written to first; signing in first (more are linked from the top bar). */
 export function Library() {
   const t = useT();
   useTitle(t.library.title);
@@ -53,7 +52,6 @@ export function Library() {
           </li>
         ))}
       </ul>
-      <LinkCharacter />
     </section>
   );
 }
@@ -68,11 +66,10 @@ function BookCard({ c }: { c: CharacterSummary }) {
   const latestTitle = latest ? (latest.title ?? t.book.chapter(latest.number)) : undefined;
   return (
     <article className="panel panel-link relative flex h-full flex-col p-4">
-      {(c.fallen || c.hardcore) && <HardcoreMark fallen={c.fallen} className="absolute top-4 right-4 z-10" />}
       <div className="flex items-start gap-3">
         <Crest token={c.class} size={48} />
         <div className="min-w-0 flex-1">
-          <div className={`flex flex-wrap items-center gap-x-2 gap-y-1 ${c.fallen || c.hardcore ? "pr-24" : ""}`}>
+          <div className="flex items-center gap-2">
             <Link
               to="/book/$id"
               params={{ id: String(c.id) }}
@@ -81,36 +78,37 @@ function BookCard({ c }: { c: CharacterSummary }) {
             >
               {c.name}
             </Link>
-            {fresh && (
-              <span className="tag text-gold-bright">
-                <Sparkles className="size-3" aria-hidden />
-                {t.library.new}
-              </span>
-            )}
-            {c.client === "forever" && <span className="tag text-parchment/70">{t.library.forever}</span>}
+            {(c.fallen || c.hardcore) && <HardcoreMark fallen={c.fallen} className="ml-auto shrink-0" />}
           </div>
-          <p className="ui text-parchment/85">
+          <p className="text-parchment/75">
             {t.library.level(c.level)} {raceClass(t, c)}
-            {realmName(t, c) && <span className="text-parchment/55"> · {realmName(t, c)}</span>}
+            {realmName(t, c) && ` · ${realmName(t, c)}`}
+            {c.client === "forever" && ` · ${t.library.forever}`}
           </p>
         </div>
       </div>
       {latest && (
         <div className="mt-3 border-t border-gold/15 pt-3">
-          <p className="ui text-xs tracking-widest text-parchment/55 uppercase">{t.library.latest}</p>
-          <p className="truncate font-display text-lg font-semibold text-gold-bright">{latestTitle}</p>
-          <p className="truncate text-parchment/70">
-            {[latest.title ? t.book.chapter(latest.number) : undefined, latest.open ? t.book.stillWriting : latest.place].filter(Boolean).join(" · ")}
+          <p className="flex items-center gap-2">
+            <span className="truncate font-medium text-gold-bright">{latestTitle}</span>
+            {fresh && (
+              <span className="tag shrink-0 text-gold-bright">
+                <Sparkles className="size-3" aria-hidden />
+                {t.library.new}
+              </span>
+            )}
+          </p>
+          <p className="truncate text-sm text-parchment/60">
+            {[t.library.latest, latest.title ? t.book.chapter(latest.number) : undefined, latest.open ? t.book.stillWriting : latest.place].filter(Boolean).join(" · ")}
           </p>
         </div>
       )}
-      <div className="ui mt-auto flex flex-wrap items-center justify-between gap-2 pt-3 text-sm">
-        <span className="flex items-center gap-2 text-parchment/60">
-          <BookOpen className="size-4" aria-hidden />
+      <div className="mt-auto flex flex-wrap items-center justify-between gap-2 pt-3">
+        <span className="text-sm text-parchment/60">
           {t.library.chapters(c.chapters)} · {t.library.updated(ago(Date.parse(c.updatedAt), locale))}
         </span>
         {c.chapters > 0 && (
-          <Link to="/book/$id/road" params={{ id: String(c.id) }} className="relative z-10 flex items-center gap-1 text-gold-bright hover:underline">
+          <Link to="/book/$id/road" params={{ id: String(c.id) }} className="btn relative z-10 px-3 py-1 text-sm">
             <MapIcon className="size-4" aria-hidden />
             {t.library.road}
           </Link>

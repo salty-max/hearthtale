@@ -414,7 +414,8 @@ Plan and steps: PLAN.md, "The site".
 - `apps/web`: React 19 + Vite + Tailwind v4 + TanStack Router/Query, an
   installable PWA laid out as a native app: the window never scrolls (only
   `main`, and in the reader only the book's text), a top bar that never wraps
-  (the logo, the menu, the day/night toggle), a bottom tab bar on phones
+  (the logo, the menu, signed in "Link a character": a popover with a link
+  code, `LinkCharacter`; the day/night toggle), a bottom tab bar on phones
   (Library, Hall, Get started, Settings) that steps aside while a book is read
   (`lib/reading.ts`), a footer under every other page. The site by day or by
   night (`site`: as the device, day, night; `public/theme.js` sets it before
@@ -434,13 +435,14 @@ Plan and steps: PLAN.md, "The site".
   logo at every size, the class crests: the game's UI-Classes-Circles) come
   from `apps/web/scripts/assets.py`, committed.
   The library (`/library`): the last written to first, each book's crest,
-  latest entry, "New" since this device last read it, the road so far
-  (`lib/seen.ts`: what this device read, and where a book reopens). The
+  latest entry, "New" since this device last read it, a button to the road
+  so far (`lib/seen.ts`: what this device read, and where a book reopens). The
   reader: the contents beside the page on a wide screen, the arrow keys and a
-  swipe turn the pages, an entry's dates as the addon's header; my books' More
-  menu: share, download (`lib/export.ts`: EPUB through `lib/zip.ts`, text, or
-  printed from `PrintBook`), the road so far (`/book/:id/road`: figures, the
-  levels over the days, the places, each entry), remove. A shared book or a
+  swipe turn the pages, an entry's dates as the addon's header; on my books,
+  the road so far a button away (`/book/:id/road`: figures, the levels over
+  the days, the places, each entry), and the More menu: share, download
+  (`lib/export.ts`: EPUB through `lib/zip.ts`, text, or printed from
+  `PrintBook`), remove. A shared book or a
   Hall book tells a visitor what Hearthtale is. A saved file brought by hand
   (`/upload`, read in the browser by `lib/luasv.ts`, a port of Ravenpost's
   parser) goes through the same upload as the companion's. Notifications of a
