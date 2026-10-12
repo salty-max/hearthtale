@@ -1,11 +1,11 @@
--- addon-kit 4140a04: a copy (kit:sync); edit ~/code/addon-kit/Kit.lua instead
--- The kit shared by Hearthtale, Lorekeeper's Codex and Explorer's Field
--- Journal: the books' look and the pieces their windows are made of, each
--- character's settings (taken from another, or by a code) and the welcome
--- page that offers them. Its source is ~/code/addon-kit (Kit.lua); each
--- addon keeps a copy, loaded into its own namespace (ns.kit: no global, no
--- clash between the three), made by its kit:sync. Edit the kit, then sync:
--- never the copy.
+-- addon-kit 24c97f3: a copy (kit:sync); edit the addon-kit repository's Kit.lua instead
+-- The kit shared by Hearthtale, Lorekeeper's Codex, Explorer's Field Journal
+-- and Second Wind: the books' look and the pieces their windows are made of,
+-- each character's settings (taken from another, or by a code) and the
+-- welcome page that offers them. Its source is the addon-kit repository
+-- (Kit.lua), beside the addons' own in ~/code/wow-addons; each addon keeps a
+-- copy, loaded into its own namespace (ns.kit: no global, no clash between
+-- them), made by its kit:sync. Edit the kit, then sync: never the copy.
 --
 -- The look is one family: light text and gold titles on dark panels (on
 -- Forever, its Professions cards; on Classic, the game's insets and the quest

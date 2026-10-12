@@ -144,7 +144,7 @@ its decisions: PLAN.md (the full chapter prose was dropped on 10 October
   chapter's entry in `diary`, its title (the player's when given one) and
   the player's `note`, for the site: it never writes its own),
   `Kit.lua` (a copy of the kit shared with the Codex and the Field Journal,
-  ~/code/addon-kit: never edit the copy; `bun run kit:sync` after changing
+  ~/code/wow-addons/addon-kit: never edit the copy; `bun run kit:sync` after changing
   the kit, `bun run kit:check` to verify), `Book.lua` (Hearthtale's ember
   theme on the kit; the window: the portrait, a Hardcore life's mark beside
   it (a skull and the word, Fallen once closed; on hover what it means and
