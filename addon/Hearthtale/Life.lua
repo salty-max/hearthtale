@@ -460,7 +460,7 @@ local MOUNT_KINDS = {
 }
 local function ridden()
   for i = 1, 40 do
-    local name = UnitBuff("player", i)
+    local name = ns.buff(i)
     if not name then return nil end
     if not secret(name) then
       for _, k in ipairs(MOUNT_KINDS) do

@@ -22,6 +22,17 @@ ns.PREFIX = PREFIX
 local interface = select(4, GetBuildInfo())
 ns.forever = interface >= 16000 and interface < 20000
 ns.secret = issecretvalue or function() return false end
+-- The player's buff at index i: its name and spell id (nil past the last).
+-- Forever's client has no UnitBuff: its aura data by index instead.
+function ns.buff(i)
+  if C_UnitAuras and C_UnitAuras.GetAuraDataByIndex then
+    local aura = C_UnitAuras.GetAuraDataByIndex("player", i, "HELPFUL")
+    if not aura then return nil end
+    return aura.name, aura.spellId
+  end
+  local name, _, _, _, _, _, _, _, _, spellId = UnitBuff("player", i)
+  return name, spellId
+end
 
 local char
 function ns.journal() return char end

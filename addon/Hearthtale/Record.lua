@@ -299,7 +299,7 @@ local function byFire()
   end
   -- (a client that can't tell by id: the buffs once over)
   for i = 1, 40 do
-    local name, _, _, _, _, _, _, _, _, spellId = UnitBuff("player", i)
+    local name, spellId = ns.buff(i)
     if not name then return false end
     if spellId and not secret(spellId) and isFire[spellId] then return spellId end
   end

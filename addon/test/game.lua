@@ -513,6 +513,14 @@ function IsIndoors() return state.indoors == true end
 -- (a creature someone else hit first: not mine to claim)
 function UnitIsTapDenied(u) return u == "target" and state.target ~= nil and state.target.tapped == true end
 C_UnitAuras = { GetPlayerAuraBySpellID = function(id) return state.auras[id] and { spellId = id } or nil end }
+-- (Forever's client has no UnitBuff: its buffs by index as aura data)
+if FOREVER then
+  UnitBuff = nil
+  C_UnitAuras.GetAuraDataByIndex = function(_, i, filter)
+    local b = filter == "HELPFUL" and (state.buffs or {})[i]
+    if b then return { name = b.name, spellId = b.id } end
+  end
+end
 local function login()
   fire("PLAYER_LOGIN")
   fire("PLAYER_ENTERING_WORLD", true, false)
