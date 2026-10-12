@@ -1,6 +1,12 @@
+// The game's three faces, free (index.css): titles, the rest, numbers; and the
+// reader's "Book" typeface.
+import "@fontsource/almendra-sc";
+import "@fontsource/proza-libre/400.css";
+import "@fontsource/proza-libre/400-italic.css";
+import "@fontsource/proza-libre/500.css";
+import "@fontsource-variable/archivo-narrow";
 import "@fontsource-variable/eb-garamond";
-import "@fontsource/marcellus";
-import "@fontsource/metamorphous";
+import "@fontsource-variable/eb-garamond/wght-italic.css";
 import "./index.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RouterProvider } from "@tanstack/react-router";

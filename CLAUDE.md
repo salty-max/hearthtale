@@ -419,17 +419,21 @@ Plan and steps: PLAN.md, "The site".
   (`lib/reading.ts`), a footer under every other page. The site by day or by
   night (`site`: as the device, day, night; `public/theme.js` sets it before
   the first paint, `lib/theme.ts` after), the reading options (size,
-  typeface: the book's, the game's or plain; paper, line spacing) and the
+  typeface: the game's, a printed book's or plain; paper, line spacing) and the
   language code in `lib/settings.ts` (per device), set on `/settings`. Routes
   in `src/router.tsx`, each page its title (`lib/title.ts`); every visible
   string in `src/lib/i18n.ts` (English only for now, the books being English:
   another language is one more catalog typed on `en` in CATALOGS, with its
   locale for dates; the language setting shows once there are two); the look
   in `src/index.css` (the in-game book: leather lit by a hearth, or a scribe's
-  desk by day; parchment pages; the addon's gold; titles in Metamorphous, a
-  free cousin of the game's Morpheus, the frame's words in Marcellus, in the
-  spirit of its Friz Quadrata, the book in EB Garamond; `.panel`, `.btn`,
-  `.title-gilded`, the class colours by day and night). The pictures (the
+  desk by day; parchment pages; the addon's gold; the letters in the game's
+  three roles, each in a free face drawn alike (its Fonts.xml, and the
+  addon's kit): Morpheus for what is written in the world, titles, names and
+  figures (`font-display`: Almendra SC), Friz Quadrata for everything else,
+  the frame and the text, the entries too (`font-ui`: Proza Libre), Arial
+  Narrow for numbers and dates (`font-narrow`: Archivo Narrow); EB Garamond
+  only as the reader's "Book" typeface; `.panel`, `.btn`, `.title-gilded`,
+  the class colours by day and night). The pictures (the
   logo at every size, the class crests: the game's UI-Classes-Circles) come
   from `apps/web/scripts/assets.py`, committed.
   The library (`/library`): the last written to first, each book's crest,

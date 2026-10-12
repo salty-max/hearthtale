@@ -35,8 +35,8 @@ function Chart({ chs, until }: { chs: BookChapter[]; until?: number }) {
   for (let y = Math.ceil(y0 / step) * step; y <= y1; y += step) ticks.push(y);
   return (
     <figure className="panel p-4">
-      <figcaption className="title text-lg">{t.road.chart}</figcaption>
-      <svg viewBox={`0 0 ${W} ${H}`} className="mt-2 w-full" role="img" aria-label={t.road.chart}>
+      <figcaption className="title text-xl">{t.road.chart}</figcaption>
+      <svg viewBox={`0 0 ${W} ${H}`} className="mt-2 w-full font-narrow" role="img" aria-label={t.road.chart}>
         <defs>
           <linearGradient id="road-fill" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor="var(--color-gold)" stopOpacity="0.35" />
@@ -119,7 +119,7 @@ export function Road() {
           </div>
           {r.places.length > 0 && (
             <div className="panel mt-5 p-4">
-              <h2 className="title text-lg">{t.road.places_}</h2>
+              <h2 className="title text-xl">{t.road.places_}</h2>
               <ol className="mt-3 flex flex-wrap items-center gap-x-1 gap-y-2">
                 {r.places.map((p, i) => (
                   <li key={p} className="ui flex items-center gap-1 text-parchment/85">
@@ -132,16 +132,16 @@ export function Road() {
             </div>
           )}
           <div className="panel mt-5 p-4">
-            <h2 className="title text-lg">{t.road.timeline}</h2>
+            <h2 className="title text-xl">{t.road.timeline}</h2>
             <ol className="relative mt-4 ml-2 border-l border-gold/30">
               {book.chapters.map((ch) => (
                 <li key={ch.number} className="relative pb-5 pl-5 last:pb-0">
                   <span aria-hidden className={`absolute top-1.5 -left-[5px] size-2.5 rounded-full ${ch.close ? "bg-blood" : "bg-gold"}`} />
-                  <p className="ui text-xs text-parchment/55">{dateRange(ch.began, ch.open ? undefined : ch.ended, locale, t.book.to)}</p>
+                  <p className="font-narrow text-sm text-parchment/55">{dateRange(ch.began, ch.open ? undefined : ch.ended, locale, t.book.to)}</p>
                   <Link
                     to="/book/$id/$part"
                     params={{ id, part: String(ch.number) }}
-                    className="font-[family-name:var(--font-display)] text-lg text-gold-bright hover:underline"
+                    className="font-display text-xl text-gold-bright hover:underline"
                   >
                     {ch.title ?? t.book.chapter(ch.number)}
                   </Link>

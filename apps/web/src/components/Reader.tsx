@@ -127,7 +127,7 @@ export function Reader({
           </span>
           <span className="flex min-w-0 items-center gap-2">
             <Crest token={character.class} size={26} />
-            <span className="truncate font-[family-name:var(--font-display)] text-lg" style={{ color: classColour(character.class) }}>
+            <span className="truncate font-display text-lg" style={{ color: classColour(character.class) }}>
               {character.name}
             </span>
             {actions}
@@ -178,7 +178,7 @@ export function Reader({
             ) : (
               <span />
             )}
-            <span className="text-sm text-parchment/55">{t.book.of(at + 1, all.length)}</span>
+            <span className="font-narrow text-parchment/55">{t.book.of(at + 1, all.length)}</span>
             {next ? (
               <PartLink href={hrefFor(next.key)} className="flex min-w-0 items-center justify-end gap-1 hover:underline" title={t.book.keys}>
                 <span className="truncate">{partTitle(t, book, next)}</span>

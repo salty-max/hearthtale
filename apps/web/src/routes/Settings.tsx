@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import { useMe, useSignOut } from "@/lib/api";
 import { CATALOGS, LANGS, useLang, useT } from "@/lib/i18n";
 import { usePush } from "@/lib/push";
-import { FONTS, readerClasses, setSettings, SITE_THEMES, SIZES, SPACINGS, THEMES, useSettings, type Settings as S } from "@/lib/settings";
+import { FONT_CLASS, FONTS, readerClasses, setSettings, SITE_THEMES, SIZES, SPACINGS, THEMES, useSettings, type Settings as S } from "@/lib/settings";
 import { useTitle } from "@/lib/title";
 
 /** A row of choices, one selected (radio buttons that look like a segmented control). */
@@ -126,7 +126,7 @@ export function Settings() {
           name="font"
           value={s.font}
           options={FONTS}
-          render={(k) => <span className={k === "sans" ? "font-sans" : k === "game" ? "font-ui" : "font-book"}>{t.settings.fonts[k]}</span>}
+          render={(k) => <span className={FONT_CLASS[k]}>{t.settings.fonts[k]}</span>}
         />
         <Choice label={t.settings.paper} name="theme" value={s.theme} options={THEMES} render={(k) => t.settings.themes[k]} />
         <Choice label={t.settings.spacing} name="spacing" value={s.spacing} options={SPACINGS} render={(k) => t.settings.spacings[k]} />

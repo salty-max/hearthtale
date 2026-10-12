@@ -3,9 +3,16 @@
 /* Hearthtale's look: the in-game book. A dark leather night lit by a hearth
    around parchment pages, brown ink, the addon's gold (|cffc9a227) for titles
    and links, and the red of a fallen life; by day (the light theme), the same
-   book on a scribe's desk. Titles in Metamorphous (a free cousin of the game's
-   Morpheus, its book titles' face), the frame's words in Marcellus (in the
-   spirit of the game's Friz Quadrata), the book in EB Garamond. */
+   book on a scribe's desk.
+   The letters keep the game's three roles (its Fonts.xml), each in a free
+   face drawn the same way:
+   - display: Morpheus, what is written in the world (a quest's title, a
+     book's page, a letter; the addon's titles, names and figures): Almendra
+     SC, small capitals with a pen's edge;
+   - ui: Friz Quadrata, everything else, the frame and the text alike (a
+     quest's text, the addon's entries): Proza Libre, as wide and flared;
+   - narrow: Arial Narrow, the numbers and the chat: Archivo Narrow.
+   The reader's "Book" typeface is EB Garamond (--font-book). */
 @theme {
   --color-night: #120d09;
   --color-leather: #2a1d12;
@@ -22,8 +29,9 @@
   --color-fallen: #9b2a20;
   --color-page-title: #7a5410;
 
-  --font-display: "Metamorphous", Georgia, serif;
-  --font-ui: "Marcellus", Georgia, serif;
+  --font-display: "Almendra SC", Georgia, serif;
+  --font-ui: "Proza Libre", "Segoe UI", system-ui, sans-serif;
+  --font-narrow: "Archivo Narrow Variable", "Arial Narrow", sans-serif-condensed, sans-serif;
   --font-book: "EB Garamond Variable", Georgia, serif;
 }
 
@@ -60,7 +68,7 @@ body {
      bottom of the screen on iOS continues the bar (the frame itself is night). */
   background: var(--color-leather);
   color: var(--color-parchment);
-  font-family: var(--font-book);
+  font-family: var(--font-ui);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -149,7 +157,12 @@ body,
   .title {
     font-family: var(--font-display);
     color: var(--color-gold);
-    letter-spacing: 0.01em;
+  }
+  /* The book's face sets its words close: a little more room between them. */
+  .title,
+  .title-gilded,
+  .font-display {
+    word-spacing: 0.14em;
   }
   /* On a page of the book, a title takes the page's own ink. */
   .page .title {
@@ -170,9 +183,11 @@ body,
     filter: none;
   }
 
-  /* The frame's words: labels, buttons, the menu. */
+  /* The frame's words: labels, buttons, the menu (a shade heavier than the
+     text, as the game's gold labels read). */
   .ui {
     font-family: var(--font-ui);
+    font-weight: 500;
   }
 
   /* A panel of tooled leather: a gold hairline inside, gold corners. */
@@ -237,7 +252,7 @@ body,
     background: linear-gradient(180deg, color-mix(in srgb, var(--color-leather-edge) 85%, white 15%), var(--color-leather));
     color: var(--color-gold-bright);
     font-family: var(--font-ui);
-    letter-spacing: 0.02em;
+    font-weight: 500;
     box-shadow:
       inset 0 1px 0 rgb(255 255 255 / 0.08),
       0 2px 6px rgb(0 0 0 / 0.25);
@@ -288,6 +303,7 @@ body,
     border: 1px solid currentColor;
     border-radius: 999px;
     font-family: var(--font-ui);
+    font-weight: 500;
     font-size: 0.8rem;
     line-height: 1.4;
   }

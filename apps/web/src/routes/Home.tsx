@@ -96,7 +96,7 @@ function Samples() {
           >
             <Crest token={x.class} size={26} />
             <span>
-              <span className="block font-[family-name:var(--font-display)]">{x.name}</span>
+              <span className="block font-display">{x.name}</span>
               <span className="ui block text-xs opacity-80">
                 {raceClass(t, x)}
                 {x.part === "epitaph" ? ` · ${t.library.fallen}` : ""}

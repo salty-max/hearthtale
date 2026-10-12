@@ -10,7 +10,7 @@ export function CharacterHeader({ character: c }: { character: PublicCharacter }
   return (
     <div className="text-center">
       <Crest token={c.class} size={56} className="mx-auto" />
-      <p className="mt-2 font-[family-name:var(--font-display)] text-3xl" style={{ color: classColour(c.class) }}>
+      <p className="mt-2 font-display text-3xl" style={{ color: classColour(c.class) }}>
         {c.name}
       </p>
       <p className="ui text-parchment/80">

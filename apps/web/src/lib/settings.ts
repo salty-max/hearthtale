@@ -2,8 +2,14 @@ import { useSyncExternalStore } from "react";
 
 /** Per-device settings, kept in localStorage: the language (lib/i18n.ts), the site's light or dark, and how books read. */
 export type ReaderSize = "s" | "m" | "l" | "xl";
-/** serif: the book's Garamond; game: the game's own kind of letters (Marcellus); sans: plain. */
-export type ReaderFont = "serif" | "game" | "sans";
+/**
+ * game: the game's own text face, as the addon's entries and a quest's text
+ * (the site's own, --font-ui); book: a printed book's Garamond; plain: the
+ * device's sans. (Before October 2026 they were serif, game and sans, serif
+ * the default and saved as such with any other setting: a saved "serif" now
+ * falls back to the default, a chosen "sans" stays plain.)
+ */
+export type ReaderFont = "game" | "book" | "plain";
 export type ReaderTheme = "parchment" | "sepia" | "night";
 export type ReaderSpacing = "tight" | "normal" | "airy";
 /** The site's frame: by day, by night, or as the device is set (lib/theme.ts). */
@@ -19,7 +25,7 @@ export type Settings = {
 };
 
 export const SIZES: ReaderSize[] = ["s", "m", "l", "xl"];
-export const FONTS: ReaderFont[] = ["serif", "game", "sans"];
+export const FONTS: ReaderFont[] = ["game", "book", "plain"];
 export const THEMES: ReaderTheme[] = ["parchment", "sepia", "night"];
 export const SPACINGS: ReaderSpacing[] = ["tight", "normal", "airy"];
 export const SITE_THEMES: SiteTheme[] = ["system", "light", "dark"];
@@ -35,7 +41,7 @@ export function parseSettings(saved: unknown): Settings {
   return {
     lang: typeof s.lang === "string" ? s.lang : "en",
     size: pick(s.size, SIZES, "m"),
-    font: pick(s.font, FONTS, "serif"),
+    font: pick(s.font === "sans" ? "plain" : s.font, FONTS, "game"),
     theme: pick(s.theme, THEMES, "parchment"),
     spacing: pick(s.spacing, SPACINGS, "normal"),
     site: pick(s.site, SITE_THEMES, "system"),
@@ -77,10 +83,16 @@ export function useSettings(): Settings {
   );
 }
 
+/** Each typeface's class (index.css). */
+export const FONT_CLASS: Record<ReaderFont, string> = { game: "font-ui", book: "font-book", plain: "font-sans" };
+
 /** How a book's text reads, from the settings: class names for the page and its text. */
 export function readerClasses(s: Pick<Settings, "size" | "font" | "theme" | "spacing">): { page: string; text: string } {
-  const size = { s: "text-lg", m: "text-xl", l: "text-2xl", xl: "text-[1.7rem]" }[s.size];
+  // (the game's face and the plain one stand taller than Garamond: a step smaller for the same size)
+  const size = (
+    s.font === "book" ? { s: "text-lg", m: "text-xl", l: "text-2xl", xl: "text-[1.7rem]" } : { s: "text-base", m: "text-lg", l: "text-xl", xl: "text-2xl" }
+  )[s.size];
   const leading = { tight: "leading-snug", normal: "leading-relaxed", airy: "leading-loose" }[s.spacing];
-  const font = s.font === "sans" ? "font-sans" : s.font === "game" ? "font-ui" : "font-book";
+  const font = FONT_CLASS[s.font];
   return { page: `page page-${s.theme}`, text: `${size} ${leading} ${font}` };
 }
