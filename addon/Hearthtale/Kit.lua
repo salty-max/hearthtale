@@ -1,4 +1,4 @@
--- addon-kit 4f2b936: a copy (kit:sync); edit the addon-kit repository's Kit.lua instead
+-- addon-kit 6e2b3e7: a copy (kit:sync); edit the addon-kit repository's Kit.lua instead
 -- The kit shared by Hearthtale, Lorekeeper's Codex, Explorer's Field Journal
 -- and Second Wind: the books' look and the pieces their windows are made of
 -- (the list on the left, the page on the right and every part of a page, a
@@ -1797,7 +1797,8 @@ end
 --   W = K.welcome({
 --     name = "HearthtaleWelcome", title = "Welcome to Hearthtale",
 --     art = an icon for the portrait, logo = a texture (Media/Logo),
---     heading = "Hearthtale", tagline = "...", intro = "...",
+--     heading = "Hearthtale", tagline = "...", intro = "...", (or a function
+--       giving it, asked when it is built: after the login, the character known)
 --     profiles = P (K.profiles),
 --     choices = function() return { choice, ... } end, -- when it is built:
 --       { text, hint, get, set } a box to tick;
@@ -1987,7 +1988,7 @@ function K.welcome(o)
     intro:SetPoint("TOPLEFT", line, "BOTTOMLEFT", 0, -12)
     intro:SetWidth(WELCOME_LEFT - 40)
     intro:SetSpacing(3)
-    intro:SetText(o.intro)
+    intro:SetText(type(o.intro) == "function" and o.intro() or o.intro)
 
     -- Right: this character's choices, and another's.
     local right = K.panel(frame)
