@@ -68,10 +68,11 @@ function BookCard({ c }: { c: CharacterSummary }) {
   const latestTitle = latest ? (latest.title ?? t.book.chapter(latest.number)) : undefined;
   return (
     <article className="panel panel-link relative flex h-full flex-col p-4">
+      {(c.fallen || c.hardcore) && <HardcoreMark fallen={c.fallen} className="absolute top-4 right-4 z-10" />}
       <div className="flex items-start gap-3">
         <Crest token={c.class} size={48} />
         <div className="min-w-0 flex-1">
-          <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+          <div className={`flex flex-wrap items-center gap-x-2 gap-y-1 ${c.fallen || c.hardcore ? "pr-24" : ""}`}>
             <Link
               to="/book/$id"
               params={{ id: String(c.id) }}
@@ -86,7 +87,6 @@ function BookCard({ c }: { c: CharacterSummary }) {
                 {t.library.new}
               </span>
             )}
-            {(c.fallen || c.hardcore) && <HardcoreMark fallen={c.fallen} />}
             {c.client === "forever" && <span className="tag text-parchment/70">{t.library.forever}</span>}
           </div>
           <p className="ui text-parchment/85">

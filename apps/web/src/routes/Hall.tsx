@@ -44,8 +44,8 @@ export function Hall() {
                       {e.character.name}
                     </Link>
                     {e.diedAt && (
-                      <span className="tag text-blood">
-                        <Skull size={16} className="-my-0.5" />
+                      <span className="ui inline-flex items-center gap-1.5 text-sm text-blood">
+                        <Skull size={18} />
                         {new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(new Date(e.diedAt * 1000))}
                       </span>
                     )}

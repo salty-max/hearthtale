@@ -119,6 +119,8 @@ const en = {
     chapters: (n: number) => (n === 1 ? "1 entry" : `${n} entries`),
     hardcore: "Hardcore",
     fallen: "Fallen",
+    hardcoreWhy: "One life, one book: a death closes it with an epitaph, and it may join the Hall of the Fallen.",
+    fallenWhy: "This life has ended: its book is closed, with its epitaph.",
     forever: "Forever",
     new: "New",
     latest: "Latest",
