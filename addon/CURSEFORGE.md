@@ -80,6 +80,10 @@ The same look, each in its own colours, and each stands alone:
 - **[Lorekeeper's Codex](https://www.curseforge.com/wow/addons/lorekeepers-codex)** ([Wago](https://addons.wago.io/addons/j6jAL0NR)). The lore of Azeroth, written for you as you explore: each zone, figure of legend, people and quest you meet adds a page to your codex.
 - **[Explorer's Field Journal](https://www.curseforge.com/wow/addons/explorers-field-journal)** ([Wago](https://addons.wago.io/addons/ZKbq5y61)). Riddles that lead you to the world's overlooked corners, rare quarries to hunt, and a bestiary, an atlas and your fish and herbs, filled in as you travel.
 
+## Support
+
+Hearthtale is free, and will stay free. If your journal has given you a page worth keeping, you can say thanks with a coffee on [Ko-fi](https://ko-fi.com/salty_max): it helps the books, and hearthtale.app, keep growing. Thank you for reading.
+
 ## Source
 
 Open source under GPL-3.0-or-later: [github.com/salty-max/hearthtale](https://github.com/salty-max/hearthtale). What the writer knows of the game comes from [cmangos classic-db](https://github.com/cmangos/classic-db) and [pfQuest](https://github.com/shagu/pfQuest); for Forever's new content, from [AllTheThings](https://github.com/ATTWoWAddon/AllTheThings) and [QuestieDB](https://github.com/Questie/QuestieDB)'s traces of the beta. Thanks to all of them. Not affiliated with Blizzard Entertainment.
