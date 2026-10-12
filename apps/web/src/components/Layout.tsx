@@ -54,7 +54,7 @@ export function Layout() {
             </Link>
           ))}
         </nav>
-        <div className="ml-auto flex items-center gap-1 md:ml-1">
+        <div className="ml-auto flex items-center gap-2 md:ml-1">
           {me.data && <LinkCharacter />}
           <ThemeToggle />
         </div>

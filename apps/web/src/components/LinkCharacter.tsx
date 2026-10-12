@@ -48,15 +48,10 @@ export function LinkCharacter() {
   return (
     // (on a phone the panel spans the top bar, on a wider screen it hangs from the button)
     <div ref={box} className="md:relative">
-      <button
-        onClick={toggle}
-        aria-expanded={open}
-        aria-controls={id}
-        aria-label={t.link.title}
-        title={t.link.title}
-        className={`rounded-md p-2 text-gold-bright hover:bg-gold/10 ${open ? "bg-gold/10" : ""}`}
-      >
-        <Link2 className="size-5" aria-hidden />
+      <button onClick={toggle} aria-expanded={open} aria-controls={id} className={`btn px-3 py-1.5 text-sm ${open ? "border-gold-bright" : ""}`}>
+        <Link2 className="size-4" aria-hidden />
+        <span className="hidden sm:inline">{t.link.title}</span>
+        <span className="sm:hidden">{t.link.short}</span>
       </button>
       {open && (
         <div id={id} role="dialog" aria-label={t.link.title} className="panel fade-in absolute inset-x-3 top-full z-40 mt-2 p-4 md:inset-x-auto md:right-0 md:w-[23rem]">
@@ -65,24 +60,15 @@ export function LinkCharacter() {
           {link.data && (
             <>
               <p className="mt-3 text-sm">{t.link.type}</p>
-              <div className="mt-1.5 flex items-center gap-1">
-                <code className="min-w-0 flex-1 truncate rounded bg-night px-3 py-2 font-mono text-lg tracking-wider text-gold-bright">{command}</code>
-                <button
-                  onClick={() => void navigator.clipboard?.writeText(command).then(() => setCopied(true))}
-                  aria-label={t.link.copy}
-                  title={t.link.copy}
-                  className="rounded p-2 text-parchment/70 hover:text-parchment"
-                >
-                  {copied ? <Check className="size-5" aria-hidden /> : <Copy className="size-5" aria-hidden />}
+              <code className="mt-1.5 block truncate rounded bg-night px-3 py-2 font-mono text-lg tracking-wider text-gold-bright">{command}</code>
+              <div className="mt-2.5 flex flex-wrap gap-2">
+                <button onClick={() => void navigator.clipboard?.writeText(command).then(() => setCopied(true))} className="btn btn-primary px-3 py-1.5 text-sm">
+                  {copied ? <Check className="size-4" aria-hidden /> : <Copy className="size-4" aria-hidden />}
+                  {copied ? t.link.copied : t.link.copy}
                 </button>
-                <button
-                  onClick={fresh}
-                  disabled={link.isPending}
-                  aria-label={t.link.again}
-                  title={t.link.again}
-                  className="rounded p-2 text-parchment/70 hover:text-parchment disabled:opacity-50"
-                >
-                  <RefreshCw className={`size-5${link.isPending ? " animate-spin" : ""}`} aria-hidden />
+                <button onClick={fresh} disabled={link.isPending} className="btn px-3 py-1.5 text-sm">
+                  <RefreshCw className={`size-4${link.isPending ? " animate-spin" : ""}`} aria-hidden />
+                  {t.link.again}
                 </button>
               </div>
               <p className="mt-2 text-sm text-parchment/60">{t.link.then(until)}</p>

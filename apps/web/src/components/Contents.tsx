@@ -1,5 +1,5 @@
 import type { Book } from "@hearthtale/shared";
-import { Skull, Star } from "lucide-react";
+import { EntryMarks } from "@/components/EntryMarks";
 import { PartLink } from "@/components/PartLink";
 import { partTitle, parts } from "@/lib/book";
 import { dateRange } from "@/lib/dates";
@@ -40,12 +40,9 @@ export function Contents({ hrefFor, book, current, onPick }: { hrefFor: (part: s
                     {ch.title && `${t.book.chapter(ch.number)} · `}
                     {ch.open ? t.book.stillWriting : ch.place} · {t.book.levels(ch.from, ch.to)}
                     {when && <span className="block text-parchment/45">{when}</span>}
+                    <EntryMarks close={ch.close} rare={ch.rare} className="mt-1" />
                   </span>
                 )}
-              </span>
-              <span className="flex shrink-0 gap-1 text-parchment/50">
-                {ch?.close && <Skull className="size-4" aria-label={t.book.closeCall} />}
-                {ch?.rare && <Star className="size-4" aria-label={t.book.rare} />}
               </span>
             </PartLink>
           </li>

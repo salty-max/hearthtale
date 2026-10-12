@@ -1,7 +1,8 @@
 import type { BookChapter } from "@hearthtale/shared";
 import { Link, useParams } from "@tanstack/react-router";
-import { ChevronLeft, MapPin, Skull, Star } from "lucide-react";
+import { ChevronLeft, MapPin } from "lucide-react";
 import { Crest } from "@/components/Crest";
+import { EntryMarks } from "@/components/EntryMarks";
 import { Flourish } from "@/components/Flourish";
 import { LoadError, Loading } from "@/components/PageState";
 import { SignIn } from "@/components/SignIn";
@@ -145,13 +146,12 @@ export function Road() {
                   >
                     {ch.title ?? t.book.chapter(ch.number)}
                   </Link>
-                  <p className="flex flex-wrap items-center gap-x-2 text-parchment/70">
+                  <p className="text-parchment/70">
                     {[ch.title ? t.book.chapter(ch.number) : undefined, ch.open ? t.book.stillWriting : ch.place, t.book.levels(ch.from, ch.to)]
                       .filter(Boolean)
                       .join(" · ")}
-                    {ch.close && <Skull className="size-3.5 text-blood" aria-label={t.book.closeCall} />}
-                    {ch.rare && <Star className="size-3.5 text-gold-bright" aria-label={t.book.rare} />}
                   </p>
+                  <EntryMarks close={ch.close} rare={ch.rare} className="mt-0.5" />
                 </li>
               ))}
             </ol>
