@@ -38,7 +38,7 @@ local W = K.welcome({
       },
       {
         text = "An alert when a book closes",
-        hint = "The game's own alert, when a Hardcore character falls.",
+        hint = "A banner among the game's alerts, when a Hardcore character falls.",
         get = function() return ns.option("toast") end,
         set = function(v) ns.setOption("toast", v) end,
       },

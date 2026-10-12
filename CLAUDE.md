@@ -143,18 +143,22 @@ its decisions: PLAN.md (the full chapter prose was dropped on 10 October
   `Save.lua` (the book written into the saved file at each logout, each
   chapter's entry in `diary`, its title (the player's when given one) and
   the player's `note`, for the site: it never writes its own),
-  `Kit.lua` (a copy of the kit shared with the Codex and the Field Journal,
-  ~/code/wow-addons/addon-kit: never edit the copy; `bun run kit:sync` after changing
+  `Kit.lua` (a copy of the kit shared with the Codex, the Field Journal and
+  Second Wind, ~/code/wow-addons/addon-kit: the look, the page and its parts,
+  the banners; never edit the copy; `bun run kit:sync` after changing
   the kit, `bun run kit:check` to verify), `Book.lua` (Hearthtale's ember
   theme on the kit; the window: the portrait, a Hardcore life's mark beside
   it (a skull and the word, Fallen once closed; on hover what it means and
   whether the game or the setting says so), chapters on the left, the open
-  one's entry on the right under its header (a line above the title: the
-  entry and how it stands; one under it: where, which levels, when, a short
-  date range; never wrapped), the player's note under it, an Edit button for
-  its own title and note; a second tab for the Hall of the Fallen),
+  one's entry on the right under its header (the life's crest, a skull on a
+  fallen one's; a line above the title: the entry and how it stands; one
+  under it: where, which levels, when, a short date range; never wrapped),
+  the player's note under it, an Edit button for its own title and note; a
+  second tab for the Hall of the Fallen, opening on the Hall at a glance (the
+  kit's page: its figures, each fallen life a card with its crest, how and
+  where it ended), then a life's epitaph and entries under its name),
   `Hall.lua` (a Hardcore death: the book closed and copied to the
-  account-wide Hall, a chat line, the toast), `Settings.lua` (each
+  account-wide Hall, a chat line, the kit's banner among the game's alerts), `Settings.lua` (each
   character's settings, its profile "Name - Realm" in HearthtaleSettings, the
   installation's: copied from another character of this game, or from a code
   `HT1:c1:t1:m1:a200` made by `/ht export` and taken by `/ht import CODE`; a

@@ -822,8 +822,13 @@ check(
   "a chat line says so, with a link to the Hall"
 )
 check(
-  #toasted == 1 and toasted[1].Title:GetText() == "The book is closed" and toasted[1].Name:GetText() == "Sealinedion",
-  "the game's toast: the book is closed"
+  #toasted == 1
+    and toasted[1].kicker == "The book is closed"
+    and toasted[1].title == "Sealinedion"
+    and toasted[1].medal == ns.FALLEN_SEAL
+    and HearthtaleBanner1:IsShown()
+    and HearthtaleBanner1.joined,
+  "a banner among the game's alerts: the book is closed, a skull on the face"
 )
 local logBefore = #ch().log
 state.sub = "Brewnall Village"
@@ -861,22 +866,39 @@ linkHandlers.hearthtale("hearthtale:hall:" .. state.guid)
 check(
   B:IsShown()
     and B.selectedTab == 2
-    and rows[1].title:GetText() == "Sealinedion"
-    and rows[2].title:GetText() == "Epitaph"
-    and rows[3].title:GetText() == titled(fallenLife, 1)
+    and rows[1].title:GetText() == "The Hall of the Fallen"
+    and rows[2].title:GetText() == "Sealinedion"
+    and rows[3].title:GetText() == "Epitaph"
+    and rows[4].title:GetText() == titled(fallenLife, 1)
     and page.title:GetText() == "Sealinedion"
+    and page.portrait.badge:IsShown()
     and page.body:GetText():find(closedBook.epitaph, 1, true)
     and page.sub:GetText():find("Level 2 Dwarf Paladin", 1, true)
     and page.over:GetText() == "HARDCORE  \194\183  FALLEN",
-  "the link opens the Hall: the life, its epitaph, its chapters"
+  "the link opens the Hall: the life, its epitaph, its chapters, a skull on its crest"
 )
-rows[6].scripts.OnClick(rows[6])
+rows[7].scripts.OnClick(rows[7])
 check(
   page.title:GetText() == titled(fallenLife, 4)
     and page.over:GetText():find("THE END", 1, true)
     and page.body:GetText():find(closedBook.epitaph, 1, true),
   "its last chapter ends with the epitaph"
 )
+-- The Hall's tab: the Hall at a glance, each fallen life a card.
+HearthtaleFrameTab2.scripts.OnClick(HearthtaleFrameTab2)
+local hall = HearthtaleHallPage
+check(
+  hall:IsShown()
+    and not page:IsShown()
+    and hall.title:GetText() == "The Hall of the Fallen"
+    and hall.tiles[1].value:GetText() == "1"
+    and hall.cards[1].name:GetText() == "Sealinedion"
+    and hall.cards[1].facts:GetText():find("^Level 2 Dwarf Paladin, ")
+    and hall.cards[1].badge:IsShown(),
+  "the Hall's tab: the Hall at a glance, its figures, each life a card with a skull"
+)
+hall.cards[1].scripts.OnClick(hall.cards[1])
+check(page:IsShown() and not hall:IsShown() and page.title:GetText() == "Sealinedion", "… a card opens its epitaph")
 ns.showTab(1)
 check(
   B.hardcore:IsShown()

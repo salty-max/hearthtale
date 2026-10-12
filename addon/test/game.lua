@@ -346,6 +346,12 @@ local function ui()
       if k == "GetChecked" then
         return function(self) return rawget(self, "checked") or false end
       end
+      if k == "SetID" then
+        return function(self, v) self.idValue = v end
+      end
+      if k == "GetID" then
+        return function(self) return rawget(self, "idValue") or 0 end
+      end
       if k == "GetText" then
         return function(self) return rawget(self, "text") or "" end
       end
@@ -481,18 +487,25 @@ function GetCurrentRegion() return state.region or 3 end
 C_AddOns =
   { GetAddOnMetadata = function(name, key) return name == "Hearthtale" and key == "Version" and "0.2.0" or nil end }
 C_XMLUtil = { GetTemplateInfo = function(name) return name ~= "PanelTabButtonTemplate" or nil end }
-AlertFrame = {
-  AddQueuedAlertFrameSubSystem = function(_, _, setUp)
-    return {
-      AddAlert = function(_, guid)
-        local frame = ui()
-        frame.Icon, frame.Title, frame.Name = ui(), ui(), ui()
-        setUp(frame, guid)
-        table.insert(toasted, frame)
-      end,
-    }
-  end,
-}
+-- The game's alert container: a frame joins its stack, and it places those
+-- shown, each on top of the one under it (AlertFrameAutoAnchoredMixin's way).
+AlertFrame = { subs = {}, updates = 0 }
+function AlertFrame:AddAutoAnchoredSubSystem(f)
+  f:SetAlertContainer(self)
+  table.insert(self.subs, f)
+end
+function AlertFrame:UpdateAnchors()
+  self.updates = self.updates + 1
+  local rel = self
+  for _, f in ipairs(self.subs) do
+    if f:IsShown() then
+      f:ClearAllPoints()
+      f:SetPoint("BOTTOM", rel, "TOP", 0, 0)
+      f:OnAlertAnchorUpdated()
+      rel = f
+    end
+  end
+end
 local linkHandlers = {}
 LinkUtil = { RegisterLinkHandler = function(kind, fn) linkHandlers[kind] = fn end }
 LinkProcessorResponse = { Handled = 2 }
@@ -506,6 +519,19 @@ for line in io.lines(DIR .. (FOREVER and "Hearthtale_Camelot.toc" or "Hearthtale
   if f then assert(loadfile(DIR .. f))("Hearthtale", ns) end
 end
 local D = ns.data
+-- The banners shown: what each said (the kit's banners, as the addon makes them).
+do
+  local make = ns.kit.banners
+  ns.kit.banners = function(o)
+    local banners = make(o)
+    local show = banners.show
+    banners.show = function(self, b)
+      table.insert(toasted, b)
+      return show(self, b)
+    end
+    return banners
+  end
+end
 -- Resting and campfires: the game's resting state, the auras on me.
 state.auras = {}
 function IsResting() return state.resting == true end

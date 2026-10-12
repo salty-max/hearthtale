@@ -102,7 +102,7 @@ function ns.createSettingsPanel()
   checkbox(
     "toast",
     "Alert when a book closes",
-    "The game's alert when a Hardcore character falls and its book joins the Hall of the Fallen (the chat line stays)."
+    "A banner among the game's alerts when a Hardcore character falls and its book joins the Hall of the Fallen (the chat line stays)."
   )
   checkbox("minimapHidden", "Minimap button", "The journal by the minimap: click to open it, drag to move it.", true)
 

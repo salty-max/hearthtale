@@ -5,10 +5,6 @@ name: wow
 globals:
   AlertFrame:
     any: true
-  AlertFrame_OnClick:
-    any: true
-  AlertFrame_SetDuration:
-    any: true
   ButtonFrameTemplate_HideButtonBar:
     any: true
   C_AddOns:
@@ -32,6 +28,8 @@ globals:
   C_XMLUtil:
     any: true
   ChatFontNormal:
+    any: true
+  CLASS_ICON_TCOORDS:
     any: true
   CombatLogGetCurrentEventInfo:
     any: true
@@ -60,6 +58,8 @@ globals:
   GetInstanceInfo:
     any: true
   GetInventoryItemLink:
+    any: true
+  GetItemIcon:
     any: true
   GetItemInfo:
     any: true
@@ -134,6 +134,8 @@ globals:
   IsQuestComplete:
     any: true
   IsResting:
+    any: true
+  ITEM_QUALITY_COLORS:
     any: true
   LinkProcessorResponse:
     any: true
