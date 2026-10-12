@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import { BookOpen, Skull } from "lucide-react";
+import { BookOpen } from "lucide-react";
 import { Crest } from "@/components/Crest";
+import { Skull } from "@/components/HardcoreMark";
 import { Flourish } from "@/components/Flourish";
 import { LoadError, Loading } from "@/components/PageState";
 import { useHall } from "@/lib/api";
@@ -17,7 +18,7 @@ export function Hall() {
   return (
     <section className="mx-auto max-w-3xl pb-4">
       <div className="mt-2 text-center">
-        <Skull className="mx-auto size-9 text-blood" aria-hidden />
+        <Skull size={40} className="mx-auto drop-shadow-[0_0_10px_rgb(224_112_95/0.35)]" />
         <h1 className="title-gilded mt-2 text-4xl">{t.hall.title}</h1>
         <p className="mx-auto mt-2 max-w-xl text-lg text-parchment/75">{t.hall.intro}</p>
         <Flourish className="mt-4 text-gold/70" />
@@ -44,7 +45,7 @@ export function Hall() {
                     </Link>
                     {e.diedAt && (
                       <span className="tag text-blood">
-                        <Skull className="size-3" aria-hidden />
+                        <Skull size={16} className="-my-0.5" />
                         {new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(new Date(e.diedAt * 1000))}
                       </span>
                     )}

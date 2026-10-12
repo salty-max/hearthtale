@@ -1,8 +1,9 @@
 import type { CharacterSummary } from "@hearthtale/shared";
 import { Link, useSearch } from "@tanstack/react-router";
-import { BookOpen, Flame, Map as MapIcon, Skull, Sparkles, Upload } from "lucide-react";
+import { BookOpen, Map as MapIcon, Sparkles, Upload } from "lucide-react";
 import { useEffect } from "react";
 import { Crest } from "@/components/Crest";
+import { HardcoreMark } from "@/components/HardcoreMark";
 import { LinkCharacter } from "@/components/LinkCharacter";
 import { LoadError, Loading } from "@/components/PageState";
 import { SignIn } from "@/components/SignIn";
@@ -85,19 +86,7 @@ function BookCard({ c }: { c: CharacterSummary }) {
                 {t.library.new}
               </span>
             )}
-            {c.fallen ? (
-              <span className="tag text-blood">
-                <Skull className="size-3" aria-hidden />
-                {t.library.fallen}
-              </span>
-            ) : (
-              c.hardcore && (
-                <span className="tag text-ember">
-                  <Flame className="size-3" aria-hidden />
-                  {t.library.hardcore}
-                </span>
-              )
-            )}
+            {(c.fallen || c.hardcore) && <HardcoreMark fallen={c.fallen} />}
             {c.client === "forever" && <span className="tag text-parchment/70">{t.library.forever}</span>}
           </div>
           <p className="ui text-parchment/85">

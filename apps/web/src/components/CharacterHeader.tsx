@@ -1,6 +1,6 @@
 import type { PublicCharacter } from "@hearthtale/shared";
-import { Flame, Skull } from "lucide-react";
 import { Crest } from "@/components/Crest";
+import { HardcoreMark } from "@/components/HardcoreMark";
 import { useT } from "@/lib/i18n";
 import { classColour, raceClass, realmName } from "@/lib/wow";
 
@@ -19,10 +19,7 @@ export function CharacterHeader({ character: c }: { character: PublicCharacter }
       </p>
       {(c.fallen || c.hardcore) && (
         <p className="mt-2">
-          <span className={`tag ${c.fallen ? "text-blood" : "text-ember"}`}>
-            {c.fallen ? <Skull className="size-3" aria-hidden /> : <Flame className="size-3" aria-hidden />}
-            {c.fallen ? t.library.fallen : t.library.hardcore}
-          </span>
+          <HardcoreMark fallen={c.fallen} />
         </p>
       )}
     </div>

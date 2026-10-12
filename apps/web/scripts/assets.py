@@ -11,9 +11,12 @@ The site's pictures, as PNGs under apps/web/public/:
   classes/<token>.png   each class's round crest, the game's own
                         (Interface/TargetingFrame/UI-Classes-Circles), as the
                         addon's pages show it
+  ui/skull.png          the game's skull (Interface/TargetingFrame/
+                        UI-TargetingFrame-Skull): a Hardcore life's mark, as
+                        the addon's book shows it
 
-The crests come from wago.tools' copy of the game files (BLP), read with
-Pillow. Run once after changing the logo; the output is committed.
+The crests and the skull come from wago.tools' copy of the game files (BLP),
+read with Pillow. Run once after changing the logo; the output is committed.
 
     python3 -m venv /tmp/v && /tmp/v/bin/pip install pillow
     /tmp/v/bin/python apps/web/scripts/assets.py
@@ -29,6 +32,7 @@ PUBLIC = os.path.join(HERE, "..", "public")
 MASTER = os.path.join(HERE, "..", "..", "..", "assets", "logo-master.png")
 
 CIRCLES = 237669  # interface/targetingframe/ui-classes-circles.blp: 64 px a crest
+SKULL = 137025  # interface/targetingframe/ui-targetingframe-skull.blp: 32 px
 # (CLASS_ICON_TCOORDS: column, row of each class's crest in the texture)
 CRESTS = {
     "WARRIOR": (0, 0), "MAGE": (1, 0), "ROGUE": (2, 0), "DRUID": (3, 0),
@@ -85,3 +89,5 @@ save(sized(master, 512), "pwa-maskable-512.png")
 circles = Image.open(io.BytesIO(fetch(CIRCLES))).convert("RGBA")
 for token, (col, row) in CRESTS.items():
     save(circles.crop((col * 64, row * 64, col * 64 + 64, row * 64 + 64)), "classes", f"{token.lower()}.png")
+
+save(Image.open(io.BytesIO(fetch(SKULL))).convert("RGBA"), "ui", "skull.png")
