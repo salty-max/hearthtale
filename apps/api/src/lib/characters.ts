@@ -1,5 +1,5 @@
 import type { CharacterBook, CharacterSummary } from "@hearthtale/shared";
-import { and, asc, eq } from "drizzle-orm";
+import { and, desc, eq } from "drizzle-orm";
 import { db } from "@/db";
 import { characters, removed, type CharacterRow } from "@/db/schema";
 
@@ -19,13 +19,21 @@ export function summary(row: CharacterRow): CharacterSummary {
     hardcore: row.hardcore,
     fallen: row.fallen,
     chapters: row.book.chapters.length,
+    latest: latestOf(row.book),
     updatedAt: row.updatedAt.toISOString(),
   };
 }
 
-/** The account's characters, for its library. */
+/** The entry a library card names: the one being written, else the last. */
+export function latestOf(book: CharacterRow["book"]): CharacterSummary["latest"] {
+  const ch = book.chapters.find((c) => c.open) ?? book.chapters[book.chapters.length - 1];
+  if (!ch) return undefined;
+  return { number: ch.number, title: ch.title, place: ch.place, at: ch.ended ?? ch.began, open: ch.open || undefined };
+}
+
+/** The account's characters, for its library: the last written to first. */
 export async function libraryOf(accountId: number): Promise<CharacterSummary[]> {
-  const rows = await db.select().from(characters).where(eq(characters.ownerId, accountId)).orderBy(asc(characters.name));
+  const rows = await db.select().from(characters).where(eq(characters.ownerId, accountId)).orderBy(desc(characters.updatedAt));
   return rows.map(summary);
 }
 

@@ -1,5 +1,5 @@
 import type { Book, HallEntry, PublicCharacter, Share, SharedBook } from "@hearthtale/shared";
-import { and, desc, eq } from "drizzle-orm";
+import { and, desc, eq, isNull } from "drizzle-orm";
 import { db } from "@/db";
 import { characters, shares, type CharacterRow } from "@/db/schema";
 import { random } from "@/lib/accounts";
@@ -61,6 +61,12 @@ export async function listShares(id: number, accountId: number): Promise<Share[]
 export async function createShare(id: number, accountId: number, part?: string): Promise<Share | null> {
   const row = await ownBook(id, accountId);
   if (!row || !cutBook(row.book, part)) return null;
+  // (a link to the same part already made: that one, not a second)
+  const [made] = await db
+    .select()
+    .from(shares)
+    .where(and(eq(shares.characterId, id), part === undefined ? isNull(shares.part) : eq(shares.part, part)));
+  if (made) return toShare(made);
   const [s] = await db
     .insert(shares)
     .values({ token: random(12), characterId: id, part: part ?? null })

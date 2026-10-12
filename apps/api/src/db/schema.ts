@@ -125,6 +125,25 @@ export const removed = pgTable(
   (t) => [primaryKey({ columns: [t.accountId, t.guid] })],
 );
 
+/**
+ * A device that asked to be told of new entries (a browser's push
+ * subscription): its endpoint and keys, for its account's books. Deleted when
+ * the browser turns it off, or the push service says it is gone.
+ */
+export const pushSubscriptions = pgTable(
+  "push_subscriptions",
+  {
+    endpoint: text("endpoint").primaryKey(),
+    accountId: integer("account_id")
+      .notNull()
+      .references(() => accounts.id, { onDelete: "cascade" }),
+    p256dh: text("p256dh").notNull(),
+    auth: text("auth").notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("push_subscriptions_account").on(t.accountId)],
+);
+
 /** Tiny key/value store for the site's own state. */
 export const state = pgTable("state", {
   key: text("key").primaryKey(),

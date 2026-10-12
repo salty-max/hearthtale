@@ -6,6 +6,7 @@ import { owns } from "@/lib/accounts";
 import { parseGuid, regionOf } from "@/lib/guid";
 import { takeLinkCode } from "@/lib/link";
 import { log } from "@/lib/log";
+import { finishedSince } from "@/lib/push";
 
 /**
  * An upload from a companion: each character's saved record (HearthtaleChar,
@@ -126,8 +127,24 @@ export async function decide(
   return { owner, status: "saved", lift: facts.removedHere && owner === companion };
 }
 
-export async function handleUpload(link: CompanionLinkRow, body: unknown): Promise<UploadResult> {
+/** A book saved, and the entries it finished since the last upload (for a notification). */
+export type Saved = { owner: number; characterId: number; name: string; entries: Book["chapters"] };
+
+/** An upload from a companion: as its account's, then its last upload's time noted. */
+export async function handleUpload(link: CompanionLinkRow, body: unknown): Promise<{ result: UploadResult; saved: Saved[] }> {
+  const out = await uploadAs(link.accountId, body);
+  await db.update(companionLinks).set({ lastUploadAt: new Date() }).where(eq(companionLinks.id, link.id));
+  return out;
+}
+
+/**
+ * An upload as an account's: its companion's, or its own from the browser (a
+ * saved file brought by hand). The same proofs of ownership either way.
+ */
+export async function uploadAs(accountId: number, body: unknown): Promise<{ result: UploadResult; saved: Saved[] }> {
   const result: UploadResult = { characters: [] };
+  const saved: Saved[] = [];
+  const link = { accountId };
   const [account] = await db.select().from(accounts).where(eq(accounts.id, link.accountId));
   const records = list(obj(body)?.characters) ?? [];
   for (const raw of records.slice(0, MAX_CHARACTERS)) {
@@ -138,7 +155,7 @@ export async function handleUpload(link: CompanionLinkRow, body: unknown): Promi
     }
     const ids = parseGuid(c.guid)!;
     const region = regionOf(c.region);
-    const [row] = await db.select({ id: characters.id, ownerId: characters.ownerId }).from(characters).where(eq(characters.guid, c.guid));
+    const [row] = await db.select({ id: characters.id, ownerId: characters.ownerId, book: characters.book }).from(characters).where(eq(characters.guid, c.guid));
     const [gone] = await db
       .select({ guid: removed.guid })
       .from(removed)
@@ -169,14 +186,15 @@ export async function handleUpload(link: CompanionLinkRow, body: unknown): Promi
       ownerId: owner,
       book: c.book,
     };
-    const [saved] = await db
+    const [kept] = await db
       .insert(characters)
       .values(values)
       .onConflictDoUpdate({ target: characters.guid, set: { ...values, updatedAt: sql`now()` } })
       .returning({ id: characters.id });
-    result.characters.push({ guid: c.guid, name: c.name, status: "saved", chapters: c.book.chapters.length, characterId: saved.id });
+    result.characters.push({ guid: c.guid, name: c.name, status: "saved", chapters: c.book.chapters.length, characterId: kept.id });
+    // (new entries are news only to the book's same owner)
+    saved.push({ owner, characterId: kept.id, name: c.name, entries: row?.ownerId === owner ? finishedSince(row.book, c.book) : [] });
   }
-  await db.update(companionLinks).set({ lastUploadAt: new Date() }).where(eq(companionLinks.id, link.id));
   log.info("upload", { account: link.accountId, saved: result.characters.filter((r) => r.status === "saved").length, of: records.length });
-  return result;
+  return { result, saved };
 }

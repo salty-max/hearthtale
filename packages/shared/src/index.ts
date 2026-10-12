@@ -74,9 +74,13 @@ export type CharacterSummary = {
   hardcore: boolean;
   fallen: boolean;
   chapters: number;
+  /** The book's latest entry (the one being written, else the last): for the library's card. */
+  latest?: LatestEntry;
   /** ISO time of the last upload. */
   updatedAt: string;
 };
+/** An entry as the library shows it: its number, its title, where, when (Unix seconds: its end, else its start). */
+export type LatestEntry = { number: number; title?: string; place?: string; at?: number; open?: boolean };
 
 /** A character and its book. */
 export type CharacterBook = { character: CharacterSummary; book: Book };

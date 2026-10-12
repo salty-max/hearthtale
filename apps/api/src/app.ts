@@ -8,7 +8,9 @@ import { accounts, type AccountRow } from "@/db/schema";
 import { createSession, endSession, SESSION_COOKIE, SESSION_TTL_MS, sessionAccount, TEST_BNET_ID } from "@/lib/accounts";
 import { getCharacterBook, libraryOf, removeBook } from "@/lib/characters";
 import { confirmPairing, isPairCode, linkFor, pairingPending, pollPairing, startPairing } from "@/lib/companion";
-import { handleUpload } from "@/lib/upload";
+import { handleUpload, uploadAs, type Saved } from "@/lib/upload";
+import { notifyNewEntries, subscribe, unsubscribe, vapid } from "@/lib/push";
+import { waitUntil } from "@vercel/functions";
 import { ogPage } from "@/lib/og";
 import { createShare, hall, hallBook, listShares, revokeShare, setInHall, sharedBook } from "@/lib/sharing";
 import { createLinkCode } from "@/lib/link";
@@ -202,8 +204,61 @@ app.post(
     const link = await linkFor(token);
     if (!link) return c.json({ error: "unknown or revoked companion" }, 401);
     const body = await c.req.json().catch(() => null);
-    return c.json(await handleUpload(link, body));
+    const { result, saved } = await handleUpload(link, body);
+    tell(saved);
+    return c.json(result);
   },
 );
+
+// A saved file brought by hand (no companion): the same upload, as the signed-in account's.
+app.post(
+  "/api/upload",
+  signedIn,
+  sameOrigin,
+  bodyLimit({ maxSize: 4 * 1024 * 1024, onError: (c) => c.json({ error: "too large" }, 413) }),
+  async (c) => {
+    const body = await c.req.json().catch(() => null);
+    const { result, saved } = await uploadAs(c.get("account")!.id, body);
+    tell(saved);
+    return c.json(result);
+  },
+);
+
+/** The new entries of an upload, told to their owners' devices once the answer has gone. */
+function tell(saved: Saved[]): void {
+  const work = Promise.all(saved.map((s) => notifyNewEntries(s.owner, s.characterId, s.name, s.entries))).catch((err) =>
+    log.warn("push.notify", { err: String(err) }),
+  );
+  waitUntil(work);
+}
+
+// ── notifications (Web Push) ─────────────────────────────────────────────────
+app.get("/api/push/key", (c) => {
+  const keys = vapid();
+  return keys ? c.json({ key: keys.publicKey }) : c.json({ error: "not found" }, 404);
+});
+
+const pushSub = (v: unknown): { endpoint: string; p256dh: string; auth: string } | null => {
+  const o = v && typeof v === "object" ? (v as Record<string, unknown>) : null;
+  const keys = o?.keys && typeof o.keys === "object" ? (o.keys as Record<string, unknown>) : null;
+  const endpoint = o?.endpoint;
+  if (typeof endpoint !== "string" || endpoint.length > 1000 || !/^https:\/\//.test(endpoint)) return null;
+  if (typeof keys?.p256dh !== "string" || typeof keys.auth !== "string" || keys.p256dh.length > 200 || keys.auth.length > 100) return null;
+  return { endpoint, p256dh: keys.p256dh, auth: keys.auth };
+};
+
+app.post("/api/push/subscriptions", signedIn, sameOrigin, async (c) => {
+  const sub = pushSub(await c.req.json().catch(() => null));
+  if (!sub) return c.json({ error: "bad subscription" }, 400);
+  await subscribe(c.get("account")!.id, sub);
+  return c.json({ ok: true });
+});
+
+app.delete("/api/push/subscriptions", signedIn, sameOrigin, async (c) => {
+  const { endpoint } = await c.req.json<{ endpoint?: unknown }>().catch(() => ({ endpoint: undefined }));
+  if (typeof endpoint !== "string") return c.json({ error: "bad request" }, 400);
+  await unsubscribe(c.get("account")!.id, endpoint);
+  return c.json({ ok: true });
+});
 
 app.all("/api/*", (c) => c.json({ error: "not found" }, 404));
