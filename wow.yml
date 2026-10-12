@@ -3,7 +3,15 @@
 base: lua51
 name: wow
 globals:
+  AchievementShield_Desaturate:
+    any: true
+  AchievementShield_OnLoad:
+    any: true
+  AchievementShield_Saturate:
+    any: true
   AlertFrame:
+    any: true
+  AlertFrame_OnClick:
     any: true
   ButtonFrameTemplate_HideButtonBar:
     any: true

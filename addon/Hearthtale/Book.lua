@@ -326,7 +326,7 @@ local function showHall(fallen)
   end
   hallPage:stats({
     { tostring(#fallen), #fallen == 1 and "life closed" or "lives closed" },
-    { tostring(highest), "the highest level" },
+    { tostring(highest), "highest level" },
     { tostring(entries), entries == 1 and "entry written" or "entries written" },
   })
   hallPage:section("The fallen")

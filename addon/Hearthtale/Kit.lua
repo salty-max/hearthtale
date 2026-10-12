@@ -1,9 +1,10 @@
--- addon-kit 3af5139: a copy (kit:sync); edit the addon-kit repository's Kit.lua instead
+-- addon-kit 4f2b936: a copy (kit:sync); edit the addon-kit repository's Kit.lua instead
 -- The kit shared by Hearthtale, Lorekeeper's Codex, Explorer's Field Journal
 -- and Second Wind: the books' look and the pieces their windows are made of
 -- (the list on the left, the page on the right and every part of a page, a
 -- board of achievements, a strip of figures), the banners that tell of a deed
--- done, each character's settings (taken from another, or by a code) and the
+-- done (the game's achievement alert for an achievement earned), each
+-- character's settings (taken from another, or by a code) and the
 -- welcome page that offers them. Its source is the addon-kit repository
 -- (Kit.lua), beside the addons' own in ~/code/wow-addons; each addon keeps a
 -- copy, loaded into its own namespace (ns.kit: no global, no clash between
@@ -344,20 +345,36 @@ local function tile(parent)
   t.art:SetAllPoints()
   t.value = K.label(t.art, K.TITLE_FONT, 20, T.gold)
   t.value:SetPoint("TOP", 0, -7)
+  -- (the label held between the tile's sides, centred, on one line; its
+  -- height fixed, so the text sits where a label of its own size would)
   t.label = K.label(t.art, K.BODY_FONT, 11, T.soft)
-  t.label:SetPoint("BOTTOM", 0, 8)
+  t.label:SetPoint("BOTTOMLEFT", 4, 8)
+  t.label:SetPoint("BOTTOMRIGHT", -4, 8)
+  t.label:SetHeight(13)
+  t.label:SetJustifyH("CENTER")
+  t.label:SetJustifyV("BOTTOM")
+  t.label:SetWordWrap(false)
   return t
+end
+-- A text's width on one line, whatever its region's (0 where it can't be told).
+local function textWidth(fs)
+  local get = fs.GetUnboundedStringWidth or fs.GetStringWidth
+  local v = get and get(fs)
+  return type(v) == "number" and v or 0
 end
 local function setTile(t, strip, i, w, fig)
   t:SetSize(w, TILE_H)
   t:ClearAllPoints()
   t:SetPoint("TOPLEFT", strip, "TOPLEFT", (i - 1) * (w + TILE_GAP), 0)
   t.value:SetText(fig[1])
-  -- (a label no wider than its tile, on one line: a long one ends in "...",
-  -- never past the tile's edge)
-  t.label:SetWidth(w - 8)
-  t.label:SetWordWrap(false)
+  -- A label too wide for its tile is set a little smaller, never cut short.
+  local size = 11
+  t.label:SetFont(K.BODY_FONT, size, "")
   t.label:SetText(fig[2])
+  while size > 8 and textWidth(t.label) > w - 8 do
+    size = size - 1
+    t.label:SetFont(K.BODY_FONT, size, "")
+  end
   t:Show()
 end
 function K.figures(parent)
@@ -1216,6 +1233,97 @@ function K.banners(o)
     arrange()
   end
   return B
+end
+
+-- ── the game's achievement alert ─────────────────────────────────────────────
+-- A book's own achievement (a milestone) earned: the game's achievement alert
+-- itself (AchievementAlertFrameTemplate, queued among the game's alerts: two
+-- at a time, six waiting), the book's picture, a short line ("Field Journal
+-- milestone"), its name, no points. A click opens the book there, a
+-- right-click dismisses it. Where the client has no such alert, or it fails
+-- to set up (said once, through o.say), the book's own banner (K.banners)
+-- shows it instead.
+--   A = K.achievements({ banners = B, art = a fallback picture, say = fn })
+--   A:show({ picture, kicker, title, tip, click }) (as B:show's)
+local ACHIEVEMENT = "AchievementAlertFrameTemplate"
+
+-- The achievement alert's points shield runs AchievementShield_OnLoad, from
+-- the game's achievement window, loaded on demand: Classic Era has no such
+-- window, and Forever's doesn't define it, so every achievement alert would
+-- warn. Where the game hasn't defined it, a stand-in does what it does (the
+-- shield's two methods) until the game's own replaces it. (The kit's one
+-- global, the game's own name, only where the game left it undefined.)
+if not AchievementShield_OnLoad then
+  -- selene: allow(unused_variable)
+  function AchievementShield_OnLoad(self)
+    self.Desaturate = AchievementShield_Desaturate or function() end
+    self.Saturate = AchievementShield_Saturate or function() end
+  end
+end
+
+function K.achievements(o)
+  local A = {}
+  local system -- nil: not made yet; false: the client has none
+  local failed = false
+  local function onClick(self, button, down)
+    if AlertFrame_OnClick and AlertFrame_OnClick(self, button, down) then return end -- right-click: dismissed
+    if self.kitClick then self.kitClick() end
+  end
+  local function setUp(frame, b)
+    local icon = frame.Icon.Texture
+    icon:SetVertexColor(1, 1, 1)
+    if type(b.picture) == "function" then
+      b.picture({ tex = icon })
+    else
+      icon:SetTexture(b.picture or o.art)
+      icon:SetTexCoord(0, 1, 0, 1)
+    end
+    frame.Unlocked:SetText(b.kicker or "")
+    frame.Name:SetText(b.title or "")
+    if frame.Shield then frame.Shield:Hide() end -- no points
+    frame.kitClick = b.click
+    frame:SetScript("OnClick", onClick)
+  end
+  -- (an error setting it up, said once: the book's banner instead, this time
+  -- and the next)
+  local function safely(frame, b)
+    local ok, err = pcall(setUp, frame, b)
+    if ok then return end
+    if not failed then
+      failed = true
+      if o.say then
+        o.say(
+          ("the game's achievement alert could not be set up (%s): the book shows its own banner."):format(
+            tostring(err)
+          )
+        )
+      end
+    end
+    o.banners:show(b)
+    return false
+  end
+  function A:system()
+    if system == nil then
+      system = false
+      if
+        not failed
+        and AlertFrame
+        and AlertFrame.AddQueuedAlertFrameSubSystem
+        and C_XMLUtil
+        and C_XMLUtil.GetTemplateInfo
+        and C_XMLUtil.GetTemplateInfo(ACHIEVEMENT)
+      then
+        system = AlertFrame:AddQueuedAlertFrameSubSystem(ACHIEVEMENT, safely, 2, 6) or false
+      end
+    end
+    return system
+  end
+  function A:show(b)
+    local s = not failed and self:system()
+    if s then return s:AddAlert(b) end
+    return o.banners:show(b)
+  end
+  return A
 end
 
 -- ── choosing ─────────────────────────────────────────────────────────────────
