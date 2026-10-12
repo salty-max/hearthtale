@@ -29,6 +29,8 @@ globals:
     any: true
   C_Spell:
     any: true
+  C_Texture:
+    any: true
   C_Timer:
     any: true
   C_UnitAuras:
