@@ -78,7 +78,7 @@ Other commands: `/ht title [N] TEXT` names entry N (the last one without N), `/h
 The same look, each in its own colours, and each stands alone:
 
 - **[Lorekeeper's Codex](https://www.curseforge.com/wow/addons/lorekeepers-codex)** ([Wago](https://addons.wago.io/addons/j6jAL0NR)). The lore of Azeroth, written for you as you explore: each zone, figure of legend, people and quest you meet adds a page to your codex.
-- **[Explorer's Field Journal](https://www.curseforge.com/wow/addons/explorers-field-journal)** ([Wago](https://addons.wago.io/addons/ZKbq5y61)). A bestiary, an atlas and a record of your fish and herbs, filled in as you travel, with an Explorers' League naturalist's notes.
+- **[Explorer's Field Journal](https://www.curseforge.com/wow/addons/explorers-field-journal)** ([Wago](https://addons.wago.io/addons/ZKbq5y61)). Riddles that lead you to the world's overlooked corners, rare quarries to hunt, and a bestiary, an atlas and your fish and herbs, filled in as you travel.
 
 ## Source
 
