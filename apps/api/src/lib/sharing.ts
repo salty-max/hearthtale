@@ -7,8 +7,9 @@ import { appOrigin } from "@/lib/login";
 
 /**
  * Sharing: a link reads the whole book or one part of it, nothing else of the
- * account's; the owner makes and revokes them. A fallen book can be shown in
- * the public Hall of the Fallen, by its owner's choice.
+ * account's, nor the player's own notes in its margins; the owner makes and
+ * revokes them. A fallen book can be shown in the public Hall of the Fallen,
+ * by its owner's choice, its notes kept out alike.
  */
 
 export function publicCharacter(row: CharacterRow): PublicCharacter {
@@ -22,6 +23,11 @@ export function publicCharacter(row: CharacterRow): PublicCharacter {
     hardcore: row.hardcore,
     fallen: row.fallen,
   };
+}
+
+/** A book as a visitor reads it: the player's own notes in its margins stay theirs. */
+export function withoutNotes(book: Book): Book {
+  return { ...book, chapters: book.chapters.map((c) => ({ ...c, note: undefined })) };
 }
 
 /** The book cut to one part ("prologue", a chapter's number, "epitaph"), or whole; null if there's no such part. */
@@ -95,7 +101,7 @@ export async function sharedBook(token: string): Promise<SharedBook | null> {
     .innerJoin(characters, eq(characters.id, shares.characterId))
     .where(eq(shares.token, token));
   if (!found) return null;
-  const book = cutBook(found.c.book, found.s.part ?? undefined);
+  const book = cutBook(withoutNotes(found.c.book), found.s.part ?? undefined);
   return book ? { character: publicCharacter(found.c), book, part: found.s.part ?? undefined } : null;
 }
 
@@ -128,5 +134,5 @@ export async function hallBook(id: number): Promise<SharedBook | null> {
     .select()
     .from(characters)
     .where(and(eq(characters.id, id), eq(characters.inHall, true), eq(characters.fallen, true)));
-  return row ? { character: publicCharacter(row), book: row.book } : null;
+  return row ? { character: publicCharacter(row), book: withoutNotes(row.book) } : null;
 }

@@ -474,7 +474,8 @@ Plan and steps: PLAN.md, "The site".
 - Sharing (`lib/sharing.ts`, `lib/og.ts`): an owner's share links (`shares`:
   a token, the whole book or one part, deleted to revoke) read on `/s/:token`
   without an account, cut to what they cover (`cutBook`) with nothing private
-  of the character (`PublicCharacter`); a fallen book its owner shows in the
+  of the character (`PublicCharacter`) nor the player's notes (`withoutNotes`,
+  the Hall's books too); a fallen book its owner shows in the
   Hall (`characters.in_hall`) reads on `/hall` and `/hall/:id`. Link-preview
   crawlers on those pages get an OpenGraph card from the function
   (scripts/vercel-build.sh routes them by user agent; `/api/og/…` by hand).

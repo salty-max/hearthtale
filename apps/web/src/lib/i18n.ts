@@ -244,7 +244,7 @@ const en = {
   raceClass: (race: string, cls: string) => `${race} ${cls}`,
   share: {
     title: "Share",
-    why: "Anyone with the link reads what it covers, and nothing else of yours. You can revoke it at any time.",
+    why: "Anyone with the link reads what it covers, and nothing else of yours: your notes in the margins stay yours. You can revoke it at any time.",
     thisPart: (part: string) => `Share “${part}”`,
     wholeBook: "The whole book",
     copy: "Copy the link",
@@ -254,7 +254,7 @@ const en = {
     revoke: "Revoke",
     revokeHint: "A revoked link stops working at once.",
     hall: "Show this book in the Hall of the Fallen",
-    hallWhy: "The public Hall, on hearthtale.app: anyone can read this fallen life's book there. You can take it back out.",
+    hallWhy: "The public Hall, on hearthtale.app: anyone can read this fallen life's book there, without your notes. You can take it back out.",
     gone: "This link doesn't lead to a book any more: it was revoked, or the book is gone.",
     visitor: (name: string) => `${name}'s journal, written by Hearthtale as they played World of Warcraft.`,
     keepYours: "Keep your own",
@@ -311,7 +311,7 @@ const en = {
       },
       {
         title: "Who reads your books",
-        text: "You alone, unless you share a link (anyone with it reads what it covers) or show a fallen book in the Hall (anyone can read it there). Revoke a link, or take a book out of the Hall, at any time.",
+        text: "You alone, unless you share a link (anyone with it reads what it covers) or show a fallen book in the Hall (anyone can read it there); your notes in the margins stay yours either way. Revoke a link, or take a book out of the Hall, at any time.",
       },
       {
         title: "Cookies",

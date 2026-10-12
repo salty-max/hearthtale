@@ -1,7 +1,7 @@
 import type { Book, SharedBook } from "@hearthtale/shared";
 import { describe, expect, test } from "bun:test";
 import { ogPage, ogText, ogTitle } from "@/lib/og";
-import { cutBook } from "@/lib/sharing";
+import { cutBook, withoutNotes } from "@/lib/sharing";
 
 const book: Book = {
   client: "classic",
@@ -27,6 +27,15 @@ describe("sharing", () => {
     expect(cutBook(book, "3")).toBeNull();
     expect(cutBook(book, "x")).toBeNull();
     expect(cutBook({ ...book, epitaph: undefined }, "epitaph")).toBeNull();
+  });
+  test("a visitor never reads the player's notes", () => {
+    const noted: Book = { ...book, chapters: book.chapters.map((c) => ({ ...c, note: "Buy arrows before Kharanos." })) };
+    const seen = withoutNotes(noted);
+    expect(seen.chapters.map((c) => c.note)).toEqual([undefined, undefined]);
+    expect(JSON.stringify(seen)).not.toContain("arrows");
+    expect(JSON.stringify(cutBook(seen, "2"))).not.toContain("arrows");
+    expect(seen.chapters.map((c) => c.text)).toEqual(book.chapters.map((c) => c.text));
+    expect(noted.chapters[0].note).toBe("Buy arrows before Kharanos.");
   });
   test("the preview card: who, which part, the opening lines", () => {
     const shared: SharedBook = { character: who, book: cutBook(book, "2")!, part: "2" };
