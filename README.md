@@ -58,8 +58,8 @@ The welcome page appears once per character. Open it again with
 `/ht welcome`. Settings are under **Options > AddOns > Hearthtale**, through
 `/ht settings` or by right-clicking the minimap button.
 
-Choose chat announcements, the alert when a book closes and the minimap
-button's visibility and position. You can mark a character as Hardcore when
+Choose the alert when a book closes and the minimap button's visibility and
+position (chat lines always show). You can mark a character as Hardcore when
 the game cannot identify it. Settings are saved per character and can be
 transferred with `/ht export` and `/ht import CODE`. Use `/ht minimap` to
 show or hide the button.

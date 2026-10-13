@@ -664,18 +664,16 @@ ns.onHall = function()
   if book and book:IsShown() then ns.refresh() end
 end
 
--- A chapter closes: a line in chat with a link to it (a setting).
+-- A chapter closes: a line in chat with a link to it.
 function ns.link(target, text) return ("|cffc9a227|Hhearthtale:%s|h[%s]|h|r"):format(target, text) end
 ns.onChapter = function(number)
-  if not ns.option("chat") then return end
   print(ns.PREFIX .. ("entry %d is written. %s"):format(number, ns.link("chapter:" .. number, "Read it")))
 end
 
 -- At a login or a /reload, a line in chat: the entry this login began
 -- (after a rest closed the last one), the one going on (a short break, a
 -- night in the wild, a /reload), or a fallen life's closed book; and how to
--- open the journal, the only reminder of it (as the Codex's, whatever the
--- chat setting).
+-- open the journal, the only reminder of it (as the Codex's).
 ns.onResume = function(number, started)
   local open = ns.option("minimapHidden") and "Type /ht" or "Type /ht or click the button by the minimap"
   if not number then

@@ -107,7 +107,7 @@ its decisions: PLAN.md (the full chapter prose was dropped on 10 October
   /reload, a line in chat (`ns.onResume`, Book.lua): "starting entry N" when
   the login began one, "resuming entry N" otherwise, "this life's book is
   closed" for a fallen one (said by Core.lua: a closed book hears nothing),
-  with how to open the journal, whatever the chat setting, as the Codex's; indoors
+  with how to open the journal, as the Codex's; indoors
   without an inn, a night `inside`; a stop by a fire, one of Forever's camps
   or not, and the party at it), `Quests.lua`, `Combat.lua` (the
   creatures met, kills, close calls, death and the way back. Kills: the
@@ -170,7 +170,8 @@ its decisions: PLAN.md (the full chapter prose was dropped on 10 October
   account-wide Hall, a chat line, the kit's banner among the game's alerts), `Settings.lua` (each
   character's settings, its profile "Name - Realm" in HearthtaleSettings, the
   installation's: copied from another character of this game, or from a code
-  `HT1:c1:t1:m1:a200` made by `/ht export` and taken by `/ht import CODE`; a
+  `HT1:t1:h0:a200` made by `/ht export` (no chat setting since 0.9: an older
+  code's `c` is left out) and taken by `/ht import CODE`; a
   character who kept a journal before 0.6.1 starts from the account's old
   values; the Options page, its "Copy settings from"; `ns.setHardcore` where
   the game can't tell), `Welcome.lua` (the welcome page, once per character a

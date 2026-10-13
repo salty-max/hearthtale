@@ -73,7 +73,7 @@ Forever restricts what addons can read about kills. In its dungeons, Hearthtale 
 
 The welcome page appears once for each character. Open it again with `/ht welcome`, or find the settings under **Options > AddOns > Hearthtale**, through `/ht settings` or by right-clicking the minimap button.
 
-You can change chat announcements, the alert when a book closes and the minimap button. If the game cannot identify a Hardcore character, you can mark it yourself in the settings.
+You can change the alert when a book closes and the minimap button. Chat lines always show. If the game cannot identify a Hardcore character, you can mark it yourself in the settings.
 
 Settings are saved per character. Copy them from another character of the same game on the welcome or settings page, or transfer them between games and accounts with `/ht export` and `/ht import CODE`.
 

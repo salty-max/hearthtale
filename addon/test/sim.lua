@@ -69,10 +69,10 @@ end
 check(
   panel.registered
     and panel.name == "Hearthtale"
-    and panel.settings.HEARTHTALE_CHAT
+    and not panel.settings.HEARTHTALE_CHAT
     and panel.settings.HEARTHTALE_TOAST
     and panel.settings.HEARTHTALE_MINIMAPHIDDEN.get() == true,
-  "the settings page: chat lines, the alert, the minimap button (shown)"
+  "the settings page: the banner, the minimap button (shown); no switch for the chat lines, always shown"
 )
 local hcSetting = panel.settings.HEARTHTALE_HARDCORE
 if FOREVER then
@@ -91,20 +91,20 @@ end
 -- settings (and this character's Hardcore where the game can't tell).
 local welcome, choices = ns.welcome.frame, ns.welcome.rows
 check(
-  welcome and welcome:IsShown() and #choices == (FOREVER and 4 or 3),
+  welcome and welcome:IsShown() and #choices == (FOREVER and 3 or 2),
   "the first login: the welcome page and its choices"
 )
 check(choices[1].box:GetChecked() and choices[2].box:GetChecked(), "… which show the settings as they are")
-choices[1].scripts.OnClick(choices[1])
-check(ns.option("chat") == false and not choices[1].box:GetChecked(), "… a click on a choice's words changes it")
-choices[1].scripts.OnClick(choices[1])
-check(ns.option("chat") == true, "… and back")
+choices[2].scripts.OnClick(choices[2])
+check(ns.option("toast") == false and not choices[2].box:GetChecked(), "… a click on a choice's words changes it")
+choices[2].scripts.OnClick(choices[2])
+check(ns.option("toast") == true, "… and back")
 if FOREVER then
   ns.showWelcome() -- (shown again: as the settings are now)
-  check(choices[4].box:GetChecked() and J.hardcore, "… Forever: this character's Hardcore, as declared")
-  choices[4].scripts.OnClick(choices[4])
+  check(choices[3].box:GetChecked() and J.hardcore, "… Forever: this character's Hardcore, as declared")
+  choices[3].scripts.OnClick(choices[3])
   check(not J.hardcore and not J.hardcoreChosen, "… which the welcome changes too")
-  choices[4].scripts.OnClick(choices[4])
+  choices[3].scripts.OnClick(choices[3])
 end
 welcome:Hide()
 fire("PLAYER_ENTERING_WORLD", true, false)
@@ -120,7 +120,7 @@ check(
   ns.profileKey() == "Sealinedion - Nightslayer" and profiles[ns.profileKey()].welcomed,
   "settings: this character's own profile"
 )
-profiles["Brannok - Nightslayer"] = { chat = false, toast = false, minimapHidden = true, minimapAngle = 90 }
+profiles["Brannok - Nightslayer"] = { toast = false, minimapHidden = true, minimapAngle = 90 }
 SlashCmdList.HEARTHTALE("welcome")
 local picker = ns.welcome.picker
 local select = picker.select
@@ -141,25 +141,29 @@ check(
 )
 picker.copy.scripts.OnClick(picker.copy)
 check(
-  ns.option("chat") == false
-    and ns.option("toast") == false
+  ns.option("toast") == false
     and ns.option("minimapHidden") == true
     and ns.option("minimapAngle") == 90
     and not choices[1].box:GetChecked()
+    and not choices[2].box:GetChecked()
     and ns.option("welcomed"),
   "… its choices copied (never whether it saw the welcome), the boxes with them"
 )
 local code = ns.exportCode()
-check(code == "HT1:c0:t0:h1:a90", "… a code for them: " .. code)
-check(ns.importCode("HT1:c1:t1:h0:a200") and ns.option("chat") and ns.option("toast"), "… a code taken")
+check(code == "HT1:t0:h1:a90", "… a code for them: " .. code)
+check(ns.importCode("HT1:t1:h0:a200") and ns.option("toast"), "… a code taken")
 check(
-  not ns.importCode("hello") and not ns.importCode("HT1:x9") and ns.option("chat"),
+  not ns.importCode("hello") and not ns.importCode("HT1:x9") and ns.option("toast"),
   "… a wrong code refused, nothing changed"
 )
-check(ns.importCode("HT1:c0:z7") and ns.option("chat") == false, "… a later version's part left out")
+check(ns.importCode("HT1:t0:z7") and ns.option("toast") == false, "… a later version's part left out")
+check(
+  ns.importCode("HT1:c0:t1:h0:a200") and ns.option("toast") and ns.option("minimapAngle") == 200,
+  "… and an older one's (the chat lines' c, a switch no more)"
+)
 SlashCmdList.HEARTHTALE("import " .. code)
 check(ns.option("minimapAngle") == 90, "… /ht import CODE")
-ns.importCode("HT1:c1:t1:h0:a200")
+ns.importCode("HT1:t1:h0:a200")
 local copyFrom = panel.settings.HEARTHTALE_COPYFROM
 local offered = copyFrom and copyFrom.options()
 check(
@@ -167,22 +171,22 @@ check(
   "… the Options page offers the other characters too"
 )
 copyFrom.set("Brannok - Nightslayer")
-check(ns.option("chat") == false, "… and copies one")
-ns.importCode("HT1:c1:t1:h0:a200")
+check(ns.option("toast") == false, "… and copies one")
+ns.importCode("HT1:t1:h0:a200")
 welcome:Hide()
 -- Another character's first login: its own profile and welcome; the account's
 -- settings of before (0.6.0) for one who kept a journal, the defaults for one
 -- who didn't.
-HearthtaleSettings.chat = false
+HearthtaleSettings.toast = false
 state.name = "Newcomer"
 ns.loadProfile({ chapters = {} })
 fire("PLAYER_ENTERING_WORLD", true, false)
-check(welcome:IsShown() and ns.option("chat") == true, "… a new character: the defaults, and its own welcome")
+check(welcome:IsShown() and ns.option("toast") == true, "… a new character: the defaults, and its own welcome")
 welcome:Hide()
 state.name = "Oldtimer"
 ns.loadProfile({ chapters = { {} } })
-check(ns.option("chat") == false and not ns.option("welcomed"), "… one with a journal from before: its old settings")
-HearthtaleSettings.chat, profiles.Newcomer, profiles["Newcomer - Nightslayer"], profiles["Oldtimer - Nightslayer"] =
+check(ns.option("toast") == false and not ns.option("welcomed"), "… one with a journal from before: its old settings")
+HearthtaleSettings.toast, profiles.Newcomer, profiles["Newcomer - Nightslayer"], profiles["Oldtimer - Nightslayer"] =
   nil, nil, nil, nil
 profiles["Brannok - Nightslayer"] = nil
 state.name = nil
@@ -836,20 +840,18 @@ check(
   "… listed with where it closed and its levels"
 )
 SlashCmdList.HEARTHTALE("")
-panel.settings.HEARTHTALE_CHAT.set(false)
+ns.setOption("toast", false)
 local lines = #printed
 ns.onChapter(1)
-check(#printed == lines, "chat lines can be turned off")
-ns.onResume(2, false)
-check(#printed == lines + 1, "… but for the login's, the only reminder of how to open the journal")
+check(#printed == lines + 1, "the chat lines stay, whatever the banner's setting")
+ns.setOption("toast", true)
 ns.setOption("minimapHidden", true)
 ns.onResume(2, false)
 check(
   printed[#printed] == ns.PREFIX .. "resuming entry 2. Type /ht to read the journal.",
-  "… which leaves out the minimap's button when it's hidden"
+  "… the login's leaves out the minimap's button when it's hidden"
 )
 ns.setOption("minimapHidden", false)
-panel.settings.HEARTHTALE_CHAT.set(true)
 
 -- (as if the first entry had been saved by an older writer: the Hall keeps its words too)
 J.book.chapters[1].diary = "Words kept from an older writer."

@@ -7,8 +7,10 @@
 -- own: "This character is Hardcore", offered only where the game can't tell
 -- (no C_GameRules), kept in its journal.
 --
---   HearthtaleSettings.profiles["Name - Realm"] = { chat, toast,
---     minimapHidden, minimapAngle, welcomed }
+--   HearthtaleSettings.profiles["Name - Realm"] = { toast, minimapHidden,
+--     minimapAngle, welcomed }
+--   (no setting for the chat lines since 0.9.0: always shown; a profile's
+--   old chat value is left unread)
 --   (the account-wide values of 0.6.0, at the top of HearthtaleSettings: the
 --   first profile of a character who kept a journal before takes them)
 local _, ns = ...
@@ -17,12 +19,12 @@ local K = ns.kit
 -- (minimapAngle: the button's place around the minimap, in degrees; 200 is
 -- to the left, clear of the game's buttons and the siblings')
 -- (welcomed: the welcome page was seen, Welcome.lua: never copied)
-local DEFAULTS = { chat = true, toast = true, minimapHidden = false, minimapAngle = 200, welcomed = false }
-local SHARED = { "chat", "toast", "minimapHidden", "minimapAngle" } -- (what a copy carries)
+local DEFAULTS = { toast = true, minimapHidden = false, minimapAngle = 200, welcomed = false }
+local SHARED = { "toast", "minimapHidden", "minimapAngle" } -- (what a copy carries)
 
--- The profiles (Kit.lua): a code "HT1:c1:t1:h0:a200" (chat, toast, the
--- minimap button hidden, its angle; 0.7.0's "m", the button shown, is left
--- out of a code now).
+-- The profiles (Kit.lua): a code "HT1:t1:h0:a200" (the banner, the minimap
+-- button hidden, its angle; 0.7.0's "m", the button shown, and 0.8's "c",
+-- the chat lines, are left out of a code now, and of an older one taken).
 local P = K.profiles({
   saved = function()
     if type(HearthtaleSettings) ~= "table" then HearthtaleSettings = {} end
@@ -30,7 +32,7 @@ local P = K.profiles({
   end,
   defaults = DEFAULTS,
   shared = SHARED,
-  letters = { chat = "c", toast = "t", minimapHidden = "h", minimapAngle = "a" },
+  letters = { toast = "t", minimapHidden = "h", minimapAngle = "a" },
   tag = "HT1",
   changed = function(k)
     if (k == "minimapHidden" or k == "minimapAngle") and ns.updateMinimapButton then ns.updateMinimapButton() end
@@ -94,11 +96,6 @@ function ns.createSettingsPanel()
     )
     Settings.CreateCheckbox(category, setting, tooltip)
   end
-  checkbox(
-    "chat",
-    "A line in chat for each entry",
-    "When an entry is written (you rested at an inn, in a city or by a campfire), a line in chat with a link to it."
-  )
   checkbox(
     "toast",
     "Alert when a book closes",

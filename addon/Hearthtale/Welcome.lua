@@ -25,12 +25,6 @@ local W = K.welcome({
   choices = function()
     local choices = {
       {
-        text = "A line in chat for each entry",
-        hint = "When you rest and an entry is written, with a link that opens it.",
-        get = function() return ns.option("chat") end,
-        set = function(v) ns.setOption("chat", v) end,
-      },
-      {
         text = "The book by the minimap",
         hint = "Click it to open the journal; drag it around the minimap.",
         get = function() return not ns.option("minimapHidden") end,
