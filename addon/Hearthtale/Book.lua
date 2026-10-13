@@ -1,5 +1,5 @@
 -- The journal as a book, in a standard game window, as its siblings
--- (Lorekeeper's Codex, Explorer's Field Journal): the character's portrait in
+-- (Lorekeeper's Codex, Yonder): the character's portrait in
 -- the corner, who they are beside it. Two tabs. The Journal: on the left, the
 -- prologue (a character met mid-life) and the chapters (one from rest to rest),
 -- where each closed and the levels it covers under it, a skull for a close

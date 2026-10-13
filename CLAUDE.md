@@ -6,7 +6,7 @@ at an inn, in a city, by a campfire), read as the diary entry the character
 writes at the rest that ends it ("Entry 3" to a reader: in the window, the
 chat line, on the site; the data keeps `chapters`); on Hardcore, an epitaph
 and the Hall of the Fallen.
-Sibling of Lorekeeper's Codex and Explorer's Field Journal (same games, look
+Sibling of Lorekeeper's Codex and Yonder (same games, look
 and tooling), but standalone: it reads none of their records. The plan and
 its decisions: PLAN.md (the full chapter prose was dropped on 10 October
 2026; its writer is on the branch `chapters-archive`).
@@ -148,7 +148,7 @@ its decisions: PLAN.md (the full chapter prose was dropped on 10 October
   so a newer writer writes only the entries to come; `/ht rewrite`, after a
   dialog, lets them go, the Hall's copy too; a life joining the Hall keeps
   its saved words),
-  `Kit.lua` (a copy of the kit shared with the Codex, the Field Journal and
+  `Kit.lua` (a copy of the kit shared with the Codex, Yonder and
   Second Wind, ~/code/wow-addons/addon-kit: the look, the page and its parts,
   the banners; never edit the copy; `bun run kit:sync` after changing
   the kit, `bun run kit:check` to verify), `Book.lua` (Hearthtale's ember
