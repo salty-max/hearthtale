@@ -37,7 +37,7 @@ Hearthtale uses about 1,900 written lines and phrases, around 240 place descript
 
 Each race has its own way of looking at things. A dwarf notices stonework, a troll wonders what's edible, and a Forsaken takes a drier view. Hardcore entries grow more serious as the character gets further.
 
-Titles come from the game: a pet's name, a dungeon or a quest such as "The Stolen Journal" or "Escape Through Stealth". The current entry develops as you play. Finished entries stop changing as you play. Updates to the addon's writing can still improve older entries. At logout, Hearthtale saves a readable copy for the website.
+Titles come from the game: a pet's name, a dungeon or a quest such as "The Stolen Journal" or "Escape Through Stealth". The current entry develops as you play. A finished entry keeps its words, even after an update improves the writing: it stays as you first read it. To have the whole journal written again with the latest writing, type `/ht rewrite`. At logout, Hearthtale saves a readable copy for the website.
 
 ## The Hall of the Fallen
 
@@ -81,6 +81,7 @@ Settings are saved per character. Copy them from another character of the same g
 - `/ht note [N] TEXT` adds a note. Leave out the text to remove it.
 - `/ht hall` opens the Hall of the Fallen.
 - `/ht link CODE` links the character to your website library.
+- `/ht rewrite` writes the whole journal again with the current version's writing, after asking. Your titles and notes stay.
 - `/ht minimap` shows or hides the minimap button.
 
 ## Other addons

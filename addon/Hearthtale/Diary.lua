@@ -1816,7 +1816,8 @@ end
 
 -- The book of a character, as read in the game and on the site, written
 -- from its records each time it is read (never stored but in the saved
--- file, Save.lua): { prologue (a character met mid-life), chapters = { {
+-- file, Save.lua; a closed entry, the prologue and the epitaph keep the words
+-- saved there: savedEntry): { prologue (a character met mid-life), chapters = { {
 -- number, text (its diary entry), title, place, from, to (levels), open,
 -- rare, close (the book's marks), chapter (its record); the player's own:
 -- note, a title given it (writtenTitle: the writer's) } }, epitaph (a
@@ -1856,6 +1857,23 @@ local function stillKept(memo, c)
   end
   return true
 end
+
+-- A closed entry keeps the words it was saved with (c.book, the saved file's,
+-- Save.lua): a newer writer writes the entries to come, never the ones a
+-- player has read; /ht rewrite asks for the whole journal anew (Core.lua). The
+-- saved one counts when it tells the same stretch: begun and ended at the same
+-- moments (a logout under half an hour reopens the last one, which then goes
+-- on). The writer still reads every chapter, so its memory of what it said
+-- runs on.
+local function savedEntry(c, i, ch)
+  local was = c.book and c.book.chapters and c.book.chapters[i]
+  if not (was and was.diary and was.number == i and ch.ended and was.ended) then return nil end
+  if was.ended ~= ch.ended.at or was.began ~= (ch.start and ch.start.at) then return nil end
+  return was
+end
+
+-- /ht rewrite: the entries kept in this session go too.
+function ns.forgetWritten(c) kept[c] = nil end
 
 function ns.writeBook(c)
   local memo = kept[c]
@@ -1909,7 +1927,10 @@ function ns.writeBook(c)
     local capital = CAPITAL[c.race or ""]
     if capital then d.lands[capital] = true end
     book = { chapters = {} }
-    if c.prologue then book.prologue = d.book:prologue(c.prologue) end
+    if c.prologue then
+      book.prologue = d.book:prologue(c.prologue)
+      if c.book and c.book.prologue then book.prologue = c.book.prologue end
+    end
     from = 1
   end
   -- (the trades: a skill of one at 300 is news, a weapon's is not)
@@ -1931,6 +1952,19 @@ function ns.writeBook(c)
     end
     if e and e.level then to = math.max(to, e.level) end
     local text, title = entry(d, i, ch)
+    local was = savedEntry(c, i, ch)
+    if was then
+      -- (a title the player had given it was saved in place of the writer's,
+      -- kept beside as writtenTitle; a book saved before writtenTitle was
+      -- keeps the writer's when its title isn't the player's)
+      local own = type((c.notes or {})[i]) == "table" and c.notes[i].title
+      text = was.diary
+      if was.writtenTitle then
+        title = was.writtenTitle
+      elseif not (own and was.title == own) then
+        title = was.title
+      end
+    end
     book.chapters[i] = {
       number = i,
       text = text,
@@ -1965,7 +1999,7 @@ function ns.writeBook(c)
       end
     end
   end
-  if c.hardcore and c.death then book.epitaph = d.book:epitaph(c) end
+  if c.hardcore and c.death then book.epitaph = (c.book and c.book.epitaph) or d.book:epitaph(c) end
   -- the player's own, laid over the written book (which never changes): a
   -- title given an entry (the writer's kept as writtenTitle), a note in its
   -- margin (c.notes[n] = { title, text }, Core.lua)

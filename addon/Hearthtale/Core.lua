@@ -158,7 +158,7 @@ local USAGE = "/ht opens the journal; /ht hall the Hall of the Fallen; /ht title
   .. "/ht note [N] TEXT writes in its margin (the last entry without N, no TEXT to remove it); /ht link CODE "
   .. "links this character to hearthtale.app; /ht settings; /ht minimap shows or hides the button; /ht welcome "
   .. "shows the welcome page again; /ht export gives this character's settings as a code, /ht import CODE takes "
-  .. "them."
+  .. "them; /ht rewrite writes the journal anew with this version (a closed entry keeps its words otherwise)."
 
 -- A code from hearthtale.app, kept in the saved file: the next upload (after a
 -- logout or a /reload) carries it, and the site adds this book to that account.
@@ -177,6 +177,36 @@ local function link(code)
     )
   end
 end
+
+-- /ht rewrite: the whole journal written anew by this version of the addon. A
+-- closed entry otherwise keeps the words it was first saved with (Diary.lua);
+-- the player's titles and notes stay. Its life in the Hall too, if fallen.
+local function rewrite()
+  if not char then return end
+  char.book = nil
+  ns.forgetWritten(char)
+  local life = char.guid and ns.fallenLife and ns.fallenLife(char.guid)
+  if life then
+    life.book = nil
+    ns.forgetWritten(life)
+  end
+  if ns.refresh then ns.refresh() end
+  print(
+    PREFIX
+      .. "the journal is written anew. hearthtale.app shows it after your next logout or /reload with "
+      .. "Ravenpost running."
+  )
+end
+StaticPopupDialogs.HEARTHTALE_REWRITE = {
+  text = "Write this journal anew with this version of Hearthtale? Its entries' words may change. "
+    .. "Your own titles and notes stay.",
+  button1 = YES,
+  button2 = NO,
+  OnAccept = rewrite,
+  timeout = 0,
+  whileDead = true,
+  hideOnEscape = true,
+}
 
 SLASH_HEARTHTALE1 = "/hearthtale"
 SLASH_HEARTHTALE2 = "/ht"
@@ -216,6 +246,8 @@ SlashCmdList.HEARTHTALE = function(raw)
     ns.openHall()
   elseif msg == "welcome" then
     ns.showWelcome()
+  elseif msg == "rewrite" then
+    StaticPopup_Show("HEARTHTALE_REWRITE")
   elseif msg == "export" then
     ns.showWelcome("export")
   elseif word == "import" and rest ~= "" then

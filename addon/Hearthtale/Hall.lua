@@ -32,7 +32,11 @@ function ns.fallenLife(guid) return hall()[guid] end
 -- The book joins the Hall: a copy of the records as they were at the end.
 local function enshrine(c)
   local life = ns.copy(c)
-  life.pending, life.book = nil, nil -- its book is written at the next logout, with the death
+  -- its book is written at the next logout, with the death, in the words its
+  -- closed entries were saved with (the copy of the saved book, no version:
+  -- written once more, Save.lua)
+  life.pending = nil
+  if life.book then life.book.version = nil end
   life.realm = GetRealmName and GetRealmName() or nil
   life.raceName, life.className = UnitRace("player"), UnitClass("player")
   hall()[c.guid] = life

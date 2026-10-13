@@ -6,9 +6,12 @@
 -- (the logout settled in advance: ns.settledView); a /reload is put right by
 -- the next logout.
 --   book = { version, client, at, level, prologue, epitaph,
---            chapters = { { number, diary, title, note, place, from, to, open,
---                           rare, close, began, ended } } }
--- (title: the player's own when given one; note: the player's, in its margin)
+--            chapters = { { number, diary, title, writtenTitle, note, place,
+--                           from, to, open, rare, close, began, ended } } }
+-- (title: the player's own when given one, writtenTitle then the writer's;
+-- note: the player's, in its margin)
+-- (a closed entry, the prologue and the epitaph keep the words saved here:
+-- the next book is written with them, Diary.lua; /ht rewrite lets them go)
 -- (diary: the chapter as its diary entry, Diary.lua; a book saved before
 -- the entries were has its chapter's prose in "text", which the site reads
 -- in its place)
@@ -36,6 +39,7 @@ local function written(c, level)
       number = ch.number,
       diary = ch.text,
       title = ch.title,
+      writtenTitle = ch.writtenTitle,
       note = ch.note,
       place = ch.place,
       from = ch.from,
@@ -60,7 +64,8 @@ function ns.writeDown(c)
   elseif geterrorhandler then
     geterrorhandler()(book)
   end
-  -- the fallen: written once per version of the addon (their records no longer change)
+  -- the fallen: written once per version of the addon (their records no longer
+  -- change, and their words are kept: only what a version adds around them)
   for _, life in ipairs(ns.fallen()) do
     if not (life.book and life.book.version == version) then
       life.book = written(life, life.death and life.death.level)

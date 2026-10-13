@@ -34,6 +34,10 @@ local state = {
 local loaded = {}
 local printed = {}
 function print(msg) table.insert(printed, msg) end
+-- The game's dialogs: the one shown is kept (popups); a test clicks its button.
+StaticPopupDialogs, YES, NO = {}, "Yes", "No"
+local popups = {}
+function StaticPopup_Show(which) table.insert(popups, which) end
 -- The game's error handler: an error reported is raised again, so a test
 -- fails on it.
 function geterrorhandler()
@@ -622,6 +626,7 @@ return {
   state = state,
   fire = fire,
   printed = printed,
+  popups = popups,
   panel = panel,
   toasted = toasted,
   linkHandlers = linkHandlers,

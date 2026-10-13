@@ -157,6 +157,8 @@ globals:
     any: true
   Minimap:
     any: true
+  NO:
+    any: true
   NumTaxiNodes:
     any: true
   PanelTemplates_SetNumTabs:
@@ -184,6 +186,10 @@ globals:
   Settings:
     any: true
   SlashCmdList:
+    any: true
+  StaticPopupDialogs:
+    any: true
+  StaticPopup_Show:
     any: true
   TRADE_SKILLS:
     any: true
@@ -250,6 +256,8 @@ globals:
   UnitSex:
     any: true
   UnitTokenFromGUID:
+    any: true
+  YES:
     any: true
   date:
     any: true

@@ -30,6 +30,10 @@ can also use `/ht title [N] TEXT` and `/ht note [N] TEXT`. Leave out N to
 change the latest entry. Your words are kept separately from the journal's
 text.
 
+A finished entry keeps its words, even after an update improves the
+writing. `/ht rewrite` writes the whole journal again with the current
+version, after asking; your titles and notes stay.
+
 ## Read on hearthtale.app
 
 Install Ravenpost, click **Link with Battle.net** on its Hearthtale card and

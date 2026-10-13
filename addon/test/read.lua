@@ -3,8 +3,14 @@
 -- (the game's data for the client the book was saved by: Forever or Classic)
 --   luajit addon/test/read.lua path/to/Hearthtale.lua record   each entry
 --     followed by what its chapter recorded, moment by moment
-local path = assert(arg[1], "usage: luajit addon/test/read.lua <saved Hearthtale.lua> [record]")
-local withRecord = arg[2] == "record"
+-- (the current writer's words for every entry; "saved" after the path reads
+-- what the game shows: a closed entry keeps the words it was saved with)
+local path = assert(arg[1], "usage: luajit addon/test/read.lua <saved Hearthtale.lua> [record] [saved]")
+local withRecord, asSaved = false, false
+for i = 2, #arg do
+  if arg[i] == "record" then withRecord = true end
+  if arg[i] == "saved" then asSaved = true end
+end
 assert(loadfile(path))()
 local c = assert(HearthtaleChar, "no HearthtaleChar in " .. path)
 local forever = (c.book and c.book.client) == "forever"
@@ -13,7 +19,10 @@ for _, f in ipairs({ forever and "Data_Forever.lua" or "Data_Classic.lua", "Name
   assert(loadfile("addon/Hearthtale/" .. f))("Hearthtale", ns)
 end
 dofile("addon/test/writer-files.lua")(ns)
+local saved = c.book
+if not asSaved then c.book = nil end
 local book = ns.writeBook(c)
+c.book = saved
 io.write("# ", c.name or "?", "'s journal\n\n")
 io.write(
   "*",

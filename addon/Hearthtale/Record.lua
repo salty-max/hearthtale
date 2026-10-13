@@ -411,6 +411,7 @@ end
 function ns.settledView(c)
   if not c.logout or c.closed then return c end
   local view = ns.copy(c, "book")
+  view.book = c.book -- (read, never changed: the words a closed entry keeps, Diary.lua)
   settle(view.logout, view, true)
   view.logout = nil
   return view

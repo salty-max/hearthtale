@@ -141,8 +141,13 @@ its decisions: PLAN.md (the full chapter prose was dropped on 10 October
   there; the writer test checks a book written in pieces is the book written
   at once),
   `Save.lua` (the book written into the saved file at each logout, each
-  chapter's entry in `diary`, its title (the player's when given one) and
-  the player's `note`, for the site: it never writes its own),
+  chapter's entry in `diary`, its title (the player's when given one, the
+  writer's then in `writtenTitle`) and the player's `note`, for the site: it
+  never writes its own; a closed entry, the prologue and the epitaph keep the
+  words saved there, `savedEntry` in Diary.lua: same begun and ended moments,
+  so a newer writer writes only the entries to come; `/ht rewrite`, after a
+  dialog, lets them go, the Hall's copy too; a life joining the Hall keeps
+  its saved words),
   `Kit.lua` (a copy of the kit shared with the Codex, the Field Journal and
   Second Wind, ~/code/wow-addons/addon-kit: the look, the page and its parts,
   the banners; never edit the copy; `bun run kit:sync` after changing
@@ -220,8 +225,9 @@ its decisions: PLAN.md (the full chapter prose was dropped on 10 October
   Its `moments` mode: flights, outdoor rests, setbacks, revival, dungeon
   endings and the final page for each voice.
 - `addon/test/read.lua`: a saved file's journal, written by the current
-  writer (`luajit addon/test/read.lua <saved Hearthtale.lua>`); `record`
-  after it shows each entry above its chapter's moments, one a line.
+  writer (`luajit addon/test/read.lua <saved Hearthtale.lua>`), every entry
+  anew; `saved` reads it as the game shows it (closed entries in their saved
+  words); `record` shows each entry above its chapter's moments, one a line.
 
 ## The journal
 
@@ -333,7 +339,9 @@ rather than one an earlier entry has. A title the player gives an entry
 shows in its place, and a note in its margin under it: both lie over the
 written book (`writtenTitle` keeps the writer's), which never changes.
 A book's frames never come back while a fresh one is left; a finished entry
-never changes, the open one is written again at each moment. A life met
+never changes, the open one is written again at each moment. Across versions
+too: a closed entry keeps the words it was saved with (a keepsake; the
+player's `/ht rewrite` writes the journal anew with the current writer). A life met
 mid-life opens with its prologue; a Hardcore death closes the book with the
 epitaph (`epitaph`, `remembrance`, `farewell`), in the third person, by the
 name.

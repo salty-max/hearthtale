@@ -735,6 +735,49 @@ check(
 local closed = ns.writeBook(J).chapters[1]
 check(not closed.open and closed.place == "Thunderbrew Distillery", "closed where I rested")
 
+-- A closed entry keeps the words it was saved with: a newer writer (here, the
+-- saved words made different by hand) never rewrites one a player has read.
+local saved1 = J.book.chapters[1]
+check(
+  saved1.began == ch(1).start.at and saved1.ended == ch(1).ended.at and saved1.diary == closed.text,
+  "the saved entry tells the same stretch as the record, settled at login: begun and ended alike"
+)
+local writersText, writersTitle = saved1.diary, saved1.title
+saved1.diary, saved1.title = "Words an older writer wrote.", "An Older Title"
+ns.forgetWritten(J)
+local kept1 = ns.writeBook(J)
+check(
+  kept1.chapters[1].text == "Words an older writer wrote." and kept1.chapters[1].title == "An Older Title",
+  "a closed entry keeps the words and title it was saved with"
+)
+check(kept1.chapters[2].open and kept1.chapters[2].text ~= "", "… the open one is the writer's")
+saved1.began = saved1.began - 60
+ns.forgetWritten(J)
+check(
+  ns.writeBook(J).chapters[1].text == writersText,
+  "a saved entry of another stretch is no keepsake: the writer writes it"
+)
+saved1.began = saved1.began + 60
+ns.forgetWritten(J)
+ns.setOwn(1, "title", "Brewery Nights")
+reload()
+check(
+  J.book.chapters[1].diary == "Words an older writer wrote."
+    and J.book.chapters[1].title == "Brewery Nights"
+    and J.book.chapters[1].writtenTitle == "An Older Title",
+  "… saved again with them at the next logout, the writer's title beside a title given"
+)
+ns.setOwn(1, "title", "")
+check(ns.writeBook(J).chapters[1].title == "An Older Title", "… which comes back when the title given goes")
+SlashCmdList.HEARTHTALE("rewrite")
+check(G.popups[#G.popups] == "HEARTHTALE_REWRITE" and J.book, "/ht rewrite asks first")
+StaticPopupDialogs.HEARTHTALE_REWRITE.OnAccept()
+local anew = ns.writeBook(J).chapters[1]
+check(
+  not J.book and anew.text == writersText and anew.title == writersTitle and printed[#printed]:find("anew", 1, true),
+  "… then writes the journal anew with this version"
+)
+
 -- Too little written: a rest doesn't close it.
 state.resting = true
 logout()
@@ -784,6 +827,10 @@ local lines = #printed
 ns.onChapter(1)
 check(#printed == lines, "chat lines can be turned off")
 panel.settings.HEARTHTALE_CHAT.set(true)
+
+-- (as if the first entry had been saved by an older writer: the Hall keeps its words too)
+J.book.chapters[1].diary = "Words kept from an older writer."
+ns.forgetWritten(J)
 
 -- Death.
 state.sub = "Kharanos"
@@ -850,6 +897,11 @@ check(
 local hallBook = fallenLife.book
 logout()
 check(fallenLife.book == hallBook, "… once per version of the addon")
+check(
+  fallenLife.book.chapters[1].diary == "Words kept from an older writer."
+    and J.book.chapters[1].diary == "Words kept from an older writer.",
+  "the Hall keeps the words its entries were saved with, as the book does"
+)
 login()
 local closedBook = ns.writeBook(J)
 check(
@@ -860,6 +912,12 @@ check(
   "its epitaph: who, where, at what level"
 )
 io.write("    " .. closedBook.epitaph .. "\n")
+local epitaph = J.book.epitaph
+J.book.epitaph = "An epitaph an older writer wrote."
+ns.forgetWritten(J)
+check(ns.writeBook(J).epitaph == "An epitaph an older writer wrote.", "an epitaph saved keeps its words")
+J.book.epitaph = epitaph
+ns.forgetWritten(J)
 
 -- The link opens the Hall at that life: its epitaph, then its chapters.
 linkHandlers.hearthtale("hearthtale:hall:" .. state.guid)
