@@ -59,7 +59,7 @@ Full setup instructions: [hearthtale.app/start](https://hearthtale.app/start).
 
 ## Opening the book
 
-Type `/hearthtale` or `/ht`, or click the minimap button. Pick an entry from the list to read it, with its location, levels and dates. A skull marks a close call and a star marks a rare. The second tab holds the Hall of the Fallen. New entries are linked in chat.
+Type `/hearthtale` or `/ht`, or click the minimap button. Pick an entry from the list to read it, with its location, levels and dates. A skull marks a close call and a star marks a rare. The second tab holds the Hall of the Fallen. New entries are linked in chat, and each login says whether you're resuming an entry or starting a new one.
 
 ## Compatibility
 

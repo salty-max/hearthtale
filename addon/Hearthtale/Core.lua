@@ -61,6 +61,11 @@ end
 frame:SetScript("OnEvent", function(_, event, ...)
   if event == "PLAYER_LOGIN" then ns.login() end
   if listeners[event] then heard(event, ...) end
+  -- A closed book hears nothing, but its login or /reload still says so (Book.lua)
+  if event == "PLAYER_ENTERING_WORLD" and char and char.closed and ns.onResume then
+    local initial, reloading = ...
+    if initial or reloading then ns.onResume(nil) end
+  end
   -- Last of all at logout, closed book or not: the book into the saved file.
   if event == "PLAYER_LOGOUT" and char and ns.writeDown then ns.writeDown(char) end
 end)

@@ -671,6 +671,22 @@ ns.onChapter = function(number)
   print(ns.PREFIX .. ("entry %d is written. %s"):format(number, ns.link("chapter:" .. number, "Read it")))
 end
 
+-- At a login or a /reload, a line in chat: the entry this login began
+-- (after a rest closed the last one), the one going on (a short break, a
+-- night in the wild, a /reload), or a fallen life's closed book; and how to
+-- open the journal, the only reminder of it (as the Codex's, whatever the
+-- chat setting).
+ns.onResume = function(number, started)
+  local open = ns.option("minimapHidden") and "Type /ht" or "Type /ht or click the button by the minimap"
+  if not number then
+    print(ns.PREFIX .. ("this life's book is closed. %s to read it."):format(open))
+  else
+    print(
+      ns.PREFIX .. ("%s entry %d. %s to read the journal."):format(started and "starting" or "resuming", number, open)
+    )
+  end
+end
+
 -- Links in chat (|Hhearthtale:chapter:<number>|h, |Hhearthtale:hall:<guid>|h): the
 -- game hands links of an unknown type to the handler registered for it.
 local function followLink(link)

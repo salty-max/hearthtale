@@ -16,6 +16,8 @@ Forever. One download covers both games.
 ## In game
 
 Type `/hearthtale` or `/ht`, or click the minimap button to open the journal.
+Each login says in chat whether you're resuming an entry or starting a new
+one.
 Choose an entry from the list to read it. The second tab holds the Hall of
 the Fallen, which you can also open with `/ht hall`.
 

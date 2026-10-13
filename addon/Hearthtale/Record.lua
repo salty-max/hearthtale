@@ -419,6 +419,7 @@ end
 
 ns.on("PLAYER_ENTERING_WORLD", function(initial, reloading)
   local c = char()
+  local before = #(c.chapters or {})
   if reloading then
     c.logout = nil -- a /reload, not a night's rest
   elseif initial and c.logout then
@@ -427,6 +428,10 @@ ns.on("PLAYER_ENTERING_WORLD", function(initial, reloading)
     settle(l, c)
   end
   if not c.closed then chapter() end
+  -- a line in chat at a login or a /reload (not at each loading screen): the
+  -- entry going on, or the one this login began (Book.lua; a closed book's:
+  -- Core.lua, as it hears nothing)
+  if (initial or reloading) and ns.onResume then ns.onResume(#c.chapters, #c.chapters > before) end
 end)
 
 -- ── where ────────────────────────────────────────────────────────────────────

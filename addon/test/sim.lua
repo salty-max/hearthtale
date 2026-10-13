@@ -691,8 +691,12 @@ check(
     and moments("night")[1]
     and moments("wake")[1]
     and moments("wake")[1].after == "night"
-    and #printed == before,
+    and #printed == before + 1,
   "a logout in the wild: a night outdoors, then the road again, the same chapter"
+)
+check(
+  printed[#printed]:find("resuming entry 1. Type /ht or click the button by the minimap", 1, true),
+  "… and a line in chat at the login: the entry goes on, how to open the journal"
 )
 local nights = #moments("night")
 -- A relog (away two minutes): no break, nothing told.
@@ -701,8 +705,16 @@ logout()
 G.wait(120)
 login()
 check(#ch().log == logBeforeRelog and #moments("night") == nights, "a relog of two minutes: no night, nothing told")
+check(printed[#printed]:find("resuming entry 1", 1, true), "… the entry resumed")
+local beforeReload = #printed
 reload()
 check(#moments("night") == nights and #J.chapters == 1, "a /reload is no night")
+check(
+  #printed == beforeReload + 1 and printed[#printed]:find("resuming entry 1", 1, true),
+  "… the entry resumed, said once"
+)
+fire("PLAYER_ENTERING_WORLD", false, false)
+check(#printed == beforeReload + 1, "… a loading screen says nothing")
 
 -- A rest at an inn closes the chapter.
 state.resting, state.sub = true, "Thunderbrew Distillery"
@@ -729,9 +741,11 @@ check(
   "a logout at an inn closes the chapter; the next begins"
 )
 check(
-  printed[#printed]:find("entry 1 is written", 1, true) and printed[#printed]:find("|Hhearthtale:chapter:1|h", 1, true),
+  printed[#printed - 1]:find("entry 1 is written", 1, true)
+    and printed[#printed - 1]:find("|Hhearthtale:chapter:1|h", 1, true),
   "a line in chat, with a link to it"
 )
+check(printed[#printed]:find("starting entry 2", 1, true), "… then the new entry the login began")
 local closed = ns.writeBook(J).chapters[1]
 check(not closed.open and closed.place == "Thunderbrew Distillery", "closed where I rested")
 
@@ -826,6 +840,15 @@ panel.settings.HEARTHTALE_CHAT.set(false)
 local lines = #printed
 ns.onChapter(1)
 check(#printed == lines, "chat lines can be turned off")
+ns.onResume(2, false)
+check(#printed == lines + 1, "… but for the login's, the only reminder of how to open the journal")
+ns.setOption("minimapHidden", true)
+ns.onResume(2, false)
+check(
+  printed[#printed] == ns.PREFIX .. "resuming entry 2. Type /ht to read the journal.",
+  "… which leaves out the minimap's button when it's hidden"
+)
+ns.setOption("minimapHidden", false)
 panel.settings.HEARTHTALE_CHAT.set(true)
 
 -- (as if the first entry had been saved by an older writer: the Hall keeps its words too)
@@ -882,6 +905,7 @@ state.sub = "Brewnall Village"
 fire("ZONE_CHANGED")
 login()
 check(#ch().log == logBefore and #J.chapters == 4, "a closed book records nothing more, even at the next login")
+check(printed[#printed]:find("this life's book is closed", 1, true), "… the login says the book is closed")
 logout()
 local fallenLife = HearthtaleHall.lives[state.guid]
 check(
