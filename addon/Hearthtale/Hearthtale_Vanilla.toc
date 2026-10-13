@@ -3,7 +3,7 @@
 ## Notes: A diary for your WoW character, written as you play, with an epitaph and a saved journal when a Hardcore life ends.
 ## Category: Roleplay
 ## Author: salty-max
-## Version: 0.8.0
+## Version: 0.9.0
 ## SavedVariablesPerCharacter: HearthtaleChar
 ## SavedVariables: HearthtaleSettings, HearthtaleHall
 ## IconTexture: Interface\AddOns\Hearthtale\Media\Logo
