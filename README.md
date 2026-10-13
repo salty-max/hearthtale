@@ -64,8 +64,8 @@ the game cannot identify it. Settings are saved per character and can be
 transferred with `/ht export` and `/ht import CODE`. Use `/ht minimap` to
 show or hide the button.
 
-Hearthtale shares its book style with Lorekeeper's Codex, Explorer's Field
-Journal and Second Wind. Each addon works independently.
+Hearthtale shares its book style with Lorekeeper's Codex, Yonder and Second
+Wind. Each addon works independently.
 
 The full store description is in [addon/CURSEFORGE.md](addon/CURSEFORGE.md).
 [PLAN.md](PLAN.md) records the design decisions, and [CLAUDE.md](CLAUDE.md)
