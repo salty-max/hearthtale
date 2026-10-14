@@ -208,6 +208,7 @@ local function newBook(c, diary)
   b.faction = (c.faction == "alliance" or c.faction == "horde") and c.faction or FACTION[race]
   b.sceneSeen = {} -- places already described in this book
   b.noted = {} -- the spells told by a line of their own (writing/lesson.md)
+  b.french = ns.frenchText and {} or nil -- [a sentence told]: its French (French.lua, the trial)
   b.base = { hc = c.hardcore or nil, ["race:" .. race] = true, ["class:" .. class] = true }
   -- (a class that fights with a blade in hand: only it "cuts down" a foe)
   b.base.melee = (class == "WARRIOR" or class == "ROGUE" or class == "PALADIN") or nil
@@ -442,7 +443,9 @@ function Book:say(kind, key, values, tags, prefer, raw)
   -- a place left out: no space before the punctuation, none doubled
   -- (and none left at the start: "{at}, my tenth level" with no place)
   text = text:gsub(" +([%.,;:!%?])", "%1"):gsub("  +", " "):gsub("^[ ,;:]+", "")
-  return raw and text or capitalise(text), { kind = kind, own = e.id:sub(1, 2) == "v:" }
+  text = raw and text or capitalise(text)
+  if self.french then self.french[text] = ns.frenchSay(e.s[1], values, self, raw) end
+  return text, { kind = kind, own = e.id:sub(1, 2) == "v:" }
 end
 
 -- The place slots of a moment: {at} ("in Coldridge Valley", "there" if it was
@@ -484,6 +487,7 @@ function Book:sceneryOf(name, night)
   if #fits == 0 then return nil end
   local i = fits[hash(self.seed .. "|scenery|" .. name) % #fits + 1]
   if ns.writerUsed then ns.writerUsed["scenery:" .. name .. "#" .. i] = true end
+  if self.french then self.french[p[i][1]] = ns.frenchScenery(p[i][1], self) end
   return p[i][1]
 end
 

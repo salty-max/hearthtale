@@ -13,7 +13,9 @@ local function chapters(G, only)
       ("## Entry %d (%s)\n\n%s\n\n"):format(
         ch.number,
         ch.from == ch.to and ("level " .. ch.from) or ("levels %d to %d"):format(ch.from, ch.to),
-        ch.text or "(nothing to tell)"
+        (os.getenv("FRENCH") and (ch.french or ("(not all in French yet) " .. (ch.text or ""))))
+          or ch.text
+          or "(nothing to tell)"
       )
     )
   end

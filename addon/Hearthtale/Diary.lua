@@ -644,7 +644,7 @@ local function entry(d, n, ch)
   -- (at: where in the stretch it happened, the entry told in that order)
   local function add(text, event, when)
     if text and text ~= "" then
-      out[#out + 1] = { text = text, at = when or LATE, seq = #out + 1 }
+      out[#out + 1] = { text = text, fr = b.french and b.french[text], at = when or LATE, seq = #out + 1 }
       if event then events = events + 1 end
       return true
     end
@@ -933,7 +933,7 @@ local function entry(d, n, ch)
         or {}
       local prefer = thread and (t.settled and { settled = true } or { thread = true }) or nil
       if prefer and who then prefer.who = true end
-      text = sayFresh("d-why", "why", { why = why, who = who }, t, nil, prefer)
+      text = sayFresh("d-why", "why", { why = why, who = who, _why = q.id }, t, nil, prefer)
     end
     -- (done in company: who was with me when it was done, in the deed's own
     -- sentence; one who had left by then is told with the company, if at all)
@@ -981,7 +981,7 @@ local function entry(d, n, ch)
       local said = sayFresh(
         "d-why-also",
         "also" .. k,
-        { why = ours(next.text, race), where = where2 },
+        { why = ours(next.text, race), where = where2, _why = next.id, _where = moved and next.zone or nil },
         { moved = moved or nil, last = k == #also or nil, night = dark or nil, thread = same or nil },
         nil,
         nil,
@@ -1104,7 +1104,11 @@ local function entry(d, n, ch)
       sayFresh(
         (worst.hp or 100) <= 5 and "close-deep" or "close-light",
         "close",
-        here({ foe = worst.foe and (f.rares[worst.foe] and worst.foe or article(worst.foe)) }, worst.sub or worst.zone),
+        here({
+          foe = worst.foe and (f.rares[worst.foe] and worst.foe or article(worst.foe)),
+          _foe = worst.foe,
+          _bare = worst.foe and (f.rares[worst.foe] or article(worst.foe) == worst.foe) or nil,
+        }, worst.sub or worst.zone),
         { night = worst.night or false, foe = worst.foe ~= nil },
         worst.zone
       ),
@@ -1788,14 +1792,24 @@ local function entry(d, n, ch)
     local place = o.where and o.where:gsub("^%a+ ", "")
     if place and k > 1 and out[k - 1].text:find(place, 1, true) then
       o.text = o.text:gsub(", " .. o.where:gsub("%p", "%%%0") .. ",", ",", 1)
+      o.fr = nil -- (the trial's French knows no such cut: the entry stays English)
     end
   end
   -- (a long entry in two paragraphs, at the middle: what happened, then the rest)
   local texts, split = {}, #out >= PARAGRAPH and math.ceil(#out / 2) or nil
   if split and out[split + 1] and out[split + 1].follows then split = split + 1 end
+  local frs = b.french and {} -- (the trial: French when every sentence is)
   for k, o in ipairs(out) do
     texts[#texts + 1] = o.text
-    if k == split then texts[#texts + 1] = "\n\n" end
+    if frs and o.fr then
+      frs[#frs + 1] = o.fr
+    else
+      frs = nil
+    end
+    if k == split then
+      texts[#texts + 1] = "\n\n"
+      if frs then frs[#frs + 1] = "\n\n" end
+    end
   end
   -- the title: the weightiest moment not already a title, else where it was
   headline(9, f.main or start.zone or where)
@@ -1811,7 +1825,9 @@ local function entry(d, n, ch)
     end
   end
   if title then d.titled[title] = true end
-  return (table.concat(texts, " "):gsub(" \n\n ", "\n\n")), title
+  return (table.concat(texts, " "):gsub(" \n\n ", "\n\n")),
+    title,
+    frs and (table.concat(frs, " "):gsub(" \n\n ", "\n\n"))
 end
 
 -- The book of a character, as read in the game and on the site, written
@@ -1951,8 +1967,10 @@ function ns.writeBook(c)
       if m.k == "level" then to = m.level end
     end
     if e and e.level then to = math.max(to, e.level) end
-    local text, title = entry(d, i, ch)
+    local text, title, french = entry(d, i, ch)
     local was = savedEntry(c, i, ch)
+    -- (the trial's French: only of the words kept, the saved ones the same)
+    if was and was.diary ~= text then french = nil end
     if was then
       -- (a title the player had given it was saved in place of the writer's,
       -- kept beside as writtenTitle; a book saved before writtenTitle was
@@ -1976,6 +1994,7 @@ function ns.writeBook(c)
       open = not e or nil,
       rare = rare,
       close = close,
+      french = french, -- (the trial: the entry in French, when all of it could be)
     }
     -- (the last finished one: kept, with the book's memory after it)
     if i == #chapters - 1 and e then

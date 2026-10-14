@@ -150,7 +150,7 @@ function UnitClass(u)
   if state.party[u] then return state.party[u].class, state.party[u].class end
   return state.class:sub(1, 1) .. state.class:sub(2):lower(), state.class
 end
-function UnitSex() return 3 end
+function UnitSex() return tonumber(os.getenv("SEX") or "") or 3 end -- (SEX=2: a man; the French trial agrees with it)
 function UnitCreatureType(u)
   local c = unitOf(u)
   return c and c.type
@@ -521,6 +521,12 @@ local ns = {}
 for line in io.lines(DIR .. (FOREVER and "Hearthtale_Camelot.toc" or "Hearthtale_Vanilla.toc")) do
   local f = line:match("^([%w_]+%.lua)%s*$")
   if f then assert(loadfile(DIR .. f))("Hearthtale", ns) end
+end
+-- (the French trial, FRENCH=1: the writer tells each entry in French too)
+if os.getenv("FRENCH") then
+  for _, f in ipairs({ "French.lua", "Text_frFR.lua" }) do
+    assert(loadfile(DIR .. f))("Hearthtale", ns)
+  end
 end
 local D = ns.data
 -- The banners shown: what each said (the kit's banners, as the addon makes them).
