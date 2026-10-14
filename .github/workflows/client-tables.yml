@@ -27,6 +27,17 @@ jobs:
       - uses: actions/checkout@v7
       - uses: oven-sh/setup-bun@v2
       - run: bun install --frozen-lockfile
+      # (the downloads kept between runs: they change only when a pin moves)
+      - uses: actions/cache@v4
+        with:
+          path: |
+            .cache/audit
+            .cache/forever
+            .cache/client
+          key: game-data-${{ hashFiles('scripts/pins.json') }}-${{ github.run_id }}
+          restore-keys: |
+            game-data-${{ hashFiles('scripts/pins.json') }}-
+            game-data-
       - name: Newer builds?
         id: pins
         env:

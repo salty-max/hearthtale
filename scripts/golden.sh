@@ -11,20 +11,28 @@ mode=${1:-check}
 shift || true
 out=.cache/golden/$([ "$mode" = save ] && echo before || echo after)
 rm -rf "$out"; mkdir -p "$out"
+# (all at once: each writes its own file; the two writer tests take the longest)
+must=() # the ones whose failure stops the run (the others' output is compared)
 if [ -f .cache/audit/game.lua ]; then
-  rm -rf .cache/audit/books
-  luajit addon/test/playthrough.lua > "$out/playthrough.txt" 2>&1 || true
-  cp -r .cache/audit/books "$out/books"
+  (
+    rm -rf .cache/audit/books
+    luajit addon/test/playthrough.lua > "$out/playthrough.txt" 2>&1 || true
+    cp -r .cache/audit/books "$out/books"
+  ) &
 else
   echo "no playthroughs: run bun run audit first" >&2
 fi
-luajit addon/test/sample.lua > "$out/sample.md"
-luajit addon/test/sample.lua deadmines > "$out/sample-deadmines.md"
-luajit addon/test/seed.lua > "$out/seed.json"
-FOREVER=1 luajit addon/test/voices.lua compare > "$out/compare.md"
-FOREVER=1 luajit addon/test/voices.lua moments > "$out/moments.md"
-luajit addon/test/writer.lua > "$out/writer.txt" 2>&1 || true
-FOREVER=1 luajit addon/test/writer.lua > "$out/writer-forever.txt" 2>&1 || true
+luajit addon/test/writer.lua > "$out/writer.txt" 2>&1 &
+FOREVER=1 luajit addon/test/writer.lua > "$out/writer-forever.txt" 2>&1 &
+luajit addon/test/sample.lua > "$out/sample.md" & must+=($!)
+luajit addon/test/sample.lua deadmines > "$out/sample-deadmines.md" & must+=($!)
+luajit addon/test/seed.lua > "$out/seed.json" & must+=($!)
+FOREVER=1 luajit addon/test/voices.lua compare > "$out/compare.md" & must+=($!)
+FOREVER=1 luajit addon/test/voices.lua moments > "$out/moments.md" & must+=($!)
+for pid in "${must[@]}"; do
+  wait "$pid"
+done
+wait
 n=0
 for j in "$@"; do
   n=$((n + 1))

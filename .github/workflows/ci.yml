@@ -32,14 +32,15 @@ jobs:
         run: stylua --check addon && selene addon/Hearthtale
       - name: Writing builds, data files are up to date
         run: bun scripts/build.ts --check
-      - name: Simulation
-        run: luajit addon/test/sim.lua
-      - name: Simulation (Forever)
-        run: FOREVER=1 luajit addon/test/sim.lua
-      - name: Writer
-        run: luajit addon/test/writer.lua
-      - name: Writer (Forever)
-        run: FOREVER=1 luajit addon/test/writer.lua
+      # (both games side by side, and a life in two languages)
+      - name: Simulations, the writer's test, two languages
+        run: >-
+          bash scripts/parallel.sh
+          "luajit addon/test/sim.lua"
+          "FOREVER=1 luajit addon/test/sim.lua"
+          "FOREVER=1 luajit addon/test/languages.lua"
+          "luajit addon/test/writer.lua"
+          "FOREVER=1 luajit addon/test/writer.lua"
       - name: Samples (the landing page's, as the writer writes them)
         run: luajit addon/test/sample.lua > /dev/null && luajit addon/test/sample.lua landing --check
       - name: Package (its TOCs agree)
