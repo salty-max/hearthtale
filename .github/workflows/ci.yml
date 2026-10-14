@@ -43,6 +43,8 @@ jobs:
           "FOREVER=1 luajit addon/test/writer.lua"
           "luajit addon/test/french.lua"
           "FOREVER=1 luajit addon/test/french.lua"
+          "luajit addon/test/german.lua"
+          "FOREVER=1 luajit addon/test/german.lua"
       - name: Samples (the landing page's, as the writer writes them)
         run: luajit addon/test/sample.lua > /dev/null && luajit addon/test/sample.lua landing --check
       - name: Package (its TOCs agree)
