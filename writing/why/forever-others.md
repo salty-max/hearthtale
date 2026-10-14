@@ -7,6 +7,7 @@ kind: why
 - 98251 1 | thinning the beasts around a ravine in Ashenvale for Va'xug Firefure, lost there and seething at the forest
 - 98252 1 | guiding Va'xug Firefure's Eye of Kilrogg out of the ravine to the Ashenvale road, so the lost warlock could follow it out
 - 98417 2 none | searching among the Satyrnaar demons west of Forest Song for Kurothel, the husband Maseara Autumnmoon could still feel in the woods
+- 98418 2 demon | slaying the Xavian satyrs whose demons drove Kurothel's burning change, so Maseara Autumnmoon might one day see him again
 # Tirisfal Glades
 - 65593 2 none | procuring the hearts of Avelina Lilly and Isaac Pearson, lovers at opposite ends of the world, as a lure for Carendin Halgar's incubus
 - 86784 1 | gathering firewood for Eleanor Shackleton's camp in the hills, a wanderer who knew the wilds of the Glades
@@ -61,6 +62,7 @@ kind: why
 - 97237 1 | finding the book club's chosen tomes on the library shelves for Roy Lewells, for lively talk in the cellar after hours
 - 97926 1 | bringing Baros Alexston's reply back to Thundris Windweaver, word that Stormwind's thin coffers had no help to spare for Auberdine
 - 98191 2 none | bringing the statuette of King Terenas to Lord Grayson Shadowbreaker, to be kept in the Cathedral of Light, for the Light had gathered in it
+- 98156 1 | delivering Kristy Grant's pristine pelts to her sisters Kelly and Kimberly in Stormwind's park
 # Orgrimmar
 - 65610 2 none | searching Fallen Sky Lake in Ashenvale for a sign of Krilge, the missing soldier Magar refused to believe a deserter
 - 93739 1 | calling on Vol'jin, Cairne Bloodhoof and Lady Sylvanas Windrunner in their capitals, as Thrall advised a guest of the Horde
@@ -156,6 +158,7 @@ kind: why
 - 99050 2 none | gathering lasher fronds, a vial and spring water for Byancie's salve, to hold back the rot long enough to bring Eralya home
 - 99053 3 rescue | leading Sentinel Lynessa Duskblossom out of Ban'ethil Barrow Den, where the Gnarlpine had dragged her before she could deliver her message
 - 99073 2 none | taking Byancie's salve to Sentinel Eralya Leafshadow on the road, to ease her suffering if it could not cure her
+- 490 1 | collecting Gnarlpine fangs for Sentinel Shayla Nightbreeze's bounty, the furbolgs' corruption having made them a menace to the glades
 # Wetlands
 - 87318 2 none | searching Thandol Span for Essene Villard, lost when the Dark Irons fell on her and her partner Corma
 - 87491 2 none | escorting a fire elemental the Dark Irons kept caged in Dun Modr out to its freedom, eager as it was to burn them all
@@ -260,6 +263,10 @@ kind: why
 - 96781 2 none | picking Barton's scouting report from his pocket at Strahnbrad, to learn what the Syndicate sought in Alterac's ruins without alerting them
 - 96783 1 | stealing a Syndicate uniform at Northfold Manor, a disguise to slip into Stromgarde Keep and learn of a trade being arranged there
 - 96986 3 villain | defeating Atrexis the Grave Knight, a necromancer who betrayed the Forsaken and raised undead beneath Dalaran, for Melisara in Tarren Mill
+- 92457 1 | culling the rogue elementals gorging on the arcane loosed in Dalaran, while the Kirin Tor held their wards against the breach
+- 92458 2 none | slipping into the Violet Citadel with Archmage Modera's key to quiet the disruption that had shaken Dalaran's ley lines
+- 92459 1 | carrying the calmed mote to Archmage Celindra in the Violet Citadel, so Dalaran could at last lower its wards
+- 97287 1 | carrying the mote back into Dalaran for Magus Wordeen Voidglare, who meant to trade it for a place among the Kirin Tor
 # The Barrens
 - 92706 3 beast | killing Bruuz, the giant shark circling Ratchet's docks and attacking sailors, for the bounty Gazlowe put on its fin
 - 95494 1 | gathering savannah lion hides for Vrang Wildgore, laid up with an injured leg but unwilling to fall short on his trade
@@ -305,6 +312,7 @@ kind: why
 - 96403 1 | gathering dwarven heirlooms in the Hall of Thanes for Thom Filch, a gnome suspiciously eager to appraise them
 - 97263 1 | delivering a misplaced urgent package from Aerie Peak to Eldrun Stormbreaker, who had checked the mailbox every day for it
 - 98423 2 none | bringing King Magni an old tablet from the vault, the peace the Bronzebeards and Wildhammers signed after the War of the Three Hammers
+- 98300 2 none | carrying Howin Kindfeather's warning from the Wetlands to King Magni Bronzebeard, trouble stirring at Grim Batol on his doorstep
 # Mulgore
 - 95350 1 | flying to Orgrimmar as an emissary of the Windshapers, to meet Thrall, Warchief of the Horde
 - 95664 1 | showing a strange titan relic from the excavation to the elders on the Elder Rise in Thunder Bluff, to learn what it might be
@@ -351,12 +359,18 @@ kind: why
 - 99123 2 rescue | leading Pal'juh, a young hunter who went scouting alone, out of Kolkar Crag after her magic ran out at the wrong time
 # Desolace
 - 97265 2 none | raiding the Hatefury satyrs at Sargeron for Aka'rai, who had bargained with them for power and been cast aside
+- 92743 1 | searching a crypt in the Badlands for a conqueror's crown, which Warug of the Magram wanted to match his clan's strength
+- 92755 1 | gathering greater mystic essences for Halea of the Gelkis, to enchant the windchasers' weapons before the clan's next raid
+- 93044 1 | asking Mulara in the cave at Gelkis Village for Tears of Theradras, for Uthek's ritual against the Magram's necromancy
+- 93128 3 villain | slaying Khan Jehn of the Magram in his own village while his warriors were busy in the Valley of Bones
+- 96222 2 none | challenging Khan Hratha of the Maraudine atop the Valley of Spears for the key fragment Umarak wanted
 # Darnassus
 - 98067 1 | placing sentinel owls about Darnassus for Sentinel Dalia Sunblade, to keep watch while something was amiss on Teldrassil
 # Hillsbrad Foothills
 - 98071 1 | trading Brewmeister Bilger's Fallrook wine to Dun Garok for a sack of their homebrew hops
 - 98095 1 | uncorking apothecary vials on three peaks around Hillsbrad to draw the bat riders back to their drop-off points
 - 98459 1 | delivering a mocking gift from old Half-fish to Bart Tidewater, the so-called captain of the Maiden's Virtue
+- 95534 2 none | solving the mystery of the old bellows of Strahnbrad, where a fire elemental had made its home, for Shara Blazen
 # Un'Goro Crater
 - 98093 2 rescue | clearing the hyenas and lizards around the tree Sulhasa had fled up in the southern Barrens, so she could get home to Camp Taurajo
 # Feralas
@@ -366,3 +380,18 @@ kind: why
 - 98342 3 none | taking the relics of the fang, the claw and the silent shadow from the Stormrage Barrow Dens, the Great Cat Spirit's trial of cunning and stealth
 - 98396 3 none | proving the cunning, stealth and ferocity of the cat by taking three relics from the spirits guarding the Stormrage Barrow Dens
 - 98404 3 none | bearing three relics past the enraged spirits of the Stormrage Barrow Dens, the Avatar of Saeyleenan's trial for its windborne shape
+# Shen'dralas
+- 92841 1 | seeking out Orgrul south of Magram Village, who showed me the Valley of Bones, its roaming dead and the Twin Goliaths
+- 92846 2 none | slaying the Gelkis exiles who dabbled in necromancy in the Valley of Bones, outcasts the Magram wanted dead
+- 93034 1 | seeking out the scout Nerlokh at the Valley of Bones for Uthek the Wise, to learn what evil the Magram had found there
+- 93035 2 undead | putting to rest the dead the Magram raised in the Valley of Bones, bodies older than any centaur in Desolace
+- 93037 1 | taking the garb of the weaker necromancers to Nerlokh, who dreaded what it would prove about the Gelkis
+- 93041 2 none | bringing Uthek the Wise a freshly cursed skull and the garb that proved Gelkis exiles practised the Magram's necromancy
+- 93058 3 rescue | freeing the Gelkis captives held deep in the Valley of Bones, past the necromancers and the Magram's brutes
+- 93062 2 undead | laying to rest the failed summons trapped under the Valley of Bones with Uthek's staff of Theradras' Tears
+- 93066 1 | clearing the Bristleback from their retreat beyond the Valley of Bones, where a stolen temple artifact kept the Magram at bay
+- 93122 1 | scouting deep into Shen'dralas for Nerlokh, to learn whether the Magram had left their own village unguarded
+# Stranglethorn Vale
+- 97328 1 | recovering the shipments plundered from a crashed zeppelin bound for Booty Bay, from the trolls in the Ruins of Zul'Kunda
+# Scarlet Monastery
+- 96800 2 none | recovering the tome on the Wildhammer runemasters that Arcanist Doan never returned to Dalaran's library, for Magus Olvek
