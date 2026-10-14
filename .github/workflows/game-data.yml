@@ -57,6 +57,8 @@ jobs:
           # (the last run's audit kept aside: the journals before)
           rm -rf "$RUNNER_TEMP/audit-before"
           if [ -d .cache/audit ]; then cp -r .cache/audit "$RUNNER_TEMP/audit-before"; fi
+          # (wow-data's databases, built from the same pins: the audit reads them)
+          bun ../wow-data/bin/build.ts all
           bun run audit
           if git diff --quiet -- addon/Hearthtale; then
             echo "Nothing moved: the generated files are what wow-data's pins give." >> "$GITHUB_STEP_SUMMARY"
