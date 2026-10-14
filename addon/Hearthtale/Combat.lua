@@ -21,6 +21,7 @@ local function seen(unit)
   name = R.creature(R.npcId(guid), name) -- (in English, whatever the client's language)
   units[guid] = {
     name = name,
+    id = R.npcId(guid), -- (the game's id: its name in any language)
     kind = (not secret(family) and R.family(family)) or (not secret(ctype) and R.creatureType(ctype)) or nil,
     rank = not secret(rank) and rank or nil,
   }
@@ -48,7 +49,7 @@ local function slain(guid, name)
   local firstHere = ch.kills[u.name] == nil
   ch.kills[u.name] = (ch.kills[u.name] or 0) + 1
   if u.rank == "rare" or u.rank == "rareelite" or u.rank == "worldboss" then
-    moment("rare", { name = u.name, elite = u.rank ~= "rare" or nil })
+    moment("rare", { name = u.name, id = u.id, elite = u.rank ~= "rare" or nil })
   elseif firstHere then
     -- a first of its kind, for a life followed from its first levels (one
     -- met later has surely met wolves before)
@@ -63,6 +64,7 @@ local function slain(guid, name)
     end
     moment("kill", {
       name = u.name,
+      id = u.id,
       kind = u.kind,
       first = first,
       elite = (u.rank == "elite" and not inside) or nil,
@@ -190,13 +192,14 @@ ns.onUnit("UNIT_HEALTH", "player", function()
   local h, max = UnitHealth("player"), UnitHealthMax("player")
   if secret(h) or secret(max) or not max or max == 0 or h <= 0 or h / max >= 0.1 then return end
   local hp = math.max(1, math.floor(h / max * 100 + 0.5))
-  local who = foe()
+  local who, guid = foe()
+  local whoId = R.npcId(guid)
   pending = true
   local function check()
     pending = false
     if UnitIsDeadOrGhost("player") then return end
     lastClose = now()
-    moment("close", { foe = who, hp = hp })
+    moment("close", { foe = who, foeId = whoId, hp = hp })
   end
   C_Timer.After(5, check)
 end)
@@ -226,6 +229,7 @@ ns.on("PLAYER_DEAD", function()
     zone = zone,
     sub = sub,
     foe = name,
+    foeId = R.npcId(guid),
     cause = cause,
     player = (guid and guid:find("^Player")) and true or nil,
     kind = u and u.kind,

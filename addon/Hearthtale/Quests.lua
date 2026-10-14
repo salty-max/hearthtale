@@ -13,11 +13,12 @@ local function titleOf(id)
     or nil
   return R.questTitle(id, title) -- (in English, whatever the client's language)
 end
--- (a quest's giver or ender: the creature by its id, in English)
+-- (a quest's giver or ender: the creature by its id, in English; and the id)
 local function npcName(unit)
   local name = UnitName(unit)
   if not name or secret(name) then return nil end
-  return R.creature(R.npcId(UnitGUID(unit)), name)
+  local id = R.npcId(UnitGUID(unit))
+  return R.creature(id, name), id
 end
 
 -- What a quest asks, from the quest log: its objectives' lines ("Kobold
@@ -151,10 +152,14 @@ ns.on("QUEST_ACCEPTED", function(a, b)
     and not (UnitCanAttack and UnitCanAttack("player", "target"))
     and not (UnitIsPlayer and UnitIsPlayer("target"))
   local unit = UnitName("npc") and "npc" or (friendly and "target") or nil
-  local giver = unit and npcName(unit) or nil
+  local giver, giverId
+  if unit then
+    giver, giverId = npcName(unit)
+  end
   local objectives = objectivesOf(id)
   c.pending[id] = {
     giver = (giver and not secret(giver)) and giver or nil,
+    giverId = giver and giverId or nil,
     giverSex = unit and sexOf(unit) or nil,
     title = titleOf(id),
     objectives = objectives,
@@ -189,6 +194,7 @@ ns.on("QUEST_LOG_UPDATE", function()
         id = id,
         title = p.title,
         giver = p.giver,
+        giverId = p.giverId,
         objectives = p.objectives,
         pet = pet,
         petFamily = family,
@@ -199,14 +205,14 @@ ns.on("QUEST_LOG_UPDATE", function()
 end)
 -- Who I returned to: the one I talk to when the quest is completed, what the
 -- game says of them (a man, a woman: the writer's "he", "she"; a beast: no hands).
-local ender, enderSex, enderBeast
+local ender, enderId, enderSex, enderBeast
 -- Objectives still without their names (the item not loaded yet): read
 -- again, while the quest is still in the log (the turn-in window too).
 local function named(id, p)
   if p and (not p.objectives or misread(p.objectives)) then p.objectives = objectivesOf(id) or p.objectives end
 end
 ns.on("QUEST_COMPLETE", function()
-  ender = npcName("npc")
+  ender, enderId = npcName("npc")
   enderSex = ender and sexOf("npc") or nil
   local kind = ender and UnitCreatureType and UnitCreatureType("npc")
   enderBeast = (kind and not secret(kind) and R.creatureType(kind) == "Beast") or nil
@@ -223,15 +229,17 @@ ns.on("QUEST_TURNED_IN", function(id)
     id = id,
     title = titleOf(id) or p.title,
     giver = p.giver,
+    giverId = p.giverId,
     giverSex = p.giverSex,
     ender = ender,
+    enderId = enderId,
     enderSex = enderSex,
     enderBeast = enderBeast,
     objectives = p.objectives,
     told = p.done or nil,
     with = R.present(),
   }) -- told: its work was told when done
-  ender, enderSex, enderBeast = nil, nil, nil
+  ender, enderId, enderSex, enderBeast = nil, nil, nil, nil
   if c.pending then c.pending[id] = nil end
 end)
 

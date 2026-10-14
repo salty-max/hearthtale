@@ -124,8 +124,17 @@ end
 function UnitTokenFromGUID(guid)
   if state.target and UnitGUID("target") == guid then return "target" end
 end
+-- (the one I talk to: an id of its own, from 900000 on, the same for a name)
+local NPC_IDS, lastNpc = {}, 900000
 function UnitGUID(u)
   if u == "player" then return state.guid end
+  if u == "npc" and state.npc then
+    if not NPC_IDS[state.npc] then
+      lastNpc = lastNpc + 1
+      NPC_IDS[state.npc] = lastNpc
+    end
+    return creatureGuid(NPC_IDS[state.npc])
+  end
   if u == "pet" then return state.pet and state.pet.guid end
   if state.party[u] then return state.party[u].guid end
   if u == "target" and state.target and state.target.player then return state.target.guid end

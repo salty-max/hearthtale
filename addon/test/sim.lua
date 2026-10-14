@@ -254,12 +254,15 @@ check(
     and quest.title == "Dwarven Outfitters"
     and quest.giver == "Sten Stoutarm"
     and quest.ender == "Balir Frosthammer"
+    and type(quest.giverId) == "number"
+    and type(quest.enderId) == "number"
+    and quest.giverId ~= quest.enderId
     and ch().quests == 1
     and o
     and o.type == "item"
     and o.name == "Tough Wolf Meat"
     and o.n == 8,
-  "a quest turned in: what it asked (eight Tough Wolf Meat), who gave it, who I returned to"
+  "a quest turned in: what it asked (eight Tough Wolf Meat), who gave it, who I returned to (and their ids)"
 )
 check(
   quest and quest.giverSex == "female" and quest.enderSex == "female" and not quest.enderBeast,
@@ -347,6 +350,8 @@ local kills = moments("kill")
 check(
   #kills == 2
     and kills[1].name == "Ragged Young Wolf"
+    and kills[1].id == 1
+    and kills[2].id == 2
     and kills[1].kind == "Wolf"
     and kills[1].first
     and kills[2].first
@@ -520,7 +525,7 @@ fire("UNIT_HEALTH", "player")
 state.health = 100
 local close = moments("close")
 check(
-  #close == 1 and close[1].hp == 7 and close[1].foe == "Frostmane Novice" and close[1].night,
+  #close == 1 and close[1].hp == 7 and close[1].foe == "Frostmane Novice" and close[1].foeId == 4 and close[1].night,
   "a close call: under a tenth of my health, the foe, the hour; once a minute"
 )
 
@@ -551,7 +556,7 @@ check(
   "a profession, at its milestones only"
 )
 kill(5, 12)
-check(moments("rare")[1] and moments("rare")[1].name == "Timber", "a rare slain")
+check(moments("rare")[1] and moments("rare")[1].name == "Timber" and moments("rare")[1].id == 3, "a rare slain")
 check(
   moments("kill")[3] and moments("kill")[3].name == "Gibblewilt" and moments("kill")[3].elite,
   "an elite slain, marked"

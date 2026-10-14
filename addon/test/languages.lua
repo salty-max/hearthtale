@@ -200,6 +200,7 @@ check(
   quest
     and quest.title == "The Boar Hunter"
     and quest.giver == "Talin Keeneye"
+    and quest.giverId == 714
     and quest.objectives
     and quest.objectives[1].name == "Small Crag Boar",
   "a quest in English: its title, its giver, its objective"

@@ -31,18 +31,22 @@
 --                                                    long (the cap), death; summit before 0.6
 --   }
 --   moments: { k = kind, at, night, zone, sub, grouped, ... }
+--     (the game's names in English on any client, Client_<game>.lua and
+--     English_<game>.lua; a creature's id beside its name since 0.10: id,
+--     foeId, giverId, enderId. A place needs none: its English name is the
+--     area's, by id, in Client_<game>.lua.)
 --     place { new = "zone" or nil }  inn { place }  flight { from, to }  level { level, top }
 --                                                    (top: the highest level the game allows)
---     done { id, title, giver, objectives, abandoned, pet, petFamily, with }   a quest's work
+--     done { id, title, giver, giverId, objectives, abandoned, pet, petFamily, with }   a quest's work
 --                                                    done (pet: the one at my side then;
 --                                                    with: the party then, by first name)
---     quest { id, title, giver, ender, objectives, told,   a quest turned in (told: its
---             giverSex, enderSex, enderBeast, with }
---                                                    work was told when done); objectives =
+--     quest { id, title, giver, giverId, ender, enderId,   a quest turned in (told: its
+--             objectives, told, giverSex, enderSex,  work was told when done);
+--             enderBeast, with }                     objectives =
 --                                                    { { type, name, n, text, held } }
---     kill { name, kind, first, elite, quarry }      the chapter's first of a creature (killed by
+--     kill { name, id, kind, first, elite, quarry }  the chapter's first of a creature (killed by
 --                                                    me, my pet, my group, or credited by a quest)
---     rare { name, elite }  pvp { name, first, race, class }  close { foe, hp }
+--     rare { name, id, elite }  pvp { name, first, race, class }  close { foe, foeId, hp }
 --     died { death }  revived { how, by, graveyard, took }
 --     group { name, first, class } or { raid = n }  dungeon { name }  boss { name }
 --     learned { spells, used }  power { spell, kind }  skill { name, rank }
