@@ -4,32 +4,15 @@
 //   bun scripts/audit-data.ts
 // Sources: cmangos classic-db (GPL-3.0) for creatures, quests, items and objects;
 // pfQuest (MIT) for the places' names. The names themselves are Blizzard's.
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { gunzipSync } from "node:zlib";
-import { CLASSIC, wago } from "./pins";
+import { classicDump, repoFile } from "../../wow-data/src/github";
+import { wagoFile } from "../../wow-data/src/wago";
 import path from "node:path";
 import { rows } from "./sql";
-import { fetchRetry } from "./fetch";
 
 const DIR = path.join(import.meta.dir, "..", ".cache", "audit");
-const SOURCES = {
-  db: "https://raw.githubusercontent.com/cmangos/classic-db/master/Full_DB/ClassicDB_1_12_1_z2815.sql.gz",
-  zones: "https://raw.githubusercontent.com/shagu/pfQuest/master/db/enUS/zones.lua",
-  // where every creature stands (its spawns' zones), pfQuest (MIT)
-  units: "https://raw.githubusercontent.com/shagu/pfQuest/master/db/units.lua",
-  // the client's areas, for the land each one lies in (Coldridge Valley: Dun Morogh)
-  areas: `https://wago.tools/db2/AreaTable/csv?${wago(CLASSIC)}`,
-};
 
-async function fetchOnce(url: string, file: string) {
-  const out = path.join(DIR, file);
-  if (!existsSync(out)) {
-    const res = await fetchRetry(url);
-    if (!res.ok) throw new Error(`${url}: ${res.status}`);
-    writeFileSync(out, new Uint8Array(await res.arrayBuffer()));
-  }
-  return out;
-}
 
 const lua = (v: unknown): string => {
   if (v === null || v === undefined || v === "") return "nil";
@@ -42,10 +25,14 @@ const lua = (v: unknown): string => {
 };
 
 mkdirSync(DIR, { recursive: true });
-const dump = await fetchOnce(SOURCES.db, "classicdb.sql.gz");
-const zonesFile = await fetchOnce(SOURCES.zones, "pfquest-zones.lua");
-const unitsFile = await fetchOnce(SOURCES.units, "pfquest-units.lua");
-const areasFile = await fetchOnce(SOURCES.areas, `areatable-era.${CLASSIC.build}.csv`);
+// (wow-data: the pinned sources, downloaded once) the Classic database
+// (cmangos classic-db), pfQuest's zones and where every creature stands
+// (MIT), the client's areas, for the land each one lies in (Coldridge
+// Valley: Dun Morogh)
+const dump = await classicDump();
+const zonesFile = await repoFile("pfquest", "db/enUS/zones.lua");
+const unitsFile = await repoFile("pfquest", "db/units.lua");
+const areasFile = await wagoFile("classic", "AreaTable");
 const sql = gunzipSync(readFileSync(dump)).toString("utf8");
 
 const spawns = new Map<number, number>();

@@ -15,38 +15,21 @@
 //     what drops a quest's items.
 // cmangos classic-db (GPL-3.0, .cache/audit) for the old world's creatures,
 // pfQuest (MIT) for where the old world's NPCs stand.
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 import { gunzipSync } from "node:zlib";
 import { spawnSync } from "node:child_process";
 import path from "node:path";
 import { rows } from "./sql";
 import { decide, list, plainName } from "./names";
-import { FOREVER, REPOS, wago } from "./pins";
-import { fetchRetry } from "./fetch";
+import { classicDump, repoDir, repoFile, repoTree } from "../../wow-data/src/github";
+import { FOREVER } from "../../wow-data/src/pins";
+import { wagoFile } from "../../wow-data/src/wago";
 
 const ROOT = path.join(import.meta.dir, "..");
-const CACHE = path.join(ROOT, ".cache", "forever");
 const AUDIT = path.join(ROOT, ".cache", "audit");
-// (the pins: scripts/pins.json)
+// (the pins: ../wow-data/pins.json)
 export const BUILD = FOREVER.build;
-const ATT = REPOS.allthethings.repo;
-const ATT_COMMIT = REPOS.allthethings.commit;
-const QUESTIEDB = REPOS.questiedb.repo;
-const QUESTIEDB_COMMIT = REPOS.questiedb.commit;
-const PFQUEST = REPOS.pfquest.repo;
-const PFQUEST_COMMIT = REPOS.pfquest.commit;
-const UA = { "User-Agent": "Hearthtale/0.5 (addon data; github.com/salty-max/hearthtale)" };
 
-async function fetchOnce(url: string, file: string) {
-  const out = path.join(CACHE, file);
-  if (!existsSync(out)) {
-    mkdirSync(path.dirname(out), { recursive: true });
-    const res = await fetchRetry(url, { headers: UA });
-    if (!res.ok) throw new Error(`${url}: ${res.status}`);
-    writeFileSync(out, new Uint8Array(await res.arrayBuffer()));
-  }
-  return out;
-}
 
 // A client table, as CSV rows by column name.
 function csv(text: string): Record<string, string>[] {
@@ -68,23 +51,22 @@ function csv(text: string): Record<string, string>[] {
   return lines.filter((l) => l.length > 1).map((l) => Object.fromEntries(head.map((h, i) => [h, l[i] ?? ""])));
 }
 async function table(name: string) {
-  const file = await fetchOnce(`https://wago.tools/db2/${name}/csv?${wago(FOREVER)}`, `wago/${name}.${BUILD}.csv`);
-  return csv(readFileSync(file, "utf8"));
+  return csv(readFileSync(await wagoFile("forever", name), "utf8"));
 }
 
 // ── the sources ─────────────────────────────────────────────────────────────
-mkdirSync(CACHE, { recursive: true });
-const attTree = JSON.parse(readFileSync(await fetchOnce(
-  `https://api.github.com/repos/${ATT}/git/trees/${ATT_COMMIT}?recursive=1`, `att-tree.${ATT_COMMIT.slice(0, 12)}.json`), "utf8"));
-const attFiles = (attTree.tree as { path: string; type: string }[])
-  .filter((f) => f.type === "blob" && /^\.contrib\/\.db\/forever\/(zones|dungeons & raids)\/.*\.lua$/.test(f.path)).map((f) => f.path);
-for (const f of attFiles)
-  await fetchOnce(`https://raw.githubusercontent.com/${ATT}/${ATT_COMMIT}/${f.split("/").map(encodeURIComponent).join("/")}`,
-    `att/${f.replace(/^\.contrib\/\.db\/forever\//, "")}`);
+// (wow-data: the pinned commits, each file downloaded once)
+const attFiles = (await repoTree("allthethings")).filter((f) => /^\.contrib\/\.db\/forever\/(zones|dungeons & raids)\/.*\.lua$/.test(f));
+for (const f of attFiles) await repoFile("allthethings", f);
+const TRACES = "src/corrections/Forever/traces";
 for (const f of ["foreverQuestTraces", "foreverNpcTraces", "foreverObjectTraces", "foreverItemTraces"])
-  await fetchOnce(`https://raw.githubusercontent.com/${QUESTIEDB}/${QUESTIEDB_COMMIT}/src/corrections/Forever/traces/${f}.lua`, `questiedb/${f}.lua`);
-const unitsFile = await fetchOnce(`https://raw.githubusercontent.com/${PFQUEST}/${PFQUEST_COMMIT}/db/units.lua`, `pfquest-units.${PFQUEST_COMMIT.slice(0, 12)}.lua`);
-const read = spawnSync("luajit", [path.join(ROOT, "scripts", "forever-read.lua"), CACHE], { maxBuffer: 1 << 28 });
+  await repoFile("questiedb", `${TRACES}/${f}.lua`);
+const unitsFile = await repoFile("pfquest", "db/units.lua");
+const read = spawnSync(
+  "luajit",
+  [path.join(ROOT, "scripts", "forever-read.lua"), repoDir("allthethings", ".contrib/.db/forever"), repoDir("questiedb", TRACES)],
+  { maxBuffer: 1 << 28 },
+);
 if (read.status !== 0) throw new Error(`forever-read.lua: ${read.stderr}`);
 
 type Objective = { index?: number; text?: string; provider?: (string | number)[]; cr?: number; crs?: number[] };
@@ -106,14 +88,14 @@ const itemRows = await table("Item");
 const questIds = new Set((await table("QuestV2")).map((r) => Number(r.ID)));
 
 // The old world, as cmangos knows it: what is new is what it doesn't.
-const sql = gunzipSync(readFileSync(path.join(AUDIT, "classicdb.sql.gz"))).toString("utf8");
+const sql = gunzipSync(readFileSync(await classicDump())).toString("utf8");
 const classic = { quests: new Set<number>(), creatures: new Map<number, string>(), items: new Set<number>(), objects: new Set<number>() };
 for (const r of rows(sql, "quest_template")) classic.quests.add(r.entry as number);
 for (const r of rows(sql, "creature_template")) classic.creatures.set(r.Entry as number, r.Name as string);
 for (const r of rows(sql, "item_template")) classic.items.add(r.entry as number);
 for (const r of rows(sql, "gameobject_template")) classic.objects.add(r.entry as number);
 const classicZones = new Set<number>();
-for (const m of readFileSync(path.join(AUDIT, "pfquest-zones.lua"), "utf8").matchAll(/\[(\d+)\] = "/g)) classicZones.add(Number(m[1]));
+for (const m of readFileSync(await repoFile("pfquest", "db/enUS/zones.lua"), "utf8").matchAll(/\[(\d+)\] = "/g)) classicZones.add(Number(m[1]));
 
 // ── places ──────────────────────────────────────────────────────────────────
 // An ATT map constant ("MAP.ZEPHRAS_ISLE", "MAP.THE_BARRENS") is the zone of

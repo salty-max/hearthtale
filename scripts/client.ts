@@ -17,14 +17,12 @@
 //   by C_Map.GetAreaInfo: Record.lua turns a place back into English)
 // - maps, encounters: dungeons and bosses by id, English
 // - spells: the class and trade spells by id, English
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
-import { CLASSIC, FOREVER, wago } from "./pins";
-import { fetchRetry } from "./fetch";
+import { CLASSIC, FOREVER } from "../../wow-data/src/pins";
+import { wago } from "../../wow-data/src/wago";
 
 const ROOT = path.join(import.meta.dir, "..");
-const CACHE = path.join(ROOT, ".cache", "client");
-const UA = { "User-Agent": "Hearthtale/1.0 (addon; github.com/salty-max/hearthtale)" };
 const GAMES = {
   classic: { pin: CLASSIC, out: "Client_Classic.lua" },
   forever: { pin: FOREVER, out: "Client_Forever.lua" },
@@ -39,48 +37,8 @@ function write(name: string, text: string) {
   if (!existsSync(file) || readFileSync(file, "utf8") !== text) stale.push(name);
 }
 
-function csv(text: string): Record<string, string>[] {
-  const lines: string[][] = [];
-  let row: string[] = [],
-    cell = "",
-    quoted = false;
-  for (let i = 0; i < text.length; i++) {
-    const c = text[i];
-    if (quoted) {
-      if (c === '"' && text[i + 1] === '"') {
-        cell += '"';
-        i++;
-      } else if (c === '"') quoted = false;
-      else cell += c;
-    } else if (c === '"') quoted = true;
-    else if (c === ",") {
-      row.push(cell);
-      cell = "";
-    } else if (c === "\n") {
-      row.push(cell);
-      lines.push(row);
-      row = [];
-      cell = "";
-    } else if (c !== "\r") cell += c;
-  }
-  if (cell || row.length) {
-    row.push(cell);
-    lines.push(row);
-  }
-  const head = lines[0] ?? [];
-  return lines.slice(1).map((r) => Object.fromEntries(head.map((h, i) => [h, r[i] ?? ""])));
-}
-async function table(game: keyof typeof GAMES, name: string, locale = "enUS") {
-  const file = path.join(CACHE, game, GAMES[game].pin.build, `${name}-${locale}.csv`);
-  if (!existsSync(file)) {
-    mkdirSync(path.dirname(file), { recursive: true });
-    const loc = locale === "enUS" ? "" : `&locale=${locale}`;
-    const res = await fetchRetry(`https://wago.tools/db2/${name}/csv?${wago(GAMES[game].pin)}${loc}`, { headers: UA });
-    if (!res.ok) throw new Error(`${name} ${game} ${locale}: ${res.status}`);
-    writeFileSync(file, await res.text());
-  }
-  return csv(readFileSync(file, "utf8"));
-}
+// a client table at its game's pinned build (wow-data: downloaded once)
+const table = (game: keyof typeof GAMES, name: string, locale = "enUS") => wago(game, name, locale);
 
 const lua = (s: string) => JSON.stringify(s);
 const CLASSES: [number, string][] = [

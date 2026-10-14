@@ -6,7 +6,9 @@
 -- first (the comments carry the quest's title, the giver's name and calling,
 -- an objective's line in the quest log). QuestieDB's traces (what Questie's
 -- recorder saw on the beta): modules loaded with stand-ins for their loader.
-local dir = assert(arg[1], "usage: luajit scripts/forever-read.lua <dir>")
+-- (wow-data's cache: AllTheThings' Forever folder, QuestieDB's traces folder)
+local attDir = assert(arg[1], "usage: luajit scripts/forever-read.lua <att dir> <questiedb traces dir>")
+local questieDir = assert(arg[2], "usage: luajit scripts/forever-read.lua <att dir> <questiedb traces dir>")
 
 -- ── JSON ────────────────────────────────────────────────────────────────────
 local function isArray(t)
@@ -238,9 +240,9 @@ local function walk(node, map, file)
   end
 end
 
-local att = io.popen('find "' .. dir .. '/att" -name "*.lua" | sort')
+local att = io.popen('find "' .. attDir .. '" -name "*.lua" | sort')
 for path in att:lines() do
-  local file = path:match("/att/(.*)$")
+  local file = path:sub(#attDir + 2) -- ("zones/Durotar.lua")
   for _, r in ipairs(readATT(path)) do
     walk(r, nil, file)
   end
@@ -261,7 +263,7 @@ QuestieLoader = {
 }
 local traces = {}
 for _, f in ipairs({ "foreverQuestTraces", "foreverNpcTraces", "foreverObjectTraces", "foreverItemTraces" }) do
-  dofile(dir .. "/questiedb/" .. f .. ".lua")
+  dofile(questieDir .. "/" .. f .. ".lua")
 end
 for name, m in pairs(modules) do
   traces[name] = m:Load()

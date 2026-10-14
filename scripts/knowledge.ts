@@ -7,32 +7,23 @@
 // in .cache/audit (`bun scripts/audit-data.ts`), into
 // addon/Hearthtale/Knowledge.lua.
 //   bun scripts/knowledge.ts
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 import { gunzipSync } from "node:zlib";
 import path from "node:path";
 import { rows } from "./sql";
-import { CLASSIC, wago } from "./pins";
-import { fetchRetry } from "./fetch";
+import { classicDump } from "../../wow-data/src/github";
+import { wagoFile } from "../../wow-data/src/wago";
 
 const DIR = path.join(import.meta.dir, "..", ".cache", "audit");
 const OUT = path.join(import.meta.dir, "..", "addon", "Hearthtale", "Knowledge.lua");
-const sql = gunzipSync(readFileSync(path.join(DIR, "classicdb.sql.gz"))).toString("utf8");
+const sql = gunzipSync(readFileSync(await classicDump())).toString("utf8");
 
 // The race of a creature's model, from the client's own tables (wago.tools,
 // Classic Era, one build pinned): what a person is when their faction serves
 // several peoples (Stormwind's, Orgrimmar's) or another's (the gnomes who
 // serve Ironforge).
-const ERA_BUILD = CLASSIC.build; // (scripts/pins.json)
 async function eraTable(name: string) {
-  const file = path.join(DIR, "wago", `${name}.${ERA_BUILD}.csv`);
-  if (!existsSync(file)) {
-    mkdirSync(path.dirname(file), { recursive: true });
-    const url = `https://wago.tools/db2/${name}/csv?${wago(CLASSIC)}`;
-    const res = await fetchRetry(url, { headers: { "User-Agent": "Hearthtale/0.5 (addon data; github.com/salty-max/hearthtale)" } });
-    if (!res.ok) throw new Error(`${url}: ${res.status}`);
-    writeFileSync(file, await res.text());
-  }
-  const [head, ...lines] = readFileSync(file, "utf8").trim().split("\n");
+  const [head, ...lines] = readFileSync(await wagoFile("classic", name), "utf8").trim().split("\n");
   const cols = head.split(",");
   return lines.map((l) => Object.fromEntries(l.split(",").map((v, i) => [cols[i], v])));
 }
