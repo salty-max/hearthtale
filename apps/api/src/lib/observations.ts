@@ -131,10 +131,17 @@ export async function recordObservations(contributor: string, facts: Fact[]): Pr
   return facts.length;
 }
 
-/** A game's facts for the addons' database, each with how many contributors saw it. */
-export async function exportObservations(game: string, since?: Date) {
+// (a page of facts: Vercel answers 4.5 MB at most, and a quest's text runs to 4,000 characters)
+export const EXPORT_PAGE = 1000;
+
+/**
+ * A game's facts for the addons' database, each with how many contributors
+ * saw it, a page at a time: `next` the cursor of the page after, null at the end.
+ */
+export async function exportObservations(game: string, since?: Date, after = 0) {
   const rows = await db
     .select({
+      id: observations.id,
       locale: observations.locale,
       kind: observations.kind,
       entity: observations.entity,
@@ -145,8 +152,9 @@ export async function exportObservations(game: string, since?: Date) {
       lastSeen: observations.lastSeen,
     })
     .from(observations)
-    .where(since ? and(eq(observations.game, game), gt(observations.lastSeen, since)) : eq(observations.game, game))
+    .where(and(eq(observations.game, game), gt(observations.id, after), since ? gt(observations.lastSeen, since) : undefined))
     .orderBy(asc(observations.id))
-    .limit(500_000);
-  return { game, facts: rows };
+    .limit(EXPORT_PAGE);
+  const next = rows.length === EXPORT_PAGE ? rows[rows.length - 1].id : null;
+  return { game, facts: rows.map(({ id: _, ...f }) => f), next };
 }

@@ -55,6 +55,7 @@ describe("observations", () => {
     try {
       expect((await app.request("/api/observations/export?game=classic", { headers: { authorization: "Bearer nope" } })).status).toBe(401);
       expect((await app.request("/api/observations/export?game=mars", { headers: { authorization: "Bearer t0ken" } })).status).toBe(400);
+      expect((await app.request("/api/observations/export?game=classic&after=-1", { headers: { authorization: "Bearer t0ken" } })).status).toBe(400);
     } finally {
       delete process.env.OBSERVATIONS_TOKEN;
     }

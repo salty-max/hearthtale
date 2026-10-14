@@ -249,7 +249,9 @@ app.get("/api/observations/export", async (c) => {
   const since = c.req.query("since");
   const at = since ? new Date(since) : undefined;
   if (at && Number.isNaN(at.getTime())) return c.json({ error: "since: a date" }, 400);
-  return c.json(await exportObservations(game, at));
+  const after = Number(c.req.query("after") ?? 0);
+  if (!Number.isSafeInteger(after) || after < 0) return c.json({ error: "after: a cursor" }, 400);
+  return c.json(await exportObservations(game, at, after));
 });
 
 /** The new entries of an upload, told to their owners' devices once the answer has gone. */

@@ -557,8 +557,9 @@ Plan and steps: PLAN.md, "The site".
   addons' opt-in (the kit's collector) kept of the world, sent by Ravenpost to
   `POST /api/observations` with no account (header `X-Contributor`: its
   install's random id, only a hash kept to count who agrees), flattened and
-  checked, each fact kept once; `GET /api/observations/export?game=&since=`
-  (Bearer `OBSERVATIONS_TOKEN`) hands them to wow-data.
+  checked, each fact kept once; `GET /api/observations/export?game=&since=&after=`
+  (Bearer `OBSERVATIONS_TOKEN`) hands them to wow-data, a thousand a page
+  (`next`: the next page's `after`; Vercel answers 4.5 MB at most).
 - Notifications (`lib/push.ts`, `lib/webpush.ts` from WoWLocker: VAPID and
   aes128gcm on Web Crypto): a browser's subscription per device
   (`push_subscriptions`, `POST`/`DELETE /api/push/subscriptions`, the key at
