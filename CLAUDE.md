@@ -32,7 +32,10 @@ its decisions: PLAN.md (the full chapter prose was dropped on 10 October
   role owners in item names ("a Champion's Helm" vs "Zanzil's Seal"). Where the
   game is silent, `scripts/names.ts` decides from the name (English words
   and given names from npm: an-array-of-english-words, human-names) and the
-  writer's rules the rest. `bun run audit`
+  writer's rules the rest. It also lists the places the why lines name
+  (`writing/why/`): after writing one that names a new place, run the audit
+  and commit Names.lua with it (the daily job opens a pull request
+  otherwise; `bun run check` doesn't see it). `bun run audit`
   reads the data (the Classic database's dump, the places and where each
   creature lives from wow-data's databases) into `.cache/audit/`,
   regenerates Names.lua and runs `addon/test/audit.lua`: every place,
