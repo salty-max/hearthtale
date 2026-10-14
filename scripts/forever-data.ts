@@ -5,25 +5,22 @@
 // Forever's names, and the writer's knowledge of it (addon/Hearthtale/
 // Forever.lua, with the names from names.ts). Classic's files are untouched.
 //   bun scripts/forever-data.ts        (after scripts/audit-data.ts)
-// Sources, pinned (downloaded once into .cache/forever, gitignored):
-//   - the beta client's own tables (wago.tools, product wow_classic_beta, one
-//     build): places, items, which quests exist;
-//   - AllTheThings' Forever database (MIT): quests, their givers, levels,
-//     sides, classes, prerequisites, objectives and rewards;
-//   - QuestieDB's traces of the beta (what Questie's recorder saw in 20,035
-//     sessions): quests' enders and objectives, creatures and where they live,
-//     what drops a quest's items.
-// cmangos classic-db (GPL-3.0, .cache/audit) for the old world's creatures,
-// pfQuest (MIT) for where the old world's NPCs stand.
+// Sources: wow-data's databases (../wow-data, the pinned builds and commits):
+//   - Forever's: the client's tables (places, items, which quests exist),
+//     Questie's Forever (its recorder's traces of the beta, merged: quests,
+//     their givers, enders, levels, sides, classes, prerequisites and
+//     objectives; creatures and where they live; what drops a quest's
+//     items), its own quests' rewards (AllTheThings', frozen there);
+//   - Classic Era's: the old world's places; the Classic database's dump
+//     (as Knowledge.lua's and Names.lua's): what the old world already has.
 import { readFileSync, writeFileSync } from "node:fs";
 import { gunzipSync } from "node:zlib";
-import { spawnSync } from "node:child_process";
 import path from "node:path";
 import { rows } from "./sql";
 import { decide, list, plainName } from "./names";
-import { classicDump, repoDir, repoFile, repoTree } from "../../wow-data/src/github";
+import { openDb } from "../../wow-data/src/db";
+import { classicDump } from "../../wow-data/src/github";
 import { FOREVER } from "../../wow-data/src/pins";
-import { wagoFile } from "../../wow-data/src/wago";
 
 const ROOT = path.join(import.meta.dir, "..");
 const AUDIT = path.join(ROOT, ".cache", "audit");
@@ -31,77 +28,34 @@ const AUDIT = path.join(ROOT, ".cache", "audit");
 export const BUILD = FOREVER.build;
 
 
-// A client table, as CSV rows by column name.
-function csv(text: string): Record<string, string>[] {
-  const lines: string[][] = [];
-  let row: string[] = [], cell = "", quoted = false;
-  for (let i = 0; i < text.length; i++) {
-    const c = text[i];
-    if (quoted) {
-      if (c === '"' && text[i + 1] === '"') { cell += '"'; i++ }
-      else if (c === '"') quoted = false;
-      else cell += c;
-    } else if (c === '"') quoted = true;
-    else if (c === ",") { row.push(cell); cell = "" }
-    else if (c === "\n") { row.push(cell.replace(/\r$/, "")); lines.push(row); row = []; cell = "" }
-    else cell += c;
-  }
-  if (cell || row.length) { row.push(cell); lines.push(row) }
-  const head = lines.shift()!;
-  return lines.filter((l) => l.length > 1).map((l) => Object.fromEntries(head.map((h, i) => [h, l[i] ?? ""])));
+const fdb = openDb("forever"), cdb = openDb("classic");
+type Row = Record<string, string>;
+// a client table of Forever's, each value as text (as its CSV had them)
+function table(name: string): Row[] {
+  return (fdb.query(`SELECT * FROM "client_${name}" ORDER BY rowid`).all() as Record<string, unknown>[]).map((r) =>
+    Object.fromEntries(Object.entries(r).map(([k, v]) => [k, v == null ? "" : String(v)])),
+  );
 }
-async function table(name: string) {
-  return csv(readFileSync(await wagoFile("forever", name), "utf8"));
-}
+const all = <T,>(db: typeof fdb, sql: string, ...p: (string | number)[]) => db.query(sql).all(...p) as T[];
 
-// ── the sources ─────────────────────────────────────────────────────────────
-// (wow-data: the pinned commits, each file downloaded once)
-const attFiles = (await repoTree("allthethings")).filter((f) => /^\.contrib\/\.db\/forever\/(zones|dungeons & raids)\/.*\.lua$/.test(f));
-for (const f of attFiles) await repoFile("allthethings", f);
-const TRACES = "src/corrections/Forever/traces";
-for (const f of ["foreverQuestTraces", "foreverNpcTraces", "foreverObjectTraces", "foreverItemTraces"])
-  await repoFile("questiedb", `${TRACES}/${f}.lua`);
-const unitsFile = await repoFile("pfquest", "db/units.lua");
-const read = spawnSync(
-  "luajit",
-  [path.join(ROOT, "scripts", "forever-read.lua"), repoDir("allthethings", ".contrib/.db/forever"), repoDir("questiedb", TRACES)],
-  { maxBuffer: 1 << 28 },
-);
-if (read.status !== 0) throw new Error(`forever-read.lua: ${read.stderr}`);
+const areas = table("AreaTable");
+const sparse = table("ItemSparse");
+const itemRows = table("Item");
+const questIds = new Set(table("QuestV2").map((r) => Number(r.ID)));
 
-type Objective = { index?: number; text?: string; provider?: (string | number)[]; cr?: number; crs?: number[] };
-type AttQuest = {
-  id: number; file: string; title?: string; map?: string; qg?: number[]; qgNames?: string; provider?: (string | number)[];
-  races?: string | string[]; classes?: string[] | { fn: string; args: unknown[] }; lvl?: number | number[];
-  prev?: number[]; repeatable?: boolean; objectives: Objective[]; rewards: number[];
-  found: { item: number; from: string; id: number; name?: string }[];
-};
-type Trace = Record<string, unknown>;
-const sources = JSON.parse(read.stdout.toString("utf8")) as {
-  att: { quests: Record<string, AttQuest>; npcs: Record<string, { name: string; map?: string }> };
-  traces: { quests: Record<string, Trace>; npcs: Record<string, Trace>; objects: Record<string, Trace>; items: Record<string, Trace> };
-};
-
-const areas = await table("AreaTable");
-const sparse = await table("ItemSparse");
-const itemRows = await table("Item");
-const questIds = new Set((await table("QuestV2")).map((r) => Number(r.ID)));
-
-// The old world, as cmangos knows it: what is new is what it doesn't.
+// The old world, as the Classic database knows it (the dump Knowledge.lua and
+// Names.lua are made from): what is new is what it doesn't.
 const sql = gunzipSync(readFileSync(await classicDump())).toString("utf8");
 const classic = { quests: new Set<number>(), creatures: new Map<number, string>(), items: new Set<number>(), objects: new Set<number>() };
 for (const r of rows(sql, "quest_template")) classic.quests.add(r.entry as number);
 for (const r of rows(sql, "creature_template")) classic.creatures.set(r.Entry as number, r.Name as string);
 for (const r of rows(sql, "item_template")) classic.items.add(r.entry as number);
 for (const r of rows(sql, "gameobject_template")) classic.objects.add(r.entry as number);
-const classicZones = new Set<number>();
-for (const m of readFileSync(await repoFile("pfquest", "db/enUS/zones.lua"), "utf8").matchAll(/\[(\d+)\] = "/g)) classicZones.add(Number(m[1]));
+// (Classic Era's places: Forever's own are the others)
+const classicZones = new Set(all<{ ID: number }>(cdb, "SELECT ID FROM client_AreaTable").map((r) => r.ID));
 
 // ── places ──────────────────────────────────────────────────────────────────
-// An ATT map constant ("MAP.ZEPHRAS_ISLE", "MAP.THE_BARRENS") is the zone of
-// that name in the client's AreaTable (a zone: no parent).
-const norm = (s: string) => s.toLowerCase().replace(/^the /, "").replace(/[^a-z0-9]+/g, " ").trim();
-const zoneByName = new Map<string, number>(), areaName = new Map<number, string>(), parentOf = new Map<number, number>();
+const areaName = new Map<number, string>(), parentOf = new Map<number, number>();
 // (the client's placeholders and test areas aren't places: as audit-data.ts)
 const JUNK = /UNUSED|unused|^Jeff |TEST|DELETE|Delete ME|Test|\*\*\*|^GM |Programmer|Designer|Not Used|^zz/;
 for (const a of areas) {
@@ -109,22 +63,10 @@ for (const a of areas) {
   areaName.set(Number(a.ID), a.AreaName_lang);
   parentOf.set(Number(a.ID), Number(a.ParentAreaID));
 }
-// (a zone's name first, then a place's: "Northshire Valley" is in Elwynn Forest)
-for (const top of [true, false])
-  for (const a of areas)
-    if ((a.ParentAreaID === "0") === top && !zoneByName.has(norm(a.AreaName_lang))) zoneByName.set(norm(a.AreaName_lang), Number(a.ID));
 const rootOf = (id: number) => {
   for (let i = 0; i < 6 && (parentOf.get(id) ?? 0) !== 0; i++) id = parentOf.get(id)!;
   return id;
 };
-const unmapped = new Set<string>();
-const zoneOf = (map?: string) => {
-  if (!map?.startsWith("MAP.") || /^MAP\.(EASTERN_KINGDOMS|KALIMDOR|AZEROTH)$/.test(map)) return undefined;
-  const id = zoneByName.get(norm(map.slice(4).replace(/_/g, " ")));
-  if (!id) unmapped.add(map);
-  return id && rootOf(id);
-};
-
 // ── items ───────────────────────────────────────────────────────────────────
 const itemInfo = new Map<number, { name: string; quality: number; class: number; sub: number; slot: number; classes: number }>();
 const itemClass = new Map(itemRows.map((r) => [Number(r.ID), r]));
@@ -140,61 +82,61 @@ for (const r of sparse) {
 type Creature = { name: string; sub?: string; spawns: number; zone?: number };
 const creatures = new Map<number, Creature>();
 const objects = new Map<number, string>();
-const nameRole = (s: string) => {
-  const m = s.match(/^(.*?)\s*<([^>]+)>\s*$/);
-  return m ? { name: m[1].trim(), sub: m[2].trim() } : { name: s.trim() };
-};
-// (an old NPC's land, from pfQuest (MIT): its first spawn's zone)
+// (where every creature lives, old or new: the zone most of Questie's points
+// for it are in)
 const npcZone = new Map<number, number>();
-for (const m of readFileSync(unitsFile, "utf8").matchAll(/\n {2}\[(\d+)\] = \{\n {4}\["coords"\] = \{\n {6}\[1\] = \{ [-\d.]+, [-\d.]+, (\d+),/g))
-  npcZone.set(Number(m[1]), Number(m[2]));
-for (const [id, n] of Object.entries(sources.traces.npcs)) if (typeof n.zoneID === "number" && n.zoneID > 0) npcZone.set(Number(id), rootOf(n.zoneID));
-for (const [id, n] of Object.entries(sources.traces.npcs)) {
-  if (classic.creatures.has(Number(id)) || typeof n.name !== "string") continue;
-  // (the traces record a creature wherever a player saw it: one that wanders
-  // is seen in many places close together; its spawns are the places apart)
-  const spawns = Object.values((n.spawns ?? {}) as Record<string, [number, number][]>).reduce((a, points) => {
+for (const r of all<{ id: number; zone: number }>(
+  fdb,
+  `SELECT entity_id AS id, area_id AS zone, count(*) AS n FROM spawn WHERE kind = 'creature' AND source = 'questie' AND area_id > 0
+   GROUP BY entity_id, area_id ORDER BY entity_id, n DESC, area_id`,
+))
+  if (!npcZone.has(r.id)) npcZone.set(r.id, rootOf(r.zone));
+// Forever's own creatures: Questie's (its traces record a creature wherever a
+// player saw it: one that wanders is seen in many places close together; its
+// spawns are the places apart)
+const points = new Map<number, [number, number][][]>();
+for (const r of all<{ id: number; zone: number; x: number; y: number }>(
+  fdb,
+  "SELECT entity_id AS id, area_id AS zone, ux AS x, uy AS y FROM spawn WHERE kind = 'creature' AND source = 'questie' AND ux IS NOT NULL ORDER BY entity_id, area_id, rowid",
+)) {
+  const byZone = points.get(r.id) ?? [];
+  if (!points.has(r.id)) points.set(r.id, byZone);
+  const last = byZone.at(-1) as ([number, number][] & { zone?: number }) | undefined;
+  if (last && last.zone === r.zone) last.push([r.x, r.y]);
+  else byZone.push(Object.assign([[r.x, r.y]] as [number, number][], { zone: r.zone }));
+}
+for (const r of all<{ id: number; name: string; sub: string | null }>(
+  fdb,
+  `SELECT c.id, n.name, s.name AS sub FROM creature c JOIN name n ON n.kind = 'creature' AND n.id = c.id AND n.locale = 'enUS'
+   LEFT JOIN name s ON s.kind = 'creature_subname' AND s.id = c.id AND s.locale = 'enUS' ORDER BY c.id`,
+)) {
+  if (classic.creatures.has(r.id)) continue;
+  const spawns = (points.get(r.id) ?? []).reduce((a, zone) => {
     const kept: [number, number][] = [];
-    for (const [x, y] of points) if (!kept.some(([kx, ky]) => Math.hypot(kx - x, ky - y) < 3)) kept.push([x, y]);
+    for (const [x, y] of zone) if (!kept.some(([kx, ky]) => Math.hypot(kx - x, ky - y) < 3)) kept.push([x, y]);
     return a + kept.length;
   }, 0);
-  creatures.set(Number(id), { name: n.name as string, spawns: Math.max(spawns, 1), zone: n.zoneID as number | undefined });
+  creatures.set(r.id, { name: r.name, ...(r.sub ? { sub: r.sub } : {}), spawns: Math.max(spawns, 1), zone: npcZone.get(r.id) });
 }
-for (const [id, o] of Object.entries(sources.traces.objects))
-  if (!classic.objects.has(Number(id)) && typeof o.name === "string") objects.set(Number(id), o.name as string);
-// (ATT names the givers it lists: "Ayessa Dawnsinger", "Alamar Grimm <Warlock Trainer>")
-for (const q of Object.values(sources.att.quests)) {
-  const names = (q.qgNames ?? "").split(/,\s*/);
-  (q.qg ?? []).forEach((id, i) => {
-    const n = names[i] ? nameRole(names[i]) : undefined;
-    if (!n || classic.creatures.has(id)) return;
-    const c = creatures.get(id) ?? { name: n.name, spawns: 1, zone: zoneOf(q.map) };
-    if (n.sub) c.sub = n.sub;
-    creatures.set(id, c);
-  });
-  for (const o of q.objectives)
-    if (o.provider?.[0] === "n" && !classic.creatures.has(Number(o.provider[1])) && !creatures.has(Number(o.provider[1])) && o.text)
-      creatures.set(Number(o.provider[1]), { name: o.text.replace(/^\d+\/\d+\s*/, "").replace(/\s+(slain|defeated|killed)$/, ""), spawns: 2 });
-}
-for (const [id, n] of Object.entries(sources.att.npcs))
-  if (!classic.creatures.has(Number(id)) && !creatures.has(Number(id))) creatures.set(Number(id), { ...nameRole(n.name), spawns: 1, zone: zoneOf(n.map) });
+for (const r of all<{ id: number; name: string }>(
+  fdb,
+  "SELECT o.id, n.name FROM object o JOIN name n ON n.kind = 'object' AND n.id = o.id AND n.locale = 'enUS' ORDER BY o.id",
+))
+  if (!classic.objects.has(r.id)) objects.set(r.id, r.name);
 
 // ── quests ──────────────────────────────────────────────────────────────────
-const CLASS: Record<string, number> = { WARRIOR: 1, PALADIN: 2, HUNTER: 4, ROGUE: 8, PRIEST: 16, SHAMAN: 64, MAGE: 128, WARLOCK: 256, DRUID: 1024 };
-const RACE: Record<string, number> = { HUMAN: 1, ORC: 2, DWARF: 4, NIGHTELF: 8, UNDEAD: 16, SCOURGE: 16, TAUREN: 32, GNOME: 64, TROLL: 128 };
-const classMask = (c: AttQuest["classes"]) => {
-  if (!c) return undefined;
-  if (Array.isArray(c)) return c.reduce((m, k) => m | (CLASS[String(k)] ?? 0), 0) || undefined;
-  if (c.fn === "exclude") return undefined; // all but some: no class of its own
-  return undefined;
+// (the old races' bits, and Forever's Skyborne: bit 32 the Alliance's, 33 the Horde's)
+const ALLIANCE = 1 + 4 + 8 + 64, HORDE = 2 + 16 + 32 + 128;
+const bitOf = (mask: number, b: number) => Math.floor(mask / 2 ** b) % 2 === 1;
+const sideOf = (mask: number) => {
+  const old = mask % 2 ** 32;
+  const a = (old & ALLIANCE) !== 0 || bitOf(mask, 32), h = (old & HORDE) !== 0 || bitOf(mask, 33);
+  return a && !h ? "alliance" : h && !a ? "horde" : undefined;
 };
-const sideOf = (r: AttQuest["races"]) => (r === "HORDE_ONLY" ? "horde" : r === "ALLIANCE_ONLY" ? "alliance" : undefined);
-const raceMask = (r: AttQuest["races"]) =>
-  Array.isArray(r) ? r.reduce((m, k) => m | (RACE[String(k)] ?? 0), 0) || undefined : undefined;
-// "0/6 Windshaper Novice Seer defeated", "0/1 Head of the Baron": the count and the line's words
-const parseLine = (s?: string) => {
-  const m = s?.match(/^(\d+)\/(\d+)\s+(.*)$/);
-  return m ? { n: Number(m[2]), words: m[3].trim() } : s ? { n: 1, words: s.trim() } : undefined;
+// (a quest for some of a side's old races, not all: theirs alone)
+const raceMask = (mask: number) => {
+  const old = mask % 2 ** 32 & (ALLIANCE | HORDE);
+  return old && old !== ALLIANCE && old !== HORDE && ((old & ALLIANCE) === old || (old & HORDE) === old) ? old : undefined;
 };
 // "Slay 6 Windshaper Novice Seers in Shen'dar Highlands.": how many of a name a text asks
 const countIn = (text: string, name: string) => {
@@ -244,58 +186,50 @@ const addSource = (item: number, kind: "creatures" | "objects", id: number) => {
   s[kind].add(id);
   itemSources.set(item, s);
 };
-for (const [id, it] of Object.entries(sources.traces.items)) if (typeof it.name === "string") known.items.set(it.name as string, Number(id));
+type QuestRow = { id: number; title: string; level: number | null; min: number | null; zone: number | null; races: number | null; classes: number | null; prev: number | null; text: string | null };
+const own = all<QuestRow>(
+  fdb,
+  `SELECT q.id, n.name AS title, q.level, q.min_level AS min, q.zone_id AS zone, q.races, q.classes, q.prev_id AS prev,
+     (SELECT text FROM quest_text t WHERE t.quest_id = q.id AND t.locale = 'enUS' AND t.field = 'objectives') AS text
+   FROM quest q JOIN name n ON n.kind = 'quest' AND n.id = q.id AND n.locale = 'enUS' ORDER BY q.id`,
+).filter((r) => !classic.quests.has(r.id) && questIds.has(r.id));
+// (the quest items a text may name: those Forever's own quests ask for)
+for (const r of all<{ id: number; name: string }>(
+  fdb,
+  `SELECT DISTINCT o.target_id AS id, n.name FROM quest_objective o JOIN name n ON n.kind = 'item' AND n.id = o.target_id AND n.locale = 'enUS'
+   WHERE o.kind IN ('item', 'source')`,
+))
+  if (!classic.items.has(r.id)) known.items.set(r.name, r.id);
 for (const [id, c] of creatures) known.creatures.set(c.name, id);
 for (const [id, o] of objects) known.objects.set(o, id);
-const tracedIds = Object.keys(sources.traces.quests).map(Number);
-const ids = new Set([...Object.keys(sources.att.quests).map(Number), ...tracedIds].filter((id) => !classic.quests.has(id) && questIds.has(id)));
-for (const id of [...ids].sort((a, b) => a - b)) {
-  const a = sources.att.quests[id] as AttQuest | undefined;
-  const t = (sources.traces.quests[id] ?? {}) as Trace;
-  const title = (t.name as string | undefined) ?? a?.title;
-  if (!title) continue;
-  const q: Quest = { title, texts: [], items: [], targets: [], rewards: [] };
-  const objectivesText = (t.objectivesText as string[] | undefined) ?? [];
-  if (objectivesText.length) q.objectives = objectivesText.join(" ");
-  // what it asks: ATT's lines first (with their counts), then what the traces add
-  const seen = new Set<string>();
-  for (const o of a?.objectives ?? []) {
-    const line = parseLine(o.text);
-    const [kind, oid] = (o.provider ?? []) as [string, number];
-    if (kind === "n" && oid) {
-      seen.add(`n${oid}`);
-      const name = creatures.get(oid)?.name ?? classic.creatures.get(oid);
-      // (a kill in the quest's own words, "… defeated": its text, as the quest log shows it)
-      const own = line && name && line.words !== `${name} slain` ? line.words : "";
-      q.targets.push([oid, line?.n ?? 1]);
-      q.texts.push(own);
-    } else if (kind === "i" && oid) {
-      seen.add(`i${oid}`);
-      q.items.push([oid, line?.n ?? 1]);
-      for (const c of [o.cr, ...(o.crs ?? [])]) if (c) addSource(oid, "creatures", c);
-    } else if (kind === "o" && oid) {
-      seen.add(`o${oid}`);
-      q.targets.push([-oid, line?.n ?? 1]);
-      q.texts.push(line?.words ?? "");
-      if (!objects.has(oid) && o.text) objects.set(oid, line?.words ?? o.text);
-    } else if (line) {
-      q.texts.push(line.words); // an event: "Listen to Elaadrin"
-      q.targets.push([0, line.n]);
-    }
-  }
-  const structured = (t.objectives ?? []) as unknown[][];
-  const [byCreature, byObject, byItem] = [structured[0], structured[1], structured[2]] as ([number, string?][] | undefined)[];
-  const text = objectivesText.join(" ");
-  // (the traces list every creature a quest involves, the ones to speak to or
-  // escort too: a kill only where the text asks to slay it; the others, the
-  // quest's own words, as the quest log shows a task)
+// (what it needs done first: one of Questie's alternatives, Forever's own
+// first, "Call of Earth" after 92466 rather than the orcs' 1516; AllTheThings'
+// where Questie has none; else the quest whose next in chain it is)
+const ownIds = new Set(own.map((r) => r.id));
+const prevOf = (id: number) => {
+  const ps = all<{ prev: number }>(fdb, "SELECT prev_id AS prev FROM quest_prereq WHERE quest_id = ? AND prev_id > 0 ORDER BY rowid", id).map((x) => x.prev);
+  const before = all<{ id: number }>(fdb, "SELECT id FROM quest WHERE next_in_chain = ? ORDER BY id", id).map((x) => x.id);
+  return ps.find((p) => ownIds.has(p)) ?? ps[0] ?? before.find((p) => ownIds.has(p)) ?? before[0];
+};
+for (const r of own) {
+  const q: Quest = { title: r.title, texts: [], items: [], targets: [], rewards: [] };
+  const text = (r.text ?? "").replace(/\s+/g, " ").trim();
+  if (text) q.objectives = text;
+  // what it asks, as Questie lists it (the creatures a quest involves, the
+  // ones to speak to or escort too: a kill only where the text asks to slay
+  // it; the others, the quest's own words, as the quest log shows a task)
+  const asks = all<{ kind: string; target: number }>(
+    fdb,
+    "SELECT kind, target_id AS target FROM quest_objective WHERE quest_id = ? ORDER BY CASE kind WHEN 'creature' THEN 0 WHEN 'object' THEN 1 ELSE 2 END, idx",
+    r.id,
+  );
+  const byCreature = asks.filter((a) => a.kind === "creature");
   const slays = /^(slay|kill|defeat|destroy|hunt|eliminate|cull|thin)\b/i.test(text) || / and (slay|kill|defeat) /i.test(text);
-  for (const [cid] of byCreature ?? []) {
-    if (seen.has(`n${cid}`)) continue;
+  for (const { target: cid } of byCreature) {
     const name = creatures.get(cid)?.name ?? classic.creatures.get(cid) ?? "";
     // ("… bring her head to Danarii Bellowveil": who it is for, not whom to fight)
     const recipient = name && new RegExp(`\\b(to|for|with|from) ${escape(name)}`).test(text);
-    const asked = !recipient && (slays && name && new RegExp(`\\b${escape(name)}`).test(text) || slays && (byCreature ?? []).length === 1);
+    const asked = !recipient && ((slays && name && new RegExp(`\\b${escape(name)}`).test(text)) || (slays && byCreature.length === 1));
     if (asked) {
       q.targets.push([cid, countIn(text, name) ?? 1]);
       q.texts.push("");
@@ -304,42 +238,48 @@ for (const id of [...ids].sort((a, b) => a - b)) {
       q.texts.push(text.replace(/\.\s*$/, ""));
     }
   }
-  for (const [oid] of byObject ?? []) if (!seen.has(`o${oid}`) && !q.targets.some(([x]) => x === -oid)) {
-    q.targets.push([-oid, 1]);
-    q.texts.push(objects.get(oid) ?? "");
-  }
-  for (const [iid] of byItem ?? []) {
-    if (seen.has(`i${iid}`)) continue;
+  for (const { target: oid } of asks.filter((a) => a.kind === "object"))
+    if (!q.targets.some(([x]) => x === -oid)) {
+      q.targets.push([-oid, 1]);
+      q.texts.push(objects.get(oid) ?? "");
+    }
+  for (const { target: iid } of asks.filter((a) => a.kind === "item" || a.kind === "source")) {
+    if (q.items.some(([x]) => x === iid)) continue;
     const name = itemInfo.get(iid)?.name ?? "";
     q.items.push([iid, countIn(text, name) ?? 1]);
   }
   if (!q.targets.length && !q.items.length && text) fromText(q, text);
-  for (const f of a?.found ?? []) addSource(f.item, f.from === "o" ? "objects" : "creatures", f.id);
-  // who gives it and who takes it back
-  const started = (t.startedBy as number[][] | undefined) ?? [];
-  const finished = (t.finishedBy as number[][] | undefined) ?? [];
-  q.starters = a?.qg?.length ? a.qg : started[0]?.length ? started[0] : undefined;
-  if (!q.starters && a?.provider?.[0] === "o") q.starters = [-(a.provider[1] as number)];
-  q.enders = finished[0]?.length ? finished[0] : undefined;
-  q.classes = classMask(a?.classes);
-  q.races = raceMask(a?.races);
-  q.side = sideOf(a?.races);
-  const lvl = Array.isArray(a?.lvl) ? a!.lvl[0] : a?.lvl;
-  q.min = (t.requiredLevel as number | undefined) ?? lvl;
-  q.level = (t.questLevel as number | undefined) ?? lvl;
-  q.prev = a?.prev?.[0];
-  q.repeatable = a?.repeatable || undefined;
-  q.rewards = (a?.rewards ?? []).filter((r) => itemInfo.has(r));
-  // where: ATT's map, else the land its giver stands in
+  // who gives it and who takes it back (an object's id negative)
+  const rel = all<{ role: string; kind: string; id: number }>(
+    fdb,
+    "SELECT role, kind, entity_id AS id FROM quest_relation WHERE quest_id = ? ORDER BY role, kind, entity_id",
+    r.id,
+  );
+  const starters = rel.filter((x) => x.role === "start" && x.kind === "creature").map((x) => x.id);
+  const objectStarters = rel.filter((x) => x.role === "start" && x.kind === "object").map((x) => -x.id);
+  const enders = rel.filter((x) => x.role === "end" && x.kind === "creature").map((x) => x.id);
+  q.starters = starters.length ? starters : objectStarters.length ? objectStarters : undefined;
+  q.enders = enders.length ? enders : undefined;
+  q.classes = r.classes || undefined;
+  q.races = r.races ? raceMask(r.races) : undefined;
+  q.side = r.races ? sideOf(r.races) : undefined;
+  q.min = r.min || undefined;
+  q.level = r.level && r.level > 0 ? r.level : undefined;
+  q.prev = prevOf(r.id) ?? (r.prev || undefined);
+  q.rewards = all<{ item: number }>(fdb, "SELECT ref_id AS item FROM quest_reward WHERE quest_id = ? AND kind IN ('item', 'choice')", r.id)
+    .map((x) => x.item)
+    .filter((i) => itemInfo.has(i));
+  // where: its zone, else the land its giver stands in
   const giver = q.starters?.[0] && q.starters[0] > 0 ? q.starters[0] : q.enders?.[0];
-  q.zone = zoneOf(a?.map) ?? (giver ? npcZone.get(giver) ?? creatures.get(giver)?.zone : undefined);
-  quests.set(id, q);
+  q.zone = r.zone && r.zone > 0 ? rootOf(r.zone) : giver ? npcZone.get(giver) ?? creatures.get(giver)?.zone : undefined;
+  quests.set(r.id, q);
 }
-// what drops a quest's items, as the traces saw it
-for (const [id, it] of Object.entries(sources.traces.items)) {
-  for (const c of (it.npcDrops ?? []) as number[]) addSource(Number(id), "creatures", c);
-  for (const o of (it.objectDrops ?? []) as number[]) addSource(Number(id), "objects", o);
-}
+// what drops a quest's items, as Questie saw it
+for (const r of all<{ kind: string; source: number; item: number }>(
+  fdb,
+  "SELECT kind, source_id AS source, item_id AS item FROM loot WHERE source = 'questie' AND kind IN ('creature', 'object') AND item_id IS NOT NULL",
+))
+  addSource(r.item, r.kind === "object" ? "objects" : "creatures", r.source);
 
 // ── the playthrough's game data: Forever's additions to game.lua ────────────
 const lua = (v: unknown): string => {
@@ -398,6 +338,7 @@ writeFileSync(path.join(AUDIT, "corpus-forever.txt"),
 // class's own quest, its chains.
 const knowledge: string[] = [];
 const qs = (s: string) => JSON.stringify(s);
+const CLASS: Record<string, number> = { WARRIOR: 1, PALADIN: 2, HUNTER: 4, ROGUE: 8, PRIEST: 16, SHAMAN: 64, MAGE: 128, WARLOCK: 256, DRUID: 1024 };
 const CLASSES = Object.entries(CLASS);
 const TOTEM_ITEMS: Record<number, string> = { 5175: "earth", 5176: "fire", 5177: "water", 5178: "air" };
 // (a shaman's rite, as the game titles it, "Call of Fire": the shaman's own,
@@ -490,8 +431,8 @@ writeFileSync(path.join(ROOT, "addon", "Hearthtale", "Forever.lua"), [
   "-- Generated by scripts/forever-data.ts: do not edit. WoW Forever's own content",
   `-- (beta build ${BUILD}), loaded by Forever's TOC alone (Hearthtale_Camelot.toc):`,
   "-- what Knowledge.lua and Names.lua know of the old world, for Forever's new",
-  "-- quests, creatures and places. From the beta client's tables (wago.tools),",
-  "-- AllTheThings' Forever database (MIT) and QuestieDB's traces of the beta.",
+  "-- quests, creatures and places. From wow-data's Forever database: the",
+  "-- client's tables, Questie's Forever, its quests' rewards (AllTheThings').",
   "local _, ns = ...",
   "local K, N = ns.knowledge, ns.names",
   "local function add(t, names)",
@@ -517,4 +458,3 @@ const told = [...quests.values()];
 console.log(`✓ Forever (build ${BUILD}): ${told.length} quests (${told.filter((q) => q.targets.length || q.items.length).length} with objectives, ` +
   `${told.filter((q) => q.enders).length} with their enders, ${told.filter((q) => q.zone).length} placed), ${creatures.size} creatures, ` +
   `${objects.size} objects, ${[...itemSources].filter(([i]) => wantedItems.has(i)).length} quest items' sources → .cache/audit/game-forever.lua`);
-if (unmapped.size) console.log(`  (maps with no zone: ${[...unmapped].sort().join(", ")})`);

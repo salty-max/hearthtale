@@ -33,7 +33,8 @@ its decisions: PLAN.md (the full chapter prose was dropped on 10 October
   game is silent, `scripts/names.ts` decides from the name (English words
   and given names from npm: an-array-of-english-words, human-names) and the
   writer's rules the rest. `bun run audit`
-  downloads the data (cmangos classic-db, pfQuest's places) into `.cache/`,
+  reads the data (the Classic database's dump, the places and where each
+  creature lives from wow-data's databases) into `.cache/audit/`,
   regenerates Names.lua and runs `addon/test/audit.lua`: every place,
   creature and item of the game through the writer, reviewed in
   `.cache/audit/report.txt` and checked for regressions; then
@@ -70,8 +71,8 @@ its decisions: PLAN.md (the full chapter prose was dropped on 10 October
   (salty-max/wow-data, beside this folder): the clients' builds and the
   community databases pinned in its `pins.json`, each file downloaded once
   into its `.cache/`; the scripts import `../../wow-data/src/...` (`wago`,
-  `wagoFile`, `classicDump`, `repoFile`, `repoTree`, `repoDir`). Hearthtale
-  pins nothing of its own. `.github/workflows/game-data.yml` (daily and by
+  `wagoFile`, `classicDump`, `openDb`: the databases). Hearthtale pins
+  nothing of its own. `.github/workflows/game-data.yml` (daily and by
   hand) checks wow-data out beside it, runs `bun run audit` and, when a
   generated file changed, opens a pull request with the journals compared
   before and after (`scripts/golden.sh`) and `bun run addon:check` (never
@@ -84,15 +85,17 @@ its decisions: PLAN.md (the full chapter prose was dropped on 10 October
   `Hearthtale_Camelot.toc`): what
   Knowledge.lua and Names.lua know, for Forever's own quests, creatures and
   places (Zephras Isle, the new quests in the old lands, the new dungeons).
-  From the beta client's tables (wago.tools, one pinned build), AllTheThings'
-  Forever database (MIT; read by `scripts/forever-read.lua`) and QuestieDB's
-  traces of the beta, all pinned; names by `names.ts`'s rules over Classic's
-  texts and Forever's together, only for names Classic lacks. It also writes
+  From wow-data's Forever database (the client's tables, Questie's Forever,
+  its own quests' rewards and the prerequisites Questie lacks, AllTheThings',
+  frozen there), new being what the Classic database's dump doesn't know (as
+  Knowledge.lua's); a quest's prerequisite one of Questie's alternatives,
+  Forever's own first; names by `names.ts`'s rules over Classic's texts and
+  Forever's together, only for names Classic lacks. It also writes
   `.cache/audit/game-forever.lua` and `npcs-forever.lua` for `FOREVER=1
   luajit addon/test/playthrough.lua` (the Skyborne of each side from Zephras
   Isle and the old races' new classes; journals in
   `.cache/audit/books-forever/`). No source has the new zones' quests above
-  the beta's levels, nor any new creature's type, family or rank. A quest
+  the beta's levels, nor any new creature's type or family. A quest
   the game titles "Call of Earth/Fire/Water/Air" is a shaman's own; a rite
   with no step known to give its totem gives it at its last step that
   brings the prize home ("Bring the Torch of Eternal Flame to …").

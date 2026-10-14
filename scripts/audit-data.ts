@@ -2,12 +2,13 @@
 // quest, item, object and place of Classic, from open databases, downloaded into
 // .cache/audit (gitignored) and reduced to one Lua table.
 //   bun scripts/audit-data.ts
-// Sources: cmangos classic-db (GPL-3.0) for creatures, quests, items and objects;
-// pfQuest (MIT) for the places' names. The names themselves are Blizzard's.
+// Sources (wow-data's): cmangos classic-db (GPL-3.0) for creatures, quests,
+// items and objects; the client's AreaTable for the places; Questie's zones
+// for where each creature lives. The names themselves are Blizzard's.
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { gunzipSync } from "node:zlib";
-import { classicDump, repoFile } from "../../wow-data/src/github";
-import { wagoFile } from "../../wow-data/src/wago";
+import { openDb } from "../../wow-data/src/db";
+import { classicDump } from "../../wow-data/src/github";
 import path from "node:path";
 import { rows } from "./sql";
 
@@ -25,27 +26,38 @@ const lua = (v: unknown): string => {
 };
 
 mkdirSync(DIR, { recursive: true });
-// (wow-data: the pinned sources, downloaded once) the Classic database
-// (cmangos classic-db), pfQuest's zones and where every creature stands
-// (MIT), the client's areas, for the land each one lies in (Coldridge
-// Valley: Dun Morogh)
+// (wow-data: the pinned sources) the Classic database (cmangos classic-db)
+// and Classic Era's database: the client's areas (the places, the land each
+// lies in: Coldridge Valley in Dun Morogh), and where every creature lives
 const dump = await classicDump();
-const zonesFile = await repoFile("pfquest", "db/enUS/zones.lua");
-const unitsFile = await repoFile("pfquest", "db/units.lua");
-const areasFile = await wagoFile("classic", "AreaTable");
+const db = openDb("classic");
 const sql = gunzipSync(readFileSync(dump)).toString("utf8");
 
 const spawns = new Map<number, number>();
 for (const r of rows(sql, "creature")) spawns.set(r.id as number, (spawns.get(r.id as number) ?? 0) + 1);
-// (a creature's land: the zone of its first spawn, as pfQuest has it)
+// (a creature's land: the zone most of its spawns are in, as Questie has it;
+// else the zone of its first spawn in the world, the smallest zone map
+// holding it: the client's UiMapAssignment)
 const unitZone = new Map<number, number>();
-for (const m of readFileSync(unitsFile, "utf8").matchAll(/\n {2}\[(\d+)\] = \{\n {4}\["coords"\] = \{\n {6}\[1\] = \{ [-\d.]+, [-\d.]+, (\d+),/g))
-  unitZone.set(Number(m[1]), Number(m[2]));
+for (const r of db
+  .query(
+    `SELECT entity_id AS id, area_id AS zone, count(*) AS n FROM spawn WHERE kind = 'creature' AND source = 'questie' AND area_id IS NOT NULL
+     GROUP BY entity_id, area_id ORDER BY entity_id, n DESC, area_id`,
+  )
+  .all() as { id: number; zone: number }[])
+  if (!unitZone.has(r.id)) unitZone.set(r.id, r.zone);
+const worldZone = db.query(
+  `SELECT a.AreaID AS zone FROM spawn s JOIN client_UiMapAssignment a ON a.MapID = s.map_id
+     AND s.x BETWEEN a.Region_0 AND a.Region_3 AND s.y BETWEEN a.Region_1 AND a.Region_4
+   JOIN client_UiMap u ON u.ID = a.UiMapID AND u.Type = 3
+   WHERE s.kind = 'creature' AND s.entity_id = ? AND s.source = 'classicdb' AND a.AreaID > 0
+   ORDER BY s.rowid, (a.Region_3 - a.Region_0) * (a.Region_4 - a.Region_1) LIMIT 1`,
+);
 const creatures: Record<number, object> = {};
 for (const r of rows(sql, "creature_template")) {
   creatures[r.Entry as number] = { name: r.Name, sub: r.SubName, rank: r.Rank, type: r.CreatureType, family: r.Family,
     min: r.MinLevel, max: r.MaxLevel, spawns: spawns.get(r.Entry as number) ?? 0, npc: r.NpcFlags,
-    zone: unitZone.get(r.Entry as number) };
+    zone: unitZone.get(r.Entry as number) ?? (worldZone.get(r.Entry as number) as { zone: number } | null)?.zone };
 }
 const starters = new Map<number, number[]>(), enders = new Map<number, number[]>();
 for (const [table, map] of [["creature_questrelation", starters], ["creature_involvedrelation", enders]] as const)
@@ -119,22 +131,14 @@ for (const r of rows(sql, "npc_trainer_template")) {
   const list = (byLevel[r.reqlevel as number] ??= []);
   if (!list.includes(spell)) list.push(spell);
 }
+// The places (the client's areas, its placeholders and tests left out) and
+// the land each lies in (its zone): parents[area] = zone.
 const zones: Record<number, string> = {};
-for (const m of readFileSync(zonesFile, "utf8").matchAll(/\[(\d+)\] = "((?:[^"\\]|\\.)*)"/g)) {
-  const name = m[2].replace(/\\(.)/g, "$1").trim(); // Lua's \' is '
-  if (!/UNUSED|^Jeff |TEST|DELETE|Delete ME|Test|\*\*\*|^GM |Programmer|Designer|Not Used/.test(name)) zones[Number(m[1])] = name;
-}
-
-// The land each area lies in (its zone): parents[area] = zone.
 const parents: Record<number, number> = {};
-{
-  const [head, ...lines] = readFileSync(areasFile, "utf8").trim().split("\n");
-  const cols = head.split(",");
-  const id = cols.indexOf("ID"), parent = cols.indexOf("ParentAreaID");
-  for (const line of lines) {
-    const cells = line.match(/("([^"]|"")*"|[^,]*)(,|$)/g)!.map((c) => c.replace(/,$/, ""));
-    if (Number(cells[parent]) > 0) parents[Number(cells[id])] = Number(cells[parent]);
-  }
+for (const a of db.query("SELECT ID, AreaName_lang, ParentAreaID FROM client_AreaTable ORDER BY ID").all() as Record<string, number | string>[]) {
+  const name = String(a.AreaName_lang ?? "").trim();
+  if (name && !/UNUSED|^Jeff |TEST|DELETE|Delete ME|Test|\*\*\*|^GM |Programmer|Designer|Not Used/.test(name)) zones[Number(a.ID)] = name;
+  if (Number(a.ParentAreaID) > 0) parents[Number(a.ID)] = Number(a.ParentAreaID);
 }
 
 // (in chunks: a Lua function holds at most 65536 constants)
