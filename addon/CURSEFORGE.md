@@ -86,7 +86,7 @@ Settings are saved per character. Copy them from another character of the same g
 
 ## Help the addons keep up with Forever
 
-Forever brings new quests and creatures, and the usual databases take weeks to catch up with them. You can help Hearthtale and its sister addons get there sooner. Tick **Share what you see** on the welcome page or in the options, and Hearthtale keeps what the game tells you of quests, creatures and NPCs. **[Ravenpost](https://github.com/salty-max/ravenpost)**, a small free app for Windows and macOS, sends it to the addons' shared database a few seconds after you log out. No account or sign-in is needed. What you see lets the journal tell Forever's new quests in their own words. Every player who shares makes a real difference, and it's truly appreciated.
+Forever brings new quests and creatures, and the usual databases take weeks to catch up with them. You can help Hearthtale and its sister addons get there sooner. Tick **Share what you see** on the welcome page or in the options, and Hearthtale keeps what the game tells you of quests, creatures and NPCs. **[Ravenpost](https://github.com/salty-max/ravenpost)**, a small free app for Windows and macOS, sends it to the addons' shared database a few seconds after you log out, once you click **Link with Battle.net** on its card: one account, one voice when players' games disagree. What you see lets the journal tell Forever's new quests in their own words. Every player who shares makes a real difference, and it's truly appreciated.
 
 Your name, class and race are replaced by the game's own placeholders, lines that name another player are left out, and your chat is never kept. Sharing is off until you turn it on, and turning it off forgets everything kept.
 
