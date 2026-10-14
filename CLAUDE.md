@@ -551,7 +551,14 @@ Plan and steps: PLAN.md, "The site".
   `/pair?code=…` → `/pair/poll` hands the token over once; only its hash is
   kept), then `POST /api/companion/upload` (Bearer token) with
   `{ characters: [HearthtaleChar] }`, one character per request (Vercel takes
-  4.5 MB). A book is kept only for a proven owner (Battle.net, already the
+  4.5 MB). Ravenpost's one sign-in (`lib/ravenpost.ts`): its inbox
+  (salty-max/ravenpost, `inbox/`) signs the player in with Battle.net and
+  hands Ravenpost a passport (the Battle.net id, BattleTag, the characters
+  owned per region; Ed25519, ten minutes, once), which
+  `POST /api/companion/signin` checks with the inbox's public key (in the
+  code; its dev key trusted off Vercel only) and turns into the account
+  (`loginAccount` per region) and an upload token, no pairing page; the
+  device-code pairing stays for older Ravenposts. A book is kept only for a proven owner (Battle.net, already the
   account's, or a link code in the record); otherwise "unlinked", unstored.
 - Notifications (`lib/push.ts`, `lib/webpush.ts` from WoWLocker: VAPID and
   aes128gcm on Web Crypto): a browser's subscription per device

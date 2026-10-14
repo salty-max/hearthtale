@@ -8,6 +8,7 @@ import { accounts, type AccountRow } from "@/db/schema";
 import { createSession, endSession, SESSION_COOKIE, SESSION_TTL_MS, sessionAccount, TEST_BNET_ID } from "@/lib/accounts";
 import { getCharacterBook, libraryOf, removeBook } from "@/lib/characters";
 import { confirmPairing, isPairCode, linkFor, pairingPending, pollPairing, startPairing } from "@/lib/companion";
+import { signInWithPassport } from "@/lib/ravenpost";
 import { handleUpload, uploadAs, type Saved } from "@/lib/upload";
 import { notifyNewEntries, subscribe, unsubscribe, vapid } from "@/lib/push";
 import { waitUntil } from "@vercel/functions";
@@ -187,6 +188,13 @@ app.post("/api/companion/pair/confirm", signedIn, sameOrigin, async (c) => {
   if (!isPairCode(code)) return c.json({ error: "not found" }, 404);
   const a = c.get("account")!;
   return (await confirmPairing(code, { id: a.id, battletag: a.battletag })) ? c.json({ ok: true }) : c.json({ error: "expired" }, 404);
+});
+
+// Ravenpost signed in once with Battle.net through its inbox: its passport for an upload token.
+app.post("/api/companion/signin", async (c) => {
+  const { passport } = await c.req.json<{ passport?: unknown }>().catch(() => ({ passport: undefined }));
+  const linked = await signInWithPassport(passport);
+  return linked ? c.json(linked) : c.json({ error: "not a passport" }, 401);
 });
 
 app.post("/api/companion/pair/poll", async (c) => {
