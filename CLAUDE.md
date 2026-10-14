@@ -553,6 +553,12 @@ Plan and steps: PLAN.md, "The site".
   `{ characters: [HearthtaleChar] }`, one character per request (Vercel takes
   4.5 MB). A book is kept only for a proven owner (Battle.net, already the
   account's, or a link code in the record); otherwise "unlinked", unstored.
+- Players' facts (`lib/observations.ts`, table `observations`): what the
+  addons' opt-in (the kit's collector) kept of the world, sent by Ravenpost to
+  `POST /api/observations` with no account (header `X-Contributor`: its
+  install's random id, only a hash kept to count who agrees), flattened and
+  checked, each fact kept once; `GET /api/observations/export?game=&since=`
+  (Bearer `OBSERVATIONS_TOKEN`) hands them to wow-data.
 - Notifications (`lib/push.ts`, `lib/webpush.ts` from WoWLocker: VAPID and
   aes128gcm on Web Crypto): a browser's subscription per device
   (`push_subscriptions`, `POST`/`DELETE /api/push/subscriptions`, the key at
