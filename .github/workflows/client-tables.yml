@@ -1,0 +1,92 @@
+# Every day, and by hand: have the game's builds moved past scripts/pins.json?
+# If so, a pull request: the pins moved (scripts/pins-latest.ts), the game's
+# data and the client tables written again from them (bun run audit), the
+# journals compared before and after (scripts/golden.sh) and the addon's
+# checks. Never merged by itself. The community databases' newer commits
+# (where Forever's own creatures and quests come from) are told in the run's
+# summary and the pull request, never followed.
+name: Client tables
+
+on:
+  schedule:
+    - cron: "17 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: client-tables
+  cancel-in-progress: false
+
+jobs:
+  tables:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      - name: Newer builds?
+        id: pins
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          bun scripts/pins-latest.ts --summary "$RUNNER_TEMP/pins.md"
+          cat "$RUNNER_TEMP/pins.md" >> "$GITHUB_STEP_SUMMARY"
+      - name: Lua (LuaJIT, StyLua, selene)
+        if: steps.pins.outputs.moved == 'true'
+        run: |
+          sudo apt-get install -y -qq luajit
+          mkdir -p "$HOME/bin" && cd "$HOME/bin"
+          curl -sSLo stylua.zip https://github.com/JohnnyMorganz/StyLua/releases/download/v2.5.2/stylua-linux-x86_64.zip
+          curl -sSLo selene.zip https://github.com/Kampfkarren/selene/releases/download/0.32.0/selene-0.32.0-linux.zip
+          unzip -qo stylua.zip && unzip -qo selene.zip && chmod +x stylua selene
+          echo "$HOME/bin" >> "$GITHUB_PATH"
+      # (the journals as today's pins write them, to compare with after)
+      - name: Before
+        if: steps.pins.outputs.moved == 'true'
+        run: bun run audit && bash scripts/golden.sh save
+      - name: The pins moved, the data written again
+        if: steps.pins.outputs.moved == 'true'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          bun scripts/pins-latest.ts --write --summary "$RUNNER_TEMP/pins.md"
+          bun run audit
+          bun scripts/client.ts --check
+      - name: After
+        if: steps.pins.outputs.moved == 'true'
+        run: |
+          {
+            cat "$RUNNER_TEMP/pins.md"
+            echo "### The journals, before and after (scripts/golden.sh)"
+            echo
+            echo '```'
+            bash scripts/golden.sh check || head -c 60000 .cache/golden/diff.txt
+            echo '```'
+            echo
+            echo "### The client tables"
+            echo
+            echo '```'
+            wc -c addon/Hearthtale/Client_*.lua addon/Hearthtale/English_*.lua
+            echo '```'
+            echo
+            echo "Opened by .github/workflows/client-tables.yml. Read the journals' differences, then merge by hand."
+          } > "$RUNNER_TEMP/body.md"
+          cat "$RUNNER_TEMP/body.md" >> "$GITHUB_STEP_SUMMARY"
+      - name: The addon's checks
+        if: steps.pins.outputs.moved == 'true'
+        run: bun run addon:check
+      - name: Pull request
+        if: steps.pins.outputs.moved == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: client-tables
+          delete-branch: true
+          commit-message: "chore: the game's data at its new builds"
+          title: "chore: the game's data at its new builds"
+          body-path: ${{ runner.temp }}/body.md
+          add-paths: |
+            scripts/pins.json
+            addon/Hearthtale/*.lua
