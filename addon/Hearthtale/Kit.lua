@@ -1,4 +1,4 @@
--- addon-kit 6218210: a copy (kit:sync); edit the addon-kit repository's Kit.lua instead
+-- addon-kit cfbbfe2: a copy (kit:sync); edit the addon-kit repository's Kit.lua instead
 -- The kit shared by Hearthtale, Lorekeeper's Codex, Yonder and
 -- Second Wind: the books' look and the pieces their windows are made of
 -- (the list on the left, the page on the right and every part of a page, a
@@ -1911,7 +1911,8 @@ end
 -- player says yes (off by default), in the addon's account-wide table, which
 -- Ravenpost sends to the addons' database (wow-data): the game's own words in
 -- the player's language, so the addons know new content without waiting for
--- others. Never the player's own: their name, class and race in a text become
+-- others. Classic Era's world and Forever's only (not TBC's, nor the Season of
+-- Discovery's). Never the player's own: their name, class and race in a text become
 -- the game's tokens ($N, $C, $R); no player, no chat of players.
 -- One collector a session among the addons: the first that may claims it.
 --   C = K.collect({ saved = function() return MyAddonCollect end })
@@ -2104,11 +2105,16 @@ function K.collect(o)
   local frame
   function C:start()
     if not C:on() then return end
+    -- (the world of Classic Era and of Forever only: not TBC's, nor the
+    -- Season of Discovery's, whose quests and creatures are its own)
+    local toc = select(4, GetBuildInfo())
+    local season = C_Seasons and C_Seasons.GetActiveSeason and C_Seasons.GetActiveSeason()
+    local discovery = Enum and Enum.SeasonID and Enum.SeasonID.SeasonOfDiscovery or 2
+    if toc >= 20000 or (toc < 16000 and season == discovery) then return end
     if SaltyMaxCollector and SaltyMaxCollector ~= o.saved then return end -- (another of the addons collects)
     SaltyMaxCollector = o.saved
     local t = saved()
-    local toc = select(4, GetBuildInfo())
-    t.game = (toc >= 16000 and toc < 20000) and "forever" or "classic"
+    t.game = toc >= 16000 and "forever" or "classic"
     local locale = GetLocale()
     t.facts[locale] = t.facts[locale] or {}
     facts = t.facts[locale]

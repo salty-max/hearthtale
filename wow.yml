@@ -299,3 +299,7 @@ globals:
     any: true
   HearthtaleCollect:
     any: true
+  C_Seasons:
+    any: true
+  Enum:
+    any: true
