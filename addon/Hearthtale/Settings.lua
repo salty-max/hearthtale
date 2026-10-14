@@ -86,6 +86,7 @@ ns.collect = K.collect({
     if type(HearthtaleCollect) ~= "table" then HearthtaleCollect = {} end
     return HearthtaleCollect
   end,
+  prefix = ns.PREFIX,
 })
 
 local category

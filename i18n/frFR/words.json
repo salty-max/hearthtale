@@ -133,5 +133,6 @@
   "this life's book is closed. Type /ht or click the button by the minimap to read it.": "le livre de cette vie est clos. Tapez /ht ou cliquez sur le bouton près de la minicarte pour le lire.",
   "this life's book is closed. Type /ht to read it.": "le livre de cette vie est clos. Tapez /ht pour le lire.",
   "Share what you see": "Partager ce que vous voyez",
-  "Quests, creatures and NPCs' words, as the game tells you, sent by Ravenpost to the addons' database. Never your name, your character or your chat.": "Les quêtes, les créatures et les paroles des PNJ, telles que le jeu vous les donne, envoyées par Ravenpost à la base de données des addons. Jamais votre nom, votre personnage ni vos discussions."
+  "What the game tells you of quests, creatures and NPCs goes to the addons' database, for every player. Never your name, your character or your chat. It needs Ravenpost, a small app: %s": "Ce que le jeu vous dit des quêtes, des créatures et des PNJ part dans la base de données des addons, pour tous les joueurs. Jamais votre nom, votre personnage ni vos discussions. Il faut Ravenpost, une petite application : %s",
+  "Thank you. What you see is kept for the addons' database, and Ravenpost sends it from this computer: %s": "Merci. Ce que vous voyez est gardé pour la base de données des addons, et Ravenpost l'envoie depuis cet ordinateur : %s"
 }
