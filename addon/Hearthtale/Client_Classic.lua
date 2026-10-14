@@ -522,8 +522,12 @@ ns.client = {
     ["하이에나"] = "Hyena",
   },
   -- specializations named after the class: no way chosen
-  classSpecs = {},
-  classSpecNames = {},
+  classSpecs = {
+
+  },
+  classSpecNames = {
+
+  },
   -- flight masters' places, every language's: English
   taxi = {
     ["Abadia de Vila Norte"] = "Northshire Abbey",
@@ -4822,7 +4826,7 @@ ns.client = {
     [12717] = "Goblin Mining Helmet",
     [12718] = "Goblin Construction Helmet",
     [12719] = "Explosive Arrow",
-    [12720] = 'Goblin "Boom" Box',
+    [12720] = "Goblin \"Boom\" Box",
     [12722] = "Goblin Radio",
     [12723] = "Sweeping Strikes",
     [12724] = "Shield Specialization",
