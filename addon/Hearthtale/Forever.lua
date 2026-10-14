@@ -10,23 +10,12 @@ local function add(t, names)
     t[k] = v
   end
 end
-K.quests[5640] = { class = "PRIEST" }
-K.quests[5678] = { class = "PRIEST" }
 K.quests[5691] = { class = "PRIEST" }
 K.quests[5692] = { class = "PRIEST" }
 K.quests[5693] = { class = "PRIEST" }
 K.quests[5704] = { class = "PRIEST" }
 K.quests[5705] = { class = "PRIEST" }
 K.quests[5706] = { class = "PRIEST" }
-K.quests[7668] = { class = "SHAMAN" }
-K.quests[7670] = { class = "PALADIN" }
-K.quests[65593] = { class = "WARLOCK" }
-K.quests[65597] = { class = "WARLOCK" }
-K.quests[65601] = { class = "WARLOCK" }
-K.quests[65602] = { class = "WARLOCK" }
-K.quests[65603] = { class = "WARLOCK" }
-K.quests[65604] = { class = "WARLOCK" }
-K.quests[65610] = { class = "WARLOCK" }
 K.quests[78088] = { class = "PALADIN" }
 K.quests[78089] = { class = "PALADIN" }
 K.quests[78090] = { class = "PALADIN" }
@@ -167,16 +156,6 @@ K.quests[98581] = { class = "SHAMAN" }
 K.quests[98601] = { class = "PALADIN" }
 K.quests[98731] = { class = "DRUID" }
 K.quests[98739] = { class = "DRUID" }
-K.chains[65593] = 65593
-K.chains[65597] = 65593
-K.ends[65597] = true
-K.chains[65601] = 65601
-K.chains[65602] = 65602
-K.chains[65603] = 65602
-K.ends[65603] = true
-K.chains[65604] = 65601
-K.ends[65604] = true
-K.chains[65610] = 65601
 K.chains[76156] = 76156
 K.chains[76160] = 76156
 K.chains[76240] = 76156
@@ -616,7 +595,6 @@ add(N.creatureBare, {
     ["Atrexis the Grave Knight"] = true,
     ["Aurian Highgrove"] = true,
     ["Avala"] = true,
-    ["Avelina Lilly"] = true,
     ["Ayessa Dawnsinger"] = true,
     ["Aza'bek"] = true,
     ["Azka Bloodsnout"] = true,
@@ -1172,7 +1150,6 @@ add(N.creatureBare, {
     ["Iodax the Obliterator"] = true,
     ["Irna Kindlevein"] = true,
     ["Isaac Chan"] = true,
-    ["Isaac Pearson"] = true,
     ["Ishlee Breezewhisper"] = true,
     ["Isirami Fairwind"] = true,
     ["Izvi Gildfizz"] = true,
@@ -1994,6 +1971,7 @@ add(N.plural, {
   ["Forgotten Loa Idol"] = "Forgotten Loa Idols",
   ["Glittering Sunstone"] = "Glittering Sunstones",
   ["Gloomrise Toxin Sample"] = "Gloomrise Toxin Samples",
+  ["Gnarlpine Fang"] = "Gnarlpine Fangs",
   ["Gnarlpine Totem"] = "Gnarlpine Totems",
   ["Gnomeregan Archival Data"] = "Gnomeregan Archival Data",
   ["Golem Isospring"] = "Golem Isosprings",
@@ -2024,7 +2002,6 @@ add(N.plural, {
   ["Rough Wolf Pelt"] = "Rough Wolf Pelts",
   ["Savannah Lion Hide"] = "Savannah Lion Hides",
   ["Scrawny Ursera Claw"] = "Scrawny Ursera Claws",
-  ["Seaforium Mining Charge"] = "Seaforium Mining Charges",
   ["Shriekling Talons"] = "Shriekling Talons",
   ["Smooth Boulder"] = "Smooth Boulders",
   ["Soft Nightsaber Pelt"] = "Soft Nightsaber Pelts",
@@ -2049,7 +2026,6 @@ add(N.plural, {
   ["Vile Fin Murloc Skin"] = "Vile Fin Murloc Skin",
   ["Weathered Spine"] = "Weathered Spines",
   ["Wind Hollow Essence"] = "Wind Hollow Essences",
-  ["Windfury Cone"] = "Windfury Cones",
   ["Windstone Cluster"] = "Windstone Clusters",
   ["Worgen Bits"] = "Worgen Bits",
 })

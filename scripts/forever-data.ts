@@ -14,12 +14,9 @@
 //   - Classic Era's: the old world's places; the Classic database's dump
 //     (as Knowledge.lua's and Names.lua's): what the old world already has.
 import { readFileSync, writeFileSync } from "node:fs";
-import { gunzipSync } from "node:zlib";
 import path from "node:path";
-import { rows } from "./sql";
 import { decide, list, plainName } from "./names";
 import { openDb } from "../../wow-data/src/db";
-import { classicDump } from "../../wow-data/src/github";
 import { FOREVER } from "../../wow-data/src/pins";
 
 const ROOT = path.join(import.meta.dir, "..");
@@ -43,14 +40,19 @@ const sparse = table("ItemSparse");
 const itemRows = table("Item");
 const questIds = new Set(table("QuestV2").map((r) => Number(r.ID)));
 
-// The old world, as the Classic database knows it (the dump Knowledge.lua and
-// Names.lua are made from): what is new is what it doesn't.
-const sql = gunzipSync(readFileSync(await classicDump())).toString("utf8");
-const classic = { quests: new Set<number>(), creatures: new Map<number, string>(), items: new Set<number>(), objects: new Set<number>() };
-for (const r of rows(sql, "quest_template")) classic.quests.add(r.entry as number);
-for (const r of rows(sql, "creature_template")) classic.creatures.set(r.Entry as number, r.Name as string);
-for (const r of rows(sql, "item_template")) classic.items.add(r.entry as number);
-for (const r of rows(sql, "gameobject_template")) classic.objects.add(r.entry as number);
+// The old world, as Classic Era's database knows it (the one Knowledge.lua
+// and Names.lua are made from): what is new is what it doesn't.
+const ids = (table: string) => new Set(all<{ id: number }>(cdb, `SELECT id FROM ${table}`).map((r) => r.id));
+const classic = {
+  quests: ids("quest"),
+  creatures: new Map(
+    all<{ id: number; name: string }>(cdb, "SELECT c.id, n.name FROM creature c JOIN name n ON n.kind = 'creature' AND n.id = c.id AND n.locale = 'enUS'").map(
+      (r) => [r.id, r.name],
+    ),
+  ),
+  items: ids("item"),
+  objects: ids("object"),
+};
 // (Classic Era's places: Forever's own are the others)
 const classicZones = new Set(all<{ ID: number }>(cdb, "SELECT ID FROM client_AreaTable").map((r) => r.ID));
 

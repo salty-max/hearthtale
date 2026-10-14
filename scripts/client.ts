@@ -1,11 +1,11 @@
 // The client's own names in English, for a record kept in English whatever
 // the client's language: addon/Hearthtale/Client_Classic.lua and
-// Client_Forever.lua (each game's own file), from the client's tables on
-// wago.tools (Classic Era and Forever, the builds pinned by knowledge.ts and
-// forever-data.ts).
+// Client_Forever.lua (each game's own file), from the client's tables as
+// wow-data's databases hold them (Classic Era's and Forever's, each its pinned
+// build; ../wow-data).
 //   bun scripts/client.ts           (part of bun run audit)
-//   bun scripts/client.ts --check   fails if the files are not what the pins
-//                                   (scripts/pins.json) and the audit's data give
+//   bun scripts/client.ts --check   fails if the files are not what the
+//                                   databases and the audit's data give
 // - skills: every language's name of a trade, a secondary skill or a riding,
 //   its English ("Minage", "Bergbau": "Mining"); riding: the ridings, by
 //   their English names ("Mechanostrider Piloting" too)
@@ -19,13 +19,12 @@
 // - spells: the class and trade spells by id, English
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
-import { CLASSIC, FOREVER } from "../../wow-data/src/pins";
-import { wago } from "../../wow-data/src/wago";
+import { openDb } from "../../wow-data/src/db";
 
 const ROOT = path.join(import.meta.dir, "..");
 const GAMES = {
-  classic: { pin: CLASSIC, out: "Client_Classic.lua" },
-  forever: { pin: FOREVER, out: "Client_Forever.lua" },
+  classic: { out: "Client_Classic.lua" },
+  forever: { out: "Client_Forever.lua" },
 };
 const LOCALES = ["deDE", "esES", "esMX", "frFR", "itIT", "koKR", "ptBR", "ruRU", "zhCN", "zhTW"];
 const CHECK = process.argv.includes("--check");
@@ -37,8 +36,36 @@ function write(name: string, text: string) {
   if (!existsSync(file) || readFileSync(file, "utf8") !== text) stale.push(name);
 }
 
-// a client table at its game's pinned build (wow-data: downloaded once)
-const table = (game: keyof typeof GAMES, name: string, locale = "enUS") => wago(game, name, locale);
+// A client table at its game's pinned build, as the database holds it: its
+// rows as the client's files write them (text). In another language, its name
+// fields that language's (the database's names, the client's own).
+const dbs = { classic: openDb("classic"), forever: openDb("forever") };
+const NAMED: Record<string, { kind: string; field: string; female?: string }> = {
+  SkillLine: { kind: "skill_line", field: "DisplayName_lang" },
+  CreatureType: { kind: "creature_type", field: "Name_lang" },
+  CreatureFamily: { kind: "creature_family", field: "Name_lang" },
+  TaxiNodes: { kind: "taxi_node", field: "Name_lang" },
+  ChrSpecialization: { kind: "specialization", field: "Name_lang", female: "FemaleName_lang" },
+  TalentTab: { kind: "talent_tab", field: "Name_lang" },
+};
+async function table(game: keyof typeof GAMES, name: string, locale = "enUS"): Promise<Record<string, string>[]> {
+  const db = dbs[game];
+  const rows = (db.query(`SELECT * FROM client_${name} ORDER BY rowid`).all() as Record<string, unknown>[]).map((r) =>
+    Object.fromEntries(Object.entries(r).map(([k, v]) => [k, v === null || v === undefined ? "" : String(v)])),
+  );
+  if (locale === "enUS") return rows;
+  const n = NAMED[name];
+  if (!n) throw new Error(`client_${name}: no names in ${locale}`);
+  const names = new Map(
+    (db.query("SELECT id, name, female FROM name WHERE kind = ? AND locale = ?").all(n.kind, locale) as { id: number; name: string; female: string | null }[]).map(
+      (r) => [String(r.id), r],
+    ),
+  );
+  return rows.map((r) => {
+    const t = names.get(r.ID);
+    return { ...r, [n.field]: t?.name ?? "", ...(n.female ? { [n.female]: t?.female ?? "" } : {}) };
+  });
+}
 
 const lua = (s: string) => JSON.stringify(s);
 const CLASSES: [number, string][] = [
