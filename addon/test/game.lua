@@ -527,8 +527,10 @@ LinkProcessorResponse = { Handled = 2 }
 -- The files in the order of the game's own TOC (its data, and Forever's own
 -- content in Forever's).
 local ns = {}
+-- (the client's language: LOCALE = "frFR" before this file plays a French client)
+local LOCALE = rawget(_G, "LOCALE") or os.getenv("LOCALE") or "enUS"
 for line in io.lines(DIR .. (FOREVER and "Hearthtale_Camelot.toc" or "Hearthtale_Vanilla.toc")) do
-  local f = line:match("^([%w_]+%.lua)%s*$")
+  local f = line:gsub("%[TextLocale%]", LOCALE):match("^([%w_]+%.lua)%s*$")
   if f then assert(loadfile(DIR .. f))("Hearthtale", ns) end
 end
 local D = ns.data

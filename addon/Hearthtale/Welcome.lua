@@ -8,55 +8,56 @@
 -- it, however, is enough to have seen it.
 local _, ns = ...
 local K = ns.kit
+local L = K.L
 
 local W = K.welcome({
   name = "HearthtaleWelcome",
-  title = "Welcome to Hearthtale",
+  title = L["Welcome to Hearthtale"],
   art = "Interface\\AddOns\\Hearthtale\\Media\\Logo",
   logo = "Interface\\AddOns\\Hearthtale\\Media\\Logo",
   heading = "Hearthtale",
-  tagline = "Your character's own journal, written as you play.",
-  intro = "Play as you always do: Hearthtale keeps the record. The quests that mattered, the foes worth naming, "
-    .. "the lands seen for the first time, the close calls.\n\n"
-    .. "Each time you rest, at an inn, in a city or by a campfire, the road since the last rest becomes an "
-    .. "entry in your character's own voice.\n\n"
-    .. "On Hardcore, a death closes the book with an epitaph, and it joins the Hall of the Fallen.",
+  tagline = L["Your character's own journal, written as you play."],
+  intro = L["Play as you always do: Hearthtale keeps the record. The quests that mattered, the foes worth naming, the lands seen for the first time, the close calls."]
+    .. "\n\n"
+    .. L["Each time you rest, at an inn, in a city or by a campfire, the road since the last rest becomes an entry in your character's own voice."]
+    .. "\n\n"
+    .. L["On Hardcore, a death closes the book with an epitaph, and it joins the Hall of the Fallen."],
   profiles = ns.profiles,
   choices = function()
     local choices = {
       {
-        text = "The book by the minimap",
-        hint = "Click it to open the journal. Drag it around the minimap.",
+        text = L["The book by the minimap"],
+        hint = L["Click it to open the journal. Drag it around the minimap."],
         get = function() return not ns.option("minimapHidden") end,
         set = function(v) ns.setOption("minimapHidden", not v) end,
       },
       {
-        text = "An alert when a book closes",
-        hint = "A banner among the game's alerts, when a Hardcore character falls.",
+        text = L["An alert when a book closes"],
+        hint = L["A banner among the game's alerts, when a Hardcore character falls."],
         get = function() return ns.option("toast") end,
         set = function(v) ns.setOption("toast", v) end,
       },
     }
     if not ns.gameKnowsHardcore() then
       table.insert(choices, {
-        text = "This character is Hardcore",
-        hint = "Its death will close its book. The game can't say so here.",
+        text = L["This character is Hardcore"],
+        hint = L["Its death will close its book. The game can't say so here."],
         get = ns.isHardcore,
         set = ns.setHardcore,
       })
     end
     return choices
   end,
-  footnote = "Change them any time: /ht settings, or a right-click on the minimap button. /ht opens the journal.",
+  footnote = L["Change them any time: /ht settings, or a right-click on the minimap button. /ht opens the journal."],
   open = {
-    text = "Open the journal",
+    text = L["Open the journal"],
     click = function()
       if ns.toggle then ns.toggle() end
     end,
   },
-  exportHint = "Copy it (Ctrl+C), then on another character: Use a code, or /ht import CODE.",
-  importHint = "Paste the code (/ht export on the other character), then press Enter.",
-  refused = "That isn't a Hearthtale settings code.",
+  exportHint = L["Copy it (Ctrl+C), then on another character: Use a code, or /ht import CODE."],
+  importHint = L["Paste the code (/ht export on the other character), then press Enter."],
+  refused = L["That isn't a Hearthtale settings code."],
 })
 
 -- The welcome; "export": with this character's code ready to copy.

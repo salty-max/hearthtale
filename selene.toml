@@ -1,7 +1,7 @@
 # The addon's Lua, linted by selene (bun run lint:lua): Lua 5.1 and the game's
 # globals the addon uses (wow.yml).
 std = "wow"
-exclude = ["addon/Hearthtale/Data_*.lua", "addon/Hearthtale/Names.lua", "addon/Hearthtale/Knowledge.lua"]
+exclude = ["addon/Hearthtale/Data_*.lua", "addon/Hearthtale/Names.lua", "addon/Hearthtale/Knowledge.lua", "addon/Hearthtale/Text_*.lua"]
 
 [lints]
 # layout is StyLua's: a guard or a callback on one line is as it writes them

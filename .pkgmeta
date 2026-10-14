@@ -18,6 +18,7 @@ ignore:
   - apps
   - assets
   - docs
+  - i18n
   - packages
   - scripts
   - writing

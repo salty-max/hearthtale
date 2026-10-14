@@ -36,14 +36,19 @@ const shared = (game: (typeof GAMES)[number]) =>
     .split("\n")
     .filter((l) => !l.startsWith("#") || l.startsWith("## "))
     .filter((l) => !l.startsWith("## Interface:") && !game.own.includes(l.trim()));
+const LOCALES = ["enUS", "enGB", "deDE", "frFR", "esES", "esMX", "ruRU", "ptBR", "itIT", "koKR", "zhCN", "zhTW"];
 const loaded = new Set<string>();
 for (const game of GAMES) {
   const toc = readFileSync(join(SRC, game.toc), "utf8");
   if (!toc.startsWith(`## Interface: ${game.interface}\n`)) fail(`${game.toc}: not "## Interface: ${game.interface}" first`);
   const files = toc.split("\n").filter((l) => l.trim() && !l.startsWith("#"));
   for (const f of files) {
-    if (!existsSync(join(SRC, f))) fail(`${game.toc} loads ${f}, which isn't there`);
-    loaded.add(f);
+    // (the client's own language file: Text_[TextLocale].lua, one per language)
+    const each = f.includes("[TextLocale]") ? LOCALES.map((l) => f.replace("[TextLocale]", l)) : [f];
+    for (const one of each) {
+      if (!existsSync(join(SRC, one))) fail(`${game.toc} loads ${one}, which isn't there`);
+      loaded.add(one);
+    }
   }
   for (const f of game.own) if (!files.includes(f)) fail(`${game.toc} doesn't load ${f}, its own`);
   if (shared(game).join("\n") !== shared(GAMES[0]).join("\n")) fail(`${game.toc} and ${GAMES[0].toc} differ in more than the interface and their own files`);

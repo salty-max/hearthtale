@@ -20,6 +20,7 @@ local _, ns = ...
 -- The kit's (Kit.lua), in Hearthtale's own theme: the embers of a fire at
 -- rest, a warm accent over panels a shade warmer.
 local K = ns.kit
+local L = K.L
 K.theme({
   accent = { 0.93, 0.62, 0.38 },
   ring = { 0.80, 0.46, 0.26 },
@@ -37,7 +38,7 @@ local LOGO = "Interface\\AddOns\\Hearthtale\\Media\\Logo"
 local MARK = "Interface\\TargetingFrame\\UI-TargetingFrame-Skull"
 local FALLEN = { 0.85, 0.32, 0.25 }
 -- A fallen life's medal on its picture: the skull, in a red ring.
-ns.FALLEN_SEAL = { SKULL, "Fallen", "", FALLEN }
+ns.FALLEN_SEAL = { SKULL, L["Fallen"], "", FALLEN }
 
 -- ── the book ─────────────────────────────────────────────────────────────────
 local book, list, page, hallPage
@@ -50,14 +51,16 @@ local WIDTH = 440
 local HEADER_H = 92
 local ROW_WIDTH = 204
 local EPITAPH = K.hex(T.accent) .. "%s|r" -- the epitaph, in the accent
-local NOTE = K.hex(T.accent) .. "Note|r\n|cffbfb08f%s|r" -- the player's own, in the margin
+local NOTE = K.hex(T.accent) .. L["Note"] .. "|r\n|cffbfb08f%s|r" -- the player's own, in the margin
 
 local DOT = "  \194\183  " -- (a middle dot between the parts of a line)
 
+local MONTHS = { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" }
+local function month(at) return L[MONTHS[date("*t", at).month]] end
 local function day(at)
   if not at then return nil end
   local t = date("*t", at)
-  return ("%d %s %d"):format(t.day, date("%b", at), t.year)
+  return L["%d %s %d"]:format(t.day, month(at), t.year)
 end
 
 -- When a chapter was lived, as short as it reads: "5 Oct 2026", "5 to 7 Oct
@@ -68,20 +71,20 @@ local function when(ch)
   if not a then return nil end
   if not b or day(a) == day(b) then return day(a) end
   local ta, tb = date("*t", a), date("*t", b)
-  if ta.year ~= tb.year then return day(a) .. " to " .. day(b) end
-  if ta.month ~= tb.month then return ("%d %s to %s"):format(ta.day, date("%b", a), day(b)) end
-  return ("%d to %s"):format(ta.day, day(b))
+  if ta.year ~= tb.year then return L["%s to %s"]:format(day(a), day(b)) end
+  if ta.month ~= tb.month then return L["%d %s to %s"]:format(ta.day, month(a), day(b)) end
+  return L["%d to %s"]:format(ta.day, day(b))
 end
 
 -- The levels a chapter covers: "level 12", "levels 11 to 13".
 local function levels(ch)
-  if ch.from == ch.to then return ("level %d"):format(ch.from) end
-  return ("levels %d to %d"):format(ch.from, ch.to)
+  if ch.from == ch.to then return L["level %d"]:format(ch.from) end
+  return L["levels %d to %d"]:format(ch.from, ch.to)
 end
 
 -- A page's header: a line above its title (what it is, how it stands), the
 -- title, and one line under it (where, which levels, when), never wrapped.
-local function upper(parts) return table.concat(parts, DOT):upper() end
+local function upper(parts) return ns.upper(table.concat(parts, DOT)) end
 local function line(parts)
   local s = table.concat(parts, DOT)
   return s:sub(1, 1):upper() .. s:sub(2)
@@ -99,7 +102,7 @@ local function show(over, title, sub, text, life)
   page.title:SetText(title)
   page.sub:SetText(sub or "")
   page.body:SetTextColor(unpack(text and T.text or T.soft))
-  page.body:SetText(text or "Nothing written yet.")
+  page.body:SetText(text or L["Nothing written yet."])
   page.child:SetHeight(HEADER_H + page.body:GetStringHeight() + 24)
   page:ScrollTo(0)
 end
@@ -110,20 +113,20 @@ local function showPage(life, w, key)
   if key == "prologue" then
     local p = life.prologue or {}
     return show(
-      upper({ "Before this journal" }),
-      "Prologue",
-      line({ ("taken up at level %d"):format(p.level or 0) }),
+      upper({ L["Before this journal"] }),
+      L["Prologue"],
+      line({ L["taken up at level %d"]:format(p.level or 0) }),
       w.prologue,
       life
     )
   end
   if key == "epitaph" then
     local d = life.death or {}
-    local sub = { ("Level %d %s %s"):format(d.level or 0, life.raceName or "", life.className or "") }
+    local sub = { L["Level %d %s %s"]:format(d.level or 0, life.raceName or "", life.className or "") }
     if life.realm then table.insert(sub, life.realm) end
     table.insert(sub, day(d.at))
     return show(
-      upper({ "Hardcore", "fallen" }),
+      upper({ L["Hardcore"], L["fallen"] }),
       life.name or "",
       line(sub),
       w.epitaph and EPITAPH:format(w.epitaph),
@@ -133,12 +136,12 @@ local function showPage(life, w, key)
   local ch = w.chapters[key]
   if not ch then return end
   local over = {}
-  if ch.title then table.insert(over, ("Entry %d"):format(key)) end
+  if ch.title then table.insert(over, L["Entry %d"]:format(key)) end
   local last = key == #w.chapters
   if life.closed and last then
-    table.insert(over, "the end")
+    table.insert(over, L["the end"])
   elseif ch.open then
-    table.insert(over, "still being written")
+    table.insert(over, L["still being written"])
   end
   local parts = {}
   if ch.place then table.insert(parts, ch.place) end
@@ -147,7 +150,7 @@ local function showPage(life, w, key)
   local text = ch.text
   if ch.note then text = (text and text .. "\n\n" or "") .. NOTE:format(ch.note) end
   if life.closed and last and w.epitaph then text = (text and text .. "\n\n" or "") .. EPITAPH:format(w.epitaph) end
-  show(upper(over), ch.title or ("Entry %d"):format(key), line(parts), text, life)
+  show(upper(over), ch.title or L["Entry %d"]:format(key), line(parts), text, life)
 end
 
 local rows = {}
@@ -227,7 +230,7 @@ local function chapterRows(entries, w, selectedKey, open, indent)
   if w.epitaph and indent then
     table.insert(entries, {
       key = "epitaph",
-      title = "Epitaph",
+      title = L["Epitaph"],
       indent = indent,
       selected = selectedKey == "epitaph",
       click = function() open("epitaph") end,
@@ -236,8 +239,8 @@ local function chapterRows(entries, w, selectedKey, open, indent)
   if w.prologue then
     table.insert(entries, {
       key = "prologue",
-      title = "Prologue",
-      place = "Before this journal",
+      title = L["Prologue"],
+      place = L["Before this journal"],
       indent = indent,
       selected = selectedKey == "prologue",
       click = function() open("prologue") end,
@@ -245,9 +248,9 @@ local function chapterRows(entries, w, selectedKey, open, indent)
   end
   for _, ch in ipairs(w.chapters) do
     -- (its title, its number under it; a title that is the place doesn't say it twice)
-    local number = ("Entry %d"):format(ch.number)
+    local number = L["Entry %d"]:format(ch.number)
     local under = (ch.place and ch.place ~= ch.title) and (ch.place .. ", " .. levels(ch)) or levels(ch)
-    under = ch.open and "still being written" or under
+    under = ch.open and L["still being written"] or under
     table.insert(entries, {
       key = ch.number,
       title = ch.title or number,
@@ -298,10 +301,10 @@ local function refreshJournal(latest)
 end
 
 -- How a life ended, in a few words: "slain by Hogger in Elwynn Forest".
-local ENDS = { fall = "fell", drowning = "drowned", lava = "burned", nature = "fell" }
+local ENDS = { fall = L["fell"], drowning = L["drowned"], lava = L["burned"], nature = L["fell"] }
 local function ending(d)
-  local how = d.foe and ("slain by " .. d.foe) or ENDS[d.cause] or "fell"
-  return d.zone and (how .. " in " .. d.zone) or how
+  local how = d.foe and L["slain by %s"]:format(d.foe) or ENDS[d.cause] or L["fell"]
+  return d.zone and L["%s in %s"]:format(how, d.zone) or how
 end
 
 -- The Hall at a glance (the kit's page): its figures, each fallen life as a
@@ -309,12 +312,12 @@ end
 local function showHall(fallen)
   page:Hide()
   hallPage:Show()
-  local sub = #fallen == 0 and "No one has fallen. May it stay so."
-    or (#fallen == 1 and "One life rests here" or ("%d lives rest here"):format(#fallen))
-  hallPage:start("The Hall of the Fallen", sub, K.icon(MARK))
+  local sub = #fallen == 0 and L["No one has fallen. May it stay so."]
+    or (#fallen == 1 and L["One life rests here"] or L["%d lives rest here"]:format(#fallen))
+  hallPage:start(L["The Hall of the Fallen"], sub, K.icon(MARK))
   if #fallen == 0 then
     hallPage:paragraph(
-      "The closed books of Hardcore characters rest here, to be read again: each life's epitaph, then its entries.",
+      L["The closed books of Hardcore characters rest here, to be read again: each life's epitaph, then its entries."],
       T.soft
     )
     return hallPage:finish()
@@ -325,14 +328,14 @@ local function showHall(fallen)
     entries = entries + #(life.chapters or {})
   end
   hallPage:stats({
-    { tostring(#fallen), #fallen == 1 and "life closed" or "lives closed" },
-    { tostring(highest), "highest level" },
-    { tostring(entries), entries == 1 and "entry written" or "entries written" },
+    { tostring(#fallen), K.plural(#fallen, "life closed", "lives closed") },
+    { tostring(highest), L["highest level"] },
+    { tostring(entries), K.plural(entries, "entry written", "entries written") },
   })
-  hallPage:section("The fallen")
+  hallPage:section(L["The fallen"])
   for _, life in ipairs(fallen) do
     local d = life.death or {}
-    local facts = ("Level %d %s %s, %s"):format(d.level or 0, life.raceName or "", life.className or "", ending(d))
+    local facts = L["Level %d %s %s, %s"]:format(d.level or 0, life.raceName or "", life.className or "", ending(d))
     hallPage:card(life.name or "?", facts .. (d.at and (", " .. day(d.at)) or ""), crestOf(life), function()
       hallLife, hallKey = life.guid, "epitaph"
       ns.refresh()
@@ -357,8 +360,8 @@ local function refreshHall(scroll)
   local entries = {
     {
       key = "hall",
-      title = "The Hall of the Fallen",
-      place = #fallen == 0 and "May it stay so." or (#fallen == 1 and "One life" or ("%d lives"):format(#fallen)),
+      title = L["The Hall of the Fallen"],
+      place = #fallen == 0 and L["May it stay so."] or K.plural(#fallen, "%d life", "%d lives"):format(#fallen),
       selected = hallLife == nil,
       click = function()
         hallLife, hallKey = nil, nil
@@ -372,7 +375,7 @@ local function refreshHall(scroll)
     table.insert(entries, {
       key = life.guid,
       title = life.name or "?",
-      place = ("Level %d %s %s"):format(d.level or 0, life.raceName or "", life.className or ""),
+      place = L["Level %d %s %s"]:format(d.level or 0, life.raceName or "", life.className or ""),
       selected = life.guid == hallLife and hallKey == "epitaph",
       click = function()
         hallLife, hallKey = life.guid, "epitaph"
@@ -417,7 +420,7 @@ local function buildEditor(sheet)
   editor.title:SetMaxLetters(60)
   local noteLabel = label(editor, BODY_FONT, 12, T.soft)
   noteLabel:SetPoint("TOPLEFT", 0, -104)
-  noteLabel:SetText("A note in its margin, in your own words")
+  noteLabel:SetText(L["A note in its margin, in your own words"])
   local ground = editor:CreateTexture(nil, "BACKGROUND")
   ground:SetColorTexture(0, 0, 0, 0.35)
   ground:SetPoint("TOPLEFT", 0, -122)
@@ -435,9 +438,9 @@ local function buildEditor(sheet)
   area:SetAllPoints(ground)
   area:SetScript("OnClick", function() editor.note:SetFocus() end)
   editor.note:SetFrameLevel(area:GetFrameLevel() + 1)
-  editor.save = buttonOf(editor, "Save", 90)
+  editor.save = buttonOf(editor, L["Save"], 90)
   editor.save:SetPoint("BOTTOMRIGHT", 0, 8)
-  editor.cancel = buttonOf(editor, "Cancel", 90)
+  editor.cancel = buttonOf(editor, L["Cancel"], 90)
   editor.cancel:SetPoint("RIGHT", editor.save, "LEFT", -8, 0)
   editor.save:SetScript("OnClick", function()
     local n = editor.n
@@ -457,9 +460,9 @@ local function openEditor()
   if not editor then buildEditor(book.sheet) end
   local own = ns.own(current) or {}
   editor.n = current
-  editor.head:SetText(("Entry %d"):format(current))
+  editor.head:SetText(L["Entry %d"]:format(current))
   local journals = own.title and ch.writtenTitle or ch.title -- (the title the journal gave it)
-  editor.titleLabel:SetText(journals and ("Its title (the journal's own: %s)"):format(journals) or "Its title")
+  editor.titleLabel:SetText(journals and L["Its title (the journal's own: %s)"]:format(journals) or L["Its title"])
   editor.title:SetText(own.title or "")
   editor.note:SetText(own.text or "")
   page:Hide()
@@ -512,17 +515,18 @@ local function hardcoreMark(parent, x)
   m:SetScript("OnLeave", function() GameTooltip:Hide() end)
   function m:Set(c)
     if not (c and c.hardcore) then return self:Hide() end
-    local source = c.hardcoreChosen and "Marked so in Hearthtale's options (the game doesn't say here)."
-      or "As the game reports it."
+    local source = c.hardcoreChosen and L["Marked so in Hearthtale's options (the game doesn't say here)."]
+      or L["As the game reports it."]
     if c.closed then
       self.colour = FALLEN
-      self.label:SetText("Fallen")
-      self.lines = { "This life has ended: its book is closed, with its epitaph, and kept in the Hall of the Fallen." }
+      self.label:SetText(L["Fallen"])
+      self.lines =
+        { L["This life has ended: its book is closed, with its epitaph, and kept in the Hall of the Fallen."] }
     else
       self.colour = T.gold
-      self.label:SetText("Hardcore")
+      self.label:SetText(L["Hardcore"])
       self.lines =
-        { "One life, one book: a death closes it with an epitaph, and it joins the Hall of the Fallen.", source }
+        { L["One life, one book: a death closes it with an epitaph, and it joins the Hall of the Fallen."], source }
     end
     self.label:SetTextColor(unpack(self.colour))
     self:Show()
@@ -600,7 +604,7 @@ function build()
   page.body:SetPoint("TOPLEFT", 0, -HEADER_H)
   page.body:SetWidth(WIDTH)
   page.body:SetSpacing(4)
-  page.edit = buttonOf(sheet, "Edit", 64)
+  page.edit = buttonOf(sheet, L["Edit"], 64)
   page.edit:SetHeight(20)
   page.edit:SetPoint("TOPRIGHT", sheet, "TOPRIGHT", -22, -20)
   page.edit:SetScript("OnClick", openEditor)
@@ -615,7 +619,7 @@ function build()
     ns.refresh(not asked)
     asked = false
   end)
-  K.tabs(book, { "Journal", "Hall of the Fallen" }, function(n)
+  K.tabs(book, { L["Journal"], L["Hall of the Fallen"] }, function(n)
     if n == 2 then
       hallLife, hallKey = nil, nil
     end -- (the Hall at a glance)
@@ -667,22 +671,35 @@ end
 -- A chapter closes: a line in chat with a link to it.
 function ns.link(target, text) return ("|cffc9a227|Hhearthtale:%s|h[%s]|h|r"):format(target, text) end
 ns.onChapter = function(number)
-  print(ns.PREFIX .. ("entry %d is written. %s"):format(number, ns.link("chapter:" .. number, "Read it")))
+  print(ns.PREFIX .. L["entry %d is written. %s"]:format(number, ns.link("chapter:" .. number, L["Read it"])))
 end
 
 -- At a login or a /reload, a line in chat: the entry this login began
 -- (after a rest closed the last one), the one going on (a short break, a
 -- night in the wild, a /reload), or a fallen life's closed book; and how to
 -- open the journal, the only reminder of it (as the Codex's).
+-- (each line whole, as a language orders its own)
 ns.onResume = function(number, started)
-  local open = ns.option("minimapHidden") and "Type /ht" or "Type /ht or click the button by the minimap"
+  local button = not ns.option("minimapHidden")
   if not number then
-    print(ns.PREFIX .. ("this life's book is closed. %s to read it."):format(open))
-  else
     print(
-      ns.PREFIX .. ("%s entry %d. %s to read the journal."):format(started and "starting" or "resuming", number, open)
+      ns.PREFIX
+        .. (
+          button and L["this life's book is closed. Type /ht or click the button by the minimap to read it."]
+          or L["this life's book is closed. Type /ht to read it."]
+        )
     )
+    return
   end
+  local said
+  if started then
+    said = button and L["starting entry %d. Type /ht or click the button by the minimap to read the journal."]
+      or L["starting entry %d. Type /ht to read the journal."]
+  else
+    said = button and L["resuming entry %d. Type /ht or click the button by the minimap to read the journal."]
+      or L["resuming entry %d. Type /ht to read the journal."]
+  end
+  print(ns.PREFIX .. said:format(number))
 end
 
 -- Links in chat (|Hhearthtale:chapter:<number>|h, |Hhearthtale:hall:<guid>|h): the

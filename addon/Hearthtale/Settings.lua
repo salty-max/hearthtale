@@ -15,6 +15,7 @@
 --   first profile of a character who kept a journal before takes them)
 local _, ns = ...
 local K = ns.kit
+local L = K.L
 
 -- (minimapAngle: the button's place around the minimap, in degrees; 200 is
 -- to the left, clear of the game's buttons and the siblings')
@@ -98,10 +99,15 @@ function ns.createSettingsPanel()
   end
   checkbox(
     "toast",
-    "Alert when a book closes",
-    "A banner among the game's alerts when a Hardcore character falls and its book joins the Hall of the Fallen (the chat line stays)."
+    L["Alert when a book closes"],
+    L["A banner among the game's alerts when a Hardcore character falls and its book joins the Hall of the Fallen (the chat line stays)."]
   )
-  checkbox("minimapHidden", "Minimap button", "The journal by the minimap: click to open it, drag to move it.", true)
+  checkbox(
+    "minimapHidden",
+    L["Minimap button"],
+    L["The journal by the minimap: click to open it, drag to move it."],
+    true
+  )
 
   -- Where the game can't tell, the player says whether this character is
   -- Hardcore (its death then closes the book).
@@ -110,7 +116,7 @@ function ns.createSettingsPanel()
       category,
       "HEARTHTALE_HARDCORE",
       Settings.VarType.Boolean,
-      "This character is Hardcore",
+      L["This character is Hardcore"],
       false,
       ns.isHardcore,
       ns.setHardcore
@@ -118,7 +124,7 @@ function ns.createSettingsPanel()
     Settings.CreateCheckbox(
       category,
       setting,
-      "This character's death closes its book: an epitaph, and its journal joins the Hall of the Fallen. For this character only."
+      L["This character's death closes its book: an epitaph, and its journal joins the Hall of the Fallen. For this character only."]
     )
   end
 
@@ -127,8 +133,8 @@ function ns.createSettingsPanel()
     category,
     "HEARTHTALE_COPYFROM",
     P,
-    "Another character's choices, for this one (of this game: Classic Era and Forever keep their own). From elsewhere: /ht export there, then /ht import CODE here.",
-    function(other) print(ns.PREFIX .. ("%s's settings copied."):format(other)) end
+    L["Another character's choices, for this one (of this game: Classic Era and Forever keep their own). From elsewhere: /ht export there, then /ht import CODE here."],
+    function(other) print(ns.PREFIX .. L["%s's settings copied."]:format(other)) end
   )
 
   Settings.RegisterAddOnCategory(category)

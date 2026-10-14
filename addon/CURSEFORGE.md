@@ -65,7 +65,7 @@ Type `/hearthtale` or `/ht`, or click the minimap button. Pick an entry from the
 
 One download covers Classic Era, Hardcore, Season of Discovery and World of Warcraft: Forever.
 
-The journal is written in **English**, on any game client. On other clients, the game's names in it (places, creatures, people, quests, items, trades and spells) are kept in English too.
+The journal is written in **English**, on any game client. On other clients, the game's names in it (places, creatures, people, quests, items, trades and spells) are kept in English too. Around it, the book, its settings and its messages speak English and French.
 
 Forever restricts what addons can read about kills. In its dungeons, Hearthtale can only tell kills that are also counted by a quest.
 

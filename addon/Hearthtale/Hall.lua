@@ -7,6 +7,7 @@
 -- game's alerts), the character's portrait in it, a skull on it; a click
 -- opens the Hall at that life.
 local _, ns = ...
+local L = ns.kit.L
 
 local function hall()
   if type(HearthtaleHall) ~= "table" then HearthtaleHall = {} end
@@ -54,9 +55,9 @@ local function toast(guid)
   banners:show({
     picture = ns.kit.unitPortrait("player", LOGO),
     medal = ns.FALLEN_SEAL,
-    kicker = "The book is closed",
+    kicker = L["The book is closed"],
     title = life.name or "",
-    tip = "Click to read it in the Hall of the Fallen",
+    tip = L["Click to read it in the Hall of the Fallen"],
     click = function() ns.openHall(guid) end,
     guid = guid,
   })
@@ -71,7 +72,10 @@ ns.onDeath = function()
   enshrine(c)
   print(
     ns.PREFIX
-      .. ("The journal of %s is closed. It rests in the %s."):format(c.name or "?", link(c.guid, "Hall of the Fallen"))
+      .. L["The journal of %s is closed. It rests in the %s."]:format(
+        c.name or "?",
+        link(c.guid, L["Hall of the Fallen"])
+      )
   )
   if ns.option("toast") then toast(c.guid) end
   if ns.onHall then ns.onHall() end

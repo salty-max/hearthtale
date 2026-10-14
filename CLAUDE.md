@@ -25,6 +25,17 @@ its decisions: PLAN.md (the full chapter prose was dropped on 10 October
   broken grammar or a racial caricature. `docs/race-voices.md` records the
   lore sources, cultural outlooks and limits on expression for all races.
   Skyborne traditions require the recorded faction and the Forever catalog.
+- Languages, the interface's (the journal is English on every client):
+  every word the book, the Hall, the settings, the welcome and the chat
+  lines show goes through `L["..."]` (the kit's `K.L`; plurals through
+  `K.plural`), each sentence whole; `ns.upper` capitalizes accented letters
+  too. The TOCs load the kit first, then `Locale.lua` and
+  `Text_[TextLocale].lua`: the client loads its own. `scripts/locales.ts`
+  (`bun run locales`, its `--check` in `addon:check`) writes them for the
+  game's twelve languages from `i18n/<locale>/` (`words.json`, `meta.json`:
+  plural rule, flagged); `--keys` writes `i18n/words.json`. The writer's
+  files (Language, Lines, Diary, Forever, Names, Knowledge) have no `L`.
+  `addon/test/french.lua`: a French client. French done 14 October 2026.
 - `addon/Hearthtale/Names.lua` (generated, committed): how the game itself
   writes its names, counted over all its quest texts and NPC speech: places
   with or without "the", creatures by name ("Hogger"), as one of a kind ("the

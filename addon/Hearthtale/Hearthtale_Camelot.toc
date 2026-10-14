@@ -1,6 +1,7 @@
 ## Interface: 16001
 ## Title: Hearthtale
 ## Notes: A diary for your WoW character, written as you play, with an epitaph and a saved journal when a Hardcore life ends.
+## Notes-frFR: Le journal de votre personnage, écrit pendant que vous jouez, avec une épitaphe et un journal conservé quand une vie Hardcore s'achève.
 ## Category: Roleplay
 ## Author: salty-max
 ## Version: 0.10.1
@@ -14,6 +15,9 @@
 
 # World of Warcraft: Forever. Classic Era loads Hearthtale_Vanilla.toc, the same
 # but for the interface and its data (scripts/package.ts checks).
+Kit.lua
+Locale.lua
+Text_[TextLocale].lua
 Data_Forever.lua
 Client_Forever.lua
 English_Forever.lua
@@ -29,7 +33,6 @@ Life.lua
 Language.lua
 Lines.lua
 Diary.lua
-Kit.lua
 Book.lua
 Hall.lua
 Save.lua

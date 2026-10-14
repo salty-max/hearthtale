@@ -15,6 +15,7 @@
 --                            note in its margin (the window, /ht title, /ht note)
 -- and the events every file listens to (ns.on, ns.onUnit).
 local _, ns = ...
+local L = ns.kit.L
 local PREFIX = "|cffc9a227Hearthtale:|r "
 ns.PREFIX = PREFIX
 
@@ -159,27 +160,22 @@ end
 function ns.own(n) return char and char.notes and char.notes[n] or nil end
 
 -- ── /hearthtale ──────────────────────────────────────────────────────────────
-local USAGE = "/ht opens the journal, /ht hall the Hall of the Fallen. /ht title [N] TEXT names an entry, "
-  .. "/ht note [N] TEXT writes in its margin (the last entry without N, no TEXT to remove it). /ht link CODE "
-  .. "links this character to hearthtale.app. /ht settings opens the options, /ht minimap shows or hides the "
-  .. "button, /ht welcome shows the welcome page again. /ht export gives this character's settings as a code, "
-  .. "/ht import CODE takes them. /ht rewrite writes the journal anew with this version (a closed entry keeps "
-  .. "its words otherwise)."
+local USAGE =
+  L["/ht opens the journal, /ht hall the Hall of the Fallen. /ht title [N] TEXT names an entry, /ht note [N] TEXT writes in its margin (the last entry without N, no TEXT to remove it). /ht link CODE links this character to hearthtale.app. /ht settings opens the options, /ht minimap shows or hides the button, /ht welcome shows the welcome page again. /ht export gives this character's settings as a code, /ht import CODE takes them. /ht rewrite writes the journal anew with this version (a closed entry keeps its words otherwise)."]
 
 -- A code from hearthtale.app, kept in the saved file: the next upload (after a
 -- logout or a /reload) carries it, and the site adds this book to that account.
 local function link(code)
   if #code ~= 6 then
-    print(PREFIX .. "that isn't a link code: it has six letters and digits, from hearthtale.app.")
+    print(PREFIX .. L["that isn't a link code: it has six letters and digits, from hearthtale.app."])
   elseif char then
     code = code:upper()
     char.link = { code = code, at = time() }
     print(
       PREFIX
-        .. "code "
-        .. code
-        .. " kept. Log out or /reload with Ravenpost running, and this book joins your "
-        .. "library on hearthtale.app."
+        .. L["code %s kept. Log out or /reload with Ravenpost running, and this book joins your library on hearthtale.app."]:format(
+          code
+        )
     )
   end
 end
@@ -199,13 +195,11 @@ local function rewrite()
   if ns.refresh then ns.refresh() end
   print(
     PREFIX
-      .. "the journal is written anew. hearthtale.app shows it after your next logout or /reload with "
-      .. "Ravenpost running."
+      .. L["the journal is written anew. hearthtale.app shows it after your next logout or /reload with Ravenpost running."]
   )
 end
 StaticPopupDialogs.HEARTHTALE_REWRITE = {
-  text = "Write this journal anew with this version of Hearthtale? Its entries' words may change. "
-    .. "Your own titles and notes stay.",
+  text = L["Write this journal anew with this version of Hearthtale? Its entries' words may change. Your own titles and notes stay."],
   button1 = YES,
   button2 = NO,
   OnAccept = rewrite,
@@ -224,13 +218,13 @@ local function setOwn(field, rest)
   if not (n and char.chapters and char.chapters[n]) then
     n, text = char.chapters and #char.chapters or 0, rest
   end
-  local what = field == "title" and "title" or "note"
+  local title = field == "title"
   if not ns.setOwn(n, field, text) then
-    print(PREFIX .. "no entry to give a " .. what .. " to yet.")
+    print(PREFIX .. (title and L["no entry to give a title to yet."] or L["no entry to give a note to yet."]))
   elseif text == "" then
-    print(PREFIX .. ("entry %d's %s removed."):format(n, what))
+    print(PREFIX .. (title and L["entry %d's title removed."] or L["entry %d's note removed."]):format(n))
   else
-    print(PREFIX .. ("entry %d's %s kept."):format(n, what))
+    print(PREFIX .. (title and L["entry %d's title kept."] or L["entry %d's note kept."]):format(n))
   end
 end
 
@@ -247,7 +241,7 @@ SlashCmdList.HEARTHTALE = function(raw)
   elseif msg == "minimap" then
     ns.setOption("minimapHidden", not ns.option("minimapHidden"))
   elseif msg == "settings" or msg == "options" then
-    if not ns.openSettings() then print(PREFIX .. "no settings page in this client.") end
+    if not ns.openSettings() then print(PREFIX .. L["no settings page in this client."]) end
   elseif msg == "hall" then
     ns.openHall()
   elseif msg == "welcome" then
@@ -258,9 +252,9 @@ SlashCmdList.HEARTHTALE = function(raw)
     ns.showWelcome("export")
   elseif word == "import" and rest ~= "" then
     if ns.importCode(rest) then
-      print(PREFIX .. "settings imported for this character.")
+      print(PREFIX .. L["settings imported for this character."])
     else
-      print(PREFIX .. "that isn't a Hearthtale settings code (/ht export makes one).")
+      print(PREFIX .. L["that isn't a Hearthtale settings code (/ht export makes one)."])
     end
   elseif code then
     link(code)

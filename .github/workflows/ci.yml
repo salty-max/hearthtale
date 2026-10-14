@@ -29,7 +29,7 @@ jobs:
           unzip -qo stylua.zip && unzip -qo selene.zip && chmod +x stylua selene
           echo "$HOME/bin" >> "$GITHUB_PATH"
       - name: Addon Lua formatted and linted
-        run: stylua --check addon && selene addon/Hearthtale
+        run: bun scripts/locales.ts --check && stylua --check addon && selene addon/Hearthtale
       - name: Writing builds, data files are up to date
         run: bun scripts/build.ts --check
       # (both games side by side, and a life in two languages)
@@ -41,6 +41,8 @@ jobs:
           "FOREVER=1 luajit addon/test/languages.lua"
           "luajit addon/test/writer.lua"
           "FOREVER=1 luajit addon/test/writer.lua"
+          "luajit addon/test/french.lua"
+          "FOREVER=1 luajit addon/test/french.lua"
       - name: Samples (the landing page's, as the writer writes them)
         run: luajit addon/test/sample.lua > /dev/null && luajit addon/test/sample.lua landing --check
       - name: Package (its TOCs agree)

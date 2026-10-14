@@ -4,6 +4,7 @@
 -- with the textures of the game's own minimap buttons (the tracking button's
 -- border, the zoom highlight), as its siblings'.
 local _, ns = ...
+local L = ns.kit.L
 
 local button
 
@@ -65,17 +66,17 @@ function ns.createMinimapButton()
     GameTooltip:SetOwner(self, "ANCHOR_LEFT")
     GameTooltip:AddLine("Hearthtale")
     local chapters, fallen = summary()
-    GameTooltip:AddLine(chapters == 1 and "1 entry" or ("%d entries"):format(chapters), 1, 1, 1)
+    GameTooltip:AddLine(ns.kit.plural(chapters, "%d entry", "%d entries"):format(chapters), 1, 1, 1)
     if fallen > 0 then
       GameTooltip:AddLine(
-        fallen == 1 and "1 book in the Hall of the Fallen" or ("%d books in the Hall of the Fallen"):format(fallen),
+        ns.kit.plural(fallen, "%d book in the Hall of the Fallen", "%d books in the Hall of the Fallen"):format(fallen),
         1,
         1,
         1
       )
     end
     GameTooltip:AddLine(
-      "Click to open the journal, right-click for the settings. Drag to move this button.",
+      L["Click to open the journal, right-click for the settings. Drag to move this button."],
       0.7,
       0.7,
       0.7,
