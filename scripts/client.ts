@@ -3,7 +3,9 @@
 // Client_Forever.lua (each game's own file), from the client's tables on
 // wago.tools (Classic Era and Forever, the builds pinned by knowledge.ts and
 // forever-data.ts).
-//   bun scripts/client.ts
+//   bun scripts/client.ts           (part of bun run audit)
+//   bun scripts/client.ts --check   fails if the files are not what the pins
+//                                   (scripts/pins.json) and the audit's data give
 // - skills: every language's name of a trade, a secondary skill or a riding,
 //   its English ("Minage", "Bergbau": "Mining"); riding: the ridings, by
 //   their English names ("Mechanostrider Piloting" too)
@@ -17,15 +19,24 @@
 // - spells: the class and trade spells by id, English
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
+import { CLASSIC, FOREVER, wago } from "./pins";
 
 const ROOT = path.join(import.meta.dir, "..");
 const CACHE = path.join(ROOT, ".cache", "client");
 const UA = { "User-Agent": "Hearthtale/1.0 (addon; github.com/salty-max/hearthtale)" };
 const GAMES = {
-  classic: { product: "product=wow_classic_era&build=1.15.9.70003", out: "Client_Classic.lua" },
-  forever: { product: "product=wow_classic_beta&build=1.60.1.70291", out: "Client_Forever.lua" },
+  classic: { pin: CLASSIC, out: "Client_Classic.lua" },
+  forever: { pin: FOREVER, out: "Client_Forever.lua" },
 };
 const LOCALES = ["deDE", "esES", "esMX", "frFR", "itIT", "koKR", "ptBR", "ruRU", "zhCN", "zhTW"];
+const CHECK = process.argv.includes("--check");
+const stale: string[] = [];
+// (a file written, or with --check compared)
+function write(name: string, text: string) {
+  const file = path.join(ROOT, "addon/Hearthtale", name);
+  if (!CHECK) return writeFileSync(file, text);
+  if (!existsSync(file) || readFileSync(file, "utf8") !== text) stale.push(name);
+}
 
 function csv(text: string): Record<string, string>[] {
   const lines: string[][] = [];
@@ -59,11 +70,11 @@ function csv(text: string): Record<string, string>[] {
   return lines.slice(1).map((r) => Object.fromEntries(head.map((h, i) => [h, r[i] ?? ""])));
 }
 async function table(game: keyof typeof GAMES, name: string, locale = "enUS") {
-  const file = path.join(CACHE, game, `${name}-${locale}.csv`);
+  const file = path.join(CACHE, game, GAMES[game].pin.build, `${name}-${locale}.csv`);
   if (!existsSync(file)) {
     mkdirSync(path.dirname(file), { recursive: true });
     const loc = locale === "enUS" ? "" : `&locale=${locale}`;
-    const res = await fetch(`https://wago.tools/db2/${name}/csv?${GAMES[game].product}${loc}`, { headers: UA });
+    const res = await fetch(`https://wago.tools/db2/${name}/csv?${wago(GAMES[game].pin)}${loc}`, { headers: UA });
     if (!res.ok) throw new Error(`${name} ${game} ${locale}: ${res.status}`);
     writeFileSync(file, await res.text());
   }
@@ -258,7 +269,7 @@ ${ids(spells, "Name_lang")}
   },
 }
 `;
-  writeFileSync(path.join(ROOT, "addon/Hearthtale", GAMES[game].out), out);
+  write(GAMES[game].out, out);
 
   // the names a client in another language gives in its own: creatures,
   // quests (their targets and items, by the quest log's order of each),
@@ -299,7 +310,7 @@ ${items
 end
 `;
   const englishOut = GAMES[game].out.replace("Client_", "English_");
-  writeFileSync(path.join(ROOT, "addon/Hearthtale", englishOut), english);
+  write(englishOut, english);
   console.log(`${englishOut}: ${creatures.size} creatures, ${quests.size} quests, ${items.length} items`);
   console.log(
     `${GAMES[game].out}: ${skills.out.size} skill names, ${riding.length} ridings, ${types.out.size + families.out.size} creature kinds, ` +
@@ -307,4 +318,11 @@ end
       `${encounters.length} bosses, ${spells.length} spells` +
       (conflicts.length ? `; ambiguous, left out: ${conflicts.join(", ")}` : ""),
   );
+}
+if (CHECK) {
+  if (stale.length) {
+    console.error(`stale: ${stale.join(", ")} (bun scripts/client.ts writes them)`);
+    process.exit(1);
+  }
+  console.log("✓ the client tables are what the pins give");
 }

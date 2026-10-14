@@ -11,6 +11,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { gunzipSync } from "node:zlib";
 import path from "node:path";
 import { rows } from "./sql";
+import { CLASSIC, wago } from "./pins";
 
 const DIR = path.join(import.meta.dir, "..", ".cache", "audit");
 const OUT = path.join(import.meta.dir, "..", "addon", "Hearthtale", "Knowledge.lua");
@@ -20,12 +21,12 @@ const sql = gunzipSync(readFileSync(path.join(DIR, "classicdb.sql.gz"))).toStrin
 // Classic Era, one build pinned): what a person is when their faction serves
 // several peoples (Stormwind's, Orgrimmar's) or another's (the gnomes who
 // serve Ironforge).
-const ERA_BUILD = "1.15.9.70003";
+const ERA_BUILD = CLASSIC.build; // (scripts/pins.json)
 async function eraTable(name: string) {
   const file = path.join(DIR, "wago", `${name}.${ERA_BUILD}.csv`);
   if (!existsSync(file)) {
     mkdirSync(path.dirname(file), { recursive: true });
-    const url = `https://wago.tools/db2/${name}/csv?product=wow_classic_era&build=${ERA_BUILD}`;
+    const url = `https://wago.tools/db2/${name}/csv?${wago(CLASSIC)}`;
     const res = await fetch(url, { headers: { "User-Agent": "Hearthtale/0.5 (addon data; github.com/salty-max/hearthtale)" } });
     if (!res.ok) throw new Error(`${url}: ${res.status}`);
     writeFileSync(file, await res.text());

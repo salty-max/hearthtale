@@ -21,17 +21,19 @@ import { spawnSync } from "node:child_process";
 import path from "node:path";
 import { rows } from "./sql";
 import { decide, list, plainName } from "./names";
+import { FOREVER, REPOS, wago } from "./pins";
 
 const ROOT = path.join(import.meta.dir, "..");
 const CACHE = path.join(ROOT, ".cache", "forever");
 const AUDIT = path.join(ROOT, ".cache", "audit");
-export const BUILD = "1.60.1.70291";
-const ATT = "ATTWoWAddon/AllTheThings";
-const ATT_COMMIT = "a21caf2a7ec636785505a7f4e7e4311d16ce28af";
-const QUESTIEDB = "Questie/QuestieDB";
-const QUESTIEDB_COMMIT = "7e87203312ef7ba309b96361fed90e492e145cff";
-const PFQUEST = "shagu/pfQuest";
-const PFQUEST_COMMIT = "104f35678ca39ab1fb78b655f815cc7016f5e0c8";
+// (the pins: scripts/pins.json)
+export const BUILD = FOREVER.build;
+const ATT = REPOS.allthethings.repo;
+const ATT_COMMIT = REPOS.allthethings.commit;
+const QUESTIEDB = REPOS.questiedb.repo;
+const QUESTIEDB_COMMIT = REPOS.questiedb.commit;
+const PFQUEST = REPOS.pfquest.repo;
+const PFQUEST_COMMIT = REPOS.pfquest.commit;
 const UA = { "User-Agent": "Hearthtale/0.5 (addon data; github.com/salty-max/hearthtale)" };
 
 async function fetchOnce(url: string, file: string) {
@@ -65,7 +67,7 @@ function csv(text: string): Record<string, string>[] {
   return lines.filter((l) => l.length > 1).map((l) => Object.fromEntries(head.map((h, i) => [h, l[i] ?? ""])));
 }
 async function table(name: string) {
-  const file = await fetchOnce(`https://wago.tools/db2/${name}/csv?product=wow_classic_beta&build=${BUILD}`, `wago/${name}.${BUILD}.csv`);
+  const file = await fetchOnce(`https://wago.tools/db2/${name}/csv?${wago(FOREVER)}`, `wago/${name}.${BUILD}.csv`);
   return csv(readFileSync(file, "utf8"));
 }
 

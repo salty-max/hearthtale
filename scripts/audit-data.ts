@@ -6,6 +6,7 @@
 // pfQuest (MIT) for the places' names. The names themselves are Blizzard's.
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { gunzipSync } from "node:zlib";
+import { CLASSIC, wago } from "./pins";
 import path from "node:path";
 import { rows } from "./sql";
 
@@ -16,7 +17,7 @@ const SOURCES = {
   // where every creature stands (its spawns' zones), pfQuest (MIT)
   units: "https://raw.githubusercontent.com/shagu/pfQuest/master/db/units.lua",
   // the client's areas, for the land each one lies in (Coldridge Valley: Dun Morogh)
-  areas: "https://wago.tools/db2/AreaTable/csv?product=wow_classic_era",
+  areas: `https://wago.tools/db2/AreaTable/csv?${wago(CLASSIC)}`,
 };
 
 async function fetchOnce(url: string, file: string) {
@@ -43,7 +44,7 @@ mkdirSync(DIR, { recursive: true });
 const dump = await fetchOnce(SOURCES.db, "classicdb.sql.gz");
 const zonesFile = await fetchOnce(SOURCES.zones, "pfquest-zones.lua");
 const unitsFile = await fetchOnce(SOURCES.units, "pfquest-units.lua");
-const areasFile = await fetchOnce(SOURCES.areas, "areatable-era.csv");
+const areasFile = await fetchOnce(SOURCES.areas, `areatable-era.${CLASSIC.build}.csv`);
 const sql = gunzipSync(readFileSync(dump)).toString("utf8");
 
 const spawns = new Map<number, number>();

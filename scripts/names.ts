@@ -8,6 +8,7 @@ import { readdirSync, readFileSync, writeFileSync } from "node:fs";
 import englishWords from "an-array-of-english-words";
 import humanNames from "human-names";
 import path from "node:path";
+import { CLASSIC, FOREVER } from "./pins";
 
 const DIR = path.join(import.meta.dir, "..", ".cache", "audit");
 const OUT = path.join(import.meta.dir, "..", "addon", "Hearthtale", "Names.lua");
@@ -202,7 +203,7 @@ export const list = (names: string[]) =>
 // Defias who had fled to the Dagger Hills" needs no "In Westfall").
 function placesNamed(): string[] {
   const areas = new Set<string>();
-  for (const file of [path.join(DIR, "areatable-era.csv"), path.join(DIR, "..", "forever", "wago", "AreaTable.1.60.1.70291.csv")]) {
+  for (const file of [path.join(DIR, `areatable-era.${CLASSIC.build}.csv`), path.join(DIR, "..", "forever", "wago", `AreaTable.${FOREVER.build}.csv`)]) {
     let src: string;
     try { src = readFileSync(file, "utf8"); } catch { continue; }
     const [head, ...rows] = src.split("\n");
