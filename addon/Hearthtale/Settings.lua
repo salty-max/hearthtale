@@ -78,6 +78,16 @@ function ns.setHardcore(value)
   if ns.refresh then ns.refresh() end
 end
 
+-- The opt-in that shares what the game tells of the world with the addons'
+-- database (the kit's, K.collect): account-wide, in HearthtaleCollect, which
+-- Ravenpost sends; off until the player says yes.
+ns.collect = K.collect({
+  saved = function()
+    if type(HearthtaleCollect) ~= "table" then HearthtaleCollect = {} end
+    return HearthtaleCollect
+  end,
+})
+
 local category
 
 function ns.createSettingsPanel()
@@ -127,6 +137,8 @@ function ns.createSettingsPanel()
       L["This character's death closes its book: an epitaph, and its journal joins the Hall of the Fallen. For this character only."]
     )
   end
+
+  K.collectSetting(category, "HEARTHTALE_SHARE", ns.collect)
 
   -- Another character's settings (of this game), for this one.
   K.copySetting(

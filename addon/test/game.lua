@@ -151,6 +151,7 @@ function UnitName(u)
 end
 function UnitLevel(u) return u == "player" and state.level or 1 end
 function UnitRace() return state.race, state.race end
+function GetLocale() return "enUS" end
 function UnitFactionGroup()
   return state.faction
     or (({ Orc = true, Troll = true, Tauren = true, Scourge = true })[state.race] and "Horde" or "Alliance")

@@ -46,6 +46,7 @@ local W = K.welcome({
         set = ns.setHardcore,
       })
     end
+    table.insert(choices, K.collectChoice(ns.collect))
     return choices
   end,
   footnote = L["Change them any time: /ht settings, or a right-click on the minimap button. /ht opens the journal."],

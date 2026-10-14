@@ -36,6 +36,11 @@ its decisions: PLAN.md (the full chapter prose was dropped on 10 October
   plural rule, flagged); `--keys` writes `i18n/words.json`. The writer's
   files (Language, Lines, Diary, Forever, Names, Knowledge) have no `L`.
   `addon/test/french.lua`, `german.lua`: a French and a German client. French done 14 October 2026, German (flagged: a first translation) the same day.
+- The opt-in that shares what the game tells of the world (the kit's
+  `K.collect`: quests' texts, creatures' facts, NPCs' lines, loot by source;
+  off until the player ticks it on the welcome page or the Options page)
+  keeps it account-wide in `HearthtaleCollect`, which Ravenpost sends to the
+  addons' database.
 - `addon/Hearthtale/Names.lua` (generated, committed): how the game itself
   writes its names, counted over all its quest texts and NPC speech: places
   with or without "the", creatures by name ("Hogger"), as one of a kind ("the

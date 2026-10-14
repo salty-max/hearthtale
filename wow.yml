@@ -273,3 +273,29 @@ globals:
     any: true
   time:
     any: true
+  C_GossipInfo:
+    any: true
+  GetGossipText:
+    any: true
+  GetObjectiveText:
+    any: true
+  GetProgressText:
+    any: true
+  GetQuestText:
+    any: true
+  GetRewardText:
+    any: true
+  GetTitleText:
+    any: true
+  UnitReaction:
+    any: true
+  GetNumLootItems:
+    any: true
+  GetLootSlotLink:
+    any: true
+  GetLootSourceInfo:
+    any: true
+  SaltyMaxCollector:
+    any: true
+  HearthtaleCollect:
+    any: true

@@ -131,5 +131,7 @@
   "the game's achievement alert could not be set up (%s): the book shows its own banner.": "die Erfolgsmeldung des Spiels ließ sich nicht einrichten (%s): Das Buch zeigt ein eigenes Banner.",
   "the journal is written anew. hearthtale.app shows it after your next logout or /reload with Ravenpost running.": "das Tagebuch wird neu geschrieben. hearthtale.app zeigt es nach deinem nächsten Ausloggen oder /reload, während Ravenpost läuft.",
   "this life's book is closed. Type /ht or click the button by the minimap to read it.": "das Buch dieses Lebens ist geschlossen. Tippe /ht oder klicke auf den Button an der Minikarte, um es zu lesen.",
-  "this life's book is closed. Type /ht to read it.": "das Buch dieses Lebens ist geschlossen. Tippe /ht, um es zu lesen."
+  "this life's book is closed. Type /ht to read it.": "das Buch dieses Lebens ist geschlossen. Tippe /ht, um es zu lesen.",
+  "Share what you see": "Teile, was du siehst",
+  "Quests, creatures and NPCs' words, as the game tells you, sent by Ravenpost to the addons' database. Never your name, your character or your chat.": "Quests, Kreaturen und die Worte der NPCs, wie das Spiel sie dir zeigt, von Ravenpost an die Datenbank der Addons geschickt. Nie dein Name, dein Charakter oder dein Chat."
 }

@@ -91,9 +91,23 @@ end
 -- settings (and this character's Hardcore where the game can't tell).
 local welcome, choices = ns.welcome.frame, ns.welcome.rows
 check(
-  welcome and welcome:IsShown() and #choices == (FOREVER and 3 or 2),
+  welcome and welcome:IsShown() and #choices == (FOREVER and 4 or 3),
   "the first login: the welcome page and its choices"
 )
+-- The last: sharing what the game tells of the world (the kit's collector),
+-- off until the player says yes, account-wide in HearthtaleCollect.
+local share = choices[#choices]
+check(
+  not share.box:GetChecked() and not ns.collect:on() and SaltyMaxCollector == nil,
+  "… the last, sharing what you see, off: nothing kept"
+)
+share.scripts.OnClick(share)
+check(
+  ns.collect:on() and HearthtaleCollect.share == true and SaltyMaxCollector ~= nil,
+  "… ticked: on, account-wide, this addon collects"
+)
+share.scripts.OnClick(share)
+check(not ns.collect:on() and next(HearthtaleCollect.facts) == nil, "… unticked: off, what was kept forgotten")
 check(choices[1].box:GetChecked() and choices[2].box:GetChecked(), "… which show the settings as they are")
 choices[2].scripts.OnClick(choices[2])
 check(ns.option("toast") == false and not choices[2].box:GetChecked(), "… a click on a choice's words changes it")

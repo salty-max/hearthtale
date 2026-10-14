@@ -123,6 +123,7 @@ function ns.login()
     HearthtaleChar = char
   end
   if ns.loadProfile then ns.loadProfile(char) end
+  if ns.collect then ns.collect:start() end
   if ns.onLogin then ns.onLogin(char) end
   if ns.createMinimapButton then ns.createMinimapButton() end
   if ns.createSettingsPanel then ns.createSettingsPanel() end
