@@ -4,7 +4,7 @@
 ## Notes-frFR: Le journal de votre personnage, écrit pendant que vous jouez, avec une épitaphe et un journal conservé quand une vie Hardcore s'achève.
 ## Category: Roleplay
 ## Author: salty-max
-## Version: 0.10.1
+## Version: 0.11.0
 ## SavedVariablesPerCharacter: HearthtaleChar
 ## SavedVariables: HearthtaleSettings, HearthtaleHall
 ## IconTexture: Interface\AddOns\Hearthtale\Media\Logo
