@@ -95,10 +95,10 @@ const en = {
     windowsArm: "Windows on ARM",
     unsigned: "Not code-signed yet: Windows and macOS warn the first time you open it.",
     uploadInstead: "Rather not install Ravenpost? Upload your saved file from the library instead.",
-    stepsTitle: "3. Link it",
+    stepsTitle: "3. Sign in",
     steps: [
-      "Open Ravenpost and choose to link Hearthtale with Battle.net.",
-      "This site opens. Sign in with Battle.net and check the code matches the one Ravenpost shows.",
+      "Open Ravenpost and click Sign in with Battle.net.",
+      "Your browser opens on Battle.net. Once you're signed in, Ravenpost is linked to Hearthtale: there's nothing else to confirm.",
       "Play, then log out or type /reload. A few seconds later, your book is in your library.",
     ],
     foreverLink: "World of Warcraft: Forever characters (and any Battle.net can't find): get a link code from \"Link a character\" at the top of the page (signed in) and type /ht link CODE in the game before you log out.",
