@@ -15,6 +15,7 @@
 # Classic Era (Hardcore, Season of Discovery). Forever loads Hearthtale_Camelot.toc,
 # the same but for the interface and its data (scripts/package.ts checks).
 Data_Classic.lua
+Client_Classic.lua
 Names.lua
 Knowledge.lua
 Util.lua

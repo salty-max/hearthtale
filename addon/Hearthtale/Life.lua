@@ -34,14 +34,17 @@ local lastDungeon
 ns.on("PLAYER_ENTERING_WORLD", function()
   local inside, kind = IsInInstance()
   if not inside or (kind ~= "party" and kind ~= "raid") then return end
-  local name = GetInstanceInfo()
+  local name, _, _, _, _, _, _, id = GetInstanceInfo()
   if not name or secret(name) then return end
+  name = R.instance(not secret(id) and id or nil, name) -- (in English, whatever the client's language)
   if lastDungeon and lastDungeon.name == name and now() - lastDungeon.at < 3600 then return end
   lastDungeon = { name = name, at = now() }
   moment("dungeon", { name = name })
 end)
-ns.on("ENCOUNTER_END", function(_, encounterName, _, _, success)
-  if success == 1 and encounterName and not secret(encounterName) then moment("boss", { name = encounterName }) end
+ns.on("ENCOUNTER_END", function(id, encounterName, _, _, success)
+  if success == 1 and encounterName and not secret(encounterName) then
+    moment("boss", { name = R.encounter(not secret(id) and id or nil, encounterName) })
+  end
 end)
 
 -- ── learning and spoils ──────────────────────────────────────────────────────
@@ -61,7 +64,7 @@ local untried = {} -- [a spell's name] = { m = its lesson's moment, ch = its cha
 local function spellName(id)
   local get = (C_Spell and C_Spell.GetSpellName) or GetSpellInfo
   local name = get and get(id)
-  return (name and not secret(name)) and name or nil
+  return (name and not secret(name)) and R.spell(id, name) or nil
 end
 ns.onUnit("UNIT_SPELLCAST_SUCCEEDED", "player", function(_, _, id)
   if not id or secret(id) or next(untried) == nil then return end
@@ -106,6 +109,7 @@ ns.on("CHAT_MSG_SYSTEM", function(msg)
     if raw then
       local id = tonumber(raw:match("|Hspell:(%d+)"))
       local spell = raw:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", ""):gsub("|H.-|h%[?(.-)%]?|h", "%1")
+      spell = R.spell(id, spell) -- (in English, whatever the client's language)
       if id and STEEDS[id] then
         moment("power", { spell = spell, kind = "steed" })
       elseif POWERS[spell] then
@@ -134,7 +138,7 @@ ns.on("CHAT_MSG_SKILL", function(msg)
   if secret(msg) then return end
   local skill, rank = match("SKILL_RANK_UP", msg)
   rank = tonumber(rank)
-  if skill and rank and MILESTONES[rank] then moment("skill", { name = skill, rank = rank }) end
+  if skill and rank and MILESTONES[rank] then moment("skill", { name = R.skill(skill), rank = rank }) end
 end)
 
 -- ── professions ──────────────────────────────────────────────────────────────
@@ -158,15 +162,15 @@ local function trades()
       elseif
         name
         and not secret(name)
-        and (section == TRADE_SKILLS or section == SECONDARY_SKILLS or name:find("Riding"))
+        and (section == TRADE_SKILLS or section == SECONDARY_SKILLS or R.riding(name))
       then
-        out[name] = max or 0
+        out[R.skill(name)] = max or 0 -- (in English, whatever the client's language)
       end
     end
   elseif GetProfessions and GetProfessionInfo then
     for _, index in ipairs({ GetProfessions() }) do
       local name, _, _, max = GetProfessionInfo(index)
-      if name and not secret(name) then out[name] = max or 0 end
+      if name and not secret(name) then out[R.skill(name)] = max or 0 end
     end
   end
   return out, whole
@@ -189,7 +193,7 @@ local function lookAtTrades(quiet)
     local max, before = list[name], c.profs[name]
     c.profs[name] = max
     if known and not quiet then
-      if name:find("Riding") and not before then
+      if R.riding(name) and not before then
         moment("riding", { name = name })
       elseif not before then
         moment("prof", { name = name, learned = true, again = (c.dropped or {})[name] })
@@ -200,7 +204,7 @@ local function lookAtTrades(quiet)
   end
   if known and not quiet and whole then
     for _, name in ipairs(sorted(c.profs)) do
-      if not list[name] and not name:find("Riding") then
+      if not list[name] and not R.riding(name) then
         c.profs[name] = nil
         c.dropped = c.dropped or {}
         c.dropped[name] = true
@@ -218,6 +222,9 @@ ns.on("SKILL_LINES_CHANGED", function() lookAtTrades(false) end)
 -- more than half of them). Never the talents themselves. A new one is a
 -- moment (spec { name, was }); one held when the journal first looks is
 -- noted quietly; talents unlearned, none for a while, is no change.
+-- (Forever's specializations are one a class, named after it and held from
+-- the first level: no way chosen, its talents tell it; a tree by its place
+-- in the game's order, in English whatever the client's language)
 local SPEC_POINTS = 10
 local function specOf()
   local get = (C_SpecializationInfo and C_SpecializationInfo.GetSpecialization) or GetSpecialization
@@ -225,10 +232,12 @@ local function specOf()
   if get and info then
     local index = get()
     if index and not secret(index) and index > 0 then
-      local _, name = info(index)
-      if name and not secret(name) then return name end
+      local id, name = info(index)
+      local ofClass = id and not secret(id) and ((ns.client or {}).classSpecs or {})[id]
+      if name and not secret(name) and not ofClass then return name end
     end
   end
+  local trees = ((ns.client or {}).trees or {})[char().class or ""]
   if not (GetNumTalentTabs and GetTalentTabInfo) then return nil end
   local best, most, all = nil, 0, 0
   for i = 1, GetNumTalentTabs() or 0 do
@@ -239,6 +248,7 @@ local function specOf()
       name, points = b, e
     end
     if type(name) == "string" and type(points) == "number" and not secret(name) and not secret(points) then
+      if not R.inEnglish() and trees and trees[i] then name = trees[i] end
       all = all + points
       if points > most then
         best, most = name, points
@@ -357,6 +367,7 @@ local function lookAtDemon()
   if not UnitExists("pet") then return end
   local name, family = UnitName("pet"), UnitCreatureFamily("pet")
   if not name or secret(name) or not family or secret(family) then return end
+  family = R.family(family)
   c.demons = c.demons or {}
   if c.demons[family] or not (c.powers or {})["Summon " .. family] then return end
   c.demons[family] = name
@@ -383,7 +394,7 @@ local function lookAtPet(quiet)
   if not name or secret(name) then return end
   c.pets = c.pets or {}
   if not c.pets[name] then
-    c.pets[name] = (family and not secret(family)) and family or true
+    c.pets[name] = (family and not secret(family)) and R.family(family) or true
     local fresh = not quiet and tamedAt and now() - tamedAt <= TAMING
     local kind = c.pets[name] ~= true and c.pets[name] or nil
     if fresh and tamed and tamed.at >= tamedAt and tamed.family == kind then
@@ -533,7 +544,7 @@ ns.on("PLAYER_ENTERING_WORLD", function(initial)
   -- (riding known when the journal first looks: ridden before it began)
   local rides = IsMounted()
   for name in pairs(c.profs or {}) do
-    if name:find("Riding") then rides = true end
+    if R.riding(name) then rides = true end
   end
   if c.rode == nil and rides then c.rode = true end
   if c.rich == nil then c.rich = GetMoney() >= GOLD end

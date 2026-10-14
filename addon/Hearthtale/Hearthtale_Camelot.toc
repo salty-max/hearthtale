@@ -15,6 +15,7 @@
 # World of Warcraft: Forever. Classic Era loads Hearthtale_Vanilla.toc, the same
 # but for the interface and its data (scripts/package.ts checks).
 Data_Forever.lua
+Client_Forever.lua
 Names.lua
 Knowledge.lua
 Forever.lua

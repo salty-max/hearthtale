@@ -21,8 +21,8 @@ const SRC = join(ROOT, "addon", NAME);
 const DIST = join(ROOT, "dist");
 // Each game's TOC, its interface and the files only it loads.
 const GAMES = [
-  { toc: `${NAME}_Vanilla.toc`, interface: "11509", own: ["Data_Classic.lua"] },
-  { toc: `${NAME}_Camelot.toc`, interface: "16001", own: ["Data_Forever.lua", "Forever.lua"] },
+  { toc: `${NAME}_Vanilla.toc`, interface: "11509", own: ["Data_Classic.lua", "Client_Classic.lua"] },
+  { toc: `${NAME}_Camelot.toc`, interface: "16001", own: ["Data_Forever.lua", "Client_Forever.lua", "Forever.lua"] },
 ];
 
 const fail = (why: string) => {

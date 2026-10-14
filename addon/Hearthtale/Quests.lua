@@ -105,7 +105,7 @@ local function companion()
   if not UnitExists("pet") then return nil end
   local name, family = UnitName("pet"), UnitCreatureFamily("pet")
   if not name or secret(name) then return nil end
-  return name, (family and not secret(family)) and family or nil
+  return name, (family and not secret(family)) and R.family(family) or nil
 end
 
 -- A quest's count gone up: those kills credited to me (Combat.lua tells the
@@ -199,7 +199,7 @@ ns.on("QUEST_COMPLETE", function()
   ender = (name and not secret(name)) and name or nil
   enderSex = ender and sexOf("npc") or nil
   local kind = ender and UnitCreatureType and UnitCreatureType("npc")
-  enderBeast = (kind and not secret(kind) and kind == "Beast") or nil
+  enderBeast = (kind and not secret(kind) and R.creatureType(kind) == "Beast") or nil
   local id = GetQuestID()
   if id and id ~= 0 then named(id, (char().pending or {})[id]) end
 end)

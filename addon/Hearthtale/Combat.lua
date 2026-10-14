@@ -20,7 +20,7 @@ local function seen(unit)
   if secret(name) then return end
   units[guid] = {
     name = name,
-    kind = (not secret(family) and family) or (not secret(ctype) and ctype) or nil,
+    kind = (not secret(family) and R.family(family)) or (not secret(ctype) and R.creatureType(ctype)) or nil,
     rank = not secret(rank) and rank or nil,
   }
   byName[name] = units[guid]

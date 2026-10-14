@@ -23,6 +23,8 @@ globals:
     any: true
   C_Item:
     any: true
+  C_Map:
+    any: true
   C_QuestLog:
     any: true
   C_SpecializationInfo:

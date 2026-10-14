@@ -1937,7 +1937,7 @@ function ns.writeBook(c)
   d.trades = {}
   for _, known in ipairs({ c.profs or {}, c.dropped or {} }) do
     for name in pairs(known) do
-      if not name:find("Riding") then d.trades[name] = true end
+      if not ((ns.client or {}).riding or {})[name] and not name:find("Riding") then d.trades[name] = true end
     end
   end
   local chapters = c.chapters or {}

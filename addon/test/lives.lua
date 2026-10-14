@@ -886,4 +886,7 @@ for name, life in pairs(lives) do
   end
 end
 
+-- (for the other tests: a life's moves, its beginning)
+lives.moves, lives.begin = moves, begin
+
 return lives

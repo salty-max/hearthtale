@@ -34,7 +34,7 @@ text.
 
 A finished entry keeps its words, even after an update improves the
 writing. `/ht rewrite` writes the whole journal again with the current
-version, after asking; your titles and notes stay.
+version, after asking. Your titles and notes stay.
 
 ## Read on hearthtale.app
 
@@ -47,9 +47,10 @@ The website is optional, and books are private unless you choose to share
 them. Your notes stay out of a shared book and the Hall. Setup instructions
 are at [hearthtale.app/start](https://hearthtale.app/start).
 
-The addon is written for English game clients. On other clients, game names
-appear in their own language within English sentences, and some events that
-depend on English names are missing. In Forever dungeons, the journal can
+The addon is written for English game clients. On other clients the journal
+is still written in English, with places, trades, spells and dungeons in
+English too. The names of creatures, people, quests and items appear in the
+client's language. In Forever dungeons, the journal can
 only tell kills that a quest also counts.
 
 ## Settings

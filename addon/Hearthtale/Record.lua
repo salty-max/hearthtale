@@ -109,11 +109,82 @@ local function night()
   local h = GetGameTime()
   return h ~= nil and not secret(h) and (h < 6 or h >= 18)
 end
+-- ── the record in English, whatever the client's language ───────────────────
+-- The journal is written in English, the game's names in it too: on a client
+-- in another language, a name is kept in English by what the game says it is
+-- (Client_<game>.lua: the game's own names by id, and in every language), so
+-- a life played in two languages keeps one trade, one place, one path. A name
+-- the tables don't know is kept as the game gave it.
+local C = ns.client or {}
+local function language() return GetLocale and GetLocale() or "enUS" end
+local function inEnglish()
+  local l = language()
+  return l == "enUS" or l == "enGB"
+end
+-- [a name in the client's language] = its English, from the game's ids and
+-- what the game calls each in this language (made at the first need)
+local function reverse(names, get)
+  local out, ids = {}, {}
+  for id in pairs(names or {}) do
+    ids[#ids + 1] = id
+  end
+  table.sort(ids) -- (a name two of them share: the first one's)
+  for _, id in ipairs(ids) do
+    local ok, here = pcall(get, id)
+    if ok and type(here) == "string" and here ~= "" and not out[here] then out[here] = names[id] end
+  end
+  return out
+end
+local areaOf, spellOf = {}, {} -- [a language] = its names' English
+local function place(name)
+  if not name or inEnglish() then return name end
+  local l = language()
+  if not areaOf[l] then
+    local get = C_Map and C_Map.GetAreaInfo
+    areaOf[l] = get and reverse(C.areas, get) or {}
+  end
+  return areaOf[l][name] or (C.taxi or {})[name] or name
+end
+-- a trade, a secondary skill, a riding; a creature's type, a family; a
+-- flight master's place (any language's, a record's from another client too)
+local function skill(name) return name and (C.skills or {})[name] or name end
+local function creatureType(name) return name and (C.types or {})[name] or name end
+local function family(name) return name and (C.families or {})[name] or name end
+local function taxi(name) return name and (C.taxi or {})[name] or place(name) end
+local function riding(name)
+  if name == nil then return false end
+  local english = skill(name)
+  return (C.riding or {})[english] == true or english:find("Riding") ~= nil
+end
+-- a spell, a dungeon, a boss: by the id the game gives with it
+local function spell(id, name)
+  if inEnglish() then return name end
+  return (id and (C.spells or {})[id]) or name
+end
+-- (a spell known only by its name, in the client's language: a record's)
+local function spellNamed(name)
+  if not name or inEnglish() then return name end
+  local l = language()
+  if not spellOf[l] then
+    local get = (C_Spell and C_Spell.GetSpellName) or GetSpellInfo
+    spellOf[l] = get and reverse(C.spells, get) or {}
+  end
+  return spellOf[l][name] or name
+end
+local function instance(id, name)
+  if inEnglish() then return name end
+  return (id and (C.maps or {})[id]) or place(name)
+end
+local function encounter(id, name)
+  if inEnglish() then return name end
+  return (id and (C.encounters or {})[id]) or name
+end
+
 local function where()
   local zone, sub = GetRealZoneText(), GetSubZoneText()
   if secret(zone) then zone = nil end
   if secret(sub) or sub == "" or sub == zone then sub = nil end
-  return zone, sub
+  return place(zone), place(sub)
 end
 local function changed()
   if ns.onRecord then ns.onRecord() end
@@ -251,9 +322,170 @@ local function questsDone()
   return n
 end
 
+-- ── a record kept in two languages, mended ──────────────────────────────────
+-- Before 0.10 the record kept the game's names in the client's language: a
+-- life played in French, then in English, had "Minage" beside "Mining", and a
+-- path "Guerrier" after "Warrior". At each login its names are put back in
+-- English where the game's tables know them (a place only from the client's
+-- own language), and what only a change of language made is let go: a trade
+-- given up and taken up again in the same minute or two, a riding told as a
+-- trade, a lesson that was a trade's, a specialization named after the class
+-- (Forever's, held from the first level), a land "new" that was not. An
+-- entry closed with such words is written again. A fallen life's book is
+-- left as it closed.
+local SWITCH = 120 -- (seconds: a trade dropped and taken up this close is the language changing)
+local function mend(c)
+  if c.closed then return end
+  local classSpec, trees = C.classSpecNames or {}, C.treeNames or {}
+  local function kind(name) return family(creatureType(name)) end
+  local function tree(name) return trees[name] or name end
+  -- (a table's keys in English, two of one merged)
+  local function rekey(t, fn, merge)
+    if type(t) ~= "table" then return t end
+    local out = {}
+    for k, v in pairs(t) do
+      local e = type(k) == "string" and fn(k) or k
+      if out[e] ~= nil and merge then
+        out[e] = merge(out[e], v)
+      elseif out[e] == nil then
+        out[e] = v
+      end
+    end
+    return out
+  end
+  c.profs = rekey(c.profs, skill, math.max)
+  c.dropped = rekey(c.dropped, skill)
+  c.kinds = rekey(c.kinds, kind)
+  c.powers = rekey(c.powers, spellNamed)
+  c.demons = rekey(c.demons, family)
+  for name, f in pairs(c.pets or {}) do
+    if type(f) == "string" then c.pets[name] = family(f) end
+  end
+  c.visited = rekey(c.visited, function(key)
+    local zone, sub = key:match("^(.-)|(.*)$")
+    if not zone then return key end
+    return place(zone) .. "|" .. (sub ~= "" and place(sub) or "")
+  end)
+  if c.spec and classSpec[c.spec] then
+    c.spec = false -- (none chosen yet: the talents will tell)
+  elseif c.spec then
+    c.spec = tree(c.spec)
+  end
+  local TRADE = ns.TRADE_SPELLS or {}
+  local dropsLeft, seen = {}, {}
+  for i, ch in ipairs(c.chapters or {}) do
+    local mended = false
+    local function english(t, k, fn)
+      local v = t and t[k]
+      if type(v) ~= "string" then return end
+      local e = fn(v)
+      if e ~= v then
+        t[k], mended = e, true
+      end
+    end
+    for _, t in ipairs({ ch.start, ch.ended }) do
+      english(t, "zone", place)
+      english(t, "sub", place)
+      english(t, "place", place)
+    end
+    if ch.start and ch.start.zone then seen[ch.start.zone] = true end
+    local log, gone = ch.log or {}, {}
+    for _, m in ipairs(log) do
+      english(m, "zone", place)
+      english(m, "sub", place)
+      local k = m.k
+      if k == "prof" or k == "riding" or k == "skill" then
+        english(m, "name", skill)
+      elseif k == "inn" or k == "rested" then
+        english(m, "place", place)
+      elseif k == "flight" then
+        english(m, "from", taxi)
+        english(m, "to", taxi)
+      elseif k == "dungeon" then
+        english(m, "name", place)
+      elseif k == "kill" then
+        english(m, "kind", kind)
+      elseif k == "tame" or k == "demon" then
+        english(m, "family", family)
+      elseif k == "done" then
+        english(m, "petFamily", family)
+      elseif k == "revived" then
+        english(m, "graveyard", place)
+      elseif k == "power" then
+        english(m, "spell", spellNamed)
+      elseif k == "spec" then
+        english(m, "name", tree)
+        english(m, "was", tree)
+      elseif k == "learned" then
+        for _, list in ipairs({ m.spells or {}, m.used or {} }) do
+          for j in ipairs(list) do
+            english(list, j, spellNamed)
+          end
+        end
+      end
+    end
+    -- what only a change of language made
+    for a, m in ipairs(log) do
+      local k = m.k
+      if k == "prof" and riding(m.name) then gone[a] = true end -- (a riding is no trade)
+      if k == "spec" and classSpec[m.name or ""] then gone[a] = true end
+      if k == "spec" and m.was and classSpec[m.was] then
+        m.was, mended = nil, true
+      end
+      if k == "learned" then -- (a trade's lesson is the trade's news)
+        local kept = {}
+        for _, sp in ipairs(m.spells or {}) do
+          if not (TRADE[sp] or (c.profs or {})[skill(sp)]) then table.insert(kept, sp) end
+        end
+        if #kept < #(m.spells or {}) then
+          m.spells, mended = kept, true
+          if #kept == 0 then gone[a] = true end
+        end
+      end
+      if k == "prof" and (m.learned or m.dropped) and not gone[a] then
+        for b = a + 1, #log do
+          local o = log[b]
+          if (o.at or 0) - (m.at or 0) > SWITCH then break end
+          if
+            not gone[b]
+            and o.k == "prof"
+            and o.name == m.name
+            and ((m.learned and o.dropped) or (m.dropped and o.learned))
+          then
+            gone[a], gone[b] = true, true
+            break
+          end
+        end
+      end
+      if k == "place" and m.new == "zone" and m.zone and seen[m.zone] then
+        m.new, mended = nil, true
+      end
+      if m.zone then seen[m.zone] = true end
+    end
+    if next(gone) then
+      local kept = {}
+      for a, m in ipairs(log) do
+        if not gone[a] then table.insert(kept, m) end
+      end
+      ch.log, mended = kept, true
+    end
+    for _, m in ipairs(ch.log or {}) do
+      if m.k == "prof" and m.dropped then dropsLeft[m.name] = true end
+    end
+    -- (an entry closed with words this mended: written again)
+    local saved = mended and c.book and c.book.chapters and c.book.chapters[i]
+    if saved then saved.diary = nil end
+  end
+  -- (a trade known now, never given up but for a change of language)
+  for name in pairs(c.dropped or {}) do
+    if (c.profs or {})[name] and not dropsLeft[name] then c.dropped[name] = nil end
+  end
+end
+
 ns.on("PLAYER_LOGIN", function()
   local c = char()
   c.visited, c.kinds = c.visited or {}, c.kinds or {}
+  mend(c)
   if not c.closed then c.hardcore = hardcore() or c.hardcoreChosen or nil end -- chosen: in the settings, where the game can't tell
   c.race, c.class = select(2, UnitRace("player")), select(2, UnitClass("player"))
   local faction = UnitFactionGroup("player")
@@ -265,7 +497,7 @@ ns.on("PLAYER_LOGIN", function()
   if not c.prologue and (c.began.level or 1) > 1 then
     local zone = where()
     c.prologue =
-      { level = c.began.level, quests = questsDone(), inn = GetBindLocation(), zone = zone, gold = GetMoney() }
+      { level = c.began.level, quests = questsDone(), inn = place(GetBindLocation()), zone = zone, gold = GetMoney() }
   end
   sessionFrom = GetTime()
   c.money = GetMoney()
@@ -462,14 +694,14 @@ end
 ns.on("PLAYER_ENTERING_WORLD", moved)
 
 ns.on("HEARTHSTONE_BOUND", function()
-  local place = GetBindLocation()
-  if place and not secret(place) then moment("inn", { place = place }) end
+  local inn = GetBindLocation()
+  if inn and not secret(inn) then moment("inn", { place = place(inn) }) end
 end)
 
 hooksecurefunc("TakeTaxiNode", function(index)
-  local to, from = TaxiNodeName(index), nil
+  local to, from = taxi(TaxiNodeName(index)), nil
   for i = 1, NumTaxiNodes() do
-    if TaxiNodeGetType(i) == "CURRENT" then from = TaxiNodeName(i) end
+    if TaxiNodeGetType(i) == "CURRENT" then from = taxi(TaxiNodeName(i)) end
   end
   if to and from then moment("flight", { from = from, to = to }) end
 end)
@@ -511,4 +743,16 @@ ns.record = {
   moment = moment,
   battleground = battleground,
   tally = tally,
+  place = place,
+  skill = skill,
+  creatureType = creatureType,
+  family = family,
+  taxi = taxi,
+  riding = riding,
+  spell = spell,
+  spellNamed = spellNamed,
+  instance = instance,
+  encounter = encounter,
+  inEnglish = inEnglish,
+  mend = mend,
 }
