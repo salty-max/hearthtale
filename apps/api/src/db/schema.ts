@@ -1,6 +1,6 @@
 import type { Book, Client, Region } from "@hearthtale/shared";
 import { sql } from "drizzle-orm";
-import { bigint, boolean, index, integer, jsonb, pgTable, primaryKey, serial, text, timestamp, uniqueIndex } from "drizzle-orm/pg-core";
+import { bigint, boolean, index, integer, jsonb, pgTable, primaryKey, serial, text, timestamp } from "drizzle-orm/pg-core";
 
 /**
  * An account: a Battle.net login creates it (or finds it) and opens a session.
@@ -142,36 +142,6 @@ export const pushSubscriptions = pgTable(
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
   },
   (t) => [index("push_subscriptions_account").on(t.accountId)],
-);
-
-/**
- * What players' games told them of the world, shared by those who said yes in
- * an addon (the kit's collector) and sent by Ravenpost: one fact a row (a
- * quest's text, a creature's level, an NPC's line, an item a source gave), in
- * the language it came in, kept once; who saw it, as the hashes of anonymous
- * Ravenpost installs (at most a few: enough to count how many agree). The
- * addons' database (wow-data) takes them in through the export.
- */
-export const observations = pgTable(
-  "observations",
-  {
-    id: serial("id").primaryKey(),
-    game: text("game").notNull(), // classic | forever
-    locale: text("locale").notNull(),
-    kind: text("kind").notNull(), // quest | npc | say | gossip | loot
-    entity: text("entity").notNull(), // its id ("448", or a loot source "npc:448")
-    field: text("field").notNull(),
-    value: text("value").notNull(),
-    valueHash: text("value_hash").notNull(),
-    build: text("build"),
-    contributors: jsonb("contributors").$type<string[]>().notNull().default(sql`'[]'::jsonb`),
-    firstSeen: timestamp("first_seen", { withTimezone: true }).notNull().defaultNow(),
-    lastSeen: timestamp("last_seen", { withTimezone: true }).notNull().defaultNow(),
-  },
-  (t) => [
-    uniqueIndex("observations_fact").on(t.game, t.locale, t.kind, t.entity, t.field, t.valueHash),
-    index("observations_seen").on(t.lastSeen),
-  ],
 );
 
 /** Tiny key/value store for the site's own state. */

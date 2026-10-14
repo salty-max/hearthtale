@@ -299,7 +299,7 @@ const en = {
   },
   privacy: {
     title: "Privacy",
-    updated: "Last updated 15 October 2026.",
+    updated: "Last updated 12 October 2026.",
     sections: [
       {
         title: "What the site keeps",
@@ -307,11 +307,7 @@ const en = {
       },
       {
         title: "What it never keeps",
-        text: "Your Battle.net password or access token, your email, your position, what you carry or your gold: the addon's raw record stays on your computer, and Ravenpost sends only the book (and the facts of the world below, if you share them).",
-      },
-      {
-        title: "Facts of the world, if you share them",
-        text: "Tick \"Share what you see\" in one of the addons and Ravenpost sends what the game tells you of the world: quests' texts, creatures' names and levels, what characters say, what a creature dropped. Your name, class and race in a text become the game's placeholders, and a line naming another player is left out. No account goes with them, only a random number your Ravenpost made, of which the site keeps a fingerprint to count how many players saw the same thing. They go into the addons' game data, for every player. Untick the box and the addon forgets what it kept.",
+        text: "Your Battle.net password or access token, your email, your position, what you carry or your gold: the addon's raw record stays on your computer, and Ravenpost sends only the book.",
       },
       {
         title: "Who reads your books",

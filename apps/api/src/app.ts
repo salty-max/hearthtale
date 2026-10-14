@@ -16,7 +16,6 @@ import { createShare, hall, hallBook, listShares, revokeShare, setInHall, shared
 import { createLinkCode } from "@/lib/link";
 import { appOrigin, finishLogin, isRegion, startLogin } from "@/lib/login";
 import { log } from "@/lib/log";
-import { exportObservations, flatten, GAMES, recordObservations } from "@/lib/observations";
 
 type Env = { Variables: { account: AccountRow | null } };
 export const app = new Hono<Env>();
@@ -224,35 +223,6 @@ app.post(
     return c.json(result);
   },
 );
-
-// ── what players' games tell of the world (the addons' opt-in, by Ravenpost) ─
-// Anonymous: Ravenpost names its install by a random id (only a hash of it is
-// kept, to count how many players agree on a fact), no account.
-app.post(
-  "/api/observations",
-  bodyLimit({ maxSize: 4 * 1024 * 1024, onError: (c) => c.json({ error: "too large" }, 413) }),
-  async (c) => {
-    const contributor = c.req.header("x-contributor") ?? "";
-    if (!/^[A-Za-z0-9]{16,64}$/.test(contributor)) return c.json({ error: "no contributor" }, 400);
-    const facts = flatten(await c.req.json().catch(() => null));
-    if (!facts) return c.json({ error: "not a collect table" }, 400);
-    return c.json({ facts: await recordObservations(contributor, facts) });
-  },
-);
-
-// The facts for the addons' database (wow-data's bin/players.ts), behind a token.
-app.get("/api/observations/export", async (c) => {
-  const token = process.env.OBSERVATIONS_TOKEN;
-  if (!token || (c.req.header("authorization") ?? "") !== `Bearer ${token}`) return c.json({ error: "unauthorized" }, 401);
-  const game = c.req.query("game") ?? "";
-  if (!GAMES.has(game)) return c.json({ error: "no such game" }, 400);
-  const since = c.req.query("since");
-  const at = since ? new Date(since) : undefined;
-  if (at && Number.isNaN(at.getTime())) return c.json({ error: "since: a date" }, 400);
-  const after = Number(c.req.query("after") ?? 0);
-  if (!Number.isSafeInteger(after) || after < 0) return c.json({ error: "after: a cursor" }, 400);
-  return c.json(await exportObservations(game, at, after));
-});
 
 /** The new entries of an upload, told to their owners' devices once the answer has gone. */
 function tell(saved: Saved[]): void {
