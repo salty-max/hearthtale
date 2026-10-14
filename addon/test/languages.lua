@@ -35,7 +35,14 @@ local FR = {
   ["Beast"] = "B\195\170te",
   ["Wolf"] = "Loup",
   ["Battle Shout"] = "Cri de guerre",
+  -- (creatures, a quest, its giver, an item: told in English by their ids)
+  ["Small Crag Boar"] = "Petit sanglier des rochers",
+  ["Ragged Timber Wolf"] = "Loup des bois d\195\169charn\195\169",
+  ["The Boar Hunter"] = "Le chasseur de sangliers",
+  ["Talin Keeneye"] = "Talin Oeil-vif",
+  ["Shining Silver Breastplate"] = "Cuirasse en argent brillant",
 }
+local NPC = { ["Talin Keeneye"] = 714 } -- (the giver's id, in its GUID)
 local lang = "enUS"
 local function said(name) return lang == "frFR" and name and FR[name] or name end
 -- (the client's language: what the game's functions say in it)
@@ -46,7 +53,33 @@ local english = {
   GetSkillLineInfo = GetSkillLineInfo,
   UnitCreatureType = UnitCreatureType,
   UnitCreatureFamily = UnitCreatureFamily,
+  UnitName = UnitName,
+  UnitGUID = UnitGUID,
+  GetQuestObjectives = C_QuestLog.GetQuestObjectives,
+  GetTitleForQuestID = C_QuestLog.GetTitleForQuestID,
+  QUEST_MONSTERS_KILLED = QUEST_MONSTERS_KILLED,
 }
+function UnitName(u)
+  local name, second = english.UnitName(u)
+  return said(name), second
+end
+function UnitGUID(u)
+  if u == "npc" and NPC[state.npc or ""] then return ("Creature-0-4170-0-12-%d-00000001"):format(NPC[state.npc]) end
+  return english.UnitGUID(u)
+end
+C_QuestLog.GetTitleForQuestID = function(id) return said(english.GetTitleForQuestID(id)) end
+C_QuestLog.GetQuestObjectives = function(id)
+  local list = english.GetQuestObjectives(id)
+  for _, o in ipairs(list or {}) do
+    if lang == "frFR" and o.text then
+      o.text = o.text:gsub(
+        "^(%d+/%d+) (.-) slain$",
+        function(n, name) return n .. " " .. said(name) .. " tu\195\169" end
+      )
+    end
+  end
+  return list
+end
 function GetLocale() return lang end
 function GetRealZoneText() return said(english.GetRealZoneText()) end
 function GetSubZoneText() return said(english.GetSubZoneText()) end
@@ -71,6 +104,7 @@ local function speak(l)
   G.sleep(20 * 60)
   lang = l
   TRADE_SKILLS, SECONDARY_SKILLS = said("Professions"), said("Secondary Skills")
+  QUEST_MONSTERS_KILLED = l == "frFR" and "%2$d/%3$d %1$s tu\195\169" or english.QUEST_MONSTERS_KILLED
   G.login()
 end
 local function learnSpell(id, name)
@@ -99,8 +133,19 @@ m.go("Anvilmar")
 speak("frFR")
 m.go("Coldridge Valley")
 learnSpell(6673, "Battle Shout")
-m.slay("Small Crag Boar", 2, "Beast", "Boar")
+G.creature("Small Crag Boar", "Beast", "Boar", nil, 708) -- (the game's own ids)
+G.creature("Ragged Timber Wolf", "Beast", "Wolf", nil, 704)
+m.task(
+  "The Boar Hunter",
+  "Talin Keeneye",
+  m.slain("Small Crag Boar", 12),
+  function() m.slay("Small Crag Boar", 12, "Beast", "Boar") end
+)
 m.slay("Ragged Timber Wolf", 2, "Beast", "Wolf")
+fire(
+  "CHAT_MSG_LOOT",
+  ("You receive loot: |cff0070dd|Hitem:2870::::::::|h[%s]|h|r."):format(said("Shining Silver Breastplate"))
+)
 m.ding()
 -- in English again, and a rest at the inn
 speak("enUS")
@@ -114,6 +159,7 @@ for name in pairs(c.profs or {}) do
 end
 table.sort(profs)
 local trades, specs, places, spells, kinds = {}, 0, {}, {}, {}
+local killed, quest, loot = {}, nil, nil
 for _, ch in ipairs(c.chapters) do
   for _, mo in ipairs(ch.log) do
     if mo.k == "prof" then table.insert(trades, (mo.dropped and "-" or "+") .. mo.name) end
@@ -126,6 +172,9 @@ for _, ch in ipairs(c.chapters) do
       end
     end
     if mo.k == "kill" and mo.kind then kinds[mo.kind] = true end
+    if mo.k == "kill" then killed[mo.name] = true end
+    if mo.k == "quest" and mo.id == 183 then quest = mo end
+    if mo.k == "loot" then loot = mo.link end
   end
 end
 for _ in pairs(c.dropped or {}) do
@@ -146,6 +195,16 @@ check(
 )
 check(spells["Battle Shout"] and not spells["Cri de guerre"], "a lesson learned in French, in English")
 check(kinds.Wolf and kinds.Boar and not kinds.Loup, "creature kinds in English")
+check(killed["Small Crag Boar"] and killed["Ragged Timber Wolf"], "creatures in English, by their ids")
+check(
+  quest
+    and quest.title == "The Boar Hunter"
+    and quest.giver == "Talin Keeneye"
+    and quest.objectives
+    and quest.objectives[1].name == "Small Crag Boar",
+  "a quest in English: its title, its giver, its objective"
+)
+check(loot and loot:find("[Shining Silver Breastplate]", 1, true), "an item in English, by its id")
 local book = ns.writeBook(c)
 local all = {}
 for _, ch in ipairs(book.chapters) do
@@ -154,7 +213,19 @@ end
 local text = table.concat(all, "\n")
 if os.getenv("SHOW") then io.write(text, "\n") end
 local french
-for _, word in ipairs({ "inage", "Guerrier", "Vall\195\169e", "Courbenclume", "Cri de guerre", "Loup", "B\195\170te" }) do
+for _, word in ipairs({
+  "inage",
+  "Guerrier",
+  "Vall\195\169e",
+  "Courbenclume",
+  "Cri de guerre",
+  "Loup",
+  "B\195\170te",
+  "sanglier",
+  "chasseur",
+  "Oeil",
+  "Cuirasse",
+}) do
   if text:find(word, 1, true) then french = word end
 end
 check(not french, "the journal has no word of French" .. (french and (": " .. french) or ""))

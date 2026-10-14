@@ -16,6 +16,7 @@
 # but for the interface and its data (scripts/package.ts checks).
 Data_Forever.lua
 Client_Forever.lua
+English_Forever.lua
 Names.lua
 Knowledge.lua
 Forever.lua

@@ -18,6 +18,7 @@ local function seen(unit)
   local name, ctype, family, rank =
     UnitName(unit), UnitCreatureType(unit), UnitCreatureFamily(unit), UnitClassification(unit)
   if secret(name) then return end
+  name = R.creature(R.npcId(guid), name) -- (in English, whatever the client's language)
   units[guid] = {
     name = name,
     kind = (not secret(family) and R.family(family)) or (not secret(ctype) and R.creatureType(ctype)) or nil,
@@ -173,10 +174,15 @@ end
 -- The foe: the last to hit me (Classic), else my target. players: a player
 -- counts (a death; a close call is a creature's).
 local function foe(players)
-  if lastHit and now() - lastHit.at <= 10 and lastHit.name then return lastHit.name, lastHit.guid end
+  if lastHit and now() - lastHit.at <= 10 and lastHit.name then
+    return R.creature(R.npcId(lastHit.guid), lastHit.name), lastHit.guid
+  end
   if not UnitExists("target") or (UnitIsPlayer("target") and not players) then return end
   local name, guid = UnitName("target"), UnitGUID("target")
-  if name and not secret(name) then return name, not secret(guid) and guid or nil end
+  if name and not secret(name) then
+    guid = not secret(guid) and guid or nil
+    return R.creature(R.npcId(guid), name), guid
+  end
 end
 local pending, lastClose = false, 0
 ns.onUnit("UNIT_HEALTH", "player", function()

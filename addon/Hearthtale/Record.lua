@@ -180,6 +180,47 @@ local function encounter(id, name)
   return (id and (C.encounters or {})[id]) or name
 end
 
+-- the game's creatures, quests and items, by id (English_<game>.lua: made at
+-- the first need, which an English client never has)
+local englishNames
+local function names()
+  englishNames = englishNames or (ns.englishNames and ns.englishNames()) or {}
+  return englishNames
+end
+-- a creature's id, from its GUID ("Creature-0-…-<id>-<spawn>")
+local function npcId(guid)
+  if not guid or secret(guid) then return nil end
+  return tonumber(
+    guid:match("^Creature%-%d+%-%d+%-%d+%-%d+%-(%d+)") or guid:match("^Vehicle%-%d+%-%d+%-%d+%-%d+%-(%d+)")
+  )
+end
+local function creature(id, name)
+  if not id or inEnglish() then return name end
+  return (names().creatures or {})[id] or name
+end
+local function questTitle(id, title)
+  if not id or inEnglish() then return title end
+  local q = (names().quests or {})[id]
+  return q and q.title or title
+end
+-- an objective's creature or item: the quest's k-th of its type
+local function objective(id, kind, k, name)
+  if not id or not name or inEnglish() then return name end
+  local q = (names().quests or {})[id]
+  local of = q and ((kind == "monster" and q.targets) or (kind == "item" and q.items))
+  local target = of and of[k]
+  if not target then return name end
+  return (kind == "monster" and (names().creatures or {})[target] or (names().items or {})[target]) or name
+end
+-- an item's link, its name in English
+local function link(l)
+  if not l or inEnglish() then return l end
+  local id = tonumber(l:match("|Hitem:(%d+)"))
+  local name = id and (names().items or {})[id]
+  if not name then return l end
+  return (l:gsub("|h%[.-%]|h", function() return "|h[" .. name .. "]|h" end, 1))
+end
+
 local function where()
   local zone, sub = GetRealZoneText(), GetSubZoneText()
   if secret(zone) then zone = nil end
@@ -755,4 +796,9 @@ ns.record = {
   encounter = encounter,
   inEnglish = inEnglish,
   mend = mend,
+  npcId = npcId,
+  creature = creature,
+  questTitle = questTitle,
+  objective = objective,
+  link = link,
 }

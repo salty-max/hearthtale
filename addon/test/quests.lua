@@ -9,6 +9,7 @@ local quests = {
   { 170, "A New Threat" },
   { 179, "Dwarven Outfitters" },
   { 182, "The Troll Cave" },
+  { 183, "The Boar Hunter" },
   { 233, "Coldridge Valley Mail Delivery", giver = "Sten Stoutarm" },
   { 234, "Coldridge Valley Mail Delivery", giver = "Talin Keeneye" },
   { 218, "The Stolen Journal" },

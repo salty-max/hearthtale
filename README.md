@@ -47,10 +47,9 @@ The website is optional, and books are private unless you choose to share
 them. Your notes stay out of a shared book and the Hall. Setup instructions
 are at [hearthtale.app/start](https://hearthtale.app/start).
 
-The addon is written for English game clients. On other clients the journal
-is still written in English, with places, trades, spells and dungeons in
-English too. The names of creatures, people, quests and items appear in the
-client's language. In Forever dungeons, the journal can
+The journal is written in English, on any game client. On other clients the
+game's names in it (places, creatures, people, quests, items, trades, spells)
+are kept in English too. In Forever dungeons, the journal can
 only tell kills that a quest also counts.
 
 ## Settings

@@ -16,6 +16,7 @@
 # the same but for the interface and its data (scripts/package.ts checks).
 Data_Classic.lua
 Client_Classic.lua
+English_Classic.lua
 Names.lua
 Knowledge.lua
 Util.lua

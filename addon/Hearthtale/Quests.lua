@@ -8,9 +8,16 @@ local char, moment, chapter, changed, match = R.char, R.moment, R.chapter, R.cha
 -- title, kept until it is turned in (the title may be out of the game's cache
 -- by then). Classic passes (index, id), Forever (id).
 local function titleOf(id)
-  return (C_QuestLog and C_QuestLog.GetTitleForQuestID and C_QuestLog.GetTitleForQuestID(id))
+  local title = (C_QuestLog and C_QuestLog.GetTitleForQuestID and C_QuestLog.GetTitleForQuestID(id))
     or (GetTitleForQuestID and GetTitleForQuestID(id))
     or nil
+  return R.questTitle(id, title) -- (in English, whatever the client's language)
+end
+-- (a quest's giver or ender: the creature by its id, in English)
+local function npcName(unit)
+  local name = UnitName(unit)
+  if not name or secret(name) then return nil end
+  return R.creature(R.npcId(UnitGUID(unit)), name)
 end
 
 -- What a quest asks, from the quest log: its objectives' lines ("Kobold
@@ -51,8 +58,9 @@ local function finishedAll(id)
 end
 local function objectivesOf(id)
   local raw = rawObjectives(id)
-  local out = {}
+  local out, nth = {}, {}
   for _, o in ipairs(raw) do
+    nth[o.type or ""] = (nth[o.type or ""] or 0) + 1
     if o.text and not secret(o.text) then
       local name, n, have, own
       for _, g in ipairs({ "QUEST_MONSTERS_KILLED", "QUEST_OBJECTS_FOUND" }) do
@@ -68,6 +76,7 @@ local function objectivesOf(id)
       if name then
         name = name:match("^%s*(.-)%s*$")
         if name == "" or name:match("^%d+$") then return nil end
+        name = R.objective(id, o.type, nth[o.type or ""], name) -- (in English, whatever the client's language)
       end
       -- a kill told in the quest's own words ("Peons Awoken: 0/5"): its text,
       -- not a creature's name
@@ -88,11 +97,13 @@ end
 -- How many of each creature a quest has counted so far ("Rockjaw Trogg
 -- slain: 3/6"): name = count.
 local function killCounts(id)
-  local counts = {}
+  local counts, k = {}, 0
   for _, o in ipairs(rawObjectives(id)) do
+    if o.type == "monster" then k = k + 1 end
     if o.type == "monster" and o.text and not secret(o.text) then
       local name, have = match("QUEST_MONSTERS_KILLED", o.text)
       name = name and name:match("^%s*(.-)%s*$")
+      if name and name ~= "" then name = R.objective(id, "monster", k, name) end
       if name and name ~= "" and tonumber(have) then counts[name] = tonumber(have) end
     end
   end
@@ -140,7 +151,7 @@ ns.on("QUEST_ACCEPTED", function(a, b)
     and not (UnitCanAttack and UnitCanAttack("player", "target"))
     and not (UnitIsPlayer and UnitIsPlayer("target"))
   local unit = UnitName("npc") and "npc" or (friendly and "target") or nil
-  local giver = unit and UnitName(unit) or nil
+  local giver = unit and npcName(unit) or nil
   local objectives = objectivesOf(id)
   c.pending[id] = {
     giver = (giver and not secret(giver)) and giver or nil,
@@ -195,8 +206,7 @@ local function named(id, p)
   if p and (not p.objectives or misread(p.objectives)) then p.objectives = objectivesOf(id) or p.objectives end
 end
 ns.on("QUEST_COMPLETE", function()
-  local name = UnitName("npc")
-  ender = (name and not secret(name)) and name or nil
+  ender = npcName("npc")
   enderSex = ender and sexOf("npc") or nil
   local kind = ender and UnitCreatureType and UnitCreatureType("npc")
   enderBeast = (kind and not secret(kind) and R.creatureType(kind) == "Beast") or nil

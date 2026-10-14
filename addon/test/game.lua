@@ -601,12 +601,18 @@ local function vanquish(guid, name, race, class)
   fire("COMBAT_LOG_EVENT_UNFILTERED")
 end
 -- A creature to meet: its id (for kill()).
-local function creature(name, type, family, rank)
-  for i, c in ipairs(CREATURES) do
+-- (id: the game's own, for a test that needs it; else the next free one)
+local lastCreature = #CREATURES
+local function creature(name, type, family, rank, id)
+  for i, c in pairs(CREATURES) do
     if c.name == name then return i end
   end
-  table.insert(CREATURES, { name = name, type = type, family = family, rank = rank or "normal" })
-  return #CREATURES
+  if not id then
+    lastCreature = lastCreature + 1
+    id = lastCreature
+  end
+  CREATURES[id] = { name = name, type = type, family = family, rank = rank or "normal" }
+  return id
 end
 
 -- A kill by someone else (a groupmate: guid): the event, or the combat log's line.

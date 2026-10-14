@@ -3,3 +3,5 @@ addon/Hearthtale/Data_*.lua
 addon/Hearthtale/Names.lua
 addon/Hearthtale/Knowledge.lua
 addon/Hearthtale/Forever.lua
+addon/Hearthtale/Client_*.lua
+addon/Hearthtale/English_*.lua

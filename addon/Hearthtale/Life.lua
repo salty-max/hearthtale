@@ -307,7 +307,7 @@ local function lookAtGear(quiet)
         -- (in hand: a weapon, a shield, a bow, taken up rather than put on; a
         -- trinket, carried rather than worn)
         moment("gear", {
-          link = link,
+          link = R.link(link), -- (its name in English, whatever the client's language)
           quality = quality,
           made = (c.made or {})[id] or nil,
           held = slot >= 16 or nil,
@@ -340,7 +340,7 @@ ns.on("CHAT_MSG_LOOT", function(msg)
         last.n, last.at = last.n + count, now()
         changed()
       else
-        moment("made", { id = id, link = link, n = count })
+        moment("made", { id = id, link = R.link(link), n = count })
       end
       return
     end
@@ -352,7 +352,7 @@ ns.on("CHAT_MSG_LOOT", function(msg)
   local link = mine and msg:match(LINK)
   if not link then return end
   local _, quality = itemInfo(link)
-  if quality and quality >= 3 then moment("loot", { link = link, quality = quality }) end
+  if quality and quality >= 3 then moment("loot", { link = R.link(link), quality = quality }) end
 end)
 
 -- ── pets, demons, forms, a first ride ────────────────────────────────────────
@@ -513,7 +513,7 @@ local function lookAtBags(quiet)
       local toSlot = (C_Container and C_Container.ContainerIDToInventoryID) or ContainerIDToInventoryID
       local link = GetInventoryItemLink("player", toSlot(bag))
       local id = link and not secret(link) and tonumber(link:match("item:(%d+)"))
-      moment("bag", { link = id and link or nil, slots = slots, looted = (id and id == lootedBag) or nil })
+      moment("bag", { link = id and R.link(link) or nil, slots = slots, looted = (id and id == lootedBag) or nil })
       return
     end
   end
