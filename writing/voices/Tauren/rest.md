@@ -11,7 +11,7 @@ kind: rest
 - I rested {at}, knowing the next mile would keep until I was ready for it.
 - I paused {at}, with no greater ambition than to sit as still as a totem for a while.
 - After a day of other people's needs, I rested {at} and let my own come first.
-- The road could wait; I rested {at} the way a herd rests, all at once and without apology.
+- The road could wait. I rested {at} the way a herd rests, all at once and without apology.
 - Nothing had to die while I rested {at}, and I was thankful for the hour.
 - [hc] I rested {at}, with only one life to return to the Earth Mother and no wish to return it early.
 - I sat down {at} and went over the day the way the elders go over a question, from every side before deciding anything.

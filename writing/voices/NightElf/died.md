@@ -3,7 +3,7 @@ kind: died
 ---
 - [foe] {foe} killed me {at}. I had not learned to live as a mortal before having to learn to die as one.
 - [foe] I fell to {foe} {at}, and the Temple of the Moon had never seemed further away.
-- [fall] I fell to my death {at}; height had offered none of the safety I associated with home.
+- [fall] I fell to my death {at}. Height had offered none of the safety I associated with home.
 - [drowning] I drowned {at}, unable to reach the air while Elune's name filled what remained of my fear.
 - I died {at}, and wanted our lost immortality with a bitterness I had not expected.
 - [lava] Fire killed me {at}, and took me as quickly as it takes a dry glade.

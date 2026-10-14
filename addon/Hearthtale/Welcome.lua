@@ -26,7 +26,7 @@ local W = K.welcome({
     local choices = {
       {
         text = "The book by the minimap",
-        hint = "Click it to open the journal; drag it around the minimap.",
+        hint = "Click it to open the journal. Drag it around the minimap.",
         get = function() return not ns.option("minimapHidden") end,
         set = function(v) ns.setOption("minimapHidden", not v) end,
       },

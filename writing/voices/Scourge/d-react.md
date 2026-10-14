@@ -6,5 +6,5 @@ kind: d-react
 - [rescue] I had not expected the living to trust their lives to me, and I found I did not want to let them down.
 - [rescue] Seeing someone safely through to the end was a strange errand for one of my kind, and not an unwelcome one.
 - [undead] The Scourge took my first life, and every one of its servants I put down is a debt I am glad to collect.
-- [undead] They were dead as I am dead, and still a Lich King's, as I am not; I felt no kinship at all.
+- [undead] They were dead as I am dead, and still a Lich King's, as I am not. I felt no kinship at all.
 - [victim] I know what it is to be made into something else, and I hoped the end came as a mercy.

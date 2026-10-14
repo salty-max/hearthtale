@@ -5,8 +5,8 @@ kind: d-company
 - [!again] For a time I travelled with {mates}, and the work went quicker for it.
 - [!again] I was glad of {mates} for part of the way.
 - [!again] I fell in with {mates} for a while.
-- [one !again] I did not do all of it alone; {mates} was with me for part of it.
-- [!one !again] I did not do all of it alone; {mates} were with me for part of it.
+- [one !again] I did not do all of it alone. {mates} was with me for part of it.
+- [!one !again] I did not do all of it alone. {mates} were with me for part of it.
 - [!again] Part of the way, I had {mates} for company.
 - [again] I travelled with {mates} again for a while.
 - [again] {mates} and I shared the road once more.

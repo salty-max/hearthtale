@@ -172,6 +172,10 @@ function parseFile(file: string, kind: string | null): Parsed | null {
     const slots = own === "scenery" ? [] : (KINDS[own ?? ""] ?? []);
     for (const [, slot] of sentence.text.matchAll(/\{([^}]*)\}/g))
       if (!slots.includes(slot) && !VOICE.includes(slot)) fail(file, `{${slot}} is not a slot of ${own}: ${sentence.text}`);
+    // (no semicolon in what a player reads, the user's rule: two sentences, a
+    // comma, or a rewrite; a gender token's own ";" stays)
+    if (/;/.test(sentence.text.replace(/\$[gG][^;$]*;/g, "")))
+      fail(file, `a semicolon (two sentences, a comma, or a rewrite): ${sentence.text}`);
     // (a life the record can't know: no family, childhood, past trade or possessions of the narrator's)
     if (/\b(all my life|when I was young|as a child|in my youth|my (father|mother|brother|sister|parents|family|workshop|tools|old job|former))\b/i.test(sentence.text))
       fail(file, `a personal history the record can't know: ${sentence.text}`);
@@ -333,6 +337,7 @@ for (const f of mdFiles(WHY_DIR)) {
     if (text.length > 150) fail(file, `a why of ${text.length} characters (150 at most): ${text}`);
     if (/\b(you|your|I|quest|quests|objective)\b/.test(text)) fail(file, `no "you", "I", "quest" or "objective" in a why: ${text}`);
     if (/[$<>[\]{}"]/.test(text)) fail(file, `no $, <>, [], {} or double quotes in a why: ${text}`);
+    if (text.includes(";")) fail(file, `a semicolon in a why (a comma, or a rewrite): ${text}`);
     if (why.has(id)) fail(file, `quest ${id} twice`);
     why.set(id, { w, text, deed: deedOf(text, file), subject: subject === "none" ? undefined : subject, client: f.startsWith("forever-") ? "forever" : undefined });
   }

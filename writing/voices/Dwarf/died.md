@@ -2,11 +2,11 @@
 kind: died
 ---
 - [foe] {foe} killed me {at}. I had been as stubborn as stone, and about as quick to get out of the way.
-- [foe] I fell to {foe} {at}; I had thought myself harder to break than that.
-- [fall] I fell to my death {at}; a dwarf's fondness for mountains was no protection against the drop.
+- [foe] I fell to {foe} {at}. I had thought myself harder to break than that.
+- [fall] I fell to my death {at}. A dwarf's fondness for mountains was no protection against the drop.
 - [drowning] I drowned {at}, longing for a stretch of good, dry stone under my feet.
 - I died {at}, without having learned half of what the mountain kept from us.
-- [lava] Fire killed me {at}; I was flesh, for all my people's fondness for the forge.
+- [lava] Fire killed me {at}. I was flesh, for all my people's fondness for the forge.
 - [nature] I died {at}, and the ground that usually steadied me had offered no refuge.
 - [foe] {foe} killed me {at}. I hated the thought of leaving my kin to hear the name without me.
 - I died {at}, with more country left to see and a great deal of ale I would never taste.

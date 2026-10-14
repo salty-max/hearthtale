@@ -4,7 +4,7 @@ kind: d-react
 - [rescue] Bringing someone back alive is a different sort of victory, and I liked it better than most.
 - [rescue] There are worse ways to spend a day than making sure someone gets home.
 - [rescue] Of everything the stretch asked of me, that was the part I would do again without being asked.
-- [villain] Some foes I fight because I am asked to; that one I fought gladly.
+- [villain] Some foes I fight because I am asked to. That one I fought gladly.
 - [villain] The quiet afterwards was the best part of it.
 - [villain] I had heard enough of what that one had done to feel no regret at all.
 - [undead !race:Scourge] The dead never fall quite the way the living do, and I was glad when it was over.
@@ -15,5 +15,5 @@ kind: d-react
 - [beast] I was sorry for the beast, a little, and not sorry at all that it was done.
 - [victim] It felt less like a victory than a release, and I was glad of that.
 - [victim] There was no triumph in it, only the hope that what had been lost there could rest now.
-- [victim] I took no pleasure in it; that end was owed, and I was sorry it fell to me to bring it.
+- [victim] I took no pleasure in it. That end was owed, and I was sorry it fell to me to bring it.
 - [victim] Some endings are kindnesses, and I tried hard to believe that one was.

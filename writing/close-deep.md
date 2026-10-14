@@ -4,7 +4,7 @@ kind: close-deep
 - {foe} left me barely alive {at}. A safe return suddenly seemed worth all the dull errands that might come with it.
 - {foe} nearly ended me {at}, and left my hands unable to believe the danger was over.
 - [!foe] I barely survived {at}. For a long while afterwards I sat still and simply breathed.
-- {foe} nearly killed me {at}; I had no courage left for anything except wanting to stay alive.
+- {foe} nearly killed me {at}, and I had no courage left for anything except wanting to stay alive.
 - [!foe] I barely survived {at}, and longed for the kind of shelter I had once taken for granted.
 - [!foe] I came very near death {at}, with no comfort in knowing how small the final mistake would have been.
 - [!foe] I survived {at}, too shaken to make much distinction between relief and fear for a while.
@@ -13,11 +13,11 @@ kind: close-deep
 - [hc] {foe} nearly ended me {at}. I had one life, and all my fine notions of glory shrank beside the thought of losing it.
 - [hc !foe] I came close to dying {at}, grateful for a chance I could not afford to count on twice.
 - [hc !foe] I barely survived {at}, with my hands wanting the steadiness fear had taken from them.
-- [hc high !foe] I nearly died {at}; all the distance behind me would have been very little comfort if I had.
+- [hc high !foe] I nearly died {at}. All the distance behind me would have been very little comfort if I had.
 - [class:PALADIN] {foe} left me barely alive {at}, my faith no less dear for being too frightened to make a graceful prayer.
 - [class:PRIEST] {foe} nearly ended me {at}, and I had no words for a prayer beyond the wish not to be taken yet.
-- [class:SHAMAN] {foe} left me barely alive {at}; I could take comfort in the earth's steadiness without becoming part of it.
-- [class:WARRIOR] {foe} nearly finished me {at}; my rage had been very eager to fight and considerably less helpful when I wanted to live.
+- [class:SHAMAN] {foe} left me barely alive {at}. I could take comfort in the earth's steadiness without becoming part of it.
+- [class:WARRIOR] {foe} nearly finished me {at}. My rage had been very eager to fight and considerably less helpful when I wanted to live.
 - [!foe] I nearly died {at}, and needed a little time with no demand on me beyond remaining alive.
 - {foe} left me barely alive {at}, with the wish to be safely home stronger than the courage that had brought me out.
 - [!foe] I came close to dying {at}, and the thought of a friendly voice was enough to undo me.

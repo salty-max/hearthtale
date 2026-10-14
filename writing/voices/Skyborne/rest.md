@@ -3,7 +3,7 @@ kind: rest
 ---
 - [client:forever faction:alliance] I settled {at}, content that the High Order's future need not be built by one exhausted pair of hands.
 - [client:forever faction:alliance] With no vanished patron to ask permission of, I stopped {at}.
-- [client:forever faction:alliance] I rested {at}; the lore of Eldre'Thalas had been lost for thousands of years, and could stay lost until I had my strength back.
+- [client:forever faction:alliance] I rested {at}. The lore of Eldre'Thalas had been lost for thousands of years, and could stay lost until I had my strength back.
 - [client:forever faction:horde] I rested {at}, and let the search for our lost mentors wait an hour without feeling I had abandoned it.
 - [client:forever faction:horde] I stopped {at}, a Windshaper off duty, if such a thing existed.
 - [client:forever] Idleness {at} was a private pleasure, and I took it without apology.

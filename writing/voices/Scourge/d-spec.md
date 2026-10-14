@@ -6,7 +6,7 @@ kind: d-spec
 - [class:WARRIOR spec:Protection !change] I had chosen Protection, and would stand in front of the living when it came to it, which is not without its irony.
 - [class:ROGUE spec:Assassination !change] I had chosen Assassination, the Royal Apothecary Society's poisons being far too good to leave in their bottles.
 - [class:ROGUE spec:Combat !change] I had chosen Combat, quick and graceless, and found I had no dignity left that minded.
-- [class:ROGUE spec:Subtlety !change] I had chosen Subtlety; passing unnoticed among the living came more easily than it ought to.
+- [class:ROGUE spec:Subtlety !change] I had chosen Subtlety. Passing unnoticed among the living came more easily than it ought to.
 - [class:PRIEST spec:Discipline !change] I had chosen Discipline, a faith of will over flesh, which suited flesh like mine.
 - [class:PRIEST spec:Holy !change] I had given myself to the Holy path, knowing the Light would burn me each time I called on it for someone else's sake.
 - [class:PRIEST spec:Shadow !change] I had turned to Shadow, which asked nothing of me that the grave had not already taught.
@@ -19,5 +19,5 @@ kind: d-spec
 - [client:forever class:PALADIN spec:Holy !change] I had given myself to the Holy path, though the Light would burn me every time I turned it to mending.
 - [client:forever class:PALADIN spec:Protection !change] I had chosen Protection, a shield of Light that burns whoever bears it, held up for the living all the same.
 - [client:forever class:PALADIN spec:Retribution !change] I had chosen Retribution, the Light's judgement in dead hands, and I knew its fire would not spare me either.
-- [change] I gave up {was} for {spec}; changing what I am is something the Forsaken have had some practice at.
+- [change] I gave up {was} for {spec}. Changing what I am is something the Forsaken have had some practice at.
 - [change] {was} had served me, but death had taught me how little is permanent, and I took up {spec}.

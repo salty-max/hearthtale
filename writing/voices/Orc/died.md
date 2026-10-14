@@ -3,10 +3,10 @@ kind: died
 ---
 - [foe] {foe} killed me {at}, and I had no comfort in the thought of being brave about it.
 - [foe] I fell to {foe} {at}, with far too much of Durotar's future still dear to me.
-- [fall] I fell to my death {at}; my strength had been of no use between the height and the ground.
+- [fall] I fell to my death {at}. My strength had been of no use between the height and the ground.
 - [drowning] I drowned {at}, wanting a breath more fiercely than I had ever wanted a victory.
 - I died {at}, with the new homeland still needing living hands more than another remembered name.
-- [lava] Fire killed me {at}; I had no strength to demand mercy from the flame.
+- [lava] Fire killed me {at}. I had no strength to demand mercy from the flame.
 - [nature] I died {at}, with no enemy to face, which somehow made it worse.
 - [foe] {foe} killed me {at}, and I feared leaving the ancestors nothing but another short life to weigh.
 - I died {at}, still hungry for the life our people had won beyond the camps.

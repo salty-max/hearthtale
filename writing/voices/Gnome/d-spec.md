@@ -6,7 +6,7 @@ kind: d-spec
 - [class:WARRIOR spec:Protection !change] I had chosen Protection, and meant to be a great deal harder to move than I looked.
 - [class:ROGUE spec:Assassination !change] I had chosen Assassination, the most exacting of a rogue's crafts, which suited a mind that likes things exact.
 - [class:ROGUE spec:Combat !change] I had chosen Combat, quick and close, the sort of fighting bigger folk always underestimate.
-- [class:ROGUE spec:Subtlety !change] I had chosen Subtlety; I was overlooked often enough that I might as well make an art of it.
+- [class:ROGUE spec:Subtlety !change] I had chosen Subtlety. I was overlooked often enough that I might as well make an art of it.
 - [class:MAGE spec:Arcane !change] I had given my study to the Arcane, the most intricate of the schools, which made it quite irresistible.
 - [class:MAGE spec:Fire !change] I had given my study to Fire, bright, loud and nearly as satisfying as a well-made explosion.
 - [class:MAGE spec:Frost !change] I had given my study to Frost, the cold of Dun Morogh made into something useful at last.
@@ -17,4 +17,4 @@ kind: d-spec
 - [client:forever class:PRIEST spec:Holy !change] I had given myself to the Holy path, my prayers turned to mending what my people had lost too much of: one another.
 - [client:forever class:PRIEST spec:Shadow !change] I had turned to Shadow, and kept as close an eye on it as on anything that might go off.
 - [change] I took my old ways apart, figuratively speaking, and rebuilt myself around {spec} instead of {was}.
-- [change] {was} had been a fine first attempt; {spec} was the one I meant to keep.
+- [change] {was} had been a fine first attempt, but {spec} was the one I meant to keep.

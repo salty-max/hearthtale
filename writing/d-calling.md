@@ -7,7 +7,7 @@ kind: d-calling
 - [spell:Berserker_Stance] I took up Berserker Stance, and wondered how much fury a body can hold without breaking.
 - [spell:Berserker_Stance] Berserker Stance was the last of a warrior's three ways of standing, and the hungriest of them.
 - [spell:Redemption] I learned Redemption, and with it the power to call a fallen friend back to the Light.
-- [spell:Redemption !race:Scourge] Redemption was mine at last; no companion of mine need stay fallen while I could stand.
+- [spell:Redemption !race:Scourge] Redemption was mine at last, and no companion of mine need stay fallen while I could stand.
 - [spell:Redemption race:Scourge] Redemption was mine, and of all paladins I knew best what it is to be called back.
 - [spell:Poisons] I learned to brew poisons, and my blades need never be honest again.
 - [spell:Poisons] Poisons were mine to use now, a rogue's patience distilled into a vial.
@@ -22,7 +22,7 @@ kind: d-calling
 - [spell:Elune's_Grace] Elune's Grace was mine, and I felt the goddess's care in it as much as any power.
 - [spell:Elune's_Grace] I learned Elune's Grace, and knew blows would find me harder to reach beneath her light.
 - [spell:Touch_of_Weakness] I learned Touch of Weakness, and could give a little of my own frailty to whoever struck me.
-- [spell:Touch_of_Weakness] Touch of Weakness was mine now; anyone who laid a hand on me would come away the poorer.
+- [spell:Touch_of_Weakness] Touch of Weakness was mine now. Anyone who laid a hand on me would come away the poorer.
 - [spell:Devouring_Plague] Devouring Plague was mine now, the old sickness turned to my own use.
 - [spell:Devouring_Plague] I learned Devouring Plague, and there was a bitter justice in carrying a plague of my own.
 - [spell:Hex_of_Weakness] I learned Hex of Weakness, a troll priest's curse older than the Light I was taught beside it.
@@ -39,13 +39,13 @@ kind: d-calling
 - [spell:Polymorph] I can turn a foe into a sheep now, and I suspect I will never tire of it.
 - [spell:Resurrection !race:Scourge] I can call the dead back now, and I mean to treat that gift with care.
 - [spell:Lay_on_Hands !race:Scourge] Lay on Hands is mine now, something left to give when nothing else will do.
-- [spell:Lay_on_Hands race:Scourge] Lay on Hands is mine now, and the Light it pours through me burns every inch of the way; for someone who needs it, I can bear that.
+- [spell:Lay_on_Hands race:Scourge] Lay on Hands is mine now, and the Light it pours through me burns every inch of the way. For someone who needs it, I can bear that.
 - [spell:Charge] I can close the distance in a single rush now, before my fear has time to catch up.
 - [spell:Vanish] I can vanish from a fight now, and leave an enemy wondering where I went.
 - [spell:Feign_Death] I can play dead now, convincingly enough that I hope never to need the real thing.
 - [spell:Ghost_Wolf] I can borrow a ghost wolf's shape from the spirits now, and the roads will be shorter for it.
 - [spell:Rebirth] Rebirth is mine now, the wild's way of refusing a death that came too soon.
-- [spell:Resurrection race:Scourge] I can call the dead back now; of all people, I know what that means.
+- [spell:Resurrection race:Scourge] I can call the dead back now. Of all people, I know what that means.
 - [spell:Polymorph] I learned Polymorph, and a foe could become a harmless sheep at a word.
 - [spell:Resurrection !race:Scourge] I learned to call the dead back, and meant to treat that gift with care.
 - [spell:Lay_on_Hands !race:Scourge] I learned Lay on Hands, the paladin's last gift when nothing else will do.
@@ -68,7 +68,7 @@ kind: d-calling
 - [spell:Whirlwind] I learned Whirlwind, and could strike everything around me in a single turn.
 - [spell:Whirlwind] Whirlwind was mine, a way to answer a whole ring of foes in one sweep of steel.
 - [spell:Pick_Lock] I learned to pick locks, and a closed chest stopped being the end of the matter.
-- [spell:Pick_Lock] Pick Lock was mine now; doors and strongboxes became questions with answers.
+- [spell:Pick_Lock] Pick Lock was mine now, and doors and strongboxes became questions with answers.
 - [spell:Blind] I learned Blind, a pinch of powder that could take a foe out of a fight entirely.
 - [spell:Blind] Blind was mine, and a single foe could be made to forget I was there.
 - [portal home] I learned to open a portal to {place}, and could send others home as easily as myself.

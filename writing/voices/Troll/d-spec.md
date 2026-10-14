@@ -22,5 +22,5 @@ kind: d-spec
 - [client:forever class:WARLOCK spec:Affliction !change] I had chosen Affliction, curses with all the patience of a hex, which my people know well.
 - [client:forever class:WARLOCK spec:Demonology !change] I had chosen Demonology, and kept my demons the way you keep a viper: admired from a distance.
 - [client:forever class:WARLOCK spec:Destruction !change] I had chosen Destruction, fel fire the elders of my people would frown on, and meant to use it with care.
-- [change] I turned from {was} to {spec} with a grin; a Darkspear knows when it is time to try a new trick.
+- [change] I turned from {was} to {spec} with a grin. A Darkspear knows when it is time to try a new trick.
 - [change] {was} had kept me alive, and I thanked it for that before going over to {spec} all the same.

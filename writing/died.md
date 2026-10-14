@@ -6,11 +6,11 @@ kind: died
 - [foe] {foe} killed me {at}, and all I could think of was an ordinary door at home.
 - [foe] I lost a fight with {foe} {at}, and my life with it.
 - [foe] I was killed by {foe}, with far too much left to do.
-- [player] {foe}, another adventurer, killed me {at}; I had no kindness left for the thought of them.
+- [player] {foe}, another adventurer, killed me {at}, and I had no kindness left for the thought of them.
 - [fall] I fell to my death {at}, with the ground suddenly offering a welcome I did not want.
 - [fall] I fell to my death {at}, unable to put anything gentler between myself and the ground.
 - [drowning] I drowned {at}, with the whole world reduced to the need for air.
-- [lava] Fire killed me {at}; I could think of nothing but escaping its heat.
+- [lava] Fire killed me {at}. I could think of nothing but escaping its heat.
 - [nature] I died {at}, with no enemy to blame and no comfort in the absence.
 - I died {at}, and wanted another chance at a life that had seemed so ordinary before.
 - I died {at}, with too much still unfinished to let go easily.

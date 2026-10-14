@@ -28,7 +28,7 @@ Bristle fell in Amberstill Ranch. Out here, it could as easily have been me. I c
 
 ## Entry 1 (levels 1 to 5)
 
-I began in the Valley of Trials, with Thrall's new homeland to call my own and no wish to repay it with empty boasting. Heat rose from the red dust of Durotar, as if the ground itself were breathing. This was the land we had claimed, and I meant to learn how to belong to it. A Kul Tiras Marine nearly ended me in Tiragarde Keep; I felt how little lay beneath my people's fearsome reputation. I drove Lieutenant Benedict and his Kul Tiras men out of Tiragarde Keep, which they had retaken in defiance of the Warchief's pact. At Razor Hill I heard the forge before I saw the drilling. Beyond the barracks, Kul Tiras ships sat off the coast, and I understood why no one in the town ever quite stood at rest. I rested in Razor Hill, and left the ancestors to judge my unashamed relief.
+I began in the Valley of Trials, with Thrall's new homeland to call my own and no wish to repay it with empty boasting. Heat rose from the red dust of Durotar, as if the ground itself were breathing. This was the land we had claimed, and I meant to learn how to belong to it. A Kul Tiras Marine nearly ended me in Tiragarde Keep, and I felt how little lay beneath my people's fearsome reputation. I drove Lieutenant Benedict and his Kul Tiras men out of Tiragarde Keep, which they had retaken in defiance of the Warchief's pact. At Razor Hill I heard the forge before I saw the drilling. Beyond the barracks, Kul Tiras ships sat off the coast, and I understood why no one in the town ever quite stood at rest. I rested in Razor Hill, and left the ancestors to judge my unashamed relief.
 
 ## Entry 2 (levels 5 to 6)
 
@@ -48,7 +48,7 @@ The day began in Dolanaar as most of mine did, with a long moment of listening b
 
 ## Entry 1 (levels 1 to 5)
 
-I set out in Deathknell, a Forsaken priest; the Light still answered me, and every time it answered, it burned. Crows called over the crypts of Tirisfal, toward the broken walls of Lordaeron. Night changed little here, though it left me feeling less conspicuous. I cleared the spiders from the gold mine near Deathknell, gold my people needed to survive. I can set a ward between myself and a blow now, and I feel steadier for it.
+I set out in Deathknell, a Forsaken priest. The Light still answered me, and every time it answered, it burned. Crows called over the crypts of Tirisfal, toward the broken walls of Lordaeron. Night changed little here, though it left me feeling less conspicuous. I cleared the spiders from the gold mine near Deathknell, gold my people needed to survive. I can set a ward between myself and a blow now, and I feel steadier for it.
 
 Not long after, I executed Maggot Eye, the gnoll who stole corpses near Garren's Haunt for the Lich King's army, for Brill's reward. After the tombs, the crooked roofs of Brill looked almost companionable. Around the Gallows' End Tavern my people went about their business, and the town kept going on stubbornness alone. I settled in Brill, with no need to sleep and a very definite wish to stop.
 

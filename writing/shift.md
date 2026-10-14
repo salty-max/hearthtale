@@ -2,7 +2,7 @@
 kind: shift
 ---
 - [bear] I took the shape of a bear for the first time, and felt the world grow small and solid under heavy paws.
-- [bear] The first time I became a bear, I understood why the forest gave them room; everything in me wanted to stand my ground.
+- [bear] The first time I became a bear, I understood why the forest gave them room. Everything in me wanted to stand my ground.
 - [bear] I shifted into a bear's form for the first time, heavy with a strength I rather wanted to keep.
 - [cat] I took a cat's shape for the first time, with the new senses almost as startling as the claws.
 - [cat] The first time I became a cat, I felt a hunter's patience beneath the wish to try my new paws.

@@ -9,4 +9,4 @@ kind: pvp-many
 - I fought {side} {at}, with {n} of them falling and no pleasure in wanting more.
 - The fighting with {side} went my way, and {n} of them fell to me.
 - I brought down {n} of {side}, and hoped the next meeting would leave less need for violence.
-- [hc] I fought {side} {at}; {n} of them fell to me, and I wanted no further trial of the one life I had.
+- [hc] I fought {side} {at}, and {n} of them fell to me. I wanted no further trial of the one life I had.

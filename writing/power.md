@@ -6,7 +6,7 @@ kind: power
 - [form] I learned {spell}, with a druid's impatience to know the world through more than these same old senses.
 - [form] I had learned {spell}, and liked having another shape to put between myself and trouble.
 - [demon] I learned {spell}, and could call another creature from the dark without pretending it was a friend.
-- [demon] I learned {spell}; another demon could now reach me when I called, which was useful and not entirely reassuring.
+- [demon] I learned {spell}. Another demon could now reach me when I called, which was useful and not entirely reassuring.
 - [demon] I learned {spell}, with more hunger for a demon's strength than affection for its kind.
 - [demon] I learned {spell}, and hoped the demon would remain the one that paid most dearly for the arrangement.
 - [steed] I learned {spell}, and the road ahead looked shorter already.

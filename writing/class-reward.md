@@ -6,7 +6,7 @@ kind: class-reward
 - [summon] For the work, {giver} taught me to summon {pet}, a servant from the wrong side of the world.
 - [summon] I learned the summoning of {pet} from {giver}, with more appetite for the power than for the company.
 - [imp] {giver} taught me to call an imp, an ally small enough to overlook and dangerous enough to regret overlooking.
-- [voidwalker] {giver} taught me to call a voidwalker; the thought of putting solid shadow between me and an enemy was comforting.
+- [voidwalker] {giver} taught me to call a voidwalker, and the thought of putting solid shadow between me and an enemy was comforting.
 - [succubus] {giver} taught me to call a succubus, and I doubted that pleasant company was what I had bargained for.
 - [felhunter] {giver} taught me to call a felhunter, a hound of the Nether that feeds on magic.
 - [!summon] I learned {spell} from {giver} for the work.

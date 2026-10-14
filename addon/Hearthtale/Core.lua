@@ -159,11 +159,12 @@ end
 function ns.own(n) return char and char.notes and char.notes[n] or nil end
 
 -- ── /hearthtale ──────────────────────────────────────────────────────────────
-local USAGE = "/ht opens the journal; /ht hall the Hall of the Fallen; /ht title [N] TEXT names an entry, "
-  .. "/ht note [N] TEXT writes in its margin (the last entry without N, no TEXT to remove it); /ht link CODE "
-  .. "links this character to hearthtale.app; /ht settings; /ht minimap shows or hides the button; /ht welcome "
-  .. "shows the welcome page again; /ht export gives this character's settings as a code, /ht import CODE takes "
-  .. "them; /ht rewrite writes the journal anew with this version (a closed entry keeps its words otherwise)."
+local USAGE = "/ht opens the journal, /ht hall the Hall of the Fallen. /ht title [N] TEXT names an entry, "
+  .. "/ht note [N] TEXT writes in its margin (the last entry without N, no TEXT to remove it). /ht link CODE "
+  .. "links this character to hearthtale.app. /ht settings opens the options, /ht minimap shows or hides the "
+  .. "button, /ht welcome shows the welcome page again. /ht export gives this character's settings as a code, "
+  .. "/ht import CODE takes them. /ht rewrite writes the journal anew with this version (a closed entry keeps "
+  .. "its words otherwise)."
 
 -- A code from hearthtale.app, kept in the saved file: the next upload (after a
 -- logout or a /reload) carries it, and the site adds this book to that account.

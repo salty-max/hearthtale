@@ -15,7 +15,7 @@ kind: rest
 - [!fire] I settled {at}, with the next stretch welcome to wait until I wanted it.
 - [fire] I rested beside the fire {at}, and let it warm me, which was all I asked of it.
 - [fire] I settled by a fire {at}, content with an evening that required nothing brave of me.
-- [fire] The next stretch could stay beyond the firelight {at} for now; I meant to stay inside it.
+- [fire] The next stretch could stay beyond the firelight {at} for now. I meant to stay inside it.
 - [!fire] I stopped {at} once the work was done, and let the quiet have me for a while.
 - [!fire] I rested {at}, and the stillness came more easily than I expected.
 - [!fire] I called a halt {at}, with nothing left that could not wait until I had slept.

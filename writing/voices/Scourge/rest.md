@@ -11,12 +11,12 @@ kind: rest
 - I rested {at}, with no master's voice in my head to make stillness a crime.
 - I rested {at}, thinking of Brill's crooked roofs with something like fondness.
 - I sat down {at}, with nothing required of me and nobody entitled to require it.
-- The day's errands could wait; I stopped {at}, having learned that most things keep longer than people suppose.
+- The day's errands could wait. I stopped {at}, having learned that most things keep longer than people suppose.
 - I settled {at}, and allowed myself the rare luxury of not being on my guard.
 - [fire] I sat by the fire {at}, far enough back to enjoy it without becoming part of it.
-- Keeping still had never been the difficulty; I sat {at}, pleased simply to be left alone while I did it.
+- Keeping still had never been the difficulty. I sat {at}, pleased simply to be left alone while I did it.
 - I lingered {at}, and let the day's irritations sink out of sight like anything dropped in the Undercity's canals.
 - Being counted among the Horde still struck me as strange, and I settled {at} turning it over without reaching a verdict.
 - [fire] I kept to the fireside {at}, watching the flames with the attention I usually save for strangers I have not made up my mind about.
-- I called the stretch finished {at}; whatever remained could wait for me or find someone more eager.
+- I called the stretch finished {at}. Whatever remained could wait for me or find someone more eager.
 - I sat {at}, turning over the people I had dealt with and which of them I would gladly deal with again.

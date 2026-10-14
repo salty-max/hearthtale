@@ -1,7 +1,7 @@
 ---
 kind: opening
 ---
-- I took up the road {at}; my people had crossed a whole sea to find a home, and one more day's walk seemed a small thing beside it.
+- I took up the road {at}. My people had crossed a whole sea to find a home, and one more day's walk seemed a small thing beside it.
 - I began again {at}, keen to see whether the next job would test my arm or only my patience.
 - I set out {at}, with willing hands for a people who had raised Orgrimmar from bare red rock in a handful of years.
 - I set off {at}, my own impatience already a familiar adversary.

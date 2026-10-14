@@ -6,14 +6,14 @@ kind: close-light
 - [!foe] I survived a close call {at}, and would have traded any praise for it for a quiet evening.
 - {foe} brought me close to death {at}. I could have taken quite a pleasure in a harmless task to complain about.
 - [!foe] I barely survived {at}, and had no wish to discover whether my courage could bear another trial.
-- {foe} nearly ended me {at}; relief did not arrive nearly as quickly as I had expected.
+- {foe} nearly ended me {at}, and relief did not arrive nearly as quickly as I had expected.
 - [!foe] I nearly fell {at}, with the thought of remaining alive taking up all the room in me.
 - [!foe] I came through a close call {at}, too shaken to enjoy having proved I could survive one.
 - [!foe] I nearly died {at}, and the thought of somewhere I need not be brave comforted me.
 - [night !foe] I survived a close call {at} in the dark, with my fear slower to leave than the danger.
-- [night !foe] I nearly fell {at} after dark; daylight had rarely sounded so kind.
+- [night !foe] I nearly fell {at} after dark. Daylight had rarely sounded so kind.
 - [hc] {foe} nearly killed me {at}, and I was grateful to keep the one life I had.
-- [class:PRIEST] {foe} nearly killed me {at}; mending a frightened body seemed much harder when the body was mine.
+- [class:PRIEST] {foe} nearly killed me {at}. Mending a frightened body seemed much harder when the body was mine.
 - [class:PALADIN] {foe} nearly ended me {at}. I wanted the Light's shelter without having to leave the world for it.
 - [class:MAGE] I survived {foe} {at}, and found myself missing the safe distance of a lesson hall.
 - [class:ROGUE] {foe} nearly finished me {at}, and I wished I could slip out of fear as readily as I hoped to slip out of sight.

@@ -2,18 +2,18 @@
 kind: demon
 ---
 - [imp] I summoned my first imp, {pet}, and liked at once the idea of fire that came when I called.
-- [imp] I called my first imp, {pet}; a small demon was still a demon, though the size made this easier to forget.
+- [imp] I called my first imp, {pet}. A small demon was still a demon, though the size made this easier to forget.
 - [imp] I bound my first imp, {pet}, with a certain affection for so much potential trouble in so little flesh.
 - [imp] I summoned {pet}, my first imp, and hoped I would be less likely to regret the fire than the company.
 - [voidwalker] I summoned my first voidwalker, {pet}, and found the bulk of that blue shadow unexpectedly reassuring.
 - [voidwalker] I called {pet}, my first voidwalker, glad to have something so substantial to send ahead of me.
-- [voidwalker] I bound my first voidwalker, {pet}; calling something out of the void was easier than feeling entirely safe beside it.
+- [voidwalker] I bound my first voidwalker, {pet}. Calling something out of the void was easier than feeling entirely safe beside it.
 - [succubus] I called my first succubus, {pet}, with no wish to mistake the pleasing shape for a kindly nature.
 - [succubus] I summoned {pet}, my first succubus, and reminded myself often what it was I had called.
 - [felhunter] I summoned my first felhunter, {pet}, with a new sympathy for anyone who feared having their magic eaten.
 - [felhunter] I called my first felhunter, {pet}, a hound whose appetite for magic was a little too close to my own interests.
 - [felguard] I bound my first felguard, {pet}, and felt the danger of having a soldier of the Legion within reach.
-- [felguard] I summoned {pet}, my first felguard; that much demonic strength was a formidable thing to claim as mine.
+- [felguard] I summoned {pet}, my first felguard. That much demonic strength was a formidable thing to claim as mine.
 - I summoned {demon} for the first time, bound under the name {pet}, and felt less alone without feeling much safer.
 - I first summoned {pet}, {demon} bound to my service, with every intention of keeping the leash short.
 - [known imp] I put the summoning I had been taught to use at last, and {pet} came, an imp with a name of its own.
