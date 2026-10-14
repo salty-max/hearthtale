@@ -20,6 +20,7 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { CLASSIC, FOREVER, wago } from "./pins";
+import { fetchRetry } from "./fetch";
 
 const ROOT = path.join(import.meta.dir, "..");
 const CACHE = path.join(ROOT, ".cache", "client");
@@ -74,7 +75,7 @@ async function table(game: keyof typeof GAMES, name: string, locale = "enUS") {
   if (!existsSync(file)) {
     mkdirSync(path.dirname(file), { recursive: true });
     const loc = locale === "enUS" ? "" : `&locale=${locale}`;
-    const res = await fetch(`https://wago.tools/db2/${name}/csv?${wago(GAMES[game].pin)}${loc}`, { headers: UA });
+    const res = await fetchRetry(`https://wago.tools/db2/${name}/csv?${wago(GAMES[game].pin)}${loc}`, { headers: UA });
     if (!res.ok) throw new Error(`${name} ${game} ${locale}: ${res.status}`);
     writeFileSync(file, await res.text());
   }

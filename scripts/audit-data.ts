@@ -9,6 +9,7 @@ import { gunzipSync } from "node:zlib";
 import { CLASSIC, wago } from "./pins";
 import path from "node:path";
 import { rows } from "./sql";
+import { fetchRetry } from "./fetch";
 
 const DIR = path.join(import.meta.dir, "..", ".cache", "audit");
 const SOURCES = {
@@ -23,7 +24,7 @@ const SOURCES = {
 async function fetchOnce(url: string, file: string) {
   const out = path.join(DIR, file);
   if (!existsSync(out)) {
-    const res = await fetch(url);
+    const res = await fetchRetry(url);
     if (!res.ok) throw new Error(`${url}: ${res.status}`);
     writeFileSync(out, new Uint8Array(await res.arrayBuffer()));
   }

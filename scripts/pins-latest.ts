@@ -2,6 +2,9 @@
 // .github/workflows/client-tables.yml, and by hand:
 //   bun scripts/pins-latest.ts                 says what is newer
 //   bun scripts/pins-latest.ts --write         and moves the builds' pins
+//   … --next FILE                              writes the moved pins there instead
+//                                              (the workflow's later step takes them:
+//                                              wago.tools asked once a run)
 //   … --summary FILE                           writes what it found, in Markdown
 // A pinned build moves to the newest of its product with the same major
 // version (wago.tools files Forever's beta, 1.60, under the same product as
@@ -11,6 +14,7 @@
 // followed (their data changes what the writer says: a person reads it).
 import { readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
+import { fetchRetry } from "./fetch";
 
 const ROOT = path.join(import.meta.dir, "..");
 const PINS = path.join(ROOT, "scripts/pins.json");
@@ -19,6 +23,8 @@ const args = process.argv.slice(2);
 const WRITE = args.includes("--write");
 const summaryAt = args.indexOf("--summary");
 const SUMMARY = summaryAt >= 0 ? args[summaryAt + 1] : undefined;
+const nextAt = args.indexOf("--next");
+const NEXT = nextAt >= 0 ? args[nextAt + 1] : undefined;
 
 type Pin = { product: string; build: string };
 type Pins = { builds: Record<string, Pin>; repos: Record<string, { repo: string; commit: string }> };
@@ -36,7 +42,7 @@ function newer(a: string, b: string) {
 const major = (v: string) => v.split(".")[0];
 const family = (v: string) => v.split(".").slice(0, 2).join(".");
 
-const res = await fetch("https://wago.tools/api/builds", { headers: UA });
+const res = await fetchRetry("https://wago.tools/api/builds", { headers: UA });
 if (!res.ok) throw new Error(`wago.tools builds: ${res.status}`);
 const builds: Record<string, { version: string }[]> = await res.json();
 
@@ -47,7 +53,7 @@ for (const [game, pin] of Object.entries(pins.builds)) {
   const latest = versions.reduce((best, v) => (newer(v, best) ? v : best), pin.build);
   if (latest !== pin.build) {
     lines.push(`- ${game}: ${pin.product} ${pin.build} → **${latest}**`);
-    if (WRITE) pin.build = latest;
+    if (WRITE || NEXT) pin.build = latest;
     moved = true;
   } else {
     lines.push(`- ${game}: ${pin.product} ${pin.build}, the latest`);
@@ -67,7 +73,7 @@ for (const [game, pin] of Object.entries(pins.builds)) {
 const token = process.env.GITHUB_TOKEN;
 const repoLines: string[] = [];
 for (const [name, r] of Object.entries(pins.repos)) {
-  const head = await fetch(`https://api.github.com/repos/${r.repo}/commits?per_page=1`, {
+  const head = await fetchRetry(`https://api.github.com/repos/${r.repo}/commits?per_page=1`, {
     headers: { ...UA, Accept: "application/vnd.github+json", ...(token ? { Authorization: `Bearer ${token}` } : {}) },
   });
   if (!head.ok) {
@@ -82,7 +88,7 @@ for (const [name, r] of Object.entries(pins.repos)) {
   );
 }
 
-if (WRITE && moved) writeFileSync(PINS, JSON.stringify(pins, null, 2) + "\n");
+if (moved && (WRITE || NEXT)) writeFileSync(NEXT ?? PINS, JSON.stringify(pins, null, 2) + "\n");
 const text = [
   "### The game's builds",
   "",

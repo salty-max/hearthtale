@@ -22,6 +22,7 @@ import path from "node:path";
 import { rows } from "./sql";
 import { decide, list, plainName } from "./names";
 import { FOREVER, REPOS, wago } from "./pins";
+import { fetchRetry } from "./fetch";
 
 const ROOT = path.join(import.meta.dir, "..");
 const CACHE = path.join(ROOT, ".cache", "forever");
@@ -40,7 +41,7 @@ async function fetchOnce(url: string, file: string) {
   const out = path.join(CACHE, file);
   if (!existsSync(out)) {
     mkdirSync(path.dirname(out), { recursive: true });
-    const res = await fetch(url, { headers: UA });
+    const res = await fetchRetry(url, { headers: UA });
     if (!res.ok) throw new Error(`${url}: ${res.status}`);
     writeFileSync(out, new Uint8Array(await res.arrayBuffer()));
   }

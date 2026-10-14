@@ -12,6 +12,7 @@ import { gunzipSync } from "node:zlib";
 import path from "node:path";
 import { rows } from "./sql";
 import { CLASSIC, wago } from "./pins";
+import { fetchRetry } from "./fetch";
 
 const DIR = path.join(import.meta.dir, "..", ".cache", "audit");
 const OUT = path.join(import.meta.dir, "..", "addon", "Hearthtale", "Knowledge.lua");
@@ -27,7 +28,7 @@ async function eraTable(name: string) {
   if (!existsSync(file)) {
     mkdirSync(path.dirname(file), { recursive: true });
     const url = `https://wago.tools/db2/${name}/csv?${wago(CLASSIC)}`;
-    const res = await fetch(url, { headers: { "User-Agent": "Hearthtale/0.5 (addon data; github.com/salty-max/hearthtale)" } });
+    const res = await fetchRetry(url, { headers: { "User-Agent": "Hearthtale/0.5 (addon data; github.com/salty-max/hearthtale)" } });
     if (!res.ok) throw new Error(`${url}: ${res.status}`);
     writeFileSync(file, await res.text());
   }

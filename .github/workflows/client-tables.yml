@@ -32,7 +32,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
-          bun scripts/pins-latest.ts --summary "$RUNNER_TEMP/pins.md"
+          bun scripts/pins-latest.ts --summary "$RUNNER_TEMP/pins.md" --next "$RUNNER_TEMP/pins.json"
           cat "$RUNNER_TEMP/pins.md" >> "$GITHUB_STEP_SUMMARY"
       - name: Lua (LuaJIT, StyLua, selene)
         if: steps.pins.outputs.moved == 'true'
@@ -47,12 +47,11 @@ jobs:
       - name: Before
         if: steps.pins.outputs.moved == 'true'
         run: bun run audit && bash scripts/golden.sh save
+      # (the pins the first step found, wago.tools asked once a run)
       - name: The pins moved, the data written again
         if: steps.pins.outputs.moved == 'true'
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
         run: |
-          bun scripts/pins-latest.ts --write --summary "$RUNNER_TEMP/pins.md"
+          cp "$RUNNER_TEMP/pins.json" scripts/pins.json
           bun run audit
           bun scripts/client.ts --check
       - name: After
