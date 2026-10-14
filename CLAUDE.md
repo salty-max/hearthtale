@@ -86,10 +86,11 @@ its decisions: PLAN.md (the full chapter prose was dropped on 10 October
 - The game's data comes through ~/code/wow-addons/wow-data
   (salty-max/wow-data, beside this folder): the clients' builds and the
   community databases pinned in its `pins.json`, each file downloaded once
-  into its `.cache/`; the scripts import `../../wow-data/src/...` (`wago`,
-  `wagoFile`, `classicDump`, `openDb`: the databases). Hearthtale pins
-  nothing of its own. `.github/workflows/game-data.yml` (daily and by
-  hand) checks wow-data out beside it, runs `bun run audit` and, when a
+  into its `.cache/`; the scripts import `../../wow-data/src/db` (`openDb`:
+  the databases, the only thing they read). Hearthtale pins nothing of its
+  own. `.github/workflows/game-data.yml` (daily and by hand) calls
+  wow-data's `addon-data.yml` (wow-data beside it, the databases built from
+  it downloaded), runs `bun run audit` and, when a
   generated file changed, opens a pull request with the journals compared
   before and after (`scripts/golden.sh`) and `bun run addon:check` (never
   merged by itself; GITHUB_TOKEN's pull requests start no other workflow,

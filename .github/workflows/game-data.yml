@@ -1,9 +1,9 @@
 # Every day, and by hand: Hearthtale's game data built again from wow-data's
-# pins (salty-max/wow-data, checked out beside it: its own daily job moves
-# the pins when the game's builds move). When a generated file changes, a
-# pull request: the journals compared before and after (scripts/golden.sh)
-# and the addon's checks. Never merged by itself. A day without change ends
-# after the build.
+# pins (salty-max/wow-data's addon-data.yml: wow-data beside it, the databases
+# downloaded; its own daily job moves the pins when the game's builds move).
+# When a generated file changes, a pull request: the journals compared before
+# and after (scripts/golden.sh) and the addon's checks. Never merged by
+# itself. A day without change ends after the build.
 name: Game data
 
 on:
@@ -17,95 +17,26 @@ permissions:
 
 jobs:
   data:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: hearthtale
-    steps:
-      - uses: actions/checkout@v7
-        with:
-          path: hearthtale
-      - uses: actions/checkout@v7
-        with:
-          repository: salty-max/wow-data
-          path: wow-data
-      - uses: oven-sh/setup-bun@v2
-      - run: bun install --frozen-lockfile
-      # (the downloads and the last run's audit kept: they change only when a pin moves)
-      - uses: actions/cache@v4
-        with:
-          path: |
-            wow-data/.cache
-            hearthtale/.cache/audit
-          key: game-data-${{ hashFiles('wow-data/pins.json') }}-${{ github.run_id }}
-          restore-keys: |
-            game-data-${{ hashFiles('wow-data/pins.json') }}-
-            game-data-
-      - name: Lua (LuaJIT, StyLua, selene)
-        run: |
-          sudo apt-get install -y -qq luajit
-          mkdir -p "$HOME/bin" && cd "$HOME/bin"
-          curl -sSLo stylua.zip https://github.com/JohnnyMorganz/StyLua/releases/download/v2.5.2/stylua-linux-x86_64.zip
-          curl -sSLo selene.zip https://github.com/Kampfkarren/selene/releases/download/0.32.0/selene-0.32.0-linux.zip
-          unzip -qo stylua.zip && unzip -qo selene.zip && chmod +x stylua selene
-          echo "$HOME/bin" >> "$GITHUB_PATH"
-      - name: The data built again
-        id: data
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        run: |
-          # (the last run's audit kept aside: the journals before)
-          rm -rf "$RUNNER_TEMP/audit-before"
-          if [ -d .cache/audit ]; then cp -r .cache/audit "$RUNNER_TEMP/audit-before"; fi
-          # (wow-data's databases, built from the same pins: the audit reads them)
-          bun ../wow-data/bin/build.ts all
-          bun run audit
-          if git diff --quiet -- addon/Hearthtale; then
-            echo "Nothing moved: the generated files are what wow-data's pins give." >> "$GITHUB_STEP_SUMMARY"
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
-            git diff --stat -- addon/Hearthtale >> "$GITHUB_STEP_SUMMARY"
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-          fi
-      - name: The journals, before and after
-        if: steps.data.outputs.changed == 'true'
-        run: |
-          # before: the committed files and the last run's audit
-          mv .cache/audit "$RUNNER_TEMP/audit-after"
-          if [ -d "$RUNNER_TEMP/audit-before" ]; then mv "$RUNNER_TEMP/audit-before" .cache/audit; else mkdir -p .cache/audit; fi
-          git stash push -q -- addon/Hearthtale
-          bash scripts/golden.sh save
-          git stash pop -q
-          rm -rf .cache/audit && mv "$RUNNER_TEMP/audit-after" .cache/audit
-          {
-            echo "Hearthtale's game data built again from [wow-data](https://github.com/salty-max/wow-data)'s pins (pins.json at $(git -C ../wow-data rev-parse --short HEAD))."
-            echo
-            echo "### The journals, before and after (scripts/golden.sh)"
-            echo
-            echo '```'
-            bash scripts/golden.sh check || head -c 60000 .cache/golden/diff.txt
-            echo '```'
-            echo
-            echo "### The generated files"
-            echo
-            echo '```'
-            git diff --stat -- addon/Hearthtale
-            echo '```'
-            echo
-            echo "Opened by .github/workflows/game-data.yml. Read the journals' differences, then merge by hand."
-          } > "$RUNNER_TEMP/body.md"
-          cat "$RUNNER_TEMP/body.md" >> "$GITHUB_STEP_SUMMARY"
-      - name: The addon's checks
-        if: steps.data.outputs.changed == 'true'
-        run: bun run addon:check
-      - name: Pull request
-        if: steps.data.outputs.changed == 'true'
-        uses: peter-evans/create-pull-request@v7
-        with:
-          path: hearthtale
-          branch: game-data
-          delete-branch: true
-          commit-message: "chore: the game's data at wow-data's pins"
-          title: "chore: the game's data at wow-data's pins"
-          body-path: ${{ runner.temp }}/body.md
-          add-paths: addon/Hearthtale/*.lua
+    uses: salty-max/wow-data/.github/workflows/addon-data.yml@main
+    with:
+      # (the last run's audit kept: the journals before)
+      cache: addon/.cache/audit
+      before: |
+        rm -rf "$RUNNER_TEMP/audit-before"
+        if [ -d .cache/audit ]; then cp -r .cache/audit "$RUNNER_TEMP/audit-before"; fi
+      generate: bun run audit
+      # (before: the committed files and the last run's audit; after: this run's)
+      report: |
+        mv .cache/audit "$RUNNER_TEMP/audit-after"
+        if [ -d "$RUNNER_TEMP/audit-before" ]; then mv "$RUNNER_TEMP/audit-before" .cache/audit; else mkdir -p .cache/audit; fi
+        git stash push -q -- addon/Hearthtale
+        bash scripts/golden.sh save > /dev/null
+        git stash pop -q
+        rm -rf .cache/audit && mv "$RUNNER_TEMP/audit-after" .cache/audit
+        echo "### The journals, before and after (scripts/golden.sh)"
+        echo
+        echo '```'
+        bash scripts/golden.sh check || head -c 60000 .cache/golden/diff.txt
+        echo '```'
+      check: bun run addon:check
+      paths: addon/Hearthtale
