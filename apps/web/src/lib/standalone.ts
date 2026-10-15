@@ -1,7 +1,7 @@
 /**
  * The installed app on iOS (home screen, black-translucent status bar) can get
  * a window that stops short of the screen's bottom. Nothing paints in that strip
- * but the page's background (the tab bar's colour, index.css), so it reads as
+ * but the page's background (the tab bar's colour, the night's: index.css), so it reads as
  * the bar: the bar then needs no room of its own for the home indicator. When
  * the strip is there, <html> gets the class `standalone-gap` (Layout.tsx).
  */

@@ -58,9 +58,9 @@
 
 html,
 body {
-  /* The tab bar's colour: the strip the installed app's window may leave at the
-     bottom of the screen on iOS continues the bar (the frame itself is night). */
-  background: var(--color-leather);
+  /* The tab bar's colour, the night's: the strip the installed app's window
+     may leave at the bottom of the screen on iOS continues the bar. */
+  background: var(--color-night);
   color: var(--color-parchment);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;

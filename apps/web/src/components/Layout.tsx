@@ -46,7 +46,8 @@ export function Layout() {
             <Link
               key={tab.to}
               to={tab.to}
-              className="flex items-center gap-2 rounded-md px-3 py-1.5 text-parchment/80 hover:bg-gold/10 hover:text-gold-bright"
+              className="flex items-center gap-2 rounded-md px-3 py-1.5 hover:bg-gold/10 hover:text-gold-bright"
+              inactiveProps={{ className: "text-parchment/80" }}
               activeProps={{ className: "bg-gold/10 text-gold-bright", "aria-current": "page" }}
             >
               <tab.icon className="size-4" aria-hidden />
@@ -69,16 +70,19 @@ export function Layout() {
         {!reading && <Footer />}
       </main>
       {!reading && (
+        // (the phone's tab bar, as Ravenpost's inbox draws it: the night's own
+        // colour under a hairline, small labels, the page's tab in gold, the
+        // home indicator's room below it)
         <nav
           aria-label={t.nav.menu}
-          className="ui no-print relative grid shrink-0 grid-cols-4 bg-leather pb-[max(0.25rem,calc(env(safe-area-inset-bottom)-0.9rem))] [.standalone-gap_&]:pb-1 md:hidden"
+          className="ui no-print relative flex shrink-0 justify-around border-t border-leather-edge/70 bg-night/90 px-1.5 pt-1.5 pb-[calc(0.375rem+env(safe-area-inset-bottom))] backdrop-blur-md [.standalone-gap_&]:pb-1.5 md:hidden"
         >
-          <span aria-hidden className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
           {tabs.map((tab) => (
             <Link
               key={tab.to}
               to={tab.to}
-              className="flex flex-col items-center gap-0.5 pt-2 pb-1 text-xs text-parchment/60"
+              className="flex min-w-14 flex-col items-center gap-[3px] rounded-lg px-2 py-1 text-[10px] font-medium transition-colors"
+              inactiveProps={{ className: "text-parchment/50" }}
               activeProps={{ className: "text-gold-bright", "aria-current": "page" }}
             >
               <tab.icon className="size-5" aria-hidden />
