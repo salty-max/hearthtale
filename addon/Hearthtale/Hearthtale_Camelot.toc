@@ -5,7 +5,7 @@
 ## Notes-deDE: Führt beim Spielen das Tagebuch deines Charakters auf Englisch. Endet ein Hardcore-Leben, bleibt sein Buch mit einer Grabinschrift erhalten.
 ## Category: Roleplay
 ## Author: salty-max
-## Version: 0.11.0
+## Version: 0.12.0
 ## SavedVariablesPerCharacter: HearthtaleChar
 ## SavedVariables: HearthtaleSettings, HearthtaleHall, HearthtaleCollect
 ## IconTexture: Interface\AddOns\Hearthtale\Media\Logo
