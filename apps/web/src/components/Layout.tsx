@@ -86,7 +86,7 @@ export function Layout() {
         // home indicator's room below it)
         <nav
           aria-label={t.nav.menu}
-          className="ui no-print fixed inset-x-0 bottom-0 z-30 flex justify-around border-t border-leather-edge/70 bg-night/90 px-1.5 pt-1.5 pb-[calc(0.375rem+env(safe-area-inset-bottom))] backdrop-blur-md [.standalone-gap_&]:pb-1.5 md:hidden"
+          className="ui no-print fixed inset-x-0 bottom-0 z-30 flex justify-around border-t border-leather-edge/70 bg-night/90 px-1.5 pt-1.5 pb-[calc(0.375rem+env(safe-area-inset-bottom))] backdrop-blur-md md:hidden"
         >
           {tabs.map((tab) => (
             <Link
