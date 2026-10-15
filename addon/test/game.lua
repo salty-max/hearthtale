@@ -567,7 +567,17 @@ local function login()
   fire("PLAYER_LOGIN")
   fire("PLAYER_ENTERING_WORLD", true, false)
 end
-local function logout() fire("PLAYER_LOGOUT") end
+-- (the saved file is written at the logout: a copy of it, the game's ids,
+-- saved(); the test then goes on as the next login would, the record's names
+-- back, Ids.lua)
+local savedFile
+local function logout()
+  fire("PLAYER_LOGOUT")
+  savedFile = HearthtaleChar and ns.copy(HearthtaleChar) or nil
+  for _, c in ipairs(ns.savedRecords and ns.journal() and ns.savedRecords(ns.journal()) or {}) do
+    ns.toNames(c)
+  end
+end
 local function reload()
   fire("PLAYER_LOGOUT")
   fire("PLAYER_LOGIN")
@@ -669,6 +679,7 @@ return {
     state.hour = (state.hour + s / 3600) % 24
   end, -- logged out
   clock = function() return clock end,
+  saved = function() return savedFile end,
   portrait = function() return portraitOf end,
   corpse = function(id, n)
     state.target = { id = id, n = n }

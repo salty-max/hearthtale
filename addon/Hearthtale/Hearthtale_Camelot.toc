@@ -28,6 +28,7 @@ Forever.lua
 Util.lua
 Core.lua
 Record.lua
+Ids.lua
 Quests.lua
 Combat.lua
 Life.lua

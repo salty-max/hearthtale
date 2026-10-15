@@ -103,6 +103,11 @@ local function speak(l)
   G.logout()
   G.sleep(20 * 60)
   lang = l
+  -- (the client's own Text file: its names, the places inside buildings)
+  assert(loadfile("addon/Hearthtale/Text_" .. l .. ".lua"))(
+    "Hearthtale",
+    { gameNames = G.ns.gameNames, translate = function() end }
+  )
   TRADE_SKILLS, SECONDARY_SKILLS = said("Professions"), said("Secondary Skills")
   QUEST_MONSTERS_KILLED = l == "frFR" and "%2$d/%3$d %1$s tu\195\169" or english.QUEST_MONSTERS_KILLED
   G.login()
@@ -131,6 +136,12 @@ m.slay("Ragged Young Wolf", 3, "Beast", "Wolf")
 m.go("Anvilmar")
 -- on a French client
 speak("frFR")
+-- (a place inside a building, which has no area id, as the French client
+-- names it: kept in English, by its id in the language's list)
+check(
+  G.ns.record.place("La Bibliothèque") == "The Library",
+  "a place inside a building, met in French, kept in English"
+)
 m.go("Coldridge Valley")
 learnSpell(6673, "Battle Shout")
 G.creature("Small Crag Boar", "Beast", "Boar", nil, 708) -- (the game's own ids)

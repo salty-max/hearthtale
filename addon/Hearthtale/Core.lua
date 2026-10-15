@@ -67,8 +67,14 @@ frame:SetScript("OnEvent", function(_, event, ...)
     local initial, reloading = ...
     if initial or reloading then ns.onResume(nil) end
   end
-  -- Last of all at logout, closed book or not: the book into the saved file.
+  -- Last of all at logout, closed book or not: the book into the saved file,
+  -- then the records' names into the game's ids (Ids.lua).
   if event == "PLAYER_LOGOUT" and char and ns.writeDown then ns.writeDown(char) end
+  if event == "PLAYER_LOGOUT" and char and ns.toIds then
+    for _, c in ipairs(ns.savedRecords(char)) do
+      ns.toIds(c)
+    end
+  end
 end)
 frame:RegisterEvent("PLAYER_LOGIN")
 frame:RegisterEvent("PLAYER_LOGOUT")
@@ -122,6 +128,8 @@ function ns.login()
     char = { guid = guid, began = { at = time(), level = UnitLevel("player") }, chapters = {} }
     HearthtaleChar = char
   end
+  -- (the saved files keep the game's ids: its names again, Ids.lua)
+  if ns.namesAtLogin then ns.namesAtLogin(char) end
   if ns.loadProfile then ns.loadProfile(char) end
   if ns.collect then ns.collect:start() end
   if ns.onLogin then ns.onLogin(char) end

@@ -28,6 +28,11 @@ function ns.upper(s)
   return (s:gsub("\197\147", "\197\146"))
 end
 
+-- The game's names in the client's language (its Text file's, every
+-- language's, English one of them): the places inside buildings by their ids,
+-- each game's (Record.lua finds a building's id by the name the client gives).
+function ns.gameNames(t) ns.insideNames = t end
+
 function ns.translate(t)
   ns.locale = t.locale
   K.isOne = PLURALS[t.plural] or K.isOne

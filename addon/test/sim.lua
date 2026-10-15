@@ -701,6 +701,18 @@ check(
   "at logout, the book is written into the saved file: each chapter as its diary entry"
 )
 check(J.realm == "Nightslayer" and J.region == 3, "… and where the character lives")
+-- (the saved file keeps the game's ids, never their names: its names again
+-- at the next login, Ids.lua)
+do
+  local named = 0
+  for key in pairs(G.saved().visited or {}) do
+    if not key:match("^[aw]%d+|") then named = named + 1 end
+  end
+  check(
+    G.saved().chapters[1].start.zone:match("^a%d+$") and named == 0 and J.chapters[1].start.zone == "Dun Morogh",
+    "… the saved record keeps the game's ids (its places'), never their names; the game's record, their names"
+  )
+end
 local view = ns.settledView(J)
 check(
   #ch().log == logBeforeNight and view.chapters[1].log[#view.chapters[1].log].k == "night" and view ~= J,
@@ -1592,4 +1604,72 @@ do
 end
 
 trueStories("the last life")
+-- The saved file's ids give a life's record back whole: every name as kept
+-- (the Hall's lives the same); its creatures, quests and places kept by id.
+do
+  local function differs(a, b, path)
+    if type(a) ~= type(b) then return path end
+    if type(a) ~= "table" then return a ~= b and path or nil end
+    for k, v in pairs(a) do
+      local d = differs(v, b[k], path .. "." .. tostring(k))
+      if d then return d end
+    end
+    for k in pairs(b) do
+      if a[k] == nil then return path .. "." .. tostring(k) end
+    end
+  end
+  for _, rec in ipairs(ns.savedRecords(ns.journal())) do
+    local ids = ns.toIds(ns.copy(rec))
+    local back = ns.toNames(ns.copy(ids))
+    local d = differs(rec, back, "record")
+    check(d == nil, "the saved file's ids give the record back whole" .. (d and (": " .. d) or ""))
+  end
+  -- (the game's own: a kill, a quest's title and giver, an objective, a trade,
+  -- a spell, a place inside a building)
+  local inside
+  for id, n in pairs(ns.client.inside or {}) do
+    if n == "The Library" then inside = id end
+  end
+  local life = {
+    profs = { Mining = 75 },
+    pending = {
+      [33] = { title = "Wolves Across the Border", objectives = { { type = "item", name = "Tough Wolf Meat", n = 8 } } },
+    },
+    chapters = {
+      {
+        start = { zone = "Ironforge", sub = "The Library" },
+        kills = { ["Kobold Vermin"] = 2 },
+        log = {
+          {
+            k = "kill",
+            name = "Kobold Vermin",
+            id = 6,
+            kind = "Humanoid",
+            zone = "Elwynn Forest",
+            sub = "Northshire Valley",
+          },
+          { k = "learned", spells = { "Battle Shout" } },
+        },
+      },
+    },
+  }
+  local ids = ns.toIds(ns.copy(life))
+  local ch, p = ids.chapters[1], ids.pending[33]
+  check(
+    ch.log[1].name == false
+      and ch.log[1].kind:match("^t%d+$")
+      and ch.log[1].zone:match("^a%d+$")
+      and ch.kills[6] == 2
+      and type(ch.log[2].spells[1]) == "number"
+      and ch.start.sub == "w" .. inside
+      and p.title == false
+      and p.objectives[1].name == false
+      and p.objectives[1].of == 750
+      and next(ids.profs) ~= "Mining",
+    "… the game's own names kept by their ids: a creature, its kind, a place inside a building, a quest, its objective, a trade, a spell"
+  )
+  local d = differs(life, ns.toNames(ids), "life")
+  check(d == nil, "… and given back whole" .. (d and (": " .. d) or ""))
+end
+
 io.write(FOREVER and "all good (Forever)\n" or "all good\n")

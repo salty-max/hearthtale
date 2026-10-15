@@ -20,12 +20,20 @@ jobs:
     uses: salty-max/wow-data/.github/workflows/addon-data.yml@main
     secrets: inherit
     with:
+      kit: true
       # (the last run's audit kept: the journals before)
       cache: addon/.cache/audit
       before: |
         rm -rf "$RUNNER_TEMP/audit-before"
         if [ -d .cache/audit ]; then cp -r .cache/audit "$RUNNER_TEMP/audit-before"; fi
-      generate: bun run audit
+      # (the places inside buildings in every language, the kit's, English
+      # one of them; then the audit, and the language files)
+      generate: |
+        for locale in $(ls i18n | grep -E '^[a-z]{2}[A-Z]{2}$'); do
+          python3 ../addon-kit/subzones.py "$locale"
+        done
+        bun run audit
+        bun scripts/locales.ts
       # (before: the committed files and the last run's audit; after: this run's)
       report: |
         mv .cache/audit "$RUNNER_TEMP/audit-after"
@@ -40,4 +48,6 @@ jobs:
         bash scripts/golden.sh check || head -c 60000 .cache/golden/diff.txt
         echo '```'
       check: bun run addon:check
-      paths: addon/Hearthtale
+      paths: |
+        i18n
+        addon/Hearthtale

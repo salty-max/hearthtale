@@ -33,8 +33,8 @@
 --   moments: { k = kind, at, night, zone, sub, grouped, ... }
 --     (the game's names in English on any client, Client_<game>.lua and
 --     English_<game>.lua; a creature's id beside its name since 0.10: id,
---     foeId, giverId, enderId. A place needs none: its English name is the
---     area's, by id, in Client_<game>.lua.)
+--     foeId, giverId, enderId. In the saved file, every name by its id:
+--     Ids.lua, at the logout and the login.)
 --     place { new = "zone" or nil }  inn { place }  flight { from, to }  level { level, top }
 --                                                    (top: the highest level the game allows)
 --     done { id, title, giver, giverId, objectives, abandoned, pet, petFamily, with }   a quest's work
@@ -139,7 +139,18 @@ local function reverse(names, get)
   end
   return out
 end
-local areaOf, spellOf = {}, {} -- [a language] = its names' English
+local areaOf, spellOf, insideOf = {}, {}, {} -- [a language] = its names' English
+-- (a place inside a building, which has no area id: by the language's list of
+-- them, Text_<locale>.lua's, its id, and its English)
+local function insideNamed(name)
+  local l = language()
+  if not insideOf[l] then
+    local own = ns.insideNames or {}
+    own = (ns.forever and own.inside or own.insideClassic) or {}
+    insideOf[l] = reverse(C.inside, function(id) return own[id] end)
+  end
+  return insideOf[l][name]
+end
 local function place(name)
   if not name or inEnglish() then return name end
   local l = language()
@@ -147,7 +158,7 @@ local function place(name)
     local get = C_Map and C_Map.GetAreaInfo
     areaOf[l] = get and reverse(C.areas, get) or {}
   end
-  return areaOf[l][name] or (C.taxi or {})[name] or name
+  return areaOf[l][name] or insideNamed(name) or (C.taxi or {})[name] or name
 end
 -- a trade, a secondary skill, a riding; a creature's type, a family; a
 -- flight master's place (any language's, a record's from another client too)
@@ -191,6 +202,7 @@ local function names()
   englishNames = englishNames or (ns.englishNames and ns.englishNames()) or {}
   return englishNames
 end
+local function forgetNames() englishNames = nil end
 -- a creature's id, from its GUID ("Creature-0-…-<id>-<spawn>")
 local function npcId(guid)
   if not guid or secret(guid) then return nil end
@@ -805,4 +817,6 @@ ns.record = {
   questTitle = questTitle,
   objective = objective,
   link = link,
+  names = names,
+  forgetNames = forgetNames,
 }

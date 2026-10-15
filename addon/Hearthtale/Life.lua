@@ -469,11 +469,14 @@ local MOUNT_KINDS = {
   { "Pinto", "horse" },
   { "Palomino", "horse" },
 }
+-- (its aura by its spell: the game's English name for it, on any client)
 local function ridden()
+  local mounts = (ns.client or {}).mounts or {}
   for i = 1, 40 do
-    local name = ns.buff(i)
+    local name, id = ns.buff(i)
     if not name then return nil end
     if not secret(name) then
+      name = (id and not secret(id) and mounts[id]) or name
       for _, k in ipairs(MOUNT_KINDS) do
         if name:find(k[1], 1, true) then return name, k[2] end
       end

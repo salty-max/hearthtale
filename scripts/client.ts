@@ -17,6 +17,11 @@
 //   by C_Map.GetAreaInfo: Record.lua turns a place back into English)
 // - maps, encounters: dungeons and bosses by id, English
 // - spells: the class and trade spells by id, English
+// - skillIds, typeIds, familyIds, taxiIds, treeIds, inside, mounts: by id,
+//   English, the trades, secondary skills and ridings, the creature types and
+//   families, the flight points, the talent trees, the places inside
+//   buildings (i18n/enUS/subzones.json, the kit's) and the mounts' auras: the
+//   saved file keeps the record's names by these ids (Record.lua's toIds)
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { openDb } from "../../wow-data/src/db";
@@ -182,6 +187,17 @@ for (const game of Object.keys(GAMES) as (keyof typeof GAMES)[]) {
   );
   const wanted = new Set((await table(game, "SkillLineAbility")).filter((r) => lines.has(r.SkillLine)).map((r) => r.Spell));
   const spells = (await table(game, "SpellName")).filter((r) => wanted.has(r.ID) && r.Name_lang);
+  // the mounts' auras (the aura that mounts, 78)
+  const mounting = new Set((await table(game, "SpellEffect")).filter((r) => r.EffectAura === "78").map((r) => r.SpellID));
+  const mounts = (await table(game, "SpellName")).filter((r) => mounting.has(r.ID) && r.Name_lang);
+  const insideFile = path.join(ROOT, "i18n", "enUS", "subzones.json");
+  const inside: Record<string, string> = existsSync(insideFile) ? JSON.parse(readFileSync(insideFile, "utf8"))[game] ?? {} : {};
+  const byId = (m: Map<string, string>) =>
+    [...m]
+      .filter(([, n]) => n)
+      .sort(([a], [b]) => Number(a) - Number(b))
+      .map(([id, n]) => `    [${id}] = ${lua(n)},`)
+      .join("\n");
 
   const entries = (m: Map<string, string>) =>
     [...m]
@@ -253,6 +269,31 @@ ${ids(encounters, "Name_lang")}
   spells = {
 ${ids(spells, "Name_lang")}
   },
+  -- by id (the saved file keeps the record's names by them): the trades,
+  -- secondary skills and ridings; the creature types and families; the
+  -- flight points; the talent trees; the places inside buildings; the
+  -- mounts' auras
+  skillIds = {
+${byId(skills.en)}
+  },
+  typeIds = {
+${byId(types.en)}
+  },
+  familyIds = {
+${byId(families.en)}
+  },
+  taxiIds = {
+${byId(taxi.en)}
+  },
+  treeIds = {
+${byId(treeNames.en)}
+  },
+  inside = {
+${byId(new Map(Object.entries(inside)))}
+  },
+  mounts = {
+${ids(mounts, "Name_lang")}
+  },
 }
 `;
   write(GAMES[game].out, out);
@@ -301,7 +342,7 @@ end
   console.log(
     `${GAMES[game].out}: ${skills.out.size} skill names, ${riding.length} ridings, ${types.out.size + families.out.size} creature kinds, ` +
       `${taxi.out.size} flight names, ${classSpecs.size} class specs, ${Object.keys(trees).length} classes' trees, ${areas.length} areas, ${maps.length} instances, ` +
-      `${encounters.length} bosses, ${spells.length} spells` +
+      `${encounters.length} bosses, ${spells.length} spells, ${Object.keys(inside).length} places inside, ${mounts.length} mounts` +
       (conflicts.length ? `; ambiguous, left out: ${conflicts.join(", ")}` : ""),
   );
 }

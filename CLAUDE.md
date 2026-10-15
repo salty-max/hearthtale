@@ -82,7 +82,10 @@ its decisions: PLAN.md (the full chapter prose was dropped on 10 October
   trade's, a riding's, a talent tree's, a creature type's and family's and a
   flight master's name in every language; every area, dungeon, boss and
   class or trade spell by id; Forever's specializations named after the
-  class. `English_Classic.lua` and `English_Forever.lua` (the same script,
+  class; by id, English, the trades and ridings, the creature types and
+  families, the flight points, the talent trees, the places inside buildings
+  (`i18n/enUS/subzones.json`, the kit's) and the mounts' auras, for the saved
+  file's ids (`Ids.lua`). `English_Classic.lua` and `English_Forever.lua` (the same script,
   from the audit's data and the client's item table): every creature, quest
   (its title, the creatures and items it asks for) and item in English by
   id, in a function a client in another language calls once (an English
@@ -605,10 +608,22 @@ scripts/release.sh [--version X.Y.Z] [--hold] NOTES.md
   titles and objectives, by the quest's id) and items (by the id in their
   link), by the game's ids or its own names in every language
   (`Client_<game>.lua`, `English_<game>.lua`, `scripts/client.ts`;
-  `ns.record`'s `place`, `skill`, `spell`, `creature`, `link`…), and a record
-  kept the old way is mended at login (`mend`, Record.lua). A name the
-  tables lack (a quest's own words for an objective, a mount's buff) still
-  comes in the client's language. `addon/test/languages.lua` plays a life in English,
+  `ns.record`'s `place`, `skill`, `spell`, `creature`, `link`…; a place
+  inside a building by the language's list, `i18n/<locale>/subzones.json`,
+  the kit's, in its Text file, `ns.gameNames`; a mount by its aura's id),
+  and a record kept the old way is mended at login (`mend`, Record.lua). A
+  name the tables lack (a quest's own words for an objective) still comes in
+  the client's language. The saved file keeps ids, never a game name (the
+  family's rule, 15 October 2026): at the logout, once the book is written,
+  `Ids.lua` turns each name into its id (`ns.toIds`: a place "a<id>", inside
+  a building "w<id>", a dungeon "m<id>", a creature's kind "t<id>"/"f<id>",
+  a creature's or a quest's name false beside its id, an objective's thing
+  by its id, a link without its name; trades, families, trees, spells,
+  flight points, bosses, mounts by their numbers), only where the id gives
+  the name back exactly, and the login turns them back (`ns.toNames`), this
+  character's record and the Hall's lives: the recorders and the writer
+  read the names, as before. A test's logout keeps the saved file's copy
+  (`G.saved()`) and goes on as the next login would. `addon/test/languages.lua` plays a life in English,
   French and English again. Forever's specializations are one a class, named
   after it (no way chosen: the talents tell it).
 - Lua: `bun run format:lua` (StyLua, `stylua.toml`) and `bun run lint:lua`

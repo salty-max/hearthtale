@@ -19,6 +19,22 @@ for _, f in ipairs({ forever and "Data_Forever.lua" or "Data_Classic.lua", "Name
   assert(loadfile("addon/Hearthtale/" .. f))("Hearthtale", ns)
 end
 dofile("addon/test/writer-files.lua")(ns)
+-- (the saved file keeps the game's ids: their English names again, as the
+-- login gives them, Ids.lua)
+for _, f in ipairs({
+  forever and "Client_Forever.lua" or "Client_Classic.lua",
+  forever and "English_Forever.lua" or "English_Classic.lua",
+}) do
+  assert(loadfile("addon/Hearthtale/" .. f))("Hearthtale", ns)
+end
+local english = ns.englishNames()
+ns.record = {
+  names = function() return english end,
+  inEnglish = function() return false end,
+  forgetNames = function() end,
+}
+assert(loadfile("addon/Hearthtale/Ids.lua"))("Hearthtale", ns)
+ns.toNames(c)
 local saved = c.book
 if not asSaved then c.book = nil end
 local book = ns.writeBook(c)
