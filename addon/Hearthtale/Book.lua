@@ -402,6 +402,10 @@ local function buttonOf(parent, text, width)
   local b = CreateFrame("Button", nil, parent, "UIPanelButtonTemplate")
   b:SetSize(width, 22)
   b:SetText(text)
+  -- (a word longer in another language widens its button: "Bearbeiten")
+  local fs = b:GetFontString()
+  local w = fs and fs.GetStringWidth and fs:GetStringWidth()
+  if type(w) == "number" and w + 24 > width then b:SetWidth(math.ceil(w + 24)) end
   return b
 end
 local function buildEditor(sheet)
