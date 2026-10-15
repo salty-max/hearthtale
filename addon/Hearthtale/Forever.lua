@@ -24,12 +24,14 @@ K.quests[78092] = { class = "PALADIN" }
 K.quests[78093] = { class = "PALADIN" }
 K.quests[78676] = { class = "ROGUE" }
 K.quests[78699] = { class = "ROGUE" }
+K.quests[78830] = { class = "HUNTER" }
 K.quests[79358] = { class = "SHAMAN" }
 K.quests[79360] = { class = "SHAMAN" }
 K.quests[79361] = { class = "SHAMAN" }
 K.quests[79362] = { class = "SHAMAN" }
 K.quests[79363] = { class = "SHAMAN" }
 K.quests[79364] = { class = "SHAMAN" }
+K.quests[79365] = { class = "SHAMAN" }
 K.quests[79366] = { class = "SHAMAN" }
 K.quests[79442] = { class = "SHAMAN" }
 K.quests[84396] = { class = "MAGE" }
@@ -973,6 +975,7 @@ add(N.creatureBare, {
     ["Ferauu the Bludgeon"] = true,
     ["Fernfeather"] = true,
     ["Fevrath Skyhammer"] = true,
+    ["Field Captain Palandar"] = true,
     ["Fillion Flamebreeze"] = true,
     ["Fimbo Greasemitz"] = true,
     ["Fireflies"] = true,
