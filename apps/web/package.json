@@ -17,6 +17,7 @@
     "@hearthtale/shared": "workspace:*",
     "@tanstack/react-query": "^5.104.1",
     "@tanstack/react-router": "^1.170.18",
+    "@vercel/analytics": "^2.0.1",
     "clsx": "^2.1.1",
     "lucide-react": "^1.50.0",
     "react": "^19.2.7",

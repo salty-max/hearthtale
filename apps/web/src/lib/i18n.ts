@@ -299,7 +299,7 @@ const en = {
   },
   privacy: {
     title: "Privacy",
-    updated: "Last updated 12 October 2026.",
+    updated: "Last updated 15 October 2026.",
     sections: [
       {
         title: "What the site keeps",
@@ -315,7 +315,7 @@ const en = {
       },
       {
         title: "Cookies",
-        text: "One, to keep you signed in. No advertising, no tracking, no analytics. Your reading settings stay in this browser.",
+        text: "One, to keep you signed in. No advertising and no tracking: visits are counted without cookies (Vercel Web Analytics: the page, the country, the kind of device, never who you are). Your reading settings stay in this browser.",
       },
       {
         title: "Leaving",
