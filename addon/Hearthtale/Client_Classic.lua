@@ -8624,6 +8624,10 @@ ns.client = {
     [382] = "Holy",
     [383] = "Protection",
   },
+  -- Forever's specializations by id, English (a chosen one kept in English)
+  specIds = {
+
+  },
   inside = {
     [11586] = "Ahn'Qiraj",
     [11715] = "The Deadmines",

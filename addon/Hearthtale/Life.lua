@@ -234,7 +234,8 @@ local function specOf()
     if index and not secret(index) and index > 0 then
       local id, name = info(index)
       local ofClass = id and not secret(id) and ((ns.client or {}).classSpecs or {})[id]
-      if name and not secret(name) and not ofClass then return name end
+      -- (a way chosen: by its id, in English whatever the client's language)
+      if name and not secret(name) and not ofClass then return ((ns.client or {}).specIds or {})[id] or name end
     end
   end
   local trees = ((ns.client or {}).trees or {})[char().class or ""]

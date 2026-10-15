@@ -12,7 +12,8 @@
 --   a creature, a quest's title, a giver: their name false beside the id
 --     kept (id, foeId, giverId, enderId); an objective's creature or item by
 --     its id (of); an item's link without its name ("|h[]|h")
---   by their numbers: trades and ridings, families, talent trees, spells,
+--   by their numbers: trades and ridings, families, talent trees (a Forever
+--   specialization "p<id>"), spells,
 --     flight points, bosses, mounts; the kills, a quest's counts by their
 --     creatures
 local _, ns = ...
@@ -82,7 +83,21 @@ local KIND = lettered({
 })
 local SKILL = numbered("skills", function() return C.skillIds or {} end)
 local FAMILY = numbered("families", function() return C.familyIds or {} end)
-local TREE = numbered("trees", function() return C.treeIds or {} end)
+-- (a talent tree by its number, a Forever specialization "p<id>")
+local TREE = {
+  to = function(n)
+    if type(n) ~= "string" then return n end
+    local id = reverse("trees", C.treeIds or {})[n]
+    if id then return id end
+    id = reverse("specs", C.specIds or {})[n]
+    return id and ("p" .. id) or n
+  end,
+  from = function(v)
+    if type(v) == "number" then return (C.treeIds or {})[v] or v end
+    local id = type(v) == "string" and tonumber(v:match("^p(%d+)$"))
+    return id and (C.specIds or {})[id] or v
+  end,
+}
 local SPELL = numbered("spells", function() return C.spells or {} end)
 local BOSS = numbered("encounters", function() return C.encounters or {} end)
 local MOUNT = numbered("mounts", function() return C.mounts or {} end)

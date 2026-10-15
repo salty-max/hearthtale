@@ -9680,6 +9680,18 @@ ns.client = {
     [382] = "Holy",
     [383] = "Protection",
   },
+  -- Forever's specializations by id, English (a chosen one kept in English)
+  specIds = {
+    [1482] = "Mage",
+    [1484] = "Druid",
+    [1485] = "Hunter",
+    [1486] = "Paladin",
+    [1487] = "Priest",
+    [1488] = "Rogue",
+    [1489] = "Shaman",
+    [1490] = "Warlock",
+    [1491] = "Warrior",
+  },
   inside = {
     [11586] = "Ahn'Qiraj",
     [11715] = "The Deadmines",

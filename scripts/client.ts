@@ -17,6 +17,8 @@
 //   by C_Map.GetAreaInfo: Record.lua turns a place back into English)
 // - maps, encounters: dungeons and bosses by id, English
 // - spells: the class and trade spells by id, English
+// - specIds: Forever's specializations by id, English (a chosen one kept in
+//   English)
 // - skillIds, typeIds, familyIds, taxiIds, treeIds, inside, mounts: by id,
 //   English, the trades, secondary skills and ridings, the creature types and
 //   families, the flight points, the talent trees, the places inside
@@ -170,6 +172,9 @@ for (const game of Object.keys(GAMES) as (keyof typeof GAMES)[]) {
         }
   }
   const treeNames = await translated("TalentTab", "Name_lang", () => true);
+  // (Forever's specializations, a chosen one: every language's name, its
+  // English; by id, English)
+  const specs = game === "forever" ? await translated("ChrSpecialization", "Name_lang", (r) => r.ClassID !== "0") : { en: new Map<string, string>(), out: new Map<string, string>() };
   const trees: Record<string, string[]> = {};
   for (const r of (await table(game, "TalentTab")).sort((a, b) => Number(a.OrderIndex) - Number(b.OrderIndex))) {
     for (const [mask, token] of CLASSES) {
@@ -287,6 +292,10 @@ ${byId(taxi.en)}
   },
   treeIds = {
 ${byId(treeNames.en)}
+  },
+  -- Forever's specializations by id, English (a chosen one kept in English)
+  specIds = {
+${byId(specs.en)}
   },
   inside = {
 ${byId(new Map(Object.entries(inside)))}
