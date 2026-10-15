@@ -66,14 +66,18 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* A native app's frame: the window never scrolls or bounces; each page scrolls
-   inside its own area (the reader: only the book's text). */
+/* A page scrolls as a page, never bouncing (components/Layout.tsx). A book
+   being read is a native app's frame: the window never scrolls, only the
+   book's text. */
 html,
-body,
-#root {
+body {
+  overscroll-behavior: none;
+}
+html.reading,
+html.reading body,
+html.reading #root {
   height: 100%;
   overflow: hidden;
-  overscroll-behavior: none;
 }
 
 /* The frame's backdrop: a hearth's glow from below, the corners in shadow, a
