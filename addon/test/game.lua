@@ -563,8 +563,17 @@ do
 end
 -- Resting and campfires: the game's resting state, the auras on me.
 state.auras = {}
-function IsResting() return state.resting == true end
-function IsIndoors() return state.indoors == true end
+-- (at the logout itself, Forever's game no longer says: never resting, never
+-- indoors, as an inn's room told on 15 October 2026; the addon goes by what it
+-- heard while playing, the rest area entered)
+local leaving = false
+local hiddenRest = {} -- (a game that never says: a secret answer)
+secrets[hiddenRest] = true
+function IsResting()
+  if state.restingSecret then return hiddenRest end
+  return state.resting == true and not leaving
+end
+function IsIndoors() return state.indoors == true and not leaving end
 -- (a creature someone else hit first: not mine to claim)
 function UnitIsTapDenied(u) return u == "target" and state.target ~= nil and state.target.tapped == true end
 C_UnitAuras = { GetPlayerAuraBySpellID = function(id) return state.auras[id] and { spellId = id } or nil end }
@@ -585,14 +594,20 @@ end
 -- back, Ids.lua)
 local savedFile
 local function logout()
+  fire("PLAYER_UPDATE_RESTING") -- (the rest area entered, as the game tells it in play)
+  leaving = true
   fire("PLAYER_LOGOUT")
+  leaving = false
   savedFile = HearthtaleChar and ns.copy(HearthtaleChar) or nil
   for _, c in ipairs(ns.savedRecords and ns.journal() and ns.savedRecords(ns.journal()) or {}) do
     ns.toNames(c)
   end
 end
 local function reload()
+  fire("PLAYER_UPDATE_RESTING")
+  leaving = true
   fire("PLAYER_LOGOUT")
+  leaving = false
   fire("PLAYER_LOGIN")
   fire("PLAYER_ENTERING_WORLD", false, true)
 end

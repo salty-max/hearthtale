@@ -157,7 +157,10 @@ its decisions: PLAN.md (the full chapter prose was dropped on 10 October
   the recorder in four
   files sharing `ns.record`: `Record.lua` (the record's schema, the chapters
   and their moments, the logouts, places, levels; a logout settled at the
-  next login: under 30 minutes away it's no break, nothing told; at a login or a
+  next login: under 30 minutes away it's no break, nothing told; resting and
+  indoors as the game told them last while playing (Forever's tells neither at
+  the logout itself), and a game that never tells: the hearthstone's own place
+  a rest; at a login or a
   /reload, a line in chat (`ns.onResume`, Book.lua): "starting entry N" when
   the login began one, "resuming entry N" otherwise, "this life's book is
   closed" for a fallen one (said by Core.lua: a closed book hears nothing),

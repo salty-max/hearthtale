@@ -751,7 +751,8 @@ check(
 fire("PLAYER_ENTERING_WORLD", false, false)
 check(#printed == beforeReload + 1, "… a loading screen says nothing")
 
--- A rest at an inn closes the chapter.
+-- A rest at an inn closes the chapter (the game silent at the logout itself,
+-- as Forever's: the rest area heard while playing).
 state.resting, state.sub = true, "Thunderbrew Distillery"
 local printedBefore = #printed
 logout()
@@ -764,6 +765,23 @@ check(
 state.resting = false
 login()
 local first = ch(1)
+-- (a game that never says whether it rests, Forever's: the hearthstone's own
+-- place is a rest, an inn's; told here on a copy, the journal itself goes on)
+if FOREVER then
+  local copy = ns.copy(J)
+  state.restingSecret, state.sub = true, state.bind
+  local saved = HearthtaleChar
+  HearthtaleChar = copy
+  fire("PLAYER_LOGIN")
+  fire("PLAYER_LOGOUT")
+  check(
+    copy.logout and copy.logout.rest == true,
+    "a game that never says whether it rests: logged out where the hearthstone is bound, a rest"
+  )
+  state.restingSecret = nil
+  HearthtaleChar = saved
+  fire("PLAYER_LOGIN")
+end
 check(
   #J.chapters == 2
     and first.ended

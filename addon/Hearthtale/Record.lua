@@ -628,21 +628,56 @@ ns.onUnit("UNIT_AURA", "player", function()
   warm = fire
 end)
 
--- At logout: where, and whether resting. The next login decides.
+-- Resting and indoors, as last seen while playing: at the logout itself the
+-- game may no longer say (Forever's told neither in an inn's room, 15 October
+-- 2026: every rest kept as a night outdoors). Read again whenever they may
+-- change: a rest area entered or left, a zone or a building, a login.
+local resting, indoors, heard = false, false, false
+local function lookAround()
+  local rest, inside = IsResting(), IsIndoors()
+  if not secret(rest) then
+    resting, heard = rest and true or false, true
+  end
+  if not secret(inside) then indoors = inside and true or false end
+end
+-- (a game that never says whether it rests: the place the hearthstone is
+-- bound to, an inn's own, is a rest)
+local function boundHere()
+  local bind, zone, sub = GetBindLocation(), GetRealZoneText(), GetSubZoneText()
+  if not bind or secret(bind) or bind == "" then return false end
+  return (not secret(sub) and bind == sub) or (not secret(zone) and bind == zone)
+end
+ns.on("PLAYER_LOGIN", function()
+  resting, indoors, heard = false, false, false
+end) -- (a session's own)
+for _, e in ipairs({
+  "PLAYER_UPDATE_RESTING",
+  "PLAYER_ENTERING_WORLD",
+  "ZONE_CHANGED",
+  "ZONE_CHANGED_INDOORS",
+  "ZONE_CHANGED_NEW_AREA",
+}) do
+  ns.on(e, lookAround)
+end
+
+-- At logout: where, and whether resting (as the game says now, else as it
+-- said last while playing). The next login decides.
 ns.on("PLAYER_LOGOUT", function()
   tally()
   local zone, sub = where()
   local rest, inside = IsResting(), IsIndoors()
+  rest = (rest and not secret(rest)) or resting or (not heard and boundHere())
+  inside = (inside and not secret(inside)) or indoors
   char().logout = {
     at = now(),
-    rest = (rest and not secret(rest)) or nil,
+    rest = rest or nil,
     fire = byFire() and true or nil,
     zone = zone,
     sub = sub,
     place = sub or zone,
     level = UnitLevel("player"),
     night = night() or nil,
-    inside = (inside and not secret(inside)) or nil,
+    inside = inside or nil,
   }
 end)
 
