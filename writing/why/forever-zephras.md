@@ -13,9 +13,11 @@ kind: why
 - 92468 2 none | bringing the Rough Quartz from the manifestation of earth back to Windshaper Boro, to be the heart of a first earth totem
 - 92469 1 | warning Rorian the Dayseeker of the Al'Aketh in the grove, a clear escalation from a cult the village had long watched from afar
 - 92470 2 none | proving resolve to Aetheen of the Gales by slaying the ursera scavengers and their den mother, Urs'anah
+- 92471 1 | going to Aetheen of the Gales of the Council of Elders, who had watched me and judged me ready to serve Zephras Isle
 - 92472 1 | heading south to Shen'dar Village at the word of Aetheen of the Gales, to offer Constable Aonda aid against the Al'Aketh threatening it
 - 92473 2 none | putting down the scrawny ursera of the den southwest of the village for Valreaa Valewind, after a hungry one went for a boy at play
 - 92474 1 | leaping from the watchtower in Thendal Grove for Myriaal Mistwake's game and floating on the air, then being told not to waste the gift
+- 92514 1 | checking in with Illaya Amberwind, the Windshaper elder of Shen'dar Village, and its innkeeper before Constable Aonda put me to work
 - 92515 2 none | thinning the prideclaws pressing on Shen'dar Village before they took someone's pet or child, their pelts for Indari Sunseam's goods
 - 92516 1 | breaking up the hippogryph nesting grounds southeast of Shen'dar Village, matriarch and all, after the flock began harrying travellers
 - 92517 2 villain | clearing the bandit cave behind the waterfall north of Shen'dar Village and killing its leader, Badwind Bennic, for Constable Aonda
@@ -43,6 +45,8 @@ kind: why
 - 92685 2 none | raiding the bandit camp in the hills above the orchard for bloodied masks, to even the odds before Ferauu came for the Windfields
 - 92693 3 none | standing with Aamelia Windfield against Ferauu and his thugs in a final stand at the orchard, and living to see it over
 - 92698 1 | puzzling over the broken words of a cyclone construct that had wandered the orchard's fields for decades, perhaps since the wind elementals left
+- 92699 1 | presenting myself to Elaadrin Evengale, the Supreme Magister of the High Order in Valanaar, who saw promise in my arcane aura
+- 92700 1 | presenting myself to Ayessa Dawnsinger, the Grand Skyseer of the Windshapers in Valanaar, glad of anyone with the skysight
 - 92701 1 | taking Constable Aonda's written report to Valennia Stormfist, who led the island's peacekeepers and needed to know what happened
 - 92703 1 | carrying the news from the orchard to Alvarion Windfield, with Aamelia's word to bring a Windshaper to look at the construct
 - 92708 1 | hearing Ayessa Dawnsinger's belief that the means to save Zephras Isle lay below, on Azeroth
@@ -59,6 +63,7 @@ kind: why
 - 92881 1 | going to High Elder Talaanis Shadowsong for a promising lead, since the attacks on both watchtowers were no coincidence
 - 92947 2 none | storming the Shrine of Akir behind a distraction, cutting through its guardians while Valennia Stormfist led the flank
 - 93036 2 none | getting close to Sania Silverstream, the Al'Aketh's missionary in Shen'dar Village, to learn for Constable Aonda what the cult planned
+- 93065 1 | getting ready for battle with the Peacekeepers and meeting Valennia Stormfist in the Gustberry Lowlands before they moved out
 - 93089 1 | carrying High Elder Talaanis Shadowsong's blessing to Elaadrin Evengale for the High Order's expedition from Zephras Isle to Azeroth
 - 93090 1 | bringing Ayessa Dawnsinger the High Elder's blessing for the Windshapers' expedition to Azeroth, the time to leave come at last
 - 93159 1 | keeping the Strange Hermit of Shadowgale Forest company, after so long without anyone to talk to, and hearing what little he would tell
@@ -69,6 +74,7 @@ kind: why
 - 93318 2 beast | hunting down Vulgara the Insatiable, the winged vuldren terror of the highlands, for the bounty Constable Aonda posted on her head
 - 93319 1 | taking back the windstones bandits had pilfered from Shen'dar Village's emergency reserve, to tide Teeri Wellwind over
 - 93320 1 | hurrying to the eastern pylon watchtower under cult attack, where Yorana Windyreed's relief force was holding against greater numbers
+- 93461 1 | checking in with Rathiril Sunlance, the High Order elder of Shen'dar Village, and its innkeeper before Constable Aonda put me to work
 - 93552 1 | harvesting raw windstones in Thendal Grove for Dalia the Collector, the winds' own energy grown precious as the island's magic faded
 - 93735 1 | lending a hand to Riaani Nightwind, a Windshaper artisan mending one of the last working constructs in Valanaar
 - 93736 2 none | gathering essences from the wind hollows of Shadowgale Forest for Endaria Mistgaze, sprites first seen once the spirits had left
@@ -110,6 +116,7 @@ kind: why
 - 94979 1 | earning the trust of an Ornery Galestrider in the Gustberry Lowlands, the second of Quel'ana Quickgale's taming trials
 - 95349 3 none | crossing on the skycutter from Zephras Isle to Mulgore, home of the Earthen Ring, with the vanguard of the Windshapers sent to Azeroth
 - 96101 1 | sitting by Raan Wildwind's campfire to learn the basics of surviving outdoors, since a well-rested adventurer lives longer
+- 96638 1 | seeking out Raan Wildwind, an adventurer camped outside Shen'dar Village, to learn what might help on the road ahead
 - 96646 1 | learning cooking from Zerril Softbreeze, the first step toward a campfire and a camp of one's own anywhere in the wilds
 - 97243 1 | carrying the Torch of Dormant Flame to Olariaan Swiftburn at the Shrine of Flames, to begin learning to heed the call of fire
 - 97244 2 villain | slaying Skypriest Faladiel, a Windshaper turned cultist with his former kin's blood on his hands, for the heart the fire ritual needed
