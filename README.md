@@ -108,14 +108,15 @@ and Wago.
 
 ## License
 
-[GPL-3.0-or-later](LICENSE). The writer's names in
-`addon/Hearthtale/Names.lua` and its audit use
-[cmangos classic-db](https://github.com/cmangos/classic-db) (GPL-3.0) and
-[pfQuest](https://github.com/shagu/pfQuest) place names (MIT). The names
-themselves belong to Blizzard.
+[GPL-3.0-or-later](LICENSE). The game data comes through
+[wow-data](https://github.com/salty-max/wow-data): the game clients' tables on
+[wago.tools](https://wago.tools), [QuestieDB](https://github.com/Questie/QuestieDB)
+and [cmangos classic-db](https://github.com/cmangos/classic-db) (GPL-3.0). The
+names themselves belong to Blizzard.
 
-Forever data in `addon/Hearthtale/Forever.lua` comes from the beta client's
-tables on [wago.tools](https://wago.tools),
-[AllTheThings](https://github.com/ATTWoWAddon/AllTheThings) (MIT) and
-[QuestieDB](https://github.com/Questie/QuestieDB)'s beta records. Not affiliated
-with Blizzard Entertainment.
+Forever's own quests in `addon/Hearthtale/Forever.lua` also draw on
+[AllTheThings](https://github.com/ATTWoWAddon/AllTheThings) (MIT) for their
+rewards and prerequisites, [Wowhead](https://www.wowhead.com/forever)'s Forever
+pages for their texts, levels and givers (what each quest was for, in
+`writing/why/`, is written from those texts) and the facts players share. Not
+affiliated with Blizzard Entertainment.

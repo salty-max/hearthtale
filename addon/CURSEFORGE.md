@@ -105,4 +105,4 @@ Hearthtale is free and will stay free. If you've enjoyed reading your character'
 
 Open source under GPL-3.0-or-later: [github.com/salty-max/hearthtale](https://github.com/salty-max/hearthtale).
 
-Game data comes from [cmangos classic-db](https://github.com/cmangos/classic-db) and [pfQuest](https://github.com/shagu/pfQuest). Forever data comes from [AllTheThings](https://github.com/ATTWoWAddon/AllTheThings) and [QuestieDB](https://github.com/Questie/QuestieDB)'s beta records. Thanks to their contributors. Not affiliated with Blizzard Entertainment.
+Game data comes from the game clients' own tables (via [wago.tools](https://wago.tools)), [QuestieDB](https://github.com/Questie/QuestieDB) and [cmangos classic-db](https://github.com/cmangos/classic-db), gathered in [wow-data](https://github.com/salty-max/wow-data). Forever's new quests also draw on [AllTheThings](https://github.com/ATTWoWAddon/AllTheThings) for their rewards, [Wowhead](https://www.wowhead.com/forever) for their texts, levels and givers, and what players choose to share. Thanks to their contributors. Not affiliated with Blizzard Entertainment.
