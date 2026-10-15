@@ -2,8 +2,8 @@
 # pins (salty-max/wow-data's addon-data.yml: wow-data beside it, the databases
 # downloaded; its own daily job moves the pins when the game's builds move).
 # When a generated file changes, a pull request: the journals compared before
-# and after (scripts/golden.sh) and the addon's checks. Never merged by
-# itself. A day without change ends after the build.
+# and after (scripts/golden.sh) and the addon's checks, then merged by itself
+# and told to the owner's phone. A day without change ends after the build.
 name: Game data
 
 on:
@@ -18,6 +18,7 @@ permissions:
 jobs:
   data:
     uses: salty-max/wow-data/.github/workflows/addon-data.yml@main
+    secrets: inherit
     with:
       # (the last run's audit kept: the journals before)
       cache: addon/.cache/audit
