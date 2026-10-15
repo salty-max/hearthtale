@@ -41,7 +41,7 @@ ns.translate({
     ["Click to open the journal, right-click for the settings. Drag to move this button."] = "Linksklick öffnet das Tagebuch, Rechtsklick die Einstellungen. Ziehen, um diesen Button zu verschieben.",
     ["Click to read it in the Hall of the Fallen"] = "Klicken, um es in der Halle der Gefallenen zu lesen",
     ["code %s kept. Log out or /reload with Ravenpost running, and this book joins your library on hearthtale.app."] = "Code %s gespeichert. Logge dich aus oder gib /reload ein, während Ravenpost läuft. Dann erscheint dieses Buch in deiner Bibliothek auf hearthtale.app.",
-    ["Copy it (Ctrl+C), then on another character: Use a code, or /ht import CODE."] = "Kopiere ihn (Strg+C). Wähle dann bei einem anderen Charakter 'Code verwenden' oder nutze /ht import CODE.",
+    ["Copy it (Ctrl+C), then on another character: Use a code, or /ht import CODE."] = "Kopiere ihn (Strg+C). Wähle dann bei einem anderen Charakter „Code verwenden“ oder nutze /ht import CODE.",
     ["Copy settings from"] = "Einstellungen kopieren von",
     ["Copy their choices"] = "Übernehmen",
     ["Dec"] = "Dez.",
