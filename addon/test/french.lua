@@ -33,4 +33,26 @@ check(
   last()
 )
 
+-- A fallen life's race and class in today's language: kept in English at its
+-- end, read in French by their tokens (the game's own tables, a woman's
+-- class); kept in French, kept as they were (a dwarf woman's "Naine")
+local getLocale = GetLocale
+GetLocale = function() return "frFR" end
+LOCALIZED_CLASS_NAMES_MALE, LOCALIZED_CLASS_NAMES_FEMALE = { WARRIOR = "Guerrier" }, { WARRIOR = "Guerrière" }
+C_CreatureInfo = {
+  GetRaceInfo = function(id) return id == 3 and { raceName = "Nain", clientFileString = "Dwarf", raceID = 3 } or nil end,
+}
+local english =
+  { race = "Dwarf", class = "WARRIOR", sex = 3, raceName = "Dwarf", className = "Warrior", locale = "enUS" }
+local french = { race = "Dwarf", class = "WARRIOR", sex = 3, raceName = "Naine", className = "Guerrière" }
+local race1, class1 = ns.lifeNames(english)
+local race2, class2 = ns.lifeNames(french)
+check(
+  race1 == "Nain" and class1 == "Guerrière" and race2 == "Naine" and class2 == "Guerrière",
+  "a fallen life's race and class in today's language, by their tokens; kept in it, as kept",
+  tostring(race1) .. " " .. tostring(class1)
+)
+GetLocale = getLocale
+LOCALIZED_CLASS_NAMES_MALE, LOCALIZED_CLASS_NAMES_FEMALE, C_CreatureInfo = nil, nil, nil
+
 io.stdout:write(("%s, French: %d checks passed\n"):format(G.forever and "Forever" or "Classic Era", passed))

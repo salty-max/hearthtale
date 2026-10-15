@@ -122,7 +122,8 @@ local function showPage(life, w, key)
   end
   if key == "epitaph" then
     local d = life.death or {}
-    local sub = { L["Level %d %s %s"]:format(d.level or 0, life.raceName or "", life.className or "") }
+    local race, class = ns.lifeNames(life)
+    local sub = { L["Level %d %s %s"]:format(d.level or 0, race or "", class or "") }
     if life.realm then table.insert(sub, life.realm) end
     table.insert(sub, day(d.at))
     return show(
@@ -335,7 +336,8 @@ local function showHall(fallen)
   hallPage:section(L["The fallen"])
   for _, life in ipairs(fallen) do
     local d = life.death or {}
-    local facts = L["Level %d %s %s, %s"]:format(d.level or 0, life.raceName or "", life.className or "", ending(d))
+    local race, class = ns.lifeNames(life)
+    local facts = L["Level %d %s %s, %s"]:format(d.level or 0, race or "", class or "", ending(d))
     hallPage:card(life.name or "?", facts .. (d.at and (", " .. day(d.at)) or ""), crestOf(life), function()
       hallLife, hallKey = life.guid, "epitaph"
       ns.refresh()
@@ -372,10 +374,11 @@ local function refreshHall(scroll)
   local open, w
   for _, life in ipairs(fallen) do
     local d = life.death or {}
+    local race, class = ns.lifeNames(life)
     table.insert(entries, {
       key = life.guid,
       title = life.name or "?",
-      place = L["Level %d %s %s"]:format(d.level or 0, life.raceName or "", life.className or ""),
+      place = L["Level %d %s %s"]:format(d.level or 0, race or "", class or ""),
       selected = life.guid == hallLife and hallKey == "epitaph",
       click = function()
         hallLife, hallKey = life.guid, "epitaph"

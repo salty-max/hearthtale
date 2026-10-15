@@ -77,6 +77,12 @@ globals:
     any: true
   GetItemInfoInstant:
     any: true
+  LOCALIZED_CLASS_NAMES_MALE:
+    any: true
+  LOCALIZED_CLASS_NAMES_FEMALE:
+    any: true
+  C_CreatureInfo:
+    any: true
   GetLocale:
     any: true
   GetMaxPlayerLevel:

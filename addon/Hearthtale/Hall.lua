@@ -40,8 +40,34 @@ local function enshrine(c)
   if life.book then life.book.version = nil end
   life.realm = GetRealmName and GetRealmName() or nil
   life.raceName, life.className = UnitRace("player"), UnitClass("player")
+  life.locale = GetLocale and GetLocale() or nil
   hall()[c.guid] = life
   return life
+end
+
+-- A fallen life's race and class in today's language: the names kept at its
+-- end while the client speaks the language they were kept in (a race's
+-- feminine form: "Naine"), else the game's own by their tokens (an entry of
+-- before 15 October 2026 tells its language by its class's name).
+function ns.lifeNames(life)
+  local male, female = LOCALIZED_CLASS_NAMES_MALE or {}, LOCALIZED_CLASS_NAMES_FEMALE or {}
+  local here = GetLocale and GetLocale() or nil
+  local same = life.locale and life.locale == here
+  if life.locale == nil and life.className and life.class then
+    same = male[life.class] == life.className or female[life.class] == life.className
+  end
+  if same or not life.class then return life.raceName, life.className end
+  local class = (life.sex == 3 and female[life.class]) or male[life.class] or life.className
+  local race = life.raceName
+  local info = C_CreatureInfo and C_CreatureInfo.GetRaceInfo
+  for id = 1, info and life.race and 100 or 0 do
+    local r = info(id)
+    if r and r.clientFileString == life.race then
+      race = r.raceName or race
+      break
+    end
+  end
+  return race, class
 end
 
 -- ── the banner ───────────────────────────────────────────────────────────────
