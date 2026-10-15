@@ -31,6 +31,7 @@ jobs:
       generate: |
         for locale in $(ls i18n | grep -E '^[a-z]{2}[A-Z]{2}$'); do
           python3 ../addon-kit/subzones.py "$locale"
+          bun scripts/race_names.ts "$locale"
         done
         bun run audit
         bun scripts/locales.ts

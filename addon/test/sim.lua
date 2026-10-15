@@ -914,7 +914,9 @@ check(
   J.closed
     and fallen
     and fallen.name == "Sealinedion"
-    and fallen.raceName == "Dwarf"
+    and fallen.race == "Dwarf"
+    and fallen.raceName == nil -- (by its token, named in today's language)
+    and ns.lifeNames(fallen) == "Dwarf"
     and fallen.realm == "Nightslayer"
     and #fallen.chapters == 4
     and fallen ~= J,

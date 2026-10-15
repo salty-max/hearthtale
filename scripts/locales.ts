@@ -12,6 +12,8 @@
  *   i18n/<locale>/words.json   { "English": "translation" }: every L["..."]
  *                              and plural(n, "one", "many") of the addon, its
  *                              kit's included; i18n/words.json lists them
+ *   i18n/<locale>/races.json   the races by their tokens, masculine and
+ *                              feminine (scripts/race_names.ts <locale>)
  *   i18n/<locale>/subzones.json the places inside buildings by their ids,
  *                              { forever, classic }, every language's, English
  *                              one of them (enGB: enUS's), complete
@@ -45,7 +47,11 @@ function namesLua(locale: string): string[] {
   const file = join(I18N, NAMES_OF[locale] ?? locale, "subzones.json");
   if (!existsSync(file)) throw new Error(`${relative(ROOT, file)} is missing: python3 ../addon-kit/subzones.py ${NAMES_OF[locale] ?? locale}`);
   const t: { forever?: Record<string, string>; classic?: Record<string, string> } = json(file);
-  const lines = ["-- the places inside buildings by their ids, this language's names", "ns.gameNames({"];
+  const races: Record<string, [string, string]> = json(join(I18N, NAMES_OF[locale] ?? locale, "races.json"));
+  const lines = ["-- the places inside buildings by their ids, the races by their tokens, this language's names", "ns.gameNames({"];
+  lines.push("  races = {");
+  for (const [token, [m, f]] of Object.entries(races).sort(([a], [b]) => a.localeCompare(b))) lines.push(`    ${token} = { ${q(m)}, ${q(f)} },`);
+  lines.push("  },");
   for (const [key, list] of [
     ["inside", t.forever],
     ["insideClassic", t.classic],

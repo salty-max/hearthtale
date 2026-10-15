@@ -30,8 +30,12 @@ end
 
 -- The game's names in the client's language (its Text file's, every
 -- language's, English one of them): the places inside buildings by their ids,
--- each game's (Record.lua finds a building's id by the name the client gives).
-function ns.gameNames(t) ns.insideNames = t end
+-- each game's (Record.lua finds a building's id by the name the client
+-- gives); the races by their tokens, masculine and feminine (the Hall's).
+function ns.gameNames(t)
+  ns.insideNames = t
+  ns.raceNames = t.races
+end
 
 function ns.translate(t)
   ns.locale = t.locale

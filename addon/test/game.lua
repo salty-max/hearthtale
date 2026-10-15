@@ -156,6 +156,19 @@ function UnitFactionGroup()
   return state.faction
     or (({ Orc = true, Troll = true, Tauren = true, Scourge = true })[state.race] and "Horde" or "Alliance")
 end
+-- (the game's class names by token, English: every client has them)
+LOCALIZED_CLASS_NAMES_MALE = {
+  WARRIOR = "Warrior",
+  PALADIN = "Paladin",
+  HUNTER = "Hunter",
+  ROGUE = "Rogue",
+  PRIEST = "Priest",
+  SHAMAN = "Shaman",
+  MAGE = "Mage",
+  WARLOCK = "Warlock",
+  DRUID = "Druid",
+}
+LOCALIZED_CLASS_NAMES_FEMALE = LOCALIZED_CLASS_NAMES_MALE
 function UnitClass(u)
   if state.party[u] then return state.party[u].class, state.party[u].class end
   return state.class:sub(1, 1) .. state.class:sub(2):lower(), state.class

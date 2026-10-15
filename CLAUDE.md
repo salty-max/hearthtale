@@ -221,7 +221,11 @@ its decisions: PLAN.md (the full chapter prose was dropped on 10 October
   kit's page: its figures, each fallen life a card with its crest, how and
   where it ended), then a life's epitaph and entries under its name),
   `Hall.lua` (a Hardcore death: the book closed and copied to the
-  account-wide Hall, a chat line, the kit's banner among the game's alerts), `Settings.lua` (each
+  account-wide Hall, a chat line, the kit's banner among the game's alerts;
+  a life's race and class kept by their tokens and its sex, named in today's
+  language, `ns.lifeNames`: a class the game's, a race its language's list,
+  masculine and feminine, `i18n/<locale>/races.json`, `bun
+  scripts/race_names.ts <locale>`, in its Text file), `Settings.lua` (each
   character's settings, its profile "Name - Realm" in HearthtaleSettings, the
   installation's: copied from another character of this game, or from a code
   `HT1:t1:h0:a200` made by `/ht export` (no chat setting since 0.9: an older
