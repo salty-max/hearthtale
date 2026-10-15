@@ -2,7 +2,7 @@
 ## Title: Hearthtale
 ## Notes: A diary for your WoW character, written as you play, with an epitaph and a saved journal when a Hardcore life ends.
 ## Notes-frFR: Le journal de votre personnage, écrit pendant que vous jouez, avec une épitaphe et un journal conservé quand une vie Hardcore s'achève.
-## Notes-deDE: Das Tagebuch deines Charakters, geschrieben, während du spielst, mit einer Grabinschrift und einem aufbewahrten Tagebuch, wenn ein Hardcore-Leben endet.
+## Notes-deDE: Führt beim Spielen das Tagebuch deines Charakters auf Englisch. Endet ein Hardcore-Leben, bleibt sein Buch mit einer Grabinschrift erhalten.
 ## Category: Roleplay
 ## Author: salty-max
 ## Version: 0.11.0

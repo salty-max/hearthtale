@@ -1,0 +1,192 @@
+{
+  "date": "2026-10-15",
+  "baseline": "afe9d2dd8f7a5ce585a0b75a72d47a8f07c62d78",
+  "scope": "German addon interface and addon-list description",
+  "native_signoff": false,
+  "coverage": {
+    "interface_strings": 136,
+    "addon_list_descriptions": 2
+  },
+  "findings": [
+    {
+      "id": "HEARTHTALE-001",
+      "priority": "P2",
+      "source": "i18n/deDE/words.json",
+      "key": "/ht opens the journal, /ht hall the Hall of the Fallen. /ht title [N] TEXT names an entry, /ht note [N] TEXT writes in its margin (the last entry without N, no TEXT to remove it). /ht link CODE links this character to hearthtale.app. /ht settings opens the options, /ht minimap shows or hides the button, /ht welcome shows the welcome page again. /ht export gives this character's settings as a code, /ht import CODE takes them. /ht rewrite writes the journal anew with this version (a closed entry keeps its words otherwise).",
+      "before": "/ht öffnet das Tagebuch, /ht hall die Halle der Gefallenen. /ht title [N] TEXT benennt einen Eintrag, /ht note [N] TEXT schreibt an seinen Rand (ohne N der letzte Eintrag, ohne TEXT wird entfernt). /ht link CODE verknüpft diesen Charakter mit hearthtale.app. /ht settings öffnet die Optionen, /ht minimap blendet den Button ein oder aus, /ht welcome zeigt die Willkommensseite erneut. /ht export gibt die Einstellungen dieses Charakters als Code aus, /ht import CODE übernimmt sie. /ht rewrite schreibt das Tagebuch mit dieser Version neu (sonst behält ein abgeschlossener Eintrag seine Worte).",
+      "after": "/ht öffnet das Tagebuch, /ht hall die Halle der Gefallenen. /ht title [N] TEXT gibt einem Eintrag einen Titel, /ht note [N] TEXT fügt eine Randnotiz hinzu. Ohne N gilt der Befehl für den letzten Eintrag. Ohne TEXT wird der Titel bzw. die Notiz entfernt. /ht link CODE verknüpft diesen Charakter mit hearthtale.app. /ht settings öffnet die Optionen, /ht minimap blendet den Button ein oder aus, /ht welcome zeigt die Willkommensseite erneut. /ht export gibt die Einstellungen dieses Charakters als Code aus, /ht import CODE übernimmt sie. /ht rewrite schreibt das Tagebuch mit dieser Version neu. Abgeschlossene Einträge behalten sonst ihren bisherigen Text.",
+      "reason": "Explain precisely which entry is selected and what an omitted TEXT removes.",
+      "status": "resolved"
+    },
+    {
+      "id": "HEARTHTALE-002",
+      "priority": "P2",
+      "source": "i18n/deDE/words.json",
+      "key": "Its death will close its book. The game can't say so here.",
+      "before": "Sein Tod wird sein Buch schließen. Das Spiel kann es hier nicht angeben.",
+      "after": "Sein Tod schließt sein Buch. Das Spiel meldet hier keinen Hardcore-Status.",
+      "reason": "The missing game information is Hardcore status, not whether death will close a book.",
+      "status": "resolved"
+    },
+    {
+      "id": "HEARTHTALE-003",
+      "priority": "P2",
+      "source": "i18n/deDE/words.json",
+      "key": "Marked so in Hearthtale's options (the game doesn't say here).",
+      "before": "So in den Optionen von Hearthtale markiert (das Spiel sagt es hier nicht).",
+      "after": "In den Optionen von Hearthtale als Hardcore markiert (hier nicht vom Spiel gemeldet).",
+      "reason": "Distinguish the manual marking from a status reported by the game.",
+      "status": "resolved"
+    },
+    {
+      "id": "HEARTHTALE-004",
+      "priority": "P3",
+      "source": "i18n/deDE/words.json",
+      "key": "This character is Hardcore",
+      "before": "Dieser Charakter ist Hardcore",
+      "after": "Dieser Charakter spielt im Hardcore-Modus",
+      "reason": "Use natural German for the setting label.",
+      "status": "resolved"
+    },
+    {
+      "id": "HEARTHTALE-005",
+      "priority": "P3",
+      "source": "i18n/deDE/words.json",
+      "key": "slain by %s",
+      "before": "fiel durch %s",
+      "after": "getötet von %s",
+      "reason": "Name the killer directly in the Hall summary.",
+      "status": "resolved"
+    },
+    {
+      "id": "HEARTHTALE-006",
+      "priority": "P2",
+      "source": "i18n/deDE/words.json",
+      "key": "%s in %s",
+      "before": "%s, %s",
+      "after": "%s in %s",
+      "reason": "Restore the location relationship. The incoming comma merely juxtaposed the cause of death and the place.",
+      "status": "resolved"
+    },
+    {
+      "id": "HEARTHTALE-007",
+      "priority": "P3",
+      "source": "i18n/deDE/words.json",
+      "key": "Each time you rest, at an inn, in a city or by a campfire, the road since the last rest becomes an entry in your character's own voice.",
+      "before": "Jedes Mal, wenn du rastest, in einem Gasthaus, in einer Stadt oder an einem Lagerfeuer, wird der Weg seit der letzten Rast zu einem Eintrag, in der eigenen Stimme deines Charakters.",
+      "after": "Wenn du in einem Gasthaus, in einer Stadt oder an einem Lagerfeuer rastest, wird aus deinen Erlebnissen seit der letzten Rast ein Eintrag in der eigenen Stimme deines Charakters.",
+      "reason": "Remove an incorrect comma and the literal road becoming an entry.",
+      "status": "resolved"
+    },
+    {
+      "id": "HEARTHTALE-008",
+      "priority": "P2",
+      "source": "i18n/deDE/words.json",
+      "key": "Play as you always do: Hearthtale keeps the record. The quests that mattered, the foes worth naming, the lands seen for the first time, the close calls.",
+      "before": "Spiel wie immer: Hearthtale führt Buch. Die Quests, die zählten, die Gegner, die einen Namen verdienen, die Länder, die du zum ersten Mal siehst, die knappen Momente.",
+      "after": "Spiel wie immer: Hearthtale hält deine Erlebnisse fest. Die wichtigen Quests, die nennenswerten Gegner, die erstmals bereisten Länder und die Momente, in denen du dem Tod knapp entkommen bist.",
+      "reason": "Knappe Momente does not convey close calls with death.",
+      "status": "resolved"
+    },
+    {
+      "id": "HEARTHTALE-009",
+      "priority": "P2",
+      "source": "i18n/deDE/words.json",
+      "key": "that isn't a link code: it has six letters and digits, from hearthtale.app.",
+      "before": "das ist kein Verknüpfungscode: Er hat sechs Buchstaben und Ziffern, von hearthtale.app.",
+      "after": "das ist kein Verknüpfungscode. Er stammt von hearthtale.app und besteht aus sechs Zeichen (Buchstaben oder Ziffern).",
+      "reason": "The code has six characters total, not six letters plus digits.",
+      "status": "resolved"
+    },
+    {
+      "id": "HEARTHTALE-010",
+      "priority": "P2",
+      "source": "i18n/deDE/words.json",
+      "key": "the journal is written anew. hearthtale.app shows it after your next logout or /reload with Ravenpost running.",
+      "before": "das Tagebuch wird neu geschrieben. hearthtale.app zeigt es nach deinem nächsten Ausloggen oder /reload, während Ravenpost läuft.",
+      "after": "das Tagebuch wurde neu geschrieben. hearthtale.app zeigt es nach deinem nächsten Ausloggen oder /reload, während Ravenpost läuft.",
+      "reason": "This is the success message after the confirmed rewrite, not an action still in progress.",
+      "status": "resolved"
+    },
+    {
+      "id": "HEARTHTALE-011",
+      "priority": "P3",
+      "source": "i18n/deDE/words.json",
+      "key": "code %s kept. Log out or /reload with Ravenpost running, and this book joins your library on hearthtale.app.",
+      "before": "Code %s gespeichert. Logge dich aus oder mache /reload, während Ravenpost läuft, und dieses Buch kommt in deine Bibliothek auf hearthtale.app.",
+      "after": "Code %s gespeichert. Logge dich aus oder gib /reload ein, während Ravenpost läuft. Dann erscheint dieses Buch in deiner Bibliothek auf hearthtale.app.",
+      "reason": "Describe the command naturally and split the long instruction into readable sentences.",
+      "status": "resolved"
+    },
+    {
+      "id": "HEARTHTALE-012",
+      "priority": "P3",
+      "source": "i18n/deDE/words.json",
+      "key": "This character's death closes its book: an epitaph, and its journal joins the Hall of the Fallen. For this character only.",
+      "before": "Der Tod dieses Charakters schließt sein Buch: eine Grabinschrift, und sein Tagebuch kommt in die Halle der Gefallenen. Nur für diesen Charakter.",
+      "after": "Nur für diesen Charakter: Sein Tod schließt das Tagebuch mit einer Grabinschrift. Das Buch wird in der Halle der Gefallenen aufbewahrt.",
+      "reason": "Replace a literal fragment with a complete explanation of the setting's effect and scope.",
+      "status": "resolved"
+    },
+    {
+      "id": "HEARTHTALE-013",
+      "priority": "P3",
+      "source": "i18n/deDE/words.json",
+      "key": "Copy it (Ctrl+C), then on another character: Use a code, or /ht import CODE.",
+      "before": "Kopiere ihn (Strg+C), dann bei einem anderen Charakter: Code verwenden, oder /ht import CODE.",
+      "after": "Kopiere ihn (Strg+C). Wähle dann bei einem anderen Charakter 'Code verwenden' oder nutze /ht import CODE.",
+      "reason": "Identify the actual button and preserve the executable command.",
+      "status": "resolved"
+    },
+    {
+      "id": "HEARTHTALE-014",
+      "priority": "P2",
+      "source": [
+        "addon/Hearthtale/Hearthtale_Camelot.toc",
+        "addon/Hearthtale/Hearthtale_Vanilla.toc"
+      ],
+      "key": "Notes-deDE",
+      "before": "Das Tagebuch deines Charakters, geschrieben, während du spielst, mit einer Grabinschrift und einem aufbewahrten Tagebuch, wenn ein Hardcore-Leben endet.",
+      "after": "Führt beim Spielen das Tagebuch deines Charakters auf Englisch. Endet ein Hardcore-Leben, bleibt sein Buch mit einer Grabinschrift erhalten.",
+      "reason": "State explicitly that the diary is English. A localized addon-list description otherwise leaves German readers expecting translated journal entries.",
+      "status": "resolved"
+    }
+  ],
+  "sources": [
+    {
+      "path": "i18n/deDE/meta.json",
+      "sha256": "72f174b5aebe40531214e5cdad3bf99f826d7244391dab0158108d24cab5f7cc"
+    },
+    {
+      "path": "i18n/deDE/words.json",
+      "sha256": "130d09a7ba4bbd356f10a14d1f62f5bb8aa8e90325463490cb868414717545c3"
+    },
+    {
+      "path": "addon/Hearthtale/Hearthtale_Camelot.toc",
+      "sha256": "91c6590b0046046e746d4985fff1fb765ea3d9d7a94b4265ffb31a105697fe3e"
+    },
+    {
+      "path": "addon/Hearthtale/Hearthtale_Vanilla.toc",
+      "sha256": "7bec65ea1e5fc6af2182619a880ebb98e805a674d7569fe194631d2e4f739251"
+    },
+    {
+      "path": "addon/Hearthtale/Locale.lua",
+      "sha256": "73b8706e5a54c7b7b49724e112db3c8b20ed964748e5de10721fe11723fa6c7f"
+    },
+    {
+      "path": "addon/Hearthtale/Text_deDE.lua",
+      "sha256": "ce5e3cec14372b26e1e208609d6cfb531f56820d484b49a1424011433ee96e99"
+    },
+    {
+      "path": "addon/test/german.lua",
+      "sha256": "dda7b08e8a72e49e5035b4b7559539ec02eeb64783d5ca2a9e97065af961bedf"
+    }
+  ],
+  "validation": [
+    "`bun run check`",
+    "`bun run addon:package`",
+    "18 German runtime checks on Classic Era and 18 on Forever",
+    "All 136 placeholder signatures and prose-semicolon checks",
+    "German command, code, save and rewrite flows, including preservation of personal titles and notes"
+  ]
+}
