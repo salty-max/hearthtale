@@ -152,7 +152,7 @@ function UnitName(u)
 end
 function UnitLevel(u) return u == "player" and state.level or 1 end
 function UnitRace() return state.race, state.race end
-function GetLocale() return "enUS" end
+function GetLocale() return rawget(_G, "LOCALE") or os.getenv("LOCALE") or "enUS" end
 function UnitFactionGroup()
   return state.faction
     or (({ Orc = true, Troll = true, Tauren = true, Scourge = true })[state.race] and "Horde" or "Alliance")
@@ -331,6 +331,7 @@ local combatLog
 function CombatLogGetCurrentEventInfo() return unpack(combatLog) end
 
 -- UI: any method works and returns something sensible, scripts are kept.
+local rendered = {} -- text assigned by the rendered interface, for locale replays
 local function ui()
   local o = { shown = false, scripts = {} }
   return setmetatable(o, {
@@ -366,7 +367,10 @@ local function ui()
         return function(self) return self.shown end
       end
       if k == "SetText" then
-        return function(self, v) self.text = v end
+        return function(self, v)
+          self.text = v
+          if type(v) == "string" then table.insert(rendered, v) end
+        end
       end
       if k == "SetChecked" then
         return function(self, v) self.checked = v and true or false end
@@ -683,6 +687,7 @@ return {
   state = state,
   fire = fire,
   printed = printed,
+  rendered = rendered,
   popups = popups,
   panel = panel,
   toasted = toasted,

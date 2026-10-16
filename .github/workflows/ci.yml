@@ -33,7 +33,7 @@ jobs:
       - name: Writing builds, data files are up to date
         run: bun scripts/build.ts --check
       # (both games side by side, and a life in two languages)
-      - name: Simulations, the writer's test, two languages
+      - name: Simulations, the writer and translated interfaces
         run: >-
           bash scripts/parallel.sh
           "luajit addon/test/sim.lua"
@@ -45,6 +45,10 @@ jobs:
           "FOREVER=1 luajit addon/test/french.lua"
           "luajit addon/test/german.lua"
           "FOREVER=1 luajit addon/test/german.lua"
+          "luajit addon/test/spanish.lua"
+          "FOREVER=1 luajit addon/test/spanish.lua"
+          "LOCALE=esMX luajit addon/test/spanish.lua"
+          "FOREVER=1 LOCALE=esMX luajit addon/test/spanish.lua"
       - name: Samples (the landing page's, as the writer writes them)
         run: luajit addon/test/sample.lua > /dev/null && luajit addon/test/sample.lua landing --check
       - name: Package (its TOCs agree)

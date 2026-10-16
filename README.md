@@ -47,6 +47,11 @@ The website is optional, and books are private unless you choose to share
 them. Your notes stay out of a shared book and the Hall. Setup instructions
 are at [hearthtale.app/start](https://hearthtale.app/start).
 
+The interface is available in English, French, German and Spanish. German
+and Spanish are first translations, with corrections welcome. Both Spanish
+clients share the interface translation and keep their own race names in
+the Hall.
+
 The journal is written in English, on any game client. On other clients the
 game's names in it (places, creatures, people, quests, items, trades, spells)
 are kept in English too. In Forever dungeons, the journal can

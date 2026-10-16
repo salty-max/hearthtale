@@ -36,6 +36,12 @@ its decisions: PLAN.md (the full chapter prose was dropped on 10 October
   plural rule, flagged); `--keys` writes `i18n/words.json`. The writer's
   files (Language, Lines, Diary, Forever, Names, Knowledge) have no `L`.
   `addon/test/french.lua`, `german.lua`: a French and a German client. French done 14 October 2026, German (flagged: a first translation) the same day.
+  Spanish added 16 October 2026, flagged until native review: neutral tú,
+  diario, entrada and Salón de los Caídos. esMX borrows esES prose while
+  keeping its own race and building names. addon/test/spanish.lua runs on
+  both Spanish clients and games, following the German scope: interface
+  only, with the English writer and saved diary prose preserved. Individual
+  death labels must not take the current reader's gender.
 - The opt-in that shares what the game tells of the world (the kit's
   `K.collect`: quests' texts, creatures' facts, NPCs' lines, loot by source;
   off until the player ticks it on the welcome page or the Options page)
