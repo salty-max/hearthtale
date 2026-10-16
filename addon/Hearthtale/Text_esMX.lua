@@ -2422,7 +2422,7 @@ ns.translate({
     ["One life, one book: a death closes it with an epitaph, and it joins the Hall of the Fallen."] = "Una vida, un libro: la muerte lo cierra con un epitafio y lo lleva al Salón de los Caídos.",
     ["Open the journal"] = "Abrir el diario",
     ["Paste the code (/ht export on the other character), then press Enter."] = "Pega el código, que puedes obtener con /ht export en el otro personaje, y pulsa Intro.",
-    ["Play as you always do: Hearthtale keeps the record. The quests that mattered, the foes worth naming, the lands seen for the first time, the close calls."] = "Juega como siempre. Hearthtale toma nota de las misiones importantes, los enemigos que merecen recordarse, las tierras que ves por primera vez y los combates en los que casi mueres.",
+    ["Play as you always do: Hearthtale keeps the record. The quests that mattered, the foes worth naming, the lands seen for the first time, the close calls."] = "Juega como siempre. Hearthtale toma nota de las misiones importantes, los enemigos que merecen recordarse, las tierras que ves por primera vez y las veces en que casi mueres.",
     ["Prologue"] = "Prólogo",
     ["Read it"] = "Leer",
     ["resuming entry %d. Type /ht or click the button by the minimap to read the journal."] = "Retomas la entrada %d. Escribe /ht o haz clic en el botón junto al minimapa para leer el diario.",
