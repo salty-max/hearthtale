@@ -115,6 +115,7 @@ function UnitExists(u)
     or (u == "npc" and state.npc ~= nil)
     or state.party[u] ~= nil
 end
+function UnitPlayerControlled() return false end
 function UnitIsPlayer(u)
   return u == "player"
     or state.party[u] ~= nil

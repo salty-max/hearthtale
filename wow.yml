@@ -253,6 +253,9 @@ globals:
     any: true
   UnitIsGhost:
     any: true
+  UnitPlayerControlled:
+    args:
+      - type: string
   UnitIsPlayer:
     any: true
   UnitLevel:
