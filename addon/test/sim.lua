@@ -781,6 +781,14 @@ if FOREVER then
   state.restingSecret = nil
   HearthtaleChar = saved
   fire("PLAYER_LOGIN")
+  -- (a place inside a building kept by an id a later build of the game gave
+  -- another: still read, 16 October 2026's moved The Apothecarium 94415)
+  local old = { logout = { zone = "a1497", sub = "w94415", place = "w94415" } }
+  ns.toNames(old)
+  check(
+    old.logout.sub == "The Apothecarium",
+    "a place inside a building kept by an id a newer build moved: still named"
+  )
 end
 check(
   #J.chapters == 2
