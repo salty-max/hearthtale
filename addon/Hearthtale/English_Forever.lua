@@ -13661,6 +13661,7 @@ function ns.englishNames()
 [277868]="Plague Spreader",
 [277881]="Bloodwing Bat",
 [277882]="Foothills Duskbat",
+[278166]="Mountaineer Cornelius",
     },
     quests = {
 [2]={title="Sharptalon's Claw",items={16305}},
