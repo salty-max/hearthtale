@@ -1404,6 +1404,7 @@ add(N.creatureBare, {
     ["Mosh'gra"] = true,
     ["Mountain Squallclimber"] = true,
     ["Mountaineer Coalbeard"] = true,
+    ["Mountaineer Cornelius"] = true,
     ["Mountaineer Gretchen"] = true,
     ["Mountaineer Stoneanvil"] = true,
     ["Mountaineer Sunhammer"] = true,
