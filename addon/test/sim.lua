@@ -1698,6 +1698,27 @@ do
   )
   local d = differs(life, ns.toNames(ids), "life")
   check(d == nil, "… and given back whole" .. (d and (": " .. d) or ""))
+  if FOREVER then
+    -- (what wow-data's build leaves out of Forever, Season of Discovery's: a
+    -- saved file's id still named, its name never finding it: Elaine Compton,
+    -- 213077 left out, 256391 Forever's own; a Duskwood Mission)
+    local back = ns.toNames({
+      chapters = {
+        {
+          kills = { [213077] = 1 },
+          log = { { k = "kill", name = false, id = 213077 }, { k = "quest", id = 81730, title = false } },
+        },
+      },
+    })
+    local older = ns.toIds({ chapters = { { log = { { k = "kill", name = "Elaine Compton" } } } } })
+    check(
+      back.chapters[1].log[1].name == "Elaine Compton"
+        and back.chapters[1].kills["Elaine Compton"] == 1
+        and back.chapters[1].log[2].title == "Duskwood Mission I: Defeat Worgen"
+        and older.chapters[1].log[1].id == 256391,
+      "… what wow-data leaves out of Forever: named by a saved id, never found by its name"
+    )
+  end
 end
 
 io.write(FOREVER and "all good (Forever)\n" or "all good\n")
