@@ -78,8 +78,9 @@ stays there). The writing's files and rules: `docs/writing.md`. The site:
   id, in a function a client in another language calls once (an English
   client never builds them); Forever's also names, behind its creatures and
   quests (`__index`), what wow-data's build leaves out of it (Season of
-  Discovery's `left_out`), found by id alone: a saved file's id is never
-  bare, and `Ids.lua`'s reverse lookups (`pairs`) never find it by a name.
+  Discovery's `left_out`): a saved file's id is never bare, and `Ids.lua`'s
+  reverse lookups take its name only where the game's own lack it (Elaine
+  Compton is Forever's 256391, a count by Polymorphed Apprentice 202093).
   Both are written by `bun run audit` and
   checked by `bun scripts/client.ts --check`, from wow-data's pins.
 - The game's data comes through ~/code/wow-addons/wow-data

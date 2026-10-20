@@ -3,8 +3,8 @@
 -- tables at its first need: an English client never does). Do not edit.
 local _, ns = ...
 function ns.englishNames()
-  -- what the game's tables leave out, a saved file's ids named: found by its
-  -- id alone, never by a name (pairs doesn't see it)
+  -- what the game's tables leave out, a saved file's ids named: behind the
+  -- game's own (pairs doesn't see it), its name found only where theirs lack it
   local out = {
     creatures = {
 [202093]="Polymorphed Apprentice",

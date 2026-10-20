@@ -28,6 +28,19 @@ local function reverse(key, names)
   for id, n in pairs(names or {}) do
     if type(n) == "string" and (not r[n] or id < r[n]) then r[n] = id end
   end
+  -- (what the game's tables leave out, behind them (__index): its name finds
+  -- its id only where none of the game's own has that name)
+  local mt = getmetatable(names or {})
+  local out = mt and type(mt.__index) == "table" and mt.__index
+  if out then
+    local own = {}
+    for id, n in pairs(out) do
+      if type(n) == "string" and not r[n] and (not own[n] or id < own[n]) then own[n] = id end
+    end
+    for n, id in pairs(own) do
+      r[n] = id
+    end
+  end
   reversed[key] = r
   return r
 end

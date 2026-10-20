@@ -1711,12 +1711,17 @@ do
       },
     })
     local older = ns.toIds({ chapters = { { log = { { k = "kill", name = "Elaine Compton" } } } } })
+    -- (a count by a left-out creature's name, its own: its id again at the next
+    -- logout, never a name kept, Polymorphed Apprentice 202093)
+    local again = ns.toIds(ns.toNames({ chapters = { { kills = { [202093] = 2 } } } }))
     check(
       back.chapters[1].log[1].name == "Elaine Compton"
         and back.chapters[1].kills["Elaine Compton"] == 1
         and back.chapters[1].log[2].title == "Duskwood Mission I: Defeat Worgen"
-        and older.chapters[1].log[1].id == 256391,
-      "… what wow-data leaves out of Forever: named by a saved id, never found by its name"
+        and older.chapters[1].log[1].id == 256391
+        and again.chapters[1].kills[202093] == 2
+        and again.chapters[1].kills["Polymorphed Apprentice"] == nil,
+      "… what wow-data leaves out of Forever: named by a saved id, its name finding it only where the game's own lack it"
     )
   end
 end

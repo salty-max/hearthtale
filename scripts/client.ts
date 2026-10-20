@@ -319,8 +319,8 @@ ${ids(mounts, "Name_lang")}
   // what wow-data's build leaves out of the game though a source had it
   // (Forever: Season of Discovery's, its left_out), by its English name alone:
   // a saved file may hold its id. Apart, behind the game's own (__index), so
-  // that only an id finds it, never a name another creature or quest has (Ids.lua's
-  // reverse lookups go through pairs)
+  // that its name never stands for another creature's or quest's id (Ids.lua's
+  // reverse lookups take it only where the game's own lack that name)
   const leftOut = (kind: string, have: Map<number, unknown>) =>
     (
       dbs[game]
@@ -337,8 +337,8 @@ local _, ns = ...
 function ns.englishNames()
 ${
   hasOut
-    ? `  -- what the game's tables leave out, a saved file's ids named: found by its
-  -- id alone, never by a name (pairs doesn't see it)
+    ? `  -- what the game's tables leave out, a saved file's ids named: behind the
+  -- game's own (pairs doesn't see it), its name found only where theirs lack it
   local out = {
     creatures = {
 ${outCreatures.map((r) => `[${r.id}]=${lua(r.name)},`).join("\n")}
