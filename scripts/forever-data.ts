@@ -16,8 +16,13 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { decide, list, plainName } from "./names";
-import { openDb } from "../../wow-data/src/db";
-import { FOREVER } from "../../wow-data/src/pins";
+import type * as WowDb from "../../wow-data/src/db";
+import type * as WowPins from "../../wow-data/src/pins";
+import { familyPath } from "./root";
+
+// through the family folder, from a worktree too (scripts/root.ts)
+const { openDb } = (await import(familyPath("wow-data", "src", "db.ts"))) as typeof WowDb;
+const { FOREVER } = (await import(familyPath("wow-data", "src", "pins.ts"))) as typeof WowPins;
 
 const ROOT = path.join(import.meta.dir, "..");
 const AUDIT = path.join(ROOT, ".cache", "audit");

@@ -8,7 +8,11 @@ import { readdirSync, readFileSync, writeFileSync } from "node:fs";
 import englishWords from "an-array-of-english-words";
 import humanNames from "human-names";
 import path from "node:path";
-import { openDb } from "../../wow-data/src/db";
+import type * as WowDb from "../../wow-data/src/db";
+import { familyPath } from "./root";
+
+// through the family folder, from a worktree too (scripts/root.ts)
+const { openDb } = (await import(familyPath("wow-data", "src", "db.ts"))) as typeof WowDb;
 
 const DIR = path.join(import.meta.dir, "..", ".cache", "audit");
 const OUT = path.join(import.meta.dir, "..", "addon", "Hearthtale", "Names.lua");

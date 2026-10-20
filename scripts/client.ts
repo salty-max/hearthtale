@@ -26,7 +26,11 @@
 //   saved file keeps the record's names by these ids (Record.lua's toIds)
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
-import { openDb } from "../../wow-data/src/db";
+import type * as WowDb from "../../wow-data/src/db";
+import { familyPath } from "./root";
+
+// through the family folder, from a worktree too (scripts/root.ts)
+const { openDb } = (await import(familyPath("wow-data", "src", "db.ts"))) as typeof WowDb;
 
 const ROOT = path.join(import.meta.dir, "..");
 const GAMES = {
