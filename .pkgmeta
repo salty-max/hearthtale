@@ -27,6 +27,7 @@ ignore:
   - LICENSE
   - PLAN.md
   - README.md
+  - saved-ids.json
   - bun.lock
   - commitlint.config.mjs
   - eslint.config.mjs
