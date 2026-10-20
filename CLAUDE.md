@@ -27,9 +27,9 @@ hearthtale.app (Turborepo and Bun workspaces: `apps/api`, `apps/web`,
 | The store page | `addon/CURSEFORGE.md` |
 | Turborepo's own agent notes (managed by turbo) | `AGENTS.md` |
 
-`docs/` is ignored locally (`.git/info/exclude`): the docs above are
-tracked (force-added), anything else there is a local note, absent from a
-worktree.
+A few local review notes in `docs/` are excluded (`.git/info/exclude`):
+absent from git and from a worktree. Everything else there is tracked, the
+docs above included.
 
 ## Commands
 
