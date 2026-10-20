@@ -35,6 +35,7 @@ docs above included.
 
 ```bash
 bun run addon:build | addon:check | addon:package   # the addon
+bun run ids                                         # (in addon:check) every table saved-ids.json lists keeps its ids (addon-kit's ids.ts)
 bun run addon:golden save [journal…]; bun run addon:golden check [journal…]
                        # a writer refactor: every output before/after, byte for byte
 bun scripts/root.ts --run wow-data/bin/latest.ts    # newer game builds than wow-data's pins?
@@ -68,7 +69,9 @@ scripts/release.sh [--version X.Y.Z] [--hold] NOTES.md
   generated journals again (`luajit addon/test/playthrough.lua`). A writer
   refactor keeps every output byte for byte (`addon:golden`).
 - A why line naming a new place: run the audit and commit `Names.lua` with
-  it. Generated tables are never edited by hand.
+  it. Generated tables are never edited by hand, and a regenerated one
+  keeps every id a saved file may hold (`saved-ids.json`, `bun run ids` in
+  `addon:check`): an id leaves only with the user's go, under `removed`.
 - The game's data comes from wow-data only (scripts/, through
   `scripts/root.ts`). A new generator goes into `game-data.yml` too.
 - The site: books are private (a proven owner only), the site never writes
