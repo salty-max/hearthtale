@@ -7,7 +7,7 @@
 ## Notes-esMX: Interfaz en español. Un diario escrito en inglés para tu personaje de WoW, con un epitafio y un libro conservado al terminar una vida Hardcore.
 ## Category: Roleplay
 ## Author: salty-max
-## Version: 0.12.5
+## Version: 0.12.6
 ## SavedVariablesPerCharacter: HearthtaleChar
 ## SavedVariables: HearthtaleSettings, HearthtaleHall, HearthtaleCollect
 ## IconTexture: Interface\AddOns\Hearthtale\Media\Logo
