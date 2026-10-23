@@ -80,8 +80,8 @@ scripts/release.sh [--version X.Y.Z] [--hold] NOTES.md
   skills: keep both out. A deploy or a merge to main (which deploys) waits
   for the user's go.
 - `bun install` runs husky, which takes `core.hooksPath` back: the
-  `prepare` script installs the family's hooks again (husky's run after
-  ours, chained).
+  `prepare` script installs the family's hooks again, outside CI (husky's
+  run after ours, chained).
 - `Kit.lua` and `scripts/root.ts` are the kit's copies: edit addon-kit,
   then `bun run kit:sync`.
 - Conventional Commits, lowercase subjects, no AI trailers (commitlint and
