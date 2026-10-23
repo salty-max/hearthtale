@@ -189,7 +189,7 @@ const en = {
     paths: [
       "Windows: World of Warcraft\\_classic_era_\\WTF\\Account\\ACCOUNT\\REALM\\CHARACTER\\SavedVariables\\Hearthtale.lua",
       "macOS: World of Warcraft/_classic_era_/WTF/Account/ACCOUNT/REALM/CHARACTER/SavedVariables/Hearthtale.lua",
-      "Forever: the same, in _classic_beta_ (or the game's own folder).",
+      "Forever: the same, in _forever_ instead of _classic_era_.",
     ],
     drop: "Drop Hearthtale.lua here",
     choose: "Choose the file",
