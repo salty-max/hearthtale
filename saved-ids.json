@@ -1,23 +1,112 @@
 {
   "//": "The tables naming the ids a saved file keeps (Ids.lua): a regeneration never drops one (bun run ids, in addon:check). An id leaves on purpose only with the user's go: under removed, with why and approved.",
   "tables": {
-    "creatures": { "lua": "addon/Hearthtale/English_*.lua", "at": "englishNames().creatures" },
-    "quests": { "lua": "addon/Hearthtale/English_*.lua", "at": "englishNames().quests" },
-    "items": { "lua": "addon/Hearthtale/English_*.lua", "at": "englishNames().items" },
-    "areas": { "lua": "addon/Hearthtale/Client_*.lua", "at": "client.areas" },
-    "building areas": { "lua": "addon/Hearthtale/Client_*.lua", "at": "client.inside" },
-    "dungeons": { "lua": "addon/Hearthtale/Client_*.lua", "at": "client.maps" },
-    "creature types": { "lua": "addon/Hearthtale/Client_*.lua", "at": "client.typeIds" },
-    "creature families": { "lua": "addon/Hearthtale/Client_*.lua", "at": "client.familyIds" },
-    "trades and ridings": { "lua": "addon/Hearthtale/Client_*.lua", "at": "client.skillIds" },
-    "talent trees": { "lua": "addon/Hearthtale/Client_*.lua", "at": "client.treeIds" },
-    "specializations": { "lua": "addon/Hearthtale/Client_*.lua", "at": "client.specIds" },
-    "spells": { "lua": "addon/Hearthtale/Client_*.lua", "at": "client.spells" },
-    "bosses": { "lua": "addon/Hearthtale/Client_*.lua", "at": "client.encounters" },
-    "mounts": { "lua": "addon/Hearthtale/Client_*.lua", "at": "client.mounts" },
-    "flight points": { "lua": "addon/Hearthtale/Client_*.lua", "at": "client.taxiIds" },
-    "building areas (Forever)": { "json": "i18n/*/subzones.json", "at": "forever" },
-    "building areas (Classic)": { "json": "i18n/*/subzones.json", "at": "classic" }
+    "creatures": {
+      "lua": "addon/Hearthtale/English_*.lua",
+      "at": "englishNames().creatures"
+    },
+    "quests": {
+      "lua": "addon/Hearthtale/English_*.lua",
+      "at": "englishNames().quests"
+    },
+    "items": {
+      "lua": "addon/Hearthtale/English_*.lua",
+      "at": "englishNames().items"
+    },
+    "areas": {
+      "lua": "addon/Hearthtale/Client_*.lua",
+      "at": "client.areas"
+    },
+    "building areas": {
+      "lua": "addon/Hearthtale/Client_*.lua",
+      "at": "client.inside"
+    },
+    "dungeons": {
+      "lua": "addon/Hearthtale/Client_*.lua",
+      "at": "client.maps"
+    },
+    "creature types": {
+      "lua": "addon/Hearthtale/Client_*.lua",
+      "at": "client.typeIds"
+    },
+    "creature families": {
+      "lua": "addon/Hearthtale/Client_*.lua",
+      "at": "client.familyIds"
+    },
+    "trades and ridings": {
+      "lua": "addon/Hearthtale/Client_*.lua",
+      "at": "client.skillIds"
+    },
+    "talent trees": {
+      "lua": "addon/Hearthtale/Client_*.lua",
+      "at": "client.treeIds"
+    },
+    "specializations": {
+      "lua": "addon/Hearthtale/Client_*.lua",
+      "at": "client.specIds"
+    },
+    "spells": {
+      "lua": "addon/Hearthtale/Client_*.lua",
+      "at": "client.spells"
+    },
+    "bosses": {
+      "lua": "addon/Hearthtale/Client_*.lua",
+      "at": "client.encounters"
+    },
+    "mounts": {
+      "lua": "addon/Hearthtale/Client_*.lua",
+      "at": "client.mounts"
+    },
+    "flight points": {
+      "lua": "addon/Hearthtale/Client_*.lua",
+      "at": "client.taxiIds"
+    },
+    "building areas (Forever)": {
+      "json": "i18n/*/subzones.json",
+      "at": "forever"
+    },
+    "building areas (Classic)": {
+      "json": "i18n/*/subzones.json",
+      "at": "classic"
+    },
+    "quest stories": {
+      "lua": "addon/Hearthtale/Data_*.lua",
+      "at": "data.why"
+    },
+    "class quests": {
+      "lua": "addon/Hearthtale/Knowledge.lua",
+      "at": [
+        "knowledge.quests"
+      ]
+    },
+    "quest chains": {
+      "lua": "addon/Hearthtale/Knowledge.lua",
+      "at": [
+        "knowledge.chains",
+        "knowledge.ends"
+      ]
+    },
+    "class quests (Forever)": {
+      "lua": "addon/Hearthtale/Forever.lua",
+      "before": [
+        "addon/Hearthtale/Names.lua",
+        "addon/Hearthtale/Knowledge.lua"
+      ],
+      "at": [
+        "knowledge.quests"
+      ]
+    },
+    "quest chains (Forever)": {
+      "lua": "addon/Hearthtale/Forever.lua",
+      "before": [
+        "addon/Hearthtale/Names.lua",
+        "addon/Hearthtale/Knowledge.lua"
+      ],
+      "at": [
+        "knowledge.chains",
+        "knowledge.ends"
+      ]
+    }
   },
   "removed": []
 }
