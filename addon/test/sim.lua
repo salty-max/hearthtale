@@ -107,7 +107,10 @@ check(
   "… ticked: on, account-wide, this addon collects"
 )
 share.scripts.OnClick(share)
-check(not ns.collect:on() and next(HearthtaleCollect.facts) == nil, "… unticked: off, what was kept forgotten")
+check(
+  not ns.collect:on() and HearthtaleCollect.facts ~= nil and SaltyMaxCollector == nil,
+  "… unticked: off, the claim given up (what was kept stays here, never sent while off)"
+)
 check(choices[1].box:GetChecked() and choices[2].box:GetChecked(), "… which show the settings as they are")
 choices[2].scripts.OnClick(choices[2])
 check(ns.option("toast") == false and not choices[2].box:GetChecked(), "… a click on a choice's words changes it")

@@ -676,7 +676,10 @@ ns.onHall = function()
 end
 
 -- A chapter closes: a line in chat with a link to it.
-function ns.link(target, text) return ("|cffc9a227|Hhearthtale:%s|h[%s]|h|r"):format(target, text) end
+-- (the kit's links: |Hhearthtale:<target>|h, followed below)
+local followLink
+local link = K.links("hearthtale", function(target) followLink(target) end, "c9a227")
+function ns.link(target, text) return link(target, text) end
 ns.onChapter = function(number)
   print(ns.PREFIX .. L["entry %d is written. %s"]:format(number, ns.link("chapter:" .. number, L["Read it"])))
 end
@@ -711,20 +714,11 @@ end
 
 -- Links in chat (|Hhearthtale:chapter:<number>|h, |Hhearthtale:hall:<guid>|h): the
 -- game hands links of an unknown type to the handler registered for it.
-local function followLink(link)
-  local number = tonumber(link:match("^hearthtale:chapter:(%d+)$") or "")
+function followLink(target)
+  local number = tonumber(target:match("^chapter:(%d+)$") or "")
   if number then return ns.openChapter(number) end
-  local guid = link:match("^hearthtale:hall:(.+)$")
+  local guid = target:match("^hall:(.+)$")
   if guid then ns.openHall(guid) end
-end
-if LinkUtil and LinkUtil.RegisterLinkHandler then
-  LinkUtil.RegisterLinkHandler("hearthtale", function(link)
-    followLink(link)
-    return LinkProcessorResponse and LinkProcessorResponse.Handled
-  end)
-elseif hooksecurefunc and SetItemRef then
-  -- Clients without the link registry still pass every click to SetItemRef.
-  hooksecurefunc("SetItemRef", function(link) followLink(link) end)
 end
 
 -- A new moment while the book is open: rewritten a moment later, once (a fight

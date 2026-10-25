@@ -1,6 +1,6 @@
 # The addon's Lua, linted by selene (bun run lint:lua): Lua 5.1 and the game's
 # globals the addon uses (wow.yml).
-std = "wow"
+std = "wow+hearthtale"
 exclude = ["addon/Hearthtale/Data_*.lua", "addon/Hearthtale/Names.lua", "addon/Hearthtale/Knowledge.lua", "addon/Hearthtale/Text_*.lua"]
 
 [lints]

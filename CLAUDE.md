@@ -82,8 +82,10 @@ scripts/release.sh [--version X.Y.Z] [--hold] NOTES.md
 - `bun install` runs husky, which takes `core.hooksPath` back: the
   `prepare` script installs the family's hooks again, outside CI (husky's
   run after ours, chained).
-- `Kit.lua` and `scripts/root.ts` are the kit's copies: edit addon-kit,
-  then `bun run kit:sync`.
+- `Kit.lua`, `Media/`, `scripts/root.ts` (and `root.py`), `scripts/locales-lib.ts`,
+  `i18n/kit/` (the kit's words, translated once), `wow.yml` and `stylua.toml`
+  are the kit's copies: edit addon-kit, then `bun run kit:sync`. The addon's
+  own globals for selene are `hearthtale.yml`.
 - Conventional Commits, lowercase subjects, no AI trailers (commitlint and
   the family's hook). Commit locally; ask before any push, release or
   deploy. The pre-push hook wants a check stamp on the tree (q), which

@@ -1,0 +1,16 @@
+# The addon's own globals: its saved variables and its slash command
+# (selene.toml: std = "wow+hearthtale"; the game's are the kit's wow.yml).
+name: hearthtale
+globals:
+  HearthtaleChar:
+    any: true
+  HearthtaleCollect:
+    any: true
+  HearthtaleHall:
+    any: true
+  HearthtaleSettings:
+    any: true
+  SLASH_HEARTHTALE1:
+    any: true
+  SLASH_HEARTHTALE2:
+    any: true

@@ -20,7 +20,7 @@ local L = K.L
 -- (minimapAngle: the button's place around the minimap, in degrees; 200 is
 -- to the left, clear of the game's buttons and the siblings')
 -- (welcomed: the welcome page was seen, Welcome.lua: never copied)
-local DEFAULTS = { toast = true, minimapHidden = false, minimapAngle = 200, welcomed = false }
+local DEFAULTS = { toast = true, minimapHidden = false, minimapAngle = K.MINIMAP_ANGLES.Hearthtale, welcomed = false }
 local SHARED = { "toast", "minimapHidden", "minimapAngle" } -- (what a copy carries)
 
 -- The profiles (Kit.lua): a code "HT1:t1:h0:a200" (the banner, the minimap

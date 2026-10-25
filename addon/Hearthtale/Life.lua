@@ -62,9 +62,8 @@ local RANKED = { Apprentice = true, Journeyman = true, Expert = true, Artisan = 
 -- journal says a spell was used only then. (A closed chapter never changes.)
 local untried = {} -- [a spell's name] = { m = its lesson's moment, ch = its chapter }
 local function spellName(id)
-  local get = (C_Spell and C_Spell.GetSpellName) or GetSpellInfo
-  local name = get and get(id)
-  return (name and not secret(name)) and R.spell(id, name) or nil
+  local name = ns.kit.spellName(id)
+  return name and R.spell(id, name) or nil
 end
 ns.onUnit("UNIT_SPELLCAST_SUCCEEDED", "player", function(_, _, id)
   if not id or secret(id) or next(untried) == nil then return end

@@ -204,12 +204,7 @@ local function names()
 end
 local function forgetNames() englishNames = nil end
 -- a creature's id, from its GUID ("Creature-0-…-<id>-<spawn>")
-local function npcId(guid)
-  if not guid or secret(guid) then return nil end
-  return tonumber(
-    guid:match("^Creature%-%d+%-%d+%-%d+%-%d+%-(%d+)") or guid:match("^Vehicle%-%d+%-%d+%-%d+%-%d+%-(%d+)")
-  )
-end
+local npcId = ns.kit.npcId
 local function creature(id, name)
   if not id or inEnglish() then return name end
   return (names().creatures or {})[id] or name
