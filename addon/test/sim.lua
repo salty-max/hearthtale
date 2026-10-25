@@ -1379,6 +1379,12 @@ SlashCmdList.HEARTHTALE("note 1 " .. ("word "):rep(300))
 check(#K.notes[1].text <= 1000, "a note kept to a thousand letters")
 SlashCmdList.HEARTHTALE("note 1")
 check(K.notes[1] == nil, "a note removed, nothing left of it")
+check(printed[#printed]:find("|r Entry 1's note removed.", 1, true), "… said in a sentence after the prefix")
+SlashCmdList.HEARTHTALE("notes 1 Typo")
+check(
+  printed[#printed]:find("/ht opens the journal", 1, true) and K.notes[1] == nil,
+  "an unknown word prints the usage, and does nothing else"
+)
 ns.openChapter(last)
 ns.bookEdit.scripts.OnClick()
 local editor = ns.bookEditor

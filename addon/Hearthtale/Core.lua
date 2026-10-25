@@ -124,13 +124,13 @@ local USAGE =
 -- logout or a /reload) carries it, and the site adds this book to that account.
 local function link(code)
   if #code ~= 6 then
-    print(PREFIX .. L["that isn't a link code: it has six letters and digits, from hearthtale.app."])
+    print(PREFIX .. L["That isn't a link code: it has six letters and digits, from hearthtale.app."])
   elseif char then
     code = code:upper()
     char.link = { code = code, at = time() }
     print(
       PREFIX
-        .. L["code %s kept. Log out or /reload with Ravenpost running, and this book joins your library on hearthtale.app."]:format(
+        .. L["Code %s kept. Log out or /reload with Ravenpost running, and this book joins your library on hearthtale.app."]:format(
           code
         )
     )
@@ -152,7 +152,7 @@ local function rewrite()
   if ns.refresh then ns.refresh() end
   print(
     PREFIX
-      .. L["the journal is written anew. hearthtale.app shows it after your next logout or /reload with Ravenpost running."]
+      .. L["The journal is written anew. hearthtale.app shows it after your next logout or /reload with Ravenpost running."]
   )
 end
 StaticPopupDialogs.HEARTHTALE_REWRITE = {
@@ -165,8 +165,6 @@ StaticPopupDialogs.HEARTHTALE_REWRITE = {
   hideOnEscape = true,
 }
 
-SLASH_HEARTHTALE1 = "/hearthtale"
-SLASH_HEARTHTALE2 = "/ht"
 -- "/ht note 3 Text": entry 3; "/ht note Text": the last one (the case of the words kept)
 local function setOwn(field, rest)
   if not char then return end
@@ -177,45 +175,42 @@ local function setOwn(field, rest)
   end
   local title = field == "title"
   if not ns.setOwn(n, field, text) then
-    print(PREFIX .. (title and L["no entry to give a title to yet."] or L["no entry to give a note to yet."]))
+    print(PREFIX .. (title and L["No entry to give a title to yet."] or L["No entry to give a note to yet."]))
   elseif text == "" then
-    print(PREFIX .. (title and L["entry %d's title removed."] or L["entry %d's note removed."]):format(n))
+    print(PREFIX .. (title and L["Entry %d's title removed."] or L["Entry %d's note removed."]):format(n))
   else
-    print(PREFIX .. (title and L["entry %d's title kept."] or L["entry %d's note kept."]):format(n))
+    print(PREFIX .. (title and L["Entry %d's title kept."] or L["Entry %d's note kept."]):format(n))
   end
 end
 
-SlashCmdList.HEARTHTALE = function(raw)
-  raw = strtrim(raw or "")
-  local msg = raw:lower()
-  local code = msg:match("^link%s+(%w+)$")
-  local word, rest = raw:match("^(%a+)%s*(.*)$")
-  word = word and word:lower()
-  if word == "title" or word == "note" then
-    setOwn(word == "title" and "title" or "text", rest)
-  elseif msg == "" then
-    ns.toggle()
-  elseif msg == "minimap" then
-    ns.setOption("minimapHidden", not ns.option("minimapHidden"))
-  elseif msg == "settings" or msg == "options" then
-    if not ns.openSettings() then print(PREFIX .. L["no settings page in this client."]) end
-  elseif msg == "hall" then
-    ns.openHall()
-  elseif msg == "welcome" then
-    ns.showWelcome()
-  elseif msg == "rewrite" then
-    StaticPopup_Show("HEARTHTALE_REWRITE")
-  elseif msg == "export" then
-    ns.showWelcome("export")
-  elseif word == "import" and rest ~= "" then
-    if ns.importCode(rest) then
-      print(PREFIX .. L["settings imported for this character."])
-    else
-      print(PREFIX .. L["that isn't a Hearthtale settings code (/ht export makes one)."])
+-- The kit's command (K.commands): alone it opens the journal, an unknown word
+-- prints the usage.
+ns.kit.commands({
+  names = { "/hearthtale", "/ht" },
+  key = "HEARTHTALE",
+  name = "Hearthtale",
+  prefix = PREFIX,
+  profiles = function() return ns.profiles end,
+  open = function() ns.toggle() end,
+  usage = USAGE,
+  settings = function() return ns.openSettings() end,
+  welcome = function(mode) ns.showWelcome(mode) end,
+  minimap = { get = function(k) return ns.option(k) end, set = function(k, v) ns.setOption(k, v) end },
+  commands = {
+    hall = function() ns.openHall() end,
+    rewrite = function() StaticPopup_Show("HEARTHTALE_REWRITE") end,
+  },
+  -- (/ht title and /ht note, the case of the words kept; /ht link CODE)
+  match = function(msg, raw)
+    local word, rest = raw:match("^(%a+)%s*(.*)$")
+    word = word and word:lower()
+    if word == "title" or word == "note" then
+      setOwn(word == "title" and "title" or "text", rest)
+      return true
     end
-  elseif code then
+    local code = msg:match("^link%s+(%w+)$")
+    if not code then return false end
     link(code)
-  else
-    print(PREFIX .. USAGE)
-  end
-end
+    return true
+  end,
+})

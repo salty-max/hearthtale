@@ -28,7 +28,7 @@ check(
 )
 SlashCmdList.HEARTHTALE("title 9 Rien")
 check(
-  last():find("titre de l'entrée %d+ gardé%.") or last():find("aucune entrée à titrer"),
+  last():find("Titre de l'entrée %d+ gardé%.") or last():find("Aucune entrée à titrer"),
   "an entry's title, said in French",
   last()
 )

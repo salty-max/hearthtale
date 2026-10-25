@@ -89,31 +89,27 @@ ns.collect = K.collect({
   prefix = ns.PREFIX,
 })
 
-local category
+local O
 
+-- The page (the kit's, K.options).
 function ns.createSettingsPanel()
-  if category or not (Settings and Settings.RegisterVerticalLayoutCategory) then return end
-  category = Settings.RegisterVerticalLayoutCategory("Hearthtale")
-
-  local function checkbox(key, name, tooltip, invert)
-    invert = invert or false
-    local setting = Settings.RegisterProxySetting(
-      category,
-      "HEARTHTALE_" .. key:upper(),
-      Settings.VarType.Boolean,
-      name,
-      not DEFAULTS[key] == invert,
-      function() return ns.option(key) ~= invert end,
-      function(value) ns.setOption(key, value ~= invert) end
-    )
-    Settings.CreateCheckbox(category, setting, tooltip)
-  end
-  checkbox(
+  if O then return end
+  O = K.options({
+    title = "Hearthtale",
+    key = "HEARTHTALE",
+    get = ns.option,
+    set = ns.setOption,
+    defaults = DEFAULTS,
+    profiles = P,
+    slash = "/ht",
+    prefix = ns.PREFIX,
+  })
+  O:check(
     "toast",
     L["Alert when a book closes"],
     L["A banner among the game's alerts when a Hardcore character falls and its book joins the Hall of the Fallen (the chat line stays)."]
   )
-  checkbox(
+  O:check(
     "minimapHidden",
     L["Minimap button"],
     L["The journal by the minimap: click to open it, drag to move it."],
@@ -121,10 +117,11 @@ function ns.createSettingsPanel()
   )
 
   -- Where the game can't tell, the player says whether this character is
-  -- Hardcore (its death then closes the book).
-  if not ns.gameKnowsHardcore() then
+  -- Hardcore (its death then closes the book): the character's own, no
+  -- setting of its profile.
+  if O.category and not ns.gameKnowsHardcore() then
     local setting = Settings.RegisterProxySetting(
-      category,
+      O.category,
       "HEARTHTALE_HARDCORE",
       Settings.VarType.Boolean,
       L["This character is Hardcore"],
@@ -133,27 +130,15 @@ function ns.createSettingsPanel()
       ns.setHardcore
     )
     Settings.CreateCheckbox(
-      category,
+      O.category,
       setting,
       L["This character's death closes its book: an epitaph, and its journal joins the Hall of the Fallen. For this character only."]
     )
   end
 
-  K.collectSetting(category, "HEARTHTALE_SHARE", ns.collect)
-
-  -- Another character's settings (of this game), for this one.
-  K.copySetting(
-    category,
-    "HEARTHTALE_COPYFROM",
-    P,
-    L["Another character's choices, for this one (of this game: Classic Era and Forever keep their own). From elsewhere: /ht export there, then /ht import CODE here."],
-    function(other) print(ns.PREFIX .. L["%s's settings copied."]:format(other)) end
-  )
-
-  Settings.RegisterAddOnCategory(category)
+  O:collect(ns.collect)
+  O:copy()
+  O:done()
 end
 
-function ns.openSettings()
-  if category then Settings.OpenToCategory(category:GetID()) end
-  return category ~= nil
-end
+function ns.openSettings() return O ~= nil and O:open() end

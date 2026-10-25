@@ -28,7 +28,7 @@ check(
 )
 SlashCmdList.HEARTHTALE("title 9 Rien")
 check(
-  last():find("Titel von Eintrag %d+ gespeichert%.") or last():find("noch kein Eintrag für einen Titel"),
+  last():find("Titel von Eintrag %d+ gespeichert%.") or last():find("Noch kein Eintrag für einen Titel"),
   "an entry's title, said in German",
   last()
 )
@@ -61,7 +61,7 @@ check(
 )
 StaticPopupDialogs.HEARTHTALE_REWRITE.OnAccept()
 local after = ns.writeBook(journal).chapters[1]
-check(last():find("das Tagebuch wurde neu geschrieben%.") ~= nil, "the confirmed rewrite reports completion", last())
+check(last():find("Das Tagebuch wurde neu geschrieben%.") ~= nil, "the confirmed rewrite reports completion", last())
 check(
   after.title == before.title and after.note == before.note,
   "a confirmed rewrite preserves the player's title and note"

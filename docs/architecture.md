@@ -119,7 +119,9 @@ stays there). The writing's files and rules: `docs/writing.md`. The site:
   brings the prize home ("Bring the Torch of Eternal Flame to …").
 - `addon/Hearthtale/`: `Util.lua` (plain-Lua helpers: the deep copy),
   `Core.lua` (the character's record, events: `ns.on`, and `ns.onUnit` for a
-  unit event heard for one unit only; `/hearthtale`; the player's own words,
+  unit event heard for one unit only; `/hearthtale`, the kit's command,
+  `K.commands`: alone it opens the journal, an unknown word prints the usage,
+  the replies capitalised; the player's own words,
   `notes[n] = { title, text }`: a title given an entry, a note in its margin,
   plain text, from the window or `/ht title [N] TEXT`, `/ht note [N] TEXT`),
   the recorder in four
@@ -202,8 +204,8 @@ stays there). The writing's files and rules: `docs/writing.md`. The site:
   `HT1:t1:h0:a200` made by `/ht export` (no chat setting since 0.9: an older
   code's `c` is left out) and taken by `/ht import CODE`; a
   character who kept a journal before 0.6.1 starts from the account's old
-  values; the Options page, its "Copy settings from"; `ns.setHardcore` where
-  the game can't tell), `Welcome.lua` (the welcome page, once per character a
+  values; the Options page, the kit's `K.options`, its "Copy settings from";
+  `ns.setHardcore` where the game can't tell, a box of its own on that page), `Welcome.lua` (the welcome page, once per character a
   few seconds after its first login, out of combat, and `/ht welcome`: two
   columns as the journal's window, the logo and what the journal is, then
   this character's choices and another's to take, chosen in the kit's select or by a code;
