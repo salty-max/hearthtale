@@ -13714,6 +13714,7 @@ function ns.englishNames()
 [277881]="Bloodwing Bat",
 [277882]="Foothills Duskbat",
 [278166]="Mountaineer Cornelius",
+[278863]="Infernal",
     }, { __index = out.creatures }),
     quests = setmetatable({
 [2]={title="Sharptalon's Claw",items={16305}},
