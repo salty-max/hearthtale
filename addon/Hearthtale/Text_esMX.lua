@@ -5,6 +5,7 @@ ns.translate({
   plural = "one",
   words = {
     ["/ht opens the journal, /ht hall the Hall of the Fallen. /ht title [N] TEXT names an entry, /ht note [N] TEXT writes in its margin (the last entry without N, no TEXT to remove it). /ht link CODE links this character to hearthtale.app. /ht settings opens the options, /ht minimap shows or hides the button, /ht welcome shows the welcome page again. /ht export gives this character's settings as a code, /ht import CODE takes them. /ht rewrite writes the journal anew with this version (a closed entry keeps its words otherwise)."] = "/ht abre el diario y /ht hall abre el Salón de los Caídos. /ht title [N] TEXT da un título a una entrada y /ht note [N] TEXT añade una nota al margen. Sin N se usa la última entrada. Sin TEXT se elimina el título o la nota. /ht link CODE vincula este personaje a hearthtale.app. /ht settings abre las opciones y /ht minimap muestra u oculta el botón. /ht welcome vuelve a mostrar la página de bienvenida. /ht export genera un código con las opciones de este personaje y /ht import CODE las importa. /ht rewrite vuelve a escribir el diario con esta versión de Hearthtale. Las entradas cerradas conservan su texto hasta que decidas reescribirlas.",
+    ["%d %s"] = "%d %s",
     ["%d %s %d"] = "%d %s %d",
     ["%d %s to %s"] = "%d %s a %s",
     ["%d book in the Hall of the Fallen"] = "%d libro en el Salón de los Caídos",
@@ -17,6 +18,7 @@ ns.translate({
     ["%d of %d"] = "%d de %d",
     ["%d of %d achievements"] = "%d de %d logros",
     ["%d to %s"] = "%d a %s",
+    ["%s %02d:%02d"] = "%s %02d:%02d",
     ["%s in %s"] = "%s en %s",
     ["%s to %s"] = "%s a %s",
     ["%s's choices are this character's now."] = "Este personaje usa ahora las opciones de %s.",

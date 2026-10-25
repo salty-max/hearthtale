@@ -55,13 +55,9 @@ local NOTE = K.hex(T.accent) .. L["Note"] .. "|r\n|cffbfb08f%s|r" -- the player'
 
 local DOT = "  \194\183  " -- (a middle dot between the parts of a line)
 
-local MONTHS = { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" }
-local function month(at) return L[MONTHS[date("*t", at).month]] end
-local function day(at)
-  if not at then return nil end
-  local t = date("*t", at)
-  return L["%d %s %d"]:format(t.day, month(at), t.year)
-end
+-- (the kit's day and month: "5 Oct 2026", each language its own)
+local month = K.month
+local function day(at) return at and K.day(at) or nil end
 
 -- When a chapter was lived, as short as it reads: "5 Oct 2026", "5 to 7 Oct
 -- 2026", "30 Sep to 2 Oct 2026", "30 Dec 2026 to 2 Jan 2027".
