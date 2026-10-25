@@ -16,7 +16,7 @@
     "lint:fix": "eslint . --fix",
     "test": "turbo run test",
     "check": "bun run addon:check && bun run typecheck && bun run lint && bun run test",
-    "prepare": "husky && (bun scripts/root.ts --run addon-kit/hooks.ts install . >/dev/null 2>&1 || true)",
+    "prepare": "husky && ([ -n \"$CI\" ] || bun scripts/root.ts --run addon-kit/hooks.ts install . >/dev/null 2>&1 || echo \"prepare: the family's git hooks not installed (bun addon-kit/hooks.ts install hearthtale)\" >&2)",
     "db": "bash scripts/db.sh",
     "db:generate": "bun run --filter @hearthtale/api db:generate",
     "db:migrate": "bun run --filter @hearthtale/api db:migrate",
