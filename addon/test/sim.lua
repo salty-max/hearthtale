@@ -1385,6 +1385,15 @@ check(
   printed[#printed]:find("/ht opens the journal", 1, true) and K.notes[1] == nil,
   "an unknown word prints the usage, and does nothing else"
 )
+-- (/ht first among its names: the kit's replies name the command the usage teaches)
+local wasHidden = ns.option("minimapHidden")
+SlashCmdList.HEARTHTALE("minimap")
+check(
+  printed[#printed]:find(ns.kit.L["Minimap button hidden (%s minimap shows it again)."]:format("/ht"), 1, true),
+  "/ht minimap: the reply names /ht"
+)
+SlashCmdList.HEARTHTALE("minimap")
+check(ns.option("minimapHidden") == wasHidden, "… and the button back as it was")
 ns.openChapter(last)
 ns.bookEdit.scripts.OnClick()
 local editor = ns.bookEditor
