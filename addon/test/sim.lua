@@ -733,7 +733,7 @@ check(
   "a logout in the wild: a night outdoors, then the road again, the same chapter"
 )
 check(
-  printed[#printed]:find("resuming entry 1. Type /ht or click the button by the minimap", 1, true),
+  printed[#printed]:find("Resuming entry 1. Type /ht or click the button by the minimap", 1, true),
   "… and a line in chat at the login: the entry goes on, how to open the journal"
 )
 local nights = #moments("night")
@@ -743,12 +743,12 @@ logout()
 G.wait(120)
 login()
 check(#ch().log == logBeforeRelog and #moments("night") == nights, "a relog of two minutes: no night, nothing told")
-check(printed[#printed]:find("resuming entry 1", 1, true), "… the entry resumed")
+check(printed[#printed]:find("Resuming entry 1", 1, true), "… the entry resumed")
 local beforeReload = #printed
 reload()
 check(#moments("night") == nights and #J.chapters == 1, "a /reload is no night")
 check(
-  #printed == beforeReload + 1 and printed[#printed]:find("resuming entry 1", 1, true),
+  #printed == beforeReload + 1 and printed[#printed]:find("Resuming entry 1", 1, true),
   "… the entry resumed, said once"
 )
 fire("PLAYER_ENTERING_WORLD", false, false)
@@ -805,11 +805,11 @@ check(
   "a logout at an inn closes the chapter; the next begins"
 )
 check(
-  printed[#printed - 1]:find("entry 1 is written", 1, true)
+  printed[#printed - 1]:find("Entry 1 is written", 1, true)
     and printed[#printed - 1]:find("|Hhearthtale:chapter:1|h", 1, true),
   "a line in chat, with a link to it"
 )
-check(printed[#printed]:find("starting entry 2", 1, true), "… then the new entry the login began")
+check(printed[#printed]:find("Starting entry 2", 1, true), "… then the new entry the login began")
 local closed = ns.writeBook(J).chapters[1]
 check(not closed.open and closed.place == "Thunderbrew Distillery", "closed where I rested")
 
@@ -908,7 +908,7 @@ ns.setOption("toast", true)
 ns.setOption("minimapHidden", true)
 ns.onResume(2, false)
 check(
-  printed[#printed] == ns.PREFIX .. "resuming entry 2. Type /ht to read the journal.",
+  printed[#printed] == ns.PREFIX .. "Resuming entry 2. Type /ht to read the journal.",
   "… the login's leaves out the minimap's button when it's hidden"
 )
 ns.setOption("minimapHidden", false)
@@ -969,7 +969,7 @@ state.sub = "Brewnall Village"
 fire("ZONE_CHANGED")
 login()
 check(#ch().log == logBefore and #J.chapters == 4, "a closed book records nothing more, even at the next login")
-check(printed[#printed]:find("this life's book is closed", 1, true), "… the login says the book is closed")
+check(printed[#printed]:find("This life's book is closed", 1, true), "… the login says the book is closed")
 logout()
 local fallenLife = HearthtaleHall.lives[state.guid]
 check(

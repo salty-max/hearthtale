@@ -681,7 +681,7 @@ local followLink
 local link = K.links("hearthtale", function(target) followLink(target) end, "c9a227")
 function ns.link(target, text) return link(target, text) end
 ns.onChapter = function(number)
-  print(ns.PREFIX .. L["entry %d is written. %s"]:format(number, ns.link("chapter:" .. number, L["Read it"])))
+  print(ns.PREFIX .. L["Entry %d is written. %s"]:format(number, ns.link("chapter:" .. number, L["Read it"])))
 end
 
 -- At a login or a /reload, a line in chat: the entry this login began
@@ -695,19 +695,19 @@ ns.onResume = function(number, started)
     print(
       ns.PREFIX
         .. (
-          button and L["this life's book is closed. Type /ht or click the button by the minimap to read it."]
-          or L["this life's book is closed. Type /ht to read it."]
+          button and L["This life's book is closed. Type /ht or click the button by the minimap to read it."]
+          or L["This life's book is closed. Type /ht to read it."]
         )
     )
     return
   end
   local said
   if started then
-    said = button and L["starting entry %d. Type /ht or click the button by the minimap to read the journal."]
-      or L["starting entry %d. Type /ht to read the journal."]
+    said = button and L["Starting entry %d. Type /ht or click the button by the minimap to read the journal."]
+      or L["Starting entry %d. Type /ht to read the journal."]
   else
-    said = button and L["resuming entry %d. Type /ht or click the button by the minimap to read the journal."]
-      or L["resuming entry %d. Type /ht to read the journal."]
+    said = button and L["Resuming entry %d. Type /ht or click the button by the minimap to read the journal."]
+      or L["Resuming entry %d. Type /ht to read the journal."]
   end
   print(ns.PREFIX .. said:format(number))
 end
