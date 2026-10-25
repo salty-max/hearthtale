@@ -141,7 +141,7 @@ ns.translate({
     ["The code's choices are this character's now."] = "Les choix du code sont désormais ceux de ce personnage.",
     ["the end"] = "fin",
     ["The fallen"] = "Les disparus",
-    ["the game's achievement alert could not be set up (%s): the book shows its own banner."] = "l'alerte de haut fait du jeu n'a pas pu être préparée (%s) : le livre affiche sa propre bannière.",
+    ["The game's achievement alert could not be set up (%s): the book shows its own banner."] = "L'alerte de haut fait du jeu n'a pas pu être préparée (%s) : le livre affiche sa propre bannière.",
     ["The game's Options have no page for addons here."] = "Les options du jeu n'ont pas de page pour les addons ici.",
     ["The Hall of the Fallen"] = "La Salle des Disparus",
     ["The journal by the minimap: click to open it, drag to move it."] = "Le journal près de la minicarte : cliquez pour l'ouvrir, faites-le glisser pour le déplacer.",

@@ -141,7 +141,7 @@ ns.translate({
     ["The code's choices are this character's now."] = "Die Einstellungen des Codes gelten jetzt für diesen Charakter.",
     ["the end"] = "Ende",
     ["The fallen"] = "Die Gefallenen",
-    ["the game's achievement alert could not be set up (%s): the book shows its own banner."] = "die Erfolgsmeldung des Spiels ließ sich nicht einrichten (%s): Das Buch zeigt ein eigenes Banner.",
+    ["The game's achievement alert could not be set up (%s): the book shows its own banner."] = "Die Erfolgsmeldung des Spiels ließ sich nicht einrichten (%s): Das Buch zeigt ein eigenes Banner.",
     ["The game's Options have no page for addons here."] = "Die Optionen des Spiels haben hier keine Seite für Addons.",
     ["The Hall of the Fallen"] = "Die Halle der Gefallenen",
     ["The journal by the minimap: click to open it, drag to move it."] = "Das Tagebuch an der Minikarte: Klicken zum Öffnen, Ziehen zum Verschieben.",

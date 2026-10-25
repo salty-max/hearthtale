@@ -35,6 +35,7 @@ docs above included.
 
 ```bash
 bun run addon:build | addon:check | addon:package   # the addon
+bun run addon:ci     # what CI and the release gate run: no family folder (the kit, the saved ids and the generators' checks aside)
 bun run ids                                         # (in addon:check) every table saved-ids.json lists keeps its ids (addon-kit's ids.ts)
 bun run addon:golden save [journal…]; bun run addon:golden check [journal…]
                        # a writer refactor: every output before/after, byte for byte
@@ -82,7 +83,7 @@ scripts/release.sh [--version X.Y.Z] [--hold] NOTES.md
 - `bun install` runs husky, which takes `core.hooksPath` back: the
   `prepare` script installs the family's hooks again, outside CI (husky's
   run after ours, chained).
-- `Kit.lua`, `Media/`, `scripts/root.ts` (and `root.py`), `scripts/locales-lib.ts`,
+- `Kit.lua`, `Media/`, `scripts/root.ts` (and `root.py`), `scripts/locales-lib.ts`, `scripts/package-lib.ts`,
   `i18n/kit/` (the kit's words, translated once), `wow.yml` and `stylua.toml`
   are the kit's copies: edit addon-kit, then `bun run kit:sync`. The addon's
   own globals for selene are `hearthtale.yml`.

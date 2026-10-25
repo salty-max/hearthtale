@@ -186,7 +186,8 @@ end
 -- The kit's command (K.commands): alone it opens the journal, an unknown word
 -- prints the usage.
 ns.kit.commands({
-  names = { "/hearthtale", "/ht" },
+  -- (/ht first: the replies the kit writes name the command its usage teaches)
+  names = { "/ht", "/hearthtale" },
   key = "HEARTHTALE",
   name = "Hearthtale",
   prefix = PREFIX,

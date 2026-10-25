@@ -37,3 +37,4 @@ ignore:
   - turbo.json
   - vercel.json
   - wow.yml
+  - hearthtale.yml
