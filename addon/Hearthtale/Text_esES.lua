@@ -117,7 +117,7 @@ ns.translate({
     ["Prologue"] = "Prólogo",
     ["Quest complete"] = "Misión completada",
     ["Read it"] = "Leer",
-    ["Ready check"] = "Control de disponibilidad",
+    ["Ready check"] = "¿Listos?",
     ["Resuming entry %d. Type /ht or click the button by the minimap to read the journal."] = "Retomas la entrada %d. Escribe /ht o haz clic en el botón junto al minimapa para leer el diario.",
     ["Resuming entry %d. Type /ht to read the journal."] = "Retomas la entrada %d. Escribe /ht para leer el diario.",
     ["Save"] = "Guardar",
