@@ -107,7 +107,7 @@ can be installed as a PWA. Shared data types live in `packages/shared`.
 The site is hosted on Vercel with Neon.
 
 To release the addon, run
-`scripts/release.sh [--version X.Y.Z] [--hold] NOTES.md`. The script tags and
+`scripts/release.sh --version X.Y.Z [--hold] NOTES.md`. The script tags and
 pushes the release, and GitHub Actions publishes it on GitHub, CurseForge
 and Wago.
 

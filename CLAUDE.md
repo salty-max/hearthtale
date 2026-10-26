@@ -47,7 +47,7 @@ bun run db | db:generate | db:migrate | db:seed
 bun run addon:seed                                  # regenerate the test characters, the landing's samples
 bun run audit                                       # the generated tables, the journals read again (.cache/audit/)
 bun run kit:sync                                    # after a change to the kit (Kit.lua, Media, scripts/root.ts)
-scripts/release.sh [--version X.Y.Z] [--hold] NOTES.md
+scripts/release.sh --version X.Y.Z [--hold] NOTES.md
                        # the addon: check, tag, push; Actions publish it on GitHub, CurseForge, Wago
                        # (--hold: GitHub alone; the stores later: gh workflow run release.yml -f tag=vX.Y.Z)
 ```
