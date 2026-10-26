@@ -134,7 +134,7 @@ ns.translate({
     ["Thank you, it's a real help. What you see will help the addons keep up with Forever, and Ravenpost sends it from this computer: %s"] = "Merci, c'est une vraie aide. Ce que vous voyez aidera les addons à suivre Forever, et Ravenpost l'envoie depuis cet ordinateur : %s",
     ["That isn't a %s settings code (%s export makes one)."] = "Ce n'est pas un code de réglages de %s (%s export en crée un).",
     ["That isn't a Hearthtale settings code."] = "Ce n'est pas un code de réglages de Hearthtale.",
-    ["That isn't a link code: it has six letters and digits, from hearthtale.app."] = "Ce n'est pas un code de liaison : il compte six lettres et chiffres, de hearthtale.app.",
+    ["That isn't a link code: it has six letters and digits, from hearthtale.app."] = "Ce n'est pas un code de liaison : il compte six lettres et chiffres et vient de hearthtale.app.",
     ["The book by the minimap"] = "Le livre près de la minicarte",
     ["The book is closed"] = "Le livre est clos",
     ["The closed books of Hardcore characters rest here, to be read again: each life's epitaph, then its entries."] = "Les livres clos des personnages Hardcore reposent ici, pour être relus : l'épitaphe de chaque vie, puis ses entrées.",
