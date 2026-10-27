@@ -17,18 +17,9 @@
 local _, ns = ...
 
 -- ── look ─────────────────────────────────────────────────────────────────────
--- The kit's (Kit.lua), in Hearthtale's own theme: the embers of a fire at
--- rest, a warm accent over panels a shade warmer.
+-- The kit's (Kit.lua), its theme set first thing in Core.lua.
 local K = ns.kit
 local L = K.L
-K.theme({
-  accent = { 0.93, 0.62, 0.38 },
-  ring = { 0.80, 0.46, 0.26 },
-  bar = { 0.90, 0.50, 0.20 },
-  tint = { 1.00, 0.90, 0.82 },
-  shade = { 0.05, 0.025, 0.015, 0.55 },
-  highlight = { 1.00, 0.78, 0.60 },
-})
 local T = K.T
 local label, rule, panel = K.label, K.rule, K.panel
 local BODY_FONT, TITLE_FONT = K.BODY_FONT, K.TITLE_FONT
@@ -157,7 +148,7 @@ local function row(i)
   if r then return r end
   r = CreateFrame("Button", nil, list.child)
   r:SetSize(ROW_WIDTH, 34)
-  r.title = label(r, TITLE_FONT, 14, T.gold)
+  r.title = label(r, BODY_FONT, 13, T.text)
   r.title:SetWordWrap(false) -- (a long title cut short, never over the marks)
   r.place = label(r, BODY_FONT, 11, T.soft)
   r.place:SetPoint("TOPLEFT", r.title, "BOTTOMLEFT", 0, -2)
@@ -191,8 +182,9 @@ local function render(entries, scroll)
     r.title:ClearAllPoints()
     r.title:SetPoint("TOPLEFT", 8 + (e.indent or 0), -3)
     r.title:SetPoint("RIGHT", r, "RIGHT", -36, 0)
-    r.title:SetFont(TITLE_FONT, e.indent and 13 or 14, "")
-    r.title:SetTextColor(unpack(e.click and T.gold or T.soft))
+    -- (in the body face, as every book's rows are: the display face for headings)
+    r.title:SetFont(BODY_FONT, e.indent and 12 or 13, "")
+    r.title:SetTextColor(unpack(e.click and T.text or T.soft))
     r.title:SetText(e.title)
     r.place:SetText(e.place or "")
     local x = -8
@@ -397,16 +389,7 @@ end
 -- ── the player's own: a title, a note ────────────────────────────────────────
 -- An entry's own title and a note in its margin, written over its page (or
 -- with /ht title, /ht note; Core.lua keeps them): empty, the journal's own.
-local function buttonOf(parent, text, width)
-  local b = CreateFrame("Button", nil, parent, "UIPanelButtonTemplate")
-  b:SetSize(width, 22)
-  b:SetText(text)
-  -- (a word longer in another language widens its button: "Bearbeiten")
-  local fs = b:GetFontString()
-  local w = fs and fs.GetStringWidth and fs:GetStringWidth()
-  if type(w) == "number" and w + 24 > width then b:SetWidth(math.ceil(w + 24)) end
-  return b
-end
+local buttonOf = K.button -- (the kit's: wider for a longer word, "Bearbeiten")
 local function buildEditor(sheet)
   editor = CreateFrame("Frame", nil, sheet)
   editor:SetPoint("TOPLEFT", sheet, "TOPLEFT", 26, -22)
@@ -511,7 +494,7 @@ local function hardcoreMark(parent, x)
     GameTooltip:SetOwner(self, "ANCHOR_BOTTOMRIGHT")
     GameTooltip:SetText(self.label:GetText() or "", unpack(self.colour or T.gold))
     for _, l in ipairs(self.lines or {}) do
-      GameTooltip:AddLine(l, 0.93, 0.88, 0.76, true)
+      GameTooltip:AddLine(l, T.text[1], T.text[2], T.text[3], true)
     end
     GameTooltip:Show()
   end)
@@ -554,9 +537,10 @@ local function portrait()
 end
 
 function build()
+  HearthtaleSettings = HearthtaleSettings or {}
   local window = K.gameWindow("HearthtaleFrame", TITLE)
   book = window or K.dialog("HearthtaleFrame", TITLE)
-  K.movable(book, 780, 560)
+  K.movable(book, K.BOOK_W, K.BOOK_H, K.place(HearthtaleSettings, "book"))
   local edge = window and 8 or 14
 
   -- Beside the portrait, a Hardcore life's mark (refresh shows it).
@@ -674,7 +658,7 @@ end
 -- A chapter closes: a line in chat with a link to it.
 -- (the kit's links: |Hhearthtale:<target>|h, followed below)
 local followLink
-local link = K.links("hearthtale", function(target) followLink(target) end, "c9a227")
+local link = K.links("hearthtale", function(target) followLink(target) end)
 function ns.link(target, text) return link(target, text) end
 ns.onChapter = function(number)
   print(ns.PREFIX .. L["Entry %d is written. %s"]:format(number, ns.link("chapter:" .. number, L["Read it"])))

@@ -20,11 +20,17 @@ local L = K.L
 -- (minimapAngle: the button's place around the minimap, in degrees; 200 is
 -- to the left, clear of the game's buttons and the siblings')
 -- (welcomed: the welcome page was seen, Welcome.lua: never copied)
-local DEFAULTS = { toast = true, minimapHidden = false, minimapAngle = K.MINIMAP_ANGLES.Hearthtale, welcomed = false }
-local SHARED = { "toast", "minimapHidden", "minimapAngle" } -- (what a copy carries)
+local DEFAULTS = {
+  toast = true,
+  minimapHidden = false,
+  minimapAngle = K.MINIMAP_ANGLES.Hearthtale,
+  bannerSeconds = K.BANNER_SECONDS,
+  welcomed = false,
+}
+local SHARED = { "toast", "bannerSeconds", "minimapHidden", "minimapAngle" } -- (what a copy carries)
 
--- The profiles (Kit.lua): a code "HT1:t1:h0:a200" (the banner, the minimap
--- button hidden, its angle; 0.7.0's "m", the button shown, and 0.8's "c",
+-- The profiles (Kit.lua): a code "HT1:t1:n10:h0:a200" (the banner, how long it
+-- stays, the minimap button hidden, its angle; 0.7.0's "m", the button shown, and 0.8's "c",
 -- the chat lines, are left out of a code now, and of an older one taken).
 local P = K.profiles({
   saved = function()
@@ -33,7 +39,7 @@ local P = K.profiles({
   end,
   defaults = DEFAULTS,
   shared = SHARED,
-  letters = { toast = "t", minimapHidden = "h", minimapAngle = "a" },
+  letters = { toast = "t", bannerSeconds = "n", minimapHidden = "h", minimapAngle = "a" },
   tag = "HT1",
   changed = function(k)
     if (k == "minimapHidden" or k == "minimapAngle") and ns.updateMinimapButton then ns.updateMinimapButton() end
@@ -109,6 +115,7 @@ function ns.createSettingsPanel()
     L["Alert when a book closes"],
     L["A banner among the game's alerts when a Hardcore character falls and its book joins the Hall of the Fallen (the chat line stays)."]
   )
+  O:bannerSeconds("bannerSeconds")
   O:check(
     "minimapHidden",
     L["Minimap button"],

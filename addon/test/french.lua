@@ -22,7 +22,7 @@ G.login()
 check(last():find("de l'entrée 1%. Tapez /ht"), "the login's line in French", last())
 SlashCmdList.HEARTHTALE("what")
 check(
-  last():find("^|c%x+Hearthtale:|r /ht ouvre le journal, /ht hall la Salle des Disparus%."),
+  last():find("^|c%x+Hearthtale.-:|r /ht ouvre le journal, /ht hall la Salle des Disparus%."),
   "/ht's help in French",
   last()
 )

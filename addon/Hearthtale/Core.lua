@@ -15,8 +15,21 @@
 --                            note in its margin (the window, /ht title, /ht note)
 -- and the events every file listens to (ns.on, ns.onUnit).
 local _, ns = ...
-local L = ns.kit.L
-local PREFIX = "|cffc9a227Hearthtale:|r "
+local K = ns.kit
+local L = K.L
+
+-- The kit's (Kit.lua), in Hearthtale's own theme: the embers of a fire at
+-- rest, a warm accent over panels a shade warmer.
+K.theme({
+  accent = { 0.93, 0.62, 0.38 },
+  ring = { 0.80, 0.46, 0.26 },
+  bar = { 0.90, 0.50, 0.20 },
+  tint = { 1.00, 0.90, 0.82 },
+  shade = { 0.05, 0.025, 0.015, 0.55 },
+  highlight = { 1.00, 0.78, 0.60 },
+})
+
+local PREFIX = K.prefix("Hearthtale")
 ns.PREFIX = PREFIX
 
 -- Forever (ns.forever, the kit's: a modern client, interface 16xxx), with

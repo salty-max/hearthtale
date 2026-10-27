@@ -83,7 +83,12 @@ local banners
 local function toast(guid)
   local life = hall()[guid]
   if not life then return end
-  banners = banners or ns.kit.banners({ name = "HearthtaleBanner", art = LOGO, seconds = 20 })
+  banners = banners
+    or ns.kit.banners({
+      name = "HearthtaleBanner",
+      art = LOGO,
+      seconds = function() return ns.option("bannerSeconds") end,
+    })
   banners:show({
     picture = ns.kit.unitPortrait("player", LOGO),
     medal = ns.FALLEN_SEAL,

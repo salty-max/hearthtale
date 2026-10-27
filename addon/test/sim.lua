@@ -167,7 +167,7 @@ check(
   "… its choices copied (never whether it saw the welcome), the boxes with them"
 )
 local code = ns.exportCode()
-check(code == "HT1:t0:h1:a90", "… a code for them: " .. code)
+check(code == "HT1:t0:n10:h1:a90", "… a code for them: " .. code)
 check(ns.importCode("HT1:t1:h0:a200") and ns.option("toast"), "… a code taken")
 check(
   not ns.importCode("hello") and not ns.importCode("HT1:x9") and ns.option("toast"),
