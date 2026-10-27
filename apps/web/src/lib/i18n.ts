@@ -93,7 +93,8 @@ const en = {
     macosDetail: "macOS 11 or later: move it to Applications",
     yours: "For your computer",
     windowsArm: "Windows on ARM",
-    unsigned: "Not code-signed yet: Windows and macOS warn the first time you open it.",
+    unsigned:
+      "Not code-signed yet: Windows and macOS warn the first time you open it (Windows: More info, then Run anyway). If Smart App Control on Windows 11 blocks it, turn that off in Windows Security, or tell us.",
     uploadInstead: "Rather not install Ravenpost? Upload your saved file from the library instead.",
     stepsTitle: "3. Sign in",
     steps: [
