@@ -79,7 +79,7 @@ ns.translate({
     ["Hardcore"] = "Hardcore",
     ["Help the addons keep up with Forever: what the game tells you of quests, creatures and NPCs goes to their shared database. Never your name, your character or your chat. It needs Ravenpost, a small app: %s"] = "Ayuda a los addons a seguir el ritmo de Forever: lo que el juego te cuenta de misiones, criaturas y PNJ va a su base de datos compartida. Tu nombre, tu personaje y tu chat nunca se envían. Hace falta Ravenpost, una pequeña aplicación: %s",
     ["highest level"] = "nivel más alto",
-    ["How long the alert stays on screen. At 0 it stays until you read or dismiss it (right-click)."] = "Cuánto tiempo permanece el aviso en pantalla. Con 0, permanece hasta que lo lees o lo cierras con clic derecho.",
+    ["How long the alert stays on screen. At 0 it stays until you read or dismiss it (right-click)."] = "Tiempo que permanece el aviso en pantalla. Con 0, permanece hasta que lo lees o lo cierras con clic derecho.",
     ["Its death will close its book. The game can't say so here."] = "Su muerte cerrará el libro. En este cliente, el juego no indica si el personaje es Hardcore.",
     ["Its title"] = "Su título",
     ["Its title (the journal's own: %s)"] = "Su título (el del diario: %s)",
