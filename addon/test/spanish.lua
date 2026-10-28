@@ -110,14 +110,16 @@ check(
 )
 ns.openChapter(1)
 check(
-  HearthtalePage.title:GetText() == "Mi primer día" and contains(HearthtalePage.body:GetText(), "Nota"),
-  "the page renders the player title and Spanish note heading"
+  HearthtalePage.title:GetText() == "Mi primer día"
+    and HearthtalePage.asides[1]:IsShown()
+    and HearthtalePage.asides[1].text:GetText() == before.note,
+  "the page renders the player title, and the note in its margin"
 )
 check(
-  contains(HearthtalePage.over:GetText(), "ENTRADA 1") and contains(HearthtalePage.over:GetText(), "EN CURSO"),
-  "the entry's uppercase header"
+  contains(HearthtalePage.sub:GetText(), "Entrada 1") and contains(HearthtalePage.sub:GetText(), "en curso"),
+  "the entry's header line"
 )
-check(contains(HearthtalePage.body:GetText(), before.text), "the rendered diary prose keeps its original words")
+check(contains(HearthtalePage.note:GetText(), before.text), "the rendered diary prose keeps its original words")
 G.logout()
 local saved = journal.book
 check(saved.chapters[1].diary == before.text, "Spanish UI saves the original diary prose")
@@ -197,7 +199,7 @@ ns.forgetWritten(journal)
 
 -- The Hall's cards use whole, gender-neutral descriptions of death.
 ns.openHall()
-check(HearthtaleHallPage.title:GetText() == "El Salón de los Caídos", "the Hall's translated title")
+check(HearthtalePage.title:GetText() == "El Salón de los Caídos", "the Hall's translated title")
 check(rendered("Aún no ha caído nadie. Que siga así."), "the empty Hall's message")
 local deaths = {
   { cause = "foe", foe = "Timber", text = "murió a manos de Timber" },
@@ -214,7 +216,7 @@ for i, d in ipairs(deaths) do
   HearthtaleHall.lives[life.guid] = life
 end
 ns.openHall("overview")
-for _, card in ipairs(HearthtaleHallPage.cards) do
+for _, card in ipairs(HearthtalePage.cards) do
   local n = tonumber((card.name:GetText() or ""):match("^Vida (%d+)$"))
   if n then
     check(
@@ -244,7 +246,10 @@ check(
   "the translated death banner"
 )
 ns.openHall(journal.guid)
-check(HearthtalePage.over:GetText() == "HARDCORE  \194\183  SIN VIDA", "the Hall epitaph's gender-neutral header")
+check(
+  HearthtalePage.sub:GetText():find("^Hardcore  \194\183  sin vida  \194\183  "),
+  "the Hall epitaph's gender-neutral header"
+)
 check(
   contains(HearthtalePage.sub:GetText(), "Enana Paladín"),
   "the epitaph uses localized race and client class labels"
@@ -268,14 +273,12 @@ if output then
     "\n\n",
     L["Your character's own journal, written as you play."],
     "\n\n",
-    HearthtalePage.over:GetText(),
-    "\n",
     HearthtalePage.sub:GetText(),
     "\n\n",
     last(),
     "\n\n"
   )
-  for _, card in ipairs(HearthtaleHallPage.cards) do
+  for _, card in ipairs(HearthtalePage.cards) do
     if card.name and card.name:GetText() ~= "" then
       file:write(card.name:GetText(), "\n", card.facts:GetText(), "\n")
     end

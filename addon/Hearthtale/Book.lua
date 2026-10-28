@@ -1,19 +1,20 @@
--- The journal as a book, in a standard game window, as its siblings
--- (Lorekeeper's Codex, Yonder): the character's portrait in
--- the corner, who they are beside it. Two tabs. The Journal: on the left, the
--- prologue (a character met mid-life) and the chapters (one from rest to rest),
--- where each closed and the levels it covers under it, a skull for a close
--- call, a star for a rare; on the right, the open chapter as its diary entry
--- (Diary.lua), the journal as the character writes it (a closed book's last
--- one ends with its epitaph, in the accent), under a header with the life's
--- crest (a fallen one's with a skull on it). The Hall of the Fallen
--- (Hall.lua): at a glance first (the kit's page: its figures, each fallen life
--- as a card), then the closed books of the account's Hardcore characters, the
--- open one's epitaph and chapters under its name. The siblings' look, from the
--- shared kit (Kit.lua), in an ember theme: light text and warm titles on dark
--- panels (Forever's Professions cards; on Classic, the game's insets and the
--- quest log's dark book behind the list). The text is written from the
--- records each time it is shown (Diary.lua). /hearthtale opens it.
+-- The journal as a book, the kit's (K.book: the game's window, the list on
+-- the left, the page on the right, the search, the tabs), as its siblings
+-- (Lorekeeper's Codex, Yonder): the character's portrait in the corner, a
+-- Hardcore life's mark beside it. Two tabs. The Journal: on the left, the
+-- prologue (a character met mid-life) and the chapters (one from rest to
+-- rest), where each closed and the levels it covers under it, a skull for a
+-- close call, a star for a rare; on the right, the open chapter as its diary
+-- entry (Diary.lua), the journal as the character writes it (the player's
+-- note in its margin, the kit's aside; a closed book's last one ends with its
+-- epitaph, in the accent), under the kit's header with the life's crest (a
+-- fallen one's with a skull on it). The Hall of the Fallen (Hall.lua): at a
+-- glance first (its figures, each fallen life as a card), then the closed
+-- books of the account's Hardcore characters, the open one's epitaph and
+-- chapters under its name. The search finds an entry by its words. The
+-- siblings' look, from the shared kit (Kit.lua), in an ember theme. The text
+-- is written from the records each time it is shown (Diary.lua). /hearthtale
+-- opens it.
 local _, ns = ...
 
 -- ── look ─────────────────────────────────────────────────────────────────────
@@ -21,7 +22,7 @@ local _, ns = ...
 local K = ns.kit
 local L = K.L
 local T = K.T
-local label, rule, panel = K.label, K.rule, K.panel
+local label = K.label
 local BODY_FONT, TITLE_FONT = K.BODY_FONT, K.TITLE_FONT
 local SKULL = "Interface\\TargetingFrame\\UI-RaidTargetingIcon_8"
 local STAR = "Interface\\TargetingFrame\\UI-RaidTargetingIcon_1"
@@ -32,17 +33,13 @@ local FALLEN = { 0.85, 0.32, 0.25 }
 ns.FALLEN_SEAL = { SKULL, L["Fallen"], "", FALLEN }
 
 -- ── the book ─────────────────────────────────────────────────────────────────
-local book, list, page, hallPage
-local build -- made on first opening (below)
+local book, list, page -- (the window, its list, its page: the kit's)
 local written -- this character's book as last written: { prologue, chapters, epitaph }
 local current -- its open chapter: a number, or "prologue"
 local hallLife, hallKey -- in the Hall: the open life (its guid) and its page ("epitaph", "prologue", a chapter's number)
 local asked -- opened at a page (a link): don't go to the last chapter
-local WIDTH = 440
-local HEADER_H = 92
-local ROW_WIDTH = 204
+local WIDTH = K.PAGE_WIDTH
 local EPITAPH = K.hex(T.accent) .. "%s|r" -- the epitaph, in the accent
-local NOTE = K.hex(T.accent) .. L["Note"] .. "|r\n|cffbfb08f%s|r" -- the player's own, in the margin
 
 local DOT = "  \194\183  " -- (a middle dot between the parts of a line)
 
@@ -69,149 +66,128 @@ local function levels(ch)
   return L["levels %d to %d"]:format(ch.from, ch.to)
 end
 
--- A page's header: a line above its title (what it is, how it stands), the
--- title, and one line under it (where, which levels, when), never wrapped.
-local function upper(parts) return ns.upper(table.concat(parts, DOT)) end
+-- A page's header: the kit's, the title and one line under it (what it is,
+-- how it stands, where, which levels, when), never wrapped: cut short at its
+-- end, the date first to go.
 local function line(parts)
   local s = table.concat(parts, DOT)
   return s:sub(1, 1):upper() .. s:sub(2)
 end
 local editor -- (the editor of an entry's own title and note, below)
+local openEditor
 -- The life's crest on the page, a fallen one's skull on it.
 local function crestOf(life) return K.crest(life and life.class, LOGO) end
-local function show(over, title, sub, text, life)
-  if hallPage then hallPage:Hide() end
+-- (paragraphs: the kit's, strings and asides; editable: an entry of mine,
+-- its title and note mine to write)
+local function show(title, sub, paragraphs, life, editable)
   page:SetShown(not (editor and editor:IsShown())) -- (under the editor: kept hidden)
-  page.portrait.tex:SetVertexColor(1, 1, 1)
-  crestOf(life)(page.portrait)
-  K.setBadge(page.portrait.badge, life and life.closed and ns.FALLEN_SEAL or nil)
-  page.over:SetText(over or "")
-  page.title:SetText(title)
-  page.sub:SetText(sub or "")
-  page.body:SetTextColor(unpack(text and T.text or T.soft))
-  page.body:SetText(text or L["Nothing written yet."])
-  page.child:SetHeight(HEADER_H + page.body:GetStringHeight() + 24)
-  page:ScrollTo(0)
+  page:start(title, sub, crestOf(life), life and life.closed and ns.FALLEN_SEAL or nil)
+  if paragraphs and #paragraphs > 0 then
+    page:text(paragraphs)
+  else
+    page:paragraph(L["Nothing written yet."], T.soft)
+  end
+  if editable then page:buttons({ { L["Edit"], function() openEditor() end } }) end
+  page:finish()
 end
 
 -- A page of a book (mine or a fallen one's): the prologue, a chapter (the last
 -- one of a closed book ends with its epitaph), or the epitaph alone.
-local function showPage(life, w, key)
+local function showPage(life, w, key, mine)
   if key == "prologue" then
     local p = life.prologue or {}
     return show(
-      upper({ L["Before this journal"] }),
       L["Prologue"],
-      line({ L["taken up at level %d"]:format(p.level or 0) }),
-      w.prologue,
+      line({ L["Before this journal"], L["taken up at level %d"]:format(p.level or 0) }),
+      { w.prologue },
       life
     )
   end
   if key == "epitaph" then
     local d = life.death or {}
     local race, class = ns.lifeNames(life)
-    local sub = { L["Level %d %s %s"]:format(d.level or 0, race or "", class or "") }
+    local sub = { L["Hardcore"], L["fallen"], L["Level %d %s %s"]:format(d.level or 0, race or "", class or "") }
     if life.realm then table.insert(sub, life.realm) end
     table.insert(sub, day(d.at))
-    return show(
-      upper({ L["Hardcore"], L["fallen"] }),
-      life.name or "",
-      line(sub),
-      w.epitaph and EPITAPH:format(w.epitaph),
-      life
-    )
+    return show(life.name or "", line(sub), { w.epitaph and EPITAPH:format(w.epitaph) }, life)
   end
   local ch = w.chapters[key]
   if not ch then return end
-  local over = {}
-  if ch.title then table.insert(over, L["Entry %d"]:format(key)) end
+  local parts = {}
+  if ch.title then table.insert(parts, L["Entry %d"]:format(key)) end
   local last = key == #w.chapters
   if life.closed and last then
-    table.insert(over, L["the end"])
+    table.insert(parts, L["the end"])
   elseif ch.open then
-    table.insert(over, L["still being written"])
+    table.insert(parts, L["still being written"])
   end
-  local parts = {}
   if ch.place then table.insert(parts, ch.place) end
   table.insert(parts, levels(ch))
   table.insert(parts, when(ch))
-  local text = ch.text
-  if ch.note then text = (text and text .. "\n\n" or "") .. NOTE:format(ch.note) end
-  if life.closed and last and w.epitaph then text = (text and text .. "\n\n" or "") .. EPITAPH:format(w.epitaph) end
-  show(upper(over), ch.title or L["Entry %d"]:format(key), line(parts), text, life)
+  -- (the entry, the player's note in its margin, a closed book's epitaph)
+  local paragraphs = { ch.text }
+  if ch.note then
+    -- selene: allow(mixed_table) (the kit's paragraph: its text, and what it is)
+    table.insert(paragraphs, { ch.note, aside = true })
+  end
+  if life.closed and last and w.epitaph then table.insert(paragraphs, EPITAPH:format(w.epitaph)) end
+  show(ch.title or L["Entry %d"]:format(key), line(parts), paragraphs, life, mine)
 end
 
+-- The list: the kit's, an entry a row of two lines (its title, and where and
+-- which levels under it), set in under a fallen life's name ("inner"); its
+-- marks on the right, a skull for a close call, a star for a rare.
 local rows = {}
 ns.bookRows = rows -- for the tests
-local function row(i)
-  local r = rows[i]
-  if r then return r end
-  r = CreateFrame("Button", nil, list.child)
-  r:SetSize(ROW_WIDTH, 34)
-  r.title = label(r, BODY_FONT, 13, T.text)
-  r.title:SetWordWrap(false) -- (a long title cut short, never over the marks)
-  r.place = label(r, BODY_FONT, 11, T.soft)
-  r.place:SetPoint("TOPLEFT", r.title, "BOTTOMLEFT", 0, -2)
-  r.place:SetPoint("RIGHT", -8, 0)
-  r.place:SetWordWrap(false)
-  -- Marks: a skull for a close call, a star for a rare.
-  r.marks = {}
-  for m, file in ipairs({ SKULL, STAR }) do
-    local t = r:CreateTexture(nil, "ARTWORK")
-    t:SetTexture(file)
-    t:SetSize(12, 12)
-    r.marks[m] = t
+local function style(row, kind)
+  if kind ~= "entry" and kind ~= "inner" then return K.listStyle(row, kind) end
+  local height = K.listStyle(row, "entry")
+  if kind == "inner" then
+    row.text:SetPoint("TOPLEFT", 18, -4)
+    row.under:SetPoint("TOPLEFT", 18, -21)
   end
-  r.selected = K.highlight(r)
-  rows[i] = r
-  return r
+  return height
+end
+local function marked(r, close, rare)
+  if not rawget(r, "marks") then
+    r.marks = {}
+    for m, file in ipairs({ SKULL, STAR }) do
+      local t = r:CreateTexture(nil, "ARTWORK")
+      t:SetTexture(file)
+      t:SetSize(12, 12)
+      r.marks[m] = t
+    end
+  end
+  local x, on = -8, { close, rare }
+  for m = 1, 2 do -- not ipairs: it stops at the first chapter without a close call
+    local t = r.marks[m]
+    t:ClearAllPoints()
+    if on[m] then
+      t:SetPoint("TOPRIGHT", r, "TOPRIGHT", x, -5)
+      x = x - 14
+    end
+    t:SetShown(on[m] and true or false)
+  end
+  -- (a long title cut short, never over the marks)
+  if x < -8 then r.text:SetPoint("TOPRIGHT", r, "TOPRIGHT", x - 2, -4) end
 end
 
--- The list: { title, place, close, rare, indent, selected, click } per row.
--- scroll: bring the selected row into view.
+-- The list: { title, place, close, rare, indent, selected, click, words } per
+-- row, those the search finds (its words: the entry's own too). scroll: bring
+-- the selected row into view.
 local function render(entries, scroll)
-  for _, r in ipairs(rows) do
-    r:Hide()
-  end
-  local y, selectedY = 0, nil
-  for i, e in ipairs(entries) do
-    local r = row(i)
-    r:ClearAllPoints()
-    r:SetPoint("TOPLEFT", 0, -y)
-    r.key = e.key
-    r.title:ClearAllPoints()
-    r.title:SetPoint("TOPLEFT", 8 + (e.indent or 0), -3)
-    r.title:SetPoint("RIGHT", r, "RIGHT", -36, 0)
-    -- (in the body face, as every book's rows are: the display face for headings)
-    r.title:SetFont(BODY_FONT, e.indent and 12 or 13, "")
-    r.title:SetTextColor(unpack(e.click and T.text or T.soft))
-    r.title:SetText(e.title)
-    r.place:SetText(e.place or "")
-    local x = -8
-    local marks = { e.close, e.rare }
-    for m = 1, 2 do -- not ipairs: it stops at the first chapter without a close call
-      local on, t = marks[m], r.marks[m]
-      t:ClearAllPoints()
-      if on then
-        t:SetPoint("TOPRIGHT", r, "TOPRIGHT", x, -5)
-        x = x - 14
-      end
-      t:SetShown(on and true or false)
+  local q = K.query(book.search)
+  list:begin()
+  for _, e in ipairs(entries) do
+    if e.always or K.finds(table.concat({ e.title, e.place or "", e.words or "" }, " "), q) then
+      local r = list:add(e.indent and "inner" or "entry", e.title, nil, e.place)
+      r.key = e.key
+      marked(r, e.close, e.rare)
+      r:SetScript("OnClick", e.click)
+      if e.selected then list:pick(r) end
     end
-    r.selected:SetShown(e.selected and true or false)
-    if e.selected then selectedY = y end
-    r:SetScript("OnClick", e.click)
-    if e.click then
-      r:Enable()
-    else
-      r:Disable()
-    end
-    r:Show()
-    y = y + 36
   end
-  list.child:SetHeight(y + 8)
-  list:UpdateThumb()
-  if scroll and selectedY then list:ScrollTo(selectedY) end
+  list:finish(scroll)
 end
 
 -- A book's chapters as rows (indent: under a fallen life's name).
@@ -220,6 +196,7 @@ local function chapterRows(entries, w, selectedKey, open, indent)
     table.insert(entries, {
       key = "epitaph",
       title = L["Epitaph"],
+      words = w.epitaph,
       indent = indent,
       selected = selectedKey == "epitaph",
       click = function() open("epitaph") end,
@@ -230,6 +207,7 @@ local function chapterRows(entries, w, selectedKey, open, indent)
       key = "prologue",
       title = L["Prologue"],
       place = L["Before this journal"],
+      words = w.prologue,
       indent = indent,
       selected = selectedKey == "prologue",
       click = function() open("prologue") end,
@@ -244,6 +222,7 @@ local function chapterRows(entries, w, selectedKey, open, indent)
       key = ch.number,
       title = ch.title or number,
       place = ch.title and (number .. DOT .. under) or under,
+      words = table.concat({ ch.text or "", ch.note or "" }, " "),
       close = ch.close,
       rare = ch.rare,
       indent = indent,
@@ -266,7 +245,7 @@ end
 
 -- The Journal tab: this character's book, rewritten from the records. latest:
 -- open the last chapter (opening the book), else keep the open one.
-local function refreshJournal(latest)
+local function refreshJournal(latest, scroll)
   local c = ns.journal()
   written = ns.writeBook(c)
   local known = current == "prologue" and written.prologue or written.chapters[current]
@@ -279,14 +258,13 @@ local function refreshJournal(latest)
     current = key
     ns.refresh()
   end)
-  render(entries, latest)
-  if current then
-    showPage(c, written, current)
-  else
-    show("", "", "", nil, c)
-  end
+  render(entries, scroll)
   if editor and editor:IsShown() and editor.n ~= current then closeEditor() end
-  page.edit:SetShown(type(current) == "number") -- (an entry of mine: its title, a note)
+  if current then
+    showPage(c, written, current, true)
+  else
+    show("", "", nil, c)
+  end
 end
 
 -- How a life ended, in a few words: "slain by Hogger in Elwynn Forest".
@@ -299,45 +277,42 @@ end
 -- The Hall at a glance (the kit's page): its figures, each fallen life as a
 -- card, the most recent first; a click opens its epitaph.
 local function showHall(fallen)
-  page:Hide()
-  hallPage:Show()
   local sub = #fallen == 0 and L["No one has fallen. May it stay so."]
     or (#fallen == 1 and L["One life rests here"] or L["%d lives rest here"]:format(#fallen))
-  hallPage:start(L["The Hall of the Fallen"], sub, K.icon(MARK))
+  page:start(L["The Hall of the Fallen"], sub, K.icon(MARK))
   if #fallen == 0 then
-    hallPage:paragraph(
+    page:paragraph(
       L["The closed books of Hardcore characters rest here, to be read again: each life's epitaph, then its entries."],
       T.soft
     )
-    return hallPage:finish()
+    return page:finish()
   end
   local highest, entries = 0, 0
   for _, life in ipairs(fallen) do
     highest = math.max(highest, life.death and life.death.level or 0)
     entries = entries + #(life.chapters or {})
   end
-  hallPage:stats({
+  page:stats({
     { tostring(#fallen), K.plural(#fallen, "life closed", "lives closed") },
     { tostring(highest), L["highest level"] },
     { tostring(entries), K.plural(entries, "entry written", "entries written") },
   })
-  hallPage:section(L["The fallen"])
+  page:section(L["The fallen"])
   for _, life in ipairs(fallen) do
     local d = life.death or {}
     local race, class = ns.lifeNames(life)
     local facts = L["Level %d %s %s, %s"]:format(d.level or 0, race or "", class or "", ending(d))
-    hallPage:card(life.name or "?", facts .. (d.at and (", " .. day(d.at)) or ""), crestOf(life), function()
+    page:card(life.name or "?", facts .. (d.at and (", " .. day(d.at)) or ""), crestOf(life), function()
       hallLife, hallKey = life.guid, "epitaph"
       ns.refresh()
     end, ns.FALLEN_SEAL)
   end
-  hallPage:finish()
+  page:finish()
 end
 
 -- The Hall tab: at a glance first, then the fallen, the most recent first;
 -- the open one's pages under its name.
 local function refreshHall(scroll)
-  page.edit:Hide()
   if editor and editor:IsShown() then closeEditor() end
   local fallen = ns.fallen()
   local known = false
@@ -352,6 +327,7 @@ local function refreshHall(scroll)
       key = "hall",
       title = L["The Hall of the Fallen"],
       place = #fallen == 0 and L["May it stay so."] or K.plural(#fallen, "%d life", "%d lives"):format(#fallen),
+      always = true,
       selected = hallLife == nil,
       click = function()
         hallLife, hallKey = nil, nil
@@ -367,6 +343,7 @@ local function refreshHall(scroll)
       key = life.guid,
       title = life.name or "?",
       place = L["Level %d %s %s"]:format(d.level or 0, race or "", class or ""),
+      always = life.guid == hallLife, -- (the open one stays, its pages under it)
       selected = life.guid == hallLife and hallKey == "epitaph",
       click = function()
         hallLife, hallKey = life.guid, "epitaph"
@@ -440,7 +417,7 @@ local function buildEditor(sheet)
   editor.note:SetScript("OnEscapePressed", function(self) self:ClearFocus() end)
   ns.bookEditor = editor -- (for the tests)
 end
-local function openEditor()
+function openEditor()
   local ch = written and type(current) == "number" and written.chapters[current]
   if not ch then return end
   if not editor then buildEditor(book.sheet) end
@@ -455,28 +432,7 @@ local function openEditor()
   editor:Show()
 end
 
--- Rewrite what the open tab shows.
-function ns.refresh(latest)
-  local c = ns.journal()
-  if not book or not c then return end
-  book.hardcore:Set(c)
-  if book.selectedTab == 2 then
-    refreshHall(latest)
-  else
-    refreshJournal(latest)
-  end
-end
-
--- A tab chosen (the kit's, under the window's bottom edge): the Journal (1)
--- or the Hall of the Fallen (2).
-function ns.showTab(n)
-  if not book then return end
-  book.selectedTab = n
-  if PanelTemplates_SetTab then PanelTemplates_SetTab(book, n) end
-  ns.refresh(true)
-end
-
--- A Hardcore life's mark beside the portrait: the game's skull for a deadly
+-- Beside the portrait, a Hardcore life's mark: the game's skull for a deadly
 -- foe and the word, what it means on hover (and who says so: the game, or
 -- this character's setting where the game can't tell). Nothing otherwise.
 local function hardcoreMark(parent, x)
@@ -520,9 +476,20 @@ local function hardcoreMark(parent, x)
   return m
 end
 
--- The window: the kit's standard game window (a plain dialog where the client
--- has none), its portrait the character's own face.
-local TITLE = "Hearthtale"
+-- The window: the kit's book, its portrait the character's own face.
+local TAB = { journal = 1, hall = 2 }
+local B = K.book({
+  name = "HearthtaleFrame",
+  title = "Hearthtale",
+  place = function()
+    HearthtaleSettings = HearthtaleSettings or {}
+    return K.place(HearthtaleSettings, "book")
+  end,
+  titles = { L["Journal"], L["Hall of the Fallen"] },
+  first = TAB.journal,
+  search = "HearthtaleSearch",
+  settle = 1, -- (a fight records many moments at once: one rewriting)
+})
 
 local function portrait()
   local p = (book.GetPortrait and book:GetPortrait())
@@ -532,128 +499,71 @@ local function portrait()
   if p and SetPortraitTexture then
     SetPortraitTexture(p, "player")
   elseif book.SetPortraitToAsset then
-    book:SetPortraitToAsset("Interface\\AddOns\\Hearthtale\\Media\\Logo")
+    book:SetPortraitToAsset(LOGO)
   end
 end
 
-function build()
-  HearthtaleSettings = HearthtaleSettings or {}
-  local window = K.gameWindow("HearthtaleFrame", TITLE)
-  book = window or K.dialog("HearthtaleFrame", TITLE)
-  K.movable(book, K.BOOK_W, K.BOOK_H, K.place(HearthtaleSettings, "book"))
-  local edge = window and 8 or 14
+-- The two tabs share the list and the page (made by the first shown).
+local function build(f)
+  if book then return end
+  book = f
+  book.hardcore = hardcoreMark(book, 64)
+  list = K.list(book.left, style, rows, false, "HearthtaleList")
+  page = K.page(book.sheet, "HearthtalePage")
+  page.sub:SetWordWrap(false) -- (its line cut short, never on two)
+end
+-- (scroll: the tab shown, the book opened: the last chapter, unless it was
+-- opened at a page)
+local function refresh(scroll)
+  local c = ns.journal()
+  if not c then return end
+  book.hardcore:Set(c)
+  if book.selectedTab == TAB.hall then
+    refreshHall(scroll)
+  else
+    refreshJournal(scroll and not asked, scroll)
+  end
+  asked = false
+end
+local function shown() portrait() end
+B:add(TAB.journal, { build = build, show = shown, refresh = refresh })
+B:add(TAB.hall, {
+  build = build,
+  show = shown,
+  refresh = refresh,
+  chosen = function()
+    hallLife, hallKey = nil, nil
+  end, -- (the Hall at a glance)
+})
 
-  -- Beside the portrait, a Hardcore life's mark (refresh shows it).
-  book.hardcore = hardcoreMark(book, window and 64 or 20)
+-- Rewrite what the open tab shows (latest: as on opening it).
+function ns.refresh(latest) B:refresh(latest) end
 
-  -- Left: the chapters.
-  local left = panel(book, true)
-  book.left = left
-  left:SetPoint("TOPLEFT", edge, -58)
-  left:SetPoint("BOTTOMLEFT", edge, edge)
-  left:SetWidth(244)
-  list = K.scrollArea(left, ROW_WIDTH, "HearthtaleList")
-  list:SetPoint("TOPLEFT", left, "TOPLEFT", 12, -12)
-  list:SetPoint("BOTTOMRIGHT", left, "BOTTOMRIGHT", -18, 12)
-
-  -- Right: the chapter.
-  local sheet = panel(book)
-  book.sheet = sheet
-  sheet:SetPoint("TOPLEFT", left, "TOPRIGHT", 4, 32)
-  sheet:SetPoint("BOTTOMRIGHT", -edge, edge)
-  page = K.scrollArea(sheet, WIDTH, "HearthtalePage")
-  page:SetPoint("TOPLEFT", sheet, "TOPLEFT", 26, -22)
-  page:SetPoint("BOTTOMRIGHT", sheet, "BOTTOMRIGHT", -22, 14)
-
-  -- The header, as the family's pages: the life's crest (a fallen one's with
-  -- its skull), what the page is and how it stands, its title, then where,
-  -- which levels and when (each on one line, cut short rather than wrapped).
-  page.portrait = K.roundIcon(page.child, 64, true)
-  page.portrait:SetPoint("TOPLEFT", 2, -2)
-  page.portrait.badge = K.badge(page.portrait, 26)
-  page.over = label(page.child, BODY_FONT, 10, T.gold)
-  page.over:SetPoint("TOPLEFT", 82, -6)
-  page.over:SetWidth(WIDTH - 82 - 80) -- (clear of the Edit button)
-  page.over:SetWordWrap(false)
-  page.over:SetAlpha(0.85)
-  page.title = label(page.child, TITLE_FONT, 24, T.gold)
-  page.title:SetPoint("TOPLEFT", 82, -22)
-  page.title:SetWidth(WIDTH - 82)
-  page.title:SetWordWrap(false)
-  page.sub = label(page.child, BODY_FONT, 12, T.soft)
-  page.sub:SetPoint("TOPLEFT", page.title, "BOTTOMLEFT", 0, -7)
-  page.sub:SetWidth(WIDTH - 82)
-  page.sub:SetWordWrap(false)
-  local headerRule = rule(page.child)
-  headerRule:SetPoint("TOPLEFT", 0, -78)
-  headerRule:SetPoint("TOPRIGHT", 0, -78)
-  page.body = label(page.child, BODY_FONT, 13, T.text)
-  page.body:SetPoint("TOPLEFT", 0, -HEADER_H)
-  page.body:SetWidth(WIDTH)
-  page.body:SetSpacing(4)
-  page.edit = buttonOf(sheet, L["Edit"], 64)
-  page.edit:SetHeight(20)
-  page.edit:SetPoint("TOPRIGHT", sheet, "TOPRIGHT", -22, -20)
-  page.edit:SetScript("OnClick", openEditor)
-  page.edit:Hide()
-  ns.bookEdit = page.edit -- (for the tests)
-  -- The Hall at a glance: the kit's page, in the same place.
-  hallPage = K.page(sheet, "HearthtaleHallPage")
-  hallPage:Hide()
-
-  book:SetScript("OnShow", function()
-    portrait()
-    ns.refresh(not asked)
-    asked = false
-  end)
-  K.tabs(book, { L["Journal"], L["Hall of the Fallen"] }, function(n)
-    if n == 2 then
-      hallLife, hallKey = nil, nil
-    end -- (the Hall at a glance)
-    ns.showTab(n)
-  end)
-  book.selectedTab = 1
-  if PanelTemplates_SetTab then PanelTemplates_SetTab(book, 1) end
+-- A tab chosen: the Journal (1) or the Hall of the Fallen (2).
+function ns.showTab(n)
+  if B.frame then B:show(n) end
 end
 
 function ns.toggle()
   if not ns.journal() then return end
-  if not book then build() end
-  book:SetShown(not book:IsShown())
+  B:toggle()
 end
 
 -- Open the journal at a chapter (a click on its line in chat).
 function ns.openChapter(number)
   if not ns.journal() then return end
-  if not book then build() end
-  current = number
-  book.selectedTab = 1
-  if PanelTemplates_SetTab then PanelTemplates_SetTab(book, 1) end
-  if book:IsShown() then
-    ns.refresh()
-  else
-    asked = true -- (its OnShow opens it there, not at the last chapter)
-    book:Show()
-  end
+  current, asked = number, true
+  B:open(TAB.journal)
 end
 
 -- Open the Hall at a fallen life (a click on the chat line or the toast); with
 -- none, at the most recent.
 function ns.openHall(guid)
   if not ns.journal() then return end
-  if not book then build() end
   hallLife, hallKey = guid, "epitaph"
-  book.selectedTab = 2
-  if PanelTemplates_SetTab then PanelTemplates_SetTab(book, 2) end
-  if book:IsShown() then
-    ns.refresh(true)
-  else
-    book:Show()
-  end
+  B:open(TAB.hall)
 end
-ns.onHall = function()
-  if book and book:IsShown() then ns.refresh() end
-end
+ns.onHall = function() B:refresh() end
 
 -- A chapter closes: a line in chat with a link to it.
 -- (the kit's links: |Hhearthtale:<target>|h, followed below)
@@ -703,17 +613,4 @@ end
 
 -- A new moment while the book is open: rewritten a moment later, once (a fight
 -- records many at once).
-local pending = false
-ns.onRecord = function()
-  if not (book and book:IsShown()) or pending then return end
-  pending = true
-  local function later()
-    pending = false
-    if book:IsShown() then ns.refresh() end
-  end
-  if C_Timer then
-    C_Timer.After(1, later)
-  else
-    later()
-  end
-end
+ns.onRecord = function() B:changed() end

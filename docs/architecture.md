@@ -183,16 +183,20 @@ stays there). The writing's files and rules: `docs/writing.md`. The site:
   Second Wind, ~/code/wow-addons/addon-kit: the look, the page and its parts,
   the banners; never edit the copy; `bun run kit:sync` after changing
   the kit, `bun run kit:check` to verify), `Book.lua` (Hearthtale's ember
-  theme on the kit; the window: the portrait, a Hardcore life's mark beside
-  it (a skull and the word, Fallen once closed; on hover what it means and
-  whether the game or the setting says so), chapters on the left, the open
-  one's entry on the right under its header (the life's crest, a skull on a
-  fallen one's; a line above the title: the entry and how it stands; one
-  under it: where, which levels, when, a short date range; never wrapped),
-  the player's note under it, an Edit button for its own title and note; a
-  second tab for the Hall of the Fallen, opening on the Hall at a glance (the
-  kit's page: its figures, each fallen life a card with its crest, how and
-  where it ended), then a life's epitaph and entries under its name),
+  theme on the kit; the window, the kit's book (`K.book`): the portrait, a
+  Hardcore life's mark beside it (a skull and the word, Fallen once closed;
+  on hover what it means and whether the game or the setting says so), the
+  search (an entry found by its title, its place or its words), chapters on
+  the left (the kit's list, an entry a row of two lines, a skull and a star
+  for its marks), the open one's entry on the right on the kit's page under
+  its header (the life's crest, a skull on a fallen one's; one line under
+  the title: the entry and how it stands, where, which levels, when, a short
+  date range; never wrapped, cut at its end), the player's note in its
+  margin (the kit's aside), an Edit button at its end for its own title and
+  note; a second tab for the Hall of the Fallen, the same list and page,
+  opening on the Hall at a glance (its figures, each fallen life a card with
+  its crest, how and where it ended), then a life's epitaph and entries
+  under its name),
   `Hall.lua` (a Hardcore death: the book closed and copied to the
   account-wide Hall, a chat line, the kit's banner among the game's alerts;
   a life's race and class kept by their tokens and its sex, named in today's

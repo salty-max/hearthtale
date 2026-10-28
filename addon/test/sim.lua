@@ -661,13 +661,12 @@ check(
 )
 check(
   rows[1]:IsShown()
-    and rows[1].title:GetText() == titled(ns.journal(), 1)
-    and rows[1].place:GetText():find("still being written", 1, true)
+    and rows[1].text:GetText() == titled(ns.journal(), 1)
+    and rows[1].under:GetText():find("still being written", 1, true)
     and page.title:GetText() == titled(ns.journal(), 1)
-    and page.over:GetText():find("STILL BEING WRITTEN", 1, true)
-    and page.sub:GetText():lower():find("levels 1 to 2", 1, true)
-    and not page.sub:GetText():find("still being written", 1, true),
-  "a row per entry: its title, still being written; the page's header says so above its title, its levels under it"
+    and page.sub:GetText():find("still being written", 1, true)
+    and page.sub:GetText():lower():find("levels 1 to 2", 1, true),
+  "a row per entry: its title, still being written; the page's line under its title says so, and its levels"
 )
 check(rows[1].marks[1]:IsShown() and rows[1].marks[2]:IsShown(), "marks: a skull for a close call, a star for a rare")
 state.sub = "Brewnall Village"
@@ -679,7 +678,7 @@ state.bind = bind
 -- The chapter as its diary entry, the journal as the character writes it,
 -- written again from the record at each new moment.
 check(
-  page.body:GetText() == ns.writeBook(ns.journal()).chapters[1].text and page.body:GetText() ~= "",
+  page.note:GetText() == ns.writeBook(ns.journal()).chapters[1].text and page.note:GetText() ~= "",
   "a chapter reads as its diary entry, written again at each new moment"
 )
 SlashCmdList.HEARTHTALE("")
@@ -896,7 +895,7 @@ check(
 linkHandlers.hearthtale("hearthtale:chapter:1")
 check(B:IsShown() and page.title:GetText() == titled(ns.journal(), 1), "the chapter's link opens the book at it")
 check(
-  rows[1].place:GetText():find("Thunderbrew Distillery, levels 1 to 2", 1, true),
+  rows[1].under:GetText():find("Thunderbrew Distillery, levels 1 to 2", 1, true),
   "… listed with where it closed and its levels"
 )
 SlashCmdList.HEARTHTALE("")
@@ -1012,30 +1011,29 @@ linkHandlers.hearthtale("hearthtale:hall:" .. state.guid)
 check(
   B:IsShown()
     and B.selectedTab == 2
-    and rows[1].title:GetText() == "The Hall of the Fallen"
-    and rows[2].title:GetText() == "Sealinedion"
-    and rows[3].title:GetText() == "Epitaph"
-    and rows[4].title:GetText() == titled(fallenLife, 1)
+    and rows[1].text:GetText() == "The Hall of the Fallen"
+    and rows[2].text:GetText() == "Sealinedion"
+    and rows[3].text:GetText() == "Epitaph"
+    and rows[4].text:GetText() == titled(fallenLife, 1)
     and page.title:GetText() == "Sealinedion"
     and page.portrait.badge:IsShown()
-    and page.body:GetText():find(closedBook.epitaph, 1, true)
+    and page.note:GetText():find(closedBook.epitaph, 1, true)
     and page.sub:GetText():find("Level 2 Dwarf Paladin", 1, true)
-    and page.over:GetText() == "HARDCORE  \194\183  FALLEN",
+    and page.sub:GetText():find("^Hardcore  \194\183  fallen  \194\183  "),
   "the link opens the Hall: the life, its epitaph, its chapters, a skull on its crest"
 )
 rows[7].scripts.OnClick(rows[7])
 check(
   page.title:GetText() == titled(fallenLife, 4)
-    and page.over:GetText():find("THE END", 1, true)
-    and page.body:GetText():find(closedBook.epitaph, 1, true),
+    and page.sub:GetText():find("^The end")
+    and page.note:GetText():find(closedBook.epitaph, 1, true),
   "its last chapter ends with the epitaph"
 )
 -- The Hall's tab: the Hall at a glance, each fallen life a card.
 HearthtaleFrameTab2.scripts.OnClick(HearthtaleFrameTab2)
-local hall = HearthtaleHallPage
+local hall = HearthtalePage -- (the same page, at a glance)
 check(
   hall:IsShown()
-    and not page:IsShown()
     and hall.title:GetText() == "The Hall of the Fallen"
     and hall.tiles[1].value:GetText() == "1"
     and hall.cards[1].name:GetText() == "Sealinedion"
@@ -1044,13 +1042,13 @@ check(
   "the Hall's tab: the Hall at a glance, its figures, each life a card with a skull"
 )
 hall.cards[1].scripts.OnClick(hall.cards[1])
-check(page:IsShown() and not hall:IsShown() and page.title:GetText() == "Sealinedion", "… a card opens its epitaph")
+check(page:IsShown() and page.title:GetText() == "Sealinedion", "… a card opens its epitaph")
 ns.showTab(1)
 check(
   B.hardcore:IsShown()
     and B.hardcore.label:GetText() == "Fallen"
     and page.title:GetText() == titled(ns.journal(), 4)
-    and page.body:GetText():find(closedBook.epitaph, 1, true),
+    and page.note:GetText():find(closedBook.epitaph, 1, true),
   "the Journal tab: my own closed book, the same end, the mark now Fallen"
 )
 SlashCmdList.HEARTHTALE("")
@@ -1087,8 +1085,8 @@ check(
 io.write("    " .. later.prologue .. "\n")
 SlashCmdList.HEARTHTALE("")
 check(
-  rows[1].title:GetText() == "Prologue"
-    and rows[2].title:GetText() == titled(HearthtaleChar, 1)
+  rows[1].text:GetText() == "Prologue"
+    and rows[2].text:GetText() == titled(HearthtaleChar, 1)
     and not (rows[3] and rows[3]:IsShown())
     and page.title:GetText() == titled(HearthtaleChar, 1),
   "its book lists the prologue, then chapter 1"
@@ -1097,7 +1095,7 @@ rows[1].scripts.OnClick(rows[1])
 check(
   page.title:GetText() == "Prologue"
     and page.sub:GetText():find("level 23", 1, true)
-    and page.body:GetText() == later.prologue,
+    and page.note:GetText() == later.prologue,
   "the prologue reads"
 )
 SlashCmdList.HEARTHTALE("")
@@ -1395,7 +1393,9 @@ check(
 SlashCmdList.HEARTHTALE("minimap")
 check(ns.option("minimapHidden") == wasHidden, "… and the button back as it was")
 ns.openChapter(last)
-ns.bookEdit.scripts.OnClick()
+local edit = page.buttonPool[1]
+check(edit.shown and edit.text == "Edit", "an entry of mine: a button to write its title and a note")
+edit.scripts.OnClick(edit)
 local editor = ns.bookEditor
 check(
   editor and editor.shown and editor.note:GetText() == mine.note,
