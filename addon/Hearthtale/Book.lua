@@ -83,7 +83,9 @@ local function crestOf(life) return K.crest(life and life.class, LOGO) end
 local function show(title, sub, paragraphs, life, editable)
   page:SetShown(not (editor and editor:IsShown())) -- (under the editor: kept hidden)
   -- (the same page drawn again as the record changes: where it was read stays)
-  local same = not opening and page.title:GetText() == title
+  -- (by its title and its line: two entries may share a title, not a line)
+  local same = not opening and page.shownTitle == title and page.shownSub == sub
+  page.shownTitle, page.shownSub = title, sub
   page:start(title, sub, crestOf(life), life and life.closed and ns.FALLEN_SEAL or nil)
   if paragraphs and #paragraphs > 0 then
     page:text(paragraphs)

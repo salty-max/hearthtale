@@ -118,7 +118,7 @@ stays there). The writing's files and rules: `docs/writing.md`. The site:
   with no step known to give its totem gives it at its last step that
   brings the prize home ("Bring the Torch of Eternal Flame to …").
 - `addon/Hearthtale/`: `Util.lua` (plain-Lua helpers: the deep copy),
-  `Core.lua` (the character's record, events: `ns.on`, and `ns.onUnit` for a
+  `Core.lua` (Hearthtale's ember theme on the kit, set before the name in chat; the character's record, events: `ns.on`, and `ns.onUnit` for a
   unit event heard for one unit only; `/hearthtale`, the kit's command,
   `K.commands`: alone it opens the journal, an unknown word prints the usage,
   the replies capitalised; the player's own words,
@@ -182,8 +182,7 @@ stays there). The writing's files and rules: `docs/writing.md`. The site:
   `Kit.lua` (a copy of the kit shared with the Codex, Yonder and
   Second Wind, ~/code/wow-addons/addon-kit: the look, the page and its parts,
   the banners; never edit the copy; `bun run kit:sync` after changing
-  the kit, `bun run kit:check` to verify), `Book.lua` (Hearthtale's ember
-  theme on the kit; the window, the kit's book (`K.book`): the portrait, a
+  the kit, `bun run kit:check` to verify), `Book.lua` (the window, the kit's book (`K.book`): the portrait, a
   Hardcore life's mark beside it (a skull and the word, Fallen once closed;
   on hover what it means and whether the game or the setting says so), the
   search (an entry found by its title, its place or its words), chapters on
