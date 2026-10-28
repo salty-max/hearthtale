@@ -108,7 +108,6 @@ ns.translate({
     ["No one has fallen. May it stay so."] = "Niemand ist gefallen. Möge es so bleiben.",
     ["No other character yet"] = "Noch kein anderer Charakter",
     ["No sound"] = "Kein Ton",
-    ["Note"] = "Notiz",
     ["Nothing written yet."] = "Noch nichts geschrieben.",
     ["Nov"] = "Nov.",
     ["Oct"] = "Okt.",

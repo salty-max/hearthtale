@@ -38,6 +38,7 @@ local written -- this character's book as last written: { prologue, chapters, ep
 local current -- its open chapter: a number, or "prologue"
 local hallLife, hallKey -- in the Hall: the open life (its guid) and its page ("epitaph", "prologue", a chapter's number)
 local asked -- opened at a page (a link): don't go to the last chapter
+local opening -- the book opened or a tab shown (else a page drawn again as it changes)
 local WIDTH = K.PAGE_WIDTH
 local EPITAPH = K.hex(T.accent) .. "%s|r" -- the epitaph, in the accent
 
@@ -81,6 +82,8 @@ local function crestOf(life) return K.crest(life and life.class, LOGO) end
 -- its title and note mine to write)
 local function show(title, sub, paragraphs, life, editable)
   page:SetShown(not (editor and editor:IsShown())) -- (under the editor: kept hidden)
+  -- (the same page drawn again as the record changes: where it was read stays)
+  local same = not opening and page.title:GetText() == title
   page:start(title, sub, crestOf(life), life and life.closed and ns.FALLEN_SEAL or nil)
   if paragraphs and #paragraphs > 0 then
     page:text(paragraphs)
@@ -88,7 +91,7 @@ local function show(title, sub, paragraphs, life, editable)
     page:paragraph(L["Nothing written yet."], T.soft)
   end
   if editable then page:buttons({ { L["Edit"], function() openEditor() end } }) end
-  page:finish()
+  page:finish(same)
 end
 
 -- A page of a book (mine or a fallen one's): the prologue, a chapter (the last
@@ -187,7 +190,7 @@ local function render(entries, scroll)
       if e.selected then list:pick(r) end
     end
   end
-  list:finish(scroll)
+  list:finish(scroll or false) -- (only on opening: a row clicked is in view already)
 end
 
 -- A book's chapters as rows (indent: under a fallen life's name).
@@ -518,6 +521,7 @@ local function refresh(scroll)
   local c = ns.journal()
   if not c then return end
   book.hardcore:Set(c)
+  opening = scroll
   if book.selectedTab == TAB.hall then
     refreshHall(scroll)
   else
