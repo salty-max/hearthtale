@@ -29,6 +29,7 @@ ns.translate({
     ["A banner among the game's alerts, when a Hardcore character falls."] = "Un aviso entre las alertas del juego cuando muere un personaje Hardcore.",
     ["A note in its margin, in your own words"] = "Una nota al margen, con tus propias palabras",
     ["Achievement earned: %s."] = "Logro obtenido: %s.",
+    ["Achievement fanfare"] = "Fanfarria de logro",
     ["Achievement sound"] = "Sonido de logros",
     ["Alert shown for"] = "Duración del aviso",
     ["Alert when a book closes"] = "Aviso al cerrarse un libro",
