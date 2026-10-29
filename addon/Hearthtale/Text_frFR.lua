@@ -34,7 +34,7 @@ ns.translate({
     ["A banner among the game's alerts when a Hardcore character falls and its book joins the Hall of the Fallen (the chat line stays)."] = "Une bannière parmi les alertes du jeu quand un personnage Hardcore tombe et que son livre rejoint la Salle des Disparus (la ligne dans la discussion reste).",
     ["A banner among the game's alerts, when a Hardcore character falls."] = "Une bannière parmi les alertes du jeu, quand un personnage Hardcore tombe.",
     ["A note in its margin, in your own words"] = "Une note dans sa marge, avec vos propres mots",
-    ["A note on them, in your own words"] = "Une note sur lui, de votre main",
+    ["A note on them, in your own words"] = "Une note à son sujet, de votre main",
     ["Achievement earned: %s."] = "Haut fait obtenu : %s.",
     ["Achievement fanfare"] = "Fanfare des hauts faits",
     ["Achievement sound"] = "Son des hauts faits",

@@ -731,15 +731,27 @@ do
   ns.setTravellerNote("Player-1-00AA", "Healed me through the Deadmines")
   -- the company the chapters already tell, read in once
   HearthtaleTravellers.filled = {}
-  HearthtaleTravellers.people["n:Brannor"] = nil
+  HearthtaleTravellers.people["n:Brannor-Nightslayer"] = nil
   ns.fillTravellers()
-  local old = ns.traveller("n:Brannor")
+  local old = ns.traveller("n:Brannor-Nightslayer")
   check(
     old and old.firstAt and ns.countOf(old.days) >= 1 and old.with[J.guid],
     "the chapters' company read in: Brannor, by name"
   )
   ns.fillTravellers()
-  check(ns.countOf(ns.traveller("n:Brannor").days) == ns.countOf(old.days), "read in once")
+  check(ns.countOf(ns.traveller("n:Brannor-Nightslayer").days) == ns.countOf(old.days), "read in once")
+  -- a legacy name is taken over by the one of its own realm, not a namesake's
+  local here, there =
+    { name = "Bob", days = {}, duo = {}, dungeons = {}, with = {}, firstAt = 1 },
+    { name = "Bob", days = {}, duo = {}, dungeons = {}, with = {}, firstAt = 2 }
+  HearthtaleTravellers.people["n:Bob-Nightslayer"], HearthtaleTravellers.people["n:Bob-Stormrage"] = here, there
+  state.party.party1 = { name = "Bob", class = "MAGE", guid = "Player-1-00BO" }
+  state.party.party2, state.party.party3 = nil, nil
+  ns.meetTravellers()
+  check(
+    HearthtaleTravellers.people["Player-1-00BO"] == here and HearthtaleTravellers.people["n:Bob-Stormrage"] == there,
+    "a legacy Bob of this realm taken over, the other realm's kept apart"
+  )
   -- the places into ids at the logout and back: the same people
   local mark = ns.traveller("Player-1-00AA")
   mark.firstZone = e.lastZone
@@ -1674,7 +1686,19 @@ check(
 trueStories("life 4")
 HearthtaleChar = nil
 state.guid, state.name, state.surname = "Player-4619-015E4047", "Hellefie", "Namzar"
-state.party = { party1 = { name = "Harrysaun", surname = "Brightwood", class = "PALADIN" } }
+state.party = { party1 = { name = "Harrysaun", surname = "Brightwood", class = "PALADIN", guid = "Player-4619-00FF" } }
+HearthtaleTravellers = {
+  people = {
+    ["n:Harrysaun Brightwood-Nightslayer"] = {
+      name = "Harrysaun Brightwood",
+      days = {},
+      duo = {},
+      dungeons = {},
+      with = {},
+      firstAt = 1,
+    },
+  },
+}
 login()
 
 fire("GROUP_ROSTER_UPDATE")
@@ -1695,6 +1719,15 @@ else
     "elsewhere the second name is a realm: left out"
   )
 end
+if FOREVER then
+  local t = HearthtaleTravellers.people["Player-4619-00FF"]
+  check(
+    t and t.name == "Harrysaun Brightwood" and t.first == "Harrysaun" and t.firstAt == 1,
+    "Forever: a traveller keeps the full name, and takes over the legacy entry"
+  )
+  check(HearthtaleTravellers.people["n:Harrysaun Brightwood-Nightslayer"] == nil, "... no twin left")
+end
+HearthtaleTravellers = nil
 state.name, state.surname, state.party = nil, nil, {}
 
 -- Forever: a creature someone else hit first isn't mine; one I fought, chosen

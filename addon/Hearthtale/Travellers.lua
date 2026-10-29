@@ -18,7 +18,7 @@
 --     } },
 --     filled = { [character's guid] = true }   the chapters' company read in once
 --   }
--- (a person read from the chapters' company has no GUID yet: "n:Name", taken
+-- (a person read from the chapters' company has no GUID yet: "n:Name-Realm", taken
 -- over by the real one at the next meeting; the zones and dungeons are the
 -- game's names in English, into ids at the logout: Ids.lua)
 local _, ns = ...
@@ -38,14 +38,26 @@ end
 
 local function dayOf(at) return date("%Y-%m-%d", at) end
 
--- A person to keep: by GUID, a legacy "n:Name" one taken over.
-local function person(guid, name)
+-- A realm as a key: the game gives one without its spaces for a unit.
+local function realmKey(realm) return ((realm or ""):gsub("[%s%-]", "")) end
+
+-- The legacy key of a name met on a realm (the chapters' company has no GUID).
+local function legacyKey(name, realm) return "n:" .. name .. "-" .. realmKey(realm) end
+
+-- A person to keep: by GUID, a legacy "n:Name-Realm" one taken over (only the
+-- one of the unit's own realm: a Bob elsewhere is another Bob).
+local function person(guid, name, realm)
   local people = store().people
   local p = people[guid]
   if p then return p end
-  local old = people["n:" .. name]
+  local mine = realmKey(GetRealmName())
+  realm = realmKey(realm) ~= "" and realm or GetRealmName()
+  local key = legacyKey(name, realm)
+  -- (a legacy key from before the realm was kept: this realm's alone)
+  if not people[key] and realmKey(realm) == mine then key = "n:" .. name end
+  local old = people[key]
   if old then
-    people["n:" .. name] = nil
+    people[key] = nil
     people[guid] = old
     return old
   end
@@ -73,7 +85,10 @@ local function meet()
   for i = 1, n - 1 do
     local unit = "party" .. i
     local guid = UnitGUID(unit)
-    local name, first = playerName(UnitName(unit))
+    local unitName, second = UnitName(unit)
+    -- (UnitName's second value: a realm in Classic, Forever's surname)
+    local realm = not ns.forever and second or nil
+    local name, first = playerName(unitName, second)
     -- (a name arrives a moment after the join; a secret one is no one yet)
     local connected = UnitIsConnected(unit)
     if
@@ -85,7 +100,7 @@ local function meet()
       and name ~= UNKNOWN
       and name ~= char().name
     then
-      local p = person(guid, name)
+      local p = person(guid, name, not secret(realm) and realm or nil)
       p.name, p.first = name, first ~= name and first or nil
       local class = select(2, UnitClass(unit))
       if class and not secret(class) then p.class = class end
@@ -120,7 +135,7 @@ local function fill()
   for _, ch in ipairs(c.chapters or {}) do
     for _, m in ipairs(ch.log or {}) do
       if m.k == "group" and m.name and m.at then
-        local key = known[m.name] or ("n:" .. m.name)
+        local key = known[m.name] or legacyKey(m.name, c.realm)
         local p = t.people[key]
         if not p then
           p = { name = m.name, first = m.first, days = {}, duo = {}, dungeons = {}, with = {} }
@@ -153,7 +168,7 @@ local function count(set)
 end
 ns.countOf = count
 
--- Everyone kept, the latest met first (key: their GUID, or "n:Name").
+-- Everyone kept, the latest met first (key: their GUID, or "n:Name-Realm").
 function ns.travellers()
   local list = {}
   for key, p in pairs(store().people) do
