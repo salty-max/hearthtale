@@ -19,7 +19,10 @@ Type `/hearthtale` or `/ht`, or click the minimap button to open the journal.
 Each login says in chat whether you're resuming an entry or starting a new
 one.
 Choose an entry from the list to read it. The second tab holds the Hall of
-the Fallen, which you can also open with `/ht hall`.
+the Fallen, which you can also open with `/ht hall`. The third holds your
+fellow travellers: the players you have grouped with, when and where you met,
+the days you spent together, and a note of your own on each. They stay on your
+computer, never in the book or on the site.
 
 An entry follows the time between rests. Logging out at an inn, in a city
 or by a campfire closes it. Logging out in the wild records a night outdoors
