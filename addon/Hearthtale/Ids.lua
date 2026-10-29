@@ -320,11 +320,33 @@ function ns.savedRecords(char)
   end
   return all
 end
+-- The fellow travellers' places and dungeons (Travellers.lua, the account's
+-- own table): into the ids at the logout, the names again at the login.
+local function travellersConvert(out)
+  local people = type(HearthtaleTravellers) == "table" and HearthtaleTravellers.people
+  if type(people) ~= "table" then return end
+  local place, dungeon = out and PLACE.to or PLACE.from, out and DUNGEON_PLACE.to or DUNGEON_PLACE.from
+  for _, p in pairs(people) do
+    if type(p) == "table" then
+      if p.firstZone ~= nil then p.firstZone = place(p.firstZone) end
+      if p.lastZone ~= nil then p.lastZone = place(p.lastZone) end
+      if type(p.dungeons) == "table" then
+        local new = {}
+        for k, v in pairs(p.dungeons) do
+          new[dungeon(k)] = v
+        end
+        p.dungeons = new
+      end
+    end
+  end
+end
+function ns.travellersToIds() travellersConvert(true) end
 -- At the login, every saved record's names again (an English client names
 -- nothing by these tables while it plays: let go after).
 function ns.namesAtLogin(char)
   for _, c in ipairs(ns.savedRecords(char)) do
     convert(c, false)
   end
+  travellersConvert(false)
   if R.inEnglish() then R.forgetNames() end
 end

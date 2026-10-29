@@ -179,6 +179,22 @@ stays there). The writing's files and rules: `docs/writing.md`. The site:
   so a newer writer writes only the entries to come; `/ht rewrite`, after a
   dialog, lets them go, the Hall's copy too; a life joining the Hall keeps
   its saved words),
+  `Travellers.lua` (the fellow travellers, added 29 October 2026: the
+  players grouped with, kept in `HearthtaleTravellers`, the account's own
+  table, by GUID, apart from the journal. Per person the first and last
+  meeting (when and where), the days spent in a group together (never
+  hours: no timer), the days as a pair, the dungeons entered, the
+  characters played as, and the player's own note. A party meets
+  everyone in it on each roster change and entering the world; a raid or a
+  battleground keeps no one; a person from the chapters' company
+  (`group` moments), read in once per character, is `n:Name` until met
+  again. Local only: Ravenpost reads `HearthtaleChar` by a list of fields
+  and the account file's `HearthtaleCollect`, the site's uploads
+  each by a list too, and nothing here enters the book. Zones and
+  dungeons go into ids at the logout and back at the login with the
+  records' (`Ids.lua`, `travellersToIds`). Its tab, the third of the
+  book: the list, an overview, a person's page and the note, in the entry
+  editor's frame (note only)),
   `Kit.lua` (a copy of the kit shared with the Codex, Yonder and
   Second Wind, ~/code/wow-addons/addon-kit: the look, the page and its parts,
   the banners; never edit the copy; `bun run kit:sync` after changing

@@ -684,6 +684,108 @@ check(
 SlashCmdList.HEARTHTALE("")
 check(not B:IsShown(), "/ht again closes it")
 
+-- The fellow travellers: kept by GUID in the account's own table, never in
+-- the character's record (the site and Ravenpost read that).
+do
+  local before = state.party
+  state.party = { party1 = { name = "Eldrin", class = "MAGE", guid = "Player-1-00AA" } }
+  state.instance = "The Deadmines"
+  fire("GROUP_ROSTER_UPDATE")
+  fire("GROUP_ROSTER_UPDATE")
+  state.instance = nil
+  local all = ns.travellers()
+  local e = all[1] and all[1].p
+  check(
+    #all >= 1
+      and e.name == "Eldrin"
+      and e.class == "MAGE"
+      and ns.countOf(e.days) == 1
+      and ns.countOf(e.duo) == 1
+      and e.dungeons["The Deadmines"]
+      and e.with[J.guid] == J.name
+      and e.firstAt
+      and e.firstAt == e.lastAt,
+    "a fellow traveller: by GUID, the day, a pair, the dungeon, who I played as, when"
+  )
+  check(
+    not J.travellers and not tostring(J.book):find("Eldrin"),
+    "nothing of them in the character's record or its book"
+  )
+  -- a third one: no longer a pair; a raid is no company kept
+  state.party.party2 = { name = "Brogan", class = "ROGUE", guid = "Player-1-00BB" }
+  fire("GROUP_ROSTER_UPDATE")
+  check(
+    ns.traveller("Player-1-00BB") and ns.countOf(ns.traveller("Player-1-00BB").duo) == 0,
+    "a party of three: not a pair"
+  )
+  state.raid = true
+  state.party.party3 = { name = "Cullen", class = "PRIEST", guid = "Player-1-00CC" }
+  ns.meetTravellers() -- (not the event: the raid's own moment is Life.lua's, tested below)
+  state.raid = nil
+  check(ns.traveller("Player-1-00CC") == nil, "a raid keeps no one")
+  -- a note, the player's own: plain text, cut, removed when empty
+  check(ns.setTravellerNote("Player-1-00AA", "  |cff00ff00Great|r tank  "), "a note on someone")
+  check(ns.traveller("Player-1-00AA").note == "Great tank", "the note, plain")
+  ns.setTravellerNote("Player-1-00AA", "")
+  check(ns.traveller("Player-1-00AA").note == nil, "no text removes it")
+  ns.setTravellerNote("Player-1-00AA", "Healed me through the Deadmines")
+  -- the company the chapters already tell, read in once
+  HearthtaleTravellers.filled = {}
+  HearthtaleTravellers.people["n:Brannor"] = nil
+  ns.fillTravellers()
+  local old = ns.traveller("n:Brannor")
+  check(
+    old and old.firstAt and ns.countOf(old.days) >= 1 and old.with[J.guid],
+    "the chapters' company read in: Brannor, by name"
+  )
+  ns.fillTravellers()
+  check(ns.countOf(ns.traveller("n:Brannor").days) == ns.countOf(old.days), "read in once")
+  -- the places into ids at the logout and back: the same people
+  local mark = ns.traveller("Player-1-00AA")
+  mark.firstZone = e.lastZone
+  local zone = mark.firstZone
+  ns.travellersToIds()
+  check(
+    (type(mark.firstZone) ~= "string" or mark.firstZone:match("^[aw]%d+$")) and next(mark.dungeons):match("^[maw]%d+$"),
+    "the places and dungeons in the file are ids"
+  )
+  ns.namesAtLogin(J)
+  mark = ns.traveller("Player-1-00AA")
+  check(
+    mark.dungeons["The Deadmines"] and mark.firstZone == zone,
+    "the places and dungeons: ids in the file, their names again"
+  )
+  -- the tab
+  SlashCmdList.HEARTHTALE("")
+  ns.showTab(3)
+  check(
+    page.title:GetText() == "Fellow travellers"
+      and page.tiles[1].value:GetText() == tostring(#ns.travellers())
+      and rows[2].text:GetText() == ns.travellers()[1].p.name,
+    "the Fellow travellers tab: a row each, the overview's figures"
+  )
+  rows[2].scripts.OnClick(rows[2])
+  check(
+    page.title:GetText() == ns.travellers()[1].p.name and page.note and page.note:GetText() ~= nil,
+    "a person's page"
+  )
+  local btn = page.buttonPool[1]
+  local first = ns.travellers()[1].p
+  check(
+    btn.shown and btn.text == (first.note and "Edit note" or "Add a note"),
+    "a person's page: a button for the note"
+  )
+  btn.scripts.OnClick(btn)
+  local ed = ns.bookEditor
+  check(ed.shown and ed.person and ed.note:GetText() == (first.note or ""), "the editor opens on the note alone")
+  ed.note:SetText("My healer")
+  ed.save.scripts.OnClick()
+  check(ns.travellers()[1].p.note == "My healer" and not ed.shown, "saved on the traveller")
+  ns.showTab(1)
+  SlashCmdList.HEARTHTALE("")
+  state.party = before
+end
+
 -- A night in the wild: the chapter goes on; a /reload is no night.
 G.played(1800)
 local logBeforeNight = #ch().log

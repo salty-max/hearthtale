@@ -9,7 +9,7 @@
 ## Author: salty-max
 ## Version: 0.12.8
 ## SavedVariablesPerCharacter: HearthtaleChar
-## SavedVariables: HearthtaleSettings, HearthtaleHall, HearthtaleCollect
+## SavedVariables: HearthtaleSettings, HearthtaleHall, HearthtaleCollect, HearthtaleTravellers
 ## IconTexture: Interface\AddOns\Hearthtale\Media\Logo
 ## X-Website: https://github.com/salty-max/hearthtale
 ## X-License: GPL-3.0-or-later
@@ -34,6 +34,7 @@ Ids.lua
 Quests.lua
 Combat.lua
 Life.lua
+Travellers.lua
 Language.lua
 Lines.lua
 Diary.lua

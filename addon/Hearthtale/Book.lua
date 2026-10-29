@@ -374,6 +374,7 @@ end
 local buttonOf = K.button -- (the kit's: wider for a longer word, "Bearbeiten")
 local function buildEditor(sheet)
   editor = CreateFrame("Frame", nil, sheet)
+  editor.person = false -- (a traveller's note: whose; an entry's: none)
   editor:SetPoint("TOPLEFT", sheet, "TOPLEFT", 26, -22)
   editor:SetPoint("BOTTOMRIGHT", sheet, "BOTTOMRIGHT", -22, 14)
   editor.head = label(editor, TITLE_FONT, 22, T.gold)
@@ -387,32 +388,44 @@ local function buildEditor(sheet)
   editor.title:SetAutoFocus(false)
   editor.title:SetMaxLetters(60)
   local noteLabel = label(editor, BODY_FONT, 12, T.soft)
-  noteLabel:SetPoint("TOPLEFT", 0, -104)
   noteLabel:SetText(L["A note in its margin, in your own words"])
   local ground = editor:CreateTexture(nil, "BACKGROUND")
   ground:SetColorTexture(0, 0, 0, 0.35)
-  ground:SetPoint("TOPLEFT", 0, -122)
-  ground:SetPoint("BOTTOMRIGHT", 0, 42)
   editor.note = CreateFrame("EditBox", nil, editor)
   editor.note:SetMultiLine(true)
   editor.note:SetAutoFocus(false)
   editor.note:SetMaxLetters(1000)
   editor.note:SetFontObject(ChatFontNormal)
   editor.note:SetWidth(WIDTH - 16)
-  editor.note:SetPoint("TOPLEFT", 8, -130)
-  editor.note:SetPoint("BOTTOMRIGHT", -8, 50)
   -- (a click anywhere on its ground writes in it)
   local area = CreateFrame("Button", nil, editor)
   area:SetAllPoints(ground)
   area:SetScript("OnClick", function() editor.note:SetFocus() end)
   editor.note:SetFrameLevel(area:GetFrameLevel() + 1)
+  -- (an entry's: its title above its note; a traveller's: the note alone,
+  -- moved up into the title's room)
+  function editor.layout(solo)
+    local up = solo and 54 or 0
+    noteLabel:ClearAllPoints()
+    noteLabel:SetPoint("TOPLEFT", 0, -104 + up)
+    ground:ClearAllPoints()
+    ground:SetPoint("TOPLEFT", 0, -122 + up)
+    ground:SetPoint("BOTTOMRIGHT", 0, 42)
+    editor.note:ClearAllPoints()
+    editor.note:SetPoint("TOPLEFT", 8, -130 + up)
+    editor.note:SetPoint("BOTTOMRIGHT", -8, 50)
+    editor.titleLabel:SetShown(not solo)
+    editor.title:SetShown(not solo)
+    noteLabel:SetText(solo and L["A note on them, in your own words"] or L["A note in its margin, in your own words"])
+  end
   editor.save = buttonOf(editor, L["Save"], 90)
   editor.save:SetPoint("BOTTOMRIGHT", 0, 8)
   editor.cancel = buttonOf(editor, L["Cancel"], 90)
   editor.cancel:SetPoint("RIGHT", editor.save, "LEFT", -8, 0)
   editor.save:SetScript("OnClick", function()
-    local n = editor.n
+    local n, who = editor.n, editor.person
     closeEditor()
+    if who then return ns.setTravellerNote(who, editor.note:GetText()) end
     ns.setOwn(n, "title", editor.title:GetText())
     ns.setOwn(n, "text", editor.note:GetText())
   end)
@@ -427,12 +440,27 @@ function openEditor()
   if not ch then return end
   if not editor then buildEditor(book.sheet) end
   local own = ns.own(current) or {}
-  editor.n = current
+  editor.n, editor.person = current, false
+  editor.layout(false)
   editor.head:SetText(L["Entry %d"]:format(current))
   local journals = own.title and ch.writtenTitle or ch.title -- (the title the journal gave it)
   editor.titleLabel:SetText(journals and L["Its title (the journal's own: %s)"]:format(journals) or L["Its title"])
   editor.title:SetText(own.title or "")
   editor.note:SetText(own.text or "")
+  page:Hide()
+  editor:Show()
+end
+
+-- A traveller's note: the same editor, the note alone.
+local personKey -- the open traveller (nil: the overview)
+local function openNoteEditor()
+  local p = personKey and ns.traveller(personKey)
+  if not p then return end
+  if not editor then buildEditor(book.sheet) end
+  editor.n, editor.person = false, personKey
+  editor.layout(true)
+  editor.head:SetText(p.name)
+  editor.note:SetText(p.note or "")
   page:Hide()
   editor:Show()
 end
@@ -482,7 +510,7 @@ local function hardcoreMark(parent, x)
 end
 
 -- The window: the kit's book, its portrait the character's own face.
-local TAB = { journal = 1, hall = 2 }
+local TAB = { journal = 1, hall = 2, travellers = 3 }
 local B = K.book({
   name = "HearthtaleFrame",
   title = "Hearthtale",
@@ -490,7 +518,7 @@ local B = K.book({
     HearthtaleSettings = HearthtaleSettings or {}
     return K.place(HearthtaleSettings, "book")
   end,
-  titles = { L["Journal"], L["Hall of the Fallen"] },
+  titles = { L["Journal"], L["Hall of the Fallen"], L["Fellow travellers"] },
   first = TAB.journal,
   search = "HearthtaleSearch",
   settle = 1, -- (a fight records many moments at once: one rewriting)
@@ -526,6 +554,8 @@ local function refresh(scroll)
   opening = scroll
   if book.selectedTab == TAB.hall then
     refreshHall(scroll)
+  elseif book.selectedTab == TAB.travellers then
+    ns.refreshTravellers(scroll)
   else
     refreshJournal(scroll and not asked, scroll)
   end
@@ -533,6 +563,12 @@ local function refresh(scroll)
 end
 local function shown() portrait() end
 B:add(TAB.journal, { build = build, show = shown, refresh = refresh })
+B:add(TAB.travellers, {
+  build = build,
+  show = shown,
+  refresh = refresh,
+  chosen = function() personKey = nil end,
+})
 B:add(TAB.hall, {
   build = build,
   show = shown,
@@ -541,6 +577,143 @@ B:add(TAB.hall, {
     hallLife, hallKey = nil, nil
   end, -- (the Hall at a glance)
 })
+
+-- The Fellow travellers tab (Travellers.lua keeps them): the list on the left,
+-- everyone grouped with, the latest first; on the right an overview first,
+-- then a person's page with the player's own note.
+local GROUP = "Interface\\Icons\\INV_Misc_GroupLooking"
+local function className(token, sex)
+  local names = (sex == 3 and LOCALIZED_CLASS_NAMES_FEMALE) or LOCALIZED_CLASS_NAMES_MALE
+  return token and names and names[token] or nil
+end
+local function daysOf(p)
+  local n = ns.countOf(p.days)
+  return K.plural(n, "%d day together", "%d days together"):format(n)
+end
+local function dateAt(at, zone)
+  if not at then return nil end
+  return zone and L["%s in %s"]:format(day(at), zone) or day(at)
+end
+local function picture(p) return crestOf({ class = p.class }) end
+
+local function showTravellers(list_)
+  local sub = #list_ == 0 and L["No one yet."]
+    or K.plural(#list_, "%d fellow traveller", "%d fellow travellers"):format(#list_)
+  page:start(L["Fellow travellers"], sub, K.icon(GROUP))
+  if #list_ == 0 then
+    page:paragraph(
+      L["Everyone you group with is kept here, on this computer alone: when and where you met, how many days you travelled together, the dungeons you entered, and a note of your own."],
+      T.soft
+    )
+    return page:finish()
+  end
+  local days, pairs_, dungeons = 0, 0, {}
+  for _, e in ipairs(list_) do
+    days = days + ns.countOf(e.p.days)
+    if ns.countOf(e.p.duo) > 0 then pairs_ = pairs_ + 1 end
+    for d in pairs(e.p.dungeons) do
+      dungeons[d] = true
+    end
+  end
+  local dungeonCount = ns.countOf(dungeons)
+  page:stats({
+    { tostring(#list_), K.plural(#list_, "traveller", "travellers") },
+    { tostring(pairs_), K.plural(pairs_, "travelled as a pair", "travelled as a pair") },
+    { tostring(dungeonCount), K.plural(dungeonCount, "dungeon together", "dungeons together") },
+  })
+  page:section(L["Met most recently"])
+  for _, e in ipairs(list_) do
+    local p = e.p
+    local facts = { className(p.class, p.sex), daysOf(p), dateAt(p.lastAt) }
+    local parts = {}
+    for _, f in ipairs(facts) do
+      if f then table.insert(parts, f) end
+    end
+    page:card(p.name, table.concat(parts, ", "), picture(p), function()
+      personKey = e.key
+      ns.refresh()
+    end)
+  end
+  page:finish()
+end
+
+local function showTraveller(p)
+  local sub = {}
+  if className(p.class, p.sex) then table.insert(sub, className(p.class, p.sex)) end
+  table.insert(sub, daysOf(p))
+  local title, line_ = p.name, line(sub)
+  local same = not opening and page.shownTitle == title and page.shownSub == line_
+  page.shownTitle, page.shownSub = title, line_
+  page:start(title, line_, picture(p))
+  page:row(L["First met"], dateAt(p.firstAt, p.firstZone))
+  page:row(L["Last together"], dateAt(p.lastAt, p.lastZone))
+  local pair = ns.countOf(p.duo)
+  if pair > 0 then page:row(L["As a pair"], K.plural(pair, "%d day", "%d days"):format(pair)) end
+  local places = {}
+  for d in pairs(p.dungeons) do
+    table.insert(places, d)
+  end
+  table.sort(places)
+  if #places > 0 then page:row(L["Dungeons"], table.concat(places, ", ")) end
+  local as = {}
+  for _, name in pairs(p.with) do
+    table.insert(as, name)
+  end
+  table.sort(as)
+  if #as > 0 then page:row(L["Played as"], table.concat(as, ", ")) end
+  if p.note then
+    -- selene: allow(mixed_table) (the kit's paragraph: its text, and what it is)
+    page:text({ { p.note, aside = true } })
+  end
+  page:buttons({ { p.note and L["Edit note"] or L["Add a note"], openNoteEditor } })
+  page:finish(same)
+end
+
+function ns.refreshTravellers(scroll)
+  local all = ns.travellers()
+  local open
+  for _, e in ipairs(all) do
+    if e.key == personKey then open = e end
+  end
+  if not open then personKey = nil end
+  if editor and editor:IsShown() and (not editor.person or editor.person ~= personKey) then closeEditor() end
+  page:SetShown(not (editor and editor:IsShown()))
+  local entries = {
+    {
+      key = "all",
+      title = L["Fellow travellers"],
+      place = #all == 0 and L["No one yet."] or K.plural(#all, "%d fellow traveller", "%d fellow travellers")
+        :format(#all),
+      always = true,
+      selected = personKey == nil,
+      click = function()
+        personKey = nil
+        ns.refresh()
+      end,
+    },
+  }
+  for _, e in ipairs(all) do
+    local p = e.p
+    table.insert(entries, {
+      key = e.key,
+      title = p.name,
+      place = daysOf(p),
+      words = p.note,
+      selected = e.key == personKey,
+      click = function()
+        personKey = e.key
+        ns.refresh()
+      end,
+    })
+  end
+  render(entries, scroll)
+  if open then
+    showTraveller(open.p)
+  else
+    page.shownTitle, page.shownSub = nil, nil
+    showTravellers(all)
+  end
+end
 
 -- Rewrite what the open tab shows (latest: as on opening it).
 function ns.refresh(latest) B:refresh(latest) end

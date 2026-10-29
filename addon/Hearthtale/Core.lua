@@ -75,6 +75,7 @@ events.always("PLAYER_LOGOUT", function()
       ns.toIds(c)
     end
   end
+  if ns.travellersToIds then ns.travellersToIds() end
 end)
 
 -- ── the login ────────────────────────────────────────────────────────────────
@@ -116,6 +117,8 @@ local function cut(s, limit)
   end
   return strtrim(s:sub(1, n))
 end
+-- (plain text, cut: the player's words anywhere, a note on a traveller too)
+function ns.clean(value, limit) return cut(plain(value or ""), limit) end
 -- (field: "title" or "text"; nothing: removed. False when there is no such entry)
 function ns.setOwn(n, field, value)
   if not (char and char.chapters and char.chapters[n] and OWN_LIMIT[field]) then return false end

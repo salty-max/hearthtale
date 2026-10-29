@@ -175,6 +175,7 @@ function UnitClass(u)
   return state.class:sub(1, 1) .. state.class:sub(2):lower(), state.class
 end
 function UnitSex() return 3 end
+function UnitIsConnected(u) return not (state.party[u] and state.party[u].offline) end
 function UnitCreatureType(u)
   local c = unitOf(u)
   return c and c.type
