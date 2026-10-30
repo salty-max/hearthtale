@@ -61,6 +61,7 @@ const en = {
     forever: "World of Warcraft: Forever characters are linked with a code typed in the game, from \"Link a character\" at the top of the page.",
     failed: "Battle.net didn't let us in. Try again in a moment.",
     cancelled: "Sign-in cancelled.",
+    busy: "Too many sign-ins from here just now. Wait a few minutes, then try again.",
     signOut: "Sign out",
     you: "You",
     testAccount: "Use the test account (development only)",

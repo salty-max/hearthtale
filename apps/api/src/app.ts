@@ -5,7 +5,7 @@ import { deleteCookie, getCookie, setCookie } from "hono/cookie";
 import { eq } from "drizzle-orm";
 import { db } from "@/db";
 import { accounts, type AccountRow } from "@/db/schema";
-import { createSession, endSession, SESSION_COOKIE, SESSION_TTL_MS, sessionAccount, TEST_BNET_ID } from "@/lib/accounts";
+import { createSession, endSession, SESSION_COOKIE, SESSION_TTL_MS, sessionAccount, sweepSessions, TEST_BNET_ID } from "@/lib/accounts";
 import { getCharacterBook, libraryOf, removeBook } from "@/lib/characters";
 import { confirmPairing, isPairCode, linkFor, pairingPending, pollPairing, startPairing } from "@/lib/companion";
 import { signInWithPassport } from "@/lib/ravenpost";
@@ -17,6 +17,8 @@ import { createShare, hall, hallBook, listShares, revokeShare, setInHall, shared
 import { createLinkCode } from "@/lib/link";
 import { appOrigin, finishLogin, isRegion, startLogin } from "@/lib/login";
 import { log } from "@/lib/log";
+import { limit } from "@/lib/ratelimit";
+import { sweepTemp } from "@/lib/ephemeral";
 
 type Env = { Variables: { account: AccountRow | null } };
 export const app = new Hono<Env>();
@@ -56,13 +58,15 @@ const sessionCookie = (c: Context<Env>, token: string) =>
   });
 
 // ── sign-in ──────────────────────────────────────────────────────────────────
-app.get("/api/auth/login", async (c) => {
+// (a browser on its way: past the limit, back to the library with a word)
+const busy = (c: Context) => c.redirect("/library?signin=busy");
+app.get("/api/auth/login", limit("login", 20, 10 * 60_000, busy), async (c) => {
   const region = c.req.query("region");
   if (!isRegion(region)) return c.json({ error: "bad region" }, 400);
   return c.redirect(await startLogin(region, c.req.query("next")));
 });
 
-app.get("/api/auth/callback", async (c) => {
+app.get("/api/auth/callback", limit("callback", 20, 10 * 60_000, busy), async (c) => {
   const code = c.req.query("code");
   const state = c.req.query("state");
   if (!code || !state) return c.redirect("/library?signin=cancelled");
@@ -114,7 +118,7 @@ app.delete("/api/characters/:id", signedIn, sameOrigin, async (c) => {
   return (await removeBook(id, c.get("account")!.id)) ? c.json({ ok: true }) : c.json({ error: "not found" }, 404);
 });
 
-app.post("/api/link-codes", signedIn, sameOrigin, async (c) => c.json(await createLinkCode(c.get("account")!.id)));
+app.post("/api/link-codes", signedIn, sameOrigin, limit("link-codes", 20, 10 * 60_000), async (c) => c.json(await createLinkCode(c.get("account")!.id)));
 
 // ── sharing ──────────────────────────────────────────────────────────────────
 const idOf = (c: Context<Env>) => {
@@ -176,14 +180,14 @@ app.get("/hall/:key", hallPreview);
 app.get("/api/og/hall/:key", hallPreview);
 
 // ── the companion (Ravenpost) ────────────────────────────────────────────────
-app.post("/api/companion/pair/start", async (c) => c.json(await startPairing(appOrigin())));
+app.post("/api/companion/pair/start", limit("pair-start", 10, 10 * 60_000), async (c) => c.json(await startPairing(appOrigin())));
 
-app.get("/api/companion/pair/:code", async (c) => {
+app.get("/api/companion/pair/:code", limit("pair-check", 60, 60_000), async (c) => {
   const code = c.req.param("code");
   return c.json({ pending: isPairCode(code) && (await pairingPending(code)) });
 });
 
-app.post("/api/companion/pair/confirm", signedIn, sameOrigin, async (c) => {
+app.post("/api/companion/pair/confirm", signedIn, sameOrigin, limit("pair-confirm", 20, 10 * 60_000), async (c) => {
   const { code } = await c.req.json<{ code?: string }>().catch(() => ({ code: undefined }));
   if (!isPairCode(code)) return c.json({ error: "not found" }, 404);
   const a = c.get("account")!;
@@ -191,13 +195,13 @@ app.post("/api/companion/pair/confirm", signedIn, sameOrigin, async (c) => {
 });
 
 // Ravenpost signed in once with Battle.net through its inbox: its passport for an upload token.
-app.post("/api/companion/signin", async (c) => {
+app.post("/api/companion/signin", limit("signin", 20, 10 * 60_000), async (c) => {
   const { passport } = await c.req.json<{ passport?: unknown }>().catch(() => ({ passport: undefined }));
   const linked = await signInWithPassport(passport);
   return linked ? c.json(linked) : c.json({ error: "not a passport" }, 401);
 });
 
-app.post("/api/companion/pair/poll", async (c) => {
+app.post("/api/companion/pair/poll", limit("pair-poll", 120, 60_000), async (c) => {
   const { code, pollToken } = await c.req.json<{ code?: string; pollToken?: string }>().catch(() => ({ code: undefined, pollToken: undefined }));
   if (!isPairCode(code) || typeof pollToken !== "string") return c.json({ status: "expired" });
   return c.json(await pollPairing(code, pollToken));
@@ -205,6 +209,8 @@ app.post("/api/companion/pair/poll", async (c) => {
 
 app.post(
   "/api/companion/upload",
+  // (one character a request, sixty at most in a saved file)
+  limit("companion-upload", 120, 60_000),
   // Vercel takes 4.5 MB at most: the companion sends one character per request.
   bodyLimit({ maxSize: 4 * 1024 * 1024, onError: (c) => c.json({ error: "too large" }, 413) }),
   async (c) => {
@@ -223,6 +229,7 @@ app.post(
   "/api/upload",
   signedIn,
   sameOrigin,
+  limit("upload", 30, 60_000),
   bodyLimit({ maxSize: 4 * 1024 * 1024, onError: (c) => c.json({ error: "too large" }, 413) }),
   async (c) => {
     const body = await c.req.json().catch(() => null);
@@ -255,7 +262,7 @@ const pushSub = (v: unknown): { endpoint: string; p256dh: string; auth: string }
   return { endpoint, p256dh: keys.p256dh, auth: keys.auth };
 };
 
-app.post("/api/push/subscriptions", signedIn, sameOrigin, async (c) => {
+app.post("/api/push/subscriptions", signedIn, sameOrigin, limit("push-subscribe", 20, 10 * 60_000), async (c) => {
   const sub = pushSub(await c.req.json().catch(() => null));
   if (!sub) return c.json({ error: "bad subscription" }, 400);
   await subscribe(c.get("account")!.id, sub);
@@ -267,6 +274,18 @@ app.delete("/api/push/subscriptions", signedIn, sameOrigin, async (c) => {
   if (typeof endpoint !== "string") return c.json({ error: "bad request" }, 400);
   await unsubscribe(c.get("account")!.id, endpoint);
   return c.json({ ok: true });
+});
+
+// ── upkeep ───────────────────────────────────────────────────────────────────
+// Vercel's daily cron (config.json, scripts/vercel-build.sh) sends CRON_SECRET
+// as a bearer: the expired logins, codes, counters and sessions go.
+app.get("/api/cron/sweep", async (c) => {
+  const secret = process.env.CRON_SECRET;
+  if (!secret) return c.json({ error: "not found" }, 404);
+  if (c.req.header("authorization") !== `Bearer ${secret}`) return c.json({ error: "forbidden" }, 401);
+  const [temp, sessions] = await Promise.all([sweepTemp(), sweepSessions()]);
+  log.info("sweep", { temp, sessions });
+  return c.json({ temp, sessions });
 });
 
 app.all("/api/*", (c) => c.json({ error: "not found" }, 404));

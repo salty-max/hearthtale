@@ -54,6 +54,14 @@ Plan and steps: PLAN.md, "The site".
   `apps/api/.env.local` (gitignored) and Vercel. `vercel link` and the Neon
   integration append `.env*` to .gitignore and drop vendor skills
   (`.agents/`, `.claude/skills`, `skills-lock.json`): keep them out.
+- Limits and upkeep (`lib/ratelimit.ts`): every route that writes or reaches
+  Battle.net has a per-caller limit (a fixed window, counted in `ephemeral`
+  under kind "rate", the address pseudonymised by a hash and an IPv6 one cut
+  to its /64, a row a day at most), 429 with Retry-After past it (the sign-in
+  back to `/library?signin=busy`), open if the counter fails. Expired ephemeral rows and sessions go in a daily
+  Vercel cron (`/api/cron/sweep`, declared in `scripts/vercel-build.sh`'s
+  config.json, guarded by CRON_SECRET, set in Vercel: without it the route is
+  a 404), now and then on a login and on a limited request too.
 - Local: `bun run db` (Postgres on :5435), `bun run db:migrate`,
   `bun run db:seed` (the test characters), `bun run dev` (api :3002, web :5175).
   The landing (`routes/Home.tsx`) shows a page of each sample journal, one

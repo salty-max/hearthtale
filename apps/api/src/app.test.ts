@@ -18,6 +18,19 @@ describe("api", () => {
     expect((await app.request("/api/characters/1", { method: "DELETE" })).status).toBe(401);
     expect((await app.request("/api/link-codes", { method: "POST" })).status).toBe(401);
   });
+  test("the sweep: hidden without CRON_SECRET, refused without its bearer", async () => {
+    const saved = process.env.CRON_SECRET;
+    delete process.env.CRON_SECRET;
+    expect((await app.request("/api/cron/sweep")).status).toBe(404);
+    process.env.CRON_SECRET = "s3cret";
+    try {
+      expect((await app.request("/api/cron/sweep")).status).toBe(401);
+      expect((await app.request("/api/cron/sweep", { headers: { authorization: "Bearer nope" } })).status).toBe(401);
+    } finally {
+      if (saved === undefined) delete process.env.CRON_SECRET;
+      else process.env.CRON_SECRET = saved;
+    }
+  });
   test("signing in needs a region", async () => {
     expect((await app.request("/api/auth/login?region=mars")).status).toBe(400);
   });

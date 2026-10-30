@@ -27,9 +27,9 @@ const libraryRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/library",
   component: Library,
-  // ?signin=failed|cancelled: back from Battle.net without a session
-  validateSearch: (s: Record<string, unknown>): { signin?: "failed" | "cancelled" } =>
-    s.signin === "failed" || s.signin === "cancelled" ? { signin: s.signin } : {},
+  // ?signin=failed|cancelled|busy: back from Battle.net without a session (busy: too many tries)
+  validateSearch: (s: Record<string, unknown>): { signin?: "failed" | "cancelled" | "busy" } =>
+    s.signin === "failed" || s.signin === "cancelled" || s.signin === "busy" ? { signin: s.signin } : {},
 });
 const pairRoute = createRoute({
   getParentRoute: () => rootRoute,

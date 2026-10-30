@@ -3,7 +3,7 @@
 #   static/            the PWA (apps/web/dist), served by Vercel's CDN
 #   functions/api.func the whole API (apps/api/src/vercel.ts) as one Node function
 #   config.json        routing (/api/* → the function, files, then the SPA
-#                      fallback)
+#                      fallback) and the daily sweep's cron
 # and applies database migrations on production deploys.
 set -euo pipefail
 cd "$(dirname "$0")/.."
@@ -47,6 +47,8 @@ const config = {
     { handle: "filesystem" },
     { src: "^/(.*)$", dest: "/index.html" },
   ],
+  // The expired ephemeral rows and sessions, once a day (apps/api/src/app.ts, CRON_SECRET).
+  crons: [{ path: "/api/cron/sweep", schedule: "17 4 * * *" }],
 };
 await Bun.write(process.argv[1], JSON.stringify(config, null, 2));
 ' "$OUT/config.json"

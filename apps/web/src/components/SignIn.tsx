@@ -6,7 +6,7 @@ import { useT } from "@/lib/i18n";
 import { guessRegion } from "@/lib/region";
 
 /** "Sign in with Battle.net", in a region (Battle.net lists the characters of one region at a time). */
-export function SignIn({ problem, next }: { problem?: "failed" | "cancelled"; next?: string }) {
+export function SignIn({ problem, next }: { problem?: "failed" | "cancelled" | "busy"; next?: string }) {
   const t = useT();
   const [region, setRegion] = useState<Region>(() => guessRegion());
   const test = useTestSignIn();
@@ -22,7 +22,7 @@ export function SignIn({ problem, next }: { problem?: "failed" | "cancelled"; ne
           </li>
         ))}
       </ul>
-      {problem && <p className="mt-3 text-fallen">{problem === "failed" ? t.account.failed : t.account.cancelled}</p>}
+      {problem && <p className="mt-3 text-fallen">{problem === "failed" ? t.account.failed : problem === "busy" ? t.account.busy : t.account.cancelled}</p>}
       <label className="mt-5 block text-ink-faded">
         {t.account.region}{" "}
         <select
