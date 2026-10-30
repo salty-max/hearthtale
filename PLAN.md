@@ -21,7 +21,7 @@ in-world layer).
 
 ### What the game allows
 
-- `Screenshot()` exists in Classic Era, Forever and TBC Anniversary; neither
+- `Screenshot()` exists in Classic Era and Forever; neither
   the wiki nor Blizzard's documentation marks it protected. It fires
   `SCREENSHOT_STARTED`, then `SCREENSHOT_SUCCEEDED` or `SCREENSHOT_FAILED`. The
   file is `Screenshots/WoWScrnShot_MMDDYY_HHMMSS.jpg` in the client's folder

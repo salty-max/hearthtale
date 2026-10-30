@@ -12,8 +12,6 @@ globals:
     any: true
   HearthtaleTravellers:
     any: true
-  UnitIsConnected:
-    any: true
   SLASH_HEARTHTALE1:
     any: true
   SLASH_HEARTHTALE2:

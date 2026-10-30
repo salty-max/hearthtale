@@ -13,7 +13,7 @@ stays there). The writing's files and rules: `docs/writing.md`. The site:
   too. The TOCs load the kit first, then `Locale.lua` and
   `Text_[TextLocale].lua`: the client loads its own. `scripts/locales.ts`
   (`bun run locales`, its `--check` in `addon:check`) writes them for the
-  game's twelve languages from `i18n/<locale>/` (`words.json`, `meta.json`:
+  game's eleven languages from `i18n/<locale>/` (`words.json`, `meta.json`:
   plural rule, flagged); `--keys` writes `i18n/words.json`. The writer's
   files (Language, Lines, Diary, Forever, Names, Knowledge) have no `L`.
   `addon/test/french.lua`, `german.lua`: a French and a German client. French done 14 October 2026, German (flagged: a first translation) the same day.

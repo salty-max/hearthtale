@@ -28,6 +28,7 @@
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import type * as WowDb from "../../wow-data/src/db";
+import { ENGLISH, LOCALES as ALL_LOCALES } from "./locales-lib";
 import { familyPath } from "./root";
 
 // through the family folder, from a worktree too (scripts/root.ts)
@@ -38,7 +39,7 @@ const GAMES = {
   classic: { out: "Client_Classic.lua" },
   forever: { out: "Client_Forever.lua" },
 };
-const LOCALES = ["deDE", "esES", "esMX", "frFR", "itIT", "koKR", "ptBR", "ruRU", "zhCN", "zhTW"];
+const LOCALES = ALL_LOCALES.filter((l) => !ENGLISH.has(l)).sort();
 const CHECK = process.argv.includes("--check");
 const stale: string[] = [];
 // (a file written, or with --check compared)

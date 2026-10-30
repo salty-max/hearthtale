@@ -108,5 +108,20 @@
       ]
     }
   },
-  "removed": []
+  "removed": [
+    {
+      "table": "building areas (Forever)",
+      "file": "i18n/itIT/subzones.json",
+      "ids": "*",
+      "why": "Italian dropped from every addon (no Italian client in Classic Era or Forever); the file was an English copy, the same ids stay in the other languages' files",
+      "approved": "2026-10-30, the user's go (drop TBC Anniversary and Italian from every addon)"
+    },
+    {
+      "table": "building areas (Classic)",
+      "file": "i18n/itIT/subzones.json",
+      "ids": "*",
+      "why": "Italian dropped from every addon (no Italian client in Classic Era or Forever); the file was an English copy, the same ids stay in the other languages' files",
+      "approved": "2026-10-30, the user's go (drop TBC Anniversary and Italian from every addon)"
+    }
+  ]
 }
