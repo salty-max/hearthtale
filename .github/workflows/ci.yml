@@ -2,12 +2,15 @@
 # writing builds and both data files are up to date with it, its simulation on both games, the writer's test with
 # hundreds of books, the sample, the package and the release's, made by the BigWigs
 # packager as release.yml makes it) and the site (typecheck, lint, tests, build).
+# By hand too: the daily Game data job asks for it on its pull request's
+# branch and merges only once it passes.
 name: CI
 
 on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
