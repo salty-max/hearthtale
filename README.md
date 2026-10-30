@@ -7,7 +7,7 @@ story. On Hardcore, a death closes the journal with an epitaph and saves it
 in the Hall of the Fallen.
 
 You can read the books in game or on **[hearthtale.app](https://hearthtale.app)**.
-The optional [Ravenpost](https://github.com/salty-max/ravenpost) companion
+The optional [Ravenpost](https://ravenpost-site.vercel.app) companion
 uploads them after you log out or reload.
 
 For Classic Era, Hardcore, Season of Discovery and World of Warcraft:

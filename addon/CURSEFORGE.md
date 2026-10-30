@@ -49,7 +49,7 @@ On other realms, death is recorded in the journal and the book carries on.
 
 **[hearthtale.app](https://hearthtale.app)** lets you read the same journal away from the game. The website is optional. You can use the addon entirely in game.
 
-1. Install **[Ravenpost](https://github.com/salty-max/ravenpost)**, the free, open source companion for Windows and macOS. It uploads your books a few seconds after you log out or use `/reload`.
+1. Install **[Ravenpost](https://ravenpost-site.vercel.app)**, the free, open source companion for Windows and macOS. It uploads your books a few seconds after you log out or use `/reload`.
 2. In Ravenpost's window, click **Sign in with Battle.net**. That one sign-in links Hearthtale, and Classic Era characters are recognised automatically.
 3. For Forever characters, or any character Battle.net cannot find, get a code from **Link a character** at the top of hearthtale.app and enter `/ht link CODE` in game.
 
@@ -86,7 +86,7 @@ Settings are saved per character. Copy them from another character of the same g
 
 ## Help the addons keep up with Forever
 
-Forever brings new quests and creatures, and the usual databases take weeks to catch up with them. You can help Hearthtale and its sister addons get there sooner. Tick **Share what you see** on the welcome page or in the options, and Hearthtale keeps what the game tells you of quests, creatures and NPCs. **[Ravenpost](https://github.com/salty-max/ravenpost)**, a small free app for Windows and macOS, sends it to the addons' shared database a few seconds after you log out, once you **Sign in with Battle.net** in it: one account, one voice when players' games disagree. What you see lets the journal tell Forever's new quests in their own words. Every player who shares makes a real difference, and it's truly appreciated.
+Forever brings new quests and creatures, and the usual databases take weeks to catch up with them. You can help Hearthtale and its sister addons get there sooner. Tick **Share what you see** on the welcome page or in the options, and Hearthtale keeps what the game tells you of quests, creatures and NPCs. **[Ravenpost](https://ravenpost-site.vercel.app)**, a small free app for Windows and macOS, sends it to the addons' shared database a few seconds after you log out, once you **Sign in with Battle.net** in it: one account, one voice when players' games disagree. What you see lets the journal tell Forever's new quests in their own words. Every player who shares makes a real difference, and it's truly appreciated.
 
 Your name, class and race are replaced by the game's own placeholders, lines that name another player are left out, and your chat is never kept. Sharing is off until you turn it on. Turning it off stops it: what was kept stays on your computer, and nothing is sent while it's off.
 
