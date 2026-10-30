@@ -41,18 +41,21 @@
     "addon/**/*.lua": "stylua --respect-ignores"
   },
   "devDependencies": {
-    "@commitlint/cli": "^21.2.1",
-    "@commitlint/config-conventional": "^21.2.0",
+    "@commitlint/cli": "^21.2.4",
+    "@commitlint/config-conventional": "^21.2.4",
     "@eslint/js": "^10.0.1",
     "an-array-of-english-words": "^2.0.0",
-    "eslint": "^10.7.0",
+    "eslint": "^10.14.0",
     "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-refresh": "^0.5.3",
-    "globals": "^17.7.0",
+    "eslint-plugin-react-refresh": "^0.5.7",
+    "globals": "^17.13.0",
     "human-names": "^1.0.13",
     "husky": "^9.1.7",
-    "lint-staged": "^17.0.8",
-    "turbo": "^2",
-    "typescript-eslint": "^8.64.0"
+    "lint-staged": "^17.6.0",
+    "turbo": "^2.11.10",
+    "typescript-eslint": "^8.72.1"
+  },
+  "overrides": {
+    "zod": "^4.6.6"
   }
 }

@@ -54,6 +54,11 @@ Plan and steps: PLAN.md, "The site".
   `apps/api/.env.local` (gitignored) and Vercel. `vercel link` and the Neon
   integration append `.env*` to .gitignore and drop vendor skills
   (`.agents/`, `.claude/skills`, `skills-lock.json`): keep them out.
+- Dependencies: `bun audit` clean but for two dev-only ones with no fix
+  (deepmerge under vite-plugin-pwa, esbuild 0.18 under drizzle-kit). The root
+  `overrides` lifts zod past a memory advisory: `@vercel/cli-config` (under
+  `@vercel/functions`' OIDC path, never in the API's bundle) pins 4.1.11
+  exactly. Drop it once that pin reaches 4.6.6.
 - Limits and upkeep (`lib/ratelimit.ts`): every route that writes or reaches
   Battle.net has a per-caller limit (a fixed window, counted in `ephemeral`
   under kind "rate", the address pseudonymised by a hash and an IPv6 one cut
