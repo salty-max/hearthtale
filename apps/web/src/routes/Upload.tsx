@@ -119,7 +119,7 @@ export function Upload() {
               )}
             </p>
           ) : (
-            <p className="text-lg text-parchment/85">{result.status === "unlinked" ? u.unlinked : result.status === "removed" ? u.removed : u.invalid}</p>
+            <p className="text-lg text-parchment/85">{result.status === "unlinked" ? u.unlinked : result.status === "removed" ? u.removed : result.status === "owned" ? u.owned : u.invalid}</p>
           )}
         </div>
       )}

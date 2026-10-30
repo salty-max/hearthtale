@@ -56,7 +56,7 @@ describe("upload", () => {
 });
 
 describe("whose book", () => {
-  const no = { removedHere: false, alreadyMine: false, ownsOnBnet: false };
+  const no = { removedHere: false, alreadyMine: false, ownsOnBnet: false, rowOwner: null as number | null };
   const code = (owner: number | null) => async () => owner;
   test("the companion's account, if it has the character or owns it on Battle.net", async () => {
     expect(await decide(7, { ...no, alreadyMine: true }, code(null))).toEqual({ owner: 7, status: "saved", lift: false });
@@ -66,9 +66,24 @@ describe("whose book", () => {
     expect(await decide(7, no, code(9))).toEqual({ owner: 9, status: "saved", lift: false });
     expect(await decide(7, no, code(null))).toEqual({ owner: null, status: "unlinked", lift: false });
   });
+  test("a code never takes a character another account owns", async () => {
+    const owned = { ...no, rowOwner: 9 };
+    expect(await decide(7, owned, code(7))).toEqual({ owner: null, status: "owned", lift: false });
+    expect(await decide(7, owned, code(8))).toEqual({ owner: null, status: "owned", lift: false });
+  });
+  test("a code of the owner itself, or on a character nobody owns, still links", async () => {
+    expect(await decide(7, { ...no, rowOwner: 9 }, code(9))).toEqual({ owner: 9, status: "saved", lift: false });
+    expect(await decide(7, { ...no, rowOwner: null }, code(7))).toEqual({ owner: 7, status: "saved", lift: false });
+  });
+  test("Battle.net still proves a character moved to this account", async () => {
+    expect(await decide(7, { ...no, rowOwner: 9, ownsOnBnet: true }, code(null))).toEqual({ owner: 7, status: "saved", lift: false });
+  });
   test("a book its owner removed waits for a new code, which brings it back", async () => {
-    const removed = { removedHere: true, alreadyMine: true, ownsOnBnet: true };
+    // (removing a book deletes its row: nobody owns it any more)
+    const removed = { removedHere: true, alreadyMine: false, ownsOnBnet: true, rowOwner: null };
     expect(await decide(7, removed, code(null))).toEqual({ owner: null, status: "removed", lift: false });
     expect(await decide(7, removed, code(7))).toEqual({ owner: 7, status: "saved", lift: true });
+    // (and once another account linked it since, the code can't take it back)
+    expect(await decide(7, { ...removed, rowOwner: 9 }, code(7))).toEqual({ owner: null, status: "owned", lift: false });
   });
 });

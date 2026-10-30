@@ -113,16 +113,19 @@ export function parseCharacter(v: unknown): ParsedCharacter | null {
  * Whose book it is, and the upload's answer: the companion's account if it
  * already has the character or owns it on Battle.net, but not once it removed
  * the book from the site; else the account of the link code in the record
- * (codeOwner: asked only when needed, the code is used once).
+ * (codeOwner: asked only when needed, the code is used once). A code only
+ * attaches a character nobody owns, or one its own account owns: a record is a
+ * saved file anyone can edit, so a code proves a request, not a GUID.
  */
 export async function decide(
   companion: number,
-  facts: { removedHere: boolean; alreadyMine: boolean; ownsOnBnet: boolean },
+  facts: { removedHere: boolean; alreadyMine: boolean; ownsOnBnet: boolean; rowOwner: number | null },
   codeOwner: () => Promise<number | null>,
-): Promise<{ owner: number | null; status: "saved" | "unlinked" | "removed"; lift: boolean }> {
+): Promise<{ owner: number | null; status: "saved" | "unlinked" | "removed" | "owned"; lift: boolean }> {
   if (!facts.removedHere && (facts.alreadyMine || facts.ownsOnBnet)) return { owner: companion, status: "saved", lift: false };
   const owner = await codeOwner();
   if (owner == null) return { owner: null, status: facts.removedHere ? "removed" : "unlinked", lift: false };
+  if (facts.rowOwner != null && facts.rowOwner !== owner) return { owner: null, status: "owned", lift: false };
   // (a new code brings a removed book back)
   return { owner, status: "saved", lift: facts.removedHere && owner === companion };
 }
@@ -163,11 +166,11 @@ export async function uploadAs(accountId: number, body: unknown): Promise<{ resu
     // A code typed in the game: used once, only when nothing else proves it.
     const { owner, status, lift } = await decide(
       link.accountId,
-      { removedHere: !!gone, alreadyMine: row?.ownerId === link.accountId, ownsOnBnet: !!(region && account && owns(account, region, ids.characterId)) },
+      { removedHere: !!gone, alreadyMine: row?.ownerId === link.accountId, rowOwner: row?.ownerId ?? null, ownsOnBnet: !!(region && account && owns(account, region, ids.characterId)) },
       async () => (c.linkCode ? takeLinkCode(c.linkCode) : null),
     );
     if (owner == null) {
-      result.characters.push({ guid: c.guid, name: c.name, status: status === "removed" ? "removed" : "unlinked" });
+      result.characters.push({ guid: c.guid, name: c.name, status: status === "saved" ? "unlinked" : status });
       continue;
     }
     if (lift) await db.delete(removed).where(and(eq(removed.accountId, owner), eq(removed.guid, c.guid)));

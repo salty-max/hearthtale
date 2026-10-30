@@ -202,6 +202,7 @@ const en = {
     open: "Open the book",
     unlinked: "This character isn't yours yet: get a link code from \"Link a character\" at the top of the page, type /ht link CODE in the game, log out, then upload the file again.",
     invalid: "This file holds no book the site can read.",
+    owned: "Another account already holds this character, so a link code can't move it. If it is yours, sign in with that account, or ask for help on the project's GitHub.",
     removed: "You removed this book from the site: a new link code brings it back.",
     notLua: "This isn't a Hearthtale saved file (Hearthtale.lua).",
     noBook: "No character's book in this file yet: play, log out, then try again.",

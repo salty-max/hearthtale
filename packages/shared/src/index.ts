@@ -96,7 +96,8 @@ export type PairPoll = { status: "pending" } | { status: "expired" } | { status:
 export type UploadRequest = { characters: unknown[] };
 /** What became of each character: kept, or waiting to be linked (`/ht link CODE`), or unreadable. */
 /** removed: its owner removed the book from the site; uploads wait for a new link code. */
-export type UploadStatus = "saved" | "unlinked" | "invalid" | "removed";
+/** owned: another account holds the character, a link code can't move it. */
+export type UploadStatus = "saved" | "unlinked" | "invalid" | "removed" | "owned";
 export type UploadResult = { characters: { guid: string; name: string; status: UploadStatus; chapters?: number; characterId?: number }[] };
 
 // ── sharing ─────────────────────────────────────────────────────────────────

@@ -67,6 +67,16 @@ Plan and steps: PLAN.md, "The site".
   owner's (`characters.owner_id`), proved by the login (its Battle.net character
   ids: the GUID's hex part, `lib/guid.ts`) or by a link code (`lib/link.ts`:
   `/ht link CODE` in the game, kept in the saved file, claimed by the upload).
+  A code attaches only a character nobody owns or its own account owns, never
+  one another account holds ("owned": a saved file is editable, so a code
+  proves a request, not a GUID). To move a book between accounts the old owner
+  removes it on the site first, or Battle.net proves the new owner. The gap:
+  on Forever, where Battle.net lists no characters, whoever links a GUID first
+  keeps it, so a squat is released by hand once a player's report checks out:
+  `bun run db:release <guid> --to <account id> --yes` gives the row to the
+  verified owner (their next upload replaces the book, no code, no race),
+  without `--to` the row goes. From the root it runs on Neon's production
+  (`.env.local`), and it prints the database's host first.
   Locally, "Use the test account" (`/api/auth/test`, never on Vercel) owns the
   test characters.
 - Sharing (`lib/sharing.ts`, `lib/og.ts`): an owner's share links (`shares`:
