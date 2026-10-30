@@ -68,7 +68,8 @@ stays there). The writing's files and rules: `docs/writing.md`. The site:
   names in English, from its tables in wow-data's databases (the pinned builds): a
   trade's, a riding's, a talent tree's, a creature type's and family's and a
   flight master's name in every language; every area, dungeon, boss and
-  class or trade spell by id; Forever's specializations named after the
+  class or trade spell by id (and a few the game took off their line since,
+  a journal may hold them: `KEPT_SPELLS`); Forever's specializations named after the
   class; by id, English, the trades and ridings, the creature types and
   families, the flight points, the talent trees, the places inside buildings
   (`i18n/enUS/subzones.json`, the kit's) and the mounts' auras, for the saved

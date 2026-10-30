@@ -16,7 +16,8 @@
 // - areas: every area's English name by id (the game gives the client's own
 //   by C_Map.GetAreaInfo: Record.lua turns a place back into English)
 // - maps, encounters: dungeons and bosses by id, English
-// - spells: the class and trade spells by id, English
+// - spells: the class and trade spells by id, English, and KEPT_SPELLS' (off
+//   their line now, a journal may hold them)
 // - specIds: Forever's specializations by id, English (a chosen one kept in
 //   English)
 // - skillIds, typeIds, familyIds, taxiIds, treeIds, inside, mounts: by id,
@@ -90,6 +91,14 @@ const CLASSES: [number, string][] = [
   [256, "WARLOCK"],
   [1024, "DRUID"],
 ];
+// Spells a journal may hold that the game has since taken off their line,
+// kept by id so the saved ids stay decodable (saved-ids.json): their names
+// still the client's own at the pin, a build that drops one fails here.
+const KEPT_SPELLS: Record<keyof typeof GAMES, string[]> = {
+  classic: [],
+  // Frost Blast, off the mage's Frost line at 1.60.1.70707
+  forever: ["1326053", "1326054", "1326055"],
+};
 
 // The game's creatures and quests in English by id, from the audit's data
 // (bun run audit: classic-db, and Forever's additions over it): { creatures:
@@ -195,7 +204,10 @@ for (const game of Object.keys(GAMES) as (keyof typeof GAMES)[]) {
       .map((r) => r.ID),
   );
   const wanted = new Set((await table(game, "SkillLineAbility")).filter((r) => lines.has(r.SkillLine)).map((r) => r.Spell));
+  for (const id of KEPT_SPELLS[game]) wanted.add(id);
   const spells = (await table(game, "SpellName")).filter((r) => wanted.has(r.ID) && r.Name_lang);
+  const unnamed = KEPT_SPELLS[game].filter((id) => !spells.some((r) => r.ID === id));
+  if (unnamed.length) throw new Error(`${game}: kept spells the client no longer names: ${unnamed.join(", ")}`);
   // the mounts' auras (the aura that mounts, 78)
   const mounting = new Set((await table(game, "SpellEffect")).filter((r) => r.EffectAura === "78").map((r) => r.SpellID));
   const mounts = (await table(game, "SpellName")).filter((r) => mounting.has(r.ID) && r.Name_lang);
@@ -274,7 +286,8 @@ ${ids(maps, "MapName_lang")}
   encounters = {
 ${ids(encounters, "Name_lang")}
   },
-  -- the class and trade spells by id
+  -- the class and trade spells by id, and those a journal may hold that the
+  -- game took off their line
   spells = {
 ${ids(spells, "Name_lang")}
   },

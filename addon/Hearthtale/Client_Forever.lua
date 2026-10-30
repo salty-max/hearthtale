@@ -3287,7 +3287,8 @@ ns.client = {
     [3644] = "Highland Horror",
     [3676] = "Miner Johnson",
   },
-  -- the class and trade spells by id
+  -- the class and trade spells by id, and those a journal may hold that the
+  -- game took off their line
   spells = {
     [10] = "Blizzard",
     [17] = "Power Word: Shield",
@@ -4928,7 +4929,7 @@ ns.client = {
     [10964] = "Greater Heal",
     [10965] = "Greater Heal",
     [10969] = "Blue Mechanostrider",
-    [11069] = "Improved Fireball",
+    [11069] = "Accelerant",
     [11070] = "Improved Frostbolt",
     [11071] = "Frostbite",
     [11078] = "Improved Fire Blast",
@@ -5381,7 +5382,7 @@ ns.client = {
     [13795] = "Immolation Trap",
     [13797] = "Immolation Trap",
     [13809] = "Frost Trap",
-    [13812] = "Explosive Trap Effect",
+    [13812] = "Explosive Trap",
     [13813] = "Explosive Trap",
     [13815] = "Enchant Gloves - Agility",
     [13817] = "Enchant Shield - Stamina",
@@ -5487,8 +5488,8 @@ ns.client = {
     [14305] = "Immolation Trap",
     [14310] = "Freezing Trap",
     [14311] = "Freezing Trap",
-    [14314] = "Explosive Trap Effect",
-    [14315] = "Explosive Trap Effect",
+    [14314] = "Explosive Trap",
+    [14315] = "Explosive Trap",
     [14316] = "Explosive Trap",
     [14317] = "Explosive Trap",
     [14318] = "Aspect of the Hawk",
@@ -7192,7 +7193,7 @@ ns.client = {
     [29193] = "Improved Weapon Totems",
     [29206] = "Healing Way",
     [29228] = "Flame Shock",
-    [29438] = "Elemental Precision",
+    [29438] = "Precision",
     [29441] = "Magic Absorption",
     [29442] = "Magic Absorption",
     [30021] = "Crystal Infused Bandage",

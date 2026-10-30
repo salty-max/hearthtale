@@ -2848,7 +2848,8 @@ ns.client = {
     [3197] = "Mason",
     [3296] = "Spirit of Mograine",
   },
-  -- the class and trade spells by id
+  -- the class and trade spells by id, and those a journal may hold that the
+  -- game took off their line
   spells = {
     [10] = "Blizzard",
     [17] = "Power Word: Shield",
