@@ -1,5 +1,5 @@
-import { describe, expect, it } from "bun:test";
-import { encryptPayload } from "./webpush";
+import { afterEach, describe, expect, it } from "bun:test";
+import { encryptPayload, isPushEndpoint, sendPush } from "./webpush";
 
 const enc = new TextEncoder();
 const te = (s: string): Uint8Array<ArrayBuffer> => new Uint8Array(enc.encode(s));
@@ -72,5 +72,73 @@ describe("webpush aes128gcm", () => {
     const body = await encryptPayload(sub, te(msg));
 
     expect(await decrypt(client.privateKey, body, uaPub, auth)).toBe(msg);
+  });
+});
+
+describe("webpush endpoints", () => {
+  it("only the browsers' push services", () => {
+    for (const ok of [
+      "https://fcm.googleapis.com/fcm/send/abc",
+      "https://web.push.apple.com/QAbc",
+      "https://updates.push.services.mozilla.com/wpush/v2/abc",
+      "https://wns2-par02p.notify.windows.com/w/?token=abc",
+    ])
+      expect(isPushEndpoint(ok)).toBe(true);
+    for (const bad of [
+      "http://fcm.googleapis.com/fcm/send/abc",
+      "https://169.254.169.254/latest/meta-data",
+      "https://127.0.0.1/x",
+      "https://[::1]/x",
+      "https://localhost/x",
+      "https://fcm.googleapis.com.evil.example/x",
+      "https://evilfcm.googleapis.com/x",
+      "https://user:pw@fcm.googleapis.com/x",
+      "https://fcm.googleapis.com:8443/x",
+      "https://push.example/x",
+      "https://fcm.googleapis.com./x",
+      "https://evil.example\\@fcm.googleapis.com/x",
+      "not a url",
+    ])
+      expect(isPushEndpoint(bad)).toBe(false);
+  });
+
+  const realFetch = globalThis.fetch;
+  afterEach(() => {
+    globalThis.fetch = realFetch;
+  });
+  const keys = async () => {
+    const client = await crypto.subtle.generateKey({ name: "ECDH", namedCurve: "P-256" }, true, ["deriveBits"]);
+    const uaPub = new Uint8Array(await crypto.subtle.exportKey("raw", client.publicKey));
+    return { p256dh: b64url(uaPub), auth: b64url(crypto.getRandomValues(new Uint8Array(16))) };
+  };
+  const vapid = async () => {
+    const k = await crypto.subtle.generateKey({ name: "ECDSA", namedCurve: "P-256" }, true, ["sign"]);
+    const jwk = await crypto.subtle.exportKey("jwk", k.privateKey);
+    const pub = new Uint8Array(await crypto.subtle.exportKey("raw", k.publicKey));
+    return { publicKey: b64url(pub), privateKey: jwk.d!, subject: "mailto:test@example.com" };
+  };
+
+  it("a stored endpoint elsewhere is never fetched, and is dropped", async () => {
+    let fetched = false;
+    globalThis.fetch = (async () => {
+      fetched = true;
+      return new Response(null, { status: 201 });
+    }) as unknown as typeof fetch;
+    const res = await sendPush({ endpoint: "https://169.254.169.254/x", keys: await keys() }, {}, await vapid());
+    expect(fetched).toBe(false);
+    expect(res).toEqual({ ok: false, status: 0, gone: true });
+  });
+
+  it("a push service that hangs is given up on, and no redirect is followed", async () => {
+    let init: RequestInit | undefined;
+    globalThis.fetch = ((_url: string, i: RequestInit) => {
+      init = i;
+      return new Promise((_, reject) => i.signal!.addEventListener("abort", () => reject(i.signal!.reason)));
+    }) as unknown as typeof fetch;
+    const started = Date.now();
+    const sent = sendPush({ endpoint: "https://fcm.googleapis.com/fcm/send/abc", keys: await keys() }, {}, await vapid(), { timeoutMs: 50 });
+    await expect(sent).rejects.toThrow();
+    expect(Date.now() - started).toBeLessThan(2000);
+    expect(init?.redirect).toBe("manual");
   });
 });

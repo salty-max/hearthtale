@@ -11,6 +11,7 @@ import { confirmPairing, isPairCode, linkFor, pairingPending, pollPairing, start
 import { signInWithPassport } from "@/lib/ravenpost";
 import { handleUpload, uploadAs, type Saved } from "@/lib/upload";
 import { notifyNewEntries, subscribe, unsubscribe, vapid } from "@/lib/push";
+import { isPushEndpoint } from "@/lib/webpush";
 import { waitUntil } from "@vercel/functions";
 import { ogPage } from "@/lib/og";
 import { createShare, hall, hallBook, listShares, revokeShare, setInHall, sharedBook } from "@/lib/sharing";
@@ -257,7 +258,7 @@ const pushSub = (v: unknown): { endpoint: string; p256dh: string; auth: string }
   const o = v && typeof v === "object" ? (v as Record<string, unknown>) : null;
   const keys = o?.keys && typeof o.keys === "object" ? (o.keys as Record<string, unknown>) : null;
   const endpoint = o?.endpoint;
-  if (typeof endpoint !== "string" || endpoint.length > 1000 || !/^https:\/\//.test(endpoint)) return null;
+  if (typeof endpoint !== "string" || endpoint.length > 1000 || !isPushEndpoint(endpoint)) return null;
   if (typeof keys?.p256dh !== "string" || typeof keys.auth !== "string" || keys.p256dh.length > 200 || keys.auth.length > 100) return null;
   return { endpoint, p256dh: keys.p256dh, auth: keys.auth };
 };

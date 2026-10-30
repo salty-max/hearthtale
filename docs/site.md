@@ -117,7 +117,11 @@ Plan and steps: PLAN.md, "The site".
   aes128gcm on Web Crypto): a browser's subscription per device
   (`push_subscriptions`, `POST`/`DELETE /api/push/subscriptions`, the key at
   `/api/push/key`); an upload that finishes entries the book before it hadn't
-  (its same owner's) tells them, after the answer (`waitUntil`). Needs
+  (its same owner's) tells them, after the answer (`waitUntil`). An endpoint
+  must be at a browser's push service (`isPushEndpoint`: FCM, Apple, Mozilla,
+  Windows), on subscribing and again before each send (a stored one elsewhere
+  is dropped), each send given up on after ten seconds, no redirect followed.
+  Needs
   VAPID_PUBLIC_KEY, VAPID_PRIVATE_KEY and VAPID_SUBJECT (apps/api/.env.local,
   Vercel), optional: without them, no notifications and no Settings section for them, the site otherwise the same.
 - A saved file brought by hand: `POST /api/upload` (signed in), the

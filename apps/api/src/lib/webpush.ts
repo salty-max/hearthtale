@@ -136,6 +136,26 @@ export async function encryptPayload(
 export type SendResult = { ok: boolean; status: number; gone: boolean };
 
 /**
+ * The browsers' push services: Chrome and Android (FCM), Safari (Apple), Firefox
+ * (Mozilla), Edge (Windows). A subscription naming any other host is refused,
+ * so the API never posts to a host a user picked (an internal address, a slow
+ * server holding the function).
+ */
+const PUSH_HOSTS = ["fcm.googleapis.com", "push.apple.com", "push.services.mozilla.com", "notify.windows.com"];
+
+export function isPushEndpoint(endpoint: string): boolean {
+  let url: URL;
+  try {
+    url = new URL(endpoint);
+  } catch {
+    return false;
+  }
+  if (url.protocol !== "https:" || url.username || url.password || url.port) return false;
+  const host = url.hostname.toLowerCase();
+  return PUSH_HOSTS.some((h) => host === h || host.endsWith(`.${h}`));
+}
+
+/**
  * RFC 8030 §5.3 message urgency. The push service uses it to decide whether a
  * message is worth waking a sleeping device for; APNs maps `high` to priority 10
  * (deliver now) and the lower levels to batched delivery. Live match alerts are
@@ -144,7 +164,9 @@ export type SendResult = { ok: boolean; status: number; gone: boolean };
 export type PushUrgency = "very-low" | "low" | "normal" | "high";
 
 /**
- * Deliver one push. `gone` = the subscription is dead (404/410) → drop it.
+ * Deliver one push. `gone` = the subscription is dead (404/410, or not at a
+ * push service) → drop it. A push service that hangs is given up on after
+ * `timeoutMs`, and a redirect is never followed (it could lead anywhere).
  *
  * `ttl` (seconds) is how long the push service may hold the message for a device
  * it can't reach — a phone with the screen off, in iOS low-power or Android Doze.
@@ -155,8 +177,10 @@ export async function sendPush(
   sub: PushSub,
   payload: unknown,
   vapid: Vapid,
-  { ttl = 60, urgency = "normal" }: { ttl?: number; urgency?: PushUrgency } = {},
+  { ttl = 60, urgency = "normal", timeoutMs = 10_000 }: { ttl?: number; urgency?: PushUrgency; timeoutMs?: number } = {},
 ): Promise<SendResult> {
+  // (stored before the push services were checked: dropped as dead)
+  if (!isPushEndpoint(sub.endpoint)) return { ok: false, status: 0, gone: true };
   const body = await encryptPayload(sub, te(JSON.stringify(payload)));
   const res = await fetch(sub.endpoint, {
     method: "POST",
@@ -168,6 +192,8 @@ export async function sendPush(
       Urgency: urgency,
     },
     body: body as BodyInit,
+    signal: AbortSignal.timeout(timeoutMs),
+    redirect: "manual",
   });
   return { ok: res.ok, status: res.status, gone: res.status === 404 || res.status === 410 };
 }
