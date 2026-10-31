@@ -49,7 +49,9 @@ local W = K.welcome({
     table.insert(choices, K.collectChoice(ns.collect))
     return choices
   end,
-  footnote = L["Change them any time: /ht settings, or a right-click on the minimap button. /ht opens the journal."],
+  footnote = L["Change them any time: %s, or a right-click on the minimap button."]:format("/ht settings")
+    .. " "
+    .. L["/ht opens the journal."],
   open = {
     text = L["Open the journal"],
     click = function()
