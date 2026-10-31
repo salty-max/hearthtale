@@ -16,6 +16,11 @@ stays there). The writing's files and rules: `docs/writing.md`. The site:
   game's eleven languages from `i18n/<locale>/` (`words.json`, `meta.json`:
   plural rule, flagged); `--keys` writes `i18n/words.json`. The writer's
   files (Language, Lines, Diary, Forever, Names, Knowledge) have no `L`.
+  A translation that reorders its blanks needs its caller on `ns.fmt`
+  (`Locale.lua`; today the level lines, `ns.levelLine`), which reads the
+  numbered blanks (French "%3$s %2$s de niveau %1$d"), LuaJIT's `format` not. `scripts/french-spaces.ts` (its `--check` in
+  `addon:ci`) turns a plain or missing space before `: ? !` and a percent sign into
+  a no-break one in the French words and the TOCs' Notes-frFR.
   `addon/test/french.lua`, `german.lua`: a French and a German client. French done 14 October 2026, German (flagged: a first translation) the same day.
   Spanish added 16 October 2026, flagged until native review: neutral tú,
   diario, entrada and Salón de los Caídos. esMX borrows esES prose while
