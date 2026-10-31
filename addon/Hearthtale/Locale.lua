@@ -26,3 +26,16 @@ function ns.translate(t)
   ns.locale = t.locale
   K.translate(t)
 end
+
+-- A sentence's blanks filled in, in the order its language puts them: a
+-- translation may number them ("%3$s %2$s de niveau %1$d"), which LuaJIT's
+-- format can't read (the game's can).
+function ns.fmt(s, ...)
+  if not s:find("%%%d%$") then return s:format(...) end
+  local args, order = { ... }, {}
+  local plain = s:gsub("%%(%d)%$", function(i)
+    table.insert(order, args[tonumber(i)])
+    return "%"
+  end)
+  return plain:format(unpack(order))
+end

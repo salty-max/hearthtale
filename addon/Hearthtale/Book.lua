@@ -61,6 +61,14 @@ local function when(ch)
   return L["%d to %s"]:format(ta.day, day(b))
 end
 
+-- A fallen life's level, race and class as its language orders them ("Level 12
+-- Human Warrior", "Guerrier Humain de niveau 12"), the way it ended after them
+-- when given (ns.fmt reads the numbered blanks a translation may use).
+function ns.levelLine(d, race, class, ending)
+  if ending then return ns.fmt(L["Level %d %s %s, %s"], d.level or 0, race or "", class or "", ending) end
+  return ns.fmt(L["Level %d %s %s"], d.level or 0, race or "", class or "")
+end
+
 -- The levels a chapter covers: "level 12", "levels 11 to 13".
 local function levels(ch)
   if ch.from == ch.to then return L["level %d"]:format(ch.from) end
@@ -111,7 +119,7 @@ local function showPage(life, w, key, mine)
   if key == "epitaph" then
     local d = life.death or {}
     local race, class = ns.lifeNames(life)
-    local sub = { L["Hardcore"], L["fallen"], L["Level %d %s %s"]:format(d.level or 0, race or "", class or "") }
+    local sub = { L["Hardcore"], L["fallen"], ns.levelLine(d, race, class) }
     if life.realm then table.insert(sub, life.realm) end
     table.insert(sub, day(d.at))
     return show(life.name or "", line(sub), { w.epitaph and EPITAPH:format(w.epitaph) }, life)
@@ -306,7 +314,7 @@ local function showHall(fallen)
   for _, life in ipairs(fallen) do
     local d = life.death or {}
     local race, class = ns.lifeNames(life)
-    local facts = L["Level %d %s %s, %s"]:format(d.level or 0, race or "", class or "", ending(d))
+    local facts = ns.levelLine(d, race, class, ending(d))
     page:card(life.name or "?", facts .. (d.at and (", " .. day(d.at)) or ""), crestOf(life), function()
       hallLife, hallKey = life.guid, "epitaph"
       ns.refresh()
@@ -347,7 +355,7 @@ local function refreshHall(scroll)
     table.insert(entries, {
       key = life.guid,
       title = life.name or "?",
-      place = L["Level %d %s %s"]:format(d.level or 0, race or "", class or ""),
+      place = ns.levelLine(d, race, class),
       always = life.guid == hallLife, -- (the open one stays, its pages under it)
       selected = life.guid == hallLife and hallKey == "epitaph",
       click = function()

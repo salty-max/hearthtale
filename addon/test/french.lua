@@ -54,6 +54,21 @@ check(
   "a fallen life's race and class in today's language, by their tokens and its sex",
   tostring(race1) .. " " .. tostring(class1)
 )
+-- The level line in the client's own order: "Guerrier Humain de niveau 12", the
+-- English "Niveau 12 Humain Guerrier" being the order of a language that isn't
+-- French (numbered blanks, which LuaJIT's format can't read: ns.fmt)
+check(
+  ns.levelLine({ level = 12 }, "Humain", "Guerrier") == "Guerrier Humain de niveau 12",
+  "a fallen life's level line in French order",
+  ns.levelLine({ level = 12 }, "Humain", "Guerrier")
+)
+check(
+  ns.levelLine({ level = 12 }, "Humain", "Guerrier", "a péri") == "Guerrier Humain de niveau 12, a péri",
+  "… with the way it ended after it",
+  ns.levelLine({ level = 12 }, "Humain", "Guerrier", "a péri")
+)
+check(ns.fmt("%d %s", 3, "x") == "3 x", "a plain sentence's blanks fill in as ever")
+
 GetLocale = getLocale
 LOCALIZED_CLASS_NAMES_MALE, LOCALIZED_CLASS_NAMES_FEMALE = classMale, classFemale
 
