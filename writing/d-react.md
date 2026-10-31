@@ -4,7 +4,7 @@ kind: d-react
 - [rescue] Bringing someone back alive is a different sort of victory, and I liked it better than most.
 - [rescue] There are worse ways to spend a day than making sure someone gets home.
 - [rescue] Of everything the stretch asked of me, that was the part I would do again without being asked.
-- [villain] Some foes I fight because I am asked to. That one I fought gladly.
+- [villain] I had been asked to see that one off, and I did it gladly.
 - [villain] The quiet afterwards was the best part of it.
 - [villain] I had heard enough of what that one had done to feel no regret at all.
 - [undead !race:Scourge] The dead never fall quite the way the living do, and I was glad when it was over.

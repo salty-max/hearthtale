@@ -57,7 +57,7 @@ kind: why
 - 585 2 none | stealing Skullsplitter trophy skulls from three ruins to appease the spirit of Nezzliok, who knew where Yenniku had been taken
 - 586 3 villain | cutting into the heart of the Skullsplitters to defeat their chief, Ana'thek the Cruel, as Gan'zulah's raging spirit demanded
 - 587 1 | winning back the snuff the Bloodsail Raiders had hijacked, for Deeg, a pirate who could find none in Booty Bay
-- 588 1 | bringing word to Kin'weelay that Zanzil the Outcast held Yenniku body and soul, leaving only the faintest hope
+- 588 1 | bringing word to Kin'weelay that Zanzil the Outcast held Yenniku body and soul, with only the faintest hope left
 - 589 2 none | gathering Pulsing Blue Shards from Ironjaw Basilisks in the Crystalvein Mine, magic Kin'weelay needed to bend the Mind's Eye
 - 591 3 villain | wresting the Mind's Eye from the ogre mage Mai'Zoth in the Mosh'Ogg mound, the only hope of saving Yenniku
 - 592 3 none | trapping Yenniku's soul in a gem at the Ruins of Aboraz and carrying it to Nimboya, freeing him from Zanzil the Outcast
@@ -99,7 +99,7 @@ kind: why
 - 8552 2 none | returning a sash embroidered HS to Captain Smotts, proof that Mok'rash, one of the giants who had wrecked his ships, was dead
 - 8554 3 villain | baiting the giant Negolash with buzzard wings and wine, then killing him to recover Captain Smotts' cutlass
 # Ashenvale
-- 2 2 beast | bringing Sharptalon's claw to Senani Thunderheart, proof that the hippogryph who had terrorized the lumber camps' peons was dead
+- 2 2 beast | bringing Sharptalon's claw to Senani Thunderheart, proof that the hippogryph who had terrorised the lumber camps' peons was dead
 - 23 2 beast | presenting the paw of Ursangous, a great bear with many kills to his name, to Senani Thunderheart for the Ashenvale Hunt
 - 24 2 beast | claiming the head of Shadumbra, the nightsaber that made every trip west of Splintertree Post dangerous, for the Ashenvale Hunt
 - 25 2 none | clearing the befouled elementals that had halted the transports past Mystral Lake, and scouting the Alliance outpost there
@@ -141,7 +141,7 @@ kind: why
 - 1045 3 villain | killing Ran Bloodtooth and his guards for Krolg, an uncorrupted furbolg determined that his people police their own
 - 1046 2 none | bringing Ran Bloodtooth's skull and Dartol's Rod to Raene Wolfrunner, finishing what Teronis had died to begin
 - 1054 3 villain | killing Dal Bloodclaw, chieftain of the Thistlefur furbolgs, whose growing numbers might soon dare to attack Astranaar
-- 1070 1 | looking for Kaela Shadowspear in Stonetalon, sent to investigate the land and not heard from since
+- 1070 1 | looking for Kaela Shadowspear, sent to investigate Stonetalon and not heard from since
 - 1134 2 none | killing pridewings near Mirkfallon Lake to deny their venom to the orc assassins said to use it on the Alliance
 - 1918 1 | bringing a befouled water globe from Mystral Lake to Mastok Wrilehiss, in case it held what had fouled the lake
 - 4581 1 | carrying Shindrell's report to the druid Kayneth Stillwind, who feared a corruption moving through Ashenvale
@@ -149,12 +149,12 @@ kind: why
 - 6442 2 none | throwing the Wrathtail naga back into the sea from the Zoram Strand, land the Horde had worked hard to claim
 - 6462 2 none | recovering the sacred charms of Mitsuwa's kin from Thistlefur Hold, taken by the furbolgs who killed them on the road
 - 6482 3 rescue | escorting Ruul, Yama Snowhoof's brother, out of the Thistlefur camp, where the furbolgs had taken him for a bear and starved him
-- 6503 2 none | hunting the Ashenvale Outrunners spying on the Horde's defenses, to blind the Alliance before it could attack
+- 6503 2 none | hunting the Ashenvale Outrunners spying on the Horde's defences, to blind the Alliance before it could attack
 - 6504 1 | finding the scattered pages of a shredder manual for Gurda Ragescar, who could not work the new shredder without them
 - 6544 3 none | fighting beside Torek's raiders in their attack on Silverwing Outpost and its leader, Duriel Moonfire
 - 6571 1 | gathering saw blades, rope, oil and axes for the Warsong Lumber Camp, wresting the rope and oil back from furbolgs and satyrs
-- 6621 3 none | raising Karang's banner on the Foulweald totem mound and holding it until Chief Murgut came out to face me, and fell
-- 6641 3 beast | guarding Muglash while he lured out Vorsha the Lasher, the hydra that kept attacking Zoram'gar, and seeing her slain
+- 6621 3 villain | raising Karang's banner on the Foulweald totem mound and holding it until Chief Murgut came out to fight, and fell to me
+- 6641 3 beast | guarding Muglash while he lured out Vorsha the Lasher, the hydra that kept attacking Zoram'gar, and helping to slay her
 - 6922 2 none | bringing Je'neu Sancrea the strange globe that had fed Baron Aquanis in Blackfathom, proof of what had corrupted him
 # Thousand Needles
 - 1104 1 | gathering salty scorpid venom for Fizzle Brassbolts, the base of a fuel to make the gnomes' rocket car burn hotter
@@ -165,7 +165,7 @@ kind: why
 - 1110 1 | scavenging crashed rocket car parts across the Shimmering Flats for Kravel Koalbeard to sell to the racers
 - 1111 1 | fetching the gnomes' long-delayed car parts from Wharfmaster Dizzywig in Ratchet for Kravel Koalbeard
 - 1114 1 | delivering the car parts Fizzle Brassbolts had long waited for, short one small piece Kravel had kept back
-- 1117 1 | bringing Kravel the rumors Krazek had dug up on Nazz Steamboil, a secret the goblin pilot would pay a fortune to keep
+- 1117 1 | bringing Kravel the rumours Krazek had dug up on Nazz Steamboil, a secret the goblin pilot would pay a fortune to keep
 - 1118 1 | taking Kravel's new scheme to Crank Fizzlebub in Booty Bay, who would need something to addle the racers' wits
 - 1119 1 | bringing back a Fool's Stout, brewed by Crank Fizzlebub from Zanzil's mixture, for Kravel's scheme against the racers
 - 1120 1 | plying the gnome pit crew with Fool's Stout before the race, as Kravel's scheme demanded
@@ -227,7 +227,7 @@ kind: why
 - 1095 1 | carrying Sputtervalve's new orders to Ziz Fizziks: Gerenzo, whom the trade princes did not approve of, was to be removed
 - 1096 3 villain | killing Gerenzo Wrenchwhistle, the half-mechanical gnome running the Venture Co. site, and bringing his metal arm to Ziz Fizziks
 - 5881 1 | bringing Grish Longrunner at the Great Lift word of his relief, so he could at last visit his family
-- 6282 2 none | culling the Bloodfury harpies of Stonetalon for Maggran Earthbinder, the source of the harpies spreading across Kalimdor
+- 6282 2 none | culling the Bloodfury harpies of Stonetalon for Maggran Earthbinder, who feared the harpies would spread across Kalimdor
 - 6283 3 villain | slaying Bloodfury Ripper, all but a queen to the harpies, so their numbers would at last diminish
 - 6284 3 beast | killing Besseleth, the old spider of Sishir Canyon, so travellers could come to Sun Rock Retreat without fear
 - 6301 1 | gathering Gaea seeds at Mirkfallon Lake for Tammra Windfield to bless, to begin healing the wrecked land
@@ -242,7 +242,7 @@ kind: why
 - 6629 3 villain | killing Grundig Darkcloud, who had led the Grimtotem attack on Makaba Flathoof's village
 # Blackrock Spire
 - 4701 3 beast | destroying Halycon, the corrupt beast at the source of the Blackrock orcs' worgs, whose numbers never dwindled
-- 4724 3 beast | slaying Halycon, gigantic den mother of the Bloodaxe worgs, and living through her mate Gizrul the Slavener
+- 4724 3 beast | slaying Halycon, gigantic den mother of the Bloodaxe worgs, and surviving her mate Gizrul the Slavener
 - 4729 1 | catching a Bloodaxe worg pup in Blackrock Spire for Kibler, who tamed exotic beasts as pets for the rich
 - 4734 1 | testing Tinkee Steamboil's eggscilloscope on a black dragon egg in the Rookery, high in Blackrock Spire
 - 4735 1 | freezing and collecting black dragon eggs from the Rookery for Tinkee Steamboil and her patron
@@ -268,7 +268,7 @@ kind: why
 - 5102 3 villain | destroying General Drakkisath in Blackrock Spire for Marshal Maxwell, who carried the fight to the black dragons' doorstep
 - 5127 2 villain | slaying Goraluk Anvilcrack and driving Lorax's fel-imbued pike through his heart, to claim the soul he had bartered away
 - 5160 1 | carrying Awbee's scale to Haleh in Winterspring, so the matron protectorate could scry what Awbee had felt in the spire
-- 6502 3 none | taking the Blood of the Black Dragon Champion from General Drakkisath, to remake the amulet that opens Onyxia's lair
+- 6502 3 villain | taking the Blood of the Black Dragon Champion from General Drakkisath, to remake the amulet that opens Onyxia's lair
 - 6569 2 none | gathering black dragonspawn eyes in the upper spire for Myranda the Hag, for an illusion to fool the black flight's gatekeeper
 - 6602 3 villain | killing General Drakkisath and bringing his blood to Rexxar, to waken the key to Onyxia's lair
 - 7761 2 none | finding the brand General Drakkisath guarded, to bear the Mark of Drakkisath that opens the way into Blackwing
@@ -279,8 +279,8 @@ kind: why
 - 1193 1 | mending a broken trap with a thorium widget and frost oil, a nasty surprise for any ogre that wandered by
 - 1318 2 none | seeking the Gauntlet of Gordok Might, stolen long ago by the elf Tortheldrin, which only the true Gordok king could win back
 - 5518 1 | bringing cloth, leather and thread to the chained goblin Knot Thimblejack for an ogre suit to slip past Captain Kromcrush
-- 5525 2 rescue | freeing Knot Thimblejack, a goblin chained in the Gordok wing who had expected to end up an ogre's appetizer
-- 7429 1 | unlocking Knot Thimblejack's chains in the Gordok wing, to the goblin's loud delight
+- 5525 2 rescue | freeing Knot Thimblejack, a goblin chained in the Gordok wing who had expected to end up an ogre's appetiser
+- 7429 1 | unlocking Knot Thimblejack's chains in the Gordok wing
 - 7441 2 none | chasing the imp Pusillin through the Warpwood Quarter to recover Azj'Tordin's stolen book of incantations
 - 7461 3 victim | destroying Immol'thar in his prison and ending Prince Tortheldrin, to lay the spirits of Eldre'Thalas to rest
 - 7463 2 none | extracting Hydrospawn's essence, an anomaly in the east wing that Lorekeeper Lydros wanted catalogued, for a useful cantrip
@@ -291,9 +291,9 @@ kind: why
 - 7485 1 | returning the Libram of Protection, whose loss had made its owner weep like an infant, to Lorekeeper Lydros for an arcanum
 - 7488 3 villain | stopping the blood elf mage Lethtendris and taking her web, which ensnared Dire Maul's magic, before it could do lasting harm
 - 7489 3 villain | defeating Lethtendris, who meant to turn Dire Maul's tainted magic on her enemies, and bringing her web to Talo Thornhoof
-- 7507 2 none | returning Foror's Compendium of Dragon Slaying, its seal broken, to the Athenaeum rather than selling it on the black market
-- 7508 1 | presenting Lorekeeper Lydros with a dull elven blade, to be heated in a dragon's breath and tempered in her blood
-- 7703 3 none | winning back the Gauntlet of Gordok Might from Prince Tortheldrin, proof of being the true ruler of the Gordok
+- 7507 2 none | returning Foror's Compendium of Dragon Slaying, its seal broken, to the Athenaeum
+- 7508 1 | presenting Lorekeeper Lydros with a dull elven blade, to be heated in a dragon's breath and tempered in the dragon's blood
+- 7703 3 none | winning back the Gauntlet of Gordok Might from Prince Tortheldrin
 - 8949 1 | killing ogres for their warbeads to feed Falrin Treeshaper's hatred, his brother having died at their hands
 - 8950 1 | gathering a spectre's essence, dark runes and brilliant shards for Falrin Treeshaper's enchantment on a challenge banner
 - 8967 2 victim | summoning and slaying the spirit of Isalien, a priestess ambushed in Dire Maul by Alzzin the Wildshaper, to put her to rest
@@ -312,7 +312,7 @@ kind: why
 - 3642 2 none | swearing the gnome engineers' oath of secrecy before Oglethorpe Obnoticus in Booty Bay, forsaking goblin engineering
 - 3643 2 none | showing Oglethorpe Obnoticus samples of work, mithril tubes, a scope and target dummies, for a Gnome Engineer Membership Card
 # Zul'Farrak
-- 2768 2 none | recovering the divino-matic rod Chief Engineer Bilgewhizzle needed to find new water holes, stolen by Sergeant Bly
+- 2768 2 none | recovering the divino-matic rod Sergeant Bly had stolen, which Chief Engineer Bilgewhizzle needed to find new water holes
 - 2770 3 beast | summoning the great beast Gahz'rilla from the trolls' sacred pool and taking his electrified scale for Wizzle Brassbolts' car
 - 2846 3 none | wrenching the Tiara of the Deep from the Hydromancer Velratha, who had sent thieves to steal it from Tabetha
 - 2865 1 | gathering uncracked scarab shells in Zul'Farrak for Tran'rek, the beetles having been hunted near to extinction elsewhere

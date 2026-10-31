@@ -34,7 +34,7 @@ kind: why
 - 9072 1 | carrying Desecrated Boots to Rimblat Earthshatter, so the armour of the fallen could be worn for battle once more as Earthshatter Boots
 - 9073 1 | handing Rimblat Earthshatter Desecrated Handguards and purification materials for a pair of Earthshatter Handguards
 - 9074 1 | taking a Desecrated Girdle back from the Scourge to Rimblat Earthshatter, to be remade as an Earthshatter Girdle
-- 9075 1 | honoring the fallen by bringing their Desecrated Wristguards to Rimblat Earthshatter for Earthshatter Wristguards
+- 9075 1 | honouring the fallen by bringing their Desecrated Wristguards to Rimblat Earthshatter for Earthshatter Wristguards
 - 9077 1 | supplying Rohan the Assassin with a Desecrated Breastplate and leather scraps for a Bonescythe Breastplate, the bones his part
 - 9078 1 | bringing Rohan the Assassin Desecrated Legplates from the floating city of death, and his price, for Bonescythe Legplates
 - 9079 1 | paying Rohan the Assassin for his troubles and handing him a Desecrated Helmet to make a Bonescythe Helmet
@@ -119,7 +119,7 @@ kind: why
 - 8590 1 | bringing thick leather to Sergeant Umala for the Horde's war materiel, with the gratitude of the Horde promised in return
 - 8600 1 | cutting rugged leather for Doctor Serratus, a stern judge of a skinner's knife, for the Ahn'Qiraj war effort
 - 8604 1 | stockpiling wool bandages for Healer Longrunner's first aid kits, since soldiers in the field cannot rely on a healer
-- 8607 1 | finding mageweave bandages by whatever means for the war effort, to the surprise of a disdainful Lady Callow
+- 8607 1 | making mageweave bandages for the war effort, for Lady Callow
 - 8609 1 | donating runecloth bandages to Stoneguard Clayhoof for the soldiers facing the silithid and whatever force controls them
 - 8611 1 | hunting wolves and cooking lean wolf steaks for Bloodguard Rawtar, salted away to feed the Horde's soldiers
 - 8613 1 | fishing up spotted yellowtail for Fisherman Lin'do, put in charge of collecting a ton of it for the Horde's war
@@ -127,7 +127,7 @@ kind: why
 # sort 22
 - 1657 1 | tossing Forsaken stink bombs into the heart of Southshore for Darkcaller Yanka, a Hallow's End tribute to Forsaken liberation
 - 1658 1 | scouting the Forsaken's Wickerman Festival in Tirisfal Glade for Sergeant Hartman, who feared the trouble it would bring Southshore
-- 6962 1 | fetching gingerbread cookies and ice cold milk for Great-father Winter, worn out after greeting folk all day
+- 6962 1 | fetching gingerbread cookies and ice cold milk for Greatfather Winter, worn out after greeting folk all day
 - 6963 2 none | searching the snows of the Alterac Mountains for the Smokywood Pastures agent who went after a missing shipment of Winter Veil treats
 - 6983 3 villain | recovering the stolen Winter Veil treats from the Abominable Greench, the creature that had frozen Sacks into a snowman
 - 7025 1 | bringing Greatfather Winter gingerbread cookies and ice cold milk, a treat he had earned after a long day of greetings
@@ -135,8 +135,8 @@ kind: why
 - 7043 3 villain | tracking down the Abominable Greench, who had stolen Smokywood Pastures' Winter Veil treats and turned poor Sacks into a snowman
 - 7061 1 | carrying a book of the old Winter Veil legends to Cairne Bloodhoof, who wanted the lore of his people kept alive
 - 7063 1 | taking a book on the Feast of Winter Veil to King Magni Bronzebeard, who was glad to see the older legends remembered
-- 8149 1 | laying a Harvest Festival tribute at Uther's Tomb in the Western Plaguelands, honoring the sacrifice of Uther Lightbringer
-- 8150 1 | placing a Harvest Festival tribute at Grom's Monument in Demon Fall Canyon, honoring the strength and sacrifice of Grom Hellscream
+- 8149 1 | laying a Harvest Festival tribute at Uther's Tomb in the Western Plaguelands, honouring the sacrifice of Uther Lightbringer
+- 8150 1 | placing a Harvest Festival tribute at Grom's Monument in Demon Fall Canyon, honouring the strength and sacrifice of Grom Hellscream
 - 8311 1 | trick-or-treating at the city inns for Jesper, a child at the Stormwind Orphanage too sick to go
 - 8312 1 | going trick-or-treating for Spoops, a sick child at the Orgrimmar Orphanage, and doing every trick the innkeepers asked
 - 8322 1 | fighting into the Southshore Inn to drop rotten eggs in its main brew keg, ruining the humans' prized ale for weeks to come
@@ -149,7 +149,7 @@ kind: why
 - 8359 1 | flexing for Innkeeper Gryshka, who wanted a show of strength before handing over Orgrimmar Nougat for a sick child
 - 8360 1 | dancing for Innkeeper Pala in Thunder Bluff, the price of Thunder Bluff Marzipan for a sick child
 - 8373 1 | scrubbing Forsaken stink bombs off Southshore with a pine cleaner for Sergeant Hartman during Hallow's End
-- 8746 3 rescue | freeing Metzen, one of Great-father Winter's eight reindeer, from the kidnappers who sent Smokywood Pastures ransom letters
+- 8746 3 rescue | freeing Metzen, one of Greatfather Winter's eight reindeer, from the kidnappers who sent Smokywood Pastures ransom letters
 - 8762 3 rescue | rescuing Metzen the Reindeer with a pouch of reindeer dust, following the clues in the two ransom letters sent to Smokywood Pastures
 - 8763 1 | feeding deeprock salt and five gold to a Holly Preserver, a secret shared with the hero of the day, for holly that never goes bad
 - 8799 1 | using the Holly Preserver on deeprock salt and five gold, a reward for the hero of the day, for holly that would never wilt
@@ -162,7 +162,7 @@ kind: why
 - 8901 1 | carrying a tauren's letter asking Elenia Haydon to come to Mulgore, a love she knew she could not return
 - 8902 1 | bringing Elenia Haydon a letter from the sweetheart she had been betrothed to a lifetime ago, too nervous to give it himself
 - 8903 2 none | getting a Stormwind guard's love card for Aristan Mottar, who feared an unnatural epidemic of love had reached the city guards
-- 8904 2 none | getting a guardian's moldy love card for Fenstad Argyle, who feared an unnatural epidemic of love was weakening the Undercity
+- 8904 2 none | getting a guardian's mouldy love card for Fenstad Argyle, who feared an unnatural epidemic of love was weakening the Undercity
 - 8979 2 none | bringing the fashionable cologne and perfume to Apothecary Zinge, to test Fenstad Argyle's hunch that foul alchemy was clouding minds
 - 8980 1 | bringing Fenstad Argyle word from Apothecary Zinge that the new perfumes held traces of mind control potions
 - 8982 1 | asking Innkeeper Norman where his popular perfume had come from, tracing the tainted fragrances for Fenstad Argyle
@@ -191,7 +191,7 @@ kind: why
 - 664 2 none | slaughtering the Daggerspine naga who killed the survivors of the Maiden's Folly, some solace for Captain Steelgut
 - 665 2 none | guarding Professor Phizzlethorpe at the cursed cave while he charged the goggles meant to find the lost elven treasure
 - 666 1 | searching the sea floor with the Goggles of Gem Hunting for Elven Gems of the lost treasure, calcified into stone
-- 667 3 rescue | manning the cannon to defend Shakes O'Breen from the Daggerspine attack, since his crew could not reach Booty Bay without him
+- 667 3 none | manning the cannon to defend Shakes O'Breen from the Daggerspine attack, since his crew could not reach Booty Bay without him
 - 668 1 | handing the recovered Elven Gems to Captain O'Breen, the treasure his ships had come to Faldir's Cove for
 - 669 1 | carrying a sample Elven Gem to Fleet Master Seahorn in Booty Bay, proof O'Breen's stranded crew had found the treasure
 - 670 1 | carrying Fleet Master Seahorn's secret letter back to Shakes O'Breen, tied up off the Arathi coast
@@ -203,13 +203,13 @@ kind: why
 - 678 2 none | fighting the Boulderfist brutes and magi in their lair near the dwarven bridge, the harder test Drum Fel set
 - 679 3 none | striking down the Boulderfist lords and their shaman in the ruins of Stromgarde, the leaders of the attacks on Hammerfall
 - 680 3 villain | killing Or'Kalar for Korin Fel, who kept the ogre's trap hidden from her husband so he would not rush off foolishly into it
-- 682 2 none | taking back the badges of fallen Stromgarde militiamen from the Syndicate, who paid bounties for them, so their families could be told
+- 682 2 none | taking back the badges of fallen Stromgarde militiamen from the Syndicate, who paid bounties for them, so their families could learn their fate
 - 684 3 villain | hunting Marez Cowl, a demon-trafficking Syndicate warlock in Stromgarde, for the bounty at Refuge Pointe
 - 685 3 none | bringing down Lord Falconcrest, head of the Syndicate in Arathi, and Otto, the bodyguard who had killed dozens of defenders
 - 687 2 none | searching the Badlands for Theldurin the Lost, a mad deserter of the Twilight's Hammer who had stolen the scroll of Myzrael
 - 691 1 | gathering Witherbark tusks, medicine pouches and a shadow hunter knife as reagents for Archmage Malin's apprentice Kryten
 - 693 2 none | wresting Trelane's Wand of Invocation from Kor'gresh in Boulderfist Hall before the ogre mastered its icy power
-- 694 1 | taking an Azure Agate from the Boulderfist shaman so Kryten could enchant it into a key to the Tower of Arathor's defenses
+- 694 1 | taking an Azure Agate from the Boulderfist shaman so Kryten could enchant it into a key to the Tower of Arathor's defences
 - 696 2 none | raiding the ogre-held Tower of Arathor for Trelane's phylactery, orb and ember agate
 - 701 1 | cutting raptor hearts from Highland Fleshstalkers so Tor'gan could imbue Gor'mul with the guile of the raptor
 - 702 2 none | bringing Gor'mul the orb Tor'gan had filled with raptor spirit, another try at waking the warrior dormant in him

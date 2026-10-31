@@ -140,7 +140,7 @@ kind: why
 - 1710 1 | searching below the Highperch wyvern nests for sunscorched egg shells, for armour Mathiel would make by Furen's new techniques
 - 1712 2 none | gathering the items Bath'rah the Windwatcher needed to summon the wind lord Cyclonian, a test of strength and cunning
 - 1713 3 villain | defeating Cyclonian, the wind lord Bath'rah the Windwatcher had waited ages to see fall, and taking his whirlwind heart
-- 1719 3 none | passing The Affray on Fray Island, beating every challenger and then Big Will to earn Klannoc Macleod's teaching
+- 1719 3 none | winning through The Affray on Fray Island, beating every challenger and then Big Will, to earn Klannoc Macleod's teaching
 - 1819 3 undead | unsealing Ulag the Cleaver and killing him, a Scourge captive the Deathguards had failed to free from the Lich King
 - 1821 2 none | robbing the Agamand family crypt of its heirloom weapons for Coleman Farthing, whose employers in life had caused his death
 - 1824 3 none | racing back from the Field of Giants with still-twitching antennae for Ruga Ragetotem, a timed trial on the warrior's path
@@ -148,7 +148,7 @@ kind: why
 - 1842 1 | taking the swollen hooves of satyrs leeching Ashenvale's magic, so Ula'elek could work their power into brutal gauntlets
 - 1844 2 victim | slaying a chimaera matriarch in the ashen Charred Vale to end her misery, and bringing her galvanized horn to Orm Stonehoof
 - 1846 1 | collecting sturdy Dragonmaw shinbones in the Wetlands for brutal legguards by Velora Nitely, a fine armorsmith even in death
-- 8423 1 | killing helboars in the Blasted Lands, the test of strength the Fallen Hero of the Horde set before asking an honorable task
+- 8423 1 | killing helboars in the Blasted Lands, the test of strength the Fallen Hero of the Horde set before asking an honourable task
 - 8424 2 none | slaughtering the Shadowsworn, whose dark rituals tormented the spirit of the Fallen Hero of the Horde
 - 8425 3 none | destroying the troll guardians of the Sunken Temple for voodoo feathers to lend the Fallen Hero of the Horde a body for a moment
 # The Hinterlands
@@ -202,8 +202,8 @@ kind: why
 - 2763 1 | fortifying mithril with citrines under Galvan the Ancient, a lesson in how gems amplify the magic a smith imbues
 - 2765 2 none | claiming an expert blacksmith's reward from Galvan the Ancient, a trinket of greater power than the one given up to reach him
 - 2771 1 | trading lessons with Trenton Lighthammer, mithril coifs and an ornate shoulder for his secret of the ornate mithril helm
-- 2772 1 | teaching Trenton Lighthammer ornate mithril pants for his tournament against a Venture Co. shredder, for his ornate boots
-- 2773 1 | showing the Mithril Kid, Trenton Lighthammer, the ornate gloves he secretly could not make, for his ornate breastplate
+- 2772 1 | making ornate mithril pants for Trenton Lighthammer's tournament against a Venture Co. shredder, in trade for his ornate boots
+- 2773 1 | showing the Mithril Kid, Trenton Lighthammer, the ornate gloves he could not make himself, in trade for his ornate breastplate
 - 3321 1 | being welcomed into the Mithril Order by Trenton Lighthammer, who gave back the trinket sacrificed to reach Galvan
 - 5103 1 | snatching unfired plate gauntlets from beside a dead man's charred bones, then getting out of the fire to find who knew their use
 - 5283 3 none | forging ornate mithril helms, boots and a breastplate for Grumnus, the raw talent he demanded before making an armorsmith
@@ -247,9 +247,9 @@ kind: why
 - 722 2 none | taking Hammertoe Grez's amulet back from Magregan Deepshadow, before it led the Dark Irons to scrolls for stronger golems
 - 1139 3 none | recovering the Tablet of Will before the Shadowforge clan could find it, so Hammertoe's death would not be in vain
 - 1360 1 | fetching Krom Stoutarm's treasured stein from his chest in the trogg-filled North Common Hall of Uldaman
-- 2198 1 | tracing a shattered, magical necklace stamped with the Ironforge seal and the letters TdK back to the jeweler who made it
-- 2199 1 | fetching silver bars for Talvash del Kissel, a jeweler ruined by a rival's rumors, for what he knew of the necklace
-- 2200 2 none | searching Uldaman for the remains of the paladin who last had Talvash's necklace, to clear the jeweler of a rumored curse
+- 2198 1 | tracing a shattered, magical necklace stamped with the Ironforge seal and the letters TdK back to the jeweller who made it
+- 2199 1 | fetching silver bars for Talvash del Kissel, a jeweller ruined by a rival's rumours, for what he knew of the necklace
+- 2200 2 none | searching Uldaman for the remains of the paladin who last had Talvash's necklace, to clear the jeweller of a rumoured curse
 - 2201 2 none | taking the necklace's gems from a Shadowforge barricade, a trogg urn and the trogg leader Grimlok, as the paladin had written
 - 2202 1 | collecting magenta fungus caps from the Uldaman dig site for Jarkal Mossmeld, curious about their use in alchemy
 - 2204 3 none | bringing down Uldaman's mightiest construct for the power source Talvash del Kissel needed to restore his necklace's magic
@@ -284,7 +284,7 @@ kind: why
 # sort 304
 - 862 1 | catching dig rats at Bael Modan for Grub's stew, since to him no adventurer was seasoned without some rat killing
 - 2178 1 | hunting striders near Auberdine for their meat, to earn Alanndarian Nightsong's secret recipe for fresh strider stew
-- 4161 1 | collecting only the spider legs Zarrin asked for, a lesson in the kaldorei balance of taking from nature no more than needed
+- 4161 1 | collecting only the spider legs Zarrin asked for, no more than he needed
 - 6610 1 | gathering giant eggs, clam meat and Alterac Swiss for Dirge Quikcleave's clamlette, the price of lessons in exotic cuisine
 - 7321 1 | hunting snapjaws on Lake Lordamere for turtle meat, so Christoph Jeffcoat would share his secret soothing turtle bisque
 - 8307 1 | searching the Twilight's Hammer camp west of Cenarion Hold for how they made bitter sandworm meat palatable

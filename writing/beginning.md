@@ -8,4 +8,4 @@ kind: beginning
 - I began {at}, with help to offer and no clear notion of what the work would cost.
 - I set out {at}, curious about the world beyond the worries I already knew.
 - [hc] I began {at}, with one life to keep and no wish to spend it proving I was fearless.
-- [hc] I set out {at}, hoping the road would be kind enough to let me grow old.
+- [hc !race:Scourge] I set out {at}, hoping the road would be kind enough to let me grow old.

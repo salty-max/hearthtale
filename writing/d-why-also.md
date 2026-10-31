@@ -14,5 +14,5 @@ kind: d-why-also
 - [night !moved] When night came, I {why}.
 - [night moved] When night came, {where}, I {why}.
 - [thread !moved] With that done, I {why}.
-- [thread !moved] That led me on, and I {why}.
+- [thread !moved] The same business led me on, and I {why}.
 - [thread moved] With that done, {where}, I {why}.

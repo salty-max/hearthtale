@@ -57,7 +57,7 @@
       "chapters": [
         {
           "began": 1790900000,
-          "diary": "I set out in Coldridge Valley, determined to make a name for myself that had nothing to do with loss. The snow of Dun Morogh glowed blue under the stars, and the cold felt cleaner for it. I knew the shapes of those mountains even in the dark. I drove back the Rockjaw troggs for Balir Frosthammer, whose camp to the west they had overrun only nights before. Arcane Missiles was mine now, and the next fight would not go quite like the last. I curled up in Anvilmar, small enough to find comfort in corners bigger folk would never notice.",
+          "diary": "I set out in Coldridge Valley, determined to make a name for myself that had nothing to do with loss. The snow of Dun Morogh glowed blue under the stars, and the cold felt cleaner for it. I knew the shapes of those mountains even in the dark. I drove back the Rockjaw troggs for Balir Frosthammer, whose camp to the west they had overrun only nights before. Arcane Missiles is mine now, and the next fight will not go quite like the last. I curled up in Anvilmar, small enough to find comfort in corners bigger folk would never notice.",
           "ended": 1790902805,
           "from": 1,
           "number": 1,
@@ -97,7 +97,7 @@
       "chapters": [
         {
           "began": 1790900000,
-          "diary": "Night had come down in Darkshire, and I set out wishing I had a few of the Night Watch at my back. I drove the skeletal fiends and horrors from the Raven Hill graveyard, where the undead were spreading through the forest around Darkshire. Hammer of Justice is mine now, a way to stop a foe in the middle of its intentions. I died in Raven Hill, one more empty place in a kingdom with too many already. Darkshire huddled under its lamps at the edge of the dark wood, with the Night Watch on every corner. People spoke in low voices, as if the forest might hear. I rested in Darkshire, and the road could keep its views until I wanted them again.",
+          "diary": "Night had come down in Darkshire, and I set out wishing I had a few of the Night Watch at my back. I drove the skeletal fiends and horrors from the Raven Hill graveyard, where the undead were spreading through the forest around Darkshire. Hammer of Justice is mine now, a way to stop a foe in the middle of its intentions. I died in Raven Hill, one more empty place in a kingdom with too many already. Darkshire huddled under its lamps at the edge of the dark wood, with the Night Watch on every corner. The forest pressed close on every side. I rested in Darkshire, and the road could keep its views until I wanted them again.",
           "ended": 1790904980,
           "from": 23,
           "number": 1,
@@ -137,7 +137,7 @@
         {
           "began": 1790900000,
           "close": true,
-          "diary": "I began in the Valley of Trials, with Thrall's new homeland to call my own and no wish to repay it with empty boasting. Heat rose from the red dust of Durotar, as if the ground itself were breathing. This was the land we had claimed, and I meant to learn how to belong to it. A Kul Tiras Marine nearly ended me in Tiragarde Keep, and I felt how little a fearsome name can do against a blade. I drove Lieutenant Benedict and his Kul Tiras men out of Tiragarde Keep, which they had retaken in defiance of the Warchief's pact. At Razor Hill I heard the forge before I saw the drilling. Beyond the barracks, Kul Tiras ships sat off the coast, and I understood why no one in the town ever quite stood at rest. I rested in Razor Hill, and left the ancestors to judge my unashamed relief.",
+          "diary": "I began in the Valley of Trials, with Thrall's new homeland to call my own and no wish to repay it with empty boasting. Heat rose from the red dust of Durotar, as if the ground itself were breathing. This was the land we had claimed, and I meant to learn how to belong to it. A Kul Tiras Marine nearly ended me in Tiragarde Keep, and I felt how little a fearsome name can do against a blade. I drove Lieutenant Benedict and his Kul Tiras men out of Tiragarde Keep, which they had retaken in defiance of the Warchief's pact. At Razor Hill the barracks and the watchtower looked over the road, and Kul Tiras ships sat off the coast. I understood why the town never seemed at ease. I rested in Razor Hill, and left the ancestors to judge my unashamed relief.",
           "ended": 1790907245,
           "from": 1,
           "number": 1,
@@ -147,7 +147,7 @@
         },
         {
           "began": 1790939645,
-          "diary": "The Horde is more peoples than one now, and I headed out in Razor Hill ready to work beside any of them. I saw Orgrimmar with my own eyes at last, and found it larger, louder and more mine than I had pictured. The drums of Orgrimmar echoed off the spiked walls as I came in. At Grommash Hold I felt the weight of it: a city our people had built for themselves, with no one's chains on it. I learned to Charge, and the distance between me and a foe stopped being a matter of courage. I seized a lieutenant's insignia from the Burning Blade in Skull Rock for Thrall, who meant to find the true head of the traitors.",
+          "diary": "The Horde is more peoples than one now, and I headed out in Razor Hill ready to work beside any of them. I saw Orgrimmar with my own eyes at last, and found it larger, busier and more mine than I had pictured. The drums of Orgrimmar echoed off the spiked walls as I came in. At Grommash Hold I felt the weight of it: a city our people had built for themselves, with no one's chains on it. I learned to Charge, and the distance between me and a foe stopped being a matter of courage. I seized a lieutenant's insignia from the Burning Blade in Skull Rock for Thrall, who meant to find the true head of the traitors.",
           "from": 5,
           "number": 2,
           "open": true,
@@ -223,7 +223,7 @@
         },
         {
           "began": 1790939990,
-          "diary": "Plans had failed whole kingdoms in my time, so I set out in Brill with a modest one and held it loosely. I saw the Undercity with my own eyes at last, and found it larger, louder and more mine than I had pictured. Green canals ran through the Undercity, past the bubbling Apothecarium, deep beneath the ruins of Lordaeron. Out of so much that had survived badly, we had made a city, and it was ours. I can call on Renew now, though its healing burns in my hands for as long as it works.",
+          "diary": "Plans had failed whole kingdoms in my time, so I set out in Brill with a modest one and held it loosely. I saw the Undercity with my own eyes at last, and found it larger, busier and more mine than I had pictured. Green canals ran through the Undercity, past the bubbling Apothecarium, deep beneath the ruins of Lordaeron. Out of so much that had survived badly, we had made a city, and it was ours. I can call on Renew now, though its healing burns in my hands for as long as it works.",
           "from": 5,
           "number": 2,
           "open": true,
@@ -252,7 +252,7 @@
         {
           "began": 1790900000,
           "close": true,
-          "diary": "I carried on in the Dwarven District, sorting what I had heard of the wider world from what I found in it. I came into Westfall, my own people's country, and was glad to be among my own. Westfall lay dark and quiet, its windmills turning over farms nobody tended any more. A light in a window was rare enough to make me wonder who still dared to keep one. I escorted the Defias Traitor to the Brotherhood's secret hideout, so Stoutmantle would know where VanCleef was hiding. The Deadmines was the hardest place I went, and I did not go alone: Thessaly, Brannigan and Rowan came with me.\n\nMine carts stood abandoned on their rails, and the walls sweated in the lamplight. The deeper I went into the Deadmines, the louder the hammering grew. Mr. Smite nearly ended me in Ironclad Cove. I had been wishing for a less ordinary life, but I was not wishing for that now. I pulled Smite's Mighty Hammer from the spoils and put on my new find at once. Not long after, I assassinated Edwin VanCleef in the Deadmines, the beginning of the end for the Defias Brotherhood that plagued Westfall. After that dungeon, I could happily spend a week on nothing more dangerous than the lane between two farms.",
+          "diary": "I carried on in the Dwarven District, sorting what I had heard of the wider world from what I found in it. I came into Westfall, my own people's country, and was glad to be among my own. Westfall lay dark and quiet, its windmills turning over farms nobody tended any more. I wondered who still lived behind its dark windows. I escorted the Defias Traitor to the Brotherhood's secret hideout, so Stoutmantle would know where VanCleef was hiding. The Deadmines was no easy place, and I did not go alone: Thessaly, Brannigan and Rowan came with me.\n\nMine carts stood abandoned on their rails, and the walls sweated in the lamplight. The deeper I went into the Deadmines, the louder the hammering grew. Mr. Smite nearly ended me in Ironclad Cove. I had been wishing for a less ordinary life, but I was not wishing for that now. I pulled Smite's Mighty Hammer from the spoils and put on my new find at once. Not long after, I assassinated Edwin VanCleef in the Deadmines, the beginning of the end for the Defias Brotherhood that plagued Westfall. After that dungeon, I could happily spend a week on nothing more dangerous than the lane between two farms.",
           "ended": 1790909585,
           "from": 18,
           "number": 1,

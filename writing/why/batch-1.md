@@ -46,7 +46,7 @@ kind: why
 - 8535 1 | summoning and destroying a Hoary Templar, one of the elemental nobles the Twilight's Hammer worships
 - 8536 1 | calling up an Earthen Templar and putting an end to it, so the cult outside Ahn'Qiraj would not catch the Hold off guard
 - 8537 1 | finding a way to summon a Crimson Templar and slaying it, the cult's elemental nobles too great a threat to ignore
-- 8538 3 none | luring the Dukes of Cynders, Fathoms, Zephyrs and Shards into this world and destroying them, the cult's chief organizers
+- 8538 3 none | luring the Dukes of Cynders, Fathoms, Zephyrs and Shards into this world and destroying them, the cult's chief organisers
 - 8539 1 | cutting down Hive'Zora hive sisters with the reinforcements called to the assault on Hive'Zora
 - 8540 1 | procuring ornate mithril boots for the mounted division of the Cenarion Hold guard, who were short of them
 - 8541 1 | supplying the Cenarion Hold guard with grinding stones, dense, solid and heavy, of which they had run short
@@ -118,7 +118,7 @@ kind: why
 - 982 1 | diving to the wrecks of the Silver Dawning and the Mist Veil, sunk by murlocs, for their dead captains' lockboxes
 - 983 1 | mending Buzzbox 827 with crawler legs for Wizbang, an inventor whose talking boxes needed constant repair
 - 984 2 none | scouting a Blackwood furbolg camp for signs of corruption, for Terenthis, who had vowed no more night elves would be hurt
-- 985 2 none | fighting the Blackwood furbolgs in their camp south of Auberdine, the biggest threat to its people
+- 985 2 none | fighting the Blackwood furbolgs in their camp south of Auberdine, the biggest threat to Auberdine's people
 - 986 1 | skinning moonstalker sires and matriarchs for fine pelts, so Terenthis could make a cloak to reach Volcor unhindered
 - 993 2 none | seeking out Volcor, Grimclaw's wounded master, in a furbolg cave and bringing him an enchanted moonstalker cloak
 - 994 3 rescue | fighting a way out of the furbolg cave at Volcor's side, down to the road where Grimclaw waited
@@ -151,7 +151,7 @@ kind: why
 - 4763 3 demon | luring out the satyr corruptor with a cleansing bowl for its Talisman of Corruption, which might one day free the furbolgs
 - 4811 2 none | searching the eastern mountains for the red crystal said to draw hostile moonkin, for Sentinel Glynda Nal'Shea
 - 4812 2 none | pouring moonwell water over the red crystal, which turned clear to show bone fragments and half a jawbone inside
-- 5321 2 rescue | guiding the sleepy Kerlonian Evershade, newly woken from the Emerald Dream, to Liladris Moonriver at Maestra's Post
+- 5321 2 none | guiding the sleepy Kerlonian Evershade, newly woken from the Emerald Dream, to Liladris Moonriver at Maestra's Post
 - 5713 3 rescue | defending the poisoned Sentinel Aynasha from the furbolg Marosh and his trackers until her antidote took hold
 - 6342 1 | flying to Auberdine with Nessa's fish bones and scales for Laird, to compare Teldrassil's catch with the mainland's
 - 6343 1 | carrying Laird's reply back to Nessa Shadowsong, with his suspicion that the world tree made the fish there grow so large
@@ -161,12 +161,12 @@ kind: why
 - 1644 2 none | bringing linen to Stephanie Turner so she could sew clothes for the orphans the Scourge had left in her care
 - 1647 1 | searching the outer ring of Ironforge for someone in need of a paladin's kindness, and finding John Turner
 - 1648 2 none | giving John Turner the linen he needed to send clothes home at last to the orphanage he and his wife run in Stormwind
-- 1650 1 | riding out to Westfall's Longshore to stand by Daphne Stilwell, left alone against the Defias while her husband was away
+- 1650 1 | heading out to Westfall's Longshore to stand by Daphne Stilwell, left alone against the Defias while her husband was away
 - 1651 3 none | defending Daphne Stilwell's home against wave after wave of Defias, a paladin's test of valour against overwhelming odds
 - 1655 1 | wresting Jordan Stilwell's ore shipment from the Mo'grosh ogres who ambushed its caravan, for Bailor Stonehand
-- 1783 3 rescue | raising Narm Faulk with the Symbol of Life where he had fallen to the Dark Iron dwarves south of Helm's Bed Lake
+- 1783 3 none | raising Narm Faulk with the Symbol of Life where he had fallen to the Dark Iron dwarves south of Helm's Bed Lake
 - 1784 2 none | taking a Dark Iron script near Helm's Bed, proof for Ironforge's doubting council that the Dark Iron were in Dun Morogh
-- 1786 3 rescue | raising Henze Faulk with the Symbol of Life on Heroes' Vigil, where he fell holding off Defias mages so Gazin could escape
+- 1786 3 none | raising Henze Faulk with the Symbol of Life on Heroes' Vigil, where he fell holding off Defias mages so Gazin could escape
 - 1787 2 none | seizing the Defias rogue wizards' papers on Heroes' Vigil, proof for the king's advisors that the Defias were in Elwynn
 - 7637 1 | buying High Priest Rohan's exorcism censer with a generous donation, a first sacrifice on the road to a charger
 - 7640 2 victim | driving the tormented spirits out of Terrordale with the exorcism censer, passing the Light's judgment on them
@@ -175,13 +175,13 @@ kind: why
 - 7645 1 | paying Merideth Carlson, once called mad by the Silver Hand, in gold and manna biscuits for her spirit horse feed
 - 7646 1 | finding an Azerothian and a Pristine Black diamond for Lord Grayson Shadowbreaker, the last pieces of a divination scryer
 - 7647 3 villain | defeating Death Knight Darkreaver in the Great Ossuary of Scholomance to redeem the soul of the fallen charger he rode
-- 8414 1 | collecting minion's scourgestones for High Priest Thel'danis at Uther's Tomb, so their evil could be dispelled
+- 8414 1 | collecting scourgestones from the Scourge's minions for High Priest Thel'danis at Uther's Tomb, so their evil could be dispelled
 - 8416 1 | carrying a purged scourgestone to Commander Ashlam Valorfist, who meant to bathe the Scourge in righteous fire
 - 8418 2 none | taking voodoo feathers from the troll priests of the Sunken Temple, magic to forge a Holy Mightstone against the undead
 # sort 364
-- 7881 1 | making carnival boots for the Darkmoon Faire, whose folk praised the craftsmanship and paid in tickets
+- 7881 1 | making carnival boots for the Darkmoon Faire, in trade for its tickets
 - 7882 1 | stitching rugged leather jerkins for the Darkmoon Faire in trade for its tickets
-- 7883 1 | bringing the Darkmoon Faire costume pieces for the world's largest gnome, should one big enough ever be found
+- 7883 1 | bringing costume pieces to the Darkmoon Faire for the world's largest gnome, should one big enough ever be found
 - 7884 1 | crafting what the Darkmoon Faire needed for its Crocolisk Boy and Bearded Murloc act
 - 7885 1 | supplying the Darkmoon Faire with armour kits, one of them just right to patch a rip in a tent
 - 7889 1 | making coarse weightstones for the Darkmoon Faire, neither too heavy nor too light for building muscle
@@ -198,7 +198,7 @@ kind: why
 - 7903 1 | hunting bats for evil eyes to frighten visitors at the Darkmoon Faire
 - 7907 1 | returning a full deck of Beast cards to the Darkmoon Faire, as a mysterious ninth card had bidden
 - 7927 1 | presenting the completed Portals Deck at the Faire for one of its greater cards, as the deck's ninth card asked
-- 7928 1 | taking the finished Warlords Deck back to the Darkmoon Faire, a gesture the Darkmoon would not soon forget
+- 7928 1 | taking the finished Warlords Deck back to the Darkmoon Faire
 - 7929 1 | handing in a whole deck of Elemental cards at the Darkmoon Faire, where its ninth card promised a reward
 - 7937 1 | following Sayge's warm fortune to a haystack by the stable of the Eastvale Logging Camp, where a lockbox lay hidden
 - 7938 1 | following a fortune into the Deadmines, through a shimmering portal to a strange chest with a lockbox inside
@@ -208,7 +208,7 @@ kind: why
 # Redridge Mountains
 - 19 3 villain | hunting down Tharil'zun, vicious leader of the Blackrock Outrunners ambushing the road to Stonewatch Keep
 - 20 2 none | fighting the Blackrock orcs of Stonewatch Keep, whose raids kept the people of Lakeshire penned in town like cattle
-- 34 2 beast | putting an end to Bellygrub, the boar that kept trampling Martie Jainrose's garden and her daffodils
+- 34 2 none | putting an end to Bellygrub, the boar that kept trampling Martie Jainrose's garden and her daffodils
 - 89 1 | recovering iron pikes and rivets from the gnolls who hijacked Lakeshire's supplies, so the Everstill Bridge could be rebuilt
 - 91 2 none | killing the Shadowhide gnolls who served the warlock Morganth and kept Lakeshire in fear, as the Law of Lakeshire demanded
 - 92 1 | gathering condor meat, goretusk snouts and spider meat to restock Chef Breanna's bare cupboard for a Redridge Goulash
@@ -267,7 +267,7 @@ kind: why
 - 2161 1 | carrying the peon Ukor's load of food to Innkeeper Grosk in Razor Hill, the peon too afraid of the beasts on the road
 # Swamp of Sorrows
 - 698 1 | hunting grown sawtooth crocolisks for flanks to feed Tok'Kar's soldiers at the beach outpost, who had no time to hunt
-- 699 1 | supplying Tok'Kar sawtooth snapper claws to make weapons for the outpost watching the coast for murlocs
+- 699 1 | supplying Tok'Kar with sawtooth snapper claws to make weapons for the outpost watching the coast for murlocs
 - 1116 1 | gathering dream dust from the dragon whelps of the swamp for Krazek's snuff pouch, his price for news of Nazz
 - 1389 2 none | reclaiming the sacred draenethyst crystals the lost ones of the Fallow Sanctuary stole, lest Magtoor's people lose their way
 - 1392 3 villain | bringing Noboru's cudgel to the leader of the Harborage, proof the brute who killed any Draenei in his path was dead

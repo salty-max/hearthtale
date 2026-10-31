@@ -7,12 +7,12 @@ kind: d-camp
 - [!last company !one] I sat at a fire {at} with {mates}, and for an hour we were simply people warming our hands.
 - [!last company] {mates} and I stopped at the same fire {at}, and I was gladder of the company than of the warmth.
 - [!last company] I found {mates} at a fire {at}, and made room for myself beside them as if it were the most natural thing in the world.
-- [!last camp !company] I stopped at the camp {at}, where a fire burns for whoever comes, and was grateful someone kept it.
-- [!last camp !company] The camp's fire {at} was burning when I got there, as those fires always are, and I took my turn beside it.
+- [!last camp !company] I stopped at the camp {at}, where a fire was burning, and was grateful for it.
+- [!last camp !company] The camp's fire {at} was burning when I got there, and I sat beside it.
 - [!last night !company] I found a fire {at} in the dark, and sat close to it until the night felt smaller.
-- [last company one] I ended the stretch at a fire {at} with {mates}, and neither of us was in a hurry to be the first to leave it.
-- [last company !one] I ended the stretch at a fire {at} with {mates}, and nobody was in a hurry to be the first to leave it.
+- [last company one] I ended the stretch at a fire {at} with {mates}, and I was in no hurry to leave it.
+- [last company !one] I ended the stretch at a fire {at} with {mates}, and I was in no hurry to go anywhere.
 - [last company] We made our camp {at}, {mates} and I, and the fire did the rest.
-- [last camp !company] I ended the day at the camp {at}, where the fire never goes out, and let it work on me.
+- [last camp !company] I ended the day at the camp {at}, where a fire was burning, and let it work on me.
 - [last !company] I ended the stretch by a fire {at}, and let its warmth undo the day.
 - [last !company] I settled by a fire {at} for the night, and watched it until the day's work had burned down with it.

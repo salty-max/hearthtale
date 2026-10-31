@@ -4,7 +4,7 @@ kind: why
 # Zul'Gurub
 - 8053 1 | bringing Primal Hakkari Bindings out of Zul'Gurub to Jin'rokh the Breaker, a heathen's first proof among the Zandalar freethinkers
 - 8054 1 | wresting a Primal Hakkari Shawl from Hakkar's minions for Jin'rokh, honouring the freethinkers who never wavered against the Blood God
-- 8055 1 | taking a Primal Hakkari Tabard most painfully from the fools of Zul'Gurub, to prove worth as a freethinker to Jin'rokh once and for all
+- 8055 1 | taking a Primal Hakkari Tabard from the fools of Zul'Gurub, to prove my worth as a freethinker to Jin'rokh
 - 8056 1 | offering Maywiki of Zuldazar a Primal Hakkari Armsplint from Zul'Gurub, to earn the bracers the Zandalar augurs prize above all others
 - 8057 1 | proving worth to Maywiki of Zuldazar with a Primal Hakkari Stanchion, for bracers fit for a Zandalar haruspex
 - 8058 1 | claiming vengeance on Hakkar's minions in the tribe's name, a Primal Hakkari Armsplint for Jin'rokh and the way of the vindicator
@@ -29,7 +29,7 @@ kind: why
 - 8077 1 | tearing a Primal Hakkari Kossack from Zul'Gurub for Al'tabim the All-Seeing, a victory that assured the tribe Hakkar would not prevail
 - 8078 1 | wreaking havoc on Hakkar's minions for a Primal Hakkari Girdle, Jin'rokh's proof that Zul'Gurub had tasted Zandalar vengeance
 - 8079 1 | making Hakkar's minions pay for the mojo stolen from the Zandalar, a Primal Hakkari Kossack for Jin'rokh and a vindicator's breastplate
-- 8181 3 none | demanding the egg from Yeh'kinya once the Mosh'aru Tablets showed it would bring Hakkar back, only to hear he was already reborn
+- 8181 3 none | demanding the egg from Yeh'kinya once the Mosh'aru Tablets showed it would bring Hakkar back, only to hear that Hakkar was already reborn
 - 8183 3 villain | carrying the Heart of Hakkar to Molthor on Yojamba Isle, proof that the Soulflayer had been slain
 - 8184 1 | taking a Primal Hakkari Idol from Hakkar's mightiest lieutenants so Zanza could work the Presence of Might, an old troll enchantment
 - 8185 1 | searching the jinxed hoodoo for a punctured voodoo doll, half of what Zanza needed to make the Syncretist's Sigil
@@ -66,7 +66,7 @@ kind: why
 - 4343 1 | anointing a corrupted windblossom with two Cenarion salves and watching it shed the corruption
 - 4401 1 | tending a corrupted songflower with Cenarion salve until it bloomed bright and whole
 - 4403 1 | treating a twisted windblossom with Cenarion plant salves until it blossomed whole and healthy
-- 4421 3 demon | killing Xavathras and his Jadefire satyrs at the Ruins of Constellas, who spread the corruption to every creature, for Eridan Bluewind
+- 4421 3 demon | killing Xavathras and his Jadefire satyrs, who spread the corruption to every creature, at the Ruins of Constellas for Eridan Bluewind
 - 4441 2 none | fetching blessed water from the Temple of the Moon so Eridan Bluewind could try to free the ancient bound in Xavaric's flute
 - 4443 1 | cleansing a corrupted whipper root with three doses of Cenarion salve, leaving a vibrant, healthy plant
 - 4444 1 | healing a whipper root sick with Felwood's corruption, three Cenarion salves to bring it back
@@ -101,7 +101,7 @@ kind: why
 - 5883 1 | bringing Arathandris Silversky vitriol mined in Felwood, the makings of the plant salve that purifies its corrupted plants
 - 5884 1 | gathering what Arathandris Silversky could purify into Cenarion plant salve, every bit of it a help in taking back Felwood
 - 5885 1 | handing over a skinner's haul to Arathandris Silversky for plant salves, to reclaim Felwood from the corruption
-- 5886 1 | giving up a lesser nether essence, the most potent stuff for turning swords into plowshares, for Arathandris Silversky's plant salve
+- 5886 1 | giving up a lesser nether essence, the most potent essence there was, for Arathandris Silversky's plant salve
 - 5887 1 | trading what the hunt had yielded to Maybess Riverbreeze for Cenarion plant salve, to scour Felwood for corrupted plants
 - 5888 1 | handing Maybess Riverbreeze vitriol from the mines of Felwood, the more of it the more salve for the corrupted plants
 - 5889 1 | bringing gathered goods to Maybess Riverbreeze to be purified into salve, every bit a help in taking back Felwood
@@ -135,10 +135,10 @@ kind: why
 - 513 1 | rushing Lydon's Mudsnout Composite to Master Apothecary Faranell in the Undercity, to be treated with his colloid of decay
 - 515 1 | gathering a troll's blood potion, daggerspine scales and torn fin eyes to activate the contagion in Lydon's mudsnout mixture
 - 517 1 | stealing a keg of Shindigger Stout from the dwarves of Dun Garok, so Lydon's plague would not be wasted on a mere frog or dog
-- 518 1 | thinning the Crushridge ogres who had overrun the ruins of Alterac, so Melisara could strike at their leader Mug'Thol
-- 519 2 none | taking the heads of Targ, Muckrake and Glommus, Mug'Thol's loyal lieutenants, for Melisara in Tarren Mill
-- 520 3 villain | killing Mug'Thol and taking the Crown of Will from him, to end the Crushridge resistance to the Dark Lady
-- 521 2 none | carrying the Crown of Will, the relic Mug'Thol used to defy the Dark Lady, to Sharlindra in the Undercity
+- 518 1 | thinning the Crushridge ogres who had overrun the ruins of Alterac, so Melisara could strike at their leader Mug'thol
+- 519 2 none | taking the heads of Targ, Muckrake and Glommus, Mug'thol's loyal lieutenants, for Melisara in Tarren Mill
+- 520 3 villain | killing Mug'thol and taking the Crown of Will from him, to end the Crushridge resistance to the Dark Lady
+- 521 2 none | carrying the Crown of Will, the relic Mug'thol used to defy the Dark Lady, to Sharlindra in the Undercity
 - 533 2 none | searching the Syndicate camp north of Tarren Mill for any word of where the humans were holding Gol'dir, for Krusk
 - 536 1 | fighting the Torn Fin murlocs down the Western Strand in place of Lieutenant Farren Orinelle, who could barely rouse himself to obey Redpath
 - 539 2 none | killing Foreman Bonds and his miners at the Azureload Mine, so its iron would arm the Dark Lady's soldiers instead
@@ -149,7 +149,7 @@ kind: why
 - 547 1 | getting Deathguard Humbert's sword back from the dwarven scouts of Dun Garok, who stole his gear while he gathered firewood
 - 549 1 | cutting down Syndicate rogues and watchmen at Durnholde Keep, all of them wanted dead by order of Lady Sylvanas
 - 550 2 none | carrying Darthalia's sealed commendation for the Battle of Hillsbrad to Varimathras, word of a decisive blow against the Alliance
-- 552 1 | recovering Helcular's Rod from the yeti in his old ritual lair, for an apprentice bent on vengeance against Southshore
+- 552 1 | recovering Helcular's Rod from the yeti in Helcular's old ritual lair, for an apprentice bent on vengeance against Southshore
 - 553 3 none | carrying out the vengeance Helcular's apprentice wanted on Southshore, charging the rod at three flames and driving it into Helcular's grave
 - 555 1 | hunting snapjaw turtles near Lake Lordamere so Chef Jessen could serve Southshore's famous Soothing Turtle Bisque again
 - 556 1 | gathering worn stone tokens, the means Dalaran's wizards used to control elementals, for Magus Voidglare to study
@@ -168,10 +168,10 @@ kind: why
 - 661 1 | bringing Phin Odelic word that Quae and Kinelory were alive, and the research Kinelory took from the Go'Shek Farm
 - 676 1 | proving strength against the Boulderfist ogres before going to the aid of Hammerfall, under attack and close to falling
 # Blackrock Depths
-- 3802 3 villain | killing Fineous Darkvire for the hammer Ironfel and setting it in the hands of Franclorn Forgewright's statue, for the key to his city
+- 3802 3 villain | killing Fineous Darkvire for the hammer Ironfel and setting it in the hands of Franclorn Forgewright's statue, to win the key to Franclorn's city
 - 3907 3 villain | slaying Lord Incendius and bringing Thunderheart the tablet that named his master, Ragnaros, a general of the Old Gods
 - 3981 2 none | finding Commander Gor'shak in the prisons of Blackrock Depths, after a note on an arrow showed him behind bars
-- 3982 2 rescue | holding off the Dark Iron guards come for Gor'shak, who had let himself be captured to gather intelligence for Thrall
+- 3982 2 none | holding off the Dark Iron guards come for Gor'shak, who had let himself be captured to gather intelligence for Thrall
 - 4001 2 none | questioning Kharan Mighthammer about the kidnapping of Princess Moira Bronzebeard and carrying all he knew to Thrall
 - 4003 3 villain | slaying Emperor Dagran Thaurissan to break his spell on Princess Moira Bronzebeard, without harming her, for Thrall
 - 4004 2 none | bringing Thrall the news that Moira carried Thaurissan's child, an unborn Dark Iron who might one day rule Ironforge
@@ -192,7 +192,7 @@ kind: why
 - 4263 3 villain | destroying Lord Incendius, the minion of Ragnaros who kept raising Pyron from the ashes, for Jalinda
 - 4264 2 none | showing Marshal Windsor a crumpled note of Thaurissan's, a sign his stolen notes were not lost but being decrypted
 - 4282 3 none | killing General Angerforge and Golem Lord Argelmach to take back the lost information Marshal Windsor needed as proof
-- 4286 1 | stripping Dark Iron fanny packs from the dwarves of Blackrock Depths for Oralius, who wanted the good stuff inside
+- 4286 1 | stripping Dark Iron fanny packs from the dwarves of Blackrock Depths for Oralius, who wanted what lay inside
 - 4322 3 rescue | helping Marshal Windsor recover his gear and free his friends from Blackrock Depths before he set off to confront Bolvar
 - 4341 2 none | finding Kharan Mighthammer in the prisons of Blackrock Depths for King Magni, who wanted answers about his missing daughter
 - 4361 1 | bearing Kharan's tale back to King Magni Bronzebeard in Ironforge, bad news of his daughter Moira
@@ -233,8 +233,8 @@ kind: why
 - 749 1 | examining the burned Venture Co. caravan by Stonebull Lake for Morin Cloudstalker, after salvagers were seen at the wreck
 - 751 2 none | bringing Morin Cloudstalker the Venture Co. papers from the caravan, proof the goblins were robbing Mulgore of its ore
 - 754 2 none | carrying the cleansing totem past the goblins to the Winterhoof Water Well, so its waters could be used again
-- 756 1 | taking claws from prairie stalkers and flatland cougars, whose purity in the hunt Mull Thunderhorn needed for the next cleansing totem
-- 758 2 none | performing the cleansing ritual at the Thunderhorn Water Well, a deed its clan's ancestors praised in Mull Thunderhorn's dream
+- 756 1 | taking claws from prairie stalkers and flatland cougars, which Mull Thunderhorn needed, pure from the hunt, for the next cleansing totem
+- 758 2 none | performing the cleansing ritual at the Thunderhorn Water Well, for Mull Thunderhorn, as his dream had asked
 - 759 1 | hunting prairie wolf alphas for their teeth, the land's offering for the totem to cleanse the last well
 - 760 3 none | cleansing the Wildmane Water Well, the last of the wells the goblins poisoned, so clean water would flow in Mulgore again
 - 761 1 | stalking the elusive swoop for its quills, a badge of cleverness and determination for Harken Windtotem

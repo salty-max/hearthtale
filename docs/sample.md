@@ -28,11 +28,11 @@ Bristle fell in Amberstill Ranch. Out here, it could as easily have been me. I c
 
 ## Entry 1 (levels 1 to 5)
 
-I began in the Valley of Trials, with Thrall's new homeland to call my own and no wish to repay it with empty boasting. Heat rose from the red dust of Durotar, as if the ground itself were breathing. This was the land we had claimed, and I meant to learn how to belong to it. A Kul Tiras Marine nearly ended me in Tiragarde Keep, and I felt how little a fearsome name can do against a blade. I drove Lieutenant Benedict and his Kul Tiras men out of Tiragarde Keep, which they had retaken in defiance of the Warchief's pact. At Razor Hill I heard the forge before I saw the drilling. Beyond the barracks, Kul Tiras ships sat off the coast, and I understood why no one in the town ever quite stood at rest. I rested in Razor Hill, and left the ancestors to judge my unashamed relief.
+I began in the Valley of Trials, with Thrall's new homeland to call my own and no wish to repay it with empty boasting. Heat rose from the red dust of Durotar, as if the ground itself were breathing. This was the land we had claimed, and I meant to learn how to belong to it. A Kul Tiras Marine nearly ended me in Tiragarde Keep, and I felt how little a fearsome name can do against a blade. I drove Lieutenant Benedict and his Kul Tiras men out of Tiragarde Keep, which they had retaken in defiance of the Warchief's pact. At Razor Hill the barracks and the watchtower looked over the road, and Kul Tiras ships sat off the coast. I understood why the town never seemed at ease. I rested in Razor Hill, and left the ancestors to judge my unashamed relief.
 
 ## Entry 2 (levels 5 to 6)
 
-The Horde is more peoples than one now, and I headed out in Razor Hill ready to work beside any of them. I saw Orgrimmar with my own eyes at last, and found it larger, louder and more mine than I had pictured. The drums of Orgrimmar echoed off the spiked walls as I came in. At Grommash Hold I felt the weight of it: a city our people had built for themselves, with no one's chains on it. I learned to Charge, and the distance between me and a foe stopped being a matter of courage. I seized a lieutenant's insignia from the Burning Blade in Skull Rock for Thrall, who meant to find the true head of the traitors.
+The Horde is more peoples than one now, and I headed out in Razor Hill ready to work beside any of them. I saw Orgrimmar with my own eyes at last, and found it larger, busier and more mine than I had pictured. The drums of Orgrimmar echoed off the spiked walls as I came in. At Grommash Hold I felt the weight of it: a city our people had built for themselves, with no one's chains on it. I learned to Charge, and the distance between me and a foe stopped being a matter of courage. I seized a lieutenant's insignia from the Burning Blade in Skull Rock for Thrall, who meant to find the true head of the traitors.
 
 # Aelyndra, a Hardcore night elf druid
 
@@ -54,5 +54,5 @@ Not long after, I executed Maggot Eye, the gnoll who stole corpses near Garren's
 
 ## Entry 2 (levels 5 to 6)
 
-Plans had failed whole kingdoms in my time, so I set out in Brill with a modest one and held it loosely. I saw the Undercity with my own eyes at last, and found it larger, louder and more mine than I had pictured. Green canals ran through the Undercity, past the bubbling Apothecarium, deep beneath the ruins of Lordaeron. Out of so much that had survived badly, we had made a city, and it was ours. I can call on Renew now, though its healing burns in my hands for as long as it works.
+Plans had failed whole kingdoms in my time, so I set out in Brill with a modest one and held it loosely. I saw the Undercity with my own eyes at last, and found it larger, busier and more mine than I had pictured. Green canals ran through the Undercity, past the bubbling Apothecarium, deep beneath the ruins of Lordaeron. Out of so much that had survived badly, we had made a city, and it was ours. I can call on Renew now, though its healing burns in my hands for as long as it works.
 

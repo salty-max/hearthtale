@@ -14,6 +14,6 @@ kind: prologue
 - [race:Dwarf] I began this stretch {at}, with the mountain's stubbornness in me and no great wish to look impressive.
 - [race:Scourge] I kept going {at}, still a corpse with no intention of returning to anyone's keeping.
 - [race:NightElf] I began this stretch {at}, with Elune's light to steady me.
-- [race:Gnome] I continued {at}, a gnome with some ingenuity left to put to work outside a workshop.
-- [race:Orc] I began again {at}, free to serve the Horde without another master's chains.
+- [race:Gnome] I continued {at}, curious how much of what I knew would still work out here.
+- [race:Orc] I began again {at}, with a freedom no overseer could take back, and every reason to use it well.
 - [race:Tauren] I kept going {at}, with a shu'halo's interest in the people the road might bring me to.

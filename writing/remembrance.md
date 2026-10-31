@@ -11,7 +11,6 @@ kind: remembrance
 - {name} had lived for {played} on this realm, a life the last struggle could not entirely define.
 - {name} had faced {rare} and won, a story worth the telling.
 - [!inside] {name} had survived {dungeon}, though the last danger had not been within it.
-- {name} had lived for {played}, and most of it was good.
 - {kills} foes had fallen to {name} before the last struggle ended differently.
 - [low] {name} had completed {quests} tasks and fought {kills} foes, with most of the world still to see.
 - [high] {name} had seen {zones} lands and completed {quests} tasks, with much of a life already made.

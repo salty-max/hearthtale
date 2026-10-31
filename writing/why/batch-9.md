@@ -63,7 +63,7 @@ kind: why
 - 1435 2 demon | drawing the corrupted spirits out of dying Burning Blade cultists into a gem, so Maurin Bonesplitter could put them somewhere safe
 - 1436 1 | reporting the Desolace campaign to Keldran, who wanted the Alliance never to think the Horde in league with the Burning Legion
 - 2950 1 | bringing Nogg a silver bar and a moss agate to set a lattice into the Brilliant Gold Ring and strengthen its magic
-- 3504 1 | carrying Belgrom Rockmaul's sealed letter to Ag'tor Bloodfist in Azshara, after the blood elf he trusted killed the warriors he lent her
+- 3504 1 | carrying Belgrom Rockmaul's sealed letter to Ag'tor Bloodfist in Azshara, after Magus Rimtori, whom he trusted, killed the warriors he had lent her
 - 3505 2 none | cutting down Magus Rimtori's blood elf workers in Azshara and scouting her camp for something that would draw her into a fight
 - 3506 3 villain | destroying Magus Rimtori's focusing crystal and killing the blood elf, so the spirits of the orcs she betrayed could be at peace
 - 3507 1 | bringing Magus Rimtori's head home to Belgrom Rockmaul in Orgrimmar, who had trusted her and wanted to see it for himself
@@ -203,7 +203,7 @@ kind: why
 - 1535 1 | filling a waterskin at the pond below Brine's hut, in quilboar country, the first sample of pure water for her sapta
 - 1536 1 | fetching water from the fresh spring well in Forsaken Tarren Mill, a holy vestige Brine remembered, for the sapta
 - 7667 1 | bringing Sagorne Creststrider two diamonds to finish a divination scryer that could pierce the shadows of the Great Ossuary
-- 8258 3 villain | killing Death Knight Darkreaver in the Scholomance's Great Ossuary, who threatened to twist the spirit realm to his bidding
+- 8258 3 villain | killing Death Knight Darkreaver, who threatened to twist the spirit realm to his bidding, in the Scholomance's Great Ossuary
 - 8410 1 | gathering samples of air, fire, earth and water for Bath'rah the Windwatcher, to show readiness for his summons
 - 8411 1 | presenting Bath'rah the Windwatcher with the four elements, the proof he wanted before trusting a shaman
 - 8412 1 | gathering bear claws and spider eyes in the Western Plaguelands for a spirit totem to protect Bath'rah from the spirits that turned on him
@@ -252,7 +252,7 @@ kind: why
 - 4495 1 | looking for Iverron, hours late for his daily visit to Dirania, near the spider-filled cave to the north
 # Valley of Trials
 - 788 1 | killing mottled boars to put some strength in a new recruit's backbone, Gornek's first trial
-- 789 1 | taking scorpid worker tails to Gornek as proof of prowess, and learning that the smallest foe can still be deadly
+- 789 1 | taking scorpid worker tails to Gornek as proof of prowess
 - 790 2 beast | slaying Sarkoth, the vicious scorpid that left Hana'zua bleeding on the plateau, to uphold the wounded orc's honour
 - 792 1 | driving back the Vile Familiars spilling from the Burning Blade coven, the first blow against the cult in the valley
 - 794 2 none | wresting the Burning Blade Medallion from deep in the cult's coven, to root the cult out of the Valley of Trials

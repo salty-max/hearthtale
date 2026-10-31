@@ -30,7 +30,7 @@ kind: why
 - 875 2 none | picking off the Witchwing Slayers, the harpy lieutenants of the Dry Hills, in a decisive strike at their matriarchy
 - 876 3 villain | slaying Serena Bloodfeather, whose harpies raided Horde caravans to avenge the sister Rexxar had killed
 - 877 2 none | planting dead seeds in a fissure at the Stagnant Oasis for Tonga Runetotem, and watching them spring to life
-- 878 1 | striking down the spiritual leaders of the Bristleback quilboars so the caged Mangletooth's Razormane could defeat them
+- 878 1 | striking down the spiritual leaders of the Bristleback quilboars so the Razormane could defeat them, for the caged Mangletooth
 - 879 3 none | killing Nak, Kuz and Lok Orcbane, the Razormane who raided the Horde and left Mangletooth to rot in a cage
 - 880 1 | gathering snapjaw shells so Tonga Runetotem could learn how the fissures changed the beasts that drank there
 - 881 2 beast | calling Echeyakee, white mist king of the savannah cats, from his lair with a horn and taking his hide to Sergra Darkthorn
@@ -168,7 +168,7 @@ kind: why
 - 1373 1 | winning a draenethyst shard from Ongeku in the Swamp of Sorrows, a crystal from a land of demons to strengthen Uthek's magic
 - 1374 3 villain | beheading Khan Jehn of the Magram for Uthek the Wise, so the clan would fall without its leader
 - 1375 3 villain | beheading Khan Shaka of the Gelkis for Warug, who wanted to stare at the head and laugh
-- 1380 3 none | sounding the Maraudine War Horn to draw out Khan Hratha, and taking his key fragment to Uthek the Wise
+- 1380 3 villain | sounding the Maraudine War Horn to draw out Khan Hratha, and taking his key fragment to Uthek the Wise
 - 1381 3 villain | killing Khan Hratha of the Maraudine for Warug, after winning a mouthpiece and blowing the war horn that called him out
 - 1382 1 | killing Magram centaurs to win the Gelkis' trust, so the Alliance might strike a pact with one warring clan
 - 1384 1 | snatching crude charms from the Kolkar for Uthek the Wise, who meant to burn them and laugh at their weak magic
@@ -209,8 +209,8 @@ kind: why
 # Un'Goro Crater
 - 974 1 | taking the temperature of hot spots on Fire Plume Ridge for Krakle, to learn whether the volcano warmed the crater's springs
 - 3844 1 | searching the pond beside a wrecked raft for a clue to its owner, and pulling a water-logged pack from the bottom
-- 3845 1 | returning a lost pack to Linken at Marshal's Refuge, who only half recognized his own belongings
-- 3881 2 rescue | recovering food and research equipment from the overrun camps of Williden Marshal's stranded expedition, saving their lives
+- 3845 1 | returning a lost pack to Linken at Marshal's Refuge, who only half recognised his own belongings
+- 3881 2 none | recovering food and research equipment from the overrun camps of Williden Marshal's stranded expedition
 - 3882 1 | digging up dinosaur bones for Spark Nilminer of Marshal Expeditions, who preferred not to know if they came from live beasts
 - 3883 2 none | scraping a Gorishi hive wall for Hol'anyee Marshal, who wanted to know why the alien insects had come to Un'Goro
 - 3884 1 | returning a mangled journal to Williden Marshal, whose expedition had fled to higher ground from the crater's beasts
@@ -223,23 +223,23 @@ kind: why
 - 3962 3 villain | breaking Blazerunner's aura and defeating him on Fire Plume Ridge for the Golden Flame, a power too dangerous for an evil heart
 - 4005 2 none | summoning Aquementas at Lost Rigger Cove with the Book of Aquor to forge a totem that could break Blazerunner's aura
 - 4084 1 | collecting silvery claws and an irontree heart in Felwood for Eridan Bluewind, toward a power to dispel Blazerunner's aura
-- 4141 1 | picking bloodpetals for Muigin, who hoped to train the crater's plant creatures to pester Larion, whom he blamed for it all
+- 4141 1 | picking bloodpetals for Muigin, who hoped to train the crater's plant creatures to pester Larion, whom Muigin blamed for their trouble
 - 4142 1 | showing a bloodpetal to Gregan Brewspewer in Feralas, an expert who might explain the plants' strange intelligence
 - 4143 1 | gathering Atal'ai haze in the temple of Atal'Hakkar for Muigin, the horrid stuff that would let him control the bloodpetals
 - 4145 1 | cutting down the bloodpetal pests Muigin kept sending to annoy Larion, who blamed him for getting them lost
 - 4243 1 | searching the apes' lair at Fungal Rock for A-Me 01, Karna Remtravel's mechanical ape, and finding her dented and powerless
 - 4244 1 | fitting a new mithril casing into A-Me 01 so Karna Remtravel's mechanical ape might run again
-- 4245 2 rescue | escorting the battered A-Me 01 back to Karna Remtravel past the gorillas of Un'Goro
-- 4284 1 | collecting power crystals of four colors for J.D. Collie, who sensed a power in them her experiments had yet to find
+- 4245 2 none | escorting the battered A-Me 01 back to Karna Remtravel past the gorillas of Un'Goro
+- 4284 1 | collecting power crystals of four colours for J.D. Collie, who sensed a power in them her experiments had yet to find
 - 4285 1 | finding the northern crystal pylon for J.D. Collie, who could not stop wondering what the pylons were for
-- 4287 1 | locating the eastern crystal pylon to put J.D. Collie's curiosity about the rumored pylons to rest
+- 4287 1 | locating the eastern crystal pylon to put J.D. Collie's curiosity about the rumoured pylons to rest
 - 4288 1 | seeking out the western crystal pylon, in the hope it held the key to J.D. Collie's fruitless crystal experiments
 - 4289 1 | skinning the great apes of northern Un'Goro for Torwa Pathfinder, pelts to clothe the tribe and proof of strength
 - 4290 2 none | stealing meat from Lar'korwi's freshest kill to provoke the beast that had once hunted down Torwa Pathfinder's brother
 - 4291 1 | provoking Lar'korwi's ravasaur mates for their pheromone glands, the bait Torwa Pathfinder needed to draw him out
 - 4292 3 beast | baiting Lar'korwi with stolen meat and his mates' scent, and bringing the monster's head to Torwa Pathfinder
 - 4301 2 beast | besting U'cha, the huge ape Torwa Pathfinder called one of the Earth Mother's greatest sons, and bringing back his pelt
-- 4491 3 rescue | leading Ringo, overcome by heat on Fire Plume Ridge, back to his friend Spraggle Frock, with a canteen ready in case he fainted
+- 4491 3 rescue | leading Ringo, overcome by heat on Fire Plume Ridge, back to his friend Spraggle Frock
 - 4492 1 | looking for Ringo on Fire Plume Ridge, a friend Spraggle Frock feared for after he went exploring the volcano
 - 4501 1 | thinning the pterrordax that menaced the crater's travellers, so the terrified Spraggle Frock might dare to leave camp
 - 4502 1 | gathering ash from the volcano's fire elementals for Liv Rizzlefix in Ratchet, who studied the crater's volcanic activity
@@ -249,25 +249,25 @@ kind: why
 - 421 1 | killing Moonrage Whitescalps to prove worthy of Dalar Dawnweaver, who meant to rid Silverpine of Arugal's curse
 - 422 1 | retrieving the Remedy of Arugal from the spellbooks at the wheat farm, so Dalar Dawnweaver could learn the magic behind it
 - 423 1 | collecting enchanted shackles from Moonrage worgen for Dalar Dawnweaver, the items Arugal used to prop up his weak magic
-- 424 2 none | beheading Grimson the Pale, the tainted foreman of the Deep Elem Mine, to win the mine for Varimathras's advance
+- 424 2 none | beheading Grimson the Pale, the tainted foreman of the Deep Elem Mine, to win the mine for Varimathras' advance
 - 425 3 villain | killing Ivar the Foul, the ghoul who had mauled Quinn Yorick, so the wounded Deathstalker would have time to heal
 - 428 1 | finding the Deathstalkers Rane and Quinn Yorick, missing for weeks on a scouting mission through northern Silverpine
-- 429 1 | gathering discolored worg hearts so Apothecary Renferrel could brew a healing potion for the badly mauled Quinn Yorick
+- 429 1 | gathering discoloured worg hearts so Apothecary Renferrel could brew a healing potion for the badly mauled Quinn Yorick
 - 430 1 | delivering Apothecary Renferrel's potion to Quinn Yorick at the Ivar Patch, so he could travel again
 - 435 2 rescue | escorting Erland past the hungry wolves to the Deathstalker Rane Yorick, who had feared him lost
 - 437 3 undead | assaulting the Rot Hide gnolls at the Dead Fields until the banshee Nightlash appeared, and destroying her for the Forsaken
 - 438 2 none | investigating the Decrepit Ferry, where the Scourge gathered, and finding a heap of wrapped corpses bound for Fenris Isle
 - 439 2 none | bringing High Executor Hadrec a ring from a fresh corpse at the ferry, proof the Rot Hide gnolls were robbing Tirisfal's graves
 - 440 1 | showing Deliah's ring to Magistrate Sevren in Brill, who confirmed the rot hide gnolls had stolen her body
-- 441 1 | returning Deliah's ring to her husband Raleigh in the Undercity, who felt nothing for her death but burned for revenge
+- 441 1 | returning Deliah's ring to her husband Raleigh in the Undercity, who wanted revenge
 - 442 3 villain | storming Fenris Isle to destroy Thule Ravenclaw, the traitor mage who led the Rot Hide gnolls for the Scourge
 - 443 2 none | draining ichor from the rot hide gnolls on Fenris Isle so Apothecary Renferrel could learn who was behind them
 - 444 1 | carrying rot hide ichor to Bethor Iceshard in the Undercity, whose knowledge of magic might unravel the gnolls' origin
 - 446 1 | delivering Bethor Iceshard's scroll to Apothecary Renferrel, the makings of a potion against Thule Ravenclaw's spells
 - 447 1 | gathering bear hearts and spider blood for Master Apothecary Faranell, ingredients of a New Plague for Scourge and humans alike
 - 449 1 | carrying the Deathstalkers' report to High Executor Hadrec, word of a Scourge presence no one had accounted for
-- 450 1 | slipping into the Pyrewood inn for the journal of Apothecary Berard, cursed by Arugal, who had studied an ancient plague
-- 451 1 | gathering lake moss and a rare murloc tumor for Master Apothecary Faranell's New Plague, as Berard's journal advised
+- 450 1 | slipping into the Pyrewood inn for the journal of Apothecary Berard, a man cursed by Arugal who had studied an ancient plague
+- 451 1 | gathering lake moss and a rare murloc tumour for Master Apothecary Faranell's New Plague, as Berard's journal advised
 - 452 2 none | helping Deathstalker Faerleia ambush the Pyrewood Council, the puppets through which Arugal ruled the cursed village
 - 460 2 none | reuniting the head of Alaric, Thule Ravenclaw's bodyguard, with the body the gnolls had buried in an unmarked grave at Fenris Keep
 - 461 1 | carrying Alaric's body to a hidden alcove in Fenris Keep, where he wished to rest within the walls he had loved
@@ -276,10 +276,10 @@ kind: why
 - 479 2 none | stripping Dalaran pendants from the wizards at Ambermill to slow their work on the dormant ley energy node
 - 480 3 none | killing the Dalaran archmage reawakening Ambermill's ley energy node, and taking his staff to Shadow Priest Allister
 - 481 1 | showing the rune-inscribed pendant to Dalar Dawnweaver, who knew it as a Kirin Tor tool for channeling magic
-- 491 1 | handing the Woven Wand, token of a friendship Thule had betrayed, to his old colleague Bethor Iceshard
+- 491 1 | handing the Woven Wand, token of a friendship Thule had betrayed, to Thule's old colleague Bethor Iceshard
 - 493 1 | carrying Apothecary Renferrel's findings on the New Plague to Apothecary Lydon in Tarren Mill, to speed the work
 - 516 2 undead | finding Beren's Peril, where undead were massing for an attack, and striking them first for Shadow Priest Allister
-- 530 3 villain | killing Valdred Moray at the Greymane Wall and bringing his hands to Raleigh Andrean, whose wife he had strangled
+- 530 3 villain | killing Valdred Moray at the Greymane Wall and bringing his hands to Raleigh Andrean, whose wife Moray had strangled
 - 6323 1 | flying Podrig's order to Gordon Wendham in the Undercity, for weapons to replace those the Deathguards had lost
 - 6324 1 | bringing Gordon's crate of weapons back to Deathguard Podrig, so the Sepulcher's guards would not be caught unprepared
 # Westfall
@@ -342,7 +342,7 @@ kind: why
 - 5282 2 victim | freeing the restless souls of Stratholme's ghostly citizens with Egan's blaster, in the hope his mother was among them
 - 5463 2 none | laying the Keepsake of Remembrance on Menethil's Gift, the unholy ground in Stratholme where Ras Frostwhisper became a lich
 - 5848 2 none | uncovering the painting Of Love and Family beneath a picture of the twin moons in the Scarlet Bastion, for Tirion Fordring
-- 6163 3 villain | slaying Ramstein the Gorger, the abomination that had overwhelmed Nathanos Blightcaller on his stead, for his vengeance
+- 6163 3 villain | slaying Ramstein the Gorger, the abomination that had overwhelmed Nathanos Blightcaller, to avenge him
 - 8945 3 rescue | rescuing Ysida Harmon from Baron Rivendare, finishing what her husband Anthion had attempted
 - 8968 2 undead | summoning Jarien and Sothos with the Brazier of Beckoning and slaying them for the left piece of Lord Valthalak's amulet
 - 8991 2 undead | calling Jarien and Sothos back with the Brazier of Beckoning for the right piece of Lord Valthalak's amulet
@@ -350,7 +350,7 @@ kind: why
 - 6 3 villain | hunting down Garrick Padfoot, a cutthroat who had plagued Elwynn's farmers and merchants, for Deputy Willem's bounty
 - 15 1 | clearing kobold workers from their camp by the Echo Ridge Mine, to learn for Marshal McBride how far the infestation ran
 - 18 1 | pulling red burlap bandanas from the Defias Brotherhood, a new band of thieves lurking across the river from Northshire
-- 21 2 none | purging the Echo Ridge Mine of kobold laborers before they gained a deeper foothold in Northshire
+- 21 2 none | purging the Echo Ridge Mine of kobold labourers before they gained a deeper foothold in Northshire
 - 33 1 | hunting timber wolves for the tough meat Eagan Peltskinner wanted for his wolf steaks
 - 54 1 | carrying Marshal McBride's papers to Marshal Dughan in Goldshire, a commission as Acting Deputy to help keep Elwynn safe
 - 3904 2 none | saving Milly Osworth's grape harvest from the overrun vineyards, before Defias thieves or trampling guards ruined it

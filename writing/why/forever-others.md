@@ -32,7 +32,7 @@ kind: why
 - 97558 1 | gathering bat membranes, darkhound hides and murloc skin for Shelene Rhobart, to patch Forsaken skin that never heals on its own
 - 98389 1 | freeing the newly risen from the webs of Night's Web Hollow for Aramis Hammerhand, to show the Forsaken their paladins meant them no harm
 - 98545 1 | delivering Leonid Barthalomew's letter to Glix Xizzix in the Undercity, who had never agreed to the tip Leonid promised
-- 99134 1 | punishing the Deathguards who had disappointed Executor Zygand, pain being one of the few delights left in death
+- 99134 1 | punishing the Deathguards who had disappointed Executor Zygand
 - 99141 1 | collecting the overdue reports of Executor Zygand's Deathguards, and one from the abomination Gordo
 - 99142 1 | gathering tomb weed from the Balnir Farmstead for Junior Apothecary Holland, an altered doom weed that drew the Scourge to it
 - 99144 3 rescue | helping Bareth Dawnstone, a Forsaken paladin of Bandarion Keep, escape the Scarlet Crusade at Crusader's Outpost
@@ -61,7 +61,7 @@ kind: why
 - 92749 1 | getting coarse dynamite for Sprite Jumpsprocket, who took gladly to the idea of industrial sabotage in the Deadmines
 - 92751 1 | fetching an SI:7 prototype detonator for Sprite Jumpsprocket, so the blast under Westfall could be set off from safely outside
 - 93963 1 | calling on Magni Bronzebeard, High Tinker Mekkatorque and Tyrande Whisperwind in their capitals, as Bolvar Fordragon advised a guest
-- 95065 1 | fetching a shiny bauble and nightcrawlers for old Gilbert Gray at the Stormwind harbor, down to his last bait while the fish were biting
+- 95065 1 | fetching a shiny bauble and nightcrawlers for old Gilbert Gray at the Stormwind harbour, down to his last bait while the fish were biting
 - 95161 2 none | delivering the blood-stained letter to Avette Fellwood in Duskwood, the new mother of Jeremy Heartweaver, who had not spoken since Lordaeron fell
 - 95195 1 | gathering the insignias of Lordaeron's fallen soldiers for General Marcus Jonathan, to be given to whatever kin were left in Stormwind
 - 97220 1 | hauling a shipment for the short-handed docks to the Gatehouse's stockroom, reached through Trias' Cheese shop in the Trade District
@@ -75,7 +75,7 @@ kind: why
 - 65610 2 none | searching Fallen Sky Lake in Ashenvale for a sign of Krilge, the missing soldier Magar refused to believe a deserter
 - 93739 1 | calling on Vol'jin, Cairne Bloodhoof and Lady Sylvanas Windrunner in their capitals, as Thrall advised a guest of the Horde
 - 95697 1 | butchering thicket raptors in the excavation sites for Borstan, who wanted a grand take on homestyle cooking at his firepit
-- 96874 1 | hacking spines from the beasts of Thunder Ridge for Ug'thok, with stones to grind them, for the mighty axe head he was sure they would make
+- 96874 1 | hacking spines from the beasts of Thunder Ridge for Ug'thok, who was sure they would make a mighty axe head
 - 96875 1 | supplying Kamari with lizard hides from Thunder Ridge, to line the walls and roofs of Orgrimmar's new buildings
 - 96877 1 | carrying the hoof of Halikor, a mighty lizard, to Orgrimmar as proof of the fight
 - 97242 1 | cutting cattails and speargrass in the Valley of Honor for Yelmak, who meant to teach his proud apprentice Whuut a lesson
@@ -93,8 +93,8 @@ kind: why
 - 78132 2 undead | recovering the Dragonslayer's helm from where its commander fell and his tormented soul still lingered, for Alonso
 - 78133 2 none | taking the Dragonslayer's shield back from the orcish warlord who stole it raiding a human settlement, for Alonso
 - 78134 1 | prying the Dragonslayer's lance from its unsavoury black-market owner for Alonso, one step further on his path to glory
-- 78261 2 none | stealing the Horn of Xelthos out of Shadowfang Keep alone, a job left in a note by someone signing as C, with Veenix's help past the gate
-- 78823 1 | handing Hemet Nesingwary a primitive drawing of a great bird of prey, which he found interesting indeed
+- 78261 2 none | stealing the Horn of Xelthos out of Shadowfang Keep, a job left in a note by someone signing as C, with Veenix's help past the gate
+- 78823 1 | handing Hemet Nesingwary a primitive drawing of a great bird of prey
 - 79007 1 | following a charred note from a burned-out camp, whose riddle pointed to the twin land and a stranger's next hiding place
 - 79008 1 | following the riddle of a blistered note found in a burned-out camp, toward the twin land and a stranger's next hiding place
 - 79192 2 none | tracking the note-writer toward a cosy spot between the Barrens and Desolace, after a note tied the charred dead to New Plague deliveries
@@ -142,7 +142,7 @@ kind: why
 - 79361 2 none | gathering twisted totems of all four elements for Prate Cloudseer, to turn back the storm the quilboar meant to flood Thousand Needles with
 - 79366 3 none | setting the twisted totems at the steam pools to call up the corrupted elementals and end the quilboar ritual, until the rumbling ground fell silent
 - 98069 1 | recovering the supplies harpies took from the last caravan bound for Freewind Post, before the post ran short
-- 98070 2 none | killing the Screeching harpies who ambushed every caravan through their canyon, lest none dare the trek to Freewind Post
+- 98070 2 none | killing the Screeching harpies who ambushed every caravan through their canyon, so travellers would dare the trek to Freewind Post
 # Duskwood
 - 79362 2 none | finding Grant Valor's mace in the skeleton at Raven Hill Cemetery that wounded him, perhaps the unfinished business keeping his spirit there
 - 79363 2 none | driving the Defias out of Addle's Stead, perhaps the unfinished business of Silvia Valor's spirit, who guarded Raven Hill's homes in life
@@ -198,7 +198,7 @@ kind: why
 - 98072 1 | collecting crimson whelp scales along the Green Belt for James Halloran, worth far more to him than crocolisk hides
 - 98189 1 | finishing the Blind Princess's last delivery, carrying the Menethil statuette to Captain Stoutfist in Menethil Keep
 - 98190 1 | rushing the Menethil statuette, a rare memorial of King Terenas, to Bolvar Fordragon, out of the Dragonmaw's reach
-- 98197 1 | salvaging Khaz Modan timber and iron from the harbor, once stolen for the Old Horde's fleet, to bolster Menethil against the Dragonmaw
+- 98197 1 | salvaging Khaz Modan timber and iron from the harbour, once stolen for the Old Horde's fleet, to bolster Menethil against the Dragonmaw
 - 98208 2 none | recovering Nord'el, a bloom from the peak of Mount Hyjal, from the murloc-held wreck of the Flying Osprey for Sylessa Duskwhisper
 - 98209 1 | carrying Nord'el, the Bloom of the Heavens, to Thundris Windweaver in Auberdine for the weary Sylessa
 - 98216 2 none | waking the Goaz Warder with its own stone and taking its titanic keystone for Prospector Whelgar, alarmed by talk of Old Gods
@@ -232,7 +232,7 @@ kind: why
 - 91732 1 | fetching finely made picks from the depths of Jasperlode Mine for Hagar Lowe, whose logging tools had suffered for want of good steel
 - 91733 1 | fishing Ormin Pelford's axe, saw and toolbox out of the river below Eastvale, washed away when his wagon tipped, among murlocs and wolves
 - 91738 1 | treating Sergeant De Vries to a bottle of Thunder Applejack, the first his troops had seen in months
-- 91740 2 villain | carrying the head of Croaky to Ridgepoint Tower, the murloc leader whose kind had cost the watch two of its own
+- 91740 2 villain | carrying the head of Croaky, the murloc leader whose kind had cost the watch two of its own, to Ridgepoint Tower
 - 91741 1 | returning a book a kobold had tried to eat to the little library Brother Paxton kept in the abbey
 - 91743 1 | rescuing Brother Paxton's books from the kobolds of Northshire Valley before, as he feared, they devoured his whole library
 - 91745 1 | asking Kelsey Fargo, the mining apprentice outside Echo Ridge Mine, what the kobolds were doing with the abbey's books
@@ -257,7 +257,7 @@ kind: why
 - 99131 1 | bringing Jason Mathers word of Remy Two Times's poisoned bait, so he could sell his fish again without the murlocs
 - 99143 1 | rummaging through the murloc camp for shiny junk Lee Brown hoped would make good bait for fish
 # Silverpine Forest
-- 91860 2 none | searching Fenris Isle for the missing Earthen Ring envoys, a tauren and a cloaked elf, and finding the tauren's body on the gnolls' pyre
+- 91860 2 none | searching Fenris Isle for the missing Earthen Ring envoys, a tauren and a cloaked elf, and finding the tauren envoy's body on the gnolls' pyre
 - 91861 2 none | searching Fenris Keep for the elf of the Earthen Ring party, in hope she was still alive somewhere inside
 - 91862 3 rescue | freeing Lumina Windsinger, a shen'dorei Windshaper come to study the elements with the Earthen Ring, from the gnolls' cage in Fenris Keep
 - 91920 1 | taking murloc eyes to Apothecary Renferrel for a better cure, since his potion of hearts had done nothing for Quinn Yorick
@@ -286,7 +286,7 @@ kind: why
 - 92909 1 | gathering isosprings and gyrostabilizers from the harvest golems for Ozwin Ironsprocket, chased into a stable at Saldean's Farm
 - 92910 1 | handing a harvester's salvaged assembly to Ozwin Ironsprocket, who wanted to learn what made the golems tick
 - 92911 1 | scrounging parts for Ozwin Ironsprocket's device to override the harvest golems' systems, built from the salvaged assembly
-- 98021 1 | reporting to Gryan Stoutmantle at Sentinel Hill on Bolvar Fordragon's word, only for him to call me a skinny elf
+- 98021 1 | reporting to Gryan Stoutmantle at Sentinel Hill on Bolvar Fordragon's word
 # Alterac Mountains
 - 92432 1 | answering Dalaran's call for aid through Emissary Jacques, its constructs running wild while its council kept it quiet
 - 92434 2 none | finding a way into Dalaran through the sewers by Lordamere Lake while its barrier was down, to learn the Kirin Tor's secrets for Wordeen Voidglare
@@ -427,7 +427,7 @@ kind: why
 - 93128 3 villain | slaying Khan Jehn of the Magram in his own village while his warriors were busy in the Valley of Bones
 - 93129 1 | carrying stolen supplies out of the Outcast Hideaway for Hagiak, so the Magram could profit from felling their foes
 - 93188 1 | reporting to Orgrul that the Magram Front stood stronger, its sights now set on the outcasts' encampment
-- 93196 3 none | raising Khan Jehn by a necromantic ritual in Magram Village, after outsiders working for the Gelkis had slain the Magram's leader
+- 93196 2 none | raising Khan Jehn by a necromantic ritual in Magram Village, after outsiders working for the Gelkis had slain the Magram's leader
 - 93224 1 | taking carved totems from centaur all over Desolace for Captain Pentigast, who meant to buy the clans' favour with copies
 - 93225 1 | gathering authentic carved totems for Gurda Wildmane, so her own carvings could pass in trade with the clans
 - 93226 2 none | carrying a tote of totems to the Magram quartermaster, siding with the clan that posed the least risk while it won the war
@@ -435,7 +435,7 @@ kind: why
 - 93465 1 | taking the warlock Gimashi's notes on draenethyst from her tower for Azore Aldamort, before the Burning Blade could use them
 - 93678 1 | carrying Azore Aldamort's notes on draenethyst back to Magtoor at the Harborage, full of portals and demonic summonings
 - 94872 2 none | offering a sack of totems to the Magram quartermaster for Gurda Wildmane, to win the trust of the clan winning the war
-- 94873 2 none | buying the Gelkis's friendship with a tote of totems for Gurda Wildmane, a fake one among them that Molkar chose not to see
+- 94873 2 none | buying the Gelkis's friendship with a tote of totems for Gurda Wildmane, a fake one among them
 - 96222 2 none | challenging Khan Hratha of the Maraudine atop the Valley of Spears for the key fragment Umarak wanted
 - 97265 2 none | raiding the Hatefury satyrs at Sargeron for Aka'rai, who had bargained with them for power and been cast aside
 - 97284 2 none | killing Burning Blade orcs at Thunder Axe Fortress for Vahlarriel Demonslayer, who believed they held Malem and were ready for a fight
@@ -494,13 +494,13 @@ kind: why
 - 98889 1 | fighting the Theramore Expeditionary Force for the Darkspear Islands, its reinforcements landing again and again
 - 98891 1 | showing the Alliance the might of the Horde on the sands of the Darkspear Islands, and bringing back the proof
 - 98893 1 | holding the Darkspear Islands against Theramore's tenacious reinforcements, marks of honor the proof of each victory
-- 98895 1 | bringing proof of service on the front lines of the Darkspear Islands, which the Alliance was close to losing
-- 98897 1 | fighting the Darkspear Raiders on the Darkspear Islands as the battle heated up and the Alliance needed every blade
+- 98895 1 | bringing proof of service on the front lines of the Darkspear Islands
+- 98897 1 | fighting the Darkspear Raiders on the Darkspear Islands as the battle heated up
 - 98899 1 | earning marks of honor on the Darkspear Islands so the Alliance would not lose its hold to the Darkspear Raiders
 - 98901 1 | standing on the front lines of the Darkspear Islands for the Alliance, the Darkspear Raiders pressing harder than ever
 - 98903 1 | winning a battle at the Darkspear Islands for the Theramore Expeditionary Force, sent from Northwatch Hold by Brelinda McFarry
 - 98904 1 | fighting for the Theramore Expeditionary Force at the Darkspear Islands until the Horde gave up the field
-- 98905 1 | carrying the Alliance to victory on the Darkspear Islands, to the gratitude of the Theramore Expeditionary Force
+- 98905 1 | fighting on the Darkspear Islands for the Theramore Expeditionary Force until the day was won
 - 98906 1 | breaking the stalemate at the Darkspear Islands for Nizook Boof, in the service of the Darkspear and with the loa's blessing
 - 98907 1 | winning a battle at the Darkspear Islands in the Darkspear's name, to show the Alliance which was the stronger force
-- 98908 1 | claiming victory at the Darkspear Islands with my head held high, in the service of the Darkspear trolls
+- 98908 1 | claiming victory at the Darkspear Islands in the service of the Darkspear trolls

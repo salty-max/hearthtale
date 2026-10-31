@@ -13,7 +13,7 @@ kind: why
 - 1509 1 | asking at the Crossroads for news of Dogran, Zankaja's mate, a week overdue home from his new post and not heard from
 - 1510 1 | following word of the wounded Dogran, held by the quilboar, to the Malaka'jin, where a healing draught had been sought for him
 - 1511 2 none | carrying Ken'zigla's draught to Camp Taurajo for the dying Dogran, after goblins killed the first one sent to fetch it
-- 1512 2 none | handing Gan'rul Bloodeye the pendant Dogran parted with, rather than chain Zankaja to an invalid, as bait for a succubus
+- 1512 2 none | handing Gan'rul Bloodeye the pendant Dogran gave up as bait for a succubus, so Zankaja would not be chained to a sick mate
 - 1513 3 demon | luring a succubus with Dogran's Pendant and subduing it, then returning the pendant so Gan'rul could bring Zankaja the news
 - 1515 3 rescue | reaching Dogran in a heavily guarded quilboar camp north of Camp Taurajo with the draught that gave him the strength to hobble away
 - 1598 2 none | stealing the Powers of the Void for Drusilla La Salle from the Defias tent in the Vineyards, a book a runaway novice took from the Abbey
@@ -61,10 +61,10 @@ kind: why
 - 2039 1 | searching Loch Modan for Bingles Blastenheimer, missing a week after a reconnaissance flight over Gnomeregan
 - 2946 2 none | bearing the miniature platinum discs to the sealed gates of Uldum for the Explorers' League, with no idea what they would wake there
 - 2948 1 | bringing Talvash del Kissel a silver bar, a moss agate and his fee to rework the Brilliant Gold Ring with a silver and agate lattice
-- 3201 1 | carrying the curator's proof of deed to Mountaineer Pebblebitty, who doubted Margol's horn was real, for the key she had promised
+- 3201 1 | carrying the curator's proof of deed to Mountaineer Pebblebitty, who doubted Margol's horn was real, for the key Pebblebitty had promised
 - 3371 2 none | searching the Slag Pits of the Searing Gorge for Dorius's men, enslaved by the Dark Irons, to fulfil the murdered Dorius's last wish
 - 3449 1 | making rubbings of four elven runes in the Ruins of Eldarath for Tymor, then signalling Pilot Xiggs Fuselighter to fly them out of Azshara
-- 3701 2 none | studying the relics in the smoldering Ruins of Thaurissan, past the assassins who guard them, for the history of the Dark Iron dwarves
+- 3701 2 none | studying the relics in the smouldering Ruins of Thaurissan, past the assassins who guard them, for the history of the Dark Iron dwarves
 - 4512 1 | collecting samples from the cursed and tainted oozes of Felwood for Laris Geardawdle, who wanted to know where all the ooze comes from
 - 4513 1 | hunting for pure ooze samples, untouched by any corruption, for Laris Geardawdle, who believed oozes take on the aspects of their land
 - 8905 1 | drawing blood from the frostsabers and bears of Winterspring for Deliana, who offered finer bracers in trade for it
@@ -144,7 +144,7 @@ kind: why
 - 8236 3 none | hunting the green drake Morphaz deep in the Temple of Atal'Hakkar for the Azure Key Lord Ravenholdt thought lost forever
 # Badlands
 - 692 2 none | gathering the torn fragments of the Scroll of Myzrael from the elementals fighting over them, perhaps the only chance against Myzrael
-- 703 1 | fetching buzzard wings for Rigglefuzz's barbecue, a favorite whose recipe he promised to share
+- 703 1 | fetching buzzard wings for Rigglefuzz's favourite barbecue, whose recipe he promised to share
 - 705 1 | diving for blue pearls at the Vile Reef in Stranglethorn, the powder Rigglefuzz needed for flash bombs to scare off the Badlands' scavengers
 - 706 1 | cutting a still-beating heart from a black drake whelp in Lethlor Ravine, so Sigrun Ironhew could show his fiery weapon enchantment
 - 708 1 | carrying a corroded black box from a giant condor's stomach to the Hall of Arms in Ironforge, stamped Engine #19 - Ironforge Siege Brigade
@@ -154,7 +154,7 @@ kind: why
 - 713 1 | learning to make frost oil from Bro'kin in Alterac, so Lotwil's shackles could keep his summoned elemental from killing everyone
 - 714 1 | finding a gyrochronatom, the small but crucial part Lotwil Veriatus needed to finish his shackles
 - 715 1 | bringing healing and invisibility potions to Lucien Tosselwrench, who expected to need them if Lotwil's experiment worked
-- 716 1 | supplying patterned bronze bracers so Lucien Tosselwrench could enchant them with the spare stones, thanks Lotwil was too cheap to give
+- 716 1 | supplying patterned bronze bracers so Lucien Tosselwrench could enchant them with the spare stones Lotwil was too cheap to give away
 - 717 3 none | breaking the Seal of the Earth to free and slay Blacklash and Hematus, Deathwing's lieutenants, for Garek of the Kirin Tor
 - 718 1 | recovering the supply crate the ogres of Camp Kosh took, without which Sigrun Ironhew's party could not get food
 - 719 1 | retrieving Prospector Ryedol's lucky pick from the Shadowforge Dark Irons who had attacked his dig site
@@ -165,7 +165,7 @@ kind: why
 - 727 1 | showing the Sigil of the Hammer to Gerrig Bonegrip, posing as one of his order, to obtain Yagyin's Digest for Theldurin
 - 728 1 | passing as one of Keeper Bel'dugur's order with the Sigil of the Hammer, to obtain Yagyin's Digest for Theldurin
 - 732 2 none | wresting the Sign of the Earth from the ogres near Camp Boff for Garek, sent by Krasus of the Kirin Tor to end the trouble in Lethlor Ravine
-- 733 1 | scrounging scrap metal from the ogres of Dustbelch Grotto, so Sigrun could build defenses for the worried prospector's camp
+- 733 1 | scrounging scrap metal from the ogres of Dustbelch Grotto, so Sigrun could build defences for the worried prospector's camp
 - 735 1 | gathering three items of power, named only in writing, for Gerrig Bonegrip, his price for a copy of Yagyin's Digest
 - 737 2 none | bringing Yagyin's Digest to Theldurin the Lost, who hoped its knowledge would protect all from what might rise to the surface
 - 738 2 none | searching the southernmost dig site past Angor Fortress for Prospector Agmond, unheard from in weeks, and finding only his bones
@@ -183,7 +183,7 @@ kind: why
 - 4062 2 none | bringing Lotwil Veriatus a shard marked G.L.A. from the machines destroyed in the Burning Steppes, to learn who had made them
 # sort 368
 - 9085 3 undead | unmasking and destroying a Shadow of Doom, one of the Lich King's most frightening creatures, at a Scourge summoning circle
-- 9153 2 undead | battling the Scourge around a necropolis's magic circles to break the defenses of the floating fortresses, for the Argent Dawn
+- 9153 2 undead | battling the Scourge around a necropolis's magic circles to break the defences of the floating fortresses, for the Argent Dawn
 - 9260 2 undead | thinning the Scourge camped outside Stormwind and investigating their glowing runic circles, to learn what they were for
 - 9261 2 undead | thinning the Scourge camped outside Ironforge and investigating their glowing runic circles, to learn what they were for
 - 9262 2 undead | thinning the Scourge camped outside Darnassus and investigating their glowing runic circles, to learn what they were for

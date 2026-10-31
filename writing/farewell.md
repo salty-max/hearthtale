@@ -6,7 +6,7 @@ kind: farewell
 - {name}'s life had room for more than the world allowed.
 - May {name} be remembered for more than this last loss.
 - [race:Dwarf] May the clans of {home} hold a place for {name}.
-- [race:Orc] {name} had a freedom no grave could give back to the camps.
+- [race:Orc] {name} had a freedom the camps never knew, and no grave can take it back.
 - [race:Orc] Lok'tar ogar, {name}: victory or death, and never again anyone's servant.
 - [race:Scourge] {name} had died once before, and had still found a second life worth keeping.
 - [race:NightElf] May Elune light the way for {name}.

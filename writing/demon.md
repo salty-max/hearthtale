@@ -12,8 +12,8 @@ kind: demon
 - [succubus] I summoned {pet}, my first succubus, and reminded myself often what it was I had called.
 - [felhunter] I summoned my first felhunter, {pet}, with a new sympathy for anyone who feared having their magic eaten.
 - [felhunter] I called my first felhunter, {pet}, a hound whose appetite for magic was a little too close to my own interests.
-- [felguard] I bound my first felguard, {pet}, and felt the danger of having a soldier of the Legion within reach.
-- [felguard] I summoned {pet}, my first felguard. That much demonic strength was a formidable thing to claim as mine.
+- [client:forever felguard] I bound my first felguard, {pet}, and felt the danger of having a soldier of the Legion within reach.
+- [client:forever felguard] I summoned {pet}, my first felguard. That much demonic strength was a formidable thing to claim as mine.
 - I summoned {demon} for the first time, bound under the name {pet}, and felt less alone without feeling much safer.
 - I first summoned {pet}, {demon} bound to my service, with every intention of keeping the leash short.
 - [known imp] I put the summoning I had been taught to use at last, and {pet} came, an imp with a name of its own.

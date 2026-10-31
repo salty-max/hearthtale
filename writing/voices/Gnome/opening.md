@@ -23,6 +23,6 @@ kind: opening
 - [hc] I set off {at}, guarding my one life as carefully as the only working model of something irreplaceable.
 - Fear had kept pace with me before, and I carried on {at} allowing it to come along but not to choose the way.
 - Questions were waiting all along the road from {where}, and I meant to settle at least a few of them.
-- Somewhere in Tinker Town an invention was failing for the second time that day, and I set off {at} hoping to do better than that.
+- Somewhere in Tinker Town an invention was surely failing, and I set off {at} hoping to do better.
 - I was off {at}, with a careful plan for the day and every expectation of having to revise it.
 - [night] Darkness has a way of rearranging familiar shapes into alarming ones, and {where} was full of them.

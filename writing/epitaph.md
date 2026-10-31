@@ -7,7 +7,7 @@ kind: epitaph
 - {name} died {in}, with more of life still wanted than the world allowed.
 - [foe] {name} fell to {foe} {in}, at level {level}, and did not rise again.
 - [foe] {foe} ended the life of {name}, {who}, {in} at level {level}.
-- [beast] {name} was brought down by {foe} {in}, at level {level}, with no kindness in the wild that kept the body.
+- [beast] {name} was brought down by {foe} {in}, at level {level}, and the wild showed no kindness.
 - [beast] {foe} killed {name}, {who}, {in} at level {level}, and the wild offered no way back.
 - [people] {name} died by the hand of {foe} {in}, at level {level}.
 - [people] {foe} struck the last blow {in}, and {name}, {who}, fell at level {level}.
@@ -16,7 +16,7 @@ kind: epitaph
 - [elite] {name} faced {foe} {in}, at level {level}, and did not walk away.
 - [inside] {name} died within {zone}, at level {level}, with no return to the open world.
 - [inside foe] {foe} killed {name} {in}, at level {level}, and no further dawn was theirs to see.
-- [fall] {name} fell to death {in}, at level {level}, with no enemy to blame for the distance.
+- [fall] {name} fell to their death {in}, at level {level}, with no enemy to blame for the distance.
 - [fall] A fall ended the life of {name}, {who}, {in} at level {level}.
 - [drowning] {name} drowned {in}, at level {level}, beyond the reach of another breath.
 - [drowning] {name} drowned {in}, at level {level}, with no return from the water.

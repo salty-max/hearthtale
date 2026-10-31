@@ -1,7 +1,7 @@
 ---
 kind: died
 ---
-- [foe] {foe} killed me {at}, and victory meant nothing beside the life taken from me.
+- [foe] {foe} killed me {at}, and nothing else mattered beside the life taken from me.
 - [foe] I died {at} at the hands of {foe}, with no room left for pride in the fight.
 - [foe] {foe} killed me {at}, and all I could think of was an ordinary door at home.
 - [foe] I lost a fight with {foe} {at}, and my life with it.

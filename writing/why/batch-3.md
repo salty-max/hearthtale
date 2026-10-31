@@ -16,10 +16,10 @@ kind: why
 - 5246 2 none | recovering the Sacred Highborne Writings from Azshara, so Aurora Skycaller could mend the Crystal of Zin-Malor
 - 5247 1 | fetching thorium, crystal restore and dire water from Dire Maul, so Aurora Skycaller could fuse the crystal whole
 - 5248 2 none | taking the mended Crystal of Zin-Malor to Lake Kel'Theril, to show a highborne spirit the old wrong made right
-- 5265 3 none | opening the Argent Hold, locked for years with none worthy to reach inside, in reward for service to the Argent Dawn
+- 5265 2 none | opening the Argent Hold, locked for years, after long service to the Argent Dawn
 - 5281 1 | seeking out Egan, whose work with ghosts might aid the restless spirits of those who died in the fall of Stratholme
 - 5464 2 none | carrying the soulbound keepsake to Leonid Barthalomew, so a soul might cling to Ras Frostwhisper as it had to the keepsake
-- 5542 1 | thinning the plaguehounds and their runts for Tirion Fordring, to earn a warm meal and some conversation at his stead
+- 5542 1 | thinning the plaguehounds and their runts for Tirion Fordring
 - 5543 1 | destroying the plaguebats that struck from the skies over the Plaguelands, at the request of Tirion Fordring
 - 5544 1 | harvesting carrion worm meat, the one beast the Plague had spared, so Tirion Fordring could restock his food for winter
 - 5601 2 none | searching Darrowshire for the family a refugee of Lordaeron had left behind, most of all her little sister Pamela
@@ -35,7 +35,7 @@ kind: why
 - 6026 1 | gathering thorium, a golden rod, bombs and triggers for Smokey LaRue, hired by the Argent Dawn for some demolition work
 - 6041 2 undead | blowing up the Scourge ziggurats and slaughterhouses of Plaguewood that Smokey LaRue had marked for the Argent Dawn
 - 6042 1 | swatting plaguebats off the farm so Nathanos Blightcaller could take his hounds after the Scourge without being accosted
-- 6133 2 none | raiding the high elves' Quel'Lithien lodge for the Quel'Thalas Registry at the ranger lord's behest, leaving grief behind
+- 6133 2 none | raiding the high elves' Quel'Lithien lodge for the Quel'Thalas Registry for Nathanos Blightcaller
 - 6135 2 beast | tracking down Duskwing, the albino demon bat, for the white fur Nathanos Blightcaller would fashion into a reward
 - 6136 3 beast | destroying Borelgore, the corpulent maggot beast that had cost Nathanos Blightcaller entire regiments
 - 6145 2 none | intercepting the Crimson Courier for the Grand Crusader's Command, the daily report that was the key to striking the Crusade
@@ -72,10 +72,10 @@ kind: why
 - 72 1 | searching the Flintridge family's last possessions, bound for auction long after the massacre, for a clue to Stalvan
 - 74 1 | showing the torn journal page from the Flintridge crate to Marshal Haggard, whose failing eyes still knew the hand
 - 75 1 | fetching the faded journal page from the chest upstairs for Marshal Haggard, too nearly blind to read it himself
-- 78 1 | taking the faded journal page to Tavernkeep Smitts, an expert in local lore, who recognized the handwriting at once
+- 78 1 | taking the faded journal page to Tavernkeep Smitts, an expert in local lore, who recognised the handwriting at once
 - 79 2 none | bringing Commander Ebonlocke the muddy pages found where visiting nobles were slaughtered, tying the evidence to Stalvan
 - 80 2 none | having Clerk Daltry match the bloodstained journal page to the signatures in his registry, proving Stalvan's guilt
-- 90 1 | gathering lean wolf flanks and Stormwind seasoning herbs for the Seasoned Wolf Kabobs Chef Grual called a house favorite
+- 90 1 | gathering lean wolf flanks and Stormwind seasoning herbs for the Seasoned Wolf Kabobs Chef Grual called a house favourite
 - 93 1 | collecting gooey spider legs for Chef Grual's Dusky Crab Cakes, to feed Jitters after weeks of grubs and weeds
 - 95 2 none | digging up what a shadowy figure had buried behind the old stump at Sven's farm, where dark riders had slaughtered Sven's family
 - 98 3 villain | executing Stalvan Mistmantle at his cottage north of Darkshire, the murderer Madame Eva's premonition had uncovered
@@ -123,29 +123,29 @@ kind: why
 - 325 1 | bringing Morbent's Bane, forged of the lightforge iron, to Sven as proof against the fiend Morbent Fel
 - 453 2 none | tracking the nervous stranger who had left Darkshire heading west, and finding him hiding from whatever hunted him
 - 526 1 | taking back from the murlocs the lightforge ingots they had carried off, since one alone would craft nothing decent
-- 1383 1 | gathering panther hearts, Mire Lord fungus and a Deep Strider tumor for Apothecary Faustin's so-called truth serum
-- 1391 2 none | bringing the captive Infiltrator Marksen in Stonard an ale laced with Faustin's truth serum, a quiet Forsaken errand
+- 1383 1 | gathering panther hearts, Mire Lord fungus and a Deep Strider tumour for Apothecary Faustin's so-called truth serum
+- 1391 2 none | bringing an ale laced with Faustin's truth serum to the captive Infiltrator Marksen in Stonard, a quiet Forsaken errand
 - 1395 1 | rushing a crate of powerstones to Nethergarde Keep before they lost their power, too urgent to wait for a caravan
 # Warsong Gulch
 - 7788 1 | defending Silverwing Hold in Warsong Gulch against the Horde, who were felling the sacred forest for their war machines
-- 7789 1 | fighting the Silverwing Sentinels in Warsong Gulch, for a Horde that held the wilds of Ashenvale its own to harvest
+- 7789 1 | fighting the Silverwing Sentinels in Warsong Gulch, for a Horde that claimed the woods of Ashenvale to harvest
 - 7871 1 | pushing the invading Horde back from Silverwing Hold in Warsong Gulch, to spare the evergreens of the sacred forest
 - 7872 1 | battling the Horde in Warsong Gulch for the Silverwing Sentinels, whose sacred forest was being felled for war machines
 - 7873 1 | defending Silverwing Hold in Warsong Gulch against the Horde, who were felling the sacred forest for their war machines
 - 7874 1 | cutting down the Silverwing Sentinels in Warsong Gulch, who would stop the Horde harvesting Ashenvale's woods
 - 7875 1 | battling the Alliance in Warsong Gulch for the Warsong Outriders, so the Horde could keep logging Ashenvale
-- 7876 1 | fighting the Silverwing Sentinels in Warsong Gulch, for a Horde that held the wilds of Ashenvale its own to harvest
+- 7876 1 | fighting the Silverwing Sentinels in Warsong Gulch, for a Horde that claimed the woods of Ashenvale to harvest
 - 8290 1 | pushing the invading Horde back from Silverwing Hold in Warsong Gulch, to spare the evergreens of the sacred forest
 - 8291 1 | battling the Horde in Warsong Gulch for the Silverwing Sentinels, whose sacred forest was being felled for war machines
 - 8294 1 | cutting down the Silverwing Sentinels in Warsong Gulch, who would stop the Horde harvesting Ashenvale's woods
 - 8295 1 | battling the Alliance in Warsong Gulch for the Warsong Outriders, so the Horde could keep logging Ashenvale
 # sort 261
-- 6061 1 | taming an adult plainstrider with Yaw Sharpmane's rod, a first step toward oneness with nature in the tauren way
+- 6061 1 | taming an adult plainstrider with Yaw Sharpmane's rod, a first step towards a beast of my own
 - 6062 1 | subduing a dire mottled boar near Razor Hill with Thotar's taming rod, a first test of command over a beast
-- 6063 1 | taming a webwood lurker with Dazalar's rod, to prove a hunter understood that nature is to be respected rather than bent
+- 6063 1 | taming a webwood lurker with Dazalar's rod, for Dazalar's next lesson
 - 6064 1 | trying a large crag boar as a companion with Grif Wildheart's taming rod, to see what kind of beast suited
 - 6082 3 none | mastering an armored scorpid, the last of Thotar's trials, to earn the power to tame and command a beast of any choosing
-- 6083 1 | taming a surf crawler off the Echo Isles for Thotar, learning that a pet must become an extension of its hunter
+- 6083 1 | taming a surf crawler off the Echo Isles for Thotar
 - 6084 1 | winning over a snow leopard for Grif Wildheart, a swifter, more agile companion than the burly crag boar
 - 6085 3 none | taming an ice claw bear, Grif Wildheart's last trial before granting the power to tame a loyal pet of any kind
 - 6087 1 | taming a prairie stalker for Yaw Sharpmane, to take on its swift, fearless nature and fight as one with a beast
@@ -201,7 +201,7 @@ kind: why
 - 426 2 undead | breaking the Scourge at the Agamand Mills before they could make it a base for attacks across Tirisfal
 - 427 1 | slaying Scarlet Warriors at the tower past the Solliden Farmstead, to prove worthy of serving the Dark Lady
 - 445 1 | carrying Apothecary Johaan's findings to Apothecary Renferrel at the Sepulcher, toward the New Plague the Dark Lady desired
-- 492 2 none | serving a captured dwarven mountaineer Johaan's special drink, a hint of what the Dark Lady had planned for the rest of Azeroth
+- 492 2 none | serving Johaan's special drink to a captured dwarven mountaineer, a hint of what the Dark Lady had planned for the rest of Azeroth
 - 5481 1 | picking gloom weed for big-handed Gordo, only to learn his master, Junior Apothecary Holland, had no need of it
 - 5482 1 | gathering doom weed by the mass gravesite for Junior Apothecary Holland, the weed his servant Gordo kept getting wrong
 - 5901 1 | filling a jar with Plaguewood termites for Mickey Levine, who meant to take a lumber mill from the Scarlet Crusade
@@ -217,7 +217,7 @@ kind: why
 - 2586 1 | trading more pincers and gizzards to Bloodmage Drazial for one sample of the scorpok assay, the other nine kept for his research
 - 2601 1 | harvesting redstone basilisk brains for Bloodmage Lynnore, who had seen the beasts think more cleverly than some humanoids
 - 2602 1 | bringing Bloodmage Lynnore more basilisk brains and gizzards for another dose of her compound, its focus worn off
-- 2603 1 | collecting vulture gizzards for Bloodmage Lynnore, curious how carrion birds withstood the pestilence, in hope of a cure
+- 2603 1 | collecting vulture gizzards for Bloodmage Lynnore, who was curious how carrion birds withstood the pestilence and hoped for a cure
 - 2604 1 | gathering more gizzards and jowls for Bloodmage Lynnore's gizzard gum, after its spiritual euphoria had worn off
 - 2621 1 | asking Dispatch Commander Ruag in Stonard what became of the orders the Fallen Hero never waited for
 - 2681 2 victim | shattering the stones that bound the Fallen Hero's men to Razelikh's service, so their tortured souls could rest
@@ -259,6 +259,6 @@ kind: why
 - 7848 2 none | recovering a core fragment in Blackrock Depths, so Lothos Riftwaker could open the rift into the maw of the Firelord
 - 8578 1 | searching the Molten Core for Narain Soothfancy's scrying goggles, lost there a month before by someone nosing around
 # Feathermoon Stronghold
-- 3791 2 none | bringing morrowgrain to Quintis Jonespyre, troubled that the Arch Druid was gathering so much of it in the Circle's name
+- 3791 2 none | bringing morrowgrain to Quintis Jonespyre, who was troubled that the Arch Druid was gathering so much of it in the Circle's name
 # Onyxia's Lair
 - 7509 3 villain | letting Onyxia's breath heat the ancient blade, then slaying her and driving it into her corpse to forge Quel'Serrar

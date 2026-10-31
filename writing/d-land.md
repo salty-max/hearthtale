@@ -18,7 +18,7 @@ kind: d-land
 - [!one home !late] I saw {lands} for the first time, and every road of them was ours.
 - [one hosts !late !town] I saw {lands} for the first time, part of the country that had taken my people in.
 - [capital home !late] I walked into {lands} for the first time, and a city I had only heard of became a place I could find my way home to.
-- [capital home !late] I saw {lands} with my own eyes at last, and found it larger, louder and more mine than I had pictured.
+- [capital home !late] I saw {lands} with my own eyes at last, and found it larger, busier and more mine than I had pictured.
 - [capital hosts !late] I came into {lands} for the first time, the city that had taken my people in, and looked at it with a guest's gratitude and a stranger's eyes.
 - [one town !late] I walked into {lands} for the first time, and let the size and noise of it wash over me.
 - [one town !late] I saw {lands} for the first time, a city full of strangers who all seemed to know exactly where they were going.
@@ -33,7 +33,7 @@ kind: d-land
 - [late one !home !hosts] The road brought me into {lands}, and I looked about me longer than the work strictly needed.
 - [late one !home !hosts] I came into {lands}, and took my bearings before anything else.
 - [late one !home !hosts] My road ran into {lands}, and I kept my eyes open there.
-- [late one !home !hosts !town] I made my way into {lands}, watching the roads and the hills in equal measure.
+- [late one !home !hosts !town] I made my way into {lands}, watching the roads and the horizon in equal measure.
 - [late one !home !hosts !town] The work took me into {lands}, and I let the country tell me what it was.
 - [late one !home !hosts] I crossed into {lands}, minding where I put my feet.
 - [late one !home !hosts !town] The road ran on into {lands}, and I followed it with my wits about me.
@@ -46,7 +46,7 @@ kind: d-land
 - [late !one home !town] I travelled through {lands}, all of it my own people's country.
 - [late !one home] My road ran through {lands}, every mile of it my own people's.
 - [late one hosts !town] I came into {lands}, part of the country that had taken my people in.
-- [late capital home] I walked into {lands}, among my own people's walls and noise, and found my way about it easily enough.
+- [late capital home] I walked into {lands}, among my own people at last, and found my way about it easily enough.
 - [late capital home] I came into {lands}, and the city of my own people closed around me like a familiar coat.
 - [late capital hosts] I came into {lands}, the city that had taken my people in, and walked it with a guest's gratitude.
 - [late one town] I walked into {lands}, and let the size and noise of it wash over me.

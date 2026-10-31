@@ -13,6 +13,6 @@ kind: shift
 - [aquatic] The first time I took my water form, I could imagine feeling at home beneath the surface instead of merely passing through.
 - [moonkin] I took the moonkin's shape for the first time, feathered and heavy, with the moon's power close at hand.
 - [moonkin] The first time I became a moonkin, I felt faintly ridiculous and enormously strong, in that order.
-- [tree] I took the shape of a tree of life for the first time, with a healer's gentleness inside a body made of bark.
-- [flight] I took to the air in a bird's form for the first time, and wanted every road I had walked spread out beneath me.
+- [client:forever tree] I took the shape of a tree of life for the first time, with a healer's gentleness inside a body made of bark.
+- [client:forever flight] I took to the air in a bird's form for the first time, and wanted every road I had walked spread out beneath me.
 - I took a new shape for the first time, and felt how fond of my old body I was even while enjoying another.

@@ -10,7 +10,7 @@ kind: why
 - 351 1 | following a distress beacon to Oglethorpe's homing robot, crashed near the Gaping Chasm
 - 379 1 | wresting water pouches from the Wastewander nomads so Chief Engineer Bilgewhizzle would part with a power source
 - 648 2 none | escorting the battered OOX-17/TN to Steamwheedle Port so Oglethorpe Obnoticus could get his homing robot back in the air
-- 654 1 | racing a two-hour power source to test the tissue of the basilisks, hyenas and scorpids of Tanaris with a field kit
+- 654 1 | racing the two hours a power source would last to test the tissue of the basilisks, hyenas and scorpids of Tanaris with a field kit
 - 992 1 | tapping a pool near Sandsorrow Watch for the Gadgetzan Water Company, its wells lost to the nomads, and meeting a strange bug there
 - 1560 2 rescue | leading Tooga, lost while fetching dinner, back to his wife Torta south of Steamwheedle Port
 - 1690 2 none | driving back the Wastewander Bandits and Thieves who had seized nearly every water well around Gadgetzan
@@ -21,7 +21,7 @@ kind: why
 - 2781 3 villain | hunting down Caliph Scorpidsting, leader of the Wastewander outlaws, wanted for murdering Gadgetzan Water Co. employees
 - 2873 1 | taking back Stoley's rum from Captain Cuergo's pirate town so Stoley could settle a wager with MacKinley of Booty Bay
 - 2874 1 | settling MacKinley's bet with a bottle of Steamwheedle bilge rum, carried all the way to Booty Bay
-- 2875 3 villain | ending the pirate Andre Firebeard, wanted for crimes against Steamwheedle and Gadgetzan, his head standing in at his trial
+- 2875 3 villain | ending the pirate Andre Firebeard, wanted for crimes against Steamwheedle and Gadgetzan, and bringing in his head
 - 2876 1 | handing Steamwheedle Port a pirate's copy of its ship schedules, the sailings to Booty Bay marked with notes of loot and hard fights
 - 2954 2 none | learning from the Stone Watcher of Norgannon that only the Plates of Uldum would open the way into Uldum
 - 3022 1 | carrying a crate of hippogryph eggs to the druid Erelas Ambersky in Rut'theran, who hatched them and trained the young
@@ -75,7 +75,7 @@ kind: why
 - 542 1 | returning the recovered tomes of Alterac to Milton Sheaf, saving their knowledge for the Royal Library of Stormwind
 - 543 2 none | recovering the Perenolde Tiara, heirloom of Alterac's fallen rulers, from the ogre mage Grel'borg the Miser
 - 1244 2 none | searching Addle's Stead in Duskwood for the Defias Docket, a clue to the diplomat who never reached Theramore
-- 1245 1 | carrying the Defias Docket to Elling Trias, a plan Watcher Backus said was bigger than him
+- 1245 1 | carrying the Defias Docket to Elling Trias
 - 1249 2 none | subduing Tapoke Jahn, the eavesdropper in Menethil's tavern, before he could slip away with what he knew of the missing diplomat
 - 1265 1 | searching Sentry Point for Private Hendel, said to be the Defias' man aboard the king's ship
 - 1324 3 none | beating Private Hendel, the Defias' man aboard the king's ship, so Theramore could question him about the missing King
@@ -102,10 +102,10 @@ kind: why
 - 1938 2 none | retrieving Ur's Treatise on Shadow Magic from the tower of Ilgalar, where the fallen mage Morganth had taken it
 - 1940 1 | stripping pristine silk from the carrion recluses of Duskwood for a finer robe, one suited to an adept mage
 - 1944 1 | filling a flask at the highest falls of satyr-held Xavian for Deino, who sought the fabled magic of its waters
-- 1945 1 | taking locks of hair from the laughing sisters of Ashenvale, dryads who would never have given it willingly, for robes from Kil'hala
+- 1945 1 | taking locks of hair from the laughing sisters of Ashenvale, dryads who would never have given them willingly, for robes from Kil'hala
 - 1948 1 | finding jade and charging a bramble with lightning for Tabetha, the first materials of a mage's wand
 - 1950 1 | looking for Magus Tirth's missing apprentice around the Shimmering Flats races, for the phrase that opened his strongbox
-- 1951 2 none | recovering Tirth's Rituals of Power from the Scarlet Monastery, sold off to pay his gambling debts, for Tabetha's wand ritual
+- 1951 2 none | recovering Tirth's Rituals of Power, sold to the Scarlet Monastery to pay his gambling debts, for Tabetha's wand ritual
 - 1954 1 | snatching an infernal orb from a Burning Blade summoner in Desolace, the vessel Tabetha needed for a staff or orb
 - 1955 2 demon | killing the demon Tabetha drove out of the infernal orb before it could leap back in
 - 1956 2 none | defeating the obsidian sentinel in Uldaman for its ancient power source, to strengthen Tabetha's orb
@@ -114,7 +114,7 @@ kind: why
 - 1961 1 | taking mana gems from the Dalaran mages of Silverpine for Josef Gregorian to sew into spellfire robes
 - 8251 1 | wresting glittering dust from the blood elves of Azshara, who had killed Archmage Xylem's apprentice when he came to trade
 - 8252 1 | prying enchanted coral from the spitelash sirens, who had stripped the bay of it, for Archmage Xylem's research
-- 8253 3 none | slaying the green drake Morphaz in the Sunken Temple for the arcane shard in his stomach, swallowed with Xylem's apprentice
+- 8253 3 villain | slaying the green drake Morphaz in the Sunken Temple for the arcane shard in his stomach, swallowed along with Archmage Xylem's apprentice
 - 9362 2 none | killing Warlord Krellian in the Temple of Zin-Malor for the prismatic shell Archmage Xylem's scrying had found
 - 9364 2 none | polymorphing the Spitelash so the prismatic shell could gather their split essence, from which Archmage Xylem formed a new spell
 # Loch Modan
@@ -123,15 +123,15 @@ kind: why
 - 224 2 none | fighting the Stonesplinter troggs tunnelling across Loch Modan, the gravest threat Ironforge faced while its soldiers were at the front
 - 237 2 none | holding off the trogg skullthumpers and seers in the southern hills, buying time until the dwarves returned from the Alliance front
 - 250 2 none | searching the eastern ramp of the Stonewrought Dam, where Dark Iron Sappers had been seen, for a clue to their next attack
-- 255 2 none | fighting the Mo'grosh ogres camped by the lake as hired arms for Magistrate Bluntnose, while Thelsamar waited months for soldiers
+- 255 2 none | fighting the Mo'grosh ogres camped by the lake for Magistrate Bluntnose, while Thelsamar waited months for soldiers
 - 256 3 villain | hunting down Chok'sul, the ogre behind the attacks on Thelsamar, the dam and the excavation
 - 257 1 | meeting Daryl the Youngling's boastful challenge to bring down a flock of mountain buzzards against the clock
 - 258 1 | racing the clock against elder mountain boars to prove Daryl the Youngling wrong a second time
-- 263 2 none | killing trogg shaman and bonesnappers for Mountaineer Wallbang, the reserves called to the front and the guards left alone
+- 263 2 none | killing trogg shaman and bonesnappers for Mountaineer Wallbang, with the reserves called to the front and the guards left alone
 - 267 1 | taking the fight to the troggs in the hills for Captain Rugelfuss, whose regiment could not leave its gate
 - 271 2 beast | killing Ol' Sooty, the bear that gave Daryl the Youngling his scar, at Vyrin Swiftwind's urging
 - 273 2 none | catching up with Huldar's powder shipment to the excavation just as the porter Saean turned out to be a Dark Iron sympathizer
-- 274 1 | rushing back to Hinderweir with word that the powder was Seaforium, enough once wet to blow Ironforge out of the mountain
+- 274 1 | rushing back to Hinderweir with word that the powder was Seaforium, enough, once wet, to blow Ironforge out of the mountain
 - 278 2 none | gathering lurker venom, a Mo'grosh crystal and a crocolisk tear for the mixture that could defuse the Dark Irons' Seaforium
 - 280 3 none | swimming down to the Dark Irons' keg at the base of the Stonewrought Dam to stir in the disarming mixture before it blew
 - 297 1 | prying carved idols from the troggs at Ironband's Excavation, relics that drove them berserk, for Magmar Fellhew to study
@@ -160,7 +160,7 @@ kind: why
 - 918 1 | gathering timberling seeds around Lake Al'Ameth for Denalan, who hoped to grow gentler timberlings in his special soil
 - 919 1 | pulling up the timberling sprouts spreading around Lake Al'Ameth before they grew large enough to cause trouble
 - 922 1 | taking a timberling seed to Rellian Greenspyre in Darnassus, who found it carried its parent's taint
-- 923 2 victim | cutting down the tainted timberlings of Wellspring Lake for Rellian Greenspyre, their mossy tumors to be burned
+- 923 2 victim | cutting down the tainted timberlings of Wellspring Lake for Rellian Greenspyre, their mossy tumours to be burned
 - 927 1 | handing Denalan the still-beating heart of Blackmoss the Fetid, wrapped in a dark, oily moss
 - 929 1 | filling a phial at the moonwell near Starbreeze for Corithras Moonrage, as he began the tale of how Teldrassil came to be
 - 930 1 | showing Denalan a strange glowing fruit, a plant from far off that reacted oddly with the soil of Teldrassil
@@ -176,7 +176,7 @@ kind: why
 - 997 1 | delivering a long-delayed package of rare earth to Denalan for his experiments on the plants of Teldrassil
 - 2438 1 | recovering Tallonkai Swiftroot's emerald dreamcatcher, a rare gift from the warden Gaerolas, from furbolg-held Starbreeze
 - 2459 2 none | taking back the emerald Ferocitas the Dream Eater had stolen from Tallonkai's dreamcatcher, and thinning his Gnarlpine mystics
-- 2499 3 victim | hunting down Oakenscowl, once a grand leader of the timberlings, whose gargantuan tumor spread corruption around Lake Al'Ameth
+- 2499 3 victim | hunting down Oakenscowl, once a grand leader of the timberlings, whose gargantuan tumour spread corruption around Lake Al'Ameth
 - 2541 2 none | taking a voodoo charm from the Gnarlpine shaman for Oben Rageclaw, whose spirit they had torn from his sleeping body
 - 2561 3 victim | killing the soulless body of Oben Rageclaw, turned by the Gnarlpine against the Den, so his spirit could rest in the Emerald Dream
 - 7383 1 | filling a phial at the Oracle Tree's moonwell, the first and most powerful on Teldrassil, as Corithras told of the dragons' refusal
@@ -188,10 +188,10 @@ kind: why
 - 4061 2 none | prying shards from the rock automatons of the Burning Steppes so Theodora Mulvadania could trace where the golems were coming from
 - 4182 2 none | pushing back the black dragonkin gathered below Helendis Riverhorn's ridge in the Burning Steppes
 - 4183 1 | carrying Helendis Riverhorn's warning to Magistrate Solomon: the black dragonflight was the true master of the Blackrock orcs
-- 4184 2 none | pleading Lakeshire's case before Highlord Bolvar Fordragon, for the town could not survive both the Blackrock orcs and the black dragons
-- 4186 1 | returning to Lakeshire with Bolvar's decree, a deputy of Stormwind on whose shoulders the town's fate now rested
+- 4184 2 none | pleading Lakeshire's case before Highlord Bolvar Fordragon, because the town could not survive both the Blackrock orcs and the black dragons
+- 4186 1 | returning to Lakeshire with Bolvar's decree
 - 4224 1 | finding Ragged John in his cave to learn what became of Marshal Windsor and the intelligence on the Blackrock lost with him
-- 4283 1 | stripping Blackrock medallions off the orcs for Oralius, who wanted badges to go with his ogre ear collection
+- 4283 1 | stripping Blackrock medallions off the Blackrock orcs for Oralius, who wanted badges to go with his ogre ear collection
 - 4296 1 | copying the Tablet of the Seven in the ruins of Thaurissan for Maxwort Uberglint, who hoped its dwarven lore would make them rich
 - 4726 1 | catching broodling essence with Tinkee Steamboil's Draco-Incarcinatrix 900, for her study of the dragon whelps
 - 4808 1 | carrying Tinkee's letter to Felnok Steelspring in Everlook, asking for parts to freeze dragon whelp eggs
@@ -202,7 +202,7 @@ kind: why
 - 9323 1 | seeking out the blue Midsummer fires of the Blasted Lands, the Plaguelands, the Hinterlands and Searing Gorge
 - 9324 2 none | stealing the flame from the heart of Orgrimmar itself for the Festival Loremaster's collection
 - 9325 2 none | stealing the flame of the shaman of Thunder Bluff for the Festival Loremaster's collection
-- 9326 2 none | stealing the smoldering flame from the ruins above the Undercity for the Festival Loremaster's collection
+- 9326 2 none | stealing the smouldering flame from the ruins above the Undercity for the Festival Loremaster's collection
 - 9330 2 none | stealing the flame from the heart of Stormwind itself for the Festival Talespinner's collection
 - 9331 2 none | stealing the flame from the halls of Ironforge for the Festival Talespinner's collection
 - 9332 2 none | stealing the flame from the shores of Teldrassil for the Festival Talespinner's collection
@@ -214,7 +214,7 @@ kind: why
 - 747 1 | hunting plainstriders for the meat and feathers Camp Narache had run short of, to prove worthy in Chief Hawkwind's eyes
 - 750 1 | skinning mountain cougars in the hills for Camp Narache, whose children needed clothing and whose tents needed mending
 - 752 1 | looking in on Chief Hawkwind's mother, gone a long while fetching water from the well
-- 753 1 | carrying a water pitcher back from the well for the Greatmother, whose old legs lacked their vigor
+- 753 1 | carrying a water pitcher back from the well for the Greatmother, whose old legs lacked their vigour
 - 757 3 none | passing the Rite of Strength, first of the Rites of the Earthmother, against the Bristlebacks who raided Camp Narache
 - 780 1 | killing the Battleboars the Bristlebacks had trained to be malicious, for snouts and flanks to stew for the young of the camp
 - 781 2 none | bringing Chief Hawkwind the Bristleback warchief's plans for a siege of Camp Narache, in time to call Bloodhoof Village to help
