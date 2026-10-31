@@ -14,7 +14,7 @@ local function check(cond, msg, got)
 end
 local function last() return G.printed[#G.printed] or "" end
 
-check(ns.locale == "frFR" and L["Hall of the Fallen"] == "Salle des Disparus", "the French language file")
+check(ns.locale == "frFR" and L["Hall of the Fallen"] == "Salle des Défunts", "the French language file")
 check(L["A word Hearthtale never says"] == "A word Hearthtale never says", "… a word it lacks stays English")
 check(ns.upper("en cours d'écriture") == "EN COURS D'ÉCRITURE", "capitals, the accented ones too")
 
@@ -22,13 +22,13 @@ G.login()
 check(last():find("de l'entrée 1%. Tapez /ht"), "the login's line in French", last())
 SlashCmdList.HEARTHTALE("what")
 check(
-  last():find("^|c%x+Hearthtale.-:|r /ht ouvre le journal, /ht hall la Salle des Disparus%."),
+  last():find("^|c%x+Hearthtale.-:|r /ht ouvre le journal, /ht hall la Salle des Défunts%."),
   "/ht's help in French",
   last()
 )
 SlashCmdList.HEARTHTALE("title 9 Rien")
 check(
-  last():find("Titre de l'entrée %d+ gardé%.") or last():find("Aucune entrée à titrer"),
+  last():find("Titre de l'entrée %d+ enregistré%.") or last():find("Aucune entrée à intituler"),
   "an entry's title, said in French",
   last()
 )
