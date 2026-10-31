@@ -101,7 +101,7 @@ kind: why
 - 5883 1 | bringing Arathandris Silversky vitriol mined in Felwood, the makings of the plant salve that purifies its corrupted plants
 - 5884 1 | gathering what Arathandris Silversky could purify into Cenarion plant salve, every bit of it a help in taking back Felwood
 - 5885 1 | handing over a skinner's haul to Arathandris Silversky for plant salves, to reclaim Felwood from the corruption
-- 5886 1 | giving up a lesser nether essence, the most potent essence there was, for Arathandris Silversky's plant salve
+- 5886 1 | giving up a lesser nether essence for Arathandris Silversky's plant salve
 - 5887 1 | trading what the hunt had yielded to Maybess Riverbreeze for Cenarion plant salve, to scour Felwood for corrupted plants
 - 5888 1 | handing Maybess Riverbreeze vitriol from the mines of Felwood, the more of it the more salve for the corrupted plants
 - 5889 1 | bringing gathered goods to Maybess Riverbreeze to be purified into salve, every bit a help in taking back Felwood
@@ -233,7 +233,7 @@ kind: why
 - 749 1 | examining the burned Venture Co. caravan by Stonebull Lake for Morin Cloudstalker, after salvagers were seen at the wreck
 - 751 2 none | bringing Morin Cloudstalker the Venture Co. papers from the caravan, proof the goblins were robbing Mulgore of its ore
 - 754 2 none | carrying the cleansing totem past the goblins to the Winterhoof Water Well, so its waters could be used again
-- 756 1 | taking claws from prairie stalkers and flatland cougars, which Mull Thunderhorn needed, pure from the hunt, for the next cleansing totem
+- 756 1 | taking claws from prairie stalkers and flatland cougars for Mull Thunderhorn's next cleansing totem
 - 758 2 none | performing the cleansing ritual at the Thunderhorn Water Well, for Mull Thunderhorn, as his dream had asked
 - 759 1 | hunting prairie wolf alphas for their teeth, the land's offering for the totem to cleanse the last well
 - 760 3 none | cleansing the Wildmane Water Well, the last of the wells the goblins poisoned, so clean water would flow in Mulgore again

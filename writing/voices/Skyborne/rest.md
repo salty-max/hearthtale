@@ -5,7 +5,7 @@ kind: rest
 - [client:forever faction:alliance] With no vanished patron to ask permission of, I stopped {at}.
 - [client:forever faction:alliance] The lore of Eldre'Thalas had been lost for thousands of years, and {at} it could stay lost until I had my strength back.
 - [client:forever faction:horde] I rested {at}, and let the search for the lost mentors wait an hour without feeling I had abandoned it.
-- [client:forever faction:horde] A Windshaper off duty, if such a thing existed, sat down {at}.
+- [client:forever faction:horde] I sat down {at}, a Windshaper off duty, if such a thing existed.
 - [client:forever] Idleness {at} was a private pleasure, and I took it without apology.
 - [client:forever] Nobody needed me {at} for a while, and I was happy to let that be true.
 - [client:forever !home] The skydocks of Valanaar were a long way from {place}, and I was not unhappy about it.
@@ -15,6 +15,6 @@ kind: rest
 - [client:forever !home] My thoughts wandered back to Windfield Orchard and the unhurried work of its trees while I sat still {at}.
 - [client:forever !home] I paused {at}, my feet aching from more walking than a year at home had ever asked of them.
 - [client:forever hc] I rested {at}, determined not to become one more thing Zephras had lost.
-- [client:forever] Nothing to do {at}: I allowed myself that rare courtesy.
+- [client:forever] For once there was nothing to do {at}, and I allowed myself that rare courtesy.
 - [client:forever fire] I sat by the fire {at}, where the smoke was the only thing in sight in any hurry to reach the sky.
 - [client:forever !fire] The work was done {at}, and for a while I let everything fall still.

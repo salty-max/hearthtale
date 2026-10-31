@@ -16,9 +16,9 @@ kind: d-spec
 - [class:SHAMAN spec:Elemental !change] I had chosen the Elemental way, storm and sea called down, older powers than most give them credit for.
 - [class:SHAMAN spec:Enhancement !change] I had chosen Enhancement, the spirits riding along with every blow.
 - [class:SHAMAN spec:Restoration !change] I had chosen Restoration, the spirits asked to mend whatever the road had broken.
-- [class:MAGE spec:Arcane !change] I had given my study to the Arcane, an art far older than the books the younger races wrote it down in.
+- [class:MAGE spec:Arcane !change] I had given my study to the Arcane, an art far older than the books it was later written down in.
 - [class:MAGE spec:Fire !change] I had given my study to Fire, as bright and as cheerful as a bonfire.
-- [class:MAGE spec:Frost !change] I had given my study to Frost, a joke I never tired of under a Durotar sun.
+- [class:MAGE spec:Frost !change] I had given my study to Frost, a joke I never tired of in the heat.
 - [client:forever class:WARLOCK spec:Affliction !change] I had chosen Affliction, curses with all the patience of a hex.
 - [client:forever class:WARLOCK spec:Demonology !change] I had chosen Demonology, and kept my demons the way you keep a viper: admired from a distance.
 - [client:forever class:WARLOCK spec:Destruction !change] I had chosen Destruction, fel fire the elders would frown on, and meant to use it with care.

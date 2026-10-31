@@ -1,7 +1,7 @@
 ---
 kind: d-land
 ---
-- [one !home !hosts !town !late] I came into {lands} for the first time, and wondered straight away what lived there and which of it would bite.
+- [one !home !hosts !town !late] I came into {lands} for the first time, and wondered straight away what lived there and what of it might bite.
 - [one !home !hosts !town !late] I came into {lands} for the first time, and listened for which spirits were awake there before I trusted a step of it.
 - [one !home !hosts !late] I stepped into {lands} for the first time, and liked the place before I knew a thing about it.
 - [one !home !hosts !town !late] I reached {lands}, new country to me, and caught myself sniffing for salt on the air all the same.

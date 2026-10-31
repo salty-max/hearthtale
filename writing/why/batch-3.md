@@ -128,13 +128,13 @@ kind: why
 - 1395 1 | rushing a crate of powerstones to Nethergarde Keep before they lost their power, too urgent to wait for a caravan
 # Warsong Gulch
 - 7788 1 | defending Silverwing Hold in Warsong Gulch against the Horde, who were felling the sacred forest for their war machines
-- 7789 1 | fighting the Silverwing Sentinels in Warsong Gulch, for a Horde that claimed the woods of Ashenvale to harvest
+- 7789 1 | fighting the Silverwing Sentinels in Warsong Gulch, for a Horde that meant to harvest the woods of Ashenvale
 - 7871 1 | pushing the invading Horde back from Silverwing Hold in Warsong Gulch, to spare the evergreens of the sacred forest
 - 7872 1 | battling the Horde in Warsong Gulch for the Silverwing Sentinels, whose sacred forest was being felled for war machines
 - 7873 1 | defending Silverwing Hold in Warsong Gulch against the Horde, who were felling the sacred forest for their war machines
 - 7874 1 | cutting down the Silverwing Sentinels in Warsong Gulch, who would stop the Horde harvesting Ashenvale's woods
 - 7875 1 | battling the Alliance in Warsong Gulch for the Warsong Outriders, so the Horde could keep logging Ashenvale
-- 7876 1 | fighting the Silverwing Sentinels in Warsong Gulch, for a Horde that claimed the woods of Ashenvale to harvest
+- 7876 1 | fighting the Silverwing Sentinels in Warsong Gulch, for a Horde that meant to harvest the woods of Ashenvale
 - 8290 1 | pushing the invading Horde back from Silverwing Hold in Warsong Gulch, to spare the evergreens of the sacred forest
 - 8291 1 | battling the Horde in Warsong Gulch for the Silverwing Sentinels, whose sacred forest was being felled for war machines
 - 8294 1 | cutting down the Silverwing Sentinels in Warsong Gulch, who would stop the Horde harvesting Ashenvale's woods

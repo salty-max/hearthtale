@@ -6,4 +6,4 @@ kind: d-react
 - [rescue] That rescue asked more patience than any fight, and I was prouder of it than of most fights.
 - [rescue] Not every task worth my strength is a fight, and that stretch reminded me of it.
 - [demon] Every demon I put down was one less master the clans would ever kneel to again.
-- [villain] Whatever that one wanted of the world, it would have needed others to do the work, and I would not be one of them.
+- [villain] I had seen enough of that kind of ambition to know where it led, and I was glad to cut this one short.

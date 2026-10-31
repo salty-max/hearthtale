@@ -12,7 +12,7 @@ kind: opening
 - [client:forever !home] The country {at} had never had to wonder what held it up.
 - [client:forever !home] I set out {at} with "Gale's greetings" ready for anyone I met, whether or not they knew what it meant.
 - [client:forever !home] This world had more people in it than all of Zephras could hold, and any of them {at} was someone I might yet come to know.
-- [client:forever night] Night had fallen {at}, and I have not been fully at ease at that hour since Ban'aethal was lost in a single night.
+- [client:forever night] Night had fallen {at}, and since the news of Ban'aethal, lost in a single night, that hour has never sat easily with me.
 - [client:forever] I set out {at}, with a habit of trusting nothing to bear my weight until I had tested it.
 - [client:forever] I took up the road {at}, as unhurried as my Highborne forebears and, I hoped, rather less proud.
 - [client:forever] Work was wanting hands {at}, and I set out to lend mine.

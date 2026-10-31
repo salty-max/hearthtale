@@ -148,7 +148,7 @@ kind: why
 - 1842 1 | taking the swollen hooves of satyrs leeching Ashenvale's magic, so Ula'elek could work their power into brutal gauntlets
 - 1844 2 victim | slaying a chimaera matriarch in the ashen Charred Vale to end her misery, and bringing her galvanized horn to Orm Stonehoof
 - 1846 1 | collecting sturdy Dragonmaw shinbones in the Wetlands for brutal legguards by Velora Nitely, a fine armorsmith even in death
-- 8423 1 | killing helboars in the Blasted Lands, the test of strength the Fallen Hero of the Horde set before asking an honourable task
+- 8423 1 | killing helboars in the Blasted Lands, the test of strength the Fallen Hero of the Horde set before he would give me an honourable task
 - 8424 2 none | slaughtering the Shadowsworn, whose dark rituals tormented the spirit of the Fallen Hero of the Horde
 - 8425 3 none | destroying the troll guardians of the Sunken Temple for voodoo feathers to lend the Fallen Hero of the Horde a body for a moment
 # The Hinterlands

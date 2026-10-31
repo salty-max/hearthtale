@@ -10,7 +10,7 @@ kind: rest
 - [!home] I stopped {at}, missing the drums of home without wanting them to summon me anywhere.
 - I rested {at}, and left the ancestors to judge my unashamed relief.
 - My shoulders forgot the weight of the day's work {at}.
-- This stillness was nothing like the grey lethargy of the internment camps, and I rested {at} the gladder for knowing the difference.
+- I rested {at}, and thought of the internment camps, where stillness had been a sentence rather than a choice.
 - The heat went out of my temper {at} along with the day.
 - I paused {at}, and thought what an hour of my own would have been worth to Thrall as a boy behind the walls of Durnholde.
 - Somewhere a grunt was standing a long watch, and I sat down {at}, grateful that it was not me.

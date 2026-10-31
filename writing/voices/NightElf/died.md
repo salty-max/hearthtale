@@ -5,7 +5,7 @@ kind: died
 - [foe] I fell to {foe} {at}, and the Temple of the Moon had never seemed further away.
 - [fall] I fell to my death {at}. Height had offered none of the safety I associated with home.
 - [drowning] I drowned {at}, reaching for air that would not come.
-- I died {at}, and wanted more time with a bitterness I had not expected.
+- I died {at}, and wanted more time, more bitterly than I had expected.
 - [lava] Fire killed me {at}, and took me as quickly as it takes a dry glade.
 - [nature] I died {at}, with no comfort in knowing that I belonged to the world that had taken me.
 - [foe] {foe} killed me {at}, and all the long memory of our people could not soften my own wish to remain.

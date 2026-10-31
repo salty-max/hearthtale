@@ -10,11 +10,11 @@ kind: d-spec
 - [class:ROGUE spec:Assassination !change] I had chosen Assassination, quick and final, with no wish to make anything suffer longer than it must.
 - [class:ROGUE spec:Combat !change] I had chosen Combat, open and direct, which sat better with me than skulking ever could.
 - [class:ROGUE spec:Subtlety !change] I had chosen Subtlety, the lesson some of my people learned in the camps: stay unseen, and live.
-- [class:SHAMAN spec:Elemental !change] I had chosen the Elemental way, the storm and earth that answered when Thrall called them back, and that they answered me still felt like a gift.
+- [class:SHAMAN spec:Elemental !change] I had chosen the Elemental way, the storm and earth that answered when Thrall called them back, and that they answered me as well still felt like a gift.
 - [class:SHAMAN spec:Enhancement !change] I had chosen Enhancement, the spirits' strength in my own blows, the shaman's old place beside the warriors.
 - [class:SHAMAN spec:Restoration !change] I had chosen Restoration, asking the spirits to mend, which I was glad to remember I could ask.
 - [class:WARLOCK spec:Affliction !change] I had chosen Affliction, and knew better than most where the slow work of corruption can lead.
-- [class:WARLOCK spec:Demonology !change] I had chosen Demonology, demons bound and leashed, and never again anyone's masters.
+- [class:WARLOCK spec:Demonology !change] I had chosen Demonology, demons bound and leashed, and the leash in my hand this time.
 - [class:WARLOCK spec:Destruction !change] I had chosen Destruction, the fel fire that once enslaved the clans, and meant to hold it rather than be held.
 - [client:forever class:MAGE spec:Arcane !change] I had given my study to the Arcane, an unusual path for an orc, and all the more mine for it.
 - [client:forever class:MAGE spec:Fire !change] I had given my study to Fire, which at least made no secret of what it was for.

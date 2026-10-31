@@ -1,7 +1,7 @@
 ---
 kind: close-deep
 ---
-- {foe} nearly killed me {at}. I wanted to see Gnomeregan taken back one day, and not as a ghost.
+- {foe} nearly killed me {at}. I wanted to live to see Gnomeregan taken back.
 - I barely survived {foe} {at}, and spent a long while afterwards with hands too unsteady for anything delicate.
 - {foe} left me barely alive {at}. For all my cleverness, I was still made of terribly fragile stuff.
 - [!foe] I barely survived {at}, and took a fierce, unreasonable pride in the next breath.

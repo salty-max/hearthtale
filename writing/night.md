@@ -2,7 +2,7 @@
 kind: night
 ---
 - I settled beneath the sky {at}, and left tomorrow to tomorrow.
-- Reaching a place where I could stop was enough {at}, and I lay down outside.
+- I lay down outside {at}, and reaching a place where I could stop was enough.
 - I spent another night outdoors {at}, with no wish to travel further for comfort.
 - I settled {at}, and let the dark keep the next stretch until I had rested.
 - The ground {at} had not been designed with a tired back in mind, but I rested on it all the same.

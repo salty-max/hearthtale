@@ -24,7 +24,7 @@ kind: opening
 - [class:ROGUE] Every way in I found {at} would need a quiet way out, and I began with that in mind.
 - [class:WARLOCK] Curses enough for my enemies and a healthy distrust of anything I could summon: I set out {at} with both.
 - [class:PRIEST] My hands, I hoped, would be called on more often to mend than to harm, and I began again {at}.
-- [class:DRUID] I took up the road {at}, still fond of a world that looks different in every shape the wild might teach me.
+- [class:DRUID] I took up the road {at}, still fond of a world that changes with every shape the wild might teach me.
 - [class:SHAMAN] The gentler voices of the elements were what I listened for as I set out {at}.
 - [class:WARRIOR] A warrior's habit of judging trouble by the reach of a weapon went with me {at}.
 - [class:PALADIN] I began again {at}, with the Light's strength ready for whatever ordinary needs I might find.
