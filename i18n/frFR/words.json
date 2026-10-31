@@ -45,7 +45,7 @@
   "Entry %d's title kept.": "Titre de l'entrée %d gardé.",
   "Entry %d's title removed.": "Titre de l'entrée %d effacé.",
   "Epitaph": "Épitaphe",
-  "Everyone you group with is kept here, on this computer alone: when and where you met, how many days you travelled together, the dungeons you entered, and a note of your own.": "Tous ceux avec qui vous jouez en groupe sont gardés ici, sur cet ordinateur seulement : quand et où vous vous êtes rencontrés, combien de jours vous avez voyagé ensemble, les donjons franchis, et une note de votre main.",
+  "Everyone you group with is kept here, on this computer alone: when and where you met, how many days you travelled together, the dungeons you entered, and a note of your own.": "Toutes les personnes avec qui vous jouez en groupe sont conservées ici, sur cet ordinateur seulement : quand et où vous les avez rencontrées, combien de jours vous avez voyagé ensemble, les donjons parcourus, et une note de votre main.",
   "Fallen": "Vie achevée",
   "Fellow travellers": "Compagnons de route",
   "First met": "Première rencontre",
@@ -60,7 +60,7 @@
   "Level %d %s %s, %s": "Niveau %d %s %s, %s",
   "Marked so in Hearthtale's options (the game doesn't say here).": "Indiqué dans les options de Hearthtale (le jeu ne le dit pas ici).",
   "May it stay so.": "Pourvu que ça dure.",
-  "Met most recently": "Rencontrés en dernier",
+  "Met most recently": "Dernières rencontres",
   "Minimap button": "Bouton de la minicarte",
   "No entry to give a note to yet.": "Aucune entrée à annoter pour l'instant.",
   "No entry to give a title to yet.": "Aucune entrée à titrer pour l'instant.",
@@ -115,7 +115,7 @@
   "still being written": "en cours d'écriture",
   "taken up at level %d": "commencé au niveau %d",
   "the end": "fin",
-  "travelled as a pair": "voyagé en duo",
+  "travelled as a pair": "en duo",
   "traveller": "compagnon de route",
   "travellers": "compagnons de route"
 }
