@@ -2769,6 +2769,26 @@ for _, race in ipairs(RACES) do
   end
 end
 
+-- A Hardcore life met mid-life says nothing of its time, foes or lands
+-- before the journal: a human met at 60 who dies minutes later never "lived
+-- for two minutes". A life seen from the start keeps its time.
+for i = 1, 40 do
+  local c = life("Human", one(COMBOS.Human), true, 60, 60)
+  c.prologue.played = 600000
+  c.death = death(60, "Burning Steppes", nil)
+  local last = c.chapters[#c.chapters]
+  last.ended, c.closed = { level = 60, place = "Burning Steppes", how = "death" }, true
+  local epitaph = ns.writeBook(c).epitaph or ""
+  local bad = epitaph:match("[^.]*minutes?[^.]*")
+    or epitaph:match("[^.]*hours?[^.]*")
+    or epitaph:match("[^.]*lived for[^.]*")
+    or epitaph:match("[^.]* of life[^.]*")
+    or epitaph:match("[^.]*in the world[^.]*")
+    or epitaph:match("[^.]*foes[^.]*")
+    or epitaph:match("[^.]*lands[^.]*")
+  if bad then problem("Human met at 60, epitaph " .. i, "time or foes before the journal told", bad) end
+end
+
 -- The trades of a stretch, in one sentence: two taken up together, two new
 -- ranks, mixed stages (each its own verb), a craft's work beside them, a
 -- trade given up and another taken up again, one at 300 (a weapon's 300 is
@@ -3156,6 +3176,51 @@ eq(ns.writer.itemName("An Unsent Letter"), "an Unsent Letter", "own article")
 eq(ns.writer.itemName("Wiley's Note"), "Wiley's Note", "possessive note")
 eq(ns.writer.itemName("Smite's Mighty Hammer"), "Smite's Mighty Hammer", "possessive")
 eq(ns.writer.itemName("Blackened Defias Armor"), "Blackened Defias Armor", "mass")
+-- a quest's why as one of the people it names writes it (ours): the people
+-- a noun, an adjective or a place's name follows are left as the game says
+eq(
+  ns.writer.ours("fetching the gnomes' long-delayed car parts", "Gnome"),
+  "fetching my people's long-delayed car parts",
+  "ours: plural possessive"
+)
+eq(
+  ns.writer.ours("to learn why the gnomes' cars had grown faster", "Gnome"),
+  "to learn why my people's cars had grown faster",
+  "ours: plural possessive, cars"
+)
+eq(
+  ns.writer.ours("hunting down the Forsaken traitors held at the camp", "Scourge"),
+  "hunting down the Forsaken traitors held at the camp",
+  "ours: a noun after"
+)
+eq(
+  ns.writer.ours("marks of honor from the Darkspear Islands", "Troll"),
+  "marks of honor from the Darkspear Islands",
+  "ours: a place's name"
+)
+eq(
+  ns.writer.ours("fighting the Darkspear Raiders on the Darkspear Islands", "Troll"),
+  "fighting the Darkspear Raiders on the Darkspear Islands",
+  "ours: names"
+)
+eq(
+  ns.writer.ours("a plan for the Forsaken, left to the Forsaken.", "Scourge"),
+  "a plan for my people, left to my people.",
+  "ours: a stop and a comma"
+)
+eq(ns.writer.ours("in the name of the Darkspear", "Troll"), "in the name of my people", "ours: the end")
+eq(ns.writer.ours("in the Darkspear's name", "Troll"), "in my people's name", "ours: 's")
+eq(
+  ns.writer.ours("to help the Darkspear tribe and the Darkspear trolls", "Troll"),
+  "to help my tribe and my people",
+  "ours: tribe and trolls"
+)
+eq(ns.writer.ours("rescuing the orcs who were taken", "Orc"), "rescuing my people who were taken", "ours: who")
+eq(ns.writer.ours("the humans mages and the humans", "Human"), "the humans mages and my people", "ours: only the last")
+eq(ns.questTitle("Wanted - Arnak Grimtotem"), "Arnak Grimtotem", "title: Wanted -")
+eq(ns.questTitle("Wanted: Hogger"), "Hogger", "title: Wanted:")
+eq(ns.questTitle("WANTED: Murkdeep!"), "Murkdeep!", "title: WANTED:")
+eq(ns.questTitle("Wanted!"), nil, "title: Wanted! alone")
 eq(ns.writer.playedWords(7170), "two hours", "1h59 is two hours")
 eq(ns.writer.playedWords(3600 + 58 * 60), "two hours", "1h58")
 eq(ns.writer.playedWords(1500), "twenty-five minutes", "25 min")

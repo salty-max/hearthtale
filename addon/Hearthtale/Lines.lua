@@ -448,6 +448,7 @@ end
 -- The place slots of a moment: {at} ("in Coldridge Valley", "there" if it was
 -- just named, then nothing), {in} (always the name), and the place itself.
 function Book:here(values, place)
+  if place == "" then place = nil end
   if not place then
     values.at = ""
   elseif place ~= self.last then
@@ -611,9 +612,17 @@ function Book:epitaph(c)
   for key in pairs(c.visited or {}) do
     if key:sub(-1) == "|" then zones = zones + 1 end
   end
+  -- A life met mid-life: the time, the foes and the lands before Hearthtale
+  -- are unknown, so nothing is said of them ("had lived for two minutes" at
+  -- level 60), and the tasks count the game's own before the record's.
+  local p = c.prologue
+  if p then
+    played, kills, zones = nil, 0, 0
+    quests = type(p.quests) == "number" and quests + p.quests or 0
+  end
   local second = self:say("remembrance", "remembrance", {
     name = c.name,
-    played = playedWords(played),
+    played = played and playedWords(played),
     quests = quests > 1 and words(quests) or nil, -- "one tasks": no
     kills = kills > 1 and words(kills) or nil,
     rare = rare,

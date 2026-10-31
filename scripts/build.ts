@@ -293,13 +293,23 @@ const NOT_VERBS = new Set(["bring", "spring", "string", "thing", "king", "ring",
 // murdering Forsaken and ambushing supplies"), or after a comma ("…,
 // charging the rod and driving it") or a noun ("the shark circling Ratchet's
 // docks and attacking sailors"), keeps what " and" joins to it.
-const JOINED = /(^|, and then |, and so |, and |, then | and then | then | and | or |\b(?:for|by|after|before|without|from|of|in|on|about|into|while|when|since) |, | (?=[a-z]+ing (?:the |a |an |his |her |their |its |away |off |up |out |down |[A-Z])))([a-z]+ing)\b/g;
+// A verb may carry a prefix's hyphen ("re-enchanting"), never an adjective's
+// ("highest-ranking", "mind-altering": HYPHEN_VERB). A gerund with no object
+// joined to a bare noun after a preposition ("wanted for murder and
+// kidnapping, to justice") is a noun too, never the deed's verb.
+const JOINED = /(^|, and then |, and so |, and |, then | and then | then | and | or |\b(?:for|by|after|before|without|from|of|in|on|about|into|while|when|since) |, | (?=[a-z]+(?:-[a-z]+)*ing (?:the |a |an |his |her |their |its |away |off |up |out |down |[A-Z])))([a-z]+(?:-[a-z]+)*ing)\b/g;
+const HYPHEN_VERB = /^(?:re|pre|un|co|over|out|under|trick-or)-/;
+const NOUN_AFTER = /\b(?:for|by|of|from|without|with|against) (?!the |a |an |his |her |their |its |my |our )[a-z]+$/;
 const ING_NOUNS = new Set(["summoning", "building", "clothing", "offering", "painting", "gathering", "teaching", "writing", "warning"]);
 const JOINS = new Set(["", ", and then ", ", and so ", ", and ", ", then ", " and then ", " then ", " and ", " or "]);
 function deedOf(text: string, file: string): string {
   let main = true; // (what a bare " and" joins is still the deed's own verb)
-  return text.replace(JOINED, (all: string, sep: string, g: string) => {
-    if (NOT_VERBS.has(g)) return all;
+  let from = 0;
+  return text.replace(JOINED, (all: string, sep: string, g: string, at: number) => {
+    const before = text.slice(from, at);
+    from = at + all.length;
+    if (NOT_VERBS.has(g) || (g.includes("-") && !HYPHEN_VERB.test(g))) return all;
+    if (sep === " and " && NOUN_AFTER.test(before) && /^(?:,|$)/.test(text.slice(from))) return all; // ("for murder and kidnapping,")
     if (!JOINS.has(sep)) {
       if (ING_NOUNS.has(g)) return all; // ("the circle of summoning": a thing)
       main = false; // ("for murdering": its own " and …" follows it)
@@ -307,14 +317,32 @@ function deedOf(text: string, file: string): string {
     }
     if (sep !== "" && !sep.startsWith(",") && !main) return all;
     main = true;
-    let past = IRREGULAR[g];
+    const prefix = g.slice(0, g.lastIndexOf("-") + 1); // ("re-": the verb is what follows)
+    const verb = g.slice(prefix.length);
+    let past = IRREGULAR[verb];
     if (!past) {
-      const stem = g.slice(0, -3);
+      const stem = verb.slice(0, -3);
       past = /[^aeiou]y$/.test(stem) ? stem.slice(0, -1) + "ied" : /e$/.test(stem) ? stem + "d" : stem + "ed";
       if (!ENGLISH.has(past)) fail(file, `"${g}": no past form known (add it to IRREGULAR, or reword): ${text}`);
     }
-    return sep + past;
+    return sep + prefix + past;
   });
+}
+// (the converter's own cases, checked at every build)
+const DEED_CASES: [string, string][] = [
+  ["killing Hogger, and bringing his head to Gryan", "killed Hogger, and brought his head to Gryan"],
+  ["finding a shrine and re-enchanting the rod there", "found a shrine and re-enchanted the rod there"],
+  ["bringing the outcast wanted for murder and kidnapping, to justice", "brought the outcast wanted for murder and kidnapping, to justice"],
+  ["killing raiders for the people of Westfall and bringing back their heads", "killed raiders for the people of Westfall and brought back their heads"],
+  ["hunting the man wanted for murdering Forsaken and ambushing supplies", "hunted the man wanted for murdering Forsaken and ambushing supplies"],
+  ["cutting down the highest-ranking Defias and bringing their bandanas", "cut down the highest-ranking Defias and brought their bandanas"],
+  ["getting him out of a ring of critters and guarding him", "got him out of a ring of critters and guarded him"],
+  ["telling him of love potions and mind-altering draughts", "told him of love potions and mind-altering draughts"],
+  ["trick-or-treating at the city inns", "trick-or-treated at the city inns"],
+];
+for (const [text, want] of DEED_CASES) {
+  const got = deedOf(text, "scripts/build.ts");
+  if (got !== want) fail("scripts/build.ts", `the deed of "${text}" is "${got}", not "${want}"`);
 }
 for (const f of mdFiles(WHY_DIR)) {
   const file = join(WHY_DIR, f);

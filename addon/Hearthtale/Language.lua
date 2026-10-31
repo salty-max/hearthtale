@@ -85,7 +85,7 @@ local COMMON = set([[
 ]])
 local TRAILING = { District = true, Quarter = true } -- "the Dwarven District", "the Mage Quarter"
 local function mid(name)
-  if not name then return nil end
+  if not name or name == "" then return nil end -- (an older record's empty zone)
   -- as the game itself writes it (Names.lua), else by the rules below
   local known = ns.names
   if known and known.placeThe[name] then return "the " .. name end
@@ -99,7 +99,7 @@ end
 -- Where I was, as a sentence says it: "in Westfall", but "on Zephras Isle",
 -- "on the Echo Isles" (an island is stood on).
 local function at(name)
-  if not name then return nil end
+  if not name or name == "" then return nil end
   local last = name:match("(%a+)$") or ""
   return ((last == "Isle" or last == "Isles" or last == "Island" or last == "Islands") and "on " or "in ") .. mid(name)
 end
@@ -633,11 +633,47 @@ local OURS = {
   Tauren = { { "the tauren", "my people" }, { "the shu'halo", "my people" } },
   Scourge = { { "the Forsaken", "my people" } },
 }
+-- (the words after a people that leave it a people: "the orcs who", "for the
+-- Forsaken and"; a noun, an adjective or a name after it is the people used
+-- as an adjective or a place, "the Forsaken traitors", "the Darkspear
+-- Islands", and stays; "of" is left out on purpose: "the orcs of Blackrock
+-- Spire" and "the dwarves of Blackrock Depths" are someone else's)
+local OURS_FOLLOWS = {}
+for w in
+  ([[a an the his her its their them themselves he she they it who whom whose that which what when where while
+  as so but or nor and than for from to in on at by with without into onto against among beside after before
+  until since once still back out away home here there long too
+  is are was were be been being had have has would could should might must will can did do does
+  needed wanted frowned fled returned left call called driven came went made took kept held fought fell lost
+  won meant feared knew thought sent]]):gmatch("%a+")
+do
+  OURS_FOLLOWS[w] = true
+end
 -- A quest's why, as one of the people it names writes it: "for the
--- Forsaken" is "for my people" in a Forsaken's diary.
+-- Forsaken" is "for my people" in a Forsaken's diary, "the gnomes' cars" my
+-- people's; "the Forsaken traitors" and "the Darkspear Islands" stay.
 local function ours(text, race)
   for _, pair in ipairs(OURS[race] or {}) do
-    text = text:gsub(pair[1]:gsub("%p", "%%%0"), pair[2])
+    local pattern, out, i = pair[1]:gsub("%p", "%%%0"), {}, 1
+    while true do
+      local s, e = text:find(pattern, i)
+      if not s then break end
+      local rest, swap, skip = text:sub(e + 1), nil, 0
+      if s > 1 and text:sub(s - 1, s - 1):find("%w") then
+        swap = nil -- (inside a word)
+      elseif rest:find("^'s") and not rest:find("^'s%w") then
+        swap = pair[2] -- ("the Darkspear's name": my people's)
+      elseif rest:find("^'") and not rest:find("^'%w") then
+        swap, skip = pair[2] .. "'s", 1 -- ("the gnomes' cars": my people's)
+      elseif not rest:find("^%w") then
+        local word = rest:match("^ (%a+)")
+        if not word or OURS_FOLLOWS[word] then swap = pair[2] end
+      end
+      out[#out + 1] = text:sub(i, s - 1) .. (swap or text:sub(s, e))
+      i = e + 1 + skip
+    end
+    out[#out + 1] = text:sub(i)
+    text = table.concat(out)
   end
   return text
 end

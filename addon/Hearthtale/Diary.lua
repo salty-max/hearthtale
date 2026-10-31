@@ -142,7 +142,10 @@ end
 -- the stories name); it then
 -- takes no other place before it ("In Orgrimmar, I seized … in Skull Rock").
 local function namesPlace(text, zone)
-  if zone and text:lower():find((zone:lower():gsub("^the ", "")), 1, true) then return true end
+  local z = zone and zone:lower():gsub("^the ", "")
+  if z and text:lower():find(z, 1, true) then return true end
+  -- ("Stormwind City", told "in Stormwind")
+  if z and z:find(" city$") and text:lower():find((z:gsub(" city$", "")), 1, true) then return true end
   local known = ns.names or {}
   local the, bare, named = known.placeThe or {}, known.placeBare or {}, known.placeNamed or {}
   local parts = {}
@@ -247,14 +250,16 @@ local FORM_TITLE = {
 }
 local function questTitle(title)
   if not title then return nil end
-  title = title:gsub("^[Ww][Aa][Nn][Tt][Ee][Dd]!?:?%s*", ""):gsub("^Bounty:%s*", "")
+  title = title:gsub("^[Ww][Aa][Nn][Tt][Ee][Dd]!?%s*[:%-]?%s*", ""):gsub("^Bounty:%s*", "") -- ("Wanted - Arnak Grimtotem" too)
   -- ("Kill Grundig Darkcloud": the one it names)
   title = title:gsub("^Kill (%u)", "%1"):gsub("^Slay (%u)", "%1")
   -- (a poster's quotes around the name: "Hogger", Hogger)
   title = title:gsub('^"(.*)"$', "%1")
   return title ~= "" and title or nil
 end
+ns.questTitle = questTitle -- (for the tests)
 local REACT_GAP = 4 -- (a word on a story: not in the entries just after another)
+local STORY_END_SHORT = 4 -- (an entry of this many sentences or fewer, its story last, ends on it)
 
 -- What a chapter holds that a diary tells, from its log.
 local function gather(d, c, ch)
@@ -1416,7 +1421,7 @@ local function entry(d, n, ch)
   for _, foe in ipairs(f.foes) do
     local inText = false
     for _, q in ipairs(story) do
-      if q.text:find(foe.name, 1, true) then inText = true end
+      if q.text:lower():find(foe.name:lower(), 1, true) then inText = true end -- ("Mug'Thol", "Mug'thol")
     end
     local skip = inText or storyFoes[foe.name] or deathFoes[foe.name] or d.toldFoes[foe.name] or seen[foe.name]
     if not skip and #foes < 3 then
@@ -1607,7 +1612,9 @@ local function entry(d, n, ch)
       if #clauses > 1 then
         local ands = false
         for _, clause in ipairs(clauses) do
-          if clause:find(" and ", 1, true) then ands = true end
+          -- (a relative clause closes with a comma: "…, which I had first
+          -- taken up in the Barrens, and kept my hands busy with …")
+          if clause:find(" and ", 1, true) or clause:find(", which ", 1, true) then ands = true end
         end
         joined = table.concat(clauses, ", ", 1, #clauses - 1)
           .. ((ands or #clauses > 2) and ", and " or " and ")
@@ -1767,7 +1774,9 @@ local function entry(d, n, ch)
         )
       then
         d.fireSeen, d.fireAt = true, n -- (the fire the entry ends at)
-      elseif not (storyTold and n % 3 == 2 and #out >= 4 and storyLast()) then -- (one entry in three ends on its story)
+      -- (an entry whose story came last ends on it one time in two, and a
+      -- short one always: no rest line to march after every entry)
+      elseif not (storyTold and storyLast() and (n % 2 == 0 or #out <= STORY_END_SHORT)) then
         add(
           sayFresh("rest", "last", here({ place = mid(e.place) }, e.place), {
             fire = e.how == "campfire" or nil,

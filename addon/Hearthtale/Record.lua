@@ -234,7 +234,7 @@ end
 
 local function where()
   local zone, sub = GetRealZoneText(), GetSubZoneText()
-  if secret(zone) then zone = nil end
+  if secret(zone) or zone == "" then zone = nil end -- (a loading screen's empty name: nowhere)
   if secret(sub) or sub == "" or sub == zone then sub = nil end
   return place(zone), place(sub)
 end
