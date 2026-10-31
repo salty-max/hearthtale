@@ -2,10 +2,10 @@
 kind: night
 ---
 - I settled beneath the sky {at}, and left tomorrow to tomorrow.
-- I lay down outside {at}, grateful to have reached a place where I could stop.
+- Reaching a place where I could stop was enough {at}, and I lay down outside.
 - I spent another night outdoors {at}, with no wish to travel further for comfort.
-- I settled {at}, with the darkness welcome to keep the next stretch until I was rested.
-- I rested outdoors {at}, wishing the ground had been designed with a tired back in mind.
-- I settled {at}, with enough road behind me to make stillness feel like an arrival.
+- I settled {at}, and let the dark keep the next stretch until I had rested.
+- The ground {at} had not been designed with a tired back in mind, but I rested on it all the same.
+- Enough road lay behind me {at} to make stillness feel like an arrival.
 - I rested outside {at}, with the coming miles somebody else's problem until morning.
-- I lay down {at}, grateful that the night asked less of me than the day had.
+- The night asked less of me {at} than the day had, and I lay down grateful for it.

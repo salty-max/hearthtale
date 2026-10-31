@@ -1,23 +1,23 @@
 ---
 kind: rest
 ---
-- I rested {at}, with my back to something solid, as my people prefer.
-- I settled {at}, in no hurry at all, and let the day's wariness drain out of my shoulders.
+- I rested {at}, with my back to something solid, which is how I like it.
+- There was no hurry in me {at}, and the day's wariness drained out of my shoulders.
 - I paused {at}, with the sound of the sea almost present in the quiet.
 - The day's troubles grew funnier the moment I sat down {at}.
-- I stopped {at}, glad of an hour whose only demand was sitting still.
+- An hour whose only demand was sitting still: I was glad of it {at}.
 - [!home] I rested {at}, and missed the drums of Sen'jin Village more than I expected.
-- [!home] I paused {at}, and thought of drums by the water and food shared out around a fire at home.
-- I rested {at}, and gave my curiosity a rest along with my legs.
+- [!home] The quiet {at} was a long way from the noise of home, and I let it be.
+- My curiosity got a rest {at} along with my legs.
 - With no task left for my patience but doing nothing, I gave it that task {at}.
 - Quick as my body was to mend, weariness kept its own pace, and I rested {at} until it had gone.
-- [!fire] Few of the places we had called home had let us rest with both eyes closed, so I made the most of a safe place {at}.
-- I stretched out {at}, as unbothered as a raptor in the sun.
-- [fire] I rested by the fire {at}, and let the smoke carry the day's long vigilance away.
+- [!fire] Safe places had been rare enough that I made the most of one {at}, and rested with both eyes closed.
+- Stretched out {at}, I was as unbothered as a raptor in the sun.
+- [fire] The smoke {at} carried the day's long vigilance away, and I let it go.
 - I settled {at}, and for once keeping still felt like ease rather than lying low.
 - [hc] I rested {at}, still breathing, which is reason enough to celebrate where I come from.
 - Content to be of no use for a while, I rested {at} and listened to nothing in particular.
 - [fire] I sat by the fire {at}, and decided it lacked only a drum and a few friends from home to be perfect.
 - [!fire] I rested {at}, treating myself to the thought of crabs cracked open on a warm rock by the sea.
-- I settled {at}, and let tiredness come in like a slow tide without arguing with it.
+- Tiredness came in slowly {at}, and I did not argue with it.
 - I sat down {at}, privately amused at how much effort it had taken to get somewhere to sit.

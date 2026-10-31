@@ -3,27 +3,27 @@ kind: opening
 ---
 - I took up the road {at}, grinning, with an eye on whatever might be grinning back.
 - [!zalazane] I began again {at}, thinking of the Echo Isles and the day we would take them back from Zalazane.
-- I set out {at}, still fond of a world that had driven my people from too many shores.
-- I kept going {at}, cheerful in the way of a people who have had to laugh in some very poor places.
-- I set off {at}, with one of the old drumming songs going round in my head.
-- I began this stretch {at}, light on my feet and ready to change direction at the first sign of trouble.
+- Too many shores had been lost already, and I was still fond of the world {at} in spite of them.
+- Laughter had got me through some very poor places, and I kept going {at} with plenty of it left.
+- One of the old drumming songs was going round in my head {at} as I set off.
+- Light on my feet and ready to change direction at the first sign of trouble, I began this stretch {at}.
 - I set out {at}, with a jungle-born wariness even where the jungle was only in my thoughts.
-- I returned to the road {at}, with the easy walk and the open eyes my people learned the hard way.
-- I set out {at}, thinking of Sen'jin Village and the people there who were counting on the rest of us.
+- I returned to the road {at}, with an easy walk and open eyes.
+- Sen'jin Village had people counting on whatever I could bring back, and I set out {at} with them in mind.
 - [!zalazane] Some of my own tribe still walked under Zalazane's hexes, and I set out {at} with that weighing on me more than any pack.
-- Vol'jin had held our people together since his father's death, and I took up the road {at} meaning to be worth the trouble.
-- With what we owed Thrall in mind, I set out {at}, happy to pay a little of it back in ordinary work.
-- [hc] I made a start {at}, easy in my manner and careful with every step, which is how my people have outlived worse roads.
+- Vol'jin had held the tribe together since his father's death, and I took up the road {at} meaning to be worth the trouble.
+- Thrall's welcome had been worth more than any gift, and I set out {at} happy to repay a little of it in ordinary work.
+- [hc] I made a start {at}, easy in my manner and careful with every step, a way of walking that has outlived worse roads than this.
 - [night] I took up the road {at} after dark, listening for the soft feet of anything that hunted at this hour.
-- I took to the road {at}, and it looked friendly enough, which in my experience is the moment to look twice.
-- [!home] I began again {at}, my eyes going to the ground for scorpids out of plain Durotar habit.
+- The road {at} looked friendly enough, which in my experience is the moment to look twice.
+- [!home] My eyes went to the ground {at} for scorpids, out of plain Durotar habit.
 - Off I went again {at}, long legs first and good sense trailing somewhat behind.
 - [!night] Daylight {at} found me rested and ready to like whatever came next, which is all anyone back home ever asks of a morning.
 - I pushed off {at} the way fishers push off from the sand, all at once and without a backward look.
-- I headed off {at} already planning supper, the one kind of forethought nobody ever had to teach me.
-- I started out {at} in a generous mood, the kind that makes a long road feel more like a visit.
-- [night] Nights at home belonged to the drums, so the dark {at} felt more like an invitation than a warning as I set out.
+- I headed off {at} with no plan beyond the next bend, which has served me better than some plans.
+- My mood was generous {at}, the kind that makes a long road feel more like a visit.
+- [night] Nights at home belonged to the drums, so the dark {at} felt more like an invitation than a warning.
 - I was up and about {at} with both tusks, all my limbs and most of my wits, which I counted a fine start.
-- Some part of me still expects every road to end at the water with something good on the coals, and I set out {at} as hopeful as ever.
-- [home] I went on {at} among orcs who had been strangers to us once and were neighbours now, which still warms me.
+- Every road might end somewhere good, as far as I was concerned, and I set out {at} as hopeful as ever.
+- [home] The orcs {at} had been strangers once and were neighbours now, which still warms me.
 - Nobody had asked me to fetch anything yet when I got going {at}, and I meant to enjoy that for as long as it lasted.

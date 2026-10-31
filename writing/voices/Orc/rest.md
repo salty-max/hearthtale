@@ -2,22 +2,22 @@
 kind: rest
 ---
 - I rested {at}, with fresh sympathy for every peon ever caught asleep on the job.
-- I settled {at}, and let the day's work fall away from me one piece at a time.
-- I stopped {at}, finding an unexpected pleasure in being of no use to anyone for a while.
-- I rested {at}, like a wolf curled up after a long run.
-- I paused {at}, grateful that no order could make me stand before I was willing.
-- I rested {at}, and wondered whether my people had ever known such ease on Draenor, before the demons found them.
+- The day's work fell away from me {at} one piece at a time.
+- Being of no use to anyone for a while turned out to be an unexpected pleasure {at}.
+- Like a wolf curled up after a long run, I rested {at}.
+- No order could make me stand before I was willing, and I paused {at} on that understanding.
+- I rested {at}, and wondered whether old Draenor had ever known such ease before the demons found it.
 - [!home] I stopped {at}, missing the drums of home without wanting them to summon me anywhere.
 - I rested {at}, and left the ancestors to judge my unashamed relief.
-- I paused {at}, and let my shoulders forget the weight of the day's work.
-- This stillness was nothing like the grey lethargy that had held my people in the camps, and I rested {at} the gladder for knowing the difference.
-- I kept still {at}, and let the heat go out of my temper along with the day.
+- My shoulders forgot the weight of the day's work {at}.
+- This stillness was nothing like the grey lethargy of the internment camps, and I rested {at} the gladder for knowing the difference.
+- The heat went out of my temper {at} along with the day.
 - I paused {at}, and thought what an hour of my own would have been worth to Thrall as a boy behind the walls of Durnholde.
 - Somewhere a grunt was standing a long watch, and I sat down {at}, grateful that it was not me.
 - [fire] I sat by the fire {at}, and found it easy to believe, as the shamans did, that a spirit lived in the flame and deserved thanks.
 - The day's work was finished, a kind of victory the old warbands had never thought to celebrate, and I settled {at} to enjoy it.
-- I settled {at}. Resting was a discipline my restless people had come to late, and I had yet to master it.
-- I stopped {at}, and let the aches of the stretch have their say now that nothing else needed me.
+- Resting has never come easily to me, and {at} I practised it as best I could.
+- The aches of the stretch had their say {at}, now that nothing else needed me.
 - [fire] I kept close to the fire {at}, turning the day over in my head until none of it quickened my pulse any more.
-- I stayed put {at}, and for once let my hands lie idle without feeling they ought to be busy.
+- My hands lay idle {at}, and for once I did not feel they ought to be busy.
 - I called it done {at}, tired in the way only a full stretch of useful work ever leaves me.

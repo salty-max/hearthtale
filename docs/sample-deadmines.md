@@ -17,5 +17,5 @@ Mine carts stood abandoned on their rails, and the walls sweated in the lampligh
 
 ## Entry 2 (level 20)
 
-I headed out in the Trade District, resolved to be brave only where it was strictly necessary.
+Bravery would be strictly for when it was needed, I decided in the Trade District, and headed out.
 

@@ -3,7 +3,7 @@ kind: d-foes
 ---
 - [client:forever faction:horde one !hard] I faced {foes} and came away the winner, and found the skysight my people prize as useful in a fight as on a far horizon.
 - [client:forever one !hard !home] I brought down {foes}, and so learned one more of the names this world gives its dangers.
-- [client:forever one hard] {foes} pushed me as near to the end as I ever want to go, and I came away with a new respect for anything that comes close to falling and keeps going, my island included.
+- [client:forever one hard] {foes} pushed me as near to the end as I ever want to go, and I came away with a new respect for anything that comes close to falling and keeps going.
 - [client:forever two !hard !plural] I defeated both {foes}, and would happily give the tale of either for a quiet hour on a skycutter's deck.
 - [client:forever two hard !plural] I fought {foes}, and neither fight went easily. By the end I was grateful for the plainest things, a next breath and solid ground under me.
 - [client:forever !one !two !hard] I dealt with {foes}, all of them, with hands that would have been just as content picking stormapples.

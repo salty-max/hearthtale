@@ -10,13 +10,13 @@ read as the diary entry written at the rest that ends it, in the race's own voic
 
 ## Entry 1 (levels 1 to 4)
 
-I began in Coldridge Valley, with Ironforge behind my name and the wish to bring something worthy of it home. The cold of Dun Morogh caught in my throat, and the pines bowed under their snow. Above the valleys rose the mountain that holds Ironforge, and the sight of it made the cold easier to bear. A Frostmane Troll Whelp nearly finished me in Coldridge Valley, and the thought of the Great Forge going on without me was no comfort at all. I thinned the Frostmane troll whelps in the southern cave for Grelin Whitebeard, sent to Coldridge Valley to judge the troll threat. After that, I killed Grik'nir the Cold in the troll cave to take back Grelin Whitebeard's stolen journal. Rest is a tool like any other, and I took it up in Anvilmar without apology.
+I began in Coldridge Valley, with Ironforge behind my name and the wish to bring something worthy of it home. The cold of Dun Morogh caught in my throat, and the pines bowed under their snow. Above the valleys rose the mountain that holds Ironforge, and the sight of it made the cold easier to bear. A Frostmane Troll Whelp nearly finished me in Coldridge Valley, and the thought of the Great Forge going on without me was no comfort at all. I thinned the Frostmane troll whelps in the southern cave for Grelin Whitebeard, sent to Coldridge Valley to judge the troll threat. After that, I killed Grik'nir the Cold in the troll cave to take back Grelin Whitebeard's stolen journal. Only when I set my burdens down in Anvilmar did I feel how much they had weighed.
 
 ## Entry 2 (levels 4 to 7)
 
-I continued in Anvilmar, convinced that most trouble gives way if it is leaned on long enough. I set my hand to skinning and leatherworking. Wearing a Handstitched Leather Vest that I had made myself was a different pleasure from wearing anything found or given. When the fighting was done, Timber lay at my feet, and I allowed myself a moment's pride in clean work. I scouted Frostmane Hold and killed its headhunters for Senir Whitebeard, who had seen too many trolls to dare go in.
+A job lay half done in Anvilmar, and I had no intention of leaving it that way. I set my hand to skinning and leatherworking. Wearing a Handstitched Leather Vest that I had made myself was a different pleasure from wearing anything found or given. I tried my strength against Timber, and it held, as I had hoped it would. I scouted Frostmane Hold and killed its headhunters for Senir Whitebeard, who had seen too many trolls to dare go in.
 
-Not long after, I slew Vagash, the beast preying on the Amberstill rams while most of Magni's army was away at war. Hunter's Mark is mine now, and no quarry of mine will vanish into the crowd. I smelled the Thunderbrew Distillery before I had properly reached Kharanos. Smoke rose above the houses, where dwarves and gnomes crowded together against the cold, and I felt my shoulders ease at the sight. I rested in Kharanos, with the road welcome to wear out somebody else for a while.
+Not long after, I slew Vagash, the beast preying on the Amberstill rams while most of Magni's army was away at war. Hunter's Mark is mine now, and no quarry of mine will vanish into the crowd. I smelled the Thunderbrew Distillery before I had properly reached Kharanos. Smoke rose above the houses, where dwarves and gnomes crowded together against the cold, and I felt my shoulders ease at the sight. Every bone I owned had an opinion by the time I rested in Kharanos, and none of them was kind.
 
 ## Entry 3 (levels 7 to 9)
 
@@ -28,7 +28,7 @@ Bristle fell in Amberstill Ranch. Out here, it could as easily have been me. I c
 
 ## Entry 1 (levels 1 to 5)
 
-I began in the Valley of Trials, with Thrall's new homeland to call my own and no wish to repay it with empty boasting. Heat rose from the red dust of Durotar, as if the ground itself were breathing. This was the land we had claimed, and I meant to learn how to belong to it. A Kul Tiras Marine nearly ended me in Tiragarde Keep, and I felt how little lay beneath my people's fearsome reputation. I drove Lieutenant Benedict and his Kul Tiras men out of Tiragarde Keep, which they had retaken in defiance of the Warchief's pact. At Razor Hill I heard the forge before I saw the drilling. Beyond the barracks, Kul Tiras ships sat off the coast, and I understood why no one in the town ever quite stood at rest. I rested in Razor Hill, and left the ancestors to judge my unashamed relief.
+I began in the Valley of Trials, with Thrall's new homeland to call my own and no wish to repay it with empty boasting. Heat rose from the red dust of Durotar, as if the ground itself were breathing. This was the land we had claimed, and I meant to learn how to belong to it. A Kul Tiras Marine nearly ended me in Tiragarde Keep, and I felt how little a fearsome name can do against a blade. I drove Lieutenant Benedict and his Kul Tiras men out of Tiragarde Keep, which they had retaken in defiance of the Warchief's pact. At Razor Hill I heard the forge before I saw the drilling. Beyond the barracks, Kul Tiras ships sat off the coast, and I understood why no one in the town ever quite stood at rest. I rested in Razor Hill, and left the ancestors to judge my unashamed relief.
 
 ## Entry 2 (levels 5 to 6)
 
@@ -42,7 +42,7 @@ I began in Shadowglen, with Dolanaar the farthest place I could yet picture and 
 
 ## Entry 2 (levels 5 to 6)
 
-The day began in Dolanaar as most of mine did, with a long moment of listening before I moved. I walked into Darnassus for the first time, and a city I had only heard of became a place I could find my way home to. The white stone and still pools of Darnassus slowed me without my meaning to. Near the Temple of the Moon the old hush settled around me, and I was home. I learned Bear Form from Mathrengyl Bearwalker for the work.
+I left my rest in Dolanaar the way a doe leaves a clearing, with one look back and then none. I walked into Darnassus for the first time, and a city I had only heard of became a place I could find my way home to. The white stone and still pools of Darnassus slowed me without my meaning to. Near the Temple of the Moon the old hush settled around me, and I was home. I learned Bear Form from Mathrengyl Bearwalker for the work.
 
 # Mortis, a Forsaken priest
 
@@ -50,7 +50,7 @@ The day began in Dolanaar as most of mine did, with a long moment of listening b
 
 I set out in Deathknell, a Forsaken priest. The Light still answered me, and every time it answered, it burned. Crows called over the crypts of Tirisfal, toward the broken walls of Lordaeron. Night changed little here, though it left me feeling less conspicuous. I cleared the spiders from the gold mine near Deathknell, gold my people needed to survive. I can set a ward between myself and a blow now, and I feel steadier for it.
 
-Not long after, I executed Maggot Eye, the gnoll who stole corpses near Garren's Haunt for the Lich King's army, for Brill's reward. After the tombs, the crooked roofs of Brill looked almost companionable. Around the Gallows' End Tavern my people went about their business, and the town kept going on stubbornness alone. I settled in Brill, with no need to sleep and a very definite wish to stop.
+Not long after, I executed Maggot Eye, the gnoll who stole corpses near Garren's Haunt for the Lich King's army, for Brill's reward. After the tombs, the crooked roofs of Brill looked almost companionable. Around the Gallows' End Tavern my people went about their business, and the town kept going on stubbornness alone. Sleep was no need of mine, but stopping was, and I stopped in Brill.
 
 ## Entry 2 (levels 5 to 6)
 

@@ -2,21 +2,21 @@
 kind: rest
 ---
 - I rested {at}, with the thorough contentment of a kodo at the end of a long march.
-- I settled {at}, and let the stillness come as slowly as evening comes over Stonebull Lake.
-- I stopped {at}, with the still water of the Pools of Vision in mind and very little else.
-- I rested {at}, thinking of the wind on the high mesas of Thunder Bluff.
+- Stillness came {at} as slowly as evening comes over the plains, and I let it.
+- Very little was in my mind {at}, and I was glad to keep it that way.
+- I rested {at}, and let the wind say whatever it liked without me.
 - I paused {at}, no longer obliged to make a large body look tireless.
 - As weary as a wanderer at the end of a season, I rested {at}.
 - I stopped {at}, and gave thanks to An'she and Mu'sha, who watch over the land by turns.
-- I rested {at}, knowing the next mile would keep until I was ready for it.
-- I paused {at}, with no greater ambition than to sit as still as a totem for a while.
+- The next mile would keep until I was ready for it, and I rested {at}.
+- Sitting still {at} was the whole of my ambition, and I managed it.
 - After a day of other people's needs, I rested {at} and let my own come first.
 - The road could wait. I rested {at} the way a herd rests, all at once and without apology.
 - Nothing had to die while I rested {at}, and I was thankful for the hour.
 - [hc] I rested {at}, with only one life to return to the Earth Mother and no wish to return it early.
 - I sat down {at} and went over the day the way the elders go over a question, from every side before deciding anything.
-- I let the work end {at}, with nothing left in it that needed me.
-- [fire] I settled near the fire {at}, close enough to feel it through my hide and far enough to keep my fur from singeing.
-- I stopped {at}, and let the land have its quiet back.
-- I let the day come off my back {at} like the packs from a kodo at the end of the trail.
+- The work ended {at}, with nothing left in it that needed me.
+- [fire] I settled near the fire {at}, and let its warmth find its way through my hide.
+- The land had its quiet back once I stopped {at}.
+- The day came off my back {at} like a pack set down at the end of the trail.
 - I rested {at}, as patient with my own weariness as I try to be with anyone else's.

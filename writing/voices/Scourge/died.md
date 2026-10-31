@@ -3,11 +3,11 @@ kind: died
 ---
 - [foe] {foe} killed me {at}, doing nothing to improve my opinion of second funerals.
 - [foe] I fell to {foe} {at}. Apparently the world still regarded one death as insufficient.
-- [fall] I fell to my death {at}. Rot had not made me light enough to float.
+- [fall] I fell to my death {at}, and the ground was as hard as it had ever been.
 - [drowning] I drowned {at}, a particularly insulting end for someone who had little use for breath.
-- I died {at}, and felt rather cheated of the future Sylvanas had returned to us.
+- I died {at}, and felt rather cheated of the future Sylvanas had returned to me.
 - I died {at}. A familiar grave was still no place I wanted to revisit.
-- [lava] Fire killed me {at}, without pausing to ask whether I counted as living fuel.
+- [lava] Fire killed me {at}, and dead or not, I had no defence against it.
 - [nature] I died {at}. The world had found a way to kill me without even supplying an enemy to resent.
 - [foe] {foe} killed me {at}, and I regretted giving anyone else the last word over my remains.
 - I died {at}, and dying again was no easier to accept than I imagined the first time had been.

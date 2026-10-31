@@ -2,21 +2,20 @@
 kind: rest
 ---
 - I curled up {at}, small enough to find comfort in corners bigger folk would never notice.
-- I settled {at}, and let my thoughts wander off without asking them to bring anything useful back.
+- My thoughts wandered off {at}, and I did not ask them to bring anything useful back.
 - I paused {at}, content to leave every loose end exactly where it was.
-- I rested {at}, enjoying a pause without a problem that urgently needed solving.
-- I stopped {at}, clean out of ideas and perfectly content to stay that way.
-- I rested {at}, missing the familiar clatter of a city that was no longer ours to live in.
-- I paused {at}, with my enthusiasm temporarily out of service.
+- For once no problem urgently needed solving, and I rested {at}.
+- Clean out of ideas and perfectly content to stay that way, I stopped {at}.
+- {at}, I let the day's last puzzle go unsolved, which is harder for me than it sounds.
+- My enthusiasm was temporarily out of service by the time I paused {at}.
 - I sat down {at} and let my curiosity run on without me, since it never tires when I do.
 - I stopped {at}, out of stubbornness and very nearly out of everything else.
-- [fire] I rested by the fire {at}, and for once had no opinion about how it might burn more efficiently.
+- [fire] For once I had no opinion about how the fire {at} might burn more efficiently.
 - My feet had been complaining for some time, and I rested {at} on their advice.
 - [hc] I rested {at}, with one life to look after and every intention of making it last.
-- I rested {at}, more comfortably than my people had in the crowded first weeks after the evacuation.
-- I rested {at}, and wondered whether Mekkatorque ever let himself sit still this long.
-- I settled {at}, and thought fondly of the Deeprun Tram, which let its passengers sit down for the whole journey.
+- I rested {at}, and the quiet was a luxury I had learned not to take for granted.
+- The Deeprun Tram lets its passengers sit down for the whole journey, and I thought of it fondly as I settled {at}.
 - Nothing needed measuring, mending or explaining for a while, so I rested {at}.
 - I settled {at}, glad of a roof that nobody was about to flood with radiation.
-- [fire] I settled near the fire {at}, close enough for warmth and far enough back to keep my eyebrows, a distance I take some care to get right.
-- I sat down {at}, and for once let the world run on without my help.
+- [fire] The fire {at} asked nothing of me but to sit near it, and I was happy to oblige.
+- {at}, the world ran on without my help for once, and I let it.

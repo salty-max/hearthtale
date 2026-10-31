@@ -139,7 +139,9 @@ An entry is the stretch looked back on at its rest, by what weighs most:
   once three sentences were told since the danger's own, which carries its
   feeling; `[delve]`), else the rest, the night outdoors or indoors (a
   journal an older version closed at the highest level ends on `summit`);
-  one entry in three that told a story ends on it.
+  an entry whose story came last ends on it one time in two, and always
+  when it is short (`STORY_END_SHORT` sentences or fewer): no rest line
+  after every entry.
 
 Told in the order it happened (a place always named: no "there"), a lead
 story first now and then ("In Loch Modan, I …", where the last entry
@@ -180,6 +182,9 @@ name.
   (the build refuses "all my life", "my father", "my workshop"), nor a
   claim it can't back: a habit ("more than once"), gear "the best yet", a
   spell put to use without `[used]` (the build refuses those too).
+  The lamps meant are a moment's: a lamp lit, a fire kept. A place's
+  own fixtures, real in the game (Darkshire's lamps, Elwynn's road
+  lanterns, the Deadmines' lamplight), belong to its scenery.
 - The races must sound apart: reach for what the race notices and how it
   says so, not a feeling word. A racial voice is a way of looking at the
   world, not an obligation to mention ale, honour, trees or the grave in
@@ -189,6 +194,13 @@ name.
   lines apart each and `EMBLEM_GAP` lines all together (unless the line is
   the one wanted: a tauren's kodo for a first kodo), and every narrator's
   relief at rest (`RESTFUL`: stillness, shoulders, aches) the same way.
+- The frames vary their shape, not only their words (31 October 2026, after
+  the English audit found 85% of entries opening "I set out {at}" and 88%
+  closing on a rest): an opening may lead with the hour or the night the
+  record gives (`[night]`, `[!night]`), a thought, or the place (`{where}`),
+  a rest with the place (`{at}, ...`) or the feeling; about a third of a
+  file's lines at most start "I set out / began / took up" or "I rested /
+  settled / stopped". Each stays in its race's voice.
 - Connectors need evidence: time passing, nightfall, an arrival, or the
   aftermath of a close call. Emotional interpretation is welcome; an
   unrecorded action, spell cast, trophy, payment or another person's

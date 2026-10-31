@@ -2,26 +2,26 @@
 kind: opening
 ---
 - I began again {at}, with less breath than a living adventurer and no shortage of unfinished business.
-- I took up the road {at}, still unwilling to give the cemetery back its property.
+- The cemetery could keep waiting for its property. I took up the road {at}.
 - [!home] I set out {at}, ready for the usual looks and determined to be useful anyway.
-- I continued {at}, hoping usefulness would introduce me before the smell did.
-- I began this stretch {at}, unwilling to waste the freedom Sylvanas had won us on standing still.
-- I set out {at}, with a dead body and a rather lively dislike of being ordered around.
+- Usefulness, I hoped, would introduce me {at} before the smell did.
+- I began this stretch {at}, unwilling to waste the freedom Sylvanas had won on standing still.
+- A dead body and a rather lively dislike of being ordered around: I took both out {at}.
 - I kept going {at}, remembering the farms of Lordaeron as they had been before the plague, which was the kinder way to remember them.
-- I set off {at}, keeping my own counsel, a habit the Undercity encouraged.
+- Keeping my own counsel was a habit the Undercity encouraged, and I kept it {at}.
 - I took up the road {at}, sound enough for the work and nursing a healthy resentment of the word healthy.
 - The world had not been arranged for the likes of me, but I set out {at} intending to make good use of it anyway.
-- I went on {at} as one of the Horde, an arrangement its oldest members and its newest were both still getting used to.
-- [night] I started out {at} after dark, having come to prefer the night for its quiet roads and short conversations.
+- The Horde's oldest members and its newest were still getting used to each other, and I went on {at} as one of the newest.
+- [night] Night had come {at}, and I set out, having come to prefer it for its quiet roads and short conversations.
 - [hc] No third life would follow this second one, and I set out {at} with that firmly in mind.
 - [high] I took up the road {at}, a long way from the day in Deathknell when I first wondered what was left of me.
 - Work was waiting {at}, and the novelty of going to it by my own choice had not yet worn off.
 - The road had no opinion of what I was, which made it better company than most, and I took it up again {at}.
 - [!night] The day began {at}, and I met it prepared to be pleasantly surprised and fully equipped for the other kind.
-- I made a start {at}, as civil as anyone was to me and not a great deal more.
-- [!night] I set off {at} in plain daylight, which I tolerate rather better than the stories about my kind suggest.
-- [night] I went on {at} in the dark, with my own eyes the only lookout I fully believed in.
-- [home] I resumed the work {at}, on ground the Scarlet Crusade still coveted and was never going to get.
+- As civil as anyone was to me and not a great deal more, I made a start {at}.
+- [!night] I set off {at} in plain daylight, which I tolerate rather better than the stories about the dead suggest.
+- [night] Dark lay over {where}, and my own eyes were the only lookout I fully believed in.
+- [home] The Scarlet Crusade still coveted the ground {at} and was never going to get it, and I resumed the work.
 - [!home] I carried on {at}, asking little of a land that owed me nothing.
 - There was work to be had {at}, and I went to it with a clear head and a short list of people I trusted.
 - Curiosity got me moving {at} well before any sense of duty did, and I was content to let it lead.

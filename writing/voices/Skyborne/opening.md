@@ -1,29 +1,29 @@
 ---
 kind: opening
 ---
-- [client:forever faction:alliance] I began again {at}, hoping to come a little nearer to the arcane lore our ancestors had left behind in Eldre'Thalas.
+- [client:forever faction:alliance] The arcane lore left behind in Eldre'Thalas felt a little nearer {at}, or so I hoped as I began again.
 - [client:forever faction:alliance] I kept going {at}, as the High Order would have it: on my own strength, and by no one else's leave.
-- [client:forever faction:alliance] I set out {at}, wondering what the Kirin Tor might teach a people who had kept hidden from them for thousands of years.
+- [client:forever faction:alliance] I set out {at}, wondering what the Kirin Tor might teach someone from a sky that had kept itself hidden from them for thousands of years.
 - [client:forever faction:horde] I began again {at}, a Windshaper seeking allies in the search for the wind spirits.
-- [client:forever faction:horde] I took up the road {at}, hoping our skysight might one day catch some trace of the spirits who first granted it.
-- [client:forever faction:horde] The Windshapers had always tended what the spirits left in our keeping, and I began again {at} in the same careful frame of mind.
-- [client:forever home] I set out {at}, with the failing pylons on my mind before anything else.
-- [client:forever home] I began again {at}, among a people grown used to doing without the spirits, and not yet used to doing without each other.
-- [client:forever !home] I took up the road {at}, in a country that had never had to wonder what held it up.
+- [client:forever faction:horde] My skysight might one day catch some trace of the spirits who first granted it, and I took up the road {at} hoping so.
+- [client:forever faction:horde] The Windshapers had always tended what the spirits left in their keeping, and I began again {at} in the same careful frame of mind.
+- [client:forever home] The failing pylons {at} were on my mind before anything else.
+- [client:forever home] I began again {at}, where everyone had grown used to doing without the spirits, and not yet to doing without each other.
+- [client:forever !home] The country {at} had never had to wonder what held it up.
 - [client:forever !home] I set out {at} with "Gale's greetings" ready for anyone I met, whether or not they knew what it meant.
-- [client:forever !home] I kept going {at}, in a world with more people in it than all of Zephras could hold, each of them someone I might yet come to know.
-- [client:forever night] I continued {at} after dark, never fully at ease at that hour since Ban'aethal was lost in a single night.
-- [client:forever] I set out {at}, with an islander's habit of trusting nothing to bear my weight until I had tested it.
+- [client:forever !home] This world had more people in it than all of Zephras could hold, and any of them {at} was someone I might yet come to know.
+- [client:forever night] Night had fallen {at}, and I have not been fully at ease at that hour since Ban'aethal was lost in a single night.
+- [client:forever] I set out {at}, with a habit of trusting nothing to bear my weight until I had tested it.
 - [client:forever] I took up the road {at}, as unhurried as my Highborne forebears and, I hoped, rather less proud.
 - [client:forever] Work was wanting hands {at}, and I set out to lend mine.
 - [client:forever hc] I began again {at}, mindful that a people as few as mine could not spare a single life, least of all to carelessness.
-- [client:forever !home] Few people this side of the sky had ever met one of my kind, and I went about my business {at}, meaning to be a fair introduction to the rest of us.
-- [client:forever faction:alliance] Some among the Windshapers say the High Order's confidence has outrun its competence, and I set to work {at} meaning to close the gap from the competence side.
-- [client:forever faction:horde] What the spirits once gave my people, we Windshapers count as a debt, and I went out {at} to pay back a little of it wherever I could.
-- [client:forever night] I moved on {at} after dark, keeping my pace to what my feet could vouch for rather than what my eyes could guess.
-- [client:forever home] With the skycutters no longer safe between the islands, whatever needed doing {at} fell to those of us already here, and I took my share of it.
+- [client:forever !home] Few people this side of the sky had ever met anyone like me, and I went about my business {at}, meaning to be a fair introduction.
+- [client:forever faction:alliance] The High Order's confidence would have to be earned by competence, and I set to work {at} meaning to supply some.
+- [client:forever faction:horde] What the spirits once gave, the Windshapers count as a debt, and I went out {at} to pay back a little of it wherever I could.
+- [client:forever night] Dark lay over {where}, and I kept my pace to what my feet could vouch for rather than what my eyes could guess.
+- [client:forever home] With the skycutters no longer safe between the islands, whatever needed doing {at} fell to whoever was already here, and I took my share of it.
 - [client:forever !home] This world spends its plenty as if it could never run short, and I set out {at} still trying not to stare.
-- [client:forever] I got back to work {at}, with the habit of a people too few to leave any job for somebody else.
+- [client:forever] I got back to work {at}, never one to leave a job for somebody else.
 - [client:forever] I went on {at} with a little of my rebel forebears' dislike of being told what could not be done.
 - [client:forever] I came to the work {at} the way one handles anything precious and failing at home, slowly and with both hands.
-- [client:forever !night] I set off {at} by daylight, glad of a light that comes back every morning without anyone needing to tend it.
+- [client:forever !night] Daylight comes back every morning without anyone needing to tend it, and I set off {at} glad of it.

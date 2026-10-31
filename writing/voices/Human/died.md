@@ -6,4 +6,4 @@ kind: died
 - [drowning] I drowned {at}, and wanted nothing in the world but the air above me.
 - [lava] Fire killed me {at}. I had hoped the Light would feel different at the end.
 - [nature] I died {at}, without so much as an enemy to carry my anger.
-- I died {at}, another life cut short in a kingdom with too many empty places already.
+- I died {at}, one more empty place in a kingdom with too many already.

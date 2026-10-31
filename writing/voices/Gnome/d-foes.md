@@ -8,4 +8,4 @@ kind: d-foes
 - [two hard !plural] I came through fights with both {foes}, and at least one of them came far too close to ending things.
 - [!one !two !hard] I saw off {foes}, every one of them, and was quietly astonished at myself afterwards.
 - [!one !two !hard] I squared up to {foes}, and came away shaken, whole and rather prouder than I let on.
-- [!one !two hard] I got through fights with {foes}, all of them, and I would rather not calculate how narrow the closest one was.
+- [!one !two hard] I got through fights with {foes}, all of them, and I would rather not think too hard about how narrow the closest one was.

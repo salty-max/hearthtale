@@ -1,20 +1,20 @@
 ---
 kind: rest
 ---
-- [client:forever faction:alliance] I settled {at}, content that the High Order's future need not be built by one exhausted pair of hands.
+- [client:forever faction:alliance] The High Order's future need not be built by one exhausted pair of hands, and I settled {at} content with that.
 - [client:forever faction:alliance] With no vanished patron to ask permission of, I stopped {at}.
-- [client:forever faction:alliance] I rested {at}. The lore of Eldre'Thalas had been lost for thousands of years, and could stay lost until I had my strength back.
-- [client:forever faction:horde] I rested {at}, and let the search for our lost mentors wait an hour without feeling I had abandoned it.
-- [client:forever faction:horde] I stopped {at}, a Windshaper off duty, if such a thing existed.
+- [client:forever faction:alliance] The lore of Eldre'Thalas had been lost for thousands of years, and {at} it could stay lost until I had my strength back.
+- [client:forever faction:horde] I rested {at}, and let the search for the lost mentors wait an hour without feeling I had abandoned it.
+- [client:forever faction:horde] A Windshaper off duty, if such a thing existed, sat down {at}.
 - [client:forever] Idleness {at} was a private pleasure, and I took it without apology.
-- [client:forever] Shen'dorei means the hidden people, and for a while {at} I was happy to live up to the name.
-- [client:forever !home] I rested {at}, a long way from the skydocks of Valanaar, and not unhappy about it.
+- [client:forever] Nobody needed me {at} for a while, and I was happy to let that be true.
+- [client:forever !home] The skydocks of Valanaar were a long way from {place}, and I was not unhappy about it.
 - [client:forever home] I stopped {at}, and let myself forget, for a little while, that the island was failing beneath me.
-- [client:forever] For once I did not listen for a voice in the stillness {at}, as my people had done for centuries.
-- [client:forever !home] I rested {at}, and thought of the crystals at the Calmbreeze Inn and their long account of the rebellion in Eldre'Thalas.
+- [client:forever] For once I did not listen for a voice in the stillness {at}, after so many centuries of listening.
+- [client:forever !home] The crystals at the Calmbreeze Inn and their long account of the rebellion in Eldre'Thalas came back to me {at}.
 - [client:forever !home] My thoughts wandered back to Windfield Orchard and the unhurried work of its trees while I sat still {at}.
-- [client:forever !home] I paused {at}, my feet aching from more walking than a year on Zephras had ever asked of them.
+- [client:forever !home] I paused {at}, my feet aching from more walking than a year at home had ever asked of them.
 - [client:forever hc] I rested {at}, determined not to become one more thing Zephras had lost.
-- [client:forever] I stopped {at}, and allowed myself the rare courtesy of having nothing to do.
+- [client:forever] Nothing to do {at}: I allowed myself that rare courtesy.
 - [client:forever fire] I sat by the fire {at}, where the smoke was the only thing in sight in any hurry to reach the sky.
-- [client:forever !fire] I stopped {at} once the work was done, and for a while kept nothing aloft but my own spirits.
+- [client:forever !fire] The work was done {at}, and for a while I let everything fall still.

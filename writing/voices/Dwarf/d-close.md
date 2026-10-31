@@ -1,7 +1,7 @@
 ---
 kind: d-close
 ---
-- [hard !hc] I died in this stretch, and I will go over how it happened the way a mason looks over a fallen wall, to find where it first gave.
+- [hard !hc] I died in this stretch, and I will go over how it happened step by step, to find where it first gave.
 - [near] I am still on my feet, though only just, and I intend to find the flaw that nearly cost me everything before something else finds it for me.
 - [delve] Close quarters have never unsettled me the way they unsettle some folk, and that dungeon put the boast to a fair test.
 - [hard] I died out there, and nothing stings quite like watching something give way under load, even when the something is me.

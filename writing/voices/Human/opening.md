@@ -2,19 +2,19 @@
 kind: opening
 ---
 - I set out {at}, wondering whose troubles would have a claim on me before the day was done.
-- I began again {at}, minding the old soldiers' advice to eat when I could and rest when I could.
+- The old soldiers' advice was to eat when I could and rest when I could, and I began again {at} with both in mind.
 - I took up the road {at}, still susceptible to the promise of a quiet life somewhere beyond it.
-- I set out {at}, more willing to do a day's work than the House of Nobles had been to pay for one.
-- I set off {at}, with a safe return at the top of the day's ambitions.
+- There was a day's work to be done {at}, and I was in the mood to do it.
+- {where} had errands enough for a dozen people, and I meant to be one of them.
 - I kept going {at}, with the names of people who needed help harder to ignore than the distance.
 - [!class:WARLOCK] I began this stretch {at}, trusting the Light to lend me some patience for whatever came.
 - The kingdom had room for heroes, but I would settle for coming home useful, and set out {at}.
-- I took up the road {at}, drawn by the parts of the world the wars had spared.
-- [night] I set out {at} after nightfall, wishing I had a few of the Night Watch at my back.
+- The parts of the world the wars had spared drew me on {at}.
+- [night] Night had come down {at}, and I set out wishing I had a few of the Night Watch at my back.
 - Someone was always in want of a hand, and I set out {at} meaning to be the one who offered it.
 - [hc] I made ready {at}, determined to grow old the slow way, one sensible decision at a time.
 - [class:PALADIN] I began again {at}, carrying the Light as the Church had always taught it, a shelter to lend rather than a banner to wave.
-- [high] I took up the road {at}, a long way now from the beginner who had first walked out of Northshire.
+- [high] Northshire was a long way behind me now, and so was the beginner who had first walked out of it. I took up the road {at}.
 - [night] Dark had settled {at} by the time I set out, and my curiosity about the country could wait for daylight.
 - With the king missing, the roads still had to be walked and the errands run, and I set out {at} to take my share.
 - Nothing worth having came free except other people's opinions, and I got to work {at} to earn the rest.
@@ -23,7 +23,7 @@ kind: opening
 - [!night] I got going at a respectable hour {at}, as any decent working person would, and hoped the day would return the courtesy.
 - My people had raised a whole city again from its rubble, and next to that, the work waiting for me {at} looked modest enough to start on cheerfully.
 - [!home] I pressed on {at}, a guest in country with ways of its own, and kept the habits of home to myself until I knew which of them would be welcome.
-- [home] I started out {at} on ground my own people had built on, farmed and fought over for generations, which steadied me more than I had expected.
-- I headed out {at}, resolved to be brave only where it was strictly necessary.
-- I was on my way again {at}, with two willing hands and the usual doubts about the rest of me.
+- [home] {where} was ground my own people had built on, farmed and fought over for generations, and it steadied me more than I had expected.
+- Bravery would be strictly for when it was needed, I decided {at}, and headed out.
+- I went on {at} with two willing hands and the usual doubts about the rest of me.
 - I carried on {at}, sorting what I had heard of the wider world from what I found in it.

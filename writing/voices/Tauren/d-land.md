@@ -6,4 +6,4 @@ kind: d-land
 - [one !home !hosts !town !late] I came into {lands} for the first time, and wondered who had walked that ground first, and whether they had walked it gently.
 - [!one !home !hosts !late] I saw {lands} for the first time, and let each of them be what it was before I made up my mind about it.
 - [!one !home !hosts !late !town] I came into {lands} for the first time, mindful that others had loved that ground long before I set eyes on it.
-- [!one !home !hosts !late !town] I crossed into {lands} for the first time, and found the Earth Mother's hand in each, however strange the face it showed me.
+- [!one !home !hosts !late !town] I crossed into {lands} for the first time, and found something to love in each, however strange the face it showed me.

@@ -1,5 +1,5 @@
 ---
 kind: riding
 ---
-- I learned to ride, and immediately began wondering how the saddle could be improved.
-- Riding, I found, was mostly a matter of trusting the machinery, which suited me.
+- I learned to ride, and liked the world a good deal better from a saddle.
+- Riding, I found, was mostly a matter of trust, which I had in shorter supply than curiosity.

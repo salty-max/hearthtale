@@ -5,16 +5,15 @@ kind: rest
 - I settled {at}, missing the harmless noise of neighbours at the end of a day's work.
 - As weary as a stonemason at the end of a long day on the city walls, I paused {at}.
 - I rested {at}, and temporarily excused myself from being useful.
-- I stopped {at}, with a stronger affection for settled folk than I had brought to the journey.
+- I had more affection for settled folk than I had brought to the journey, and I stopped {at} to be one of them for a while.
 - My thoughts went to the people still worried about tomorrow's bread as I settled {at}.
-- I paused {at}, enjoying a quiet as plain as a Goldshire supper.
-- I rested {at}, with the thought of a safe doorstep enough to soften the day.
-- I stopped {at}, letting the day's demands dwindle to the simple matter of staying put.
+- {at}, the quiet was as plain as a Goldshire supper, and I was glad of it.
+- The day's demands dwindled {at} to the simple matter of staying put.
 - [!fire] For once I let other people's troubles keep until I was ready for them, and stopped {at}.
-- [fire] I rested by the fire {at}, close enough to feel it and far enough to keep my boots from scorching.
+- [fire] The fire {at} was company enough, and I sat with it a long while.
 - A rest {at} was all the reward I wanted just then, and I took it without apology.
 - [hc] I rested {at}, thinking of all the people the wars had never let grow old, and meaning not to join them.
-- [!fire] I rested {at}, back among walls and doors, which suited me better than any view.
+- [!fire] I rested {at}, and the road could keep its views until I wanted them again.
 - The last of the work was behind me, and I rested {at} without listening for the next.
 - [!fire] I rested {at} and let my shoulders drop from around my ears, where the day had put them.
 - [fire] I settled by the fire {at}, and for a while my only duty was to stay warm and keep out of trouble, which I managed admirably.

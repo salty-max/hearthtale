@@ -6,4 +6,4 @@ kind: died
 - [drowning] I drowned {at}, with the sea of home offering no comfort against the water that held me.
 - [lava] Fire killed me {at}, and I could find no charm in the manner of it.
 - [nature] I died {at}, without even an enemy I could have asked the witch doctors to curse.
-- I died {at}, with so much I still wanted to bring the Darkspear.
+- I died {at}, with so many shores I had still meant to see.

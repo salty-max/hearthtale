@@ -1,21 +1,20 @@
 ---
 kind: rest
 ---
-- I took my ease {at}, as content as a ram in the Amberstill pens.
-- Even good iron needs time to cool between heats, and I settled {at} with that for my excuse.
-- I stopped {at}, with my knees as stiff as an old hinge left out in the snow.
-- I rested {at}, and let my strength return without trying to forge it into anything useful.
+- As content as a ram in the Amberstill pens, I took my ease {at}.
+- {at}, the day let go of me at last, and I let go of it.
+- My knees were as stiff as an old hinge left out in the snow by the time I stopped {at}.
+- I rested {at}, and let my strength come back in its own time.
 - [fire] I rested {at}, and found that the sky made a passable roof after all.
-- [!home] I paused {at}. An evening at home would have suited me, but this would do.
-- I rested {at}, with the road welcome to wear out somebody else for a while.
-- I stopped {at}, and found that sitting still took less practice than I had feared.
-- As worn down as a quarry step, I rested {at}.
-- Rest is a tool like any other, and I took it up {at} without apology.
+- [!home] {place} was no evening at home, but it would do, and I stopped there gladly.
+- The road could wear out somebody else for a while. I rested {at}.
+- Sitting still {at} took less practice than I had feared.
+- Every bone I owned had an opinion by the time I rested {at}, and none of them was kind.
 - I stopped {at}, and let my shoulders drop for the first time in a while.
-- [fire] I settled by the fire {at}, and let the heat do for my joints what no amount of grumbling had.
+- [fire] The fire {at} did for my joints what no amount of grumbling had.
 - [hc] I halted {at}, and counted staying alive the soundest piece of work I had done.
-- [!fire] I called it a day {at}, with the work done soundly enough to leave it be.
+- [!fire] The work was done soundly enough to leave be, and I called it a day {at}.
 - [fire] I sat by the fire {at}, and let it be the only thing still working.
-- [!fire] I knocked off {at}, with the day's work stacked neatly behind me and no wish to add a single piece to the pile.
-- I set my burdens down {at}, and only then felt how much they had weighed.
+- [!fire] The day's work stood stacked neatly behind me {at}, and I had no wish to add a single piece to the pile.
+- Only when I set my burdens down {at} did I feel how much they had weighed.
 - [fire] I drew up to the fire {at}, close enough to warm my toes and far enough to keep them, about the last fine judgement I had left in me.

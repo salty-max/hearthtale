@@ -2,21 +2,21 @@
 kind: rest
 ---
 - I rested {at}, grateful to lie still without a lid being nailed over me.
-- I settled {at}, with no need to sleep and a very definite wish to stop.
-- I paused {at}, content with a peace that had nothing permanent about it.
+- Sleep was no need of mine, but stopping was, and I stopped {at}.
+- The peace {at} had nothing permanent about it, and I was content with that.
 - I rested {at}, as still as I had once lain in Lordaeron's earth, and in much better company.
-- I stopped {at}, and let the quiet gather over me as evenly as dust in a shut room.
+- The quiet gathered over me {at} as evenly as dust in a shut room.
 - I lay still {at}, missing sleep rather more than I needed it.
-- I paused {at}, and let my joints settle like an old house in Brill.
-- I rested {at}, with no master's voice in my head to make stillness a crime.
+- My joints settled {at} like the floorboards of an empty house.
+- No master's voice was in my head {at} to make stillness a crime, and I rested.
 - I rested {at}, thinking of Brill's crooked roofs with something like fondness.
-- I sat down {at}, with nothing required of me and nobody entitled to require it.
+- Nothing was required of me {at}, and nobody was entitled to require it.
 - The day's errands could wait. I stopped {at}, having learned that most things keep longer than people suppose.
 - I settled {at}, and allowed myself the rare luxury of not being on my guard.
 - [fire] I sat by the fire {at}, far enough back to enjoy it without becoming part of it.
 - Keeping still had never been the difficulty. I sat {at}, pleased simply to be left alone while I did it.
 - I lingered {at}, and let the day's irritations sink out of sight like anything dropped in the Undercity's canals.
 - Being counted among the Horde still struck me as strange, and I settled {at} turning it over without reaching a verdict.
-- [fire] I kept to the fireside {at}, watching the flames with the attention I usually save for strangers I have not made up my mind about.
-- I called the stretch finished {at}. Whatever remained could wait for me or find someone more eager.
+- [fire] The flames {at} got the attention I usually save for strangers I have not made up my mind about.
+- The stretch was finished {at}. Whatever remained could wait for me or find someone more eager.
 - I sat {at}, turning over the people I had dealt with and which of them I would gladly deal with again.

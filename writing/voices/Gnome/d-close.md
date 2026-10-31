@@ -6,4 +6,4 @@ kind: d-close
 - [delve] Going into a place so full of enemies was nobody's idea of sound planning, and my shoulders are only now coming down from around my ears.
 - [hard] I have been dead now, however briefly, and the small, delicate apparatus that keeps me breathing has never seemed more precious.
 - [near] That close call has left me jumpy, and for a while yet I mean to let caution walk in front and curiosity trail behind.
-- [delve] A crowd of enemies in close quarters is a kind of trouble my people know far too well, and I am in no hurry to go back into one.
+- [delve] A crowd of enemies in close quarters put me in mind of the troggs in Gnomeregan's halls, and I am in no hurry to go back into one.

@@ -1,23 +1,23 @@
 ---
 kind: rest
 ---
-- I rested {at}, and picked out the stars I knew, whatever the land beneath them.
-- I settled {at}, and let the stillness come over me like moonlight on water.
+- The stars I knew were still there {at}, whatever the land beneath them, and I rested under them.
+- Stillness came over me {at} like moonlight on water.
 - I paused {at}, and let my strength return as slowly as a tree regrows its bark.
 - The quiet settled {at} as it does in the glades of home, and I let it.
-- I stopped {at}, and let the thought of home soften the day's unease.
+- The thought of home softened the day's unease as I stopped {at}.
 - I rested {at}, missing the forests with a tenderness I rarely allowed while moving.
-- I paused {at}, leaving the world to somebody else's vigilance for a little while.
-- I rested {at}, and waited for the moon to rise, as my people always have.
-- I lingered {at} as if I still had all the time in the world, and knew very well I did not.
+- Somebody else could keep watch over the world for a little while. I paused {at}.
+- {at}, the road's noise fell away behind me, and I did not go after it.
+- There was all the time in the world {at}, or so I pretended, knowing very well there was not.
 - [!fire] I sat quietly {at}, and listened until every sound around me was one I could name.
 - [fire] I rested by the fire {at}, letting it warm me while my eyes stayed on the dark beyond it.
-- I settled {at}, and let the hours pass without asking anything of them.
-- Stillness came to me {at} more easily than sleep, and I let it stay as long as it liked.
+- The hours could pass {at} without my asking anything of them, and I let them.
+- Sleep was slower to come {at} than stillness, and I let the stillness stay as long as it liked.
 - [hc] I stopped {at}, never quite letting go of my guard, as befits anyone with only one life to lose.
 - [!fire] Rest found me {at}, as quietly as an owl folding its wings.
-- [fire] I kept close to the fire {at}, grateful for its warmth and mindful of its appetite, as my people learn to be among trees.
+- [fire] I kept close to the fire {at}, grateful for its warmth and mindful of its appetite, as anyone who loves a forest must be.
 - [!fire] My thoughts were free to drift as far as they liked {at}, now that my feet would not have to follow them.
-- I stopped {at}, laying the road's cares aside like a cloak I would not need again until I rose.
+- I laid the road's cares aside {at} like a cloak I would not need again until I rose.
 - I settled down {at} and gave myself up to sleep, whatever dreams it meant to bring.
 - [home] Elune-adore, I thought as I rested {at}, for everyone still out on the roads.

@@ -9,4 +9,4 @@ kind: died
 - [lava] Fire killed me {at}. I had no strength to demand mercy from the flame.
 - [nature] I died {at}, with no enemy to face, which somehow made it worse.
 - [foe] {foe} killed me {at}, and I feared leaving the ancestors nothing but another short life to weigh.
-- I died {at}, still hungry for the life our people had won beyond the camps.
+- I died {at}, still hungry for the life won beyond the internment camps.

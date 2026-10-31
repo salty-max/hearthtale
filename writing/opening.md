@@ -2,32 +2,32 @@
 kind: opening
 ---
 - [!night] I set out {at}, with the whole day still undecided.
-- [!night] I began again {at}, and enjoyed the morning air before the work found me.
+- [!night] The air {at} was worth a moment before the work found me, and I gave it one.
 - [!night] I took up the road {at}, grateful for another day whose troubles I had yet to meet.
-- I set out {at}, more willing to move than to stand about worrying.
+- More willing to move than to stand about worrying, I set out {at}.
 - [night] I continued {at} after dark, with my ears doing more of the work than my eyes.
-- [night] I began this stretch {at}, watching the shadows more than the road.
-- [night] I set out {at}, less eager for the darkness than for getting where I was going.
-- [!night] I began again {at}, hoping for an ordinary day and not expecting one.
-- I took up the road {at}, my enthusiasm concealing a private unease.
+- [night] Shadows lay across {where}, and I watched them more than the road.
+- [night] The darkness {at} interested me less than getting where I was going.
+- [!night] An ordinary day was what I hoped for {at}, though I did not expect one.
+- My enthusiasm {at} concealed a private unease, and I took up the road with both.
 - I set out {at}, with help to offer and a healthy respect for the cost of offering it.
 - I kept going {at}, with a stranger's caution and a traveller's wish to be welcomed.
-- I began this stretch {at}, curious what the country might have in store for me.
-- I set out {at}, still more stubborn about going on than sensible about stopping.
+- Curious what the country might have in store for me, I began this stretch {at}.
+- Still more stubborn about going on than sensible about stopping, I set out {at}.
 - I made ready {at}, with no desire to let another hour pass in hesitation.
-- I continued {at}, letting the country occupy the attention my worries had claimed.
-- I set out {at}, with an interest in the people I might meet along the way.
-- [hc] I began again {at}, grateful to be alive and unwilling to take another morning for granted.
-- [hc high] I took up the road {at}, with too much life behind me to throw away the life ahead.
-- [class:MAGE] I began again {at}, with a mage's affection for problems that could be approached over conjured water instead of shouted spells.
-- [class:HUNTER] I took up the road {at}, letting a hunter's patience keep my appetite for the chase in check.
-- [class:ROGUE] I began this stretch {at}, with a healthy affection for ways in that would leave a quiet way out.
-- [class:WARLOCK] I set out {at}, with curses enough for my enemies and a healthy distrust of anything I could summon.
-- [class:PRIEST] I began again {at}, with hands I hoped would be called on more often to mend than to harm.
-- [class:DRUID] I took up the road {at}, still fond of a world that looked very different through a hunter's eyes and a healer's hands.
-- [class:SHAMAN] I set out {at}, listening for the gentler voices of the elements.
-- [class:WARRIOR] I set out {at}, with a warrior's habit of judging trouble by the reach of a weapon.
-- [class:PALADIN] I began again {at}, with the Light's strength to offer whatever ordinary needs I might find.
-- [!night] I began {at}, with some strength to spend and an interest in where I might spend it.
-- [!night] I set out {at}, enjoying a moment's freedom from any urgent demand.
+- The country {at} occupied the attention my worries had claimed, and I let it.
+- Whoever I might meet along the way interested me as much as the road from {where}.
+- [hc] I began again {at}, grateful to be alive and unwilling to take another day for granted.
+- [hc high] Too much life lay behind me to throw away the life ahead, and I took up the road {at} carefully.
+- [class:MAGE] Conjured water and a quiet mind went with me {at}, and I hoped the problems ahead would respect both.
+- [class:HUNTER] A hunter's patience kept my appetite for the chase in check as I took up the road {at}.
+- [class:ROGUE] Every way in I found {at} would need a quiet way out, and I began with that in mind.
+- [class:WARLOCK] Curses enough for my enemies and a healthy distrust of anything I could summon: I set out {at} with both.
+- [class:PRIEST] My hands, I hoped, would be called on more often to mend than to harm, and I began again {at}.
+- [class:DRUID] I took up the road {at}, still fond of a world that looks different in every shape the wild might teach me.
+- [class:SHAMAN] The gentler voices of the elements were what I listened for as I set out {at}.
+- [class:WARRIOR] A warrior's habit of judging trouble by the reach of a weapon went with me {at}.
+- [class:PALADIN] I began again {at}, with the Light's strength ready for whatever ordinary needs I might find.
+- [!night] Some strength to spend and an interest in where I might spend it: I began {at} with both.
+- [!night] No urgent demand had found me yet {at}, and I enjoyed the freedom while it lasted.
 - [night] I took up the road {at} after dark, with rather more care than hurry.

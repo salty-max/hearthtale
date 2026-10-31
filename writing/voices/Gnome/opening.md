@@ -2,28 +2,27 @@
 kind: opening
 ---
 - I began again {at}, as obstinate as the refugees who had started over in a borrowed corner of the dwarves' city.
-- I took up the road {at}, my enthusiasm intact despite the absence of anything resembling a plan.
-- I set out {at}, still possessed of an unfortunate interest in anything that might explode.
+- My enthusiasm was intact {at}, despite the absence of anything resembling a plan.
 - I set off again {at}, small enough to be overlooked and quite happy to make use of it.
-- I made ready {at}, thinking how many of us now had to call the road home.
+- {where} had a dozen things I wanted to look at more closely, and I gave myself permission to look at most of them.
 - I continued {at}, saving up the day's wonders to tell them in Tinker Town.
-- I set out {at}, with the whole world to poke at and nobody to tell me to stop.
-- I took up the road again {at}, with a lively suspicion that trouble had not finished with me.
+- The whole world was there to poke at {at}, and nobody to tell me to stop.
+- Trouble had not finished with me, I suspected, and I took up the road again {at} with an eye out for it.
 - I set out {at}, curious about everything and in no hurry to be told what anything was for.
 - [!night] Daylight showed me more of the country than I could possibly take in, and I set out {at} determined to try.
-- [night] The dark made every sound twice as interesting and half as welcome, and I set out {at} listening to all of them.
+- [night] The dark made every sound {at} twice as interesting and half as welcome, and I listened to all of them.
 - [hc] I began again {at}, unwilling to let my people count one more of us among the lost.
 - Somewhere ahead was a problem nobody had solved properly yet, and I set off {at} hoping to be the one who did.
-- The road could have been laid out better, like most things, but I set out {at} and followed it all the same.
-- I set out {at}, with the hard-won cheerfulness of a people who had come up out of the radiation still making plans.
-- I took up the road {at}, sure that one day the halls of Gnomeregan would hear gnomish voices again.
+- The road {at} could have been laid out better, like most things, but I followed it all the same.
+- There was a cheerfulness in me {at} that the road had not yet managed to dent.
+- I took up the road {at}, sure that one day the halls of Gnomeregan would be taken back.
 - [!night] By daylight every road looks shorter than it is, and I began {at} meaning to find out by how much.
-- [night] I started out {at}, keeping my eyes on the ground just ahead and my imagination on a very short lead.
-- I made a start {at}, with my nerves and my curiosity arguing over which of them should go first.
-- I went on {at}, fond of the world in spite of all my people had lost in it.
+- [night] Night lay over {where}, and I kept my eyes on the ground just ahead and my imagination on a very short lead.
+- My nerves and my curiosity were arguing {at} over which of them should go first.
+- I went on {at}, still fond of the world, whatever it had thrown at me.
 - [hc] I set off {at}, guarding my one life as carefully as the only working model of something irreplaceable.
 - Fear had kept pace with me before, and I carried on {at} allowing it to come along but not to choose the way.
-- There were questions waiting all along the road, and I headed off {at} hoping to settle at least a few of them.
-- Good spirits make the best fuel I know of, and I got under way {at} with a full supply.
+- Questions were waiting all along the road from {where}, and I meant to settle at least a few of them.
+- Somewhere in Tinker Town an invention was failing for the second time that day, and I set off {at} hoping to do better than that.
 - I was off {at}, with a careful plan for the day and every expectation of having to revise it.
-- [night] Darkness has a way of rearranging familiar shapes into alarming ones, and I pressed on {at} refusing to be fooled by any of them.
+- [night] Darkness has a way of rearranging familiar shapes into alarming ones, and {where} was full of them.

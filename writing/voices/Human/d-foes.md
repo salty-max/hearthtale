@@ -4,7 +4,7 @@ kind: d-foes
 - [one !hard] I put an end to {foes}, which is one less thing for honest folk to lie awake over.
 - [one !hard] I went up against {foes} with my heart in my mouth, and came away with nothing worse than a story.
 - [one hard] {foes} came uncomfortably close to being the end of me, and I left that fight trusting my luck a good deal less than I had going in.
-- [two !hard !plural] I settled matters with both {foes}, and neither left me wishing I had stayed at home.
+- [two !hard !plural] I settled matters with both {foes}, and neither left me wishing I had stayed in bed.
 - [two hard !plural] I got the better of both {foes}, though one of those fights very nearly went the other way.
 - [!one !two !hard] {foes} all went down while I stayed on my feet, which is the only way I care for a fight to end.
 - [!one !two !hard !plural] I faced {foes} in turn, and each fight taught me something I would rather have learned from a book.

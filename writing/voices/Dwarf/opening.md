@@ -1,29 +1,28 @@
 ---
 kind: opening
 ---
-- I got under way {at}, trusting my legs to hold out longer than the day's troubles.
+- The day's troubles had a head start {at}, and I trusted my legs to catch them up.
 - I began again {at}, feeling sturdy enough to make the road earn my complaints.
-- I set out {at}, with more of the world to see than the inside of a mountain.
-- I set off {at}, with the Explorers' League's taste for old stone and unanswered questions.
-- I continued {at}, convinced that most trouble gives way if it is leaned on long enough.
-- I began this stretch {at}, with a job half done and no intention of leaving it that way.
+- There was more of the world to see than the inside of a mountain, and I went looking for it {at}.
+- I set off {at}, with the Explorers' League's taste for old ruins and unanswered questions.
+- A job lay half done {at}, and I had no intention of leaving it that way.
+- {where} gave me no reason to dawdle, and I did not go looking for one.
 - The stone beneath a road could have a longer history than the road itself, and I set out {at} to see what I could.
-- I set off {at}, in a cheerful mood I doubted even the road could wear through.
+- My mood was cheerful {at}, and I doubted even the road could wear it through.
 - I took up the road {at}, with the mountain's safety already precious in my mind.
 - Rams are sure of their footing on any ice, and I took up the road {at} hoping to be half as sure of my own.
-- I went on {at}, in no great hurry and in no doubt that I would get where I was going.
+- There was no great hurry in me {at}, and no doubt either that I would get where I was going.
 - I began again {at}, spending my strength as carefully as I would spend good coin.
-- [night] I made a start {at} after dark, giving every shadow the suspicion I would give a cracked beam overhead.
+- [night] Dark had come down {at}, and I gave every shadow the suspicion I would give a cracked beam overhead.
 - Brann Bronzebeard never waited for a road to be safe before taking it, and I started out {at} in something of the same spirit.
 - The gnomes of Tinker Town knew better than anyone what a lost home costs, and I set out {at} with my own all the dearer for it.
 - I made ready {at}, sizing up the day's work by its weight rather than by my worries.
-- I set off {at} feeling properly tempered, hard enough for the day's knocks without being brittle about them.
-- I began {at} with my scales empty, ready to weigh the day as a fair assayer weighs ore, by what it turned out to hold.
-- [night] I started off {at} after dark, which bothered me less than it might. The greatest city I know lies where no sunlight reaches.
-- [home] I set out {at} on ground my own people have held and worked for generations, which is as good a start as I know of.
-- Good boots and a sound pack will carry anyone further than good intentions, and I took to the road {at} with the first two in decent order.
+- [!home] The clean cold of Dun Morogh was a long way from {where}, and I made do with the day I had.
+- [!night] There was daylight left to spend {at}, and I meant to get good wear out of it.
+- [night] The dark bothered me less than it might {at}. The greatest city I know lies where no sunlight reaches.
+- [home] {where} is ground the Bronzebeards have held for generations, which is as good a start as I know of.
+- Good boots and a sound pack carried me out {at}, and good intentions came along behind.
 - Somewhere an old sealed door is always waiting for the right hands, and I went looking {at}, quietly hoping they might be mine.
-- I began again {at}, steady on my feet and hard to knock over, which has always struck me as the right way to meet trouble.
-- [!home] I set out {at} among other people's roads and other people's walls, judging both by how squarely they had been built.
-- [!night] With daylight still to spend, I headed off {at} meaning to get good wear out of every hour of it.
+- I began again {at}, steady on my feet and hard to knock over.
+- [!home] Other people's roads and other people's walls lay ahead {at}, and I judged both by how squarely they had been built.
 - My people are slow to start and slower to stop, and I got moving {at} meaning to live up to the second half at least.

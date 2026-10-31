@@ -2,28 +2,27 @@
 kind: opening
 ---
 - I took up the path {at}, as sure of the stars as ever and rather less sure of anything else.
-- I began again {at}, with a kaldorei's care for what the wild might lose through our carelessness.
-- I set out {at}, with the wisps of Shadowglen still drifting through my memory.
+- The wild had lost enough to careless hands, and I went on {at} meaning not to add to it.
+- The wisps of Shadowglen were still drifting through my memory {at} when I set out.
 - I continued {at}, keeping to the quiet edges of the road, as my people do.
-- I began this stretch {at}, remembering how dearly our people had paid for trusting power too easily.
-- I set out {at}, fonder of the noisy world of the younger races than I had ever expected to be.
+- I began this stretch {at}, wary of anything that offered power too easily.
+- [!home] The noisy world of the younger races had grown on me more than I expected, and {where} was full of it.
 - I set off {at}, with a nightsaber's ease in my step and rather less of its confidence.
-- I kept going {at}, with the patience of a people who once waited ten thousand years.
-- I set out {at}, as unhurried as the old forest and no more trusting.
+- {where} was quiet when I left it, and I kept my own steps quieter still.
+- As unhurried as the old forest and no more trusting, I set out {at}.
 - [night] I went on {at} after dark, with the hours my eyes liked best still ahead of me.
-- [!night] I took to the road {at} in daylight, which still felt like borrowed hours to someone who loved the night.
+- [!night] Daylight {at} still felt like borrowed hours to someone who loved the night, but I took to the road in it.
 - With an owl's attention to every movement, I took up the road {at}.
 - [hc] I began again {at}, unwilling to spend carelessly a life that Hyjal had already made shorter.
-- [home] I made a start {at}, where every call and footfall had a name I knew.
-- [!home] I set out {at}, far from the moonwells and learning, a little at a time, to do without them.
+- [home] Every call and footfall {at} had a name I knew, and I made a start among them.
+- [!home] The moonwells were far from {where}, and I was learning, a little at a time, to do without them.
 - [!night] The day began {at} as most of mine did, with a long moment of listening before I moved.
-- I set out {at}, letting the land show me its ways before I asked anything of it.
+- The land {at} could show me its ways before I asked anything of it, and I let it.
 - [night] Night had already fallen when I started {at}, and the world at last kept a pace I understood.
-- Ishnu-alah, goes the old greeting, and I went out {at} hoping some of that good fortune was meant for me.
+- The old trees have seen a great many travellers set out and not come back, and I meant to come back.
 - [home] I was on the move {at} with the land on my side for once, and found staying watchful harder than I had expected.
-- Mortal as I was, I saw no sense in waiting for a better hour, and took the road {at}.
-- [!night] I began {at} in the full light of day, with half my mind already waiting for dusk.
+- [!night] Daylight {at} was not my favourite hour, but I did not mean to waste it waiting for dusk.
 - I left my rest {at} the way a doe leaves a clearing, with one look back and then none.
-- I headed out {at}, fond of every living thing I passed and wary of most of them.
+- Every living thing I passed {at} had my fondness, and most of them my wariness too.
 - [!home] I went my way {at}, polite as any visitor ought to be and watchful as any stranger had better be.
 - [!night] The day {at} had its own business, and I set out to learn what part of it was mine.

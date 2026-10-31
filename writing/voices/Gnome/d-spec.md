@@ -5,16 +5,16 @@ kind: d-spec
 - [class:WARRIOR spec:Fury !change] I had chosen Fury, and learned that a small body can hold a surprising amount of temper.
 - [class:WARRIOR spec:Protection !change] I had chosen Protection, and meant to be a great deal harder to move than I looked.
 - [class:ROGUE spec:Assassination !change] I had chosen Assassination, the most exacting of a rogue's crafts, which suited a mind that likes things exact.
-- [class:ROGUE spec:Combat !change] I had chosen Combat, quick and close, the sort of fighting bigger folk always underestimate.
-- [class:ROGUE spec:Subtlety !change] I had chosen Subtlety. I was overlooked often enough that I might as well make an art of it.
+- [class:ROGUE spec:Combat !change] I had chosen Combat, quick and close, the sort of fighting that is over before anyone has decided what to do about it.
+- [class:ROGUE spec:Subtlety !change] I had chosen Subtlety, and found a quiet pleasure in being exactly where nobody had thought to look.
 - [class:MAGE spec:Arcane !change] I had given my study to the Arcane, the most intricate of the schools, which made it quite irresistible.
-- [class:MAGE spec:Fire !change] I had given my study to Fire, bright, loud and nearly as satisfying as a well-made explosion.
+- [class:MAGE spec:Fire !change] I had given my study to Fire, bright, loud and wonderfully direct.
 - [class:MAGE spec:Frost !change] I had given my study to Frost, the cold of Dun Morogh made into something useful at last.
-- [class:WARLOCK spec:Affliction !change] I had chosen Affliction, curses with all the patience of a slow and very nasty mechanism.
+- [class:WARLOCK spec:Affliction !change] I had chosen Affliction, curses that did their work slowly, and very thoroughly.
 - [class:WARLOCK spec:Demonology !change] I had chosen Demonology, and treated each demon like a contraption with a dangerous temper.
 - [class:WARLOCK spec:Destruction !change] I had chosen Destruction, and kept a respectful distance from my own results.
 - [client:forever class:PRIEST spec:Discipline !change] I had chosen Discipline, a careful faith, every prayer set exactly where it would do the most good.
-- [client:forever class:PRIEST spec:Holy !change] I had given myself to the Holy path, my prayers turned to mending what my people had lost too much of: one another.
+- [client:forever class:PRIEST spec:Holy !change] I had given myself to the Holy path, my prayers turned to mending whoever the road had broken.
 - [client:forever class:PRIEST spec:Shadow !change] I had turned to Shadow, and kept as close an eye on it as on anything that might go off.
 - [change] I took my old ways apart, figuratively speaking, and rebuilt myself around {spec} instead of {was}.
 - [change] {was} had been a fine first attempt, but {spec} was the one I meant to keep.

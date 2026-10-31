@@ -1,29 +1,29 @@
 ---
 kind: opening
 ---
-- I took up the road {at}. My people had crossed a whole sea to find a home, and one more day's walk seemed a small thing beside it.
+- One more day's walk {at} seemed a small thing beside a whole sea crossed to find a home.
 - I began again {at}, keen to see whether the next job would test my arm or only my patience.
-- I set out {at}, with willing hands for a people who had raised Orgrimmar from bare red rock in a handful of years.
-- I set off {at}, my own impatience already a familiar adversary.
-- I continued {at}, remembering how much Thrall had risked to give our people a home.
+- Orgrimmar had risen from bare red rock in a handful of years, and I meant to be as useful {at} as the hands that raised it.
+- My own impatience was already a familiar adversary {at}, and I set off with it.
+- I continued {at}, remembering how much Thrall had risked for this home.
 - I set out {at}, as eager for honest work as any grunt fresh from the Valley of Trials.
-- [home] I set out {at}, past the red rock and thorn scrub that had become our home in a handful of years.
-- I took up the road {at}, thinking of the endurance of the ancestors.
+- [home] Red rock and thorn scrub saw me off {at}, the country the Horde had made its own.
+- The endurance of the ancestors was in my thoughts {at} as I took up the road.
 - I took up the road {at}, more interested in what lay ahead than in any tale of what lay behind.
-- I made ready {at}, and checked my gear twice before I let myself think about the road.
-- I began again {at}, thinking of the shamans who had taught my people to listen to the elements once more after so long listening to demons.
+- Whatever the hour {at}, I saw no reason to spend it idling.
+- The shamans had taught the clans to listen to the elements again, and I went out {at} listening.
 - I made ready {at}, with Grom Hellscream's sacrifice in mind and no intention of being careless with what it had bought.
 - I continued {at}, wondering what the lost world of Draenor would have made of this one.
 - The old clans had become one people only lately, and I set out {at} wondering how much of their old pride I still carried without knowing it.
-- [night] I went on {at} after dark, keeping my temper with a night that hid more of the way than I liked.
-- [home] The land my people had only lately settled still had more work than hands, and I got moving {at}, meaning to lend mine.
-- I started out {at}, my hands wanting work before my head had settled on what it should be.
+- [night] Night hid more of the way {at} than I liked, and I went on keeping my temper with it.
+- [home] Durotar still had more work than hands, and I got moving {at}, meaning to lend mine.
+- My hands wanted work {at} before my head had settled on what it should be.
 - Nothing had asked anything of me yet, and I got moving {at} before something did.
 - [home] Dry country asks for strong backs rather than brave speeches, and I set out {at} offering mine.
 - [night] Darkness makes a poor scout of anyone, and I kept moving {at}, slower than my patience liked.
 - Trouble finds whoever sits waiting for it, so I went out {at} to meet it on my own terms.
 - I shouldered my pack {at} and let my legs set the pace, since my temper would only have hurried them.
-- [!home] I set out {at} on ground that still felt borrowed, and walked it with a guest's care.
+- [!home] The ground {at} still felt borrowed, and I walked it with a guest's care.
 - I took to the road {at}, resolved to save my anger for whatever truly earned it.
 - [night !class:ROGUE] I pressed on {at} in the dark, treading more quietly than I usually bother to.
 - The Horde is more peoples than one now, and I headed out {at} ready to work beside any of them.
