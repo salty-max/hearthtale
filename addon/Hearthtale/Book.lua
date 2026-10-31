@@ -282,7 +282,7 @@ end
 -- The Hall at a glance (the kit's page): its figures, each fallen life as a
 -- card, the most recent first; a click opens its epitaph.
 local function showHall(fallen)
-  local sub = #fallen == 0 and L["No one has fallen. May it stay so."]
+  local sub = #fallen == 0 and L["No one has fallen. May it stay that way."]
     or (#fallen == 1 and L["One life rests here"] or L["%d lives rest here"]:format(#fallen))
   page:start(L["The Hall of the Fallen"], sub, K.icon(MARK))
   if #fallen == 0 then
@@ -331,7 +331,7 @@ local function refreshHall(scroll)
     {
       key = "hall",
       title = L["The Hall of the Fallen"],
-      place = #fallen == 0 and L["May it stay so."] or K.plural(#fallen, "%d life", "%d lives"):format(#fallen),
+      place = #fallen == 0 and L["May no one fall."] or K.plural(#fallen, "%d life", "%d lives"):format(#fallen),
       always = true,
       selected = hallLife == nil,
       click = function()
@@ -388,7 +388,7 @@ local function buildEditor(sheet)
   editor.title:SetAutoFocus(false)
   editor.title:SetMaxLetters(60)
   local noteLabel = label(editor, BODY_FONT, 12, T.soft)
-  noteLabel:SetText(L["A note in its margin, in your own words"])
+  noteLabel:SetText(L["A note in the entry's margin, in your own words"])
   local ground = editor:CreateTexture(nil, "BACKGROUND")
   ground:SetColorTexture(0, 0, 0, 0.35)
   editor.note = CreateFrame("EditBox", nil, editor)
@@ -416,7 +416,9 @@ local function buildEditor(sheet)
     editor.note:SetPoint("BOTTOMRIGHT", -8, 50)
     editor.titleLabel:SetShown(not solo)
     editor.title:SetShown(not solo)
-    noteLabel:SetText(solo and L["A note on them, in your own words"] or L["A note in its margin, in your own words"])
+    noteLabel:SetText(
+      solo and L["A note on them, in your own words"] or L["A note in the entry's margin, in your own words"]
+    )
   end
   editor.save = buttonOf(editor, L["Save"], 90)
   editor.save:SetPoint("BOTTOMRIGHT", 0, 8)
@@ -444,7 +446,7 @@ function openEditor()
   editor.layout(false)
   editor.head:SetText(L["Entry %d"]:format(current))
   local journals = own.title and ch.writtenTitle or ch.title -- (the title the journal gave it)
-  editor.titleLabel:SetText(journals and L["Its title (the journal's own: %s)"]:format(journals) or L["Its title"])
+  editor.titleLabel:SetText(journals and L["Entry title (the journal's own: %s)"]:format(journals) or L["Entry title"])
   editor.title:SetText(own.title or "")
   editor.note:SetText(own.text or "")
   page:Hide()
@@ -490,7 +492,7 @@ local function hardcoreMark(parent, x)
   m:SetScript("OnLeave", function() GameTooltip:Hide() end)
   function m:Set(c)
     if not (c and c.hardcore) then return self:Hide() end
-    local source = c.hardcoreChosen and L["Marked so in Hearthtale's options (the game doesn't say here)."]
+    local source = c.hardcoreChosen and L["Marked as Hardcore in Hearthtale's options (the game doesn't say)."]
       or L["As the game reports it."]
     if c.closed then
       self.colour = FALLEN
@@ -602,7 +604,7 @@ local function showTravellers(list_)
   page:start(L["Fellow travellers"], sub, K.icon(GROUP))
   if #list_ == 0 then
     page:paragraph(
-      L["Everyone you group with is kept here, on this computer alone: when and where you met, how many days you travelled together, the dungeons you entered, and a note of your own."],
+      L["Everyone you group with is kept here, on this computer only. For each, you see when and where you met, the days you travelled together, the dungeons you entered, and a note of your own."],
       T.soft
     )
     return page:finish()

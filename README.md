@@ -1,6 +1,6 @@
 # Hearthtale
 
-Hearthtale keeps a diary for your World of Warcraft character as you play.
+Hearthtale keeps a journal for your World of Warcraft character as you play.
 Quests, close calls, new places and the people you travel with become entries
 written in your character's voice. Each race has its own way of telling the
 story. On Hardcore, a death closes the journal with an epitaph and saves it
@@ -41,8 +41,8 @@ version, after asking. Your titles and notes stay.
 
 ## Read on hearthtale.app
 
-Install Ravenpost, click **Link with Battle.net** on its Hearthtale card and
-sign in. For Forever characters, or any character Battle.net cannot find, get
+Install Ravenpost and click **Sign in with Battle.net** in its window. For
+Forever characters, or any character Battle.net cannot find, get
 a code from **Link a character** on the site and enter `/ht link CODE` in
 game. Your book arrives after your next logout or `/reload`.
 
@@ -72,8 +72,8 @@ the game cannot identify it. Settings are saved per character and can be
 transferred with `/ht export` and `/ht import CODE`. Use `/ht minimap` to
 show or hide the button.
 
-Hearthtale shares its book style with Lorekeeper's Codex, Yonder and Second
-Wind. Each addon works independently.
+Hearthtale shares its book style with its author's other addons, listed on
+its store page. Each addon works independently.
 
 The full store description is in [addon/CURSEFORGE.md](addon/CURSEFORGE.md).
 [PLAN.md](PLAN.md) records the design decisions, and [CLAUDE.md](CLAUDE.md)

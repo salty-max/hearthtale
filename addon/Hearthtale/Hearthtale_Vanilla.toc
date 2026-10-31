@@ -1,6 +1,6 @@
 ## Interface: 11509
 ## Title: Hearthtale
-## Notes: A diary for your WoW character, written as you play, with an epitaph and a saved journal when a Hardcore life ends.
+## Notes: A journal for your WoW character, written as you play and closed with an epitaph when a Hardcore life ends.
 ## Notes-frFR: Le journal de votre personnage, écrit pendant que vous jouez, avec une épitaphe et un journal conservé quand une vie Hardcore s'achève.
 ## Notes-deDE: Führt beim Spielen das Tagebuch deines Charakters auf Englisch. Endet ein Hardcore-Leben, bleibt sein Buch mit einer Grabinschrift erhalten.
 ## Notes-esES: Interfaz en español. Un diario escrito en inglés para tu personaje de WoW, con un epitafio y un libro conservado al terminar una vida Hardcore.

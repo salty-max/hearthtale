@@ -29,11 +29,11 @@ const en = {
   home: {
     tagline: "Your character's own journal, written as you play.",
     intro:
-      "Hearthtale is a World of Warcraft addon: your character's own journal, written as you play. Each time you rest at an inn or by a campfire, the stretch becomes a diary entry in your character's own voice. On Hardcore, a death closes the book with an epitaph.",
+      "Hearthtale is a World of Warcraft addon: your character's own journal, written as you play. Each time you rest at an inn or by a campfire, the stretch becomes an entry in your character's own voice. On Hardcore, a death closes the book with an epitaph.",
     soon: "Your journal, read in the game or here, on your phone: install the addon and Ravenpost, then sign in.",
     start: "Get started",
     sample: "Read a page",
-    hall: "The Hall of the Fallen",
+    hall: "Hall of the Fallen",
     games: "Classic Era, Hardcore, Season of Discovery and World of Warcraft: Forever.",
     features: [
       { title: "Written as you play", text: "Quests, foes, friends, close calls and campfires become entries at each rest, from what really happened." },
@@ -54,12 +54,12 @@ const en = {
     signIn: "Sign in with Battle.net",
     signInShort: "Sign in",
     signInTitle: "Your books",
-    signInWhy: "Sign in with Battle.net: your Classic Era characters are found on their own, and their books are yours alone.",
+    signInWhy: "Sign in with Battle.net: your Classic Era characters are found automatically, and only you can read their books.",
     perks: ["Every character's journal, on your phone", "New entries after each logout", "Share an entry, or the whole book"],
     region: "Region",
     regions: { us: "Americas & Oceania", eu: "Europe", kr: "Korea", tw: "Taiwan" } as Record<string, string>,
     forever: "World of Warcraft: Forever characters are linked with a code typed in the game, from \"Link a character\" at the top of the page.",
-    failed: "Battle.net didn't let us in. Try again in a moment.",
+    failed: "The sign-in with Battle.net failed. Try again in a moment.",
     cancelled: "Sign-in cancelled.",
     busy: "Too many sign-ins from here just now. Wait a few minutes, then try again.",
     signOut: "Sign out",
@@ -75,11 +75,11 @@ const en = {
     copy: "Copy",
     copied: "Copied",
     again: "New code",
-    then: (until: string) => `Then log out or /reload. The code works until ${until}, once.`,
+    then: (until: string) => `Then log out or /reload. The code works once, until ${until}.`,
   },
   start: {
     title: "Get started",
-    intro: "The addon writes your character's journal as you play; read it in the game with /ht. To read it here too, Ravenpost, a small app on your computer, sends each book to your library after you log out.",
+    intro: "The addon writes your character's journal as you play. Read it in the game with /ht. To read it here too, Ravenpost, a small app on your computer, sends each book to your library after you log out.",
     addonTitle: "1. The addon",
     addon: "Install it with your addon manager, or unzip it into the game's Interface/AddOns folder. One package for every game: each loads its own part.",
     managers: "With an addon manager",
@@ -95,7 +95,7 @@ const en = {
     yours: "For your computer",
     windowsArm: "Windows on ARM",
     unsigned:
-      "Not code-signed yet: Windows and macOS warn the first time you open it (Windows: More info, then Run anyway). If Smart App Control on Windows 11 blocks it, turn that off in Windows Security, or tell us.",
+      "Not code-signed yet: Windows and macOS warn the first time you open it (Windows: More info, then Run anyway). If Smart App Control on Windows 11 blocks it, turn that off in Windows Security, or ask for help on the project's GitHub.",
     uploadInstead: "Rather not install Ravenpost? Upload your saved file from the library instead.",
     stepsTitle: "3. Sign in",
     steps: [
@@ -103,7 +103,7 @@ const en = {
       "Your browser opens on Battle.net. Once you're signed in, Ravenpost is linked to Hearthtale: there's nothing else to confirm.",
       "Play, then log out or type /reload. A few seconds later, your book is in your library.",
     ],
-    foreverLink: "World of Warcraft: Forever characters (and any Battle.net can't find): get a link code from \"Link a character\" at the top of the page (signed in) and type /ht link CODE in the game before you log out.",
+    foreverLink: "For World of Warcraft: Forever characters, and any Battle.net can't find, get a link code from \"Link a character\" at the top of the page while signed in. Then type /ht link CODE in the game before you log out.",
     addonSource: "The addon's releases",
     ravenpostSource: "Ravenpost's releases",
   },
@@ -117,7 +117,7 @@ const en = {
   },
   library: {
     title: "Library",
-    testIntro: "The test account: lives played through the addon in its test game, each book exactly as the addon saved it at logout.",
+    testIntro: "The test account: books the addon saved in a test game, exactly as written at logout.",
     empty: "No book on this shelf yet. With the addon installed, your characters' books arrive after you log out or /reload.",
     level: (n: number) => `Level ${n}`,
     chapters: (n: number) => (n === 1 ? "1 entry" : `${n} entries`),
@@ -201,7 +201,7 @@ const en = {
     sending: "Sending…",
     saved: "In your library.",
     open: "Open the book",
-    unlinked: "This character isn't yours yet: get a link code from \"Link a character\" at the top of the page, type /ht link CODE in the game, log out, then upload the file again.",
+    unlinked: "This character isn't linked to your account yet. Get a link code from \"Link a character\" at the top of the page, type /ht link CODE in the game, log out, then upload the file again.",
     invalid: "This file holds no book the site can read.",
     owned: "Another account already holds this character, so a link code can't move it. If it is yours, sign in with that account, or ask for help on the project's GitHub.",
     removed: "You removed this book from the site: a new link code brings it back.",
@@ -212,7 +212,7 @@ const en = {
   },
   push: {
     title: "Notifications",
-    why: "A word on this device when one of your characters writes a new entry (after you log out).",
+    why: "A notification on this device when one of your characters has a new entry (after you log out).",
     on: "Tell me when a new entry arrives",
     unsupported: "This browser can't receive notifications from the site.",
     ios: "On iPhone and iPad: add Hearthtale to your Home Screen (Share, then Add to Home Screen), open it from there, then turn this on.",
@@ -247,7 +247,7 @@ const en = {
   raceClass: (race: string, cls: string) => `${race} ${cls}`,
   share: {
     title: "Share",
-    why: "Anyone with the link reads what it covers, and nothing else of yours: your notes in the margins stay yours. You can revoke it at any time.",
+    why: "Anyone with the link can read what it covers, and nothing else of yours: your notes in the margins stay yours. You can revoke it at any time.",
     thisPart: (part: string) => `Share “${part}”`,
     wholeBook: "The whole book",
     copy: "Copy the link",
@@ -260,21 +260,21 @@ const en = {
     hallWhy: "The public Hall, on hearthtale.app: anyone can read this fallen life's book there, without your notes. You can take it back out.",
     gone: "This link doesn't lead to a book any more: it was revoked, or the book is gone.",
     visitor: (name: string) => `${name}'s journal, written by Hearthtale as they played World of Warcraft.`,
-    keepYours: "Keep your own",
+    keepYours: "Start your own",
   },
   remove: {
     title: "Remove this book",
     why: (name: string) =>
       `${name}'s book leaves hearthtale.app, with every link you shared of it. The journal itself stays in the game.`,
     companion:
-      "Ravenpost won't bring it back: its uploads of this character are refused from now on. To have the book here again, get a link code from \"Link a character\" at the top of the page and type /ht link CODE in the game.",
+      "Ravenpost won't bring it back: its uploads of this character are refused from now on. To bring the book back, get a link code from \"Link a character\" at the top of the page and type /ht link CODE in the game.",
     confirm: "Remove the book",
     cancel: "Keep it",
     failed: "The book couldn't be removed. Check your connection, then try again.",
   },
   hall: {
     title: "Hall of the Fallen",
-    intro: "Hardcore lives, ended, whose players chose to show them here: each with its epitaph, and its book to read.",
+    intro: "Hardcore lives that have ended, shown here because their players chose to. Each has its epitaph and its book to read.",
     empty: "No fallen book has been brought to the Hall yet.",
     read: "Read the book",
   },
@@ -282,7 +282,7 @@ const en = {
     title: "Settings",
     appearance: "Appearance",
     site: "The site",
-    sites: { system: "As the device", light: "Day", dark: "Night" } as Record<string, string>,
+    sites: { system: "Same as device", light: "Light", dark: "Dark" } as Record<string, string>,
     reading: "Reading",
     preview:
       "I reached Kharanos, took a room at Thunderbrew Distillery, then took up skinning. Later that day, I walked into Shimmer Ridge and dealt with a Frostmane Snowstrider.",
@@ -306,7 +306,7 @@ const en = {
     sections: [
       {
         title: "What the site keeps",
-        text: "Your Battle.net account's id and BattleTag, to know which books are yours; the characters the game says are yours (their name, realm, race, class and level); each book as the addon wrote it, with your own titles and notes; the share links you make; and, if you turn them on, this device's notification address.",
+        text: "The site keeps your Battle.net account's id and BattleTag, to know which books are yours, and the characters the game says are yours (their name, realm, race, class and level). It also keeps each book as the addon wrote it, with your own titles and notes, and the share links you make. If you turn notifications on, it keeps this device's notification address too.",
       },
       {
         title: "What it never keeps",
@@ -314,7 +314,7 @@ const en = {
       },
       {
         title: "Who reads your books",
-        text: "You alone, unless you share a link (anyone with it reads what it covers) or show a fallen book in the Hall (anyone can read it there); your notes in the margins stay yours either way. Revoke a link, or take a book out of the Hall, at any time.",
+        text: "You alone, unless you share a link (anyone with it can read what it covers) or show a fallen book in the Hall (anyone can read it there). Your notes in the margins stay yours either way. Revoke a link, or take a book out of the Hall, at any time.",
       },
       {
         title: "Cookies",

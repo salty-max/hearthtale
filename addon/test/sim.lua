@@ -965,7 +965,10 @@ check(G.popups[#G.popups] == "HEARTHTALE_REWRITE" and J.book, "/ht rewrite asks 
 StaticPopupDialogs.HEARTHTALE_REWRITE.OnAccept()
 local anew = ns.writeBook(J).chapters[1]
 check(
-  not J.book and anew.text == writersText and anew.title == writersTitle and printed[#printed]:find("anew", 1, true),
+  not J.book
+    and anew.text == writersText
+    and anew.title == writersTitle
+    and printed[#printed]:find("written again", 1, true),
   "… then writes the journal anew with this version"
 )
 

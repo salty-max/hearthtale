@@ -139,7 +139,7 @@ function ns.createSettingsPanel()
     Settings.CreateCheckbox(
       O.category,
       setting,
-      L["This character's death closes its book: an epitaph, and its journal joins the Hall of the Fallen. For this character only."]
+      L["This character's death closes its book with an epitaph and sends it to the Hall of the Fallen. For this character only."]
     )
   end
 

@@ -19,7 +19,7 @@ local W = K.welcome({
   tagline = L["Your character's own journal, written as you play."],
   intro = L["Play as you always do: Hearthtale keeps the record. The quests that mattered, the foes worth naming, the lands seen for the first time, the close calls."]
     .. "\n\n"
-    .. L["Each time you rest, at an inn, in a city or by a campfire, the road since the last rest becomes an entry in your character's own voice."]
+    .. L["Whenever you rest at an inn, in a city or by a campfire, the road since your last rest becomes an entry in your character's own voice."]
     .. "\n\n"
     .. L["On Hardcore, a death closes the book with an epitaph, and it joins the Hall of the Fallen."],
   profiles = ns.profiles,
@@ -41,7 +41,7 @@ local W = K.welcome({
     if not ns.gameKnowsHardcore() then
       table.insert(choices, {
         text = L["This character is Hardcore"],
-        hint = L["Its death will close its book. The game can't say so here."],
+        hint = L["Its death will close its book. The game can't tell whether it is Hardcore."],
         get = ns.isHardcore,
         set = ns.setHardcore,
       })

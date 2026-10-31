@@ -134,19 +134,19 @@ function ns.own(n) return char and char.notes and char.notes[n] or nil end
 
 -- ── /hearthtale ──────────────────────────────────────────────────────────────
 local USAGE =
-  L["/ht opens the journal, /ht hall the Hall of the Fallen. /ht title [N] TEXT names an entry, /ht note [N] TEXT writes in its margin (the last entry without N, no TEXT to remove it). /ht link CODE links this character to hearthtale.app. /ht settings opens the options, /ht minimap shows or hides the button, /ht welcome shows the welcome page again. /ht export gives this character's settings as a code, /ht import CODE takes them. /ht rewrite writes the journal anew with this version (a closed entry keeps its words otherwise)."]
+  L["/ht opens the journal, /ht hall the Hall of the Fallen. /ht title [N] TEXT names an entry, /ht note [N] TEXT writes in its margin (the last entry without N, no TEXT to remove it). /ht link CODE links this character to hearthtale.app. /ht settings opens the options, /ht minimap shows or hides the button, /ht welcome shows the welcome page again. /ht export gives this character's settings as a code, /ht import CODE takes them. /ht rewrite writes the journal again with this version (a closed entry keeps its words otherwise)."]
 
 -- A code from hearthtale.app, kept in the saved file: the next upload (after a
 -- logout or a /reload) carries it, and the site adds this book to that account.
 local function link(code)
   if #code ~= 6 then
-    print(PREFIX .. L["That isn't a link code: it has six letters and digits, from hearthtale.app."])
+    print(PREFIX .. L["That isn't a link code. Link codes have six letters and digits and come from hearthtale.app."])
   elseif char then
     code = code:upper()
     char.link = { code = code, at = time() }
     print(
       PREFIX
-        .. L["Code %s kept. Log out or /reload with Ravenpost running, and this book joins your library on hearthtale.app."]:format(
+        .. L["Code %s saved. Log out or /reload with Ravenpost running, and this journal joins your library on hearthtale.app."]:format(
           code
         )
     )
@@ -168,11 +168,11 @@ local function rewrite()
   if ns.refresh then ns.refresh() end
   print(
     PREFIX
-      .. L["The journal is written anew. hearthtale.app shows it after your next logout or /reload with Ravenpost running."]
+      .. L["The journal is written again. hearthtale.app shows it after your next logout or /reload with Ravenpost running."]
   )
 end
 StaticPopupDialogs.HEARTHTALE_REWRITE = {
-  text = L["Write this journal anew with this version of Hearthtale? Its entries' words may change. Your own titles and notes stay."],
+  text = L["Write this journal again with this version of Hearthtale? Its entries' words may change. Your own titles and notes stay."],
   button1 = YES,
   button2 = NO,
   OnAccept = rewrite,

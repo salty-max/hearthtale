@@ -3,9 +3,9 @@
 <!-- Project description for curseforge.com (paste as the project's description). -->
 
 <!-- Summary (the project's summary on CurseForge and Wago, and the TOCs' Notes):
-A diary for your WoW character, written as you play, with an epitaph and a saved journal when a Hardcore life ends. -->
+A journal for your WoW character, written as you play and closed with an epitaph when a Hardcore life ends. -->
 
-Hearthtale keeps a diary for your character as you play. Quests, close calls, new places and the people you travel with become entries written in the first person, with a different voice for each race. On Hardcore, a death ends the journal with an epitaph and saves it in the Hall of the Fallen.
+Hearthtale keeps a journal for your character as you play. Quests, close calls, new places and the people you travel with become entries written in the first person, with a different voice for each race. On Hardcore, a death ends the journal with an epitaph and saves it in the Hall of the Fallen.
 
 For Classic Era (including Hardcore and Season of Discovery) and World of Warcraft: Forever.
 
@@ -35,15 +35,15 @@ Starting with a character you already play is fine. The journal opens with a pro
 
 Hearthtale uses about 1,900 written lines and phrases, around 240 place descriptions and the stories of over 3,200 quests. It chooses them to suit what happened, the time of day and whether you were alone or with others. Recently used lines are held back to reduce repetition.
 
-Each race has its own way of looking at things. A dwarf notices stonework, a troll wonders what's edible, and a Forsaken takes a drier view. Hardcore entries grow more serious as the character gets further.
+Each race has its own way of looking at things. A dwarf notices stonework, a troll wonders what's edible, and a Forsaken takes a drier view. Hardcore entries grow more serious as the character goes further.
 
-Titles come from the game: a pet's name, a dungeon or a quest such as "The Stolen Journal" or "Escape Through Stealth". The current entry develops as you play. A finished entry keeps its words, even after an update improves the writing: it stays as you first read it. To have the whole journal written again with the latest writing, type `/ht rewrite`. At logout, Hearthtale saves a readable copy for the website.
+Titles come from the game: a pet's name, a dungeon or a quest such as "The Stolen Journal" or "Escape Through Stealth". The current entry develops as you play. A finished entry keeps its words, even after an update improves the writing: it stays as you first read it. To have the whole journal written again by the current version, type `/ht rewrite`. At logout, Hearthtale saves a readable copy for the website.
 
 ## The Hall of the Fallen
 
 When a Hardcore character dies, Hearthtale writes an epitaph and closes the book. A chat message and an alert mark the death. The journal is kept in the **Hall of the Fallen**, shared by your characters, so you can return to that life and read its entries again.
 
-On other realms, death is recorded in the journal and the book carries on.
+On a character that is not Hardcore, a death is recorded as an entry and the journal carries on.
 
 ## Read on your phone
 
@@ -86,7 +86,7 @@ Settings are saved per character. Copy them from another character of the same g
 
 ## Help the addons keep up with Forever
 
-Forever brings new quests and creatures, and the usual databases take weeks to catch up with them. You can help Hearthtale and its sister addons get there sooner. Tick **Share what you see** on the welcome page or in the options, and Hearthtale keeps what the game tells you of quests, creatures and NPCs. **[Ravenpost](https://ravenpost-site.vercel.app)**, a small free app for Windows and macOS, sends it to the addons' shared database a few seconds after you log out, once you **Sign in with Battle.net** in it: one account, one voice when players' games disagree. What you see lets the journal tell Forever's new quests in their own words. Every player who shares makes a real difference, and it's truly appreciated.
+Forever brings new quests and creatures, and the usual databases take weeks to catch up with them. You can help Hearthtale and its sister addons get there sooner. Tick **Share what you see** on the welcome page or in the options, and Hearthtale keeps what the game tells you of quests, creatures and NPCs. **[Ravenpost](https://ravenpost-site.vercel.app)**, a small free app for Windows and macOS, sends it to the addons' shared database a few seconds after you log out, once you **Sign in with Battle.net** in it: one account, one voice when players' games disagree. What you see lets the journal tell Forever's new quests in their own words.
 
 Your name, class and race are replaced by the game's own placeholders, lines that name another player are left out, and your chat is never kept. Sharing is off until you turn it on. Turning it off stops it: what was kept stays on your computer, and nothing is sent while it's off.
 
