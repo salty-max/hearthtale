@@ -2,6 +2,10 @@
 -- both games. Diary prose, stored names, titles and notes keep their words.
 LOCALE = os.getenv("LOCALE") or "esES"
 assert(LOCALE == "esES" or LOCALE == "esMX", "choose a Spanish locale")
+if dofile("addon/test/held.lua")(LOCALE) then
+  print("skipped: " .. LOCALE .. " held back (HIDDEN_LOCALES)")
+  os.exit(0)
+end
 local G = dofile("addon/test/game.lua")
 local ns, L = G.ns, G.ns.kit.L
 local passed = 0
