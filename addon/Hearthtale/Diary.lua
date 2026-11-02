@@ -1974,7 +1974,8 @@ function ns.forgetWritten(c) kept[c] = nil end
 function ns.writeBook(c)
   -- (the journal's own language, never the client's: French.lua)
   local F = ns.french
-  if F then F.on = F.ready and c.language == "frFR" or false end
+  -- (its tables loaded first: a companion that fails leaves the book English)
+  if F then F.on = F.ready and c.language == "frFR" and F.data() ~= nil or false end
   local memo = kept[c]
   local d, book, from
   if memo and stillKept(memo, c) then

@@ -1,10 +1,13 @@
-# The addon's own globals: its saved variables and its slash command
+# The addon's own globals: its saved variables, its slash command and the
+# French journal's addon's namespace (HearthtaleFrench, its Share.lua)
 # (selene.toml: std = "wow+hearthtale"; the game's are the kit's wow.yml).
 name: hearthtale
 globals:
   HearthtaleChar:
     any: true
   HearthtaleCollect:
+    any: true
+  HearthtaleFrench:
     any: true
   HearthtaleHall:
     any: true

@@ -517,8 +517,8 @@ for (const game of Object.keys(GAMES) as Game[]) {
 -- a name alone: a quest's, a boss's, a flight point's), for the journal
 -- written in French. Do not edit: i18n/frFR/names.json.
 local _, ns = ...
--- (kept out of the addon until the French is complete: addon/Hearthtale_French/,
--- loaded by the tests; built at the first need)
+-- (in Hearthtale_French, the addon loaded on demand for a journal in French;
+-- built at the first need)
 function ns.frenchNames()
   return {
 ${sections.replace(/\u2019/g, "'") /* (straight apostrophes, as the journal writes them) */}

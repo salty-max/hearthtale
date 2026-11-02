@@ -6,6 +6,9 @@
 -- it stays English whole.
 --   the lines: French_<game>.lua (scripts/build.ts, i18n/frFR/writing/)
 --   the game's names: FrenchNames_<game>.lua (scripts/french-names.ts)
+-- Both live in Hearthtale_French, an addon of their own loaded on demand the
+-- first time a journal is written in French: an English journal never loads
+-- them. HearthtaleFrench is its namespace, shared (its Share.lua).
 -- How a slot's French is found: the writer's helpers (W.mid, W.at,
 -- W.article, W.itemName, W.plural, W.words, W.listing, W.playedWords,
 -- W.deathFoe) are wrapped here, each English result remembered with its
@@ -18,7 +21,29 @@
 -- agrees with the narrator.
 local _, ns = ...
 local W = ns.writer
-if not (W and ns.frenchNames and ns.frenchWriting) then return end
+if not W then return end
+local COMPANION = "Hearthtale_French"
+-- (the French data: loaded at the first need, nil when the companion is
+-- missing or turned off)
+local function data()
+  if not HearthtaleFrench and C_AddOns and C_AddOns.LoadAddOn then pcall(C_AddOns.LoadAddOn, COMPANION) end
+  -- (a load that failed: no French from here on, the English stays whole)
+  if not HearthtaleFrench and ns.french then ns.french.ready = false end
+  return HearthtaleFrench
+end
+-- (the companion is there to load, the same version as Hearthtale: French can
+-- be chosen. An addon on demand not yet loaded says "DEMAND_LOADED" with
+-- loadable false, as the game's own AddonList reads it; one turned off says
+-- "DISABLED". Another version's lines would not match these, by their places.)
+local function available()
+  if HearthtaleFrench then return HearthtaleFrench.frenchComplete == true end
+  if not (C_AddOns and C_AddOns.GetAddOnInfo) then return false end
+  local name, _, _, loadable, reason = C_AddOns.GetAddOnInfo(COMPANION)
+  if not name or not (loadable or reason == "DEMAND_LOADED") then return false end
+  local meta = C_AddOns.GetAddOnMetadata
+  local mine, its = meta and meta("Hearthtale", "Version"), meta and meta(COMPANION, "Version")
+  return mine == its
+end
 -- (the writer's own helpers, before they are wrapped below: what the French
 -- reads of the English never comes back here)
 local EN = {}
@@ -28,7 +53,13 @@ end
 -- (the tables, built at the first need: FN the names, FW the lines)
 local FN = setmetatable({}, {
   __index = function(t, k)
-    local all = ns.frenchNames()
+    local d = data()
+    if not d then
+      -- (the companion failed to load: no French, the English stays whole)
+      if ns.french then ns.french.ready = false end
+      return nil
+    end
+    local all = d.frenchNames()
     for key, v in pairs(all) do
       rawset(t, key, v)
     end
@@ -38,7 +69,13 @@ local FN = setmetatable({}, {
 })
 local FW = setmetatable({}, {
   __index = function(t, k)
-    local all = ns.frenchWriting()
+    local d = data()
+    if not d then
+      -- (the companion failed to load: no French, the English stays whole)
+      if ns.french then ns.french.ready = false end
+      return nil
+    end
+    local all = d.frenchWriting()
     for key, v in pairs(all) do
       rawset(t, key, v)
     end
@@ -48,18 +85,19 @@ local FW = setmetatable({}, {
 })
 
 local F = {
-  -- (French may be chosen once every line has its French; a test may play it
-  -- before: game.lua, HEARTHTALE_FRENCH)
-  ready = ns.frenchComplete == true,
+  -- (French may be chosen: the companion is there, every line of it French)
+  ready = available(),
   -- (the book being written is in French: its language, ns.writeBook)
   on = false,
   memo = {}, -- [an English slot value] = its French
   gender = {}, -- [a French value] = "m", "f", "mp", "fp"
   bare = {}, -- [a French value] = its noun without its article ("vallée des Frigères")
+  place = {}, -- [a place with its preposition] = without it ("à Brill" = "Brill", "dans les Tarides" = "les Tarides")
   unknown = {}, -- [a name] = true: one the tables don't know (the tests list them)
   missing = {}, -- [a line told] = true: one with no French yet (the tests list them)
 }
 ns.french = F
+F.data = data -- (the companion's tables: the tests read the deeds there)
 
 -- ── words ────────────────────────────────────────────────────────────────────
 -- (UTF-8: an accented capital is \195 then 128-158, its small letter +32)
@@ -330,7 +368,9 @@ end
 -- (a place named without the game's "The": a deed's "Crossroads"; only where
 -- a place is meant, a creature or an item may bear the bare name)
 local function placeOrThe(name)
-  return placeOf(name) or (name and not name:find("^The ") and placeOf("The " .. name)) or nil
+  if not name then return nil end
+  local bare = name:match("^[Tt]he (.+)$")
+  return placeOf(name) or (bare and placeOf(bare)) or placeOf("The " .. (bare or name)) or nil
 end
 F.placeOf = placeOrThe
 -- (Forgefer; la vallée des Frigères; l'île; les Tarides)
@@ -381,11 +421,14 @@ local function frAt(name)
   local e = placeOrThe(name)
   if not e then
     F.unknown[name] = true
+    F.place["\195\160 " .. name] = name
     return "\195\160 " .. name
   end
   local p = e[4] or "\195\160"
   if p == "en" and (e[3] or "") ~= "" then p = "dans" end
-  return p .. " " .. withArticle(e)
+  local out = p .. " " .. withArticle(e)
+  F.place[out] = withArticle(e)
+  return out
 end
 
 -- A creature: one of a kind, a family, a type, a boss.
@@ -883,7 +926,8 @@ F.names = names
 -- ── a line told ──────────────────────────────────────────────────────────────
 -- The French template of the line chosen (e: Lines.lua's candidate).
 local function template(book, kind, e)
-  local i = tonumber(e.id:match("(%d+)$"))
+  -- (its place in its kind: "d-why2#2", never the id's end, "d-why22")
+  local i = tonumber((e.reach or ""):match("#(%d+)$") or e.id:match("(%d+)$"))
   if e.id:sub(1, 2) == "v:" then
     local own = FW.voices[book.c.race or "Human"]
     return own and own[kind] and own[kind][i]
@@ -925,6 +969,10 @@ function F.fill(fr, values, book, raw)
       if arg == "le" then return definiteOf(bare, g) end
       if arg == "de" then return "de " .. definiteOf(bare, g) end
       if arg == "nu" then return bare end -- (the noun alone: "en {prof:nu}", "en minage")
+      -- (a place without its preposition, its article kept: "partie de {at:lieu}",
+      -- "partie du Glas", "repris la route depuis {at:lieu}")
+      -- (no place: the word before it goes too, "partie, avec…" as the English drops it)
+      if arg == "lieu" then return f == "" and "\2" or F.place[f] or f end
       return f
     elseif how == "=" then
       return agree(arg, F.gender[f])
@@ -932,6 +980,7 @@ function F.fill(fr, values, book, raw)
     return f
   end)
   if missing then return nil end
+  out = out:gsub("%s*[^%s]+%s+\2", "")
   out = tidy(gendered(names(out), female))
   out = out:gsub(" +([%.,])", "%1"):gsub("  +", " "):gsub("^[ ,]+", ""):gsub(",%s*,", ",")
   return raw and out or capital(out)

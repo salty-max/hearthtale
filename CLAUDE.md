@@ -57,10 +57,12 @@ scripts/release.sh --version X.Y.Z [--hold] NOTES.md
 - The journal is written in its own language, never the client's
   (`c.language`, 2 November 2026): the client's at the character's first
   login, English for every journal from before, changed only by the
-  setting, which writes the whole journal again. French is being written
-  (`i18n/frFR/writing/`, French.lua, `docs/writing.md` "The French"): until
-  it is complete (`FRENCH_COMPLETE` in `scripts/build.ts`) every journal is
-  English. The interface goes through `L` in every language. The record
+  setting, which writes the whole journal again. English and French
+  (`i18n/frFR/writing/`, French.lua, `docs/writing.md` "The French"): every
+  line has its French (`FRENCH_COMPLETE` in `scripts/build.ts` fails the
+  build on one without), in `addon/Hearthtale_French`, an addon loaded on
+  demand for a French journal only; German and Spanish clients write English.
+  The interface goes through `L` in every language. The record
   keeps the game's names in English by id; the saved file keeps ids, never a
   game name, turned back at the login.
 - First person, the character's own recollection: never the League's
@@ -72,7 +74,9 @@ scripts/release.sh --version X.Y.Z [--hold] NOTES.md
 - Plain ASCII in `writing/`, no semicolons in what players read.
 - After changing the writing: `bun run addon:build`, `addon:check`,
   regenerate `docs/sample.md` and the seed (`addon:seed`), and read whole
-  generated journals again (`luajit addon/test/playthrough.lua`). A writer
+  generated journals again (`luajit addon/test/playthrough.lua`; in French
+  with `FRENCH=1`, `SEX=2` for a man, `FOREVER=1`: no line without its
+  French, no English left, the books in `.cache/audit/books-fr/`). A writer
   refactor keeps every output byte for byte (`addon:golden`).
 - A why line naming a new place: run the audit and commit `Names.lua` with
   it. Generated tables are never edited by hand, and a regenerated one

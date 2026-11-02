@@ -82,7 +82,7 @@ jobs:
         with:
           args: -d ${{ env.PACKAGER_ARGS }}
           pandoc: false
-      - run: diff -r addon/Hearthtale .release/Hearthtale
+      - run: diff -r addon/Hearthtale .release/Hearthtale && diff -r addon/Hearthtale_French .release/Hearthtale_French
       - name: The stores' tokens and ids (a store without either would be skipped in silence)
         if: github.event_name == 'workflow_dispatch' || vars.HOLD_STORES != 'true'
         env:

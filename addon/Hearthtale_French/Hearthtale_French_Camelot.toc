@@ -1,0 +1,16 @@
+## Interface: 16001
+## Title: Hearthtale (French journal)
+## Title-frFR: Hearthtale (journal en français)
+## Notes: The French Hearthtale writes a journal in. Loaded only when a journal is in French.
+## Notes-frFR: Le français dans lequel Hearthtale écrit un journal. Chargé seulement quand un journal est en français.
+## Category: Roleplay
+## Author: salty-max
+## Version: 0.13.0
+## Dependencies: Hearthtale
+## LoadOnDemand: 1
+## IconTexture: Interface\AddOns\Hearthtale\Media\Logo
+## X-License: GPL-3.0-or-later
+
+FrenchNames_Forever.lua
+French_Forever.lua
+Share.lua

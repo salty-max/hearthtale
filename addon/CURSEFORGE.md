@@ -65,7 +65,7 @@ Type `/hearthtale` or `/ht`, or click the minimap button. Pick an entry from the
 
 One download covers Classic Era, Hardcore, Season of Discovery and World of Warcraft: Forever.
 
-The journal is written in **English**, on any game client. On other clients, the game's names in it (places, creatures, people, quests, items, trades and spells) are kept in English too. Around it, the book, its settings and its messages speak English and French. Other clients get English.
+The journal is written in **English** or **French**. A character's journal starts in the language of the game client at its first login (French on a French client, English on any other) and keeps it. **Journal language** in the settings changes it and writes the whole journal again. The game's names in it (places, creatures, people, quests, items, trades and spells) are the game's own in that language. Around it, the book, its settings and its messages speak English and French. Other clients get English. The French journal ships as a second folder, **Hearthtale_French**, loaded only when a journal is written in French.
 
 Forever restricts what addons can read about kills. In its dungeons, Hearthtale can only tell kills that are also counted by a quest.
 

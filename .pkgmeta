@@ -5,8 +5,11 @@
 # written to .release-notes.md by the workflow.
 package-as: Hearthtale
 
+# With it, the French journal's addon, addon/Hearthtale_French (loaded on
+# demand: scripts/package.ts checks it).
 move-folders:
   Hearthtale/addon/Hearthtale: Hearthtale
+  Hearthtale/addon/Hearthtale_French: Hearthtale_French
 
 manual-changelog:
   filename: .release-notes.md
@@ -14,7 +17,6 @@ manual-changelog:
 
 ignore:
   - addon/test
-  - addon/Hearthtale_French
   - addon/CURSEFORGE.md
   - apps
   - assets

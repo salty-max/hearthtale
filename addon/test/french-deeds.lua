@@ -3,7 +3,6 @@
 -- checks the deeds of its own quests.
 --   luajit addon/test/french-deeds.lua      FOREVER=1 for Forever
 LOCALE = "frFR"
-HEARTHTALE_FRENCH = true -- (played before the French is complete)
 local lives = dofile("addon/test/lives.lua")
 local G = lives.brannok()
 local F = G.ns.french
@@ -11,7 +10,7 @@ assert(F, "French.lua not loaded")
 F.on = true
 local quests = G.ns.englishNames().quests
 local ids = {}
-for id in pairs(G.ns.frenchWriting().why) do
+for id in pairs(F.data().frenchWriting().why) do
   if quests[id] then ids[#ids + 1] = id end
 end
 table.sort(ids)

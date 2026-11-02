@@ -33,7 +33,7 @@
 - I kept close to the fire {at}, grateful for its warmth and mindful of its appetite, as anyone who loves a forest must be.
   > Je suis $gresté:restée; près du feu {at}, $greconnaissant:reconnaissante; de sa chaleur et $gattentif:attentive; à son appétit, comme doit l'être quiconque aime une forêt.
 - My thoughts were free to drift as far as they liked {at}, now that my feet would not have to follow them.
-  > Mes pensées pouvaient dériver aussi loin qu'elles le voulaient {at}, maintenant que mes pieds n'auraient pas à les suivre.
+  > Mes pensées pouvaient dériver aussi loin qu'elles le voulaient {at}, maintenant que mes pieds n'avaient pas à les suivre.
 - I laid the road's cares aside {at} like a cloak I would not need again until I rose.
   > J'ai déposé les soucis de la route {at} comme une cape dont je n'aurais plus besoin avant de me lever.
 - I settled down {at} and gave myself up to sleep, whatever dreams it meant to bring.

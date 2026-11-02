@@ -299,9 +299,9 @@ Each journal is written in its own language (`c.language`, Core.lua: the
 client's at the character's first login, English for a journal from
 before, kept whatever the client after; the Options page's "Journal
 language" changes it and writes the whole journal again, `/ht rewrite`'s
-path, the player's titles and notes kept). French is being written: until
-`FRENCH_COMPLETE` (scripts/build.ts) the setting is hidden and every journal
-English. The record is the facts (moments, ids, the character's sex), so any
+path, the player's titles and notes kept). Every line has its French
+(`FRENCH_COMPLETE`, scripts/build.ts: a line without fails the build); the
+setting is shown when the French journal's addon is there. The record is the facts (moments, ids, the character's sex), so any
 journal can be told again in either language.
 
 - The writer chooses every line in English as ever (Lines.lua, Diary.lua:
@@ -315,12 +315,19 @@ journal can be told again in either language.
   the English names' ids, each with its gender, article and preposition,
   counted in the game's own French texts; `i18n/frFR/names.json` by hand;
   `.cache/audit/french-<game>.txt` the places as a sentence says them), in
-  `addon/Hearthtale_French/`: kept out of the addon (its TOCs and the
-  release's package, `.pkgmeta`) until the French is complete, so no player
-  carries them meanwhile (some 9 MB of names in memory); the tests load them
-  (game.lua, `HEARTHTALE_FRENCH`). Without them French.lua does nothing. How
-  they ship once complete (a LoadOnDemand companion, the kit's `also`
-  folder, loaded only for a French journal) is settled then.
+  `addon/Hearthtale_French/`: an addon of its own, shipped beside Hearthtale
+  (scripts/package.ts through the kit's `also`, `.pkgmeta`, the release's
+  folders), `## LoadOnDemand: 1`: French.lua loads it
+  (`C_AddOns.LoadAddOn`) the first time a journal is written in French, so
+  an English journal never carries its tables (some 3 MB a game). Its
+  Share.lua hands its namespace over as `HearthtaleFrench`. The tests play
+  it as the game would (game.lua's `C_AddOns`; `NO_FRENCH` plays a game
+  without it).
+- What a journal in French can't translate: the player's own titles and
+  notes, player and pet names, and the names the record kept as text
+  because the English tables had none for them (an item no quest names, a
+  craft's product: in the client's words at the time, French on a French
+  client, English on an English one).
 - French.lua wraps the writer's helpers (W.mid, W.at, W.article,
   W.itemName, W.plural, W.words, W.listing, W.playedWords, W.deathFoe): each
   English result is remembered with its French (`F.memo`), under pcall, so

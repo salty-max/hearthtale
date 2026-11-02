@@ -8,7 +8,6 @@
 --   SEX=2 for a man; FOREVER=1 for Forever. An entry left in English shows
 --   its French as far as it goes, each sentence without French marked [EN].
 LOCALE = "frFR"
-HEARTHTALE_FRENCH = true -- (played before the French is complete)
 local lives = dofile("addon/test/lives.lua")
 
 local check = false

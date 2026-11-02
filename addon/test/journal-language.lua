@@ -1,11 +1,11 @@
 -- The journal's language, the character's own (Core.lua): the client's at the
--- first login (French once it is complete), kept whatever the client after;
+-- first login (French when the French addon is there), kept whatever the
+-- client after;
 -- a journal from before is English; the setting changes it, and the whole
 -- journal is written again in the other (every entry, its titles, its life
 -- in the Hall), the player's own titles and notes as they wrote them.
 --   luajit addon/test/journal-language.lua
 LOCALE = "frFR"
-HEARTHTALE_FRENCH = true -- (played before the French is complete)
 local lives = dofile("addon/test/lives.lua")
 local failures = 0
 local function check(ok, what, got)
@@ -66,11 +66,24 @@ check(c.language == "enUS", "a journal from before is English", c.language)
 ns.login()
 check(c.language == "enUS", "a login on a French client leaves it English")
 
--- A new journal on a French client while the French is not complete: English.
-ns.french.ready = false
-HearthtaleChar = nil
-ns.login()
-check(HearthtaleChar.language == "enUS", "French is no default before it is complete", HearthtaleChar.language)
+-- A new journal on a French client without the French addon (turned off,
+-- or missing), or with another version's: English.
+NO_FRENCH = true
+G = lives.brannok()
+check(HearthtaleChar.language == "enUS", "no French addon, no French default", HearthtaleChar.language)
+check(not G.ns.french.ready, "no French addon, no French to choose")
+NO_FRENCH, FRENCH_VERSION = nil, "0.1.0"
+G = lives.brannok()
+check(HearthtaleChar.language == "enUS", "another version's French addon, no French default", HearthtaleChar.language)
+FRENCH_VERSION = nil
+
+-- An English journal never loads the French addon (Hearthtale_French, on
+-- demand: its tables stay out of an English player's memory).
+LOCALE = "enUS"
+G = lives.grashnak()
+G.ns.writeBook(HearthtaleChar)
+check(HearthtaleChar.language == "enUS", "a journal begun on an English client is English", HearthtaleChar.language)
+check(HearthtaleFrench == nil, "an English journal leaves the French addon unloaded")
 
 io.write(failures == 0 and "all good\n" or (failures .. " failed\n"))
 os.exit(failures == 0 and 0 or 1)

@@ -520,8 +520,37 @@ end
 local toasted = {}
 function GetRealmName() return state.realm or "Nightslayer" end
 function GetCurrentRegion() return state.region or 3 end
-C_AddOns =
-  { GetAddOnMetadata = function(name, key) return name == "Hearthtale" and key == "Version" and "0.2.0" or nil end }
+-- (Hearthtale_French, the French journal's addon, loaded on demand as the game
+-- would: its TOC's files into a namespace of its own; NO_FRENCH = true before
+-- this file, or the env, plays a game without it)
+local function french() return not (rawget(_G, "NO_FRENCH") or os.getenv("NO_FRENCH")) end
+C_AddOns = {
+  GetAddOnMetadata = function(name, key)
+    if key ~= "Version" then return nil end
+    if name == "Hearthtale" then return "0.2.0" end
+    if name == "Hearthtale_French" and french() then return rawget(_G, "FRENCH_VERSION") or "0.2.0" end
+  end,
+  -- (an addon on demand not yet loaded: loadable false, "DEMAND_LOADED", as
+  -- the game's own AddonList reads it)
+  GetAddOnInfo = function(name)
+    if name == "Hearthtale_French" and french() then
+      if HearthtaleFrench then return name, "Hearthtale (French journal)", "", true, nil end
+      return name, "Hearthtale (French journal)", "", false, "DEMAND_LOADED"
+    end
+    return nil, nil, nil, false, "MISSING"
+  end,
+  LoadAddOn = function(name)
+    if name ~= "Hearthtale_French" or not french() then return false, "MISSING" end
+    if HearthtaleFrench then return true end
+    local dir = DIR .. "../Hearthtale_French/"
+    local cns = {}
+    for line in io.lines(dir .. (FOREVER and "Hearthtale_French_Camelot.toc" or "Hearthtale_French_Vanilla.toc")) do
+      local f = line:match("^([%w_]+%.lua)%s*$")
+      if f then assert(loadfile(dir .. f))("Hearthtale_French", cns) end
+    end
+    return true
+  end,
+}
 C_XMLUtil = { GetTemplateInfo = function(name) return name ~= "PanelTabButtonTemplate" or nil end }
 -- The game's alert container: a frame joins its stack, and it places those
 -- shown, each on top of the one under it (AlertFrameAutoAnchoredMixin's way).
@@ -552,21 +581,12 @@ LinkProcessorResponse = { Handled = 2 }
 local ns = {}
 -- (the client's language: LOCALE = "frFR" before this file plays a French client)
 local LOCALE = rawget(_G, "LOCALE") or os.getenv("LOCALE") or "enUS"
--- (HEARTHTALE_FRENCH: the French journal's data first, kept out of the addon
--- until it is complete: addon/Hearthtale_French/)
-if rawget(_G, "HEARTHTALE_FRENCH") then
-  local game = FOREVER and "Forever" or "Classic"
-  for _, f in ipairs({ "FrenchNames_" .. game .. ".lua", "French_" .. game .. ".lua" }) do
-    assert(loadfile(DIR .. "../Hearthtale_French/" .. f))("Hearthtale", ns)
-  end
-end
+HearthtaleFrench = nil -- (each game starts without the French journal loaded)
 for line in io.lines(DIR .. (FOREVER and "Hearthtale_Camelot.toc" or "Hearthtale_Vanilla.toc")) do
   local f = line:gsub("%[TextLocale%]", LOCALE):match("^([%w_]+%.lua)%s*$")
   if f then assert(loadfile(DIR .. f))("Hearthtale", ns) end
 end
 local D = ns.data
--- (HEARTHTALE_FRENCH = true before this file: the French journal played before it is complete)
-if rawget(_G, "HEARTHTALE_FRENCH") and ns.french then ns.french.ready = true end
 -- The banners shown: what each said (the kit's banners, as the addon makes them).
 do
   local make = ns.kit.banners

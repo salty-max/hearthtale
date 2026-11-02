@@ -266,7 +266,7 @@ each English line, deed and scenery line told again in French, written in
   with its article where English has one ("{foe}": "un jeune troll
   Frostmane"; "{at}": "dans la Vallée des Frigères", "au Loch Modan"), and
   may take an article or a form agreeing with it: `{foe:un}`, `{foe:le}`,
-  `{item:de}`, `{prof:nu}` (the noun alone: "en minage"), `{foes=tombé|tombée|tombés|tombées}` (masculine, feminine,
+  `{item:de}`, `{prof:nu}` (the noun alone: "en minage"), `{at:lieu}` (a place without its preposition, its article kept: "partie de {at:lieu}" is "partie du Glas", "de Brill"), `{foes=tombé|tombée|tombés|tombées}` (masculine, feminine,
   their plurals; two forms: masculine, feminine).
 - A game name in the French text itself is never typed: `[[Ironforge]]`
   (the game's own French, each game's: "Ironforge" on Classic Era's French

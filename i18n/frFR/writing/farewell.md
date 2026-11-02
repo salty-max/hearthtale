@@ -7,7 +7,7 @@
 - {name}'s life had room for more than the world allowed.
   > La vie de {name} aurait pu contenir bien plus que ce que le monde lui a accordé.
 - May {name} be remembered for more than this last loss.
-  > Puisse-t-on se souvenir de {name} pour plus que cette dernière défaite.
+  > Qu'on se souvienne de {name} pour autre chose que cette dernière défaite.
 - May the clans of {home} hold a place for {name}.
   > Puissent les clans de {home} garder une place pour {name}.
 - {name} had a freedom the camps never knew, and no grave can take it back.

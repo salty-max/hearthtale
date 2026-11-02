@@ -11,12 +11,48 @@
 --     Zephras Isle and the old races' new classes, on Forever's own quests
 --     too (.cache/audit/game-forever.lua, from scripts/forever-data.ts);
 --     the books in .cache/audit/books-forever/.
+--   FRENCH=1 (and SEX=2 for a man): every book told in French (French.lua, the
+--     French journal's addon loaded as the game would): no entry left in
+--     English, no slot, gender token or English word left; the books in
+--     .cache/audit/books-fr/ (books-forever-fr/).
 local forever = os.getenv("FOREVER") == "1"
+local french = os.getenv("FRENCH") == "1"
 local DIR = "addon/Hearthtale/"
 local ns = {}
 assert(loadfile(DIR .. (forever and "Data_Forever.lua" or "Data_Classic.lua")))("Hearthtale", ns)
 assert(loadfile(DIR .. "Names.lua"))("Hearthtale", ns)
+if french then
+  -- (the French journal's addon, on demand, as game.lua plays it)
+  C_AddOns = {
+    GetAddOnMetadata = function(_, key) return key == "Version" and "0.2.0" or nil end,
+    GetAddOnInfo = function(name)
+      return name, name, "", false, name == "Hearthtale_French" and "DEMAND_LOADED" or "MISSING"
+    end,
+    LoadAddOn = function(name)
+      if name ~= "Hearthtale_French" or HearthtaleFrench then return true end
+      local dir, cns = "addon/Hearthtale_French/", {}
+      for line in io.lines(dir .. (forever and "Hearthtale_French_Camelot.toc" or "Hearthtale_French_Vanilla.toc")) do
+        local f = line:match("^([%w_]+%.lua)%s*$")
+        if f then assert(loadfile(dir .. f))("Hearthtale_French", cns) end
+      end
+      return true
+    end,
+  }
+  -- (the client's tables the French finds a name's id by, as the game's TOC loads them)
+  local game = forever and "Forever" or "Classic"
+  assert(loadfile(DIR .. "Client_" .. game .. ".lua"))("Hearthtale", ns)
+  assert(loadfile(DIR .. "English_" .. game .. ".lua"))("Hearthtale", ns)
+  -- (the game's names by id, as Record.lua gives them in the game)
+  local english
+  ns.record = {
+    names = function()
+      english = english or ns.englishNames()
+      return english
+    end,
+  }
+end
 dofile("addon/test/writer-files.lua")(ns, DIR)
+assert(not french or (ns.french and ns.french.ready), "French.lua: no French journal")
 local ok, D = pcall(dofile, ".cache/audit/game.lua")
 if not ok then
   io.stderr:write("no game data: run bun run audit\n")
@@ -47,7 +83,7 @@ if forever then
     NPCS[name] = NPCS[name] or v
   end
 end
-local BOOKS = forever and ".cache/audit/books-forever" or ".cache/audit/books"
+local BOOKS = (forever and ".cache/audit/books-forever" or ".cache/audit/books") .. (french and "-fr" or "")
 
 local problems = {}
 local function problem(where, msg, text)
@@ -989,16 +1025,39 @@ os.execute("mkdir -p " .. BOOKS)
 local books, chapters, quests = 0, 0, 0
 for _, life in ipairs(LIVES) do
   local c = play(life[1], life[2], life[3])
+  if french then
+    c.language, c.sex = "frFR", tonumber(os.getenv("SEX") or "3")
+    ns.french.fellBack, ns.french.partials, ns.french.missing, ns.french.unknown = 0, {}, {}, {}
+  end
   local book = ns.writeBook(c)
-  truth(c, life[1] .. " " .. life[2], problem)
+  if french then
+    for line in pairs(ns.french.missing) do
+      problem(life[1] .. " " .. life[2], "no French for a line", line)
+    end
+    if (ns.french.fellBack or 0) > 0 then
+      for n, text in pairs(ns.french.partials) do
+        problem(("%s %s chapter %d"):format(life[1], life[2], n), "left in English", text)
+      end
+    end
+  else
+    truth(c, life[1] .. " " .. life[2], problem)
+  end
   books = books + 1
   local f = io.open(("%s/%s-%s.md"):format(BOOKS, life[1], life[2]:lower()), "w")
   f:write(("# %s %s, levels 1 to %d\n\n"):format(life[1], life[2]:lower(), c.chapters[#c.chapters].start.level))
   for _, ch in ipairs(book.chapters) do
     chapters = chapters + 1
     local where = ("%s %s chapter %d"):format(life[1], life[2], ch.number)
-    inspect(where, ch.text)
-    namedOnce(where, ch.text)
+    if french then
+      local t = ch.text or ""
+      if t:find("{") or t:find("%$[gG]") or t:find("%[%[") then problem(where, "a slot or token left", t) end
+      for _, w in ipairs({ "the", "and", "with", "of", "my", "was", "were", "had", "into", "from" }) do
+        if t:find("%f[%a]" .. w .. "%f[%A]") then problem(where, 'English "' .. w .. '"', t) end
+      end
+    else
+      inspect(where, ch.text)
+      namedOnce(where, ch.text)
+    end
     local levels = ch.from == ch.to and ("level %d"):format(ch.from) or ("levels %d to %d"):format(ch.from, ch.to)
     if ch.open then levels = levels .. ", still being written" end
     f:write(

@@ -17,7 +17,7 @@
 - {giver} taught me to call a felhunter, a hound of the Nether that feeds on magic.
   > {giver} m'a appris à appeler un chasseur corrompu, un molosse du Néant qui se nourrit de magie.
 - I learned {spell} from {giver} for the work.
-  > {giver} m'a appris {spell:le} pour ce travail.
+  > {giver} m'a appris {spell:le} pour la suite.
 - The reward was a lesson: {giver} taught me {spell}.
   > La récompense était une leçon : {giver} m'a appris {spell:le}.
 - What {giver} gave me for it was {spell}, and it was worth the trouble.

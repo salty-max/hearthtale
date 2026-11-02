@@ -195,7 +195,7 @@
 - 2962 | ai rassemblé des retombées très actives sur les limons, les rôdeurs et les horreurs irradiés de [[Gnomeregan]], le premier échantillon d'Ozzie étant trop faible
 - 456 | ai éclairci les rangs des jeunes sabres-de-nuit et des sangliers des chardons, trop nombreux après de fortes pluies de printemps, pour garder l'équilibre de la nature à [[Shadowglen]]
 - 457 | ai abattu des sabres-de-nuit galeux et des sangliers des chardons avant qu'ils ne dévorent toute la nourriture de la forêt, pour le conservateur Ilthalaine
-- 459 | ai pris de la gangremousse aux grells qui menaçaient [[Shadowglen]], confirmant la crainte de Tarindrella que sa corruption gagnait [[Teldrassil]]
+- 459 | ai pris de la gangremousse aux grells qui menaçaient [[Shadowglen]], confirmant la crainte de Tarindrella de voir cette corruption gagner [[Teldrassil]]
 - 916 | ai rassemblé des glandes à venin d'araignées Tissebois pour Gilshalan Windwalker, qui pensait que le nouvel arbre-monde avait changé les araignées
 - 917 | suis $gallé:allée; chercher un œuf intact dans le nid des araignées Tissebois de [[Shadowthread Cave]] pour les études de Gilshalan à [[Darnassus]]
 - 921 | ai rempli une fiole au puits de lune pour Tenaron Stormgrip en apprenant ce qu'il était advenu de Nordrassil après la bataille du mont Hyjal

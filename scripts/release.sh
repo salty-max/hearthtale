@@ -16,4 +16,4 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 kit=$(bun scripts/root.ts addon-kit)
-exec bash "$kit/release.sh" --folders "addon/Hearthtale" "$@"
+exec bash "$kit/release.sh" --folders "addon/Hearthtale addon/Hearthtale_French" "$@"
