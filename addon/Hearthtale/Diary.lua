@@ -1857,7 +1857,7 @@ local function entry(d, n, ch)
     local place = o.where and o.where:gsub("^%a+ ", "")
     if place and k > 1 and out[k - 1].text:find(place, 1, true) then
       o.text = o.text:gsub(", " .. o.where:gsub("%p", "%%%0") .. ",", ",", 1)
-      local frWhere = french and F.memo[o.where]
+      local frWhere = french and F.memo[o.where] and F.tidy(F.memo[o.where])
       if o.fr and frWhere then o.fr = o.fr:gsub(", " .. frWhere:gsub("%p", "%%%0") .. ",", ",", 1) end
     end
   end
@@ -1898,6 +1898,14 @@ local function entry(d, n, ch)
       return (table.concat(frTexts, " "):gsub(" \n\n ", "\n\n")), frTitle, true
     end
     F.fellBack = (F.fellBack or 0) + 1 -- (an entry left in English: the tests count them)
+    -- (for the tests: the entry as far as it has French, the rest marked)
+    if F.partials then
+      local mixed = {}
+      for _, o in ipairs(out) do
+        mixed[#mixed + 1] = o.fr or ("[EN] " .. o.text)
+      end
+      F.partials[n] = table.concat(mixed, " ")
+    end
   end
   return (table.concat(texts, " "):gsub(" \n\n ", "\n\n")), title
 end

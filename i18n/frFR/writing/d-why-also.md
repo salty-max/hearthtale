@@ -19,12 +19,14 @@
 - Then I {why}.
   > Puis je {why}.
 - The road took me on, and {where} I {why}.
-  > La route m'a $gemmené:emmenée; plus loin, et {where} je {why}.
+  > La route m'a $gmené:menée; plus loin, et {where} je {why}.
 - When night came, I {why}.
   > À la nuit tombée, je {why}.
 - When night came, {where}, I {why}.
   > À la nuit tombée, {where}, je {why}.
 - With that done, I {why}.
   > Cela fait, je {why}.
+- The same business led me on, and I {why}.
+  > La même affaire m'a $gmené:menée; plus loin, et je {why}.
 - With that done, {where}, I {why}.
   > Cela fait, {where}, je {why}.

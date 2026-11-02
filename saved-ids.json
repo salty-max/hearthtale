@@ -108,6 +108,9 @@
       ]
     }
   },
+  "unlisted": {
+    "addon/Hearthtale_French/*.lua": "the journal's French (French.lua): the game's French names and the French lines, keyed by the ids the English tables above decode; a saved file never holds them (a journal keeps its record by those English tables' ids, told in French when its language is), so dropping one loses a translation, never a saved id"
+  },
   "removed": [
     {
       "table": "building areas (Forever)",

@@ -13,8 +13,9 @@
 -- spell, a trade, a creature, a place) through the English name's id. A
 -- name the tables don't know stays as kept (a player's, a pet's, a name the
 -- client gave in French). A French template may write {slot:un}, {slot:le},
--- {slot:de} (its article, agreeing) and {slot=m|f} or {slot=m|f|mp|fp} (a
--- word agreeing with it); $gmasc:fem; agrees with the narrator.
+-- {slot:de} (its article, agreeing), {slot:nu} (its noun alone) and
+-- {slot=m|f} or {slot=m|f|mp|fp} (a word agreeing with it); $gmasc:fem;
+-- agrees with the narrator.
 local _, ns = ...
 local W = ns.writer
 if not (W and ns.frenchNames and ns.frenchWriting) then return end
@@ -78,6 +79,15 @@ F.lowerFirst, F.upperFirst = lowerFirst, upperFirst
 
 -- (the vowels a French word elides before: é, è, à, î … are two bytes, the
 -- first \195; ç is not one; an aspirated h is no vowel: "la Horde")
+-- (the common nouns with a mute h that open the game's item and spell names)
+local MUTE_H = {}
+for w in
+  ([[huile habit herbe heure homme hôtel hymne histoire hiver honneur horreur horloge héritage
+  hémorragie hibernation hérésie héros_ harmonie hydre hydromel hémoglobine hostie humeur huître hutin
+  habileté habitant hallebardier_ hommage horizon hospice]]):gmatch("%S+")
+do
+  if not w:find("_$") then MUTE_H[w] = true end
+end
 local ASPIRATED = {
   horde = true,
   ["h\195\169ros"] = true,
@@ -94,6 +104,17 @@ local ASPIRATED = {
   homard = true,
   honte = true,
   hutte = true,
+  haubert = true,
+  harnais = true,
+  heaume = true,
+  horion = true,
+  heurt = true,
+  hallebarde = true,
+  hampe = true,
+  harpon = true,
+  hargne = true,
+  hurlevent = true,
+  ["h\195\162te"] = true, -- (hâte)
   hall = true,
   halte = true,
   hangar = true,
@@ -110,14 +131,27 @@ local function vowel(word)
     local b = word:byte(2)
     return b ~= 167 and b ~= 135 -- (ç, Ç)
   end
-  if c == "h" or c == "H" then return not ASPIRATED[(word:lower():match("^[%a\128-\255]+") or "")] end
+  -- (a name of the game's with an H never elides, as its own texts write
+  -- it: "de Hurlevent", "de Hautebrande", "de Hogger"; but an item's or a
+  -- spell's common noun with a mute h does: "l'Hémorragie", "l'Huile")
+  if c == "H" then
+    local w = (word:match("^[%a\128-\255]+") or ""):lower()
+    return MUTE_H[w] or MUTE_H[(w:gsub("s$", ""))] or false
+  end
+  if c == "h" then
+    local w = word:match("^[%a\128-\255]+") or ""
+    return not (ASPIRATED[w] or ASPIRATED[(w:gsub("s$", ""))]) -- ("de huttes")
+  end
   return false
 end
 F.vowel = vowel
 
--- What French does where two words meet: "je ai" is "j'ai", "de le" is "du",
--- "à les" is "aux", "si il" is "s'il". (A word starts after a space, a quote
--- or a parenthesis.)
+-- (an article the writer put before a name or a slot's value, marked so only
+-- it contracts: "de le pic" is "du pic", "de le laisser" stays as written)
+local A = "\1"
+-- What French does where two words meet: "je ai" is "j'ai", "de le" (an
+-- article of ours) is "du", "à les" is "aux", "si il" is "s'il". (A word
+-- starts after a space, a quote or a parenthesis.)
 local function tidy(s)
   s = " " .. s
   s = s:gsub('([%s%("])([JjMmTtSsLlNnDdCc])e (%S+)', function(b, l, w)
@@ -133,14 +167,14 @@ local function tidy(s)
     if vowel(w) then return b .. j .. "'" .. w end
   end)
   -- (de, à before the article: du, des, au, aux; never before l')
-  s = s:gsub('([%s%("])([Dd])e le ', "%1%2u "):gsub('([%s%("])([Dd])e les ', "%1%2es ")
+  s = s:gsub('([%s%("])([Dd])e \1le ', "%1%2u "):gsub('([%s%("])([Dd])e \1les ', "%1%2es ")
   -- (after an apostrophe too: "jusqu'aux Tarides")
-  s = s:gsub("([%s%(\"'])\195\160 le ", "%1au "):gsub("([%s%(\"'])\195\160 les ", "%1aux ")
-  s = s:gsub('([%s%("])\195\128 le ', "%1Au "):gsub('([%s%("])\195\128 les ', "%1Aux ")
+  s = s:gsub("([%s%(\"'])\195\160 \1le ", "%1au "):gsub("([%s%(\"'])\195\160 \1les ", "%1aux ")
+  s = s:gsub('([%s%("])\195\128 \1le ', "%1Au "):gsub('([%s%("])\195\128 \1les ', "%1Aux ")
   -- (de before un plural indefinite: "de des" is "de")
   s = s:gsub('([%s%("])([Dd])e des ', "%1%2e ")
   s = s:gsub(" si il", " s'il"):gsub(" si ils", " s'ils")
-  return s:sub(2)
+  return (s:sub(2):gsub(A, ""))
 end
 F.tidy = tidy
 
@@ -287,19 +321,24 @@ end
 F.lookup = lookup
 
 -- A place: an area, a place inside a building, a dungeon.
-local function placeOf(name) return lookup("areas", name) or lookup("inside", name) or lookup("maps", name) end
+local function placeOf(name)
+  return lookup("areas", name)
+    or lookup("inside", name)
+    or lookup("maps", name)
+    or (name and lookup("areas", name .. " City")) -- (a spell's "Teleport: Stormwind")
+end
 -- (Forgefer; la vallée des Frigères; l'île; les Tarides)
 local function withArticle(e, art)
   local a = art or e[3] or ""
   if a == "" then return e[1] end
-  if a == "l'" then return "l'" .. e[1] end
-  return a .. " " .. e[1]
+  if a == "l'" then return A .. "l'" .. e[1] end
+  return A .. a .. " " .. e[1]
 end
 local function definiteOf(n, g)
   g = g or "m"
-  if g:find("p") then return "les " .. n end
-  if vowel(n) then return "l'" .. n end
-  return (g == "f" and "la " or "le ") .. n
+  if g:find("p") then return A .. "les " .. n end
+  if vowel(n) then return A .. "l'" .. n end
+  return A .. (g == "f" and "la " or "le ") .. n
 end
 local function indefiniteOf(n, g)
   g = g or "m"
@@ -359,7 +398,7 @@ local function definiteCreature(name)
   local e = creatureOf(name)
   if type(e) ~= "table" then
     F.unknown[name] = true
-    return "le " .. name
+    return A .. "le " .. name
   end
   local n = lowerFirst(e[1])
   return made(definiteOf(n, e[2]), e[2], n)
@@ -517,7 +556,8 @@ local function bySlot(slot, v)
   end
   if slot == "spell" or slot == "spells" then
     local e = lookup("spells", v)
-    return e and (type(e) == "table" and e[1] or e) or nil
+    if type(e) == "table" then return made(e[1], e[2], e[1]) end
+    return e
   elseif slot == "spec" or slot == "was" then
     local e = lookup("treeIds", v) or lookup("specIds", v)
     return e and (type(e) == "table" and e[1] or e) or nil
@@ -624,6 +664,11 @@ local FRENCH_OF = {
       genders[#genders + 1] = F.gender[f]
     end
     local out = listing(fr)
+    local bares = {}
+    for k, f in ipairs(fr) do
+      bares[k] = F.bare[f] or f
+    end
+    if out then F.bare[out] = listing(bares) end
     if out and #fr > 1 then
       local fem = true
       for _, g in ipairs(genders) do
@@ -651,22 +696,22 @@ end
 -- ── the voice: home, kin, faith, a weapon ────────────────────────────────────
 local KIN = {
   Human = "mon peuple",
-  Dwarf = "les miens",
-  Gnome = "les autres gnomes",
-  NightElf = "les miens",
+  Dwarf = A .. "les miens",
+  Gnome = A .. "les autres gnomes",
+  NightElf = A .. "les miens",
   Orc = "mon clan",
-  Troll = "les Sombrelances",
+  Troll = A .. "les Darkspear", -- (the game's French keeps the name: "Trolls Darkspear")
   Tauren = "ma tribu",
-  Scourge = "les R\195\169prouv\195\169s",
-  Skyborne = "les shen'dorei",
+  Scourge = A .. "les R\195\169prouv\195\169s",
+  Skyborne = A .. "les shen'dorei",
 }
 local FAITH = {
-  ["the Light"] = "la Lumi\195\168re",
+  ["the Light"] = A .. "la Lumi\195\168re",
   Elune = "Elune",
-  ["the Earth Mother"] = "la Terre-M\195\168re",
-  ["the loa"] = "les loas",
-  ["the ancestors"] = "les anc\195\170tres",
-  ["the spirits"] = "les esprits",
+  ["the Earth Mother"] = A .. "la Terre-M\195\168re",
+  ["the loa"] = A .. "les loas",
+  ["the ancestors"] = A .. "les anc\195\170tres",
+  ["the spirits"] = A .. "les esprits",
 }
 local WEAPONS = {
   ["my weapon"] = "mon arme",
@@ -687,8 +732,8 @@ local HOME = {
   Ironforge = "Forgefer",
   Darnassus = "Darnassus",
   Orgrimmar = "Orgrimmar",
-  ["Sen'jin Village"] = "le village de Sen'jin",
-  ["Thunder Bluff"] = "les Pitons-du-Tonnerre",
+  ["Sen'jin Village"] = A .. "le village de Sen'jin",
+  ["Thunder Bluff"] = A .. "les Pitons-du-Tonnerre",
   ["the Undercity"] = "Fossoyeuse",
 }
 local function voice(slot, v)
@@ -713,12 +758,29 @@ end
 -- ("Ironforge" on Classic's French client, "Forgefer" on Forever's), never
 -- typed: [[Ironforge]] (a place with its article, a creature, an item, a
 -- trade), [[at:Coldridge Valley]] ("dans la vallée des Frigères"),
--- [[un:Frostmane Troll Whelp]], [[le:Defias Messenger]], [[name:Hogger]].
+-- [[un:Frostmane Troll Whelp]], [[le:Defias Messenger]], [[name:Hogger]],
+-- [[spell:Life Tap]] (a spell, never a creature or an item of its name),
+-- [[sort:Hunter's Mark]] (a spell with its article: "la Marque du chasseur"),
+-- [[faction:Frostwolf Clan]] (a faction, each game's: "Clan Loup-de-Givre"),
+-- [[spec:Beast Mastery]] (a talent tree, a specialization).
 local function gameName(form, english)
   if form == "at" then return frAt(english) end
   if form == "un" then return indefiniteCreature(english) end
   if form == "le" then return definiteCreature(english) end
   if form == "name" then return nameOf(english) end
+  if form == "faction" then
+    local f = FN.factions and FN.factions[english]
+    if not f then F.unknown[english] = true end
+    return f or english
+  end
+  if form == "spec" then
+    local e = lookup("treeIds", english) or lookup("specIds", english)
+    if type(e) == "table" then return e[1] end
+  end
+  if form == "spell" or form == "sort" then
+    local e = lookup("spells", english)
+    if type(e) == "table" then return form == "sort" and definiteOf(e[1], e[2]) or e[1] end
+  end
   return generic(english) or (function()
     F.unknown[english] = true
     return english
@@ -728,7 +790,18 @@ local function names(s)
   return (
     s:gsub("%[%[(.-)%]%]", function(inner)
       local form, english = inner:match("^(%a+):(.+)$")
-      if not (form == "at" or form == "un" or form == "le" or form == "name") then
+      if
+        not (
+          form == "at"
+          or form == "un"
+          or form == "le"
+          or form == "name"
+          or form == "spell"
+          or form == "sort"
+          or form == "faction"
+          or form == "spec"
+        )
+      then
         form, english = "", inner
       end
       return gameName(form, english)
@@ -781,6 +854,7 @@ function F.fill(fr, values, book, raw)
       if arg == "un" then return indefiniteOf(bare, g) end
       if arg == "le" then return definiteOf(bare, g) end
       if arg == "de" then return "de " .. definiteOf(bare, g) end
+      if arg == "nu" then return bare end -- (the noun alone: "en {prof:nu}", "en minage")
       return f
     elseif how == "=" then
       return agree(arg, F.gender[f])
@@ -838,7 +912,7 @@ local OURS = {
   NightElf = { "elfes de la nuit", "kaldorei" },
   Gnome = { "gnomes" },
   Orc = { "orcs" },
-  Troll = { "trolls Sombrelance", "Sombrelances" },
+  Troll = { "trolls Darkspear", "Darkspear" },
   Tauren = { "taurens", "shu'halo" },
   Scourge = { "R\195\169prouv\195\169s" },
 }
@@ -886,7 +960,7 @@ function F.title(english, quest)
   local p = placeOf(english)
   if p then
     local a = p[3] or ""
-    return upperFirst(a == "" and p[1] or withArticle(p))
+    return upperFirst(a == "" and p[1] or (withArticle(p):gsub(A, "")))
   end
   local c = creatureOf(english)
   if type(c) == "table" then return c[1] end

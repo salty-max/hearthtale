@@ -7,85 +7,466 @@ ns.frenchComplete = false
 function ns.frenchWriting() return {
   writing = {
     ["bag"] = {
-
+      [1] = "Dans le butin se trouvait {item}, mon premier sac, et je réfléchissais déjà à ce que j'allais mettre dans {slots} places de plus.",
+      [2] = "J'ai pris {item} dans le butin, avec plus de plaisir à gagner de la place que je n'en aurais autrefois attendu d'un sac.",
+      [3] = "La chance a laissé {item} dans le butin, mon premier sac, et je me sentais $gprêt:prête; à être moins $gregardant:regardante; sur la taille de mes trouvailles.",
+      [4] = "J'ai trouvé {item} dans le butin, avec de la place pour {slots} choses de plus et une nouvelle tentation de trop garder.",
+      [5] = "J'avais {item}, mon premier sac, avec de la place pour {slots} choses de plus.",
+      [6] = "J'avais enfin {item}, et de la place pour davantage de ce que la route me donnait.",
+      [7] = "Avec {item}, j'avais enfin de la place en plus, et un peu plus d'ambition pour ce que je pourrais amasser.",
+      [8] = "Je me suis procuré {item}, et un sac m'a paru un bien plus séduisant que son nom banal ne le laissait croire.",
+      [9] = "J'avais enfin un sac à moi, avec de la place pour {slots} choses de plus et moins de raisons d'envier le paquetage d'autrui.",
+      [10] = "Un premier sac a rejoint mes affaires, avec {slots} places de plus pour ce que la route apporterait.",
     },
     ["beginning"] = {
-
+      [1] = "J'ai fait mes premiers pas {at}, la route me paraissant encore plus engageante qu'effrayante.",
+      [2] = "Je me suis $gmis:mise; en route {at}, avec l'assurance intacte de qui n'a encore jamais essuyé de refus.",
+      [3] = "J'ai fait mes premiers pas {at}, avide de découvrir un monde que je commençais à peine à connaître.",
+      [4] = "Je me suis $gmis:mise; en route {at}, avec plus de courage que d'expérience, et la ferme intention de garder l'un et l'autre.",
+      [5] = "J'ai fait mes premiers pas {at}, $gprêt:prête; à rendre service sans bien savoir ce qu'il m'en coûterait.",
+      [6] = "Je me suis $gmis:mise; en route {at}, $gcurieux:curieuse; du monde au-delà des soucis que je connaissais déjà.",
+      [7] = "J'ai fait mes premiers pas {at}, avec une seule vie à préserver et aucune envie de la gaspiller à prouver mon courage.",
+      [8] = "Je me suis $gmis:mise; en route {at}, en espérant que la route aurait la bonté de me laisser vieillir.",
     },
     ["boss-final"] = {
-
+      [1] = "J'ai aidé à abattre {boss}, et la sortie de {dungeon} a été la plus belle chose que j'aie vue de la journée.",
+      [2] = "J'ai vu tomber {boss}, et je pouvais songer à quitter {dungeon} sans me préparer d'abord à un autre combat.",
+      [3] = "J'ai vaincu {boss} dans {dungeon}, et le soulagement a mis plus de temps à venir que je ne l'aurais cru.",
+      [4] = "Nous avons enfin abattu {boss}, et je me suis $gautorisé:autorisée; à croire que nous pourrions quitter {dungeon} vivants.",
+      [5] = "J'ai vu tomber {boss}, et j'ai senti combien j'avais voulu quitter {dungeon} $gentier:entière;.",
+      [6] = "J'ai eu raison de {boss}, et les dangers de {dungeon} suffisaient largement à occuper mes pensées pour un temps.",
+      [7] = "Nous avons vaincu {boss}, et j'étais $greconnaissant:reconnaissante; d'avoir de la compagnie pour sortir de {dungeon}.",
+      [8] = "J'ai vaincu {boss}, toujours $gvivant:vivante; dans {dungeon} et bien $gheureux:heureuse; que le prochain danger puisse attendre.",
+      [9] = "J'ai enfin vu tomber {boss}, et je pouvais cesser d'attendre que {dungeon} mette encore mon courage à l'épreuve.",
+      [10] = "Une fois {boss} hors de combat, je pouvais quitter {dungeon}, mon goût du danger largement satisfait.",
+      [11] = "J'ai vu tomber {boss}, et l'envie d'être à l'abri hors de {dungeon} semblait enfin à portée de main.",
+      [12] = "J'ai eu raison de {boss}, et j'ai senti le poids de {dungeon} s'alléger en moi.",
     },
     ["c-loot"] = {
-
+      [1] = "ai trouvé {item}, une chose rare",
+      [2] = "ai obtenu {item}",
+      [3] = "ai pris {item} dans le butin",
+      [4] = "ai trouvé {item}, un trésor que je n'avais aucune envie de laisser derrière moi",
+      [5] = "ai remporté {item}",
+      [6] = "ai eu la chance de trouver {item}",
+      [7] = "ai déniché {item} dans le butin",
+      [8] = "ai tiré {item} du butin, une belle pièce",
     },
     ["c-prof"] = {
-
+      [1] = "ai découvert {prof}",
+      [2] = "ai commencé à apprendre {prof}",
+      [3] = "ai entrepris d'apprendre {prof}",
+      [4] = "ai fait mes débuts en {prof:nu}",
+      [5] = "ai commencé à pratiquer {prof}",
+      [6] = "ai commencé ma formation en {prof:nu}",
+      [7] = "ai repris {prof}, en repartant de zéro",
+      [8] = "ai retrouvé {prof}, en recommençant de rien",
+      [9] = "ai repris {prof}, de nouveau $gdébutant:débutante;",
+      [10] = "ai atteint le rang de {rank} en {prof:nu}",
+      [11] = "me suis $gformé:formée; jusqu'au rang de {rank} en {prof:nu}",
+      [12] = "ai gagné le statut de {arank} en {prof:nu}",
+      [13] = "suis $gallé:allée; en {prof:nu} aussi loin qu'un maître pouvait me mener",
+      [14] = "ai poussé {prof} aussi loin que possible",
+      [15] = "ai maîtrisé {prof}, aussi loin qu'on pouvait l'enseigner",
+      [16] = "ai abandonné {prof}",
+      [17] = "ai mis {prof} de côté",
+      [18] = "ai laissé {prof} derrière moi",
+      [19] = "ai atteint le rang de {rank} en {prof:nu}, que j'avais commencé à apprendre {began}",
+      [20] = "me suis $gformé:formée; jusqu'au rang de {rank} en {prof:nu}, bien loin de mes premières leçons {began}",
+      [21] = "y ai renoncé",
+      [22] = "y ai renoncé pour un temps",
+      [23] = "y ai atteint le rang de {rank}",
+      [24] = "m'y suis $gformé:formée; jusqu'au rang de {rank}",
+      [25] = "ai abandonné {prof} avant d'y revenir bientôt",
+      [26] = "ai mis {prof} de côté, puis je me suis $gravisé:ravisée;",
+      [27] = "ai laissé tomber {prof} puis je m'y suis $gremis:remise;, en recommençant depuis le début",
     },
     ["c-raid"] = {
-
+      [1] = "ai rejoint un raid de {n}",
+      [2] = "ai fait partie d'un raid de {n}",
+      [3] = "me suis $gjoint:jointe; à une bande de {n} combattants",
+      [4] = "ai pris ma place dans un raid de {n}",
+      [5] = "ai rejoint une compagnie de {n} en route pour le même combat",
+      [6] = "ai tenu mon rang dans un raid de {n}",
+      [7] = "suis $gdevenu:devenue; $gl'un:l'une; des {n} d'un raid",
+      [8] = "ai marché avec un raid de {n}",
     },
     ["class-reward"] = {
-
+      [1] = "{giver} m'a appris à invoquer {pet}, et j'ai aimé l'idée d'offrir à mes ennemis une autre cible que moi.",
+      [2] = "Ma récompense de la part de {giver} : {pet} à moi, que je pouvais appeler.",
+      [3] = "Pour ce travail, {giver} m'a appris à invoquer {pet}, un serviteur venu du mauvais côté du monde.",
+      [4] = "{giver} m'a appris l'invocation de {pet}, et le pouvoir m'attirait plus que la compagnie.",
+      [5] = "{giver} m'a appris à appeler un diablotin, un allié assez petit pour qu'on l'oublie et assez dangereux pour qu'on regrette de l'avoir oublié.",
+      [6] = "{giver} m'a appris à appeler un marcheur du Vide, et l'idée de mettre une ombre solide entre un ennemi et moi était réconfortante.",
+      [7] = "{giver} m'a appris à appeler une succube, et je doutais qu'une agréable compagnie soit ce que j'avais négocié.",
+      [8] = "{giver} m'a appris à appeler un chasseur corrompu, un molosse du Néant qui se nourrit de magie.",
+      [9] = "{giver} m'a appris {spell:le} pour ce travail.",
+      [10] = "La récompense était une leçon : {giver} m'a appris {spell:le}.",
+      [11] = "Ce que {giver} m'a donné en échange, c'est {spell:le}, et cela valait la peine.",
+      [12] = "Ce travail m'a $gramené:ramenée; auprès de {giver} pour une leçon : {spell}.",
     },
     ["close-deep"] = {
-
+      [1] = "{foe} m'a $glaissé:laissée; à peine $gvivant:vivante; {at}. Un retour sans danger valait soudain toutes les corvées ennuyeuses qui pourraient l'accompagner.",
+      [2] = "{foe} a bien failli m'achever {at}, et mes mains n'arrivaient pas à croire que le danger était passé.",
+      [3] = "J'ai survécu de justesse {at}. Longtemps après, je suis $gresté:restée; $gassis:assise; sans bouger, à simplement respirer.",
+      [4] = "{foe} a bien failli me tuer {at}, et il ne me restait de courage que pour vouloir rester en vie.",
+      [5] = "J'ai survécu de justesse {at}, et j'ai rêvé de ces abris que je trouvais autrefois tout naturels.",
+      [6] = "J'ai frôlé la mort de très près {at}, sans trouver aucun réconfort à mesurer combien la moindre erreur aurait suffi.",
+      [7] = "J'ai survécu {at}, trop $gsecoué:secouée; pour bien distinguer, un moment, le soulagement de la peur.",
+      [8] = "{foe} a bien failli me tuer {at}. Je voulais, de toutes mes forces, vieillir en me souciant de choses ordinaires.",
+      [9] = "J'ai survécu de justesse {at} après la tombée de la nuit, et j'ai espéré le jour avec une impatience que je ne pouvais apaiser.",
+      [10] = "{foe} a bien failli m'achever {at}. Je n'avais qu'une vie, et toutes mes belles idées de gloire ont rétréci devant la pensée de la perdre.",
+      [11] = "J'ai frôlé la mort {at}, $greconnaissant:reconnaissante; pour une chance sur laquelle je ne pouvais pas compter deux fois.",
+      [12] = "J'ai survécu de justesse {at}, les mains privées de l'assurance que la peur leur avait prise.",
+      [13] = "J'ai bien failli mourir {at}. Toute la route parcourue m'aurait été d'un bien maigre réconfort.",
+      [14] = "{foe} m'a $glaissé:laissée; à peine $gvivant:vivante; {at}, et ma foi n'en était pas moins chère, même si j'étais $geffrayé:effrayée; au point de ne savoir prier avec grâce.",
+      [15] = "{foe} a bien failli m'achever {at}, et je n'avais d'autres mots pour prier que le souhait de ne pas être $gemporté:emportée; tout de suite.",
+      [16] = "{foe} m'a $glaissé:laissée; à peine $gvivant:vivante; {at}. Je pouvais trouver du réconfort dans la solidité de la terre sans pour autant la rejoindre.",
+      [17] = "{foe} a bien failli m'achever {at}. Ma rage s'était montrée bien pressée de se battre, et nettement moins utile quand j'ai voulu vivre.",
+      [18] = "J'ai bien failli mourir {at}, et il m'a fallu un peu de temps sans autre exigence que rester en vie.",
+      [19] = "{foe} m'a $glaissé:laissée; à peine $gvivant:vivante; {at}, l'envie d'être à l'abri chez moi plus forte que le courage qui m'avait $gpoussé:poussée; à partir.",
+      [20] = "J'ai frôlé la mort {at}, et la seule pensée d'une voix amie a suffi à me faire craquer.",
+      [21] = "J'ai survécu de justesse {at}, sans plus aucune prétention de bravoure dans l'acharnement avec lequel je m'accrochais.",
+      [22] = "J'ai survécu {at} de justesse, de trop peu pour que la fierté y trouve prise.",
+      [23] = "J'ai traversé le danger {at}, et mes mains ont mis du temps à se fier au calme qui a suivi.",
+      [24] = "{foe} a bien failli me tuer {at} dans le noir. J'aspirais à un matin ordinaire sans avoir à prouver que je le méritais.",
     },
     ["close-light"] = {
-
+      [1] = "{foe} a bien failli me tuer {at}, et mes mains ont tremblé longtemps après la fin du danger.",
+      [2] = "J'ai survécu de justesse à {foe} {at}, avec un besoin d'abri plus fort que toute fierté d'en être $gsorti:sortie;.",
+      [3] = "J'ai frôlé la mort {at}, et j'aurais échangé tous les éloges du monde contre une soirée tranquille.",
+      [4] = "{foe} m'a $gmené:menée; au bord de la mort {at}. J'aurais bien préféré me plaindre d'une besogne sans danger.",
+      [5] = "J'ai survécu de justesse {at}, sans aucune envie de savoir si mon courage supporterait une autre épreuve.",
+      [6] = "{foe} a bien failli m'achever {at}, et le soulagement a mis bien plus de temps à venir que je ne l'aurais cru.",
+      [7] = "J'ai bien failli tomber {at}, et la seule pensée de rester en vie occupait toute la place en moi.",
+      [8] = "J'ai frôlé la mort {at}, trop $gsecoué:secouée; pour me réjouir d'avoir prouvé que je pouvais y survivre.",
+      [9] = "J'ai bien failli mourir {at}, et l'idée d'un endroit où je n'aurais pas à être $gcourageux:courageuse; m'a $gréconforté:réconfortée;.",
+      [10] = "J'ai frôlé la mort {at} dans le noir, et ma peur a mis plus de temps à partir que le danger.",
+      [11] = "J'ai bien failli tomber {at} après la tombée de la nuit. Le jour m'avait rarement paru si doux.",
+      [12] = "{foe} a bien failli me tuer {at}, et j'ai été $greconnaissant:reconnaissante; de garder la seule vie que j'avais.",
+      [13] = "{foe} a bien failli me tuer {at}, et j'ai pensé à toutes les blessures que je préférerais soigner plutôt que subir.",
+      [14] = "{foe} a bien failli m'achever {at}. Je voulais l'abri de la Lumière sans avoir à quitter le monde pour cela.",
+      [15] = "J'ai survécu à {foe} {at}, et je me suis $gsurpris:surprise; à regretter la distance rassurante d'une salle d'étude.",
+      [16] = "{foe} a bien failli m'achever {at}, et j'aurais voulu échapper à la peur aussi facilement que j'espérais échapper aux regards.",
+      [17] = "{foe} a bien failli me tuer {at}, et le travail tranquille de suivre une piste m'a soudain paru bien tentant.",
+      [18] = "{foe} a bien failli me tuer {at}, et ma propre chair valait soudain plus à mes yeux que la force de n'importe quel démon.",
+      [19] = "J'ai frôlé la mort {at}, et le soulagement a pris son temps pour atteindre ce qui, en moi, voulait encore fuir.",
+      [20] = "J'ai bien failli mourir {at}, et le calme qui a suivi m'a paru plus difficile à croire que je ne l'aurais pensé.",
+      [21] = "J'ai survécu de justesse {at}, sans aucune envie de revivre la leçon pour en faire un meilleur récit.",
+      [22] = "{foe} a bien failli m'achever {at}, et une vie ordinaire m'a soudain paru bien précieuse à perdre.",
+      [23] = "J'ai frôlé la mort {at}, mon courage épuisé et mon envie de vivre bien intacte.",
     },
     ["d-calling"] = {
-
+      [1] = "J'ai appris [[sort:Defensive Stance]], et j'ai compris qu'un combat ne se résumait pas à frapper le premier.",
+      [2] = "[[sort:Defensive Stance]] m'a appris à me tenir là où pleuvent les coups, et à en faire mon métier.",
+      [3] = "Avec [[sort:Defensive Stance]], je pouvais m'ancrer au sol et tenir, et j'ai commencé à comprendre à quoi sert un mur de boucliers.",
+      [4] = "J'ai adopté [[sort:Berserker Stance]], en me demandant quelle fureur un corps peut contenir sans se briser.",
+      [5] = "[[sort:Berserker Stance]] était la dernière des trois postures du guerrier, et la plus vorace.",
+      [6] = "J'ai appris [[sort:Redemption]], et avec elle le pouvoir de rappeler à la Lumière un ami tombé.",
+      [7] = "[[sort:Redemption]] était enfin à moi, et aucun de mes compagnons n'avait plus à rester à terre tant que je tenais debout.",
+      [8] = "[[sort:Redemption]] était à moi, et de tous les paladins, j'étais $gle mieux placé:la mieux placée; pour savoir ce que c'est qu'être $grappelé:rappelée;.",
+      [9] = "J'ai appris à préparer des poisons, et mes lames n'auraient plus jamais besoin d'être honnêtes.",
+      [10] = "Les poisons étaient désormais à ma disposition, la patience d'un voleur distillée dans une fiole.",
+      [11] = "J'ai appris [[sort:Desperate Prayer]], la supplique que les prêtres de mon peuple gardent pour l'instant où il ne reste plus rien.",
+      [12] = "[[sort:Desperate Prayer]] était à moi désormais, une prière pour ma propre peau, et j'espérais en avoir rarement besoin.",
+      [13] = "[[sort:Feedback]] était à moi désormais, de quoi retourner la magie d'un ennemi contre celui qui la lance.",
+      [14] = "J'ai appris [[sort:Feedback]], et les sorts d'un ennemi sont devenus un risque pour celui qui les lançait.",
+      [15] = "Avec [[sort:Fear Ward]], je pouvais désormais protéger un ami de la peur, un don auquel les prêtres de mon peuple tiennent beaucoup.",
+      [16] = "[[sort:Fear Ward]] était à moi, et le courage est devenu une chose que je pouvais transmettre à un autre.",
+      [17] = "[[sort:Starshards]] tombaient désormais à mon appel, la lumière même d'Elune tournée contre ses ennemis.",
+      [18] = "J'ai appris à faire tomber [[sort:Starshards]], et le ciel nocturne répondait à mon appel.",
+      [19] = "[[sort:Elune's Grace]] était à moi, et j'y sentais la sollicitude de la déesse autant que n'importe quel pouvoir.",
+      [20] = "J'ai appris [[sort:Elune's Grace]], et je savais que les coups auraient plus de mal à m'atteindre sous sa lumière.",
+      [21] = "J'ai appris [[sort:Touch of Weakness]], et je pouvais transmettre un peu de ma propre fragilité à quiconque me frappait.",
+      [22] = "[[sort:Touch of Weakness]] était à moi désormais. Quiconque porterait la main sur moi en ressortirait diminué.",
+      [23] = "[[sort:Devouring Plague]] était à moi désormais, la vieille maladie mise à mon service.",
+      [24] = "J'ai appris [[sort:Devouring Plague]], et il y avait une justice amère à porter ma propre peste.",
+      [25] = "J'ai appris [[sort:Hex of Weakness]], une malédiction de prêtre troll plus ancienne que la Lumière dont on m'instruisait par ailleurs.",
+      [26] = "[[sort:Hex of Weakness]] était à moi désormais, et je pouvais contraindre la vigueur d'un ennemi à le quitter.",
+      [27] = "[[sort:Shadowguard]] était à moi désormais, l'ombre des loas à serrer tout contre moi.",
+      [28] = "J'ai appris [[sort:Shadowguard]], et je pouvais rassembler les ombres autour de moi pour frapper quiconque s'approchait.",
+      [29] = "J'ai appris à me rendre à {place} en un souffle, et la route du retour n'a plus jamais été longue.",
+      [30] = "Avec {spell:le}, je pouvais être chez moi avant qu'un repas refroidisse, et cette pensée raccourcissait un peu chaque longue route.",
+      [31] = "J'ai appris {spell:le}, et le long chemin du retour s'est réduit à quelques mots.",
+      [32] = "J'ai appris à me rendre à {place} en un souffle, et ce lieu n'a plus jamais été qu'à un souffle de moi.",
+      [33] = "J'ai appris {spell:le}, et {place}, sans être la cité de mon peuple, n'était plus qu'à quelques mots de moi, où que je sois.",
+      [34] = "J'ai appris le chemin de [[Moonglade]], le sanctuaire des druides, et je pouvais m'y rendre en un souffle chaque fois que j'avais besoin de son calme.",
+      [35] = "[[Moonglade]] n'était plus qu'à un souffle, et je savais où aller quand le monde m'en demandait trop.",
+      [36] = "Avec [[sort:Polymorph]], je peux désormais changer un ennemi en mouton, et je soupçonne que je ne m'en lasserai jamais.",
+      [37] = "Avec [[sort:Resurrection]], je peux désormais rappeler les morts, et je compte traiter ce don avec soin.",
+      [38] = "[[sort:Lay on Hands]] est à moi désormais, quelque chose à donner encore quand rien d'autre ne suffit.",
+      [39] = "[[sort:Lay on Hands]] est à moi désormais, et la Lumière qu'elle déverse en moi me brûle de part en part. Pour quelqu'un qui en a besoin, je peux le supporter.",
+      [40] = "Avec [[sort:Charge]], je peux désormais combler la distance d'un seul élan, avant que ma peur ait le temps de me rattraper.",
+      [41] = "Avec [[sort:Vanish]], je peux désormais disparaître d'un combat et laisser un ennemi se demander où je suis $gpassé:passée;.",
+      [42] = "Avec [[spell:Feign Death]], je peux désormais faire $gle mort:la morte;, assez bien pour espérer ne jamais avoir besoin de la vraie.",
+      [43] = "Avec [[sort:Ghost Wolf]], je peux désormais emprunter aux esprits une forme plus rapide, et les routes en seront plus courtes.",
+      [44] = "[[sort:Rebirth]] est à moi désormais, la manière qu'a la nature sauvage de refuser une mort venue trop tôt.",
+      [45] = "Avec [[sort:Resurrection]], je peux désormais rappeler les morts. Mieux que quiconque, je sais ce que cela veut dire.",
+      [46] = "J'ai appris [[sort:Polymorph]], et d'un mot un ennemi pouvait devenir un mouton inoffensif.",
+      [47] = "J'ai appris [[sort:Resurrection]], et je comptais traiter ce don avec soin.",
+      [48] = "J'ai appris [[sort:Lay on Hands]], le dernier don du paladin quand rien d'autre ne suffit.",
+      [49] = "J'ai appris [[sort:Lay on Hands]], même si toute la Lumière qu'elle porte me brûle d'abord.",
+      [50] = "J'ai appris [[sort:Charge]], et la distance entre un ennemi et moi a cessé d'être une affaire de courage.",
+      [51] = "J'ai appris [[sort:Vanish]], et un combat perdu est devenu une chose que je pouvais simplement quitter.",
+      [52] = "J'ai appris à feindre la mort, un mensonge dit de tout mon corps.",
+      [53] = "J'ai appris [[sort:Ghost Wolf]], et les esprits m'ont prêté une forme plus rapide pour la route.",
+      [54] = "J'ai appris [[sort:Rebirth]], la réponse de la nature sauvage à une mort venue avant la fin du combat.",
+      [55] = "J'ai appris [[sort:Devotion Aura]], la première des auras du paladin, une constance à emporter dans les combats à venir.",
+      [56] = "[[sort:Devotion Aura]] était ma première aura, une force tranquille que je pouvais partager avec quiconque se tenait à mes côtés.",
+      [57] = "J'ai appris [[sort:Retribution Aura]], et quiconque me frapperait désormais le paierait un peu en feu sacré.",
+      [58] = "Avec [[sort:Retribution Aura]], je pouvais choisir ce que ma présence apportait dans un combat, et je comptais la rendre coûteuse.",
+      [59] = "J'ai appris [[sort:Divine Shield]], et je savais que pendant quelques instants, quand il le faudrait, rien au monde ne pourrait m'atteindre.",
+      [60] = "[[sort:Divine Shield]] était à moi, un mur de Lumière à dresser quand j'en aurais le plus besoin.",
+      [61] = "J'ai appris à me battre avec une arme dans chaque main, et je voulais aussitôt une seconde arme pour essayer.",
+      [62] = "Le combat à deux armes était à moi désormais, et je n'avais plus besoin d'un bouclier pour me sentir $gprêt:prête;.",
+      [63] = "J'ai appris à me battre avec une lame dans chaque main, comme doit le faire un voleur.",
+      [64] = "J'ai appris à porter une seconde lame, et j'avais hâte d'en glisser une dans ma main gauche.",
+      [65] = "J'ai appris [[sort:Whirlwind]], et je pouvais frapper tout ce qui m'entourait d'un seul tour.",
+      [66] = "[[sort:Whirlwind]] était à moi, de quoi répondre à tout un cercle d'ennemis d'un seul coup d'acier.",
+      [67] = "J'ai appris [[sort:Pick Lock]], et un coffre fermé a cessé d'être la fin de l'histoire.",
+      [68] = "[[sort:Pick Lock]] était à moi désormais, et portes et coffres-forts sont devenus des questions qui avaient leurs réponses.",
+      [69] = "J'ai appris [[sort:Blind]], une pincée de poudre capable de mettre un ennemi tout à fait hors de combat.",
+      [70] = "[[sort:Blind]] était à moi, et je pouvais faire oublier ma présence à un ennemi.",
+      [71] = "J'ai appris à ouvrir un portail vers {place}, et je pouvais renvoyer d'autres que moi chez eux aussi facilement que moi-même.",
+      [72] = "J'ai appris à ouvrir un portail vers {place}, et je pouvais y envoyer tout un groupe aussi facilement que moi-même.",
+      [73] = "Avec {spell:le}, je pouvais ouvrir le chemin du retour à tout un groupe, et je sentais l'art du mage s'élargir.",
+      [74] = "J'ai appris [[sort:Ritual of Summoning]], et je pouvais faire venir un ami à mes côtés depuis l'autre bout du monde.",
+      [75] = "[[sort:Ritual of Summoning]] était à moi, et la distance entre compagnons est devenue une chose que je pouvais défaire.",
+      [76] = "J'ai appris [[sort:Reincarnation]], et la mort est devenue une porte que les esprits pourraient me laisser repasser.",
+      [77] = "[[sort:Reincarnation]] était à moi désormais, la promesse des éléments de me remettre debout de temps à autre.",
     },
     ["d-camp"] = {
-
+      [1] = "Je me suis $gassis:assise; pour la première fois près d'un feu de camp {at}, et j'ai compris pourquoi les voyageurs font une lieue de plus pour en trouver un.",
+      [2] = "Le premier feu auquel je me suis $gréchauffé:réchauffée; {at} m'a appris ce qu'un peu de chaleur peut faire pour un corps fatigué.",
+      [3] = "J'ai partagé un feu {at} avec {mates}, et pour un temps la route a moins ressemblé à une corvée.",
+      [4] = "Je me suis $gassis:assise; près d'un feu {at} avec {mates}, et pendant une heure nous n'étions que des gens qui se réchauffaient les mains.",
+      [5] = "{mates} et moi nous sommes arrêtés au même feu {at}, et la compagnie m'a fait plus de bien que la chaleur.",
+      [6] = "J'ai trouvé {mates} près d'un feu {at}, et je me suis fait une place à côté comme si c'était la chose la plus naturelle du monde.",
+      [7] = "Je me suis $garrêté:arrêtée; au camp {at}, où brûlait un feu, et j'en ai été $greconnaissant:reconnaissante;.",
+      [8] = "Le feu du camp {at} brûlait quand je suis $garrivé:arrivée;, et je me suis $gassis:assise; à côté.",
+      [9] = "J'ai trouvé un feu {at} dans le noir, et je suis $grestée:restée; tout près jusqu'à ce que la nuit me paraisse moins grande.",
+      [10] = "J'ai fini l'étape près d'un feu {at} avec {mates}, et rien ne me pressait de le quitter.",
+      [11] = "J'ai fini l'étape près d'un feu {at} avec {mates}, et rien ne me pressait d'aller où que ce soit.",
+      [12] = "Nous avons dressé le camp {at}, {mates} et moi, et le feu a fait le reste.",
+      [13] = "J'ai fini la journée au camp {at}, où brûlait un feu, et je l'ai laissé faire son œuvre.",
+      [14] = "J'ai fini l'étape près d'un feu {at}, et j'ai laissé sa chaleur défaire la journée.",
+      [15] = "Je me suis $ginstallé:installée; près d'un feu {at} pour la nuit, et je l'ai regardé jusqu'à ce que le travail du jour se soit consumé avec lui.",
     },
     ["d-chores"] = {
-
+      [1] = "Le reste n'était que menues besognes, de celles qui partout attendent plus de mains qu'il n'y en a.",
+      [2] = "Pour le reste, c'étaient des commissions, l'une après l'autre, aucune ne valant d'être racontée seule.",
+      [3] = "J'ai passé l'étape à de petites tâches, et ce travail simple m'a convenu.",
+      [4] = "De petites tâches ont rempli l'étape, et je les ai menées à bien sans grand-chose à raconter.",
+      [5] = "C'était une étape de menues commissions, aussi utiles qu'aisées à oublier.",
     },
     ["d-close"] = {
-
+      [1] = "Ces jours ont été durs, et je compte bien être plus $gprudent:prudente;.",
+      [2] = "J'en suis $gsorti:sortie; $gvivant:vivante;, au bout du compte, et c'est ce que je peux en dire de mieux.",
+      [3] = "Cette mort m'a appris quelque chose, et j'aurais préféré qu'elle coûte moins cher.",
+      [4] = "J'ai frôlé la mort de plus près que je n'aime y penser.",
+      [5] = "Un seul mauvais moment a failli tout arrêter, et je n'ai pas cessé d'y penser.",
+      [6] = "J'ai passé assez de temps entre des murs pleins d'ennemis pour apprécier le grand air.",
+      [7] = "En remontant de cet endroit, même le simple grand air avait le goût d'une récompense.",
     },
     ["d-company"] = {
-
+      [1] = "J'ai partagé la route avec {mates} pendant un temps.",
+      [2] = "Un temps, j'ai voyagé avec {mates}, et le travail n'en est allé que plus vite.",
+      [3] = "J'ai été $gheureux:heureuse; d'avoir {mates} à mes côtés sur une partie du chemin.",
+      [4] = "J'ai fait un bout de chemin avec {mates}.",
+      [5] = "Je n'ai pas tout fait $gseul:seule;. {mates} m'a $gaccompagné:accompagnée; sur une partie du chemin.",
+      [6] = "Je n'ai pas tout fait $gseul:seule;. {mates} m'ont $gaccompagné:accompagnée; sur une partie du chemin.",
+      [7] = "Sur une partie du chemin, j'ai eu {mates} pour compagnie.",
+      [8] = "J'ai de nouveau voyagé avec {mates} pendant un temps.",
+      [9] = "{mates} et moi avons de nouveau partagé la route.",
+      [10] = "Une fois de plus, j'ai eu {mates} pour compagnie sur une partie du chemin.",
+      [11] = "{mates} était de nouveau avec moi, la personne même qui m'avait autrefois $gramené:ramenée; de la mort {at}.",
+      [12] = "J'avais de nouveau à mes côtés {mates}, qui m'avait autrefois $gramené:ramenée; de la mort {at}.",
+      [13] = "J'avais de nouveau de la compagnie avec {mates}, et l'un d'eux m'avait autrefois $gramené:ramenée; de la mort {at}.",
+      [14] = "{mates} ont voyagé avec moi un temps, et parmi eux la personne qui m'avait autrefois $gramené:ramenée; de la mort {at}.",
     },
     ["d-deaths"] = {
-
+      [1] = "Je suis $gmort:morte; {times}, et chaque fois je suis $grevenu:revenue; un peu moins $gcontent:contente;.",
+      [2] = "La mort m'a $grattrapé:rattrapée; {times}, et chaque fois je suis $grevenu:revenue; pour réessayer.",
+      [3] = "Je suis $gmort:morte; {times} en chemin, et je ne suis $gfier:fière; ni de ces morts ni des erreurs qui les ont causées.",
+      [4] = "Je suis $gmort:morte; {times}, et chaque retour ressemblait un peu moins à de la chance.",
+      [5] = "Je suis $gmort:morte; {times} avant la fin de l'étape, et revenir m'est devenu bien trop familier.",
+      [6] = "On m'a $gtué:tuée; {times}, et je suis $grevenu:revenue; plus $gméfiant:méfiante; chaque fois.",
+      [7] = "Je suis $gmort:morte; {times}, et chaque fois je suis $grevenu:revenue; avec largement de quoi réfléchir.",
     },
     ["d-dungeon"] = {
-
+      [1] = "Avec {mates}, j'ai pénétré dans {dungeon}.",
+      [2] = "J'ai pénétré dans {dungeon} avec {mates}, et nous en sommes tous ressortis.",
+      [3] = "{dungeon} n'avait rien d'un endroit facile, et je n'y suis pas $gallé:allée; $gseul:seule; : j'avais {mates} avec moi.",
+      [4] = "J'ai vu l'intérieur de {dungeon}, avec {mates} à mes côtés.",
+      [5] = "J'ai pénétré dans {dungeon}, et j'ai été $gheureux:heureuse; d'en ressortir.",
+      [6] = "J'ai bravé {dungeon}, où je ne m'aventurerais pas à la légère.",
+      [7] = "J'ai pénétré dans {dungeon}, et j'ai gardé mes esprits d'un bout à l'autre.",
     },
     ["d-foes"] = {
+      [1] = "J'ai abattu {foes}, et j'ai repris la route le cœur plus léger.",
       [2] = "{foes} {foes=est tombé|est tombée|sont tombés|sont tombées} sous mes coups, et l'affaire était close.",
+      [3] = "J'ai affronté {foes} et je suis $greparti:repartie; sur mes deux jambes.",
+      [4] = "J'ai mis fin aux jours de {foes}, et je suis $greparti:repartie; plus $gléger:légère;.",
+      [5] = "{foes} {foes=a|a|ont|ont} bien failli m'achever avant que je mette fin au combat.",
+      [6] = "J'ai abattu {foes}, et de justesse.",
+      [7] = "J'ai abattu {foes}, l'un après l'autre.",
+      [8] = "{foes} sont {foes=tombés|tombées|tombés|tombées} sous mes coups avant la fin de l'étape, l'un comme l'autre.",
+      [9] = "Je suis $gsorti:sortie; de mes combats contre {foes}, et l'un d'eux a bien failli mal tourner.",
+      [10] = "J'ai abattu {foes}, un combat après l'autre.",
+      [11] = "{foes} sont {foes=tous tombés|toutes tombées|tous tombés|toutes tombées} sous mes coups avant la fin de l'étape.",
+      [12] = "Je me suis frayé un chemin à travers {foes}, et l'un de ces combats a bien failli mal tourner.",
+      [13] = "J'ai abattu {foes}, et pas un de ces combats n'a été facile.",
     },
     ["d-gear"] = {
-
+      [1] = "J'ai enfilé {item}, et j'avais envie d'un combat rien que pour voir ce que cela donnerait.",
+      [2] = "J'ai porté {item} pour la première fois, et je marchais un peu plus $gdroit:droite;.",
+      [3] = "J'ai enfilé {item}, et je me sentais plus $gprêt:prête; pour la suite de la route.",
+      [4] = "J'ai enfilé {item}, et je n'ai pas pu m'empêcher de {item=l'|l'|les|les}admirer un peu.",
+      [5] = "J'ai pris {item}, et ma main s'est refermée dessus comme si {item=il|elle|ils|elles} n'attendai{item=t|t|ent|ent} que moi.",
+      [6] = "Je me suis $gbattu:battue; avec {item} pour la première fois, et le poids du changement m'a plu.",
+      [7] = "J'ai commencé à porter {item}, une petite chose qui comptait plus que sa taille.",
+      [8] = "J'ai enfilé {item}, de ma fabrication, et j'ai porté mon propre ouvrage avec plus de fierté que je n'en laissais voir.",
+      [9] = "Porter {item} de ma propre fabrication était un plaisir bien différent de celui de porter une chose trouvée ou offerte.",
+      [10] = "J'ai pris {item}, de ma fabrication, et je me suis $gfié:fiée; à mon propre ouvrage au combat.",
+      [11] = "J'avais fabriqué {item} de mes mains, et porter mon propre ouvrage avait le goût d'une petite promotion.",
+      [12] = "J'ai trouvé {item} dans le butin, et je {item=le|la|les|les} portais avant la fin du jour.",
+      [13] = "J'ai trouvé {item} dans le butin, et je {item=le|la|les|les} portais avant la fin du jour.",
+      [14] = "J'ai tiré {item} du butin et j'ai aussitôt porté ma trouvaille.",
     },
     ["d-initiation"] = {
-
+      [1] = "J'ai enfin gagné la faveur de la terre, et j'en suis $greparti:repartie; avec son totem.",
+      [2] = "La terre m'a $gaccepté:acceptée;. J'ai emporté son totem en preuve, et depuis je me tiens autrement sur le sol.",
+      [3] = "J'ai gagné la faveur du feu, et son totem avec lui, et la flamme m'a ensuite paru moins étrangère.",
+      [4] = "Le feu m'a enfin répondu, et je suis $greparti:repartie; avec son totem et un respect pour lui que je n'avais pas avant.",
+      [5] = "Les esprits de l'eau m'ont $gaccepté:acceptée;, et je suis $greparti:repartie; avec leur totem et une conscience plus sûre de mon propre pouvoir.",
+      [6] = "J'ai gagné la faveur de l'eau, et son totem, et quelque chose s'est dénoué en moi que je ne savais pas noué.",
+      [7] = "L'air m'a enfin répondu, et je suis $greparti:repartie; avec son totem et, me semblait-il, le vent dans le dos.",
+      [8] = "J'ai gagné la faveur de l'air et son totem, et j'ai senti le vent prendre ma mesure.",
     },
     ["d-land"] = {
-
+      [1] = "J'ai foulé pour la première fois le sol de {lands}.",
+      [2] = "J'ai découvert {lands} en $gétranger:étrangère;, comme on découvre toute terre.",
+      [3] = "Pour la première fois, la route m'a $gconduit:conduite; jusqu'à {lands}.",
+      [4] = "Je n'avais jamais vu {lands}, et j'ai tout regardé deux fois.",
+      [5] = "J'ai vu {lands} de mes propres yeux pour la première fois.",
+      [6] = "J'ai découvert {lands}.",
+      [7] = "La route m'a $gmené:menée; en terre nouvelle : {lands}.",
+      [8] = "{lands} : autant de terres nouvelles pour moi, et j'ai tâché d'en retenir le plus possible.",
+      [9] = "Le monde s'est encore ouvert devant moi, et {lands} avec lui.",
+      [10] = "Pour la première fois, j'ai vu {lands}.",
+      [11] = "J'ai découvert {lands}, la terre de mon peuple, même si mes yeux la voyaient pour la première fois.",
+      [12] = "J'ai enfin posé les yeux sur {lands}, $gheureux:heureuse; de connaître par moi-même la terre de mon peuple.",
+      [13] = "J'ai découvert {lands}, pays de mon peuple d'un bout à l'autre.",
+      [14] = "J'ai enfin vu {lands} par moi-même, et c'était à nous d'une manière qu'aucune carte n'aurait pu me dire.",
+      [15] = "J'ai découvert {lands}, et chacune de leurs routes était à nous.",
+      [16] = "J'ai découvert {lands}, une part de la terre qui avait accueilli les miens.",
+      [17] = "Je suis $gentré:entrée; pour la première fois à {lands}, et une cité dont je n'avais qu'entendu parler est devenue un lieu où je savais pouvoir rentrer chez moi.",
+      [18] = "J'ai enfin vu {lands} de mes propres yeux : la cité était plus grande, plus animée et plus mienne que je ne l'avais imaginée.",
+      [19] = "Je suis $garrivé:arrivée; pour la première fois à {lands}, la cité qui avait accueilli mon peuple, et je l'ai regardée avec la gratitude d'un hôte et les yeux d'$gun étranger:une étrangère;.",
+      [20] = "Je suis $gentré:entrée; pour la première fois à {lands}, et je me suis laissé submerger par sa taille et son vacarme.",
+      [21] = "J'ai découvert {lands}, une cité pleine d'inconnus qui semblaient tous savoir exactement où ils allaient.",
+      [22] = "J'ai atteint {lands} pour la première fois, et j'ai passé la première heure à simplement m'orienter.",
+      [23] = "Mes premiers pas sur le sol de {lands} ont été prudents, comme partout où je ne suis jamais $gallé:allée;.",
+      [24] = "J'ai découvert {lands}, et j'avais envie de m'arrêter pour tout regarder.",
+      [25] = "J'ai trouvé mon chemin jusqu'à {lands}, une contrée que je ne connaissais que de nom jusque-là.",
+      [26] = "J'ai découvert une terre étrange, {lands}, et j'en ai appris les chemins à force de me tromper de route.",
+      [27] = "J'ai atteint {lands} sans rien savoir de l'endroit, et avant toute chose j'ai pris mes repères.",
+      [28] = "Une contrée nouvelle s'est ouverte devant moi, {lands}, et rien ne me pressait de faire comme si je la connaissais.",
+      [29] = "J'ai passé la frontière de {lands}, et la route m'y a paru plus longue qu'elle ne l'était, comme toutes les routes nouvelles.",
+      [30] = "La route m'a $gconduit:conduite; jusqu'à {lands}, et j'ai regardé autour de moi plus longtemps que le travail ne l'exigeait.",
+      [31] = "J'ai atteint {lands}, et avant toute chose j'ai pris mes repères.",
+      [32] = "Ma route m'a $gmené:menée; jusqu'à {lands}, et j'y ai gardé l'œil ouvert.",
+      [33] = "J'ai gagné {lands}, l'œil autant sur les routes que sur l'horizon.",
+      [34] = "Le travail m'a $gconduit:conduite; jusqu'à {lands}, et j'ai laissé la contrée me dire ce qu'elle était.",
+      [35] = "J'ai passé la frontière de {lands}, en regardant où je mettais les pieds.",
+      [36] = "La route se poursuivait jusqu'à {lands}, et je l'ai suivie en gardant mes esprits.",
+      [37] = "Ma route a traversé {lands}.",
+      [38] = "Le travail m'a fait traverser {lands}, une contrée après l'autre.",
+      [39] = "J'ai traversé {lands}, chaque contrée avec ses propres routes à surveiller.",
+      [40] = "J'ai traversé {lands}, chaque contrée avec ses propres dangers.",
+      [41] = "J'ai atteint {lands}, le pays de mon peuple, $gheureux:heureuse; d'être parmi les miens.",
+      [42] = "Ma route a traversé {lands}, le pays de mon peuple, et cette pensée m'a $graffermi:raffermie;.",
+      [43] = "J'ai traversé {lands}, pays de mon peuple d'un bout à l'autre.",
+      [44] = "Ma route a traversé {lands}, et chaque lieue en appartenait à mon peuple.",
+      [45] = "J'ai atteint {lands}, une part de la terre qui avait accueilli les miens.",
+      [46] = "Je suis $gentré:entrée; à {lands}, enfin parmi les miens, et j'y ai trouvé mon chemin sans trop de peine.",
+      [47] = "Je suis $garrivé:arrivée; à {lands}, et la cité de mon peuple s'est refermée autour de moi comme un manteau familier.",
+      [48] = "Je suis $garrivé:arrivée; à {lands}, la cité qui avait accueilli les miens, et je l'ai parcourue avec la gratitude d'un hôte.",
+      [49] = "Je suis $gentré:entrée; à {lands}, et je me suis laissé submerger par sa taille et son vacarme.",
+      [50] = "Je suis $garrivé:arrivée; à {lands}, une cité pleine de gens qui semblaient tous savoir exactement où ils allaient.",
     },
     ["d-made"] = {
-
+      [1] = "J'ai occupé mes mains à fabriquer {things}.",
+      [2] = "J'ai fabriqué {things}, et j'étais $gcontent:contente; d'avoir quelque chose de ma main à montrer pour l'étape.",
+      [3] = "Entre deux tâches, j'ai fabriqué {things}, une chose nouvelle pour mes mains.",
+      [4] = "Je me suis $gessayé:essayée; pour la première fois à fabriquer {things}, et j'ai été assez $gsatisfait:satisfaite; du résultat.",
+      [5] = "Quand le travail me le permettait, je me suis $gassis:assise; pour fabriquer {things}.",
     },
     ["d-pet"] = {
-
+      [1] = "{pet} a été à mes côtés presque tout du long.",
+      [2] = "{pet} a de nouveau combattu à mes côtés.",
+      [3] = "J'ai été $gheureux:heureuse; d'avoir {pet} pour compagnie sur la route.",
+      [4] = "{pet} et moi avons tenu tête à tout ce qui nous est tombé dessus.",
+      [5] = "Comme avant, {pet} a pris sa part des combats.",
+      [6] = "{pet} ne m'a pas $gquitté:quittée; d'une semelle, et a bien gagné sa part des honneurs.",
+      [7] = "{pet} a servi comme sert un démon lié, et j'ai surveillé chaque instant de ce service malgré tout.",
+      [8] = "{pet} a obéi à mes ordres tout du long, et je n'ai pas oublié un instant ce que j'avais lié.",
+      [9] = "J'ai envoyé {pet} en avant, et l'empressement qu'on y mettait ne m'a jamais tout à fait $grassuré:rassurée;.",
+      [10] = "{pet} avait déjà succombé une fois {where}, et a pourtant été à mes côtés tout du long.",
+      [11] = "{pet}, qui avait déjà succombé une fois {where}, a combattu à mes côtés tout du long.",
     },
     ["d-powers"] = {
-
+      [1] = "Mon entraînement m'a donné {spells}, une nouvelle façon de me battre, et j'étais $gimpatient:impatiente; de m'en servir.",
+      [2] = "Je suis $greparti:repartie; de chez mon maître avec {spells}, en me demandant ce que cela donnerait contre mon prochain ennemi.",
+      [3] = "{spells}, c'est à moi désormais, et le prochain combat ne se déroulera pas tout à fait comme le précédent.",
+      [4] = "Mon entraînement m'a donné {spells}, de nouvelles façons de me battre, et j'étais $gimpatient:impatiente; de les essayer.",
+      [5] = "Je suis $greparti:repartie; de chez mon maître avec {spells}, en me demandant comment ils changeraient le prochain combat.",
+      [6] = "{spells}, c'est à moi désormais, et mes prochains combats ne se dérouleront pas tout à fait comme les précédents.",
+      [7] = "J'ai ajouté {spells} à mon répertoire, et j'attendais avec impatience la première occasion de m'en servir.",
+      [8] = "Mon entraînement m'a donné {spells}, et ce sort a répondu dès la première fois que j'y ai fait appel.",
+      [9] = "Je suis $greparti:repartie; de chez mon maître avec {spells}, et je m'en étais déjà $gservi:servie; avant la fin de l'étape.",
+      [10] = "Mon entraînement m'a donné {spells}, et je m'en étais déjà $gservi:servie; avant la fin de l'étape.",
     },
     ["d-react"] = {
-
+      [1] = "Ramener quelqu'un vivant est une victoire d'un autre genre, et je l'ai préférée à bien d'autres.",
+      [2] = "Il y a de pires façons de passer une journée que de veiller à ce que quelqu'un rentre chez soi.",
+      [3] = "De tout ce que la route m'a demandé, c'est ce que je referais sans qu'on me le demande.",
+      [4] = "On m'avait $gchargé:chargée; d'en finir avec celui-là, et je l'ai fait de bon cœur.",
+      [5] = "Le calme qui a suivi a été le meilleur de l'affaire.",
+      [6] = "J'en avais assez entendu sur ses méfaits pour n'éprouver aucun regret.",
+      [7] = "Les morts ne tombent jamais tout à fait comme les vivants, et j'ai été $gsoulagé:soulagée; quand tout a été fini.",
+      [8] = "Les morts n'avaient rien à faire debout, et je n'ai eu aucun scrupule à les renvoyer d'où ils venaient.",
+      [9] = "Un combat contre des démons laisse un goût que la marche la plus longue ne chasse jamais tout à fait.",
+      [10] = "Quoi que les démons aient cherché là-bas, ils ne l'auraient plus.",
+      [11] = "Chasser une bête de cette taille était, à sa façon, une forme de respect.",
+      [12] = "J'ai eu un peu de peine pour la bête, et pas le moindre regret que tout soit fini.",
+      [13] = "Cela ressemblait moins à une victoire qu'à une délivrance, et j'en ai été $gheureux:heureuse;.",
+      [14] = "Il n'y avait là aucun triomphe, seulement l'espoir que ce qui s'était perdu là-bas puisse enfin reposer.",
+      [15] = "Je n'y ai pris aucun plaisir. Cette fin était due, et j'étais $gdésolé:désolée; que ce soit à moi de l'apporter.",
+      [16] = "Certaines fins sont un dernier acte de bonté, et je me suis $gefforcé:efforcée; de croire que celle-ci en était un.",
     },
     ["d-revenge"] = {
-
+      [1] = "Je suis $gretourné:retournée; affronter {foe}, qui m'avait $gtué:tuée; {at}, et cette fois je suis $greparti:repartie; sur mes deux jambes.",
+      [2] = "{foe} m'avait $gtué:tuée; une fois {at}. Cette fois, c'est moi qui suis $gresté:restée; debout.",
+      [3] = "J'ai de nouveau croisé {foe}, qui avait bien failli me tuer {at}, et j'ai réglé l'affaire.",
+      [4] = "{foe} avait bien failli m'achever une fois {at}, et la seconde rencontre a tourné en ma faveur.",
     },
     ["d-spec"] = {
-
+      [1] = "Ma formation avait enfin trouvé sa pente : {spec}, et je comptais la suivre où qu'elle mène.",
+      [2] = "J'avais choisi {spec}, et tout ce que j'aurais pu être d'autre devrait attendre.",
+      [3] = "J'ai choisi {spec} pour voie, et je me suis $gsenti:sentie; plus $gsûr:sûre; de moi pour avoir choisi.",
+      [4] = "J'ai quitté {was} pour {spec}, et je comptais donner sa chance à cette nouvelle voie.",
+      [5] = "{was} m'avait bien $gservi:servie;, mais ma formation penchait désormais vers {spec}.",
+      [6] = "J'ai laissé {was} de côté pour {spec}, et je me suis $gsenti:sentie; de nouveau $gdébutant:débutante;, au meilleur sens du terme.",
     },
     ["d-tame"] = {
-
+      [1] = "J'ai gagné la confiance de {family}, je l'ai {family=appelé|appelée|appelés|appelées} {pet}, et dès lors je n'ai plus chassé $gseul:seule;.",
+      [2] = "{pet} m'a $grejoint:rejointe;, {family} {family=sorti|sortie|sortis|sorties} de la nature sauvage, et est devenu mon premier compagnon.",
+      [3] = "J'ai apprivoisé mon premier compagnon, {family} que j'ai {family=appelé|appelée|appelés|appelées} {pet}, et la route n'a plus jamais été aussi solitaire.",
+      [4] = "J'ai apprivoisé mon premier compagnon et je l'ai nommé {pet}, et dès lors je n'ai plus chassé $gseul:seule;.",
+      [5] = "J'ai pris un nouveau compagnon, {family} que j'ai {family=appelé|appelée|appelés|appelées} {pet}.",
+      [6] = "{pet} m'a $grejoint:rejointe;, {family} {family=sorti|sortie|sortis|sorties} de la nature sauvage, et a gagné sa place à mes côtés.",
+      [7] = "J'ai gagné la confiance de {pet}, et j'avais un nouveau compagnon à mes côtés.",
     },
     ["d-why-also"] = {
       [1] = "Plus tard, je {why}.",
@@ -97,10 +478,11 @@ function ns.frenchWriting() return {
       [7] = "Peu après, je {why}.",
       [8] = "Peu après, {where}, je {why}.",
       [9] = "Puis je {why}.",
-      [10] = "La route m'a $gemmené:emmenée; plus loin, et {where} je {why}.",
+      [10] = "La route m'a $gmené:menée; plus loin, et {where} je {why}.",
       [11] = "À la nuit tombée, je {why}.",
       [12] = "À la nuit tombée, {where}, je {why}.",
       [13] = "Cela fait, je {why}.",
+      [14] = "La même affaire m'a $gmené:menée; plus loin, et je {why}.",
       [15] = "Cela fait, {where}, je {why}.",
     },
     ["d-why"] = {
@@ -109,176 +491,700 @@ function ns.frenchWriting() return {
       [3] = "De retour à l'affaire que j'avais commencée, je {why}.",
       [4] = "La vieille affaire a suivi son cours, et je {why}.",
       [5] = "Enfin, je {why}.",
-      [6] = "J'ai mené la vieille affaire à son terme : je {why}.",
+      [6] = "J'ai mené la vieille affaire jusqu'à son terme : je {why}.",
       [7] = "De retour aux affaires de {who}, je {why}.",
-      [8] = "Reprenant là où {who} et moi nous étions arrêtés, je {why}.",
+      [8] = "Reprenant là où {who} et moi en étions restés, je {why}.",
       [9] = "Les affaires de {who} m'ont $grappelé:rappelée;, et je {why}.",
-      [10] = "J'ai mené l'affaire de {who} à son terme : je {why}.",
+      [10] = "J'ai mené l'affaire de {who} jusqu'à son terme : je {why}.",
       [11] = "Enfin, pour {who}, je {why}.",
     },
     ["d-why2"] = {
-
+      [1] = "Je {why}, et plus tard je {why2}.",
+      [2] = "Je {why}, et après cela je {why2}.",
+      [3] = "D'abord, je {why}, puis je {why2}.",
     },
     ["demon"] = {
-
+      [1] = "J'ai invoqué mon premier diablotin, {pet}, et l'idée d'un feu qui accourt à mon appel m'a plu aussitôt.",
+      [2] = "J'ai appelé mon premier diablotin, {pet}. Un petit démon restait un démon, même si sa taille aidait à l'oublier.",
+      [3] = "J'ai lié mon premier diablotin, {pet}, avec une certaine affection pour tant d'ennuis en puissance dans si peu de chair.",
+      [4] = "J'ai invoqué {pet}, mon premier diablotin, en espérant regretter le feu moins que la compagnie.",
+      [5] = "J'ai invoqué mon premier marcheur du Vide, {pet}, et la masse de cette ombre bleue m'a paru étonnamment rassurante.",
+      [6] = "J'ai appelé {pet}, mon premier marcheur du Vide, $gheureux:heureuse; d'avoir quelque chose d'aussi massif à envoyer devant moi.",
+      [7] = "J'ai lié mon premier marcheur du Vide, {pet}. Appeler quelque chose hors du Vide était plus facile que de se sentir tout à fait en sûreté à ses côtés.",
+      [8] = "J'ai appelé ma première succube, {pet}, sans aucune envie de prendre sa forme plaisante pour une nature bienveillante.",
+      [9] = "J'ai invoqué {pet}, ma première succube, et je me suis souvent rappelé ce que j'avais appelé.",
+      [10] = "J'ai invoqué mon premier chasseur corrompu, {pet}, avec une sympathie nouvelle pour quiconque craignait de voir sa magie dévorée.",
+      [11] = "J'ai appelé mon premier chasseur corrompu, {pet}, un molosse dont l'appétit pour la magie touchait d'un peu trop près mes propres intérêts.",
+      [12] = "J'ai lié mon premier gangregarde, {pet}, et j'ai senti le danger d'avoir un soldat de la Légion à portée de main.",
+      [13] = "J'ai invoqué {pet}, mon premier gangregarde. Tant de force démoniaque était une chose redoutable à revendiquer comme mienne.",
+      [14] = "J'ai invoqué pour la première fois {demon}, {demon=lié|liée|liés|liées} sous le nom de {pet}, et je me suis $gsenti:sentie; moins $gseul:seule; sans me sentir beaucoup plus en sûreté.",
+      [15] = "J'ai invoqué {pet} pour la première fois, {demon} {demon=lié|liée|liés|liées} à mon service, bien $gdécidé:décidée; à {demon=le|la|les|les} tenir en laisse courte.",
+      [16] = "J'ai enfin mis à profit l'invocation qu'on m'avait enseignée, et {pet} est venu, un diablotin avec un nom bien à lui.",
+      [17] = "Le marcheur du Vide que j'avais appris à appeler est enfin venu, et il répondait au nom de {pet}.",
+      [18] = "J'ai fait appel à ce qu'on m'avait enseigné, et {pet} est venue, une succube avec un nom bien à elle.",
+      [19] = "Le chasseur corrompu que j'avais appris à invoquer est enfin venu, et il répondait au nom de {pet}.",
     },
     ["died-back"] = {
-
+      [1] = "{foe} m'a $gtué:tuée; {at}, et je suis $grevenu:revenue; du cimetière sous forme de fantôme pour reprendre mon corps.",
+      [2] = "{foe} a eu raison de moi {at}. Mon fantôme a retrouvé le chemin depuis le cimetière, et je me suis $grelevé:relevée;.",
+      [3] = "Je suis $gtombé:tombée; sous les coups de {foe} {at} et je suis $grevenu:revenue; en fantôme vers un corps que j'étais moins $gdisposé:disposée; à risquer de nouveau.",
+      [4] = "{foe} m'a $gmis:mise; en terre {at}, mais pas pour longtemps : mon fantôme est revenu et je me suis $grelevé:relevée; là où j'étais $gtombé:tombée;.",
+      [5] = "J'ai fait une chute mortelle {at} et j'ai dû revenir du cimetière en fantôme pour me récupérer.",
+      [6] = "J'ai fait une chute mortelle {at}, et mon fantôme est revenu chercher un corps que je n'avais aucune envie d'abandonner.",
+      [7] = "Je me suis $gnoyé:noyée; {at}, et je suis $grevenu:revenue; en fantôme reprendre mon corps, sans aucune envie de retenter l'eau.",
+      [8] = "Le feu m'a $gtué:tuée; {at}, et mon fantôme est revenu chercher mon corps sans plus aucune affection pour la chaleur.",
+      [9] = "La terre elle-même m'a $gtué:tuée; {at}, et mon fantôme est revenu vers mon corps, plus méfiant envers elle.",
+      [10] = "Je suis $gmort:morte; {at} et je suis $grevenu:revenue; du cimetière en fantôme, jamais si $gheureux:heureuse; de revoir mon propre visage.",
+      [11] = "Je suis $gmort:morte; {at}, je me suis $géveillé:éveillée; parmi les fantômes du cimetière et je suis $grevenu:revenue; reprendre ma vie.",
+      [12] = "Je suis $gmort:morte; {at}. Mon fantôme est revenu du cimetière, et j'ai été $greconnaissant:reconnaissante; de retrouver mon corps.",
+      [13] = "{at}, je suis $gmort:morte;, et, fantôme en marche vers mon corps, j'ai vu à quoi ressemble l'autre côté du monde.",
+      [14] = "Je suis $gmort:morte; {at}, et je suis $grevenu:revenue; en fantôme vers un corps que j'étais très $gheureux:heureuse; de retrouver.",
+      [15] = "{foe} m'a $gtué:tuée; {at}, et plutôt que de revenir en fantôme, j'ai laissé le gardien des âmes me relever, $gaffaibli:affaiblie; et $gépuisé:épuisée;.",
+      [16] = "{foe} a eu raison de moi {at}, et j'ai préféré le marché du gardien des âmes au long chemin du retour.",
+      [17] = "Je suis $gtombé:tombée; sous les coups de {foe} {at} et j'ai laissé le gardien des âmes me ramener, au prix de ma vigueur.",
+      [18] = "Je suis $gmort:morte; {at} et j'ai accepté le marché du gardien des âmes, au prix de ma vigueur et de l'état de mon équipement.",
+      [19] = "Je suis $gmort:morte; {at}, et je me suis $géveillé:éveillée; au cimetière de la main du gardien des âmes, $gvidé:vidée; mais $gvivant:vivante;.",
+      [20] = "Je suis $gmort:morte; {at} et j'ai choisi le gardien des âmes plutôt que le retour à pied, la faiblesse étant un prix que j'acceptais de payer.",
+      [21] = "Je suis $gmort:morte; {at}. Le gardien des âmes m'a $grelevé:relevée; au cimetière, et la faiblesse ne m'a pas $gquitté:quittée;.",
+      [22] = "Je suis $gmort:morte; {at} et je suis $grevenu:revenue; de la main du gardien des âmes, plus faible et l'équipement en piteux état.",
+      [23] = "{foe} m'a $gtué:tuée; {at}, mais {by} m'a $grelevé:relevée; là où j'étais $gtombé:tombée;.",
+      [24] = "{foe} a eu raison de moi {at}, jusqu'à ce que {by} me rappelle.",
+      [25] = "Je suis $gtombé:tombée; sous les coups de {foe} {at}, et {by} a refusé de me laisser $gmort:morte;.",
+      [26] = "Je suis $gmort:morte; {at}, et {by} m'a $gramené:ramenée; sur-le-champ.",
+      [27] = "Je suis $gmort:morte; {at}, et {by} m'a $grendu:rendue; à un corps que j'étais très $greconnaissant:reconnaissante; de ne pas abandonner.",
+      [28] = "Je suis $gmort:morte; {at}, et {by} m'a $grelevé:relevée; là où je gisais. Je lui devais la vie.",
+      [29] = "Je suis $gmort:morte; {at}, et {by} m'a $gépargné:épargnée; le long chemin en fantôme.",
+      [30] = "Je suis $gmort:morte; {at}, mais pas pour longtemps : {by} m'a $grelevé:relevée; là où j'étais $gtombé:tombée;.",
+      [31] = "{foe} m'a $gtué:tuée; {at}, mais je m'y étais $gpréparé:préparée; et je me suis $grelevé:relevée; là où je gisais.",
+      [32] = "{foe} a eu raison de moi {at}, mais pas pour longtemps : j'avais assuré mon retour à l'avance.",
+      [33] = "Je suis $gtombé:tombée; sous les coups de {foe} {at} et je me suis $grelevé:relevée; là où j'étais $gtombé:tombée;, grâce à mes propres préparatifs.",
+      [34] = "Je suis $gmort:morte; {at} et je me suis $grelevé:relevée; là où j'étais $gtombé:tombée;, comme j'y avais veillé.",
+      [35] = "Je suis $gmort:morte; {at}, et ce que j'avais préparé pour l'occasion m'a $gramené:ramenée; là où je gisais.",
+      [36] = "Je suis $gmort:morte; {at}, mais j'y étais $gprêt:prête;, et je me suis $grelevé:relevée; là où la mort m'avait $gtrouvé:trouvée;.",
+      [37] = "Je suis $gmort:morte; {at} et je suis $grevenu:revenue; par mes propres moyens, là où j'étais $gtombé:tombée;.",
+      [38] = "{foe}, qui courait l'aventure comme moi, m'a $gtué:tuée; {at}, et je suis $grevenu:revenue; en gardant ce nom en mémoire.",
     },
     ["died"] = {
-
+      [1] = "{foe} m'a $gtué:tuée; {at}, et plus rien ne comptait à côté de la vie qu'on m'avait prise.",
+      [2] = "Je suis $gmort:morte; {at} sous les coups de {foe}, sans plus aucune place pour la fierté du combat.",
+      [3] = "{foe} m'a $gtué:tuée; {at}, et je ne pensais plus qu'à une porte ordinaire, chez moi.",
+      [4] = "J'ai perdu un combat contre {foe} {at}, et ma vie avec.",
+      [5] = "{foe} m'a $gtué:tuée;, alors qu'il me restait bien trop à faire.",
+      [6] = "{foe}, qui courait l'aventure comme moi, m'a $gtué:tuée; {at}, et je n'avais plus la moindre indulgence en pensant à cette personne.",
+      [7] = "J'ai fait une chute mortelle {at}, le sol m'offrant soudain un accueil dont je ne voulais pas.",
+      [8] = "J'ai fait une chute mortelle {at}, sans rien de plus doux à mettre entre le sol et moi.",
+      [9] = "Je me suis $gnoyé:noyée; {at}, le monde entier réduit au besoin de respirer.",
+      [10] = "Le feu m'a $gtué:tuée; {at}. Je ne pensais à rien d'autre qu'à fuir sa chaleur.",
+      [11] = "Je suis $gmort:morte; {at}, sans ennemi à blâmer et sans réconfort dans cette absence.",
+      [12] = "Je suis $gmort:morte; {at}, et je voulais une autre chance pour une vie qui m'avait paru si ordinaire.",
+      [13] = "Je suis $gmort:morte; {at}, avec trop de choses inachevées pour lâcher prise facilement.",
+      [14] = "Je suis $gmort:morte; {at}, et j'aurais voulu que le prochain lieu familier ne soit pas un cimetière.",
+      [15] = "Je suis $gmort:morte; {at}, sans trouver aucun réconfort à avoir survécu à la route qui m'y avait $gmené:menée;.",
+      [16] = "Je suis $gmort:morte; {at}, regrettant les plaisirs tranquilles de la vie plus que les dangers que j'avais choisis.",
+      [17] = "{foe} a eu raison de moi {at}, et j'ai regretté chaque certitude qui m'avait fait croire que le combat serait facile.",
+      [18] = "Je suis $gtombé:tombée; sous les coups de {foe} {at}, et survivre valait soudain plus que toute la fierté que j'aurais pu sauver.",
+      [19] = "Je suis $gmort:morte; {at}, et je voulais retrouver les fardeaux ordinaires de la vie.",
+      [20] = "Je suis $gmort:morte; {at}, avec bien plus de tendresse pour mon corps que je n'en avais eu tant qu'il me portait.",
+      [21] = "{foe} a mis fin à mes jours {at}, et je n'avais aucune envie de lui laisser le monde.",
+      [22] = "Je suis $gmort:morte; {at}, et il n'y avait aucune douceur dans la brutalité avec laquelle la route pouvait s'achever.",
     },
     ["epitaph"] = {
-
+      [1] = "{name}, {who}, est $gtombé:tombée; {in} au niveau {level}, sans plus aucune route à parcourir.",
+      [2] = "{name}, {who}, est $gmort:morte; {in} au niveau {level}, et n'a pu aller plus loin.",
+      [3] = "{name}, {who}, repose {in}, au niveau {level}.",
+      [4] = "{name} est $gmort:morte; {in}, avec plus de vie à désirer que le monde n'en accordait.",
+      [5] = "{name} est $gtombé:tombée; sous les coups de {foe} {in}, au niveau {level}, et ne s'est pas $grelevé:relevée;.",
+      [6] = "{foe} a mis fin à la vie de {name}, {who}, {in} au niveau {level}.",
+      [7] = "{name} a été $gabattu:abattue; par {foe} {in}, au niveau {level}, et la nature sauvage n'a montré aucune pitié.",
+      [8] = "{foe} a tué {name}, {who}, {in} au niveau {level}, et la nature sauvage n'a offert aucun retour.",
+      [9] = "{name} est $gmort:morte; de la main de {foe} {in}, au niveau {level}.",
+      [10] = "{foe} a porté le dernier coup {in}, et {name}, {who}, est $gtombé:tombée; au niveau {level}.",
+      [11] = "{foe}, qui courait la même aventure, a tué {name} {in} au niveau {level}.",
+      [12] = "{foe}, qui courait la même aventure, a tué {name} {in}, au niveau {level}.",
+      [13] = "{name} a affronté {foe} {in}, au niveau {level}, et n'en est pas $grevenu:revenue;.",
+      [14] = "{name} est $gmort:morte; dans {zone}, au niveau {level}, sans jamais revoir le monde au grand jour.",
+      [15] = "{foe} a tué {name} {in}, au niveau {level}, et il n'y a plus eu d'aube à voir.",
+      [16] = "{name} a fait une chute mortelle {in}, au niveau {level}, sans ennemi à blâmer pour la hauteur.",
+      [17] = "Une chute a mis fin à la vie de {name}, {who}, {in} au niveau {level}.",
+      [18] = "{name} s'est $gnoyé:noyée; {in}, au niveau {level}, hors de portée d'un dernier souffle.",
+      [19] = "{name} s'est $gnoyé:noyée; {in}, au niveau {level}, et l'eau ne l'a pas $grendu:rendue;.",
+      [20] = "{name} est $gmort:morte; dans les flammes {in}, au niveau {level}.",
+      [21] = "{name} est $gmort:morte; {in} au niveau {level}, $gemporté:emportée; par le monde lui-même.",
+      [22] = "{name}, {who}, est $gtombé:tombée; {in} au niveau {level}, avec tant de la vie encore à découvrir.",
+      [23] = "{name} est $gmort:morte; {in}, au niveau {level}, la route à peine commencée.",
+      [24] = "{name} avait atteint le niveau {level} avant de mourir {in}, avec tant de route derrière soi.",
+      [25] = "La route de {name} s'est achevée {in}, au niveau {level}, malgré toute la distance déjà parcourue.",
+      [26] = "{name}, {who}, est $gmort:morte; au niveau {level}, sans plus aucune chance de continuer.",
     },
     ["farewell"] = {
-
+      [1] = "Puisse {name} trouver un repos plus doux au-delà du dernier combat.",
+      [2] = "Que la route soit douce, où que {name} marche désormais.",
+      [3] = "La vie de {name} aurait pu contenir bien plus que ce que le monde lui a accordé.",
+      [4] = "Puisse-t-on se souvenir de {name} pour plus que cette dernière défaite.",
+      [5] = "Puissent les clans de {home} garder une place pour {name}.",
+      [6] = "{name} avait une liberté que les camps n'ont jamais connue, et aucune tombe ne peut la reprendre.",
+      [7] = "Lok'tar ogar, {name} : la victoire ou la mort, et plus jamais au service de quiconque.",
+      [8] = "{name} était déjà $gmort:morte; une fois, et avait pourtant trouvé une seconde vie qui valait d'être gardée.",
+      [9] = "Puisse Elune éclairer le chemin de {name}.",
+      [10] = "Elune-adore : qu'Elune veille sur {name}, où que la route mène désormais.",
+      [11] = "{name} est $gretourné:retournée; à la Terre-Mère.",
+      [12] = "Puisse la Lumière être douce avec $gce fils:cette fille; de {home}.",
+      [13] = "[[Gnomeregan]] a perdu un autre de ses enfants.",
+      [14] = "Puissent les loas accueillir {name} avec bonté.",
+      [15] = "Puisse {faith} être plus douce envers {name} que ne l'a été le dernier combat.",
+      [16] = "La force de {name} ne pouvait porter plus loin.",
+      [17] = "Aucun sort ne pouvait porter {name} au-delà de cette dernière distance.",
+      [18] = "La nature sauvage a gardé les dernières traces de {name}.",
+      [19] = "{name} s'est enfin $gglissé:glissée; hors de portée de quiconque.",
+      [20] = "Puisse {name} trouver une réponse plus douce au-delà de la dernière prière.",
+      [21] = "Puissent les ancêtres accueillir {name} au-delà du dernier combat.",
+      [22] = "{name} liait les démons, mais n'a pu lier la mort.",
+      [23] = "Puisse la nature sauvage accueillir {name} avec douceur après le dernier combat.",
     },
     ["flight"] = {
-
+      [1] = "J'ai pris mon premier vol, de {from} à {to}, et j'ai regardé les routes que j'avais parcourues à pied se réduire à des fils sous moi.",
+      [2] = "Pour la première fois, j'ai volé, de {from} à {to}, et vu d'en haut, le monde s'est révélé plus petit et plus étrange.",
+      [3] = "Mon premier vol m'a $gemporté:emportée; de {from} à {to}, et j'en ai passé la moitié à m'agripper et l'autre à regarder en bas.",
+      [4] = "J'ai volé pour la première fois, de {from} à {to}, et je suis $garrivé:arrivée; les jambes peu sûres du sol.",
+      [5] = "J'ai volé de {from} à {to}, $gemporté:emportée; dans les airs pour la première fois, et je me suis $gcramponné:cramponnée; avec plus de poigne que de dignité.",
     },
     ["gold"] = {
-
+      [1] = "Pour la première fois, j'ai compté une pièce d'or à moi, et son poids m'a plu plus que sa taille ne pouvait l'expliquer.",
+      [2] = "Ma bourse contenait pour la première fois une pièce d'or entière, et j'avais presque autant envie de la garder que de la dépenser.",
+      [3] = "Pour la première fois, je possédais une pièce d'or, assez petite pour la perdre et bien trop précieuse pour la dépenser.",
+      [4] = "J'avais enfin une pièce d'or, le cuivre et l'argent s'additionnant en un plaisir que je pouvais tenir dans la main.",
+      [5] = "J'avais ma première pièce d'or, et j'ai commencé, un peu dangereusement, à penser à ce qu'elle pourrait acheter.",
+      [6] = "La première pièce d'or est entrée dans ma bourse, et elle cherchait déjà à se dépenser.",
     },
     ["lesson"] = {
-
+      [1] = "Avec [[sort:Life Tap]], je peux désormais payer ma magie de ma propre santé, et je n'ai pas encore décidé si c'est une bonne affaire.",
+      [2] = "[[sort:Fear]] est désormais à ma portée, et l'idée que la terreur change de camp, pour une fois, me plaît.",
+      [3] = "[[sort:Drain Life]] est à moi désormais, un sort qui me tient debout aux dépens d'un autre.",
+      [4] = "J'ai ajouté [[sort:Corruption]] à mon répertoire, un mal lent et patient.",
+      [5] = "Avec [[sort:Health Funnel]], je peux désormais verser ma propre santé dans un démon, ce qui en dit long sur l'arrangement entre nous.",
+      [6] = "[[sort:Blink]] est à moi désormais, un seul pas qui met le danger à bonne distance derrière moi.",
+      [7] = "[[sort:Frost Nova]] me permet de figer un ennemi dans la glace pendant que je cherche une meilleure place.",
+      [8] = "Avec [[sort:Conjure Water]], je fais apparaître ma propre eau désormais : une chose de moins à porter, une chose de moins à demander.",
+      [9] = "Avec [[sort:Power Word: Shield]], je peux désormais dresser une protection entre un coup et moi, et je m'en sens plus $gassuré:assurée;.",
+      [10] = "[[sort:Renew]] est à moi, un soin qui continue d'agir bien après la prière.",
+      [11] = "[[sort:Psychic Scream]] est à moi désormais, et ma peur a un autre endroit où aller que mon propre ventre.",
+      [12] = "Avec [[sort:Turn Undead]], je peux désormais repousser par la Lumière les morts qui marchent, et les chasser d'un combat qui n'était pas le leur.",
+      [13] = "Avec [[sort:Turn Undead]], je peux désormais repousser les morts par la Lumière, et j'essaie de ne pas trop penser à ce que cela dit d'$gun Réprouvé:une Réprouvée; qui l'invoque.",
+      [14] = "[[sort:Divine Protection]] peut m'offrir un instant où rien ne m'atteint, et tout l'art sera de le choisir.",
+      [15] = "[[sort:Hammer of Justice]] est à moi désormais, de quoi arrêter un ennemi au milieu de ses intentions.",
+      [16] = "[[sort:Execute]] est à moi désormais, pour en finir avec un combat qui n'a que trop duré.",
+      [17] = "Avec [[sort:Pick Pocket]], je peux désormais soulager une bourse sans que son propriétaire s'en aperçoive, et je surveille la mienne de plus près.",
+      [18] = "[[spell:Sap]], c'est à moi désormais, et un ennemi peut dormir pendant que sa malchance commence.",
+      [19] = "[[sort:Sprint]] est à moi désormais, et les ennuis devront se presser pour me suivre.",
+      [20] = "Avec [[sort:Aspect of the Cheetah]], je cours désormais à la vitesse du guépard, et les longues routes vont rétrécir à ma mesure.",
+      [21] = "[[sort:Hunter's Mark]] est à moi désormais, et aucune de mes proies ne disparaîtra dans la foule.",
+      [22] = "Avec [[sort:Ancestral Spirit]], je peux désormais rappeler dans son corps l'esprit d'un ami tombé, un don dont j'espère avoir rarement besoin.",
+      [23] = "[[sort:Lightning Shield]] est à moi désormais, un tonnerre qui attend quiconque tend la main vers moi.",
+      [24] = "[[sort:Entangling Roots]], c'est à moi désormais, et la terre retiendra un ennemi pour moi quand je le lui demanderai.",
+      [25] = "[[sort:Immolate]] est à moi désormais, un feu qui continue de brûler une fois que je me suis $géloigné:éloignée;.",
+      [26] = "Je peux désormais faire appel à [[sort:Renew]], même si son soin me brûle les mains tant qu'il agit.",
     },
     ["mount"] = {
-
+      [1] = "J'ai monté ma propre monture pour la première fois, et la route a raccourci.",
+      [2] = "J'ai fait ma première chevauchée sur une monture à moi, avec une tendresse soudaine pour les lieues que je n'avais plus à faire à pied.",
+      [3] = "J'ai monté ma propre monture pour la première fois, et j'ai commencé à comprendre comment une longue route pouvait sembler engageante.",
+      [4] = "J'ai fait ma première chevauchée sur ma propre monture, avec un goût soudain pour les distances que je pouvais désormais parcourir.",
+      [5] = "Pour la première fois, j'ai chevauché au lieu de marcher, et je me suis $gsenti:sentie; bien plus $gindulgent:indulgente; envers la distance à parcourir.",
+      [6] = "J'ai monté ma propre monture pour la première fois, $greconnaissant:reconnaissante; que même mon poids puisse être, un temps, le fardeau d'un autre.",
+      [7] = "J'ai monté {mount=mon|ma|mes|mes} {mount} pour la première fois, et les lieues ont commencé à défiler sans rien demander à mes pieds.",
+      [8] = "J'ai sorti {mount=mon|ma|mes|mes} {mount} pour la première fois, et je n'arrêtais pas de sourire de voir le pays défiler si vite.",
+      [9] = "J'ai monté mon destrier pour la première fois, et la Lumière semblait voyager avec nous.",
+      [10] = "J'ai monté mon palefroi corrompu pour la première fois, et ses sabots laissaient de petites traces de brûlure que j'essayais de ne pas regarder.",
     },
     ["night-in"] = {
-
+      [1] = "J'ai fini cette étape sous un toit {at}, trop $gfatigué:fatiguée; pour aller plus loin.",
+      [2] = "Un toit {at}, c'était tout ce que je voulais, et je n'ai pas eu à le chercher.",
+      [3] = "Avec un abri {at}, rester allait de soi.",
+      [4] = "Un toit ordinaire {at} était plus bienvenu qu'un nouveau coup d'œil sur la route.",
+      [5] = "Je me suis $ginstallé:installée; à l'abri {at}, sans aucune envie de mettre de nouveau à l'épreuve la vie qui me restait.",
     },
     ["night"] = {
-
+      [1] = "Je me suis $ginstallé:installée; à la belle étoile {at}, et j'ai laissé demain à demain.",
+      [2] = "Je me suis $gallongé:allongée; dehors {at}, et avoir trouvé un endroit où m'arrêter me suffisait.",
+      [3] = "J'ai passé une nuit de plus dehors {at}, sans aucune envie d'aller plus loin pour mon confort.",
+      [4] = "Je me suis $ginstallé:installée; {at}, et j'ai laissé l'obscurité garder l'étape suivante jusqu'à ce que je me sois $greposé:reposée;.",
+      [5] = "Le sol {at} n'avait pas été pensé pour un dos fatigué, mais je m'y suis $greposé:reposée; quand même.",
+      [6] = "J'avais assez de route derrière moi {at} pour que l'immobilité ait le goût d'une arrivée.",
+      [7] = "Je me suis $greposé:reposée; dehors {at}, les lieues à venir laissées à quelqu'un d'autre jusqu'au matin.",
+      [8] = "La nuit {at} m'a demandé moins que le jour, et je me suis $gallongé:allongée;, $greconnaissant:reconnaissante;.",
     },
     ["opening"] = {
-
+      [1] = "Je me suis $gmis:mise; en route {at}, la journée entière encore à écrire.",
+      [2] = "L'air {at} méritait qu'on s'y arrête avant que le travail ne me trouve, et je m'y suis $garrêté:arrêtée;.",
+      [3] = "J'ai repris la route {at}, $greconnaissant:reconnaissante; pour un jour de plus dont je ne connaissais pas encore les ennuis.",
+      [4] = "Plus $gdésireux:désireuse; d'avancer que de rester là à m'inquiéter, je me suis $gmis:mise; en route {at}.",
+      [5] = "J'ai continué {at} après la tombée de la nuit, mes oreilles travaillant plus que mes yeux.",
+      [6] = "Les ombres s'étendaient sur {where}, et je les surveillais plus que la route.",
+      [7] = "L'obscurité {at} m'intéressait moins que d'arriver là où j'allais.",
+      [8] = "J'espérais une journée ordinaire {at}, sans trop y compter.",
+      [9] = "Mon enthousiasme {at} cachait une inquiétude secrète, et j'ai repris la route avec l'un et l'autre.",
+      [10] = "Je me suis $gmis:mise; en route {at}, $gprêt:prête; à rendre service et $gconscient:consciente; de ce qu'il en coûte.",
+      [11] = "J'ai poursuivi mon chemin {at}, avec la prudence d'$gun étranger:une étrangère; et le désir d'$gun voyageur:une voyageuse; d'être $gbien accueilli:bien accueillie;.",
+      [12] = "$gCurieux:Curieuse; de ce que le pays me réservait, j'ai commencé cette étape {at}.",
+      [13] = "Plus $gobstiné:obstinée; à continuer que $gsensé:sensée; à m'arrêter, je me suis $gmis:mise; en route {at}.",
+      [14] = "Je me suis $gpréparé:préparée; {at}, sans aucune envie de laisser filer une heure de plus à hésiter.",
+      [15] = "Le paysage {at} a pris toute l'attention que réclamaient mes soucis, et je l'ai laissé faire.",
+      [16] = "Les gens que je pourrais croiser en chemin m'intéressaient autant que la route depuis {where}.",
+      [17] = "J'ai repris la route {at}, $greconnaissant:reconnaissante; d'être en vie et bien $gdécidé:décidée; à ne plus considérer aucun jour comme acquis.",
+      [18] = "J'avais trop vécu pour gâcher la vie qui me restait, et j'ai repris la route {at} avec prudence.",
+      [19] = "De l'eau invoquée et l'esprit tranquille m'accompagnaient {at}, et j'espérais que les ennuis à venir respecteraient l'un comme l'autre.",
+      [20] = "Ma patience de $gchasseur:chasseresse; tenait en bride mon goût de la traque lorsque j'ai repris la route {at}.",
+      [21] = "Chaque entrée que je trouvais {at} exigerait une sortie discrète, et j'ai commencé en gardant cela en tête.",
+      [22] = "Assez de malédictions pour mes ennemis et une saine méfiance envers tout ce que je pouvais invoquer : je me suis $gmis:mise; en route {at} avec l'une et l'autre.",
+      [23] = "Mes mains, je l'espérais, serviraient plus souvent à soigner qu'à blesser, et j'ai repris {at}.",
+      [24] = "J'ai repris la route {at}, toujours $gépris:éprise; d'un monde qui change avec chaque forme que la nature sauvage peut m'apprendre.",
+      [25] = "Ce sont les voix les plus douces des éléments que je guettais en me mettant en route {at}.",
+      [26] = "Mon habitude de $gguerrier:guerrière;, qui mesure les ennuis à la portée d'une arme, m'a $gsuivi:suivie; {at}.",
+      [27] = "J'ai repris la route {at}, la force de la Lumière prête à servir pour les besoins ordinaires que je pourrais croiser.",
+      [28] = "Des forces à dépenser et l'envie de savoir où les dépenser : j'ai commencé {at} avec l'une et l'autre.",
+      [29] = "Aucune demande pressante ne m'avait encore $gtrouvé:trouvée; {at}, et j'ai profité de cette liberté tant qu'elle durait.",
+      [30] = "J'ai repris la route {at} après la tombée de la nuit, avec plus de soin que de hâte.",
     },
     ["petdied"] = {
-
+      [1] = "{pet} a succombé {at}, et la route m'a soudain paru plus vide sans sa présence à mes côtés.",
+      [2] = "J'ai vu {pet} tomber {at}, et j'ai senti son absence avant d'avoir des mots pour la dire.",
+      [3] = "{pet} a succombé {at}, et j'ai mesuré, d'un coup, combien je comptais sur cette présence.",
+      [4] = "J'ai perdu {pet} {at}. Je ne cessais de penser à la place que {pet} occupait à mes côtés.",
+      [5] = "{pet} a succombé {at}, et les autres soucis du jour ont paru moins grands pour un temps.",
+      [6] = "J'ai vu {pet} tomber {at}, et je n'ai pas pu chasser cette image aussi facilement que le reste des combats.",
+      [7] = "{pet} a succombé {at}. Par ici, ç'aurait tout aussi bien pu être moi.",
+      [8] = "{pet} a succombé {at}, et je l'ai ressenti comme bien plus qu'un épisode des combats du jour.",
+      [9] = "Je me suis $gretrouvé:retrouvée; sans {pet} à mes côtés {at}, moi qui m'étais $ghabitué:habituée; à sa compagnie.",
     },
     ["power"] = {
-
+      [1] = "J'ai appris {spell:le}, et je pouvais désormais aborder la nature sauvage sous une forme plus proche de la sienne.",
+      [2] = "Apprendre {spell:le} m'a donné une autre forme à prendre, et un respect nouveau pour le corps que j'allais emprunter.",
+      [3] = "J'ai appris {spell:le}, avec l'impatience d'$gun druide:une druidesse; de connaître le monde par d'autres sens que les miens.",
+      [4] = "J'avais appris {spell:le}, et j'aimais avoir une autre forme à mettre entre les ennuis et moi.",
+      [5] = "J'ai appris {spell:le}, et je pouvais appeler une autre créature des ténèbres sans prétendre en faire une amie.",
+      [6] = "J'ai appris {spell:le}. Un autre démon pouvait désormais me rejoindre à mon appel, ce qui était utile et pas tout à fait rassurant.",
+      [7] = "J'ai appris {spell:le}, avec plus d'appétit pour la force d'un démon que d'affection pour son espèce.",
+      [8] = "J'ai appris {spell:le}, en espérant que le démon resterait celui qui paierait le plus cher l'arrangement.",
+      [9] = "J'ai appris {spell:le}, et la route devant moi paraissait déjà plus courte.",
+      [10] = "Apprendre {spell:le} me promettait une monture à appeler, et les distances inconnues ont commencé à me tenter.",
+      [11] = "J'avais appris {spell:le}, avec une tendresse soudaine pour les routes que je n'aurais plus à parcourir à pied.",
+      [12] = "J'ai appris {spell:le}, et je voulais savoir à quoi ressemblerait le monde du dos d'une telle monture.",
     },
     ["prologue"] = {
-
+      [1] = "J'avais déjà accompli {quests} tâches quand cette étape a commencé {at}.",
+      [2] = "J'avais mené à bien {quests} besognes, et ma pierre de foyer était liée à {inn}. J'ai poursuivi {at}, avec déjà du travail derrière moi.",
+      [3] = "J'avais passé {played} dans le monde avant d'entamer cette étape {at}.",
+      [4] = "J'avais {quests} tâches derrière moi quand j'ai commencé cette partie de la route {at}.",
+      [5] = "J'ai continué {at}, plus tout à fait $gnouveau:nouvelle; dans le monde, même si le chemin devant moi m'était inconnu.",
+      [6] = "J'avais accompli {quests} tâches avant d'arriver à ce moment de ma vie {at}.",
+      [7] = "J'avais passé {played} dans le monde, avec {quests} tâches accomplies et ma pierre de foyer liée à {inn}.",
+      [8] = "J'ai commencé cette étape {at}, avec {quests} tâches et {played} déjà derrière moi.",
+      [9] = "J'avais mené à bien {quests} tâches et j'étais toujours $gvivant:vivante;. J'ai poursuivi {at}, refusant de gaspiller cette vie à la légère.",
+      [10] = "J'ai continué {at}, sans seconde vie qui m'attende si celle-ci prenait fin.",
+      [11] = "J'ai commencé cette étape {at}, avec l'entêtement de la montagne en moi et aucune envie particulière d'impressionner.",
+      [12] = "J'ai poursuivi {at}, toujours un cadavre, sans aucune intention de retourner sous la garde de quiconque.",
+      [13] = "J'ai commencé cette étape {at}, avec la lumière d'Elune pour me soutenir.",
+      [14] = "J'ai continué {at}, $gcurieux:curieuse; de voir ce qui, de mon savoir, fonctionnerait encore par ici.",
+      [15] = "J'ai repris la route {at}, avec une liberté qu'aucun surveillant ne pourrait reprendre, et toutes les raisons d'en faire bon usage.",
+      [16] = "J'ai poursuivi {at}, avec la curiosité d'$gun shu'halo:une shu'halo; pour les gens que la route pourrait me faire rencontrer.",
     },
     ["pvp-many"] = {
-
+      [1] = "J'ai abattu {n} combattants de {side} {at}, assez de combats pour que la prochaine étape tranquille me soit très chère.",
+      [2] = "À la fin des combats contre {side} {at}, {n} des leurs étaient tombés sous mes coups.",
+      [3] = "Les escarmouches contre {side} {at} leur ont coûté {n} des leurs.",
+      [4] = "J'ai combattu {side} {at}, et {n} des leurs sont tombés sous mes coups.",
+      [5] = "{side} a perdu {n} des siens face à moi {at}.",
+      [6] = "J'ai combattu {side} {at}, {n} des leurs sont tombés, et je n'avais aucune envie d'en voir tomber davantage.",
+      [7] = "Les combats contre {side} ont tourné en ma faveur, et {n} des leurs sont tombés sous mes coups.",
+      [8] = "J'ai abattu {n} combattants de {side}, en espérant que la prochaine rencontre exigerait moins de violence.",
+      [9] = "J'ai combattu {side} {at}, et {n} des leurs sont tombés sous mes coups. Je ne voulais plus mettre à l'épreuve la seule vie que j'avais.",
     },
     ["pvp-one"] = {
-
+      [1] = "J'ai tué {name}, {who}, {in}.",
+      [2] = "J'ai affronté {name}, {who}, {in}, et j'ai gagné.",
+      [3] = "J'ai tué {name}, {who}, {in}, et j'aurais voulu que notre rencontre nous demande quelque chose de plus doux.",
+      [4] = "{name}, {who}, a succombé sous mes coups {at}.",
+      [5] = "J'ai abattu {name}, {who}, sans aucune envie de chercher un autre ennemi qui me ressemble autant.",
+      [6] = "J'ai vaincu {name}, {who}, avec moins de plaisir à la victoire que je ne l'aurais cru.",
+      [7] = "{name}, {who}, n'a pas survécu à notre rencontre.",
+      [8] = "J'ai tué {name}, {who}, et la pensée d'une compagnie amie est devenue un réconfort.",
+      [9] = "J'ai tué {name}, {who}, {in}, avec une seule vie, trop précieuse pour que je sois $gfier:fière; de l'avoir risquée.",
+      [10] = "J'ai tué {name} {at}, sans plus aucun goût pour une autre rencontre dangereuse.",
+      [11] = "J'ai tué {name}, du camp adverse, {at}.",
+      [12] = "{name}, du camp adverse, a succombé sous mes coups {at}.",
+      [13] = "J'ai tué {name}, du camp adverse, sans aucun appétit pour une autre rencontre de ce genre.",
+      [14] = "J'ai abattu {name} {at}, et je voulais retrouver un visage familier plus qu'un nouvel ennemi.",
+      [15] = "J'ai tué {name}, du camp adverse, et j'ai tiré peu de plaisir de la victoire.",
+      [16] = "J'ai vaincu {name} {at}, et l'envie d'un retour au calme n'en a été que plus forte.",
     },
     ["remembrance"] = {
-
+      [1] = "{name} avait accompli {quests} tâches et combattu {kills} ennemis, et une vie vaut bien plus que l'un ou l'autre de ces nombres.",
+      [2] = "En {played} de vie, {name} avait mené à bien {quests} tâches.",
+      [3] = "{name} avait abattu {rare}, et avait survécu à ce combat.",
+      [4] = "{name} était $gsorti:sortie; $gvivant:vivante; de {dungeon}, une fois.",
+      [5] = "{name} avait vu {zones} contrées et accompli {quests} tâches en chemin.",
+      [6] = "{name} avait eu raison de {rare} et mené à bien {quests} tâches.",
+      [7] = "{name} avait passé {played} dans le monde, avec {quests} tâches accomplies et {kills} ennemis combattus.",
+      [8] = "{name} avait vécu {played} sur ce royaume, une vie que le dernier combat ne saurait résumer tout à fait.",
+      [9] = "{name} avait affronté {rare} et l'avait emporté, une histoire qui mérite d'être racontée.",
+      [10] = "{name} avait survécu à {dungeon}, même si le dernier danger ne s'y trouvait pas.",
+      [11] = "{kills} ennemis étaient tombés sous les coups de {name} avant que le dernier combat ne se termine autrement.",
+      [12] = "{name} avait accompli {quests} tâches et combattu {kills} ennemis, avec la plus grande part du monde encore à voir.",
+      [13] = "{name} avait vu {zones} contrées et accompli {quests} tâches, avec déjà une bonne part d'une vie derrière soi.",
     },
     ["rest"] = {
-
+      [1] = "J'ai laissé la prochaine petite commission attendre {at}, et je me suis $gassis:assise; à la place.",
+      [2] = "Plus rien ne pressait pour un temps, et je me suis $ginstallé:installée; {at}.",
+      [3] = "Je me suis $garrêté:arrêtée; pour me reposer {at}, $gheureux:heureuse; que le prochain bout de chemin puisse attendre sans m'échapper.",
+      [4] = "La fatigue m'a enfin $grattrapé:rattrapée; {at}, et je n'ai pas eu à la porter plus loin.",
+      [5] = "{at}, la route a enfin moins exigé de moi que mon propre besoin de repos, et j'y ai cédé.",
+      [6] = "Je me suis $ginstallé:installée; {at}, préférant le réconfort d'une pause à la satisfaction d'aller plus loin.",
+      [7] = "Je me suis $greposé:reposée; {at}, $gvivant:vivante; et tout à fait $gdisposé:disposée; à laisser le danger à d'autres pour un temps.",
+      [8] = "Je me suis $greposé:reposée; près du feu {at}, et j'ai donné congé à mon endurance pour le reste de la journée.",
+      [9] = "Quelque chose de plus doux que le travail du jour m'attendait près du feu {at}, et mes mains en ont été heureuses.",
+      [10] = "Un feu {at} m'a $gréchauffé:réchauffée; sans rien me demander, et je lui en ai été $greconnaissant:reconnaissante;.",
+      [11] = "Je me suis $ginstallé:installée; près du feu {at}, laissant la route continuer sans moi.",
+      [12] = "L'étape suivante pouvait bien attendre {at} que j'en aie envie.",
+      [13] = "Je me suis $greposé:reposée; près du feu {at}, et je l'ai laissé me réchauffer, ce qui était tout ce que je lui demandais.",
+      [14] = "Près du feu {at}, on n'exigeait de moi aucun courage, et cela me convenait.",
+      [15] = "L'étape suivante pouvait rester hors de la lueur du feu {at} pour l'instant. Moi, je comptais rester dedans.",
+      [16] = "Une fois le travail fini {at}, je me suis laissé gagner par le calme un moment.",
+      [17] = "Je me suis $greposé:reposée; {at}, et le calme est venu plus facilement que je ne l'aurais cru.",
+      [18] = "Tout le reste pouvait attendre que j'aie dormi, et j'ai fait halte {at}.",
+      [19] = "Je me suis enfin $gassis:assise; {at}, et rien ne me pressait de me relever.",
+      [20] = "N'ayant nulle part où aller et aucune envie d'en trouver, je me suis $garrêté:arrêtée; {at}.",
+      [21] = "Le travail fini, j'ai laissé la journée s'apaiser {at}.",
     },
     ["riding"] = {
-
+      [1] = "J'ai appris à monter, et mes pieds m'en étaient reconnaissants avant même que je sois en selle.",
+      [2] = "J'ai appris à monter, avec plus d'enthousiasme pour les longues routes que je n'en avais jamais eu à pied.",
+      [3] = "J'ai appris à monter, en espérant qu'une monture me trouverait un fardeau supportable.",
+      [4] = "J'ai appris à monter, et j'ai découvert combien une monture pouvait rendre les distances faciles.",
+      [5] = "J'ai enfin appris à monter, et j'avais hâte de savoir avec quelle douceur une selle me traiterait.",
     },
     ["shift"] = {
-
+      [1] = "J'ai pris pour la première fois la forme d'un ours, et j'ai senti le monde devenir petit et solide sous de lourdes pattes.",
+      [2] = "La première fois que je suis $gdevenu:devenue; ours, j'ai compris pourquoi la forêt leur laissait de la place. Tout en moi voulait tenir bon.",
+      [3] = "J'ai pris pour la première fois la forme d'un ours, lourde d'une force que j'aurais bien aimé garder.",
+      [4] = "J'ai pris pour la première fois la forme d'un félin, et mes nouveaux sens m'ont presque autant $gsurpris:surprise; que les griffes.",
+      [5] = "La première fois que je suis $gdevenu:devenue; félin, j'ai senti une patience de chasseur sous l'envie d'essayer mes nouvelles pattes.",
+      [6] = "Sous forme de félin pour la première fois, je me sentais assez rapide pour être n'importe où avant même d'avoir décidé d'y aller.",
+      [7] = "J'ai pris pour la première fois ma forme de voyage, $gravi:ravie; d'avoir un corps fait pour avaler les distances plutôt que de les maudire.",
+      [8] = "La première fois que j'ai pris ma forme de voyage, une longue route a cessé d'être une chose à redouter.",
+      [9] = "J'ai pris pour la première fois la forme d'un phoque dans l'eau, et j'ai nagé comme si je n'avais jamais eu besoin de respirer.",
+      [10] = "La première fois que j'ai pris ma forme aquatique, j'ai pu imaginer me sentir chez moi sous la surface au lieu de seulement y passer.",
+      [11] = "J'ai pris pour la première fois la forme du sélénien, $gemplumé:emplumée; et $glourd:lourde;, avec le pouvoir de la lune à portée de main.",
+      [12] = "La première fois que je suis $gdevenu:devenue; sélénien, je me suis $gsenti:sentie; un peu ridicule et immensément $gfort:forte;, dans cet ordre.",
+      [13] = "J'ai pris pour la première fois la forme d'un arbre de vie, avec la douceur d'un guérisseur dans un corps fait d'écorce.",
+      [14] = "Je me suis $genvolé:envolée; pour la première fois sous la forme d'un oiseau, et je voulais voir toutes les routes que j'avais parcourues étalées sous moi.",
+      [15] = "J'ai pris une nouvelle forme pour la première fois, et j'ai senti combien je tenais à mon ancien corps, même en profitant d'un autre.",
     },
     ["summit"] = {
-
+      [1] = "J'ai atteint le niveau {level}, avec en mémoire bien plus de pays que je n'aurais pu l'imaginer au départ.",
+      [2] = "J'ai atteint le niveau {level}, et je voulais du temps pour profiter d'une vie que j'avais eu tant de mal à garder.",
+      [3] = "Au niveau {level}, je pouvais être $gfier:fière; du chemin parcouru sans me chercher aussitôt une autre entreprise.",
+      [4] = "J'ai atteint le niveau {level}, et je n'étais plus $gl'étranger:l'étrangère; qui s'était un jour demandé si la route l'accueillerait.",
+      [5] = "J'ai atteint le niveau {level} $gvivant:vivante;, avec pour ma vie une tendresse qu'aucun danger n'avait réussi à m'ôter.",
+      [6] = "J'ai atteint le niveau {level}, toujours $gvivant:vivante; et bien $gdécidé:décidée; à le rester.",
     },
   },
   voices = {
     ["Dwarf"] = {
       ["beginning"] = {
-        [1] = "J'ai fait mes premiers pas {at}, $gfier:fière; de porter le nom de [[Ironforge]] et $gbien décidé:bien décidée; à lui rapporter un jour quelque chose qui en soit digne.",
+        [1] = "J'ai fait mes premiers pas {at}, $gfier:fière; de porter le nom de [[Ironforge]] et bien $gdécidé:décidée; à lui rapporter un jour quelque chose qui en soit digne.",
+        [2] = "Je me suis $gmis:mise; en route {at}, $gattiré:attirée; par ce vaste monde que la Ligue des explorateurs ne cessait de déterrer.",
+        [3] = "Je me suis $gmis:mise; en route {at}, $gun nain:une naine; de la montagne avec encore bien du pays à fouler de mes bottes.",
+        [4] = "J'ai fait mes premiers pas {at}, en me demandant si la route me mènerait plus près des vieux secrets enfouis sous la pierre.",
       },
       ["close-deep"] = {
-
+        [1] = "{foe} a bien failli me mettre en terre {at}. Je comptais apprendre ce qu'il y a dessous, mais pas tout à fait de cette façon.",
+        [2] = "J'ai survécu de justesse à {foe} {at}, le cœur battant comme les sabots d'un bélier sur un col gelé.",
+        [3] = "{foe} m'a $glaissé:laissée; à peine $gvivant:vivante; {at}. Je voulais retrouver la montagne au-dessus de ma tête, et le vacarme de chez moi tout autour.",
+        [4] = "J'ai survécu de justesse {at}. Pendant un moment, la pensée d'une soirée ordinaire à [[Ironforge]] m'a fait plus mal que la peur.",
+        [5] = "Je suis $gpassé:passée; trop près de la fin {at}, et j'aurais donné une rançon de roi pour une route sûre jusque chez moi.",
       },
       ["close-light"] = {
-        [1] = "{foe} a bien failli m'achever {at}, et l'idée de la Grande Forge poursuivant son ouvrage sans moi ne m'a été d'aucun réconfort.",
+        [1] = "{foe} a bien failli m'achever {at}, et l'idée de [[The Great Forge]] poursuivant son ouvrage sans moi ne m'a été d'aucun réconfort.",
+        [2] = "J'ai survécu à {foe} {at}, mais j'avais l'impression d'avoir dévalé toutes les pentes de [[Dun Morogh]].",
+        [3] = "{foe} m'a $gmené:menée; au bord de la mort {at}. Je n'avais aucune envie de finir en histoire racontée autour d'une bière à [[Kharanos]].",
+        [4] = "J'ai bien failli mal finir {at}. Être $gfait:faite; d'un bois têtu commençait à me paraître moins utile qu'être $gprudent:prudente;.",
+        [5] = "J'ai survécu {at} de justesse, mon orgueil sérieusement cabossé.",
       },
       ["d-close"] = {
-
+        [1] = "Je suis $gmort:morte; au cours de cette étape, et je reprendrai le fil de ce qui s'est passé pas à pas, pour trouver où ça a cédé en premier.",
+        [2] = "Je tiens encore debout, mais de justesse, et je compte bien trouver le défaut qui a failli tout me coûter avant que quelque chose d'autre ne le trouve pour moi.",
+        [3] = "Les espaces confinés ne m'ont jamais $gtroublé:troublée; comme ils troublent certains, et ce donjon a mis cette vantardise à rude épreuve.",
+        [4] = "Je suis $gmort:morte; là-bas, et rien ne pique autant que de voir une chose céder sous la charge, même quand cette chose, c'est moi.",
+        [5] = "Je suis $gpassé:passée; à un cheveu de la fin, et je retourne ce moment dans tous les sens comme une pièce de fonderie douteuse, en cherchant la bulle d'air qui a failli la fendre.",
+        [6] = "La première règle de toute fouille, c'est d'en ressortir, et cet endroit a mis cette règle à l'épreuve plus durement que je ne l'aurais voulu.",
       },
       ["d-foes"] = {
-
+        [1] = "J'ai mesuré ma force à {foes}, et elle a tenu, comme je l'avais espéré.",
+        [2] = "Le combat fini, {foes} gisai{foes=t|t|ent|ent} à mes pieds, et je me suis accordé un moment de fierté pour du travail propre.",
+        [3] = "Le combat contre {foes} m'a pris tout ce que j'avais à donner, et bien plus que je ne me savais capable de donner.",
+        [4] = "J'ai fini par avoir le dessus sur {foes}, mais seulement de l'épaisseur de mon propre cuir.",
+        [5] = "{foes} sont {foes=tombés|tombées|tombés|tombées} sous mes coups, et chaque combat m'a laissé le bruit des coups dans les oreilles.",
+        [6] = "J'ai affronté {foes} et je suis $gsorti:sortie; de l'un comme de l'autre, même si l'un des deux m'a $glaissé:laissée; en bien moins bon état qu'il ne m'avait $gtrouvé:trouvée;.",
+        [7] = "Je suis $gvenu:venue; à bout de {foes} l'un après l'autre, et tous ont fini à terre et moi debout, ce qui est l'ordre normal des choses.",
+        [8] = "Je me suis frayé un chemin à travers {foes}, et au dernier d'entre eux, il ne restait plus grand-chose de moi qui n'ait pas été ébranlé.",
       },
       ["d-land"] = {
-
+        [1] = "J'ai foulé pour la première fois le sol de {lands}, $gun nouveau venu:une nouvelle venue; au dos solide et à la tête pleine de questions.",
+        [2] = "J'ai découvert {lands}, avec l'envie de la Ligue des explorateurs de voir ce qu'il y avait derrière la prochaine crête.",
+        [3] = "J'ai atteint {lands} pour la première fois, et j'ai longuement observé la contrée avant de lui confier un seul pas.",
+        [4] = "J'ai ajouté {lands} aux lieux que j'ai vus de mes propres yeux, et je comptais en voir bien d'autres.",
+        [5] = "J'ai traversé {lands}, une contrée après l'autre, jusqu'à ce que mes bottes en sachent plus long sur le monde que ma tête.",
+        [6] = "J'ai découvert {lands}, et la pierre y connaissait les mains de mon peuple, même si les routes ne connaissaient pas encore mes pieds.",
       },
       ["d-react"] = {
-
+        [1] = "Cela faisait un nom de moins dont la montagne aurait à se soucier, et je ne l'ai pas pleuré.",
+        [2] = "C'était un combat qui valait le déplacement, et je n'en ai rien regretté.",
+        [3] = "Ramener quelqu'un chez soi en un seul morceau, c'est un travail que je referais sans même demander de salaire.",
+        [4] = "J'ai déterré bien des choses dans ma vie, mais aucune que j'aie été plus $gheureux:heureuse; de ramener.",
       },
       ["d-spec"] = {
-
+        [1] = "J'avais choisi la voie des [[spec:Arms]], une arme maniée avec patience et d'une main sûre.",
+        [2] = "J'avais choisi la [[spec:Fury]], ma colère lâchée de sa laisse et pointée droit sur l'ennemi.",
+        [3] = "J'avais choisi la [[spec:Protection]], pour me dresser comme les portes de [[Ironforge]] : closes, solides et pas près de bouger.",
+        [4] = "Je m'étais $gvoué:vouée; à la voie du [[spec:Holy]], la Lumière telle qu'on la garde dans [[The Mystic Ward]] : stable, et toujours à portée de main.",
+        [5] = "J'avais choisi la [[spec:Protection]], ma foi plantée bien droit là où tomberait le poids d'un combat.",
+        [6] = "J'avais choisi la [[spec:Retribution]], la Lumière avec un peu de poids derrière elle et un sens tout simple de la justice.",
+        [7] = "Je m'étais $gvoué:vouée; à la [[spec:Beast Mastery]], cette confiance entre chasseur et bête que tout montagnard de [[Dun Morogh]] apprend à respecter.",
+        [8] = "J'avais choisi la [[spec:Marksmanship]], la visée longue et posée que mon peuple a toujours admirée chez un bon tireur.",
+        [9] = "J'avais choisi la [[spec:Survival]], l'art montagnard des pièges, de la neige et de l'endurance face à tout ce qui vous chasse.",
+        [10] = "J'avais choisi l'[[spec:Assassination]], le côté tranchant d'un métier que personne à [[Ironforge]] n'avoue pratiquer.",
+        [11] = "J'avais choisi le [[spec:Combat]], un combat robuste sans fioritures, comme j'aime un bon outil.",
+        [12] = "J'avais choisi la [[spec:Subtlety]], preuve que de lourdes bottes savent se faire discrètes quand le travail l'exige.",
+        [13] = "J'avais choisi la [[spec:Discipline]], une foi bâtie comme une bonne maçonnerie, chaque prière posée bien d'aplomb sur la précédente.",
+        [14] = "Je m'étais $gvoué:vouée; à la voie du [[spec:Holy]], mes prières de celles qui rafistolent un ami et le remettent sur pied.",
+        [15] = "Je m'étais $gtourné:tournée; vers l'[[spec:Shadow]], une route que peu prennent à [[Ironforge]], et je l'ai parcourue avec la prudence qu'on doit à un puits de mine douteux.",
+        [16] = "J'avais choisi la voie [[spec:Elemental]], l'orage et la pierre à mes ordres, ce qui me paraissait encore une merveille.",
+        [17] = "J'avais choisi l'[[spec:Enhancement]], la force même de la terre portée dans chaque coup, aussi sûre que le pas d'un bélier.",
+        [18] = "J'avais choisi la [[spec:Restoration]], demandant aux esprits de la pierre et de l'eau de réparer tout ce que la route cassait.",
+        [19] = "J'ai mis {was} de côté pour {spec}, comme on le ferait d'un outil trop grossier pour la tâche.",
+        [20] = "{was} avait bien tenu, mais j'estimais que {spec} tiendrait mieux, et j'ai suivi mon estimation.",
       },
       ["died"] = {
-
+        [1] = "{foe} m'a $gtué:tuée; {at}. J'avais été $gtêtu:têtue; comme la pierre, et à peu près aussi $gprompt:prompte; à m'écarter.",
+        [2] = "Je suis $gtombé:tombée; sous les coups de {foe} {at}. Je me croyais plus difficile à briser que ça.",
+        [3] = "J'ai fait une chute mortelle {at}. Tout mon amour des montagnes ne m'a pas $gprotégé:protégée; de la chute.",
+        [4] = "Je me suis $gnoyé:noyée; {at}, en rêvant d'un bon bout de pierre sèche sous mes pieds.",
+        [5] = "Je suis $gmort:morte; {at}, sans avoir appris la moitié de ce que la montagne nous cachait.",
+        [6] = "Le feu m'a $gtué:tuée; {at}. J'étais de chair, malgré tout mon goût pour la forge.",
+        [7] = "Je suis $gmort:morte; {at}, et le sol qui d'ordinaire me rassurait ne m'avait offert aucun refuge.",
+        [8] = "{foe} m'a $gtué:tuée; {at}. Je détestais l'idée que les miens apprennent ce nom sans moi.",
+        [9] = "Je suis $gmort:morte; {at}, avec encore du pays à voir et une quantité de bière que je ne goûterais jamais.",
       },
       ["mount"] = {
-
+        [1] = "J'ai sorti {mount=mon|ma|mes|mes} {mount} pour la première fois, et quiconque s'est déjà fié à un bélier sur un sentier gelé aurait approuvé d'un signe de tête.",
+        [2] = "{mount=Mon|Ma|Mes|Mes} {mount} prenait la route comme je prends une côte, tête baissée et sans le moindre doute, et ça m'a plu aussitôt.",
+        [3] = "Un bélier à moi, enfin : je suis $gparti:partie; sur {mount=mon|ma|mes|mes} {mount} en me sentant $gmontagnard:montagnarde; jusqu'au bout des ongles.",
       },
       ["night"] = {
-
+        [1] = "Je me suis $gallongé:allongée; dehors {at}, moins comme $gun voyageur:une voyageuse; que comme une pierre qu'on aurait enfin lâchée.",
+        [2] = "Je me suis $ginstallé:installée; à la belle étoile {at}, les os un peu moins durs que le sol ne semblait s'y attendre.",
+        [3] = "Je me suis $gcouché:couchée; {at}, en me promettant tout bas d'apprécier le prochain vrai lit.",
       },
       ["opening"] = {
-
+        [1] = "Les ennuis du jour avaient pris de l'avance {at}, et je comptais sur mes jambes pour les rattraper.",
+        [2] = "J'ai repris la route {at}, assez solide pour obliger la route à mériter mes plaintes.",
+        [3] = "Il y avait plus à voir dans le monde que l'intérieur d'une montagne, et je suis $gparti:partie; le chercher {at}.",
+        [4] = "Je me suis $gmis:mise; en route {at}, avec le goût de la Ligue des explorateurs pour les vieilles ruines et les questions sans réponse.",
+        [5] = "Un travail restait à moitié fait {at}, et je n'avais aucune intention de le laisser ainsi.",
+        [6] = "{where} ne me donnait aucune raison de traîner, et je n'en ai pas cherché.",
+        [7] = "La pierre sous une route pouvait avoir une histoire plus longue que la route elle-même, et je suis $gparti:partie; {at} voir ce que je pourrais en apprendre.",
+        [8] = "J'étais de bonne humeur {at}, et je doutais que même la route parvienne à l'user.",
+        [9] = "J'ai repris la route {at}, la sécurité de la montagne déjà précieuse à mes yeux.",
+        [10] = "Les béliers ont le pied sûr sur n'importe quelle glace, et j'ai repris la route {at} en espérant être à moitié aussi $gsûr:sûre; du mien.",
+        [11] = "Rien ne me pressait {at}, et je ne doutais pas non plus d'arriver là où j'allais.",
+        [12] = "J'ai repris la route {at}, en dépensant mes forces aussi prudemment que de la bonne monnaie.",
+        [13] = "L'obscurité était tombée {at}, et j'accordais à chaque ombre la méfiance que j'accorderais à une poutre fendue au-dessus de ma tête.",
+        [14] = "Brann Barbe-de-Bronze n'attendait jamais qu'une route soit sûre pour la prendre, et je suis $gparti:partie; {at} un peu dans le même esprit.",
+        [15] = "Les gnomes de [[Tinker Town]] savaient mieux que personne ce que coûte un foyer perdu, et je suis $gparti:partie; {at} avec le mien d'autant plus cher à mon cœur.",
+        [16] = "Je me suis $gpréparé:préparée; {at}, jaugeant le travail du jour à son poids plutôt qu'à mes soucis.",
+        [17] = "Le bon froid propre de [[Dun Morogh]] était bien loin de {where}, et je me suis $gcontenté:contentée; de la journée que j'avais.",
+        [18] = "Il restait de la lumière à dépenser {at}, et je comptais bien en tirer un bon usage.",
+        [19] = "L'obscurité me gênait moins qu'elle aurait pu {at}. La plus grande cité que je connaisse se trouve là où aucun soleil ne pénètre.",
+        [20] = "{where} est une terre que les Barbe-de-Bronze tiennent depuis des générations, et je ne connais pas meilleur départ.",
+        [21] = "De bonnes bottes et un sac bien fait m'ont $gemmené:emmenée; {at}, et les bonnes intentions ont suivi derrière.",
+        [22] = "Quelque part, une vieille porte scellée attend toujours les bonnes mains, et je suis $gparti:partie; la chercher {at}, en espérant tout bas que ce soient les miennes.",
+        [23] = "J'ai repris la route {at}, d'aplomb sur mes jambes et difficile à renverser.",
+        [24] = "Les routes et les murs des autres m'attendaient {at}, et je jugeais les uns comme les autres à la droiture de leur construction.",
+        [25] = "Mon peuple est lent à démarrer et plus lent encore à s'arrêter, et je me suis $gmis:mise; en route {at} bien $gdécidé:décidée; à honorer au moins la seconde moitié.",
       },
       ["rest"] = {
+        [1] = "$gContent:Contente; comme un bélier dans les enclos de [[Amberstill Ranch]], je me suis $gmis:mise; à l'aise {at}.",
+        [2] = "{at}, la journée m'a enfin $glâché:lâchée;, et je l'ai lâchée à mon tour.",
+        [3] = "Mes genoux étaient aussi raides qu'une vieille charnière oubliée dans la neige quand je me suis $garrêté:arrêtée; {at}.",
+        [4] = "Je me suis $greposé:reposée; {at}, et j'ai laissé mes forces revenir à leur rythme.",
+        [5] = "Je me suis $greposé:reposée; {at}, et j'ai découvert que le ciel faisait un toit passable, après tout.",
+        [6] = "{place} n'avait rien d'une soirée chez moi, mais cela ferait l'affaire, et je m'y suis $garrêté:arrêtée; volontiers.",
+        [7] = "La route pouvait bien épuiser quelqu'un d'autre un moment. Je me suis $greposé:reposée; {at}.",
+        [8] = "Rester $gassis:assise; tranquille {at} m'a demandé moins d'entraînement que je ne le craignais.",
+        [9] = "Chacun de mes os avait son avis sur la question quand je me suis $greposé:reposée; {at}, et aucun n'était aimable.",
+        [10] = "Je me suis $garrêté:arrêtée; {at}, et j'ai laissé retomber mes épaules pour la première fois depuis longtemps.",
+        [11] = "Le feu {at} a fait pour mes articulations ce que tous mes grognements n'avaient pas fait.",
+        [12] = "J'ai fait halte {at}, et j'ai compté le fait d'être en vie comme le travail le plus solide de ma journée.",
+        [13] = "Le travail était assez bien fait pour qu'on le laisse tel quel, et j'ai arrêté là pour aujourd'hui {at}.",
+        [14] = "Je me suis $gassis:assise; près du feu {at}, et je l'ai laissé être la seule chose encore au travail.",
+        [15] = "Le travail du jour s'empilait proprement derrière moi {at}, et je n'avais aucune envie d'y ajouter la moindre pièce.",
         [16] = "Ce n'est qu'en posant mes fardeaux {at} que j'ai senti combien ils avaient pesé.",
+        [17] = "Je me suis $gapproché:approchée; du feu {at}, assez près pour réchauffer mes orteils et assez loin pour les garder, à peu près le dernier jugement fin dont j'étais encore capable.",
       },
       ["riding"] = {
-
+        [1] = "J'ai appris à monter, bien $gdécidé:décidée; à faire confiance à ma monture sur un sentier de montagne au moins autant qu'à mes propres bottes.",
+        [2] = "Monter m'est venu plus facilement que prévu. Mon équilibre, il se trouve, sert à autre chose qu'à rester $gplanté:plantée; là.",
       },
     },
     ["Gnome"] = {
       ["beginning"] = {
-
+        [1] = "J'ai fait mes premiers pas {at}, $gl'un:l'une; des enfants dispersés de [[Gnomeregan]], avec deux mains habiles et un avenir incertain.",
+        [2] = "Je me suis $gmis:mise; en route {at}, $gdécidé:décidée; à me faire un nom qui n'ait rien à voir avec la perte.",
+        [3] = "Je me suis $gmis:mise; en route {at}, le cœur têtu et sans aucune envie de passer ma vie à attendre à [[Ironforge]] que quelqu'un d'autre remette les choses en ordre.",
+        [4] = "J'ai fait mes premiers pas {at}, un peu $grassuré:rassurée; par l'ingéniosité qui avait survécu à la chute de [[Gnomeregan]].",
       },
       ["boss-final"] = {
-
+        [1] = "J'ai vu tomber {boss}, et j'en avais fini avec {dungeon}. Pour une fois, le moment le plus alarmant d'une entreprise était derrière moi.",
+        [2] = "Une fois {boss} hors de combat, je pouvais quitter {dungeon}, ce qui valait bien mieux que d'en être $gsorti:sortie; sur un brancard.",
+        [3] = "J'ai eu raison de {boss} dans {dungeon}, et j'ai ressenti un élan de triomphe sans aucune commune mesure avec mes tremblements.",
       },
       ["close-deep"] = {
-
+        [1] = "{foe} a bien failli me tuer {at}. Je voulais vivre pour voir [[Gnomeregan]] repris.",
+        [2] = "J'ai survécu de justesse à {foe} {at}, et j'ai longtemps gardé les mains trop tremblantes pour quoi que ce soit de délicat.",
+        [3] = "{foe} m'a $glaissé:laissée; à peine $gvivant:vivante; {at}. Toute mon ingéniosité n'empêchait pas que j'étais $gfait:faite; d'une matière terriblement fragile.",
+        [4] = "J'ai survécu de justesse {at}, et j'ai tiré du souffle suivant une fierté farouche et déraisonnable.",
+        [5] = "Je suis $gpassé:passée; à un souffle de la fin {at}. Mekkanivelle avait trop peu de gens pour que j'en gaspille un.",
       },
       ["close-light"] = {
-
+        [1] = "{foe} a bien failli m'achever {at}, et être une petite cible m'a soudain paru une bien piètre défense.",
+        [2] = "J'ai survécu à {foe} {at}, le cœur travaillant bien plus fort que le reste de moi ne l'aurait souhaité.",
+        [3] = "{foe} m'a $gmené:menée; au bord de la mort {at}. Pendant un long moment, ma tête si active n'avait rien d'autre à proposer que l'envie d'être ailleurs.",
+        [4] = "J'ai bien failli tomber {at}, et j'aurais préféré une preuve moins palpitante qu'on avait du mal à m'abattre.",
+        [5] = "J'ai frôlé la mort {at}, et je me suis $gdécouvert:découverte; bien $gattaché:attachée; à ce petit corps, après tout.",
       },
       ["d-close"] = {
-
+        [1] = "Mourir n'est pas une chose à laquelle je veuille m'habituer, et je remonte sans cesse le fil, en cherchant le moment où tout aurait encore pu tourner autrement.",
+        [2] = "J'ai bien failli y rester, et j'essaie encore de déterminer, avec moins de calme que je ne le voudrais, quelle part en revient à la malchance et quelle part à moi.",
+        [3] = "Entrer dans un endroit aussi plein d'ennemis n'avait rien d'un plan solide, et mes épaules commencent à peine à redescendre de mes oreilles.",
+        [4] = "J'ai été $gmort:morte;, si brièvement que ce soit, et le petit appareil délicat qui me fait respirer ne m'a jamais paru plus précieux.",
+        [5] = "Cette alerte m'a $grendu:rendue; $gnerveux:nerveuse;, et pour un moment encore je compte laisser la prudence marcher devant et la curiosité traîner derrière.",
+        [6] = "Une foule d'ennemis dans un espace confiné m'a rappelé les troggs dans les salles de [[Gnomeregan]], et je ne suis pas $gpressé:pressée; d'en retrouver une.",
       },
       ["d-foes"] = {
-
+        [1] = "J'ai battu {foes}, et j'ai passé la marche suivante à revoir comment j'aurais pu mieux faire.",
+        [2] = "J'ai battu {foes}, et j'aimerais beaucoup savoir quelles étaient vraiment mes chances au départ.",
+        [3] = "J'ai été à un cheveu de perdre contre {foes}, et j'ai compté mes erreurs de ce combat plus souvent que mon sommeil ne le supporte.",
+        [4] = "J'ai eu le dessus sur {foes}, l'un comme l'autre, et je préférerais ne revoir ni l'un ni l'autre.",
+        [5] = "Je suis $gsorti:sortie; de mes combats contre {foes}, et au moins l'un d'eux a été bien trop près de tout arrêter.",
+        [6] = "Je suis $gvenu:venue; à bout de {foes}, jusqu'au dernier, et je m'en suis $gétonné:étonnée; moi-même en silence.",
+        [7] = "J'ai tenu tête à {foes}, et j'en suis $gsorti:sortie; $gsecoué:secouée;, $gentier:entiere; et plus $gfier:fière; que je ne le laissais voir.",
+        [8] = "J'ai survécu à mes combats contre {foes}, tous, et je préfère ne pas trop penser à quel point le plus serré l'a été.",
       },
       ["d-land"] = {
-
+        [1] = "J'ai enfin vu {lands} par moi-même, et chacune de mes suppositions sur l'endroit s'est révélée fausse d'une façon intéressante.",
+        [2] = "J'ai découvert {lands} sans connaître personne ni rien de ses routes, ce qui est une façon d'arriver moins confortable que je ne voulais le montrer.",
+        [3] = "J'ai atteint {lands}, une contrée nouvelle à chaque pas, et j'aurais aimé une semaine entière à ne rien faire que regarder.",
+        [4] = "J'ai gagné {lands}, des terres toutes nouvelles, et j'aurais volontiers passé une saison à fureter dans chacune.",
+        [5] = "Je me suis $gaventuré:aventurée; jusqu'à {lands}, beaucoup de pays étrange à absorber d'un coup, et je l'ai absorbé quand même.",
+        [6] = "J'ai découvert {lands}, et j'ai aimé savoir que les nains qui avaient abrité mon peuple avaient tant de bonne terre au-delà de leur montagne.",
       },
       ["d-react"] = {
-
+        [1] = "Les plans de celui-là resteraient sur la planche à dessin pour de bon, et je ne l'ai pas regretté.",
+        [2] = "De tout ce que j'aurais pu réparer pendant cette étape, une personne m'a semblé valoir le plus la peine.",
+        [3] = "Certains d'entre eux avaient peut-être été les voisins de quelqu'un que je connaissais, avant les radiations, et je ne pouvais pas m'empêcher d'y penser.",
+        [4] = "J'ai fait ce qu'il fallait faire aux miens irradiés, et je n'en ai tiré aucune fierté.",
       },
       ["d-spec"] = {
-
+        [1] = "J'avais choisi la voie des [[spec:Arms]], qui récompense une bonne prise et un meilleur angle, et je maîtrisais l'un et l'autre.",
+        [2] = "J'avais choisi la [[spec:Fury]], et appris qu'un petit corps peut contenir une colère étonnante.",
+        [3] = "J'avais choisi la [[spec:Protection]], bien $gdécidé:décidée; à être beaucoup plus difficile à déplacer que je n'en avais l'air.",
+        [4] = "J'avais choisi l'[[spec:Assassination]], le plus exigeant des métiers du voleur, ce qui convenait à un esprit qui aime l'exactitude.",
+        [5] = "J'avais choisi le [[spec:Combat]], rapide et rapproché, le genre de combat qui est fini avant que quiconque ait décidé quoi en faire.",
+        [6] = "J'avais choisi la [[spec:Subtlety]], et j'ai pris un plaisir discret à être exactement là où personne n'avait pensé à regarder.",
+        [7] = "J'avais consacré mes études aux [[spec:Arcane]], la plus complexe des écoles, ce qui la rendait tout à fait irrésistible.",
+        [8] = "J'avais consacré mes études au [[spec:Fire]], vif, bruyant et merveilleusement direct.",
+        [9] = "J'avais consacré mes études au [[spec:Frost]], le froid de [[Dun Morogh]] enfin rendu utile.",
+        [10] = "J'avais choisi l'[[spec:Affliction]], des malédictions qui font leur œuvre lentement, et très consciencieusement.",
+        [11] = "J'avais choisi la [[spec:Demonology]], et je traitais chaque démon comme une mécanique au caractère dangereux.",
+        [12] = "J'avais choisi la [[spec:Destruction]], et je gardais une distance respectueuse avec mes propres résultats.",
+        [13] = "J'avais choisi la [[spec:Discipline]], une foi soigneuse, chaque prière placée exactement là où elle ferait le plus de bien.",
+        [14] = "Je m'étais $gvoué:vouée; à la voie du [[spec:Holy]], mes prières tournées vers la réparation de quiconque la route avait brisé.",
+        [15] = "Je m'étais $gtourné:tournée; vers l'[[spec:Shadow]], et je la surveillais d'aussi près que tout ce qui risque d'exploser.",
+        [16] = "J'ai démonté mes anciennes habitudes, au figuré, et je me suis $greconstruit:reconstruite; autour de {spec} au lieu de {was}.",
+        [17] = "{was} avait été un bon premier essai, mais c'est {spec} que je comptais garder.",
       },
       ["died"] = {
-
+        [1] = "{foe} m'a $gtué:tuée; {at}. Être difficile à atteindre n'était pas la même chose qu'être difficile à tuer.",
+        [2] = "J'ai fait une chute mortelle {at}. Être plus près du sol ne m'avait $gprotégé:protégée; en rien.",
+        [3] = "Je me suis $gnoyé:noyée; {at}, avec des poumons qu'aucune ingéniosité ne pouvait convaincre de fonctionner à l'eau.",
+        [4] = "Le feu m'a $gtué:tuée; {at}. Je n'avais plus aucune tendresse pour l'expression « combustion maîtrisée ».",
+        [5] = "Je suis $gmort:morte; {at}, $gvaincu:vaincue; par un monde qui n'a jamais été conçu pour quelqu'un de ma taille.",
+        [6] = "Je suis $gmort:morte; {at}. Nous avions déjà perdu assez des nôtres, et je détestais venir grossir leur nombre.",
       },
       ["mount"] = {
-
+        [1] = "{mount=Mon|Ma|Mes|Mes} {mount} s'est mis{mount=|e|s|es} en marche dans un cliquetis pour la première fois, et j'ai passé la première lieue à écouter ses engrenages avec un intérêt professionnel.",
+        [2] = "J'ai monté {mount=mon|ma|mes|mes} {mount} pour la première fois, et la vitesse m'a autant $gcomblé:comblée; que je l'avais espéré.",
+        [3] = "Un mécanotrotteur à moi : je suis $gsorti:sortie; par la porte sur {mount=mon|ma|mes|mes} {mount}, déjà $gimpatient:impatiente; de le régler.",
       },
       ["night"] = {
-
+        [1] = "Je me suis $gcouché:couchée; {at}. Un cran de sûreté sur le monde entier aurait été une belle invention.",
+        [2] = "Je me suis $ginstallé:installée; dehors {at}. Autrefois, « chez moi » voulait dire plus que l'endroit où je cessais de marcher.",
       },
       ["opening"] = {
-
+        [1] = "J'ai repris la route {at}, aussi $gobstiné:obstinée; que les réfugiés qui avaient recommencé leur vie dans un coin emprunté de la cité des nains.",
+        [2] = "Mon enthousiasme était intact {at}, malgré l'absence de quoi que ce soit qui ressemble à un plan.",
+        [3] = "Je suis $greparti:repartie; {at}, assez $gpetit:petite; pour passer $ginaperçu:inaperçue; et $gravi:ravie; d'en profiter.",
+        [4] = "{where} offrait une douzaine de choses que je voulais regarder de plus près, et je me suis $gautorisé:autorisée; à regarder la plupart.",
+        [5] = "J'ai continué {at}, en mettant de côté les merveilles du jour pour les raconter à [[Tinker Town]].",
+        [6] = "Le monde entier était là, à explorer {at}, et personne pour me dire d'arrêter.",
+        [7] = "Les ennuis n'en avaient pas fini avec moi, je m'en doutais, et j'ai repris la route {at} en gardant l'œil ouvert.",
+        [8] = "Je me suis $gmis:mise; en route {at}, $gcurieux:curieuse; de tout et nullement $gpressé:pressée; qu'on me dise à quoi servait chaque chose.",
+        [9] = "La lumière du jour me montrait plus de pays que je ne pourrais jamais en absorber, et je me suis $gmis:mise; en route {at}, bien $gdécidé:décidée; à essayer.",
+        [10] = "L'obscurité rendait chaque bruit {at} deux fois plus intéressant et moitié moins bienvenu, et je les ai tous écoutés.",
+        [11] = "J'ai repris la route {at}, refusant que les miens comptent encore l'un des nôtres parmi les disparus.",
+        [12] = "Quelque part devant moi se trouvait un problème que personne n'avait encore bien résolu, et je suis $gparti:partie; {at} en espérant être la personne qui y parviendrait.",
+        [13] = "La route {at} aurait pu être mieux tracée, comme la plupart des choses, mais je l'ai suivie quand même.",
+        [14] = "Il y avait en moi {at} une gaieté que la route n'avait pas encore réussi à cabosser.",
+        [15] = "J'ai repris la route {at}, $gsûr:sûre; qu'un jour les salles de [[Gnomeregan]] seraient reprises.",
+        [16] = "En plein jour, chaque route paraît plus courte qu'elle ne l'est, et j'ai commencé {at} avec l'intention de découvrir de combien.",
+        [17] = "La nuit couvrait {where}, et je gardais les yeux sur le sol juste devant moi et mon imagination en laisse très courte.",
+        [18] = "Mes nerfs et ma curiosité se disputaient {at} pour savoir lequel passerait devant.",
+        [19] = "J'ai continué {at}, toujours $gépris:éprise; du monde, quoi qu'il m'ait lancé.",
+        [20] = "Je me suis $gmis:mise; en route {at}, veillant sur mon unique vie avec autant de soin que sur le seul modèle en état de marche de quelque chose d'irremplaçable.",
+        [21] = "La peur m'avait déjà $gaccompagné:accompagnée;, et j'ai continué {at} en la laissant venir, mais pas choisir le chemin.",
+        [22] = "Des questions attendaient tout le long de la route depuis {where}, et je comptais bien en régler au moins quelques-unes.",
+        [23] = "Quelque part à [[Tinker Town]], une invention était sûrement en train de rater, et je suis $gparti:partie; {at} en espérant faire mieux.",
+        [24] = "J'étais en route {at}, avec un plan soigné pour la journée et la certitude de devoir le réviser.",
+        [25] = "L'obscurité a le chic pour réarranger les formes familières en formes inquiétantes, et {where} en était plein.",
       },
       ["rest"] = {
-
+        [1] = "Je me suis $gpelotonné:pelotonnée; {at}, assez $gpetit:petite; pour trouver du réconfort dans des recoins que les gens plus grands ne remarqueraient jamais.",
+        [2] = "Mes pensées sont parties vagabonder {at}, et je ne leur ai pas demandé de rapporter quoi que ce soit d'utile.",
+        [3] = "J'ai fait une pause {at}, $gcontent:contente; de laisser chaque fil pendant exactement là où il était.",
+        [4] = "Pour une fois, aucun problème n'exigeait d'être résolu d'urgence, et je me suis $greposé:reposée; {at}.",
+        [5] = "À court d'idées et parfaitement $gsatisfait:satisfaite; de le rester, je me suis $garrêté:arrêtée; {at}.",
+        [6] = "{at}, j'ai laissé la dernière énigme du jour sans solution, ce qui est plus difficile pour moi qu'il n'y paraît.",
+        [7] = "Mon enthousiasme était momentanément hors service quand j'ai fait une pause {at}.",
+        [8] = "Je me suis $gassis:assise; {at} et j'ai laissé ma curiosité continuer sans moi, puisqu'elle ne se fatigue jamais quand moi je me fatigue.",
+        [9] = "Je me suis $garrêté:arrêtée; {at}, par entêtement, et presque à bout de tout le reste.",
+        [10] = "Pour une fois, je n'avais aucun avis sur la façon dont le feu {at} pourrait brûler plus efficacement.",
+        [11] = "Mes pieds se plaignaient depuis un moment, et je me suis $greposé:reposée; {at} sur leur conseil.",
+        [12] = "Je me suis $greposé:reposée; {at}, avec une seule vie à préserver et la ferme intention de la faire durer.",
+        [13] = "Je me suis $greposé:reposée; {at}, et le calme était un luxe que j'avais appris à ne pas croire acquis.",
+        [14] = "Le Tram des profondeurs laisse ses passagers assis pendant tout le trajet, et j'y ai pensé avec tendresse en m'installant {at}.",
+        [15] = "Rien n'avait besoin d'être mesuré, réparé ni expliqué pendant un moment, alors je me suis $greposé:reposée; {at}.",
+        [16] = "Je me suis $ginstallé:installée; {at}, $gcontent:contente; d'avoir un toit que personne n'allait inonder de radiations.",
+        [17] = "Le feu {at} ne me demandait rien d'autre que de m'asseoir près de lui, et je me suis fait un plaisir d'obéir.",
+        [18] = "{at}, le monde a tourné sans mon aide pour une fois, et je l'ai laissé faire.",
       },
       ["riding"] = {
-
+        [1] = "J'ai appris à monter, et j'ai trouvé le monde bien plus agréable du haut d'une selle.",
+        [2] = "Monter, ai-je découvert, était surtout une affaire de confiance, et j'en avais moins en réserve que de curiosité.",
       },
       ["summit"] = {
-
+        [1] = "J'ai atteint le niveau {level}, portant l'ingéniosité d'une cité perdue dans une vie que j'aurais à peine pu imaginer.",
+        [2] = "Au niveau {level}, j'étais $gallé:allée; plus loin que je n'aurais pu le mesurer à mon départ.",
+        [3] = "J'ai atteint le niveau {level}. Quoi qu'il reste hors de ma portée, j'avais fait faire au nom de [[Gnomeregan]] un long chemin.",
       },
     },
     ["Human"] = {
@@ -616,97 +1522,124 @@ function ns.frenchWriting() return {
   },
   scenery = {
     ["Aerie Peak"] = {
-
+      [1] = "[[Aerie Peak]] était taillé dans la montagne, foyer des nains Wildhammer et de leurs griffons, et le vent le traversait de part en part.",
+      [2] = "[[Aerie Peak]] était une place forte des Wildhammer perchée sur la montagne, et ses chevaucheurs de griffon voyaient tout ce qui bougeait, moi $gcompris:comprise;.",
     },
     ["Ahn'Qiraj Temple"] = {
-
+      [1] = "[[Ahn'Qiraj Temple]] s'enfonçait dans le noir, les salles d'un empire d'insectes, et quelque chose de très ancien attendait tout au fond.",
     },
     ["Alterac Mountains"] = {
-
+      [1] = "La neige et la pierre éboulée emplissaient [[Alterac Mountains]], où les ruines d'un royaume déchu gisaient à demi ensevelies. Les ogres tenaient désormais la vieille cité, et le Syndicat tenait les routes.",
+      [2] = "La nuit, le vent descendait des sommets d'Alterac, tranchant comme une lame. Il y avait parmi les ruines des endroits dont je ne voulais rien savoir.",
     },
     ["Arathi Highlands"] = {
-
+      [1] = "[[Arathi Highlands]] ondulaient sous un ciel immense, semées des ruines de Stromgarde et des pierres levées de temps plus anciens. Ogres, trolls et pillards s'étaient tous taillé leur part de la contrée.",
+      [2] = "La nuit, [[Arathi Highlands]] étaient froides et vastes, les cercles de pierres levées noirs contre les étoiles. Quels que soient les royaumes qui s'étaient dressés là, le vent leur avait survécu à tous.",
     },
     ["Ashenvale"] = {
-
+      [1] = "[[Ashenvale]] était la vieille forêt de mon peuple, haute et silencieuse, ses puits de lune cachés parmi les arbres. Les haches de la Horde en avaient atteint les lisières, et je ne pouvais regarder les souches sans colère.",
+      [2] = "Sous la lune, [[Ashenvale]] semblait telle qu'elle avait toujours dû être, argentée et immobile. Puis j'ai pensé aux camps le long de ses frontières, et à la proximité des haches.",
+      [3] = "Les arbres de [[Ashenvale]] étaient immenses et anciens, et la lumière qui les traversait tombait bleue et verte. C'était beau, et c'était disputé : des sentinelles gardaient les clairières.",
+      [4] = "[[Ashenvale]] était dense, belle et hostile, et chaque arbre pouvait cacher une sentinelle. Nos camps de bûcherons étaient rares et dispersés, et la forêt semblait vouloir les chasser.",
     },
     ["Astranaar"] = {
-
+      [1] = "[[Astranaar]] se dressait sur son île au milieu du lac, ses bâtiments elfiques pâles parmi les arbres, et ses sentinelles surveillaient sans cesse la rive.",
+      [2] = "[[Astranaar]] se tenait sur son île au milieu du lac, cernée de sentinelles, et j'étais $gun ennemi:une ennemie;.",
     },
     ["Auberdine"] = {
-
+      [1] = "Une brume marine grise flottait sur les jetées de [[Auberdine]], et les bateaux allaient et venaient à travers elle sans se presser. Je voyais bien comment une attente sur ce rivage pouvait s'étirer sur des jours.",
+      [2] = "Les navires amarrés à [[Auberdine]] disaient clairement à qui appartenait ce rivage. J'ai admiré l'abri des jetées, sans m'attendre à y être $gbien accueilli:bien accueillie;.",
     },
     ["Azshara"] = {
-
+      [1] = "L'automne régnait partout en [[Azshara]], des arbres rouges et dorés autour des ruines brisées des anciens elfes. C'était beau d'une beauté qui ressemblait à un deuil.",
+      [2] = "La nuit, les ruines de [[Azshara]] se dressaient pâles parmi les arbres, et la mer au-delà était très sombre. L'endroit semblait se souvenir encore de la reine dont il portait le nom.",
     },
     ["Badlands"] = {
-
+      [1] = "[[Badlands]] n'étaient que poussière et roche rouge sous un soleil sans pitié. Les os de grands dragons gisaient à demi enfouis dans les canyons, et rien n'y poussait qui n'eût des épines.",
+      [2] = "[[Badlands]] se rafraîchissaient vite après la tombée de la nuit, les canyons noirs et les étoiles dures et proches. Quelque part, un coyote a appelé, et l'écho est revenu de trois côtés à la fois.",
     },
     ["Blackfathom Deeps"] = {
-
+      [1] = "L'eau de mer avait gravi les marches du temple dans [[Blackfathom Deeps]] et y était restée. Chaque bruit portait dans les salles noyées, alors j'écoutais avant de bouger.",
     },
     ["Blackrock Depths"] = {
-
+      [1] = "[[Blackrock Depths]] étaient une cité entière sous la montagne, le royaume de forges et de lave des nains Sombrefer. Sa chaleur montait à travers la pierre sous mes pieds.",
     },
     ["Blackrock Spire"] = {
-
+      [1] = "[[Blackrock Spire]] s'élevait à l'intérieur de la montagne, forteresse d'orcs, d'ogres et de draconiens, sous les bannières des dragons noirs qui pendaient partout.",
     },
     ["Blackwing Lair"] = {
-
+      [1] = "[[Blackwing Lair]] se trouvait au sommet de [[Blackrock Spire]], les salles de Nefarian, pleines de dragons, d'expériences et de cages.",
     },
     ["Blasted Lands"] = {
-
+      [1] = "[[Blasted Lands]] n'étaient que terre rouge et morte sous un ciel maladif, et au sud la Porte des ténèbres se dressait en silence. Tout ici avait brûlé un jour et ne s'en était jamais remis.",
+      [2] = "La nuit, [[Blasted Lands]] semblaient luire, comme si le sol se souvenait du gangrefeu. La Porte des ténèbres surgissait de l'obscurité, et il était difficile de ne pas se sentir $gobservé:observée;.",
     },
     ["Bloodhoof Village"] = {
-
+      [1] = "[[Bloodhoof Village]] déployait ses grandes tentes le long de la rivière, des kodos se reposant tout près, et j'y suis $gentré:entrée; comme si j'en avais toujours connu le chemin.",
+      [2] = "[[Bloodhoof Village]] était un rassemblement de grandes tentes au bord de la rivière, avec des kodos au repos tout près et une odeur de cuisine dans l'air.",
+      [3] = "[[Bloodhoof Village]] était un village tauren dans l'herbe ouverte, sans murs et sans en avoir besoin, pas même contre moi.",
     },
     ["Booty Bay"] = {
-
+      [1] = "[[Booty Bay]] était bâtie dans les falaises autour d'un port caché, tout en planches, en cordages et en marchandages gobelins, avec une immense mâchoire de requin pour porte. Ici, tout le monde était à vendre, et personne ne prétendait le contraire.",
     },
     ["Brackenwall Village"] = {
-
+      [1] = "[[Brackenwall Village]] se tassait dans le marais, un camp de la Horde aux huttes sur pilotis au-dessus de la boue et des insectes.",
+      [2] = "[[Brackenwall Village]] était un camp de la Horde dans le marais, ses huttes sur pilotis et ses gardes peu engageants.",
     },
     ["Brill"] = {
-
+      [1] = "Après les tombeaux, les toits de guingois de [[Brill]] paraissaient presque amicaux. Autour de [[Gallows' End Tavern]], les miens vaquaient à leurs affaires, et la ville tenait debout par pur entêtement.",
+      [2] = "À [[Brill]], les morts tenaient boutique et faisaient leurs courses sous des toits de guingois. Je m'attendais à des tombes, bien moins à cela.",
     },
     ["Burning Steppes"] = {
-
+      [1] = "La cendre tombait comme neige sur [[Burning Steppes]], et le sol fumait encore. [[Blackrock Mountain]] dominait le tout, et les orcs qui le tenaient avaient fait de toute la contrée la leur.",
+      [2] = "[[Burning Steppes]] ne s'obscurcissaient jamais tout à fait. Des feux brûlaient à travers la plaine, et la lueur rouge de [[Blackrock Mountain]] pendait dans le ciel comme une menace.",
     },
     ["Camp Mojache"] = {
-
+      [1] = "[[Camp Mojache]] était un camp tauren à la lisière de [[Feralas]], ses grandes tentes déployées dans l'herbe.",
+      [2] = "[[Camp Mojache]] était un camp tauren à l'orée de la forêt, et ses braves avaient l'air de gens qui n'accueilleraient pas aimablement des étrangers comme moi.",
     },
     ["Camp Taurajo"] = {
-
+      [1] = "[[Camp Taurajo]] était un camp tauren dans le sud de [[The Barrens]], ses tentes et ses totems dressés au-dessus de l'herbe.",
+      [2] = "[[Camp Taurajo]] était un camp tauren dans l'herbe ouverte, et je ne m'attendais pas à ce que quiconque y soit heureux de me voir.",
     },
     ["Cenarion Hold"] = {
-
+      [1] = "[[Cenarion Hold]] était un camp fortifié dans le sable de [[Silithus]], où le Cercle cénarien montait la garde contre les ruches.",
     },
     ["Chillwind Camp"] = {
-
+      [1] = "[[Chillwind Camp]] n'était qu'une poignée de tentes sous les arbres à l'orée des Maleterres, où l'Alliance gardait un pied face au Fléau.",
+      [2] = "[[Chillwind Camp]] était un camp de l'Alliance à l'orée du pays pestiféré, et je ne pouvais pas attendre de ses soldats qu'ils m'aiment davantage que le Fléau.",
     },
     ["City of Dalaran"] = {
-
+      [1] = "[[City of Dalaran]] n'était qu'à moitié rebâtie, ses rues neuves inachevées, et la magie dans son air avait mal tourné. Des choses faites de pur mana flottaient là où auraient dû se tenir les mages, et j'ai compris pourquoi le Kirin Tor ne voulait pas d'étrangers pour la voir.",
+      [2] = "Sous le dôme, la cité des mages était un chantier devenu étrange : des rues inachevées, et une magie libre qui prenait ses propres formes. Quoi qui l'ait troublée, le Kirin Tor ne l'avait pas encore maîtrisée.",
     },
     ["Darkshire"] = {
-
+      [1] = "[[Darkshire]] se blottissait sous ses lanternes à l'orée du bois sombre, avec le Guet de nuit à chaque coin de rue. La forêt pressait le bourg de tous côtés.",
+      [2] = "[[Darkshire]] était un bourg éclairé et gardé contre l'obscurité, et je ne doutais pas qu'il le soit aussi contre ceux de mon espèce. Ses lanternes laissaient bien peu d'ombres.",
     },
     ["Darkshore"] = {
-
+      [1] = "La brume montait de la mer le long de [[Darkshore]], et de vieilles pierres gisaient à demi enfouies dans le sable gris. Même les arbres avaient l'air las, et je me suis $gsurpris:surprise; à chercher une lumière sur le rivage.",
+      [2] = "La nuit, à [[Darkshore]], la brume ne faisait plus de la mer et du ciel qu'une seule chose grise. Je gardais mes repères au bruit du ressac et à la lune floue au-dessus.",
     },
     ["Darnassus"] = {
-
+      [1] = "La pierre blanche et les bassins immobiles de [[Darnassus]] m'ont $gralenti:ralentie; sans que je le veuille. Près de [[Temple of the Moon]], le vieux silence s'est refermé sur moi, et j'étais chez moi.",
+      [2] = "J'ai baissé la voix à [[Darnassus]] sans que personne me le demande. La pierre pâle et l'eau tranquille semblaient bien loin du rythme de la route en contrebas.",
+      [3] = "À [[Darnassus]], la pierre pâle retenait une eau immobile. J'aurais pu admirer ce calme, s'il n'avait pas rendu chacun de mes pas trop bruyant.",
     },
     ["Deadwind Pass"] = {
-
+      [1] = "[[Deadwind Pass]] était mort en tout point, des arbres gris sur de la roche grise, et la tour de [[Karazhan]] se dressait seule dans la pénombre. Personne parmi ceux que j'avais croisés ne pouvait dire ce qui vivait encore à l'intérieur.",
+      [2] = "La nuit, [[Deadwind Pass]] était plus froid qu'il n'avait le droit de l'être. La tour de [[Karazhan]] se dressait, noire, au-dessus du ravin, et le vent dans les arbres morts ressemblait presque à des voix.",
     },
     ["Desolace"] = {
-
+      [1] = "[[Desolace]] était grise d'un bout à l'autre : terre craquelée, vieux ossements et camps de centaures en guerre. Quelque chose avait vidé cette terre de sa vie, et elle n'était jamais revenue.",
+      [2] = "La nuit en [[Desolace]] était froide, vide et très calme. Les tambours des centaures portaient loin, et les hurlements aussi.",
     },
     ["Dire Maul"] = {
-
+      [1] = "[[Dire Maul]] était la ruine d'une cité elfe dans la forêt, ses grandes salles envahies par la végétation, hantées encore par leurs anciens maîtres, et des ogres vivaient dans les décombres.",
     },
     ["Dolanaar"] = {
-
+      [1] = "Les feuilles et l'eau dormante parfumaient les maisons autour du puits de lune de [[Dolanaar]]. Les sentinelles montaient leur garde patiente sur la route, et j'ai un peu baissé la garde.",
+      [2] = "Le puits de lune bleu de [[Dolanaar]] a attiré mon regard avant les maisons. Sous les lianes retombantes, je me suis $gsurpris:surprise; à parler bas, comme si quelqu'un me l'avait demandé.",
     },
     ["Dun Morogh"] = {
       [1] = "Le froid de [[Dun Morogh]] m'a $gsaisi:saisie; à la gorge, et les pins ployaient sous leur neige. Au-dessus des vallées se dressait la montagne qui abrite [[Ironforge]], et sa vue rendait le froid plus facile à supporter.",
@@ -715,283 +1648,373 @@ function ns.frenchWriting() return {
       [4] = "Une neige épaisse couvrait [[Dun Morogh]], et la montagne de [[Ironforge]] se dressait devant moi. Je me suis $gdemandé:demandée; combien de nains attendaient derrière toute cette pierre.",
     },
     ["Durotar"] = {
-
+      [1] = "La chaleur montait de la poussière rouge de [[Durotar]], comme si le sol lui-même respirait. C'était la terre que nous avions revendiquée, et je comptais apprendre à lui appartenir.",
+      [2] = "La terre rouge de [[Durotar]] virait au gris à mesure que la chaleur quittait les pierres. Par-delà les collines venaient les tambours de [[Orgrimmar]], un son que j'aurais pu suivre les yeux fermés.",
+      [3] = "En [[Durotar]], les collines rouges se refermaient sur la route de [[Orgrimmar]]. Sous ce soleil, j'ai commencé à comprendre le peuple qui avait choisi de rester.",
+      [4] = "Un vent brûlant me jetait au visage la poussière rouge de [[Durotar]]. C'était le pays même de la Horde, et j'ai cessé de croire les crêtes désertes.",
     },
     ["Duskwood"] = {
-
+      [1] = "[[Duskwood]] était sombre même à midi, les arbres si serrés que le soleil atteignait à peine la route. Des choses bougeaient dans les cimetières, et les gens de [[Darkshire]] avaient cessé de faire semblant de ne pas les voir.",
+      [2] = "La nuit dans [[Duskwood]] était une nuit plus noire que les autres. Des worgs hurlaient entre les arbres, et sur [[Raven Hill]] les morts ne restaient pas là où on les avait enterrés.",
     },
     ["Dustwallow Marsh"] = {
-
+      [1] = "[[Dustwallow Marsh]] était chaud, humide et bourdonnant d'insectes, sa boue pleine de crocilisques et ses arbres lourds de mousse. Les tours de [[Theramore Isle]] sur la côte semblaient bien loin du marécage.",
+      [2] = "La nuit, [[Dustwallow Marsh]] s'éveillait de coassements et de clapotis, et la brume montait de l'eau par nappes. Quelque part au sud se trouvait le repaire d'Onyxia, et je ne pouvais pas m'empêcher d'y penser.",
     },
     ["Eastern Plaguelands"] = {
-
+      [1] = "[[Eastern Plaguelands]] étaient une terre sans couleur, aux arbres gris, aux rivières souillées et au sol amolli par la peste. Les murs de [[Stratholme]] se dressaient au nord, et rien de vivant n'y allait de son plein gré.",
+      [2] = "[[Eastern Plaguelands]] étaient plus sombres qu'aucune nuit ne devrait l'être. Des choses marchaient parmi les arbres morts, et la seule lumière bienveillante venait de [[Light's Hope Chapel]], minuscule dans le noir.",
     },
     ["Elwynn Forest"] = {
-
+      [1] = "[[Elwynn Forest]] était verte et bien ordonnée, des fermes nichées entre les chênes et les gardes de [[Stormwind City]] patrouillant sur les routes. Dans un tel pays, il était facile d'oublier à quel point les ennuis étaient proches.",
+      [2] = "[[Elwynn Forest]] était calme la nuit, des lanternes le long de la route et les arbres sombres de chaque côté. Quelque part dans les bois, un loup a appelé, et le prochain réverbère a été le bienvenu.",
+      [3] = "[[Elwynn Forest]] était une terre douce, toute en chênes, en prairies et en champs bien tenus, les murs de [[Stormwind City]] jamais bien loin. On aurait dit un endroit pour lequel des gens s'étaient battus afin qu'il reste ordinaire.",
+      [4] = "La forêt montait jusqu'aux murs de [[Stormwind City]], et chaque route avait sa patrouille. C'était un joli pays et le cœur de l'Alliance, et j'ai senti peser sur moi chacune de ces patrouilles.",
     },
     ["Everlook"] = {
-
+      [1] = "[[Everlook]] était une ville gobeline dans la neige, ses rues pleines de marchands venus de très loin.",
     },
     ["Feathermoon Stronghold"] = {
-
+      [1] = "[[Feathermoon Stronghold]] se dressait sur son île au large de la côte de [[Feralas]], une forteresse elfe qu'on rejoignait en bateau ou à dos d'hippogriffe.",
+      [2] = "[[Feathermoon Stronghold]] se dressait sur son île, et ses sentinelles ne verraient pas d'un bon œil des visiteurs de mon espèce.",
     },
     ["Felwood"] = {
-
+      [1] = "[[Felwood]] avait été une forêt autrefois, et par endroits il l'était encore, mais les arbres étaient tordus et l'eau luisait de vert. La corruption des démons était partout, jusque dans l'air.",
+      [2] = "[[Felwood]] était pire la nuit, quand la lueur verte des mares souillées était la seule lumière. Les arbres craquaient comme s'ils souffraient.",
     },
     ["Feralas"] = {
-
+      [1] = "[[Feralas]] était verte et immense, avec des arbres aussi hauts que ceux de [[Ashenvale]] et les ruines des anciens elfes enfoncées parmi les fougères. L'air était épais, humide, et sentait la pousse.",
+      [2] = "La nuit, [[Feralas]] était profonde et ruisselante, la canopée si épaisse que les étoiles s'y perdaient. Quelque part dans le noir se trouvaient les murs de [[Dire Maul]], et plus près, les cris de bêtes que je ne savais pas nommer.",
     },
     ["Freewind Post"] = {
-
+      [1] = "[[Freewind Post]] se tenait au sommet d'une aiguille de pierre, accessible par un monte-charge grinçant, tout le canyon étalé en contrebas.",
+      [2] = "[[Freewind Post]] se tenait au sommet d'une aiguille de pierre, accessible seulement par son monte-charge, et ses gardes avaient l'air d'avoir déjà vu des gens de mon espèce.",
     },
     ["Gadgetzan"] = {
-
+      [1] = "[[Gadgetzan]] était une ville gobeline au milieu du désert, ceinte de murs et bruyante, avec à chaque coin un cogneur qui maintenait une paix d'un genre très particulier.",
     },
     ["Gnomeregan"] = {
-
+      [1] = "Les salles de [[Gnomeregan]] étaient telles qu'on me les avait décrites. Parmi les troggs et la lueur empoisonnée, je ne pouvais m'empêcher de penser aux gnomes qui y avaient vécu.",
+      [2] = "Les machines de [[Gnomeregan]] tournaient encore dans des salles que leurs créateurs avaient perdues. Sous la lumière d'un vert maladif, je me demandais qui arrêterait jamais les rouages.",
     },
     ["Goldshire"] = {
-
+      [1] = "[[Goldshire]] se rassemblait autour de [[Lion's Pride Inn]], et la route qui le traversait semblait la plus sûre du monde.",
+      [2] = "[[Goldshire]] était une petite ville douillette de l'Alliance autour de son auberge, avec des gardes à chaque coin, et pas un ne m'aurait $gvu:vue; d'un bon œil.",
     },
     ["Grom'gol Base Camp"] = {
-
+      [1] = "[[Grom'gol Base Camp]] était un camp de la Horde taillé dans la jungle, une tour à zeppelins dominant les arbres et la jungle qui le pressait de tous côtés.",
+      [2] = "[[Grom'gol Base Camp]] était un camp de la Horde dans la jungle, sa tour à zeppelins visible de loin, et chaque grunt qui s'y trouvait était mon ennemi.",
     },
     ["Hammerfall"] = {
-
+      [1] = "[[Hammerfall]] se dressait, austère et pavoisé de rouge, parmi les collines d'Arathi, une place forte orque dans un pays que les humains disaient encore le leur.",
+      [2] = "[[Hammerfall]] était une place forte orque dans les collines d'Arathi, tout en murs hérissés de pointes et en regards aux aguets, et ici, c'était moi $gl'ennemi:l'ennemie;.",
     },
     ["Hillsbrad Foothills"] = {
-
+      [1] = "[[Hillsbrad Foothills]] étaient verts et leurs vergers lourds de fruits, mais [[Southshore]] et [[Tarren Mill]] se faisaient face, et chacun le savait. Les vieilles fermes étaient devenues une ligne de front.",
+      [2] = "[[Hillsbrad Foothills]] étaient inquiets la nuit, chaque camp tenant une ville de part et d'autre de la vallée, et aucune des deux en paix.",
     },
     ["Ironclad Cove"] = {
-
+      [1] = "Le tunnel débouchait sur une crique cachée, et sur l'eau reposait un vrai navire, cuirassé et hérissé de canons, construit en secret sous [[Westfall]]. J'ai compris alors tout ce que VanCleef avait préparé.",
+      [2] = "L'air marin m'est parvenu avant que je voie la crique. Un grand cuirassé mouillait dans le port caché, ses ponts grouillant de pirates, et j'avais peine à croire qu'on l'ait construit sous terre.",
     },
     ["Ironforge"] = {
-
+      [1] = "La chaleur de [[The Great Forge]] m'a $gaccueilli:accueillie; dès la porte de [[Ironforge]], et le martèlement m'a $gsuivi:suivie; à l'intérieur. Je me suis $gtenu:tenue; au-dessus du fer en fusion et j'ai laissé le vacarme de mon peuple remplir le vide que la route avait laissé.",
+      [2] = "Après le froid de la montagne, la chaleur de [[Ironforge]] était presque trop forte. Les marteaux résonnaient dans chaque salle, et j'ai trouvé ce bruit étrangement réconfortant après la rase campagne.",
+      [3] = "La montagne s'est refermée sur moi à [[Ironforge]], le martèlement venant de chaque salle. Il y avait des gardes partout, et la chaleur ne suffisait pas à me mettre à l'aise.",
     },
     ["Kargath"] = {
-
+      [1] = "[[Kargath]] était creusé dans les parois du canyon de [[Badlands]], un avant-poste austère de la Horde qui portait le nom d'un rude guerrier.",
+      [2] = "[[Kargath]] était un avant-poste de la Horde creusé dans les parois du canyon, tout en tours de guet, et chacune regardait dans ma direction.",
     },
     ["Kharanos"] = {
-
+      [1] = "J'ai senti l'odeur de [[Thunderbrew Distillery]] avant même d'atteindre vraiment [[Kharanos]]. La fumée montait au-dessus des maisons, où nains et gnomes se serraient contre le froid, et mes épaules se sont détendues à ce spectacle.",
+      [2] = "L'odeur de la brasserie m'a $gatteint:atteinte; sur la route de [[Kharanos]]. Parmi les maisons trapues, j'ai vu des gnomes autant que des nains, et j'ai pensé à la façon dont un foyer perdu peut suivre son peuple.",
+      [3] = "La fumée flottait sur [[Kharanos]], et l'odeur de bière portait bien au-delà des maisons. Pour quelqu'un d'autre, c'était peut-être la promesse d'un accueil. Moi, je me suis $gsurpris:surprise; à compter les nains.",
     },
     ["Lakeshire"] = {
-
+      [1] = "[[Lakeshire]] s'étendait au bord de [[Lake Everstill]], son grand pont toujours inachevé et ses habitants fatigués. La ville avait l'air d'un endroit qui tenait bon.",
+      [2] = "Le pont de [[Lakeshire]] était gardé, et toute la ville surveillait les collines. Je sentais qu'elle me surveillait aussi.",
     },
     ["Light's Hope Chapel"] = {
-
+      [1] = "[[Light's Hope Chapel]] se dressait seule au milieu de [[Eastern Plaguelands]], ses pierres encore propres et l'[[faction:Argent Dawn]] montant la garde alentour. Des vivants de toute sorte se rassemblaient au pied de ses murs, faute d'autre endroit où aller.",
     },
     ["Loch Modan"] = {
-
+      [1] = "L'eau bleue de [[Loch Modan]] dormait derrière [[Stonewrought Dam]]. Je savais que les nains bâtissaient en grand, mais le poids de toute cette eau m'a $gforcé:forcée; à m'arrêter pour regarder.",
+      [2] = "La nuit, l'eau de [[Loch Modan]] s'étendait, noire, sous les collines, et le barrage traçait une ligne plus sombre contre le ciel. [[Thelsamar]] dormait le long de la rive, et je l'enviais.",
+      [3] = "De l'autre côté de [[Loch Modan]] se dressait le grand barrage des nains. Je surveillais les gardes le long de l'eau d'aussi près que le paysage.",
     },
     ["Maraudon"] = {
-
+      [1] = "[[Maraudon]] était une caverne de cristal et d'eau empoisonnée, demeure des morts sacrés des centaures et de quelque chose de bien plus ancien en dessous. Plus on s'y enfonçait, plus tout devenait vert.",
     },
     ["Marshal's Refuge"] = {
-
+      [1] = "[[Marshal's Refuge]] était un camp niché dans l'entrée d'une grotte au bord du cratère, où quelques âmes robustes vivaient parmi les dinosaures.",
     },
     ["Menethil Harbor"] = {
-
+      [1] = "[[Menethil Harbor]] était une forteresse au bord du marais, son donjon à demi enfoncé dans la boue et ses quais animés de navires en partance pour Kalimdor.",
+      [2] = "Le donjon et les quais de [[Menethil Harbor]] grouillaient de soldats de l'Alliance qui allaient et venaient par la mer, et chacun d'eux était mon ennemi.",
     },
     ["Molten Core"] = {
-
+      [1] = "[[Molten Core]] s'étendait tout au fond de [[Blackrock Mountain]], une caverne de feu où Ragnaros en personne attendait. La chaleur donnait l'impression d'entrer dans une forge.",
     },
     ["Moonbrook"] = {
-
+      [1] = "[[Moonbrook]] avait été une ville autrefois. Désormais, ses maisons se dressaient, brûlées et brisées, et des hommes coiffés de bandanas rouges surveillaient la route depuis les ruines.",
+      [2] = "Après la tombée de la nuit, [[Moonbrook]] n'était plus qu'une ruine, ses murs brisés noirs contre le ciel. Les Défias étaient quelque part parmi les maisons brûlées, et je restais dans l'ombre.",
     },
     ["Moonglade"] = {
-
+      [1] = "[[Moonglade]] était paisible comme nulle part ailleurs au monde, un lac tranquille dans un crépuscule sans fin, où des druides marchaient lentement au bord de l'eau. Même mes pensées s'y faisaient plus douces.",
+      [2] = "La nuit à [[Moonglade]] différait à peine du jour, la même lumière douce sur le lac et le même calme. Là-bas, je ne guettais pas de pas derrière moi.",
     },
     ["Morgan's Vigil"] = {
-
+      [1] = "[[Morgan's Vigil]] était un petit camp de l'Alliance à l'orée de [[Burning Steppes]], qui tenait bon face aux orcs de [[Blackrock Mountain]].",
+      [2] = "[[Morgan's Vigil]] était un camp de l'Alliance à l'orée des Steppes, et ma venue n'avait pas pu rendre leur veille plus facile.",
     },
     ["Mulgore"] = {
-
+      [1] = "L'herbe de [[Mulgore]] ondulait jusqu'aux mesas, parcourue de trotteurs des plaines, et le vent la traversait comme de l'eau. La terre de la Terre-Mère ne me demandait rien d'autre que de la fouler avec douceur.",
+      [2] = "La nuit sur [[Mulgore]] était vaste et claire, les étoiles descendant jusqu'au bord de l'herbe. Les tentes de la tribu luisaient ici et là, et la terre semblait monter la garde.",
+      [3] = "Les plaines de [[Mulgore]] ondulaient, vertes et dorées, au pied des mesas, avec des kodos qui paissaient et des moulins à vent qui tournaient près des tentes. C'était le pays le plus paisible que j'aie vu depuis longtemps.",
+      [4] = "Les plaines de [[Mulgore]] s'ouvraient dans toutes les directions, sans nulle part où se cacher. C'était la terre des taurens, et je me sentais comme $gun étranger:une étrangère; qui traverse la maison de quelqu'un.",
     },
     ["Naxxramas"] = {
-
+      [1] = "[[Naxxramas]] flottait au-dessus des Maleterres, la nécropole de Kel'Thuzad, et de ses salles glacées sortaient les morts en marche.",
     },
     ["Nethergarde Keep"] = {
-
+      [1] = "[[Nethergarde Keep]] montait la garde sur [[Blasted Lands]], ses mages surveillant la Porte des ténèbres comme si elle pouvait se rouvrir à tout instant.",
+      [2] = "[[Nethergarde Keep]] était une forteresse de l'Alliance pleine de mages qui surveillaient la Porte. Je me sentais $gsurveillé:surveillée; d'aussi près.",
     },
     ["Nighthaven"] = {
-
+      [1] = "[[Nighthaven]] était un village de druides au bord du lac, paisible et ouvert, où quiconque venait en paix était le bienvenu.",
     },
     ["Nijel's Point"] = {
-
+      [1] = "[[Nijel's Point]] était un petit camp de l'Alliance dans les collines au-dessus de [[Desolace]], où un peu de verdure s'accrochait encore aux pentes.",
+      [2] = "[[Nijel's Point]] était un camp de l'Alliance dans les collines, un endroit dangereux pour quelqu'un de mon espèce.",
     },
     ["Onyxia's Lair"] = {
-
+      [1] = "[[Onyxia's Lair]] était une grotte dans le marais, jonchée d'os et pleine de dragonnets. Je me suis $gtu:tue; à son entrée.",
     },
     ["Orgrimmar"] = {
-
+      [1] = "Les tambours de [[Orgrimmar]] résonnaient contre les murs hérissés de pointes quand je suis $gentré:entrée;. À [[Grommash Hold]], j'en ai senti tout le poids : une cité que notre peuple avait bâtie pour lui-même, sans les chaînes de personne.",
+      [2] = "La fumée flottait sur la pierre rouge et les pointes de fer de [[Orgrimmar]]. Les tambours faisaient de la fierté du lieu une chose que je sentais presque sous mes pieds.",
+      [3] = "Au pied des murs de [[Orgrimmar]], les tambours roulaient sur la pierre rouge. Je ne m'étais jamais $gsenti:sentie; aussi loin de quiconque aurait pu m'appeler son ami.",
     },
     ["Ragefire Chasm"] = {
-
+      [1] = "Le feu courait dans la roche de [[Ragefire Chasm]], juste sous notre cité. Que la [[faction:Burning Blade]] puisse se cacher si près de chez nous me troublait plus que l'obscurité.",
+      [2] = "Le magma éclairait [[Ragefire Chasm]] par en dessous. Je devais sans cesse me rappeler de regarder le sol plutôt que le feu.",
     },
     ["Ratchet"] = {
-
+      [1] = "[[Ratchet]] était un port gobelin sur la côte de [[The Barrens]], tout en quais, en grues et en marchandages, avec le bateau pour [[Booty Bay]] qui allait et venait.",
     },
     ["Razor Hill"] = {
-
+      [1] = "À [[Razor Hill]], la caserne et la tour de guet dominaient la route, et des navires de Kul Tiras mouillaient au large. J'ai compris pourquoi la ville ne semblait jamais tranquille.",
+      [2] = "La caserne et les tours de guet de [[Razor Hill]] dominaient la côte. Avec tant d'armes en vue, ce n'était manifestement pas une ville en paix.",
     },
     ["Razorfen Downs"] = {
-
+      [1] = "[[Razorfen Downs]] formaient un tertre d'épines et d'ossements, où les huran avaient fait cause commune avec le Fléau. Les morts y marchaient aux côtés des vivants.",
     },
     ["Razorfen Kraul"] = {
-
+      [1] = "[[Razorfen Kraul]] était un dédale d'épines géantes, les terriers des huran creusés profondément en dessous. Les ronces lacéraient tout ce qui passait.",
     },
     ["Redridge Mountains"] = {
-
+      [1] = "La roche rouge se dressait autour de [[Lake Everstill]] dans [[Redridge Mountains]], et le pont de [[Lakeshire]] portait plus de soldats que de voyageurs. Les gnolls et les orcs de [[Blackrock Mountain]] s'étaient installés dans les collines, et la vallée avait l'air d'un pays assiégé.",
+      [2] = "Le lac de [[Redridge Mountains]] s'étendait, noir, sous les collines rouges, et les crêtes au-dessus ressemblaient à un pays qu'aucun ami ne tenait.",
     },
     ["Refuge Pointe"] = {
-
+      [1] = "[[Refuge Pointe]] était un camp sur une hauteur rocheuse, où les derniers habitants de Stromgarde faisaient encore flotter leurs bannières au-dessus des hautes-terres.",
+      [2] = "[[Refuge Pointe]] se dressait sur son rocher au-dessus des hautes-terres, un camp de l'Alliance qui avait l'œil sur chaque approche, la mienne comprise.",
     },
     ["Revantusk Village"] = {
-
+      [1] = "[[Revantusk Village]] se dressait sur la côte de [[The Hinterlands]], un village troll de huttes et de totems où les trolls Revantusk avaient pris le parti de la Horde.",
+      [2] = "[[Revantusk Village]] était un village troll sur la côte, fidèle à la Horde, et il n'était pas de mes amis.",
     },
     ["Ruins of Ahn'Qiraj"] = {
-
+      [1] = "[[Ruins of Ahn'Qiraj]] s'étendaient dans le sable au-delà du mur du Scarabée, des tours brisées et des silithides partout.",
     },
     ["Scarlet Monastery"] = {
-
+      [1] = "[[Scarlet Monastery]] était beau et terrible, tout en bannières rouges et en sols polis, et les croisés qui s'y trouvaient étaient sûrs de leur cause. J'ai été mal à l'aise dès que je suis $gentré:entrée;.",
     },
     ["Scholomance"] = {
-
+      [1] = "[[Scholomance]] avait été le donjon de la famille Barov avant de devenir une école de nécromanciens. Ses salles sentaient la poussière, la mort et les vieux livres.",
     },
     ["Searing Gorge"] = {
-
+      [1] = "[[Searing Gorge]] était une plaie dans la terre, roche noire, scories rougeoyantes et puanteur de soufre. Les nains Sombrefer l'avaient exploitée jusqu'à n'y laisser que la chaleur.",
+      [2] = "Dans [[Searing Gorge]], la nuit importait à peine. La lave éclairait les falaises par en dessous, et [[The Cauldron]] en son cœur luisait comme un second soleil.",
     },
     ["Sentinel Hill"] = {
-
+      [1] = "Une tour de pierre se dressait sur [[Sentinel Hill]], et autour d'elle la Milice populaire, des fermiers qui avaient tout perdu, avait planté ses tentes. Je les ai longtemps regardés.",
+      [2] = "[[Sentinel Hill]], c'était une tour et un camp de fermiers devenus soldats. Personne là-bas n'avait grand-chose, mais ils avaient décidé de tenir la ligne ensemble.",
     },
     ["Shadowfang Keep"] = {
-
+      [1] = "La pierre froide et les hurlements se sont refermés sur moi dans [[Shadowfang Keep]], tout en haut de [[Pyrewood Village]]. Je connaissais Arugal de réputation, mais j'écoutais surtout les bruits derrière les murs.",
     },
     ["Shadowprey Village"] = {
-
+      [1] = "[[Shadowprey Village]] se trouvait sur la côte de [[Desolace]], un village tranquille de la Horde parmi les roseaux, loin de tout.",
+      [2] = "[[Shadowprey Village]] était un village de la Horde sur la côte, et même en [[Desolace]], je n'y étais pas $gle bienvenu:la bienvenue;.",
     },
     ["Silithus"] = {
-
+      [1] = "[[Silithus]] était un désert de sable rouge et de grandes ruches, et le sol bourdonnait des silithides qui s'y déplaçaient. Les ruines d'Ahn'Qiraj se dressaient au sud, et l'air semblait lourd de ce qui y dormait.",
+      [2] = "La nuit à [[Silithus]] était pleine de cliquetis et de grattements, les ruches pâles sous la lune. J'essayais de ne pas penser à ce qui se trouvait là-dessous.",
     },
     ["Silverpine Forest"] = {
-
+      [1] = "Les pins de [[Silverpine Forest]] se dressaient, sombres, au-dessus de l'eau grise de [[Lordamere Lake]], et au-delà s'élevait le dôme violet de Dalaran. Des hurlements dans les collines ramenaient sans cesse mon attention vers les arbres autour de moi.",
+      [2] = "Des hurlements m'ont $gsuivi:suivie; dans [[Silverpine Forest]] après la tombée de la nuit, venus de collines que je ne voyais pas. Derrière le mur noir des pins, je n'avais aucune envie de découvrir ce qui s'y trouvait d'autre.",
     },
     ["Southshore"] = {
-
+      [1] = "Les maisons de [[Southshore]] se dressaient au bord de l'eau, avec une bonne auberge et une longue mémoire de la guerre. [[Tarren Mill]] était juste derrière la colline, et personne ici ne l'oubliait.",
+      [2] = "[[Southshore]] était une ville humaine au bord de l'eau, à une courte marche des Réprouvés. Je m'attendais à ce que ses gardes sachent d'un coup d'œil de quel camp je venais.",
     },
     ["Splintertree Post"] = {
-
+      [1] = "[[Splintertree Post]] était un rude camp de la Horde à l'orée de [[Ashenvale]], tout en palissades et en fumée de bois, où les haches ne s'arrêtaient jamais.",
+      [2] = "[[Splintertree Post]] était un camp de la Horde à l'orée de [[Ashenvale]], d'où le bruit des haches portait toute la journée, et je n'attendais aucun accueil de ses gardes.",
     },
     ["Stonard"] = {
-
+      [1] = "[[Stonard]] émergeait de la fange en lourde pierre orque, le seul endroit sec et sûr de [[Swamp of Sorrows]].",
+      [2] = "[[Stonard]] était une forteresse orque émergeant du marais, et je ne doutais pas que ses murs soient gardés par des gens qui me voulaient $gmort:morte;.",
     },
     ["Stonetalon Mountains"] = {
-
+      [1] = "[[Stonetalon Mountains]] grimpaient en grandes crêtes grises, et par endroits la forêt avait été réduite à des souches par les scies de la KapitalRisk. Le pic lui-même semblait tout regarder de haut.",
+      [2] = "Les crêtes de [[Stonetalon Mountains]] se découpaient en noir sur les étoiles, et le vent chantait dans les cols. Tout en bas, les machines des gobelins tournaient encore.",
     },
     ["Stonetalon Peak"] = {
-
+      [1] = "[[Stonetalon Peak]] était un camp paisible haut parmi les arbres, où les druides veillaient sur ce qui restait de la forêt.",
+      [2] = "[[Stonetalon Peak]] était un camp elfe haut dans les montagnes, paisible et vigilant, et sa vigilance se portait sur moi.",
     },
     ["Stormwind City"] = {
-
+      [1] = "Les murs blancs de [[Stormwind City]] s'élevaient au-dessus des canaux, et les cloches de la cathédrale portaient à travers toute la ville. C'était chez moi, et les cloches me le rappelaient.",
+      [2] = "[[Stormwind City]] n'était que pierre blanche, toits bleus et canaux, avec des gardes sur chaque pont. On aurait dit une cité qui n'avait jamais connu la guerre, mais j'en savais plus long.",
+      [3] = "Les murs blancs de [[Stormwind City]] se sont refermés autour de moi, et chaque garde semblait regarder dans ma direction. Je n'avais jamais eu autant conscience de mon propre visage.",
     },
     ["Stranglethorn Vale"] = {
-
+      [1] = "[[Stranglethorn Vale]] n'était que jungle d'un bout à l'autre, chaude, bruyante d'oiseaux et pleine de choses qui voulaient me manger. De vieilles ruines trolls émergeaient de la verdure, et des chasseurs venaient du monde entier pour faire leurs preuves.",
+      [2] = "Dans [[Stranglethorn Vale]], la nuit n'était jamais silencieuse. Des panthères rôdaient dans le noir, des tambours venaient des ruines trolls, et la chaleur ne faiblissait pas un instant.",
     },
     ["Stratholme"] = {
-
+      [1] = "[[Stratholme]] était une cité qui avait brûlé et n'avait jamais cessé de brûler, le Fléau dans ses rues et la [[faction:Scarlet Crusade]] retranchée parmi les ruines.",
     },
     ["Sun Rock Retreat"] = {
-
+      [1] = "[[Sun Rock Retreat]] s'abritait sous les falaises de [[Stonetalon Mountains]], un camp de la Horde où la montagne pressait de tous côtés.",
+      [2] = "[[Sun Rock Retreat]] était un camp de la Horde niché sous les falaises, sans autre issue que le chemin par lequel j'étais $gvenu:venue;.",
     },
     ["Sunken Temple"] = {
-
+      [1] = "[[Sunken Temple]] gisait à demi noyé dans le marais, ses salles sombres et ruisselantes, où les Atal'ai invoquaient encore leur dieu du sang. L'air avait le goût d'une magie ancienne.",
     },
     ["Swamp of Sorrows"] = {
-
+      [1] = "[[Swamp of Sorrows]] méritait son nom : eau grise, mousse pendante et un silence qui ressemblait à du chagrin. Quelque part dans ses profondeurs gisait le temple englouti des Atal'ai.",
+      [2] = "La nuit dans [[Swamp of Sorrows]] était étouffante et lourde, l'air assez épais pour qu'on le goûte. Des lueurs pâles se déplaçaient sur l'eau, et je n'avais aucune intention de les suivre.",
     },
     ["Tanaris"] = {
-
+      [1] = "[[Tanaris]] n'était que sable, chaleur et encore du sable, des dunes jusqu'à l'horizon sous un ciel blanc. Les murs de [[Gadgetzan]] offraient la seule ombre à des lieues à la ronde.",
+      [2] = "Le désert de [[Tanaris]] devenait froid la nuit, et les dunes viraient à l'argent. J'entendais le vent déplacer le sable, et de temps à autre les pinces d'un scorpide sur la pierre.",
     },
     ["Tarren Mill"] = {
-
+      [1] = "[[Tarren Mill]] appartenait désormais aux Réprouvés, ses vieilles maisons réparées à leur manière et ses apothicaires affairés. [[Southshore]] était juste derrière la colline, et la ville ne l'oubliait jamais.",
+      [2] = "[[Tarren Mill]] avait été un village humain autrefois. Désormais, les Réprouvés le tenaient, et les gardes noirs surveillaient chaque route. Je sentais que chacun d'eux savait ce que j'étais.",
     },
     ["Teldrassil"] = {
-
+      [1] = "Les branches de [[Teldrassil]] portaient toute la forêt sous mes pieds. Des feux follets flottaient sur la mousse de notre nouveau foyer, et je leur enviais leur aisance.",
+      [2] = "Le clair de lune argentait les feuilles de [[Teldrassil]] tandis que des chouettes appelaient au-dessus de moi. J'écoutais entre mes pas, peu $gdésireux:désireuse; de traverser à la hâte tant de silence.",
+      [3] = "Dans la lumière violette de [[Teldrassil]], il était difficile d'oublier que toute la forêt reposait sur un seul arbre. Cette pensée détournait sans cesse mon regard des sentinelles vers le sol.",
+      [4] = "Les feuilles de [[Teldrassil]] étouffaient chaque bruit. J'admirais l'endroit, tout en étant bien $gsûr:sûre; que quelqu'un m'avait déjà $gremarqué:remarquée;.",
     },
     ["The Barrens"] = {
-
+      [1] = "L'herbe jaune s'étendait au-delà des arbres épineux de [[The Barrens]], où des zhévras se déplaçaient dans la chaleur. Les distances étaient plus difficiles à juger qu'elles ne l'avaient paru sur une carte.",
+      [2] = "L'herbe de [[The Barrens]] virait à l'argent sous un immense ciel nocturne. Quelque part au loin, des tambours de centaures portaient sur l'herbe, et je gardais les yeux sur l'horizon.",
     },
     ["The Crossroads"] = {
-
+      [1] = "La palissade de [[The Crossroads]] se dressait là où les routes rejoignaient la prairie. Après tant de distance vide, des gens rassemblés en un même lieu étaient un soulagement.",
+      [2] = "À [[The Crossroads]], la palissade de la Horde abritait les siens. Pour moi, c'était une raison de bien regarder avant d'aller plus loin.",
     },
     ["The Deadmines"] = {
-
+      [1] = "Des étais de bois soutenaient les galeries de [[The Deadmines]], et l'air avait le goût de la poussière et de l'huile de lampe. Quelque part devant, des machines martelaient, comme si toute la colline était travaillée de l'intérieur.",
+      [2] = "Des wagonnets abandonnés attendaient sur leurs rails, et les murs suintaient à la lueur des lampes. Plus je m'enfonçais dans [[The Deadmines]], plus le martèlement s'amplifiait.",
     },
     ["The Hall of Thanes"] = {
-
+      [1] = "Sous la vieille ville de [[Ironforge]], les cavernes s'ouvraient sur [[The Hall of Thanes]]. Les morts de [[Anvilmar]] n'y reposaient pas en paix, et des voix Sombrefer montaient des caveaux inférieurs, sous la cité même que mon peuple appelle son foyer.",
+      [2] = "Les tunnels sous la vieille ville de [[Ironforge]] aboutissaient à [[The Hall of Thanes]], où marchaient les morts sans repos des nains et où les Sombrefer s'étaient frayé un chemin par en dessous. Je restais près des murs et parlais aussi peu que l'endroit semblait le vouloir.",
     },
     ["The Hinterlands"] = {
-
+      [1] = "[[The Hinterlands]] étaient hauts et sauvages, des collines boisées où volaient les griffons et d'où les trolls Witherbark guettaient depuis leurs ruines. Cela ressemblait à un pays qui n'avait jamais été tout à fait dompté.",
+      [2] = "[[The Hinterlands]] étaient pleins de bruits la nuit : chouettes, loups, et les tambours des trolls là-haut dans les collines. Ce n'était pas un pays où dormir à la belle étoile.",
     },
     ["The Sepulcher"] = {
-
+      [1] = "Des chauves-souris tournoyaient au-dessus des tombes de [[The Sepulcher]], et nos gardes se tenaient à la porte. Faire d'un cimetière un avant-poste me semblait un bon usage de ce qui restait.",
+      [2] = "Je suis $garrivé:arrivée; à [[The Sepulcher]] par un flanc de colline couvert de tombes. Un instant, j'ai observé les gardes avec méfiance, avant de me rappeler qui vivait ici.",
     },
     ["The Stockade"] = {
-
+      [1] = "[[The Stockade]] était la geôle de [[Stormwind City]], construite sous la cité, et les prisonniers en avaient pris le contrôle. Toutes les portes des cellules pendaient, ouvertes.",
     },
     ["Thelsamar"] = {
-
+      [1] = "J'ai trouvé [[Stoutlager Inn]] de [[Thelsamar]] au bord du loch. Après les collines ouvertes, sa bière et ses boudins m'intéressaient plus que la distance parcourue.",
+      [2] = "L'auberge de [[Thelsamar]] avait l'air confortable au bord du loch. Mais sur une rive de l'Alliance, ses fenêtres m'offraient plus de risques d'être $gvu:vue; que de chances de repos.",
     },
     ["Theramore Isle"] = {
-
+      [1] = "[[Theramore Isle]] se dressait sur son île au large de la côte du marais, tours de pierre et quais animés, la cité de dame Jaina et l'ancrage de l'Alliance en Kalimdor.",
+      [2] = "Les tours de [[Theramore Isle]] s'élevaient sur leur île au large de la côte, la cité de dame Jaina et l'ancrage de l'Alliance en Kalimdor. C'était le dernier endroit où j'aurais dû me trouver.",
     },
     ["Thorium Point"] = {
-
+      [1] = "[[Thorium Point]] était le camp de la [[faction:Thorium Brotherhood]] au bord de la gorge, quelques tentes et une forge au-dessus de toute cette chaleur.",
     },
     ["Thousand Needles"] = {
-
+      [1] = "[[Thousand Needles]] portaient bien leur nom : des piliers de pierre s'élevaient par centaines du fond du canyon, reliés à leur sommet par des ponts de corde. À l'est, le Désert de sel brillait de blanc.",
+      [2] = "La nuit, les flèches rocheuses de [[Thousand Needles]] se dressaient comme une forêt de pierre noire. Les camps sur les mesas étaient petits et éloignés les uns des autres, et la chute en contrebas était longue.",
     },
     ["Thunder Bluff"] = {
-
+      [1] = "[[Thunder Bluff]], la cité de Cairne, se dressait sur ses mesas au-dessus de [[Mulgore]], faite de tentes, de totems et de ponts de corde. Le vent ne s'arrêtait jamais là-haut, et je n'aurais pas voulu qu'il en soit autrement.",
+      [2] = "[[Thunder Bluff]] se dressait sur ses mesas bien au-dessus de [[Mulgore]], avec des tentes et des totems sur chaque sommet et des ponts de corde qui se balançaient entre eux. Le vent ne s'arrêtait jamais, et personne ne semblait s'en soucier.",
+      [3] = "[[Thunder Bluff]] s'élevait sur ses mesas au-dessus des plaines, accessible seulement par ses grands monte-charges. D'en bas, aucun espoir d'entrer sans être $gvu:vue;.",
     },
     ["Tirisfal Glades"] = {
-
+      [1] = "Sous le ciel gris de [[Tirisfal Glades]], des arbres morts se dressaient là où la peste les avait laissés. Je reconnaissais quelque chose de moi-même dans un pays qui avait été obligé de continuer.",
+      [2] = "Des corbeaux croassaient au-dessus des cryptes de [[Tirisfal Glades]], vers les murs brisés de Lordaeron. La nuit n'y changeait pas grand-chose, même si elle me rendait moins $gvoyant:voyante;.",
+      [3] = "Les champs gris de [[Tirisfal Glades]] menaient, au-delà des arbres morts, jusqu'aux murs brisés de Lordaeron. Je me demandais ce que les gens d'ici se rappelaient encore de leur pays.",
+      [4] = "Des arbres morts s'étendaient à travers [[Tirisfal Glades]] jusqu'aux ruines de Lordaeron. Savoir que les Réprouvés marchaient ici rendait le calme plus difficile à croire.",
     },
     ["Uldaman"] = {
-
+      [1] = "[[Uldaman]] était une chambre forte des titans, creusée profondément dans la montagne, où troggs et nains Sombrefer se disputaient des choses qu'aucun d'eux ne comprenait. La pierre elle-même semblait observer.",
     },
     ["Undercity"] = {
-
+      [1] = "Des canaux verts parcouraient [[Undercity]], devant le bouillonnant Apothicarium, tout au fond sous les ruines de Lordaeron. De tant de choses qui avaient mal survécu, nous avions fait une cité, et elle était à nous.",
+      [2] = "Une boue verte emplissait les canaux de pierre de [[Undercity]], tout au fond sous Lordaeron. L'odeur ne m'a pas $gquitté:quittée; tout le temps que j'ai cherché mon chemin.",
+      [3] = "Sous les ruines de Lordaeron, les Réprouvés avaient fait de [[Undercity]] leur foyer. Chaque tournant que je prenais rendait le chemin vers la lumière du jour moins certain.",
     },
     ["Un'Goro Crater"] = {
-
+      [1] = "[[Un'Goro Crater]] était un autre monde, chaud et fumant, plein de fougères géantes et de créatures qui auraient dû disparaître depuis longtemps. Des diablosaures marchaient à travers la jungle, et le sol tremblait sous leurs pas.",
+      [2] = "La nuit dans [[Un'Goro Crater]] était épaisse de chaleur et de bruit : des insectes grands comme ma main, et le rugissement lointain de quelque chose d'énorme. Le cratère semblait plus ancien que tout ce que je connaissais.",
     },
     ["Valanaar"] = {
-
+      [1] = "De minces ponts reliaient les salles flottantes de [[Valanaar]], et des cotres célestes étaient amarrés aux quais. Des réfugiés de Ban'aethal, vidée en une seule nuit quand elle avait commencé à tomber dans le ciel, emplissaient ses allées, et j'essayais de ne pas compter combien d'entre nous n'avaient plus nulle part où aller.",
+      [2] = "Les salles de [[Valanaar]] flottaient sur le vide, reliées par des ponts pas plus larges qu'une allée de jardin, bâties dans un bleu poudré qui me rappelait la pierre des elfes de la nuit. Les Célestes les traversaient sans un regard vers le bas. Pas moi.",
     },
     ["Wailing Caverns"] = {
-
+      [1] = "Dans [[Wailing Caverns]], le vent gémissait sur l'eau verte parmi les racines. Sachant ce qu'étaient devenus les druides, je guettais une voix avec qui l'on pourrait encore raisonner.",
     },
     ["Western Plaguelands"] = {
-
+      [1] = "[[Western Plaguelands]] avaient été des terres agricoles autrefois, et les fermes étaient toujours debout, vides ou pire. Le grain était rongé, les morts marchaient dans les champs, et Andorhal n'était plus qu'une ruine.",
+      [2] = "La nuit dans [[Western Plaguelands]] était pleine de bruits qui n'allaient pas : des pieds qui traînaient, le grincement de maisons vides, le vent dans le blé mort. Chaque ombre avait l'air de pouvoir se lever.",
     },
     ["Westfall"] = {
-
+      [1] = "Les champs de [[Westfall]] s'étendaient, dorés, jusqu'à l'horizon, et la moitié étaient montés en graine. Des fermes vides se dressaient, portes ouvertes, et je pensais aux familles qui les avaient travaillées avant l'arrivée des Défias.",
+      [2] = "[[Westfall]] s'étendait, sombre et silencieuse, ses moulins tournant au-dessus de fermes que plus personne n'entretenait. Je me demandais qui vivait encore derrière ses fenêtres obscures.",
+      [3] = "Des champs dorés traversaient [[Westfall]] jusqu'à la mer, sous des moulins qui tournaient. C'était un beau pays, et un pays affamé : trop de fermes étaient vides, et trop de gens sur la route n'avaient nulle part où aller.",
+      [4] = "Les champs de [[Westfall]] couraient vers la mer, avec des fermes vides et des épouvantails qui n'en étaient pas toujours. Au cœur des terres agricoles de l'Alliance, je me tenais bien à l'écart de la route.",
     },
     ["Wetlands"] = {
-
+      [1] = "[[Wetlands]] n'étaient que boue, roseaux et eaux dormantes, et la moitié de la route disparaissait dessous. Des raptors rôdaient dans le marais, et à l'est, les hauteurs de Grim Batol n'étaient pas un sujet qu'on évoquait à la légère.",
+      [2] = "La nuit, [[Wetlands]] s'éveillaient de coassements et de clapotis, et la brume restait basse sur l'eau. La route était la seule chose en laquelle j'avais confiance, et dans un marais, ce n'était pas beaucoup dire.",
     },
     ["Winterspring"] = {
-
+      [1] = "[[Winterspring]] dormait sous une neige épaisse, calme et propre, avec des sabres-de-givre dans les collines et des sources fumantes parmi les congères. Après tant d'endroits brûlés et rongés, le froid avait quelque chose d'honnête.",
+      [2] = "Sous les étoiles, la neige de [[Winterspring]] était bleue et silencieuse. Le froid mordait fort, [[Everlook]] se dressait, minuscule, au loin, et je pensais à sa chaleur.",
     },
     ["Zephras Isle"] = {
-
+      [1] = "Des bois roses grimpaient vers la neige des hauts sommets de [[Zephras Isle]], et au-delà de chaque bord il n'y avait que le ciel ouvert de Mur-Céleste. Depuis le départ des esprits du vent, les pylônes portaient seuls l'île, et je me surprenais à faire un peu moins confiance au sol.",
+      [2] = "Après la tombée de la nuit, les tours flottantes de [[Zephras Isle]] n'étaient plus que des formes contre les étoiles. Le silence qui s'était installé sur l'île depuis le départ des esprits du vent ressemblait pour moi à une voix qui se serait tue au milieu d'une phrase.",
+      [3] = "[[Zephras Isle]] flottait dans le ciel ouvert de Mur-Céleste, ses forêts roses grimpant vers des sommets enneigés tandis que des tours dérivaient librement au-dessus du sol. Je ne m'étais jamais $gtenu:tenue; nulle part qui semble si légèrement retenu, et je restais bien à l'écart des bords.",
+      [4] = "La nuit, [[Zephras Isle]] n'était qu'une forme sombre parmi les étoiles, des tours flottant librement au-dessus de ses bois. Quelque part sous le bord, il n'y avait rien du tout, et je marchais comme si l'île pouvait remarquer mon poids.",
     },
     ["Zul'Farrak"] = {
-
+      [1] = "[[Zul'Farrak]] était une cité troll dans le désert, ses escaliers et ses temples cuisant au soleil, et les Sandfury guettaient du haut de chaque mur.",
     },
     ["Zul'Gurub"] = {
-
+      [1] = "[[Zul'Gurub]] était l'ancienne capitale des Gurubashi, émergeant de la jungle, ses temples imprégnés du culte du dieu du sang.",
     },
   },
   why = {

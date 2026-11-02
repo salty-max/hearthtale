@@ -1,0 +1,10 @@
+# French: scenery/zephras-isle
+
+- Pink woods climbed toward the snow on the high peaks of Zephras Isle, and past every edge there was only the open sky of Skywall. Since the wind spirits had gone, the pylons held the island up alone, and I caught myself trusting the ground a little less.
+  > Des bois roses grimpaient vers la neige des hauts sommets de [[Zephras Isle]], et au-delà de chaque bord il n'y avait que le ciel ouvert de Mur-Céleste. Depuis le départ des esprits du vent, les pylônes portaient seuls l'île, et je me surprenais à faire un peu moins confiance au sol.
+- After dark the floating towers of Zephras Isle were only shapes against the stars. The quiet that had settled over the island since the wind spirits left sounded to me like a voice that had stopped mid-sentence.
+  > Après la tombée de la nuit, les tours flottantes de [[Zephras Isle]] n'étaient plus que des formes contre les étoiles. Le silence qui s'était installé sur l'île depuis le départ des esprits du vent ressemblait pour moi à une voix qui se serait tue au milieu d'une phrase.
+- Zephras Isle hung in the open sky of Skywall, its pink forests climbing to snowy peaks while towers drifted loose above the ground. I had never stood anywhere that felt so lightly held, and I kept well back from the edges.
+  > [[Zephras Isle]] flottait dans le ciel ouvert de Mur-Céleste, ses forêts roses grimpant vers des sommets enneigés tandis que des tours dérivaient librement au-dessus du sol. Je ne m'étais jamais $gtenu:tenue; nulle part qui semble si légèrement retenu, et je restais bien à l'écart des bords.
+- At night Zephras Isle was a dark shape among the stars, with towers floating free above its woods. Somewhere below the edge there was nothing at all, and I walked as though the island might notice my weight.
+  > La nuit, [[Zephras Isle]] n'était qu'une forme sombre parmi les étoiles, des tours flottant librement au-dessus de ses bois. Quelque part sous le bord, il n'y avait rien du tout, et je marchais comme si l'île pouvait remarquer mon poids.

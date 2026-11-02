@@ -107,6 +107,27 @@ catchphrase. The meaning travels with the word the first time it can.
 Before adding another: its meaning and use in the original game, the era
 (nothing later than Classic), and one fitting moment, not a set of them.
 
+## In French
+
+The journal in French (`docs/writing.md`, "The French") keeps every voice
+above: the same outlook, motifs and restraint, written as a French diary
+would be, never translated word for word.
+
+- The game's own French names for each people's places and powers, through
+  tokens (`[[Ironforge]]`: "Ironforge" on Classic Era's French client,
+  "Forgefer" on Forever's), and its own names for the peoples: the
+  Darkspear stay "Darkspear", the Wildhammer "Wildhammer", the Forsaken are
+  "les Réprouvés", the night elves "kaldorei" where English says it.
+- "My people" is "mon peuple" or "les miens" by what reads best, never "des
+  miens" after a noun ("la cité de mon peuple", not "la cité des miens").
+- The voices' own words stay as the game gives them: "Lok'tar ogar",
+  "Elune-adore", An'she, Mu'sha, shu'halo.
+- A Darkspear speaks plain, warm French: no "mon", no phonetic accent, as in
+  English. A dwarf's bluntness, a gnome's precision, a Forsaken's dryness
+  come from the phrasing, never from slang or broken grammar.
+- Agreement with the narrator only through `$gmasc:fem;`. A line that names
+  the narrator's people as a noun agrees too ("$gun Réprouvé:une Réprouvée;").
+
 ## Reading the results
 
 After each racial pass, build the catalogs and run `bun run addon:check`.

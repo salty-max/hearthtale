@@ -266,13 +266,15 @@ each English line, deed and scenery line told again in French, written in
   with its article where English has one ("{foe}": "un jeune troll
   Frostmane"; "{at}": "dans la Vallée des Frigères", "au Loch Modan"), and
   may take an article or a form agreeing with it: `{foe:un}`, `{foe:le}`,
-  `{item:de}`, `{foes=tombé|tombée|tombés|tombées}` (masculine, feminine,
+  `{item:de}`, `{prof:nu}` (the noun alone: "en minage"), `{foes=tombé|tombée|tombés|tombées}` (masculine, feminine,
   their plurals; two forms: masculine, feminine).
 - A game name in the French text itself is never typed: `[[Ironforge]]`
   (the game's own French, each game's: "Ironforge" on Classic Era's French
   client, "Forgefer" on Forever's), `[[at:Coldridge Valley]]` (with its
   preposition), `[[un:Frostmane Troll Whelp]]`, `[[le:Defias Messenger]]`,
-  `[[name:Hogger]]`; the English name between the brackets.
+  `[[name:Hogger]]`, `[[spell:Life Tap]]` (the spell's name alone), `[[sort:Hunter's Mark]]`
+  (with its article: "la Marque du chasseur"), `[[faction:Frostwolf Clan]]` (a faction, each
+  game's own), `[[spec:Beast Mastery]]` (a talent tree); the English name between the brackets.
 - No semicolon; a no-break space before `: ? ! %`; straight apostrophes;
   UTF-8 (the plain-ASCII rule is English's). The build checks them, the slots
   and the tokens.

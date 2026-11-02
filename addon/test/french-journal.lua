@@ -5,7 +5,8 @@
 --   luajit addon/test/french-journal.lua [life…]            the journals, as Markdown
 --   luajit addon/test/french-journal.lua --check [life…]    fails on an entry left in
 --                                                           English or a leak
---   SEX=2 for a man; FOREVER=1 for Forever
+--   SEX=2 for a man; FOREVER=1 for Forever. An entry left in English shows
+--   its French as far as it goes, each sentence without French marked [EN].
 LOCALE = "frFR"
 HEARTHTALE_FRENCH = true -- (played before the French is complete)
 local lives = dofile("addon/test/lives.lua")
@@ -42,13 +43,19 @@ for _, name in ipairs(names) do
   c.language = "frFR"
   G.ns.forgetWritten(c)
   c.book = nil
-  F.fellBack, F.missing, F.unknown = 0, {}, {}
+  F.fellBack, F.missing, F.unknown, F.partials = 0, {}, {}, {}
   local book = G.ns.writeBook(c)
   io.write(("# %s (%s %s, %s)\n\n"):format(c.name, c.race, c.class, c.sex == 3 and "femme" or "homme"))
   if book.prologue then io.write(book.prologue, "\n\n") end
   for _, ch in ipairs(book.chapters) do
     total = total + 1
-    io.write(("## Entrée %d : %s\n\n%s\n\n"):format(ch.number, ch.title or "", ch.text or "(rien à raconter)"))
+    io.write(
+      ("## Entrée %d : %s\n\n%s\n\n"):format(
+        ch.number,
+        ch.title or "",
+        F.partials[ch.number] or ch.text or "(rien à raconter)"
+      )
+    )
     local found = leaks(ch.text or "")
     if #found > 0 then
       failures[#failures + 1] = ("%s, entry %d: %s"):format(name, ch.number, table.concat(found, ", "))
