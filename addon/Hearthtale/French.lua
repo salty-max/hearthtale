@@ -327,6 +327,12 @@ local function placeOf(name)
     or lookup("maps", name)
     or (name and lookup("areas", name .. " City")) -- (a spell's "Teleport: Stormwind")
 end
+-- (a place named without the game's "The": a deed's "Crossroads"; only where
+-- a place is meant, a creature or an item may bear the bare name)
+local function placeOrThe(name)
+  return placeOf(name) or (name and not name:find("^The ") and placeOf("The " .. name)) or nil
+end
+F.placeOf = placeOrThe
 -- (Forgefer; la vallée des Frigères; l'île; les Tarides)
 local function withArticle(e, art)
   local a = art or e[3] or ""
@@ -363,7 +369,7 @@ end
 
 local function frMid(name)
   if not name or name == "" then return nil end
-  local e = placeOf(name)
+  local e = placeOrThe(name)
   if not e then
     F.unknown[name] = true
     return name
@@ -372,7 +378,7 @@ local function frMid(name)
 end
 local function frAt(name)
   if not name or name == "" then return nil end
-  local e = placeOf(name)
+  local e = placeOrThe(name)
   if not e then
     F.unknown[name] = true
     return "\195\160 " .. name
@@ -575,7 +581,7 @@ local function bySlot(slot, v)
     local e = lookup("mounts", v)
     if type(e) == "table" then return made(lowered(e), e[2], lowered(e)) end
   elseif slot == "from" or slot == "to" then
-    local e = placeOf(v)
+    local e = placeOrThe(v)
     if e then return made(withArticle(e), e[2], e[1]) end
     local t = lookup("taxiIds", v)
     if type(t) == "string" then return t:match("^([^,]+)") or t end
@@ -614,6 +620,9 @@ local function generic(v)
   if type(e) == "table" then return e[1] end
   local boss = lookup("encounters", v)
   if type(boss) == "string" then return boss end
+  -- (last, a place without its "The": a deed's [[Crossroads]])
+  e = placeOrThe(v)
+  if e then return made(withArticle(e), e[2], e[1]) end
   return nil
 end
 F.generic = generic

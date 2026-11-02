@@ -1,0 +1,314 @@
+# French: the deeds of writing/why/batch-1.md, after "je"
+
+- 1125 | ai libéré les esprits torturés des druides et des sentinelles dans les ruines de [[Southwind Village]], là où avait commencé le travail de [[name:Layo Starstrike]]
+- 1126 | ai escaladé la tour de [[Southwind Village]] pour déloger sa ruche de silithides, et y ai trouvé une boîte incrustée qui semblait contenir un livre
+- 6844 | ai porté la trouvaille incrustée à [[name:Umber]], archiviste du Cercle cénarien à [[Nighthaven]], dans l'espoir d'une fenêtre sur le passé
+- 8277 | ai rassemblé des dards et des crocs pour que [[name:Beetix Ficklespragg]] tente de préparer un antidote pour son cousin [[name:Noggle Ficklespragg]], empoisonné
+- 8278 | ai rapporté des échantillons de venin des créatures les plus redoutables du grand sud pour l'antidote de [[name:Noggle Ficklespragg]], qui l'a enfin remis sur pied
+- 8279 | ai arraché aux gardiens du crépuscule les trois chapitres du Lexique du crépuscule, pour que l'ermite Ortell puisse déchiffrer la tablette
+- 8280 | ai décimé [[les:Dredge Striker]] qui avaient ravagé une cargaison de grain-du-lendemain, pour garder ouvertes les lignes de ravitaillement de [[Cenarion Hold]]
+- 8281 | ai tué [[des:Dredge Crusher]] avant que les vers plus gros du sud ne prennent la place des frappeurs le long des lignes de ravitaillement du fort
+- 8282 | ai retrouvé la sacoche de réactifs rares que [[name:Noggle Ficklespragg]] avait perdue en fuyant [[name:Deathclasp]], sans laquelle le fort ne pouvait préparer aucune potion
+- 8283 | ai traqué [[name:Deathclasp]], terreur des sables, pour ouvrir par les montagnes du sud un chemin contournant les ruches silithides
+- 8284 | ai fouillé les ruines d'un camp du Marteau du crépuscule à la recherche de morceaux d'une tablette d'argile, pour comprendre ce que le culte faisait [[at:Silithus]]
+- 8285 | ai cherché l'ermite Ortell, un déserteur du Marteau du crépuscule caché dans les montagnes, pour obtenir son aide avec la tablette
+- 8286 | me suis $grendu:rendue; à [[Caverns of Time]] pour un Guetteur du Bronze, afin de savoir si [[name:Anachronos]] s'était relevé
+- 8287 | ai remis la tablette déchiffrée au commandant Mar'alith, jetant un peu de lumière sur ce que le Marteau du crépuscule faisait [[at:Silithus]]
+- 8301 | ai prouvé à la Progéniture de Nozdormu que j'avais l'étoffe d'un héros, avec [[des:Silithid Carapace Fragment]] arrachés aux silithides des trois ruches
+- 8302 | ai arraché deux cents [[pl:Silithid Carapace Fragment]] de plus aux ruches, chaque chargement me valant de Baristolth le droit de nommer un autre adjoint
+- 8304 | ai interrogé les nains de [[Bronzebeard Encampment]] pour le commandant Mar'alith, dont la bien-aimée Natalia avait disparu
+- 8305 | ai contemplé la Larme cristalline près de la barrière sacrée, souvenir de tout ce qui avait été perdu pendant la guerre des Sables changeants
+- 8306 | me suis $gaventuré:aventurée; dans [[Hive'Regal]] à la recherche de Natalia, la bien-aimée du commandant Mar'alith, et y ai trouvé le monstre que C'Thun avait fait d'elle
+- 8308 | ai porté la lettre perdue de Brann Bronzebeard à son ancien camp, avec la nouvelle d'un tunnel vers Ahn'Qiraj et une prière pour son singe
+- 8309 | ai relevé des empreintes des cristaux à glyphes des trois ruches, dans l'espoir qu'ils expliquent pourquoi les ruches vomissaient des insectes
+- 8310 | ai rassemblé un cerveau de chaque sorte de silithide des ruches pour l'élixir de [[name:Frankal Stonebridge]], censé aider à lire les glyphes
+- 8314 | ai porté le prisme de cristal orné de glyphes à la géologue Larksbane, dans l'espoir qu'elle saurait percer les messages qu'il cachait
+- 8315 | ai tracé les glyphes d'appel à [[Bones of Grakkarond]] et tué l'émissaire qiraji qui est venu, pour la clé des cristaux
+- 8318 | ai pris des textes cryptés aux fidèles du Marteau du crépuscule pour [[name:Bor Wildmane]], afin que leurs ordres secrets circulent moins
+- 8320 | ai frappé les têtes du serpent, [[les:Twilight Geolord]] qui menaient les rituels du culte dans les camps de [[Silithus]]
+- 8321 | ai tué [[name:Vyral the Vile]], chef du Marteau du crépuscule dans la grotte de [[Twilight's Run]], sa chevalière pour preuve
+- 8323 | ai rassemblé les bulletins codés du culte pour l'ermite Ortell, qui voulait savoir si son ancien ordre le traquait encore
+- 8332 | ai gagné des blasons sur des templiers abyssaux pour qu'Aurel Goldleaf forge un médaillon du culte capable de tromper le Conseil abyssal
+- 8341 | ai trouvé des éclats et des chevalières pour l'anneau de seigneur d'Aurel Goldleaf, un déguisement pour attirer un seigneur abyssal dans une embuscade
+- 8348 | ai invoqué l'un des ducs abyssaux et l'ai détruit, sa chevalière portée à [[name:Bor Wildmane]] pour ébranler les sous-fifres du culte
+- 8352 | ai abattu un seigneur du Conseil abyssal avec une troupe prête au combat, son sceptre rapporté à [[name:Bor Wildmane]] pour preuve
+- 8361 | ai vaincu un templier abyssal, l'un des élémentaires qui donnaient leurs ordres au culte, pour semer le désordre dans sa chaîne de commandement
+- 8496 | ai fourni des bandages épais à [[Cenarion Hold]], dont les réserves de campagne étaient dangereusement basses après les dernières pertes
+- 8497 | ai assemblé des trousses de survie d'eau, d'anti-venin et de boulettes, pour garder en vie dans le désert les nouvelles recrues du fort
+- 8498 | ai intercepté les ordres de bataille portés par des prophètes du crépuscule bien gardés, pour que le commandant Mar'alith puisse anticiper les attaques du culte
+- 8501 | ai abattu en plein vol [[des:Hive'Ashi Stinger]] lors de l'assaut de [[Cenarion Hold]] sur [[Hive'Ashi]]
+- 8502 | ai tué [[des:Hive'Ashi Worker]] pour que les silithides peinent à réparer leur ruche une fois l'assaut passé
+- 8507 | ai servi sur le terrain avec la brigade de [[Ironforge]] du capitaine Blackanvil devant [[Hive'Zora]], avant de plus grandes tâches à [[Cenarion Hold]]
+- 8519 | ai assisté dans le cristal à un souvenir oublié de la guerre des Sables changeants, jusqu'à la trahison de Staghelm
+- 8534 | ai rejoint l'éclaireuse cénarienne Azenel au fond de [[Hive'Zora]] pour son rapport écrit sur les mouvements des silithides
+- 8535 | ai invoqué et détruit [[un:Hoary Templar]], l'un des nobles élémentaires que vénère le Marteau du crépuscule
+- 8536 | ai fait venir [[un:Earthen Templar]] et l'ai abattu, pour que le culte devant Ahn'Qiraj ne prenne pas le fort au dépourvu
+- 8537 | ai trouvé le moyen d'invoquer [[un:Crimson Templar]] et l'ai tué, les nobles élémentaires du culte étant une menace trop grande pour être ignorée
+- 8538 | ai attiré dans ce monde les ducs des Cendres, des Profondeurs, des Zéphyrs et des Éclats et les ai détruits, les principaux organisateurs du culte
+- 8539 | ai abattu [[des:Hive'Zora Hive Sister]] avec les renforts appelés à l'assaut de [[Hive'Zora]]
+- 8540 | ai procuré des bottes ornées en mithril à la division montée de la garde de [[Cenarion Hold]], qui en manquait
+- 8541 | ai approvisionné la garde de [[Cenarion Hold]] en silex à aiguiser, denses, solides et lourds, qui lui faisaient défaut
+- 8687 | ai tué [[des:Hive'Zora Tunneler]], parmi les renforts lancés contre [[Hive'Zora]]
+- 8731 | ai servi sur le terrain avec la légion de [[Orgrimmar]] de Krug Skullsplit devant [[Hive'Regal]], qui a signé les papiers avec du sang de silithide
+- 8737 | ai fait sortir [[un:Azure Templar]] et l'ai détruit, les nobles élémentaires du Marteau du crépuscule menaçant le fort
+- 8738 | ai fouillé [[Hive'Regal]] à la recherche de l'éclaireur cénarien Landion, qui y observait les silithides depuis des jours, et rapporté son rapport
+- 8739 | ai retrouvé l'éclaireuse cénarienne Jalia dans [[Hive'Ashi]] et rapporté son rapport pour que le fort puisse agir vite
+- 8740 | ai vaincu les maraudeurs du crépuscule et leur cheffe Morna, des fidèles montés qui s'en prenaient aux patrouilles et aux caravanes du fort
+- 8743 | ai frappé le gong, et regardé un cristal particulier jaillir du sol à côté, peut-être un signe de la faveur de la Progéniture
+- 8770 | ai tué [[des:Hive'Ashi Defender]] lors de l'attaque de [[Hive'Ashi]], les silithides menaçant toujours davantage la guerre de [[Cenarion Hold]]
+- 8771 | ai traqué [[des:Hive'Ashi Sandstalker]] lors de l'assaut de [[Cenarion Hold]] sur leur ruche
+- 8772 | ai tué [[des:Hive'Zora Waywatcher]] pour le commandant Mar'alith tandis que des renforts frais pressaient l'attaque sur [[Hive'Zora]]
+- 8773 | ai abattu [[des:Hive'Zora Reaver]] lors de l'attaque de leur ruche, pour une victoire que le commandant Mar'alith croyait proche
+- 8774 | ai tué [[des:Hive'Regal Ambusher]] lors de l'assaut sur [[Hive'Regal]], les silithides ayant menacé chaque opération de la guerre
+- 8775 | ai abattu en plein vol [[des:Hive'Regal Spitfire]] quand la guerre s'est tournée contre leur ruche
+- 8776 | ai tué [[des:Hive'Regal Slavemaker]] lors de l'assaut de [[Cenarion Hold]] sur [[Hive'Regal]]
+- 8777 | ai délogé [[des:Hive'Regal Burrower]] quand [[Cenarion Hold]] a porté la guerre jusqu'à [[Hive'Regal]]
+- 8778 | ai rassemblé des huiles volatiles, du carburant de fusée et de la poudre d'explosion pour l'arcaniste Nozzlespring de la brigade de [[Ironforge]]
+- 8779 | ai procuré du matériel de divination à la géologue Larksbane, dont les études avaient bien servi [[Cenarion Hold]]
+- 8780 | ai réapprovisionné en renforts d'armure la brigade de [[Ironforge]], à court sur le champ de bataille devant [[Hive'Zora]]
+- 8781 | ai armé la brigade de [[Ironforge]] d'épées d'acier lunaire, une bonne part de ses provisions ayant été perdue en route pour [[Silithus]]
+- 8782 | ai rassemblé de l'étoffe lunaire, de l'étoffe runique et de la soie d'araignée pour des uniformes, les derniers volontaires ayant laissé [[Cenarion Hold]] à court
+- 8783 | ai fourni du thorium et du cuir enchantés à Vargus, le forgeron de [[Cenarion Hold]], pour que les troupes restent bien équipées
+- 8785 | ai rassemblé du mojo et des huiles d'immolation pour la prêtresse de l'ombre Shai, en vue d'une mixture que les silithides n'apprécieraient guère
+- 8786 | ai livré de gigantesques haches en fer à Merok Longstride, des armes que la légion de [[Orgrimmar]] avait réclamées et dont le fort ne pouvait se passer
+- 8787 | ai remplacé les renforts d'armure que la légion de [[Orgrimmar]] avait perdus en route pour [[Silithus]]
+- 8804 | ai assemblé des trousses de survie pour les recrues de [[Cenarion Hold]], proies de la soif et du poison dans le désert
+- 8805 | ai trouvé un lot de bottes ornées en mithril pour le capitaine Vish Kozus et sa garde montée
+- 8806 | ai fourni en silex à aiguiser la garde de [[Cenarion Hold]], qui en manquait
+- 8807 | ai trouvé des éclats et une énorme émeraude pour la divination de la géologue Larksbane, dont les recherches avaient une grande valeur pour la guerre
+- 8808 | ai fourni à l'implorateur des vents Proudhorn de l'étoffe pour les uniformes du dernier afflux de volontaires
+- 8809 | ai rapporté des barres et du cuir enchantés pour que Vargus forge des armes puissantes pour les forces du fort
+- 8810 | ai renouvelé les bandages épais de l'implorateur des vents Proudhorn, les dernières pertes ayant laissé le champ de bataille à court
+- 8829 | ai réuni ce dont Aurel Goldleaf avait besoin pour copier la robe d'un émissaire du crépuscule et tenter de passer grâce aux pierres du culte
+- 8856 | ai préparé des trousses de survie d'eau, d'anti-venin et de saumon cuit pour les volontaires inexpérimentés de [[Cenarion Hold]]
+- 8857 | ai porté en hâte un échantillon frais de la carcasse du colosse d'Ashi abattu à [[name:Oglethorpe Obnoticus]], à [[Booty Bay]], avant qu'il ne pourrisse
+- 8858 | ai porté une carcasse du colosse de Regal au surveillant Oilfist, dans [[Searing Gorge]], qui comptait faire une armure de sa chitine
+- 8859 | ai porté en hâte une carcasse du colosse de Zora au seigneur Maxwell Tyrosus, qui espérait que ses secrets aideraient contre le Fléau
+- 9023 | ai pris les glandes à venin de [[name:Kurinnaxx]] et de [[name:High Priest Venoxis]] pour Dirk Thunderwood, qui cherchait un nouveau poison pour le seigneur Ravenholdt
+- 9248 | ai montré à Aurel Goldleaf le sceptre d'un seigneur du Conseil abyssal tombé, pour une bague à porter contre les Qiraji
+- 9419 | ai porté de la silithyste à travers le désert jusqu'à l'extracteur de l'Alliance près de [[Hive'Zora]], pour que la Horde n'en ait pas le profit
+- 9422 | ai transporté de la silithyste jusqu'à l'extracteur de la Horde près de [[Hive'Regal]], dans une course avec l'Alliance pour les ressources du désert
+- 729 | suis $gparti:partie; vers le sud voir si le prospecteur Remtravel allait bien, son chantier envahi par des golems qu'il semblait ne jamais remarquer
+- 731 | ai protégé le distrait prospecteur Remtravel parmi les créatures de son chantier pendant qu'il cherchait son fossile
+- 741 | ai porté le mystérieux fossile de Remtravel à l'archéologue en chef Greywhisker, à [[Darnassus]], comme promis à la Ligue
+- 942 | ai porté le fossile par-delà la mer jusqu'à l'archéologue Flagongut, à [[Menethil Harbor]], qui croyait que ces fossiles recelaient un pouvoir caché
+- 943 | ai arraché la pierre de Relu à un raptor qui l'avait avalée et récupéré le fossile de Whelgar, pour que Flagongut tente de les éveiller
+- 944 | ai reconnu [[The Master's Glaive]], où est tombé jadis un ancien seigneur de la terre, et parlé de ses sectateurs à Onu par une coupe de divination
+- 945 | ai aidé Therylune à échapper aux sectateurs de [[The Master's Glaive]], et annoncé à sa sœur Therysil qu'elle était saine et sauve
+- 947 | ai cueilli des champignons rares derrière [[Cliffspring Falls]] pour la potion de Barithras Moonshade, et reconnu la grotte que craignaient les Anciens
+- 949 | ai fouillé le camp du Marteau du crépuscule à [[The Master's Glaive]] en quête d'un indice sur ce que le culte y projetait
+- 950 | ai arraché une page de gribouillages démentiels au Tome du crépuscule qui rendait fou, dans l'espoir qu'elle révèle à Onu les desseins du culte
+- 951 | ai fouillé les ruines de [[Ruins of Mathystra]] à la recherche de reliques elfiques, pour savoir comment le culte comptait user de la magie elfique pour ramener ses maîtres
+- 953 | ai déchiffré les tablettes de [[Ameth'Aran]] parmi ses esprits sans repos, pour que la sentinelle Tysha Moonblade puisse rapporter sa chute
+- 954 | ai examiné l'étrange aura bleue d'un sanctuaire de [[Bashal'Aran]], dont ses satyres et ses farfadets n'osaient approcher
+- 955 | ai pris des boucles d'oreille aux grells de [[Bashal'Aran]], où l'esprit Asterion espérait trouver une trace du sceau qui le liait
+- 956 | ai arraché l'ancien sceau de pierre de lune, lien de la longue captivité d'Asterion, aux satyres qui menaient les grells
+- 957 | ai détruit l'ancien sceau de pierre de lune dans la flamme bleue de [[Ameth'Aran]], libérant Asterion après des âges
+- 958 | ai arraché des reliques des Bien-nés aux esprits de [[Ameth'Aran]], pour que Thundris Windweaver puisse détruire le mal endormi qu'elles recelaient
+- 963 | ai libéré l'esprit hanté d'Anaya Dawnrunner pour Cerellean Whiteclaw, qui l'aimait et n'avait pas le cœur de le faire
+- 965 | suis $gparti:partie; à la recherche de Balthule Shadowstrike, en retard pour sa garde à [[Tower of Althalaxx]], pour une Elissa Starbreeze inquiète
+- 966 | ai pris des parchemins déchirés aux démonistes de [[Tower of Althalaxx]], des papiers qui les désignaient comme le culte du Sombre Brin
+- 967 | ai porté en hâte l'avertissement de Balthule sur le culte du Sombre Brin à son maître, Delgren le Purificateur, à [[Maestra's Post]]
+- 968 | ai rapporté un exemplaire abîmé des Puissances d'en-bas, un livre de culte obscur, à la boutique de Gerrig Bonegrip à [[Ironforge]]
+- 970 | ai saisi la gemme d'âme luminescente à Ordil'Aran pour Delgren, qui croyait qu'elle détenait le secret du pouvoir du Sombre Brin
+- 973 | ai tenu tête à [[name:Ilkrud Magthrull]], un puissant démoniste orc à [[Fire Scar Shrine]], et porté son tome à Delgren
+- 982 | ai plongé jusqu'aux épaves de l'Aube argentée et du Voile de brume, coulés par les murlocs, pour les coffrets de leurs capitaines morts
+- 983 | ai réparé la Bigobox 827 avec des pattes de clampant pour Wizbang, un inventeur dont les boîtes parlantes demandaient sans cesse des réparations
+- 984 | ai reconnu un camp de furbolgs Noirbois à la recherche de signes de corruption, pour Terenthis, qui avait juré qu'aucun elfe de la nuit ne serait plus blessé
+- 985 | ai combattu les furbolgs Noirbois dans leur camp au sud de [[Auberdine]], la plus grande menace pour les gens de [[Auberdine]]
+- 986 | ai dépecé [[des:Moonstalker Sire]] et [[des:Moonstalker Matriarch]] pour de belles peaux, afin que Terenthis puisse faire une cape pour rejoindre Volcor sans encombre
+- 993 | ai retrouvé Volcor, le maître blessé de Grimclaw, dans une grotte de furbolgs et lui ai apporté une cape enchantée de traquelune
+- 994 | me suis frayé un chemin hors de la grotte des furbolgs aux côtés de Volcor, jusqu'à la route où attendait Grimclaw
+- 995 | me suis $gfaufilé:faufilée; hors de la grotte des furbolgs avec Volcor blessé, puis ai retrouvé Terenthis à [[Auberdine]]
+- 1001 | ai pêché des yeux de batteur en haute mer pour réparer la Bigobox 411, pendant que Wizbang hoquetait à travers la boîte
+- 1002 | ai nourri la Bigobox 323 de crocs de traquelune pour un Wizbang qui semblait plus ivre à chaque boîte
+- 1003 | ai réparé la Bigobox 525 avec des scalps vieillis, et appris que les boîtes distillaient aussi de l'alcool pour un commerce que les elfes de la nuit voyaient d'un mauvais œil
+- 1138 | ai prélevé de la belle chair de crabe sur des clampants de récif pour Gubber Blump, qui aimait le crabe plus que tout
+- 1140 | ai libéré les âmes des Bien-nés dont les gemmes d'âme, à [[Night Run]] et à [[Satyrnaar]], nourrissaient encore le pouvoir d'Athrikus
+- 1141 | ai pêché des mérous de [[Darkshore]] pour Gubber Blump, aucun bateau n'étant sorti depuis l'arrivée des murlocs
+- 1143 | ai tué Athrikus Narassin au sommet de [[Tower of Althalaxx]] au milieu de ses démonistes, pour repousser les forces démoniaques qui s'y trouvaient
+- 2078 | ai ramené [[name:The Threshwackonator 4100]], le second mécanique de Gelkak, auprès de son capitaine englouti pour régler son compte aux murlocs
+- 2098 | ai repris aux bêtes du rivage les morceaux de la clé brisée de Gelkak Gyromast, pour que son second puisse fonctionner de nouveau
+- 2118 | ai capturé vivant [[un:Rabid Thistle Bear]] pour Tharnariun Treetender, qui espérait guérir le mal qui rendait les ours fous
+- 2138 | ai abattu des ours des chardons enragés pour Tharnariun, son remède ayant échoué, afin de ralentir les dégâts que la peste causait à la forêt
+- 2139 | ai tué [[le:Den Mother]] dans sa grotte près de [[Bashal'Aran]], la dernière mise à mort que Tharnariun m'a demandée pour soulager la forêt
+- 3524 | ai pris les os d'une créature marine échouée, cernée de murlocs Grisebrume, pour comprendre pourquoi de telles bêtes s'échouaient
+- 4681 | ai plongé jusqu'à un squelette de tortue de mer à l'ouest de [[Auberdine]], une vraie chance de comprendre pourquoi les créatures marines s'échouent
+- 4722 | ai prélevé des échantillons sur une tortue de mer échouée depuis longtemps, dépecée par les murlocs campant autour, pour [[Temple of the Moon]]
+- 4723 | ai pris les os d'un batteur géant échoué sur [[Mist's Edge]], bien trop grand pour que les murlocs qui s'en repaissaient l'aient tué
+- 4725 | ai trouvé une boîte aux marques étranges sur la carapace d'une tortue échouée, un travail de nagas qui expliquait leur présence [[at:Darkshore]]
+- 4727 | ai prélevé un échantillon sur une carcasse de tortue des plages du nord dont même les murlocs Grisebrume semblaient se tenir à l'écart
+- 4728 | ai recueilli un échantillon sur une créature marine échouée que la Ligue des explorateurs étudiait jusqu'à ce que des murlocs la chassent
+- 4730 | ai prélevé des os sur une créature marine à moitié dévorée gardée par des murlocs plus forts, pour l'étude de Gwennyth sur les échouages
+- 4731 | ai porté à Gwennyth une autre boîte naga trouvée sur la carapace d'une tortue échouée, qui se demandait si elle avait été destinée à [[Ashenvale]]
+- 4732 | ai récupéré ce que les murlocs Grisebrume avaient laissé d'une tortue de mer échouée, pour que [[Temple of the Moon]] l'étudie
+- 4733 | ai rapporté les os d'un batteur plusieurs fois plus grand que tous ceux de la région, échoué sur [[Twilight Shore]]
+- 4740 | ai tué [[name:Murkdeep]], le murloc accusé de la mort d'une sentinelle et du naufrage de deux cargos, pour que [[Auberdine]] puisse dormir tranquille
+- 4762 | ai prélevé de l'eau de [[Cliffspring River]] souillée pour Thundris Windweaver, qui craignait que sa corruption n'atteigne [[Auberdine]]
+- 4763 | ai attiré le corrupteur satyre avec une coupe de purification pour son talisman de corruption, qui pourrait un jour libérer les furbolgs
+- 4811 | ai fouillé les montagnes de l'est à la recherche du cristal rouge qui, disait-on, attirait des séléniens hostiles, pour la sentinelle Glynda Nal'Shea
+- 4812 | ai versé de l'eau du puits de lune sur le cristal rouge, qui est devenu clair et a laissé voir des fragments d'os et une demi-mâchoire à l'intérieur
+- 5321 | ai guidé le somnolent Kerlonian Evershade, tout juste sorti du Rêve d'émeraude, jusqu'à Liladris Moonriver à [[Maestra's Post]]
+- 5713 | ai défendu la sentinelle Aynasha, empoisonnée, contre le furbolg Marosh et ses pisteurs jusqu'à ce que son antidote fasse effet
+- 6342 | me suis $grendu:rendue; en vol à [[Auberdine]] avec les arêtes et les écailles de poisson de Nessa pour Laird, afin de comparer les prises de [[Teldrassil]] à celles du continent
+- 6343 | ai rapporté à Nessa Shadowsong la réponse de Laird, qui soupçonnait l'arbre-monde de faire grandir autant les poissons là-bas
+- 1442 | me suis $gaventuré:aventurée; dans [[Blackfathom Deeps]] pour prendre aux nagas une gemme de Kor, à purifier pour le rituel du forgeron Stilwell
+- 1643 | ai cherché dans [[Trade District]] de [[Stormwind City]] quelqu'un aux nobles intentions qui avait besoin d'aide, et trouvé Stephanie Turner
+- 1644 | ai apporté du lin à Stephanie Turner pour qu'elle couse des vêtements aux orphelins que le Fléau avait laissés à sa charge
+- 1647 | ai cherché dans l'anneau extérieur de [[Ironforge]] quelqu'un qui avait besoin de la bonté d'un paladin, et trouvé John Turner
+- 1648 | ai donné à John Turner le lin qu'il lui fallait pour envoyer enfin des vêtements à l'orphelinat que sa femme et lui tiennent à [[Stormwind City]]
+- 1650 | suis $gparti:partie; vers le [[Longshore]] de [[Westfall]] soutenir Daphne Stilwell, seule face aux Défias pendant que son mari était absent
+- 1651 | ai défendu la maison de Daphne Stilwell contre vague après vague de Défias, une épreuve de bravoure pour un paladin face à des forces écrasantes
+- 1655 | ai repris aux ogres Mo'grosh la cargaison de minerai de Jordan Stilwell, dont ils avaient attaqué le convoi, pour Bailor Stonehand
+- 1783 | ai relevé Narm Faulk grâce au symbole de vie, là où il était tombé sous les coups des nains Sombrefer au sud de [[Helm's Bed Lake]]
+- 1784 | ai pris un script sombrefer près du lac du Lit d'Helm, une preuve pour le conseil sceptique de [[Ironforge]] que les Sombrefer étaient [[at:Dun Morogh]]
+- 1786 | ai relevé Henze Faulk grâce au symbole de vie sur [[Heroes' Vigil]], où il était tombé en retenant des mages défias pour permettre à Gazin de fuir
+- 1787 | ai saisi les papiers des sorciers défias renégats sur [[Heroes' Vigil]], une preuve pour les conseillers du roi que les Défias étaient dans [[Elwynn Forest]]
+- 7637 | ai acheté l'encensoir d'exorcisme du grand prêtre Rohan par un généreux don, un premier sacrifice sur la route d'un destrier
+- 7640 | ai chassé de [[Terrordale]] les esprits tourmentés avec l'encensoir d'exorcisme, leur infligeant le jugement de la Lumière
+- 7642 | ai réuni étoffe runique, arcanite, larmes d'Arthas, eau bénite et une somme rondelette pour que Grimand Elmore fasse le caparaçon d'un destrier
+- 7643 | ai tué [[name:Tendris Warpwood]] à [[Dire Maul]] pour libérer l'ancien esprit équin, et l'ai apaisé pour qu'il bénisse le caparaçon
+- 7645 | ai payé Merideth Carlson, que la Main d'argent avait autrefois traitée de folle, en or et en biscuits de manne pour son fourrage de cheval spirituel
+- 7646 | ai trouvé un diamant d'Azeroth et un diamant noir parfait pour le seigneur Grayson Shadowbreaker, les dernières pièces d'un clairvoyant
+- 7647 | ai vaincu le chevalier de la mort Darkreaver dans le grand ossuaire de [[Scholomance]] pour racheter l'âme du destrier déchu qu'il montait
+- 8414 | ai rassemblé des pierres du Fléau sur les serviteurs du Fléau pour le grand prêtre Thel'danis à [[Uther's Tomb]], afin que leur mal soit dissipé
+- 8416 | ai porté une pierre du Fléau purifiée au commandant Ashlam Valorfist, qui comptait baigner le Fléau d'un feu vertueux
+- 8418 | ai pris des plumes vaudou aux prêtres trolls de [[Sunken Temple]], une magie pour forger une pierre de pouvoir sacrée contre les morts-vivants
+- 7881 | ai fabriqué des bottes de forain pour la foire de Sombrelune, en échange de ses tickets
+- 7882 | ai cousu de robustes tuniques de cuir pour la foire de Sombrelune en échange de ses tickets
+- 7883 | ai apporté à la foire de Sombrelune des pièces de costume pour le plus grand gnome du monde, si l'on en trouvait jamais un assez grand
+- 7884 | ai fabriqué ce dont la foire de Sombrelune avait besoin pour son numéro de l'enfant crocilisque et du murloc barbu
+- 7885 | ai fourni à la foire de Sombrelune des renforts d'armure, dont un parfait pour rapiécer une déchirure dans une tente
+- 7889 | ai fabriqué des cailloux grossiers pour la foire de Sombrelune, ni trop lourds ni trop légers pour se faire des muscles
+- 7890 | ai apporté des silex à aiguiser lourds à un employé de la foire qui comptait se faire des muscles en les soulevant
+- 7894 | ai fabriqué des modulateurs en cuivre pour une construction secrète de la foire de Sombrelune
+- 7895 | ai bricolé des bidules bourdonnants en bronze pour un stand de la foire censé être la merveille du monde
+- 7896 | ai fabriqué des fusées vertes pour annoncer qu'un stand de la foire de Sombrelune était prêt, quel que soit le jour où il le serait
+- 7897 | ai fourni des trousses de réparation mécanique pour que le bricoleur de la foire puisse tout remettre en marche
+- 7898 | ai fabriqué des rouages en thorium pour Yebb, un gnome malin et peut-être retors de la foire de Sombrelune
+- 7899 | ai rassemblé de petites pattes en fourrure pour des jouets et des babioles qui attireraient plus de visiteurs à la foire
+- 7900 | ai rassemblé des peaux d'ours déchirées à coudre en peluches pour la foire, que tous les enfants d'Azeroth envieraient
+- 7901 | ai rapporté des queues fournies et soyeuses, des prix pour rendre heureux les visiteurs de la foire et leur faire amener leurs amis
+- 7902 | ai rassemblé des plumes vibrantes pour enflammer l'imagination au spectacle de la foire de Sombrelune
+- 7903 | ai chassé des chauves-souris pour leurs yeux maléfiques, de quoi effrayer les visiteurs de la foire de Sombrelune
+- 7907 | ai rapporté à la foire de Sombrelune une suite complète de cartes de Fauves, comme me l'avait demandé une mystérieuse neuvième carte
+- 7927 | ai présenté à la foire la suite de Portails complète pour l'une de ses cartes majeures, comme le demandait la neuvième carte de la suite
+- 7928 | ai rapporté à la foire de Sombrelune la suite de Seigneurs de guerre achevée
+- 7929 | ai remis à la foire de Sombrelune une suite complète de cartes d'Élémentaires, dont la neuvième carte promettait une récompense
+- 7937 | ai suivi la bonne fortune prédite par Sayge jusqu'à une meule de foin près de l'écurie de [[Eastvale Logging Camp]], où était caché un coffret
+- 7938 | ai suivi une prédiction jusque dans [[The Deadmines]], à travers un portail scintillant, jusqu'à un étrange coffre contenant un coffret
+- 7944 | ai cherché fortune au cœur de [[Wailing Caverns]], où un étrange coffre est apparu au-delà d'un portail scintillant
+- 7945 | ai suivi une prédiction jusqu'à une souche d'arbre devant [[Palemane Rock]], [[at:Mulgore]], où était caché un coffret
+- 8222 | ai rassemblé du sang de scorpide luminescent pour une peinture qui changerait la camelote en trésors luisants à la foire
+- 19 | ai traqué [[name:Tharil'zun]], le chef cruel des coureurs Blackrock qui tendaient des embuscades sur la route de [[Stonewatch Keep]]
+- 20 | ai combattu les orcs Blackrock de [[Stonewatch Keep]], dont les raids gardaient les gens de [[Lakeshire]] parqués en ville comme du bétail
+- 34 | ai mis fin aux jours de [[name:Bellygrub]], le sanglier qui ne cessait de piétiner le jardin et les jonquilles de Martie Jainrose
+- 89 | ai repris aux gnolls qui avaient détourné les provisions de [[Lakeshire]] les clous et les vis en fer, pour que le pont sur le lac puisse être reconstruit
+- 91 | ai tué les gnolls Sombrepoil qui servaient le démoniste Morganth et terrorisaient [[Lakeshire]], comme l'exigeait la loi de [[Lakeshire]]
+- 92 | ai rassemblé de la viande de condor, des groins de broche-tripes et de la chair d'araignée pour regarnir le garde-manger vide de la cheffe Breanna, pour un goulash des Carmines
+- 94 | ai posé le glyphe d'Azora près de [[Tower of Ilgalar]] pour que Theocritus puisse espionner son rival, le mage Morganth
+- 115 | ai pris des orbes de minuit aux lanceurs d'ombre Blackrock pour qu'ils soient détruits, des instruments obscurs qui avaient durement frappé les défenseurs des Carmines
+- 116 | ai rapporté bière, merlot, tord-boyaux et rhum de quatre villes pour le tavernier Daniels, ses bouteilles presque vides depuis l'invasion orque
+- 118 | ai porté la note de Verner Osgood au forgeron Argus, à [[Goldshire]], pour demander des fers pour les chevaux de l'écurie
+- 119 | ai rapporté la caisse de fers à cheval à Verner Osgood, avec la note d'Argus réclamant d'être payé
+- 120 | ai porté au général Marcus Jonathan l'appel aux renforts du magistrat Solomon, [[Lakeshire]] étant constamment assiégé
+- 121 | ai rapporté au magistrat Solomon la réponse du général Marcus Jonathan, où il a lu que quelque chose n'allait pas dans le royaume
+- 122 | ai chassé des dragonnets noirs pour leurs écailles ventrales, afin que Verner Osgood puisse payer à Argus ses fers à cheval
+- 124 | ai chassé les brutes et les mystiques gnolls de la crête au-dessus de l'écurie de Verner Osgood, qui lui prenaient ses chevaux quand ils s'égaraient
+- 125 | ai plongé au fond de [[Lake Everstill]] pour la boîte à outils du contremaître Oslow, coulée quand les catapultes orques avaient frappé le bateau qui la portait
+- 126 | ai tué [[name:Yowler]], chef des gnolls dont les hurlements emplissaient les collines au-dessus de [[Lakeshire]], pour disperser sa meute
+- 127 | ai vendu au maître des docks Baren les poissons-lunes tachetés qui font la réputation de [[Lake Everstill]], son stock s'épuisant
+- 128 | ai tué [[des:Blackrock Champion]], les chefs des unités du clan campées au nord de [[Lakeshire]], comme le voulait le magistrat Solomon
+- 129 | ai apporté son déjeuner au garde Parker pendant sa patrouille sur la route de [[Duskwood]], un trajet trop dangereux pour l'habitante qui l'avait préparé
+- 131 | ai porté les jonquilles du garde Parker à Darcy, qui craignait que Martie, jalouse, ne les ait empoisonnées
+- 143 | ai porté l'appel du magistrat Solomon à Gryan Stoutmantle, de la milice de [[Westfall]], puisque l'armée de [[Stormwind City]] n'était pas venue
+- 144 | ai rapporté le refus attristé de Gryan Stoutmantle, [[Westfall]] abandonnée par [[Stormwind City]] tout comme [[Lakeshire]]
+- 145 | suis $gpassé:passée; à [[Duskwood]] avec la lettre du magistrat Solomon demandant au seigneur Ebonlocke d'envoyer son Guet de nuit à [[Lakeshire]]
+- 146 | ai rapporté à [[Lakeshire]] le refus du seigneur Ebonlocke, une nouvelle qui a convaincu le magistrat Solomon d'une trahison à [[Stormwind City]]
+- 150 | ai chassé pour le maître des docks Baren les murlocs qui vidaient [[Lake Everstill]] de ses poissons, étrangement loin de la mer
+- 169 | ai tué [[name:Gath'Ilzogg]], chef des attaques Blackrock contre [[Lakeshire]], premier pas pour reprendre [[Stonewatch Keep]] au nom de [[Stormwind City]]
+- 178 | ai porté un pendentif sombrepoil fané au mage Theocritus, dont le sort lancé à travers lui sur les gnolls de Morganth semblait avoir échoué
+- 180 | ai tué [[name:Lieutenant Fangore]], chef des gnolls Sombrepoil au service de Morganth, dont le magistrat Solomon voulait la mort
+- 219 | ai escorté le caporal Keeshan, blessé, dont le régiment avait été écrasé par les orcs Blackrock, de sa grotte-prison jusqu'aux Carmines
+- 244 | ai averti l'adjoint Feldon que des camps de gnolls se rassemblaient près de la route, une force qui pourrait avancer jusque dans [[Elwynn Forest]]
+- 246 | ai harcelé les camps de gnolls le long de la route du sud des Carmines pour en estimer le nombre pour l'adjoint Feldon, qui n'avait pas d'hommes à disposition
+- 248 | ai caché un glyphe d'Azora au sommet de la tour de guet près de [[Stonewatch Keep]], pour que Theocritus puisse sonder les esprits qui s'y trouvaient
+- 249 | suis $gentré:entrée; dans [[Tower of Ilgalar]] pour vaincre Morganth avant qu'il ne trouve la Faux d'Elune et ne la retourne contre [[Stormwind City]]
+- 3741 | ai retrouvé le collier d'Hilary dans le lac de [[Lakeshire]], où l'on avait interdit aux enfants de se baigner
+- 784 | ai chassé de [[Tiragarde Keep]] le lieutenant Benedict et ses hommes de Kul Tiras, qui l'avaient repris au mépris du pacte du chef de guerre
+- 786 | ai détruit les plans d'attaque des centaures Kolkar, détenus par trois chefs dans [[Kolkar Crag]], avant qu'ils ne frappent [[Durotar]]
+- 791 | ai apporté du canevas à Furl Scornbrow, trop vieux pour la bataille, qui faisait désormais des sacs pour les jeunes guerriers depuis sa tour de guet
+- 806 | ai vaincu [[name:Fizzle Darkstorm]], démoniste gobelin de la [[faction:Burning Blade]] à [[Thunder Ridge]], pour refuser au culte une prise [[at:Durotar]]
+- 808 | ai pris le crâne de Minshina dans le cercle de pouvoir de Zalazane, libérant l'esprit prisonnier du frère de maître Gadrin
+- 812 | ai couru jusqu'à Kor'ghan, à [[Orgrimmar]], chercher l'antidote qui a sauvé Rhinag, piqué par un queue-venin et à une heure de la mort
+- 813 | ai rassemblé des glandes à venin de queue-venin pour que Kor'ghan prépare un antidote pour Rhinag, piqué
+- 815 | ai volé des œufs de fouette-queue sur [[Echo Isles]] pour le prochain petit déjeuner du cuisinier Torka
+- 816 | ai fouillé les crocilisques de la Furie-du-Sud en quête d'un signe du sort de Kron, pour que sa mère Misha Tor'kren puisse enfin faire son deuil
+- 817 | ai chassé [[des:Durotar Tiger]] sur les îles du sud pour leur fourrure, afin que Vel'rin Fang puisse garder les gens au chaud
+- 818 | ai rassemblé des yeux de makrura et du mucus de clampant pour maître Vornal, un alchimiste à demi aveugle qui n'avait jamais trouvé d'élève digne de lui
+- 825 | ai nagé parmi les épaves de la flotte de Proudmoore à la recherche d'outils gnomes, pour que la Horde apprenne la mécanique de l'Alliance
+- 826 | ai vaincu Zalazane et ses trolls maléficiés sur [[Echo Isles]], pour que la tribu Darkspear puisse de nouveau dormir en paix
+- 827 | ai pris des colliers brûlants à la [[faction:Burning Blade]] à [[Skull Rock]], pour que Margoz apprenne comment les sectateurs puisaient dans le pouvoir démoniaque
+- 829 | ai montré un collier brûlant à Neeru Fireblade, un démoniste qui prétend chasser les démons, son origine dépassant le savoir de Margoz
+- 830 | ai apporté un exemplaire trouvé des ordres de l'amiral Proudmoore à Gar'Thok, commandant de [[Razor Hill]]
+- 831 | ai porté en hâte les ordres de l'amiral Proudmoore à Nazgrel, dans la salle de Thrall, preuve que les plans des humains avaient survécu à l'amiral
+- 832 | ai remis à Neeru Fireblade l'Œil de l'ombre ardente, un pendentif de sectateur dont la voix avait prononcé son nom
+- 834 | ai repris les provisions que les harpies Terrevent avaient arrachées à la caravane de Rezlak et emportées dans [[Razorwind Canyon]]
+- 835 | ai débarrassé [[Drygulch Ravine]] de ses harpies pour que les caravanes de ravitaillement de Rezlak puissent passer sans danger
+- 837 | ai chassé les hurans Tranchecrin de leurs camps à l'ouest de [[Razor Hill]], pour protéger les frontières de la nouvelle patrie des orcs
+- 924 | ai porté une pierre de pouvoir défectueuse au sommet de [[Dreadmist Peak]] avant qu'elle ne se consume, détruisant ainsi la Graine démoniaque de la [[faction:Burning Blade]]
+- 2161 | ai porté le chargement de vivres du péon Ukor à l'aubergiste Grosk, à [[Razor Hill]], le péon ayant trop peur des bêtes de la route
+- 698 | ai chassé [[des:Sawtooth Crocolisk]] adultes pour leurs flancs, afin de nourrir les soldats de Tok'Kar à l'avant-poste de la plage, qui n'avaient pas le temps de chasser
+- 699 | ai fourni à Tok'Kar des griffes de mordeur dents-de-scie pour fabriquer des armes à l'avant-poste qui surveillait la côte contre les murlocs
+- 1116 | ai rassemblé de la poussière de rêve sur les dragonnets du marais pour la tabatière de Krazek, son prix pour des nouvelles de Nazz
+- 1389 | ai repris les cristaux sacrés de draenéthyste que les Égarés de [[Fallow Sanctuary]] avaient volés, de peur que le peuple de Magtoor ne perde son chemin
+- 1392 | ai apporté le gourdin de Noboru au chef de [[Harborage]], preuve que la brute qui tuait tous les Draeneï sur son chemin était morte
+- 1393 | ai escorté Galen loin des créatures qui allaient le dévorer, pour le trésor de son coffre et le truc pour l'ouvrir
+- 1396 | ai chassé les bêtes qui rôdaient autour du camp du guetteur Biggs, tout ce qui restait de sa caravane après l'attaque des Égarés
+- 1398 | ai trouvé du bois flotté séché au soleil sur la côte pour que le guetteur Biggs puisse réparer son chariot et atteindre [[Nethergarde Keep]]
+- 1421 | ai récupéré des composants de sorciers dans un chariot traîné jusqu'à [[Fallow Sanctuary]], indispensables au travail de [[Nethergarde Keep]] sur la Porte des ténèbres
+- 1423 | ai rapporté un tonneau de fournitures perdues à l'intendant Lungertz, à [[Nethergarde Keep]], tant de choses se perdant en route
+- 1424 | ai rassemblé des artefacts atal'ai autour de [[Pool of Tears]] pour Fel'zerul, afin de savoir comment [[The Temple of Atal'Hakkar]] avait été englouti
+- 1425 | ai porté à [[Nethergarde Keep]] les fournitures vitales sauvées de la caravane du guetteur Biggs, que l'on y croyait perdues
+- 1426 | ai décimé les murlocs de la plage pour Katar, qui gardait la côte de [[Stonard]] et haïssait la mer et tout ce qui en sortait
+- 1428 | ai tué encore davantage de murlocs des marais, des oracles parmi eux, pour Katar, qui réclamait la mort de tous les hommes-poissons
+- 1429 | ai porté des artefacts atal'ai à un prêtre atal'ai exilé parmi les Witherbark de [[The Hinterlands]], pour connaître leur véritable usage
+- 1430 | ai rapporté à Dar des pattes de clampant monstrueux de la côte, une viande très prisée de ses clients de [[Orgrimmar]]
+- 2623 | ai repris les ordres du chef de guerre dans la grotte du Parleur des marécages, saisis quand des murlocs avaient tendu une embuscade aux soldats qui les portaient
+- 3374 | me suis $gengagé:engagée; à aider le Vol draconique d'Ysera en remettant à Itharius l'essence enchaînée d'Eranikus, pour racheter l'âme du dragon
+- 1582 | ai honoré les commandes de cuir estampé de Lotherias pour les jeunes aventuriers de [[Darnassus]], afin d'apprendre la veste de Moonglow
+- 2847 | ai payé dix cuirs épais à Pratt McGrubben pour commencer à apprendre l'armure en cuir sauvage à [[Feathermoon Stronghold]]
+- 2848 | ai fabriqué des renforts d'armure épais et trouvé une sauvageonne pour Pratt McGrubben, le prix du patron des épaulières en cuir sauvage
+- 2849 | ai fabriqué des cuirasses et des gants en écailles de tortue pour les commandes de Pratt McGrubben, afin de gagner le gilet en cuir sauvage
+- 2850 | ai honoré la commande de tuniques et de bandeaux de la nuit de Pratt McGrubben pour le patron du casque en cuir sauvage
+- 2851 | ai cousu des pantalons et des bottes de la nuit et trouvé deux sauvageonnes, pour apprendre les bottes en cuir sauvage de Pratt McGrubben
+- 2852 | ai fabriqué des casques et des brassards en écailles de tortue pour Pratt McGrubben, gagnant le patron des jambières en cuir sauvage
+- 2853 | ai porté la lettre de Pratt McGrubben à son propre maître Telonis, pour être $greconnu:reconnue; comme son égal et apprendre le dernier patron en cuir sauvage
+- 2854 | ai payé dix cuirs épais à Jangdor Swiftstrider pour devenir son apprenti en armure de cuir sauvage à [[Camp Mojache]]
+- 2855 | ai fabriqué des renforts d'armure épais et trouvé une sauvageonne pour Jangdor Swiftstrider, le prix du patron des épaulières en cuir sauvage
+- 2856 | ai fabriqué des cuirasses et des gants en écailles de tortue pour Jangdor Swiftstrider, afin de gagner le gilet en cuir sauvage
+- 2857 | ai cousu des tuniques et des bandeaux de la nuit pour la leçon de Jangdor Swiftstrider sur le casque en cuir sauvage
+- 2858 | ai fabriqué des pantalons et des bottes de la nuit et trouvé deux sauvageonnes, pour apprendre les bottes en cuir sauvage de Jangdor Swiftstrider
+- 2859 | ai fabriqué des casques et des brassards en écailles de tortue pour Jangdor Swiftstrider, gagnant le patron des jambières en cuir sauvage
+- 2860 | ai porté la lettre de Jangdor Swiftstrider à son maître Una, à [[Thunder Bluff]], pour être $greconnu:reconnue; comme son égal et apprendre le dernier patron
+- 5141 | me suis $gengagé:engagée; pour de bon dans le travail du cuir de dragon, avec de l'armure de scorpide et des écailles de dragon pour Peter Galen [[at:Azshara]]
+- 5143 | ai choisi pour de bon le travail du cuir tribal, en offrant à Caryssia Moonhunter, [[at:Feralas]], les plus belles pièces d'armure en cuir sauvage
+- 5144 | me suis $gengagé:engagée; dans le travail du cuir élémentaire, en apportant à Sarah Tanner, dans [[Searing Gorge]], des essences de feu, d'eau, de terre et de vent
+- 5145 | ai choisi pour de bon la voie du cuir de dragon, en le prouvant à Thorkaf Dragoneye dans [[Badlands]] avec de l'armure de scorpide et des écailles de dragon
+- 5146 | me suis $gvoué:vouée; au seul travail du cuir élémentaire, avec les essences des quatre éléments pour Brumn Winterhoof dans les montagnes d'Arathi
+- 5148 | ai adopté pour de bon le travail du cuir tribal, en apportant à Se'Jib, dans [[Stranglethorn Vale]], les plus beaux exemples d'armure en cuir sauvage
+- 914 | ai tué les quatre chefs des druides du Croc pour leurs gemmes du rêve, afin de sauver [[The Barrens]] d'un avenir maudit
+- 959 | ai poursuivi Magglish le Fou jusque dans [[Wailing Caverns]] pour le porto vieux de 99 ans volé, avant que le grutier Bigglefuzz ne perde sa place
+- 962 | ai cueilli de la fleur de serpent dans les recoins les plus sombres de [[Wailing Caverns]] pour l'apothicaire Zamah de la Société royale des apothicaires
+- 1486 | ai dépecé les créatures déviantes de [[Wailing Caverns]] pour Nalpak, qui croyait que leurs peaux pouvaient servir à quelque chose de bon
+- 1487 | ai purgé [[Wailing Caverns]] de leurs bêtes déviantes, un premier pas des disciples de Naralex vers des Tarides restaurées
+- 1491 | ai rassemblé de l'essence de lamentation sur les créatures ectoplasmiques des cavernes pour les potions d'intelligence de Mebok Mizzyrix, son espoir de fortune
+- 6981 | ai porté à [[Ratchet]] un éclat luminescent inquiétant, où tournoyait une fumée, pour savoir ce que c'était
+- 1101 | ai tué [[name:Charlga Razorflank]], la mégère du kraal, pour que la bravoure d'Heralath et du nain Lonebrow n'ait pas été vaine
+- 1102 | ai vengé les taurens chassés de leurs terres sacrées de [[The Barrens]], en prenant le cœur de [[name:Charlga Razorflank]] pour le vieux Stonespire
+- 1109 | ai ramassé le guano des chauves-souris du kraal pour les ambitieuses expériences du maître apothicaire Faranell
+- 1142 | ai rapporté à Treshala Fallowbrook, à [[Darnassus]], son pendentif d'union, avec la nouvelle de la mort solitaire de son mari Heralath
+- 1144 | ai escorté Willix l'Importateur hors de [[Razorfen Kraul]], où il était retenu prisonnier après une chasse aux tubercules qui avait mal tourné
+- 1221 | ai lâché un gaufre-renifleur pour flairer des tubercules de feuillebleue dans [[Razorfen Kraul]], un mets rare que Mebok Mizzyrix comptait vendre
+- 8288 | ai tué [[name:Broodlord Lashlayer]], qui garde le chemin du sanctuaire de Nefarian, et rapporté sa tête à Baristolth
+- 8730 | ai tué [[name:Nefarian]] pour le fragment du sceptre rouge avant qu'il ne le détruise, comme Vaelastrasz mourant me l'avait demandé

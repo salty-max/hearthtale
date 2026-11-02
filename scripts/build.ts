@@ -394,7 +394,8 @@ function frenchText(file: string, fr: string, english?: string) {
   if (/\$[gG]/.test(bare)) frFail(file, `a malformed $gmasc:fem; token: ${fr}`);
   if (bare.includes(";")) frFail(file, `a semicolon (two sentences, a comma, or a rewrite): ${fr}`);
   // (French typography: a no-break space before : ? ! and %)
-  if (/(?:^|[^\u00a0])[:?!%]/.test(bareSlots(bare).replace(/\{\w+\}/g, "x"))) frFail(file, `a no-break space before : ? ! and %: ${fr}`);
+  // (a colon inside a name is no punctuation: "SI:7", "XT:4")
+  if (/(?:^|[^\u00a0])[:?!%]/.test(bareSlots(bare).replace(/\{\w+\}/g, "x").replace(/([A-Z]):(\d)/g, "$1$2"))) frFail(file, `a no-break space before : ? ! and %: ${fr}`);
   if (/[\u2019]/.test(fr)) frFail(file, `a straight apostrophe, not a curly one: ${fr}`);
   if (english !== undefined && slotsOf(english) !== slotsOf(fr))
     frFail(file, `slots {${slotsOf(fr)}} where the English has {${slotsOf(english)}}: ${fr}`);

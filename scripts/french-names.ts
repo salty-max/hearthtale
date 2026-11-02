@@ -276,6 +276,15 @@ const BEFORE_PLAIN = new Map(Object.entries(BEFORE_NOUN).map(([k, v]) => [plain(
 const ALWAYS_S = new Set(["pavois", "papyrus", "mucus", "index", "porte-clés", "humus", "taudis", "remous", "tamis", "kris", "keris", "némésis", "poix", "proboscis", "portefaix", "cacatoès", "deux", "trois", "six", "bois", "marais", "pas", "os", "puits", "gris", "repos", "palais", "temps", "corps", "fois", "avis", "souris", "tapis", "bras", "nez", "voix", "croix", "paix", "choix", "prix", "perdrix", "lynx", "sphinx", "dos", "héros", "mas", "jus", "pus", "ours", "fils", "pays", "tiers", "lys", "rubis", "abysse", "crocs", "vers", "fracas", "rhinocéros", "silex", "phénix", "onyx", "obus", "cyprès", "procès", "succès", "progrès", "relais", "talus", "hibou", "radis", "frimas", "glas", "tas", "cas", "lilas", "matelas", "verglas", "parcours", "secours", "discours", "concours", "recours", "cours", "velours", "remords", "mors", "corps", "colis", "logis", "parvis", "taillis", "treillis", "anis", "iris", "oasis", "mépris", "permis", "paradis", "rubis", "brebis", "vis", "buis", "puis", "chablis", "ananas", "atlas", "débarras", "embarras", "canevas", "bas", "repas", "amas", "trépas", "cadenas", "compas", "plâtras", "galimatias", "ramas", "taffetas", "harnais", "jais", "laquais", "mauvais", "rabais", "biais", "frais", "dais", "engrais", "geais", "marais", "niais", "panais", "relais", "tais"]);
 const pluralWord = (w: string) => /[sx]$/.test(low(w)) && !ALWAYS_S.has(low(w)) && !/eux$|oux$/.test(low(w)) ? true : /aux$|eaux$/.test(low(w));
 
+// A name as the journal shows it: straight apostrophes, and the accent the
+// game leaves off a capital ("Ile" is "Île", "Etoffe" is "Étoffe")
+function shownName(ix: Index, name: string): string {
+  const n = name.replace(/\u2019/g, "'");
+  const lf = lowered(ix, n);
+  if (!lf || !isCap(n) || lf.charAt(0) === low(n.charAt(0))) return n;
+  return lf.charAt(0).toUpperCase() + n.slice(1);
+}
+
 // The head of a name and its gender: the first noun, past the words that
 // stand before one.
 function headOf(name: string): { head: string; given: "m" | "f" | null } {
@@ -368,12 +377,12 @@ function place(ix: Index, game: Game, name: string, fixed?: Partial<Entry>): Ent
   // name of its own and "dans" for one with its article
   const voted = top(prep);
   const p = AT_HEAD[headLow] ?? AT_PLAIN.get(plain(headLow)) ?? (voted && prep[voted] >= 2 ? voted : undefined) ?? (a ? "dans" : "à");
-  return { n, g, a, p, ...fixed };
+  return { n: shownName(ix, n), g, a, p, ...fixed };
 }
 
 // A creature or a thing: its gender, its head's case.
 function thing(ix: Index, game: Game, name: string, person: boolean, fixed?: Partial<Entry>, creature = false): Entry {
-  if (person) return { n: name, g: "m", a: "", ...fixed };
+  if (person) return { n: name.replace(/\u2019/g, "'"), g: "m", a: "", ...fixed };
   const us = uses(ix, name, 200);
   let m = 0,
     f = 0,
@@ -393,7 +402,7 @@ function thing(ix: Index, game: Game, name: string, person: boolean, fixed?: Par
   const first = ws[0] ?? "";
   const lc = lower > upper || commonWord(ix, first);
   const lf = lowered(ix, name);
-  return { n: name, g, a: "", ...fixed, ...(lc ? { lc: "1" } : {}), ...(lf ? { lf } : {}) } as Entry;
+  return { n: shownName(ix, name), g, a: "", ...fixed, ...(lc ? { lc: "1" } : {}), ...(lf ? { lf: lf.replace(/\u2019/g, "'") } : {}) } as Entry;
 }
 
 // ── the files ────────────────────────────────────────────────────────────────
@@ -458,7 +467,7 @@ for (const game of Object.keys(GAMES) as Game[]) {
           ? place(ix, game, n, fixed)
           : how === "thing"
             ? thing(ix, game, n, key === "creatures" && person.has(english), fixed, key === "creatures")
-            : n;
+            : n.replace(/\u2019/g, "'");
     }
     out[key] = o;
   }
@@ -512,7 +521,7 @@ local _, ns = ...
 -- loaded by the tests; built at the first need)
 function ns.frenchNames()
   return {
-${sections}
+${sections.replace(/\u2019/g, "'") /* (straight apostrophes, as the journal writes them) */}
   }
 end
 `;

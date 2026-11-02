@@ -1,0 +1,251 @@
+# French: the deeds of writing/why/batch-3.md, after "je"
+
+- 5065 | ai arraché les troisième et quatrième tablettes Mosh'aru aux trolls écorcheurs de mousse pour le prospecteur Ironboot, qui craignait leurs secrets
+- 5142 | ai fouillé les ruines de [[Darrowshire]] à la recherche de la petite Pamela, la nièce qu'un esprit errant y avait cachée au début de la bataille
+- 5149 | ai trouvé la poupée que la petite Pamela avait laissée en ville, quelque chose à serrer pendant qu'elle attendait seule que son père vienne la chercher
+- 5152 | ai porté des nouvelles de Pamela à sa tante Marlene, qui n'avait pas le cœur de dire à l'enfant ce qu'il était advenu de son père
+- 5153 | ai déterré l'alliance de Joseph Redpath pour Chromie, dans l'espoir de changer le sort d'un homme que le Fléau avait perverti
+- 5168 | ai rassemblé le libram de Davil Lightfire et le bouclier fendu du capitaine Redpath pour Carlin Redpath, reliques des héros de [[Darrowshire]]
+- 5181 | ai récupéré le crâne d'Horgus le Ravageur et l'épée brisée de Marduk le Noir, les scélérats de la bataille de [[Darrowshire]]
+- 5206 | ai chassé des champions du Fléau pour des crânes qui faisaient résonner le cristal de Carlin Redpath, le dernier composant du sort de Chromie
+- 5210 | ai apporté à Carlin Redpath les Annales de Darrowshire, dont les nouvelles pages racontaient les jours qui avaient suivi la bataille
+- 5211 | ai libéré les âmes des défenseurs tombés de [[Darrowshire]] en détruisant les goules et les écorcheurs que le Fléau avait faits d'eux
+- 5241 | ai cherché l'oncle Carlin de Pamela pour lui dire qu'elle l'attendait, lui et son histoire de lapins et de confiture de baies
+- 5246 | ai récupéré les textes sacrés des Bien-nés [[at:Azshara]], pour qu'Aurora Skycaller puisse réparer le cristal de Zin-Malor
+- 5247 | suis $gallé:allée; chercher du thorium, du cristal de restauration et de l'eau redoutable à [[Dire Maul]], pour qu'Aurora Skycaller puisse ressouder le cristal
+- 5248 | ai porté le cristal de Zin-Malor réparé à [[Lake Kel'Theril]], pour montrer à un esprit bien-né que l'ancien tort était réparé
+- 5265 | ai ouvert le Fort d'argent, fermé depuis des années, après de longs services rendus à l'Aube d'argent
+- 5281 | suis $gallé:allée; trouver Egan, dont le travail avec les fantômes pourrait aider les esprits sans repos de ceux qui étaient morts dans la chute de [[Stratholme]]
+- 5464 | ai porté le souvenir lié à Leonid Barthalomew, pour qu'une âme s'accroche à Ras Frostwhisper comme elle s'était accrochée au souvenir
+- 5542 | ai décimé les chiens pestiférés et leurs petits pour Tirion Fordring
+- 5543 | ai détruit les chauves-souris pestiférées qui frappaient du haut du ciel des Maleterres, à la demande de Tirion Fordring
+- 5544 | ai récolté de la chair de ver putride, la seule bête que la peste avait épargnée, pour que Tirion Fordring refasse ses provisions pour l'hiver
+- 5601 | ai fouillé [[Darrowshire]] à la recherche de la famille qu'une réfugiée de Lordaeron avait laissée derrière elle, surtout sa petite sœur Pamela
+- 5721 | ai revécu la bataille de [[Darrowshire]] avec ses esprits relevés, pour vaincre Redpath le Corrompu et sauver l'âme de Joseph Redpath
+- 5781 | ai retrouvé le marteau jouet que le jeune Taelan avait enterré sur la fausse tombe de son père, pour l'aider à retrouver ce qu'il avait perdu
+- 5845 | ai rapporté le symbole de l'honneur perdu, l'étendard que Taelan avait jeté à Northdale en reniant tout ce qu'il avait connu
+- 5846 | ai fouillé [[Caer Darrow]] à la recherche du portrait de Tirion Fordring avec sa femme et son fils peint par Renfray, son plus cher souvenir
+- 5941 | ai porté la liasse de reliques à Chromie à Andorhal, qui disait qu'avec elles [[Darrowshire]] pouvait encore être sauvé
+- 5942 | ai ouvert le coffre derrière la maison de Pamela avec la clé que son père m'avait envoyée avec ses remerciements
+- 6021 | ai tué Zaeldarr le Paria, le troll mort dont la bande volait les corps de la fosse de [[Light's Hope Chapel]]
+- 6022 | ai massacré le Fléau de [[Corin's Crossing]] pour de la pourriture vivante, broyée assez vite pour nourrir les chiens de Nathanos le Flétrisseur
+- 6024 | ai accédé à la supplique de l'infiltrateur Hameya, qui voulait mourir avant que les murmures de la liche ne le poussent à infecter davantage des siens
+- 6026 | ai rassemblé du thorium, un bâtonnet doré, des bombes et des déclencheurs pour Smokey LaRue, engagé par l'Aube d'argent pour quelques démolitions
+- 6041 | ai fait sauter les ziggourats et les abattoirs du Fléau de [[Plaguewood]] que Smokey LaRue avait marqués pour l'Aube d'argent
+- 6042 | ai chassé les chauves-souris pestiférées de la ferme pour que Nathanos le Flétrisseur puisse lancer ses chiens sur le Fléau sans être importuné
+- 6133 | ai attaqué le pavillon des hauts-elfes de Quel'Lithien pour le registre de Quel'Thalas, pour Nathanos le Flétrisseur
+- 6135 | ai traqué Crépuscaile, la chauve-souris démoniaque albinos, pour la fourrure blanche dont Nathanos le Flétrisseur ferait une récompense
+- 6136 | ai détruit Creusechair, la bête-asticot corpulente qui avait coûté à Nathanos le Flétrisseur des régiments entiers
+- 6145 | ai intercepté le courrier écarlate pour les ordres du Grand croisé, le rapport quotidien qui était la clé pour frapper la Croisade
+- 6146 | ai mangé une pomme pourrie pour passer pour $gun:une; $gcroisé:croisée; à [[Tyr's Hand]] et livrer des ordres modifiés, une ruse pour démasquer l'Oracle écarlate
+- 6148 | ai traqué Demetria, l'Oracle écarlate et principale conseillère du Grand croisé, sur la route de [[Tyr's Hand]]
+- 6164 | suis $gallé:allée; chercher le livre de comptes d'Augustus le Touché dans sa chambre à l'auberge, pour qu'il puisse rouvrir boutique à [[Terrordale]]
+- 6185 | ai parcouru les Maleterres en quête de nouvelles du Flétrisseur et des agents du SI:7 disparus, que Flint Shadowmore craignait morts
+- 6187 | ai rassemblé une armée pour détruire Nathanos le Flétrisseur, le seigneur forestier humain devenu champion des Réprouvés
+- 8929 | ai essayé le révélateur de fantômes d'un gobelin aux portes de [[Stratholme]] pour parler à Anthion Harmon, tué là par les morts-vivants
+- 8930 | ai testé l'invention d'un gobelin aux portes de [[Stratholme]] pour savoir ce que savait le fantôme d'Anthion Harmon
+- 8946 | ai porté le médaillon d'Ysida au fantôme d'Anthion Harmon, la preuve qu'elle vivait, pour qu'il puisse enfin reposer en paix
+- 8947 | ai rassemblé du sombrefer, du cuir, de l'étoffe lunaire et des peaux pour Anthion Harmon, pour prendre de force un morceau du médaillon de Valthalak
+- 9121 | ai payé l'archimage Angela Dosantos en cristaux et en or pour le camouflage du Kirin Tor qui passe les protections de [[Naxxramas]]
+- 9122 | ai apporté des cristaux des arcanes et de nexus à l'archimage Angela Dosantos pour le camouflage qui ouvre le portail runique de [[Naxxramas]]
+- 9123 | ai reçu sans rien payer, pour mes services sans faille à l'Aube d'argent, le camouflage arcanique qui ouvre le chemin de [[Naxxramas]]
+- 9124 | ai rassemblé des morceaux de démons des cryptes pour le veneur Leopold, qui faisait des armures de traqueur des cryptes pour qui s'aventurait à [[Naxxramas]]
+- 9126 | ai fracassé du Fléau pour les fragments d'os dont Rohan l'Assassin manquait toujours pour ses armures Faucheuse d'os
+- 9128 | ai rassemblé des noyaux des éléments sur les élémentaires du monde entier pour l'archimage Angela Dosantos, qui payait en insignes
+- 9131 | ai récupéré des morceaux de sombrefer pour que Korfax monte des armures de cuirassé pour les champions de l'Aube
+- 9136 | ai cueilli des palmes sauvages pour les armures de marcherêve de Rayne, faites pour les héros qui entrent à [[Naxxramas]]
+- 9165 | ai rapporté au commandant des missions Metz un sauf-conduit, signé une fois qu'une caravane avait traversé le Fléau
+- 9664 | ai pris les quatre vieilles tours de [[Eastern Plaguelands]], pour resserrer l'étau de l'Alliance autour des Réprouvés
+- 9665 | ai pris les quatre tours de [[Eastern Plaguelands]] pour repousser une incursion de l'Alliance sur la frontière est des Réprouvés
+- 55 | ai retourné le Fléau de Morbent contre Morbent Fel dans sa maison au-dessus de la [[Raven Hill]] et l'ai tué, la vengeance que Sven espérait depuis longtemps
+- 56 | ai chassé les squelettes de [[Tranquil Gardens Cemetery]] pour le Guet de nuit, qui gardait seul [[Darkshire]] depuis que [[Stormwind City]] avait retiré ses soldats
+- 57 | ai chassé les démons squelettes et les squelettes infernaux du cimetière de la [[Raven Hill]], d'où les morts-vivants se répandaient dans la forêt autour de [[Darkshire]]
+- 58 | ai débarrassé le mausolée est de la [[Raven Hill]] de ses répandeurs de peste, avec trop peu de veilleurs restants pour garder [[Darkshire]] en sécurité
+- 66 | ai demandé le nom de Stalvan à l'hôtel de ville, un indice tiré de la transe de Madame Eva, qui craignait pour sa petite-fille Alyssa
+- 67 | ai cherché des nouvelles de Stalvan Mistmantle à l'école de [[Moonbrook]], sa dernière adresse connue dans le registre du clerc Daltry
+- 68 | ai apporté au clerc Daltry une lettre poussiéreuse jamais envoyée, tirée d'une malle de [[Moonbrook]], la preuve que Stalvan y avait bien vécu
+- 69 | ai suivi une adresse à moitié raturée du registre de la ville jusqu'à l'auberge de la Fierté du lion à [[Goldshire]], à la recherche de Stalvan
+- 70 | ai livré une lettre de Stalvan, laissée par un messager qui avait fui en hurlant l'auberge de la Fierté du lion une nuit d'orage
+- 72 | ai fouillé les dernières affaires de la famille Flintridge, promises aux enchères longtemps après le massacre, à la recherche d'un indice sur Stalvan
+- 74 | ai montré la page de journal déchirée de la caisse des Flintridge au maréchal Haggard, dont les yeux fatigués reconnaissaient encore l'écriture
+- 75 | suis $gallé:allée; chercher la vieille page de journal dans le coffre à l'étage pour le maréchal Haggard, trop aveugle pour la lire lui-même
+- 78 | ai porté la vieille page de journal au tavernier Smitts, expert en histoire locale, qui a reconnu l'écriture aussitôt
+- 79 | ai apporté au commandant Ebonlocke les pages boueuses trouvées là où des nobles en visite avaient été massacrés, qui reliaient les preuves à Stalvan
+- 80 | ai fait comparer par le clerc Daltry la page de journal tachée de sang aux signatures de son registre, la preuve de la culpabilité de Stalvan
+- 90 | ai rassemblé des steaks de loup et des herbes aromatiques de [[Stormwind City]] pour les brochettes de loup assaisonnées que le chef Grual appelait la spécialité de la maison
+- 93 | ai rassemblé des pattes d'araignée fondantes pour les gâteaux au crabe brun du chef Grual, pour nourrir Jitters après des semaines de vers et de mauvaises herbes
+- 95 | ai déterré ce qu'une silhouette sombre avait enterré derrière la vieille souche de la ferme de Sven, où des cavaliers noirs avaient massacré sa famille
+- 98 | ai exécuté Stalvan Mistmantle dans sa chaumière au nord de [[Darkshire]], l'assassin que la prémonition de Madame Eva avait démasqué
+- 101 | ai rassemblé crocs, doigts et venin pour que Madame Eva enchante un totem d'infliction contre un danger qu'elle pressentait
+- 133 | ai rassemblé des côtes de goule pour l'effigie d'Abercrombie, un épouvantail à goules, après que des mâcheurs d'os avaient tambouriné à ses murs
+- 134 | ai récupéré la caisse d'outils et d'herbes d'Abercrombie près du tertre des ogres, abandonnée quand les ogres l'avaient chassé
+- 149 | ai porté un peigne spectral à l'esprit triste de Marie l'Aveugle, pour que Madame Eva en tire des cheveux fantômes pour en faire du fil
+- 154 | ai rapporté le peigne à Madame Eva après que Marie l'Aveugle eut pleuré qu'elle était un monstre que plus personne ne trouverait jamais beau
+- 156 | ai cueilli des fleurs pourries sur les crânes des squelettes de la [[Raven Hill]] pour le suc de zombie du tavernier Smitts, en éclaircissant leurs rangs
+- 157 | ai apporté à Abercrombie le fil de cheveux fantômes, bon pour lier les esprits mauvais ou coudre la vie dans les choses sans vie
+- 159 | ai porté à Abercrombie le suc de zombie qu'il voulait contre les nuits froides, un breuvage assez fort pour relever les morts
+- 160 | ai porté la lettre d'Abercrombie à son vieil ami le maire de [[Darkshire]], qui l'a trouvée écrite dans une langue qu'il ne savait pas lire
+- 163 | ai cherché ce qui hantait la [[Raven Hill]], où Calor avait vu bouger des ombres, et n'y ai trouvé que Jitters, caché
+- 164 | ai livré des fournitures au camp de Sven en lisière de [[Duskwood]], ses fidèles trop peu nombreux pour envoyer quelqu'un les chercher en ville
+- 165 | suis $gallé:allée; voir le vieil homme de la cabane au-dessus du cimetière de la [[Raven Hill]], qui avait cessé depuis longtemps de venir en ville
+- 173 | me suis $gattaqué:attaquée; aux tisseurs d'ombre Plaie-de-nuit du bosquet de Clairbois, pour me montrer digne de la bande de maître Carevin
+- 174 | ai trouvé un tube en bronze pour Viktori Prism'Antras, la première pièce d'un appareil pour lire dans les étoiles la vérité sur le changement de la forêt
+- 175 | ai retrouvé Marie, connue autrefois pour toujours porter un miroir, pour lui demander un miroir pour l'appareil à étoiles de Viktori
+- 177 | ai arraché le miroir de Marie l'Aveugle à la goule démente de [[Tranquil Gardens Cemetery]], le miroir qui manquait à l'appareil de Viktori
+- 181 | ai pris le monocle de l'ogre Zzarc'Vul pour la lentille de l'appareil à observer les étoiles de Viktori, la dernière pièce qu'il réclamait
+- 221 | ai décimé les messagers Plaie-de-nuit qui avaient envahi le Verger pourri, le gros des worgens des bois, pour Calor
+- 222 | ai affronté les crocs noirs et les contaminés Plaie-de-nuit près de leurs feux de camp au sud, les worgens les plus dangereux de [[Duskwood]]
+- 223 | ai porté la lettre de recommandation de Calor à maître Jonathan Carevin, pour rejoindre son combat contre les démons et les morts-vivants
+- 225 | ai interrogé Sirra Von'Indi au sujet de Morgan Ladimore, dont la tombe usée venait d'être creusée
+- 226 | ai décimé les loups redoutables affamés et enragés qui harcelaient Lars quand il rentrait au camp de Sven avec de la viande
+- 228 | ai tué Mor'Ladim, le corps relevé de Morgan Ladimore, qui errait dans [[Duskwood]] en attaquant les gardes en patrouille
+- 229 | ai apporté à la guetteuse Sarah Ladimore des nouvelles de son père, dont la mort l'avait toujours troublée
+- 230 | ai apporté à Sven le livre déterré à sa ferme, qui lui apprenait que la silhouette sombre avait assisté à la mort de sa famille
+- 231 | ai posé l'anneau de Sarah Ladimore sur la tombe de son père, pour que Morgan Ladimore sache qu'elle vivait et que son âme puisse reposer
+- 240 | ai rapporté les gâteaux au crabe brun à Jitters, affamé dans sa cachette de la ville fantôme
+- 245 | ai éliminé les araignées Tisse-venin pygmées qui envahissaient la frontière ouest de [[Duskwood]], trop nombreuses pour le Guet de nuit
+- 251 | ai fait traduire par Sirra Von'Indi, savante en langues et en arts anciens, l'étrange lettre d'Abercrombie au maire
+- 252 | ai porté la lettre traduite au seigneur Ello Ebonlocke, révélant que l'aide apportée à Abercrombie avait condamné [[Darkshire]]
+- 253 | ai pris le cœur encore battant de l'Embaumeur sur la tombe de sa femme Eliza, pour briser son pouvoir et protéger la ville de [[Darkshire]]
+- 262 | ai montré le livre de la ferme de Sven dans tout [[Darkshire]], pour trouver le rôdeur que Sven avait vu la nuit où sa famille avait été tuée
+- 265 | me suis $grenseigné:renseignée; dans [[Darkshire]] sur le propriétaire du livre, un étranger nerveux et agité qui l'avait acheté en ville un mois plus tôt
+- 266 | ai cherché à l'auberge des nouvelles du propriétaire du livre, parti en hâte vers l'ouest en marmonnant qu'on le traquait
+- 268 | ai porté à Sven le journal complet de Jitters, pour ce qu'il racontait des cavaliers noirs et de Morbent Fel
+- 269 | ai apporté le journal de Jitters à l'évêque Farthing, à la cathédrale de la Lumière, pour prendre conseil avant d'affronter Morbent Fel
+- 270 | ai interrogé Glorin Steelbrow à [[Menethil Harbor]] au sujet du fer de sancteforge perdu en mer, le métal d'une arme contre Morbent Fel
+- 321 | ai fouillé l'épave du Balbuzard volant à la recherche de son fer de sancteforge, pour n'y trouver que le coffre éventré par les griffes des murlocs
+- 322 | ai porté les lingots de sancteforge à Grimand Elmore à [[Stormwind City]], pour forger une arme qui inquiéterait même Morbent Fel
+- 323 | ai combattu les sbires squelettes de Morbent Fel, pour que Sven sache quelle force il fallait pour affronter le nécromancien
+- 324 | ai chassé les écumeurs murlocs près de l'épave du Balbuzard volant pour les lingots de sancteforge qu'ils avaient volés
+- 325 | ai apporté à Sven le Fléau de Morbent, forgé dans le fer de sancteforge, une protection contre le démon Morbent Fel
+- 453 | ai pisté l'étranger nerveux qui avait quitté [[Darkshire]] vers l'ouest, et l'ai trouvé caché, fuyant ce qui le traquait
+- 526 | ai repris aux murlocs les lingots de sancteforge qu'ils avaient emportés, puisqu'un seul ne permettait de rien forger de convenable
+- 1383 | ai rassemblé des cœurs de panthère, du champignon de Boueux et une tumeur d'Arpentefonds pour le prétendu sérum de vérité de l'apothicaire Faustin
+- 1391 | ai apporté une bière mêlée du sérum de vérité de Faustin à l'infiltrateur Marksen, captif à [[Stonard]], une discrète course pour les Réprouvés
+- 1395 | ai porté en hâte une caisse de pierres de puissance à [[Nethergarde Keep]] avant qu'elles ne perdent leur pouvoir, trop urgent pour attendre une caravane
+- 7788 | ai défendu le Fort d'Aile-argent dans [[Warsong Gulch]] contre la Horde, qui abattait la forêt sacrée pour ses machines de guerre
+- 7789 | ai combattu les Sentinelles d'Aile-argent dans [[Warsong Gulch]], pour une Horde qui comptait exploiter les bois de [[Ashenvale]]
+- 7871 | ai repoussé la Horde loin du Fort d'Aile-argent dans [[Warsong Gulch]], pour épargner les arbres de la forêt sacrée
+- 7872 | ai combattu la Horde dans [[Warsong Gulch]] pour les Sentinelles d'Aile-argent, dont la forêt sacrée tombait pour des machines de guerre
+- 7873 | ai défendu le Fort d'Aile-argent dans [[Warsong Gulch]] contre la Horde, qui abattait la forêt sacrée pour ses machines de guerre
+- 7874 | ai abattu les Sentinelles d'Aile-argent dans [[Warsong Gulch]], qui voulaient empêcher la Horde d'exploiter les bois de [[Ashenvale]]
+- 7875 | ai combattu l'Alliance dans [[Warsong Gulch]] pour les Voltigeurs Warsong, pour que la Horde continue d'abattre les arbres de [[Ashenvale]]
+- 7876 | ai combattu les Sentinelles d'Aile-argent dans [[Warsong Gulch]], pour une Horde qui comptait exploiter les bois de [[Ashenvale]]
+- 8290 | ai repoussé la Horde loin du Fort d'Aile-argent dans [[Warsong Gulch]], pour épargner les arbres de la forêt sacrée
+- 8291 | ai combattu la Horde dans [[Warsong Gulch]] pour les Sentinelles d'Aile-argent, dont la forêt sacrée tombait pour des machines de guerre
+- 8294 | ai abattu les Sentinelles d'Aile-argent dans [[Warsong Gulch]], qui voulaient empêcher la Horde d'exploiter les bois de [[Ashenvale]]
+- 8295 | ai combattu l'Alliance dans [[Warsong Gulch]] pour les Voltigeurs Warsong, pour que la Horde continue d'abattre les arbres de [[Ashenvale]]
+- 6061 | ai apprivoisé un trotteur des plaines adulte avec le bâtonnet de Yaw Sharpmane, un premier pas vers une bête bien à moi
+- 6062 | ai soumis un sanglier tacheté redoutable près de [[Razor Hill]] avec le bâtonnet de domptage de Thotar, une première épreuve de commandement sur une bête
+- 6063 | ai apprivoisé une rôdeuse Tissebois avec le bâtonnet de Dazalar, pour la leçon suivante de Dazalar
+- 6064 | ai essayé un grand sanglier des rochers comme compagnon avec le bâtonnet de domptage de Grif Wildheart, pour voir quelle sorte de bête me convenait
+- 6082 | ai maîtrisé un scorpide blindé, la dernière épreuve de Thotar, pour gagner le pouvoir d'apprivoiser et de commander la bête de mon choix
+- 6083 | ai apprivoisé un clampant de l'écume au large de [[Echo Isles]] pour Thotar
+- 6084 | ai gagné la confiance d'un léopard des neiges pour Grif Wildheart, un compagnon plus rapide et plus agile que le massif sanglier des rochers
+- 6085 | ai apprivoisé un ours Griffeglace, la dernière épreuve de Grif Wildheart avant de m'accorder le pouvoir d'apprivoiser un familier fidèle de toute espèce
+- 6087 | ai apprivoisé un traqueur des prairies pour Yaw Sharpmane, pour prendre sa nature rapide et intrépide et combattre comme un seul être avec une bête
+- 6088 | ai fait descendre un rapace du ciel avec le bâtonnet de domptage, la dernière épreuve de Yaw Sharpmane avant de choisir un compagnon
+- 6101 | ai apprivoisé un rôdeur sabre-de-nuit pour Dazalar, pour apprendre en quoi les créatures d'une nature changeante diffèrent les unes des autres
+- 6102 | ai fait descendre un hurleur strigide du ciel, la dernière épreuve de Dazalar avant de choisir un compagnon de la terre, de l'eau ou du ciel
+- 7632 | ai cherché le propriétaire d'une ancienne feuille pétrifiée qui luisait de vert, de quelque chose de vieux et de puissant
+- 7634 | ai tué un dragon bleu adulte pour son tendon, pour que Hastat l'Ancien lie sa feuille en un carquois comme on n'en avait pas vu depuis dix mille ans
+- 7635 | ai tué un dragon noir adulte pour son tendon, pour que Stoma l'Ancien enchante une corde d'arc presque indestructible
+- 7636 | ai affronté $gseul:seule; les quatre corrupteurs démoniaques de la Légion ardente, pour leurs têtes et le bâton de Vartrus l'Ancien
+- 8153 | ai chassé les coursiers sabot-de-mousse pour des ramures parfaites, signe d'une confiance suprême, pour le charme de chasseur d'Ogtinc
+- 8231 | ai pisté les vandales des flots le long de la côte de [[Azshara]] pour des écailles qui reflètent la force d'un chasseur, pour le charme d'Ogtinc
+- 8232 | ai tué le drake vert Morphaz dans [[Sunken Temple]] avec d'autres, pour le dernier trophée du charme d'Ogtinc
+- 28 | ai plongé dans [[Lake Elune'ara]] pour une babiole du sanctuaire et l'ai rapportée en courant au sanctuaire de Remulos, une première épreuve pour la forme aquatique
+- 29 | ai fouillé [[Lake Elune'ara]] à la recherche d'une babiole du sanctuaire et l'ai rapportée en courant au sanctuaire de Remulos avant qu'elle ne se défasse, l'épreuve du lac
+- 30 | ai réuni les deux moitiés du pendentif du lion de mer, agilité et endurance, pour réussir l'épreuve de la forme aquatique
+- 272 | ai trouvé et réuni les deux moitiés du pendentif du lion de mer, la preuve de l'agilité et de l'endurance qu'exige une forme aquatique
+- 5929 | suis $gallé:allée; trouver l'esprit du Grand ours à [[Moonglade]], comme tout druide le doit, pour apprendre de lui la vraie nature de l'ours
+- 5930 | me suis $gassis:assise; aux pieds de l'esprit du Grand ours à [[Moonglade]], le premier maître de tout druide dans la nature de l'ours
+- 6001 | ai appelé Lunegriffe à la pierre des séléniens près de [[Auberdine]] et l'ai affronté, pour la force de corps et de cœur qu'il faut à un druide
+- 6002 | ai affronté Lunegriffe à la pierre des séléniens à l'ouest de Taurajo, pour la force de corps et de cœur que doit avoir l'un de ceux de la Griffe
+- 6122 | ai puisé de l'eau dans la grotte près des chutes de la Bondissante, en évitant les nagas, pour trouver le poison qui rendait malades les daims de [[Darkshore]]
+- 6123 | ai rassemblé de la terrestrine et du champignon lunaire pour le baume qu'Alanndarian Nightsong préparerait pour les daims empoisonnés de [[Darkshore]]
+- 6124 | ai soigné les daims malades de tout [[Darkshore]] avec le baume d'Alanndarian Nightsong, victimes d'une souillure qui gagnait la terre
+- 6127 | ai puisé de l'eau au sommet du pic de Brume-funeste, sans doute souillée par la Lame ardente, pour remonter au poison qui rendait malades les gazelles
+- 6128 | ai abattu des kodos pour leurs cornes et trouvé de la terrestrine, pour le baume de Tonga Runetotem contre les gazelles empoisonnées
+- 6129 | ai soigné les gazelles malades du nord de [[Barrens]] avec le baume de Tonga Runetotem, pour donner de l'avance au remède
+- 9052 | ai rassemblé des chapeaux de sang et des dards de Gorishi pour la toxine de Torwa Pathfinder, pour apaiser sans la blesser une grande créature de [[Un'Goro Crater]]
+- 9053 | ai récupéré une liane putride au fond de [[Sunken Temple]], pour rendre la toxine de Torwa Pathfinder assez forte
+- 354 | ai détruit les Agamand relevés pour leurs restes, la vengeance de Coleman Farthing, que leur orgueil avait condamné à la non-vie
+- 356 | ai patrouillé derrière [[The Bulwark]] pour tuer le Fléau qui passait au travers, pour que ses défenseurs n'aient pas d'attaque à craindre par l'arrière
+- 358 | ai tué les gnolls Poil-Putride qui pillaient les charniers pour les armées du Fléau, et pris leur ichor pour les apothicaires
+- 361 | ai livré la dernière lettre de Thurman Agamand à Yvette Farthing, qui l'avait supplié de quitter avec elle [[Agamand Mills]]
+- 362 | ai détruit Devlin Agamand, dont le bavardage dément s'entendait encore depuis les moulins, pour que Coleman Farthing ait ses os
+- 365 | ai volé des potirons dans une ferme au nez de la Croisade écarlate pour l'apothicaire Johaan, une première leçon dans les manières des Réprouvés
+- 366 | ai rendu le grimoire de Gunther avec l'enchantement de Bethor, dans l'espoir que la liche libérée rejoigne les Réprouvés
+- 367 | ai rassemblé du sang de sombredogue pour l'apothicaire Johaan, une première étape vers une nouvelle peste qui mènerait le Fléau à sa ruine
+- 368 | ai rassemblé des écailles d'Aileron noir pour la peste de Johaan, car empester un monde entier demandait plus qu'empoisonner une seule victime
+- 369 | ai tiré le venin des araignées Tisse-nuit vicieuses, l'agent d'une peste ancienne, pour achever la nouvelle mixture mortelle de Johaan
+- 370 | ai tué le capitaine Perrine et sa brigade à la tour au sud-ouest de [[Brill]], trouvés grâce aux documents pris à la Croisade
+- 371 | ai abattu le capitaine Vachon et ses frères, des pillards de la tour en ruine près de la ferme des Balnir, pour ralentir la Croisade
+- 372 | ai assassiné le capitaine Melrache, commandant impitoyable des croisés qui pillaient au-delà de [[Faol's Rest]], et ses deux gardes du corps
+- 374 | ai pris des anneaux de la Croisade écarlate sur des croisés tués, la preuve de ma loyauté envers Varimathras et la Dame noire
+- 375 | ai apporté des peaux de chauve-souris et du fil à Gretchen Dedmar, pour que des mains tremblant du froid de la peste puissent coudre une couverture
+- 398 | ai exécuté Œil-de-ver, le gnoll qui volait des cadavres près de [[Garren's Haunt]] pour l'armée du roi-liche, pour la récompense de [[Brill]]
+- 404 | ai repoussé le Fléau qui s'était glissé près du vieux pont à l'ouest de [[Brill]], pour les gardes de la Mort
+- 407 | ai fait manger un potiron arrosé de la dernière formule de Johaan au zélote écarlate captif dans la cave de la taverne du Gibet
+- 408 | ai abattu les ancêtres Agamand dans la crypte de la famille et pris le crâne du capitaine Dargol, le chef du Fléau en ces lieux
+- 409 | ai invoqué et détruit Lillith Nefara à son autel sanglant, la preuve pour Gunther que j'étais $gun ennemi:une ennemie; du roi-liche
+- 411 | ai apporté la gemme du Néant de Gunther à Bethor Iceshard pour que les anciens camarades puissent parler, la liche égarée enfin gagnée à notre cause
+- 426 | ai brisé le Fléau à [[Agamand Mills]] avant qu'il n'en fasse une base pour attaquer tout [[Tirisfal Glades]]
+- 427 | ai tué des guerriers écarlates à la tour au-delà de la ferme des Solliden, pour me montrer digne de servir la Dame noire
+- 445 | ai porté les découvertes de l'apothicaire Johaan à l'apothicaire Renferrel [[at:The Sepulcher]], vers la nouvelle peste que désirait la Dame noire
+- 492 | ai servi la boisson spéciale de Johaan à un montagnard nain captif, un avant-goût de ce que la Dame noire prévoyait pour le reste d'Azeroth
+- 5481 | ai cueilli de l'herbe des ténèbres pour Gordo aux grandes mains, pour apprendre que son maître, l'apothicaire subalterne Holland, n'en avait pas besoin
+- 5482 | ai ramassé de l'herbe maléfique près du charnier pour l'apothicaire subalterne Holland, l'herbe que son serviteur Gordo se trompait toujours à cueillir
+- 5901 | ai rempli un pot de termites de [[Plaguewood]] pour Mickey Levine, qui comptait prendre une scierie à la Croisade écarlate
+- 5902 | ai lâché un tonneau de termites dans la scierie de Nordcrête, pour priver la Croisade écarlate de son précieux bois
+- 2521 | ai trouvé une sphère de draenéthyste sans défaut, l'un des cristaux les plus rares, pour Kum'isha, qui espérait ouvrir grâce à elle une faille vers chez elle
+- 2522 | ai récupéré une autre sphère de draenéthyste sans défaut pour Kum'isha la Collectionneuse, toujours pleine d'espoir après l'échec du premier portail
+- 2581 | ai rassemblé des bajoues, des poumons et une pince pour le mage de sang Drazial, qui avait vu des mâchoires de hyène trancher l'acier de thorium
+- 2582 | suis $gallé:allée; chercher d'autres morceaux pour une nouvelle dose de l'essai Raillecroc du mage de sang Drazial, malgré ses avertissements sur ses séquelles durables
+- 2583 | ai servi de premier cobaye à l'élixir des sangliers robustes du mage de sang Drazial, après lui avoir apporté les poumons et les pinces
+- 2584 | suis $gretourné:retournée; dans la désolation pour un autre cocktail au jus de poumon du mage de sang Drazial, qui rendait dépendants même les esprits les plus forts
+- 2585 | ai chassé des scorpoks, des vautours et un sanglier pour la tentative du mage de sang Drazial de mettre en bouteille la grâce et la vivacité du scorpok
+- 2586 | ai échangé d'autres pinces et gésiers au mage de sang Drazial contre un échantillon de l'essai scorpok, les neuf autres gardés pour ses recherches
+- 2601 | ai récolté des cervelles de basilics pierre-rouge pour la mage de sang Lynnore, qui avait vu ces bêtes réfléchir plus habilement que certains humanoïdes
+- 2602 | ai apporté à la mage de sang Lynnore d'autres cervelles de basilic et gésiers pour une nouvelle dose de son composé, dont l'effet s'était dissipé
+- 2603 | ai rassemblé des gésiers de vautour pour la mage de sang Lynnore, curieuse de savoir comment les charognards résistaient à la pestilence, dans l'espoir d'un remède
+- 2604 | ai rassemblé d'autres gésiers et bajoues pour la gomme de gésier de la mage de sang Lynnore, une fois son euphorie spirituelle dissipée
+- 2621 | ai demandé au commandant des missions Ruag, à [[Stonard]], ce qu'il était advenu des ordres que le Héros déchu n'avait jamais attendus
+- 2681 | ai brisé les pierres qui liaient les hommes du Héros déchu au service de Razelikh, pour que leurs âmes torturées puissent reposer
+- 2721 | ai découvert ce qu'il était advenu du lieutenant Kirith, entendu pour la dernière fois hurlant sous les expériences de l'archimage Allistarj
+- 2744 | suis $gallé:allée; trouver le chasseur de démons Loramus Thalipedes [[at:Azshara]], puisque la triade de Razelikh ne pouvait mourir dans [[Blasted Lands]]
+- 2783 | ai mis de côté la guerre contre les orcs pour rejoindre le Héros déchu de la Horde contre la Légion ardente
+- 3627 | ai tué Grol le Destructeur, dame Sevine et l'archimage Allistarj pour les morceaux de l'amulette qui invoque Razelikh
+- 3628 | ai détruit Razelikh le Souilleur au sommet de la plus haute montagne de [[Blasted Lands]], sa corne un symbole d'espoir
+- 3906 | ai tué le grand seigneur Pyron, le seigneur du feu invoqué par les nains Sombrefer, avant qu'il n'accable la terre de sécheresse
+- 4262 | ai tué le grand seigneur Pyron à la carrière de Blackrock pour que l'expédition de Jalinda Sprig puisse entrer dans [[Blackrock Depths]]
+- 8960 | ai porté le révélateur de fantômes d'un gobelin à [[Blackrock Mountain]] pour retrouver Bodley, qui n'était jamais revenu de [[Blackrock Spire]]
+- 8961 | ai rassemblé les restes de trois nobles du feu et un brasero béni, pour récupérer le reste de l'amulette du seigneur Valthalak
+- 8962 | ai pris des restes druidiques aux silithides de [[Hive'Regal]], pour appeler l'esprit du druide Mor Grayhoof au brasero de Bodley
+- 8963 | ai arraché une relique de Brise-stellaire aux géants Cogne-givre, pour attirer l'esprit de la prêtresse Isalien au brasero de Bodley
+- 8964 | ai pris une épée brillante de fanatisme à [[Tyr's Hand]], pour faire venir Jarien et Sothos, qui avaient rêvé d'être chevaliers écarlates
+- 8965 | ai rassemblé des cendres d'âme de banni sur [[Purgation Isle]], pour invoquer le nécromancien ogre Kormok avec le brasero de Bodley
+- 8985 | ai récupéré une relique de Brise-stellaire aux géants Cogne-givre, pour attirer l'esprit d'Isalien, qui y avait grandi
+- 8986 | ai rassemblé des restes druidiques autour de [[Hive'Regal]], pour appeler Mor Grayhoof, dont les amis du Cercle cénarien étaient tombés là
+- 8987 | ai gagné une épée brillante de fanatisme à [[Tyr's Hand]], pour que Bodley fasse venir le frère et la sœur Jarien et Sothos, épris de la Croisade écarlate
+- 8988 | ai pris des cendres d'âme sur [[Purgation Isle]], où l'ogre Kormok aimait invoquer les morts bannis, pour attirer son esprit
+- 8994 | ai arraché des brassards aux orcs de [[Blackrock Spire]] et trouvé un flacon de pouvoir suprême, pour accorder le brasero de Bodley
+- 8996 | ai apporté à Bodley le brasero de signal et la nouvelle que le seigneur Valthalak rappellerait ses assassins spectraux
+- 9032 | ai fouillé [[Blackrock Mountain]] avec le révélateur de fantômes d'un gobelin à la recherche de Bodley, dont on était sans nouvelles depuis son départ pour [[Blackrock Spire]]
+- 4771 | ai planté le Gambit de l'aube dans la salle d'observation de [[Scholomance]] et vaincu le mage mort-vivant Vectus et ses étudiants du Fléau
+- 5341 | ai récupéré les quatre titres de propriété des Barov dans [[Scholomance]] pour Alexi Barov, avant que son frère vivant Weldon ne puisse les réclamer
+- 5343 | ai récupéré les titres de propriété des Barov dans [[Scholomance]] pour Weldon Barov, avant que son frère mort-vivant Alexi ne mette la main dessus
+- 5382 | ai détruit le docteur Theolen Krastinov, le Boucher de milliers d'innocents, et brûlé les restes d'Eva et de Lucien Sarkhoff
+- 5384 | ai attiré Kirtonos le Héraut avec le sang d'innocents et l'ai détruit, le maître que Krastinov avait servi
+- 5466 | ai rendu mortelle la liche Ras Murmegivre grâce au souvenir lié avant de l'abattre, un coup mortel pour le Fléau
+- 5515 | ai abattu Jandice Barov dans les catacombes pour le sac des horreurs de Krastinov, le moyen d'invoquer son maître Kirtonos
+- 5529 | ai tué les jeunes dragons pestiférés élevés dans [[Scholomance]], avant que le Fléau ne lève un vol de dragons bien à lui
+- 5531 | ai apporté les œufs de dragon congelés, soustraits aux expériences du Fléau, à Betina Bigglezink et à son arme contre eux
+- 5582 | ai pris une rare écaille saine sur un jeune dragon pestiféré pour Betina Bigglezink, pour étudier les machinations du Fléau
+- 8969 | ai invoqué l'esprit de Kormok dans la salle de Ras Murmegivre et l'ai tué pour le morceau gauche de l'amulette du seigneur Valthalak
+- 8992 | ai appelé l'esprit de Kormok dans [[Scholomance]] et l'ai tué pour son morceau, rendant entière l'amulette du seigneur Valthalak
+- 7848 | ai récupéré un fragment du Magma dans [[Blackrock Depths]], pour que Lothos Riftwaker puisse ouvrir la faille vers la gueule du seigneur du feu
+- 8578 | ai fouillé [[Molten Core]] à la recherche des lunettes de divination de Narain Soothfancy, perdues là un mois plus tôt par un curieux
+- 3791 | ai apporté de la fibre d'aurore à Quintis Jonespyre, troublé que l'archidruide en amasse tant au nom du Cercle
+- 7509 | ai laissé le souffle d'Onyxia chauffer la lame ancienne, puis l'ai tuée et ai planté la lame dans son cadavre pour forger Quel'Serrar

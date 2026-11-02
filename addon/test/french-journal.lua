@@ -81,7 +81,7 @@ end
 -- The game-name tokens a French line writes (docs/writing.md): each form,
 -- the contractions of "les" after "de" and "à", and a name the tables lack.
 local TOKENS = {
-  ["[[un:Linen Cloth]], [[le:Linen Cloth]]"] = "une Etoffe de lin, l'Etoffe de lin",
+  ["[[un:Linen Cloth]], [[le:Linen Cloth]]"] = "une Étoffe de lin, l'Étoffe de lin",
   ["de [[les:Young Wolf]], à [[les:Young Wolf]]"] = "des jeunes loups, aux jeunes loups",
   ["[[des:Linen Cloth]], dix [[pl:Linen Cloth]]"] = "des étoffes de lin, dix étoffes de lin",
   ["[[le:Defias Bandit]], [[un:Kobold Vermin]]"] = "le bandit défias, une vermine kobold",
