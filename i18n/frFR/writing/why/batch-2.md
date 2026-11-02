@@ -97,7 +97,7 @@
 - 8552 | ai rendu au capitaine Smotts une écharpe brodée HS, la preuve que Mok'rash, l'un des géants qui avaient coulé ses navires, était mort
 - 8554 | ai appâté le géant Negolash avec des ailes de busard et du vin, puis l'ai tué pour récupérer le coutelas du capitaine Smotts
 - 2 | ai rapporté la griffe de [[name:Sharptalon]] à [[name:Senani Thunderheart]], la preuve que l'hippogriffe qui terrorisait les péons des camps de bûcherons était mort
-- 23 | ai présenté la patte d'[[name:Ursangous]], un grand ours aux nombreuses victimes, à [[name:Senani Thunderheart]] pour la chasse de [[Ashenvale]]
+- 23 | ai présenté la patte de [[name:Ursangous]], un grand ours aux nombreuses victimes, à [[name:Senani Thunderheart]] pour la chasse de [[Ashenvale]]
 - 24 | ai rapporté la tête de [[name:Shadumbra]], la sabre-de-nuit qui rendait dangereux chaque voyage à l'ouest de [[Splintertree Post]], pour la chasse de [[Ashenvale]]
 - 25 | ai dispersé les élémentaires d'eau souillés qui bloquaient les convois au-delà de [[Mystral Lake]], et repéré l'avant-poste de l'Alliance qui s'y trouvait
 - 216 | ai fait des coupes sombres chez les furbolgs Crin-de-Chardon, dont le village barrait la route de la Horde entre [[Zoram'gar Outpost]] et [[Splintertree Post]]

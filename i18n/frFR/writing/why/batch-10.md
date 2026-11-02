@@ -1,0 +1,271 @@
+# French: the deeds of writing/why/batch-10.md, after "je"
+
+- 8053 | ai rapporté de [[Zul'Gurub]] des manchettes primordiales hakkari à Jin'rokh le Briseur, la première preuve d'$gun:une; $gpaïen:païenne; parmi les libres penseurs zandalar
+- 8054 | ai arraché un châle primordial hakkari aux sbires d'Hakkar pour Jin'rokh, en l'honneur des libres penseurs qui n'avaient jamais faibli face au dieu du sang
+- 8055 | ai pris un tabard primordial hakkari aux fous de [[Zul'Gurub]], pour prouver à Jin'rokh ma valeur de libre penseur
+- 8056 | ai offert à Maywiki de Zuldazar une attelle primordiale hakkari de [[Zul'Gurub]], pour gagner les brassards que les augures zandalar prisent plus que tout
+- 8057 | ai prouvé ma valeur à Maywiki de Zuldazar avec un étançon primordial hakkari, pour des brassards dignes d'un haruspice zandalar
+- 8058 | ai réclamé vengeance sur les sbires d'Hakkar au nom de la tribu, une attelle primordiale hakkari pour Jin'rokh et la voie du vindicateur
+- 8059 | ai sorti de [[Zul'Gurub]] un étançon primordial hakkari pour qu'Al'tabim l'Omniscient m'enseigne le pouvoir du démoniaque
+- 8060 | ai arraché des manchettes primordiales hakkari à [[Zul'Gurub]] pour Al'tabim l'Omniscient, un mojo que les Zandalar comptaient retourner contre le dieu du sang revenu
+- 8061 | ai combattu les sbires d'Hakkar pour un étançon primordial hakkari, pour qu'Al'tabim me montre ce que signifie être confesseur zandalar
+- 8062 | ai chassé les sbires d'Hakkar pour des manchettes primordiales hakkari, pour montrer à Falthir l'Aveugle ce que vaut un chasseur parmi les prédateurs zandalar
+- 8063 | ai semé la folie à [[Zul'Gurub]] pour une attelle primordiale hakkari, le prix que Falthir l'Aveugle fixait pour la première des armures du fou
+- 8064 | ai remis une écharpe primordiale hakkari à Maywiki de Zuldazar, son pouvoir latent un trésor pour la tribu, pour une ceinture d'haruspice
+- 8065 | ai porté un tabard primordial hakkari de [[Zul'Gurub]] à Maywiki de Zuldazar, l'offrande qui faisait d'un haruspice un être vénéré dans la tribu
+- 8066 | ai traqué les sbires d'Hakkar pour un châle primordial hakkari, un mojo que Falthir l'Aveugle comptait retourner contre les desseins du dieu du sang
+- 8067 | ai gagné une égide primordiale hakkari à [[Zul'Gurub]] pour Falthir l'Aveugle, et avec elle le droit de porter le manteau du prédateur zandalar
+- 8068 | ai pris un châle primordial hakkari à [[Zul'Gurub]] pour Al'tabim l'Omniscient, pour gagner le manteau honoré des illusionnistes zandalar
+- 8069 | ai arraché un kossack primordial hakkari à [[Zul'Gurub]] pour Al'tabim, le prix d'une robe d'illusionniste qui, disait-on, n'avait jamais deux fois la même apparence
+- 8070 | ai affronté la dépravation des Gurubashi d'Hakkar pour une écharpe primordiale hakkari, l'étape suivante d'Al'tabim l'Omniscient contre le dieu du sang
+- 8071 | ai porté une égide primordiale hakkari à Al'tabim l'Omniscient, le châtiment des sbires d'Hakkar payé d'un manteau de confesseur
+- 8072 | ai semé la folie chez les ennemis des Zandalar à [[Zul'Gurub]] jusqu'à ce qu'une ceinture primordiale hakkari me vaille le manteau du fou de Falthir
+- 8073 | ai pris une égide primordiale hakkari à [[Zul'Gurub]] pour Falthir l'Aveugle, un exploit que peu croyaient possible, pour la précieuse tunique du fou
+- 8074 | ai offert à Maywiki de Zuldazar une ceinture primordiale hakkari, la preuve du mal vaincu à [[Zul'Gurub]], pour la ceinture que portent les augures zandalar
+- 8075 | ai vaincu le mal qui suintait de [[Zul'Gurub]] pour un tabard primordial hakkari, que Maywiki m'a payé d'un haubert d'augure
+- 8076 | ai gagné une écharpe primordiale hakkari à [[Zul'Gurub]] pour Al'tabim l'Omniscient, un pouvoir dont les Zandalar avaient besoin pour survivre à leurs ennemis
+- 8077 | ai arraché un kossack primordial hakkari à [[Zul'Gurub]] pour Al'tabim l'Omniscient, une victoire qui assurait à la tribu qu'Hakkar ne l'emporterait pas
+- 8078 | ai semé le chaos chez les sbires d'Hakkar pour une ceinture primordiale hakkari, la preuve pour Jin'rokh que [[Zul'Gurub]] avait goûté à la vengeance zandalar
+- 8079 | ai fait payer aux sbires d'Hakkar le mojo volé aux Zandalar, un kossack primordial hakkari pour Jin'rokh et un plastron de vindicateur
+- 8181 | ai réclamé l'œuf à Yeh'kinya une fois que les tablettes Mosh'aru avaient montré qu'il ramènerait Hakkar, pour m'entendre dire qu'Hakkar était déjà revenu
+- 8183 | ai porté le cœur d'Hakkar à Molthor sur [[Yojamba Isle]], la preuve que l'Écorcheur d'âmes avait été tué
+- 8184 | ai pris une idole primordiale hakkari aux plus puissants lieutenants d'Hakkar pour que Zanza façonne la Présence de puissance, un vieil enchantement troll
+- 8185 | ai fouillé le vaudou maudit à la recherche d'une poupée vaudou percée, la moitié de ce dont Zanza avait besoin pour faire le Sceau du syncrétiste
+- 8186 | ai arraché une idole primordiale hakkari aux lieutenants hakkari pour Zanza, dont le vieux mojo troll deviendrait l'Étreinte de la mort
+- 8187 | ai rassemblé une idole primordiale hakkari et une poupée vaudou percée pour l'Appel du faucon de Zanza, un enchantement pour ne montrer aucune pitié aux Hakkari
+- 8188 | ai fouillé les détritus de [[Zul'Gurub]] pour une poupée vaudou et pris une idole aux lieutenants d'Hakkar, pour l'Étreinte vigilante du vaudouisant de Zanza
+- 8189 | ai apporté à Zanza une idole primordiale hakkari et une poupée vaudou percée, de quoi faire l'antique enchantement appelé Présence de la vue
+- 8190 | ai arraché une idole primordiale hakkari à Jin'do ou au seigneur sanglant pour que Zanza lie le Maléfice vaudou, un vieil enchantement troll
+- 8191 | ai déterré une poupée vaudou percée du vaudou maudit et pris une idole aux lieutenants d'Hakkar, pour l'Aura prophétique de Zanza
+- 8192 | ai rassemblé ce dont Zanza avait besoin pour la Caresse de l'animiste, une idole primordiale hakkari des lieutenants d'Hakkar et une poupée vaudou percée
+- 8201 | ai enfilé les têtes des grands prêtres qui canalisaient le pouvoir des dieux trolls vers Hakkar, pour l'affaiblir, pour Exzhal sur [[Yojamba Isle]]
+- 8227 | ai rapporté le mètre ruban que Nat Pagle avait perdu à [[Zul'Gurub]], celui avec lequel il avait mesuré son plus gros poisson
+- 8240 | ai détruit un bijou hakkari à l'autel de Zanza, un de plus arraché aux sbires du dieu du sang
+- 939 | ai apporté l'étrange flûte de Xavaric et des échantillons de gangrelien de Jadefeu à Eridan Bluewind, qui y sentait souffrir des êtres anciens
+- 4101 | ai recueilli de l'ambre de sang sur les élémentaires Crochebois des cavernes d'Arbrefer, pour qu'Arathandris Silversky l'étudie dans l'espoir de sauver le reste de [[Felwood]]
+- 4102 | ai prélevé de l'ambre de sang sur des élémentaires Crochebois qu'on ne pouvait plus purifier, pour que Maybess Riverbreeze cherche un moyen de vaincre la corruption de [[Felwood]]
+- 4261 | ai mené l'esprit ancien Arei hors de [[Felwood]], prisonnier de la souffrance de la terre depuis la venue de la Légion, pour qu'il trouve enfin le repos
+- 4421 | ai tué Xavathras et ses satyres Jadefeu, qui répandaient la corruption chez toutes les créatures, aux ruines de Constellas, pour Eridan Bluewind
+- 4441 | suis $gallé:allée; chercher de l'eau bénite au temple de la Lune pour qu'Eridan Bluewind tente de libérer l'ancien lié à la flûte de Xavaric
+- 4505 | ai puisé de l'eau au puits de lune corrompu des satyres Jadefeu pour Winna Hazzard, qui comptait retourner la corruption contre l'Alliance
+- 4506 | ai lâché le chaton de Winna Hazzard près du puits de lune corrompu et l'ai ramené, son expérience pour créer des sabres corrompus pour la Horde
+- 4521 | ai éliminé les chouettards de [[Winterspring]] pour Trull Failbane, qui soupçonnait les séléniens de garder des secrets des elfes de la nuit
+- 4721 | ai décimé les chouettards déchaînés près des grottes du sud de [[Winterspring]], rendus fous par la chose même que Trull Failbane espérait les voir garder
+- 4741 | ai chassé les chouettards lunaires du nord de [[Winterspring]], plus féroces encore, pour pousser plus loin la recherche de Trull Failbane
+- 4906 | ai tué Xavaric, qui profitait du puits de lune corrompu, et ses traîtres Jadefeu au nord, pour Eridan Bluewind
+- 5155 | ai entamé les forces du Conseil des ombres à Jaedenar, où il complotait avec la Légion ardente, pour gagner la confiance de Greta Mosshoof
+- 5156 | ai repéré le val de la Balafre brisée pour Taronn Redfeather, pour voir si ses cratères d'infernaux contenaient encore de l'eau corrompue, et c'était le cas
+- 5157 | ai rempli une gourde au puits de lune corrompu de Jaedenar pour que Greta Mosshoof brise les braseros protecteurs du Conseil des ombres
+- 5158 | ai porté l'eau corrompue du puits de lune à Islen Waterseer dans [[Barrens]], pour demander aux esprits de l'eau de la purifier
+- 5159 | ai rapporté à Greta Mosshoof, à [[Felwood]], l'eau purifiée par les esprits d'Islen Waterseer, le signe que la tâche était bénie
+- 5165 | ai éteint les quatre braseros du Fort des ombres avec de l'eau purifiée pour que Greta Mosshoof voie au-delà des protections du Conseil des ombres
+- 5202 | ai fouillé Jaedenar à la recherche de ce qu'ouvrait l'étrange clé rouge d'un membre du Conseil des ombres, et trouvé une prisonnière désespérée de s'échapper
+- 5203 | ai escorté Arko'narin hors du Fort des ombres avec l'épée de Trey Lightforge, pour qu'elle avertisse ses supérieurs de ce qui s'y passait
+- 5204 | ai tué la succube Rakaiah, qui avait torturé Trey Lightforge, et rassemblé ses restes pour qu'Arko'narin trouve un peu de paix
+- 5242 | ai tué le seigneur des ombres Fel'dan, chef du Conseil des ombres à Jaedenar et faiseur de pactes avec la Légion, et ses deux succubes
+- 5385 | ai porté les restes de Trey Lightforge à Jessir Moonbow, pour que le paladin tombé reçoive de ses amis les honneurs qui lui étaient dus
+- 6162 | ai tué le seigneur Ror, le furbolg souillé que le mari de Dreka'Sur était parti affronter sans jamais revenir, pour que sa veuve trouve le repos
+- 8460 | ai repoussé les furbolgs Mort-bois corrompus près du sanctuaire d'Émeraude, pour gagner la confiance de [[name:Grazle]] et des méfiants Grumegueules
+- 8470 | ai porté un totem rituel Mort-bois au fort des Grumegueules, où les furbolgs espéraient apprendre ce qui empoisonnait l'esprit de leurs frères
+- 998 | ai soigné une fleur-de-vent corrompue avec deux doses de baume végétal cénarien, et elle a refleuri, saine et vigoureuse
+- 1514 | ai purifié une fleur-de-vent que la corruption de [[Felwood]] avait tordue, et l'ai vue refleurir sous deux doses de baume cénarien
+- 2523 | ai rendu la santé à une fleur-de-chant corrompue grâce à une dose de baume cénarien, une plante de plus reprise à la corruption
+- 2878 | ai versé une dose de baume végétal cénarien sur une fleur-de-chant corrompue jusqu'à ce qu'elle rejette sa corruption et fleurisse de nouveau
+- 3363 | ai soigné une fleur-de-chant corrompue avec une dose de baume végétal cénarien, et elle a refleuri, saine et vigoureuse
+- 4113 | ai purifié une fleur-de-chant que la corruption de [[Felwood]] avait tordue, et l'ai vue refleurir sous une dose de baume cénarien
+- 4115 | ai rendu la santé à une fleur-de-vent corrompue grâce à deux doses de baume cénarien, une plante de plus reprise à la corruption
+- 4116 | ai versé une dose de baume végétal cénarien sur une fleur-de-chant corrompue jusqu'à ce qu'elle rejette sa corruption et fleurisse de nouveau
+- 4117 | ai soigné une racine fouettarde corrompue avec trois doses de baume végétal cénarien, et elle a refleuri, saine et vigoureuse
+- 4118 | ai purifié une fleur-de-chant que la corruption de [[Felwood]] avait tordue, et l'ai vue refleurir sous une dose de baume cénarien
+- 4119 | ai rendu la santé à une plante de Dragon de la nuit corrompue grâce à quatre doses de baume cénarien, une plante de plus reprise à la corruption
+- 4221 | ai versé deux doses de baume végétal cénarien sur une fleur-de-vent corrompue jusqu'à ce qu'elle rejette sa corruption et fleurisse de nouveau
+- 4222 | ai soigné une fleur-de-vent corrompue avec deux doses de baume végétal cénarien, et elle a refleuri, saine et vigoureuse
+- 4343 | ai purifié une fleur-de-vent que la corruption de [[Felwood]] avait tordue, et l'ai vue refleurir sous deux doses de baume cénarien
+- 4401 | ai rendu la santé à une fleur-de-chant corrompue grâce à une dose de baume cénarien, une plante de plus reprise à la corruption
+- 4403 | ai versé deux doses de baume végétal cénarien sur une fleur-de-vent corrompue jusqu'à ce qu'elle rejette sa corruption et fleurisse de nouveau
+- 4443 | ai soigné une racine fouettarde corrompue avec trois doses de baume végétal cénarien, et elle a refleuri, saine et vigoureuse
+- 4444 | ai purifié une racine fouettarde que la corruption de [[Felwood]] avait tordue, et l'ai vue refleurir sous trois doses de baume cénarien
+- 4445 | ai rendu la santé à une racine fouettarde corrompue grâce à trois doses de baume cénarien, une plante de plus reprise à la corruption
+- 4446 | ai versé trois doses de baume végétal cénarien sur une racine fouettarde corrompue jusqu'à ce qu'elle rejette sa corruption et fleurisse de nouveau
+- 4447 | ai soigné une plante de Dragon de la nuit corrompue avec quatre doses de baume végétal cénarien, et elle a refleuri, saine et vigoureuse
+- 4448 | ai purifié une plante de Dragon de la nuit que la corruption de [[Felwood]] avait tordue, et l'ai vue refleurir sous quatre doses de baume cénarien
+- 4461 | ai rendu la santé à une racine fouettarde corrompue grâce à trois doses de baume cénarien, une plante de plus reprise à la corruption
+- 4462 | ai versé quatre doses de baume végétal cénarien sur une plante de Dragon de la nuit corrompue jusqu'à ce qu'elle rejette sa corruption et fleurisse de nouveau
+- 4464 | ai soigné une fleur-de-chant corrompue avec une dose de baume végétal cénarien, et elle a refleuri, saine et vigoureuse
+- 4465 | ai purifié une fleur-de-chant que la corruption de [[Felwood]] avait tordue, et l'ai vue refleurir sous une dose de baume cénarien
+- 4466 | ai rendu la santé à une fleur-de-vent corrompue grâce à deux doses de baume cénarien, une plante de plus reprise à la corruption
+- 4467 | ai versé deux doses de baume végétal cénarien sur une fleur-de-vent corrompue jusqu'à ce qu'elle rejette sa corruption et fleurisse de nouveau
+- 5882 | ai échangé le butin de la chasse à Arathandris Silversky contre du baume végétal cénarien, pour purifier les plantes corrompues de [[Felwood]]
+- 5883 | ai apporté à Arathandris Silversky du vitriol extrait à [[Felwood]], de quoi faire le baume qui purifie ses plantes corrompues
+- 5884 | ai rassemblé ce qu'Arathandris Silversky pouvait purifier en baume végétal cénarien, chaque morceau une aide pour reprendre le [[Felwood]]
+- 5885 | ai remis le butin d'$gun:une; $gdépeceur:dépeceuse; à Arathandris Silversky contre du baume végétal, pour reprendre le [[Felwood]] à la corruption
+- 5886 | ai cédé une essence du Néant inférieure pour le baume végétal d'Arathandris Silversky
+- 5887 | ai échangé le produit de la chasse à Maybess Riverbreeze contre du baume végétal cénarien, pour parcourir le [[Felwood]] à la recherche de plantes corrompues
+- 5888 | ai remis à Maybess Riverbreeze du vitriol des mines de [[Felwood]], d'autant plus de baume pour les plantes corrompues qu'il y en avait
+- 5889 | ai apporté des marchandises à Maybess Riverbreeze pour qu'elle les purifie en baume, chaque morceau une aide pour reprendre le [[Felwood]]
+- 5890 | ai fourni à Maybess Riverbreeze le butin d'$gun:une; $gdépeceur:dépeceuse; pour des baumes végétaux, pour reprendre le [[Felwood]] à la corruption
+- 5891 | ai cédé une essence du Néant inférieure à Maybess Riverbreeze, ce qu'il y avait de plus puissant pour ses baumes, pour soigner les plantes de [[Felwood]]
+- 494 | ai porté en courant le message codé du traqueur noir Lesh à [[Tarren Mill]], le signal qu'il était temps d'attaquer [[Hillsbrad Foothills]]
+- 496 | ai rassemblé des langues d'ours gris et de l'ichor de rampant pour l'apothicaire Lydon, qui cherchait des agents mortels pour empester les humains
+- 498 | ai libéré Drull et Tog'thar de [[Durnholde Keep]], deux éclaireurs orcs que les gardes du donjon avaient surpris à espionner le Syndicat
+- 499 | ai fait goûter l'élixir de souffrance à Umpi, l'assistant de Lydon, un essai de ce que la Dame noire préparait pour les humains et le Fléau
+- 501 | ai recueilli du sang de lion des montagnes pour le breuvage de mort de l'apothicaire Lydon, au service de la nouvelle peste
+- 502 | ai fait boire l'élixir de douleur à Stanley, le chien du fermier Ray, l'essai de l'apothicaire Lydon d'un breuvage qui plairait, espérait-il, à dame Sylvanas
+- 503 | ai libéré Gol'dir, chef de l'expédition du chef de guerre, du Syndicat dans [[Alterac Mountains]], qui lui faisait porter des fardeaux et creuser
+- 506 | ai rapporté la nouvelle de Gol'dir : Aliden Perenolde comptait asservir les orcs comme Blackmoore, et sa maîtresse portait le pendentif du chef de guerre
+- 507 | ai tué le seigneur Aliden Perenolde, qui aurait fait des orcs des esclaves, et demandé à sa maîtresse Elysa le pendentif de Taretha
+- 508 | ai rapporté à Krusk le pendentif de Taretha, cédé par une Elysa effrayée, la petite chose que le chef de guerre avait tant payé pour récupérer
+- 509 | ai cueilli des fleurs de groin-boueux à la ferme des Nethander pour le prochain élixir de l'apothicaire Lydon, pour répandre la mort et la maladie sur la terre
+- 513 | ai porté en hâte le composé de groin-boueux de Lydon au maître apothicaire Faranell à [[Undercity]], pour qu'il le traite avec son colloïde de décomposition
+- 515 | ai rassemblé une potion de sang de troll, des écailles de Daguéchine et des yeux de Nageoire-déchirée pour activer la contagion dans le mélange de groin-boueux de Lydon
+- 517 | ai volé un tonneau de Shindigger Stout aux nains de [[Dun Garok]], pour que la peste de Lydon ne soit pas gaspillée sur une simple grenouille ou un chien
+- 518 | ai décimé les ogres Cognecrête qui avaient envahi les ruines d'Alterac, pour que Melisara puisse frapper leur chef Mug'thol
+- 519 | ai pris les têtes de Targ, [[name:Muckrake]] et Glommus, les lieutenants fidèles de Mug'thol, pour Melisara à [[Tarren Mill]]
+- 520 | ai tué Mug'thol et lui ai pris la couronne de Volonté, pour mettre fin à la résistance des Cognecrête face à la Dame noire
+- 521 | ai porté la couronne de Volonté, la relique dont Mug'thol se servait pour défier la Dame noire, à Sharlindra à [[Undercity]]
+- 533 | ai fouillé le camp du Syndicat au nord de [[Tarren Mill]] à la recherche du moindre indice sur l'endroit où les humains retenaient Gol'dir, pour Krusk
+- 536 | ai combattu les murlocs Nageoire-déchirée le long du rivage occidental à la place du lieutenant Farren Orinelle, qui avait du mal à se secouer pour obéir à Redpath
+- 539 | ai tué le contremaître Bonds et ses mineurs à la mine d'Azurecharge, pour que son fer arme plutôt les soldats de la Dame noire
+- 541 | ai assiégé [[Dun Garok]] et tué le capitaine Ironhill, pour montrer aux nains ce qu'il leur en coûterait d'aider les humains
+- 544 | ai traqué les traîtres réprouvés détenus au camp d'internement de Lordamere et repris les artefacts qu'ils avaient volés à la Dame noire
+- 545 | ai décimé les invocateurs de Dalaran et leurs esclaves élémentaires, pour que le magus Voidglare fouille les ruines hors du dôme à la recherche de trésors
+- 546 | ai rassemblé des crânes humains pour le garde de la Mort Samsa, qui enviait les combats de [[Hillsbrad Foothills]] depuis son poste de [[Tarren Mill]]
+- 547 | ai repris l'épée du garde de la Mort Humbert aux éclaireurs nains de [[Dun Garok]], qui avaient volé son équipement pendant qu'il ramassait du bois
+- 549 | ai abattu les voleurs et les veilleurs du Syndicat à [[Durnholde Keep]], tous condamnés à mort sur ordre de dame Sylvanas
+- 550 | ai porté la recommandation scellée de Darthalia pour la bataille de [[Hillsbrad Foothills]] à Varimathras, la nouvelle d'un coup décisif contre l'Alliance
+- 552 | ai repris le bâtonnet d'Helcular au yéti dans l'ancien repaire rituel d'Helcular, pour un apprenti assoiffé de vengeance contre [[Southshore]]
+- 553 | ai accompli la vengeance que voulait l'apprenti d'Helcular contre [[Southshore]], en chargeant le bâtonnet à trois flammes et en le plantant dans la tombe d'Helcular
+- 555 | ai chassé les tortues claquemâchoires près du lac Lordamere pour que le chef Jessen serve de nouveau la célèbre bisque de tortue apaisante de [[Southshore]]
+- 556 | ai rassemblé des jetons de pierre usés, le moyen dont se servaient les sorciers de Dalaran pour contrôler les élémentaires, pour que le magus Voidglare les étudie
+- 557 | ai pris aux élémentaires de Dalaran leurs brassards de lien de terre, les liens qui les tenaient au service d'un mage, pour le magus Voidglare
+- 559 | ai rassemblé des têtes de murlocs sur le rivage occidental pour le lieutenant Farren Orinelle, la preuve pour Redpath qu'on s'était occupé des murlocs
+- 560 | ai porté le sac dégoulinant de têtes de murlocs au maréchal Redpath pour Farren Orinelle, qui ne supportait pas d'y toucher
+- 562 | ai abattu les nagas Daguéchine pour le lieutenant Farren Orinelle, qui espérait que cet exploit lui vaudrait une mutation à [[Stormwind City]]
+- 563 | ai porté le rapport de Farren Orinelle sur les nagas au major Samuelson au donjon de [[Stormwind City]], son espoir d'être réaffecté en ville
+- 564 | ai décimé les lions des montagnes descendus d'Alterac pour s'attaquer aux chevaux de Darren Malvew
+- 565 | ai rassemblé de la laine, du fil fin, de la fourrure de yéti et une cape de montagnard pour que le grand Bartolo Ginsetti couse sa célèbre cape en fourrure de yéti
+- 566 | ai tué le baron Vardus, un chef du Syndicat recherché pour crimes contre les Réprouvés, et rapporté sa tête à Darthalia
+- 567 | ai traqué les quatre humains de [[Hillsbrad Foothills]] recherchés pour le meurtre de Réprouvés et des embuscades contre les vivres de [[Undercity]]
+- 658 | ai retrouvé une coursière réprouvée près de la ferme de Go'Shek pour son dossier scellé, qui éclairerait peut-être ce qui se passait [[at:Hillsbrad Foothills]]
+- 659 | ai cherché Quae et Kinelory, les amies de Phin Odelic devenues silencieuses à la ferme de Go'Shek alors qu'elles cherchaient la preuve des agissements des morts-vivants
+- 660 | ai protégé Kinelory pendant qu'elle volait les recherches de l'apothicaire Jorell à la ferme avant qu'elles n'atteignent [[Tarren Mill]]
+- 661 | ai annoncé à Phin Odelic que Quae et Kinelory étaient en vie, et apporté les recherches que Kinelory avait prises à la ferme de Go'Shek
+- 676 | ai éprouvé ma force contre les ogres Rochepoing avant d'aller secourir [[Hammerfall]], attaqué et sur le point de tomber
+- 3802 | ai tué Fineous Darkvire pour le marteau Fer-fendu et l'ai mis entre les mains de la statue de Franclorn Forgewright, pour gagner la clé de la cité de Franclorn
+- 3907 | ai tué le seigneur Incendius et rapporté à Cœur-de-tonnerre la tablette qui nommait son maître, Ragnaros, un général des Dieux très anciens
+- 3981 | ai retrouvé le commandant Gor'shak dans les prisons de [[Blackrock Depths]], après qu'une note sur une flèche l'avait montré derrière les barreaux
+- 3982 | ai tenu tête aux gardes sombrefer venus chercher Gor'shak, qui s'était laissé capturer pour recueillir des renseignements pour Thrall
+- 4001 | ai interrogé Kharan Mighthammer sur l'enlèvement de la princesse Moira Bronzebeard et porté à Thrall tout ce qu'il savait
+- 4003 | ai tué l'empereur Dagran Thaurissan pour briser son sortilège sur la princesse Moira Bronzebeard, sans lui faire de mal, pour Thrall
+- 4004 | ai annoncé à Thrall que Moira portait l'enfant de Thaurissan, un Sombrefer à naître qui régnerait peut-être un jour sur [[Ironforge]]
+- 4024 | ai tué le géant de feu Bael'Gar et capturé sa flamme intérieure dans une mue de vol draconique, pour Cyrus Therepentous, avide de sa chaleur
+- 4063 | ai détruit le seigneur golem Argelmach pour Lotwil, qui l'avait déjà tué une fois, pour découvrir que la tête était une autre machine
+- 4081 | ai abattu la première ligne du général Forgehargne dans [[Blackrock Depths]], les tueurs de la 109e division du CEK, pour le seigneur de guerre Goretooth
+- 4082 | ai frappé les hauts dignitaires sombrefer qui entraînaient leurs forces pour anéantir le corps expéditionnaire de Kargath
+- 4121 | ai mené le traître Grark Lorkrub enchaîné à travers [[Blackrock Mountain]] jusqu'aux hommes de Lexlort qui attendaient dans [[Searing Gorge]]
+- 4122 | ai ligoté Grark Lorkrub, surpris à vendre les secrets du CEK aux orcs Blackrock, dans leur forteresse de [[Burning Steppes]]
+- 4123 | ai forcé la chambre forte inférieure et vaincu le guetteur Poigne-funeste pour le Cœur de la montagne, la gemme que Maxwort Uberglint cherchait depuis des années
+- 4126 | ai brisé des tonneaux sombrefer et repris la recette de la blonde Thunderbrew que Hurley Blackbreath avait volée, pour Ragnar Thunderbrew
+- 4132 | ai tué le général Forgehargne, qui avait ordonné le massacre de la 109e division du CEK, pour le livrer à la justice du seigneur de guerre Goretooth
+- 4134 | ai pris à Hurley Blackbreath la recette volée de la blonde Thunderbrew pour Vivian Lagrave, qui voulait mettre ses vertus au service des Réprouvés
+- 4136 | ai suivi Ribbly Screwspigot dans [[Blackrock Depths]] pour sa sœur Yuka, qui voulait lui ou sa tête pour la prime du baron Revilgaz
+- 4201 | suis $gallé:allée; chercher du sang-de-grom, des veines d'argent géantes et de l'eau de la source de Golakka pour le philtre d'amour de maîtresse Nagmara, destiné au soldat Rocknot
+- 4241 | ai fouillé [[Blackrock Depths]] à la recherche du maréchal Windsor, pour le ramener vivant ou la preuve de sa mort, pour le maréchal Maxwell
+- 4242 | ai annoncé au maréchal Maxwell que Windsor avait perdu sa preuve et, semblait-il, la raison
+- 4263 | ai détruit le seigneur Incendius, le serviteur de Ragnaros qui relevait sans cesse Pyron de ses cendres, pour Jalinda
+- 4264 | ai montré au maréchal Windsor une note froissée de Thaurissan, le signe que ses notes volées n'étaient pas perdues mais en cours de déchiffrement
+- 4282 | ai tué le général Forgehargne et le seigneur golem Argelmach pour reprendre les renseignements perdus dont le maréchal Windsor avait besoin comme preuve
+- 4286 | ai arraché des sacs banane sombrefer aux nains de [[Blackrock Depths]] pour Oralius, qui voulait ce qu'ils contenaient
+- 4322 | ai aidé le maréchal Windsor à récupérer son équipement et à libérer ses amis de [[Blackrock Depths]] avant qu'il ne parte affronter Bolvar
+- 4341 | ai retrouvé Kharan Mighthammer dans les prisons de [[Blackrock Depths]] pour le roi Magni, qui voulait des réponses sur sa fille disparue
+- 4361 | ai rapporté le récit de Kharan au roi Magni Bronzebeard à [[Ironforge]], de mauvaises nouvelles de sa fille Moira
+- 4362 | ai tué l'empereur Dagran Thaurissan pour briser son sortilège sur la princesse Moira, le seul moyen que voyait le roi Magni de sauver sa fille
+- 4363 | ai annoncé au roi Magni, comme Moira l'exigeait, que l'héritier de [[Ironforge]] serait un Sombrefer, son enfant de Thaurissan
+- 7201 | ai arraché l'essence des éléments aux golems de [[Blackrock Depths]] pour Vivian Lagrave, qui imaginait ce qu'elle pourrait faire pour les Réprouvés
+- 9015 | ai défié le grand justicier Grimstone dans l'arène de la Loi pour faire sortir Theldren et ses gladiateurs, pour un morceau de l'amulette du seigneur Valthalak
+- 11 | ai rassemblé des brassards peints sur les gnolls Rivepatte qui infestaient les frontières de [[Elwynn Forest]], pour la prime de l'armée de Stormwind
+- 37 | ai fouillé la rivière à la recherche des hommes disparus du garde Thomas, Rolf et Malakai, et trouvé le médaillon de Malakai près d'un cadavre dépouillé
+- 39 | ai annoncé au maréchal Dughan que Rolf et Malakai étaient morts et que les murlocs de l'est de [[Elwynn Forest]] étaient trop nombreux pour ses troupes
+- 40 | ai pressé le maréchal Dughan, pour Remy, d'envoyer des troupes à l'est contre les murlocs qui faisaient fuir le poisson et attaquaient les braves gens
+- 45 | ai suivi des empreintes palmées jusqu'au village murloc du lac du Cairn pour savoir ce qu'il était advenu de Rolf, et trouvé son corps
+- 46 | ai décimé les murlocs du lac du Cairn pour la prime de l'armée de Stormwind, pour aider à reprendre en main l'est de [[Elwynn Forest]]
+- 52 | ai abattu les rôdeurs et les jeunes ours qui attaquaient sans cesse le camp de bûcherons de Valdest, pour le garde Thomas
+- 61 | ai porté les bougies de William Pestle à son frère Morgan, à l'apothicairerie Pestle à [[Stormwind City]]
+- 62 | ai exploré [[Fargodeep Mine]] pour le maréchal Dughan, qui avait appris qu'elle était devenue un repaire de kobolds
+- 71 | ai rapporté les médaillons de Rolf et de Malakai au garde Thomas, pour qu'il connaisse le sort de ses gardes assassinés
+- 76 | ai exploré au loin [[Jasperlode Mine]] pour confirmer la présence des kobolds, une mauvaise nouvelle de plus pour le maréchal Dughan
+- 83 | ai pris des masques en lin rouge aux Défias de [[Elwynn Forest]] pour que Sara Timberlain fasse de beaux articles en lin
+- 84 | ai porté la tourte à la poitrine de porc de tante Bernice à Billy Maclure, dont le souvenir du collier est revenu le ventre plein
+- 86 | ai apporté de la viande de sanglier à tante Bernice pour une tourte à la poitrine de porc, le prix du souvenir de Billy Maclure sur son collier perdu
+- 87 | ai poursuivi un gros kobold aux dents en or dans [[Fargodeep Mine]] pour le collier perdu de tante Bernice, dont elle avait accusé Billy Maclure
+- 88 | ai tué Princesse, la truie primée des Brackwell, avant qu'elle ne revienne manger toute la récolte des Stonefield
+- 106 | ai porté la lettre d'amour de Maybell Maclure à Tommy Joe Stonefield, dont la famille était l'ennemie jurée de la sienne
+- 107 | ai apporté la note de grand-mère Stonefield à William Pestle à [[Goldshire]], dans l'espoir d'une potion pour unir les jeunes amoureux
+- 112 | ai pris du varech cristallin aux murlocs du lac de Cristal pour la liqueur d'invisibilité de William Pestle
+- 114 | ai livré la liqueur d'invisibilité à Maybell, pour qu'elle puisse s'éclipser des vignes des Maclure et voir Tommy Joe
+- 123 | ai remis au maréchal Dughan un calendrier des envois d'or des mines de [[Elwynn Forest]] à quelqu'un qu'on appelait le Collecteur
+- 147 | ai traqué le Collecteur, qui volait l'or des mines de [[Elwynn Forest]], et rapporté son anneau au maréchal Dughan
+- 176 | ai tué Lardeur, l'énorme gnoll qui avait déjoué toutes les tentatives de capture, pour la prime de [[Goldshire]]
+- 5545 | ai ramassé les fagots de bois dont les loups et les ours avaient chassé les ouvriers de Raelen, pour que la commande de bois soit livrée à temps
+- 743 | ai éprouvé ma force contre les harpies Furie-des-vents, des ennemis naturels de [[Mulgore]], avant de poursuivre ma route, comme le conseillait Ruul Eagletalon
+- 745 | ai chassé les gnolls Crins-pâles de [[Mulgore]] pour Baine Bloodhoof, puisqu'ils tuaient son gibier sans retenue et refusaient de parlementer
+- 746 | ai brisé les pioches des nains pour Baine Bloodhoof, pour leur apprendre qu'on n'atteint pas le savoir en creusant la terre
+- 748 | ai chassé les loups des prairies et les trotteurs des plaines pour un totem destiné à purifier le puits de Sabot-d'hiver, souillé par les gobelins
+- 749 | ai examiné la caravane incendiée de la KapitalRisk près du lac Taureau-de-pierre pour Morin Cloudstalker, après qu'on avait vu des pilleurs sur l'épave
+- 751 | ai apporté à Morin Cloudstalker les papiers de la KapitalRisk tirés de la caravane, la preuve que les gobelins volaient le minerai de [[Mulgore]]
+- 754 | ai porté le totem de purification jusqu'au puits de Sabot-d'hiver en évitant les gobelins, pour que ses eaux puissent de nouveau servir
+- 756 | ai pris des griffes aux traqueurs des prairies et aux pumas des plaines pour le totem de purification suivant de Mull Thunderhorn
+- 758 | ai accompli le rituel de purification au puits de Corne-tonnerre, pour Mull Thunderhorn, comme son rêve le demandait
+- 759 | ai chassé les loups alpha des prairies pour leurs dents, l'offrande de la terre pour le totem qui purifierait le dernier puits
+- 760 | ai purifié le puits de Crin-sauvage, le dernier des puits empoisonnés par les gobelins, pour que l'eau claire coule de nouveau à [[Mulgore]]
+- 761 | ai traqué l'insaisissable rapace pour ses pennes, un insigne d'astuce et de détermination pour Harken Windtotem
+- 764 | ai envoyé un message à la KapitalRisk dans sa mine de [[Mulgore]], pour que les gobelins ne pillent pas sans opposition la terre des taurens
+- 765 | ai pris le porte-bloc du superviseur Fizsprocket, les plans par lesquels la KapitalRisk comptait chasser les taurens de leurs terres
+- 766 | ai rassemblé un cœur de loup, un fémur de puma, une écaille de trotteur et un gésier de rapace pour guérir la morsure infectée que Mazzranache avait faite à Maur Raincaller
+- 770 | ai montré la peau marquée par les démons de Hurle-fantôme à [[Bloodhoof Village]], où un vieux chasseur avait du mal à croire que le grand loup était tombé
+- 771 | ai rassemblé des pierres de puits et du grain d'ambre pour que [[name:Zarlman Two-Moons]] prépare l'eau des voyants, une étape du rite de la Vision
+- 772 | ai bu l'eau des voyants devant le feu de la tribu et suivi la vision, pour réussir le rite de la Vision
+- 773 | ai cherché l'esprit ancestral à [[Red Rocks]] pour la bénédiction du rite de la Sagesse, et avec elle le devoir de protéger [[Thunder Bluff]]
+- 776 | ai traqué le puissant kodo Arra'chea pour sa corne, pour prouver mon talent de $gchasseur:chasseuse; à Cairne Bloodhoof après les rites de la Terre-Mère
+- 833 | ai chassé les intrus Dos-hirsute de [[Red Rocks]], le cimetière sacré des taurens, pour le gardien du savoir Raintotem
+- 861 | ai apporté des griffes de rôdeur des plaines à Melor Stonehoof sur la colline des Chasseurs, la preuve du talent qu'il faut pour suivre la voie du chasseur
+- 171 | ai ramené Randis à l'orphelinat, auprès de la matrone Nightingale, à la fin de la semaine des enfants, un orphelin qui voulait désormais devenir un héros
+- 172 | ai pris en charge Grunth, un orphelin orc dont les parents étaient morts avec honneur au combat, pour la semaine des enfants
+- 558 | ai obtenu l'autographe de dame Jaina Proudmoore à [[Theramore Isle]] pour un jeune pupille qui rêvait d'être un héros de l'Alliance
+- 910 | ai montré à un jeune pupille les quais de [[Ratchet]] et les navires qui partent pour [[Booty Bay]], pour un orphelin qui rêvait d'être marin de la Horde
+- 911 | ai emmené un jeune pupille au rempart de Mor'shan pour voir la frontière de [[Ashenvale]], où la Horde et l'Alliance s'affrontent
+- 915 | suis $gallé:allée; chercher la glace à la fraise de Tigule et Foror pour un jeune pupille, sa gourmandise préférée au monde
+- 925 | ai demandé à Cairne Bloodhoof à [[Thunder Bluff]] l'empreinte de son sabot, un souvenir pour un jeune pupille qui voulait être un héros de la Horde
+- 1468 | ai pris en charge Randis, un orphelin dont les parents étaient des aventuriers, pour la semaine des enfants
+- 1479 | ai emmené un jeune orphelin à [[Darnassus]] voir la Branche des Éternels, la banque creusée dans un arbre
+- 1558 | ai conduit un jeune orphelin au milieu de [[Stonewrought Dam]] à [[Loch Modan]] pour contempler la grande cascade
+- 1687 | ai emmené un jeune orphelin au phare hanté au large de [[Westfall]], où apparaissait le fantôme du capitaine Grayson
+- 1800 | ai montré à un jeune pupille l'ancienne salle du trône de Lordaeron, où Arthas avait ôté la vie à son propre père
+- 3861 | ai trouvé de la nourriture spéciale pour poulet pour un poulet devenu mon ami, qui semblait écrire un mot dans la poussière
+- 4822 | ai acheté à un jeune pupille la glace à la fraise de Tigule et Foror, pour lui la meilleure glace à la fraise du monde
+- 5502 | ai ramené Grunth à l'orphelinat, auprès de la matrone Battlewail, à la fin de la semaine des enfants, un orphelin désormais résolu à devenir un héros
+- 1579 | ai repêché la boîte de crics de Wizbang Cranktoggle, tombée par-dessus bord lors d'un voyage éméché vers [[Auberdine]]
+- 1580 | ai repêché dans les eaux de [[Darkshore]] les électrohélices perdues de Wizbang Cranktoggle, tombées la nuit où il s'était évanoui
+- 6607 | ai pêché des poissons rares dans quatre eaux lointaines pour Nat Pagle, qui promettait de m'apprendre une chose ou deux sur la pêche en retour
+- 8193 | ai porté en courant ma prise au juge, debout depuis des heures sans rien à manger, dans l'espoir d'être $gproclamé:proclamée; maître pêcheur
+- 6031 | ai apporté de l'étoffe runique à Meilosh, pour que les Grumegueules aient des vêtements aussi beaux que la cape en étoffe runique d'un ami elfe de la nuit
+- 1013 | ai pris le livre d'Ur, les études d'un mage de Dalaran sur d'autres mondes, à [[Shadowfang Keep]] pour la collection du gardien Bel'dugur
+- 1014 | ai tué Arugal à [[Shadowfang Keep]] et rapporté sa tête à Dalar Dawnweaver, pour libérer [[Silverpine Forest]] de ses sortilèges immondes
+- 1098 | ai fouillé [[Shadowfang Keep]] à la recherche des traqueurs noirs Adamant et Vincent, envoyés le reconnaître avant l'assaut, et trouvé Vincent mort
+- 4114 | ai rendu la santé à une fleur-de-chant malade avec du baume cénarien, sa forme corrompue tombant pour laisser place à une floraison vigoureuse
+- 996 | ai dépensé deux doses de baume végétal cénarien pour une fleur-de-vent corrompue, qui a rejeté sa forme tordue et refleuri, saine
+- 6032 | ai fourni à Meilosh de l'étoffe lunaire, sacrée pour les Grumegueules, pour leurs vêtements sacrés, en échange d'une technique de confection secrète
+- 8461 | ai nettoyé le camp corrompu des Mort-bois près du fort des Grumegueules pour Nafien, qui se désolait que sa tribu doive combattre ses propres frères
+- 8464 | ai décimé les furbolgs Tombe-hiver enragés du village de Tombe-hiver, devenus hostiles aux Grumegueules, pour Salfa
+- 8481 | ai invoqué et détruit le démon Xandivious dans la grotte du grand chef Tombe-hiver, la corruption à la racine de la tribu des Tombe-hiver
+- 8484 | ai porté l'offrande de paix des Grumegueules au roi Magni Bronzebeard à [[Ironforge]], un premier pas vers la paix avec les furbolgs
+- 8485 | ai porté l'offrande de paix des Grumegueules à Thrall à [[Orgrimmar]], un premier pas vers la paix avec les furbolgs
+- 5621 | ai soigné la sentinelle Shaya, blessée près de [[Dolanaar]], et l'ai fortifiée, l'épreuve qui m'a valu une première robe de l'ordre d'Elune
+- 5624 | ai soigné le garde Roberts, blessé près du lac à l'est de [[Goldshire]], et l'ai fortifié, pour gagner la robe d'$gun:une; $gprêtre:prêtresse; de la Lumière
+- 5625 | ai pansé les blessures du montagnard Dolf aux portes de [[Kharanos]] et lui ai accordé la Robustesse, l'épreuve qui m'a valu la robe de Maxan Anvol
+- 5648 | ai soigné la grunt Kor'ja, blessée en combattant les anciennes troupes de Proudmoore au sud de [[Razor Hill]], et l'ai bénie, pour qu'elle puisse de nouveau défendre la ville
+- 5650 | ai soigné le garde de la Mort Kel, blessé en défendant [[Brill]] contre les gnolls, et l'ai fortifié pour son service, l'épreuve de lumière de la clerc des ténèbres Beryl
+- 7622 | ai sauvé les paysans qui fuyaient [[Stratholme]], comme Eris Havenfire n'avait jamais pu le faire, pour que son existence maudite ne se prolonge pas
+- 8255 | ai chassé les coursiers sabot-de-mousse de [[Azshara]] pour leurs glandes, la première partie du baume réparateur d'Ogtinc pour guérir le [[Felwood]]
+- 8256 | ai pris un ichor de non-vie aux Bien-nés errants d'Eldarath, la seule part de poison que réclamait le baume de [[Felwood]]
+- 8257 | ai tué le drake vert Morphaz dans le temple englouti d'Atal'Hakkar pour le sang dont Greta Mosshoof avait besoin pour commencer à guérir le [[Felwood]]

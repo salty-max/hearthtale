@@ -117,8 +117,8 @@
 - 984 | ai reconnu un camp de furbolgs Noirbois à la recherche de signes de corruption, pour Terenthis, qui avait juré qu'aucun elfe de la nuit ne serait plus blessé
 - 985 | ai combattu les furbolgs Noirbois dans leur camp au sud de [[Auberdine]], la plus grande menace pour les gens de [[Auberdine]]
 - 986 | ai dépecé [[des:Moonstalker Sire]] et [[des:Moonstalker Matriarch]] pour de belles peaux, afin que Terenthis puisse faire une cape pour rejoindre Volcor sans encombre
-- 993 | ai retrouvé Volcor, le maître blessé de Grimclaw, dans une grotte de furbolgs et lui ai apporté une cape enchantée de traquelune
-- 994 | me suis frayé un chemin hors de la grotte des furbolgs aux côtés de Volcor, jusqu'à la route où attendait Grimclaw
+- 993 | ai retrouvé Volcor, le maître blessé de [[name:Grimclaw]], dans une grotte de furbolgs et lui ai apporté une cape enchantée de traquelune
+- 994 | me suis frayé un chemin hors de la grotte des furbolgs aux côtés de Volcor, jusqu'à la route où attendait [[name:Grimclaw]]
 - 995 | me suis $gfaufilé:faufilée; hors de la grotte des furbolgs avec Volcor blessé, puis ai retrouvé Terenthis à [[Auberdine]]
 - 1001 | ai pêché des yeux de batteur en haute mer pour réparer la Bigobox 411, pendant que Wizbang hoquetait à travers la boîte
 - 1002 | ai nourri la Bigobox 323 de crocs de traquelune pour un Wizbang qui semblait plus ivre à chaque boîte

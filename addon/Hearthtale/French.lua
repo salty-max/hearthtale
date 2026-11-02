@@ -396,7 +396,15 @@ local function shown(e) return e.lc and lowered(e) or e[1] end
 -- (a person's name, or a creature's as the game writes it)
 local function nameOf(name)
   local e = creatureOf(name)
-  if type(e) == "table" then return e[1] end
+  if type(e) == "table" then
+    -- (a name with its article, "La Tremblotte", reads "la Tremblotte" in a
+    -- sentence and contracts: "à la Tremblotte", "du Gardien")
+    local art, rest = e[1]:match("^(L[ae]s?) (.+)$")
+    if art then return A .. art:lower() .. " " .. rest end
+    rest = e[1]:match("^L'(.+)$")
+    if rest then return A .. "l'" .. rest end
+    return e[1]
+  end
   local boss = lookup("encounters", name)
   if type(boss) == "string" then return boss end
   F.unknown[name] = true
@@ -802,7 +810,8 @@ local function thingOf(english)
   if e then return e, false end
 end
 local PLURAL = { les = true, des = true, pl = true }
-local TOKENS = { at = true, un = true, le = true, name = true, spell = true, sort = true, faction = true, spec = true }
+local TOKENS =
+  { at = true, un = true, le = true, name = true, spell = true, sort = true, faction = true, clan = true, spec = true }
 for k in pairs(PLURAL) do
   TOKENS[k] = true
 end
@@ -834,6 +843,16 @@ local function gameName(form, english)
     local f = FN.factions and FN.factions[english]
     if not f then F.unknown[english] = true end
     return f or english
+  end
+  -- (a clan by its faction's name, as each game writes it: "Clan Frostwolf"
+  -- gives "Frostwolf", Forever's "Clan Loup-de-Givre" gives "Loup-de-Givre")
+  if form == "clan" then
+    local f = FN.factions and FN.factions[english]
+    if not f then
+      F.unknown[english] = true
+      return english
+    end
+    return (f:gsub("^Clan ", ""):gsub("^Garde ", ""))
   end
   if form == "spec" then
     local e = lookup("treeIds", english) or lookup("specIds", english)
@@ -956,7 +975,7 @@ end
 
 -- ── the deeds ────────────────────────────────────────────────────────────────
 -- (in a quest's deed, my own people are mine: "pour les Réprouvés" is "pour
--- mon peuple" in a Forsaken's diary; "les Réprouvés de Fossoyeuse" stays)
+-- les miens" in a Forsaken's diary; "les Réprouvés de Fossoyeuse" stays)
 local OURS = {
   Human = { "humains" },
   Dwarf = { "nains" },
@@ -967,7 +986,9 @@ local OURS = {
   Tauren = { "taurens", "shu'halo" },
   Scourge = { "R\195\169prouv\195\169s" },
 }
-local OURS_ARTICLE = { les = "mon peuple", des = "de mon peuple", aux = "\195\160 mon peuple" }
+-- (as the people it replaces: "les humains avaient" is "les miens avaient";
+-- after a noun "de mon peuple", never "des miens": docs/race-voices.md)
+local OURS_ARTICLE = { les = "les miens", des = "de mon peuple", aux = "aux miens" }
 local OURS_FOLLOWS = {}
 for w in
   ([[qui que et ou mais car pour contre avec sans dans sur sous vers chez avant après depuis

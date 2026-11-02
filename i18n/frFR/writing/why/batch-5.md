@@ -7,7 +7,7 @@
 - 162 | ai porté le rapport de Fizzledowser sur les insectes du désert à Gracina Spiritmight à [[Darnassus]], une érudite qui saurait peut-être comment les arrêter
 - 351 | ai suivi une balise de détresse jusqu'au robot de repérage d'Oglethorpe, écrasé près de [[Gaping Chasm]]
 - 379 | ai arraché des outres d'eau aux nomades Bat-le-désert pour que l'ingénieur en chef Bilgewhizzle me cède une source d'énergie
-- 648 | ai escorté OOX-17/TN, bien cabossé, jusqu'à [[Steamwheedle Port]] pour qu'[[name:Oglethorpe Obnoticus]] remette son robot de repérage en l'air
+- 648 | ai escorté OOX-17/TN, bien cabossé, jusqu'à [[Steamwheedle Port]] pour que [[name:Oglethorpe Obnoticus]] remette son robot de repérage en l'air
 - 654 | ai couru contre la montre, les deux heures que durait une source d'énergie, pour analyser avec une trousse de terrain les tissus des basilics, des hyènes et des scorpides de [[Tanaris]]
 - 992 | ai puisé dans un bassin près de [[Sandsorrow Watch]] pour la Compagnie des eaux de [[Gadgetzan]], ses puits perdus aux mains des nomades, et y ai croisé un étrange insecte
 - 1560 | ai ramené Tooga, perdu en allant chercher le dîner, auprès de sa femme Torta au sud de [[Steamwheedle Port]]
@@ -170,8 +170,8 @@
 - 2438 | ai repris à [[Starbreeze Village]], aux mains des furbolgs, le capturêve d'émeraude de Tallonkai Swiftroot, un cadeau rare du gardien Gaerolas
 - 2459 | ai repris l'émeraude que Ferocitas le Mange-rêves avait volée sur le capturêve de Tallonkai, et décimé ses mystiques Pin-tordu
 - 2499 | ai traqué Chênebourru, autrefois grand chef des sylvains, dont la tumeur gargantuesque répandait la corruption autour de [[Lake Al'Ameth]]
-- 2541 | ai pris un charme vaudou aux chamans Pin-tordu pour Oben Rageclaw, dont ils avaient arraché l'esprit à son corps endormi
-- 2561 | ai tué le corps sans âme d'Oben Rageclaw, retourné par les Pin-tordu contre la Tanière, pour que son esprit repose dans le Rêve d'émeraude
+- 2541 | ai pris un charme vaudou aux chamans Pin-tordu pour [[name:Oben Rageclaw]], dont ils avaient arraché l'esprit à son corps endormi
+- 2561 | ai tué le corps sans âme de [[name:Oben Rageclaw]], retourné par les Pin-tordu contre la Tanière, pour que son esprit repose dans le Rêve d'émeraude
 - 7383 | ai rempli une fiole au puits de lune de l'Arbre de l'oracle, le premier et le plus puissant de [[Teldrassil]], tandis que Corithras racontait le refus des dragons
 - 3822 | ai repris l'anneau de nez de mariage de Sha'ni à son assassin Krom'Grul et l'ai porté, avec ses dernières paroles, à Thal'trak, en deuil
 - 3823 | ai affaibli les ogres Brûlentrailles qui gardaient [[Dreadmaul Rock]] et les lignes de ravitaillement des orcs Blackrock, sur les ordres délirants d'Oralius

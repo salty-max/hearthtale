@@ -16,7 +16,7 @@
 - 5248 | ai porté le cristal de Zin-Malor réparé à [[Lake Kel'Theril]], pour montrer à un esprit bien-né que l'ancien tort était réparé
 - 5265 | ai ouvert le Fort d'argent, fermé depuis des années, après de longs services rendus à l'Aube d'argent
 - 5281 | suis $gallé:allée; trouver Egan, dont le travail avec les fantômes pourrait aider les esprits sans repos de ceux qui étaient morts dans la chute de [[Stratholme]]
-- 5464 | ai porté le souvenir lié à Leonid Barthalomew, pour qu'une âme s'accroche à Ras Frostwhisper comme elle s'était accrochée au souvenir
+- 5464 | ai porté le souvenir lié à Leonid Barthalomew, pour qu'une âme s'accroche à [[name:Ras Frostwhisper]] comme elle s'était accrochée au souvenir
 - 5542 | ai décimé les chiens pestiférés et leurs petits pour Tirion Fordring
 - 5543 | ai détruit les chauves-souris pestiférées qui frappaient du haut du ciel des Maleterres, à la demande de Tirion Fordring
 - 5544 | ai récolté de la chair de ver putride, la seule bête que la peste avait épargnée, pour que Tirion Fordring refasse ses provisions pour l'hiver
@@ -73,7 +73,7 @@
 - 79 | ai apporté au commandant Ebonlocke les pages boueuses trouvées là où des nobles en visite avaient été massacrés, qui reliaient les preuves à Stalvan
 - 80 | ai fait comparer par le clerc Daltry la page de journal tachée de sang aux signatures de son registre, la preuve de la culpabilité de Stalvan
 - 90 | ai rassemblé des steaks de loup et des herbes aromatiques de [[Stormwind City]] pour les brochettes de loup assaisonnées que le chef Grual appelait la spécialité de la maison
-- 93 | ai rassemblé des pattes d'araignée fondantes pour les gâteaux au crabe brun du chef Grual, pour nourrir Jitters après des semaines de vers et de mauvaises herbes
+- 93 | ai rassemblé des pattes d'araignée fondantes pour les gâteaux au crabe brun du chef Grual, pour nourrir [[name:Jitters]] après des semaines de vers et de mauvaises herbes
 - 95 | ai déterré ce qu'une silhouette sombre avait enterré derrière la vieille souche de la ferme de Sven, où des cavaliers noirs avaient massacré sa famille
 - 98 | ai exécuté Stalvan Mistmantle dans sa chaumière au nord de [[Darkshire]], l'assassin que la prémonition de Madame Eva avait démasqué
 - 101 | ai rassemblé crocs, doigts et venin pour que Madame Eva enchante un totem d'infliction contre un danger qu'elle pressentait
@@ -85,7 +85,7 @@
 - 157 | ai apporté à Abercrombie le fil de cheveux fantômes, bon pour lier les esprits mauvais ou coudre la vie dans les choses sans vie
 - 159 | ai porté à Abercrombie le suc de zombie qu'il voulait contre les nuits froides, un breuvage assez fort pour relever les morts
 - 160 | ai porté la lettre d'Abercrombie à son vieil ami le maire de [[Darkshire]], qui l'a trouvée écrite dans une langue qu'il ne savait pas lire
-- 163 | ai cherché ce qui hantait la [[Raven Hill]], où Calor avait vu bouger des ombres, et n'y ai trouvé que Jitters, caché
+- 163 | ai cherché ce qui hantait la [[Raven Hill]], où Calor avait vu bouger des ombres, et n'y ai trouvé que [[name:Jitters]], caché
 - 164 | ai livré des fournitures au camp de Sven en lisière de [[Duskwood]], ses fidèles trop peu nombreux pour envoyer quelqu'un les chercher en ville
 - 165 | suis $gallé:allée; voir le vieil homme de la cabane au-dessus du cimetière de la [[Raven Hill]], qui avait cessé depuis longtemps de venir en ville
 - 173 | me suis $gattaqué:attaquée; aux tisseurs d'ombre Plaie-de-nuit du bosquet de Clairbois, pour me montrer digne de la bande de maître Carevin
@@ -102,7 +102,7 @@
 - 229 | ai apporté à la guetteuse Sarah Ladimore des nouvelles de son père, dont la mort l'avait toujours troublée
 - 230 | ai apporté à Sven le livre déterré à sa ferme, qui lui apprenait que la silhouette sombre avait assisté à la mort de sa famille
 - 231 | ai posé l'anneau de Sarah Ladimore sur la tombe de son père, pour que Morgan Ladimore sache qu'elle vivait et que son âme puisse reposer
-- 240 | ai rapporté les gâteaux au crabe brun à Jitters, affamé dans sa cachette de la ville fantôme
+- 240 | ai rapporté les gâteaux au crabe brun à [[name:Jitters]], affamé dans sa cachette de la ville fantôme
 - 245 | ai éliminé les araignées Tisse-venin pygmées qui envahissaient la frontière ouest de [[Duskwood]], trop nombreuses pour le Guet de nuit
 - 251 | ai fait traduire par Sirra Von'Indi, savante en langues et en arts anciens, l'étrange lettre d'Abercrombie au maire
 - 252 | ai porté la lettre traduite au seigneur Ello Ebonlocke, révélant que l'aide apportée à Abercrombie avait condamné [[Darkshire]]
@@ -110,8 +110,8 @@
 - 262 | ai montré le livre de la ferme de Sven dans tout [[Darkshire]], pour trouver le rôdeur que Sven avait vu la nuit où sa famille avait été tuée
 - 265 | me suis $grenseigné:renseignée; dans [[Darkshire]] sur le propriétaire du livre, un étranger nerveux et agité qui l'avait acheté en ville un mois plus tôt
 - 266 | ai cherché à l'auberge des nouvelles du propriétaire du livre, parti en hâte vers l'ouest en marmonnant qu'on le traquait
-- 268 | ai porté à Sven le journal complet de Jitters, pour ce qu'il racontait des cavaliers noirs et de Morbent Fel
-- 269 | ai apporté le journal de Jitters à l'évêque Farthing, à la cathédrale de la Lumière, pour prendre conseil avant d'affronter Morbent Fel
+- 268 | ai porté à Sven le journal complet de [[name:Jitters]], pour ce qu'il racontait des cavaliers noirs et de Morbent Fel
+- 269 | ai apporté le journal de [[name:Jitters]] à l'évêque Farthing, à la cathédrale de la Lumière, pour prendre conseil avant d'affronter Morbent Fel
 - 270 | ai interrogé Glorin Steelbrow à [[Menethil Harbor]] au sujet du fer de sancteforge perdu en mer, le métal d'une arme contre Morbent Fel
 - 321 | ai fouillé l'épave du Balbuzard volant à la recherche de son fer de sancteforge, pour n'y trouver que le coffre éventré par les griffes des murlocs
 - 322 | ai porté les lingots de sancteforge à Grimand Elmore à [[Stormwind City]], pour forger une arme qui inquiéterait même Morbent Fel

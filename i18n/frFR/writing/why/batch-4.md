@@ -11,7 +11,7 @@
 - 849 | ai fait sauter la machine volante de [[Bael Modan]], une arme de guerre naine et une insulte pour la tribu perdue de Gann Stonespire
 - 850 | ai traqué Barak Plaie-des-kodos, l'un des nouveaux chefs qui ralliaient les centaures kolkars, pour Regthar Deathgate
 - 851 | ai agité les centaures de [[Stagnant Oasis]] jusqu'à ce que vienne Verog le Derviche, le chef kolkar suivant après Barak Plaie-des-kodos
-- 852 | ai tué Hezrul Bloodmark, chef des Kolkars, pour diviser les centaures et émousser leur menace contre la Horde
+- 852 | ai tué [[name:Hezrul Bloodmark]], chef des Kolkars, pour diviser les centaures et émousser leur menace contre la Horde
 - 853 | ai porté en hâte les spores fondues de l'apothicaire Helbrim à l'apothicaire Zamah à [[Thunder Bluff]] avant que l'émulsion ne perde sa force
 - 855 | ai pris des bracelets aux guerriers kolkars pour la prime de Regthar Deathgate, pour éclaircir les troupes centaures
 - 857 | ai volé la Larme des lunes dans le fort du général Twinbraid pour Feegly l'Exilé, qui délirait en croyant que son pouvoir lui revenait
@@ -26,7 +26,7 @@
 - 872 | ai tué Kreenig Grondegroin, le Tranchecrin qui menait les raids contre les caravanes de [[Durotar]], et rapporté sa défense à Thork
 - 873 | ai nagé au large pour tuer Isha Awak, le Fléau des profondeurs de la côte, la proie de valeur que Mahren Skyseer m'avait désignée
 - 875 | ai abattu une à une les tueuses Ensorçaile, les lieutenants harpies de [[Dry Hills]], un coup décisif contre leur matriarcat
-- 876 | ai tué Serena Bloodfeather, dont les harpies pillaient les caravanes de la Horde pour venger la sœur que Rexxar avait tuée
+- 876 | ai tué [[name:Serena Bloodfeather]], dont les harpies pillaient les caravanes de la Horde pour venger la sœur que Rexxar avait tuée
 - 877 | ai planté des graines mortes dans une fissure de [[Stagnant Oasis]] pour Tonga Runetotem, et les ai regardées reprendre vie
 - 878 | ai abattu les chefs spirituels des hurans Dos-hirsute pour que les Tranchecrin puissent les vaincre, pour Mangletooth, en cage
 - 879 | ai tué Nak, Kuz et Lok Plaie-des-orcs, les Tranchecrin qui pillaient la Horde et avaient laissé Mangletooth pourrir dans une cage
@@ -55,7 +55,7 @@
 - 906 | ai apporté le crâne de Lok à Thork à [[Crossroads]], la preuve que le chef des raids contre ses lignes de ravitaillement était mort
 - 907 | ai affronté les grands lézards-tonnerre du sud de [[Barrens]] et rapporté leur sang à Jorn Skyseer pour preuve
 - 913 | ai tué un faucon-tonnerre pour ses ailes, la chasse qui menait l'enseignement de Jorn Skyseer près de sa fin
-- 1060 | ai porté la lettre de Darsok Swiftdagger au sorcier-docteur Jin'Zil dans [[Stonetalon Mountains]], la nouvelle que Serena Bloodfeather était morte
+- 1060 | ai porté la lettre de Darsok Swiftdagger au sorcier-docteur Jin'Zil dans [[Stonetalon Mountains]], la nouvelle que [[name:Serena Bloodfeather]] était morte
 - 1069 | ai ramassé des œufs d'araignée des mousses profondes dans [[Stonetalon Mountains]] pour Mebok Mizzyrix, à vendre à [[Booty Bay]], folle des omelettes aux œufs d'araignée
 - 1145 | ai porté la note scellée de Korran à [[Orgrimmar]], qui avertissait que les insectes de [[Field of Giants]] étaient plus dangereux qu'on ne le pensait
 - 1153 | ai arraché un échantillon de minerai aux kobolds Groin-de-gravier pour Tatternack Steelforge, qui espérait forger une arme pour le chef de guerre
@@ -223,9 +223,9 @@
 - 4142 | ai montré un pétale-de-sang à Gregan Brewspewer [[at:Feralas]], un expert capable d'expliquer l'étrange intelligence de ces plantes
 - 4143 | ai recueilli de la brume atal'ai dans le temple d'Atal'Hakkar pour Muigin, l'horrible substance qui lui permettrait de contrôler les pétales-de-sang
 - 4145 | ai abattu les pétales-de-sang nuisibles que Muigin envoyait sans cesse embêter Larion, qui le tenait pour responsable de les avoir perdus
-- 4243 | ai fouillé le repaire des singes à [[Fungal Rock]] à la recherche d'A-Me 01, la guenon mécanique de Karna Remtravel, et l'ai trouvée cabossée et sans énergie
-- 4244 | ai monté une nouvelle caisse en mithril dans A-Me 01 pour que la guenon mécanique de Karna Remtravel puisse remarcher
-- 4245 | ai escorté A-Me 01, bien cabossée, jusqu'à Karna Remtravel en évitant les gorilles de [[Un'Goro Crater]]
+- 4243 | ai fouillé le repaire des singes à [[Fungal Rock]] à la recherche de [[name:A-Me 01]], la guenon mécanique de Karna Remtravel, et l'ai trouvée cabossée et sans énergie
+- 4244 | ai monté une nouvelle caisse en mithril dans [[name:A-Me 01]] pour que la guenon mécanique de Karna Remtravel puisse remarcher
+- 4245 | ai escorté [[name:A-Me 01]], bien cabossée, jusqu'à Karna Remtravel en évitant les gorilles de [[Un'Goro Crater]]
 - 4284 | ai rassemblé des cristaux de puissance de quatre couleurs pour J.D. Collie, qui y sentait un pouvoir que ses expériences n'avaient pas encore trouvé
 - 4285 | ai trouvé le pylône de cristal du nord pour J.D. Collie, qui ne cessait de se demander à quoi servaient les pylônes
 - 4287 | ai localisé le pylône de cristal de l'est pour satisfaire enfin la curiosité de J.D. Collie au sujet des pylônes dont on parlait

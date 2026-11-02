@@ -274,7 +274,7 @@ each English line, deed and scenery line told again in French, written in
   preposition), `[[un:Frostmane Troll Whelp]]`, `[[le:Defias Messenger]]`,
   `[[name:Hogger]]`, `[[spell:Life Tap]]` (the spell's name alone), `[[sort:Hunter's Mark]]`
   (with its article: "la Marque du chasseur"), `[[faction:Frostwolf Clan]]` (a faction, each
-  game's own), `[[spec:Beast Mastery]]` (a talent tree), `[[les:Kobold Vermin]]`,
+  game's own), `[[clan:Frostwolf Clan]]` (the clan alone, from the faction as each game writes it: "Frostwolf" on Classic, "Loup-de-Givre" on Forever), `[[spec:Beast Mastery]]` (a talent tree), `[[les:Kobold Vermin]]`,
   `[[des:X]]`, `[[pl:X]]` (a creature or an item in the plural: the English singular inside); the English name between the brackets. `[[les:X]]` contracts after de and à (des, aux); `[[des:X]]` never does, so after de write `de [[pl:X]]` ("une meute de loups").
 - No semicolon; a no-break space before `: ? ! %`; straight apostrophes;
   UTF-8 (the plain-ASCII rule is English's). The build checks them, the slots

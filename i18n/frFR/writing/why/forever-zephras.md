@@ -1,0 +1,137 @@
+# French: the deeds of writing/why/forever-zephras.md, after "je"
+
+- 92460 | suis $gdevenu:devenue; adulte à [[Thendal Village]], où [[name:Rorian the Dayseeker]] m'a remis une relique portée par bien d'autres avant moi, et qu'un jour je transmettrais à mon tour
+- 92461 | ai décimé les vuldrènes du bosquet de Thendal, devenues trop nombreuses, pour rétablir l'harmonie que tous les êtres du lieu partageaient selon [[name:Rorian the Dayseeker]]
+- 92462 | ai exterminé les mouches-cirrus qui infestaient l'est du bosquet de Thendal pour [[name:Elatrell Featherlight]], avant que l'essaim ne devienne trop grand
+- 92463 | ai traqué la reine mouche-cirrus jusqu'à sa ruche au fond du bosquet, puisque tuer les ouvrières ne mettrait jamais fin à l'infestation
+- 92464 | suis $gallé:allée; trouver [[name:Yala Windwatcher]] près des pierres levées, où les simples esprits du vent étaient devenus agités
+- 92465 | ai dispersé les vents tourbillonnants et les convertis al'aketh du bosquet de Thendal pour [[name:Yala Windwatcher]], qui accusait le culte de la violence des esprits
+- 92466 | ai chassé les convertis al'aketh des pierres levées de l'est pour une chevalière d'Akir, la preuve de ma résolution avant les épreuves de [[name:Windshaper Boro]]
+- 92467 | ai bu le sapta de terre à [[Rise of Spirits]], où la terre m'a enseigné sa force sans pouvoir dire pourquoi les vents étaient partis
+- 92468 | ai rapporté le quartz brut de la manifestation de la terre à [[name:Windshaper Boro]], pour en faire le cœur d'un premier totem de terre
+- 92469 | ai prévenu [[name:Rorian the Dayseeker]] de la présence des Al'Aketh dans le bosquet, une nette escalade de la part d'un culte que le village observait depuis longtemps de loin
+- 92470 | ai prouvé ma résolution à [[name:Aetheen of the Gales]] en tuant les charognards ursera et leur mère de tanière, Urs'anah
+- 92471 | suis $gallé:allée; trouver [[name:Aetheen of the Gales]], du Conseil des anciens, pour servir [[Zephras Isle]]
+- 92472 | suis $gparti:partie; vers le sud jusqu'à [[Shen'dar Village]] sur les conseils de [[name:Aetheen of the Gales]], pour offrir mon aide à la connétable Aonda contre les Al'Aketh qui le menaçaient
+- 92473 | ai abattu les ursera faméliques de la tanière au sud-ouest du village pour [[name:Valreaa Valewind]], après qu'une bête affamée s'en était prise à un garçon qui jouait
+- 92474 | ai sauté de la tour de guet du bosquet de Thendal pour le jeu de [[name:Myriaal Mistwake]] et flotté sur l'air, comme elle l'avait souhaité
+- 92514 | suis $gpassé:passée; voir [[name:Illaya Amberwind]], l'ancienne des Sculpte-vents de [[Shen'dar Village]], et son aubergiste avant que la connétable Aonda ne me mette au travail
+- 92515 | ai éclairci les fièregriffes qui pressaient [[Shen'dar Village]] avant qu'elles n'emportent l'animal ou l'enfant de quelqu'un, leurs fourrures pour les marchandises de [[name:Indari Sunseam]]
+- 92516 | ai dispersé les nids d'hippogriffes au sud-est de [[Shen'dar Village]], matriarche comprise, après que la volée s'était mise à harceler les voyageurs
+- 92517 | ai nettoyé la grotte des bandits derrière la cascade au nord de [[Shen'dar Village]] et tué leur chef, Badwind Bennic, pour la connétable Aonda
+- 92528 | me suis fait passer pour une recrue à [[Falaath Village]] et appris que Lorthuna, la propre cheffe du culte, avait des vues sur [[Shen'dar Village]]
+- 92529 | suis $gentré:entrée; à [[Falaath Village]] avec la marque de [[name:Sania Silverstream]] comme nouvelle recrue, $gaccueilli:accueillie; par la missionnaire Jasaan des Al'Aketh
+- 92544 | ai tué Malduko Fracasse-nuage, le monstre qui menait les brutes al'aketh aux ruines du temple, pour les forestiers du bosquet de Thendal
+- 92550 | ai frappé [[Falaath Village]] avant que le culte ne frappe Shen'dar, et rapporté la tête du commandant Cyclas à la connétable Aonda
+- 92551 | ai repris les fournitures de Shen'dar que les Al'Aketh avaient pillées aux caravanes et entassées à [[Falaath Village]], pour des habitants dans le besoin
+- 92553 | ai rassemblé des œufs et de la viande de trotteur pour [[name:Zerril Softbreeze]], pour nourrir [[Shen'dar Village]] tant que personne n'avait le temps de chasser ou de cueillir
+- 92579 | ai porté le rapport de la connétable Aonda à [[name:Valennia Stormfist]] à [[Valanaar]], la nouvelle que le pylône et [[Shen'dar Village]] étaient pour l'instant en sécurité
+- 92595 | ai écouté [[name:Illaya Amberwind]] m'expliquer pourquoi les Sculpte-vents avaient besoin de chaque âme dotée de la vue céleste, si les vents devaient un jour répondre de nouveau
+- 92596 | me suis $gassis:assise; avec [[name:Rathiril Sunlance]] pour entendre pourquoi l'Ordre suprême, héritier d'Eldre'Thalas, comptait aider les insulaires à se tenir debout seuls
+- 92597 | ai puisé dans une ligne tellurique près des pierres levées pour [[name:Falorne Fallwind]], l'une des lignes qui venaient d'affleurer à la surface de l'île
+- 92598 | ai usé de la vue céleste à la convergence élémentaire près des pierres levées, un don que [[name:Ventaari Brightwish]] croyait être la clé de la survie
+- 92640 | ai rallié les Sculpte-vents et l'Ordre suprême derrière une attaque contre le sanctuaire d'Akir, pour arrêter Lorthuna avant qu'elle n'achève son projet
+- 92642 | ai abattu les soigneurs et les bagarreurs du culte sous la tour de guet de l'est, où les gens de [[name:Yorana Windyreed]] ne tiendraient plus longtemps
+- 92643 | ai cherché un transfuge du culte caché au nord-ouest de [[Valanaar]], qui prétendait connaître les vrais plans des Al'Aketh, et l'ai trouvé déjà mort
+- 92644 | ai remis à la grande ancienne [[name:Talaanis Shadowsong]] le cristal endommagé trouvé sous le transfuge mort, au cas où il garderait encore ses secrets
+- 92645 | ai tué la commandante Belguilos la Briseuse, une ancienne garde-paix devenue la terreur du culte, pour mettre fin à l'assaut contre la tour de guet de l'est
+- 92646 | ai suivi la grande prêtresse Lorthuna à travers son portail jusqu'à [[Rohashi Spires]], pour l'affronter avec [[name:Ayessa Dawnsinger]] et [[name:Elaadrin Evengale]]
+- 92679 | ai répondu à l'appel de [[name:Alvarion Windfield]], qui cherchait des combattants pour sauver sa ferme, même si sa femme Aamelia craignait qu'il ait envoyé de l'aide mourir pour rien
+- 92682 | ai cueilli des pommes d'orage et tué les bandits parmi les arbres de [[Windfield Orchard]], en échange de mes repas jusqu'à l'arrivée de la bande de Ferauu
+- 92683 | ai écrasé des voltemouches pour la poussière de leurs ailes, une corvée que [[name:Aamelia Windfield]] repoussait depuis des semaines avec des bandits trop près de la maison
+- 92684 | ai décimé les trotteurs des trombes hargneux qui volaient les pommes d'orage d'une maigre récolte, leurs filets pour la marmite de [[name:Aamelia Windfield]]
+- 92685 | ai attaqué le camp des bandits dans les collines au-dessus du verger pour des masques ensanglantés, pour équilibrer les chances avant que Ferauu ne s'en prenne au verger
+- 92693 | ai tenu bon aux côtés de [[name:Aamelia Windfield]] contre Ferauu et ses brutes lors d'un dernier combat au verger, et vécu pour en voir la fin
+- 92698 | me suis $gpenché:penchée; sur les mots brisés d'un assemblage cyclonique qui errait dans les champs du verger depuis des décennies, peut-être depuis le départ des élémentaires du vent
+- 92699 | me suis $gprésenté:présentée; à [[name:Elaadrin Evengale]], magistère suprême de l'Ordre suprême à [[Valanaar]]
+- 92700 | me suis $gprésenté:présentée; à [[name:Ayessa Dawnsinger]], grande voyante céleste des Sculpte-vents à [[Valanaar]], heureuse d'accueillir quiconque avait la vue céleste
+- 92701 | ai porté le rapport écrit de la connétable Aonda à [[name:Valennia Stormfist]], qui menait les garde-paix de l'île et devait savoir ce qui s'était passé
+- 92703 | ai porté les nouvelles du verger à [[name:Alvarion Windfield]], avec la demande d'Aamelia d'amener un Sculpte-vent pour examiner l'assemblage
+- 92708 | ai entendu [[name:Ayessa Dawnsinger]] exposer sa conviction que le moyen de sauver [[Zephras Isle]] se trouvait en bas, sur Azeroth
+- 92709 | ai appris de [[name:Elaadrin Evengale]] que la magie perdue des ancêtres était la clé du salut de [[Zephras Isle]], et le Kirin Tor le chemin pour y parvenir
+- 92727 | ai fouillé la route à l'ouest de [[Valanaar]] à la recherche de [[name:Fillion Flamebreeze]], un érudit de l'Ordre suprême attendu des hautes-terres, et trouvé sa sacoche
+- 92741 | ai chassé les criailleuses de [[Shadowgale Forest]], dont le nombre débordait des bois, pour les serres que [[name:Iaadaria Bitterwind]] voulait étudier
+- 92834 | ai pris des charmes de prière aux sectateurs al'aketh pour [[name:Elaadrin Evengale]], après que le culte lui avait renvoyé la langue de son émissaire [[name:Belathaan Brightwish]]
+- 92840 | ai lu les courants élémentaires à [[Overlook Standing Stones]] pour l'Ordre suprême, malgré les Sculpte-vents qui parlaient de massacre
+- 92849 | ai trouvé [[name:Fillion Flamebreeze]] dans la grotte au nord de la route et l'ai porté en lieu sûr, avant que la bête qui l'avait frappé ne le dévore
+- 92850 | suis $gretourné:retournée; à [[Shriekling Den]] pour la tête de leur matriarche, la bête qui avait abattu Fillion, nichée bien trop près de [[Valanaar]]
+- 92860 | ai promis le plein soutien de l'Ordre suprême contre les Al'Aketh à [[name:Valennia Stormfist]], qui avait juré de venger son cousin Belathaan
+- 92871 | ai porté à [[name:Valennia Stormfist]] la promesse de plein soutien des Sculpte-vents, avec des rumeurs d'un culte qui préparait quelque chose de plus grand
+- 92880 | ai annoncé à [[name:Valennia Stormfist]] que la tour de guet de l'est était de nouveau stable
+- 92881 | suis $gallé:allée; voir la grande ancienne [[name:Talaanis Shadowsong]] pour une piste prometteuse, puisque les attaques contre les deux tours de guet n'étaient pas une coïncidence
+- 92947 | ai pris d'assaut le sanctuaire d'Akir à la faveur d'une diversion, me frayant un chemin parmi ses gardiens tandis que [[name:Valennia Stormfist]] menait le flanc
+- 93036 | me suis $grapproché:rapprochée; de [[name:Sania Silverstream]], la missionnaire des Al'Aketh à [[Shen'dar Village]], pour apprendre pour la connétable Aonda ce que préparait le culte
+- 93065 | me suis $gpréparé:préparée; au combat avec les garde-paix et ai rejoint [[name:Valennia Stormfist]] dans [[Gustberry Lowlands]] avant le départ
+- 93089 | ai porté la bénédiction de la grande ancienne [[name:Talaanis Shadowsong]] à [[name:Elaadrin Evengale]] pour l'expédition de l'Ordre suprême de [[Zephras Isle]] vers Azeroth
+- 93090 | ai apporté à [[name:Ayessa Dawnsinger]] la bénédiction de la grande ancienne pour l'expédition des Sculpte-vents vers Azeroth, l'heure du départ enfin venue
+- 93159 | ai tenu compagnie à l'étrange ermite de [[Shadowgale Forest]], resté si longtemps sans personne à qui parler, et écouté le peu qu'il voulait bien raconter
+- 93160 | ai ramassé des glands de Ventombre pour que l'étrange ermite les fasse griller, lui qui craignait de finir en déjeuner d'oiseau géant sur le sol de la forêt
+- 93165 | ai rassemblé des oreilles de sectateurs al'aketh pour [[name:Vayn Moongaze]] des Noctegriffe, rendant le sang pour le sang après la tragédie de l'enclave
+- 93172 | ai détruit les creux du vent qui chantaient aux vieilles ruines, dans l'espoir de l'étrange ermite que les esprits prisonniers trouvent la paix
+- 93317 | ai attrapé des clampants chantevent pour [[name:Nyalah Brightfire]] pendant leur courte saison, un mets jadis réclamé à grands cris sur les autres îles
+- 93318 | ai traqué Vulgara l'Insatiable, la terrible vuldrène ailée des hautes-terres, pour la prime que la connétable Aonda avait mise sur sa tête
+- 93319 | ai repris les pierres de vent que des bandits avaient chapardées dans la réserve d'urgence de [[Shen'dar Village]], pour dépanner [[name:Teeri Wellwind]]
+- 93320 | me suis $gprécipité:précipitée; vers la tour de guet du pylône est attaquée par le culte, où les renforts de [[name:Yorana Windyreed]] tenaient bon face à plus nombreux
+- 93461 | suis $gpassé:passée; voir [[name:Rathiril Sunlance]], l'ancien de l'Ordre suprême de [[Shen'dar Village]], et son aubergiste avant que la connétable Aonda ne me mette au travail
+- 93552 | ai récolté des pierres de vent brutes dans le bosquet de Thendal pour [[name:Dalia the Collector]], l'énergie même des vents devenue précieuse à mesure que la magie de l'île s'éteignait
+- 93735 | ai donné un coup de main à [[name:Riaani Nightwind]], une artisane des Sculpte-vents qui réparait l'un des derniers assemblages en état de marche de [[Valanaar]]
+- 93736 | ai recueilli des essences sur les creux du vent de [[Shadowgale Forest]] pour [[name:Endaria Mistgaze]], des esprits apparus après le départ des esprits du vent
+- 93737 | ai récupéré de la foudre, un gyrozéphyr et un noyau pour l'assemblage de [[name:Riaani Nightwind]], pour que sa mémoire dise qui lui avait volé ses pièces
+- 93738 | ai rapporté à [[name:Ayessa Dawnsinger]] ce qu'avait révélé l'assemblage réparé : [[name:Belathaan Brightwish]], de l'Ordre suprême, avait pris ses pièces
+- 93740 | ai rendu le sang pour le sang aux Al'Aketh pour [[name:Ayessa Dawnsinger]], après qu'on avait trouvé des novices des Sculpte-vents morts dans les hautes-terres
+- 93746 | ai affronté [[name:Belathaan Brightwish]] sur la route du sanctuaire d'Akir pour l'effrayer, et apporté à [[name:Ayessa Dawnsinger]] la nouvelle de sa mort
+- 93797 | suis $gallé:allée; chercher un rameau imprégné de vent au sanctuaire du vent près de [[Falaath Village]] pour [[name:Belann Windwood]], pour fabriquer un focalisateur comme le font les jeunes mages
+- 93835 | ai pris le portail vers [[Rohashi Spires]] à la poursuite de Lorthuna en fuite, pour aider [[name:Elaadrin Evengale]] et [[name:Ayessa Dawnsinger]] à l'arrêter
+- 93836 | ai averti la grande ancienne [[name:Talaanis Shadowsong]] que les protections qui cachaient Zéphras étaient tombées et que l'île était sans défense face à Al'Akir
+- 93926 | ai couru à la tour de guet de l'ouest rappeler ses garde-paix pour la connétable Aonda, et trouvé le garde-paix Vaaniel déjà mort
+- 93927 | ai tué le prêtre céleste Aanders pour arrêter le culte à la tour de guet de l'ouest, et rassemblé les souvenirs des garde-paix morts là-bas
+- 93948 | ai porté la chevalière de la famille Chantelombre de la tour de guet de l'ouest à la grande ancienne [[name:Talaanis Shadowsong]], dont le neveu y était mort
+- 93949 | ai écrasé les sauteciels de [[Valanaar]] pour [[name:Valennia Stormfist]], puisque le culte semblait se servir de sauteciels enchantés comme espions
+- 93951 | ai ramassé du duvet d'hippogriffe tombé pour [[name:Taleen Shimmerthread]], des plumes pour les cheveux des insulaires
+- 93958 | me suis $genfoncé:enfoncée; dans le saint des saints du sanctuaire d'Akir, devenu étrangement silencieux, et y ai trouvé [[name:Valennia Stormfist]] grièvement blessée
+- 94003 | ai repris le rempart de Briseciel au sectateur [[name:Zaal Stormshield]] pour [[name:Seena Skybreaker]], la dernière d'une lignée que les Al'Aketh avaient assassinée
+- 94006 | ai cherché Urs'endris, l'esprit qui avait enseigné aux druides la forme d'ursera, près des chutes au nord-est de [[Valanaar]], son domaine sombrant dans le ciel
+- 94013 | ai apprivoisé un alpha vuldrène dans [[Gustberry Lowlands]], la dernière épreuve de [[name:Quel'ana Quickgale]] avant d'apprendre à me lier pour de bon à un compagnon
+- 94369 | ai averti la grande ancienne [[name:Talaanis Shadowsong]] de la menace d'Al'Akir maintenant que les protections étaient tombées, et parlé de la mission de l'Ordre suprême vers Azeroth
+- 94411 | ai chassé les apprentis de l'Ordre suprême des pierres levées au nord de [[Shen'dar Village]] pour [[name:Illaya Amberwind]], qui craignait leurs manigances
+- 94413 | ai chassé les novices des Sculpte-vents de la ligne tellurique de la forêt du sud-ouest pour [[name:Rathiril Sunlance]], qui voulait qu'on l'étudie et non qu'on la referme comme une cicatrice
+- 94414 | ai contemplé le pylône d'ancrage grâce au don de Halaan Oeil-de-Faucon, l'un des dons des esprits qui lient l'île, sa magie devenue instable
+- 94484 | suis $gallé:allée; voir les druides de [[Shadowgale Forest]], dont les nouvelles se faisaient attendre auprès de [[name:Lotheluum Starbreeze]], et les ai trouvés en grand péril
+- 94485 | ai fouillé les racines des arbres de Ventombre à la recherche de mousse des larmes de la Dame, pour que [[name:Elegael Thornpaw]] panse les blessures des druides restés dans la tanière
+- 94486 | ai arraché des plumes aux criailleuses de Ventombre pour la seconde moitié du cataplasme de [[name:Elegael Thornpaw]]
+- 94487 | ai repris aux Al'Aketh de [[Shadowgale Forest]] des héritages ensanglantés, pour que [[name:Elegael Thornpaw]] les garde pour une génération future
+- 94488 | ai tué le commandant Haalien, le propre cousin de [[name:Elegael Thornpaw]], un druide devenu sectateur qui avait versé le sang des siens
+- 94489 | ai porté les cataplasmes de [[name:Elegael Thornpaw]] dans la tanière pour soigner les druides blessés, et cherché son compagnon, [[name:Jorel Windsinger]]
+- 94490 | ai trouvé sur Haalien une missive déchirée qui montrait que le culte avait frappé les druides pour le pylône, sur des ordres venus peut-être de [[Valanaar]]
+- 94491 | ai porté la missive et le sort des druides tombés à [[name:Lotheluum Starbreeze]] à [[Valanaar]], qui craignait un traître dans la cité
+- 94493 | ai répondu à l'appel de [[name:Elegael Thornpaw]] dans [[Shadowgale Forest]], sa tanière prise en embuscade par le culte et beaucoup de ceux qui s'y trouvaient blessés ou mourants
+- 94568 | ai appris ce que le cristal du transfuge mort contenait des plans du culte, et que les garde-paix s'en sortiraient mal face au culte en terrain découvert
+- 94638 | ai mis fin aux souffrances d'Ur'endra, la compagne d'Urs'endris, perdue dans la folie et retournée contre les siens, pour gagner sa bénédiction et la forme d'ursera
+- 94896 | ai récupéré ce que les réfugiés de Ban'aethal avaient laissé derrière eux quand le village s'était mis à dériver dans le ciel une nuit, pour [[name:Ealaane Nimbuswalker]]
+- 94897 | ai fouillé les ruines de Ban'aethal à la recherche de Resaan, retourné chercher des vivres, et n'ai rapporté à [[name:Ealaane Nimbuswalker]] que son héritage
+- 94946 | suis $gmonté:montée; à bord du fend-ciel de [[Zephras Isle]] pour Dalaran avec l'avant-garde de l'Ordre suprême, pour chercher sur Azeroth le moyen de sauver l'île
+- 94978 | ai apprivoisé un clampant chantevent avec le bâtonnet de [[name:Quel'ana Quickgale]], le premier défi pour apprendre le lien entre la bête et son maître
+- 94979 | ai gagné la confiance d'un trotteur des trombes hargneux dans [[Gustberry Lowlands]], la deuxième épreuve de dressage de [[name:Quel'ana Quickgale]]
+- 95349 | ai fait la traversée en fend-ciel de [[Zephras Isle]] jusqu'à [[Mulgore]] avec l'avant-garde des Sculpte-vents envoyés sur Azeroth
+- 96101 | me suis $gassis:assise; près du feu de camp de [[name:Raan Wildwind]] pour apprendre les bases de la survie en plein air
+- 96638 | suis $gallé:allée; trouver [[name:Raan Wildwind]], un aventurier qui campait aux abords de [[Shen'dar Village]], pour apprendre ce qui pourrait m'aider sur la route
+- 96646 | ai appris la cuisine auprès de [[name:Zerril Softbreeze]], le premier pas vers un feu de camp et un campement bien à moi n'importe où dans la nature
+- 97243 | ai porté la torche de la Flamme dormante à [[name:Olariaan Swiftburn]] au sanctuaire des Flammes, pour commencer à apprendre à écouter l'appel du feu
+- 97244 | ai tué le prêtre céleste Faladiel, un Sculpte-vent devenu sectateur, le sang de ses anciens frères sur les mains, pour le cœur dont le rituel du feu avait besoin
+- 97245 | ai fait sortir de sa souche l'ancien esprit de la forêt Kuramaa, près du pylône d'ancrage des hautes-terres, où seul le feu pouvait le blesser, pour son masque
+- 97257 | ai porté la flamme éternelle du rituel de [[name:Olariaan Swiftburn]] jusqu'à [[Valanaar]] avant qu'elle ne s'éteigne, et allumé le brasero pour achever l'épreuve du feu
+- 97963 | ai obtenu la leçon de [[name:Nyassa Swiftdraught]] pour fabriquer un puits de mana de campement, un attrait pour tous les soigneurs et lanceurs de sorts alentour
+- 97964 | ai prouvé mon talent à la forge jusqu'à ce que [[name:Aedi Thriceforged]] m'enseigne la meule, pour que guerriers et voleurs aiguisent leurs lames au campement
+- 97965 | ai pratiqué les premiers soins jusqu'à ce que [[name:Naleeia Tattermend]] m'enseigne la trousse de secours, des soins au campement qui pourraient même sauver des vies
+- 97967 | ai pêché jusqu'à ce que [[name:Fenn Fairweather]] m'enseigne le bocal à poissons, un peu de joie pour un campement en pleine nature et les combattants qui l'entourent
+- 97968 | ai cueilli des herbes jusqu'à ce que [[name:Syriel Nightrain]] m'enseigne la bougie d'encens, pour garder le moral des soigneurs et des lanceurs de sorts d'un campement
+- 97969 | ai travaillé le cuir jusqu'à ce que [[name:Indari Sunseam]] m'enseigne à fabriquer une tente de campement, fraîche les jours de chaleur et sèche les jours de pluie
+- 97970 | ai extrait du minerai jusqu'à ce que [[name:Messana Crestwind]] m'enseigne la magnétite, qui renforce tous ceux qui combattent autour d'un campement
+- 97971 | ai dépecé jusqu'à ce que [[name:Mendalass Tattermend]] m'enseigne la chaise de camp, un siège confortable où se reposer avant le prochain combat
+- 97972 | ai cousu jusqu'à ce que [[name:Taleen Shimmerthread]] m'enseigne la bannière de ralliement, une bannière inspirante pour garder un campement plein d'énergie
+- 97973 | ai cousu de l'étoffe jusqu'à ce que [[name:Taleen Shimmerthread]] m'enseigne la bannière de ralliement, une bannière pour garder le moral autour d'un campement
+- 98284 | me suis $gmis:mise; à l'enchantement jusqu'à ce que [[name:Nasalanna Windsinger]] m'enseigne le luth enchanté, de la musique pour les heures creuses d'un campement sur la route
+- 98285 | ai bricolé jusqu'à ce que l'étrange ermite m'enseigne à fabriquer un robot à composants, l'un des assemblages utiles dont un campement a besoin
+- 98286 | ai pratiqué l'enchantement jusqu'à ce que [[name:Nasalanna Windsinger]] m'enseigne le luth enchanté, pour distraire un campement pendant les jours difficiles sur la piste
+- 98512 | ai débarrassé une maison sur la colline au nord de la patrouille de [[name:Fendaal Windstone]] de ses assassins al'aketh
+- 99260 | ai porté à [[name:Elaadrin Evengale]] la nouvelle de [[name:Fillion Flamebreeze]] : les relevés permettant de guider les fend-ciel à travers le plan élémentaire étaient perdus

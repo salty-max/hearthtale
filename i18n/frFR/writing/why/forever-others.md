@@ -1,0 +1,468 @@
+# French: the deeds of writing/why/forever-others.md, after "je"
+
+- 908 | ai plongé dans [[Blackfathom Deeps]] pour le noyau de la Brasse, pour que [[name:Je'neu Sancrea]] et le Cercle terrestre arrêtent le Marteau du crépuscule qui s'y trouvait
+- 86757 | ai arraché épées et dagues aux grunts et aux éclaireurs orcs de l'est de [[Ashenvale]] pour Shandrina, pour repousser les orcs hors de la forêt
+- 98251 | ai décimé les bêtes autour d'un ravin de [[Ashenvale]] pour Va'xug Firefure, perdu là et furieux contre la forêt
+- 98252 | ai guidé l'Œil de Kilrogg de Va'xug Firefure hors du ravin jusqu'à la route de [[Ashenvale]], pour que le démoniste égaré puisse le suivre et en sortir
+- 98417 | ai cherché parmi les démons de Satyrnaar, à l'ouest du Chant des forêts, Kurothel, le mari que Maseara Autumnmoon sentait encore dans les bois
+- 98418 | ai tué les satyres de [[Xavian]] dont les démons attisaient la transformation brûlante de Kurothel, pour que Maseara Autumnmoon puisse un jour le revoir
+- 65593 | me suis procuré les cœurs d'Avelina Lilly et d'Isaac Pearson, des amants aux deux bouts du monde, comme appât pour l'incube de Carendin Halgar
+- 86784 | ai ramassé du bois pour le camp d'Eleanor Shackleton dans les collines, une vagabonde qui connaissait la nature sauvage de [[Tirisfal Glades]]
+- 90902 | ai soigné des gardes de la Mort blessés par la Lumière, malgré la douleur qu'elle leur causait désormais, pour réveiller ce que la mort avait émoussé
+- 91208 | ai cherché une paladine fraîchement relevée qui s'était enfuie dans les collines, pour la ramener à la Lumière si l'on pouvait encore l'atteindre
+- 91285 | ai repoussé les murlocs Aileron noir loin de [[Bandarion Keep]], dont le nouvel ordre de paladins avait pris les frayères
+- 91316 | ai récupéré du bois dans une cave à légumes du Val-d'Ombre en ruine pour rebâtir [[Bandarion Keep]], loin des vivres de [[Undercity]]
+- 91317 | ai achevé les Ternis du Val-d'Ombre et pris la tête de leur commandant Rudolph Gelhardt, des paladins relevés qui tuaient encore des Réprouvés
+- 92422 | ai détruit Rath'mael, le nécromancien dont le brouillard impie cachait le Fléau dans les rues de [[Ruins of Lordaeron]]
+- 94438 | ai relevé le garde de la Mort Falgan avec le symbole de vie au val des Tisse-venin, où il était resté pour que son ami Billmuth puisse fuir les écarlates
+- 94440 | ai saisi les plans d'attaque de la Croisade écarlate au val des Tisse-venin, pour que les gardes de la Mort tendent une embuscade avant que [[Brill]] ne soit frappé
+- 95314 | ai récupéré des bouteilles d'élixir murmurant dans le Val-d'Ombre en ruine pour Carolai Anise, une boisson interdite que ses acheteurs attendaient avec impatience
+- 95328 | ai vendu le résidu frétillant d'une horreur murmurante au père Lankester à [[Undercity]], qui étudiait l'empreinte du Vide sur cette forêt
+- 95803 | ai présenté la tête de Rudolph Gelhardt à Sylvanas Windrunner, pour montrer à la Dame noire que les paladins faisaient le ménage chez eux
+- 96607 | me suis $gréchauffé:réchauffée; au feu de camp d'Eleanor Shackleton près de [[Brill]] pendant qu'elle m'apprenait à rester $greposé:reposée; et $gprêt:prête; dans la nature
+- 96656 | suis $gallé:allée; voir pour l'exécuteur Arren un étranger qui campait près de [[Brill]], et trouvé Eleanor Shackleton, une vagabonde et non une écarlate
+- 96895 | ai suivi un émissaire de l'Aube d'argent vers les portes de [[Undercity]], où l'on avait vu des cultistes du Fléau fureter
+- 96896 | ai écouté Leonid Barthalomew évoquer Garek Bandarion, peut-être le premier Réprouvé à manier de nouveau la Lumière
+- 96897 | ai tué les néophytes et les exécuteurs du Culte des damnés qui furetaient aux portes de [[Undercity]], pour Hadric Harlson de l'Aube d'argent
+- 96898 | ai ramassé les éclats de cristal nécrotique éparpillés quand [[Naxxramas]] avait fondu sur [[Undercity]], avant que les cultistes ne s'en emparent
+- 96899 | ai retrouvé Leonid Barthalomew de l'Aube d'argent à [[Bandarion Keep]], jadis à l'Aube, désormais tenue par les paladins de Danitha
+- 97558 | ai rassemblé des membranes de chauve-souris, des peaux de sombredogue et de la peau de murloc pour Shelene Rhobart, pour rapiécer la peau des Réprouvés, qui ne guérit jamais d'elle-même
+- 98389 | ai libéré les nouveaux relevés des toiles du creux de la Toile nocturne pour [[name:Aramis Hammerhand]], pour montrer aux Réprouvés que leurs paladins ne leur voulaient aucun mal
+- 98545 | ai livré la lettre de Leonid Barthalomew à Glix Xizzix à [[Undercity]], qui n'avait jamais accepté le pourboire que Leonid avait promis
+- 99134 | ai puni les gardes de la Mort qui avaient déçu l'exécuteur Zygand
+- 99141 | ai rassemblé les rapports en retard des gardes de la Mort de l'exécuteur Zygand, et celui de l'abomination Gordo
+- 99142 | ai cueilli de l'herbe des tombes à la ferme des Balnir pour l'apothicaire subalterne Holland, une herbe maléfique modifiée qui attirait le Fléau
+- 99144 | ai aidé [[name:Bareth Dawnstone]], un paladin réprouvé de [[Bandarion Keep]], à échapper à la Croisade écarlate à l'avant-poste des Croisés
+- 99152 | ai ramassé des os à la faible lueur sous le Val-d'Ombre pour Hilda la Briseuse, pour comprendre comment une menace du Fléau y avait couvé sans qu'on la remarque
+- 99153 | ai trouvé l'éclat luisant du cristal de focalisation qu'un cultiste avait caché sous le Val-d'Ombre, avant qu'il ne relève d'autres morts
+- 99156 | ai tué Déchirefaille, une abomination errante qui s'était glissée au-delà de [[The Bulwark]] dans l'est de [[Tirisfal Glades]], et rapporté son cœur
+- 65597 | ai invoqué un incube au-dessus des cœurs des amants et l'ai vaincu, l'épreuve que fixait Carendin Halgar avant de m'apprendre à le lier
+- 92421 | ai rassemblé des membres intacts sur le Fléau de [[Ruins of Lordaeron]] pour [[name:Morbin Lightbane]], pour réparer les Réprouvés dont la chair pourrissante ne se ressoudait plus
+- 94434 | ai donné du lin à [[name:Tanis Alderwood]], un mendiant de [[Undercity]], pour envelopper sa femme, qui tombait en morceaux pendant que les apothicaires étaient occupés
+- 95204 | ai apporté un blason de Lordaeron usé à Oran Snakewrithe à [[Undercity]], une rare relique du royaume tombé sous le Fléau
+- 95216 | ai prélevé un échantillon du venin de Crocs-flétris, qui rongeait, disait-on, la chair morte-vivante, pour Theodore Griffs de la Société royale des apothicaires
+- 97288 | ai apporté la tête plusieurs fois recousue d'une étrange abomination au maître apothicaire Faranell à [[Undercity]], qui l'a reconnue aussitôt
+- 97289 | ai posé la tête du baron, autrefois grand maréchal de l'Alliance, à côté du corps d'Othmar pour Faranell, pour qu'on fasse parler ses secrets
+- 97290 | ai tenté d'interroger une abomination inachevée pour le maître apothicaire Faranell, qui adorait les défis
+- 97291 | suis $gallé:allée; chercher autour de [[Undercity]] un chapeau toxique, de l'herbe-cloque et de l'essence d'agonie pour le sérum de Faranell, pour plier le baron à la volonté de la Dame noire
+- 97292 | ai injecté le sérum sifflant de Faranell dans les mécanismes au-dessus d'Othmar, pour lui montrer pourquoi il devait servir loyalement la Dame noire
+- 97891 | ai porté à temps une potion instable de l'autre côté du canal au docteur Martin Felben, après que les six dernières s'étaient gâtées en route
+- 97985 | ai tué Cœur-de-tempête, un énorme lézard-tonnerre de [[Thousand Needles]], pour le cœur encore battant dont Calder Gray avait besoin pour une abomination
+- 65602 | ai récupéré dans une maison de [[Ashenvale]] un souvenir d'amants vieux de milliers d'années, l'appât dont Gakin le Lieur-d'ombre avait besoin pour tenter un incube
+- 65603 | ai appelé un incube avec la vieille figurine dans les cryptes sous l'Agneau égorgé et l'ai vaincu, l'épreuve avant que Gakin ne le lie
+- 92415 | ai montré une lettre tachée de sang du cimetière de Lordaeron à la matrone Nightingale de l'orphelinat, au sujet d'un enfant disparu, [[name:Jeremy Heartweaver]]
+- 92456 | ai cueilli une fleur imprégnée de gangrène dans le jardin central de Dalaran pour Shylamiir, curieuse des plantes du Kirin Tor touchées par le mana
+- 92489 | ai détruit l'Énigme arcanique à Dalaran pour le grand sorcier Andromath, pour aider le Kirin Tor à contenir les énergies arcaniques égarées de la cité
+- 92749 | ai trouvé de la dynamite grossière pour Sprite Jumpsprocket, ravie à l'idée d'un sabotage industriel dans [[Deadmines]]
+- 92751 | suis $gallé:allée; chercher un prototype de détonateur du SI:7 pour Sprite Jumpsprocket, pour déclencher l'explosion sous [[Westfall]] à bonne distance
+- 93963 | ai rendu visite à Magni Bronzebeard, au Grand Bricoleur Mekkatorque et à Tyrande Whisperwind dans leurs capitales, comme Bolvar Fordragon le conseillait à un invité
+- 95065 | suis $gallé:allée; chercher une babiole brillante et des vers pour le vieux Gilbert Gray au port de [[Stormwind City]], à court d'appâts au moment où le poisson mordait
+- 95161 | ai livré la lettre tachée de sang à Avette Fellwood à [[Duskwood]], la nouvelle mère de [[name:Jeremy Heartweaver]], qui n'avait plus parlé depuis la chute de Lordaeron
+- 95195 | ai rassemblé les insignes des soldats tombés de Lordaeron pour le général Marcus Jonathan, à remettre à ce qui restait de leur famille à [[Stormwind City]]
+- 97220 | ai porté une cargaison pour les docks en manque de bras jusqu'à la réserve de la Conciergerie, à laquelle on accédait par la fromagerie Trias, dans le quartier commerçant
+- 97222 | ai monté la cargaison de la Conciergerie par l'escalier de la boutique Trias pour Elaine Trias, qui refusait de la monter elle-même
+- 97234 | ai porté les livres emballés de Roy Lewells à la bibliothèque de [[Stormwind City]] pour son club de lecture, pour les échanger contre des ouvrages plus récents
+- 97237 | ai trouvé sur les rayons de la bibliothèque les tomes choisis par le club de lecture pour Roy Lewells, pour de vives discussions à la cave après les heures
+- 97926 | ai rapporté la réponse de Baros Alexston à Thundris Windweaver : les maigres caisses de [[Stormwind City]] ne pouvaient rien épargner pour [[Auberdine]]
+- 98156 | ai livré les peaux intactes de Kristy Grant à ses sœurs Kelly et Kimberly dans le parc de [[Stormwind City]]
+- 98191 | ai apporté la statuette du roi Terenas au seigneur Grayson Shadowbreaker, pour qu'elle soit gardée à la cathédrale de la Lumière, car la Lumière s'y était rassemblée
+- 65610 | ai fouillé [[Fallen Sky Lake]] [[at:Ashenvale]] à la recherche d'un signe de Krilge, le soldat disparu que Magar refusait de croire déserteur
+- 93739 | ai rendu visite à Vol'jin, Cairne Bloodhoof et dame Sylvanas Windrunner dans leurs capitales, comme Thrall le conseillait à un invité de la Horde
+- 95697 | ai dépecé des raptors des fourrés sur les sites de fouilles pour Borstan, qui voulait une grande version de la cuisine familiale à son feu de camp
+- 96874 | ai arraché des épines aux bêtes de la crête du Tonnerre pour Ug'thok, certain qu'elles feraient un fer de hache redoutable
+- 96875 | ai fourni à Kamari des peaux de lézard de la crête du Tonnerre, pour garnir les murs et les toits des nouveaux bâtiments de [[Orgrimmar]]
+- 96877 | ai porté le sabot d'Halikor, un puissant lézard, à [[Orgrimmar]] pour preuve du combat
+- 97242 | ai coupé des quenouilles et de l'herbe-lance dans [[Valley of Honor]] pour Yelmak, qui comptait donner une leçon à Whuut, son apprenti orgueilleux
+- 97246 | ai porté le déjeuner de Migi du feu de camp de Borstan au garçon derrière le fort Grommash, pour son père inquiet, Thatog
+- 97249 | ai livré au jeune Migi un déjeuner du feu de camp de Borstan derrière le fort Grommash, pour Thatog, qui savait que le garçon sautait des repas pour jouer
+- 97275 | ai donné à Whuut une potion que Yelmak avait préparée avec de l'herbe-lance et des quenouilles ordinaires, pour apprendre au jeune prodige le respect des bases
+- 97326 | ai traîné de gros rochers lisses derrière le fort Grommash pour Thra et ses amis, pour qu'ils aient de quoi s'asseoir pendant leur partie
+- 76156 | me suis $gglissé:glissée; dans la mine de la KapitalRisk sous un piètre déguisement pour voler des charges d'hydroglycérine, l'épreuve de [[name:Boarton Shadetotem]] pour déceler un talent dans les arts subtils
+- 76160 | ai écrasé des cônes de Furie-des-vents tombés sous les nids de harpies pour en faire un poison de lame pour [[name:Boarton Shadetotem]], même si cela a donné du beurre de pignons
+- 76240 | ai levé les filets d'un petit poisson avec deux couteaux devant [[name:Boarton Shadetotem]], son dernier essai pour me trouver un talent caché, qui s'est révélé être l'ambidextrie
+- 97485 | ai fait de l'encens avec des herbes, du cèdre, du tendon et du silex achetés sur les hauteurs, et l'ai dispersé aux vents depuis la colline des Chasseurs, une tradition taurène
+- 98823 | ai porté la relique des Titans à [[name:Muln Earthfury]] du Cercle terrestre au plateau des Guetteurs du ciel, qui en savait plus que quiconque sur les ruines enfouies
+- 78132 | ai récupéré le heaume du Tueur de dragons là où son commandant était tombé et où son âme tourmentée s'attardait encore, pour Alonso
+- 78133 | ai repris le bouclier du Tueur de dragons au seigneur de guerre orc qui l'avait volé en pillant un village humain, pour Alonso
+- 78134 | ai arraché la lance du Tueur de dragons à son peu recommandable propriétaire du marché noir pour Alonso, un pas de plus sur son chemin vers la gloire
+- 78261 | ai volé le cor de Xelthos à [[Shadowfang Keep]], une tâche laissée dans une note signée C, avec l'aide de Veenix pour passer la porte
+- 78823 | ai remis à [[name:Hemet Nesingwary]] un dessin primitif d'un grand oiseau de proie
+- 79007 | ai suivi une note calcinée trouvée dans un camp incendié, dont l'énigme désignait la terre jumelle et la prochaine cachette d'un inconnu
+- 79008 | ai suivi l'énigme d'une note boursouflée trouvée dans un camp incendié, vers la terre jumelle et la prochaine cachette d'un inconnu
+- 79192 | ai pisté l'auteur des notes vers un coin douillet entre [[Barrens]] et la [[Desolace]], après qu'une note avait relié les morts calcinés à des livraisons de la nouvelle peste
+- 79229 | ai cherché [[at:Desolace]] quelqu'un qui connaissait un campement pillé où gisaient deux humains et un nain, tués ni par une bête ni par un centaure
+- 79974 | ai lu l'énigme des cascades pour trouver le nid de l'aigle, la cachette suivante du mystérieux auteur des notes
+- 79975 | ai suivi l'auteur des notes, fidèle à l'Aigle et au Poing, vers une vieille barricade des anciens royaumes
+- 79976 | ai atteint la dernière cachette au mur de Thoradin juste après que l'auteur des notes était retourné dans la clandestinité pour garder son travail à l'abri des mauvaises mains
+- 79980 | ai déterré la réserve que l'auteur des notes avait laissée cent pas au nord, au bas d'une falaise abrupte, avec de quoi continuer
+- 92109 | ai rassemblé des fioles, de la feuille-argent et de la pacifique pour une drôle de petite fille cachée dans une grange de [[Moonbrook]], impatiente d'apprendre l'alchimie comme son papa
+- 93663 | ai retrouvé le long de la route du marais la cargaison d'un coursier gobelin perdu, sans doute l'œuvre d'un crocilisque, et l'ai portée à son marchand à [[The Harborage]]
+- 94215 | ai porté une potion de liberté d'action à l'endroit que marquait une commande d'artisan, où un gnoll Groin-boueux se débattait dans de la soie d'araignée
+- 94220 | ai remis une dague à manche de nacre commandée par écrit à [[name:Alan Sneeks]], en faction en Alterac contre le Syndicat
+- 94228 | ai fourni des bottes en fer vert sur commande à Kixxle, qui pataugeait depuis des jours [[at:Wetlands]] les pieds trempés
+- 94231 | ai livré un fusil vision-lunaire sur commande à Grembly, qui se faisait discret [[at:Ashenvale]] et brûlait de l'essayer sur un satyre
+- 94236 | ai fourni une grosse bombe en bronze sur commande à Razzeric, qui voulait toute une variété de bombes à tester
+- 94244 | ai équipé Narkk d'épaulières en cuir sombre sur commande, un pirate lassé des griffes d'un oiseau criard sur son épaule
+- 94247 | ai remis une robe de sorcier inférieur à [[name:Alan Sneeks]], un homme en cuir sombre qui surveillait Dalaran pour le Kirin Tor
+- 94254 | ai livré une robe d'adepte supérieur sur commande au magus Tirth, pour qu'il porte enfin la robe et le chapeau de sorcier ensemble
+- 94505 | ai apporté l'éclat d'eau de l'esprit purifié de l'étang de Stendel à Norric Lochthane, la preuve qu'il demandait avant le totem d'eau
+- 95189 | ai rapporté des ruines un blason de Lordaeron usé à dame Dena Kennedy à [[Stormwind City]], l'une des rares reliques qui restaient du royaume tombé
+- 95250 | ai fouillé [[Ruins of Lordaeron]] à la recherche du grand maréchal dont le capitaine Truman attendait encore le retour, et rapporté la tête du baron
+- 95795 | ai annoncé à Dorin Songblade, à [[Lakeshire]], que son frère Daewyn était mort sur les sites de fouilles
+- 95809 | ai apporté à Caitlin Grassman le cœur de roseau qu'Ardin avait tressé sur le site de fouilles, la nouvelle qu'il avait survécu et rentrait chez lui
+- 95883 | ai pris une âme torturée aux morts-vivants du Péril de Beren, l'une des pièces qui manquaient encore au rituel de la pierre des offrandes
+- 95884 | ai suivi un bout de note jusqu'à la pierre des offrandes du Péril de Beren, où quelqu'un avait disposé de quoi faire un rituel
+- 95885 | ai offert mon sang de plein gré à la pierre du Péril de Beren et affronté l'âme torturée qu'elle avait libérée, pour achever un rituel au but inconnu
+- 96395 | ai apaisé l'esprit de [[name:Faldrim Anvilmar]], un thane rongé par une ancienne rancune, à la supplique de son serviteur fantôme
+- 98027 | ai rendu un collier en croissant d'argent gravé au nom de Maliynn à sa propriétaire à [[Astranaar]]
+- 98059 | ai glissé la demande scellée du capitaine McManus sur la table du conseil de [[Hillsbrad Foothills]], après qu'il avait ignoré toutes les lettres réclamant des soldats
+- 98297 | ai tué les démonistes qui tenaient un draconide rouge enchaîné aux portes de Dragonmaw, et mis fin aux souffrances de la créature, comme le demandait [[name:Howin Kindfeather]]
+- 79358 | ai rassemblé des totems tordus des quatre éléments pour [[name:Veyric Thunderhame]], pour comprendre comment les hurans retournaient les éléments et préparer un contre-rituel
+- 79624 | ai porté une recette ogre illisible à Skonk, le seul ogre qui sache la lire et qui se soucie de cuisine
+- 92519 | suis $gallé:allée; chercher une caisse de toniques au laboratoire de l'apothicaire Jorell, à la ferme de Go'shek, pour l'infirmerie du docteur Gregory Victor à [[Hammerfall]]
+- 92707 | ai rapporté à Drum Fel, à [[Hammerfall]], les énormes protège-poignets d'un goliath abattu, un avertissement de ce qu'il affrontait
+- 92867 | ai chassé les Rochepoing, le Syndicat et les Witherbark de [[Stromgarde Keep]] pour Lomar, gardien des lieux et de ses tombeaux
+- 92872 | ai jeté une bourse de poussière de tombeau dans la Grande mer depuis les falaises derrière [[Stromgarde Keep]], le rite de renouveau de la crypte
+- 94221 | ai apporté un bâtonnet doré commandé par écrit à [[name:Muggol Breezebeard]], qui espérait qu'il l'aiderait à communier avec les pierres de lien
+- 96016 | ai apporté l'Œil de la tempête à Bath'rah le Guetteur des vents, un chaman troll versé dans les élémentaires de tempête, pour qu'il en fasse une arme
+- 96135 | ai planté des totems tordus près des bassins de vapeur de [[Thousand Needles]] pour invoquer les élémentaires des hurans et mettre fin au rituel des Tranchecrin
+- 96264 | ai vaincu [[name:Charlga Razorflank]] dans [[Razorfen Kraul]] pour savoir quel rituel les hurans préparaient en masse, tandis que la terre grondait
+- 97539 | ai récolté de la soie d'araignée pour les sutures de terrain du docteur Gregory Victor, pour que l'infirmerie délaissée de [[Hammerfall]] continue de fonctionner
+- 79360 | ai vaincu [[name:Charlga Razorflank]] dans [[Razorfen Kraul]] pour connaître les plans des hurans, l'une des causes des troubles élémentaires que sentait Bath'rah le Guetteur des vents
+- 79361 | ai rassemblé des totems tordus des quatre éléments pour Prate Cloudseer, pour repousser la tempête dont les hurans comptaient noyer [[Thousand Needles]]
+- 79366 | ai planté les totems tordus aux bassins de vapeur pour appeler les élémentaires corrompus et mettre fin au rituel des hurans, jusqu'à ce que le sol grondant se taise
+- 98069 | ai récupéré les vivres que les harpies avaient pris à la dernière caravane en route pour [[Freewind Post]], avant que le poste ne manque de tout
+- 98070 | ai tué les harpies Hurlantes qui prenaient en embuscade chaque caravane traversant leur canyon, pour que les voyageurs osent faire le trajet jusqu'à [[Freewind Post]]
+- 79362 | ai trouvé la masse de Grant Valor sur le squelette du cimetière de la [[Raven Hill]] qui l'avait blessé, peut-être l'affaire inachevée qui retenait son esprit
+- 79363 | ai chassé les Défias de [[Addle's Stead]], peut-être l'affaire inachevée de l'esprit de Silvia Valor, qui gardait de son vivant les maisons de la [[Raven Hill]]
+- 96138 | ai chassé les ogres Poing-de-pierre près de la [[Raven Hill]], peut-être l'affaire inachevée de l'esprit de Merrick Valor, qui avait gardé ses routes sûres
+- 96139 | ai fouillé la [[Raven Hill]] à la recherche de la moindre trace de son histoire perdue pour Sirra Von'Indi, qui voulait qu'on se souvienne de ses habitants tombés
+- 98372 | ai pris la torche éteinte d'un guetteur de nuit déchiqueté par quelque grosse bête, une lumière pour révéler ce que cachaient les ténèbres de [[Duskwood]]
+- 86574 | ai récupéré dans les nids des wyvernes Aile-fière les vivres d'un coursier mort, une cargaison destinée à l'aubergiste Faralia au pic des Serres-Rocheuses
+- 86576 | ai rassemblé les pierres de soleil dorées que les harpies Rougefurie amassaient dans [[Charred Vale]], pour Mor'rogal, qui en avait l'usage
+- 86585 | ai dressé la bannière piétinée d'une montagnarde de [[Ironforge]] tombée au combat pour défier Fendeur-de-crânes, le trogg qui l'avait tuée
+- 86613 | ai rapporté les outils que les fouilleurs avaient abandonnés quand les troggs avaient envahi leur camp, pour le chantier à l'arrêt de Magmar Fellhew
+- 86614 | ai rendu une barrette en argent trouvée dans les décombres à sa propriétaire, qui l'avait crue perdue
+- 86667 | ai rempli un bocal de neige au col de la Porte du sud pour les travaux chamaniques de Norric Lochthane, et le lui ai porté avant qu'elle ne fonde
+- 86758 | ai chassé Crochedague, le crocilisque qui avait failli prendre la main de Marek Ironheart, pour la sécurité des autres chasseurs du lac
+- 86776 | ai fondu des barres de bronze pour Morhan Coppertongue, dont la forge de [[Thelsamar]] manquait sans cesse de métal pour les outils, les bouilloires et les marmites
+- 94466 | ai arraché du goudron de feu aux géomanciens rats des tunnels et une bourse à un prophète Brisepierre, pour que [[name:Braldir Ashmantle]] prépare le sapta de feu
+- 94467 | ai vaincu une manifestation du feu au sommet du sanctuaire de la Flamme éternelle et allumé le brasero avec sa braise, pour gagner la faveur du feu
+- 94502 | ai purifié la corruption qui avait fait taire les esprits de l'étang de Stendel près de [[Moonbrook]], la dernière épreuve du rite de l'eau
+- 490 | ai rassemblé des crocs de Pin-tordu pour la prime de la sentinelle Shayla Nightbreeze, la corruption des furbolgs les ayant rendus dangereux pour les clairières
+- 87288 | ai dépecé les sabres-de-nuit agressifs de [[Teldrassil]] pour Aldia, une marchande de [[Dolanaar]] qui en ferait des couvertures et des châles
+- 96606 | me suis $gassis:assise; au feu de camp de [[name:Lyreena Duskblade]] près de [[Dolanaar]] pour apprendre comment une vagabonde reste reposée et prête dans la nature
+- 96630 | ai rendu un journal perdu à sa propriétaire, [[name:Lyreena Duskblade]], une aventurière qui campait près de [[Dolanaar]]
+- 97236 | ai offert le croc de Githyiss, une grande araignée, à un étudiant des araignées à [[Aldrassil]]
+- 97977 | ai fouillé les camps abandonnés des Pin-tordu à la recherche de totems dont les gravures diraient peut-être à Tarindrella pourquoi les furbolgs s'étaient retournés contre les elfes
+- 98046 | ai porté la fiole vidée de Fandral Staghelm à Lariia au temple de la Lune, qui y a trouvé encore quelques gouttes
+- 98065 | ai présenté à Tyrande Whisperwind les restes du puits de lune de l'incantation ratée de Fandral, une eau bénie par Elune
+- 98392 | ai arraché les amulettes de trois cheffes harpies pour la sentinelle Arynia Cloudsbreak, pour prouver d'où venait la souillure de leurs ceintures
+- 98398 | ai entendu l'Arbre de l'oracle parler à travers un morceau de son écorce tombée, avec une tâche qu'il souhaitait voir accomplie
+- 98403 | ai abattu Xethorr le Malfaisant dans la Faille, le satyre qui pervertissait les araignées de [[Teldrassil]] avec de la gangremousse
+- 99046 | ai fouillé la route de la clairière de l'Oracle à la recherche de la sentinelle Eralya Leafshadow, une messagère encore en formation, très en retard avec le message de l'Arbre de l'oracle
+- 99047 | ai couru chercher de l'aide auprès de Byancie à [[Dolanaar]], pendant que la sentinelle Eralya Leafshadow agonisait des blessures infligées par les harpies souillées
+- 99050 | ai rassemblé des frondes de flagellant, une fiole et de l'eau de source pour le baume de Byancie, pour contenir la pourriture assez longtemps pour ramener Eralya
+- 99053 | ai fait sortir la sentinelle Lynessa Duskblossom de [[Ban'ethil Barrow Den]], où les Pin-tordu l'avaient traînée avant qu'elle ne puisse délivrer son message
+- 99073 | ai porté le baume de Byancie à la sentinelle Eralya Leafshadow sur la route, pour apaiser ses souffrances s'il ne pouvait la guérir
+- 87318 | ai fouillé [[Thandol Span]] à la recherche de [[name:Essene Villard]], disparue quand les Sombrefer s'étaient abattus sur elle et sur son compagnon Corma
+- 87491 | ai escorté un élémentaire de feu que les Sombrefer gardaient en cage à [[Dun Modr]] jusqu'à la liberté, impatient qu'il était de tous les brûler
+- 88756 | ai repris les explosifs que les Sombrefer avaient emportés à la colline de Fer-terrible, avant qu'ils ne fassent des bêtises avec la poudre
+- 88757 | ai retrouvé le collier, le grimoire et l'outre que [[name:Essene Villard]] avait laissés tomber en fuyant les Sombrefer
+- 88758 | ai rapporté la note de [[name:Essene Villard]] à Corma Villard, la nouvelle qu'elle était en vie et en chemin
+- 94497 | ai rempli une outre là où les chutes sous la grotte d'Hervdana Saegrund rejoignent le marais saumâtre, son premier échantillon pour le sapta de l'eau
+- 94499 | ai puisé de l'eau aux chutes de Guet-de-pierre, près des murlocs Rampe-nuit difformes, pour qu'Hervdana Saegrund sache ce qui la souillait
+- 94500 | suis $gallé:allée; jusqu'à [[Astranaar]] [[at:Ashenvale]] pour un échantillon de l'eau pure et ancienne de son lac, le dernier dont Hervdana Saegrund avait besoin
+- 94501 | ai porté la fiole d'eau la plus pure d'Hervdana à Norric Lochthane, qui avait une dernière tâche avant les rites de l'eau
+- 95646 | ai tué une horreur des hautes-terres sur les sites de fouilles pour son noyau de racine, la corruption que Rethiel le Gardevert sentait suinter le long du ravin
+- 95647 | ai fouillé les sites de fouilles à la recherche d'Ardin Grassman, parti trop longtemps après des herbes plus hautes que toutes celles qu'on avait vues, pour sa femme Caitlin
+- 95663 | ai retrouvé un agent des traqueurs noirs au-dessus du camp dragonmaw, pour savoir quelle démonstration de magie de lien des dragons s'y préparait
+- 95682 | ai chassé les Dragonmaw des sites de fouilles pour que les traqueurs noirs s'y glissent sans être vus, et pris les ordres qu'ils portaient
+- 95737 | suis $gallé:allée; voir Caitlin Grassman à [[Menethil Harbor]] pour Llana, dont les lettres sur une herbe primordiale étaient restées sans réponse
+- 95810 | ai présenté à Whelgar le prospecteur une relique des Titans fracturée, prise sur l'automate de roche, pour savoir quel genre d'appareil c'était
+- 98072 | ai rassemblé des écailles de dragonnet cramoisi le long de la Ceinture verte pour James Halloran, qui les estimait bien plus que les peaux de crocilisque
+- 98189 | ai achevé la dernière livraison de la Princesse aveugle en portant la statuette de Menethil au capitaine Stoutfist au donjon de Menethil
+- 98190 | ai porté en hâte la statuette de Menethil, un rare mémorial du roi Terenas, à Bolvar Fordragon, hors de portée des Dragonmaw
+- 98197 | ai récupéré dans le port du bois et du fer de Khaz Modan, volés jadis pour la flotte de l'ancienne Horde, pour renforcer Menethil contre les Dragonmaw
+- 98208 | ai récupéré Nord'el, une fleur du sommet du mont Hyjal, dans l'épave du Balbuzard volant aux mains des murlocs, pour [[name:Sylessa Duskwhisper]]
+- 98209 | ai porté Nord'el, la fleur des Cieux, à Thundris Windweaver à [[Auberdine]] pour Sylessa, épuisée
+- 98216 | ai réveillé le gardien de Goaz avec sa propre pierre et pris sa clé de voûte titanesque pour le prospecteur Whelgar, alarmé par les rumeurs sur les Dieux très anciens
+- 98221 | ai détruit les plans d'attaque des Dragonmaw dans le campement de Croc-colère pour le capitaine Stoutfist, pour savoir où ils comptaient frapper ensuite
+- 98223 | ai apporté au capitaine Stoutfist un grimoire dragonmaw brûlé sur l'Âme du démon, rapiécé par Nek'rosh, dont l'encre fraîche nommait un Conseil des ombres
+- 98230 | ai cherché [[name:Howin Kindfeather]] sur la route à l'est de Menethil, l'un des premiers Wildhammer revenus [[at:Wetlands]] depuis la chute de Grim Batol
+- 98240 | ai porté une caisse d'écailles de dragonnet à [[name:Howin Kindfeather]], qui avait envoyé son griffon en ville avec la commande
+- 98245 | ai rassemblé des incisives de Tranchegueule pour [[name:Howin Kindfeather]], assez tranchantes pour travailler les écailles de dragonnet qui protègent du feu des dragons
+- 98246 | ai rassemblé des œufs de Tranchegueule parfaits pour [[name:Howin Kindfeather]], pour remplir le ventre de son griffon Bec-de-bar avant que son plan puisse avancer
+- 98282 | ai prélevé une glande à venin intacte sur les araignées du rocher de Thelgen pour Caitlin Grassman, à qui il fallait un antivenin avant de ressortir
+- 98283 | ai attiré Carnage, l'alpha fou des raptors Tranchegueule, avec de la chair d'ours malade, et pris sa tête pour Rethiel le Gardevert
+- 98291 | ai décimé les Dragonmaw le long de leur ancienne route de retraite pour que [[name:Howin Kindfeather]] approche de Grim Batol et la reprenne pour les Wildhammer
+- 98293 | ai saisi les armes que les Dragonmaw amassaient le long de leur retraite pour le capitaine Stoutfist, avant que d'autres de leurs soldats ne soient armés
+- 98310 | ai réveillé les golems Ados, Modr, Golm et Neru dans tous [[Wetlands]] avec la pierre de Goaz et pris leurs cœurs pour le prospecteur Whelgar
+- 98313 | ai porté le lot de reliques du prospecteur Whelgar à l'historien Karnik à [[Ironforge]], un mystère qui demanderait une armée d'érudits pour être percé
+- 98815 | ai chassé les raptors des fourrés sur le site de fouilles des hautes-terres pour leurs peaux, pour un échange avec James Halloran, le tanneur de [[Menethil Harbor]]
+- 98824 | ai fait don de la relique des Titans au grand explorateur Magellas, dans la salle des Explorateurs de [[Ironforge]], pour qu'elle soit cataloguée pour le musée
+- 87760 | ai tué la maîtresse des bêtes Écaille-tempête dans les ruines de Mathystra pour son bâtonnet, pour que les nagas ne puissent plus asservir les batteurs et les tortues de mer
+- 97894 | ai fait la traversée jusqu'à [[Auberdine]] pour prendre des nouvelles de Gorbold Steelhand pour son frère Borgus, et trouvé son commerce à l'arrêt après une tragédie
+- 97914 | ai porté la lettre de Thundris Windweaver à Baros Alexston à [[Stormwind City]], sa supplique pour qu'on reconnaisse [[Auberdine]] et son travail
+- 98013 | ai abattu pour Arbal les nagas Écaille-tempête des ruines, des Bien-nés maudits qui pourraient aider le Marteau du crépuscule contre les forêts
+- 98025 | ai tué Jai'vhanel, une chouette noire longtemps gardienne des routes de [[Darkshore]], devenue folle et retournée contre les voyageurs en route pour [[Auberdine]]
+- 98028 | ai porté le globe d'eau trouble du baron Marinous, le gardien élémentaire d'une ruine, à Onu au bosquet des Anciens
+- 98042 | ai saisi un œil sans pareil aux cultistes du crépuscule au Glaive du maître pour Thundris Windweaver, qui y voyait la marque d'un mal ancien
+- 98461 | ai porté par-delà la mer la note de Hollee à Tarrel Rockweaver, un ancien camarade de classe qu'elle regrettait encore, désormais heureux en ménage
+- 91723 | ai décimé les géomanciens kobolds de [[Jasperlode Mine]], dont la magie grossière faussait sans cesse les instruments de Hamish Bergwort
+- 91724 | ai arrêté les sorciers défias du lac du Cairn, dont les sorts dérangeaient encore les instruments de Hamish Bergwort dans la tour d'Azora
+- 91725 | ai retrouvé les fournitures d'enchantement que les gnolls avaient prises à [[name:Blixie Fitzwink]], lui épargnant des semaines de nettoyage après les expériences de métamorphose de Theocritus
+- 91732 | suis $gallé:allée; chercher des pioches de belle facture au fond de [[Jasperlode Mine]] pour Hagar Lowe, dont les outils de bûcheron avaient souffert du manque de bon acier
+- 91733 | ai repêché dans la rivière sous Valdest la hache, la scie et la boîte à outils d'Ormin Pelford, emportées quand son chariot s'était renversé, parmi les murlocs et les loups
+- 91738 | ai offert au sergent De Vries une bouteille de Thunder Applejack, la première que ses troupes voyaient depuis des mois
+- 91740 | ai porté la tête de Croassard, le chef murloc dont les siens avaient coûté deux hommes à la garde, à la tour de la Crête
+- 91741 | ai rendu un livre qu'un kobold avait tenté de manger à la petite bibliothèque que le frère Paxton tenait à l'abbaye
+- 91743 | ai sauvé les livres du frère Paxton des kobolds de [[Northshire Valley]] avant qu'ils ne dévorent, comme il le craignait, toute sa bibliothèque
+- 91745 | ai demandé à [[name:Kelsey Fargo]], l'apprentie mineuse à l'entrée de [[Echo Ridge Mine]], ce que les kobolds faisaient des livres de l'abbaye
+- 91746 | ai remis la tête de Patte-d'orme à Helene Peltskinner près de [[Goldshire]], un trophée qu'elle préparerait pour la cheminée d'un collectionneur
+- 91751 | ai dépecé les loups de [[Elwynn Forest]] pour Helene Peltskinner, à qui il fallait des peaux pour finir ses commandes pendant que son mari était occupé près de l'abbaye
+- 91752 | ai arraché le sac de livres d'images à Narf Trouvebrillant au fond de [[Echo Ridge Mine]], qui les avait fait voler par ses kobolds
+- 91753 | ai désenchanté les effigies de cire des kobolds pour Kitta Firewind, une leçon sur la magie grossière qu'ils pratiquaient sans aucune instruction
+- 91758 | ai demandé l'aide de [[name:Tordrin Sternblade]] pour pister un kobold sorti de la mine avec un sac de livres de l'abbaye
+- 91772 | ai suivi les traces d'un kobold emportant un sac de livres volés, des traces qui menaient vers [[Fargodeep Mine]]
+- 91775 | ai fouillé [[Fargodeep Mine]] à la recherche des livres volés du frère Paxton, surtout Jouer avec les élémentaires, dont même un kobold pourrait se servir pour invoquer un serviteur
+- 91777 | ai récupéré les deux derniers livres du frère Paxton dans [[Jasperlode Mine]], où le maître des kobolds invoquait peut-être des élémentaires
+- 92124 | ai demandé à Daniel, l'assistant du frère Paxton, combien de livres les kobolds avaient emportés de la bibliothèque de l'abbaye
+- 94792 | ai apprivoisé un sanglier Peau-de-roche avec le bâtonnet de domptage de [[name:Josephine Carson]], la première leçon d'un chasseur pour gagner la confiance d'une bête
+- 94863 | ai apprivoisé un loup gris des forêts avec le bâtonnet, la leçon suivante de [[name:Josephine Carson]] pour gagner la confiance de compagnons plus féroces
+- 94864 | ai apprivoisé un jeune ours des forêts, le dernier défi de [[name:Josephine Carson]] pour prouver qu'un chasseur pouvait gagner même le plus puissant des compagnons
+- 95998 | me suis $gassis:assise; près du feu de camp de [[name:Sam Sarsaparilla]] près de [[Goldshire]] pendant qu'il m'apprenait comment une âme sans repos pouvait s'épanouir dans la nature
+- 96627 | suis $gallé:allée; voir un nouveau venu qui campait près de [[Goldshire]] pour le maréchal McBride, inquiet, et trouvé [[name:Sam Sarsaparilla]], un aventurier amical
+- 99127 | ai vérifié les nasses de Jason Mathers au lac de Cristal, qui ne contenaient que des poissons à moitié mangés
+- 99128 | ai décimé les murlocs du lac de Cristal pour Jason Mathers, avant qu'il n'y reste plus un seul poisson
+- 99129 | ai demandé à Remy Deux-fois comment tenir les murlocs loin des poissons de Jason Mathers
+- 99130 | ai rassemblé des pétales d'ombrelle et du sang de bête pour Remy Deux-fois, pour faire un appât empoisonné qui apprendrait aux murlocs à garder leurs distances
+- 99131 | ai apporté à Jason Mathers la nouvelle de l'appât empoisonné de Remy Deux-fois, pour qu'il puisse de nouveau vendre son poisson sans les murlocs
+- 99143 | ai fouillé le camp murloc à la recherche de babioles brillantes dont Lee Brown espérait faire de bons appâts
+- 91860 | ai fouillé [[Fenris Isle]] à la recherche des émissaires disparus du Cercle terrestre, un tauren et une elfe encapuchonnée, et trouvé le corps de l'émissaire tauren sur le bûcher des gnolls
+- 91861 | ai fouillé [[Fenris Keep]] à la recherche de l'elfe du groupe du Cercle terrestre, dans l'espoir qu'elle soit encore en vie quelque part à l'intérieur
+- 91862 | ai libéré de la cage des gnolls de [[Fenris Keep]] [[name:Lumina Windsinger]], une Sculpte-vent shen'dorei venue étudier les éléments avec le Cercle terrestre
+- 91920 | ai porté des yeux de murloc à l'apothicaire Renferrel pour un meilleur remède, puisque sa potion de cœurs n'avait rien fait pour Quinn Yorick
+- 91921 | ai porté en hâte la nouvelle potion de Renferrel à Quinn Yorick à [[Ivar Patch]], qui commençait à se résigner à devenir une goule
+- 92401 | ai découvert le sort de [[name:Edward Heartweaver]] pour sa femme Tabitha, disparu dans [[Ruins of Lordaeron]] en cherchant leur fils perdu
+- 95036 | ai rassemblé du bois, de l'argent et une gemme pour la lame dont Trevan Rol avait besoin contre le vieux Œil-de-feu, le worgen qui refusait de rester mort
+- 95111 | ai proposé la commande de la lame à Ott, un humble fabricant d'armes de [[Tarren Mill]], l'occasion de faire quelque chose de vraiment spécial
+- 95140 | ai tué le vieux Œil-de-feu près des portes de Gilnéas avec la lame d'argent-lune, le worgen qui avait condamné Banon, le compagnon de [[name:Lumina Windsinger]]
+- 95981 | ai décimé les sorciers et les veilleurs de Dalaran sur les routes autour de [[Ambermill]], pour empêcher les pendentifs du Kirin Tor d'entrer dans [[Silverpine Forest]]
+- 96204 | ai escorté [[name:Lumina Windsinger]] hors de [[Fenris Keep]] pendant qu'elle faisait regretter aux gnolls d'avoir jamais mis en cage une Sculpte-vent
+- 96984 | ai atteint la citadelle Pourpre, où avait commencé le dérèglement de Dalaran, pour aider à empêcher une catastrophe et prendre sa particule arcanique pour Wordeen Voidglare
+- 96988 | ai arraché des noyaux fêlés aux assemblages déchaînés de Dalaran pour le docteur Martin Felben, qui rêvait d'une armée d'abominations arcaniques
+- 98298 | ai mis en pièces des worgens près de [[Greymane Wall]] pour Dalar Dawnweaver, pour comprendre comment leur malédiction se répandait, puisque Arugal ne pouvait que les lier
+- 98299 | ai abattu les réfugiés humains près de [[Greymane Wall]] pour Dalar Dawnweaver, avant que la malédiction worgen ne fasse d'eux les serviteurs d'Arugal
+- 92110 | suis $gallé:allée; chercher des yeux de murloc pour l'étrange enfant de la grange de [[Moonbrook]], pour qu'elle prépare sa première vraie potion
+- 92742 | ai puisé de l'eau aux puits de la ferme des Jansen et de la ferme des Molsen pour [[name:Alba Fairmoon]], pour remonter au poison qui corrompait la terre de [[Westfall]]
+- 92744 | ai coupé des branchies aux murlocs du rivage pour [[name:Alba Fairmoon]], pour savoir si le poison avait atteint la mer et les poissons de [[Stormwind City]]
+- 92745 | ai tué les kobolds et les gnolls que les Défias faisaient creuser dans [[Jangolode Mine]] et [[Gold Coast Quarry]], une fois que les puits avaient révélé des métaux toxiques
+- 92747 | ai fouillé [[Moonbrook]] à la recherche de signes d'extraction sous la ville, la dernière piste de [[name:Alba Fairmoon]] sur le poison du sol de [[Westfall]]
+- 92748 | ai trouvé un ingénieur dans le quartier des Nains de [[Stormwind City]] pour faire sauter l'usine de toxines cachée dans [[Deadmines]]
+- 92750 | ai demandé un détonateur à distance aux services de renseignements de [[Stormwind City]], pour une explosion maîtrisée qui laisserait tous les membres en place
+- 92752 | ai apporté à [[name:Alba Fairmoon]] la bombe et son détonateur, pour détruire l'usine qui empoisonnait les terres agricoles de [[Westfall]] depuis [[Deadmines]]
+- 92753 | ai posé des explosifs près de la forge cachée de [[Deadmines]], la source du poison qui s'infiltrait dans les terres agricoles de [[Westfall]]
+- 92819 | ai déclenché le détonateur sous [[Moonbrook]] pour détruire la forge de [[Deadmines]], dans l'espoir que la terre de [[Westfall]] commence à guérir
+- 92909 | ai rassemblé des isoressorts et des gyrostabilisateurs sur les golems des moissons pour [[name:Ozwin Ironsprocket]], réfugié dans une écurie de la ferme des Saldean
+- 92910 | ai remis à [[name:Ozwin Ironsprocket]] le mécanisme récupéré d'une moissonneuse, lui qui voulait savoir ce qui faisait marcher les golems
+- 92911 | ai récupéré des pièces pour l'appareil de [[name:Ozwin Ironsprocket]], construit avec le mécanisme récupéré, pour prendre le contrôle des golems des moissons
+- 98021 | me suis $gprésenté:présentée; à Gryan Stoutmantle à [[Sentinel Hill]] sur les ordres de Bolvar Fordragon
+- 92432 | ai répondu à l'appel à l'aide lancé au nom de Dalaran par l'émissaire Jacques, ses assemblages déchaînés tandis que son conseil gardait le silence
+- 92434 | ai trouvé un moyen d'entrer dans Dalaran par les égouts près du lac Lordamere maintenant que sa barrière était tombée, pour percer les secrets du Kirin Tor au nom de Wordeen Voidglare
+- 92457 | ai décimé les élémentaires errants qui se gorgeaient de l'arcane lâché dans Dalaran, pendant que le Kirin Tor maintenait ses protections contre la brèche
+- 92458 | me suis $gglissé:glissée; dans la citadelle Pourpre avec la clé de l'archimage Modera pour apaiser le dérèglement qui avait ébranlé les lignes telluriques de Dalaran
+- 92459 | ai porté la particule apaisée à l'archimage Celindra dans la citadelle Pourpre, pour que Dalaran puisse enfin baisser ses protections
+- 93680 | ai fouillé les camps du Kirin Tor à la recherche d'un moyen d'entrer dans Dalaran reconstruite, aux portes de la Dame noire, pour le magus Wordeen Voidglare
+- 94947 | ai franchi le portail du Kirin Tor vers [[Stormwind City]] en émissaire de l'Ordre suprême, pour rencontrer le régent Bolvar Fordragon
+- 95125 | ai regardé Ott forger la lame à [[Tarren Mill]], la plus belle œuvre d'un forgeron qui n'avait jamais fait que des armes humbles et honnêtes
+- 95126 | ai porté le chef-d'œuvre d'Ott à Trevan Rol [[at:The Sepulcher]], la lame d'argent-lune destinée à en finir avec le vieux Œil-de-feu
+- 96137 | ai débarrassé [[Duskwood]] des worgs qui emportaient encore des voyageurs, peut-être l'affaire inachevée d'Ira, la forestière dont l'esprit errait là
+- 96779 | ai tué le seigneur Tomas à [[Durnholde Keep]] pour Ravenholdt, une seule entaille au bon endroit pour blesser le Syndicat
+- 96781 | ai pris dans la poche de Barton son rapport de reconnaissance à [[Strahnbrad]], pour savoir ce que le Syndicat cherchait dans les ruines d'Alterac sans lui donner l'alerte
+- 96783 | ai volé un uniforme du Syndicat à [[Northfold Manor]], un déguisement pour me glisser dans [[Stromgarde Keep]] et apprendre qu'un marché s'y préparait
+- 96986 | ai vaincu Atrexis le Chevalier des tombes, un nécromancien qui avait trahi les Réprouvés et relevé des morts sous Dalaran, pour Melisara à [[Tarren Mill]]
+- 96987 | ai volé La fondation de Dalaran dans ses bibliothèques pour Rexxie Copperclutch, une opportuniste comme moi dans une cité troublée
+- 97287 | ai rapporté la particule dans Dalaran pour le magus Wordeen Voidglare, qui comptait l'échanger contre une place au Kirin Tor
+- 98471 | ai retrouvé [[name:Elaadrin Evengale]], seul, au-dessus des hautes terres d'Alterac, pour une mission secrète de la plus haute importance
+- 92706 | ai tué Bruuz, le requin géant qui tournait autour des quais de [[Ratchet]] et attaquait les marins, pour la prime que Gazlowe avait mise sur son aileron
+- 95494 | ai rassemblé des peaux de lion des savanes pour [[name:Vrang Wildgore]], cloué au lit par une jambe blessée mais refusant de manquer à ses commandes
+- 95495 | ai monté les peaux de [[name:Vrang Wildgore]] sur la crête jusqu'à un tanneur ermite qui, jurait Vrang, n'avait rien de menaçant malgré son allure
+- 95507 | ai vérifié les pièges de [[name:Vrang Wildgore]] dans toute la vallée, pour que le chasseur blessé ne se couche pas le ventre vide
+- 95508 | ai tenu bon aux côtés de Walton, un déserteur de Kul Tiras qui avait refusé d'exécuter des civils, quand [[name:Terry Longdrink]] et les soldats de marine sont venus le chercher
+- 95621 | ai tué les soldats de Kul Tiras qui campaient près de la caravane détruite pour savoir pourquoi ils étaient venus, et découvert qu'ils traquaient un déserteur
+- 95774 | ai repris les joyaux d'os d'Olgra, la défunte femme de Mankrik, aux pillards Tranchecrin pour le mémorial qu'il lui bâtissait
+- 97003 | ai tué Chol'aruk le Dévoreur, un monstrueux huran dans une grotte de la colline des Épines, pour Gur'ak, qui avait déjà combattu ses semblables
+- 97005 | ai tué Chol'aruk le Dévoreur dans son repaire de la colline des Épines pour Bainham, pour l'honneur des camarades qu'il avait perdus face à ses semblables
+- 97250 | ai tué les soldats de l'Alliance à la frontière de [[Dustwallow Marsh]] qui avaient renversé les repères des éclaireurs taurens et accusé la Horde d'une taverne incendiée
+- 97253 | ai rassemblé les pièces éparses de la machine de Wrenix le Misérable dans un camp pirate au sud de [[Ratchet]], après que les pirates l'avaient démontée
+- 98024 | me suis $gprésenté:présentée; à Thork à [[Crossroads]] sur l'ordre du chef de guerre, pour prospérer ou mourir dans [[Barrens]] comme tout le monde
+- 93176 | ai attrapé une tarentule, un charançon du foin et un picore-chair avec le nécessaire de débutant d'Amaryllis Webb, pour me lancer dans son étude des insectes
+- 93429 | ai mis fin aux souffrances des Égarés de [[Fallow Sanctuary]] pour Karana, des proches perdus dans la folie et la haine
+- 93430 | ai repris le leurre porte-bonheur de Pelluk au pêcheur égaré qui l'avait volé, puisque le poisson du camp en dépendait
+- 93464 | ai cherché Azore, un mage humain [[at:Desolace]] qui avait autrefois mis en garde [[The Harborage]] contre le pouvoir du draenéthyste
+- 93585 | ai escorté le père Tuttle en évitant les draeneï sauvages jusqu'à [[The Harborage]], où l'Église de la Lumière sacrée espérait prendre pied
+- 94373 | ai gagné deux pendentifs d'ours dans la grotte des trolls Frostmane pour [[name:Teo Hammerstorm]], la première épreuve sur la voie chamanique de la terre
+- 94374 | ai bu le sapta de terre à la pierre des Esprits au bout d'un sentier de montagne caché, pour voir ce que la terre avait à montrer
+- 94375 | ai apporté le quartz brut de l'esprit à [[name:Teo Hammerstorm]] pour preuve de la rencontre, pour en faire le cœur d'un totem de terre
+- 94465 | ai porté la torche de la Flamme dormante à [[name:Braldir Ashmantle]], gardien d'un sanctuaire caché tout en haut des escarpements de [[Loch Modan]]
+- 94468 | ai rapporté la torche de la Flamme éternelle à [[name:Bruegs Kindleborn]], qui y a vu brûler l'esprit et m'a accordé un totem de feu
+- 95212 | ai chassé les léopards les plus féroces pour des peaux intactes pour le ranch d'Amberstill, des selles pour les béliers qui renforceraient l'expédition d'Alterac
+- 95213 | ai porté un tonneau vide de poudre explosive trouvé chez les troggs au maître de carrière Thesten, à la carrière de Gol'Bolar
+- 95214 | ai repris la poudre explosive que les troggs avaient volée à la carrière de Gol'Bolar, de quoi ouvrir la salle du trône de Magni sur le ciel, avant qu'ils ne l'allument
+- 95217 | ai échangé des barres de cuivre et des peaux de sanglier à Frast Dokner contre des leçons de forge, des matériaux pour les réparations du camp de la carrière
+- 96390 | ai tué les espions sombrefer du camp d'Ironband pour le voyant de la terre Farsen, pour étouffer dans l'œuf leur incursion [[at:Dun Morogh]]
+- 96391 | ai apporté au voyant de la terre Farsen une carte sombrefer de tunnels et de routes qui convergeaient tous sous [[Ironforge]] même
+- 96392 | ai regardé par la vision lointaine du voyant de la terre Farsen combien les Sombrefer étaient nombreux dans tout [[Dun Morogh]]
+- 96393 | ai pris la tête de [[name:Durgen Dirgehammer]], commandant d'une incursion sombrefer dans la salle des Thanes sous le Vieux Forgefer, pour le roi Magni
+- 96408 | ai enquêté sur un feu de camp tout en haut de la carrière de Gol'Bolar pour Beldin Steelgrill, et y ai rencontré le voyant de la terre Farsen
+- 96608 | me suis $gassis:assise; près du feu de camp de [[name:Eric Brighthammer]] aux portes de [[Kharanos]] pour apprendre l'art du plein air d'un aventurier sans repos
+- 96628 | ai porté des vivres du montagnard Thalos à [[name:Eric Brighthammer]], un aventurier qui avait installé son camp juste aux portes de [[Kharanos]]
+- 97277 | ai récupéré le journal de mécanicien de Gozwin dans son camp et tué le léopard des neiges qui l'avait déchiqueté, pour son ami Grund
+- 98319 | ai fouillé [[Grizzled Den]] infestée de wendigos à la recherche du montagnard Cornelius, qui s'y était jeté seul, pour sa partenaire Gretchen
+- 98321 | ai récupéré les chargements de minerai que les mineurs avaient lâchés quand les wendigos avaient envahi [[Grizzled Den]], pour remettre en marche la forge de Tognus Flintfire
+- 98322 | ai cherché la montagnarde Gretchen à l'ouest de [[Kharanos]], dont le rapport sur les wendigos n'était jamais arrivé à Senir Whitebeard
+- 98323 | ai porté le rapport de la montagnarde Gretchen à Senir Whitebeard à [[Kharanos]] : [[Grizzled Den]] était une cause perdue
+- 98326 | ai tué Hurle-givre, le wendigo qui volait le poisson de Gretta Ganter, pour que son mari Paxton ne passe plus ses nuits sur le lac gelé
+- 99158 | ai livré une caisse de cierges sacrés au père Gavin de l'Aube d'argent au refuge des Pins-Brumeux, son havre pour les voyageurs
+- 99159 | ai ramassé du bois pour le foyer du père Gavin au refuge des Pins-Brumeux, ouvert pour réchauffer toute âme
+- 99160 | ai détruit les élémentaires de glace qu'un éboulement avait excités, pour rendre plus sûre la route de montagne autour du refuge des Pins-Brumeux
+- 99161 | ai tué Avala, le grand élémentaire de glace derrière les éboulements et les brusques changements de temps autour du refuge des Pins-Brumeux, pour le père Gavin
+- 99162 | ai fouillé les pentes à la recherche des fusils des montagnards emportés par les éboulements, pour que le père Gavin les renvoie à leurs familles
+- 95041 | ai retrouvé dans la neige aux portes de [[Gnomeregan]] les cartes perforées que Jemma Quikswitch avait perdues, sans lesquelles les archives de sa famille restaient illisibles
+- 96394 | ai rendu le repos aux morts effrayés de la salle des Thanes, pour que les gardiens redescendent à leurs devoirs
+- 96403 | ai rassemblé des héritages nains dans la salle des Thanes pour Thom Filch, un gnome curieusement impatient de les estimer
+- 97263 | ai livré à [[name:Eldrun Stormbreaker]] un colis urgent égaré venu de [[Aerie Peak]], lui qui vérifiait sa boîte aux lettres tous les jours
+- 98423 | ai apporté au roi Magni une vieille tablette de la chambre forte, la paix signée par les Bronzebeard et les Wildhammer après la guerre des Trois Marteaux
+- 98300 | ai porté l'avertissement de [[name:Howin Kindfeather]] depuis [[Wetlands]] au roi Magni Bronzebeard, des troubles à Grim Batol, à sa porte
+- 95350 | suis $gallé:allée; par les airs jusqu'à [[Orgrimmar]] en émissaire des Sculpte-vents, pour rencontrer Thrall, chef de guerre de la Horde
+- 95664 | ai montré une étrange relique des Titans, tirée des fouilles, aux anciens de la cime des Anciens à [[Thunder Bluff]], pour savoir ce que ce pouvait être
+- 95805 | ai porté de l'encens brûlant au sanctuaire d'An'she et de Mu'sha dans les collines avant qu'il ne tombe en cendres, pour honorer le soleil et la lune
+- 96130 | ai chassé Chakuyak, une louve des prairies si agressive qu'elle était devenue une menace pour les voyageurs près du lac Taureau-de-pierre
+- 96241 | ai prélevé du venin sur les cadavres rongés de la Cime sombre pour Mazu'kon, curieux des nouvelles créatures qui y grouillaient
+- 96259 | ai tué les araignées qui infestaient la Cime sombre, un ancien cimetière tauren qu'elles profanaient, pour [[name:Muln Earthfury]]
+- 96260 | ai rassemblé de la soie cristalline sur les fileuses de la Cime sombre pour [[name:Yorn Grimtotem]], après qu'un éclaireur était revenu à moitié mort, enveloppé dedans
+- 96261 | ai détruit la mère de couvée Valraxx, la matriarche derrière les araignées qui se répandaient dans la Cime sombre, pour chasser la couvée pour de bon
+- 96294 | ai apporté à [[name:Muln Earthfury]] la lettre ensanglantée trouvée sur la mère de couvée Valraxx, qui s'était révélée être une druidesse elfe de la nuit sous une forme pervertie
+- 96605 | me suis $greposé:reposée; près du feu de camp de [[name:Kaga Wildhoof]] aux portes de [[Bloodhoof Village]] pendant qu'elle m'enseignait à vivre de la nature
+- 96659 | ai porté des vivres du chef Hawkwind à [[name:Kaga Wildhoof]], qui l'avait aidé autrefois et ne voulait aucun paiement en retour
+- 96774 | ai arraché une ancienne idole gurubashi à un prêtre de la Cité engloutie au large de [[Stranglethorn Vale]] pour Mazu'kon, un canal de vrai-argent pour une vieille magie du sang
+- 97538 | ai cueilli des cosses de mirkweed à [[Mirkfallon Lake]] pour Tah Winterhoof, à court de pigment rouge pour peindre
+- 98424 | ai rassemblé les papiers du superviseur Fizsprocket dans la mine de la KapitalRisk pour Morin Cloudstalker, des plans qu'on pourrait retourner contre eux
+- 98427 | ai arrêté le déchiqueteur de la KapitalRisk dans la mine près de [[Bloodhoof Village]] et pris sa clé, pour qu'il n'abatte plus d'arbres
+- 98430 | ai libéré [[name:Perith Stormhoof]], l'éclaireur de confiance des Grands-Marcheurs de Cairne Bloodhoof, des gnolls du rocher de Crins-pâles avant qu'il ne finisse en festin
+- 98435 | ai livré le rapport de Thunderhorn sur les puits purifiés de [[Mulgore]] à l'archidruide Hamuul Runetotem
+- 99079 | ai fouillé la lisière est de [[Mulgore]] à la recherche de la Grande-Marcheuse [[name:Malah Longwind]], en retard de trois jours, et l'ai trouvée abattue par des flèches
+- 99080 | ai chassé les pillards galaks de [[Mulgore]] pour Baine Bloodhoof et rapporté la tête d'Herak le Pilleur en guise d'avertissement
+- 99081 | ai apporté le rapport de la Grande-Marcheuse Malah au brave Wildrunner, avec la nouvelle de sa mort et du nouveau camp centaure d'où venaient ses tueurs
+- 99082 | ai porté au grand chef Cairne Bloodhoof la nouvelle des centaures galaks chassés de [[Mulgore]], à la demande de son fils Baine
+- 99101 | ai porté le rapport de Malah à Baine Bloodhoof, la nouvelle d'une bande de pillards centaures lâchée dans [[Mulgore]]
+- 99108 | me suis $gentraîné:entraînée; dans l'arène de Krang Stonehoof contre des novices et des adversaires volontaires, pour apprendre la voie des guerriers par moi-même
+- 99411 | ai donné de la tendre viande de trotteur à Kyle, le chiot fugueur d'Ahab Wheathoof, pour qu'il se calme et rentre à la maison
+- 95772 | ai cherché Daewyn Songblade sur le site de fouilles de Whelgar, pour son frère Dorin, sans nouvelles de lui depuis son départ
+- 95999 | ai tué l'incinérateur Gar'im, chef d'une incursion orque dans le val de Render, dont la chute a rendu à [[Lakeshire]] l'espoir de reprendre [[Stonewatch Keep]]
+- 98386 | ai débarrassé [[Alther's Mill]] de ses tarentules et de leurs œufs pour le contremaître Oslow, pour que ses ouvriers puissent aller chercher le bois du pont sans danger
+- 98387 | ai dérobé vivres et armes aux camps blackrock au sud de [[Stonewatch Keep]] pour le maréchal Marris, pour affamer les orcs et les chasser de [[Redridge Mountains]]
+- 98407 | ai arraché les colliers à pointes des cogneurs gnolls pour l'adjoint Feldon, pour effrayer les gnolls campés trop près de [[Lakeshire]] et les renvoyer dans les collines
+- 96604 | me suis $gassis:assise; près du feu de camp de Brakk près de [[Razor Hill]] pour apprendre d'un aventurier chevronné comment bien se reposer et s'épanouir dans la nature
+- 96652 | ai rendu un journal perdu à Brakk, un aventurier qui campait près de [[Razor Hill]] et le cherchait depuis un moment
+- 96821 | ai nettoyé les araignées qui nichaient le long de la route du sud de [[Durotar]], pour que les péons de [[Razor Hill]] osent de nouveau l'emprunter
+- 96822 | ai récupéré les armes des morts de la Horde aux abords de [[Tiragarde Keep]], pour que Turroc les expose à une place d'honneur
+- 96825 | ai cueilli des figues de Barbarie sur les terres tranchecrin pour le cuisinier Torka, une douceur pour les troupes et des graines à planter autour de [[Orgrimmar]]
+- 96873 | ai arraché les sorts de lien de Zalazane aux pendentifs ensorcelés de ses trolls asservis pour Pa'zula, pour que leurs esprits trouvent le repos
+- 96876 | ai rapporté le sac qu'Ukor avait laissé tomber dans le sud de [[Durotar]] en fuyant une énorme araignée
+- 97223 | ai tué la matriarche Griffesang, un raptor sauvage qui avait tué beaucoup des gens de Sen'jin, et sauvé ses œufs pour que Xar'Ti les élève
+- 97225 | ai ramassé les idoles des loas que les Darkspear avaient laissées sur [[Echo Isles]], dispersées par les fidèles de Zalazane, de peur que la tribu n'offense ses loas
+- 97279 | ai récupéré les armes d'entraînement que des recrues ratées avaient laissées traîner, pour que Kzan Thornslash les répare pour la vague suivante
+- 97281 | ai montré à Rezlak, près du ravin de Rochesèche, un étrange orbe de tempête dont une harpie se servait
+- 97282 | ai récolté des organes chargés de lézards-tonnerre pour que Rezlak recharge l'orbe, dans l'espoir qu'il tienne les harpies loin de sa caravane
+- 99048 | ai cherché au nord de [[Tiragarde Keep]] [[name:Heglan Shadeeye]], une guetteuse de la Main brisée dont les rapports avaient soudain cessé
+- 99049 | ai fouillé les décombres de la hutte de [[name:Heglan Shadeeye]] à la recherche de traces de ses tueurs, qui se sont révélés être des nagas descendus le long de la côte
+- 99051 | ai tué les éclaireurs nagas campés sur la côte de [[Durotar]] pour Orgnil Soulscar, avant qu'ils ne prennent pied si près de [[Razor Hill]]
+- 99052 | ai tué le jeune géant des mers qui avait suivi les nagas le long de la côte nord de [[Durotar]], assez fort pour couper un orc en deux
+- 99123 | ai ramené Pal'juh, une jeune chasseresse partie seule en reconnaissance, hors du rocher des Kolkars, après que sa magie l'avait lâchée au mauvais moment
+- 92743 | ai fouillé une crypte de [[Badlands]] à la recherche de la couronne d'un conquérant, que Warug des Magram voulait à la mesure de la force de son clan
+- 92754 | ai apporté des potions de protection contre l'ombre supérieures à Mirda des Magram, pour les membres du clan qui s'aventuraient au-delà de [[Valley of Bones]], maudite
+- 92755 | ai rassemblé des essences mystiques supérieures pour Halea des Gelkis, pour enchanter les armes des chasse-vent avant le prochain raid du clan
+- 92814 | ai trouvé un masque de bandit blanc pour Molkar des Gelkis, un cadeau à sa compagne Halea pour qu'elle s'exerce à l'enchantement
+- 92817 | ai apporté à Talra des Gelkis un harnais barbare, pour qu'elle apprenne à faire une armure que les siens accepteraient de porter
+- 92818 | ai forgé des haches en fer massives pour Grolkar des Magram, qui voulait de plus grosses armes pour écraser les Gelkis
+- 92844 | ai rassemblé des os maudits dans [[Valley of Bones]] pour Orgrul, qui en a perdu le compte et a décidé qu'ils semblaient suffire
+- 92847 | ai apporté à Orgrul de l'écorce pétrifiée et des larmes imprégnées de [[Valley of Bones]], pour faire des bâtons comme ceux des nécromanciens parias
+- 92873 | ai relevé des squelettes avec les os rassemblés pour Orgrul grâce à un bâton tout neuf, pour prouver que les cristaux pouvaient servir la nécromancie
+- 92893 | ai tué les captifs gelkis laissés dans [[Valley of Bones]] sur l'ordre d'Orgrul, sans leur laisser la moindre lueur d'espoir de liberté
+- 92894 | ai relevé avec un bâton renforcé les morts à moitié relevés de [[Valley of Bones]] pour Orgrul, pour grossir l'armée des Magram
+- 93044 | ai demandé à Mulara, dans la grotte du village gelkis, des larmes de Theradras, pour le rituel d'Uthek contre la nécromancie des Magram
+- 93045 | ai dissipé la malédiction d'un crâne maudit pour Nerlokh des Gelkis, avec un cristal de draenéthyste pour canaliser le pouvoir de Theradras
+- 93072 | ai attaqué les éclaireurs, les maraudeurs et les nécromanciens gelkis parias pour Hagiak des Magram, pour prouver ma loyauté au clan
+- 93125 | ai escorté Rokren hors de la cachette des Parias, un Gelkis retenu prisonnier par les siens pour avoir dénoncé leur nécromancie
+- 93128 | ai tué le khan Jehn des Magram dans son propre village pendant que ses guerriers étaient occupés dans [[Valley of Bones]]
+- 93129 | ai sorti des vivres volés de la cachette des Parias pour Hagiak, pour que les Magram profitent de la chute de leurs ennemis
+- 93188 | ai annoncé à Orgrul que le front magram était plus fort, et qu'il visait désormais le campement des parias
+- 93196 | ai relevé le khan Jehn par un rituel nécromantique au village magram, après que des étrangers à la solde des Gelkis avaient tué le chef des Magram
+- 93224 | ai pris des totems sculptés aux centaures de toute la [[Desolace]] pour le capitaine Pentigast, qui comptait acheter la faveur des clans avec des copies
+- 93225 | ai rassemblé d'authentiques totems sculptés pour Gurda Wildmane, pour que ses propres sculptures passent pour vraies dans ses échanges avec les clans
+- 93226 | ai porté un sac de totems à l'intendant magram, en prenant le parti du clan le moins risqué tant qu'il gagnait la guerre
+- 93227 | ai apporté un sac de totems aux Gelkis pour le capitaine Pentigast, pour faire la paix avec le petit clan qui avait tenu bon on ne sait comment
+- 93465 | ai pris les notes de la démoniste Gimashi sur le draenéthyste dans sa tour pour Azore Aldamort, avant que la Lame ardente ne puisse s'en servir
+- 93678 | ai rapporté les notes d'Azore Aldamort sur le draenéthyste à Magtoor à [[The Harborage]], pleines de portails et d'invocations démoniaques
+- 94872 | ai offert un sac de totems à l'intendant magram pour Gurda Wildmane, pour gagner la confiance du clan qui l'emportait dans la guerre
+- 94873 | ai acheté l'amitié des Gelkis avec un sac de totems pour Gurda Wildmane, dont un faux
+- 96222 | ai défié le khan Hratha des Maraudine au sommet de [[Valley of Spears]] pour le fragment de clé que voulait Umarak
+- 97265 | ai attaqué les satyres Fielfurie à Sargeron pour Aka'rai, qui avait marchandé avec eux pour le pouvoir avant d'être mis de côté
+- 97284 | ai tué des orcs de la Lame ardente à [[Thunder Axe Fortress]] pour Vahlarriel Demonslayer, persuadée qu'ils détenaient les Malem et prêts à se battre
+- 98067 | ai placé des chouettes sentinelles autour de [[Darnassus]] pour la sentinelle Dalia Sunblade, pour monter la garde tant que quelque chose clochait sur [[Teldrassil]]
+- 98391 | ai répondu à l'appel de la Sororité d'Elune à [[Darnassus]], où sœur Aquinne attendait de l'aide pour une affaire de grande importance
+- 95534 | ai percé le mystère du vieux soufflet de [[Strahnbrad]], où un élémentaire de feu avait élu domicile, pour Shara Blazen
+- 98071 | ai échangé le vin de Fallrook du maître brasseur Bilger à [[Dun Garok]] contre un sac du houblon de leur bière maison
+- 98094 | ai porté les ordres de la grande exécutrice Darthalia au traqueur noir Masoj près de [[Dun Garok]], pour le plan des Réprouvés visant à prendre ces terres
+- 98095 | ai débouché des fioles d'apothicaire sur trois sommets autour de [[Hillsbrad Foothills]] pour rappeler les chevaucheurs de chauve-souris à leurs points de dépôt
+- 98219 | suis $gallé:allée; voir le lieutenant Farren Orinelle à [[Southshore]] pour le seigneur Grayson Shadowbreaker, un vieil ami du père de l'officier déshonoré
+- 98459 | ai livré un cadeau moqueur du vieux Demi-poisson à Bart Tidewater, le soi-disant capitaine de la Vertu de la jouvencelle
+- 98093 | ai débarrassé des hyènes et des lézards l'arbre où Sulhasa s'était réfugiée dans le sud de [[Barrens]], pour qu'elle puisse rentrer à [[Camp Taurajo]]
+- 98155 | ai rassemblé des peaux de hyènes Peau-de-peste pour Kristy Grant, à envoyer à ses sœurs à [[Stormwind City]]
+- 98341 | ai rencontré l'avatar de Saeyleenan à [[Moonglade]], un esprit félin porté par le vent venu de Zéphras pour superviser l'épreuve de sa propre forme
+- 98342 | ai pris les reliques du croc, de la griffe et de l'ombre silencieuse dans les tertres de Stormrage, l'épreuve de ruse et de discrétion du Grand esprit félin
+- 98396 | ai prouvé la ruse, la discrétion et la férocité du félin en prenant trois reliques aux esprits qui gardaient les tertres de Stormrage
+- 98404 | ai porté trois reliques en évitant les esprits furieux des tertres de Stormrage, l'épreuve de l'avatar de Saeyleenan pour sa forme portée par le vent
+- 92841 | suis $gallé:allée; trouver Orgrul au sud du village magram, qui m'a montré [[Valley of Bones]], ses morts errants et les goliaths jumeaux
+- 92846 | ai tué les exilés gelkis qui s'adonnaient à la nécromancie dans [[Valley of Bones]], des parias que les Magram voulaient morts
+- 93034 | ai cherché l'éclaireur Nerlokh dans [[Valley of Bones]] pour Uthek le Sage, pour savoir quel mal les Magram y avaient trouvé
+- 93035 | ai rendu le repos aux morts que les Magram relevaient dans [[Valley of Bones]], des corps plus vieux que n'importe quel centaure de [[Desolace]]
+- 93037 | ai porté la tenue des nécromanciens les plus faibles à Nerlokh, qui redoutait ce qu'elle prouverait au sujet des Gelkis
+- 93041 | ai apporté à Uthek le Sage un crâne fraîchement maudit et la tenue qui prouvait que des exilés gelkis pratiquaient la nécromancie des Magram
+- 93058 | ai libéré les captifs gelkis retenus au fond de [[Valley of Bones]], en évitant les nécromanciens et les brutes des Magram
+- 93062 | ai apaisé les invocations ratées prisonnières sous [[Valley of Bones]] avec le bâton des larmes de Theradras d'Uthek
+- 93066 | ai chassé les Dos-hirsute de leur refuge au-delà de [[Valley of Bones]], où un artefact volé dans un temple tenait les Magram à distance
+- 93122 | suis $gallé:allée; en reconnaissance au cœur de [[Shen'dralas]] pour Nerlokh, pour savoir si les Magram avaient laissé leur propre village sans garde
+- 95384 | ai apporté un parchemin partiel de notes mystiques à [[name:Dudd Fizzlescroll]] à [[Booty Bay]], qui saurait peut-être y comprendre quelque chose
+- 95748 | ai relevé une ancienne tablette troll au nord du Récif infâme pour Kin'weelay, qui étudiait les légendes d'une cité troll perdue
+- 95770 | ai exploré le Récif infâme pour Kin'weelay et trouvé la caverne où les nagas s'étaient rassemblés près des ruines trolls englouties
+- 95773 | ai tué des nagas Écaille-saumure au large et pris leurs tridents pour preuve, avant qu'ils ne frappent depuis la mer
+- 95786 | ai porté fétiches, légendes et un rapport de reconnaissance au maître des traditions Dibbs à [[Southshore]], pour savoir ce qui avait corrompu le colonel Kurzen
+- 97047 | ai libéré Wendel, un cuisinier en cage dans le camp de Kurzen, avec une clé et un déguisement pour le faire sortir discrètement
+- 97048 | ai annoncé à la capitaine Aransas à [[Booty Bay]] que Wendel, le cuisinier de son navire, était sorti sain et sauf du camp de Kurzen
+- 97328 | ai récupéré sur les trolls des ruines de Zul'Kunda les cargaisons pillées d'un zeppelin écrasé en route pour [[Booty Bay]]
+- 97329 | ai pris la clé aux trolls de Zul'Kunda pour Zimmix Sputterspark, un coursier gobelin abattu et mis en cage là-bas
+- 97331 | ai escorté Zimmix Sputterspark loin des ruines de Zul'Kunda, après qu'il avait décidé qu'une clé seule ne le ferait pas passer devant les trolls
+- 97420 | ai volé du pétrole brut à la KapitalRisk au lac Nazferiti pour Knaz Blunderflame, pour donner un petit coup de fouet à son nouveau bolide
+- 98463 | ai cru Kelly la serveuse sur parole et pris la direction de la taverne du Marin salé à [[Booty Bay]], où se trouvait la vraie fête
+- 96800 | ai récupéré le tome sur les maîtres des runes wildhammer que l'arcaniste Doan n'avait jamais rendu à la bibliothèque de Dalaran, pour le magus Olvek
+- 95775 | ai relevé les tablettes de la Cité engloutie, qui pourrait bien être la cité troll perdue de la légende
+- 95776 | ai tué Var'Taka, cheffe des nagas Écaille-saumure qui s'étaient glissés dans la Cité engloutie à la recherche de quelque chose
+- 95787 | ai rassemblé les légendes de la Cité engloutie pour le maître des traditions Dibbs, qui croyait que la cité troll perdue avait resurgi au large de [[Stranglethorn Vale]]
+- 95788 | ai rassemblé des fétiches trolls dans la Cité engloutie pour le maître des traditions Dibbs, pour savoir quelle magie noire l'avait relevée
+- 98887 | ai rapporté des marques d'honneur des îles Darkspear, où la Horde avait repoussé le corps expéditionnaire de Theramore
+- 98889 | ai combattu le corps expéditionnaire de Theramore pour les îles Darkspear, ses renforts débarquant encore et encore
+- 98891 | ai montré à l'Alliance la puissance de la Horde sur le sable des îles Darkspear, et rapporté la preuve
+- 98893 | ai tenu les îles Darkspear contre les renforts tenaces de Theramore, chaque marque d'honneur la preuve d'une victoire
+- 98895 | ai rapporté la preuve de mon service en première ligne aux îles Darkspear
+- 98897 | ai combattu les pillards darkspear sur les îles Darkspear tandis que la bataille s'échauffait
+- 98899 | ai gagné des marques d'honneur aux îles Darkspear pour que l'Alliance ne perde pas sa position face aux pillards darkspear
+- 98901 | ai tenu la première ligne des îles Darkspear pour l'Alliance, les pillards darkspear pressant plus fort que jamais
+- 98903 | ai remporté une bataille aux îles Darkspear pour le corps expéditionnaire de Theramore, envoyé depuis [[Northwatch Hold]] par Brelinda McFarry
+- 98904 | ai combattu pour le corps expéditionnaire de Theramore aux îles Darkspear jusqu'à ce que la Horde abandonne le terrain
+- 98905 | ai combattu sur les îles Darkspear pour le corps expéditionnaire de Theramore jusqu'à ce que la journée soit gagnée
+- 98906 | ai brisé l'impasse aux îles Darkspear pour [[name:Nizook Boof]], au service des Darkspear et avec la bénédiction des loas
+- 98907 | ai remporté une bataille aux îles Darkspear au nom des Darkspear, pour montrer à l'Alliance quel camp était le plus fort
+- 98908 | ai remporté la victoire aux îles Darkspear au service des trolls Darkspear

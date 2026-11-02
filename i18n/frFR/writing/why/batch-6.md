@@ -27,14 +27,14 @@
 - 9059 | ai porté [[un:Desecrated Handguards]] au veneur Leopold, qui saurait les joindre à de la carapace de démon des cryptes pour en faire [[un:Cryptstalker Handguards]]
 - 9060 | ai livré [[un:Desecrated Girdle]] et des débris de mailles au veneur Leopold pour [[un:Cryptstalker Girdle]]
 - 9061 | ai rapporté de [[Naxxramas]] [[un:Desecrated Wristguards]] au veneur Leopold pour qu'il en fasse [[un:Cryptstalker Wristguards]]
-- 9068 | ai rapporté [[un:Desecrated Tunic]], l'armure de ceux qui étaient tombés en défendant ces terres, à Rimblat Earthshatter pour [[un:Earthshatter Tunic]]
-- 9069 | ai repris [[un:Desecrated Legguards]], l'armure des morts mise au service du mal à [[Naxxramas]], pour [[un:Earthshatter Legguards]] de Rimblat Earthshatter
-- 9070 | ai apporté à Rimblat Earthshatter [[un:Desecrated Headpiece]] et des débris de mailles à renouveler en [[un:Earthshatter Headpiece]]
-- 9071 | ai rassemblé étoffe lunaire et arcanite pour que Rimblat Earthshatter purifie [[un:Desecrated Spaulders]] en [[un:Earthshatter Spaulders]]
-- 9072 | ai porté [[un:Desecrated Boots]] à Rimblat Earthshatter, pour que l'armure des morts reparte au combat sous la forme de [[un:Earthshatter Boots]]
-- 9073 | ai remis à Rimblat Earthshatter [[un:Desecrated Handguards]] et de quoi les purifier pour [[un:Earthshatter Handguards]]
-- 9074 | ai repris au Fléau [[un:Desecrated Girdle]] et l'ai porté à Rimblat Earthshatter, pour qu'il en fasse [[un:Earthshatter Girdle]]
-- 9075 | ai honoré les morts en portant leurs [[pl:Desecrated Wristguards]] à Rimblat Earthshatter pour [[un:Earthshatter Wristguards]]
+- 9068 | ai rapporté [[un:Desecrated Tunic]], l'armure de ceux qui étaient tombés en défendant ces terres, à [[name:Rimblat Earthshatter]] pour [[un:Earthshatter Tunic]]
+- 9069 | ai repris [[un:Desecrated Legguards]], l'armure des morts mise au service du mal à [[Naxxramas]], pour [[un:Earthshatter Legguards]] de [[name:Rimblat Earthshatter]]
+- 9070 | ai apporté à [[name:Rimblat Earthshatter]] [[un:Desecrated Headpiece]] et des débris de mailles à renouveler en [[un:Earthshatter Headpiece]]
+- 9071 | ai rassemblé étoffe lunaire et arcanite pour que [[name:Rimblat Earthshatter]] purifie [[un:Desecrated Spaulders]] en [[un:Earthshatter Spaulders]]
+- 9072 | ai porté [[un:Desecrated Boots]] à [[name:Rimblat Earthshatter]], pour que l'armure des morts reparte au combat sous la forme de [[un:Earthshatter Boots]]
+- 9073 | ai remis à [[name:Rimblat Earthshatter]] [[un:Desecrated Handguards]] et de quoi les purifier pour [[un:Earthshatter Handguards]]
+- 9074 | ai repris au Fléau [[un:Desecrated Girdle]] et l'ai porté à [[name:Rimblat Earthshatter]], pour qu'il en fasse [[un:Earthshatter Girdle]]
+- 9075 | ai honoré les morts en portant leurs [[pl:Desecrated Wristguards]] à [[name:Rimblat Earthshatter]] pour [[un:Earthshatter Wristguards]]
 - 9077 | ai fourni à Rohan l'Assassin [[un:Desecrated Breastplate]] et des débris de cuir pour [[un:Bonescythe Breastplate]], les os étant son affaire
 - 9078 | ai apporté à Rohan l'Assassin [[un:Desecrated Legplates]] de la cité flottante de la mort, et son prix, pour [[un:Bonescythe Legplates]]
 - 9079 | ai payé Rohan l'Assassin pour sa peine et lui ai remis [[un:Desecrated Helmet]] pour en faire [[un:Bonescythe Helmet]]
@@ -105,7 +105,7 @@
 - 8517 | ai fait des bandages en lin pour la sentinelle Silversky, pour une guerre à [[Ahn'Qiraj]] qu'on annonçait longue et sanglante
 - 8520 | ai roulé des bandages en soie pour l'infirmière Stonefield, pour que les soldats en route pour [[Ahn'Qiraj]] ne manquent de rien
 - 8522 | ai donné des bandages en étoffe runique à la gardienne Moonshade, pour offrir à ceux qu'on envoyait à [[Ahn'Qiraj]] toutes les chances de survivre
-- 8524 | ai pêché et cuisiné du thon arc-en-ciel pour Slicky Gastronome, de quoi nourrir les soldats de la guerre de [[Ahn'Qiraj]]
+- 8524 | ai pêché et cuisiné du thon arc-en-ciel pour [[name:Slicky Gastronome]], de quoi nourrir les soldats de la guerre de [[Ahn'Qiraj]]
 - 8526 | ai rôti du raptor pour Sarah Sadwhistle, une volontaire malgré elle qui stockait des vivres pour les soldats en route pour [[Ahn'Qiraj]]
 - 8528 | ai pêché et cuisiné du jaune-queue tacheté pour les réserves de la chasseresse Swiftriver, des vivres qui tiendraient jusqu'au début de la guerre
 - 8532 | ai fondu du minerai de cuivre en barres pour le mineur Cromwell à [[Orgrimmar]], du métal brut pour le matériel de guerre de la Horde
@@ -275,8 +275,8 @@
 - 3368 | ai porté la lettre roussie de Dorius à son frère Thorius à [[Ironforge]], une supplique pour libérer l'équipe de fouilles asservie par Lathoric le Noir
 - 3372 | ai porté une relique du Marteau du crépuscule à l'autel de Suntara, pour libérer les archéologues forcés de travailler même après leur mort
 - 3378 | ai repris aux adorateurs de l'idole la prière dorée de Zamael à Elune pour Astarii Starseeker, pour que la prière d'une âme en cage soit entendue
-- 3442 | ai rassemblé des cœurs des flammes et de l'huile de golem pour la torche de Kalaran Windblade, destinée à incendier les tours de guet Sombrefer
-- 3443 | ai pris des dagues plaquées en thorium aux contremaîtres et aux esclavagistes Sombrefer, pour les reforger en manche pour la torche de Kalaran Windblade
+- 3442 | ai rassemblé des cœurs des flammes et de l'huile de golem pour la torche de [[name:Kalaran Windblade]], destinée à incendier les tours de guet Sombrefer
+- 3443 | ai pris des dagues plaquées en thorium aux contremaîtres et aux esclavagistes Sombrefer, pour les reforger en manche pour la torche de [[name:Kalaran Windblade]]
 - 3452 | ai saisi un symbole de Ragnaros dans le camp du Marteau du crépuscule, sa magie immonde destinée à l'enveloppe de la torche
 - 3463 | ai incendié les quatre tours de guet Sombrefer avec la torche du châtiment, laissant vide leur première ligne de défense
 - 3566 | ai tué Lathoric le Noir et Obsidion pour Thorius, pour découvrir que le piège était l'œuvre de son propre frère

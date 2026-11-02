@@ -1,0 +1,222 @@
+# French: the deeds of writing/why/batch-8.md, after "je"
+
+- 1470 | ai rassemblé des crânes sur les squelettes cliquetants près de la forge abandonnée, l'épreuve que Venya Marthand fixait avant d'enseigner à lier un diablotin
+- 1471 | ai fait sortir un marcheur du Vide libre du cercle d'invocation grâce aux runes de Carendin Halgar et l'ai dominé, pour gagner le droit de l'invoquer
+- 1473 | ai repris le grimoire d'Egalin, qui contenait l'invocation du premier marcheur du Vide, à Perrine, un agent de la Croisade écarlate retranché dans une tour à l'ouest
+- 1474 | ai attiré une succube à travers le cercle d'invocation avec les cœurs purs et l'ai vaincue, pour que Carendin Halgar m'enseigne le sort pour l'appeler
+- 1476 | ai pris les cœurs de Dalin Forgewright, qui s'occupait des réfugiés, et de [[name:Comar Villard]], fidèle à sa femme disparue, comme appât pour une succube
+- 1485 | ai tué les infâmes familiers de la grotte au nord-est pour leurs têtes, la preuve que Ruzan demandait avant d'enseigner l'art de l'invocation
+- 1501 | ai repris la tablette de Verga à la Lame ardente à [[Skull Rock]], pour que Gan'rul Bloodeye m'enseigne les runes d'un marcheur du Vide
+- 1504 | ai vaincu un marcheur du Vide appelé avec les glyphes d'invocation dans la tente de Neeru Fireblade, pour que Gan'rul Bloodeye m'apprenne à le lier
+- 1509 | suis $gallé:allée; demander à [[Crossroads]] des nouvelles de Dogran, le compagnon de Zankaja, qui aurait dû rentrer de son nouveau poste depuis une semaine
+- 1510 | ai suivi la piste de Dogran, blessé et retenu par les hurans, jusqu'aux Malaka'jin, à qui l'on avait demandé une potion de soins pour lui
+- 1511 | ai porté la potion de Ken'zigla à [[Camp Taurajo]] pour Dogran, mourant, après que des gobelins avaient tué le premier envoyé la chercher
+- 1512 | ai remis à Gan'rul Bloodeye le pendentif dont Dogran se séparait comme appât pour une succube, pour que Zankaja ne reste pas enchaînée à un compagnon malade
+- 1513 | ai attiré une succube avec le pendentif de Dogran et l'ai soumise, puis rendu le pendentif pour que Gan'rul porte la nouvelle à Zankaja
+- 1515 | ai rejoint Dogran dans un camp huran bien gardé au nord de [[Camp Taurajo]] avec la potion qui lui a donné la force de s'éloigner en boitant
+- 1598 | ai volé les Pouvoirs du Vide pour Drusilla La Salle dans la tente défias des vignes, un livre qu'une novice en fuite avait emporté de l'abbaye
+- 1599 | ai combattu les novices Frostmane dans leur grotte au sud-ouest pour des charmes de plumes, la preuve qu'Alamar Grimm voulait avant d'enseigner le diablotin
+- 1688 | ai traqué Surena Caledon, l'élève qui s'était enfuie avec les Défias, pour le collier de pierre de sang que Gakin le Lieur-d'ombre voulait récupérer
+- 1689 | ai appelé un marcheur du Vide avec le collier de pierre de sang de Gakin au cercle sous l'Agneau égorgé et l'ai vaincu, pour apprendre à en commander un
+- 1738 | ai cherché le Cœur-de-bois dans les ruines d'Ordil'Aran, un arbre poussé là où deux amants étaient tombés pendant la guerre des Anciens, pour tenter une succube
+- 1739 | ai ouvert un portail avec le noyau de Cœur-de-bois dans la crypte sous l'Agneau égorgé, et vaincu la succube qui l'avait franchi
+- 1740 | ai traqué les fragments de l'orbe de Soran'ruk à travers [[Blackfathom Deeps]] et [[Shadowfang Keep]], pour que Doan Karhan le reconstitue
+- 1795 | ai lu l'incantation du tome de la Cabale dans le grand cercle de Strahad Farsan pour faire venir un chasseur corrompu, puis l'ai soumis
+- 1799 | ai saisi un orbe infernal aux démonistes de [[Mannoroc Coven]] [[at:Desolace]], pour que Tabetha le purifie [[at:Dustwallow Marsh]] à la demande de Menara
+- 1802 | ai reconstitué le tome de la Cabale pour Krom Stoutarm, une moitié aux mains des centaures de [[Thousand Needles]], l'autre perdue au large de [[Southshore]]
+- 1803 | ai récupéré le tome de la Cabale vandalisé pour Jorah Annison, auprès des centaures de [[Thousand Needles]] et sur la côte à l'ouest de [[Southshore]]
+- 1804 | ai arraché des bâtonnets de canalisation aux lanceurs de sorts Dragonmaw [[at:Wetlands]], pour le grand cercle qu'élèveraient les acolytes de Strahad Farsan
+- 1805 | ai arraché des bâtonnets de canalisation aux lanceurs de sorts Dragonmaw [[at:Wetlands]], pour le grand cercle qu'élèveraient les acolytes de Strahad Farsan
+- 4490 | ai reçu de Strahad Farsan le pouvoir d'invoquer un palefroi corrompu, sa récompense pour ma patience et mon dur labeur
+- 4961 | ai tué le démon de l'orbe dès que Tabetha l'en a fait sortir, avant qu'il ne puisse s'y glisser de nouveau, pour que l'orbe infernal soit purifié
+- 4962 | ai capturé l'âme d'un gangrechien de [[Desolace]] dans le rubis de Felhas, pour que Menara Voidrender l'unisse à l'orbe purifié
+- 4963 | ai piégé l'esprit d'un infernal de [[Desolace]] dans l'émeraude d'Infus, pour que Menara Voidrender l'unisse à l'orbe purifié
+- 4976 | ai rendu l'orbe infernal purifié à Menara Voidrender, pour y faire emprisonner un démon de mon choix
+- 7563 | ai recueilli le sang des chouettards de [[Winterspring]], rendus fous par la gorge du Sombre murmure, comme encre pour les glyphes qui lieraient un destrier de l'effroi
+- 7564 | ai livré la caisse de sang de chouettard à Gorzeeki Wildeyes, l'alchimiste de Mor'zul, pour en faire l'encre du parchemin du destrier de l'effroi
+- 7581 | ai fait couler le sang des satyres Rejeton-sauvage du quartier de Crochebois de [[Dire Maul]], pour lier et alimenter la prison de cristal de Daio pour un garde funeste
+- 7582 | ai rassemblé les larmes d'Hederine sur les démons de la gorge du Sombre murmure, des cristaux assez durs pour retenir même un garde funeste
+- 7583 | ai emprisonné un commandant garde funeste dans la Balafre impure avec la prison de cristal de Daio, pendant qu'il se débattait furieusement pour s'échapper
+- 7602 | ai récolté des essences gangrenées parfaites [[at:Azshara]], à Jaedenar et dans [[Blasted Lands]], pour que [[name:Impsy]] fasse le feu gangrené qui relèverait Kroshius
+- 7603 | ai rallumé l'infernal Kroshius dans le val de la Balafre brisée et l'ai tué pour son noyau, le prix de Niby pour enseigner l'invocation d'un infernal
+- 7623 | ai traversé Jaedenar, $gdissimulé:dissimulée; par les potions d'ombre de Gorzeeki, pour demander au seigneur Banehollow du Conseil des ombres de la poussière d'étoile xorothienne
+- 7624 | ai affronté Ulathek, le serviteur du seigneur Banehollow et l'espion d'Hel'nurath, et rapporté le cœur du traître pour gagner la faveur du seigneur de l'effroi
+- 7625 | ai acheté de la poussière d'étoile xorothienne à Ur'dan, le serviteur du seigneur Banehollow, pour le parchemin qui ouvrirait un portail vers Xoroth
+- 7626 | ai procuré des élixirs de puissance de l'ombre pour la cloche de Dethmoora de Gorzeeki, l'un des trois outils du cercle de grande invocation
+- 7627 | ai trouvé de grands éclats brillants et du minerai de sombrefer pour la roue de la Marche noire, qui dirigerait les violentes énergies du rituel
+- 7628 | ai procuré des écailles de dragon noir pour le cierge du jugement dernier de Gorzeeki, dont les flammes brûleraient tout démon égaré qui troublerait le rituel
+- 7629 | ai porté le diablotin en bocal de Gorzeeki dans le laboratoire d'alchimie de [[Scholomance]], où il a imprégné le parchemin du destrier de poussière d'étoile xorothienne
+- 7630 | ai obtenu des barres d'arcanite pour la magnétite noire de Gorzeeki, qui empêcherait le rituel du destrier de l'effroi de faire long feu
+- 7631 | ai accompli le rituel du cercle de grande invocation pour ouvrir un portail vers Xoroth, puis vaincu un destrier de l'effroi et lié son esprit
+- 8419 | ai apporté de la gangrétoffe des satyres de [[Felwood]] au diablotin [[name:Impsy]], le gage de bonne foi qu'il demandait
+- 8420 | ai pillé de la gangrétoffe sur les satyres de [[Felwood]] pour [[name:Impsy]], qui voulait un familier bien à lui, comme Niby l'avait, lui
+- 8421 | ai arraché du bois pourri aux arbres de fer et de l'essence aux limons souillés, pour les yeux et l'odeur de démon du familier fait maison de [[name:Impsy]]
+- 8422 | ai tué [[name:Gasher]], Mijan, Zolo, Hukku, Zul'lor et Loro dans [[Sunken Temple]] pour les plumes vaudou qui rembourreraient le familier de [[name:Impsy]]
+- 637 | ai porté la lettre détrempée de Sully Balloo à sa femme Sara à [[Ironforge]], avec la nouvelle qu'il gisait coincé sous les eaux glacées
+- 683 | ai présenté au roi Magni Bronzebeard la supplique de Sara Balloo, trop éprouvée par le chagrin pour l'affronter elle-même
+- 689 | suis $gallé:allée; chercher du granit d'Alterac à la colline de Darrow pour le monument que le roi Magni avait commandé en mémoire de Sully Balloo, perdu dans la tragédie de [[Thandol Span]]
+- 2039 | ai cherché dans [[Loch Modan]] Bingles Blastenheimer, disparu depuis une semaine après un vol de reconnaissance au-dessus de [[Gnomeregan]]
+- 2946 | ai porté les disques de platine miniatures jusqu'aux portes scellées d'Uldum pour la Ligue des explorateurs, sans la moindre idée de ce qu'ils y réveilleraient
+- 2948 | ai apporté à Talvash del Kissel une barre d'argent, une agate mousse et ses honoraires pour retravailler l'anneau d'or brillant avec un treillis d'argent et d'agate
+- 3201 | ai porté la preuve du conservateur au montagnard Pebblebitty, qui doutait que la corne de Margol soit vraie, pour la clé qu'il avait promise
+- 3371 | ai fouillé les puits de scories de [[Searing Gorge]] à la recherche des hommes de Dorius, asservis par les Sombrefer, pour accomplir le dernier vœu de Dorius assassiné
+- 3449 | ai relevé quatre runes elfiques dans les ruines d'Eldarath pour Tymor, puis fait signe au pilote Xiggs Fuselighter pour qu'il nous emmène loin de [[Azshara]]
+- 3701 | ai étudié les reliques des ruines fumantes de Thaurissan, en évitant les assassins qui les gardaient, pour l'histoire des nains Sombrefer
+- 4512 | ai prélevé des échantillons sur les limons maudits et souillés de [[Felwood]] pour Laris Geardawdle, qui voulait savoir d'où venaient tous ces limons
+- 4513 | ai cherché des échantillons de limon pur, épargné par toute corruption, pour Laris Geardawdle, qui pensait que les limons prenaient l'aspect de leur terre
+- 8905 | ai prélevé le sang des sabres-de-givre et des ours de [[Winterspring]] pour Deliana, qui m'offrait en échange de meilleurs brassards
+- 8906 | ai prélevé le sang des sabres-de-givre et des ours de [[Winterspring]] pour Deliana, qui m'offrait en échange de meilleurs brassards
+- 8907 | ai prélevé le sang des sabres-de-givre et des ours de [[Winterspring]] pour Deliana, qui m'offrait en échange de meilleurs brassards
+- 8908 | ai prélevé le sang des sabres-de-givre et des ours de [[Winterspring]] pour Deliana, qui m'offrait en échange de meilleurs brassards
+- 8909 | ai prélevé le sang des sabres-de-givre et des ours de [[Winterspring]] pour Deliana, qui m'offrait en échange de meilleurs brassards
+- 8910 | ai prélevé le sang des sabres-de-givre et des ours de [[Winterspring]] pour Deliana, qui m'offrait en échange de meilleurs brassards
+- 8911 | ai prélevé le sang des sabres-de-givre et des ours de [[Winterspring]] pour Deliana, qui m'offrait en échange de meilleurs brassards
+- 8912 | ai prélevé le sang des sabres-de-givre et des ours de [[Winterspring]] pour Deliana, qui m'offrait en échange de meilleurs brassards
+- 8977 | ai remis à Deliana le révélateur de fantômes extradimensionnel construit par Mux, un appareil gobelin dont elle se méfiait mais sur lequel elle devait bien compter
+- 8080 | ai remporté la bataille de [[Arathi Basin]] et rapporté une caisse de ses ressources au sergent Maclear, pour armer et nourrir les troupes de l'Alliance
+- 8105 | ai arraché les bannières ennemies de la ferme, de la mine, de la scierie et de la forge de [[Arathi Basin]] pour le grand maréchal Oslight
+- 8114 | ai tenu quatre bases de [[Arathi Basin]] à la fois pour le grand maréchal Oslight, pour assurer ses ressources et montrer à la Horde la domination de l'Alliance
+- 8115 | ai chassé les Profanateurs des cinq bases de [[Arathi Basin]] à la fois, la grande offensive de la Ligue d'Arathor
+- 8120 | ai abattu les bannières de la Ligue à la mine, à la scierie, à la forge et aux écuries de [[Arathi Basin]], pour les prendre au nom de la Horde
+- 8121 | ai tenu quatre points de [[Arathi Basin]] à la fois, pour montrer à la Ligue d'Arathor à quelle vitesse ses possessions pouvaient tomber
+- 8122 | ai pris les cinq bases de [[Arathi Basin]] à la fois tandis que la détermination de la Ligue d'Arathor faiblissait, une grande victoire pour les Profanateurs
+- 8951 | ai transmis à Deliana les dernières paroles d'Anthion : la malédiction de Valthalak ne prendrait fin qu'une fois son médaillon brisé réparé, avec l'aide de Bodley
+- 8952 | ai transmis à Deliana les dernières paroles d'Anthion : la malédiction de Valthalak ne prendrait fin qu'une fois son médaillon brisé réparé, avec l'aide de Bodley
+- 8953 | ai transmis à Deliana les dernières paroles d'Anthion : la malédiction de Valthalak ne prendrait fin qu'une fois son médaillon brisé réparé, avec l'aide de Bodley
+- 8954 | ai transmis à Deliana les dernières paroles d'Anthion : la malédiction de Valthalak ne prendrait fin qu'une fois son médaillon brisé réparé, avec l'aide de Bodley
+- 8955 | ai transmis à Deliana les dernières paroles d'Anthion : la malédiction de Valthalak ne prendrait fin qu'une fois son médaillon brisé réparé, avec l'aide de Bodley
+- 8956 | ai transmis à Deliana les dernières paroles d'Anthion : la malédiction de Valthalak ne prendrait fin qu'une fois son médaillon brisé réparé, avec l'aide de Bodley
+- 8958 | ai transmis à Deliana les dernières paroles d'Anthion : la malédiction de Valthalak ne prendrait fin qu'une fois son médaillon brisé réparé, avec l'aide de Bodley
+- 8959 | ai transmis à Deliana les dernières paroles d'Anthion : la malédiction de Valthalak ne prendrait fin qu'une fois son médaillon brisé réparé, avec l'aide de Bodley
+- 8081 | ai remporté de nouveau [[Arathi Basin]] pour une autre caisse de ressources, que le sergent Maclear a fait suivre aux intendants
+- 8157 | ai remporté de nouveau [[Arathi Basin]] pour une autre caisse de ressources, que le sergent Maclear a fait suivre aux intendants
+- 8158 | ai remporté de nouveau [[Arathi Basin]] pour une autre caisse de ressources, que le sergent Maclear a fait suivre aux intendants
+- 8159 | ai remporté de nouveau [[Arathi Basin]] pour une autre caisse de ressources, que le sergent Maclear a fait suivre aux intendants
+- 8298 | ai remporté de nouveau [[Arathi Basin]] pour une autre caisse de ressources, que le sergent Maclear a fait suivre aux intendants
+- 8154 | ai remporté la bataille de [[Arathi Basin]] et rapporté une caisse de ses ressources au sergent Maclear, pour armer et nourrir les troupes de l'Alliance
+- 8155 | ai remporté la bataille de [[Arathi Basin]] et rapporté une caisse de ses ressources au sergent Maclear, pour armer et nourrir les troupes de l'Alliance
+- 8156 | ai remporté la bataille de [[Arathi Basin]] et rapporté une caisse de ses ressources au sergent Maclear, pour armer et nourrir les troupes de l'Alliance
+- 8297 | ai remporté la bataille de [[Arathi Basin]] et rapporté une caisse de ses ressources au sergent Maclear, pour armer et nourrir les troupes de l'Alliance
+- 8123 | ai remporté [[Arathi Basin]] et porté une caisse de ses ressources au traqueur noir Mortis, pour couper les lignes de ravitaillement de la Ligue d'Arathor
+- 8160 | ai remporté [[Arathi Basin]] et porté une caisse de ses ressources au traqueur noir Mortis, pour couper les lignes de ravitaillement de la Ligue d'Arathor
+- 8161 | ai remporté [[Arathi Basin]] et porté une caisse de ses ressources au traqueur noir Mortis, pour couper les lignes de ravitaillement de la Ligue d'Arathor
+- 8162 | ai remporté [[Arathi Basin]] et porté une caisse de ses ressources au traqueur noir Mortis, pour couper les lignes de ravitaillement de la Ligue d'Arathor
+- 8299 | ai remporté [[Arathi Basin]] et porté une caisse de ses ressources au traqueur noir Mortis, pour couper les lignes de ravitaillement de la Ligue d'Arathor
+- 8124 | ai emporté une autre caisse de ressources de [[Arathi Basin]] pour le traqueur noir Mortis, pour priver la Ligue d'Arathor de ravitaillement
+- 8163 | ai emporté une autre caisse de ressources de [[Arathi Basin]] pour le traqueur noir Mortis, pour priver la Ligue d'Arathor de ravitaillement
+- 8164 | ai emporté une autre caisse de ressources de [[Arathi Basin]] pour le traqueur noir Mortis, pour priver la Ligue d'Arathor de ravitaillement
+- 8165 | ai emporté une autre caisse de ressources de [[Arathi Basin]] pour le traqueur noir Mortis, pour priver la Ligue d'Arathor de ravitaillement
+- 8300 | ai emporté une autre caisse de ressources de [[Arathi Basin]] pour le traqueur noir Mortis, pour priver la Ligue d'Arathor de ravitaillement
+- 8166 | ai arraché les bannières ennemies de la ferme, de la mine, de la scierie et de la forge de [[Arathi Basin]] pour le grand maréchal Oslight
+- 8167 | ai arraché les bannières ennemies de la ferme, de la mine, de la scierie et de la forge de [[Arathi Basin]] pour le grand maréchal Oslight
+- 8168 | ai arraché les bannières ennemies de la ferme, de la mine, de la scierie et de la forge de [[Arathi Basin]] pour le grand maréchal Oslight
+- 8169 | ai abattu les bannières de la Ligue à la mine, à la scierie, à la forge et aux écuries de [[Arathi Basin]], pour les prendre au nom de la Horde
+- 8170 | ai abattu les bannières de la Ligue à la mine, à la scierie, à la forge et aux écuries de [[Arathi Basin]], pour les prendre au nom de la Horde
+- 8171 | ai abattu les bannières de la Ligue à la mine, à la scierie, à la forge et aux écuries de [[Arathi Basin]], pour les prendre au nom de la Horde
+- 1858 | ai subtilisé la clé de Tazan à Gamon, son assistant ivre, pour ouvrir la sacoche pour Therzok, la dernière preuve pour rejoindre la Main brisée
+- 1886 | me suis procuré les effets personnels d'Astor Hadren, un messager entre [[Silverpine Forest]] et [[Undercity]], la première épreuve des traqueurs noirs
+- 1898 | me suis fait passer pour le messager qu'attendait Andron Gant, pour savoir quel groupe il aidait en secret
+- 1899 | ai porté le registre d'Andron à Mennet Carkad, la preuve que voulait le seigneur Varimathras du groupe qu'Andron Gant aidait en secret
+- 1963 | ai tué Tazan, le troll qui commerçait avec les pirates près de [[Ratchet]], pour la sacoche de renseignements que voulait Therzok
+- 1978 | ai livré au seigneur Varimathras le registre d'Andron, qui démasquait le Syndicat, et ai été $gaccueilli:accueillie; pour cela parmi les traqueurs noirs
+- 1998 | ai tué Fenwick Thatros, un chef des morts-vivants installés dans [[Silverpine Forest]], au quai décrépit du lac Lordamere, pour le seigneur Varimathras
+- 1999 | ai crocheté les serrures du Kirin Tor à [[Ambermill]] pour le rapport de situation de Dalaran, des documents que les traqueurs noirs devaient récupérer
+- 2206 | me suis $ginfiltré:infiltrée; dans la maison du quai du Débarcadère de Jerod pour l'horaire d'expédition du maître des quais défias, la preuve de leur contrebande vers [[Westfall]]
+- 2239 | ai rapporté à Hulfdan le rapport d'Onin sur le long trajet des citernes de minerai du roi, pour que le Cercle caché prépare la suite
+- 2241 | ai livré la rose de Jannok, transi d'amour, à Syurna, qui ne voulait parler qu'à un voleur
+- 2242 | ai fouillé les sacs de Sethir l'Ancien, un satyre qui avait perdu tous ceux qui l'approchaient, à la recherche d'indices sur le mal qui rongeait les forêts de [[Teldrassil]]
+- 2282 | ai forcé le coffret de Lucius à [[Alther's Mill]] pour le jeton de larcin, pour gagner un certificat de larcin
+- 2358 | me suis frayé un passage parmi les orcs Blackrock jusqu'à reprendre les cornes de Nez'ra, volées au manoir de Ravenholdt des années plus tôt, pour l'Ombre d'Arantir
+- 2359 | suis $gentré:entrée; par effraction dans la tour défias en évitant ses gardes inhumains pour savoir ce que contenait le coffre expédié de [[Duskwood]], pour Mathias Shaw
+- 2381 | suis $gmonté:montée; à bord du Rasoir des marées pour voler le trésor des Mers du sud pour Wrenix le Misérable, dont les cinq derniers voleurs étaient revenus en morceaux
+- 2458 | ai fait signe au sous-chef Fizzule, l'agent de la Main brisée infiltré dans la KapitalRisk, avec deux fusées éclairantes et le salut de la Main brisée
+- 2478 | ai assassiné le grand contremaître Gallywix dans la tour de la KapitalRisk et volé sa réserve de mixture modifiée de Zanzil pour Shenthul
+- 2479 | ai apporté un échantillon de la mixture de Zanzil à Serge Hinott à [[Tarren Mill]], le seul apothicaire capable d'en guérir le poison
+- 2609 | ai rassemblé de quoi préparer le remède de Doc Mixilpixil contre l'« -ite » que laissait le contact de Zanzil
+- 6681 | ai cherché le manoir caché de Ravenholdt dans les collines de [[Hillsbrad Foothills]] avec son sceau, la première épreuve de ruse de la Ligue des assassins
+- 8234 | ai repris le sac azur scellé du seigneur Jorach Ravenholdt à un chaman Grumegueule [[at:Azshara]], qui l'avait acheté aux voleurs comme une relique sacrée
+- 8235 | ai rassemblé sur les bêtes de [[Azshara]] les fragments codés des livres ruinés de l'archimage Xylem, pour qu'il brise l'enchantement du sac azur
+- 8236 | ai traqué le drake vert Morphaz au fond du temple d'Atal'Hakkar pour la clé azur que le seigneur Ravenholdt croyait perdue à jamais
+- 692 | ai rassemblé les fragments déchirés du parchemin de Myzrael sur les élémentaires qui se les disputaient, peut-être la seule chance contre Myzrael
+- 703 | suis $gallé:allée; chercher des ailes de busard pour le barbecue préféré de Rigglefuzz, dont il promettait de partager la recette
+- 705 | ai plongé pour des perles bleues au Récif infâme [[at:Stranglethorn Vale]], la poudre dont Rigglefuzz avait besoin pour des bombes éclairantes contre les charognards de [[Badlands]]
+- 706 | ai arraché le cœur encore battant d'un dragonnet noir dans [[Lethlor Ravine]], pour que Sigrun Ironhew montre son enchantement d'arme enflammée
+- 708 | ai porté une boîte noire rongée, tirée de l'estomac d'un condor géant, à la salle des Armes à [[Ironforge]], marquée Moteur n°19 - brigade de siège d'Ironforge
+- 710 | ai ramassé de petits éclats de pierre sur les élémentaires de roche mineurs, pour que Lotwil Veriatus teste ses entraves de lien élémentaire
+- 711 | ai arraché de grandes dalles de pierre aux élémentaires de roche pour les essais de Lotwil Veriatus, une charge qu'il croyait à la mesure d'une demi-douzaine de taurens
+- 712 | ai pris les brassards de lien de roche aux grands élémentaires de roche, pour mesurer la force des propres entraves de Lotwil Veriatus
+- 713 | ai appris de Bro'kin, en Alterac, à faire de l'huile glaciale, pour que les entraves de Lotwil empêchent son élémentaire invoqué de tuer tout le monde
+- 714 | ai trouvé un gyrochronatome, la petite pièce essentielle dont Lotwil Veriatus avait besoin pour achever ses entraves
+- 715 | ai apporté des potions de soins et d'invisibilité à Lucien Tosselwrench, qui pensait en avoir besoin si l'expérience de Lotwil marchait
+- 716 | ai fourni des brassards en bronze à motifs pour que Lucien Tosselwrench les enchante avec les pierres en trop que Lotwil était trop pingre pour donner
+- 717 | ai brisé le sceau de la Terre pour libérer et tuer Fouette-noir et Hematus, lieutenants d'Aile-de-mort, pour Garek du Kirin Tor
+- 718 | ai repris la caisse de ravitaillement que les ogres du camp Kosh avaient prise, sans laquelle la troupe de Sigrun Ironhew ne pouvait se nourrir
+- 719 | ai repris la pioche porte-bonheur du prospecteur Ryedol aux nains Ombreforge qui avaient attaqué son chantier
+- 720 | ai annoncé au prospecteur Ryedol que Hammertoe Grez était vivant et avait été emmené à [[Uldaman]], comme le disait son griffonnage à la craie sur une carte
+- 723 | ai porté l'amulette de Hammertoe blessé, l'œuvre de sa vie, au prospecteur Ryedol, avec sa supplique pour arrêter le clan Ombreforge
+- 724 | ai porté l'amulette de Hammertoe à l'historien Karnik à [[Ironforge]], qui avait cherché avec lui les artefacts perdus de [[Uldaman]]
+- 725 | ai porté en courant la note de l'historien Karnik au conseiller Belgrum, qui avertissait des agissements des Ombreforge dans [[Badlands]]
+- 727 | ai montré le sceau du Marteau à Gerrig Bonegrip en me faisant passer pour l'un des siens, pour obtenir le condensé de Yagyin pour Theldurin
+- 728 | me suis fait passer pour l'un des membres de l'ordre du gardien Bel'dugur grâce au sceau du Marteau, pour obtenir le condensé de Yagyin pour Theldurin
+- 732 | ai arraché le signe de la Terre aux ogres près du camp Boff pour Garek, envoyé par Krasus du Kirin Tor pour mettre fin aux troubles de [[Lethlor Ravine]]
+- 733 | ai récupéré de la ferraille sur les ogres de la grotte des Rotecuves, pour que Sigrun bâtisse des défenses pour le camp du prospecteur inquiet
+- 735 | ai rassemblé trois objets de pouvoir, nommés seulement par écrit, pour Gerrig Bonegrip, son prix pour une copie du condensé de Yagyin
+- 737 | ai apporté le condensé de Yagyin à Theldurin l'Égaré, qui espérait que son savoir protégerait tout le monde de ce qui pourrait remonter à la surface
+- 738 | ai fouillé le chantier le plus au sud, au-delà de [[Angor Fortress]], à la recherche du prospecteur Agmond, sans nouvelles depuis des semaines, et n'ai trouvé que ses os
+- 739 | ai vengé le prospecteur Agmond sur Murdaloc, le trogg dont il avait griffonné le nom dans le sable en mourant, et sur les briseurs d'os Gardepierre
+- 762 | ai tué l'ambassadeur Infernus dans [[Angor Fortress]], envoyé par Ragnaros pour surveiller la chasse des Ombreforge aux artefacts de [[Uldaman]]
+- 777 | suis $gallé:allée; chercher le rouage n°5 pour Lotwil Veriatus auprès de Lucien Tosselwrench, qui me l'a remis avant de se mettre à l'abri
+- 778 | ai vaincu le gardien Fam'retor, l'élémentaire que Lotwil Veriatus avait invoqué pour tester ses entraves, quand son expérience a mal tourné
+- 782 | ai tué le chef Tho'grun, le mercenaire ogre qui avait trahi Kargath, pour reprendre le signe de la Terre pour Gorn
+- 793 | ai libéré les drakes noirs Fouette-noir et Hematus du sceau de la Terre pour mieux les tuer, faisant taire les anciens alliés dépravés de la Horde
+- 1419 | ai chassé les coyotes des rochers qui se glissaient dans [[Kargath]] pour piller ses vivres, pour Neeka Bloodscar
+- 1420 | ai porté le rapport de Neeka Bloodscar à Helgrum le Rapide à [[Stonard]], la nouvelle que l'Alliance avait ses propres ennuis
+- 2203 | ai tiré le sang des dragons gardiens brûlés dans des récipients de thaumaturgie, une tâche dangereuse pour la propre recette de Jarkal Mossmeld
+- 2258 | ai rassemblé des gésiers de busard, des crocs de coyote et des fragments d'élémentaire de roche pour réapprovisionner Jarkal Mossmeld en fournitures d'alchimie
+- 3821 | ai fouillé [[Burning Steppes]] à la recherche de Sha'ni Proudtusk, disparue depuis trois semaines alors qu'elle observait les rituels des ogres Brûlentrailles, pour son mari Thal'trak
+- 4062 | ai apporté à Lotwil Veriatus un éclat marqué G.L.A. tiré des machines détruites dans [[Burning Steppes]], pour savoir qui les avait fabriquées
+- 9085 | ai démasqué et détruit une ombre funeste, l'une des créatures les plus effrayantes du roi-liche, à un cercle d'invocation du Fléau
+- 9153 | ai combattu le Fléau autour des cercles magiques d'une nécropole pour briser les défenses des forteresses volantes, pour l'Aube d'argent
+- 9292 | ai montré au lieutenant Orrin un cristal nécrotique fêlé pris sur une abomination, le signe que le Fléau avait tenté d'installer un camp dans [[Stormwind City]]
+- 9310 | ai montré au lieutenant Rukag un pâle cristal nécrotique pris sur une âme en peine abattue, le signe que le Fléau avait tenté d'installer un camp à [[Undercity]]
+- 364 | ai détruit les Décervelés qui envahissaient le nord de [[Deathknell]], autrefois des frères et des sœurs, désormais esclaves du roi-liche
+- 376 | ai rassemblé des pattes de charognard et des ailes de chauve-souris du crépuscule pour la novice Elreth, qui soignait les blessés et taillait leurs armures
+- 380 | ai débarrassé de ses araignées la mine d'or près de [[Deathknell]], de l'or dont les Réprouvés avaient besoin pour survivre
+- 381 | ai frappé le premier le camp de la Croisade écarlate au sud-est de [[Deathknell]], des fanatiques jurés de détruire tous les morts-vivants, et pris leurs brassards
+- 382 | ai tué Meven Korgal, le messager écarlate envoyé du monastère, pour les ordres qu'il portait aux croisés aux portes de [[Deathknell]]
+- 383 | ai porté les documents pris à la Croisade écarlate, avec les noms de leurs officiers [[at:Tirisfal Glades]], à l'exécuteur Zygand à [[Brill]]
+- 590 | ai rossé Calvin Montague quand il a nié devoir les pièces promises pour avoir porté sa lettre à [[Brill]]
+- 3901 | ai décimé les squelettes cliquetants, des sbires plus coriaces du roi-liche, pour me montrer digne de la liberté rendue aux Réprouvés
+- 3902 | ai fouillé les caisses de [[Deathknell]] à la recherche d'équipement, pour que les recrues qui se relevaient encore ne trébuchent pas nues
+- 6395 | ai abattu Samuel Fipps, qui avait tué sa femme Marla après que la peste l'avait pris, et l'ai enterré près de la tombe de Marla, comme elle l'avait souhaité
+- 7028 | ai rassemblé des sculptures de cristal théradriques à [[Maraudon]] pour [[name:Willow]], qui voulait étudier les reliques des anciens dieux qui y étaient cachées
+- 7029 | ai purgé les lianes de Vylestem de la corruption de Langue-vile, à [[Maraudon]], et tué les rejetons nocifs qui en sortaient, pour Vark Battlescar
+- 7041 | ai purgé les lianes de Vylestem de la corruption de Langue-vile, à [[Maraudon]], et tué les rejetons nocifs qui en sortaient, pour Talendria
+- 7044 | ai repris les deux parties du sceptre de Celebras à Noxxion et au seigneur Langue-vile, pour rejoindre Celebras, qui errait aveugle et maudit dans [[Maraudon]]
+- 7046 | ai aidé Celebras le Racheté à réunir le bâtonnet et le diamant de son sceptre, et fait mien son espoir d'apaiser l'esprit de son oncle
+- 7064 | ai tué la princesse Theradras au fond de [[Maraudon]], pour que l'on puisse recueillir les restes de Zaetar, premier fils de Cénarius
+- 7065 | ai tué la princesse Theradras au fond de [[Maraudon]], pour que l'on puisse recueillir les restes de Zaetar, premier fils de Cénarius
+- 7066 | ai porté la graine de vie de l'esprit de Zaetar à Remulos à [[Moonglade]], la nouvelle que son frère vivait encore et avait trouvé la paix
+- 7067 | suis $gallé:allée; chercher l'amulette de l'Union dans les salles sacrées de [[Maraudon]] pour le paria centaure exilé, qui espérait unir les tribus centaures
+- 7068 | ai arraché des fragments d'éclat d'ombre aux créatures de cristal de [[Maraudon]] pour la magie d'Uthel'nay
+- 7070 | ai rassemblé des éclats d'ombre sur les élémentaires de [[Maraudon]] pour l'archimage Tervosh, qui étudiait les propriétés arcaniques des cristaux
+- 3341 | ai tué la liche Amnennar le Porte-froid, qui régnait sur les hurans de [[Razorfen Downs]] pour le Fléau, pour couper son lien avec Ner'zhul
+- 3525 | ai protégé Belnistrasz pendant qu'il mettait hors d'état l'idole des hurans, le four où ils consumaient leurs captifs de [[Barrens]]
+- 3636 | ai tué Amnennar le Porte-froid, la liche qui régnait sur les hurans de [[Razorfen Downs]], pour mettre fin à leur pacte impie avec le Fléau
+- 6521 | ai traqué l'ambassadeur Malcin aux abords de [[Razorfen Downs]], l'envoyé du Fléau qui courtisait les hurans, et porté sa tête à Varimathras
+- 6522 | ai remis à Varimathras un parchemin trouvé sur la mégère de [[Razorfen Kraul]], l'offre de pacte de l'ambassadeur Malcin avec le Fléau
+- 6626 | ai décimé les gardes de bataille, les tisseurs d'épines et les cultistes de la Tête de mort qui affluaient vers le diplomate du Fléau à [[Razorfen Downs]], pour Myriam Moonsinger
+- 978 | ai ramassé des plumes lunaires tombées dans [[Winterspring]] pour Erelas Ambersky, pour voir si ses séléniens portaient la même magie que ceux de [[Hinterlands]]
+- 3661 | ai rassemblé des plumes de séléniens dans [[Hinterlands]] pour Erelas Ambersky, qui se demandait si les chouettards étaient vraiment l'œuvre d'Elune
+- 9260 | ai décimé le Fléau campé aux portes de [[Stormwind City]] et examiné ses cercles runiques lumineux, pour savoir à quoi ils servaient
+- 9261 | ai décimé le Fléau campé aux portes de [[Ironforge]] et examiné ses cercles runiques lumineux, pour savoir à quoi ils servaient
+- 9262 | ai décimé le Fléau campé aux portes de [[Darnassus]] et examiné ses cercles runiques lumineux, pour savoir à quoi ils servaient
+- 9263 | ai décimé le Fléau campé aux portes de [[Orgrimmar]] et examiné ses cercles runiques lumineux, pour savoir à quoi ils servaient
+- 9264 | ai décimé le Fléau campé aux portes de [[Thunder Bluff]] et examiné ses cercles runiques lumineux, pour savoir à quoi ils servaient
+- 9265 | ai décimé le Fléau campé aux portes de [[Undercity]] et examiné ses cercles runiques lumineux, pour savoir à quoi ils servaient
+- 9295 | ai remis au gardien des registres une lettre déchirée trouvée sur le Fléau, les mots d'un soldat à un être cher, dans l'espoir de retrouver la famille
+- 9299 | ai remis au gardien des registres un mot usé trouvé sur le Fléau, les mots d'un soldat à un être cher, dans l'espoir de retrouver la famille
+- 9300 | ai remis au gardien des registres une page en lambeaux trouvée sur le Fléau, les mots d'un soldat à un être cher, dans l'espoir de retrouver la famille
+- 9301 | ai remis au gardien des registres une enveloppe tachée de sang trouvée sur le Fléau, les mots d'un soldat à un être cher, dans l'espoir de retrouver la famille
+- 9302 | ai remis au gardien des registres une missive froissée trouvée sur le Fléau, les mots d'un soldat à un être cher, dans l'espoir de retrouver la famille
+- 9304 | ai remis au gardien des registres un document maculé trouvé sur le Fléau, les mots d'un soldat à un être cher, dans l'espoir de retrouver la famille

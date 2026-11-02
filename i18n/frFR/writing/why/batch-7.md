@@ -52,7 +52,7 @@
 - 6025 | suis $gmonté:montée; sur un point élevé de [[Hearthglen]] pour estimer le nombre des croisés écarlates pour Kirsta Deepshadow, trop épuisée pour y aller elle-même
 - 6389 | ai forcé le tonneau de termites dans la scierie de Nordcrête et échappé à la nuée, ce qui a permis au père de Nathaniel Dumah de reposer
 - 6390 | ai lâché les termites dans la scierie de Nordcrête pour Mickey Levine, pour ruiner le travail de la Croisade écarlate
-- 2766 | ai porté la balise de détresse d'[[name:Oglethorpe Obnoticus]] jusqu'à son robot de repérage écrasé près du val de la Balafre sauvage, pour qu'il puisse être récupéré
+- 2766 | ai porté la balise de détresse de [[name:Oglethorpe Obnoticus]] jusqu'à son robot de repérage écrasé près du val de la Balafre sauvage, pour qu'il puisse être récupéré
 - 2767 | ai escorté le robot OOX-22/FE jusqu'au quai de [[The Forgotten Coast]], d'où il pourrait commencer son long décollage vers chez lui
 - 2821 | ai rassemblé des peaux de yéti épaisses pour Pratt McGrubben, un travailleur du cuir certain qu'une fois bien traitées elles seraient plus solides que le fer
 - 2822 | ai chassé les yétis du val de la Balafre sauvage pour les peaux épaisses dont Jangdor Swiftstrider voulait rehausser la qualité de son cuir
@@ -131,7 +131,7 @@
 - 1702 | ai porté un tonneau de Barleybrew Scalder au fabricant de boucliers Furen Longbeard à [[Stormwind City]], pour obtenir le bouclier promis par Yorus
 - 1703 | ai porté les notes de Furen sur ses nouvelles techniques d'armure jusqu'au forgeron Mathiel à [[Darnassus]]
 - 1704 | ai porté les notes de Furen à Klockmort Spannerspan à [[Ironforge]], qui était presque hors de lui devant la découverte de Furen
-- 1705 | ai pris du sang ardent aux worgens Plaie-de-nuit de [[Roland's Doom]] et une pierre ardente à Gutspill, pour l'armure de Grimand Elmore
+- 1705 | ai pris du sang ardent aux worgens Plaie-de-nuit de [[Roland's Doom]] et une pierre ardente à [[name:Gutspill]], pour l'armure de Grimand Elmore
 - 1708 | ai ramassé du corail brûlant sur la côte au sud de [[Menethil Harbor]] pour Klockmort Spannerspan, impatient d'essayer les techniques de Furen
 - 1710 | ai fouillé sous les nids de wyvernes de [[Highperch]] à la recherche de coquilles d'œufs brûlées par le soleil, pour une armure que Mathiel ferait selon les nouvelles techniques de Furen
 - 1712 | ai rassemblé ce dont Bath'rah le Guetteur des vents avait besoin pour invoquer le seigneur du vent Cyclonien, une épreuve de force et de ruse
@@ -148,7 +148,7 @@
 - 8424 | ai massacré les Ombre-juré, dont les sombres rituels tourmentaient l'esprit du Héros déchu de la Horde
 - 8425 | ai détruit les gardiens trolls de [[Sunken Temple]] pour des plumes vaudou qui prêteraient un instant un corps au Héros déchu de la Horde
 - 77 | ai récupéré des bouteilles de Délice au miel des Hinterlands dans les caisses des ruines de [[Skulk Rock]], infestées de limons, la gourmandise que voulait Dran Droffers
-- 485 | ai apporté une balise de détresse au robot de repérage d'[[name:Oglethorpe Obnoticus]], écrasé à la source de la rivière près de [[Skulk Rock]]
+- 485 | ai apporté une balise de détresse au robot de repérage de [[name:Oglethorpe Obnoticus]], écrasé à la source de la rivière près de [[Skulk Rock]]
 - 836 | ai escorté le robot OOX-09/HL jusqu'au rivage au-delà de [[Overlook Cliffs]], d'où il pourrait commencer son long décollage vers chez lui
 - 1452 | ai rassemblé des gésiers de roc et des foies de groddoc et de fourrure-de-fer pour le Kocktail de Kalimdor de Rhapsody Shindigger, le prix de son histoire
 - 1469 | ai porté le fragment de tablette atal'ai de Rhapsody Shindigger à Brohann Caskbelly, la preuve que le temple englouti se trouvait sous le marais
@@ -272,7 +272,7 @@
 - 537 | ai tué Nagaz et les mages de l'ombre d'Argus dans les hautes terres d'Alterac, envoyés du Sillage d'Argus alliés au Syndicat
 - 551 | ai porté le parchemin ensorcelé portant le nom de Nagaz au maître des traditions Dibbs, dans l'espoir qu'il briserait son sort
 - 554 | ai apporté le parchemin ensorcelé au prospecteur Stormpike à [[Ironforge]], un maître du déchiffrement, pour qu'il y comprenne quelque chose
-- 862 | ai attrapé des rats des fouilles à [[Bael Modan]] pour le ragoût de Grub, car pour lui aucun aventurier n'était aguerri sans avoir tué quelques rats
+- 862 | ai attrapé des rats des fouilles à [[Bael Modan]] pour le ragoût de [[name:Grub]], car pour lui aucun aventurier n'était aguerri sans avoir tué quelques rats
 - 2178 | ai chassé des trotteurs près de [[Auberdine]] pour leur viande, pour gagner la recette secrète du ragoût de trotteur frais d'Alanndarian Nightsong
 - 4161 | ai ramassé seulement les pattes d'araignée que demandait Zarrin, pas une de plus que ce qu'il lui fallait
 - 6610 | ai rassemblé des œufs géants, de la chair de palourde et de l'emmental d'Alterac pour l'omelette aux palourdes de Dirge Quikcleave, le prix de leçons de cuisine exotique
