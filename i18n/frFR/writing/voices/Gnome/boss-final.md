@@ -5,4 +5,4 @@
 - With {boss} defeated, I could leave {dungeon}, which was a much better prospect than being carried out.
   > Une fois {boss} hors de combat, je pouvais quitter {dungeon}, ce qui valait bien mieux que d'en être $gsorti:sortie; sur un brancard.
 - I overcame {boss} in {dungeon}, and felt a surge of triumph quite out of proportion to the trembling.
-  > J'ai eu raison de {boss} dans {dungeon}, et j'ai ressenti un élan de triomphe sans aucune commune mesure avec mes tremblements.
+  > J'ai eu raison de {boss} dans {dungeon}, et j'ai ressenti un élan de triomphe sans commune mesure avec mes tremblements.

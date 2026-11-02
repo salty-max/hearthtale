@@ -17,7 +17,7 @@
 - I set out {at}, curious about everything and in no hurry to be told what anything was for.
   > Je me suis $gmis:mise; en route {at}, $gcurieux:curieuse; de tout et nullement $gpressé:pressée; qu'on me dise à quoi servait chaque chose.
 - Daylight showed me more of the country than I could possibly take in, and I set out {at} determined to try.
-  > La lumière du jour me montrait plus de pays que je ne pourrais jamais en absorber, et je me suis $gmis:mise; en route {at}, bien $gdécidé:décidée; à essayer.
+  > La lumière du jour me montrait plus de pays que je ne pourrais jamais en embrasser, et je me suis $gmis:mise; en route {at}, bien $gdécidé:décidée; à essayer.
 - The dark made every sound {at} twice as interesting and half as welcome, and I listened to all of them.
   > L'obscurité rendait chaque bruit {at} deux fois plus intéressant et moitié moins bienvenu, et je les ai tous écoutés.
 - I began again {at}, unwilling to let my people count one more of us among the lost.
@@ -49,4 +49,4 @@
 - I was off {at}, with a careful plan for the day and every expectation of having to revise it.
   > J'étais en route {at}, avec un plan soigné pour la journée et la certitude de devoir le réviser.
 - Darkness has a way of rearranging familiar shapes into alarming ones, and {where} was full of them.
-  > L'obscurité a le chic pour réarranger les formes familières en formes inquiétantes, et {where} en était plein.
+  > L'obscurité a le chic pour réagencer les formes familières en formes inquiétantes, et {where} en était plein.

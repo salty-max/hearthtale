@@ -9,9 +9,9 @@
 - I got the better of both {foes}, and would rather not meet either of them again.
   > J'ai eu le dessus sur {foes}, l'un comme l'autre, et je préférerais ne revoir ni l'un ni l'autre.
 - I came through fights with both {foes}, and at least one of them came far too close to ending things.
-  > Je suis $gsorti:sortie; de mes combats contre {foes}, et au moins l'un d'eux a été bien trop près de tout arrêter.
+  > Je suis $gsorti:sortie; de mes combats contre {foes}, et au moins l'un d'eux a bien failli tout arrêter pour de bon.
 - I saw off {foes}, every one of them, and was quietly astonished at myself afterwards.
-  > Je suis $gvenu:venue; à bout de {foes}, jusqu'au dernier, et je m'en suis $gétonné:étonnée; moi-même en silence.
+  > Je suis $gvenu:venue; à bout de {foes}, jusqu'au dernier, et je me suis $gétonné:étonnée; moi-même en silence.
 - I squared up to {foes}, and came away shaken, whole and rather prouder than I let on.
   > J'ai tenu tête à {foes}, et j'en suis $gsorti:sortie; $gsecoué:secouée;, $gentier:entiere; et plus $gfier:fière; que je ne le laissais voir.
 - I got through fights with {foes}, all of them, and I would rather not think too hard about how narrow the closest one was.

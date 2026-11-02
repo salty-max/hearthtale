@@ -7,7 +7,7 @@
 - Close quarters have never unsettled me the way they unsettle some folk, and that dungeon put the boast to a fair test.
   > Les espaces confinés ne m'ont jamais $gtroublé:troublée; comme ils troublent certains, et ce donjon a mis cette vantardise à rude épreuve.
 - I died out there, and nothing stings quite like watching something give way under load, even when the something is me.
-  > Je suis $gmort:morte; là-bas, et rien ne pique autant que de voir une chose céder sous la charge, même quand cette chose, c'est moi.
+  > Je suis $gmort:morte; là-bas, et rien ne fait aussi mal que de voir une chose céder sous la charge, même quand cette chose, c'est moi.
 - I came within a hair's breadth of the end, and I keep turning that moment over like a doubtful casting, hunting for the air bubble that nearly split it.
   > Je suis $gpassé:passée; à un cheveu de la fin, et je retourne ce moment dans tous les sens comme une pièce de fonderie douteuse, en cherchant la bulle d'air qui a failli la fendre.
 - The first rule of any dig is to come back out of it, and that place leaned on the rule harder than I would have liked.

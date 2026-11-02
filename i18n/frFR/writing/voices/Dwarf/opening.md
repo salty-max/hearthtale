@@ -33,7 +33,7 @@
 - I made ready {at}, sizing up the day's work by its weight rather than by my worries.
   > Je me suis $gpréparé:préparée; {at}, jaugeant le travail du jour à son poids plutôt qu'à mes soucis.
 - The clean cold of Dun Morogh was a long way from {where}, and I made do with the day I had.
-  > Le bon froid propre de [[Dun Morogh]] était bien loin de {where}, et je me suis $gcontenté:contentée; de la journée que j'avais.
+  > Le froid vif et pur de [[Dun Morogh]] était bien loin de {where}, et je me suis $gcontenté:contentée; de la journée que j'avais.
 - There was daylight left to spend {at}, and I meant to get good wear out of it.
   > Il restait de la lumière à dépenser {at}, et je comptais bien en tirer un bon usage.
 - The dark bothered me less than it might {at}. The greatest city I know lies where no sunlight reaches.
@@ -41,7 +41,7 @@
 - {where} is ground the Bronzebeards have held for generations, which is as good a start as I know of.
   > {where} est une terre que les Barbe-de-Bronze tiennent depuis des générations, et je ne connais pas meilleur départ.
 - Good boots and a sound pack carried me out {at}, and good intentions came along behind.
-  > De bonnes bottes et un sac bien fait m'ont $gemmené:emmenée; {at}, et les bonnes intentions ont suivi derrière.
+  > De bonnes bottes et un sac solide m'ont $gmis:mise; en chemin {at}, et les bonnes intentions ont suivi.
 - Somewhere an old sealed door is always waiting for the right hands, and I went looking {at}, quietly hoping they might be mine.
   > Quelque part, une vieille porte scellée attend toujours les bonnes mains, et je suis $gparti:partie; la chercher {at}, en espérant tout bas que ce soient les miennes.
 - I began again {at}, steady on my feet and hard to knock over.

@@ -7,7 +7,7 @@
 - Going into a place so full of enemies was nobody's idea of sound planning, and my shoulders are only now coming down from around my ears.
   > Entrer dans un endroit aussi plein d'ennemis n'avait rien d'un plan solide, et mes épaules commencent à peine à redescendre de mes oreilles.
 - I have been dead now, however briefly, and the small, delicate apparatus that keeps me breathing has never seemed more precious.
-  > J'ai été $gmort:morte;, si brièvement que ce soit, et le petit appareil délicat qui me fait respirer ne m'a jamais paru plus précieux.
+  > Je suis $gmort:morte;, ne serait-ce qu'un instant, et le petit appareil délicat qui me fait respirer ne m'a jamais paru plus précieux.
 - That close call has left me jumpy, and for a while yet I mean to let caution walk in front and curiosity trail behind.
   > Cette alerte m'a $grendu:rendue; $gnerveux:nerveuse;, et pour un moment encore je compte laisser la prudence marcher devant et la curiosité traîner derrière.
 - A crowd of enemies in close quarters put me in mind of the troggs in Gnomeregan's halls, and I am in no hurry to go back into one.

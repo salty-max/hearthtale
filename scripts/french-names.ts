@@ -135,6 +135,24 @@ function index(texts: string[]): Index {
 // (a name's first word is a common word: "jeune", "vallée", "loup"; "Hogger",
 // "Frostmane" are not)
 const commonWord = (ix: Index, w: string) => (ix.small.get(low(w)) ?? 0) >= 3;
+// (a name's first word in lower case as the texts spell it: the game writes
+// capitals without their accent, "Etoffe de lin" is "étoffe de lin")
+const ACCENTED: Record<string, string[]> = { e: ["é", "è", "ê"], a: ["à", "â"], i: ["î"], o: ["ô"], u: ["û"], c: ["ç"] };
+function lowered(ix: Index, name: string): string | undefined {
+  const w = tokens(name)[0];
+  if (!w) return undefined;
+  const plain = low(w);
+  const first = plain.charAt(0);
+  // (only a word the texts never write bare: "a" is a word, "à" another)
+  if (plain.length < 2 || (ix.small.get(plain) ?? 0) >= 3) return undefined;
+  let best = plain,
+    count = ix.small.get(plain) ?? 0;
+  for (const a of ACCENTED[first] ?? []) {
+    const c = ix.small.get(a + plain.slice(1)) ?? 0;
+    if (c > count) [best, count] = [a + plain.slice(1), c];
+  }
+  return best === plain ? undefined : best + name.slice(w.length);
+}
 
 // A name's uses in the texts: the two words before it and how its first word
 // was written ("Vallée", "vallée").
@@ -279,7 +297,7 @@ function place(ix: Index, game: Game, name: string, fixed?: Partial<Entry>): Ent
   let n = bare;
   // (the game's own capitals after the article, "au Loch Modan", unless its
   // texts write the name in lower case more often: "la caverne des trolls")
-  if (a && lower > upper) n = low(n.charAt(0)) + n.slice(1);
+  if (a && lower > upper) n = lowered(ix, n) ?? low(n.charAt(0)) + n.slice(1);
   if (!a) n = cap(n);
   // the preposition: as the texts write it, else by the head, else "à" for a
   // name of its own and "dans" for one with its article
@@ -304,12 +322,13 @@ function thing(ix: Index, game: Game, name: string, person: boolean, fixed?: Par
     else lower++;
   }
   const { head, given } = headOf(name);
-  let g: string = m + f > 0 ? (f > m ? "f" : "m") : given ?? genderOfWord(game, ix, low(head)) ?? "m";
+  let g: string = m + f > 0 ? (f > m ? "f" : "m") : given ?? genderOfWord(game, ix, lowered(ix, head) ?? low(head)) ?? "m";
   const ws = tokens(name);
-  if (ws.length && pluralWord(head) && genderOfWord(game, ix, low(head)) === null && m + f === 0) g += "p";
+  if (ws.length && pluralWord(head) && genderOfWord(game, ix, lowered(ix, head) ?? low(head)) === null && m + f === 0) g += "p";
   const first = ws[0] ?? "";
   const lc = lower > upper || commonWord(ix, first);
-  return { n: name, g, a: "", ...fixed, ...(lc ? { lc: "1" } : {}) } as Entry;
+  const lf = lowered(ix, name);
+  return { n: name, g, a: "", ...fixed, ...(lc ? { lc: "1" } : {}), ...(lf ? { lf } : {}) } as Entry;
 }
 
 // ── the files ────────────────────────────────────────────────────────────────
@@ -402,8 +421,8 @@ for (const game of Object.keys(GAMES) as Game[]) {
     const parts = [lua(v.n), lua(v.g)];
     if (v.a !== "" || v.p) parts.push(lua(v.a));
     if (v.p) parts.push(lua(v.p));
-    if ((v as { lc?: string }).lc) return `{ ${parts.join(", ")}, lc = true }`;
-    return `{ ${parts.join(", ")} }`;
+    const extra = [(v as { lc?: string }).lc ? "lc = true" : "", (v as { lf?: string }).lf ? `lf = ${lua((v as { lf?: string }).lf!)}` : ""].filter(Boolean);
+    return `{ ${[...parts, ...extra].join(", ")} }`;
   };
   const factionRows = Object.keys(factions[game])
     .sort()

@@ -384,7 +384,9 @@ end
 
 -- A creature: one of a kind, a family, a type, a boss.
 local function creatureOf(name) return lookup("creatures", name) or lookup("familyIds", name) or lookup("typeIds", name) end
-local function shown(e) return e.lc and lowerFirst(e[1]) or e[1] end
+-- (a name's first word in lower case as the game's texts spell it: "étoffe")
+local function lowered(e) return e.lf or lowerFirst(e[1]) end
+local function shown(e) return e.lc and lowered(e) or e[1] end
 -- (a person's name, or a creature's as the game writes it)
 local function nameOf(name)
   local e = creatureOf(name)
@@ -400,7 +402,7 @@ local function definiteCreature(name)
     F.unknown[name] = true
     return A .. "le " .. name
   end
-  local n = lowerFirst(e[1])
+  local n = shown(e)
   return made(definiteOf(n, e[2]), e[2], n)
 end
 local function indefiniteCreature(name)
@@ -529,7 +531,7 @@ local function frPlural(name)
     return name
   end
   local g = e[2]:gsub("p", "") .. "p"
-  local n = pluralOf(e.lc and lowerFirst(e[1]) or e[1])
+  local n = pluralOf(e.lc and lowered(e) or e[1])
   return made(n, g, n)
 end
 
@@ -564,14 +566,14 @@ local function bySlot(slot, v)
   elseif slot == "prof" then
     local e = lookup("skillIds", v)
     if type(e) == "table" then
-      local n = lowerFirst(e[1])
+      local n = lowered(e)
       return made(definiteOf(n, e[2]), e[2], n)
     end
   elseif slot == "rank" then
     return RANKS[v]
   elseif slot == "mount" then
     local e = lookup("mounts", v)
-    if type(e) == "table" then return made(lowerFirst(e[1]), e[2], lowerFirst(e[1])) end
+    if type(e) == "table" then return made(lowered(e), e[2], lowered(e)) end
   elseif slot == "from" or slot == "to" then
     local e = placeOf(v)
     if e then return made(withArticle(e), e[2], e[1]) end
@@ -597,12 +599,12 @@ local function generic(v)
   if e then return made(withArticle(e), e[2], e[1]) end
   e = creatureOf(v)
   if type(e) == "table" then
-    local n = v:find("^%l") and lowerFirst(e[1]) or e[1]
+    local n = v:find("^%l") and lowered(e) or e[1]
     return made(n, e[2], n)
   end
   e = lookup("skillIds", v)
   if type(e) == "table" then
-    local n = lowerFirst(e[1])
+    local n = lowered(e)
     return made(definiteOf(n, e[2]), e[2], n)
   end
   e = itemOf(v)
@@ -762,11 +764,44 @@ end
 -- [[spell:Life Tap]] (a spell, never a creature or an item of its name),
 -- [[sort:Hunter's Mark]] (a spell with its article: "la Marque du chasseur"),
 -- [[faction:Frostwolf Clan]] (a faction, each game's: "Clan Loup-de-Givre"),
--- [[spec:Beast Mastery]] (a talent tree, a specialization).
+-- [[spec:Beast Mastery]] (a talent tree, a specialization), [[les:Kobold
+-- Vermin]], [[des:X]], [[pl:X]] (a creature or an item, in the plural: "les
+-- vermines kobolds"); [[un:X]] and [[le:X]] take an item too.
+-- (a creature, else an item: what a deed names in passing)
+local function thingOf(english)
+  local e = creatureOf(english)
+  if type(e) == "table" then return e, true end
+  e = itemOf(english)
+  if e then return e, false end
+end
+local PLURAL = { les = true, des = true, pl = true }
+local TOKENS = { at = true, un = true, le = true, name = true, spell = true, sort = true, faction = true, spec = true }
+for k in pairs(PLURAL) do
+  TOKENS[k] = true
+end
 local function gameName(form, english)
   if form == "at" then return frAt(english) end
-  if form == "un" then return indefiniteCreature(english) end
-  if form == "le" then return definiteCreature(english) end
+  if form == "un" or form == "le" or PLURAL[form] then
+    local e, living = thingOf(english)
+    if not e then
+      F.unknown[english] = true
+      if form == "un" then return "un " .. english end
+      if form == "le" then return A .. "le " .. english end
+      return english
+    end
+    -- (a creature as the game writes it in a sentence; an item's name kept as
+    -- a name, but in the plural a common noun: "des fourrures de loup")
+    local n = ((living and e.lc) or PLURAL[form]) and lowered(e) or e[1]
+    local g = e[2]
+    if PLURAL[form] then
+      n = pluralOf(n)
+      if form == "les" then return A .. "les " .. n end
+      if form == "des" then return "des " .. n end
+      return n
+    end
+    if form == "le" then return definiteOf(n, g) end
+    return indefiniteOf(n, g)
+  end
   if form == "name" then return nameOf(english) end
   if form == "faction" then
     local f = FN.factions and FN.factions[english]
@@ -790,18 +825,7 @@ local function names(s)
   return (
     s:gsub("%[%[(.-)%]%]", function(inner)
       local form, english = inner:match("^(%a+):(.+)$")
-      if
-        not (
-          form == "at"
-          or form == "un"
-          or form == "le"
-          or form == "name"
-          or form == "spell"
-          or form == "sort"
-          or form == "faction"
-          or form == "spec"
-        )
-      then
+      if not TOKENS[form or ""] then
         form, english = "", inner
       end
       return gameName(form, english)

@@ -19,15 +19,15 @@
 - I had given my study to Frost, the cold of Dun Morogh made into something useful at last.
   > J'avais consacré mes études au [[spec:Frost]], le froid de [[Dun Morogh]] enfin rendu utile.
 - I had chosen Affliction, curses that did their work slowly, and very thoroughly.
-  > J'avais choisi l'[[spec:Affliction]], des malédictions qui font leur œuvre lentement, et très consciencieusement.
+  > J'avais choisi l'[[spec:Affliction]], des malédictions qui faisaient leur œuvre lentement, et très consciencieusement.
 - I had chosen Demonology, and treated each demon like a contraption with a dangerous temper.
   > J'avais choisi la [[spec:Demonology]], et je traitais chaque démon comme une mécanique au caractère dangereux.
 - I had chosen Destruction, and kept a respectful distance from my own results.
-  > J'avais choisi la [[spec:Destruction]], et je gardais une distance respectueuse avec mes propres résultats.
+  > J'avais choisi la [[spec:Destruction]], et je gardais une distance respectueuse de mes propres résultats.
 - I had chosen Discipline, a careful faith, every prayer set exactly where it would do the most good.
   > J'avais choisi la [[spec:Discipline]], une foi soigneuse, chaque prière placée exactement là où elle ferait le plus de bien.
 - I had given myself to the Holy path, my prayers turned to mending whoever the road had broken.
-  > Je m'étais $gvoué:vouée; à la voie du [[spec:Holy]], mes prières tournées vers la réparation de quiconque la route avait brisé.
+  > Je m'étais $gvoué:vouée; à la voie du [[spec:Holy]], mes prières tournées vers ceux que la route avait brisés.
 - I had turned to Shadow, and kept as close an eye on it as on anything that might go off.
   > Je m'étais $gtourné:tournée; vers l'[[spec:Shadow]], et je la surveillais d'aussi près que tout ce qui risque d'exploser.
 - I took my old ways apart, figuratively speaking, and rebuilt myself around {spec} instead of {was}.

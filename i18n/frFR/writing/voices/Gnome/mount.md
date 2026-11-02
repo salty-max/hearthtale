@@ -5,4 +5,4 @@
 - I rode my {mount} for the first time, and found the speed every bit as satisfying as I had hoped.
   > J'ai monté {mount=mon|ma|mes|mes} {mount} pour la première fois, et la vitesse m'a autant $gcomblé:comblée; que je l'avais espéré.
 - A mechanostrider of my own: I rode my {mount} out of the gate, already itching to adjust it.
-  > Un mécanotrotteur à moi : je suis $gsorti:sortie; par la porte sur {mount=mon|ma|mes|mes} {mount}, déjà $gimpatient:impatiente; de le régler.
+  > Un mécanotrotteur à moi : je suis $gsorti:sortie; par la porte sur {mount=mon|ma|mes|mes} {mount}, déjà $gimpatient:impatiente; d'y mettre la main.

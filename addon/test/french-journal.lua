@@ -35,10 +35,12 @@ local function leaks(text)
 end
 
 local failures, english, total = {}, 0, 0
+local French
 for _, name in ipairs(names) do
   local G = lives[name]()
   local c = HearthtaleChar
   local F = G.ns.french
+  French = F
   assert(F, "French.lua not loaded")
   c.language = "frFR"
   G.ns.forgetWritten(c)
@@ -75,6 +77,25 @@ for _, name in ipairs(names) do
   end
   table.sort(missing)
   if #missing > 0 then io.write("<!-- lines with no French yet:\n", table.concat(missing, "\n"), "\n-->\n\n") end
+end
+-- The game-name tokens a French line writes (docs/writing.md): each form,
+-- the contractions of "les" after "de" and "à", and a name the tables lack.
+local TOKENS = {
+  ["[[un:Linen Cloth]], [[le:Linen Cloth]]"] = "une Etoffe de lin, l'Etoffe de lin",
+  ["de [[les:Young Wolf]], à [[les:Young Wolf]]"] = "des jeunes loups, aux jeunes loups",
+  ["[[des:Linen Cloth]], dix [[pl:Linen Cloth]]"] = "des étoffes de lin, dix étoffes de lin",
+  ["[[le:Defias Bandit]], [[un:Kobold Vermin]]"] = "le bandit défias, une vermine kobold",
+  ["[[un:Nothing Such]], [[le:Nothing Such]]"] = "un Nothing Such, le Nothing Such",
+}
+-- (a wrong token fails with or without --check: the forms are done, the lines not yet)
+if not os.getenv("FOREVER") then
+  for line, want in pairs(TOKENS) do
+    local got = French.tidy(French.names(line))
+    if got ~= want then
+      io.stderr:write(("token %q gave %q, not %q\n"):format(line, got, want))
+      os.exit(1)
+    end
+  end
 end
 io.stderr:write(("French: %d of %d entries in French (%d left in English)\n"):format(total - english, total, english))
 if check then

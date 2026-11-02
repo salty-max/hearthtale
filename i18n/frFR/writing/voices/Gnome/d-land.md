@@ -9,6 +9,6 @@
 - I made my way into {lands}, new ground all of it, and could cheerfully have spent a season poking about in any one of them.
   > J'ai gagné {lands}, des terres toutes nouvelles, et j'aurais volontiers passé une saison à fureter dans chacune.
 - I ventured into {lands}, a lot of strange country to take in at once, and I took it in all the same.
-  > Je me suis $gaventuré:aventurée; jusqu'à {lands}, beaucoup de pays étrange à absorber d'un coup, et je l'ai absorbé quand même.
+  > Je me suis $gaventuré:aventurée; jusqu'à {lands}, beaucoup de contrées inconnues à embrasser d'un coup, et je les ai embrassées quand même.
 - I saw {lands} for the first time, and liked knowing that the dwarves who sheltered my people had so much good country beyond their mountain.
   > J'ai découvert {lands}, et j'ai aimé savoir que les nains qui avaient abrité mon peuple avaient tant de bonne terre au-delà de leur montagne.

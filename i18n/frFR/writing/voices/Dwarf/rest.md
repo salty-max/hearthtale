@@ -17,17 +17,17 @@
 - Sitting still {at} took less practice than I had feared.
   > Rester $gassis:assise; tranquille {at} m'a demandé moins d'entraînement que je ne le craignais.
 - Every bone I owned had an opinion by the time I rested {at}, and none of them was kind.
-  > Chacun de mes os avait son avis sur la question quand je me suis $greposé:reposée; {at}, et aucun n'était aimable.
+  > Chacun de mes os avait son avis sur la question quand je me suis $greposé:reposée; {at}, et aucun n'était tendre.
 - I stopped {at}, and let my shoulders drop for the first time in a while.
   > Je me suis $garrêté:arrêtée; {at}, et j'ai laissé retomber mes épaules pour la première fois depuis longtemps.
 - The fire {at} did for my joints what no amount of grumbling had.
   > Le feu {at} a fait pour mes articulations ce que tous mes grognements n'avaient pas fait.
 - I halted {at}, and counted staying alive the soundest piece of work I had done.
-  > J'ai fait halte {at}, et j'ai compté le fait d'être en vie comme le travail le plus solide de ma journée.
+  > J'ai fait halte {at}, et j'ai tenu le fait d'être en vie pour le travail le plus solide de ma journée.
 - The work was done soundly enough to leave be, and I called it a day {at}.
   > Le travail était assez bien fait pour qu'on le laisse tel quel, et j'ai arrêté là pour aujourd'hui {at}.
 - I sat by the fire {at}, and let it be the only thing still working.
-  > Je me suis $gassis:assise; près du feu {at}, et je l'ai laissé être la seule chose encore au travail.
+  > Je me suis $gassis:assise; près du feu {at}, et je l'ai laissé travailler seul.
 - The day's work stood stacked neatly behind me {at}, and I had no wish to add a single piece to the pile.
   > Le travail du jour s'empilait proprement derrière moi {at}, et je n'avais aucune envie d'y ajouter la moindre pièce.
 - Only when I set my burdens down {at} did I feel how much they had weighed.
