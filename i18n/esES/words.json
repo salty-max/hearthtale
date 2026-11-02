@@ -115,5 +115,9 @@
   "the end": "el final",
   "travelled as a pair": "viajó en pareja",
   "traveller": "compañero de viaje",
-  "travellers": "compañeros de viaje"
+  "travellers": "compañeros de viaje",
+  "Journal language": "Idioma del diario",
+  "The language this character's journal is written in, whatever the game's. A change writes the whole journal again in it. Your own titles and notes stay as you wrote them.": "El idioma en el que se escribe el diario de este personaje, sea cual sea el del juego. Un cambio vuelve a escribir todo el diario en ese idioma. Tus propios títulos y notas quedan tal como los escribiste.",
+  "Write this whole journal again in English? Every entry is told anew. Your own titles and notes stay as you wrote them.": "¿Volver a escribir todo este diario en inglés? Cada entrada se cuenta de nuevo. Tus propios títulos y notas quedan tal como los escribiste.",
+  "Write this whole journal again in French? Every entry is told anew. Your own titles and notes stay as you wrote them.": "¿Volver a escribir todo este diario en francés? Cada entrada se cuenta de nuevo. Tus propios títulos y notas quedan tal como los escribiste."
 }

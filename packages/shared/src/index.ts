@@ -42,11 +42,16 @@ export type BookChapter = {
   ended?: number;
 };
 
+/** A journal's language, chosen in the game: the client's at the first login, then kept. */
+export type Language = "enUS" | "frFR";
+
 /** The book as the addon wrote it at the last logout: shown as is, never rewritten. */
 export type Book = {
   /** The addon version that wrote it. */
   version?: string;
   client: Client;
+  /** The journal's language (a book saved before it was kept: English). */
+  language?: Language;
   /** Unix seconds: when it was written. */
   at: number;
   level?: number;

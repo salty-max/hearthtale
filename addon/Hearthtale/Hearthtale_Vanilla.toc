@@ -32,6 +32,7 @@ Combat.lua
 Life.lua
 Travellers.lua
 Language.lua
+French.lua
 Lines.lua
 Diary.lua
 Book.lua

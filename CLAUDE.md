@@ -54,10 +54,15 @@ scripts/release.sh --version X.Y.Z [--hold] NOTES.md
 
 ## Hard rules
 
-- The journal is written in English on every client (8 October 2026); the
-  interface goes through `L` in every language. The record keeps the
-  game's names in English by id; the saved file keeps ids, never a game
-  name, turned back at the login.
+- The journal is written in its own language, never the client's
+  (`c.language`, 2 November 2026): the client's at the character's first
+  login, English for every journal from before, changed only by the
+  setting, which writes the whole journal again. French is being written
+  (`i18n/frFR/writing/`, French.lua, `docs/writing.md` "The French"): until
+  it is complete (`FRENCH_COMPLETE` in `scripts/build.ts`) every journal is
+  English. The interface goes through `L` in every language. The record
+  keeps the game's names in English by id; the saved file keeps ids, never a
+  game name, turned back at the login.
 - First person, the character's own recollection: never the League's
   voice, never an invented fact (lamps, payments, a companion's talk, a
   personal history the record can't know). The build refuses some; the

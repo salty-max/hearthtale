@@ -238,3 +238,45 @@ name.
   comparison (`voices.lua compare`) when changing racial expression; use the
   restraint and era boundaries in `docs/race-voices.md` (and its few words
   in a people's own tongue, verified, at moments that bear them).
+
+## The French
+
+The journal in French (`docs/architecture.md`, "The journal in French"):
+each English line, deed and scenery line told again in French, written in
+`i18n/frFR/writing/`, which mirrors `writing/`.
+
+- `<kind>.md`, `voices/<Race>/<kind>.md`, `scenery/<slug>.md`: each English
+  line as `writing/` has it (its text exactly, its tags left out), its French
+  under it: `- I {why}.` then `  > Je {why}.`. An English line changed leaves
+  its French stale, which fails the build: write it again.
+- `why/<file>.md` (the file of its English): `- <quest id> | <the deed after
+  "je">`, its auxiliary first (`ai tué …`, `suis allé …`, `me suis …`), no
+  final stop; written from the English story and the quest's own French.
+- `glue.md`: the pieces Diary.lua joins, by key (`with`, `lead`, `i`, `busy`,
+  the death titles).
+- The voice: the character's own diary, the passé composé and the imparfait
+  (the user's choice, 2 November 2026), no reader to address. The races sound
+  apart by outlook and phrasing, as in English (`docs/race-voices.md`), never
+  by broken French. The same facts as the English line, nothing the record
+  can't know.
+- Agreement with the character (its sex, `c.sex`, at every writing):
+  `$gmasc:fem;` wherever French agrees with "je" or with the one an epitaph
+  names (`$gfier:fière;`, `m'a $gsaisi:saisie;`), never where nothing agrees.
+- The slots are the English line's, every one of them. A slot's French comes
+  with its article where English has one ("{foe}": "un jeune troll
+  Frostmane"; "{at}": "dans la Vallée des Frigères", "au Loch Modan"), and
+  may take an article or a form agreeing with it: `{foe:un}`, `{foe:le}`,
+  `{item:de}`, `{foes=tombé|tombée|tombés|tombées}` (masculine, feminine,
+  their plurals; two forms: masculine, feminine).
+- A game name in the French text itself is never typed: `[[Ironforge]]`
+  (the game's own French, each game's: "Ironforge" on Classic Era's French
+  client, "Forgefer" on Forever's), `[[at:Coldridge Valley]]` (with its
+  preposition), `[[un:Frostmane Troll Whelp]]`, `[[le:Defias Messenger]]`,
+  `[[name:Hogger]]`; the English name between the brackets.
+- No semicolon; a no-break space before `: ? ! %`; straight apostrophes;
+  UTF-8 (the plain-ASCII rule is English's). The build checks them, the slots
+  and the tokens.
+- After writing French: `bun run addon:build`, then `luajit
+  addon/test/french-journal.lua` (and `SEX=2`, `FOREVER=1`): the entries
+  still in English and the lines they lack are listed at the end of each
+  journal.

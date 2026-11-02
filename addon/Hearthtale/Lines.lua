@@ -200,6 +200,7 @@ local function newBook(c, diary)
     uses = 0,
     seed = c.guid or "",
     kindUses = {},
+    fr = {}, -- [a sentence told] = its French (French.lua)
   }, Book)
   b.race = race
   b.motifAt = {} -- [a race's emblem] = the line told that last used it
@@ -442,7 +443,21 @@ function Book:say(kind, key, values, tags, prefer, raw)
   -- a place left out: no space before the punctuation, none doubled
   -- (and none left at the start: "{at}, my tenth level" with no place)
   text = text:gsub(" +([%.,;:!%?])", "%1"):gsub("  +", " "):gsub("^[ ,;:]+", "")
-  return raw and text or capitalise(text), { kind = kind, own = e.id:sub(1, 2) == "v:" }
+  text = raw and text or capitalise(text)
+  -- (on a French client, the same line told in French: French.lua)
+  local F = ns.french
+  if F and F.on then
+    local ok, fr = pcall(F.say, self, kind, e, values, raw)
+    self.fr[text] = ok and fr or nil
+  end
+  return text, { kind = kind, own = e.id:sub(1, 2) == "v:" }
+end
+
+-- The French of a sentence this book told (French.lua), nil when it has none
+-- or the journal is English.
+function Book:french(text)
+  local F = ns.french
+  return F and F.on and text and self.fr[text] or nil
 end
 
 -- The place slots of a moment: {at} ("in Coldridge Valley", "there" if it was
@@ -485,6 +500,8 @@ function Book:sceneryOf(name, night)
   if #fits == 0 then return nil end
   local i = fits[hash(self.seed .. "|scenery|" .. name) % #fits + 1]
   if ns.writerUsed then ns.writerUsed["scenery:" .. name .. "#" .. i] = true end
+  local F = ns.french
+  if F and F.on then self.fr[p[i][1]] = F.scenery(self, name, i) end
   return p[i][1]
 end
 
@@ -549,7 +566,7 @@ end
 
 function Book:prologue(p)
   local zone = p.zone
-  return self:say(
+  local text = self:say(
     "prologue",
     "prologue",
     self:here({
@@ -560,6 +577,7 @@ function Book:prologue(p)
     }, zone),
     {}
   )
+  return self:french(text) or text
 end
 
 -- The epitaph of a Hardcore life, in the third person: how it ended (a line
@@ -580,6 +598,8 @@ function Book:epitaph(c)
   local race, class = RACE_WORD[c.race] or "", (c.class or ""):lower()
   local who = (race .. " " .. class):gsub("^ +", ""):gsub(" +$", "")
   who = who ~= "" and ((who:match("^[aeiou]") and "an " or "a ") .. who) or nil
+  local F = ns.french
+  if F and F.on and who then F.remember(who, F.someone(c.race, c.class, c.sex == 3)) end
   self.last = nil
   local tags = deathTags(d)
   tags.low = (d.level or 0) <= 10 or nil
@@ -634,6 +654,12 @@ function Book:epitaph(c)
   local parts = { first }
   if second then table.insert(parts, second) end
   if third then table.insert(parts, third) end
+  -- (in French when each of its sentences is)
+  local fr = {}
+  for _, part in ipairs(parts) do
+    fr[#fr + 1] = self:french(part)
+  end
+  if #fr == #parts then return table.concat(fr, " ") end
   return table.concat(parts, " ")
 end
 

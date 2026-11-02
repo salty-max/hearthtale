@@ -8,7 +8,8 @@ German and Spanish (deDE, esES, esMX) are held back from players since 1 Novembe
 
 ## The files
 
-- Languages, the interface's (the journal is English on every client):
+- Languages, the interface's (the journal's own: below, "The journal in
+  French"):
   every word the book, the Hall, the settings, the welcome and the chat
   lines show goes through `L["..."]` (the kit's `K.L`; plurals through
   `K.plural`), each sentence whole; `ns.upper` capitalizes accented letters
@@ -292,11 +293,55 @@ German and Spanish (deDE, esES, esMX) are held back from players since 1 Novembe
   anew; `saved` reads it as the game shows it (closed entries in their saved
   words); `record` shows each entry above its chapter's moments, one a line.
 
+## The journal in French
+
+Each journal is written in its own language (`c.language`, Core.lua: the
+client's at the character's first login, English for a journal from
+before, kept whatever the client after; the Options page's "Journal
+language" changes it and writes the whole journal again, `/ht rewrite`'s
+path, the player's titles and notes kept). French is being written: until
+`FRENCH_COMPLETE` (scripts/build.ts) the setting is hidden and every journal
+English. The record is the facts (moments, ids, the character's sex), so any
+journal can be told again in either language.
+
+- The writer chooses every line in English as ever (Lines.lua, Diary.lua:
+  the English output byte for byte the same, `addon:golden`); each line told
+  is told again in French from the facts behind its slots (French.lua,
+  `F.say`), and an entry is French when each of its sentences is, else
+  English whole (`F.fellBack`, never once the French is complete).
+- `French_<game>.lua` (scripts/build.ts, from `i18n/frFR/writing/`: the lines,
+  the deeds, the glue Diary.lua joins) and `FrenchNames_<game>.lua`
+  (scripts/french-names.ts, in `bun run audit`: the game's French names by
+  the English names' ids, each with its gender, article and preposition,
+  counted in the game's own French texts; `i18n/frFR/names.json` by hand;
+  `.cache/audit/french-<game>.txt` the places as a sentence says them), in
+  `addon/Hearthtale_French/`: kept out of the addon (its TOCs and the
+  release's package, `.pkgmeta`) until the French is complete, so no player
+  carries them meanwhile (some 9 MB of names in memory); the tests load them
+  (game.lua, `HEARTHTALE_FRENCH`). Without them French.lua does nothing. How
+  they ship once complete (a LoadOnDemand companion, the kit's `also`
+  folder, loaded only for a French journal) is settled then.
+- French.lua wraps the writer's helpers (W.mid, W.at, W.article,
+  W.itemName, W.plural, W.words, W.listing, W.playedWords, W.deathFoe): each
+  English result is remembered with its French (`F.memo`), under pcall, so
+  the English never depends on it. A slot no helper made is found by its
+  kind (a spell, a trade, a creature, a place) through its English name's id;
+  a name the tables lack stays as kept (a player's, a pet's).
+- `Book:french(text)` is a sentence's French; Diary.lua joins its French as
+  it joins the English (the company, a lead place, "I " and a clause, the
+  trades, a second story's place cut) and returns the entry in French, its
+  title the game's French (`F.title`). The book window and the Hall name
+  places and foes in the journal's language (Book.lua `named`).
+- Tests: `addon/test/french-journal.lua` (the sample's lives in French, the
+  entries left in English counted, the lines and names without French
+  listed; `--check` fails on either and on a leak: a slot, a `$g` token,
+  English), SEX=2 for a man, FOREVER=1; `addon/test/journal-language.lua`
+  (the default, the migration, a switch both ways).
+
 ## The record in English, the saved file in ids
 
-- English game clients only (a decision, 8 October 2026): the journal is
-  written in English. The record keeps the game's names in English on any
-  client (14 October 2026, after a life played in French then English told
+- The record keeps the game's names in English on any client (14 October
+  2026, after a life played in French then English told
   "mining and minage" and a path "Guerrier"): places, flights, trades,
   ridings, talent trees, spells, creature types and families, dungeons and
   bosses, creatures and quest givers (by the id in their GUID), quests (their

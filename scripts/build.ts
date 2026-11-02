@@ -231,7 +231,7 @@ for (const race of existsSync(VOICES_DIR) ? readdirSync(VOICES_DIR).sort() : [])
 }
 
 // The places: writing/scenery/<place>.md.
-type Place = { place: string; type: string; home: string[]; faction: string; client?: string; sentences: Sentence[] };
+type Place = { place: string; type: string; home: string[]; faction: string; client?: string; sentences: Sentence[]; file: string };
 const SCENERY_DIR = join(WRITING, "scenery");
 const scenery: Place[] = [];
 for (const f of mdFiles(SCENERY_DIR)) {
@@ -250,7 +250,7 @@ for (const f of mdFiles(SCENERY_DIR)) {
   for (const r of home) if (!RACES.includes(r)) fail(file, `home: ${r} is not a race`);
   if (scenery.some((p) => p.place === place)) fail(file, `place ${place} twice`);
   if (client && !CLIENTS.includes(client)) fail(file, `client: ${CLIENTS.join(" or ")}`);
-  if (place && type && faction) scenery.push({ place, type, home, faction, client, sentences: parsed.sentences });
+  if (place && type && faction) scenery.push({ place, type, home, faction, client, sentences: parsed.sentences, file: f });
 }
 
 // What a quest's work was for: writing/why/*.md, "- <id> <weight> [<subject>] | <phrase>",
@@ -371,6 +371,124 @@ for (const f of mdFiles(WHY_DIR)) {
   }
 }
 
+// ── the French (i18n/frFR/writing/) ──────────────────────────────────────────
+// The writer chooses its lines in English; each one told is told again in
+// French on a French client, from the facts behind its slots (French.lua).
+// i18n/frFR/writing/ mirrors writing/: each English line (its text exactly,
+// tags left out) followed by its French under "  > "; why/<file>.md holds
+// "- <id> | <the deed after "je">"; glue.md the pieces Diary.lua joins
+// ("- <key>", "  > <French>"). The French has the English line's slots, no
+// semicolon, a no-break space before : ? ! and %, the narrator's agreements
+// as $gmasc:fem;. An English line changed leaves its French stale: a failure.
+// A line with no French yet is counted; FRENCH_COMPLETE makes it a failure
+// (the French journal is on only when every line has its French).
+const FRENCH_COMPLETE = false;
+const FR_DIR = join(ROOT, "i18n", "frFR", "writing");
+const frErrors: string[] = [];
+const frFail = (file: string, msg: string) => frErrors.push(`${file}: ${msg}`);
+// (a slot with its article or a word agreeing with it is the slot: {foe:un}, {foes=tombé|tombée})
+const bareSlots = (s: string) => s.replace(/\{(\w+)[:=][^}]*\}/g, "{$1}");
+const slotsOf = (s: string) => [...new Set([...bareSlots(s).matchAll(/\{(\w+)\}/g)].map((m) => m[1]))].sort().join(",");
+function frenchText(file: string, fr: string, english?: string) {
+  const bare = fr.replace(/\$[gG][^:;$]*:[^;$]*;/g, "").replace(/\[\[[^\]]*\]\]/g, "x");
+  if (/\$[gG]/.test(bare)) frFail(file, `a malformed $gmasc:fem; token: ${fr}`);
+  if (bare.includes(";")) frFail(file, `a semicolon (two sentences, a comma, or a rewrite): ${fr}`);
+  // (French typography: a no-break space before : ? ! and %)
+  if (/(?:^|[^\u00a0])[:?!%]/.test(bareSlots(bare).replace(/\{\w+\}/g, "x"))) frFail(file, `a no-break space before : ? ! and %: ${fr}`);
+  if (/[\u2019]/.test(fr)) frFail(file, `a straight apostrophe, not a curly one: ${fr}`);
+  if (english !== undefined && slotsOf(english) !== slotsOf(fr))
+    frFail(file, `slots {${slotsOf(fr)}} where the English has {${slotsOf(english)}}: ${fr}`);
+}
+// pairs: [English] = French, from one file
+function frenchPairs(file: string): Map<string, string> {
+  const out = new Map<string, string>();
+  if (!existsSync(file)) return out;
+  let english: string | null = null;
+  for (const raw of readFileSync(file, "utf8").split("\n")) {
+    const en = raw.match(/^- (.+)$/);
+    const fr = raw.match(/^ {2}> (.+)$/);
+    if (en) english = en[1].trim();
+    else if (fr && english !== null) {
+      if (out.has(english)) frFail(file, `twice: ${english}`);
+      out.set(english, fr[1].trim());
+      english = null;
+    }
+  }
+  return out;
+}
+const frCount = { lines: 0, told: 0 };
+// The French of one list: in the English list's order, each game's own lines
+// (as lua() keeps them); English lines with none are counted.
+function frenchOfList(file: string, list: Sentence[], pairs: Map<string, string>) {
+  const known = new Set(list.map((s) => s.text));
+  for (const [en, fr] of pairs) {
+    if (!known.has(en)) frFail(file, `stale: no English line reads "${en}" (its French: ${fr})`);
+    else frenchText(file, fr, en);
+  }
+  for (const s of list) {
+    frCount.lines++;
+    if (pairs.has(s.text)) frCount.told++;
+    else if (FRENCH_COMPLETE) frFail(file, `no French: ${s.text}`);
+  }
+}
+const frKinds = new Map<string, Map<string, string>>();
+for (const [kind, list] of kinds) {
+  const file = join(FR_DIR, `${kind}.md`);
+  const pairs = frenchPairs(file);
+  frenchOfList(file, list, pairs);
+  frKinds.set(kind, pairs);
+}
+const frVoices = new Map<string, Map<string, Map<string, string>>>();
+for (const [race, own] of voices) {
+  const m = new Map<string, Map<string, string>>();
+  for (const [kind, list] of own) {
+    const file = join(FR_DIR, "voices", race, `${kind}.md`);
+    const pairs = frenchPairs(file);
+    frenchOfList(file, list, pairs);
+    m.set(kind, pairs);
+  }
+  frVoices.set(race, m);
+}
+const frScenery = new Map<string, Map<string, string>>();
+for (const p of scenery) {
+  const file = join(FR_DIR, "scenery", p.file);
+  const pairs = frenchPairs(file);
+  frenchOfList(file, p.sentences, pairs);
+  frScenery.set(p.place, pairs);
+}
+// the deeds: "- <id> | <the deed after je>", its auxiliary first
+const frWhy = new Map<number, string>();
+for (const f of mdFiles(join(FR_DIR, "why"))) {
+  const file = join(FR_DIR, "why", f);
+  for (const line of readFileSync(file, "utf8").split("\n")) {
+    if (!line.startsWith("- ")) continue;
+    const m = line.match(/^- (\d+) \| (.+)$/);
+    if (!m) { frFail(file, `not "- <id> | <the deed>": ${line}`); continue; }
+    const [id, deed] = [Number(m[1]), m[2].trim()];
+    if (!why.has(id)) frFail(file, `stale: quest ${id} has no why`);
+    if (frWhy.has(id)) frFail(file, `quest ${id} twice`);
+    if (!/^(ai|suis|me suis|m'|me) /.test(deed) && !/^m'/.test(deed)) frFail(file, `a deed starts with its auxiliary (ai, suis, me suis): ${deed}`);
+    if (/[.!?]$/.test(deed)) frFail(file, `a deed has no final punctuation: ${deed}`);
+    frenchText(file, deed);
+    frWhy.set(id, deed);
+  }
+}
+for (const id of why.keys()) {
+  frCount.lines++;
+  if (frWhy.has(id)) frCount.told++;
+  else if (FRENCH_COMPLETE) frFail("i18n/frFR/writing/why", `no French deed for quest ${id}`);
+}
+// the glue: the pieces Diary.lua and Lines.lua join, by key
+const frGlue = new Map<string, string>();
+{
+  const file = join(FR_DIR, "glue.md");
+  for (const [key, fr] of frenchPairs(file)) {
+    frenchText(file, fr);
+    frGlue.set(key, fr);
+  }
+}
+if (frErrors.length) errors.push(...frErrors);
+
 if (errors.length) {
   console.error(errors.join("\n"));
   process.exit(1);
@@ -419,7 +537,64 @@ ${[...why.entries()].filter(([, v]) => !v.client || v.client === client).sort((a
 `;
 }
 
+// French_<game>.lua: the French of each line told, by its index in the
+// game's own list (as Data_<game>.lua has them), read on a French client only.
+function frenchLua(client: string) {
+  const mine = (s: Sentence) => !s.tags.some((t) => t.startsWith("client:") && t !== `client:${client}`);
+  const list = (sentences: Sentence[], pairs: Map<string, string> | undefined, indent: string) => {
+    const rows = sentences.filter(mine).map((s, i) => (pairs?.has(s.text) ? `${indent}[${i + 1}] = ${q(pairs.get(s.text)!)},` : null));
+    return rows.filter(Boolean).join("\n");
+  };
+  const writing = [...kinds.entries()].map(([kind, l]) => `    [${q(kind)}] = {\n${list(l, frKinds.get(kind), "      ")}\n    },`).join("\n");
+  const voiceBody = [...voices.entries()]
+    .map(([race, own]) => `    [${q(race)}] = {\n${[...own.entries()].map(([kind, l]) => `      [${q(kind)}] = {\n${list(l, frVoices.get(race)?.get(kind), "        ")}\n      },`).join("\n")}\n    },`)
+    .join("\n");
+  const placeBody = scenery
+    .filter((p) => !p.client || p.client === client)
+    .map((p) => `    [${q(p.place)}] = {\n${list(p.sentences, frScenery.get(p.place), "      ")}\n    },`)
+    .join("\n");
+  const whyBody = [...frWhy.entries()]
+    .filter(([id]) => why.has(id) && (!why.get(id)!.client || why.get(id)!.client === client))
+    .sort((a, b) => a[0] - b[0])
+    .map(([id, deed]) => `    [${id}] = ${q(deed)},`)
+    .join("\n");
+  const glueBody = [...frGlue.entries()].sort((a, b) => (a[0] < b[0] ? -1 : 1)).map(([k, v]) => `    [${q(k)}] = ${q(v)},`).join("\n");
+  return `-- Generated by scripts/build.ts from i18n/frFR/writing/: edit those, not this file.
+-- The French of each line the writer tells, by its index in Data_${client[0].toUpperCase()}${client.slice(1)}.lua's
+-- lists (French.lua). Kept out of the addon until the French is complete
+-- (addon/Hearthtale_French/, loaded by the tests), built at the first need.
+local _, ns = ...
+ns.frenchComplete = ${FRENCH_COMPLETE}
+function ns.frenchWriting() return {
+  writing = {
+${writing}
+  },
+  voices = {
+${voiceBody}
+  },
+  scenery = {
+${placeBody}
+  },
+  why = {
+${whyBody}
+  },
+  glue = {
+${glueBody}
+  },
+} end
+`;
+}
+
 let stale = false;
+console.log(`French: ${frCount.told} of ${frCount.lines} lines and deeds`);
+for (const g of GAMES) {
+  const frOut = g.out.replace(/Hearthtale\/Data_/, "Hearthtale_French/French_");
+  const fr = frenchLua(g.client);
+  if (process.argv.includes("--check")) {
+    const current = existsSync(frOut) ? readFileSync(frOut, "utf8") : "";
+    if (current !== fr) { console.error(`✗ ${frOut} is out of date: run bun scripts/build.ts`); stale = true; }
+  } else writeFileSync(frOut, fr);
+}
 for (const g of GAMES) {
   const lua = luaFor(g.client);
   if (process.argv.includes("--check")) {

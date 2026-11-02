@@ -13,6 +13,10 @@
 --                            next upload to add this book to that account
 --   notes[n] = { title, text }   the player's own: a title given entry n, a
 --                            note in its margin (the window, /ht title, /ht note)
+--   language = "enUS" | "frFR"   the journal's language: the client's at the
+--                            first login (French once it is complete), kept
+--                            after; a journal from before is English; only the
+--                            setting changes it, and the whole journal with it
 -- and the events every file listens to (ns.on, ns.onUnit).
 local _, ns = ...
 local K = ns.kit
@@ -88,8 +92,13 @@ function ns.login()
     char = saved
   else
     char = { guid = guid, began = { at = time(), level = UnitLevel("player") }, chapters = {} }
+    -- (a new journal: in the client's language, French once it is ready)
+    local F = ns.french
+    char.language = (F and F.ready and GetLocale() == "frFR") and "frFR" or "enUS"
     HearthtaleChar = char
   end
+  -- (a journal from before the language was kept: written in English)
+  char.language = char.language or "enUS"
   -- (the saved files keep the game's ids: its names again, Ids.lua)
   if ns.namesAtLogin then ns.namesAtLogin(char) end
   if ns.loadProfile then ns.loadProfile(char) end
@@ -170,6 +179,40 @@ local function rewrite()
     PREFIX
       .. L["The journal is written again. hearthtale.app shows it after your next logout or /reload with Ravenpost running."]
   )
+end
+-- The journal's language (char.language): the client's at the first login,
+-- kept after, whatever the client; a change writes the whole journal again in
+-- the other, as /ht rewrite does (every entry, the prologue, the epitaph, its
+-- life in the Hall), the player's own titles and notes as they wrote them.
+function ns.journalLanguage() return char and char.language or "enUS" end
+local LANGUAGES = { enUS = true, frFR = true }
+local function switchLanguage(language)
+  if not (char and LANGUAGES[language]) or char.language == language then return end
+  char.language = language
+  local life = char.guid and ns.fallenLife and ns.fallenLife(char.guid)
+  if life then life.language = language end
+  rewrite()
+end
+-- (one sentence for each language, whole: HEARTHTALE_LANGUAGE_enUS, _frFR)
+local ASK = {
+  enUS = L["Write this whole journal again in English? Every entry is told anew. Your own titles and notes stay as you wrote them."],
+  frFR = L["Write this whole journal again in French? Every entry is told anew. Your own titles and notes stay as you wrote them."],
+}
+for language, text in pairs(ASK) do
+  StaticPopupDialogs["HEARTHTALE_LANGUAGE_" .. language] = {
+    text = text,
+    button1 = YES,
+    button2 = NO,
+    OnAccept = function() switchLanguage(language) end,
+    timeout = 0,
+    whileDead = true,
+    hideOnEscape = true,
+  }
+end
+-- (the setting asks first: Settings.lua)
+function ns.askJournalLanguage(language)
+  if not (char and LANGUAGES[language]) or char.language == language then return end
+  StaticPopup_Show("HEARTHTALE_LANGUAGE_" .. language)
 end
 StaticPopupDialogs.HEARTHTALE_REWRITE = {
   text = L["Write this journal again with this version of Hearthtale? Its entries' words may change. Your own titles and notes stay."],

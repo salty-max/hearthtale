@@ -77,6 +77,7 @@ export function parseBook(v: unknown): Book | null {
   return {
     version: str(b.version, 20),
     client: client as Client,
+    language: b.language === "frFR" || b.language === "enUS" ? b.language : undefined,
     at,
     level: int(b.level),
     prologue: str(b.prologue, MAX_TEXT),

@@ -115,5 +115,9 @@
   "the end": "la fin",
   "travelled as a pair": "en duo",
   "traveller": "compagnon de route",
-  "travellers": "compagnons de route"
+  "travellers": "compagnons de route",
+  "Journal language": "Langue du journal",
+  "The language this character's journal is written in, whatever the game's. A change writes the whole journal again in it. Your own titles and notes stay as you wrote them.": "La langue dans laquelle le journal de ce personnage est écrit, quelle que soit celle du jeu. Un changement réécrit tout le journal dans cette langue. Les titres et les notes que vous avez écrits restent tels quels.",
+  "Write this whole journal again in English? Every entry is told anew. Your own titles and notes stay as you wrote them.": "Réécrire tout ce journal en anglais ? Chaque entrée est racontée à nouveau. Les titres et les notes que vous avez écrits restent tels quels.",
+  "Write this whole journal again in French? Every entry is told anew. Your own titles and notes stay as you wrote them.": "Réécrire tout ce journal en français ? Chaque entrée est racontée à nouveau. Les titres et les notes que vous avez écrits restent tels quels."
 }

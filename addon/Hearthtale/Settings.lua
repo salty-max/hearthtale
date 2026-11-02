@@ -143,6 +143,33 @@ function ns.createSettingsPanel()
     )
   end
 
+  -- The journal's language, this character's own (Core.lua): shown once the
+  -- French journal is complete (French.lua); a change asks, then writes the
+  -- whole journal again in it.
+  local F = ns.french
+  if O.category and Settings.CreateDropdown and Settings.CreateControlTextContainer and F and F.ready then
+    local setting = Settings.RegisterProxySetting(
+      O.category,
+      "HEARTHTALE_LANGUAGE",
+      Settings.VarType.String,
+      L["Journal language"],
+      "enUS",
+      ns.journalLanguage,
+      ns.askJournalLanguage
+    )
+    Settings.CreateDropdown(
+      O.category,
+      setting,
+      function()
+        local c = Settings.CreateControlTextContainer()
+        c:Add("enUS", "English")
+        c:Add("frFR", "Fran\195\167ais")
+        return c:GetData()
+      end,
+      L["The language this character's journal is written in, whatever the game's. A change writes the whole journal again in it. Your own titles and notes stay as you wrote them."]
+    )
+  end
+
   O:collect(ns.collect)
   O:copy()
   O:done()

@@ -55,3 +55,4 @@ jobs:
       paths: |
         i18n
         addon/Hearthtale
+        addon/Hearthtale_French

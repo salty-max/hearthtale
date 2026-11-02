@@ -625,6 +625,16 @@ end
 -- paragraphs when it runs long.
 local function entry(d, n, ch)
   local b, c = d.book, d.c
+  -- (on a French client, each sentence told in French too, and the entry in
+  -- French when every one of them is: French.lua)
+  local F = ns.french
+  local french = F and F.on and F or nil
+  if french then b.fr = {} end
+  -- (a sentence this entry joins from others: its French joined the same way)
+  local function twin(en, fr)
+    if french and en and fr then b.fr[en] = fr end
+    return en
+  end
   -- (a place always named: the entry is told in the order things happened,
   -- after it is written, so a "there" could come before what it points to)
   local function here(values, place)
@@ -649,7 +659,7 @@ local function entry(d, n, ch)
   -- (at: where in the stretch it happened, the entry told in that order)
   local function add(text, event, when)
     if text and text ~= "" then
-      out[#out + 1] = { text = text, at = when or LATE, seq = #out + 1 }
+      out[#out + 1] = { text = text, fr = b:french(text), at = when or LATE, seq = #out + 1 }
       if event then events = events + 1 end
       return true
     end
@@ -658,6 +668,7 @@ local function entry(d, n, ch)
   -- (the entry's title: its weightiest moment, by the game's own words, a
   -- quest's title, a name, a place; rank 1 weighs most)
   local heads = {}
+  local frTitles = {} -- [a title joined here] = its French (the others: French.lua's title)
   local function headline(rank, title)
     if title and title ~= "" then table.insert(heads, { rank = rank, title = title, seq = #heads }) end
   end
@@ -916,9 +927,12 @@ local function entry(d, n, ch)
   if #story > 0 then
     local text, who
     local why = ours(story[1].text, race)
+    if french then F.deed(story[1].id, why, race) end
     local sameVerb = story[2] and story[1].text:match("^(%S+)") == story[2].text:match("^(%S+)")
     if #story == 2 and #story[1].text + #story[2].text <= PAIR and not sameVerb then
-      text = sayFresh("d-why2", "why", { why = why, why2 = ours(story[2].text, race) }, {})
+      local why2 = ours(story[2].text, race)
+      if french then F.deed(story[2].id, why2, race) end
+      text = sayFresh("d-why2", "why", { why = why, why2 = why2 }, {})
     else
       also = { story[2], story[3] }
       local q = story[1]
@@ -952,8 +966,20 @@ local function entry(d, n, ch)
       if reviverIn(with) then with = {} end
     end
     if text and #with > 0 then
-      text = (lead and lead .. ", with " or "with ") .. listing(with) .. ", " .. text
+      local fr = b:french(text)
+      local company = listing(with)
+      text = (lead and lead .. ", with " or "with ") .. company .. ", " .. text
       text = text:gsub("^%l", string.upper)
+      if fr then
+        twin(
+          text,
+          F.glue(
+            lead and "with-lead" or "with",
+            { lead = lead and F.memo[lead], mates = F.memo[company] or company, text = F.lowerFirst(fr) },
+            b
+          )
+        )
+      end
       for _, mate in ipairs(with) do
         d.mates[mate], inDeed[mate] = true, true
       end
@@ -963,7 +989,9 @@ local function entry(d, n, ch)
       -- a name too: "In the Barrens, Regthar Deathgate's business …")
       local byName = who and text:sub(1, #who) == who
       local rest = (text:find("^I[ ']") or byName) and text or lowerFirst(text)
+      local fr = b:french(text)
       text = lead:gsub("^%l", string.upper) .. ", " .. rest
+      if fr then twin(text, F.glue("lead", { lead = F.memo[lead], text = byName and fr or F.lowerFirst(fr) }, b)) end
     end
     local told = add(text, true, first0 or story[1].i)
     storyTold = told
@@ -983,10 +1011,12 @@ local function entry(d, n, ch)
       local log = ch.log or {}
       local dark = (log[next.i] or {}).night and not (log[prior.i] or {}).night
       local same = chains[next.id] and chains[next.id] == chains[prior.id]
+      local whyAlso = ours(next.text, race)
+      if french then F.deed(next.id, whyAlso, race) end
       local said = sayFresh(
         "d-why-also",
         "also" .. k,
-        { why = ours(next.text, race), where = where2 },
+        { why = whyAlso, where = where2 },
         { moved = moved or nil, last = k == #also or nil, night = dark or nil, thread = same or nil },
         nil,
         nil,
@@ -1084,9 +1114,16 @@ local function entry(d, n, ch)
       add(sayFresh("died", "died", here({ foe = deathFoe(m.death or {}) }, place), t, m.zone), true, death.i)
     end
     headline(4, m.zone and ("A Death " .. at(m.zone)))
+    if french and m.zone then
+      frTitles["A Death " .. at(m.zone)] = F.glue("title-death", { at = F.memo[at(m.zone)] }, b)
+    end
     dangerAt = death.i
   elseif #f.deaths > 1 then
     headline(4, f.deaths[1].m.zone and ("Deaths " .. at(f.deaths[1].m.zone)))
+    if french and f.deaths[1].m.zone then
+      local died = at(f.deaths[1].m.zone)
+      frTitles["Deaths " .. died] = F.glue("title-deaths", { at = F.memo[died] }, b)
+    end
     for _, death in ipairs(f.deaths) do -- (unnamed there: told plainly with the foes, if beaten after)
       if death.m.death and death.m.death.foe then dangerFoes[death.m.death.foe] = nil end
     end
@@ -1219,6 +1256,7 @@ local function entry(d, n, ch)
       local who = (W.RACE_NAME[m.race or ""] or "")
         .. (W.CLASS_NAME[m.class or ""] and " " .. W.CLASS_NAME[m.class] or "")
       who = who:gsub("^ ", "")
+      if french and who ~= "" then F.remember(article(who), F.someone(m.race, m.class, false)) end
       add(
         sayFresh(
           "pvp-one",
@@ -1251,7 +1289,9 @@ local function entry(d, n, ch)
   -- a raid; a find of note; a pet lost
   if #f.raids > 0 then
     local clause = b:say("c-raid", n .. "|diary|raid", { n = words(f.raids[1].m.raid) }, tags({}), nil, true)
-    add(clause and ("I " .. clause .. "."), true, f.raids[1].i)
+    local line = clause and ("I " .. clause .. ".")
+    if line and b:french(clause) then twin(line, F.glue("i", { text = b:french(clause) }, b)) end
+    add(line, true, f.raids[1].i)
   end
   -- a piece of gear worn for the first time (one an entry: made, else the
   -- finest), with its find when it came from this stretch's spoils
@@ -1287,7 +1327,9 @@ local function entry(d, n, ch)
     local item = x.m.link:match("%[(.-)%]")
     local clause = item
       and b:say("c-loot", n .. "|diary|find", { item = W.itemName(item) }, tags({ fine = true }), nil, true)
-    add(clause and ("I " .. clause .. "."), true, x.i)
+    local line = clause and ("I " .. clause .. ".")
+    if line and b:french(clause) then twin(line, F.glue("i", { text = b:french(clause) }, b)) end
+    add(line, true, x.i)
   end
   for _, x in ipairs(f.petdied) do
     if d.pets[x.m.name] then d.pets[x.m.name].fell = x.m.sub or x.m.zone end -- (remembered, when named again)
@@ -1603,8 +1645,14 @@ local function entry(d, n, ch)
       if g.stage ~= "rank" then weighty = true end
     end
     local things = madeThings()
+    local frClauses = {}
+    for k, clause in ipairs(clauses) do
+      frClauses[k] = b:french(clause)
+    end
     if #clauses > 0 and #things > 0 then
-      table.insert(clauses, "kept my hands busy with " .. listing(things))
+      local made = listing(things)
+      table.insert(clauses, "kept my hands busy with " .. made)
+      frClauses[#clauses] = french and F.glue("busy", { things = F.memo[made] or made }, b, true)
       d.madeAt = n
     end
     if #clauses > 0 then
@@ -1621,6 +1669,18 @@ local function entry(d, n, ch)
           .. clauses[#clauses]
       end
       local text = "I " .. joined .. "."
+      -- (in French: "J'ai appris le minage et atteint le rang d'artisan": the
+      -- auxiliary once when the clauses share it, "et je" when they don't)
+      if french and #frClauses == #clauses then
+        local aux = frClauses[1]:match("^(%S+) ")
+        local fr = { frClauses[1] }
+        for k = 2, #frClauses do
+          local own = frClauses[k]:match("^(%S+) ")
+          fr[k] = (own == aux and aux == "ai") and frClauses[k]:gsub("^ai ", "") or ("je " .. frClauses[k])
+        end
+        local frJoined = #fr == 1 and fr[1] or (table.concat(fr, ", ", 1, #fr - 1) .. " et " .. fr[#fr])
+        twin(text, F.glue("i", { text = frJoined }, b))
+      end
       if weighty then
         tradeTold = add(text, true, trades[1].i)
       else
@@ -1797,6 +1857,8 @@ local function entry(d, n, ch)
     local place = o.where and o.where:gsub("^%a+ ", "")
     if place and k > 1 and out[k - 1].text:find(place, 1, true) then
       o.text = o.text:gsub(", " .. o.where:gsub("%p", "%%%0") .. ",", ",", 1)
+      local frWhere = french and F.memo[o.where]
+      if o.fr and frWhere then o.fr = o.fr:gsub(", " .. frWhere:gsub("%p", "%%%0") .. ",", ",", 1) end
     end
   end
   -- (a long entry in two paragraphs, at the middle: what happened, then the rest)
@@ -1820,6 +1882,23 @@ local function entry(d, n, ch)
     end
   end
   if title then d.titled[title] = true end
+  -- (in French when every sentence of it is: its title the game's French)
+  if french and #out > 0 then
+    local frTexts = {}
+    for k, o in ipairs(out) do
+      if not o.fr then
+        frTexts = nil
+        break
+      end
+      frTexts[#frTexts + 1] = o.fr
+      if k == split then frTexts[#frTexts + 1] = "\n\n" end
+    end
+    if frTexts then
+      local frTitle = title and (frTitles[title] or F.title(title))
+      return (table.concat(frTexts, " "):gsub(" \n\n ", "\n\n")), frTitle, true
+    end
+    F.fellBack = (F.fellBack or 0) + 1 -- (an entry left in English: the tests count them)
+  end
   return (table.concat(texts, " "):gsub(" \n\n ", "\n\n")), title
 end
 
@@ -1885,6 +1964,9 @@ end
 function ns.forgetWritten(c) kept[c] = nil end
 
 function ns.writeBook(c)
+  -- (the journal's own language, never the client's: French.lua)
+  local F = ns.french
+  if F then F.on = F.ready and c.language == "frFR" or false end
   local memo = kept[c]
   local d, book, from
   if memo and stillKept(memo, c) then
@@ -2009,6 +2091,7 @@ function ns.writeBook(c)
     end
   end
   if c.hardcore and c.death then book.epitaph = (c.book and c.book.epitaph) or d.book:epitaph(c) end
+  book.language = c.language
   -- the player's own, laid over the written book (which never changes): a
   -- title given an entry (the writer's kept as writtenTitle), a note in its
   -- margin (c.notes[n] = { title, text }, Core.lua)

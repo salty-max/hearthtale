@@ -203,6 +203,14 @@ local function render(entries, scroll)
   list:finish(scroll or false) -- (only on opening: a row clicked is in view already)
 end
 
+-- A game's name as a journal in that language says it: a French journal's
+-- places and foes in the game's French (French.lua), an English one's as kept.
+local function named(name, language)
+  local F = ns.french
+  if name and F and F.ready and language == "frFR" then return F.title(name) end
+  return name
+end
+
 -- A book's chapters as rows (indent: under a fallen life's name).
 local function chapterRows(entries, w, selectedKey, open, indent)
   if w.epitaph and indent then
@@ -229,7 +237,8 @@ local function chapterRows(entries, w, selectedKey, open, indent)
   for _, ch in ipairs(w.chapters) do
     -- (its title, its number under it; a title that is the place doesn't say it twice)
     local number = L["Entry %d"]:format(ch.number)
-    local under = (ch.place and ch.place ~= ch.title) and (ch.place .. ", " .. levels(ch)) or levels(ch)
+    local place = named(ch.place, w.language)
+    local under = (place and place ~= ch.title) and (place .. ", " .. levels(ch)) or levels(ch)
     under = ch.open and L["still being written"] or under
     table.insert(entries, {
       key = ch.number,
@@ -282,9 +291,9 @@ end
 
 -- How a life ended, in a few words: "slain by Hogger in Elwynn Forest".
 local ENDS = { fall = L["fell"], drowning = L["drowned"], lava = L["burned"], nature = L["fell"] }
-local function ending(d)
-  local how = d.foe and L["slain by %s"]:format(d.foe) or ENDS[d.cause] or L["fell"]
-  return d.zone and L["%s in %s"]:format(how, d.zone) or how
+local function ending(d, language)
+  local how = d.foe and L["slain by %s"]:format(named(d.foe, language)) or ENDS[d.cause] or L["fell"]
+  return d.zone and L["%s in %s"]:format(how, named(d.zone, language)) or how
 end
 
 -- The Hall at a glance (the kit's page): its figures, each fallen life as a
@@ -314,7 +323,7 @@ local function showHall(fallen)
   for _, life in ipairs(fallen) do
     local d = life.death or {}
     local race, class = ns.lifeNames(life)
-    local facts = ns.levelLine(d, race, class, ending(d))
+    local facts = ns.levelLine(d, race, class, ending(d, life.language))
     page:card(life.name or "?", facts .. (d.at and (", " .. day(d.at)) or ""), crestOf(life), function()
       hallLife, hallKey = life.guid, "epitaph"
       ns.refresh()

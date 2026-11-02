@@ -174,7 +174,7 @@ function UnitClass(u)
   if state.party[u] then return state.party[u].class, state.party[u].class end
   return state.class:sub(1, 1) .. state.class:sub(2):lower(), state.class
 end
-function UnitSex() return 3 end
+function UnitSex() return tonumber(os.getenv("SEX") or "") or 3 end -- (SEX=2: a man)
 function UnitIsConnected(u) return not (state.party[u] and state.party[u].offline) end
 function UnitCreatureType(u)
   local c = unitOf(u)
@@ -552,11 +552,21 @@ LinkProcessorResponse = { Handled = 2 }
 local ns = {}
 -- (the client's language: LOCALE = "frFR" before this file plays a French client)
 local LOCALE = rawget(_G, "LOCALE") or os.getenv("LOCALE") or "enUS"
+-- (HEARTHTALE_FRENCH: the French journal's data first, kept out of the addon
+-- until it is complete: addon/Hearthtale_French/)
+if rawget(_G, "HEARTHTALE_FRENCH") then
+  local game = FOREVER and "Forever" or "Classic"
+  for _, f in ipairs({ "FrenchNames_" .. game .. ".lua", "French_" .. game .. ".lua" }) do
+    assert(loadfile(DIR .. "../Hearthtale_French/" .. f))("Hearthtale", ns)
+  end
+end
 for line in io.lines(DIR .. (FOREVER and "Hearthtale_Camelot.toc" or "Hearthtale_Vanilla.toc")) do
   local f = line:gsub("%[TextLocale%]", LOCALE):match("^([%w_]+%.lua)%s*$")
   if f then assert(loadfile(DIR .. f))("Hearthtale", ns) end
 end
 local D = ns.data
+-- (HEARTHTALE_FRENCH = true before this file: the French journal played before it is complete)
+if rawget(_G, "HEARTHTALE_FRENCH") and ns.french then ns.french.ready = true end
 -- The banners shown: what each said (the kit's banners, as the addon makes them).
 do
   local make = ns.kit.banners

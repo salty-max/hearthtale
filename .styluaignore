@@ -6,3 +6,4 @@ addon/Hearthtale/Forever.lua
 addon/Hearthtale/Client_*.lua
 addon/Hearthtale/English_*.lua
 addon/Hearthtale/Text_*.lua
+addon/Hearthtale_French/*.lua
