@@ -597,15 +597,16 @@ end
 local function generic(v)
   local e = placeOf(v)
   if e then return made(withArticle(e), e[2], e[1]) end
-  e = creatureOf(v)
-  if type(e) == "table" then
-    local n = v:find("^%l") and lowered(e) or e[1]
-    return made(n, e[2], n)
-  end
+  -- (a trade before a creature: Forever has a creature called "Leatherworking")
   e = lookup("skillIds", v)
   if type(e) == "table" then
     local n = lowered(e)
     return made(definiteOf(n, e[2]), e[2], n)
+  end
+  e = creatureOf(v)
+  if type(e) == "table" then
+    local n = v:find("^%l") and lowered(e) or e[1]
+    return made(n, e[2], n)
   end
   e = itemOf(v)
   if e then return frItem(v) end

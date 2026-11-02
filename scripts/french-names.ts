@@ -174,27 +174,83 @@ function uses(ix: Index, name: string, cap = 400): Use[] {
 }
 
 // The gender of a word as the texts use it: le/un/du/au/ce before it, or
-// la/une/cette (its plural: les/des tell nothing).
-const MASC = new Set(["le", "un", "du", "au", "ce", "cet", "mon", "ton", "son", "notre", "votre", "leur", "quel", "aucun", "nouveau", "vieux", "grand", "petit", "premier", "dernier", "seul", "bon", "mauvais", "gros"]);
+// la/une/cette (its plural: les/des tell nothing; notre/votre/leur never
+// tell, mon/ton/son not before a vowel: "son étreinte").
+const MASC = new Set(["le", "un", "du", "au", "ce", "cet", "mon", "ton", "son", "quel", "aucun", "nouveau", "vieux", "grand", "petit", "premier", "dernier", "seul", "bon", "mauvais", "gros"]);
 const FEM = new Set(["la", "une", "cette", "ma", "ta", "sa", "quelle", "aucune", "nouvelle", "vieille", "grande", "petite", "première", "dernière", "seule", "bonne", "mauvaise", "grosse"]);
-const lexicon = new Map<string, Map<string, { m: number; f: number }>>();
-function genderOfWord(game: Game, ix: Index, word: string): "m" | "f" | null {
+const POSSESSIVE = new Set(["mon", "ton", "son"]);
+const vowelStart = (w: string) => /^[aeiouyhàâäéèêëîïôöûüœ]/i.test(w);
+function genderBefore(before: string, word: string): "m" | "f" | null {
+  if (FEM.has(before)) return "f";
+  if (!MASC.has(before)) return null;
+  return POSSESSIVE.has(before) && vowelStart(word) ? null : "m";
+}
+// (any word that says a common noun follows, its gender or not)
+const DETERMINERS = new Set([...MASC, ...FEM, "l'", "les", "des", "notre", "votre", "leur", "nos", "vos", "leurs", "mes", "tes", "ses"]);
+// (nouns the texts get wrong or never settle: "Egide draconien" is a slip,
+// the game's other égides agree in the feminine)
+const NOUN_GENDER: Record<string, "m" | "f"> = {
+  egide: "f",
+  galoches: "f",
+  // (the Darkmoon cards: "le Trois de Fauves")
+  as: "m", deux: "m", trois: "m", quatre: "m", cinq: "m", six: "m", sept: "m", huit: "m",
+};
+// (a verb and a noun, or "haut-de": one thing, masculine, whatever its -s:
+// "un casse-noisettes", "un haut-de-chausses"; but the paired armour)
+const VERB_FIRST = new Set(["casse", "cache", "ecrase", "tranche", "crache", "cure", "brise", "claque", "porte", "coupe", "perce", "fend", "ouvre", "tire", "chasse", "lance", "croque", "mange", "presse", "pare", "attrape", "garde", "protege", "couvre", "serre", "fauche", "broie", "arrache", "taille", "souffle", "saute", "haut", "hauts"]);
+const PAIRED = /^(garde|protege)-(poignets|mains|bras|jambes|tibias)$/;
+function compound(head: string): boolean {
+  const k = plain(low(head));
+  const [first] = k.split("-");
+  return k.includes("-") && VERB_FIRST.has(first) && !PAIRED.test(k);
+}
+const lexicon = new Map<string, Map<string, { m: number; f: number; d: number }>>();
+function counts(game: Game, ix: Index, k: string) {
   let cache = lexicon.get(game);
   if (!cache) lexicon.set(game, (cache = new Map()));
-  const k = low(word);
   let c = cache.get(k);
   if (!c) {
-    c = { m: 0, f: 0 };
+    c = { m: 0, f: 0, d: 0 };
     for (const [t, i] of ix.at.get(k) ?? []) {
-      const b = low(ix.texts[t][i - 1] ?? "");
-      if (MASC.has(b)) c.m++;
-      else if (FEM.has(b)) c.f++;
+      const before = low(ix.texts[t][i - 1] ?? "");
+      if (DETERMINERS.has(before)) c.d++;
+      const g = genderBefore(before, k);
+      if (g) c[g]++;
     }
     cache.set(k, c);
   }
-  if (c.m + c.f < 2) return bySuffix(k);
-  return c.f > c.m ? "f" : "m";
+  return c;
 }
+function genderOfWord(game: Game, ix: Index, word: string): "m" | "f" | null {
+  const k = low(word);
+  const fixed = NOUN_GENDER[plain(k)];
+  if (fixed) return fixed;
+  const c = counts(game, ix, k);
+  if (c.m + c.f >= 2 && c.m !== c.f) return c.f > c.m ? "f" : "m";
+  // (a plural tells nothing: its singular may, "flèches" by "la flèche")
+  if (/[sx]$/.test(k) && k.length > 3) {
+    const one = counts(game, ix, k.slice(0, -1));
+    if (one.m + one.f >= 2 && one.m !== one.f) return one.f > one.m ? "f" : "m";
+  }
+  return bySuffix(k);
+}
+// (a plural head: an -s the texts never put after a singular article)
+function pluralHead(game: Game, ix: Index, head: string, byEnding = false): boolean {
+  if (!pluralWord(head) || compound(head)) return false;
+  const k = low(head);
+  const c = counts(game, ix, k);
+  if (c.m + c.f >= 2) return false;
+  // (an item's or a spell's -s is a plural, "Galoches", "Sarments", but for
+  // the words above; a creature's or a place's needs the texts: "Dannus",
+  // "Leprithus" are names)
+  const one = counts(game, ix, k.slice(0, -1));
+  // (but -us: mostly a singular, "cactus", "Archeus", unless the texts know
+  // its singular, "résidu")
+  if (byEnding && !/us$/.test(k)) return true;
+  return c.d >= 2 || one.d >= 2;
+}
+// (a common noun: the texts put an article or a possessive before it)
+const isCommon = (game: Game, ix: Index, word: string) => counts(game, ix, low(word)).d >= 2;
 // (a noun the texts never give an article: its ending, as French dictionaries
 // would; null when the ending says nothing)
 function bySuffix(w: string): "m" | "f" | null {
@@ -211,9 +267,13 @@ const BEFORE_NOUN: Record<string, "m" | "f" | null> = {
   féroce: null, sauvage: null, maître: "m", maîtresse: "f", vil: "m", vile: "f", fier: "m", fière: "f",
   premier: "m", première: "f", dernier: "m", dernière: "f", bon: "m", bonne: "f", mauvais: "m", mauvaise: "f",
   infâme: null, faux: "m", fausse: "f", gigantesque: null, énorme: null, immense: null, mini: null, demi: null,
+  étrange: null,
 };
+// (the game writes a capital without its accent: "Enorme" is "énorme")
+const plain = (w: string) => w.normalize("NFD").replace(/\p{M}/gu, "");
+const BEFORE_PLAIN = new Map(Object.entries(BEFORE_NOUN).map(([k, v]) => [plain(k), v] as const));
 // (a word of many: an -s or -x, but for the words that end so in the singular)
-const ALWAYS_S = new Set(["bois", "marais", "pas", "os", "puits", "gris", "repos", "palais", "temps", "corps", "fois", "avis", "souris", "tapis", "bras", "nez", "voix", "croix", "paix", "choix", "prix", "perdrix", "lynx", "sphinx", "dos", "héros", "mas", "jus", "pus", "ours", "fils", "pays", "tiers", "lys", "rubis", "abysse", "crocs", "vers", "fracas", "rhinocéros", "silex", "phénix", "onyx", "obus", "cyprès", "procès", "succès", "progrès", "relais", "talus", "hibou", "radis", "frimas", "glas", "tas", "cas", "lilas", "matelas", "verglas", "parcours", "secours", "discours", "concours", "recours", "cours", "velours", "remords", "mors", "corps", "colis", "logis", "parvis", "taillis", "treillis", "anis", "iris", "oasis", "mépris", "permis", "paradis", "rubis", "brebis", "vis", "buis", "puis", "chablis", "ananas", "atlas", "débarras", "embarras", "canevas", "bas", "repas", "amas", "trépas", "cadenas", "compas", "plâtras", "galimatias", "ramas", "taffetas", "harnais", "jais", "laquais", "mauvais", "rabais", "biais", "frais", "dais", "engrais", "geais", "marais", "niais", "panais", "relais", "tais"]);
+const ALWAYS_S = new Set(["pavois", "papyrus", "mucus", "index", "porte-clés", "humus", "taudis", "remous", "tamis", "kris", "keris", "némésis", "poix", "proboscis", "portefaix", "cacatoès", "deux", "trois", "six", "bois", "marais", "pas", "os", "puits", "gris", "repos", "palais", "temps", "corps", "fois", "avis", "souris", "tapis", "bras", "nez", "voix", "croix", "paix", "choix", "prix", "perdrix", "lynx", "sphinx", "dos", "héros", "mas", "jus", "pus", "ours", "fils", "pays", "tiers", "lys", "rubis", "abysse", "crocs", "vers", "fracas", "rhinocéros", "silex", "phénix", "onyx", "obus", "cyprès", "procès", "succès", "progrès", "relais", "talus", "hibou", "radis", "frimas", "glas", "tas", "cas", "lilas", "matelas", "verglas", "parcours", "secours", "discours", "concours", "recours", "cours", "velours", "remords", "mors", "corps", "colis", "logis", "parvis", "taillis", "treillis", "anis", "iris", "oasis", "mépris", "permis", "paradis", "rubis", "brebis", "vis", "buis", "puis", "chablis", "ananas", "atlas", "débarras", "embarras", "canevas", "bas", "repas", "amas", "trépas", "cadenas", "compas", "plâtras", "galimatias", "ramas", "taffetas", "harnais", "jais", "laquais", "mauvais", "rabais", "biais", "frais", "dais", "engrais", "geais", "marais", "niais", "panais", "relais", "tais"]);
 const pluralWord = (w: string) => /[sx]$/.test(low(w)) && !ALWAYS_S.has(low(w)) && !/eux$|oux$/.test(low(w)) ? true : /aux$|eaux$/.test(low(w));
 
 // The head of a name and its gender: the first noun, past the words that
@@ -224,8 +284,8 @@ function headOf(name: string): { head: string; given: "m" | "f" | null } {
   for (const w of ws) {
     const k = low(w);
     if (k === "le" || k === "la" || k === "les" || k === "l'") continue;
-    if (k in BEFORE_NOUN) {
-      given = given ?? BEFORE_NOUN[k];
+    if (BEFORE_PLAIN.has(plain(k))) {
+      given = given ?? BEFORE_PLAIN.get(plain(k)) ?? null;
       continue;
     }
     return { head: w, given };
@@ -239,6 +299,8 @@ const ARTICLES = new Set(["le", "la", "les", "l'"]);
 const PREPOSITIONS = new Set(["à", "de", "d'", "en", "dans", "sur", "vers", "depuis", "par", "pour", "jusqu'"]);
 const CONTRACTED: Record<string, string> = { au: "le", aux: "les", du: "le", des: "les" };
 // a place's preposition by its head ("à la ferme", "sur le pic", "dans la forêt")
+// (looked up without accents too: the game writes "Ile")
+const AT_PLAIN = new Map<string, string>();
 const AT_HEAD: Record<string, string> = {
   camp: "à", campement: "à", poste: "à", fort: "à", fortin: "à", bastion: "à", tour: "à", ferme: "à", porte: "à",
   col: "à", avant: "à", comptoir: "à", refuge: "à", village: "dans", ville: "dans", cité: "dans", port: "à",
@@ -258,6 +320,7 @@ const AT_HEAD: Record<string, string> = {
   route: "sur", chemin: "sur", sentier: "sur", tertre: "sur", butte: "sur", éperon: "sur", cap: "sur", pointe: "sur",
   baie: "dans", crique: "dans", anse: "dans", lagon: "dans", quai: "sur", quais: "sur", jetée: "sur", promontoire: "sur", falaise: "sur", falaises: "sur", crête: "sur",
 };
+for (const [k, v] of Object.entries(AT_HEAD)) AT_PLAIN.set(plain(k), v);
 function place(ix: Index, game: Game, name: string, fixed?: Partial<Entry>): Entry {
   const own = low(tokens(name)[0] ?? "");
   const hasOwn = ARTICLES.has(own);
@@ -283,15 +346,17 @@ function place(ix: Index, game: Game, name: string, fixed?: Partial<Entry>): Ent
   const top = (o: Record<string, number>) => Object.entries(o).sort((x, y) => y[1] - x[1])[0]?.[0];
   const { head, given } = headOf(bare);
   const headLow = low(head);
-  const nounGender = genderOfWord(game, ix, headLow); // (a common noun the texts use with articles)
-  const common = nounGender !== null && tokens(bare).length > 1;
+  const nounGender = genderOfWord(game, ix, lowered(ix, head) ?? headLow); // (a common noun the texts use with articles)
+  const common = (nounGender !== null || isCommon(game, ix, headLow)) && tokens(bare).length > 1;
   // the article: the name's own, else as the texts write it, else a common
   // noun's ("la vallée des Frigères"), none for a name of its own ("Forgefer")
   let a = hasOwn ? own : us.length ? top(art) ?? "" : common ? "?" : "";
   // the gender: an article that tells it, the words before the noun, the noun's own
   const g0 = (a === "la" ? "f" : a === "le" ? "m" : null) ?? given ?? nounGender ?? ((art.la ?? 0) > (art.le ?? 0) ? "f" : "m");
+  const headWord = lowered(ix, head) ?? headLow;
+  if (a === "?" && pluralHead(game, ix, headWord)) a = "les";
   if (a === "?") a = /^[aeiouyâàéèêîïôûœ]/i.test(headLow) || /^h[^aou]/i.test(headLow) ? "l'" : g0 === "f" ? "la" : "le";
-  const g = g0 + (a === "les" ? "p" : "");
+  const g = g0 + (a === "les" || pluralHead(game, ix, headWord) ? "p" : "");
   // (the first word in a sentence: lower case when the texts write it so, or
   // when they never name it and it is a common noun)
   let n = bare;
@@ -302,12 +367,12 @@ function place(ix: Index, game: Game, name: string, fixed?: Partial<Entry>): Ent
   // the preposition: as the texts write it, else by the head, else "à" for a
   // name of its own and "dans" for one with its article
   const voted = top(prep);
-  const p = AT_HEAD[headLow] ?? (voted && prep[voted] >= 2 ? voted : undefined) ?? (a ? "dans" : "à");
+  const p = AT_HEAD[headLow] ?? AT_PLAIN.get(plain(headLow)) ?? (voted && prep[voted] >= 2 ? voted : undefined) ?? (a ? "dans" : "à");
   return { n, g, a, p, ...fixed };
 }
 
 // A creature or a thing: its gender, its head's case.
-function thing(ix: Index, game: Game, name: string, person: boolean, fixed?: Partial<Entry>): Entry {
+function thing(ix: Index, game: Game, name: string, person: boolean, fixed?: Partial<Entry>, creature = false): Entry {
   if (person) return { n: name, g: "m", a: "", ...fixed };
   const us = uses(ix, name, 200);
   let m = 0,
@@ -315,16 +380,16 @@ function thing(ix: Index, game: Game, name: string, person: boolean, fixed?: Par
     lower = 0,
     upper = 0;
   for (const u of us) {
-    const b1 = u.before[1];
-    if (MASC.has(b1)) m++;
-    else if (FEM.has(b1)) f++;
+    const g = genderBefore(u.before[1], u.first);
+    if (g === "m") m++;
+    else if (g === "f") f++;
     if (isCap(u.first)) upper++;
     else lower++;
   }
   const { head, given } = headOf(name);
-  let g: string = m + f > 0 ? (f > m ? "f" : "m") : given ?? genderOfWord(game, ix, lowered(ix, head) ?? low(head)) ?? "m";
+  let g: string = compound(head) ? "m" : m + f > 0 ? (f > m ? "f" : "m") : given ?? genderOfWord(game, ix, lowered(ix, head) ?? low(head)) ?? "m";
   const ws = tokens(name);
-  if (ws.length && pluralWord(head) && genderOfWord(game, ix, lowered(ix, head) ?? low(head)) === null && m + f === 0) g += "p";
+  if (ws.length && pluralHead(game, ix, lowered(ix, head) ?? head, !creature) && m + f === 0) g += "p";
   const first = ws[0] ?? "";
   const lc = lower > upper || commonWord(ix, first);
   const lf = lowered(ix, name);
@@ -392,7 +457,7 @@ for (const game of Object.keys(GAMES) as Game[]) {
         how === "place"
           ? place(ix, game, n, fixed)
           : how === "thing"
-            ? thing(ix, game, n, key === "creatures" && person.has(english), fixed)
+            ? thing(ix, game, n, key === "creatures" && person.has(english), fixed, key === "creatures")
             : n;
     }
     out[key] = o;
