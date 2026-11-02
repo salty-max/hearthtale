@@ -198,7 +198,7 @@ const NOUN_GENDER: Record<string, "m" | "f"> = {
 // (a verb and a noun, or "haut-de": one thing, masculine, whatever its -s:
 // "un casse-noisettes", "un haut-de-chausses"; but the paired armour)
 const VERB_FIRST = new Set(["casse", "cache", "ecrase", "tranche", "crache", "cure", "brise", "claque", "porte", "coupe", "perce", "fend", "ouvre", "tire", "chasse", "lance", "croque", "mange", "presse", "pare", "attrape", "garde", "protege", "couvre", "serre", "fauche", "broie", "arrache", "taille", "souffle", "saute", "haut", "hauts"]);
-const PAIRED = /^(garde|protege)-(poignets|mains|bras|jambes|tibias)$/;
+const PAIRED = /^(garde|protege)-(poignets|mains|bras|jambes|tibias|epaules)$/;
 function compound(head: string): boolean {
   const k = plain(low(head));
   const [first] = k.split("-");

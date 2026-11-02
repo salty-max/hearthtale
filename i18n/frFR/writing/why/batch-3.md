@@ -80,7 +80,7 @@
 - 133 | ai rassemblé des côtes de goule pour l'effigie d'Abercrombie, un épouvantail à goules, après que des mâcheurs d'os avaient tambouriné à ses murs
 - 134 | ai récupéré la caisse d'outils et d'herbes d'Abercrombie près du tertre des ogres, abandonnée quand les ogres l'avaient chassé
 - 149 | ai porté un peigne spectral à l'esprit triste de Marie l'Aveugle, pour que Madame Eva en tire des cheveux fantômes pour en faire du fil
-- 154 | ai rapporté le peigne à Madame Eva après que Marie l'Aveugle eut pleuré qu'elle était un monstre que plus personne ne trouverait jamais beau
+- 154 | ai rapporté le peigne à Madame Eva après que Marie l'Aveugle avait pleuré qu'elle était un monstre que plus personne ne trouverait jamais beau
 - 156 | ai cueilli des fleurs pourries sur les crânes des squelettes de la [[Raven Hill]] pour le suc de zombie du tavernier Smitts, en éclaircissant leurs rangs
 - 157 | ai apporté à Abercrombie le fil de cheveux fantômes, bon pour lier les esprits mauvais ou coudre la vie dans les choses sans vie
 - 159 | ai porté à Abercrombie le suc de zombie qu'il voulait contre les nuits froides, un breuvage assez fort pour relever les morts

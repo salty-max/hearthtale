@@ -509,6 +509,15 @@ local function pluralWord(w)
   end
   return w .. "s"
 end
+local VERB_FIRST = {}
+for v in
+  ("casse cache tranche crache cure brise claque porte coupe perce fend ouvre tire chasse lance croque mange presse pare attrape garde couvre serre fauche broie arrache taille souffle saute haut hauts"):gmatch(
+    "%S+"
+  )
+do
+  VERB_FIRST[v] = true
+end
+VERB_FIRST["\195\169crase"], VERB_FIRST["prot\195\168ge"] = true, true
 local function pluralOf(n)
   local out, stop = {}, false
   local i = 0
@@ -519,7 +528,15 @@ local function pluralOf(n)
     -- (the first word, then the small ones: a name inside stays, "Frostmane")
     if not stop and (i == 1 or not w:find("^%u")) then
       if w:find("%-") then
-        w = w:gsub("[^%-]+", pluralWord)
+        -- (a verb and a noun stays: "protège-poignets", "casse-noisettes";
+        -- two nouns both take it: "hommes-loups")
+        local first = w:match("^[^%-]+"):lower():gsub("^\195\137", "\195\169")
+        if VERB_FIRST[first] then
+          -- (the noun after it takes the -s, if it has none: "haut-trotteurs")
+          w = w:gsub("([^%-]+)$", pluralWord)
+        else
+          w = w:gsub("[^%-]+", pluralWord)
+        end
       else
         w = pluralWord(w)
       end

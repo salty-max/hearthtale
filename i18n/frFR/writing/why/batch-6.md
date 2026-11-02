@@ -2,3 +2,318 @@
 
 - 182 | ai éclairci les rangs des jeunes trolls Frostmane dans la caverne du sud pour [[name:Grelin Whitebeard]], envoyé [[at:Coldridge Valley]] jauger la menace troll
 - 218 | ai tué [[name:Grik'nir the Cold]] dans la caverne des trolls pour reprendre le journal volé de [[name:Grelin Whitebeard]]
+- 9033 | suis $gentré:entrée; à [[Naxxramas]] pour détruire le Fléau que Kel'Thuzad rassemblait pour une nouvelle attaque, la preuve de mon dévouement à l'Aube
+- 9034 | ai apporté à Korfax [[un:Desecrated Breastplate]] et des débris d'armure de [[Naxxramas]] pour [[un:Dreadnaught Breastplate]], une armure de héros
+- 9036 | ai rapporté de [[Naxxramas]] [[un:Desecrated Legplates]] pour que Korfax en fasse [[un:Dreadnaught Legplates]], une armure de héros
+- 9037 | ai remis à Korfax [[un:Desecrated Helmet]] et un tas de débris d'armure pour [[un:Dreadnaught Helmet]] de sa façon
+- 9038 | ai rassemblé arcanite, peaux et débris d'armure pour que Korfax change [[un:Desecrated Pauldrons]] en [[un:Dreadnaught Pauldrons]]
+- 9039 | ai échangé à Korfax [[un:Desecrated Sabatons]] et des débris tirés des combats contre le Fléau contre [[un:Dreadnaught Sabatons]]
+- 9040 | ai rapporté des combats de [[Naxxramas]] [[un:Desecrated Gauntlets]] à Korfax, qui en ferait [[un:Dreadnaught Gauntlets]]
+- 9041 | ai porté [[un:Desecrated Waistguard]] et des peaux traitées à Korfax à [[Light's Hope Chapel]] pour [[un:Dreadnaught Waistguard]]
+- 9042 | ai livré [[un:Desecrated Bracers]] et un cristal de nexus à Korfax, qui saurait en faire [[un:Dreadnaught Bracers]]
+- 9043 | ai apporté à Eligor Dawnbringer [[un:Desecrated Tunic]], souvenir d'un héros tombé repris aux seigneurs de [[Naxxramas]], pour la ranimer en [[un:Redemption Tunic]]
+- 9044 | ai repris [[un:Desecrated Legguards]] aux seigneurs de [[Naxxramas]] pour qu'Eligor Dawnbringer ranime l'armure maudite en [[un:Redemption Legguards]]
+- 9045 | ai porté [[un:Desecrated Headpiece]], reste d'un héros tombé, à Eligor Dawnbringer pour en faire [[un:Redemption Headpiece]]
+- 9046 | ai fourni à Eligor Dawnbringer de l'arcanite et des cristaux de nexus pour ranimer [[un:Desecrated Spaulders]] en [[un:Redemption Spaulders]]
+- 9047 | ai remis [[un:Desecrated Boots]] de [[Naxxramas]] pour que le commandant Eligor Dawnbringer en fasse [[un:Redemption Boots]]
+- 9048 | ai repris [[un:Desecrated Handguards]] aux seigneurs de [[Naxxramas]] pour qu'Eligor Dawnbringer en fasse [[un:Redemption Handguards]]
+- 9049 | ai porté [[un:Desecrated Girdle]], souvenir d'un héros tombé, à Eligor Dawnbringer à [[Light's Hope Chapel]] pour [[un:Redemption Girdle]]
+- 9050 | ai rassemblé débris d'armure et peaux pour qu'Eligor Dawnbringer ranime [[un:Desecrated Wristguards]] en [[un:Redemption Wristguards]]
+- 9054 | ai apporté au veneur Leopold [[un:Desecrated Tunic]] et des débris de mailles pour [[un:Cryptstalker Tunic]], une armure légère et mortelle
+- 9055 | ai sorti de [[Naxxramas]] [[un:Desecrated Legguards]] pour que le veneur Leopold en fasse [[un:Cryptstalker Legguards]] avec de la carapace de démon des cryptes
+- 9056 | ai échangé au veneur Leopold [[un:Desecrated Headpiece]] et des débris de mailles contre [[un:Cryptstalker Headpiece]] de sa conception
+- 9057 | ai rassemblé arcanite et peaux traitées pour que le veneur Leopold fasse [[un:Cryptstalker Spaulders]] à partir d'épaulières désacralisées
+- 9058 | ai remis au veneur Leopold [[un:Desecrated Boots]] et des cristaux de nexus pour [[un:Cryptstalker Boots]], une armure jamais vue en ce monde
+- 9059 | ai porté [[un:Desecrated Handguards]] au veneur Leopold, qui saurait les joindre à de la carapace de démon des cryptes pour en faire [[un:Cryptstalker Handguards]]
+- 9060 | ai livré [[un:Desecrated Girdle]] et des débris de mailles au veneur Leopold pour [[un:Cryptstalker Girdle]]
+- 9061 | ai rapporté de [[Naxxramas]] [[un:Desecrated Wristguards]] au veneur Leopold pour qu'il en fasse [[un:Cryptstalker Wristguards]]
+- 9068 | ai rapporté [[un:Desecrated Tunic]], l'armure de ceux qui étaient tombés en défendant ces terres, à Rimblat Earthshatter pour [[un:Earthshatter Tunic]]
+- 9069 | ai repris [[un:Desecrated Legguards]], l'armure des morts mise au service du mal à [[Naxxramas]], pour [[un:Earthshatter Legguards]] de Rimblat Earthshatter
+- 9070 | ai apporté à Rimblat Earthshatter [[un:Desecrated Headpiece]] et des débris de mailles à renouveler en [[un:Earthshatter Headpiece]]
+- 9071 | ai rassemblé étoffe lunaire et arcanite pour que Rimblat Earthshatter purifie [[un:Desecrated Spaulders]] en [[un:Earthshatter Spaulders]]
+- 9072 | ai porté [[un:Desecrated Boots]] à Rimblat Earthshatter, pour que l'armure des morts reparte au combat sous la forme de [[un:Earthshatter Boots]]
+- 9073 | ai remis à Rimblat Earthshatter [[un:Desecrated Handguards]] et de quoi les purifier pour [[un:Earthshatter Handguards]]
+- 9074 | ai repris au Fléau [[un:Desecrated Girdle]] et l'ai porté à Rimblat Earthshatter, pour qu'il en fasse [[un:Earthshatter Girdle]]
+- 9075 | ai honoré les morts en portant leurs [[pl:Desecrated Wristguards]] à Rimblat Earthshatter pour [[un:Earthshatter Wristguards]]
+- 9077 | ai fourni à Rohan l'Assassin [[un:Desecrated Breastplate]] et des débris de cuir pour [[un:Bonescythe Breastplate]], les os étant son affaire
+- 9078 | ai apporté à Rohan l'Assassin [[un:Desecrated Legplates]] de la cité flottante de la mort, et son prix, pour [[un:Bonescythe Legplates]]
+- 9079 | ai payé Rohan l'Assassin pour sa peine et lui ai remis [[un:Desecrated Helmet]] pour en faire [[un:Bonescythe Helmet]]
+- 9080 | ai rassemblé des peaux et un cristal de nexus pour que Rohan l'Assassin fasse [[un:Bonescythe Pauldrons]] à partir d'espauliers désacralisés
+- 9081 | ai échangé à Rohan l'Assassin [[un:Desecrated Sabatons]] et quelques pièces contre [[un:Bonescythe Sabatons]]
+- 9082 | ai descendu de [[Naxxramas]] [[un:Desecrated Gauntlets]] pour que Rohan l'Assassin en fasse [[un:Bonescythe Gauntlets]]
+- 9083 | ai porté [[un:Desecrated Waistguard]] à Rohan l'Assassin, qui fournirait les os pour [[un:Bonescythe Waistguard]]
+- 9084 | ai livré [[un:Desecrated Bracers]], des débris de cuir et ses honoraires à Rohan l'Assassin pour [[un:Bonescythe Bracers]]
+- 9086 | ai repris [[un:Desecrated Tunic]], arrachée à un héros tombé et emportée à [[Naxxramas]], pour que Rayne en fasse [[un:Dreamwalker Tunic]]
+- 9087 | ai apporté à Rayne [[un:Desecrated Legguards]] et des débris d'armure, pour que l'armure des morts devienne [[un:Dreamwalker Legguards]]
+- 9088 | ai repris au Fléau [[un:Desecrated Headpiece]] pour que Rayne en fasse [[un:Dreamwalker Headpiece]]
+- 9089 | ai rassemblé les peaux et le cristal de nexus dont Rayne avait besoin pour faire [[un:Dreamwalker Spaulders]] à partir de spallières désacralisées
+- 9090 | ai porté [[un:Desecrated Boots]] et de l'étoffe lunaire à Rayne, qui en ferait [[un:Dreamwalker Boots]]
+- 9091 | ai remis à Rayne [[un:Desecrated Handguards]], une armure que le Fléau avait arrachée aux morts, pour [[un:Dreamwalker Handguards]]
+- 9092 | ai repris [[un:Desecrated Girdle]] à [[Naxxramas]] pour que Rayne en fasse [[un:Dreamwalker Girdle]]
+- 9093 | ai livré [[un:Desecrated Wristguards]] et un cristal des arcanes à Rayne pour [[un:Dreamwalker Wristguards]]
+- 9095 | ai apporté à l'archimage Angela Dosantos [[un:Desecrated Robe]] pour [[un:Frostfire Robe]], une armure d'archimage décrite dans l'un des tomes de Medivh
+- 9096 | ai rassemblé étoffe lunaire et cristaux de nexus pour qu'Angela Dosantos fasse [[un:Frostfire Leggings]] d'après un modèle tiré des livres de Medivh
+- 9097 | ai porté [[un:Desecrated Circlet]] à l'archimage Angela Dosantos, qui connaissait [[le:Frostfire Circlet]] par les tomes de Medivh
+- 9098 | ai fourni à Angela Dosantos ce qu'il lui fallait pour [[un:Frostfire Shoulderpads]], un modèle trouvé parmi les affaires personnelles de Medivh
+- 9099 | ai remis à l'archimage Angela Dosantos [[un:Desecrated Sandals]] de [[Naxxramas]] pour [[un:Frostfire Sandals]]
+- 9100 | ai porté [[un:Desecrated Gloves]] et de l'étoffe lunaire à Angela Dosantos à [[Light's Hope Chapel]] pour [[un:Frostfire Gloves]]
+- 9101 | ai échangé à l'archimage Angela Dosantos [[un:Desecrated Belt]] et des débris d'armure contre [[un:Frostfire Belt]]
+- 9102 | ai livré [[un:Desecrated Bindings]] à Angela Dosantos, la Guetteuse qui avait découvert le givrefeu dans les tomes de Medivh, pour [[un:Frostfire Bindings]]
+- 9103 | ai payé le prix élevé de Mataus le Courroucé pour [[un:Plagueheart Robe]], dont les ténèbres suffiraient à nous détruire, lui et moi
+- 9104 | ai apporté à Mataus le Courroucé [[un:Desecrated Leggings]] pour [[un:Plagueheart Leggings]], une sombre besogne qu'il faisait payer cher
+- 9105 | ai porté [[un:Desecrated Circlet]] à Mataus le Courroucé, qui ne risquait les ténèbres de la pestecoeur que pour la richesse
+- 9106 | ai remis à Mataus le Courroucé [[un:Desecrated Shoulderpads]] et des peaux pour [[un:Plagueheart Shoulderpads]], quelles que soient les ténèbres qu'ils renfermaient
+- 9107 | ai porté [[un:Desecrated Sandals]] à Mataus le Courroucé, qui comptait bien mourir riche, pour [[un:Plagueheart Sandals]]
+- 9108 | ai rassemblé ce qu'exigeait Mataus le Courroucé pour [[un:Plagueheart Gloves]]
+- 9109 | ai échangé à Mataus le Courroucé [[un:Desecrated Belt]] et des cristaux des arcanes contre [[un:Plagueheart Belt]]
+- 9110 | ai livré [[un:Desecrated Bindings]] et des débris d'armure à Mataus le Courroucé pour [[un:Plagueheart Bindings]]
+- 9111 | ai apporté au père Inigo Montoy les vêtements sacerdotaux des morts et des composants de purification pour [[un:Robe of Faith]]
+- 9112 | ai rapporté au père Inigo Montoy [[un:Desecrated Leggings]], arrachées à ceux qui étaient morts au combat, pour [[un:Leggings of Faith]]
+- 9113 | ai porté [[un:Desecrated Circlet]] au père Inigo Montoy, pour qu'il le purifie en [[un:Circlet of Faith]]
+- 9114 | ai rendu un peu de dignité aux morts en portant leurs [[pl:Desecrated Shoulderpads]] au père Inigo Montoy pour [[un:Shoulderpads of Faith]]
+- 9115 | ai remis au père Inigo Montoy [[un:Desecrated Sandals]] et des composants de purification pour [[un:Sandals of Faith]]
+- 9116 | ai porté [[un:Desecrated Gloves]] des disparus au père Inigo Montoy pour [[un:Gloves of Faith]]
+- 9117 | ai rassemblé des composants de purification pour que le père Inigo Montoy fasse [[un:Belt of Faith]] à partir de restes désacralisés
+- 9118 | ai livré [[un:Desecrated Bindings]] au père Inigo Montoy à [[Light's Hope Chapel]] pour [[un:Bindings of Faith]]
+- 9120 | ai porté le phylactère de Kel'Thuzad, tout ce qui restait du maître de [[Naxxramas]], à [[Light's Hope Chapel]] au lieu de le détruire
+- 9229 | ai fouillé [[Naxxramas]] à la recherche de Ramaladni, un élève du généralissime Mograine entré là pour se venger et jamais revenu
+- 9230 | ai trouvé une rune de givre pour que Korfax restaure l'anneau de Ramaladni, brisé, tout ce qu'on avait retrouvé de lui
+- 9232 | ai apporté à l'artisan Wilhelm des runes de givre et des saphirs pour un pantalon, la seule recette qu'Omarion lui avait laissée
+- 9233 | ai porté le recueil de recettes de l'artisan défunt Omarion à son vieil ami l'artisan Wilhelm, à [[Light's Hope Chapel]]
+- 9234 | ai payé l'artisan Wilhelm pour qu'il fasse [[un:Icebane Gauntlets]] avec des runes de givre, grâce aux recettes que lui avait laissées feu Omarion
+- 9235 | ai apporté à Wilhelm des runes de givre, du thorium et ses honoraires pour [[un:Icebane Bracers]] d'après les recettes d'Omarion
+- 9236 | ai commandé [[un:Icebane Breastplate]] à l'artisan Wilhelm, des runes de givre de [[Naxxramas]] et du thorium pour une recette d'Omarion
+- 9237 | ai fourni à l'artisan Wilhelm des runes de givre et de l'étoffe runique pour [[un:Glacial Cloak]], un patron du recueil d'Omarion
+- 9238 | ai fait faire par l'artisan Wilhelm [[un:Glacial Wrists]] avec des runes de givre et de la soie d'araignée, grâce aux recettes d'Omarion
+- 9239 | ai rassemblé des runes de givre et des essences d'eau pour que Wilhelm fasse [[un:Glacial Gloves]] d'après une recette d'Omarion
+- 9240 | ai commandé [[un:Glacial Vest]] à l'artisan Wilhelm, runes de givre, étoffe runique et soie pour un patron qu'avait laissé feu Omarion
+- 9241 | ai échangé à l'artisan Wilhelm des runes de givre et du cuir enchanté contre [[un:Polar Bracers]], faits d'après les recettes d'Omarion
+- 9242 | ai payé les honoraires de l'artisan Wilhelm et apporté des runes de givre pour [[un:Polar Gloves]], l'un des patrons d'Omarion
+- 9243 | ai commandé [[un:Polar Tunic]] à l'artisan Wilhelm avec des runes de givre et du cuir enchanté, d'après une recette de feu Omarion
+- 9244 | ai rassemblé des runes de givre et de lourdes écailles de scorpide pour [[un:Icy Scale Bracers]] que Wilhelm pourrait faire d'après le recueil d'Omarion
+- 9245 | ai apporté à l'artisan Wilhelm des runes de givre et des écailles de scorpide pour [[un:Icy Scale Gauntlets]], une recette qu'Omarion lui avait laissée
+- 9246 | ai commandé [[un:Icy Scale Breastplate]] à l'artisan Wilhelm, des runes de givre et des écailles de scorpide pour l'une des recettes d'Omarion
+- 8492 | ai fondu des barres de cuivre pour le sergent Stonebrow à [[Ironforge]], du métal pour le matériel de guerre de l'Alliance contre [[Ahn'Qiraj]]
+- 8494 | ai apporté des barres de fer à un caporal Carnes peu aimable, tandis que l'Alliance s'équipait pour la guerre de [[Ahn'Qiraj]]
+- 8499 | ai fourni des barres de thorium à dame Twinbraid pour le bataillon de chars à vapeur que l'Alliance comptait transporter par les airs [[at:Silithus]]
+- 8503 | ai arraché de l'étouffante pour le soldat Draxlegauge, à qui il en fallait énormément pour l'effort de guerre de [[Ahn'Qiraj]]
+- 8505 | ai cueilli du lotus pourpre pour maître Nightsong, des herbes pour la résistance de l'Alliance face à l'avancée impitoyable des silithides
+- 8509 | ai ramassé des larmes d'Arthas pour le sergent-major Germaine, sur des ordres pour l'effort de guerre de [[Ahn'Qiraj]] que personne n'expliquait
+- 8511 | ai dépecé du cuir léger pour Bonnie Stoneflayer, dont la famille de dépeceurs le tannait pour le matériel de guerre de l'Alliance
+- 8513 | ai apporté du cuir moyen au soldat Porter, qui notait chaque pièce rassemblée pour la guerre de [[Ahn'Qiraj]]
+- 8515 | ai apporté du cuir épais à une Marta Finespindle tout excitée, à qui il en fallait des tonnes pour l'effort de guerre de [[Ahn'Qiraj]]
+- 8517 | ai fait des bandages en lin pour la sentinelle Silversky, pour une guerre à [[Ahn'Qiraj]] qu'on annonçait longue et sanglante
+- 8520 | ai roulé des bandages en soie pour l'infirmière Stonefield, pour que les soldats en route pour [[Ahn'Qiraj]] ne manquent de rien
+- 8522 | ai donné des bandages en étoffe runique à la gardienne Moonshade, pour offrir à ceux qu'on envoyait à [[Ahn'Qiraj]] toutes les chances de survivre
+- 8524 | ai pêché et cuisiné du thon arc-en-ciel pour Slicky Gastronome, de quoi nourrir les soldats de la guerre de [[Ahn'Qiraj]]
+- 8526 | ai rôti du raptor pour Sarah Sadwhistle, une volontaire malgré elle qui stockait des vivres pour les soldats en route pour [[Ahn'Qiraj]]
+- 8528 | ai pêché et cuisiné du jaune-queue tacheté pour les réserves de la chasseresse Swiftriver, des vivres qui tiendraient jusqu'au début de la guerre
+- 8532 | ai fondu du minerai de cuivre en barres pour le mineur Cromwell à [[Orgrimmar]], du métal brut pour le matériel de guerre de la Horde
+- 8542 | ai fait des barres d'étain pour le grunt Maug, qui aurait préféré aiguiser des armes pour la guerre contre les insectes de [[Ahn'Qiraj]]
+- 8545 | ai extrait et fondu du mithril pour le sergent-chef T'kelah, des barres pour bâtir ce dont la Horde aurait besoin dans la guerre à venir
+- 8549 | ai cueilli de la pacifique pour l'herboriste Proudfeather, à transformer en potions pour l'épreuve que la Horde allait affronter à [[Ahn'Qiraj]]
+- 8580 | ai ramassé de la fleur de feu pour le chevaucheur de chauve-souris Pele'keiki, qui devinait que la Horde la voulait pour des choses qui font boum
+- 8582 | ai cueilli du lotus pourpre pour l'apothicaire Jezel, un composant des nombreuses potions dont la Horde aurait besoin à [[Ahn'Qiraj]]
+- 8588 | ai dépecé du cuir lourd pour le dépeceur Jamani, pour les armures, les renforts et les simples bâches du matériel de guerre de la Horde
+- 8590 | ai apporté du cuir épais au sergent Umala pour le matériel de guerre de la Horde, avec la gratitude de la Horde promise en retour
+- 8600 | ai taillé du cuir robuste pour le docteur Serratus, juge sévère du couteau d'un dépeceur, pour l'effort de guerre de [[Ahn'Qiraj]]
+- 8604 | ai amassé des bandages en laine pour les trousses de secours du guérisseur Longrunner, puisque les soldats sur le terrain ne pouvaient compter sur un guérisseur
+- 8607 | ai fait des bandages en tisse-mage pour l'effort de guerre, pour dame Callow
+- 8609 | ai donné des bandages en étoffe runique au garde-pierre Clayhoof pour les soldats qui affrontaient les silithides et la force qui les dirigeait
+- 8611 | ai chassé des loups et cuisiné des steaks de loup pour le garde sanglant Rawtar, mis au sel pour nourrir les soldats de la Horde
+- 8613 | ai pêché du jaune-queue tacheté pour le pêcheur Lin'do, chargé d'en rassembler une tonne pour la guerre de la Horde
+- 8615 | ai fait cuire du saumon pour le chef Sharpclaw, un plat choisi pour sa bonne conservation et pour donner aux soldats la force de lever une hache
+- 1657 | ai lancé des boules puantes réprouvées au cœur de [[Southshore]] pour la Mande-ténèbres Yanka, un hommage de la Sanssaint à la libération des Réprouvés
+- 1658 | suis $gallé:allée; observer la fête de l'Homme d'osier des Réprouvés [[at:Tirisfal Glades]] pour le sergent Hartman, qui craignait les ennuis qu'elle vaudrait à [[Southshore]]
+- 6962 | suis $gallé:allée; chercher des biscuits de pain d'épice et du lait glacé pour Grand-père Hiver, épuisé d'avoir salué les gens toute la journée
+- 6963 | ai fouillé les neiges de [[Alterac Mountains]] à la recherche de l'agent des Gourmandises Fumebois parti chercher un chargement disparu de friandises du Voile d'hiver
+- 6983 | ai repris les friandises volées du Voile d'hiver à l'abominable Grinch, la créature qui avait changé Sacks en bonhomme de neige
+- 7025 | ai apporté à Grand-père Hiver des biscuits de pain d'épice et du lait glacé, une douceur bien méritée après une longue journée de salutations
+- 7042 | ai cherché dans [[Alterac Mountains]] l'enquêteur disparu des Gourmandises Fumebois, envoyé à la recherche d'un chargement perdu de friandises de fête
+- 7043 | ai traqué l'abominable Grinch, qui avait volé les friandises du Voile d'hiver des Gourmandises Fumebois et changé le pauvre Sacks en bonhomme de neige
+- 7061 | ai porté un livre des anciennes légendes du Voile d'hiver à Cairne Bloodhoof, qui voulait que le savoir de son peuple reste vivant
+- 7063 | ai apporté un livre sur la fête du Voile d'hiver au roi Magni Bronzebeard, heureux de voir les vieilles légendes encore en mémoire
+- 8149 | ai déposé un tribut de la fête des moissons au tombeau d'Uther, dans [[Western Plaguelands]], en l'honneur du sacrifice d'Uther le Porteur de Lumière
+- 8150 | ai déposé un tribut de la fête des moissons au monument de Grom, dans [[Demon Fall Canyon]], en l'honneur de la force et du sacrifice de Grom Hellscream
+- 8311 | suis $gallé:allée; quémander des bonbons dans les auberges des capitales pour Jesper, un enfant de l'orphelinat de [[Stormwind City]] trop malade pour y aller
+- 8312 | ai quémandé des bonbons pour Spoops, un enfant malade de l'orphelinat de [[Orgrimmar]], et fait tous les tours que les aubergistes me demandaient
+- 8322 | me suis $gbattu:battue; jusqu'à l'auberge de [[Southshore]] pour jeter des œufs pourris dans sa grande cuve, gâchant pour des semaines la précieuse bière des humains
+- 8353 | ai caqueté comme une poule devant Firebrew l'aubergiste pour un bonbon à la menthe de [[Ironforge]], une douceur pour la Sanssaint d'un enfant malade
+- 8354 | ai caqueté comme une poule pour Norman l'aubergiste, le prix d'un bonbon à la menthe de [[Undercity]] pour un enfant malade
+- 8355 | ai imité le bruit d'un train devant Talvash del Kissel pour une boule de gomme de [[Gnomeregan]] destinée à un enfant malade
+- 8356 | ai montré mes muscles à l'aubergiste Allison pour gagner du nougat de [[Stormwind City]] pour la Sanssaint d'un enfant malade
+- 8357 | ai dansé pour Saelienne l'aubergiste en échange de massepain de [[Darnassus]] pour un enfant malade
+- 8358 | ai fait le train pour Kali Remik à [[Sen'jin Village]] pour gagner une boule de gomme darkspear pour un enfant malade
+- 8359 | ai montré mes muscles à Gryshka l'aubergiste, qui voulait une démonstration de force avant de donner du nougat de [[Orgrimmar]] pour un enfant malade
+- 8360 | ai dansé pour Pala l'aubergiste à [[Thunder Bluff]], le prix du massepain de [[Thunder Bluff]] pour un enfant malade
+- 8373 | ai nettoyé [[Southshore]] des boules puantes réprouvées avec un détergent au pin pour le sergent Hartman, pendant la Sanssaint
+- 8746 | ai libéré Metzen, l'un des huit rennes de Grand-père Hiver, des ravisseurs qui envoyaient des demandes de rançon aux Gourmandises Fumebois
+- 8762 | ai sauvé Metzen le Renne avec une bourse de poudre de renne, en suivant les indices des deux demandes de rançon envoyées aux Gourmandises Fumebois
+- 8763 | ai donné du sel de Fonderoc et cinq pièces d'or à un conservateur de houx, un secret confié au héros du jour, pour du houx qui ne se gâte jamais
+- 8799 | ai donné du sel de Fonderoc et cinq pièces d'or au conservateur de houx, une récompense pour le héros du jour, pour du houx qui ne fanerait jamais
+- 8860 | ai livré les marchandises des Gourmandises Fumebois à l'aubergiste Allison à [[Stormwind City]] pour nourrir la foule venue fêter la nouvelle année
+- 8861 | ai apporté les marchandises des Gourmandises Fumebois à Pala l'aubergiste à [[Thunder Bluff]] pour nourrir les gens venus fêter la nouvelle année
+- 8897 | ai porté la note soigneusement calligraphiée du lieutenant Heldric à sa bien-aimée Colara Dean, même s'il craignait qu'elle l'oublie pour des hommes plus riches
+- 8898 | ai livré à Colara Dean une lettre réécrite douze fois par un admirateur transi, dont elle se rappelait encore la barbe et le sourire
+- 8899 | ai porté à Colara Dean une lettre immaculée d'un admirateur resté sans voix après des milliers d'années de mots
+- 8900 | ai livré à Elenia Haydon, à [[Undercity]], une note d'un orc dont on s'était moqué pour le lien qu'il avait ressenti avec elle
+- 8901 | ai porté la lettre d'un tauren qui demandait à Elenia Haydon de venir [[at:Mulgore]], un amour qu'elle savait ne pas pouvoir lui rendre
+- 8902 | ai apporté à Elenia Haydon une lettre du fiancé qu'elle avait eu il y a une vie entière, trop nerveux pour la lui remettre lui-même
+- 8903 | ai obtenu la carte d'amour d'un garde de [[Stormwind City]] pour Aristan Mottar, qui craignait qu'une épidémie d'amour contre nature ait gagné les gardes de la ville
+- 8904 | ai obtenu la carte d'amour moisie d'un gardien pour Fenstad Argyle, qui craignait qu'une épidémie d'amour contre nature n'affaiblisse [[Undercity]]
+- 8979 | ai apporté l'eau de Cologne et le parfum à la mode à l'apothicaire Zinge, pour vérifier l'intuition de Fenstad Argyle : une alchimie malsaine embrouillait les esprits
+- 8980 | ai rapporté à Fenstad Argyle que l'apothicaire Zinge avait trouvé dans les nouveaux parfums des traces de potions de contrôle mental
+- 8982 | ai demandé à Norman l'aubergiste d'où venait son parfum si populaire, en remontant la piste des parfums viciés pour Fenstad Argyle
+- 8983 | ai retrouvé Mara Rennick, la nouvelle marchande qui avait vendu le parfum vicié à Norman l'aubergiste
+- 8984 | ai trouvé le fabricant du parfum vicié, l'apothicaire Staffron Lerent, qui voulait affaiblir l'Alliance et la Horde pour le Conseil des ombres
+- 9024 | ai porté de l'eau de Cologne et du parfum à Morgan Pestle pour vérifier le soupçon d'Aristan Mottar : une alchimie malsaine avait embrouillé l'esprit des gardes
+- 9025 | ai annoncé à Aristan Mottar que Morgan Pestle avait trouvé dans les nouveaux parfums des traces de philtres d'amour et de breuvages qui troublent l'esprit
+- 9026 | ai demandé à l'aubergiste Allison, à la Rose dorée, d'où venait l'eau de Cologne que tout le monde voulait
+- 9027 | ai interrogé Evert Sorisam au Fil le plus fin, le nouveau marchand derrière l'eau de Cologne vendue à la Rose dorée
+- 9028 | ai remonté la piste de l'eau de Cologne jusqu'à l'apothicaire Staffron Lerent, derrière le manoir de Ravenholdt, qui la préparait pour rendre l'Alliance et la Horde malades d'amour et faibles
+- 635 | ai suivi la vision d'un éclat palpitant jusqu'à un cristal dans les montagnes du nord de [[Arathi Highlands]], où quelqu'un semblait appeler à l'aide
+- 636 | ai cherché les éclats de Myzrael, qu'un vieux livre décrivait comme une fenêtre sur la prison d'une princesse élémentaire sous [[Arathi Highlands]]
+- 639 | ai pris le glyphe de Strom au Syndicat pour Zengu, le premier des sceaux du tombeau de Trollbane et de son épée tueuse de trolls
+- 640 | ai arraché les cinq fragments du glyphe de Thoradin aux défenseurs de [[Stromgarde Keep]] pour que Tor'gan les réunisse
+- 641 | ai rapporté le glyphe de Thoradin restauré à Zengu, à mi-chemin de l'ouverture du tombeau de Trollbane
+- 642 | ai rassemblé des poussières de Myzrael sur les kobolds Moustaches-Sèches pour charger un éclat pour Myzrael, une princesse de la terre emprisonnée par des géants
+- 643 | ai pris le glyphe d'Arathor au lieutenant Valorcall, chef de la cavalerie de [[Stromgarde Keep]], pour Zengu
+- 644 | ai tué le prince Galen Trollbane dans sa chapelle de [[Stromgarde Keep]] pour le dernier glyphe qui scellait le tombeau de son père
+- 645 | ai brisé les protections du tombeau de Trollbane à [[Stromgarde Keep]] pour prendre Trol'kalar, l'épée tueuse de trolls que voulaient les Darkspear
+- 646 | ai livré Trol'kalar à Zengu à [[Hammerfall]], la plus grande arme de Strom et d'Arathor mise au service du combat des Darkspear à [[Zul'Gurub]]
+- 651 | ai gagné les clés des pierres de lien gardées [[at:Arathi Highlands]] pour desserrer les liens qui retenaient Myzrael sous terre
+- 652 | ai tué le guetteur de pierre Fozruk pour le bâtonnet de l'Ordre et ouvert la clé de voûte qui tenait Myzrael enchaînée
+- 656 | ai invoqué Myzrael et l'ai vaincue avant qu'elle ne devienne assez forte pour défier les géants, puis l'ai liée de nouveau dans ses propres chaînes
+- 662 | ai plongé jusqu'aux épaves de la Folie de la Vierge et de l'Esprit des Pins argentés pour leurs cartes et leurs journaux de bord, pour qu'aucun regard indiscret ne les trouve
+- 664 | ai massacré les nagas Daguéchine qui avaient tué les survivants de la Folie de la Vierge, une maigre consolation pour le capitaine Steelgut
+- 665 | ai protégé le professeur Phizzlethorpe dans la grotte maudite pendant qu'il chargeait les lunettes censées trouver le trésor elfique perdu
+- 666 | ai fouillé le fond de la mer avec les lunettes de chasse aux gemmes à la recherche des gemmes elfiques du trésor perdu, changées en pierre
+- 667 | ai tenu le canon pour défendre Shakes O'Breen contre l'attaque des Daguéchine, son équipage ne pouvant rejoindre [[Booty Bay]] sans lui
+- 668 | ai remis les gemmes elfiques retrouvées au capitaine O'Breen, le trésor pour lequel ses navires étaient venus à [[Faldir's Cove]]
+- 669 | ai porté un échantillon de gemme elfique à l'amiral Seahorn à [[Booty Bay]], la preuve que l'équipage échoué d'O'Breen avait trouvé le trésor
+- 670 | ai rapporté la lettre secrète de l'amiral Seahorn à Shakes O'Breen, au mouillage au large de la côte de [[Arathi Highlands]]
+- 671 | ai rassemblé des amulettes de pierre de sang pour Tor'gan, qui avait trouvé des traces d'invocation démoniaque à [[Northfold Manor]]
+- 672 | ai rassemblé des yeux de raptor pour que Tor'gan fabrique une amulette capable de dissiper le désespoir de Gor'mul, brisé depuis la mort de Doomhammer
+- 673 | ai tué le démoniste Marez Cowl à [[Stromgarde Keep]] pour l'orbe de pierre de sang qui y invoquait des démons, pour que Tor'gan le détruise
+- 674 | ai donné à Gor'mul l'amulette de griffe de raptor de Tor'gan, dans l'espoir que la force des raptors réveille le guerrier en lui
+- 677 | ai tué des trolls Witherbark dans leurs camps pour Drum Fel, pour montrer aux trolls comme aux ogres que la Horde aussi avait un foyer [[at:Arathi Highlands]]
+- 678 | ai combattu les brutes et les magus Rochepoing dans leur repaire près du pont nain, l'épreuve plus rude que fixait Drum Fel
+- 679 | ai abattu les seigneurs Rochepoing et leurs chamans dans les ruines de [[Stromgarde Keep]], les chefs des attaques contre [[Hammerfall]]
+- 680 | ai tué Or'Kalar pour Korin Fel, qui cachait le piège de l'ogre à son mari pour qu'il ne s'y précipite pas bêtement
+- 682 | ai repris au Syndicat les insignes des miliciens de [[Stromgarde Keep]] tombés, dont il payait des primes, pour que leurs familles apprennent leur sort
+- 684 | ai traqué Marez Cowl, un démoniste du Syndicat qui trafiquait des démons à [[Stromgarde Keep]], pour la prime de [[Refuge Pointe]]
+- 685 | ai abattu le seigneur Falconcrest, chef du Syndicat [[at:Arathi Highlands]], et Otto, le garde du corps qui avait tué des dizaines de défenseurs
+- 687 | ai fouillé [[Badlands]] à la recherche de Theldurin l'Égaré, un déserteur fou du Marteau du crépuscule qui avait volé le parchemin de Myzrael
+- 691 | ai rassemblé des défenses, des bourses-médecine et un couteau de chasseur d'ombre des Witherbark, des composants pour Kryten, l'apprenti de l'archimage Malin
+- 693 | ai arraché la baguette d'invocation de Trelane à Kor'gresh, dans la salle de Rochepoing, avant que l'ogre ne maîtrise son pouvoir glacé
+- 694 | ai pris une agate azur aux chamans Rochepoing pour que Kryten l'enchante en une clé des défenses de la tour d'Arathor
+- 696 | ai pillé la tour d'Arathor, aux mains des ogres, pour le phylactère, l'orbe et l'agate de braise de Trelane
+- 701 | ai arraché des cœurs de raptor aux traqueurs des hautes-terres pour que Tor'gan insuffle à Gor'mul la ruse du raptor
+- 702 | ai apporté à Gor'mul l'orbe que Tor'gan avait empli de l'esprit du raptor, un nouvel essai pour réveiller le guerrier endormi en lui
+- 275 | ai abattu les rampants des tourbières malades pour Rethiel le Gardevert, pour que la fièvre qui couvait [[at:Wetlands]] retombe
+- 276 | ai décimé les gnolls Poil-moussu près de la porte d'Algaz pour Rethiel le Gardevert, leur nombre croissant piétinant le marais
+- 277 | ai pris aux Poil-moussu leurs silex bruts pour que Rethiel le Gardevert les jette à la mer, mettant fin à leurs incendies de bois vivant
+- 279 | ai tué Enfourneur et les siens, des murlocs Branchie-bleue, pour la marine marchande, les murlocs qui harcelaient les marchands sur la route côtière
+- 281 | ai fouillé les camps murlocs de la côte à la recherche de la cargaison arrachée à la Princesse aveugle, dont une précieuse statuette de Terenas Menethil
+- 284 | ai fouillé d'autres huttes murlocs le long de la côte à la recherche de la statuette de Menethil disparue
+- 285 | ai fouillé les dernières huttes murlocs au nord, $gcertain:certaine; d'approcher de la statuette de Menethil
+- 286 | ai rendu la statuette de Menethil à Karl Boran, une cargaison précieuse perdue quand les murlocs avaient pillé la Princesse aveugle
+- 288 | ai payé une cruche d'hydromiel au second Fitzsimmons, seul survivant de la funeste troisième flotte, pour qu'il puisse finir son histoire
+- 289 | ai abattu l'équipage maudit de la troisième flotte, le second Snellig parmi eux, pour libérer les âmes des compagnons de bord de Fitzsimmons
+- 290 | ai pris la clé du coffre au capitaine Halyndor, qui hantait encore l'Intrépide condamné, pour atteindre la chose maudite qui liait son équipage
+- 292 | ai apporté l'œil maudit de Paleth, tiré de l'Intrépide, au prêtre Glorin Steelbrow, dans l'espoir d'apprendre à lever sa malédiction
+- 293 | ai porté l'œil maudit de Paleth à l'archevêque Benedictus à [[Stormwind City]] pour qu'il soit purifié, le moyen de libérer les morts maudits de la troisième flotte
+- 294 | ai tué des raptors et des hurleurs tachetés pour Ormer Ironbraid, dont les frères avaient péri sous les griffes des raptors au site de fouilles de Whelgar
+- 295 | ai tué des faucheurs et des tranchegueules tachetés sous la falaise, pour faire payer aux raptors la mort des nains du chantier de fouilles
+- 296 | ai traqué Grondecroc, le grand raptor qu'Ormer Ironbraid accusait d'avoir mené l'attaque contre le chantier, et rapporté une serre pour preuve
+- 299 | ai déterré les quatre fragments perdus de la pierre de Goaz pour le prospecteur Whelgar, une tablette des Titans qui parlait d'une funeste prophétie
+- 303 | ai repoussé les nains Sombrefer à [[Dun Modr]] pour Motley Garmason, pour que la réserve arrive à temps pour achever l'offensive
+- 304 | ai tué Balgaras l'Immonde, le lâche démoniste Sombrefer qui menait les brutes qui avaient pris [[Dun Modr]], pour Longbraid le Sinistre
+- 305 | ai cherché Merrin Rockweaver au chantier de fouilles pour son mari Tarrel, inquiet, sans lettre d'elle depuis deux semaines
+- 306 | ai porté la note de Merrin à Tarrel, qui lui apprenait que les raptors avaient envahi le chantier et que seuls trois membres de l'équipe avaient survécu
+- 455 | me suis frayé un passage à travers [[Dun Algaz]] contre les orcs Dragonmaw, dont la tête de pont menaçait de couper [[Loch Modan]] de [[Menethil Harbor]]
+- 464 | ai attaqué le campement Dragonmaw au nord-est de Menethil et pris leurs étendards de guerre pour preuve, pour le capitaine Stoutfist
+- 465 | ai brûlé les catapultes que Nek'rosh avait construites pour assiéger [[Menethil Harbor]], coupé de tout renfort
+- 469 | ai porté le lot de peaux de crocilisques d'Einar à James Halloran, pour qu'Einar puisse retarder le moment d'affronter sa femme
+- 470 | ai récupéré le sac de Sidonie parmi les limons de [[Ironbeard's Tomb]], où elle l'avait jeté pour leur échapper
+- 471 | ai dépecé des crocilisques géants pour James Halloran, dont les brutes avaient laissé l'apprenti à moitié mort
+- 472 | ai cherché Longbraid près de [[Dun Modr]] tombé, pour un soldat blessé de Menethil qui espérait que son chef vivait encore
+- 474 | ai tué le chef Nek'rosh des Dragonmaw, un coup sévère pour le clan qui comptait assiéger [[Menethil Harbor]]
+- 484 | ai dépecé de jeunes crocilisques pour James Halloran, le tanneur dont les peaux traitées partaient vers des ports du monde entier
+- 631 | ai cherché le vieux Rustlocke, l'éclaireur que Longbraid avait envoyé quelques jours plus tôt voir si le pont est de [[Thandol Span]] pouvait tenir
+- 632 | ai apporté à Rhag Garmason la triste nouvelle de la mort du vieux Rustlocke et le parchemin trouvé dans son poing serré
+- 633 | ai détruit la réserve d'explosifs de Kam Deepfury de l'autre côté de [[Thandol Span]] avant qu'elle ne coupe le dernier pont vers le nord
+- 634 | ai porté la supplique des survivants de [[Dun Modr]] au capitaine Nials à [[Refuge Pointe]], pour des soldats qui aideraient à reprendre [[Thandol Span]]
+- 647 | ai porté en hâte une cuvée de tord-boyaux de MacKreel au maître brasseur Bilger à [[Southshore]] pour rembourser la dette de Foggy MacKreel avant l'échéance
+- 1302 | ai cherché à [[Theramore Isle]] des nouvelles de James Hyal, un aubergiste dont le frère n'avait plus de nouvelles depuis un moment
+- 287 | ai repéré [[Frostmane Hold]] et tué ses chasseurs de têtes pour Senir Whitebeard, qui avait vu trop de trolls pour oser y entrer
+- 291 | ai porté le rapport de Senir Whitebeard sur les trolls au sénateur Barin Redstone, d'humeur maussade, à [[Ironforge]]
+- 310 | ai glissé un tonneau de Barleybrew Scalder dans la cave des Thunderbrew, pour leur apprendre que leur bière n'était pas la seule bonne
+- 311 | ai rapporté un tonneau de Thunder Ale chapardé à Marleth Barleybrew pour preuve de l'échange
+- 312 | me suis $gglissé:glissée; dans la grotte du vieux Barbe-de-glace pour la viande séchée de Tundra MacGrann, un mois de vivres sans lesquels il mourrait de faim
+- 313 | ai pris des crinières de wendigo dans [[Grizzled Den]] pour le pilote Stonegear, un tapis pour le pont de son engin de siège Charrue-à-trolls
+- 314 | ai tué Vagash, la bête qui s'attaquait aux béliers d'Amberstill pendant que l'essentiel de l'armée de Magni était à la guerre
+- 315 | ai chapardé de la chatoyante aux trolls Frostmane pour Rejold Barleybrew, qui voulait brasser la stout parfaite
+- 317 | ai chassé de la viande de sanglier et des fourrures d'ours pour approvisionner le char Jetvapeur du pilote Bellowfiz pour une mission d'un mois de la brigade de siège
+- 318 | suis $gallé:allée; chercher un tonneau d'Evershine pour le pilote Bellowfiz, une boisson pour le réchauffer sur la route froide et brûler dans la chaudière de Jetvapeur
+- 319 | ai chassé les ours, les sangliers et les léopards des neiges des abords de [[Brewnall Village]] pour que ses nains puissent reprendre leur brassage
+- 320 | ai apporté au pilote Bellowfiz son tonneau d'Evershine, du feu pour la chaudière de Jetvapeur pendant la longue mission à venir
+- 384 | ai rassemblé des côtes de sanglier des rochers et une bière au malt Rhapsody pour Ragnar Thunderbrew, dont le trappeur était parti à la guerre, pour sa recette de famille
+- 400 | ai livré une nouvelle commande d'outils à Beldin Steelgrill, qui avait cassé son dernier croc-cliquet en pleine réparation d'un engin de siège
+- 412 | ai pris des rouages et des engrenages aux gnomes lépreux aux portes de [[Gnomeregan]] pour le recombobulateur de Razzle Sprysprocket, censé inverser leur sort
+- 413 | ai porté un tonneau de la nouvelle Shimmer Stout de Rejold à son frère Wellart, à la tour de garde à la frontière de [[Loch Modan]]
+- 414 | ai porté un bidon de Shimmer Stout au montagnard Kadrell à [[Thelsamar]], pour qu'un collègue montagnard goûte la dernière bière des Barleybrew
+- 417 | ai tué Griffe-galeuse, l'ours Griffeglace qui avait déchiqueté le pilote Hildelve, comme le demandait le journal du pilote mort
+- 419 | ai trouvé le pilote Mori Hildelve dans les collines, gelé et mort, parti à la recherche d'un minerai rare pour la poudre explosive
+- 432 | ai tué des brise-crânes Mâcheroc dans la carrière de Gol'Bolar pour le contremaître Stonebrow, furieux qu'ils aient saccagé son chantier
+- 433 | ai chassé les briseurs d'os Mâcheroc de la carrière de Gol'Bolar pour le sénateur Mehr Stonehallow, pour que les mineurs reprennent le travail
+- 466 | ai extrait du minerai d'incendicite instable [[at:Wetlands]] pour le pilote Stonegear, qui espérait en tirer des obus de canon d'une puissance redoutable
+- 2160 | ai porté une caisse de ravitaillement par le col tenu par les troggs jusqu'à Tannok Frosthammer à [[Kharanos]]
+- 5541 | ai récupéré une caisse de munitions abandonnée par un coursier près de [[Grizzled Den]] et l'ai portée à Hegnar Rumbleshot
+- 3181 | ai apporté au montagnard Pebblebitty la grande corne où était resté planté le fer de sa propre hache, pour qu'il la traite de fausse
+- 3367 | ai essayé d'aider Dorius, grièvement blessé, à regagner [[Ironforge]], saignant de l'intérieur et la tête qui tournait
+- 3368 | ai porté la lettre roussie de Dorius à son frère Thorius à [[Ironforge]], une supplique pour libérer l'équipe de fouilles asservie par Lathoric le Noir
+- 3372 | ai porté une relique du Marteau du crépuscule à l'autel de Suntara, pour libérer les archéologues forcés de travailler même après leur mort
+- 3378 | ai repris aux adorateurs de l'idole la prière dorée de Zamael à Elune pour Astarii Starseeker, pour que la prière d'une âme en cage soit entendue
+- 3442 | ai rassemblé des cœurs des flammes et de l'huile de golem pour la torche de Kalaran Windblade, destinée à incendier les tours de guet Sombrefer
+- 3443 | ai pris des dagues plaquées en thorium aux contremaîtres et aux esclavagistes Sombrefer, pour les reforger en manche pour la torche de Kalaran Windblade
+- 3452 | ai saisi un symbole de Ragnaros dans le camp du Marteau du crépuscule, sa magie immonde destinée à l'enveloppe de la torche
+- 3463 | ai incendié les quatre tours de guet Sombrefer avec la torche du châtiment, laissant vide leur première ligne de défense
+- 3566 | ai tué Lathoric le Noir et Obsidion pour Thorius, pour découvrir que le piège était l'œuvre de son propre frère
+- 4449 | ai donné une leçon aux géologues Sombrefer pour le nain qu'ils avaient enfermé dans des latrines, qui voulait aussi de la soie pour des raisons qu'il taisait
+- 4450 | ai rassemblé les marchandises du registre de Krinkle Goodsteel et les lui ai portées à [[Gadgetzan]], un travail que le prisonnier des latrines avait laissé inachevé
+- 4451 | ai trouvé la clé des latrines de Grimesilt et l'ai tournée pour libérer le vieux Locheed des latrines où l'avaient enfermé les Sombrefer
+- 7701 | ai tué le surveillant Maltorius, le traître de la Confrérie du thorium qui commandait l'équipe Sombrefer du Puits des scories, pour la prime
+- 7704 | ai apporté l'énorme oreiller orné de la femme de chambre Pillaclencher à Evonice Sootsmoker, ravie de le récupérer
+- 7722 | ai repris les plans secrets du flux embrasé de la Confrérie du thorium, volés par le traître Maltorius et emportés dans le Puits des scories
+- 7723 | ai cogné les golems de guerre lourds autour du Chaudron pour Hansel Heavyhands, dont les doigts avaient trop gonflé pour qu'il se batte
+- 7724 | ai tué les grandes araignées de lave cracheuses de feu qui inquiétaient les enfants, une tâche que m'avait confiée Hansel Heavyhands
+- 7727 | ai débarrassé les bassins de lave du Puits des scories de leurs incendosaures pour que la Confrérie du thorium puisse y envoyer ses équipes
+- 7728 | ai repris une tuyère de forge et la longue-vue d'un guetteur que les Sombrefer avaient volées à la Confrérie du thorium
+- 7729 | ai décimé les sous-chefs et les esclavagistes Sombrefer de [[Searing Gorge]] pour le sous-chef Scrange, pour qu'il se débarrasse de la concurrence
+- 170 | ai repoussé les troggs Mâcheroc pour Balir Frosthammer, dont ils avaient envahi le camp à l'ouest quelques nuits plus tôt
+- 179 | ai chassé des loups pour la viande de loup coriace de Sten Stoutarm, en échange de gants chauds contre les engelures
+- 183 | ai décimé les petits sangliers des rochers près du lac gelé, devenus si nombreux que la chasse quotidienne de Talin Keeneye était devenue dangereuse
+- 420 | ai porté le rapport de Grelin Whitebeard par le tunnel infesté de troggs jusqu'à son frère Senir à [[Kharanos]]
+- 3361 | ai repris aux trolls le coffre, la boîte et le seau de boulons de Felix Whindlebolt, perdus quand il avait fui [[Gnomeregan]] irradié
+- 3364 | ai porté en courant un thé brûlant à Durnan Furcutter à [[Anvilmar]] avant qu'il ne refroidisse
+- 1445 | ai saisi des fétiches d'Hakkar dans [[Sunken Temple]] pour Fel'Zerul, qui craignait qu'ils ne soient la clé du rituel atal'ai derrière tout cela
+- 1446 | ai tué Jammal'an le Prophète, dont les fausses visions d'Hakkar avaient perdu les Atal'ai, pour l'exilé qui avait conseillé la prudence
+- 1475 | ai rassemblé des tablettes atal'ai intactes dans [[Sunken Temple]] pour Brohann Caskbelly, la dernière obligation d'un vieux nain
+- 3373 | ai déposé l'essence d'Eranikus dans les fonts de son repaire, pour tenter de purger l'esprit du dragon vert de la souillure des trolls
+- 3446 | ai cherché l'autel d'Hakkar dans [[Sunken Temple]], le secret que Marvon Rivetseeker avait entrevu après avoir failli mourir dans un piège
+- 3447 | ai percé le secret du cercle de statues de [[Sunken Temple]], qui cachait selon Marvon un trésor plus grand encore
+- 3528 | ai invoqué l'avatar d'Hakkar dans [[Sunken Temple]] et capturé son essence dans l'œuf d'Hakkar pour Yeh'kinya
+- 4146 | ai recueilli de la brume atal'ai sur les limons et les rôdeurs du temple pour alimenter une baguette à insectes contre les pétales-de-sang nuisibles
+- 8733 | ai cherché l'agent de Malfurion aux portes de [[Darnassus]], le premier pas pour purifier Eranikus de la souillure des Dieux très anciens
+- 377 | ai assassiné Dextren Ward dans [[Stormwind Stockade]] pour le conseiller Millstipe, le vendeur de cadavres que [[Stormwind City]] avait sauvé du billot
+- 378 | ai tué Kam Deepfury dans [[Stormwind Stockade]], le Sombrefer dont le plan pour abattre [[Thandol Span]] avait coûté sa famille à Longbraid
+- 386 | ai décapité Targorr le Terrible, l'impitoyable bourreau de Gath'Ilzogg, dont la sentence avait été mystérieusement suspendue par quelque noble
+- 387 | ai maté les détenus défias qui se mutinaient dans [[Stormwind Stockade]] pour le directeur Thelwater, pour la sécurité de [[Stormwind City]]
+- 388 | ai pris les foulards en laine rouge des Défias pour Nikova Raskol, dont le petit-fils Mac avait été poignardé pour avoir grondé les prisonniers qui les fabriquaient
+- 391 | ai tué Bazil Thredd, le chef défias derrière les émeutes de la prison, pour prouver ma loyauté au méfiant directeur Thelwater
+- 5722 | ai fouillé [[Ragefire Chasm]] à la recherche du corps de Maur Grimtotem, le serviteur de Magatha, et de ce qu'il avait trouvé avant de mourir
+- 5724 | ai apporté à Rahauro à [[Thunder Bluff]] la sacoche que Maur Grimtotem serrait encore quand les troggs l'avaient abattu
+- 5725 | ai pris deux livres de sorts d'ombre à la Lame brûlante pour Varimathras, des cadeaux de la Légion que la Dame noire voulait avoir en main
+- 5728 | ai tué Bazzalan et Jergosh l'Invocateur, chefs de la Lame brûlante sous [[Orgrimmar]], pour Thrall, à l'insu de Neeru Fireblade
+- 5761 | ai tué Taragaman l'Affameur, le gangregarde qui menait la Lame brûlante dans [[Ragefire Chasm]], pour Neeru Fireblade

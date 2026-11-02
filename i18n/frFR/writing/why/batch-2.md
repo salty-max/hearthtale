@@ -168,7 +168,7 @@
 - 1121 | ai glissé de la bière du sot à l'équipe de mécaniciens gobelins avant la course, pour que le pari de Kravel rapporte
 - 1147 | ai repoussé les silithides loin du site de fouilles pour la troupe à moitié morte de [[name:Moktar Krin]], qui ne pouvait les combattre seule
 - 1148 | ai apporté des cœurs, des serres et des carapaces de silithides à [[name:Korran]] à [[Crossroads]], pour savoir ce qu'étaient ces créatures
-- 1175 | ai chassé les basilics loin de la piste pour le maître de piste Zherin, après que l'un d'eux eut causé un grave accident avec le Tonnerre rouge
+- 1175 | ai chassé les basilics loin de la piste pour le maître de piste Zherin, après que l'un d'eux avait causé un grave accident avec le Tonnerre rouge
 - 1176 | ai rassemblé des os creux de vautour pour [[name:Pozzik]], légers et solides, pour régler les bolides des gobelins
 - 1179 | ai porté une caisse de casques anti-accidents à [[name:Wizzle Brassbolts]], dont les pilotes de chariot-fusée se faisaient sans cesse des commotions dans les accidents
 - 1182 | ai volé les plans du régulateur de carburant dans la maison verrouillée de Cozzle au lac Nazferiti, pour le pilote gobelin [[name:Pozzik]]

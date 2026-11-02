@@ -91,7 +91,7 @@
 - 8602 | ai échangé les manchettes de domination qiraji au dragon Andorgos contre des épaulières faites pour semer la peur chez les Qiraji
 - 8603 | ai porté la carcasse du Dieu très ancien, un morceau de C'Thun abattu, à Vethsera, qui ne s'attendait à voir revenir personne
 - 8621 | ai livré les manchettes des plus puissants qiraji à Kandrostrasz, qui a changé leur antique puissance en bottes
-- 8622 | ai apporté la carapace du Dieu très ancien à Vethsera après que la mort de C'Thun eut sauvé Azeroth, pour une armure qui en porte la gloire et le fardeau
+- 8622 | ai apporté la carapace du Dieu très ancien à Vethsera après que la mort de C'Thun avait sauvé Azeroth, pour une armure qui en porte la gloire et le fardeau
 - 8623 | ai cédé le diadème de Vek'lor à Andorgos, que les empereurs jumeaux avaient pris à son frère Arygos, pour en faire une couronne
 - 8624 | ai traîné la peau du Grand ver des sables jusqu'à Kandrostrasz pour des jambières contre les horreurs qui attendaient plus loin dans le temple
 - 8625 | ai remis les manchettes de domination qiraji à Andorgos, pour en faire des épaulières plus terribles que les ailes de Nefarian
@@ -105,7 +105,7 @@
 - 8633 | ai porté la carcasse du Dieu très ancien, un morceau de C'Thun abattu, à Vethsera, qui ne s'attendait à voir revenir personne
 - 8634 | ai porté les manchettes de domination qiraji à Kandrostrasz en échange de bottes pour aider à écraser les infâmes qiraji
 - 8637 | ai livré les manchettes des plus puissants qiraji à Kandrostrasz, qui a changé leur antique puissance en bottes
-- 8638 | ai apporté la carapace du Dieu très ancien à Vethsera après que la mort de C'Thun eut sauvé Azeroth, pour une armure qui en porte la gloire et le fardeau
+- 8638 | ai apporté la carapace du Dieu très ancien à Vethsera après que la mort de C'Thun avait sauvé Azeroth, pour une armure qui en porte la gloire et le fardeau
 - 8639 | ai cédé le diadème de Vek'lor à Andorgos, que les empereurs jumeaux avaient pris à son frère Arygos, pour en faire une couronne
 - 8640 | ai traîné la peau intacte d'Ouro jusqu'à Kandrostrasz pour des jambières contre les horreurs qui attendaient plus loin dans le temple
 - 8641 | ai échangé les manchettes de commandement qiraji au dragon Andorgos contre des épaulières faites pour semer la peur chez les Qiraji
@@ -120,7 +120,7 @@
 - 8663 | ai apporté la peau du Grand ver des sables à Kandrostrasz pour me montrer digne des dragons, pour des jambières taillées dans la peau contre nature du ver
 - 8664 | ai porté les manchettes des plus hauts chefs qiraji à Andorgos, qui en a fait des épaulières avec des écailles de Qiraji tombés
 - 8665 | ai livré les manchettes des plus puissants qiraji à Kandrostrasz, qui a changé leur antique puissance en bottes
-- 8666 | ai apporté la carcasse du Dieu très ancien à Vethsera après que la mort de C'Thun eut sauvé Azeroth, pour une armure qui en porte la gloire et le fardeau
+- 8666 | ai apporté la carcasse du Dieu très ancien à Vethsera après que la mort de C'Thun avait sauvé Azeroth, pour une armure qui en porte la gloire et le fardeau
 - 8667 | ai cédé le diadème de Vek'lor à Andorgos, que les empereurs jumeaux avaient pris à son frère Arygos, pour en faire une couronne
 - 8668 | ai traîné la peau du Grand ver des sables jusqu'à Kandrostrasz pour des jambières contre les horreurs qui attendaient plus loin dans le temple
 - 8669 | ai échangé les manchettes de domination qiraji au dragon Andorgos contre des épaulières faites pour semer la peur chez les Qiraji
