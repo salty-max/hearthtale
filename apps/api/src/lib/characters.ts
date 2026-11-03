@@ -16,7 +16,7 @@ export function summary(row: CharacterRow): CharacterSummary {
     class: row.class,
     client: row.client,
     language: row.book.language,
-    sex: row.book.sex,
+    sex: row.book.sex ?? row.sex ?? undefined, // (the book's own, else Battle.net's)
     level: row.level,
     hardcore: row.hardcore,
     fallen: row.fallen,

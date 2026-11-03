@@ -1,10 +1,10 @@
 /**
- * The words around a book's text, in the book's own language: "Entry 3",
- * "Prologue", the levels line, the race and class, a push's sentence. The
- * interface's language is another matter (the site's setting): a French book
- * under the English site keeps its French frame, and the site's own chrome
- * stays English. The site's interface uses a frame too, for the lines that name
- * a character in the library (`frameFor(interface language)`).
+ * The words around a book's text: "Entry 3", "Prologue", the levels line, the
+ * race and class, a push's sentence. They are the interface's, as in the game
+ * (the window's labels follow the client, the journal's prose its own
+ * language): the site's setting on a page and in an export, the device's
+ * language for a push, the visitor's for a link preview. The book's language
+ * only tags its own words (its prose, an entry's own title, its places).
  *
  * French terms are the addon's own (Text_frFR.lua): "Entrée %d", "Épitaphe";
  * the race and class names are the game's, a woman's where it has one.
@@ -130,7 +130,24 @@ const fr: Frame = {
   theLast: (title) => `la dernière\u00a0: «\u00a0${title}\u00a0»`,
 };
 
-/** A book's frame: its language (a book saved before it was kept: English). */
+/** A language's frame (none, or one without a frame: English). */
 export function frameFor(language: Language | undefined): Frame {
   return language === "frFR" ? fr : en;
+}
+
+/** The `lang` tag of a book's own words: its language's (a book saved before it was kept: English). */
+export function langOf(language: Language | undefined): Frame["lang"] {
+  return frameFor(language).lang;
+}
+
+/** An Accept-Language header's first language that has a frame ("fr-CA,fr;q=0.9": frFR), else none; one refused (q=0) is skipped. */
+export function frameLanguage(acceptLanguage: string | undefined): Language | undefined {
+  for (const part of (acceptLanguage ?? "").split(",")) {
+    const [tag, ...params] = part.split(";");
+    if (params.some((p) => /^\s*q\s*=\s*0(\.0*)?\s*$/.test(p))) continue;
+    const code = tag.trim().toLowerCase().split("-")[0];
+    if (code === "fr") return "frFR";
+    if (code === "en") return "enUS";
+  }
+  return undefined;
 }

@@ -1,10 +1,12 @@
-import { frameFor, type SharedBook } from "@hearthtale/shared";
+import { frameFor, type Language, type SharedBook } from "@hearthtale/shared";
 
 /**
  * Link previews (Discord, Reddit, Slack…): crawlers asking for a shared page
  * get this tiny page with OpenGraph tags instead of the app, which they can't
  * run. Vercel routes them here by user agent (scripts/vercel-build.sh); a
- * person landing here by chance is sent on to the app.
+ * person landing here by chance is sent on to the app. The card's labels are
+ * in the reader's language (the crawler's Accept-Language, as the site would
+ * choose it), else the book's: whoever it was shared with likely reads it.
  */
 
 const CLASS_COLOUR: Record<string, string> = {
@@ -21,9 +23,9 @@ const CLASS_COLOUR: Record<string, string> = {
 const esc = (s: string) => s.replace(/[&<>"']/g, (ch) => `&#${ch.charCodeAt(0)};`);
 
 /** The part a page shows, by name: an entry's title ("Entry 3" untitled), "Epitaph"… or the whole book. */
-function partName(shared: SharedBook): string {
+function partName(shared: SharedBook, language?: Language): string {
   const p = shared.part;
-  const f = frameFor(shared.book.language);
+  const f = frameFor(language ?? shared.book.language);
   if (p === undefined) return f.theBook;
   if (p === "prologue") return f.prologue;
   if (p === "epitaph") return f.epitaph;
@@ -40,20 +42,20 @@ export function ogText(shared: SharedBook, max = 220): string {
   return flat.length > max ? `${flat.slice(0, max - 1).replace(/\s+\S*$/, "")}…` : flat;
 }
 
-export function ogTitle(shared: SharedBook): string {
+export function ogTitle(shared: SharedBook, language?: Language): string {
   const c = shared.character;
-  const f = frameFor(shared.book.language);
+  const f = frameFor(language ?? shared.book.language);
   const about = `${f.levelWord} ${c.level} ${f.raceClass(c.race, c.class, shared.book.sex ?? c.sex)}`;
-  return `${c.name}, ${about}${c.fallen ? f.fallen(shared.book.sex ?? c.sex) : ""} · ${partName(shared)}`;
+  return `${c.name}, ${about}${c.fallen ? f.fallen(shared.book.sex ?? c.sex) : ""} · ${partName(shared, language)}`;
 }
 
-export function ogPage(shared: SharedBook, path: string, origin: string): string {
+export function ogPage(shared: SharedBook, path: string, origin: string, language?: Language): string {
   const url = `${origin}${path}`;
-  const title = ogTitle(shared);
+  const title = ogTitle(shared, language);
   const description = ogText(shared);
   const colour = CLASS_COLOUR[shared.character.class] ?? "#c9a227";
   return `<!doctype html>
-<html lang="${frameFor(shared.book.language).lang}"><head><meta charset="utf-8">
+<html lang="${frameFor(language ?? shared.book.language).lang}"><head><meta charset="utf-8">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
 <meta property="og:type" content="article">

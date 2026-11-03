@@ -1,14 +1,16 @@
-import { frameFor, type Book } from "@hearthtale/shared";
+import { langOf, type Book } from "@hearthtale/shared";
 import { EntryMarks } from "@/components/EntryMarks";
 import { PartLink } from "@/components/PartLink";
-import { partTitle, parts } from "@/lib/book";
+import { partLang, partTitle, parts } from "@/lib/book";
 import { dateRange } from "@/lib/dates";
+import { useFrame } from "@/lib/i18n";
 
-/** A book's table of contents: the prologue, each chapter (where, its levels, when, its marks), the epitaph. */
+/** A book's table of contents: the prologue, each chapter (where, its levels, when, its marks), the epitaph; the labels in the site's language, the book's own titles and places in its. */
 export function Contents({ hrefFor, book, current, onPick }: { hrefFor: (part: string) => string; book: Book; current?: string; onPick?: () => void }) {
-  const f = frameFor(book.language);
+  const f = useFrame();
+  const bookLang = langOf(book.language);
   return (
-    <ol lang={f.lang} className="divide-y divide-parchment/10">
+    <ol className="divide-y divide-parchment/10">
       {parts(book).map((p) => {
         const ch = p.kind === "chapter" ? book.chapters.find((c) => c.number === p.number) : undefined;
         const here = p.key === current;
@@ -27,6 +29,7 @@ export function Contents({ hrefFor, book, current, onPick }: { hrefFor: (part: s
             >
               <span className="min-w-0">
                 <span
+                  lang={partLang(f, book, p)}
                   className={`block font-display text-lg font-semibold ${
                     p.kind === "epitaph" ? "text-blood" : here ? "text-gold-bright" : "text-parchment"
                   }`}
@@ -36,7 +39,7 @@ export function Contents({ hrefFor, book, current, onPick }: { hrefFor: (part: s
                 {ch && (
                   <span className="ui block text-sm text-parchment/60">
                     {ch.title && `${f.chapter(ch.number)} · `}
-                    {ch.open ? f.stillWriting : ch.place} · {f.levels(ch.from, ch.to)}
+                    {ch.open ? f.stillWriting : <span lang={bookLang}>{ch.place}</span>} · {f.levels(ch.from, ch.to)}
                     {when && <span className="block text-parchment/45">{when}</span>}
                     <EntryMarks close={ch.close} rare={ch.rare} className="mt-1" />
                   </span>

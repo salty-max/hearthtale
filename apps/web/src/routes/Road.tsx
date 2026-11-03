@@ -1,6 +1,7 @@
-import { frameFor, type BookChapter, type Frame } from "@hearthtale/shared";
+import { langOf, type BookChapter, type Frame } from "@hearthtale/shared";
 import { Link, useParams } from "@tanstack/react-router";
 import { ChevronLeft, MapPin } from "lucide-react";
+import { Fragment } from "react";
 import { Crest } from "@/components/Crest";
 import { EntryMarks } from "@/components/EntryMarks";
 import { Flourish } from "@/components/Flourish";
@@ -17,7 +18,7 @@ const W = 640,
   H = 220,
   PAD = { l: 34, r: 12, t: 12, b: 26 };
 
-function Chart({ chs, until, fb }: { chs: BookChapter[]; until?: number; fb: Frame }) {
+function Chart({ chs, until, f }: { chs: BookChapter[]; until?: number; f: Frame }) {
   const t = useT();
   const pts = levelPoints(chs, until);
   if (pts.length < 2) return null;
@@ -58,7 +59,7 @@ function Chart({ chs, until, fb }: { chs: BookChapter[]; until?: number; fb: Fra
           const p = pts[i * 2 + 1];
           return (
             <circle key={c.number} cx={sx(p.x)} cy={sy(p.y)} r={c.close ? 5 : 3.5} fill={c.close ? "var(--color-blood)" : "var(--color-gold-bright)"} stroke="var(--color-night)" strokeWidth="1.5">
-              <title lang={fb.lang}>{`${c.title ?? fb.chapter(c.number)} · ${fb.levels(c.from, c.to)}`}</title>
+              <title>{`${c.title ?? f.chapter(c.number)} · ${f.levels(c.from, c.to)}`}</title>
             </circle>
           );
         })}
@@ -80,15 +81,16 @@ export function Road() {
   }
   if (!data) return <Loading />;
   const { character: c, book } = data;
-  const fb = frameFor(book.language);
+  // (the labels in the site's language; the book's own titles and places in its)
+  const bookLang = langOf(book.language);
   const r = roadOf(book);
   const figures: [string, string][] = [
-    [String(r.entries), t.road.entries],
-    [r.from === r.to ? String(r.to) : `${r.from}–${r.to}`, t.road.levels],
-    [String(r.days), t.road.days],
-    [String(r.places.length), t.road.places],
-    [String(r.closeCalls), t.road.closeCalls],
-    [String(r.rares), t.road.rares],
+    [String(r.entries), t.road.entries(r.entries)],
+    [r.from === r.to ? String(r.to) : `${r.from}–${r.to}`, t.road.levels(r.from === r.to ? 1 : 2)],
+    [String(r.days), t.road.days(r.days)],
+    [String(r.places.length), t.road.places(r.places.length)],
+    [String(r.closeCalls), t.road.closeCalls(r.closeCalls)],
+    [String(r.rares), t.road.rares(r.rares)],
   ];
   return (
     <section className="mx-auto max-w-4xl pb-4">
@@ -117,12 +119,12 @@ export function Road() {
             ))}
           </ul>
           <div className="mt-5">
-            <Chart chs={book.chapters} until={book.at} fb={fb} />
+            <Chart chs={book.chapters} until={book.at} f={f} />
           </div>
           {r.places.length > 0 && (
             <div className="panel mt-5 p-4">
               <h2 className="title text-lg">{t.road.places_}</h2>
-              <ol lang={fb.lang} className="mt-3 flex flex-wrap items-center gap-x-1 gap-y-2">
+              <ol lang={bookLang} className="mt-3 flex flex-wrap items-center gap-x-1 gap-y-2">
                 {r.places.map((p, i) => (
                   <li key={p} className="ui flex items-center gap-1 text-parchment/85">
                     {i > 0 && <span aria-hidden className="px-1 text-gold/60">›</span>}
@@ -135,22 +137,28 @@ export function Road() {
           )}
           <div className="panel mt-5 p-4">
             <h2 className="title text-lg">{t.road.timeline}</h2>
-            <ol lang={fb.lang} className="relative mt-4 ml-2 border-l border-gold/30">
+            <ol className="relative mt-4 ml-2 border-l border-gold/30">
               {book.chapters.map((ch) => (
                 <li key={ch.number} className="relative pb-5 pl-5 last:pb-0">
                   <span aria-hidden className={`absolute top-1.5 -left-[5px] size-2.5 rounded-full ${ch.close ? "bg-blood" : "bg-gold"}`} />
-                  <p className="ui text-xs text-parchment/55">{dateRange(ch.began, ch.open ? undefined : ch.ended, fb.locale, fb.to)}</p>
+                  <p className="ui text-xs text-parchment/55">{dateRange(ch.began, ch.open ? undefined : ch.ended, f.locale, f.to)}</p>
                   <Link
                     to="/book/$id/$part"
                     params={{ id, part: String(ch.number) }}
+                    lang={ch.title ? bookLang : undefined}
                     className="font-display text-lg font-semibold text-gold-bright hover:underline"
                   >
-                    {ch.title ?? fb.chapter(ch.number)}
+                    {ch.title ?? f.chapter(ch.number)}
                   </Link>
                   <p className="text-parchment/70">
-                    {[ch.title ? fb.chapter(ch.number) : undefined, ch.open ? fb.stillWriting : ch.place, fb.levels(ch.from, ch.to)]
+                    {[ch.title ? f.chapter(ch.number) : undefined, ch.open ? f.stillWriting : ch.place && <span lang={bookLang}>{ch.place}</span>, f.levels(ch.from, ch.to)]
                       .filter(Boolean)
-                      .join(" · ")}
+                      .map((x, i) => (
+                        <Fragment key={i}>
+                          {i > 0 && " · "}
+                          {x}
+                        </Fragment>
+                      ))}
                   </p>
                   <EntryMarks close={ch.close} rare={ch.rare} className="mt-0.5" />
                 </li>

@@ -20,11 +20,16 @@ export function vapid(): Vapid | null {
 
 const MAX_PER_ACCOUNT = 20;
 
-export async function subscribe(accountId: number, sub: { endpoint: string; p256dh: string; auth: string }): Promise<void> {
+export function isLanguage(v: unknown): v is Language {
+  return v === "enUS" || v === "frFR";
+}
+
+export async function subscribe(accountId: number, sub: { endpoint: string; p256dh: string; auth: string; language?: Language }): Promise<void> {
+  const language = sub.language ?? null;
   await db
     .insert(pushSubscriptions)
-    .values({ accountId, ...sub })
-    .onConflictDoUpdate({ target: pushSubscriptions.endpoint, set: { accountId, p256dh: sub.p256dh, auth: sub.auth } });
+    .values({ accountId, endpoint: sub.endpoint, p256dh: sub.p256dh, auth: sub.auth, language })
+    .onConflictDoUpdate({ target: pushSubscriptions.endpoint, set: { accountId, p256dh: sub.p256dh, auth: sub.auth, language } });
   // (a few devices each; the oldest give way)
   const all = await db.select({ endpoint: pushSubscriptions.endpoint, createdAt: pushSubscriptions.createdAt }).from(pushSubscriptions).where(eq(pushSubscriptions.accountId, accountId));
   if (all.length > MAX_PER_ACCOUNT) {
@@ -49,7 +54,7 @@ export function finishedSince(before: Book | null | undefined, after: Book): Boo
   return after.chapters.filter((c) => !c.open && !done.has(c.number));
 }
 
-/** "Brannok wrote “Bristle”": one notification for the newest finished entry (and how many more). */
+/** "Brannok wrote “Bristle”": one notification for the newest finished entry (and how many more), in a device's language (none: the book's). */
 export function newEntryMessage(name: string, characterId: number, entries: Book["chapters"], language?: Language) {
   const f = frameFor(language);
   const last = entries[entries.length - 1];
@@ -66,8 +71,9 @@ export async function notifyNewEntries(accountId: number, characterId: number, n
   const keys = vapid();
   if (!keys || entries.length === 0) return;
   const subs = await db.select().from(pushSubscriptions).where(eq(pushSubscriptions.accountId, accountId));
-  const message = newEntryMessage(name, characterId, entries, language);
   for (const s of subs) {
+    // (each device in its site's language, as the page it opens; one turned on before that was kept: the book's)
+    const message = newEntryMessage(name, characterId, entries, isLanguage(s.language) ? s.language : language);
     try {
       const res = await sendPush({ endpoint: s.endpoint, keys: { p256dh: s.p256dh, auth: s.auth } }, message, keys, { ttl: 24 * 3600 });
       if (res.gone) await db.delete(pushSubscriptions).where(eq(pushSubscriptions.endpoint, s.endpoint));

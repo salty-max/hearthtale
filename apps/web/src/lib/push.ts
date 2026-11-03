@@ -1,10 +1,13 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
+import { CATALOGS, useLang } from "@/lib/i18n";
 
 /**
  * This device told of new entries, or not: the browser's push subscription,
  * kept by the site for the signed-in account (api: /api/push). Turned on from
- * the settings; the service worker shows them (public/push-sw.js).
+ * the settings; the service worker shows them (public/push-sw.js). The site's
+ * language goes with it, what the device's notifications are worded in, sent
+ * again while it is on (a change of language, one turned on before it was kept).
  */
 export type PushState = "unsupported" | "ios" | "unavailable" | "denied" | "off" | "on";
 
@@ -20,6 +23,36 @@ function keyBytes(b64url: string): Uint8Array<ArrayBuffer> {
   const out = new Uint8Array(s.length);
   for (let i = 0; i < s.length; i++) out[i] = s.charCodeAt(i);
   return out;
+}
+
+// What was last sent for this device's subscription: its account and language (a visit to the settings
+// sends nothing new; another account signed in here, or another language, sends it again).
+const SENT = "hearthtale.push.sent";
+const sentKey = (sub: PushSubscription, account: string, language: string) => JSON.stringify([sub.endpoint, account, language]);
+function forgetSent(): void {
+  try {
+    localStorage.removeItem(SENT);
+  } catch {
+    // (nothing kept)
+  }
+}
+function wasSent(key: string): boolean {
+  try {
+    return localStorage.getItem(SENT) === key;
+  } catch {
+    return false;
+  }
+}
+
+/** Hands the site this device's subscription, with the language its notifications are worded in. */
+async function send(sub: PushSubscription, account: string, language: string): Promise<void> {
+  const res = await fetch("/api/push/subscriptions", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ ...sub.toJSON(), language }) });
+  if (!res.ok) throw new Error(String(res.status));
+  try {
+    localStorage.setItem(SENT, sentKey(sub, account, language));
+  } catch {
+    // (none kept: the next visit sends it again)
+  }
 }
 
 async function registration(): Promise<ServiceWorkerRegistration | undefined> {
@@ -41,16 +74,29 @@ export function usePushKey() {
   return useQuery(pushKey);
 }
 
-export function usePush(signedIn: boolean) {
+/** `account`: who is signed in (their BattleTag, "" without one), null for nobody. */
+export function usePush(account: string | null) {
+  const signedIn = account !== null;
   const qc = useQueryClient();
   const key = useQuery({ ...pushKey, enabled: signedIn && supported() });
   const [subscribed, setSubscribed] = useState<boolean | null>(null);
   const [busy, setBusy] = useState(false);
   const [failed, setFailed] = useState(false);
+  const language = CATALOGS[useLang()].language;
   useEffect(() => {
     if (!supported()) return;
     void registration().then(async (r) => setSubscribed(!!(await r?.pushManager.getSubscription())));
   }, []);
+  // (on, the site keeps the language it's in: sent again at each change)
+  useEffect(() => {
+    if (!signedIn || !subscribed) return;
+    void registration()
+      .then(async (r) => {
+        const sub = await r?.pushManager.getSubscription();
+        if (sub && !wasSent(sentKey(sub, account ?? "", language))) await send(sub, account ?? "", language);
+      })
+      .catch(() => {});
+  }, [signedIn, account, subscribed, language]);
 
   let state: PushState = "off";
   if (iosBrowser()) state = "ios";
@@ -68,8 +114,7 @@ export function usePush(signedIn: boolean) {
       const r = await registration();
       if (!r) throw new Error("no service worker");
       const sub = (await r.pushManager.getSubscription()) ?? (await r.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: keyBytes(key.data) }));
-      const res = await fetch("/api/push/subscriptions", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(sub.toJSON()) });
-      if (!res.ok) throw new Error(String(res.status));
+      await send(sub, account ?? "", language);
       setSubscribed(true);
     } catch {
       setFailed(true);
@@ -82,6 +127,7 @@ export function usePush(signedIn: boolean) {
   async function turnOff() {
     setBusy(true);
     setFailed(false);
+    forgetSent(); // (a half-done turn-off is sent again at the next visit)
     try {
       const sub = await (await registration())?.pushManager.getSubscription();
       if (sub) {

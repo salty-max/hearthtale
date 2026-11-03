@@ -2,7 +2,7 @@ import type { Book, BookChapter, Client, UploadResult } from "@hearthtale/shared
 import { and, eq, sql } from "drizzle-orm";
 import { db } from "@/db";
 import { accounts, characters, companionLinks, removed, type CompanionLinkRow } from "@/db/schema";
-import { owns } from "@/lib/accounts";
+import { owns, sexOf } from "@/lib/accounts";
 import { parseGuid, regionOf } from "@/lib/guid";
 import { takeLinkCode } from "@/lib/link";
 import { log } from "@/lib/log";
@@ -176,6 +176,7 @@ export async function uploadAs(accountId: number, body: unknown): Promise<{ resu
       continue;
     }
     if (lift) await db.delete(removed).where(and(eq(removed.accountId, owner), eq(removed.guid, c.guid)));
+    const bnetSex = region && account?.id === owner ? sexOf(account, region, ids.characterId) : undefined;
     const values = {
       guid: c.guid,
       name: c.name,
@@ -190,6 +191,8 @@ export async function uploadAs(accountId: number, body: unknown): Promise<{ resu
       bnetCharId: ids.characterId,
       ownerId: owner,
       book: c.book,
+      // (Battle.net's word on its sex, for a book that doesn't keep its own; none known: what the row had)
+      ...(bnetSex && { sex: bnetSex }),
     };
     const [kept] = await db
       .insert(characters)

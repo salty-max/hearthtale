@@ -1,9 +1,10 @@
-import { frameFor } from "@hearthtale/shared";
+import { langOf } from "@hearthtale/shared";
 import { Link } from "@tanstack/react-router";
 import { BookOpen, Feather, Flame, Skull } from "lucide-react";
 import { useState } from "react";
 import { Crest } from "@/components/Crest";
 import { Flourish } from "@/components/Flourish";
+import { SubLine } from "@/components/SubLine";
 import { paragraphs } from "@/lib/book";
 import { useFrame, useT } from "@/lib/i18n";
 import { SAMPLES } from "@/lib/samples";
@@ -75,12 +76,16 @@ function Samples() {
   const cls = readerClasses(settings);
   const fallenColour = settings.theme === "night" ? "text-[#e0705f]" : "text-fallen";
   const epitaph = s.part === "epitaph";
-  // (the journal's words in its own language: the page, its title and the line under it)
-  const fb = frameFor(s.language);
+  // (the journal's words in its own language, the labels around them in the site's, as the reader shows them)
+  const bookLang = langOf(s.language);
   // "Entry 2 · Kharanos · levels 4 to 7", as the reader writes it
-  const sub = epitaph
-    ? [raceClassLine(fb, s), fb.hardcore, fb.theEnd].join(" · ")
-    : [s.title ? fb.chapter(s.number ?? 0) : undefined, s.place, fb.levels(s.from ?? 0, s.to ?? 0)].filter(Boolean).join(" · ");
+  const sub: { text: string; book?: true }[] = epitaph
+    ? [{ text: raceClassLine(fi, s) }, { text: fi.hardcore }, { text: fi.theEnd }]
+    : [
+        { text: s.title ? fi.chapter(s.number ?? 0) : "" },
+        { text: s.place ?? "", book: true as const },
+        { text: fi.levels(s.from ?? 0, s.to ?? 0) },
+      ].filter((x) => x.text);
   return (
     <section id="samples" aria-labelledby="samples-title" className="mx-auto mt-12 mb-6 max-w-2xl scroll-mt-4">
       <h2 id="samples-title" className="title-gilded text-center text-3xl">
@@ -110,10 +115,14 @@ function Samples() {
           </button>
         ))}
       </div>
-      <article key={s.name} lang={fb.lang} className={`${cls.page} fade-in mt-5 rounded-md px-6 py-8 sm:px-12 sm:py-10`}>
+      <article key={s.name} lang={bookLang} className={`${cls.page} fade-in mt-5 rounded-md px-6 py-8 sm:px-12 sm:py-10`}>
         <header className="text-center">
-          <h3 className={epitaph ? `title text-3xl ${fallenColour}` : "title page-title text-3xl"}>{epitaph ? s.name : (s.title ?? fb.chapter(s.number ?? 0))}</h3>
-          <p className="page-faded mt-1 text-lg italic">{sub}</p>
+          <h3 lang={epitaph || s.title ? bookLang : fi.lang} className={epitaph ? `title text-3xl ${fallenColour}` : "title page-title text-3xl"}>
+            {epitaph ? s.name : (s.title ?? fi.chapter(s.number ?? 0))}
+          </h3>
+          <p lang={fi.lang} className="page-faded mt-1 text-lg italic">
+            <SubLine pieces={sub} bookLang={bookLang} />
+          </p>
           <Flourish className="page-title mt-3 opacity-70" />
         </header>
         <div className={`mt-5 space-y-4 ${cls.text} ${epitaph ? "text-center italic" : ""}`}>

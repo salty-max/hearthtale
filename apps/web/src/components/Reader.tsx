@@ -1,4 +1,4 @@
-import { frameFor, type Book, type PublicCharacter } from "@hearthtale/shared";
+import { langOf, type Book, type PublicCharacter } from "@hearthtale/shared";
 import { useRouter } from "@tanstack/react-router";
 import { ChevronLeft, ChevronRight, List } from "lucide-react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
@@ -9,8 +9,9 @@ import { Crest } from "@/components/Crest";
 import { Flourish } from "@/components/Flourish";
 import { LoadError } from "@/components/PageState";
 import { PartLink } from "@/components/PartLink";
-import { paragraphs, partTitle, parts, partSub } from "@/lib/book";
-import { useT } from "@/lib/i18n";
+import { SubLine } from "@/components/SubLine";
+import { paragraphs, partLang, partTitle, parts, partSubPieces } from "@/lib/book";
+import { useFrame, useT } from "@/lib/i18n";
 import { readerClasses, useSettings } from "@/lib/settings";
 import { useTitle } from "@/lib/title";
 import { classColour } from "@/lib/wow";
@@ -45,7 +46,9 @@ export function Reader({
   onRead?: (part: string) => void;
 }) {
   const t = useT();
-  const f = frameFor(book.language);
+  // (the labels in the site's language, as the game's window follows the client; the book's words in its own)
+  const f = useFrame();
+  const bookLang = langOf(book.language);
   const router = useRouter();
   const [contents, setContents] = useState(false);
   const settings = useSettings();
@@ -98,7 +101,7 @@ export function Reader({
   const ch = here.kind === "chapter" ? book.chapters.find((c) => c.number === here.number) : undefined;
   // (a chapter as its diary entry; a book saved before entries were, its prose)
   const text = here.kind === "prologue" ? book.prologue : here.kind === "epitaph" ? book.epitaph : (ch?.diary ?? ch?.text);
-  const sub = partSub(f, character, book, here);
+  const sub = partSubPieces(f, character, book, here);
   const cls = readerClasses(settings);
   const fallenColour = settings.theme === "night" ? "text-[#e0705f]" : "text-fallen";
   return (
@@ -137,15 +140,19 @@ export function Reader({
           <ContentsDrawer open={contents} onClose={() => setContents(false)} hrefFor={hrefFor} character={character} book={book} current={part} />
         )}
         {/* The page stays still; only its text scrolls (a new part starts at its top). */}
-        <article lang={f.lang} className={`${cls.page} mt-3 flex min-h-0 flex-1 flex-col overflow-hidden rounded-md`} {...swipe}>
+        <article lang={bookLang} className={`${cls.page} mt-3 flex min-h-0 flex-1 flex-col overflow-hidden rounded-md`} {...swipe}>
           <div key={part} className="fade-in min-h-0 flex-1 overflow-y-auto overscroll-contain px-6 py-8 sm:px-12 sm:py-10">
             <header className="text-center">
-              <h1 className={here.kind === "epitaph" ? `title text-3xl sm:text-4xl ${fallenColour}` : "title page-title text-3xl sm:text-4xl"}>{title}</h1>
-              {sub && <p className="page-faded mt-1.5 text-lg italic">{sub}</p>}
+              <h1 lang={partLang(f, book, here)} className={here.kind === "epitaph" ? `title text-3xl sm:text-4xl ${fallenColour}` : "title page-title text-3xl sm:text-4xl"}>{title}</h1>
+              {sub.length > 0 && (
+                <p lang={f.lang} className="page-faded mt-1.5 text-lg italic">
+                  <SubLine pieces={sub} bookLang={bookLang} />
+                </p>
+              )}
               <Flourish className="page-title mt-3 opacity-70" />
             </header>
             <div className={`mt-5 space-y-4 ${cls.text} ${here.kind === "epitaph" ? "text-center italic" : ""}`}>
-              {paragraphs(text).length === 0 && <p className="page-faded italic">{t.book.nothingYet}</p>}
+              {paragraphs(text).length === 0 && <p lang={f.lang} className="page-faded italic">{t.book.nothingYet}</p>}
               {paragraphs(text).map((p, i) => (
                 <p key={i} className={i === 0 && here.kind === "chapter" ? "drop-cap" : undefined}>
                   {p}
@@ -155,7 +162,7 @@ export function Reader({
             {/* The player's own note, set apart from the journal's words. */}
             {ch?.note && (
               <aside className={`mt-8 border-t border-current/15 pt-4 ${cls.text}`}>
-                <p className="page-faded ui text-sm tracking-wide uppercase">{f.note}</p>
+                <p lang={f.lang} className="page-faded ui text-sm tracking-wide uppercase">{f.note}</p>
                 <div className="mt-2 space-y-3 italic">
                   {ch.note
                     .split(/\n+/)
@@ -173,7 +180,7 @@ export function Reader({
             {prev ? (
               <PartLink href={hrefFor(prev.key)} className="flex min-w-0 items-center gap-1 hover:underline" title={t.book.keys}>
                 <ChevronLeft className="size-4 shrink-0" aria-hidden />
-                <span lang={f.lang} className="truncate">{partTitle(f, book, prev)}</span>
+                <span lang={partLang(f, book, prev)} className="truncate">{partTitle(f, book, prev)}</span>
               </PartLink>
             ) : (
               <span />
@@ -181,7 +188,7 @@ export function Reader({
             <span className="text-sm text-parchment/55">{t.book.of(at + 1, all.length)}</span>
             {next ? (
               <PartLink href={hrefFor(next.key)} className="flex min-w-0 items-center justify-end gap-1 hover:underline" title={t.book.keys}>
-                <span lang={f.lang} className="truncate">{partTitle(f, book, next)}</span>
+                <span lang={partLang(f, book, next)} className="truncate">{partTitle(f, book, next)}</span>
                 <ChevronRight className="size-4 shrink-0" aria-hidden />
               </PartLink>
             ) : (

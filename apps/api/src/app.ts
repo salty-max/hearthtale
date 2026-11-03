@@ -1,4 +1,4 @@
-import type { Health, Me } from "@hearthtale/shared";
+import { frameLanguage, type Health, type Language, type Me } from "@hearthtale/shared";
 import { Hono, type Context, type MiddlewareHandler } from "hono";
 import { bodyLimit } from "hono/body-limit";
 import { deleteCookie, getCookie, setCookie } from "hono/cookie";
@@ -10,7 +10,7 @@ import { getCharacterBook, libraryOf, removeBook } from "@/lib/characters";
 import { confirmPairing, isPairCode, linkFor, pairingPending, pollPairing, startPairing } from "@/lib/companion";
 import { signInWithPassport } from "@/lib/ravenpost";
 import { handleUpload, uploadAs, type Saved } from "@/lib/upload";
-import { notifyNewEntries, subscribe, unsubscribe, vapid } from "@/lib/push";
+import { isLanguage, notifyNewEntries, subscribe, unsubscribe, vapid } from "@/lib/push";
 import { isPushEndpoint } from "@/lib/webpush";
 import { waitUntil } from "@vercel/functions";
 import { ogPage } from "@/lib/og";
@@ -171,7 +171,8 @@ const preview = (find: (key: string) => Promise<Parameters<typeof ogPage>[0] | n
   const found = await find(key);
   if (!found) return c.redirect("/");
   c.header("Cache-Control", "public, max-age=300");
-  return c.html(ogPage(found, path(key), appOrigin()));
+  c.header("Vary", "Accept-Language");
+  return c.html(ogPage(found, path(key), appOrigin(), frameLanguage(c.req.header("accept-language"))));
 };
 const sharePreview = preview(sharedBook, (t) => `/s/${t}`);
 const hallPreview = preview(async (k) => (/^\d+$/.test(k) ? hallBook(Number(k)) : null), (k) => `/hall/${k}`);
@@ -254,13 +255,13 @@ app.get("/api/push/key", (c) => {
   return keys ? c.json({ key: keys.publicKey }) : c.json({ error: "not found" }, 404);
 });
 
-const pushSub = (v: unknown): { endpoint: string; p256dh: string; auth: string } | null => {
+const pushSub = (v: unknown): { endpoint: string; p256dh: string; auth: string; language?: Language } | null => {
   const o = v && typeof v === "object" ? (v as Record<string, unknown>) : null;
   const keys = o?.keys && typeof o.keys === "object" ? (o.keys as Record<string, unknown>) : null;
   const endpoint = o?.endpoint;
   if (typeof endpoint !== "string" || endpoint.length > 1000 || !isPushEndpoint(endpoint)) return null;
   if (typeof keys?.p256dh !== "string" || typeof keys.auth !== "string" || keys.p256dh.length > 200 || keys.auth.length > 100) return null;
-  return { endpoint, p256dh: keys.p256dh, auth: keys.auth };
+  return { endpoint, p256dh: keys.p256dh, auth: keys.auth, language: isLanguage(o?.language) ? o.language : undefined };
 };
 
 app.post("/api/push/subscriptions", signedIn, sameOrigin, limit("push-subscribe", 20, 10 * 60_000), async (c) => {

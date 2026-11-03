@@ -50,7 +50,28 @@ describe("export", () => {
     expect(markdown(frameFor("frFR"), { ...who, sex: 3 }, { ...book, language: "frFR" })).toContain("*Niveau 9 chasseresse naine");
     expect(markdown(frameFor("frFR"), who, { ...book, language: "frFR" })).toContain("*Niveau 9 chasseur nain");
   });
-  test("a French book: its words, its language, a woman's names", () => {
+  test("a French book under the English site: the labels in English, the book's words tagged French", () => {
+    const fb: Book = { ...book, language: "frFR", sex: 3 };
+    const md = markdown(t, { ...who, sex: 3 }, fb);
+    expect(md).toContain("# The journal of Brannok");
+    expect(md).toContain("*Entry 1 · Anvilmar · levels 1 to 4*");
+    expect(md).toContain("## Entry 2");
+    const all = new TextDecoder().decode(epub(t, { ...who, sex: 3 }, fb, "1"));
+    expect(all).toContain("<dc:language>fr</dc:language>");
+    expect(all).toContain('<p class="sub" lang="en" xml:lang="en">Entry 1 · <span lang="fr" xml:lang="fr">Anvilmar</span> · levels 1 to 4</p>');
+    expect(all).toContain('<h2 lang="en" xml:lang="en">Contents</h2>');
+    expect(all).toContain("<h2>The Troll Cave</h2>");
+  });
+  test("an English book under the French site: the labels in French, a woman's names", () => {
+    const md = markdown(frameFor("frFR"), { ...who, sex: 3 }, { ...book, sex: 3 });
+    expect(md).toContain("# Le journal de Brannok");
+    expect(md).toContain("*Niveau 9 chasseresse naine · Nightslayer (US)*");
+    expect(md).toContain("*Entrée 1 · Anvilmar · niveaux 1 à 4*");
+    const all = new TextDecoder().decode(epub(frameFor("frFR"), who, book, "1"));
+    expect(all).toContain("<dc:language>en</dc:language>");
+    expect(all).toContain('<h2 lang="fr" xml:lang="fr">Sommaire</h2>');
+  });
+  test("a French book under the French site: its words, its language, a woman's names", () => {
     const fr = frameFor("frFR");
     const fb: Book = { ...book, language: "frFR", sex: 3 };
     const md = markdown(fr, { ...who, sex: 3 }, fb);

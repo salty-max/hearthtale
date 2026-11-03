@@ -1,4 +1,4 @@
-import { frameFor, type CharacterSummary } from "@hearthtale/shared";
+import { langOf, type CharacterSummary } from "@hearthtale/shared";
 import { Link, useSearch } from "@tanstack/react-router";
 import { Map as MapIcon, Sparkles, Upload } from "lucide-react";
 import { useEffect } from "react";
@@ -60,12 +60,12 @@ export function Library() {
 function BookCard({ c }: { c: CharacterSummary }) {
   const t = useT();
   const f = useFrame();
-  const fb = frameFor(c.language);
+  const bookLang = langOf(c.language);
   const locale = useLocale();
   const seen = useSeen()[c.id];
   const fresh = isNew(seen, c.chapters, c.latest?.at);
   const latest = c.latest;
-  const latestTitle = latest ? (latest.title ?? fb.chapter(latest.number)) : undefined;
+  const latestTitle = latest ? (latest.title ?? f.chapter(latest.number)) : undefined;
   return (
     <article className="panel panel-link relative flex h-full flex-col p-4">
       <div className="flex items-start gap-3">
@@ -92,7 +92,9 @@ function BookCard({ c }: { c: CharacterSummary }) {
       {latest && (
         <div className="mt-3 border-t border-gold/15 pt-3">
           <p className="flex items-center gap-2">
-            <span lang={fb.lang} className="truncate font-medium text-gold-bright">{latestTitle}</span>
+            <span lang={latest.title ? bookLang : undefined} className="truncate font-medium text-gold-bright">
+              {latestTitle}
+            </span>
             {fresh && (
               <span className="tag shrink-0 text-gold-bright">
                 <Sparkles className="size-3" aria-hidden />
@@ -102,9 +104,8 @@ function BookCard({ c }: { c: CharacterSummary }) {
           </p>
           <p className="truncate text-sm text-parchment/60">
             {t.library.latest}
-            {[latest.title ? fb.chapter(latest.number) : undefined, latest.open ? fb.stillWriting : latest.place].some(Boolean) && (
-              <span lang={fb.lang}> · {[latest.title ? fb.chapter(latest.number) : undefined, latest.open ? fb.stillWriting : latest.place].filter(Boolean).join(" · ")}</span>
-            )}
+            {latest.title && ` · ${f.chapter(latest.number)}`}
+            {latest.open ? ` · ${f.stillWriting}` : latest.place && <span lang={bookLang}> · {latest.place}</span>}
           </p>
         </div>
       )}

@@ -1,12 +1,14 @@
-import type { Book, Frame, PublicCharacter } from "@hearthtale/shared";
-import { paragraphs, partSub, partTitle, parts, type Part } from "@/lib/book";
+import { langOf, type Book, type Frame, type PublicCharacter } from "@hearthtale/shared";
+import { paragraphs, partLang, partSub, partSubPieces, partTitle, parts, type Part } from "@/lib/book";
 import { realmName } from "@/lib/wow";
 import { zip } from "@/lib/zip";
 
 /**
  * A book to keep, as it reads on the site: every part in order, its title,
  * the line under it, its paragraphs, the player's note. As text (Markdown) or
- * an EPUB for e-readers; printing is the reader's own (PrintBook).
+ * an EPUB for e-readers; printing is the reader's own (PrintBook). The frame
+ * is the site's (the labels in its language), the book's words in their own
+ * (the EPUB's language, each label tagged where the two differ).
  */
 type Who = PublicCharacter;
 
@@ -67,27 +69,33 @@ ${body}
 
 /** The book as an EPUB 3: a title page, then each part a page of its own, and their contents. */
 export function epub(f: Frame, who: Who, book: Book, id: string): Uint8Array {
-  const lang = f.lang;
+  const lang = langOf(book.language);
+  // (a label's language, where it isn't the book's)
+  const tag = (l: string) => (l === lang ? "" : ` lang="${l}" xml:lang="${l}"`);
+  const ui = tag(f.lang);
   const title = f.by(who.name);
   const all = parts(book);
-  const files = all.map((p, i) => ({ p, file: `part-${i + 1}.xhtml`, title: partTitle(f, book, p) }));
-  const pages = files.map(({ p, file, title: name }) => {
-    const sub = partSub(f, who, book, p);
+  const files = all.map((p, i) => ({ p, file: `part-${i + 1}.xhtml`, title: partTitle(f, book, p), lang: partLang(f, book, p) }));
+  const pages = files.map(({ p, file, title: name, lang: nameLang }) => {
+    // (the line under the title in the interface's language, its place in the book's)
+    const sub = partSubPieces(f, who, book, p)
+      .map((x) => (x.book && ui ? `<span lang="${lang}" xml:lang="${lang}">${xml(x.text)}</span>` : xml(x.text)))
+      .join(" · ");
     const note = noteOf(book, p);
     const body = [
       `<section class="${p.kind}" epub:type="chapter">`,
-      `<h2>${xml(name)}</h2>`,
-      sub ? `<p class="sub">${xml(sub)}</p>` : "",
+      `<h2${tag(nameLang)}>${xml(name)}</h2>`,
+      sub ? `<p class="sub"${ui}>${sub}</p>` : "",
       ...paragraphs(textOf(book, p)).map((para) => `<p>${xml(para)}</p>`),
-      note.length ? `<div class="note"><p class="note-title">${xml(f.note)}</p>${note.map((l) => `<p>${xml(l)}</p>`).join("")}</div>` : "",
+      note.length ? `<div class="note"><p class="note-title"${ui}>${xml(f.note)}</p>${note.map((l) => `<p>${xml(l)}</p>`).join("")}</div>` : "",
       "</section>",
     ].join("\n");
     return { name: `OEBPS/${file}`, data: page(name, body, lang) };
   });
-  const cover = page(title, `<h1>${xml(title)}</h1>\n<p class="sub">${xml(about(f, who, book))}</p>`, lang);
+  const cover = page(title, `<h1${ui}>${xml(title)}</h1>\n<p class="sub"${ui}>${xml(about(f, who, book))}</p>`, lang);
   const nav = page(
     f.contents,
-    `<nav epub:type="toc"><h2>${xml(f.contents)}</h2><ol>${files.map((f) => `<li><a href="${f.file}">${xml(f.title)}</a></li>`).join("")}</ol></nav>`,
+    `<nav epub:type="toc"><h2${ui}>${xml(f.contents)}</h2><ol>${files.map((x) => `<li><a href="${x.file}"${tag(x.lang)}>${xml(x.title)}</a></li>`).join("")}</ol></nav>`,
     lang,
   );
   const modified = new Date(book.at * 1000).toISOString().replace(/\.\d+Z$/, "Z");

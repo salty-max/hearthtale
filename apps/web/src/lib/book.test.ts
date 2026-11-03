@@ -1,6 +1,6 @@
 import { frameFor, type Book } from "@hearthtale/shared";
 import { describe, expect, test } from "bun:test";
-import { current, paragraphs, partSub, partTitle, parts } from "@/lib/book";
+import { current, paragraphs, partLang, partSub, partSubPieces, partTitle, parts } from "@/lib/book";
 import { dateRange } from "@/lib/dates";
 
 const t = frameFor("enUS");
@@ -43,7 +43,22 @@ describe("book", () => {
     expect(partSub(t, { fallen: false }, dated, two)).toBe("levels 4 to 6 · 8 Oct 2026 · still being written");
     expect(partSub(t, { fallen: true }, { ...dated, chapters: [dated.chapters[0]] }, one)).toMatch(/ · the end$/);
   });
-  test("a French book reads in French, whatever the site's language", () => {
+  test("the labels are the site's, whatever the book's language: an entry's own title is the book's", () => {
+    const fr = frameFor("frFR");
+    const english: Book = { ...book, chapters: [{ number: 1, title: "The Troll Cave", place: "Anvilmar", from: 1, to: 4 }, { number: 2, from: 4, to: 6, open: true }] };
+    const [prologue, one, two] = parts(english);
+    expect(partTitle(fr, english, prologue)).toBe("Prologue");
+    expect(partTitle(fr, english, one)).toBe("The Troll Cave");
+    expect(partTitle(fr, english, two)).toBe("Entrée 2");
+    expect(partSub(fr, { fallen: false }, english, one)).toBe("Entrée 1 · Anvilmar · niveaux 1 à 4");
+    expect(partSub(fr, { fallen: false }, english, two)).toBe("niveaux 4 à 6 · en cours d'écriture");
+    expect(partSubPieces(fr, { fallen: false }, english, one)).toEqual([{ text: "Entrée 1" }, { text: "Anvilmar", book: true }, { text: "niveaux 1 à 4" }]);
+    expect(partLang(fr, english, one)).toBe("en");
+    expect(partLang(fr, english, two)).toBe("fr");
+    expect(partLang(t, { ...english, language: "frFR" }, one)).toBe("fr");
+    expect(partLang(t, { ...english, language: "frFR" }, prologue)).toBe("en");
+  });
+  test("a French book under the French site", () => {
     const fr = frameFor("frFR");
     const dated: Book = {
       ...book,

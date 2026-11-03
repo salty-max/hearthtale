@@ -7,12 +7,18 @@ import { bigint, boolean, index, integer, jsonb, pgTable, primaryKey, serial, te
  * Logging in also proves which characters are the account's (their Battle.net
  * ids, per region): their books become its own.
  */
+export type Owned = { region: Region; ids: number[]; women?: number[]; men?: number[] };
+
 export const accounts = pgTable("accounts", {
   id: serial("id").primaryKey(),
   bnetId: bigint("bnet_id", { mode: "number" }).notNull().unique(),
   battletag: text("battletag"),
-  /** Battle.net character ids the account owned at its last login, per region. */
-  owned: jsonb("owned").$type<{ region: Region; ids: number[] }[]>().notNull().default(sql`'[]'::jsonb`),
+  /**
+   * Battle.net character ids the account owned at its last login, per region;
+   * which of them are women and men, where Battle.net said (its sign-in, not
+   * Ravenpost's, which brings ids alone and keeps what was known).
+   */
+  owned: jsonb("owned").$type<Owned[]>().notNull().default(sql`'[]'::jsonb`),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
   lastSeenAt: timestamp("last_seen_at", { withTimezone: true }).notNull().defaultNow(),
 });
@@ -78,6 +84,8 @@ export const characters = pgTable("characters", {
   hardcore: boolean("hardcore").notNull().default(false),
   /** A Hardcore death closed the book. */
   fallen: boolean("fallen").notNull().default(false),
+  /** The character's sex as Battle.net gives it (2 a man, 3 a woman), for a book saved before it kept its own (book.sex wins). */
+  sex: integer("sex").$type<2 | 3>(),
   /** The Battle.net character id (from the GUID: "Player-6113-03D658B8" is 64379064). */
   bnetCharId: bigint("bnet_char_id", { mode: "number" }),
   /** Whose book it is: proved by a Battle.net login, a link code or the account's companion. Private to them. */
@@ -139,6 +147,8 @@ export const pushSubscriptions = pgTable(
       .references(() => accounts.id, { onDelete: "cascade" }),
     p256dh: text("p256dh").notNull(),
     auth: text("auth").notNull(),
+    /** The site's language on that device when it was turned on (enUS, frFR): what its notifications are worded in. None: the book's. */
+    language: text("language"),
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
   },
   (t) => [index("push_subscriptions_account").on(t.accountId)],

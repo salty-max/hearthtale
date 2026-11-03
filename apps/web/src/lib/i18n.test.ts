@@ -67,6 +67,12 @@ describe("i18n", () => {
     expect(browserLang(["de-DE"])).toBe("en");
     expect(browserLang([])).toBe("en");
   });
+  test("the road's figures agree with their number (0 and 1 singular in French)", () => {
+    const en = strings("en").road;
+    const fr = strings("fr").road;
+    expect([en.days(1), en.days(0), en.days(2)]).toEqual(["day", "days", "days"]);
+    expect([fr.days(1), fr.days(0), fr.closeCalls(0), fr.closeCalls(3)]).toEqual(["jour", "jour", "mort frôlée", "morts frôlées"]);
+  });
   test("French typography: a no-break space before : ? ! and inside « », no semicolon", () => {
     for (const text of texts(strings("fr"))) {
       expect(text).not.toMatch(/ [:?!»]/);

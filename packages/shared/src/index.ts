@@ -124,4 +124,4 @@ export type SharedBook = { character: PublicCharacter; book: Book; part?: string
 /** A life in the public Hall of the Fallen. */
 export type HallEntry = { id: number; character: PublicCharacter; epitaph?: string; chapters: number; diedAt?: number };
 
-export { frameFor, type Frame, type Sex } from "./frame";
+export { frameFor, frameLanguage, langOf, type Frame, type Sex } from "./frame";

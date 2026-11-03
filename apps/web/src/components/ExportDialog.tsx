@@ -1,14 +1,14 @@
-import { frameFor, type Book, type PublicCharacter } from "@hearthtale/shared";
+import type { Book, PublicCharacter } from "@hearthtale/shared";
 import { BookMarked, FileText, Printer } from "lucide-react";
 import type { ReactNode } from "react";
 import { Dialog } from "@/components/Dialog";
 import { epub, fileName, markdown, save } from "@/lib/export";
-import { useT } from "@/lib/i18n";
+import { useFrame, useT } from "@/lib/i18n";
 
 /** Downloading one of my books: printed (or saved as a PDF), an EPUB, or text. */
 export function ExportDialog({ open, onClose, character, book, id }: { open: boolean; onClose: () => void; character: PublicCharacter; book: Book; id: number }) {
   const t = useT();
-  const f = frameFor(book.language);
+  const f = useFrame(); // (the labels in the site's language, the book's words in its own)
   const choice = (icon: ReactNode, label: string, hint: string, go: () => void) => (
     <li>
       <button

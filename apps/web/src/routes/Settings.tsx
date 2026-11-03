@@ -7,11 +7,29 @@ import { usePush, usePushKey } from "@/lib/push";
 import { FONT_CLASS, FONTS, readerClasses, setSettings, SITE_THEMES, SIZES, SPACINGS, THEMES, useSettings, type Settings as S } from "@/lib/settings";
 import { useTitle } from "@/lib/title";
 
-/** A row of choices, one selected (radio buttons that look like a segmented control). */
-function Choice<K extends string>({ label, value, options, name, render }: { label: string; value: K; options: K[]; name: keyof S; render: (k: K) => ReactNode }) {
+/**
+ * A row of choices, one selected (radio buttons that look like a segmented
+ * control). Its label a short name in small capitals ("Text size"), or, as a
+ * `sentence`, in the case it is written (capitals on a whole sentence shout).
+ */
+function Choice<K extends string>({
+  label,
+  sentence,
+  value,
+  options,
+  name,
+  render,
+}: {
+  label: string;
+  sentence?: boolean;
+  value: K;
+  options: K[];
+  name: keyof S;
+  render: (k: K) => ReactNode;
+}) {
   return (
     <fieldset className="mt-4">
-      <legend className="ui text-sm tracking-wide text-parchment/70 uppercase">{label}</legend>
+      <legend className={sentence ? "text-parchment/75" : "ui text-sm tracking-wide text-parchment/70 uppercase"}>{label}</legend>
       <div className="mt-2 flex flex-wrap gap-2">
         {options.map((k) => (
           <button
@@ -43,10 +61,10 @@ function Section({ title, children }: { title: string; children: ReactNode }) {
 
 const SITE_ICONS = { system: Monitor, light: Sun, dark: Moon };
 
-function Notifications({ signedIn }: { signedIn: boolean }) {
+function Notifications({ account }: { account: string | null }) {
   const t = useT();
-  const push = usePush(signedIn);
-  if (!signedIn)
+  const push = usePush(account);
+  if (account === null)
     return (
       <p className="mt-2 text-parchment/75">
         {t.push.signIn}{" "}
@@ -136,13 +154,13 @@ export function Settings() {
       {/* (only where the site sends them: VAPID_* set) */}
       {pushKey.data && (
         <Section title={t.push.title}>
-          <Notifications signedIn={!!me.data} />
+          <Notifications account={me.data ? (me.data.battletag ?? "") : null} />
         </Section>
       )}
 
       {LANGS.length > 1 && (
         <Section title={t.settings.language}>
-          <Choice label={t.settings.languageHint} name="lang" value={lang} options={LANGS} render={(k) => CATALOGS[k].name} />
+          <Choice label={t.settings.languageHint} sentence name="lang" value={lang} options={LANGS} render={(k) => CATALOGS[k].name} />
         </Section>
       )}
 

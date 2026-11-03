@@ -1,6 +1,6 @@
 import type { Book } from "@hearthtale/shared";
 import { describe, expect, test } from "bun:test";
-import { finishedSince, newEntryMessage } from "@/lib/push";
+import { finishedSince, isLanguage, newEntryMessage } from "@/lib/push";
 
 const book = (chapters: Book["chapters"]): Book => ({ client: "classic", at: 1, chapters });
 const ch = (number: number, open = false, title?: string) => ({ number, from: 1, to: 2, open: open || undefined, title, place: "Kharanos" });
@@ -18,7 +18,7 @@ describe("notifications", () => {
     expect(finishedSince({ ...fr, chapters: [ch(1)] }, book([ch(1), ch(2)]))).toEqual([]);
     expect(finishedSince({ ...book([ch(1)]), language: "enUS" }, book([ch(1), ch(2)])).map((c) => c.number)).toEqual([2]); // (none kept: English)
   });
-  test("what the device says, in the book's language", () => {
+  test("what the device says, in its own language (else the book's)", () => {
     expect(newEntryMessage("Brannok", 7, [ch(3, false, "Bristle")], "frFR")).toEqual({
       title: "Brannok a écrit «\u00a0Bristle\u00a0»",
       body: "Entrée 3 · Kharanos",
@@ -26,6 +26,12 @@ describe("notifications", () => {
       tag: "book-7",
     });
     expect(newEntryMessage("Brannok", 7, [ch(2), ch(3)], "frFR").title).toBe("Brannok a écrit 2 nouvelles entrées");
+  });
+  test("a device's language, only one with a frame", () => {
+    expect(isLanguage("frFR")).toBe(true);
+    expect(isLanguage("enUS")).toBe(true);
+    expect(isLanguage("deDE")).toBe(false);
+    expect(isLanguage(null)).toBe(false);
   });
   test("what the device says", () => {
     expect(newEntryMessage("Brannok", 7, [ch(3, false, "Bristle")])).toEqual({

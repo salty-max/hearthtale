@@ -47,15 +47,23 @@ export async function finishLogin(code: string, state: string): Promise<{ sessio
   const { id: bnetId, battletag } = await userInfo(token).catch(() => ({ id: undefined, battletag: undefined }));
   if (!bnetId) return { session: null };
   const owned: number[] = [];
+  // (each character's sex, as Battle.net gives it: a French page agrees with it until the book keeps its own)
+  const women: number[] = [];
+  const men: number[] = [];
   for (const flavour of FLAVOURS) {
     try {
       const profile = await accountProfile(flavour, pending.region, token);
-      for (const acc of profile.wow_accounts ?? []) for (const c of acc.characters ?? []) owned.push(c.id);
+      for (const acc of profile.wow_accounts ?? [])
+        for (const c of acc.characters ?? []) {
+          owned.push(c.id);
+          if (c.gender?.type === "FEMALE") women.push(c.id);
+          else if (c.gender?.type === "MALE") men.push(c.id);
+        }
     } catch (err) {
       // A game the account never played answers 404.
       log.info("login.flavour", { flavour, status: err instanceof BnetError ? err.status : String(err) });
     }
   }
-  const account = await loginAccount({ bnetId, battletag: battletag ?? null, region: pending.region, owned });
+  const account = await loginAccount({ bnetId, battletag: battletag ?? null, region: pending.region, owned, women, men });
   return { session: await createSession(account.id), next: pending.next };
 }

@@ -20,7 +20,7 @@ export function publicCharacter(row: CharacterRow): PublicCharacter {
     race: row.race,
     class: row.class,
     language: row.book.language,
-    sex: row.book.sex,
+    sex: row.book.sex ?? row.sex ?? undefined, // (the book's own, else Battle.net's)
     level: row.level,
     hardcore: row.hardcore,
     fallen: row.fallen,

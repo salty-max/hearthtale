@@ -74,7 +74,7 @@ export const FLAVOURS = ["classic1x"] as const;
 export type Flavour = (typeof FLAVOURS)[number];
 
 export type RawAccountProfile = {
-  wow_accounts?: { characters?: { id: number; name: string; level: number; realm: { slug: string; name: string } }[] }[];
+  wow_accounts?: { characters?: { id: number; name: string; level: number; realm: { slug: string; name: string }; gender?: { type?: string } }[] }[];
 };
 
 const RETRY_DELAYS_MS = [1_000, 3_000];

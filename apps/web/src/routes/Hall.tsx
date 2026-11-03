@@ -1,4 +1,4 @@
-import { frameFor } from "@hearthtale/shared";
+import { langOf } from "@hearthtale/shared";
 import { Link } from "@tanstack/react-router";
 import { BookOpen } from "lucide-react";
 import { Crest } from "@/components/Crest";
@@ -58,7 +58,7 @@ export function Hall() {
                   </p>
                 </div>
               </div>
-              {e.epitaph && <p lang={frameFor(e.character.language).lang} className="mt-4 border-l-2 border-blood/50 pl-4 text-lg italic text-parchment/85">{e.epitaph}</p>}
+              {e.epitaph && <p lang={langOf(e.character.language)} className="mt-4 border-l-2 border-blood/50 pl-4 text-lg italic text-parchment/85">{e.epitaph}</p>}
               <p className="ui mt-3 flex items-center gap-2 text-sm text-gold-bright">
                 <BookOpen className="size-4" aria-hidden />
                 {t.hall.read} · {t.library.chapters(e.chapters)}

@@ -1,7 +1,7 @@
 import { and, eq, gt, inArray, lt } from "drizzle-orm";
 import { db } from "@/db";
 import type { Region } from "@hearthtale/shared";
-import { accounts, characters, sessions, type AccountRow } from "@/db/schema";
+import { accounts, characters, sessions, type AccountRow, type Owned } from "@/db/schema";
 import { regionNumber } from "@/lib/guid";
 import { log } from "@/lib/log";
 
@@ -26,10 +26,15 @@ async function sha256(s: string): Promise<string> {
   return Buffer.from(h).toString("hex");
 }
 
-/** After a Battle.net login: the account (created on first login), owning `owned` in `region`. */
-export async function loginAccount(login: { bnetId: number; battletag: string | null; region: Region; owned: number[] }): Promise<AccountRow> {
+/**
+ * After a Battle.net login: the account (created on first login), owning
+ * `owned` in `region`; `women` and `men` among them where Battle.net said (a
+ * sign-in without them, Ravenpost's, keeps what was known).
+ */
+export async function loginAccount(login: { bnetId: number; battletag: string | null; region: Region; owned: number[]; women?: number[]; men?: number[] }): Promise<AccountRow> {
   const [found] = await db.select().from(accounts).where(eq(accounts.bnetId, login.bnetId));
-  const owned = [...(found?.owned ?? []).filter((o) => o.region !== login.region), { region: login.region, ids: login.owned }];
+  const entry = ownedEntry(found?.owned.find((o) => o.region === login.region), login);
+  const owned = [...(found?.owned ?? []).filter((o) => o.region !== login.region), entry];
   const [acc] = found
     ? await db.update(accounts).set({ battletag: login.battletag, owned, lastSeenAt: new Date() }).where(eq(accounts.id, found.id)).returning()
     : await db.insert(accounts).values({ bnetId: login.bnetId, battletag: login.battletag, owned }).returning();
@@ -39,9 +44,27 @@ export async function loginAccount(login: { bnetId: number; battletag: string | 
       .update(characters)
       .set({ ownerId: acc.id })
       .where(and(eq(characters.region, regionNumber(login.region)), inArray(characters.bnetCharId, login.owned)));
+    // (and their sex, where Battle.net said: a French page agrees with it until the book keeps its own)
+    for (const [sex, ids] of [[3, entry.women], [2, entry.men]] as const) {
+      if (ids?.length) await db.update(characters).set({ sex }).where(and(eq(characters.region, regionNumber(login.region)), inArray(characters.bnetCharId, ids)));
+    }
   }
   log.info("account.login", { account: acc.id, region: login.region, owned: login.owned.length, created: !found });
   return acc;
+}
+
+/** A region's entry after a login: its ids, the sexes Battle.net gave (none given: the ones known before). */
+export function ownedEntry(before: Owned | undefined, login: { region: Region; owned: number[]; women?: number[]; men?: number[] }): Owned {
+  const still = (ids?: number[]) => ids?.filter((id) => login.owned.includes(id));
+  const women = login.women ?? still(before?.women);
+  const men = login.men ?? still(before?.men);
+  return { region: login.region, ids: login.owned, ...(women && { women }), ...(men && { men }) };
+}
+
+/** A Battle.net character's sex, as the account's last Battle.net sign-in gave it (2 a man, 3 a woman), else none. */
+export function sexOf(account: Pick<AccountRow, "owned">, region: Region, bnetCharId: number): 2 | 3 | undefined {
+  const o = account.owned.find((x) => x.region === region);
+  return o?.women?.includes(bnetCharId) ? 3 : o?.men?.includes(bnetCharId) ? 2 : undefined;
 }
 
 /** Does the account own this Battle.net character (per its last login)? */

@@ -50,6 +50,20 @@
       "when": 1791821340466,
       "tag": "0006_push",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1793669523084,
+      "tag": "0007_push_language",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1793669986114,
+      "tag": "0008_character_sex",
+      "breakpoints": true
     }
   ]
 }

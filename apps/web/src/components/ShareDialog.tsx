@@ -1,10 +1,10 @@
-import { frameFor, type Book, type CharacterSummary, type Share } from "@hearthtale/shared";
+import type { Book, CharacterSummary, Share } from "@hearthtale/shared";
 import { Check, Copy, Link2, Share2, Trash2 } from "lucide-react";
 import { useState } from "react";
 import { Dialog } from "@/components/Dialog";
 import { useCreateShare, useRevokeShare, useSetInHall, useShares } from "@/lib/api";
-import { partTitle, parts } from "@/lib/book";
-import { useLocale, useT } from "@/lib/i18n";
+import { partLang, partTitle, parts } from "@/lib/book";
+import { useFrame, useLocale, useT } from "@/lib/i18n";
 
 /**
  * Sharing one of my books: a link to this part or to the whole book (anyone
@@ -15,6 +15,7 @@ import { useLocale, useT } from "@/lib/i18n";
 export function ShareDialog({ open, onClose, character, book, part }: { open: boolean; onClose: () => void; character: CharacterSummary; book: Book; part: string }) {
   const t = useT();
   const locale = useLocale();
+  const f = useFrame();
   const shares = useShares(character.id);
   const create = useCreateShare(character.id);
   const revoke = useRevokeShare(character.id);
@@ -24,7 +25,11 @@ export function ShareDialog({ open, onClose, character, book, part }: { open: bo
   const partName = (p?: string) => {
     if (p === undefined) return t.share.wholeBook;
     const found = parts(book).find((x) => x.key === p);
-    return found ? partTitle(frameFor(book.language), book, found) : p;
+    return found ? partTitle(f, book, found) : p;
+  };
+  const partLangOf = (p?: string) => {
+    const found = parts(book).find((x) => x.key === p);
+    return found ? partLang(f, book, found) : undefined;
   };
   const copy = (s: Share) => void navigator.clipboard?.writeText(s.url).then(() => setCopied(s.token));
   const send = (s: Share) => {
@@ -51,7 +56,7 @@ export function ShareDialog({ open, onClose, character, book, part }: { open: bo
       </div>
       {made && (
         <div className="mt-3 rounded-md border border-gold/40 bg-night/60 p-3">
-          <p lang={frameFor(book.language).lang} className="ui text-sm text-parchment/70">{partName(made.part)}</p>
+          <p lang={partLangOf(made.part)} className="ui text-sm text-parchment/70">{partName(made.part)}</p>
           <p className="mt-1 break-all font-mono text-sm text-gold-bright">{made.url}</p>
           <div className="mt-2 flex gap-2">
             <button onClick={() => copy(made)} className="btn">
@@ -76,7 +81,7 @@ export function ShareDialog({ open, onClose, character, book, part }: { open: bo
             {shares.data!.map((s) => (
               <li key={s.token} className="flex items-center justify-between gap-2 py-2">
                 <span className="min-w-0">
-                  <span lang={frameFor(book.language).lang} className="block truncate">{partName(s.part)}</span>
+                  <span lang={partLangOf(s.part)} className="block truncate">{partName(s.part)}</span>
                   <span className="ui block text-sm text-parchment/55">{new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(new Date(s.createdAt))}</span>
                 </span>
                 <span className="flex shrink-0 gap-1">

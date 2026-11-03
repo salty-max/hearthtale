@@ -1,4 +1,4 @@
-import type { Book, SharedBook } from "@hearthtale/shared";
+import { frameLanguage, type Book, type SharedBook } from "@hearthtale/shared";
 import { describe, expect, test } from "bun:test";
 import { ogPage, ogText, ogTitle } from "@/lib/og";
 import { cutBook, withoutNotes } from "@/lib/sharing";
@@ -42,6 +42,13 @@ describe("sharing", () => {
     expect(seen.chapters.map((c) => c.text)).toEqual(book.chapters.map((c) => c.text));
     expect(noted.chapters[0].note).toBe("Buy arrows before Kharanos.");
   });
+  test("the reader's language, from an Accept-Language header", () => {
+    expect(frameLanguage("fr-CA,fr;q=0.9,en;q=0.8")).toBe("frFR");
+    expect(frameLanguage("de-DE,en-GB;q=0.8,fr;q=0.5")).toBe("enUS");
+    expect(frameLanguage("de-DE")).toBeUndefined();
+    expect(frameLanguage("fr;q=0, en")).toBe("enUS");
+    expect(frameLanguage(undefined)).toBeUndefined();
+  });
   test("the preview card: who, which part, the opening lines", () => {
     const shared: SharedBook = { character: who, book: cutBook(book, "2")!, part: "2" };
     expect(ogTitle(shared)).toBe("Pippa, level 6 Gnome Mage (fallen) · Entry 2");
@@ -50,6 +57,12 @@ describe("sharing", () => {
     const fr: SharedBook = { character: { ...who, race: "Dwarf", class: "HUNTER" }, book: { ...cutBook(book, "2")!, language: "frFR", sex: 3 }, part: "2" };
     expect(ogTitle(fr)).toBe("Pippa, niveau 6 chasseresse naine (tombée) · Entrée 2");
     expect(ogPage(fr, "/s/abc", "https://hearthtale.app")).toContain('<html lang="fr">');
+    // (the reader's language first, as the site would choose it: the labels its, the names the character's sex)
+    expect(ogTitle(fr, "enUS")).toBe("Pippa, level 6 Dwarf Hunter (fallen) · Entry 2");
+    expect(ogPage(fr, "/s/abc", "https://hearthtale.app", "enUS")).toContain('<html lang="en">');
+    const woman: SharedBook = { ...shared, book: { ...shared.book, sex: 3 } };
+    expect(ogTitle(woman, "frFR")).toBe("Pippa, niveau 6 mage gnome (tombée) · Entrée 2");
+    expect(ogTitle(shared, "frFR")).toBe("Pippa, niveau 6 mage gnome (tombé) · Entrée 2");
     expect(ogText({ character: who, book }, 20)).toBe("Pippa died by the…");
     const html = ogPage({ character: { ...who, name: "<b>" }, book, part: "epitaph" }, "/s/abc", "https://hearthtale.app");
     expect(html).toContain('og:url" content="https://hearthtale.app/s/abc"');

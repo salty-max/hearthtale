@@ -163,12 +163,13 @@ const en = {
   },
   road: {
     title: "The road so far",
-    entries: "entries",
-    levels: "levels",
-    days: "days",
-    places: "places",
-    closeCalls: "close calls",
-    rares: "rare foes",
+    // (the figures' labels, by their number)
+    entries: (n: number): string => (n === 1 ? "entry" : "entries"),
+    levels: (n: number): string => (n === 1 ? "level" : "levels"),
+    days: (n: number): string => (n === 1 ? "day" : "days"),
+    places: (n: number): string => (n === 1 ? "place" : "places"),
+    closeCalls: (n: number): string => (n === 1 ? "close call" : "close calls"),
+    rares: (n: number): string => (n === 1 ? "rare foe" : "rare foes"),
     chart: "Levels over the days",
     timeline: "Entry by entry",
     places_: "Where the road went",
@@ -326,7 +327,7 @@ const fr: Strings = {
   home: {
     tagline: "Le journal de votre personnage, écrit pendant que vous jouez.",
     intro:
-      "Hearthtale est un addon pour World of Warcraft\u00a0: le journal de votre personnage, écrit pendant que vous jouez. Chaque fois que vous vous reposez dans une auberge ou près d'un feu de camp, la route depuis votre dernière halte devient une entrée, de la voix même de votre personnage. En mode Extrême, une mort clôt le livre par une épitaphe.",
+      "Hearthtale est un addon pour World of Warcraft\u00a0: le journal de votre personnage, écrit pendant que vous jouez. Chaque fois que vous vous reposez dans une auberge ou près d'un feu de camp, la route depuis votre dernière halte devient une entrée, écrite par votre personnage lui-même. En mode Extrême, une mort clôt le livre sur une épitaphe.",
     soon: "Votre journal, à lire dans le jeu ou ici, sur votre téléphone\u00a0: installez l'addon et Ravenpost, puis connectez-vous.",
     start: "Commencer",
     sample: "Lire une page",
@@ -335,10 +336,10 @@ const fr: Strings = {
     features: [
       { title: "Écrit pendant que vous jouez", text: "Quêtes, ennemis, amis, morts frôlées et feux de camp deviennent des entrées à chaque halte, d'après ce qui s'est vraiment passé." },
       { title: "De la voix de votre personnage", text: "Un nain écrit comme un nain, un Réprouvé comme un Réprouvé\u00a0: chaque race et chaque classe a ses propres mots." },
-      { title: "Une vie à garder", text: "Lisez votre journal sur votre téléphone, partagez une entrée et, en mode Extrême, gardez la dernière page et une épitaphe dans la Salle." },
+      { title: "Une vie à garder", text: "Lisez votre journal sur votre téléphone, partagez une entrée. En mode Extrême, la dernière page et l'épitaphe trouvent leur place dans la Salle." },
     ],
-    samplesTitle: "Une page des journaux",
-    samplesWhy: "Pages écrites par l'addon lui-même, d'après les premières soirées de personnages de test\u00a0: chacune de sa propre voix, et les derniers mots d'un personnage tombé en mode Extrême.",
+    samplesTitle: "Une page de chaque journal",
+    samplesWhy: "Pages écrites par l'addon lui-même, d'après les premières soirées de personnages de test\u00a0: chacune avec sa propre voix, et les derniers mots d'un personnage tombé en mode Extrême.",
     inFrench: "en français",
   },
   notFound: { title: "Rien que la brume", body: "Il n'y a pas de page ici.", back: "Retour au foyer" },
@@ -385,7 +386,7 @@ const fr: Strings = {
     download: "Hearthtale",
     downloadDetail: "Classic Era, mode Extrême, Saison de la découverte, World of Warcraft: Forever",
     ravenpostTitle: "2. Ravenpost",
-    ravenpost: "L'application compagnon qui apporte vos livres ici (et les données de WoWLocker, si vous l'utilisez). Elle continue de tourner depuis la zone de notification ou la barre des menus.",
+    ravenpost: "L'application compagnon qui apporte vos livres ici (et les données de WoWLocker, si vous l'utilisez). Elle reste active dans la zone de notification ou la barre des menus.",
     windows: "Windows",
     windowsDetail: "Windows 10 ou 11",
     macos: "macOS",
@@ -393,7 +394,7 @@ const fr: Strings = {
     yours: "Pour votre ordinateur",
     windowsArm: "Windows sur ARM",
     unsigned:
-      "Pas encore signée\u00a0: Windows et macOS vous avertissent la première fois que vous l'ouvrez (Windows\u00a0: Informations complémentaires, puis Exécuter quand même). Si le Contrôle intelligent des applications de Windows 11 la bloque, désactivez-le dans Sécurité Windows, ou demandez de l'aide sur le GitHub du projet.",
+      "Pas encore signée\u00a0: Windows et macOS vous avertissent à la première ouverture (Windows\u00a0: Informations complémentaires, puis Exécuter quand même). Si le Contrôle intelligent des applications de Windows 11 la bloque, désactivez-le dans Sécurité Windows, ou demandez de l'aide sur le GitHub du projet.",
     uploadInstead: "Vous préférez ne pas installer Ravenpost\u00a0? Envoyez plutôt votre fichier de sauvegarde depuis la bibliothèque.",
     stepsTitle: "3. Se connecter",
     steps: [
@@ -417,10 +418,10 @@ const fr: Strings = {
     title: "Bibliothèque",
     testIntro: "Le compte de test\u00a0: des livres que l'addon a enregistrés dans une partie de test, tels qu'il les a écrits à la déconnexion.",
     empty: "Aucun livre sur cette étagère pour l'instant. Avec l'addon installé, les livres de vos personnages arrivent après une déconnexion ou un /reload.",
-    chapters: (n: number) => (n === 1 ? "1 entrée" : `${n} entrées`),
+    chapters: (n: number) => (n < 2 ? `${n} entrée` : `${n} entrées`),
     hardcore: "Extrême",
     fallen: "Vie achevée",
-    hardcoreWhy: "Une vie, un livre\u00a0: une mort le clôt par une épitaphe, et il peut rejoindre la Salle des Défunts.",
+    hardcoreWhy: "Une vie, un livre\u00a0: une mort le clôt sur une épitaphe, et il peut rejoindre la Salle des Défunts.",
     fallenWhy: "Cette vie est achevée\u00a0: son livre est clos, avec son épitaphe.",
     forever: "Forever",
     new: "Nouveau",
@@ -459,18 +460,19 @@ const fr: Strings = {
   },
   road: {
     title: "La route jusqu'ici",
-    entries: "entrées",
-    levels: "niveaux",
-    days: "jours",
-    places: "lieux",
-    closeCalls: "morts frôlées",
-    rares: "ennemis rares",
+    // (0 and 1 take the singular in French)
+    entries: (n: number) => (n < 2 ? "entrée" : "entrées"),
+    levels: (n: number) => (n < 2 ? "niveau" : "niveaux"),
+    days: (n: number) => (n < 2 ? "jour" : "jours"),
+    places: (n: number) => (n < 2 ? "lieu" : "lieux"),
+    closeCalls: (n: number) => (n < 2 ? "mort frôlée" : "morts frôlées"),
+    rares: (n: number) => (n < 2 ? "ennemi rare" : "ennemis rares"),
     chart: "Les niveaux au fil des jours",
-    timeline: "Entrée par entrée",
+    timeline: "Les entrées, une à une",
     places_: "Par où la route est passée",
     empty: "La route commence avec la première entrée.",
     read: "Lire",
-    day: (n: number) => (n === 1 ? "1 jour" : `${n} jours`),
+    day: (n: number) => (n < 2 ? `${n} jour` : `${n} jours`),
   },
   upload: {
     title: "Envoyer un fichier de sauvegarde",
@@ -484,7 +486,7 @@ const fr: Strings = {
     drop: "Déposez Hearthtale.lua ici",
     choose: "Choisir le fichier",
     reading: "Lecture du fichier…",
-    found: (name: string, n: number) => `Livre de ${name}\u00a0: ${n === 1 ? "1 entrée" : `${n} entrées`}.`,
+    found: (name: string, n: number) => `Livre de ${name}\u00a0: ${n < 2 ? `${n} entrée` : `${n} entrées`}.`,
     send: "L'ajouter à ma bibliothèque",
     sending: "Envoi…",
     saved: "Dans votre bibliothèque.",
@@ -536,7 +538,7 @@ const fr: Strings = {
   },
   hall: {
     title: "Salle des Défunts",
-    intro: "Des vies en mode Extrême qui ont pris fin, montrées ici parce que leurs joueurs l'ont choisi. Chacune a son épitaphe et son livre à lire.",
+    intro: "Ici reposent des vies en mode Extrême arrivées à leur terme, montrées parce que leurs joueurs l'ont voulu. Chacune a son épitaphe et son livre à lire.",
     empty: "Aucun livre clos n'a encore rejoint la Salle.",
     read: "Lire le livre",
   },
@@ -544,7 +546,7 @@ const fr: Strings = {
     title: "Réglages",
     appearance: "Apparence",
     site: "Le site",
-    sites: { system: "Identique à l'appareil", light: "Clair", dark: "Sombre" } as Record<string, string>,
+    sites: { system: "Comme l'appareil", light: "Clair", dark: "Sombre" } as Record<string, string>,
     reading: "Lecture",
     preview:
       "J'ai atteint Kharanos et pris une chambre à la Distillerie Thunderbrew. Plus tard dans la journée, j'ai gagné la Crête scintillante et réglé son compte à un Marche-neige Frostmane.",
@@ -576,7 +578,7 @@ const fr: Strings = {
       },
       {
         title: "Qui lit vos livres",
-        text: "Personne d'autre que vous, sauf si vous partagez un lien (toute personne qui l'a peut lire ce qu'il couvre) ou si vous montrez un livre clos dans la Salle (tout le monde peut l'y lire). Vos notes dans les marges restent les vôtres dans tous les cas. Révoquez un lien, ou retirez un livre de la Salle, à tout moment.",
+        text: "Personne d'autre que vous, sauf si vous partagez un lien (toute personne qui l'a peut lire ce qu'il donne à lire) ou si vous montrez un livre clos dans la Salle (tout le monde peut l'y lire). Vos notes dans les marges restent les vôtres dans tous les cas. Révoquez un lien, ou retirez un livre de la Salle, à tout moment.",
       },
       {
         title: "Cookies",
@@ -633,7 +635,7 @@ export function useLocale(): string {
   return CATALOGS[useLang()].locale;
 }
 
-/** The interface's frame: the lines that name a character in the library, in the site's language (a book's own is its language's, `frameFor(book.language)`). */
+/** The interface's frame: every label around a book (its entries, levels, dates, race and class), in the site's language, as the game's window follows the client; the book's own words keep theirs (`langOf(book.language)` tags them). */
 export function useFrame(): Frame {
   return frameFor(CATALOGS[useLang()].language);
 }

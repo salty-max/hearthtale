@@ -26,17 +26,26 @@ Plan and steps: PLAN.md, "The site".
   family's interface register, vous and nothing agreeing with the reader; none
   chosen, the browser's first language that has one; `<html lang>` follows
   it). The
-  interface and the books are two languages: a book is framed in its own
-  (`Book.language`, "enUS" or "frFR", an old book English) by
-  `packages/shared/src/frame.ts` (`frameFor(language)`: "Entry 3" or "Entrée 3",
-  prologue, epitaph, the levels line, "to" between dates, a note's label,
-  "The journal of X", the race and class with a woman's names from
-  `Book.sex`, the push and preview-card sentences), wherever the book's own
-  words or its parts are named (reader, contents, print, Markdown and EPUB
-  with their `lang` and `dc:language`, the road's entries, a library card's
-  latest entry, the Hall's epitaph, shared pages and their preview card,
-  `lang` set on the book's text); the interface's own frame
-  (`useFrame()`) names a character in the library. A language switch in the
+  interface and the books are two languages, as in the game (3 November
+  2026, the user's rule: the window's labels follow the client, the
+  journal's prose its own language). Every label around a book is the
+  interface's, `packages/shared/src/frame.ts` in the site's language
+  (`useFrame()`: "Entry 3" or "Entrée 3", prologue, epitaph, the levels line,
+  "to" between dates, a note's label, "The journal of X", the race and class
+  with a woman's names), in the reader, contents, print, Markdown and EPUB,
+  the road, a library card, the Hall, shared pages. The book's language
+  (`Book.language`, "enUS" or "frFR", an old book English) only tags its own
+  words with `lang` (`langOf`; `partLang` for a part's title: an entry's own
+  title is the book's, "Entrée 3" the site's), and is the EPUB's
+  `dc:language`. A push is worded in its device's site language
+  (`push_subscriptions.language`, sent again on a change; one kept before
+  it: the book's), a preview card in the crawler's Accept-Language
+  (`frameLanguage`), else the book's. The sex the names agree with is the
+  book's (`Book.sex`), else Battle.net's (`characters.sex`, from the
+  sign-in's profile, kept per owned character in `accounts.owned`'s `women`
+  and `men`, which Ravenpost's sign-in leaves as they were), else none:
+  French's masculine. It is never shown as such (the user's choice, 3
+  November 2026), only agreed with. A language switch in the
   game writes the whole journal again: the upload replaces the book, tells
   no "new entry" (`finishedSince`), and keeps share links (an entry number
   that is gone reads "gone"); the look
@@ -87,7 +96,7 @@ Plan and steps: PLAN.md, "The site".
   `bun run db:seed` (the test characters), `bun run dev` (api :3002, web :5175).
   The landing (`routes/Home.tsx`) shows a page of each sample journal, one
   voice at a time (`lib/samples.ts`: the writer's own, never edited by hand;
-  one of them French, framed in French whatever the site's language).
+  one of them French: its words in French, the labels around them the site's).
   The library (`/library`) and the reader (`/book/:id/:part`: one part per
   page, the contents in a drawer; `/book/:id` opens the part to read).
 - Accounts (`lib/accounts.ts`, `lib/login.ts`): "Sign in with Battle.net" in a
