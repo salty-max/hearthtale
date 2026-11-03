@@ -11,6 +11,8 @@ export type SiteTheme = "system" | "light" | "dark";
 /** lang: a language code, checked against the catalogs where it is used (lib/i18n.ts: no import cycle). */
 export type Settings = {
   lang: string;
+  /** The language picked on /settings: until then, `lang` is unset (a saved "en" was the default written with any other setting, the picker hidden till November 2026). */
+  langChosen: boolean;
   size: ReaderSize;
   font: ReaderFont;
   theme: ReaderTheme;
@@ -33,7 +35,8 @@ const pick = <T extends string>(v: unknown, allowed: T[], fallback: T): T => (al
 export function parseSettings(saved: unknown): Settings {
   const s = (saved && typeof saved === "object" ? saved : {}) as Record<string, unknown>;
   return {
-    lang: typeof s.lang === "string" ? s.lang : "en",
+    lang: s.langChosen === true && typeof s.lang === "string" ? s.lang : "", // (none chosen: the browser's, lib/i18n.ts)
+    langChosen: s.langChosen === true,
     size: pick(s.size, SIZES, "m"),
     font: pick(({ serif: "book", sans: "plain" } as Record<string, string>)[s.font as string] ?? s.font, FONTS, "book"),
     theme: pick(s.theme, THEMES, "parchment"),
@@ -57,7 +60,7 @@ export function getSettings(): Settings {
 }
 
 export function setSettings(patch: Partial<Settings>): void {
-  current = { ...current, ...patch };
+  current = { ...current, ...patch, ...("lang" in patch ? { langChosen: true } : {}) };
   try {
     localStorage.setItem(KEY, JSON.stringify(current));
   } catch {

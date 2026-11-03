@@ -113,7 +113,7 @@ const fr: Frame = {
   epitaph: "Épitaphe",
   contents: "Sommaire",
   chapter: (n) => `Entrée ${n}`,
-  stillWriting: "en cours d’écriture",
+  stillWriting: "en cours d'écriture",
   theEnd: "la fin",
   levels: (a, b) => (a === b ? `niveau ${a}` : `niveaux ${a} à ${b}`),
   to: "au",

@@ -22,7 +22,10 @@ Plan and steps: PLAN.md, "The site".
   language code in `lib/settings.ts` (per device), set on `/settings`. Routes
   in `src/router.tsx`, each page its title (`lib/title.ts`); every visible
   string in `src/lib/i18n.ts` (a catalog typed on `en` in CATALOGS, with its
-  locale for dates; the language setting shows once there are two). The
+  locale for dates: English and French since 3 November 2026, French in the
+  family's interface register, vous and nothing agreeing with the reader; none
+  chosen, the browser's first language that has one; `<html lang>` follows
+  it). The
   interface and the books are two languages: a book is framed in its own
   (`Book.language`, "enUS" or "frFR", an old book English) by
   `packages/shared/src/frame.ts` (`frameFor(language)`: "Entry 3" or "Entrée 3",

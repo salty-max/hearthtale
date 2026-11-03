@@ -6,7 +6,7 @@ import { LinkCharacter } from "@/components/LinkCharacter";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { UpdatePrompt } from "@/components/UpdatePrompt";
 import { useMe } from "@/lib/api";
-import { useT } from "@/lib/i18n";
+import { useLang, useT } from "@/lib/i18n";
 import { isReading, pageOf } from "@/lib/reading";
 import { useSiteTheme } from "@/lib/theme";
 
@@ -29,6 +29,11 @@ export function Layout() {
   useEffect(() => {
     document.documentElement.classList.toggle("reading", reading);
   }, [reading]);
+  // (the page's language: the interface's, each book's text marked with its own)
+  const lang = useLang();
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
   const tabs = [
     { to: "/library", label: t.nav.library, icon: BookOpen },
     { to: "/hall", label: t.nav.hall, icon: Skull },

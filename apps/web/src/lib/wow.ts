@@ -19,7 +19,8 @@ export function crestOf(token: string): string | undefined {
 
 /** "Dwarf Hunter" ("Chasseresse naine"), in a frame's language. */
 export function raceClassLine(f: Frame, c: Pick<CharacterSummary, "race" | "class" | "sex">): string {
-  return f.raceClass(c.race, c.class, c.sex);
+  const line = f.raceClass(c.race, c.class, c.sex);
+  return line.charAt(0).toUpperCase() + line.slice(1); // (French's starts lowercase: "chasseresse naine")
 }
 
 /** "Level 12 Dwarf Hunter" ("Niveau 12 chasseur nain"), from the game's tokens, in a frame's language. */

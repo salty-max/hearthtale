@@ -104,6 +104,7 @@ function Samples() {
               <span className="ui block text-xs opacity-80">
                 {raceClassLine(fi, x)}
                 {x.part === "epitaph" ? ` · ${t.library.fallen}` : ""}
+                {x.language === "frFR" ? ` · ${t.home.inFrench}` : ""}
               </span>
             </span>
           </button>
