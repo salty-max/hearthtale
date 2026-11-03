@@ -77,7 +77,7 @@ German and Spanish (deDE, esES, esMX) are held back from players since 1 Novembe
   trade's, a riding's, a talent tree's, a creature type's and family's and a
   flight master's name in every language; every area, dungeon, boss and
   class or trade spell by id (and a few the game took off their line since,
-  a journal may hold them: `KEPT_SPELLS`); Forever's specializations named after the
+  a journal may hold them: `KEPT_SPELLS`, and `RETIRED_SPELLS` for those the client dropped from its tables altogether, their last English names kept in the script and their French in `i18n/frFR/names.json`); Forever's specializations named after the
   class; by id, English, the trades and ridings, the creature types and
   families, the flight points, the talent trees, the places inside buildings
   (`i18n/enUS/subzones.json`, the kit's) and the mounts' auras, for the saved

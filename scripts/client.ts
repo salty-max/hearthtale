@@ -97,8 +97,26 @@ const CLASSES: [number, string][] = [
 // still the client's own at the pin, a build that drops one fails here.
 const KEPT_SPELLS: Record<keyof typeof GAMES, string[]> = {
   classic: [],
-  // Frost Blast, off the mage's Frost line at 1.60.1.70707
-  forever: ["1326053", "1326054", "1326055"],
+  // Frost Blast, off the mage's Frost line at 1.60.1.70707, and Savage and
+  // Primal Bite, off theirs at 1.60.1.70755
+  forever: ["1326053", "1326054", "1326055", "20574", "1238073"],
+};
+
+// Spells the client dropped from its tables altogether (Forever 1.60.1.70755:
+// the paladin's Blessings of Light and Salvation, Revoke), no longer named by
+// it: their last English names, kept so a journal that holds the id still
+// reads it back.
+const RETIRED_SPELLS: Record<keyof typeof GAMES, Record<string, string>> = {
+  classic: {},
+  forever: {
+    "1038": "Salvation",
+    "19977": "Blessing of Light",
+    "19978": "Blessing of Light",
+    "19979": "Blessing of Light",
+    "25890": "Greater Blessing of Light",
+    "25895": "Mass Salvation",
+    "1325499": "Revoke",
+  },
 };
 
 // The game's creatures and quests in English by id, from the audit's data
@@ -207,6 +225,10 @@ for (const game of Object.keys(GAMES) as (keyof typeof GAMES)[]) {
   const wanted = new Set((await table(game, "SkillLineAbility")).filter((r) => lines.has(r.SkillLine)).map((r) => r.Spell));
   for (const id of KEPT_SPELLS[game]) wanted.add(id);
   const spells = (await table(game, "SpellName")).filter((r) => wanted.has(r.ID) && r.Name_lang);
+  for (const [id, name] of Object.entries(RETIRED_SPELLS[game])) {
+    if (spells.some((r) => r.ID === id)) throw new Error(`${game}: spell ${id} is named again, drop it from RETIRED_SPELLS`);
+    spells.push({ ID: id, Name_lang: name });
+  }
   const unnamed = KEPT_SPELLS[game].filter((id) => !spells.some((r) => r.ID === id));
   if (unnamed.length) throw new Error(`${game}: kept spells the client no longer names: ${unnamed.join(", ")}`);
   // the mounts' auras (the aura that mounts, 78)

@@ -14,5 +14,35 @@
       "a": "l'",
       "p": "sur"
     }
+  },
+  "spells": {
+    "1038": {
+      "n": "Salut",
+      "g": "m"
+    },
+    "19977": {
+      "n": "Bénédiction de lumière",
+      "g": "f"
+    },
+    "19978": {
+      "n": "Bénédiction de lumière",
+      "g": "f"
+    },
+    "19979": {
+      "n": "Bénédiction de lumière",
+      "g": "f"
+    },
+    "25890": {
+      "n": "Bénédiction de lumière supérieure",
+      "g": "f"
+    },
+    "25895": {
+      "n": "Salut collectif",
+      "g": "m"
+    },
+    "1325499": {
+      "n": "Révocation",
+      "g": "f"
+    }
   }
 }
