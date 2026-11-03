@@ -52,6 +52,8 @@ export type Book = {
   client: Client;
   /** The journal's language (a book saved before it was kept: English). */
   language?: Language;
+  /** The character's sex as the game counts it (2 a man, 3 a woman): French names agree with it. */
+  sex?: 2 | 3;
   /** Unix seconds: when it was written. */
   at: number;
   level?: number;
@@ -75,6 +77,9 @@ export type CharacterSummary = {
   race: string;
   class: string;
   client: Client;
+  /** The book's language and the character's sex (its frame: lib/frame.ts). */
+  language?: Language;
+  sex?: 2 | 3;
   level: number;
   hardcore: boolean;
   fallen: boolean;
@@ -108,7 +113,7 @@ export type UploadResult = { characters: { guid: string; name: string; status: U
 // ── sharing ─────────────────────────────────────────────────────────────────
 
 /** Who a shared book belongs to: what the page shows, nothing private. */
-export type PublicCharacter = Pick<CharacterSummary, "name" | "realm" | "region" | "race" | "class" | "level" | "hardcore" | "fallen">;
+export type PublicCharacter = Pick<CharacterSummary, "name" | "realm" | "region" | "race" | "class" | "level" | "hardcore" | "fallen" | "language" | "sex">;
 
 /** A share link of one of my books: the whole book (no part) or one part ("prologue", "3", "epitaph"). */
 export type Share = { token: string; part?: string; url: string; createdAt: string };
@@ -118,3 +123,5 @@ export type SharedBook = { character: PublicCharacter; book: Book; part?: string
 
 /** A life in the public Hall of the Fallen. */
 export type HallEntry = { id: number; character: PublicCharacter; epitaph?: string; chapters: number; diedAt?: number };
+
+export { frameFor, type Frame, type Sex } from "./frame";

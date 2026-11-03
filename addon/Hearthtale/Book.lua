@@ -211,6 +211,8 @@ local function named(name, language)
   return name
 end
 
+ns.named = named -- (Save.lua writes the saved book's places so)
+
 -- A book's chapters as rows (indent: under a fallen life's name).
 local function chapterRows(entries, w, selectedKey, open, indent)
   if w.epitaph and indent then

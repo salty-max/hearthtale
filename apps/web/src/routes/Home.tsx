@@ -1,14 +1,15 @@
+import { frameFor } from "@hearthtale/shared";
 import { Link } from "@tanstack/react-router";
 import { BookOpen, Feather, Flame, Skull } from "lucide-react";
 import { useState } from "react";
 import { Crest } from "@/components/Crest";
 import { Flourish } from "@/components/Flourish";
 import { paragraphs } from "@/lib/book";
-import { useT } from "@/lib/i18n";
+import { useFrame, useT } from "@/lib/i18n";
 import { SAMPLES } from "@/lib/samples";
 import { readerClasses, useSettings } from "@/lib/settings";
 import { useTitle } from "@/lib/title";
-import { raceClass } from "@/lib/wow";
+import { raceClassLine } from "@/lib/wow";
 
 const FEATURE_ICONS = [Feather, BookOpen, Flame];
 
@@ -66,6 +67,7 @@ export function Home() {
 /** A page of each sample journal, one voice at a time, as the reader shows it. */
 function Samples() {
   const t = useT();
+  const fi = useFrame();
   const settings = useSettings();
   const [at, setAt] = useState(0);
   const s = SAMPLES[at];
@@ -73,10 +75,12 @@ function Samples() {
   const cls = readerClasses(settings);
   const fallenColour = settings.theme === "night" ? "text-[#e0705f]" : "text-fallen";
   const epitaph = s.part === "epitaph";
+  // (the journal's words in its own language: the page, its title and the line under it)
+  const fb = frameFor(s.language);
   // "Entry 2 · Kharanos · levels 4 to 7", as the reader writes it
   const sub = epitaph
-    ? [raceClass(t, s), t.library.hardcore, t.book.theEnd].join(" · ")
-    : [s.title ? t.book.chapter(s.number ?? 0) : undefined, s.place, t.book.levels(s.from ?? 0, s.to ?? 0)].filter(Boolean).join(" · ");
+    ? [raceClassLine(fb, s), fb.hardcore, fb.theEnd].join(" · ")
+    : [s.title ? fb.chapter(s.number ?? 0) : undefined, s.place, fb.levels(s.from ?? 0, s.to ?? 0)].filter(Boolean).join(" · ");
   return (
     <section id="samples" aria-labelledby="samples-title" className="mx-auto mt-12 mb-6 max-w-2xl scroll-mt-4">
       <h2 id="samples-title" className="title-gilded text-center text-3xl">
@@ -98,16 +102,16 @@ function Samples() {
             <span>
               <span className="block font-display font-semibold">{x.name}</span>
               <span className="ui block text-xs opacity-80">
-                {raceClass(t, x)}
+                {raceClassLine(fi, x)}
                 {x.part === "epitaph" ? ` · ${t.library.fallen}` : ""}
               </span>
             </span>
           </button>
         ))}
       </div>
-      <article key={s.name} className={`${cls.page} fade-in mt-5 rounded-md px-6 py-8 sm:px-12 sm:py-10`}>
+      <article key={s.name} lang={fb.lang} className={`${cls.page} fade-in mt-5 rounded-md px-6 py-8 sm:px-12 sm:py-10`}>
         <header className="text-center">
-          <h3 className={epitaph ? `title text-3xl ${fallenColour}` : "title page-title text-3xl"}>{epitaph ? s.name : (s.title ?? t.book.chapter(s.number ?? 0))}</h3>
+          <h3 className={epitaph ? `title text-3xl ${fallenColour}` : "title page-title text-3xl"}>{epitaph ? s.name : (s.title ?? fb.chapter(s.number ?? 0))}</h3>
           <p className="page-faded mt-1 text-lg italic">{sub}</p>
           <Flourish className="page-title mt-3 opacity-70" />
         </header>

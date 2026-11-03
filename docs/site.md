@@ -21,9 +21,22 @@ Plan and steps: PLAN.md, "The site".
   typeface: a printed book's or plain; paper, line spacing) and the
   language code in `lib/settings.ts` (per device), set on `/settings`. Routes
   in `src/router.tsx`, each page its title (`lib/title.ts`); every visible
-  string in `src/lib/i18n.ts` (English only for now, the books being English:
-  another language is one more catalog typed on `en` in CATALOGS, with its
-  locale for dates; the language setting shows once there are two); the look
+  string in `src/lib/i18n.ts` (a catalog typed on `en` in CATALOGS, with its
+  locale for dates; the language setting shows once there are two). The
+  interface and the books are two languages: a book is framed in its own
+  (`Book.language`, "enUS" or "frFR", an old book English) by
+  `packages/shared/src/frame.ts` (`frameFor(language)`: "Entry 3" or "Entrée 3",
+  prologue, epitaph, the levels line, "to" between dates, a note's label,
+  "The journal of X", the race and class with a woman's names from
+  `Book.sex`, the push and preview-card sentences), wherever the book's own
+  words or its parts are named (reader, contents, print, Markdown and EPUB
+  with their `lang` and `dc:language`, the road's entries, a library card's
+  latest entry, the Hall's epitaph, shared pages and their preview card,
+  `lang` set on the book's text); the interface's own frame
+  (`useFrame()`) names a character in the library. A language switch in the
+  game writes the whole journal again: the upload replaces the book, tells
+  no "new entry" (`finishedSince`), and keeps share links (an entry number
+  that is gone reads "gone"); the look
   in `src/index.css` (the in-game book: leather lit by a hearth, or a scribe's
   desk by day; parchment pages; the addon's gold; three faces, as
   WoWLocker's: Cinzel for titles and names (`font-display`), EB Garamond for
@@ -70,7 +83,8 @@ Plan and steps: PLAN.md, "The site".
 - Local: `bun run db` (Postgres on :5435), `bun run db:migrate`,
   `bun run db:seed` (the test characters), `bun run dev` (api :3002, web :5175).
   The landing (`routes/Home.tsx`) shows a page of each sample journal, one
-  voice at a time (`lib/samples.ts`: the writer's own, never edited by hand).
+  voice at a time (`lib/samples.ts`: the writer's own, never edited by hand;
+  one of them French, framed in French whatever the site's language).
   The library (`/library`) and the reader (`/book/:id/:part`: one part per
   page, the contents in a drawer; `/book/:id` opens the part to read).
 - Accounts (`lib/accounts.ts`, `lib/login.ts`): "Sign in with Battle.net" in a

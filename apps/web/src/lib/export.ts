@@ -1,7 +1,6 @@
-import type { Book, PublicCharacter } from "@hearthtale/shared";
+import type { Book, Frame, PublicCharacter } from "@hearthtale/shared";
 import { paragraphs, partSub, partTitle, parts, type Part } from "@/lib/book";
-import type { Strings } from "@/lib/i18n";
-import { raceClass, realmName } from "@/lib/wow";
+import { realmName } from "@/lib/wow";
 import { zip } from "@/lib/zip";
 
 /**
@@ -28,19 +27,19 @@ export function fileName(who: Who): string {
   return `${who.name.normalize("NFD").replace(/[^\w-]+/g, "")}-journal`;
 }
 
-function about(t: Strings, who: Who): string {
-  return [`${t.library.level(who.level)} ${raceClass(t, who)}`, realmName(t, who)].filter(Boolean).join(" · ");
+function about(f: Frame, who: Who, book: Book): string {
+  return [f.about(who.level, who.race, who.class, book.sex ?? who.sex), realmName(who)].filter(Boolean).join(" · ");
 }
 
-export function markdown(t: Strings, locale: string, who: Who, book: Book): string {
-  const out = [`# ${t.exports.by(who.name)}`, "", `*${about(t, who)}*`, ""];
+export function markdown(f: Frame, who: Who, book: Book): string {
+  const out = [`# ${f.by(who.name)}`, "", `*${about(f, who, book)}*`, ""];
   for (const p of parts(book)) {
-    out.push(`## ${partTitle(t, book, p)}`, "");
-    const sub = partSub(t, locale, who, book, p);
+    out.push(`## ${partTitle(f, book, p)}`, "");
+    const sub = partSub(f, who, book, p);
     if (sub) out.push(`*${sub}*`, "");
     for (const para of paragraphs(textOf(book, p))) out.push(para, "");
     const note = noteOf(book, p);
-    if (note.length) out.push(`> **${t.book.note}**`, ...note.map((l) => `> ${l}`), "");
+    if (note.length) out.push(`> **${f.note}**`, ...note.map((l) => `> ${l}`), "");
   }
   return out.join("\n");
 }
@@ -67,28 +66,28 @@ ${body}
 }
 
 /** The book as an EPUB 3: a title page, then each part a page of its own, and their contents. */
-export function epub(t: Strings, locale: string, who: Who, book: Book, id: string): Uint8Array {
-  const lang = locale.slice(0, 2);
-  const title = t.exports.by(who.name);
+export function epub(f: Frame, who: Who, book: Book, id: string): Uint8Array {
+  const lang = f.lang;
+  const title = f.by(who.name);
   const all = parts(book);
-  const files = all.map((p, i) => ({ p, file: `part-${i + 1}.xhtml`, title: partTitle(t, book, p) }));
+  const files = all.map((p, i) => ({ p, file: `part-${i + 1}.xhtml`, title: partTitle(f, book, p) }));
   const pages = files.map(({ p, file, title: name }) => {
-    const sub = partSub(t, locale, who, book, p);
+    const sub = partSub(f, who, book, p);
     const note = noteOf(book, p);
     const body = [
       `<section class="${p.kind}" epub:type="chapter">`,
       `<h2>${xml(name)}</h2>`,
       sub ? `<p class="sub">${xml(sub)}</p>` : "",
       ...paragraphs(textOf(book, p)).map((para) => `<p>${xml(para)}</p>`),
-      note.length ? `<div class="note"><p class="note-title">${xml(t.book.note)}</p>${note.map((l) => `<p>${xml(l)}</p>`).join("")}</div>` : "",
+      note.length ? `<div class="note"><p class="note-title">${xml(f.note)}</p>${note.map((l) => `<p>${xml(l)}</p>`).join("")}</div>` : "",
       "</section>",
     ].join("\n");
     return { name: `OEBPS/${file}`, data: page(name, body, lang) };
   });
-  const cover = page(title, `<h1>${xml(title)}</h1>\n<p class="sub">${xml(about(t, who))}</p>`, lang);
+  const cover = page(title, `<h1>${xml(title)}</h1>\n<p class="sub">${xml(about(f, who, book))}</p>`, lang);
   const nav = page(
-    t.book.contents,
-    `<nav epub:type="toc"><h2>${xml(t.book.contents)}</h2><ol>${files.map((f) => `<li><a href="${f.file}">${xml(f.title)}</a></li>`).join("")}</ol></nav>`,
+    f.contents,
+    `<nav epub:type="toc"><h2>${xml(f.contents)}</h2><ol>${files.map((f) => `<li><a href="${f.file}">${xml(f.title)}</a></li>`).join("")}</ol></nav>`,
     lang,
   );
   const modified = new Date(book.at * 1000).toISOString().replace(/\.\d+Z$/, "Z");

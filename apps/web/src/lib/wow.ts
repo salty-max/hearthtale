@@ -1,5 +1,4 @@
-import type { CharacterSummary } from "@hearthtale/shared";
-import type { Strings } from "@/lib/i18n";
+import type { CharacterSummary, Frame } from "@hearthtale/shared";
 
 /** The game's classes, by their tokens. */
 export const CLASSES = ["WARRIOR", "PALADIN", "HUNTER", "ROGUE", "PRIEST", "SHAMAN", "MAGE", "WARLOCK", "DRUID"] as const;
@@ -18,14 +17,21 @@ export function crestOf(token: string): string | undefined {
   return (CLASSES as readonly string[]).includes(token) ? `/classes/${token.toLowerCase()}.png` : undefined;
 }
 
-/** "Dwarf Hunter" ("Chasseur nain"), from the game's tokens. */
-export function raceClass(t: Strings, c: Pick<CharacterSummary, "race" | "class">): string {
-  return t.raceClass(t.races[c.race] ?? c.race, t.classes[c.class] ?? c.class);
+/** "Dwarf Hunter" ("Chasseresse naine"), in a frame's language. */
+export function raceClassLine(f: Frame, c: Pick<CharacterSummary, "race" | "class" | "sex">): string {
+  return f.raceClass(c.race, c.class, c.sex);
 }
 
+/** "Level 12 Dwarf Hunter" ("Niveau 12 chasseur nain"), from the game's tokens, in a frame's language. */
+export function aboutLine(f: Frame, c: Pick<CharacterSummary, "race" | "class" | "level" | "sex">): string {
+  return f.about(c.level, c.race, c.class, c.sex);
+}
+
+const REGIONS: Record<number, string> = { 1: "US", 2: "KR", 3: "EU", 4: "TW", 5: "CN" };
+
 /** "Nightslayer (US)". */
-export function realmName(t: Strings, c: Pick<CharacterSummary, "realm" | "region">): string | undefined {
+export function realmName(c: Pick<CharacterSummary, "realm" | "region">): string | undefined {
   if (!c.realm) return undefined;
-  const region = c.region ? t.regions[c.region] : undefined;
+  const region = c.region ? REGIONS[c.region] : undefined;
   return region ? `${c.realm} (${region})` : c.realm;
 }

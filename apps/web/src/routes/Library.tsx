@@ -1,4 +1,4 @@
-import type { CharacterSummary } from "@hearthtale/shared";
+import { frameFor, type CharacterSummary } from "@hearthtale/shared";
 import { Link, useSearch } from "@tanstack/react-router";
 import { Map as MapIcon, Sparkles, Upload } from "lucide-react";
 import { useEffect } from "react";
@@ -8,10 +8,10 @@ import { LoadError, Loading } from "@/components/PageState";
 import { SignIn } from "@/components/SignIn";
 import { useLibrary, useMe } from "@/lib/api";
 import { ago } from "@/lib/dates";
-import { useLocale, useT } from "@/lib/i18n";
+import { useFrame, useLocale, useT } from "@/lib/i18n";
 import { isNew, rememberUnseen, useSeen } from "@/lib/seen";
 import { useTitle } from "@/lib/title";
-import { classColour, raceClass, realmName } from "@/lib/wow";
+import { aboutLine, classColour, realmName } from "@/lib/wow";
 
 /** The signed-in account's characters, the last written to first; signing in first (more are linked from the top bar). */
 export function Library() {
@@ -59,11 +59,13 @@ export function Library() {
 /** A book on the shelf: who, how they stand, the latest entry, what came since this device last read it. */
 function BookCard({ c }: { c: CharacterSummary }) {
   const t = useT();
+  const f = useFrame();
+  const fb = frameFor(c.language);
   const locale = useLocale();
   const seen = useSeen()[c.id];
   const fresh = isNew(seen, c.chapters, c.latest?.at);
   const latest = c.latest;
-  const latestTitle = latest ? (latest.title ?? t.book.chapter(latest.number)) : undefined;
+  const latestTitle = latest ? (latest.title ?? fb.chapter(latest.number)) : undefined;
   return (
     <article className="panel panel-link relative flex h-full flex-col p-4">
       <div className="flex items-start gap-3">
@@ -81,8 +83,8 @@ function BookCard({ c }: { c: CharacterSummary }) {
             {(c.fallen || c.hardcore) && <HardcoreMark fallen={c.fallen} className="ml-auto shrink-0" />}
           </div>
           <p className="text-parchment/75">
-            {t.library.level(c.level)} {raceClass(t, c)}
-            {realmName(t, c) && ` · ${realmName(t, c)}`}
+            {aboutLine(f, c)}
+            {realmName(c) && ` · ${realmName(c)}`}
             {c.client === "forever" && ` · ${t.library.forever}`}
           </p>
         </div>
@@ -90,7 +92,7 @@ function BookCard({ c }: { c: CharacterSummary }) {
       {latest && (
         <div className="mt-3 border-t border-gold/15 pt-3">
           <p className="flex items-center gap-2">
-            <span className="truncate font-medium text-gold-bright">{latestTitle}</span>
+            <span lang={fb.lang} className="truncate font-medium text-gold-bright">{latestTitle}</span>
             {fresh && (
               <span className="tag shrink-0 text-gold-bright">
                 <Sparkles className="size-3" aria-hidden />
@@ -99,7 +101,10 @@ function BookCard({ c }: { c: CharacterSummary }) {
             )}
           </p>
           <p className="truncate text-sm text-parchment/60">
-            {[t.library.latest, latest.title ? t.book.chapter(latest.number) : undefined, latest.open ? t.book.stillWriting : latest.place].filter(Boolean).join(" · ")}
+            {t.library.latest}
+            {[latest.title ? fb.chapter(latest.number) : undefined, latest.open ? fb.stillWriting : latest.place].some(Boolean) && (
+              <span lang={fb.lang}> · {[latest.title ? fb.chapter(latest.number) : undefined, latest.open ? fb.stillWriting : latest.place].filter(Boolean).join(" · ")}</span>
+            )}
           </p>
         </div>
       )}

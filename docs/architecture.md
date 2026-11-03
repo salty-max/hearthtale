@@ -303,6 +303,8 @@ path, the player's titles and notes kept). Every line has its French
 (`FRENCH_COMPLETE`, scripts/build.ts: a line without fails the build); the
 setting is shown when the French journal's addon is there. The record is the facts (moments, ids, the character's sex), so any
 journal can be told again in either language.
+The saved book carries `language` and `sex` (Save.lua), for the site to frame
+the journal in the language it was written in (`docs/site.md`).
 
 - The writer chooses every line in English as ever (Lines.lua, Diary.lua:
   the English output byte for byte the same, `addon:golden`); each line told

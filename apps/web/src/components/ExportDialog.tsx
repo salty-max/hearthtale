@@ -1,14 +1,14 @@
-import type { Book, PublicCharacter } from "@hearthtale/shared";
+import { frameFor, type Book, type PublicCharacter } from "@hearthtale/shared";
 import { BookMarked, FileText, Printer } from "lucide-react";
 import type { ReactNode } from "react";
 import { Dialog } from "@/components/Dialog";
 import { epub, fileName, markdown, save } from "@/lib/export";
-import { useLocale, useT } from "@/lib/i18n";
+import { useT } from "@/lib/i18n";
 
 /** Downloading one of my books: printed (or saved as a PDF), an EPUB, or text. */
 export function ExportDialog({ open, onClose, character, book, id }: { open: boolean; onClose: () => void; character: PublicCharacter; book: Book; id: number }) {
   const t = useT();
-  const locale = useLocale();
+  const f = frameFor(book.language);
   const choice = (icon: ReactNode, label: string, hint: string, go: () => void) => (
     <li>
       <button
@@ -33,10 +33,10 @@ export function ExportDialog({ open, onClose, character, book, id }: { open: boo
         {/* (the print window opens once the dialog is closed, so it isn't printed too) */}
         {choice(<Printer className="size-5" aria-hidden />, t.exports.pdf, t.exports.pdfHint, () => setTimeout(() => window.print(), 50))}
         {choice(<BookMarked className="size-5" aria-hidden />, t.exports.epub, t.exports.epubHint, () =>
-          save(`${fileName(character)}.epub`, epub(t, locale, character, book, String(id)), "application/epub+zip"),
+          save(`${fileName(character)}.epub`, epub(f, character, book, String(id)), "application/epub+zip"),
         )}
         {choice(<FileText className="size-5" aria-hidden />, t.exports.markdown, t.exports.markdownHint, () =>
-          save(`${fileName(character)}.md`, markdown(t, locale, character, book), "text/markdown;charset=utf-8"),
+          save(`${fileName(character)}.md`, markdown(f, character, book), "text/markdown;charset=utf-8"),
         )}
       </ul>
     </Dialog>

@@ -43,6 +43,13 @@ describe("upload", () => {
     expect(parseBook({ client: "classic", at: 1, chapters: [{ text: "no number" }] })).toBeNull();
     expect(parseBook({ client: "classic", at: 1, chapters: [{ number: 1, text: "x".repeat(200_000) }] })!.chapters[0].text).toBeUndefined();
   });
+  test("a book's language and the character's sex, or nothing", () => {
+    const b = (extra: object) => parseBook({ client: "classic", at: 1, chapters: [], ...extra })!;
+    expect(b({ language: "frFR", sex: 3 })).toMatchObject({ language: "frFR", sex: 3 });
+    expect(b({ language: "enUS", sex: 2 })).toMatchObject({ language: "enUS", sex: 2 });
+    expect(b({ language: "deDE", sex: 1 })).toMatchObject({ language: undefined, sex: undefined });
+    expect(b({})).toMatchObject({ language: undefined, sex: undefined }); // (a book saved before they were kept: English)
+  });
   test("the player's own note in an entry's margin", () => {
     const [ch] = parseBook({ client: "classic", at: 1, chapters: [{ number: 1, diary: "The entry.", note: "Cold, all of it." }] })!.chapters;
     expect(ch.note).toBe("Cold, all of it.");

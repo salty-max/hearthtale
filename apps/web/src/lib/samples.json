@@ -58,5 +58,20 @@
     "part": "epitaph",
     "race": "Gnome",
     "text": "A Frostmane Shadowcaster ended the life of Pippa, a gnome mage, in Frostmane Hold at level six. Pippa had completed five tasks and fought thirty-three foes, with most of the world still to see. May Pippa be remembered for more than this last loss."
+  },
+  {
+    "class": "WARRIOR",
+    "from": 1,
+    "hardcore": false,
+    "language": "frFR",
+    "name": "Grashnak",
+    "number": 1,
+    "part": "entry",
+    "place": "Tranchecolline",
+    "race": "Orc",
+    "sex": 3,
+    "text": "J'ai fait mes premiers pas dans la Vallée des épreuves, avec la nouvelle patrie de Thrall pour foyer et aucune envie de la payer en vantardises creuses. La chaleur montait de la poussière rouge de Durotar, comme si le sol lui-même respirait. C'était la terre que nous avions revendiquée, et je comptais apprendre à lui appartenir. Un soldat de marine de Kul Tiras a bien failli m'achever dans le donjon de Tiragarde, et j'ai senti combien un nom redoutable pèse peu face à une lame. J'ai chassé du donjon de Tiragarde le lieutenant Benedict et ses hommes de Kul Tiras, qui l'avaient repris au mépris du pacte du chef de guerre. À Tranchecolline, la caserne et la tour de guet dominaient la route, et des navires de Kul Tiras mouillaient au large. J'ai compris pourquoi la ville ne semblait jamais tranquille. Je me suis reposée à Tranchecolline, et j'ai laissé aux ancêtres le soin de juger mon soulagement sans honte.",
+    "title": "Vaincre les traîtres",
+    "to": 5
   }
 ]

@@ -78,6 +78,7 @@ export function parseBook(v: unknown): Book | null {
     version: str(b.version, 20),
     client: client as Client,
     language: b.language === "frFR" || b.language === "enUS" ? b.language : undefined,
+    sex: b.sex === 2 || b.sex === 3 ? b.sex : undefined,
     at,
     level: int(b.level),
     prologue: str(b.prologue, MAX_TEXT),
@@ -132,7 +133,7 @@ export async function decide(
 }
 
 /** A book saved, and the entries it finished since the last upload (for a notification). */
-export type Saved = { owner: number; characterId: number; name: string; entries: Book["chapters"] };
+export type Saved = { owner: number; characterId: number; name: string; entries: Book["chapters"]; language?: Book["language"] };
 
 /** An upload from a companion: as its account's, then its last upload's time noted. */
 export async function handleUpload(link: CompanionLinkRow, body: unknown): Promise<{ result: UploadResult; saved: Saved[] }> {
@@ -197,7 +198,7 @@ export async function uploadAs(accountId: number, body: unknown): Promise<{ resu
       .returning({ id: characters.id });
     result.characters.push({ guid: c.guid, name: c.name, status: "saved", chapters: c.book.chapters.length, characterId: kept.id });
     // (new entries are news only to the book's same owner)
-    saved.push({ owner, characterId: kept.id, name: c.name, entries: row?.ownerId === owner ? finishedSince(row.book, c.book) : [] });
+    saved.push({ owner, characterId: kept.id, name: c.name, entries: row?.ownerId === owner ? finishedSince(row.book, c.book) : [], language: c.book.language });
   }
   log.info("upload", { account: link.accountId, saved: result.characters.filter((r) => r.status === "saved").length, of: records.length });
   return { result, saved };

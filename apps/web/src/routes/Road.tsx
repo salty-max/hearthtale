@@ -1,4 +1,4 @@
-import type { BookChapter } from "@hearthtale/shared";
+import { frameFor, type BookChapter, type Frame } from "@hearthtale/shared";
 import { Link, useParams } from "@tanstack/react-router";
 import { ChevronLeft, MapPin } from "lucide-react";
 import { Crest } from "@/components/Crest";
@@ -9,15 +9,15 @@ import { SignIn } from "@/components/SignIn";
 import { NotFound, NotSignedIn, useCharacterBook } from "@/lib/api";
 import { dateRange } from "@/lib/dates";
 import { levelPoints, roadOf } from "@/lib/road";
-import { useLocale, useT } from "@/lib/i18n";
+import { useFrame, useT } from "@/lib/i18n";
 import { useTitle } from "@/lib/title";
-import { classColour, raceClass } from "@/lib/wow";
+import { aboutLine, classColour } from "@/lib/wow";
 
 const W = 640,
   H = 220,
   PAD = { l: 34, r: 12, t: 12, b: 26 };
 
-function Chart({ chs, until }: { chs: BookChapter[]; until?: number }) {
+function Chart({ chs, until, fb }: { chs: BookChapter[]; until?: number; fb: Frame }) {
   const t = useT();
   const pts = levelPoints(chs, until);
   if (pts.length < 2) return null;
@@ -58,7 +58,7 @@ function Chart({ chs, until }: { chs: BookChapter[]; until?: number }) {
           const p = pts[i * 2 + 1];
           return (
             <circle key={c.number} cx={sx(p.x)} cy={sy(p.y)} r={c.close ? 5 : 3.5} fill={c.close ? "var(--color-blood)" : "var(--color-gold-bright)"} stroke="var(--color-night)" strokeWidth="1.5">
-              <title>{`${c.title ?? t.book.chapter(c.number)} · ${t.book.levels(c.from, c.to)}`}</title>
+              <title lang={fb.lang}>{`${c.title ?? fb.chapter(c.number)} · ${fb.levels(c.from, c.to)}`}</title>
             </circle>
           );
         })}
@@ -70,7 +70,7 @@ function Chart({ chs, until }: { chs: BookChapter[]; until?: number }) {
 /** One of my books, as a road: its figures, the level over the days, the places in order, each entry. */
 export function Road() {
   const t = useT();
-  const locale = useLocale();
+  const f = useFrame();
   const { id } = useParams({ from: "/book/$id/road" });
   const { data, error, refetch } = useCharacterBook(Number(id));
   useTitle(t.road.title, data?.character.name);
@@ -80,6 +80,7 @@ export function Road() {
   }
   if (!data) return <Loading />;
   const { character: c, book } = data;
+  const fb = frameFor(book.language);
   const r = roadOf(book);
   const figures: [string, string][] = [
     [String(r.entries), t.road.entries],
@@ -99,7 +100,7 @@ export function Road() {
         <Crest token={c.class} size={64} className="mx-auto" />
         <h1 className="title-gilded mt-3 text-4xl">{t.road.title}</h1>
         <p className="ui mt-1 text-parchment/80">
-          <span style={{ color: classColour(c.class) }}>{c.name}</span> · {t.library.level(c.level)} {raceClass(t, c)}
+          <span style={{ color: classColour(c.class) }}>{c.name}</span> · {aboutLine(f, c)}
         </p>
         <Flourish className="mt-4 text-gold/70" />
       </header>
@@ -116,12 +117,12 @@ export function Road() {
             ))}
           </ul>
           <div className="mt-5">
-            <Chart chs={book.chapters} until={book.at} />
+            <Chart chs={book.chapters} until={book.at} fb={fb} />
           </div>
           {r.places.length > 0 && (
             <div className="panel mt-5 p-4">
               <h2 className="title text-lg">{t.road.places_}</h2>
-              <ol className="mt-3 flex flex-wrap items-center gap-x-1 gap-y-2">
+              <ol lang={fb.lang} className="mt-3 flex flex-wrap items-center gap-x-1 gap-y-2">
                 {r.places.map((p, i) => (
                   <li key={p} className="ui flex items-center gap-1 text-parchment/85">
                     {i > 0 && <span aria-hidden className="px-1 text-gold/60">›</span>}
@@ -134,20 +135,20 @@ export function Road() {
           )}
           <div className="panel mt-5 p-4">
             <h2 className="title text-lg">{t.road.timeline}</h2>
-            <ol className="relative mt-4 ml-2 border-l border-gold/30">
+            <ol lang={fb.lang} className="relative mt-4 ml-2 border-l border-gold/30">
               {book.chapters.map((ch) => (
                 <li key={ch.number} className="relative pb-5 pl-5 last:pb-0">
                   <span aria-hidden className={`absolute top-1.5 -left-[5px] size-2.5 rounded-full ${ch.close ? "bg-blood" : "bg-gold"}`} />
-                  <p className="ui text-xs text-parchment/55">{dateRange(ch.began, ch.open ? undefined : ch.ended, locale, t.book.to)}</p>
+                  <p className="ui text-xs text-parchment/55">{dateRange(ch.began, ch.open ? undefined : ch.ended, fb.locale, fb.to)}</p>
                   <Link
                     to="/book/$id/$part"
                     params={{ id, part: String(ch.number) }}
                     className="font-display text-lg font-semibold text-gold-bright hover:underline"
                   >
-                    {ch.title ?? t.book.chapter(ch.number)}
+                    {ch.title ?? fb.chapter(ch.number)}
                   </Link>
                   <p className="text-parchment/70">
-                    {[ch.title ? t.book.chapter(ch.number) : undefined, ch.open ? t.book.stillWriting : ch.place, t.book.levels(ch.from, ch.to)]
+                    {[ch.title ? fb.chapter(ch.number) : undefined, ch.open ? fb.stillWriting : ch.place, fb.levels(ch.from, ch.to)]
                       .filter(Boolean)
                       .join(" · ")}
                   </p>

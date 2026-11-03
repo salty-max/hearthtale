@@ -28,6 +28,11 @@ describe("sharing", () => {
     expect(cutBook(book, "x")).toBeNull();
     expect(cutBook({ ...book, epitaph: undefined }, "epitaph")).toBeNull();
   });
+  test("a part keeps the book's language and the character's sex", () => {
+    const fr: Book = { ...book, language: "frFR", sex: 3 };
+    expect(cutBook(fr, "2")).toMatchObject({ language: "frFR", sex: 3 });
+    expect(cutBook(fr, "epitaph")).toMatchObject({ language: "frFR", sex: 3 });
+  });
   test("a visitor never reads the player's notes", () => {
     const noted: Book = { ...book, chapters: book.chapters.map((c) => ({ ...c, note: "Buy arrows before Kharanos." })) };
     const seen = withoutNotes(noted);
@@ -41,6 +46,10 @@ describe("sharing", () => {
     const shared: SharedBook = { character: who, book: cutBook(book, "2")!, part: "2" };
     expect(ogTitle(shared)).toBe("Pippa, level 6 Gnome Mage (fallen) · Entry 2");
     expect(ogText(shared)).toBe("I reached Kharanos.");
+    // (a French book: its frame in French, the woman's names, lang="fr")
+    const fr: SharedBook = { character: { ...who, race: "Dwarf", class: "HUNTER" }, book: { ...cutBook(book, "2")!, language: "frFR", sex: 3 }, part: "2" };
+    expect(ogTitle(fr)).toBe("Pippa, niveau 6 chasseresse naine (tombée) · Entrée 2");
+    expect(ogPage(fr, "/s/abc", "https://hearthtale.app")).toContain('<html lang="fr">');
     expect(ogText({ character: who, book }, 20)).toBe("Pippa died by the…");
     const html = ogPage({ character: { ...who, name: "<b>" }, book, part: "epitaph" }, "/s/abc", "https://hearthtale.app");
     expect(html).toContain('og:url" content="https://hearthtale.app/s/abc"');

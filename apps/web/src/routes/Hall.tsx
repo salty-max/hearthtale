@@ -1,3 +1,4 @@
+import { frameFor } from "@hearthtale/shared";
 import { Link } from "@tanstack/react-router";
 import { BookOpen } from "lucide-react";
 import { Crest } from "@/components/Crest";
@@ -5,14 +6,15 @@ import { Skull } from "@/components/HardcoreMark";
 import { Flourish } from "@/components/Flourish";
 import { LoadError, Loading } from "@/components/PageState";
 import { useHall } from "@/lib/api";
-import { useLocale, useT } from "@/lib/i18n";
+import { useFrame, useLocale, useT } from "@/lib/i18n";
 import { useTitle } from "@/lib/title";
-import { classColour, raceClass, realmName } from "@/lib/wow";
+import { aboutLine, classColour, realmName } from "@/lib/wow";
 
 /** The public Hall of the Fallen: Hardcore lives their owners chose to show, each with its epitaph. */
 export function Hall() {
   const t = useT();
   const locale = useLocale();
+  const f = useFrame();
   useTitle(t.hall.title);
   const { data, isPending, isError, refetch } = useHall();
   return (
@@ -51,12 +53,12 @@ export function Hall() {
                     )}
                   </div>
                   <p className="ui text-parchment/80">
-                    {t.library.level(e.character.level)} {raceClass(t, e.character)}
-                    {realmName(t, e.character) && <span className="text-parchment/55"> · {realmName(t, e.character)}</span>}
+                    {aboutLine(f, e.character)}
+                    {realmName(e.character) && <span className="text-parchment/55"> · {realmName(e.character)}</span>}
                   </p>
                 </div>
               </div>
-              {e.epitaph && <p className="mt-4 border-l-2 border-blood/50 pl-4 text-lg italic text-parchment/85">{e.epitaph}</p>}
+              {e.epitaph && <p lang={frameFor(e.character.language).lang} className="mt-4 border-l-2 border-blood/50 pl-4 text-lg italic text-parchment/85">{e.epitaph}</p>}
               <p className="ui mt-3 flex items-center gap-2 text-sm text-gold-bright">
                 <BookOpen className="size-4" aria-hidden />
                 {t.hall.read} · {t.library.chapters(e.chapters)}

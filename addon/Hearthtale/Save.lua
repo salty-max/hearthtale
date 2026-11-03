@@ -5,7 +5,7 @@
 -- and never writes its own. The chapter a rest has just closed is told closed
 -- (the logout settled in advance: ns.settledView); a /reload is put right by
 -- the next logout.
---   book = { version, client, language, at, level, prologue, epitaph,
+--   book = { version, client, language, sex, at, level, prologue, epitaph,
 --            chapters = { { number, diary, title, writtenTitle, note, place,
 --                           from, to, open, rare, close, began, ended } } }
 -- (title: the player's own when given one, writtenTitle then the writer's;
@@ -28,6 +28,7 @@ local function written(c, level)
     version = addonVersion(),
     client = ns.data.client,
     language = c.language, -- (the journal's: "enUS", "frFR")
+    sex = c.sex, -- (2 a man, 3 a woman: the site's French names agree with it)
     at = time(),
     level = level,
     prologue = b.prologue,
@@ -42,7 +43,7 @@ local function written(c, level)
       title = ch.title,
       writtenTitle = ch.writtenTitle,
       note = ch.note,
-      place = ch.place,
+      place = ns.named(ch.place, c.language), -- (as the journal says it: French in a French one)
       from = ch.from,
       to = ch.to,
       open = ch.open,

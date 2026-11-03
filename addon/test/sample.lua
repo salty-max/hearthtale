@@ -44,6 +44,35 @@ if arg and arg[1] == "landing" then
     end
     table.insert(samples, s)
   end
+  -- And one in French: a life played on a French client, its journal written in
+  -- French (the site frames it in French whatever the visitor's language).
+  LOCALE = "frFR"
+  local G = lives.grashnak()
+  local c = HearthtaleChar
+  c.language = "frFR"
+  G.ns.forgetWritten(c)
+  c.book = nil
+  local book = G.ns.writeBook(c)
+  local best
+  for _, ch in ipairs(book.chapters) do
+    if not ch.open and (not best or #ch.text > #best.text) then best = ch end
+  end
+  table.insert(samples, {
+    name = c.name,
+    race = c.race,
+    class = c.class,
+    hardcore = c.hardcore or false,
+    language = "frFR",
+    sex = c.sex,
+    part = "entry",
+    number = best.number,
+    title = best.title,
+    place = G.ns.named(best.place, "frFR"), -- (as the saved book says it)
+    from = best.from,
+    to = best.to,
+    text = best.text,
+  })
+  LOCALE = nil
   local out = json(samples) .. "\n"
   -- --check: the site's copy must be what the writer writes now
   if arg[2] == "--check" then

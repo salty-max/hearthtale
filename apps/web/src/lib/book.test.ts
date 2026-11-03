@@ -1,10 +1,9 @@
-import type { Book } from "@hearthtale/shared";
+import { frameFor, type Book } from "@hearthtale/shared";
 import { describe, expect, test } from "bun:test";
 import { current, paragraphs, partSub, partTitle, parts } from "@/lib/book";
 import { dateRange } from "@/lib/dates";
-import { strings } from "@/lib/i18n";
 
-const t = strings("en");
+const t = frameFor("enUS");
 
 const book: Book = {
   client: "classic",
@@ -40,9 +39,21 @@ describe("book", () => {
     const [, one, two] = parts(dated);
     expect(partTitle(t, dated, one)).toBe("The Troll Cave");
     expect(partTitle(t, dated, two)).toBe("Entry 2");
-    expect(partSub(t, "en-GB", { fallen: false }, dated, one)).toBe("Entry 1 · Anvilmar · levels 1 to 4 · 5 to 7 Oct 2026");
-    expect(partSub(t, "en-GB", { fallen: false }, dated, two)).toBe("levels 4 to 6 · 8 Oct 2026 · still being written");
-    expect(partSub(t, "en-GB", { fallen: true }, { ...dated, chapters: [dated.chapters[0]] }, one)).toMatch(/ · the end$/);
+    expect(partSub(t, { fallen: false }, dated, one)).toBe("Entry 1 · Anvilmar · levels 1 to 4 · 5 to 7 Oct 2026");
+    expect(partSub(t, { fallen: false }, dated, two)).toBe("levels 4 to 6 · 8 Oct 2026 · still being written");
+    expect(partSub(t, { fallen: true }, { ...dated, chapters: [dated.chapters[0]] }, one)).toMatch(/ · the end$/);
+  });
+  test("a French book reads in French, whatever the site's language", () => {
+    const fr = frameFor("frFR");
+    const dated: Book = {
+      ...book,
+      language: "frFR",
+      chapters: [{ number: 1, place: "Forgefer", from: 1, to: 4, began: Date.UTC(2026, 9, 5, 12) / 1000, ended: Date.UTC(2026, 9, 7, 12) / 1000 }],
+    };
+    const [prologue, one] = parts(dated);
+    expect(partTitle(fr, dated, prologue)).toBe("Prologue");
+    expect(partTitle(fr, dated, one)).toBe("Entrée 1");
+    expect(partSub(fr, { fallen: false }, dated, one)).toMatch(/^Forgefer · niveaux 1 à 4 · 5 au 7 oct\.? 2026$/);
   });
   test("dates as short as they read", () => {
     const d = (y: number, m: number, day: number) => Date.UTC(y, m, day, 12) / 1000;

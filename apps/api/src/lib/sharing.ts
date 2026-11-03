@@ -19,6 +19,8 @@ export function publicCharacter(row: CharacterRow): PublicCharacter {
     region: row.region ?? undefined,
     race: row.race,
     class: row.class,
+    language: row.book.language,
+    sex: row.book.sex,
     level: row.level,
     hardcore: row.hardcore,
     fallen: row.fallen,
@@ -33,7 +35,7 @@ export function withoutNotes(book: Book): Book {
 /** The book cut to one part ("prologue", a chapter's number, "epitaph"), or whole; null if there's no such part. */
 export function cutBook(book: Book, part?: string): Book | null {
   if (part === undefined) return book;
-  const base = { version: book.version, client: book.client, at: book.at, level: book.level, chapters: [] };
+  const base = { version: book.version, client: book.client, language: book.language, sex: book.sex, at: book.at, level: book.level, chapters: [] };
   if (part === "prologue") return book.prologue ? { ...base, prologue: book.prologue } : null;
   if (part === "epitaph") return book.epitaph ? { ...base, epitaph: book.epitaph } : null;
   const ch = /^\d+$/.test(part) ? book.chapters.find((c) => c.number === Number(part)) : undefined;

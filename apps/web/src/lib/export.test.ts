@@ -1,10 +1,9 @@
-import type { Book } from "@hearthtale/shared";
+import { frameFor, type Book } from "@hearthtale/shared";
 import { describe, expect, test } from "bun:test";
 import { epub, fileName, markdown } from "@/lib/export";
-import { strings } from "@/lib/i18n";
 import { crc32, zip } from "@/lib/zip";
 
-const t = strings("en");
+const t = frameFor("enUS");
 const who = { name: "Brannok", race: "Dwarf", class: "HUNTER", level: 9, hardcore: true, fallen: false, realm: "Nightslayer", region: 1 };
 const book: Book = {
   client: "classic",
@@ -21,7 +20,7 @@ describe("export", () => {
     expect(fileName({ ...who, name: "Aélyndra" })).toBe("Aelyndra-journal");
   });
   test("as text: every part, in order, with the notes", () => {
-    const md = markdown(t, "en-GB", who, book);
+    const md = markdown(t, who, book);
     expect(md).toContain("# The journal of Brannok");
     expect(md).toContain("*Level 9 Dwarf Hunter · Nightslayer (US)*");
     expect(md.indexOf("## Prologue")).toBeLessThan(md.indexOf("## The Troll Cave"));
@@ -38,12 +37,30 @@ describe("export", () => {
     expect(v.getUint32(z.length - 22, true)).toBe(0x06054b50);
   });
   test("an EPUB: the mimetype first and stored, every part a page, the text escaped", () => {
-    const e = epub(t, "en-GB", who, book, "1");
+    const e = epub(t, who, book, "1");
     const head = new TextDecoder().decode(e.slice(30, 30 + 8 + 20));
     expect(head).toBe("mimetypeapplication/epub+zip");
     const all = new TextDecoder().decode(e);
     expect(all).toContain("OEBPS/part-3.xhtml");
     expect(all).toContain("Before &lt;all&gt; &amp; after.");
     expect(all).toContain('properties="nav"');
+    expect(all).toContain("<dc:language>en</dc:language>");
+  });
+  test("the character's sex from the record when the book has none", () => {
+    expect(markdown(frameFor("frFR"), { ...who, sex: 3 }, { ...book, language: "frFR" })).toContain("*Niveau 9 chasseresse naine");
+    expect(markdown(frameFor("frFR"), who, { ...book, language: "frFR" })).toContain("*Niveau 9 chasseur nain");
+  });
+  test("a French book: its words, its language, a woman's names", () => {
+    const fr = frameFor("frFR");
+    const fb: Book = { ...book, language: "frFR", sex: 3 };
+    const md = markdown(fr, { ...who, sex: 3 }, fb);
+    expect(md).toContain("# Le journal de Brannok");
+    expect(md).toContain("*Niveau 9 chasseresse naine · Nightslayer (US)*");
+    expect(md).toContain("*Entrée 1 · Anvilmar · niveaux 1 à 4*");
+    expect(md).toContain("> **Une note dans la marge**");
+    const all = new TextDecoder().decode(epub(fr, { ...who, sex: 3 }, fb, "1"));
+    expect(all).toContain("<dc:language>fr</dc:language>");
+    expect(all).toContain('lang="fr" xml:lang="fr"');
+    expect(all).toContain("Sommaire");
   });
 });

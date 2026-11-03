@@ -1,4 +1,4 @@
-import type { Book } from "@hearthtale/shared";
+import { frameFor, type Book, type Language } from "@hearthtale/shared";
 import { and, eq } from "drizzle-orm";
 import { db } from "@/db";
 import { pushSubscriptions } from "@/db/schema";
@@ -37,30 +37,36 @@ export async function unsubscribe(accountId: number, endpoint: string): Promise<
   await db.delete(pushSubscriptions).where(and(eq(pushSubscriptions.accountId, accountId), eq(pushSubscriptions.endpoint, endpoint)));
 }
 
-/** The entries a new upload finished that the book before it hadn't (none for a first upload: nothing is new to the player). */
+/**
+ * The entries a new upload finished that the book before it hadn't (none for a
+ * first upload: nothing is new to the player, nor after a change of the
+ * journal's language: the whole book was written again, not a new entry).
+ */
 export function finishedSince(before: Book | null | undefined, after: Book): Book["chapters"] {
   if (!before) return [];
+  if ((before.language ?? "enUS") !== (after.language ?? "enUS")) return [];
   const done = new Set(before.chapters.filter((c) => !c.open).map((c) => c.number));
   return after.chapters.filter((c) => !c.open && !done.has(c.number));
 }
 
 /** "Brannok wrote “Bristle”": one notification for the newest finished entry (and how many more). */
-export function newEntryMessage(name: string, characterId: number, entries: Book["chapters"]) {
+export function newEntryMessage(name: string, characterId: number, entries: Book["chapters"], language?: Language) {
+  const f = frameFor(language);
   const last = entries[entries.length - 1];
-  const title = last.title ?? `Entry ${last.number}`;
+  const title = last.title ?? f.chapter(last.number);
   return {
-    title: entries.length > 1 ? `${name} wrote ${entries.length} new entries` : `${name} wrote “${title}”`,
-    body: [last.title ? `Entry ${last.number}` : undefined, last.place, entries.length > 1 ? `the last: “${title}”` : undefined].filter(Boolean).join(" · "),
+    title: entries.length > 1 ? f.wroteMany(name, entries.length) : f.wrote(name, title),
+    body: [last.title ? f.chapter(last.number) : undefined, last.place, entries.length > 1 ? f.theLast(title) : undefined].filter(Boolean).join(" · "),
     url: `/book/${characterId}/${last.number}`,
     tag: `book-${characterId}`,
   };
 }
 
-export async function notifyNewEntries(accountId: number, characterId: number, name: string, entries: Book["chapters"]): Promise<void> {
+export async function notifyNewEntries(accountId: number, characterId: number, name: string, entries: Book["chapters"], language?: Language): Promise<void> {
   const keys = vapid();
   if (!keys || entries.length === 0) return;
   const subs = await db.select().from(pushSubscriptions).where(eq(pushSubscriptions.accountId, accountId));
-  const message = newEntryMessage(name, characterId, entries);
+  const message = newEntryMessage(name, characterId, entries, language);
   for (const s of subs) {
     try {
       const res = await sendPush({ endpoint: s.endpoint, keys: { p256dh: s.p256dh, auth: s.auth } }, message, keys, { ttl: 24 * 3600 });

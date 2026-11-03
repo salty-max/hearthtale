@@ -39,7 +39,9 @@
         }
       ],
       "client": "classic",
+      "language": "enUS",
       "level": 9,
+      "sex": 3,
       "version": "0.2.0"
     },
     "class": "HUNTER",
@@ -79,7 +81,9 @@
       ],
       "client": "classic",
       "epitaph": "A Frostmane Shadowcaster ended the life of Pippa, a gnome mage, in Frostmane Hold at level six. Pippa had completed five tasks and fought thirty-three foes, with most of the world still to see. May Pippa be remembered for more than this last loss.",
+      "language": "enUS",
       "level": 6,
+      "sex": 3,
       "version": "0.2.0"
     },
     "class": "MAGE",
@@ -117,8 +121,10 @@
         }
       ],
       "client": "classic",
+      "language": "enUS",
       "level": 25,
       "prologue": "I had completed eighty-seven tasks already when this stretch began in Duskwood.",
+      "sex": 3,
       "version": "0.2.0"
     },
     "class": "PALADIN",
@@ -157,7 +163,9 @@
         }
       ],
       "client": "classic",
+      "language": "enUS",
       "level": 6,
+      "sex": 3,
       "version": "0.2.0"
     },
     "class": "WARRIOR",
@@ -195,7 +203,9 @@
         }
       ],
       "client": "classic",
+      "language": "enUS",
       "level": 6,
+      "sex": 3,
       "version": "0.2.0"
     },
     "class": "DRUID",
@@ -233,7 +243,9 @@
         }
       ],
       "client": "classic",
+      "language": "enUS",
       "level": 6,
+      "sex": 3,
       "version": "0.2.0"
     },
     "class": "PRIEST",
@@ -272,8 +284,10 @@
         }
       ],
       "client": "classic",
+      "language": "enUS",
       "level": 20,
       "prologue": "I had completed sixty-four tasks already when this stretch began in Stormwind City.",
+      "sex": 3,
       "version": "0.2.0"
     },
     "class": "WARRIOR",
@@ -283,6 +297,46 @@
     "name": "Edric",
     "race": "Human",
     "realm": "Firemaw",
+    "region": 3
+  },
+  {
+    "book": {
+      "at": 1790968175,
+      "chapters": [
+        {
+          "began": 1790900000,
+          "diary": "J'ai fait mes premiers pas à Sombrevallon, Dolanaar étant le lieu le plus lointain que je pouvais encore imaginer et le reste de Kalimdor rien de plus que des noms par-delà les eaux. Le clair de lune argentait les feuilles de Teldrassil tandis que des chouettes hululaient au-dessus de moi. J'écoutais entre mes pas, peu désireuse de traverser à la hâte tant de silence. J'ai pris de la gangremousse aux grells qui menaçaient Sombrevallon, confirmant la crainte de Tarindrella de voir cette corruption gagner Teldrassil. Je suis repartie de chez mon maître avec Éclat lunaire, en me demandant ce que cela donnerait contre mon prochain ennemi. Les feuilles et l'eau dormante parfumaient les maisons autour du puits de lune de Dolanaar. Les sentinelles montaient leur garde patiente sur la route, et j'ai un peu baissé la garde. Mes pensées pouvaient dériver aussi loin qu'elles le voulaient à Dolanaar, maintenant que mes pieds n'avaient pas à les suivre.",
+          "ended": 1790934215,
+          "from": 1,
+          "number": 1,
+          "place": "Dolanaar",
+          "title": "La Protectrice sylvestre",
+          "to": 5
+        },
+        {
+          "began": 1790966615,
+          "diary": "Chaque être vivant que je croisais à Dolanaar avait ma tendresse, et la plupart aussi ma méfiance. J'ai enfin vu Darnassus de mes propres yeux : la cité était plus grande, plus animée et plus mienne que je ne l'avais imaginée. La pierre blanche et les bassins immobiles de Darnassus m'ont ralentie sans que je le veuille. Près du Temple de la Lune, le vieux silence s'est refermé sur moi, et j'étais chez moi. La récompense était une leçon : Mathrengyl Bearwalker m'a appris la Forme d'ours.",
+          "from": 5,
+          "number": 2,
+          "open": true,
+          "place": "Dolanaar",
+          "title": "Corps et cœur",
+          "to": 6
+        }
+      ],
+      "client": "classic",
+      "language": "frFR",
+      "level": 6,
+      "sex": 3,
+      "version": "0.2.0"
+    },
+    "class": "DRUID",
+    "fallen": false,
+    "guid": "Player-6113-0E33B7CF",
+    "hardcore": true,
+    "name": "Aelyndra",
+    "race": "NightElf",
+    "realm": "Soulseeker",
     "region": 3
   }
 ]

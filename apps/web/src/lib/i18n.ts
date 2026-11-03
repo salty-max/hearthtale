@@ -1,3 +1,4 @@
+import { frameFor, type Frame, type Language } from "@hearthtale/shared";
 import { useSettings } from "@/lib/settings";
 
 /**
@@ -119,7 +120,6 @@ const en = {
     title: "Library",
     testIntro: "The test account: books the addon saved in a test game, exactly as written at logout.",
     empty: "No book on this shelf yet. With the addon installed, your characters' books arrive after you log out or /reload.",
-    level: (n: number) => `Level ${n}`,
     chapters: (n: number) => (n === 1 ? "1 entry" : `${n} entries`),
     hardcore: "Hardcore",
     fallen: "Fallen",
@@ -134,16 +134,9 @@ const en = {
   },
   book: {
     contents: "Contents",
-    prologue: "Prologue",
-    chapter: (n: number) => `Entry ${n}`,
-    epitaph: "Epitaph",
-    stillWriting: "still being written",
-    theEnd: "the end",
-    levels: (a: number, b: number) => (a === b ? `level ${a}` : `levels ${a} to ${b}`),
     closeCall: "Close call",
     rare: "Rare foe slain",
     nothingYet: "Nothing written yet.",
-    note: "A note in the margin",
     previous: "Previous",
     next: "Next",
     close: "Close",
@@ -154,7 +147,6 @@ const en = {
     road: "The road so far",
     remove: "Remove from the site",
     keys: "Use ← and → to turn the pages.",
-    to: "to",
     written: (date: string, version?: string) => `Written ${date}${version ? ` by Hearthtale ${version}` : ""}`,
     notFound: "This book isn't here.",
   },
@@ -167,7 +159,6 @@ const en = {
     epubHint: "For e-readers and Apple Books.",
     markdown: "Text",
     markdownHint: "Plain text (Markdown), for anywhere.",
-    by: (name: string) => `The journal of ${name}`,
   },
   road: {
     title: "The road so far",
@@ -220,31 +211,6 @@ const en = {
     signIn: "Sign in to be told of new entries.",
     failed: "That didn't work. Try again in a moment.",
   },
-  races: {
-    Human: "Human",
-    Dwarf: "Dwarf",
-    NightElf: "Night Elf",
-    Gnome: "Gnome",
-    Orc: "Orc",
-    Troll: "Troll",
-    Tauren: "Tauren",
-    Scourge: "Undead",
-    Skyborne: "Skyborne",
-  } as Record<string, string>,
-  classes: {
-    WARRIOR: "Warrior",
-    PALADIN: "Paladin",
-    HUNTER: "Hunter",
-    ROGUE: "Rogue",
-    PRIEST: "Priest",
-    SHAMAN: "Shaman",
-    MAGE: "Mage",
-    WARLOCK: "Warlock",
-    DRUID: "Druid",
-  } as Record<string, string>,
-  regions: { 1: "US", 2: "KR", 3: "EU", 4: "TW", 5: "CN" } as Record<number, string>,
-  /** "Dwarf Hunter" (French: "Chasseur nain"). */
-  raceClass: (race: string, cls: string) => `${race} ${cls}`,
   share: {
     title: "Share",
     why: "Anyone with the link can read what it covers, and nothing else of yours: your notes in the margins stay yours. You can revoke it at any time.",
@@ -306,7 +272,7 @@ const en = {
     sections: [
       {
         title: "What the site keeps",
-        text: "The site keeps your Battle.net account's id and BattleTag, to know which books are yours, and the characters the game says are yours (their name, realm, race, class and level). It also keeps each book as the addon wrote it, with your own titles and notes, and the share links you make. If you turn notifications on, it keeps this device's notification address too.",
+        text: "The site keeps your Battle.net account's id and BattleTag, to know which books are yours, and the characters the game says are yours (their name, realm, race, class, sex and level). It also keeps each book as the addon wrote it, with your own titles and notes, and the share links you make. If you turn notifications on, it keeps this device's notification address too.",
       },
       {
         title: "What it never keeps",
@@ -332,7 +298,7 @@ const en = {
 export type Strings = typeof en;
 
 /** The languages, with the locale their dates and times are written in. */
-export const CATALOGS = { en: { strings: en, locale: "en-GB", name: "English" } } satisfies Record<string, { strings: Strings; locale: string; name: string }>;
+export const CATALOGS = { en: { strings: en, locale: "en-GB", name: "English", language: "enUS" as const } } satisfies Record<string, { strings: Strings; locale: string; name: string; language: Language }>;
 export type Lang = keyof typeof CATALOGS;
 export const LANGS = Object.keys(CATALOGS) as Lang[];
 export const DEFAULT_LANG: Lang = "en";
@@ -359,4 +325,9 @@ export function useT(): Strings {
 /** The chosen language's locale, for dates and times. */
 export function useLocale(): string {
   return CATALOGS[useLang()].locale;
+}
+
+/** The interface's frame: the lines that name a character in the library, in the site's language (a book's own is its language's, `frameFor(book.language)`). */
+export function useFrame(): Frame {
+  return frameFor(CATALOGS[useLang()].language);
 }

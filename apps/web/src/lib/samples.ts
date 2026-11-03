@@ -1,3 +1,4 @@
+import type { Language } from "@hearthtale/shared";
 import data from "./samples.json";
 
 /**
@@ -12,6 +13,9 @@ export type Sample = {
   race: string;
   class: string;
   hardcore: boolean;
+  /** The journal's language and the character's sex (a sample before they were kept: English, a man). */
+  language?: Language;
+  sex?: 2 | 3;
   part: "entry" | "epitaph";
   number?: number;
   title?: string;

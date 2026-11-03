@@ -15,6 +15,8 @@ export function summary(row: CharacterRow): CharacterSummary {
     race: row.race,
     class: row.class,
     client: row.client,
+    language: row.book.language,
+    sex: row.book.sex,
     level: row.level,
     hardcore: row.hardcore,
     fallen: row.fallen,

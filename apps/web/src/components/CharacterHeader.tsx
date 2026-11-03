@@ -1,12 +1,12 @@
 import type { PublicCharacter } from "@hearthtale/shared";
 import { Crest } from "@/components/Crest";
 import { HardcoreMark } from "@/components/HardcoreMark";
-import { useT } from "@/lib/i18n";
-import { classColour, raceClass, realmName } from "@/lib/wow";
+import { useFrame } from "@/lib/i18n";
+import { aboutLine, classColour, realmName } from "@/lib/wow";
 
 /** Who the book belongs to (the contents): the crest, the name in its class colour, level, race and class, realm. */
 export function CharacterHeader({ character: c }: { character: PublicCharacter }) {
-  const t = useT();
+  const f = useFrame();
   return (
     <div className="text-center">
       <Crest token={c.class} size={56} className="mx-auto" />
@@ -14,8 +14,8 @@ export function CharacterHeader({ character: c }: { character: PublicCharacter }
         {c.name}
       </p>
       <p className="ui text-parchment/80">
-        {t.library.level(c.level)} {raceClass(t, c)}
-        {realmName(t, c) && <span className="block text-sm text-parchment/55">{realmName(t, c)}</span>}
+        {aboutLine(f, c)}
+        {realmName(c) && <span className="block text-sm text-parchment/55">{realmName(c)}</span>}
       </p>
       {(c.fallen || c.hardcore) && (
         <p className="mt-2">

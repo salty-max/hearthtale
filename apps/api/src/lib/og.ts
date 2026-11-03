@@ -1,4 +1,4 @@
-import type { SharedBook } from "@hearthtale/shared";
+import { frameFor, type SharedBook } from "@hearthtale/shared";
 
 /**
  * Link previews (Discord, Reddit, Slack…): crawlers asking for a shared page
@@ -18,20 +18,16 @@ const CLASS_COLOUR: Record<string, string> = {
   WARLOCK: "#8788ee",
   DRUID: "#ff7c0a",
 };
-const RACE: Record<string, string> = {
-  Human: "Human", Dwarf: "Dwarf", NightElf: "Night Elf", Gnome: "Gnome", Orc: "Orc", Troll: "Troll",
-  Tauren: "Tauren", Scourge: "Undead", Skyborne: "Skyborne",
-};
-const cap = (s: string) => s.charAt(0) + s.slice(1).toLowerCase();
 const esc = (s: string) => s.replace(/[&<>"']/g, (ch) => `&#${ch.charCodeAt(0)};`);
 
 /** The part a page shows, by name: an entry's title ("Entry 3" untitled), "Epitaph"… or the whole book. */
 function partName(shared: SharedBook): string {
   const p = shared.part;
-  if (p === undefined) return "The book";
-  if (p === "prologue") return "Prologue";
-  if (p === "epitaph") return "Epitaph";
-  return shared.book.chapters.find((c) => String(c.number) === String(p))?.title ?? `Entry ${p}`;
+  const f = frameFor(shared.book.language);
+  if (p === undefined) return f.theBook;
+  if (p === "prologue") return f.prologue;
+  if (p === "epitaph") return f.epitaph;
+  return shared.book.chapters.find((c) => String(c.number) === String(p))?.title ?? f.chapter(Number(p));
 }
 
 /** The opening lines of what's shared, for the card. */
@@ -46,7 +42,9 @@ export function ogText(shared: SharedBook, max = 220): string {
 
 export function ogTitle(shared: SharedBook): string {
   const c = shared.character;
-  return `${c.name}, level ${c.level} ${RACE[c.race] ?? c.race} ${cap(c.class)}${c.fallen ? " (fallen)" : ""} · ${partName(shared)}`;
+  const f = frameFor(shared.book.language);
+  const about = `${f.levelWord} ${c.level} ${f.raceClass(c.race, c.class, shared.book.sex ?? c.sex)}`;
+  return `${c.name}, ${about}${c.fallen ? f.fallen(shared.book.sex ?? c.sex) : ""} · ${partName(shared)}`;
 }
 
 export function ogPage(shared: SharedBook, path: string, origin: string): string {
@@ -55,7 +53,7 @@ export function ogPage(shared: SharedBook, path: string, origin: string): string
   const description = ogText(shared);
   const colour = CLASS_COLOUR[shared.character.class] ?? "#c9a227";
   return `<!doctype html>
-<html lang="en"><head><meta charset="utf-8">
+<html lang="${frameFor(shared.book.language).lang}"><head><meta charset="utf-8">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
 <meta property="og:type" content="article">

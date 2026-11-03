@@ -242,7 +242,7 @@ app.post(
 
 /** The new entries of an upload, told to their owners' devices once the answer has gone. */
 function tell(saved: Saved[]): void {
-  const work = Promise.all(saved.map((s) => notifyNewEntries(s.owner, s.characterId, s.name, s.entries))).catch((err) =>
+  const work = Promise.all(saved.map((s) => notifyNewEntries(s.owner, s.characterId, s.name, s.entries, s.language))).catch((err) =>
     log.warn("push.notify", { err: String(err) }),
   );
   waitUntil(work);
