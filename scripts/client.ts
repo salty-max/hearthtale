@@ -98,12 +98,19 @@ const CLASSES: [number, string][] = [
 const KEPT_SPELLS: Record<keyof typeof GAMES, string[]> = {
   classic: [],
   // Frost Blast, off the mage's Frost line at 1.60.1.70707, and Savage and
-  // Primal Bite, off theirs at 1.60.1.70755
-  forever: ["1326053", "1326054", "1326055", "20574", "1238073"],
+  // Primal Bite, off theirs at 1.60.1.70755; Lava Burst (the shaman's), Binding
+  // Heal (the priest's) and the rogue's old Venom, off their lines at
+  // 1.60.1.70790
+  forever: [
+    "1326053", "1326054", "1326055", "20574", "1238073",
+    "408490", "408491", "1238299", "1238300", "1238373", "1238376", "1326047",
+    "401937", "1240770", "1240771", "1240772", "1240773", "1240774", "1310703",
+  ],
 };
 
 // Spells the client dropped from its tables altogether (Forever 1.60.1.70755:
-// the paladin's Blessings of Light and Salvation, Revoke), no longer named by
+// the paladin's Blessings of Light and Salvation, Revoke; 1.60.1.70790: the
+// rogue's old Mutilate ranks and Coup de Grace), no longer named by
 // it: their last English names, kept so a journal that holds the id still
 // reads it back.
 const RETIRED_SPELLS: Record<keyof typeof GAMES, Record<string, string>> = {
@@ -116,6 +123,10 @@ const RETIRED_SPELLS: Record<keyof typeof GAMES, Record<string, string>> = {
     "25890": "Greater Blessing of Light",
     "25895": "Mass Salvation",
     "1325499": "Revoke",
+    "1310705": "Mutilate",
+    "1310706": "Mutilate",
+    "1310707": "Mutilate",
+    "1310709": "Coup de Grace",
   },
 };
 

@@ -109,7 +109,8 @@
     }
   },
   "unlisted": {
-    "addon/Hearthtale_French/*.lua": "the journal's French (French.lua): the game's French names and the French lines, keyed by the ids the English tables above decode; a saved file never holds them (a journal keeps its record by those English tables' ids, told in French when its language is), so dropping one loses a translation, never a saved id"
+    "addon/Hearthtale_French/*.lua": "the journal's French (French.lua): the game's French names and the French lines, keyed by the ids the English tables above decode; a saved file never holds them (a journal keeps its record by those English tables' ids, told in French when its language is), so dropping one loses a translation, never a saved id",
+    "i18n/frFR/names.json": "the French overrides scripts/french-names.ts reads for spells the client no longer names (RETIRED_SPELLS), keyed by the ids the English tables decode; a saved file never holds them, so dropping one loses a translation, never a saved id"
   },
   "removed": [
     {
