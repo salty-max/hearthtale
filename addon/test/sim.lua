@@ -1566,6 +1566,20 @@ check(
 )
 check(ns.writeBook(K).chapters[#K.chapters].text:find("Frost", 1, true), "a specialization told in its entry")
 
+-- the client refusing the specialization calls (Era raised "API unsupported" on one of its namespace): no spec by them, no error out of the event
+do
+  local was, told0 = C_SpecializationInfo, #told("spec")
+  local refuse = function() error("API unsupported") end
+  C_SpecializationInfo = { GetSpecialization = refuse, GetSpecializationInfo = refuse }
+  check(
+    pcall(fire, "ACTIVE_PLAYER_SPECIALIZATION_CHANGED"),
+    "a specialization call that raises: no error out of the event"
+  )
+  check(pcall(fire, "CHARACTER_POINTS_CHANGED"), "… nor out of a talent event")
+  check(#told("spec") == told0, "… and no specialization told by it")
+  C_SpecializationInfo = was
+end
+
 -- The highest level the game allows: a moment of the life, and the journal
 -- goes on after it.
 state.maxLevel = state.level + 1
@@ -1666,6 +1680,25 @@ check(
 A.pending[179].objectives[1].name = " "
 fire("QUEST_LOG_UPDATE")
 check(A.pending[179].objectives[1].name == "Tough Wolf Meat", "a name 0.5.1 kept blank, read again")
+
+-- A quest giver whose name the game keeps secret (an NPC inside a Forever dungeon): the quest is kept, its giver left out
+if FOREVER then
+  local hidden = {}
+  G.secrets[hidden] = true
+  state.npc, state.titles = hidden, { [7777] = "Secret Errand" }
+  check(pcall(fire, "QUEST_ACCEPTED", 7777), "a quest from a secret-named giver: no error")
+  check(A.pending[7777] and A.pending[7777].giver == nil, "… the quest kept, its giver left out")
+  -- (and a friendly creature targeted all the while is not taken for them)
+  state.target = { id = 2, n = 7001, friendly = true }
+  state.titles[7778] = "Another Errand"
+  check(pcall(fire, "QUEST_ACCEPTED", 7778), "… a friendly creature targeted: no error")
+  check(
+    A.pending[7778] and A.pending[7778].giver == nil and A.pending[7778].giverId == nil,
+    "… the target never recorded as the giver"
+  )
+  state.target = nil
+  state.npc = nil
+end
 
 -- A writer's error at logout: the last book is kept, the error reported.
 local before = A.book

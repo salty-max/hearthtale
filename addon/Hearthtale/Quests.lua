@@ -151,7 +151,9 @@ ns.on("QUEST_ACCEPTED", function(a, b)
     and not (UnitIsDead and UnitIsDead("target"))
     and not (UnitCanAttack and UnitCanAttack("player", "target"))
     and not (UnitIsPlayer and UnitIsPlayer("target"))
-  local unit = UnitName("npc") and "npc" or (friendly and "target") or nil
+  -- (a name kept secret still makes the npc the giver: npcName leaves the name out, the target is never taken for them)
+  local npc = UnitName("npc")
+  local unit = (secret(npc) or npc) and "npc" or (friendly and "target") or nil
   local giver, giverId
   if unit then
     giver, giverId = npcName(unit)

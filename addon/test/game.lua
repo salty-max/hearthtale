@@ -192,7 +192,7 @@ function UnitIsDead(u)
   if u == "pet" then return state.pet and state.pet.dead or false end
   return u == "target" and deadTarget
 end
-function UnitCanAttack(_, u) return u == "target" and state.target ~= nil end
+function UnitCanAttack(_, u) return u == "target" and state.target ~= nil and not state.target.friendly end
 function UnitAffectingCombat(u) return inCombat and not (u == "target" and deadTarget) end
 function UnitHealth() return state.health end
 function UnitHealthMax() return 100 end

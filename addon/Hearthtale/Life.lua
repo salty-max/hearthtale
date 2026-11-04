@@ -229,12 +229,15 @@ local function specOf()
   local get = (C_SpecializationInfo and C_SpecializationInfo.GetSpecialization) or GetSpecialization
   local info = (C_SpecializationInfo and C_SpecializationInfo.GetSpecializationInfo) or GetSpecializationInfo
   if get and info then
-    local index = get()
-    if index and not secret(index) and index > 0 then
-      local id, name = info(index)
-      local ofClass = id and not secret(id) and ((ns.client or {}).classSpecs or {})[id]
+    -- (a call the client refuses, as Era's talent namespace does for some: no spec by it, never an error out of the event)
+    local ok, index = pcall(get)
+    if ok and index and not secret(index) and index > 0 then
+      local read, id, name = pcall(info, index)
+      local ofClass = read and id and not secret(id) and ((ns.client or {}).classSpecs or {})[id]
       -- (a way chosen: by its id, in English whatever the client's language)
-      if name and not secret(name) and not ofClass then return ((ns.client or {}).specIds or {})[id] or name end
+      if read and name and not secret(name) and not ofClass then
+        return ((ns.client or {}).specIds or {})[id] or name
+      end
     end
   end
   local trees = ((ns.client or {}).trees or {})[char().class or ""]
