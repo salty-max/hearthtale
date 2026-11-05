@@ -69,12 +69,12 @@ export async function userInfo(userToken: string): Promise<{ id?: number; battle
   return res.ok ? ((await res.json()) as { id?: number; battletag?: string }) : {};
 }
 
-/** The games whose characters Battle.net can list: Classic Era (Hardcore, SoD). */
-export const FLAVOURS = ["classic1x"] as const;
+/** The games whose characters Battle.net can list: Classic Era (Hardcore, SoD) and Forever (the account list only: its character endpoints answer 404). */
+export const FLAVOURS = ["classic1x", "forever"] as const;
 export type Flavour = (typeof FLAVOURS)[number];
 
 export type RawAccountProfile = {
-  wow_accounts?: { characters?: { id: number; name: string; level: number; realm: { slug: string; name: string }; gender?: { type?: string } }[] }[];
+  wow_accounts?: { characters?: { id: number; name: string; surname?: string; protected_character?: { href?: string }; level: number; realm?: { slug: string; name: string }; gender?: { type?: string } }[] }[];
 };
 
 const RETRY_DELAYS_MS = [1_000, 3_000];
@@ -97,4 +97,16 @@ export async function accountProfile(flavour: Flavour, region: Region, userToken
     if (!retryable || attempt >= RETRY_DELAYS_MS.length) throw new BnetError(path, status);
     await new Promise((r) => setTimeout(r, RETRY_DELAYS_MS[attempt]));
   }
+}
+
+/**
+ * A Forever list entry as the owned tuple [id, realm, "Name Surname"]: Forever's
+ * list has no realm object, the pseudo-realm is only in the character's own
+ * protected link (".../protected-character/6946-550204"), trusted when its id
+ * is the character's. Null: no such link, so not owned (never by name alone).
+ */
+export function foreverTuple(c: { id: number; name: string; surname?: string; protected_character?: { href?: string } }): [number, string, string] | null {
+  const m = /\/protected-character\/(\d{1,9})-(\d{1,12})(?:[/?#]|$)/.exec(c.protected_character?.href ?? "");
+  if (!m || Number(m[2]) !== c.id || !Number.isSafeInteger(c.id)) return null;
+  return [c.id, m[1], [c.name, c.surname].filter(Boolean).join(" ")];
 }

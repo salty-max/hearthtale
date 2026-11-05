@@ -1,6 +1,6 @@
-import { accountProfile, authorizeUrl, BnetError, exchangeCode, FLAVOURS, userInfo } from "@/lib/bnet";
+import { accountProfile, authorizeUrl, BnetError, exchangeCode, FLAVOURS, foreverTuple, userInfo } from "@/lib/bnet";
 import { REGIONS, type Region } from "@hearthtale/shared";
-import { createSession, loginAccount, random, sweepSessions } from "@/lib/accounts";
+import { createSession, loginAccount, random, sweepSessions, touchAccount } from "@/lib/accounts";
 import { putTemp, sweepTemp, takeTemp } from "@/lib/ephemeral";
 import { log } from "@/lib/log";
 
@@ -46,24 +46,34 @@ export async function finishLogin(code: string, state: string): Promise<{ sessio
   const token = await exchangeCode(code, redirectUri());
   const { id: bnetId, battletag } = await userInfo(token).catch(() => ({ id: undefined, battletag: undefined }));
   if (!bnetId) return { session: null };
-  const owned: number[] = [];
-  // (each character's sex, as Battle.net gives it: a French page agrees with it until the book keeps its own)
-  const women: number[] = [];
-  const men: number[] = [];
+  let account: Awaited<ReturnType<typeof loginAccount>> | undefined;
   for (const flavour of FLAVOURS) {
+    const owned: number[] = [];
+    const characters: [number, string, string][] = [];
+    // (each character's sex, as Battle.net gives it: a French page agrees with it until the book keeps its own)
+    const women: number[] = [];
+    const men: number[] = [];
     try {
       const profile = await accountProfile(flavour, pending.region, token);
       for (const acc of profile.wow_accounts ?? [])
         for (const c of acc.characters ?? []) {
+          if (flavour === "forever") {
+            const tuple = foreverTuple(c);
+            if (!tuple) continue;
+            characters.push(tuple);
+          }
           owned.push(c.id);
           if (c.gender?.type === "FEMALE") women.push(c.id);
           else if (c.gender?.type === "MALE") men.push(c.id);
         }
     } catch (err) {
-      // A game the account never played answers 404.
+      // A game the account never played answers 404 (nothing owned); any other failure leaves that game's entry as it was.
       log.info("login.flavour", { flavour, status: err instanceof BnetError ? err.status : String(err) });
+      if (!(err instanceof BnetError && err.status === 404)) continue;
     }
+    const game = flavour;
+    account = await loginAccount({ bnetId, battletag: battletag ?? null, game, region: pending.region, owned: game === "forever" ? characters.map(([id]) => id) : owned, characters: game === "forever" ? characters : undefined, women, men });
   }
-  const account = await loginAccount({ bnetId, battletag: battletag ?? null, region: pending.region, owned, women, men });
+  if (!account) account = await touchAccount(bnetId, battletag ?? null);
   return { session: await createSession(account.id), next: pending.next };
 }

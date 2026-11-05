@@ -99,7 +99,7 @@ app.post("/api/auth/test", sameOrigin, async (c) => {
 
 app.get("/api/me", (c) => {
   const a = c.get("account");
-  return c.json(a ? ({ battletag: a.battletag, regions: a.owned.map((o) => o.region), test: a.bnetId === TEST_BNET_ID || undefined } satisfies Me) : null);
+  return c.json(a ? ({ battletag: a.battletag, regions: [...new Set(a.owned.map((o) => o.region))], test: a.bnetId === TEST_BNET_ID || undefined } satisfies Me) : null);
 });
 
 // ── the library ──────────────────────────────────────────────────────────────

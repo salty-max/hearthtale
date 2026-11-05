@@ -109,8 +109,10 @@ Plan and steps: PLAN.md, "The site".
   A code attaches only a character nobody owns or its own account owns, never
   one another account holds ("owned": a saved file is editable, so a code
   proves a request, not a GUID). To move a book between accounts the old owner
-  removes it on the site first, or Battle.net proves the new owner. The gap:
-  on Forever, where Battle.net lists no characters, whoever links a GUID first
+  removes it on the site first, or (Classic) Battle.net proves the new owner. The gap:
+  on Forever characters Battle.net now lists (`profile-forever-<region>`,
+  5 November 2026) the account owns them with no code, see "Forever
+  ownership" below; for the rest (a character the list lacks), whoever links a GUID first
   keeps it, so a squat is released by hand once a player's report checks out:
   `bun run db:release <guid> --to <account id> --yes` gives the row to the
   verified owner (their next upload replaces the book, no code, no race),
@@ -118,6 +120,28 @@ Plan and steps: PLAN.md, "The site".
   (`.env.local`), and it prints the database's host first.
   Locally, "Use the test account" (`/api/auth/test`, never on Vercel) owns the
   test characters.
+- Forever ownership (`lib/accounts.ts`, `lib/ravenpost.ts`, `lib/upload.ts`
+  `proof`, `lib/bnet.ts` `foreverTuple`): `accounts.owned` entries carry a
+  `game` (none stored = `classic1x`, read through `gameOf`: no data migration);
+  a Forever entry also holds `characters: [id, "<pseudo-realm>", "Name Surname"]`
+  (6946 for every EU character seen). The passport's Forever entry is
+  `{ region, game: "forever", ids, characters }`; Ravenpost's sign-in and the
+  site's own (the account list of `profile-forever-<region>`, the realm read
+  from each character's protected link, no link = not owned) write the same
+  entry. An uploaded GUID is owned when its realm AND hex id are in the tuples
+  (`owns`; `Player-6946-0008653C` = 550204, **not yet checked against a real
+  Forever GUID**: the log line `forever.unmatched` `{ guid, name, unmatched }` (counts)
+  after an upload says whether it held). The game is decided by the GUID's
+  realm against the signed entries, never by the saved file's `client`; a
+  Classic id is refused in a Forever realm (`FOREVER_REALMS`), and Forever's
+  claim never takes a row another account holds (so a squat on a listed
+  character, by a link code, is still released by hand), and a row kept as
+  Forever (`book.client`) is never taken on a Classic id, in any realm. The name fallback
+  (`ownsByName`) is off unless `FOREVER_NAME_MATCH=1`: a name proves nothing
+  about a GUID that is public in the game, so it is for the day the GUID rule
+  is disproved only. The link code stays for what the list lacks; its top-bar
+  panel is the account's, not per character, and stays. A site sign-in
+  replaces the entry of a game only when that game's list answered (200 or 404).
 - Sharing (`lib/sharing.ts`, `lib/og.ts`): an owner's share links (`shares`:
   a token, the whole book or one part, deleted to revoke) read on `/s/:token`
   without an account, cut to what they cover (`cutBook`) with nothing private

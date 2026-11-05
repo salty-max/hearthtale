@@ -1,8 +1,8 @@
-import type { Book, BookChapter, Client, UploadResult } from "@hearthtale/shared";
+import type { Book, BookChapter, Client, Region, UploadResult } from "@hearthtale/shared";
 import { and, eq, sql } from "drizzle-orm";
 import { db } from "@/db";
-import { accounts, characters, companionLinks, removed, type CompanionLinkRow } from "@/db/schema";
-import { owns, sexOf } from "@/lib/accounts";
+import { accounts, characters, companionLinks, removed, type AccountRow, type CompanionLinkRow, type Game } from "@/db/schema";
+import { FOREVER_REALMS, gameOf, owns, ownsByName, sexOf } from "@/lib/accounts";
 import { parseGuid, regionOf } from "@/lib/guid";
 import { takeLinkCode } from "@/lib/link";
 import { log } from "@/lib/log";
@@ -135,6 +135,31 @@ export async function decide(
 /** A book saved, and the entries it finished since the last upload (for a notification). */
 export type Saved = { owner: number; characterId: number; name: string; entries: Book["chapters"]; language?: Book["language"] };
 
+/**
+ * What Battle.net's list proves of an uploaded character. The game is the
+ * GUID's realm against the account's signed entries, never the saved file's
+ * word. Forever: realm and id both in the list ("guid"), else, only with
+ * FOREVER_NAME_MATCH=1, the full name ("name"); neither takes a row another
+ * account holds (a GUID is public in the game, a record is editable).
+ */
+export function proof(
+  account: Pick<AccountRow, "owned"> | undefined,
+  region: Region | null,
+  ids: { realmId: number; characterId: number },
+  name: string,
+  rowOwner: number | null,
+  rowClient?: Client,
+): { game: Game; by: "guid" | "name" | null } {
+  if (!account || !region) return { game: "classic1x", by: null };
+  const free = rowOwner == null || rowOwner === (account as AccountRow).id;
+  if (owns(account, "forever", region, ids.realmId, ids.characterId)) return { game: "forever", by: free ? "guid" : null };
+  if (FOREVER_REALMS.has(ids.realmId) || account.owned.some((o) => gameOf(o) === "forever" && o.region === region && o.characters?.some(([, realm]) => realm === String(ids.realmId)))) {
+    return { game: "forever", by: free && ownsByName(account, region, name) ? "name" : null };
+  }
+  // (a row already kept as Forever is never a Classic id's, whatever its realm)
+  return { game: "classic1x", by: rowClient !== "forever" && owns(account, "classic1x", region, ids.realmId, ids.characterId) ? "guid" : null };
+}
+
 /** An upload from a companion: as its account's, then its last upload's time noted. */
 export async function handleUpload(link: CompanionLinkRow, body: unknown): Promise<{ result: UploadResult; saved: Saved[] }> {
   const out = await uploadAs(link.accountId, body);
@@ -150,6 +175,7 @@ export async function uploadAs(accountId: number, body: unknown): Promise<{ resu
   const result: UploadResult = { characters: [] };
   const saved: Saved[] = [];
   const link = { accountId };
+  const proofs = { guid: 0, name: 0, unmatched: 0 };
   const [account] = await db.select().from(accounts).where(eq(accounts.id, link.accountId));
   const records = list(obj(body)?.characters) ?? [];
   for (const raw of records.slice(0, MAX_CHARACTERS)) {
@@ -165,10 +191,12 @@ export async function uploadAs(accountId: number, body: unknown): Promise<{ resu
       .select({ guid: removed.guid })
       .from(removed)
       .where(and(eq(removed.accountId, link.accountId), eq(removed.guid, c.guid)));
+    const proved = proof(account, region, ids, c.name, row?.ownerId ?? null, row?.book.client);
+    if (proved.game === "forever") proofs[proved.by ?? "unmatched"]++;
     // A code typed in the game: used once, only when nothing else proves it.
     const { owner, status, lift } = await decide(
       link.accountId,
-      { removedHere: !!gone, alreadyMine: row?.ownerId === link.accountId, rowOwner: row?.ownerId ?? null, ownsOnBnet: !!(region && account && owns(account, region, ids.characterId)) },
+      { removedHere: !!gone, alreadyMine: row?.ownerId === link.accountId, rowOwner: row?.ownerId ?? null, ownsOnBnet: proved.by != null },
       async () => (c.linkCode ? takeLinkCode(c.linkCode) : null),
     );
     if (owner == null) {
@@ -176,7 +204,7 @@ export async function uploadAs(accountId: number, body: unknown): Promise<{ resu
       continue;
     }
     if (lift) await db.delete(removed).where(and(eq(removed.accountId, owner), eq(removed.guid, c.guid)));
-    const bnetSex = region && account?.id === owner ? sexOf(account, region, ids.characterId) : undefined;
+    const bnetSex = region && account?.id === owner ? sexOf(account, proved.game, region, ids.realmId, ids.characterId) : undefined;
     const values = {
       guid: c.guid,
       name: c.name,
@@ -203,6 +231,8 @@ export async function uploadAs(accountId: number, body: unknown): Promise<{ resu
     // (new entries are news only to the book's same owner)
     saved.push({ owner, characterId: kept.id, name: c.name, entries: row?.ownerId === owner ? finishedSince(row.book, c.book) : [], language: c.book.language });
   }
+  // (the first real Forever login shows here whether the GUID rule held: ids and counts only)
+  if (proofs.guid + proofs.name + proofs.unmatched) log.info("forever.unmatched", { account: link.accountId, ...proofs });
   log.info("upload", { account: link.accountId, saved: result.characters.filter((r) => r.status === "saved").length, of: records.length });
   return { result, saved };
 }

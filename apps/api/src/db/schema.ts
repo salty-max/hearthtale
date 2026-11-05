@@ -7,7 +7,11 @@ import { bigint, boolean, index, integer, jsonb, pgTable, primaryKey, serial, te
  * Logging in also proves which characters are the account's (their Battle.net
  * ids, per region): their books become its own.
  */
-export type Owned = { region: Region; ids: number[]; women?: number[]; men?: number[] };
+export type Game = "classic1x" | "forever";
+/** A Forever character the list gave: [character id, pseudo-realm id as a string, "Name Surname"]. */
+export type ForeverChar = [number, string, string];
+/** (no `game`: a Classic entry, as every one stored before Forever; Forever's carry the realm, which `ids` alone can't say) */
+export type Owned = { game?: Game; region: Region; ids: number[]; women?: number[]; men?: number[]; characters?: ForeverChar[] };
 
 export const accounts = pgTable("accounts", {
   id: serial("id").primaryKey(),

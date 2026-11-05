@@ -1,9 +1,8 @@
 import { REGIONS, type Region } from "@hearthtale/shared";
 import { createPublicKey, verify } from "node:crypto";
-import { eq } from "drizzle-orm";
 import { db } from "@/db";
-import { accounts, companionLinks, type AccountRow } from "@/db/schema";
-import { loginAccount, random } from "@/lib/accounts";
+import { companionLinks, type AccountRow, type ForeverChar } from "@/db/schema";
+import { loginAccount, random, touchAccount } from "@/lib/accounts";
 import { sha256 } from "@/lib/companion";
 import { getTemp, putTemp } from "@/lib/ephemeral";
 import { log } from "@/lib/log";
@@ -25,7 +24,19 @@ const DEV_PUBLIC_KEY = `-----BEGIN PUBLIC KEY-----
 MCowBQYDK2VwAyEAgiDVP8BHwyQ9D6WYy8rla/Ih/n67iDY66l0WEMqCv1M=
 -----END PUBLIC KEY-----`;
 
-export type Passport = { aud: string; bnetId: number; battletag: string; owned: { region: string; ids: number[] }[]; iat: number; exp: number; jti: string };
+export type Passport = { aud: string; bnetId: number; battletag: string; owned: { region: string; game?: string; ids: number[]; characters?: unknown[] }[]; iat: number; exp: number; jti: string };
+
+/** A Forever entry's tuples, kept only if well formed (a realm of digits, a short name, an id the entry lists). */
+export function foreverChars(v: unknown, ids: number[]): ForeverChar[] {
+  if (!Array.isArray(v)) return [];
+  const out: ForeverChar[] = [];
+  for (const t of v.slice(0, 500)) {
+    if (!Array.isArray(t) || t.length < 3) continue;
+    const [id, realm, name] = t;
+    if (Number.isSafeInteger(id) && ids.includes(id) && typeof realm === "string" && /^\d{1,9}$/.test(realm) && typeof name === "string" && name.length > 0 && name.length <= 80) out.push([id, realm, name]);
+  }
+  return out;
+}
 
 const keys = () => [PUBLIC_KEY, ...(process.env.VERCEL ? [] : [DEV_PUBLIC_KEY])].map((k) => createPublicKey(k));
 const isRegion = (r: unknown): r is Region => typeof r === "string" && (REGIONS as string[]).includes(r);
@@ -63,16 +74,16 @@ export async function signInWithPassport(passport: unknown): Promise<{ token: st
   const battletag = p.battletag || null;
   let account: AccountRow | undefined;
   for (const o of p.owned) {
-    if (!isRegion(o.region) || !Array.isArray(o.ids)) continue;
+    const game = o.game ?? "classic1x";
+    if (!isRegion(o.region) || !Array.isArray(o.ids) || (game !== "classic1x" && game !== "forever")) continue;
     const ids = o.ids.filter((id) => Number.isSafeInteger(id));
-    account = await loginAccount({ bnetId: p.bnetId, battletag, region: o.region, owned: ids });
+    // Forever's proof is the tuples [id, realm, "Name Surname"], each shaped and its id among `ids`.
+    const characters = game === "forever" ? foreverChars(o.characters, ids) : undefined;
+    account = await loginAccount({ bnetId: p.bnetId, battletag, game, region: o.region, owned: characters ? characters.map(([id]) => id) : ids, characters });
   }
   if (!account) {
     // (no characters Battle.net lists: the account, its owned characters untouched)
-    const [found] = await db.select().from(accounts).where(eq(accounts.bnetId, p.bnetId));
-    account = found
-      ? (await db.update(accounts).set({ battletag, lastSeenAt: new Date() }).where(eq(accounts.id, found.id)).returning())[0]
-      : (await db.insert(accounts).values({ bnetId: p.bnetId, battletag }).returning())[0];
+    account = await touchAccount(p.bnetId, battletag);
   }
   const token = random(32);
   await db.insert(companionLinks).values({ tokenHash: await sha256(token), accountId: account.id });
