@@ -129,11 +129,14 @@ Plan and steps: PLAN.md, "The site".
   site's own (the account list of `profile-forever-<region>`, the realm read
   from each character's protected link, no link = not owned) write the same
   entry. An uploaded GUID is owned when its realm AND hex id are in the tuples
-  (`owns`; `Player-6946-0008653C` = 550204, **not yet checked against a real
-  Forever GUID**: the log line `forever.unmatched` `{ guid, name, unmatched }` (counts)
+  (`owns`; `Player-6946-000A44D0` = 672976, **confirmed on 5 November 2026**
+  against a real Forever GUID: realm part = the list's pseudo-realm, hex part =
+  the character id; whether 6946 is per region or per ruleset is still unknown,
+  so no realm grants anything by itself. The log line `forever.unmatched` `{ guid, name, unmatched }` (counts)
   after an upload says whether it held). The game is decided by the GUID's
   realm against the signed entries, never by the saved file's `client`; a
-  Classic id is refused in a Forever realm (`FOREVER_REALMS`), and Forever's
+  Classic id is refused in a Forever realm already seen (`FOREVER_REALMS`, a
+  list that only ever refuses, never grants), and Forever's
   claim never takes a row another account holds (so a squat on a listed
   character, by a link code, is still released by hand), and a row kept as
   Forever (`book.client`) is never taken on a Classic id, in any realm. The name fallback
