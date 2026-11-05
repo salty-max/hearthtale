@@ -539,10 +539,15 @@ ns.on("PLAYER_LOGIN", function()
   c.visited, c.kinds = c.visited or {}, c.kinds or {}
   mend(c)
   if not c.closed then c.hardcore = hardcore() or c.hardcoreChosen or nil end -- chosen: in the settings, where the game can't tell
-  c.race, c.class = select(2, UnitRace("player")), select(2, UnitClass("player"))
+  -- (what the game hides stays what the journal had: a secret value is never kept)
+  local race, class = select(2, UnitRace("player")), select(2, UnitClass("player"))
+  if race and not secret(race) then c.race = race end
+  if class and not secret(class) then c.class = class end
   local faction = UnitFactionGroup("player")
   if not secret(faction) and (faction == "Alliance" or faction == "Horde") then c.faction = faction:lower() end
-  c.name, c.sex = playerName(UnitName("player")), UnitSex("player")
+  local name, sex = playerName(UnitName("player")), UnitSex("player")
+  if name then c.name = name end
+  if sex and not secret(sex) then c.sex = sex end
   -- where it lives, for the site (the Battle.net region: 1 US, 3 EU...)
   c.realm, c.region = GetRealmName(), GetCurrentRegion()
   -- A character met mid-life: what the game can say of the life so far.

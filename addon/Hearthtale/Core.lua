@@ -88,7 +88,12 @@ end)
 function ns.login()
   local guid = UnitGUID("player")
   local saved = HearthtaleChar
-  if type(saved) == "table" and saved.guid == guid then
+  if ns.secret(guid) then
+    -- (the game hides who this is: the journal the character has stays theirs, and none is begun under an id
+    -- nobody can read. Without one the addon hears nothing this session: `ready` above)
+    char = type(saved) == "table" and saved.guid and saved.began and saved or nil
+    if not char then return end
+  elseif type(saved) == "table" and saved.guid == guid then
     char = saved
   else
     char = { guid = guid, began = { at = time(), level = UnitLevel("player") }, chapters = {} }

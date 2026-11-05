@@ -260,6 +260,14 @@ German and Spanish (deDE, esES, esMX) are held back from players since 1 Novembe
   the addon loaded), shared by:
   - `addon/test/sim.lua`: a life replayed, every recording asserted, its book
     written. `FOREVER=1` runs it as Forever.
+  - `addon/test/matrix.lua`, `strict_test.lua` and `scripts/battery.ts`: the kit's battery
+    (`../addon-kit/docs/battery.md`), 5 November 2026. The mock is the addon's own, so
+    `game.lua` keeps what the battery walks (kids, regions, size, anchor, tooltip lines) and
+    calls the strict game's `strictMethod` on every method a frame answers. The matrix plays
+    characters, levels, Hardcore and death on every tab and window; `matrix.lua secrets`
+    (Forever) answers the calls Blizzard flags as secret with secret values (`SECRETS=all`
+    for every `C_*` call). `addon/test/api_*.lua` and `evidence_*.lua` are generated
+    (`bun run apidocs`, checked in `addon:check`).
   - `addon/test/quests.lua`: the game's quests the test lives play, by their
     real ids (a made-up quest: 9000000 on), and `addon/test/truth.lua`: a quest
     told by its story (writing/why/) must be the game's quest of that id, the

@@ -28,7 +28,8 @@ local function rawObjectives(id)
   local raw = {}
   if C_QuestLog and C_QuestLog.GetQuestObjectives then
     local ok, list = pcall(C_QuestLog.GetQuestObjectives, id)
-    for _, o in ipairs(ok and list or {}) do
+    -- (a list the game hides is no list: Blizzard's documentation does not flag this call as secret, the guard is cheap)
+    for _, o in ipairs(ok and type(list) == "table" and not ns.secret(list) and list or {}) do
       table.insert(raw, { text = o.text, type = o.type, n = o.numRequired, finished = o.finished })
     end
   elseif GetQuestLogIndexByID and GetNumQuestLeaderBoards and GetQuestLogLeaderBoard then

@@ -26,7 +26,11 @@ ns.on("GROUP_ROSTER_UPDATE", function()
     local name, first = playerName(UnitName(unit))
     if name and name ~= char().name and not ch.company[name] then
       ch.company[name] = true
-      moment("group", { name = name, first = first ~= name and first or nil, class = select(2, UnitClass(unit)) })
+      local class = select(2, UnitClass(unit))
+      moment(
+        "group",
+        { name = name, first = first ~= name and first or nil, class = not ns.secret(class) and class or nil }
+      )
     end
   end
 end)

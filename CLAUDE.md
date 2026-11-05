@@ -46,6 +46,8 @@ bun scripts/root.ts --run addon-kit/q.ts check -- bun run check   # the same, qu
 bun run db | db:generate | db:migrate | db:seed
 bun run addon:seed                                  # regenerate the test characters, the landing's samples
 bun run audit                                       # the generated tables, the journals read again (.cache/audit/)
+bun run battery                                     # the kit's battery: the strict game, the matrix, secret values (about 35 seconds)
+bun run apidocs                                     # the generated API tables again, after a new Blizzard call or a pin
 bun run kit:sync                                    # after a change to the kit (Kit.lua, Media, scripts/root.ts)
 scripts/release.sh --version X.Y.Z [--hold] NOTES.md
                        # the addon: check, tag, push; Actions publish it on GitHub, CurseForge, Wago
@@ -93,6 +95,7 @@ scripts/release.sh --version X.Y.Z [--hold] NOTES.md
   `prepare` script installs the family's hooks again, outside CI (husky's
   run after ours, chained).
 - `Kit.lua`, `Media/`, `scripts/root.ts` (and `root.py`), `scripts/locales-lib.ts`, `scripts/package-lib.ts`,
+  `scripts/battery-lib.ts`, `addon/test/strict.lua`, `secrets.lua`, `battery.lua`, `strict_test.lua`,
   `i18n/kit/` (the kit's words, translated once), `wow.yml` and `stylua.toml`
   are the kit's copies: edit addon-kit, then `bun run kit:sync`. The addon's
   own globals for selene are `hearthtale.yml`.

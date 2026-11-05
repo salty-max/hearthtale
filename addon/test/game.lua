@@ -6,7 +6,11 @@ local DIR = "addon/Hearthtale/"
 local FOREVER = os.getenv("FOREVER") == "1"
 function GetBuildInfo() return "1.15.8", "60000", "Oct 1 2026", FOREVER and 16001 or 11509 end
 local secrets = {}
-if FOREVER then issecretvalue = function(v) return secrets[v] == true end end
+-- (the kit's secret values: issecretvalue on Forever, before Kit.lua reads it; secrets is the table it reads)
+local X = dofile("addon/test/secrets.lua")
+X.install({ FOREVER = FOREVER }, secrets)
+-- (the strict game, once it is on, checks each method a frame answers: see the end of the mock, ui())
+local strictMethod
 
 -- ── a fake game ──────────────────────────────────────────────────────────────
 local clock, uptime = 1790900000, 1000
@@ -334,99 +338,159 @@ function CombatLogGetCurrentEventInfo() return unpack(combatLog) end
 -- UI: any method works and returns something sensible, scripts are kept.
 local rendered = {} -- text assigned by the rendered interface, for locale replays
 local function ui()
-  local o = { shown = false, scripts = {} }
+  -- (kids, regions, w, h, point: what the kit's battery walks; rawget-safe, as any other name answers a function)
+  local o = { shown = false, scripts = {}, kids = {}, regions = {}, w = 0, h = 0, point = false, lines = {} }
+  local lookup = function(t, k)
+    if k == "SetScript" then
+      return function(self, name, fn) self.scripts[name] = fn end
+    end
+    if k == "Show" then
+      return function(self)
+        -- (OnShow on a showing only, as in the game: not on a shown frame)
+        local was = self.shown
+        self.shown = true
+        if not was and self.scripts.OnShow then self.scripts.OnShow(self) end
+      end
+    end
+    if k == "Hide" then
+      return function(self)
+        local was = self.shown
+        self.shown = false
+        if was and self.scripts.OnHide then self.scripts.OnHide(self) end
+      end
+    end
+    if k == "SetShown" then
+      return function(self, v)
+        if v then
+          self:Show()
+        else
+          self:Hide()
+        end
+      end
+    end
+    if k == "IsShown" then
+      return function(self) return self.shown end
+    end
+    if k == "SetText" then
+      return function(self, v)
+        self.text = v
+        if type(v) == "string" then table.insert(rendered, v) end
+      end
+    end
+    if k == "SetChecked" then
+      return function(self, v) self.checked = v and true or false end
+    end
+    if k == "GetChecked" then
+      return function(self) return rawget(self, "checked") or false end
+    end
+    if k == "SetID" then
+      return function(self, v) self.idValue = v end
+    end
+    if k == "GetID" then
+      return function(self) return rawget(self, "idValue") or 0 end
+    end
+    if k == "GetText" then
+      return function(self) return rawget(self, "text") or "" end
+    end
+    if k == "GetStringHeight" then
+      return function() return 14 end
+    end
+    if k == "GetUnboundedStringWidth" then
+      return function() return 100 end
+    end
+    if k == "GetStringWidth" then
+      return function(self) return 6 * #(rawget(self, "text") or "") end
+    end
+    if k == "SetHeight" then
+      return function(self, v)
+        self.height, self.h = v, v
+        return self
+      end
+    end
+    if k == "SetWidth" then
+      return function(self, v)
+        self.w = v
+        return self
+      end
+    end
+    if k == "SetSize" then
+      return function(self, w, h)
+        self.w, self.h, self.height = w, h, h
+        return self
+      end
+    end
+    if k == "SetPoint" then
+      return function(self, ...)
+        self.point = { ... }
+        return self
+      end
+    end
+    if k == "ClearAllPoints" then
+      return function(self)
+        self.point = false
+        return self
+      end
+    end
+    if k == "AddLine" or k == "AddDoubleLine" then
+      return function(self, text)
+        table.insert(self.lines, text)
+        return self
+      end
+    end
+    if k == "ClearLines" then
+      return function(self)
+        self.lines = {}
+        return self
+      end
+    end
+    if k == "GetHeight" then
+      return function(self) return rawget(self, "height") or 100 end
+    end
+    if k == "SetVerticalScroll" then
+      return function(self, v) self.vscroll = v end
+    end
+    if k == "GetVerticalScroll" then
+      return function(self) return rawget(self, "vscroll") or 0 end
+    end
+    if k == "GetWidth" then
+      return function() return 140 end
+    end
+    if k == "GetCenter" then
+      return function() return 0, 0 end
+    end
+    if k == "GetPoint" then -- (an anchor: the point, what it hangs on, its point there, the offsets)
+      return function() return "TOPRIGHT", UIParent, "TOPRIGHT", 0, 0 end
+    end
+    if k == "GetEffectiveScale" or k == "GetFrameLevel" then
+      return function() return 1 end
+    end
+    if k == "CreateFontString" or k == "CreateTexture" then
+      return function(self)
+        local r = ui()
+        r.kind, r.parent = k == "CreateTexture" and "Texture" or "FontString", self
+        table.insert(self.regions, r)
+        return r
+      end
+    end
+    return function() return t end
+  end
   return setmetatable(o, {
     __index = function(t, k)
-      if k == "SetScript" then
-        return function(self, name, fn) self.scripts[name] = fn end
-      end
-      if k == "Show" then
-        return function(self)
-          -- (OnShow on a showing only, as in the game: not on a shown frame)
-          local was = self.shown
-          self.shown = true
-          if not was and self.scripts.OnShow then self.scripts.OnShow(self) end
+      local fn = lookup(t, k)
+      if strictMethod and type(k) == "string" and k:match("^%u") and type(fn) == "function" then
+        return function(self, ...)
+          strictMethod(k, self, ...)
+          return fn(self, ...)
         end
       end
-      if k == "Hide" then
-        return function(self)
-          local was = self.shown
-          self.shown = false
-          if was and self.scripts.OnHide then self.scripts.OnHide(self) end
-        end
-      end
-      if k == "SetShown" then
-        return function(self, v)
-          if v then
-            self:Show()
-          else
-            self:Hide()
-          end
-        end
-      end
-      if k == "IsShown" then
-        return function(self) return self.shown end
-      end
-      if k == "SetText" then
-        return function(self, v)
-          self.text = v
-          if type(v) == "string" then table.insert(rendered, v) end
-        end
-      end
-      if k == "SetChecked" then
-        return function(self, v) self.checked = v and true or false end
-      end
-      if k == "GetChecked" then
-        return function(self) return rawget(self, "checked") or false end
-      end
-      if k == "SetID" then
-        return function(self, v) self.idValue = v end
-      end
-      if k == "GetID" then
-        return function(self) return rawget(self, "idValue") or 0 end
-      end
-      if k == "GetText" then
-        return function(self) return rawget(self, "text") or "" end
-      end
-      if k == "GetStringHeight" then
-        return function() return 14 end
-      end
-      if k == "GetUnboundedStringWidth" then
-        return function() return 100 end
-      end
-      if k == "GetStringWidth" then
-        return function(self) return 6 * #(rawget(self, "text") or "") end
-      end
-      if k == "SetHeight" then
-        return function(self, v) self.height = v end
-      end
-      if k == "GetHeight" then
-        return function(self) return rawget(self, "height") or 100 end
-      end
-      if k == "SetVerticalScroll" then
-        return function(self, v) self.vscroll = v end
-      end
-      if k == "GetVerticalScroll" then
-        return function(self) return rawget(self, "vscroll") or 0 end
-      end
-      if k == "GetWidth" then
-        return function() return 140 end
-      end
-      if k == "GetCenter" then
-        return function() return 0, 0 end
-      end
-      if k == "GetEffectiveScale" or k == "GetFrameLevel" then
-        return function() return 1 end
-      end
-      if k == "CreateFontString" or k == "CreateTexture" then
-        return function() return ui() end
-      end
-      return function() return t end
+      return fn
     end,
   })
 end
 UIParent, UISpecialFrames = ui(), {}
 Minimap, GameTooltip = ui(), ui()
+GameTooltip.kind, GameTooltip.name = "GameTooltip", "GameTooltip"
+ChatFontNormal = ui() -- (a font object, the game's)
 function GetCursorPosition() return 0, 0 end
 -- The game's settings panel: keep what the addon registers.
 local panel = { settings = {} }
@@ -457,8 +521,13 @@ local portraitOf
 function SetPortraitTexture(_, unit) portraitOf = unit end
 
 local frames = {}
-function CreateFrame(_, name, _, template)
+function CreateFrame(kind, name, parent, template)
   local f = ui()
+  if parent then
+    f.parent = parent
+    table.insert(parent.kids, f)
+  end
+  f.kind, f.name = kind, name or false -- (the strict game names a frame in a refusal)
   f.shown = true -- (a new frame is shown, as in the game)
   f.registered, f.unitsOf = {}, {}
   if template == "ButtonFrameTemplate" then -- the game's window has its portrait
@@ -578,6 +647,18 @@ LinkProcessorResponse = { Handled = 2 }
 -- ── load the addon ───────────────────────────────────────────────────────────
 -- The files in the order of the game's own TOC (its data, and Forever's own
 -- content in Forever's).
+-- ── the strict game: what Blizzard's documentation says the client refuses, refused here too
+-- (STRICT=0 plays the lenient game, to compare). This game is the addon's own, not the kit's mock, so the
+-- strict game checks the documented functions here and the methods through strictMethod, above.
+local strict
+if os.getenv("STRICT") ~= "0" then
+  strict = dofile("addon/test/strict.lua")
+  strict.install({ FOREVER = FOREVER }, FOREVER and "forever" or "classic")
+  strictMethod = strict.method
+end
+-- (a test that needs the game changed before the addon loads, and so before the addon keeps a copy of a
+-- global: matrix.lua secrets replaces `type` so a secret value reports the type it stands for)
+if HEARTHTALE_BEFORE_LOAD then HEARTHTALE_BEFORE_LOAD() end
 local ns = {}
 -- (the client's language: LOCALE = "frFR" before this file plays a French client)
 local LOCALE = rawget(_G, "LOCALE") or os.getenv("LOCALE") or "enUS"
@@ -735,7 +816,9 @@ return {
   creature = creature,
   itemLink = itemLink,
   forever = FOREVER,
+  FOREVER = FOREVER, -- (the kit's tests ask for it by this name)
   secrets = secrets,
+  strict = strict,
   -- time: the clock (and the hour of the day) or only the time played
   wait = function(s)
     clock, uptime = clock + s, uptime + s
