@@ -391,3 +391,7 @@ with its sex; the labels around them are the site's own language
 - Lua: `bun run format:lua` (StyLua, `stylua.toml`) and `bun run lint:lua`
   (selene, `selene.toml`; the game's globals in `wow.yml`: add one there when
   the addon calls a new game function). Both run in `addon:check` and CI.
+
+## The key binding
+
+For a controller player (no keyboard for the slash command, a cursor to steer to the minimap button). `addon/Hearthtale/Bindings.xml` and `ns.kit.binding(...)` at the end of `Minimap.lua`: one key or pad button, chosen in the game's Key Bindings under the addon's own heading ("Open <the addon>"), opens and closes the journal through `ns.toggle`, as the minimap button's click does. The binding does nothing until the player puts a key on it. The kit's `K.binding`, the file, what the game does in each game and what is not verified: `addon-kit/docs/controller.md`, "Opening by a pad button". `bun run bindings` (part of `check`) checks the file, the function and the package.

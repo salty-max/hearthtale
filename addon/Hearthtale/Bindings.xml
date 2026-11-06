@@ -1,0 +1,5 @@
+<Bindings>
+	<Binding name="HEARTHTALE_OPEN" category="BINDING_HEADER_HEARTHTALE">
+		HearthtaleBinding();
+	</Binding>
+</Bindings>

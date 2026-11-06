@@ -1915,4 +1915,15 @@ do
   end
 end
 
+-- the key binding (Bindings.xml calls this global): it opens and closes the window as ns.toggle does
+do
+  check(type(HearthtaleBinding) == "function", "the key binding's function is there")
+  local was = HearthtaleFrame and HearthtaleFrame:IsShown() or false
+  HearthtaleBinding()
+  check(HearthtaleFrame and HearthtaleFrame:IsShown() == not was, "the key binding opens the window")
+  HearthtaleBinding()
+  check(HearthtaleFrame:IsShown() == was, "… and a second press closes it")
+  check(BINDING_HEADER_HEARTHTALE ~= nil, "… under the addon's own heading")
+end
+
 io.write(FOREVER and "all good (Forever)\n" or "all good\n")
