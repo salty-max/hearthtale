@@ -583,6 +583,7 @@ ns.names = {
     ["Dragonmaw Gates"] = true,
     ["Dreadmaul Rock"] = true,
     ["Dreadmist Peak"] = true,
+    ["Drowned City"] = true,
     ["Dry Hills"] = true,
     ["Drygulch Ravine"] = true,
     ["Drywhisker Gorge"] = true,
