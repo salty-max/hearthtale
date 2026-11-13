@@ -40,7 +40,7 @@ local hallLife, hallKey -- in the Hall: the open life (its guid) and its page ("
 local asked -- opened at a page (a link): don't go to the last chapter
 local opening -- the book opened or a tab shown (else a page drawn again as it changes)
 local WIDTH = K.PAGE_WIDTH
-local EPITAPH = K.hex(T.accent) .. "%s|r" -- the epitaph, in the accent
+local function epitaph(text) return K.hex(T.accent) .. text .. "|r" end -- (the epitaph, in the accent: read when drawn, for the look)
 
 local DOT = "  \194\183  " -- (a middle dot between the parts of a line)
 
@@ -122,7 +122,7 @@ local function showPage(life, w, key, mine)
     local sub = { L["Hardcore"], L["fallen"], ns.levelLine(d, race, class) }
     if life.realm then table.insert(sub, life.realm) end
     table.insert(sub, day(d.at))
-    return show(life.name or "", line(sub), { w.epitaph and EPITAPH:format(w.epitaph) }, life)
+    return show(life.name or "", line(sub), { w.epitaph and epitaph(w.epitaph) }, life)
   end
   local ch = w.chapters[key]
   if not ch then return end
@@ -143,7 +143,7 @@ local function showPage(life, w, key, mine)
     -- selene: allow(mixed_table) (the kit's paragraph: its text, and what it is)
     table.insert(paragraphs, { ch.note, aside = true })
   end
-  if life.closed and last and w.epitaph then table.insert(paragraphs, EPITAPH:format(w.epitaph)) end
+  if life.closed and last and w.epitaph then table.insert(paragraphs, epitaph(w.epitaph)) end
   show(ch.title or L["Entry %d"]:format(key), line(parts), paragraphs, life, mine)
 end
 
@@ -409,12 +409,21 @@ local function buildEditor(sheet)
   local noteLabel = label(editor, BODY_FONT, 12, T.soft)
   noteLabel:SetText(L["A note in the entry's margin, in your own words"])
   local ground = editor:CreateTexture(nil, "BACKGROUND")
-  ground:SetColorTexture(0, 0, 0, 0.35)
+  -- (on paper the note's ground is the paper's light field and the words in ink)
+  if K.paper then
+    ground:SetColorTexture(unpack(T.field))
+  else
+    ground:SetColorTexture(0, 0, 0, 0.35)
+  end
   editor.note = CreateFrame("EditBox", nil, editor)
   editor.note:SetMultiLine(true)
   editor.note:SetAutoFocus(false)
   editor.note:SetMaxLetters(1000)
   editor.note:SetFontObject(ChatFontNormal)
+  if K.paper then
+    editor.note:SetTextColor(unpack(T.text))
+    editor.note:SetShadowOffset(0, 0) -- (no drop shadow under dark ink)
+  end
   editor.note:SetWidth(WIDTH - 16)
   -- (a click anywhere on its ground writes in it)
   local area = CreateFrame("Button", nil, editor)
@@ -502,9 +511,10 @@ local function hardcoreMark(parent, x)
   m:EnableMouse(true)
   m:SetScript("OnEnter", function(self)
     GameTooltip:SetOwner(self, "ANCHOR_BOTTOMRIGHT")
-    GameTooltip:SetText(self.label:GetText() or "", unpack(self.colour or T.gold))
+    -- (the tooltip is the game's, dark whatever the look: its own colours)
+    GameTooltip:SetText(self.label:GetText() or "", unpack(self.tipColour or K.TIP_NEW))
     for _, l in ipairs(self.lines or {}) do
-      GameTooltip:AddLine(l, T.text[1], T.text[2], T.text[3], true)
+      GameTooltip:AddLine(l, 1, 1, 1, true)
     end
     GameTooltip:Show()
   end)
@@ -514,17 +524,19 @@ local function hardcoreMark(parent, x)
     local source = c.hardcoreChosen and L["Marked as Hardcore in Hearthtale's options (the game doesn't say)."]
       or L["As the game reports it."]
     if c.closed then
-      self.colour = FALLEN
+      self.colour, self.tipColour = FALLEN, FALLEN
       self.label:SetText(L["Fallen"])
       self.lines =
         { L["This life has ended: its book is closed, with its epitaph, and kept in the Hall of the Fallen."] }
     else
-      self.colour = T.gold
+      self.colour, self.tipColour = T.gold, K.TIP_NEW
       self.label:SetText(L["Hardcore"])
       self.lines =
         { L["One life, one book: a death closes it with an epitaph, and it joins the Hall of the Fallen."], source }
     end
-    self.label:SetTextColor(unpack(self.colour))
+    -- (the red of a closed life, darkened in its hue where the page is paper)
+    local ink = K.paper and c.closed and K.ink(self.colour, { T.ground, T.back }, 3.2) or self.colour
+    self.label:SetTextColor(unpack(ink))
     self:Show()
   end
   return m
@@ -768,7 +780,7 @@ ns.onHall = function() B:refresh() end
 -- A chapter closes: a line in chat with a link to it.
 -- (the kit's links: |Hhearthtale:<target>|h, followed below)
 local followLink
-local link = K.links("hearthtale", function(target) followLink(target) end)
+local link = K.links("hearthtale", function(target) followLink(target) end, "ffd100") -- (chat is dark whatever the look: the game's link yellow)
 function ns.link(target, text) return link(target, text) end
 ns.onChapter = function(number)
   print(ns.PREFIX .. L["Entry %d is written. %s"]:format(number, ns.link("chapter:" .. number, L["Read it"])))

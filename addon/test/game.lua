@@ -443,6 +443,12 @@ local function ui()
         return self
       end
     end
+    if k == "SetScale" then
+      return function(self, v) self.scale = v end
+    end
+    if k == "GetScale" then
+      return function(self) return rawget(self, "scale") or 1 end
+    end
     if k == "GetHeight" then
       return function(self) return rawget(self, "height") or 100 end
     end
@@ -488,6 +494,8 @@ local function ui()
   })
 end
 UIParent, UISpecialFrames = ui(), {}
+UIParent.GetWidth = function() return 1920 end
+UIParent.GetHeight = function() return 1080 end
 Minimap, GameTooltip = ui(), ui()
 GameTooltip.kind, GameTooltip.name = "GameTooltip", "GameTooltip"
 ChatFontNormal = ui() -- (a font object, the game's)

@@ -40,6 +40,11 @@ do
     'an objective read in argument order, numbered ("0/8 Tough Wolf Meat") or not'
   )
 end
+-- (PAPER=1: a character who chose the paper look and the largest book)
+if os.getenv("PAPER") == "1" then
+  HearthtaleSettings =
+    { profiles = { [UnitName("player") .. " - " .. GetRealmName()] = { paper = true, bookSize = 4 } } }
+end
 HearthtaleChar = { guid = "Player-6113-0DEAD000", chapters = {} }
 login()
 local J = HearthtaleChar
@@ -167,7 +172,8 @@ check(
   "… its choices copied (never whether it saw the welcome), the boxes with them"
 )
 local code = ns.exportCode()
-check(code == "HT1:t0:n10:h1:a90", "… a code for them: " .. code)
+local look = (":z%d:p%d"):format(ns.option("bookSize"), ns.option("paper") and 1 or 0) -- (the character's own, whatever it is)
+check(code == "HT1:t0:n10:h1:a90" .. look, "… a code for them: " .. code)
 check(ns.importCode("HT1:t1:h0:a200") and ns.option("toast"), "… a code taken")
 check(
   not ns.importCode("hello") and not ns.importCode("HT1:x9") and ns.option("toast"),
@@ -1115,6 +1121,61 @@ check(
     and not closedBook.epitaph:find("{", 1, true),
   "its epitaph: who, where, at what level"
 )
+-- ── the book's size and the paper look ───────────────────────────────────────
+do
+  local K = ns.kit
+  local PAPER = os.getenv("PAPER") == "1"
+  -- (earlier scenes may have started from fresh settings: the character's choice made again)
+  ns.setOption("paper", PAPER)
+  ns.setOption("bookSize", PAPER and 4 or 1)
+  if not HearthtaleFrame then ns.toggle() end -- (the first window reads the look)
+  check(
+    K.lookGet and K.lookGet("bookSize") == ns.option("bookSize") and K.lookGet("paper") == ns.option("paper"),
+    "the kit reads the look from the options"
+  )
+  local sizes = { 1, 1.15, 1.3, 1.5 }
+  for step = 1, 4 do
+    ns.setOption("bookSize", step)
+    K.resize(step) -- (what the Book size choice calls)
+    check(
+      math.abs(HearthtaleFrame:GetScale() - sizes[step]) < 1e-9
+        and math.abs(HearthtaleFrame:GetScale() - K.scaleFor(step, K.BOOK_W, K.BOOK_H)) < 1e-9,
+      "size " .. step .. " scales the open window at once to " .. sizes[step]
+    )
+  end
+  ns.setOption("bookSize", PAPER and 4 or 1)
+  K.resize(PAPER and 4 or 1)
+  ns.setOption("paper", PAPER)
+  local code = ns.profiles:export()
+  check(code:find(":z%d") and code:find(":p%d"), "the profile's code carries the size and the paper")
+end
+
+-- RENDER=dir [PAPER=1] luajit addon/test/sim.lua: the book as HTML (addon-kit/render.lua), for a look
+-- at size 1 and 4 and on paper before a build (Chrome's fonts: the game has the last word)
+if os.getenv("RENDER") then
+  local render = dofile("../addon-kit/render.lua")
+  local book = ns.writeBook(J)
+  local rows, first = { { "Hearthtale", "section" } }, nil
+  for i, ch in ipairs(book.chapters) do
+    if i <= 9 then table.insert(rows, { (ch.title or ("Entry " .. i)), "row", picked = i == 1, count = ch.place }) end
+    first = first or ch
+  end
+  local paras = { { "para", first.text or "" } }
+  render(ns.kit, os.getenv("RENDER"), {
+    scene = "book",
+    title = "Hearthtale",
+    tabs = { "Journal", "Hall of the Fallen" },
+    count = #book.chapters .. " entries",
+    search = "",
+    rows = rows,
+    page = {
+      heading = first.title or "Entry 1",
+      sub = (first.place or "") .. " " .. ns.kit.hex(ns.kit.T.accent) .. "the end|r",
+      blocks = paras,
+    },
+  })
+end
+
 io.write("    " .. closedBook.epitaph .. "\n")
 local epitaph = J.book.epitaph
 J.book.epitaph = "An epitaph an older writer wrote."

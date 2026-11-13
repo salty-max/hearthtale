@@ -8,7 +8,7 @@
 -- (no C_GameRules), kept in its journal.
 --
 --   HearthtaleSettings.profiles["Name - Realm"] = { toast, minimapHidden,
---     minimapAngle, welcomed }
+--     minimapAngle, bookSize, paper, welcomed }
 --   (no setting for the chat lines since 0.9.0: always shown; a profile's
 --   old chat value is left unread)
 --   (the account-wide values of 0.6.0, at the top of HearthtaleSettings: the
@@ -25,11 +25,13 @@ local DEFAULTS = {
   minimapHidden = false,
   minimapAngle = K.MINIMAP_ANGLES.Hearthtale,
   bannerSeconds = K.BANNER_SECONDS,
+  bookSize = 1,
+  paper = false,
   welcomed = false,
 }
-local SHARED = { "toast", "bannerSeconds", "minimapHidden", "minimapAngle" } -- (what a copy carries)
+local SHARED = { "toast", "bannerSeconds", "minimapHidden", "minimapAngle", "bookSize", "paper" } -- (what a copy carries)
 
--- The profiles (Kit.lua): a code "HT1:t1:n10:h0:a200" (the banner, how long it
+-- The profiles (Kit.lua): a code "HT1:t1:n10:h0:a200:z1:p0" (the banner, how long it
 -- stays, the minimap button hidden, its angle; 0.7.0's "m", the button shown, and 0.8's "c",
 -- the chat lines, are left out of a code now, and of an older one taken).
 local P = K.profiles({
@@ -39,7 +41,7 @@ local P = K.profiles({
   end,
   defaults = DEFAULTS,
   shared = SHARED,
-  letters = { toast = "t", bannerSeconds = "n", minimapHidden = "h", minimapAngle = "a" },
+  letters = { toast = "t", bannerSeconds = "n", minimapHidden = "h", minimapAngle = "a", bookSize = "z", paper = "p" },
   tag = "HT1",
   changed = function(k)
     if (k == "minimapHidden" or k == "minimapAngle") and ns.updateMinimapButton then ns.updateMinimapButton() end
@@ -171,6 +173,7 @@ function ns.createSettingsPanel()
   end
 
   O:collect(ns.collect)
+  O:look()
   O:copy()
   O:done()
 end
