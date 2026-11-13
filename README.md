@@ -69,6 +69,10 @@ the game cannot identify it. Settings are saved per character and can be
 transferred with `/ht export` and `/ht import CODE`. Use `/ht minimap` to
 show or hide the button.
 
+The settings also offer the book's size (four steps) and paper colours (dark ink on tan paper, applied by a
+reload: the page ends with a Reload button). **Options > Key Bindings** lists **Open Hearthtale**: one key,
+or on Forever a controller button, opens and closes the journal. Nothing is bound until you choose.
+
 Hearthtale shares its book style with its author's other addons, listed on
 its store page. Each addon works independently.
 

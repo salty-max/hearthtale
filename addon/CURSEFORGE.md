@@ -75,6 +75,10 @@ The welcome page appears once for each character. Open it again with `/ht welcom
 
 You can change the alert when a book closes and the minimap button. Chat lines always show. If the game cannot identify a Hardcore character, you can mark it yourself in the settings.
 
+Two choices change how the journal looks. **Book size** makes the whole window larger, in four steps from Normal to Largest. **Paper colours** replace the dark look with dark ink on tan paper, which some players find easier on the eyes. Paper colours take effect after a reload, and the settings page ends with a **Reload** button for it.
+
+**Options > Key Bindings** lists **Open Hearthtale** under a heading of its own. Put a key on it, or on Forever a controller button, and one press opens or closes the journal. Nothing is bound until you choose.
+
 Settings are saved per character. Copy them from another character of the same game on the welcome or settings page, or transfer them between games and accounts with `/ht export` and `/ht import CODE`.
 
 - `/ht title [N] TEXT` gives entry N a title. Leave out N for the latest entry.
