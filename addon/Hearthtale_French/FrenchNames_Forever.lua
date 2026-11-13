@@ -39913,7 +39913,7 @@ function ns.frenchNames()
 [21544]={ "Habit de fête bleu", "m", lc = true },
 [21545]={ "Marchandises des Gourmandises Fumebois", "fp", lc = true },
 [21546]={ "Élixir de puissance sacrée", "m", lc = true },
-[21547]={ "Recette : Elixir de maîtrise du feu supérieure", "f", lc = true },
+[21547]={ "Recette : élixir de puissance sacrée", "f", lc = true },
 [21548]={ "Patron : Gants tempétueux", "m", lc = true },
 [21552]={ "Jaune-queue rayé", "m" },
 [21557]={ "Petite comète rouge", "f", lc = true },
@@ -47552,6 +47552,7 @@ function ns.frenchNames()
 [289439]={ "Bourse de poussière pourpre", "f", lc = true },
 [289559]={ "Enchantement de bottes – Vitesse", "m", lc = true },
 [289560]={ "Formule : enchantement de bottes – Vitesse", "f", lc = true },
+[290333]={ "Fidèle carabine de Berdun", "m", lc = true },
   },
   races = {
 [1]="Humain",

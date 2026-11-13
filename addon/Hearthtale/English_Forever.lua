@@ -30057,7 +30057,7 @@ function ns.englishNames()
 [21544]="Festive Blue Pant Suit",
 [21545]="Smokywood Supplies",
 [21546]="Elixir of Holy Power",
-[21547]="Recipe: Elixir of Greater Firepower",
+[21547]="Recipe: Elixir of Holy Power",
 [21548]="Pattern: Stormshroud Gloves",
 [21552]="Striped Yellowtail",
 [21557]="Small Red Rocket",
@@ -37696,6 +37696,7 @@ function ns.englishNames()
 [289439]="Pouch of Violet Dust",
 [289559]="Enchant Boots - Speed",
 [289560]="Formula: Enchant Boots - Speed",
+[290333]="Berdun's Trusty Rifle",
     },
   }
 end
