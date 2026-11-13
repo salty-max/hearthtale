@@ -1133,6 +1133,7 @@ do
     K.lookGet and K.lookGet("bookSize") == ns.option("bookSize") and K.lookGet("paper") == ns.option("paper"),
     "the kit reads the look from the options"
   )
+  check(K.paper == PAPER, "the kit's look is the paper's when the paper is chosen, the dark one when not")
   local sizes = { 1, 1.15, 1.3, 1.5 }
   for step = 1, 4 do
     ns.setOption("bookSize", step)
