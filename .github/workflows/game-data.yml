@@ -37,6 +37,8 @@ jobs:
           bun scripts/race_names.ts "$locale"
         done
         bun run audit
+        # (Blizzard's API tables follow the UI source's pin, which moves by hand: 12 November 2026, 70862 left them stale)
+        bun scripts/root.ts --run addon-kit/apidocs.ts
         bun scripts/locales.ts
       # (before: the committed files and the last run's audit; after: this run's)
       report: |
@@ -56,3 +58,5 @@ jobs:
         i18n
         addon/Hearthtale
         addon/Hearthtale_French
+        addon/test/api_*.lua
+        addon/test/evidence_*.lua
