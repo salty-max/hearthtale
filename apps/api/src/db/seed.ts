@@ -1,7 +1,7 @@
 import type { Book } from "@hearthtale/shared";
 import { eq, sql } from "drizzle-orm";
 import { db } from "@/db";
-import { initDb } from "@/db/local";
+import { initDb, requireDatabase } from "@/db/local";
 import { accounts, characters } from "@/db/schema";
 import { TEST_BNET_ID } from "@/lib/accounts";
 import { parseGuid } from "@/lib/guid";
@@ -11,6 +11,8 @@ import seed from "./seed/characters.json";
 // played in the test's fake game (addon/test/seed.lua writes seed/characters.json),
 // owned by the test account ("Sign in as the test account", local only).
 //   bun run db:seed
+// Local only, with no --prod: the hardcore and fallen characters would show in
+// the Hall of the Fallen on the real site.
 type Seed = {
   guid: string;
   name: string;
@@ -24,6 +26,7 @@ type Seed = {
 };
 
 const conn = initDb();
+requireDatabase(conn, process.argv.slice(2), false);
 await db.insert(accounts).values({ bnetId: TEST_BNET_ID, battletag: "Test#0000" }).onConflictDoNothing();
 const [test] = await db.select().from(accounts).where(eq(accounts.bnetId, TEST_BNET_ID));
 for (const c of seed as Seed[]) {

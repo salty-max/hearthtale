@@ -54,7 +54,11 @@ await Bun.write(process.argv[1], JSON.stringify(config, null, 2));
 ' "$OUT/config.json"
 
 # Migrations on production deploys only (previews share the same database).
+# --prod: the db scripts refuse a database off this machine unless asked
+# (apps/api/src/db/local.ts), and this is the one place a deploy asks. Run from
+# apps/api like the build above: a direct call, so the deploy's --prod doesn't
+# depend on the workflow filter passing it on.
 if [ "${VERCEL_ENV:-}" = "production" ]; then
-  bun run --filter @hearthtale/api db:migrate
+  (cd apps/api && bun src/db/migrate.ts --prod)
 fi
 echo "vercel output ready: $(du -sh "$OUT" | cut -f1)"

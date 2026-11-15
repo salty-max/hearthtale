@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { db } from "@/db";
-import { databaseUrl, initDb } from "@/db/local";
+import { initDb, PRODUCTION_FLAG, requireDatabase } from "@/db/local";
 import { accounts, characters } from "@/db/schema";
 import { parseGuid } from "@/lib/guid";
 
@@ -13,17 +13,22 @@ import { parseGuid } from "@/lib/guid";
 //   bun run db:release Player-6113-0B4A2201                 (shows it)
 //   bun run db:release Player-6113-0B4A2201 --to 42 --yes   (gives it to account 42)
 //   bun run db:release Player-6113-0B4A2201 --yes           (deletes it)
-// From the repository's root, Bun loads .env.local: that is Neon's production.
-const args = process.argv.slice(2);
+// On the local container unless the command says otherwise: a database off this
+// machine is refused without --prod (db/local.ts), and `bun run db:release`
+// loads only apps/api/.env.local, never the root's (Neon's production, from
+// `vercel env pull`). To release on the real site, on purpose, from the root:
+//   bun run --env-file=.env.local db:release Player-6113-0B4A2201 --to 42 --yes --prod
+// It prints the database it reached before it reads a row.
+const args = process.argv.slice(2).filter((a) => a !== PRODUCTION_FLAG);
 const [guid, yes] = [args[0], args.includes("--yes")];
 const toArg = args.includes("--to") ? args[args.indexOf("--to") + 1] : undefined;
 const to = toArg != null && /^\d+$/.test(toArg) ? Number(toArg) : undefined;
 if (!guid || !parseGuid(guid) || (toArg !== undefined && to === undefined)) {
-  console.error("usage: bun run db:release <Player-GUID> [--to <account id>] [--yes]");
+  console.error("usage: bun run db:release <Player-GUID> [--to <account id>] [--yes] [--prod]");
   process.exit(1);
 }
-console.log(`database: ${new URL(databaseUrl()).host}`);
 const conn = initDb();
+requireDatabase(conn);
 const [row] = await db
   .select({ id: characters.id, name: characters.name, realm: characters.realm, owner: accounts.battletag, ownerId: characters.ownerId, updatedAt: characters.updatedAt, book: characters.book })
   .from(characters)

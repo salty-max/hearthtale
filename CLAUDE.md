@@ -43,7 +43,7 @@ bun scripts/root.ts --run wow-data/bin/latest.ts    # newer game builds than wow
 bun run dev | typecheck | lint | test | build       # the site
 bun run check                                       # everything (about five minutes)
 bun scripts/root.ts --run addon-kit/q.ts check -- bun run check   # the same, quiet, stamping the tree for the push
-bun run db | db:generate | db:migrate | db:seed
+bun run db | db:generate | db:migrate | db:seed | db:release   # the last three: the local database only, unless --prod (never the seed)
 bun run addon:seed                                  # regenerate the test characters, the landing's samples
 bun run audit                                       # the generated tables, the journals read again (.cache/audit/)
 bun run battery                                     # the kit's battery: the strict game, the matrix, secret values (about 35 seconds)
@@ -87,10 +87,21 @@ scripts/release.sh --version X.Y.Z [--hold] NOTES.md
 - The game's data comes from wow-data only (scripts/, through
   `scripts/root.ts`). A new generator goes into `game-data.yml` too.
 - The site: books are private (a proven owner only), the site never writes
-  the book, the shared package mirrors Save.lua. `vercel link` writes
-  production tokens to `.env.local`, which Bun loads, and drops vendor
-  skills: keep both out. A deploy or a merge to main (which deploys) waits
-  for the user's go.
+  the book, the shared package mirrors Save.lua. `vercel link` and `vercel
+  env pull` write production tokens to `.env.local` (the root's loads for
+  what runs from the root; `bun run db:*` runs in `apps/api` and loads only
+  its own), and `vercel link` drops vendor skills: keep both out. A deploy
+  or a merge to main (which deploys) waits for the user's go.
+- The db scripts (`db:migrate`, `db:seed`, `db:release`) refuse a database off
+  this machine unless the command says `--prod` (the seed never takes it: its
+  test characters would reach the Hall of the Fallen). The guard is
+  `requireDatabase` in `apps/api/src/db/local.ts`, judging the client
+  postgres.js built (a host list, an encoded comma and PGHOST can't slip past
+  a parse of the url); a new db script calls it right after it builds its
+  client (`scripts.test.ts` fails on a `db:*` script that doesn't, or that
+  awaits anything first), and `drizzle.config.ts` stays pinned to the local
+  container. A `--prod` run is the user's go,
+  asked first: how, `docs/site.md` "Database scripts".
 - `bun install` runs husky, which takes `core.hooksPath` back: the
   `prepare` script installs the family's hooks again, outside CI (husky's
   run after ours, chained).

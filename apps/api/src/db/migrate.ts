@@ -1,14 +1,16 @@
 import { drizzle } from "drizzle-orm/postgres-js";
 import { migrate } from "drizzle-orm/postgres-js/migrator";
 import postgres from "postgres";
-import { databaseUrl } from "@/db/local";
+import { migrationUrl, requireDatabase } from "@/db/local";
 
 // Apply generated migrations (drizzle/) to the Postgres at MIGRATE_URL, or
 // Neon's direct connection (DATABASE_URL_UNPOOLED, set by the Vercel
 // integration), or DATABASE_URL: migrations need a real session, which a
-// transaction pooler isn't.
-const url = process.env.MIGRATE_URL || process.env.DATABASE_URL_UNPOOLED || databaseUrl();
+// transaction pooler isn't. A database off this machine wants --prod
+// (scripts/vercel-build.sh's production deploy passes it).
+const url = migrationUrl();
 const sql = postgres(url, { max: 1, onnotice: () => {} });
+requireDatabase(sql);
 await migrate(drizzle(sql), { migrationsFolder: "drizzle" });
 
 // Lockdown, after every migration run (so new tables are covered too).

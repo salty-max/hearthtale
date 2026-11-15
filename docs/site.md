@@ -94,6 +94,38 @@ Plan and steps: PLAN.md, "The site".
   a 404), now and then on a login and on a limited request too.
 - Local: `bun run db` (Postgres on :5435), `bun run db:migrate`,
   `bun run db:seed` (the test characters), `bun run dev` (api :3002, web :5175).
+- Database scripts (`apps/api/src/db/`: `migrate.ts`, `seed.ts`, `release.ts`;
+  the guard is in `local.ts`). They go to the local container unless told
+  otherwise, and each prints `database: <host:port>` first. One that would
+  dial a host off this machine (anything but `localhost`, `127.x.x.x` or a
+  socket, read from the client postgres.js built: a host list, an encoded
+  comma and PGHOST can't slip past) exits 1 with that host (never the
+  credentials), unless the command carries `--prod`. The seed never takes it:
+  its hardcore and fallen characters would show in the Hall of the Fallen.
+  The call is `requireDatabase(client)` right after the client is built, and
+  `db/scripts.test.ts` fails on a `db:*` script without it (or one that awaits
+  anything before it), and on a Vercel build line that migrates without
+  `--prod`. `drizzle.config.ts` is fixed to
+  the local container too, so drizzle-kit's push, migrate and studio can't
+  follow a `DATABASE_URL` anywhere.
+  Which `.env.local` a script sees: `bun run db:*` goes through the workspace
+  filter and runs in `apps/api`, which loads only `apps/api/.env.local`
+  (Battle.net and VAPID keys, no `DATABASE_URL`: local). The root's
+  `.env.local` (Neon's production, from `vercel link` or `vercel env pull`
+  at the root) loads for what runs with the root as its working directory,
+  or when asked. Production gets under a script by accident through a
+  `vercel env pull` run inside `apps/api`, or a `DATABASE_URL`,
+  `DATABASE_URL_UNPOOLED` or `MIGRATE_URL` exported in the shell: that is
+  what the guard stops.
+  Production on purpose (the user's go, each time), from the root, handing
+  the root's `.env.local` to the script and saying `--prod`:
+  `bun run --env-file=.env.local db:release <guid> --to <account id> --yes --prod`
+  (without `--yes` it only shows the row), or `bun run --env-file=.env.local
+  db:migrate --prod` for a migration by hand (Neon's direct connection,
+  `DATABASE_URL_UNPOOLED`). The production deploy runs its own migration:
+  `scripts/vercel-build.sh` calls `bun src/db/migrate.ts --prod` from
+  `apps/api`, only when `VERCEL_ENV` is `production`. A run that went
+  through says so: `database: <host> (not on this machine: --prod)`.
   The landing (`routes/Home.tsx`) shows a page of each sample journal, one
   voice at a time (`lib/samples.ts`: the writer's own, never edited by hand;
   one of them French: its words in French, the labels around them the site's).
@@ -116,8 +148,9 @@ Plan and steps: PLAN.md, "The site".
   keeps it, so a squat is released by hand once a player's report checks out:
   `bun run db:release <guid> --to <account id> --yes` gives the row to the
   verified owner (their next upload replaces the book, no code, no race),
-  without `--to` the row goes. From the root it runs on Neon's production
-  (`.env.local`), and it prints the database's host first.
+  without `--to` the row goes. It runs on the local container unless the
+  command reaches Neon on purpose (see "Database scripts" below), and it
+  prints the database it reached before it reads a row.
   Locally, "Use the test account" (`/api/auth/test`, never on Vercel) owns the
   test characters.
 - Forever ownership (`lib/accounts.ts`, `lib/ravenpost.ts`, `lib/upload.ts`
