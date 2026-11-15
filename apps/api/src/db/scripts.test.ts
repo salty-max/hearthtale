@@ -27,6 +27,39 @@ async function run(script: "migrate" | "seed" | "release", args: string[], urls:
   return { stdout, stderr, code, out: stdout + stderr };
 }
 
+// The dev server stays up once it is past the guard: read its output until the
+// banner (it connects to nothing before a request), then stop it.
+async function serve(args: string[], urls: Urls) {
+  const proc = Bun.spawn([process.execPath, "--no-env-file", "src/server.ts", ...args], {
+    cwd: apiDir,
+    env: { PATH: process.env.PATH ?? "", HOME: process.env.HOME ?? "", PORT: "0", ...urls },
+    stdout: "pipe",
+    stderr: "pipe",
+  });
+  try {
+    const err = new Response(proc.stderr).text();
+    const decoder = new TextDecoder();
+    const reader = proc.stdout.getReader();
+    const stop = { done: true, value: undefined };
+    const deadline = Date.now() + 15_000;
+    let stdout = "";
+    while (!stdout.includes("Hearthtale API")) {
+      // Neither output, nor exit, nor time may leave this loop waiting: the deadline is part of the race.
+      const left = deadline - Date.now();
+      if (left <= 0) break;
+      const next = await Promise.race([reader.read(), proc.exited.then(() => stop), Bun.sleep(left).then(() => stop)]);
+      if (next.done) break;
+      stdout += decoder.decode(next.value);
+    }
+    const alive = stdout.includes("Hearthtale API"); // past the guard: it printed its banner
+    proc.kill();
+    await proc.exited;
+    return { stdout, stderr: await err, alive };
+  } finally {
+    proc.kill(); // whatever threw above: no server outlives its test
+  }
+}
+
 const scripts = [
   ["migrate", []],
   ["seed", []],
@@ -62,6 +95,33 @@ describe("the db scripts refuse a database off this machine", () => {
     expect(r.code).toBe(1);
     expect(r.stderr).toContain("db.example.invalid:5432");
   }, 20_000);
+});
+
+describe("the dev server (src/server.ts) is guarded too", () => {
+  test("refused on a database off this machine, without --prod, and says how to serve it on purpose", async () => {
+    const r = await serve([], all(OFF));
+    expect(r.alive).toBe(false);
+    expect(r.stdout).toBe("");
+    expect(r.stderr).toContain("refusing");
+    expect(r.stderr).toContain("db.example.invalid:5432");
+    expect(r.stderr).toContain("bun run dev");
+    expect(r.stderr).toContain("start --prod");
+    expect(r.stderr).not.toContain("s3cretpw");
+  }, 30_000);
+
+  test("started on purpose with --prod, saying it is not local", async () => {
+    const r = await serve(["--prod"], all(OFF));
+    expect(r.alive).toBe(true);
+    expect(r.stdout).toContain("database: db.example.invalid:5432 (not on this machine: --prod)");
+    expect(r.stderr).not.toContain("refusing");
+  }, 30_000);
+
+  test("started as before on this machine", async () => {
+    const r = await serve([], all(LOCAL));
+    expect(r.alive).toBe(true);
+    expect(r.stdout).toContain("database: 127.0.0.1:1\n");
+    expect(r.stderr).not.toContain("refusing");
+  }, 30_000);
 });
 
 describe("the db scripts run as before on this machine", () => {
@@ -104,6 +164,18 @@ describe("nothing skips the guard", () => {
       expect(firstAwait, `${name} awaits something`).toBeGreaterThan(-1);
       expect(call, `${name} guards before its first await`).toBeLessThan(firstAwait);
     }
+  });
+
+  test("the dev server guards before it serves, and vercel.ts (the production itself) is never guarded", async () => {
+    const dev = await Bun.file(join(apiDir, "src/server.ts")).text();
+    // bun run dev can never pass --prod: a flag in its script would switch the guard off for every dev run.
+    const pkg = (await Bun.file(join(apiDir, "package.json")).json()) as { scripts: Record<string, string> };
+    expect(pkg.scripts.dev).not.toContain("--prod");
+    expect(dev).toContain("requireDatabase(");
+    expect(dev.indexOf("requireDatabase(")).toBeLessThan(dev.indexOf("export default"));
+    // A guard in vercel.ts would make every cold start of the real site refuse Neon.
+    const production = await Bun.file(join(apiDir, "src/vercel.ts")).text();
+    expect(production).not.toContain("requireDatabase");
   });
 
   test("the production deploy's migration asks for production with --prod, and is the only migration the build runs", async () => {

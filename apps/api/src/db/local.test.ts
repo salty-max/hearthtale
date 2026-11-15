@@ -110,6 +110,14 @@ describe("the guard: the verdict", () => {
     expect(v).toMatchObject({ ok: true, production: true });
   });
 
+  test("a caller can say how to ask where --prod does not apply (the dev server)", () => {
+    const v = checkDatabase(neon, [], true, "Run the api alone with --prod.");
+    expect(v.ok).toBe(false);
+    if (v.ok) return;
+    expect(v.message).toContain("Run the api alone with --prod.");
+    expect(v.message).not.toContain("add --prod to the command");
+  });
+
   test("a script that takes no --prod (the seed) refuses even with it, and does not offer it", () => {
     const v = checkDatabase(neon, [PRODUCTION_FLAG], false);
     expect(v.ok).toBe(false);

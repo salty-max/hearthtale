@@ -100,8 +100,11 @@ scripts/release.sh --version X.Y.Z [--hold] NOTES.md
   a parse of the url); a new db script calls it right after it builds its
   client (`scripts.test.ts` fails on a `db:*` script that doesn't, or that
   awaits anything first), and `drizzle.config.ts` stays pinned to the local
-  container. A `--prod` run is the user's go,
-  asked first: how, `docs/site.md` "Database scripts".
+  container. The dev server (`apps/api/src/server.ts`, what `bun run dev`
+  starts) takes the same guard, and `bun run dev` never passes `--prod`;
+  `vercel.ts`, the production itself, is never guarded (a test holds both).
+  A `--prod` run is the user's go, asked first: how, `docs/site.md`
+  "Database scripts".
 - `bun install` runs husky, which takes `core.hooksPath` back: the
   `prepare` script installs the family's hooks again, outside CI (husky's
   run after ours, chained).

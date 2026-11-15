@@ -58,13 +58,14 @@ export type Verdict = { ok: true; where: string; production: boolean } | { ok: f
 
 /** Whether a script may open this connection: always on this machine, elsewhere
  *  only with --prod (never, when the script takes no such flag). The message
- *  names the host and never the credentials. */
-export function checkDatabase(o: Dialled, argv: string[], allowProduction = true): Verdict {
+ *  names the host and never the credentials; `onPurpose` replaces its last line
+ *  where the usual way to add the flag doesn't apply (the dev server). */
+export function checkDatabase(o: Dialled, argv: string[], allowProduction = true, onPurpose?: string): Verdict {
   const where = whereIs(o);
   if (isLocal(o)) return { ok: true, where, production: false };
   if (allowProduction && argv.includes(PRODUCTION_FLAG)) return { ok: true, where, production: true };
   const how = allowProduction
-    ? `To run there on purpose, add ${PRODUCTION_FLAG} to the command (docs/site.md, "Database scripts").`
+    ? (onPurpose ?? `To run there on purpose, add ${PRODUCTION_FLAG} to the command (docs/site.md, "Database scripts").`)
     : `This script is local only (its test data would reach the real site): it has no ${PRODUCTION_FLAG}.`;
   return {
     ok: false,
@@ -80,8 +81,8 @@ export function checkDatabase(o: Dialled, argv: string[], allowProduction = true
 
 /** A db script's first line after it builds its client (no query has run yet):
  *  says where it is going, and exits 1 instead of going somewhere it wasn't asked to. */
-export function requireDatabase(sql: { options: Dialled }, argv = process.argv.slice(2), allowProduction = true): void {
-  const verdict = checkDatabase(sql.options, argv, allowProduction);
+export function requireDatabase(sql: { options: Dialled }, argv = process.argv.slice(2), allowProduction = true, onPurpose?: string): void {
+  const verdict = checkDatabase(sql.options, argv, allowProduction, onPurpose);
   if (!verdict.ok) {
     console.error(verdict.message);
     process.exit(1);

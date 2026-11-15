@@ -126,6 +126,16 @@ Plan and steps: PLAN.md, "The site".
   `scripts/vercel-build.sh` calls `bun src/db/migrate.ts --prod` from
   `apps/api`, only when `VERCEL_ENV` is `production`. A run that went
   through says so: `database: <host> (not on this machine: --prod)`.
+  The dev server (`apps/api/src/server.ts`, started by `bun run dev` as
+  `bun --watch src/server.ts` in `apps/api`) takes the same guard: a
+  `DATABASE_URL` off this machine (a `vercel env pull` inside `apps/api`
+  would write one) stops it with the host named, and `bun run dev` can't carry
+  `--prod` (turbo starts the web server too). To serve a remote database on
+  purpose, run the api alone from the root, beside `bun run --filter
+  @hearthtale/web dev`:
+  `PORT=3002 bun run --env-file=.env.local --filter @hearthtale/api start --prod`
+  (the user's go: the site then writes to that database). `vercel.ts`, the
+  production function's entry, is never guarded, and a test holds that.
   The landing (`routes/Home.tsx`) shows a page of each sample journal, one
   voice at a time (`lib/samples.ts`: the writer's own, never edited by hand;
   one of them French: its words in French, the labels around them the site's).
