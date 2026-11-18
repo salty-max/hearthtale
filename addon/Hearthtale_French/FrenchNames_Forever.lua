@@ -41664,6 +41664,7 @@ function ns.frenchNames()
 [217719]={ "Essence de magie du sang", "f", lc = true },
 [217720]={ "Offrande de chair", "f", lc = true },
 [217721]={ "Offrande d'os", "f", lc = true },
+[217727]={ "Sceau des morts", "m", lc = true },
 [217736]={ "Rune de la coterie", "f", lc = true },
 [217737]={ "Talisman modifié", "m", lc = true },
 [219147]={ "Rune de Grâce", "f", lc = true },
