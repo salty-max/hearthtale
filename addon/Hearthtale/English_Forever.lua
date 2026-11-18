@@ -31808,6 +31808,7 @@ function ns.englishNames()
 [217719]="Blood Magic Essence",
 [217720]="Offering of Flesh",
 [217721]="Offering of Bone",
+[217727]="Ward of the Dead",
 [217736]="Rune of the Coterie",
 [217737]="Modified Talisman",
 [219147]="Rune of Grace",
