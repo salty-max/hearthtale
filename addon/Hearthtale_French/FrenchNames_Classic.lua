@@ -27597,7 +27597,7 @@ function ns.frenchNames()
 [6251]={ "Aile du Néant", "f", lc = true },
 [6252]={ "Sang de garde funeste", "m", lc = true },
 [6253]={ "Caisse de Leftwitch", "f", lc = true },
-[6255]={ "Fishing Pole", "m" },
+[6255]={ "Fishing Pole", "m", lc = true },
 [6256]={ "Canne à pêche", "f", lc = true },
 [6257]={ "Gésier de Roc", "m", lc = true },
 [6258]={ "Foie de Ferpoil", "m", lc = true },
