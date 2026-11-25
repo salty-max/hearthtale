@@ -37772,6 +37772,7 @@ function ns.englishNames()
 [289560]="Formula: Enchant Boots - Speed",
 [290333]="Berdun's Trusty Rifle",
 [291005]="Camper's Lure",
+[291874]="Ruined Herb Seeds",
     },
   }
 end
