@@ -47628,6 +47628,7 @@ function ns.frenchNames()
 [289560]={ "Formule : enchantement de bottes – Vitesse", "f", lc = true },
 [290333]={ "Fidèle carabine de Berdun", "m", lc = true },
 [291005]={ "Appât de campeur", "m", lc = true },
+[291874]={ "Graines de plantes abîmées", "fp", lc = true },
   },
   races = {
 [1]="Humain",
