@@ -9251,6 +9251,7 @@ ns.client = {
     [1293850] = "Swiftstrike Shot",
     [1294014] = "Sweetpaw Jam",
     [1294054] = "Enchant Gloves - Lotus Claw",
+    [1294289] = "Centaur Hoofwarmers",
     [1294897] = "Striped Dawnsaber",
     [1295387] = "Ochre Skeletal Warhorse",
     [1295678] = "Umber Galestrider",
